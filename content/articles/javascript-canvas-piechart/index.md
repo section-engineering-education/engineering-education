@@ -14,36 +14,34 @@ images:
  - url: /engineering-education/javascript-canvas-piechart/hero.jpg
    alt: JavaScript Canvas Piechart Example Image
 ---
-In some cases, you may want to create a chart without any library. That means you will have to create one from scratch. We will see how to do that using JavaScript, HTML Canvas, and CSS.
+Sometimes, you may want to create a chart without any library. That means you will have to create one from scratch. This tutorial will take you through how to do that using JavaScript, HTML Canvas, and CSS.
 <!--more-->
 
-### Table of contents
-
-1. [Prerequisites](#prerequisites)
-2. [An overview of the canvas](#an-overview-of-the-canvas)
-3. [Drawing the pie](#drawing-the-pie)
-4. [Conclusion](#conclusion)
-
 ### Prerequisites
-To follow through this, you will be required to have a basic understanding of these:
+To follow along, you will be required to have a basic understanding of these programming languages:
 1. HTML
 2. CSS
 3. JavaScript
 
+### Table of contents
+- [An overview of the canvas](#an-overview-of-the-canvas)
+- [Drawing the pie](#drawing-the-pie)
+- [Conclusion](#conclusion)
+
 ### An overview of the canvas
-It is easy to position, give custom shapes and color to items in the DOM using the CSS styling provided. Some operations, however, like drawing lines between two or more locations, are particularly difficult to accomplish with standard HTML components. That being said, there are two other options provided:
+It is easy to position, give custom shapes and color to items in the DOM using the CSS styling provided. But, some operations like drawing lines between two or more locations, are particularly difficult to accomplish with standard HTML components. That being said, there are two other options provided:
 1. Scalable Vector Graphics (SVG)
 2. Canvas
 
- As the name suggests, SVG is used to create vector graphics in XML format. This article focuses on the canvas, so we won't go further into SVG. Read more about it [here](https://developer.mozilla.org/en-US/docs/Web/SVG/Element/svg) if you are interested in SVG. 
+As the name suggests, SVG is used to create vector graphics in XML format. This article focuses on the canvas, so we won't go further into SVG. If you are interested in SVG, you can read more about it [here](https://developer.mozilla.org/en-US/docs/Web/SVG/Element/svg). 
  
- The second option is the canvas. A canvas is a single DOM element that gives us a way to draw shapes on a node's space using its provided drawing interface and methods. You can declare a simple canvas element as shown in the line below:
+The second option is the canvas. A canvas is a single DOM element that gives us a way to draw shapes on a node's space using its provided drawing interface and methods. You can declare a simple canvas element as shown in the line below:
 
  ```html
 <canvas width="200" height="200"></canvas>
  ```
 
-Its size is determined in pixels. You can therefore set its dimensions(height and width) to tailor your needs. For us to start manipulating the canvas, we need to access its drawing methods. The methods are found in its drawing interface which we access by creating a context object. This object contains all the methods we will use to draw the shapes, set the color, create rotations, translations, etc.
+Its size is determined in pixels. Thus,  you can set its dimensions (height and width) to tailor your needs. To start manipulating the canvas, we need to access its drawing methods. The methods are found in its drawing interface which we access by creating a context object. This object contains all the methods we will use to draw the shapes, set the color, create rotations, translations, etc.
 
 The object provides drawing styles: `2d` for two-dimensional(2D) graphics and `webgl` for three-dimensional(3D) graphics. We pass the style we are going to use in the context's `getContext()` method as a parameter i.e:
 
@@ -101,14 +99,14 @@ This is the `arc()` method's syntax:
 ```javascript
 void ctx.arc(center-x-coordinate,center-y-coordinate, arc-radius-length, startAngle, endAngle [, counterclockwise]);
 ```
-We pass in the center's x and y coordinates, the radius' length, and the angles where the arc will start and where it will end. We then have an optional boolean value for the direction our arc will follow between the two angles. It is counterclockwise by default(`true`). If `false`, it draws it in a clockwise manner.
+We pass in the center's `x` and `y` coordinates, the radius' length, and the angles where the arc will start and where it will end. We then have an optional boolean value for the direction our arc will follow between the two angles. It is counterclockwise by default (`true`). If `false`, it draws it in a clockwise manner.
 
 > NOTE: We use the radians method to denote our angles where `Math.PI(π)` is **180°**. It starts from 0°, in our case, in a counterclockwise manner that's why our 90°(`Math.PI(π)/2`) is located at the bottom.
 
 We also stroked it to give it the black line. In our case for the pie chart, we will use the `fill()` method. We will look at that later.
 
 #### lineTo()
-This method is used to draw a straight line. It is used together with the `beginPath()` and `moveTo()` to create a line. `beginPath()` is used to start a new path while the `moveTo()` creates a point(a 'from' coordinate) which will be joined by the `lineTo()` method. Let's see that through an example:
+This method is used to draw a straight line. It is used together with the `beginPath()` and `moveTo()` to create a line. `beginPath()` is used to start a new path while the `moveTo()` creates a point (a 'from' coordinate) which will be joined by the `lineTo()` method. Let's see that through an example:
 
 ```javascript
 ctx.beginPath();
@@ -118,12 +116,12 @@ ctx.stroke();
 ```
 
 We start at `(50,0)` then end at `(200,0)`.
+
 The output is as shown below:
 
 ![line](/engineering-education/javascript-canvas-piechart/pie-two.png)
 
 #### Array.prototype.reduce()
-
 This method executes a user-defined callback function on each element of the array passed to it in order. It returns a single value. Let's see this using a multiplication example.
 
 ```javascript
@@ -163,7 +161,7 @@ Next, we draw the pie.
     let currentAngle = 0;
 
     for (let moodValue of results) {
-        //calculating the angle the slice(portion) will take in the chart
+        //calculating the angle the slice (portion) will take in the chart
         let portionAngle = (moodValue.total / totalNumberOfPeople) * 2 * Math.PI;
         //drawing an arc and a line to the center to differentiate the slice from the rest
         ctx.beginPath();
@@ -175,7 +173,7 @@ Next, we draw the pie.
         ctx.fill();
     }
 ```
-We have a `for/of` loop where we start by calculating the angle the slice(portion) will take in the chart using this formula:
+We have a `for/of` loop where we start by calculating the angle the slice (portion) will take in the chart using this formula:
 
 ```
 (total number of people containing a mood / total number of people) * 360°
@@ -228,7 +226,7 @@ Here is the full code:
     let currentAngle = 0;
 
     for (let moodValue of results) {
-        //calculating the angle the slice(portion) will take in the chart
+        //calculating the angle the slice (portion) will take in the chart
         let portionAngle = (moodValue.total / totalNumberOfPeople) * 2 * Math.PI;
         //drawing an arc and a line to the center to differentiate the slice from the rest
         ctx.beginPath();
@@ -244,10 +242,10 @@ Here is the full code:
 </html>
 ```
 
-To build on this more, you can create line charts, bar charts, etc using the canvas. Note that you have to play with rotations because the canvas starts to draw from the top-left and not the bottom-left. You can also add text to the slices.
+To build on this, you can create line charts, bar charts, etc. using the canvas. You have to play with rotations because the canvas starts to draw from the top-left and not the bottom-left. You can also add text to the slices.
 
 ### Conclusion
-In a nutshell, we walked through the canvas briefly, looked at the canvas' methods we would use and the JavaScript's `reduce()` method. Lastly, we quickly created the pie using a simple JavaScript code.
+In a nutshell, we walked you through an overview of the canvas, looked at the canvas' methods we would use and the JavaScript's `reduce()` method. Lastly, we created the pie using a simple JavaScript code.
 
 Happy coding!
 
