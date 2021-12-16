@@ -1,12 +1,12 @@
 Building animated sign-in routes with React.js and bootstrap
 
 ### Introduction
-User registration and authentication are required in most modern websites, where users are requested to provide certain information to have access to content and services offered such as social media websites, blogs, news websites, etc.
-Creating the perfect sign-in routes to enable and entice visitors and users to register and log in to your platform is a focal point in web development.
+Creating unique user interfaces (UI) requires creativity and mastery of modern design and styling frameworks. Since one of the most viewed parts of a website is the sign-in page, it is the responsibility of the front-end web developer(s) to create an attractive page to promote and encourage user sign-up.
+ React.js and Bootstrap can be a powerful combination alongside vanilla CSS in building amazing web pages such as the sign-in page.
 In this tutorial, we will walk through the necessary steps and packages required to build animated sign-in routes with React.js. We will also take a deep dive into the application of vanilla CSS in adding animations and customizing components.
 
 ### Key takeaways
-after this article, the reader will understand and implement the following:
+At the completion of this tutorial, the below-listed concepts will be explained in detail and made easy to understand to the reader:
 
 - Building animated sign-in routes with React.js and bootstrap
 - Using Reactstrap in react applications
