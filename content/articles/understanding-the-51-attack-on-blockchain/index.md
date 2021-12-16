@@ -3,7 +3,7 @@ layout: engineering-education
 status: publish
 published: true
 url: /understanding-the-51-attack-on-blockchain/
-title: Understanding the 51% attack on blockchain
+title: Understanding a 51% Attack on the Blockchain
 description: This article will cover what is known as a 51% attack on the blockchain. The reader will understand what it is, its risks, and possible ways to prevent it.
 author: ephraim-njoroge
 date: 2021-12-15T00:00:00-17:30
