@@ -22,7 +22,7 @@ To follow along with this tutorial, you need to:
 - Be familiar with machine learning modeling.
 - Be familiar with the python programming language.
 - Install either Jupyter notebook or Google Colab.
-> To follow along with this tutorial, please use Jupyter Notebook.
+> To follow along with this tutorial, please use Google Colab.
 
 ### Table of contents
 - [Why 3D detection is important](#why-3d-detection-is-important)
@@ -33,9 +33,9 @@ To follow along with this tutorial, you need to:
 - [Further reading](#further-reading)
 
 ### Why 3D detection is important
-Over the years, object detection research has solely focused on performing 2D object detections. We have seen this with RCNN, Fast RCNN, SSD, and Masked RCNN. In the real world, we have 3D objects. Because of this, it would be better if we had 3D bounding boxes to bound objects detected in the real world, rather than the commonly used 2D detections. 
+Over the years, object detection research has focused on performing 2D object detection. We have seen this with RCNN, Fast RCNN, SSD, and Masked RCNN. In the real world, we have 3D objects. Because of this, it would be better if we had 3D bounding boxes to bound objects detected in the real world, rather than the commonly used 2D detections. 
 
-3D object detection is vital as it would enable us to capture objects’ sizes, orientation, and position in the world. As a result, we would be able to use these 3D detections in real-world applications such as Augmented Reality (AR), self-driving cars, and robotics which perceive the world the same way we do as humans.
+3D object detection is vital as it would enable us to capture objects’ sizes, orientation, and position in the world. As a result, we would be able to use these 3D detection in real-world applications such as Augmented Reality (AR), self-driving cars, and robotics which perceive the world the same way we do as humans.
 
 Amazingly, Google has put forward a model that views the world and detects real-world objects in 3-dimension. This model is known as the Objectron.
 
@@ -45,7 +45,7 @@ The Objectron is a real-time 3D object detection solution that can detect object
 The model is available on Google's [MediaPipe](https://google.github.io/mediapipe/solutions/objectron). It is an ML pipeline that contains open-source solutions to solve real-world problems. 
 
 ### How they obtained real-world 3D training data
-To obtain 3D training data, they had to perform some annotation techniques on 2D data as there is no 3D data available today. Initially, they developed a single-stage objectron model to acquire these data using [mobile augmented reality](https://ai.googleblog.com/2020/03/real-time-3d-object-detection-on-mobile.html) session data. This allowed them to create this kind of dataset. However, this dataset never captured 3D objects from different angles. 
+To get 3D training data, they had to perform some annotation techniques on 2D data as there is no 3D data available today. Initially, they developed a single-stage objectron model to acquire these data using [mobile augmented reality](https://ai.googleblog.com/2020/03/real-time-3d-object-detection-on-mobile.html) session data. This allowed them to create this kind of datasets. But, these datasets never captured 3D objects from different angles. 
 
 They later released a more robust [objectron model](https://ai.googleblog.com/2020/11/announcing-objectron-dataset.html) with a two-stage architecture. The first stage deployed the commonly used TensorFlow object detection model to estimate the 2D crop of an input image. Once this cropping had been performed, the second stage involved taking these cropped images and estimating their 3D bounding boxes. This was a great upgrade from their initial model that used a single-stage encoder-decoder architecture. It captured a much larger set of common objects from different angles. Additionally, this dataset was collected from a geo-diverse sample consisting of data covering ten countries across continents.
 
@@ -79,7 +79,7 @@ From mediapipe, we have imported two key solutions that will help us in this tut
 #### Uploading a static image
 This tutorial will use two static images of a chair for our demonstration. Let's name them chair [one](https://unsplash.com/photos/kvmdsTrGOBM) and [two](https://unsplash.com/photos/NBJ0BBqvdNM). You will need to download either of the two images and upload them onto your Google Colab as uploads on Colab get deleted after runtime.
 
-> It is recommended to download the small size of the image (640px by 799px) for easier processing. 
+> We recommend to download the small size of the image (640px by 799px) for easier processing. 
 
 ```python
 from google.colab.patches import cv2_imshow
