@@ -1,13 +1,13 @@
 ### Introduction
-DevOps is practices or stages that every application will go through before and after deployment in the industry. 
-It ensures both continuous integration and deployment of the application, by allowing a series of updates in the code repository.
+DevOps is practices or stages that every application will go through before and after deployment in the industry. It ensures both continuous integration and deployment of the application, by allowing a series of updates in the code repository.
 
-The CI and CD pipelines are the set of practices used in the industry to develop and maintain every deployed application. 
-Developing applications from the ground up requires so many practices and keeping track of every change in order not to break the already deployed application in the production.
+The CI and CD pipelines are the set of practices used in the industry to develop and maintain every deployed application. Developing applications from the ground up requires so many practices and keeping track of every change in order not to break the already deployed application in the production.
 
-GitHub Actions is an automation tool provided by Github that makes continuous integration very smooth and easier. 
-Applications docker containers are packaged into the swarm. In this article, we will experience building an interactive application
-Docker packages applications into images and stores them as containers with their configurations defined in the `DockerFile` . 
+GitHub Actions is an automation tool provided by Github that makes continuous integration very smooth and easier. Applications' docker containers are packaged into the swarm.
+
+In this article, we will experience building an interactive application.
+
+Docker packages applications into images and stores them as containers with their configurations defined in the `DockerFile`.
 
 ### Table of Contents
 - [Prerequisites](#prerequisites)
@@ -19,31 +19,30 @@ Docker packages applications into images and stores them as containers with thei
 - [Docker Images and Containers Basics](#docker-images-and-container-basics)
 - [Conclusion](#conclusion)
 
-
 ### Prerequisites
 To follow along with this tutorial with ease, one should meet the following requirements.
-- Have a basic understanding of git repository and programming languages like Python.
-- A pre-installed [Python](https://www.python.org/downloads/)
+- An understanding of a GitHub repository and the Python programming language.
+- A pre-installed [Python](https://www.python.org/downloads/).
 - A pre-installed IDE, preferably [Visual Studio Code](https://code.visualstudio.com/download).
-- A basic understanding of [Docker](https://www.docker.com/products/docker-desktop).
+- An understanding of [Docker](https://www.docker.com/products/docker-desktop).
 - Docker Hub Account [Docker Hub](https://hub.docker.com/)
-- A basic understanding of [Flask](https://flask.palletsprojects.com/en/2.0.x/).
-
+- An understanding of [Flask](https://flask.palletsprojects.com/en/2.0.x/).
 
 ### Objectives
-In this tutorial, we will be learning the continuous integration and deployment with docker, selenium, and GitHub actions. You will learn the following and apply them to the project;
+In this tutorial, we will be learning the continuous integration and deployment with docker, selenium, and GitHub actions. You will learn the following and apply them to the project:
 
--  Development and Operations Overview
--  Clone a Flask Application
--  CI and CD Pipelines Architecture
+-  Development and operations overview
+-  Cloning a Flask application
+-  CI and CD Pipelines architecture
 -  Continuous Integration and deployment with Github Actions
--  Docker Images and Containers Basics 
+-  Docker images and container basics
 
-#### Development and Operations Overview
-There are different stages involved in building pipelines from development to production. These are the defined development and operations pipelines in the industry. The picture below describes all the pre-defined;
+#### Development and operations overview
+There are different stages involved in building pipelines from development to production. These are the defined development and operations pipelines in the industry.
 
+The picture below describes all the pre-defined.
 
-Every industry begins the development of application with the following set of practices;
+Every industry begins the development of application with the following set of practices:
 -  `Plan`
 Without a proper plan, no one can successfully develop an application. An adequate plan must be put in place before embarking on the journey of development. This is the stage where the justifications shall be given to tech stacks and other things required.
  
@@ -64,7 +63,7 @@ This is where the stage of continuous integration begins. This stage will be rep
 -  `Deploy`
 An application that passed the continuous integration stage will proceed to the deployment stage. Staging will be the first thing here before deployment using tools like `Ansible`, `Puppet` or `Chef`. 
 
--  `Operate` 
+-  `Operate`
 The deployment will begin fully in this stage using tools like `terraform` etc. The refined application will then be deployed and its operations will be monitored. 
 
 -  `Monitor`
@@ -73,8 +72,10 @@ The deployed application will be monitored in terms of performance. Logs will be
 Above are the practices that applications undergo in the industry. A skilled person in terms of all these is said to be a `DevOps Engineer`.
 
 
-### Clone a Flask Application
-You are required to clone a Flask application in this [repository](https://github.com/Horlawhumy-dev/flask-drinksapi). This contains a simple Flask API that we will work on within this tutorial. The following are the set of commands that will walk you through the cloning.
+### Cloning a Flask Application
+You are required to clone a Flask application from this [repository](https://github.com/Horlawhumy-dev/flask-drinksapi). This contains a simple Flask API that we will work on within this tutorial.
+
+The following are the set of commands that will walk you through the cloning.
 
 ```git
 $ git clone git@github.com:Horlawhumy-dev/flask-drinksapi.git
@@ -89,7 +90,6 @@ Following these commands, you used the first one to clone from the remote reposi
 Every python application needs a `virtual environment` in order to activate the dependency. Inside the folder cloned, there is a folder `venv` that contains the environment and you used the third command to activate it.
 
 Furthermore, you installed the dependencies inside the `requirements.txt` file. You then start the server with the last command on the snippet above.
-
 
 ### CI and CD Pipelines Architecture
 The continuous integration and deployment of pipelines are software development practices used in the industry to develop and maintain every application. 
@@ -162,19 +162,21 @@ The creation and execution of the containers are delegated to a container manage
 
 In the following section, we would look at how to containerize applications using `Docker` and `Dockerfile` dependency. Create a `Dockerfile` inside the project folder and paste the docker commands below.
 
-``` dockerfile
-    FROM python:3.8
-    WORKDIR /app
-    COPY . .
-    RUN pip install -r requirements.txt
-    ENV PORT=80
+```dockerfile
+FROM python:3.8
+WORKDIR /app
+COPY . .
+RUN pip install -r requirements.txt
+ENV PORT=80
 ```
 
 Furthermore, We have to build the docker image and then push it to the docker hub for storage. But before that, create a new repository in the docker hub and that will store your docker image from the build actions.
 
-You will add your docker hub account details to the GitHub secrets. You can do that by going to your GitHub account, clicking on the `settings` button, and tapping the `secrets`. Add the following to the name and values;
+You will add your docker hub account details to the GitHub secrets. You can do that by going to your GitHub account, clicking on the `settings` button, and tapping the `secrets`.
 
-``` 
+Add the following to the name and values:
+
+```yaml
 DOCKER_USERNAME: <whatever-your-username>
 DOCKER_PASSWORD: <your-password>
 DOCKER_HUB: <whatever-your-username>/<your-repository>
@@ -182,7 +184,7 @@ DOCKER_HUB: <whatever-your-username>/<your-repository>
 
 Having done all the steps above, navigate to the Github repository for the application, edit the workflow with the codes below. This will build the docker image and send it to your docker hub repository.
 
-```YAML
+```yaml
 name: Python Package
 
 on:
@@ -219,9 +221,7 @@ jobs:
 
 Upon successful building of the docker image, you have something like the image below;
 
-
 ![Successful Docker image Build](/continuous-integration-and-deployment-of-pipelines-with-flask-docker-and-github-actions/dockerhub.png)
-
 
 ### Conclusion
 In this tutorial, we saw the overview of DevOps and built an automated pipeline. We cloned already made project and configured its pipeline with Github actions. 
