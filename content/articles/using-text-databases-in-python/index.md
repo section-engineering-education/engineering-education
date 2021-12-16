@@ -1,6 +1,21 @@
-### How to use a text file as a database in Python
-One of the main ways of storing data is by the use of a database. A database is a collection of data organized in a way that makes it easy to access and manipulate.
+---
+layout: engineering-education
+status: publish
+published: true
+url: /using-text-databases-in-python/
+title: How to use Text Databases in Python
+description: This tutorial will show the reader how to use text databases in Python.
+author: geoffrey-mungai
+date: 2021-12-17T00:00:00-01:45
+topics: [Languages]
+excerpt_separator: <!--more-->
+images:
 
+  - url: /engineering-education/using-text-databases-in-python/hero.jpg
+    alt: How to use Text Databases in Python
+---
+One of the main ways of storing data is by the use of a database. A database is a collection of data organized in a way that makes it easy to access and manipulate.
+<!--more-->
 Although databases are often used to store data, they are not the only way to store data.
 
 You can store data in a structured way inside a file. The file will allow you to write and retrieve data for use in your program.
@@ -297,3 +312,6 @@ It's also important to note that you can't rely on these files when working with
 ### Further reading
 1. [JSON encoder and decoder - Python3 Docs](https://docs.python.org/3/library/json.html#json.JSONEncoder)
 2. [Python object serialization with  Pickle- Python3 Docs](https://docs.python.org/3/library/pickle.html)
+
+---
+Peer Review Contributions by: [Eric Gacoki](/engineering-education/authors/eric-gacoki/)
