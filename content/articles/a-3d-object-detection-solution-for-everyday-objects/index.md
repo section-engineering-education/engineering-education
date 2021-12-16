@@ -6,7 +6,7 @@ url: /a-3d-object-detection-solution-for-everyday-objects/
 title: A 3D Object Detection Solution for Everyday Objects
 description: This tutorial will cover how to perform 3D object detection using the mediapipe library and python and draw 3D bounding box around the objects.
 author: lilian-tonia
-date: 2021-12-14T00:00:00-17:20
+date: 2021-12-16T00:00:00-17:20
 topics: [Machine Learning]
 excerpt_separator: <!--more-->
 images:
@@ -40,7 +40,6 @@ Over the years, object detection research has solely focused on performing 2D ob
 Amazingly, Google has come up with a model that can view the world and detect objects in real world in 3-dimension. This model is known as the Objectron.
 
 ### What is the Objectron
-
 The Objectron is a real-time 3D object detection solution that is able to detect objects in the real world. The model first detects cropped objects in 2D images. Afterwards, it estimates their poses through a machine learning (ML) model that is trained on the [Objectron dataset](https://github.com/google-research-datasets/Objectron). It is able to create 3D bounding box around an object with `x`, `y`, and `z` coordinates. Currently, it can detect only four objects, a shoe, camera, cup, and a chair.
 
 The model is available of Google's [MediaPipe](https://google.github.io/mediapipe/solutions/objectron), an ML pipeline that contains open-source solutions to solve real-world problems. 
@@ -77,25 +76,31 @@ mp_objectron = mp.solutions.objectron
 From mediapipe, we have imported two key solutions that will help us in this tutorial. We've imported the `drawing_utils` to help us draw the 3D bounding boxes (lines and points), and the `objectron` model itself. 
 > Remember, mediapipe is a huge library with many models, we need to import the specific model from mediapipe that we want to use.
 
-#### Accessing mobile phone camera
+#### Uploading a static image
+This tutorial will use two static images of a chair for our demonstration. Let's name them [chair one](https://unsplash.com/photos/kvmdsTrGOBM) and [chair two](https://unsplash.com/photos/NBJ0BBqvdNM). You'll need to download either of the two images and upload it onto your Google Colab as uploads on Colab gets deleted after runtime.
 
-In this tutorial, we will use an input video stream from an android mobile camera.  
+> It is recommended to download the small size of the image (640px by 799px) for easier processing. 
 
 ```python
-cap = cv2.VideoCapture('https://192.168.229.122:8080/video')
-video.open(cap)
+from google.colab.patches import cv2_imshow
+
+image = cv2.imread("name-of-your-image.jpg") 
+cv2_imshow(image)
+cv2.waitKey(0)
 ```
+After uploading, we need to perform the detection and tracking on the image.
+
 #### Performing the detection and tracking
 
 ```python
-with mp_objectron.Objectron(static_image_mode=False,
+with mp_objectron.Objectron(static_image_mode=True,
                             max_num_objects=5,
                             min_detection_confidence=0.5,
-                            min_tracking_confidence=0.99,
+                            min_tracking_confidence=0.5,
                             model_name='Chair') as objectron:
 ```
 
-- We set the `static_image_model` to false as we do not want to detect still images, but rather, video frames. If we want to detect static images, we set this value to `True`.
+- We set the `static_image_model` to `True` as we want to detect still images. If you want to detect video frames, we set this value to be `False`.
 - The `max_num_objects` denotes the maximum number of objects inside a frame. The default value is set to `5`. If you need to increase the maximum number, you can change it here.
 - The `min_detection_confidence` ranges between `0.0` and `1.0`. We've set our value to `0.5`. This means that if the score for the detection is below `0.5`, the model won't be confident about the detection and will consider the detection unsuccessful. Similarly, with the `min_tracking_confidence`, we've set the value to `0.99`.
 - We've set the model name to detect a `Chair`. As at the time of writing this tutorial, the model only support the 3D bounding boxes of these four objectrons: {'Shoe', 'Chair', 'Cup', 'Camera'}. By default, it's set to detect a shoe. You can change the value to detect any of the four. 
@@ -103,24 +108,24 @@ with mp_objectron.Objectron(static_image_mode=False,
 #### Drawing the box landmarks on the image
 
 ```python
-if results.detected_objects:
-        for detected_object in results.detected_objects:
-            mp_drawing.draw_landmarks(
-              image, detected_object.landmarks_2d, mp_objectron.BOX_CONNECTIONS)
-            mp_drawing.draw_axis(image, detected_object.rotation,
-                                 detected_object.translation)
+annotated_image = image.copy()
+    for detected_object in results.detected_objects:
+      mp_drawing.draw_landmarks(
+          annotated_image, detected_object.landmarks_2d, mp_objectron.BOX_CONNECTIONS)
+      mp_drawing.draw_axis(annotated_image, detected_object.rotation,
+                           detected_object.translation)
+      cv2.imwrite('/tmp/annotated_image' + '.png', annotated_image)
 ```
 If `Chair` has been detected in the frame (`results.detected_objects`), draw landmarks on the image in a bounding box (`BOX_CONNECTIONS`) using the `mp_drawing` class. Besides, we know that a 3D dimensional image is in three axis, `x`, `y`, and `z`. We use the `draw_axis` method to draw our axis on the image.
 
 Finally, we need to display these results to the user. We use OpenCV's `imshow()` method to perform this task. 
 
 ```python
-cv2.imshow('Video', frame))
-    if cv2.waitKey(5) & 0xFF == 27:
-      break
-cap.release()
+cv2_imshow(annotated_image)
 ```
-If we're satisfied with the detections and want to stop the video stream, we use OpenCV's `waitKey()` method.
+Output:
+
+![Annotated image with 3D Object Detected](/engineering-education/a-3d-object-detection-solution-for-everyday-objects/annotated-image.png)
 
 Please find the full code implementation this tutorial [here](https://colab.research.google.com/drive/1BClS6Uu5XaU940cfwo-cuCKmlsXyCGx5?usp=sharing).
 
