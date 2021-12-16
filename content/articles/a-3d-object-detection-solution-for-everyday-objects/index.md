@@ -14,7 +14,7 @@ images:
   - url: /engineering-education/a-3d-object-detection-solution-for-everyday-objects/hero.png
     alt: A 3D Object Detection Solution for Everyday Objects Hero Image
 ---
-In this tutorial, we will perform 3D object detection using the mediapipe library and python. We will be drawing a 3D bounding box around an object instead of the common 2D bounding boxes that we are used to.
+This tutorial will perform 3D object detection using the mediapipe library and python. We will be drawing a 3D bounding box around an object instead of the common 2D bounding boxes that we are used to.
 <!--more-->
 
 ### Prerequisites
@@ -33,21 +33,21 @@ To follow along with this tutorial, you need to:
 - [Further reading](#further-reading)
 
 ### Why 3D detection is important
-Over the years, object detection research has solely focused on performing 2D object detections. We've seen this with the likes of RCNN, Fast RCNN, SSD, and Masked RCNN. In the real-world, we have 3D objects. Because of this, it would be better if we had 3D bounding boxes to bound objects detected in the real world, rather than the commonly used 2D detections. 
+Over the years, object detection research has solely focused on performing 2D object detections. We have seen this with RCNN, Fast RCNN, SSD, and Masked RCNN. In the real world, we have 3D objects. Because of this, it would be better if we had 3D bounding boxes to bound objects detected in the real world, rather than the commonly used 2D detections. 
 
-3D object detection is important as it would enable us to capture objects’ sizes, orientation, and position in the world. As a result, we would be able to use these 3D detection in real-world applications such as Augmented Reality (AR), self-driving cars, and robotics which perceive the world the same way we do as humans.
+3D object detection is vital as it would enable us to capture objects’ sizes, orientation, and position in the world. As a result, we would be able to use these 3D detections in real-world applications such as Augmented Reality (AR), self-driving cars, and robotics which perceive the world the same way we do as humans.
 
-Amazingly, Google has come up with a model that can view the world and detect real-world objects in 3-dimension. This model is known as the Objectron.
+Amazingly, Google has put forward a model that views the world and detects real-world objects in 3-dimension. This model is known as the Objectron.
 
 ### What is the Objectron
-The Objectron is a real-time 3D object detection solution that is able to detect objects in the real world. The model first detects cropped objects in 2D images. Afterwards, it estimates their poses through a machine learning (ML) model that is trained on the [Objectron dataset](https://github.com/google-research-datasets/Objectron). It is able to create 3D bounding box around an object with `x`, `y`, and `z` coordinates. Currently, it can detect only four objects, a shoe, camera, cup, and a chair.
+The Objectron is a real-time 3D object detection solution that can detect objects in the real world. The model first detects cropped objects in 2D images. Afterward, it estimates their poses through a machine learning (ML) model that is trained on the [Objectron dataset](https://github.com/google-research-datasets/Objectron). It can create a 3D bounding box around an object with `x`, `y`, and `z` coordinates. Currently, it can detect only four objects, a shoe, camera, cup, and chair.
 
-The model is available of Google's [MediaPipe](https://google.github.io/mediapipe/solutions/objectron), an ML pipeline that contains open-source solutions to solve real-world problems. 
+The model is available on Google's [MediaPipe](https://google.github.io/mediapipe/solutions/objectron). It is an ML pipeline that contains open-source solutions to solve real-world problems. 
 
 ### How they obtained real-world 3D training data
-To obtain 3D training data, they had to perform some annotation techniques on 2D data as there is no 3D data available today. Initially, they developed a single-stage objectron model to acquire these data using [mobile augmented reality](https://ai.googleblog.com/2020/03/real-time-3d-object-detection-on-mobile.html) session data. This allowed them to create this kind of datasets. However, this dataset never captured 3D objects from different angle. 
+To obtain 3D training data, they had to perform some annotation techniques on 2D data as there is no 3D data available today. Initially, they developed a single-stage objectron model to acquire these data using [mobile augmented reality](https://ai.googleblog.com/2020/03/real-time-3d-object-detection-on-mobile.html) session data. This allowed them to create this kind of dataset. However, this dataset never captured 3D objects from different angles. 
 
-They later released a more robust [objectron model](https://ai.googleblog.com/2020/11/announcing-objectron-dataset.html) with a two-stage architecture. The first stage deployed the commonly used TensorFlow object detection model to estimate the 2D crop of an input image. Once this cropping had been performed, the second stage involved taking these cropped images and estimating their 3D bounding boxes.This was a great upgrade from their initial model which used a single-stage encoder-decoder architecture. It was able to capture a much larger set of common objects in different angles. Additionally, this dataset was collected from a geo-diverse sample consisting of data covering 10 countries across continents.
+They later released a more robust [objectron model](https://ai.googleblog.com/2020/11/announcing-objectron-dataset.html) with a two-stage architecture. The first stage deployed the commonly used TensorFlow object detection model to estimate the 2D crop of an input image. Once this cropping had been performed, the second stage involved taking these cropped images and estimating their 3D bounding boxes. This was a great upgrade from their initial model that used a single-stage encoder-decoder architecture. It captured a much larger set of common objects from different angles. Additionally, this dataset was collected from a geo-diverse sample consisting of data covering ten countries across continents.
 
 Please find the GitHub link to the Objectron dataset [here](https://github.com/google-research-datasets/Objectron).
 
@@ -64,7 +64,7 @@ Next, we need to import them into our notebook.
 import cv2
 import mediapipe as mp
 ```
-That's done. Let's now set up mediapipe.
+Let's now set up mediapipe.
 
 #### Setting up mediapipe
 
@@ -77,7 +77,7 @@ From mediapipe, we have imported two key solutions that will help us in this tut
 > Remember, mediapipe is a huge library with many models, we need to import the specific model from mediapipe that we want to use.
 
 #### Uploading a static image
-This tutorial will use two static images of a chair for our demonstration. Let's name them [chair one](https://unsplash.com/photos/kvmdsTrGOBM) and [chair two](https://unsplash.com/photos/NBJ0BBqvdNM). You'll need to download either of the two images and upload it onto your Google Colab as uploads on Colab gets deleted after runtime.
+This tutorial will use two static images of a chair for our demonstration. Let's name them chair [one](https://unsplash.com/photos/kvmdsTrGOBM) and [two](https://unsplash.com/photos/NBJ0BBqvdNM). You will need to download either of the two images and upload them onto your Google Colab as uploads on Colab get deleted after runtime.
 
 > It is recommended to download the small size of the image (640px by 799px) for easier processing. 
 
@@ -100,10 +100,10 @@ with mp_objectron.Objectron(static_image_mode=True,
                             model_name='Chair') as objectron:
 ```
 
-- We set the `static_image_model` to `True` as we want to detect still images. If you want to detect video frames, we set this value to be `False`.
+- We set the `static_image_model` to `True` as we want to detect still images. If you want to detect video frames, we set this value to `False`.
 - The `max_num_objects` denotes the maximum number of objects inside a frame. The default value is set to `5`. If you need to increase the maximum number, you can change it here.
-- The `min_detection_confidence` ranges between `0.0` and `1.0`. We've set our value to `0.5`. This means that if the score for the detection is below `0.5`, the model won't be confident about the detection and will consider the detection unsuccessful. Similarly, with the `min_tracking_confidence`, we've set the value to `0.99`.
-- We've set the model name to detect a `Chair`. As at the time of writing this tutorial, the model only support the 3D bounding boxes of these four objectrons: {'Shoe', 'Chair', 'Cup', 'Camera'}. By default, it's set to detect a shoe. You can change the value to detect any of the four. 
+- The `min_detection_confidence` ranges between `0.0` and `1.0`. We've set our value to `0.5`. This means that if the score for the detection is below `0.5`, the model will not be confident about the detection and will consider the detection unsuccessful. Similarly, with the `min_tracking_confidence`, we've set the value to `0.99`.
+- We've set the model name to detect a `Chair`. As at the time of writing this tutorial, the model only supports the 3D bounding boxes of these four objectrons: {'Shoe', 'Chair', 'Cup', 'Camera'}. By default, it's set to detect a shoe. You can change the value to detect any of the four. 
 
 #### Drawing the box landmarks on the image
 
@@ -116,7 +116,7 @@ annotated_image = image.copy()
                            detected_object.translation)
       cv2.imwrite('/tmp/annotated_image' + '.png', annotated_image)
 ```
-If `Chair` has been detected in the frame (`results.detected_objects`), draw landmarks on the image in a bounding box (`BOX_CONNECTIONS`) using the `mp_drawing` class. Besides, we know that a 3D dimensional image is in three axis, `x`, `y`, and `z`. We use the `draw_axis` method to draw our axis on the image.
+If `Chair` has been detected in the frame (`results.detected_objects`), draw landmarks on the image in a bounding box (`BOX_CONNECTIONS`) using the `mp_drawing` class. Besides, we know that a 3D dimensional image is in three axes, `x`, `y`, and `z`. We use the `draw_axis` method to draw our axis on the image.
 
 Finally, we need to display these results to the user. We use OpenCV's `imshow()` method to perform this task. 
 
@@ -127,10 +127,10 @@ Output:
 
 ![Annotated image with 3D Object Detected](/engineering-education/a-3d-object-detection-solution-for-everyday-objects/annotated-image.png)
 
-Please find the full code implementation this tutorial [here](https://colab.research.google.com/drive/1BClS6Uu5XaU940cfwo-cuCKmlsXyCGx5?usp=sharing).
+Please find the full code implementation for this tutorial [here](https://colab.research.google.com/drive/1BClS6Uu5XaU940cfwo-cuCKmlsXyCGx5?usp=sharing).
 
 ### Wrapping up
-We're living in very exciting times. Breakthroughs in artificial intelligence can only make our lives better and safer. It's interesting how we thought 2D object detection was cool. With 3D object detections, it's even way better. Let's wait and see what the future will surprise us with. For now, we're excited to be part of it, and to share this amazing knowledge with you.  
+We are living in exciting times. Breakthroughs in artificial intelligence can only make our lives better and safer. It is interesting how we thought 2D object detection was cool. With 3D object detections, it is even way better. Let us wait and see what the future will surprise us with. For now, we are excited to be part of it and to share this amazing knowledge with you.  
 
 ### Further reading
 - [MediaPipe Objectron](https://google.github.io/mediapipe/solutions/objectron)
