@@ -6,7 +6,7 @@ url: /javascript-canvas-piechart/
 title: Creating a pie chart using JavaScript, HTML Canvas, and CSS
 description: This article will discuss how to create a pie chart from scratch using JavaScript, HTML Canvas, and CSS.
 author: sandra-moringa
-date: 2021-12-16T00:00:00-21:00
+date: 2021-12-17T00:00:00-04:00
 topics: [Languages]
 excerpt_separator: <!--more-->
 images:
