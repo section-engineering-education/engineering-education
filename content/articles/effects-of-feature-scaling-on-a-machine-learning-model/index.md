@@ -28,23 +28,15 @@ Choosing which to use on your dataset is subjective to your dataset, the machine
  In this approach, we will learn how to implement each. We will first build a prediction model without feature scaling, one with standardized features, and lastly one with Normalized features. We will also use the same dataset for the three to be able to compare how our dataset affects the choice of the technique we use.
 
 ### Table of contents
--[Prerequisites](#prerequisites)
-
--[Importing the libraries](#importing-the-libraries)
-
--[The initial model](#1the-initial-model)
-
--[Using Standard Scaling](#2using-standard-scaling)
-
--[Using Normalization](#3using-normalization)
-
--[Effects of the feature scaling](#effects-of-the-feature-scaling)
-
--[Choosing between the two scaling techniques](#choosing-between-the-two-scaling-techniques)
-
--[Exceptions](#exceptions)
-
--[Conclusion](#conclusion)
+- [Prerequisites](#prerequisites)
+- [Importing the libraries](#importing-the-libraries)
+- [The initial model](#1the-initial-model)
+- [Using Standard Scaling](#2using-standard-scaling)
+- [Using Normalization](#3using-normalization)
+- [Effects of the feature scaling](#effects-of-the-feature-scaling)
+- [Choosing between the two scaling techniques](#choosing-between-the-two-scaling-techniques)
+- [Exceptions](#exceptions)
+- [Conclusion](#conclusion)
 
 ###  Prerequisites
 We will need :
