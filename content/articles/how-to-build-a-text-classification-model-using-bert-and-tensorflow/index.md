@@ -62,13 +62,13 @@ import pandas as pd
 We have imported the following packages:
 
 - `tensorflow`:
-This is the machine learning package used to build the neural network. It will create the input and output layers of our machine learning model.
+It is the machine learning package used to build the neural network. It will create the input and output layers of our machine learning model.
 
 - `tensorflow_hub`:
-This contains a pre-trained machine model used to build our text classification. Our pre-trained model is BERT. We will re-use the BERT model and fine-tune it to meet our needs.
+It contains a pre-trained machine model used to build our text classification. Our pre-trained model is BERT. We will re-use the BERT model and fine-tune it to meet our needs.
 
 - `tensorflow_text`:
-This will allow us to work with text. In this tutorial, we are solving a text-classification problem.
+It will allow us to work with text. In this tutorial, we are solving a text-classification problem.
 
 - `pandas`:
 We will use Pandas to load our dataset. We also use Pandas for data manipulation and analysis. This gives us a clear overview of how our dataset is structured.
@@ -301,10 +301,10 @@ The model summary is shown below.
 The image above shows all the input and output layers we have initialized for our model. The output also shows the total params, trainable params, and non-trainable params.
 
 - Total params:
-This represents all the parameters in our model.
+It represents all the parameters in our model.
 
 - Trainable params:
-This represents the parameters that we will train.
+It represents the parameters that we will train.
 
 - Non-trainable params:
 These parameters are from the BERT model, they are already trained.
