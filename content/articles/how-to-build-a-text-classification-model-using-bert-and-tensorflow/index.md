@@ -431,3 +431,5 @@ To get the Python code for this model, click [here](https://colab.research.googl
 - [TensorFlow hub models](https://www.tensorflow.org/hub)
 - [BERT basics](https://towardsdatascience.com/bert-explained-state-of-the-art-language-model-for-nlp-f8b21a9b6270)
 
+---
+Peer Review Contributions by: [Willies Ogola](/engineering-education/authors/willies-ogola/)
