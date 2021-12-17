@@ -20,5 +20,7 @@ We pledge to foster an open and welcoming environment. Our community (& comment 
 - Do NOT post any inappropriate, offensive or illegal material. Inappropriate content is anything that may offend or is not relevant to the discussion.
 - Other conduct which could reasonably be considered inappropriate in a professional setting.
 
-**Any comments or issues can be directed to us at enged@section.io.**
+**Any comments or issues can be directed to us at enged@section.io.** 
+
+*We reserve the right, in our sole discretion, to edit, modify, remove or refuse to publish any comments.*
 
