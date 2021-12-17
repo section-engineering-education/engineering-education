@@ -139,3 +139,6 @@ Developers can confidently explore the Microsoft Azure functions and AWS Lambda 
 - [Anatomy of the Lambda Expression](https://www.tutorialsteacher.com/linq/linq-lambda-expression).
 - [AWS vs Azure](https://www.edureka.co/blog/aws-vs-azure/).
 - [Understanding Serverless Observability](https://lumigo.io/blog/understanding-serverless-observability/).
+
+---
+Peer Review Contributions by: [Willies Ogola](/engineering-education/authors/willies-ogola/)
