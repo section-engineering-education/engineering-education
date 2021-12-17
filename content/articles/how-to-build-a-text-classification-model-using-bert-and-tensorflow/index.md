@@ -14,7 +14,7 @@ images:
   - url: /engineering-education/how-to-build-a-text-classification-model-using-bert-and-tensorflow/hero.jpg
     alt: Text Classification model Using BERT and Tensorflow Hero Image
 ---
-Text classification is a subset of machine learning that classifies text into predefined categories. Text classification is one of the impotant tasks in natural language processing(NLP). 
+Text classification is a subset of machine learning that classifies text into predefined categories. Text classification is one of the important tasks in natural language processing (NLP). 
 <!--more-->
 Some of the examples of text classification are [intent detection](/engineering-education/intent-classification-with-rasa-and-spacy/), [sentiment analysis](/engineering-education/sentiment-analysis-with-spacy-and-scikit-learn/), [topic labelling](https://towardsdatascience.com/nlp-extracting-the-main-topics-from-your-dataset-using-lda-in-minutes-21486f5aa925) and [spam detection.](https://towardsdatascience.com/spam-detection-in-emails-de0398ea3b48)
 
