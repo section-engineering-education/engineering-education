@@ -1,6 +1,21 @@
-﻿### Introduction
-[Serverless](https://www.cloudflare.com/learning/serverless/what-is-serverless/) computing has completely changed the technology space. Developers find it a compelling option since it has made their development efficient and more productive. In recent times, serverless computing has been gaining popularity. The main reason is that it lets the developers deploy their applications to the cloud without dealing with the server infrastructure.
+---
+layout: engineering-education
+status: publish
+published: true
+url: /overview-of-developing-serverless-applications-in-c/
+title: Overview of developing serverless applications in C#
+description: This article will show you how to develop a serverless application using the C# programming language. 
+author: ephraim-gathoni
+date: 2021-12-17T00:00:00-21:00
+topics: [Languages]
+excerpt_separator: <!--more-->
+images:
 
+  - url: /engineering-education/overview-of-developing-serverless-applications-in-c/hero.jpeg
+    alt: serverless applications example image
+---
+[Serverless](https://www.cloudflare.com/learning/serverless/what-is-serverless/) computing has completely changed the technology space. Developers find it a compelling option since it has made their development efficient and more productive. In recent times, serverless computing has been gaining popularity. The main reason is that it lets the developers deploy their applications to the cloud without dealing with the server infrastructure.
+<!--more-->
 Before serverless, developers had to deal with server resources to support their code. Since the introduction of serverless computing, developers worry no more about the operating system and hardware architecture since it handles the server infrastructure. This gives developers more time to pay attention and write good and quality code for their applications.
 
 This article draws attention to developing a serverless application using the [C#](https://docs.microsoft.com/en-us/dotnet/csharp/tour-of-csharp/) programming language. Then later be deployed on popular cloud solutions such as [Amazon AWS](https://aws.amazon.com/) and [Microsoft Azure](https://azure.microsoft.com/en-us/).
