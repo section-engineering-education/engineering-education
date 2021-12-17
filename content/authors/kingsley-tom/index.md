@@ -3,7 +3,7 @@ Title: Kingsley Tom
 Type: authors
 github: https://github.com/KayTee24
 images:
-  - url: /engineering-education/authors/Kingsley-Tom/avatar.jpeg 
+  - url: /engineering-education/authors/kingsley-tom/avatar.jpeg 
 ---
 
 
