@@ -22,14 +22,14 @@ You can store data in a structured way inside a file. The file will allow you to
 
 Some of the most used files are **Text** files and **JSON** files.
 
-### Using `.txt` file as a database
+### Using .txt file as a database
 Text files are one of the most used file formats in the world today.
 
 One of the main reasons text files are used is simplicity. Text files don't require any special software to be used. They don't even require any formatting knowledge, unlike databases.
 
 Text files can be used to store all sorts of data. Mostly, they are used to store simple text that requires no special formatting. For example, a text file can be used to export a list of names, emails, or a combination of both.
 
-#### Writing data to a text file using `write()`
+#### Writing data to a text file using write()
 In Python, reading and writing text files are supported by default and require no additional libraries.
 
 To demonstrate how we can use a text file to store data, let's build a simple program that will store a list of employees in a text file.
@@ -55,7 +55,7 @@ We then loop through the list and write each employee's name to the file using t
 
 Finally, we close the file.
 
-#### Writing data to a text file using `writelines()`
+#### Writing data to a text file using writelines()
 The `writelines()` method is similar to the `write()` method, only that it takes a list of strings as an argument.
 
 To demonstrate how this works, run the code below:
@@ -81,7 +81,7 @@ We use the `separator` function to append a newline (`/n`) to each item in the l
 
 The file is overwritten (existing content is cleared then new content is written) each time we run the program.
 
-#### Reading data from a text file using `read()`
+#### Reading data from a text file using read()
 To read data from a text file, we use the `read()` method. This method returns a string containing the contents of the file.
 
 ```python
@@ -102,7 +102,7 @@ Using the `read()` method is not the best way to read files. This is because mos
 
 To fix this, we can use the `readlines()` method.
 
-#### Reading data from a text file using `readlines()`
+#### Reading data from a text file using readlines()
 The `readlines()` method returns a list of strings, each string representing a line in the file.
 
 ```python
