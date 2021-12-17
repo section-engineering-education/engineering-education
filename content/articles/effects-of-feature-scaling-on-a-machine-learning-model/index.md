@@ -34,10 +34,9 @@ Choosing which to use on your dataset is subjective to your dataset, the machine
 We will need :
 1. Fundamental knowledge in Python programming language.
 2. Fundamental knowledge in Machine Learning.
-3. A python IDE. I recommend Jupyter Notebook/Jupyter Lab/google colab.
+3. Jupyter Notebook/Jupyter Lab/google colab.
 
 We will build models to predict if a patient was diagnosed with either disease `M` or `B` using the given data for training.
-The complete code for this tutorial can also be found [here](https://colab.research.google.com/drive/1v_KegBZvxju3DxGcnsTjQcy_6lPIPG_i?usp=sharing)
 
 ###  Importing the libraries
 In our notebook, let us import the following libraries and run the cell:
@@ -276,4 +275,8 @@ As for us, `Standard Scaling` gives better results.
 ### Conclusion
 We have learned the importance of `feature scaling`, looked at both the `Standard Scaling` technique and `Nomarlization` technique, and learned how to implement each and compared the results of using each. 
 As we have learned from comparing the results, `feature scaling` can boost the performance of a model significantly. It also helps stabilize the accuracy of a model.
+
+The complete code for this tutorial can also be found [here](https://colab.research.google.com/drive/1v_KegBZvxju3DxGcnsTjQcy_6lPIPG_i?usp=sharing).
 You can now be able to choose and implement these `feature scaling` techniques in your machine learning projects. 
+
+
