@@ -14,9 +14,12 @@ images:
   - url: /engineering-education/getting-started-with-dot-net-maui-for-cross-platform-apps/hero.png
     alt: Getting Started With .Net MAUI For Cross Platform Applications
 ---
-.NET MAUI is a cross-platform framework that is used to create native desktop and mobile applications. It is the most productive way to create, performant Android, iOS, macOS, and Windows Apps, all from a single code base. It is an evolution of Xamarin.Forms, and extended from desktop scenarios with UI controls.
+
+.NET MAUI is a cross-platform framework that is used to create native desktop and mobile applications. It is the most productive way to create, performant Android, iOS, macOS, and Windows Apps, all from a single code base. 
 <!--more-->
-The advantage of .NET MAUI is that you can have your cross-platform native UI built in .NET with XAML and C# and run the same code base on all platforms, i.e:
+It is an evolution of Xamarin.Forms, and extended from desktop scenarios with UI controls.
+
+The advantage of .NET MAUI is that you can have your cross-platform native UI built in .NET with XAML and C#, and run the same code base on all platforms, i.e:
 - On Windows using the WINUI3.
 - On macOS using the MAC Catalyst Apps
 - iOS and Android for your phone.
@@ -25,7 +28,7 @@ The advantage of .NET MAUI is that you can have your cross-platform native UI bu
 To create multi-platform applications using .NET MAUI, you will need to download the preview version of Microsoft Visual Studio 2022 [here](https://visualstudio.microsoft.com/vs/preview/).
 
 #### Downloading workloads
-To get started, you will need to set up your Microsoft Visual Studio so that it can to run the .NET MAUI framework. To do this, on the installation window, check the boxes for the following five workloads:
+To get started, you will need to set up your Microsoft Visual Studio so it can run the .NET MAUI framework. To do this, on the installation window, check the boxes for the following five workloads:
 - Mobile Development with .NET
 - ASP.NET and Web Development
 - .NET Desktop development
@@ -68,7 +71,7 @@ Once you have written your code for the application, choose the platform that yo
 The solution explorer has some important files and folders that are important to look at to have a better understanding of where relevant files need to be put. i.e:
 
 #### Xaml file
-This is where you put your UI code for your project. Xaml file is the logic for your project.
+This is where you write your UI code for your project. Xaml file contains the logic for your project.
 
 ### Platforms folder
 This folder contains and specifies the platforms that your application will run from. The default platforms are:
