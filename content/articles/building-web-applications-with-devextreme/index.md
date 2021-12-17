@@ -72,12 +72,12 @@ To view your DevExtreme template, DevExtreme runs on a default port of 4200 whic
 > The DevExtreme application template comes with drawer, data grid, and forms components.
 
 ### Default Template View
-![/building-web-applications-with-devextreme/default-template-view](image1.png)
+![default-template-view](/building-web-applications-with-devextreme/image1.png)
 
 ### DevExtreme ThemeBuilder
 Manipulating DevExtreme is really easy. Using the *ThemeBuilder*, you can customize themes based on the DevExtreme default theme. The link to use the ThemeBuilder can be found [here](https://devexpress.github.io/ThemeBuilder/).
 
-To configure the template theme open `src\themes\metadata.additional.json` and `src\themes\metadata.base.json`. In the template, edit the theme name in the JSON file. By default, the theme is orange as you can see in the image above. After changing the theme color run  ```npm build-themes``` or ```yarn build-themes``` for the change to take effect. I changed mine to blue in the two JSON files:
+To configure the template theme open `src\themes\metadata.additional.json` and `src\themes\metadata.base.json`. In the template, edit the theme name in the JSON file. By default, the theme is orange as you can see in the image above. After changing the theme color run  ```npm run build-themes``` or ```yarn build-themes``` for the change to take effect. I changed mine to blue in the two JSON files:
 
 ```json
 {
@@ -107,7 +107,7 @@ To configure the template theme open `src\themes\metadata.additional.json` and `
 ```
 Below is the result of the above changes:
 
-![blue-theme](image2.png)
+![blue-theme](/building-web-applications-with-devextreme/image2.png)
 
 Click [here](https://js.devexpress.com/Documentation/Guide/Themes_and_Styles/Predefined_Themes/) to view the DevExtreme predefined themes using material design themes and generic compact.
 
