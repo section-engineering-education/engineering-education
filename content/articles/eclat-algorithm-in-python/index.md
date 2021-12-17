@@ -142,10 +142,13 @@ rslt_DataFrame.nlargest(n = 7, columns = 'Support') # printing the first 7 suppo
  
 From this output, we notice that the support of the first rule(herb & pepper with) is the highest, followed by the (whole wheat pasta with olive oil) ans so on. This table means that the first rule is the most important. Therefore, for the seller to maximize their sales and profit, they should follow the first rule.
 
+The link to the source code is provided [here](https://github.com/jacksonjate1/files/blob/main/eclat_algorithm.ipynb).
+
 ### Conclusion
 
 This article introduced association rule mining and broke it down to its approaches. Then, we mentioned the top three algorithms that are mainly used in this field to discover knowledge from the data: Apriori, Eclat, and FP growth algorithms. First, we saw the limitation of the Apriori algorithm, and later, we were able to discuss how the Eclat algorithm solves this. We also discussed how these two algorithms differ before talking about the pros and cons of the Eclat algorithm.
 
 Later, we implemented the Eclat algorithm by adapting it from the Apriori algorithm so as to improve it's accuracy.
 
-The link to the source code is provided [here](https://github.com/jacksonjate1/files/blob/main/eclat_algorithm.ipynb).
+---
+Peer Review Contributions by: [Willies Ogola](/engineering-education/authors/willies-ogola/)
