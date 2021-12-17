@@ -4,9 +4,9 @@ status: publish
 published: true
 url: /getting-started-with-dot-net-maui-for-cross-platform-apps/
 title: Getting Started With .Net MAUI For Cross Platform Applications
-description: This article will be taking the reader through all the steps needed in order to build cross-platform applications for Android, iOS, macOS, and Windows with visual studio 2022 using .NET MAUI.
+description: This article will be taking the reader through all the steps needed in order to build cross-platform applications for Android, iOS, macOS, and Windows with Visual Studio 2022 using .NET MAUI.
 author: geoffrey-omukuba
-date: 2021-12-17T00:00:00-00:40
+date: 2021-12-17T00:00:00-03:45
 topics: [Languages]
 excerpt_separator: <!--more-->
 images:
