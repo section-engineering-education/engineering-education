@@ -82,12 +82,10 @@ to check what our dataset consists of:
  ![df.info()](/engineering-education/effects-of-standard-scaling-on-a-machine-learning-model/df-info.JPG)
 
  As you can see, our dataset entails 32 columns, where most are floats and one contains objects. The first 31 columns are also in a good state hence no need for replacing or removing some rows.
- We can also use :
+We can also use `df.head()` to have a look at the values in the first ten rows of our dataset:
+ 
  ```python 
  df.head(10)
- ```
-to have a look at the values in the first ten rows of our dataset:
-
 ![fd.head(10)](/engineering-education/effects-of-standard-scaling-on-a-machine-learning-model/df-head.JPG)
 
 ####  (iii) Preparing the dataset
