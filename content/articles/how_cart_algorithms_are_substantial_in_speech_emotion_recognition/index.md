@@ -118,3 +118,6 @@ Happy Learning!
 [How to Implement MLOps](/engineering-education/how-to-implement-mlops/)
 
 [Decision Trees in Python](/engineering-education/decision-tree-in-python/)
+
+---
+Peer Review Contributions by: [Collins Ayuya](https://www.section.io/engineering-education/authors/collins-ayuya/)
