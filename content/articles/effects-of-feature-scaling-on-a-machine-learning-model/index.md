@@ -1,4 +1,4 @@
----
+﻿---
 layout: engineering-education
 status: publish
 published: true
@@ -13,7 +13,7 @@ images:
 
   - url: /engineering-education/effects-of-feature-scaling-on-a-machine-learning-model/hero.jpg
     alt: Effects of Feature Scaling Hero Image
----﻿
+---
 ### Why is feature scaling important
 Datasets that we use for training models in machine learning have unpredictable values that might end up varying from each other on a broad scale. Numerical values might have big differences amongst themselves especially when they represent different scales, and this might make it difficult to compare them ie: kg, Litres, Millimeters, Miles, Pixels, etc.
 
@@ -28,23 +28,23 @@ Choosing which to use on your dataset is subjective to your dataset, the machine
  In this approach, we will learn how to implement each. We will first build a prediction model without feature scaling, one with standardized features, and lastly one with Normalized features. We will also use the same dataset for the three to be able to compare how our dataset affects the choice of the technique we use.
 
 ### Table of contents
-1.[Prerequisites](#prerequisites)
+-[Prerequisites](#prerequisites)
 
-2.[Importing the libraries](#importing-the-libraries)
+-[Importing the libraries](#importing-the-libraries)
 
-3.[The initial model](#1the-initial-model)
+-[The initial model](#1the-initial-model)
 
-4.[Using Standard Scaling](#2using-standard-scaling)
+-[Using Standard Scaling](#2using-standard-scaling)
 
-5.[Using Normalization](#3using-normalization)
+-[Using Normalization](#3using-normalization)
 
-6.[Effects of the feature scaling](#effects-of-the-feature-scaling)
+-[Effects of the feature scaling](#effects-of-the-feature-scaling)
 
-7.[Choosing between the two scaling techniques](#choosing-between-the-two-scaling-techniques)
+-[Choosing between the two scaling techniques](#choosing-between-the-two-scaling-techniques)
 
-8.[Exceptions](#exceptions)
+-[Exceptions](#exceptions)
 
-9.[Conclusion](#conclusion)
+-[Conclusion](#conclusion)
 
 ###  Prerequisites
 We will need :
@@ -77,23 +77,26 @@ We will use `df.info` to check what our dataset consists of:
 
 ```python
 df.info()
+```
 
- ![df.info()](/engineering-education/effects-of-standard-scaling-on-a-machine-learning-model/df-info.JPG)
+ ![df.info()](/engineering-education/effects-of-standard-scaling-on-a-machine-learning-model/df-info.jpg)
 
  As you can see, our dataset entails 32 columns, where most are floats and one contains objects. The first 31 columns are also in a good state hence no need for replacing or removing some rows.
 We can also use `df.head()` to have a look at the values in the first ten rows of our dataset:
  
  ```python 
  df.head(10)
-![fd.head(10)](/engineering-education/effects-of-standard-scaling-on-a-machine-learning-model/df-head.JPG)
+ ```
+![fd.head(10)](/engineering-education/effects-of-standard-scaling-on-a-machine-learning-model/df-head.jpg)
 
 ####  (iii) Preparing the dataset
 We will now select a set of attributes that can affect the dependent variables(diagnosis) in our dataset:
+
 ```python
 my_features = ['radius_mean', 'perimeter_mean', 'area_mean', 'compactness_mean', 'concavity_mean', 'concave points_mean',
                'perimeter_worst', 'area_worst', 'compactness_worst', 'concavity_worst', 'concave points_worst']
 ``` 
-Then we will split the data between `y(dependent)` and `X(indipendent)` variables:
+Then we will split the data between `y(dependent)` and `X(independent)` variables:
 ```python
 y = df.diagnosis
 X = df[my_features]
@@ -108,7 +111,7 @@ If you check `y` now, you will see that it transformed into an array of `1's` an
 ```python
 print(y)
 ```
-![print(y)](/engineering-education/effects-of-standard-scaling-on-a-machine-learning-model/print-y.JPG)
+![print(y)](/engineering-education/effects-of-standard-scaling-on-a-machine-learning-model/print-y.jpg)
 
 After that we can now go ahead and split our dataset into the training set and testing set in the ratios of 30:70:
 ```python
@@ -130,11 +133,11 @@ We can then print both the prediction and testing sample and try to compare the 
 ```python
 print(y_predict)
 ```
-![print(y_predict)](/engineering-education/effects-of-standard-scaling-on-a-machine-learning-model/y-predict.JPG)
+![print(y_predict)](/engineering-education/effects-of-standard-scaling-on-a-machine-learning-model/y-predict.jpg)
 ```python
 print(y_test)
 ```
-![print(y_test)](/engineering-education/effects-of-standard-scaling-on-a-machine-learning-model/y-test.JPG)
+![print(y_test)](/engineering-education/effects-of-standard-scaling-on-a-machine-learning-model/y-test.jpg)
 
 ###  2.Using Standard Scaling
 We will build another model that uses `standard scaling` to level the dataset before fitting.
@@ -147,7 +150,7 @@ df1.head(10)
 ```
 Take note of how the values across the columns are distributed in a wide range. ie some are 122.80 and ,others  0.11840 :
 
-![df.head(10)](/engineering-education/effects-of-standard-scaling-on-a-machine-learning-model/df-head.JPG)
+![df.head(10)](/engineering-education/effects-of-standard-scaling-on-a-machine-learning-model/df-head.jpg)
 ####  (ii) Implementing standard scaling
 To scale properly, we will first collect the names of all the numerical columns in a list then use the list to fit  the standard scaler.
 ```python 
@@ -163,13 +166,13 @@ for i in col:
     df1[i] = sc.transform(df1[[i]]) 
 ``` 
 Using `standard scaler` from `sklearn`, we were able to rescale our features using the `standardization` technique.
-Now if we check our `df1` again :
+Now if we check our `df1` again, you will notice how the range between the values has been reduced:
+
 ```python
 df1.head(10)
 ```
- you will notice how the range between the values has been reduced:
 
- ![df.head(10)](/engineering-education/effects-of-standard-scaling-on-a-machine-learning-model/df1-head-after.JPG)
+ ![df.head(10)](/engineering-education/effects-of-standard-scaling-on-a-machine-learning-model/df1-head-after.jpg)
 #### (iii) Spliting our dataset 
 `y1` is given diagnosis status that is already encoded in numerical form, while `X1` is assigned the same features as those of the first model.
 ```python
@@ -193,11 +196,11 @@ Y_predict1 = classifier.predict(x_test1)
 accuracy_after_stdScaler = classifier.score(x_test1, Y_test1)
 ```
 #### (v) Predicting
-To check the predictions :
+To check the predictions we will use:
 ```python
 print(Y_predict1)
 ```
-and compare the results with the test set:
+Let us compare the results with the test set:
 ```python
 print(Y_test1)
 ```
@@ -214,7 +217,7 @@ df2.describe()
 ```
 Take note of the values:
 
-![df2.describe()](/engineering-education/effects-of-standard-scaling-on-a-machine-learning-model/df2-before.JPG)
+![df2.describe()](/engineering-education/effects-of-standard-scaling-on-a-machine-learning-model/df2-before.jpg)
 ####  (ii) Spliting data between dependent (Y) and independent (X) variables
 Here we will select the target, features, and also label encode our non-numerical target(y2).
 ```python
@@ -233,7 +236,7 @@ Now, let us take a look at our dataset after normalization:
 X2_df = pd.DataFrame(X2)
 X2_df.describe()
 ```
-![df2.describe()](/engineering-education/effects-of-standard-scaling-on-a-machine-learning-model/df2-after.JPG)
+![df2.describe()](/engineering-education/effects-of-standard-scaling-on-a-machine-learning-model/df2-after.jpg)
 
 If you compare this description to the one just above, you will notice the difference.
 If you check the `min` and `max` values for all the columns, they are `0` and `1` respectively. This means our features are now rescaled between 1 and zero.
@@ -268,7 +271,7 @@ We used variables to store the accuracy of each model. To check them out, we jus
 ```python
 print("Accuracy 1 :", accuracy_b4, "   Accuracy 2 :", accuracy_after_stdScaler, "    Accuracy 3:", accuracy_after_normalization)
 ```
-![print(accuracy)](/engineering-education/effects-of-standard-scaling-on-a-machine-learning-model/accuracy.JPG)
+![print(accuracy)](/engineering-education/effects-of-standard-scaling-on-a-machine-learning-model/accuracy.jpg)
 
 As you can see above, the accuracy score of a `feature scaled` model is higher than that of the initial one. This goes on to demonstrate the effects of feature scaling on the models.
 
