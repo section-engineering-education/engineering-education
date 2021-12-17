@@ -114,7 +114,7 @@ The ratio of the two categories is shown below.
 ```
 This implies that 15% is the spam emails and 85% the ham emails. This indicates class imbalance.
 
-We need to balance the two classes so that to reduce bias during model training.
+We need to balance the two classes to reduce bias during model training.
 
 ### Balancing dataset
 
