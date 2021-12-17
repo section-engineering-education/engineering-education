@@ -51,7 +51,7 @@ For a reader to understand this tutorial easily, they should:
 
 ### Importing important packages
 
-Let's import the important packages as follows:
+Let's import the required packages as follows:
 
 ```python
 import tensorflow as tf
