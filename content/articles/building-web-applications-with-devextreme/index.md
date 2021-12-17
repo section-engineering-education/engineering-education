@@ -1,4 +1,23 @@
+---
+layout: engineering-education
+status: publish
+published: true
+url: /building-web-applications-with-devextreme/
+title: Building Web Applications With Devextreme
+description: Devextreme is a library of pre-made UI components and themes made to streamline making pretty and functional UIs. In this guide, we will cover the basics of using it.
+author: abimbola-taofeek
+date: 2021-12-17T00:00:00-10:00
+topics: [Languages]
+excerpt_separator: <!--more-->
+images:
+
+  - url: /engineering-education/building-web-applications-with-devextreme/hero.png
+    alt: Building web applications with Devextreme
+---
+
 Building Web applications from scratch as a Web developer can be painful and time-consuming. As web developers, we want to build fast and responsive web applications. We are always implementing the same UI components (ex. authentication, headers, user menu, footer, navigation, etc) in every project so why start over and over again. DevExtreme is here to take all the pain away. Devextreme is one of the [DevExpress](https://www.devexpress.com/) components. It includes a collection of high-performance and responsive UI widgets which can be used to build both mobile and web applications.
+
+<!--more-->
 
 DevExtreme mainly works with the Javascript frameworks: Angular, React, jQuery, and Vue. It can also be used with technologies like ASP.NET MVC, Knockout, and ASP.NET Core. It is fast and easy to use because of its ready-built responsive UI components. These include interactive charts, data editors, drop-down boxes, and much more. DevExtreme can also be added to existing applications. For further studies, you can find more info [here](https://js.devexpress.com/)
 
@@ -117,3 +136,6 @@ DevExtreme is one of DevExpress' components that works with Javascript framework
 ### Further reading
 [DevExpress Documentation](https://docs.devexpress.com/)
 [The DevExtreme Documentation](https://js.devexpress.com/Overview/)
+
+---
+Peer Review Contributions by: [John Amiscaray](/engineering-education/authors/john-amiscaray/)
