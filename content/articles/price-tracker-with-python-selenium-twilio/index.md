@@ -9,6 +9,7 @@ This tutorial will teach you how to use Twilio’s Programmable SMS services and
 We'll use Selenium and BeautifulSoup to get the prices of a particular searched product and then compare it with the price you expect the product to fall below. If any of the price(s) are in your expected range, [Twilio](https://www.twilio.com/) will send an SMS to you on your phone saying they are products in your price range. The SMS will also contain the number of products in your price range.
 
 Finally, we will need a job that will run our script daily, [Heroku scheduler](https://devcenter.heroku.com/articles/clock-processes-python) makes this easy. I will show you how to set up a scheduled job with the Heroku scheduler to complete this process.
+You can find the code on [GitHub](https://github.com/khabdrick/twilioXseleniumXpython).
 
 ### Prerequisites
 
@@ -26,17 +27,15 @@ You will use Selenium combined with Beautiful Soup for web scraping. Beautiful S
 
 [Selenium](https://selenium-python.readthedocs.io/) is used in this tutorial mostly because it works very well with Python and also since the Selenium WebDriver uses a real web browser to access a website, the activity simulates an ordinary user browsing instead of a bot. This is beneficial because some websites restrict unauthenticated users from web scraping activities, but by simulating ordinary user browsing, we can log in and do our web scraping with no trouble.
 
-## Build Software to Search Amazon and Scrape Names and Prices
 
-First, install Selenium and Beautiful Soup.
+## Search for Product on Amazon
+First, install Selenium, Webdriver manager and Beautiful Soup.
 
 ```bash
 $ pip install selenium beautifulsoup4 webdriver-manager
 ```
 
-### Search for Product on Amazon
-
-First, create a Python file for your code and paste the imports below.
+Then, create a Python file for your code and paste the imports below.
 
 ```python
 from bs4 import BeautifulSoup
@@ -159,15 +158,15 @@ for i in prices_float:
 
 ## Add Twilio Programmable SMS
 
-### Gather your Twilio credentials
+### Get your Twilio credentials
 
-To connect to Twilio’s API, you will need your Account SID, Auth Token. You can find them on the [Twilio console page](https://console.twilio.com/).
+Your Account SID, Auth Token will enable you connect to connect to Twilio ApI. You can find them on the [Twilio console page](https://console.twilio.com/).
 
 *Note: Your account SID and Auth Token must always be hidden!*
 
 The next step is to code out the alert!
 
-## Handling the Alert
+### Handling the Alert
 
 For this section, you will need the [Twilio package](https://www.twilio.com/docs/libraries/python) for Python which allows you to use the [Twilio Programmable SMS API](https://www.twilio.com/docs/sms) to send and receive SMS messages.
 
