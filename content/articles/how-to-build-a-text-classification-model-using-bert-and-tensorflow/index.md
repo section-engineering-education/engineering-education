@@ -75,7 +75,7 @@ We will use Pandas to load our dataset. We also use Pandas for data manipulation
 
 Now, let's load and explore the dataset we will use in this tutorial. Before we load the dataset, make sure you download this dataset from [here](https://drive.google.com/file/d/1QXzFte4FulQXmgUHBAk8y6IqcCYy8An-/view?usp=sharing)
 
-Now, let's load the dataset that you have downloaded from the link above. Run this command to load the dataset.
+Now, let's load the dataset downloaded using the link above. Run this command to load the dataset.
 
 ```python
 df = pd.read_csv("spam.csv")
