@@ -247,7 +247,7 @@ In a sequential model, layers are built on top of each other, layer by layer. In
 
 Functional models are more robust and flexible. They do not create layers in sequential order. In the functional model, we have multiple inputs and outputs.
 
-In this tutorial, we will use the functional approach to build our model.
+This tutorial will use the functional approach to build our model.
 
 We will start by initializing the BERT layers.
 
