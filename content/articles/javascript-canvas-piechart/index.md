@@ -3,7 +3,7 @@ layout: engineering-education
 status: publish
 published: true
 url: /javascript-canvas-piechart/
-title: Creating a pie chart from scratch using JavaScript, HTML Canvas, and CSS
+title: Creating a pie chart using JavaScript, HTML Canvas, and CSS
 description: This article will discuss how to create a pie chart from scratch using JavaScript, HTML Canvas, and CSS.
 author: sandra-moringa
 date: 2021-12-16T00:00:00-21:00
@@ -14,7 +14,8 @@ images:
  - url: /engineering-education/javascript-canvas-piechart/hero.jpg
    alt: JavaScript Canvas Piechart Example Image
 ---
-Sometimes, you may want to create a chart without any library. That means you will have to create one from scratch. This tutorial will take you through how to do that using JavaScript, HTML Canvas, and CSS.
+
+Sometimes, you may want to create a chart without any library. This tutorial will take you through how to do that using JavaScript, HTML Canvas, and CSS.
 <!--more-->
 
 ### Prerequisites
@@ -29,7 +30,7 @@ To follow along, you will be required to have a basic understanding of these pro
 - [Conclusion](#conclusion)
 
 ### An overview of the canvas
-It is easy to position, give custom shapes and color to items in the DOM using the CSS styling provided. But, some operations like drawing lines between two or more locations, are particularly difficult to accomplish with standard HTML components. That being said, there are two other options provided:
+It's easy to position, give custom shapes and color to items in the DOM using the CSS styling provided. But, some operations like drawing lines between two or more locations, are particularly difficult to accomplish with standard HTML components. That being said, there are two other options provided:
 1. Scalable Vector Graphics (SVG)
 2. Canvas
 
