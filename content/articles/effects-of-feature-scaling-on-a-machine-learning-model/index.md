@@ -73,11 +73,10 @@ url = 'https://github.com/Sajeyks/Section-dataset1/blob/main/data.csv?raw=true'
 df = pd.read_csv(url,index_col=0)
 ```
 #### (ii) Exploring our dataset
-We will use :
+We will use `df.info` to check what our dataset consists of:
+
 ```python
 df.info()
-```
-to check what our dataset consists of:
 
  ![df.info()](/engineering-education/effects-of-standard-scaling-on-a-machine-learning-model/df-info.JPG)
 
