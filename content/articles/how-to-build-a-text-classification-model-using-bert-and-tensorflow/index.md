@@ -270,7 +270,7 @@ l = tf.keras.layers.Dense(1, activation='sigmoid', name="output")(l)
 ```
 The neural network has two layers, the `Dropout` layer, and the `Dense` layer.
 
-- `Droupout` layer
+- `Dropout` layer
 
 This layer will be used to prevent model overfitting. We will use` 0.1%` of the neurons to handle overfitting. Overfitting happens when a model perfectly learns from training data but performs poorly in testing. We also give it the name `dropout`.
 
