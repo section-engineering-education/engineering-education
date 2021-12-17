@@ -11,7 +11,7 @@ topics: [Languages]
 excerpt_separator: <!--more-->
 images:
 
-  - url: /how-to-build-a-currency-converter-with-react-and-its-material-ui/hero.jpg
+  - url: /engineering-education/how-to-build-a-currency-converter-with-react-and-its-material-ui/hero.jpg
     alt: Building a currency convereter using Fixer.io react and material-UI Image
 --- 
 
