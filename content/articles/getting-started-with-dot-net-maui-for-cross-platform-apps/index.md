@@ -16,12 +16,12 @@ images:
 ---
 .NET MAUI is a cross-platform framework that is used to create native desktop and mobile applications. It is the most productive way to create, performant Android, iOS, macOS, and Windows Apps, all from a single code base. It is an evolution of Xamarin.Forms, and extended from desktop scenarios with UI controls.
 <!--more-->
-The advantage of .NET MAUI is that you can have your cross-platform native UI built in .NET with XAML and C# and run the same code base on all platforms, i.e;
+The advantage of .NET MAUI is that you can have your cross-platform native UI built in .NET with XAML and C# and run the same code base on all platforms, i.e:
 - On Windows using the WINUI3.
 - On macOS using the MAC Catalyst Apps
 - iOS and Android for your phone.
 
-###  Setting up Visual Studio
+### Setting up Visual Studio
 To create multi-platform applications using .NET MAUI, you will need to download the preview version of Microsoft Visual Studio 2022 [here](https://visualstudio.microsoft.com/vs/preview/).
 
 #### Downloading workloads
@@ -47,9 +47,9 @@ The next thing is to install Android 31 SDK. To do that, follow the steps below:
 4. Type `Android` in the search bar and select `Xamarin`, `Android Settings`
 5. Locate the location of **Android SDK** in your file folder, select it and click `Ok`.
 
-The next thing is prompting the Android SDK manager under *Tools > Android > Android SDK manager*.
+The next thing is prompting the Android SDK manager under _Tools > Android > Android SDK manager_.
 
-Check the latest android item i.e. *Android 12.0-S API level 31 > Android SDK platform 31* and click `Apply changes`
+Check the latest android item i.e. _Android 12.0-S API level 31 > Android SDK platform 31_ and click `Apply changes`
 
 ### Creating a new .NET MAUI project
 To create a new project, launch Microsoft Visual Studio and select `New project`.
