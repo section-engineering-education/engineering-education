@@ -1,4 +1,4 @@
-﻿---
+---
 layout: engineering-education
 status: publish
 published: true
@@ -90,3 +90,6 @@ Load balancing ensures the visitor gets the best user experience. It is possible
 - [Understanding load balancing metrics](https://blog.appoptics.com/an-in-depth-guide-to-load-balancer-monitoring).
 - [The benefits of load balancing](https://www.webwerks.in/blogs/what-cloud-load-balancing-and-what-are-its-benefits).
 - [Load balancing of Heterogeneous workloads](https://www.researchgate.net/publication/273568664_Load_Balancing_of_Heterogeneous_Workloads_in_Memcached_Clusters).
+
+---
+Peer Review Contributions by: [Collins Ayuya](https://www.section.io/engineering-education/authors/collins-ayuya/)
