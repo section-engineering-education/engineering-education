@@ -149,7 +149,7 @@ Take note of how the values across the columns are distributed in a wide range. 
 
 ![df.head(10)](/engineering-education/effects-of-standard-scaling-on-a-machine-learning-model/df-head.JPG)
 ####  (ii) Implementing standard scaling
-In order to scale properly, we will first collect the names of all the numerical columns in a list then use the list to fit  the standard scaler.
+To scale properly, we will first collect the names of all the numerical columns in a list then use the list to fit  the standard scaler.
 ```python 
 col =[]
 for col_name in df1.columns:
