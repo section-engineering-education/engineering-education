@@ -6,7 +6,7 @@ url: /deserialization-in-csharp/
 title: Deserialization in C#
 description: This tutorial will help readers understand how to deserialize different objects in C#. This process helps to convert data to a human-readable format.
 author: stanley-kuria
-date: 2021-12-15T00:00:00-09:33
+date: 2021-12-17T00:00:00-07:00
 topics: [Languages]
 excerpt_separator: <!--more-->
 images:
@@ -14,21 +14,24 @@ images:
   - url: /engineering-education/deserialization-in-csharp/hero.png
     alt: Deserialization in C# Hero Image
 ---
-Serialization in C# is the process of bringing an object into a structure that is composed in memory.
+Serialization in C# is the process of bringing an object into a structure that is composed in memory. Deserialization is the opposite of serialization. It involves retrieving the serialized object so that it can be stored in memory.
 <!--more-->
-Therefore, deserialization is the opposite of serialization. It involves retrieving the serialized object so that it can be stored in memory. 
-
 In other words, it re-establishes the state of the object by setting `properties`, `fields`, and so forth.
 
 ### Prerequisites
-To follow along you need to:
+To follow along, you need to:
 - Have [visual studio 2019](https://visualstudio.microsoft.com/vs/) IDE installed in your machine.
 - Be familiar with C# and .NET programming.
 
 ### Table of content
+- [Prerequisites](#prerequisites)
+- [Table of content](#table-of-content)
 - [Deserialization syntax](#deserialization-syntax)
-- [How deserialization works in C#.](#how-deserialization-works-in-C#)
-- [Types of deserialization in C#.](#types-of-deserialization-in-C#)
+- [How deserialization works in C](#how-deserialization-works-in-c)
+- [Deserialization examples in C](#deserialization-examples-in-c)
+  - [Xml serialization and Deserialization](#xml-serialization-and-deserialization)
+  - [Binary serialization and deserialization](#binary-serialization-and-deserialization)
+  - [JSON serialization and deserialization](#json-serialization-and-deserialization)
 - [Conclusion](#conclusion)
 
 ### Deserialization syntax
@@ -45,7 +48,7 @@ Deserialization in C# depends on several libraries as discussed below:
 
 Firstly, you import `System.IO namespace` which is then used to open the file containing data.
 
-Secondly, import `System.Xml.Serialization` when working with `XmlSerialize class`. When working with `binaryformatter class`, use `System.Runtime.Serialization.Formatters.Binary`. 
+Secondly, import `System.Xml.Serialization` when working with `XmlSerialize class`. When working with `binaryformatter class`, use `System.Runtime.Serialization.Formatters.Binary`.
 
 The JsonSerialize class requires one to import the `NewtonSoft.Json` library.
 
@@ -56,7 +59,7 @@ In C#, an object can be deserialized in three major ways:
 
 ### Deserialization examples in C#
 #### Xml serialization and Deserialization
-Serialization and deserialization of data using `XML` require the `System.Xml.Serialize` namespace. 
+Serialization and deserialization of data using `XML` require the `System.Xml.Serialize` namespace.
 
 The following code shows how an object is serialized and deserialized using XmlSerialize class:
 
@@ -99,26 +102,24 @@ namespace ConsoleApp1
 }
 ```
 
-In the above program, we serialized and deserialized an object using the XML serialize class. 
+In the program above, we serialized and deserialized an object using the XML serialize class.
 
-We first created the `string Name = "Teresia Wambui"` object and specified a file to store it,; `Stream stream1 = new FileStream(@"D:Example.txt", FileMode.Create)`. 
+We first created the `string Name = "Teresia Wambui"` object and specified a file to store it; `Stream stream1 = new FileStream(@"D:Example.txt", FileMode.Create)`.
 
-Next, we created the XML serializer object, `XmlSerializer xmlSerializer = new XmlSerializer()` and then serialized the object by invoking the `xmlSerializer.Serialize(stream1, Name)` function.
+Next, we created the XML serializer object `XmlSerializer xmlSerializer = new XmlSerializer()`, and then serialized the object by invoking the `xmlSerializer.Serialize(stream1, Name)` function.
 
-During deserializing, we read the contents of the file using `Stream stream1 = new FileStream(@"D:Example.txt", FileMode.Read)`. 
+During deserialization, we read the contents of the file using `Stream stream1 = new FileStream(@"D:Example.txt", FileMode.Read)`.
 
-Then we created a new object by initializing an empty string `string content = ""`. The `content` variable will store our deserialized data. 
+Then we created a new object by initializing an empty string `string content = ""`. The `content` variable will store our deserialized data.
 
 Finally, we used `content = (string)xmlSerializer.Deserialize(stream1)` to deserialize data in the file. The deserialized data was displayed using `Console.WriteLine(content)`.
 
-#### Binary serialization and Deserialization
-The method involved in converting an object to binary format is called binary serialization. 
+#### Binary serialization and deserialization
+The method involved in converting an object to binary format is called binary serialization. Therefore, binary deserialization involves changing a binary object back to a human-readable format.
 
-Therefore, binary deserialization involves changing a binary object back to a human-readable format.
+To perform binary serialization in C#. We use the `System.Runtime.Serialization.Formatters.Binary` namespace.
 
-To perform binary serialization in C#. We use the `System.Runtime.Serialization.Formatters.Binary namespace`. 
-
-The following code showcases serialization and deserialization of binary objects. This process is dependent on the `binary formatter` class.
+The following code showcases serialization and deserialization of binary objects. This process is dependent on the `binary formatter` class:
 
 ```c#
 using System;
@@ -158,24 +159,25 @@ namespace ConsoleApp1
   }
 }
 ```
-In the above code, we have serialized and deserialized an object using the binary formatter class. 
 
-During serialization, We first created the `string Name = "Teresia Wambui"` object. 
+In the code above, we have serialized and deserialized an object using the binary formatter class.
 
-Next, we created a file to store the object using `Stream stream2 = new FileStream(@"C:Example.txt", FileMode.Create)`. 
+During serialization, We first created the `string Name = "Teresia Wambui"` object.
+
+Next, we created a file to store the object using `Stream stream2 = new FileStream(@"C:Example.txt", FileMode.Create)`.
 
 Finally, we serialized the object by invoking the `format.Serialize(stream2, Name)` function and passing in the required parameters.
 
-After serialization, we proceeded to deserialize the object. We used `Stream stream2 = new FileStream(@"C:Example.txt", FileMode.Read)` to read the contents of the file. 
+After serialization, we proceeded to deserialize the object. We used `Stream stream2 = new FileStream(@"C:Example.txt", FileMode.Read)` to read the contents of the file.
 
-Next, data was deserialized using the `(string)format.Deserialize(stream2)` method. The results were stored in the `content` variable. The deserialized object was displayed using `Console.WriteLine(content)`.
+Data was then deserialized using the `(string)format.Deserialize(stream2)` method. The results were stored in the `content` variable. The deserialized object was displayed using `Console.WriteLine(content)`.
 
 #### JSON serialization and deserialization
-JSON serialization is the process of converting an object into JSON format. 
+JSON serialization is the process of converting an object into JSON format.
 
 JSON deserialization, on the other hand, involves converting the JSON file back to an object.
 
-To achieve JSON serialization and deserialization, we use the `NewtonSoft.Json namespace`. 
+To achieve JSON serialization and deserialization, we use the `NewtonSoft.Json namespace`.
 
 The following code shows how an object is serialized and deserialized in C# using `Json serialize` class:
 
@@ -220,24 +222,24 @@ namespace ConsoleApp1
 }
 ```
 
-In the code above, we have serialized and deserialized data using a JSON class serializer. 
+In the code above, we have serialized and deserialized data using a JSON class serializer.
 
-We initialized an object using `string Name = "Teresia Wambui"` and then created a file to store the data by calling `Stream stream3 = new FileStream(@"C:Example.txt", FileMode.Create)`. 
+We initialized an object using `string Name = "Teresia Wambui"` and then created a file to store the data by calling `Stream stream3 = new FileStream(@"C:Example.txt", FileMode.Create)`.
 
 Next, we used `JsonSerializer jsonSerializer = new JsonSerializer();` to create an object for `jsonSerializer`. We then invoked `jsonSerializer.Serialize(stream3, Name)` to serialize the object.
 
 During deserialization, we accessed the contents of the file using `Stream stream3 = new FileStream(@"C:Example.txt", FileMode.Read)`.
 
-We then created a new object (`content`) and initialized it to an empty string, `string content = " "`. 
+We then created a new object (`content`) and initialized it to an empty string, `string content = " "`.
 
 Finally, we deserialized the object by invoking `content = (string)Json.Deserialize(stream1)` and then displayed the results using `Console.WriteLine(content)`.
 
 ### Conclusion
-In this article, you have learned deserialization and serialization in C#. We have also discussed the three major techniques of deserializing an object; XML deserialization, binary deserialization, and JSON deserialization. 
+In this article, you have learned serialization and deserialization in C#. We have also discussed the three major techniques of deserializing an object; XML deserialization, binary deserialization, and JSON deserialization.
 
-Note that deserialization is performed after serialization. 
+Note that deserialization is performed after serialization.
 
-You can, therefore, use this knowledge to craft other quality C# applications.
+You can therefore use this knowledge to craft other quality C# applications.
 
 Happy coding!
 
