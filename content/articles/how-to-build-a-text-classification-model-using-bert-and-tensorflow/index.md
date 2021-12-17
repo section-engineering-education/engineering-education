@@ -1,5 +1,22 @@
+---
+layout: engineering-education
+status: publish
+published: true
+url: /how-to-build-a-text-classification-model-using-bert-and-tensorflow/
+title: How to build a Text Classification model Using BERT and Tensorflow
+description: This tutorial aims to build a Text Classification model Using BERT and Tensorflow.
+author: bravin-wasike
+date: 2021-12-17T00:00:00-17:00
+topics: [Machine Learning]
+excerpt_separator: <!--more-->
+images:
 
-Text classification is a subset of machine learning that classifies text into predefined categories. Text classification is one of the impotant tasks in natural language processing(NLP). Some of the examples of text classification are [intent detection](/engineering-education/intent-classification-with-rasa-and-spacy/), [sentiment analysis](/engineering-education/sentiment-analysis-with-spacy-and-scikit-learn/), [topic labelling](https://towardsdatascience.com/nlp-extracting-the-main-topics-from-your-dataset-using-lda-in-minutes-21486f5aa925) and [spam detection.](https://towardsdatascience.com/spam-detection-in-emails-de0398ea3b48)
+  - url: /engineering-education/how-to-build-a-text-classification-model-using-bert-and-tensorflow/hero.jpg
+    alt: Text Classification model Using BERT and Tensorflow Hero Image
+---
+Text classification is a subset of machine learning that classifies text into predefined categories. Text classification is one of the impotant tasks in natural language processing(NLP). 
+<!--more-->
+Some of the examples of text classification are [intent detection](/engineering-education/intent-classification-with-rasa-and-spacy/), [sentiment analysis](/engineering-education/sentiment-analysis-with-spacy-and-scikit-learn/), [topic labelling](https://towardsdatascience.com/nlp-extracting-the-main-topics-from-your-dataset-using-lda-in-minutes-21486f5aa925) and [spam detection.](https://towardsdatascience.com/spam-detection-in-emails-de0398ea3b48)
 
 In this tutorial, we will build a spam detection model. The spam detection model will classify emails as spam or not spam. This is used to filter unwanted and unsolicited emails.
 
