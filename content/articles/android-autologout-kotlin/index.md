@@ -36,7 +36,7 @@ We first count the number of clicks that will be done at every gesture detected 
 
 Second, the user's active status will be set to true.
 
-Lastly, we start tracking the user's active status. There is a catch here. To avoid the dialog being displayed many times, we will only call the handler to the dialog display method once. We achieve that by calling this method when clicks are 1.
+Lastly, we start tracking the user's active status. There is a catch here. To avoid the dialog being displayed many times, we will only call the handler to the dialog display method. We achieve that by calling this method when clicks are 1.
 
 We earlier stated that we would display the dialog after 15 seconds. We split this into 10 seconds and 5 seconds. Once we start detecting inactivity after a user interacts with the app, wait for 10 seconds. After that, deliberately set the active status to false, wait again for 5 seconds, and recheck the active status.
 
@@ -124,7 +124,7 @@ The first thing we note is that our Activity class extends the interface(`Gestur
 
 In all the overridden methods, you will notice two similarities - they take in a MotionEvent object and return true. The MotionEvent is used to report movement events happening in the Activity. We return `true` to show that the detection of this event. For the `onFling()` and the `onScroll()` methods, we pass in extra parameters used to detect the position where the two gestures were performed. 
 
-They may be necessary when creating products like games and others. We will not use them for our article. For more information on the GestureDetector class, follow through this [link](https://developer.android.com/training/gestures/detector#kotlin) pointing to the official documentation.
+They may be necessary when creating products like games and others. We will not use them for our article. For more information on the GestureDetector class, follow this [link](https://developer.android.com/training/gestures/detector#kotlin) pointing to the official documentation.
 
 ### The Handler class
 It is used when we want to perform a particular action like calling a method, opening an activity, sending an SMS after a specific time has elapsed. Take this snippet as an example:
@@ -152,12 +152,10 @@ It has three parameters:
 Read more about the Handler class [here](https://developer.android.com/reference/android/os/Handler#createAsync(android.os.Looper,%20android.os.Handler.Callback)).
 
 ### Creating the app
-
 Now that we have looked at the theory and what we will be using in our article, we will then go ahead to create our application.
 Choose the *Empty Activity* option, set your preferred name(I called mine **AutoLogout**), choose the language as Kotlin, and then Finish.
 
 #### Modifying the MainActivity.kt file
-
 Copy and paste the following code to your *MainActivity.kt* file after your package name declaration.
 
 ```kotlin
@@ -408,9 +406,9 @@ This is the XML code. It contains a TextView displaying "*Hello there. You will 
 </androidx.constraintlayout.widget.ConstraintLayout>
 ```
 
-> You can find the apk file [here](https://drive.google.com/file/d/1HzbdZfBlbM2cubW230K7zcFoh47HVgxD/view?usp=sharing). The whole project is open-sourced too. Make contributions to it via this [GitHub](https://github.com/vinstex/android-autologout) link.
+You can find the sample APK to this project [here](https://drive.google.com/file/d/1HzbdZfBlbM2cubW230K7zcFoh47HVgxD/view?usp=sharing). The whole project is open-sourced too. Make contributions to it via this [GitHub](https://github.com/vinstex/android-autologout) link.
 
-Run the app and do some touches, scrolls, and wait 15 seconds to check the feature. Also, do the same before the seconds elapse and check. Change the numbers and check too.
+Run the app, do some touches, scrolls, and wait 15 seconds to checkout the feature. Also, do the same before the seconds elapse and check. Change the numbers and check too.
 
 ### Further practice
 Now, this was for one screen. What if you wanted to implement it on many screens? Would you rewrite the code in each Activity? Definitely, no. So get some coffee and write an inheritable(extendable) class you can call on any screen. You can also make the function open another activity instead of the dialog. Also, you can implement a counter for the last 5 seconds and then later do a particular action like opening a Login screen.
