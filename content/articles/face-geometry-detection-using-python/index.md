@@ -1,8 +1,26 @@
-MediaPipe is a powerful framework for building cross-platform multi-modal applied ML pipelines. We will leverage MediaPipe's [Face Mesh](https://google.github.io/mediapipe/solutions/face_mesh) model to detect landmarks on faces and apply some styling to it. 
+---
+layout: engineering-education
+status: publish
+published: true
+url: /face-geometry-detection-using-python/
+title: Face Geometry Detection using Python
+description: This tutorial will leverage MediaPipe's Face Mesh model to detect landmarks on faces and apply some styling to it.
+author: esther-awuor
+date: 2021-12-17T00:00:00-21:00
+topics: [Machine Learning]
+excerpt_separator: <!--more-->
+images:
+
+  - url: /engineering-education/face-geometry-detection-using-python/hero.png
+    alt: Face Geometry Detection Example Image 
+---
+We will leverage MediaPipe's [Face Mesh](https://google.github.io/mediapipe/solutions/face_mesh) model to detect landmarks on faces and apply some styling to it. 
+<!--more-->
 
 ### Prerequisites
 - To follow along with this tutorial, you'll need to have either Jupyter Notebook or Google Colab.
 > Google Colab has been used for this experiment.
+
 ### Table of contents
 - [The Face Mesh model](#the-face-mesh-model)
 - [Building the Face Mesh model](#building-the-face-mesh-model)
@@ -10,16 +28,15 @@ MediaPipe is a powerful framework for building cross-platform multi-modal applie
  - [Loading the image](#loading-the-image)
  - [Drawing the face mesh annotations on the image](#drawing-the-face-mesh-annotations-on-the-image)
 - [Summary](#summary)
-- [Further reading](#further-reading)
 
 ### The Face Mesh model
 [MediaPipe](https://google.github.io/mediapipe/) is a powerful open-source framework developed by Google. It is used for building cross-platform multi-modal applied ML pipelines. One of the models present in this framework is the Face Mesh model. This model provides face geometry solutions enabling the detection of 468 3D landmarks on human faces. 
 
-The Face Mesh model uses machine learning to infer the 3D surface geometry on human faces. The utilization of the facial surface geometry is what has helped apply facial effects in Augmented Reality (AR) applications.  
+The Face Mesh model uses machine learning to infer the 3D surface geometry on human faces. Utilizing the facial surface geometry has helped apply facial effects in AR applications.  
 
 Ever wondered how you're able to wear fake sunglasses/hats on Snapchat? It's models like this that enable such face-based AR effects.
 
-You can read more about the face landmark model in this research [paper](https://arxiv.org/pdf/1907.06724.pdf).
+To understand the face landmark model better, please read this research [paper](https://arxiv.org/pdf/1907.06724.pdf).
 
 ### Building the Face Mesh model
 
@@ -31,15 +48,15 @@ You can read more about the face landmark model in this research [paper](https:/
 We've imported the OpenCV and MediaPipe libraries. OpenCV helps us access our image while MediaPipe allows us to import and use the Face Mesh model in our notebook. After installing the two libraries, we need to import them into our notebook. 
 
 ```python
-import cv2
-import mediapipe as mp
+import cv2 #default OpenCV import code
+import mediapipe as mp #default mediapipe import code
 ```
 Let's set up MediaPipe. Mediapipe is a big library that has a lot of functionalities. We only need to select the ones that we need. We need to import the drawing utility to help draw all the 468 landmarks on the face. We also need to import the styling utility to help us add styles onto the face. Finally, we will import the main face mesh model into our notebook. 
 
 ```python
-mp_drawing = mp.solutions.drawing_utils
-mp_drawing_styles = mp.solutions.drawing_styles
-mp_face_mesh = mp.solutions.face_mesh
+mp_drawing = mp.solutions.drawing_utils #helps draw all the 468 landmarks
+mp_drawing_styles = mp.solutions.drawing_styles #helps us add styles onto the face
+mp_face_mesh = mp.solutions.face_mesh #main model import
 ```
 #### Loading the image
 
@@ -56,19 +73,19 @@ Output:
 #### Drawing the face mesh annotations on the image
 
 ```python
-drawing_spec = mp_drawing.DrawingSpec(thickness=1, circle_radius=1)
-with mp_face_mesh.FaceMesh(
- static_image_mode=True,
- max_num_faces=1,
- refine_landmarks=True,
- min_detection_confidence=0.5) as face_mesh:
+drawing_spec = mp_drawing.DrawingSpec(thickness=2, circle_radius=2)
+```
+You can adjust the thickness and circle radius to any value you wish.
+
+```python
+with mp_face_mesh.FaceMesh(static_image_mode=True, max_num_faces=3, refine_landmarks=True, min_detection_confidence=0.99) as face_mesh:
     image = cv2.imread("avatar.png")
 ```
-By default, the maximum number of faces to be detected is set to only one face. To detect more than one face in an image or video, you'll need to change the `max_num_faces` parameter to your required number.
+The maximum number of faces to be detected is set to detect only one face by default. To detect more than one face in an image or video, you'll need to change the `max_num_faces` parameter to your required number. We've set our to three.
 
-The `min_detection_confidence` indicates the minimum confidence value needed for the detection to be considered successful. The allowed range is between ([0.0, 1.0]). By default, this value is set to 0.5. Any detection values below 0.5 will not be considered successful. If above 0.5, it will be detected and applied to the image.  
+For the detection to be considered a success, the `min_detection_confidence` is used to indicates the confidence value needed. The allowed range is between ([0.0, 1.0]). By default, this value is set to 0.5. Any detection values below 0.99 will not be considered successful. If above 0.99, it will be detected and applied to the image.  
 
-In this next step, we'll need to convert the BGR image to RGB before processing. This is because OpenCV accepts the image format `BGR` by default. But MediaPipe only works with `RGB` images. So using the `cv2.cvtColor()` function, we convert the image to RGB format.
+In this next step, we'll need to convert the image color format from BGR to RGB. This process ought to be done before the image processing has began. This is because OpenCV accepts the image format `BGR` by default. But MediaPipe only works with `RGB` images. So using the `cv2.cvtColor()` function, we convert the image to RGB format.
 
 ```python
     results = face_mesh.process(cv2.cvtColor(image, cv2.COLOR_BGR2RGB))
@@ -79,29 +96,33 @@ Let's now print and draw the face mesh landmarks on the image.
 ```python
     annotated_image = image.copy()
  for face_landmarks in results.multi_face_landmarks:
- print('face_landmarks:', face_landmarks)
+ print('facial_landmarks:', face_landmarks)
       mp_drawing.draw_landmarks(
  image=annotated_image,
  landmark_list=face_landmarks,
  connections=mp_face_mesh.FACEMESH_TESSELATION,
  landmark_drawing_spec=None,
  connection_drawing_spec=mp_drawing_styles
+ ```
+ The code below applies face mesh's tesselation style on to the image. 
+ 
+ ```python
           .get_default_face_mesh_tesselation_style())
-      mp_drawing.draw_landmarks(
- image=annotated_image,
- landmark_list=face_landmarks,
- connections=mp_face_mesh.FACEMESH_CONTOURS,
- landmark_drawing_spec=None,
- connection_drawing_spec=mp_drawing_styles
+      mp_drawing.draw_landmarks(image=annotated_image, landmark_list=face_landmarks, connections=mp_face_mesh.FACEMESH_CONTOURS,
+      landmark_drawing_spec=None,
+      connection_drawing_spec=mp_drawing_styles
+ ```
+ Face mesh countour styles are applied to the image in the code below:
+ 
+ ```python
           .get_default_face_mesh_contours_style())
-      mp_drawing.draw_landmarks(
- image=annotated_image,
+      mp_drawing.draw_landmarks(image=annotated_image,
  landmark_list=face_landmarks,
  connections=mp_face_mesh.FACEMESH_IRISES,
  landmark_drawing_spec=None,
  connection_drawing_spec=mp_drawing_styles
           .get_default_face_mesh_iris_connections_style())
-      cv2.imwrite('/tmp/annotated_image' + str(idx) + '.png', annotated_image)
+      cv2.imwrite('/tmp/annotated_image' + '.png', annotated_image)
 ```
 Output:
 
@@ -127,9 +148,7 @@ landmark {
 .
 .
 ```
-From these results, we can decode that each landmark is composed of `x`, `y`, and `z` coordinates. 
-> Remember, the model detects 468 3D landmarks on the face geometry. 
-The `x` and `y` coordinates are normalized to values between [0.0, 1.0]. The co-ordinate `z` represents the landmark depth. The center of the head represents the depth's origin. Besides, the smallest `z` value represents how close the landmark is to the camera.
+From these results, we can decode that each landmark is comprised of three axes: the `x`, `y`, and `z` coordinates. Remember, the model detects 468 3D landmarks on the face geometry. These coordinates are normalized to values ranging between 0.0 and 1.0. The depth of the landmark is represented by the co-ordinate `z`. The depth's origin is represented by the depth's origin. Besides, the smallest `z` value represents how close the landmark is to the camera.
 
 Finally, we use OpenCV's `imshow()` method to see how these landmarks show on the image.
 
@@ -146,12 +165,9 @@ With only a few lines of code, we've successfully drawn the face mesh annotation
 You can find the code for this tutorial [here](https://colab.research.google.com/drive/18QeqDDfDM5k7avw-3LLQ5oj806c63NT3?usp=sharing).
 
 ### Summary
-The Face Mesh model can be useful in real-time face-based augmented reality (AR) effects. This will help you do more with what you see by overlaying digital content and information on top of the physical world. For example, once the model has drawn landmarks on the face, you could overlay sunglasses on an individual's eyes or make the individual wear some nose ring, etc. The use cases are limitless. 
+The Face Mesh model can be useful in real-time face-based augmented reality (AR) effects. For example, once the model has drawn landmarks on the face, you could overlay sunglasses on an individual's eyes or make the individual wear some nose ring, etc. The use cases are limitless. 
 
 Happy coding!
 
-#### Further reading
-- [MediaPipe](https://google.github.io/mediapipe/)
-- [Real-Time AR Self-Expression with Machine Learning](https://ai.googleblog.com/2019/03/real-time-ar-self-expression-with.html)
-- [Face and hand tracking in the browser with MediaPipe and TensorFlow.js](https://blog.tensorflow.org/2020/03/face-and-hand-tracking-in-browser-with-mediapipe-and-tensorflowjs.html)
-- [Real-time Facial Surface Geometry from Monocular Video on Mobile GPUs](https://arxiv.org/pdf/1907.06724.pdf)
+---
+Peer Review Contributions by: [Collins Ayuya](https://www.section.io/engineering-education/authors/collins-ayuya/)
