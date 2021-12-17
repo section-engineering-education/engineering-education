@@ -278,7 +278,7 @@ Since we are using the functional approach to build the model, we add the input 
 
 - `Dense` layer
 
-It only has one neuron. We also initialize the activation function as `sigmoid`. `sigmoid` is used when we have output values that between `0` and `1`. In our case when making predictions, the prediction probability will lie between `0` and `1`. That's why is best suited.
+It only has one neuron. We also initialize the activation function as `sigmoid`. `sigmoid` is used when we have output values that between `0` and `1`. In our case, when making predictions, the prediction probability will lie between `0` and `1`. That's why it is best suited.
 
 We also name the layer as `output` because this is our output layer.
 
