@@ -12,11 +12,11 @@ Docker packages applications into images and stores them as containers with thei
 ### Table of Contents
 - [Prerequisites](#prerequisites)
 - [Objectives](#objectives)
-- [Development and Operations Overview](#define-the-stages-of-devOps-pipelines)
-- [Clone a Flask Application](#clone-a-flask-application)
-- [CI and CD Pipelines Architecture](#ci-cd-pipelines-architecture)
+- [Development and operations overview](#development-and-operations-overview)
+- [Cloning a Flask Application](#cloning-a-flask-application)
+- [CI and CD Pipelines Architecture](#ci-and-cd-pipelines-architecture)
 - [Continuous Integration and deployment with Github Actions](#continuous-integration-and-deployment-with-github-actions)
-- [Docker Images and Containers Basics](#docker-images-and-container-basics)
+- [Docker Images and Containers Basics](#docker-images-and-containers-basics)
 - [Conclusion](#conclusion)
 
 ### Prerequisites
@@ -42,31 +42,35 @@ There are different stages involved in building pipelines from development to pr
 
 The picture below describes all the pre-defined.
 
-Every industry begins the development of application with the following set of practices:
--  `Plan`
+
+![DevOps Stages](/continuous-integration-and-deployment-of-pipelines-with-flask-docker-and-github-actions/stages.png)
+
+
+Every industry begins the development of applications with the following set of practices:
+-  Plan:
 Without a proper plan, no one can successfully develop an application. An adequate plan must be put in place before embarking on the journey of development. This is the stage where the justifications shall be given to tech stacks and other things required.
  
--  `Code`
+-  Code:
 Developers embark on the coding part after the requirements have been set in stage one. They will work on the application by collaborating through a single source of a repository. 
 
--  `Build`
+-  Build:
 In this stage, the application developed shall be packaged and built into images using their choice of a package manager like `Docker`. The application will also be shipped into containers with the configurations file required for its start-up.
 
-- `Test`
+- Test:
 A Series of tests will run through the application for better performance. Tests like `unit`, `integrating` etc will be conducted during development.
 
 Other tests can be accomplished by the testers and quality assurance engineers. Several tools are capable of doing this but the most popular is `Selenium`. Other stages are done by the operation team and they are as follows;
 
--  `Release`
+-  Release:
 This is where the stage of continuous integration begins. This stage will be repeated countless times whenever there is any update in the application. The popular tools used for this in the industry are `Jenkins`, `GitHub Actions`, `Team City`, and more. 
 
--  `Deploy`
+-  Deploy:
 An application that passed the continuous integration stage will proceed to the deployment stage. Staging will be the first thing here before deployment using tools like `Ansible`, `Puppet` or `Chef`. 
 
--  `Operate`
+-  Operate:
 The deployment will begin fully in this stage using tools like `terraform` etc. The refined application will then be deployed and its operations will be monitored. 
 
--  `Monitor`
+-  Monitor:
 The deployed application will be monitored in terms of performance. Logs will be generated while it's been monitored.
 
 Above are the practices that applications undergo in the industry. A skilled person in terms of all these is said to be a `DevOps Engineer`.
@@ -101,7 +105,7 @@ Then the continuous integration server is going to trigger the automated build t
 If otherwise, the pushed codes fail to build, another notification will be sent. So that the developer can fix the bugs and then re-commit the code. The continuous integration tool will then start building the code again. This is the reason why the continuous integration and deployment stages are still considered a `waterfall` model.
 
 
-### Continuous Integration with Github Actions
+### Continuous Integration and deployment with Github Actions
 Github Actions automate the build process whenever there is a push to the code repository. This helps to reduce the problem of a manual building of the jobs and always notify if the build is not complete. This
 
 This follows a workflow using a different language package file. In this tutorial, we cloned a Python application built with the Flask framework. Therefore, the workflow that we are going to define will be for the Python package.
