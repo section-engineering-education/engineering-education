@@ -220,7 +220,7 @@ To do this, follow the steps below:
 1. Create an account with [Heroku](https://www.heroku.com/) if you don't have one already then [install the Heroku-CLI](https://devcenter.heroku.com/articles/heroku-cli) on your local machine. 
 2. Create a `requirements.txt` file, this is where we will put a list of all the dependencies required to run the project successfully. In the `requirements.txt` file you just created, paste the statement below.
 
-```
+```txt
 selenium==4.1.0
 beautifulsoup4==4.10.0
 webdriver-manager==3.5.2
@@ -230,7 +230,7 @@ bs4==0.0.1
 
 Then create another file `runtime.txt` where the version of your Python will be. In the file paste the statement below.
 
-```
+```txt
 python-3.8.10
 ```
 
