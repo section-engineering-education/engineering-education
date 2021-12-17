@@ -2,9 +2,9 @@
 
 **Introduction**
 
-Email.js is a javascript library that helps send emails using different client-side technologies. It is completely serverless and easy to set up. It is a library that supports multiple email services like Gmail, Fastmail, Outlook, Yahoo, and many others depending on which supported email service you'd like to use.
+Emailjs is a javascript library that helps send emails using different client-side technologies. It is completely serverless and easy to set up. It is a library that supports multiple email services like Gmail, Fastmail, Outlook, Yahoo, and many others depending on which supported email service you'd like to use.
 
-The Email.js library becomes very handy when it comes to receiving and sending emails. Let's say you have a portfolio, and in there you have a contact form where your potential employer can connect with you;  with email.js all you have to do is sign up, choose a supported email service, connect it to the email you want to use to receive emails, create an email template and use it to trigger an email. So any message sent through that contact form will be sent right into your mailbox. There's absolutely no backend code needed.
+The Emailjs library becomes very handy when it comes to receiving and sending emails. Let's say you have a portfolio, and in there you have a contact form where your potential employer can connect with you;  with email.js all you have to do is sign up, choose a supported email service, connect it to the email you want to use to receive emails, create an email template and use it to trigger an email. So any message sent through that contact form will be sent right into your mailbox. There's absolutely no backend code needed.
 
 In this article, I will be walking you through the steps of:
 
@@ -25,39 +25,39 @@ To take full advantage of this article, you need to have the following:
 
 ## **Signing Up**
 
-To integrate the email.js service in your application it is required that you sign up for a free account. Head over to the [email.js](https://www.emailjs.com/) official website to sign up for a free account.
+To integrate the email.js service in your application it is required that you sign up for a free account. Head over to the [emailjs](https://www.emailjs.com/) official website to sign up for a free account.
 
 Once you have successfully created your account you will be having this screen below on your browser:
 
-![email1.png](/engineering-education/how-to-send-emails-using-email.js-in-vue3/email1.png)
+![email1.png](/engineering-education/how-to-send-emails-using-emailjs-in-vue3/email1.png)
 
 ## **Choosing a supported email service**
 
 Once you have successfully created your account click on the "Add New Service" button to choose a supported email service. Like this:
 
-![email2.png](/engineering-education/how-to-send-emails-using-email.js-in-vue3/email2.png)
+![email2.png](/engineering-education/how-to-send-emails-using-emailjs-in-vue3/email2.png)
 
 You will prompted with the types of email services available. In this article we will be using Gmail. Choose Gmail. Like this:
 
-![email3.png](/engineering-education/how-to-send-emails-using-email.js-in-vue3/email3.png)
+![email3.png](/engineering-education/how-to-send-emails-using-emailjs-in-vue3/email3.png)
 
 The email service is totally up to you and the process still remains the same. Once you click on Gmail, you'll be having the screen below :
 
-![email4.png](/engineering-education/how-to-send-emails-using-email.js-in-vue3/email4.png)
+![email4.png](/engineering-education/how-to-send-emails-using-emailjs-in-vue3/email4.png)
 
 ## **Connecting An Account to the email service**
 
 The next step is to connect your email account. This email account will be the email account you want to receive and send emails. Click on "Connect Account" to connect an email account.
 
-![email5.png](/engineering-education/how-to-send-emails-using-email.js-in-vue3/email5.png)
+![email5.png](/engineering-education/how-to-send-emails-using-emailjs-in-vue3/email5.png)
 
 At this point you should be prompted to choose an email account associated with Gmail since that is the email service we are trying to incorporate. Choose an email account you'd like to connect and you should have the following screen:
 
-![email6.png](/engineering-education/how-to-send-emails-using-email.js-in-vue3/email6.png)
+![email6.png](/engineering-education/how-to-send-emails-using-emailjs-in-vue3/email6.png)
 
 Click on the "Continue" button. After that you will be taken to the screen before that to create a service. Like this:
 
-![email7.png](/engineering-education/how-to-send-emails-using-email.js-in-vue3/email7.png)
+![email7.png](/engineering-education/how-to-send-emails-using-emailjs-in-vue3/email7.png)
 
 After creating the Gmail service, you should have a test email sent to the connected email account which indicates that the email account is successfully connected to the Gmail email service.
 
@@ -65,27 +65,27 @@ After creating the Gmail service, you should have a test email sent to the conne
 
 On the side bar click on the "Email Templates" tab and then click on the "Create New Template" button. Like this:
 
-![email8.png](/engineering-education/how-to-send-emails-using-email.js-in-vue3/email8.png)
+![email8.png](/engineering-education/how-to-send-emails-using-emailjs-in-vue3/email8.png)
 
 With that done, you should have this screen:
 
-![email9.png](/engineering-education/how-to-send-emails-using-email.js-in-vue3/email9.png)
+![email9.png](/engineering-education/how-to-send-emails-using-emailjs-in-vue3/email9.png)
 
 The email template style is up to you. You can add more fields if you want to, you can change the font, the size of the font and other things. The template customization totally up to you. For the purpose of this article, our own template will look like this:
 
-![email10.png](/engineering-education/how-to-send-emails-using-email.js-in-vue3/email10.png)
+![email10.png](/engineering-education/how-to-send-emails-using-emailjs-in-vue3/email10.png)
 
 So, we go ahead to save and test out our template like so:
 
-![email11.png](/engineering-education/how-to-send-emails-using-email.js-in-vue3/email11.png)
+![email11.png](/engineering-education/how-to-send-emails-using-emailjs-in-vue3/email11.png)
 
 After clicking on the "Test it" button, you will have this screen:
 
-![email12.png](/engineering-education/how-to-send-emails-using-email.js-in-vue3/email12.png)
+![email12.png](/engineering-education/how-to-send-emails-using-emailjs-in-vue3/email12.png)
 
 Now fill up the fields and click on the "Send Test Email" button. If you have a 200 status code, then we are good to go. Like this:
 
-![email13.png](/engineering-education/how-to-send-emails-using-email.js-in-vue3/email13.png)
+![email13.png](/engineering-education/how-to-send-emails-using-emailjs-in-vue3/email13.png)
 
  
 
@@ -101,19 +101,19 @@ To get your SERVICE_ID, go to the side bar and click on the "Email Services" tab
 
  
 
-![email14.png](/engineering-education/how-to-send-emails-using-email.js-in-vue3/email14.png)
+![email14.png](/engineering-education/how-to-send-emails-using-emailjs-in-vue3/email14.png)
 
 For your TEMPLATE_ID, on the sidebar, click on the "Email Templates" tab. Like this:
 
-![email15.png](/engineering-education/how-to-send-emails-using-email.js-in-vue3/email15.png)
+![email15.png](/engineering-education/how-to-send-emails-using-emailjs-in-vue3/email15.png)
 
 Finally, for your USER_ID, on the side bar, click on the "Integration" tab and scroll down to the end of the page. Like this:
 
-![email16.png](/engineering-education/how-to-send-emails-using-email.js-in-vue3/email16.png)
+![email16.png](/engineering-education/how-to-send-emails-using-emailjs-in-vue3/email16.png)
 
 With that done, we can go right into coding.
 
-## **Setting email.js up on Vue**
+## **Setting emailjs up on Vue**
 
 Now that we have our email service ready, we'll go ahead to integrate it in our vue application.
 
@@ -468,7 +468,7 @@ And then, the `Email.vue` component should look like this:
 
 You should have this as an output on your browser. With that, we have our scaffolding set.
 
-![output.png](/engineering-education/how-to-send-emails-using-email.js-in-vue3/output.png)
+![output.png](/engineering-education/how-to-send-emails-using-emailjs-in-vue3/output.png)
 
 The next thing we have to do is install the emailjs library and import it into our `Email.vue` component. Run the code below to install it:
 
