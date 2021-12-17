@@ -16,7 +16,6 @@ images:
 --- 
 
 A currency converter is an application that displays the equivalent value represented by the different currencies in the world. This article will give the reader a step-by-step guide on building a currency converting application with React and styling its components with Material UI. 
-
 <!--more-->
 
 ### Prerequisites for this article
@@ -57,7 +56,7 @@ Now, you can find the Material UI in your app’s `package.json` file like in th
 
 To use any of the Material UI components in your application, head to the [MUI official docs](https://mui.com/getting-started) components page. Then, you can utilize any of the components as illustrated in the documentation. 
 
-It is ideal to refer to each component’s demo page to see how they should be imported. Below is a code sample that will show you all you need to use MUI in your application:
+It's ideal to refer to each component’s demo page to see how they should be imported. Below is a code sample that will show you all you need to use MUI in your application:
 
 ```js
 import * as React from 'react';
@@ -144,7 +143,7 @@ function App() {
 }
 ```
 
-### Using `fixer.io` to get Real Currency Data
+### Using fixer.io to get Real Currency Data
 Head to the [Fixer official site](https://fixer.io/login) and click on “GET YOUR FREE API KEY” if you do not already have an account with them. Next, navigate to the free plan, which will direct you to a Signup page where you will be required to fill in your correct credentials. 
 
 After signing in, you will be redirected to a page to see your API access keys and endpoints. Copy the endpoint data. Your application will need to get the latest currency rates with another react hook called `useEffect`. 
@@ -298,7 +297,7 @@ function handleCurrency2Change(currency2) {
   )
 ```
 
-### The `roundUp` function
+#### The `roundUp` function
 At this point, if you input a value in one currency, the equivalent value in another currency might be a number with many decimals. So, this function will help round up all the `input` values to a maximum of four decimal places.
 
 
