@@ -277,6 +277,8 @@ As you can see above, the accuracy score of a `feature scaled` model is higher t
 
 > You will also note that the accuracy of the models that are feature-scaled is consistent while that of the initial(unscaled) model keeps fluctuating despite setting a random state value.
 
+The complete code for this tutorial can also be found [here](https://colab.research.google.com/drive/1v_KegBZvxju3DxGcnsTjQcy_6lPIPG_i?usp=sharing).
+
 ###  Choosing between the two scaling techniques
 When it comes to choosing between `Normalization` and `standardization`, It depends on:
 1. How the Dataset looks like - if your dataset doesn't follow Gaussian Distribution, normalization is preferred
@@ -292,7 +294,7 @@ As for us, `Standard Scaling` gives better results.
 We have learned the importance of `feature scaling`, looked at both the `Standard Scaling` technique and `Nomarlization` technique, and learned how to implement each and compared the results of using each. 
 As we have learned from comparing the results, `feature scaling` can boost the performance of a model significantly. It also helps stabilize the accuracy of a model.
 
-The complete code for this tutorial can also be found [here](https://colab.research.google.com/drive/1v_KegBZvxju3DxGcnsTjQcy_6lPIPG_i?usp=sharing).
 You can now be able to choose and implement these `feature scaling` techniques in your machine learning projects. 
 
-
+---
+Peer Review Contributions by: [Willies Ogola](/engineering-education/authors/willies-ogola/)
