@@ -1,10 +1,10 @@
 # How to send emails using Emailjs in Vue3
 
-**Introduction**
+## **Introduction**
 
 Emailjs is a javascript library that helps send emails using different client-side technologies. It is completely serverless and easy to set up. It is a library that supports multiple email services like Gmail, Fastmail, Outlook, Yahoo, and many others depending on which supported email service you'd like to use.
 
-The Emailjs library becomes very handy when it comes to receiving and sending emails. Let's say you have a portfolio, and in there you have a contact form where your potential employer can connect with you;  with email.js all you have to do is sign up, choose a supported email service, connect it to the email you want to use to receive emails, create an email template and use it to trigger an email. So any message sent through that contact form will be sent right into your mailbox. There's absolutely no backend code needed.
+The Emailjs library becomes very handy when it comes to receiving and sending emails. Let's say you have a portfolio, and in there you have a contact form where your potential employer can connect with you;  with emailjs all you have to do is sign up, choose a supported email service, connect it to the email you want to use to receive emails, create an email template and use it to trigger an email. So any message sent through that contact form will be sent right into your mailbox. There's absolutely no backend code needed.
 
 In this article, I will be walking you through the steps of:
 
@@ -550,7 +550,7 @@ Now all you have to do is send a sample message from the contact form. And with 
 
 That it! It’s that simple.
 
-**Conclusion**
+## **Conclusion**
 
 Javascript libraries help make it easier to write complex code easily. The email functionality we just added to our application will be very hectic setting it up from scratch. But with the help this library it is painless setting it up. This library is not only meant for Vue, like I said it works on different client-side technologies. This library works on React and Angular as well. 
 
