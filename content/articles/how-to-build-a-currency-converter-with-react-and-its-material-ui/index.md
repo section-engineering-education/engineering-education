@@ -6,7 +6,7 @@ url: /how-to-build-a-currency-converter-with-react-and-its-material-ui/
 title: Building a currency convereter using Fixer.io react and material-UI
 description: In this article, we will demonstrate how to create a currency converter with a React and Material-UI with data fetched from Fixer.io API
 author: doro-onome
-date: 2021-12-12T00:00:00-17:30
+date: 2021-12-17T00:00:00-04:30
 topics: [Languages]
 excerpt_separator: <!--more-->
 images:
