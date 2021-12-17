@@ -1,4 +1,4 @@
-# How to send emails using Emails.js in Vue3
+# How to send emails using Emailjs in Vue3
 
 **Introduction**
 
