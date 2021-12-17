@@ -1,4 +1,20 @@
-﻿### Why is feature scaling important
+---
+layout: engineering-education
+status: publish
+published: true
+url: /effects-of-feature-scaling-on-a-machine-learning-model/
+title: Effects of Feature scaling on a machine learning model
+description: This article will discuss the effects of feature scaling on a machine learning model.
+author: samuel-mwangi
+date: 2021-12-17T00:00:00-19:30
+topics: [Machine learning]
+excerpt_separator: <!--more-->
+images:
+
+  - url: /engineering-education/effects-of-feature-scaling-on-a-machine-learning-model/hero.jpg
+    alt: Effects of Feature Scaling Hero Image
+---﻿
+### Why is feature scaling important
 Datasets that we use for training models in machine learning have unpredictable values that might end up varying from each other on a broad scale. Numerical values might have big differences amongst themselves especially when they represent different scales, and this might make it difficult to compare them ie: kg, Litres, Millimeters, Miles, Pixels, etc.
 
 Feature scaling is introduced to solve this challenge. It adjusts the numbers in a manner that makes it easy to compare the values that are out of each other's scope. This helps increase the accuracy of the models especially those using algorithms that are sensitive to feature scaling ie: Gradient Descend and Distance-based algorithms.
