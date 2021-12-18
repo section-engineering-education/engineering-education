@@ -128,7 +128,7 @@ public class RestConsumer {
         return restTemplate.exchange("https://jsonplaceholder.typicode.com/posts", HttpMethod.GET, entity, Post[].class).getBody();
     }
 
-    @RequestMapping(value = "/posts")
+    @RequestMapping(value = "/posts/create")
     public String createPost(@RequestBody Post post) {
         HttpHeaders httpHeaders = new HttpHeaders();
         httpHeaders.setAccept(Collections.singletonList(MediaType.APPLICATION_JSON));
@@ -137,7 +137,7 @@ public class RestConsumer {
 
     }
 
-    @RequestMapping(value = "/posts/{id}")
+    @RequestMapping(value = "/posts/update/{id}")
     public String updatePost(@PathVariable("id") int id, @RequestBody Post post) {
         HttpHeaders httpHeaders = new HttpHeaders();
         httpHeaders.setAccept(Collections.singletonList(MediaType.APPLICATION_JSON));
@@ -145,7 +145,7 @@ public class RestConsumer {
         return restTemplate.exchange("https://jsonplaceholder.typicode.com/posts/" + id, HttpMethod.PUT, entity, String.class).getBody();
     }
 
-    @RequestMapping(value = "/posts/{id}")
+    @RequestMapping(value = "/posts/delete/{id}")
     public String deletePost(@PathVariable("id") int id) {
         HttpHeaders httpHeaders = new HttpHeaders();
         httpHeaders.setAccept(Collections.singletonList(MediaType.APPLICATION_JSON));
@@ -172,19 +172,19 @@ public class RestConsumer {
 
 **GET request**
 
-![GET request](/engineering-education/spring-boot-rest-template/get-todos.png)
+![GET request](/engineering-education/spring-boot-rest-template/get.png)
 
 **POST request**
 
-![POST request](/engineering-education/spring-boot-rest-template/create-todo.png)
+![POST request](/engineering-education/spring-boot-rest-template/post.png)
 
 **PUT request**
 
-![PUT request](/engineering-education/spring-boot-rest-template/update-todo.png)
+![PUT request](/engineering-education/spring-boot-rest-template/put.png)
 
 **DELETE request**
 
-![DELETE request](/engineering-education/spring-boot-rest-template/delete-todo.png)
+![DELETE request](/engineering-education/spring-boot-rest-template/delete.png)
 
 ### Conclusion
 Now that you have learned how to consume RESTful web services through Spring Boot Rest template, create a Spring Boot application that exposes its services through REST endpoints and Consume the endpoints from another Spring Boot application. 

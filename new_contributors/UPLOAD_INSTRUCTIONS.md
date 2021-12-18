@@ -112,7 +112,7 @@ Be sure to:
 - **Use dashes in place of spaces.**
 - **Do not include any special characters.**
 - **Try to keep it under 40 characters.**
-- -**Avoid using periods (.) or commas (,) or (_ ) underscores**
+- **Avoid using periods (.) or commas (,) or (_ ) underscores**
 
 Within that a folder, upload your prepared .md file containing a short author description using the filename `index.md`. Upload any corresponding headshot image of the author using the file name `avatar`(jpg or png format). Please try to keep this image as close to 600X400 pixels (images can be resized using [Pixlr Image Editor](https://pixlr.com/e)).
 
@@ -121,6 +121,6 @@ Add these files to the same PR (pull request).
 
 (See image below for file structure.)
 
-![Author file structure example](/static/images/author-file-example.JPG)
+![Author file structure example](/static/images/meta-image-frontmatter.PNG)
 
 Congratulations! Your article is now ready to be submitted for review and approval by the Section team. Open a PR and we'll be happy to review it.
