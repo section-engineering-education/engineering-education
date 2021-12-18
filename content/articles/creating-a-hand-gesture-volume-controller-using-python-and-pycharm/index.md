@@ -1,12 +1,22 @@
-### **Creating A Hand Gesture Volume Controller Using Python And Pycharm**
+---
+layout: engineering-education
+status: publish
+published: true
+url: /creating-a-hand-gesture-volume-controller-using-python-and-pycharm/
+title: Creating a Hand Gesture Volume Controller using Python and Pycharm
+description: This tutorial aims to create a hand gesture volume controller using Python and Pycharm.
+author: denis-mwangi
+date: 2021-12-20T00:00:00-17:00
+topics: [Machine Learning]
+excerpt_separator: <!--more-->
+images:
+
+  - url: /engineering-education/creating-a-hand-gesture-volume-controller-using-python-and-pycharm/hero.jpg 
+    alt: Hand Gesture Volume Controller Hero Image
+---
 In the times we are living in, computers are everywhere. Whether it is in your place of work while listening to a presentation, your home while listening to your favorite music, or in entertainment places where DJs use them. They help us simplify some of our day-to-day activities. The problem is water, dust, and other things such as food spilling over them easily damage them. 
-
+<!--more-->
 At this point, a hand gesture volume controller would come in handy. You don't have to be concerned about the state of your hands. You just have to use your fingers and adjust the computer's volume to your level of satisfaction.
-
-### Introduction
-**Python** has libraries that will help us create our hand gesture volume controller. **Pycharm** is the IDE that we will use to run our python code. We will be using the **Pycharm** community version IDE. It is free to download and use from the internet. 
-
-In this tutorial, we will discuss the use of the python libraries we will need, how to use python to track hand gestures, and finally how to create a hand gesture volume controller using Python and Pycharm. A person using Windows, Linux, or Mac OS can follow through.
 
 ### Table of contents
 - [Prerequisites](#prerequisites)
@@ -20,6 +30,11 @@ For you to follow through this article you need to:
 - Be familiar with the Python programming language.
 - Have **Pycharm** installed on their computer. If this is not the case, download it from here. [Pycharm Community Edition ](https://www.jetbrains.com/pycharm/download/)
 
+### Introduction
+**Python** has libraries that will help us create our hand gesture volume controller. **Pycharm** is the IDE that we will use to run our python code. We will be using the **Pycharm** community version IDE. It is free to download and use from the internet. 
+
+In this tutorial, we will discuss the use of the python libraries we will need, how to use python to track hand gestures, and finally how to create a hand gesture volume controller using Python and Pycharm. A person using Windows, Linux, or Mac OS can follow through.
+
 ### Referral hand image
 ![hand](/engineering-education/creating-a-hand-gesture-volume-controller-using-python-and-pycharm/hand.jpg)
 
@@ -27,6 +42,7 @@ For you to follow through this article you need to:
 *[Image Source: Aniketiq](https://www.bing.com/images/search?view=detailV2&ccid=A16aeeUy&id=2B00C1DE13C6EFD132E8FCABF5CF0A11695E1FCA&thid=OIP.A16aeeUyQVRHqGt_rphzJQHaCl&mediaurl=https%3a%2f%2fcdn.hashnode.com%2fres%2fhashnode%2fimage%2fupload%2fv1629398588657%2fboG68w85n.png%3fauto%3dcompress%2cformat%26format%3dwebp&cdnurl=https%3a%2f%2fth.bing.com%2fth%2fid%2fR.035e9a79e532415447a86b7fae987325%3frik%3dyh9eaREKz%252fWr%252fA%26pid%3dImgRaw%26r%3d0&exph=538&expw=1543&q=mediapipe+hand+tracking+points&simid=607990468186358942&FORM=IRPRST&ck=C941CC346294E5FC99172E9ED31C9E5B&selectedIndex=4)*
 
 The above image shows the numbers of the points that mediapipe uses to refer to different points of the hand. In this tutorial, we are going to use point 4 and point 8 which are the thumb and the index finger respectively.
+
 ### Creating a hand gesture volume controller
 First of all, we will prepare our workspace. Launch the pycharm app. Click on the create a new project. This is shown in the screenshot provided below.
 
