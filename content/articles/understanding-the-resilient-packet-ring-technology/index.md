@@ -11,7 +11,7 @@ topics: [Networks]
 excerpt_separator: <!--more-->
 images:
 
-  - url: /understanding-the-resilient-packet-ring-technology/hero.jpg
+  - url: /engineering-education/understanding-the-resilient-packet-ring-technology/hero.jpg
     alt: Resilient Packet Ring Example Image
 ---
 RPR is standardized by IEEE 802.17 and is a protocol for the transmission of data through fiber-optic ring networks. It works in the MAC layer of the OSI model. It is packet-based and is built on creating efficiency of IP services and ethernet.
