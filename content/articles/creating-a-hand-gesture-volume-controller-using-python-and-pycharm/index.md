@@ -255,4 +255,7 @@ When the code above has run to completion without any errors, the results will b
 ### Conclusion 
 You now have all the skills required to create a hand gesture volume controller. Do your work while listening to your favorite music. You don't have to worry about dirtying your hands. By just a gesture of your hand, you can control the volume level of your music. You
 
-! Happy coding.
+Happy coding!
+
+---
+Peer Review Contributions by: [Willies Ogola](/engineering-education/authors/willies-ogola/)
