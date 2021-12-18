@@ -121,7 +121,7 @@ Once it is installed, we are going to create our Hardhat project. We will use `n
 
 `$ npx hardhat`
 
-![Hardhat](/engineering-education/best-frameworks-for-building-dapps/hardhat.jpg)
+![Hardhat](/engineering-education/best-frameworks-for-developing-dapps/hardhat.jpg)
 
 Go through the [Hardhat documentation](https://hardhat.org/getting-started/).
 
