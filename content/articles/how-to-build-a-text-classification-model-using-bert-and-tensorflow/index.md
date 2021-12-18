@@ -6,7 +6,7 @@ url: /how-to-build-a-text-classification-model-using-bert-and-tensorflow/
 title: How to build a Text Classification model Using BERT and Tensorflow
 description: This tutorial aims to build a Text Classification model Using BERT and Tensorflow.
 author: bravin-wasike
-date: 2021-12-17T00:00:00-17:00
+date: 2021-12-18T00:00:00-17:00
 topics: [Machine Learning]
 excerpt_separator: <!--more-->
 images:
@@ -16,7 +16,7 @@ images:
 ---
 Text classification is a subset of machine learning that classifies text into predefined categories. Text classification is one of the important tasks in natural language processing (NLP). 
 <!--more-->
-Some of the examples of text classification are [intent detection](/engineering-education/intent-classification-with-rasa-and-spacy/), [sentiment analysis](/engineering-education/sentiment-analysis-with-spacy-and-scikit-learn/), [topic labelling](https://towardsdatascience.com/nlp-extracting-the-main-topics-from-your-dataset-using-lda-in-minutes-21486f5aa925) and [spam detection.](https://towardsdatascience.com/spam-detection-in-emails-de0398ea3b48)
+Some of the examples of text classification are [intent detection](/engineering-education/intent-classification-with-rasa-and-spacy/), [sentiment analysis](/engineering-education/sentiment-analysis-with-spacy-and-scikit-learn/), [topic labeling](https://towardsdatascience.com/nlp-extracting-the-main-topics-from-your-dataset-using-lda-in-minutes-21486f5aa925) and [spam detection](https://towardsdatascience.com/spam-detection-in-emails-de0398ea3b48).
 
 In this tutorial, we will build a spam detection model. The spam detection model will classify emails as spam or not spam. This will be used to filter unwanted and unsolicited emails. We will build this model using BERT and Tensorflow. BERT will be used to generate sentence encoding for all emails. Finally, we will use Tensorflow to build the neural networks. Tensorflow will create the input and output layers of our machine learning model.
 
@@ -27,7 +27,7 @@ In this tutorial, we will build a spam detection model. The spam detection model
 - [Adding labels](#adding-labels)
 - [Splitting labeled dataset](#splitting-labeled-dataset)
 - [Getting started with BERT](#getting-started-with-bert)
-- [Download the BERT model](#download-the-bert-model)
+- [Downloading the BERT model](#downloading-the-bert-model)
 - [Building model using TensorFlow](#building-model-using-tensorflow)
 - [Initializing the BERT layers](#initializing-the-bert-layers)
 - [Initializing the neural network layers](#initializing-the-neural-network-layers)
@@ -39,7 +39,7 @@ In this tutorial, we will build a spam detection model. The spam detection model
 - [References](#references)
 
 ### Prerequisites
-For a reader to understand this tutorial easily, they should:
+For a reader to understand this tutorial, they should:
 - Know how to work with [deep learning models](/engineering-education/building-a-deep-learning-app-using-python/)
 - Know how to use [Pandas](https://pandas.pydata.org/) and [Numpy](https://numpy.org/) in data analysis.
 - Know how to work with [TensorFlow](https://www.tensorflow.org/)
@@ -68,9 +68,9 @@ It will allow us to work with text. In this tutorial, we are solving a text-clas
 - `pandas`:
 We will use Pandas to load our dataset. We also use Pandas for data manipulation and analysis. It gives us a clear overview of how our dataset is structured.
 
-Now, let's load and explore the dataset we will use in this tutorial. Before we load the dataset, make sure you download this dataset from [here](https://drive.google.com/file/d/1QXzFte4FulQXmgUHBAk8y6IqcCYy8An-/view?usp=sharing)
+Now, let's load and explore the dataset we will use in this tutorial. Before we load the dataset, make sure you download this dataset from [here](https://drive.google.com/file/d/1QXzFte4FulQXmgUHBAk8y6IqcCYy8An-/view?usp=sharing).
 
-Now, let's load the dataset downloaded using the link above. Run this command to load the dataset.
+We need to run this command to load the dataset.
 
 ```python
 df = pd.read_csv("spam.csv")
@@ -84,7 +84,7 @@ The output is shown below:
 
 ![Dataset structure](/engineering-education/how-to-build-a-text-classification-model-using-bert-and-tensorflow/dataset-structure.png)
 
-From the image above, our dataset has two categories: `ham` and `spam`. `ham` represents the emails that are not spam, this is an email from a trusted source. `spam` represents emails from an unknown source.
+From the image above, our dataset has two categories: `ham` and `spam`. `ham` represents the emails that are not spam, this are emails from a trusted source. `spam` represents emails from an unknown source.
 
 The dataset also has the `Message` column. This column represents the email messages.
 
@@ -107,7 +107,7 @@ The ratio of the two categories is shown below:
 ```bash
 0.15481865284974095
 ```
-This result implies that about 15% are spam emails and 85% of ham emails. This indicates class imbalance.
+This result implies that about 15% are spam emails and 85% of ham emails. This indicates a class imbalance.
 
 We need to balance the two classes to reduce bias during model training.
 
@@ -154,7 +154,7 @@ spam    747
 ham     747
 Name: Category, dtype: int64
 ```
-The output shows the dataset with equal class values of `747`. Therefore, our dataset is now balanced.
+The output shows the dataset with equal class values of `747`. Thus, our dataset is now balanced.
 
 ### Adding labels
 We need to label our dataset into `1` and `0`. `1` will represent the data samples that belong to the `spam` class. `0` will represent the data samples that belong to the `ham` class.
@@ -199,7 +199,7 @@ After splitting the dataset, we can start working with BERT.
 ### Getting started with BERT
 BERT stands for Bidirectional Encoder Representations from Transformers. BERT models help machines to understand and interpret the meaning of the text. It uses immediately preceding text to understand the context. It also checks the relationships of words within a sentence to give the actual meaning of words.
 
-Bert will then convert a given sentence into an embedding vector. Embedding vector is used to represent the unique words in a given document. BERT ensures words with the same meaning will have a similar representation.
+BERT will then convert a given sentence into an embedding vector. Embedding vector is used to represent the unique words in a given document. BERT ensures words with the same meaning will have a similar representation.
 
 Machine learning does not work with text but works well with numbers. That's why BERT converts the input text into embedding vectors. The embedding vectors are numbers with which the model can easily work.
 
@@ -212,13 +212,12 @@ It will also format the dataset so that it can be easy to use during model train
 
 #### Encoding
 
-Because machine learning does not work well with the text, we need to convert the text into real numbers. This process is known as encoding.
-BERT will convert a given sentence into an embedding vector.
+Because machine learning does not work well with the text, we need to convert the text into real numbers. This process is known as encoding. BERT will convert a given sentence into an embedding vector.
 
 Let's download the BERT model.
 
-### Download the BERT model
-BERT models are usually pre-trained. They are available in [TensorFlow Hub](https://www.tensorflow.org/hub). TensorFlow Hub contains all the pre-trained machine learning models that are easily downloaded. 
+### Downloading the BERT model
+BERT models are usually pre-trained. They are available in [TensorFlow Hub](https://www.tensorflow.org/hub). TensorFlow Hub contains all the pre-trained machine learning models that are downloaded. 
 
 We will download two models, one to perform preprocessing and the other one for encoding. The links for the models are shown below.
 
@@ -229,13 +228,7 @@ bert_encoder = hub.KerasLayer("https://tfhub.dev/tensorflow/bert_en_uncased_L-12
 After downloading the model, let's start building our model using TensorFlow.
 
 ### Building model using TensorFlow
-There are two types of models that you can build in TensorFlow. Sequential model and a functional model.
-
-In a sequential model, layers are built on top of each other, layer by layer. In a sequential model, we don't have multiple inputs and outputs.
-
-Functional models are more robust and flexible. They do not create layers in sequential order. In the functional model, we have multiple inputs and outputs.
-
-This tutorial will use the functional approach to build our model.
+There are two types of models that you can build in TensorFlow. Sequential model and a functional model. In a sequential model, layers are built on top of each other, layer by layer. In a sequential model, we don't have multiple inputs and outputs. Functional models are more robust and flexible. They do not create layers in sequential order. In the functional model, we have multiple inputs and outputs. This tutorial will use the functional approach to build our model.
 
 We will start by initializing the BERT layers.
 
@@ -302,14 +295,11 @@ Let's compile our model.
 ### Model compiling
 During the stage, we will set the `optimizer`, the `loss function`, and the `metrics` for our model as shown below.
 
-#### Optimizer
-This is used to improve the model performance and reduce errors that occur during model training. We use the `adam` optimizer.
+- The `Optimizer` is used to improve the model performance and reduce errors that occur during model training. We use the `adam` optimizer.
 
-#### Metrics
-It will be used to check the model performance so that we can know how we trained our model. We set the `BinaryAccuracy(name='accuracy')` which will be used to calculate the accuracy score of the model.
+- `Metrics` will be used to check the model performance so that we can know how we trained our model. We set the `BinaryAccuracy(name='accuracy')` which will be used to calculate the accuracy score of the model.
 
-### Loss function
-It is used to calculate the model error during the training phase. We use `binary_crossentropy` as our loss function because our output is binary. The output can either be a `0` or `1`.
+- The `Loss function` is used to calculate the model error during the training phase. We use `binary_crossentropy` as our loss function because our output is binary. The output can either be a `0` or `1`.
 
 We now set these parameters.
 
@@ -332,7 +322,7 @@ In this stage, the model learns from the training data samples. The model will i
 ```python
 model.fit(X_train, y_train, epochs=10)
 ```
-We specify the number of epochs as 10. The model will iterate through the dataset five times and print the accuracy score after each iteration. This process is shown below.
+We specify the number of epochs as 10. The model will iterate through the dataset ten times and print the accuracy score after each iteration. This process is shown below.
 
 ![Model training](/engineering-education/how-to-build-a-text-classification-model-using-bert-and-tensorflow/model-training.png)
 
@@ -395,17 +385,14 @@ array([[0.8734353 ],
        [0.29311982],
        [0.13262196]], dtype=float32)
 ```
-From the output above, the first three email messages have been classified as `spam`. They have a prediction probability that is greater than 0.5. The last two email messages have been classified as `ham` T.hey have a prediction probability that is less than 0.5. These are the right predictions and show we have successfully built our text classification model.
+From the output above, the first three email messages have been classified as `spam`. They have a prediction probability that is greater than 0.5. The last two email messages have been classified as `ham`. They have a prediction probability that is less than 0.5. These are the right predictions and show we have successfully built our text classification model.
 
 To get the Python code for this tutorial, click [here](https://colab.research.google.com/drive/1fius4_KVATn8Pi0Ve7vs3WPHvMvlVplH?usp=sharing)
 
 ### Conclusion
-In this tutorial, we have learned how to build a spam detection model. The model was able to classify email messages as `spam` or `ham`. We started by using BERT to convert a given sentence into an embedding vector. This was done using the pre-trained BERT models.
-
-We created our model using TensorFlow and initialized all the input and output layers. We followed all the stages of building the neural network and finally came up with a spam detection model. Finally, we used the model to make predictions, the model was able to give accurate predictions. 
+In this tutorial, we have learned how to build a spam detection model. The model was able to classify email messages as `spam` or `ham`. We started by using BERT to convert a given sentence into an embedding vector. This was done using the pre-trained BERT models. We created our model using TensorFlow and initialized all the input and output layers. We followed all the stages of building the neural network and finally came up with a spam detection model. Finally, we used the model to make predictions, the model was able to give accurate predictions. 
 
 ### References
-- [The trained model for this tutorial](https://colab.research.google.com/drive/1fius4_KVATn8Pi0Ve7vs3WPHvMvlVplH?usp=sharing)
 - [BERT for deep learning](https://en.wikipedia.org/wiki/BERT_(language_model))
 - [TensorFlow documentation](https://www.tensorflow.org/)
 - [TensorFlow hub models](https://www.tensorflow.org/hub)
