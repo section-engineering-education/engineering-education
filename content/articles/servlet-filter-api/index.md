@@ -4,7 +4,7 @@ status: publish
 published: true
 url: /servlet-filter-api/
 title: Servlet Filter API
-description: This article deals with Servlet filter API.
+description: This article deals with Servlet filter API. We will see how Filters work, their functions, the benefits of using them, and the three interfaces that are available on Filters
 author: benson-sapan
 date: 2021-12-18T00:00:00-11:00
 topics: [API]
@@ -21,7 +21,7 @@ When an application is pre-and post-processed, the invoked object is filtered. F
 To create a Filter class, we have to import `javax. servlet` and implement the Filter interface. Several filters can be created to perform different tasks according to the user and developer specifications.
 
 ### Goal
-A learner should be able to understand the following after reading this article:
+The reader should be able to understand the following after reading this article:
 1. A servlet Filter's definition.
 2. The advantages of using filters.
 3. The Filter interfaces, such as the `Filter` interface, the `FilterConfing` interface, and others.
