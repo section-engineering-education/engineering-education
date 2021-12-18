@@ -44,7 +44,7 @@ Data loss can be caused by several reasons, some of which are as follows:
 7. Human Mistakes – Human mistakes cannot be avoided completely, however, they can cause the unintentional deletion of data files.
 8. Computer viruses and malware - Computer viruses can steal and delete data.
 9. Hard drive damage - The majority of data losses are caused by hardware malfunctions.
-10.Power Loss – Power loss not only can result in the loss of unsaved data but can also cause existing files to be corrupted as a result of improper shutdown procedures.
+10. Power Loss – Power loss not only can result in the loss of unsaved data but can also cause existing files to be corrupted as a result of improper shutdown procedures.
 
 ### Tools used in data recovery
 There are various tools used in data recovery, some are free, and others are paid for.
