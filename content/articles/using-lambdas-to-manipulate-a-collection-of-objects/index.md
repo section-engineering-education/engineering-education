@@ -5,7 +5,7 @@ published: true
 url: /using-lambdas-to-manipulate-a-collection-of-objects/
 title: How to Manipulate Objects Using Lambdas in Java
 description: This article will help the reader understand how to manipulate objects using Lambdas in Java.
-author: kingsley-nwarfor
+author: kingsley-nwafor
 date: 2021-11-23T00:00:00-11:30
 topics: [Languages]
 excerpt_separator: <!--more-->
@@ -201,6 +201,7 @@ Displaying the sorted list by Card:
 
 ```java
 Predicate<Wallet> takeMoneyAndBlackCard=
+
                 e -> (e.takeMoney() >= 30000 && e.getCards().equals(Card.Black));
         System.out.printf("%n Display of your sorted list: %n");
         list.stream()
@@ -383,6 +384,7 @@ Calculating the total amount for a specific color of cards:
 
 ```java
  Predicate<Wallet> takeMoneyAndBlackCard1=
+
                 e -> (e.getCards().equals(Card.Black) );
         System.out.printf(
                 "%nSum of Black Card wallet(via average method): %.2f%n",
