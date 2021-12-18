@@ -1,3 +1,19 @@
+---
+layout: engineering-education
+status: publish
+published: true
+url: /localization-and-internationalization-in-android/
+title: Localization and internationalization in Android
+description: This article will go through the Android localization process in great depth and how to apply best practices to your translation efforts.
+author: vivian-odhiambo
+date: 2021-12-18T00:00:00-12:20
+topics: [Languages]
+excerpt_separator: <!--more-->
+images:
+
+  - url: /engineering-education/localization-and-internationalization-in-android/hero.jpg
+    alt: Localization and internationalization in Android Hero Image
+---
 ### Introduction
 Android is used on a wide range of devices in a variety of countries. Your app should handle text, audio files, numbers, money, and visuals in ways that are acceptable to the locations where your app is utilized to reach the most customers.
 
