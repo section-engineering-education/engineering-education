@@ -6,7 +6,7 @@ url: /deploying-a-serverless-django-restapi-with-zappa-on-aws/
 title: Deploying serverless Django REST-API with Zappa on AWS
 description: This article will explain how Zappa works with Django by building a serverless Django REST API and deploying the application to AWS Lambda using Zappa.
 author: anita-achu
-date: 2021-09-23T00:00:00-00:00
+date: 2021-12-18T00:00:00-12:00
 topics: [Languages]
 excerpt_separator: <!--more-->
 images: 
@@ -14,10 +14,8 @@ images:
   - url: /engineering-education/deploying-a-serverless-django-restapi-with-zappa-on-aws/hero.png
     alt: Deploying serverless Django REST-API with Zappa on AWS Image
 ---
-
-
 Serverless technology has gradually become an area of interest in software development. Before, all applications built on classic web servers were manually managed until the development of this technology. 
-
+<!--more-->
 This technology guarantees automatic web server configuration and permissions, allowing the developer to focus solely on developing and designing web applications while their cloud provider handles the heavy tasks by managing the servers. 
 
 For this reason, the user does not have to worry about the manual configuration of servers.
