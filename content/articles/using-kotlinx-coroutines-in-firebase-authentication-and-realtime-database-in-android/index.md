@@ -132,8 +132,7 @@ data class User(
 ### Step 6 - Utility items
 Before we go any further, let's define two items in the `util` directory.
 
-`SafeCall` function
-This inline function will allow us to make safe network requests.
+i). `SafeCall` function - This inline function will allow us to make safe network requests.
 
 ```kotlin
 inline fun <T> safeCall(action: () -> Resource<T>): Resource<T> {
@@ -142,6 +141,16 @@ inline fun <T> safeCall(action: () -> Resource<T>): Resource<T> {
     } catch (e: Exception) {
         Resource.Error(e.message ?: "An unknown Error Occurred")
     }
+}
+```
+
+ii). `Resource` class - This sealed class will represent the three states of our network calls, either `Loading`, `Success`, or `Error`
+
+```Kotlin
+sealed class Resource<T>(val data: T? = null, val message: String? = null) {
+    class Success<T>(data: T) : Resource<T>(data)
+    class Loading<T>(data: T? = null) : Resource<T>(data)
+    class Error<T>(message: String, data: T? = null) : Resource<T>(data, message)
 }
 ```
 
