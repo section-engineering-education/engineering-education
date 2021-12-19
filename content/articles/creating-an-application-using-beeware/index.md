@@ -68,7 +68,7 @@ This `main` method is called by the `__main__.py` file and invoked by it.
 By now you have a simple working application.You can cd into `Simple Calculator` and type `briefcase dev` to run the app
 in developer mode. You should have the following simple application:
 
-![Starter app image](/engineering-education/content/articles/ creating-an-application-using-beeware/starter.png)
+![Starter app image](/engineering-education/content/articles/creating-an-application-using-beeware/starter.png)
 
 
 ### Setting up the boxes
@@ -263,7 +263,7 @@ Finally, we add our buttons to the different boxes defined earlier.We add the in
 We add buttons 4,5,6 and minus to box4. All the necessary buttons are added in a similar manner.
 
 When we finally run our application we have the following application:
-![Final App](/engineering-education/content/articles/ creating-an-application-using-beeware/final.png)
+![Final App](/engineering-education/content/articles/creating-an-application-using-beeware/final.png)
 
 ### Conclusion
 
