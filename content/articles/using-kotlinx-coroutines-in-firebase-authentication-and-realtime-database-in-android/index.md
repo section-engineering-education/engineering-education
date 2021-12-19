@@ -1,9 +1,26 @@
-#### Using Kotlinx Coroutines in Firebase Authentication and Realtime Database in Android
-For user authentication to an app, Firebase offers a ready made backend that developers can leverage and add authentication feature to their apps. Also, Firebase Realtime Database can be used to store the details of users. Because Android developers do not wish to write their own backends, all of this makes their job easier. 
+---
+layout: engineering-education
+status: publish
+published: true
+url: /coroutines-and-realtime-database-in-firebase-authentication-in-android/
+title: How to use Coroutines and Realtime Database in Firebase Authentication in Android
+description: This tutorial will take the reader through the process of using Coroutines and Realtime Database in Firebase Authentication in Android.
+author: joel-kanyi
+date: 2021-12-19T00:00:00-09:30
+topics: [Languages]
+excerpt_separator: <!--more-->
+images:
 
-In Android, while making network calls such as user Authentication, sending, or querying data from Firebase Database; you shouldn't perform such tasks on the `Main Thread`. You should do such tasks on the `Background Thread` and then update the UI accordingly. 
+  - url: /engineering-education/coroutines-and-realtime-database-in-firebase-authentication-in-android/hero.png
+    alt: Coroutines and Realtime Database in Firebase Authentication in Android
+---
+Firebase Authentication offers backend services, easy-to-use SDKs, and ready-to-use UI frameworks for authenticating users to your app. Firebase Realtime Database can be used to store the user details.
+<!--more-->
+Since Android developers do not wish to write their own backends, all of this makes their job easier.
 
-Our code appears cleaner with no boilerplate code when we use `Coroutines` to do Firebase operations, making it more legible and clear, and improving app productivity in the long term. 
+In Android, while making network calls such as user authentication, sending, or querying data from the Firebase database, you shouldn't perform such tasks on the `Main Thread`. You should do such tasks on the `Background Thread` then update the UI accordingly.
+
+Our code appears cleaner with no boilerplate when we use `Coroutines` to do Firebase operations, making it more legible/clear, and improving app productivity in the long term.
 
 ### Table of contents
 - [Prerequisites](#prerequisites)
@@ -11,97 +28,100 @@ Our code appears cleaner with no boilerplate code when we use `Coroutines` to do
 - [Create an Android Project](#step-1---create-an-android-project)
 - [Setting Up the Project](#step-2---setting-up-the-project)
 - [Main Screens](#step-3---main-screens)
-- [Designing User Interface](#step-4---designing-user-interface)
-- [Model Class](#step-5---model-class)
+- [Designing the User Interface](#step-4---designing-the-user-interface)
+- [Creating the Model class](#step-5---creating-the-model-class)
 - [Utility Items](#step-6---utility-items)
 - [Repository Class](#step-7---repository-class)
 - [ViewModel Class](#step-8---viewmodel-class)
-- [Register Activity](#step-9---register-activity)
+- [Registering Activity](#step-9---registering-activity)
 - [Login Activity](#step-10---login-activity)
 - [Conclusion](#conclusion)
 - [References](#references)
 
 ### Prerequisites
-To complete this lesson, you must have the following software installed on your computer: 
-- [Android Studio](https://developer.android.com/studio/index.html).
-- Solid understanding of how to create and run Android apps.
+To follow along with this tutorial, you will need the following:
+- [Android Studio](https://developer.android.com/studio/index.html) installed on your computer.
+- A solid understanding of how to create and run Android apps.
 - The [Kotlin](https://kotlinlang.org/) programming language's fundamentals.
 - Basic knowledge of Kotlin Coroutines.
-- Knowledge of using Jetpack Components i.e `Livedata`, `ViewModel` and the `Repository` Pattern.
+- Knowledge of using Jetpack Components i.e `Livedata`, `ViewModel` and the `Repository` pattern.
 - An understanding of linking an Android project to Firebase: If not, take a look at this article [Firebase Email and Password Authentication](https://www.section.io/engineering-education/firebase-email-and-password-authentication-in-android-using-kotlin/).
 - Understand how to use `ViewBinding`.
 
-### Coroutines Recap
-Kotlin Coroutines manages long-running operations that if they are ran on the main thread, they will block it. 
+### Coroutines recap
+Kotlin Coroutines manages long-running operations that if they are run on the main thread, they will block it.
 
 In this article, we are going to use the following features of `Coroutines`:
-- `withContext` - It uses a provided `Coroutines` context to call the specified suspending block, `suspends` until it completes, then returns the result. It executes the jobs sequentially rather than concurrently. Keep in mind that `withContext` is useful when you have a single job running in the background and wish to return to the task's outcome.
+
+- `withContext` - It uses a provided `Coroutine` context to call the specified suspending block, `suspends` until it completes, then returns the result. It executes the jobs sequentially rather than concurrently. Keep in mind that `withContext` is useful when you have a single job running in the background and wish to return to the task's outcome.
 
 - `await` - While an operation is running, the `await` waits until it completes without necessary blocking the thread.
 
 - `viewModelScope` - Defines a scope that is tied to the ViewModel. Once ViewModel is cleared, the scope will be cancelled.
 
-> To get a more understanding of `Coroutines` check out this article - [Introduction to Kotlin Coroutines](https://www.section.io/engineering-education/introduction-to-kotlin-coroutines/)
+> To get a more understanding of `Coroutines` check out this article - [Introduction to Kotlin Coroutines](https://www.section.io/engineering-education/introduction-to-kotlin-coroutines/).
 
 Let's get started. In this tutorial, we will be creating a simple app that has an authentication feature and stores the user's data in the `Firebase Realtime` database.
 
-> Make sure you have linked your project with `Firebase` and you have enabled `ViewBinding`
+> Make sure you have linked your project with `Firebase` and you have enabled `ViewBinding`.
 
-
-### Step 1 - Create an Android Project
+### Step 1 - Create an Android project
 Open your Android Studio and create an empty project and give it the name of your choice.
 
-### Step 2 - Setting Up the Project
+### Step 2 - Setting Up the project
 In this step, we will do all the necessary setup for our project
 
-In your `ap-level` build.gradle, add the following dependencies
-```Gradle
-    def lifecycle_version = "2.4.0-alpha03"
-    def coroutines_version = "1.3.9"
+In your `ap-level` build.gradle, add the following dependencies:
 
-    implementation platform('com.google.firebase:firebase-bom:28.4.1')
+```gradle
+def lifecycle_version = "2.4.0-alpha03"
+def coroutines_version = "1.3.9"
 
-    // Firebase Realtime Database
-    implementation 'com.google.firebase:firebase-database-ktx'
+implementation platform('com.google.firebase:firebase-bom:28.4.1')
 
-    // Firebase Auth
-    implementation 'com.google.firebase:firebase-auth-ktx'
+// Firebase Realtime Database
+implementation 'com.google.firebase:firebase-database-ktx'
 
-    // ViewModel
-    implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:$lifecycle_version"
+// Firebase Auth
+implementation 'com.google.firebase:firebase-auth-ktx'
 
-    // Livedata
-    implementation "androidx.lifecycle:lifecycle-livedata-ktx:$lifecycle_version"
+// ViewModel
+implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:$lifecycle_version"
 
-    // Coroutines
-    implementation "org.jetbrains.kotlinx:kotlinx-coroutines-android:$coroutines_version"
-    implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-play-services:1.5.1'
+// Livedata
+implementation "androidx.lifecycle:lifecycle-livedata-ktx:$lifecycle_version"
+
+// Coroutines
+implementation "org.jetbrains.kotlinx:kotlinx-coroutines-android:$coroutines_version"
+implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-play-services:1.5.1'
 ```
 
-Next, we will define the project structure:
-Since our app will have several classes, it is good we come up with some directories and will try and separate our classes.
-In the main package right click and create the following directories: `ui`, `repository`, `viewmodel`, `util`, and `model`.
+Next, we will define the project structure.
+
+Since our app will have several classes, it's good we come up with some directories that will try and separate them.
+
+Right-click the main package and create the following directories: `ui`, `repository`, `viewmodel`, `util`, and `model`.
 
 ### Step 3 - Main Screens
 In this step, we will create two activities i.e `LoginActivity` and `RegisterActivity`. On the directories that you created, right-click on the `ui` directory and create these two activities.
 
-[!Main](section-engineering/using-kotlinx-coroutines-in-firebase-authentication-and-realtime-database-in-android/main.png)
+![Main](/engineering-education/coroutines-and-realtime-database-in-firebase-authentication-in-android/main.png)
 
-### Step 4 - Designing User Interface
+### Step 4 - Designing the user interface
 After creating the two activities, we will then define what their layout should look like.
 
-#### For the `activity_register.xml`, here is what it should look like, feel free to add more fields depending on your use case.
+The `activity_register.xml` should look as shown below. Feel free to add more fields depending on your use case.
 
-[!demo1](section-engineering/using-kotlinx-coroutines-in-firebase-authentication-and-realtime-database-in-android/demo1.png)
+![demo](/engineering-education/coroutines-and-realtime-database-in-firebase-authentication-in-android/demo1.png)
 
-#### For the `activity_login.xml`, here is how to should look like.
+The `activity_login.xml` should look as shown below:
 
-[!demo2](section-engineering/using-kotlinx-coroutines-in-firebase-authentication-and-realtime-database-in-android/demo2.png)
+![demo](/engineering-education/coroutines-and-realtime-database-in-firebase-authentication-in-android/demo2.png)
 
-
-### Step 5 - Model Class
+### Step 5 - Creating the model class
 Let's define a model class for a user.
-```Kotlin
+
+```kotlin
 data class User(
     val name: String? = "",
     val email: String? = "",
@@ -109,13 +129,13 @@ data class User(
 )
 ```
 
-### Step 6 - Utility Items
-Before we go any further, let's define two items in the `util` directory
+### Step 6 - Utility items
+Before we go any further, let's define two items in the `util` directory.
 
 `SafeCall` function
-This inline function will enable us to make safe network requests.
+This inline function will allow us to make safe network requests.
 
-```Kotlin
+```kotlin
 inline fun <T> safeCall(action: () -> Resource<T>): Resource<T> {
     return try {
         action()
@@ -125,24 +145,27 @@ inline fun <T> safeCall(action: () -> Resource<T>): Resource<T> {
 }
 ```
 
-### Step 7 - Repository Class
+### Step 7 - Repository class
 In this step, we will define our business logic i.e code to register and login users.
 
-In your `repository` directory, create a class named, `MainRepository`. After defining it, 
+In your `repository` directory, create a class named `MainRepository`.
 
-First define the following variables
-```Kotlin
-    private val firebaseAuth = FirebaseAuth.getInstance()
-    private val databaseReference = FirebaseDatabase.getInstance().getReference("users")
+First define the following variables:
+
+```kotlin
+private val firebaseAuth = FirebaseAuth.getInstance()
+private val databaseReference = FirebaseDatabase.getInstance().getReference("users")
 ```
 
-#### Registering a User
-Let's define a function that will have the logic to register a user and store his/her details in Firebase Database.
-```Kotlin
+#### Registering a user
+Let's create a function that will have the logic to register users and store their details in the Firebase database.
+
+```kotlin
 suspend fun createUser(userName: String, userEmailAddress: String, userPhoneNum: String, userLoginPassword: String): Resource<AuthResult> {
     return withContext(Dispatchers.IO) {
         safeCall {
             val registrationResult = firebaseAuth.createUserWithEmailAndPassword(userEmailAddress, userLoginPassword).await()
+
             val userId = registrationResult.user?.uid!!
             val newUser = User(userName, userEmailAddress, userPhoneNum)
             databaseReference.child(userId).setValue(newUser).await()
@@ -153,17 +176,20 @@ suspend fun createUser(userName: String, userEmailAddress: String, userPhoneNum:
 ```
 
 #### Explanation
-The function is a `suspend` function that has a return type of `AuthResult` which is wrapped in the `Resource` class that we defined. Inside the function body, we make use of Coroutine's `withContext` and make sure our Coroutine runs in `Dispatchers.IO` which is a background thread. 
+The `createUser` function is a `suspend` function that has a return type of `AuthResult` which is wrapped in the `Resource` class that we created earlier. Inside this function, we make use of coroutine's `withContext` and make sure that our coroutine runs in the `Dispatchers.IO`.
 
-We then use the inline function - `safeCall` that we created in the `util` directory. Inside the inline function:
+We then use the inline function - `safeCall` that we created in the `util` directory.
+
+Inside the inline function:
 - We invoke `firebaseAuth.createUserWithEmailAndPassword(email, password)` and make sure we add the `await()` at the end. The result of the execution is stored in the variable `result`.
-- Next, we extract the `uid` of the newly created user and then create an object of the class `User` and all the respective arguments.
+- Next, we extract the `uid` of the newly created user and then create an object of the class `User` with all the respective arguments.
 - We then invoke `databaseReference.child(uid).setValue(user).await()` to store the user in `Firebase Realtime` database.
-- We then return a successful result.
+- Lastly, we return a successful result.
 
-#### Login a User
-We also define another suspeding function for logging in  a user
-```Kotlin
+#### Logging in a User
+We also define another suspeding function for logging in  a user:
+
+```kotlin
 suspend fun login(email: String, password: String): Resource<AuthResult> {
     return withContext(Dispatchers.IO) {
         safeCall {
@@ -175,14 +201,14 @@ suspend fun login(email: String, password: String): Resource<AuthResult> {
 ```
 
 #### Explanation
-The same we have done with the `register` function, we do the same with this `login` function. We make sure we app the `await()` at the end of `firebaseAuth.signInWithEmailAndPassword(email, password)`
+Similar to the `register` function, in the `login` function we make sure that we add the `await()` at the end of `firebaseAuth.signInWithEmailAndPassword(email, password)`.
 
-### Step 8 - ViewModel Class
-Once you are done working on our `MainRepository`, right-click on the `viewmodel` directory and create a new class called `MainViewModel`.
+### Step 8 - ViewModel class
+Once you are done working on the `MainRepository`, right-click on the `viewmodel` directory and create a new class called `MainViewModel`.
 
 Inside the `ViewModel` we will define some variables to represent the status of creating and logging in a user and also an instance of our `Repository`.
 
-```Kotlin
+```kotlin
 private val _userRegistrationStatus = MutableLiveData<Resource<AuthResult>>()
 val userRegistrationStatus: LiveData<Resource<AuthResult>> = _userRegistrationStatus
 
@@ -192,9 +218,9 @@ val userSignUpStatus: LiveData<Resource<AuthResult>> = _userSignUpStatus
 private val mainRepository = MainRepository()
 ```
 
-We then define two functions corresponding to login and register functions as defined in the `Repository`
+We then define two functions corresponding to login and register functions as defined in the `Repository`.
 
-```Kotlin
+```kotlin
 fun createUser(userName: String, userEmailAddress: String, userPhoneNum: String, userLoginPassword: String) {
     var error =
         if (userEmailAddress.isEmpty() || userName.isEmpty() || userLoginPassword.isEmpty() || userPhoneNum.isEmpty()) {
@@ -229,13 +255,14 @@ fun signInUser(userEmailAddress: String, userLoginPassword: String) {
 ```
 
 #### Explanation
-In both functions, we make sure we call the `Repository` functions inside a `viewModelScope` and make sure we use `Dispatchers.Main` in the `launch` function.
+In both functions, we call the `Repository` functions inside a `viewModelScope` and make sure we use `Dispatchers.Main` in the `launch` function.
 
-### Step 9 - Register Activity
+### Step 9 - Registering activity
 Once a user clicks on the register button, we call the `registerUser` function in the `ViewModel` passing the necessary parameters. We also observe the status of login as either loading, error, or success.
 
-```Kotlin
+```kotlin
 binding.userRegisterButton.setOnClickListener {
+    // the ids might differ based on how you've named your views
     viewModel.createUser(
         binding.edxtUserName.editText?.text.toString(),
         binding.edxtEmailAddress.editText?.text.toString(),
@@ -245,8 +272,9 @@ binding.userRegisterButton.setOnClickListener {
 }
 ```
 
-Also, we will define an observe to observe the state of login
-```Kotlin
+Also, we will define an observer to observe the state of the registration:
+
+```kotlin
 viewModel.registerStatus.observe(this, Observer {
     when (it) {
         is Resource.Loading -> {
@@ -264,43 +292,47 @@ viewModel.registerStatus.observe(this, Observer {
 })
 ```
 
-### Step 10 - Login Activity
-Once a user clicks on the Login button, we call the `loginUser` function in the `ViewModel` passing the necessary parameters. We also observe the status of login as either loading, error, or success.
+### Step 10 - Login activity
+Once a user clicks on the login button, we call the `loginUser` function in the `ViewModel` passing the necessary parameters. We also observe the status of login as either loading, error, or success.
 
-```Kotlin
+```kotlin
 binding.buttonLogin.setOnClickListener {
-            viewModel.loginUser(
-                binding.editTextLoginEmail.editText?.text.toString(),
-                binding.editTextLoginPass.editText?.text.toString()
-            )
+    viewModel.loginUser(
+        binding.editTextLoginEmail.editText?.text.toString(),
+        binding.editTextLoginPass.editText?.text.toString()
+    )
 }
 ```
 
-Also, we will define an observe to observe the state of login
-```Kotlin
+Also, we will define an observer to observe the state of login:
+
+```kotlin
 viewModel.loginStatus.observe(this, Observer {
-            when (it) {
-                is Resource.Loading -> {
-                    binding.loginProgressBar.isVisible = true
-                }
-                is Resource.Success -> {
-                    binding.loginProgressBar.isVisible = false
-                    Toast.makeText(applicationContext, "Logged In Successfully", Toast.LENGTH_SHORT).show()
-                }
-                is Resource.Error -> {
-                    binding.loginProgressBar.isVisible = false
-                    Toast.makeText(applicationContext, it.message, Toast.LENGTH_SHORT).show()
-                }
+        when (it) {
+            is Resource.Loading -> {
+                binding.loginProgressBar.isVisible = true
             }
+            is Resource.Success -> {
+                binding.loginProgressBar.isVisible = false
+                Toast.makeText(applicationContext, "Logged In Successfully", Toast.LENGTH_SHORT).show()
+            }
+            is Resource.Error -> {
+                binding.loginProgressBar.isVisible = false
+                Toast.makeText(applicationContext, it.message, Toast.LENGTH_SHORT).show()
+            }
+        }
 })
 ```
 
 ### Conclusion
-In this tutorial, we have learned how to run Firebase functions in the background thread with Coroutines. To see the full implementation of this tutorial, feel free to check out this Github repository [FirebaseCoroutinesDemo](https://github.com/JoelKanyi/FirebaseCoroutinesDemo).
+In this tutorial, we have learned how to run Firebase functions in the background thread with Coroutines. To see the full implementation of this tutorial, feel free to check out this Github repository [Firebase Coroutines Demo](https://github.com/JoelKanyi/FirebaseCoroutinesDemo).
 
-Happy learning!.
+Happy learning!
 
 #### References
-- [Kotlin Coroutines](https://github.com/Kotlin/kotlinx.coroutines).
-- [Firebase Authetication Documentation](https://firebase.google.com/docs/auth/android/password-auth).
-- [Firebase Realtime Database Documentation](https://firebase.google.com/docs/database/android/start).
+- [Kotlin Coroutines](https://github.com/Kotlin/kotlinx.coroutines)
+- [Firebase Authentication Documentation](https://firebase.google.com/docs/auth/android/password-auth)
+- [Firebase Realtime Database Documentation](https://firebase.google.com/docs/database/android/start)
+
+---
+Peer Review Contributions by: [Eric Gacoki](/engineering-education/authors/eric-gacoki/)
