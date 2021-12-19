@@ -1,4 +1,4 @@
-Animations are very important in every mobile application. They make the user interface of apps appealing and fun to use. Animations may be difficult to implement in apps and that is where Lottie animations come in. A Lottie is JSON-based animation file. They be used both as a static asset and a network asset. They polish the user interface of your app and make it intuitive to users.
+Animations are very important in every mobile application. They make the user interface of apps appealing and fun to use. Animations may be difficult to implement in apps and that is where Lottie animations come in. A Lottie is JSON-based animation file. They are used both as a static asset and a network asset. They polish the user interface of your app and make it intuitive to users.
 
 In this article, we will implement Lottie animation in a flutter application. Animation controllers in Flutter, give us high-level control over our animations. We will be using an animation controller to control the state of our Lottie animations in our Flutter app.
 
@@ -71,7 +71,7 @@ class _LottieScreenState extends State<LottieScreen> {
 
 - Next, add a `body` to the Scaffold. The body will contain the following widgets:
   - Center widget - to center the child widgets on the screen.
-  - Column widget which will a child of the Center widget - to lay out the children vertically.
+  - Column widget which will a child of the Center widget - to layout the children vertically.
 
 ### Step four: Using Lottie animations
 
