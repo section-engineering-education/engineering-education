@@ -31,7 +31,7 @@ Apart from CRMs, you would possibly additionally have databases in which the sta
 ### Creating and Submitting HTML form to Google Sheets.
 Below is how to create a data entry sheet with Google Apps Script.
 **Step One:** Go to https://drive.google.com/drive/my-drive and login into your Google Drive account. 
-A Google Account is a necessity to use this service, so register for one on that site if you don't have one.
+You will need a Google account to use this service, so create one using the link above if you don't have one.
 
 **Step Two:** After logging in to Google Drive, there is a New button on the top left of the page. Click on it and choose the Google sheet alternative and Blank Spreadsheet option.
 
