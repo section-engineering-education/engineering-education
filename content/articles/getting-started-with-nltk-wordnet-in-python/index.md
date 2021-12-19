@@ -18,7 +18,7 @@ To have a better understanding of this article, the reader should:
 WordNet categorizes English words into groups of synonyms, which are referred to as synsets (short for set of synonyms). Every Synset contains a name, a part-of-speech ( include nouns, verbs, adverbs, and adjectives) and a number. Synsets are used to store synonyms, where each word in the synset shares the same meaning . Essentially, each synset is a collection of synonyms. Some of the words have just one Synset, while others have multiple Synsets.  Every synset has a definition associated with it. Synset make it easier for users to look up words in the WordNet database.
 
 #### 1. Getting Synsets.
-Synsets are words related to the word that you entered as an argument to wordnet.synsets("word")  can be obtained from a database using this method.
+The function wordnet.synsets('word') is used to return an array containing all the Synsets related to the word passed to it as the argument.
 
 ```python
 import nltk
@@ -58,7 +58,7 @@ OUTPUT
 [Synset('book.n.01'),Synset('book.n.02'),Synset('record.n.05'),Synset('script.n.01'),Synset('ledger.n.01'),Synset('book.n.06'),Synset('book.n.07'),Synset('koran.n.01'),Synset('bible.n.01'),Synset('book.n.10'),Synset('book.n.11')]
 ```
 #### 2.  Getting the definition of a Synset.
-To do this, you can utilize the definition() function, which can be used to further analyze the Synset for a definition that is common to all of its Lemmas. This method returns a string that conforms to the most basic specification. There are two ways of achieving this:
+To get the definition of a Synset, you can utilize the definition() function, which can be used to further analyze the Synset for a definition that is common to all of its Lemmas. This method returns a string that conforms to the most basic specification. There are two ways of achieving this:
 
 Example one
 
@@ -207,7 +207,7 @@ wn.synset('face.n.01').part_meronyms()
 [Synset('beard.n.01'),Synset('brow.n.01'),Synset('cheek.n.01'),Synset('chin.n.01'),Synset('eye.n.01'),Synset('eyebrow.n.01'),Synset('facial.n.01'),Synset('facial_muscle.n.01'),Synset('facial_vein.n.01'),Synset('feature.n.02'),Synset('jaw.n.02'),Synset('jowl.n.02'),Synset('mouth.n.02'),Synset('nose.n.01')]
 ```
 ### Understanding NLTK Entailments
-An entailment is similar to an insinuation. A conclusion can only be derived from something even though it is not specifically expressed.
+An entailment is similar to an insinuation which ia a conclusion that can only be derived from something even though it is not specifically expressed.
 
 For example
 ```python
