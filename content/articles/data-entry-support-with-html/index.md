@@ -10,7 +10,7 @@ By eliminating the mistakes in data input, you may achieve more accurate results
 In this tutorial, we will discuss data entry support with HTML.
 
 ### Benefits of having an online data entry form
-* Creating green bureaucracy at the internet site has proved very useful in lowering the statistics access mistakes.
+* Creating green bureaucracy on the internet has proven to be very useful in lowering the statistics access mistakes.
 Some of the shape advent advantages in statistics access include -
 
 * Forms Assist in Brand Building
