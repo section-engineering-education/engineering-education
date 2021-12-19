@@ -80,12 +80,18 @@ simultaneously.
 
 Follow the procedure below to send the form you created to Google Spreadsheet. It can be either a brand-new or already created spreadsheet.
 1. The first step is to sign in to your google account to acces the google sheet you created
-2. On the spreadsheet, click on the tools tab and choose the script editor option. This option opens the google script page.  
-3. Create a new function and name it.
-4. On the page's menu, tap on the run option then click setup.
-5. If you did not log in before to a google account, it will ask for you to log in.
-6. click publish option on the menu tabs then select the deploy as a web app and choose the appropriate customizations.
-7. After choosing the customizations click on depoly to finish the process
+2. On the spreadsheet, click on the tools tab and choose the script editor option. This option opens the google script page.
+
+![Script Editor option](/engineering-education/data-entry-support-with-html/image0.png)
+
+4. Create a new function and name it.
+5. On the page's menu, tap on the run option then click setup.
+6. If you did not log in before to a google account, it will ask for you to log in.
+7. click publish option on the menu tabs then select the deploy as a web app and choose the appropriate customizations.
+
+![Deploying as a web app](/engineering-education/data-entry-support-with-html/image2.png)
+
+9. After choosing the customizations click on depoly to finish the process
 
 ### Deploying a script as a web app
 
