@@ -1,7 +1,6 @@
 # Exceptions and Error Handling in Python
 
 ### Introduction
-
 Over the years, Python has gained acceptance in the programming world because of its simplicity and application across diverse areas, ranging from game development to web development, data science, and cyber security.
 
 Though Python is simple to work with, it is not that gracious to errors as whenever an error occurs during a program execution that makes Python unsure of what to do, and the program will halt and show a “traceback” error message which includes a report about the exception raised.
@@ -48,7 +47,7 @@ Here, we will look at attribute error, name error, type-error, arithmetic error,
 The image above shows the exception branch in Python.
 
 #### The Attribute error
-This error is raised when you try to call an attribute that a particular object or data type does not support. For example, if you call the  `key()` method on a list it will raise an attribute error because the list does not support the  `key()` method; rather, it is a dictionary method that returns the keys of the specified dictionary. 
+This error is raised when you call an attribute that a particular object or data type does not support. For example, if you call the  `key()` method on a list, it will raise an attribute error because the list does not support the  `key()` method; instead, it is a dictionary method that returns the keys of the specified dictionary. 
 
 So whenever you get an attribute error, it shows that you are using the wrong attribute on a particle data type or object.
 
@@ -62,7 +61,7 @@ This means that a variable or function can only be called or used after being cr
 ```
 ![Name Error](/exceptions-and-error/nameerror.jpg)
 Image by author
-The image above shows a name error recieved for using a wrong variable name.
+The image above shows a name error received for using the wrong variable name.
 
 You will get a **name error** when you run the code above because the list created was stored in variable “Names”, not “names”. Python is case sensitive, so it sees “Names” and “names” as two different variables, with one declared the other undeclared.
  
@@ -72,18 +71,18 @@ Image by author
 In the image above, we got a name error because the variable called was declared within a function, and we tried to access it outside the function, which is not allowed in Python. 
 
 ### Type error
-A type error is raised when you try to perform an operation that is not supported by an object or function. 
+A type error is raised when you try to perform an operation not supported by an object or function. 
 
 ```name = “James”
    Name / 2
 ```
-In the code above, we assigned **James**  to the variable name and performed a division operation. Unfortunately, we will get a “TyrpeError” because “name” is a string that does not support that division type of operation. 
+We assigned **James**  to the variable name in the code above and performed a division operation. Unfortunately, we will get a “TyrpeError” because “name” is a string that does not support that division type of operation. 
 
 ![Type error](/exceptions-and-error/type.jpg)
-The image above shows type error message.
+The image above shows the type error message.
 
 #### Arithmetic error
-The arithmetic error occurs when an error is encountered during numeric calculations in Python. This includes Zerodivision Error and Floating point error. Zero division error is raised when you try to divide a numeric value by zero. 
+The arithmetic error occurs when an error is encountered during numeric calculations in Python. This includes Zerodivision Error and Floating point error. In addition, zero division error is raised when you divide a numeric value by zero. 
  
 ``` number  = 6
 ZeroErro = 6 / 0
@@ -94,7 +93,7 @@ When we run this code, we will get a ZeroDivision error. In mathematics, this is
 
 #### Lookup error
 Lookup error is the base class for key error and index error. 
-The key error is raised when a wrong key is used to access a dictionary value, i.e, using a key that is not in the dictionary. This error means that the key you are using to access a dictionary is wrong. 
+The key error is raised when a wrong key is used to access a dictionary value, i.e., using a key that is not in the dictionary. This error means that the key you use to access a dictionary is wrong. 
 
 ```
  gender = { “June’ : “female”, “John” : “male” , “Kim”: “female”}
@@ -112,7 +111,7 @@ The index error is raised when you try to access a sequence (index) of a list th
  print(name[4])
 ```
 
-When you run this code, you will get an index error because “4” is out of range. This is because though there are 4 items in the list we created, Python starts indexing from zero to show how far a list item is from the beginning of the list. 
+You will get an index error when you run this code because “4” is out of range. Though there are four items in the list we created, Python starts indexing from zero to show how far a list item is from the beginning of the list. 
 
 ![Index error](/exceptions-and-error/index.jpg)
 Image by author
@@ -125,13 +124,13 @@ In the second part of this article, we will be discussing how to handle these ex
 To handle exceptions, Python has four major defined components: Try, except,  else, and finally.
 ![The try-except bl0ck](/exceptions-and-error/try.png)
 [Source](https://www.datacamp.com/community/tutorials/exception-handling-python)
- The image  above shows how the four-component are used in exception handling.
+ The image above shows how the four component is used in exception handling.
 
 
 1. Try: The try block specifies the code to “try” for an exception.
 2. Except: With the except, you specify the expected exception that you want your try block to search for and the message you want to be displayed should this be caught.
 3. Else: This block contains code that you will want to execute if the except block fails to catch an exception. Consider this a fall backplane/code
-3. Finally:  This code block is executed irrespective of what happens in the blocks above. 
+3. Finally, this code block is executed irrespective of what happens in the above blocks. 
 Using the steps above, we will detail how to handle some specific exceptions in Python. 
 
 ### Lookup error. 
@@ -147,9 +146,9 @@ else:
     print(‘Thank you’)
 
 ```
-In the code block above, we used the LookupError exception, the base exception for key and index errors. If any exceptions are encountered, **except** block will be executed. The **else** block will be executed if none of them is encountered. 
+In the code block above, we used the LookupError exception, the base exception for key and index errors. Therefore, if any exceptions are encountered, **except** block will be executed. Likewise, the **else** block will be executed if none of them is encountered. 
 
-The problem with using a general or base exception is that you will not know which specific error was captured.  For example, if we try to access the dictionary using the wrong key in the code above, we get that error and access it using the wrong index. We will get the same error as shown below. 
+Using a general or base exception is a disadvantage because you will not know which specific error was captured.  For example, if we try to access the dictionary using the wrong key in the code above, we get that error and access it using the wrong index. We will get the same error as shown below. 
 
 ```
  details[1]['location']
@@ -182,7 +181,7 @@ print(“You are welcome”)
  Whenever a wrong index is used, the program will print “wrong index used”. 
  
 ### Working with multiple exceptions in one block of code. 
-Python provides you the ability to have multiple exceptions within a single block of code. This simplifies your work and avoids unfavorable code growth in your program. 
+Python provides you with multiple exceptions within a single block of code. This simplifies your work and avoids unfavorable code growth in your program. 
 
 ``` 
 try:
@@ -194,7 +193,7 @@ except second exception:
 except: 
 ```
 
-If the try block encounters an exception as specified in the first except block, that block will handle it. If it raises the second exception, the “except second exception” will handle it. 
+If the try block encounters an exception as specified in the first except block, that block will handle it. Likewise, the “except second exception” will handle it if it raises the second exception. 
 
 If the exception raised was not specified by either of these blocks, the last block will be executed. Though this block is optional, it is essential. 
 
