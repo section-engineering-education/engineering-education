@@ -1,6 +1,22 @@
-### Introduction
-Timelines can be viewed as progress indicators that show a user the level of completion of a task and all the steps completed in executing a given activity. As a result, timelines form a significant role in most applications today.
+---
+layout: engineering-education
+status: publish
+published: true
+url: /flutter-timelines/
+title: Getting started with Flutter timelines.
+description: Timelines can be viewed as progress indicators that show a user the level of completion of a task and all the steps completed in executing a given activity. This tutorial will guide the reader on how to get startd with Flutter timelines.
+author: dianne-sandra
+date: 2021-12-19T00:00:00-11:00
+topics: [Languages]
+excerpt_separator: <!--more-->
+images:
 
+  - url: /engineering-education/python-strings/hero.png
+    alt: Getting started with Flutter timelines Image
+---
+
+Timelines can be viewed as progress indicators that show a user the level of completion of a task and all the steps completed in executing a given activity. As a result, timelines form a significant role in most applications today.
+ <!--more-->
 Flutter timelines can be applied to various applications today for easy implementation and a straightforward and user-friendly interface. 
 
 ### Examples where timelines are used
@@ -86,7 +102,6 @@ List<Color> colors = [Colors.red, Colors.green,Colors.pinkAccent, Colors.blue];
 The following step is to create an array of the steps with a title, description, and an icon from the `ProgressCard` class template. 
 
 ```dart
-
 List<ProcessCard> _getProcess(){
     List<ProcessCard> processCard = [];
 
