@@ -4,6 +4,7 @@
 A critical phase in the data analysis process is new data
  input. The information gathered is to be accurately input into the computer system. 
 The number of human mistakes encountered during data entry may be reduced using an effective data entry form.
+
 A well-designed data input form may speed up data entering and enhance productivity. 
 By eliminating the mistakes in data input, you may achieve more accurate results. 
 In this tutorial, we will discuss data entry support with HTML.
