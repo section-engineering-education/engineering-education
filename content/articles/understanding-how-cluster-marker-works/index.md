@@ -16,7 +16,7 @@ Have you ever tried to visualize a large amount of data on the map? If so, using
 
 ![image info](engineering-education/understanding-how-cluster-marker-works/marker.png)
 
-Instead of visualizing a map using the normal method, it is important to consider the use of the clustering method which is the most efficient way of mapping when it comes to visualizing big data. To achieve the clustering of markers, the usage of the leaflet-marker-cluster plugin is needed, So let's get started as we need to initialize our map for data visualization. Open any code editor and create an `index.html` file in a new project directory, then copy and paste the snippets below.
+Instead of visualizing a map using the normal method, it is important to consider the use of the clustering method which is the most efficient way of mapping when it comes to visualizing big data. To achieve the clustering of markers, the use of the leaflet-marker-cluster plugin is needed, So let's get started as we need to initialize our map for data visualization. Open any code editor and create an `index.html` file in a new project directory, then copy and paste the snippets below.
 
 ```html
 <!DOCTYPE html>
