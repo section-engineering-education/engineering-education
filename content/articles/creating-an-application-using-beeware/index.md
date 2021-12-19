@@ -1,0 +1,275 @@
+### Creating an application using Beeware
+
+### Introduction
+
+Beeware is a python library to create cross-platform applications.It serves as an alternative to other app 
+building libraries such as kivy. In this article, we will be building a simple application using beeware in order
+to have an introduction of the library and appreciate the way it works. 
+
+### Prerequisites
+1. Have `python` installed in your machine.
+2. Install `beeware` and `toga`.Run `pip3 install beeware` and `pip3 install toga` to install them.
+3. Basic python knowledge is necessary.
+
+### Getting Started.
+You will need to cd into a folder of your choice.Type the command `briefcase new`.This command will create a new application in
+that folder. Follow the instructions and type the required details or just press enter to remain with the default information.
+You also need to be connected to the internet to be able to create the app successfully.We will create an app called `Simple Calculator`.
+The new app should have the following structure:
+
+```bash
+.
+├── LICENSE
+├── pyproject.toml
+├── README.rst
+└── src
+    ├── simplecalculator
+    │   ├── app.py
+    │   ├── __init__.py
+    │   ├── __main__.py
+    │   └── resources
+    │       ├── __init__.py
+    │       ├── simplecalculator.icns
+    │       ├── simplecalculator.ico
+    │       └── simplecalculator.png
+    └── simplecalculator.dist-info
+        ├── INSTALLER
+        └── METADATA
+
+
+```
+The `src` folder has files for running the application. All the logic for running the application are found in the `app.py`.
+The `app.py` should look as follows:
+
+`app.py`
+```python
+import toga
+from toga.style import Pack
+from toga.style.pack import COLUMN, ROW
+
+class SimpleCalculator(toga.App):
+    def startup(self):
+        main_box = toga.Box()
+        self.main_window = toga.MainWindow(title=self.formal_name)
+        self.main_window.content = main_box
+        self.main_window.show()
+    
+def main():
+    return SimpleCalculator()
+```
+The file begins by importing `toga` toolkit. Then we define a class `SimpleCalculator` that conatins a `startup` method.
+This method defines a toga box component.It serves as the main box.The name `main_box` is declared and initialized by default when you create the application but may be changed later 
+as desired.Then we declare a main window whose title is the app name 
+name we defined while creating after running the command `briefcase new`.
+We then have the window contain our empty main box as it's content. Then we have our application show our window.
+We finally define a `main` function that returns our `SimpleCalculator` class instance.
+This `main` method is called by the `__main__.py` file and invoked by it.
+
+By now you have a simple working application.You can cd into `Simple Calculator` and type `briefcase dev` to run the app
+in developer mode. You should have the following simple application:
+
+![Starter app image](/engineering-education/content/articles/ creating-an-application-using-beeware/starter.png)
+
+
+### Setting up the boxes
+We will now modify the `app.py` file step by step in order to create our final calculator application.We will start by defining all the necessary box components required.
+Modify the `app.py` file as follows:
+
+```python
+import toga
+from toga.style import Pack
+from toga.style.pack import COLUMN, ROW
+from functools import partial
+
+class SimpleCalculator(toga.App):
+
+    def startup(self):
+        box1 = toga.Box()
+        box2 = toga.Box()
+        box3 = toga.Box()
+        box4 = toga.Box()
+        box5 = toga.Box()
+        box6 = toga.Box()
+
+        main = toga.Box()
+
+        # adding in main box
+        main.add(box1)
+        main.add(box2)
+        main.add(box3)
+        main.add(box4)
+        main.add(box5)
+        main.add(box6)
+        main.style.update(direction=COLUMN)
+
+        self.main_window = toga.MainWindow(title=self.formal_name)
+        self.main_window.content = main
+        self.main_window.show()
+
+
+def main():
+    return SimpleCalculator()
+
+```
+We begin by creating six boxes and a main box that will have all the six boxes inside it.
+We  have the main box as a column box, meaning it will have all width by default unless defined and height will expand according to the content within the box.
+In the next section, we will be having each box contain some 
+numbers and operators while two of them will have an input field and a calculate button respectively. For now, when you run the application you
+won't see any changes. 
+### Putting up the buttons
+We  are now going to set up the buttons for numbers, operators and calculate button.
+We will also have a box for input text.
+
+Now edit the `app.py` to appear as follows:
+```python
+"""
+Simple calculator
+"""
+from functools import partial
+
+import toga
+from toga.style import Pack
+from toga.style.pack import COLUMN, ROW
+
+
+class SimpleCalculator(toga.App):
+
+    def startup(self):
+        box1 = toga.Box()
+        box2 = toga.Box()
+        box3 = toga.Box()
+        box4 = toga.Box()
+        box5 = toga.Box()
+        box6 = toga.Box()
+
+        main = toga.Box()
+
+        self.input_text = toga.TextInput()
+        self.input_text.style.width = 200
+        self.input_text.style.padding_left = 10
+
+        button7 = toga.Button('7', on_press=partial(self.enterdata, number='7'))
+        button7.style.padding_top = 20
+        button7.style.padding_left = 10
+
+        button8 = toga.Button('8', on_press=partial(self.enterdata, number='8'))
+        button8.style.padding_top = 20
+
+        button9 = toga.Button('9', on_press=partial(self.enterdata, number='9'))
+        button9.style.padding_top = 20
+
+        buttonplus = toga.Button('+', on_press=partial(self.enterdata, number='+'))
+        buttonplus.style.padding_top = 20
+
+        button4 = toga.Button('4', on_press=partial(self.enterdata, number='4'))
+        button4.style.padding_left = 10
+
+        button5 = toga.Button('5', on_press=partial(self.enterdata, number='5'))
+
+        button6 = toga.Button('6', on_press=partial(self.enterdata, number='6'))
+
+        buttonminus = toga.Button('-', on_press=partial(self.enterdata, number='-'))
+
+        button1 = toga.Button('1', on_press=partial(self.enterdata, number='1'))
+        button1.style.padding_left = 10
+
+        button2 = toga.Button('2', on_press=partial(self.enterdata, number='2'))
+
+        button3 = toga.Button('3', on_press=partial(self.enterdata, number='3'))
+
+        buttonmultiply = toga.Button('×', on_press=partial(self.enterdata, number='*'))
+
+        buttondot = toga.Button('.', on_press=partial(self.enterdata, number='.'))
+        buttondot.style.padding_left = 10
+
+        button0 = toga.Button('0', on_press=partial(self.enterdata, number='0'))
+
+        buttonclear = toga.Button('C', on_press=partial(self.enterdata, number='C'))
+
+        buttondivide = toga.Button('÷', on_press=partial(self.enterdata, number='/'))
+
+        calculate = toga.Button('CALCULATE', on_press=self.calculate)
+        calculate.style.width = 150
+        calculate.style.padding_top = 30
+        calculate.style.padding_left = 30
+
+        # adding
+        box1.add(self.input_text)
+
+        box2.add(calculate)
+
+        box3.add(button7)
+        box3.add(button8)
+        box3.add(button9)
+        box3.add(buttonplus)
+
+        box4.add(button4)
+        box4.add(button5)
+        box4.add(button6)
+        box4.add(buttonminus)
+
+        box5.add(button1)
+        box5.add(button2)
+        box5.add(button3)
+        box5.add(buttonmultiply)
+
+        box6.add(buttondot)
+        box6.add(button0)
+        box6.add(buttonclear)
+        box6.add(buttondivide)
+
+        # adding in main box
+        main.add(box1)
+        main.add(box2)
+        main.add(box3)
+        main.add(box4)
+        main.add(box5)
+        main.add(box6)
+
+        main.style.update(direction=COLUMN)
+
+        self.main_window = toga.MainWindow(title=self.formal_name)
+        self.main_window.content = main
+        self.main_window.show()
+
+    def enterdata(self, widget, number):
+        if (number == "C"):
+            self.input_text.value = ""
+        else:
+            self.input_text.value = self.input_text.value + number
+
+    def calculate(self, widget):
+        output = eval(self.input_text.value)
+        self.input_text.value = output
+
+
+def main():
+    return SimpleCalculator()
+
+
+```
+We have defined all the necessary buttons required to make our application. Each button is a toga button with some having a little
+padding to the top or left or both. There is a callback method `on_press` defined within the same buttons. We make use of a class defined function `enterdata`
+that takes a number or an operand such as `+`, `-`, `*`, `÷`, `.` and `C`. and appends it to the input value.
+
+We make use of the `partial` built in function in python that takes a function and a some inputs pre-filled to return a fully-filled function.
+Our partial function takes our enterdata function and a number value to be passed as final parameter to the function.There is also a `CALCULATE` button that when pressed 
+calls the `calculate` function
+
+We  have a `calculate` function that takes our expression evaluated by the `enterdata` function and produces a result using python's in-built
+fuction `eval`. The `eval` function takes an expression as input and returns the expression result as output.
+
+Finally, we add our buttons to the different boxes defined earlier.We add the input text to box1.We add the calculate button to the box2. We then add buttons 7,8,9 and plus button to box3.
+We add buttons 4,5,6 and minus to box4. All the necessary buttons are added in a similar manner.
+
+When we finally run our application we have the following application:
+![Final App](/engineering-education/content/articles/ creating-an-application-using-beeware/final.png)
+
+### Conclusion
+
+By now you have a simple working calculator built using Beeware running in developer mode. If you wish to have your application running in a device, 
+such as mobile phone, you should visit [Beeware Documentation](https://docs.beeware.org/en/latest/) for instructions. The documentation also contains detailed 
+information on how beeware works using toga.
+
+
+
