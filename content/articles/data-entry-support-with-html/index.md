@@ -13,7 +13,7 @@ In this tutorial, we will discuss data entry support with HTML.
 * Creating green bureaucracy on the internet has proven to be very useful in lowering the statistics access mistakes.
 Some of the shape advent advantages in statistics access include -
 
-* Forms Assist in Brand Building
+* Brand Building
 With the proper customization of the shape advent software program, you may use your colors, fonts, snapshots, and symbols which can be in keeping with your present internet site. The bureaucracy for your internet site must replicate your brand. It will similarly improve your brand's online presence, specifically if your bureaucracy is easy and you do not ask for excessive internet site site visitors.
 
 * Targeted Notifications
