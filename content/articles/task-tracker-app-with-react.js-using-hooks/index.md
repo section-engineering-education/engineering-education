@@ -1,51 +1,74 @@
-# Task tracker app with React hooks
-## Introduction
-We all have tasks we plan on completing before the day runs out in our everyday lives. Often, we use task tracking applications to keep track of everything we have to do.
+---
+layout: engineering-education
+status: publish
+published: true
+url: /task-tracker-app-with-react-hooks/
+title: Task tracker app with React hooks
+description: In this article, you will learn how to build a task tracker with React that allows you to add, update, and delete tasks. You will also learn how to use hooks, manage states, and use props in React.
+author: prince-joel
+date: 2021-12-19T00:00:00-10:00
+topics: [Languages]
+excerpt_separator: <!--more-->
+images:
 
+  - url: /engineering-education/task-tracker-app-with-react-hooks/hero.jpg
+    alt: task tracker image
+---
+We all have tasks we plan on completing before the day runs out in our everyday lives. Often, we use task tracking applications to keep track of everything we have to do.
+<!--more-->
 In this article, you will learn how to build a task tracker with React that allows you to add, update, and delete tasks. You will also learn how to use hooks, manage states, and use props in React.
 
 ## Getting started
-First, create a react app; here is a link to learn how to do that <https://reactjs.org/docs/create-a-new-react-app.html>.After completing your react app and setting up your code editor, you will then create your component folder. Your app will consist of three main components: ` TodoForm.js` ,`TodoList.js`, and `Todo.js`.
+First, create a React application. Follow [this](https://reactjs.org/docs/create-a-new-react-app.html) link for more details.
 
-All your functionality will be in your `App.js` which will serve as an entry point for your app. You will use material UI for styling purposes instead of your regular CSS. Visit material UI to install material UI <https://mui.com/getting-started/installation/> if you don't have it installed already.
+After setting up your React app, proceed and create a component folder. Your app will consist of three main components: ` TodoForm.js`, `TodoList.js`, and `Todo.js`.
+
+All your functionality will be in your `App.js`, which serves as an entry point for your app. 
+
+> NOTE: In this tutorial, we use material UI for styling purposes.You may download [here](https://mui.com/getting-started/installation/) if you don't have it installed already.
 
 ## TodoForm
-In the `TodoForm` component create a function called `TodoForm()`.`TodoForm` component will be used in creating forms required to add a `to-do` to the list. Remember to import 'React' and export `TodoForm`.
+In the `TodoForm` component, create a function called `TodoForm()`. The`TodoForm` component will be used to create forms required to add a `to-do` to the list. Remember to import `React` and export `TodoForm()`.
 
-In this `TodoForm()` function, go ahead and return a form element with an input and a button inside of it. Inside the `TodoForm`, you need to import `useState` because you need to define some state to keep track of input from the user.
+In this `TodoForm()` function, go ahead and return a form element with an input and a button inside of it. 
 
-To keep track of user input, define a state called `to-do`, `setTodo()` as the function initialize as an object with three properties, ID, which is a string, task, which is also a string, and completed, which is a boolean. Inside the `TodoForm()` Completed will be used to track whether or not the `to-do` has been marked as complete, and the task will describe the `to-do`.
+In the `TodoForm()`, import `useState` because you need to define some state to keep track of input from the user.
 
-You need to define a function for when a user types in input for a `to-do` to keep track of it in your state. You need to create a function called `handleTaskInputChange()` that takes in an event as the parameter. This function will be responsible for updating the task property on your `to-do` object.
+To keep track of user input, define a state called `to-do`. Then `setTodo()` as the function initialize as an object with three properties, ID, which is a string, task, which is also a string, and completed, which is a boolean. 
+
+The `completed` status will be used to track whether or not the `to-do` has been marked as complete, and the task will describe the `to-do`.
+
+It would be best to define a function for when a user types in input for a `to-do` to keep track of it in your state.
+
+You need to create a function called `handleTaskInputChange()` that takes an event as the parameter. This function will be responsible for updating the task property on your `to-do` object.
 
 In this function, you will call `setTodo`, pass in a new object with the old `to-do` property, and update the task property with the new value from the event target value. In this case, the event target value contains the new input text from the user.
 
-Your return statement will define the `onChange()` function to run your new `handleTaskInputChange()` function every time the event fires. In this case, `onChange` will fire every time the input value changes. 
+Your return statement will define the `onChange()` event function to run your new `handleTaskInputChange()` function every time the event fires. In this case, `onChange()` will fire every time the input value changes. 
 
-Also, you set the input value to be `todo.task` because that is what's updated every time the `handleTaskInputChange()` is called. you also give your button a type called submit. 
+Also, you set the input value to be `todo.task` because that is what's updated every time the `handleTaskInputChange()` is called. Finally, you also give your button a type called to submit. 
 
 So now that you have some input data to work with, you need to handle the case when you want to add a new `to-do` to the list. 
 
-In `app.js`, you will define a single state called `todos`, an array. you need to create a function called `addTodo()` that will take a new `to-do` and add it to the array of `todos`. 
+In `app.js`, you will define a single state called `todos`, an array. Next, you need to create a function called `addTodo()` that will take a new `to-do` and add it to the array of `todos`. 
 
-To add the `to-do` to the list, call the `setTodos` function and then pass in an array containing the new `to-do`, add it to the beginning, and the old `todos` array spread over it.
+To add the `to-do` to the list, call the `setTodos()` function and then pass in an array containing the new `to-do`, add it to the beginning, and the old `todos` array spread over it.
 
-You need to pass your new `addTodo()` function to the `TodoForm` component as a prop. Now, in your `TodoForm` component, you need to destructure the `addTodo()` function from the props parameter, which is the first one. 
+You need to pass your new `addTodo()` function to the `TodoForm` component as a prop. Now, in your `TodoForm` component, you need to destructure the `addTodo()` function from the props parameter, the first one. 
 
-When the user submits the form, you need to add the forms `to-do` from the state to the list of to-do's. To do this, you are going to create a `handleSubmit()` function that also takes in an event from the DOM.
+When the user submits the form, you need to add the forms `to-do` from the state to the list. To do this, you will create a `handleSubmit()` function that also takes in an event from the DOM.
 
-Here you need to call the `preventDefault()` function to prevent the default browser from submitting automatically.
+You need to call the `preventDefault()` function to prevent the default browser from submitting automatically.
+
 Then you need to write an if statement that only gets called if the `to-do.task` is not empty. You will do this by calling the `trim()` function on your `to-do.task.trim()`, which will remove white space from the string.
 
-Then inside the if statement, you need to call your new `addTodo()` function with an object with the `to-do` spread and update the ID property. you will get this ID from a UUID package, which will generate one for us. 
+Then inside the if statement, you need to call your new `addTodo()` function with an object with the `to-do` spread and update the ID property. You will get this ID from a UUID package, which will generate one for us. 
 
-To install this, open the console and type in yarn add UUID or npm add UUID, then in your `FodoForm` file, import UUID and call v4 to generate the `to-do` ID. 
+To install this, open the console and type in yarn add UUID or npm add UUID, then in your `TodoForm` file, import UUID and call v4 to generate the `to-do` ID. 
 
 Then after you add the `to-do`, you want to reset the form by calling `setTodo` with a new object that has the old property spread onto it and then updates the task property with an empty string. 
 
-you can now take this `handleSubmit()` function and have it fire when the form gets submitted by defining the` onSubmit` property as your new `handleSubmit()` function.
-
-
+You can now take this `handleSubmit()` function and have it fire when the form gets submitted by defining the` onSubmit` property as your new `handleSubmit()` function.
 ```javascript
  import { Button, TextField } from "@material-ui/core";
  import React, { useState } from "react";
@@ -97,14 +120,11 @@ function handleTaskInputChange(e) {
 ## TodoList
 `TodoList` will be responsible for rendering the list of `todos` in an array. Using the short form, import react and export `TodoList`. You need to destructure `todos` from the component props and then render an unordered list in the return statement.
 
-Inside this unordered list, you need to map over `todos` by inserting some javascript in curly braces and using the map array function. You need to return your `Todo` component with the `to-do` object passed in as a prop inside your map.
+Inside this unordered list, you need to map over `todos` by inserting some JavaScript in curly braces and using the map array function. Finally, you need to return your `Todo` component with the `to-do` object passed in as a prop inside your map.
 
-Note that when rendering a JSX element in an array map, each item should have a unique key attached to the parent element returned from the map.
+>Note that when rendering a JSX element in an array map, each item should have a unique key attached to the parent element returned from the map.
 
 The next thing you need to do is to define how your `Todo` component will look:
-
-
-
 ```javascript
 import { List } from "@material-ui/core";
 import React from "react";
@@ -128,18 +148,20 @@ function TodoList({ todos, removeTodo, toggleComplete }) {
  export default TodoList;
 ```
  
-
-
 ## Todo
-`Todo` will render a `to-do` from the list. Your `Todo` need to have three main elements, the check box, the task, and the delete button. Using the short form, import react and export `Todo.js`.
+`Todo` will render a `to-do` from the list. Your `Todo` needs to have three main elements, the checkbox, the task, and the delete button. Using the short form, import react and export `Todo.js`.
 
-In your return statement, you need to create an input which is a checkbox with list items having the `to-do.task` and a button all inside a div. You will attach custom styles by specifying the style prop of custom camel-case properties that contains style types. You are going to give the div a display of flex to align elements next to each other horizontally.
+In your return statement, you need to create an input: a checkbox with a list of items having the `to-do.task` and a button all inside a div. 
 
-Also, for the list style, you need to give the text-decoration style a value of line-through when the `to-do`  gets completed by using a ternary expression. 
+Next, you will attach custom styles by specifying the style prop of custom camel-case properties that contains style types. 
+
+Finally, you will give the div a display of flex to align elements next to each other horizontally.
+
+Also, for the list style, you need to give the text-decoration style a value of line-through when the `to-do` gets completed by using a ternary expression. 
 
 If you run the code you have written, you can see that you can add a `to-do` to your list, and your UI will update every time you submit your form. 
 
-However, if you refresh the page, all your `Todo` will be lost. You need to utilize the local browser storage to fix this so that your state will not reset.
+However, all your `Todo` will be lost if you refresh the page. Therefore, you need to utilize the local browser storage to fix this so that your state will not reset.
 
 In `App.js`, you need to import a function called `useEffect()`. `useEffect` is a handy hook that provides functionalities that respond to specific data or functions in your code. Every time your `todos` array changes, you want to store that new data inside of local storage. 
 
@@ -147,25 +169,31 @@ To do that, you need to define an effect that takes in a function and a dependen
 
 Next, you need to define a unique local storage key that you can use to store the `todos`. 
 
-In this effect, you need to call the `setItem()` function on the global-local storage variable provided with your custom local storage key and `todos` array stringify with `JSON.stringify`.
+To this effect, you need to call the `setItem()` function on the global-local storage variable provided with your custom local storage key and `todos` array stringify with `JSON.stringify()`.
 
-Next, you want to add `todos` when the app renders. To do that, you will define a `useEffect` with an empty dependency array. Inside the effect, you need to get the `todos` from local storage and store them in a variable by calling `getItem` on local storage using the `LOCAL_STORAGE_KEY`. Then pass the string returned from that into `JSON` using `JSON.parse`. You need to call `setTodos` on this value, but only if it is null.
+Next, you want to add `todos` when the app renders. To do that, you will define a `useEffect` with an empty dependency array. Inside the effect, you need to get the `todos` from local storage and store them in a variable by calling `getItem` on local storage using the `LOCAL_STORAGE_KEY`. Then pass the string returned from that into `JSON` using `JSON.parse`. 
 
-If you rerun the app, you will see that the `Todos` do not disappear when refreshing the browser. You will need to perform actions on the actual `to-do`; `toggleComplete` and `delete`. 
+Finally, you need to call `setTodos` on this value, but only if null.
 
-Back to `App.js` you need to create a new function under `addTodo` called `toggleComplete()`, which takes in the ID of a `to-do`. To update the `to-do`, you need to call `setTodos`, and You need to pass a new `todos` array that you will get by performing a mapping. 
+If you execute the app again, you will see that the `Todos` do not disappear when refreshing the browser. Instead, you will need to perform actions on the actual `to-do`, `toggleComplete`, and `delete`. 
+
+Back to `App.js`, you need to create a new function under `addTodo` called `toggleComplete()`, which takes in the ID of a `to-do`. Then, to update the `to-do`, you need to call `setTodos`, and You need to pass a new `todos` array that you will get by performing a mapping. 
 
 You map each `to-do` to check if the ID of that `to-do` marches the one passed in. if it does, you need to return a new object with the completed property.
 
 This will cause false to become true and true to become false when the function is run on a particular ID. You take this function and pass it to the `TodoList` component to reference it there.
 
-In `TodoList.js`, you can destructure the `togglecomplete()` function from the properties and map over the `todos` by parsing it again to your `Todo` component. You want the `togglecomplete()` function to fire when clicking on the `to-do` checkbox. 
+In `TodoList.js`, you can destructure the `togglecomplete()` function from the properties and map over the `todos` by parsing it again to your `Todo` component. For example, you want the `togglecomplete()` function to fire when clicking on the `to-do` checkbox. 
 
 To do this, you need to create a function called `handlecheckboxclick()` inside the `Todo` component, which will call `togglecomplete()` with the ID of the `to-do`.Then you need to fill out checkbox inputs `onClick` property to use your `handleTodoClick()` function instead.
 
-Going back to `App.js`, you can now implement for deleting a `to-do`. You will then create a `removeTodo()` function, which takes in an ID from the `to-do`. Inside this function, you need to call `setTodos` with a new `todos` array passed to with a `removeTodo`.
+Going back to `App.js`, you can now implement for deleting a `to-do`. First, you will create a `removeTodo()` function, which takes an ID from the `to-do`. Inside this function, you need to call `setTodos` with a new `todos` array passed to `removeTodo`.
 
-Lucky for us, there is a handy prototype function for arrays called Filter, which is excellent for removing items from an array. The Filter takes a function which it will then use to determine whether or not it should keep an element in the array. In this case, you want to keep the `to-do` if the ID is not the one you are looking for; otherwise, remove the `to-do` from the list. 
+Lucky for us, there is a handy prototype function for arrays called `Filter`, which is excellent for removing items from an array. 
+
+The `Filter` takes a function which it will then use to determine whether or not it should keep an element in the array. 
+
+In this case, you want to keep the `to-do` if the ID is not the one you are looking for; otherwise, remove the `to-do` from the list. 
 
 The return value for this Filter is another `todos` with `to-do` of the same ID as a parameter removed from the array. Like before, you want to pass this new function to `TodoList` as a prop, so each `to-do` has access to it.
 
@@ -176,23 +204,20 @@ Like before, you need to create a function called `handleRemoveclick()`, which w
 If you run the app, you can now add, remove and toggle `todos` to complete.
 ![Remove](/engineering-education/task-tracker-app-with-react-hooks/Remove.jpg) 
 
-With the functionality implemented, your app will look better. you will use material UI. for this project by running the following commands in the terminal :
-
- 
-
-```javascript
-// install material UI with npm
+With the functionality implemented, your app will look better. you will use material UI for this project by running the following commands in the terminal :
+```bash
+# install material UI with npm
 npm install @material-ui/core
 
-//install material UI with yarn
+#install material UI with yarn
 yarn add @material-ui/core
 ```
 
-```javascript
-//install material UI with npm
+```bash
+#install material UI with npm
 npm install @material-ui/icons
 
-//install material UI with yarn
+#install material UI with yarn
 yarn add @material-ui/icons
 ```
 
@@ -200,23 +225,20 @@ In `App.js`, you need to remove the header element and add the typography compon
 
 Then change your paragraph tag to a typography component and set its variant to `h1` with some padding added.
 
-In `TodoForm`, import a button and text field from material UI, replace your input with textField, and add a label property. Then replace the regular button with the material UI button instead.
+In `TodoForm`, import a button and text field from material UI, replace your input with `textField` and add a label property. Then replace the regular button with the material UI button instead.
 
 You will then give the form a `className` that you can style. Then in `TodoList`, you need to replace the `UL` tag with a list component for material UI.
 
-In the `Todo` component, import the icon button, checkbox, list item, close icon, and typography for material UI. Then replace the regular list item element with a typography component and set the variant to body1.
+In the `Todo` component, import the icon button, checkbox, list item, close icon, and typography for material UI. Then replace the regular list item element with a typography component and set the variant to `body1`.
 
-Replace the input element with a checkbox component and give it a checked property that corresponds to the `to-do.Completed` property and an `onClick()` function that calls checkbox click.
+Replace the input element with a checkbox component and give it a checked property corresponding to the `to-do.Completed` property and an `onClick()` function that calls checkbox click.
 
-Also replace the remove button with an icon button and place the close icon inside it.
+Also, replace the remove button with an icon button and place the close icon inside it.
 
 Finally, you need to add some style to `App.CSS` to align everything to the center, set the element height to 100%, and vertically center the `TodoForm` elements.
 
 If you go back to your browser, you will see your app in its completed state:
-
-
 ```javascript 
-
  import { Checkbox, IconButton, ListItem, Typography } from "@material-ui/core";   import CloseIcon from "@material-ui/icons/Close";import React from "react"; 
 
 
@@ -248,9 +270,12 @@ If you go back to your browser, you will see your app in its completed state:
     export default Todo; 
 ```
 
-
 ## Conclusion
-This article serves as a stepping stone for people getting started with React. you learned how to create a task tracker app with React hooks, and you saw how to use states, effects, and pass props.
+This article serves as a stepping stone for people getting started with React. You learned how to create a task tracker app with React hooks, and you saw how to use states, effects, and pass props.
 
 Also, you saw how easy and fast it was to use material UI to style your app. Looking to develop the task tracker application further, improve the functionality or check out example code? Check out the GitHub repo https://github.com/prince-joel/Task-Tracker.
 
+Happy coding!
+
+---
+Peer Review Contributions by: [Miller Juma](/engineering-education/content/authors/miller-juma/)
