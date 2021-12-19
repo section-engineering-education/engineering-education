@@ -1,61 +1,87 @@
-Animations are very important in every mobile application. They make the user interface of apps appealing. Animations are difficult to implement in apps, that's where Lottie animations come in. Lottie animation files are JSON-based. Throughout the platform, Lottie animation can be used both as a static asset and a network asset. Animation controllers give us high-level control over our animations in Flutter. We will be using animation controllers to control the state of Lottie animation in our Flutter app.
+Animations are very important in every mobile application. They make the user interface of apps appealing and fun to use. Animations may be difficult to implement in apps and that is where Lottie animations come in. A Lottie is JSON-based animation file. They be used both as a static asset and a network asset. They polish the user interface of your app and make it intuitive to users.
 
-In this article, we will implement Lottie animation in a flutter application. We can get a Lottie animation JSON file from http://www.lottiefiles.com/.
+In this article, we will implement Lottie animation in a flutter application. Animation controllers in Flutter, give us high-level control over our animations. We will be using an animation controller to control the state of our Lottie animations in our Flutter app.
 
 ### Prerequisites
 
-    1. Basic knowledge of Flutter widgets
-    2. Basic knowledge of using animation controllers
+1. A solid understanding of Dart programing language.
+2. A solid understanding of Flutter widgets.
+3. Basic knowledge of using animation controllers in Flutter.
 
 Let us jump right into it!
 
-### Implementation
+### Step one: Adding Lottie dependency to your project
 
-#### Adding Lottie dependency to your Project
+- Goto the terminal in your editor and run this command:
 
-Goto the terminal in your editor and run this command:
-
-```
-flutter pub add lottie
+```dart
+flutter pub add Lottie
 ```
 
 A line like this will be added to the pubspec.yaml file of your project:
 
-```
+```dart
 dependencies:
-  lottie: ^1.2.1
+  Lottie: ^1.2.1 //Lottie Animation Library
 ```
 
-#### Importing
+- Once the Lottie dependency has been added to your project, you can import it to your dart code by adding this on the `main.dart` file:
 
-Once the lottie dependency has been added to your project, you can import it to your dart code by adding this on the `main.dart` file:
-
-```
+```dart
 import 'package:lottie/lottie.dart';
 ```
 
-#### Adding Assets
+### Step Two: Adding assets to your project
 
-We will create an assets folder in our project directory. Here we will add the lottie JSON file which we will implement.
+- First, to get a Lottie animation JSON file visit, [Lottie animation](http://www.lottiefiles.com/). Select the animation of your choice and download it.
 
-We will add our assets folder in the pubspec.yaml file in our project as shown below and run `flutter pub get` :
+- Next, create an assets folder in our project directory. Here you will add the downloaded Lottie JSON file which you will use.
 
-```
+- Next, add our assets folder in the pubspec.yaml file in our project as shown below and run `flutter pub get` :
+
+```dart
 assets:
- - assets/
+ - assets/
 ```
 
-#### Implementing Lottie animation
+### Step three: Creating the LottieScreen page
 
-First, we will create a new stateful widget class called LottieScreen which will return a Scaffold. Our screen contains an app bar with a title, Lottie implementation.
+- In your `main.dart`, create a new stateful widget class called LottieScreen which will return a Scaffold containing an app bar with a title, `Lottie implementation`. As shown below:
 
-a. Network Lottie
+```dart
+class LottieScreen extends StatefulWidget {
+  const LottieScreen({Key? key}) : super(key: key);
 
-To add a network lottie animation, goto to the lottie files website and copy the URL of the lottie file of your choice.
+  @override
+  _LottieScreenState createState() => _LottieScreenState();
+}
 
-Add a `Lottie.network('')` child widget inside a Center widget in the body. Paste the Lottie URL in the quotes as shown below:
-
+class _LottieScreenState extends State<LottieScreen> {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: const Text("Lottie Implementation"),
+        centerTitle: true,
+      ),
+    );
+  }
+}
 ```
+
+- Next, add a `body` to the Scaffold. The body will contain the following widgets:
+  - Center widget - to center the child widgets on the screen.
+  - Column widget which will a child of the Center widget - to lay out the children vertically.
+
+### Step four: Using Lottie animations
+
+#### 1. Network Lottie
+
+To add a network Lottie animation, goto to the Lottie files website and copy the URL of the Lottie of your choice.
+
+Add a `Lottie.network('')` widget as one of the children in the Column widget. Paste the Lottie URL as shown below:
+
+```dart
 body: Center(
     child: Lottie.network("https://assets8.lottiefiles.com/packages/lf20_xxjvkrex.json",
     animate: true
@@ -63,28 +89,27 @@ body: Center(
 ),
 ```
 
-When the application is run, the animation plays automatically. This can be changed by adding `animate: false` property inside the lottie widget. The lottie animation becomes a static image.
+When the application is run, the animation plays automatically. This can be changed by adding the `animate: false` property inside the Lottie widget. The Lottie animation becomes a static image.
 
-b. Asset Lottie
+#### 2. Asset Lottie
 
-The `Lottie.asset('')` allows lottie JSON files which are stored locally in the assets folder. 
-this is how it is done:
+The `Lottie.asset('')` allows Lottie JSON files which are stored locally in the assets folder as shown below:
 
-```
+```dart
 body: Center(
-  child: Lottie.asset("assets/transaction-completed.json"),
+  child: Lottie.asset("assets/transaction-completed.json"),
 ),
 ```
 
-### Animation Controllers
+### Step five: Animation Controllers
 
-In this article, to comprehensively explain the use of animation controllers in Flutter, we will implement an animation controller using the lottie asset animation that we added to our project above.
+In this article, to comprehensively explain the use of animation controllers in Flutter, we will implement an animation controller using the Lottie asset animation that we added to our project above.
 
-We will create a button such that, when pressed, a dialog box appears containing a lottie asset which notifies a user that a the command has been executed successfully.
+We will create a button such that, when pressed, a dialog box appears containing a Lottie asset which notifies a user that the command has been executed successfully.
 
 This is the code for the button:
 
-```
+```dart
 body: Center(
     child: Column(
       mainAxisSize: MainAxisSize.min,
@@ -99,11 +124,11 @@ body: Center(
 ),
 ```
 
-When the button is pressed, the showSuccessfulDialog method is executed. This method is the one that shows the dialog box.
+When the button is pressed, the `showSuccessfulDialog()` method is executed. This method is the one that shows the dialog box.
 
-This is the showSuccessfulDialog method code:
+This is the `showSuccessfulDialog()` method code:
 
-```
+```dart
 void showSuccessfulDialog() => showDialog(
       context: context,
       builder: (context) => Dialog(
@@ -131,32 +156,34 @@ void showSuccessfulDialog() => showDialog(
   );
 ```
 
-As from the code above, we have created a dialog box which will appear when the button is clicked and disappear after lottie animation is complete.
+As from the code above, we have created a dialog box that will appear when the button is clicked and disappear after the Lottie animation is complete.
 
-We set the `repeat: false` property on the lottie to make the animation only play once and not on loop.
+We set the `repeat: false` property on the Lottie to make the animation only play once and not on a loop.
 
-To start the lottie animation, we add the onloaded property where we will call the animation controller with a forward method. We will set the duration of the animation to the one preset for the lottie files using `composition.duration;` As shown below:
+We will create a new animation controller inside our state called `lottieController` as shown below:
 
-```
-onLoaded: (composition) {
-  controller.forward();
-  controller.duration = composition.duration;
-}
-```
-
-We will create a new animation controller inside our state as shown below:
-
-```
+```dart
 late AnimationController lottieController;
 ```
 
-Then add a controller for the lottie animation which will be the animation controller we created shown in the showSuccessfulDialog method.
+We will add the animation controller that we have created to the `showSuccessfulDialog()` method in the controller property.
 
-We will create an initState and dispose methods which will initialize the animation and in on completion dispose it.
+To start the Lottie animation, we add the `onLoaded` property where we will call the animation controller with a forward method. We will also set the duration of the animation to the one preset for the Lottie file using `composition.duration;` as shown below:
 
-We will add SingleTickerProviderStateMixin to our state like this:
-
+```dart
+onLoaded: (composition) {
+  lottieController.forward();
+  lottieController.duration = composition.duration;
+}
 ```
+
+We will create an `initState()` method and `dispose()` method which will initialize the animation and in on completion dispose it.
+
+#### 1. initState() method
+
+We will add `SingleTickerProviderStateMixin` to our state like this:
+
+```dart
 class _LottieScreenState extends State<LottieScreen> with SingleTickerProviderStateMixin{
   late AnimationController lottieController;
 
@@ -177,13 +204,13 @@ class _LottieScreenState extends State<LottieScreen> with SingleTickerProviderSt
   }
 ```
 
-This is because we are using only one animation controller for our project. We then call our controller inside the initState which then allows us to use the `vsync: this` parameter which is used to sychronize our animation frame rate through our animation controller as shown above.
+We are using `SingleTickerProviderStateMixin` because we are only using one animation controller for our project. We will call our controller inside the initState which then allows us to use the `vsync: this` parameter which is used to synchronize our animation frame rate through our animation controller as shown above.
 
-Because we want to close the dialog automatically when the animation is complete, we added a status listener which listens to the animation controller if the animation is complete as shown in the above code. After the dialog is closed then the animation controller is reset, `lottieController.reset();`. This is to reset the animation so that it would replay the next time we click the button.
+To close the dialog automatically once the animation has completed, we added a status listener which listens to the animation controller if the animation is complete as shown in the above code. If the animation is complete then the dialog closes. This is because of the `Navigator.pop(context);` code. After the dialog is closed then the animation controller is reset, `lottieController.reset();`. This is to reset the animation so that it would replay the next time we click the button.
 
-Next, to our dispose method, we will add `lottieController.dispose();` this will destroy the animation controller and remove it from the widget tree. As shown below:
+Next, create the dispose() method as shown in the code below. Add `lottieController.dispose();` code which will destroy the animation controller and remove it from the widget tree.
 
-```
+```dart
   @override
   void dispose() {
     lottieController.dispose();
@@ -191,9 +218,13 @@ Next, to our dispose method, we will add `lottieController.dispose();` this will
   }
 ```
 
+When our application is run, We will get a result like this:
+
+![Flutter Lottie Implementation](/engineering-education/using-lottie-animations-in-flutter/app.gif)
+
 This is the full code of the Flutter application that we have created:
 
-```
+```dart
 class LottieScreen extends StatefulWidget {
   const LottieScreen({Key? key}) : super(key: key);
 
@@ -284,12 +315,8 @@ class _LottieScreenState extends State<LottieScreen> with SingleTickerProviderSt
 }
 ```
 
-We will get a result like this:
-
-![Flutter Lottie Implemetation](/engineering-education/using-lottie-animations-in-flutter/app.gif)
-
 ### Conclusion
 
-Lottie animations are simple and easy to implement in a Flutter application. We have gone through implementing these lottie animations in our app. We have also used an animation controller to control the state of our animation. This knowledge can be used in other ways in creating interactive UIs for your projects. Hope tutorial this will be useful.
+Lottie animations are simple and easy to implement in a Flutter application. We have gone through implementing these Lottie animations in our app. We have also used an animation controller to control the state of our animation. This knowledge can be used in other ways in creating interactive UIs for your projects. Hope the tutorial will be useful.
 
 Happy Coding!
