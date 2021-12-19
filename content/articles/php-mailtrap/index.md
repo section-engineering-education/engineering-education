@@ -63,9 +63,13 @@ The general structure of `mail()` is as shown below:
 ```php
 // the mail method in PHP for sending emails
 mail(
+    // recipient email
     string $to,
+    // the email subject
     string $subject,
+    // the email body
     string $message,
+    //any other additional settings
     array|string $additional_headers = [],
     string $additional_params = ""
 ): bool
@@ -81,13 +85,17 @@ The above method takes in multiple paramaters, which we describe as follows:
 Now that we understand the basic functionality of the PHP's `mail()` methods, let's proceed and send a sample email to just some random email.
 ```php
 <?php
+// sending to
 $to      = 'no-reply@section.io';
+// email subject
 $subject = "Section's Edge as a service";
+// additional headers
 $headers = array(
     'From' => 'test@example.com',
     'Reply-To' => 'test2@example.com',
     'X-Mailer' => 'PHP/' . phpversion()
 );
+//body template
 
 $message = '
 <html>
@@ -112,7 +120,8 @@ mail($to, $subject, $message, $headers);
 
 In the above code, we are sending an inquiry email to some random email. We have defined the HTML body and added additional paramaters such as the header.
 
-> NOTE: It's important to remember that to send an email to users using HTML body, we have to set our header as shown below: 
+> NOTE: It's important to remember that to send an email to users using HTML body, we have to set our header as shown below:   
+
 ```php
 $headers[] = 'MIME-Version: 1.0';
 $headers[] = 'Content-type: text/html; charset=iso-8859-1';
