@@ -26,7 +26,7 @@ To better understand this article, the reader is expected to have a basic unders
 
 Python 3 has 63 defined built-in exceptions, with all of them arranged to form a “tree-type” of hierarchy. Some of these exceptions are more general than others, as they include other exceptions, while others are entirely concrete as they represent only themselves. 
 
-![exception_hierarchy](exceptions-and-error/exception_hierarchy.png)
+![exception_hierarchy](/education-engineering/exceptions-and-error/exception_hierarchy.png)
 
 [Source](https://w3.cs.jmu.edu/lam2mo/cs240_2014_08/lab05-exceptions.html)
 The image above shows the Python exception hierarchy
@@ -43,7 +43,7 @@ The exception error is the branch with the most errors you will encounter more o
 
 Here, we will look at attribute error, name error, type-error, arithmetic error, and its branches, and then lookup error and its branches (index error and key error). 
 
-![The Exception branch](/exceptions-and-error/except.png)
+![The Exception branch](/education-engineering/exceptions-and-error/except.png)
 The image above shows the exception branch in Python.
 
 #### The Attribute error
@@ -56,16 +56,16 @@ Name error is raised when a wrong variable name is called. For instance,  if the
 
 This means that a variable or function can only be called or used after being created.  This error can also be raised when you define a variable in a local scope and try to access it in the global scope.  
  
-``` Names  =  [ “James”, “Peter”, “June”, “Jane”] 
+``` Names  =  [“James”, “Peter”, “June”, “Jane”] 
     names.lower()
 ```
-![Name Error](/exceptions-and-error/nameerror.jpg)
+![Name Error](/education-engineering/exceptions-and-error/nameerror.jpg)
 Image by author
 The image above shows a name error received for using the wrong variable name.
 
 You will get a **name error** when you run the code above because the list created was stored in variable “Names”, not “names”. Python is case sensitive, so it sees “Names” and “names” as two different variables, with one declared the other undeclared.
  
-![ Local and variable scope](/exceptions-and-error/local.jpg)
+![Local and variable scope](/education-engineering/exceptions-and-error/local.jpg)
 Image by author
 
 In the image above, we got a name error because the variable called was declared within a function, and we tried to access it outside the function, which is not allowed in Python. 
@@ -78,7 +78,7 @@ A type error is raised when you try to perform an operation not supported by an 
 ```
 We assigned **James**  to the variable name in the code above and performed a division operation. Unfortunately, we will get a “TyrpeError” because “name” is a string that does not support that division type of operation. 
 
-![Type error](/exceptions-and-error/type.jpg)
+![Type error](/education-engineering/exceptions-and-error/type.jpg)
 The image above shows the type error message.
 
 #### Arithmetic error
@@ -89,7 +89,7 @@ ZeroErro = 6 / 0
  ```
 When we run this code, we will get a ZeroDivision error. In mathematics, this is said to be undefined.
 
-![ZeroDivisionError](/exceptions-and-error/zero.jpg)
+![ZeroDivisionError](/education-engineering/exceptions-and-error/zero.jpg)
 
 #### Lookup error
 Lookup error is the base class for key error and index error. 
@@ -100,20 +100,20 @@ The key error is raised when a wrong key is used to access a dictionary value, i
   gender(“James”)
 
 ```
-![KeyError](/exceptions-and-error/key.jpg)
+![KeyError](/education-engineering/exceptions-and-error/key.jpg)
 Image by author
 
 In the example above, we passed the name “James” to obtain James’ gender, and this will return a key error because the key used was not found in the dictionary. 
 
 The index error is raised when you try to access a sequence (index) of a list that does not exist or is out of range. 
 
-``` name  = [ “James”, “Peter”, “Max”, “Brown”]
+``` name  = [“James”, “Peter”, “Max”, “Brown”]
  print(name[4])
 ```
 
 You will get an index error when you run this code because “4” is out of range. Though there are four items in the list we created, Python starts indexing from zero to show how far a list item is from the beginning of the list. 
 
-![Index error](/exceptions-and-error/index.jpg)
+![Index error](/education-engineering/exceptions-and-error/index.jpg)
 Image by author
 
 ### Handling exceptions. 
@@ -122,8 +122,9 @@ In the first part of this article, we cover some exceptions; though these are no
 In the second part of this article, we will be discussing how to handle these exceptions in a python program such that the program will continue running when these errors are encountered. 
  
 To handle exceptions, Python has four major defined components: Try, except,  else, and finally.
-![The try-except bl0ck](/exceptions-and-error/try.png)
+![The try-except bl0ck](/education-engineering/exceptions-and-error/try.png)
 [Source](https://www.datacamp.com/community/tutorials/exception-handling-python)
+
  The image above shows how the four component is used in exception handling.
 
 
