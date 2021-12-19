@@ -38,7 +38,7 @@ You will need a Google account to use this service, so create one using the link
 **Step Three:** Give your sheet an appropriate name. After giving it a name, a link is created in the Drive.
 
 ### Creating the HTML Form
-Controls are specific components found in forms like entry boxes, checkboxes, radio buttons, pushbuttons, etc. The form is usually filled out by altering its controls, such as inputting text, choosing items, and sending it to an internet host for processing.
+Controls are specific components found in forms like entry boxes, checkboxes, radio buttons, pushbuttons, etc. The form is usually filled by altering its controls, such as inputting text, choosing items, and sending it to a server for processing.
 An HTML form is generated using the `<form>` element. Here's a sample of a basic sign up form:
 ```html
 <form>
