@@ -30,8 +30,10 @@ Follow each step below to develop your own machine learning-enabled web applicat
 We will build a simple web application to upload a photo from the desktop into the app. The layout will only need a section to place your photo and a button to make a system call to the file explorer.
 
 #### **HTML Build-up**
-Below are the steps involved in HTML build-up. First, create a file with a `.html` extension and follow the following steps.
-This code is placed under the `<head>` tag creates a connection to the JavaScript file.
+Below are the steps involved in HTML build-up. 
+
+Firstly, create a file with a `.html` extension which will hold the html code.
+The code below is then placed under the `<head>` tag to create a connection to the JavaScript file which will be created at a  later stage.
 ```html
 <html>
 
