@@ -43,7 +43,7 @@ The code below is then placed under the `<head>` tag to create a connection to t
 
 ```
 
-Under the body, the tag is where the upload button and the upload section lies. This code creates what is required under the body section without any styling.
+Under the body tag is where the upload section lies. This code creates creates a clickable upload section for uploading photos without any kind of styling.
 ```html
 <body>
 
@@ -61,7 +61,7 @@ Under the body, the tag is where the upload button and the upload section lies. 
 </body>
 ```
 
-Once uploaded, a container is created to hold the photo using the division class `upload-area`.
+The division class `upload-area`in the code above creates a container for holding the photo being uploaded
 
 When you run the combination of the code above, you should have a web page with a button and an upload section only, as shown in the photo below.
 
