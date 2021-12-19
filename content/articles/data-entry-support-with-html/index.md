@@ -56,7 +56,7 @@ simultaneously.
 Follow the procedure below to send the form you created to Google Spreadsheet. It can be either a brand-new or already created spreadsheet.
 1. Select the `response` option in the selected form.
 2. Besides the Google Sheets symbol, select the dots box and click on " **Pick Response Location** " from the drop-down menu.
-3. You may choose where your reply will go from here. You have two options: creating a blank spreadsheet or selecting an already made one.
+3. You can choose where your reply should be saved. You have two options: Create a blank spreadsheet or select an existing already one.
 4. To see if Google Forms and the spreadsheet have correctly linked, tap the Google Sheets button, which directs you straight to your spreadsheet containing the form replies.
 
 ### Deploying a script as a web app
