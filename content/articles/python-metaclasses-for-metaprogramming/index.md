@@ -19,21 +19,21 @@ Metaclasses are classes whose instances are other classes used to build objects.
 Every module and function in python has a type given to it.  If the user requests to get the type of the data, a corresponding data type is returned. The `type()` function is used to determine the type of any object.
 
 ```python
-number = 15  
-print("Sort of number is:", type(number))  
+number = 11  
+print("The list is classified as follows::", type(number))  
    
-list = [5, 9, 10]  
-print("Sort of list is:", type(list))  
+list = [4, 6, 9, 10]  
+print("The list is classified as follows::", type(list))  
    
-name = "John Doe"  
-print("Sort of name is:", type(name))
+name = "Dickson Gitau"  
+print("The list is classified as follows::", type(name))
 ```
 
 #### Output
 ```python
-Sort of number is: <class 'int'>
-Sort of list is: <class 'list'>
-Sort of name is: <class 'str'>
+The list is classified as follows:: <class 'int'>
+The list is classified as follows:: <class 'list'>
+The list is classified as follows:: <class 'str'>
 ```
 
 Python's class system is in charge of defining all of the language's types. The above example uses class `int,` `list,` or `str`, unlike other basic data types that include `int,` `char,` and `float` as found in C and Java.
@@ -138,49 +138,59 @@ Town class method!
 John Doe
 ```
 
-We will create the basic class then use the `type()` method to generate the city class dynamically. We will put the City type there and construct a City class instance. The inherited method will be called next. The City class method is what we will be using here. Finally, we will see the variable.
+We will create the basic class then use the `type()` method to generate the town class dynamically. We will put the Town type there and construct a Town class instance. The inherited method will be called next. The Town class method is what we will be using here. Finally, we will see the variable.
 
 ### Using a metaclass to fix an issue
 Some of the challenges users face may be addressed with the help of metaclasses and decorators. However, a metaclass is the only approach to address specific issues. For example, when debugging, the body of class functions should always be executed before the fully qualified name is displayed.
 
 ```python
 from functools import wraps  
+   
 def debugg(funct):  
-    '''The debugging decorator for passing functions'''  
     @wraps(funct)  
     def wrapperr(*args, **kwargs):  
-        print("This function's full name is:", funct.__qualname__)  
+        print("The Function's full name:", funct.qualname)  
         return funct(*args, **kwargs)  
     return wrapperr  
-def debug_methods(clas):  
-    '''class decorator make use of debug decorator  
-       for debuging the class functions '''  
+   
+def debug_methods(clas):
+       
     for key, value in vars(clas).items():  
         if callable(value):  
             setattr(clas, key, debugg(value))  
-    return clas 
-@debugmethods  
-class Calc:  
-    def add(own, x, y):  
+    return clas  
+   
+class debug_Meta(type):  
+    def new(clas, clasname, bases, clasdict):  
+        object = super().new(clas, clasname, bases, clasdict)  
+        object = debug_methods(object)  
+        return object  
+         
+class Base(metaclass = debug_Meta):pass  
+   
+class Calc(Base):  
+    def add(self, x, y):  
         return x+y  
-    def mul(own, x, y):  
+  
+class Calc2(Calc):  
+    def mult(self, x, y):  
         return x*y  
-    def div(own, x, y):  
-        return x/y 
-       
-enjoyer_cal = Calc()  
-print(enjoyer_cal.add(6, 4))  
-print(enjoyer_cal.mul(8, 9))  
-print(enjoyer_cal.div(30, 5)) 
+  
+user_cal = Calc2()  
+print(user_cal.add(4, 6))  
+user_cal = Calc2()  
+print(user_cal.mult(4, 6)) 
 ```
 
 #### Output
 
 ```python
 10
-72
-6.0
+24
 ```
+
+#### Description
+Decorators `def debug(funct): and debug methods(clas):` are used in the following code to make use of the debug decorator for the debug classes... Debug-enabled objects are sent to the debug method through the metaclass shown in the code `class debug Meta(type):` Subclasses of the base class with debugging Meta metaclass are debugged with the code `class Base(metaclass = debug Meta)`. Now that we've used the debugging function, we can pass down both the base class and the calculator to our child classes using the line `class Calculator(Base):`. The `Calc2` object will display the debugging behavior.
 
 The prior procedure must first apply the decorator function to all subclasses descended from the `Calc` class. Then, decorators must be added to each subclass individually, as shown in the previous example with the `Calc` class.
 
