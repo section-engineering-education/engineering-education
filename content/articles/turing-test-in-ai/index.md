@@ -44,31 +44,31 @@ The Turing Test is performed under an interrogation, whereby the test parties, h
 
 ### Requirements for passing the Turing Test in AI 
 A machine is considered to have successfuly passed the Turing Test if it is able to meet the following requirements :
- 1. ___Natural language processing (NLP)___: It can understand natural human languages.
+ 1. ***Natural language processing (NLP)***: It can understand natural human languages.
 
- 2. ___Knowledge representation(KR)___: The ability of the machine store and retrieve information provided before or during the interrogation.
+ 2. ***Knowledge representation(KR)***: The ability of the machine store and retrieve information provided before or during the interrogation.
 
- 3. ___Automated reasoning(AR)___:This requires that a machine is able to use the stored information to answer questions and make new conclusions.
+ 3. ***Automated reasoning(AR)***:This requires that a machine is able to use the stored information to answer questions and make new conclusions.
  
- 4. ___Machine learning___: This is needed to adapt to new circumstances and to detect and extrapolate patterns.
+ 4. ***Machine learning***: This is needed to adapt to new circumstances and to detect and extrapolate patterns.
 
- 5. ___Vision___: Vision is needed for  recognizing  the examiners actions and various objects represented by the examiner.
+ 5. ***Vision***: Vision is needed for  recognizing  the examiners actions and various objects represented by the examiner.
 
- 6. ___Motor control___: The ability of  acting upon object as required.
+ 6. ***Motor control***: The ability of  acting upon object as required.
 
- 7. ___Other senses___: such as audition, smell, touch etc.
+ 7. ***Other senses***: such as audition, smell, touch etc.
 
  ### *The Features of  Turing Test*
  Turing Test requires the following : 
 
-1. __Participants__
+1. **Participants**
     - an interrogator 
     - a person(human)
     - computer
 
 2. **The site** ;
  where the test itself takes place and  where the particpiants are kept in separate places.
-3. __The test__ ; The test is made by asking questions.  
+3. **The test** ; The test is made by asking questions.  
 
 
  ### Limitations of turing test 
