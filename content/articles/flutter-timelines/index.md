@@ -213,3 +213,6 @@ Your application should look like this upon successful execution.
 
 ### Conclusion
 This article introduced the reader to Flutter timelines. Next, we developed an understanding of the benefits of Flutter timelines and provided real-life use cases of the same concept. Lastly, we developed an application that emulated the Engineering Education review process to emulate the use of Timelines.
+
+---
+Peer Review Contributions by: [Mercy Meave](/engineering-education/authors/mercy-meave/)
