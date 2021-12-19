@@ -1,6 +1,21 @@
-### Introduction 
-Artificial Intelligence is growing at a dizzying speed. Machine learning is employed in practically every service we use daily. 
+---
+layout: engineering-education
+status: publish
+published: true
+url: /understanding-machine-learning-algorithms-and-how-to-implement-them/
+title: Understanding machine learning algorithms and how to Implement them
+description: This article will cover basic concept of machine learning algorithms and how to Implement them elements.
+author: kelvin-munene
+date: 2021-12-19T00:00:00-07:20
+topics: [Languages]
+excerpt_separator: <!--more-->
+images:
 
+  - url: /engineering-education/understanding-machine-learning-algorithms-and-how-to-implement-them/hero.png
+    alt: algorithm ML image
+---
+Artificial Intelligence is growing at a dizzying speed. Machine learning is employed in practically every service we use daily. 
+<!--more-->
 Machine learning is the study of creating and developing algorithms, which computers now learn. It is gaining popularity and becoming a key tool in the health, education, and business industries.
 
 ### Table of contents
@@ -194,3 +209,9 @@ By using the hyper-plane, you may divide the hyper-rectangle into two halves. Pa
 Machine learning is a newer component of data science. It's time for company owners to use AI automation and machine learning fully.
 
 Humans and robots will soon work together to achieve even bigger technological marvels. Choose the finest machine learning approach. Collaboration between humans and machines will improve results.
+
+Happy learning!
+
+
+---
+Peer Review Contributions by: [Miller Juma](/engineering-education/content/authors/miller-juma/)
