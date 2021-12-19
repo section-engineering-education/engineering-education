@@ -4,7 +4,7 @@ status: publish
 published: true
 url: /flutter-timelines/
 title: Getting started with Flutter timelines.
-description: Timelines can be viewed as progress indicators that show a user the level of completion of a task and all the steps completed in executing a given activity. This tutorial will guide the reader on how to get startd with Flutter timelines.
+description: Timelines can be viewed as progress indicators that show a user the level of completion of a task and all the steps completed in executing a given activity. This tutorial will guide the reader on how to get started with Flutter timelines.
 author: dianne-sandra
 date: 2021-12-19T00:00:00-11:00
 topics: [Languages]
@@ -17,7 +17,7 @@ images:
 
 Timelines can be viewed as progress indicators that show a user the level of completion of a task and all the steps completed in executing a given activity. As a result, timelines form a significant role in most applications today.
  <!--more-->
-Flutter timelines can be applied to various applications today for easy implementation and a straightforward and user-friendly interface. 
+Flutter timelines can be applied to applications today for easy implementation and a straightforward and user-friendly interface. 
 
 ### Examples where timelines are used
 A wide range of applications implements timelines and can easily integrate flutter timelines to enhance their functionality, look, and feel. However, the most prominent examples are:
