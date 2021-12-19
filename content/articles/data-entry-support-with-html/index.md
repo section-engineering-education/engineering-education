@@ -61,7 +61,7 @@ Follow the procedure below to send the form you created to Google Spreadsheet. I
 
 ### Deploying a script as a web app
 
-To convert Google scripts to web apps, Google App Script is used to perform this operation. The following procedures must be undertaken to convert a script into a web app.
+To convert Google scripts to web apps, **Google App Script** is used to perform this operation. The following procedures must be followed to convert a script into a web app.
 * Pick the file and manage versions by creating a new version and saving it. 
 * Choose the Publish option, then deploy it as a web app from the drop-down menu.
 * Click on the file you previously saved beneath the Project version.
