@@ -33,7 +33,7 @@ Below is how to create a data entry sheet with Google Apps Script.
 **Step One:** Go to https://drive.google.com/drive/my-drive and login into your Google Drive account. 
 You will need a Google account to use this service, so create one using the link above if you don't have one.
 
-**Step Two:** After logging in to Google Drive, there is a New button on the top left of the page. Click on it and choose the Google sheet alternative and Blank Spreadsheet option.
+**Step Two:** After logging in to Google Drive, click on the **New button** at the top left corner of the page, choose t **Google sheet**, and select the **Blank Spreadsheet** option.
 
 **Step Three:** Give your sheet an appropriate name. After giving it a name, a link is created in the Drive.
 
