@@ -1,10 +1,10 @@
----
+﻿---
 layout: engineering-education
 status: publish
 published: true
 url: /overview-of-developing-serverless-applications-in-c/
 title: Overview of developing serverless applications in C#
-description: This article will show you how to develop a serverless application using the C# programming language. 
+description: This article will show you how to develop a serverless application using the C# programming language.
 author: ephraim-gathoni
 date: 2021-12-17T00:00:00-21:00
 topics: [Languages]
@@ -47,11 +47,11 @@ To achieve that, we will browse to the VS Code extension manager located at the 
 
 ![Extension pack](/engineering-education/overview-of-developing-serverless-applications-in-c/azure-extensions1.png)
 
-Next, will be to sign in to Azure by pressing the keys `CTRL+Shift+P` on the keyboard to launch a Command Palette in the VS Code editor.
+Next, a developer has to sign in to Azure by pressing the keys `CTRL+Shift+P` on the keyboard to launch a Command Palette in the VS Code editor.
 
 Then, a developer will enter the `Azure: Sign In` in the text field displayed on top of VS Code editor.
 
-The developer will click on the results that appear after typing on the text field. VS Code editor will generate a code and display the following steps to be followed in order to complete the set-up.
+The developer will click on the results that appear after typing on the text field. VS Code editor will generate a code and a list of the instructions to be followed in order to complete the set-up.
 
 Since a developer will use C# to develop an application in VS Code editor, the developer has to install a [C# extension](https://marketplace.visualstudio.com/items?itemName=ms-dotnettools.csharp) for VS Code to support debugging capabilities in VS code editor.
 
