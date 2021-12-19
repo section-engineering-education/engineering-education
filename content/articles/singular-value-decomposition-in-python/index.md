@@ -1,5 +1,5 @@
 ### Getting Started with Singular Value Decomposition in Python
-Singular Value Decomposition(SVD) is a powerful technique that is widely used in solving dimensionality reduction problems. This algorithm works with a data matrix of the form m x n, i.e., a rectangular matrix. The idea behind the SVD is that a rectangular matrix can be broken down into a product of three other matrices that are easy to work with. This decomposition is of the form as the one shown in the formula below;
+Singular Value Decomposition(SVD) is a powerful technique widely used in solving dimensionality reduction problems. This algorithm works with a data matrix of the form m x n, i.e., a rectangular matrix. The idea behind the SVD is that a rectangular matrix can be broken down into a product of three other matrices that are easy to work with. This decomposition is of the form as the one shown in the formula below;
 
 $A=U \Sigma V^T$
 
@@ -42,7 +42,7 @@ $A= \begin{bmatrix}
 We are required to obtain its Singular Value Decomposition(SVD).
 
 *Solution*
-Using our matrix A, let's obtain our three matrices of SVD.
+Using our matrix A, let us obtain our three matrices of SVD.
 
 1. We shall first find the matrix U.
 
@@ -76,10 +76,10 @@ $\vec u_2=\begin{bmatrix}
     -1
 \end{bmatrix}$
 
- Since we don't know whether the following vectors are orthogonal, let's apply Gram-Schmidt to them and transform them so that we end up with an orthonormal matrix.
+ Since we do not know whether the following vectors are orthogonal, let us apply Gram-Schmidt to them and transform them to end up with an orthonormal matrix.
 
 ### Gram-Schimidt Process
-In this article, we shall simply outline how the Gram-Schmidt process works on a matrix and not dive deep into what it is. You can attend this [lecture](https://www.youtube.com/watch?v=zHbfZWZJTGc) if you need to learn more about the Gram-Schmidt algorithm.
+In this article, we shall outline how the Gram-Schmidt process works on a matrix and not dive deep into what it is. You can attend this [lecture](https://www.youtube.com/watch?v=zHbfZWZJTGc) if you need to learn more about the Gram-Schmidt algorithm.
 
 $\vec v_1=\vec u_1$
 
@@ -241,7 +241,7 @@ The real-world data are usually more extensive and beyond our manual handling ca
 
 To demonstrate how to carry out such computations on a computer, i.e., decomposing a matrix into more efficient components, we shall use a simple matrix and see how we can decompose it.
 
-So, let's learn how we perform these operations using python.
+So, let us learn how we perform these operations using python.
 
 ### Implementing Singular Value Decomposition
 This implementation will use the following matrix;
@@ -250,7 +250,7 @@ $A= \begin{bmatrix}
     -1&3&1
 \end{bmatrix}$
 
-So, let's obtain the decompose this matrix;
+So, let us obtain the decompose this matrix;
 
 ```python
 # Singular-value decomposition
@@ -287,9 +287,9 @@ V_T=
  [-1.82574186e-01 -3.65148372e-01  9.12870929e-01]]
 
 ```
-The reason for decomposing a matrix is to represent it computationally efficiently so that the original matrix recovered quickly from these singular matrices with the least loss of information. Let's try this out and see if we obtain the same matrix upon multiplying the three matrices of the SVD together.
+The reason for decomposing a matrix is to represent it computationally efficiently so that the original matrix recovered quickly from these singular matrices with the most minor loss of information. Let us try this out and see if we obtain the same matrix upon multiplying the three matrices of the SVD together.
 
-Before we do this, it's important to note that the S vector does not fit the rule of matrix multiplication. Thus we first convert it into a diagonal matrix as follows.
+Before we do this, it is important to note that the S vector does not fit the rule of matrix multiplication. Thus we first convert it into a diagonal matrix as follows.
 
 ```python
 # Creating S diagonal matrix
@@ -304,7 +304,7 @@ array([[3.46410162, 0.        , 0.        ],
        [0.        , 3.16227766, 0.        ]])
 
 ```
-Now, let's reconstruct our matrix A from its SVD. The code below will carry out this operation.
+Now, let us reconstruct our matrix A from its SVD. The code below will carry out this operation.
 ```python
 # reconstructing our original matrix A from singular value decomposition elements
 # we multiply our matrices from right; that is, the last two matrices are multiplied first, and the result multiplied with the first matrix
@@ -313,7 +313,9 @@ print("Reconstructed matrix:")
 print(B)
 
 ```
+
 This code outputs the matrix below;
+
 ```bash
 Reconstructed matrix:
 [[ 3.  1.  1.]
@@ -323,6 +325,8 @@ Reconstructed matrix:
 As we can see, we recovered our original matrix from its SVD. However, in the real world, the application of the SVD is not always to only retrieve the entire matrix from the SVD. Instead, we truncate the SVD such that only the features with the most information in the original matrix are recovered. By so doing, we reduce both the needed computational power and processing time.
 
 ### Conclusion
-To wind up, we look at the SVD algorithm in this article. First, we learned the properties of its three matrices and how they are obtained from the given data matrix. Later, we saw how we could recover a given matrix from its SVD. Finally, since we shall not be handling data manually, we demonstrated how to perform these operations in python. The SVD has a wide application in the industry, i.e., at Google, it's used in the PageRank algorithm and in the image recognition activities like previously was the case with the Facebook image recognition model.
+To wind up, we look at the SVD algorithm in this article. First, we learned the properties of its three matrices and how they are obtained from the given data matrix. Later, we saw how we could recover a given matrix from its SVD. 
 
- Since this article is meant to get you started with the Singular Value Decomposition algorithm, soon, we shall be looking at its application in image recognition. Till then, stay tuned!
+Finally, since we shall not be handling data manually, we demonstrated how to perform these operations in python. The SVD has a wide application in the industry, i.e., at Google, it is used in the PageRank algorithm and in the image recognition activities like previously was the case with the Facebook image recognition model.
+
+ Since this article is meant to get you started with the Singular Value Decomposition algorithm, soon, we shall be looking at its application in image recognition. However, till then, stay tuned!
