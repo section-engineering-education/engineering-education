@@ -14,23 +14,23 @@ images:
   - url: /engineering-education/how-machine-learning-is-revolutionizing-the-agricultural-industry/hero.jpg
     alt: How Machine Learning is Revolutionizing the Agricultural Industry Hero Image
 ---
-Agriculture is one of the critical industries that is vital in the sustenance of the world population. With the expected growth of the world population, food security concerns continue to rise.
+Agriculture is one of the critical industries that are vital in the sustenance of the world population. With the expected growth of the world population, food security concerns continue to rise.
 <!--more-->
 In tackling the concerns, [Machine learning](/engineering-education/differences-between-artificial-intelligence-machine-learning-and-deep-learning/) is a crucial branch of artificial intelligence that could be helpful.
 
 This article tackles critical aspects of how machine learning can be vital in the agricultural industry revolution.
 
 ### Why is machine learning is meaningful in agriculture?
-Machine learning uses high-precision algorithms, which are vital for optimizing and enhancing the existing agriculture methods that could possibly help increasing the production and revenue.
+Machine learning uses high-precision algorithms, which are vital for optimizing and enhancing the existing agriculture methods that could help increase production and revenue.
 
 The critical algorithms include regression, [CART](https://machinelearningmastery.com/classification-and-regression-trees-for-machine-learning/) (classification and regression tree), cognitive map learning, and [artificial neural networks](/engineering-education/introduction-to-neural-networks/). These algorithms enhance agricultural production through analysis, predictions, and monitoring.
 
 Machine learning is also a vital tool to precision agriculture. It can assess all the critical farm parameters for agricultural production, thus, enhancing farm management. The key parameters may include pest and diseases detection, farm monitoring, output optimization, etc.
 
-### How machine learning works in the agriculture industry?
+### How does machine learning works in the agriculture industry?
 Machine learning works through teaching computers to learn and make improvements. The technology works through exploring data in agriculture and pattern identification. Thus, ensuring agricultural production processes are efficiently handled without human intervention.
 
-There are two main machine learning techniques which are vital in the agricultural industry. They are:
+There are two main machine learning techniques that are vital in the agricultural industry. They are:
 
 - Supervised learning
 - Unsupervised learning
@@ -70,7 +70,7 @@ The surveillance system based on machine learning sends any alert of anything th
 The system is also vital in identifying any necessary machines that need to be on the farm and signal anything that may harm the crops. Thus, machine learning is essential in managing large-scale farming, especially those in remote areas.
 
 ##### How does this ML surveillance system work?
-ML surveillance system works through learning to identify, extract, index, and classify objects. These algorithms helps recognize and classify objects such as vehicles and humans.
+ML surveillance system works through learning to identify, extract, index, and classify objects. These algorithms help recognize and classify objects such as vehicles and humans.
 
 With machine learning, there is no need to have a human monitor the video surveillance content. The ML surveillance system is structured to analyze the video data for efficiently deriving quantifiable insights.
 
@@ -86,12 +86,12 @@ The captured data on fertilizer, moisture, and natural nutrient levels are used 
 
 Machine learning can combine different sets of data and advice on ways to optimize agricultural production. Machine learning can combine regression and CART to improve the health and quality of products. 
 
-##### How does ML combine algorithm for improving agricultural output?
-Various machine learning algorithms are combined to improve agricultural output. Critical ML algorithms that enhances agricultural output are Linear regression, k-nearest neighbor (KNN), decision tree regression, etc.
+##### How does ML combine algorithms for improving agricultural output?
+Various machine learning algorithms are combined to improve agricultural output. Critical ML algorithms that enhance agricultural output are Linear regression, k-nearest neighbor (KNN), decision tree regression, etc.
 
-For example, decision trees, KNN, and Linear regression are combined for analyzing rainfall parameters, which is key factor in determining the agricultural yield and quality.
+For example, decision trees, KNN, and Linear regression are combined for analyzing rainfall parameters, which is a key factor in determining the agricultural yield and quality.
 
-Other algorithms such as Support Vector Machines (SVMs) could validate the analysis of rainfall parameters. An efficient combination of such ML algorithms helps efficiently improving the agricultural output.
+Other algorithms such as Support Vector Machines (SVMs) could validate the analysis of rainfall parameters. An efficient combination of such ML algorithms helps efficiently improve the agricultural output.
 
 ### Impact of machine learning in agriculture
 Machine learning has or is likely to impact agriculture in various ways, as discussed below:
@@ -106,7 +106,7 @@ The machine learning technology can identify the weed in place, thus, pesticides
 There are various reasons for the efficiency of machine learning compared to other technologies.
 
 #### Fast data processing and real-time prediction
-One of the critical reasons is fast processing of data and has real-time prediction ability of agricultural parameters.
+One of the critical reasons is the fast processing of data and has real-time prediction ability of agricultural parameters.
 
 Machine learning algorithms allow tapping into real-time data and burgeoning trends in agriculture within a short period. Thus, ensuring the decision is based on real-time events.
 
@@ -127,9 +127,9 @@ The forecasting predicts the demand of the products, which is vital in guiding f
 ### Conclusion
 Machine learning is a crucial branch of AI which is vital in revolutionizing agriculture. It uses high-precision algorithms, and it is an excellent tool for precision agriculture that enhances productivity.
 
-Machine learning uses various algorithms, which are categorized as either structured and unstructured techniques. The algorithms include regression, CART, K-mean, KNN, etc.
+Machine learning uses various algorithms, which are categorized as either structured or unstructured techniques. The algorithms include regression, CART, K-mean, KNN, etc.
 
-It is essential in pest and disease management, monitoring crop fields, optimizing crop fields, and forecast of demand and weather.
+It is essential in pest and disease management, monitoring crop fields, optimizing crop fields, and forecasting demand and weather.
 
 Compared to other technologies, machine learning is more efficient in the agricultural revolution by automating repetitive tasks with faster processing. Thus, machine learning is a very effective tool that various areas of agriculture can use to enhance productivity.
 
