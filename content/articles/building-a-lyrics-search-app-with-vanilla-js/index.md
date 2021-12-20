@@ -6,25 +6,25 @@ url: /building-a-lyrics-search-app-with-vanilla-js/
 title: Building a Lyrics Search App with Vanilla JavaScript
 description: In this article, we will be creating a platform where users can search for lyrics by entering the artist name or title of the song.
 author: olusegun-isaac
-date: 
-topics: [JavaScript]
+date: 2021-12-20T00:00:00-15:30
+topics: [Languages]
 excerpt_separator: <!--more-->
 images:
 
- - url: /engineering-education/building-a-lyrics-search-app-with-vanilla-js/hero.jpg
+ - url: /engineering-education/building-a-lyrics-search-app-with-vanilla-js/hero.png
    alt: Lyrics Search App with JavaScript
 ---
-Not knowing the lyrics of a song is a problem most song-lovers encounter, especially when it's a rap song.In this article, we will be creating a platform where users can search for lyrics by entering the artist name or title of the song.
+Not knowing the lyrics of a song is a problem most song-lovers encounter. In this article, we will be creating a platform where users can search for lyrics by entering the artist name or title of the song.
 <!--more-->
 We will be creating the search app using HTML5, CSS3, Vanilla JS, async-await with fetch method, OVH API, and ES6 features like arrow functions.
 
 ### Prerequisites
-- A code editor (Visual studio code.)
-- Some basic knowledge of HTML, CSS, and JAVASCRIPT.
-- A laptop with an internet connection
+- A code editor (like Visual studio code)
+- Some basic knowledge of HTML, CSS, and JavaScript.
+- A laptop with an internet connection.
 
 ### Structuring the lyrics search app with HTML 5.
-To begin, create a folder named `lyrics-app`, then you create three files in the folder: `lyrics.html`, `lyrics.css` and `lyrics.js`
+To begin, create a folder named `lyrics-app`, then you need to create three files in the folder: `lyrics.html`, `lyrics.css` and `lyrics.js`
 
 In the `lyrics.html` file, include the code below to create the structure for the lyrics search app.
 
@@ -64,9 +64,9 @@ In the `lyrics.html` file, include the code below to create the structure for th
 ```
 
 ### Designing the lyrics search app
-The next step is to design the web app with CSS by navigating to your CSS file. Here’s the CSS for the structure of the web app(HTML code):
+The next step is to design the web app with CSS by navigating to your CSS file. Here’s the CSS for the structure of the web app (HTML code):
 
-Firstly, style the overall HTML, body of the HTML, and the div with the class of container which embodies all other divs.
+First, style the overall HTML, body of the HTML, and the div with the class of container which embodies all other divs.
 
 ```css
 html {
@@ -91,6 +91,7 @@ body {
 }
 
 ```
+
 Now, we are going to style the contents in the body tag, from the page description to the placeholder and the input field.
 
 ```css
@@ -101,6 +102,7 @@ Now, we are going to style the contents in the body tag, from the page descripti
 }
 
 ```
+
 Next, style up the page description text, that is, “Learn your favorite song lyrics”.
 
 ```css
@@ -126,7 +128,8 @@ h2 {
 }
  /**You might decide to use the comma-separated form of styling tags with the same properties. I decided to be more explicit here for the sake of clarity**/
 ```
-Centering the div container where the form and input field are embedded, using its id(lyrics-search)
+
+Centering the div container where the form and input field are embedded, using its id(lyrics-search).
 
 ```css
 #lyrics-search {
@@ -137,6 +140,7 @@ Centering the div container where the form and input field are embedded, using i
 }
 
 ```
+
 We complete the css code for now by styling up the form and the input field.
 
 ```css
@@ -167,13 +171,13 @@ form {
 
 You have successfully designed the web page by adding colors, font sizes, font family, padding, margin, and so on just to make this web app look nice.
 
-Here is what your web page should look like now:
+Here is what your web page should look like:
 ![Screenshot for design](/engineering-education/building-a-lyrics-search-app-with-vanilla-javascript/design-screenshot.jpg)
 
-### Adding functionality with JavaScript.
-In your `lyrics.js` file,  declare variables and use the DOM selectors to bring in elements from the lyrics.html file into our javascript file using the code snippet below:
+### Adding functionality with JavaScript
+In your `lyrics.js` file,  declare variables and use the DOM selectors to bring in elements from the lyrics.html file into our JavaScript file using the code snippet below:
 
-```javascript
+```JavaScript
 
 //you comment in js using double slash, with vscode just highlight what you want to comment and then press "ctrl + /"
 //defining variables
@@ -182,21 +186,22 @@ const search = document.getElementById("lyricSearch");//target th input field
 const output = document.getElementById("search-result");//target the output div
 
 ```
-Let’s explore APIs and the desired API we would use to get the data we need to make this web app up and running.
+Let’s explore APIs and the desired API we will use to get the data we need to get this web app up and running.
  
 Declare the API URL using the code below:
 
-```javascript
+```JavaScript
 
 const api = "https://api.lyrics.ovh";
 ```
+
 The next phase is to submit the form, we would define what would happen if the form input field is empty and likewise what would happen if the form input field is not empty.
 
 To do this, let’s create an event listener using DOM events to listen for a submit event and not click events because we didn’t create a button to submit the form.
 
 Here is the code snippet for this:
 
-```javascript
+```JavaScript
 // Get Search Value
 form.addEventListener("submit", e => {
     e.preventDefault();
@@ -211,16 +216,16 @@ form.addEventListener("submit", e => {
 
 ```
 
-In the code above, we listened for a submit event after which we declared a variable `searchValue` to be equal to `search.value.trim()`, the `trim()` method simply trims whitespaces. The if statement validates if `searchValue` equals to an empty string, alert "Nothing to search", else, invoke the `startSearch()` function taking the `searchValue` as the argument.
+In the code above, we listened for a submit event after which we declared a variable `searchValue` to be equal to `search.value.trim()`, the `trim()` method simply trims whitespaces. The if statement validates if `searchValue` equals an empty string, alert "Nothing to search", otherwise, invoke the `startSearch()` function taking the `searchValue` as the argument.
 
 I’d recommend that you explore the [OVH API doc](https://api.lyrics.ovh) here before proceeding further we’re about to fetch data (lyrics) from the OVH API.
 
-Now, we would use  Async await with the fetch method to get data from the ovh lyrics API.
+Now, we can use Async await with the fetch method to get data from the ovh lyrics API.
 Using the promise-based fetch API, we create an async function getResult(searchValue).
 
 Here is the code snippet to fetch the data:
 
-```javascript
+```JavaScript
 async function startSearch(searchValue) {
     const searchResult = await fetch(`${api}/suggest/${searchValue}`);
     const data = await searchResult.json();
@@ -231,17 +236,17 @@ async function startSearch(searchValue) {
 
 ```
 
-Comment out the showData function in the code snippet above(remember to uncomment the showData function), launch the web app using the [live server vs code extension](https://marketplace.visualstudio.com/items?itemName=ritwickdey.LiveServer), type in a song in the search field(note that some suggested song lyrics are not avilable on this api, you can get a paid api to explore more), and console log the result which should display the data in the console. To access the console, right-click inside the webpage, click the inspect option then navigate to the console in the chrome dev tools.
+Comment out the showData function in the code snippet above (remember to uncomment the showData function), launch the web app using the [live server vs code extension](https://marketplace.visualstudio.com/items?itemName=ritwickdey.LiveServer), type in a song in the search field (note that some suggested song lyrics are not avilable on this api, you can get a paid api to explore more), and console log the result which should display the data in the console. To access the console, right-click inside the webpage, click the inspect option then navigate to the console in the chrome dev tools.
 
 Your screen should be like the screenshot below:
 
 ![Screenshot for consoled data](/engineering-education/building-a-lyrics-search-app-with-vanilla-javascript/console-screenshot.jpg)
 
-The next thing to do is to create a function that will display the data in the console on the webpage. The function(showData)  is being called from the async function `startSearch()`.
+The next thing to do is to create a function that will display the data in the console on the webpage. The function (showData) is being called from the async function `startSearch()`.
 
 This is the code snippet for the showData function:
 
-```javascript
+```JavaScript
 
 // Display Search Result
 function showData(data) {
@@ -260,20 +265,19 @@ function showData(data) {
   `;
 }
 ```
-In the code snippet above, a showData function was created and the data was passed as an argument. The name of the function is very descriptive, it is to display the lyrics on the web page. The question that comes to mind is where exactly do we want to display the lyrics, if you recall we have an empty div in the html file. The lyrics will be displayed inside that div, the variable that connects the div to the javascript file is the variable output.
+
+In the code snippet above, a showData function was created and the data was passed as an argument. The name of the function is very descriptive, it is to display the lyrics on the web page. The question that comes to mind is where exactly do we want to display the lyrics, if you recall we have an empty div in the HTML file. The lyrics will be displayed inside that div, the variable that connects the div to the JavaScript file is the variable output.
 
 ### Inner - HTML
 This is the DOM property that either sets or retrieves the content of an HTML element. In this instance, we want to set the content of the empty div tag in the HTML file to display the lyrics suggestions in a list form.
-
 
 Using the innerHTML property, set it to an unordered list with class lyrics (use template literals: backticks). In other to access the data, refer to the screenshot above, you will notice that the data embodies some set of objects which has the properties we want to display on the webpage.
 
 Also, from the screenshot above, the object inside the data, we have a `title` that returns the song title and the artist object that embodies the name property. Our concern is how to display the song title and song artist name on the page.
 
-The `map()` method is one of the most used methods. The method returns a new array based on the values of the existing array.
+The `map()` method is one of the most used methods. The method returns a new array based on the values of the existing array. For example, we have array of numbers and we want to get an array that has value of triple of each of the number:
 
-For example, we have array of numbers and we want to get an array that has value of triple of each of the number;
-```javascript
+```JavaScript
 const numbers = [2 , 4, 6, 8];
 const tripleNo = numbers.map(tripleNum);
 function tripleNum(number) {
@@ -281,13 +285,14 @@ function tripleNum(number) {
 }
 console.log(tripleNo);//[6,12,18,24] this should be displayed in your console.
 ```
+
 Normally to access the song title and song artist name, we would have invoked `data.data.title` for song title and `data.data.artist.name` for the song artist name. If you recall, the argument - song represents the resulting data. 
 
 Since the data has been mapped, we access the song title using `song.title` and song artist using `song.artist.name`.
 
 The following code helps us listen to click event inside the output innerHTML:
 
-```javascript
+```JavaScript
 //event listener in get lyrics button
 output.addEventListener('click', e=>{
     const clickedElement = e.target;
@@ -310,7 +315,7 @@ This is the most important function because this is what makes us get the lyrics
 
 Below is the code for getLyrics async function:
 
-```javascript
+```JavaScript
 async function getLyrics(artist, songTitle) {
     const response = await fetch(`${api}/v1/${artist}/${songTitle}`);
     const data = await response.json();
@@ -326,7 +331,8 @@ async function getLyrics(artist, songTitle) {
   
   }
 ```
-Note, the api doesn't have all the lyrics of songs it suggests, it's still in progress, if you wish to have an app that can return so many lyrics, i will suggest you get a paid lyrics api. The lyrics that are not avialable, returns undefined in the div to display lyrics, it also alerts you that the lyrics is not available on the api. Also, when you input a song title to search from, you have to exercise little patience for the data to load because it is a bit slow.
+
+Note, the API doesn't have all the lyrics of songs it suggests, it's still in progress, if you wish to have an app that can return more lyrics, I would suggest you get a paid lyrics API. If the lyrics that are not available, it will return undefined in the div to display lyrics, it also alerts you that the lyrics is not available on the API. Also, when you input a song title to search from, you have to exercise little patience for the data to load because it is a bit slow.
 
 Next, you can decide to implement the regular expression syntax in the variable lyrics using the `replace` method, by adding `.replace(/(\r\n|\r|\n)/g, '<br>')` to the lyrics variable, meaning you should have something like this, `const lyrics = data.lyrics.replace(/(\r\n|\r|\n)/g, '<br>');`. For well-aligned lyrics, the carriage returns, and line breaks are removed and replaced with a <br>. The regular expressions help to look through for any carriage return alone or carriage return with a new line and replace it with the <br>. 
 
@@ -389,7 +395,7 @@ Navigate to your css file and add the code below to style and center the lyrics:
 
 The entire javascript code :
     In other for you not to run into errors while fetching data from the api, i will suggest you rearrange your code like the code snippet below.What am basically doing, is creating a function above before it's been called, so we don't run into errors(javscript is very sensitive to things like this).
-```javascript
+```JavaScript
 
 //defining the variables
 const form = document.getElementById("searchMe");//target the form tag in the html file
