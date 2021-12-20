@@ -6,21 +6,20 @@ url: /convert-html-to-pdf-with-docraptor/
 title: Converting HTML to PDF using the Docraptor Library
 description: This article will guide the reader on using DocRaptor to convert HTML into a PDF.
 author: kennedy-ndutha
-date: 2021-12-09T00:00:00-12:30
-topics: [Languages]
+date: 2021-12-20T00:00:00-14:00
+topics: [API]
 excerpt_separator: <!--more-->
 images:
 
   - url: /engineering-education/convert-html-to-pdf-with-docraptor//hero.jpg 
     alt: Convert HTML to pdf using Docraptor Image.
 ---
+Portable Document Format (PDF) is a standard document presentation format. Everything is given as a PDF now, including payment requests, receipts, and appropriation reports. 
+<!--more-->
+However, the amount of time it takes to generate many custom PDFs can be lengthy especially if you want to generate many PDF documents.
 
-### Introduction.
-Portable Document Format is a standard document presentation format. Everything is given as a PDF now, including payment requests, receipts, and appropriation reports. However, the amount of time it takes to generate many custom PDFs increases, making the process cumbersome, especially if you want to generate many PDF documents.
-
-DocRaptor is an HTML-to-PDF API that significantly enhances converting HTML to PDF. In addition, the API  has a PHP framework for easy integration with PHP projects.
-
-This article will guide the reader through using DocRaptor to convert HTML documents into PDFs.
+### Introduction
+DocRaptor is an HTML-to-PDF API that significantly enhances converting HTML to PDF. In addition, the API  has a PHP framework for easy integration with PHP projects. This article will guide the reader through using DocRaptor to convert HTML documents into PDFs.
 
 ### Table of content
 - [Introduction.](#introduction)
@@ -33,9 +32,7 @@ This article will guide the reader through using DocRaptor to convert HTML docum
 - [Conclusion](#conclusion)
 
 ### Installation
-To get started with DocRaptor, we need to install it on our local machine. Installation can be done in two ways. 
-
-The first way is using composer dependency manager, while the second way is by downloading a zip file of the library and extracting it in the specific project folder.
+To get started with DocRaptor, we need to install it on our local machine. Installation can be done in two ways. The first way is using composer dependency manager, while the second way is by downloading a zip file of the library and extracting it in the specific project folder.
 
 #### Downloading using composer
 Composers is a PHP dependency manager. It downloads, installs, and updates your project dependencies. Download Composer from this [link](https://getcomposer.org/download/), open your command prompt, and then execute the command below to install DocRaptor.
@@ -55,9 +52,9 @@ require_once('./path/to/docraptor-php/autoload.php');
 ```
 
 ### API authentication
-Every project where an API is used needs an API key. The key identifies the machine from where the request for specific resources is coming. 
+Every project where an API is used needs an API key. The key identifies the machine from where the request for specific resources is coming. Therefore, we need to add an API key to authenticate the source of our requests. 
 
-Our project is not an exception; therefore, we need to add an API key to authenticate the source of our requests. To get started, you can use the `free to use` API key, "YOUR_API_KEY_HERE," to get started. This key, however, only allows us to use watermarked documents and limits the document number of downloads to five.
+To get started, you can use the `free to use` API key, "YOUR_API_KEY_HERE," to get started. This key, however, only allows us to use watermarked documents and limits the document number of downloads to five.
 
 ```php
 $configuration=DocRaptor\configuration::getDefaultconfiguration();  //requests for API key 
@@ -147,8 +144,9 @@ $doc = setDocumentContent("<!DOCTYPE html>
 </html>");    //supply content directly 
 ```
 
-Notice that at times, we may want to convert a document that only exists in the internet space as opposed to having it locally on our machines. Therefore, we need to provide the link to the document we plan to use for such an instance. This process can be done as follows:
+Notice that at times, we may want to convert a document that only exists in the internet space as opposed to having it stored locally on our machines. Therefore, we need to provide the link to the document we plan to use for such an instance. 
 
+This process can be done as follows:
 ```php
 $docraptor = newDocRaptor\DocApi();
 $doc = newDocRaptor\doc();
@@ -170,16 +168,14 @@ Additionally, we should create a test document because we are using a free API k
 $doc->setTest(true);    //test document are free but watermarked
 ```
 
-Another essential thing to note is that, by default, JavaScript is off, but you need to enable it to enhance speed during the document creation process.
+Another essential thing to note is that, by default, JavaScript is off, but you need to enable it to enhance the speed during the document creation process.
 
 ```php
 $doc->setJavaScript('true');    //enable JavaScript processing 
 ```
 
 ### Document generation
-Following the configuration of your API, run this code to generate your file. Document creation is a one-line code. 
-
-It also includes an error-handling mechanism that consolidates mistakes in managing the structure if something goes wrong.
+Following the configuration of your API, run this code to generate your file. Document creation is a one-line code. It also includes an error-handling mechanism that consolidates mistakes in managing the structure if something goes wrong.
 
 ```php
 try{
@@ -231,7 +227,7 @@ This article covered converting HTML documents to PDF using the DocRaptor API. T
 
 In addition, the code snippets are easy to understand and test. You can find more information about DocRaptor at [DocRaptor's API documentation](https://github.com/DocRaptor/docraptor-php).
 
-Happy Coding!
+Happy coding!
 
 ---
 Peer Review Contributions by: [Mercy Meave](/engineering-education/authors/mercy-meave/)
