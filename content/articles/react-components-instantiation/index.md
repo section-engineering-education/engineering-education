@@ -6,7 +6,7 @@ url: /react-components-instantiation/
 title: React Components  Instantiation 
 description: A React Component is a small, reusable code responsible for rendering HTML. In React, we can define a component as a class or a function. 
 author: valentine-gatwiri
-date: 2021-12-19T00:00:00-13:00
+date: 2021-12-20T00:00:00-06:15
 topics: [Languages]
 excerpt_separator: <!--more-->
 images:
