@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /how-to-build-a-text-classification-model-using-bert-and-tensorflow/
+url: /classification-model-using-bert-and-tensorflow/
 title: How to build a Text Classification model Using BERT and Tensorflow
 description: This tutorial aims to build a Text Classification model Using BERT and Tensorflow.
 author: bravin-wasike
@@ -11,7 +11,7 @@ topics: [Machine Learning]
 excerpt_separator: <!--more-->
 images:
 
-  - url: /engineering-education/how-to-build-a-text-classification-model-using-bert-and-tensorflow/hero.jpg
+  - url: /engineering-education/classification-model-using-bert-and-tensorflow/hero.jpg
     alt: Text Classification model Using BERT and Tensorflow Hero Image
 ---
 Text classification is a subset of machine learning that classifies text into predefined categories. Text classification is one of the important tasks in natural language processing (NLP). 
@@ -82,7 +82,7 @@ df.head(5)
 ```
 The output is shown below:
 
-![Dataset structure](/engineering-education/how-to-build-a-text-classification-model-using-bert-and-tensorflow/dataset-structure.png)
+![Dataset structure](/engineering-education/classification-model-using-bert-and-tensorflow/dataset-structure.png)
 
 From the image above, our dataset has two categories: `ham` and `spam`. `ham` represents the emails that are not spam, this are emails from a trusted source. `spam` represents emails from an unknown source.
 
@@ -95,7 +95,7 @@ df['Category'].value_counts()
 ```
 The output is shown below:
 
-![Value count](/engineering-education/how-to-build-a-text-classification-model-using-bert-and-tensorflow/value-count.png)
+![Value count](/engineering-education/classification-model-using-bert-and-tensorflow/value-count.png)
 
 From the image above, we have 4825 `ham` emails and 747 `spam` emails. The `ham` email has a significantly higher number. 
 
@@ -173,7 +173,7 @@ df_balanced.sample(5)
 ```
 The output is shown below.
 
-![Labeled dataset](/engineering-education/how-to-build-a-text-classification-model-using-bert-and-tensorflow/labeled-dataset.png)
+![Labeled dataset](/engineering-education/classification-model-using-bert-and-tensorflow/labeled-dataset.png)
 
 From the image above, we can see that the dataset is labeled into two. Some of the data samples are labeled `1` while others are labeled `0`.
 
@@ -277,7 +277,7 @@ model.summary()
 ```
 The model summary is shown below.
 
-![Model summary](/engineering-education/how-to-build-a-text-classification-model-using-bert-and-tensorflow/model-summary.png)
+![Model summary](/engineering-education/classification-model-using-bert-and-tensorflow/model-summary.png)
 
 The image above shows all the input and output layers we have initialized for our model. The output also shows the total params, trainable params, and non-trainable params.
 
@@ -324,7 +324,7 @@ model.fit(X_train, y_train, epochs=10)
 ```
 We specify the number of epochs as 10. The model will iterate through the dataset ten times and print the accuracy score after each iteration. This process is shown below.
 
-![Model training](/engineering-education/how-to-build-a-text-classification-model-using-bert-and-tensorflow/model-training.png)
+![Model training](/engineering-education/classification-model-using-bert-and-tensorflow/model-training.png)
 
 After ten iterations, the model accuracy score is `0.9179 `. This value represents `91.79%`.
 
@@ -351,7 +351,7 @@ y_predicted
 ```
 The result is shown below.
 
-![Model prediction](/engineering-education/how-to-build-a-text-classification-model-using-bert-and-tensorflow/model-prediction.png)
+![Model prediction](/engineering-education/classification-model-using-bert-and-tensorflow/model-prediction.png)
 
 The image above shows our model has classified the data samples into either `0` or `1`. 
 
