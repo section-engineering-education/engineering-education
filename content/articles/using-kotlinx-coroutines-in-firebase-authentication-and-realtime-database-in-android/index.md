@@ -3,10 +3,10 @@ layout: engineering-education
 status: publish
 published: true
 url: /coroutines-and-realtime-database-in-firebase-authentication-in-android/
-title: How to use Coroutines and Realtime Database in Firebase Authentication in Android
-description: This tutorial will take the reader through the process of using Coroutines and Realtime Database in Firebase Authentication in Android.
+title: How to use Coroutines and Realtime Database For Firebase Authentication in Android
+description: This tutorial will take the reader through the process of using Coroutines and Realtime Database for Firebase Authentication in Android.
 author: joel-kanyi
-date: 2021-12-19T00:00:00-09:30
+date: 2021-12-20T00:00:00-05:30
 topics: [Languages]
 excerpt_separator: <!--more-->
 images:
@@ -16,7 +16,7 @@ images:
 ---
 Firebase Authentication offers backend services, easy-to-use SDKs, and ready-to-use UI frameworks for authenticating users to your app. Firebase Realtime Database can be used to store the user details.
 <!--more-->
-Since Android developers do not wish to write their own backends, all of this makes their job easier.
+Since most Android developers don't wish to write their own backends, all of this makes their job easier.
 
 In Android, while making network calls such as user authentication, sending, or querying data from the Firebase database, you shouldn't perform such tasks on the `Main Thread`. You should do such tasks on the `Background Thread` then update the UI accordingly.
 
@@ -45,7 +45,7 @@ To follow along with this tutorial, you will need the following:
 - The [Kotlin](https://kotlinlang.org/) programming language's fundamentals.
 - Basic knowledge of Kotlin Coroutines.
 - Knowledge of using Jetpack Components i.e `Livedata`, `ViewModel` and the `Repository` pattern.
-- An understanding of linking an Android project to Firebase: If not, take a look at this article [Firebase Email and Password Authentication](https://www.section.io/engineering-education/firebase-email-and-password-authentication-in-android-using-kotlin/).
+- An understanding of linking an Android project to Firebase: If not, take a look at this article [Firebase Email and Password Authentication](/engineering-education/firebase-email-and-password-authentication-in-android-using-kotlin/).
 - Understand how to use `ViewBinding`.
 
 ### Coroutines recap
@@ -59,7 +59,7 @@ In this article, we are going to use the following features of `Coroutines`:
 
 - `viewModelScope` - Defines a scope that is tied to the ViewModel. Once ViewModel is cleared, the scope will be cancelled.
 
-> To get a more understanding of `Coroutines` check out this article - [Introduction to Kotlin Coroutines](https://www.section.io/engineering-education/introduction-to-kotlin-coroutines/).
+> To get a more understanding of `Coroutines` check out this article - [Introduction to Kotlin Coroutines](/engineering-education/introduction-to-kotlin-coroutines/).
 
 Let's get started. In this tutorial, we will be creating a simple app that has an authentication feature and stores the user's data in the `Firebase Realtime` database.
 
