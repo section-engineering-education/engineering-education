@@ -189,9 +189,9 @@ The Jaspersoft dependency will help us in adding the functionalities. These func
 
 ```xml
 <dependency>
-	<groupId>net.sf.jasperreports</groupId
+  <groupId>net.sf.jasperreports</groupId>
 	<artifactId>jasperreports</artifactId>
-        <version>6.18.1</version>
+  <version>6.18.1</version>
 </dependency>
 ```
 > Get the maven dependency from the [maven central repository](https://mvnrepository.com/)
