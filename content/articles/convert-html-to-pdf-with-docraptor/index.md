@@ -11,8 +11,8 @@ topics: [API]
 excerpt_separator: <!--more-->
 images:
 
-  - url: /engineering-education/convert-html-to-pdf-with-docraptor//hero.jpg 
-    alt: Convert HTML to pdf using Docraptor Image.
+  - url: /engineering-education/convert-html-to-pdf-with-docraptor/hero.jpg 
+    alt: Convert HTML to pdf using Docraptor Image
 ---
 Portable Document Format (PDF) is a standard document presentation format. Everything is given as a PDF now, including payment requests, receipts, and appropriation reports. 
 <!--more-->
