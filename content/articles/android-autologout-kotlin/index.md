@@ -3,10 +3,10 @@ layout: engineering-education
 status: publish
 published: true
 url: /android-autologout-kotlin/
-title: Implementing an auto-logout feature for Android in Kotlin
-description: Handling sensitive data in an app may require some checks to see if the user is still active and decide whether to keep him logged in or not. This article will cover implementing an auto-logout feature for Android using Kotlin.
+title: Implementing an Auto Logout Feature for Android in Kotlin
+description: We will look at the working theory, briefly touch on the GestureDetector and Handler classes, and create an auto-logout app using the two classes.
 author: vincent-ngunzulu
-date: 2021-12-15T00:00:00-12:20
+date: 2021-12-20T00:00:00-12:00
 topics: [Languages]
 excerpt_separator: <!--more-->
 images:
@@ -14,15 +14,15 @@ images:
   - url: /engineering-education/android-autologout-kotlin/hero.jpg
     alt: Implementing an auto-logout feature for Android in Kotlin Hero Image
 ---
-Handling sensitive data in an app may require some checks to see if the user is still active and decide whether to keep him logged in or not. 
+Handling sensitive data in an app may require some checks to see if the user is still active and decide whether or not to keep him/her logged in. We will use a straightforward approach: gesture detectors and the Handler class to set timeout intervals.
 <!--more-->
-We will use a straightforward approach: gesture detectors and the Handler class to set timeout intervals. The same logic is being used [here](https://www.section.io/engineering-education/autologout-js/), but we will do that for Android. Let us head on straight to the concept.
+The same logic is being used [here](/engineering-education/autologout-js/), but we will do that for Android. Let us head on straight to the concept.
 
 ### Prerequisites
-To follow through, you need to have these:
-1. A basic understanding of Kotlin and programming in general(OOP).
-2. Android/IntellijIDEA(configured for Android development)installed and working in your machine.
-3. Knowledge of building Android applications.
+To follow through, you'll need to have these:
+- A basic understanding of Kotlin and programming in general (OOP).
+- Android/IntellijIDEA (configured for Android development) installed and working in your machine.
+- Knowledge of building Android applications.
 
 ### What we will be doing
 We will be creating an app that displays a dialog asking the user if he/she is still active or not. The method for displaying the dialog will be fired after 15 seconds of inactivity. We check for the user's activeness by checking if he is tapping on the screen. 
@@ -32,22 +32,24 @@ We embed our gesture detector on the whole screen and not on individual subclass
 ### The theory of auto logging out in our app
 For any gesture detected, the following actions are done:
 
-We first count the number of clicks that will be done at every gesture detected on the screen. For example, if a user scrolls, clicks increase by 1. If he scrolls again, the count is incremented again, making the number of clicks to 2. The same will be done for all other gestures.
+We first count the number of clicks done at every gesture detected on the screen. For example, if a user scrolls, clicks increase by 1. If he scrolls again, the count is incremented again, making the number of clicks to 2. The same will be done for all other gestures.
 
 Second, the user's active status will be set to true.
 
-Lastly, we start tracking the user's active status. There is a catch here. To avoid the dialog being displayed many times, we will only call the handler to the dialog display method. We achieve that by calling this method when clicks are 1.
+Then, we start tracking the user's active status. There is a catch here. To avoid the dialog being displayed many times, we will only call the handler to the dialog display method. We achieve that by calling this method when clicks are 1.
 
 We earlier stated that we would display the dialog after 15 seconds. We split this into 10 seconds and 5 seconds. Once we start detecting inactivity after a user interacts with the app, wait for 10 seconds. After that, deliberately set the active status to false, wait again for 5 seconds, and recheck the active status.
 
 If the user has not interacted with the screen, definitely the status will still be false. Now that it is false, we display the dialog. Otherwise, when he/she interacts with the screen, the active status will be true, so do not display the dialog. It is as simple as that.
 
-Before we start creating the app, we will first briefly look at the two 'tools' we will use:
-- The `GestureDetector` class contains helper methods for detecting gestures such as scrolling, flinging, swiping, etc.
+Before we start creating the app, we will briefly look at the two 'tools' we will use:
+- The `GestureDetector` class contains helper methods to detect gestures such as scrolling, flinging, swiping, etc.
 - The `Handler` class enables us to act for a specific duration.
 
 ### The GestureDetector class
-To detect all common gestures, we implement the `GestureDetector.OnGestureListener` interface. To detect a subset of gestures, we extend the `GestureDetector.SimpleOnGestureListener`. We will use the first option in our application. Let's look at this code snippet:
+To detect all common gestures, we implement the `GestureDetector.OnGestureListener` interface. To detect a subset of gestures, we extend the `GestureDetector.SimpleOnGestureListener`. We will use the first option in our application. 
+
+Let's look at this code snippet:
 
 ```kotlin
 import androidx.appcompat.app.AppCompatActivity
@@ -120,14 +122,16 @@ class MainActivity :
     }
 ```
 
-The first thing we note is that our Activity class extends the interface(`GestureDetector.OnGestureListener`). Furthermore, since it is an interface, we have to use all its methods, as you can see. We override them to put in our custom code. In the `onCreate()` method, we instantiate the gesture detector and then pass it in the current application context and implementation of GestureDetector.OnGestureListener as the arguments.
+The first thing we note is that our Activity class extends the interface (`GestureDetector.OnGestureListener`). Since it is an interface, we have to use all its methods, as you can see. We override them to put in our custom code. In the `onCreate()` method, we instantiate the gesture detector and then pass it in the current application context and implementation of GestureDetector.OnGestureListener as the arguments.
 
 In all the overridden methods, you will notice two similarities - they take in a MotionEvent object and return true. The MotionEvent is used to report movement events happening in the Activity. We return `true` to show that the detection of this event. For the `onFling()` and the `onScroll()` methods, we pass in extra parameters used to detect the position where the two gestures were performed. 
 
 They may be necessary when creating products like games and others. We will not use them for our article. For more information on the GestureDetector class, follow this [link](https://developer.android.com/training/gestures/detector#kotlin) pointing to the official documentation.
 
 ### The Handler class
-It is used when we want to perform a particular action like calling a method, opening an activity, sending an SMS after a specific time has elapsed. Take this snippet as an example:
+This class is used when we want to perform a particular action like calling a method, opening an activity, sending an SMS after a specific time has elapsed. 
+
+Take this snippet as an example:
 
 ```kotlin
 Handler(Looper.getMainLooper()).postDelayed({
@@ -152,8 +156,7 @@ It has three parameters:
 Read more about the Handler class [here](https://developer.android.com/reference/android/os/Handler#createAsync(android.os.Looper,%20android.os.Handler.Callback)).
 
 ### Creating the app
-Now that we have looked at the theory and what we will be using in our article, we will then go ahead to create our application.
-Choose the *Empty Activity* option, set your preferred name(I called mine **AutoLogout**), choose the language as Kotlin, and then Finish.
+Now that we have looked at the theory and what we will be using in our article, we will go ahead to create our application. Choose the *Empty Activity* option, set your preferred name (I called mine **AutoLogout**), choose the language as Kotlin, and then Finish.
 
 #### Modifying the MainActivity.kt file
 Copy and paste the following code to your *MainActivity.kt* file after your package name declaration.
@@ -295,6 +298,7 @@ class MainActivity :
     }
 }
 ```
+
 After importing the required packages, we then declare the variable to hold our detector object, instantiate the values to hold the number of clicks, delay time, and the user's active status. The overridden methods are implemented as we discussed beforehand, only that we pass in a `startDetection()` method to each of them. Let us see what the `startDetection()` method does.
 
 ```kotlin
@@ -327,7 +331,7 @@ Moving to the `startListener()` method.
     }
 ```
 
-We call the method for checking for the user's activeness after the time stored in the `timeset` variable(10 seconds) elapses. The method is called `checkActiveness()` discussed next.
+We call the method to check for user's activeness after the time stored in the `timeset` variable(10 seconds) elapses. The method is called `checkActiveness()` discussed next.
 
 ```kotlin
     fun checkActiveness() {
@@ -373,15 +377,13 @@ fun displayDialog() {
 
 If the user is still inactive, show the dialog and reset the number of clicks to 0 to start the detection. If the user and gestures dismiss, the dialog is detected. If active, set the clicks to 0 again to allow the detection to start as the user clicks/taps the screen.
 
-> View more about dialogs in [this](https://www.section.io/engineering-education/getting-started-with-dialogs-in-android-kotlin/) EngEd article.
+> View more about dialogs in [this](/engineering-education/getting-started-with-dialogs-in-android-kotlin/) EngEd article.
 
-That's it in a few paragraphs. 
+T**Note that we have to do some touches on the screen for the methods to start firing.**
 
-**Note that we have to do some touches on the screen for the methods to start firing.**
+If you do not want to wait until someone touches the screen, you can call the `startDetection()` method in the Activity's `onCreate()` method as well after instantiating the gesture detector.
 
-If you do not want to wait until someone touches the screen necessarily, you can call the `startDetection()` method in the Activity's `onCreate()` method too after instantiating the gesture detector.
-
-### Layout XML(activity_main.xml) file
+### Layout XML (activity_main.xml) file
 This is the XML code. It contains a TextView displaying "*Hello there. You will be logged out after 15 seconds*".
 
 ```xml
@@ -406,14 +408,19 @@ This is the XML code. It contains a TextView displaying "*Hello there. You will 
 </androidx.constraintlayout.widget.ConstraintLayout>
 ```
 
-You can find the sample APK to this project [here](https://drive.google.com/file/d/1HzbdZfBlbM2cubW230K7zcFoh47HVgxD/view?usp=sharing). The whole project is open-sourced too. Make contributions to it via this [GitHub](https://github.com/vinstex/android-autologout) link.
+You can find the sample APK to this project [here](https://drive.google.com/file/d/1HzbdZfBlbM2cubW230K7zcFoh47HVgxD/view?usp=sharing). The whole project is open-sourced also. Make contributions to it via this [GitHub](https://github.com/vinstex/android-autologout) link.
 
-Run the app, do some touches, scrolls, and wait 15 seconds to checkout the feature. Also, do the same before the seconds elapse and check. Change the numbers and check too.
+Run the app, do some touches, scrolls, and wait 15 seconds to checkout the feature. Also, do the same before the seconds elapse and check. Change the numbers and check again.
 
 ### Further practice
-Now, this was for one screen. What if you wanted to implement it on many screens? Would you rewrite the code in each Activity? Definitely, no. So get some coffee and write an inheritable(extendable) class you can call on any screen. You can also make the function open another activity instead of the dialog. Also, you can implement a counter for the last 5 seconds and then later do a particular action like opening a Login screen.
+Now, this was for one screen. What if you wanted to implement it on many screens? Would you rewrite the code in each Activity? Definitely, not. So get some coffee and write an inheritable(extendable) class you can call on any screen. 
+
+You can also make the function open another activity instead of the dialog. You can implement a counter for the last 5 seconds and then later do a particular action like opening a Login screen.
 
 ### Conclusion
 We looked at the working theory, briefly touched on the GestureDetector and Handler classes, and finally created an auto-logout app using the two classes. Hope you had a great read.
 
 Happy coding!
+
+---
+Peer Review Contributions by: [Briana Nzivu](/engineering-education/authors/briana-nzivu/)
