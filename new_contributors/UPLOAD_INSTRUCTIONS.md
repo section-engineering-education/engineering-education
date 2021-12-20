@@ -124,3 +124,6 @@ Add these files to the same PR (pull request).
 ![Author file structure example](/static/images/meta-image-frontmatter.PNG)
 
 Congratulations! Your article is now ready to be submitted for review and approval by the Section team. Open a PR and we'll be happy to review it.
+
+## Post Publishing  
+After you have published your article with us - be sure to check on your content periodically to respond to any comments or questions that the audience may post.
