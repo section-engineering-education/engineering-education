@@ -1,13 +1,13 @@
 A web app is a service built on top of the Internet to allow computers to share and exchange data easily and reliably. In this case, the web services will be referred to as a client-server model. Communications are established between the two to exchange data. Clients will ask for data, and the computer that serves this data is called a server. This blog will discuss the concept of the client-server model as we implement the whole scenario using Rust.
 
-The reader will be able to understand the concept of the client-server communication. The reader will then learn how to achieve this using Rust.
+The reader will understand the concept of the client-server communication. The reader will then learn how to achieve this using Rust.
 
 ### Set up Rust
 Rust is a very low-level/systems-level programming language like C++ or C. It focuses on safety, speed and concurrency, ensuring you have a design that lets you create high performant programs. To start using Rust, you need to get a Rust C, which is the Rust compiler.
 
 >Note: Check these Rust Visual C++ prerequisites while installing Rust. Rust requires the Microsoft C++ build tools for Visual Studio 2013 or later, but they don't seem to be installed.
 
->The easiest way to acquire the build tools is by installing Microsoft Visual C++ Build Tools 2019, which provides just the Visual C++ build tools: `https://visualstudio.microsoft.com/visual-cpp-build-tools/`. Please ensure the Windows 10 SDK and the English language pack components are included when installing the Visual C++ Build Tools.
+>The easiest way to acquire the build tools is by installing Microsoft Visual C++ Build Tools 2019, which provide just the Visual C++ build tools: `https://visualstudio.microsoft.com/visual-cpp-build-tools/`. Please ensure the Windows 10 SDK and the English language pack components are included when installing the Visual C++ Build Tools.
 
 >Alternately, you can install Visual Studio 2019, Visual Studio 2017, Visual Studio 2015, or Visual Studio 2013, and during installation, select the "C++ tools": `https://visualstudio.microsoft.com/downloads/`.
 
@@ -19,7 +19,7 @@ Wait for the installation to finish. Then go ahead and [Download Rust C](https:/
 
 This will install along with the Rust cargo. Cargo is a Rust package manager that allows you to access remote Rust packages. Cargo is closely related to NPM for Node.js, composer for PHP, or PyPI for Python.
 
-Once Rust is installed, you can run the following to verify if the toolchain for the Rust development environment was correctly installed.
+Once Rust is installed, you can run the following to verify if the toolchain for the Rust development environment is correctly installed.
 
 - To check the installed Rust version manager run;
 
@@ -41,33 +41,32 @@ cargo --version
 
 ![rust-installation](/engineering-education/how-to-build-a-client-server-application-using-rust/rust-installation.png)
 
-Let's see how you can set up a basic Rust project. To create a Rust project, you use `cargo` to initialize your application, just like you would when creating a Node.js project with the `npm` command. To initialize your project with `cargo`, head over to your project folder and run `cargo init`.
+Let's see how you can set up a basic Rust project. To create a Rust project, you use `cargo` to initialize your application, just like you would when creating a Node.js project with the `npm` command. 
+
+To initialize your project with `cargo`, head over to your project folder and run `cargo init`. 
 
 You can also use `cargo new my_app`. This will create a new project in a folder called `my_app`.
 
-A Rust application structure will be created in any of the above methods. This will create a basic Rust application file structure. This has a `Cargo.toml` file that has your basic application configurations and Rust packages/ dependencies that you will install. This looks similar to the `package.json` file for Node.js. It also creates an `src` folder where your Rust code goes. This folder has a `main.rs` with a basic Rust `Hello, world!` application. To test this, you just run `cargo run` inside the folder you initialized the Rust project.
+A Rust application structure will be created in any of the above methods. This will create a basic Rust application file structure. This has a `Cargo.toml` file that has your basic application configurations and Rust packages/ dependencies that you will install. This looks similar to the `package.json` file for Node.js. It also creates an `src` folder where your Rust code goes. This folder has a `main.rs` with a basic Rust `Hello, world!` application. 
 
-This command will compile, run the application for you and print the result on your terminal.
+To test this, you can run `cargo run` inside the folder you initialized the Rust project. This command will compile, run the application for you and print the result on your terminal.
 
 ![cargo-run](/engineering-education/how-to-build-a-client-server-application-using-rust/cargo-run.png)
 
 If you have a problem setting up Rust, check [this tutorial](https://www.youtube.com/watch?v=enk0o7eWNsc) and learn how to install the rust utilities and tools to compile and create your rust programs.
 
 ### The Rust modules
-
-We need a couple of Rust modules to set up this server and client. These include;
+We need a couple of Rust modules to set up this server and client. These include:
 
 - `time::Duration` - This will help us set a time duration that the server needs for a connection timeout.
-- `io` - Since we are sending data between the server and client, we need to be able to access the input and output using the read and write traits.
+- `io` - Since we are sending data between the server and client, we need to access the input and output using the read and write traits.
 - `net` - The server and client need to communicate. Thus we need networking functionality to use `TcpStream` so that the local server can accept connections from clients to read and write to it. We also need the `TcpListener` so that the server can listen to incoming connections and bind them to a server socket address.
-- `thread` - For adding the native Rust threads
+- `thread` - For adding the native Rust threads.
 
 ### Create a server with Rust
-
 Create a project folder and name it `client_server_app`. To start setting up a Rust server, initialize a Rust project. To do this, run `cargo new server`. This will create a `server` folder with the Rust program configurations. Let's dive and start writing some Rust code for a Rust server. Head over to the `server`'s `src` folder and start working on your `main.rs` file.
 
 #### Step one: Add Rust packages
-
 Add these modules to your `main.rs` file, as shown below.
 
 ```rust
@@ -79,7 +78,6 @@ use std::thread;
 ```
 
 #### Step Two - Handle the sender message
-
 Before setting up a server, the server needs to handle the client's messages. The server must first access these messages then decide what operation to perform.
 
 ```rust
@@ -112,10 +110,9 @@ First, the server will access the streams/client messages and hold them in the s
 
 Once these connections are established, the server will read messages into our set buffer. This will take the message that we're receiving, handle all of the characters that are not whitespace inside this buffer as a `String`. Then to complete the read-write operation, the server will convert this `String` into an actual `utf8` string and then print the message to the server's terminal.
 
-The serve will constantly loop around the connected clients. This can create permanence overhead. Therefore, we need to set a `time::Duration` that allows the server to `sleep` for a moment when looping through the sent messages.
+The server will constantly loop around the connected clients. This can create permanence overhead. Therefore, we need to set a `time::Duration` that allows the server to `sleep` for a moment when looping through the sent messages.
 
 #### Step Three - Set up the actual server
-
 For this connection to work right, we need to set localhost with a port in it. In this case, we will have localhost with port `7878`.
 
 ```rust
@@ -155,11 +152,9 @@ You can now run the server and test if it is working. Navigate to the `server` d
 ![server](/engineering-education/how-to-build-a-client-server-application-using-rust/server.png)
 
 ### Create a client with Rust
-
 Let's now create a client to send some messages to the server. To start setting up a Rust client, initialize a Rust project. To do this, navigate to the `client_server_app` folder and run `cargo new client`. This creates a `client` folder containing the Rust application settings. Let's get started on some Rust code for a Rust client. Go to the `client`'s `src` folder and begin working on your `main.rs` file.
 
 #### Step one: Add Rust client packages
-
 Add these modules to your `main.rs` file, as shown below.
 
 ```rust
@@ -168,8 +163,7 @@ use std::net::TcpStream;
 use std::io::{self,prelude::*,BufReader,Write};
 ```
 
-#### Step one: Set up the Rust client
-
+#### Step two: Set up the Rust client
 The client needs permission to write messages and send them to the server. Therefore, we need a local host and a port number to be able to communicate with the server.
 
 ```rust
@@ -218,4 +212,4 @@ Head over to the server terminal, and you can see the server received the exact 
 ![server-messages](/engineering-education/how-to-build-a-client-server-application-using-rust/server-messages.png)
 
 ### Conclusion
-When you connect to the network, your computer sends data to a server. The server then checks this data to make sure the data is valid. And if the data is invalid, this will throw an error. This blog has built a handy application that allows the server and client to send data between them using Rust programming language. I hope you found this helpful!
+When you connect to the network, your computer sends data to a server. The server then checks this data to make sure that it is valid. If the data is invalid, this will throw an error. This blog has built a handy application that allows the server and client to exchange data between them using Rust programming language. I hope you found this helpful!
