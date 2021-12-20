@@ -23,7 +23,7 @@ To make the most of this tutorial, it is required to have:
 The traditional approach would have been to constantly fetch and iterate over the stream of data – readings, get the sum of power used and subtract it from the threshold to get the values of power used and power remaining. This is a less efficient approach. With the F function, a single reading object (meant for the user) can be updated on the fly, without reference to the previous data, saved to the database and ready for the user to see. You can do this for multiple fields at a go.
 
 ### Implementing models for usage in demonstration
-Our small demonstration of how F function works will require three models: `RegisterMeter`, `MeterReading` and `CurrentUsage`. The code snippets below show the models and serializers for creating these models.
+In our small demonstration of how F function works, we will simulate a meter reading process as described earlier in this text. We will require three models: `RegisterMeter`, `MeterReading` and `CurrentUsage`. The code snippets below show the models for creating these models.
 
 ```python
 from django.db import models
@@ -54,6 +54,7 @@ class CurrentUsage(models.Model):
     def __str__(self):
         return self.meter
 ```
+We will also need to have serializers for the models shown in the code snippet above. The serializers help convert objects to JSON format. Serializers for each of the models is shown below:
 
 ```python
 from rest_framework import serializers
@@ -78,8 +79,10 @@ class RegisterMeterSerializer(serializers.ModelSerializer):
         fields = '__all__'
 ```
 
-The `RegisterMeter` on-boards an electricity meter, `MeterReading` represents a single data body generated from the electricity meter and sent to the Power Office and the `CurrentUsage` is what reading the user sees displaying his power used and power remaining.
-The idea is that, while onboarding an electricity meter, a default `CurrentUsage` is created, where the `total_power_used` and `power_remaining` are both zeores for the meter and on the creation of every `MeterReading` object, the `CurrentUsage` object is always updated. The `view` and `url` for onboarding a meter is shown below:
+The `RegisterMeter` in the `models.py` file is used to on-board an electricity meter, `MeterReading` represents a single data body generated from the electricity meter and sent to the Power Office and the `CurrentUsage` is what reading the user sees displaying his power used and power remaining.
+The idea is that, while onboarding an electricity meter, a default `CurrentUsage` is created, where the `total_power_used` and `power_remaining` are both zeores for the meter and on the creation of every `MeterReading` object, the `CurrentUsage` object is always updated. The `view` and `url` for onboarding a meter are shown below:
+
+The view, inside the `views.py` file, to onboard an electricity meter is shown below
 
 ```python
 class RegisterMeterCreateView(generics.CreateAPIView):
@@ -108,6 +111,8 @@ class RegisterMeterCreateView(generics.CreateAPIView):
                         status=status.HTTP_200_OK)
 ```
 
+The URL, inside the `urls.py` file, displaying the endpoint to access this created meter is shown below
+
 ```python
 from django.urls import path
 
@@ -120,7 +125,7 @@ urlpatterns = [
 ]
 ```
 
-To view all meters that have been registered, the view is shown in the snippet below:
+To view all meters that have been registered, the view for doing just that is shown in the snippet below:
 
 ```python
 class AllMetersListView(generics.ListAPIView):
@@ -128,7 +133,7 @@ class AllMetersListView(generics.ListAPIView):
     serializer_class = RegisterMeterSerializer
 ```
 
-As a result of the above, we also need to have a view and URL to check for a `CurrentUsage` object using the `meter`’s ID
+As a result of the above, we also need to have a view to check for a `CurrentUsage` object using the `meter`’s ID, as shown below in the code snippet
 
 ```python
 @api_view(['GET'])
@@ -136,6 +141,8 @@ def check_meter_usage(self, meter_id):
     meter_reading = CurrentUsageSerializer(CurrentUsage.objects.get(meter=meter_id))
     return Response(meter_reading.data)
 ```
+
+Also, we need the URL, showing the endpoint to view the `CurrentUsage` object using the `meter`’s ID. This is shown below.
 
 ```python
 from django.urls import path
@@ -148,7 +155,7 @@ urlpatterns = [
     path('all-meters', AllMetersListView.as_view()),
     path('meter-usage/<str:meter_id>', check_meter_usage), #  New
 ```
-The view and URL to create a single meter reading object are shown in the code snippet below:
+The view to create a single meter reading object are shown in the code snippet below:
 
 ```python
 class CreateMeterReading(generics.CreateAPIView):   # New
@@ -175,6 +182,8 @@ class CreateMeterReading(generics.CreateAPIView):   # New
             serializer.save()
         return Response({"message": "Reading created, current usage updated"}, status=status.HTTP_200_OK)
 ```
+
+The URL to view a created single meter reading object are shown in the code snippet below:
 
 ```python
 
