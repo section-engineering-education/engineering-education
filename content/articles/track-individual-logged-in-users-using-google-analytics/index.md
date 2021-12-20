@@ -22,9 +22,9 @@ In this article, we will have an in-depth view of how we can implement google an
 By the end of this article, the readers will be familiar with the following:
 - Setting up Google Analytics account.
 - Creating Google Analytics property.
-- Creating a view with `user-id` enabled.
+- Creating a view with `User Id` enabled.
 - Creating custom dimensions to track user types.
-- Modifying tracking code to include `user-id` and custom dimensions.
+- Modifying tracking code to include `User Id` and custom dimensions.
 - Creating custom reports, viewing, and analyzing data
 - Why should you use Google Analytics?
    
@@ -67,9 +67,9 @@ Similarly, you can create a new property by clicking on `Create Property`.
 ### Create a view with user ID enabled
 A `view` can be considered as a collection of rules that Google uses to process traffic on a domain.
 
-This is the step where we are stepping into the `user id` tracking.
+This is the step where we are stepping into the `User Id` tracking.
 
-Generally, when you create a `view`, by default the `user-id` option is `OFF`. Now, you need to switch it `ON`, to track individual users:
+Generally, when you create a `view`, by default the `User Id` option is `OFF`. Now, you need to switch it `ON`, to track individual users:
 
 ![analytics-view-with-user-id](/engineering-education/track-individual-logged-in-users-using-google-analytics/analytics-view-with-userid.jpg)
 
@@ -86,7 +86,7 @@ We create custom dimensions to capture and analyze the data sent to Google, abou
 
 For example, consider we have different types of users like, general users who do not log in but use the site anonymously. There are basic members, authors, and an admin who accesses the webpage.
 
-In any case, you need to create a dimension as a `user-type` that supplies different user types as values.
+In any case, you need to create a dimension as a `User Type` that supplies different user types as values.
 
 ![google-analytics-custom-dimension-user-type](/engineering-education/track-individual-logged-in-users-using-google-analytics/google-analytics-custom-dimension-user-type.jpg)
 
@@ -238,7 +238,7 @@ A high bounce rate calls for immediate action to identify the reason behind it. 
 
 Therefore, with the detailed report on bounce rate, you can find ways and means to reduce the bounce rate of your website.
 
-#### To know the age, gender, interest, device, and location of your audience.
+#### To know the age, gender, interest, device, and location of your audience
 With Google Analytics, you can uncover valuable data about your audience to determine which channels drive most of the traffic to your website.
 
 The Audience section provides a lot of information about the people who visit your website like their age, gender, interests, devices, and location. It also gives you data on how the visitors were driven to your website.
