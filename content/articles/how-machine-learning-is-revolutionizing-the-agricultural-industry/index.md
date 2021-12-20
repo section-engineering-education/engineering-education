@@ -1,6 +1,21 @@
-# How machine learning is revolutionizing the agricultural industry
-Agriculture is one of the critical industries that is vital in the sustenance of the world population. With the expected growth of the world population, food security concerns continue to rise.
+---
+layout: engineering-education
+status: publish
+published: true
+url: /engineering-education/how-machine-learning-is-revolutionizing-the-agricultural-industry/
+title: How Machine Learning is Revolutionizing the Agricultural Industry
+description: This tutorial will be an introduction to the current agricultural industry and standards. We will learn about different machine learning algorithms that can be used to improve the agricultural efficiency and yield of crops.
+author: ann-gathogo
+date: 2021-12-20T00:00:00-15:15
+topics: [Machine Learning]
+excerpt_separator: <!--more-->
+images:
 
+  - url: /engineering-education/how-machine-learning-is-revolutionizing-the-agricultural-industry/hero.jpg
+    alt: How Machine Learning is Revolutionizing the Agricultural Industry Hero Image
+---
+Agriculture is one of the critical industries that is vital in the sustenance of the world population. With the expected growth of the world population, food security concerns continue to rise.
+<!--more-->
 In tackling the concerns, [Machine learning](/engineering-education/differences-between-artificial-intelligence-machine-learning-and-deep-learning/) is a crucial branch of artificial intelligence that could be helpful.
 
 This article tackles critical aspects of how machine learning can be vital in the agricultural industry revolution.
@@ -126,3 +141,6 @@ Happy learning!
 - [Introduction to Neural Networks](/engineering-education/introduction-to-neural-networks/)
 - [Differences between Artificial Intelligence, Machine Learning, and Deep Learning](/engineering-education/differences-between-artificial-intelligence-machine-learning-and-deep-learning/)
 - [Introduction to Machine Learning using C++](/engineering-education/an-introduction-to-machine-learning-using-c++/)
+
+---
+Peer Review Contributions by: [Srishilesh P S](/engineering-education/authors/srishilesh-p-s/)
