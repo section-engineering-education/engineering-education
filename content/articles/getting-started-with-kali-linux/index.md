@@ -328,4 +328,4 @@ With continuous practice, you will comfortably use Kali Linux.
 Good luck!
 
 ---
-Peer Review Contributions by: [Willies Ogola](/authors/willies-ogola/)
+Peer Review Contributions by: [Willies Ogola](/engineering-education/authors/willies-ogola/)
