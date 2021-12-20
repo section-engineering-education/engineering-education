@@ -4,19 +4,18 @@ status: publish
 published: true
 url: /react-components-instantiation/
 title: React Components  Instantiation 
-description: Throughout this tutorial, we will be mostly talking about JSX. The JSX element can be written in HTML format or written as a component instance. In JSX, you use capitalization to differentiate between HTML-like and component instances.
+description: A React Component is a small, reusable code responsible for rendering HTML. In React, we can define a component as a class or a function. 
 author: valentine-gatwiri
 date: 2021-12-19T00:00:00-13:00
 topics: [Languages]
 excerpt_separator: <!--more-->
 images:
 
-  - url: /engineering-education/react-components-instantiation/hero.jpg
-    alt: Building Data Driven Application in React Hero Image
+  - url: /engineering-education/react-components-instantiation/hero.jpeg
+    alt: React Components  Instantiation Hero Image
 ---
-A React Component is a small, reusable code responsible for rendering HTML. In React, we can define a component as a class or function. 
+A React Component is a small, reusable code responsible for rendering HTML. In React, we can define a component as a class or a function. 
 <!--more-->
-
 For a React component to be defined, we will create a component and extend the `React.component` class. For example, to create a classroom component, the classroom component should have the classroom details.
 
 Throughout this tutorial, we will be mostly talking about JSX. The JSX element can be written in HTML format or written as a component instance. In JSX, you use capitalization to differentiate between HTML-like and component instances.
@@ -27,7 +26,7 @@ To effectively understand the tutorial, the reader will need the following:
 - A suitable IDE such as VS Code.
 - Basic understanding of JSX.
 
-> In this tutorial, we will use [JS complete](https://jscomplete.com/playground).To use JS complete with React, first install the [React Developer Tools extension.](https://chrome.google.com/webstore/detail/react-developer-tools/fmkadmapgofadopljbjfkapdkoienihi?hl=en)
+> In this tutorial, we will use [JS complete](https://jscomplete.com/playground). To use JS complete with React, first install the [React Developer Tools extension.](https://chrome.google.com/webstore/detail/react-developer-tools/fmkadmapgofadopljbjfkapdkoienihi?hl=en)
 
 #### Key takeaways 
 - What is component instantiation?
@@ -44,10 +43,10 @@ Let's begin by importing the React library.
 
 We are importing React because JSX will be converted to regular JavaScript, using React's `React.createElement` method. Therefore, we need to import React when using JSX.
 
-After importing the React library, we will import `ReactDOM`. `ReactDom` is a different module. If you are not using ES6, install `react-dom` in your IDE using:
+After importing the React library, we will import `ReactDOM`. If you are not using ES6, install `react-dom` in your IDE using:
 
 ```bash
-npm install react-dom`
+npm install react-dom
 ```
 But since we will be using ES6, we will import `ReactDOM` using the code below:
 
@@ -57,7 +56,7 @@ But since we will be using ES6, we will import `ReactDOM` using the code below:
 
 `ReactDOM` is important for rendering JSX elements and react components to the `DOM`. The `DOM` represents the whole user interface of your application. 
 
-Let's now create a component class. We will subclass `React.Component` to create our component class. We will do this by using the following syntax: `class V extends React.Component {}`. This is how ES6 creates a stateful component. 
+Let's create a component class. We will subclass `React.Component` to create our component class. We will do this by using the following syntax: `class V extends React.Component {}`. This is how ES6 creates a stateful component. 
 
 We will now add the `render()` function to our code:
 ```javascript
@@ -75,7 +74,7 @@ The motive of the `render()` function in our application is to enable React to r
   }
 ```
  
-The difference between HTML like and component instances in JSX elements is that to make a React component, instead of naming your JSX element using tags like `<P> </p>`, `<h1> </h1>` or `<div> </div>` as shown below,
+The difference between HTML like and component instances in JSX elements is that to make a React component, instead of naming your JSX element using tags like `<P> </p>`, `<h1> </h1>` or `<div> </div>` as shown below, you give it the same name as the component class.
 ```javascript
   ReactDOM.render(
     <h1>Welcome to React World</h1>,
@@ -83,7 +82,7 @@ The difference between HTML like and component instances in JSX elements is that
   );
 ```
 
-It would be best to give it the same name as the component class. For example, let's now create a component instance by adding <Valley/> which will be our component's class below our code, as shown below:
+For example, we create a component instance by adding <Valley/> which will be our component's class below our code, as shown below:
 ```javascript
  import React from 'react';
  import ReactDOM from 'react-dom';
@@ -137,7 +136,7 @@ They also accept and use props. A function component is considered a "dump" beca
   console.log(study);
 ```
 
-The code above outputs the student's marks. This is because the JS engine will see the `new` keyword, then it will create a new object and set the prototype to `Student.prototype`.
+The code above outputs the student's marks. This is because the JS engine will see the `new` keyword, create a new object and set the prototype to `Student.prototype`.
 
 If a property is undefined in the new object that is requested, the script will check the `[Prototype]` object for the property. Object's prototype property is invisible,hence we will add `Object.getPrototypeOf(obj)` method to access prototype object.
 
@@ -155,7 +154,7 @@ If we add `Student` instead of `study` as shown `console.log(Object.getPrototype
 #### Instantiating the class component 
 A class is a blueprint that helps you define the shared structure and behavior between similar objects. 
 
-Class components implement logic and state; hence they are considered "smart" Props are passed down to class components and accessed with `this.props`.
+Class components implement logic and state hence they are considered "smart". Props are passed down to class components and accessed with `this.props`.
 
 In the code below, the developer class defines a constructor function. The developer class expects the name argument, and it uses the `this` keyword to store that value on the instance.
 
@@ -173,7 +172,6 @@ The `new` keyword generates a new object. Hence, `dev1` is returned as the new o
  // expected output: "Tom"
  ```
 
-#### Below is an example of code to show class component instantiation that outputs greetings.
 A `Student` class extend the `Human` class in our code. Both classes define a `constructor()` function. Every student is a `Human` too. The `Human` class expects the name argument, and that value is stored on the instance using the `this` keyword.
 
 The `Student` class expects the name and the level argument, and then the level value is stored on its instance. 
@@ -221,9 +219,11 @@ o3.greet = () => console.log('I am wonderful!');
 ```
 
 **expected output**
-- Hello John!
-- Hello Tina from 1st Grade
-- I am wonderful!
+```bash
+Hello John!
+Hello Tina from 1st Grade
+I am wonderful!
+```
 
 ***What happens when we test the script?***
 - Const 01 will use the greet method from its class (the person class).
