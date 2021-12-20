@@ -77,7 +77,7 @@ The element is always 'true' by default on Android versions 4.1.1, while it is f
 
 Permissions are always set in the manifest. For example, add the following permission in the AndroidManifest.xml to deny other apps access to the `ContentProvider`.
 
-```manifest
+```bash
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.ramgdeveloper.androidsecurityrules">
     
