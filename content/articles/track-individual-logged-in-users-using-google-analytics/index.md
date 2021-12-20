@@ -5,7 +5,7 @@ published: true
 url: /engineering-education/track-individual-logged-in-users-using-google-analytics/
 title: Track Individual Logged-In Users Using Google Analytics
 description: This tutorial will be a brief introduction to Google Analytics. The reader will learn how to track individual users and generate statistical report for any website.
-author: Nancy245
+author: nancy-muthoni
 date: 2021-12-20T00:00:00-20:30
 topics: []
 excerpt_separator: <!--more-->
