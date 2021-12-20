@@ -1,6 +1,21 @@
-# Build a weather forecast app in Next.js
-In this tutorial, we'll be building a weather application in Next.js showing how to grab live web data from cities all across the world via an external API. We'll also use the API to look up the daily weather forecast.
+---
+layout: engineering-education
+status: publish
+published: true
+url: /engineering-education/build-a-weather-forecast-app-with-next-js/
+title: Build a Weather Forecast App in Next.js
+description: This tutorial will be an introduction to Next.js. We will walking through what Next.js is, why and when we should use it. We will also be building a simple weather forecast application using Next.js.
+author: oyedele-temitope
+date: 2021-12-20T00:00:00-16:30
+topics: [API]
+excerpt_separator: <!--more-->
+images:
 
+  - url: /engineering-education/build-a-weather-forecast-app-with-next-js/hero.jpg
+    alt: Build a Weather Forecast App in Next.js Hero Image
+---
+In this tutorial, we'll be building a weather application in Next.js showing how to grab live web data from cities all across the world via an external API. We'll also use the API to look up the daily weather forecast.
+<!--more-->
 The API we'll be using for this tutorial is openweather API. To start using it, we'll have to sign up [here](https://openweathermap.org/api).
 
 ### Pre-requisities
@@ -577,3 +592,6 @@ You can find the full code [here](https://github.com/oyedeletemitope/next-weathe
 All you have to do is create your own `.env` as we discussed earlier.
 
 Happy coding!
+
+---
+Peer Review Contributions by: [Srishilesh P S](/engineering-education/authors/srishilesh-p-s/)
