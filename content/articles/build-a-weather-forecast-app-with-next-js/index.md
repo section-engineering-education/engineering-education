@@ -1,59 +1,74 @@
-# Build a weather forecast app in Nextjs
+# Build a weather forecast app in Next.js
+In this tutorial, we'll be building a weather application in Next.js showing how to grab live web data from cities all across the world via an external API. We'll also use the API to look up the daily weather forecast.
 
-### Introduction
+The API we'll be using for this tutorial is openweather API. To start using it, we'll have to sign up [here](https://openweathermap.org/api).
 
-In this tutorial, we'll be building a weather application in Nextjs, Showing you how to grab live web data from cities all across the world via an external API. We'll also use the API to look up the daily weather forecast.
-
-The API we’ll be using for this tutorial is openweather API but to do that we’ll have to do is [sign up](https://openweathermap.org/api) with them to be able to make use of their API.
-
-It's a really basic beginner project, and it's for those who have a basic understanding of React and want to learn how to make a server-side rendered react app with Next js. The only requirement is that you have a basic understanding of React. We’ll be using for this tutorial is openweather API but to do that we’ll have to signup with them to be able to make use of their API.
+### Pre-requisities
+To follow along with this tutorial, it's important to have:
+- A basic understanding of React and want to learn how to make a server-side rendered react app with Next.js.
+- Installed a code editor.
 
 At the end of this tutorial the readers should be able to:
-
-- Know what Nextjs is.
+- Know what Next.js is.
 - When to use it.
-- Know the key advantages Nextjs has over React.
-- Install Nextjs.
-- Be able to create an application in Nextjs.
+- Know the key advantages Next.js has over React.js.
+- Install Next.js.
+- Be able to create an application using Next.js.
 - Fetch an external API.
 
 So sit back, relax and enjoy the ride!!!
 
 #### Overview
 - Introduction
-- What is Nextjs
-  - Why you should use it
+- What is Next.js
+- Why you should use it
 - Comparing Next with React
 - Building a weather forecast app
 
 ### What is Next.js?
-So what exactly is Nextjs ? Nextjs is an open-source development framework built on top of Node.js that enables server-side rendering and the generation of static websites in React-based web apps. It's a JavaScript framework that lets you create really fast and user-friendly static web applications with React. It's a fantastic tool for creating your future website. It includes a lot of fantastic features and benefits that could make Nextjs your first choice for developing your next web app which brings us to why you should use it.
+So, what exactly is Next.js?
 
-#### Why should you use it?
-This framework has various advantages, both for client apps and for the development (frontend) team. Let’s take a look at some of the benefits.
+Next.js is an open-source development framework built on top of Node.js that enables server-side rendering and the generation of static websites in React-based web apps.
 
-##### Rendering on the Server (SSR)
-Nextjs comes with a unique server-side rendering (SSR) solution for React components. It ensures that developers to be able to use Next to display their codes on the server. Now, this was also possible before the advent of Nextjs Before Nextjs however, it also required a great deal of tinkering with common issues like caching, load on the server, the content, and the application's architecture.
-##### Improved performance
-Because Nextjs restricts the browser from downloading and executing a large amount of JavaScript code at once, it can significantly improve metrics like time to first draw (TTFD). It determines how long it takes for a user to view the very first content on their screen, and should ideally this should be less than one second.
+It's a JavaScript framework that lets you create really fast and user-friendly static web applications with React. It's a fantastic tool for creating your future website. It has a lot of fantastic features and benefits that could make Next.js your first choice for developing your next web app.
 
-##### Enhanced search engine optimization
-We all know this has been covered a lot, but it's also worth noting that using server-side rendering in place of client-rendered JavaScript can increase your search engine exposure greatly. You can design a web application with all the functionality and interactivity you need while still enjoying the SEO benefits of a static website. And it will provide you with a significant competitive advantage.
+### Why should you use it?
+This framework has various advantages, both for client apps and for the development (frontend) team. Let's take a look at some of the benefits.
 
+#### Rendering on the server (SSR)
+Next.js comes with an unique server-side rendering (SSR) solution for React components. It ensures that developers to be able to use Next to display their codes on the server.
 
-##### Static Site Generation
-Let's assume you run a blogging website, the content of this type of website rarely changes once it is launched. As a result, no data from the client or server is required. Everything is on the HTML and CSS pages. As a result, the browser merely needs to parse them and possibly a small amount of javascript. Static sites were the name for this type of website. Because they have fewer duties to fulfill, they are extremely fast. We can produce static HTML at build time with Nextjs and no longer have to worry about it.
+However, before Next.js, the developers have to handle a great deal of tinkering with common issues like caching, load on the server, the content, and the application's architecture.
 
-### Comparing Nextjs with React
-Since Nextjs is a React framework then why compare it with its library? In this article, we'll be comparing them according to:
+#### Improved performance
+Because Next.js restricts the browser from downloading and executing a large amount of JavaScript code at once, it can significantly improve metrics like time to first draw (TTFD).
+
+TTFD determines how long it takes for a user to view the very first content on their screen, and should ideally this should be less than one second.
+
+#### Enhanced search engine optimization
+We all know this has been covered a lot, but it's also worth noting that using server-side rendering in place of client-rendered JavaScript can increase your search engine exposure greatly.
+
+You can design a web application with all the functionality and interactivity you need, while still enjoying the SEO benefits of a static website. And it will provide you with a significant competitive advantage.
+
+#### Static site generation
+Let's assume you run a blogging website, the content of this type of website rarely changes once it is launched. As a result, no data from the client or server is required. Everything is on the HTML and CSS pages.
+
+As a result, the browser merely needs to parse them and possibly a small amount of javascript.
+
+Static sites were the name for this type of website. Because they have fewer duties to fulfill, they are extremely fast. We can produce static HTML at build time with Next.js and no longer have to worry about it.
+
+### Comparing Next.js with React
+Since Next.js is built on top of React framework, we'll be understanding them according to:
 - Features
 - Speed of coding
 - Performance
 - Documentation
-- Community So let’s get started!!
+- Community
+
+So, let's get started!!
   
 #### Features
-In Next.js, We make use of React to assist us in creating single-page applications.
+In Next.js, we make use of React to assist us in creating single-page applications.
 
 It comes with the following features:
 - Rendering on the server (SSR)
@@ -61,55 +76,71 @@ It comes with the following features:
 - Pre-rendering
 - Build size optimization is done automatically.
 - Compilation of code more quickly
+
 All of these features will assist you in developing a functional and ready-to-use application.
 
- React can simply be extended to integrate functionality like routing and state management patterns using frameworks like Redux. React is a simple framework that can be adapted for almost any project.
-#### Speed of coding
- We all know that in React, you have to first create a component and then add it to the router to create pages for our React project. Unlike React to make a page for the Nextjs project, We simply place it in the pages folder and link it to the required header component. Easy right? Nextjs helps simplify your life by reducing the amount of code you write and making the project easier to follow.
+React can simply be extended to integrate functionality like routing and state management patterns using frameworks like Redux. React is a simple framework that can be adapted for almost any project.
 
-There are also advantages of using React for example the `Create React App` is a tool that saves you time and effort when it comes to setting up and customizing your development environment. All you need to do is run the command to get all of the tools you need to make your React project up and running.
+#### Speed of coding
+We all know that in React, you have to first create a component and then add it to the router to create pages for our React project.
+
+Unlike React, to make a page for the Next.js project, we simply place it in the `pages` folder and link it to the required header component.
+
+Easy right?
+
+Next.js helps simplify your life by reducing the amount of code you write and making the project easier to follow.
+
+There are also advantages of using React. For example, the `Create React App` is a tool that saves you time and effort when it comes to setting up and customizing your development environment. All you need to do is run the command to get all of the tools you need to make your React project up and running.
 
 #### Performance
-Now because of static sites and server-side rendering features, this makes Nextjs apps really fast, and not just that, they work by default, thanks to performance-enhancing technologies like Image Optimization and many more. As a result, when you use Nextjs, you'll get automatic server rendering and code splitting (which will improve performance). In addition, SSR (Server Side Rendering) will significantly increase your application's performance.
+Because of static sites and server-side rendering features makes Next.js apps really fast, and not just that, they work by default, thanks to performance-enhancing technologies like Image Optimization and many more.
+
+As a result, when you use Next.js, you'll get automatic server rendering and code splitting (which will improve performance). In addition, SSR (Server Side Rendering) will significantly increase your application's performance.
 
 For React, there are a few things that make it not worthy of this discussion. It only supports client-side rendering out of the box, which is not enough if you are building a high-performance application.
 
 #### Documentation 
 This is self-evident, but it is frequently overlooked. While the designs of home pages of certain frameworks may be eye catchy,  you'll still need additional tutorials, and even articles to get started, in addition to just reading the documentation.
 
-As regarding documentation, Both React and Nextjs provide amazing documentation options.
+With documentation, both React.js and Next.js provides amazing documentation options.
 
-Now while Nextjs includes a set of "learn-by-doing" documentation that leads you through tasks like component development and routing React also provides a similar setup, with multiple tutorials covering the fundamentals being displayed. You can check out their official documentation(both React and Nextjs) for better understanding.
-In my opinion, Nextjs only scores high in performance than React all others are even.
+Next.js includes a set of "learn-by-doing" documentation that leads you through tasks like component development and routing. React also provides a similar setup with multiple tutorials covering the fundamentals being displayed.
 
-Since we’ve taken a look at Nextjs and why you should use it, let’s move on to build a weather forecast application in Next.
+You can check out their official documentation(both React and Next.js) for better understanding.
+
+In my opinion, Next.js only scores high in performance than React all others are even.
+
+Since we've taken a look at Next.js and why you should use it, let's move on to build a weather forecast application in Next.
 
 ### Requirements
-To get started you just need a basic understanding of javascript and react knowledge and also signup to openweathermap to make use of their API, it’s completely free. so head over to [https://openweathermap.org/api](https://openweathermap.org/api) and signup. Click on the API key, you should see something like this:
-![api_key](./api_key.PNG)
+Head over to [https://openweathermap.org/api](https://openweathermap.org/api) to signup for accessing the API. Click on the API key, you should see something like this:
 
-You can choose to generate your key which is recommended.
+![api_key](/engineering-education/build-a-weather-forecast-app-with-next-js/api_key.PNG)
+
+You can choose to generate your key (which is recommended).
 
 ### Building a weather forecast application
-The first thing when creating a Next project is to install Nextjs by opening our terminal, navigating to the folder you want to install next on, run the command:
+The first thing when creating a Next project is to install Next.js by opening our terminal, navigating to the folder you want to install using the command:
 
 ```bash
 npm create-next-app next-weather-build
 ```
 
-To make this easy, we'll be using a built-in frontend which we will use for this project, a JSON file has also been included. This contains a list of also  cities so all you have to do is visit my GitHub repo through this [link](https://github.com/oyedeletemitope/weather-tutorial-front) and clone and download the project, then run:
+To make this easy, we'll be using a built-in frontend containing a JSON file.
+
+For reference, you can find the full code [here](https://github.com/oyedeletemitope/weather-tutorial-front). You can clone or download the project:
 
 ```bash
 npm install
 ```
 
-This will install our node modules for the project you can decide to choose to install Next app and just copy the files into yours but be sure to install the following packages
+This will install all the node modules for the project.
 
 ```bash
 npm install dotenv
 ```
 
-(We’ll be using the dotenv for our environment variables which is our API key)
+(We'll be using the dotenv for our environment variables which is our API key)
 
 ```bash
 npm install moment
@@ -118,7 +149,7 @@ npm install moment
 (this allows us to format dates)
 
 ```bash
-Npm moment-timezone
+npm moment-timezone
 ```
 
 ```bash
@@ -126,25 +157,28 @@ npm install sass
 ```
 
 (this allows us to compile our styles)
-Now that we’ve done that let’s start our project by running this command:
+
+Now that we've done that let's start our project by running this command:
 
 ```bash
 npm run dev
 ```
 
-This would start up our next project. If you have an issue with loading `SWC` you can disable it and switch to babel by creating a file called .babelrc in your project folder and inputting the following code:
+This would start up our next project. If you have an issue with loading `SWC`, you can disable it and switch to babel by creating a file called `.babelrc` in your project folder and inputting the following code:
 
 ```json
 {
-    "presets": ["next/babel"]
-  }
+  "presets": ["next/babel"]
+}
 ```
 
 Rerun the server, that should take care of it once you start the server click on the localhost link you should see something like the image below:
 
-![front-end](/./front_end.jpg)
+![front-end](/engineering-education/build-a-weather-forecast-app-with-next-js/front_end.jpg)
 
-The first thing we want to work on is our `Searchbox.js`. We want to make sure that whenever we input a city it brings us a result, that matches our city if not is should tell us no result. For us to do this, we first need to import the city list which is a JSON format that should be in our lib folder we also want to import  `link` from next as we’ll be using that also.
+The first thing we want to work on is our `Searchbox.js`. We want to make sure that whenever we input a city, it brings us a result that matches our city, if not it should tell us no result.
+
+For us to do this, we first need to import the city list from the JSON file under the `lib` folder. Also, we have to import  `link` from `next`:
 
 ```javascript
 import cities from "../lib/city.list.json";
@@ -152,8 +186,7 @@ import Link from "next/link";
 import Router from "next/router";
 ```
 
-
-Then below it add the following codes:
+Then, add the following codes:
 
 ```javascript
 export default function SearchBox({ placeholder }) {
@@ -168,10 +201,12 @@ export default function SearchBox({ placeholder }) {
 
 What we did here is:
 
-- Create a state variable called query and also set our variable(react.usestate) state to an empty string. What we are trying to do is when we type in a value, we want the value to be saved to our query.
-- We also created a new state variable called results and gave it an empty string also but this will be responsible for showing our matching cities.
-- The const OnChange is supposed to be attached to the input so when we type into our input we get an event that will give us the value. We also got our value and set it to our query,
-  Now we want to use our query and search against our city data to see if it matches: any of our cities. Let’s paste in the following codes right after our setQuery(value) before the closing curly braces:
+- Create a state variable called `query` and also set our variable (react.usestate) state to an empty string. What we are trying to do is when we type in a value, we want the value to be saved to our `query`.
+- We also created a new state variable called `results` and gave it an empty string. This will be responsible for showing our matching cities.
+- The `const OnChange` is supposed to be attached to the input so when we type into our input we get an event that will give us the value. We also got our `value` and set it to our `query`.
+- Now, we have to use our `query` and search against our city data to see if it matches: any of our cities.
+
+Let's paste in the following codes right after our `setQuery`(value) before the closing curly braces:
 
 ```javascript
 let matchingCities = [];
@@ -193,7 +228,9 @@ if (value.length > 3) {
 return setResults(matchingCities);
 ```
 
-So what we did above code is that if our type in more than 3 characters it should map through the cities and bring out the results matching our value, making us not search unnecessarily. We also created a slug to create a unique page name and display through our results, so we can use our slugs to find out which area so when we create our weather page for each city, we know which one we are referring to through our results.
+So, what we did above code is that, if our type in more than 3 characters it should map through the cities and bring out the results matching our value, making us not search unnecessarily.
+
+We also created a slug to create an unique page name and display through our results. We can use our slugs to find out which area so when we create our weather page for each city, we know which one we are referring to through our results.
 
 So let's add our value to our input tag:
 
@@ -201,7 +238,9 @@ So let's add our value to our input tag:
 value = {query}onChange={onChange}
 ```
 
-Let's also call out our query as this makes our matching cities accessible via results. now let's do some conditional logic and map through our results, using the `city.slug` as our key so we can show them on the screen. Right after our input tag, write the following codes:
+Let's also call out our `query` as this makes our matching cities accessible via results. Now, let's add some conditional logic to map through our results, using the `city.slug` as our key.
+
+Right after our `input` tag, write the following codes:
 
 ```javascript
 {
@@ -226,10 +265,10 @@ Let's also call out our query as this makes our matching cities accessible via r
 }
 ```
 
-![searchbox](/./first_pic.jpg)
+![searchbox](/engineering-education/build-a-weather-forecast-app-with-next-js/first_pic.jpg)
 
-### Displaying our matching cities:
-Now let's navigate to a folder called location which is inside our pages folder, locate the file called `[city].js.` That’s what we’ll be working on next. Top of the page let’s import our city list file:
+### Displaying our matching cities
+Now, let's navigate to a folder called `location` under the `pages` folder, locate the file called `[city].js` as shown:
 
 ```javascript
 import cities from "../../lib/city.list.json";
@@ -237,14 +276,19 @@ import moment from "moment-timezone";
 import Link from "next/link";
 import Head from "next/head";
 ```
-We’ll also import our today’s weather and hourly weather which we’ll be working on soon
+
+We'll also import our today's weather and hourly weather which we'll be working on soon:
 
 ```javascript
 import TodaysWeather from "../../components/TodaysWeather";
 import HourlyWeather from "../../components/HourlyWeather";
 ```
 
-We want this page to access any kind of dynamic slug that we’re going to make. This is where Nextjs comes in like said earlier Next is server-side rendered meaning we can grab the data before the page loads unlike just using react where we have to wait before the page loads before grabbing the data. We’ll be using the get `serversideprops` and then pass in so let’s paste this:
+We want this page to access any kind of dynamic slug that we're going to make. This is where Next.js comes in.
+
+Like we learnt earlier, Next.js is server-side rendered, meaning - we can grab the data before the page loads unlike just using react where we have to wait before the page loads before grabbing the data.
+
+We'll be using the get `serversideprops` and then pass in so let's paste this:
 
 ```javascript
 export async function getServerSideProps(context) {
@@ -258,14 +302,17 @@ export async function getServerSideProps(context) {
 }
 ```
 
-What we did here was that we used a function `getserversideprops` the serversideprops since our data is likely to change(our data is live weather data which is subject to change)if our data wasn’t changing we would use `getstaticprops`. we also did a conditional statement sting that if not city return not true
+What we did here was that we used a function `getserversideprops` the serversideprops since our data is likely to change (our data is live weather data which is subject to change). If our data wasn't changing we would use `getstaticprops`.
 
-The next thing we want to do is make use of our environment variables this is where we have to input the API link so let’s first create a .env file, name it .env.local here we’ll be creating an API key and making it equal to the API key of our open weather map like this:
+The next thing we want to do is make use of our environment variables to link the external API. So, let's first create a `.env` file, name it `.env.local`.
+
+Here, we'll be creating an API key and making it equal to the API key of our open weather map like this:
 
 ```bash
-    API_KEY =78b705a31f5b7bebcfe38a2624152e8d 
+API_KEY =78b705a31f5b7bebcfe38a2624152e8d 
 ```
-Please make sure it's your API key you're inputing. Next, we head over to our next.config.js clear and paste this:
+
+Please make sure it's your API key you're inputing. Next, we head over to our `next.config.js` and paste this:
 
 ```javascript
 require('dotenv').config()
@@ -277,9 +324,10 @@ module.exports = {
   }
 }
 ```
+
 The code we pasted also allows us to use openweather image icons which we will use when displaying the weather data.
 
-Now, let’s go back to our `[city].js` and paste the following code below the conditional statement right before the last closing curly brace:
+Now, let's go back to our `[city].js` and paste the following code below the conditional statement right before the last closing curly brace:
 
 ```javascript
 const res = await fetch(
@@ -308,9 +356,9 @@ return {
 };
 ```
 
-Here we are making a request to our API and fetching the data. Noticed I set the units to Celcius, we also excluded some data like the minute data and did a conditional statement to check if the data is available or not, if it returns our city data as props grabbing the city from our context if not, return not found.
+Here, we are making a request to our API and fetching the data. Notice that we set the units to Celsius, and we also excluded some data like the `minute` data. We also wrote a conditional statement to check if the data is available or not, it returns our city data as props, if found.
 
-Now let’s paste in the following codes:
+Now, let's paste in the following codes:
 
 ```javascript
 const getCityId = (param) => {
@@ -331,7 +379,7 @@ const getCityId = (param) => {
 };
 ```
 
-This will help us get the id or our city and if there isn’t return null. (no data collected). To get our hourly weather data, let’s paste in this code:
+This will help us get the `id` or our city and if there isn't return `null` (no data collected). To get our hourly weather data, let's paste in this code:
 
 ```javascript
 const getHourlyWeather = (hourlyData, timezone) => {
@@ -341,11 +389,13 @@ const getHourlyWeather = (hourlyData, timezone) => {
   
     return todaysData;
   };
-
 ```
 
-Here we wrote a function to get hourly data, create a variable where we called moments which helps us get current time then we passed in the timezone we created variable to which will use to divide by 1000 since openweather is giving us our value in milliseconds and we want it to be in seconds. We attributed it to our todaysData.
-Now let’s access our data. On our function City, inside the brackets add these props:
+Here, we write a function to get hourly data.
+
+Create a variable called `moments` that helps us get current time when passed with the timezone information. We created variable `todaysData` that divides the response value by `1000`, since openweather returns value in milliseconds (we want it to be in seconds).
+
+Now, let's access our data. On our function `City`, inside the brackets add these props:
 
 ```javascript
 {
@@ -358,7 +408,7 @@ Now let’s access our data. On our function City, inside the brackets add these
 }
 ```
 
-Then we let's clear what we were returning under it and paste this:
+Then, let's clear what we were returning under it and paste this:
 
 ```javascript
 <div>
@@ -383,10 +433,14 @@ Then we let's clear what we were returning under it and paste this:
 </div>
 ```
 
-Here are going to be displaying hourly weather and today's weather by passing them down to their components so we can access the data. The link and the search are just for us to be able to go back or search for another city Now we’ve done all the hard job. If you got it up to this level you're a genius already!!!
+Here, we are going to be displaying hourly weather along with today's weather by passing them down to their components so we can access the data.
 
-### Displaying of weather
-Let's navigate to the folder called components and click on `todaysweather` what we want to input the info we want to be displayed. First of let’s import the following packages:
+The link and the search are just for us to be able to go back or search for another city.
+
+### Displaying weather
+Let's navigate to the folder called `components` and click on `todaysweather` where we want to input the information that we want to be displayed.
+
+Let's start by importing the following packages:
 
 ```javascript
 import moment from "moment-timezone";
@@ -394,7 +448,7 @@ import React from "react";
 import Image from "next/image";
 ```
 
-Inside the brackets of our functions let's pass in the props city and also the props weather and timezone :
+Inside the function, let's pass in the props `city` along with `weather` and `timezone`:
 
 ```javascript
 {
@@ -402,31 +456,31 @@ Inside the brackets of our functions let's pass in the props city and also the p
 }
 ```
 
-Now what we want to do is render the city data and also the weather data. So inside our `div classname` let's paste in these:
+Now, what we want to do is render the city data and also the weather data. So, inside our `div classname`, let's paste in these:
 
 ```javascript
-      <h1>
-       {city.name} ({city.country})
-      </h1>
-       <h2>
-         <span>{weather.temp.max.toFixed(0)}&deg;C</span>
-         <span>{weather.temp.min.toFixed(0)}&deg;C</span>
-       </h2>
+<h1>
+  {city.name} ({city.country})
+</h1>
+  <h2>
+    <span>{weather.temp.max.toFixed(0)}&deg;C</span>
+    <span>{weather.temp.min.toFixed(0)}&deg;C</span>
+  </h2>
 ```
 
-After our span sunrise let's paste this:
+After our `span` `sunrise` let's paste this:
 
 ```javascript
 <span>{moment.unix(weather.sunrise).tz(timezone).format("LT")}</span>
 ```
 
-And under our span sunset, let's paste these:
+And under our `span` `sunset`, let's paste these:
 
 ```javascript
 <span>{moment.unix(weather.sunset).tz(timezone).format("LT")}</span>
 ```
 
-Now let's paste in some image icons that weather API allows us to use under the div icon wrapper is another div under that let's paste this:
+Now, let's paste in some image icons that weather API allows us to use under the `div` icon wrapper:
 
 ```javascript
 <Image
@@ -436,16 +490,18 @@ Now let's paste in some image icons that weather API allows us to use under the 
 />
 ```
 
-We then want to get the weather description so we paste this after two closed divs:
+We then want to get the weather description, so we paste this after two closed `divs`:
 
 ```javascript
 <h3>{weather.weather[0].description}</h3>
 ```
 
-Now we’re done with today’s weather let’s work on hourly weather:
+Now, we're done with today's weather
+
+Let's work on hourly weather:
 
 ### Hourlyweather
-Navigate to file `Hourlyweather` still under the folder components. Just like we did for todaysweather we want to render the weather data. First, we want to import the following:
+Navigate to file `Hourlyweather` under the `components` folder. Just like we did for `todaysweather`, we want to render the weather data. First, we want to import the following:
 
 ```javascript
 import React from "react";
@@ -489,10 +545,15 @@ After our `div` hourly weather let's paste in this:
 </div>
 ```
 
-So just like our `todaysweather` we are rendering our weather data(weather, format, displaying an image icon from our openweather) or the result should be like this:
-![final result](/./final_result.jpg)
+So, just like our `todaysweather` we are rendering our weather data (weather, format, displaying an image icon from our openweather) or the result should be like this:
 
-If you have something like that then congratulations you just built yourself a weather forecast application!! when we search for another city while still under the city page what we want to do is that we want to listen to the page change so that when our page changes it sets our query to nothing to this let’s paste in these codes inside our Searchbox right after the two variable states we created :
+![final result](/engineering-education/build-a-weather-forecast-app-with-next-js/final_result.jpg)
+
+If you have something like that then congratulations you just built yourself a weather forecast application!!
+
+When we search for another city while still under the city page what we want to do is that we want to listen to the page change and set our query to the updated value.
+
+Let's paste in these codes inside our Searchbox right after the two variable states we created :
 
 ```javascript
 React.useEffect(() => {
@@ -504,7 +565,15 @@ React.useEffect(() => {
 }, []);
 ```
 
-We used use effect to open up a function and inside we created a mini function called clear query and made use of Nextjs route so the route will tell us when we change pages and when it does clear the query, the square means the function will happen when the search box mounts. Now we’re done
+We used use `useEffect` to open up a function and inside we created a mini function called `clearQuery` and made use of Next.js route.
+
+So, the route will tell us when we change the page or when we clear the query.
 
 ### Conclusion
-So in this tutorial we've learned what Nextjs is all about when to use them, we also compared it with just using the create react app, and let's not forget we built a weather app in Nextjs. Job well done guys. Here’s a [link](https://github.com/oyedeletemitope/next-weather-app) to the project on GitHub all you have to do is create your own `.env file`. Would you please share if you found this helpful?
+In this tutorial, we've learned what Next.js is all about and when to use them. We also compared it with React.js. And, we built a weather app using Next.js.
+
+You can find the full code [here](https://github.com/oyedeletemitope/next-weather-app).
+
+All you have to do is create your own `.env` as we discussed earlier.
+
+Happy coding!
