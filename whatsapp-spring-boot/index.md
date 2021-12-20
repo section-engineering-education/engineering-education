@@ -193,7 +193,7 @@ server.port=8081 #Port on which our application will run
 
 #### Database setup
 1. On the Mysql database management system installed on your machine, create a `dictionary` database.
-2. Import the data in the [data.sql]() file into the above data. This will create a dictionary table and insert all the word and definitions data required by our application.
+2. Import the data in the [data.sql](https://replit.com/@qawuor/dictionay-app#data.sql) file into the above data. This will create a dictionary table and insert all the word and definitions data required by our application.
    
 ### Twillio Account setup
 1. Navigate to the [Twilio dashboard](https://www.twilio.com/console) and create a new account.
@@ -236,4 +236,4 @@ Once your account is registered, you can send a message to get its definition wi
 ![Sample Message](/engineering-education/whatsapp-spring-boot/sample.png)
 
 ### Conclusion
-Now that you have learned how to use Twillio WhatsApp API in a Spring Boot application try creating a simple music lyric search application using the skills gained from this tutorial. You can find the code for this tutorial in the [GitHub repository]().
+Now that you have learned how to use Twillio WhatsApp API in a Spring Boot application try creating a simple music lyric search application using the skills gained from this tutorial. You can find the code for this tutorial in the [GitHub repository](https://replit.com/@qawuor/dictionay-app#).
