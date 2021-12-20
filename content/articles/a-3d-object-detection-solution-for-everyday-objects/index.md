@@ -4,9 +4,9 @@ status: publish
 published: true
 url: /a-3d-object-detection-solution-for-everyday-objects/
 title: A 3D Object Detection Solution for Everyday Objects
-description: This tutorial will cover how to perform 3D object detection using the mediapipe library and python and draw 3D bounding box around the objects.
+description: This tutorial will cover how to perform 3D object detection using the mediapipe library and python, and draw 3D bounding box around the objects.
 author: lilian-tonia
-date: 2021-12-16T00:00:00-17:20
+date: 2021-12-20T00:00:00-06:45
 topics: [Machine Learning]
 excerpt_separator: <!--more-->
 images:
@@ -33,21 +33,31 @@ To follow along with this tutorial, you need to:
 - [Further reading](#further-reading)
 
 ### Why 3D detection is important
-Over the years, object detection research has focused on performing 2D object detection. We have seen this with RCNN, Fast RCNN, SSD, and Masked RCNN. In the real world, we have 3D objects. Because of this, it would be better if we had 3D bounding boxes to bound objects detected in the real world, rather than the commonly used 2D detections. 
+Over the years, object detection research has focused on performing 2D object detection. We have seen this with RCNN, Fast RCNN, SSD, and Masked RCNN. 
+
+In the real world, we have 3D objects. Because of this, it would be better if we had 3D bounding boxes to bound objects detected in the real world, rather than the commonly used 2D detections. 
 
 3D object detection is vital as it would enable us to capture objects’ sizes, orientation, and position in the world. As a result, we would be able to use these 3D detection in real-world applications such as Augmented Reality (AR), self-driving cars, and robotics which perceive the world the same way we do as humans.
 
 Amazingly, Google has put forward a model that views the world and detects real-world objects in 3-dimension. This model is known as the Objectron.
 
 ### What is the Objectron
-The Objectron is a real-time 3D object detection solution that can detect objects in the real world. The model first detects cropped objects in 2D images. Afterward, it estimates their poses through a machine learning (ML) model that is trained on the [Objectron dataset](https://github.com/google-research-datasets/Objectron). It can create a 3D bounding box around an object with `x`, `y`, and `z` coordinates. Currently, it can detect only four objects, a shoe, camera, cup, and chair.
+The Objectron is a real-time 3D object detection solution that can detect objects in the real world. 
+
+The model first detects cropped objects in 2D images. Afterward, it estimates their poses through a machine learning (ML) model that is trained on the [Objectron dataset](https://github.com/google-research-datasets/Objectron). It can create a 3D bounding box around an object with `x`, `y`, and `z` coordinates. Currently, it can detect only four objects, a shoe, camera, cup, and chair.
 
 The model is available on Google's [MediaPipe](https://google.github.io/mediapipe/solutions/objectron). It is an ML pipeline that contains open-source solutions to solve real-world problems. 
 
 ### How they obtained real-world 3D training data
-To get 3D training data, they had to perform some annotation techniques on 2D data as there is no 3D data available today. Initially, they developed a single-stage objectron model to acquire these data using [mobile augmented reality](https://ai.googleblog.com/2020/03/real-time-3d-object-detection-on-mobile.html) session data. This allowed them to create this kind of datasets. But, these datasets never captured 3D objects from different angles. 
+To get 3D training data, they had to perform some annotation techniques on 2D data as there is no 3D data available today. 
 
-They later released a more robust [objectron model](https://ai.googleblog.com/2020/11/announcing-objectron-dataset.html) with a two-stage architecture. The first stage deployed the commonly used TensorFlow object detection model to estimate the 2D crop of an input image. Once this cropping had been performed, the second stage involved taking these cropped images and estimating their 3D bounding boxes. This was a great upgrade from their initial model that used a single-stage encoder-decoder architecture. It captured a much larger set of common objects from different angles. Additionally, this dataset was collected from a geo-diverse sample consisting of data covering ten countries across continents.
+Initially, they developed a single-stage objectron model to acquire these data using [mobile augmented reality](https://ai.googleblog.com/2020/03/real-time-3d-object-detection-on-mobile.html) session data. This allowed them to create this kind of datasets. But, these datasets never captured 3D objects from different angles. 
+
+They later released a more robust [objectron model](https://ai.googleblog.com/2020/11/announcing-objectron-dataset.html) with a two-stage architecture. 
+
+The first stage deployed the commonly used TensorFlow object detection model to estimate the 2D crop of an input image. Once this cropping had been performed, the second stage involved taking these cropped images and estimating their 3D bounding boxes. 
+
+This was a great upgrade from their initial model that used a single-stage encoder-decoder architecture. It captured a much larger set of common objects from different angles. Additionally, this dataset was collected from a geo-diverse sample consisting of data covering ten countries across continents.
 
 Please find the GitHub link to the Objectron dataset [here](https://github.com/google-research-datasets/Objectron).
 
