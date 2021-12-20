@@ -16,9 +16,9 @@ images:
 ---
 In this tutorial, we'll be building a weather application in Next.js showing how to grab live web data from cities all across the world via an external API. We'll also use the API to look up the daily weather forecast.
 <!--more-->
-The API we'll be using for this tutorial is openweather API. To start using it, we'll have to sign up [here](https://openweathermap.org/api).
+The API we'll be using for this tutorial is Openweather API. To start using it, we'll have to sign up [here](https://openweathermap.org/api).
 
-### Pre-requisities
+### Pre-requisites
 To follow along with this tutorial, it's important to have:
 - A basic understanding of React and want to learn how to make a server-side rendered react app with Next.js.
 - Installed a code editor.
@@ -48,10 +48,10 @@ Next.js is an open-source development framework built on top of Node.js that ena
 It's a JavaScript framework that lets you create really fast and user-friendly static web applications with React. It's a fantastic tool for creating your future website. It has a lot of fantastic features and benefits that could make Next.js your first choice for developing your next web app.
 
 ### Why should you use it?
-This framework has various advantages, both for client apps and for the development (frontend) team. Let's take a look at some of the benefits.
+This framework has various advantages, both for client apps and the development (frontend) team. Let's take a look at some of the benefits.
 
 #### Rendering on the server (SSR)
-Next.js comes with an unique server-side rendering (SSR) solution for React components. It ensures that developers to be able to use Next to display their codes on the server.
+Next.js comes with a unique server-side rendering (SSR) solution for React components. It ensures that developers to be able to use Next to display their codes on the server.
 
 However, before Next.js, the developers have to handle a great deal of tinkering with common issues like caching, load on the server, the content, and the application's architecture.
 
@@ -105,10 +105,10 @@ Easy right?
 
 Next.js helps simplify your life by reducing the amount of code you write and making the project easier to follow.
 
-There are also advantages of using React. For example, the `Create React App` is a tool that saves you time and effort when it comes to setting up and customizing your development environment. All you need to do is run the command to get all of the tools you need to make your React project up and running.
+There are also advantages to using React. For example, the `Create React App` is a tool that saves you time and effort when it comes to setting up and customizing your development environment. All you need to do is run the command to get all of the tools you need to make your React project up and running.
 
 #### Performance
-Because of static sites and server-side rendering features makes Next.js apps really fast, and not just that, they work by default, thanks to performance-enhancing technologies like Image Optimization and many more.
+Because static sites and server-side rendering features makes Next.js apps really fast, and not just that, they work by default, thanks to performance-enhancing technologies like Image Optimization and many more.
 
 As a result, when you use Next.js, you'll get automatic server rendering and code splitting (which will improve performance). In addition, SSR (Server Side Rendering) will significantly increase your application's performance.
 
@@ -117,7 +117,7 @@ For React, there are a few things that make it not worthy of this discussion. It
 #### Documentation 
 This is self-evident, but it is frequently overlooked. While the designs of home pages of certain frameworks may be eye catchy,  you'll still need additional tutorials, and even articles to get started, in addition to just reading the documentation.
 
-With documentation, both React.js and Next.js provides amazing documentation options.
+With documentation, both React.js and Next.js provide amazing documentation options.
 
 Next.js includes a set of "learn-by-doing" documentation that leads you through tasks like component development and routing. React also provides a similar setup with multiple tutorials covering the fundamentals being displayed.
 
@@ -245,7 +245,7 @@ return setResults(matchingCities);
 
 So, what we did above code is that, if our type in more than 3 characters it should map through the cities and bring out the results matching our value, making us not search unnecessarily.
 
-We also created a slug to create an unique page name and display through our results. We can use our slugs to find out which area so when we create our weather page for each city, we know which one we are referring to through our results.
+We also created a slug to create a unique page name and display it through our results. We can use our slugs to find out which area so when we create our weather page for each city, we know which one we are referring to through our results.
 
 So let's add our value to our input tag:
 
@@ -301,7 +301,7 @@ import HourlyWeather from "../../components/HourlyWeather";
 
 We want this page to access any kind of dynamic slug that we're going to make. This is where Next.js comes in.
 
-Like we learnt earlier, Next.js is server-side rendered, meaning - we can grab the data before the page loads unlike just using react where we have to wait before the page loads before grabbing the data.
+Like we learned earlier, Next.js is server-side rendered, meaning - we can grab the data before the page loads unlike just using react where we have to wait before the page loads before grabbing the data.
 
 We'll be using the get `serversideprops` and then pass in so let's paste this:
 
@@ -327,7 +327,7 @@ Here, we'll be creating an API key and making it equal to the API key of our ope
 API_KEY =78b705a31f5b7bebcfe38a2624152e8d 
 ```
 
-Please make sure it's your API key you're inputing. Next, we head over to our `next.config.js` and paste this:
+Please make sure it's the API key you're inputting. Next, we head over to our `next.config.js` and paste this:
 
 ```javascript
 require('dotenv').config()
@@ -371,7 +371,7 @@ return {
 };
 ```
 
-Here, we are making a request to our API and fetching the data. Notice that we set the units to Celsius, and we also excluded some data like the `minute` data. We also wrote a conditional statement to check if the data is available or not, it returns our city data as props, if found.
+Here, we are requesting to our API and fetching the data. Notice that we set the units to Celsius, and we also excluded some data like the `minute` data. We also wrote a conditional statement to check if the data is available or not, it returns our city data as props, if found.
 
 Now, let's paste in the following codes:
 
@@ -408,7 +408,7 @@ const getHourlyWeather = (hourlyData, timezone) => {
 
 Here, we write a function to get hourly data.
 
-Create a variable called `moments` that helps us get current time when passed with the timezone information. We created variable `todaysData` that divides the response value by `1000`, since openweather returns value in milliseconds (we want it to be in seconds).
+Create a variable called `moments` that help us get the current time when passed with the timezone information. We created variable `todaysData` that divides the response value by `1000`, since openweather returns value in milliseconds (we want it to be in seconds).
 
 Now, let's access our data. On our function `City`, inside the brackets add these props:
 
@@ -580,7 +580,7 @@ React.useEffect(() => {
 }, []);
 ```
 
-We used use `useEffect` to open up a function and inside we created a mini function called `clearQuery` and made use of Next.js route.
+We used use `useEffect` to open up a function and inside we created a mini function called `clearQuery` and made use of the Next.js route.
 
 So, the route will tell us when we change the page or when we clear the query.
 
@@ -589,7 +589,7 @@ In this tutorial, we've learned what Next.js is all about and when to use them. 
 
 You can find the full code [here](https://github.com/oyedeletemitope/next-weather-app).
 
-All you have to do is create your own `.env` as we discussed earlier.
+All you have to do is create your `.env` as we discussed earlier.
 
 Happy coding!
 
