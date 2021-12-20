@@ -379,7 +379,7 @@ If the user is still inactive, show the dialog and reset the number of clicks to
 
 > View more about dialogs in [this](/engineering-education/getting-started-with-dialogs-in-android-kotlin/) EngEd article.
 
-T**Note that we have to do some touches on the screen for the methods to start firing.**
+**Note that we have to do some touches on the screen for the methods to start firing.**
 
 If you do not want to wait until someone touches the screen, you can call the `startDetection()` method in the Activity's `onCreate()` method as well after instantiating the gesture detector.
 
