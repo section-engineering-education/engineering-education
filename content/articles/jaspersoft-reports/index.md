@@ -190,7 +190,7 @@ The Jaspersoft dependency will help us in adding the functionalities. These func
 ```xml
 <dependency>
   <groupId>net.sf.jasperreports</groupId>
-	<artifactId>jasperreports</artifactId>
+  <artifactId>jasperreports</artifactId>
   <version>6.18.1</version>
 </dependency>
 ```
