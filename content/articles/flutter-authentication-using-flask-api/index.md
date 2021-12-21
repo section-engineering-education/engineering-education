@@ -5,7 +5,7 @@ published: true
 url: /flutter-authentication-using-flask-api/
 title: Flutter Authentication Using Flask API
 description: This article will show a reader how Flutter apps interact with the backend and how authentication works using Flask as the backend technology. 
-author: nathaniel-dauda-wobin
+author: nathaniel-dauda-musa
 date: 2021-12-13T00:00:00-13:45
 topics: [API, Languages]
 excerpt_separator: <!--more-->
