@@ -45,7 +45,7 @@ from nltk.corpus import wordnet as wn
 wn.synsets('book')
 ```
 
-OUTPUT
+Output:
 
 ```bash
 [Synset('book.n.01'),Synset('book.n.02'),Synset('record.n.05'),Synset('script.n.01'),Synset('ledger.n.01'),Synset('book.n.06'),Synset('book.n.07'),Synset('koran.n.01'),Synset('bible.n.01'),Synset('book.n.10'),Synset('book.n.11'),Synset('book.v.01'),Synset('reserve.v.04'),Synset('book.v.03'),Synset('book.v.04')]
@@ -59,7 +59,7 @@ from nltk.corpus import wordnet as wn
 wn.synsets('book', pos=wn.VERB)
 ```
 
-OUTPUT
+Output:
 
 ```bash
 [Synset('book.v.01'),
@@ -76,7 +76,7 @@ from nltk.corpus import wordnet as wn
 wn.synsets('book', pos=wn.NOUN)
 ```
 
-OUTPUT
+Output:
 
 ```bash
 [Synset('book.n.01'),Synset('book.n.02'),Synset('record.n.05'),Synset('script.n.01'),Synset('ledger.n.01'),Synset('book.n.06'),Synset('book.n.07'),Synset('koran.n.01'),Synset('bible.n.01'),Synset('book.n.10'),Synset('book.n.11')]
@@ -94,7 +94,7 @@ synset_array = wn.synsets('book')
 synset_array[1].definition()
 ```
 
-OUTPUT
+Output:
 
 ```bash
 'physical objects consisting of a number of pages bound together
@@ -109,7 +109,7 @@ synset_array = wn.synsets('book')
 synset_array[3].definition()
 ```
 
-OUTPUT
+Output:
 
 ```bash
 'a written version of a play or other dramatic composition; used in preparing for a performance.'
@@ -123,7 +123,7 @@ from nltk.corpus import wordnet as wn
 wordnet.synset('book.n.02').definition()
 ```
 
-OUTPUT
+Output:
 
 ```bash
 physical objects consisting of a number of pages bound together
@@ -137,7 +137,7 @@ from nltk.corpus import wordnet as wn
 wordnet.synset('script.n.01').definition()
 ```
 
-OUTPUT
+Output:
 
 ```bash
 physical objects consisting of a number of pages bound together
@@ -156,7 +156,7 @@ synset_array = wn.synsets('book')
 print(synset_array[3].lemma_names())
 ```
 
-OUTPUT
+Output:
 
 ```bash
 ['script', 'book', 'playscript']
@@ -171,7 +171,7 @@ wn.synsets('book')
 print(wn.synset('book.n.07').lemma_names())
 ```
 
-OUTPUT
+Output:
 
 ```bash
 ['book', 'rule_book']
@@ -184,7 +184,7 @@ Hypernyms exist in several shapes and sizes, but the Synset is the most popular.
 
 For example, the words 'banana' and 'mango' are hyponyms for the word 'fruit'. In this case, they are more specific concepts of the word 'fruit'. Furthermore, the term "fruit" is a hypernym for the words "banana" and "mango" because it refers to the general idea of fruits.
 
-EXAMPLE
+Example:
 
 ```python
 import nltk
@@ -192,7 +192,7 @@ from nltk.corpus import wordnet as wn
 wn.synsets('eclipse')
 ```
 
-OUTPUT
+Output:
 
 ```bash
 [Synset('eclipse.n.01'), Synset('overshadow.v.01'), Synset('eclipse.v.02')]
@@ -206,7 +206,7 @@ from nltk.corpus import wordnet as wn
 print(wn.synset('eclipse.n.01').hyponyms())
 ```
 
-OUTPUT
+Output:
 
 ```bash
 [Synset('lunar_eclipse.n.01'), Synset('partial_eclipse.n.01'), Synset('solar_eclipse.n.01'), Synset('total_eclipse.n.01')]
@@ -220,7 +220,7 @@ from nltk.corpus import wordnet as wn
 print(wn.synset('partial_eclipse.n.01').hypernyms())
 ```
 
-OUTPUT
+Output:
 
 ```bash
 [Synset('eclipse.n.01')]
@@ -231,7 +231,7 @@ Meronyms and Holonyms create a part-to-whole relationship. The Meronym represent
 
 For example, the word 'bedroom' is a Meronym for home. This is because the bedroom is considered a component of the house. Likewise, the nose, eyes, and mouth are Meronyms for the face.
 
-Examples
+Examples:
 
 ```python
 import nltk
@@ -239,13 +239,13 @@ from nltk.corpus import wordnet as wn
 wn.synsets('face') 
 ```
 
-OUTPUT
+Output:
 
 ```bash
 [Synset('face.n.01'),Synset('expression.n.01'),Synset('face.n.03'), Synset('face.n.04'), Synset('face.n.05'),Synset('side.n.04'),Synset('face.n.07'),Synset('face.n.08'),Synset('grimace.n.01'),Synset('font.n.01'),Synset('face.n.11'),Synset('boldness.n.02'),Synset('face.n.13'), Synset('confront.v.02'),Synset('confront.v.01'),Synset('front.v.01'),Synset('face.v.04'),Synset('face.v.05'),Synset('confront.v.03'),Synset('face.v.07'),Synset('face.v.08'),Synset('face.v.09')]
 ```
 
-Example for Holonym
+Example for Holonym:
 
 ```python
 import nltk
@@ -253,7 +253,7 @@ from nltk.corpus import wordnet as wn
 wn.synset('face.n.01').part_holonyms() 
 ```
 
-OUTPUT
+Output:
 
 ```bash
 [Synset('head.n.01'), Synset('homo.n.02')]
@@ -267,7 +267,7 @@ from nltk.corpus import wordnet as wn
 wn.synset('face.n.01').part_meronyms()  
 ```
 
-OUTPUT
+Output:
 
 ```bash
 [Synset('beard.n.01'),Synset('brow.n.01'),Synset('cheek.n.01'),Synset('chin.n.01'),Synset('eye.n.01'),Synset('eyebrow.n.01'),Synset('facial.n.01'),Synset('facial_muscle.n.01'),Synset('facial_vein.n.01'),Synset('feature.n.02'),Synset('jaw.n.02'),Synset('jowl.n.02'),Synset('mouth.n.02'),Synset('nose.n.01')]
@@ -283,7 +283,7 @@ from nltk.corpus import wordnet as wn
 wn.synsets('eat')
 ```
 
-OUTPUT
+Output:
 
 ```bash
 [Synset('eat.v.01'),
@@ -301,7 +301,7 @@ from nltk.corpus import wordnet as wn
 wn.synset('eat.v.01').entailments()
 ```
 
-OUTPUT
+Output:
 
 ```bash
 [Synset('chew.v.01'), Synset('swallow.v.01')]
