@@ -13,7 +13,7 @@ Docker packages applications into images and stores them as containers with thei
 - [Prerequisites](#prerequisites)
 - [Objectives](#objectives)
 - [Development and operations overview](#development-and-operations-overview)
-- [Cloning a Flask Application](#cloning-a-flask-application)
+- [Setting a Flask Project](#setting-a-flask-project)
 - [CI and CD Pipelines Architecture](#ci-and-cd-pipelines-architecture)
 - [Continuous Integration and deployment with Github Actions](#continuous-integration-and-deployment-with-github-actions)
 - [Docker Images and Containers Basics](#docker-images-and-containers-basics)
@@ -74,24 +74,65 @@ The deployed application will be monitored in terms of performance. Logs will be
 
 Above are the practices that applications undergo in the industry. A skilled person in terms of all these is said to be a DevOps Engineer.
 
-### Cloning a Flask Application
-You are required to clone a Flask application from this [repository](https://github.com/Horlawhumy-dev/flask-drinksapi). This contains a simple Flask API that we will work on with this tutorial.
+### Setting a Flask Project
+Open your favorite code editor and navigate to the terminal. Type the following snippets to setup your project workflow;
 
-The following are the set of commands that will walk you through the cloning.
+```bash
+cd ~/Desktop
+mkdir flaskdrinks
+cd flaskdrinks
+python3 -m venv env
+source env/Scripts/activate
+pip install flask
+pip freeze > requirements.txt
+```
+You changed directory to `Desktop` and then made a new directory called `flaskdrinks`. Every python application requires a virtual environment with `env` being the file for this project.
 
-```git
-$ git clone git@github.com:Horlawhumy-dev/flask-drinksapi.git
-$ cd flask-drinksapi
-$ source venv/Scripts/activate
-$ pip install -r requirements.txt
-$ python3 app.python
+Furthermore, you installed flask dependency with the python package manager called `pip`. You also tracked the dependencies with a file called `requirements.txt`.
+
+Create a file called `app.py` and paste the code snippets below;
+
+```python
+from flask import Flask
+from datetime import datetime
+app = Flask(__name__)
+
+data = {
+    "drinks": [
+        {
+            "name": "Grape", 
+            "description": "Delicious grape fruit drink",
+            "date": datetime.now()
+            },
+            {
+            "name": "Lemon", 
+            "description": "Undiluted lemon fruit drink",
+            "date": datetime.now()
+            },
+            {
+            "name": "Mango", 
+            "description": "This is a mango fruit",
+            "date": datetime.now()
+            }
+    ]
+} 
+
+@app.route("/")
+def index():
+        return "Welcome To My Drinks API"
+        
+@app.route('/drinks')
+def get_drinks():
+    return data
+    
+
+if __name__ == "__main__":
+    app.debug = True
+    app.run()
 ```
 
-Following these commands, you used the first one to clone from the remote repository into your local computer. Then you change the directory into the folder cloned with the following command.
+Now start the server with the command `python app.py` in the terminal. Open your browser to the root domain and confirm the `welcome message`. You can also route to `/drinks` and get the `API` data.
 
-Every python application needs a `virtual environment` in order to activate the dependency. Inside the cloned folder, there is a folder `venv` that contains the environment and you used the third command to activate it.
-
-Furthermore, you installed the dependencies inside the `requirements.txt` file. You then started the server with the last command on the snippet above.
 
 ### CI and CD Pipelines Architecture
 The continuous integration and deployment of pipelines are software development practices used in the industry to develop and maintain every application. 
@@ -103,7 +144,7 @@ The continuous integration server is going to trigger the automated build test j
 If otherwise, the pushed codes fail to build, another notification will be sent. So that the developer can fix the bugs and then re-commit the code. The continuous integration tool will then start building the code again. This is the reason why the continuous integration and deployment stages are still considered a waterfall model.
 
 ### Continuous integration and deployment with Github Actions
-Github Actions automate the build process whenever there is a push to the code repository. This helps to reduce the problem of a manual building of the jobs and always notify if the build is not complete. This
+Github Actions automates the build process whenever there is a push to the code repository. This helps to reduce the problem of a manual building of the jobs and always notify if the build is not complete. This
 
 This follows a workflow using a different language package file. Earlier, we cloned a Python application built with the Flask framework. Therefore, the workflow that we are going to define will be for the Python package.
 
