@@ -55,14 +55,14 @@ In this step, log in to the [Google Analytics](https://analytics.google.com/anal
 
 Refer to the image below for help. Then, click the `Create Account` to create a new tracking account as shown:
 
-![google-analytics-admin](/engineering-education/track-individual-logged-in-users-using-google-analytics/google-analytics-admin.jpg)
+![google-analytics-admin](/engineering-education/track-individual-logged-in-users-using-google-analytics/google-analytics-admin.png)
 
 ### Create property
 A `property` in Google Analytics can be a website, mobile application, blog, or any piece of content that has its tracking ID.
 
 The following screen shows how you can create an account:
 
-![account-detail](/engineering-education/track-individual-logged-in-users-using-google-analytics/account-detail.jpg)
+![account-detail](/engineering-education/track-individual-logged-in-users-using-google-analytics/account-detail.png)
 
 Similarly, you can create a new property by clicking on `Create Property`.
 
@@ -73,7 +73,7 @@ This is the step where we are stepping into the `User Id` tracking.
 
 Generally, when you create a `view`, the `User Id` option is `OFF` by default. Now, you need to switch it `ON`, to track individual users:
 
-![analytics-view-with-user-id](/engineering-education/track-individual-logged-in-users-using-google-analytics/analytics-view-with-userid.jpg)
+![analytics-view-with-user-id](/engineering-education/track-individual-logged-in-users-using-google-analytics/analytics-view-with-userid.png)
 
 ### Create custom dimensions to track user types
 `Custom Dimensions` and `Custom Metrics` are set by your Analytics account's default dimensions and metrics.
@@ -90,9 +90,9 @@ For example, consider we have different users like general users who do not log 
 
 In any case, you need to create a dimension as a `User Type` that supplies different user types as values.
 
-![google-analytics-custom-dimension-user-type](/engineering-education/track-individual-logged-in-users-using-google-analytics/google-analytics-custom-dimension-user-type.jpg)
+![google-analytics-custom-dimension-user-type](/engineering-education/track-individual-logged-in-users-using-google-analytics/google-analytics-custom-dimension-user-type.png)
 
-![analytics-custom-dimentions](/engineering-education/track-individual-logged-in-users-using-google-analytics/analytics-custom-dimension.jpg)
+![analytics-custom-dimentions](/engineering-education/track-individual-logged-in-users-using-google-analytics/analytics-custom-dimension.png)
 
 ### Modify tracking code
 In website analytics, a `tracking code` is a snippet of JavaScript code that tracks the activity of a website user by collecting data and sending it to the analytics module.
@@ -173,13 +173,13 @@ How are we going to extract that information back?
 
 Google provides a `User Explorer` where we can create custom reports:
 
-![google-analytics-customs-reports](/engineering-education/track-individual-logged-in-users-using-google-analytics/google-analytics-custom-report.jpg)
+![google-analytics-customs-reports](/engineering-education/track-individual-logged-in-users-using-google-analytics/google-analytics-custom-report.png)
 
-![google-analytics-custom-report-with-user-type](/engineering-education/track-individual-logged-in-users-using-google-analytics/google-analytics-custom-report-with-user-type.jpg)
+![google-analytics-custom-report-with-user-type](/engineering-education/track-individual-logged-in-users-using-google-analytics/google-analytics-custom-report-with-user-type.png)
 
 Let us check the Google Analytics provided `User Explorer` report. You can see the user id that is passed from the application.
 
-![google-analytics-user-explorer](/engineering-education/track-individual-logged-in-users-using-google-analytics/google-analytics-user-explorer.jpg)
+![google-analytics-user-explorer](/engineering-education/track-individual-logged-in-users-using-google-analytics/google-analytics-user-explorer.png)
 
 > When you use this feature, you need to use it responsibly. You should get explicit permission from the user highlighting that you are using this user-id feature. Ensure that it is legal in your region.
 
@@ -202,7 +202,7 @@ Google does not charge you anything for using Google Analytics. You don't have t
 This way, you can invest a decent budget in some other important resources. Furthermore, it provides you with important information, numbers, and statistics that you need to maximize your website's performance for free.
 
 #### Automatic collection of data
-![automatic-data-collection](/engineering-education/track-individual-logged-in-users-using-google-analytics/automatic-data-collection.jpeg)
+![automatic-data-collection](/engineering-education/track-individual-logged-in-users-using-google-analytics/automatic-data-collection.png)
 
 Google Analytics has a feature that reduces the work required to put Google Analytics data into Google Docs, Sites, or Spreadsheets.
 
