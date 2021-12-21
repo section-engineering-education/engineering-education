@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/track-individual-logged-in-users-using-google-analytics/
+url: /track-individual-logged-in-users-using-google-analytics/
 title: Track Individual Logged-In Users Using Google Analytics
 description: This tutorial will be a brief introduction to Google Analytics. The reader will learn how to track individual users and generate a statistical report for any website.
 author: nancy-muthoni
@@ -11,7 +11,7 @@ topics: [API]
 excerpt_separator: <!--more-->
 images:
 
-  - url: /engineering-education/track-individual-logged-in-users-using-google-analytics/hero.jpg
+  - url: /engineering-education/track-individual-logged-in-users-using-google-analytics/hero.png
     alt: Track Individual Logged-In Users Using Google Analytics Hero Image
 ---
 [Google Analytics](https://analytics.google.com/analytics/web/) is a free web analytics service that allows you to analyze in-depth detail about the visitors to your website.
