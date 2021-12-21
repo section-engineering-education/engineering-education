@@ -1,3 +1,20 @@
+---
+layout: engineering-education
+status: publish
+published: true
+url: /working-with-csv-files-in-java/
+title: Working with CSV files in Java
+description: In this tutorial, we will learn how to create, read and write into CSV files in Java
+author: teresia-wambui
+date: 2021-12-21T00:00:00-10:00
+topics: [Languages]
+excerpt_separator: <!--more-->
+images:
+
+  - url: /engineering-education/working-with-csv-files-in-java/hero.png
+    alt: Working with CSV files in Java
+---
+
 ### Introduction
 CSV addresses Comma-Separated Values. It is a document design utilized to keep information in an accounting page or dataset in a straightforward text structure. A delimiter is used to recognize and isolate information in comma-separated values. The CSV record design is utilized to move plain information between programs that locally work on incongruent organizations.
 
@@ -18,12 +35,6 @@ To follow along, you should
 - [Using openCSV API.](#using-opencsv-api)
   - [Important OpenCSV classes](#important-opencsv-classes)
 - [Reading CSV files in Java](#reading-csv-files-in-java)
-  - [Step 1](#step-1)
-  - [Step 2](#step-2)
-  - [Step 3](#step-3)
-  - [Step 4](#step-4)
-  - [Step 5](#step-5)
-  - [Step 6](#step-6)
 - [Conclusion](#conclusion)
 
 
@@ -161,7 +172,7 @@ Open Eclipse, and create a java project. Name the project as CSVOperation and cl
 
 #### Step 3
 
-Then click Libraries and select Classpath. Then select add external Jars and add jars from CSVDoc in the Eclipse-workspace folder.
+Click Libraries and select Classpath. Then select add external Jars and add jars from CSVDoc in the Eclipse-workspace folder.
 And click finish.
 
 ![libraries](/engineering-education/working-with-csv-files-in-java/libraries.png)
@@ -172,7 +183,7 @@ And click finish.
 
 #### Step 4
 
-After that, open a java class. Right-click on the project CSVOperation and select new then select class.
+After that, create a Java class. Right-click on the project CSVOperation and select new then select class.
 
 ![class](/engineering-education/working-with-csv-files-in-java/class.png)
 
@@ -315,3 +326,7 @@ In the output above, you will note the presence of semi-colon(;) separators. Thi
 In this article, you have learned various techniques for creating CSV files in Java. Also, you learned different methods of reading Comma Separated Values(CSV) in Java. Lastly, we used open CSV API to read CSV files.
 
 Happy coding!
+
+
+---
+Peer Review Contributions by: [Odhiambo Paul](/engineering-education/authors/odhiambo-paul/)
