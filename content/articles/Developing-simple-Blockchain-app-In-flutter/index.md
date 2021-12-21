@@ -1,7 +1,7 @@
 
-In this article, we will write about creating a blockchain flutter application.
+In this article, we will learn about creating a blockchain flutter application.
 ### Introduction
- A flutter application is a  mobile app dart code that runs on iOS and Android.  Flutter uses Google's Skia library to draw widgets in UIs, which gives it high performance. Flutter also has its advanced framework that lets developers create mobile apps easily and quickly
+ A flutter application is a  mobile app dart code that runs on iOS and Android.  Flutter uses Google's Skia library to draw widgets in UIs, which gives it high performance. Flutter is an advanced framework that lets developers create mobile apps.
 
 We will be using the blockchain library to create a simple application that will allow users to create and manage their blockchain.
 ### 	Prerequisites 
@@ -17,16 +17,12 @@ flutter create my-blockchain-app
 ```
 Now that our project is created, let's open it in your favorite editor.  I will be using Visual Studio Code for this tutorial.
 
-You should see the following code in your editor:
 
-//This is a dart file.  If you open it in another editor, make sure to associate *.dart files with dart-sdk
-
-// Otherwise you will get an error below.
+// Write this code.
 ```dart
 import 'package:flutter/material.dart';  void main() { }
 ```
 Running the application should give us a white screen. This is because we have not added any widgets to our UI or written any code for this app yet.
-
 
 ###  Adding Widgets to Our UI
 To add widgets to our UI, we need to first import the widget library. We can do this by adding the following line of code to our main() function:
@@ -212,5 +208,5 @@ return new MaterialApp(
 ```
 Notice that we are connecting to my Devices, which is the name of my MQTT broker. You will need to change this to match the name of your broker. Now when you run the application on different devices, they will all be connected to the same blockchain network and will share the same blockchain data.
 ### Conclusion
-Congratulations! You have now created a flutter application that uses a dart blockchain. In Part 2 of this series, we will learn how to create a proof of work algorithm and add it to our blockchain so that other devices will be able to join the network.
-
+Congratulations! You have now created a flutter application that uses a dart blockchain.This is just but a simple blockchain application consisting of several devices and every transaction made is broadcasted to all the other devices.
+Happy Coding.
