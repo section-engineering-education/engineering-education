@@ -6,7 +6,7 @@ url: /feature-scaling-effects-machine-learning-model/
 title: Effects of Feature Scaling on a Machine Learning Model
 description: This article will discuss the effects of feature scaling on a machine learning model.
 author: samuel-mwangi
-date: 2021-12-21T00:00:00-1:08
+date: 2021-12-21T00:00:00-13:13
 topics: [Machine learning]
 excerpt_separator: <!--more-->
 images:
@@ -16,7 +16,7 @@ images:
 ---
 The datasets that we use for training models in machine learning have unpredictable values that might vary from each other on a broad scale. Numerical values might have big differences amongst themselves, especially when they represent different scales, and this might make it difficult to compare them, i.e., kg, litres, millimetres, miles, pixels, etc.
 <!--more-->
-Feature scaling is introduced to solve this challenge. It adjusts the numbers to make it easy to compare the values that are out of each other's scope. This helps increase the accuracy of the models, especially those using algorithms that are sensitive to feature scaling, i.e., Gradient Descent and Distance-based algorithms.
+Feature scaling is introduced to solve this challenge. It adjusts the numbers to make it easy to compare the values that are out of each other's scope. This helps increase the accuracy of the models, especially those using algorithms that are sensitive to feature scaling, i.e., Gradient Descent and distance-based algorithms.
 
 There are two techniques of scaling features:
 1. **Normalization** - the values are rescaled to range between zero and one.
@@ -41,7 +41,7 @@ In this approach, we will learn how to implement each. We will first build a pre
 We will need to have:
 1. A fundamental knowledge of Python programming language.
 2. A fundamental knowledge in Machine Learning.
-3. Jupyter Notebook/Jupyter Lab/Google Colab.
+3. Jupyter Notebook/ Jupyter Lab/ Google Colab.
 
 Using the given data for training, we will build models to predict if a patient was diagnosed with either disease `M` or `B`.
 
