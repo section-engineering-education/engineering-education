@@ -1,3 +1,20 @@
+---
+layout: engineering-education
+status: publish
+published: true
+url: /getting-started-with-nltk-wordnet-in-python/
+title: Getting started with nltk-wordnet  in Python
+description: The WordNet English dictionary is part of Python's Natural Language Tool Kit (NLTK). In this article, the reader will learn the basics of nltk-wordnet and get into basic examples used in natural language processing.
+author: jacinta-kyulu
+date: 2021-12-21T00:00:00-10:40
+topics: []
+excerpt_separator: <!--more-->
+images:
+
+- url: /engineering-education/getting-started-with-nltk-wordnet-in-python/hero.jpg
+  alt: Getting started with nltk-wordnet Image
+---
+
 ### Intoduction
 The WordNet English dictionary is part of Python's Natural Language Tool Kit (NLTK).  Natural Language Processing (NLP) may be made simple and straightforward using this comprehensive set of tools. This tutorial will cover the basic actions that can be done using this tool.
 
