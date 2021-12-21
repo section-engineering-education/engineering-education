@@ -7,7 +7,7 @@ title: Track Individual Logged-In Users Using Google Analytics
 description: This tutorial will be a brief introduction to Google Analytics. The reader will learn how to track individual users and generate a statistical report for any website.
 author: nancy-muthoni
 date: 2021-12-21T00:00:00-12:35
-topics: []
+topics: [API]
 excerpt_separator: <!--more-->
 images:
 
