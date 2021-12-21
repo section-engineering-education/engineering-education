@@ -1,9 +1,11 @@
-Svelte is a new fronted JavaScript approach to building user interfaces. This introduces a new alternative that use can use besides React, Angular, Vue. However, Svelte is a compiler, whereas the other alternatives are frameworks/libraries. When you build your apps with Svelte, you run the Svelte compiler that automatically goes over your code and files. This creates bundled JavaScript instructions that execute in the DOM at runtime. Instead of using techniques like virtual DOM diffing, Svelte writes code that surgically updates the DOM when the state of your app changes.
+Svelte is a new fronted JavaScript approach to building user interfaces. This introduces a new alternative that use can use besides React, Angular, Vue. However, Svelte is a compiler, whereas the other alternatives are frameworks/libraries. 
 
-With such amazing frontend technology, connecting to backend services and accessing data from a server will be essential. This guide teaches more about Svelte and how to create a Svelte application with MongoDB.
+When you build your apps with Svelte, you run the Svelte compiler that automatically goes over your code and files. This creates bundled JavaScript instructions that execute in the DOM at runtime. Instead of using techniques like virtual DOM diffing, Svelte writes code that surgically updates the DOM when the state of your app changes.
+
+With such an amazing frontend technology, connecting to backend services and accessing data from a server will be essential. This guide teaches more about Svelte and how to create a Svelte application with MongoDB.
 
 ### Prerequisites
-To follow along in this article, it is helpful to have the following;
+To follow along with this article, it is helpful to have the following;
 - [Postman](https://www.postman.com/downloads/) installed on your computer.
 - [MongoDB server](https://www.mongodb.com/try/download/community) installed on your computer.
 - [Node.js](https://nodejs.org/en/) installed on your computer.
@@ -48,7 +50,7 @@ To use the Nodemon artifacts, we need to modify the `package.json` file. To do t
 We will use the command above to run and restart the Node.js server that we will build.
 
 ### Set up a primary express Todo server
-Create a `src` directory within your `server` directory.
+Create an `src` directory within your `server` directory.
 
 ```bash
 mkdir src
@@ -79,13 +81,13 @@ app.listen(PORT, () => {
 });
 ```
 
-This will set up an Express application by Initializing Express middleware to parse incoming requests with JSON payloads; It will also initialize a MongoDB connection and start the server on a localhost port. Start your development server by running the command below;
+This snippet will set up an Express application by Initializing Express middleware to parse incoming requests with JSON payloads; It will also initialize a MongoDB connection and start the server on a localhost port. Start your development server by running the command below;
 
 ```bash
 npm run dev
 ```
 
-This command will trigger the Nodemon script that we set in the `package.json`. Any code you add to your server code base will automatically restart the server without running the NPM server script.
+This command will trigger the Nodemon script that we set in the `package.json`. Any code you add to your server code base will automatically restart without running the NPM server script.
 
 - Define the `Todo` schema;
 
@@ -133,7 +135,7 @@ app.delete('/api/todos', async (req, res, next) => {
 });
 ```
 
-Ensure that the development server is still running. Open Postman and send a `POST` request to `http://localhost:4000/api/todos`. At the body's tab, Select `Raw`, set `JSON` as the body format, and add the following sample data, and hit `Send`.
+Ensure that the development server is still running, then open Postman and send a `POST` request to `http://localhost:4000/api/todos`. Then, select `Raw' at the body's tab, set `JSON` as the body format, add the following sample data, and hit `Send`.
 
 ```JSON
 {
@@ -151,13 +153,15 @@ You can also send a `GET` request to `http://localhost:4000/api/todos` to fetch 
 ![getting-todos-response](/engineering-education/how-to-build-a-fullstack-svelte-application-with-mongodb/getting-todos-response.PNG)
 
 ### Setting up a Svelte application
-To set up a Svelte application, we will use [vite](https://vitejs.dev/). In the project folder (outside the `server` folder), create a new directory, name it `client`. We will create the Svelte backend within this `client` directory. Run the following command to initialize the Svelte application.
+To set up a Svelte application, we will use [vite](https://vitejs.dev/). So, in the project folder (outside the `server` folder), create a new directory, name it `client`. 
+
+We will create the Svelte backend within this `client` directory. Then, run the following command to initialize the Svelte application.
 
 ```bash
 npm init vite@latest
 ```
 
-This creates an interactive command interface that will let you create a basic Svelte application. To do so;
+This command creates an interactive command interface that will let you create a basic Svelte application. To do so;
 
 - Enter the project name as `svelte-todos-app`.
 - Select `svelte` as the base framework.
@@ -192,10 +196,10 @@ We will be writing three Svelte components;
 - `Todos`: This will be the component that will retrieve the list of components from the backend and render each through the `Todo` component.
 - `AddTodo`: This will be the component that will get the user data through a form and pass it to the backend API.
 
-Go ahead and create `Todo.svelte`,`Todos.svelte`, and `AddTodo.svelte` files inside the `lib` directory and start setting up your component.
+Go ahead and create `Todo.svelte`, `Todos.svelte`, and `AddTodo.svelte` files inside the `lib` directory and start setting up your component.
 
 #### Set up the Todo component
-In the *Todo.svelte* file, start by creating a prop that will be used to render data.
+In the *Todo.svelte* file, start by creating a prop used to render data.
 
 ```svelte
 <script>
@@ -275,7 +279,7 @@ import Todo from "Todo.svelte";
 let todos = [];
 ```
 
-- Define an `async` `onMount()` function to fetch the todos as soon as the component is rendered.
+- Define an `async` `onMount()` function to fetch the todos when the component is rendered.
 
 ```svelte
 onMount(async () => {
@@ -305,7 +309,7 @@ onMount(async () => {
 { /if}
 ```
 
-This will check whether the `todos` data is retrieved, if yes, then we can iterate them over, sending each as a prop to the `Todo` component. If the data has not been retrieved yet, we are showing a `loading` action.
+This will check whether the `todos` data is retrieved, if yes, then we can iterate them over, sending each as a prop to the `Todo` component. If the data has not been retrieved yet, we show a `loading` action.
 
 - Add the following styles.
 
@@ -377,7 +381,7 @@ Then show this form to a web page.
             type="text"
             id="title"
             name="title"
-            placeholder="Title of todo"
+            placeholder="Title of todo."
         />
     </div>
     <div class="form-group">
@@ -438,7 +442,7 @@ button {
 ```
 
 ### Bundling up the components
-We will render our application through the main component, which is `App.svelte`. Rewrite the `App.svelte` component as follows;
+We will render our application through the main component, `App.svelte`. Rewrite the `App.svelte` component as follows;
 
 ```svelte
 <script>
@@ -469,6 +473,8 @@ Ensure your development server is up and running and go to `http://localhost:300
 ![todos-homepage](/engineering-education/how-to-build-a-fullstack-svelte-application-with-mongodb/todos-homepage.PNG)
 
 ### Conclusion
-Svelte is used to build front-end applications like React, Angular, and Vue. There might be a need to connect to a backend server that uses a database such as MongoDB. This guide helped you build a complete full-stack reactive Svelte-inspired application. I hope that was of assistance to you.
+Svelte is used to build frontend applications like React, Angular, and Vue. There might be a need to connect to a backend server that uses a database such as MongoDB. 
+
+This guide helped you build a complete full-stack reactive Svelte-inspired application. I hope that was of assistance to you.
 
 Happy coding!
