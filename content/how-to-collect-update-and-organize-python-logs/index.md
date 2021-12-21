@@ -34,7 +34,7 @@ The logging library is divided into four classes: `loggers,` `controllers`, `cha
 - [Further activity reading](#further-activity-reading)
   
 ### Modifying your logs' need level and objective
-The `basicConfig()` technique for the logging module is the quickest strategy for planning your loggers' ideal direction. Notwithstanding, the [Python documentation](https://docs.python.org/3.7/library/logging.html#logger-objects) proposes making a logger for every module in your application and arranging a logger for each module gameplan utilizing `basicConfig()` alone can be annoying.
+The `basicConfig()` technique for the logging module is the quickest strategy for planning your loggers' ideal direction. Notwithstanding, the [Python documentation](https://docs.python.org/3.7/library/logging.html#logger-objects) proposes making a logger for every module in your application and arranging a logger for each module utilizing `basicConfig()` alone can be annoying.
 
 The three significant measures of `basicConfig()` are:
 - **level**: plunging succession of events. The congenial log ranks are `DEBUG`, `INFO`, `WARNING`, `ERROR`, and `CRITICAL`. The default level is `WARNING`.
@@ -101,7 +101,7 @@ Running the higher_module.py, the logging will yield the accompanying.
 
 Log personality is set certainly after the timestamp, and in this manner, you can follow which section produced each message. However, inability to characterize the log with `getLogger()`, each log personality will appear as a root effect, making it more difficult to see which messages are produced by the higher module in opposition to the lesser module.
 
-Messages created from `higher_module.py` counts the __main__ [module](https://docs.python.org/3/library/__main__.html) as the log personality since the higher_module.py was executed at the high levels script. Remembering that we are powerfully fusing the logs way of life as a section of the log design, both of these logs are set up with the equivalent `basicConfig()`.
+Messages created from `higher_module.py` count the __main__ [module](https://docs.python.org/3/library/__main__.html) as the log personality since the higher_module.py was executed at the high levels script. Remembering that we are powerfully fusing the logs way of life as a section of the log design, both of these logs are set up with the equivalent `basicConfig()`.
 
 - use `fileConfig()` to send out logs to a few areas. 
 Utilizing record based (indexConfig()) or [dictionary-based (dictConfig()) configurations](https://docs.python.org/3.7/library/logging.config.html#logging.config.dictConfig) gives admittance to order more custom arranging and directing choices for each log in your application and commodity logs to a few areas.
@@ -144,7 +144,7 @@ lumberjack = logging.getLogger(__name__) 
 Alternatively, you can use the Django application to log your files since it utilizes Python modules. The following steps should be adhered to while utilizing Django logging:
 1. Configure `location.py` for various loggers, handlers, filters, and formatters.
 2. Appending the logger's code in views or any other module applicable
-3. Configuring `location.py`. In order to enable logging in Django, we have to configure its locale. That is defined.
+3. Configuring `location.py`. To enable logging in Django, we have to configure its locale.
    - loggers
    - handlers
    - formatters
@@ -213,7 +213,7 @@ def word_count(myid):
 
 It isn't easy to resolve each achievable exceptional case. But, fundamentally, guarantee your logs can get every exclusion, and you can deal with them later.
 
-An unhandled exclusion happens when the application code doesn't return true to handle extraordinary cases outside the `try... except` block. For instance, when you endeavor to open a file, it's possible for the file not to exist. What is more, you can use Python's standard [traceback library] (https://docs.python.org/3/library/traceback.html) to coordinate traceback and connect it to the log message in an event as under:
+An unhandled exclusion happens when the application code doesn't return true to handle extraordinary cases outside the `try... except` block. For instance, the file may not exist when you endeavor to open a file. What is more, you can use Python's standard [traceback library] (https://docs.python.org/3/library/traceback.html) to coordinate traceback and connect it to the log message in an event as under:
 
 ```python
 # lessermodule.py
@@ -242,7 +242,7 @@ if __name__ == '__main__':
 This means that the code contains a `TypeError` unique case that isn't dealt with in the endeavor except for reasoning, yet it will be logged since we fused the `traceback` code.
 
 ### To work with investigating, design your logs in JSON and merge them
-This part will examine how to style signs in JSON, make redid ascribes, unify and break down information with a log the board answer to better understand use execution, disappointments, and considerably more. This part will examine how to style signs in JSON, make ascribes, unify, and break down information with a log the board answer to better understand use execution, disappointments, and considerably more.
+This part will examine how to style signs in JSON, unify and break down information with a log the board answer to better understand use execution, disappointments, and considerably more.
  
 - Style signs in JSON. When your framework produces numerous logs in a given term, it becomes bothersome to recognize logs that can help you during an investigation. Generally, the logs are dispersed across various servers, documents, or administrations. Bringing your logs together helps you when you need to look at and dissect your logs. In addition, the JSON design/style is significant in that it is effectively adaptable. For example, if you want to add attributes to each log design, you won't have to refresh your log handling pathways each time you add or eliminate credits from your log design.
 
@@ -285,7 +285,7 @@ format=%(asctime)s %(name)s %(levelname)s %(message)s
 format=%(asctime)s %(name) s-%(levelname)s: %(message)s
 ```
 
-Logs shipped from the command prompt `(with consoleHandler)` follow the `simpleFormatter` style to enhance readability. After the inclusion of pythonjsonlogger.jsonlogger.JsonFormatter class in your configuration file, the fileConfig() function will create the JsonFormatter if the code runs in an environment that can import pythonjsonlogger. In case you're not utilizing a record based setup, you should append the python-json-logger assortment in your function code and characterize a controller and formatter, as depicted in the [library](https://github.com/madzak/python-json-logger#integrating-with-pythons-logging-framework):
+Logs shipped from the command prompt `(with consoleHandler)` follow the `simpleFormatter` style to enhance readability. After the inclusion of `pythonjsonlogger.jsonlogger.JsonFormatter` class in your configuration file, the `fileConfig()` function will create the `JsonFormatter` if the code runs in an environment that can import `pythonjsonlogger`. In case you're not utilizing a record based setup, you should append the `python-json-logger` assortment in your function code and characterize a controller and formatter, as depicted in the [library](https://github.com/madzak/python-json-logger#integrating-with-pythons-logging-framework):
 - Add custom ascribes to your JSON logs.
 
 One more advantage of signing in JSON is adding credits that an outer log the executive's administration can parse and investigate consequently. Prior we arranged for the organization to incorporate standard ascribes like `%(asctime)s`, `%(name)s`, `%(levelname)s`, and `%(message)s`.
@@ -317,8 +317,6 @@ In the program above, `run_duration` represents the estimation of the span of th
 ```bash
 {"asctime": "2021-11-05 16:45:35,861", "name": "lesser_module", "levelname": "Data", "message": "this record has 89 words", "run_duration": 6.675498706528215e-05}
 ```
-- Relate logs with different wellsprings of observing information.
-When you're unifying your Python logs with observing assistance, you can begin investigating them closely by circulated demand follows and foundation measurements to get further perceivability into your applications.
 
 ### Conclusion
 The logging module simplifies everything and eases the pressure of complexity. It is considered to be versatile. Its arrangement is sensible and ought to satisfy your usage case out of the box. You can add fundamental logging to a little activity, or you can go comparatively make your practice log levels, regulator genres, and that is just a glimpse of something larger if you are working on a significant errand.
