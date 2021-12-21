@@ -1,15 +1,29 @@
-# Exceptions and Error Handling in Python
+---
+layout: engineering-education
+status: publish
+published: true
+url: /exceptions-and-error/
+title: Exceptions and Error Handling in Python
+description: This article will look at some significant errors in Python and how to handle them using the “try-except block”.
+author: rabo-james-bature
+date: 2021-12-21T00:00:00-04:10
+topics: [networking]
+excerpt_separator: <!--more-->
+images:
 
+  - url: /engineering-education/nexceptions-and-error/hero.jpg
+    alt: Exceptions and Error Handling in Python Image
+---
 ### Introduction
 Over the years, Python has gained acceptance in the programming world because of its simplicity and application across diverse areas, ranging from game development to web development, data science, and cyber security.
-
+<!--more-->
 Though Python is simple to work with, it is not that gracious to errors as whenever an error occurs during a program execution that makes Python unsure of what to do, and the program will halt and show a “traceback” error message which includes a report about the exception raised.
 
 Exceptions are special objects that manage errors raised during program execution; they can be handled with “try-except blocks,” which tells Python what to do when such an error occurs.
 
 This article will look at some significant errors in Python and how to handle them using the “try-except block”.
 
-###  Key Takeaways
+###  Key takeaways
 At the end of this article, the reader should have understood exceptions and how to handle them in Python.
 
 ### Prerequisites
@@ -17,10 +31,10 @@ To better understand this article, the reader is expected to have a basic unders
 
 ### Table of contents
 - [Keyboard interrupt error](#keyboard-interrupt-error)
-- [Python exception](#python-exception)
+- [Python exceptions](#python-exceptions)
 - [Handling exceptions](#handling-exceptions)
-- [Handling multiple exceptions in one block of code](#handling-multiple-exceptions-in-one-block-of-code)
-- [The “Finally Block”](#the-“finally-block”)
+- [Handling multiple exceptions in one block of code](#handling-multiple-exceptions-in-one-except-block) 
+- [The “Finally Block”](#the-finally-block)
 - [Conclusion](#conclusion)
 - [Further reading](#further-reading)
 
@@ -56,8 +70,9 @@ Name error is raised when a wrong variable name is called. For instance,  if the
 
 This means that a variable or function can only be called or used after being created.  This error can also be raised when you define a variable in a local scope and try to access it in the global scope.  
  
-``` Names  =  [“James”, “Peter”, “June”, “Jane”] 
-    names.lower()
+```python
+Names  =  [“James”, “Peter”, “June”, “Jane”] 
+names.lower()
 ```
 ![Name Error](/education-engineering/exceptions-and-error/nameerror.jpg)
 Image by author
@@ -73,8 +88,9 @@ In the image above, we got a name error because the variable called was declared
 ### Type error
 A type error is raised when you try to perform an operation not supported by an object or function. 
 
-```name = “James”
-   Name / 2
+```python
+name = “James”
+Name / 2
 ```
 We assigned **James**  to the variable name in the code above and performed a division operation. Unfortunately, we will get a “TyrpeError” because “name” is a string that does not support that division type of operation. 
 
@@ -84,7 +100,8 @@ The image above shows the type error message.
 #### Arithmetic error
 The arithmetic error occurs when an error is encountered during numeric calculations in Python. This includes Zerodivision Error and Floating point error. In addition, zero division error is raised when you divide a numeric value by zero. 
  
-``` number  = 6
+```python
+number  = 6
 ZeroErro = 6 / 0
  ```
 When we run this code, we will get a ZeroDivision error. In mathematics, this is said to be undefined.
@@ -95,31 +112,27 @@ When we run this code, we will get a ZeroDivision error. In mathematics, this is
 Lookup error is the base class for key error and index error. 
 The key error is raised when a wrong key is used to access a dictionary value, i.e., using a key that is not in the dictionary. This error means that the key you use to access a dictionary is wrong. 
 
-```
+```python
  gender = { “June’ : “female”, “John” : “male” , “Kim”: “female”}
-  gender(“James”)
-
+ gender(“James”)
 ```
+
 ![KeyError](/education-engineering/exceptions-and-error/key.jpg)
-Image by author
 
-In the example above, we passed the name “James” to obtain James’ gender, and this will return a key error because the key used was not found in the dictionary. 
 
-The index error is raised when you try to access a sequence (index) of a list that does not exist or is out of range. 
+In the example above, we passed the name “James” to obtain James’ gender, and this will return a key error because the key used was not found in the dictionary. The index error is raised when you try to access a sequence (index) of a list that does not exist or is out of range. 
 
-``` name  = [“James”, “Peter”, “Max”, “Brown”]
- print(name[4])
+```python
+name  = [“James”, “Peter”, “Max”, “Brown”]
+print(name[4])
 ```
 
 You will get an index error when you run this code because “4” is out of range. Though there are four items in the list we created, Python starts indexing from zero to show how far a list item is from the beginning of the list. 
 
 ![Index error](/education-engineering/exceptions-and-error/index.jpg)
-Image by author
 
 ### Handling exceptions. 
-In the first part of this article, we cover some exceptions; though these are not all the exceptions in Python, they are commonly encountered. 
-
-In the second part of this article, we will be discussing how to handle these exceptions in a python program such that the program will continue running when these errors are encountered. 
+In the first part of this article, we cover some exceptions; though these are not all the exceptions in Python, they are commonly encountered. In the second part of this article, we will be discussing how to handle these exceptions in a python program such that the program will continue running when these errors are encountered. 
  
 To handle exceptions, Python has four major defined components: Try, except,  else, and finally.
 ![The try-except bl0ck](/education-engineering/exceptions-and-error/try.png)
@@ -134,9 +147,9 @@ To handle exceptions, Python has four major defined components: Try, except,  el
 3. Finally, this code block is executed irrespective of what happens in the above blocks. 
 Using the steps above, we will detail how to handle some specific exceptions in Python. 
 
-### Lookup error. 
+### Lookup error
 
-```
+```python
 try:
       details =  [{'name':'James', 'gender':'male','age': 23},
                  {'name' : 'Peter','gender': 'male', 'age': 35},
@@ -147,17 +160,19 @@ else:
     print(‘Thank you’)
 
 ```
+
 In the code block above, we used the LookupError exception, the base exception for key and index errors. Therefore, if any exceptions are encountered, **except** block will be executed. Likewise, the **else** block will be executed if none of them is encountered. 
 
 Using a general or base exception is a disadvantage because you will not know which specific error was captured.  For example, if we try to access the dictionary using the wrong key in the code above, we get that error and access it using the wrong index. We will get the same error as shown below. 
 
-```
+```python
  details[1]['location']
 ```
+
 In the code above, we try to access the dictionary, which contains a list of workers’ personal information. However, the index is right, but the key is wrong hence the exception message will be printed. Also, if we provide the wrong index but the right key, the same exception will be printed. 
 To have these exceptions handled separately, we use the specific exceptions in our except block like this: 
 
-```
+```python
 try:
       details =  [{'name':'James', 'gender':'male','age': 23},
                  {'name' : 'Peter','gender': 'male', 'age': 35},
@@ -169,22 +184,23 @@ else:
 
 ```
 
- When you run this code and provide a wrong key, the except block will capture it and be executed, but if you provide a wrong index, the else block will be executed. 
+When you run this code and provide a wrong key, the except block will capture it and be executed, but if you provide a wrong index, the else block will be executed. 
 
-```
+```python
 try:
-countries = [“USA”, “China”, “UK”, “Nigeria”,” South Korea”]
+    countries = [“USA”, “China”, “UK”, “Nigeria”,” South Korea”]
 except  IndexError:
-          print(“wrong Index used”)
+    print(“wrong Index used”)
 else:
-print(“You are welcome”)
+    print(“You are welcome”)
 ```
- Whenever a wrong index is used, the program will print “wrong index used”. 
+
+Whenever a wrong index is used, the program will print “wrong index used”. 
  
-### Working with multiple exceptions in one block of code. 
+### Working with multiple exceptions in one block of code
 Python provides you with multiple exceptions within a single block of code. This simplifies your work and avoids unfavorable code growth in your program. 
 
-``` 
+```python
 try:
   :
 except  first exception:
@@ -196,22 +212,21 @@ except:
 
 If the try block encounters an exception as specified in the first except block, that block will handle it. Likewise, the “except second exception” will handle it if it raises the second exception. 
 
-If the exception raised was not specified by either of these blocks, the last block will be executed. Though this block is optional, it is essential. 
+However, if the exception raised was not specified by either of these blocks, the last block will be executed. Though this block is optional, it is essential. 
 
-```
+```python
 try:
-first_number = int(input(“Enter the first number:”))
-second_number = int(input(“Enter the second number:”))
-sum = first_number + second_number
-division =  first_number / second_number
+    first_number = int(input(“Enter the first number:”))
+    second_number = int(input(“Enter the second number:”))
+    sum = first_number + second_number
+    division =  first_number / second_number
 except ZeroDivisionError:
-   print(“You can not divide by zero”)
+    print(“You can not divide by zero”)
 except ValueError:
     print(“Please enter an integer value, not an alphabet or any special character”)
 except :
     print(“An error occurred”)
 print(“Goodbye”)
-
 ```
 
 When the interpreter encounters an exception, it goes through the except blocks, and when it finds a matching exception, it executes that particular “except block”. 
@@ -219,35 +234,34 @@ When the interpreter encounters an exception, it goes through the except blocks,
 If you input “0” as your second number in the code above, the first except block is executed, and the remaining blocks are skipped.
 
 ### Handling multiple exceptions in one except block 
-
 In Python, you can have one except block to handle multiple exceptions at once. The problem with this method is that the “print message” is the same for all exceptions making it difficult to know which error was raised.  
 
-```
+```python
 try:
-first_number = int(input(“Enter the first number:”))
-second_number = int(input(“Enter the second number:”))
-sum = first_number + second_number
-division =  first_number / second_number
+    first_number = int(input(“Enter the first number:”))
+    second_number = int(input(“Enter the second number:”))
+    sum = first_number + second_number
+    division =  first_number / second_number
 except( ZeroDivisionError, ValueError):
-   print(“ Sorry, an error was encountered”)
+    print(“ Sorry, an error was encountered”)
 except:
     print(“An error occurred”)
 print(“Goodbye”)
-
 ```
+
 If any of the exceptions listed within the parenthesis is encountered, the print statement within the except block will be executed, if the exception encountered is not among the listed exceptions, the last **except** block will be executed, and if there is no exception in the **try** block, the last **print** statement will be executed. 
 
-### The “Finally Block”
+### The Finally block
 Optionally, Python provides you with a “finally block”. This block is executed no matter the outcome of the **try block**; meaning whether the ** captured the exceptions raised by your interpreter try block** or not, the **finally block** will be executed. 
 
-```
+```python
 try:
-first_number = int(input(“Enter the first number:”))
-second_number = int(input(“Enter the second number:”))
-sum = first_number + second_number
-division =  first_number / second_number
+    first_number = int(input(“Enter the first number:”))
+    second_number = int(input(“Enter the second number:”))
+    sum = first_number + second_number
+    division =  first_number / second_number
 except ZeroDivisionError:
-   print(“You can not divide by zero”)
+    print(“You can not divide by zero”)
 except ValueError:
     print(“Please enter an integer value, not an alphabet or any special character”)
 except :
@@ -255,14 +269,16 @@ except :
 finally:
    print(“You are welcome”)
 ```
+
 Whether or not an exception was captured in the code above, the print statement “You are welcome” will be printed.
 
-### Conclusion. 
- Murphy’s law states that “Anything that will go wrong, will go wrong”. This is true for Python because it is not gracious to errors; we must know how to handle these errors as it is impossible to avoid all of them. This article covers some of the primary exceptions in Python and how to handle them. 
+### Conclusion
+Murphy’s law states that Anything that will go wrong, will go wrong. This is true for Python because it is not gracious to errors; we must know how to handle these errors as it is impossible to avoid all of them. This article covers some of the primary exceptions in Python and how to handle them. 
 
 ### Further reading
 - [Python KeyError](https://realpython.com/python-keyerror/)
 - [ How to access a dictionary key value present inside a list](https://stackoverflow.com/questions/6521892/how-to-access-a-dictionary-key-value-present-inside-a-list?newreg=d4d7b888275840f38d28f2c2d191f38e)
 - [Python - Error types](https://www.tutorialsteacher.com/python/error-types-in-python)
 
-
+---
+Peer Review Contributions by: [Jerim Kaura](/engineering-education/authors/jerim-kaura/)
