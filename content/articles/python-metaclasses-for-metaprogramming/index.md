@@ -88,17 +88,19 @@ Dusk
 We may proceed by starting with a class that does not utilize any methods or variables from the class. Then, the method variables and class methods will be specified in the following steps. In the end, we will create the final object.
 
 ### Reasons to use metaclasses instead of functions
-- It is apparent what the goal is.  In `UpperAttrMetaclass(type)`, it is clear what comes next.
-- OOP is an option. Metaclasses may inherit the parent method.
+For what reason would you utilize a class when `__metaclass__` may take any callable? It's unquestionably more troublesome.
+There are various purposes behind this:
+- The aim is clear. At the point when you read `UpperAttrMetaclass(type)`, you know what will follow
+- You can utilize OOP. Metaclasses may inherit the parent method.
 - A class's subclasses are instances of its metaclass if the metaclass-class is given, but not the metaclass function.
 - You may improve the organization of your code. Using metaclasses for a simple example like this is a waste of time. It is usually reserved for a more difficult task. Making several methods and grouping them into a single class makes the code more readable.
 - It is possible to hook on `new`, `init`, and `call` hooks. So you may do other things, as a result.
 
 ### Instances to use metaclasses
-The general public seldom utilizes metaclasses since they are primarily employed in complex scenarios. However, metaclasses may be used in the following limited number of situations.
-- While generating down the hierarchies for inheritance.
-- If the user wishes to alter the class automatically.
-- If the user is a developer of application programming interfaces.
+The general public seldom utilizes metaclasses since they are primarily employed in complex scenarios. However, metaclasses may be used in the following limited number of situations:
+- While generating down the hierarchies for inheritance you can employ a metaclass. This will have an impact on all subclasses as well. If the user finds themselves in such a scenario, they can make use of the metaclass.
+- To change the class automatically, they can utilize a metaclass when it is made.
+- Assuming the user is an application programming interface designer, they can utilize metaclasses for that reason.
 
 ### Customizing the Metaclass
 The user-created metaclass must inherit the type metaclass and, in most cases, override it, such as:
