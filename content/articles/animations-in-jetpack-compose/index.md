@@ -1,10 +1,25 @@
-### Introduction
-Animations are a way to create a visual effect that is not immediately apparent. Animations make your app feel more alive and interactive. Jetpack Compose has a set of flexible and dynamic Interfaces (APIs) that make it simple to add motions in your app's UI thus greatly improving the user experience (UX).
+---
+layout: engineering-education
+status: publish
+published: true
+url: /animations-in-jetpack-compose/
+title: Animations in Jetpack Compose
+description: This article will cover how to create and customize animations in Jetpack Compose.
+author: jane-njoki
+date: 2021-12-21T00:00:00-19:13
+topics: [Languages]
+excerpt_separator: <!--more-->
+images:
 
+  - url: /engineering-education/animations-in-jetpack-compose/hero.png
+    alt: Animations in Jetpack Compose Hero Image
+---
+Animations are a way to create a visual effect that is not immediately apparent. Animations make your app feel more alive and interactive. Jetpack Compose has a set of flexible and dynamic Interfaces (APIs) that make it simple to add motions in your app's UI thus greatly improving the user experience (UX).
+<!--more-->
 In this tutorial, we will learn how to create simple animations and customize them using Jetpack Compose.
 
 ### Prerequisites
-To follow this tutorial, you will need to:
+To follow along with this tutorial, you will need to:
 - Make sure you have the most recent version of [Android Studio](https://developer.android.com/studio) installed on your computer.
 - Be familiar with the [Jetpack Compose](https://developer.android.com/jetpack/compose) basic concepts. If you aren't conversant with Compose yet, you can go through [this tutorial on Section](https://www.section.io/engineering-education/getting-started-with-jetpack-compose-in-android/).
 
@@ -134,7 +149,7 @@ Other than tween, we can also use:
 - keyframes - to create a position based animation.
 - snap
 - repeatable
-- infiniteRepeatable
+- infiniteRepeatable - to create an infinite looping animation.
 
 We'll apply and explore these in the state-based animations section.
 
@@ -295,6 +310,9 @@ Just like in the `AnimatedVisibility`, we can customize this further by providin
 Damping ratio is the ratio of the oscillation damping to the oscillation period. The damping ratio can be specified as a `High`, `Medium`, `Low` bouncy.
 
 ### Conclusion
-In this tutorial, we have covered the fundamental concepts of animations in Jetpack Compose and how we can customize them. Compose is still young and evolving. Keep learning to stay up to date with new features and API improvements.
+In this tutorial, we have covered the fundamental concepts of animations in Jetpack Compose and how we can customize animations. Compose is still young and evolving. Keep learning to stay up to date with new features and API improvements.
 
 Happy Composing!
+
+---
+Peer Review Contributions by: [Eric Gacoki](/engineering-education/authors/eric-gacoki/)
