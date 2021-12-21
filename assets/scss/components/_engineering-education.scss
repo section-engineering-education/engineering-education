@@ -171,9 +171,10 @@ section.hero-blocks {
         overflow-y: auto;
 
         h4 {
-          border-bottom: 1px solid #000;
+          border-bottom: 1px solid $text-light-blue;
           padding-bottom: 5px;
           margin-bottom: 20px;
+          color: $text-light-blue;
           @include gt-regular;
         }
 
@@ -279,6 +280,13 @@ section.hero-blocks {
 
           img {
             margin-left: 20px;
+            transition: all .2s;
+          }
+
+          &:hover {
+            img {
+              margin-left: 25px
+            }
           }
         }
 
