@@ -226,3 +226,6 @@ A time-consuming and challenging process is implementing the decorator function 
 This tutorial covered the different aspects of metaclasses and understanding what metaclasses entail. Then, It went through how to customize metaclasses. Finally, it  applied thess concepts in solving selected problems.
 
 Happy learning!
+
+---
+Peer Review Contributions by: [Jerim Kaura](/engineering-education/authors/jerim-kaura/)
