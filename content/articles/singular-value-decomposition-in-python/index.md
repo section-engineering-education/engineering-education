@@ -1,5 +1,7 @@
 ### Getting Started with Singular Value Decomposition in Python
-Singular Value Decomposition(SVD) is a powerful technique widely used in solving dimensionality reduction problems. This algorithm works with a data matrix of the form m x n, i.e., a rectangular matrix. The idea behind the SVD is that a rectangular matrix can be broken down into a product of three other matrices that are easy to work with. This decomposition is of the form as the one shown in the formula below;
+Singular Value Decomposition(SVD) is a powerful technique widely used in solving dimensionality reduction problems. This algorithm works with a data matrix of the form, `m x n`, i.e., a rectangular matrix. 
+
+The idea behind the SVD is that a rectangular matrix can be broken down into a product of three other matrices that are easy to work with. This decomposition is of the form as the one shown in the formula below;
 
 $A=U \Sigma V^T$
 
@@ -19,7 +21,7 @@ To understand this material, you need to have a good understanding of;
 
 
 ### Introduction
-Suppose we have an m x n rectangular matrix A, then we can break it down into an m x m orthonormal matrix U, m x n diagonal matrix $\Sigma$, and an n x n orthonormal matrix $V^T$.
+Suppose we have an `m x n` rectangular matrix A, then we can break it down into an m x m orthonormal matrix U, `m x n` diagonal matrix $\Sigma$, and an `n x n` orthonormal matrix $V^T$.
 
 Using the data matrix A, we can compute its SVD, i.e., matrices U, $\Sigma$ and $V^T$ as follows;
 
@@ -78,7 +80,7 @@ $\vec u_2=\begin{bmatrix}
 
  Since we do not know whether the following vectors are orthogonal, let us apply Gram-Schmidt to them and transform them to end up with an orthonormal matrix.
 
-### Gram-Schimidt Process
+### Gram-Schimidt process
 In this article, we shall outline how the Gram-Schmidt process works on a matrix and not dive deep into what it is. You can attend this [lecture](https://www.youtube.com/watch?v=zHbfZWZJTGc) if you need to learn more about the Gram-Schmidt algorithm.
 
 $\vec v_1=\vec u_1$
@@ -136,9 +138,7 @@ $A^TA=\begin{bmatrix}
     2&4&2
 \end{bmatrix}$
 
-We then find the eigenvalues and afterward eigenvectors corresponding to each determined eigenvalue.
-
-If we determine eigenvalues for this 3x3 matrix, they will be as follows;
+We then find the eigenvalues and afterward eigenvectors corresponding to each determined eigenvalue. If we determine eigenvalues for this 3x3 matrix, they will be as follows;
 
 $\lambda_1=12$, $\lambda_2=10$, and $\lambda_3=0$
  The respective eigenvector for the above $\lambda$ values are;
@@ -161,9 +161,7 @@ $\vec u_3=\begin{bmatrix}
     -5
 \end{bmatrix}$
 
-Again, just as we did to obtain matrix U, we shall repeat the same steps until we obtain our matrix V. Since, in our singular decomposition, we need a matrix $V^T$, we shall then take the transpose of our orthonormal matrix V.
-
-So, using the Gram-Schmidt process;
+Again, just as we did to obtain matrix U, we shall repeat the same steps until we obtain our matrix V. Since, in our singular decomposition, we need a matrix $V^T$, we shall then take the transpose of our orthonormal matrix V. So, using the Gram-Schmidt process;
 
 $\vec v_1=\vec u_1$
 
@@ -239,9 +237,7 @@ where $I$ is an identity matrix.
 
 The real-world data are usually more extensive and beyond our manual handling capability. Some data matrices can consist of billions of both instances and features. A good example is a dataset for image recognition. Each image is usually stretched into a column vector with millions of elements, and the dataset itself can contain even millions of features, each corresponding to a unique face. No matter how we may attempt to solve this problem manually, we can never succeed in such a situation. Here comes the desire to take advantage of the computer's computational power.
 
-To demonstrate how to carry out such computations on a computer, i.e., decomposing a matrix into more efficient components, we shall use a simple matrix and see how we can decompose it.
-
-So, let us learn how we perform these operations using python.
+To demonstrate how to carry out such computations on a computer, i.e., decomposing a matrix into more efficient components, we shall use a simple matrix and see how we can decompose it. So, let us learn how we perform these operations using python.
 
 ### Implementing Singular Value Decomposition
 This implementation will use the following matrix;
@@ -287,9 +283,11 @@ V_T=
  [-1.82574186e-01 -3.65148372e-01  9.12870929e-01]]
 
 ```
-The reason for decomposing a matrix is to represent it computationally efficiently so that the original matrix recovered quickly from these singular matrices with the most minor loss of information. Let us try this out and see if we obtain the same matrix upon multiplying the three matrices of the SVD together.
+The reason for decomposing a matrix is to represent it computationally efficiently so that the original matrix recovered quickly from these singular matrices with the least information loss. 
 
-Before we do this, it is important to note that the S vector does not fit the rule of matrix multiplication. Thus we first convert it into a diagonal matrix as follows.
+Let us try this out and see if we obtain the same matrix upon multiplying the three matrices of the SVD together.
+
+Before we do this, it is essential to note that the S vector does not fit the rule of matrix multiplication. Thus we first convert it into a diagonal matrix as follows.
 
 ```python
 # Creating S diagonal matrix
@@ -304,7 +302,9 @@ array([[3.46410162, 0.        , 0.        ],
        [0.        , 3.16227766, 0.        ]])
 
 ```
+
 Now, let us reconstruct our matrix A from its SVD. The code below will carry out this operation.
+
 ```python
 # reconstructing our original matrix A from singular value decomposition elements
 # we multiply our matrices from right; that is, the last two matrices are multiplied first, and the result multiplied with the first matrix
@@ -322,6 +322,7 @@ Reconstructed matrix:
  [-1.  3.  1.]]
 
 ```
+
 As we can see, we recovered our original matrix from its SVD. However, in the real world, the application of the SVD is not always to only retrieve the entire matrix from the SVD. Instead, we truncate the SVD such that only the features with the most information in the original matrix are recovered. By so doing, we reduce both the needed computational power and processing time.
 
 ### Conclusion
