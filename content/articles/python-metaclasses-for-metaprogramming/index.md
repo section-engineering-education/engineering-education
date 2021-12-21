@@ -206,6 +206,6 @@ The prior procedure must first apply the decorator function to all subclasses de
 A time-consuming and challenging process is implementing the decorator function for each subclass of the class. However, if the debug property is present in all subclasses, metaclasses can solve this issue.
 
 ### Conclusion
-In this tutorial, we have covered the different aspects of metaclasses and understanding what metaclasses entail. Then, we have gone through how to customize metaclasses. Finally, we applied this concept in solving selected problems.
+This tutorial covered the different aspects of metaclasses and understanding what metaclasses entail. Then, It went through how to customize metaclasses. Finally, it  applied thess concepts in solving selected problems.
 
 Happy learning!
