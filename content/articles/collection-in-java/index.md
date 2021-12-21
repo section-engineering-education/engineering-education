@@ -1,3 +1,18 @@
+---
+layout: engineering-education
+status: publish
+published: true
+url: /collection-in-java/
+title: Collection in Java
+description: This article will introduce collection and discuss using various examples of how we can manipulate data at runtime without specifying storage or size.
+date: 2021-12-21T00:00:00-12:20
+topics: [Languages]
+excerpt_separator: <!--more-->
+images:
+
+  - url: /engineering-education/collection-in-java/hero.jpg
+    alt: title: Collection in Java Hero Image
+---
 ### Collections in Java
 
 Before the collection framework was introduced, a popular way of grouping objects was `Arrays`, `Vectors`, etc. The only disadvantage of all the collections mentioned above is that they had no common interface. When implementing these collections, they have to be defined independently. Also, it posed a challenge to developers since it was challenging to recall methods, syntax, and constructors present in every class.
