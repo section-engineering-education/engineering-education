@@ -1,6 +1,22 @@
-# Getting started with Nuxt 3
-[Nuxt 3](https://v3.nuxtjs.org/) is a Hybrid Vue Framework that allows you to use Vue.js and, most importantly, Vue.js 3 to build server-side rendered applications. Nuxt 3 was released on October 12, 2021, and will be used in Vue and Nuxt developer ecosystems. This is an updated version of Nuxt 2 that has been redesigned to improve performance and facilitate builds.
+---
+layout: engineering-education
+status: publish
+published: true
+url: /getting-started-with-nuxt-3/
+title: Getting started with Nuxt 3
+description: 
+author: 
+date: 2021-12-21T00:00:00-18:00
+topics: [Languages]
+excerpt_separator: <!--more-->
+images:
 
+ - url: /engineering-education/getting-started-with-nuxt-3/hero.jpg
+   alt: Getting started with Nuxt 3 example image
+---
+
+[Nuxt 3](https://v3.nuxtjs.org/) is a Hybrid Vue Framework that allows you to use Vue.js and, most importantly, Vue.js 3 to build server-side rendered applications. Nuxt 3 was released on October 12, 2021, and will be used in Vue and Nuxt developer ecosystems. This is an updated version of Nuxt 2 that has been redesigned to improve performance and facilitate builds.
+<!--more-->
 Nuxt 3 has introduced a lot of features and developer experience improvements described in this article. Using this framework will allow you to build web applications without worrying about the finer details. The goal of Nuxt is to make web development robust and performant while also providing a fantastic developer experience.
 
 This article will look at Nuxt 3 installation process and everything you need to start building with Nuxt 3, go through its features, plugins, and why you need to use it in the next project. Now let's discuss what to expect from Nuxt 3 and the kind of enhancements it has brought.
@@ -133,3 +149,6 @@ To summarize, we learned about:
 ### Further reading
 + [What’s Coming in Nuxt 3?](https://vueschool.io/articles/news/whats-coming-in-nuxt-3/)
 + [Introducing Nuxt 3 Beta](https://v3.nuxtjs.org/getting-started/introduction)
+
+---
+Peer Review Contributions by: [Eric ](/engineering-education/authors//)
