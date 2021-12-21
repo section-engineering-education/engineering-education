@@ -1,6 +1,23 @@
+---
+layout: engineering-education
+status: publish
+published: true
+url: /django-ansible-deployment/
+title: Getting started with Django Ansible Deployment
+description: This tutorial will guide you through the process of deploying a Django application using Ansible to a remote server
+author: elizabeth-akinyi
+date: 2021-07-27T00:00:00-14:00
+topics: [Languages]
+excerpt_separator: <!--more-->
+images:
+
+  - url: /engineering-education/django-ansible-deployment/hero.png
+    alt: Getting Started with Django Ansible Deployment
+---
+
 ### Introduction
 Deploying applications to production is a complex process requiring many configurations and testing. Imagine that you want to deploy a new version of your application to production. It would help if you made sure that the new version is stable and compatible with the existing version of your application. You will need to repeat the deployment steps for each application version. Manual deployment becomes tiresome if you want to deploy your application to production several times. This is where [ansible](https://www.ansible.com/) comes in. We can automate the deployment process with ansible.
-
+ <!--more-->
 In this article, we will be deploying a Django application to production. We will be using the [Django](https://docs.djangoproject.com/en/2.0/intro/tutorial01/) framework and [ansible](https://www.ansible.com/). We will also use the [nginx](https://www.nginx.com/) webserver.
 
 ### Table of Contents
@@ -314,3 +331,7 @@ Whenever we want to update our application, we only need to execute the command 
 ```
 ### Conclusion
 In this tutorial, we have created a budget management application and deployed it to production using ansible. First, try implementing automated deployments using ansible in Django projects to reduce the time spent on manual Django application deployments. You can download the source code of this tutorial [here](https://drive.google.com/file/d/19ST8qXnaHC0Rep7C9nO7uxg-yOENGfcR/view?usp=sharing).
+
+---
+
+Peer Review Contributions by: [Okelo Violet](/engineering-education/authors/okelo-violet/)
