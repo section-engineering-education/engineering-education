@@ -31,6 +31,7 @@ This runtime streaming of data can be done easily and efficiently using the Djan
 - [Points to note](#points-to-note)
 - [Key takeaways](#key-takeaways)
 - [Conclusion](#conclusion)
+- [References](#references)
 
 ### Pre-requisites
 To make the most of this tutorial, it is required to have the following:
@@ -301,6 +302,10 @@ In programming, efficiency matters. It is best that we always seek out ways to i
 You can find the full code [here](https://github.com/teevyne/f-function) on GitHub.
 
 Happy coding!
+
+### References
+- [More about F() function](https://docs.djangoproject.com/en/4.0/ref/models/expressions/#f-expressions)
+- [F() expressions by sodocumentation](https://sodocumentation.net/django/topic/2765/f---expressions)
 
 ---
 Peer Review Contributions by: [Srishilesh P S](/engineering-education/authors/srishilesh-p-s/)
