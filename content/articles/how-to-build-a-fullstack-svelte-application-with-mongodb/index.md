@@ -1,5 +1,22 @@
-Svelte is a new fronted JavaScript approach to building user interfaces. This introduces a new alternative that use can use besides React, Angular, Vue. However, Svelte is a compiler, whereas the other alternatives are frameworks/libraries. 
+---
+layout: engineering-education
+status: publish
+published: true
+url: /how-to-build-a-fullstack-svelte-application-with-mongodb/
+title: Building a fullstack Svelt Application with MongoDB
+description: This tutorial will teach the readers more about Svelte and how to create a Svelte application with MongoDB.
+author: joseph-chege
+date: 2021-12-23T00:00:00-13:20
+topics: [Languages]
+excerpt_separator: <!--more-->
+images:
 
+  - url: /engineering-education/how-to-build-a-fullstack-svelte-application-with-mongodb/hero.jpg
+    alt: Building a fullstack Svelt Application with MongoDB Hero Image
+---
+
+Svelte is a new fronted JavaScript approach to building user interfaces. This introduces a new alternative that use can use besides React, Angular, Vue. However, Svelte is a compiler, whereas the other alternatives are frameworks/libraries. 
+ <!--more-->
 When you build your apps with Svelte, you run the Svelte compiler that automatically goes over your code and files. This creates bundled JavaScript instructions that execute in the DOM at runtime. Instead of using techniques like virtual DOM diffing, Svelte writes code that surgically updates the DOM when the state of your app changes.
 
 With such an amazing frontend technology, connecting to backend services and accessing data from a server will be essential. This guide teaches more about Svelte and how to create a Svelte application with MongoDB.
@@ -478,3 +495,6 @@ Svelte is used to build frontend applications like React, Angular, and Vue. Ther
 This guide helped you build a complete full-stack reactive Svelte-inspired application. I hope that was of assistance to you.
 
 Happy coding!
+
+---
+Peer Review Contributions by: [Mercy Meave](/engineering-education/authors/mercy-meave/)
