@@ -6,18 +6,17 @@ url: /kernel-svm-in-python/
 title: Data Classification with Kernel SVM in Scikit-learn
 description: Support vector machines (SVMs) are a set of supervised learning methods used for classification, regression and outliers detection.
 author: lawrence-mbici
-date: 2021-12-18T00:00:00-12:00
+date: 2021-12-22T00:00:00-04:00
 topics: []
 excerpt_separator: <!--more-->
 images:
 
-  - url: /engineering-education/kernel-svm-in-python/hero.jpg
-    alt: image svm
+  - url: /engineering-education/kernel-svm-in-python/hero.png
+    alt: Data Classification with Kernel SVM in Scikit-learn image
 ---
+
 Kernel SVMs are a class of Support Vector Machines (SVMs) that use kernel functions to classify data. 
 <!--more-->
-
-### Getting started with Kernel Support Vector Machine in Python.
 It is a generalization technique of the linear SVM on nonlinear data. Indeep, the Kernel SVM offers more flexibility when dealing with a linearly inseparable classification task.
 
 ### Prerequisites
@@ -28,7 +27,7 @@ You will also need basic knowledge of the linear SVM.
 ### Getting started with Kernel SVM
 Before understanding how this algorithm works, we need to revisit the two linear SVM versions.
 
-1. Hard Support Vector Machine: According to this version, data is assumed to be perfectly linearly separable, i.e., we can classify data using a linear hyperplane such that all the data points of a class lie on the same side of the hyperplane.
+1. **Hard Support Vector Machine:** According to this version, data is assumed to be perfectly linearly separable, i.e., we can classify data using a linear hyperplane such that all the data points of a class lie on the same side of the hyperplane.
 
 An example of a Hard Support Vector Machine is shown below.
 
@@ -36,7 +35,7 @@ An example of a Hard Support Vector Machine is shown below.
 
 As we can see, there is no misclassification in this case.
 
-2. Soft Support Vector Machine: This version is more general and can be used for nonlinear separability. According to this version, data is not linearly separable but still can be classified using a linear hyperplane with minimum trade-off possible.
+2. **Soft Support Vector Machine:** This version is more general and can be used for nonlinear separability. According to this version, data is not linearly separable but still can be classified using a linear hyperplane with minimum trade-off possible.
 
 An example of Soft SVM is shown in the figure below.
 
@@ -44,7 +43,7 @@ An example of Soft SVM is shown in the figure below.
 
 As we can see, there is minor misclassification in the case of soft SVM.
 
-Although the soft Support vector machine can handle nonlinear data with the least number of errors, there are cases in which the data is highly nonlinear. Therefore, it cannot obtain a hyperplane with minimum data misclassifications. An example of highly nonlinear data is shown in the scatter plot below.
+Although the soft SVM can handle nonlinear data with the least number of errors, there are cases in which the data is highly nonlinear. Therefore, it cannot obtain a hyperplane with minimum data misclassifications. An example of highly nonlinear data is shown in the scatter plot below.
 
 ![scatter plot](/engineering-education/kernel-svm-in-python/non-linear.png)
 
@@ -77,7 +76,7 @@ As we already stated, the Kernel trick is a technique that enables us to work in
 
 Instead, it classifies data inputs in the input space as if they were in high dimensional space that we could have achieved through transforming the data.
 
-For instance, suppose we have two vector, i.e.,
+For instance, suppose we have two vectors, i.e.,
 
 $\vec x_i= \begin{bmatrix}
     x_{i1}\\
@@ -146,7 +145,7 @@ $K(\vec x_i,\vec x_j)= \phi (\vec x_i) . \phi (\vec x_j)$
 So, with the kernel, we do not need to transform the data to learn the relationship in their high dimensional space.
 
 Let us demonstrate this using a simple example.
-*Example:*
+
 Suppose we have a dataset with two features such that:
 
 $\vec x_i= \begin{bmatrix}
@@ -160,7 +159,8 @@ $\vec x_j= \begin{bmatrix}
 \end{bmatrix}$
 
 *Approach 1: Non-Kernelized*
-- Here, we first map our vectors to higher-dimensional space, as shown below.
+
+Here, we first map our vectors to higher-dimensional space, as shown below.
 
 $\phi: \vec x^2 \rightarrow \vec x^4$
 
@@ -179,7 +179,7 @@ $\phi (\vec x_j)= \begin{bmatrix}
     16
 \end{bmatrix}$
 
-- Computing the distance between our two new vectors in high dimensions.
+Computing the distance between our two new vectors in high dimensions.
 
 $\phi (\vec x_i) . \phi (\vec x_j)= \begin{bmatrix}
     1\\
@@ -267,7 +267,7 @@ XTest = sc.transform(XTest)
 
 ```
 
-### Step 5: Fitting the Kernel SVM to the training set
+#### Step 5: Fitting the Kernel SVM to the training set
 Since our data is now ready to use, let's now fit our model on the training set.
 ```python
 # training the kernel SVM model
@@ -278,7 +278,7 @@ classifier.fit(XTrain, yTrain) # fits the model to the training data
 ```
 The above syntax trains the model.
 
-### Step 6: Predicting the test set results
+#### Step 6: Predicting the test set results
 Now let us try to use our model and predict the test set.
 
 ```python
@@ -288,7 +288,7 @@ y_predict = classifier.predict(XTest)
 ```
 Upon executing this code, let us proceed and evaluate our model performance on predicting the test set using a confusion matrix.
 
-### Step 7: Evaluating the model performance
+#### Step 7: Evaluating the model performance
 Let us run the code below.
 ```python
 from sklearn.metrics import confusion_matrix, accuracy_score
@@ -322,3 +322,33 @@ Happy coding!
 
 ---
 Peer Review Contributions by: [Miller Juma](/engineering-education/content/authors/miller-juma/)
+
+
+<!-- MathJax script -->
+<script type="text/javascript" async
+    src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+    MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [['$','$'], ['\\(','\\)']],
+      displayMath: [['$$','$$']],
+      processEscapes: true,
+      processEnvironments: true,
+      skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
+      TeX: { equationNumbers: { autoNumber: "AMS" },
+           extensions: ["AMSmath.js", "AMSsymbols.js"] }
+    }
+    });
+    MathJax.Hub.Queue(function() {
+      // Fix <code> tags after MathJax finishes running. This is a
+      // hack to overcome a shortcoming of Markdown. Discussion at
+      // https://github.com/mojombo/jekyll/issues/199
+      var all = MathJax.Hub.getAllJax(), i;
+      for(i = 0; i < all.length; i += 1) {
+          all[i].SourceElement().parentNode.className += ' has-jax';
+      }
+    });
+    MathJax.Hub.Config({
+    // Autonumbering by mathjax
+    TeX: { equationNumbers: { autoNumber: "AMS" } }
+    });
+  </script>
