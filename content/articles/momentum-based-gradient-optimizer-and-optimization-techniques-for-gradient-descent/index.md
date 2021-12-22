@@ -49,12 +49,10 @@ There is a systematic approach to feeding the data to minimize the impact of noi
 
 Using an iterative process, we can approximate the trends in a P-dimensional noisy dataset by calculating the parameters as we go through the data:
 
-$$
-On\; iteration\; p\\
-Get\; next\\
-\theta_p \\
-V_\theta = \beta V_\theta + (1 - \beta)\theta_p
-$$
+$On\; iteration\; p$
+$Get\; next$
+$\theta_p$
+$V_\theta = \beta V_\theta + (1 - \beta)\theta_p$
 
 $V_\theta$ is averaged across its preceding $\frac{1}{(1 - \beta)\theta_p}$ iterations, giving a value of $V_\theta$. With the help of averages, you can eliminate all the randomness and merely keep track of the overall trend. As a result of this method, the algorithm is more resistant to sample noise and can be trained more quickly.
 
@@ -75,17 +73,15 @@ On a smooth surface, it's considerably easier for Adam to make a mistake because
 
 This strategy's pseudocode appears like this:
 
-$$
-D = 0\\
-K = 0\\
-for\; each\; iteration\; p\\
-compute\; dW\\
-D= \beta_1K + (1 - \beta_1)dw\\
-D= V/(1 - \beta_1^i)\\
-K= \beta_2K + (1 - \beta_2)dw^2\\
-K= \frac{S}{(1 - \beta_2^i)}\\
-W= W - \alpha \frac{V}{\sqrt{S} + \epsilon}
-$$
+$D = 0$
+$K = 0$
+$for\; each\; iteration\; p$
+$compute\; dW$
+$D= \beta_1K + (1 - \beta_1)dw$
+$D= V/(1 - \beta_1^i)$
+$K= \beta_2K + (1 - \beta_2)dw^2$
+$K= \frac{S}{(1 - \beta_2^i)}$
+$W= W - \alpha \frac{V}{\sqrt{S} + \epsilon}$
 
 ### RMSProp
 It is an extension of gradient descent and AdaGrad that employs a decaying average of partial gradients to change the step size for each parameter.
@@ -94,13 +90,11 @@ The drawback of AdaGrad is overcome by using a decaying moving average allowing 
 
 RMSProp takes the learning rate and smooths it down by an average. This strategy's pseudocode appears like this:
 
-$$
-K = 0\\
-for\; each\; iteration\; i\\
-compute\; dW\\
-K = \beta K + (1- \beta)dW^2\\
-W = W- \alpha \frac{dW}{(\sqrt{S} + \epsilon)}
-$$
+$K = 0$
+$for\; each\; iteration\; i$
+$compute\; dW$
+$K = \beta K + (1- \beta)dW^2$
+$W = W- \alpha \frac{dW}{(\sqrt{S} + \epsilon)}$
 
 ### AdaGrad
 When employing an adaptive gradient, you'll have to adjust the learning rate for parameters at each iteration based on where they're found. The learning rate equals squared times the square root of that number ($\gamma^2*\sqrt{N}$). This method works.
