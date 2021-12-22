@@ -2,11 +2,11 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/devops-pipelines-automation-with-cloud-build-and-triggers/
+url: /devops-pipelines-automation-with-cloud-build-and-triggers/
 title: DevOps Pipeline Automation with Google Cloud Build and Triggers
 description: This tutorial will be an introduction to DevOps pipeline automation with Google Cloud Platform's Cloud Build and Container Registry. The reader will build a simple Python Flask application and set up a pipeline for automating builds.
 author: francisca-adekanye
-date: 2021-12-15T00:00:00-23:00
+date: 2021-12-22T00:00:00-02:00
 topics: [Containers, API]
 excerpt_separator: <!--more-->
 images:
@@ -14,13 +14,14 @@ images:
   - url: /engineering-education/devops-pipelines-automation-with-cloud-build-and-triggers/hero.jpg
     alt: DevOps Pipeline Automation with Cloud Build and Triggers Hero Image
 ---
+
 DevOps is a set of practices or stages that every application goes through before and after deployment which ensures continuous integration and deployment (CI/CD) of the application. The CI/CD pipeline automates the process for the deployment of code changes to the specified type of environment.
 <!--more-->
 The Software Development Life Cycle (SDLC) in conjunction with the operations cycle makes the development and operations (known as DevOps). 
 
 Docker packages applications as Docker images and stores them into containers with their configurations defined within the `DockerFile`.
 
-Both the Google Cloud Platform's (GCP) [`Cloud Build`](https://cloud.google.com/build) and [Container Registry](https://cloud.google.com/container-registry) is used to build and manage the built docker images.
+Both the Google Cloud Platform's (GCP) [`Cloud Build`](https://cloud.google.com/build) and [Container Registry](https://cloud.google.com/container-registry) are used to build and manage the built docker images.
 
 ### Table of contents
 - [Pre-requisites](#pre-requisites)
@@ -46,10 +47,10 @@ To follow along with this tutorial with ease, one should have the following:
 ### Objectives
 In this tutorial, we will be learning how to automate DevOps pipelines using the GCP `Cloud Build`.
 
-By reading this article, you will gain experience with the following:
-- Define the stages of DevOps pipelines.
-- Make a repository for the application.
-- Create a Python application.
+By reading this article, you will gain experience in:
+- Defining the stages of DevOps pipelines.
+- Making a repository for the application.
+- Creating a Python application.
 - Cloud Shell usages for testing.
 - Building the Docker images.
 - Using GCP Container Registry to manage images.
@@ -118,7 +119,7 @@ Note that every project created is under an organization. A project has both `na
 
 Furthermore, we will make use of the cloud source repository provided.
 
-The cloud source repository acts as a store for the development codes. This service is very similar to that of platforms like Github, Gitlab, Bitbucket, and more.
+The cloud source repository acts as a store for the development code. This service is very similar to that of platforms like Github, Gitlab, Bitbucket, and more.
 
 Eventually, you will create a build trigger that starts a continuous integration pipeline when code is pushed to it.
 
@@ -236,7 +237,7 @@ git commit -a -m "Initial Commit"
 git push origin master
 ```
 
-On refreshing the repositories page, you must see the same files that we created in the local.
+On refreshing the repositories page, you must see the same files that we created locally.
 
 ### Cloud shell usages for testing
 The application can be tested using Cloud Shell by following the below steps:
@@ -249,7 +250,7 @@ sudo pip3 install -r requirements.txt
 ```
 - To run the program, type:
 
-```
+```bash
 python3 main.py
 ```
 
@@ -334,7 +335,7 @@ ENV PORT=80
 CMD exec gunicorn --bind :$PORT --workers 1 --threads 8 main:app
 ```
 
-### Manage Docker images with `Cloud Build` and Container Registry
+### Manage Docker images with Cloud Build and Container Registry
 The Docker image would be created and stored in the registry. This image would then be wrapped up with the start-up commands in the container.
 
 The `Cloud Build` is the infrastructure provided by the GCP for building Docker images. While the Container Registry stores the images built and can be accessed from there.
@@ -442,8 +443,7 @@ git push origin master
 
 ### Build changes testing
 - When the build completes, click on it to see its details.
-- Under execution details, copy the image link.
-- The format should look something like `gcr.io/<your-project-id>/devops-repoxx34345xx`.
+- Under execution details, copy the image link. The format should look something like `gcr.io/<your-project-id>/devops-repoxx34345xx`.
 - Go to the `Compute Engine` service. As you did earlier, create a new virtual machine to test this image.  
 - Click on the box to deploy a container image to the virtual machine, and paste the copied image.
 - Select `Allow HTTP traffic`.
@@ -456,7 +456,7 @@ In this tutorial, you built a continuous integration pipeline using the Google C
 
 You learned how the automation of pipelines works using the build triggers when there is an update in the code repository. You also learned about the basics commands with git and how to spin up the Flask server from the ground up. 
 
-You can find the full code [here]([Code Repository](https://github.com/damikanye/flaskproject)).
+You can find the full code [here](https://github.com/damikanye/flaskproject).
 
 Happy coding!
 
