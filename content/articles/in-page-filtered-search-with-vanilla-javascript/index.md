@@ -1,229 +1,180 @@
 ### Introduction
-You should allow visitors to search through a lot of data on a website if you have a page to find what they're looking for.  In my definition of "search," I don't mean browsing through a database or even JSON data; I mean searching through the content of a single web page. Make it easier for our users to find what they want by giving them a search option that breaks down the website into different parts. If you want to learn more about In-Runner Filtered Hunt With Vanilla and how it works, keep reading!
+Searching for text on web sites with a lot of information is tough for users. This problem can be handled by providing a search option that filters the results down the page, making them easier to discover and read. In-page filtering is one answer to this problem.
+<!--more-->
+To understand this, will cover as much in this tutorial to help the reader understand in-page filtering and how we can apply it using the vanilla script, a barebones version of JavaScript that does not include any extra types of libraries.
 
 ### Table of content
-By the end of this tutorial, the reader will understand the following concepts:
-
 - [Introduction](#introduction)
 - [Table of content](#table-of-content)
-- [Overview of In-Page JavaScript Filtered quest](#overview-of-in-page-javascript-filtered-quest)
-- [A fundamental layout](#a-fundamental-layout)
-- [An example of a JavaScript basis](#an-example-of-a-javascript-basis)
-- [Creating a lag](#creating-a-lag)
-- [What about lookups that use fuzzier terms?](#what-about-lookups-that-use-fuzzier-terms)
-- [Difference between innerText and textcontent](#difference-between-innertext-and-textcontent)
+- [Prerequisites](#prerequisites)
+- [Objectives](#objectives)
+- [Overview of In-Page Filtering Search](#overview-of-in-page-filtering-search)
+- [Create Sample Web Page](#create-sample-web-page)
+- [Creating Time Delay](#creating-time-delay)
+- [Fuzzy Searches](#fuzzy-searches)
+  - [Using a hidden element](#using-a-hidden-element)
+  - [Searching through an attribute](#searching-through-an-attribute)
 - [Caveat](#caveat)
 - [Conclusion](#conclusion)
 
-### Overview of In-Page JavaScript Filtered quest
-You may already be familiar with JavaScript. A large part of this trip's responsiveness javaScript will take care of it. It'll;
-- keep track of all the material we need to examine,
-- keep an eye on what a client writes into the inquiry box,
-- route the accessible components' `innerText`,
-- check to see if the text contains the search word (.incorporates() is the big one! ), and
-- Toggle the permeability of the (parent) components, depending on whether they contain the query phrase or not. 
+### Prerequisites
+To follow through this tutorial the reader should:
+- Have a basic understanding of the fundamentals of HTML and CSS.
+- Have basic knowledge of JavaScript.
 
-Okay, we've covered our bases! We should get to work right away.
+### Objectives
+By the end of this tutorial,the following is expected:
+- Understand overview of in-page filtered search 
+- Know how to create sample web page
+- Know how to create time delay
+- Understand fuzzy searches
+- Getting to know caveat
 
-### A fundamental layout
-Let's admit we get a FAQ file. A'cards' with a label and accompanying text is there for each problem:
+### Overview of In-Page Filtering Search
+**In-page filtering**- is a type of search technology that filters down the web page content, making matching results easier to find and read more so on pages with a lot of information.
+JavaScript will handle all of the interactivity in this tutorial by;
+- Locating all of the site information that the users want to browse through.
+- Monitoring the user's input in the search box and filtering the `innerText` of the searchable elements.
+- Testing if the text includes the search term and returns the query results.
+
+To follow through will create a sample web page to illustrate this concept of In-page filtering search using vanilla JavaScript.
+
+### Create Sample Web Page
+To understand this, let's create a simple web page with a sample of frequently asked questions with the code snippet below.
 
 ```html
-
-<!DOCTYPE html>
-
-<html lang="en">
-
-<head>
-
-   <meta charset="UTF-8">
-
-   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-
-   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-   <title> Vanilla Javascript filtered search</title>
-
-</head>
-
-<body>
-
-   <h3>Questions and Answers Section</h3>
-
-   <div class="Crds">
-
-       <h5>identity Representation</h5>
-
-       <span>It's been around for five centuries, and it hasn't altered much at all since the advent of computerized typesetting.As a result of this, it gained widespread recognition.</span>
-
-   </div>
-
-   <div class="Crds">
-
-       <h5>Discover all</h5>
-
-       <span>It's been around for five centuries, and it hasn't altered much at all since the advent of computerized typesetting.As a result of this, it gained widespread recognition.</span>
-
-   </div>
-
-   <div class="Crds">
-
-       <h5>Why we do it</h5>
-
-       <span>It's been around for five centuries, and it hasn't altered much at all since the advent of computerized typesetting. As a result of this, it gained widespread recognition..</span>
-
-   </div>
-
-   <div class="Crds">
-
-       <h5>Collaberation Involved</h5>
-
-       <span>It's been around for five centuries, and it hasn't altered much at all since the advent of computerized typesetting. As a result of this, it gained widespread recognition.</span>
-
-   </div>
-
-</body>
-
-</html>
+<h1>FAQ Section</h1>
+<div class="cards">
+  <h3>What is Paradise Island?</h3>
+  <p>It's where Wonder Woman comes from.</p>
+</div>
+<div class="cards">
+  <h3>Who were Batman's parents?</h3>
+  <p>Thomas Wayne and Martha Wayne.</p>
+</div>
+<div class="cards">
+  <h3>What is Kryptonite?</h3>
+  <p>It's Superman's weakness</p>
+</div>
+<div class="cards">
+  <h3>What is Eye of Agamotto?</h3>
+  <p>It's a place where the Time Stone is hidden in Doctor Strange</p>
+</div>
+<div class="cards">
+  <h3>Learn more</h3>
+  <p>Want to learn more about us?</p>
+</div>
 ```
-
-Be prepared for a flurry of inquiries on the subject.
-
-To get ourselves ready for the intuitiveness, we'll only use one line of CSS. When we go to JavaScript, we'll have a class that we can add/remove based on the current situation:
-
+In some scenarios, the page may contain a lot of questions. When we come to the JavaScript, we'll use the CSS code below to add/remove depending on the search circumstance to get ready for the interaction.
 ```css
-
-.hidden-element {
-
-       visibility: hidden;
-
-   }
+.is_hidden {
+   display: none;
+    }
 ```
-It would be a good idea to include a query input that triggers when it associates with:
+We then add a search box together with its event that will fire when the user tries to get any search results.
 
 ```html
-
-<label for="searchArea">search</label>
-
-   <input type="search" name="srch" id="queryBox" oninput="queryContent()">
+<label for="searchbox">Search</label>
+<input 
+  type="search" 
+  oninput="Search()" 
+  id="searchbox" 
+>
 ```
-
-### An example of a JavaScript basis
-Finally, here's the JavaScript that handles the rest!
+To do everything, we use the JavaScript Code below;
 
 ```javascript
-
-let queryContent = () => {
-
-       let Crds = document.querySelectorAll('.Crds');
-
-       let query = document.getElementById('queryBox').value;
-       let i = 0;
-       while(i < cards.length){
-         if (Crds[i].innerText.toLoweCase()
-
-               .includes(query.toLowerCase())) {
-
-               Crds[i].classList.remove('hidden');
-
-           } else 
-
-               Crds[1].classList.add('hidden');
-
-           }
-       }
-       i++;
-   }
-```
-
-You may interpret the code by going through it line by line. It keeps track of every cards and the information it contains and retains a record of it. Whenever a hunt event begins, it scans all the cards to see whether the specified text is there. To display the card, the. The -covered-up character must be removed; if not, the class remains in place, and the card stashes away.
-
-### Creating a lag
-So that our JavaScript doesn't run too many times, we'll only do our live Search work after lifting for "X" seconds.
-
-```html
-
-<label for="searchArea">search</label>
-
-   <input type="search" id="searchArea">
-```
-
-```javascript
-
-let timer;
-
-   let interval = 400;
-
-   let inptBox = document.getElementById('searchArea');
-
-   inptBox.addEventListener('keyup', () => {
-
-       clearTimeout(timer);
-
-       timer = setTimeout(queryContent, interval);
-
-   });
-
-```
-
-### What about lookups that use fuzzier terms?
-For example, suppose you need to read through a piece of content that the customer won't notice. The idea is like a fluffy hunt, where related catchphrases return a similar outcome as a precise match. There is an increase in the number of cards used to "match" queries. These two options are available to you. We'll begin with an approach like a "secret range," but with catchphrases in place of the numbers:
-
-```html
-
-<div class="Crds">
-
-       <h5>Why we do it</h5>
-
-       <span>It's been around for five centuries, and it hasn't altered much at all since the advent of computerized typesetting. As a result of this, it gained widespread recognition..</span>
-
-       <small class="hidden-element">secret</small>
-
-   </div>
-```
-
-Reloading our liveSearch results is the next step, instead of using `.innerText`, we'll use `.textContent` to include tucked-away parts.
-
-```javascript
-while(j < sampleCrds.length){
-  if (cards[i].textContent.toLowerCase().includes(query.toLowerCase())) {
-
-           sampleCrds[1].classList.remove('hidden-element');
-
-       } else {
-
-           cards[i].classList.add('hidden-element');
-
-       }
-       j++;
+function Search() {
+  // Locate the card elements
+  let cards = document.querySelectorAll('.cards')
+  // Locate the search input
+  let search_query = document.getElementById("searchbox").value;
+  // Loop through the cards
+  for (var i = 0; i < cards.length; i++) {
+    // If the text is within the card...
+    if(cards[i].innerText.toLowerCase()
+      // ...and the text matches the search query...
+      .includes(search_query.toLowerCase())) {
+        // ...remove the `.is-hidden` class.
+        cards[i].classList.remove("is_hidden");
+    } else {
+      // Otherwise, add the class.
+      cards[i].classList.add("is_hidden");
+    }
+  }
 }
 ```
-Contingent upon your necessities, you could place your watchwords in another property.
 
-### Difference between innerText and textcontent
-- **Node.textcontent**
+The code above finds and saves references to all the cards and the input. When a user initiates a search, the system runs through all of the cards and determines whether the text is contained within the card. If the text in the card matches the search query, the `.is_ hidden` class is removed, and the card is shown; if it doesn't, the class remains, and the card is hidden.
 
-`TextContent` is a property of the Node interface that contains `textcontent` shared across a `node` and its  successors.
+### Creating Time Delay
+To ensure that our script doesn't run too many times and slow down the page, we will run our `Search` function only after waiting for a few seconds using the code below;
+```JavaScript
+let Timer;        
+let Interval = 500; // Half a second
+let searchInput = document.getElementById('searchbox');
+searchInput.addEventListener('keyup', () => {
+  clearTimeout(Timer);
+  Timer = setTimeout(Search, Interval);
+});
+```
+We then delete the input event on the search input.
+```HTML
+<label for="searchbox">Search</label>
+<input type="search" id="searchbox">
+```
 
-- **Difference from innertext**
+### Fuzzy Searches
+These are searches that return the same result as an exact match when using related keywords. This increases the number of cards that could potentially "match" a search query.
+There are two options for doing so:
+#### Using a hidden element
+Take, for example, a keyword-filled span. The code below will be used to use the hidden element:
+```html
+<div class="cards">
+ <h3>What is Paradise Island?</h3>
+  <p>It's where Wonder Woman comes from.</p>
   
-Don't misleads the distinctions between Node.`textContent` and HTMLElement.`innerText`; they are not exclusive. Although the names appear to be identical, there are significant differences:
-- Including the `script` and style elements, `textContent` obtains the content of all the components in the document. 
-`InnerText`, only displays elements that are "human-readable."
-- `textContent` provides a list of all the elements contained within the `node`. `innerText`, is mindful of styling and will not return the text of components that have been "hidden."
-
-- **Difference from innerhtml**
-
-Element. Exactly as its name suggests, `innerHTML` returns HTML. `InnerHTML` can be used to get or write text within an element, yet, `textContent` is more performant because its value is not parsed as HTML and hence has a smaller memory footprint.
-Furthermore, the use of `textContent` can help to prevent cross-site scripting (XSS) assaults.
+    <!-- Put any keywords here -->
+   <span class="is_hidden">secret</span> 
+</div>
+```
+> NOTE: For the above to work ,we will update our `Search` function and we'll use `.textContent` instead of `.innerText` to incorporate all hidden components.
+```JavaSCript
+for (var i = 0; i < cards.length; i++) {
+        if(cards[i].textContent.toLowerCase()
+                .includes(search_query.toLowerCase())) {
+            cards[i].classList.remove("is_hidden");
+        } else {
+            cards[i].classList.add("is_hidden");
+        }
+    }
+```
+#### Searching through an attribute
+Here we put the keywords directly on the attribute's value and if a user tries to type a word in the search box, those queries match what it contained in the attribute's value.
+```JavaSCript
+for (var i = 0; i < cards.length; i++) {
+  if(cards[i].getAttribute('alt').toLowerCase()
+    .includes(search_query.toLowerCase())) {
+      cards[i].classList.remove("is-hidden");
+  } else {
+    cards[i].classList.add("is-hidden");
+  }
+}
+```
+> NOTE: Because we want to search through the alt attributes in addition to what is really displayed on the page, we must alter `innerText` to `getAttribute('alt')` for the above method to function.
 
 ### Caveat
-Aside from that, this is not a search engine that uses a database or any other type of information feed. It will only function if you have all the searchable material on the **DOM** page and that content has before been rendered by the browser. So there you have it. It was a reminder.
+Is a type of search technology that only works when all the searchable content are in the DOM of the page that is already rendered.
+
+Get the example [here](https://github.com/Shee254/in-page-filtered-search-with-vanilla-javascript)
 
 ### Conclusion
-I like this procedure enough to use it on a creation site. Be that as it may, by what other method may you? Is this something you'd use? Although a FAQ page is a rising star, you may use it in any situation that requires sorting content. 
-Using the hidden information scam might even use a display of images to search at the alt label content of the images. 
+As we have seen, in-page filtering plays a crucial role in helping users to search for web content easily and quickly. Using vanilla JavaScript, we have been able to implement the above.
 
-Regardless, I trust your view as this supportive. 
+To summarize, we have:
 
+- Learned what in-page filtering is.
+- How to use the in-page filtered search in the vanilla script.
+- How to create time delay to avoid page downtime.
+- Learned about fuzzy searches and the various approaches to implementing them.
 Happy coding!
