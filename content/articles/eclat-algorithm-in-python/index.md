@@ -6,7 +6,7 @@ url: /eclat-algorithm-in-python/
 title: Getting Started with ECLAT Algorithm in Association Rule Mining
 description: This article will get you started with ECLAT Algorithm in Association Rule Mining.
 author: jackson-munyai
-date: 2021-12-22T00:00:00-21:00
+date: 2021-12-22T00:00:00-03:00
 topics: [Machine Learning]
 excerpt_separator: <!--more-->
 images:
@@ -14,20 +14,18 @@ images:
   - url: /engineering-education/eclat-algorithm-in-python/hero.png 
     alt: Getting Started with ECLAT Algorithm Example Image
 ---
+
 The goal in data mining is to find rules that predict an item based on the occurrence of other items in the transactions.
 <!--more-->
-
 Generally, to achieve this, we have two approaches;
-1. Generating the frequent itemsets
-Here, we generate all itemsets with greater support than the adopted minimum support.
-2. Rule Generation
-Generate a frequent high set from the frequent itemsets.
+1. Generating the frequent itemsets. Here, we generate all itemsets with greater support than the adopted minimum support.
+2. Rule Generation. We generate a frequent high set from the frequent itemsets.
 
 ### Prerequisites:
 To follow along with this article, the learner needs to be comfortable working with the following libraries in Python: Scikit-learn, Pandas, and Numpy.
 
 ### Introduction to ECLAT Algorithm
-As we aforementioned, the main idea in the association rule is to discover valid information and knowledge from a large dataset. Several algorithms have been developed over the years that make this activity as successful as possible. The major algorithm used includes:
+As we mentioned before, the main idea in the association rule is to discover valid information and knowledge from a large dataset. Several algorithms have been developed over the years that make this activity as successful as possible. The major algorithm used includes:
 
 1. Apriori Algorithm
 2. Eclat Algorithm
@@ -36,10 +34,10 @@ As we aforementioned, the main idea in the association rule is to discover valid
 The first algorithm to be introduced in the data mining domain was the Apriori algorithm. However, this algorithm had some limitations in discovering frequent itemsets. Its limitations created a need for a more efficient algorithm.
 
 Later, the Eclat algorithm was introduced to deal with the weakness of the Apriori algorithm. Between these two algorithms, we have significant differences:
-- Unlike the Apriori algorithm, which is applicable with *horizontal dataset*, the Eclat algorithm is applicable only with a dataset in *verticle dataset* format.
+- Unlike the Apriori algorithm, which is applicable with *horizontal dataset*, the Eclat algorithm is applicable only with a dataset in *vertical dataset* format.
 - In the Eclat algorithm, only the *support* and confidence is counted as confidence. As in the case of Apriori, it is not computed. Here, the *Support* is nothing but the number of times an item is in a database.
 
-At each stage of the generated database, the Eclat algorithm uses the current generated dataset to learn frequent itemset, unlike the Apriori which scans the original database repeatedly. Since the Eclat scan over the database once, it is much faster than the Apriori algorithm.
+At each stage of the generated database, the Eclat algorithm uses the current generated dataset to learn frequent itemset, unlike the Apriori which scans the original database repeatedly. Since the Eclat scans over the database once, it is much faster than the Apriori algorithm.
 
 However, this doesn't mean the Apriori algorithm is worse. On the contrary, when dealing with a larger dataset, Apriori tends to shine best. Thus, the Eclat algorithm works better with small and medium datasets.
 
@@ -138,7 +136,11 @@ The rule (herb & pepper) has the highest support from the output above. The seco
 The link to the source code is provided [here](https://github.com/jacksonjate1/files/blob/main/eclat_algorithm.ipynb).
 
 ### Conclusion
-This article introduced association rule mining and broke it down to its approaches. We mentioned the top three algorithms mainly used in this field to discover knowledge from the data: Apriori, Eclat, and FP growth algorithms. First, we saw the limitation of the Apriori algorithm, and later, we were able to discuss how the Eclat algorithm solves this. We also discussed how these two algorithms differ before talking about the pros and cons of the Eclat algorithm. Later, we implemented the Eclat algorithm by adapting the Apriori algorithm to improve accuracy.
+This article introduced association rule mining and broke it down to its approaches. 
+
+We mentioned the top three algorithms mainly used in this field to discover knowledge from the data: Apriori, Eclat, and FP growth algorithms. First, we saw the limitation of the Apriori algorithm, and later, we were able to discuss how the Eclat algorithm solves this. 
+
+We also discussed how these two algorithms differ before talking about the pros and cons of the Eclat algorithm. Later, we implemented the Eclat algorithm by adapting the Apriori algorithm to improve accuracy.
 
 ---
 Peer Review Contributions by: [Willies Ogola](/engineering-education/authors/willies-ogola/)
