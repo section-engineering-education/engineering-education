@@ -32,8 +32,8 @@ To follow along, you need some some knowledge of decorators and object-orented p
 - [Using a metaclass to fix an issue](#using-a-metaclass-to-fix-an-issue)
 - [Conclusion](#conclusion)
 
-### What are metaclasses?
-Metaclasses are classes whose instances are other classes used to build objects. Metaclasses can be created by modifying how classes are instantiated. 
+### What are metaclass?
+A metaclass in Python is a class of a class that defines how a class behaves. A class is itself an instance of a metaclass. A class in Python defines how the instance of the class will behave.
 
 We need to add additional code or processes to the Metaclass framework. Although end-users seldom use Metaclasses, they are essential in some programming problems.
 
@@ -74,7 +74,7 @@ print("Sort of Town_object is:", type(Town_object))
 Sort of Town_object is: <class '__main__.Town'>
 ```
 
-A class is an instance of metaclass since it is an object in Python. Therefore, various class types can be found via the metaclass. This, therefore, establishes new classes and class objects. For instance, `town's` type can be found as below:
+In Python, a class is also an object, and as such, it is an instance of Metaclass, just like other objects. Metaclasses are a unique form of class that is in charge of constructing classes and Class objects. If a person searches for the type of the `City` class, for example, they will discover that it is `type.`
 
 ```Python
 class Town:  
@@ -118,7 +118,7 @@ Although we have equally useful functions, we need metaclasses for the following
 - It is possible to hook on `new`, `init`, and `call` hooks. 
 
 ### Instances to use metaclasses
-The general public seldom utilizes metaclasses since they are primarily employed in complex scenarios. However, metaclasses may be used in the following limited number of situations:
+The developers seldom utilizes metaclasses since they are primarily employed in complex scenarios. However, metaclasses may be used in the following limited number of situations:
 - While generating down the hierarchies for an inheritance, you can employ a metaclass. This will have an impact on all subclasses as well. If the user finds themselves in such a scenario, they can use the metaclass.
 - To change the class automatically, they can utilize a metaclass when it is made.
 - Assuming the user is an application programming interface designer, they can utilize metaclasses for that reason.
@@ -130,9 +130,11 @@ The user-created metaclass must inherit the type metaclass and, in most cases, o
 
 - `__int__()`: This function enables the initialization of the objects that have been created, and therefore, to call the object, you have to pass it as an argument
 
-The `type()` function may be used directly by the user to construct classes, and there are possibilities of utilizing this function in different ways.
+The type() function may be used directly by users to define classes. You may use the type() function in the following ways:
 
-The preceding example shows that the type may be sent in as a single parameter. It may be called with three different arguments by the user. Creating the class will be done by this. Some of the arguments include:
+1. The user may call it with just one parameter, as demonstrated in the preceding example, and it will return the type.
+2. The type() function may be called with three arguments by the user. The class will be created by it (type() function). It takes the following arguments:
+
 - Class name
 - The tuple of base classes that the class has inherited
 - Class dictionary: Some functions and variables occupy this namespace, which the class will use itself.
