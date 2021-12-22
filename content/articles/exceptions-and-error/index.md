@@ -38,8 +38,7 @@ To better understand this article, the reader is expected to have a basic unders
 - [Conclusion](#conclusion)
 - [Further reading](#further-reading)
 
-Python 3 has 63 defined built-in exceptions, with all of them arranged to form a “tree-type” of hierarchy. Some of these exceptions are more general than others, as they include other exceptions, while others are entirely concrete as they represent only themselves. 
-
+Python 3 has 63 defined built-in exceptions, with all of them arranged to form a “tree-type” of hierarchy. Some of these exceptions are general  while others are general while others are concrete. The general ones include other exceptions within them while the concrete ones exist independently.
 ![exception_hierarchy](/education-engineering/exceptions-and-error/exception_hierarchy.png)
 
 [Source](https://w3.cs.jmu.edu/lam2mo/cs240_2014_08/lab05-exceptions.html)
@@ -52,20 +51,20 @@ This article will focus more on the “Exception” branch because most of the e
 ### Keyboard interrupt error
 The keyboard interrupt error is raised when a user hits the hot-key “ctrl-c of ctrl-z”. This error is raised no matter how much the user wants to avoid it and at any program execution stage.  We will cover how to handle this error in a subsequent section.
 
-### Python Exceptions
-The exception error is the branch with the most errors you will encounter more often as a programmer while working with Python. This branch is subdivided into: attribute error, EOR error, name error, lookup error, OS error,  type-error, and value. 
+### Python exceptions
+The exception error is the branch with the most errors you will encounter more often as a programmer while working with Python. This branch is subdivided into attribute error, EOR error, name error, lookup error, OS error,  type-error, and value. 
 
 Here, we will look at attribute error, name error, type-error, arithmetic error, and its branches, and then lookup error and its branches (index error and key error). 
 
 ![The Exception branch](/education-engineering/exceptions-and-error/except.png)
 The image above shows the exception branch in Python.
 
-#### The Attribute error
+#### The attribute error
 This error is raised when you call an attribute that a particular object or data type does not support. For example, if you call the  `key()` method on a list, it will raise an attribute error because the list does not support the  `key()` method; instead, it is a dictionary method that returns the keys of the specified dictionary. 
 
 So whenever you get an attribute error, it shows that you are using the wrong attribute on a particle data type or object.
 
-#### The Name error
+#### The name error
 Name error is raised when a wrong variable name is called. For instance,  if the name called has not been declared or when a wrong function name is called. 
 
 This means that a variable or function can only be called or used after being created.  This error can also be raised when you define a variable in a local scope and try to access it in the global scope.  
@@ -75,13 +74,12 @@ Names  =  [“James”, “Peter”, “June”, “Jane”]
 names.lower()
 ```
 ![Name Error](/education-engineering/exceptions-and-error/nameerror.jpg)
-Image by author
 The image above shows a name error received for using the wrong variable name.
 
 You will get a **name error** when you run the code above because the list created was stored in variable “Names”, not “names”. Python is case sensitive, so it sees “Names” and “names” as two different variables, with one declared the other undeclared.
  
 ![Local and variable scope](/education-engineering/exceptions-and-error/local.jpg)
-Image by author
+
 
 In the image above, we got a name error because the variable called was declared within a function, and we tried to access it outside the function, which is not allowed in Python. 
 
@@ -109,8 +107,7 @@ When we run this code, we will get a ZeroDivision error. In mathematics, this is
 ![ZeroDivisionError](/education-engineering/exceptions-and-error/zero.jpg)
 
 #### Lookup error
-Lookup error is the base class for key error and index error. 
-The key error is raised when a wrong key is used to access a dictionary value, i.e., using a key that is not in the dictionary. This error means that the key you use to access a dictionary is wrong. 
+Lookup error is the base class for key error and index error. The key error is raised when a wrong key is used to access a dictionary value, i.e., using a key that is not in the dictionary. This error means that the key you use to access a dictionary is wrong. 
 
 ```python
  gender = { “June’ : “female”, “John” : “male” , “Kim”: “female”}
@@ -210,9 +207,7 @@ except second exception:
 except: 
 ```
 
-If the try block encounters an exception as specified in the first except block, that block will handle it. Likewise, the “except second exception” will handle it if it raises the second exception. 
-
-However, if the exception raised was not specified by either of these blocks, the last block will be executed. Though this block is optional, it is essential. 
+If the try block encounters an exception as specified in the first except block, that block will handle it. Likewise, the “except second exception” will handle it if it raises the second exception. However, if the exception raised was not specified by either of these blocks, the last block will be executed. Though this block is optional, it is essential. 
 
 ```python
 try:
@@ -251,7 +246,7 @@ print(“Goodbye”)
 
 If any of the exceptions listed within the parenthesis is encountered, the print statement within the except block will be executed, if the exception encountered is not among the listed exceptions, the last **except** block will be executed, and if there is no exception in the **try** block, the last **print** statement will be executed. 
 
-### The Finally block
+### The finally block
 Optionally, Python provides you with a “finally block”. This block is executed no matter the outcome of the **try block**; meaning whether the ** captured the exceptions raised by your interpreter try block** or not, the **finally block** will be executed. 
 
 ```python
