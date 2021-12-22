@@ -1,5 +1,12 @@
 ### Article checklist
 
+## Attention
+## Our **Peer Reviewer and Content Moderator teams do NOT provide any revisions services.** All revisions and edits should be completed on your own forked repo (as to not take up room in the queue) in order for our team to review them all in a timely manner. 
+
+**ANY ARTICLE SUBMITTED WITH GLARING ERRORS WILL BE IMMEDIATELY CLOSED.**
+
+>As a rule of thumb - please be sure to only submit articles (pull requests) that are fully polished and ready to be published. Be sure to go through our resources documents for extra and 3rd party (vetted) resources to help improve overall technical writing.
+
 #### Pre-submission checks
 > Please ensure that you have only one open topic suggestion (issue) + in-review article (linked pull request) at a time. This will ensure that we complete the review process in a timely manner from inception to publishing
 
@@ -18,7 +25,7 @@
 - [ ] Does your article provide enough value and detail about your topic? - **Articles should be clear, accurate, and fully explained.**
 - [ ] Can your article be understood by beginners? - **Assume the audience is smart but has no prior exposure to the common terminology in your article.**
 
-- [ ] Have you included a hero image that is 600x400 pixels and have the copyright to use it? - **Tools:** [Pixlr Image Editor](https://pixlr.com/e) for resizing and [Unsplash](https://unsplash.com) for Creative Commons images
+- [ ] Have you included a hero image that is **600x400 pixels**, under **300KB in size**, and have the copyright to use it? - **Tools:** [Pixlr Image Editor](https://pixlr.com/e) for resizing and [Unsplash](https://unsplash.com) for Creative Commons images
       
 #### Grammar & plagiarism checks
 - [ ] Have you spellchecked and grammar checked your article? - **Tools:** [Write&Improve](https://writeandimprove.com/?lang=en-GB) - [ProWritingAid](https://prowritingaid.com/) - [Grammarly](https://grammarly.com) 
