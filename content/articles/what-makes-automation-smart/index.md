@@ -1,7 +1,22 @@
-What makes automation smart?
+---
+layout: engineering-education
+status: publish
+published: true
+url: /what-makes-automation-smart/
+title: What makes automation smart?
+description: This article will discuss the primary technologies that make automation smart and discuss the value and the future of intelligent automation.
+author: bridget-mwikali
+date: 2021-12-22T00:00:00-19:30
+topics: []
+excerpt_separator: <!--more-->
+images:
+
+  - url: /engineering-education/what-makes-automation-smart/hero.jpg
+    alt: What makes automation smart Hero Image
+---
 
 Today's organizations are increasingly relying on automation systems to accomplish tasks. Automation improves productivity by reducing the labor force's workload. Automation interacts and executes processes previously designated for a human workforce efficiently and effectively.
-
+<!--more-->
 Advances in automation have led to the emergence of intelligent systems that facilitate the quick performance of basic and repetitive tasks. Intelligence automation combines [robotic process automation](/engineering-education/what-is-robotic-process-automation/) (RPA) with [artificial intelligence](/engineering-education/differences-between-artificial-intelligence-machine-learning-and-deep-learning/) (AI) to maximize automation for business organizations. The combination of several processes, including machine learning, AI, RPA, and several other core technologies, are responsible for making automation smart.
 
 This article will discuss the primary technologies that make automation smart and discuss the value and the future of intelligent automation.
@@ -88,3 +103,6 @@ Intelligence automation is improving business productivity. It also enhances the
 - [Introduction to Transfer Learning in NLP](/engineering-education/nlp-transfer-learning/)
 - [How Intelligent Automation is Powering Machine Vision](/engineering-education/how-intelligent-automation-is-powering-machine-vision/)
 - [Introduction to Robotic Process Automation](/engineering-education/what-is-robotic-process-automation/)
+
+---
+Peer Review Contributions by: [Mercy Meave](/engineering-education/authors/mercy-meave/)
