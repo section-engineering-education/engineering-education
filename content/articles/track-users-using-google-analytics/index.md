@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /track-individual-logged-in-users-using-google-analytics/
+url: /track-users-using-google-analytics/
 title: Track Individual Logged-In Users Using Google Analytics
 description: This tutorial will be a brief introduction to Google Analytics. The reader will learn how to track individual users and generate a statistical report for any website.
 author: nancy-muthoni
@@ -11,7 +11,7 @@ topics: [API]
 excerpt_separator: <!--more-->
 images:
 
-  - url: /engineering-education/track-individual-logged-in-users-using-google-analytics/hero.png
+  - url: /engineering-education/track-users-using-google-analytics/hero.png
     alt: Track Individual Logged-In Users Using Google Analytics Hero Image
 ---
 [Google Analytics](https://analytics.google.com/analytics/web/) is a free web analytics service that allows you to analyze in-depth detail about the visitors to your website.
@@ -55,14 +55,14 @@ In this step, log in to the [Google Analytics](https://analytics.google.com/anal
 
 Refer to the image below for help. Then, click the `Create Account` to create a new tracking account as shown:
 
-![google-analytics-admin](/engineering-education/track-individual-logged-in-users-using-google-analytics/google-analytics-admin.png)
+![google-analytics-admin](/engineering-education/track-users-using-google-analytics/google-analytics-admin.png)
 
 ### Create property
 A `property` in Google Analytics can be a website, mobile application, blog, or any piece of content that has its tracking ID.
 
 The following screen shows how you can create an account:
 
-![account-detail](/engineering-education/track-individual-logged-in-users-using-google-analytics/account-detail.png)
+![account-detail](/engineering-education/track-users-using-google-analytics/account-detail.png)
 
 Similarly, you can create a new property by clicking on `Create Property`.
 
@@ -73,7 +73,7 @@ This is the step where we are stepping into the `User Id` tracking.
 
 Generally, when you create a `view`, the `User Id` option is `OFF` by default. Now, you need to switch it `ON`, to track individual users:
 
-![analytics-view-with-user-id](/engineering-education/track-individual-logged-in-users-using-google-analytics/analytics-view-with-userid.png)
+![analytics-view-with-user-id](/engineering-education/track-users-using-google-analytics/analytics-view-with-userid.png)
 
 ### Create custom dimensions to track user types
 `Custom Dimensions` and `Custom Metrics` are set by your Analytics account's default dimensions and metrics.
@@ -90,9 +90,9 @@ For example, consider we have different users like general users who do not log 
 
 In any case, you need to create a dimension as a `User Type` that supplies different user types as values.
 
-![google-analytics-custom-dimension-user-type](/engineering-education/track-individual-logged-in-users-using-google-analytics/google-analytics-custom-dimension-user-type.png)
+![google-analytics-custom-dimension-user-type](/engineering-education/track-users-using-google-analytics/google-analytics-custom-dimension-user-type.png)
 
-![analytics-custom-dimentions](/engineering-education/track-individual-logged-in-users-using-google-analytics/analytics-custom-dimension.png)
+![analytics-custom-dimentions](/engineering-education/track-users-using-google-analytics/analytics-custom-dimension.png)
 
 ### Modify tracking code
 In website analytics, a `tracking code` is a snippet of JavaScript code that tracks the activity of a website user by collecting data and sending it to the analytics module.
@@ -173,13 +173,13 @@ How are we going to extract that information back?
 
 Google provides a `User Explorer` where we can create custom reports:
 
-![google-analytics-customs-reports](/engineering-education/track-individual-logged-in-users-using-google-analytics/google-analytics-custom-report.png)
+![google-analytics-customs-reports](/engineering-education/track-users-using-google-analytics/google-analytics-custom-report.png)
 
-![google-analytics-custom-report-with-user-type](/engineering-education/track-individual-logged-in-users-using-google-analytics/google-analytics-custom-report-with-user-type.png)
+![google-analytics-custom-report-with-user-type](/engineering-education/track-users-using-google-analytics/google-analytics-custom-report-with-user-type.png)
 
 Let us check the Google Analytics provided `User Explorer` report. You can see the user id that is passed from the application.
 
-![google-analytics-user-explorer](/engineering-education/track-individual-logged-in-users-using-google-analytics/google-analytics-user-explorer.png)
+![google-analytics-user-explorer](/engineering-education/track-users-using-google-analytics/google-analytics-user-explorer.png)
 
 > When you use this feature, you need to use it responsibly. You should get explicit permission from the user highlighting that you are using this user-id feature. Ensure that it is legal in your region.
 
@@ -193,7 +193,7 @@ Irrespective of whether you are an e-commerce website or an informative blog, yo
 Given below are some reasons as to why you should use Google Analytics to get better insights into your website and visitors:
 
 #### It's free
-![google-analytics-is-free](/engineering-education/track-individual-logged-in-users-using-google-analytics/google-analytics-is-free.png)
+![google-analytics-is-free](/engineering-education/track-users-using-google-analytics/google-analytics-is-free.png)
 
 You must have heard the saying that, “There is no free lunch.” But, in the case of Google Analytics, it is not true.
 
@@ -202,7 +202,7 @@ Google does not charge you anything for using Google Analytics. You don't have t
 This way, you can invest a decent budget in some other important resources. Furthermore, it provides you with important information, numbers, and statistics that you need to maximize your website's performance for free.
 
 #### Automatic collection of data
-![automatic-data-collection](/engineering-education/track-individual-logged-in-users-using-google-analytics/automatic-data-collection.png)
+![automatic-data-collection](/engineering-education/track-users-using-google-analytics/automatic-data-collection.png)
 
 Google Analytics has a feature that reduces the work required to put Google Analytics data into Google Docs, Sites, or Spreadsheets.
 
@@ -225,7 +225,7 @@ Google Analytics also has a powerful integration with Google AdWords. When you l
 Hence, you can use Google Analytics with all your devices to easily implement data to other well-known Google products like Google AdWords and Google Search Console.
 
 #### Ability to measure internal site search
-![internal-site-search](/engineering-education/track-individual-logged-in-users-using-google-analytics/internal-site-search.png)
+![internal-site-search](/engineering-education/track-users-using-google-analytics/internal-site-search.png)
 
 The internal site reveals what potential customers are looking for after arriving on your website. It also reveals the area of growth opportunity by uncovering the situations where certain situations may be unclear or lacking on your site.
 
@@ -246,21 +246,21 @@ With Google Analytics, you can uncover valuable data about your audience to dete
 The Audience section provides a lot of information about the people who visit your website, like their age, gender, interests, devices, and location. It also gives you data on how the visitors were driven to your website.
 
 - Age: It is one of the best indicators of where your audience spends most of the time. Knowing your website audience's average age can help you optimize your website accordingly.
-![age](/engineering-education/track-individual-logged-in-users-using-google-analytics/age.png)
+![age](/engineering-education/track-users-using-google-analytics/age.png)
 - Gender: The gender variable helps you describe your audience. Audience's gender plays an important role in how they communicate and engage online.
-![gender](/engineering-education/track-individual-logged-in-users-using-google-analytics/gender.png)
+![gender](/engineering-education/track-users-using-google-analytics/gender.png)
 Interests: With Google Analytics, you can very well understand your audience's interests and can optimize your website by their interests.
 - Device: Google Analytics also gives you views of what kind of device are they using. With this information, you can help your website be more responsive on various devices.
-![device](/engineering-education/track-individual-logged-in-users-using-google-analytics/device.png)
+![device](/engineering-education/track-users-using-google-analytics/device.png)
 - Not only this, with Google Analytics, you can also have a view on which kind of smartphone or tablet your audience uses.
-![mobile-device-info](/engineering-education/track-individual-logged-in-users-using-google-analytics/mobile-device-info.png)
+![mobile-device-info](/engineering-education/track-users-using-google-analytics/mobile-device-info.png)
 - Location: Understanding where your customers come from helps you formulate marketing strategies according to the physical location of your potential customers.
-![location](/engineering-education/track-individual-logged-in-users-using-google-analytics/location.png)
+![location](/engineering-education/track-users-using-google-analytics/location.png)
 - The geolocation feature of Google Analytics not only lets you know the country from where your visitors are coming from but the city from where they are and even the language they use.
-![language](/engineering-education/track-individual-logged-in-users-using-google-analytics/language.png)
+![language](/engineering-education/track-users-using-google-analytics/language.png)
 
 #### To understand which social platforms to target
-![target-social-paltforms](/engineering-education/track-individual-logged-in-users-using-google-analytics/target-social-platforms.png)
+![target-social-paltforms](/engineering-education/track-users-using-google-analytics/target-social-platforms.png)
 
 Social platforms are a great way to drive traffic and engage potential customers. For example, with Google Analytics, you can view what catches the users' attention and then place the ad accordingly.
 
@@ -278,7 +278,7 @@ Google Analytics helps you keep track of all the content that receives views, sh
 Furthermore, it generates a breakdown of each of your blog posts' page views. You can rework the top-performed blog to generate more traffic.
 
 #### To check if you are achieving goals
-![acheving-goals](/engineering-education/track-individual-logged-in-users-using-google-analytics/achieving-goals.png)
+![acheving-goals](/engineering-education/track-users-using-google-analytics/achieving-goals.png)
 
 The goals in Google Analytics help you track how much your business is moving ahead or progressing, and you can also assign several goals that will help you track the customer's journey based on their actions. There can be different goals, like making a purchase, filing a lead generation form, subscribing to newsletters, or downloading an ebook.
 
