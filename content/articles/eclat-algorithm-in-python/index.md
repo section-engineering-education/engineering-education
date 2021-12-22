@@ -85,7 +85,7 @@ Let's proceed and implement this algorithm in python.
 ### Python Implementation of the Eclat Algorithm
 To have the best rules, we shall adopt the Apriori algorithm in our implementation. To get started, we need to import the necessary libraries for this session.
 
-```python
+```bash
 # The first thing is to install this package
 !pip install apyori
 ```
