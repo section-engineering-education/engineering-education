@@ -1,6 +1,22 @@
-### Getting Started with Singular Value Decomposition in Python
-Singular Value Decomposition(SVD) is a powerful technique widely used in solving dimensionality reduction problems. This algorithm works with a data matrix of the form, `m x n`, i.e., a rectangular matrix. 
+---
+layout: engineering-education
+status: publish
+published: true
+url: /singular-value-decomposition-in-python/
+title: Getting Started with Singular Value Decomposition in Python
+description: In this article the reader will understand the concept of Singular Value Decomposition and implement it using Python.
+author: faith-mwangangi
+date: 2021-12-22T00:00:00-23:44
+topics: [Languages]
+excerpt_separator: <!--more-->
+images:
 
+ - url: /engineering-education/singular-value-decomposition-in-python/hero.png
+   alt: Singular Value Decomposition Image
+---
+
+Singular Value Decomposition(SVD) is a powerful technique widely used in solving dimensionality reduction problems. This algorithm works with a data matrix of the form, `m x n`, i.e., a rectangular matrix. 
+<!--more-->
 The idea behind the SVD is that a rectangular matrix can be broken down into a product of three other matrices that are easy to work with. This decomposition is of the form as the one shown in the formula below;
 
 $A=U \Sigma V^T$
@@ -32,9 +48,7 @@ Columns of V are orthonormal eigenvectors of $A^TA$ and are called the right sin
 
 The matrix $\Sigma$ is a diagonal matrix whose values are square roots of eigenvalues of the matrix U or V in decreasing order. These diagonal entries of matrix $\Sigma$ are called the singular values.
 
-To reinforce our understanding of the above discussion, consider the following example.
-
-Suppose we are given the matrix A as follows;
+To reinforce our understanding of the above discussion, consider the following example. Suppose we are given the matrix A as follows;
 
 $A= \begin{bmatrix}
     3&1&1\\
@@ -239,7 +253,7 @@ The real-world data are usually more extensive and beyond our manual handling ca
 
 To demonstrate how to carry out such computations on a computer, i.e., decomposing a matrix into more efficient components, we shall use a simple matrix and see how we can decompose it. So, let us learn how we perform these operations using python.
 
-### Implementing Singular Value Decomposition
+### Implementing singular value decomposition
 This implementation will use the following matrix;
 $A= \begin{bmatrix}
     3&1&1\\
@@ -285,9 +299,7 @@ V_T=
 ```
 The reason for decomposing a matrix is to represent it computationally efficiently so that the original matrix recovered quickly from these singular matrices with the least information loss. 
 
-Let us try this out and see if we obtain the same matrix upon multiplying the three matrices of the SVD together.
-
-Before we do this, it is essential to note that the S vector does not fit the rule of matrix multiplication. Thus we first convert it into a diagonal matrix as follows.
+Let us try this out and see if we obtain the same matrix upon multiplying the three matrices of the SVD together. Before we do this, it is essential to note that the S vector does not fit the rule of matrix multiplication. Thus we first convert it into a diagonal matrix as follows.
 
 ```python
 # Creating S diagonal matrix
@@ -331,3 +343,6 @@ To wind up, we look at the SVD algorithm in this article. First, we learned the 
 Finally, since we shall not be handling data manually, we demonstrated how to perform these operations in python. The SVD has a wide application in the industry, i.e., at Google, it is used in the PageRank algorithm and in the image recognition activities like previously was the case with the Facebook image recognition model.
 
  Since this article is meant to get you started with the Singular Value Decomposition algorithm, soon, we shall be looking at its application in image recognition. However, till then, stay tuned!
+
+---
+Peer Review Contributions by: [Mercy Meave](/engineering-education/authors/mercy-meave/)
