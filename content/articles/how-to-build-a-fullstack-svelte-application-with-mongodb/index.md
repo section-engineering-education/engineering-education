@@ -66,7 +66,7 @@ To use the Nodemon artifacts, we need to modify the `package.json` file. To do t
 
 We will use the command above to run and restart the Node.js server that we will build.
 
-### Set up a primary express Todo server
+### Setting up a primary express Todo server
 Create an `src` directory within your `server` directory.
 
 ```bash
@@ -215,7 +215,7 @@ We will be writing three Svelte components;
 
 Go ahead and create `Todo.svelte`, `Todos.svelte`, and `AddTodo.svelte` files inside the `lib` directory and start setting up your component.
 
-#### Set up the Todo component
+#### Setting up the Todo component
 In the *Todo.svelte* file, start by creating a prop used to render data.
 
 ```svelte
@@ -281,7 +281,7 @@ article {
 }
 ```
 
-#### Set up the Todos component
+#### Setting up the Todos component
 In the `Todos.svelte` file, begin by importing the `onMount()` method and the `Todo` component.
 
 ```svelte
@@ -360,7 +360,7 @@ li {
 </style>
 ```
 
-#### Set up the AddTodo component
+#### Setting up the AddTodo component
 This component will provide a form where users will enter new todo details. In `AddTodo.svelte` file, add a function in the `script` section to handle `onsubmit`.
 
 ```svelte
