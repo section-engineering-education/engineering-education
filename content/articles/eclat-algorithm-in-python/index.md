@@ -6,7 +6,7 @@ url: /eclat-algorithm-in-python/
 title: Getting Started with ECLAT Algorithm in Association Rule Mining
 description: This article will get you started with ECLAT Algorithm in Association Rule Mining.
 author: jackson-munyai
-date: 2021-12-20T00:00:00-21:00
+date: 2021-12-22T00:00:00-21:00
 topics: [Machine Learning]
 excerpt_separator: <!--more-->
 images:
@@ -24,26 +24,26 @@ Here, we generate all itemsets with greater support than the adopted minimum sup
 Generate a frequent high set from the frequent itemsets.
 
 ### Prerequisites:
-To follow up with this article, the learner needs to be comfortable working with the following libraries in Python: Scikit-learn, Pandas, and Numpy.
+To follow along with this article, the learner needs to be comfortable working with the following libraries in Python: Scikit-learn, Pandas, and Numpy.
 
 ### Introduction to ECLAT Algorithm
-As we aforemebtioned, the main idea in the association rule is to discover valid information and knowledge from a large dataset. There are a number of algorithms that have been developed over the years that make this activity as successful as possible. The major algorithm used includes:
+As we aforementioned, the main idea in the association rule is to discover valid information and knowledge from a large dataset. Several algorithms have been developed over the years that make this activity as successful as possible. The major algorithm used includes:
 
 1. Apriori Algorithm
 2. Eclat Algorithm
 3. FP Growth Algorithm
 
-The first algorithm to be introduced in the Data Mining domain was the Apriori algorithm. However, this algorithm had some limitations in discovering frequent itemsets. Its limitations created a need for a more efficient algorithm.
+The first algorithm to be introduced in the data mining domain was the Apriori algorithm. However, this algorithm had some limitations in discovering frequent itemsets. Its limitations created a need for a more efficient algorithm.
 
 Later, the Eclat algorithm was introduced to deal with the weakness of the Apriori algorithm. Between these two algorithms, we have significant differences:
 - Unlike the Apriori algorithm, which is applicable with *horizontal dataset*, the Eclat algorithm is applicable only with a dataset in *verticle dataset* format.
-- In the Eclat algorithm, only the *support* and confidence is counted confidence. As in the case of Apriori, is not computed. Here, the *Support* is nothing but the number of times an item is in a database.
+- In the Eclat algorithm, only the *support* and confidence is counted as confidence. As in the case of Apriori, it is not computed. Here, the *Support* is nothing but the number of times an item is in a database.
 
 At each stage of the generated database, the Eclat algorithm uses the current generated dataset to learn frequent itemset, unlike the Apriori which scans the original database repeatedly. Since the Eclat scan over the database once, it is much faster than the Apriori algorithm.
 
 However, this doesn't mean the Apriori algorithm is worse. On the contrary, when dealing with a larger dataset, Apriori tends to shine best. Thus, the Eclat algorithm works better with small and medium datasets.
 
-The key takeaway here is that Eclat works well with vertical data format. Since most datasets are in the horizontal format, to apply the Eclat algorithm, we first have to convert them to vertical format.
+The key takeaway here is that Eclat works well with the vertical data format. Since most datasets are in the horizontal format, to apply the Eclat algorithm, we first have to convert them to vertical format.
 
 Below are examples of Horizontal and verticle data formats.
 
@@ -70,9 +70,8 @@ If we perform these steps on the verticle dataset that we gave above, we should 
 
 ![data image](/engineering-education/eclat-algorithm-in-python/tid-set.png)
 
-
 ### Advantages
-1. Eclat algorithm has low memory requirements compared to Apriori as it uses a [Depth-First Search](https://en.wikipedia.org/wiki/Depth-first_search#:~:text=Depth%2Dfirst%20search%20(DFS),along%20each%20branch%20before%20backtracking) approach.
+1. Eclat algorithm has low memory requirements compared to Apriori as it uses the [Depth-First Search](https://en.wikipedia.org/wiki/Depth-first_search#:~:text=Depth%2Dfirst%20search%20(DFS),along%20each%20branch%20before%20backtracking) approach.
 2. The Eclat algorithm does not repeatedly scan the data to discover frequent itemsets, thus, is generally faster than the Apriori algorithm.
 3. Eclat algorithm outdoes the Apriori algorithm provided the dataset is not too big. 
 4. Eclat algorithm scans only the currently generated dataset that is scanned in the Eclat algorithm. This is unlike in Apriori where the original dataset is scanned at each stage.
@@ -83,7 +82,7 @@ If the tidlist is too large, the Eclat algorithm may run out of memory.
 Let's proceed and implement this algorithm in python.
 
 ### Python Implementation of the Eclat Algorithm
-To have the best rules, we shall adopt the Apriori algorithm in our implementation. To get started, we need to import the necessary libraries for this session.
+To have the best rules, we wull adopt the Apriori algorithm in our implementation. To get started, we need to import the necessary libraries for this session.
 
 ```bash
 # The first thing is to install this package
@@ -104,7 +103,6 @@ data = pd.read_csv('/content/drive/MyDrive/Market_Basket_Optimisation.csv', head
 transact_list = [] # create an empty list to store transactions
 for i in range(0, 7501):
   transact_list.append([str(data.values[i,j]) for j in range(0, 20)]) # add the transactions to the above created
-
 ```
 ### Eclat Algorithm
 Since we adopted the Apriori algorithm, we need to generate rules as follows:
@@ -116,8 +114,7 @@ rules = apriori(transactions = transact_list, min_support = 0.003, min_confidenc
 # list of results coming from the apriori model
 rslt = list(rules)
 ```
-
-From the list of rules above, we will extract all `support` and organize them in a pandas dataframe. Below is the code which will enable us to do so:
+From the list of rules above, we will extract all `support` and organize them in a pandas dataframe. Below is the code which will enable us to do so.
 
 ### Organizing the above output in a pandas dataframe
 ```python
@@ -127,7 +124,6 @@ def inspect(rslt): # function to organize the output
     supports    = [result[1] for result in rslt] # get the supports
     return list(zip(left_handSide,right_handSide, supports)) # zip the above three lists together
 rslt_DataFrame = pd.DataFrame(inspect(rslt), columns = ['Product 1', 'Product 2', 'Support']) # create a pandas dataframe
-
 ```
 Now that our output is organized in a pandas dataframe, we can have a look at the first seven supports as follows:
 
