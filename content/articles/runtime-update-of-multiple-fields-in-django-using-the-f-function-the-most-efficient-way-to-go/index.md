@@ -1,5 +1,21 @@
-In this tutorial, we will learn how we can continuously update multiple fields using the `F()` in Django.
+---
+layout: engineering-education
+status: publish
+published: true
+url: /runtime-updation-using-f-function-in-django/
+title: Runtime Updation of Multiple Fields using F() in Django
+description: In this article, we will look what F() function is, how we can use it to update multiple fields on runtime. We will also be building a simple project to demonstrate it.
+author: ayemobola-tolulope
+date: 2021-12-22T00:00:00-20:00
+topics: [API, Languages]
+excerpt_separator: <!--more-->
+images:
 
+  - url: /engineering-education/runtime-updation-using-f-function-in-django/hero.jpg
+    alt: Runtime Updation of Multiple Fields using F() in Django Example Image
+---
+In this tutorial, we will learn how we can continuously update multiple fields using the `F()` in Django.
+<!--more-->
 Let us imagine a scenario - a patriot in Nigeria normally has an electricity meter installed in his house. Every second he uses the power, the usage data is sent periodically from the electricity meter to the power office.
 
 Consequently, two values detailing his amount of total power consumed and amount of power remaining are sent to this user via the smart phone.
@@ -219,31 +235,31 @@ Now that we have our models, serializers, views, and URLs ready, let us begin th
 
 We create a new meter using the endpoint `localhost:8000/add-meter` and fill in the page accordingly.
 
-![wecreatemeter](/engineering-education/runtime-update-of-multiple-fields-in-django-using-the-f-function-the-most-efficient-way-to-go/wecreatemeter.jpg)
+![wecreatemeter](/engineering-education/runtime-updation-using-f-function-in-django/wecreatemeter.jpg)
 *Creating a new meter*
 
-![wecreatedmeter](/engineering-education/runtime-update-of-multiple-fields-in-django-using-the-f-function-the-most-efficient-way-to-go/wecreatedmeter.jpg)
+![wecreatedmeter](/engineering-education/runtime-updation-using-f-function-in-django/wecreatedmeter.jpg)
 *A new meter object created*
 
 To check that the meter was successfully registered, visit `localhost:8000/all-meters` to view them:
 
-![allmeterlist](/engineering-education/runtime-update-of-multiple-fields-in-django-using-the-f-function-the-most-efficient-way-to-go/allmeterlist.jpg)
+![allmeterlist](/engineering-education/runtime-updation-using-f-function-in-django/allmeterlist.jpg)
 *View all meters*
 
 To view details of a particular meter, visit `localhost:8000/meter-usage/PM01` as shown:
 
-![defmeterusage](/engineering-education/runtime-update-of-multiple-fields-in-django-using-the-f-function-the-most-efficient-way-to-go/defmeterusage.jpg)
+![defmeterusage](/engineering-education/runtime-updation-using-f-function-in-django/defmeterusage.jpg)
 *View details about a particular meter*
 
 Let us create a new `MeterReading` object with value `1` for our meter `PM01` (this reading is sent to the power office) and update the meter's `CurrentUsage` in the process as shown:
 
-![create-reading-act](/engineering-education/runtime-update-of-multiple-fields-in-django-using-the-f-function-the-most-efficient-way-to-go/create-reading-act.jpg)
+![create-reading-act](/engineering-education/runtime-updation-using-f-function-in-django/create-reading-act.jpg)
 *Add a new meter reading*
 
-![create-reading-act1](/engineering-education/runtime-update-of-multiple-fields-in-django-using-the-f-function-the-most-efficient-way-to-go/create-reading-act1.jpg)
+![create-reading-act1](/engineering-education/runtime-updation-using-f-function-in-django/create-reading-act1.jpg)
 *Adding a new meter reading to PM01*
 
-![create-reading-act2](/engineering-education/runtime-update-of-multiple-fields-in-django-using-the-f-function-the-most-efficient-way-to-go/create-reading-act2.jpg)
+![create-reading-act2](/engineering-education/runtime-updation-using-f-function-in-django/create-reading-act2.jpg)
 *Meter reading created for PM01*
 
 From above, we see that a reading of `1` unit is sent from the meter and consequently, the current usage updated to reflect an expense from the `MeterReading`.
@@ -252,17 +268,17 @@ Check the current usage by visiting the endpoint `localhost:8000/meter-usage/PM0
 
 > We are assuming a usage threshold of 25 units. So, when the meter read that the user has spent 1 unit, he has 24 left.
 
-![create-reading-act3](/engineering-education/runtime-update-of-multiple-fields-in-django-using-the-f-function-the-most-efficient-way-to-go/create-reading-act3.jpg)
+![create-reading-act3](/engineering-education/runtime-updation-using-f-function-in-django/create-reading-act3.jpg)
 *MeterReading object for PM01 updated with new reading*
 
 Let's try with a higher meter reading, say `3`.
 
-![create-reading-act4](/engineering-education/runtime-update-of-multiple-fields-in-django-using-the-f-function-the-most-efficient-way-to-go/create-reading-act4.jpg)
+![create-reading-act4](/engineering-education/runtime-updation-using-f-function-in-django/create-reading-act4.jpg)
 *Add new meter reading with value '3'*
 
 We see that the `CurrentUsage` is updated again with `total_power_used` as `4` and `power_remaining` as `21`.
 
-![create-reading-act5](/engineering-education/runtime-update-of-multiple-fields-in-django-using-the-f-function-the-most-efficient-way-to-go/create-reading-act5.jpg)
+![create-reading-act5](/engineering-education/runtime-updation-using-f-function-in-django/create-reading-act5.jpg)
 *MeterReading object updated for meter PM01*
 
 ### Key takeaways
@@ -285,3 +301,6 @@ In programming, efficiency matters. It is best that we always seek out ways to i
 You can find the full code [here](https://github.com/teevyne/f-function) on GitHub.
 
 Happy coding!
+
+---
+Peer Review Contributions by: [Srishilesh P S](/engineering-education/authors/srishilesh-p-s/)
