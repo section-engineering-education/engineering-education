@@ -6,7 +6,7 @@ url: /animations-in-jetpack-compose/
 title: Animations in Jetpack Compose
 description: This article will cover how to create and customize animations in Jetpack Compose.
 author: jane-njoki
-date: 2021-12-21T00:00:00-19:13
+date: 2021-12-23T00:00:00-08:00
 topics: [Languages]
 excerpt_separator: <!--more-->
 images:
@@ -14,47 +14,39 @@ images:
   - url: /engineering-education/animations-in-jetpack-compose/hero.png
     alt: Animations in Jetpack Compose Hero Image
 ---
-Animations are a way to create a visual effect that is not immediately apparent. Animations make your app feel more alive and interactive. Jetpack Compose has a set of flexible and dynamic Interfaces (APIs) that make it simple to add motions in your app's UI thus greatly improving the user experience (UX).
+Animations are a way to create a visual effect that is not immediately apparent. Animations make your app feel more alive and interactive.
 <!--more-->
+Jetpack Compose has a set of flexible and dynamic Interfaces (APIs) that make it simple to add motions in your app's UI thus greatly improving the user experience (UX).
+
 In this tutorial, we will learn how to create simple animations and customize them using Jetpack Compose.
 
 ### Prerequisites
 To follow along with this tutorial, you will need to:
 - Make sure you have the most recent version of [Android Studio](https://developer.android.com/studio) installed on your computer.
-- Be familiar with the [Jetpack Compose](https://developer.android.com/jetpack/compose) basic concepts. If you aren't conversant with Compose yet, you can go through [this tutorial on Section](https://www.section.io/engineering-education/getting-started-with-jetpack-compose-in-android/).
+- Be familiar with the basic concepts of[Jetpack Compose](https://developer.android.com/jetpack/compose). If you aren't conversant with Compose yet, you can go through [this tutorial on Section](/engineering-education/getting-started-with-jetpack-compose-in-android/).
 
 ### Types of animations
 Animations in Compose are categorized into two main groups:
 
 #### 1. High level animations
-
-These animations comprises of the most common APIs that are used in the majority of apps. They are designed to abide with the [Android Design Guidelines](https://developer.android.com/design/) and [Material Design Motion](https://material.io/design/motion/).
+These animations comprise of the most common APIs that are used in the majority of apps. They are designed to abide with the [Android Design Guidelines](https://developer.android.com/design/) and [Material Design Motion](https://material.io/design/motion/).
 
 High level animations are further divided into two groups:
 
-#### i). Content change in layouts
+1. **Content change in layouts**: These are applied when you want to animate appearance/disappearance or change content in a layout. They include:
+    - AnimationVisibility
+    - AnimatedContent
+    - Crossfade
 
-These are applied when you want to animate appearance/disappearance or change content in a layout.
-
-They include:
-- AnimationVisibility
-- AnimatedContent
-- Crossfade
-
-#### ii). State-based animations
-
-These animations lay their focus on the composition and recomposition of the UI. They use states as the motion determinant.
-
-They include:
-- Transition animation such as `rememberInfiniteTransition`
-- animate<type>AsState
-The <type> can take values such as Color, Float, Int, Offset, Size, Value etc based on your use case.
+2. **State-based animations**: These animations lay their focus on the composition and recomposition of the UI. They use states as the motion determinant. They include:
+    - Transition animation such as `rememberInfiniteTransition`
+    - `animate<type>AsState`. The `<type>` can take values such as Color, Float, Int, Offset, Size, Value etc based on your use case.
 
 We'll discuss these with examples later in this tutorial.
 
 #### 2. Low level animations
 
-These are the bedrock APIs from which high level APIs are built.
+These are the bedrock APIs on which high level APIs are built. 
 
 Let's have a look at layout changes:
 
@@ -86,7 +78,7 @@ fun AnimVisibility() {
 
 In this example, we are animating the visibility of a Text component.
 
-> Note: We are using the `AnimatedVisibility` API which is experimental at the time of writing this tutorial. For this reason, we must annotate the composable with `@ExperimentalAnimationApi` annotation.
+> Note: We are using the `AnimatedVisibility` API which is experimental at the time of writing this tutorial. For this reason, we must annotate the composable with the `@ExperimentalAnimationApi` annotation.
 
 By default, the text animates vertically from the top of its container to the bottom.
 
@@ -94,12 +86,12 @@ By default, the text animates vertically from the top of its container to the bo
 Customizing animations refers to the ability to apply certain properties that are not applied to the animation by default. You can use inbuilt classes or create your own custom classes with the desired behavior.
 
 #### Customizing Animated visibility
-The `AnimatedVisibility` composable can be customized by providing propertied available in the AnimatedVisibility API. These properties include:
+The `AnimatedVisibility` composable can be customized by providing properties available in the AnimatedVisibility API. These properties include:
 
-- `Visible` - Boolean value that determines whether the content is visible or not.
-- `Enter` - Animation that is played when the composable is first shown.
-- `Exit` - Animation that is played when the composable is hidden.
-- `Modifier` - Modification properties that are applied to the animated composable(s).
+- `Visible` - a boolean value that determines whether the content is visible or not.
+- `Enter` - an animation that is played when the composable is first shown.
+- `Exit` - an nimation that is played when the composable is hidden.
+- `Modifier` - modification properties that are applied to the animated composable(s).
 
 Code example:
 
@@ -217,9 +209,9 @@ Crossfade(targetState = myTarget){ myTarget ->
 The `"myTarget"` parameter is the state passed to the composable. The best way to define different target states by using `enum` class which makes it easy to switch between them using the `when` expression.
 
 ### State-based animations
-These are also called animate as state animations since they return a state object whose value is changed continuously until the animation is finished. To add on what we mentioned earlier, let's look at the following example that uses `animateDpAsState`.
+These are also called `animate as state` animations since they return a state object whose value is changed continuously until the animation is finished. To add on what we mentioned earlier, let's look at the following example that uses `animateDpAsState`.
 
-In this example, we will animate the position of a Box composable using its `xOffSet`. XOffset refers to how far the component is placed from the origin point along the x-axis.
+In this example, we will animate the position of a Box composable using its `xOffSet`. `xOffset` refers to how far the component is placed from the origin point along the x-axis.
 
 The value of xOffset will be determined by the Box's current state, thus we need to create an enum class to define the different possible states.
 
