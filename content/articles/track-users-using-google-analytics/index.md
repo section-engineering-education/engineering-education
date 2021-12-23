@@ -6,7 +6,7 @@ url: /track-users-using-google-analytics/
 title: Track Individual Logged-In Users Using Google Analytics
 description: This tutorial will be a brief introduction to Google Analytics. The reader will learn how to track individual users and generate a statistical report for any website.
 author: nancy-muthoni
-date: 2021-12-21T00:00:00-12:35
+date: 2021-12-23T00:00:00-11:35
 topics: [API]
 excerpt_separator: <!--more-->
 images:
@@ -51,7 +51,7 @@ By the end of this article, the readers will be familiar with the following:
 - [Conclusion](#conclusion)
   
 ### Set up Google Analytics account
-In this step, log in to the [Google Analytics](https://analytics.google.com/analytics/web/) website and create an account for tracking your website or application.
+In this step, log on to the [Google Analytics](https://analytics.google.com/analytics/web/) website and create an account for tracking your website or application.
 
 Refer to the image below for help. Then, click the `Create Account` to create a new tracking account as shown:
 
@@ -71,12 +71,12 @@ A `view` can be considered a collection of rules that Google uses to process tra
 
 This is the step where we are stepping into the `User Id` tracking.
 
-Generally, when you create a `view`, the `User Id` option is `OFF` by default. Now, you need to switch it `ON`, to track individual users:
+Generally, when creating a `view`, the `User Id` option is `OFF` by default. One needs to switch it `ON` to track individual users:
 
 ![analytics-view-with-user-id](/engineering-education/track-users-using-google-analytics/analytics-view-with-userid.png)
 
 ### Create custom dimensions to track user types
-`Custom Dimensions` and `Custom Metrics` are set by your Analytics account's default dimensions and metrics.
+`Custom Dimensions` and `Custom Metrics` are set by your account's default dimensions and metrics.
 
 You can use them to collect and analyze data that Google doesn't automatically track. So, let's create our dimension and metric.
 
@@ -138,7 +138,7 @@ To understand more about the above code, it is highly recommended to go through 
 
 You should note the line where we set the `userId` field and its value as `147`. This `147` is the ID within our application acting like a primary key that can individually identify a user.
 
-You should not set it as email or any other common information using which Google can identify a user since it violates the agreement.
+You should not set it as email or other common information using which Google can identify a user since it violates the agreement.
 
 The value should be strictly in the context of your application, and it should not make any sense for Google. So then, the next thing you should note is the value set for `dimension1` as `Author`.
 
@@ -213,12 +213,12 @@ You have to not act to get the data. Google Analytics does all the work for you.
 #### You can create customization reports
 A `custom report` is a report that you create.
 
-In Google Analytics, you can choose one of the many reports that Google Creates or build your customized report using the drag and drop interface. In addition, you can pick the dimensions and metrics and decide how they should be displayed.
+In Google Analytics, you can choose one of the many reports Google Creates or build your customized report using the drag and drop interface. In addition, you can pick the dimensions and metrics and decide how they should be displayed.
 
 #### Easy integration with other tools and platforms
 Another remarkable feature of Google Analytics is that it can be easily integrated with other tools and platforms.
 
-Like all other Google services, Google Analytics presents a clear and easily usable interface. Not only does it work quite well on the desktop, but it also has a perfect usable Smartphone and Tablet through its app on the Google Play Store.
+Google Analytics presents a clear and easily usable interface like all other Google services. Not only does it work quite well on the desktop, but it also has a perfect usable Smartphone and Tablet through its app on the Google Play Store.
 
 Google Analytics also has a powerful integration with Google AdWords. When you link the AdWords account with Analytics, you align two tools and enable them to work together. This combined work will provide you with actionable insights that will lead to the success of your AdWords Campaigns.
 
@@ -229,12 +229,12 @@ Hence, you can use Google Analytics with all your devices to easily implement da
 
 The internal site reveals what potential customers are looking for after arriving on your website. It also reveals the area of growth opportunity by uncovering the situations where certain situations may be unclear or lacking on your site.
 
-Thankfully, Google Analytics allows you to track the internal site searches with a bit of customization. With this internal site search feature, you can have better insights into what people are searching for on your website. 
+Thankfully, Google Analytics allows you to track the internal site searches with a bit of customization. With this internal site search feature, you can better understand what people are searching for on your website. 
 
 #### To understand why visitors are bouncing off your website
 Bounce rate is one of the most important metrics, which refers to the percentage of visitors who leave your website after visiting only one page. Moreover, it is extremely important to reduce this rate as much as possible.
 
-Many businesses witness huge traffic but not sufficient conversions, which means that visitors are coming to your website but are not finding what they are looking for. This leads to a high bounce rate.
+Many businesses witness huge traffic but insufficient conversions, which means that visitors are coming to your website but are not finding what they are looking for. This leads to a high bounce rate.
 
 A high bounce rate calls for immediate action to identify the reason behind it. However, Google Analytics provides a detailed report of the pages experiencing a high bounce rate. For example, the reason for a high bounce rate could be that your website is not optimized properly, or maybe your landing page is not attractive enough for them to sign up.
 
@@ -249,7 +249,7 @@ The Audience section provides a lot of information about the people who visit yo
 ![age](/engineering-education/track-users-using-google-analytics/age.png)
 - Gender: The gender variable helps you describe your audience. Audience's gender plays an important role in how they communicate and engage online.
 ![gender](/engineering-education/track-users-using-google-analytics/gender.png)
-Interests: With Google Analytics, you can very well understand your audience's interests and can optimize your website by their interests.
+Interests: With Google Analytics, you can understand your audience's interests and optimize your website by their interests.
 - Device: Google Analytics also gives you views of what kind of device are they using. With this information, you can help your website be more responsive on various devices.
 ![device](/engineering-education/track-users-using-google-analytics/device.png)
 - Not only this, with Google Analytics, you can also have a view on which kind of smartphone or tablet your audience uses.
@@ -271,11 +271,11 @@ To choose the best platform to advertise to your customers, you need to set a ge
 With Google Analytics, you can gauge the performance of all the social platforms you are using. You can also check how much conversion value each social platform brings, traffic entering from social referrals, and how many users are talking about you.
 
 #### To understand what kind of content you should write
-Content is the king and, if created remarkably, can help you get a lot more traffic and potential visitors. Good content is one of the best ways to reach out to your customers. This is why so many businesses create blogs, infographics, and slide shares to add value to their customers.
+Content is the king and, if created remarkably, can help you get more traffic and potential visitors. Good content is one of the best ways to reach out to your customers. This is why so many businesses create blogs, infographics, and slide shares to add value to their customers.
 
 Google Analytics helps you keep track of all the content that receives views, shares, and with this data, you can enhance the top viewed blogs to appeal to the customers more productively.
 
-Furthermore, it generates a breakdown of each of your blog posts' page views. You can rework the top-performed blog to generate more traffic.
+Furthermore, it generates a breakdown of your blog posts' page views. You can rework the top-performed blog to generate more traffic.
 
 #### To check if you are achieving goals
 ![acheving-goals](/engineering-education/track-users-using-google-analytics/achieving-goals.png)
