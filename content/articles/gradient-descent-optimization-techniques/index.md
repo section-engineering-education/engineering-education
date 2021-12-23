@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /gradient-descent-optimization-techniques/
+url: /gradient-descent-based-optimization-techniques/
 title: Gradient Descent Based Optimization Techniques 
 description: In this article, we consider Adaptive Optimization Algorithms and compare their convergence abilities from traditional gradient descent algorithms 
 author: bonface-ndolo
@@ -11,7 +11,7 @@ topics: [Machine Learning]
 excerpt_separator: <!--more-->
 images:
 
- - url: /engineering-education/gradient-descent-optimization-techniques/hero.jpg
+ - url: /engineering-education/gradient-descent-based-optimization-techniques/hero.jpg
    alt: Gradient Descent Based Optimization Techniques example image
 ---
 Gradient descent is used to optimize neural networks and machine learning algorithms. This post delves into the inner workings of some of the most popular gradient-based optimization algorithms. 
