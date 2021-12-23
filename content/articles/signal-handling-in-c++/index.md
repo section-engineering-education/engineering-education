@@ -6,8 +6,8 @@ url: /signal-handling-in-cpp/
 title: Signal Handling In C++
 description: This article will provide an overview of signals and how they can be handled in C++.
 author: felix-maina
-date: 2021-12-16T00:00:00-13:30
-topics: [Security]
+date: 2021-12-23T00:00:00-13:30
+topics: [Languages]
 excerpt_separator: <!--more-->
 images:
   - url: /engineering-education/signal-handling-in-cpp/hero.jpg
