@@ -14,9 +14,15 @@ images:
   - url: /engineering-education/creating-a-hand-gesture-volume-controller-using-python-and-pycharm/hero.jpg 
     alt: Hand Gesture Volume Controller Hero Image
 ---
-In the times we are living in, computers are everywhere. Whether it is in your place of work, while listening to a presentation, while listening to your favorite music, or in entertainment places. They help us simplify most of our day-to-day activities. The problem is water, dust, and other things such as food spilling over as they can easily damage them. 
+In the times we are living in, computers are everywhere. Whether it is in your place of work, while listening to a presentation, while listening to your favorite music, or in entertainment places. 
 <!--more-->
-As a result, a hand gesture volume controller would come in handy. You don't have to be concerned about the state of your hands. You only have to use your fingers and adjust the computer's volume to your level of satisfaction.
+They help us simplify most of our day-to-day activities. However, water, dust, and other things such as food spills can easily damage them. 
+
+As a result, a hand gesture volume controller would come in handy. You don't have to worry about the state of your hands. You can use your fingers and adjust the computer's volume to your level of satisfaction.
+
+Python has libraries that will help us create our hand gesture volume controller.
+
+This tutorial will discuss the use of these libraries, how to use python to track hand gestures, and finally, how to create a hand gesture volume controller. You can follow along using either Windows, Linux, or MacOS.
 
 ### Table of contents
 - [Prerequisites](#prerequisites)
@@ -28,12 +34,7 @@ As a result, a hand gesture volume controller would come in handy. You don't hav
 ### Prerequisites
 For you to follow through this article, you need to:
 - Be familiar with the Python programming language.
-- Have **Pycharm** installed on their computer. If this is not the case, download it from here. [Pycharm Community Edition ](https://www.jetbrains.com/pycharm/download/)
-
-### Introduction
-**Python** has libraries that will help us create our hand gesture volume controller. **Pycharm** is the IDE that we will use to run our python code. We will be using the **Pycharm** community version IDE. It is free to download and use from the internet. 
-
-This tutorial will discuss the use of the python libraries we will need, how to use python to track hand gestures, and finally how to create a hand gesture volume controller using Python and Pycharm. You can follow along using either a Windows, Linux, or Mac OS machine.
+- Have **Pycharm** installed on your computer. You can download it [here](https://www.jetbrains.com/pycharm/download/)
 
 ### Referral hand image
 ![hand](/engineering-education/creating-a-hand-gesture-volume-controller-using-python-and-pycharm/hand.jpg)
@@ -42,51 +43,46 @@ This tutorial will discuss the use of the python libraries we will need, how to 
 
 The above image shows the numbers of the points that mediapipe uses to refer to different points of the hand. This tutorial will use point `4` and point `8` which are the thumb and the index finger respectively.
 
-### Creating a hand gesture volume controller
-First of all, we will prepare our workspace. Launch the Pycharm app. Click on the create a new project. This is shown in the screenshot provided below:
+### Setting up
+First of all, we will prepare our workspace. Launch the Pycharm app. Click on the create a new project.
 
 ![Pycharm](/engineering-education/creating-a-hand-gesture-volume-controller-using-python-and-pycharm/pycharm.png)
 
 Click on the create button on the window that appears next.
 
-We now need to install the libraries we need to use in our project. To do so, follow the following steps. To install `numpy`, open the terminal and type the following command: 
+We need to install the libraries we need to use in our project.
+
+`numpy` will help us work with arrays. To install it, open the terminal and run the following command: 
 
 ```bash
 pip install numpy
 ```
-`numpy` will help us work with arrays.
+Repeat the same process for the other libraries.
 
-![Terminal](/engineering-education/creating-a-hand-gesture-volume-controller-using-python-and-pycharm/terminal.png)
-
-The above screenshot shows where to type the command for the `numpy` installation.
-
-Wait for a few seconds till `numpy` is installed successfully. We will repeat this process for the other libraries. We will only replace the command part. Use the following commands for the respective libraries.
 ```bash
 pip install opencv-python
-
 ```
-This library is imported as `cv2`. We will use this library to capture an image using the webcam and convert the image to `RGB`.
- 
+This library is imported as `cv2`. We will use it to capture an image using the webcam and convert the image to `RGB`.
+
 ```bash
 pip install mediapipe
- ```
- This is an open-source library developed by Google. It is used for both face and gesture recognition. For this tutorial, we will use it for hand gesture recognition.
- 
+```
+This is an open-source library developed by Google. It's used for both face and gesture recognition. For this tutorial, we'll use it for hand gesture recognition.
+
 ```bash
 pip install pycaw
- ```
-We will need this library to access the device's speaker and its master volume.
+```
+We'll need this library to access the device's speaker and its master volume.
 
 ```bash
 pip install python-math
- ```
-We will use this library to find the distance between point number `4` (the thumb) and point number `8` (the index finger) using hypotenuse.
+```
+We'll use this library to find the distance between point number `4` (the thumb) and point number `8` (the index finger) using hypotenuse.
 
 ```bash
 pip install gpib-ctypes, comtypes
 ```
-
-These two libraries are depended upon by `pycaw`. `Ctypes` to provide `C` language compatible data types. `Comtypes` bases on the `ctypes` **FFI**(Foreign Function Interface) library.
+`pycaw` depends on these two libraries. `Ctypes` providea `C` language compatible data types. `Comtypes` bases on the `ctypes` **FFI**(Foreign Function Interface) library.
 
 Now let us jump into coding. This is where the most fun is as we get hands-on.
 
