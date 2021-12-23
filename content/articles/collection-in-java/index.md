@@ -24,11 +24,11 @@ The developer can now easily access any interface without knowing the code writt
 
 ### Table of Contents
 
--[Introduction](#introduction)
--[Implementing arrays and vectors](#implementing-arrays-and-vectors)
--[Methods of the collection interface](#methods-of-the-collection-interface)
--[Diagramatic representation of the collection framework](#diagramatic-representation-of-the-collection-framework)
--[Summary](#summary)
+- [Introduction](#introduction)
+- [Implementing arrays and vectors](#implementing-arrays-and-vectors)
+- [Methods of the collection interface](#methods-of-the-collection-interface)
+- [Diagramatic representation of the collection framework](#diagramatic-representation-of-the-collection-framework)
+- [Summary](#summary)
 
 ### Introduction
 **Collection in java** organizes data to make it easier to store, access, and edit the data.
