@@ -33,7 +33,7 @@ To follow along, you need some some knowledge of decorators and object-orented p
 - [Conclusion](#conclusion)
 
 ### What is a metaclass?
-A metaclass in Python is a class of a class that defines how a class behaves. A class is itself an instance of a metaclass. A class in Python defines how the instance of the class will behave.
+Metaclasses in Python are classes of classes that specify the behavior of a class. A class is a metaclass in its own right. How the class is implemented is defined by its class definition in Python.
 
 We need to add additional code or processes to the Metaclass framework. Although end-users seldom use Metaclasses, they are essential in some programming problems.
 
