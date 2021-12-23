@@ -3,8 +3,8 @@ layout: engineering-education
 status: publish
 published: true
 url: /creating-applet-with-threads/
-title: Creating Applet with Thread in Java
-description: In this article, we are going to discuss how to make applets using threads in the Java programming language.
+title: Creating an Applet with Threads in Java
+description: In this article, we are going to discuss how to make applets using threads in the Java programming language. Threads allow programs to run more efficiently by allowing them to perform many tasks at once.
 author: andrew-odera
 date: 2021-12-23T00:00:00-19:10
 topics: [Languages]
@@ -12,7 +12,7 @@ excerpt_separator: <!--more-->
 images:
 
   - url: /engineering-education/creating-applet-with-threads/hero.jpg
-    alt: Creating Applet with Thread in Java Hero Image
+    alt: Creating an Applet with Threads in Java Hero Image
 ---
 Threads allow programs to run more efficiently by allowing them to perform many tasks at once. They are used in the background to perform complex tasks without interfering with the main program. Threads improve the operations performed using a browser.
 
