@@ -6,7 +6,7 @@ url: /gradient-descent-optimization-techniques/
 title: Gradient Descent Based Optimization Techniques 
 description: In this article, we consider Adaptive Optimization Algorithms and compare their convergence abilities from traditional gradient descent algorithms 
 author: bonface-ndolo
-date: 2021-12-12T00:00:00-18:00
+date: 2021-12-23T00:00:00-10:00
 topics: [Machine Learning]
 excerpt_separator: <!--more-->
 images:
@@ -35,7 +35,7 @@ Gradient descent is used to optimize neural networks and machine learning algori
 - [Conclusion](#conclusion)
 
 ### Optimization techniques
-We will look at various optimization methods frequently employed in deep learning. We will also look at some Adaptive Optimization Algorithms (AOA). Compiling a program based on the current execution profile is known as adaptive optimization in computer science. You can easily make a tradeoff between Just-In-Time (JIT) compilation and instruction interpretation in an adaptive optimizer solution.
+We will look at various optimization methods frequently employed in deep learning. Additionally, we review Adaptive Optimization Algorithms (AOA). Compiling a program based on the current execution profile is known as adaptive optimization in computer science. You can easily make a tradeoff between Just-In-Time (JIT) compilation and instruction interpretation in an adaptive optimizer solution.
 
 #### Why do we optimize our machine learning models?
 Every iteration is compared to the previous one, and the hyper-parameters are tweaked until the results are as good as they can be. We can produce a model that is both accurate and error-free. 
@@ -54,7 +54,7 @@ $Get\; next$
 $\theta_p$
 $V_\theta = \beta V_\theta + (1 - \beta)\theta_p$
 
-$V_\theta$ is averaged across its preceding $\frac{1}{(1 - \beta)\theta_p}$ iterations, giving a value of $V_\theta$. With the help of averages, you can eliminate all the randomness and merely keep track of the overall trend. As a result of this method, the algorithm is more resistant to sample noise and can be trained more quickly.
+$V_\theta$ is averaged across its preceding $\frac{1}{(1 - \beta)\theta_p}$ iterations, giving a value of $V_\theta$. With the help of averages, we eliminate all the randomness and merely keep track of the overall trend. As a result of this method, the algorithm is more resistant to sample noise and can be trained more quickly.
 
 ### How does momentum help in gradient descent?
 When this method is in use, it looks for the direction of the steepest slope in its current state. Then it moves in the direction of that steepest slope to change its status.
@@ -154,6 +154,7 @@ The adaptive learning rate approaches, on the other hand, are ideal if you want 
 
 ### Conclusion
 In other words, optimization algorithms are in charge of cutting costs while delivering the most precise outcomes. For each new epoch, the weight is reset using several initialization procedures. As a result, some optimization procedures or algorithms dubbed optimizers produce the best results.
+
 ---
 Peer Review Contributions by: [Lalithnarayan C](/engineering-education/authors/lalithnarayan-c/)
 
