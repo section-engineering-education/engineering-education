@@ -72,7 +72,7 @@ public class Main {
 }
 ```
 
-![Output](/engineering-education/collection/output.png)
+![Output](/engineering-education/collection-in-java/output.png)
 
 ```java
 import java.util.Hashtable;
@@ -105,7 +105,7 @@ Below the Iterable interface is the collection interface which contains differen
 
 Every interface has different classes that serve different purposes, as shown below:
 
-![Hierarchy](/engineering-education/collection/hierarchy.png)
+![Hierarchy](/engineering-education/collection-in-java/hierarchy.png)
 
 From the diagram we have seen above. The collection hierarchy diagram consists of `interfaces` and `classes`. The interfaces extend other interfaces in the tree towards the tree's root, which is the `Iterable interface`.
 
