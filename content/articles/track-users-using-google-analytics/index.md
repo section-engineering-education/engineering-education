@@ -6,13 +6,13 @@ url: /track-users-using-google-analytics/
 title: Track Individual Logged-In Users Using Google Analytics
 description: This tutorial will be a brief introduction to Google Analytics. The reader will learn how to track individual users and generate a statistical report for any website.
 author: nancy-muthoni
-date: 2021-12-23T00:00:00-11:35
+date: 2021-12-23T00:00:00-13:35
 topics: [API]
 excerpt_separator: <!--more-->
 images:
 
   - url: /engineering-education/track-users-using-google-analytics/hero.png
-    alt: Track Individual Logged-In Users Using Google Analytics Hero Image
+    alt: Track Individual Logged-In Users Google Analytics Hero Image
 ---
 [Google Analytics](https://analytics.google.com/analytics/web/) is a free web analytics service that allows you to analyze in-depth detail about the visitors to your website.
 <!--more-->
@@ -193,8 +193,6 @@ Irrespective of whether you are an e-commerce website or an informative blog, yo
 Given below are some reasons as to why you should use Google Analytics to get better insights into your website and visitors:
 
 #### It's free
-![google-analytics-is-free](/engineering-education/track-users-using-google-analytics/google-analytics-is-free.png)
-
 You must have heard the saying that, “There is no free lunch.” But, in the case of Google Analytics, it is not true.
 
 Google does not charge you anything for using Google Analytics. You don't have to pay anything to use this product.
