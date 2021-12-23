@@ -111,13 +111,13 @@ A user may select whoever has permission to access the web app after the Google 
 3. Everyone: Anyone has access to and can use the web app. However, the user must first sign in with their Google account.
 4. The last kind of permission allows the web app to be accessed by anybody, even unknown people who do not own a Google account.
 
+### Conclusion
+HTML can be utilized in various forms of data entry. It lessens the work done by developers who want to obtain a wide range of information at a time. 
+In addition, google services have made it easier to create and deploy web forms using Google Apps Scripts and its ability to serve a range of people at once according to developers' preferences.
+
 ### Further reading
 
 For your further learning you can go through:
 - [HTML forms](https://www.w3schools.com/html/html_forms.asp)
 - Deploying Web app scripts and [web apps](https://developers.google.com/apps-script/guides/web)
 - [Google Sheets](https://support.google.com/a/users/answer/9282959?hl=en)
-
-### Conclusion
-HTML can be utilized in various forms of data entry. It lessens the work done by developers who want to obtain a wide range of information at a time. 
-In addition, google services have made it easier to create and deploy web forms using Google Apps Scripts and its ability to serve a range of people at once according to developers' preferences.
