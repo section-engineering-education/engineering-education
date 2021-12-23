@@ -14,7 +14,7 @@ images:
   - url: /engineering-education/creating-a-hand-gesture-volume-controller-using-python-and-pycharm/hero.jpg 
     alt: Hand Gesture Volume Controller Hero Image
 ---
-In the times we are living in, computers are everywhere. Whether it is in your place of work, while listening to a presentation, while listening to your favorite music, or in entertainment places. 
+In the times we are living in, computers are everywhere. Whether it is in our place of work, while listening to a presentation, while listening to our favorite music, or in entertainment places. 
 <!--more-->
 They help us simplify most of our day-to-day activities. However, water, dust, and other things such as food spills can easily damage them. 
 
@@ -50,7 +50,7 @@ First of all, we will prepare our workspace. Launch the Pycharm app. Click on th
 
 Click on the create button on the window that appears next.
 
-We need to install the libraries we need to use in our project.
+We now need to install the libraries that we will need to use in our project.
 
 `numpy` will help us work with arrays. To install it, open the terminal and run the following command: 
 
@@ -62,7 +62,7 @@ Repeat the same process for the other libraries.
 ```bash
 pip install opencv-python
 ```
-This library is imported as `cv2`. We will use it to capture an image using the webcam and convert the image to `RGB`.
+We will import this library as `cv2`. We will use it to capture an image using the webcam and convert the image to `RGB`.
 
 ```bash
 pip install mediapipe
@@ -82,9 +82,9 @@ We'll use this library to find the distance between point number `4` (the thumb)
 ```bash
 pip install gpib-ctypes, comtypes
 ```
-`pycaw` depends on these two libraries. `Ctypes` providea `C` language compatible data types. `Comtypes` bases on the `ctypes` **FFI**(Foreign Function Interface) library.
+`pycaw` depends on these two libraries. `Ctypes` provides `C` language compatible data types. `Comtypes` bases on the `ctypes` **FFI**(Foreign Function Interface) library.
 
-Now let us jump into coding. This is where the most fun is as we get hands-on.
+Now let us jump into coding. This is where the most fun is as we get hands-on. On the `main.py` file that *pycharm* automatically creates for you, type in the following code.
 
 ```python
 import cv2
@@ -95,7 +95,7 @@ from comtypes import CLSCTX_ALL
 from pycaw.pycaw import AudioUtilities, IAudioEndpointVolume
 import numpy as np
 ```
-In the above code segment, we are importing each library we did discuss into our project.
+In the above code segment, we are importing each library we discussed into our project.
 
 ```python
 cap = cv2.VideoCapture(0) 
@@ -108,9 +108,9 @@ mpHands = mp.solutions.hands
 hands = mpHands.Hands()
 mpDraw = mp.solutions.drawing_utils
 ```
-- `mp.solutions.hands`: We are calling on the `mediapipe` hand module to detect the hands from the video input we did get.
-- `mpHands.Hands()`: This completes the initialization and configuration of the hands we did detect.
-- `mp.solutions.drawing_utils`: Draws the *connections* and *landmarks* of the hand image. 
+- `mp.solutions.hands`: We are calling on the `mediapipe` hand module to detect the hands from the video input we got from our primary camera.
+- `mpHands.Hands()`: This completes the initialization and configuration of the hands that the mediapipe hand module detected.
+- `mp.solutions.drawing_utils`: Draws the *connections* and *landmarks* on the hand that mediapipe hand module detected. 
 
 ### Accessing the speaker using pycaw
 ```python
@@ -118,7 +118,7 @@ devices = AudioUtilities.GetSpeakers()
 interface = devices.Activate(IAudioEndpointVolume._iid_, CLSCTX_ALL, None)
 volume = cast(interface, POINTER(IAudioEndpointVolume))
 ```
-These are the initializations we need for `pycaw`. The developer provides this library. So, you will not change anything. You can find it [here](https://github.com/AndreMiras/pycaw).
+These are the initializations we need for `pycaw`. The developer provides this library together with the initializations. We are not going to change anything. You can find the documentation [here](https://github.com/AndreMiras/pycaw).
 
 ### Finding the volume range between the minimum and maximum volume
 ```python
@@ -135,7 +135,7 @@ while True:
 ```
 - `success, img = cap.read()`: Checks whether the camera we have specified works. If it works, we will capture an image.
 - `imgRGB = cv2.cvtColor(img, cv2.COLOR_BGR2RGB)`: Converts the image captured by the camera to `RGB` image.
-- ` results = hands.process(imgRGB)`: Completes the processing of the converted image.
+- ` results = hands.process(imgRGB)`: Completes the processing of the image that was converted to `RGB`.
 
 ### Checking whether we have multiple hands in our input
 ```python
@@ -143,8 +143,8 @@ lmList = []
 if results.multi_hand_landmarks: 
 ```
 - `lmList = []`:
-We are creating an *empty list* which we will use to store the list of elements of the detected hands, i.e., the number of points on the hand.
-- `if results.multi_hand_landmarks:` We are checking if the input has multiple hands.
+This code creates an *empty list* which we will use to store the list of elements of the hands detected by the `mediapipe` hand module, i.e., the number of points on the hand.
+- `if results.multi_hand_landmarks:` Checks whether the input has multiple hands.
 
 ### Creating a for loop to manipulate each hand
 ```python
@@ -155,10 +155,10 @@ We are creating an *empty list* which we will use to store the list of elements 
                 lmList.append([id, cx, cy]) 
             mpDraw.draw_landmarks(img, handlandmark, mpHands.HAND_CONNECTIONS)
 ```
-- `for handlandmark in results.multi_hand_landmarks`: Creating a for loop to interact with each hand in the results.
-- `for id, lm in enumerate(handlandmark.landmark)`: Creating a for loop to get the `id` (id number) and `lm` (landmark information) for each handlandmark. The landmark information will give us the `x` and `y` coordinates. The id number is the number assigned to the various hand points.
-- `h, w, c = img.shape`: Checking the height width and channels of our image. This will give us the width and height of the image.
-- `cx, cy = int(lm.x * w), int(lm.y * h)`: Finding the central position of our image. We achieve this by multiplying *lm.x by the width* and assigning the value obtained to `cx`. Then multiply `lm.y` by the height and assign the value obtained to `cy`. **NB** `lm` stands for landmark.
+- `for handlandmark in results.multi_hand_landmarks`: This creates a for loop to interact with each hand in the results.
+- `for id, lm in enumerate(handlandmark.landmark)`: This is a for loop to get the `id` (id number) and `lm` (landmark information) for each handlandmark. The landmark information will give us the `x` and `y` coordinates. The id number is the number assigned to the various hand points.
+- `h, w, c = img.shape`: This piece of code checks the height width and channels of our image. This will give us the width and height of the image.
+- `cx, cy = int(lm.x * w), int(lm.y * h)`: We are finding the central position of our image. We achieve this by multiplying *lm.x by the width* and assigning the value obtained to `cx`. Then multiply `lm.y` by the height and assign the value obtained to `cy`. **NB** `lm` stands for landmark.
 - `lmList.append([id, cx, cy])`: We are adding the values of `id`,`cx` and `cy` to `lmList`.
 - ` mpDraw.draw_landmarks(img, handlandmark, mpHands.HAND_CONNECTIONS)`: We pass our image (`img`) then we call *mpDraw.draw_landmarks* to draw all the landmarks of the hand.
 
@@ -172,7 +172,7 @@ We are creating an *empty list* which we will use to store the list of elements 
  - `x1, y1 = lmList[4][1], lmList[4][2]` : We are assigning variables `x1` and `y1` the `x` and `y` coordinates of point `4` respectively. This is the tip of the thumb. 
  - `x2, y2 = lmList[8][1], lmList[8][2]`: We are assigning variables `x2` and `y2` the `x` and `y` coordinates of point `8` respectively. This is the tip of the index finger. 
  
- Refer to the had image diagram we did discuss to identify the [points](#referral-hand-image).
+ Refer to the had image diagram we discussed to identify the [points](#referral-hand-image).
 
  ### Drawing a line between the tip of the thumb and the tip of the index finger
  ```python                                            
@@ -203,7 +203,7 @@ In the code above, we use the `cv2.line` function to draw a line between point f
 ```python
 length = hypot(x2 - x1, y2 - y1)
 ```
-In the code above, we find the distance between the tip of the thumb and the index finger using hypotenuse. We achieve this by calling the math `hypot` function and passing the difference between `x2` and `x1` and the difference between `y2` and `y1`.
+In the code above, we are finding the distance between the tip of the thumb and the index finger using hypotenuse. We achieve this by calling the math `hypot` function and passing the difference between `x2` and `x1` and the difference between `y2` and `y1`.
 
 ### Converting the hand range to the volume range
 ```python                                          
@@ -220,24 +220,24 @@ We are calling on the numpy function `np.interp` to convert the hand range to th
 volume.SetMasterVolumeLevel(vol, None)  
 ```
 
-We are setting the master volume level in accordance with the hand range. We achieve this by passing `vol`, which is the value of the hand range we did convert to volume range.
+We are setting the master volume level in accordance with the hand range. We achieve this by passing `vol`, which is the value of the hand range we converted to volume range.
 
 ### Displaying the video output used to interact with the user
 ```python
 cv2.imshow('Image', img) 
 ```
 
-The above code shows the real-time video showing the user interacting with the program, i.e., the user uses the thumb finger and the index finger to control the volume.
+The above code shows the real-time video of the user interacting with the program, i.e., the user uses the thumb finger and the index finger to control the volume.
 
 ### Terminating the program
 ```python
 if cv2.waitKey(1) & 0xff == ord('q'): 
    break
 ```
-The code above will terminate the program if the user presses the `q` key.
+The code above will terminate the program when the user presses the `q` key.
 
 ### Results
-When the code above has run to completion without any errors, the results will be shown in the screenshot below:
+When the code above has run to completion without any errors, the results will be as those shown in the screenshot below:
 
 ![Results](/engineering-education/creating-a-hand-gesture-volume-controller-using-python-and-pycharm/results.gif)
 
