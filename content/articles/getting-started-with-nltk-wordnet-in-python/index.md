@@ -6,8 +6,8 @@ url: /getting-started-with-nltk-wordnet-in-python/
 title: Getting started with nltk-wordnet  in Python
 description: The WordNet English dictionary is part of Python's Natural Language Tool Kit (NLTK). In this article, the reader will learn the basics of nltk-wordnet and get into basic examples used in natural language processing.
 author: jacinta-kyulu
-date: 2021-12-21T00:00:00-10:40
-topics: []
+date: 2021-12-23T00:00:00-08:30
+topics: [Languages]
 excerpt_separator: <!--more-->
 images:
 
@@ -15,9 +15,10 @@ images:
   alt: Getting started with nltk-wordnet Image
 ---
 
-### Intoduction
-The WordNet English dictionary is part of Python's Natural Language Tool Kit (NLTK).  Natural Language Processing (NLP) may be made simple and straightforward using this comprehensive set of tools. This tutorial will cover the basic actions that can be done using this tool.
+The WordNet English dictionary is part of the Natural Language Tool Kit (NLTK) in Python.  Natural Language Processing (NLP) is made simple and straightforward using this comprehensive set of tools. 
 <!--more-->
+This tutorial will cover the basic actions that can be done using this tool.
+
 ### Prerequisites
 To have a better understanding of this article, the reader should:
 - Have basic knowledge of the python language.
@@ -68,7 +69,7 @@ Output:
  Synset('book.v.04')]
 ```
 
- On the other hand, if we want to get all the Synsets of a noun word, we specify the same in the positional argument.
+On the other hand, if we want to get all the Synsets of a noun word, we specify the same in the positional argument.
 
 ```python
 import nltk
@@ -83,7 +84,9 @@ Output:
 ```
 
 #### Getting the definition of a Synset
-To get the definition of a Synset, you can utilize the definition() function, which can further analyze the Synset for a common definition to all of its Lemmas. This method returns a string that conforms to the essential specification. There are two ways of achieving this:
+To get the definition of a Synset, you can utilize the `definition()` function, which can further analyze the Synset for a common definition to all of its lemmas. 
+
+This method returns a string that conforms to the essential specification. There are two ways of achieving this:
 
 **Example one**: In order to get at one of the items in the array provided by Synsets('word'), we can do the following:
 
@@ -115,7 +118,7 @@ Output:
 'a written version of a play or other dramatic composition; used in preparing for a performance.'
 ```
 
-Names, a part of speech, and how many times a Synset has been defined can be obtained using the `synset ()` function. For instance:
+Names, a part of speech, and how many times a Synset has been defined can be obtained using the `synset()` function. For instance:
 
 ```python
 import nltk
@@ -178,7 +181,9 @@ Output:
 ```
 
 ### Understanding NLTK Hypernyms and Hyponyms
-A Hyponym is a type of Synset that has been modified for a specific purpose instead of a generic Synset. In terms of inheritance, it is similar to the concept of a "child class." A synonym is a function returning an array containing all Synsets that form the hyponyms of the Synset passed as an argument to the function.
+A Hyponym is a type of Synset that has been modified for a specific purpose instead of a generic Synset. In terms of inheritance, it is similar to the concept of a "child class." 
+
+A synonym is a function returning an array containing all Synsets that form the hyponyms of the Synset passed as an argument to the function.
 
 Hypernyms exist in several shapes and sizes, but the Synset is the most popular. The terms hyponym and hypernym are opposed. A Synset's hypernyms are returned in the form of an array of numbers.
 
@@ -227,7 +232,9 @@ Output:
 ```
 
 ### A look into Meronyms and Holonyms
-Meronyms and Holonyms create a part-to-whole relationship. The Meronym represents the half, whereas the Holonym represents the whole. As you can see, the Meronym and Holonym both refer to the same thing, but in different ways.
+Meronyms and Holonyms create a part-to-whole relationship. 
+
+The Meronym represents the half, whereas the Holonym represents the whole. As you can see, the Meronym and Holonym both refer to the same thing, but in different ways.
 
 For example, the word 'bedroom' is a Meronym for home. This is because the bedroom is considered a component of the house. Likewise, the nose, eyes, and mouth are Meronyms for the face.
 
@@ -308,7 +315,11 @@ Output:
 ```
 
 ### Conclusion
-In this article, we have looked at the different concepts applied using the nltk wordnet in python. We started with understanding the synonyms and synsets by discussing how to use different methods to get Synsets, the definition, and all lemmas of a Synset. Then, we also looked at the Hypernyms and Hyponyms. Lastly, we went through Meronyms, Holonyms, and Entailments. 
+In this article, we have looked at the different concepts applied using the nltk wordnet in python. 
+
+We started with understanding the synonyms and synsets by discussing how to use different methods to get Synsets, the definition, and all lemmas of a Synset. 
+
+Then, we also looked at the Hypernyms and Hyponyms. Lastly, we went through Meronyms, Holonyms, and Entailments. 
 
 ---
 Peer Review Contributions by: [Jerim Kaura](/engineering-education/authors/jerim-kaura/)
