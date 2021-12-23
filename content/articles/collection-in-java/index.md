@@ -22,6 +22,14 @@ Also, it posed a challenge to developers since it was challenging to recall meth
 
 The developer can now easily access any interface without knowing the code written or the classes involved. Let us now take a look at how all the above-mentioned happen with collection in java.
 
+### Table of Contents
+
+-[Introduction](#introduction)
+-[Implementing arrays and vectors](#implementing-arrays-and-vectors)
+-[Methods of the collection interface](#methods-of-the-collection-interface)
+-[Diagramatic representation of the collection framework](#diagramatic-representation-of-the-collection-framework)
+-[Summary](#summary)
+
 ### Introduction
 **Collection in java** organizes data to make it easier to store, access, and edit the data.
 
@@ -64,7 +72,7 @@ public class Main {
 }
 ```
 
-![Output](/engineering-education/collection-in-java/output.png)
+![Output](/engineering-education/collection/output.png)
 
 ```java
 import java.util.Hashtable;
@@ -97,7 +105,7 @@ Below the Iterable interface is the collection interface which contains differen
 
 Every interface has different classes that serve different purposes, as shown below:
 
-![Hierarchy](/engineering-education/collection-in-java/hierarchy.png)
+![Hierarchy](/engineering-education/collection/hierarchy.png)
 
 From the diagram we have seen above. The collection hierarchy diagram consists of `interfaces` and `classes`. The interfaces extend other interfaces in the tree towards the tree's root, which is the `Iterable interface`.
 
