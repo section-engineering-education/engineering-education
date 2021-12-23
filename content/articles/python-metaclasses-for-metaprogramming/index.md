@@ -6,13 +6,13 @@ url: /python-metaclasses-for-metaprogramming/
 title: Understanding Metaclasses in Python
 description: This tutorial discusses how to use python's metaclasses for metaprogramming. This process involves writing code that manipulates other code. 
 author: dickson-gitau
-date: 2021-12-22T00:00:00-14:10
+date: 2021-12-23T00:00:00-14:10
 topics: [Languages]
 excerpt_separator: <!--more-->
 images:
 
   - url: /engineering-education/python-metaclasses-for-metaprogramming/hero.jpg
-    alt: Python metaclasses for metaprogramming Image
+    alt: Python Metaclasses for Metaprogramming Hero Image
 ---
 Metaprogramming is the practice of writing code that manipulates other code. It refers to the ability of a program to regulate itself.
 <!--more-->
@@ -32,7 +32,7 @@ To follow along, you need some some knowledge of decorators and object-orented p
 - [Using a metaclass to fix an issue](#using-a-metaclass-to-fix-an-issue)
 - [Conclusion](#conclusion)
 
-### What are metaclass?
+### What is a metaclass?
 A metaclass in Python is a class of a class that defines how a class behaves. A class is itself an instance of a metaclass. A class in Python defines how the instance of the class will behave.
 
 We need to add additional code or processes to the Metaclass framework. Although end-users seldom use Metaclasses, they are essential in some programming problems.
