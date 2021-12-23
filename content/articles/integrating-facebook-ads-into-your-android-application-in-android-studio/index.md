@@ -148,7 +148,7 @@ Here are some demerits in an in-App advertisement;
 
 ### Conclusion
 At this point, you should be able to integrate your application with Facebook Ads for added monetary advantage. However, this might not be an option for many developers depending on the kind of application they are developing. 
-The verdict on whether to integrate your application with these Ads is always the owners' preference. 
+The verdict on whether to integrate your application with these Ads is always the developers' preference. 
 
 ---
 Peer Review Contributions by: [Jethro Magaji](/engineering-education/authors/jethro-magaji/)
