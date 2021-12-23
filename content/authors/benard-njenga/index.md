@@ -1,9 +1,10 @@
+---
+title: Bernard Njenga
+type: authors
+github: https://github.com/Njengab
+images:
+  - url: /engineering-education/authors/benard-njenga/avatar.png 
+---
 
-Name | Bernard Njenga
------| -------------
-Type | Author
-
-![image](profile.png)
-
-A sudent pursuing a bachelor's degree in business information technology (BBIT).
-Intrested in web designs and computer programmng.
+A sudent pursuing a bachelor's degree in Business Information Technology (BBIT).
+Benard is interested in web designs and computer programmng.
