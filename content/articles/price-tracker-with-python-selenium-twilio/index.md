@@ -181,7 +181,7 @@ Your `Account SID` and `Auth Token` will enable you to connect to the Twilio API
 
 *Note: Your account SID and Auth Token must always be hidden!*
 
-### Handling the alert
+#### Handling the alert
 In this section, we will need the [Twilio package](https://www.twilio.com/docs/libraries/python) for Python which allows one to use the [Twilio Programmable SMS API](https://www.twilio.com/docs/sms) to send and receive SMS messages.
 
 Run the command below to install the Twilio package locally:
@@ -214,7 +214,7 @@ body=f"There are {len(new)} air force 1s within budget, ${max_price}" # message 
 )
 ```
 
-### Testing
+#### Testing
 To test the application, just input `your price range`, `the item you want to search`, and then run the program will do the rest.
 
 Add the values that will be passed in the `main("air force 1", 300)` function at the end of your code and then run it.
@@ -303,7 +303,7 @@ You will be directed to a form where you will fill in the time you want your cod
     
 ![heroku-job](/engineering-education/price-tracker-with-python-selenium-twilio/heroku-job.png)
 
-## Conclusion
+### Conclusion
 In this tutorial, you have learned how to scrap prices of items from Amazon, as well as use Twilio Programmable SMS. 
 
 We also build software that alerts you in case certain prices drop. It counts the number of products that are within your price range and sends an alert to your phone daily. 
