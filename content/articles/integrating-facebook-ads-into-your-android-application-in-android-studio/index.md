@@ -2,7 +2,7 @@
 
 ### Introduction
 For a developer, monetizing an application is equally as crucial as delivering the required product. This encourages programmers and developers to create more software with a commercial motive in mind, resulting in higher quality.
-Apart from designing mobile applications for technological advancements, developers are always looking for a return on their investment. This article demonstrates how to include banner and interstitial advertisements in your applications, which is one of the best ways to earn money from apps.
+This article demonstrates how to include banner and interstitial advertisements in your applications, which is one of the best ways to earn money from apps.
 
 ### Table of contents
 - [Introduction](#introduction)
