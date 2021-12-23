@@ -1,17 +1,16 @@
 ### Integrating Facebook Ads into your Android App in Android Studio
 
 ### Introduction
-Monetizing an application is just as an important goal for a developer as producing the required product. This motivates developers and programmers to come up with more software with a financial thought in mind which triggers quality.
-
+For a developer, monetizing an application is equally as crucial as delivering the required product. This encourages programmers and developers to create more software with a commercial motive in mind, resulting in higher quality.
 Apart from designing mobile applications for technological advancements, developers are always looking for a return on their investment. This article demonstrates how to include banner and interstitial advertisements in your applications, which is one of the best ways to earn money from apps.
-<!--more-->
+
 ### Table of contents
 - [Introduction](#introduction)
 - [Prerequisites](#prerequisites)
 - [Initial integration steps](#initial-integration-steps)
 - [Integration in Android Studio](#integration-in-android-studio)
-- [Why Integrate Facebook Ads?](#why-integrate-facebook-ads)
-- [Demerits of integrating into some Applications](#demerits-of-integrating-into-some-applications)
+- [Why Integrate Facebook ads?](#why-integrate-facebook-ads)
+- [Demerits of integrating in-App ads into some Applications](#demerits-of-integrating-in-app-ads-into-some-applications)
 - [Conclusion](#conclusion)
 
 ### Prerequisites
@@ -22,10 +21,10 @@ The key requirements for a successful integration include:
 - [Facebook business account](https://business.facebook.com/overview)
 
 You also need to be familiar with the layout and how to use Android studio. With all these requirements in place, you can move on to the steps involved in the integration process.
-With your Android studio installed and working properly, you will needto install a Facebook Audience Network (FAN) account sdk.
+With your Android studio installed and working properly, you will need to install a Facebook Audience Network (FAN) account SDK.
 
 **FAN (Facebook Audience Network) SDK installation**
-To install, you can download your SDK manually from [here](https://developers.facebook.com/resources/audience-network-sdk-6.8.0.zip) (Not recommended) or follow the steps in [Initial integration steps](#initial-integration-steps) to install it using the recommended method.
+To install, you can download your SDK manually from [here](https://developers.facebook.com/resources/audience-network-sdk-6.8.0.zip) (Not recommended) or follow the steps in [Initial integration steps](#initial-integration-steps) below to install it using the recommended method.
 
 ### Initial integration steps
 Before beginning the integration process, you have to first set up your Facebook Business Manager account for the ads.
@@ -126,7 +125,7 @@ super.onDestroy();
 With all that done, run your code and observe the output.
 For successful integration, the following output is obtained.
 
-![](engineering-education/integrating-facebook-ads-with-your-android-application-in-android-studio
+![output](engineering-education/integrating-facebook-ads-with-your-android-application-in-android-studio
 /output.png)
 
 You can alter the code to and other types of Ads like interstitial Ads and Native Ads in the same manner.
@@ -136,14 +135,14 @@ Consumers prefer in-App advertising over display advertising on mobile websites.
 
 When establishing in-App advertisements, **accessibility** is another important issue to consider. In-App mobile advertising is easier to reach because most consumers have their phones with them all the time, wherever they go. You have access to a captive audience or users who are already using the App and are interested in what you have to say. It's easier to convert them because they're already interested.
 
-### Demerits of integrating into some Applications
+### Demerits of integrating in-app ads into some Applications
 In-App advertisement as seen earlier has many advantages. Besides, it is not always Appealing to some users when ads keep popping in all the time.
 
 Here are some demerits in an in-App advertisement;
 
-- **Disturbances from ads pop-up** creates a user's negative view towards the application. This may discourage users from using applications known to have in-App advertisements.
+- **Disturbances from ads pop-up** create a user's negative view towards the application. This may discourage users from using applications known to have in-App advertisements.
 
-- For some people, it may be **difficult to navigate**. Some interested customers may not get to see the advertisement due to the incompatibility of the ads with some phones.
+- **Difficult to navigate** - Some interested customers may not get to see the advertisement due to the incompatibility of the ads with some phones.
 
 - **Cost incurred on the user** to get the advertisement. To get the advertisement, the user's internet bundles get consumed from an unintended advertisement viewing task.
 
