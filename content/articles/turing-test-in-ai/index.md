@@ -1,9 +1,22 @@
-## Prerequisites
-The reader should have basic understanding of artificial intelligence. [Click here](https://materiaalit.github.io/intro-to-ai/) for an article about AI.
-## Introduction
-The Turing Test in AI (Artificial Intelligence) is a method that is used to test the intelligence of a machine by making inquiries. It tries to test whether a machine is able to think like a human. The test uses three subjects in its performance. That is a *human*, a  *machine* and an *interrogator*.
-This article will give you a clear understanding about Turing Test in AI.
+---
+layout: engineering-education
+status: publish
+published: true
+url: /turin-test-in-ai/
+title: Turin Test in AI
+description: In this article, we will go through the turin test in AI, which is a technique for testing the intelligence of machines. We will look at fundamental aspects such as the history, performance, requirements, features, and limitations of the test. 
+author: emily-rotich
+date: 2021-12-23T00:00:00-14:00
+topics: [Artificial Intelligence]
+excerpt_separator: <!--more-->
+images:
 
+  - url: /solving-database-re-platforming-challenge-with-adaptive-data-virtualization/hero.png
+    alt: Turin Test Example Image
+---
+The Turing Test in AI (Artificial Intelligence) is a method that is used to test the intelligence of a machine by making inquiries. It tries to test whether a machine is able to think like a human. The test uses three subjects in its performance, that is, a *human*, a  *machine* and an *interrogator*.
+<!--more-->
+This article will give you a clear understanding about Turing Test in AI. Readers should have basic understanding of artificial intelligence. [Click here](https://materiaalit.github.io/intro-to-ai/) to get an introduction to AI.
 
 ### Table of contents
 - [History of Turing Test in AI](#history-of-turing-test-in-ai)
@@ -13,9 +26,7 @@ This article will give you a clear understanding about Turing Test in AI.
 - [Modern day Turing Test](#modern-day-turing-test)
 - [Conclusion](#conclusion)
 
-
-### History of Turing Test in AI
-
+### History of Turing test in AI
 Turing Test as the name suggests  was introduced by Alan Turing in the year 1950 in his article 'computing machinery',  and it aimed at testing whether a machine can think.
 
 The test is based on a party game called the imitation game with its modifications and it involves three players a machine (computer), human respondent and an  interrogator.The interrogator does the inquiry  while the human respondent  and the computer are to respond to the interrogator. 
@@ -26,23 +37,23 @@ The interrogator already knows that one of the players is a machine but it only 
 Given that one of the players is a machine and its ability to convert text to speech in form of bits  0 and 1, the conversation is done using a screen and keyboard.The results of the test on the machine is based on the close responses like the human answer.
 
 The interrogator might ask questions like.
-Interrogator: Are you a man?
-Player x(computer) : NO 
+**Interrogator:** Are you a man?
 
-Interrogator: convert the following binary digit  into bits (4294967296)
+**Player x (computer):** NO 
 
-player X: pauses for a while and gives the wrong answer.
+**Interrogator:** convert the following binary digit  into bits (4294967296)
+
+**Player X:** pauses for a while and gives the wrong answer.
 
 This game considers the computer to have passed the test successfully hence intelligent if the interrogator would not distinguish between the human and the machine.
- Research conducted shows that to date no machine has passed the Turing Test.
+Research conducted shows that to date no machine has passed the Turing Test.
 
-### The performance of Turing Test 
+### The performance of Turing test 
 The Turing Test is performed under an interrogation, whereby the test parties, human(person) and the machine are hidden from view to ensure clarity and transaparency in the test.s The Interrogator makes inquiries to both the machine and the human at the same time and attempts to identify which among them  is the machine and which is the human  based on the quality of the answers they give.
 
- The test  considers the computerto be an intelligent agent if the interrogator is unable to distinguish between the computer  and the human in terms of their responses.  Then it concludes that  the machine has passed the test successfully and therefore demonstrating human like intelligence. That is, it can think. 
+The test  considers the computerto be an intelligent agent if the interrogator is unable to distinguish between the computer  and the human in terms of their responses.  Then it concludes that  the machine has passed the test successfully and therefore demonstrating human like intelligence. That is, it can think. 
 
-
-### Requirements for passing the Turing Test in AI 
+### Requirements for passing the Turing test in AI 
 A machine is considered to have successfuly passed the Turing Test if it is able to meet the following requirements :
  1. ***Natural language processing (NLP)***: It can understand natural human languages.
 
@@ -58,23 +69,25 @@ A machine is considered to have successfuly passed the Turing Test if it is able
 
  7. ***Other senses***: such as audition, smell, touch etc.
 
- ### *The Features of  Turing Test*
- Turing Test requires the following : 
+### Features of Turing test
+Turing Test requires the following : 
 
 1. **Participants**
-    - an interrogator 
-    - a person(human)
-    - computer
+The main participants include:
+- an interrogator 
+- a person(human)
+- computer
 
-2. **The site** ;
- where the test itself takes place and  where the particpiants are kept in separate places.
-3. **The test** ; The test is made by asking questions.  
+2. **The site**
+This is where the test itself takes place and  where the particpiants are kept in separate places.
+ 
+3. **The test** 
+The test is made by asking questions.  
 
-
- ### Limitations of turing test 
+### Limitations of Turing test 
 - The test  requires physical interaction which necessitates the need of perception and actuation.
 
--  The test is not reproducible. It uses different code or logic from the original.
+- The test is not reproducible. It uses different code or logic from the original.
 
 - Turing test may not be a necessary test for testing the level of intelligence of a machine since it is not fully quaranteed that any machine that can imitate an intelligent behaviour is intelligent.
 
@@ -82,14 +95,14 @@ A machine is considered to have successfuly passed the Turing Test if it is able
 
 - The test is limited to only testing human like intelligence.
 
-#### Modern day Turing Test 
+### Modern day Turing test 
 The test aimed at upgrading Alan's Turing Test in order analyse the progress of Natural language processing.The test aims at creating Artificial Intelligent agents that can communicate using different modes. 
 
 ### Conclusion
-
 Turing Test is an  important test in demonstrating the  intelligence of a machine,  whether it can think like a human, which is usually done  under an interrogation. 
 The test has some critics i.e not everyone accepts the validity of the test.
 
-Passing the Turing Test however,  remains a challenge to most artificial  intelligence developers. 
-It is also to be noted that no machine has ever passed the test to date.
-Turing Test has paved way  for more innovation in the scope of technology. 
+Passing the Turing test however,  remains a challenge to most artificial intelligence developers. It is also to be noted that no machine has ever passed the test to date. Turing Test has paved way  for more innovation in the scope of technology. 
+
+---
+Peer Review Contributions by: [Onesmus Mbaabu](/engineering-education/authors/onesmus-mbaabu/)
