@@ -1,5 +1,5 @@
 
-Computers are essential tools in our day-to-day business tasks. At times, we may find it helpful to record online zoom meetings, create presentation videos from slides, or support customers' with a video tutorial on how to complete tasks. Such actions need utility software with screen capture ability to achieve. A screen recorder app can generate digital video content by recording the activities of footage on a computer or mobile screens in real-time.
+Computers are essential tools in our day-to-day business tasks. At times, we may find it helpful to record online zoom meetings, create presentation videos from slides, or support customers with a video tutorial on how to complete tasks. Such actions need utility software with screen capture ability to achieve. A screen recorder app can generate digital video content by recording the activities of footage on a computer or mobile screens in real-time.
 
 This article guides us on implementing this functionality in a web browser using React and Node.js.
 
@@ -52,7 +52,7 @@ The `create-react-app` command-line tool creates a boilerplate code for our appl
 Our application needs the web sockets interface to reach the backend; therefore, for this functionality, let's add the `socket.io-client` and `react-loader-spinner` module:
 
 ```bash
-npm install socket.io-client socket.io-client react-loader-spinner
+npm install socket.io-client react-loader-spinner
 ```
 
 Finally, open the folder on your IDE. For VS Code, run the command:
@@ -84,7 +84,7 @@ let data_chunks = [];
 let media_recorder = null;
 ```
 
-For our client-side React, we will write the entire thing in the `App.js` file. Let's add a functional component that will be rendered from the JSX with a <h1> tag of Recorder App.
+For our client-side React, we will write the entire thing in the `App.js` file. Let's add a functional component that will be rendered from the JSX with a `<h1>` tag of Recorder App.
 
 ```js
 function App() {
@@ -99,6 +99,7 @@ function App() {
 ```
 
 If we start our server using the CLI command of `npm start`, then head over to our browser, we should see something like:
+
 
 ### The App component
 Above your return statement add the following code in your `App.js` component.
@@ -140,16 +141,19 @@ A code walkthrough:
   
 - The `linkRef` and `videoRef` have a link to the DOM node and the video to enable download and view in the DOM.
 
-We use a hook useRefto persist states between renders.
+To send events, a method is used socket.emit(type, data), where type is a string indicating the type of event. Data can be both primitives and objects. To process events, a method is used socket.on(type, callback), with an event type, and a callback function that executes once an event is emitted.
+
+Next, we need to capture the screen (get the video stream):
 
 ```js
+
   /**
    *  first the client needs to notify the server 
    *  when a new user has connected from the random username
   */
-  useEffect(() => {
-    ;(async () => {
 
+  useEffect(() => {
+    ;(async () => { 
       if (navigator.mediaDevices.getDisplayMedia) {
         try {
           const _screenStream = await navigator.mediaDevices.getDisplayMedia({
@@ -157,21 +161,33 @@ We use a hook useRefto persist states between renders.
           })
           setScreenStream(_screenStream)
 
-        } catch (err) {
+        } 
+        catch (err) {
 
           setLoading(false)
-          console.log('getDisplayMedia', err)
-          
+          console.log('getDisplayMedia', err)          
         }
+
       } else {
         setLoading(false)
-        console.log('getDisplayMedia is not supported...')
-        
+        console.log('getDisplayMedia is not supported...')  
       }
+
     })()
-
   }, [])
+```
 
+To obtain video data from screen capture, use the method getDisplayMedia()provided by the MediaDevicesincluded interface Navigator.
+
+Unfortunately, today this method is only supported by desktop browsers, which is about 40% of users, but it's still better than nothing.
+
+It should be noted that it getDisplayMediaalso knows how to capture audio data, but currently only Microsoft Edge and support chrome this feature, so we will use a different interface.
+
+>>> Note: Safari requires the user to explicitly state their intent to capture the screen. To solve this problem, this block of code can be placed in a function startRecording(see below).
+
+We receive audio data from the user's microphone:
+
+```js
   useEffect(() => {
     ;(async () => {
       if (navigator.mediaDevices.getUserMedia) {
@@ -202,6 +218,8 @@ Let's briefly understand the above React code:
 ```js
   function startRecording() {
     if (screenStream && voiceStream && !mediaRecorder) {
+
+      // set recording state to true
       setRecording(true)
 
       videoRef.current.removeAttribute('src')
@@ -211,18 +229,17 @@ Let's briefly understand the above React code:
       let mediaStream
       if (voiceStream === 'unavailable') {
         mediaStream = screenStream
-      } else {
-        // const audioTracks = voiceStream.getAudioTracks()
-        // audioTracks.forEach(track => {
-        //   screenStream.addTrack(track)
-        // })
-        // mediaStream = screenStream
+      } 
+
+      // update media streams (... spread operator)
+      else {
         mediaStream = new MediaStream([
           ...screenStream.getVideoTracks(),
           ...voiceStream.getAudioTracks()
         ])
       }
 
+      // mediaRecorder instance
       mediaRecorder = new MediaRecorder(mediaStream)
       mediaRecorder.ondataavailable = ({ data }) => {
         dataChunks.push(data)
@@ -231,11 +248,22 @@ Let's briefly understand the above React code:
           data
         })
       }
-      mediaRecorder.onstop = stopRecording
-      mediaRecorder.start(250)
+      
+      mediaRecorder.onstop = stopRecording;
+
+      // ..
+      mediaRecorder.start(250);
     }
   }
 ```
+
+To receive an audio stream, the method is used getUserMedia. With the support of this method, everything is much better.
+
+We are ready to write the screen without sound, so if any error occurs related to receiving an audio stream (including the user's refusal to grant permission to use the microphone), we set the voice stream to unavailable.
+
+Also, pay attention to the placement setLoading(false). When initializing the application, we show the user a loading progress bar until all required permissions are received.
+
+Let's take a look at the markup:
 
 ```js
 function stopRecording() {
@@ -270,6 +298,13 @@ function stopRecording() {
   if (loading) return <Loader type='Oval' width='50' color='#027' />
 ```
 
+Nothing special:
+
+item video to view the entry
+item to download the record
+button to start and stop recording
+The method onClicklooks like this:
+
 ```js
  return (
     <>
@@ -296,7 +331,7 @@ To automatically monitor and re-run our server upon changes, let's add a `nodemo
 npm install -D nodemon
 ```
 
-The script to trigger this is:
+The script that triggers this event is:
 
 ```JSON
   "scripts": {
@@ -304,6 +339,8 @@ The script to trigger this is:
     "dev": "nodemon index.js"
   },
 ```
+
+Next, on your `index.js` root file, import `express` and `Server` objects from the `socket.io`. The `onConnectionHandler` function will handle our web sockets connection.
 
 ```js
 import express from 'express';
@@ -315,6 +352,8 @@ import http from 'http';
 // sockets connection event handler
 import { onConnectionHandler } from './socket-io/onConnectionHandler.js';
 ```
+
+Below the import in the `index.js` file, instantiate sockets connection, and express.
 
 ```js
 const app = express()
@@ -328,26 +367,37 @@ const io = new Server(server_app, {
   }
 })
 
+// listen to connection event before web sockets trigger
 io.on('connection', onConnectionHandler);
 ```
+
+Next, create a `utils` folder. The `saveData` function saves the recording
 
 ```js
 import { saveData } from '../utils/saveData.js'
 
-const socketByUser = {}
-const dataChunks = {}
+const socketByUser = {};
+
+// data chunks
+const dataChunks = {};
 
 export const onConnection = (socket) => {
+  // user connection event
   socket.on('user:connected', (username) => {
+
+    // create socket id from username
     if (!socketByUser[socket.id]) {
       socketByUser[socket.id] = username
-    }
-  })
+    };
+  });
 
+  // push data chunks once recording starts
   socket.on('screenData:start', ({ data, username }) => {
     if (dataChunks[username]) {
       dataChunks[username].push(data)
-    } else {
+    } 
+    
+    else {
       dataChunks[username] = [data]
     }
   })
@@ -359,6 +409,7 @@ export const onConnection = (socket) => {
     }
   })
 
+  // event handler on disconnect 
   socket.on('disconnect', () => {
     const username = socketByUser[socket.id]
     if (dataChunks[username] && dataChunks[username].length) {
