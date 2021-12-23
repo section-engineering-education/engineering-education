@@ -5,8 +5,8 @@ published: true
 url: /solving-database-re-platforming-challenge-with-adaptive-data-virtualization/
 title: Solving Database Re-platforming Challenge with Adaptive Data Virtualization
 description: This article will take you through the basics of database re-platforming and related challenges in database migrations. We will look at how adaptive data virtualization can solve these challenges. 
-author: gregory
-date: 2021-12-16T00:00:00-14:00
+author: gregory-munene
+date: 2021-12-23T00:00:00-14:00
 topics: [Cloud Computing]
 excerpt_separator: <!--more-->
 images:
