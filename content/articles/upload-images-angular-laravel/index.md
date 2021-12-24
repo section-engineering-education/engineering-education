@@ -1,9 +1,22 @@
-Handling Angular base64 images in a RESTFul API with Laravel
-### Introduction
+---
+layout: engineering-education
+status: publish
+published: true
+url: /upload-images-angular-laravel/
+title: Handling Angular Base64 images in a RESTFul API with Laravel
+description: This tutorial discusses how images can be uploaded from an Angular application as base64 and uploaded to the server as an image.
+author: naomi-seint
+date: 2021-12-24T00:00:00-12:30
+topics: []
+excerpt_separator: <!--more-->
+images:
+
+  - url: /engineering-education/upload-images-angular-laravel/hero.png
+    alt: angular laravel image base64
+---
 Handling images in web applications has become the norm. Almost 99% of applications we interact with daily have images in one way or another.
-
 However, dealing with the back-end images has proven to be a very complex task. For this reason, developers have come up with alternatives to handling images.
-
+<!--more-->
 This tutorial discusses how images can be uploaded from an Angular application as base64 and uploaded to the server as an image.
 
 ### Table of contents
@@ -415,3 +428,7 @@ In this article, we have discussed image upload in-depth. In addition, we have s
 We have seen how we can handle this base64 image using an image repository and save the image path to the database on the server.
 
 Happy coding!
+
+
+---
+Peer Review Contributions by: [Miller Juma](/engineering-education/authors/miller-juma/)
