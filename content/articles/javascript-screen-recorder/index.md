@@ -414,9 +414,12 @@ server.listen(5000, () => {
 
 
 ### A running demo
+
 ![demo 1](/engineering-education/js-screen-recorder/demo1.png)
+
 ![demo 2](/engineering-education/js-screen-recorder/demo2.png)
 
+Check source code on [GitHub repo](https://github.com/Qodestackr/screen-recorder-app).
 
 ### Conclusion
 
