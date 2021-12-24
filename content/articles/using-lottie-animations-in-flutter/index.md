@@ -1,10 +1,12 @@
-Animations are very important in every mobile application. They make the user interface of apps appealing and fun to use. Animations may be difficult to implement in apps and that is where Lottie animations come in. A Lottie is JSON-based animation file. They are used both as a static asset and a network asset. They polish the user interface of your app and make it intuitive to users.
+Animations are very important in every mobile application. They make the user interface of an application appealing and fun to use. However, animations may be challenging to implement in applications. That is where Lottie animations come in. 
 
-In this article, we will implement Lottie animation in a flutter application. Animation controllers in Flutter, give us high-level control over our animations. We will be using an animation controller to control the state of our Lottie animations in our Flutter app.
+A Lottie is a JSON-based animation file. They are used both as static assets and network assets. In addition, they polish your app's user interface and make it intuitive to users.
+
+In this article, we will implement Lottie animation in a flutter application. Animation controllers in Flutter give us high-level control over our animations. Therefore, we will be using an animation controller to control the state of our Lottie animations in our Flutter app.
 
 ### Prerequisites
 
-1. A solid understanding of Dart programing language.
+1. A solid understanding of the Dart programing language.
 2. A solid understanding of Flutter widgets.
 3. Basic knowledge of using animation controllers in Flutter.
 
@@ -33,9 +35,9 @@ import 'package:lottie/lottie.dart';
 
 ### Step Two: Adding assets to your project
 
-- First, to get a Lottie animation JSON file visit, [Lottie animation](http://www.lottiefiles.com/). Select the animation of your choice and download it.
+- First, to get a Lottie animation JSON file visit, [Lottie animation](http://www.lottiefiles.com/). Then, select the animation of your choice and download it.
 
-- Next, create an assets folder in our project directory. Here you will add the downloaded Lottie JSON file which you will use.
+- Next, create an assets folder in our project directory. Here you will add the downloaded Lottie JSON file, which you will use.
 
 - Next, add our assets folder in the pubspec.yaml file in our project as shown below and run `flutter pub get` :
 
@@ -71,7 +73,7 @@ class _LottieScreenState extends State<LottieScreen> {
 
 - Next, add a `body` to the Scaffold. The body will contain the following widgets:
   - Center widget - to center the child widgets on the screen.
-  - Column widget which will a child of the Center widget - to layout the children vertically.
+  Column widget, which will include a child of the Center widget, lays the children vertically.
 
 ### Step four: Using Lottie animations
 
@@ -89,7 +91,7 @@ body: Center(
 ),
 ```
 
-When the application is run, the animation plays automatically. This can be changed by adding the `animate: false` property inside the Lottie widget. The Lottie animation becomes a static image.
+When the application is run, the animation plays automatically. This automatic play can be changed by adding the `animate: false` property inside the Lottie widget. After that, the Lottie animation becomes a static image.
 
 #### 2. Asset Lottie
 
@@ -124,7 +126,7 @@ body: Center(
 ),
 ```
 
-When the button is pressed, the `showSuccessfulDialog()` method is executed. This method is the one that shows the dialog box.
+The `showSuccessfulDialog()` method is executed when the button is pressed. This method is the one that shows the dialog box.
 
 This is the `showSuccessfulDialog()` method code:
 
@@ -160,15 +162,15 @@ As from the code above, we have created a dialog box that will appear when the b
 
 We set the `repeat: false` property on the Lottie to make the animation only play once and not on a loop.
 
-We will create a new animation controller inside our state called `lottieController` as shown below:
+We will create a new animation controller inside our state called `lottieController`, as shown below:
 
 ```dart
 late AnimationController lottieController;
 ```
 
-We will add the animation controller that we have created to the `showSuccessfulDialog()` method in the controller property.
+In the controller property, we will add the animation controller that we have created to the `showSuccessfulDialog()` method.
 
-To start the Lottie animation, we add the `onLoaded` property where we will call the animation controller with a forward method. We will also set the duration of the animation to the one preset for the Lottie file using `composition.duration;` as shown below:
+To start the Lottie animation, we add the `onLoaded` property, where we will call the animation controller with a forward method. We will also set the duration of the animation to the one preset for the Lottie file using `composition.duration;` as shown below:
 
 ```dart
 onLoaded: (composition) {
@@ -177,7 +179,7 @@ onLoaded: (composition) {
 }
 ```
 
-We will create an `initState()` method and `dispose()` method which will initialize the animation and in on completion dispose it.
+We will create an `initState()` method and `dispose()` method, which will initialize the animation and dispose it on completion.
 
 #### 1. initState() method
 
@@ -204,11 +206,11 @@ class _LottieScreenState extends State<LottieScreen> with SingleTickerProviderSt
   }
 ```
 
-We are using `SingleTickerProviderStateMixin` because we are only using one animation controller for our project. We will call our controller inside the initState which then allows us to use the `vsync: this` parameter which is used to synchronize our animation frame rate through our animation controller as shown above.
+We are using `SingleTickerProviderStateMixin` because we are only using one animation controller for our project. Therefore, as shown above, we will call our controller inside the initState, which allows us to use the `vsync: this` parameter used to synchronize our animation frame rate through our animation controller.
 
-To close the dialog automatically once the animation has completed, we added a status listener which listens to the animation controller if the animation is complete as shown in the above code. If the animation is complete then the dialog closes. This is because of the `Navigator.pop(context);` code. After the dialog is closed then the animation controller is reset, `lottieController.reset();`. This is to reset the animation so that it would replay the next time we click the button.
+To automatically close the dialog once the animation has completed, we added a status listener that listens to the animation controller if the animation is complete, as shown in the above code. If the animation is complete, then the dialog closes. This is because of the `Navigator.pop(context);` code. After the dialog is closed then the animation controller is reset, `lottieController.reset();`. This is to reset the animation to replay the next time we click the button.
 
-Next, create the dispose() method as shown in the code below. Add `lottieController.dispose();` code which will destroy the animation controller and remove it from the widget tree.
+Next, create the dispose() method as shown in the code below. Finally, add `lottieController.dispose();` code which will destroy the animation controller and remove it from the widget tree.
 
 ```dart
   @override
@@ -317,6 +319,6 @@ class _LottieScreenState extends State<LottieScreen> with SingleTickerProviderSt
 
 ### Conclusion
 
-Lottie animations are simple and easy to implement in a Flutter application. We have gone through implementing these Lottie animations in our app. We have also used an animation controller to control the state of our animation. This knowledge can be used in other ways in creating interactive UIs for your projects. Hope the tutorial will be useful.
+Lottie animations are simple and easy to implement in a Flutter application. We have gone through implementing these Lottie animations in our app. We have also used an animation controller to control the state of our animation. This knowledge can be used in other ways in creating interactive UIs for your projects. I hope the tutorial will be helpful.
 
 Happy Coding!
