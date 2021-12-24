@@ -2,20 +2,22 @@
 layout: engineering-education
 status: publish
 published: true
-url: /overview-of-developing-serverless-applications-in-c/
-title: Overview of developing serverless applications in C#
+url: /serverless-applications-in-csharp/
+title: Developing Serverless Applications in C#
 description: This article will show you how to develop a serverless application using the C# programming language.
 author: ephraim-gathoni
-date: 2021-12-19T00:00:00-21:00
+date: 2021-12-24T00:00:00-12:00
 topics: [Languages]
 excerpt_separator: <!--more-->
 images:
 
-  - url: /engineering-education/overview-of-developing-serverless-applications-in-c/hero.jpeg
+  - url: /engineering-education/serverless-applications-in-csharp/hero.jpeg
     alt: serverless applications example image
 ---
-[Serverless](https://www.cloudflare.com/learning/serverless/what-is-serverless/) computing has completely changed the technology space. Developers find it a compelling option since it has made their development efficient and more productive. In recent times, serverless computing has been gaining popularity. The main reason is that it lets the developers deploy their applications to the cloud without dealing with the server infrastructure.
+[Serverless](https://www.cloudflare.com/learning/serverless/what-is-serverless/) computing has completely changed the technology space. Developers find it a compelling option since it has made their development efficient and more productive. 
 <!--more-->
+In recent times, serverless computing has been gaining popularity. The main reason is that it lets the developers deploy their applications to the cloud without dealing with the server infrastructure.
+
 Before serverless, developers had to deal with server resources to support their code. Since the introduction of serverless computing, developers worry no more about the operating system and hardware architecture since it handles the server infrastructure. This gives developers more time to pay attention and write good and quality code for their applications.
 
 This article draws attention to developing a serverless application using the [C#](https://docs.microsoft.com/en-us/dotnet/csharp/tour-of-csharp/) programming language. Then later be deployed on popular cloud solutions such as [Amazon AWS](https://aws.amazon.com/) and [Microsoft Azure](https://azure.microsoft.com/en-us/).
@@ -43,7 +45,7 @@ Azure Tools for VS Code are required to allow the developers to use the commands
 
 To achieve that, we will browse to the VS Code extension manager located at the left side of the window and search for the [Azure Tools extension pack](https://marketplace.visualstudio.com/items?itemName=ms-vscode.vscode-azureextensionpack) and install it, as shown in the figure below:
 
-![Extension pack](/engineering-education/overview-of-developing-serverless-applications-in-c/azure-extensions1.png)
+![Extension pack](/engineering-education/serverless-applications-in-csharp/azure-extensions1.png)
 
 Next, a developer has to sign in to Azure by pressing the keys `CTRL+Shift+P` on the keyboard to launch the command palette in the VS Code editor. Then, a developer will need to enter the `Azure: Sign In` in the text field displayed on top of VS Code editor.
 
@@ -86,7 +88,7 @@ The developer would need the following before coding Lambda functions:
 
 Next, a developer will need to launch Visual Studio. A `Getting Started with the AWS Toolkit for Visual Studio` window will be displayed next to the `Start Page` tab as shown below:
 
-![Getting started with AWS](/engineering-education/overview-of-developing-serverless-applications-in-c/getting-started-with-aws1.png)
+![Getting started with AWS](/engineering-education/serverless-applications-in-csharp/getting-started-with-aws1.png)
 
 The developer will be required to key in the AWS credentials such as `Access Key` and `Secret Key`. These credentials can be retrieved by reading the steps provided in the same window.
 
@@ -94,7 +96,7 @@ Below are the steps the developer can follow when coding the Lambda function:
 - Launch a Visual Studio IDE, navigate to `File`, select the `New` option, and click on the `Project` option to create a new project.
 - Next, click on `Visual C#` then select the `AWS Lambda Project (.NET Core)` option as shown:
 
-![New AWS project](/engineering-education/overview-of-developing-serverless-applications-in-c/aws-project1.png)
+![New AWS project](/engineering-education/serverless-applications-in-csharp/aws-project1.png)
 
 - Input the project name with the preferred name and click the `Ok` button. The other options should be left as default.
 - Select the Lambda project type based on project requirements.
@@ -102,7 +104,7 @@ Below are the steps the developer can follow when coding the Lambda function:
 
 We can note that a file with the name `aws-lambda-tools-defaults.json` will be created and displayed on the solution explorer as shown below:
 
-![JSON File](/engineering-education/overview-of-developing-serverless-applications-in-c/json-file1.png)
+![JSON File](/engineering-education/serverless-applications-in-csharp/json-file1.png)
 
 This file is essential because the function handler and other options are set.
 
@@ -112,11 +114,11 @@ Once the code has been successfully reviewed, the next step will be to run it on
 Below are the steps to be followed:
 - In the solution explorer, and on the right side of the Visual Studio IDE, right-click on the project name and click on the `Publish to AWS Lambda` button as shown below:
 
-![Publish to AWS](/engineering-education/overview-of-developing-serverless-applications-in-c/aws-publish1.png)
+![Publish to AWS](/engineering-education/serverless-applications-in-csharp/aws-publish1.png)
 
 - Next, in the `Upload to AWS Lambda` pop-up window displayed, input the function's name and click the `Next` button as demonstrated in the below figure. Note that developers can input any name based on their preferences.
 
-![AWS Upload window](/engineering-education/overview-of-developing-serverless-applications-in-c/aws-window1.png)
+![AWS Upload window](/engineering-education/serverless-applications-in-csharp/aws-window1.png)
 
 - Next, input a role associated with the developer AWS account on the `Advanced Function Details` window. There are more sections on this page, including VPC and the Environment section. A developer can only use the VPC section of the function to access resources available in the Amazon VPC.
 - A progress window will appear, showing the upload status once the process begins. Note that a page will appear where the developer can test the function and view logs.
