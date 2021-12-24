@@ -1,7 +1,21 @@
-### How to implement Linear Time Invariant(LTI) systems analyzer using Matlab Graphical User Interface(GUI)
+---
+layout: engineering-education
+status: publish
+published: true
+url: /how-to-implement-lti-systems-analyzer-using-matlab-gui/
+title: How to Implement Linear Time Invariant (LTI) System Analyzer Using MATLAB Graphical User Interface (GUI)
+description: This article will be an introduction to Linear Time Invariant systems. We will be building an LTI system analyzer using Matlab along with a simple GUI.
+author: florence-akinyi
+date: 2021-12-24T00:00:00-20:20
+topics: [Languages]
+excerpt_separator: <!--more-->
+images:
 
+  - url: /engineering-education/how-to-implement-lti-systems-analyzer-using-matlab-gui/hero.jpg
+    alt: How to Implement Linear Time Invariant (LTI) System Analyzer Using MATLAB Graphical User Interface (GUI) Hero Image
+---
 Linear Time Invariant (LTI) systems are significant part of the signal processing toolbox that defines the action of a physical system on the signal.
-
+<!--more-->
 Filters are examples of the LTI systems. In this system, the input is called the "Excitation", and the corresponding output is the "Response". The basic principle of such a system is linearity and time invariance.
 
 When you combine all the inputs, and their corresponding outputs, it's linearity. When the system depends on the time, but not on the time function, it is time invariance.
@@ -353,3 +367,6 @@ In this tutorial, we have learned to analyze LTI systems easily by just inputtin
 Furthermore, the numerous in-built Matlab functions makes the creation of this GUI easier.
 
 Happy coding!
+
+---
+Peer Review Contributions by: [Srishilesh P S](/engineering-education/authors/srishilesh-p-s/)
