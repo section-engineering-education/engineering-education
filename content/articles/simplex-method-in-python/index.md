@@ -1,17 +1,19 @@
 
 ### Understanding the Simplex Method
-The simplex method is an algorithm used in linear programming problems to determine the optimal solution for a given optimization problem. This method is used when a linear optimization problem is subjected to inequality constraints. In this article, we shall look at how this algorithm work.
+The simplex method is an algorithm used in linear programming problems to determine the optimal solution for a given optimization problem. This method is used when a linear optimization problem is subjected to inequality constraints. 
+
+In this article, we shall look at how this algorithm work.
+
 ### Prerequisites
 1. Python installed on your computer
 1. Knowledge in Gaussian [Jordan Elimination Method](https://www.storyofmathematics.com/gauss-jordan-elimination) in Linear Algebra.
-
 
 To understand how this algorithm works, let's consider the following problem:
 
 Manufacture of bicycles builds racing, touring, and models. The bicycles are made of both aluminum and steel. The company has available 91800 units of steel and 42000 of aluminum. The racing, touring, and mountain models need 17, 27, and 15 units of steel, and 12, 21, and 15 units of aluminum, respectively. How many of each type of bicycle should be made to maximize the profit if the company makes 8 dollars per racing bike, 12dollars per touring bike, and 22 dollars per mountain bike? What is the maximum possible profit?
 
-### Setting up a Simplex method:
-Now, many optimization problems we will come across are in statement form. From this statement, we need to formulate our optimization problem wisely correctly. Therefore, we chose this kind of problem and not an already developed one to show you how you can systematically develop an optimization problem so that in the future, you can do so on your own.
+### Setting up a Simplex method
+Now, many optimization problems we will come across are in statement form. From this statement, we need to formulate our optimization problem correctly. Therefore, we chose this kind of problem and not an already developed one to show you how you can systematically develop an optimization problem so that in the future, you can do so on your own.
 
 The first thing we need to do is to define our variables:
 R: Number of racing bikes
@@ -23,20 +25,23 @@ From the question, we are asked to find the maximum profit. Therefore we are opt
 Still from the question, the profit function is:
 P = 8R + 12T + 22M
 
-Now we have our objective function.
-The next thing is to find out what are restrictions this function is imposed on.
-Basically, all productions can only utilize up to the available resources. Therefore from this, we can realize our first constrain. Since we have two categories of resources with the respective possible number of production units that can be made out of them, we will thus have two constraints. These constraints are:
+Now we have our objective function. The next thing is to find out what are restrictions this function is imposed on. For example, all productions can only utilize up to the available resources. Therefore from this, we can realize our first constrain. 
+
+Since we have two categories of resources with the respective possible number of production units made out of them, we will thus have two constraints. These constraints are:
 $17R+27T +34M\le91800$
 $12R+21T +15M\le42000$
 
-Also, we need to understand any type of product produced can either be zero for not produce or greater than one when at least a single product is produced. Therefore on top of the above two constraints, we will all the following as well:
+Additionally, we need to understand that any type of product produced can either be zero for not produce or greater than one when at least a single product is produced. Therefore on top of the above two constraints, we will all the following as well:
 $R\ge0, T\ge0,M\ge0$ 
+
 Now, we can combine the following and come up with the following optimization problem.
+
 $Maximize\ P = 8R+12T+22M $
 Sujected to:
 $17R+27T +34M\le91800$
 $12R+21T +15M\le42000$
 $R\ge0, T\ge0,M\ge0$
+
 This is the optimization we need to solve.
 
 To get started, on the objective equation take all variables and put them to it's left hanside, i.e.,
@@ -111,7 +116,9 @@ $\begin{bmatrix}
    3 & 93/17 & 0& 11/17& 0& 1& 59400 \\ 
 \end{array}
 \end{bmatrix}$
-We reach the optimal solution when there is no negative value in our objective row. Since there is no negative value in the objective row from the above table, we have an optimal solution. From this solution, we note that M and $S_2$are the basic variables( take the form of an identity matrix), and the rest are non-basic. Therefore, we set all non-basic variables to zero. This implies that our solution will be as follows:
+We reach the optimal solution when there is no negative value in our objective row. Since there is no negative value in the objective row from the above table, we have an optimal solution. 
+
+From this solution, we note that M and $S_2$are the basic variables( take the form of an identity matrix), and the rest are non-basic. Therefore, we set all non-basic variables to zero. This implies that our solution will be as follows:
 
 $R = 0$
 $T = 0$
@@ -180,7 +187,9 @@ $\begin{bmatrix}
 \end{bmatrix}$
 
 Since we have negative values in the $z^{th}$ row, this solution is not optimal.
-Again, we identify the pivot column from the current tableau and repeat all the steps, from identifying the pivot column and the pivot value. Applying the Gaussian Jordan Elimination Method, we make the pivot value a unit value and all other elements in the same column zeros. We then check if our objective row is optimal(has no negative value). If it's optimal, we execute the process; else, we continue to find the next pivot column and pivot value until the $Z^th$ row is optimal.
+Again, we identify the pivot column from the current tableau and repeat all the steps, from identifying the pivot column and the pivot value. Applying the Gaussian Jordan Elimination Method, we make the pivot value a unit value and all other elements in the same column zeros. 
+
+We then check if our objective row is optimal(has no negative value). If it's optimal, we execute the process; else, we continue to find the next pivot column and pivot value until the $Z^th$ row is optimal.
 
 Doing so on the above tableau, finally, we will end up with the following tableau.
 
@@ -204,7 +213,9 @@ As we can see, there's no negative value in the $Z^{th}$ row, and thus the solut
 Now we can run the above two examples in python and see if we get the same output.
 
 We will work through how we create our input arrays from the first problem  and then the second problem will one will follow.
+
 #### Case 1.
+
 ```python
 ### Import the neccessary libraries
 import numpy as np
@@ -224,6 +235,7 @@ res = linprog(c, A_ub=A, b_ub=b,  bounds=(R, T, M), method='simplex', options={"
 print(res) # print results
 
 ```
+
 This program returns:
 
 ```bash
@@ -281,9 +293,10 @@ from scipy.optimize import linprog
 # Solve the problem by Simplex method in Optimization
 res = linprog(c, A_ub=A, b_ub=b,  bounds=(x, y), method='simplex', options={"disp": True})  # linear programming p[roblem
 print(res) # print results
-
 ```
+
 Execting this program yields:
+
 ```bash
 Optimization terminated successfully.
          Current function value: -1900.000000
@@ -299,7 +312,9 @@ Optimization terminated successfully.
 
 ```
 
-In the result, the value of the Objective function, i.e., fun, is -1900. This value is computed for the minimization problem. In the case of a maximization problem, we omit the negative sign. Therefore, the solution for our maximization is 1900. Also, from the results, we can see that the value for the x and y that will lead to an optimal solution are 10 and 15, respectively. The output we obtained from our two implementations above is similar to the respective manual problems we solved before. Thus, the simplex problem was successfully implemented.
+In the result, the value of the Objective function, i.e., fun, is -1900. This value is computed for the minimization problem. In the case of a maximization problem, we omit the negative sign. Therefore, the solution for our maximization is 1900. Also, from the results, we can see that the value for the x and y that will lead to an optimal solution are 10 and 15, respectively. 
+
+The output we obtained from our two implementations above is similar to the respective manual problems we solved before. Thus, the simplex problem was successfully implemented.
 
 ### Conclusion
-In this tutorial, we have theoretically looked at the simplex method and its implementation in python. Other than solving the optimization problem itself, we showed you how we wisely deduce the optimization function from the given problem. This is the end of this session. Happy learning.
+In this tutorial, we have theoretically looked at the simplex method and its implementation in python. Other than solving the optimization problem itself, we showed you how we wisely deduce the optimization function from the given problem. Happy learning.
