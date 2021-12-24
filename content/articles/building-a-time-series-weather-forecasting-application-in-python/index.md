@@ -1,4 +1,4 @@
-In this tutorial, we will take a look at how we can forecast the weather using a time series package known as Neural Prophet. In this walk-through, we'll be going through a couple of key things:
+This tutorial will take a look at how we can forecast the weather using a time series package known as Neural Prophet. In this walkthrough, we'll be going through a couple of key things:
 - We'll start by preprocessing our data fetched from Kaggle using the Pandas library.
 - We'll train a time series forecasting model to predict temperature using the model.
 - We'll learn how to forecast the temperature into the future.
@@ -33,23 +33,21 @@ We need to now import the necessary dependencies into our notebook. We'll import
 import pandas as pd
 from neuralprophet import NeuralProphet
 from matplotlib import pyplot as plt
-import pickle
 ```
 - `Pandas` will help us read our data into our notebook.
 - `NeuralProphet` is the class we will use to help us predict the future temperature.
 - `Matplotlib` will help us in plotting.
-- `Pickle` will help us save our model to disc. 
 
 The next step involves us importing our data.
 
 ### Loading the dataset 
-We will use the [Rain in Australia](https://www.kaggle.com/jsphyg/weather-dataset-rattle-package) dataset from Kaggle. Though a rain dataset, we are specifically going to predict the temperature. That means we will only work with the temperature data from the dataset. You need to download it and upload the `weatherAUS.csv` file into your notebook.
+We will use the [Rain in Australia](https://www.kaggle.com/jsphyg/weather-dataset-rattle-package) dataset from Kaggle. Although it is a rain dataset, we are specifically going to predict the temperature. That means we will only work with the temperature data from the dataset. You need to download it and upload the `weatherAUS.csv` file into your notebook.
 
 ```python
 df = pd.read_csv('weatherAUS.csv')
 df.tail()
 ```
-We've used Pandas `read_csv()` method to load in out dataset. In addition, we've used the `tail()` method to view the last five rows in our dataset.
+We've used Pandas `read_csv()` method to load in our dataset. In addition, we've used the `tail()` method to view the last five rows in our dataset.
 
 Let's do a bit of exploratory data analysis on the data.
 
@@ -135,8 +133,8 @@ bris = df[df['Location']=='Brisbane']
 bris['Date'] = pd.to_datetime(bris['Date']) 
 ```
 We've done two things:
-- We've filtered out the Brisbane location.If you want to use a different location here you could. You need to replace "Brisbane" with any location you wish.
-- We've converted our date column from an object to date time type.
+- We've filtered out the Brisbane location. If you want to use a different location, you can. You need to replace "Brisbane" with any location you wish.
+- We've converted our date column from an object to a date-time type.
 
 If you type in `bris.dtypes`, you will see that the formatting has changed.
 
@@ -149,7 +147,7 @@ dtype: object
 ```
 This is a requirement whenever you're working with Neural Prophet. Neural prophet requires you to give it two columns only. A `ds` column which is a timestamp and a `y` column which is the numeric column that we want to predict. In this case, our `ds` will be `Date` while our `y` will be `Temp3pm`.
 
-Let's use matplotlib to plot our temperature over time.
+Let's use `matplotlib` to plot our temperature over time.
 
 ```python
 plt.plot(bris['Date'], bris['Temp3pm'])
@@ -178,7 +176,7 @@ When you run the code above, you'll notice that our dataset has been filtered to
 We can now go ahead and train our model.
 
 ### Training the forecasting model
-We need to first create a new instance of Neural Prophet using the `NeuralProphet()` class we imported earlier. We store this instance is a variable `n`. Secondly,we'll use the `fit()` method to go ahead and train.
+We need to first create a new instance of Neural Prophet using the `NeuralProphet()` class we imported earlier. We store this instance inside a variable `n`. Secondly, we'll use the `fit()` method to go ahead and train.
 
 ```python
 n = NeuralProphet()
@@ -197,9 +195,9 @@ future = n.make_future_dataframe(new_column, periods=400)
 forecast = n.predict(future)
 forecast.tail()
 ```
-We are forecasting for 400 periods (400 days into the future). We've also used the `n.predict()` method to go ahead and predict our future values. Finally, we are using the `tail()` method to list our five last rows. You'll notice that the last row is our 400th prediction. That is, `2018-07-30`. Remember, our dataset only has values upto the date `2017-06-25`.
+We are forecasting for 400 periods (400 days into the future). We've also used the `n.predict()` method to go ahead and predict our future values. Finally, we are using the `tail()` method to list our five last rows. You'll notice that the last row is our 400th prediction. That is, `2018-07-30`. Remember, our dataset only has values up to the date `2017-06-25`.
 
-Let's visualize this predictions.
+Let's visualize these predictions.
 
 ```python
 plot = n.plot(forecast)
@@ -208,11 +206,11 @@ Result:
 
 ![Visualizing our prediction](/engineering-education/building-a-time-series-weather-forecasting-application-in-python/vusual.png)
 
-From these results, we can deduce that between `2018-01` and `2018-03`, we expect the temperature to be very high. In addition, the months between June and July, we expect a lot colder temperatures. This results mimics the one that we had earlier with hotter temperatures in January - March and colder temperatures between June and July. 
+From these results, we can deduce that between `2018-01` and `2018-03`, we expect the temperature to be very high. In addition, in the months between June and July, we expect a lot colder temperatures. This result mimics the one that we had earlier with hotter temperatures in January - March and colder temperatures between June and July. 
 
 You can find the complete code for this tutorial [here](https://colab.research.google.com/drive/1-jV0KIAxJEuozwS6quVGVf4tpRlfEZTE?usp=sharing).
 
 ### Wrapping up
-That wraps it up how to generate weather forecast into the future. We performed some exploratory data analysis on our data, trained our model and final made the predictions with only a few lines of code. Feel free to try it out yourself.
+That wraps up how to generate weather forecasts into the future. We performed some exploratory data analysis on our data, trained our model, and finally made the predictions with only a few lines of code. Feel free to try it out yourself.
 
 Happy coding!
