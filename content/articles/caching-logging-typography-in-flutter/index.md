@@ -1,27 +1,17 @@
 # Caching, Logging and Typography in Flutter
 
+In this tech tutorial, we will learn how to implement some advanced features such as caching and logging in flutter. We will also take a look at how to implement typography features for content in our application.
 
-In this tech tutorial, we will learn how to implement some advanced features when coding our mobile application development such as caching and logging. We will also take a look at how to implement typography features for content in our application
 
 
 ![Hero Image for Caching, Logging and Typography in Flutter](./hero.jpg)
 
 
 ### Introduction
-As a programmer, knowing how to create beautiful applications and deploy them to production is a great thing, you will be a great developer if you can create efficient applications that are both space and time conscious. Resources as scarce irrespective of the context you place them and adequate utilization will be really beneficial to all parties in play.
+As a programmer, knowing how to create beautiful applications and deploy them to production is a great thing, you will be an even greater developer if you can create applications that are efficient both in space and time. Resources as scarce irrespective of the context you place them and adequate utilization will be beneficial to all parties in play. In the case of caching, when our application makes frequent requests/access to the same resource that does not change, it is classified as a waste because no new information that is different from initial requests/access has been obtained.
 
-In the case of caching, when our application makes frequent requests/access to the same resource that does not change, it is considered a waste because no new progress is made or information different from initial requests/access has been obtained. 
-
-Knowing what is happening in our application when it runs is very vital for debugging. We want to know if our application behaves in the way it should or should not. When something breaks we want to be able to detect what caused it when it happened, and where it happened so we can fix the issue causing our app not to function in the proper manner. To achieve this we make use of logging.
-
-
-In this tutorial, you’ll:
-
-- Learn how to implement caching in flutter with a typical example, the benefits of caching and why we need to implement caching in spacific operations in our application.
-
-- Application production implemetation of logging. Detailed logger system
-- How to implement typography in our application
-
+Similarly, knowing what happens when our apps are running is very vital for debugging. We want to know if our application behaves in the way it should or in a way it should not. When something breaks we want to be able to detect what caused it when it happened, and where it happened so we can fix the issue causing the malfunction. To achieve this we make use of logging.
+ 
 
 
 ### Goals
@@ -35,8 +25,10 @@ In this tutorial, you’ll:
 
 
 ### Prerequisite
-This tech tutorial requires that you are handy working with dart and flutter in creating applications, have dealt with integrating services and functionalities in your application, and that you want to make your application run efficiently.
-Knowing the various data structures and data types available in the dart programming language will better guide you to developing efficient applications. For more info about the data structures in  dart check out this [website](https://www.tutorialspoint.com/dart_programming/dart_programming_collection.htm) 
+- This tutorial requires that you are handy working with dart and flutter in creating applications and have dealt with integrating services and functionalities in your application.
+
+- Knowing the various data structures and data types available in the dart programming language will better guide you to developing efficient applications. For more info about the data structures in dart check out this
+[website](https://www.tutorialspoint.com/dart_programming/dart_programming_collection.htm).
 
  
 
@@ -59,21 +51,24 @@ Knowing the various data structures and data types available in the dart program
 
 
 ### Caching 
-Caching is a mechanism implemented by a system or a system creator that temporarily stores data in available memory such that it makes it easier to access and retrieve that information stored. In a computer system, cache memory is made available for system use and data currently being used by the user will operating the system are sometimes cached. Caching is being implemented by the creator of the system i.e the programmer since he writes the instructions which the computer executes. Caching stores frequently access data, images, and objects near where they are often needed which makes accessing this information faster.
+Caching is a mechanism implemented by a system or a system creator that temporarily stores data in available memory such that it makes it easier to access and retrieve that information stored. In a computer system, cache memory is made available for system use, and data currently being used by the user while operating the system are sometimes cached. Caching is being implemented by the creator of the system i.e the programmer since he writes the instructions which the computer executes. Caching stores frequently access data, images, and objects near where they are needed often and as such makes accessing this information faster.
 
- In a situation where there is an HTTP request made to the server for a resource that is stale,( data that does not change) when a user changes screens in your application, caching is very vital in such situations. It gives your user a better experience when they dont have to wait for data to be fetched every time they switch between screens causing your application to be slow. For data that may not be stable, you can give the user the option to refresh the data fetched and update the cached records if there is new data present
+ In a situation where there is an HTTP request made a server for a resource that is stale,( data that does not change) when a user switches between screens in your application, caching is very vital in such situations. It gives your user a better experience. They do not have to wait for data to be fetched every time they switch between the screens. For data that may not be stable, you can give the user the option to refresh the data fetched and update the cached records if there is new data present.
+
+
 
 ### Benefits of Caching
-- Caching save resources 
-- Cacheing gives users a better experience
-- Caching makes your application work faster and better
+- Caching save resources.
+- Cacheing gives users a better experience.
+- Caching makes your application work faster and better.
 - It helps you create efficient applications.
 
 
 ### Caching Implementation
-To show a sample of this we will perform an HTTP request in our flutter application to fetch data when the user navigates to a new screen that requires its content to be fetched.
+To show a sample of this we will perform an HTTP request in our flutter application to fetch data when the user navigates to a new screen that where its contents are fetched.
 
-In your main. dart file set up your flutter application to display a button that navigates to a new screen when clicked.
+In your “main.dart” file set up your flutter application to display a button that navigates to a new screen when clicked.
+
 
 
 ```dart
@@ -101,9 +96,7 @@ class MyApp extends StatelessWidget {
    );
  }
 }
-
 ```
-
 
 In the above snippet, we have a basic flutter application setup that has an app bar with the title Caching. It has a body, Container that has nothing within it.
 
@@ -129,7 +122,7 @@ class _CountriesSelectState extends State<CountriesSelect> {
 }
 ```
 
-Next, we will make a widget that holds a little labeled USA, the country we want to get more information about. The 
+Next, we will make a widget that holds a text titled, USA, the country we want to get more information about.
 
 
 ```dart
@@ -139,14 +132,12 @@ Next, we will make a widget that holds a little labeled USA, the country we want
     },
 
 ```
-
-We specify the screen we wish to go to bypassing in the selected country as a parameter to the named constructor of the FetchDataScreen class and navigate there whenever the list is clicked with the help of the onTap function property of the little widget
-
+We specify the screen we wish to navigate to by passing the selected country as a parameter to the named constructor of the `FetchDataScreen` class and navigate there whenever the list is clicked with the help of the onTap function property.
 
 
-Based on the information gotten from the constructor we store that in a data field for the class to make it accessible throughout the application. 
+Based on the information gotten from the constructor we store that in a data field making it accessible to the class. 
 
-Next, we will make our request for information about the selected country using the HTTP flutter package and a public rest API repository for country information offered by [https://restcountries.com/]. To achieve this head on to the HTTP package repo and get the latest installation version, in this case, our is HTTP: ^0.13.4 and add it to the dependencies in our pubspec.yaml file in the root directory of our application. 
+Next, we will make our request for information about the selected country using the HTTP flutter package and a public rest API repository for country information offered by [rest country](https://restcountries.com/). To achieve this head on to the HTTP package repo and get the latest installation version, in this case, our is `HTTP: ^0.13.4` and add it to the dependencies in our pubspec.yaml file in the root directory of our application. 
 
 Pubspec.yaml
 
@@ -158,8 +149,8 @@ dependencies:
  http: ^0.13.4
 
 ```
+Above is the section between dependencies and dev_dependencies in our flutter application. Once our HTTP package is added run the code below.
 
-Above is the section between dependencies and dev_dependencies in our flutter application. Once our HTTP package is added run the code below
 
 ```dart
 Flutter pub get
@@ -309,8 +300,8 @@ class _FetchDataScreenState extends State<FetchDataScreen> {
  }
 }
 ```
+The above code sends a request to the endpoint to obtain the selected countries’ information and displays part of the data on the current screen.  Underneath is a button that navigates us to a new screen where we can see more details about the same country. 
 
-The above code sends a request to the endpoint to obtain the selected countries’ information and displays part of the data on the current screen.  Below is a button that navigates you to a new screen where we can see more details about the same country. 
 
 
 ```dart
@@ -325,9 +316,7 @@ onPressed: () {
 child: const Text('More'))
 ```
 
-
-The new screen, FetchMoreScreen() takes a parameter of the selected country which will be used in an HTTP request in it. The code for the fetchMoreScreen is specified below
-
+The new screen, FetchMoreScreen() takes a parameter of the selected country which will be used in an HTTP request in it. The code for the fetchMoreScreen is specified below.
 
 ```dart
 class FetchMoreScreen extends StatefulWidget {
@@ -462,21 +451,24 @@ class _FetchMoreScreenState extends State<FetchMoreScreen> {
 }
 
 ```
- 
- The FetchMoreScreen() performs its own request to the same resource and populates its content with data different from that of the previous screen FetchDataScreen(). It also has a button labeled “Less” that navigates the user to the FetchDataScreen(). 
+ The FetchMoreScreen() performs its request to the same resource and populates its content with data different from that of the previous screen FetchDataScreen(). It also has a button labeled “Less” that navigates the user to the `FetchDataScreen()`. 
 
-Though this may not be the most efficient of codes it is sufficient to represent the idea of caching which we are discussing. 
+Though this may not be the most efficient of examples, it is still sufficient to represent the idea of caching which we are discussing. 
 
 
 
 ### Operation, Problem, Solution
-Ok if you run the code as it is, you will get as the first screen a list of the countries listed, then selecting a country of choice you will be taken to the next screen where a few details about the selected country is fetched from the endpoint. The data takes a while to display but once it’s gotten it renders on the screen. Clicking the “More” button takes you to the next screen which similarly sends a request to the database fetching extra details about the country. It has a less button that takes you back to the previous screen where you need to fetch the initial few data about the country. This is an irrelevant request. The data being fetched every time you switch between screens is not changing, why send a request for a resource you already have accessed before. This example can occur in any case scenario though not in the exact same fashion. Since we know for users interact with our application that they we most likely access a single screen on multiple occasions the most effective way to make the app efficient is to cache the data the first instance it is fetched.  
+Ok if you run the code as it is, you will get as the first screen a list of the countries listed, then selecting a country of choice you will be taken to the next screen where a few details about the selected country are fetched from the endpoint. The data takes a while to display but once gotten it renders on the screen. Clicking the “More” button takes you to the next screen which similarly sends a request to the database fetching extra details about the country. It has a less button that takes you back to the previous screen where you need to fetch the initial few data about the country. This is an irrelevant request. The data being fetched every time you switch between screens is not changing, why send a request for a resource you already have accessed before. This example can occur in any case scenario though not in the same fashion.
 
 So to effect this programmatically what we will do is 
 Set up the fetched data to store the information obtained from the first load in a temporary cache file.
 Check if the data exists in the temporary cached file if data exists use data and dont send a request if data doesn’t exist then it is the first time accessing the screen go ahead and fetch the data.
-To achieve this we will import a package from the flutter pub repository [path_provider](https://pub.dev/packages/path_provider). 
-add the package to your pubspec.yaml 
+ 
+
+To achieve this we will import a package from the flutter pub repository path_provider (that gets the path to the directory where your application stores data) and add the package to your pubspec.yaml. [path_provider](https://pub.dev/packages/path_provider). 
+
+
+Add the package to your pubspec.yaml 
 
 ```dart
 dependencies:
@@ -486,11 +478,7 @@ dependencies:
  path_provider: ^2.0.8
 ```
 
- run flutter pub get to install the dependency added.
-
-Import your path_provider package at the top of your file
-
-Edit the getCountryInfo() function to effect your caching 
+run flutter pub get to install the dependency added. Import your `path_provider` package at the top of your file. Edit the getCountryInfo() function to effect your caching.
 
 
 
@@ -537,7 +525,7 @@ Future<void> getCountryInfo(String country) async {
 }
 ```
 
-In the above code, we created a temporary file named “fileName” and the dart.io library.
+In the above code, we created a temporary file named “fileName” and the `dart.io` library.
 
 ```dart
  var dir = await getTemporaryDirectory();
@@ -555,27 +543,27 @@ Then creates the file in the device storage.
 } 
 ```
 
-Using file.existsSync() we check if the file exists. If it does we read from it otherwise its the first time calling the API so we send our request to fetch the file.
+Using `file.existsSync()` we check if the file exists. If it does we read from it otherwise its the first time calling the API so we send our request to fetch the file.
 
 ```dart
  // saving to cache
     file.writeAsStringSync(response.body, flush: true, mode:FileMode.write );
 ```
-
 When calling the file for the first time we use the code snippet above to write our response to the file. Since the response gotten from the HTTP package sending the request is already in JSON format, there’s no need to decode it another store it in the database.
 
 If we run our code we see that on the first click of the country name we have a logged message saying Fetched from API navigating back and forth between screens logs to the terminal the subsequent reads are fetched from the cached file. Our data access is fast, quick and saves resources fetching the same set of data from the endpoint every time the user navigates between screens. 
 
-The same approach can be applied to the FetchMoreScreeen().
+
+The same approach can be applied to the `FetchMoreScreeen()`.
 
 ### Logging
 Logging is the process of tabbing down a record of system operations ranging from data input, processes, data output, down to the final results. Logging in the context of this tutorial is different from the normal log output that regular programming languages make to the terminal (in the case of the dart, print()). Such logging to the terminal or console that regular programming languages make are basic, undescriptive, and sometimes unhelpful during real application production. They do not give other relevant details such as when the log occurred, what initiated the log, these information are relevant in depicting application operations and also app crashes.
 
-To simulate a logging procedure in flutter we will make use of the flutter package 
+- To simulate a logging procedure in flutter we will make use of the flutter package.
 
-Head over to the flutter package and follow the step to install and get logging in to your application.
+- Head over to the flutter package and follow the step to install and get logging in to your application.
 
-Add the package to your pubspec.yaml file as a dependency
+- Add the package to your pubspec.yaml file as a dependency.
 
 
 
@@ -586,7 +574,7 @@ dependencies:
  logging: ^1.0.2
 ```
 
-Import the package into the dart file you intend to make use of the logger. In our case, we will have it in the main.dart file and make use of it in our FetchDataScreen class
+Import the package into the dart file you intend to make use of the logger. In our case, we will have it in the `main.dart` file and make use of it in our `FetchDataScreen()` class.
 
 When implementing logger it’s good to create the instantiation of the logger as high in your widget tree as possible. Using our previous codebase let us implement some logging.
 
@@ -680,10 +668,6 @@ Widget build(BuildContext context) {
 }
 }
 ```
-
-In the code above we dont need the implementation part within the build folder. We instantiated our logging using
-
-
 Then output basin info and fine message using the methods provided by logging package. Below is a list of options each of which symbolizes a different grade or level of a log message. 
 
 
@@ -698,10 +682,7 @@ Then output basin info and fine message using the methods provided by logging pa
 - Level.FINER
 - Level.FINEST
 
-If we run the application we would not get any response because we are not listening to the log
-
-
-So in the main method, we implement the root Logger
+If we run the application we would not get any response because we are not listening to the log. So in the main method, we implement the root Logger
 
 ```dart
 Logger.root.level = Level.ALL; 
@@ -712,21 +693,21 @@ ${record.level.name}: ${record.time}: ${record.message}');
 ```
 
 
-If we run our application we get the response just as we specified printed out the console
+If we run our application we get the response just as we specified printed out the console.
 
 ```dart
 MyApp - FIINE: 2021-12-22 19:37:00.608065: Fetching from API
 ```
 This is great because now we have more information about our logs, but still, it’s not so great because we are still using print to log to the terminal. What we can do as it is with most live applications is to write these logs to a file and store them in memory. They are other properties provided by the record value return in the listener you can head over to the logging docs to check or better still, play around with the information you have access to.
 
-- Loggername - The name specified in the logger instantiation
-- Message - The log message to be displayed
-- Level - The level of the log, either fine, severe, warning e.t.c
-- Error - The error if there is any
-- Time - The time of the logger
-- stackTrace - The stacktrace as it propagates out
-- Zoneobject - The zone of the log
-- sequenceNumber - The sequence number 
+- Loggername - The name specified in the logger instantiation.
+- Message - The log message to be displayed.
+- Level - The level of the log, either fine, severe, warning e.t.c.
+- Error - The error if there is any.
+- Time - The time of the logger.
+- stackTrace - The stacktrace as it propagates out.
+- Zoneobject - The zone of the log.
+- sequenceNumber - The sequence number.
 
 Another implementation can be as follows
 
@@ -749,7 +730,6 @@ When creating any application, fonts are important to our applications because t
 
 We install the package by adding it to our pubspec.yaml file and then import it into the file we which to make use of it.
 
-
 ```yaml
 dependencies:
  flutter:
@@ -758,7 +738,7 @@ google_fonts: ^2.1.1
 ```
 
 
-We make use of it to via the provided google font
+We make use of it to via the provided google font.
 
 ```dart
 Text(
@@ -768,7 +748,7 @@ Text(
 ```
 
 
-Or if we want to load it dynamically we can use the code below
+Or if we want to load it dynamically we can use the code below.
 
 ```dart
 Text(
@@ -781,7 +761,7 @@ Text(
 
 
 ### Conclusion
-In this tutorial, you have learned in the first section what caching is, when it’s best to cache our data, how to implement a simple caching mechanism, the benefits of caching, and why we need to cache our apps. In the second section, we learned how logging in a real application is done ideally and how to implement logging that contains more details and specifies log levels which the basic logger of every programming language cannot provide
+In this tutorial, you have learned in the first section what caching is, when it’s best to cache our data, how to implement a simple caching mechanism, the benefits of caching, and why we need to cache our apps. In the second section, we learned how logging in a real application is done ideally and how to implement logging that contains more details and specifies log levels which the basic logger of every programming language cannot provide.
 
 
 
