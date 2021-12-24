@@ -22,6 +22,7 @@ This article will give you a clear understanding about Turing Test in AI. Reader
 - [History of Turing Test in AI](#history-of-turing-test-in-ai)
 - [Performance  of Turing Test in AI](#performance-of-turing-test-in-ai)
 - [Requirements of Turing Test in AI](#requirements-of-turing-test-in-ai)
+- [Features of Turing test](#features-of-turing-test)
 - [Limitations of Turing Test in AI](#limitations-of-turing-test-in-ai)
 - [Modern day Turing Test](#modern-day-turing-test)
 - [Conclusion](#conclusion)
@@ -95,8 +96,11 @@ The test is made by asking questions.
 
 - The test is limited to only testing human like intelligence.
 
-### Modern day Turing test 
-The test aimed at upgrading Alan's Turing Test in order analyse the progress of Natural language processing.The test aims at creating Artificial Intelligent agents that can communicate using different modes. 
+### Modern day Turing test  
+The modern day turing test is an update on Alan's Turing test for testing the intelligence of an AI based on thought.The test aims at creating Artificial Intelligent agents that can communicate using different modes. It also aims at understanding how far natural language processing NLP has progressed in the past decade and how far it is evolving.
+It does not test conversational AI for  intelligence but it tests for effectiveness of the conversational AI.
+
+Several organizations are working to develop ostensibly human-like conversational AIs in a variety of conversation and complex styles. A significant social competitive challenge will be to develop a test to determine how human the conversational AI is.
 
 ### Conclusion
 Turing Test is an  important test in demonstrating the  intelligence of a machine,  whether it can think like a human, which is usually done  under an interrogation. 
