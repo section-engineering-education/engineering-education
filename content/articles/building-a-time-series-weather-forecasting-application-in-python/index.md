@@ -51,8 +51,6 @@ df.tail()
 ```
 We've used Pandas `read_csv()` method to load in out dataset. In addition, we've used the `tail()` method to view the last five rows in our dataset.
 
-![Last five rows](/engineering-education/building-a-time-series-weather-forecasting-application-in-python/rows.jpg)
-
 Let's do a bit of exploratory data analysis on the data.
 
 ```python
@@ -149,7 +147,7 @@ Date             datetime64[ns]
 Location                 object
 dtype: object
 ```
-This is a requirement whenever you're working with Neural Prophet. You need to pass in two columns; a date and a value column. 
+This is a requirement whenever you're working with Neural Prophet. Neural prophet requires you to give it two columns only. A `ds` column which is a timestamp and a `y` column which is the numeric column that we want to predict. In this case, our `ds` will be `Date` while our `y` will be `Temp3pm`.
 
 Let's use matplotlib to plot our temperature over time.
 
@@ -158,4 +156,63 @@ plt.plot(bris['Date'], bris['Temp3pm'])
 plt.show()
 ```
 
+Result:
+
+![Plot](/engineering-education/building-a-time-series-weather-forecasting-application-in-python/plot.png)
+
+To plot the graph above, we've used `plt.plot()` method from Matplotlib. We've passed `bris['Date']` as the x variable and `bris['Temp3pm']` as the y variable. 
+> Always check whether your data has missing values as you would not want to pass data with missing values to Neural Prophet. For our case, the data looks good.
+
+The next thing that we will do is filter out a couple of our columns. As mentioned earlier, Neural Prophet only expects two columns. 
+
+```python
+new_column = bris[['Date', 'Temp3pm']] 
+new_column.dropna(inplace=True)
+new_column.columns = ['ds', 'y'] 
+new_column.tail()
+```
+
+When you run the code above, you'll notice that our dataset has been filtered to only two columns, `ds` and `y`. With our `Date` now being `ds` and the `Temp3pm` being `y`.
+> If you want to forecast something else such as `Humidity9am` or `Pressure9am`, you only need to change the second variable in `bris[['Date', 'Temp3pm']]` to your desired target. For example, `bris[['Date', 'Humidity9am']]`.
+
+We can now go ahead and train our model.
+
+### Training the forecasting model
+We need to first create a new instance of Neural Prophet using the `NeuralProphet()` class we imported earlier. We store this instance is a variable `n`. Secondly,we'll use the `fit()` method to go ahead and train.
+
+```python
+n = NeuralProphet()
+model = n.fit(new_column, freq='D', epochs=5000)
+```
+We will be training our model for `5000` epochs. You can choose to train yours for shorter or longer epochs depending on the accuracy you get. It uses AR-Net in the background to train. The `freq='D'` denotes that we're using a daily frequency. 
+
+After training for 5000 epochs, we get a Mean Absolute Error of `1.74`.
+
+Up until now, we've been doing preprocessing and training. Let's go ahead and perform some forecasting.
+
+### Forecasting the temperature into the future
+
+```python
+future = n.make_future_dataframe(new_column, periods=400)
+forecast = n.predict(future)
+forecast.tail()
+```
+We are forecasting for 400 periods (400 days into the future). We've also used the `n.predict()` method to go ahead and predict our future values. Finally, we are using the `tail()` method to list our five last rows. You'll notice that the last row is our 400th prediction. That is, `2018-07-30`. Remember, our dataset only has values upto the date `2017-06-25`.
+
+Let's visualize this predictions.
+
+```python
+plot = n.plot(forecast)
+```
+Result:
+
+![Visualizing our prediction](/engineering-education/building-a-time-series-weather-forecasting-application-in-python/vusual.png)
+
+From these results, we can deduce that between `2018-01` and `2018-03`, we expect the temperature to be very high. In addition, the months between June and July, we expect a lot colder temperatures. This results mimics the one that we had earlier with hotter temperatures in January - March and colder temperatures between June and July. 
+
 You can find the complete code for this tutorial [here](https://colab.research.google.com/drive/1-jV0KIAxJEuozwS6quVGVf4tpRlfEZTE?usp=sharing).
+
+### Wrapping up
+That wraps it up how to generate weather forecast into the future. We performed some exploratory data analysis on our data, trained our model and final made the predictions with only a few lines of code. Feel free to try it out yourself.
+
+Happy coding!
