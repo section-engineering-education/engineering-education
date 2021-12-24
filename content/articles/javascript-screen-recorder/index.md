@@ -143,7 +143,7 @@ A code walkthrough:
 
 To send events, a method is used socket.emit(type, data), where type is a string indicating the type of event. Data can be both primitives and objects. To process events, a method is used socket.on(type, callback), with an event type, and a callback function that executes once an event is emitted.
 
-Next, we need to capture the screen (get the video stream):
+Next, we need to capture the screen:
 
 ```js
 
@@ -155,15 +155,17 @@ Next, we need to capture the screen (get the video stream):
   useEffect(() => {
     ;(async () => { 
       if (navigator.mediaDevices.getDisplayMedia) {
+
         try {
-          const _screenStream = await navigator.mediaDevices.getDisplayMedia({
+        //  grant screen 
+          const screenStream = await navigator.mediaDevices.getDisplayMedia({
             video: true
           })
-          setScreenStream(_screenStream)
-
+           // get the video stream
+          setScreenStream(screenStream)
         } 
+        // exception handling
         catch (err) {
-
           setLoading(false)
           console.log('getDisplayMedia', err)          
         }
@@ -176,44 +178,12 @@ Next, we need to capture the screen (get the video stream):
     })()
   }, [])
 ```
+A code walkthrough:
+- Navigator is a browser window object. Under the `navigator.mediaDevices` object, we have access to all connected media inputs that include microphones, cameras, and screen sharing. In this case, we are capturing screen data capture as a live stream of the `screenStream`.
 
-To obtain video data from screen capture, use the method getDisplayMedia()provided by the MediaDevicesincluded interface Navigator.
+>>> In Chrome and Microsoft Edge, the method `getDisplayMedia` can capture audio content.
 
-Unfortunately, today this method is only supported by desktop browsers, which is about 40% of users, but it's still better than nothing.
-
-It should be noted that it getDisplayMediaalso knows how to capture audio data, but currently only Microsoft Edge and support chrome this feature, so we will use a different interface.
-
->>> Note: Safari requires the user to explicitly state their intent to capture the screen. To solve this problem, this block of code can be placed in a function startRecording(see below).
-
-We receive audio data from the user's microphone:
-
-```js
-  useEffect(() => {
-    ;(async () => {
-      if (navigator.mediaDevices.getUserMedia) {
-        if (screenStream) {
-          try {
-            const _voiceStream = await navigator.mediaDevices.getUserMedia({
-              audio: true
-            })
-            setVoiceStream(_voiceStream)
-          } catch (e) {
-            console.error('*** getUserMedia', e)
-            setVoiceStream('unavailable')
-          } finally {
-            setLoading(false)
-          }
-        }
-      } else {
-        console.warn('*** getUserMedia not supported')
-        setLoading(false)
-      }
-    })()
-  }, [screenStream])
-  ```
-
-Let's briefly understand the above React code:
-
+To start receiving media stream from the user's device, create a `startRecording` function with the following code:
 
 ```js
   function startRecording() {
@@ -248,7 +218,7 @@ Let's briefly understand the above React code:
           data
         })
       }
-      
+            
       mediaRecorder.onstop = stopRecording;
 
       // ..
@@ -257,34 +227,36 @@ Let's briefly understand the above React code:
   }
 ```
 
-To receive an audio stream, the method is used getUserMedia. With the support of this method, everything is much better.
-
 We are ready to write the screen without sound, so if any error occurs related to receiving an audio stream (including the user's refusal to grant permission to use the microphone), we set the voice stream to unavailable.
-
-Also, pay attention to the placement setLoading(false). When initializing the application, we show the user a loading progress bar until all required permissions are received.
 
 Let's take a look at the markup:
 
 ```js
+
+  // a function to 
 function stopRecording() {
     setRecording(false)
 
     socketRef.current.emit('screenData:end', username.current)
 
     const videoBlob = new Blob(dataChunks, {
-      type: 'video/webm'
+      type: 'video/webm' //... blob type of video web media
     })
 
-    const videoSrc = URL.createObjectURL(videoBlob)
+    const videoSrc = URL.createObjectURL(videoBlob) //
 
+    //...Refs and video source
     videoRef.current.src = videoSrc
     linkRef.current.href = videoSrc
     linkRef.current.download = `${Date.now()}-${username.current}.webm`
 
+    //...
     mediaRecorder = null
     dataChunks = []
   }
 
+  // bind the onClick method to a DOM button
+  // to start or stop recording
   const onClick = () => {
     if (!recording) {
       startRecording()
@@ -294,23 +266,28 @@ function stopRecording() {
       }
     }
   }
+  // loading spinner: we show the user a loading spinner till all needed permissions are granted.
 
   if (loading) return <Loader type='Oval' width='50' color='#027' />
 ```
 
-Nothing special:
+The JSX in the return statement includes:
 
-item video to view the entry
-item to download the record
-button to start and stop recording
-The method onClicklooks like this:
+- `video` item to view item
+- A link to download video records
+- A button to start or stop recording
+
 
 ```js
  return (
     <>
       <h1>Recorder App</h1>
+
+      {/* */}
       <video controls ref={videoRef}></video>
       <a ref={linkRef}>Download</a>
+
+      {/**/}
       <button onClick={onClick} disabled={!voiceStream}>
         {!recording ? 'Start' : 'Stop'}
       </button>
@@ -319,6 +296,13 @@ The method onClicklooks like this:
 ```
 
 ### Backend
+
+For the backend, we will use the `server` folder inside the `screen-record` project folder. Initialize a new Node.js project using the command:
+
+```bash
+ npm init -y
+```
+
 Since the LTS and higher version of Node.js support ES6 import module syntax, we need to add a `module` type on our `package.json` file to enable it on our backend.
 
 ```JSON
@@ -371,7 +355,7 @@ const io = new Server(server_app, {
 io.on('connection', onConnectionHandler);
 ```
 
-Next, create a `utils` folder. The `saveData` function saves the recording
+Next, create a `utils` folder. Inside the folder, add a `saveData.js` file with a function to save the recording of our application. Paste the following code:
 
 ```js
 import { saveData } from '../utils/saveData.js'
@@ -428,7 +412,10 @@ server.listen(5000, () => {
 })
 ```
 
+
 ### A running demo
+![demo 1](/engineering-education/js-screen-recorder/demo1.png)
+![demo 2](/engineering-education/js-screen-recorder/demo2.png)
 
 
 ### Conclusion
