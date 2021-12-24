@@ -29,7 +29,7 @@ A continuous wavelet transform is a tool used for the overcomplete representatio
 
 Discrete-time systems take discrete-time signals in and gives discrete-time signals as output. A Discrete-time signal is a time series consisting of a sequence of quantities.
 
-![LTI systems](/engineering-education/how-to-implement-linear-time-Invariant-systems-analyzer-using-matlab-graphical-user-interface/image1.png)
+![LTI systems](/engineering-education/how-to-implement-lti-systems-analyzer-using-matlab-gui/image1.png)
 
 For any input `x(t)` or `x(n)`, the output can simply be obtained by convolution of input and the impulse response `h(t)` or `h(n)` as shown:
 
@@ -72,7 +72,7 @@ The poles and the zeros are useful in the systems stability, analysis, and time 
 ### Various analyses of LTI systems
 There are various analyses performed on LTI systems. Some basic analyses are shown below:
 
-![various analysis of LTI systems](/engineering-education/how-to-implement-linear-time-Invariant-systems-analyzer-using-matlab-graphical-user-interface/image2.png)
+![various analysis of LTI systems](/engineering-education/how-to-implement-lti-systems-analyzer-using-matlab-gui/image2.png)
 
 If we consider the time domain, we have the three analyses:
 1. Time response
@@ -85,7 +85,7 @@ We consider the steady-state error/error coefficients for error analysis, concen
 
 Considering the frequency domain, we have:
 
-![frequency domain](/engineering-education/how-to-implement-linear-time-Invariant-systems-analyzer-using-matlab-graphical-user-interface/image3.png)
+![frequency domain](/engineering-education/how-to-implement-lti-systems-analyzer-using-matlab-gui/image3.png)
 
 ### Matlab GUI to implement basic LTI system analysis
 Our objective is to develop a GUI in Matlab to implement the following analysis of any LTI system:
@@ -97,7 +97,7 @@ Our objective is to develop a GUI in Matlab to implement the following analysis 
 - **Nyquist plot** - is a plot that shows the relationship between the feedback and the gain. A gain is a relationship between the output and the input at a steady state.
 - **Log magnitude vs. Phase plot** - A log plot is the plot of the gain as a function of the frequency, while the phase plot is the phase plot that shows how the phase shift develops when the source frequency starts to enter the cutoff region. 
 
-![glimpse of the gui](/engineering-education/how-to-implement-linear-time-Invariant-systems-analyzer-using-matlab-graphical-user-interface/image4.png)
+![glimpse of the gui](/engineering-education/how-to-implement-lti-systems-analyzer-using-matlab-gui/image4.png)
 
 The above GUI image is a sample of what we are going to build using Matlab. The axes show the plot. When you enter the numerator and the denominator, and press the push button `find TF`, the transfer function is displayed below the pushbutton.
 
@@ -109,11 +109,11 @@ For example, if we have the function as $\frac{s+25}{s^2+5s+25}$, we enter `1` a
 
 The figure below shows the expected behavior:
 
-![find TF](/engineering-education/how-to-implement-linear-time-Invariant-systems-analyzer-using-matlab-graphical-user-interface/image5.png)
+![find TF](/engineering-education/how-to-implement-lti-systems-analyzer-using-matlab-gui/image5.png)
 
 When we click `find TF`, we expect the results above:
 
-![output](/engineering-education/how-to-implement-linear-time-Invariant-systems-analyzer-using-matlab-graphical-user-interface/image6.png)
+![output](/engineering-education/how-to-implement-lti-systems-analyzer-using-matlab-gui/image6.png)
 
 ### Creating GUI
 To open the guide, we execute the command `guide` on the command window and open a blank GUI.
@@ -122,11 +122,11 @@ You can read more about the MATLAB GUI [here](/engineering-education/matlab-grap
 
 This GUI comprises static texts, axes, edit texts, push buttons, radio buttons, button groups, and text fields. Place your components such that your GUI appears as shown below:
 
-![component arrangement](/engineering-education/how-to-implement-linear-time-Invariant-systems-analyzer-using-matlab-graphical-user-interface/image7.png)
+![component arrangement](/engineering-education/how-to-implement-lti-systems-analyzer-using-matlab-gui/image7.png)
 
 Double-click the component to add the labels and the tags for each component, and a new window `property inspector` shown below:
 
-![property inspector](/engineering-education/how-to-implement-linear-time-Invariant-systems-analyzer-using-matlab-graphical-user-interface/image8.png)
+![property inspector](/engineering-education/how-to-implement-lti-systems-analyzer-using-matlab-gui/image8.png)
 
 This property inspector enables you to modify/edit the properties of various components according to the desired values.
 
@@ -140,19 +140,19 @@ Callback functions are the codes that render the functionality of the codes.
 
 After adding all the component labels, click the `run` icon on the top of your GUI to give you the final layout, as shown below:
 
-![final layout](/engineering-education/how-to-implement-linear-time-Invariant-systems-analyzer-using-matlab-graphical-user-interface/image9.png)
+![final layout](/engineering-education/how-to-implement-lti-systems-analyzer-using-matlab-gui/image9.png)
 
 When you click the run icon, Matlab autogenerates a script containing the GUI code. This autogenerated code is where we are writing the callback for our components.
 
 > We only add codes to the callback section, not the CreateFcn.
 
-![callback section](/engineering-education/how-to-implement-linear-time-Invariant-systems-analyzer-using-matlab-graphical-user-interface/image10.png)
+![callback section](/engineering-education/how-to-implement-lti-systems-analyzer-using-matlab-gui/image10.png)
 
 Now, if you carefully look at the generated codes, you'll realize that we have the callback functions for all components, except for radio buttons and the button group. It is because Matlab, by default, do not generate callback for radio buttons and button group, but you can create them.
 
 To do this, go back to the GUI layout and right-click on the button group, and select the `view callback`. It opens a new selection and on this new selection, select `selectionChangedFcn`.
 
-![creating callback for radio buttons](/engineering-education/how-to-implement-linear-time-Invariant-systems-analyzer-using-matlab-graphical-user-interface/image14.png)
+![creating callback for radio buttons](/engineering-education/how-to-implement-lti-systems-analyzer-using-matlab-gui/image14.png)
 
 When you do this, Matlab writes the callback for the components.
 
@@ -335,15 +335,15 @@ In the inputs for the numerator, we have 1 and 25, and for the denominator, we h
 
 When you click on the `Find TF`, we see the transfer function displayed as shown below:
 
-![displaying transfer function](/engineering-education/how-to-implement-linear-time-Invariant-systems-analyzer-using-matlab-graphical-user-interface/image11.png)
+![displaying transfer function](/engineering-education/how-to-implement-lti-systems-analyzer-using-matlab-gui/image11.png)
 
 When you select, for example, impulse response and press the `compute` button, we see the plot is displayed in the axes. You can do this for other plot types.
 
-![output](/engineering-education/how-to-implement-linear-time-Invariant-systems-analyzer-using-matlab-graphical-user-interface/image12.png)
+![output](/engineering-education/how-to-implement-lti-systems-analyzer-using-matlab-gui/image12.png)
 
 If you choose bode plot, you will have:
 
-![bode plot](/engineering-education/how-to-implement-linear-time-Invariant-systems-analyzer-using-matlab-graphical-user-interface/image13.png)
+![bode plot](/engineering-education/how-to-implement-lti-systems-analyzer-using-matlab-gui/image13.png)
 
 For more details on the LTI systems, you can check [here](https://allsignalprocessing.com/lessons/introduction-to-linear-time-invariant-systems/)
 
