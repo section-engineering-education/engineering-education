@@ -4,7 +4,7 @@ status: publish
 published: true
 url: /using-text-databases-in-python/
 title: How to use Text Databases in Python
-description: This tutorial will show the reader how to use text databases in Python.
+description: This tutorial will show the reader how to use text databases in Python. We will read the contents of the file we will use the `json.loads()` method and convert the JSON string to a list of dictionaries.
 author: geoffrey-mungai
 date: 2021-12-23T00:00:00-19:15
 topics: [Languages]
@@ -263,7 +263,7 @@ file.write(json_obj)
 file.close()
 ```
 
-We first read the contents of the file. Using the `json.loads()` method, we convert the JSON string to a list of dictionaries. We then add a new employee to the list. We finally write the updated employees list back to the file.
+We first read the contents of the file. Using the `json.loads()` method, we convert the JSON string to a list of dictionaries. We then added a new employee to the list. We finally wrote the updated employees list back to the file.
 
 ### Conclusion
 Text files can serve a variety of purposes. You can use them to store simple text and even structured data. You can parse the text files to get back the structured data, for use in your program.
