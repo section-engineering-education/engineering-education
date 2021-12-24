@@ -14,11 +14,11 @@ images:
   - url: /engineering-education/how-to-implement-lti-systems-analyzer-using-matlab-gui/hero.jpg
     alt: How to Implement Linear Time Invariant (LTI) System Analyzer Using MATLAB Graphical User Interface (GUI) Hero Image
 ---
-Linear Time Invariant (LTI) systems are significant part of the signal processing toolbox that defines the action of a physical system on the signal.
+Linear Time Invariant (LTI) systems are a significant part of the signal processing toolbox that defines the action of a physical system on the signal.
 <!--more-->
 Filters are examples of the LTI systems. In this system, the input is called the "Excitation", and the corresponding output is the "Response". The basic principle of such a system is linearity and time invariance.
 
-When you combine all the inputs, and their corresponding outputs, it's linearity. When the system depends on the time, but not on the time function, it is time invariance.
+When you combine all the inputs and their corresponding outputs, it's linearity. When the system depends on the time, but not on the time function, it is time invariance.
 
 A graphical user interface (GUI) associates the user and the system without having to know what the system entails. It abstracts the functionality of the system, thereby acting as an interface for navigating.
 
@@ -28,7 +28,7 @@ In this tutorial, we will create an LTI system analyzer with GUI. The analyzer s
 To follow along with this tutorial, you'll need to have:
 - [MATLAB](https://www.mathworks.com/products/get-matlab.html?s_tid=gn_getml) installed.
 - Good understanding of [MATLAB basics](/engineering-education/getting-started-with-matlab/).
-- [Getting started with graphical user interface](/engineering-education/matlab-graphical-user-interface/) in MATLAB.
+- [Getting started with a graphical user interface](/engineering-education/matlab-graphical-user-interface/) in MATLAB.
 
 ### Time invariance
 Time invariance is a principle of LTI stating that if the output of `x(t)` is `y(t)`, then the output due to delayed output `x(t-T)` is also delayed by the time `T`.
@@ -37,11 +37,11 @@ It means that the property of the signal does not change with time. Systems that
 
 By plotting a graph of the input and output graph, if we get a straight line, we call it Linearity.
 
-LTI systems are characterized entirely by a single function called the system's impulse response. The system impulse response is the response of an LTI system for an unit signal input at applied at `t=0`. It is represented by `h(t)` for [continuous wavelet transform](https://en.wikipedia.org/wiki/Continuous_wavelet_transform) `cwt` and by `h(n)` for the [discrete-time systems](https://engineering.purdue.edu/VISE/ee438L/lab2/pdf/lab2.pdf).
+LTI systems are characterized entirely by a single function called the system's impulse response. The system impulse response is the response of an LTI system for a unit signal input at applied at `t=0`. It is represented by `h(t)` for [continuous wavelet transform](https://en.wikipedia.org/wiki/Continuous_wavelet_transform) `cwt` and by `h(n)` for the [discrete-time systems](https://engineering.purdue.edu/VISE/ee438L/lab2/pdf/lab2.pdf).
 
 A continuous wavelet transform is a tool used for the overcomplete representation of signals by letting the wavelets vary continuously where the wavelets are just signals that begin from zero.
 
-Discrete-time systems take discrete-time signals in and gives discrete-time signals as output. A Discrete-time signal is a time series consisting of a sequence of quantities.
+Discrete-time systems take discrete-time signals in and give discrete-time signals as output. A Discrete-time signal is a time series consisting of a sequence of quantities.
 
 ![LTI systems](/engineering-education/how-to-implement-lti-systems-analyzer-using-matlab-gui/image1.png)
 
@@ -63,7 +63,7 @@ Y(z)=X(z).H(z)........equation 4
 
 Laplace transform is the integral transform of the given derivative function with real variable `t` to convert into a complex function with variable `s`.
 
-When you take the Laplace transform of the `equation 2`, the convolution of both the equations above becomes multiplication.
+When you take the Laplace transform of `equation 2`, the convolution of both the equations above becomes multiplication.
 
 Convolution is the addition of two signals to form a third signal. This is how your complicated convolution becomes the easy multiplication in the frequency domain.
 
@@ -107,13 +107,13 @@ Our objective is to develop a GUI in Matlab to implement the following analysis 
 - **Step response** - is the time behavior of the outputs of a general system when its inputs change from zero to one in a very short time.
 - **Ramp response** - represents the constant change in the input. For example, if the velocity increases with a constant acceleration, then it is a ramp response.
 - **Frequency response** (bode magnitude and phase plot) - is the representation of the range of frequencies produced.
-- **Root locus plot** - is shows how the close loop poles vary with system parameters.
+- **Root locus plot** - shows how the close loop poles vary with system parameters.
 - **Nyquist plot** - is a plot that shows the relationship between the feedback and the gain. A gain is a relationship between the output and the input at a steady state.
 - **Log magnitude vs. Phase plot** - A log plot is the plot of the gain as a function of the frequency, while the phase plot is the phase plot that shows how the phase shift develops when the source frequency starts to enter the cutoff region. 
 
 ![glimpse of the gui](/engineering-education/how-to-implement-lti-systems-analyzer-using-matlab-gui/image4.png)
 
-The above GUI image is a sample of what we are going to build using Matlab. The axes show the plot. When you enter the numerator and the denominator, and press the push button `find TF`, the transfer function is displayed below the pushbutton.
+The above GUI image is a sample of what we are going to build using Matlab. The axes show the plot. When you enter the numerator and the denominator and press the push button `find TF`, the transfer function is displayed below the push button.
 
 The transfer function is defined as the ratio of the Laplace transform of the output variable to the Laplace transform of the input variable, assuming all initial conditions to be zero. Laplace transform transforms a signal to a complex plane `s`. It then plots any plot type selected by the user.
 
@@ -132,13 +132,13 @@ When we click `find TF`, we expect the results above:
 ### Creating GUI
 To open the guide, we execute the command `guide` on the command window and open a blank GUI.
 
-You can read more about the MATLAB GUI [here](/engineering-education/matlab-graphical-user-interface/). It is highly recommended to read through this article, since it introduces you to building a GUI and explains various functions  that are used for building them.
+You can read more about the MATLAB GUI [here](/engineering-education/matlab-graphical-user-interface/). It is highly recommended to read through this article since it introduces you to building a GUI and explains various functions  that are used for building them.
 
-This GUI comprises static texts, axes, edit texts, push buttons, radio buttons, button groups, and text fields. Place your components such that your GUI appears as shown below:
+This GUI comprises static texts, axes, edit texts, pushbuttons, radio buttons, button groups, and text fields. Place your components such that your GUI appears as shown below:
 
 ![component arrangement](/engineering-education/how-to-implement-lti-systems-analyzer-using-matlab-gui/image7.png)
 
-Double-click the component to add the labels and the tags for each component, and a new window `property inspector` shown below:
+Double-click the component to add the labels and the tags for each component, and a new window `property inspector` as shown below:
 
 ![property inspector](/engineering-education/how-to-implement-lti-systems-analyzer-using-matlab-gui/image8.png)
 
@@ -267,7 +267,7 @@ For example, if the user chooses `1` which is the impulse response, then that is
 
 This code is similar to that of case one. The only difference is instead of using the `impulse` function, we used the `step` since it is a step response.
 
-Case 3 is for the ramp response. Now, matlab has no inbuilt function for calculating this. But, we can get it from the step response. This is possible by multiplying the `den` by $\frac{1}{s}$ then finding the transfer function of this modified function.
+Case 3 is for the ramp response. Now, Matlab has no inbuilt function for calculating this. But, we can get it from the step response. This is possible by multiplying the `den` by $\frac{1}{s}$ then finding the transfer function of this modified function.
 
 ```matlab
     case '3'
@@ -298,7 +298,7 @@ Using the denominator of our first step response function, we get the second tra
 
 In the case above, we are finding the frequency response with the help of the `bode` function. We pass the numerator and the denominator, giving the frequency response.
 
-`case 5` is for the locus response. Matlab has inbuilt function `rlocus` for computing it.
+`case 5` is for the locus response. Matlab has an inbuilt function `rlocus` for computing it.
 
 ```matlab 
     case '5'
@@ -320,7 +320,9 @@ Both `case6` (nyquisit) and `case7` (nichols plot) have inbuilt functions for ex
         grid;
 ```
 
-`Case8` is the pole zero plot. Here, we use the `pzmap` function. Now, matlab default `pzmap` creates a very dull looking plot. This is because the markers are small and are difficult to see and so we modify their plots.
+`Case8` is the pole-zero plot. Here, we use the `pzmap` function.
+
+Matlab's default `pzmap` creates a very dull-looking plot. This is because the markers are small and are difficult to see and so we modify their plots.
 
 ```matlab
     case '8'
@@ -364,7 +366,7 @@ For more details on the LTI systems, you can check [here](https://allsignalproce
 ### Conclusion
 In this tutorial, we have learned to analyze LTI systems easily by just inputting the numerator and the denominators. Also, it can help you when doing some numerical analysis and use it for verifying your answers.
 
-Furthermore, the numerous in-built Matlab functions makes the creation of this GUI easier.
+Furthermore, the numerous in-built Matlab functions make the creation of this GUI easier.
 
 Happy coding!
 
