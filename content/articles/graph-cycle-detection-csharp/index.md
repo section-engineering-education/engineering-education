@@ -4,26 +4,26 @@ status: publish
 published: true
 url: /graph-cycle-detection-csharp/
 title: Cycle Detection in a Graph in C#
-description: In this article, our primary focus will be on Graphs that have a cycle. It is important to know this concept to help us detect infinite loops in a computer program.
+description: In this article we will go over graphs that have a cycle. This concept helps us detect infinite loops in a computer program.
 author: erick-wekesa
-date: 2021-12-05T00:00:00-15:50
+date: 2021-12-24T00:00:00-15:50
 topics: [Languages]
 excerpt_separator: <!--more-->
 images:
 
  - url: /engineering-education/graph-cycle-detection-csharp/hero.jpg
- alt: cycle Detection in C sharp image graph
+   alt: cycle Detection in C sharp image graph
 ---
-Graphs are one of the most versatile data structures. This is because they allow us to solve interesting problems. They are used in social networks and GPS applications. One can apply it anywhere you want to model the relationship between a bunch of objects.
+Graphs are one of the most versatile data structures. This is because they allow us to solve interesting problems. They are used in social networks and GPS applications. 
 <!--more-->
-In this article, our primary focus will be on graphs that have a cycle. It is important to know this concept to help us detect infinite loops in a computer program.
+One can apply it anywhere you want to model the relationship between a bunch of objects. In this article, our primary focus will be on graphs that have a cycle. It is important to know this concept to help us detect infinite loops in a computer program.
 
 #### Prerequisites
 To be able to follow this article well, one needs:
-1. To have [Visual Studio](https://visualstudio.microsoft.com/) installed.
-2. Have an understanding of [Recursion](https://www.youtube.com/watch?v=IJDJ0kBx2LM&t=163s).
-3. Some understanding of how to build a graph using an [adjacency list](https://www.section.io/engineering-education/graphs-in-data-structure-using-cplusplus/) and matrix.
-4. A basic understanding of C# or any object-oriented programming language.
+- To have [Visual Studio](https://visualstudio.microsoft.com/) installed.
+- Have an understanding of [Recursion](https://www.youtube.com/watch?v=IJDJ0kBx2LM&t=163s).
+- Some understanding of how to build a graph using an [adjacency list](/engineering-education/graphs-in-data-structure-using-cplusplus/) and matrix.
+- A basic understanding of C# or any object-oriented programming language.
 
 #### Key takeaways
 - A brief overview of a graph.
@@ -39,17 +39,17 @@ A graph is like a tree but without any cycles. We do not have a root node in gra
 
 If two nodes are connected, we say they are adjacent or neighbors. `John` and `bob` are neighbors. `John` and `Sam` are not because they are not connected.
 
-![image of a Graph](/engineering-education/graph-cycle-detection-csharp/graphexample.png/)
+![image of a Graph](/engineering-education/graph-cycle-detection-csharp/graphexample.png)
 
 If the edges have a direction, we say we have a directed graph. From the directed graph image below, `John` is connected to `Bob` but the opposite is not true. This is how Twitter works. If you follow someone, there is a connection from your account to their account. Not the other way round unless they follow you as well.
 
-![image of a directed-graph](/engineering-education/graph-cycle-detection-csharp/directed-graph.png/)
+![image of a directed-graph](/engineering-education/graph-cycle-detection-csharp/directed-graph.png)
 
 There are undirected graphs as well. An example of this can be Facebook. When you add a friend, there is a connection from you to them. The Vice verse is true. The connections do not have a direction.
 
 The edges can also have weights. We use these weights to represent how strong the connection is, For example, on Facebook when two people communicate, we can put more weight on them. We then use that to show their best friends using the nodes that have the highest weights.
 
-![Image of Weighted Graph](/engineering-education/graph-cycle-detection-csharp/weightedgraph.png/)
+![Image of Weighted Graph](/engineering-education/graph-cycle-detection-csharp/weightedgraph.png)
 
 With this brief description, we can better understand what a cycle is and how to detect that in a graph.
 
@@ -62,7 +62,7 @@ In our example below, we have a cycle in the path `1` to `3` to `4` and back to 
 
 When this is not managed, your algorithm will run infinite times. This leads to a `StackOverflow` exception error.
 
-![Image of Cycle Graph](/engineering-education/graph-cycle-detection-csharp/Cyclegraph.png/)
+![Image of Cycle Graph](/engineering-education/graph-cycle-detection-csharp/Cyclegraph.png)
 
 #### An example of how an infinite loop occurs
 Let's look up node `6`. If we start our search going through the path of `1` to `3` to `4`, we will get back to `1`. We have detected a loop at this point. There is no way of ending it. This cycle will keep going. Thus, we will never get to `6`.
@@ -75,7 +75,7 @@ Depth First Search (DFS), is a graph traversal method. We start our search from 
 
 The stack data structure is the best when doing backtracking.
 
-![Image of DFS](/engineering-education/graph-cycle-detection-csharp/dfs.png/)
+![Image of DFS](/engineering-education/graph-cycle-detection-csharp/dfs.png)
 
 #### Example of how DFS works
 From the DFS diagram above, say `1` is our start node. We look at the first item that will be in our adjacency matrix. That is `2`. Instead of queueing nodes next to `1`, we queue nodes that are next to `2`. So we will go to `6`.
@@ -87,10 +87,10 @@ From `1`, we check which other node is connected to it. We have `3`. We visit no
 We again check from our list for any other node connected to `1`. We have `4`. We visit `4`. `4` doesn't have any other node connected to it. We backtrack to `1`. `1` still has `5` connected to it. We visit `5` and backtrack back to `1`. We are done visiting all nodes.
 
 ### Implementing cycle detection using DFS
-#### 1. Cycle detection in a directed Graph
+#### 1. Cycle detection in a directed graph
 To detect a cycle in a graph, we visit the node, mark it as visited. Then visit all the nodes connected through it. A cycle will be detected when visiting a node that has been marked as visited and part of the current path.
 
-![Image of Cycle Graph](/engineering-education/graph-cycle-detection-csharp/Cyclegraph.png/)
+![Image of Cycle Graph](/engineering-education/graph-cycle-detection-csharp/Cyclegraph.png)
 
 Below is an explanation of how to detect a cycle, using the cycle graph image above as our reference.
 
@@ -103,9 +103,9 @@ These two boolean array variables are first initialized to false. When we visit 
 4. Visit node `6`. Mark it as visited. Mark it as part of our current path. Node `6` has no children. Remove it from our current path. Leave it as visited true.
 5. Return from node `2` to node `1`. Remove node `2` from our current path. This is because we have finished visiting all the nodes that are connected to it.
 
-    We have visited nodes `1`, `2`, `5`, `6`, and only node `1` is part of the current path.
+We have visited nodes `1`, `2`, `5`, `6`, and only node `1` is part of the current path.
 
-    Note that all these nodes are marked as visited.
+>Note that all these nodes are marked as visited.
 
 6. From node `1`, go to node `3` mark it as visited and part of our current path. Call its child node `4`.
 7. Visit node `4` mark it as visited and part of our current path. Call its child node `1`.
@@ -271,42 +271,33 @@ If a cycle is detected, we return `true`, otherwise, we return `false`.
        }
 
 ```
-The output of the above code after running will be:-
 
-![Image of Output](/engineering-education/graph-cycle-detection-csharp/output1.png/)
+The output of the above code after running will be:
+
+![Image of Output](/engineering-education/graph-cycle-detection-csharp/output1.png)
 
 ### 2. Cycle detection in undirected Graph.
-We have just talked about finding a cycle in a directed graph. 
-
-The approach will be a little different in an undirected graph.
+We just talked about finding a cycle in a directed graph. The approach will be a little different in an undirected graph.
 
 #### Why?
+Below we have an example image of an undirected graph. This graph has no direction. This means, there is a connection from `A` to `B`. There is also another connection from `B` to `A`. Using the previous approach, we start our traversal from node `A`. 
 
-Below we have an example image of an undirected graph. This graph has no direction. This means, there is a connection from `A` to `B`. There is also another connection from `B` to `A`.
+We visit `A` and mark it as part of our current path. We then visit the node that is connected to it. That is `B`. We mark it as visited and in the current path set. Because there is an edge from `B` to `A` and `A` is part of the current path. A cycle is detected.
 
-Using the previous approach, we start our traversal from node `A`. We visit `A` and mark it as part of our current path. We then visit the node that is connected to it. That is `B`. We mark it as visited and in the current path set.
+With the above approach, a cycle will always be detected between every two nodes connected by an edge. We need to come up with a dfs algorithm for Undirected Graph. Always finding a cycle between two edges.
 
-Because there is an edge from `B` to `A` and `A` is part of the current path. A cycle is detected.
+![Image of Undirected Graph](/engineering-education/graph-cycle-detection-csharp/unidirected.png)
 
-With the above approach, a cycle will always be detected between every two nodes connected by an edge. We need to come up with a dfs algorithm for Undirected Graph. It will take care of the problem. Always finding a cycle between two edges.
+#### Correct dfs algorithm to detect a cycle in an undirected graph
+To avoid finding a cycle between two edges we do the following. As we traverse the graph, we should pass the parent of each node to its neighbors. This will prevent going back to the parent. Below is an elaborate explanation.
 
-![Image of Undirected Graph](/engineering-education/graph-cycle-detection-csharp/unidirected.png/)
+In the diagram below, we add another edge `C` to form a cycle. We start our depth-first search from any node. Let us say `A`. We put `A` in the set of current path nodes. We then explore the neighbors of `A`. We can go to `B` or `C`. The order does not matter.
 
-#### Correct dfs algorithm to detect a cycle in an undirected graph.
-To avoid finding a cycle between two edges we do the following.
-As we traverse the graph, we should pass the parent of each node to its neighbors. This will prevent going back to the parent. Below is an elaborate explanation.
-
-In the diagram below, we add another edge `C` to form a cycle. We start our depth-first search from any node.
-
-Let us say `A`. We put `A` in the set of current path nodes. We then explore the neighbors of `A`. We can go to `B` or `C`. The order does not matter.
-
-We go to `B`. `B` has two neighbors, `A` and `C`. We do not want to go back to where we came from. As we move from `A` to `B`, we should pass `A` as the parent node. 
-
-When exploring the neighbors of `B` we will know we came from `A`. We won't go in the direction of `A`. We go to `C`.
+We go to `B`. `B` has two neighbors, `A` and `C`. We do not want to go back to where we came from. As we move from `A` to `B`, we should pass `A` as the parent node. When exploring the neighbors of `B` we will know we came from `A`. We won't go in the direction of `A`. We go to `C`.
 
 Add `C` to the current path set. We pass `B` as the parent node. `C` has one other neighbor `A`. We have already visited `A`. It is part of our current path set as well. A cycle is detected.
 
-![Image of Undirected Graph](/engineering-education/graph-cycle-detection-csharp/unidirected-1.png/)
+![Image of Undirected Graph](/engineering-education/graph-cycle-detection-csharp/unidirected-1.png)
 
 #### Code implemetation of cycle detection in unidirected graph
 1. Open Visual Studio. Create a Console Application called `UnidirectedGraphCycleDetect`.
@@ -345,8 +336,8 @@ Add `C` to the current path set. We pass `B` as the parent node. `C` has one oth
        }
 
 ```
-4. Construct the adjacency matrix in the `MakeGraph()` function.
-The concept is still the same as the one of the directed graphs for the function `MakeGraph()` below. The difference is in the variables. In the directed graph code example, we used `int` values. Here we are using `char` values.
+4. Construct the adjacency matrix in the `MakeGraph()` function. The concept is still the same as the one of the directed graphs for the function `MakeGraph()` below. The difference is in the variables. In the directed graph code example, we used `int` values. Here we are using `char` values.
+
 ```c#
  private static bool MakeGraph(char[][] graph, int nodes)
     {
@@ -378,9 +369,11 @@ The concept is still the same as the one of the directed graphs for the function
     }
 
 ```
-5. We will add a new method called `HasCycle()` to our existing class. `HasCyle()` is the Dfs Function in this case. 
 
-Below is the code that implements cycle detection in an undirected graph. Note that the line `if (current != parent)`, we first check if we are going back to the parent node. If no, `no cycle` has been found. Otherwise, `a cycle is found`.
+5. We will add a new method called `HasCycle()` to our existing class. `HasCyle()` is the Dfs Function in this case. Below is the code that implements cycle detection in an undirected graph. 
+
+>Note that the line `if (current != parent)`, we first check if we are going back to the parent node. If no, `no cycle` has been found. Otherwise, `a cycle is found`.
+
 ```c#
  public static bool HasCycle(Dictionary<int, List<char>> connections, int start, bool[] visited, int parent)
        {
@@ -417,19 +410,17 @@ Below is the code that implements cycle detection in an undirected graph. Note t
 
 
 
-The output of the above code after running it will be:-
+The output of the above code after running it will be:
 
-![Image of Output](/engineering-education/graph-cycle-detection-csharp/output1.png/)
+![Image of Output](/engineering-education/graph-cycle-detection-csharp/output1.png)
 
 ### Application of cycle detection
-1. It is used a lot in distributed message-based algorithms.
-2. Used in concurrent systems to detect deadlocks.
-3. Used in cryptographic systems. It determines the keys of a message that can map that same message to the same encrypted value.
+- It is often used in distributed message-based algorithms.
+- Used in concurrent systems to detect deadlocks.
+- Used in cryptographic systems. It determines the keys of a message that can map that same message to the same encrypted value.
 
 ### Conclusion
-From this article, we have been able to cover in-depth, DFS traversal. It is the best algorithm used to detect a cycle in a graph. 
-
-It is an important concept especially when one finds themselves having to apply it. I hope this article has made the concept of cycle detection on graphs clear.
+In this article, we have gone over DFS traversal. It is the best algorithm used to detect a cycle in a graph. It is an important concept especially when one finds themselves having to apply it. I hope this article has made the concept of cycle detection on graphs clear.
 
 Happy coding!
 
