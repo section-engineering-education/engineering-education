@@ -4,7 +4,7 @@ status: publish
 published: true
 url: /serverless-applications-in-csharp/
 title: Developing Serverless Applications in C#
-description: This article will show you how to develop a serverless application using the C# programming language.
+description: This article will show the reader how to develop a serverless application using the C# programming language.
 author: ephraim-gathoni
 date: 2021-12-24T00:00:00-12:00
 topics: [Languages]
@@ -12,13 +12,13 @@ excerpt_separator: <!--more-->
 images:
 
   - url: /engineering-education/serverless-applications-in-csharp/hero.jpeg
-    alt: serverless applications example image
+    alt: serverless applications c sharp example image
 ---
 [Serverless](https://www.cloudflare.com/learning/serverless/what-is-serverless/) computing has completely changed the technology space. Developers find it a compelling option since it has made their development efficient and more productive. 
 <!--more-->
 In recent times, serverless computing has been gaining popularity. The main reason is that it lets the developers deploy their applications to the cloud without dealing with the server infrastructure.
 
-Before serverless, developers had to deal with server resources to support their code. Since the introduction of serverless computing, developers worry no more about the operating system and hardware architecture since it handles the server infrastructure. This gives developers more time to pay attention and write good and quality code for their applications.
+Before serverless, developers had to deal with server resources to support their code. With serverless computing, developers do not need to worry about the operating system and hardware architecture. This gives developers more time to pay attention and write good and quality code for their applications.
 
 This article draws attention to developing a serverless application using the [C#](https://docs.microsoft.com/en-us/dotnet/csharp/tour-of-csharp/) programming language. Then later be deployed on popular cloud solutions such as [Amazon AWS](https://aws.amazon.com/) and [Microsoft Azure](https://azure.microsoft.com/en-us/).
 
@@ -41,7 +41,7 @@ Various tools are needed when developing C# applications. The most commonly used
 #### Using VS Code
 It is a powerful and lightweight code editor that supports different operating systems such as Windows, Linux, and Mac OS. Developers can download either of the versions depending on their platforms.
 
-Azure Tools for VS Code are required to allow the developers to use the commands that interact with Azure functions in the VS Code editor.
+Azure Tools for VS Code are required to allow developers to use the commands that interact with Azure functions in the VS Code editor.
 
 To achieve that, we will browse to the VS Code extension manager located at the left side of the window and search for the [Azure Tools extension pack](https://marketplace.visualstudio.com/items?itemName=ms-vscode.vscode-azureextensionpack) and install it, as shown in the figure below:
 
@@ -56,8 +56,7 @@ Since a developer will use C# to develop the application in VS Code editor, the 
 #### Using Visual Studio Integrated Development Environment (IDE)
 Starting from [Visual Studio version 15.5](https://docs.microsoft.com/en-us/visualstudio/releasenotes/vs2017-relnotes-v15.5), the latest Visual Studio IDEs are bundled with the [Azure Function](https://docs.microsoft.com/en-us/azure/azure-functions/functions-run-local) tools. This means that even a developer intending to use the new Visual Studio IDE version will have to install [Azure Development workload](https://docs.microsoft.com/en-us/dotnet/azure/configure-visual-studio).
 
-For a developer to use Visual Studio IDE, there would be a need to sign in to the Microsoft account to create a new `Azure Functions` project. The developer can then proceed and code the application.
-
+For a developer to use Visual Studio IDE, they will need to sign in to the Microsoft account to create a new `Azure Functions` project. The developer can then proceed and code the application.
 The following section will cover how to build serverless applications on AWS Lambda serverless framework.
 
 ### Developing serverless applications on AWS Lambda using C#
@@ -69,7 +68,7 @@ There is a difference between the [.NET Core](https://www.tutorialsteacher.com/c
 - Since the .NET Core is open source and [Amazon Linux](https://aws.amazon.com/amazon-linux-ami/), an underlying platform for AWS Lambda validates it. AWS can respond to any security issues when using the platform.
 - Developers can code for C# independent of the underlying platform using the .NET Core framework. This was impossible in the past, where .NET only supported Windows operating systems.
 
-The developer has to grasp how AWS works to author the code for Lambda functions even before starting building the functions in C# using Visual Studio.
+The developer has to grasp how AWS works to author the code for Lambda functions even before starting to build the functions in C# using Visual Studio.
 
 The concepts below may come up when dealing with AWS Lambda:
 - **Handler** – AWS Lambda invokes the handler function to execute the Lambda function. Then, any input data is passed to the handler function as the first parameter. It then passes the context object as the second parameter.
