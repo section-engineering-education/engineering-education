@@ -245,6 +245,8 @@ button:focus{
 }
 ```
 The webpage will look like this:
+
+![Neomorphism](/engineering-education/neomorphism-vs-glassmorphism-and-their-implementation-using-css-and-html/neomorphism.png)
  
 #### Glassmorphism and Its Use Cases
 
@@ -361,8 +363,11 @@ button{
 ```
 Notice that I used a lighter colour in the elements' background. This increases the ease of the elements morphing with the body's background. 
 
-The final webpage will look like this:
+The the webpage will look like this:
+
+![glassmorphism](/engineering-education/neomorphism-vs-glassmorphism-and-their-implementation-using-css-and-html/glassmorphism.png)
  
+The final code for the two webpages can be found [here](https://github.com/lin-chez/Section-Repositories/tree/main/glassmorphism%20vs%20neomorphism) 
 #### Conclusion
 
 Glassmorphism and neomorphism are new trends. However, Glassmorphism is more recent and accepted by the developer community. Thus, developers will use the design for a long time to style websites until a better trend emerges. Concurrently, neomorphism will be around for a while due to its minimalist aspects. 
