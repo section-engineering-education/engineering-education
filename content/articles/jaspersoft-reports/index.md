@@ -132,6 +132,7 @@ public interface ProductRepository extends JpaRepository<Product,Long> {
 ```
 ### Create a report service to filter products by type
 Create an interface named `ReportService` and add two methods. The first method returns the report link, given the date and the file format. The other method returns a collection of products from the database.
+The `JRException` comes from the `net.sf.jasperreports` library which is added later in the application. This class will be thrown when there is an error when compiling or filling the report with our data from the database.
 
 ```java
 import com.reports.jaspersoft.jasperreports.model.Product;
@@ -147,7 +148,7 @@ public interface ReportService {
 }
 ```
 ### Design a report using Jaspersoft template
-First, open JasperSoft studio. Before we create a design of the report, we will add the MySQL connector to the classpath. This will ensure we can connect to our database and generate the desired fields from our table. In Jaspersoft studio, click on *help*, *install new software*, *manage*, *java*, *build path*, *classpath variables*, *new*. Add the jar file on the window that opens with the desired name as shown below:
+First, open JasperSoft studio. Before we create a design of the report, we will add the MySQL connector to the classpath. This will ensure we can connect to our database and generate the desired fields from our table. In Jaspersoft studio, click on *help*, *install new software*, *manage*. Once you click *manage* a new panel named preferences opens. Use the search field provided by the panel to search for *java*. The search will return different results but in our case click on *build path*. Under *build path*, click on *classpath variables*. The *classpath variables* provides us with the capability to add, edit, and remove variables using the *new*, *edit*, and *remove* buttons. Click on *new* and add the jar file on the window that opens with the desired name as shown below:
 
 ![java connector](/jaspersoft-reports/jaspersoft-connector.jpg)
 
@@ -177,6 +178,14 @@ The design we have created generates XML describing the report structure. Get th
 Remove the properties in the field tags in the source file. Ensure the class and name properties of the field tag are the same as that of our product model:
 
 ![remove properties](/jaspersoft-reports/remove-properties.jpg)
+
+The `productType` is an enum and it will throw a `ClassCastException` when we try to cast it to a string. To avoid this add a getter method in the products class that returns the string value of the enum.
+
+```java
+    public String getProductType() {
+        return String.valueOf(productType);
+    }
+```
 
 Also, ensure that the text field expression in the details section is of the same name as that of our product fields.
 
@@ -243,7 +252,7 @@ public class ReportServiceImpl implements ReportService{
 }
 ```
 ### Create a folder to store the report
-In the `ReportServiceImpl` class create a method named `getUploadPath()` . Add the file format, a `JasperPrint` returned from the above method, and a file name as parameters. This method creates the specified directory if it does not exist. It also creates the generated pdf file in the folder with the file name passed to it. We will also add a method named `getPdfFileLink()` that returns the link to our generated report. Pass the value of type `Path` returned by the `getUploadPath()` method.
+In the `ReportServiceImpl` class create a method named `getUploadPath()` . Add the file format, a `JasperPrint` returned from the above method, and a file name as parameters. This method creates the specified directory if it does not exist. It also creates the generated pdf file in the folder with the file name passed to it. We will also add a method named `getPdfFileLink()` that returns the link to our generated report. Pass the value of type `Path` returned by the `getUploadPath()` method. We will use the two methods `getJasperPrint()` and `getUploadPath()` in the `generateReport()` method which currently returns null to generate our report.
 
 ```java
 import com.reports.jaspersoft.jasperreports.model.Product;
