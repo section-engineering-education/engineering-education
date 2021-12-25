@@ -1,5 +1,6 @@
 ### Introduction
-Creating PySpark data frames is the subject of the next section. We will work on RDDs since they are tough to deal with.
+Creating PySpark data frames is the subject of the next section.
+PySpark, helps you interface with Resilient Distributed Datasets (RDDs) in Apache Spark and Python programming language. Using two methods, you will be able to create a dataframe on your own. We will work on RDDs since they are tough to deal with.
 ### Prerequisite
 1. A basic understanding of the Python programming language.
 Have a python IDE installed on your system.
@@ -159,3 +160,6 @@ In the `read()` method, we can pass a list of file paths as a string type, creat
 3. [pyspark.sql.DataFrame](https://spark.apache.org/docs/latest/api/python/reference/api/pyspark.sql.DataFrame.html)
 ### Conclusion
 Compared to `read()` methods, `parallelize()` is better, but it necessitates more work. When we need to fast scan a CSV file, the `read()` methods are helpful. Many options are available when making changes to a PySpark data frame.
+Finally, you understood how to create a dataframe using the already listed methods.
+
+Happy coding!
