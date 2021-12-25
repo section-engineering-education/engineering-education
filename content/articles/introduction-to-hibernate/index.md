@@ -1,45 +1,49 @@
 ### Introduction
-Hibernate is a java object-relational mapping (ORM) and durability framework that lets you map regular Java objects to database tables. Hibernate's primary objective is to relieve the developer of typical data persistence-related chores.
-### Hibernate Definition
-Hibernate is a Java technique that enables developing database-interactive Java applications more easier.
+Hibernate is a java object-relational mapping (ORM) framework that lets you map regular Java objects to database tables. 
+
+Hibernate's primary objective is to relieve the developer of typical data persistence-related chores.
+
 It's an ORM (Object Relational Mapping) tool that's open source and lightweight.
+
 ### Table of contents
-- [Hibernate Architecture](#hibernate-architecture)
-- [Architecture Components ](#architecture-components)
-  1. [SessionFactory object](#1-sessionFactory-object)
-  2. [session object](#2-session-object)
-  3. [Transaction object](#3-transaction-object)
-  4. [ConnectionProvider](#2-connectionProvider)
-  5. [TransactionFactory](#2-transactionFactory)
+- [Hibernate architecture](#hibernate-architecture)
+- [Architecture components ](#architecture-components)
 - [Installation process](#installation-process) 
 - [Advantages of Hibernate](#advantages-of-hibernate)
 - [Disadvantages of Hibernate](#disadvantages-of-hibernate)
 - [Hibernate example](#hibernate-example)
 - [Conclusion](#conclusion)
 
-### Hibernate Architecture
-Hibernate has a layered architecture that allows users to operate without having to know the core APIs. To provide durable features, Hibernate makes use of the databases and configurable information. Hibernate's architecture is divided into four levels:
+### Hibernate architecture
+Hibernate has a layered architecture that allows users to operate without having to know the core APIs. 
 
-    1. Application Java
-    2. Hibernate Framework
-    3. Backhand API
-    4. Database level
+To provide durable features, Hibernate makes use of the databases and configurable information. Hibernate's architecture is divided into four levels:
+
+1. Application Java
+2. Hibernate Framework
+3. Backhand API
+4. Database level
+
 The Hibernate Application Architecture is depicted in the diagram below at a high level:
+
 ![High-Level View Architecture](/engineering-education/introduction-to-hibernate/high.png)
+
 The Hibernate Application Architecture is depicted in full below, along with its key core classes:
+
 ![Detailed View Architecture](/engineering-education/introduction-to-hibernate/detailed.png)
 
 #### Components of Hibernate Architecture 
 Each of the Application Level class objects is summarized in this section.
 
-#### SessionFactory Object
+#### SessionFactory object
 SessionFactory is a session and client factory for the ConnectionProvider. In a second-level cache, data is saved..
 
-#### Session Object
+#### Session object
 The session object serves as a link between the database and the application's data. It is a tiny object that wraps the JDBC connection. It's a factory for transactions, queries, and criteria. 
 
-#### Transaction Object
+#### Transaction object
 The user interface for transactions provides the single set of activities specified by the transaction object, as well as functions for transaction processing.
+
 #### ConnectionProvider
 It's a factory for JDBC connections. It hides the application's connection to the DataSource.
 
@@ -48,52 +52,65 @@ This is a factory that is used for transactions and it is optional.
 
 #### Installation process 
 It is expected that you have already installed the most recent version of Eclipse IDE on your computer.
+
 If you have not installed Eclipse IDE, you can download it from here http://www.hibernate.org/downloads. 
+
 The basic steps for downloading and installing Hibernate on your eclipse IDE are as follows:
 
-Step 1:Select "Help" >> "Eclipse Marketplace..." from the Eclipse IDE's menu bar.
+Step 1: Select "Help" >> "Eclipse Marketplace..." from the Eclipse IDE's menu bar.
   
-Step 2:Type "JBoss Tool" on the search box and click on "Go".
+Step 2: Type "JBoss Tool" on the search box and click on "Go".
 
-Step 3:Choose the latest version of JBoss Tools available and click "Install".
-      ![Hibernate1](/engineering-education/introduction-to-hibernate/Hibernate.png)
-step 4:Diselect the marked tools from the list and select only Hibernate tool to download.
+Step 3: Choose the latest version of JBoss Tools available and click "Install".
+
+![Hibernate1](/engineering-education/introduction-to-hibernate/Hibernate.png)
+
+Step 4: Diselect the marked tools from the list and select only Hibernate tool to download.
+
 Then click on "confirm" to set up the hibernate tools.
-        ![Hibernate2](/engineering-education/introduction-to-hibernate/Hibernate2.png)
-Step5: Accept the terms of the license agreement and click on "Finish".
 
-Step6: Restart Eclipse IDE to make sure that all changes are have been made effectively.
+![Hibernate2](/engineering-education/introduction-to-hibernate/Hibernate2.png)
 
-Step 7:To validate whether the Hibernate Tools is correctly installed, click on under "File" >> "New" >>
+Step 5: Accept the terms of the license agreement and click on "Finish".
+
+Step 6: Restart Eclipse IDE to make sure that all changes are have been made effectively.
+
+Step 7: To validate whether the Hibernate Tools is correctly installed, click on under "File" >> "New" >>
+
  "Others" and search for "Hibernate".
-     ![Hibernate3](/engineering-education/introduction-to-hibernate/Hibernate3.png)
+
+![Hibernate3](/engineering-education/introduction-to-hibernate/Hibernate3.png)
+
 ### Advantages of Hibernate
-Hibernate framework is simple to use and the mapping procedure with Hibernate needs only a few
-lines of code. The following are some of the advantages of Hibernate:
+Hibernate framework is simple to use and the mapping procedure with Hibernate needs only a few lines of code. The following are some of the advantages of Hibernate:
 
 #### 1.Object Relational Mapping(ORM)
 ORM conveniently resolves data mismatches between an application's object-oriented
-classes and a relational database. Hibernate's flexibility and power are enhanced by this functionality.
+classes and a relational database. 
+
+Hibernate's flexibility and power are enhanced by this functionality.
 
 #### 2.Database Independent
 Hibernate is database-agnostic. It can connect to any database, including MySQL, Oracle, DB2, and Sybase.
+
 A database can be made portable by simply altering the 'database dialect' variable in the config file.
 
 #### 3.Fast Performance
-Hibernate uses the caching notion to keep items in memory, reducing the number of times they are accessed
-from the database. Caching is used from within by the hibernate framework thus making its speed to be excellent.
+Hibernate uses the caching notion to keep items in memory, reducing the number of times they are accessed from the database. 
+
+Caching is used from within by the hibernate framework thus making its speed to be excellent.
 
 #### 4.Hibernate Query Language
 Hibernate includes HQL, a sophisticated query language. 
-This query language is both more efficient and object-oriented than SQL. Inheritance, polymorphism,
-association, and other object-oriented concepts, may be implemented using HQL.
+This query language is both more efficient and object-oriented than SQL. Inheritance, polymorphism, association, and other object-oriented concepts, may be implemented using HQL.
 
 #### 5.Persistence with Transparency
 This guarantees that the software's objects and database tables are automatically connected.
 This functionality eliminates the need for developers to write lines of connection code.
+
 Hibernate's transparent persistence allows it to decrease development time and costs.
 
-#### 6. OPen source
+#### 6. Open source
 Hibernate is an open-source program that comes with a free product license. The source page
 for this lightweight program can be downloaded freely.
 
@@ -127,11 +144,13 @@ time-consuming than beneficial.
 For batch processing, it's best to stick with plain JDBC because Hibernate's performance 
 is not great.
 
-#### 5.Alot of effort to learn API 
+#### 5. A lot of effort to learn API 
 Learning Hibernate takes a lot of time and effort. As a result, learning Hibernate is not a simple task.
 
 #### Hibernate Example
 Here's an example of  implementation of Hibernate.It is for one-to-one biderectional mapping.
+
+```java
  //This is customer.java class
 import java.io.Serializable;
 import javax.persistence.GeneratedValue;
@@ -240,20 +259,21 @@ public class Main {
 	}
 
 }
-
-
-
+```
 
 ### Conclusion
 Hibernate is an ORM technology that is used to map database structures to Java objects in real-time.
+
 The use of Hibernate, a persistent framework, lets developers concentrate solely on developing business logic code, although they must also write an accurate and reliable persistence
 layer.
 
 #### Further Reading
-1. [What is Hibernate in Java and Why do we need it?](https://www.edureka.co/blog/what-is-hibernate-
+- [What is Hibernate in Java and Why do we need it?](https://www.edureka.co/blog/what-is-hibernate-
 in-java/)
-2. [Introduction to Hibernate](https://www.wideskills.com/hibernate/introduction-to-hibernate)
-3.[Hibernate (framework)](https://en.wikipedia.org/wiki/Hibernate_(framework))
+
+- [Introduction to Hibernate](https://www.wideskills.com/hibernate/introduction-to-hibernate)
+
+- [Hibernate framework](https://en.wikipedia.org/wiki/Hibernate_(framework))
 
 
 
