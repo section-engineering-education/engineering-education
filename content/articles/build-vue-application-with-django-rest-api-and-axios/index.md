@@ -14,7 +14,7 @@ images:
   - url: /engineering-education/build-vue-application-with-django-rest-api-and-axios/hero.jpg
     alt: Vue example image
 ---
-When developing applications, it's common to use APIs to consume and display data. We can make this possible using the Axios library, that can be used to create Vue.js apps where Django, a python-based backend framework, is only used as an API using the Django rest framework package.
+It is common when developing applications to use APIs to consume and display data.This can be made possible using the Axios library to create Vue.js apps where Django, a python-based backend framework is only used as an API using the Django rest framework package.
 <!--more-->
 To help you grasp this, we'll cover how to use Vue, Axios, and the Django REST APIs to consume and display data from APIs.
 
@@ -35,9 +35,7 @@ To help you grasp this, we'll cover how to use Vue, Axios, and the Django REST A
 The reader should have  the following to follow along with this tutorial:
 - Fundamental understanding of the Django REST framework and REST API.
 - Knowledge about Vue.js and the Axios library.
-- Know how to use PyCharm, Visual Studio Code, or any other IDE for working with Python Django and Vue js.
-
-Go to this [website](https://www.jetbrains.com/pycharm/download/#section=windows) to download and install the PyCharm IDE on your computer.
+- Know how to use [PyCharm](https://www.jetbrains.com/pycharm/download/#section=windows), [Visual Studio Code](https://code.visualstudio.com/download), or any other IDE for working with [Python Django](https://www.djangoproject.com/start/) and [Vue.js](https://vuejs.org/).
 
 
 ### Introduction
@@ -46,7 +44,7 @@ Go to this [website](https://www.jetbrains.com/pycharm/download/#section=windows
 This process is made possible by including the Vue.js scripts directly into the Django template HTML code. However, we can also use the Django API to consume and display data using the HTTP client library called **Axios**. To implement this, we will create a simple Vue Todo Application together with the Django REST API and Axios.
 
 ### Setting Up Django and Vue
-We'll start by setting up the Django and Vue.js in our machines together with the Axios library.
+We start by setting up the Django and Vue.js in our machines together with the Axios library.
 Use the command below to check if Django is installed;
 ```bash
 pip show django
@@ -57,7 +55,7 @@ If not, install it using the following command:
 pip install django
 
 ```
-Since we are using the Django REST API and Axios, we install the Django rest framework package to handle API requests and the Django-cors-headers allow requestS done via Ajax using the commands below:
+Since we are using the Django REST API and Axios, we need to install both the Django rest framework package to handle API requests and the Django-cors-headers to allow requests done via Ajax.
 ```bash
 pip install djangorestframework
 pip install django-cors-headers
@@ -69,7 +67,7 @@ npm install axios
 ```
 
 ### Creating the Django App 
-After finishing the setup of Django, we create our Todo application and all the required models.
+After setting up of Django, let's create our Todo application and all the required models.
 #### Django TodoApp Project
 We first create the django project and activate all the environments.
 ```bash
@@ -105,7 +103,6 @@ To create the database, add the code snippet below inside the models.py file und
 ```python
 from django.db import models
 
-# Create your models here.
 class WorkTodo(models.Model):  # Our database model is called WorkTodo
     WORKTODO = 'worktodo'
     WORKDONE = 'workdone'
@@ -119,7 +116,7 @@ class WorkTodo(models.Model):  # Our database model is called WorkTodo
     work_status = models.CharField(max_length=10, choices=STATUS_CHOICES,
                               default=WORKTODO)  # The work status, default status = WORKTODO
 ```
-Since we are using the rest_framework, we need to create another file under the todo application folder called `serializers.py`  and add the code below:
+Since we are using the rest_framework, we need to create another file under the todo application folder called `serializers.py`  and add the code below. This file is fairly similar to the Form and ModelForm classes in Django. It provides a convenient shortcut for creating serializers that deal with model instances and querysets,as well as a general approach to managing the output of your responses. With the serializers the data is then transformed into a format that can be stored or transmitted.
 ```python
 
 from rest_framework import serializers
@@ -154,7 +151,7 @@ class WorkViewSet(viewsets.ModelViewSet): # Create a class based view
     queryset = WorkTodo.objects.all() # Select all taks
     serializer_class = WorkSerializer # Serialize data
 ```
-Run all the database migrations and use the command below to open the python shell and type a few of the tasks and their descriptions then close the shell.
+Run all the database migrations and open the python shell using the commands below. Type a few of the tasks and their descriptions inside the shell then close it.
 ```python
 python manage.py shell # Opens up a shell
 #add the code inside the shell 
