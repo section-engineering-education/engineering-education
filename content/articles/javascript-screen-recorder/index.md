@@ -4,34 +4,25 @@ Computers are essential tools in our day-to-day business tasks. At times, we may
 This article guides us on implementing this functionality in a web browser using React and Node.js.
 
 ## Prerequisites
-
 - Knowledge of the [JavaScript](https://www.javascript.com/) programming language.
-
 - Basics of React library. Learn more on the official documentation [here](https://reactjs.org/).
-
 - A code editor or IDE such as [VS Code](https://code.visualstudio.com/download).
-
 - Have a Node.js LTS or later version on your development environment. You can download [here](https://nodejs.org/en/download/).
   
 ### Getting Started
-
 Our screen recorder application will use full-stack JavaScript. The main libraries on the client-side include:
 
 - `React`- A frontend JavaScript library for dynamic apps.
-  
 - `socket.io-client` for interacting with the webserver.
 
 For the backend side, we will use:
 
 - `Express.js` - A Node.js framework for servers.
-    
 - `Socket.io` - a Node.js library for developing real-time bi-directional applications using web sockets.
-
 - `FFmpeg` - an open-source tool for working with multimedia streams such as audio and video.
   
 ### Application Setup
-
-Our application structure includes a backend(`server` directory) and a React `client` folder. First, we will create our application folder and name it `screen-recorder-app`.  We will have the two directories inside the folder: the `server` folder for the backend and the `client` folder for the React application.
+Our application structure includes a backend(`server` directory) and a React `client` folder. So, first, we will create our application folder and name it `screen-recorder-app`. Then, we will have the two directories inside the folder; the `server` folder for the backend and the `client` folder for the React application.
 
 On your bash terminal, create the `screen-recorder-app` project folder:
 
@@ -39,7 +30,7 @@ On your bash terminal, create the `screen-recorder-app` project folder:
 mkdir screen-recorder-app
 ```
 
-Using the ' create-react-app ' utility, navigate inside the directory to create the React client. Execute the following commands:
+Using the `create-react-app` utility, navigate the directory to create the React client. Execute the following commands:
 
 ```bash
 cd screen-recorder-app
@@ -47,9 +38,7 @@ cd screen-recorder-app
 npx create-react-app client
 ```
 
-The `create-react-app` command-line tool creates a boilerplate code for our application. However, our entire code will be on the `src/App.js` file. 
-
-Our application needs the web sockets interface to reach the backend; therefore, for this functionality, let's add the `socket.io-client` and `react-loader-spinner` module:
+The `create-react-app` command-line tool creates a boilerplate code for our application. However, our entire code will be on the `src/App.js` file. Our application needs the web sockets interface to reach the backend; therefore, for this functionality, let us add the `socket.io-client` and `react-loader-spinner` module:
 
 ```bash
 npm install socket.io-client react-loader-spinner
@@ -61,7 +50,7 @@ Finally, open the folder on your IDE. For VS Code, run the command:
 code .
 ```
 
-To set up our component, head over to your `src/App.js` file and import the `useEffect` hook, `useRef` hook, and `useState` hook. From our `socket.io-client` module, we need to import the `io` object that will initialize our client.
+To set up our component, head over to your `src/App.js` file and import the `useEffect` hook, `useRef` hook, and `useState` hook. Next, from our `socket.io-client` module, we need to import the `io` object to initialize our client.
 
 ```js
 import { useEffect, useRef, useState, Fragment } from 'react';
@@ -73,7 +62,7 @@ import Loader from 'react-loader-spinner';
 
 On top of our main `App.js` file, declare the app variables that include:
 - Backend local server address as `http://localhost:5000`.
-- The data_chunks of the recorded data, and `MediaRecorder` instance interface that will provide an API to record `MediaStream`.
+- The data_chunks of the recorded data and `MediaRecorder` instance interface will provide an API to record `MediaStream`.
 
 ```js
 // server address
@@ -84,7 +73,7 @@ let data_chunks = [];
 let media_recorder = null;
 ```
 
-For our client-side React, we will write the entire thing in the `App.js` file. Let's add a functional component that will be rendered from the JSX with a `<h1>` tag of Recorder App.
+We will write the entire thing in the `App.js` file for our client-side React. But, first, let us add a functional component rendered from the JSX with a `<h1>` tag of Recorder App.
 
 ```js
 function App() {
@@ -102,7 +91,7 @@ If we start our server using the CLI command of `npm start`, then head over to o
 
 
 ### The App component
-Above your return statement add the following code in your `App.js` component.
+Above your return statement, add the following code in your `App.js` component.
 
 ```js
 function App() {
@@ -136,19 +125,17 @@ function App() {
 
 A code walkthrough:
 - The ```const username = useRef(`User_${Date.now().toString().slice(-4)}`)``` will generate a random username (e.g User_1548) since we don't have a real authenticated user to retrieve from context of auth.
-  
 - With `socketRef`, we call the call io client socket with the server URL that creates an interface to send or receive data.
-  
 - The `linkRef` and `videoRef` have a link to the DOM node and the video to enable download and view in the DOM.
 
-To send events, a method is used socket.emit(type, data), where type is a string indicating the type of event. Data can be both primitives and objects. To process events, a method is used socket.on(type, callback), with an event type, and a callback function that executes once an event is emitted.
+To send events, a method is used socket.emit(type, data), where type is a string indicating the type of event. Data can be both primitives and objects. To process events, a method is used socket.on(type, callback), with an event type and a callback function that executes once an event is emitted.
 
 Next, we need to capture the screen:
 
 ```js
 
   /**
-   *  first the client needs to notify the server 
+   *  First, the client needs to notify the server 
    *  when a new user has connected from the random username
   */
 
@@ -178,6 +165,7 @@ Next, we need to capture the screen:
     })()
   }, [])
 ```
+
 A code walkthrough:
 - Navigator is a browser window object. Under the `navigator.mediaDevices` object, we have access to all connected media inputs that include microphones, cameras, and screen sharing. In this case, we are capturing screen data capture as a live stream of the `screenStream`.
 
@@ -229,7 +217,7 @@ To start receiving media stream from the user's device, create a `startRecording
 
 We are ready to write the screen without sound, so if any error occurs related to receiving an audio stream (including the user's refusal to grant permission to use the microphone), we set the voice stream to unavailable.
 
-Let's take a look at the markup:
+Let us take a look at the markup:
 
 ```js
 
@@ -295,9 +283,8 @@ The JSX in the return statement includes:
   )
 ```
 
-### Backend
-
-For the backend, we will use the `server` folder inside the `screen-record` project folder. Initialize a new Node.js project using the command:
+### Working on the backend
+We will use the `server` folder inside the `screen-record` project folder for the backend. Initialize a new Node.js project using the command:
 
 ```bash
  npm init -y
@@ -309,7 +296,7 @@ Since the LTS and higher version of Node.js support ES6 import module syntax, we
 "type": "module",
 ```
 
-To automatically monitor and re-run our server upon changes, let's add a `nodemon` module:
+To automatically monitor and re-run our server upon changes, let us add a `nodemon` module:
 
 ```bash
 npm install -D nodemon
@@ -324,7 +311,7 @@ The script that triggers this event is:
   },
 ```
 
-Next, on your `index.js` root file, import `express` and `Server` objects from the `socket.io`. The `onConnectionHandler` function will handle our web sockets connection.
+Next, on your `index.js` root file, import `express` and `Server` objects from the `socket.io`. Then, the `onConnectionHandler` function will handle our web sockets connection.
 
 ```js
 import express from 'express';
@@ -422,5 +409,4 @@ server.listen(5000, () => {
 Check source code on [GitHub repo](https://github.com/Qodestackr/screen-recorder-app).
 
 ### Conclusion
-
-With the help of screen recording apps, we can save, copy, and reuse videos helpful to businesses or customers in a wide array of enterprise tasks. In this article, we have learned about screen recording software: what it is, how to build one using React and Node.js, and some of its benefits. Thanks for reading!
+With the help of screen recording apps, we can save, copy, and reuse videos helpful to businesses or customers in a wide array of enterprise tasks. In this article, we have learned about screen recording software, what it is, how to build one using React and Node.js, and some of its benefits. Thanks for reading!
