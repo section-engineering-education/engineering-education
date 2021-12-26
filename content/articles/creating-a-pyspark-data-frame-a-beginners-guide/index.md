@@ -1,6 +1,22 @@
-### Introduction
+---
+layout: engineering-education
+status: publish
+published: true
+url: /creating-a-pyspark-dataframe-a-beginners-guide/
+title: Creating a PySpark DataFrame: A Beginner's Guide
+description: This article will guide you to create PySpark data frames .
+author: francisca-ngodu
+date: 2021-12-26
+topics: [Languages]
+excerpt_separator: <!--more-->
+images:
+
+  - url: /engineering-education/creating-a-pyspark-dataframe-a-beginners-guide/hero.jpg
+    alt: Creating a PySpark DataFrame: A Beginner's Guide Cover image
+---
 Creating PySpark data frames is the subject of the next section.
 PySpark, helps you interface with Resilient Distributed Datasets (RDDs) in Apache Spark and Python programming language. Using two methods, you will be able to create a dataframe on your own. We will work on RDDs since they are tough to deal with.
+
 ### Prerequisite
 1. A basic understanding of the Python programming language.
 Have a python IDE installed on your system.
@@ -154,12 +170,17 @@ pandas.core.frame.DataFrame
 ```
 #### 2. Reading multiple files
 In the `read()` method, we can pass a list of file paths as a string type, creating and allocating a PySpark data frame in the variable `csvToPandas.` A shared data frame should not be deemed significant while reading several files at the same time.
-### Reference
+
+### References
 1. See full code for [creating PySpark data frame from an external file](https://colab.research.google.com/drive/1u04j9muZ1FdDvr2oxeuSGST5Lva9es9j?usp=sharing).
 2. See whole code for [creating a PySpark data frame using an existing Resilient Distributed Dataset](https://colab.research.google.com/drive/1Ykwifphdj2mLQ9rhKuX309aXq-tGurTD?usp=sharing)
 3. [pyspark.sql.DataFrame](https://spark.apache.org/docs/latest/api/python/reference/api/pyspark.sql.DataFrame.html)
+
 ### Conclusion
 Compared to `read()` methods, `parallelize()` is better, but it necessitates more work. When we need to fast scan a CSV file, the `read()` methods are helpful. Many options are available when making changes to a PySpark data frame.
 Finally, you understood how to create a dataframe using the already listed methods.
 
 Happy coding!
+
+---
+Peer Review Contributions by: [Mohamed Alghadban](/engineering-education/authors/mohamed-alghadban/)
