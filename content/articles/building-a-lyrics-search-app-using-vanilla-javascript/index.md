@@ -13,7 +13,6 @@ You will be creating the search app using HTML5, CSS3, Vanilla JavaScript, async
 - A laptop with an internet connection.
 
 ### Structuring the lyrics search app with HTML5
-
 To begin, create a folder named `lyrics-app`, then you need to create three files in the folder: `lyrics.html`, `lyrics.css`, and `lyrics.js`.
 
 In the `lyrics.html` file, copy the code below and paste it in your code editor to create the structure for the lyrics search app.
@@ -54,7 +53,6 @@ In the `lyrics.html` file, copy the code below and paste it in your code editor 
 ```
 
 ### Designing the lyrics search app
-
 The next step is to design the web app with CSS by navigating to your CSS file. Here’s the CSS for the structure (HTML code) of the web app:
 
 First, style the overall HTML, body of the HTML, and the div with the class `container` which embodies all other divs.
@@ -264,7 +262,6 @@ function showData(data) {
 In the code snippet above, a `showData()` function was created and data was passed as an argument. The name of the function is very descriptive, it is to display the lyrics on the webpage. The question that comes to mind is where you want to display the lyrics. The lyrics will be displayed inside an empty div in the `lyrics.html` file, the variable that connects the div to the JavaScript file is the variable output.
 
 ### Inner - HTML
-
 This is the DOM property that either sets or retrieves the content of an HTML element.In this instance, you will set the content of the empty div in the `lyrics.html` file to display the lyrics suggestions in a list form.
 
 In other to access the data, refer to the screenshot above, you will notice that the data embodies some set of objects which has the properties we want to display on the webpage.
@@ -309,7 +306,6 @@ The code above helps to know if the clicked element is the span tag. If it is, (
 Note, arguments are the actual values passed to a function, while parameters are the values passed when a function is defined. Arguments are values passed when a function is invoked. That's why I referred the two variables passed into the `getLyrics()` function as parameters and not arguments.
 
 ### GetLyrics() async function
-
 This is the most important function because this is what makes us get the lyrics themselves displayed. The function takes in two parameters, artist and songTitle respectively, recall that you can search for lyrics through inputting song artist or song title. This is the reason why the `getLyrics()` function is taking those parameters.
 
 Below is the code for `getLyrics()` async function:
@@ -349,7 +345,6 @@ The content of the variable output displays song titles in bolder form compared 
 Finally, the lyrics are displayed in the paragraph tag when the span tag is clicked.
 
 ### Styling and centering the lyrics
-
 Navigate to your css file and add the code below to style and center the lyrics:
 
 ```css
@@ -485,7 +480,6 @@ form.addEventListener("submit", e => {
 ```
 
 ### Conclusion
-
 In this tutorial, you built a lyrics search web app using HTML5, CSS3, Vanilla JavaScript alongside ES6 features.
 
 I’m a big fan of you not just stopping at what is provided in this tutorial. If indeed you’ve learned something from this, I challenge you to add more features to this web app and also make the User Interface(UI) better. You can add a button that copies the lyrics to the clipboard or a button that helps you share lyrics with friends via social media platforms.
