@@ -1,9 +1,15 @@
 ### Getting Started with Recursive Feature Elimination Algorithm in Machine Learning
-Most of the time, the data we work with in machine learning is usually in high dimensions. As a result, models implemented on these data are victims of the Curse of dimensionality. The Curse of dimensionality refers to all problems associated with high dimensional datasets. For example, when the dataset dimensionality is too high, it's possible to be highly detailed, and therefore, the information contained in some features is already captured in other features in the same dataset. As a result, features end up being highly correlated. We need to understand is that the dimensionality we are discussing refers to the number of features in the dataset and not the instances(rows).
+Most of the time, the data we work with in machine learning is usually in high dimensions. As a result, models implemented on these data are victims of the Curse of dimensionality. 
 
-Although more information is good, when the data contain duplicated or highly detailed information, then the training speed of our machine learning model is slowed down. Also, high processing power is needed to accomplish the training process. Another problem associated with high dimensional datasets is that the model trained on them ends up overfitting and, therefore, bad generalization of the data. From this discussion, it's obvious that high-dimensional datasets are likely to yield a poor-performing model. Thus we need to take care of this problem.
+The Curse of dimensionality refers to all problems associated with high dimensional datasets. For example, when the dataset dimensionality is too high, it is possible to be highly detailed, and therefore, the information contained in some features is already captured in other features in the same dataset. 
 
-To overcome the problem of the Curse of Dimensionality, we reduce the number of features of the original dataset. This is done such that the new dimensional space obtained is lower than the initial dimensional space. The benefits associated with this new dimensional space are:
+As a result, features end up being highly correlated. We need to understand is that the dimensionality we are discussing refers to the number of features in the dataset and not the instances(rows).
+
+Although more information is good, when the data contain duplicated or highly detailed information, then the training speed of our machine learning model is slowed down. Also, high processing power is needed to accomplish the training process. 
+
+Another problem associated with high dimensional datasets is that the model trained on them ends up overfitting and, therefore, lousy generalization of the data. From this discussion, it is evident that high-dimensional datasets are likely to yield a poor-performing model. Thus we need to take care of this problem.
+
+To overcome the problem of the Curse of Dimensionality, we reduce the number of features of the original dataset. This process is done such that the new dimensional space obtained is lower than the initial dimensional space. The benefits associated with this new dimensional space are:
 
 - Less computational power is needed compared to the original dimensional space
 - Easy to perform data visualization
@@ -18,18 +24,25 @@ For maximum benefit from this material, you need to be familiar with the followi
 
 
 ### Introduction to Recursive Feature Elimination
-Recursive Feature Elimination(RFE) is the Wrapper method, i.e.; it can ta. This algorithm fits a model and determines how significant features are in explaining the variation in the dataset. Once the feature importance has been determined, it then removes those less important features one at a time in each iteration. These features are repeatedly eliminated until a certain threshold(optimal number of features needed) is met. Let's understand how this algorithm works in sklearn.
+Recursive Feature Elimination(RFE) is the Wrapper method, i.e.; it can ta. This algorithm fits a model and determines how significant features explain the variation in the dataset. Once the feature importance has been determined, it then removes those less important features one at a time in each iteration. 
+
+These features are repeatedly eliminated until a certain threshold(optimal number of features needed) is met. First, let us understand how this algorithm works in sklearn.
 
 At a high level, the RFE algorithm takes two parameters.
-1. `Estimator`: The RFC wraps any model adapted to fit the data and compute features significance in the dataset through this parameter. How features significance is computed depends on the model passed to the RFC class. For instance, if the model we give is a decision tree, the features' importance will be obtained by ranking all the features from the most important to the least important. On the other hand, if we fit a linear regression model, the feature importance will be computed in terms of coefficients. In this case, the most significant coefficient is associated with the most critical feature in the dataset, and the smallest feature is associated with the least important one. Primarily, tree-based models such, Decision trees, random forests, etc., are used to determine feature importance.
+1. `Estimator`: The RFC wraps any model adapted to fit the data and compute features significance in the dataset through this parameter. How features significance is computed depends on the model passed to the RFC class. For instance, if the model we give is a decision tree, the features' importance will be obtained by ranking all the features from the most important to the least important. 
+
+On the other hand, if we fit a linear regression model, the feature importance will be computed in terms of coefficients. In this case, the most significant coefficient is associated with the most critical feature in the dataset, and the smallest feature is associated with the least important one. Primarily, tree-based models such, Decision trees, random forests, etc., are used to determine feature importance.
 
  From this section, we need to understand that the model taken to compute features' importance need not necessarily match the model the dataset is intended to be used with.
 
-2.  `n_features_to_select`: The number of features we want to keep is specified in this parameter. The challenge we have with the RFE class is that the optimal number of features to keep bare is not always known in advance. However, we run cross-validation on the top of the RFE class, which automatically determines the optimal number of features to keep. With sklearn, we don't need to do this separately. Instead, the sklearn provides us with the `RFECV` class, which implements the RFE together with the cross-validation and automatically selects the optimal number of features for us. With this said, we can now proceed and implement this algorithm in python.
+2.  `n_features_to_select`: The number of features we want to keep is specified in this parameter. The challenge we have with the RFE class is that the optimal number of features to keep bare is not always known in advance. 
+
+However, we run cross-validation on the top of the RFE class, which automatically determines the optimal number of features to keep. With sklearn, we do not need to do this separately. 
+
+Instead, the sklearn provides us with the `RFECV` class, which implements the RFE together with the cross-validation and automatically selects the optimal number of features for us. With this said, we can now proceed and implement this algorithm in python.
 
 
 ### Implementing RFE algorithm in python
-
 ### Step 1: Data Preparation
 To start with, we will import the following libraries.
 ### Import libraries
@@ -54,7 +67,7 @@ data.shape
 
 ```
 
-Our data was successfully imported. This data has 1470 instances, 34 features, and a study variable. It contains information about employees of a particular company. Therefore, it will be used to determine whether an employee will leave the organization or remain in the organization. Using the `head` function, let's look at the first five observations of this dataset.
+Our data was successfully imported. This data has 1470 instances, 34 features, and a study variable. It contains information about employees of a particular company. Therefore, it will determine whether an employee will leave the organization or remain in the organization. Using the `head` function, let us look at the first five observations of this dataset.
 
 ```python
 # check for the first five observations of the dataset
@@ -68,7 +81,7 @@ The `Attrition` column is our study variable from the data subset above. This co
 
 To ensure this problem does not occur, we need to analyze our features space and select a subset of features that explain at least 95% of the variance in the dataset. We will use the Recursive Feature Elimination technique to achieve this objective. However, the Recursive Feature Elimination is computationally expensive, and therefore, we need to preprocess our data as much as possible.
 
-Let's continue with data preprocessing activity before implementing the RFE model to obtain our optimal features subset.
+Let us continue with data preprocessing activity before implementing the RFE model to obtain our optimal features subset.
 
 Some features do not explain the study variable from the dataset head above. Thus, we need to drop them from our dataset. These columns include:
 - Number of records in the dataset
@@ -77,7 +90,7 @@ Some features do not explain the study variable from the dataset head above. Thu
 - Over18
 - StandardHours
 
-To drop them from our dataset, let's run the code below.
+To drop them from our dataset, let us run the code below.
 
 ```python
 # Removing insgnificant features from the dataset
@@ -92,7 +105,7 @@ Output:
 31
 
 ```
-Unlike the original dimensionality, our data now has 31 columns, which had 35 of them. So now, let's check if there are missing values in the data.
+Unlike the original dimensionality, our data now has 31 columns, which had 35 of them. So now, let us check if there are missing values in the data.
 
 ```python
 # Check for missing values in our dataset and impute them if any
@@ -114,7 +127,9 @@ data.select_dtypes("object").head(5)
 ```
 ![Object data](/engineering-education/recursive-feature-elimination/object-data-types.png)
 
-The above output reveals 8 out of our 31 columns to contain non-numeric data types. We have the Attrition column, our study variable, out of these eight columns. As we will not befitting the study variable to our future estimator model, at the moment, we will not encode it. With this said, let's encode the remaining seven columns into numeric data type with the help of the `label encoder` class.
+The above output reveals 8 out of our 31 columns to contain non-numeric data types. We have the Attrition column, our study variable, out of these eight columns. 
+
+As we will not befitting the study variable to our future estimator model, at the moment, we will not encode it. With this said, let us encode the remaining seven columns into numeric data type with the help of the `label encoder` class.
 
 ```python
 # Encoding object data type
@@ -144,7 +159,7 @@ X = data.drop(["Attrition"], axis=1)
 Y = data["Attrition"]
 
 ```
-We need to check if our dataset is balanced or not. If it's balanced, we shall continue with our activities, not, then we will balance it. So let's run the code below and check this.
+We need to check if our dataset is balanced or not. If it is balanced, we shall continue with our activities, not, then we will balance it. So let us run the code below and check this.
 
 ```python
 data["Attrition"].value_counts()
@@ -157,7 +172,7 @@ Yes     237
 Name: Attrition, dtype: int64
 
 ```
-Our data has 1233 observations for No and 237 for Yes from this output. From this output, it's clear that our data is highly imbalanced. Therefore, we need to balance it. To do so, we use a `smoteen` sampling technique as in the following code.
+Our data has 1233 observations for No and 237 for Yes from this output. From this output, it is clear that our data is highly imbalanced. Therefore, we need to balance it. To do so, we use a `smoteen` sampling technique as in the following code.
 
 ```python
 from imblearn.combine import SMOTEENN
@@ -209,7 +224,9 @@ Best features: Index(['JobLevel', 'MonthlyIncome', 'MonthlyRate'], dtype='object
   "X does not have valid feature names, but"
 
 ```
-The output above shows that the optimal number of features is three. So, out of 35 features of the original dataset, the information they carry is captured in three features. These features are returned in the output above, i.e., the JobLevel, monthly income, and monthly rate. If we train our predictive model on these features, the time and processing power required in the training process is much less than if we were to train the model on all 35 features of the original dataset. As a result, the model's chances of suffering from overfitting are reduced by a higher chance.
+The output above shows that the optimal number of features is three. So, out of 35 features of the original dataset, the information they carry is captured in three features. These features are returned in the output above, i.e., the JobLevel, monthly income, and monthly rate. 
+
+If we train our predictive model on these features, the time and processing power required in the training process is much less than if we were to train the model on all 35 features of the original dataset. As a result, the model's chances of suffering from overfitting are reduced by a higher chance.
 
 ### Summary
-This article explained how to implement the Recursive Feature Elimination algorithm in python. Before implementing this model, we discussed why it's important to reduce dataset dimensionality, and later we looked at features selection with the Recursive Feature Elimination algorithm. I hope this article helped you get to understand the RFE algorithm.
+This article explained how to implement the Recursive Feature Elimination algorithm in python. Before implementing this model, we discussed why it is essential to reduce dataset dimensionality, and later we looked at features selection with the Recursive Feature Elimination algorithm. I hope this article helped you get to understand the RFE algorithm.
