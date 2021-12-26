@@ -14,7 +14,7 @@ images:
   - url: /engineering-education/in-page-filtered-search-with-vanilla-javascript/hero.jpg
     alt: In-Page Filtered Search With Vanilla JavaScript Hero Image
 ---
-Manually searching for textual data on websites with a lot of information is difficult and time consuming. This problem can be handled by providing a search option that filters the results down the page, making them easier to discover and read. In-page filtering is one answer to this problem.
+Manually searching for textual data on websites with a lot of information is difficult and time-consuming. This problem can be handled by providing a search option that filters the results down the page, making them easier to discover and read. In-page filtering is one answer to this problem.
 <!--more-->
 This tutorial will help the reader to understand in-page filtering and how it can be applied it using the vanilla script, a barebones version of JavaScript that does not include any extra types of libraries.
 
@@ -33,13 +33,13 @@ This tutorial will help the reader to understand in-page filtering and how it ca
 ### Pre-requisites
 To follow through this tutorial the reader should have:
 - A good understanding of the fundamentals of HTML and CSS.
-- A basic knowledge of JavaScript.
+- Basic knowledge of JavaScript.
 
 ### Objectives
 By the end of this tutorial, the following is expected:
-- Understand overview of in-page filtered search.
-- Know how to create sample web page.
-- Know how to create time delay.
+- Understand the overview of the in-page filtered search.
+- Know how to create a sample web page.
+- Know how to create a time delay.
 - Understand fuzzy searches.
 - Getting to know caveat.
 
@@ -80,7 +80,7 @@ To understand this, let's create a simple web page with a sample of frequently a
 </div>
 ```
 
-When coming to the JavaScript, we'll use the CSS code below to add/remove elements depending on the search circumstance to get ready for the interaction.
+When coming to JavaScript, we'll use the CSS code below to add/remove elements depending on the search circumstance to get ready for the interaction.
 
 ```css
 .is_hidden {
@@ -195,7 +195,7 @@ for (var i = 0; i < cards.length; i++) {
 > NOTE: Since we want to search through the alt attributes in addition to what is really displayed on the page, we must alter `innerText` to `getAttribute('alt')` for the above method to function.
 
 ### Caveat
-These methods works only when all the searchable content are in the DOM of the page that is already rendered.
+These methods work only when all the searchable content is in the DOM of the page that is already rendered.
 
 You can find the full working code [here](https://github.com/Shee254/in-page-filtered-search-with-vanilla-javascript).
 
