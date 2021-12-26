@@ -1,3 +1,19 @@
+---
+layout: engineering-education
+status: publish
+published: true
+url: /engineering-education/in-page-filtered-search-with-vanilla-javascript/
+title: In-Page Filtered Search With Vanilla JavaScript
+description: This tutorial will be an introduction to in-page filtered search for any webpages. We will be building a simple webpage to demonstrate in-page search.
+author: cecilia-wanjiru-wairimu
+date: 2021-12-26T00:00:00-16:45
+topics: []
+excerpt_separator: <!--more-->
+images:
+
+  - url: /engineering-education/in-page-filtered-search-with-vanilla-javascript/hero.jpg
+    alt: In-Page Filtered Search With Vanilla JavaScript Hero Image
+---
 Manually searching for textual data on websites with a lot of information is difficult and time consuming. This problem can be handled by providing a search option that filters the results down the page, making them easier to discover and read. In-page filtering is one answer to this problem.
 <!--more-->
 This tutorial will help the reader to understand in-page filtering and how it can be applied it using the vanilla script, a barebones version of JavaScript that does not include any extra types of libraries.
@@ -194,3 +210,6 @@ To summarize, we have:
 - Learned about fuzzy searches and the various approaches to implementing them.
 
 Happy coding!
+
+---
+Peer Review Contributions by: [Srishilesh P S](/engineering-education/authors/srishilesh-p-s/)
