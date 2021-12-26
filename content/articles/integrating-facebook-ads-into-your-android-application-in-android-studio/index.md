@@ -1,7 +1,7 @@
 ### Integrating Facebook Ads into your Android App in Android Studio
 
 ### Introduction
-For a developer, monetizing an application is equally as crucial as delivering the required product. This encourages programmers and developers to create more software with a commercial motive in mind, resulting in higher quality.
+One of the considerations in app development is how an application can be a source of income while serving its purpose. This encourages developers to create more software with a commercial motive in mind, resulting in higher quality.
 This article demonstrates how to include banner and interstitial advertisements in your applications, which is one of the best ways to earn money from apps.
 
 ### Table of contents
