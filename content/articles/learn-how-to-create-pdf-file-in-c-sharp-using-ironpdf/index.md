@@ -26,7 +26,7 @@ IronPDF integrates PDF in your application by automating the conversion of forma
 - [IronPdf establishment in Visual Studio](#ironpdf-establishment-in-visual-studio)
 - [Design Window form](#design-window-form)
 - [Activating save button](#activating-save-button)
-- [Activating clear and close button](#activating-clear-and-close-button)
+- [Activating the clear and close button](#activating-clear-and-close-button)
 - [Carry out the example](#carry-out-the-example)
 - [Conclusion](#conclusion)
 - [Further reading](#further-reading)
@@ -45,17 +45,17 @@ By using ironPDF, we are entitled to the following:
 4. Compatibility with other programming environments and frameworks, such as ASP.NET, web forms, MVC, and.NET Core web APIs.
 
 ### Contrasting iText 7 and IronPDF
-`iText 7` can be an alternative to ` IronPDF,` and it is, therefore, paramount to understand the differences between the two and get to know which one to use where appropriate.
+`iText 7` can be an alternative to ` IronPDF,` and it is, thus, paramount to understand the differences between the two and get to know which one to use where appropriate.
 
 #### IronPdf
 1. It is `.NET` flavored.
 2. It is not open source and that brings to pricing and in-purchases.
-3. It renders PDF's from HTML and therefore a developer need not know how a PDF works.
+3. It renders PDFs from HTML and thus a developer need not know how a PDF works.
 4. IronPdf is an excellent tool for PDF generation that can get your job done.
 
 #### iText
 1. It is `java` flavored.
-2. It is open source; hence no in-purchases incorporated.
+2. It is open-source; hence no in-purchases are incorporated.
 3. It renders PDFs using a programming-based API on how PDFs work internally.
 4. It's best suited for free projects and academic activities.
 
@@ -65,13 +65,13 @@ By reading this article, learners are expected to:
 2. Understand the merits of using IronPDF.
 3. Develop and configure a project in any visual studio version.
 4. Install and configure Nuget Package for IronPDF.
-5. Develop and add a C# backend code to a button to save a file in the computer.
+5. Develop and add a C# backend code to a button to save a file on the computer.
 6. Develop and add a C# backend code to a button that will be responsible for the following:
    - Clearing text, and
    - Exiting from an application.
 
 ### Develop and configure a project in Visual Studio
-In this article, we will use Visual Studio 2019 to clarify the bit by bit exercises included to accomplish our objectives but, you are not restricted to using any version of Visual studio. To begin with, start your Visual Studio, and the following should pop-up.
+In this article, we will use Visual Studio 2019 to clarify the bit by bit exercises included to accomplish our objectives but, you are not restricted to using any version of Visual studio. To begin with, start your Visual Studio, and the following should pop up.
 
 ![start-visual-studio](/engineering-education/learn-how-to-create-pdf-file-in-c-sharp-using-ironpdf/start-visual-studio.png)
 
@@ -185,7 +185,7 @@ A dialogue box will appear to specify where we want to save our file. The defaul
 
 We can only save files as PDFs, so we set the default extension to only accept PDF files. The code inside the `if` condition is the actual code for generating a PDF, and as you can see, only two lines of code are required.
 
-### Activating clear and close button
+### Activating the clear and close button
 When you double-click on your design's `clear` button, you should see the following:
 
 ```c#
@@ -237,7 +237,7 @@ In the TextBox, you will type your text. For example, I've used HTML tags to inc
 
 ![text-to-save-as-pdf](/engineering-education/learn-how-to-create-pdf-file-in-c-sharp-using-ironpdf/text-to-save-as-pdf.png)
 
-When you click the save button, you should see a window similar to the one shown below.
+When you click the save button, you should see a window like the one shown below.
 
 ![save-file](/engineering-education/learn-how-to-create-pdf-file-in-c-sharp-using-ironpdf/save-file.png)
 
