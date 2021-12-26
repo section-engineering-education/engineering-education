@@ -330,7 +330,7 @@ Whenever we want to update our application, we only need to execute the command 
 ./ansible.sh deploy.yaml
 ```
 ### Conclusion
-In this tutorial, we have created a budget management application and deployed it to production using ansible. First, try implementing automated deployments using ansible in Django projects to reduce the time spent on manual Django application deployments. You can download the source code of this tutorial [here](https://drive.google.com/file/d/19ST8qXnaHC0Rep7C9nO7uxg-yOENGfcR/view?usp=sharing).
+We have created a budget management application in this tutorial and deployed it to production using Ansible. First, try implementing automated deployments using Ansible in Django projects to reduce the time spent on manual Django application deployments. You can download the source code of this tutorial [here](https://drive.google.com/file/d/19ST8qXnaHC0Rep7C9nO7uxg-yOENGfcR/view?usp=sharing).
 
 ---
 
