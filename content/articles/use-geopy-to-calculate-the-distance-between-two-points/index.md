@@ -56,7 +56,7 @@ The distance between Nairobi and Cairo is : 2944.261368793268
 ```
 
 ### The great circle distance formula for distance calculation.
-This may be defined as the shortest path between any two places or points on the sphere or on the earth's surface. In this example, it is assumed that the globe is a perfect sphere. The following example shows how to compute great circle distance using longitude and latitude data from two locations.
+It is simply said to be the shortest path between any two places or points on the sphere or on the earth's surface. In this example, it is assumed that the globe is a perfect sphere. The following example shows how to compute great circle distance using longitude and latitude data from two locations.
 
 The problem of great-circle navigation includes the computation of azimuths at end points and intermediate waypoints, as well as the calculation of the great-circle distance.
 
@@ -80,10 +80,9 @@ The distance between Abuja  and Dakar is: 2785.186971064666
 ```
 ### The Heversine formula for distance calculation.
 
-The heversine formula executes the great-circle distance between any two points on a sphere using their longitudes and latitudes.
+Using their longitudes and latitudes, the heversine formula calculates the great-circle distance between any two locations on a sphere.
 
-
-One specific example is the rule of haversines, a more general formula in the field of spherical trigonometry that connects the sides and angles of spherical triangles.
+The rule of haversines, a more general formula in spherical trigonometry that relates the sides and angles of spherical triangles, is one example.
 
 The haversine method therefore gives a very correct way of finding the distance between any two given longitude and latitude.
 
