@@ -166,7 +166,7 @@ import javax.persistence.Column;
 @Entity
 public class customer implements Serializable {
 	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)
+	@GeneratedValue(strategy = GenerationType.AUTO)//to autogenerate the primary key
 	private Long id;
 
 	@Column(name = "customer_name")
@@ -178,8 +178,8 @@ public class customer implements Serializable {
 	@Column(name = "customer_email")
 	private customer_email;
 
-	@OneToOne(cascade = CascadeType.ALL)
-	@JoinColumn(name = "location_id", referencedColumnName = "id")
+	@OneToOne(cascade = CascadeType.ALL)//creating a one to one relationship
+	@JoinColumn(name = "location_id", referencedColumnName = "id")//joining  the two tables
 	private Location location;
 	
 }
@@ -243,11 +243,11 @@ public class Main {
 			
 			customer1.setLocation(location1);
 			customer2.setLocation(location2);
-			session.save(customer1);
+			session.save(customer1);//saves the customer details 
 			session.save(customer2);
 			
 			
-			k.commit();
+			k.commit();//commit the transaction
 		} catch (Exception e) {
 			e.printStackTrace();
 
@@ -260,6 +260,8 @@ public class Main {
 
 }
 ```
+#### Code Explanation
+class, we have customer_id,customer_name, and customer_email and in the Location class, we have state and state_number which are all private data. We then create session objects for the two classes i.e Customer class and Location Class in the Main class. We join the two columns by using "@JoinColumn()" and giving the name to that column. The location details for the two customers are automatically saved once we save the customer details, this is because the cascade type was set to ALL. We then commit the transaction hence joining the two tables.
 
 ### Conclusion
 Hibernate is an ORM technology that is used to map database structures to Java objects in real-time.
