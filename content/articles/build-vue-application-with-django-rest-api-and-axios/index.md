@@ -32,18 +32,18 @@ To help you grasp this, we'll cover how to use Vue, Axios, and the Django REST A
 - [Conclusion](#conclusion)
 
 ### Prerequisites
-The reader should do the following to follow along with this tutorial:
--Have a fundamental understanding of the Django REST framework and REST API.
-- Have knowledge about Vue.js and the Axios library.
-- Know how to use PyCharm,Visual Studio Code or any other IDE for working with Python Django and Vue js.
+The reader should have  the following to follow along with this tutorial:
+- Fundamental understanding of the Django REST framework and REST API.
+- Knowledge about Vue.js and the Axios library.
+- Know how to use PyCharm, Visual Studio Code, or any other IDE for working with Python Django and Vue js.
 
 Go to this [website](https://www.jetbrains.com/pycharm/download/#section=windows) to download and install the PyCharm IDE on your computer.
 
 
 ### Introduction
-**Django** is a Python-based backend framework that may be used to create  applications by displaying HTML code or as a pure API using the Django rest framework package. We can also combine it with Vue.js, a JavaScript-based front-end framework, in building the best sites and applications.
-This is made possible by including the Vue script directly into the Django template HTML code, but we can also use the Django API to consume and display data using the HTTP client library called **Axios**.
-To implement this, we'll create a simple Vue Todo Application together with the Django REST API and Axios.
+**Django** is a Python-based backend framework used to create native applications or as an API using the Django rest framework package. Additionally, we can also combine it with Vue.js; a JavaScript-based front-end framework, in building applications.
+
+This process is made possible by including the Vue.js scripts directly into the Django template HTML code. However, we can also use the Django API to consume and display data using the HTTP client library called **Axios**. To implement this, we will create a simple Vue Todo Application together with the Django REST API and Axios.
 
 ### Setting Up Django and Vue
 We'll start by setting up the Django and Vue.js in our machines together with the Axios library.
@@ -200,11 +200,11 @@ vue create TodoApp
 cd TodoApp
 npm run serve
 ```
-Once the project runs successfully the output  below is displayed in the browser.
+Once the project runs successfully, the output below is displayed in the browser.
 ![Vue Output](/engineering-education/build-vue-application-with-django-rest-api-and-axios/vue-output.jpg)
 
 ### Getting and Displaying App Data 
-Once the vue app is created we then communicate with the backend usig the `Axios` libary and display the tasks by inserting the code below inside the `HelloWorld.vue` file under the `src` folder.
+Once the Vue.js app is created we then communicate with the backend using the `Axios` library and display the tasks by inserting the code below inside the `HelloWorld.vue` file under the `src` folder.
 
 ```html
 <template>
@@ -325,11 +325,10 @@ export default {
 }
 </style>
 ```
-Running the project again you should see two tasks to the left(work to do) and one in the right which is done.
-The complete code can be found [here](https://github.com/dentonya/Todo-Application-using-Vue.js-Django-REST-API-and-Axios/tree/master/vue.js/todoapp).
+Running the project again, you should see two tasks to the left(work to do) and one to the right which is done. The complete code can be found [here](https://github.com/dentonya/Todo-Application-using-Vue.js-Django-REST-API-and-Axios/tree/master/vue.js/todoapp).
 
 ### Conclusion
-As seen from the above tutorial,it is possible using the Axios library to fetch and display data when building Vue.js applications where Django framework  used purely as an API.
+As seen from the above tutorial, it is possible using the Axios library to fetch and display data when building Vue.js applications where the Django framework used purely as an API.
 
 To summarize, we have:
 - Learned how to combine Django and Vue.js
