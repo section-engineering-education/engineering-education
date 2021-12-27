@@ -482,6 +482,6 @@ form.addEventListener("submit", e => {
 ### Conclusion
 In this tutorial, you built a lyrics search web app using HTML5, CSS3, Vanilla JavaScript alongside ES6 features.
 
-I’m a big fan of you not just stopping at what is provided in this tutorial. If indeed you’ve learned something from this, I challenge you to add more features to this web app and also make the User Interface(UI) better. You can add a button that copies the lyrics to the clipboard or a button that helps you share lyrics with friends via social media platforms.
+I’m a big fan of you not just stopping at what is provided in this tutorial. If indeed you’ve learned something from this, I challenge you to add more features to this web app and also make the User Interface (UI) better. You can add a button that copies the lyrics to the clipboard or a button that helps you share lyrics with friends via social media platforms.
 
 The source code is available on [Github](https://github.com/shegz101/Lyrics-Web-App).
