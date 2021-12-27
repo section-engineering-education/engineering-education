@@ -1,4 +1,19 @@
-### CRUD OPERATIONS WITH STRAPIQL API
+---
+layout: engineering-education
+status: publish
+published: true
+url: /crud-operations-with-strapi-and-graphql-api/
+title: Perfoming CRUD Operations With the STRAPIQL API
+description:
+author: Elijah Muturi
+date: 2021-11-19T00:00:00-07:00
+topics: []
+excerpt_separator: <!--more-->
+images:
+
+  - url: /engineering-education/crud-operations-with-strapi-and-graphql-api/hero.png
+    alt: Perfoming CRUD Operations With the STRAPIQL API
+---
 
 ### Table of contents
 
@@ -32,7 +47,7 @@ Create, Read, Update, and Delete (CRUD) are the four activities that you can per
 
 an example of create and read operation
 
-```python
+```js
 const db = require('./db')
 
 const Query = {
@@ -45,15 +60,15 @@ return "hi from graphql !!!"
 
 },
 
-/resolver work for understudies brings list back
+// resolver work for understudies brings list back
 
 understudies:() => db.students.list(),
 
-/resolver work for studentbyId
+// resolver work for studentbyId
 
 studentById:(root,args,context,info) => {
 
-/args will contain boundary passed in question
+//args will contain boundary passed in question
 
 return db.students.get(args.id);
 
@@ -61,7 +76,7 @@ return db.students.get(args.id);
 
 }
 
-/for each single understudy object returned, the resolver is summoned
+//for each single understudy object returned, the resolver is summoned
 
 const Student = {
 
