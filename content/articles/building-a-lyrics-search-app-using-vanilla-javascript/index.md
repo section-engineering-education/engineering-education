@@ -5,7 +5,7 @@
 
 Not knowing the lyrics of a song, is a problem most song-lovers encounter. In this article, you will be creating a platform where users can search for lyrics by entering the artist name or title of the song.
 
-You will be creating the search app using HTML5, CSS3, Vanilla JavaScript, async-await with fetch method, OVH Application Programming Interface(API), and EcmaScript 2015(ES6) features like arrow functions.
+You will be creating the search app using HTML5, CSS3, Vanilla JavaScript, async-await with fetch method, OVH Application Programming Interface (API), and EcmaScript 2015 (ES6) features like arrow functions.
 
 ### Prerequisites
 - A code editor (like Visual Studio Code).
@@ -164,7 +164,7 @@ Here is what your web page should look like:
 
 ### Adding functionality with JavaScript
 
-In your `lyrics.js` file, declare variables and use the Document Object Model(DOM) selectors to connect with elements in the `lyrics.html` file, using the code snippet below:
+In your `lyrics.js` file, declare variables and use the Document Object Model (DOM) selectors to connect with elements in the `lyrics.html` file, using the code snippet below:
 
 ```JavaScript
 
@@ -176,7 +176,7 @@ const output = document.getElementById("search-result");//target the output div
 
 ```
 
-The desired Application Programming Interface(API) to get data (lyrics) for this web app to be fully functional, is the 
+The desired API to get data (lyrics) for this web app to be fully functional, is the 
 [OVH API](https://api.lyrics.ovh).
 
 Declare the API URL using the code below:
@@ -210,11 +210,11 @@ form.addEventListener("submit", e => {
 
 In the code above, you listened for a submit event after which you declared a variable `searchValue` to be equal to `search.value.trim()`, the `trim()` method simply trims whitespaces. The if statement validates if `searchValue` equals an empty string, alert "Nothing to search", otherwise, invoke the `startSearch()` function taking the `searchValue` as the argument.
 
-I’d recommend that you explore the [OVH API doc](https://api.lyrics.ovh) before proceeding. You’re about to fetch data (lyrics) from the OVH Application Programming Interface(API).
+I’d recommend that you explore the [OVH API doc](https://api.lyrics.ovh) before proceeding. You’re about to fetch data (lyrics) from the OVH API.
 
 Now, you can use Async await with the fetch method to get data from the OVH lyrics API.
 
-Using the promise-based fetch API, you will create an async function getResult(searchValue).
+Using the promise-based fetch API, you will create an async function `startSearch()`.
 
 Here is the code snippet to fetch the data:
 
@@ -396,7 +396,7 @@ Navigate to your css file and add the code below to style and center the lyrics:
 ```
 
 The entire JavaScript code :
-    In other for you not to run into errors while fetching data from the API, I will suggest you rearrange your code like the code snippet below. What you are basically doing, is creating a function above before it's been called, so you don't run into errors (JavaSript is very sensitive to things like this).
+    In other for you not to run into errors while fetching data from the API, I will suggest you rearrange your code like the code snippet below. What you are basically doing, is creating a function above before it's been called, so you don't run into errors (JavaScript is very sensitive to things like this).
 
 ```JavaScript
 
