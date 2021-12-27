@@ -6,7 +6,7 @@ url: /creating-a-hand-gesture-volume-controller-using-python-and-pycharm/
 title: Creating a Hand Gesture Volume Controller using Python and Pycharm
 description: This tutorial aims to create a hand gesture volume controller using Python and Pycharm.
 author: denis-mwangi
-date: 2021-12-21T00:00:00-17:00
+date: 2021-12-27T00:00:00-17:00
 topics: [Machine Learning]
 excerpt_separator: <!--more-->
 images:
@@ -32,9 +32,9 @@ This tutorial will discuss the use of these libraries, how to use python to trac
 - [Conclusion](#conclusion)
 
 ### Prerequisites
-For you to follow through this article, you need to:
-- Be familiar with the Python programming language.
-- Have **Pycharm** installed on your computer. You can download it [here](https://www.jetbrains.com/pycharm/download/)
+For you to follow through this article, you need:
+- To be familiar with the Python programming language.
+- To have **Pycharm** installed on your computer. You can download it [here](https://www.jetbrains.com/pycharm/download/)
 
 ### Referral hand image
 ![hand](/engineering-education/creating-a-hand-gesture-volume-controller-using-python-and-pycharm/hand.jpg)
@@ -50,7 +50,7 @@ First of all, we will prepare our workspace. Launch the Pycharm app. Click on th
 
 Click on the create button on the window that appears next.
 
-We now need to install the libraries that we will need to use in our project.
+We now need to install the libraries we will need to use in our project.
 
 `numpy` will help us work with arrays. To install it, open the terminal and run the following command: 
 
@@ -62,12 +62,12 @@ Repeat the same process for the other libraries.
 ```bash
 pip install opencv-python
 ```
-We will import this library as `cv2`. We will use it to capture an image using the webcam and convert the image to `RGB`.
+We will import this library as `cv2`. We will use it to capture an image using the webcam and convert it to `RGB`.
 
 ```bash
 pip install mediapipe
 ```
-This is an open-source library developed by Google. It's used for both face and gesture recognition. For this tutorial, we'll use it for hand gesture recognition.
+It is an open-source library developed by Google. We use it for both face and gesture recognition. For this tutorial, we'll use it for hand gesture recognition.
 
 ```bash
 pip install pycaw
@@ -84,7 +84,7 @@ pip install gpib-ctypes, comtypes
 ```
 `pycaw` depends on these two libraries. `Ctypes` provides `C` language compatible data types. `Comtypes` bases on the `ctypes` **FFI**(Foreign Function Interface) library.
 
-Now let us jump into coding. This is where the most fun is as we get hands-on. On the `main.py` file that *pycharm* automatically creates for you, type in the following code.
+Now let us jump into coding. This is where the most fun is as we get hands-on. On the `main.py` file that *pycharm* automatically creates for you, type in the following code:
 
 ```python
 import cv2
@@ -95,7 +95,7 @@ from comtypes import CLSCTX_ALL
 from pycaw.pycaw import AudioUtilities, IAudioEndpointVolume
 import numpy as np
 ```
-In the above code segment, we are importing each library we discussed into our project.
+In the above code segment, we import each library we discussed into our project.
 
 ```python
 cap = cv2.VideoCapture(0) 
@@ -157,7 +157,7 @@ This code creates an *empty list* which we will use to store the list of element
 ```
 - `for handlandmark in results.multi_hand_landmarks`: This creates a for loop to interact with each hand in the results.
 - `for id, lm in enumerate(handlandmark.landmark)`: This is a for loop to get the `id` (id number) and `lm` (landmark information) for each handlandmark. The landmark information will give us the `x` and `y` coordinates. The id number is the number assigned to the various hand points.
-- `h, w, c = img.shape`: This piece of code checks the height width and channels of our image. This will give us the width and height of the image.
+- `h, w, c = img.shape`: This piece of code checks the height, width, and channels of our image. This will give us the width and height of the image.
 - `cx, cy = int(lm.x * w), int(lm.y * h)`: We are finding the central position of our image. We achieve this by multiplying *lm.x by the width* and assigning the value obtained to `cx`. Then multiply `lm.y` by the height and assign the value obtained to `cy`. **NB** `lm` stands for landmark.
 - `lmList.append([id, cx, cy])`: We are adding the values of `id`,`cx` and `cy` to `lmList`.
 - ` mpDraw.draw_landmarks(img, handlandmark, mpHands.HAND_CONNECTIONS)`: We pass our image (`img`) then we call *mpDraw.draw_landmarks* to draw all the landmarks of the hand.
@@ -203,14 +203,14 @@ In the code above, we use the `cv2.line` function to draw a line between point f
 ```python
 length = hypot(x2 - x1, y2 - y1)
 ```
-In the code above, we are finding the distance between the tip of the thumb and the index finger using hypotenuse. We achieve this by calling the math `hypot` function and passing the difference between `x2` and `x1` and the difference between `y2` and `y1`.
+In the code above, we find the distance between the tip of the thumb and the index finger using hypotenuse. We achieve this by calling the math `hypot` function and passing the difference between `x2` and `x1` and the difference between `y2` and `y1`.
 
 ### Converting the hand range to the volume range
 ```python                                          
 vol = np.interp(length, [15, 220], [volMin, volMax])
 print(vol, length)
 ```
-We are calling on the numpy function `np.interp` to convert the hand range to the volume range. The arguments used are:
+We call the numpy function `np.interp` to convert the hand range to the volume range. The arguments used are:
 - `length`: This is the value we want to convert.
 - `[15 - 220]`: This is the hand range.
 - `[volMin, volMax]`: Giving the range to which we want to convert.
@@ -220,7 +220,7 @@ We are calling on the numpy function `np.interp` to convert the hand range to th
 volume.SetMasterVolumeLevel(vol, None)  
 ```
 
-We are setting the master volume level in accordance with the hand range. We achieve this by passing `vol`, which is the value of the hand range we converted to volume range.
+We are setting the master volume level following the hand range. We achieve this by passing `vol`, which is the value of the hand range we converted to volume range.
 
 ### Displaying the video output used to interact with the user
 ```python
