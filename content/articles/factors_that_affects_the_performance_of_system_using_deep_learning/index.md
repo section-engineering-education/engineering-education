@@ -8,7 +8,7 @@ Deep learning is the fastest-growing field in machine learning, and an increasin
 -	[Introduction](#INTRODUCTION)
 -	[Prerequisites](#Prerequisites)
 -	[The Concept of Deep Learning](#The-Concept-of-Deep-Learning)
--	[Some Determinants That Transform Deep Learning Systems’ Performance](#Some-Determinants-That-Transform-Deep-Learning-Systems’-Performance)
+-	[Some Determinants That Transform Deep Learning Systems’ Performance](#Some-Determinants-That-Transform-Deep-Learning-Systems-Performance)
 -	[How To Get A Perfect Performance Rate From A Deep Learning System](#How-To-Get-A-Perfect-Performance-Rate-From-A-Deep-Learning-System)
 -	[Diagram demonstrating the different scenarios one can fall into when configuring the learning rate](#Diagram-demonstrating-the-different-scenarios-one-can-fall-into-when-configuring-the-learning-rate-.)
 -	[Conclusion](#CONCULSION)
