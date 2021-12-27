@@ -226,6 +226,10 @@ section.hero-blocks {
               text-decoration: none;
             }
 
+            i {
+              background-size: cover;
+            }
+
             i.location {
               background-image: url(/images/location-icon.png);
             }

@@ -6,63 +6,25 @@
 <div class="sticky-wrapper">
 
   <aside class="author-sidebar" id="stickyAuthorSidebar">
-    <h4>Article Author Bio</h4>
+    <h4>EngEd Author Bio</h4>
     {{ with $.Site.GetPage $author_page }}
-    <div class="author-header">
-      {{ range .Resources }}
-        <div class="img-wrap">
-          <img class="avatar" src="{{ (.Resize "180x").Permalink }}">
-        </div>
-      {{ end }}
-      <div class="author-info">
-        <h3><a class="link-basic" href="{{ .Permalink }}">{{ .Params.title }}</a></h3>
-        {{ with .Params.school }}
-          <p class="school">Student at {{ . }}</p>
+      <div class="author-header">
+        {{ range .Resources }}
+          <div class="img-wrap">
+            <img class="avatar" src="{{ (.Resize "180x").Permalink }}">
+          </div>
         {{ end }}
-        <div class="bio">
-          {{ .Content }}
+        <div class="author-info">
+          <h3><a class="link-basic" href="{{ .Permalink }}">{{ .Params.title }}</a></h3>
+          {{ with .Params.school }}
+            <p class="school">Student at {{ . }}</p>
+          {{ end }}
+          <div class="bio">
+            {{ .Content }}
+          </div>
         </div>
       </div>
-    </div>
-      <ul class="social">
-        {{ with .Params.location }}
-          <li class="text-18-regular">
-            <i class="location"></i>
-            <span>{{ . }}</span>
-          </li>
-        {{ end }}
-        {{ with .Params.datejoined }}
-          <li class="text-18-regular">
-            <i class="date-joined"></i>
-            <span>Member since {{ . }}</span>
-          </li>
-        {{ end }}
-        {{ with .Params.website }}
-          <li class="text-18-regular">
-            <i class="website"></i>
-            <a href="{{ . }}" target="_blank">Visit website</a>
-          </li>
-        {{ end }}
-        {{ with .Params.twitter }}
-          <li class="text-18-regular">
-            <i class="twitter"></i>
-            <a href="{{ . }}" target="_blank">Twitter</a>
-          </li>
-        {{ end }}
-        {{ with .Params.linkedin }}
-          <li class="text-18-regular">
-            <i class="linkedin"></i>
-            <a href="{{ . }}" target="_blank">LinkedIn</a>
-          </li>
-        {{ end }}
-        {{ with .Params.github }}
-          <li class="text-18-regular">
-            <i class="github"></i>
-            <a href="{{ . }}" target="_blank">GitHub</a>
-          </li>
-        {{ end }}
-      </ul>
-      <a class="sidebar-profile-link" href="{{ .Permalink }}">View authors full profile <img src="/images/right-arrow.png" alt="View authors profile arrow icon" /></a>
+      <a class="sidebar-profile-link" href="{{ .Permalink }}">View author's full profile <img src="/images/right-arrow.png" alt="View authors profile arrow icon" /></a>
     {{ end }}
   </aside>
 </div>
