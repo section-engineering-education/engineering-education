@@ -37,18 +37,18 @@ The ability to fine-tune the budget and the considered problem are two enhancing
 
 ### Some Determinants That Transform Deep Learning Systems’ Performance
 
- #### 1: Taking into account the issue (considered problem) that the system will be tasked with resolving; 
+ #### 1.  Taking into account the issue (considered problem) that the system will be tasked with resolving; 
 -	What kind of system should be built? 
 -	How will the developed algorithm handle the immediate user’s demands?
 -	 How easily will re-engineering be made possible?
 
-#### 2: Evaluation difficulties of default hyperparameters for multiple optimisers.
+#### 2.   Evaluation difficulties of default hyperparameters for multiple optimisers.
  Poor [accuracy](https://sigopt.com/blog/common-problems-in-hyperparameter-optimization/) is obtained here as a result of low awareness from training the system data sets. The [Adams optimiser](https://www.google.com/url?sa=t&source=web&rct=j&url=https://machinelearningmastery.com/adam-optimization-algorithm-for-deep-learning/&ved=2ahUKEwjok7uPlIL1AhWBOewKHbYnDcMQFnoECDUQAQ&usg=AOvVaw3DyIH6zRqOJ31iqVVAy1z-)  is used in this deep system algorithm, which is adaptable. 
 
-#### 3: Technical expertise in deep learning system network design.
+#### 3.  Technical expertise in deep learning system network design.
 The demand and need for deep learning experts is highly recommended here. Experience is needed to increase the learning rate and improve the system's performance.
 
-#### 4: Which optimiser suits the deep network best?
+#### 4.  Which optimiser suits the deep network best?
 According to [research]( https://optimization.cbe.cornell.edu/index.php?title=Adam), the Adam optimiser offers the highest and best performance rate. The ability to outperform other approaches (optimisers) is lacking. 
 
 ### How To Get A Perfect Performance Rate From A Deep Learning System
