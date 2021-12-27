@@ -119,7 +119,7 @@ Within that a folder, upload your prepared .md file containing a short author de
 Add these files to the same PR (pull request).
 
 
-(See image below for file structure.)
+(See *screenshot* below for file structure.)
 
 ![Author file structure example](/static/images/meta-image-frontmatter.PNG)
 
