@@ -14,7 +14,7 @@ images:
   - url: /engineering-education/build-and-run-unikernel-with-ops/hero.jpg
     alt: image unikernel
 ---
-Unikernels have long been hailed аs the next phase of cloud structure due tо their length, security, аnd performance. This allows megatrends like microservices аnd serverless to persist despite the never-ending barrage of data breасhes, cryptojacking, аnd оther рrоblеms.
+Unikernels have long been hailed аs the next phase of cloud structure due tо their length, security, аnd performance. This allows megatrends like microservices аnd serverless to persist despite the never-ending barrage of data breaches, cryptojacking, and other problems.
 <!--more-->
 To build and run unikernels in any application, we need to use OPS as the means and in any language.
 
