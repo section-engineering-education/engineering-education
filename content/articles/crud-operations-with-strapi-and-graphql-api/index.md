@@ -335,3 +335,7 @@ It is important to note that;
 GraphQl makes an adaptable API as well as the reason why it is acquiring ambiguity. the more you check out about the grapghQL and its operations, the more admirable it becomes. To execute various queries as a whole and the Strapi changes using REST that is sometimes used in place of graphQL, you will have to take a great deal of time. by utilizing graphQL, you can uncover CRUD operations in your information in an entirely adaptable manner. This must be amazing.
 
 Happy coding!
+
+---
+
+Peer Review Contributions by: [Daniel Katungi](/engineering-education/authors/daniel-katungi/)
