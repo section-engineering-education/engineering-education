@@ -1,5 +1,5 @@
 ---
-tittle: Judith Nyakundi
+title: Judith Nyakundi
 type: authors
 images:
   - url: /engineering-education/authors/judith-nyakundi/avatar.jpeg 
