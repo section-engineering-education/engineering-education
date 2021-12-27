@@ -11,7 +11,7 @@ topics: [Machine Learning]
 excerpt_separator: <!--more-->
 images:
 
-  - url: /engineering-education/gradient-descent-algorithm-in-python//hero.png 
+  - url: /engineering-education/gradient-descent-algorithm-in-python/hero.png 
     alt: Gradient Descent Algorithm Python Image
 ---
 In machine learning, the goal is to predict the target variable as close to the ground truth as possible. Thus, the model we adopt for prediction should have reasonable accuracy. As the input values are fixed, to improve the quality of the model, all we can do is to tune its parameters such that the deviation of the predicted value from the actual value is highly minimized.  

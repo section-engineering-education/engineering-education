@@ -112,15 +112,32 @@ Be sure to:
 - **Use dashes in place of spaces.**
 - **Do not include any special characters.**
 - **Try to keep it under 40 characters.**
-- -**Avoid using periods (.) or commas (,) or (_ ) underscores**
+- **Avoid using periods (.) or commas (,) or (_ ) underscores**
 
 Within that a folder, upload your prepared .md file containing a short author description using the filename `index.md`. Upload any corresponding headshot image of the author using the file name `avatar`(jpg or png format). Please try to keep this image as close to 600X400 pixels (images can be resized using [Pixlr Image Editor](https://pixlr.com/e)).
 
 Add these files to the same PR (pull request).
 
 
-(See image below for file structure.)
+(See *screenshot* below for file structure.)
 
-![Author file structure example](/static/images/author-file-example.JPG)
+![Author file structure example](/static/images/meta-image-frontmatter.PNG)
 
-Congratulations! Your article is now ready to be submitted for review and approval by the Section team. Open a PR and we'll be happy to review it.
+## File Structure - explained
+- title (name of student - must be included)
+- type (authors file - must be included)
+- location (city, state, country)
+- school (university)
+- datejoined (date student joined EngEd)
+- github (GitHub URL)
+- linkedin (LinkedIn URL - if applicable)
+- twitter (Twitter URL - if applicable)
+- website (author website - if applicable)
+- images (author avatar image - must be included)
+
+Congratulations! Your article is now ready to be submitted for review and approval by the Section team. Open a pull request and we'll be happy to review it.
+
+## Post Publishing  
+After you have published your article with us - be sure to check on your content periodically to respond to any comments or questions that the audience may post. Please [sign up](https://auth.hyvor.com/signup/?redirect=https%3A%2F%2Ftalk.hyvor.com%2Fapi%2Fembed%2Flogin%3FwebsiteId%3D5716%26pageId%3D31662502%26isSignup%3D%255Bobject%2520PointerEvent%255D%26isLogout%3Dfalse) with HyvorTalk to reply to any comments or questions left on your articles. 
+
+
