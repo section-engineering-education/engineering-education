@@ -425,4 +425,4 @@ In this article, we have gone over DFS traversal. It is the best algorithm used 
 Happy coding!
 
 ---
-Peer Review Contributions by: [Miller Juma](/engineering-education/content/authors/miller-juma/)
+Peer Review Contributions by: [Miller Juma](/engineering-education/authors/miller-juma/)
