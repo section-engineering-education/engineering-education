@@ -7,7 +7,7 @@ title: Understanding the Resilient Packet Ring Technology
 description: This article will provide a basic understanding of resilient packet ring technology. It will go through fundamental aspects such as the traffic queues, class of service, adopted types of transmission media, and the applications of this technology. 
 author: eunice-wanjiku
 date: 2021-12-18T00:00:00-05:58
-topics: [Networks]
+topics: [Networking]
 excerpt_separator: <!--more-->
 images:
 
