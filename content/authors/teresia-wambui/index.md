@@ -2,6 +2,9 @@
 title: Teresia Wambui
 type: authors
 github: https://github.com/tesswambui
+datejoined: Nov 09, 2021
+school: Masinde Muliro University of Science and Technology
+location: Kenya
 images:
   - url: /engineering-education/authors/teresia-wambui/avatar.jpeg 
 ---
