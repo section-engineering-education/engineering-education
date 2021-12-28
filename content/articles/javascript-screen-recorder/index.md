@@ -411,7 +411,6 @@ server.listen(5000, () => {
 })
 ```
 
-
 ### A running demo
 
 ![demo 1](/engineering-education/js-screen-recorder/demo1.png)
@@ -421,3 +420,5 @@ Check source code on [GitHub repo](https://github.com/Qodestackr/screen-recorder
 
 ### Conclusion
 With the help of screen recording apps, we can save, copy, and reuse videos helpful to businesses or customers in a wide array of enterprise tasks. In this article, we have learned about screen recording software, what it is, how to build one using React and Node.js, and some of its benefits. Thanks for reading!
+
+Peer Review Contributions by: [Mercy Meave](/engineering-education/authors/mercy-meave/)
