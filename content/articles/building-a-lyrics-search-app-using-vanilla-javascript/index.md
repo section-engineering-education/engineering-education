@@ -8,9 +8,12 @@ Not knowing the lyrics of a song, is a problem most song-lovers encounter. In th
 You will be creating the search app using HTML5, CSS3, Vanilla JavaScript, async-await with fetch method, OVH Application Programming Interface (API), and EcmaScript 2015 (ES6) features like arrow functions.
 
 ### Prerequisites
-- A code editor (like Visual Studio Code).
-- Basic knowledge of HTML, CSS, and JavaScript.
-- A laptop with an internet connection.
+
+To follow along with this tutorial, you need the following:
+
+- A code editor (like Visual Studio Code)
+- Basic knowledge of HTML, CSS, and JavaScript
+- A laptop with an internet connection
 
 ### Structuring the lyrics search app with HTML5
 To begin, create a folder named `lyrics-app`, then you need to create three files in the folder: `lyrics.html`, `lyrics.css`, and `lyrics.js`.
