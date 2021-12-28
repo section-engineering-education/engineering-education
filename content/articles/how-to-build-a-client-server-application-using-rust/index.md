@@ -1,3 +1,19 @@
+---
+layout: engineering-education
+status: publish
+published: true
+url: /how-to-build-a-client-server-application-using-rust/
+title: How to Build a Client Server Application using Rust
+description: In this tutorial, you will understand the concept of the client-server communication, and learn how to achieve this using Rust.
+author: carol-wanjiru
+date: 2021-12-28T00:00:00-01:00
+topics: [Languages]
+excerpt_separator: <!--more-->
+images:
+
+  - url: /engineering-education/how-to-build-a-client-server-application-using-rust/hero.png
+    alt: How to Build a Client Server Application using Rust Hero Image
+---
 A web app is a service built on top of the Internet to allow computers to share and exchange data easily and reliably. In this case, the web services will be referred to as a client-server model. Communications are established between the two to exchange data. Clients will ask for data, and the computer that serves this data is called a server. This blog will discuss the concept of the client-server model as we implement the whole scenario using Rust.
 
 The reader will understand the concept of the client-server communication. The reader will then learn how to achieve this using Rust.
@@ -213,3 +229,6 @@ Head over to the server terminal, and you can see the server received the exact 
 
 ### Conclusion
 When you connect to the network, your computer sends data to a server. The server then checks this data to make sure that it is valid. If the data is invalid, this will throw an error. This blog has built a handy application that allows the server and client to exchange data between them using Rust programming language. I hope you found this helpful!
+
+---
+Peer Review Contributions by: [eric-kahuha](/engineering-education/authors/eric-kahuha/)
