@@ -1,17 +1,30 @@
+---
+layout: engineering-education
+status: publish
+published: true
+url: /javascript-screen-recorder/
+title: Building a Screen Recorder application with Javascript
+description: This article guides us on implementing this functionality in a web browser using React and Node.js
+author: wilson-gichuhi
+date: 2021-12-09T00:00:00-01:34
+topics: [Languages]
+excerpt_separator: <!--more-->
+images:
+  - url: /engineering-education/javascript-screen-recorder/hero.jpeg
+    alt:  Building a Screen Recorder application with Javascript Image
+---
 
 Computers are essential tools in our day-to-day business tasks. At times, we may find it helpful to record online zoom meetings, create presentation videos from slides, or support customers with a video tutorial on how to complete tasks. To achieve such actions, utility software with screen capture ability is needed.
+<!--more-->
+ A screen recorder app can generate digital video content by recording the activities of footage on a computer or mobile screens in real-time. This article guides us on implementing this functionality in a web browser using React and Node.js.
 
- A screen recorder app can generate digital video content by recording the activities of footage on a computer or mobile screens in real-time.
-
-This article guides us on implementing this functionality in a web browser using React and Node.js.
-
-## Prerequisites
+### Prerequisites
 - Knowledge of the [JavaScript](https://www.javascript.com/) programming language.
 - Basics of React library. Learn more on the official documentation [here](https://reactjs.org/).
 - A code editor or IDE such as [VS Code](https://code.visualstudio.com/download).
 - Have a Node.js LTS or later version on your development environment. You can download [here](https://nodejs.org/en/download/).
   
-### Getting Started
+### Getting started
 Our screen recorder application will use full-stack JavaScript. The main libraries on the client-side include:
 
 - `React`- A frontend JavaScript library for dynamic apps.
@@ -23,7 +36,7 @@ For the backend side, we will use:
 - `Socket.io` - a Node.js library for developing real-time bi-directional applications using web sockets.
 - `FFmpeg` - an open-source tool for working with multimedia streams such as audio and video.
   
-### Application Setup
+### Application setup
 Our application structure includes a backend(`server` directory) and a React `client` folder. So, first, we will create our application folder and name it `screen-recorder-app`. Then, we will have the two directories inside the folder; the `server` folder for the backend and the `client` folder for the React application.
 
 On your bash terminal, create the `screen-recorder-app` project folder:
@@ -168,7 +181,7 @@ Next, we need to capture the screen:
 
 - Navigator is a browser window object. Under the `navigator.mediaDevices` object, we have access to all connected media inputs that include microphones, cameras, and screen sharing. In this case, we are capturing screen data capture as a live stream of the `screenStream`.
 
->>> In Chrome and Microsoft Edge, the method `getDisplayMedia` can capture audio content.
+>In Chrome and Microsoft Edge, the method `getDisplayMedia` can capture audio content.
 
 To start receiving media stream from the user's device, create a `startRecording` function with the following code:
 
