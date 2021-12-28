@@ -1,5 +1,20 @@
+---
+layout: engineering-education
+status: publish
+published: true
+url: /Developing-simple-Blockchain-app-In-flutter/
+title: Developing simple blockchain app in flutter
+description: In this article, we will learn about creating a blockchain flutter application. We will be using the blockchain library to create a simple application that will allow users to create and manage their blockchain.
+author: johnnie-mbugua
+date: 2021-11-14T00:00:00-12:48
+topics: [Languages]
+excerpt_separator: <!--more-->
+images:
 
-In this article, we will learn about creating a blockchain flutter application.
+  - url: /engineering-education/Developing-simple-Blockchain-app-In-flutter/hero.jpg
+    alt: Developing simple blockchain app in flutter
+---
+
 
 ### Introduction
 
@@ -9,7 +24,7 @@ We will be using the blockchain library to create a simple application that will
 
 ### Prerequisites
 
-- Have Visual studio code installe
+- Have Visual studio code installed
 - Be familiar with flutter and dart language
 
 ### Creating a Blockchain Flutter Application
@@ -258,5 +273,9 @@ Notice that we are connecting to my Devices, which is the name of my MQTT broker
 
 ### Conclusion
 
-Congratulations! You have now created a flutter application that uses a dart blockchain.This is just but a simple blockchain application consisting of several devices and every transaction made is broadcasted to all the other devices.
+Congratulations! You have now created a flutter application that uses a dart blockchain.This is just but a simple blockchain application consisting of several devices and every transaction made is broadcasted to all the other devices
 Happy Coding.
+
+---
+
+Peer Review Contributions by: [Daniel Katungi](/engineering-education/authors/daniel-katungi/)
