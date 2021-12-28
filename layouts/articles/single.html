@@ -16,9 +16,6 @@
         {{ end }}
         <div class="author-info">
           <h3><a class="link-basic" href="{{ .Permalink }}">{{ .Params.title }}</a></h3>
-          {{ with .Params.school }}
-            <p class="school">Student at {{ . }}</p>
-          {{ end }}
           <div class="bio">
             {{ .Content }}
           </div>
