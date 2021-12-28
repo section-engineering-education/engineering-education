@@ -11,7 +11,7 @@ topics: []
 excerpt_separator: <!--more-->
 images:
 
-  - url: /solving-database-re-platforming-challenge-with-adaptive-data-virtualization/hero.jpg
+  - url: /solving-database-re-platforming-challenge-with-adaptive-data-virtualization/hero.png
     alt: Database Re-platforming Example Image
 ---
 Many organizations are exploiting the advantages of cloud computing. However, doing so often comes with a high cost if they choose to use the conventional data migration approach. They face challenges of costs, timing, and scalability. These problems can discourage some of these organizations from migrating to cloud computing services.
