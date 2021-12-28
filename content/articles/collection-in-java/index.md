@@ -130,41 +130,34 @@ Method in the collection framework include:  `clear()`, `add()`, `size()`.
 The class helps when dealing with dynamic arrays.
 
 A `dynamic array` is an array whose size is unpredictable since it keeps adding up. Other arrays usually have a fixed size where you have to state the number of elements to be stored. The dynamic array, on the other hand, supports automatic resizing.
+ArrayList is located at the `java.util package` and this means that every time you want to form an ArrayList, you import the java.util package.
+The above can be achieved as shown in the example below:
 
-We'll now use a code snippet to understand how the array list achieves automatic resizing.
-
-```java
-import java.util.ArrayList;
-import java.util.Iterator;
-public class Main {
-    public static void main(String[] args) {
-    
-        ArrayList<String> names = new ArrayList<>();
-        //Creating an arraylist
-        
-        names.add("Kolbe");
-        names.add("Byrant");
-        names.add("Isles");
-        //Adding elements objects into the array
-        
-        Iterator itr = names.iterator();
-        while (itr.hasNext()) {
-            System.out.println(itr.next());
-        }
-    }
-}
+Let's use an example where we will create an object that will store and list related to the object.
 ```
+  import java.util.ArrayList
+```
+In the example above, we have imported java.util package since we will be using its classes when creating the ArrayList.
+```
+  import java.util.ArrayList
+  ArrayList students = new ArrayList("Bob", "Kimosop", "Keen");
+```
+From the above, we have further created an object names and added a list of names to the array. We can also add names to the array as shown below.
+``` 
+  ArrayList students = new ArrayList();
 
-//Output
-- Kolbe
-- Bryant
-- Isles
+  students.add("Bob");
+  students.add("Kimosop");
+  students.ass("Keen");
+```
+```
+// Output
+Bob
+Kimosop
+Keen
+```
+The difference between the above means of adding elements to the list in the array and the former is that you can add or remove elements during run time.
 
-As you have noted, from the above example, we have imported methods from the class Arraylist and the Interface the Iterator. We have utilized the commands: 
-- `import java.util.ArrayList;`
-- `import java.util.Iterator;`
-
-We did not have to write the entire code in the main method to perform a specific action. We just called it after importing their respective classes. An example of a method we only had to call is the `hasNext()` method. We only had to call it from the Iterator interface. We achieved so by creating an object of the iterator `Iterator itr = names.iterator()` and using the object to call the Iterator interface.
 
 4. **Set**
 We use a set interface when we want to avoid duplication and aim to store objects uniquely. Some of the classes of the set interface are: HashSet, Tree set, LinkedHashSet, etc.
