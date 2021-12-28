@@ -25,7 +25,7 @@ This article will build a simple application using BeeWare to introduce the read
 3. Basic Python knowledge.
 
 ### Getting started
-This tutorial will will create a simple calculator application so to begin with, you need to be connected to the internet to create the app successfully. Next, navigate into a folder of your choice  using the terminal then type the `briefcase new` command. 
+This tutorial will  create a simple calculator application, so to begin with, you need to be connected to the internet to create the app successfully. Next, navigate into a folder of your choice  using the terminal then type the `briefcase new` command. 
 
 This command will create a new application in that folder. Follow the instructions and input the required details or press enter to go with the default configuration.
 
