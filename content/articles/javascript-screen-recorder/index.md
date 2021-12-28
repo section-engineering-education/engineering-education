@@ -1,5 +1,7 @@
 
-Computers are essential tools in our day-to-day business tasks. At times, we may find it helpful to record online zoom meetings, create presentation videos from slides, or support customers with a video tutorial on how to complete tasks. Such actions need utility software with screen capture ability to achieve. A screen recorder app can generate digital video content by recording the activities of footage on a computer or mobile screens in real-time.
+Computers are essential tools in our day-to-day business tasks. At times, we may find it helpful to record online zoom meetings, create presentation videos from slides, or support customers with a video tutorial on how to complete tasks. To achieve such actions, utility software with screen capture ability is needed.
+
+ A screen recorder app can generate digital video content by recording the activities of footage on a computer or mobile screens in real-time.
 
 This article guides us on implementing this functionality in a web browser using React and Node.js.
 
@@ -30,7 +32,7 @@ On your bash terminal, create the `screen-recorder-app` project folder:
 mkdir screen-recorder-app
 ```
 
-Using the `create-react-app` utility, navigate the directory to create the React client. Execute the following commands:
+Navigate the directory to create the React client using the `create-react-app` utility. Execute the following commands:
 
 ```bash
 cd screen-recorder-app
@@ -47,7 +49,7 @@ npm install socket.io-client react-loader-spinner
 Finally, open the folder on your IDE. For VS Code, run the command:
 
 ```bash 
-code .
+code  .
 ```
 
 To set up our component, head over to your `src/App.js` file and import the `useEffect` hook, `useRef` hook, and `useState` hook. Next, from our `socket.io-client` module, we need to import the `io` object to initialize our client.
@@ -73,7 +75,7 @@ let data_chunks = [];
 let media_recorder = null;
 ```
 
-We will write the entire thing in the `App.js` file for our client-side React. But, first, let us add a functional component rendered from the JSX with a `<h1>` tag of Recorder App.
+We will write everything in the `App.js` file for our client-side React. However, first, let us add a functional component rendered from the JSX with a `<h1>` tag of Recorder App.
 
 ```js
 function App() {
@@ -88,7 +90,6 @@ function App() {
 ```
 
 If we start our server using the CLI command of `npm start`, then head over to our browser, we should see something like:
-
 
 ### The App component
 Above your return statement, add the following code in your `App.js` component.
@@ -123,12 +124,11 @@ function App() {
 }
 ```
 
-A code walkthrough:
 - The ```const username = useRef(`User_${Date.now().toString().slice(-4)}`)``` will generate a random username (e.g User_1548) since we don't have a real authenticated user to retrieve from context of auth.
 - With `socketRef`, we call the call io client socket with the server URL that creates an interface to send or receive data.
 - The `linkRef` and `videoRef` have a link to the DOM node and the video to enable download and view in the DOM.
 
-To send events, a method is used socket.emit(type, data), where type is a string indicating the type of event. Data can be both primitives and objects. To process events, a method is used socket.on(type, callback), with an event type and a callback function that executes once an event is emitted.
+To send events, a method is used socket.emit(type, data), where type is a string indicating the type of event. Data can be both primitives and objects. In order to process events, a method is used socket.on(type, callback), with an event type and a callback function that executes once an event is emitted.
 
 Next, we need to capture the screen:
 
@@ -166,7 +166,6 @@ Next, we need to capture the screen:
   }, [])
 ```
 
-A code walkthrough:
 - Navigator is a browser window object. Under the `navigator.mediaDevices` object, we have access to all connected media inputs that include microphones, cameras, and screen sharing. In this case, we are capturing screen data capture as a live stream of the `screenStream`.
 
 >>> In Chrome and Microsoft Edge, the method `getDisplayMedia` can capture audio content.
@@ -403,7 +402,6 @@ server.listen(5000, () => {
 ### A running demo
 
 ![demo 1](/engineering-education/js-screen-recorder/demo1.png)
-
 ![demo 2](/engineering-education/js-screen-recorder/demo2.png)
 
 Check source code on [GitHub repo](https://github.com/Qodestackr/screen-recorder-app).
