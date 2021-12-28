@@ -230,3 +230,7 @@ When the program has run successfully, its output is as follows:
 You now have all the skills required to create a program that detects and recognizes license plates. Capture more images of vehicles and input them into the program then sit back and watch as the program does its magic.
 
 ! Happy coding
+
+---
+
+Peer Review Contributions by: [Collins Ayuya](https://www.section.io/engineering-education/authors/collins-ayuya/)
