@@ -32,6 +32,11 @@ We then add the "test reviewer" label to the PR via GitHub to help us keep track
 
 After the test review - we can go over the PR with a Final Review and see where the student could improve their reviews. 
 
+### Test Review Pull Request Merged 
+The Content Moderators who are doing final reviews that week - will be responsible for reviewing, analyzing, and approving/denying the potential reviewer.
+
+If the test review was NOT passed - the student can try again (at the discretion of the CM) if the review was on the fence. (3 reviews Max - if the student needs more test reviews than that - they can try out again at a later date when we need more peer reviewers.)
+
 The final decisions will be voted on by the Content Moderator team. 
 
 Criteria to approve a potential peer reviewer:
