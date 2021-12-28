@@ -2,77 +2,66 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/how-machine-learning-is-revolutionizing-the-agricultural-industry/
+url: /how-machine-learning-is-revolutionizing-the-agricultural-industry/
 title: How Machine Learning is Revolutionizing the Agricultural Industry
-description: This tutorial will be an introduction to the current agricultural industry and standards. We will learn about different machine learning algorithms that can be used to improve the agricultural efficiency and yield of crops.
+description: This will be an introduction to the current agricultural industry and standards. We will learn about different machine learning algorithms that can be used to improve the agricultural efficiency and yield of crops.
 author: ann-gathogo
-date: 2021-12-20T00:00:00-15:15
+date: 2021-12-27T00:00:00-17:00
 topics: [Machine Learning]
 excerpt_separator: <!--more-->
 images:
 
   - url: /engineering-education/how-machine-learning-is-revolutionizing-the-agricultural-industry/hero.jpg
-    alt: How Machine Learning is Revolutionizing the Agricultural Industry Hero Image
+    alt: Machine Learning Revolutionizing the Agricultural Industry Hero Image
 ---
-Agriculture is one of the critical industries that are vital in the sustenance of the world population. With the expected growth of the world population, food security concerns continue to rise.
+Agriculture is a very critical industry that is vital in the sustenance of the world population. With the expected growth of the world population, food security concerns continue to rise.
 <!--more-->
-In tackling the concerns, [Machine learning](/engineering-education/differences-between-artificial-intelligence-machine-learning-and-deep-learning/) is a crucial branch of artificial intelligence that could be helpful.
+In tackling the concerns, [Machine learning](/engineering-education/differences-between-artificial-intelligence-machine-learning-and-deep-learning/) is a crucial branch of artificial intelligence that could be helpful. This article tackles critical aspects of how machine learning can be vital in the agricultural industry revolution.
 
-This article tackles critical aspects of how machine learning can be vital in the agricultural industry revolution.
-
-### Why is machine learning is meaningful in agriculture?
-Machine learning uses high-precision algorithms, which are vital for optimizing and enhancing the existing agriculture methods that could help increase production and revenue.
-
-The critical algorithms include regression, [CART](https://machinelearningmastery.com/classification-and-regression-trees-for-machine-learning/) (classification and regression tree), cognitive map learning, and [artificial neural networks](/engineering-education/introduction-to-neural-networks/). These algorithms enhance agricultural production through analysis, predictions, and monitoring.
+### Why is machine learning meaningful in agriculture?
+Machine learning uses high-precision algorithms, which are vital for optimizing and enhancing the existing agriculture methods that could help increase production and revenue. The critical algorithms include regression, [CART](https://machinelearningmastery.com/classification-and-regression-trees-for-machine-learning/) (classification and regression tree), cognitive map learning, and [artificial neural networks](/engineering-education/introduction-to-neural-networks/). These algorithms enhance agricultural production through analysis, predictions, and monitoring.
 
 Machine learning is also a vital tool to precision agriculture. It can assess all the critical farm parameters for agricultural production, thus, enhancing farm management. The key parameters may include pest and diseases detection, farm monitoring, output optimization, etc.
 
 ### How does machine learning works in the agriculture industry?
 Machine learning works through teaching computers to learn and make improvements. The technology works through exploring data in agriculture and pattern identification. Thus, ensuring agricultural production processes are efficiently handled without human intervention.
 
-There are two main machine learning techniques that are vital in the agricultural industry. They are:
+There are two main machine learning techniques that are vital in the agricultural industry. 
 
+They are:
 - Supervised learning
 - Unsupervised learning
 
 #### Supervised learning
-Supervised learning is one technique through which machine learning works. The technique allows one to collect data to enable agricultural experts to analyze critical parameters at hand.
+Supervised learning is one technique through which machine learning works. This technique allows one to collect data to enable agricultural experts to analyze critical parameters at hand.
 
 #### Unsupervised learning
-Unsupervised machine learning is another technique used in machine learning that looks for patterns from all the unknown data and learns from some inherent structures.
+Unsupervised machine learning is another technique used in machine learning that looks for patterns from all the unknown data and learns from some inherent structures. Some common tasks of unsupervised learning include reduction and clustering. 
 
-Some common tasks of unsupervised learning include reduction and clustering. Dimension reduction for correlated groups or similar attributes in agriculture for better interpretation. Clustering is useful in grouping the data points of agriculture into clusters. The clustering is vital in assessing the patterns identified from the data points.
+Dimension reduction for correlated groups or similar attributes in agriculture for better interpretation. Clustering is useful in grouping the data points of agriculture into clusters. The clustering is vital in assessing the patterns identified from the data points.
 
 ### Machine learning algorithms used
-There are various algorithms of machine learning which the agricultural industry can use. The algorithms categorization is based on the technique adopted in the agricultural sector.
-
-The supervised learning algorithms entail CART, decision trees, regression, logistic regression, and KNN. The critical algorithms used in unstructured techniques include K-mean and Apriori algorithms.
+There are various algorithms of machine learning which the agricultural industry can use. The algorithms categorization is based on the technique adopted in the agricultural sector. The supervised learning algorithms entail CART, decision trees, regression, logistic regression, and KNN. The critical algorithms used in unstructured techniques include K-mean and Apriori algorithms.
 
 ### How does machine learning enhance the agricultural revolution?
 #### Pest and disease detection
 Machine learning is one of the technologies termed to be very effective in predicting disease and pests on a farm. Yet, there is very minimal information on how machine learning can predict future pest and disease attacks. One of the critical algorithms used for prediction and detection is CART.
 
-CART uses a binary tree that inputs the new record to or shows pests and diseases. Some of the critical inputs used in detecting and predicting include the assessment of soil, moisture, and plant health.
+CART uses a binary tree that inputs the new record to shows pests and diseases. Some of the critical inputs used in detecting and predicting include the assessment of soil, moisture, and plant health. The CART clusters need to be well structured to ensure that all the areas in the farm are well considered in the assessment. 
 
-The CART clusters need to be well structured to ensure that all the areas in the farm are well considered in the assessment. This ensures that the clusters are used to detect and predict the diseases and pests on the farm.
+This ensures that the clusters are used to detect and predict the diseases and pests on the farm. Thus, with machine learning, the amount of pesticide and fertilizer to eliminate any pests and diseases in a target area can be done.
 
-Thus, based on machine learning, the amount of pesticide and fertilizer to eliminate any pests and diseases in a target area is done.
-
-Machine learning is also vital in pest management. It is essential in the identification of pests even before they occur. Machine learning uses infrared camera data and intelligent sensor data to predict pest manifestation.
-
-The [United Nations](https://www.un.org/en/) has proposed machine learning in pest manifestation in Africa and Asia. However, it has proved to be so promising when the data is efficiently collected from the farm.
+Machine learning is also vital in pest management. It is essential in the identification of pests even before they occur. Machine learning uses infrared camera data and intelligent sensor data to predict pest manifestation. The [United Nations](https://www.un.org/en/) has proposed machine learning in pest manifestation in Africa and Asia already. 
 
 #### Monitoring crop fields
-Machine learning-based surveillance system is also vital in field management and monitoring crops.
-
-The surveillance system based on machine learning sends any alert of anything that may harm the fields. It is also vital in reducing any burglary or break-ins and animals that may destroy the crops. The programming of a machine-based surveillance system ensures that the employees are easily identifiable.
+A machine learning-based surveillance system is also vital in field management and monitoring crops. This surveillance system based sends any alert of anything that may harm the fields. It is also vital in reducing any burglary or break-ins and animals that may destroy the crops. The programming of a machine-based surveillance system ensures that the employees are easily identifiable.
 
 The system is also vital in identifying any necessary machines that need to be on the farm and signal anything that may harm the crops. Thus, machine learning is essential in managing large-scale farming, especially those in remote areas.
 
-##### How does this ML surveillance system work?
+#### How does this ML surveillance system work?
 ML surveillance system works through learning to identify, extract, index, and classify objects. These algorithms help recognize and classify objects such as vehicles and humans.
 
-With machine learning, there is no need to have a human monitor the video surveillance content. The ML surveillance system is structured to analyze the video data for efficiently deriving quantifiable insights.
+With machine learning, there is no need to have a human monitor the video surveillance content. The ML surveillance system is structured to analyze the video data to efficiently derive quantifiable insights.
 
 It ensures efficient indexing, which is vital in triggering a real-time call for action and configuring intelligent alerts when a particular behavior or object is detected.
 
