@@ -268,3 +268,6 @@ When we finally run our application, we have the following application:
 
 ### Conclusion
 By now, you have a simple working calculator built using Beeware running in developer mode. However, if you wish to have your application running on a device, such as a mobile phone, you should visit [Beeware Documentation](https://docs.beeware.org/en/latest/) for instructions. The documentation also contains detailed information on how `beeware` works using `toga`.
+
+---
+Peer Review Contributions by: [Jerim Kaura](/engineering-education/authors/jerim-kaura/)
