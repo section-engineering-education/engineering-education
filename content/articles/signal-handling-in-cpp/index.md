@@ -4,7 +4,7 @@ status: publish
 published: true
 url: /signal-handling-in-cpp/
 title: Signal Handling In C++
-description: This article will provide an overview of signals and how they can be handled in C++.
+description: This article will provide an overview of signals and how they can be handled in C++. Signals are interruptions that stop an OS in its task to attend to another task.
 author: felix-maina
 date: 2021-12-28T00:00:00-12:15
 topics: [Languages]
