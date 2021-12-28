@@ -1,14 +1,30 @@
-### Creating an application using Beeware
+---
+layout: engineering-education
+status: publish
+published: true
+url: /creating-an-application-using-beeware/
+title: Creating an application using Beeware
+description: This article will build a simple application using beeware to introduce the readers to the library and appreciate how it works. 
+author: john-kiguru
+date: 2021-12-28T00:00:00-07:17
+topics: [Languages]
+excerpt_separator: <!--more-->
+images:
 
-### Introduction
-Beeware is a python library used to create cross-platform applications. It serves as an alternative to other app-building libraries such as kivy. This article will build a simple application using beeware to introduce the readers to the library and appreciate how it works. 
+ - url: /engineering-education/creating-an-application-using-beeware/hero.jpg
+   alt: Beeware Application  Image
+---
+
+Beeware is a python library used to create cross-platform applications. It serves as an alternative to other app-building libraries such as kivy. 
+ <!--more-->
+This article will build a simple application using beeware to introduce the readers to the library and appreciate how it works. 
 
 ### Prerequisites
 1. `Python` installed in your machine.
 2. Install `beeware` and `toga`.Run `pip3 install beeware` and `pip3 install toga` to install them, respectively.
 3. Basic Python knowledge.
 
-### Getting Started.
+### Getting started
 We will create a simple calculator application. First, you need to be connected to the internet to create the app successfully. Next, cd into a folder of your choice and type the `briefcase new` command. This command will create a new application in that folder. Follow the instructions and type the required details or press enter to remain with the default information.
 
 The new app should have the following structure:
@@ -36,7 +52,6 @@ The new app should have the following structure:
 ```
 The `src` folder has files required for the applications to run. All the logic for running the application is found in the `app.py`. The `app.py` should look as follows:
 
-`app.py`
 ```python
 import toga
 from toga.style import Pack
@@ -52,9 +67,10 @@ class SimpleCalculator(toga.App):
 def main():
     return SimpleCalculator()
 ```
+
 The file begins by importing the `toga` toolkit. `Toga` is a python native cross-platform Graphical User Interface(GUI) toolkit. Then, we define a class `SimpleCalculator` that contains a `startup` method. This method defines a `toga box` component. It serves as the main box. The name `main_box` is declared and initialized by default when you create the application but may be changed later as desired.
 
-We declare the main window whose title is the app name defined when creating the app with the command` briefcase new`. Next, we have the window containing our empty main box as its content. Next, we have our application show our window. We finally define a `main` function that returns our `SimpleCalculator` class instance. This `main` method is called by the `__main__.py` file and invoked by it.
+We declare the main window whose title is the app name defined when creating the app with the ` briefcase new` command. Next, we have the window containing our empty main box as its content. Next, we have our application show our window. We finally define a `main` function that returns our `SimpleCalculator` class instance. This `main` method is called by the `__main__.py` file and invoked by it.
 
 By now, you have a simple working application. You can change the directory into `Simple Calculator` and type `briefcase dev` to run the app in developer mode. You should have the following simple application:
 
@@ -95,7 +111,6 @@ class SimpleCalculator(toga.App):
         self.main_window.content = main
         self.main_window.show()
 
-
 def main():
     return SimpleCalculator()
 
@@ -109,6 +124,7 @@ In the next section, we will have each box contain numbers and operators, while 
 We will now set up the buttons for numbers, operators, and calculate buttons. We will also have a box for input text.
 
 Now edit the `app.py` to appear as follows:
+
 ```python
 """
 Simple calculator
@@ -236,11 +252,12 @@ def main():
 
 
 ```
+
 We have defined all the necessary buttons required to make our application. Each button is a toga button with some having a little padding to the top or left or both. 
 
 There is a callback method `on_press` defined within the same buttons. We make use of a class-defined function `enterdata` that takes a number or an operand such as `+`, `-`, `*`, `÷`, `.` and `C`. and appends it to the input value.
 
-We use the `partial` built-in function in python that takes a function and some inputs pre-filled to return a fully-filled function. Our partial function takes our `enterdata` function and a number value ts the final parameter to the function. A `CALCULATE` button also calls the `calculate` function when pressed.
+We use the `partial` built-in function in python that takes a function and some inputs pre-filled to return a fully-filled function. Our partial function takes our `enterdata` function and a number value ts the final parameter to the function. When pressed, a `CALCULATE` button also calls the `calculate` function.
 
 We have a `calculate` function that takes our expression evaluated by the `enterdata` function and produces a result using python's in-built function `eval`. The `eval` function takes an expression as input and returns the expression result as output.
 
