@@ -1,4 +1,21 @@
-### *License plate detection and recognition using OpenCv and pytesseract*
+---
+layout: engineering-education
+status: publish
+published: true
+url: /license-plate-detection-and-recognition-using-opencv-and-pytesseract/
+title: License Plate Detection And Recognition Using OpenCv And Pytesseract
+description: In this tutorial we will learn the processes software passes to detect and recognize a number plate and how to create a program that is capable of detecting and recognizing a license plate.
+author: simon-kiruri
+date: 2021-12-28T00:00:00-13:00
+topics: [Machine Learning]
+excerpt_separator: <!--more-->
+images:
+
+ - url: /engineering-education/license-plate-detection-and-recognition-using-opencv-and-pytesseract/hero.jpg
+   alt: License Plate image
+---
+License plate detection is identifying the part of the car that is predicted to be the number plate. Recognition is identifying the values that make up the license plate.
+<!--more-->
 License plate detection and recognition is the technology that uses computer vision to detect and recognize a license plate from an input image of a car. License plate detection is identifying the part of the car that is predicted to be the number plate. Recognition is identifying the values that make up the license plate.
 
 This technology applies in many areas. On roads, it is used to identify the cars that are breaking the traffic rules. On security, it is used to capture the license plates of the vehicles getting into and out of certain premises. In parking lots, it is used to capture the license plates of the cars being packed. The list of its applications goes on and on.
@@ -10,10 +27,10 @@ In this tutorial, we are going to learn the processes software passes to detect 
 
 ### Table of contents
 - [Prerequisites](#prerequisites)
-- [Processes a software undergoes to detect and recognize a license plate](#rocesses-a-software-undergoes-to-detect-and-recognize-a-license-plate)
+- [Processes a software undergoes to detect and recognize a license plate](#processes-a-software-undergoes-to-detect-and-recognize-a-license-plate)
 - [Creating a license plate detection and recognition program](#creating-a-license-plate-detection-and-recognition-program)
 - [Results](#results)
-- [Conclusion](#Conclusion)
+- [Conclusion](#conclusion)
 
 ### Prerequisites
 To follow through this tutorial, a person needs to:
