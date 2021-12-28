@@ -17,7 +17,7 @@ images:
 
 Beeware is a python library used to create cross-platform applications. It serves as an alternative to other app-building libraries such as kivy. 
  <!--more-->
-This article will build a simple application using beeware to introduce the readers to the library and appreciate how it works. 
+This article will build a simple application using BeeWare to introduce the readers to the library and appreciate how it works. 
 
 ### Prerequisites
 1. `Python` installed in your machine.
@@ -268,7 +268,7 @@ When we finally run our application, we have the following output:
 ![Final App](/engineering-education/content/articles/creating-an-application-using-beeware/final.png)
 
 ### Conclusion
-By now, you have a simple working calculator built using BeeWare running in developer mode. However, if you wish to have your application running on a device, such as a mobile phone, you should visit [Beeware Documentation](https://docs.beeware.org/en/latest/) for instructions. The documentation also contains detailed information on how `beeware` works using `toga`.
+By now, you have a simple working calculator built using BeeWare running in developer mode. However, if you wish to have your application running on a device, such as a mobile phone, you should visit [BeeWare Documentation](https://docs.beeware.org/en/latest/) for instructions. The documentation also contains detailed information on how `beeware` works using `toga`.
 
 ---
 Peer Review Contributions by: [Jerim Kaura](/engineering-education/authors/jerim-kaura/)
