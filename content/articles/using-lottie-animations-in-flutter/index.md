@@ -10,11 +10,13 @@ In this article, we will implement Lottie animation in a flutter application. An
 2. A solid understanding of Flutter widgets.
 3. Basic knowledge of using animation controllers in Flutter.
 
+I assume in this tutorial you already have Flutter fully installed on your computer. If you have not installed Flutter visit, [Flutter Docs](http://docs.flutter.dev/get-started/install/) for full Flutter installation instructions before continuing. We will be using Flutter version 2.5.3 to build our project. We will be using Android Studio with the Flutter plugin installed as our IDE, but Visual Studio Code can also be used.
+
 Let us jump right into it!
 
 ### Step one: Adding Lottie dependency to your project
 
-- Goto the terminal in your editor and run this command:
+- Goto the terminal in your IDE and run this command:
 
 ```dart
 flutter pub add Lottie
