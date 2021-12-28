@@ -230,7 +230,9 @@ $UΣV^T=\begin{bmatrix}
 \end{bmatrix}\begin{bmatrix}
     \sqrt 12&0&0\\
     0&\sqrt 10&0
-\end{bmatrix}\begin{bmatrix}
+\end{bmatrix}$
+
+$\begin{bmatrix}
     \frac{1}{\sqrt 6}&\frac{2}{\sqrt 6}&\frac{1}{\sqrt 6}\\
     \frac{2}{\sqrt 5}&-\frac{1}{\sqrt 5}&0\\
     \frac{1}{\sqrt 30}&\frac{2}{\sqrt 30}&-\frac{5}{\sqrt 30}
