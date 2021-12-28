@@ -6,7 +6,7 @@ url: /django-ansible-deployment/
 title: Getting started with Django Ansible Deployment
 description: This tutorial will guide you through the process of deploying a Django application using Ansible to a remote server.
 author: elizabeth-akinyi
-date: 2021-12-28T00:00:00-01:00
+date: 2021-12-28T00:00:00-13:30
 topics: [Languages]
 excerpt_separator: <!--more-->
 images:
