@@ -228,4 +228,4 @@ Head over to the server terminal, and you can see the server received the exact 
 When you connect to the network, your computer sends data to a server. The server then checks this data to make sure that it is valid. If the data is invalid, this will throw an error. In this tutorial, we have built a handy application that allows the server and client to exchange data between them using Rust programming language. I hope you found this helpful!
 
 ---
-Peer Review Contributions by: [eric-kahuha](/engineering-education/authors/eric-kahuha/)
+Peer Review Contributions by: [Eric Kahuha](/engineering-education/authors/eric-kahuha/)
