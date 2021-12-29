@@ -42,7 +42,7 @@ Some of the advantages in statistics access include:
 Online data entry markets your brand because it makes use of colors, fonts, snapshots, and symbols that are aye-catching on your website. This improves your brand's online presence.
 
 * Targeted Notifications
-When you have the proper and accurate information, automated alerts can be quite useful. Instead of sending every consumer with all of the communications, the forms can be sent focusing on a certain segment of the audience with a certain message. 
+When you have proper and accurate information, automated alerts can be quite useful. Instead of sending notifications to every consumer with all of the communications, forms can be used to send notifications focusing on a certain segment of the audience with a certain message. 
 
 * Integration of Apps Helps Examine Leads
 Customers' data entered in a request to receive an e-book or a newsletter can be quite beneficial to you. If your customized forms interact with other parties' programs, they will be immediately populated with information from the forms' input fields. The time saved by not manually inputting data can be used to evaluate and assist clients.
