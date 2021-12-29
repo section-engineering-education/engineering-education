@@ -29,10 +29,10 @@ By the end of this tutorial, the learner should be able to learn the following:
 - Deploying a script as a web app
 
 ### Prerequisites
-Before you begin learning, you should have the following:
-1. Creating HTML forms.
-2. Be farmiliar with google forms, google sheets and google apps script.
-3. A valid google account.
+To have a better understanding of this article, the reader should:
+-  Know how to create HTML forms.
+-  Be familiar with google forms, google sheets, and google app scripts.
+- Have a valid google account.
 
 ### Benefits of having an online data entry form
 * Creating green bureaucracy on the internet has proven to be very useful in lowering the statistics access mistakes.
