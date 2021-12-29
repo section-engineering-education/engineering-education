@@ -4,9 +4,9 @@ status: publish
 published: true
 url: /creating-an-application-using-beeware/
 title: Creating an application using BeeWare
-description: This article will build a simple application using BeeWare to introduce the readers to the library and appreciate how it works. 
+description: Beeware is a python library used to create cross-platform applications. This article will build a simple application using BeeWare to introduce the reader to the library and appreciate how it works. 
 author: john-kiguru
-date: 2021-12-28T00:00:00-07:17
+date: 2021-12-29T00:00:00-07:17
 topics: [Languages]
 excerpt_separator: <!--more-->
 images:
@@ -25,11 +25,9 @@ This article will build a simple application using BeeWare to introduce the read
 3. Basic Python knowledge.
 
 ### Getting started
-This tutorial will  create a simple calculator application, so to begin with, you need to be connected to the internet to create the app successfully. Next, navigate into a folder of your choice  using the terminal then type the `briefcase new` command. 
+This tutorial will create a simple calculator application, so to begin with, you need to be connected to the internet to create the app successfully. Next, navigate into a folder of your choice using the terminal then type the `briefcase new` command. 
 
-This command will create a new application in that folder. Follow the instructions and input the required details or press enter to go with the default configuration.
-
-The new app should have the following structure:
+This command will create a new application in that folder. Follow the instructions and input the required details or press enter to go with the default configuration. The new app should have the following structure:
 
 ```bash
 .
@@ -49,9 +47,8 @@ The new app should have the following structure:
     └── simplecalculator.dist-info
         ├── INSTALLER
         └── METADATA
-
-
 ```
+
 The `src` folder has files required for the applications to run. All the logic for running the application is found in the `app.py`. The `app.py` should look as follows:
 
 ```python
@@ -70,7 +67,7 @@ def main():
     return SimpleCalculator()
 ```
 
-The file begins by importing the `toga` toolkit. `Toga` is a python native cross-platform Graphical User Interface(GUI) toolkit. Then, we define a class `SimpleCalculator` that contains a `startup` method. This method defines a `toga box` component. It serves as the main box. The name `main_box` is declared and initialized by default when you create the application but may be changed later as desired.
+The file begins by importing the `toga` toolkit. `Toga` is a python native cross-platform Graphical User Interface(GUI) toolkit. Next, we define a class `SimpleCalculator` that contains a `startup` method. This method defines a `toga box` component. It serves as the main box. The name `main_box` is declared and initialized by default when you create the application but may be changed later as desired.
 
 We declare the main window whose title is the app name defined when creating the app with the ` briefcase new` command. Next, we have the window containing our empty main box as its content. Next, we have our application show our window. We finally define a `main` function that returns our `SimpleCalculator` class instance. This `main` method is called by the `__main__.py` file and invoked by it.
 
@@ -249,8 +246,7 @@ class SimpleCalculator(toga.App):
 
 def main():
     return SimpleCalculator()
-
-
+    
 ```
 
 
@@ -265,10 +261,10 @@ The `calculate` function that takes our expression evaluated by the `enterdata` 
 Finally, we add our buttons to the different boxes defined earlier. We begin by adding the input text to `box1`. Next, we add the `CALCULATE` button to the `box2`. We then add` 7`, `8`, ` 9`, and `plus` buttons to `box3`. Finally, we added buttons 4,5,6, and minus to `box4`. Then, all the necessary buttons are added similarly.
 
 When we finally run our application, we have the following output:
-![Final App](/engineering-education/content/articles/creating-an-application-using-beeware/final.png)
+![Final App](/engineering-education/creating-an-application-using-beeware/final.png)
 
 ### Conclusion
-By now, you have a simple working calculator built using BeeWare running in developer mode. However, if you wish to have your application running on a device, such as a mobile phone, you should visit [BeeWare Documentation](https://docs.beeware.org/en/latest/) for instructions. The documentation also contains detailed information on how `beeware` works using `toga`.
+By now, you have a simple working calculator built using BeeWare running in developer mode. However, if you wish to have your application running on a mobile phone, you should visit [BeeWare Documentation](https://docs.beeware.org/en/latest/) for instructions. The documentation also contains detailed information on how `beeware` works using `toga`.
 
 ---
 Peer Review Contributions by: [Jerim Kaura](/engineering-education/authors/jerim-kaura/)
