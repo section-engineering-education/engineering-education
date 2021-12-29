@@ -100,7 +100,7 @@ To view your DevExtreme template, DevExtreme runs on a default port of 4200 whic
 > The DevExtreme application template comes with drawer, data grid, and forms components.
 
 ### Default template view
-![default-template-view](/building-web-applications-with-devextreme/image1.png)
+![default-template-view](/engineering-education/building-web-applications-with-devextreme/image1.png)
 
 ### DevExtreme ThemeBuilder
 Manipulating DevExtreme is really easy. Using the *ThemeBuilder*, you can customize themes based on the DevExtreme default theme. The link to use the ThemeBuilder can be found [here](https://devexpress.github.io/ThemeBuilder/).
@@ -135,7 +135,7 @@ To configure the template theme open `src\themes\metadata.additional.json` and `
 ```
 Below is the result of the above changes:
 
-![blue-theme](/building-web-applications-with-devextreme/image2.png)
+![blue-theme](/engineering-education/building-web-applications-with-devextreme/image2.png)
 
 Click [here](https://js.devexpress.com/Documentation/Guide/Themes_and_Styles/Predefined_Themes/) to view the DevExtreme predefined themes using material design themes and generic compact.
 
