@@ -1,7 +1,21 @@
-`/engineering-education/dropout-regularization-to-handle-overfitting-in-deep-learning-models`
+---
+layout: engineering-education
+status: publish
+published: true
+url: /dropout-regularization-to-handle-overfitting-in-deep-learning-models/
+title: Dropout Regularization To Handle Overfitting In Deep Learning Models
+description: This tutorial will an introduction to understanding overfitting and underfitting of models. We will be learning how about dropout regularization in-detail to solve the problem of overfitting.
+author: francis-ndiritu
+date: 2021-12-29T00:00:00-18:00
+topics: [Machine Learning]
+excerpt_separator: <!--more-->
+images:
 
+  - url: /engineering-education/dropout-regularization-to-handle-overfitting-in-deep-learning-models/hero.jpg
+    alt: Dropout Regularization To Handle Overfitting In Deep Learning Models Hero image
+---
 Overfitting and underfitting are common problems in machine learning and deep learning. Overfitting happens when a model perfectly learns during training but performs poorly during testing. The model will have a higher accuracy score on the training dataset but a lower accuracy score on the testing.
-
+<!--more-->
 Underfitting occurs when the model can neither learn from the training data nor make predictions using a testing dataset. This model underperforms both in training and in testing. This model is too simple to learn anything.
 
 Overfitting problem is more common than underfitting. We have many techniques that can handle overfitting such as [cross-validation](https://towardsdatascience.com/8-simple-techniques-to-prevent-overfitting-4d443da2ef7d), [data augmentation](https://towardsdatascience.com/8-simple-techniques-to-prevent-overfitting-4d443da2ef7d), [feature selection](https://towardsdatascience.com/8-simple-techniques-to-prevent-overfitting-4d443da2ef7d), [early stopping](https://towardsdatascience.com/8-simple-techniques-to-prevent-overfitting-4d443da2ef7d) and dropout regularization. We will focus on the dropout regularization technique.
@@ -37,7 +51,7 @@ This means the contribution of the dropped neurons is temporally removed and the
 
 The image below shows how dropout regularization works:
 
-![Dropout regularization](./droupout-regularization.png)
+![Dropout regularization](/engineering-education/dropout-regularization-to-handle-overfitting-in-deep-learning-models/dropout-regularization-working.png)
 
 *[Image source: Medium](https://miro.medium.com/max/648/0*EY8R7nS10y5kQzOx)*
 
@@ -79,7 +93,7 @@ print(df.sample(5))
 ```
 The output of 5 data samples is shown below:
 
-![Dataset structure](./dataset-structure.png)
+![Dataset structure](/engineering-education/dropout-regularization-to-handle-overfitting-in-deep-learning-models/dataset-structure.png)
 
 From the image above, the dataset has a total of 61 columns labeled from `0`. The first 60 columns are the input columns for the model, the last column (60th) is the output column. The last column is either labeled `R` or `M` representing `Rock` and `Metal` respectively.
 
@@ -107,7 +121,7 @@ print(y.sample(5))
 ```
 The output will give 5 data samples as shown below:
 
-![Converted columns](./dataset-structure.png)
+![Converted columns](/engineering-education/dropout-regularization-to-handle-overfitting-in-deep-learning-models/converted-column.png)
 
 The next step is to split our dataset.
 
@@ -141,7 +155,7 @@ In TensorFlow, we have two types of models:
 
 In sequential models, layers are built on top of each other one after the other as shown in the image below.
 
-![Sequential model](./sequential-model.jpeg)
+![Sequential model](/engineering-education/dropout-regularization-to-handle-overfitting-in-deep-learning-models/sequential-model.jpeg)
 
 *[Image source: Medium](https://miro.medium.com/max/1838/1*RzkT8RE7IbsuQLeTa5pAzg.jpeg)*
 
@@ -212,7 +226,7 @@ model.fit(X_train, y_train, epochs=100, batch_size=8)
 
 We set the number of `epochs` as `100`. The model will iterate through the training dataset `100` times and output the accuracy score after each iteration. This process is shown in the image below:
 
-![Training phase](./model-training.png)
+![Training phase](/engineering-education/dropout-regularization-to-handle-overfitting-in-deep-learning-models/model-training.png)
 
 From the image above, the training score after `100` iterations is `1.00`, this represents `100%`.
 
@@ -227,7 +241,7 @@ model.evaluate(X_test, y_test)
 
 The accuracy score is shown below:
 
-![Testing phase](./testing-phase.png)
+![Testing phase](/engineering-education/dropout-regularization-to-handle-overfitting-in-deep-learning-models/testing-phase.png)
 
 From the image above, the testing score is `0.7692`, which represents `76.92%`. This shows training accuracy is greater than testing accuracy. The accuracy has drastically dropped from `100%` to `76.92%`.
 
@@ -274,7 +288,7 @@ modeld.fit(X_train, y_train, epochs=100, batch_size=8)
 
 This will train our model as shown below.
 
-![Dropout regularization](./dropout-regularization.png)
+![Dropout regularization](/engineering-education/dropout-regularization-to-handle-overfitting-in-deep-learning-models/dropout-regularization.png)
 
 From the image above the training score, after `100` iterations are `0.9167`, this represents `91.67%`.
 
@@ -289,7 +303,7 @@ modeld.evaluate(X_test, y_test)
 
 The testing score is shown below:
 
-![Testing score](./testing-score.png)
+![Testing score](/engineering-education/dropout-regularization-to-handle-overfitting-in-deep-learning-models/testing-score.png)
 
 From the image above our testing score is `0.8077`, which represents `80.77%`. You can see that by using dropout layers the test accuracy increased from `76.92%` to `80.77%`. 
 
@@ -311,3 +325,6 @@ To get this trained model, click [here](https://colab.research.google.com/drive/
 - [Common activation functions](/engineering-education/activation-functions/)
 - [TensorFlow documentation](https://www.tensorflow.org/)
 - [Keras documentation](https://keras.io/)
+
+---
+Peer Review Contributions by: [Srishilesh P S](/engineering-education/authors/srishilesh-p-s/)
