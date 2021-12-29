@@ -18,7 +18,7 @@ Overfitting and underfitting are common problems in machine learning and deep le
 <!--more-->
 Underfitting occurs when the model can neither learn from the training data nor make predictions using a testing dataset. This model underperforms both in training and in testing. This model is too simple to learn anything.
 
-Overfitting problem is more common than underfitting. We have many techniques that can handle overfitting such as [cross-validation](https://towardsdatascience.com/8-simple-techniques-to-prevent-overfitting-4d443da2ef7d), [data augmentation](https://towardsdatascience.com/8-simple-techniques-to-prevent-overfitting-4d443da2ef7d), [feature selection](https://towardsdatascience.com/8-simple-techniques-to-prevent-overfitting-4d443da2ef7d), [early stopping](https://towardsdatascience.com/8-simple-techniques-to-prevent-overfitting-4d443da2ef7d) and dropout regularization. We will focus on the dropout regularization technique.
+Overfitting problem is more common than underfitting. We have many techniques that can handle overfitting such as [cross-validation](https://towardsdatascience.com/8-simple-techniques-to-prevent-overfitting-4d443da2ef7d), [data augmentation](https://towardsdatascience.com/8-simple-techniques-to-prevent-overfitting-4d443da2ef7d), [feature selection](https://towardsdatascience.com/8-simple-techniques-to-prevent-overfitting-4d443da2ef7d), [early stopping](https://towardsdatascience.com/8-simple-techniques-to-prevent-overfitting-4d443da2ef7d), and dropout regularization. We will focus on the dropout regularization technique.
 
 In this tutorial, we will start by building a deep learning model using TensorFlow. We will then use the dropout regularization technique to handle overfitting. This will ensure that we have a model that has a good performance on both the training dataset and the testing dataset.
 
@@ -31,7 +31,7 @@ In this tutorial, we will start by building a deep learning model using TensorFl
 - [Initializing the sequential model](#initializing-the-sequential-model)
 - [Model compiling](#model-compiling)
 - [Model fitting](#model-fitting)
-- [Accuracy score using testing dataset](#accuracy-score-using-testing-dataset)
+- [Accuracy score using the testing dataset](#accuracy-score-using-testing-dataset)
 - [Model with dropout regularization](#model-with-dropout-regularization)
 - [Using testing dataset](#using-testing-dataset)
 - [Conclusion](#conclusion)
