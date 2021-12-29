@@ -6,7 +6,7 @@ url: /leveraging-gptneo-to-generate-ai--based-blog-content/
 title: Leveraging GPT-Neo to Generate AI-based Blog Content
 description: This tutorial will take you through how to build an AI-powered blog content generator using GPT-Neo.
 author: willies-ogola
-date: 2021-12-16T00:00:00-14:00
+date: 2021-12-29T00:00:00-14:00
 topics: [Machine Learning]
 excerpt_separator: <!--more-->
 images:
@@ -33,9 +33,9 @@ To follow along with this tutorial, you need to be familiar with:
 - [Further reading](further-reading)
 
 ### What is GPT-3
-GPT-3 is a deep learning powered language model that is trained on 175 billion parameters. It would take an enormous amount of computing time to train a model with such parameters on a consumer GPU machine. As a result of its vast amount of training parameter, it performs well on a wide variety of NLP tasks. The model is ideal for most NLP tasks such as text generation, sentiment analysis, and question-answer models. 
+GPT-3 is a deep learning-powered language model that is trained on 175 billion parameters. It would take an enormous amount of computing time to train a model with such parameters on a consumer GPU machine. As a result of its vast amount of training parameters, it performs well on a wide variety of NLP tasks. The model is ideal for most NLP tasks such as text generation, sentiment analysis, and question-answer models. 
 
-But, the model is not open-sourced and it's only available through a closed beta. This means that one has to apply and be granted access before being able to use it. Luckily, one can leverage a GPT clone known as GPT-Neo. Atleast, this is open-source and anyone can use it. We will leverage this model in this tutorial.
+But, the model is not open-sourced and it's only available through a closed beta. This means that one has to apply and be granted access before being able to use it. Luckily, one can leverage a GPT clone known as GPT-Neo. At least, this is open-source and anyone can use it. We will leverage this model in this tutorial.
 
 ### About GPT-Neo
 
@@ -46,7 +46,7 @@ The GPT-3 Neo model that we will use in this tutorial is trained on 125 million 
 
 ### How to leverage GPT-Neo to Generate AI-based Blog Content
 #### Installing and importing dependencies
-The first dependency that we are going to need is PyTorch. To install it, you need to head over to PyTorch's [website](https://pytorch.org/) and click on the `install` button. Choose the Pytorch build, your OS, package, language, and compute platform that resonates with you machine.
+The first dependency that we are going to need is PyTorch. To install it, you need to head over to PyTorch's [website](https://pytorch.org/) and click on the `install` button. Choose the Pytorch build, your OS, package, language, and compute platform that resonates with your machine.
 
 For our case, we're selecting the `Stable (1.10)` PyTorch build, `Linux OS`, `Pip` package, `Python` language, and a `CUDA 11.3` compute platform. This combination generates the installation command shown below:
 
@@ -55,7 +55,7 @@ For our case, we're selecting the `Stable (1.10)` PyTorch build, `Linux OS`, `Pi
 ```bash
 pip3 install torch==1.10.0+cu113 torchvision==0.11.1+cu113 torchaudio==0.10.0+cu113 -f https://download.pytorch.org/whl/cu113/torch_stable.html
 ```
-The next thing that we need to do is to install Transformers. Traansformers is a powerful natural language processing library. The beautiful thing about transformers is that you get a bunch of NLP pipelines embedded into the library. Some of these pipilines include the `FeatureExtractionPipeline`, `SummarizationPipeline`, `TextClassificationPipeline`, `TranslationPipeline`, and `TextGenerationPipeline` that allows you to leverage powerful and sophisticated NLP models relatively easy. For our task, we will be using the `TextGenerationPipeline`.
+The next thing that we need to do is to install Transformers. Transformers is a powerful natural language processing library. The beautiful thing about transformers is that you get a bunch of NLP pipelines embedded into the library. Some of these pipelines include the `FeatureExtractionPipeline`, `SummarizationPipeline`, `TextClassificationPipeline`, `TranslationPipeline`, and `TextGenerationPipeline` that allows you to leverage powerful and sophisticated NLP models relatively easy. For our task, we will be using the `TextGenerationPipeline`.
 
 Let's go ahead and install it into our notebook.
 
@@ -70,14 +70,14 @@ from transformers import pipeline
 This command imports all the available pipelines inside the transformers library. If you want a deeper dive into all the available pipelines, please read this [documentation](https://huggingface.co/docs/transformers/index).
 
 #### Setting up the generator
-This step involves setting up the generator to allow us generate blog content. 
+This step involves setting up the generator to allow us to generate blog content. 
 
 ```python
 generator = pipeline('text-generation', model ='EleutherAI/gpt-neo-2.7B')
 ```
-This block of code goes ahead and downloads our GPT-Neo model with 2.7 billion parameters from transformers. Specifically, focusing on the `text-generation` pipeline. We store this model inside a variable  known as `generator`. This process is going to take a bit of time to download as it is a fairly large model, about 10GB. 
+This block of code goes ahead and downloads our GPT-Neo model with 2.7 billion parameters from transformers. Specifically, focusing on the `text-generation` pipeline. We store this model inside a variable known as `generator`. This process is going to take a bit of time to download as it is a fairly large model, about 10GB. 
 
-There are the 1.3 billion and a 125 millions parameter models, if your computer is running slow, you can leverage that model instead using the following command:
+There are the 1.3 billion and 125 million parameter models, if your computer is running slow, you can leverage that model instead using the following command:
 
 For the 1.3 billion parameter model, use:
 
@@ -104,9 +104,9 @@ After running the above block of code, we'll have our generated text stored insi
 
 We've passed in some arguments inside the `generator` method. They include:
 
-- `post` which is the string we created earlier. It contains the text we want the model to generate. 
+- `post` is the string we created earlier. It contains the text we want the model to generate. 
 - `max_length` defines how long your output is going to be. For our case, it's 50 words. 
-- `do_sample` is set to `true` to allowing for sampling within our model.
+- `do_sample` is set to `true` to allow for sampling within our model.
 - The `temperature` is set to 0.9. It is the value used to model the next set of probabilities. 
 
 You can play around with these parameters, and tune them if you so wish.
@@ -118,11 +118,11 @@ If we take a look at the results, we will see that it has generated a new block 
 ```
 If you'd like to generate more text, you need to increase the maximum length. 
 
-Let's now integrate this model into the gradio app.
+Let's now integrate this model into the Gradio app.
 
 ### Integrating the model into the Gradio app
 
-To use gradio, we need to install it into our notebook
+To use Gradio, we need to install it into our notebook
 
 ```bash
 !pip install gradio
@@ -137,10 +137,10 @@ import gradio as gr
 toxicity_inputs = gr.inputs.Textbox(lines=3, placeholder="Generated blog post...")
 ```
 
-Here's the Google colab [link](https://colab.research.google.com/drive/1TphnblcE--PNWQjP3eonbix94I2pMqC6?usp=sharing) for this tutorial.
+Here's the Google Colab [link](https://colab.research.google.com/drive/1TphnblcE--PNWQjP3eonbix94I2pMqC6?usp=sharing) for this tutorial.
 
 ### Wrapping up
-Transformers allow you to quickly perform NLP tasks like question and answering, feature extraction, summarization, and generation. This tutorial has shown us how to use it for text generation. You can use it to generate blog post, a song, or even write some code. It's use cases are endless.
+Transformers allow you to quickly perform NLP tasks like question and answering, feature extraction, summarization, and generation. This tutorial has shown us how to use it for text generation. You can use it to generate blog posts, a song, or even write some code. Its use cases are endless.
 
 ### Further reading
 - [Gradio](https://gradio.app/)
