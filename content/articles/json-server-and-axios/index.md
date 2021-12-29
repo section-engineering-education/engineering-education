@@ -1,11 +1,31 @@
-### Introduction
-Vue is a front-end JavaScript framework used to create single-page apps that run on the client. It can also be used to create full-stack applications by making HTTP requests to a backend server. It is popular with Node.js and Express(MEVN stack).
+---
+layout: engineering-education
+status: publish
+published: true
+url: /json-server-and-axios/
+title: Building a Vue.js 3 application with JSON server and Axios
+description: This tutorial will help the learner be more confident in their ability to interface with APIs using Axios and Vue 3.
+author: terrypha-wamaitha
+date: 2021-12-29T00:00:00-21:50
+topics: [Languages]
+excerpt_separator: <!--more-->
+images:
 
-JSON server is an npm package that lets you create mock REST APIs with zero coding. It is used to create a simple JSON file that can be used as a database and responds to HTTP requests.
+  - url: /engineering-education/json-server-and-axios/hero.png
+    alt: Building a Vue.js 3 application with JSON server and Axios
+---
 
-Axios is a HTTP client to make HTTP requests to the JSON Server.
+Vue is a front-end JavaScript framework used to create single-page apps that run on the client.
+<!--more-->
+It can also be used to create full-stack applications by making HTTP requests to a backend server. It is popular with Node.js and Express(MEVN stack).
 
-In this article, we will build a shopping list application. We will start with a blank Vue.js application then add `json-server` for local data storage, and Axios for making HTTP requests.
+[JSON server](https://www.npmjs.com/package/json-server) is an npm package that lets you create mock REST APIs with zero coding. It is used to create a simple JSON file that can be used as a database and responds to HTTP requests.
+
+Axios is a HTTP client to make HTTP requests to the [JSON server](https://www.npmjs.com/package/json-server).
+
+In this article, we will build a shopping list application. We will start with a blank Vue.js application then add `json-server` for local data storage, and Axios for making HTTP requests:
+
+![shopping-list](/engineering-education/json-server-and-axios/shopping-list.png)
 
 ### Table of contents
 - [New Vue.js application](#new-vuejs-application)
@@ -49,7 +69,7 @@ Run the following command to start the Vue.js application:
 $ npm run serve
 ```
 
-Our application will run on <http://localhost:8080/> in the browser. We should now see a default homepage of Vue running on our browser.
+Our application will run on `http://localhost:8080/` in the browser. We should now see a default homepage of Vue running on our browser.
 
 ### Creating a JSON file and installing JSON server
 We can now create a simple JSON file that can be used as a database.
@@ -95,20 +115,20 @@ $ npm install json-server -g
 $ json-server data.json
 ```
 
-If we type <http://localhost:3000/items> in our browser, we should see our shopping list in the database.
+If we type `http://localhost:3000/items` in our browser, we should see our shopping list in the database.
 
 ### Getting HTTP data within our application
 First, we need to install `axios` in our project to access the data in the `data.json` file:
 
 ```bash
-npm install axios
+$ npm install axios
 ```
 
 After the installation, we can now import `axios` in our application. 
 
 In our `App.vue`,let's remove everything inside template, script and style tags. Add the following code:
 
-```vuejs
+```js
 <template>
   <div id="app">
     <h1>Shopping List</h1>
@@ -154,7 +174,27 @@ li {
 </style>
 ```
 
-From the above code, we have imported Axios and utilized the [async and await](https://www.javascripttutorial.net/es-next/javascript-async-await/) keywords, which build on promises and allow you to construct asynchronous code.
+Let's explain the code above.
+
+```js
+import axios from "axios";
+```
+
+Here, we have imported Axios that will help us access the data in the `data.json` file.
+
+We have utilized the [async and await](https://www.javascripttutorial.net/es-next/javascript-async-await/) keywords, which build on promises and allow you to construct asynchronous code.
+
+```js
+async created() {
+```
+
+Here, we have created a hook named `created()`. This hook is used for fetching data from backend API and setting it to data properties. The `async` keyword is prepended on the `created()` function to show that the function will make use of promises and we’ll be using it to await and pause the execution of the function until the promise is resolved.
+
+```js
+try {
+      const res = await axios.get(`http://localhost:3000/items`);
+```
+We have used `try/catch` method to test for errors. `try` is used to check for errors while `catch` is used to handle the error if one occurs. 
 
 ### Adding data using POST
 You can make `POST`, `PUT`, `PATCH` or `DELETE` requests to the database using Axios.
@@ -205,37 +245,9 @@ export default {
   },
 };
 </script>
-
-<style>
-#app {
-  text-align: center;
-  color: #2c3e50;
-}
-
-li {
-  list-style: none;
-}
-
-button {
-  margin-top: 5px;
-  background-color: #3498db;
-  border: none;
-  color: #ffffff;
-  padding: 10px 20px;
-  font-size: 14px;
-  cursor: pointer;
-  border-radius: 4px;
-}
-
-input {
-  margin-top: 5px;
-  padding: 10px 20px;
-  font-size: 14px;
-  border-radius: 4px;
-}
-</style>
-
 ```
+
+![adding input area and a button](/engineering-education/json-server-and-axios/shopping1.png)
 
 Here, we have added an input area and a button. We have also added `addItem()` method that is called once you click the button to add the item. JSON server handles `id` property by incrementing it by 1 automatically. We are then setting the new items to contain every item element, and then add the item to the end of the list.
 
@@ -342,25 +354,34 @@ export default {
   },
 };
 </script>
+```
 
+Let's explain the code above.
+
+```html
+<li v-for="item of items" :class="{ bought: item.bought }" :key="item.id" @click="boughtItem(item.id)" @dblclick="removeItem(item.id)">
+```
+
+Here, we have used the `@click` and `@dblclick` directive to listen to DOM events and run some JavaScript when they’re triggered. When the user clicks on an item, the `boughtItem` method is called. This will update the done property of the selected item to true in the API. When the user double clicks on an item, the `removeItem` method is called. 
+
+In your browser, you should see the application with the list of items. The items should be striked out when you click on them and deleted when you double click on them after adding the following styles:
+
+```css
 <style>
 #app {
   text-align: center;
   color: #2c3e50;
 }
-
 .container {
   background-color: #24e02dd2;
   max-width: 400px;
   margin: 0 auto;
   border-radius: 8px;
 }
-
 li {
   font-size: 1.5rem;
   list-style: none;
 }
-
 button {
   margin-top: 5px;
   background-color: #3498db;
@@ -371,23 +392,21 @@ button {
   cursor: pointer;
   border-radius: 4px;
 }
-
 input {
   margin-top: 5px;
   padding: 10px 20px;
   font-size: 14px;
   border-radius: 4px;
 }
-
 .bought {
   text-decoration: line-through;
 }
 </style>
 ```
 
-In your browser, you should see the application with the list of items. The items should be striked out when you click on them and deleted when you double click on them:
-
 ![shopping-list](/engineering-education/json-server-and-axios/shopping-list.png)
+
+Here is my [GitHub repo](https://github.com/Terripha/shopping-list) containing full working code.
 
 ### Conclusion
 In this article, we used `json-server` to create an API that you can consume using Axios and Vue 3.0. We used HTTP methods like `GET`, `POST`, `PATCH`, `DELETE` to interact with the API. Axios is recommended for more sophisticated requests since it enables different settings of numerous requests in one location.
@@ -396,3 +415,8 @@ In this article, we used `json-server` to create an API that you can consume usi
 - [Introduction to Vue.js](https://vuejs.org/v2/guide/)
 - [Getting started with Axios](https://axios-http.com/docs/intro)
 - [Introduction to JSON Server](https://zetcode.com/javascript/jsonserver/)
+
+Happy coding!
+
+---
+Peer Review Contributions by: [Geoffrey Mwangi](/engineering-education/authors/geoffrey-mwangi/)
