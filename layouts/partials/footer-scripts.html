@@ -7,10 +7,11 @@
 {{ $vue := resources.Get "js/vendor/vue.js" }}
 {{ $vuepagination := resources.Get "js/vendor/vuepagination.js" }}
 {{ $search := resources.Get "js/search.js" }}
+{{ $stickyAuthorSidebar := resources.Get "js/stickyAuthorSidebarHandler.js" }}
 
 {{ $main := resources.Get "js/app.js" }}
 
-{{ $defaultJS := slice $jquery $lunr $aos $axios $slick $lozad $main | resources.Concat "js/app.js" | resources.Minify }}
+{{ $defaultJS := slice $jquery $lunr $aos $axios $slick $lozad $main $stickyAuthorSidebar | resources.Concat "js/app.js" | resources.Minify }}
 
 {{ $secureJS := $defaultJS | resources.Fingerprint "sha512" }}
 <script type="text/javascript" src="{{ $secureJS.Permalink }}" integrity="{{ $secureJS.Data.Integrity }}"></script>
