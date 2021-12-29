@@ -1,90 +1,54 @@
 ### Introduction
 
-Google reCAPTCHA is entitled your to keeping your website away from abuse and spam. It employs a broad risk evaluation engine and flexible manual human testing to keep automated programming safe on your site.
+In terms of distinguishing between humans and machines, Google reCaptcha is the mainstream technology here. In this tutorial, you will learn how to integrate and customize Google Invisible reCaptcha using PHP.
 
-### Prerequisites
+#### Prerequisites
 
-> Before beginning this tutorial, make sure you understand the fundamentals of web development.
+> Before starting this tutorial, make sure you grasp web programming basics.
 
 ### Objectives
 
-- The following is expected at the end of this article:
+- By the end of this instructional exercise,the following is expected:
 
-1. Headings to empower Google vague reCaptcha.
-   - 1.1 append the test to a button.
-   - 1.2 append the test to a protected or summon the test.
-   - 1.3 gather the test.
-2. What is it about human tests that Google finds so compelling
-3. Note the capability among hCaptcha and Google reCAPTCHA.
-4. For what reason should you use Google indistinct reCAPTCHA.
-5. Make a Form to Render Google Invisible reCaptcha.
-6. Bring Google Invisible reCaptcha Programmatically.
+1. Learn how to enable google reCAPTCHA on a site.
+2. Design a form to render Google invisible reCAPTCHA
+3. Programmatically activate Google Invisible reCaptcha
+4. Advantages of using captcha forms
+5. Contrasting `hcaptcha` to `ReCaptcha`
 
-### What is it about human tests that Google finds so compelling?
+### Enabling reCAPTCHA for Google Chrome
 
-Because of this, Google has a number of reasons to be concerned about it. First and first, Google must provide the most relevant results. People will switch to other projects if they don't get the results they want. After that, we have the bouts, which include Google reCaptcha returns the data to Google. An IP address allows the data to be organized in Google's database in a logical manner. Using it, you can keep track of which websites you've visited, where you're coming from, and when you last visited them. Every time a user pays close attention to a set of images, it helps Google better understand how a car or traffic signal should behave. For example, with reCaptcha, Google can get the best results, store your site's data, and in the same way have any information on the images.
-Google classifies the ambiguous manual human test as structure 3. Neither a checkbox nor a text field can be used. When a customer visits the site or fills out a form, it runs a lead check.
+Google's Invisible reCaptcha can be enabled in one of three ways listed below.
 
-### Comparison of hCaptcha and ReCAPTCHA
-
-reCaptcha is being used by a staggering number of people, and the sheer scale of this usage is remarkable. A bot battle would be pointless in any case, because hCaptcha is simply too strong. Because hCaptcha is not handled by a notification association, it benefits the customer as well as the business. With hCaptcha, you may make money in your area.
-
-### What's the point of using Google's reCAPTCHA?
-
-1. A higher level of security reCAPTCHA is a security measure.
-   State-of-the-art advancement allows it to stay on top of spam and abuse fighting designs on the whole. For your safety, reCAPTCHA is cautious.
-2. Ease of comprehension Designed with a purpose.
-   In addition, be cautious. As a rule of thumb, reCAPTCHA will be kind to humans and harsh to robots. Manual human tests for certified clients are a breeze. That's not to say that the reCAPTCHA isn't capable of making a sound conclusion. An actual client may find our standard sound Manual human testing easily by searching for them on your website or app. Manual human tests are predicted to be more difficult for bots as time goes on.
-3. Value Creation
-4. People reliably decide on millions of manual human tests.
-   In order to reduce the amount of time spent on manual testing, reCAPTCHA utilizes the time that would otherwise be spent on text digitization, image annotation, and the creation of simulated intelligence datasets. This, in turn, saves books, fosters guidelines, and solves difficult computer programming problems.
-
-### The ideal method of using Google invisible reCaptcha
-
-This is refined in three ways:
-
-#### 1. Adding a test to a button is quite common.
-
-It's best to join the main JavaScript resource and add a handful of properties to your html button when employing the ill-defined reCAPTCHA contraption on your page. g-recaptcha is the class name, your site key is stored in the data sitekey field, and a JavaScript callback is used to administer the final human test, which is identified by a callback name in the data callback property.
-The content should be layered using HTTPS and be accessible from wherever on the page without hindrance.
-
-#### 2. As a result, either store the results in a safe or gather them.
-
-By presenting your onload callback work and adding cut-off focuses to the JavaScript resource, you may generate the binding. reCAPTCHA challenges are decades old, and this one has the same age restrictions.
-
-#### 3. Typically, the test is summoned.
-
-In order to improve the reCAPTCHA statement, you can use a div with a quality data size='invisible' and frequently call execute to breezing through the evaluation. For this educational exercise, we'll be thinking in this approach, and we'll have a manual to ensure it's clear to everyone.
+- 1. Assign the reCaptcha challenge to a button element on the page automatically.
+- 2. Link the challenge to a button element in a programmatic way.
+- 3. Use the challenge automatically.
 
 ### Table of content
 
 - [Introduction](#introduction)
-- [Prerequisites](#prerequisites)
+  - [Prerequisites](#prerequisites)
 - [Objectives](#objectives)
-- [What is it about human tests that Google finds so compelling?](#what-is-it-about-human-tests-that-google-finds-so-compelling)
-- [Comparison of hCaptcha and ReCAPTCHA](#comparison-of-hcaptcha-and-recaptcha)
-- [What's the point of using Google's reCAPTCHA?](#whats-the-point-of-using-googles-recaptcha)
-- [The ideal method of using Google invisible reCaptcha](#the-ideal-method-of-using-google-invisible-recaptcha)
-  - [1. Adding a test to a button is quite common.](#1-adding-a-test-to-a-button-is-quite-common)
-  - [2. As a result, either store the results in a safe or gather them.](#2-as-a-result-either-store-the-results-in-a-safe-or-gather-them)
-  - [3. Typically, the test is summoned.](#3-typically-the-test-is-summoned)
+- [Enabling reCAPTCHA for Google Chrome](#enabling-recaptcha-for-google-chrome)
 - [Table of content](#table-of-content)
-- [As a Case in Point](#as-a-case-in-point)
-- [Google's Imperceptible reCaptcha in HTML](#googles-imperceptible-recaptcha-in-html)
-- [The programmable collection of Google's invisible reCaptcha](#the-programmable-collection-of-googles-invisible-recaptcha)
-- [A PHP script to verify that a user's response was received.](#a-php-script-to-verify-that-a-users-response-was-received)
+- [About Example](#about-example)
+- [Design to render Google invisible reCAPTCHA](#design-to-render-google-invisible-recaptcha)
+- [Programmatically activating Google Invisible reCaptcha](#programmatically-activating-google-invisible-recaptcha)
+- [PHP Code to verify the response](#php-code-to-verify-the-response)
+- [Advantages of using captcha forms](#advantages-of-using-captcha-forms)
+- [Constrasting `hcaptcha` to `recaptcha`](#constrasting-hcaptcha-to-recaptcha)
 - [Conclusion](#conclusion)
 
-### As a Case in Point
+### About Example
 
-Using the third framework, I've depicted Google's confusing reCaptcha allegiance in this model. The Google's hypothetical reCaptcha is brought and passed on in a DIV on an HTML structure when a page is loaded. In the process of transferring, the response token will be used to attract attention to something far beyond what most people think is conceivable. The PHP code will be checked to see if this specialist has been set.
+The third approach of leveraging the invisible Google reCAPTCHA service will be the focus of our sample endeavor. To load the captcha, we will need to create an HTML form page with a `div` in it. A response token will be sent to a callback function that is invoked during rendering. PHP will be the best choice for verifying whether or not the created token has been set. The image below demonstrates what we will have as our output.
+![output](/engineering-education/create-invisible-google-recaptcha/output.png)
 
-![output](output.png)
-you can get the example [here](https://github.com/EssyG10/invisible-google-recaptcha)
+For practice purposes, you can get the example [here](https://github.com/EssyG10/invisible-google-recaptcha)
 
-### Google's Imperceptible reCaptcha in HTML
+### Design to render Google invisible reCAPTCHA
 
-This code displays the HTML structure with the login and email address information fields. In a DIV, Google reCaptcha is called when this HTML page is stacked. HTML5 data attribute with Google reCaptcha key is required for this DIV to pass the vague manual human test. Adding a restricted intel field to set the response token on helpful is part of this upgrade.
+The code snippet below shows how to display a simple HTML form with username and email as form fields. If the reCAPTCHA is successfully generated, the page will be refreshed and the captcha will be fired in a 'div' with an attribute key. On successful execution, we additionally have a secret input box that will be crucial in establishing the answer token.
 
 ```html
 <!DOCTYPE html>
@@ -131,24 +95,24 @@ This code displays the HTML structure with the login and email address informati
 </html>
 ```
 
-`ValidateContact()` JavaScript framework will be called when this arrangement is introduced to ensure that the fields pertaining to the arrangement are not empty. We've come across a wide range of client-side endorsing model code. As an illustration, consider the PHP contact structure model with JavaScript endorsement code. To proceed with structure submission to the PHP code, this endorsement will restore a boolean value.
+Form data is submitted, and the`verifyUser()` function checks to see if the inputs are empty, and if they aren't, a `true` response is returned. Only if the response is true, then we can proceed to the PHP code.
 
 ```javascript
-let validateContactInfo = () => {
+let verifyUser = () => {
   let valid = true;
   let element = document.querySelector(".info");
-  if (!document.querySelector("#name").value) {
+  if (document.querySelector("#name").value) {
     document.querySelector("#userName-info").innerHTML("(required)");
     document.querySelector("#name").style.borderColor = "red";
     valid = false;
   }
-  if (!document.querySelector("#email").value) {
+  if (document.querySelector("#email").value) {
     document.querySelector("#userEmail-info").innerHTML("(required)");
     document.querySelector("#email").style.borderColor = "red";
     valid = false;
   }
   if (
-    !document.querySelector("#email").value.match(/^([w-.]+@([W-]+[w-{2,4}])?$/)
+    document.querySelector("#email").value.match(/^([w-.]+@([W-]+[w-{2,4}])?$/)
   ) {
     document.querySelector("#userEmail-info").innerHTML("invalid");
     document.querySelector("#email").style.borderColor = "red";
@@ -158,13 +122,15 @@ let validateContactInfo = () => {
 };
 ```
 
-### The programmable collection of Google's invisible reCaptcha
+### Programmatically activating Google Invisible reCaptcha
 
-A callback function called onload is used to support the most efficient method of collecting Google reCaptchas fictitious. By specifying the boundary name, we call the Google reCaptcha Programming interface at the time of appearance. Google's reCaptcha is summoned to pass the reCaptcha device on in a DIV portion in this restriction context. The data credits data `size="invisible"`, data `callback="setResponse"` are contained in the DIV portion, as we saw earlier. There is no requirement to use the data callback. While tearing the Google reCaptcha contraption, the `setResponse()` function is invoked. This callback's response token will be set to a confusing value and maintained in the PHP code.
+Using the function name, Google's ReCaptcha API is activated when a page loads. Using Google reCaptcha, a `div` container is used to show the reCaptcha widget. As previously demonstrated, the `div` element has the data attributes `data-size="invisible"` and `data-callback="setResponse"`. The `data-callback` parameter can be omitted.
 
-### A PHP script to verify that a user's response was received.
+The`setResponse()` callback is invoked when the Google invisible reCaptcha widget is rendered. Code will verify a hidden input using the response token that was passed in as a parameter to this callback.
 
-The PHP Curve interest is used to set the Google reCaptcha site attestation request in this PHP code. The answer text is written with the consumer in mind, taking into account how closely the server monitors the outcome.
+### PHP Code to verify the response
+
+Using the `curl` request, we may specify the verification site in the manner indicated below. Text in response to the user acknowledges the user depending on the results of the server verification process.
 
 ```php
 <?php
@@ -195,8 +161,21 @@ if(isset($_POST['submit_btn'])){
 
 ```
 
+### Advantages of using captcha forms
+
+1. Hackers using robots to repeatedly submit fraudulent results to internet polls can be prevented.
+2. Brute force attacks on online accounts are disadvantaged as a result of implementing captcha in our sites.
+3. It is difficult for hackers with several email accounts to produce malware because of Google reCAPTCHA.
+4. Preventing the appearance of spam comments and connections to questionable internet sites on articles and news information pages.
+5. Prevent bots from purchasing concert tickets.
+6. To improve internet commerce security.
+
+### Constrasting `hcaptcha` to `recaptcha`
+
+Comparing hCaptcha to reCaptcha from Google, which has been used by millions of people, reCaptcha is the clear winner. However, bots have no chance against hCaptcha. Therefore, hcaptcha benefits both the user and the company because it is not administered by an advertising platform. hCaptcha is a way for sites to make money.
+
 ### Conclusion
 
-We've looked the reCAPTCHa implementation in more detail in this lesson to show you how to do it yourself. Detailed instructions for using this feature can be found in the official documentation [here](https://developers.google.com/recaptcha/docs/invisible).
+In this session, I've taken you through the reCAPTCHa implementation process step-by-step. If you'd like more information on how to use this feature, please check out the official documentation [here](https://developers.google.com/recaptcha/docs/invisible).
 
-Happy Coding !
+Happy Coding!
