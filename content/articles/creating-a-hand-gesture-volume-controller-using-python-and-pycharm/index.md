@@ -50,7 +50,7 @@ First of all, we will prepare our workspace. Launch the Pycharm app. Click on th
 
 Click on the create button on the window that appears next.
 
-We now need to install the libraries we will need to use in our project.
+We need to install the libraries we will use in our project.
 
 `numpy` will help us work with arrays. To install it, open the terminal and run the following command: 
 
@@ -84,7 +84,7 @@ pip install gpib-ctypes, comtypes
 ```
 `pycaw` depends on these two libraries. `Ctypes` provides `C` language compatible data types. `Comtypes` bases on the `ctypes` **FFI**(Foreign Function Interface) library.
 
-Now let us jump into coding. This is where the most fun is as we get hands-on. On the `main.py` file that *pycharm* automatically creates for you, type in the following code:
+Now, let's start coding. In the `main.py` file that *pycharm* automatically creates for you, type in the following code:
 
 ```python
 import cv2
@@ -95,7 +95,7 @@ from comtypes import CLSCTX_ALL
 from pycaw.pycaw import AudioUtilities, IAudioEndpointVolume
 import numpy as np
 ```
-In the above code segment, we import each library we discussed into our project.
+In the above code segment, we import each library we installed in our project.
 
 ```python
 cap = cv2.VideoCapture(0) 
@@ -108,9 +108,11 @@ mpHands = mp.solutions.hands
 hands = mpHands.Hands()
 mpDraw = mp.solutions.drawing_utils
 ```
-- `mp.solutions.hands`: We are calling on the `mediapipe` hand module to detect the hands from the video input we got from our primary camera.
-- `mpHands.Hands()`: This completes the initialization and configuration of the hands that the mediapipe hand module detected.
-- `mp.solutions.drawing_utils`: Draws the *connections* and *landmarks* on the hand that mediapipe hand module detected. 
+`mp.solutions.hands`: we are calling on the `mediapipe` hand module to detect the hands from the video input we got from our primary camera.
+
+`mpHands.Hands()`: this completes the initialization and configuration of the hands that the mediapipe hand module detected.
+
+`mp.solutions.drawing_utils`: draws the *connections* and *landmarks* on the hand that mediapipe hand module detected. 
 
 ### Accessing the speaker using pycaw
 ```python
@@ -133,57 +135,72 @@ while True:
     imgRGB = cv2.cvtColor(img, cv2.COLOR_BGR2RGB)
     results = hands.process(imgRGB)
 ```
-- `success, img = cap.read()`: Checks whether the camera we have specified works. If it works, we will capture an image.
-- `imgRGB = cv2.cvtColor(img, cv2.COLOR_BGR2RGB)`: Converts the image captured by the camera to `RGB` image.
-- ` results = hands.process(imgRGB)`: Completes the processing of the image that was converted to `RGB`.
+`success, img = cap.read()`: checks whether the camera we have specified works. If it works, we will capture an image.
+
+`imgRGB = cv2.cvtColor(img, cv2.COLOR_BGR2RGB)`: converts the image captured by the camera to an `RGB` image.
+
+` results = hands.process(imgRGB)`: completes the processing of the image that was converted to `RGB`.
 
 ### Checking whether we have multiple hands in our input
 ```python
 lmList = []
 if results.multi_hand_landmarks: 
 ```
-- `lmList = []`:
-This code creates an *empty list* which we will use to store the list of elements of the hands detected by the `mediapipe` hand module, i.e., the number of points on the hand.
-- `if results.multi_hand_landmarks:` Checks whether the input has multiple hands.
+`lmList = []`: this code creates an *empty list* which will store the list of elements of the hands detected by the `mediapipe` hand module, i.e., the number of points on the hand.
+
+`if results.multi_hand_landmarks:` checks whether the input has multiple hands.
 
 ### Creating a for loop to manipulate each hand
 ```python
-        for handlandmark in results.multi_hand_landmarks:
-            for id, lm in enumerate(handlandmark.landmark):
-                h, w, c = img.shape
-                cx, cy = int(lm.x * w), int(lm.y * h)
-                lmList.append([id, cx, cy]) 
-            mpDraw.draw_landmarks(img, handlandmark, mpHands.HAND_CONNECTIONS)
+for handlandmark in results.multi_hand_landmarks:
+    for id, lm in enumerate(handlandmark.landmark):
+        h, w, c = img.shape
+        cx, cy = int(lm.x * w), int(lm.y * h)
+        lmList.append([id, cx, cy]) 
+    mpDraw.draw_landmarks(img, handlandmark, mpHands.HAND_CONNECTIONS)
 ```
-- `for handlandmark in results.multi_hand_landmarks`: This creates a for loop to interact with each hand in the results.
-- `for id, lm in enumerate(handlandmark.landmark)`: This is a for loop to get the `id` (id number) and `lm` (landmark information) for each handlandmark. The landmark information will give us the `x` and `y` coordinates. The id number is the number assigned to the various hand points.
-- `h, w, c = img.shape`: This piece of code checks the height, width, and channels of our image. This will give us the width and height of the image.
-- `cx, cy = int(lm.x * w), int(lm.y * h)`: We are finding the central position of our image. We achieve this by multiplying *lm.x by the width* and assigning the value obtained to `cx`. Then multiply `lm.y` by the height and assign the value obtained to `cy`. **NB** `lm` stands for landmark.
-- `lmList.append([id, cx, cy])`: We are adding the values of `id`,`cx` and `cy` to `lmList`.
-- ` mpDraw.draw_landmarks(img, handlandmark, mpHands.HAND_CONNECTIONS)`: We pass our image (`img`) then we call *mpDraw.draw_landmarks* to draw all the landmarks of the hand.
+`for handlandmark in results.multi_hand_landmarks`: this creates a for loop to interact with each hand in the results.
+
+`for id, lm in enumerate(handlandmark.landmark)`: this is a for loop to get the `id` (id number) and `lm` (landmark information) for each handlandmark. The landmark information will give us the `x` and `y` coordinates. The id number is the number assigned to the various hand points.
+
+`h, w, c = img.shape`: this piece of code checks the height, width, and channels of our image. This will give us the width and height of the image.
+
+`cx, cy = int(lm.x * w), int(lm.y * h)`: we are finding the central position of our image. We achieve this by multiplying *lm.x by the width* and assigning the value obtained to `cx`. Then multiply `lm.y` by the height and assign the value obtained to `cy`. 
+
+> `lm` stands for landmark.
+
+`lmList.append([id, cx, cy])`: we are adding the values of `id`,`cx` and `cy` to `lmList`.
+
+` mpDraw.draw_landmarks(img, handlandmark, mpHands.HAND_CONNECTIONS)`: we pass our image (`img`) then we call *mpDraw.draw_landmarks* to draw all the landmarks of the hand.
 
 ### Specifying the points of the thumb and middle finger we will use
 ```python
-    if lmList != []:
-        x1, y1 = lmList[4][1], lmList[4][2]
-        x2, y2 = lmList[8][1], lmList[8][2]
- ```
- - `if lmlist != []`: We use this statement to specify that the number of elements should not be null.
- - `x1, y1 = lmList[4][1], lmList[4][2]` : We are assigning variables `x1` and `y1` the `x` and `y` coordinates of point `4` respectively. This is the tip of the thumb. 
- - `x2, y2 = lmList[8][1], lmList[8][2]`: We are assigning variables `x2` and `y2` the `x` and `y` coordinates of point `8` respectively. This is the tip of the index finger. 
- 
- Refer to the had image diagram we discussed to identify the [points](#referral-hand-image).
-
- ### Drawing a line between the tip of the thumb and the tip of the index finger
- ```python                                            
-        cv2.circle(img, (x1, y1), 15, (255, 0, 0), cv2.FILLED)  
-        cv2.circle(img, (x2, y2), 15, (255, 0, 0), cv2.FILLED)  
+if lmList != []:
+    x1, y1 = lmList[4][1], lmList[4][2]
+    x2, y2 = lmList[8][1], lmList[8][2]
 ```
-- `cv2.circle(img, (x1, y1), 4, (255, 0, 0), cv2.FILLED)`: We are calling the `cv2.circle` and passing our image `img`.
-- ` (x1, y1)`: It specifies that we will draw the circle at the tip of the thumb.
-- `15`: This is the *radius* of the circle.
-- `(255, 0, 0)`: This is the *color* of the circle.
-- `cv2.FILLED`: This refers to the thickness of `-1` pixels. It will fill the circle with the color we specify.
+`if lmlist != []`: we use this statement to specify that the number of elements should not be null.
+ 
+`x1, y1 = lmList[4][1], lmList[4][2]` : we are assigning variables `x1` and `y1` the `x` and `y` coordinates of point `4` respectively. This is the tip of the thumb. 
+ 
+`x2, y2 = lmList[8][1], lmList[8][2]`: we are assigning variables `x2` and `y2` the `x` and `y` coordinates of point `8` respectively. This is the tip of the index finger. 
+ 
+Refer to the hand image diagram we discussed to identify the [points](#referral-hand-image).
+
+### Drawing a line between the tip of the thumb and the tip of the index finger
+```python                                            
+       cv2.circle(img, (x1, y1), 15, (255, 0, 0), cv2.FILLED)  
+       cv2.circle(img, (x2, y2), 15, (255, 0, 0), cv2.FILLED)  
+```
+`cv2.circle(img, (x1, y1), 4, (255, 0, 0), cv2.FILLED)`: we are calling the `cv2.circle` and passing our image `img`.
+
+` (x1, y1)`: it specifies that we will draw the circle at the tip of the thumb.
+
+`15`: this is the *radius* of the circle.
+
+`(255, 0, 0)`: this is the *color* of the circle.
+
+`cv2.FILLED`: this refers to the thickness of `-1` pixels. It will fill the circle with the color we specify.
 
 We will repeat the same for the index finger in the line of code: 
 
@@ -194,10 +211,14 @@ We will repeat the same for the index finger in the line of code:
 cv2.line(img, (x1, y1), (x2, y2), (255, 0, 0), 3)
 ```
 In the code above, we use the `cv2.line` function to draw a line between point four of the hand, and point `8`.
-- `img`: We are passing our image to the function.
-- `(x1, y1), (x2, y2)`: We are specifying that the line we will draw will connect point `4` (`(x1, y1)`) which is the tip of the thumb and point `8` (`(x2, y2)`) which is the tip of the index finger.
-- `(255, 0, 0)`: This is the color of the line.
-- `3`: This is the thickness of the line.
+
+`img`: We are passing our image to the function.
+
+`(x1, y1), (x2, y2)`: We are specifying that the line we will draw will connect point `4` (`(x1, y1)`) which is the tip of the thumb and point `8` (`(x2, y2)`) which is the tip of the index finger.
+
+`(255, 0, 0)`: This is the color of the line.
+
+`3`: This is the thickness of the line.
 
 ### Finding the distance between points 4 and 8
 ```python
@@ -211,9 +232,12 @@ vol = np.interp(length, [15, 220], [volMin, volMax])
 print(vol, length)
 ```
 We call the numpy function `np.interp` to convert the hand range to the volume range. The arguments used are:
-- `length`: This is the value we want to convert.
-- `[15 - 220]`: This is the hand range.
-- `[volMin, volMax]`: Giving the range to which we want to convert.
+
+`length`: This is the value we want to convert.
+
+`[15 - 220]`: This is the hand range.
+
+`[volMin, volMax]`: Giving the range to which we want to convert.
 
 ### Setting the master volume
 ```python        
