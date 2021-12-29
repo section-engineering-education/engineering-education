@@ -130,7 +130,6 @@ Successfully added user: {
       
     ]
 }
-
 ```
 
 Exist MongoDB after the operation. Users will be allowed to enter details after authentication is enabled and the MongoDB daemon restarts. we can as well restart using the command below:
@@ -186,13 +185,13 @@ If there is no message displayed, we say that the authentication is running as e
 
 ```bash
 mongo -u AndrewKulundeng' -p --authentication database admin
- ```
+```
 
 Enter user password when prompted. Then issue shows the DBS command to show if the authentication is enabled:
 
 ```bash
 showdbs
- ```
+```
 
 The command will return a list of databases that are currently running on the server. Thus showing that authentication is enabled successfully.
 
