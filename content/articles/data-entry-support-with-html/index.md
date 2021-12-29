@@ -35,8 +35,8 @@ To have a better understanding of this article, the reader should:
 - Have a valid google account.
 
 ### Benefits of having an online data entry form
-* Creating green bureaucracy on the internet has proven to be very useful in lowering the statistics access mistakes.
-Some of the shape advent advantages in statistics access include -
+- Creating green bureaucracy on the internet has proven to be very useful in lowering the statistics access mistakes.
+Some of the advantages in statistics access include:
 
 * Brand Building
 Online data entry markets a brand because it makes use of colors, fonts, snapshots, and symbols which are aye-catching in your internet site. The background of your internet site must replicate your brand. It will similarly improve your brand's online presence, specifically if your brand is easily understandable.
