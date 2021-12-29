@@ -182,9 +182,9 @@ Remove the properties in the field tags in the source file. Ensure the class and
 The `productType` is an enum and it will throw a `ClassCastException` when we try to cast it to a string. To avoid this add a getter method in the products class that returns the string value of the enum.
 
 ```java
-    public String getProductType() {
-        return String.valueOf(productType);
-    }
+public String getProductType() {
+    return String.valueOf(productType);
+}
 ```
 
 Also, ensure that the text field expression in the details section is of the same name as that of our product fields.
@@ -203,9 +203,9 @@ The Jaspersoft dependency will help us in adding the functionalities. These func
   <version>6.18.1</version>
 </dependency>
 ```
-> Get the maven dependency from the [maven central repository](https://mvnrepository.com/)
+> This dependency can be found from the [maven central repository](https://mvnrepository.com/)
 ### Load and compile the Jaspersoft design source file in the report service
-Create a class named `ReportServiceImpl` that implements the `ReportService` interface. Override the `generateReport()` and `findAllProducts()` methods. The `getJasperPrint()` method does the functionality of compiling the jasper report file. This method accepts the collection of data that we use to fill the report and a string. The string indicates the location of the Jasper report source file. When run, the function returns an instance of `JasperPrint`:
+Create a class named `ReportServiceImpl` that implements the `ReportService` interface. Implement the `generateReport()` and `findAllProducts()` methods. The `getJasperPrint()` method handles the functionality of compiling the jasper report file. This method accepts the collection of data that we use to fill the report and a string. The string indicates the location of the Jasper report source file. When run, the function returns an instance of `JasperPrint`:
 
 ```java
 import com.reports.jaspersoft.jasperreports.model.Product;
@@ -352,7 +352,7 @@ public class AppWebConfig implements WebMvcConfigurer {
 ```
 
 ### Generate a report with the filtered products
-We implement this functionality using the `generateReport()` method in the `ReportServiceImpl` class. This method accepts two parameters of type `LocalDate` and `String`. To implement it, first, inject the `ProductsRepository` bean. We will use it to search for products created on that specific day. Create a string containing the resource location of our source file, i.e, `products.jrxml`. Then call the `getJasperPrint()` method and pass the collection of products. Create a string containing the name of the pdf report to generate i.e, `products.pdf`. Next, call the `getUploadPath()` method with the parameter provided by the `generateReport()` method. Finally, return the value from the `getFilePdfLink()` method, passing the value returned by the call to `getUploadPath()` . This method returns a link containing the path of our generated pdf file to our controller.
+We implement this functionality using the `generateReport()` method in the `ReportServiceImpl` class. This method accepts two parameters of type `LocalDate` and `String`. To implement it, first, inject the `ProductsRepository` bean. We will use it to search for products created on that specific day. Create a string containing the resource location of our source file, i.e, `products.jrxml`. Then call the `getJasperPrint()` method and pass the collection of products. Create a string containing the name of the pdf report to generate i.e, `products.pdf`. Next, call the `getUploadPath()` method with the `fileFormat` parameter provided by the `generateReport()` method. Finally, return the value from the `getFilePdfLink()` method, passing the value returned by the call to `getUploadPath()` as a string. This method returns a link containing the path of our generated pdf file to our controller.
 
 ```java
 import com.reports.jaspersoft.jasperreports.model.Product;
@@ -435,7 +435,7 @@ public class ReportServiceImpl implements ReportService{
     }
 }
 ```
-Our products page will display the list of products in the database. Ensure that the `findAllProducts()` calls the `findAll()` method instead of returning `null`.
+Our products page will display the list of products in the database. Ensure that the `findAllProducts()` method calls the `findAll()` method instead of returning `null`.
 
 ### Create a report controller
 Allow any request to the root path and iterate through the list of products using a `products` model. Set the value of this model to be the return value of the `findAllProducts()` method of the `ReportService`:
