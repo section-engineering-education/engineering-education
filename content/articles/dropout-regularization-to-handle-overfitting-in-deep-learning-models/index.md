@@ -3,18 +3,18 @@ layout: engineering-education
 status: publish
 published: true
 url: /dropout-regularization-to-handle-overfitting-in-deep-learning-models/
-title: Dropout Regularization To Handle Overfitting In Deep Learning Models
-description: This tutorial will an introduction to understanding overfitting and underfitting of models. We will be learning how about dropout regularization in-detail to solve the problem of overfitting.
+title: Dropout Regularization to Handle Overfitting in Deep Learning Models
+description: This tutorial will be an introduction to understanding overfitting and underfitting of models. You will learn about dropout regularization in detail to solve the problem of overfitting.
 author: francis-ndiritu
-date: 2021-12-29T00:00:00-18:00
+date: 2021-12-29T00:00:00-12:00
 topics: [Machine Learning]
 excerpt_separator: <!--more-->
 images:
 
   - url: /engineering-education/dropout-regularization-to-handle-overfitting-in-deep-learning-models/hero.jpg
-    alt: Dropout Regularization To Handle Overfitting In Deep Learning Models Hero image
+    alt: Dropout Regularization to Handle Overfitting in Deep Learning Models Hero image
 ---
-Overfitting and underfitting are common problems in machine learning and deep learning. Overfitting happens when a model perfectly learns during training but performs poorly during testing. The model will have a higher accuracy score on the training dataset but a lower accuracy score on the testing.
+Overfitting and underfitting are common problems in machine learning. Overfitting happens when a model perfectly learns during training but performs poorly during testing. The model will have a higher accuracy score on the training dataset but a lower accuracy score on the testing.
 <!--more-->
 Underfitting occurs when the model can neither learn from the training data nor make predictions using a testing dataset. This model underperforms both in training and in testing. This model is too simple to learn anything.
 
@@ -23,7 +23,7 @@ Overfitting problem is more common than underfitting. We have many techniques th
 In this tutorial, we will start by building a deep learning model using TensorFlow. We will then use the dropout regularization technique to handle overfitting. This will ensure that we have a model that has a good performance on both the training dataset and the testing dataset.
 
 ### Table of contents
-- [Pre-requisites](#pre-requisites)
+- [Prerequisites](#prerequisites)
 - [Getting-started-with-dropout-regularization](#getting-started-with-dropout-regularization)
 - [Exploring the dataset](#exploring-the-dataset)
 - [Dataset splitting](#dataset-splitting)
@@ -37,8 +37,8 @@ In this tutorial, we will start by building a deep learning model using TensorFl
 - [Conclusion](#conclusion)
 - [References](#references)
 
-### Pre-requisites
-For a reader to follow this tutorial easily, they should:
+### Prerequisites
+For a reader to follow this tutorial easily, he should:
 - Know how to build [deep learning models](/engineering-education/building-a-deep-learning-app-using-python/).
 - Understand [Pandas](https://pandas.pydata.org/) and [Numpy](https://numpy.org/) for data analysis and manipulation.
 - Know how to use [TensorFlow](https://www.tensorflow.org/) and [Keras]() in building neural networks.
@@ -71,7 +71,7 @@ We will start by building a model without applying dropout regularization. Befor
 ### Exploring the dataset
 The dataset used is the [Sonar dataset](https://datahub.io/machine-learning/sonar). The dataset is used for the classification of sonar signals using a neural network. The model predicts if sonar signals are bounced off a metal surface or a rock surface.
 
-To download the CSV file, click [here](https://datahub.io/machine-learning/sonar#resource-sonar_zip)
+To download the CSV file, click [here](https://datahub.io/machine-learning/sonar#resource-sonar_zip).
 
 To load the dataset, we use Pandas and Numpy. These are useful Python packages used for dataset manipulation and analysis.
 
@@ -80,7 +80,7 @@ import numpy as np
 import pandas as pd
 ```
 
-Let's load the dataset.
+Let's load the dataset:
 
 ```python
 df = pd.read_csv("./sonar_dataset.csv", header=None)
@@ -150,8 +150,8 @@ from tensorflow import keras
 We will use both `TensorFlow` and `Keras` for building our neural network. `TensorFlow` will run our backend when training the neural network. `Keras` will create the input, hidden and output layers of our neural network.
 
 In TensorFlow, we have two types of models:
-1. Sequential model
-2. Functional model
+1. Sequential model.
+2. Functional model.
 
 In sequential models, layers are built on top of each other one after the other as shown in the image below.
 
@@ -183,7 +183,7 @@ The first layer is the input layer for our neural network. It has `60` neurons. 
 For more information about `relu` activation function, click [here](/engineering-education/activation-functions/).
 
 #### Layer 2
-This is the first hidden layer containing`30` neurons. We also add `activation=relu`.
+This is the first hidden layer containing `30` neurons. We also add `activation=relu`.
 
 #### Layer 3
 This is the second hidden layer containing `15` neurons. It also uses `relu` as the activation function.
@@ -193,7 +193,7 @@ The 4th layer is the output layer. It has only `1` neuron which is used to produ
 
 `sigmoid` activation function is used when the output values that between `0` and `1`. 
 
-For more information about `sigmoid` activation function, click [here](/engineering-education/activation-functions/)
+For more information about `sigmoid` activation function, click [here](/engineering-education/activation-functions/).
 
 The next step is to compile our model.
 
@@ -274,10 +274,10 @@ This layer is added after the input layer where we set the number of neurons to 
 The input layer has `60` neurons, half of these neurons will be randomly dropped.
 
 #### 2nd dropout layer
-This layer is added after the 1st hidden layer. We set the number of neurons to be randomly dropped to `0.5`. Therefore, half of the neurons will be randomly dropped from this layer. This hidden layer has `30` neurons, half of these neurons will be randomly dropped.
+This layer is added after the 1st hidden layer. We set the number of neurons to be randomly dropped to `0.5`. This hidden layer has `30` neurons, half of these neurons will be randomly dropped.
 
 #### 3rd dropout layer
-This layer is added after the 2nd hidden layer. We set the number of neurons to be randomly dropped to `0.5`. Therefore, half of the neurons will be randomly dropped from this layer. This hidden layer has `15` neurons, half of these neurons will be randomly dropped.
+This layer is added after the 2nd hidden layer. We set the number of neurons to be randomly dropped to `0.5`. This hidden layer has `15` neurons, half of these neurons will be randomly dropped.
 
 After adding the dropout layers, we can now compile and then fit our model into our dataset. This is done using the following code:
 
@@ -290,7 +290,7 @@ This will train our model as shown below.
 
 ![Dropout regularization](/engineering-education/dropout-regularization-to-handle-overfitting-in-deep-learning-models/dropout-regularization.png)
 
-From the image above the training score, after `100` iterations are `0.9167`, this represents `91.67%`.
+From the image above, the training score after `100` iterations is `0.9167`, this represents `91.67%`.
 
 To know if this process has handled overfitting, let's use the testing dataset to calculate the accuracy score.
 
@@ -314,9 +314,9 @@ In this tutorial, we have learned about dropout regularization and how it's used
 
 We then started to build a model without the dropout regularization technique. The model performed very well using the training dataset but very poorly using the testing dataset.
 
-Finally, we implemented the dropout layers. Using these layers we improved the test accuracy increased from `76.92%` to `80.77%`. Therefore, we successfully handled overfitting in deep learning models.
+Finally, we implemented the dropout layers. Using these layers we improved the test accuracy which increased from `76.92%` to `80.77%`. Therefore, we successfully handled the overfitting.
 
-To get this trained model, click [here](https://colab.research.google.com/drive/1b4sYoz5RmW7cjtIRkFwyFywVN0-zj3Hd?usp=sharing)
+To get this trained model, click [here](https://colab.research.google.com/drive/1b4sYoz5RmW7cjtIRkFwyFywVN0-zj3Hd?usp=sharing).
 
 ### References
 - [Python code for this tutorial](https://colab.research.google.com/drive/1b4sYoz5RmW7cjtIRkFwyFywVN0-zj3Hd?usp=sharing)
