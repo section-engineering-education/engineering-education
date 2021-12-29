@@ -4,9 +4,9 @@ status: publish
 published: true
 url: /how-to-build-a-client-server-application-using-rust/
 title: How to Build a Client Server Application using Rust
-description: In this tutorial, you will understand the concept of the client-server communication, and learn how to achieve this using Rust.
+description: In this tutorial, you will understand the concept of client-server communication, and learn how to achieve this using Rust.
 author: carol-wanjiru
-date: 2021-12-28T00:00:00-01:00
+date: 2021-12-29T00:00:00-01:33
 topics: [Languages]
 excerpt_separator: <!--more-->
 images:
@@ -14,24 +14,21 @@ images:
   - url: /engineering-education/how-to-build-a-client-server-application-using-rust/hero.png
     alt: How to Build a Client Server Application using Rust Hero Image
 ---
-A web app is a service built on top of the Internet to allow computers to share and exchange data easily and reliably. In this case, the web services will be referred to as a client-server model. Communications are established between the two to exchange data. Clients will ask for data, and the computer that serves this data is called a server. This blog will discuss the concept of the client-server model as we implement the whole scenario using Rust.
+A web app is a service built on top of the Internet to allow computers to share and exchange data easily and reliably. In this case, the web services will be referred to as a client-server model. Communications are established between the two to exchange data. Clients will ask for data, and the computer that serves this data is called a server.
 
-The reader will understand the concept of the client-server communication. The reader will then learn how to achieve this using Rust.
+In this tutorial. we will discuss the concept of the client-server model as we implement the whole scenario using Rust.
 
 ### Set up Rust
-Rust is a very low-level/systems-level programming language like C++ or C. It focuses on safety, speed and concurrency, ensuring you have a design that lets you create high performant programs. To start using Rust, you need to get a Rust C, which is the Rust compiler.
+Rust is a very low-level/systems-level programming language like C++ or C. It focuses on safety, speed, and concurrency, ensuring you have a design that lets you create high-performance programs. To start using Rust, you need to get a Rust C, which is the Rust compiler.
 
->Note: Check these Rust Visual C++ prerequisites while installing Rust. Rust requires the Microsoft C++ build tools for Visual Studio 2013 or later, but they don't seem to be installed.
+If you are using Visual Studio 2013 or older, then you have to [install](https://visualstudio.microsoft.com/visual-cpp-build-tools/) the Microsoft C++ build tools.
+Please ensure the Windows 10 SDK and the English language pack components are included when installing the Visual C++ Build Tools.
 
->The easiest way to acquire the build tools is by installing Microsoft Visual C++ Build Tools 2019, which provide just the Visual C++ build tools: `https://visualstudio.microsoft.com/visual-cpp-build-tools/`. Please ensure the Windows 10 SDK and the English language pack components are included when installing the Visual C++ Build Tools.
-
->Alternately, you can install Visual Studio 2019, Visual Studio 2017, Visual Studio 2015, or Visual Studio 2013, and during installation, select the "C++ tools": `https://visualstudio.microsoft.com/downloads/`.
-
-So first, download the [Microsoft Visual C++ Build Tools](https://visualstudio.microsoft.com/visual-cpp-build-tools/) and install it. While installing Microsoft Visual C++ Build Tools, make sure you select the C++ Build Tools 2019, which provides just the Visual C++ build tools.
+Alternately, you can [install](https://visualstudio.microsoft.com/downloads/) a new version of Visual Studio, and during installation, select the "C++ tools".
 
 ![setup](/engineering-education/how-to-build-a-client-server-application-using-rust/setup.png)
 
-Wait for the installation to finish. Then go ahead and [Download Rust C](https://www.rust-lang.org/tools/install) and install it on your computer. Check this Rust doc and select the Rust installation that fits the environment you are using.
+Wait for the installation to finish. Then go ahead and [Download Rust C](https://www.rust-lang.org/tools/install) and install it on your computer. Check the Rust doc and select the Rust installation that fits the environment you are using.
 
 This will install along with the Rust cargo. Cargo is a Rust package manager that allows you to access remote Rust packages. Cargo is closely related to NPM for Node.js, composer for PHP, or PyPI for Python.
 
@@ -57,13 +54,13 @@ cargo --version
 
 ![rust-installation](/engineering-education/how-to-build-a-client-server-application-using-rust/rust-installation.png)
 
-Let's see how you can set up a basic Rust project. To create a Rust project, you use `cargo` to initialize your application, just like you would when creating a Node.js project with the `npm` command. 
+Let's see how you can set up a basic Rust project. To create a Rust project, you use `cargo` to initialize your application.
 
 To initialize your project with `cargo`, head over to your project folder and run `cargo init`. 
 
 You can also use `cargo new my_app`. This will create a new project in a folder called `my_app`.
 
-A Rust application structure will be created in any of the above methods. This will create a basic Rust application file structure. This has a `Cargo.toml` file that has your basic application configurations and Rust packages/ dependencies that you will install. This looks similar to the `package.json` file for Node.js. It also creates an `src` folder where your Rust code goes. This folder has a `main.rs` with a basic Rust `Hello, world!` application. 
+A Rust application structure will be created in any of the above methods. This has a `Cargo.toml` file that has your basic application configurations and Rust packages/dependencies that you will install. This looks similar to the `package.json` file for Node.js. It also creates an `src` folder where your Rust code goes. This folder has a `main.rs` with a basic Rust `Hello, world!` application. 
 
 To test this, you can run `cargo run` inside the folder you initialized the Rust project. This command will compile, run the application for you and print the result on your terminal.
 
@@ -93,7 +90,7 @@ use std::io::{Read,Write};
 use std::thread;
 ```
 
-#### Step Two - Handle the sender message
+#### Step two - Handle the sender message
 Before setting up a server, the server needs to handle the client's messages. The server must first access these messages then decide what operation to perform.
 
 ```rust
@@ -122,13 +119,13 @@ fn handle_sender(mut stream: TcpStream) -> io::Result<()>{
 }
 ```
 
-First, the server will access the streams/client messages and hold them in the stream’s state. The server will accept any message with a range of 0 to 512-bit in size. These messages are mutable and can be sent by different clients. This will allow multiple clients to connect to this server at once. `TcpStream` will allow accepting new clients' connections to this server. If the connection is valid, `Ok(())` will be executed to very that this connection to the stream address actually worked.
+First, the server will access the streams/client messages and hold them in the stream’s state. The server will accept any message with a range of 0 to 512-bit in size. These messages are mutable and can be sent by different clients. This will allow multiple clients to connect to this server at once. `TcpStream` will allow accepting new clients' connections to this server. If the connection is valid, `Ok(())` will be executed to verify that this connection to the stream address actually worked.
 
-Once these connections are established, the server will read messages into our set buffer. This will take the message that we're receiving, handle all of the characters that are not whitespace inside this buffer as a `String`. Then to complete the read-write operation, the server will convert this `String` into an actual `utf8` string and then print the message to the server's terminal.
+Once these connections are established, the server will read messages into our set buffer. This will take the message that we're receiving, handle all the characters that are not whitespace inside this buffer as a `String`. Then, to complete the read-write operation, the server will convert this `String` into an actual `utf8` string and then print the message to the server's terminal.
 
 The server will constantly loop around the connected clients. This can create permanence overhead. Therefore, we need to set a `time::Duration` that allows the server to `sleep` for a moment when looping through the sent messages.
 
-#### Step Three - Set up the actual server
+#### Step three - Set up the actual server
 For this connection to work right, we need to set localhost with a port in it. In this case, we will have localhost with port `7878`.
 
 ```rust
@@ -159,7 +156,7 @@ fn main() -> io::Result<()>{
 }
 ```
 
-Here we are instantiating our server using the `TcpListener`. This way, the server may listen for new connections and assign them to a server socket address. If it fails to bind with the new connection, then we're going to return an error message inside of a panic.
+Here we are instantiating our server using the `TcpListener`. This way, the server may listen for new connections and assign them to a server socket address. If it fails to bind with the new connection, then we're going to return an error message.
 
 Once the connection is made, we want to basically set what should happen when our server receives a message. We will collect all the incoming messages to our stream and bind them to a server socket address. We then put these messages into a heap in the order they were sent. The server will then read and write each message from the set heap stack.
 
@@ -219,7 +216,7 @@ Let's test this out. Open a new terminal and run the client using `cargo run`.
 
 ![client](/engineering-education/how-to-build-a-client-server-application-using-rust/client.png)
 
-Ensure your server is still up and running in a different terminal. Head over to the client terminal, start typing some messages and click enter to send.
+Ensure your server is still up and running in a different terminal. Head over to the client terminal, start typing some messages, and click enter to send.
 
 ![client-messages](/engineering-education/how-to-build-a-client-server-application-using-rust/client-messages.png)
 
@@ -228,7 +225,7 @@ Head over to the server terminal, and you can see the server received the exact 
 ![server-messages](/engineering-education/how-to-build-a-client-server-application-using-rust/server-messages.png)
 
 ### Conclusion
-When you connect to the network, your computer sends data to a server. The server then checks this data to make sure that it is valid. If the data is invalid, this will throw an error. This blog has built a handy application that allows the server and client to exchange data between them using Rust programming language. I hope you found this helpful!
+When you connect to the network, your computer sends data to a server. The server then checks this data to make sure that it is valid. If the data is invalid, this will throw an error. In this tutorial, we have built a handy application that allows the server and client to exchange data between them using Rust programming language. I hope you found this helpful!
 
 ---
 Peer Review Contributions by: [eric-kahuha](/engineering-education/authors/eric-kahuha/)
