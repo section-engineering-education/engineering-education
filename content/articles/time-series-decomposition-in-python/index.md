@@ -19,10 +19,10 @@ Time series refers to the data that is sequentially collected over time. Various
 <!--more-->
 Thus a time series can be decomposed such that each component exists independently. Usually, it is challenging to work with a model whose most of the cause of variation is unknown. In time series, some of the causes of variation to the model are deterministic.
 
-Analyzing a model with many causes of variation is computationally expensive. Therefore, we decompose those components whose variation is deterministic. The indeterministic ones, residuals, are then used to analyze of autocorrelation.
+Analyzing a model with many causes of variation is computationally expensive. Therefore, we decompose those components whose variation is deterministic. The indeterministic ones, residuals, are then used to analyze autocorrelation.
 
 ### Prerequisites
-For the learner to gain the maximum benefit from this course, they must have basic Python programming knowledge.
+To gain the maximum benefit from this course, they must have basic Python programming knowledge.
 
 ### Components of the time series
 At any given time, a time series is usually composed of the following components:
@@ -44,7 +44,7 @@ Let us understand what these components are:
 
 ![residual](/engineering-education/time-series-decomposition-in-python/residual.png)
 
-As we said, the time series value is usually a combination of the above components at any point in time. These values can be due to summing up all components, multiplying them together, or interacting with both operations.
+As we said, the time series value is usually a combination of the above components at any point in time. These values can be summed up all components, multiplying them together, or interacting with both operations.
 
 Therefore, we use the following three models when decomposing a time series:
 1. Additive time series model
