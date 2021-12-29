@@ -48,7 +48,7 @@ When you have proper and accurate information, automated alerts can be quite use
 Customers' data entered in a request to receive an e-book or a newsletter can be quite beneficial to you. If your customized forms interact with other programs, these programs will be populated with information from the forms' input fields which can be used to evaluate and assist clients.
 
 * Avoid Unnecessary Data
-The majority of website guests do not want to provide companies with any extra information. They must believe that they are receiving something in exchange for the information they are sharing. Websites can utilize survey testing to identify which forms are effective and make adjustments to the forms based on the results.
+The majority of website guests do not want to provide companies with any extra information. Websites can utilize survey testing to identify which forms are effective and make adjustments to the forms based on the results.
 
 * Automatic Collection of Data
  Rather than manually inputting information into databases, the operation can be simply automated by sending information from forms to databases. This greatly decreases data input errors, and you can be sure in the accuracy of your data because the formatting and spelling do not vary.
