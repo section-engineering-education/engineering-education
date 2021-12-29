@@ -74,8 +74,7 @@ An HTML form is generated using the `<form>` element. Here's a sample of a basic
 
 ### Sending form to Google Sheets
 Google Forms may be utilized as an application by going to the responses button and reading all responses. Whenever you're gathering data, you should put them in a spreadsheet so you can organize and evaluate it later.
-It takes a long time to transfer information from Google Forms to Google Sheets manually. Alternatively, you may automate data transmission by connecting Google Forms to Google Sheets. It implies that when a respondent uploads a form, the data will display in the spreadsheet 
-simultaneously. 
+It takes a long time to transfer information from Google Forms to Google Sheets manually. Alternatively, you can automate data transmission by connecting Google Forms to Google Sheets. It implies that when a respondent uploads a form, the data will display in the spreadsheet. 
 
 Follow the procedure below to send the form you created to Google Spreadsheet. It can be either a brand-new or already created spreadsheet.
 1. The first step is to sign in to your google account to acces the google sheet you created
