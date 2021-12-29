@@ -23,7 +23,7 @@ Overfitting problem is more common than underfitting. We have many techniques th
 In this tutorial, we will start by building a deep learning model using TensorFlow. We will then use the dropout regularization technique to handle overfitting. This will ensure that we have a model that has a good performance on both the training dataset and the testing dataset.
 
 ### Table of contents
-- [Prerequisites](#prerequisites)
+- [Pre-requisites](#pre-requisites)
 - [Getting-started-with-dropout-regularization](#getting-started-with-dropout-regularization)
 - [Exploring the dataset](#exploring-the-dataset)
 - [Dataset splitting](#dataset-splitting)
@@ -37,7 +37,7 @@ In this tutorial, we will start by building a deep learning model using TensorFl
 - [Conclusion](#conclusion)
 - [References](#references)
 
-### Prerequisites
+### Pre-requisites
 For a reader to follow this tutorial easily, they should:
 - Know how to build [deep learning models](/engineering-education/building-a-deep-learning-app-using-python/).
 - Understand [Pandas](https://pandas.pydata.org/) and [Numpy](https://numpy.org/) for data analysis and manipulation.
