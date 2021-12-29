@@ -18,12 +18,11 @@ Before introducing the collection framework, a popular way of grouping objects w
 <!--more-->
 The only disadvantage of all the collections mentioned above is that they had no standard interface. When implementing these collections, they have to be defined independently.
 
-Also, it posed a challenge to developers since it was challenging to recall methods, syntax, and constructors present in every class. Therefore, this called for the introduction of the Collection Framework. 
+Also, it posed a challenge to developers since it was challenging to recall methods, syntax, and constructors present in every class. Therefore, this called for the introduction of the Collection Framework.
 
-The developer can now easily access any interface without knowing the code written or the classes involved. Let us now take a look at how all the above-mentioned happen with collection in java.
+The developer can now easily access any interface without knowing the code written or the classes involved. Let us now look at how all those mentioned above happen with collection in java.
 
-### Table of Contents
-
+### Table of contents
 - [Introduction](#introduction)
 - [Implementing arrays and vectors](#implementing-arrays-and-vectors)
 - [Methods of the collection interface](#methods-of-the-collection-interface)
@@ -31,9 +30,9 @@ The developer can now easily access any interface without knowing the code writt
 - [Summary](#summary)
 
 ### Introduction
-**Collection in java** organizes data to make it easier to store, access, and edit the data.
+**Collection in java** organizes data to make storing, accessing and editing the data easier.
 
-On the other hand, a framework makes the developers' work more accessible by providing the code libraries, the collection library.
+On the other hand, a framework makes the developers' work more accessible by providing the collection library code libraries.
 
 However, what is an Interface? - An Interface is a system where related or unrelated entities can interact. For our case, the collection of objects created will interact with the library of existing classes, which can be achieved successfully through the interfaces availed by the JDK.
 
@@ -42,7 +41,7 @@ Examples of interfaces include:
 - java.util.Map - This is the Map interface.
 
 #### Implementing arrays and vectors
-Before the collection framework, organizing data was achieved through arrays and vectors. The above collections had no standard interface, making it harder to implement collection as a unit. Let us look at how the collections mentioned above were implemented with the absence of a collection framework.
+Before the collection framework, organizing data was achieved through arrays and vectors. The above collections had no standard interface, making it harder to implement collection as a unit. Let us look at how the aforementioned collections were implemented without the collection framework.
 
 ```java
 import java.util.ArrayList;
@@ -90,7 +89,7 @@ public class Main {
 ### Methods of the collection interface
 Now we will look at some primary methods used in the collection interface:
 - `add(Object)` - This method adds an object into the collection.
-- `contains(Object O)` - The output for this is true if a certain object is contained in the collection and false for vice versa. It mostly deals with boolean outputs.
+- `contains(Object O)` - The output for this is true if a particular object is contained in the collection and false for vice versa. It mainly deals with boolean outputs.
 - `isEmpty()` - This method also returns a boolean. It outputs true if the collection has an element specified.
 - `toArray()` - This method converts the elements in the collection into an array.
 - `size()` - This method checks the size of the elements in a collection.
@@ -112,8 +111,7 @@ From the diagram we have seen above. The collection hierarchy diagram consists o
 Let us now take a look at the interfaces individually.
 
 1. **Iterable Interface**
-
-This is the baseline interface in the hierarchy tree. It contains the methods that any of the classes in the hierarchy tree can be called.
+The iterable interface is the baseline interface in the hierarchy tree. It contains the methods that any class in the hierarchy tree can be called.
 
 It can be implemented as shown below.
 
@@ -129,27 +127,31 @@ Method in the collection framework include:  `clear()`, `add()`, `size()`.
 3. **Array List**
 The class helps when dealing with dynamic arrays.
 
-A `dynamic array` is an array whose size is unpredictable since it keeps adding up. Other arrays usually have a fixed size where you have to state the number of elements to be stored. The dynamic array, on the other hand, supports automatic resizing.
-ArrayList is located at the `java.util package` and this means that every time you want to form an ArrayList, you import the java.util package.
-The above can be achieved as shown in the example below:
+A `dynamic array` is an array whose size is unpredictable since it keeps adding up. Other arrays usually have a fixed size where you have to state the number of elements to be stored. The dynamic array, on the other hand, supports automatic resizing. ArrayList is located at the java.util package, which means that every time you want to form an ArrayList, you import the `java.util package`. You can achieve this as shown in the example below:
 
-Let's use an example where we will create an object that will store and list related to the object.
-```
+We have further created an object name and added a list of names to the array from the above. We can also add names to the array, as shown below.
+
+```java
   import java.util.ArrayList
 ```
+
 In the example above, we have imported java.util package since we will be using its classes when creating the ArrayList.
-```
+
+```java
   import java.util.ArrayList
   ArrayList students = new ArrayList("Bob", "Kimosop", "Keen");
 ```
+
 From the above, we have further created an object names and added a list of names to the array. We can also add names to the array as shown below.
-``` 
+
+```java
   ArrayList students = new ArrayList();
 
   students.add("Bob");
   students.add("Kimosop");
   students.ass("Keen");
 ```
+
 ```
 // Output
 Bob
@@ -160,8 +162,7 @@ The difference between the above means of adding elements to the list in the arr
 
 
 4. **Set**
-We use a set interface when we want to avoid duplication and aim to store objects uniquely. Some of the classes of the set interface are: HashSet, Tree set, LinkedHashSet, etc.
-Below is a syntax to instantiate the set:
+We use a set interface to avoid duplication and aim to store objects uniquely. Some set interface classes are HashSet, Tree set, LinkedHashSet, and many others. Below is a syntax to instantiate the set:
 
 ```java
 Set<data-type> set1 = new HashSet<data-type>();  
@@ -189,13 +190,15 @@ public class Main {
 }
 ```
 
+```
 //Output
 Lebron
 for
 Lakers
 is
+```
 
-We have first instantiated the HashSet class, which automatically imports methods in the HashSet class and Iterator interface. You can now add names easily to the HashSet by calling the `hashset.add` method. Lastly, instantiate the Iterator interface to import all its methods and decide how you want to output the names.
+We have first instantiated the HashSet class, which automatically imports methods in the HashSet class and Iterator interface. You can now add names easily to the HashSet by calling the `hashset.add` method. Lastly, instantiate the Iterator interface to import all its methods and decide how to output the names.
 
 ### Summary
 In this tutorial, we have been able to cover the following.
@@ -212,3 +215,5 @@ In this tutorial, we have been able to cover the following.
 6. Classes
       - Array List
       - Hash set.
+
+Happy learning!
