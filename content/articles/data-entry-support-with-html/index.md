@@ -51,8 +51,7 @@ Customers' data entered in a request to receive an e-book or a newsletter can be
 The majority of website guests do not want to provide companies with any extra information. Websites can utilize survey testing to identify which forms are effective and make adjustments to the forms based on the results.
 
 * Automatic Collection of Data
- Rather than manually inputting information into databases, the operation can be simply automated by sending information from forms to databases. This greatly decreases data input errors, and you can be sure in the accuracy of your data because the formatting and spelling do not vary.
-
+ Rather than manually inputting information into databases, the operation can be simply automated by sending information from forms to databases. This greatly decreases data input errors.
 ### Creating and Submitting HTML form to Google Sheets.
 Below is how to create a data entry sheet with Google Apps Script.
 **Step One:** Login into your [Google Drive account](https://drive.google.com/drive/my-drive).
