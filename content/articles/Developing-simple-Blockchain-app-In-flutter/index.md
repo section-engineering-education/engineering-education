@@ -270,6 +270,7 @@ return new MaterialApp(
 ```
 
 Notice that we are connecting to my Devices, which is the name of my MQTT broker. You will need to change this to match the name of your broker. Now when you run the application on different devices, they will all be connected to the same blockchain network and will share the same blockchain data.
+To see more and have a view of whats going on kindly check my github @ https://github.com/johnniembugua
 
 ### Conclusion
 
