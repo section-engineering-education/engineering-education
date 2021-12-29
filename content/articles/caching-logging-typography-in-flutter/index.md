@@ -1,30 +1,34 @@
-# Caching, Logging and Typography in Flutter
+---
+layout: engineering-education
+status: publish
+published: true
+url: /caching-logging-typography-in-flutter/
+title: Caching, Logging and Typography in Flutter
+description: This tutorial will cover implementing some advanced topics of caching, logging, and Typography in our flutter applications.
+author: somtobe-eze
+date: 2021-12-300:00:00-12:20
+topics: [Languages]
+excerpt_separator: <!--more-->
+images:
 
-In this tech tutorial, we will learn how to implement some advanced features such as caching and logging in flutter. We will also take a look at how to implement typography features for content in our application.
+  - url: /engineering-education/caching-logging-typography-in-flutter/hero.jpg
+    alt: Caching, Logging and Typography in Flutter Hero Image
+---
+As a programmer, knowing how to create beautiful applications and deploy them to production is a great thing. You will be an even greater developer if you create efficient applications in space and time. 
+<!--more-->
+Resources are scarce irrespective of your context, and adequate utilization will benefit all play parties. In the case of caching, when our application makes frequent requests/access to the same resource that does not change, it is classified as a waste because no new information that is different from initial requests/access has been obtained.
 
-
-
-![Hero Image for Caching, Logging and Typography in Flutter](./hero.jpg)
-
-
-### Introduction
-As a programmer, knowing how to create beautiful applications and deploy them to production is a great thing, you will be an even greater developer if you can create applications that are efficient both in space and time. Resources as scarce irrespective of the context you place them and adequate utilization will be beneficial to all parties in play. In the case of caching, when our application makes frequent requests/access to the same resource that does not change, it is classified as a waste because no new information that is different from initial requests/access has been obtained.
-
-Similarly, knowing what happens when our apps are running is very vital for debugging. We want to know if our application behaves in the way it should or in a way it should not. When something breaks we want to be able to detect what caused it when it happened, and where it happened so we can fix the issue causing the malfunction. To achieve this we make use of logging.
- 
-
+Similarly, knowing what happens when our apps are running is vital for debugging. We want to know if our application behaves in the way it should or in a way it should not. When something breaks, we want to detect what caused it, when it happened and where it happened to fix the issue causing the malfunction. To achieve this, we make use of logging.
 
 ### Goals
-- In this tutorial we will:
-- Implement caching into our application codebase
+In this tutorial, we will:
+- Implement caching into our application codebase.
 - Implement logging into our flutter codes.
-- Know when to cache and how our data 
-- See the benefits of logging our application 
-- Implement typography for our application fonts
+- Know when to cache and how our data.
+- See the benefits of logging our application.
+- Implement typography for our application fonts.
 
-
-
-### Prerequisite
+### Prerequisites
 - This tutorial requires that you are handy working with dart and flutter in creating applications and have dealt with integrating services and functionalities in your application.
 
 - Knowing the various data structures and data types available in the dart programming language will better guide you to developing efficient applications. For more info about the data structures in dart check out this
@@ -32,9 +36,8 @@ Similarly, knowing what happens when our apps are running is very vital for debu
 
  
 
-### Table of Contents
-
-- [Caching, Logging and Typography in Flutter](#caching-logging-and-typography-in-flutter)
+### Table of contents
+- [Caching, Logging, and Typography in Flutter](#caching-logging-and-typography-in-flutter)
     - [Introduction](#introduction)
     - [Goals](#goals)
     - [Prerequisite](#prerequisite)
