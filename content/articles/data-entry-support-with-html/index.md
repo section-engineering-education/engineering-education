@@ -39,7 +39,7 @@ To have a better understanding of this article, the reader should:
 Some of the advantages in statistics access include:
 
 * Brand Building
-Online data entry markets a brand because it makes use of colors, fonts, snapshots, and symbols which are aye-catching in your internet site. The background of your internet site must replicate your brand. It will similarly improve your brand's online presence, specifically if your brand is easily understandable.
+Online data entry markets your brand because it makes use of colors, fonts, snapshots, and symbols that are aye-catching on your website. This improves your brand's online presence.
 
 * Targeted Notifications
 When you have the proper and accurate information, automated alerts can be quite useful. Instead of sending every consumer with all of the communications, the forms can be sent focusing on a certain segment of the audience with a certain message. 
