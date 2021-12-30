@@ -1,8 +1,24 @@
-Multi-output classification is a type of machine learning that predicts multiple outputs at the same time. In multi-output classification, the model will give two or more outputs after making any prediction. In other types of classifications, the model usually predicts only a single output.
+---
+layout: engineering-education
+status: publish
+published: true
+url: /multi-output-classification-with-machine-learning/
+title: Multi-Output Classification with Machine Learning
+description: This tutorial aims to build a multi-output text classification model using the Netflix dataset. The model will classify the input text as either `TV Show` or `Movie`.
+author: willyngashu
+date: 2021-12-30T00:00:00-21:00
+topics: [Machine Learning]
+excerpt_separator: <!--more-->
+images:
 
+  - url: /engineering-education/multi-output-classification-with-machine-learning/hero.jpg
+    alt: Multi-Output Classification with Machine Learning Hero image
+---
+Multi-output classification is a type of machine learning that predicts multiple outputs at the same time. In multi-output classification, the model will give two or more outputs after making any prediction. In other types of classifications, the model usually predicts only a single output.
+<!--more-->
 An example of a multi-output classification model is a model that predicts the “type of fruit” and “color” of fruit at the same time. The “type of fruit” cab be, “orange”, “mango” and “pineapple”. The “color” can be, “red”, “green”, “yellow”, and “orange". The multi-output classification is used to solve this problem and gives two prediction results.
 
-In this tutorial, we will build a multi-output text classification model using the Netflix dataset. The model will classify the input text as either `TV Show` or `Movie`, this will be the first output. The model will also classify the rating as: `TV-MA`, `TV-14`, `TV-PG`, `R`, `PG-13` and `TV-Y`.  The rating will be the second output. We will use Scikit-Learn `MultiOutputClassifier` algorithm to build this model.
+In this tutorial, we will build a multi-output text classification model using the Netflix dataset. The model will classify the input text as either `TV Show` or `Movie`. This will be the first output. The model will also classify the rating as: `TV-MA`, `TV-14`, `TV-PG`, `R`, `PG-13` and `TV-Y`.  The rating will be the second output. We will use Scikit-Learn `MultiOutputClassifier` algorithm to build this model.
 
 ### Table of contents
 - [Prerequisites](#prerequisites)
