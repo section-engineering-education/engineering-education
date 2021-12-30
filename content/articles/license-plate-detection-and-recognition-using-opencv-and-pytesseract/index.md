@@ -18,7 +18,7 @@ License plate detection is identifying the part of the car that is predicted to 
 <!--more-->
 License plate detection and recognition is the technology that uses computer vision to detect and recognize a license plate from an input image of a car. License plate detection is identifying the part of the car that is predicted to be the number plate. Recognition is identifying the values that make up the license plate.
 
-This technology applies in many areas. On roads, it is used to identify the cars that are breaking the traffic rules. On security, it is used to capture the license plates of the vehicles getting into and out of certain premises. In parking lots, it is used to capture the license plates of the cars being packed. The list of its applications goes on and on.
+This technology applies in many areas. On roads, it is used to identify the cars that are breaking the traffic rules. In security, it is used to capture the license plates of the vehicles getting into and out of certain premises. In parking lots, it is used to capture the license plates of the cars being parked. The list of its applications goes on and on.
 
 ### Introduction
 **Python** gives us the ability to create our license plate detection and recognition program. We achieve this by using three of its libraries; pytesseract, imutils, and OpenCv.
@@ -35,7 +35,7 @@ In this tutorial, we are going to learn the processes software passes to detect 
 ### Prerequisites
 To follow through this tutorial, a person needs to:
 - Be familiar with the **python** programming language
-- Have **pycharm** installed on their computer. You can download **pycharm community edition** from here. [Pycharm Community Edition ](https://www.jetbrains.com/pycharm/download/)
+- Have **pycharm** installed on their computer. You can download **pycharm community edition** [here](https://www.jetbrains.com/pycharm/download/).
 
 ### Processes a software undergoes to detect and recognize a license plate
 For software to detect and recognize a license plate, it undergoes three major processes.
@@ -88,14 +88,14 @@ Download tesseract from [here](https://github.com/UB-Mannheim/tesseract/wiki) an
 
 We will use the above image as an input for our program.
 
-Now let's dive into the fun part of coding.
+Now let's dive into the fun part of coding. Type the following code on the `main.py` file that is automatically created by Pycharm.
 ### importing the libraries we need
 ```python
 import cv2
 import imutils
 import pytesseract
 ```
-In the code above, we are importing each library we did discuss. This will enable us to use some of the functions we will require from them.
+In the code above, we are importing each library we discussed. This will enable us to use some of the functions we will require from them.
 
 ### Specifying the path to which tesseract is installed
 ```python
@@ -229,7 +229,7 @@ When the program has run successfully, its output is as follows:
 ### Conclusion
 You now have all the skills required to create a program that detects and recognizes license plates. Capture more images of vehicles and input them into the program then sit back and watch as the program does its magic.
 
-! Happy coding
+Happy coding !
 
 ---
 
