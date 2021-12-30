@@ -12,7 +12,7 @@ You will be creating the search app using HTML5, CSS3, Vanilla JavaScript, async
 To follow along with this tutorial, you need the following:
 
 - A code editor (like Visual Studio Code)
-- Basic knowledge of HTML, CSS, and JavaScript
+- Basic knowledge of HTML5, CSS, and JavaScript
 - A laptop with an internet connection
 
 ### Structuring the lyrics search app with HTML5
