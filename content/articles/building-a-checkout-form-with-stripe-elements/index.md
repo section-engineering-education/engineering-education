@@ -10,8 +10,6 @@ In this article, we will look at how to integrate Stripe elements into an [ASP.N
 - How taxation is handled
 
 ### Table of contents
-- [Introduction](#introduction)
-- [Table of contents](#table-of-contents)
 - [Prerequisites](#prerequisites)
 - [A custom form](#a-custom-form)
 - [Payment collection workflow](#payment-collection-workflow)
