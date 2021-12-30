@@ -1,9 +1,24 @@
- As simple as it sounds, routing has been a focal point in the mapping space. Companies like Amazon and location services like Google maps has made the need for a routing service more essential. Routing in geography is taking a course from a designated starting point to a destination.
+---
+layout: engineering-education
+status: publish
+published: true
+url: /building-a-routing-service-using-mapquest-api/
+title: Building a routing service using mapquest API
+description: This tutorial will show the reader how to build a routing service using mapquest API.
+author: femi-ige-muyiwa-oladele
+date: 2021-11-30T00:00:00-21:00
+topics: [Languages]
+excerpt_separator: <!--more-->
+images:
 
+  - url: /engineering-education/building-a-routing-service-using-mapquest-api/hero.jpg
+    alt: Building a routing service using mapquest API Hero Image
+---
+As simple as it sounds, routing has been a focal point in the mapping space. Companies like Amazon and location services like Google maps has made the need for a routing service more essential. Routing in geography is taking a course from a designated starting point to a destination.
+<!--more-->
 Mapquest created a plugin for leaflet maps to send a request to its direction API services to receive the results and display them. We'll guide you on how to execute this feature in your maps.
 
 ### Prerequisites
-
 The reader is required to have a strong foundation on the following:
 
 - HTML, CSS, JavaScript.
@@ -11,7 +26,6 @@ The reader is required to have a strong foundation on the following:
 - The reader should have their mapquest API key. [Here](https://developer.mapquest.com/) is the link to get started in creating your API key.
 
 ### Aim
-
 At the end of the tutorial, the reader should be able to:
 - Integrate mapquest into their map.
 - Use Mapquest routing API for leaflet.Js.
