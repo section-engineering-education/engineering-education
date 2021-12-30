@@ -6,7 +6,7 @@ url: /upload-images-angular-laravel/
 title: Handling Angular Base64 images in a RESTFul API with Laravel
 description: This tutorial discusses how images can be uploaded from an Angular application as base64 and uploaded to the server as an image.
 author: naomi-seint
-date: 2021-12-24T00:00:00-12:30
+date: 2021-12-30T00:00:00-10:30
 topics: []
 excerpt_separator: <!--more-->
 images:
