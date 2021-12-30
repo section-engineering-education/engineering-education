@@ -14,10 +14,12 @@ images:
   - url: /engineering-education/upload-images-angular-laravel/hero.png
     alt: angular laravel image base64
 ---
-Handling images in web applications has become the norm. Almost 99% of applications we interact with daily have images in one way or another.
-However, dealing with the back-end images has proven to be a very complex task. For this reason, developers have come up with alternatives to handling images.
+
+Handling images in web applications has become the norm. Almost 99% of the applications we interact with daily have images in one way or another.
 <!--more-->
-This tutorial discusses how images can be uploaded from an Angular application as base64 and uploaded to the server as an image.
+However, dealing with the back-end images has proven to be a very complex task. For this reason, developers have come up with alternatives to handling images.
+
+This tutorial goes through how images can be uploaded from an Angular application as base64 and uploaded to the server as an image.
 
 ### Table of contents
 - [Prerequisites](#prerequisites)
@@ -28,15 +30,14 @@ This tutorial discusses how images can be uploaded from an Angular application a
 - [Conclusion](#conclusion)
 
 ### Prerequisites
-To follow this tutorial along, you need have:
+To follow this tutorial along, you need to have:
 - PHP 7.3+ locally installed.
 - Laravel 8  installed.
 - Angular 12 installed.
 - Basic knowledge of SQL and MySQL locally installed.
 - An IDE of your interest. We'll use both the PhpStorm for PHP and Webstorm for Angular in this article.
 
-### Objectives
-By the end of this tutorial, the learner is expected to have enough knowledge to handle base64 images in both Angular and Laravel.
+> By the end of this tutorial, the reader should know how to handle base64 images in both Angular and Laravel.
 
 ### Setting up Angular application
 There are different ways of setting up Angular applications. However, this article installs our application using the Angular CLI.
@@ -46,7 +47,7 @@ Type in the following to check your currently installed version:
 # command to check the current ng version
 ng --version
 ...
-# My installed version CLI (this mamy differ from your version)
+# My installed version CLI (this may differ from your version)
 Angular CLI: 12.2.3
 # My current Node version 
 Node: 16.5.0 
@@ -66,7 +67,7 @@ ng new base64 # this installs a new angular application
 
 Depending on your internet connection, the above command may take some time to execute.
 
-Upon installation, `cd` into the project root and create an image component as follows:
+Upon installation, navigate into the project root and create an image component as follows:
 ```bash
 cd base64
 ng g c image
@@ -74,7 +75,7 @@ ng g c image
 
 The above command generates four files, including the template and TypeScript files.
 
-Now that we have got the image component, next, proceed and edit the `app.component.html` file as shown below:
+Now that we have the image component, edit the `app.component.html` file as shown below:
 
 ```html
 <app-image></app-image>
@@ -82,7 +83,7 @@ Now that we have got the image component, next, proceed and edit the `app.compon
 
 The above tags ensure that the image component gets displayed when the `AppComponent` is executed.
 
-Let's now proceed and edit our `ImageComponent` template as shown below:
+Let's change our `ImageComponent` template as shown below:
 ```html
 <div class="content mat-elevation-z8">
   <h2 class="text-center text-dark">Upload Image</h2>
@@ -99,7 +100,7 @@ Let's now proceed and edit our `ImageComponent` template as shown below:
 
 You notice we've added an `onchange` event handler in the above template. This ensures that an image will only be uploaded every time a new image is added.
 
-Next, proceed and edit the `ImageComponent` script file as shown below:
+Next, edit the `ImageComponent` script file as shown below:
 ```ts
 ...
 import {ApiService} from "../../../core/services/api.service";
@@ -213,12 +214,12 @@ export class ImageComponent implements OnInit {
 
 We have the `onSubmit()` method in the above script. This method is used to submit the uploaded base64 image.
 
-The `handleImageUpload()` method is our image handler. it first checks the image size being uploaded. If the image size meets our predefined size, we upload it.
+The `handleImageUpload()` method is our image handler. It first checks the image size being uploaded. If the image size meets our predefined size, we upload it.
 
-Next, we check if the image only contains the required MIME, i.e., JPG, PNG, and JPEG. When our checks are complete, we process our images using the `FileReader` inbuilt method.
+Next, we check if the image only contains the required MIME, i.e., JPG, PNG, and JPEG. When our checks are complete, we process our images using the `FileReader` method.
 
 ### Setting up the server for image upload
-Now that we've got the Angular application up and running let's set up our Laravel 8 server to handle the image.
+Now that we have the Angular application up and running let's set up our Laravel 8 server to handle the image.
 
 First, set up the database configurations by editing the `.env` file as shown below:
 ```properties
@@ -238,7 +239,7 @@ php artisan make:model Image --m
 
 The above command generates a model in the `App/Models` folder and a migration file.
 
-Now, let's proceed and edit both the model and the migration file as shown below:
+Now, edit both the model and the migration file as shown below:
 ```php
 <?php
 //edit model as shown below
@@ -254,7 +255,7 @@ class Image extends Model
 
 ```
 
-The above script creates a model with `image_path`, which we will later use to store our uploaded file's path.
+The above script creates a model with `image_path`, which we'll later use to store our uploaded file's path.
 
 ```php
 <?php
@@ -285,9 +286,9 @@ Next, execute the following commands to migrate our database:
 php artisan migrate
 ```
 
-With the database and model setup complete, let's proceed and create a controller to handle the image from the Angular application.  
+With the database and model setup complete, let's create a controller to handle the image from the Angular application.  
 
-To handle this, firstly, create an image repository in the `App/Repos` namespace and update it as follows:
+To handle this, first create an image repository in the `App/Repos` namespace and update it as follows:
 ```php
 <?php
 namespace App\Repos;
@@ -327,19 +328,17 @@ class ImageRepository
 
 ```
 
-In the above script, we have defined the `ImageRepository` class. The class has the `upload_image()` method that takes two parameters, the base64 image submitted from the frontend and the image_path.
+In the above script, we've defined the `ImageRepository` class. The class has the `upload_image()` method that takes two parameters, i.e, the base64 image submitted from the frontend and the image_path.
 
 The image path passed in the above method would be where we store the image.
 
 The function also has a couple of variables:
-- `$image_64` - is the holds the image in base64 format.
-- `$extension` - refers to the extension of the image i.e png.
-- `$imageName`  - We use the PHP inbuilt method `time()` and a random string concatenated together to come up with image name. This ensures uniqueness in image names.
+- `$image_64` holds the image in base64 format.
+- `$extension` refers to the extension of the image i.e png.
+- `$imageName`. We use the PHP inbuilt method `time()` and a random string concatenated together to come up with image name. This ensures uniqueness in image names.
 - The return statement returns the image path.
 
-Next, let's now proceed and create our controller as follows:
-
-First, run the following commands to create a controller in the `App/Http/Controllers` directory:
+Next, let's create our controller. Run the following commands to create a controller in the `App/Http/Controllers` directory:
 ```bash
 php artisan make:controller ImageUploaderController
 ```
@@ -383,7 +382,7 @@ Open this new file `App/Http/Controllers/ImageUploaderController.php` and update
     }
 ```
 
-In the above controller, we define the `createUploadedImages(Request $request)` method to handle the requests. Then, we proceed to validate this request and handle the image.
+In the above controller, we define the `createUploadedImages` method to handle the requests. Then, we proceed to validate this request and handle the image.
 
 We have called the image repository class to handle our image. We then create an image in the database table using the image class instance.
 
@@ -393,7 +392,7 @@ Finally, the return statement sends a success message to the uploading applicati
 ### Testing
 To test our application, we need to define our routes and ensure that all the images submitted to the server are base64.
 
-Therefore, proceed and edit the `routes/api.php` file as shown below:
+Therefore, edit the `routes/api.php` file as shown below:
 ```php
 ...
  Route::post('image-uploader',[ImageUploaderController::class,'createUploadedImages']);
@@ -420,12 +419,12 @@ Now that you have the API server running in your Angular application, edit the a
 
 The above api service ensures that we only submit the image to the route we have defined in the API server route.
 
-You have reached this far; congratulations, you can now handle images in the most straightforward way using Angular and Laravel.
+And with that, you can now handle images easily using Angular and Laravel.
 
 ### Conclusion
-In this article, we have discussed image upload in-depth. In addition, we have seen how we can convert images to base64 using events.
+In this article, we have discussed image upload in depth. We have also seen how we can convert images to base64 using events.
 
-We have seen how we can handle this base64 image using an image repository and save the image path to the database on the server.
+We have also seen how we can handle this base64 image using an image repository and save the image path to the database on the server.
 
 Happy coding!
 
