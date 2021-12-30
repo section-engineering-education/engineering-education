@@ -115,12 +115,12 @@ Our newly added namespaces:
 #### 3.2 - Declaring and initializing variables
 Just below the `Form1()` constructor, add the following code:
 ```C#
-RegistryKey Regkey, RegKey2;
+RegistryKey registryKey_1, registryKey_2;
 Int32 rbtn_Value1, rbtn_Value2, usb_Ports_Status, read_write_Status;
-string Regpath = "System\\CurrentControlSet\\Services\\USBSTOR";
-string ReadAndWriteRegPath2 = "System\\CurrentControlSet\\Control";
-string ReadAndWriteRegPath = "System\\CurrentControlSet\\Control\\StorageDevicePolicies";
-bool isAdmin;
+string registryPath = "System\\CurrentControlSet\\Services\\USBSTOR";
+string ReadAndWriteRegistryPath_1 = "System\\CurrentControlSet\\Control\\StorageDevicePolicies";
+string ReadAndWriteRegistryPath_2 = "System\\CurrentControlSet\\Control";
+bool isUserAdmin;
 [DllImport("shell32")]static extern bool IsUserAnAdmin();
 ```
 The strings in the above snippet contain paths to windows operating system device configurations ie: windows registry.
@@ -135,15 +135,15 @@ In this method add the following code :
 ```C#
 private void Form1_Load(object sender, EventArgs e)
         {
-            isAdmin = IsUserAnAdmin();
-            if (isAdmin == false)
+            isUserAdmin = IsUserAnAdmin();
+            if (isUserAdmin == false)
             {
                 MessageBox.Show("You don't have admini privileges", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             else
             {
-                Regkey = Registry.LocalMachine.OpenSubKey(Regpath, true);
-                usb_Ports_Status = Convert.ToInt32(Regkey.GetValue("Start"));
+                registryKey_1 = Registry.LocalMachine.OpenSubKey(registryPath, true);
+                usb_Ports_Status = Convert.ToInt32(registryKey_1.GetValue("Start"));
                 //check the current state of the usb ports,whether they are enabled or disabled
                 // 3 for enabled & 4 for Disabled
                 if (usb_Ports_Status == 3)
@@ -154,12 +154,12 @@ private void Form1_Load(object sender, EventArgs e)
                 {
                     radioButton2.Checked = true;
                 }
-                RegKey2 = Registry.LocalMachine.OpenSubKey(ReadAndWriteRegPath, true);
+                registryKey_2 = Registry.LocalMachine.OpenSubKey(ReadAndWriteRegistryPath_1, true);
                 try
                 {
-                    read_write_Status = Convert.ToInt32(RegKey2.GetValue("WriteProtect"));
+                    read_write_Status = Convert.ToInt32(registryKey_2.GetValue("WriteProtect"));
                     //check the current state of the removable drive,whether its are write protected or not
-                // 1 for write protected & 0 for not write protected
+                    // 1 for write protected & 0 for not write protected
                     if (read_write_Status == 1)
                     {
                         radioButton3.Checked = true;
@@ -226,14 +226,14 @@ private void button1_Click(object sender, EventArgs e)
         {
             try
             {
-                Regkey = Registry.LocalMachine.OpenSubKey(Regpath, true);
-                Regkey.SetValue("Start", rbtn_Value1);
+                registryKey_1 = Registry.LocalMachine.OpenSubKey(registryPath, true);
+                registryKey_1.SetValue("Start", rbtn_Value1);
                 if (groupBox1.Enabled == true)
                 {
-                    RegKey2 = Registry.LocalMachine.OpenSubKey(ReadAndWriteRegPath2, true);
-                    RegKey2.CreateSubKey("StorageDevicePolicies");
-                    RegKey2 = Registry.LocalMachine.OpenSubKey(ReadAndWriteRegPath, true);
-                    RegKey2.SetValue("WriteProtect", rbtn_Value2);
+                    registryKey_2 = Registry.LocalMachine.OpenSubKey(ReadAndWriteRegistryPath_2, true);
+                    registryKey_2.CreateSubKey("StorageDevicePolicies");
+                    registryKey_2 = Registry.LocalMachine.OpenSubKey(ReadAndWriteRegistryPath_1, true);
+                    registryKey_2.SetValue("WriteProtect", rbtn_Value2);
                 }
             }
             catch (Exception ex)
@@ -244,7 +244,7 @@ private void button1_Click(object sender, EventArgs e)
             }
             else if ((rbtn_Value1 == 3) && (rbtn_Value2 == 0))
             {
-                MessageBox.Show("USB Ports Enabled /n Readonly Disabled");
+                MessageBox.Show("USB Ports Enabled \n     and \n Readonly Disabled");
             }
             else
             {
@@ -297,6 +297,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+
 using Microsoft.Win32;                  // new
 using System.Runtime.InteropServices;   // new
 
@@ -308,25 +309,26 @@ namespace IOManager
         {
             InitializeComponent();
         }
-        RegistryKey Regkey, RegKey2;
+
+        RegistryKey registryKey_1, registryKey_2;
         Int32 rbtn_Value1, rbtn_Value2, usb_Ports_Status, read_write_Status;
-        string Regpath = "System\\CurrentControlSet\\Services\\USBSTOR";
-        string ReadAndWriteRegPath2 = "System\\CurrentControlSet\\Control";
-        string ReadAndWriteRegPath = "System\\CurrentControlSet\\Control\\StorageDevicePolicies";
-        bool isAdmin;
+        string registryPath = "System\\CurrentControlSet\\Services\\USBSTOR";
+        string ReadAndWriteRegistryPath_1 = "System\\CurrentControlSet\\Control\\StorageDevicePolicies";
+        string ReadAndWriteRegistryPath_2 = "System\\CurrentControlSet\\Control";
+        bool isUserAdmin;
         [DllImport("shell32")]static extern bool IsUserAnAdmin();
 
         private void Form1_Load(object sender, EventArgs e)
         {
-         isAdmin = IsUserAnAdmin();
-         if (isAdmin == false)
-         {
-          MessageBox.Show("You don't have admin privilleges","Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-         }
-         else
+            isUserAdmin = IsUserAnAdmin();
+            if (isUserAdmin == false)
             {
-                Regkey = Registry.LocalMachine.OpenSubKey(Regpath, true);
-                usb_Ports_Status = Convert.ToInt32(Regkey.GetValue("Start"));
+                MessageBox.Show("You don't have admini privileges", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            else
+            {
+                registryKey_1 = Registry.LocalMachine.OpenSubKey(registryPath, true);
+                usb_Ports_Status = Convert.ToInt32(registryKey_1.GetValue("Start"));
                 //check the current state of the usb ports,whether they are enabled or disabled
                 // 3 for enabled & 4 for Disabled
                 if (usb_Ports_Status == 3)
@@ -337,10 +339,12 @@ namespace IOManager
                 {
                     radioButton2.Checked = true;
                 }
-                RegKey2 = Registry.LocalMachine.OpenSubKey(ReadAndWriteRegPath, true);
+                registryKey_2 = Registry.LocalMachine.OpenSubKey(ReadAndWriteRegistryPath_1, true);
                 try
                 {
-                    read_write_Status = Convert.ToInt32(RegKey2.GetValue("WriteProtect"));
+                    read_write_Status = Convert.ToInt32(registryKey_2.GetValue("WriteProtect"));
+                    //check the current state of the removable drive,whether its are write protected or not
+                    // 1 for write protected & 0 for not write protected
                     if (read_write_Status == 1)
                     {
                         radioButton3.Checked = true;
@@ -354,7 +358,8 @@ namespace IOManager
             }
 
         }
- 
+
+        
         private void radioButton1_CheckedChanged(object sender, EventArgs e)
         {
             groupBox1.Enabled = true;
@@ -381,14 +386,14 @@ namespace IOManager
         {
             try
             {
-                Regkey = Registry.LocalMachine.OpenSubKey(Regpath, true);
-                Regkey.SetValue("Start", rbtn_Value1);
+                registryKey_1 = Registry.LocalMachine.OpenSubKey(registryPath, true);
+                registryKey_1.SetValue("Start", rbtn_Value1);
                 if (groupBox1.Enabled == true)
                 {
-                    RegKey2 = Registry.LocalMachine.OpenSubKey(ReadAndWriteRegPath2, true);
-                    RegKey2.CreateSubKey("StorageDevicePolicies");
-                    RegKey2 = Registry.LocalMachine.OpenSubKey(ReadAndWriteRegPath, true);
-                    RegKey2.SetValue("WriteProtect", rbtn_Value2);
+                    registryKey_2 = Registry.LocalMachine.OpenSubKey(ReadAndWriteRegistryPath_2, true);
+                    registryKey_2.CreateSubKey("StorageDevicePolicies");
+                    registryKey_2 = Registry.LocalMachine.OpenSubKey(ReadAndWriteRegistryPath_1, true);
+                    registryKey_2.SetValue("WriteProtect", rbtn_Value2);
                 }
             }
             catch (Exception ex)
@@ -399,7 +404,7 @@ namespace IOManager
             }
             else if ((rbtn_Value1 == 3) && (rbtn_Value2 == 0))
             {
-                MessageBox.Show("USB Ports Enabled /n Readonly Disabled");
+                MessageBox.Show("USB Ports Enabled \n     and \n Readonly Disabled");
             }
             else
             {
@@ -422,7 +427,6 @@ namespace IOManager
         
     }
 }
-
 ```
 
 
