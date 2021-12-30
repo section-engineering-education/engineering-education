@@ -35,7 +35,7 @@ To have a better understanding of this article, the reader should:
 - Have a valid google account.
 
 ### Benefits of having an online data entry form
-- Creating green bureaucracy on the internet has proven to be very useful in lowering the statistics access mistakes.
+Online data entry allows input and storage of information into a database of any given organization.
 Some of the advantages in statistics access include:
 
 * Brand Building
