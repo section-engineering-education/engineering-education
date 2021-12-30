@@ -5,8 +5,8 @@ published: true
 url: /file-handling-in-java-and-csharp/
 title: File Handling Operations in Java and C#
 description: This article will help readers understand how file management works in Java and C#. These operations allow one to develop high quality applications.
-author: apondi-ashley
-date: 2021-12-22T00:00:00-06:10
+author: Apondi-Ashley
+date: 2021-12-30T00:00:00-12:25
 topics: [Languages]
 excerpt_separator: <!--more-->
 images:
@@ -382,18 +382,18 @@ In the above code, we have erased the 'example2.txt' file permanently using the 
 ### Classes and methods that manage files
 
 #### In Java 
-- `FileWriter()`- This class is character-oriented which writes data to a file.
+- `FileWriter()` - This class is character-oriented which writes data to a file.
 - `FileReader()` - This class allows one to read data from a file in byte format.
 - `delete()` - This function returns a **boolean** value after deleting a file.
-- `getName()`- This method is of a **string** type and gives out the file name.
+- `getName()` - This method is of a **string** type and gives out the file name.
 - `read()` - This technique reads data from a file.
 - `write()`- This function gives out the output of the file.
-- `IOException`- This exception is for handling failures or errors in a program.
+- `IOException` - This exception is for handling failures or errors in a program.
 
 #### In C#
-`StreamWriter()`- This class is used for character output.
-`StreamReader()`- This class is used for character input.
-`Close()` - This method closes an open file.
+- `StreamWriter()` - This class is used for character output.
+- `StreamReader()` - This class is used for character input.
+- `Close()` - This method closes an open file.
 
 #### Importance of file handling 
 - Programs can process and use data.
