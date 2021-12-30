@@ -5,15 +5,15 @@
 
 Not knowing the lyrics of a song, is a problem most song-lovers encounter. In this article, you will be creating a platform where users can search for lyrics by entering the artist name or title of the song.
 
-You will be creating the search app using HTML5, CSS3, Vanilla JavaScript, async-await with fetch method, OVH Application Programming Interface (API), and EcmaScript 2015 (ES6) features like arrow functions.
+You will be creating the search app using HTML5, CSS3, Vanilla JavaScript, async-await with fetch method, OVH Application Programming Interface (API), and ECMAScript 2015 (ES6) features like arrow functions.
 
 ### Prerequisites
 
 To follow along with this tutorial, you need the following:
 
-- A code editor (like Visual Studio Code)
-- Basic knowledge of HTML5, CSS, and JavaScript
-- A laptop with an internet connection
+- A code editor (like Visual Studio Code).
+- Basic knowledge of HTML5, CSS, and JavaScript.
+- A laptop with an internet connection.
 
 ### Structuring the lyrics search app with HTML5
 To begin, create a folder named `lyrics-app`, then you need to create three files in the folder: `lyrics.html`, `lyrics.css`, and `lyrics.js`.
@@ -339,7 +339,7 @@ REGEX usage in this article, help to look through our data (lyrics) for:
 - Carriage return alone.
 - Carriage return with a new line. 
 
-If any of the above is found, REGEX `replace` method replaces it with the <br> (break line). 
+If any of the instances defined above is found, REGEX `replace` method replaces it with the <br> (break line). 
 
 The `/g` is a regular expression flag, it means globally, the entire data (lyrics) should be searched through (for all matches).
 
