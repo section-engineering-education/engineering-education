@@ -5,7 +5,7 @@ published: true
 url: /file-handling-in-java-and-csharp/
 title: File Handling Operations in Java and C#
 description: This article will help readers understand how file management works in Java and C#. These operations allow one to develop high quality applications.
-author: Apondi-Ashley
+author: apondi-ashley
 date: 2021-12-30T00:00:00-12:25
 topics: [Languages]
 excerpt_separator: <!--more-->
