@@ -1,6 +1,6 @@
-Svelte is a JavaScript front-end framework for building reactive and interactive UI components like React, Angular, and Vue. Svelte is a compiler, unlike its peers, which provides a JavaScript runtime to the browser to make your code work. It converts the declarative code that you write into imperative code that works with native browser APIs. This produces highly performant applications in a very small codebase, allowing you to write complex applications.
+Svelte is a JavaScript front-end framework for building reactive and interactive UI components like React, Angular, and Vue. Itis also a compiler. Unlike other frameworks, which provide a JavaScript runtime to the browser to make your code work, Svelte converts the declarative code that you write into imperative code that works with native browser APIs. This produces high-performance applications with a small codebase, allowing you to write complex applications.
 
-This tutorial will build a portfolio application that demonstrates how to utilize Vite, TypeScript, and Tailwind CSS in a Svelte application.
+In this tutorial, we will build a portfolio application that shows how to use Vite, TypeScript, and Tailwind CSS in a Svelte application.
 
 ### Prerequisites
 - Basic knowledge working with TypeScript, Tailwind CSS and Svelte.
@@ -21,7 +21,7 @@ This tutorial will build a portfolio application that demonstrates how to utiliz
 - [Additional Resources](#additional-resources)
 
 ### Setting up the application with Vite and TypeScript
-Vite is a JavaScript development server tooling that makes front-end development more easier. Vite distributes your app source files through native ES modules, allowing you to quickly start or reload your development server. Vite starts the server right away, and it takes the dependencies that don't change often and pre-bundles them using ES build.
+Vite is a JavaScript development server tool that makes front-end development easier. Vite distributes your app source files through native ES modules, allowing you to quickly start or reload your development server. Vite starts the server right away, and it takes the dependencies that don't change often and pre-bundles them using ES build.
 
 It then uses route-based code splitting to figure out what parts of the code need to be loaded. It does this on the fly, and it doesn't have to rebundle everything every time.
 
@@ -53,7 +53,7 @@ The above command will create an interactive window. Go ahead and;
 
 - Enter your preferred application name as `svelte-app`.
 - Select `svelte` as the framework you want to use.
-- Select `svelte.ts` since you are working with TypeScript.
+- Select `svelte.ts` as the framework variant since you are working with TypeScript.
 
 ![svelte-app](/engineering-education/svelte-with-vite-typescript-and-tailwind-css/svelte.png)
 
@@ -417,7 +417,7 @@ To view this portfolio, launch your Svelte development server using `npm run dev
 ![our-team-section](/engineering-education/svelte-with-vite-typescript-and-tailwind-css/our-team-section.png)
 
 ### Conclusion
-This guide has illustrated how you set up a TypeScript Svelte boilerplate that you can use to write TypeScript code within a Svelte application. We also configured and used TailwindCSS to create a Svelte portfolio application.
+This guide has illustrated how you set up a TypeScript Svelte boilerplate that you can use to write TypeScript code within a Svelte application. We also configured and used TailwindCSS to create a Svelte portfolio application. For further reference, check this project's code on [GitHub](https://github.com/Joakim-gakure/Svelte-with-Vite-TypeScript-and-Tailwind-CSS).
 
 ### Additional Resources
 For further information on the tools and resources used in this guide, check the following articles.
