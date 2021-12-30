@@ -7,7 +7,7 @@ title: How to Recover Data from Digital Storage Media using Autopsy
 description: This article will outline some of the tools used in data recovery and give the reader a walk through the process of data recovery using autopsy as a digital forensics data recovery tool.
 author: ruth-mare
 date: 2021-12-19T01:00:00-17:40
-topics: []
+topics: [Security]
 excerpt_separator: <!--more-->
 images:
 
@@ -36,15 +36,15 @@ To follow along with this tutorial, the reader should have:
 
 Data loss can be caused by several reasons, some of which are as follows:
 1. Storage media theft – when computers, laptops, hard drives, or USB drives are stolen from the owner, the data stored within it is equally considered stolen and therefore lost.
-2. Liquid spillage -spilling liquid on a laptop, Hard drive, USB drive, or computer can cause a short circuit, making recovery of the computer functionalities difficult, not to talk of the data stored inside.
+2. Liquid spillage - Accidentally spilling liquid on a laptop, Hard drive, USB drive, or computer can cause a short circuit within the computer electric components. When this happens, both recovery of the computer functionalities and the data stored inside becomes difficult.
 3. Natural Disasters – Disasters such as fire, floods, and earthquakes can happen when they are least expected and pose devastating impacts on business. They can destroy computers and the data stored altogether.
 4. Computer software corruption – When software shuts down unexpectedly or improperly, serious issues for data may occur such as corruption or deletion of data, wasting time, and causing loss of valuable data.
-5. Hard drive formatting – When hard drives are accidentally formatted, instant data loss may occur.
+5. Hard drive formatting – Apart from intentional formatting of hard drives, hard drives can be accidentally formatted; this results in instant data loss.
 6. Bad actors – When unauthorized people get access to data on a network, they can cause serious damage to, deletion of, and steal the data.
-7. Human Mistakes – Human mistakes cannot be avoided completely, however, they can cause the unintentional deletion of data files.
+7. Human Mistakes – Human mistakes cannot be avoided completely, however, they can cause massive loss of computer data such as the unintentional deletion of data files.
 8. Computer viruses and malware - Computer viruses can steal and delete data.
-9. Hard drive damage - The majority of data losses are caused by hardware malfunctions.
-10. Power Loss – Power loss not only can result in the loss of unsaved data but can also cause existing files to be corrupted as a result of improper shutdown procedures.
+9. Hard drive damage - Computer disks that malfunction or get damaged could cause data losses. This accounts for the majority loss of data.
+10. Power Loss – Power loss often result in improper shutdown procedures; this not only cause loss of unsaved data but may also cause existing files to be corrupted.
 
 ### Tools used in data recovery
 There are various tools used in data recovery, some are free, and others are paid for.
