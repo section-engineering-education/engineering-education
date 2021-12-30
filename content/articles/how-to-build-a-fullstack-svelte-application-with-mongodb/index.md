@@ -6,7 +6,7 @@ url: /how-to-build-a-fullstack-svelte-application-with-mongodb/
 title: Building a fullstack Svelt Application with MongoDB
 description: This tutorial will teach the readers more about Svelte and how to create a Svelte application with MongoDB.
 author: joseph-chege
-date: 2021-12-23T00:00:00-13:20
+date: 2021-12-30T00:00:00-05:03
 topics: [Languages]
 excerpt_separator: <!--more-->
 images:
@@ -15,7 +15,7 @@ images:
     alt: Building a fullstack Svelt Application with MongoDB Hero Image
 ---
 
-Svelte is a new fronted JavaScript approach to building user interfaces. This introduces a new alternative that use can use besides React, Angular, Vue. However, Svelte is a compiler, whereas the other alternatives are frameworks/libraries. 
+Svelte is a new fronted JavaScript approach to building user interfaces. This introduces a new alternative that we can use besides React, Angular, Vue. However, Svelte is a compiler, whereas the other alternatives are frameworks/libraries. 
  <!--more-->
 When you build your apps with Svelte, you run the Svelte compiler that automatically goes over your code and files. This creates bundled JavaScript instructions that execute in the DOM at runtime. Instead of using techniques like virtual DOM diffing, Svelte writes code that surgically updates the DOM when the state of your app changes.
 
@@ -152,7 +152,7 @@ app.delete('/api/todos', async (req, res, next) => {
 });
 ```
 
-Ensure that the development server is still running, then open Postman and send a `POST` request to `http://localhost:4000/api/todos`. Then, select `Raw' at the body's tab, set `JSON` as the body format, add the following sample data, and hit `Send`.
+Ensure that the development server is still running, then open Postman and send a `POST` request to `http://localhost:4000/api/todos`. Then, select `Raw` at the body's tab, set `JSON` as the body format, add the following sample data, and hit `Send`.
 
 ```JSON
 {
@@ -163,11 +163,11 @@ Ensure that the development server is still running, then open Postman and send 
 
 The response on the Postman `Body` section should be similar to;
 
-![adding-todos-response](/engineering-education/how-to-build-a-fullstack-svelte-application-with-mongodb/adding-todos-response.PNG)
+![adding-todos-response](/engineering-education/how-to-build-a-fullstack-svelte-application-with-mongodb/adding-todos-response.png)
 
 You can also send a `GET` request to `http://localhost:4000/api/todos` to fetch the added data.
 
-![getting-todos-response](/engineering-education/how-to-build-a-fullstack-svelte-application-with-mongodb/getting-todos-response.PNG)
+![getting-todos-response](/engineering-education/how-to-build-a-fullstack-svelte-application-with-mongodb/getting-todos-response.png)
 
 ### Setting up a Svelte application
 To set up a Svelte application, we will use [vite](https://vitejs.dev/). So, in the project folder (outside the `server` folder), create a new directory, name it `client`. 
@@ -190,7 +190,7 @@ This will create a Svelte application within a `svelte-todos-app` directory. Nav
 cd svelte-todos-app
 ```
 
-Then Install the project dependencies using this command;
+Then install the project dependencies using this command;
 
 ```bash
 npm install
@@ -204,7 +204,7 @@ npm run dev
 
 You can access your basic Svelte application on your browser using `http://localhost:3000`.
 
-![default-svelte-landing-page](/engineering-education/how-to-build-a-fullstack-svelte-application-with-mongodb/default-svelte-landing-page.PNG)
+![default-svelte-landing-page](/engineering-education/how-to-build-a-fullstack-svelte-application-with-mongodb/default-svelte-landing-page.png)
 
 ### Creating Svelte components
 We will be writing three Svelte components;
@@ -218,7 +218,7 @@ Go ahead and create `Todo.svelte`, `Todos.svelte`, and `AddTodo.svelte` files in
 #### Setting up the Todo component
 In the *Todo.svelte* file, start by creating a prop used to render data.
 
-```svelte
+```js
 <script>
     export let todo;
     async function deleteTodo(todo) {
@@ -241,7 +241,7 @@ const response = await fetch('http://localhost:4000/api/todos/', {
 
 Then render the data the way we want to display it on a web page.
 
-```svelte
+```js
 <article>
     <div class="todo-info">
         <h1>{todo.title}</h1>
@@ -284,7 +284,7 @@ article {
 #### Setting up the Todos component
 In the `Todos.svelte` file, begin by importing the `onMount()` method and the `Todo` component.
 
-```svelte
+```js
 <script>
 import {onMount} from "svelte";
 import Todo from "Todo.svelte";
@@ -292,13 +292,13 @@ import Todo from "Todo.svelte";
 
 - Define the variable to hold our todos.
 
-```svelte
+```js
 let todos = [];
 ```
 
 - Define an `async` `onMount()` function to fetch the todos when the component is rendered.
 
-```svelte
+```js
 onMount(async () => {
     await fetch(`http://localhost:4000/api/todos/`)
         .then(r => r.json())
@@ -312,7 +312,7 @@ onMount(async () => {
 
 - Iterate through each todo retrieved and pass them through as a prop to the `Todo` component.
 
-```svelte
+```js
 { #if todos }
 { #each todos as todo }
 <ul>
@@ -363,7 +363,7 @@ li {
 #### Setting up the AddTodo component
 This component will provide a form where users will enter new todo details. In `AddTodo.svelte` file, add a function in the `script` section to handle `onsubmit`.
 
-```svelte
+```js
 <script>
     async function onSubmit(e) {
 
@@ -390,7 +390,7 @@ This component will provide a form where users will enter new todo details. In `
 
 Then show this form to a web page.
 
-```svelte
+```js
 <div class="form-container">
     <form on:submit|preventDefault={onSubmit}>
     <div class="form-group">
@@ -461,7 +461,7 @@ button {
 ### Bundling up the components
 We will render our application through the main component, `App.svelte`. Rewrite the `App.svelte` component as follows;
 
-```svelte
+```js
 <script>
   import Todos from './lib/Todos.svelte';
   import AddTodo from './lib/AddTodo.svelte';
@@ -487,7 +487,7 @@ We will render our application through the main component, `App.svelte`. Rewrite
 
 Ensure your development server is up and running and go to `http://localhost:3000` to test if the todos application is working.
 
-![todos-homepage](/engineering-education/how-to-build-a-fullstack-svelte-application-with-mongodb/todos-homepage.PNG)
+![todos-homepage](/engineering-education/how-to-build-a-fullstack-svelte-application-with-mongodb/todos-homepage.png)
 
 ### Conclusion
 Svelte is used to build frontend applications like React, Angular, and Vue. There might be a need to connect to a backend server that uses a database such as MongoDB. 
