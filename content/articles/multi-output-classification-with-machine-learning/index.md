@@ -294,3 +294,5 @@ Finally, we used our model to make predictions, the trained model was able to ma
 - [How to work with machine learnining pipeline](https://valohai.com/machine-learning-pipeline/)
 - [MultiOutputClassifier algorithm](https://scikit-learn.org/stable/modules/multiclass.html)
 
+---
+Peer Review Contributions by: [Willies Ogola](/engineering-education/authors/willies-ogola/)
