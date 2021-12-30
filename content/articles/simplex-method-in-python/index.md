@@ -10,7 +10,7 @@ In this article, we shall look at how this algorithm work.
 
 To understand how this algorithm works, let's consider the following problem:
 
-Manufacture of bicycles builds racing, touring, and models. The bicycles are made of both aluminum and steel. The company has available 91800 units of steel and 42000 of aluminum. The racing, touring, and mountain models need 17, 27, and 15 units of steel, and 12, 21, and 15 units of aluminum, respectively. How many of each type of bicycle should be made to maximize the profit if the company makes 8 dollars per racing bike, 12dollars per touring bike, and 22 dollars per mountain bike? What is the maximum possible profit?
+A bicycle manufacturer makes touring, racing, and model bicycles. These bicycles are made of aluminum and steel. The company has 91800 steel units and 42000 aluminum units. The racing, touring, and mountain models require 17, 27, and 15 steel units and 12, 21, and 15 aluminum units respectively. A company makes 8 dollars per racing bike, 12 dollars per touring bike, and 22 dollars per mountain bike. In order to maximize profits, how many of each type should be produced? What is the maximum profit that can be made?
 
 ### Setting up a Simplex method
 Now, many optimization problems we will come across are in statement form. From this statement, we need to formulate our optimization problem correctly. Therefore, we chose this kind of problem and not an already developed one to show you how you can systematically develop an optimization problem so that in the future, you can do so on your own.
