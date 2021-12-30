@@ -11,7 +11,7 @@ topics: [Languages]
 excerpt_separator: <!--more-->
 images:
 
- - url: /engineering-education/creating-an-application-using-beeware/hero.jpg
+ - url: /engineering-education/creating-an-application-using-beeware/hero.png
    alt: BeeWare Application  Image
 ---
 
