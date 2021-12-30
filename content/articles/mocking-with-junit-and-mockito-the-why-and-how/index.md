@@ -1,6 +1,5 @@
 ### Mocking with JUnit and Mockito - The Why and How
-The idea of unit testing is that we want to verify that our code works regardless of its dependencies. Let us imagine
-a service that processes orders from a database.
+The idea of unit testing is that we want to verify that our code works regardless of its dependencies. Let us imagine we want to write mock test for a service that depends on a database for processing orders.
 It is cumbersome to set up an entire database to test this service.
 Here mocking comes into play. The concept of mocking revolves around creating test doubles that mock the behaviour of
 external dependencies in a system. In our scenario, we can create a test double (generally known as a mock) of our database
@@ -228,7 +227,7 @@ allows us to return a given value whenever we invoke a specific method. The simp
 
 The ```when()``` method represents a **trigger**. The "`when` "trigger does not work when the method is void.
 
-The following is the syntax of importing "`when` ":
+The following is the syntax of importing ```when```:
 ```java
 import static org.mockito.Mockito.when;
 ```
@@ -848,7 +847,7 @@ object exactly once. Finally, we verify that the ```findHostelByName``` method i
 Using ```verify``` with an exact parameter passed in as an argument is also possible.
 
 * verifyNoMoreInteractions(```Syntax: void verifyNoMoreInteractions()```): This verifies that no more interactions
-  happened in order. It differs from ```Mockito.verifyNoMoreInteractions(Object …)``` because the order of verification matters.
+  happened in order. It differs from ```Mockito.verifyNoMoreInteractions(Object …)``` because the order of verification matters as quipped by this [source](mockito/InOrder.java at main · mockito/mockito · GitHub. https://github.com/mockito/mockito/blob/main/src/main/java/org/mockito/InOrder.java).
   More specifically, the ```verifyNoMoreInteractions``` method ensures no interaction is left for verification.
   To demonstrate this, let us borrow an example from the [java documentation](https://www.javadoc.io/static/org.mockito/mockito-core/2.6.9/org/mockito/InOrder.html#verifyNoMoreInteractions()) for ```InOrder``` interface
 
@@ -988,6 +987,9 @@ Happy Coding!
 4. [Mockito Verify Cookbook](https://www.baeldung.com/mockito-verify).
 5. [Stubbing and Mocking with Mockito and JUnit](https://semaphoreci.com/community/tutorials/stubbing-and-mocking-with-mockito-2-and-junit).
 6. [Interface InOrder](https://www.javadoc.io/doc/org.mockito/mockito-core/2.6.9/org/mockito/InOrder.html).
+
 7. [Mockito - verifyNoMoreInteractions() and verifyNoInteractions()](https://www.logicbig.com/tutorials/unit-testing/mockito/verify-no-more-interactions.html).
 8. [Interface VerificationMode](https://www.javadoc.io/doc/org.mockito/mockito-core/2.2.6/org/mockito/verification/VerificationMode.html).
-9. Mastering Unit Testing Using Mockito and JUnit- An advanced guide to mastering unit testing using Mockito and JUnit by Sujoy Acharya.
+9. [Clean Unit Tests with Mockito - Reflectoring](https://reflectoring.io/clean-unit-tests-with-mockito/).
+10. [mockito/InOrder.java at main · mockito/mockito · GitHub](https://github.com/mockito/mockito/blob/main/src/main/java/org/mockito/InOrder.java)
+11. Mastering Unit Testing Using Mockito and JUnit- An advanced guide to mastering unit testing using Mockito and JUnit by Sujoy Acharya.
