@@ -378,6 +378,12 @@ Our final code should be as follows:
 ```
 ![final-result](engineering-education/building-a-routing-service-using-mapquest-api/final.gif)
 
+[Here](https://github.com/muyiwexy/mapquest-API) is a link to the Github repository.
+
 ### Conclusion
 On careful implementation of the processes above, we have been able to create a map layer, an input form and a routing function.
-[Here](https://github.com/muyiwexy/mapquest-API) is a link to the Github repository. Happy coding!
+
+Happy coding!
+
+---
+Peer Review Contributions by: [Willies Ogola](/engineering-education/authors/willies-ogola/)
