@@ -14,6 +14,16 @@ images:
   - url: /time-series-decomposition-in-python/hero.png
     alt: Getting started with Time Series Decomposition in Python Hero Image
 ---
+
+### Table of Contents
+- [Time Series Decomposition in Python](#time-series-decomposition-in-python)
+- [Prerequisites](#prerequisites)
+- [Components of the time series](#components-of-the-time-series)
+- [Python time series decomposition](#python-time-series-decomposition)
+  - [Step 1: Simulating time series components:](#step-1-simulating-time-series-components)
+  - [Step 2: Time series decomposition](#step-2-time-series-decomposition)
+- [Conclusion](#conclusion)
+
 ### Time Series Decomposition in Python
 Time series refers to the data that is sequentially collected over time. Various components usually contribute to any observed time series value at any particular point in time.
 <!--more-->
@@ -22,7 +32,7 @@ Thus a time series can be decomposed such that each component exists independent
 Analyzing a model with many causes of variation is computationally expensive. Therefore, we decompose those components whose variation is deterministic. The indeterministic ones, residuals, are then used to analyze autocorrelation.
 
 ### Prerequisites
-To gain the maximum benefit from this course, they must have basic Python programming knowledge.
+To gain the maximum benefit from this material, the learner must have basic Python programming knowledge. Also, they need to be familiar with the Google Colab or Jupiter Notebook.
 
 ### Components of the time series
 At any given time, a time series is usually composed of the following components:
@@ -103,7 +113,7 @@ import matplotlib.pyplot as plt
 from statsmodels.tsa.seasonal import seasonal_decompose as sm
 ```
 
-**Simulating time series components:**
+### Step 1: **Simulating time series components:**
 To begin, let us set the range of our time series.
 
 ```python
@@ -207,10 +217,10 @@ From the output, we notice that the seasonality component of this time series ch
 
 To this point, we have created our two types of time series. The task in our hands is to decompose these models independently back to their initial components.
 
-### Time series decomposition
+### Step 2: Time series decomposition
 In this section, we shall get started by decomposing the Additive time series model we just created.
 
-### Additive time series decomposition
+- ### Additive time series decomposition
 Let's get the required library in place.
 
 ```python
@@ -252,7 +262,7 @@ Output:
 
 The first plot represents our original time series. The second plot represents the trend of our time series model extracted from the original time series. Finally, the third and fourth plots represent seasonality and residual components in the same time series.
 
-### Decomposing multiplicative time series model
+- ### Decomposing multiplicative time series model
 We shall follow similar steps as the ones we used to decompose the Additive time series except that we specify the model as the multiplicative time series.
 
 So the the following code carry out this activity.
