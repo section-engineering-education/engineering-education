@@ -1,32 +1,40 @@
+
 {{ define "main" }}
+
+{{ $author_page := (printf "/authors/%s/index.md" .Params.author) }}
+
+<div class="sticky-wrapper">
+
+  <aside class="author-sidebar" id="stickyAuthorSidebar">
+    <h4>EngEd Author Bio</h4>
+    {{ with $.Site.GetPage $author_page }}
+      <div class="author-header">
+        {{ range .Resources }}
+          <div class="img-wrap">
+            <img class="avatar" src="{{ (.Resize "180x").Permalink }}">
+          </div>
+        {{ end }}
+        <div class="author-info">
+          <h3><a class="link-basic" href="{{ .Permalink }}">{{ .Params.title }}</a></h3>
+          <div class="bio">
+            {{ .Content }}
+          </div>
+        </div>
+      </div>
+      <a class="sidebar-profile-link" href="{{ .Permalink }}">View author's full profile <img src="/engineering-education/images/right-arrow.png" alt="View authors profile arrow icon" /></a>
+    {{ end }}
+  </aside>
+</div>
+
 <article> 
   
   {{ partial "engineering-education/eng-ed-banner.html" . }}
   <section class='hero-blocks xs-pt-50 xs-pb-50 sm-pt-100 sm-pb-100 -blue-blocks'>
 
-    <div class="hero-blocks-mobile">
-
-      <div class="hero-blocks-mobile-left">
-        <div class="hero-blocks-mobile-left-large"></div>
-      </div>
-
-      <div class="hero-blocks-mobile-right">
-        <div class="hero-blocks-mobile-right-small"></div>
-        <div class="hero-blocks-mobile-right-large"></div>
-        <div class="hero-blocks-mobile-right-stripes"></div>
-      </div>
-
-    </div>
-
     <div class="section-container relative">
 
-      <div class="hero-blocks-left-blocks">
-        <div class="hero-blocks-left-blocks-large"></div>
-        <div class="hero-blocks-left-blocks-stripes"></div>
-      </div>
-
-    <div class="hero-blocks-inner relative prl-5">
-      <div class="hero-blocks-middle">
+      <div class="hero-blocks-inner relative prl-5">
+        <div class="hero-blocks-middle">
 
         <h1 class="title-2 xs-mb-30">{{ .Title }}</h1>
         <h5 class="text-16 text-blockquote">{{ .Date.Format "January 2, 2006" }}</h5>
@@ -45,16 +53,11 @@
         </div>
       </div>
 
-      <div class="hero-blocks-right-blocks">
-        <div class="hero-blocks-right-blocks-small"></div>
-        <div class="hero-blocks-right-blocks-large"></div>
-        <div class="hero-blocks-right-blocks-stripes"></div>
-      </div>
-
     </div>
   </section>
-
+  
   <section class="section-rich-text blog-styling xs-pb-30">
+    
     <div class="section-container">
       <div class="section-rich-text-inner prl-5">
         <div class="social-list">
@@ -81,55 +84,14 @@
 
         {{ else }}
         {{ end }}
-
-        {{ $author_page := (printf "/authors/%s/index.md" .Params.author) }}
-        {{ with $.Site.GetPage $author_page }}
-          <div class="section-rich-text-leading bio">
-            <hr>
-            <h4>About the author</h4>
-            {{ range .Resources }}
-            <img class="avatar" src="{{ (.Resize "180x").Permalink }}">
-            {{ end }}
-            <span class="text-22"><a class="link-basic" href="{{ .Permalink }}">{{ .Params.title }}</a></span>
-            <p>
-              {{ .Content }}
-            </p>
-            <ul class="social">
-              {{ with .Params.twitter }}
-                <li>
-                  <i class="twitter"></i>
-                  <a href="{{ . }}" target="_blank">Follow @{{ index (last 1 (split . "/")) 0 }}</a>
-                </li>
-              {{ end }}
-              {{ with .Params.linkedin }}
-                <li>
-                  <i class="linkedin"></i>
-                  <a href="{{ . }}" target="_blank">Connect on LinkedIn</a>
-                </li>
-              {{ end }}
-              {{ with .Params.github }}
-                <li>
-                  <i class="github"></i>
-                  <a href="{{ . }}" target="_blank">Follow @{{ index (last 1 (split . "/")) 0 }} on GitHub</a>
-                </li>
-              {{ end }}
-              {{ with .Params.website }}
-                <li>
-                  <i class="website"></i>
-                  <a href="{{ . }}" target="_blank">Visit website</a>
-                </li>
-              {{ end }}
-            </ul>
-          </div>
-        {{ end }}
       </div>
     </div>
   </section>
+  <div class="comments-wrapper">
+    <div id="hyvor-talk-view"></div>
+  </div>
 </article>
 
-<div class="comments-wrapper">
-  <div id="hyvor-talk-view"></div>
-</div>
 
 {{ if eq (getenv "HUGO_ENV") "production" | or (eq $.Site.Params.env "production") }}
   <script type="text/javascript">
