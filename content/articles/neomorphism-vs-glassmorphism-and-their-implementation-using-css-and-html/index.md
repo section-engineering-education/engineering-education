@@ -1,37 +1,34 @@
-#### Introduction
-
 A beautiful user interface (UI) design will ensure a user remains fulfilled by a webpage. Developers have many ways of ensuring their UI designs stand out from the rest.
 
 This article explores how to change the look and feel of your upcoming website using neomorphism and glassmorphism.
 
-#### What You Will Learn
-
+### What You Will Learn
 - The two UI design strategies: neomorphism and glassmorphism.
 - The importance of an intriguing and captivating UI design.
 - The various points of your page to fit each design strategy.
 - How to use the two design patterns to design a login page using CSS and HTML.
 
-#### Importance of an exemplary user interface design
+### Importance of an exemplary user interface design
 Developers build websites to pass information to users. You can develop a simple website using a markup language and be done with it. But, a good UI/UX design adds many advantages to your site. Some of these advantages include:
 
-- Improves users' experience as they will enjoy visiting the site. This sets a good first impression for your visitors.
+- Improving a users' experience as they will enjoy visiting the site. This sets a good first impression for your visitors.
 - It helps raise your website's Search Engine Optimization (SEO) rankings due to an increased liking from your site's visitors.
 - It boosts your website presence on the internet when it's still new.
 - It creates consistency in your site as users get to find whatever they need quickly.
 - Using proper fonts and eye-pleasing colors makes it easier for your visitors to navigate around a website.
 - The website's UI is a branding tool that builds trust between you and your users.
 
-#### Neomorphism
+### Neomorphism
 In 2020, neomorphism got the attention of many developers on the internet when it got applied to UI/UX design. But, the design pattern is still new and was inspired by skeuomorphism with a mix of minimalism.
 
 Some developers describe neomorphism as **the soft UI** because it uses light shadows to bring out its effects.
 neomorphism makes its UI elements seem like they are patched to the background. They are either protruding from it or inset into it.
 
-#### Use Cases
+### Use Cases
 - Neomorphism is favorable for websites that use many icons to increase accessibility. 
 - Neomorphism is also great for designing mobile user interfaces icons.
 
-#### Designing the Neomorphism UI
+### Designing the Neomorphism UI
 To create a good-looking neomorphism effect, use light shadows. Then, continue by combining the different box shadows and border-radius.
 
 Create a form element found inside a `<div>` tag of the ID `login-box.`
@@ -109,7 +106,7 @@ Neomorphism UI elements look patched to the background and appear either inset o
  
 In this case, make the login button protrude as the input elements appear inset. Remove the outline and border and give it the border-radius and box-shadow properties.
 
-````css
+```css
 button{
  margin-top: 80px;
  font-size: 20px;
@@ -126,12 +123,14 @@ button{
  -6px -6px 12px #ffaaff73;
  cursor: pointer;
 }
-````
+```
+
 >Use commas to separate the two values of the box-shadow.
 
 You can add pseudo-elements like `focus` to the input and button elements to change their behaviour and styles when clicked.
 
 The code for that is as follows:
+
 ````css
 button:focus{
  color: #3688db;
@@ -139,6 +138,7 @@ button:focus{
  inset -6px -6px 12px #ffaaff73;
 }
 ````
+
 The final HTML and CSS files will contain the following code:
 
 ```html
@@ -159,7 +159,9 @@ The final HTML and CSS files will contain the following code:
 		</form>
 	</div>
 </body>
+
 ```
+
 ```CSS
 html,body{
  height: 100%;
@@ -246,9 +248,9 @@ button:focus{
 ```
 The webpage will look like this:
 
-![Neomorphism](/engineering-education/neomorphism-vs-glassmorphism-and-their-implementation-using-css-and-html/neomorphism.png)
+![Neomorphism](/neomorphism-vs-glassmorphism-and-their-implementation-using-css-and-html/neomorphism.png)
  
-#### Glassmorphism and Its Use Cases
+### Glassmorphism and Its Use Cases
 
 Since neomorphism lacked proper accessibility,its popularity declined causing its fall and rise of glassmorphism. 
 
@@ -259,7 +261,8 @@ Glassmorphism is great for designing:
 - Mobile apps' UI 
 - Dashboards
 - App onboarding screens.
-#### Designing the Glassmorphism UI
+
+### Designing the Glassmorphism UI
 
 Set your elements with a semi-transparent background, a sublime shadow, and a border to achieve glassmorphism. Also, add a blur property to the background so that whatever is behind it is 'morphed' into the element.
 
@@ -365,10 +368,11 @@ Notice that I used a lighter colour in the elements' background. This increases 
 
 The the webpage will look like this:
 
-![glassmorphism](/engineering-education/neomorphism-vs-glassmorphism-and-their-implementation-using-css-and-html/glassmorphism.png)
+![glassmorphism](/neomorphism-vs-glassmorphism-and-their-implementation-using-css-and-html/glassmorphism.png)
  
-The final code for the two webpages can be found [here](https://github.com/lin-chez/Section-Repositories/tree/main/glassmorphism%20vs%20neomorphism) 
-#### Conclusion
+The final code for the two webpages can be found [here](https://github.com/lin-chez/Section-Repositories/tree/main/glassmorphism%20vs%20neomorphism)
+
+### Conclusion
 
 Glassmorphism and neomorphism are new trends. However, Glassmorphism is more recent and accepted by the developer community. Thus, developers will use the design for a long time to style websites until a better trend emerges. Concurrently, neomorphism will be around for a while due to its minimalist aspects. 
 
