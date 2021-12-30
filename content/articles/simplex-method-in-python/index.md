@@ -295,7 +295,7 @@ res = linprog(c, A_ub=A, b_ub=b,  bounds=(x, y), method='simplex', options={"dis
 print(res) # print results
 ```
 
-Execting this program yields:
+Executing this program yields:
 
 ```bash
 Optimization terminated successfully.
