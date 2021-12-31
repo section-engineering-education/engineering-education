@@ -237,7 +237,7 @@ Add the following to the name and values:
 ```yaml
 DOCKER_USERNAME: <your-username>
 DOCKER_PASSWORD: <your-password>
-DOCKER_HUB: <your-username>/<your-repository>
+DOCKERHUB_REPO: <your-username>/<your-repository>
 ```
 
 Having done all the steps above, navigate to the Github repository for the application, edit the workflow with the codes below. This will build the Docker image and send it to your Docker hub repository.
@@ -272,7 +272,7 @@ jobs:
           uses: docker/build-push-action/@v1
           with:
             username: ${{secrets.DOCKER_USERNAME}}
-            password: ${{secrets.DOCKER_PASS}}
+            password: ${{secrets.DOCKER_PASSWORD}}
             repository: ${{secrets.DOCKERHUB_REPO}}
             tag_with_ref: true
 ```
