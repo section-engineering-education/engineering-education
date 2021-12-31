@@ -1,5 +1,21 @@
-We use reports in our day-to-day activities. We may use them when we are purchasing products, services, or managing transactions. This includes summary reports, financial reports, inventory reports, and budget reports. These reports help in generating insights into an organization and making the right decision based on the knowledge generated from them. For example, an inventory report helps to decide on the appropriate reorder level.
+---
+layout: engineering-education
+status: publish
+published: true
+url: /jaspersoft-reports/
+title: How to generate reports in a Spring Boot app leveraging Jaspersoft
+description: In this tutorial, the reader will learn how generate Jaspersoft reports in their Spring Boot app in the form of a hosted pdf file. 
+author: david-mbochi
+date: 2021-12-31T00:00:00-12:00
+topics: [API]
+excerpt_separator: <!--more-->
+images:
+  - url: /engineering-education/jaspersoft-reports/hero.jpg
+    alt: Jaspersoft reports in Spring Boot
+---
 
+We use reports in our day-to-day activities. We may use them when we are purchasing products, services, or managing transactions. This includes summary reports, financial reports, inventory reports, and budget reports. These reports help in generating insights into an organization and making the right decision based on the knowledge generated from them. For example, an inventory report helps to decide on the appropriate reorder level.
+<!--more-->
 In this tutorial, the reader will learn how to design an inventory report and how to integrate it into a Spring Boot application. The reader will use custom products to generate a standard report for use by an organization.
 
 ### Table of contents
@@ -692,3 +708,6 @@ Enter the current date, select pdf as the file type, and press the generate butt
 We can play with the results using the current and previous dates. Some of the products created have `LocalDate.now()` to get the current date. Some of the products have `LocalDate.now().minusDays(1)` to get the date of the previous day.
 ### Conclusion
 In this tutorial, we have learned how to generate a pdf report using Jaspersoft studio. We have used an existing template and customized it to meet our needs. We have also learned how to load, compile, fill and generate the different types of documents.
+
+---
+Peer Review Contributions by: [John Amiscaray](/engineering-education/authors/john-amiscaray/)
