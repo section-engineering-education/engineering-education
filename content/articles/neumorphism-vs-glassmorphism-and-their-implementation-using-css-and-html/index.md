@@ -2,11 +2,11 @@
 
 A beautiful user interface (UI) design will ensure a user remains fulfilled by a webpage. Developers have many ways of ensuring their UI designs stand out from the rest.
 
-This article explores how to change the look and feel of your upcoming website using neomorphism and glassmorphism.
+This article explores how to change the look and feel of your upcoming website using neumorphism and glassmorphism.
 
 #### What You Will Learn
 
-- The two UI design strategies: neomorphism and glassmorphism.
+- The two UI design strategies: neumorphism and glassmorphism.
 - The importance of an intriguing and captivating UI design.
 - The various points of your page to fit each design strategy.
 - How to use the two design patterns to design a login page using CSS and HTML.
@@ -21,24 +21,24 @@ Developers build websites to pass information to users. You can develop a simple
 - Using proper fonts and eye-pleasing colors makes it easier for your visitors to navigate around a website.
 - The website's UI is a branding tool that builds trust between you and your users.
 
-#### Neomorphism
-In 2020, neomorphism got the attention of many developers on the internet when it got applied to UI/UX design. But, the design pattern is still new and was inspired by skeuomorphism with a mix of minimalism.
+#### Neumorphism
+In 2020, neumorphism got the attention of many developers on the internet when it got applied to UI/UX design. But, the design pattern is still new and was inspired by skeuomorphism with a mix of minimalism.
 
-Some developers describe neomorphism as **the soft UI** because it uses light shadows to bring out its effects.
-neomorphism makes its UI elements seem like they are patched to the background. They are either protruding from it or inset into it.
+Some developers describe neumorphism as **the soft UI** because it uses light shadows to bring out its effects.
+neumorphism makes its UI elements seem like they are patched to the background. They are either protruding from it or inset into it.
 
 #### Use Cases
-- Neomorphism is favorable for websites that use many icons to increase accessibility. 
-- Neomorphism is also great for designing mobile user interfaces icons.
+- Neumorphism is favorable for websites that use many icons to increase accessibility. 
+- Neumorphism is also great for designing mobile user interfaces icons.
 
-#### Designing the Neomorphism UI
-To create a good-looking neomorphism effect, use light shadows. Then, continue by combining the different box shadows and border-radius.
+#### Designing the Neumorphism UI
+To create a good-looking neumorphism effect, use light shadows. Then, continue by combining the different box shadows and border-radius.
 
 Create a form element found inside a `<div>` tag of the ID `login-box.`
 
 Create two `<div>` tags with the input-fields class for the form's child elements. The `<div>` tags will each have two children: `<label>` and `<input>` tags, while the login button will have a `<button>` tag.
 
-In the CSS file, give the body a display value of `grid` and place the items at the `center`. This shifts the login box to the center of the page. Finish by adding a background colour of your choice.
+In the CSS file, give the body a display value of `grid` and place the items at the `center.` This shifts the login box to the center of the page. Finish by adding a background colour of your choice.
 
 The code will look like this:
 
@@ -51,9 +51,9 @@ body{
 }
 ```
 
-It's now time to style the form's `<div>` tag to produce the neomorphism effect.
+It's now time to style the form's `<div>` tag to produce the neumorphism effect.
 
-Access the element using the ID `login-box`. Configure the width and height properties, and add a background colour. Set the border-radius and box-shadow properties to produce an oval like input field.
+Access the element using the ID `login-box.` Configure the width and height properties, and add a background colour. Set the border-radius and box-shadow properties to produce an oval-like input field.
 
 >It is essential to configure the box-shadow property with two shadow values. 
 
@@ -69,7 +69,7 @@ The code for that will look like this:
  2px 2px 5px #9b9da3;
 ```
 
->The login box has a general neomorphism effect. 
+>The login box has a general neumorphism effect. 
 
 Configure the styles for the `input-fields` class to style the form's children and inputs. You should set the height and width to how you configured the outer `<div>` tag.
 
@@ -86,7 +86,7 @@ The code looks like this:
 
 Give the border-radius a value of none and add two inset shadows to the box-shadow property in the inputs styles.
  
->Please note I removed the outline and border to prevent the neomorphism effect set on the elements from being overridden by the default styles.
+>Please note I removed the outline and border to prevent the neumorphism effect set on the elements from being overridden by the default styles.
 
 The final code will look like this:
 
@@ -105,9 +105,9 @@ The final code will look like this:
  width: 100%;
 }
 ```
-Neomorphism UI elements look patched to the background and appear either inset or protruding from the background. 
+Neumorphism UI elements look patched to the background and appear either inset or protruding from the background. 
  
-In this case, make the login button protrude as the input elements appear inset. Remove the outline and border and give it the border-radius and box-shadow properties.
+In this case, make the login button protrude as the input elements appear inset. Then, remove the outline and border and give it the border-radius and box-shadow properties.
 
 ````css
 button{
@@ -144,20 +144,20 @@ The final HTML and CSS files will contain the following code:
 ```html
 <body>
  <div id="login-box">
-		<form action="#">
-			<div class="input-fields">
-			<label><p>Email Address</p></label>
-			<br>
-			<input type="text"  required>
-			</div>
-			 <div class="input-fields">
-			 <label><p>Password</p></label>
-			 <br>
-			 <input type="password" required>
-			 </div>
-			<button>Login</button>
-		</form>
-	</div>
+        <form action="#">
+            <div class="input-fields">
+            <label><p>Email Address</p></label>
+            <br>
+            <input type="text"  required>
+            </div>
+             <div class="input-fields">
+             <label><p>Password</p></label>
+             <br>
+             <input type="password" required>
+             </div>
+            <button>Login</button>
+        </form>
+    </div>
 </body>
 ```
 ```CSS
@@ -246,11 +246,11 @@ button:focus{
 ```
 The webpage will look like this:
 
-![Neomorphism](/engineering-education/neomorphism-vs-glassmorphism-and-their-implementation-using-css-and-html/neomorphism.png)
+![Neumorphism](/engineering-education/neumorphism-vs-glassmorphism-and-their-implementation-using-css-and-html/neumorphism.png)
  
 #### Glassmorphism and Its Use Cases
 
-Since neomorphism lacked proper accessibility,its popularity declined causing its fall and rise of glassmorphism. 
+Since neumorphism lacked proper accessibility, its popularity declined, causing its fall and the rise of glassmorphism. 
 
 Glassmorphism is a general design pattern for building many things without compromising accessibility.
 
@@ -263,7 +263,7 @@ Glassmorphism is great for designing:
 
 Set your elements with a semi-transparent background, a sublime shadow, and a border to achieve glassmorphism. Also, add a blur property to the background so that whatever is behind it is 'morphed' into the element.
 
-Change the background colour and add the backdrop and blur properties. Proceed by removing the heavy background colours. Finally, use a blur function on the backdrop filter property to produce a semi-transparent background.
+Change the background colour and add the backdrop and blur properties. Proceed by removing the heavy background colours. Finally, a blur function on the backdrop filter property is used to produce a semi-transparent background.
 
 The code will look like this:
 ````css
@@ -296,8 +296,7 @@ Use the backdrop filter property on the login box, then remove the background co
 
 > Please remove the background colour and the box-shadow property. This prevents the shadows from blocking the morphing effect.
 
-
-The CSS code will look like this for the login box and its child elements. Kindly note that I have not inlcuded the HTML code.
+The CSS code will look like this for the login box and its child elements. Kindly note that I have not included the HTML code.
 ```css
 *{
  font-family: sans-serif;
@@ -363,13 +362,13 @@ button{
 ```
 Notice that I used a lighter colour in the elements' background. This increases the ease of the elements morphing with the body's background. 
 
-The the webpage will look like this:
+The webpage will look like this:
 
-![glassmorphism](/engineering-education/neomorphism-vs-glassmorphism-and-their-implementation-using-css-and-html/glassmorphism.png)
+![glassmorphism](/engineering-education/neumorphism-vs-glassmorphism-and-their-implementation-using-css-and-html/glassmorphism.png)
  
 The final code for the two webpages can be found [here](https://github.com/lin-chez/Section-Repositories/tree/main/glassmorphism%20vs%20neomorphism) 
 #### Conclusion
 
-Glassmorphism and neomorphism are new trends. However, Glassmorphism is more recent and accepted by the developer community. Thus, developers will use the design for a long time to style websites until a better trend emerges. Concurrently, neomorphism will be around for a while due to its minimalist aspects. 
+Glassmorphism and neumorphism are new trends. However, Glassmorphism is more recent and accepted by the developer community. Thus, developers will use the design for a long time to style websites until a better trend emerges. Concurrently, neumorphism will be around for a while due to its minimalist aspects. 
 
-There are many glassmorphism and neomorphism UI libraries on the web to use in your upcoming project. Knowing the specific areas on your webpage to use the two design patterns is a skill to learn and practice.
+There are many glassmorphism and neumorphism UI libraries on the web to use in your upcoming project. Knowing the specific areas on your webpage to use the two design patterns is a skill to learn and practice.
