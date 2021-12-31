@@ -6,8 +6,6 @@ During app development, application performance is important. The fact that your
 In this article, we will be looking at a caching method in [.NET](https://docs.microsoft.com/en-us/dotnet/csharp/) called in-memory caching in [C#](https://docs.microsoft.com/en-us/dotnet/csharp/). We will create an application without caching, observe its performance and then introduce caching and observe how the performance is improved.
 
 ### Table of contents
-- [Introduction](#introduction)
-- [Table of contents](#table-of-contents)
 - [Prerequisites](#prerequisites)
 - [Building a blazor web application](#building-a-blazor-web-application)
 - [Accessing data without caching](#accessing-data-without-caching)
