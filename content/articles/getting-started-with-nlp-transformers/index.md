@@ -1,5 +1,4 @@
 ### Getting Started with NLP Transformers
-
 In today's world of daily new improvements and developments in technology, the field of Natural Language Processing (NLP) has not been left behind. New developments like Transfer Learning, Transformers (e.g., Google BERT & ELMO), Reinforcement Learning, Low-Code Tools, etc. have changed the way data scientists work with textual data.
 
 They have also helped increase the area application for NLP like detecting fake news and monitoring social media for cases of cyberbullying.
@@ -7,13 +6,11 @@ They have also helped increase the area application for NLP like detecting fake 
 In this article, we will look at Transformers in NLP and their advantages over the traditional deep learning algorithms like recurrent neural networks (RNN). We will then learn how to build an NLP model using a transformer.
 
 ### Introduction
-
 Natural language processing (NLP) refers to a subfield of artificial intelligence tasked with interpreting human natural language to machines. Examples include; language detection systems, language translation, etc.
 
 A transformer is a deep learning model that works under the principle of self-attention to evaluate representations of its input and output data. Transformers are mostly applied in the field of computer vision and natural language processing. Transformers are mainly used in areas like machine language translation, conversational chatbots, and powering better search engines.
 
 ### Table of Contents
-
 * [Prerequisites](#prerequisites)
 * [Goals](#goals)
 * [Understanding the pre-existing model architectures](#understanding-the-pre-existing-model-architectures) 
@@ -25,30 +22,25 @@ A transformer is a deep learning model that works under the principle of self-at
 * [Conclusion](#conclusion)
 
 ### Prerequisites
-
 To follow through this tutorial, you need to:
 * Have Python installed in your machine or a [Google Colab account](https://colab.research.google.com/)
 * Have the basic knowledge of deep learning.
 
 ### Goals
-
 By the end of this tutorial, you should be able to:
 -   Understand the model architecture of the Transformer in NLP
 -   Understand the working principles behind Transformers
 -   Model NLP using a transformer.
 
 ### Understanding the pre-existing model architectures
-
 Since the NLP Transformer is built to solve sequence-to-sequence tasks i.e. ease of handling long-range dependencies, it is important we first understand what sequence-to-sequence models are.
 
 #### Sequence-to-sequence models
-
 These are models are used in NLP to convert sequences of one type to another. An example can be, language translation where a language like Chinese is translated to English.
 
 Since the majority of the world's data exists mostly in the form of sequences, the introduction of sequence-to-sequence based modes like Recurrent Neural Networks(RNN) has gained popularity in recent years due to their effectiveness. in the field of NLP. Recurrent Neural Network is a type of artificial neural network that uses sequential or time-series data.
 
 ### Weaknesses
-
 Despite their efficiency, sequence-to-sequence models have the following limitations:
 
 -   Inability to deal with long-range dependencies.
@@ -56,7 +48,6 @@ Despite their efficiency, sequence-to-sequence models have the following limitat
 >**NB**: These limitations have been tackled by Google Brain’s Transformer concept.
 
 ### Understanding the working principles behind Transformers
-
 First proposed in the paper [Attention Is All You Need](https://arxiv.org/abs/1706.03762), a Transformer was built to use **attention** and **repetition** to handle dependencies between input and output data. It is a transduction model that completely uses self-attention for computing representations of its inputs and outputs, unlike RNNs that use sequences.
 
 The visual representation of a Transformer architecture is shown below:
@@ -77,7 +68,6 @@ The Transformer's encoder and the decoder parts works as explained below:
 4. The generated output from the last encoder is then passed to the decoder-stack, passing through all the decoders in the stack. 
 
 ### Modeling using NLP Transformers
-
 Having understood the basics behind Transformers, we can now dive into their implementation in NLP.
 
 Transformer architecture models like BERT (Bidirectional Encoder Representations from Transformers) are often very complicated and require a lot of hours and manpower to build from scratch. This is why is it a good practice to use pre-trained models like the [Hugging Face](https://huggingface.co/) library.
@@ -85,7 +75,6 @@ Transformer architecture models like BERT (Bidirectional Encoder Representations
 We will model at least 2 tasks using Hugging Face, starting with the sequence classification task.
 
 #### a) Sequence classification task
-
 This is the simplest task in classifying sequences. We will use a transformer pipeline together with a [GLUE](https://gluebenchmark.com/) (General Language Understanding Evaluation benchmark) dataset to leverage a fine-tuned model on [SST2](https://www.kaggle.com/atulanandjha/stanford-sentiment-treebank-v2-sst2)(Stanford Sentiment Treebank version 2).
 
 Before importing the necessary Transformer library, we first need to install it by using the following command:
@@ -129,7 +118,6 @@ The code above results in a negative sentiment based on the word "hate" as seen 
 The next task will be a sequence paraphrasing task.
 
 #### b) Sequence Paraphrasing Task
-
 Paraphrasing is the process of expressing the meaning of a phrase, paragraph, sentence, etc. using different words to achieve clarity.
 In this task, we will use Auto models. Auto models are packages that will automatically select the correct model architecture according to a given checkpoint.
 
@@ -207,12 +195,10 @@ With these 2 examples, we can now say we have learned something for today.
 You can access the code from Colab [here](https://colab.research.google.com/drive/1V3X41fO-3FMxqNyDFZzHUpNftgcxPm3W#scrollTo=biiwRypRtDX9).
 
 ### Conclusion
-
 Now that we have looked at the basic working principles of Transformers and built two NLP models using a Transformer and seen the benefits of using Transformers over sequence-to-sequence models like RNN, you can now apply the knowledge to your personal or work projects.
 
 Happy coding!
 
 ### More Reading
-
 * Attention is All you need, [research paper](https://arxiv.org/pdf/1706.03762.pdf).
 * Model more [NLP Transformer tasks](https://www.kaggle.com/varunyadav17/nlp-transformer-tasks#Sequence-Classification-Task--).
