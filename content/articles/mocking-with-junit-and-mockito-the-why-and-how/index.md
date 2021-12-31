@@ -75,9 +75,10 @@ This section demonstrates the use of Mockito while building a Hostel Management 
 * The system allows a user to find all students in a Hostel by providing the name of the Hostel.
 * The system allows users to find all students in a room by providing the room id.
 
-The domain classes used in the program are *Hostel, Room, Student, HostelName, BedSpace, and Gender*
+The domain classes used in the program are *Hostel, Room, Student, HostelName, BedSpace, and Gender*.
+
 The system's class diagrams are as shown below:
-![hostel-management-system-class-diagrams](./hostel-management-system-class-diagram.png)
+![hostel-management-system-class-diagrams](./hostel-management-system-class-diagram.png "Hostel Management System Class Diagram")
 
 > *Hostel* represents a real-world Hostel.
 The system comprises two male hostels and two female hostels.
@@ -228,7 +229,7 @@ import static org.mockito.Mockito.when;
 There are several ways to use the ```when-then``` directive.
 1. ```when- thenReturn()```: This stubbing directive returns a particular hardcoded value whenever we invoke a specific method on a mock object. To demonstrate the ```when- theReturn()``` directive, let us consider the *student can register* use-case of our hostel management system.
 
-![register-student-activity-diagram](./register-student-activity.png)
+![register-student-activity-diagram](./register-student-activity.png "hostel management system - register student activity diagram")
 
 The ```registerStudent``` method code snippet is shown below:
 
@@ -366,7 +367,7 @@ and fragile test cases.
 
 The activity diagram for the ```returnNamesOfAllStudentsInAHostel``` method is as shown below:
 
-![return-names-of-all-students-in-a-hostel](return-names-of-all-students-in-hostel-diagram.png)
+![return-names-of-all-students-in-a-hostel](return-names-of-all-students-in-hostel-diagram.png "hostel-management-system- return names of all students in a hostel activity diagram")
 
 The implementation of ```returnNamesOfAllStudentsInAHostel``` method is given as:
 ```java
@@ -624,7 +625,7 @@ The following demonstrates how we can use ```verify``` using several [verificati
 * ```times(int wantedNumberOfInvocations)```: This helps us verify the number of times a stubbed method is invoked - if the stubbed method is not invoked ```wantedNumberOfInvocations``` times,
   then the test fails. To demonstrate this, let us consider the *assign bed-space to student* use case of our Hostel Management System.
 
-![assign bed space to student](./assign-bedspace-to-student.png)
+![assign bed space to student](./assign-bedspace-to-student.png "hostel-management-system- assign bedspace to student activity diagram")
 
 To assign a bed-space to a student, our ```assignBedSpace``` method receives a ```studentDto``` object as an argument.
 Using the ```matricNo``` field in the ```studentDto``` object, it tries to retrieve a ```student``` record from the
