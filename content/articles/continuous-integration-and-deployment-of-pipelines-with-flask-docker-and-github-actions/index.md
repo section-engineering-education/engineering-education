@@ -1,9 +1,23 @@
-### Introduction
-DevOps is practices or stages that every application will go through before and after deployment in the industry. It ensures both continuous integration and deployment of the application, by allowing a series of updates to the code repository.
-
+---
+layout: engineering-education
+status: publish
+published: true
+url: /ci-cd-with-flask-docker-and-github-actions/
+title: Continuous Integration and Deployment with Flask, Docker and Github Actions
+description: This article will teach you how to build a continuous integration and deployment pipeline with Flask, Docker and Github Actions.
+author: arafat-olayiwola
+date: 2021-12-30T00:00:00-13:30
+topics: [Containers]
+excerpt_separator: <!--more-->
+images:
+  - url: /engineering-education/ci-cd-with-flask-docker-and-github-actions/hero.png
+    alt: CI CD with Flask Docker and Github Actions
+---
+DevOps is the practices or stages that every application will go through before and after deployment in the industry. It ensures both continuous integration and deployment of the application, by allowing a series of updates to the code repository.
+<!--more-->
 The CI and CD pipelines are the set of practices used in the industry to develop and maintain every deployed application. Developing applications from the ground up requires so many practices and keeping track of every change in order not to break the already deployed application in the production.
 
-GitHub Actions is an automation tool provided by Github that makes continuous integration very smooth and easier. Applications' docker containers are packaged into the swarm.
+GitHub Actions is an automation tool provided by Github that makes continuous integration very smooth and easier. Applications' Docker containers are packaged into the swarm.
 
 In this article, we will experience building an interactive application.
 
@@ -29,7 +43,7 @@ To follow along with this tutorial, one should meet the following requirements.
 - An understanding of [Flask](https://flask.palletsprojects.com/en/2.0.x/).
 
 ### Objectives
-In this tutorial, we will be learning the continuous integration and deployment with Docker, selenium, and GitHub actions. You will learn the following and apply them to the project:
+In this tutorial, we will be learning the continuous integration and deployment with Docker, Selenium, and GitHub actions. You will learn the following and apply them to the project:
 
 -  Development and operations overview.
 -  Cloning a Flask application.
@@ -50,13 +64,13 @@ Every industry begins the development of applications with the following set of 
 Without a proper plan, no one can successfully develop an application. An adequate plan must be put in place before embarking on the journey of development. This is the stage where the justifications shall be given to tech stacks and other things required.
  
 #### Code
-Developers embark on the coding part after the requirements have been set in stage one. They will work on the application by collaborating through a single source of a repository. 
+Developers embark on the coding part after the requirements have been set in the planning stage. They will work on the application by collaborating through a single source of a repository.
 
 #### Build
 In this stage, the application developed shall be packaged and built into images using their choice of a package manager like Docker. The application will also be shipped into containers with the configurations file required for its start-up.
 
 #### Test
-A Series of tests will run through the application for better performance. Tests like `unit`, `integrating` etc will be conducted during development.
+A Series of tests will run through the application for better performance. Tests like `unit`, `integrating`, etc will be conducted during development.
 
 Other tests can be accomplished by the testers and quality assurance engineers. Several tools are capable of doing this but the most popular is Selenium. Other stages are done by the operation team and they are as follows:
 
@@ -67,15 +81,15 @@ This is where the stage of continuous integration begins. This stage will be rep
 An application that passed the continuous integration stage will proceed to the deployment stage. Staging will be the first thing here before deployment using tools like Ansible, Puppet or Chef.
 
 ##### 3. Operate
-The deployment will begin fully in this stage using tools like Terraform etc. The refined application will then be deployed and its operations will be monitored. 
+The deployment will begin fully in this stage using tools like Terraform. The refined application will then be deployed and its operations will be monitored. 
 
 ##### 4. Monitor
 The deployed application will be monitored in terms of performance. Logs will be generated while it's been monitored.
 
-Above are the practices that applications undergo in the industry. A skilled person in terms of all these is said to be a DevOps Engineer.
+An application undergoes all the above practices while in the industry. A person skilled in terms of all these is said to be a DevOps Engineer.
 
 ### Setting a Flask Project
-Open your favorite code editor and navigate to the terminal. Type the following snippets to setup your project workflow;
+Open your favorite code editor and navigate to the terminal. Run the following commands to setup your project workflow.
 
 ```bash
 cd ~/Desktop
@@ -86,11 +100,12 @@ source env/Scripts/activate
 pip install flask
 pip freeze > requirements.txt
 ```
+
 You changed directory to `Desktop` and then made a new directory called `flaskdrinks`. Every python application requires a virtual environment with `env` being the file for this project.
 
 Furthermore, you installed flask dependency with the python package manager called `pip`. You also tracked the dependencies with a file called `requirements.txt`.
 
-Create a file called `app.py` and paste the code snippets below;
+Create a file called `app.py` and add the code snippet below;
 
 ```python
 from flask import Flask
@@ -114,41 +129,39 @@ data = {
             "description": "This is a mango fruit",
             "date": datetime.now()
             }
+        }
     ]
 } 
 
 @app.route("/")
 def index():
         return "Welcome To My Drinks API"
-        
+
 @app.route('/drinks')
 def get_drinks():
     return data
-    
+
 
 if __name__ == "__main__":
     app.debug = True
     app.run()
 ```
 
-Now start the server with the command `python app.py` in the terminal. Open your browser to the root domain and confirm the `welcome message`. You can also route to `/drinks` and get the `API` data.
+Now start the server with the command `python app.py` in the terminal. Open your browser to the root domain and confirm the welcome page is working. You can also route to `/drinks` and get the `API` data.
 
-
-### CI and CD Pipelines Architecture
+### CI and CD Pipelines architecture
 The continuous integration and deployment of pipelines are software development practices used in the industry to develop and maintain every application. 
-
-Developing applications from the ground up requires so many practices and keeping track of every change in order not to break the already deployed application.
 
 The continuous integration server is going to trigger the automated build test job. This is to check whether the pushed code is reliable or not. If the code is reliable, then it will be integrated, built, and sent to the deployment server. Successful notifications will be sent too and this is referred to as automation.
 
-If otherwise, the pushed codes fail to build, another notification will be sent. So that the developer can fix the bugs and then re-commit the code. The continuous integration tool will then start building the code again. This is the reason why the continuous integration and deployment stages are still considered a waterfall model.
+If not, the pushed codes fail to build, another notification will be sent. So that the developer can fix the bugs and then re-commit the code. The continuous integration tool will then start building the code again. This is the reason why the continuous integration and deployment stages are still considered a waterfall model.
 
 ### Continuous integration and deployment with Github Actions
-Github Actions automates the build process whenever there is a push to the code repository. This helps to reduce the problem of a manual building of the jobs and always notify if the build is not complete. This
+Github Actions automates the build process whenever there is a push to the code repository. This helps to reduce the problem of a manual building of the jobs and always notify if the build is not complete.
 
 This follows a workflow using a different language package file. Earlier, we cloned a Python application built with the Flask framework. Therefore, the workflow that we are going to define will be for the Python package.
 
-Navigate to [project](https://github.com/Horlawhumy-dev/flask-drinksapi), click on the `action` link, and then you should receive the image below.
+Navigate to [project](https://github.com/Horlawhumy-dev/flask-drinksapi), click on the `action` link, and then you should receive something similar to the image below.
 
 ![Python Package](/continuous-integration-and-deployment-of-pipelines-with-flask-docker-and-github-actions/package.png)
 
@@ -205,7 +218,7 @@ The creation and execution of the containers are delegated to a container manage
 
 In the following section, we will look at how to containerize applications using Docker and the `Dockerfile` dependency. 
 
-Create a `Dockerfile` inside the project folder and paste the docker commands below.
+Create a `Dockerfile` inside the project folder and add the Docker commands below.
 
 ```dockerfile
 FROM python:3.8
@@ -215,19 +228,19 @@ RUN pip install -r requirements.txt
 ENV PORT=80
 ```
 
-Furthermore, We have to build the docker image and then push it to the docker hub for storage. But before that, create a new repository in Docker hub that will store your Docker image from the build actions.
+Furthermore, We have to build the Docker image and then push it to the Docker hub for storage. But before that, create a new repository in Docker hub that will store your Docker image from the build actions.
 
 You will add your Docker hub account details to the GitHub secrets. You can do that by going to your GitHub account, clicking on the `settings` button, and tapping the `secrets`.
 
 Add the following to the name and values:
 
 ```yaml
-DOCKER_USERNAME: <whatever-your-username>
+DOCKER_USERNAME: <your-username>
 DOCKER_PASSWORD: <your-password>
-DOCKER_HUB: <whatever-your-username>/<your-repository>
+DOCKER_HUB: <your-username>/<your-repository>
 ```
 
-Having done all the steps above, navigate to the Github repository for the application, edit the workflow with the codes below. This will build the docker image and send it to your docker hub repository.
+Having done all the steps above, navigate to the Github repository for the application, edit the workflow with the codes below. This will build the Docker image and send it to your Docker hub repository.
 
 ```yaml
 name: Python Package
@@ -264,12 +277,15 @@ jobs:
             tag_with_ref: true
 ```
 
-Upon successful building of the docker image, you have something like the image below;
+Upon successful building of the Docker image, you have something like the image below;
 
 ![Successful Docker image Build](/continuous-integration-and-deployment-of-pipelines-with-flask-docker-and-github-actions/dockerhub.png)
 
 ### Conclusion
 In this tutorial, we saw the overview of DevOps and built an automated pipeline. We cloned already made project and configured its pipeline with Github actions. 
-We went ahead to build its docker image through these Github actions and then pushed it to the docker hub for proper storage.
+We went ahead to build its Docker image through these Github actions and then pushed it to the Docker hub for proper storage.
 
-Thank you!
+Happy coding!
+
+---
+Peer Review Contributions by: [Geoffrey Mungai](/engineering-education/authors/geoffrey-mungai/)
