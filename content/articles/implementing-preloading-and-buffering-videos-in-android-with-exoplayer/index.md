@@ -274,4 +274,4 @@ That's all, when you run the app, you should be having something similar to this
 ### Conclusion
 In this tutorial, we have understood what preloading and precaching are. We went ahead and implemented a simple app that preloads video Url. With this knowledge, go ahead and implement it in your media app.
 
-For the full implementation of the code, check out this Github repository [VideoPreLoadingExoplayer](https://github.com/JoelKanyi/VideoPreLoadingExoplayer)
+For the full implementation of the code, check out this Github repository [VideoPreLoadingExoplayer](https://github.com/codewithjudy/VideoPreLoadingExoplayer)
