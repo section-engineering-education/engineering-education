@@ -1,4 +1,4 @@
-Animations are very important in every mobile application. They make the user interface of an application appealing and fun to use. However, animations may be challenging to implement in applications. That is where Lottie animations come in. 
+Animations are very important in every mobile application. They make the user interface of an application appealing and fun to use. However, animations may be challenging to implement in applications. That is where Lottie animations come in.
 
 A Lottie is a JSON-based animation file. They are used both as static assets and network assets. In addition, they polish your app's user interface and make it intuitive to users.
 
@@ -37,9 +37,9 @@ import 'package:lottie/lottie.dart';
 
 ### Step Two: Adding assets to your project
 
-- First, to get a Lottie animation JSON file visit, [Lottie animation](http://www.lottiefiles.com/). Then, select the animation of your choice and download it.
+- First, visit, [Lottie animation](http://www.lottiefiles.com/) to get a Lottie animation JSON file. Then, select and download the animation of your choice.
 
-- Next, create an assets folder in our project directory. Here you will add the downloaded Lottie JSON file, which you will use.
+- Next, create an assets folder in our project directory and add the Lottie file here.
 
 - Next, add our assets folder in the pubspec.yaml file in our project as shown below and run `flutter pub get` :
 
@@ -75,7 +75,7 @@ class _LottieScreenState extends State<LottieScreen> {
 
 - Next, add a `body` to the Scaffold. The body will contain the following widgets:
   - Center widget - to center the child widgets on the screen.
-  Column widget, which will include a child of the Center widget, lays the children vertically.
+    Column widget, which will include a child of the Center widget, lays the children vertically.
 
 ### Step four: Using Lottie animations
 
@@ -321,6 +321,6 @@ class _LottieScreenState extends State<LottieScreen> with SingleTickerProviderSt
 
 ### Conclusion
 
-Lottie animations are simple and easy to implement in a Flutter application. We have gone through implementing these Lottie animations in our app. We have also used an animation controller to control the state of our animation. This knowledge can be used in other ways in creating interactive UIs for your projects. I hope the tutorial will be helpful.
+Lottie animations are simple and easy to implement in a Flutter application. We have gone through implementing these Lottie animations in our app. We have extensively utilized an animation controller to control the state of our animation. This knowledge can be used in other ways in creating interactive UIs for your projects. I hope the tutorial will be helpful.
 
 Happy Coding!
