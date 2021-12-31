@@ -39,7 +39,7 @@ Internationalization is the process of localizing and globalizing your applicati
 
 ### Prerequisites
 - Have [Android Studio](https://developer.android.com/studio?gclid=Cj0KCQiAk4aOBhCTARIsAFWFP9HLlfZnjvuyknAbHQ8WOk8iH2_k3M6rEnIEPkca8LdDnvA3HXbQiKAaAhMbEALw_wcB&gclsrc=aw.ds) IDE installed.
-- Know the fundamentals of Extensible Markup Language (XML).
+- Basic knowledge of the fundamentals of Extensible Markup Language (XML).
 - Have an understanding of the Android Studio project structure.
 
 ### Goals
@@ -63,11 +63,11 @@ Qualifier values are the communication paths in an android system that tells the
 
 #### Syntax to specify qualifier values
 `<resource_name> - <config-qualifiers>` Example:-
-- drawable-fr - fr is configuration qualifier for french
-- layout-sw - sw is configuration qualifier for swahili
+- drawable-fr - fr is a configuration qualifier for french.
+- layout-sw - sw is a configuration qualifier for swahili.
 
 ### Localization resources in android
-The resource directory (res) is the parent to all resources in android where all the resources are placed. Each resource is placed in a specific subdirectory.
+The resource directory (res) is the parent to all resources in android where all the resources are. Each resource is placed in a specific subdirectory.
 
 These subdirectories are:-
 - `animator` - This is an XML file that defines animation properties
@@ -110,10 +110,10 @@ To localize strings appropriately, do not complex code the strings; instead, use
 #### Step 1 - Creating a string file
 Right-click on resource subdirectory values, go to new, and select resource files.
 
-#### Step 2 - Naming the string file similar to the existing string file and specifying the locale.
-Write the file name similar to the available string.xml file on the wizard that appears. For instance, if `string.xml` is named as a string, the name of your file is also as a string.
+#### Step 2 - Name the string file similar to the existing one and specify the locale.
+Write the file name similar to the available string.xml file on the wizard that appears. For instance, if string.xml is named as a string, the name of your file is also as a string.
 
-Select locale on the available qualifier and hit the forward arrows, which will then take you to this path.
+Select locale on the available qualifier and hit the forward arrows, taking you to this path.
 
 ![create_string_file](/engineering-education/localization-and-internationalization-in-android/create_string_file.png)
 
@@ -128,7 +128,7 @@ It is always meaningful when an image displays the right content according to th
 
 Localization of images is done as follows:
 
-#### Step 1 - Creating new image subdirectory
+#### Step 1 - Creating a new image subdirectory
 Right-click on the resource folder go to the new select android resource directory.
 
 #### Step 2 - Naming newly created image subdirectory
@@ -140,7 +140,7 @@ Name the directory similar to the available image directory and select drawable 
 Right-click on the resource folder and open it in your files
 
 #### Step 4: Locate the drawable subdirectory in your files and add the required image
-Locate the newly created drawable subdirectory and add an image you would wish to display for the specified locale. Ensure the image added within the new drawable folder has a similar name as that within the original drawable folder
+Locate the newly created drawable subdirectory and add an image you wish to display for the specified locale. Ensure the image added within the new drawable folder has a similar name as that within the original drawable folder.
 
 ![image_files](/engineering-education/localization-and-internationalization-in-android/image_files.png)
 
@@ -157,14 +157,14 @@ There are always two types of media files in the android application:
 -Text-to-Speech is audio that speaks out any text within the string.xml or hardcoded in the application. It uses text to speech engine, which speaks out any text provided, which handles the localization process effectively as it speaks out its text.
 - Recorded Audio files - These are any audio file example, MP3, which is embedded in your application and played at different times.
 
-### Best Practices for Localization
+### Best Practices for localization
 - Provide a complete set of all the default resources to localize the application.
 - Do not think of the localization process at the final application development stage. Instead, think of the localization process at the design stage of the application, which makes it easy to localize.
 - Ensure that the qualifier naming rule is followed. The best way to follow this naming rule is by creating an alternate resource directory using the new resource directory wizard and not doing it manually.
 - In cases where you want to use the same resource but with another name within your application. Avoid duplication of resources but rather use aliases instead, which reduces the growth of APK size
 - When doing translation of strings, use professional translation services. To make sure the correct meaning is conveyed when each string is displayed.
 
-### Precautions taken when localizing your application
+### Precautions when localizing your application
 - Avoid translation engines that could give you the wrong output of the string you want to localize. However, instead, use professional translation services.
 - Do not over-localize your application. Ensure you select the resources you want to localize according to the configuration type and not all the available resources
 - Think of localization in the early stage of application development.
@@ -176,3 +176,7 @@ To get the full implementation of the project, visit this [GitHub Repository](ht
 
 ### Reference
 [Localization and internationalization in android](https://developer.android.com/guide/topics/resources/localization)
+
+Happy learning!
+---
+Peer Review Contributions by: [Briana Nzivu](/engineering-education/authors/briana-nzivu/)
