@@ -16,12 +16,12 @@ images:
 ---
 Creating unique user interfaces (UI) requires creativity and mastery of modern design and styling frameworks. Since one of the most viewed parts of a website is the sign-in page, it is the responsibility of the front-end web developer(s) to create an attractive page. 
 <!--more-->
-This is inorder to promote and encourage user sign-up. React.js and Bootstrap can be a powerful combination alongside vanilla CSS in building amazing web pages such as the sign-in page.
+This is to promote and encourage user sign-up. React.js and Bootstrap can be a powerful combination alongside vanilla CSS in building amazing web pages such as the sign-in page.
 
 In this tutorial, we will walk through the necessary steps and packages required to build animated sign-in routes with React.js. We will also take a deep dive into the application of vanilla CSS in adding animations and customizing components.
 
 ### Key takeaways
-After this tutorial, the concepts listed below will be explained in detail to make it easy for the reader to understand:
+After the end of this tutorial, the reader will understand:
 - Building animated sign-in routes with React.js and bootstrap.
 - Using Reactstrap in react applications.
 - Getting started with React.js.
@@ -29,7 +29,7 @@ After this tutorial, the concepts listed below will be explained in detail to ma
 - Adding animations and customization with CSS and Bootstrap.
 
 ### Prerequisites
-Basic knowledge of React.js, CSS and any design library like bootstrap is required to follow along and understand this tutorial. Enroll in this [crash course](https://scrimba.com/learn/learnreact) by scrimba for free if you don’t have the above.
+Basic knowledge of React.js, CSS, and any design library like bootstrap is required to follow along and understand this tutorial. Enroll in this [crash course](https://scrimba.com/learn/learnreact) by scrimba for free if you don’t have the above.
 
 ### Tutorial overview
 For better understanding and follow up, we will breakdown the task of building animated sign-in routes with React.js and bootstrap into the following steps:
@@ -37,7 +37,7 @@ For better understanding and follow up, we will breakdown the task of building a
 ### Step 1 - Getting started with the React application
 React.js simplifies application development by reducing the entire setup of the `react-app` to a single command. The command below will create and set up a new react application with all the required default dependencies automatically installed by React.
 
-So, open up your `command terminal` and run the command below:
+Open up your `command terminal` and run the command below:
 
 ```bash
 npx create-react-app My-app
@@ -49,7 +49,9 @@ Alternatively, for yarn users:
 yarn create-react-app My-app
 ```
 
-The operation takes some minutes to set up the application for subsequent development. Also, feel free to use a name you wish for the application. Replace the “My-app” with any name of your choice. Take note of React naming convention to avoid errors that may occur when violated.
+The operation takes some minutes to set up the application for subsequent development. Also, feel free to use the name you wish for the application. Replace the “My-app” with any name of your choice. 
+
+Take note of React naming convention to avoid errors that may occur when violated.
 
 ### Step 2 - Setting up the React application
 If you open up the application in your preferred text editor, you will find some useful files which we will set up to build the animated sign-in and sign-up routes.
@@ -57,10 +59,10 @@ If you open up the application in your preferred text editor, you will find some
 Let us proceed with the installation of dependencies.
 
 #### Installing the required dependencies
-There are a few dependencies that we will add to our react application so React.js will execute the code snippets we will be implementing. We will install the following dependencies:
+There are a few dependencies that we will add to our react application so React.js can execute the code snippets we will be implementing. We will install the following dependencies:
 1. React-router-dom - This package enables React.js to switch between pages (routes) without stress or errors occurring in the process.
-2. Reactstrap - The Reactstrap dependency is a modified bootstrap package designed to React.js specifications. Usage of this package will be discussed in detail in this tutorial.
-3. React-date-picker - I added this package because it reduces the complexity of getting information involving date e.g. Date of birth, day of the month, etc. It provides a dropdown menu with days, months and years readily available.
+2. Reactstrap - This dependency is a modified bootstrap package designed to React.js specifications. Usage of this package will be discussed in detail in this tutorial.
+3. React-date-picker - I added this package because it reduces the complexity of getting information involving date e.g. Date of birth, day of the month, etc. It provides a dropdown menu with days, months, and years readily available.
 4. Semantic-ui-react - We will need the `semantic-ui-react` icons on our page. Icons make a webpage more descriptive and semantic-ui offers many ready-to-use icons.
 
 To install the above packages, edit the `package. json` file to include the dependencies as shown below:
@@ -126,7 +128,7 @@ export default function Routes() {
 }
 ```
 
-From the code snippet above, we did the following import:
+From the code snippet above, we did the following imports:
 1. BrowserRouter as Router - This is a router implementation that ensures your browser interface is in sync with the URL. It must also wrap all the components and routes (pages) for them.
 2. Route - To conditionally display a page when its path matches the desired path (URL), the route component is used.
 3. Switch - The switch component prevents two routes from being rendered. It does this by rendering the first routes that match the location.
@@ -149,7 +151,7 @@ The login page will enable registered users to sign in to the application. The p
 - Icons 
 - Link to the registration page for new users.
 
-Now let’s begin. In the `src` folder, create a `LoginPage.js`, thereafter implement the code snippet shown below:
+In the `src` folder, create a `LoginPage.js`, thereafter implement the code snippet shown below:
 
 ```JavaScript
 import React from "react";
@@ -214,18 +216,18 @@ From the code snippet above, we imported the `Form` and `Button` from the Reacts
 
 As explained earlier, routing and navigation between web pages in React.js are handled by the `react-router-dom`. Finally, to add more details to our login page, we added some icons imported from the `semantic-ui-react` library. Then, we added some placeholders and descriptive texts.
 
-> You need to add two images to the `src` folder. Feel free to use the two images from these [undraw illustrations](https://undraw.co/illustrations). Thereafter you import each to the `LoginPage` and `RegisterPage` components as shown in the snippet above.
+> You need to add two images to the `src` folder. Feel free to use the two images from these [undraw illustrations](https://undraw.co/illustrations). Thereafter we import each to the `LoginPage` and `RegisterPage` components as shown in the snippet above.
 
 #### The RegisterPage component (RegisterPage.js)
 The `RegisterPage` component will be like the login page but with a few differences. We will add extra form input fields for the following:
 1. Full name
-2. username
+2. Username
 3. Email address
 4. Date of birth
 5. Password
 6. Confirm password
 
-To create the register page, still, in the `src` folder create another file `RegisterPage.js`. once completed, proceed with the code snippet below:
+To create the register page, still, in the `src` folder create another file `RegisterPage.js`. Once completed, proceed with the code snippet below:
 
 ```JavaScript
 import React, {useState} from "react";
@@ -417,7 +419,7 @@ To customize our pages, in the `App.css` file we implement the CSS snippet below
 
 A greater portion of this tutorial revolves around CSS and reactstrap. From the snippet above we targeted the `container`, `ClassName` which wraps every other page element. 
 
-We adjusted the `width` and `height`, changed the `position` to `relative`. Also added were some `background-colors`, `border-radius`.
+We adjusted the `width` and `height`, changed the `position` to `relative`. Also added were some `background colors` and a `border radius`.
 
 Most importantly, we used a linear-gradient with shades of purple for the background. We also added some styles to the sign-in forms such as `align-items`, `justify-content`, `paddings`, etc. as shown above. 
 
@@ -683,14 +685,14 @@ In the last section of this step, we will add some responsiveness to our pages t
 
 From the snippet above, we used some CSS `@media` queries to add responsiveness to our pages. We also made the images hidden on small screens.
 
-As we noticed, CSS snippets are pretty much self-explanatory and do not require intensive explanation. Take out time to observe the changes on your browser window once you’ve correctly implemented each of the CSS blocks to have a better understanding. You could also inspect each of the elements and classes from the browser `dev-tools`.
+As we have noticed, CSS snippets are pretty much self-explanatory and do not require intensive explanation. Take out time to observe the changes on your browser window once you have correctly implemented each of the CSS blocks to have a better understanding. You could also inspect each of the elements and classes from the browser `dev-tools`.
 
 ### Conclusion
 In this article, we created and styled the login and register page with React.js, Reactstrap, and vanilla CSS. We also went through the page elements required to build good-looking sign-in routes for websites or blogs. 
 
-Here is a link to a [Github repo.](https://github.com/KingsleyJack/sign-in-routes-codes) containing the full codes to the tutorial. Feel free to utilize this tutorial in your next React.js project and I hope you found this article useful. Cheers!
+Here is a link to the [Github repository](https://github.com/KingsleyJack/sign-in-routes-codes) containing the full codes to the tutorial. Feel free to utilize this tutorial in your next React.js project. I hope you found this article helpful.
 
-Happy coding.
+Happy coding!
 
 ### References
 - https://reactstrap.github.io/
