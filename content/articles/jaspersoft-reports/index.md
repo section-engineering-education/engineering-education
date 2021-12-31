@@ -148,7 +148,7 @@ public interface ReportService {
 }
 ```
 ### Design a report using Jaspersoft template
-First, open JasperSoft studio. Before we create a design of the report, we will add the MySQL connector to the classpath. This will ensure we can connect to our database and generate the desired fields from our table. In Jaspersoft studio, click on *help*, *install new software*, *manage*. Once you click *manage* a new panel named *preferences* opens. Use the search field provided by the panel to search for *java*. The search will return different results but in our case click on *build path*. Under *build path*, click on *classpath variables*. The *classpath variables* provides us with the capability to add, edit, and remove variables using the *new*, *edit*, and *remove* buttons. Click on *new* and add the jar file on the window that opens with the desired name as shown below:
+First, open JasperSoft studio. Before we create a design of the report, we will add the MySQL connector to the classpath. This will ensure we can connect to our database and generate the desired fields from our table. In Jaspersoft studio, click on *help*, *install new software*, *manage*. Once you click *manage* a new panel named *preferences* opens. Use the search field provided by the panel to search for *java*. The search will return different results but in our case click on *build path*. Under *build path*, click on *classpath variables*. The *classpath variables* provide us with the capability to add, edit, and remove variables using the *new*, *edit*, and *remove* buttons. Click on *new* and add the jar file on the window that opens with the desired name as shown below:
 
 ![java connector](/jaspersoft-reports/jaspersoft-connector.jpg)
 
