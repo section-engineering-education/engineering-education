@@ -154,7 +154,7 @@ First, open JasperSoft studio. Before we create a design of the report, we will 
 
 Add the MySQL connector and run the spring boot app. The spring boot app will generate the tables required by Jaspersoft studio. Create a design for our report from existing templates. On the Jaspersoft toolbar click on *file*, *new*, *jasper report*. A window opens with a list of templates to choose from. For this tutorial, select the template named *simple blue* and click next. Add a new `.jrxml` file using the window that opens up. This is an extension for Jaspersoft report files. For our case name the file as `products.jrxml` and click next.
 
-There are situations where the Jaspersoft studio does not connect to the database by only adding the MySQL connector using the above steps. The `ClassNotFoundException` is caused by the software not being able to locate the MySQL driver class. To fix this error, we should add the MySQL connector in the driver classpath menu provided on the next window.
+There are situations where Jaspersoft studio does not connect to the database by only adding the MySQL connector using the above steps. A `ClassNotFoundException` is caused by the software not being able to locate the MySQL driver class. To fix this error, we should add the MySQL connector in the driver classpath menu provided on the next window.
 
 The window that opens next requires us to provide our data source. The data source is our database URL, username, and password to connect to our database. Click on new and on the data adapters window select database JDBC connection and click next. A window then opens where we need to fill the database connection properties as shown below:
 
@@ -254,7 +254,7 @@ public class ReportServiceImpl implements ReportService{
 }
 ```
 ### Create a folder to store the report
-In the `ReportServiceImpl` class create a method named `getUploadPath()` . Add the file format, a `JasperPrint` returned from the above method, and a file name as parameters. This method creates the specified directory if it does not exist. It also creates the generated pdf file in the folder with the file name passed to it. We will also add a method named `getPdfFileLink()` that returns the link to our generated report. Pass the value of type `Path` returned by the `getUploadPath()` method. We will use the two methods `getJasperPrint()` and `getUploadPath()` in the `generateReport()` method which currently returns null to generate our report.
+In the `ReportServiceImpl` class create a method named `getUploadPath()` . Add the file format, a `JasperPrint` returned from the above method, and a file name as parameters. This method creates the specified directory if it does not exist. It also creates the generated pdf file in the folder with the file name passed to it. We will also add a method named `getPdfFileLink()` that returns the link to our generated report. This method will take the file path returned by the `getUploadPath()` method as a string argument. We will use the two methods `getJasperPrint()` and `getUploadPath()` in the `generateReport()` method which currently returns null to generate our report.
 
 ```java
 import com.reports.jaspersoft.jasperreports.model.Product;
