@@ -1,13 +1,26 @@
-### Introduction
-Hibernate is a java object-relational mapping (ORM) framework that lets you map regular Java objects to database tables. 
+---
+layout: engineering-education
+status: publish
+published: true
+url: /price-tracker-with-python-selenium-twilio/
+title: How to Build an Amazon Price Tracker using Python, Selenium, and Twilio
+description: This tutorial will show the reader how to use Twilio's Programmable SMS service in Python to build a price tracker. 
+author: muhammed-ali
+date: 2021-12-23T00:00:00-09:33
+topics: [Languages]
+excerpt_separator: <!--more-->
+images:
 
-Hibernate's primary objective is to relieve the developer of typical data persistence-related chores.
-
-It's an ORM (Object Relational Mapping) tool that's open source and lightweight.
+  - url: /engineering-education/price-tracker-with-python-selenium-twilio/hero.jpg
+    alt: Authentication using Facebook Hero Image
+---
+Hibernate is a Java object-relational mapping (ORM) framework that lets you map regular objects to database tables. 
+<!--more-->
+[Hibernate's](https://hibernate.org/) primary objective is to relieve the developer of typical data persistence-related chores. This ORM framework is open-source and lightweight.
 
 ### Table of contents
 - [Hibernate architecture](#hibernate-architecture)
-- [Architecture components ](#architecture-components)
+- [Architecture components](#architecture-components)
 - [Installation process](#installation-process) 
 - [Advantages of Hibernate](#advantages-of-hibernate)
 - [Disadvantages of Hibernate](#disadvantages-of-hibernate)
@@ -15,140 +28,117 @@ It's an ORM (Object Relational Mapping) tool that's open source and lightweight.
 - [Conclusion](#conclusion)
 
 ### Hibernate architecture
-Hibernate has a layered architecture that allows users to operate without having to know the core APIs. 
+Hibernate has a layered architecture that allows users to operate without being aware of the core APIs. 
 
-To provide durable features, Hibernate makes use of the databases and configurable information. Hibernate's architecture is divided into four levels:
+To provide unique features, Hibernate makes use of databases and other configurable information.
 
-1. Application Java
-2. Hibernate Framework
-3. Backhand API
-4. Database level
+Hibernate's architecture is divided into four major levels:
+- Hibernate framework
+- Backhand API
+- Java application layer
+- Database level
 
-The Hibernate Application Architecture is depicted in the diagram below at a high level:
+Hibernate's architecture is shown in the following diagram:
 
-![High-Level View Architecture](/engineering-education/introduction-to-hibernate/high.png)
+![High-Level View Architecture](/engineering-education/introduction-to-hibernate/high.jpg)
 
-The Hibernate Application Architecture is depicted in full below, along with its key core classes:
+The diagram below highlights Hibernate's core classes:
 
-![Detailed View Architecture](/engineering-education/introduction-to-hibernate/detailed.png)
+![Detailed View Architecture](/engineering-education/introduction-to-hibernate/detailed.jpg)
 
-#### Components of Hibernate Architecture 
-Each of the Application Level class objects is summarized in this section.
+### Architecture components
+Application-level class objects are summarized in this section:
 
-#### SessionFactory object
-SessionFactory is a session and client factory for the ConnectionProvider. In a second-level cache, data is saved..
+- SessionFactory object: SessionFactory is a session and client factory for the ConnectionProvider. It saves data in the second-level cache.
 
-#### Session object
-The session object serves as a link between the database and the application's data. It is a tiny object that wraps the JDBC connection. It's a factory for transactions, queries, and criteria. 
+- Session object: The session object serves as a link between the database and the application's data. It is a tiny object that wraps the JDBC connection. It acts as a factory for transactions, queries, as well as other criteria. 
 
-#### Transaction object
-The user interface for transactions provides the single set of activities specified by the transaction object, as well as functions for transaction processing.
+- Transaction object: The transaction interface provides different functions or methods required for data management.
 
-#### ConnectionProvider
-It's a factory for JDBC connections. It hides the application's connection to the DataSource.
+- ConnectionProvider: It's a factory for JDBC connections. In other words, it hides the application's connection to the data source.
 
-#### TransactionFactory
-This is a factory that is used for transactions and it is optional.
+- TransactionFactory: This is an optional factory that is used for different transactions.
 
-#### Installation process 
-It is expected that you have already installed the most recent version of Eclipse IDE on your computer.
+### Installation process 
+Hibernate works quite well on the Eclipse IDE. If you have not installed Eclipse IDE, you can download it from [here](http://www.hibernate.org/downloads). 
 
-If you have not installed Eclipse IDE, you can download it from here http://www.hibernate.org/downloads. 
+The basic steps for downloading and installing Hibernate in the Eclipse IDE are as follows:
 
-The basic steps for downloading and installing Hibernate on your eclipse IDE are as follows:
-
-Step 1: Select "Help" >> "Eclipse Marketplace..." from the Eclipse IDE's menu bar.
+Step 1: Select `Help` >> `Eclipse Marketplace` from the Eclipse IDE's menu bar.
   
-Step 2: Type "JBoss Tool" on the search box and click on "Go".
+Step 2: Type `JBoss Tool` on the search box and click on `Go`.
 
-Step 3: Choose the latest version of JBoss Tools available and click "Install".
+Step 3: Choose the latest version of `JBoss Tools` and click `Install`.
 
-![Hibernate1](/engineering-education/introduction-to-hibernate/Hibernate.png)
+![Hibernate1](/engineering-education/introduction-to-hibernate/hibernate1.jpg)
 
-Step 4: Diselect the marked tools from the list and select only Hibernate tool to download.
+Step 4: From the `marked tools`, select and download the Hibernate tool.
 
-Then click on "confirm" to set up the hibernate tools.
+Then click on `confirm` to set up the hibernate tools.
 
-![Hibernate2](/engineering-education/introduction-to-hibernate/Hibernate2.png)
+![Hibernate2](/engineering-education/introduction-to-hibernate/hibernate2.jpg)
 
-Step 5: Accept the terms of the license agreement and click on "Finish".
+Step 5: Accept the terms in the license agreement and click on the `Finish` button.
 
-Step 6: Restart Eclipse IDE to make sure that all changes are have been made effectively.
+Step 6: Restart Eclipse IDE to ensure that all changes are reflected.
 
-Step 7: To validate whether the Hibernate Tools is correctly installed, click on under "File" >> "New" >>
+Step 7: To validate whether the Hibernate Tools are correctly installed, click on `File` >> `New` >> `Others` and then search for `Hibernate`.
 
- "Others" and search for "Hibernate".
-
-![Hibernate3](/engineering-education/introduction-to-hibernate/Hibernate3.png)
+![Hibernate3](/engineering-education/introduction-to-hibernate/hibernate3.jpg)
 
 ### Advantages of Hibernate
-Hibernate framework is simple to use and the mapping procedure with Hibernate needs only a few lines of code. The following are some of the advantages of Hibernate:
+Hibernate framework is simple to use. It's mapping procedure needs only a few lines of code. 
 
-#### 1.Object Relational Mapping(ORM)
+The following are some of Hibernate's advantages:
+
+#### Object Relational Mapping(ORM)
 ORM conveniently resolves data mismatches between an application's object-oriented
-classes and a relational database. 
+classes and a relational database. Hibernate's flexibility and power are enhanced by this functionality.
 
-Hibernate's flexibility and power are enhanced by this functionality.
-
-#### 2.Database Independent
+#### Database Independent
 Hibernate is database-agnostic. It can connect to any database, including MySQL, Oracle, DB2, and Sybase.
 
 A database can be made portable by simply altering the 'database dialect' variable in the config file.
 
-#### 3.Fast Performance
-Hibernate uses the caching notion to keep items in memory, reducing the number of times they are accessed from the database. 
+#### Fast Performance
+Hibernate uses cache to keep items in memory. This reduces the number of times they are accessed from the database. 
 
-Caching is used from within by the hibernate framework thus making its speed to be excellent.
+#### Hibernate Query Language
+Hibernate supports HQL which is a sophisticated query language. This language is both more efficient and object-oriented than SQL. 
 
-#### 4.Hibernate Query Language
-Hibernate includes HQL, a sophisticated query language. 
-This query language is both more efficient and object-oriented than SQL. Inheritance, polymorphism, association, and other object-oriented concepts, may be implemented using HQL.
+Functionalities such as inheritance, polymorphism, association, as well as other object-oriented concepts can be implemented using HQL.
 
-#### 5.Persistence with Transparency
-This guarantees that the software's objects and database tables are automatically connected.
-This functionality eliminates the need for developers to write lines of connection code.
+#### Persistence and transparency
+This guarantees that software objects and database tables are connected automatically. It also eliminates a lot of boilerplate code.
 
-Hibernate's transparent persistence allows it to decrease development time and costs.
+In the long-run, these features decrease overall development time and costs.
 
-#### 6. Open source
-Hibernate is an open-source program that comes with a free product license. The source page
-for this lightweight program can be downloaded freely.
+#### Open source
+Hibernate is an open-source program which has numerous advantages. The source code
+for this lightweight framework can be downloaded freely.
 
-#### 7.Scalability
-Hibernate is a scalable database. It can adapt to any setting as it may be a small intranet app
-with a few users or a huge essential app with a high number of users. Both apps are supported similarly by Hibernate.
+#### Scalability
+Hibernate is a scalable database. It can adapt to any setting, as well as accomondate a huge number of users.
 
-#### 8. Hibernate is simple to learn
-Hibernate is an easy-to-use framework for programmers. It's simple to understand and put into
-practice. Because the framework handles database updates automatically, a developer's workload is
-significantly reduced.
+#### Hibernate is simple to learn
+Hibernate is an easy-to-use framework for beginners. It's simple to understand and implement. It reduces developers' workload by handling database updates automatically.
 
 ### Disadvantages of Hibernate
-Though Hibernate offers numerous advantages, it also has certain disadvantages. These disadvantages
-includes:
+Though Hibernate offers numerous advantages, it also has certain disadvantages. They
+include:
 
-#### 1.Slower compared to JDBC
-Because Hibernate creates a large number of SQL queries at runtime depending upon the mapping, 
-it is a little slower compared to JDBC.
+Firstly, Hibernate is slower when compared to JDB. This is because it creates a large number of SQL queries at runtime.
 
-#### 2.Multiple insertion are not permitted
-Some JDBC-supported queries are not allowed by Hibernate. For instance, using a single query, 
-it is not possible to put several objects into the same table. To insert each item,
-the programmer must create a new query.
+Secondly, Hibernate does not support multiple insertions. Besides, some JDBC-supported queries are not allowed by Hibernate. 
 
-#### 3.Not suitable for a small project
-Because a small project has fewer tables, adopting the whole Hibernate framework is more
-time-consuming than beneficial.
+Thirdly, Hibernate is not suitable for a small project. Small projects usually have few tables, and thus adopting the whole Hibernate framework is quite time-consuming.
 
-#### 4. Batch processing has a poor track record in Hibernate
-For batch processing, it's best to stick with plain JDBC because Hibernate's performance 
-is not great.
+Hibernate is quite poor when it comes to batch processing. It's, therefore, better to stick with JDBC during batch processing.
 
-#### 5. A lot of effort to learn API 
-Learning Hibernate takes a lot of time and effort. As a result, learning Hibernate is not a simple task.
+Learning Hibernate also takes a lot of time and effort.
 
 #### Hibernate Example
-Here's an example of  implementation of Hibernate.It is for one-to-one biderectional mapping.
+Here's an example of bi-directional mapping using Hibernate.
 
 ```java
  //This is customer.java class
@@ -181,10 +171,10 @@ public class customer implements Serializable {
 	@OneToOne(cascade = CascadeType.ALL)//creating a one to one relationship
 	@JoinColumn(name = "location_id", referencedColumnName = "id")//joining  the two tables
 	private Location location;
-	
 }
+
 //This is location.java class
-//import  the same packages  as the one imported in customer.java class
+//import  the same packages as the one imported in customer.java class
 @Entity
 public class Location {
 	@Id
@@ -201,6 +191,7 @@ public class Location {
 	private Customer customer;
 
 }
+
 //main class
 import org.hibernate.Session;
 import org.hibernate.Transaction;
@@ -260,8 +251,12 @@ public class Main {
 
 }
 ```
-#### Code Explanation
-class, we have customer_id,customer_name, and customer_email and in the Location class, we have state and state_number which are all private data. We then create session objects for the two classes i.e Customer class and Location Class in the Main class. We join the two columns by using "@JoinColumn()" and giving the name to that column. The location details for the two customers are automatically saved once we save the customer details, this is because the cascade type was set to ALL. We then commit the transaction hence joining the two tables.
+
+class, we have customer_id,customer_name, and customer_email and in the Location class, we have state and state_number which are all private data. 
+
+We then create session objects for the two classes i.e Customer class and Location Class in the Main class. We join the two columns by using "@JoinColumn()" and giving the name to that column. 
+
+The location details for the two customers are automatically saved once we save the customer details, this is because the cascade type was set to ALL. We then commit the transaction hence joining the two tables.
 
 ### Conclusion
 Hibernate is an ORM technology that is used to map database structures to Java objects in real-time.
@@ -270,13 +265,10 @@ The use of Hibernate, a persistent framework, lets developers concentrate solely
 layer.
 
 #### Further Reading
-- [What is Hibernate in Java and Why do we need it?](https://www.edureka.co/blog/what-is-hibernate-
+- [What is Hibernate in Java and why do we need it?](https://www.edureka.co/blog/what-is-hibernate-
 in-java/)
-
 - [Introduction to Hibernate](https://www.wideskills.com/hibernate/introduction-to-hibernate)
-
 - [Hibernate framework](https://en.wikipedia.org/wiki/Hibernate_(framework))
 
-
-
-
+---
+Peer Review Contributions by: [Wanja Mike](/engineering-education/authors/michael-barasa/)
