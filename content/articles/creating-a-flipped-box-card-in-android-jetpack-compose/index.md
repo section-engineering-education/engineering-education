@@ -242,7 +242,7 @@ After running the project, you will see something like this:
 ### Conclusion
 In this tutorial, we have learned some basic concepts of Canvas and created a FlippedCard composable. Keep exploring more about the power of Graphics in Compose. 
 
-To see a full implementation of the FlippedCard, check out this Github repository [Flipped Card Demo](https://github.com/sheecodes/FlippedCardDemo).
+To see a full implementation of the FlippedCard, check out this Github repository [Flipped Card Demo](https://github.com/osirevaline/FlippedCardDemo).
 
 Happy coding!
 
