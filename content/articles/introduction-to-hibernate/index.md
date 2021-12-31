@@ -152,6 +152,14 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
+import org.hibernate.Session;
+import org.hibernate.Transaction;
+import org.hibernate.query.Query;
+import org.hibernate.SessionFactory;
+import java.util.List;
+import org.hibernate.cfg.Configuration;
+import com.netsurfingzone.entity.Location;
+import com.netsurfingzone.entity.Customer;
 
 @Entity
 public class customer implements Serializable {
@@ -193,15 +201,6 @@ public class Location {
 }
 
 //main class
-import org.hibernate.Session;
-import org.hibernate.Transaction;
-import org.hibernate.query.Query;
-import org.hibernate.SessionFactory;
-import java.util.List;
-import org.hibernate.cfg.Configuration;
-import com.netsurfingzone.entity.Location;
-import com.netsurfingzone.entity.Customer;
-
 public class Main {
 	public static void main(String[] args) {
 		SessionFactory factory = null;
