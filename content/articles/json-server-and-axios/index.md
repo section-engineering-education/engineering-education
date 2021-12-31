@@ -20,7 +20,7 @@ Vue is a front-end JavaScript framework used to create single-page apps that run
 
 [Axios](https://www.axios.com/) is the HTTP client that we will use to make HTTP requests to the JSON server.
 
-In this article, we will build a shopping list application. We will start with a blank Vue.js application then add the JSON server` for local data storage, and Axios for making HTTP requests:
+In this article, we will build a shopping list application. We will start with a blank Vue.js application then add the JSON server for local data storage, and Axios for making HTTP requests:
 
 ![shopping-list](/engineering-education/json-server-and-axios/shopping-list.png)
 
