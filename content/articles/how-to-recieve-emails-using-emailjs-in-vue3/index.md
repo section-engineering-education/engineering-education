@@ -373,10 +373,10 @@ When it comes to Vue3 we use the  `ref` attribute to reference a DOM element fro
 
 Now all you have to do is send a sample message from the contact form. And with that done you should see your sample mail right in your mailbox.
 
-That it! It’s that simple.
+That's it! It’s that simple.
 
 ## **Conclusion**
 
-Javascript libraries help make it easier to write complex code easily. The email functionality we just added to our application will be very hectic setting it up from scratch. But with the help this library it is painless setting it up and this will be a good piece for your portfolio. This library is not only meant for Vue, like I said it works on different client-side technologies. This library works on React and Angular as well. 
+Javascript libraries help make it easier to write complex code easily. The email functionality we just added to our application will be very hectic setting it up from scratch. But with the help of this library it is painless setting it up and this will be a good piece for your portfolio. This library is not only meant for Vue, like I said it works on different client-side technologies. This library works on React and Angular as well. 
 
 Be sure to upgrade if you will be having more emails coming in as the free tier only works for 500 emails daily. You can find the code right [here](https://github.com/mercybassey/email-app-for-vue3). Thank you for reading, and happy coding.
