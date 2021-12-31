@@ -6,7 +6,7 @@ url: /whatsapp-spring-boot/
 title: Building a dictionary application using Twilio API and WhatsApp
 description: This tutorial will go over how to build a dictionary application using Twilio API and WhatsApp
 author: quinter-awuor
-date: 2021-07-14T00:00:00-20:00
+date: 2021-12-31T00:00:00-20:00
 topics: [API]
 excerpt_separator: <!--more-->
 images:
