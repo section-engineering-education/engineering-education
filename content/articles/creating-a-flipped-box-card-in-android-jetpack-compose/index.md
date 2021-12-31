@@ -22,9 +22,9 @@ When using XML to design layouts, this is nearly impossible. With Jetpack Compos
 - [Prerequisites](#prerequisites)
 - [Canvas concepts](#Canvas-concepts)
 - [Creating a Compose project](#step-1---creating-a-compose-project)
-- [Creating custom composable](#step-2---creating-a-custom-composable)
+- [Creating custom Composable](#step-2---creating-a-custom-composable)
 - [Creating a wrapper box](#step-3---creating-a-wrapper-box)
-- [Working with canvas](#step-4---working-with-canvas)
+- [Working with a Canvas](#step-4---working-with-a-canvas)
 - [Adding items inside the Card](#step-5---adding-items-inside-the-card)
 - [Demo](#demo)
 - [Conclusion](#conclusion)
@@ -40,11 +40,11 @@ To follow along with this tutorial, you will need the following:
 ### Canvas concepts
 When it comes to making custom graphics in Android, Jetpack compose makes it simpler and easier. For this tutorial, we will go through some concepts that we will use to create a flipped card.
 
-We will go through canvas concepts in Compose, then we will jump directly to create a flipped Card.
+We will go through some canvas concepts in Compose, then we will jump directly to create a flipped Card.
 
-1. `Canvas` - This is the main Composable that we can use to create our custom graphics. This is the syntax used when it comes to creating a Canvas:
+1. `Canvas` - This is the main Composable that we can use to create our custom graphics. The syntax used when it comes to creating a canvas is:
 
-```Kotlin
+```kotlin
 Canvas(modifier = Modifier.fillMaxSize()) {
     YOUR_CODE
 }
@@ -52,9 +52,9 @@ Canvas(modifier = Modifier.fillMaxSize()) {
 
 2. `DrawScope` - This is like an environment where we can do our graphics drawing.
 
-3. `ClipPath` - This removes certain regions in Canvas based on a given path. To do the clipping, here is how we define the `clipPath`:
+3. `ClipPath` - This removes certain regions in canvas based on a given path. To do the clipping, here is how we define the `clipPath`:
 
-```Kotlin
+```kotlin
 clipPath(path) {
     ...
 }
@@ -62,7 +62,7 @@ clipPath(path) {
 
 4. `Path` - From the current point, `Path` draws a straight line to another given point. Here is how we can define a path:
 
-```Kotlin
+```kotlin
 val path = Path().apply {
     ...
 }
@@ -72,7 +72,7 @@ val path = Path().apply {
 
 6. `DrawRoundRect` - As its name says, the `drawRoundRect` function draws a round rectangle.
 
-```Kotlin
+```kotlin
 drawRoundRect(
     ...
 )
@@ -92,7 +92,7 @@ Give it the name of your choice.
 ![empty_proj](/engineering-education/creating-a-flipped-box-card-in-android-jetpack-compose/empty_proj.png)
 
 ### Step 2 - Creating a custom composable
-In this step, we will create a `Composable` that we will apply some `Canvas` operations. In your `MainActivity`, outside everything, define a `Composable` and name it `FlippedCard`.
+In this step, we will create a composable that we will apply some `Canvas` operations. In your `MainActivity`, outside everything, define a composable and name it `FlippedCard`.
 
 For the `Composable` we will define some arguments:
 - A `modifier` and give it a default `Modifier`.
@@ -102,7 +102,7 @@ For the `Composable` we will define some arguments:
 
 I decided to add a color parameter because you may want to display the cards in a lazy column in different colors. That's when you can pass different colors to the Cards.
 
-```Kotlin
+```kotlin
 @Composable
 fun FlippedCard(
     modifier: Modifier = Modifier,
@@ -125,7 +125,7 @@ Box(
 }
 ```
 
-### Step 4 - Working with canvas
+### Step 4 - Working with a Canvas
 In this step, inside the `Box` we add a `Canvas`
 
 ```Kotlin
@@ -134,7 +134,7 @@ Canvas(modifier = Modifier.matchParentSize()) {
 }
 ```
 
-We make sure we use `matchParentSize` as its size other than `fillMaxSize`. Our `Canvas` needs a fixed size - a size that the `Canvas` knows the moment it is called. 
+We make sure we use `matchParentSize` as its size other than `fillMaxSize`. Our Canvas needs a fixed size - a size that the Canvas knows the moment it is called. 
 
 The `matchParentSize` will give the `Canvas` size immediately after the parent has measured its size. In that case, our parent is the Box.
 
