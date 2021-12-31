@@ -1,17 +1,5 @@
 ### Data Entry Support with HTML
 
-### Table of contents
-
-- [Introduction](#introduction)
-- [Key Takeaways](#key-takeaways)
-- [Prerequisites](#prerequisites)
-- [Benefits of having an online data entry form](#benefits-of-having-an-online-data-entry-form)
-- [Creating the HTML Form](#creating-the-html-form)
-- [Sending form to Google Sheets](#sending-form-to-google-sheets)
-- [Deploying a script as a web app](#deploying-a-script-as-a-web-app)
-- [Further reading](#further-reading)
-- [Conclusion](#conclusion)
-
 ### Introduction
 A critical phase in the data analysis process is new data
  input. The information gathered is to be accurately input into the computer system. 
@@ -33,6 +21,17 @@ To have a better understanding of this article, the reader should:
 -  Know how to create HTML forms.
 -  Be familiar with google forms, google sheets, and google app scripts.
 - Have a valid google account.
+### Table of contents
+
+- [Introduction](#introduction)
+- [Key Takeaways](#key-takeaways)
+- [Prerequisites](#prerequisites)
+- [Benefits of having an online data entry form](#benefits-of-having-an-online-data-entry-form)
+- [Creating the HTML Form](#creating-the-html-form)
+- [Sending form to Google Sheets](#sending-form-to-google-sheets)
+- [Deploying a script as a web app](#deploying-a-script-as-a-web-app)
+- [Further reading](#further-reading)
+- [Conclusion](#conclusion)
 
 ### Benefits of having an online data entry form
 Online data entry allows input and storage of information into a database of any given organization.
