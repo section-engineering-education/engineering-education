@@ -5,7 +5,7 @@ published: true
 url: /getting-started-with-nuxt-3/
 title: Getting started with Nuxt 3
 description: This article will look at Nuxt 3 installation process and everything you need to start building with Nuxt 3.
-author: leah-wangui
+author: wangui-leah
 date: 2021-12-24T00:00:00-11:05
 topics: [Languages]
 excerpt_separator: <!--more-->
@@ -14,8 +14,6 @@ images:
  - url: /engineering-education/getting-started-with-nuxt-3/hero.jpg
    alt: Getting started with Nuxt 3 example image
 ---
-
-
 [Nuxt 3](https://v3.nuxtjs.org/) is a Hybrid Vue Framework that allows us to use Vue.js and, most importantly, Vue.js 3 to build server-side rendered applications. Nuxt 3 was released on October 12, 2021, and will be used in Vue and Nuxt developer ecosystems. This is an updated version of Nuxt 2 that has been redesigned to improve performance and facilitate builds.
 <!--more-->
 
