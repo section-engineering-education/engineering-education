@@ -2,30 +2,27 @@
 layout: engineering-education
 status: publish
 published: true
-url: /json-server-and-axios/
-title: Building a Vue.js 3 application with JSON server and Axios
-description: This tutorial will help the learner be more confident in their ability to interface with APIs using Axios and Vue 3.
+url: /vue3-with-json-server-and-axios/
+title: Building a Vue 3 Application with JSON server and Axios
+description: This tutorial will show you how to build a Vue.js 3 application with JSON server and Axios.
 author: terrypha-wamaitha
 date: 2021-12-29T00:00:00-21:50
 topics: [Languages]
 excerpt_separator: <!--more-->
 images:
 
-  - url: /engineering-education/json-server-and-axios/hero.png
+  - url: /engineering-education/vue3-with-json-server-and-axios/hero.png
     alt: Building a Vue.js 3 application with JSON server and Axios
 ---
-
-Vue is a front-end JavaScript framework used to create single-page apps that run on the client.
+Vue is a front-end JavaScript framework used to create single-page apps that run on the client. It can also be used to create full-stack applications by making HTTP requests to a backend server. It is popular with Node.js and the Express(MEVN stack).
 <!--more-->
-It can also be used to create full-stack applications by making HTTP requests to a backend server. It is popular with Node.js and Express(MEVN stack).
-
 [JSON server](https://www.npmjs.com/package/json-server) is an npm package that lets you create mock REST APIs with zero coding. It is used to create a simple JSON file that can be used as a database and responds to HTTP requests.
 
-Axios is a HTTP client to make HTTP requests to the [JSON server](https://www.npmjs.com/package/json-server).
+[Axios](https://www.axios.com/) is the HTTP client that we will use to make HTTP requests to the JSON server.
 
-In this article, we will build a shopping list application. We will start with a blank Vue.js application then add `json-server` for local data storage, and Axios for making HTTP requests:
+In this article, we will build a shopping list application. We will start with a blank Vue.js application then add the JSON server` for local data storage, and Axios for making HTTP requests:
 
-![shopping-list](/engineering-education/json-server-and-axios/shopping-list.png)
+![shopping-list](/engineering-education/vue3-with-json-server-and-axios/shopping-list.png)
 
 ### Table of contents
 - [New Vue.js application](#new-vuejs-application)
@@ -37,14 +34,13 @@ In this article, we will build a shopping list application. We will start with a
 
 ### Prerequisites
 To follow along with this tutorial, you are required to have the following:
-- [Node.js](https://nodejs.org/en/download/package-manager/) installed
-- Some knowledge of JavaScript
+- [Node.js](https://nodejs.org/en/download/package-manager/) installed.
+- Some JavaScript knowledge.
 
-### New Vue.js application
-Assuming you have installed [Node.js](https://nodejs.org/en/download/package-manager/) in your computer, run the following commands in your terminal to install Vue CLI:
+### Creating a new Vue.js application
+Assuming you have installed Node in your computer, run the following commands in your terminal to install Vue CLI:
 
 ```bash
-#Install Vue.js CLI globally
 $ npm install -g @vue/cli
 ```
 
@@ -54,27 +50,26 @@ After the installation, create a new project using:
 $ vue create shopping-list 
 ```
 
-Navigate to the folder and open the project in your favorite editor. e.g VS Code:
+Navigate to the `shopping-list` folder and open the project in your preffered code editor. If you are using VS Code, run the following command to open the project in VS Code:
 
 ```bash
 $ cd shopping-list
 
-# open project in vs code
 $ code .
 ```
 
-Run the following command to start the Vue.js application:
+Then run the following command to start the Vue.js application:
 
 ```bash
 $ npm run serve
 ```
 
-Our application will run on `http://localhost:8080/` in the browser. We should now see a default homepage of Vue running on our browser.
+The application will run on `http://localhost:8080/` in the browser. You should now see the default Vue homepage running in our browser.
 
-### Creating a JSON file and installing JSON server
-We can now create a simple JSON file that can be used as a database.
+### Setting up the JSON server
+Let's now create a simple JSON file that will be used as a database.
 
-Inside our shopping-list directory, let's create a file named `data.json`:
+Inside our `shopping-list` directory, create a file named `data.json`:
 
 ```bash
 $ touch data.json
@@ -105,20 +100,23 @@ Let's add the following data in the file:
 }
 ```
 
-From the code above, we have created a shopping list but we need to install `json-server` and start it:
+We have created a shopping list object containing a list of items together with their IDs. To use this data in our application, we need to use `json-server`. Run the following command to install the package:
 
 ```bash
-#Install json-server globally
+# Install json-server globally
 $ npm install json-server -g 
 
-#Inside your working directory, start the JSON Server
 $ json-server data.json
 ```
 
-If we type `http://localhost:3000/items` in our browser, we should see our shopping list in the database.
+The command `json-server` will start a server using the data in our `data.json` file.
+
+By default, the server runs on localhost port 3000. If you navigate to `http://localhost:3000/items` in your browser,  you should get the JSON response from the server.
 
 ### Getting HTTP data within our application
-First, we need to install `axios` in our project to access the data in the `data.json` file:
+To access the data in our application, we need to use the HTTP client `Axios`.
+
+Let's install the package:
 
 ```bash
 $ npm install axios
@@ -128,7 +126,7 @@ After the installation, we can now import `axios` in our application.
 
 In our `App.vue`,let's remove everything inside template, script and style tags. Add the following code:
 
-```js
+```vue
 <template>
   <div id="app">
     <h1>Shopping List</h1>
@@ -176,32 +174,36 @@ li {
 
 Let's explain the code above.
 
-```js
+```javascript
 import axios from "axios";
 ```
 
 Here, we have imported Axios that will help us access the data in the `data.json` file.
 
-We have utilized the [async and await](https://www.javascripttutorial.net/es-next/javascript-async-await/) keywords, which build on promises and allow you to construct asynchronous code.
+We have utilized the [async and await](https://www.javascripttutorial.net/es-next/javascript-async-await/) mechanism, which build on promises and allow you to construct asynchronous code.
 
-```js
+```javascript
 async created() {
+    // ...
+}
 ```
 
-Here, we have created a hook named `created()`. This hook is used for fetching data from backend API and setting it to data properties. The `async` keyword is prepended on the `created()` function to show that the function will make use of promises and we’ll be using it to await and pause the execution of the function until the promise is resolved.
+Here, we have used the `created()` hook which will be used for fetching data from backend API and setting it to data properties. The `async` keyword is prepended on the `created()` function to show that the function will make use of promises and we’ll be using it to wait and pause execution until data from the server is resolved.
 
-```js
+```javascript
 try {
-      const res = await axios.get(`http://localhost:3000/items`);
+   const res = await axios.get(`http://localhost:3000/items`);
+}
 ```
-We have used `try/catch` method to test for errors. `try` is used to check for errors while `catch` is used to handle the error if one occurs. 
 
-### Adding data using POST
+We have used `try/catch` bliocks to catch errors. The `try` block is used to get the data from the server while `catch` is used to handle the error if one occurs. 
+
+### Adding data using a POST request
 You can make `POST`, `PUT`, `PATCH` or `DELETE` requests to the database using Axios.
 
-`POST` is a HTTP method used to create or add data in the database. In our project, let's add `POST` method to add an item in our shopping list:
+`POST` is a HTTP method used to create or add data to the database. In our methods, let's add the `addItem` function to add an item to our shopping list:
 
-```vuejs
+```vue
 <template>
   <div id="app">
     <h1>Shopping List</h1>
@@ -247,14 +249,14 @@ export default {
 </script>
 ```
 
-![adding input area and a button](/engineering-education/json-server-and-axios/shopping1.png)
+![adding input area and a button](/engineering-education/vue3-with-json-server-and-axios/shopping1.png)
 
-Here, we have added an input area and a button. We have also added `addItem()` method that is called once you click the button to add the item. JSON server handles `id` property by incrementing it by 1 automatically. We are then setting the new items to contain every item element, and then add the item to the end of the list.
+Here, we have added an input area and a button. We have also added `addItem()` method that is called once you click the button to add the item. The JSON server handles the `id` property by incrementing it by 1 automatically. We are then setting the new items to contain every item element, and then add the item to the end of the list.
 
-### Updating data using PATCH
-We use the `PATCH` method to update one value in an object. We will be striking out the items we already bought by adding the following code in the methods field:
+### Updating data using a PATCH request
+We can use the `PATCH` method to update one value in an object. We will be striking out the items we already bought by adding the following function to our methods:
 
-```js
+```javascript
 async boughtItem(id) {
     try {
         await axios.patch(`${`http://localhost:3000/items`}/${id}`, {
@@ -274,10 +276,12 @@ async boughtItem(id) {
 }
 ```
 
-### Deleting data using DELETE
-The `DELETE` method is a request used to delete a specific data in a server. We can do this by adding the following code in the methods field:
+### Deleting data using a DELETE request
+The `DELETE` method is a request used to delete a specific data in a HTTP server.
 
-```js
+We can add the delete functionality by adding the following function to our methods:
+
+```javascript
 removeItem(id) {
     axios.delete(`http://localhost:3000/items/${id}`)
     this.items = this.items.filter(item => item.id !== id)
@@ -286,7 +290,7 @@ removeItem(id) {
 
 After adding the two methods to our `App.vue`, we should have the following code:
 
-```vuejs
+```vue
 <template>
   <div class="container">
     <div id="app">
@@ -359,12 +363,18 @@ export default {
 Let's explain the code above.
 
 ```html
-<li v-for="item of items" :class="{ bought: item.bought }" :key="item.id" @click="boughtItem(item.id)" @dblclick="removeItem(item.id)">
+<li
+    v-for="item of items"
+    :class="{ bought: item.bought }"
+    :key="item.id"
+    @click="boughtItem(item.id)"
+    @dblclick="removeItem(item.id)"
+>
 ```
 
-Here, we have used the `@click` and `@dblclick` directive to listen to DOM events and run some JavaScript when they’re triggered. When the user clicks on an item, the `boughtItem` method is called. This will update the done property of the selected item to true in the API. When the user double clicks on an item, the `removeItem` method is called. 
+Here, we have used the `@click` and `@dblclick` directives to listen to DOM events and run some JavaScript when they’re triggered. When the user clicks on an item, the `boughtItem` function is called. This will update the `done` property of the selected item to true in the API. When the user double clicks on an item, the `removeItem` method is called, removing the item.
 
-In your browser, you should see the application with the list of items. The items should be striked out when you click on them and deleted when you double click on them after adding the following styles:
+To make our application a little less bare, add the following styles to your `App.vue` file:
 
 ```css
 <style>
@@ -404,17 +414,19 @@ input {
 </style>
 ```
 
-![shopping-list](/engineering-education/json-server-and-axios/shopping-list.png)
+In your browser, you should see the application with the list of items. The items should be striked out when you click on them and deleted when you double click on them.
 
-Here is my [GitHub repo](https://github.com/Terripha/shopping-list) containing full working code.
+![shopping-list](/engineering-education/vue3-with-json-server-and-axios/shopping-list.png)
+
+Here is my [GitHub repo](https://github.com/Terripha/shopping-list) containing fully working code.
 
 ### Conclusion
-In this article, we used `json-server` to create an API that you can consume using Axios and Vue 3.0. We used HTTP methods like `GET`, `POST`, `PATCH`, `DELETE` to interact with the API. Axios is recommended for more sophisticated requests since it enables different settings of numerous requests in one location.
+In this article, we used `json-server` to create an API that you can consume using Axios and Vue 3.0. We used `GET`, `POST`, `PATCH`, `DELETE` HTTP methods to interact with the API. Axios is recommended for more sophisticated requests since it enables different settings of numerous requests in one location.
 
 ### Further reading
-- [Introduction to Vue.js](https://vuejs.org/v2/guide/)
-- [Getting started with Axios](https://axios-http.com/docs/intro)
-- [Introduction to JSON Server](https://zetcode.com/javascript/jsonserver/)
+- [Introduction to Vue.js - Vuejs docs](https://vuejs.org/v2/guide/)
+- [Getting started with Axios - Axios docs](https://axios-http.com/docs/intro)
+- [Introduction to JSON Server - Zetcode.com](https://zetcode.com/javascript/jsonserver/)
 
 Happy coding!
 
