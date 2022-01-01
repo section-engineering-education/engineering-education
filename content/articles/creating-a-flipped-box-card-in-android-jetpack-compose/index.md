@@ -240,7 +240,7 @@ After running the project, you will see something like this:
 ![demo](/engineering-education/creating-a-flipped-box-card-in-android-jetpack-compose/demo.png)
 
 ### Conclusion
-In this tutorial, we have learned some basic concepts of Canvas and created a FlippedCard composable. Keep exploring more about the power of Graphics in Compose. 
+In this tutorial, we have learned what a Canvas is, how to use a Drawscope to do graphics operations, drawing a line using the lineTo method to complete a Path, using clipPath to remove unwanted parts in our Canvas, drawing round rectangles, and finally, we used these concepts to create a FlippedCard composable. Keep exploring more about the power of Graphics in Compose. 
 
 To see a full implementation of the FlippedCard, check out this Github repository [Flipped Card Demo](https://github.com/osirevaline/FlippedCardDemo).
 
