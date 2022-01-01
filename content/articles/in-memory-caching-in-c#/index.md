@@ -102,7 +102,6 @@ With our data Class Libray, we can now fetch this data in the pages folder under
 @inject WeatherForecastService ForecastService
 @inject SampleClassLibrary data 
 <h1>User Data</h1>
-
 @if(users is not null)
             {
                 foreach(var e in users)
@@ -153,7 +152,6 @@ We are basically using the `await Task.Delay(3000);` instead of of `Thread.Sleep
 @inject WeatherForecastService ForecastService
 @inject SampleClassLibrary data 
 <h1>User Data</h1>
-
 @if(users is not null)
             {
                 foreach(var e in users)
