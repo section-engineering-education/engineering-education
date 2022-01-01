@@ -54,8 +54,8 @@ Below is an example of our explanation above:
 <div class="formBlock">
     <form id="form">
         <input type="text" name="start" class="input" id="start" placeholder="Choose starting point" />
-        <input type="text" name="end" class="input" id="destination" placeholder="Choose starting point" />
-        <button type="submit">Get Directions</button>
+        <input type="text" name="end" class="input" id="destination" placeholder="Choose end point" />
+        <button type="submit">Go</button>
     </form>
 </div>
 ```
