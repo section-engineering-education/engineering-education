@@ -1,4 +1,23 @@
+---
+layout: engineering-education
+status: publish
+published: true
+url: /neumorphism-vs-glassmorphism-and-their-implementation-via-css-and-html/
+title: Neumorphism vs Glassmorphism and Their Implementation via CSS and HTML
+description: In this article, we will discuss the UI design patterns of neumorphism and glassmorphism and how they are used.
+author: linchez-maina
+date: 2022-01-01T00:00:00-12:00
+topics: [Languages]
+excerpt_separator: <!--more-->
+images:
+
+  - url: /engineering-education/neumorphism-vs-glassmorphism-and-their-implementation-via-css-and-html/hero.png
+    alt: neumorphism vs glassmorphism
+---
+
 A beautiful user interface (UI) design will ensure a user remains fulfilled by a webpage. Developers have many ways of ensuring their UI designs stand out from the rest.
+
+<!--more-->
 
 This article explores how to change the look and feel of your upcoming website using neumorphism and glassmorphism.
 
@@ -364,3 +383,6 @@ The final code for the two web pages can be found [here](https://github.com/lin-
 Glassmorphism and neumorphism are new trends. However, Glassmorphism is more recent and accepted by the developer community. Thus, developers will use the design for a long time to style websites until a better trend emerges. Concurrently, neumorphism will be around for a while due to its minimalist aspects. 
 
 There are many glassmorphism and neumorphism UI libraries on the web to use in your upcoming project. Knowing the specific areas on your webpage to use the two design patterns is a skill to learn and practice.
+
+---
+Peer Review Contributions by: [John Amiscaray](/engineering-education/authors/john-amiscaray/)
