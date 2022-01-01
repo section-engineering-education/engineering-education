@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /json-server-and-axios/
+url: /building-vuejs-app-with-json-server-and-axios/
 title: Building a Vue 3 Application with JSON server and Axios
 description: This tutorial will show you how to build a Vue.js 3 application with JSON server and Axios.
 author: terrypha-wamaitha
@@ -11,7 +11,7 @@ topics: [Languages]
 excerpt_separator: <!--more-->
 images:
 
-  - url: /engineering-education/json-server-and-axios/hero.png
+  - url: /engineering-education/building-vuejs-app-with-json-server-and-axios/hero.png
     alt: Building a Vue.js 3 application with JSON server and Axios
 ---
 Vue is a front-end JavaScript framework used to create single-page apps that run on the client. It can also be used to create full-stack applications by making HTTP requests to a backend server. It is popular with Node.js and the Express(MEVN stack).
@@ -22,7 +22,7 @@ Vue is a front-end JavaScript framework used to create single-page apps that run
 
 In this article, we will build a shopping list application. We will start with a blank Vue.js application then add the JSON server for local data storage, and Axios for making HTTP requests:
 
-![shopping-list](/engineering-education/json-server-and-axios/shopping-list.png)
+![shopping-list](/engineering-education/building-vuejs-app-with-json-server-and-axios/shopping-list.png)
 
 ### Table of contents
 - [New Vue.js application](#new-vuejs-application)
@@ -249,7 +249,7 @@ export default {
 </script>
 ```
 
-![adding input area and a button](/engineering-education/json-server-and-axios/shopping1.png)
+![adding input area and a button](/engineering-education/building-vuejs-app-with-json-server-and-axios/shopping1.png)
 
 Here, we have added an input area and a button. We have also added `addItem()` method that is called once you click the button to add the item. The JSON server handles the `id` property by incrementing it by 1 automatically. We are then setting the new items to contain every item element, and then add the item to the end of the list.
 
@@ -416,7 +416,7 @@ input {
 
 In your browser, you should see the application with the list of items. The items should be striked out when you click on them and deleted when you double click on them.
 
-![shopping-list](/engineering-education/json-server-and-axios/shopping-list.png)
+![shopping-list](/engineering-education/building-vuejs-app-with-json-server-and-axios/shopping-list.png)
 
 Here is my [GitHub repo](https://github.com/Terripha/shopping-list) containing fully working code.
 
