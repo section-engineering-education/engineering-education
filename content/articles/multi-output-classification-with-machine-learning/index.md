@@ -16,7 +16,7 @@ images:
 ---
 Multi-output classification is a type of machine learning that predicts multiple outputs at the same time. In multi-output classification, the model will give two or more outputs after making any prediction. In other types of classifications, the model usually predicts only a single output.
 <!--more-->
-An example of a multi-output classification model is a model that predicts the “type of fruit” and “color” of fruit at the same time. The “type of fruit” cab be, “orange”, “mango” and “pineapple”. The “color” can be, “red”, “green”, “yellow”, and “orange". The multi-output classification is used to solve this problem and gives two prediction results.
+An example of a multi-output classification model is a model that predicts the “type” and “color” of fruit at the same time. The “type of fruit” can be, “orange”, “mango” and “pineapple”. The “color” can be, “red”, “green”, “yellow”, and “orange". The multi-output classification is used to solve this problem and gives two prediction results.
 
 In this tutorial, we will build a multi-output text classification model using the Netflix dataset. The model will classify the input text as either `TV Show` or `Movie`. This will be the first output. The model will also classify the rating as: `TV-MA`, `TV-14`, `TV-PG`, `R`, `PG-13` and `TV-Y`.  The rating will be the second output. We will use Scikit-Learn `MultiOutputClassifier` algorithm to build this model.
 
