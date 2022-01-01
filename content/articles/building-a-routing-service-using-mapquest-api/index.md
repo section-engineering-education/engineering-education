@@ -168,17 +168,17 @@ function submitForm(event) {
 For our routing function, we'll need to add a new map layer since the old map is removed once the form is submitted. We took the liberty of having our custom markers. Next, we'll create a marker object for the starting and endpoint. Below is the implementation of the routing function:
 ```JavaScript
 function runDirection(start, end) {
-    
+
     // recreating new map layer after removal
     map = L.map('map', {
         layers: MQ.mapLayer(),
         center: [9.0820, 8.6753],
         zoom: 8
     });
-    
-    var dir = MQ.routing.directions();
 
-    dir.route({
+    var direction = MQ.routing.directions();
+
+    direction.route({
         locations: [
             start,
             end
@@ -186,44 +186,44 @@ function runDirection(start, end) {
     });
 
 
-    CustomRouteLayer = MQ.Routing.RouteLayer.extend({
-        createStartMarker: (location) => {
-            var custom_icon;
-            var marker;
+    MainRouteLayer = MQ.Routing.RouteLayer.extend({
+        initstartmarker: (location) => {
+            var icon1;
+            var startmarker;
 
-            custom_icon = L.icon({
+            icon1 = L.icon({
                 iconUrl: 'red.png',
                 iconSize: [20, 29],
                 iconAnchor: [10, 29],
                 popupAnchor: [0, -29]
             });
 
-            marker = L.marker(location.latLng, {icon: custom_icon}).addTo(map);
+            startmarker = L.marker(location.latLng, { icon: icon1 }).addTo(map);
 
-            return marker;
+            return startmarker;
         },
 
-        createEndMarker: (location) => {
-            var custom_icon;
-            var marker;
+        initEndmarker: (location) => {
+            var icon2;
+            var endmarker;
 
-            custom_icon = L.icon({
+            icon2 = L.icon({
                 iconUrl: 'blue.png',
                 iconSize: [20, 29],
                 iconAnchor: [10, 29],
                 popupAnchor: [0, -29]
             });
 
-            marker = L.marker(location.latLng, {icon: custom_icon}).addTo(map);
+            endmarker = L.marker(location.latLng, { icon: icon2 }).addTo(map);
 
-            return marker;
+            return endmarker;
         }
     });
-    
-    map.addLayer(new CustomRouteLayer({
-        directions: dir,
+
+    map.addLayer(new MainRouteLayer({
+        directions: direction,
         fitBounds: true
-    })); 
+    }));
 }
 ``` 
 Finally, we'll add our addEventListener method to submit the form result and our map should be as follows:
@@ -300,7 +300,7 @@ Our final code should be as follows:
     <div class="formBlock">
         <form id="form">
             <input type="text" name="start" class="input" id="start" placeholder="Choose starting point" />
-            <input type="text" name="end" class="input" id="destination" placeholder="Choose starting point" />
+            <input type="text" name="end" class="input" id="destination" placeholder="Choose ending point" />
             <button id="button" type="submit">Go</button>
         </form>
     </div>
@@ -321,9 +321,9 @@ Our final code should be as follows:
             zoom: 8
         });
 
-        var dir = MQ.routing.directions();
+        var direction = MQ.routing.directions();
 
-        dir.route({
+        direction.route({
             locations: [
                 start,
                 end
@@ -331,42 +331,42 @@ Our final code should be as follows:
         });
 
 
-        CustomRouteLayer = MQ.Routing.RouteLayer.extend({
-            createStartMarker: (location) => {
-                var custom_icon;
-                var marker;
+        MainRouteLayer = MQ.Routing.RouteLayer.extend({
+            initstartmarker: (location) => {
+                var icon1;
+                var startmarker;
 
-                custom_icon = L.icon({
+                icon1 = L.icon({
                     iconUrl: 'red.png',
                     iconSize: [20, 29],
                     iconAnchor: [10, 29],
                     popupAnchor: [0, -29]
                 });
 
-                marker = L.marker(location.latLng, { icon: custom_icon }).addTo(map);
+                startmarker = L.marker(location.latLng, { icon: icon1 }).addTo(map);
 
-                return marker;
+                return startmarker;
             },
 
-            createEndMarker: (location) => {
-                var custom_icon;
-                var marker;
+            initEndmarker: (location) => {
+                var icon2;
+                var endmarker;
 
-                custom_icon = L.icon({
+                icon2 = L.icon({
                     iconUrl: 'blue.png',
                     iconSize: [20, 29],
                     iconAnchor: [10, 29],
                     popupAnchor: [0, -29]
                 });
 
-                marker = L.marker(location.latLng, { icon: custom_icon }).addTo(map);
+                endmarker = L.marker(location.latLng, { icon: icon2 }).addTo(map);
 
-                return marker;
+                return endmarker;
             }
         });
 
-        map.addLayer(new CustomRouteLayer({
-            directions: dir,
+        map.addLayer(new MainRouteLayer({
+            directions: direction,
             fitBounds: true
         }));
     }
