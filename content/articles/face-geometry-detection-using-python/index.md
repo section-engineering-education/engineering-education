@@ -4,7 +4,7 @@ status: publish
 published: true
 url: /face-geometry-detection-using-python/
 title: Face Geometry Detection using Python
-description: This tutorial will leverage MediaPipe's Face Mesh model to detect landmarks on faces and apply some styling to it.
+description: This tutorial will leverage MediaPipe's Face Mesh model to detect landmarks on faces and style them.
 author: esther-awuor
 date: 2021-12-17T00:00:00-21:00
 topics: [Machine Learning]
