@@ -466,6 +466,4 @@ The final application should look as shown below:
 
 
 ### Conclusion
-The superhero API is a simple and easy-to-use middleware. This tutorial discussed how to use the API in building a superhero application. First,
-we fetched the data and rendered it on a user interface. In combination with the Django framework, this tutorial should provide a headstart in 
-using the Superhero API and other APIs. 
+The superhero API is a simple and easy-to-use middleware. This tutorial discussed how to use the API in building a superhero application. First, we fetched the data and rendered it on a user interface. In combination with the Django framework, this tutorial should provide a headstart in using the Superhero API and other APIs. 
