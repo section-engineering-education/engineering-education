@@ -4,9 +4,9 @@ status: publish
 published: true
 url: /creating-a-flipped-box-card-in-android-jetpack-compose/
 title: Creating a Flipped Box Card in Android Jetpack Compose
-description: In this tutorial, we will go through some Canvas concepts in Compose, then we will jump directly to create a Flipped Card.
+description: In this tutorial, we will go through some Canvas concepts in Compose, then we will jump directly to creating a flipped card.
 author: osir-evaline
-date: 2021-12-30T00:00:00-13:45
+date: 2022-01-01T00:00:00-13:45
 topics: [Android]
 excerpt_separator: <!--more-->
 images:
