@@ -6,7 +6,7 @@ url: /javascript-screen-recorder/
 title: Building a Screen Recorder application with Javascript
 description: This article guides us on implementing this functionality in a web browser using React and Node.js
 author: wilson-gichuhi
-date: 2021-12-09T00:00:00-01:34
+date: 2022-01-01T00:00:00-01:34
 topics: [Languages]
 excerpt_separator: <!--more-->
 images:
@@ -139,7 +139,7 @@ function App() {
 
 - The ```const username = useRef(`User_${Date.now().toString().slice(-4)}`)``` will generate a random username (e.g User_1548) since we don't have a real authenticated user to retrieve from context of auth.
 - With `socketRef`, we call the call io client socket with the server URL that creates an interface to send or receive data.
-- The `linkRef` and `videoRef` have a link to the DOM node and the video to enable download and view in the DOM.
+- The `linkRef` and `videoRef` link to the DOM node and the video to enable download and view in the DOM.
 
 To send events, a method is used socket.emit(type, data), where type is a string indicating the type of event. Data can be both primitives and objects. In order to process events, a method is used socket.on(type, callback), with an event type and a callback function that executes once an event is emitted.
 
@@ -412,7 +412,6 @@ server.listen(5000, () => {
 ```
 
 ### A running demo
-
 ![demo 1](/engineering-education/js-screen-recorder/demo1.png)
 ![demo 2](/engineering-education/js-screen-recorder/demo2.png)
 
