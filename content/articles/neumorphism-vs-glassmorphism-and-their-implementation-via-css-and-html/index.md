@@ -77,7 +77,7 @@ The code looks like this:
 }
 ```
 
-Give the border radius a value of none and add two inset shadows to the box-shadow property in the inputs styles.
+Give the border radius a value of none and add two inset shadows to the box-shadow property in the inputs' styles.
  
 >Please note I removed the outline and border to prevent the neumorphism effect set on the elements from being overridden by the default styles.
 
@@ -287,7 +287,7 @@ Add the backdrop filter property to the main element to produce the glassmorphis
 
 > Please remove the background color and the box-shadow property. This prevents the shadows from blocking the morphing effect.
 
-The CSS code will look like this for the login box and its child elements. Kindly note that I have not included the HTML code.
+The CSS code will look like this for the login box and its child elements. Kindly note that I have not included the HTML code because we will be reusing the above HTML.
 ```css
 *{
  font-family: sans-serif;
