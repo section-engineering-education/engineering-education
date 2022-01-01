@@ -50,7 +50,7 @@ We will use the Netflix dataset to build our model. The image below will show ho
 
 ![Dataset image](/engineering-education/multi-output-classification-with-machine-learning/dataset-image.png)
 
-From the image above our dataset has four columns: `title`, `description`, `type`, and `rating`. The `title` column will be the input column while type` and `rating` will the be output column. We now need to load this dataset on our machine.
+From the image above, our dataset has four columns: `title`, `description`, `type`, and `rating`. The `title` column will be the input column while type` and `rating` will be the output column. We now need to load this dataset on our machine.
 
 To download this Netflix dataset, click [here](https://drive.google.com/file/d/1524vMr5iCGEEJmPx2n2-TAl8EicKuxcg/view?usp=sharing)
 
