@@ -6,7 +6,7 @@
 - It's necessary for the reader to understand SVMs since kernels are implemented in SVM models. 
 
 
-## Introduction
+### Introduction
 The concept of "data drawn from some probability distribution" underpins many statistics and machine learning techniques. A probability distribution is a model for the frequency of data points, i.e., how likely it is to see a particular value, outcome, or other occurrences. The parameters of the underlying distribution are used to define parametric methods (or algorithms).
 
 
@@ -35,7 +35,7 @@ ___Supervised machine learning___ is also known as supervised learning. It is di
 
 A supervised learning algorithm examines training data and generates an inferred function that can be used to map new examples.
 
-## Kernel methods in machine learning
+### Kernel methods in machine learning
 These are some of the many methods of kernel ;
 - Support Vector Machine (SVM)
 - Adaptive Filter
