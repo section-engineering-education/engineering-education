@@ -167,7 +167,7 @@ Here is what your web page should look like:
 
 ### Adding functionality with JavaScript
 
-In your `lyrics.js` file, declare variables and use the Document Object Model (DOM) selectors to connect with elements in the `lyrics.html` file, using the code snippet below:
+In your `lyrics.js` file, declare variables and use the DOM selectors to connect with elements in the `lyrics.html` file, using the code snippet below:
 
 ```JavaScript
 
@@ -232,7 +232,7 @@ async function startSearch(searchValue) {
 
 ```
 
-Comment out the showData function in the code snippet above (remember to uncomment the showData function), then launch the web app using the [live server vs code extension](https://marketplace.visualstudio.com/items?itemName=ritwickdey.LiveServer). Type in a song in the search field (note that some suggested song lyrics are not avilable on this API, you can get a paid API to explore more), and console log the result. To access the console, right-click inside the webpage, click the inspect option then navigate to the console in the chrome dev tools.
+Comment out the showData function in the code snippet above (remember to uncomment the showData function), then launch the web app using the [live server vs code extension](https://marketplace.visualstudio.com/items?itemName=ritwickdey.LiveServer). Type in a song in the search field (note that some suggested song lyrics are not avilable on this API, you can get a paid API to explore more), after which you should console log the result. To access the console, right-click inside the webpage, click the inspect option then navigate to the console in the chrome dev tools.
 
 Your screen should be like the screenshot below:
 
