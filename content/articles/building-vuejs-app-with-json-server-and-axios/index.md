@@ -11,7 +11,7 @@ topics: [Languages]
 excerpt_separator: <!--more-->
 images:
 
-  - url: /engineering-education/building-vuejs-app-with-json-server-and-axios/hero.png
+  - url: /engineering-education/building-vuejs-app-with-json-server-and-axios/hero.jpg
     alt: Building a Vue.js 3 application with JSON server and Axios
 ---
 Vue is a front-end JavaScript framework used to create single-page apps that run on the client. It can also be used to create full-stack applications by making HTTP requests to a backend server. It is popular with Node.js and the Express(MEVN stack).
