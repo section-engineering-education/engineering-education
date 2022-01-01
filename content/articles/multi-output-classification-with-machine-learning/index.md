@@ -16,7 +16,11 @@ images:
 ---
 Multi-output classification is a type of machine learning that predicts multiple outputs at the same time. In multi-output classification, the model will give two or more outputs after making any prediction. In other types of classifications, the model usually predicts only a single output.
 <!--more-->
+<<<<<<< HEAD
 An example of a multi-output classification model is a model that predicts the “type of fruit” and “color” of fruit at the same time. The “type of fruit” cab be, “orange”, “mango” and “pineapple”. The “color” can be, “red”, “green”, “yellow”, and “orange". The multi-output classification is used to solve this problem and gives two prediction results.
+=======
+An example of a multi-output classification model is a model that predicts the “type” and “color” of fruit at the same time. The “type of fruit” can be, “orange”, “mango” and “pineapple”. The “color” can be, “red”, “green”, “yellow”, and “orange". The multi-output classification is used to solve this problem and gives two prediction results.
+>>>>>>> 3862508bbdcf74d695a6b61ed5e834c014868cb0
 
 In this tutorial, we will build a multi-output text classification model using the Netflix dataset. The model will classify the input text as either `TV Show` or `Movie`. This will be the first output. The model will also classify the rating as: `TV-MA`, `TV-14`, `TV-PG`, `R`, `PG-13` and `TV-Y`.  The rating will be the second output. We will use Scikit-Learn `MultiOutputClassifier` algorithm to build this model.
 
@@ -50,7 +54,11 @@ We will use the Netflix dataset to build our model. The image below will show ho
 
 ![Dataset image](/engineering-education/multi-output-classification-with-machine-learning/dataset-image.png)
 
+<<<<<<< HEAD
 From the image above our dataset has four columns: `title`, `description`, `type`, and `rating`. The `title` column will be the input column while type` and `rating` will the be output column. We now need to load this dataset on our machine.
+=======
+From the image above, our dataset has four columns: `title`, `description`, `type`, and `rating`. The `title` column will be the input column while type` and `rating` will be the output column. We now need to load this dataset on our machine.
+>>>>>>> 3862508bbdcf74d695a6b61ed5e834c014868cb0
 
 To download this Netflix dataset, click [here](https://drive.google.com/file/d/1524vMr5iCGEEJmPx2n2-TAl8EicKuxcg/view?usp=sharing)
 
