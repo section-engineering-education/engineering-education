@@ -1,10 +1,10 @@
-# How To Build Deep learning Models Using Tensorflow With Python
+### How To Build Deep learning Models Using Tensorflow With Python
 
-## Prerequisites
+### Prerequisites
 To get along, you should ;
 - Have a little knowledge about deep learning models and machine learning
 - Be familiar with deep learning basics and how to go about it, you refer to this article [Introduction to Deep Learning](https://www.section.io/engineering-education/introduction-to-deep-learning/) to learn more about deep learning
-## Introduction
+###Introduction
 Giving a look at the world today, you’ll realize that many applications that we use in our daily lives have been built using deep learning. 
 Deep learning is a subset of machine learning that mimics the neuron of the human brain, 
 it allows the computer do human tasks by imitating the human thinking process.
@@ -87,7 +87,7 @@ model.evaluate(x_test, y_test)
 ### we then make a prediction about the outcome
 ```
 
-#### Conclusion
+### Conclusion
 Tensorflow has made coding look great, through it, a lot of deep learning models have been made. With the steps given, the reader will be able to deploy a deep learning model using tensorflow. I hope this article was of good help to you, the content in it is useful to beginners and intermidiate individuals practicing machine learning and deep learning. For beginners you'll have to do more coding so that you may familiarise with the procedures.
 I'll provide links for articles that will help you learn more about ***deep learning***, ***machine learning*** and ***keras***. To learn more about ;
 - Deep learning [click here](ibm.com/cloud/learn/deep-learning)  
