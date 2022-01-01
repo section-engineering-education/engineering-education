@@ -4,7 +4,7 @@
 To get along, you should ;
 - Have a little knowledge about deep learning models and machine learning
 - Be familiar with deep learning basics and how to go about it, you refer to this article [Introduction to Deep Learning](https://www.section.io/engineering-education/introduction-to-deep-learning/) to learn more about deep learning
-###Introduction
+### Introduction
 Giving a look at the world today, you’ll realize that many applications that we use in our daily lives have been built using deep learning. 
 Deep learning is a subset of machine learning that mimics the neuron of the human brain, 
 it allows the computer do human tasks by imitating the human thinking process.
@@ -13,7 +13,7 @@ Keras and Tensorflow are the most used frameworks.
 
 ### *Table of content*
 - [Importance of deep learning](#importance-of-deep-learning)
-- [What is Tensorflow?](#what-is-tensorflow?)
+- [What is Tensorflow?](#what-is-tensorflow)
 - [Merits and demerits of tensorflow](#merits-and-demerits-of-tensorflow)
   - [*Merits*](#*merits*)
    - [*Demerits*](#*demerits*)
@@ -21,7 +21,7 @@ Keras and Tensorflow are the most used frameworks.
 - [Conclusion](#conclusion)
 
 #### **Importance of deep learning**
-It has the capacity to process several features hence making it best in operating with unstructured data. Deep learning technology is able to lead to a dramatic development in our day-to- day quality of life by helping us predict, plan, make and apply better decision.
+It has the capacity to process several features hence making it best in operating with unstructured data. Deep learning technology is able to lead to a dramatic development in our day-to-day quality of life by helping us predict, plan, make and apply better decision.
 
 With knowledge in modelling deep learning neural networks and a better understanding in probabilistic methods one should be able start his/her career in deep learning with ease.
 Some of the modelling deep learning neural networks that may be of great help in your career include ADAM, CNN, LSTM, Dropout, RNN, etc. 
