@@ -2,7 +2,7 @@ A beautiful user interface (UI) design will ensure a user remains fulfilled by a
 
 This article explores how to change the look and feel of your upcoming website using neumorphism and glassmorphism.
 
-### What You Will Learn
+### What you will learn
 - The two UI design strategies: neumorphism and glassmorphism.
 - The importance of an intriguing and captivating UI design.
 - The various points of your page to fit each design strategy.
@@ -11,31 +11,28 @@ This article explores how to change the look and feel of your upcoming website u
 ### Importance of an exemplary user interface design
 Developers build websites to pass information to users. You can develop a simple website using a markup language and be done with it. But, a good UI/UX design adds many advantages to your site. Some of these advantages include:
 
-- It improves a users' experience as they will enjoy visiting the site. This sets a good first impression for your visitors.
-- It helps raise your website's Search Engine Optimization (SEO) rankings due to an increased liking from your site's visitors.
-- It boosts your website presence on the internet when it's still new.
-- It creates consistency in your site as users get to find whatever they need quickly.
-- Using proper fonts and eye-pleasing colors makes it easier for your visitors to navigate around a website.
-- The website's UI is a branding tool that builds trust between you and your users.
+- Improving users' experience as they will enjoy visiting the site. This sets a good first impression for your visitors.
+- Raising your website's search engine optimization (SEO) rankings due to an increased liking from your site's visitors.
+- Boosting your website presence on the internet when it's still new.
+- Creating consistency in your site as users get to find whatever they need quickly.
+- Making it easier for users to navigate through proper fonts and eye-pleasing colors.
+- Building trust between you and your users using the website's UI as a branding tool.
 
 ### Neumorphism
 In 2020, neumorphism got the attention of many developers on the internet when it got applied to UI/UX design. But, the design pattern is still new and was inspired by skeuomorphism with a mix of minimalism.
 
-Some developers describe neumorphism as **the soft UI** because it uses light shadows to bring out its effects.
-neumorphism makes its UI elements seem like they are patched to the background. They are either protruding from it or inset into it.
+Some developers describe neumorphism as **the soft UI** because it uses light shadows to bring out its effects. Neumorphism makes its UI elements seem like they are patched to the background. They are either protruding from it or inset into it.
 
-### Use Cases
+### Use cases
 - The design pattern is favorable for websites that use many icons to increase accessibility. 
-- Neumorphism is also great for designing mobile user interfaces icons.
+- Neumorphism is also great for designing mobile user interface icons.
 
-### Designing the Neumorphism UI
+### Designing the neumorphism UI
 To create a good-looking neumorphism effect, use light shadows. Then, continue by combining the different box shadows and border-radius.
 
-Create a form element found inside a `<div>` tag of the ID `login-box.`
+To start, create a form element found inside a `<div>` tag of the ID `login-box`. Then, create two `<div>` elements with the `input-fields` class for the form's child elements. The `<div>` tags will each have two children: `<label>` and `<input>` tags, while the login button will have a `<button>` tag.
 
-Create two `<div>` tags with the input-fields class for the form's child elements. The `<div>` tags will each have two children: `<label>` and `<input>` tags, while the login button will have a `<button>` tag.
-
-In the CSS file, give the body a display value of `grid` and place the items at the `center.` This shifts the login box to the center of the page. Finish by adding a background colour of your choice.
+In the CSS file, give the body a display value of `grid` and place the items at the `center.` This shifts the login box to the center of the page. Finish by adding a background color of your choice.
 
 The code will look like this:
 
@@ -48,9 +45,7 @@ body{
 }
 ```
 
-It's now time to style the form's `<div>` tag to produce the neumorphism effect.
-
-Access the element using the ID `login-box.` Configure the width and height properties, and add a background colour. Set the border-radius and box-shadow properties to produce an oval-like input field.
+It's now time to style the form's `<div>` tag to produce the neumorphism effect. Access the element using the ID `login-box`. Configure the width and height properties, and add a background color. Set the border-radius and box-shadow properties to produce an oval-like input field.
 
 >It is essential to configure the box-shadow property with two shadow values. 
 
@@ -64,6 +59,7 @@ The code for that will look like this:
  border-radius: 11px;
  box-shadow: -3px -4px 8px #ffaaff73,
  2px 2px 5px #9b9da3;
+}
 ```
 
 >The login box has a general neumorphism effect. 
@@ -81,7 +77,7 @@ The code looks like this:
 }
 ```
 
-Give the border-radius a value of none and add two inset shadows to the box-shadow property in the inputs styles.
+Give the border radius a value of none and add two inset shadows to the box-shadow property in the inputs styles.
  
 >Please note I removed the outline and border to prevent the neumorphism effect set on the elements from being overridden by the default styles.
 
@@ -104,7 +100,7 @@ The final code will look like this:
 ```
 Neumorphism UI elements look patched to the background and appear either inset or protruding from the background. 
  
-In this case, make the login button protrude as the input elements appear inset. Then, remove the outline and border and give it the border-radius and box-shadow properties.
+In this case, make the login button protrude as the input elements appear inset. Then, remove the outline and border and give it the border radius and box-shadow properties.
 
 ```css
 button{
@@ -127,7 +123,7 @@ button{
 
 >Use commas to separate the two values of the box-shadow.
 
-You can add pseudo-elements like `focus` to the input and button elements to change their behaviour and styles when clicked.
+You can add pseudo-elements like `focus` to the input and button elements to change their behavior and styles when clicked.
 
 The code for that is as follows:
 
@@ -250,13 +246,8 @@ The webpage will look like this:
 
 ![Neumorphism](/neumorphism-vs-glassmorphism-and-their-implementation-using-css-and-html/neumorphism.png)
  
-### Glassmorphism and Its Use Cases
-
-Since neumorphism lacked proper accessibility, its popularity declined, causing its fall and the rise of glassmorphism. 
-
-Glassmorphism is a general design pattern for building many things without compromising accessibility.
-
-Glassmorphism is great for designing:
+### Glassmorphism and its use cases
+Since neumorphism lacked proper accessibility, its popularity declined, causing its fall and the rise of glassmorphism. Glassmorphism is a general design pattern for building many things without compromising accessibility. Glassmorphism is great for designing:
 - Website landing pages
 - Mobile apps' UI 
 - Dashboards
@@ -266,7 +257,7 @@ Glassmorphism is great for designing:
 
 Set your elements with a semi-transparent background, a sublime shadow, and a border to achieve glassmorphism. Also, add a blur property to the background so that whatever is behind it is 'morphed' into the element.
 
-Change the background colour and add the backdrop and blur properties. Proceed by removing the heavy background colours. Finally, a blur function on the backdrop filter property is added to produce a semi-transparent background.
+Change the background color and add the backdrop and blur properties. Proceed by removing the heavy background colors. Finally, a blur function on the backdrop filter property is added to produce a semi-transparent background.
 
 The code will look like this:
 ````css
@@ -277,11 +268,10 @@ The code will look like this:
  backdrop-filter: blur(5px);
  border-radius: 12px;
  -webkit-backdrop-filter: blur(5px);
+}
 ````
 
-For the body, add an image background. I recommend an image with a gradient colour flow to produce an excellent visual for the blend (morph).
-
-The code for that:
+For the body, add an image background. I recommend an image with a gradient color flow to produce an excellent visual for the blend (morph). Here is the code for that:
 
 ```css
 body{
@@ -293,11 +283,9 @@ body{
 }
 ```
 
-Add the backdrop filter property to the main element to produce the glassmorphism effect. 
+Add the backdrop filter property to the main element to produce the glassmorphism effect. Use the backdrop filter property on the login box, then remove the background color and the box-shadow property.
 
-Use the backdrop filter property on the login box, then remove the background colour and the box-shadow property.
-
-> Please remove the background colour and the box-shadow property. This prevents the shadows from blocking the morphing effect.
+> Please remove the background color and the box-shadow property. This prevents the shadows from blocking the morphing effect.
 
 The CSS code will look like this for the login box and its child elements. Kindly note that I have not included the HTML code.
 ```css
@@ -363,7 +351,7 @@ button{
  width: 100%;
 }
 ```
-Notice that I used a lighter colour in the elements' background. This increases the ease of the elements morphing with the body's background. 
+Notice that I used a lighter color in the elements' background. This increases the ease of the elements morphing with the body's background. 
 
 The webpage will look like this:
 
