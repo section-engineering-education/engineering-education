@@ -5,7 +5,7 @@
 
 Not knowing the lyrics of a song, is a problem most song-lovers encounter. In this article, you will be creating a platform where users can search for lyrics by entering the artist name or title of the song.
 
-You will be creating the search app using HTML5, CSS3, Vanilla JavaScript, async-await with fetch method, OVH Application Programming Interface (API), and ECMAScript 2015 (ES6) features like arrow functions.
+You will be creating the search app using HTML5, CSS3, Vanilla JavaScript, async-await with fetch method, OVH API, and ECMAScript 2015 (ES6) features like arrow functions.
 
 ### Prerequisites
 
@@ -83,7 +83,7 @@ body {
 
 ```
 
-Now, you are going to style the contents in the body tag, starting from the page description to the placeholder and then the input field.
+Now, you are going to style the contents in the body tag, starting from the text that defines what the web app does, to the placeholder and then the input field.
 
 ```css
 
