@@ -6,7 +6,7 @@ url: /leveraging-gptneo-to-generate-ai--based-blog-content/
 title: Leveraging GPT-Neo to Generate AI-based Blog Content
 description: This tutorial will take you through how to build an AI-powered blog content generator using GPT-Neo.
 author: willies-ogola
-date: 2021-12-29T00:00:00-14:00
+date: 2022-01-03T00:00:00-21:00
 topics: [Machine Learning]
 excerpt_separator: <!--more-->
 images:
@@ -25,20 +25,15 @@ To follow along with this tutorial, you need to be familiar with:
 - Google Colab or Jupyter Notebook.
 
 ### Table of contents 
-- [What is GPT-3](#what-is-gpt-3)
-- [About GPT-Neo](#about-gpt-neo)
+- [Introduction](#introduction)
 - [How to leverage GPT-Neo to Generate AI-based Blog Content](#how-to-leverage-gpt-neo-to-generate-ai-based-blog-content)
-- [Integrating the model into the Gradio app](#integrating-the-model-into-the-gradio-app)
 - [Wrapping up](#wrapping-up)
 - [Further reading](further-reading)
 
-### What is GPT-3
+### Introduction
 GPT-3 is a deep learning-powered language model that is trained on 175 billion parameters. It would take an enormous amount of computing time to train a model with such parameters on a consumer GPU machine. As a result of its vast amount of training parameters, it performs well on a wide variety of NLP tasks. The model is ideal for most NLP tasks such as text generation, sentiment analysis, and question-answer models. 
 
 But, the model is not open-sourced and it's only available through a closed beta. This means that one has to apply and be granted access before being able to use it. Luckily, one can leverage a GPT clone known as GPT-Neo. At least, this is open-source and anyone can use it. We will leverage this model in this tutorial.
-
-### About GPT-Neo
-
 
 The GPT-3 Neo model that we will use in this tutorial is trained on 125 million parameters. It is not exactly the GPT-3 model with 175 billion parameters that was built by OpenAI but it's also equally as sophisticated as we will see in this tutorial. 
 
@@ -53,7 +48,7 @@ For our case, we're selecting the `Stable (1.10)` PyTorch build, `Linux OS`, `Pi
 > Make sure to include an `!` before the `pip install` command. Otherwise, you'll get an error.
 
 ```bash
-pip3 install torch==1.10.0+cu113 torchvision==0.11.1+cu113 torchaudio==0.10.0+cu113 -f https://download.pytorch.org/whl/cu113/torch_stable.html
+!pip3 install torch==1.10.0+cu113 torchvision==0.11.1+cu113 torchaudio==0.10.0+cu113 -f https://download.pytorch.org/whl/cu113/torch_stable.html
 ```
 The next thing that we need to do is to install Transformers. Transformers is a powerful natural language processing library. The beautiful thing about transformers is that you get a bunch of NLP pipelines embedded into the library. Some of these pipelines include the `FeatureExtractionPipeline`, `SummarizationPipeline`, `TextClassificationPipeline`, `TranslationPipeline`, and `TextGenerationPipeline` that allows you to leverage powerful and sophisticated NLP models relatively easy. For our task, we will be using the `TextGenerationPipeline`.
 
@@ -117,25 +112,6 @@ If we take a look at the results, we will see that it has generated a new block 
 [{'generated_text': "This is my first blog post, I'm really excited! I have been writing a lot lately, and I'm not getting around to it yet. Here's some of what I'm reading in my mind so I can get back to it.\n"}]
 ```
 If you'd like to generate more text, you need to increase the maximum length. 
-
-Let's now integrate this model into the Gradio app.
-
-### Integrating the model into the Gradio app
-
-To use Gradio, we need to install it into our notebook
-
-```bash
-!pip install gradio
-```
-
-Let's import it into our notebook.
-
-```python
-import gradio as gr
-```
-```python
-toxicity_inputs = gr.inputs.Textbox(lines=3, placeholder="Generated blog post...")
-```
 
 Here's the Google Colab [link](https://colab.research.google.com/drive/1TphnblcE--PNWQjP3eonbix94I2pMqC6?usp=sharing) for this tutorial.
 
