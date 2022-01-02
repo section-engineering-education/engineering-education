@@ -3,7 +3,7 @@ layout: engineering-education
 status: publish
 published: true
 url: /simplex-method-in-python/
-title: Getting started with the Simplex Method
+title: Getting started with the Simplex Method Algorithm
 description: The simplex method is an algorithm used in linear programming problems to determine the optimal solution for a given optimization problem. In this article, we shall look at how this algorithm work.
 author: stanley-juma
 date: 2021-01-02T00:00:00-09:35
@@ -12,7 +12,7 @@ excerpt_separator: <!--more-->
 images:
 
   - url: /engineering-education/simplex-method-in-python/hero.png
-    alt:  Getting started with the Simplex Method Image
+    alt:  Getting started with the Simplex Method Algorithm Image
 ---
 
 
@@ -21,7 +21,7 @@ The simplex method is an algorithm used in linear programming problems to determ
 For example, this method is used when a linear optimization problem is subjected to inequality constraints. In this article, we shall look at how this algorithm work.
 
 ### Prerequisites
-1. Python installed on your computer
+1. Python installed on your computer.
 1. Knowledge in Gaussian [Jordan Elimination Method](https://www.storyofmathematics.com/gauss-jordan-elimination) in Linear Algebra.
 
 To understand how this algorithm works, let us consider the following problem:
@@ -32,9 +32,9 @@ A bicycle manufacturer makes touring, racing, and model bicycles. These bicycles
 Now, many optimization problems we will come across are in statement form. From these statements, we need to formulate our optimization problem correctly. Therefore, we chose this kind of problem, not an already developed one. We are doing this to show you how you can systematically develop an optimization problem so that you can do so on your own in the future.
 
 The first thing we need to do is to define our variables:
-R: Number of racing bikes
-T: Number of touring bikes
-M: Number of mountain bikes
+R: Number of racing bikes.
+T: Number of touring bikes.
+M: Number of mountain bikes.
 
 So the next thing is to understand what we are optimizing the problem. From the question, we are asked to find the maximum profit. Therefore we are optimizing the profit function.
 
@@ -52,7 +52,7 @@ Additionally, we need to understand that any product produced can be zero for no
 
 $R\ge0, T\ge0,M\ge0$ 
 
-Now, we can combine the following and develop the following optimization problem.
+Now, we can combine the following and develop the following optimization problem:
 
 $Maximize\ P = 8R+12T+22M $
 
@@ -97,11 +97,11 @@ $\begin{bmatrix}
 \end{array}
 \end{bmatrix}$
 
-The next thing is to figure out the pivot column, i.e., the column with the most negative value. As we can see, the pivot column is M. From this column, and we need to determine the pivot value. The pivot value is found as follow:
+The next thing is to figure out the pivot column, i.e., the column with the most negative value. As we can see, the pivot column is M. From this column, and we need to determine the pivot value. The pivot value is found as follows:
 
 $min(91800/34, 42000/15) = min(91800/34, 42000/15) = 91800/34 = 2700$
 
-Since 34 is the value of the pivot column corresponding to the lowest quotient, it is the pivot value. Now, we need to make this value a unit value. To do so, we multiply the pivot row by $1/34$. This will yield the following tableau.
+Since 34 is the value of the pivot column corresponding to the lowest quotient, it is the pivot value. Now, we need to make this value a unit value. To do so, we multiply the pivot row by $1/34$. This will yield the following tableau:
 
 $\begin{bmatrix}
 \begin{array}{cccccc|cc}
@@ -114,7 +114,7 @@ $\begin{bmatrix}
 \end{array}
 \end{bmatrix}$
 
-The next step is to make all the values below and above the pivot value zeros. To get this done, we need to perform the following operations.
+The next step is to make all the values below and above the pivot value zeros. To get this done, we need to perform the following operations:
 
 1. Replace $R_2$ with, $R_2 = -15R_1 + R_2$
 
@@ -144,7 +144,7 @@ Therefore, the optimal solution will be to produce no racing bike, no touring bi
 
 As we can note, this problem converged to the optimal solution so faster. However, there are cases where this will not be the case. For example, let us look at the following example and see this in practice.
 
-Suppose we are given the following linear programming problem.
+Suppose we are given the following linear programming problem:
 
 *Using the Simplex method:*
 *Maximize*, $Z=30x+40y$
@@ -186,9 +186,7 @@ From this column, let us find the pivot value, i.e., the value corresponding to 
 - $75/1$
 - $90/2$
 
-As we can note from the above quotients, 45 is the minimum of all the questions. Therefore, the pivot value is 2.
-
-We need to apply the Gaussian-Jordan Elimination row-reduction technique and make the pivot value one while all other elements are above or below zero. Upon performing these operations, we will get a tableau similar to the one below:
+As we can note from the above quotients, 45 is the minimum of all the questions. Therefore, the pivot value is 2. We need to apply the Gaussian-Jordan Elimination row-reduction technique and make the pivot value one while all other elements are above or below zero. Upon performing these operations, we will get a tableau similar to the one below:
 
 $\begin{bmatrix}
 \begin{array}{c|ccccc|cc}
@@ -205,7 +203,7 @@ Since we have negative values in the $z^{th}$ row, this solution is not optimal.
 
 We then check if our objective row is optimal(has no negative value). If optimal, we execute the process; otherwise, we continue to find the next pivot column and pivot value until the $Z^th$ row is optimal.
 
-Doing so on the above tableau, finally, we will end up with the following tableau.
+Doing so on the above tableau, finally, we will end up with the following tableau:
 
 $\begin{bmatrix}
 \begin{array}{c|ccccc|cc}
@@ -227,7 +225,7 @@ As we can see, there is no negative value in the $Z^{th}$ row, and thus the solu
 ### Python implementation of the Simplex Algorithm
 We can run the above two examples in Python and see if we get the same output. We will walk through how we create our input arrays from the first problem, and then the second problem will follow.
 
-#### Case 1.
+#### Case 1
 
 ```python
 ### Import the neccessary libraries
@@ -266,9 +264,8 @@ Optimization terminated successfully.
 ```
 From this output, it is clear that the optimal action is to build 0 touring bikes, 0 racing bikes, and 2700 mountain bikes. If this action is practiced, the company will realize an optimal profit of 59400 dollars.
 
-Now, let us proceed and solve the second problem.
+Now, let us proceed and solve the second problem. The optimization problem was:
 
-The optimization problem was:
 Maximize, $Z=30x+40y$
 Subject to, 
 $x+y\leq 50$
@@ -276,7 +273,7 @@ $4x++2y\leq 150$
 $50x+100y\le 4500$
 $x\ge0$, $y\ge0$
 
-From this problem, we can have the following three arrays.
+From this problem, we can have the following three arrays:
 
 $c = [-30, -40]$
 
@@ -289,6 +286,8 @@ $A=\begin{bmatrix}
 $b = [50, 150, 4500]$
 
 We shall implement these matrices in Python and get our problem solved. Below is the Python code which performs these operations.
+
+#### Case 2
 
 ```python
 ### Import the neccessary libraries
