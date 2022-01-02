@@ -6,7 +6,7 @@ url: /creating-an-application-using-beeware/
 title: Creating an application using BeeWare
 description: BeeWare is a python library used to create cross-platform applications. This article will build a simple application using BeeWare to introduce the reader to the library and appreciate how it works. 
 author: john-kiguru
-date: 2021-12-29T00:00:00-07:17
+date: 2021-1-02T00:00:00-07:17
 topics: [Languages]
 excerpt_separator: <!--more-->
 images:
