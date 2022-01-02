@@ -507,7 +507,6 @@ I will subsequently press 1 to choose Nigerian Naira as my "to currency" and the
 
 ![Exchange rate menu 3](/how-to-build-a-ussd-application-with-django/exchange-rate-menu3.jpg)
 
-Note that you cannot test the application by dialing the USSD code directly on your phone unless you have upgraded your africastalking account fr
 
 
 ## Conclusion
