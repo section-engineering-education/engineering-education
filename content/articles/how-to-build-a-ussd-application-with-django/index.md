@@ -14,11 +14,12 @@ In this article, I will be showing you how to create a USSD application using Py
 - [Creating the USSD menus](#view-function-to-create-ussd-menus)
 - [Testing the USSD application](#testing-out-the-ussd-application)
 
-Without futher ado, let us get started.
+## Introduction
 
 According to [wikipedia](https://en.wikipedia.org/wiki/Unstructured_Supplementary_Service_Data), USSD stands for Unstructured Supplementary Service Data. It is a communications protocol used by GSM cellular telephones to communicate with the mobile network operator's computers. The computer's response is sent back to the phone, generally in a basic format that can easily be seen on the phone display.
 
-I will be using a [CoinGecko's](https://www.coingecko.com/en) official Python [SDK](https://github.com/man-c/pycoingecko) to fetch the price of the cryptocurrencies, and for the exchange rate functionality, I will be using [Openexchangerate's](https://openexchangerates.org/api/latest.json) API.
+I will be using a [CoinGecko's](https://www.coingecko.com/en) official Python [SDK](https://github.com/man-c/pycoingecko) to fetch the price of the cryptocurrencies, for the exchange rate functionality, I will be using [Openexchangerate's](https://openexchangerates.org/api/latest.json) API, and to build out the USSD menus, I will be using [africastalking](https://developers.africastalking.com/)
+
 
 Before I start writing code, I am going to install some libraries like requests (for making HTTP requests), python-dotenv(for handling .env files), and pycoingecko (The SDK I talked about above). So I will run `pip install requests python-dotenv pycoingecko` to install these libraries.
 
@@ -505,6 +506,8 @@ I will also press 1 and the menu to choose the "to currency" will be displayed:
 I will subsequently press 1 to choose Nigerian Naira as my "to currency" and then the exchange rate will be displayed:
 
 ![Exchange rate menu 3](/how-to-build-a-ussd-application-with-django/exchange-rate-menu3.jpg)
+
+Note that you cannot test the application by dialing the USSD code directly on your phone unless you have upgraded your africastalking account fr
 
 
 ## Conclusion
