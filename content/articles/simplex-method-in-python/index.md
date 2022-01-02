@@ -330,3 +330,6 @@ The output we obtained from our two implementations above is similar to the resp
 
 ### Conclusion
 In this tutorial, we have theoretically looked at the simplex method and its implementation in Python. Other than solving the optimization problem itself, we showed you how we wisely deduce the optimization function from the given problem. Happy learning.
+
+---
+Peer Review Contributions by: [Jerim Kaura](/engineering-education/authors/jerim-kaura/)
