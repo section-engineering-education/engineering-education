@@ -82,8 +82,6 @@ Inside the TodoApp folder, add the installed Django rest_framework and cors head
 Run the application after making all the migrations using the commands below and the output produced should be as shown.
 
 ```python
-python manage.py makemigrations
-python manage.py migrate
 python manage.py runserver
 ```
 ![Django Output](/engineering-education/build-vue-application-with-django-rest-api-and-axios/output.jpg)
@@ -101,20 +99,19 @@ python manage.py createsuperuser #set the username,email and password
 
 To create the database, add the code snippet below inside the models.py file under the todo application folder.
 ```python
-from django.db import models
 
-class WorkTodo(models.Model):  # Our database model is called WorkTodo
+class WorkTodo(models.Model):  
     WORKTODO = 'worktodo'
     WORKDONE = 'workdone'
 
-    STATUS_CHOICES = (  # We create a tuple of status choices
+    STATUS_CHOICES = (  
         (WORKTODO, 'Work To do'),
         (WORKDONE, 'Work Done')
     )
 
-    work_description = models.CharField(max_length=255)  # The worktodo description is limited to 255 characters
+    work_description = models.CharField(max_length=255)  
     work_status = models.CharField(max_length=10, choices=STATUS_CHOICES,
-                              default=WORKTODO)  # The work status, default status = WORKTODO
+                              default=WORKTODO)  
 ```
 Since we are using the rest_framework, we need to create another file under the todo application folder called `serializers.py`  and add the code below. This file is fairly similar to the Form and ModelForm classes in Django. It provides a convenient shortcut for creating serializers that deal with model instances and querysets,as well as a general approach to managing the output of your responses. With the serializers the data is then transformed into a format that can be stored or transmitted.
 ```python
@@ -131,30 +128,23 @@ class WorkSerializer(serializers.HyperlinkedModelSerializer):
 To return the tasks of the todo application we add the code to the `views.py`
 ```python
 from django.shortcuts import render
-from .models import WorkTodo # Import our WorkTodo model
-from .serializers import WorkSerializer # Import the serializer we just created
+from .models import WorkTodo 
+from .serializers import WorkSerializer 
 
-# Create your views here.
-
-# Import django rest framework functions
 
 from rest_framework import viewsets
 from rest_framework.authentication import BasicAuthentication
 from rest_framework.permissions import IsAuthenticated
 
-class WorkViewSet(viewsets.ModelViewSet): # Create a class based view
-    """
-    API endpoint that allows tasks to be viewed or edited.
-    """
+class WorkViewSet(viewsets.ModelViewSet): 
     authentication_classes = (BasicAuthentication,)
     permission_classes = (IsAuthenticated,)
-    queryset = WorkTodo.objects.all() # Select all taks
-    serializer_class = WorkSerializer # Serialize data
+    queryset = WorkTodo.objects.all() 
+    serializer_class = WorkSerializer 
 ```
 Run all the database migrations and open the python shell using the commands below. Type a few of the tasks and their descriptions inside the shell then close it.
 ```python
-python manage.py shell # Opens up a shell
-#add the code inside the shell 
+python manage.py shell 
 >>> from todo.models import WorkTodo
 >>> task1 = WorkTodo.objects.create(work_description='Cleaning')
 >>> task2 = WorkTodo.objects.create(work_description='Reading')
@@ -169,16 +159,16 @@ For the api to be viewed by the Vue application, add the code below inside the `
 from django.contrib import admin
 from django.urls import path,include
 
-from rest_framework import routers # Import the router
+from rest_framework import routers 
 
-from todo.views import WorkViewSet # Import the view we just created
+from todo.views import WorkViewSet 
 
-router = routers.DefaultRouter() # Define the router with our view
+router = routers.DefaultRouter() 
 router.register(r'tasks', WorkViewSet)
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', include(router.urls)), #add view to pattern
+    path('', include(router.urls)), ]
 ]
 ```
 To test the application, we then run the CURL command below by entering the username and password used when creating the superuser.
@@ -206,23 +196,23 @@ Once the Vue.js app is created we then communicate with the backend using the `A
 ```html
 <template>
   <div class="hello">
-    <h1 class="title">TODO APP</h1> <!-- Page title -->
+    <h1 class="title">TODO APP</h1> 
 
     <hr>
 
     <div class="columns">
-      <div class="column is-one-third is-offset-one-third"> <!-- Narrow centered column -->
-        <form><!-- Form for adding tasks -->
+      <div class="column is-one-third is-offset-one-third">
+        <form>
           <h2 class="subtitle">Add the task</h2>
 
-          <div class="field"> <!-- Normal input field for the description -->
+          <div class="field">
             <label class="label">Add Description</label>
             <div class="control">
               <input class="input" type="text">
             </div>
           </div>
 
-          <div class="field"> <!-- Select field for choosing the status-->v
+          <div class="field"> 
             <label class="label">Select Status</label>
             <div class="control">
               <div class="select">
@@ -234,7 +224,7 @@ Once the Vue.js app is created we then communicate with the backend using the `A
             </div>
           </div>
 
-          <div class="field is-grouped"> <!-- Submit button -->
+          <div class="field is-grouped"> 
             <div class="control">
               <button class="button is-link">Submit</button>
             </div>
@@ -246,14 +236,14 @@ Once the Vue.js app is created we then communicate with the backend using the `A
     <hr>
 
     <div class="columns">
-      <div class="column is-half"> <!-- Half of the column for todo tasks -->
+      <div class="column is-half"> 
         <h2 class="subtitle">Task Todo</h2>
 
        <div class="todo">
-      <div class="card" v-for="task in tasks" v-if="task.status == 'todo'"> <!-- Loop through the tasks array, if status is 'todo' then we'll show it. -->
+      <div class="card" v-for="task in tasks" v-if="task.status == 'todo'"> 
         <div class="card-content">
           <div class="content">
-            {{ task.work_description }} <!-- Print the task's description here -->
+            {{ task.work_description }} 
           </div>
         </div>
 
@@ -269,7 +259,7 @@ Once the Vue.js app is created we then communicate with the backend using the `A
     <h2 class="subtitle">Work Done</h2>
 
     <div class="done">
-      <div class="card" v-for="task in tasks" v-if="task.status == 'done'"> <!-- Loop through the tasks array, if status is 'done'then we'll show it. -->
+      <div class="card" v-for="task in tasks" v-if="task.status == 'done'">
         <div class="card-content">
           <div class="content">
             {{ task.work_description }}
@@ -287,11 +277,11 @@ export default {
   name: 'HelloWorld',
   data () {
     return {
-      tasks: [] // Array for holding the tasks
+      tasks: [] 
     }
   },
-  mounted () { // This will be called when HelloWorld is loaded
-    this.get_Tasks(); // Call our getTasks function below
+  mounted () { 
+    this.get_Tasks();
   },
   methods: {
     get_Tasks() {
@@ -299,8 +289,8 @@ export default {
             method:'get',
             url: 'http://127.0.0.1:8000/tasks/',
             auth: {
-                username: 'denatonya',
-                password: 'ADMIN@123'
+                username: 'your username',
+                password: 'your password'
             }
         }).then(response => this.tasks = response.data);
     }
@@ -308,19 +298,6 @@ export default {
 }
 </script>
 
-<style scoped>
-.select, select { /* 100% width for the select */
-  width: 100%;
-}
-
-.card { /* Adding some air under the tasks */
-  margin-bottom: 25px;
-}
-
-.done { /* Make the done tasks a little bit transparent */
-  opacity: 0.3;
-}
-</style>
 ```
 Running the project again, you should see two tasks to the left(work to do) and one to the right which is done. The complete code can be found [here](https://github.com/dentonya/Todo-Application-using-Vue.js-Django-REST-API-and-Axios/tree/master/vue.js/todoapp).
 
