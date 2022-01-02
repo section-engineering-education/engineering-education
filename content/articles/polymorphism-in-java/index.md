@@ -6,7 +6,6 @@
 * [Types of Polymorphism](#types-of-polymorphism)
 * [Adantages of Polymorphism](#advantages-of-polymorphism)
 * [Charactaristics of Polymorphism](#charactaristics-of-polymorphism)
-* [Difference between Static and Dynamic Polymorphism](#difference-between-static-and-dynamic-polymorphism)
 
 Java is an Object-oriented programming language.
 But what is OOP commonly known for?. Yeah, the four pillars of Object-Oriented Programming.
@@ -30,7 +29,7 @@ To breakdown the four pillars of OOP:
 ### Introduction
 Polymorphism is where an object has more than one form. We can also say that polymorphism is a feature that allows one task to be performed in more than one way.
 
-Let us take a look at some examples of Polymorphism.
+Polymorphism examples include:
 * A human has one body, but inside the body, there are various organs that perform different tasks. The heart pumps blood, the stomach digests food, the lungs if for breathing, etc.
 In this example, you can note that the human body allows more than one task to take place in the body.
 
@@ -42,16 +41,16 @@ Polymorphism is a Greek word where two words are combined to give one meaning. F
 The two words are `poly` and `morph` where *poly means many* and *morph means one or more forms*
 
 ### Types of Polymorphism
-There are two types of polymorphism. **Static Polymorphism** and **Dynamic Polymorphism.**
+Polymorphism can be divided into two:
 
-#### Static Polymorphism
+#### 1. Static Polymorphism
 
-> **Static Polymorphism** - This is a type of polymorphism that is resolved during compile time by the compiler. In other terms, it is referred to as `compile-time polymorphism`.
+> **Static Polymorphism** - When you are writing a code, probably creating a method, and you by chance create two or more methods with the same name, you will get an alert that you have a duplicate method in your code. This error is called `Compile-time error`. The ability to receive alerts on errors in your code is made possible by the **compiler**. When the compiler resolves conflict on matters regarding polymorphism, it is regarded as `Compile-time Polymorphism`
 Examples include Overloading also known as Method overloading or Function overloading.
 
 For clarity:
 
-`Method overloading` - This is a feature that allows multiple methods to share the same name but have different parameters.
+`Method overloading` is achieved by having multiple methods to have the same name but different parameters. The parameters can differ by having different arguments, having different types of data types, or having different sizes the arguments. This will avoid the compile-time error.
 
 Let us use a code snippet to try to understand more about static polymorphism.
 
@@ -96,56 +95,83 @@ overloaded method: House is 10 feet tall
 bricks
 ```
 
-#### Dynamic Polymorphism
+In the example above, you can see that we created two methods, both of which share the same name `MyClass`. 
+You will further note that the classes have different parameters. When the first class is called, it gives a void output of the string stated since there is no specific 
+data type stated to be returned. On the other hand, the second class, MyClass, has a parameter of an integer. When we call it, the output will not only have the printed output but will also recognize an integer included in the output.
 
-> **Dynamic Polymorphism** - This is polymorphism where a conflict to an overridden method is resolved at run time. It can also be referred to as `run time polymorphism`.
-An example of dynamic polymorphism is Method Overriding
+#### 2. Dynamic Polymorphism
 
-`Method overriding` - This is a feature where a method is implemented by both the child class and the parent class but the method is modified by the child class.
+> **Dynamic Polymorphism** - This is a type of polymorphism wherein the case when you call an overridden method, this conflict is resolved when you run the code, normally known as run time. It can also be referred to as `run time polymorphism`.
+
+Method Overriding is an example of dynamic polymorphism.
+
+`Method overriding` is a feature where you can have a parent method and a child method. Both the parent and child methods have the same name but the child method will tend to modify or override the parent method.
 
 Below is a snippet that explains the concept in detail.
 ```java
-
-class Vehicle {
-    public void move() {
-        System.out.println("Vehicles can move");
+public class Dog extends Animal {
+    @Override
+    public void sound() {
+        System.out.println("Woof");
     }
 }
-class Car extends Vehicle {
-    public void move() {
-        System.out.println("Car Moves with 4 wheels");
-    }
-}
-public class Main {
-    public static void main(String[] args) {
-        Vehicle a = new Vehicle();
-        Vehicle b = new Car();
-
-        a.move(); //runs the method in Vehicle class
-        b.move(); //runs the method in Car class
-
-    }
-}
-
 ```
 
 ```java
-//Output
-Vehicles can move
-Car Moves with 4 wheels
+public class Cat extends Animal {
+    @Override
+    public void sound() {
+        System.out.println("Meou");
+    }
+}
 ```
+
+```java
+public class Main() {
+    public static void main(String[] args) {
+        
+        Animal a = new Dog();
+        Animal b = new Cat();
+        
+        a.sound();
+        b.sound();
+    
+    }
+}
+```
+```
+// Output
+Woof
+Meou
+```
+In the example above, we have created two classes, the dog class, and the cat class. Both the classes extend the class animal. You can note that when we called the object dog and cat, we receive the outputs for the methods in their respective classes. This indicates that the method in the class animal was overridden. This gives a good example of dynamic polymorphism.
 
 ### Advantages of Polymorphism
 We are now going to look at the advantages of each of the types of polymorphism.
 
 **Dynamic Polymorphism**
 
-1. `Support for Method Overriding` - This particular feature is essential for run time polymorphism and it is made possible with dynamic polymorphism.
-2. `Method specification - This allows for child classes to make modifications or improvements to the parent class before implementation.
+1. `Support for Method Overriding` - This is the feature where a child method can modify the specifications of the parent method. This also enables the creation of one method and modification to serve more than one method.
+2. `Method specification` - This allows for child classes to make modifications or improvements to the parent class before implementation.
+3. `Method Overloading` - This allows the use of the same method name on different methods but modifying the parameters and arguments to avoid a compile-time error.
 
 ### Characteristics of Polymorphism
 
-1. *Polymorphic Coercion* - Implicit type conversion
+1. *Polymorphic Coercion* - **Coercion** is the automatic conversion of data types from one form to another. An instance of the process mentioned is the conversion of a double into an integer. The above can also be reffed to as implicit type conversion.
+
+The example below will indicate how java achieves coercion.
+```java
+// Explicit type conversion
+double x;
+x=(double)2;
+```
+```java
+// Implicit type conversion
+double x;
+x=2;
+```
+In the first example, you first have to initialize the data type, and then when allocating the variable, you specify the type of the variable. The case is different in Implicit type conversion. After you initialize the data type, you only have to allocate the variable and the compiler will automatically recognize it as a double.
+
 2. *Operator Overloading* - This is where the same symbol or operator has more than one meaning even when used in the same code. Below is an example to explain operator overloading.
 ```java
 String str = "5"+5;
@@ -181,11 +207,6 @@ Declaring of polymorphic parameters can lead to `variable hiding`.
 
 In the above example, we have declared the legs globally as a string and then declared them locally as an integer. Normally variable hiding would have occurred. But to solve for that, we have used a global reference `this` to point to the global variables within the local context.
 
-### Difference between Static and Dynamic Polymorphism
-
-1. Static Polymorphism deals with method overloading while Dynamic Polymorphism relates to method overriding.
-2. In static polymorphism, errors are resolved at compile time by the compiler while in dynamic polymorphism, errors are resolved at the run time hence the name compile and run time polymorphism respectively.
-
 ### Summary
 From this tutorial, we have gone through the following:
 1. Introduced and gone through some examples of polymorphism
@@ -197,4 +218,3 @@ From this tutorial, we have gone through the following:
       * Polymorphic Coercion
       * Operator Overloading
       * Polymorphic parameters
-5. Difference between Static and Dynamic Polymorphism.
