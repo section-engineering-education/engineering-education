@@ -4,7 +4,7 @@ status: publish
 published: true
 url: /creating-an-application-using-beeware/
 title: Creating an application using BeeWare
-description: Beeware is a python library used to create cross-platform applications. This article will build a simple application using BeeWare to introduce the reader to the library and appreciate how it works. 
+description: BeeWare is a python library used to create cross-platform applications. This article will build a simple application using BeeWare to introduce the reader to the library and appreciate how it works. 
 author: john-kiguru
 date: 2021-12-29T00:00:00-07:17
 topics: [Languages]
@@ -15,19 +15,19 @@ images:
    alt: BeeWare Application  Image
 ---
 
-Beeware is a python library used to create cross-platform applications. It serves as an alternative to other app-building libraries such as kivy. 
+BeeWare is a python library used to create cross-platform applications. It serves as an alternative to other app-building libraries such as Kivy. 
  <!--more-->
 This article will build a simple application using BeeWare to introduce the readers to the library and appreciate how it works. 
 
 ### Prerequisites
 1. `Python` installed in your machine.
 2. Install `beeware` and `toga`.Run `pip3 install beeware` and `pip3 install toga` to install them, respectively.
-3. Basic Python knowledge.
+3. Basic [Python](https://www.python.org/) knowledge.
 
 ### Getting started
-This tutorial will create a simple calculator application, so to begin with, you need to be connected to the internet to create the app successfully. Next, navigate into a folder of your choice using the terminal then type the `briefcase new` command. 
+This tutorial will create a simple calculator application, so to begin with, you need to be connected to the internet to create the app successfully. Next, navigate into a folder of your choice using the terminal then execute the `briefcase new` command. 
 
-This command will create a new application in that folder. Follow the instructions and input the required details or press enter to go with the default configuration. The new app should have the following structure:
+This command will create a new application in that folder. Follow the instructions and input the required details or press enter to go with the default configurations. The new app should have the following structure:
 
 ```bash
 .
@@ -69,7 +69,7 @@ def main():
 
 The file begins by importing the `toga` toolkit. `Toga` is a python native cross-platform Graphical User Interface(GUI) toolkit. Next, we define a class `SimpleCalculator` that contains a `startup` method. This method defines a `toga box` component. It serves as the main box. The name `main_box` is declared and initialized by default when you create the application but may be changed later as desired.
 
-We declare the main window whose title is the app name defined when creating the app with the ` briefcase new` command. Next, we have the window containing our empty main box as its content. Next, we have our application show our window. We finally define a `main` function that returns our `SimpleCalculator` class instance. This `main` method is called by the `__main__.py` file and invoked by it.
+We declare the main window whose title is the app name defined when creating the app with the ` briefcase new` command. Next, we have the window containing our empty main box as its content. Next, we have our application show our window. We finally define a `main` function that returns our `SimpleCalculator` class instance. This `main` method is called and invoked by the `__main__.py` file.
 
 By now, you have a simple working application. You can change the directory into `Simple Calculator` and type `briefcase dev` to run the app in developer mode. You should have the following simple application:
 
@@ -254,7 +254,7 @@ We have defined all the necessary buttons required to make our application. Each
 
 There is a callback method `on_press` defined within the same buttons. We make use of a class-defined function `enterdata` that takes a number or an operand such as `+`, `-`, `*`, `÷`, `.` and `C`. and appends it to the input value.
 
-Then, we use the `partial` built-in function in python that takes a function and some inputs pre-filled to return a fully-filled function. Our partial function takes our `enterdata` function and a number value to the final parameter to the function. When pressed, a `CALCULATE` button also calls the `calculate` function which is discused below.
+Then, we use the `partial` built-in function in python that takes a function and some inputs pre-filled to return a fully-filled function. Our partial function takes our `enterdata` function and a number value to the final parameter to the function. When pressed, a `CALCULATE` button also calls the `calculate` function.
 
 The `calculate` function that takes our expression evaluated by the `enterdata` function and produces a result using python's in-built function `eval`. The `eval` function takes an expression as input and returns the expression result as output.
 
