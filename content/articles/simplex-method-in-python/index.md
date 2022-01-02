@@ -1,6 +1,6 @@
 
 ### Understanding the Simplex Method
-The simplex method is an algorithm used in linear programming problems to determine the optimal solution for a given optimization problem. This method is used when a linear optimization problem is subjected to inequality constraints. 
+The simplex method is an algorithm used in linear programming problems to determine the optimal solution for a given optimization problem. For example, this method is used when a linear optimization problem is subjected to inequality constraints. 
 
 In this article, we shall look at how this algorithm work.
 
@@ -8,12 +8,12 @@ In this article, we shall look at how this algorithm work.
 1. Python installed on your computer
 1. Knowledge in Gaussian [Jordan Elimination Method](https://www.storyofmathematics.com/gauss-jordan-elimination) in Linear Algebra.
 
-To understand how this algorithm works, let's consider the following problem:
+To understand how this algorithm works, let us consider the following problem:
 
-A bicycle manufacturer makes touring, racing, and model bicycles. These bicycles are made of aluminum and steel. The company has 91800 steel units and 42000 aluminum units. The racing, touring, and mountain models require 17, 27, and 15 steel units and 12, 21, and 15 aluminum units respectively. A company makes 8 dollars per racing bike, 12 dollars per touring bike, and 22 dollars per mountain bike. In order to maximize profits, how many of each type should be produced? What is the maximum profit that can be made?
+A bicycle manufacturer makes touring, racing, and model bicycles. These bicycles are made of aluminum and steel. The company has 91800 steel units and 42000 aluminum units. The racing, touring, and mountain models require 17, 27, and 15 steel units and 12, 21, and 15 aluminum units. A company makes 8 dollars per racing bike, 12 dollars per touring bike, and 22 dollars per mountain bike. In order to maximize profits, how many of each type should be produced? What is the maximum profit that can be made?
 
 ### Setting up a simplex method
-Now, many optimization problems we will come across are in statement form. From these statements, we need to formulate our optimization problem correctly. Therefore, we chose this kind of problem and not an already developed one. We are doing this to show you how you can systematically develop an optimization problem so that in the future, you can do so on your own.
+Now, many optimization problems we will come across are in statement form. From these statements, we need to formulate our optimization problem correctly. Therefore, we chose this kind of problem, not an already developed one. We are doing this to show you how you can systematically develop an optimization problem so that you can do so on your own in the future.
 
 The first thing we need to do is to define our variables:
 R: Number of racing bikes
@@ -32,11 +32,11 @@ Since we have two categories of resources with the respective possible number of
 $17R+27T +34M\le91800$
 $12R+21T +15M\le42000$
 
-Additionally, we need to understand that any type of product produced can either be zero for not produce or greater than one when at least a single product is produced. Therefore on top of the above two constraints, we will all the following as well:
+Additionally, we need to understand that any product produced can be zero for not produce or greater than one when at least a single product is produced. Therefore on top of the above two constraints, we will all the following as well:
 
 $R\ge0, T\ge0,M\ge0$ 
 
-Now, we can combine the following and come up with the following optimization problem.
+Now, we can combine the following and develop the following optimization problem.
 
 $Maximize\ P = 8R+12T+22M $
 
@@ -46,9 +46,7 @@ $17R+27T +34M\le91800$
 $12R+21T +15M\le42000$
 $R\ge0, T\ge0,M\ge0$
 
-This is the optimization we need to solve.
-
-To get started, on the objective equation take all variables and put them to it's left hanside, i.e.,
+This is the optimization we need to solve. To get started, on the objective equation take all variables and put them to it's left hanside, i.e.,
 
 $Maximize\ -8R-12T-22M + P = 0$
 $s|t$
@@ -83,11 +81,11 @@ $\begin{bmatrix}
 \end{array}
 \end{bmatrix}$
 
-The next thing is to figure out the pivot column, i.e., the column with the most negative value. As we can see, the pivot column is M. From this column, we need to determine the pivot value. The pivot value is found as follow:
+The next thing is to figure out the pivot column, i.e., the column with the most negative value. As we can see, the pivot column is M. From this column, and we need to determine the pivot value. The pivot value is found as follow:
 
 $min(91800/34, 42000/15) = min(91800/34, 42000/15) = 91800/34 = 2700$
 
-Since 34 is the value of the pivot column corresponding to the lowest quotient, it's the pivot value. Now, we need to make this value a unit value. To do so, we multiply the pivot row by $1/34$. This will yield the following tableau.
+Since 34 is the value of the pivot column corresponding to the lowest quotient, it is the pivot value. Now, we need to make this value a unit value. To do so, we multiply the pivot row by $1/34$. This will yield the following tableau.
 
 $\begin{bmatrix}
 \begin{array}{cccccc|cc}
@@ -119,7 +117,7 @@ $\begin{bmatrix}
 \end{array}
 \end{bmatrix}$
 
-We reach the optimal solution when there is no negative value in our objective row indicating that we have an optimal solution. From this solution, we note that M and $S_2$are the basic variables( take the form of an identity matrix), and the rest are non-basic. Therefore, we set all non-basic variables to zero. This implies that our solution will be as follows:
+We reach the optimal solution with no negative value in our objective row, indicating that we have an optimal solution. From this solution, we note that M and $S_2$are the basic variables( take the form of an identity matrix), and the rest are non-basic. Therefore, we set all non-basic variables to zero. This implies that our solution will be as follows:
 
 $R = 0$
 $T = 0$
@@ -128,7 +126,7 @@ $P = 59400$
 
 Therefore, the optimal solution will be to produce no racing bike, no touring bike, and 2700 mountain bikes to realize a maximum profit of 59400 dollars.
 
-As we can note, this problem converged to the optimal solution so faster. However, there are cases where this will not be the case. For example, let's world through the following example and see this in practice.
+As we can note, this problem converged to the optimal solution so faster. However, there are cases where this will not be the case. For example, let us look at the following example and see this in practice.
 
 Suppose we are given the following linear programming problem.
 
@@ -166,7 +164,7 @@ $\begin{bmatrix}
 
 This solution is not optimal since there exist negative values in the $z^{th}$ row. So, we need to identify the pivot column, i.e., the column with the most negative value on the $z^{th}$-row. If we do so, the pivot column, also known as the Entering variable, is $y$.
 
-From this column, let's find the pivot value, i.e., the value corresponding to the minimum quotient in the pivot column. Where the quotients are computed as follows:
+From this column, let us find the pivot value, i.e., the value corresponding to the minimum quotient in the pivot column. Where the quotients are computed as follows:
 
 - $50/1$
 - $75/1$
@@ -189,7 +187,7 @@ $\begin{bmatrix}
 
 Since we have negative values in the $z^{th}$ row, this solution is not optimal. Again, we identify the pivot column from the current tableau and repeat all the steps, from identifying the pivot column and the pivot value. Applying the Gaussian Jordan Elimination Method, we make the pivot value a unit value and all other elements in the same column zeros. 
 
-We then check if our objective row is optimal(has no negative value). If it's optimal, we execute the process; else, we continue to find the next pivot column and pivot value until the $Z^th$ row is optimal.
+We then check if our objective row is optimal(has no negative value). If optimal, we execute the process; otherwise, we continue to find the next pivot column and pivot value until the $Z^th$ row is optimal.
 
 Doing so on the above tableau, finally, we will end up with the following tableau.
 
@@ -208,10 +206,10 @@ Where M is given as:
 
 $M=min(5/0.5,30/1.5,45/0.5)=10$
 
-As we can see, there's no negative value in the $Z^{th}$ row, and thus the solution is optimal. This is the *Simplex Algorithm*
+As we can see, there is no negative value in the $Z^{th}$ row, and thus the solution is optimal. This is the *Simplex Algorithm*
 
 ### Python implementation of the Simplex Algorithm
-Now we can run the above two examples in Python and see if we get the same output.We will walk through how we create our input arrays from the first problem and then the second problem one will follow.
+We can run the above two examples in Python and see if we get the same output. We will walk through how we create our input arrays from the first problem, and then the second problem will follow.
 
 #### Case 1.
 
@@ -250,7 +248,7 @@ Optimization terminated successfully.
  success: True
        x: array([   0.,    0., 2700.])
 ```
-From this output, it's clear that the optimal action is to build 0 touring bikes, 0 racing bikes, and 2700 mountain bikes. If this action is practiced, the company will realize an optimal profit of 59400 dollars.
+From this output, it is clear that the optimal action is to build 0 touring bikes, 0 racing bikes, and 2700 mountain bikes. If this action is practiced, the company will realize an optimal profit of 59400 dollars.
 
 Now, let us proceed and solve the second problem.
 
@@ -274,7 +272,7 @@ $A=\begin{bmatrix}
 
 $b = [50, 150, 4500]$
 
-These are the matrices we shall implement in Python and get opur problrm solved. Bellow is the Python code which perform these operations.
+We shall implement these matrices in Python and get our problem solved. Below is the Python code which performs these operations.
 
 ```python
 ### Import the neccessary libraries
