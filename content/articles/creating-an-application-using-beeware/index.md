@@ -12,7 +12,7 @@ excerpt_separator: <!--more-->
 images:
 
  - url: /engineering-education/creating-an-application-using-beeware/hero.png
-   alt: BeeWare Application  Image
+   alt: BeeWare Application Hero Image
 ---
 
 BeeWare is a python library used to create cross-platform applications. It serves as an alternative to other app-building libraries such as Kivy. 
