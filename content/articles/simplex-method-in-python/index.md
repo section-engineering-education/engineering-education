@@ -12,32 +12,36 @@ To understand how this algorithm works, let's consider the following problem:
 
 A bicycle manufacturer makes touring, racing, and model bicycles. These bicycles are made of aluminum and steel. The company has 91800 steel units and 42000 aluminum units. The racing, touring, and mountain models require 17, 27, and 15 steel units and 12, 21, and 15 aluminum units respectively. A company makes 8 dollars per racing bike, 12 dollars per touring bike, and 22 dollars per mountain bike. In order to maximize profits, how many of each type should be produced? What is the maximum profit that can be made?
 
-### Setting up a Simplex method
-Now, many optimization problems we will come across are in statement form. From this statement, we need to formulate our optimization problem correctly. Therefore, we chose this kind of problem and not an already developed one to show you how you can systematically develop an optimization problem so that in the future, you can do so on your own.
+### Setting up a simplex method
+Now, many optimization problems we will come across are in statement form. From these statements, we need to formulate our optimization problem correctly. Therefore, we chose this kind of problem and not an already developed one. We are doing this to show you how you can systematically develop an optimization problem so that in the future, you can do so on your own.
 
 The first thing we need to do is to define our variables:
 R: Number of racing bikes
 T: Number of touring bikes
 M: Number of mountain bikes
 
-So the next thing is to understand what we are optimizing. 
-From the question, we are asked to find the maximum profit. Therefore we are optimizing the profit function.
+So the next thing is to understand what we are optimizing the problem. From the question, we are asked to find the maximum profit. Therefore we are optimizing the profit function.
+
 Still from the question, the profit function is:
 P = 8R + 12T + 22M
 
-Now we have our objective function. The next thing is to find out what are restrictions this function is imposed on. For example, all productions can only utilize up to the available resources. Therefore from this, we can realize our first constrain. 
+Now we have our objective function. The next thing is to find out the restrictions this function is imposed on. For example, all productions can only utilize up to the available resources. Therefore from this, we can realize our first constrain. 
 
 Since we have two categories of resources with the respective possible number of production units made out of them, we will thus have two constraints. These constraints are:
+
 $17R+27T +34M\le91800$
 $12R+21T +15M\le42000$
 
 Additionally, we need to understand that any type of product produced can either be zero for not produce or greater than one when at least a single product is produced. Therefore on top of the above two constraints, we will all the following as well:
+
 $R\ge0, T\ge0,M\ge0$ 
 
 Now, we can combine the following and come up with the following optimization problem.
 
 $Maximize\ P = 8R+12T+22M $
+
 Sujected to:
+
 $17R+27T +34M\le91800$
 $12R+21T +15M\le42000$
 $R\ge0, T\ge0,M\ge0$
@@ -45,6 +49,7 @@ $R\ge0, T\ge0,M\ge0$
 This is the optimization we need to solve.
 
 To get started, on the objective equation take all variables and put them to it's left hanside, i.e.,
+
 $Maximize\ -8R-12T-22M + P = 0$
 $s|t$
 $17R+27T +34M\le91800$
@@ -58,15 +63,14 @@ $12R+21T +15M\le42000\rightarrow12R+21T +15M+S_2=42000$
 $S_1\ge0,S_2\ge0$
 
 Therefore, our problem will be re-written as:
+
 $Maximize\ -8R-12T-22M + P = 0$
 $s|t$
 $17R+27T +34M\le91800\rightarrow17R+27T +34M+S_1=91800$
 $12R+21T +15M\le42000\rightarrow12R+21T +15M+S_2=42000$
 $R\ge0, T\ge0,M\ge0S_1\ge0,S_2\ge0$
 
-This is the standard form of our problem.
-
-From these equations, we can obtain our initial tableau as:
+This is the standard form of our problem. From these equations, we can obtain our initial tableau as:
 
 $\begin{bmatrix}
 \begin{array}{cccccc|cc}
@@ -79,10 +83,8 @@ $\begin{bmatrix}
 \end{array}
 \end{bmatrix}$
 
-The next thing is to figure out the pivot column, i.e., the column with the most negative value. As we can see, the pivot column is M.
+The next thing is to figure out the pivot column, i.e., the column with the most negative value. As we can see, the pivot column is M. From this column, we need to determine the pivot value. The pivot value is found as follow:
 
-From this column, we need to determine the pivot value.
-The pivot value is found as follow:
 $min(91800/34, 42000/15) = min(91800/34, 42000/15) = 91800/34 = 2700$
 
 Since 34 is the value of the pivot column corresponding to the lowest quotient, it's the pivot value. Now, we need to make this value a unit value. To do so, we multiply the pivot row by $1/34$. This will yield the following tableau.
@@ -97,9 +99,9 @@ $\begin{bmatrix}
    -8 & -12 & -22& 0& 0& 1& 0 \\ 
 \end{array}
 \end{bmatrix}$
-The next step is to make all the values below and above the pivot value zeros.
 
-To get this done, we need to perform the following operations.
+The next step is to make all the values below and above the pivot value zeros. To get this done, we need to perform the following operations.
+
 1. Replace $R_2$ with, $R_2 = -15R_1 + R_2$
 
 2. Replace $R_3=$ with, $R_3=22R_1+R_3$
@@ -116,9 +118,8 @@ $\begin{bmatrix}
    3 & 93/17 & 0& 11/17& 0& 1& 59400 \\ 
 \end{array}
 \end{bmatrix}$
-We reach the optimal solution when there is no negative value in our objective row. Since there is no negative value in the objective row from the above table, we have an optimal solution. 
 
-From this solution, we note that M and $S_2$are the basic variables( take the form of an identity matrix), and the rest are non-basic. Therefore, we set all non-basic variables to zero. This implies that our solution will be as follows:
+We reach the optimal solution when there is no negative value in our objective row indicating that we have an optimal solution. From this solution, we note that M and $S_2$are the basic variables( take the form of an identity matrix), and the rest are non-basic. Therefore, we set all non-basic variables to zero. This implies that our solution will be as follows:
 
 $R = 0$
 $T = 0$
@@ -142,6 +143,7 @@ $x\ge0$, $y\ge0$
 The first thing is to rewrite this problem in standard form by introducing slack variables. Since we have three less than inequalities in the above problem, we will introduce three slack variables($S_1,\ S_2,\, and\ S_3$) for inequalities to become equations.
 
 Therfore, our pronlem becomes:
+
 Maximize, $Z=30x+40y$
 Subject to, 
 $x+y+S_1= 50$
@@ -162,9 +164,8 @@ $\begin{bmatrix}
 \end{array}
 \end{bmatrix}$
 
-This solution is not optimal since there exist negative values in the $z^{th}$ row.
-So, we need to identify the pivot column, i.e., the column with the most negative value on the $z^{th}$-row.
-  If we do so, the pivot column, also known as the Entering variable, is $y$.
+This solution is not optimal since there exist negative values in the $z^{th}$ row. So, we need to identify the pivot column, i.e., the column with the most negative value on the $z^{th}$-row. If we do so, the pivot column, also known as the Entering variable, is $y$.
+
 From this column, let's find the pivot value, i.e., the value corresponding to the minimum quotient in the pivot column. Where the quotients are computed as follows:
 
 - $50/1$
@@ -186,8 +187,7 @@ $\begin{bmatrix}
 \end{array}
 \end{bmatrix}$
 
-Since we have negative values in the $z^{th}$ row, this solution is not optimal.
-Again, we identify the pivot column from the current tableau and repeat all the steps, from identifying the pivot column and the pivot value. Applying the Gaussian Jordan Elimination Method, we make the pivot value a unit value and all other elements in the same column zeros. 
+Since we have negative values in the $z^{th}$ row, this solution is not optimal. Again, we identify the pivot column from the current tableau and repeat all the steps, from identifying the pivot column and the pivot value. Applying the Gaussian Jordan Elimination Method, we make the pivot value a unit value and all other elements in the same column zeros. 
 
 We then check if our objective row is optimal(has no negative value). If it's optimal, we execute the process; else, we continue to find the next pivot column and pivot value until the $Z^th$ row is optimal.
 
@@ -205,14 +205,13 @@ $\begin{bmatrix}
 \end{bmatrix}$
 
 Where M is given as:
+
 $M=min(5/0.5,30/1.5,45/0.5)=10$
 
 As we can see, there's no negative value in the $Z^{th}$ row, and thus the solution is optimal. This is the *Simplex Algorithm*
 
-### Python Implementation of Simplex Algorithm
-Now we can run the above two examples in python and see if we get the same output.
-
-We will work through how we create our input arrays from the first problem  and then the second problem will one will follow.
+### Python implementation of the Simplex Algorithm
+Now we can run the above two examples in Python and see if we get the same output.We will walk through how we create our input arrays from the first problem and then the second problem one will follow.
 
 #### Case 1.
 
@@ -253,7 +252,7 @@ Optimization terminated successfully.
 ```
 From this output, it's clear that the optimal action is to build 0 touring bikes, 0 racing bikes, and 2700 mountain bikes. If this action is practiced, the company will realize an optimal profit of 59400 dollars.
 
-Now, let's proceed and solve the second problem.
+Now, let us proceed and solve the second problem.
 
 The optimization problem was:
 Maximize, $Z=30x+40y$
@@ -275,8 +274,8 @@ $A=\begin{bmatrix}
 
 $b = [50, 150, 4500]$
 
-These are the matrices we shall implement in python and get opur problrm solved.
-Bellow is the python code which perform these operations.
+These are the matrices we shall implement in Python and get opur problrm solved. Bellow is the Python code which perform these operations.
+
 ```python
 ### Import the neccessary libraries
 import numpy as np
@@ -312,9 +311,9 @@ Optimization terminated successfully.
 
 ```
 
-In the result, the value of the Objective function, i.e., fun, is -1900. This value is computed for the minimization problem. In the case of a maximization problem, we omit the negative sign. Therefore, the solution for our maximization is 1900. Also, from the results, we can see that the value for the x and y that will lead to an optimal solution are 10 and 15, respectively. 
+In the result, the value of the objective function, i.e., fun, is -1900. This value is computed for the minimization problem. In the case of a maximization problem, we omit the negative sign. Therefore, the solution for our maximization is 1900. Also, from the results, we can see that the value for the `x` and `y` that will lead to an optimal solution are 10 and 15, respectively. 
 
 The output we obtained from our two implementations above is similar to the respective manual problems we solved before. Thus, the simplex problem was successfully implemented.
 
 ### Conclusion
-In this tutorial, we have theoretically looked at the simplex method and its implementation in python. Other than solving the optimization problem itself, we showed you how we wisely deduce the optimization function from the given problem. Happy learning.
+In this tutorial, we have theoretically looked at the simplex method and its implementation in Python. Other than solving the optimization problem itself, we showed you how we wisely deduce the optimization function from the given problem. Happy learning.
