@@ -507,6 +507,6 @@ I will subsequently press 1 to choose Nigerian Naira as my "to currency" and the
 ![Exchange rate menu 3](/how-to-build-a-ussd-application-with-django/exchange-rate-menu3.jpg)
 
 
-## Summary
+## Conclusion
 
 Building a USSD application is easy. I split user inputs into a list and then used a bunch of "if-else" statements to check the elements in the list so I could traverse the menus accordingly.
