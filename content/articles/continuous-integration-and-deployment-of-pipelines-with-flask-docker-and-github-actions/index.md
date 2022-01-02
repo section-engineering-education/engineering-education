@@ -2,16 +2,16 @@
 layout: engineering-education
 status: publish
 published: true
-url: /ci-cd-with-flask-docker-and-github-actions/
-title: Continuous Integration and Deployment with Flask, Docker and Github Actions
+url: /continuous-integration-and-deployment-of-pipelines-with-flask-docker-and-github-actions/
+title: Continuous Integration and Deployment of Pipelines with Flask, Docker and Github Actions
 description: This article will teach you how to build a continuous integration and deployment pipeline with Flask, Docker and Github Actions.
 author: arafat-olayiwola
 date: 2021-12-30T00:00:00-13:30
 topics: [Containers]
 excerpt_separator: <!--more-->
 images:
-  - url: /engineering-education/ci-cd-with-flask-docker-and-github-actions/hero.png
-    alt: CI CD with Flask Docker and Github Actions
+  - url: /engineering-education/continuous-integration-and-deployment-of-pipelines-with-flask-docker-and-github-actions/hero.png
+    alt: Continuous Integration and Deployment of Pipelines with Flask Docker and Github Actions
 ---
 DevOps is the practices or stages that every application will go through before and after deployment in the industry. It ensures both continuous integration and deployment of the application, by allowing a series of updates to the code repository.
 <!--more-->
@@ -34,19 +34,19 @@ Docker packages applications into images and stores them as containers with thei
 - [Conclusion](#conclusion)
 
 ### Prerequisites
-To follow along with this tutorial, one should meet the following requirements.
+To follow along with this tutorial, you should meet the following requirements.
 - An understanding of a GitHub repository and the Python programming language.
 - [Python](https://www.python.org/downloads/) installed.
 - A pre-installed IDE, preferably [Visual Studio Code](https://code.visualstudio.com/download).
 - An understanding of [Docker](https://www.docker.com/products/docker-desktop).
-- Docker Hub Account [Docker Hub](https://hub.docker.com/)
+- A Docker Hub Account [Docker Hub](https://hub.docker.com/)
 - An understanding of [Flask](https://flask.palletsprojects.com/en/2.0.x/).
 
 ### Objectives
 In this tutorial, we will be learning the continuous integration and deployment with Docker, Selenium, and GitHub actions. You will learn the following and apply them to the project:
 
 -  Development and operations overview.
--  Creating simple Flask application
+-  Creating simple Flask application.
 -  CI and CD Pipelines architecture.
 -  Continuous Integration and deployment with Github Actions.
 -  Docker images and container basics.
@@ -70,12 +70,12 @@ Developers embark on the coding part after the requirements have been set in the
 In this stage, the application developed shall be packaged and built into images using their choice of a package manager like Docker. The application will also be shipped into containers with the configurations file required for its start-up.
 
 #### Test
-A Series of tests will run through the application for better performance. Tests like `unit`, `integrating`, etc will be conducted during development.
+A series of tests will run through the application for better performance. Tests like `unit`, `integrating`, etc will be conducted during development.
 
 Other tests can be accomplished by the testers and quality assurance engineers. Several tools are capable of doing this but the most popular is Selenium. Other stages are done by the operation team and they are as follows:
 
 ##### Release
-This is where the stage of continuous integration begins. This stage will be repeated countless times whenever there is any update in the application. The popular tools used for this in the industry are Jenkins, GitHub Actions, Team City, and more.
+This is where the stage of continuous integration begins. This stage will be repeated countless times whenever there is any update to the application. The popular tools used for this in the industry are Jenkins, GitHub Actions, Team City, and more.
 
 ##### Deploy
 An application that passed the continuous integration stage will proceed to the deployment stage. Staging will be the first thing here before deployment using tools like Ansible, Puppet or Chef.
@@ -84,7 +84,7 @@ An application that passed the continuous integration stage will proceed to the 
 The deployment will begin fully in this stage using tools like `Terraform`. The refined application will then be deployed and its operations will be monitored.
 
 ##### Monitor
-The deployed application will be monitored in terms of performance. Logs will be generated while it's been monitored. The most popular tools used in this regard and `selenium`, `Nagios`, `ELK` etc.
+The deployed application will be monitored in terms of performance. Logs will be generated while it's been monitored. The most popular tools used in this regard and `Selenium`, `Nagios`, `ELK` etc.
 
 An application undergoes all the above practices in the industry. A person skilled in terms of all these is said to be a `DevOps Engineer`.
 
@@ -150,9 +150,7 @@ if __name__ == "__main__":
 Now start the server with the command `python app.py` in the terminal. Open your browser to the root domain and confirm the welcome page. You can also route to `/drinks` and get the `API` data.
 
 ### CI and CD Pipelines architecture
-The continuous integration and deployment of pipelines are software development practices used in the industry to develop and maintain every application. 
-
-The continuous integration server is going to trigger the automated build test job. This is to check whether the pushed code is reliable or not. If the code is reliable, then it will be integrated, built, and sent to the deployment server. Successful notifications will be sent too and this is referred to as `automation`.
+A continuous integration server is going to trigger the automated build test job. This is to check whether the pushed code is reliable or not. If the code is reliable, then it will be integrated, built, and sent to the deployment server. Successful notifications will be sent too and this is referred to as `automation`.
 
 If not, the pushed codes would fail to build, another notification would be sent. So that the developer can fix the bugs and then re-commit the code. The continuous integration tool will then start building the code again. This is the reason why the continuous integration and deployment stages are still considered a `waterfall` model.
 
@@ -167,7 +165,7 @@ Navigate to the repository and click on the `action` link. Then you should recei
 
 Now select the `Publish Python Package` and click on the `Set up this workflow`. You will then be redirected to the `python-publish.yml` editing page. Inside the editor, paste the workflow below and tap on `start commit`.
 
-```YAML
+```yaml
 name: Python Package
 
 on:
@@ -193,11 +191,11 @@ jobs:
             pip install -r requirements.txt
 ```
 
-Every workflow package defined for the Github action has three major steps globally. They are the `name`, `on` and `jobs`. The name defines the tag given to the whole process, and this can be anything as far as it is meaningful.
+Every workflow package defined for the Github action has three major properties globally. They are the `name`, `on` and `jobs`. The name defines the tag given to the whole process, and this can be anything as far as it is meaningful.
 
-The `on` describes when the automation is going to start. According to the above workflow, at every code push into the repository, the actions will start building the code and then move on to the next step.
+The `on` property describes when the automation is going to start. According to the above workflow, at every code push into the repository, the actions will start building the code and then move on to the next step.
 
-Now the `jobs` are what to do at every step. In this, we want to deploy on the `ubuntu-latest` machine.  Deploying the code requires the steps as defined. This step will run by installing some dependencies described, and on successful build, you have all the steps marked. Something like the image below;
+Now the `jobs` are what to be done at every step. In this workflow, we want to deploy on the `ubuntu-latest` machine.  Deploying the code requires the steps as defined. This step will start by installing some dependencies as described, and on successful build, you will have all the steps marked. Something like the image below;
 
 ![Successful Build](/continuous-integration-and-deployment-of-pipelines-with-flask-docker-and-github-actions/publish.png)
 
@@ -208,7 +206,7 @@ In essence, a virtual machine is composed of a host operating system with the se
 
 Additionally, the virtual machine provides the benefits of infrastructure through the `hypervisor`. This hypervisor allows many virtual machines to run and is also used to create them on the operating system.
 
-However, the trade-off behind is the replication of the operating system. The more virtual machines run, the higher the space consumed in the host operating system. To optimize the backlog of this concept, the industry introduced the containerization of applications.
+However, the trade-off is the replication of the operating system. The more virtual machines run, the higher the space consumed in the host operating system. To optimize the backlog of this concept, the industry introduced the containerization of applications.
 
 Containers are the lightweight and reliable technique to deliver a product to consumers while having better use of available resources.
 
