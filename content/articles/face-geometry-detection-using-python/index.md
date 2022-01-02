@@ -6,7 +6,7 @@ url: /face-geometry-detection-using-python/
 title: Face Geometry Detection using Python
 description: This tutorial will leverage MediaPipe's Face Mesh model to detect landmarks on faces and style them.
 author: esther-awuor
-date: 2021-12-17T00:00:00-21:00
+date: 2022-01-03T00:00:00-21:00
 topics: [Machine Learning]
 excerpt_separator: <!--more-->
 images:
@@ -18,7 +18,7 @@ We will leverage MediaPipe's [Face Mesh](https://google.github.io/mediapipe/solu
 <!--more-->
 
 ### Prerequisites
-- To follow along with this tutorial, you'll need to have either Jupyter Notebook or Google Colab.
+- To follow along with this tutorial, you will need to have either Jupyter Notebook or Google Colab.
 > Google Colab has been used for this experiment.
 
 ### Table of contents
@@ -34,7 +34,7 @@ We will leverage MediaPipe's [Face Mesh](https://google.github.io/mediapipe/solu
 
 The Face Mesh model uses machine learning to infer the 3D surface geometry on human faces. Utilizing the facial surface geometry has helped apply facial effects in AR applications.  
 
-Ever wondered how you're able to wear fake sunglasses/hats on Snapchat? It's models like this that enable such face-based AR effects.
+Ever wondered how you're able to wear fake sunglasses/hats on Snapchat? It is models like this that enable such face-based AR effects.
 
 To understand the face landmark model better, please read this research [paper](https://arxiv.org/pdf/1907.06724.pdf).
 
@@ -45,13 +45,13 @@ To understand the face landmark model better, please read this research [paper](
 ```bash
 !pip install opencv-python mediapipe
 ```
-We've imported the OpenCV and MediaPipe libraries. OpenCV helps us access our image while MediaPipe allows us to import and use the Face Mesh model in our notebook. After installing the two libraries, we need to import them into our notebook. 
+We've imported the OpenCV and MediaPipe libraries. OpenCV helps us access our image, while MediaPipe allows us to import and use the Face Mesh model in our notebook. After installing the two libraries, we need to import them into our notebook. 
 
 ```python
 import cv2 #default OpenCV import code
 import mediapipe as mp #default mediapipe import code
 ```
-Let's set up MediaPipe. Mediapipe is a big library that has a lot of functionalities. We only need to select the ones that we need. We need to import the drawing utility to help draw all the 468 landmarks on the face. We also need to import the styling utility to help us add styles onto the face. Finally, we will import the main face mesh model into our notebook. 
+Let's set up MediaPipe. Mediapipe is a huge library that has a lot of functionalities. We only need to select the ones that we need. We need to import the drawing utility to help draw all the 468 landmarks on the face. We also need to import the styling utility to help us add styles onto the face. Finally, we will import the main face mesh model into our notebook. 
 
 ```python
 mp_drawing = mp.solutions.drawing_utils #helps draw all the 468 landmarks
@@ -81,11 +81,11 @@ You can adjust the thickness and circle radius to any value you wish.
 with mp_face_mesh.FaceMesh(static_image_mode=True, max_num_faces=3, refine_landmarks=True, min_detection_confidence=0.99) as face_mesh:
     image = cv2.imread("avatar.png")
 ```
-The maximum number of faces to be detected is set to detect only one face by default. To detect more than one face in an image or video, you'll need to change the `max_num_faces` parameter to your required number. We've set our to three.
+The maximum number of faces to be detected is set to detect only one face by default. To detect more than one face in an image or video, you'll need to change the `max_num_faces` parameter to your required number. We've set ours to three.
 
-For the detection to be considered a success, the `min_detection_confidence` is used to indicates the confidence value needed. The allowed range is between ([0.0, 1.0]). By default, this value is set to 0.5. Any detection values below 0.99 will not be considered successful. If above 0.99, it will be detected and applied to the image.  
+For the detection to be considered a success, the `min_detection_confidence` is used to indicate the confidence value needed. The allowed range is between ([0.0, 1.0]). By default, this value is set to 0.5. Any detection values below 0.99 will not be considered successful. If above 0.99, it will be detected and applied to the image.  
 
-In this next step, we'll need to convert the image color format from BGR to RGB. This process ought to be done before the image processing has began. This is because OpenCV accepts the image format `BGR` by default. But MediaPipe only works with `RGB` images. So using the `cv2.cvtColor()` function, we convert the image to RGB format.
+Next, we need to convert the image color format from BGR to RGB. This process ought to be done before the image processing has begun. This is because OpenCV accepts the image format `BGR` by default. But MediaPipe only works with `RGB` images. So using the `cv2.cvtColor()` function, we convert the image to RGB format.
 
 ```python
     results = face_mesh.process(cv2.cvtColor(image, cv2.COLOR_BGR2RGB))
@@ -104,7 +104,7 @@ Let's now print and draw the face mesh landmarks on the image.
  landmark_drawing_spec=None,
  connection_drawing_spec=mp_drawing_styles
  ```
- The code below applies face mesh's tesselation style on to the image. 
+ The code below applies the face mesh's tesselation style to the image. 
  
  ```python
           .get_default_face_mesh_tesselation_style())
@@ -148,7 +148,7 @@ landmark {
 .
 .
 ```
-From these results, we can decode that each landmark is comprised of three axes: the `x`, `y`, and `z` coordinates. Remember, the model detects 468 3D landmarks on the face geometry. These coordinates are normalized to values ranging between 0.0 and 1.0. The depth of the landmark is represented by the co-ordinate `z`. The depth's origin is represented by the depth's origin. Besides, the smallest `z` value represents how close the landmark is to the camera.
+From these results, we can decode that each landmark is comprised of three axes: the `x`, `y`, and `z` coordinates. Remember, the model detects 468 3D landmarks on the face geometry. These coordinates are normalized to values ranging between 0.0 and 1.0. The depth of the landmark is represented by the coordinate `z`. The depth's origin is represented by the depth's origin. Besides, the smallest `z` value represents how close the landmark is to the camera.
 
 Finally, we use OpenCV's `imshow()` method to see how these landmarks show on the image.
 
@@ -160,12 +160,12 @@ Output:
 
 ![Annotated image with landmarks](/engineering-education/face-geometry-detection-using-python/avatar.png)
 
-With only a few lines of code, we've successfully drawn the face mesh annotations on the image. The face geometry detection in this tutorial was performed on a static image, you could take the project a notch higher and try experimenting it on a webcam video output.
+With only a few lines of code, we've successfully drawn the face mesh annotations on the image. The face geometry detection in this tutorial was performed on a static image, you could take the project a notch higher and try experimenting with it on a webcam video output.
 
 You can find the code for this tutorial [here](https://colab.research.google.com/drive/18QeqDDfDM5k7avw-3LLQ5oj806c63NT3?usp=sharing).
 
 ### Summary
-The Face Mesh model can be useful in real-time face-based augmented reality (AR) effects. For example, once the model has drawn landmarks on the face, you could overlay sunglasses on an individual's eyes or make the individual wear some nose ring, etc. The use cases are limitless. 
+The Face Mesh model can be vital in real-time face-based augmented reality (AR) effects. For example, once the model has drawn landmarks on the face, you could overlay sunglasses on an individual's eyes or make the individual wear some nose ring, etc. The use cases are limitless. 
 
 Happy coding!
 
