@@ -66,7 +66,7 @@ body{
 
 It's now time to style the form's `<div>` tag to produce the neumorphism effect. Access the element using the ID `login-box`. Configure the width and height properties, and add a background color. Set the border-radius and box-shadow properties to produce an oval-like input field.
 
->It is essential to configure the box-shadow property with two shadow values. 
+>It is essential to configure the box-shadow property with two shadow values, a light and dark shadow, to achieve the protruding effect. 
 
 The code for that will look like this:
 
@@ -83,7 +83,9 @@ The code for that will look like this:
 
 >The login box has a general neumorphism effect. 
 
-Configure the styles for the `input-fields` class to style the form's children and inputs. You should set the height and width to how you configured the outer `<div>` tag.
+Configure the styles for the input-fields class to style the form's children and inputs. You should set their height and width to fit inside the outer `<div>` tag.
+
+> The outer `div` tag is the one with the `login-box ID.`
 
 The code looks like this:
 
