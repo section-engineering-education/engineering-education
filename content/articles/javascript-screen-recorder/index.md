@@ -137,11 +137,8 @@ function App() {
 }
 ```
 
-- The ```const username = useRef(`User_${Date.now().toString().slice(-4)}`)``` will generate a random username (e.g User_1548) since we don't have a real authenticated user to retrieve from context of auth.
-- With `socketRef`, we call the call io client socket with the server URL that creates an interface to send or receive data.
-- The `linkRef` and `videoRef` link to the DOM node and the video to enable download and view in the DOM.
-
-To send events, a method is used socket.emit(type, data), where type is a string indicating the type of event. Data can be both primitives and objects. In order to process events, a method is used socket.on(type, callback), with an event type and a callback function that executes once an event is emitted.
+Since our application does not authenticate any user, we need to generate a random username from the current timestamp using the `useRef` hook to create a reference to the DOM element. The socketRef will initiate a call to our backend web socket connection using the server URL. This creates an interface to start the stream of sending and receiving data. The `videoRef` hook maps to the DOM to allow the user to download the screen capture in video format. 
+The goal of WebSockets API is to create a full-duplex communication channel over a single TCP connection. To trigger an event, the `socket.emit` method will accept the event type as well as the data sent. At the end of the client connection, we process events by listening to the WebSockets using `socket.on` method. This method accepts the event type as an argument and the callback function to execute once the event is emitted. 
 
 Next, we need to capture the screen:
 
