@@ -1,8 +1,24 @@
+---
+layout: engineering-education
+status: publish
+published: true
+url: /simplex-method-in-python/
+title: Getting started with the Simplex Method
+description: The simplex method is an algorithm used in linear programming problems to determine the optimal solution for a given optimization problem. In this article, we shall look at how this algorithm work.
+author: stanley-juma
+date: 2021-01-02T00:00:00-09:35
+topics: [Languages]
+excerpt_separator: <!--more-->
+images:
 
-### Understanding the Simplex Method
-The simplex method is an algorithm used in linear programming problems to determine the optimal solution for a given optimization problem. For example, this method is used when a linear optimization problem is subjected to inequality constraints. 
+  - url: /engineering-education/simplex-method-in-python/hero.png
+    alt:  Getting started with the Simplex Method Image
+---
 
-In this article, we shall look at how this algorithm work.
+
+The simplex method is an algorithm used in linear programming problems to determine the optimal solution for a given optimization problem. 
+<!--more-->
+For example, this method is used when a linear optimization problem is subjected to inequality constraints. In this article, we shall look at how this algorithm work.
 
 ### Prerequisites
 1. Python installed on your computer
