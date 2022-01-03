@@ -93,7 +93,7 @@ const DemoLine = () => {
 
 export default DemoLine;
 ```
-We did not make use of a large data set. Thus, we inserted our data set as below:
+We did not make use of a large data set. Therefore, we inserted our data set as below:
 ```javascript
  const data = [
     {
@@ -326,7 +326,7 @@ We should have our basic line chat as below:
 - The median is the middle number in a list of numbers arranged in ascending order.
 
 #### Data representation using step line
-Step line charts show the changes that occur at irregular intervals. To create our step line chart, we'll follow all the steps used in our basic line chart. Thus, our code will be as below:
+Step line charts show the changes that occur at irregular intervals. To create our step line chart, we followed all the steps used in our basic line chart. Thus, our code is as below:
 ```javascript
 import React, { useState, useEffect } from 'react';
 import ReactDOM from 'react-dom';
@@ -386,7 +386,7 @@ const DemoLine = () => {
 
 export default DemoLine;
 ```
-On the implementation of the code above, we had our step line chart will be as below:
+On the implementation of the code above, we should have our step line chart as below:
 
 ![step-line](engineering-education/data-representation-with-react-and-ant-design/step-line.png)
 
