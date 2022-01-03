@@ -3,51 +3,46 @@ layout: engineering-education
 status: publish
 published: true
 url: /linear-time-invariant-systems-analyzer-using-matlab/
-title: How to Implement Linear Time Invariant (LTI) System Analyzer Using MATLAB Graphical User Interface (GUI)
-description: This article will be an introduction to Linear Time Invariant systems. We will be building an LTI system analyzer using Matlab along with a simple GUI.
+title: How to Implement Linear Time Invariant System Analyzer using MATLAB Graphical User Interface 
+description: This article will be an introduction to Linear Time Invariant systems. We will build an linear time invariant system analyzer using Matlab along with a simple graphical user interface.
 author: florence-akinyi
-date: 2021-12-24T00:00:00-20:20
+date: 2022-01-03T00:00:00-16:20
 topics: [Languages]
 excerpt_separator: <!--more-->
 images:
 
-  - url: /engineering-educationlinear-time-invariant-systems-analyzer-using-matlabhero.jpg
-    alt: How to Implement Linear Time Invariant (LTI) System Analyzer Using MATLAB Graphical User Interface (GUI) Hero Image
+  - url: /engineering-education/linear-time-invariant-systems-analyzer-using-matlab/hero.jpg
+    alt: Linear Time Invariant (LTI) System Analyzer MATLAB Graphical User Interface (GUI) Hero Image
 ---
 Linear Time Invariant (LTI) systems are a significant part of the signal processing toolbox that defines the action of a physical system on the signal.
 <!--more-->
 Filters are examples of the LTI systems. In this system, the input is called the "Excitation", and the corresponding output is the "Response". The basic principle of such a system is linearity and time invariance.
 
-When you combine all the inputs and their corresponding outputs, it's linearity. When the system depends on the time, but not on the time function, it is time invariance.
+When you combine all the inputs and their corresponding outputs, it's linearity. When the system depends on the time, but not on the time function, it is time invariance. A graphical user interface (GUI) associates the user and the system without having to know what the system entails. It abstracts the functionality of the system, thereby acting as an interface for navigating.
 
-A graphical user interface (GUI) associates the user and the system without having to know what the system entails. It abstracts the functionality of the system, thereby acting as an interface for navigating.
+In this tutorial, we will create an LTI system analyzer with a simple GUI. The analyzer should be capable of analyzing time, impulse, and ramp response. It will also make bode plots, magnitude plots, and pole-zero plots.
 
-In this tutorial, we will create an LTI system analyzer with GUI. The analyzer should be capable of analyzing time, impulse, and ramp response. It can also make bode plots, magnitude plots, and pole-zero plots.
-
-### Pre-requisites
+### Prerequisites
 To follow along with this tutorial, you'll need to have:
 - [MATLAB](https://www.mathworks.com/products/get-matlab.html?s_tid=gn_getml) installed.
-- Good understanding of [MATLAB basics](/engineering-education/getting-started-with-matlab/).
+- A good understanding of [MATLAB basics](/engineering-education/getting-started-with-matlab/).
 - [Getting started with a graphical user interface](/engineering-education/matlab-graphical-user-interface/) in MATLAB.
 
 ### Time invariance
-Time invariance is a principle of LTI stating that if the output of `x(t)` is `y(t)`, then the output due to delayed output `x(t-T)` is also delayed by the time `T`.
-
-It means that the property of the signal does not change with time. Systems that follow linearity and time invariance (do not change with time) are known as LTI systems.
+Time invariance is a principle of LTI stating that if the output of `x(t)` is `y(t)`, then the output due to delayed output `x(t-T)` is also delayed by the time `T`. It means that the property of the signal does not change with time. Systems that follow linearity and time invariance (do not change with time) are known as LTI systems.
 
 By plotting a graph of the input and output graph, if we get a straight line, we call it Linearity.
+LTI systems are characterized entirely by a single function called the system's impulse response. The system impulse response is the response of an LTI system for a unit signal input at applied at `t=0`. 
 
-LTI systems are characterized entirely by a single function called the system's impulse response. The system impulse response is the response of an LTI system for a unit signal input at applied at `t=0`. It is represented by `h(t)` for [continuous wavelet transform](https://en.wikipedia.org/wiki/Continuous_wavelet_transform) `cwt` and by `h(n)` for the [discrete-time systems](https://engineering.purdue.edu/VISE/ee438L/lab2/pdf/lab2.pdf).
-
-A continuous wavelet transform is a tool used for the overcomplete representation of signals by letting the wavelets vary continuously where the wavelets are just signals that begin from zero.
+It is represented by `h(t)` for [continuous wavelet transform](https://en.wikipedia.org/wiki/Continuous_wavelet_transform) `cwt` and by `h(n)` for the [discrete-time systems](https://engineering.purdue.edu/VISE/ee438L/lab2/pdf/lab2.pdf). A continuous wavelet transform is a tool used for the overcomplete representation of signals by letting the wavelets vary continuously where the wavelets are just signals that begin from zero.
 
 Discrete-time systems take discrete-time signals in and give discrete-time signals as output. A Discrete-time signal is a time series consisting of a sequence of quantities.
 
-![LTI systems](/engineering-educationlinear-time-invariant-systems-analyzer-using-matlabimage1.png)
+![LTI systems](/engineering-education/linear-time-invariant-systems-analyzer-using-matlab/image1.png)
 
 For any input `x(t)` or `x(n)`, the output can simply be obtained by convolution of input and the impulse response `h(t)` or `h(n)` as shown:
 
-```
+```bash
 y(t)=x(t).h(t)......equation 1
 y(n)=x(n)*h(n)......equation 2
 ```
@@ -56,18 +51,14 @@ y(n)=x(n)*h(n)......equation 2
 - We replace the time function `t` with `s` for the Laplace transform, giving `equation 3`.
 - For `equation 2`, we represent it to the [z-transform](https://en.wikipedia.org/wiki/Z-transform) to give `equation 4` as shown below:
 
-```
+```bash
 Y(s)=X(s).H(s)........equation 3
 Y(z)=X(z).H(z)........equation 4
 ```
 
-Laplace transform is the integral transform of the given derivative function with real variable `t` to convert into a complex function with variable `s`.
+Laplace transform is the integral transform of the given derivative function with real variable `t` to convert into a complex function with variable `s`. When you take the Laplace transform of `equation 2`, the convolution of both the equations above becomes multiplication.
 
-When you take the Laplace transform of `equation 2`, the convolution of both the equations above becomes multiplication.
-
-Convolution is the addition of two signals to form a third signal. This is how your complicated convolution becomes the easy multiplication in the frequency domain.
-
-To understand more about Laplace transform, you can see [here](https://byjus.com/maths/laplace-transform/)
+Convolution is the addition of two signals to form a third signal. This is how your complicated convolution becomes the easy multiplication in the frequency domain. To understand more about Laplace transform, you can refer to [here](https://byjus.com/maths/laplace-transform/).
 
 From `equation 3`, we can find the ratio of `Y(s)` and `X(s)` as shown:
 
@@ -84,26 +75,28 @@ Analysis of LTI systems is easy, and transfer function plays an important role. 
 The poles and the zeros are useful in the systems stability, analysis, and time response behavior of the LTI systems. The transfer function is utilized to analyze the time domain behavior frequency-domain behavior of the systems.
 
 ### Various analyses of LTI systems
-There are various analyses performed on LTI systems. Some basic analyses are shown below:
+There are various analyses performed on LTI systems. 
 
-![various analysis of LTI systems](/engineering-educationlinear-time-invariant-systems-analyzer-using-matlabimage2.png)
+Some basic analyses are shown below:
+
+![various analysis of LTI systems](/engineering-education/linear-time-invariant-systems-analyzer-using-matlab/image2.png)
 
 If we consider the time domain, we have the three analyses:
 1. Time response
 2. Error analysis
 3. Stability analysis
 
-We consider the output response for each input for analyzing time response. For example, if you give impulse response as input, you get impulse response as the output. Similarly, to step and ramp response.
+We consider the output response for each input when analyzing time response. For example, if you give impulse response as input, you get impulse response as the output. Similarly, to step and ramp response.
 
 We consider the steady-state error/error coefficients for error analysis, concentrating on the root locus for stability.
 
 Considering the frequency domain, we have:
 
-![frequency domain](/engineering-educationlinear-time-invariant-systems-analyzer-using-matlabimage3.png)
+![frequency domain](/engineering-education/linear-time-invariant-systems-analyzer-using-matlab/image3.png)
 
 ### Matlab GUI to implement basic LTI system analysis
 Our objective is to develop a GUI in Matlab to implement the following analysis of any LTI system:
-- **Impulse response** - is the response of an LTI system for a unit signal input at applied at `t=0`.
+- **Impulse response** - is the response of an LTI system for a unit signal input applied at `t=0`.
 - **Step response** - is the time behavior of the outputs of a general system when its inputs change from zero to one in a very short time.
 - **Ramp response** - represents the constant change in the input. For example, if the velocity increases with a constant acceleration, then it is a ramp response.
 - **Frequency response** (bode magnitude and phase plot) - is the representation of the range of frequencies produced.
@@ -111,7 +104,7 @@ Our objective is to develop a GUI in Matlab to implement the following analysis 
 - **Nyquist plot** - is a plot that shows the relationship between the feedback and the gain. A gain is a relationship between the output and the input at a steady state.
 - **Log magnitude vs. Phase plot** - A log plot is the plot of the gain as a function of the frequency, while the phase plot is the phase plot that shows how the phase shift develops when the source frequency starts to enter the cutoff region. 
 
-![glimpse of the gui](/engineering-educationlinear-time-invariant-systems-analyzer-using-matlabimage4.png)
+![glimpse of the gui](/engineering-education/linear-time-invariant-systems-analyzer-using-matlab/image4.png)
 
 The above GUI image is a sample of what we are going to build using Matlab. The axes show the plot. When you enter the numerator and the denominator and press the push button `find TF`, the transfer function is displayed below the push button.
 
@@ -123,24 +116,24 @@ For example, if we have the function as $\frac{s+25}{s^2+5s+25}$, we enter `1` a
 
 The figure below shows the expected behavior:
 
-![find TF](/engineering-educationlinear-time-invariant-systems-analyzer-using-matlabimage5.png)
+![find TF](/engineering-education/linear-time-invariant-systems-analyzer-using-matlab/image5.png)
 
 When we click `find TF`, we expect the results above:
 
-![output](/engineering-educationlinear-time-invariant-systems-analyzer-using-matlabimage6.png)
+![output](/engineering-education/linear-time-invariant-systems-analyzer-using-matlab/image6.png)
 
 ### Creating GUI
 To open the guide, we execute the command `guide` on the command window and open a blank GUI.
 
-You can read more about the MATLAB GUI [here](/engineering-education/matlab-graphical-user-interface/). It is highly recommended to read through this article since it introduces you to building a GUI and explains various functions  that are used for building them.
+You can read more about the MATLAB GUI [here](/engineering-education/matlab-graphical-user-interface/). It is highly recommended to read through this article since it introduces you to building a GUI and explains various functions that are used for building them.
 
 This GUI comprises static texts, axes, edit texts, pushbuttons, radio buttons, button groups, and text fields. Place your components such that your GUI appears as shown below:
 
-![component arrangement](/engineering-educationlinear-time-invariant-systems-analyzer-using-matlabimage7.png)
+![component arrangement](/engineering-education/linear-time-invariant-systems-analyzer-using-matlab/image7.png)
 
 Double-click the component to add the labels and the tags for each component, and a new window `property inspector` as shown below:
 
-![property inspector](/engineering-educationlinear-time-invariant-systems-analyzer-using-matlabimage8.png)
+![property inspector](/engineering-education/linear-time-invariant-systems-analyzer-using-matlab/image8.png)
 
 This property inspector enables you to modify/edit the properties of various components according to the desired values.
 
@@ -150,23 +143,21 @@ While doing this, ensure you take note of the tag of each component. This tag is
 
 The string of the components can be the same, but the tags should be unique since the callbacks functions are identified using tags.
 
-Callback functions are the codes that render the functionality of the codes.
+Callback functions are the codes that render the functionality of the codes. After adding all the component labels, click the `run` icon on the top of your GUI to give you the final layout, as shown below:
 
-After adding all the component labels, click the `run` icon on the top of your GUI to give you the final layout, as shown below:
-
-![final layout](/engineering-educationlinear-time-invariant-systems-analyzer-using-matlabimage9.png)
+![final layout](/engineering-education/linear-time-invariant-systems-analyzer-using-matlab/image9.png)
 
 When you click the run icon, Matlab autogenerates a script containing the GUI code. This autogenerated code is where we are writing the callback for our components.
 
 > We only add codes to the callback section, not the CreateFcn.
 
-![callback section](/engineering-educationlinear-time-invariant-systems-analyzer-using-matlabimage10.png)
+![callback section](/engineering-education/linear-time-invariant-systems-analyzer-using-matlab/image10.png)
 
-Now, if you carefully look at the generated codes, you'll realize that we have the callback functions for all components, except for radio buttons and the button group. It is because Matlab, by default, do not generate callback for radio buttons and button group, but you can create them.
+Now, if you carefully look at the generated codes, you'll realize that we have the callback functions for all components, except for radio buttons and the button group. This is because Matlab, by default, does not generate callback for radio buttons and button group, but you can create them.
 
 To do this, go back to the GUI layout and right-click on the button group, and select the `view callback`. It opens a new selection and on this new selection, select `selectionChangedFcn`.
 
-![creating callback for radio buttons](/engineering-educationlinear-time-invariant-systems-analyzer-using-matlabimage14.png)
+![creating callback for radio buttons](/engineering-education/linear-time-invariant-systems-analyzer-using-matlab/image14.png)
 
 When you do this, Matlab writes the callback for the components.
 
@@ -207,7 +198,7 @@ set(handles.text6, 'String', T);
 - The transfer function is calculated using the `tf` function in Matlab. This function takes in the numerator `handles.num` and the denominators `handles.den` as the arguments. 
 - The `tf` is stored in the `sys` variable. Now, this `sys` is evaluated in string form using the `eval('sys')`. We then display the string to the text area using the `set function` and string form.
 
-### Uibuttongroup1_SelectionChangedFcn(Select Plot Types)
+### Uibuttongroup1_SelectionChangedFcn (Select Plot Types)
 ```matlab
 switch get(eventdata.NewValue, 'Tag')   %Get tag of the selected object.
     case 'radiobutton1'
@@ -228,7 +219,7 @@ end
 guidata(hObject, handles);
 ```
 
-Here, we are using a `switch` control statement based on `get(eventdata.NewValue, 'Tag')` that assigns the respective radio buttons strings based on the tag. Finally, you update the handles.
+Here, we are using a `switch` control statement based on `get(eventdata.NewValue, 'Tag')` that assigns the respective radio buttons strings based on the tag. Then, you update the handles.
 
 ### Pushbutton2 (Compute)
 Here, we use the `switch` control statement to write the response of each plot type.
@@ -320,9 +311,7 @@ Both `case6` (nyquisit) and `case7` (nichols plot) have inbuilt functions for ex
         grid;
 ```
 
-`Case8` is the pole-zero plot. Here, we use the `pzmap` function.
-
-Matlab's default `pzmap` creates a very dull-looking plot. This is because the markers are small and are difficult to see and so we modify their plots.
+`Case8` is the pole-zero plot. Here, we use the `pzmap` function. Matlab's default `pzmap` creates a very dull-looking plot. This is because the markers are small and are difficult to see and so we modify their plots.
 
 ```matlab
     case '8'
@@ -336,35 +325,34 @@ end
 guidata(hObject, handles);
 ```
 
-We have modified the marker colors `h(2).Color='b'` and `h(2).Color='r'` to differentiate. We also make the marker sizes large `h(2).MarkerSize=15`.
-
-`pzmap` is an inbuilt function that uses the transfer function as the argument.
+We have modified the marker colors `h(2).Color='b'` and `h(2).Color='r'` to differentiate. We also make the marker sizes large `h(2).MarkerSize=15`. `pzmap` is an inbuilt function that uses the transfer function as the argument.
 
 > Before running your program, these callbacks have to be inserted in their respective callbacks.
 
 You can find the full code [here](https://github.com/florenceakinyi/lti).
 
 Now, let's test the functionality of our program using the function below:
+
 $$\frac{s + 25}{s^2+2s+25}$$
 
 In the inputs for the numerator, we have 1 and 25, and for the denominator, we have 1, 2, and 25.
 
 When you click on the `Find TF`, we see the transfer function displayed as shown below:
 
-![displaying transfer function](/engineering-educationlinear-time-invariant-systems-analyzer-using-matlabimage11.png)
+![displaying transfer function](/engineering-education/linear-time-invariant-systems-analyzer-using-matlab/image11.png)
 
 When you select, for example, impulse response and press the `compute` button, we see the plot is displayed in the axes. You can do this for other plot types.
 
-![output](/engineering-educationlinear-time-invariant-systems-analyzer-using-matlabimage12.png)
+![output](/engineering-education/linear-time-invariant-systems-analyzer-using-matlab/image12.png)
 
 If you choose bode plot, you will have:
 
-![bode plot](/engineering-educationlinear-time-invariant-systems-analyzer-using-matlabimage13.png)
+![bode plot](/engineering-education/linear-time-invariant-systems-analyzer-using-matlab/image13.png)
 
-For more details on the LTI systems, you can check [here](https://allsignalprocessing.com/lessons/introduction-to-linear-time-invariant-systems/)
+For more details on the LTI systems, you can check [here](https://allsignalprocessing.com/lessons/introduction-to-linear-time-invariant-systems/).
 
 ### Conclusion
-In this tutorial, we have learned to analyze LTI systems easily by just inputting the numerator and the denominators. Also, it can help you when doing some numerical analysis and use it for verifying your answers.
+In this tutorial, we learned to analyze LTI systems easily by just inputting the numerator and the denominators. Also, it can help you when doing some numerical analysis and use it for verifying your answers.
 
 Furthermore, the numerous in-built Matlab functions make the creation of this GUI easier.
 
@@ -372,3 +360,32 @@ Happy coding!
 
 ---
 Peer Review Contributions by: [Srishilesh P S](/engineering-education/authors/srishilesh-p-s/)
+
+<!-- MathJax script -->
+<script type="text/javascript" async
+    src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+    MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [['$','$'], ['\\(','\\)']],
+      displayMath: [['$$','$$']],
+      processEscapes: true,
+      processEnvironments: true,
+      skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
+      TeX: { equationNumbers: { autoNumber: "AMS" },
+           extensions: ["AMSmath.js", "AMSsymbols.js"] }
+    }
+    });
+    MathJax.Hub.Queue(function() {
+      // Fix <code> tags after MathJax finishes running. This is a
+      // hack to overcome a shortcoming of Markdown. Discussion at
+      // https://github.com/mojombo/jekyll/issues/199
+      var all = MathJax.Hub.getAllJax(), i;
+      for(i = 0; i < all.length; i += 1) {
+          all[i].SourceElement().parentNode.className += ' has-jax';
+      }
+    });
+    MathJax.Hub.Config({
+    // Autonumbering by mathjax
+    TeX: { equationNumbers: { autoNumber: "AMS" } }
+    });
+  </script>
