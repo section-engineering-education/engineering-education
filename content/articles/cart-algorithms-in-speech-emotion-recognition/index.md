@@ -12,7 +12,7 @@ excerpt_separator: <!--more-->
 images:
 
   - url: /engineering-education/cart-algorithms-in-speech-emotion-recognition/hero.jpg
-    alt: CART example image 
+    alt: CART example hero image 
 ---
 Unlike humans, who have the human ability to recognize emotion from speech, machines do not have the sense to analyze feelings. Speech emotional recognition is vital in understanding human emotions such as amusement, frustration, or disappointment.
 <!--more-->
@@ -67,35 +67,34 @@ The emotion recognition is determined based on the actual positive (TP) and fals
 
 ### Factors determining CART effectiveness in speech emotion recognition
 #### Database selection
-Speech emotion recognition is highly dependent on the proper selection of the database. The naturalness of database selection determines the efficiency of CART. CART can only analyze a natural database of speech from humans to identify the emotions. Data is essential in speech emotion recognition. The decision tree of CART depends on the input variables, which are split until the construction of a suitable tree.
+Speech emotion recognition is highly dependent on the proper selection of the database. The naturalness of database selection determines the efficiency of CART. CART can only analyze a natural database of speech from humans to identify the emotions. 
+
+Data is essential in speech emotion recognition. The decision tree of CART depends on the input variables, which are split until the construction of a suitable tree.
 
 #### Data preparation
-For CART to effectively recognize speech emotion, good presentation of data is significant. This is vital in ensuring that the decision tree is well split to the point that suitable are reflected. Thus, this calls for efficient, emotional speech input and feature extraction processes.
+For CART to effectively recognize speech emotion, good presentation of data is significant. This is vital in ensuring that the decision tree is well split to the point that is suitable. Thus, this calls for efficient, emotional speech input and feature extraction processes.
 
-### Why should you choose CART algorithms in speech emotion recognition?
-A wide range of algorithms could be used in speech emotion recognition, such as CART, SVM, logistic regression, others. However, choosing CART would be very efficient in recognizing speech emotion than other algorithms. The following are some of the reasons why one should choose CART for speech emotional recognition;
+### Why choose CART algorithms in speech emotion recognition?
+A wide range of algorithms could be used in speech emotion recognition, such as CART, SVM, logistic regression, others. However, here are some of the reasons why one should choose CART for speech emotional recognition:
 
-- **CART Algorithms are non-parametric algorithms**. Thus, CART use in the voice training stage is efficient. This is on assigning weight to features identified from speech recognition. Thus, the CART algorithm is significant in generalizing data and deriving informed features. So, ensuring flexibility due to the ability to fit the functional forms. The Non-parametric nature of CART enhances power and performance due to training efficiency.
+- **CART Algorithms are non-parametric algorithms**. Thus, CARTs use in the voice training stage is more efficient. This is on assigning weight to features identified from speech recognition. Thus, the CART algorithm is helpful in generalizing data and deriving informed features. Also ensuring flexibility due to the ability to fit the functional forms. The Non-parametric nature of CART enhances power and performance with training efficiency.
 
-- **CART is very sensitive to outliers**. CART is so susceptible to any variables irrelevant or situated away from the tree. So, CART treats the outlier as the terminal nodes in speech emotion recognition, which cannot affect the decision tree. Due to the splitting process of the decision tree, CART is more robust to the predictors than the outlier.
+- **CART is very sensitive to outliers**. CART is very susceptible to any variables irrelevant or situated away from the tree. So, CART treats the outlier as the terminal nodes in speech emotion recognition, which cannot affect the decision tree. Due to the splitting process of the decision tree, CART is more robust to the predictors than the outlier.
 
-- **CART also incorporates data tests and cross-validation**. This is vital in ensuring that the goodness of fit is accurate. Thus, the decision tree created is authentic in representing the emotions represented in the speech.
+- **CART also incorporates data tests and cross-validation**. This is vital in ensuring that the fit is accurate. Thus, the decision tree created is authentic in representing the emotions represented in the speech.
 
 - **CART is also efficient in using different variables in varying levels of the decision tree**. This ensures that it is easy to unwrap complex interdependencies between variable sets. Thus, various emotional ties are identified in different levels of the decision tree.
 
-- **CART in speech emotional recognition can be conjoined with other algorithms**. The ability to use CART with other algorithms enhances speech emotion recognition accuracy. For example, CART can be utilized with [SVM](/engineering-education/supervised-learning-algorithms/) for outlier detection, classification, and regression.
-
 - **CART in speech emotion recognition can be conjoined with other algorithms**. The ability to use CART with other algorithms enhances speech emotion recognition accuracy. For example, CART can be utilized with [SVM](/engineering-education/supervised-learning-algorithms/) for outlier detection, classification, and regression.
 
-
 ### Conclusion
-Thus, CART is vital in the speech emotion recognition process. There are various stages of the speech emotion recognition system vital in identification. They entail emotional speech input, classification, training, extraction/selection, and emotion recognition. The CART algorithm could be used in training, classification, and emotion recognition stages. Data selection and preparation are two of the vital aspects in enhancing the effectiveness of CART.
+CART is vital in the speech emotion recognition process. The CART algorithm can be very useful in the training, classification, and emotion recognition stages. Data selection and preparation are two of the vital aspects in enhancing the effectiveness of CART. 
 
-There are various reasons why you should choose CART in speech emotion recognition compared to other algorithms. Some of the key reasons include CART being non-parametric. CART is easily used in conjunction with different algorithms and unwrapping complex interdependence. Other key reasons include the ability to do data-test and cross-validation and not affected by the outliers.
+CART may be a better choice in speech emotion recognition when compared to other algorithms. Some of the key reasons include CART being non-parametric. CART is easily used in conjunction with different algorithms and unwrapping complex interdependence. Other key reasons include the ability to do data-test and cross-validation and not affected by the outliers.
 
 As we can see, CART is an efficient algorithm in speech emotion recognition.
 
-Happy Learning!
+Happy learning!
 
 ### Further reading
 
