@@ -10,7 +10,7 @@ date: 2022-01-03T00:00:00-13:30
 topics: [Containers]
 excerpt_separator: <!--more-->
 images:
-  - url: /engineering-education/ci-cd-pipelines-with-flask-docker-and-github-actions//hero.png
+  - url: /engineering-education/ci-cd-pipelines-with-flask-docker-and-github-actions/hero.png
     alt: Continuous Integration and Deployment Pipelines with Flask Docker and Github Actions
 ---
 DevOps is the practices or stages that every application will go through before and after deployment in the industry. It ensures both continuous integration and deployment of the application by allowing a series of updates to the code repository.
