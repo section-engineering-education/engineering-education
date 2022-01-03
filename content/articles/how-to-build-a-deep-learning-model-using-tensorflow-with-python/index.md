@@ -8,22 +8,22 @@ To get along, you should ;
 ### Introduction
 Giving a look at the world today, you’ll realize that many applications that we use in our daily lives have been built using deep learning. Deep learning is a subset of machine learning that mimics the neuron of the human brain, it allows the computer do human tasks by imitating the human thinking process.
 
-Deep Learning Models create a network that resembles biological nervous system. Frameworks used to build these deep learning models include Caffee, Microsoft cognitive tool, MXNET, Keras, DeepLearning4j and Tensorflow. Keras and Tensorflow are the most used frameworks.
+Deep Learning Models create a network that resembles the biological nervous system. Frameworks used to build these deep learning models include Caffee, Microsoft cognitive tool, MXNET, Keras, DeepLearning4j, and Tensorflow. Keras and Tensorflow are the most used frameworks.
 
 ### *Table of content*
 - [Importance of deep learning](#importance-of-deep-learning)
 - [What is Tensorflow?](#what-is-tensorflow?)
-- [Merits and demerits of tensorflow](#merits-and-demerits-of-tensorflow)
+- [Merits and demerits of Tensorflow](#merits-and-demerits-of-tensorflow)
   - [*Merits*](#*merits*)
    - [*Demerits*](#*demerits*)
 - [Steps of Tensorflow algorithm](#steps-of-tensorflow-algorithm)
 - [Conclusion](#conclusion)
 
 #### **Importance of deep learning**
-It has the capacity to process several features hence making it best in operating with unstructured data. Deep learning technology is able to lead to a dramatic development in our day-to-day quality of life by helping us predict, plan, make and apply better decision.
+It has the capacity to process several features hence making it best in operating with unstructured data. Deep learning technology is able to lead to a dramatic development in our day-to-day quality of life by helping us predict, plan, make, and apply the better decisions.
 
-With knowledge in modelling deep learning neural networks and a better understanding in probabilistic methods one should be able start his/her career in deep learning with ease.
-Some of the modelling deep learning neural networks that may be of great help in your career include ADAM, CNN, LSTM, Dropout, RNN, etc. 
+With knowledge in modeling deep learning neural networks and a better understanding of probabilistic methods, one should be able to start his/her career in deep learning with ease.
+Some of the modeling deep learning neural networks that may be of great help in your career include ADAM, CNN, LSTM, Dropout, RNN, etc. 
 
 #### __What is Tensorflow?__
 TensorFlow <span style="color:green">is a free, open-source machine learning software that can be used from start to end.
@@ -31,19 +31,19 @@ TensorFlow <span style="color:green">is a free, open-source machine learning sof
 Tensorflow was developed in 2015 by google.
 
 #### **Merits and Demerits of TensorFlow**
-The following are some of the advantages of tensorflow ;
+The following are some of the advantages of Tensorflow ;
 
 #### Merits
-- Tensorflow is very compatible with a lot of languages like;  Javascript, Python, C#, Swift, C++, and Ruby hence the user may choose any language to use with tensorflow.
-- TensorFlow is used for deep learning development because it allows creation of neural networks using graphs that represent operations as nodes.It operates in multiple domains, including motion detection, image recognition, time series, voice detection, and many others, and thus meets the needs of a user. With that, it offers graphical support in deep learning.
+- Tensorflow is very compatible with a lot of languages like;  Javascript, Python, C#, Swift, C++, and Ruby hence the user may choose any language to use with Tensorflow.
+- TensorFlow is used for deep learning development because it allows the creation of neural networks using graphs that represent operations as nodes. It operates in multiple domains, including motion detection, image recognition, time series, voice detection, and many others, and thus meets the needs of a user. With that, it offers graphical support in deep learning.
 - Tensorflow is Keras friendly. It is compatible with Keras, allowing users to program several high-level functionality areas. Keras will provide TensorFlow with system-specific functionality like pipelining, estimators, and eager execution.
 
-- Tensorflow is an open source and free platform that is accessible to all nearby users and is ready for any system upgrade.
+- Tensorflow is an open-source and free platform that is accessible to all nearby users and is ready for any system upgrade.
 
 #### Demerits
 - TensorFlow has a low speed in relation to its competitors. It also has less usability compared to other components.
 - TensorFlow has only NVIDIA support for GPU and python for GPU system support, it has no other support.
-- TensorFlow delays in providing symbolic loops for endless sequences. It has its own straight-forward application, which makes it a useful program. It is therefore referred to as a low-level API.
+- TensorFlow delays in providing symbolic loops for endless sequences. It has its straightforward application, which makes it a useful program. It is therefore referred to as a low-level API.
 - It releases new versions every two to three months, increasing the time it takes for the user to install and integrate it with his or her existing system.
 
 #### __Steps of Tensorflow algorithm__
@@ -87,8 +87,8 @@ model.evaluate(x_test, y_test)
 ```
 
 #### Conclusion
-Tensorflow has made coding look great, through it, a lot of deep learning models have been made. With the steps given, the reader will be able to deploy a deep learning model using tensorflow. I hope this article was of good help to you, the content in it is useful to beginners and intermidiate individuals practicing machine learning and deep learning. For beginners you'll have to do more coding so that you may familiarise with the procedures.
-I'll provide links for articles that will help you learn more about ***deep learning***, ***machine learning*** and ***keras***. To learn more about ;
+Tensorflow has made coding look great, through it, a lot of deep learning models have been made. With the steps given, the reader will be able to deploy a deep learning model using Tensorflow. I hope this article was of good help to you, the content in it is useful to beginners and intermediate individuals practicing machine learning and deep learning. For beginners, you'll have to do more coding so that you may familiarise yourself with the procedures.
+I'll provide links for articles that will help you learn more about ***deep learning***, ***machine learning***, and ***Keras***. To learn more about ;
 - Deep learning [click here](ibm.com/cloud/learn/deep-learning)  
 - Machine learning [click here](https://www.w3schools.com/python/python_ml_getting_started.asp)
 - Keras [click here](https://machinelearningmastery.com/tutorial-first-neural-network-python-keras/)
