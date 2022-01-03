@@ -2,16 +2,16 @@
 layout: engineering-education
 status: publish
 published: true
-url: /continuous-integration-and-deployment-of-pipelines-with-flask-docker-and-github-actions/
-title: Continuous Integration and Deployment of Pipelines with Flask, Docker and Github Actions
+url: /ci-cd-pipelines-with-flask-docker-and-github-actions/
+title: Continuous Integration and Deployment Pipelines with Flask, Docker and Github Actions
 description: This article will teach you how to build a continuous integration and deployment pipeline with Flask, Docker and Github Actions.
 author: arafat-olayiwola
 date: 2022-01-03T00:00:00-13:30
 topics: [Containers]
 excerpt_separator: <!--more-->
 images:
-  - url: /engineering-education/continuous-integration-and-deployment-of-pipelines-with-flask-docker-and-github-actions/hero.png
-    alt: Continuous Integration and Deployment of Pipelines with Flask Docker and Github Actions
+  - url: /engineering-education/ci-cd-pipelines-with-flask-docker-and-github-actions//hero.png
+    alt: Continuous Integration and Deployment Pipelines with Flask Docker and Github Actions
 ---
 DevOps is the practices or stages that every application will go through before and after deployment in the industry. It ensures both continuous integration and deployment of the application by allowing a series of updates to the code repository.
 <!--more-->
@@ -56,7 +56,7 @@ There are different stages involved in building pipelines, from development to p
 
 The picture below describes all the pre-defined stages.
 
-![DevOps Stages](/continuous-integration-and-deployment-of-pipelines-with-flask-docker-and-github-actions/stages.png)
+![DevOps Stages](/ci-cd-pipelines-with-flask-docker-and-github-actions/stages.png)
 
 Every industry begins the development of applications with the following set of practices:
 
@@ -161,7 +161,7 @@ This follows a workflow using a different language package file. Earlier, we clo
 
 Navigate to the repository and click on the `action` link. Then you should receive something similar to the image below.
 
-![Python Package](/continuous-integration-and-deployment-of-pipelines-with-flask-docker-and-github-actions/package.png)
+![Python Package](/ci-cd-pipelines-with-flask-docker-and-github-actions/package.png)
 
 Now select the `Publish Python Package` and click on the `Set up this workflow`. You will then be redirected to the `python-publish.yml` editing page. Paste the workflow below and tap on `start commit` inside the editor.
 
@@ -197,7 +197,7 @@ The `on` property describes when the automation is going to start. According to 
 
 Now the `jobs` are what to be done at every step. We want to deploy on the `ubuntu-latest` machine in this workflow. Deploying the code requires the steps as defined. This step will start by installing some dependencies as described, and on successful build, you will have all the steps marked. Something like the image below;
 
-![Successful Build](/continuous-integration-and-deployment-of-pipelines-with-flask-docker-and-github-actions/publish.png)
+![Successful Build](/ci-cd-pipelines-with-flask-docker-and-github-actions/publish.png)
 
 ### Docker images and containers basics
 The default way to deploy applications was to spin up a `virtual machine` in the past. This copies the necessary binaries' artifact and the execution in the background. 
@@ -277,7 +277,7 @@ jobs:
 
 Upon successful building of the Docker image, you have something like the image below;
 
-![Successful Docker image Build](/continuous-integration-and-deployment-of-pipelines-with-flask-docker-and-github-actions/dockerhub.png)
+![Successful Docker image Build](/ci-cd-pipelines-with-flask-docker-and-github-actions/dockerhub.png)
 
 ### Conclusion
 In this tutorial, we saw the overview of DevOps and built an automated pipeline. Then, developed a simple Flask application and continuously integrated it with Github actions. 
