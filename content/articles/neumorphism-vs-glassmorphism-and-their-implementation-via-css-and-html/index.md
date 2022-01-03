@@ -83,9 +83,9 @@ The code for that will look like this:
 
 >The login box has a general neumorphism effect. 
 
-Configure the styles for the input-fields class to style the form's children and inputs. You should set their height and width to fit inside the outer `<div>` tag.
+Configure the styles for the `input-fields` class to style the form's children and inputs. You should set their height and width to fit inside the outer `<div>` tag.
 
-> The outer `div` tag is the one with the `login-box ID.`
+> The outer `div` tag is the one with the `login-box` ID.
 
 The code looks like this:
 
@@ -265,7 +265,7 @@ button:focus{
 ```
 The webpage will look like this:
 
-![Neumorphism](/neumorphism-vs-glassmorphism-and-their-implementation-using-css-and-html/neumorphism.png)
+![Neumorphism](/neumorphism-vs-glassmorphism-and-their-implementation-via-css-and-html/neumorphism.png)
  
 ### Glassmorphism and its use cases
 Since neumorphism lacked proper accessibility, its popularity declined, causing its fall and the rise of glassmorphism. Glassmorphism is a general design pattern for building many things without compromising accessibility. Glassmorphism is great for designing:
@@ -376,7 +376,7 @@ Notice that I used a lighter color in the elements' background. This increases t
 
 The webpage will look like this:
 
-![glassmorphism](/neumorphism-vs-glassmorphism-and-their-implementation-using-css-and-html/glassmorphism.png)
+![glassmorphism](/neumorphism-vs-glassmorphism-and-their-implementation-via-css-and-html/glassmorphism.png)
  
 The final code for the two web pages can be found [here](https://github.com/lin-chez/Section-Repositories/tree/main/glassmorphism%20vs%20neomorphism)
 
