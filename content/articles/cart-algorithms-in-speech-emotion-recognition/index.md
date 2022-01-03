@@ -3,7 +3,7 @@ layout: engineering-education
 status: publish
 published: true
 url: /cart-algorithms-in-speech-emotion-recognition/
-title: How CART Algorithms are Substantial in Speech Emotion Recognition
+title: Why CART Algorithms are Effective in Speech Emotion Recognition
 description: In this article we will assess the use of CART algorithms in speech emotion recognition.
 author: lynn-njoki
 date: 2022-01-03T00:00:00-12:00
@@ -12,7 +12,7 @@ excerpt_separator: <!--more-->
 images:
 
   - url: /engineering-education/cart-algorithms-in-speech-emotion-recognition/hero.jpg
-    alt: CART example hero image 
+    alt: CART Speech Emotion Recognition example hero image 
 ---
 Unlike humans, who have the human ability to recognize emotion from speech, machines do not have the sense to analyze feelings. Speech emotional recognition is vital in understanding human emotions such as amusement, frustration, or disappointment.
 <!--more-->
