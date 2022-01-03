@@ -32,7 +32,7 @@ The developer can now easily access any interface without knowing the code writt
 ### Introduction
 **Collection in java** organizes data to make storing, accessing and editing the data easier.
 
-On the other hand, a framework makes the developers' work more accessible by providing the collection library code libraries.
+On the other hand, a framework makes the developers' work more accessible by providing library code.
 
 However, what is an Interface? - An Interface is a system where related or unrelated entities can interact. For our case, the collection of objects created will interact with the library of existing classes, which can be achieved successfully through the interfaces availed by the JDK.
 
@@ -127,9 +127,9 @@ Method in the collection framework include:  `clear()`, `add()`, `size()`.
 3. **Array List**
 The class helps when dealing with dynamic arrays.
 
-A `dynamic array` is an array whose size is unpredictable since it keeps adding up. Other arrays usually have a fixed size where you have to state the number of elements to be stored. The dynamic array, on the other hand, supports automatic resizing. ArrayList is located at the java.util package, which means that every time you want to form an ArrayList, you import the `java.util package`. You can achieve this as shown in the example below:
+A `dynamic array` is an array whose size is unpredictable since it keeps adding up. Other arrays usually have a fixed size where you have to state the number of elements to be stored. The dynamic array, on the other hand, supports automatic `resizing.ArrayList` is located at the java.util package, which means that you import the java every time you want to form an `ArrayList.util` package. You can achieve this as shown in the example below:
 
-We have further created an object name and added a list of names to the array from the above. We can also add names to the array, as shown below.
+We have further created object names and added a list of names to the array from the above.
 
 ```java
   import java.util.ArrayList
@@ -142,7 +142,7 @@ In the example above, we have imported java.util package since we will be using 
   ArrayList students = new ArrayList("Bob", "Kimosop", "Keen");
 ```
 
-From the above, we have further created an object names and added a list of names to the array. We can also add names to the array as shown below.
+From the above, we have further created object names and added a list of names to the array. We can also add names to the array, as shown below.
 
 ```java
   ArrayList students = new ArrayList();
@@ -162,7 +162,7 @@ The difference between the above means of adding elements to the list in the arr
 
 
 4. **Set**
-We use a set interface to avoid duplication and aim to store objects uniquely. Some set interface classes are HashSet, Tree set, LinkedHashSet, and many others. Below is a syntax to instantiate the set:
+We use a set interface to avoid duplication and store objects uniquely. Some set interface classes are HashSet, Tree set, LinkedHashSet, and many others. Below is a syntax to instantiate the set:
 
 ```java
 Set<data-type> set1 = new HashSet<data-type>();  
@@ -217,3 +217,5 @@ In this tutorial, we have been able to cover the following.
       - Hash set.
 
 Happy learning!
+---
+Peer Review Contributions by: [Briana Nzivu](/engineering-education/authors/briana-nzivu/)
