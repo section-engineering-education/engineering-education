@@ -17,9 +17,8 @@ images:
 
 
 ### Introduction
-Looking at the world today, you’ll realize that many applications we use in our daily lives have been built using deep learning. Deep learning is a subset of machine learning that mimics the neuron of the human brain. It allows the computer to do human tasks by imitating human thinking.
+Looking at the world today, you’ll realize that many applications we use in our daily lives have been built using deep learning. Deep Learning Models create a network that resembles the biological nervous system. Frameworks used to build these deep learning models include Caffee, Microsoft cognitive tool, MXNET, Keras, DeepLearning4j, and Tensorflow. Keras and Tensorflow are the most used frameworks.
 
-Deep Learning Models create a network that resembles the biological nervous system. Frameworks used to build these deep learning models include Caffee, Microsoft cognitive tool, MXNET, Keras, DeepLearning4j, and Tensorflow. Keras and Tensorflow are the most used frameworks.
 
 ### Prerequisites
 To get along, you should ;
