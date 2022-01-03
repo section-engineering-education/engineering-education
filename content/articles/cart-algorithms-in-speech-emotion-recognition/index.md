@@ -97,9 +97,7 @@ As we can see, CART is an efficient algorithm in speech emotion recognition.
 Happy learning!
 
 ### Further reading
-
 - [How to Implement MLOps](/engineering-education/how-to-implement-mlops/)
-
 - [Decision Trees in Python](/engineering-education/decision-tree-in-python/)
 
 ---
