@@ -5,8 +5,8 @@ published: true
 url: /how-to-build-a-deep-learning-model-using-tensorflow-with-python/
 title: How To Build Deep learning Models Using Tensorflow With Python
 description: 
-author: 
-date: 2021-11-19T00:00:00-18:00
+author: raphael-mbindyo
+date: 2022-01-03T00:00:00-18:00
 topics: [Machine Learning]
 excerpt_separator: <!--more-->
 images:
