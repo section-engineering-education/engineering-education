@@ -15,7 +15,7 @@ images:
     alt: Getting started with Time Series Decomposition in Python Hero Image
 ---
 
-### Table of Contents
+### Table of contents
 - [Time Series Decomposition in Python](#time-series-decomposition-in-python)
 - [Prerequisites](#prerequisites)
 - [Components of the time series](#components-of-the-time-series)
@@ -24,7 +24,7 @@ images:
   - [Step 2: Time series decomposition](#step-2-time-series-decomposition)
 - [Conclusion](#conclusion)
 
-### Time Series Decomposition in Python
+### Time series decomposition in python
 Time series refers to the data that is sequentially collected over time. Various components usually contribute to any observed time series value at any particular point in time.
 <!--more-->
 Thus a time series can be decomposed such that each component exists independently. Usually, it is challenging to work with a model whose most of the cause of variation is unknown. In time series, some of the causes of variation to the model are deterministic.
@@ -113,7 +113,7 @@ import matplotlib.pyplot as plt
 from statsmodels.tsa.seasonal import seasonal_decompose as sm
 ```
 
-### Step 1: **Simulating time series components:**
+### Step one: Simulating time series components
 To begin, let us set the range of our time series.
 
 ```python
@@ -217,10 +217,10 @@ From the output, we notice that the seasonality component of this time series ch
 
 To this point, we have created our two types of time series. The task in our hands is to decompose these models independently back to their initial components.
 
-### Step 2: Time series decomposition
+### Step two: Time series decomposition
 In this section, we shall get started by decomposing the Additive time series model we just created.
 
-- ### Additive time series decomposition
+- #### Additive time series decomposition
 Let's get the required library in place.
 
 ```python
@@ -262,7 +262,7 @@ Output:
 
 The first plot represents our original time series. The second plot represents the trend of our time series model extracted from the original time series. Finally, the third and fourth plots represent seasonality and residual components in the same time series.
 
-- ### Decomposing multiplicative time series model
+- #### Decomposing multiplicative time series model
 We shall follow similar steps as the ones we used to decompose the Additive time series except that we specify the model as the multiplicative time series.
 
 So the the following code carry out this activity.
@@ -390,3 +390,5 @@ Using a simple approach, we simulated a time series data and later decomposed it
 We learned of a library from which we fetch time series data. We fetched data for the Facebook stocks and decomposed one of its time series from that library. This end finalizes our session, and I hope you enjoyed it. 
 
 Happy coding!
+---
+Peer Review Contributions by: [Briana Nzivu](/engineering-education/authors/briana-nzivu/)
