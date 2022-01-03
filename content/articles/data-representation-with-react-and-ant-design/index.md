@@ -1,5 +1,17 @@
-Data representation! As old as time. For a clear understanding, we'll split it into two parts; data and represent.
-According to home.adelphi.edu, data is a symbol that represents people, events, things and ideas. Data representation is the form data is stored, processed and expressed. We express data using charts, graphs, points, all dependent on the analysis method.
+### Table of content
+- [Table of content](#table-of-content)
+- [Introduction](#introduction)
+- [Aim](#aim)
+- [Getting started](#getting-started)
+  - [Node](#node)
+  - [Yarn](#yarn)
+  - [Installing the node modules](#installing-the-node-modules)
+  - [Integrating antd](#integrating-antd)
+  - [Data representation using basic line](#data-representation-using-basic-line)
+  - [Data representation using step line](#data-representation-using-step-line)
+- [Conclusion](#conclusion)
+### Introduction
+Data representation! As old as time. According to home.adelphi.edu, data is a symbol that represents people, events, things and ideas. Data representation is the form data is stored, processed and expressed. We express data using charts, graphs, points, all dependent on the analysis method.
 
 In this tutorial, we will take you on a journey of data representation using react and Antd. The reader is required to know the following:
 - JavaScript.
@@ -7,19 +19,19 @@ In this tutorial, we will take you on a journey of data representation using rea
 - Node.js.
 - HTML, CSS.
 
-It is necessary the reader has downloaded and installed node.js. With all this done, we can move to the next stage.
+The reader must download and install node.js. With all this done, we can move to the next stage.
 ### Aim
 Data representation has no shortage of fun and, we are going to experience this journey together! After this article, the reader should be able to:
 - Integrate Antd into a react project.
 - Visualisation of data with a basic line using Antd.
-- Building Step line data representation using Antd.
+- Building step line data representation using Antd.
 ### Getting started
 To begin any react project, we need to install `node.js` to use the node package manager to install the react package. `Yarn` (yet another resource negotiator) is also a program like `npm`. Developed by Facebook,  it is another package manager for JavaScript. We'll show you how to download and install node and yarn below:
 #### Node
 - [Here](https://nodejs.org/en/) is the download link to Node.js executable. 
 - Install the executable file for your operating system.
 #### Yarn
-- If you have node already installed, you can install yarn using 
+- If you have node already installed, you can install yarn using:
 ```bash
 npm install --global yarn
 ```
@@ -44,7 +56,7 @@ npm start
 
 ![react-app](engineering-education/data-representation-with-react-and-ant-design/react-app.png)
 
-#### Integrating Antd
+#### Integrating antd
 After installing the node modules, type in the command on our terminal;
 ```bash
 npm install
@@ -65,9 +77,9 @@ npm install @ant-design/icons
 ```
 After, we can go to the next step.
 
-#### Data representation using Basic line
-Within the src folder, we will create a sub-folder called charts. It will contain our basic line and step line javascript files. To create a basic line chart, we'll need to initialise a react component to hold our data set. The react component will contain `react, react-dom and line chart`. A line chart is part of the ant design chart library.
-#### Example
+#### Data representation using basic line
+Within the src folder, we created a sub-folder called charts. It contains our basic line and step line javascript files. To create a basic line chart, we need to initialise a react component to hold our data set. The react component contains `react, react-dom and line chart`. A line chart is part of the ant design chart library.
+Example
 ```javascript
 import React, { useState, useEffect } from 'react';
 import ReactDOM from 'react-dom';
@@ -81,7 +93,7 @@ const DemoLine = () => {
 
 export default DemoLine;
 ```
-We are not making use of a large data set. Thus, we'll insert our data set as below:
+We did not make use of a large data set. Thus, we inserted our data set as below:
 ```javascript
  const data = [
     {
@@ -304,10 +316,17 @@ We are not making use of a large data set. Thus, we'll insert our data set as be
 We should have our basic line chat as below:
 
 ![basic-line](engineering-education/data-representation-with-react-and-ant-design/basic-line.png)
+
 - `xField` takes in key values in our dataset to be our x-axis.
 - `yField` takes in key values in our dataset to be our y-axis.
-#### Data representation using step Line
-Step line charts show the changes that occur at irregular intervals. To create our step line chart, we'll follow all the steps used in our basic line chat. Thus, our code will be as below:
+- The line that cuts through the chart divides it into the upper and lower median.
+- The `regionFilter` (indicated by the red colour) are the values in the lower median. In this case, the median is around 1200. Thus, the red colour identifies values below 1200.
+- The min takes the lowest valued number passed.
+- The max takes the highest valued number passed.
+- The median is the middle number in a list of numbers arranged in ascending order.
+
+#### Data representation using step line
+Step line charts show the changes that occur at irregular intervals. To create our step line chart, we'll follow all the steps used in our basic line chart. Thus, our code will be as below:
 ```javascript
 import React, { useState, useEffect } from 'react';
 import ReactDOM from 'react-dom';
@@ -367,7 +386,7 @@ const DemoLine = () => {
 
 export default DemoLine;
 ```
-On the implementation of the code above, we'll have our step line chart will be as below:
+On the implementation of the code above, we had our step line chart will be as below:
 
 ![step-line](engineering-education/data-representation-with-react-and-ant-design/step-line.png)
 
