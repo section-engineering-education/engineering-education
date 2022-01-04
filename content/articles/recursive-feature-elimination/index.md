@@ -35,17 +35,17 @@ On the other hand, if we fit a linear regression model, the feature importance w
 
  From this section, we need to understand that the model taken to compute features' importance need not necessarily match the model the dataset is intended to be used with.
 
-2.  `n_features_to_select`: The number of features we want to keep is specified in this parameter. The challenge we have with the RFE class is that the optimal number of features to keep bare is not always known in advance. 
+2. `n_features_to_select`: The number of features we want to keep is specified in this parameter. The challenge we have with the RFE class is that the optimal number of features to keep bare is not always known in advance. 
 
 However, we run cross-validation on the top of the RFE class, which automatically determines the optimal number of features to keep. With sklearn, we do not need to do this separately. 
 
 Instead, the sklearn provides us with the `RFECV` class, which implements the RFE together with the cross-validation and automatically selects the optimal number of features for us. With this said, we can now proceed and implement this algorithm in python.
 
 
-### Implementing RFE algorithm in python
-### Step 1: Data Preparation
+### Implementing RFE algorithm in Python
+#### Step 1: Data Preparation
 To start with, we will import the following libraries.
-### Import libraries
+
 ```python
 # for numeric handling
 import numpy as np
@@ -56,18 +56,15 @@ import matplotlib.pyplot as plt
 
 ```
 The dataset we will use in this implementation can be downloaded from the link provided in the prerequisite section.
-### Read the dataset
+#### Read the dataset
+
 ```python
 data = pd.read_csv("Data.csv")
 # cheack for data shape
 data.shape
-
-```
-```bash
-
 ```
 
-Our data was successfully imported. This data has 1470 instances, 34 features, and a study variable. It contains information about employees of a particular company. Therefore, it will determine whether an employee will leave the organization or remain in the organization. Using the `head` function, let us look at the first five observations of this dataset.
+Our data was successfully imported. This data has 1470 instances, 34 features, and a study variable. It contains information about employees of a particular company. Therefore, it will determine whether an employee will leave the organization or remain. Using the `head` function, let us look at the first five observations of this dataset.
 
 ```python
 # check for the first five observations of the dataset
@@ -77,7 +74,9 @@ data.head()
 ![Output](/engineering-education/recursive-feature-elimination/object-data-types.pngdata-head.png)
 
 
-The `Attrition` column is our study variable from the data subset above. This column has two possible values, Yes and No. The Yes value means an employee will leave the company soon, and No means an employee will not leave the company soon. This data is thus intended to build a model that will predict which employee will leave the company and who will stay. However, since this dataset has many features, also known as explanatory variables, building a model with these features can be very expensive. Also, the model built on this dataset can be highly complex for the intended purpose. Furthermore, in the attempt to capture all the features, the model may be overfitting.
+The `Attrition` column is our study variable from the data subset above. This column has two possible values, `Yes` and `No`. The `Yes` value means an employee will leave the company soon, and `No` means an employee will not leave the company soon. This data is thus intended to build a model that will predict which employee will leave the company and who will stay.
+
+However, since this dataset has many features, also known as explanatory variables, building a model with these features can be very expensive. Also, the model built on this dataset can be highly complex for the intended purpose. Furthermore, in the attempt to capture all the features, the model may be overfitting.
 
 To ensure this problem does not occur, we need to analyze our features space and select a subset of features that explain at least 95% of the variance in the dataset. We will use the Recursive Feature Elimination technique to achieve this objective. However, the Recursive Feature Elimination is computationally expensive, and therefore, we need to preprocess our data as much as possible.
 
