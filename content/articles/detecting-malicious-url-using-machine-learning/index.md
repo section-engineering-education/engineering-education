@@ -1,5 +1,3 @@
- 
-
 A malicious URL is a website link that is designed to promote virus attacks, phishing attacks, scams, and fraudulent activities. When a user clicks a malicious URL they can download computer viruses such as trojan horses, ransomware, worms, and spyware. 
 
 The end goal of these viruses is to access personal information, damage the user's device, and for financial gain. They may also destroy the company's network leading to losses.
@@ -112,10 +110,10 @@ In machine learning, a label is the model's output after prediction. It is repre
 To add these features and labels, use this code:
 
 ```python
-y = urls_data["label"]
+url_list = urls_data["url"]
 y = urls_data["label"]
 ```
-Let's now start exploring the machine learning packages.
+Let's now start importing the machine learning packages.
 
 ### Importing packages
 
