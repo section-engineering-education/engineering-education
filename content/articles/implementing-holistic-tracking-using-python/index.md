@@ -1,4 +1,21 @@
+---
+layout: engineering-education
+status: publish
+published: true
+url: /implementing-holistic-tracking-using-python/
+title: Implementing Holistic Tracking using Python
+description: This tutorial will show the reader how to build a full-body pose estimation using MediaPipe holistic. The model will detect all the facial landmarks within the face, hands, and poses from our body. 
+author: sharon-kinyan
+date: 2021-01-04T00:00:00-19:10
+topics: [Machine Learning]
+excerpt_separator: <!--more-->
+images:
+
+  - url: /engineering-education/implementing-holistic-tracking-using-python/hero.png
+    alt: full-body pose estimation example image 
+---
 In this tutorial, we will take a look at full-body pose estimation using MediaPipe holistic. The model will detect all the facial landmarks within the face, hands, and poses from our body. 
+<!--more-->
 
 ### Prerequisites
 To follow through with this tutorial, you need to:
