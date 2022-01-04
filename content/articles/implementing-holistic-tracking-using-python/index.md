@@ -156,3 +156,6 @@ Please find the complete code for this tutorial [here](https://colab.research.go
 
 ### Wrapping up
 This tutorial has demonstrated how to implement a full-body pose estimation using MediaPipe holistic. This model can be used to detect different forms of body language such as if one is happy, sad, or angry. In addition, you could use it to build a touchless gesture control, or a workout counter i.e., taking count of how many press-ups you do or counting the number of biceps you've done. The use cases are endless.
+
+---
+Peer Review Contributions by: [Willies Ogola](/engineering-education/authors/willies-ogola/)
