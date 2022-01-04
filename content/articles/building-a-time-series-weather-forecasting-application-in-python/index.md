@@ -232,3 +232,6 @@ You can find the complete code for this tutorial [here](https://colab.research.g
 That wraps up how to generate weather forecasts into the future. We performed some exploratory data analysis on our data, trained our model, and finally made the predictions with only a few lines of code. Feel free to try it out yourself.
 
 Happy coding!
+
+---
+Peer Review Contributions by: [Willies Ogola](/engineering-education/authors/willies-ogola/)
