@@ -29,13 +29,13 @@ In this tutorial, we will implement the model using the Scikit-Learn library. We
 - [GitHub issues dataset](#github-issues-dataset)
 - [Dataset preparation](#dataset-preparation)
 - [Adding column names](#adding-column-names)
-- [Concat dataframes](#concat-dataframes)
+- [Concat data frames](#concat-dataframes)
 - [Convert dataset to CSV](#convert-dataset-to-csv)
 - [Text cleaning](#text-cleaning)
 - [Adding features and labels](#adding-features-and-labels)
 - [Dataset splitting](#dataset-splitting)
 - [Importing machine learning packages](#importing-machine-learning-packages)
-- [Improrting Pipeline package](#improrting-pipeline-package)
+- [Importing Pipeline package](#improrting-pipeline-package)
 - [Pipeline stages](#pipeline-stages)
 - [Pipeline fitting](#pipeline-fitting)
 - [Calculating the accuracy score](#calculating-the-accuracy-score)
@@ -81,7 +81,7 @@ To load the dataset we will use the `pandas` library. Let's import `pandas` as s
 import pandas as pd
 ```
 
-Pandas helps to load the dataset and manipulating data.
+Pandas help to load the dataset and manipulate data.
 
 To load the downloaded dataset, use the following code:
 
@@ -127,7 +127,7 @@ From the image above, the dataset has columns numbered from `0` to `4`.
 - The column numbered `3` represents GitHub issues with `__label__question`. 
 - The column numbered `4` represents the actual GitHub issues (title of the issue).
 
-#### Creating dataframes
+#### Creating data frames
 Further, we need to format the dataset by creating separate data frames for each label. This will ensure that we have three data frames. These data frames will organize our dataset into rows and columns.
 
 To create the three data frames, run this code:
@@ -304,7 +304,7 @@ Let's explore the function of each imported package as follows:
 #### `DecisionTreeClassifier`
 This is a [Scikit-learn](https://scikit-learn.org/stable/) algorithm that we will use to build our GitHub issue classification model.
 
-We have chosen to use this algorithm because it will balances our dataset improving the model's performance. Generally, the models built using the `DecisionTreeClassifier` algorithm has a higher accuracy score.
+We have chosen to use this algorithm because it will balance our dataset improving the model's performance. Generally, the models built using the `DecisionTreeClassifier` algorithm have a higher accuracy score.
 
 #### `accuracy_score`
 We use this package to get the accuracy score of the model after training. This is the probability of the model making an accurate prediction.
@@ -320,18 +320,18 @@ We will use these packages to build our model. To make the process of building o
 
 The `Pipeline` package automates all the stages and processes used in building the model. To use the `Pipeline` package, we will import it from [Scikit-learn](https://scikit-learn.org/stable/).
 
-### Improrting Pipeline package
+### Importing Pipeline package
 We import the package using the following code:
 
 ```python
 from sklearn.pipeline import Pipeline
 ```
 
-To automate the process of the model building using this `Pipeline` package, we initialize all the stages in building the model. After initializing the stages, they will be automated.
+To automate the process of model building using this `Pipeline` package, we initialize all the stages in building the model. After initializing the stages, they will be automated.
 
 We have two stages as follows:
 1. `CountVectorizer` converting the input text to vectors of numbers.
-2. Using `DecisionTreeClassifier` algorithm to train the model.
+2. Using the `DecisionTreeClassifier` algorithm to train the model.
 
 We can now initialize the two stages using the following code:
 
