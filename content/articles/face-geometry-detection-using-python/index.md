@@ -19,7 +19,7 @@ We will leverage MediaPipe's [Face Mesh](https://google.github.io/mediapipe/solu
 
 ### Prerequisites
 - To follow along with this tutorial, you will need to have either Jupyter Notebook or Google Colab.
-> Google Colab has been used for this experiment.
+> Google Colab has been used for this project.
 
 ### Table of contents
 - [The Face Mesh model](#the-face-mesh-model)
