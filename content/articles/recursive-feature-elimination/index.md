@@ -1,9 +1,9 @@
 ### Getting Started with Recursive Feature Elimination Algorithm in Machine Learning
 Most of the time, the data we work with in machine learning is usually in high dimensions. As a result, models implemented on these data are victims of the Curse of dimensionality. 
 
-The Curse of dimensionality refers to all problems associated with high dimensional datasets. For example, when the dataset dimensionality is too high, it is possible to be highly detailed, and therefore, the information contained in some features is already captured in other features in the same dataset. 
+The Curse of dimensionality refers to all problems associated with high dimensional datasets. For example, when the dataset dimensionality is too high, it is possible to be highly detailed, and therefore, the information contained in some features is already captured in other features in the same dataset. As a result, features end up being highly correlated. 
 
-As a result, features end up being highly correlated. We need to understand is that the dimensionality we are discussing refers to the number of features in the dataset and not the instances(rows).
+We need to understand is that the dimensionality we are discussing refers to the number of features in the dataset and not the instances(rows).
 
 Although more information is good, when the data contain duplicated or highly detailed information, then the training speed of our machine learning model is slowed down. Also, high processing power is needed to accomplish the training process. 
 
@@ -43,7 +43,7 @@ Instead, the sklearn provides us with the `RFECV` class, which implements the RF
 
 
 ### Implementing RFE algorithm in Python
-#### Step 1: Data Preparation
+#### Data Preparation
 To start with, we will import the following libraries.
 
 ```python
@@ -55,6 +55,7 @@ import pandas as pd
 import matplotlib.pyplot as plt
 
 ```
+
 The dataset we will use in this implementation can be downloaded from the link provided in the prerequisite section.
 #### Read the dataset
 
@@ -71,7 +72,7 @@ Our data was successfully imported. This data has 1470 instances, 34 features, a
 data.head()
 
 ```
-![Output](/engineering-education/recursive-feature-elimination/object-data-types.pngdata-head.png)
+![Output](/engineering-education/recursive-feature-elimination/data-head.png)
 
 
 The `Attrition` column is our study variable from the data subset above. This column has two possible values, `Yes` and `No`. The `Yes` value means an employee will leave the company soon, and `No` means an employee will not leave the company soon. This data is thus intended to build a model that will predict which employee will leave the company and who will stay.
@@ -99,11 +100,13 @@ data = data.drop(["EmployeeCount","EmployeeNumber",
 data.shape[1]
 
 ```
+
 Output:
+
 ```bash
 31
-
 ```
+
 Unlike the original dimensionality, our data now has 31 columns, which had 35 of them. So now, let us check if there are missing values in the data.
 
 ```python
@@ -111,11 +114,13 @@ Unlike the original dimensionality, our data now has 31 columns, which had 35 of
 data.isnull().sum().sum()
 
 ```
+
 Output:
+
 ```bash
 0
-
 ```
+
 The implication of the output above is that there are no missing values in the dataset.
 
 Since we fit numerical data to a machine learning model, we need to check for any non-numeric data in the dataset and convert it into numeric, if any.
@@ -124,6 +129,7 @@ Since we fit numerical data to a machine learning model, we need to check for an
 # check for non-numeric data types
 data.select_dtypes("object").head(5)
 ```
+
 ![Object data](/engineering-education/recursive-feature-elimination/object-data-types.png)
 
 The above output reveals 8 out of our 31 columns to contain non-numeric data types. We have the Attrition column, our study variable, out of these eight columns. 
@@ -144,20 +150,21 @@ data["OverTime"] = LbEn.fit_transform(data["OverTime"])
 
 # Checking for any remaining object data
 data.select_dtypes("object").columns
-
 ```
+
 Output:
+
 ```bash
 Index(['Attrition'], dtype='object')
-
 ```
+
 We have successfully encoded our data, and we can now split it into a set of features and study variables separately.
 
 ```python
 X = data.drop(["Attrition"], axis=1)
 Y = data["Attrition"]
-
 ```
+
 We need to check if our dataset is balanced or not. If it is balanced, we shall continue with our activities, not, then we will balance it. So let us run the code below and check this.
 
 ```python
@@ -169,8 +176,8 @@ Output:
 No     1233
 Yes     237
 Name: Attrition, dtype: int64
-
 ```
+
 Our data has 1233 observations for No and 237 for Yes from this output. From this output, it is clear that our data is highly imbalanced. Therefore, we need to balance it. To do so, we use a `smoteen` sampling technique as in the following code.
 
 ```python
@@ -189,14 +196,13 @@ Once the code above is executed, it will return:
 Yes    814
 No     774
 Name: Attrition, dtype: int64
-
 ```
+
 The difference between the Yes and No classes is minimal from the output above. Therefore, our data is balanced. Now, we can split our data into the training and testing sets.
 
 ```python
 from sklearn.model_selection import train_test_split
 XTrain, XTest, YTrain, YTest = train_test_split(X,Y, test_size=0.2, random_state=0)
-
 ```
 
 Our data is now ready to implement the RFE algorithm.
@@ -213,16 +219,17 @@ rfecv = rfecv.fit(XTrain, YTrain)
 
 print("The optimal number of features:", rfecv.n_features_)
 print("Best features:", XTrain.columns[rfecv.support_])
-
 ```
-Executing the code above, we obtain;
+
+Executing the code above, we obtain:
+
 ```bash
 The optimal number of features: 3
 Best features: Index(['JobLevel', 'MonthlyIncome', 'MonthlyRate'], dtype='object')
 /usr/local/lib/python3.7/dist-packages/sklearn/base.py:446: UserWarning: X does not have valid feature names, but RFECV was fitted with feature names
   "X does not have valid feature names, but"
-
 ```
+
 The output above shows that the optimal number of features is three. So, out of 35 features of the original dataset, the information they carry is captured in three features. These features are returned in the output above, i.e., the JobLevel, monthly income, and monthly rate. 
 
 If we train our predictive model on these features, the time and processing power required in the training process is much less than if we were to train the model on all 35 features of the original dataset. As a result, the model's chances of suffering from overfitting are reduced by a higher chance.
