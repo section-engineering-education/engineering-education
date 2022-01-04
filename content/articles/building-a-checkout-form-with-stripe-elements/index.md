@@ -27,12 +27,12 @@ For a better understanding of this article, you will need to have some basic kno
 - A Stripe test account. You can set up your stripe account [here](https://dpogroup.com/checkout/?gclid=CjwKCAiAiKuOBhBQEiwAId_sK_u8G3FyjEKWMpmN3L-puuO2QWKO4gUPq5by1OpRp7ZIp6LQoOOkrBoCdwgQAvD_BwE)
 
 ### A custom form
-A custom checkout form has a card input field where you put some card details, a name input field where you input your name, an email field and a phone number field. The figure below briefly illustrates how a checkout form. This form helps us understand what we want to implement.
+A custom checkout form has a card input field where you put some card details, a name input field where you input your name, an email field and a phone number field. The figure below briefly illustrates how a checkout form looks like. This form helps us understand what we want to implement.
 
 ![A custom checkout form](/engineering-education/building-a-checkout-form-with-stripe-elements/custom.png)
 
 ### Payment collection workflow
-On the payment page, when we click send, we are submitting some information to the server. On the server we are creating a payment intent. The payment intent is a service object that represents the different states that a payment may be in when it is created. i.e;
+When we click send on the payment page, we are submitting some information to the server. On the server we are creating a payment intent. A payment intent is a service object that represents the different states that a payment may be in when it is created. i.e;
 - Created
 - Waiting Confirmation
 - Confirmed
@@ -40,14 +40,14 @@ On the payment page, when we click send, we are submitting some information to t
 
 When a payment intent is returned, we will use the special client's secret property from the payment intent along with the stripe javascript in stripe elements to confirm card payment details.
 
-After the card details have been confirmed, the payment intent will return **completed**, otherwise it will return **failed**. The image in the figure below clearly illustrates the payment collection workflow of stripe elements.
+After the card details have been confirmed, the payment intent will return **completed**, otherwise it will return **failed**. The image below illustrates the payment collection workflow of stripe elements.
 
 ![Payment collection workflow](/engineering-education/building-a-checkout-form-with-stripe-elements/workflow.png)
 
 ### A sample blazor app
 To be able to implement stripe elements in our checkout form, we need to create a sample blazor app to enable us perform this operation.
 
-To start with, we will need to open Microsoft Visual Studio and select `Create new project` as shown in the figure below.
+To start, we will need to open Microsoft Visual Studio and select `Create new project` as shown in the figure below:
 
 ![New blazor project](/engineering-education/building-a-checkout-form-with-stripe-elements/selectproject.png)
 
@@ -55,22 +55,22 @@ After clicking on `Create new Project`, select `Blazor Server App` on the next s
 
 ![Type of application](/engineering-education/building-a-checkout-form-with-stripe-elements/blazorapp.png)
 
-The next screen requires us to enter the name of our application, enter the name and click `Next`. For this project we will name our application as `CheckOutForm` as shown in the figure below.
+The next screen requires us to enter the name of our application, enter the name and click `Next`. For this project we will name our application as `CheckOutForm` as shown below:
 
 ![Name of Application](/engineering-education/building-a-checkout-form-with-stripe-elements/name.png)
 
-On the next screen, we are required to select the target framework for our application, select `.Net Core 5.0(Current support)` and click `Create` as shown in the figure below.
+On the next screen, we are required to select the target framework for our application, select `.Net Core 5.0(Current support)` and click `Create` as shown in the figure below:
 
 ![Target framework](/engineering-education/building-a-checkout-form-with-stripe-elements/framework.png)
 
-When we debug our application on a web browser, it will appear as shown in figure below.
+When we debug our application on a web browser, it will appear as seen in figure below.
 
 ![App appearance](/engineering-education/building-a-checkout-form-with-stripe-elements/appearance.png)
 
 ### Adding a stripe elements to our checkout form in our blazor application
 In our application that we have just created, we can count, fetch data but we cannot monetize it. This is where stripe elements comes in. We will be using stripe to get paid in our application.
 
-The first thing we need to create is our payment page. To do this, we will add a page in our pages folder and name it `PaymentPage.razor`. In this page we will add the code below.
+The first thing we need to create is our payment page. To do this, we will add a page in our pages folder and name it `PaymentPage.razor`, which will contain the following code:
 
 ```C#
 @page "/pay"
@@ -81,7 +81,7 @@ The first thing we need to create is our payment page. To do this, we will add a
 
 We will also create another file called `PaymentPage.razor.cs` in the same folder as  `PaymentPage.razor`. This file has a stripe constituent and a stripe billing request that we will create. We will also initialize the payment information in this file and the placeholder for sending the information to the server.
 
-The code below will help implement this information.
+The code below will help implement this information:
 
 ```C#
 namespace CheckOutForm.Client.Pages
@@ -139,7 +139,7 @@ namespace CheckOutForm.Client.Pages
 }
 ```
 
-The other thing we will be doing is to create a `StripeConstituent.razor` file. This file contains the card holder name, email and the card element. This is implemented in the HTML code below.
+The other thing we will be doing is to create a `StripeConstituent.razor` file. This file contains the card holder name, email and the card element. This is implemented in the HTML code below:
 
 ```HTML
 <div class="row">
@@ -192,17 +192,19 @@ The other thing we will be doing is to create a `StripeConstituent.razor` file. 
 </div>
 ```
 
-In the above code we have a button for paying for our purchased order that will enable us to process the payment.
+In the above code we have a button for paying for our purchased order that will enable us process the payment.
 
-We will also need to create a partial class that is extending the `StripeConstituent`. In this class class we will have our javascript runtime, this is where we will be passing our Javascript.
+We will also need to create a partial class that is extending the `StripeConstituent`. In this class we will have our JavaScript runtime, this is where we will be passing in our JavaScript.
 
 We are also passing down the billing information which is specifically the boolean information that we are getting from the payment page in this class.
 
-We will have a callback function that is called whenever a payment is processed. So, we have to wait for stripe to process that payment first to make sure that the current credit card is valid. When the current credit card is valid, the callback function gives us the payment identifier which we send to the server. We never touch the credit card number since it is all developed by stripe.
+We will have a callback function that is called whenever a payment is processed. So, we have to wait for stripe to process that payment first to make sure that the current credit card is valid. 
+
+When the current credit card is valid, the callback function gives us the payment identifier which we send to the server. We never touch the credit card number since it is all developed by stripe.
 
 We will also have a boolean value for initial time use because it is only on first time that you render the page that you want to create the card. We will set this boolean to true.
 
-The last thing we will do in the `StripeConstituent.razor.cs` file is to render the boolean value by by invoking the initialize from the Javascript that will basically create the credit card element.
+The last thing we will do in the `StripeConstituent.razor.cs` file is to render the boolean value by invoking the initialize from the Javascript that will basically create the credit card element.
 
 We will create a function to process payments once the user clicks on the `Buy` button. This will be implemented with the code under the function `public async Task ProcessPaymentAsync()`.
 
@@ -292,7 +294,7 @@ function Initiate() {
 }
 ```
 
-We will create a function in the javascript file that handles any errors that will occur during the payment. We will use the code below.
+We will create a function in the JavaScript file that handles any errors that will occur during the payment. We will use the code below:
 
 ```Javascript
 function errorHandler(event) {
