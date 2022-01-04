@@ -6,7 +6,7 @@ url: /introducing-threads-in-java-socket-programming/
 title: Getting Started with threads in Java Socket programming
 description: This tutorial will guide you through the process of creating an application utilizing threads
 author: stephen-mutua
-date: 2021-12-27T00:00:00-14:00
+date: 2022-01-04T00:00:00-14:00
 topics: [Languages]
 excerpt_separator: <!--more-->
 images:
@@ -36,7 +36,7 @@ Socket communication utilizes two protocols:-
 - [Conclusion](#conclusion)
 
 ### Threads
-Threads allow a program to operate more efficiently by doing multiple things simultaneously. Threads allow a program to operate more efficiently by doing multiple things simultaneously. ` Java.lang` is in charge of making and managing every Thread in the `Java.Class` of threads.
+Threads allow a program to operate more efficiently by doing multiple things simultaneously. Threads allow a program to operate more efficiently by doing multiple things simultaneously. `Java.lang` is in charge of making and managing every Thread in the `Java.Class` of threads.
 
 ### Why threads
 It's also essential that the server can handle multiple clients at once. Having the ability to manage several consumers simultaneously is a requirement of our design framework. Our server-side architecture necessitates threading to assign each request to a data input stream thread as it arrives. To create a new Java thread, it is essential to:
