@@ -1,4 +1,22 @@
-This tutorial will take a look at how we can forecast the weather using a time series package known as Neural Prophet. In this walkthrough, we'll be going through a couple of key things:
+---
+layout: engineering-education
+status: publish
+published: true
+url: /building-a-time-series-weather-forecasting-application-in-python/
+title: Building a Time Series Weather Forecasting Application in Python
+description: In this tutorial, we'll discuss how we can forecast the weather using a time series package known as Neural Prophet..
+author: monica-dalmas
+date: 2021-01-05T00:00:00-10:20
+topics: [Machine Learning]
+excerpt_separator: <!--more-->
+images:
+
+  - url: /engineering-education/building-a-time-series-weather-forecasting-application-in-python/hero.png
+    alt: Time Series Weather Forecasting Application Hero image
+---
+This tutorial will take a look at how we can forecast the weather using a time series package known as Neural Prophet. 
+<!--more-->
+In this walkthrough, we'll be going through a couple of key things:
 - We'll start by preprocessing our data fetched from Kaggle using the Pandas library.
 - We'll train a time series forecasting model to predict temperature using the model.
 - We'll learn how to forecast the temperature into the future.
