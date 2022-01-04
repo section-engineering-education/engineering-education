@@ -1,5 +1,21 @@
-Animations are fundamental in every mobile application. They make the user interface of an application appealing and fun to use. However, animations may be challenging to implement in applications. Thanks to  Lottie animations that come in handy to make the implementation easier.
+---
+layout: engineering-education
+status: publish
+published: true
+url: /using-lottie-animations-in-flutter/
+title: Lottie animations in Flutter
+description: Animations are fundamental in every mobile application. In this article, the reader will understand how to use Lottie animations in Flutter.
+author: ian-masae
+date: 2022-01-04T00:00:00-10:30
+topics: [Languages]
+excerpt_separator: <!--more-->
+images:
 
+  - url: /engineering-education/using-tailwind-css-grid-classes/hero.jpg
+    alt: Using Tailwind CSS Grid Classes Hero Image
+---
+Animations are fundamental in every mobile application. They make the user interface of an application appealing and fun to use. However, animations may be challenging to implement in applications. Thanks to  Lottie animations that come in handy to make the implementation easier.
+<!--more-->
 A Lottie is a JSON-based animation file. They used both as static and network assets. In addition, they polish your app's user interface and make it intuitive to users.
 
 In this article, we will implement Lottie animation in a Flutter application. Animation controllers in Flutter give us high-level control over our animations. Therefore, we will be using an animation controller to control the state of our Lottie animations in our Flutter app.
