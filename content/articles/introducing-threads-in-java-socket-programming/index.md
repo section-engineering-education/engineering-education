@@ -3,7 +3,7 @@ layout: engineering-education
 status: publish
 published: true
 url: /introducing-threads-in-java-socket-programming/
-title: Getting Started with threads in Java Socket programming
+title: Getting Started with Threads in Java Socket Programming
 description: This tutorial will guide you through the process of creating an application utilizing threads
 author: stephen-mutua
 date: 2022-01-04T00:00:00-14:00
@@ -18,16 +18,16 @@ images:
 Socket programming establishes communication between two computers on a network.
 
 Socket communication utilizes two protocols:-
-1. User Datagram Protocol(UDP): This is a connectionless protocol. It is mainly used to establish a low latency connection between two nodes.
-2. Transport control protocol(TCP): This is a connection-oriented protocol. It is used to establish a connection between two nodes.
+1. __User Datagram Protocol(UDP)__: This is a connectionless protocol. It is mainly used to establish a low latency connection between two nodes.
+2. __Transport control protocol(TCP)__: This is a connection-oriented protocol. It is used to establish a connection between two nodes.
 
-### Prerequisite
-1. Knowledge of the Java programming language.
-2. Code editor of your choice. I use [IntelliJ IDEA](https://www.jetbrains.com/idea/)
+<!-- more -->
+
+### Prerequisites
+1. Java programming language.
+2. A code editor of your choice. I use [IntelliJ IDEA](https://www.jetbrains.com/idea/)
 
 ### Table of contents
-- [Prerequisite](#prerequisite)
-- [Table of contents](#table-of-contents)
 - [Threads](#threads)
 - [Why threads](#why-threads)
 - [Server-Side Programming](#server-side-programming)
@@ -36,24 +36,24 @@ Socket communication utilizes two protocols:-
 - [Conclusion](#conclusion)
 
 ### Threads
-Threads allow a program to operate more efficiently by doing multiple things simultaneously. Threads allow a program to operate more efficiently by doing multiple things simultaneously. `Java.lang` is in charge of making and managing every Thread in the `Java.Class` of threads.
+Threads allow a program to operate more efficiently by doing multiple things simultaneously. `Java.lang` is in charge of making and managing every thread in the `Java.Class` of threads.
 
 ### Why threads
-It's also essential that the server can handle multiple clients at once. Having the ability to manage several consumers simultaneously is a requirement of our design framework. Our server-side architecture necessitates threading to assign each request to a data input stream thread as it arrives. To create a new Java thread, it is essential to:
-- Implement the Runnable interface. It is possible by running `java.lang.Runnable`.
-- Extend the Thread class by running `java.lang.Thread`.
+It is also essential that the server is able to handle multiple clients at once. Having the ability to manage several consumers simultaneously is a requirement of our design framework. Our server-side architecture necessitates threading to assign each request to a data input stream thread as it arrives. To create a new Java thread, it is essential to:
+- Implement the `Runnable` interface. It is possible by running `java.lang.Runnable`.
+- Extend the `Thread` class by running `java.lang.Thread`.
 
 ### Server-Side Programming
 Here are the classes that we will require.
 
-__Server class:__
+#### __Server class:__
 Client-side construction shall begin with a collection of streams and port numbers from the server, and then the below steps:
 - A while loop will build socket objects that receive connections from server socket objects.
 - We will incorporate the streams of the requests into the current socket.
 - Client handler objects are created by the class from streams and port numbers.
 - Starting the program will be invoking the `start()` method. This new thread object's `start()` function must be invoked to begin operating.
 
-__ClientHandler class:__
+#### __ClientHandler class:__
 The Thread's attributes are passed down to the framework-based client handler class. The class's constructor requires three parameters: `Socket`, `DataInputStream`, and `DataOutputStream`. The server gets the Thread's port number and data input and output stream objects when it creates it.
 
 The Java server-side software includes the `Server` and `ClientHandler` classes.
@@ -193,8 +193,9 @@ Connection closing...
 Closed
 ```
 ### Client-Side Programming
-There are many similarities between client-side programming and traditional Socket programming, which include:
- - Establishing a Socket Connection.
+There are many similarities between client-side programming and traditional socket programming, which include:
+
+ - Establishing a socket Connection.
  - Communication.
 
 1. Create a new Java class named `NewClient` and update it with the code snippet below.
@@ -266,7 +267,7 @@ Connection closing... : Socket[addr=localhost/127.0.0.1,port=5056,localport=6053
 Closed
 ```
 
-- Each time a client requests a connection to the server, a new thread is started.
+- Each time a client requests a connection to the server, a new thread is created.
 - The new Thread gets access to all available streams as soon as it is allocated. While the server is assigned, it will accept this request.
 - Until the first request is complete, the server accepts and processes the second one.
 
@@ -274,9 +275,9 @@ Closed
 Run the `Server.java` and the `Client.java` one after another. To execute numerous instances of the client program simultaneously, utilize an IDE like multiple instances, or run the client software in separate files. To get the results data input stream displayed above, you will need numerous clients.
 
 ### Conclusion
-This article taught socket programming, Thread and its use, server-side programming, and client-side programming.
+This article covers socket programming, `Thread` and its use, server-side programming, and client-side programming.
 
-Our implementation showed the importance of Threads in Java, enhancing and understanding Threads in Java socket programming.
+Our implementation showed the importance of threads in Java, enhancing and understanding threads in Java socket programming.
 
 Happy learning!
 
