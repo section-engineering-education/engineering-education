@@ -1,18 +1,36 @@
 ### INTRODUCTION
-Deep learning is a type of artificial intelligence that simulates how humans learn specific sorts of information. It's a branch of AI and machine learning. This technology has been used to create many self-driving cars and smart digital devices.
- 
-When given raw data, a deep learning system chooses which attributes are most relevant on its own. Deep learning is carried out using [artificial neural networks](https://www.simplilearn.com/tutorials/deep-learning-tutorial/multilayer-perceptron) with multiple layers. 
-Deep Neural Networks (DNNs) are networks that conduct difficult operations such as representation and abstraction at each layer to make sense of images, music, and text. 
-Deep learning is the fastest-growing field in machine learning, and an increasing number of firms are using it to create new business models.
+
+Deep learning neural networks are becoming easier to define and fit, but they remain challenging to configure. 
+This is because there are no hard-and-fast rules for configuring a network to tackle a specific problem. This is the case. Mathematical analysis cannot be used to determine which model type or setup is appropriate for a given dataset. 
+
+In the past, deep learning neural network models had to be coded from scratch. As a result, the accuracy rate of the system was poor. 
+Nowadays, when given raw data, a deep learning system can now determine which properties are the most important on its own. 
+
+[Artificial neural networks](https://www.simplilearn.com/tutorials/deep-learning-tutorial/multilayer-perceptron) are used to perform deep learning. 
+The first step towards improving deep learning performance is to figure out what kind of performance issue your model is having.
+After identifying the problem, carefully pick and assess a specific intervention that is appropriate for the problem.
+
+There are three sorts of concerns that are straightforward to diagnose when it comes to poor deep learning performance:
+
+Poor performance or becoming stuck are both possible outcomes of problems with hyper-parameter optimization (i.e. challenges with learning rate).
+
+Having issues with data optimization is a common occurrence. Generalization can result in overfitting or poor test set performance, for example, 
+More data is required if you want your model to perform better. Depending on your budget, you may want to acquire additional unlabeled data and train your feature extraction sub-model further.
+
+Tuning the algorithm, which is essentially a prediction problem on the final model, when the final model contains a lot of volatility, for example. 
+
+The [best way](https://machinelearningmastery.com/a-data-driven-approach-to-machine-learning/) to solve this is to rank the outcomes of all your trials and focus on the top algorithms.
+
 ### Table Of Content
--	[Introduction](#INTRODUCTION)
--	[Prerequisites](#Prerequisites)
--	[The Concept of Deep Learning](#The-Concept-of-Deep-Learning)
--	[Some Determinants That Transform Deep Learning Systems’ Performance](#Some-Determinants-That-Transform-Deep-Learning-Systems-Performance)
--	[How To Get A Perfect Performance Rate From A Deep Learning System](#How-To-Get-A-Perfect-Performance-Rate-From-A-Deep-Learning-System)
--	[Diagram demonstrating the different scenarios one can fall into when configuring the learning rate](#Diagram-demonstrating-the-different-scenarios-one-can-fall-into-when-configuring-the-learning-rate-.)
--	[Conclusion](#CONCULSION)
--	[Further Reading](#Further-Reading)
+
+- [Introduction](#INTRODUCTION)
+- [Prerequisites](#Prerequisites)
+- [The Concept of Deep Learning](#The-Concept-of-Deep-Learning)
+- [Some Determinants That Transform Deep Learning Systems’ Performance](#Some-Determinants-That-Transform-Deep-Learning-Systems-Performance)
+- [How To Get A Perfect Performance Rate From A Deep Learning System](#How-To-Get-A-Perfect-Performance-Rate-From-A-Deep-Learning-System)
+- [Diagram demonstrating the different scenarios one can fall into when configuring the learning rate](#Diagram-demonstrating-the-different-scenarios-one-can-fall-into-when-configuring-the-learning-rate-.)
+- [Conclusion](#CONCULSION)
+- [Further Reading](#Further-Reading)
 
 ### Prerequisites
 To follow along with this tutorial, you need to be familiar with the following;
@@ -21,61 +39,132 @@ To follow along with this tutorial, you need to be familiar with the following;
 -	Probability
 -	Statistics
 -	Linear Algebra
--	[TensorFlow](https://www.google.com/url?sa=t&source=web&rct=j&url=https://www.tensorflow.org/&ved=2ahUKEwi15PyaroL1AhWmS2wGHZZUBdMQFnoECF4QAQ&sqi=2&usg=AOvVaw0TGZBeXHx2CVPI2FiDZclR) 
+-	[TensorFlow](https://www.tensorflow.org/) 
 -	[Microsoft Cognitive Toolkit](https://docs.microsoft.com/en-us/cognitive-toolkit/) 
--	[Pytorch](https://www.google.com/url?sa=t&source=web&rct=j&url=https://pytorch.org/&ved=2ahUKEwi4lMHSr4L1AhXozIUKHVkeAO4QFnoECAUQAQ&usg=AOvVaw2mABY6VbqZdRJYnleMzDSb) 
--	[Keras](https://www.google.com/url?sa=t&source=web&rct=j&url=https://keras.io/about/&ved=2ahUKEwjX16yCrYL1AhUGyoUKHaoMBqMQFnoECCoQBQ&usg=AOvVaw3frsnniocU9GHfkfWqfuMJ) 
+-	[Pytorch]( https://pytorch.org/) 
+-	[Keras]( https://keras.io/about/)
 
 ### The Concept of Deep Learning
-In deep learning, an excessive volume of information [data sets](  https://www.simplilearn.com/what-is-data-article) can be trained at the same time. This uses learning algorithms in deep learning. Deep learning systems tend to gather functional facts from larger datasets. 
 
-Artificial neural networks can classify data based on responses to a series of binary true or false questions involving highly complicated mathematical calculations while processing the data. 
+In deep learning, an excessive volume of information [data sets](https://www.simplilearn.com/what-is-data-article) can be trained at the same time. This uses learning algorithms in deep learning. Deep learning systems tend to gather functional facts from larger datasets. This fact helps in enhancing predictions in the system more accurately. 
 
-A facial recognition algorithm, for example, learns to detect and recognize face edges and lines, then more significant aspects of the faces, and finally overall representations of faces. The algorithm learns and improves with time, increasing the likelihood of getting it right. In this situation, the facial recognition software will recognize faces properly over time.
+Classifications and predictions of data are based on responses to a series of binary true or false questions involving highly complicated mathematical calculations while processing the data. This simply means a deep learning system uses the principle of accepting or regretting data in complex algorithms while in procession. 
+
+A facial recognition algorithm, for example, learns to detect and recognize face edges and lines, then more significant aspects of the faces, and finally overall representations of faces. The algorithm learns and improves with time, increasing the likelihood of getting it right. In this situation, the facial recognition software will recognize faces properly over time. Picking up the precise contour of everything's face will result in the collection of a larger number of datasets (big data) and an accurate extract result.
+
+This example shows that an excessive volume of data is needed to predict a deep learning system accurately.
 
 The ability to fine-tune the budget and the considered problem are two enhancing variables in Deep Learning. Any optimizer’s accuracy is measured using these factors.
+In deep learning, Optimizers are algorithms or approaches that are used to reduce an error function (loss function) or increase production efficiency.  Optimizers are mathematical functions that are based on the learnable parameters of a model, such as weights and biases. Optimizers assist in determining how to alter the weights and learning rate of a neural network to minimise losses. 
 
 ### Some Determinants That Transform Deep Learning Systems’ Performance
 
+#### 1.  Taking into account the issue (considered problem) that the system will be tasked with resolving; 
+-	What kind of system should be built?
 
- #### 1.  Taking into account the issue (considered problem) that the system will be tasked with resolving; 
- 
--	What kind of system should be built? 
+ <p>In such a problem, the engineer is faced with challenges like; 
+      
+      1. The size of the system about to be developed.
+
+      2. The amount of datasets the required to develop the needed system. 
+
+      3. How does the size of the system affect the performance of the system.
+
 -	How will the developed algorithm handle the immediate user’s demands?
+
+<p>In such a problem, the engineer is faced with challenges like, picking the best optimizer that will produce accurate results.
+
 -	 How easily will re-engineering be made possible?
 
-#### 2.   Evaluation difficulties of default hyperparameters for multiple optimisers.
- Poor [accuracy](https://sigopt.com/blog/common-problems-in-hyperparameter-optimization/) is obtained here as a result of low awareness from training the system data sets. The [Adams optimiser](https://www.google.com/url?sa=t&source=web&rct=j&url=https://machinelearningmastery.com/adam-optimization-algorithm-for-deep-learning/&ved=2ahUKEwjok7uPlIL1AhWBOewKHbYnDcMQFnoECDUQAQ&usg=AOvVaw3DyIH6zRqOJ31iqVVAy1z-)  is used in this deep system algorithm, which is adaptable. 
+<p>In such a problem, the engineer is faced with challenges like; Will the developed system adapt to further changes in the future without affecting the performance of the system. 
 
-#### 3.  Technical expertise in deep learning system network design.
+#### 2.   Evaluation difficulties of default hyperparameters for multiple optimisers.
+
+_<p>Hyperparameters are values that control the learning process and define which model parameters a learning algorithm learns.They are 'top-level' parameters that regulate the learning process and the model parameters that come from it, as the prefix 'hyper_' implies. 
+ 
+Poor [accuracy](https://sigopt.com/blog/common-problems-in-hyperparameter-optimization/) is obtained here as a result of low awareness from training the system data sets.
+In the adaptable deep system technique, [Adam optimizer](https://machinelearningmastery.com/adam-optimization-algorithm-for-deep-learning/) is the most extensively used adaptive optimizer. 
+
+#### 3.  Technical experience in deep learning system network design.
 The demand and need for deep learning experts is highly recommended here. Experience is needed to increase the learning rate and improve the system's performance.
 
 #### 4.  Which optimiser suits the deep network best?
-According to [research]( https://optimization.cbe.cornell.edu/index.php?title=Adam), the Adam optimiser offers the highest and best performance rate. The ability to outperform other approaches (optimisers) is lacking. 
+_Optimizers are algorithms or approaches that are used to reduce an error function [(loss function)](https://shiva-verma.medium.com/understanding-different-loss-functions-for-neural-networks-dd1ed0274718) or increase production efficiency. Optimizers are mathematical functions that are based on the learnable parameters of a model, such as weights and biases._
+
+The optimizer that will perfectly match your deep learning system or model is highly considered. If the optimizer picked to train your system isn't a perfect match, such a system will encounter errors such as overfitting, underfitting, loss gradient descent, and so on, thereby not achieving an accurate output.
+ 
 
 ### How To Get A Perfect Performance Rate From A Deep Learning System
+
 >The performance rate of a deep learning system is focused on vision and pattern recognition.
+#### 1. Data Optimization
 
-####  1. A Deep Neural Network System's Individual Units' (Layers') Functionality 
+If your objective is [classification](https://towardsdatascience.com/machine-learning-classifiers-a5cc4e1b0623), one of the simplest ways to improve performance for underperforming deep learning system is to balance your dataset. Real-world data sets are frequently skewed, and if you want your deep learning system to learn with the greatest accuracy, you'll need to apply structured thinking to the problem, which is a thinking process that considers all of the conceivable elements of a problem.
 
-In deep learning, [convolutional neural networks](https://reader.elsevier.com/reader/sd/pii/S1877050918308019?token=16B4CA6789714BCA2CEC6D44659321C7510FF2D8866A0E0CC6297D50E6129D2A4365D975C5F320F49E355B8662952541&originRegion=eu-west-1&originCreation=20211226214344) must take individual activation levels into account. This step, though, is difficult to achieve. First, the issue of [unit interpretability]( https://www.google.com/url?sa=t&source=web&rct=j&url=https://www.pnas.org/content/117/48/30071&ved=2ahUKEwiSvqrstIL1AhXVOuwKHTtTDZAQFnoECAYQAQ&usg=AOvVaw2Cnz9K-g6M2q__QYAUi3h1) in deep networks must be grasped.
-This knowledge will assist the network in avoiding becoming a completely opaque black box. Our measurement method is [network dissection](https://www.google.com/url?sa=t&source=web&rct=j&url=https://arxiv.org/pdf/1801.03454&ved=2ahUKEwiQua_b5oD1AhXPBWMBHQyaDHEQFnoECAoQAQ&usg=AOvVaw0oRGCGYRncsO9M6TZhGf3R) . This method calculates a system's deep learning performance rate.
-Measurements of alignments between different levels are also part of network dissection in the deep convolutional network (units). It is being done to separate dense data sets for a quicker performance rate. This segmentation notion is also known as "broden." Other classifier networks can use the Broden approach as well. The Progressive generative adversarial network [P-GAN](https://www.google.com/url?sa=t&source=web&rct=j&url=https://machinelearningmastery.com/introduction-to-progressive-growing-generative-adversarial-networks/&ved=2ahUKEwiK4dCV9YD1AhWK2hQKHblpDToQtwJ6BAgMEAE&usg=AOvVaw2AHbr7wD_no4DEy3LpvS7n) with the [VGG-16](https://www.google.com/url?sa=t&source=web&rct=j&url=https://towardsdatascience.com/step-by-step-vgg16-implementation-in-keras-for-beginners-a833c686ae6c%23:~:text%3DVGG16%2520is%2520a%2520convolution%2520neural,vision%2520model%2520architecture%2520till%2520date.%26text%3DIt%2520follows%2520this%2520arrangement%2520of,consistently%2520throughout%2520the%2520whole%2520architecture.&ved=2ahUKEwjn5ZWL84D1AhUDyoUKHXnMAJUQFnoECAYQBQ&usg=AOvVaw1PMy6ITxkEdXItU7nbohvO)  scene classifier. The most common are these two.
-The network's training methods are the [generator and discriminator](https://www.google.com/url?sa=t&source=web&rct=j&url=https://towardsdatascience.com/understanding-generative-adversarial-networks-gans-cd6e4651a29&ved=2ahUKEwijh9PZ9YD1AhUSCRoKHe5UC2IQFnoECBAQBQ&usg=AOvVaw3bSHWOnQinYkYMikEE0RfV)  progression layers. A convolutional neural network (CNN)-based classifier is made up of two layers. These layers, which are referred to as the earlier and later layers,  The final layer is made up of two levels: objects and parts. The system associates with the layers and emerges when it notices this sub-layer. There is a lot of color dictation in the early levels.
- [Research has highlighted](https://www.google.com/url?sa=t&source=web&rct=j&url=https://towardsdatascience.com/four-deep-learning-papers-to-read-in-august-2021-7d98385a378d&ved=2ahUKEwiyve-Gg4H1AhVED2MBHW6TCiIQFnoECAgQAQ&usg=AOvVaw2qZJ-4wb2puuQlEjtLFtoR) the importance of performance rate categorization in CNN neurons. Some deep neural networks are trained to create scenes, while others are trained to recognize them. This helps to improve the data flow in the system. 
-Manipulation of [GAN's](https://www.google.com/url?sa=t&source=web&rct=j&url=https://machinelearningmastery.com/what-are-generative-adversarial-networks-gans/%23:~:text%3DGenerative%2520Adversarial%2520Networks%252C%2520or%2520GANs%252C%2520are%2520a%2520deep%252Dlearning,learning%2520models%2520in%2520this%2520architecture.&ved=2ahUKEwiXocSghYH1AhVED2MBHW6TCiIQFnoECAYQBQ&usg=AOvVaw1vAvol6lcsmFsK-AtuUnvE)  unit-producing outlets is complicated by artificial pruning. Trained images, like [adversarial examples](https://www.google.com/url?sa=t&source=web&rct=j&url=https://towardsdatascience.com/adversarial-examples-in-deep-learning-a-primer-feae6153d89&ved=2ahUKEwjHr7LdhYH1AhWj2-AKHVm2A6gQFnoECAsQAQ&usg=AOvVaw21jzLxpr8rCv72Rw7_j8bO) , are developed, categorized, and highlighted on certain neurons. These neurons are treated in some way in order to attain precision. 
+The process of predicting the class of a set of data points is known as __*classification*__.
 
-#### 2. Soft Convolutional Inductive Biases' Effectiveness in Vision Transformation Improvement
-The convolution network strongly supports inductive bias layers. The convolution network layers are made up of the concepts of [weight sharing and localisation](https://www.google.com/url?sa=t&source=web&rct=j&url=https://www.kaggle.com/residentmario/notes-on-weight-sharing&ved=2ahUKEwibrtGkhoH1AhWyB2MBHUQZCXgQFnoECEAQAQ&usg=AOvVaw2nrS_1vhaGRDqVqFnhFF6V) . These layers are based on imaging principles (translation, symmetric transformation, reflection). In visible corrected, activation patterns may be seen. 
-On CNNs, training large data sets is difficult. The performance rate of Vision transformers is more consistent. Big data set algorithm systems have demonstrated this stability. When pre-trained, it is also termed a [self-attention](https://www.google.com/url?sa=t&source=web&rct=j&url=https://towardsdatascience.com/illustrated-self-attention-2d627e33b20a&ved=2ahUKEwi0rb2gjIH1AhXT8eAKHe58Dn4QFnoECCMQAQ&usg=AOvVaw0fDRMS_xhw3dL8Ig0VEhDg)  mechanism. (2021). The concept of Gated Positional Self-Attention [(GPSA)](https://arxiv.org/abs/2106.05795) has been proposed. This was done to aid in the investigation of the data's quality and performance. To avoid layer locations, GPSA employs self-convolutional inductive bias with freedom. Systems can move through various layers (locations), learn, govern, and collect content-specific data. During their training period, the hyperparameters provide this information. The method dramatically improves the display and correctness of hyperparameters. When compared to the traditional vision transformer method, this improvement is significant. The author goes on to discuss how to use image net samples and parameter efficiency in more detail. 
-In its earliest layers, GPSA appears to initialize more hyperparameters. The final (later) levels are more concerned with content data (other distinctive data sets). 
+##### i. There is a need for additional datasets.
+Having more depth of knowledge about a system model is the best savage for accuracy in deep learning. Allow the additional facts to speak for themselves rather than relying on assumptions and questionable relationships. Models that have more data are more accurate and better. As far as I'm aware, we don't have the ability to add more data. In some projects, for example, we don't have the option of increasing the training data size. However, if you're working on a company project, I strongly advise you to ask for more details if it's possible. As a result, working with small data sets will be more straightforward. As a result of these modifications, the training set's overfitting is decreased.
 
-#### 3. Enough degrees of freedom 
-The main challenge here is fine-tuning the deep network's hyperparameters. This is a difficult task because the output's accuracy is in question. 
-What key elements are used to determine a network's degree of freedom? 
-Basic statistical speculation postulates exist to help examine the likelihood rate of an event. [Larsen et al.](https://arxiv.org/abs/2107.05802) (2021) suggest a theory to aid in the resolution of the fine-tuning issue. The probability of success in a deep network underpins this idea. This is what is expected to happen when the hyperparameters of a system data set are being trained.
-In a deep network, the degree of freedom determines whether or not success (accuracy) is possible. During the training process, the theory has aspects to consider. [Gordon's Escape Theorem](https://www.google.com/url?sa=t&source=web&rct=j&url=https://arxiv.org/abs/2107.05802&ved=2ahUKEwjWopntroH1AhVIxIUKHUwyDgIQFnoECAcQAQ&usg=AOvVaw3B_I2CnjGnoMba9qVBL9XY)  is generalized by the theory that establishes a powerful theorem. This theorem can be applied to any set that is well-known. In a successful chance, the principal outcome emphasizes the presence of a section transition. It's best to keep dimensionality as low as possible while initializing parameters. Dimensionality influences the sub-level set of network layers.
-The theory [(lottery subspaces)](https://www.semanticscholar.org/paper/Linear-Mode-Connectivity-and-the-Lottery-Ticket-Frankle-Dziugaite/3f06d02513a2763e472d2b5d5db08e9061081b9e) seeks to repeat data from prior training experiments. It then establishes the settings for a low-dimensional projection. It compares the parameters to such a trajectory's top-dimensional principal components. The result of this theoretical hypothesis is that both postulates are true. For the same compression, subspace-confined neural networks could even outperform lottery tickets. 
+#### 2. Algorithm Tuning 
+Parameters are known to drive deep learning algorithms. The result of the learning process is heavily influenced by these variables. Parameter tuning is the process of determining the best value for each parameter in order to increase the model's accuracy. To fine-tune these factors, you must first grasp their meaning and how they affect the model individually. This technique can be repeated with a variety of successful system models.
+It's impossible to predict which deep learning algorithm will suit your system the best.
+
+When I'm presented with a new situation and don't have access to a deep research method that can quickly assist me in achieving my objectives, I look at a few options and attempt them all. Deep learning (CNNs, RNNs, and so on) and traditional machine learning techniques such as [Random Forests, Gradient Boosting]( https://www.analyticsvidhya.com/blog/2015/06/tuning-random-forest-model/) , and so on.
+Rank the outcomes of all your trials and focus your efforts on the best-performing algorithms.
+
+#### 3. Hyper-Parameter Optimization
+The key challenge here is fine-tuning the hyperparameters of the deep network. Because the output's accuracy is in question, this is a challenging task. 
+
+Factors like those listed below are considered;
+
+##### i. Learning Rate
+
+_The learning rate is a hyper-parameter that determines how much the weights of our network are adjusted in relation to the expected error each time the system weights are updated (loss gradient)._
+
+According to [research](https://optimization.cbe.cornell.edu/index.php?title=Adam/) , the Adam optimiser delivers the greatest and highest performance rate for large systems with enormous datasets. The ability to outperform other methodologies is lacking (optimisers). On all deep learning problems, it frequently produces remarkable results. Despite its excellent performance, it may nonetheless trap you in a local minimum that is specific to your problem. Stochastic Gradient Descent with Warm Restarts is an even better approach that has the benefits of Adam and helps eliminate the danger of obtaining something at a local minimum.
+
+##### ii. The number of epochs and the batch size 
+
+_The batch size refers to the number of samples that must be processed before the model may be updated. The number of epochs refers to the total number of times the training dataset has been traversed._
+
+To ascertain a perfect and accurate system output, it is best to implement the use of a large batch size with a large number of epochs. Common tactics provide common outcomes. Experiment with batch sizes and training epochs to see what works best for you.
+
+##### iii. Coming to a premature conclusion during model training
+
+_The difference between the empirical loss of the training set and the expected loss of the test set is the **Generalization error** of a deep learning system/model._
+
+[Generalization](https://deepai.space/what-is-generalization-in-machine-learning/) errors are positively affected in a session. Continuous training may improve accuracy on your data set, but it eventually reduces the model's performance on data it hasn't seen. Early halting can help with real-world performance. 
+For examples, [click here](https://stats.stackexchange.com/questions/231061/how-to-use-early-stopping-properly-for-training-deep-neural-network). 
+
+##### iv. Regularization 
+_Regularization is a reliable strategy for avoiding overfitting._
+
+You can train your deep learning project in a few different ways to apply regularization. If you haven't already, I recommend incorporating these techniques into every project you work on. 
+ 
+They switch off a percentage of neurons at random during training, which is known as dropout. Dropout is a technique for preventing groups of neurons from overfitting one another.
+
+#### 4. Ensemble Methods
+ This method essentially aggregates the output of several poor models to obtain superior results. This can be accomplished in a variety of ways:
+
+Bagging (Bootstrap Aggregating)
+
+Boosting
+
+A common strategy for decreasing variation in a noisy dataset is __*Bagging*__.
+
+ The practice of picking and replacing a random sample of data from a training batch is known as bagging. As a result, each data point can be chosen multiple times.
+
+__*Boosting*__ is an ensemble learning approach that combines a collection of weak learners into a strong learner to reduce training errors. A random sample of data is picked, a model is fitted, and the models are then trained progressively, with each model aiming to correct for the flaws of the one before it.
+To improve the accuracy of your model, it's always a good idea to use ensemble approaches. 
+
+This is for two reasons: 
+
+1. They are often more complicated than traditional procedures. 
+
+2. Traditional approaches provide a wonderful starting point from which you can improve and gain inspiration for your ensembles.
+
+>[Check out](https://www.analyticsvidhya.com/blog/2015/08/introduction-ensemble-learning/) for more information regarding ensemble methods.
 
 ### Diagram demonstrating the different scenarios one can fall into when configuring the learning rate.
 
@@ -90,25 +179,26 @@ Leslie N. Smith argued that you could estimate a good learning rate by training 
  If at each learning iteration recorded,  plot the learning rate (log) against loss; we will see that as the learning rate increase, there will be a point where the loss stops decreasing and starts to increase. In practice, our learning rate should ideally be somewhere to the left to the lowest point of the graph (as demonstrated in below graph). In this case, 0.001 to 0.01.
 
 ![different_scenarios_one_needs_to_know_when_configurating_the_learning_rate_in_deep_learning](engineering-education/factors_that_affects_the_performance_of_system_using_deep_learning/learning_rate_scale.png)
-
- ### CONCULSION
+ 
+### CONCULSION
 With the vast and rapid development of technology, deep learning is the key to today’s smart world. This has brought an ease in communication between humans and their daily environment. There are some difficulties in understanding the deep learning system algorithm.
+
 Some real-life postulates are cited to help design the deep network algorithm.
 There are some factors that affect the performance of  deep learning systems. These factors tend to reduce the accuracy level of the system: These factors include: 
 
-- Considered a problem i.e, the type of deep learning system to be developed.
-- Evaluation difficulties of default hyperparameters for multiple optimisers.
-- Technical know-how
-- Which optimiser suits the learning algorithm best?
+-	Considered a problem i.e., the type of deep learning system to be developed.
+-	Evaluation difficulties of default hyperparameters for multiple optimisers.
+-	Technical know-how
+-	Which optimiser suits the learning algorithm best?
 
 There are some steps to aim at in order to achieve a perfect performance rate in a deep learning system. Factors like;
 
-- The functionality of individual layers in the deep network system.
-- The efficiency of soft convolutional inductive biases in vision transformation improvement.
-- Suitable degrees of freedom to aim at in the deep network while training.
+-	Data Optimization.
+-	Algorithm Tuning.
+-	Hyperparameters Optimization
+-	Ensemble methods
 
 ### Further Reading
--	[Convolutional Neural Networks (CNN)](https://www.google.com/url?sa=t&source=web&rct=j&url=https://towardsdatascience.com/applied-deep-learning-part-4-convolutional-neural-networks-584bc134c1e2&ved=2ahUKEwjqwtTT9oD1AhULahQKHRkfDQsQFnoECAcQAQ&usg=AOvVaw1chCNpqFeQkWk2wtL4R0AK) 
--	[Hyperparameter Optimization](https://www.google.com/url?sa=t&source=web&rct=j&url=https://towardsdatascience.com/hyperparameter-optimization-for-optimum-transformer-models-b95a32b70949&ved=2ahUKEwjV2Pra64D1AhUSoRQKHdWkA5IQFnoECBIQAQ&usg=AOvVaw0KNK_HAhIl5_iDGfiRPOOU) 
+-	[Convolutional Neural Networks (CNN)]( https://towardsdatascience.com/applied-deep-learning-part-4-convolutional-neural-networks-584bc134c1e2) 
+-	[Hyperparameter Optimization]( https://towardsdatascience.com/hyperparameter-optimization-for-optimum-transformer-models-b95a32b70949) 
 -	[Performance rate improvement in deep learning]( https://machinelearningmastery.com/improve-deep-learning-performance/) 
-
