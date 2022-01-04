@@ -1,16 +1,45 @@
-### Integrating Facebook Ads into your Android App in Android Studio
+---
+layout: engineering-education
+status: publish
+published: true
+url: /implementing-gan-from-scratch/
+title: Integrating Facebook Ads into your Android App in Android Studio
+description: This article demonstrates how to include banner and interstitial advertisements in your applications, which is one of the best ways to earn money from apps.
+author: victor-kamau
+date: 2022-01-04T00:00:00-10:00
+topics: [Languages]
+excerpt_separator: <!--more-->
+images:
+
+ - url: /engineering-education/implementing-gan-from-scratch/hero.jpg
+   alt: example image
+---
 
 ### Introduction
 One of the considerations in app development is how an application can be a source of income while serving its purpose. This encourages developers to create more software with a commercial motive in mind, resulting in higher quality.
+
+<!-- more -->
+
+
 This article demonstrates how to include banner and interstitial advertisements in your applications, which is one of the best ways to earn money from apps.
+
 
 ### Table of contents
 - [Introduction](#introduction)
+- [Table of contents](#table-of-contents)
 - [Prerequisites](#prerequisites)
 - [Initial integration steps](#initial-integration-steps)
+  - [Step 1. **Set-up a  Business Page**](#step-1-set-up-a--business-page)
+  - [Step 2 **Set up a Facebook Manager  account**](#step-2-set-up-a-facebook-manager--account)
+  - [Step 3 **Open a Facebook Audience Network (FAN) account**](#step-3-open-a-facebook-audience-network-fan-account)
+  - [Step 4 Build Application properties for your account](#step-4-build-application-properties-for-your-account)
+  - [Step 5 Select the type of Ads](#step-5-select-the-type-of-ads)
 - [Integration in Android Studio](#integration-in-android-studio)
-- [Why Integrate Facebook ads?](#why-integrate-facebook-ads)
-- [Demerits of integrating in-App ads into some Applications](#demerits-of-integrating-in-app-ads-into-some-applications)
+  - [Step 1: Create a new project](#step-1-create-a-new-project)
+  - [Step 2: Implement Facebook SDK](#step-2-implement-facebook-sdk)
+  - [Adding the Ads to your App](#adding-the-ads-to-your-app)
+- [Why integrate Facebook ads?](#why-integrate-facebook-ads)
+- [Demerits of integrating in-app ads into some Applications](#demerits-of-integrating-in-app-ads-into-some-applications)
 - [Conclusion](#conclusion)
 
 ### Prerequisites
@@ -20,29 +49,29 @@ The key requirements for a successful integration include:
 - [Android Studio](https://developer.android.com/studio/releases)
 - [Facebook business account](https://business.facebook.com/overview)
 
-You also need to be familiar with the layout and how to use Android studio. With all these requirements in place, you can move on to the steps involved in the integration process.
-With your Android studio installed and working properly, you will need to install a Facebook Audience Network (FAN) account SDK.
+You also need to be familiar with the layout and Android studio. With all these requirements in place, you can move on to the steps involved in the integration process.
+With your Android studio installed and working correctly, you will need to install a Facebook Audience Network (FAN) account SDK.
 
 **FAN (Facebook Audience Network) SDK installation**
 To install, you can download your SDK manually from [here](https://developers.facebook.com/resources/audience-network-sdk-6.8.0.zip) (Not recommended) or follow the steps in [Initial integration steps](#initial-integration-steps) below to install it using the recommended method.
 
 ### Initial integration steps
-Before beginning the integration process, you have to first set up your Facebook Business Manager account for the ads.
+Before beginning the integration process, you first set up your Facebook Business Manager account for the ads.
 The steps below will guide you in setting up your account.
 
 #### Step 1. **Set-up a  Business Page**
 The first step is to set up a business page where your ads will appear. You can follow this short [video](https://www.youtube.com/watch?v=fzW4eHQQLFk) to see how you can create your page.
 
 #### Step 2 **Set up a Facebook Manager  account**
-To create a Facebook manager account, go to https://business.facebook.com/overview to first create a Facebook manager account as shown in the picture below.
+To create a Facebook manager account, go to https://business.facebook.com/overview to create a Facebook manager account, as shown in the picture below.
 ![create](engineering-education/integrating-facebook-ads-with-your-android-application-in-android-studio
 /create.png)
 
 #### Step 3 **Open a Facebook Audience Network (FAN) account**
-Set up a FAN account using the business manager account you created to make sure they are all integrated.
+Set up a FAN account using the business manager account you created to ensure they are all integrated.
 
 #### Step 4 Build Application properties for your account
-Once you have created your FAN account, click on the extension/dropdown button at the top and select the monetization manager. Click on `integration` then `properties`, key in your application name and id then select your platform, either Android or iOS.
+Once you have created your FAN account, click on the extension/dropdown button at the top and select the monetization manager. Click on `integration` then `properties`, key in your application name and id, then select your platform, either Android or iOS.
 
 If you don't have a ready App, follow these [directives](#integration-in-android-studio) to create a simple test application.
 
@@ -52,7 +81,7 @@ Once done, you are ready for the integration process in the Android studio.
 
 
 ### Integration in Android Studio
-If you are a beginner and don't have a ready-made app, you can set up a simple application in a few steps given below.
+If you are a beginner and don't have a ready-made app, you can set up a simple application in a few steps below.
 
 #### Step 1: Create a new project
 For beginners, open your Android Studio and create a new project with Ads activity. Since it is a test Application, you can use it without altering it. This [article](https://www.section.io/engineering-education/first-android-App/) can be very useful in helping you with proper project creation.
@@ -65,7 +94,7 @@ Add this android dependency to the `build.gradle` file of the App module.
 implementation 'com.facebook.android:audience-network-sdk:5.9.1'
 
 ```
-This dependency integrates the SDK into your Application.
+This dependency integrates the SDK into your application.
 
 ![sdk](engineering-education/integrating-facebook-ads-with-your-android-application-in-android-studio
 /sdk.png)
@@ -95,7 +124,7 @@ App:layout_constraintBottom_toBottomOf="parent"/>
 
 ```
 
-On your java activity, implement the Banner Ad by instantiating an Adview object. to do that, place this code in the `onCreate()` function.
+Implement the Banner Ad by instantiating an Adview object on your java activity. To do that, place this code in the `onCreate()` function.
 
 ```kotlin
 adView = new AdView(this, "IMG_16_9_App_INSTALL#2029572424039676_2029575434039375", AdSize.BANNER_HEIGHT_60);
@@ -109,7 +138,7 @@ adContainer.addView(adView);
 adView.loadAd();
 
 ```
-In your activity's `onDestroy()` function, paste the following code. This is done to free up AdView's resources.
+Paste the following code in your activity's `onDestroy()` function. This is done to free up AdView's resources.
 
 ```kotlin
 @Override
@@ -133,10 +162,10 @@ You can alter the code to and other types of Ads like interstitial Ads and Nativ
 ### Why integrate Facebook ads?
 Consumers prefer in-App advertising over display advertising on mobile websites. Smartphone consumers find ads on the mobile web to be compacted and unpleasant. In-App advertisements are resized to fit the screen and seem better, increasing overall engagement.
 
-When establishing in-App advertisements, **accessibility** is another important issue to consider. In-App mobile advertising is easier to reach because most consumers have their phones with them all the time, wherever they go. You have access to a captive audience or users who are already using the App and are interested in what you have to say. It's easier to convert them because they're already interested.
+When establishing in-App advertisements, **accessibility** is another important issue to consider. In-App mobile advertising is easier to reach because most consumers have their phones with them all the time, wherever they go. As a result, you have access to a captive audience or users already using the App and are interested in what you have to say. It's easier to convert them because they're already interested.
 
 ### Demerits of integrating in-app ads into some Applications
-In-App advertisement as seen earlier has many advantages. Besides, it is not always Appealing to some users when ads keep popping in all the time.
+In-App advertisement, as seen earlier, has many advantages. Besides, it is not always Appealing to some users when ads keep popping in all the time.
 
 Here are some demerits in an in-App advertisement;
 
@@ -147,8 +176,8 @@ Here are some demerits in an in-App advertisement;
 - **Cost incurred on the user** to get the advertisement. To get the advertisement, the user's internet bundles get consumed from an unintended advertisement viewing task.
 
 ### Conclusion
-At this point, you should be able to integrate your application with Facebook Ads for added monetary advantage. However, this might not be an option for many developers depending on the kind of application they are developing. 
-The verdict on whether to integrate your application with these Ads is always the developers' preference. 
+At this point, you should be able to integrate your application with Facebook Ads for added monetary advantage. However, this might not be an option for many developers depending on the application they are developing. 
+The verdict on integrating your application with these Ads is always the developers' preference. 
 
 ---
 Peer Review Contributions by: [Jethro Magaji](/engineering-education/authors/jethro-magaji/)
