@@ -41,7 +41,7 @@ To follow through with this tutorial, you need to:
 ### Introduction
 The [MediaPipe](https://google.github.io/mediapipe/) library provides a wide range of ML solution models. We will use [MediaPipe Holistic](https://google.github.io/mediapipe/solutions/holistic) model for this tutorial.
 
-The MediaPipe holistic model is made up of three different models:
+The MediaPipe holistic model comprises of three different models:
 - [MediaPipe Pose](https://google.github.io/mediapipe/solutions/pose.html).
 - [MediaPipe Face Mesh](https://google.github.io/mediapipe/solutions/face_mesh.html).
 - [MediaPipe Hands](https://google.github.io/mediapipe/solutions/hands.html).
