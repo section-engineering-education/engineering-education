@@ -1,27 +1,26 @@
-Animations are fundamental in every mobile application. They make the user interface of an application appealing and fun to use. However, animations may be challenging to implement in applications. Lottie animations come in handy to make the implementation easier.
+Animations are fundamental in every mobile application. They make the user interface of an application appealing and fun to use. However, animations may be challenging to implement in applications. Thanks to  Lottie animations that come in handy to make the implementation easier.
 
-A Lottie is a JSON-based animation file. They are used both as static assets and network assets. In addition, they polish your app's user interface and make it intuitive to users.
+A Lottie is a JSON-based animation file. They used both as static and network assets. In addition, they polish your app's user interface and make it intuitive to users.
 
-In this article, we will implement Lottie animation in a flutter application. Animation controllers in Flutter give us high-level control over our animations. Therefore, we will be using an animation controller to control the state of our Lottie animations in our Flutter app.
+In this article, we will implement Lottie animation in a Flutter application. Animation controllers in Flutter give us high-level control over our animations. Therefore, we will be using an animation controller to control the state of our Lottie animations in our Flutter app.
 
 ### Prerequisites
-1. A solid understanding of the Dart programing language.
-2. A solid understanding of Flutter widgets.
-3. Basic knowledge of using animation controllers in Flutter.
+1. A solid understanding of the [Dart](https://dart.dev/) programing language.
+2. A solid understanding of [Flutter widgets](https://docs.flutter.dev/development/ui/widgets).
+3. Basic knowledge of using [animation controllers](https://docs.flutter.dev/development/ui/animations/tutorial#animationcontroller) in Flutter.
 
 This tutorial assumes that the readers already have Flutter fully installed on their computers. If you have not installed Flutter visit, [Flutter Docs](http://docs.flutter.dev/get-started/install/) for full Flutter installation instructions before continuing. We will be using Flutter version 2.5.3 to build our project and  [Android Studio](https://developer.android.com/studio) with the Flutter plugin installed as our IDE. In addition, [Visual Studio Code](https://code.visualstudio.com/) can also be used.
 
 Let us jump right into it!
 
 ### Step one: Adding Lottie dependency to the project
-
 - Goto the terminal in the IDE and execute this command:
 
 ```dart
 flutter pub add Lottie
 ```
 
-A line like the one below will be added to the `pubspec.yaml`  file of the project:
+You will see a line like below added to the to the `pubspec.yaml`  file of the project:
 
 ```dart
 dependencies:
@@ -35,10 +34,9 @@ import 'package:lottie/lottie.dart';
 ```
 
 ### Step Two: Adding assets to the project
-
 - First, visit [Lottie animation](http://www.lottiefiles.com/) to get a Lottie animation JSON file, then select and download the animation of your choice.
 - Next, create an `assets` folder in our project directory and add the Lottie file here.
-- Next, add our assets folder in the `pubspec.yaml `file in our project as shown below and run `flutter pub get` :
+- Next, add our assets folder in the `pubspec.yaml` file in our project as shown below and run `flutter pub get`:
 
 ```dart
 assets:
@@ -46,7 +44,6 @@ assets:
 ```
 
 ### Step three: Creating the LottieScreen page
-
 - In the `main.dart`, create a new stateful widget class called LottieScreen which will return a Scaffold containing an app bar with a title, `Lottie implementation`. As shown below:
 
 ```dart
@@ -159,7 +156,7 @@ We set the `repeat: false` property on the Lottie to make the animation only pla
 late AnimationController lottieController;
 ```
 
-We will add the animation controller that we have created to the `showSuccessfulDialog()` method in the controller property. Then, to start the Lottie animation, we add the `onLoaded` property, where we will call the animation controller with a forward method. We will also set the duration of the animation to the one preset for the Lottie file using `composition.duration` as shown below:
+In the controller property, we will add the animation controller that we have created to the `showSuccessfulDialog()` method. Then, to start the Lottie animation, we add the `onLoaded` property, where we will call the animation controller with a forward method. Finally, we will also set the duration of the animation to the one preset for the Lottie file using `composition.duration` as shown below:
 
 ```dart
 onLoaded: (composition) {
@@ -310,6 +307,6 @@ class _LottieScreenState extends State<LottieScreen> with SingleTickerProviderSt
 ### Conclusion
 Lottie animations are simple and easy to implement in a Flutter application. We have gone through implementing these Lottie animations in our app. In addition, we have extensively utilized an animation controller to control the state of our animation. 
 
-This knowledge can be used in other ways in creating interactive UIs for your projects. I hope the tutorial will be helpful.
+The knowledge from thi article can be used in other projects creating interactive UIs for your projects. I hope the tutorial will be helpful.
 
 Happy Coding!
