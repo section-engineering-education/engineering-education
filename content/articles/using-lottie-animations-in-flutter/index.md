@@ -11,8 +11,8 @@ topics: [Languages]
 excerpt_separator: <!--more-->
 images:
 
-  - url: /engineering-education/using-tailwind-css-grid-classes/hero.jpg
-    alt: Using Tailwind CSS Grid Classes Hero Image
+  - url: /engineering-education/using-lottie-animations-in-flutter/hero.jpg
+    alt: Lottie animations in Flutter Image
 ---
 Animations are fundamental in every mobile application. They make the user interface of an application appealing and fun to use. However, animations may be challenging to implement in applications. Thanks to  Lottie animations that come in handy to make the implementation easier.
 <!--more-->
@@ -326,3 +326,6 @@ Lottie animations are simple and easy to implement in a Flutter application. We 
 The knowledge from thi article can be used in other projects creating interactive UIs for your projects. I hope the tutorial will be helpful.
 
 Happy Coding!
+
+---
+Peer Review Contributions by: [Mercy Meave](/engineering-education/authors/mercy-meave/)
