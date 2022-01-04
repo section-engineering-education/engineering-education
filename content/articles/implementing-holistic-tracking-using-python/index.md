@@ -14,7 +14,7 @@ images:
   - url: /engineering-education/implementing-holistic-tracking-using-python/hero.png
     alt: full-body pose estimation example image 
 ---
-In this tutorial, we will take a look at full-body pose estimation using MediaPipe holistic. The model will detect all the facial landmarks within the face, hands, and poses from our body. 
+This tutorial will discuss full-body pose estimation using MediaPipe holistic. The model will detect all the facial landmarks within the face, hands, and poses from our body. 
 <!--more-->
 
 ### Prerequisites
@@ -50,10 +50,10 @@ The MediaPipe holistic model comprises of three different models:
 
 ### Installing and importing dependencies
 There are two key dependencies that we will need for this tutorial:
-- MediaPipe. 
-- OpenCV. 
+- [MediaPipe](https://google.github.io/mediapipe/). 
+- [OpenCV](https://opencv.org/). 
 
-MediaPipe is used to access the model while OpenCV can be used to access the webcam or still images for detection.
+MediaPipe is used to access the model, while OpenCV is used to access the webcam or still images for detection.
 
 Let's install them.
 
@@ -67,12 +67,12 @@ import mediapipe as mp
 import cv2
 ```
 ### Setting up MediaPipe
-We begin by importing the MediaPipe drawing utility. This will help us draw the detections from the holistic model.
+We begin by importing the MediaPipe drawing utility. It will help us draw the detections from the holistic model.
 
 ```python
 mp_drawing = mp.solutions.drawing_utils
 ```
-Next, we will import the holistic model from MediaPipe. Remember, the MediaPipe library consists of many ML solutions. To check these models using code, type in `mp.solutions.` on a new cell and you'll b able to see the available models within the library. We need to import the holistic model. 
+Next, we will import the holistic model from MediaPipe. Remember, the MediaPipe library consists of many ML solutions. To check these models using code, type in `mp.solutions.` on a new cell, and you'll be able to see the available models within the library. We need to import the holistic model. 
 
 ```python
 mp_holistic = mp.solutions.holistic
@@ -96,7 +96,7 @@ If you want to use the same image for reproducibility, you can find it [here](ht
 The next step involves taking the loaded image and performing detections on it.
 
 ### Detecting landmarks
-Using the `with` segment, we begin by initializing the holistic model.
+We begin by initializing the holistic model by using the `with` segment.
 
 ```python
 with mp_holistic.Holistic(
@@ -141,7 +141,7 @@ mp_drawing.draw_landmarks(image, image_recolored.right_hand_landmarks, mp_holist
 ```
 
 ### Visualizing the detections
-To visualize our connections, we use OpenCV's `imshow()` method.
+We use OpenCV's `imshow()` method to visualize our connections.
 
 ```python
 cv2_imshow(image)
@@ -155,7 +155,7 @@ We have successfully implemented a holistic model using Python. You can take thi
 Please find the complete code for this tutorial [here](https://colab.research.google.com/drive/1E6mgVlRgYTpPRwgVf85nTznw065gR-H-?usp=sharing).
 
 ### Wrapping up
-This tutorial has demonstrated how to implement a full-body pose estimation using MediaPipe holistic. This model can be used to detect different forms of body language such as if one is happy, sad, or angry. In addition, you could use it to build a touchless gesture control, or a workout counter i.e., taking count of how many press-ups you do or counting the number of biceps you've done. The use cases are endless.
+This tutorial has demonstrated how to implement a full-body pose estimation using MediaPipe holistic. This model can be used to detect different forms of body language, such as if one is happy, sad, or angry. In addition, you could use it to build a touchless gesture control, or a workout counter, i.e., taking count of how many press-ups you do or counting the number of biceps you've done. The use cases are endless.
 
 ---
 Peer Review Contributions by: [Willies Ogola](/engineering-education/authors/willies-ogola/)
