@@ -1,5 +1,21 @@
-Spam is a large number of unsolicited messages that are sent to a large number of people. The messages may be for advertising, fraudulent purposes, or the spreading of malware. Spams can be informed of comments left on personal sites or emails sent in bulk.
+---
+layout: engineering-education
+status: publish
+published: true
+url: /spam-detection-model-using-scikit-learn/
+title: Spam Detection Model using Scikit-Learn
+description: In this tutorial, we will build a machine learning model that will detect Youtube comments as either spam or non-spam.
+author: james-omina
+date: 2021-01-04T00:00:00-13:20
+topics: [Machine Learning]
+excerpt_separator: <!--more-->
+images:
 
+  - url: /engineering-education/spam-detection-model-using-scikit-learn/hero.png
+    alt: Spam Detection Model using Scikit-Learn example image 
+---
+Spam is a large number of unsolicited messages that are sent to a large number of people. The messages may be for advertising, fraudulent purposes, or the spreading of malware. Spams can be informed of comments left on personal sites or emails sent in bulk.
+<!--more-->
 Spam detection helps in detecting these spam messages and comments. Spam detection models filter out unwanted messages and comments. This ensures an individual receives messages or notifications that are crucial to them.
 When building the spam detection model, we will provide the model with a dataset that consists of spam and non-spam comments.
 The model will learn from this dataset and find relevant patterns that will help it to distinguish between spam and non-spam comments. 
