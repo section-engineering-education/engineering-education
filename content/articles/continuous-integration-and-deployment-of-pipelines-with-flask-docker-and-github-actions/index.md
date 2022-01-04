@@ -6,7 +6,7 @@ url: /ci-cd-pipelines-with-flask-docker-and-github-actions/
 title: Continuous Integration and Deployment Pipelines with Flask, Docker and Github Actions
 description: This article will teach you how to build a continuous integration and deployment pipeline with Flask, Docker and Github Actions.
 author: arafat-olayiwola
-date: 2022-01-03T00:00:00-13:30
+date: 2022-01-04T00:00:00-10:20
 topics: [Containers]
 excerpt_separator: <!--more-->
 images:
@@ -61,13 +61,13 @@ The picture below describes all the pre-defined stages.
 Every industry begins the development of applications with the following set of practices:
 
 #### Plan
-Without a proper plan, no one can successfully develop an application. Therefore, an adequate plan must be put in place before embarking on the development journey. This is the stage where the justifications shall be given to tech stacks and other things required.
+Without a proper plan, no one can successfully develop an application. Therefore, we must put an adequate plan before embarking on the development journey. This is when we justify the tech stack and other required things.
  
 #### Code
 Developers embark on the coding part after the requirements have been set in the planning stage. Then, they will work on the application by collaborating through a single repository source.
 
 #### Build
-In this stage, the application developed shall be packaged and built into images using a package manager like Docker. The application will also be shipped into containers with the configurations file required for its start-up.
+In this stage, the application developed shall be packaged and built into images using a package manager like Docker. We also ship the application into containers with the configurations file required for its start-up.
 
 #### Test
 A series of tests will run through the application for better performance. Tests like `unit`, `integrating`, etc., will be conducted during development.
@@ -86,7 +86,7 @@ The deployment will begin fully using tools like `Terraform`. The refined applic
 ##### Monitor
 The deployed application will be monitored in terms of performance. Logs will be generated while it's been monitored. The most popular tools used in this regard and `Selenium`, `Nagios`, `ELK` etc.
 
-An application undergoes all the above practices in the industry. A person skilled in all these is said to be a `DevOps Engineer`.
+An application undergoes all the above practices in the industry. A person skilled in all these is a `DevOps Engineer`.
 
 ### Creating simple Flask application
 Open your favorite code editor and navigate to the terminal. Run the following commands to set up your project workflow.
@@ -214,7 +214,7 @@ Instead of having multiple virtual machines, we can have one hosting system that
 
 The creation and execution of the containers are delegated to a container management tool such as `Docker`. This OS-level virtualization unlocks the benefits of running multiple applications by using the containers.
 
-The following section will look at how to containerize applications using Docker and the `Dockerfile` dependency. 
+The following section will look at containerising applications using Docker and the `Dockerfile` dependency. 
 
 Create a `Dockerfile` inside the project folder and add the Docker commands below.
 
@@ -226,7 +226,7 @@ RUN pip install -r requirements.txt
 ENV PORT=80
 ```
 
-Furthermore, We have to build the Docker image and push it to the Docker hub for storage. But before that, create a new repository in the Docker hub that will store your Docker image from the build actions.
+Furthermore, we have to build the Docker image and push it to the Docker hub for storage. But before that, create a new repository in the Docker hub that will store your Docker image from the build actions.
 
 You will add your Docker hub account details to the GitHub secrets. You can do that by going to your GitHub account, clicking on the `settings` button, and tapping the `secrets`.
 
@@ -238,7 +238,7 @@ DOCKER_PASSWORD: <your-password>
 DOCKERHUB_REPO: <your-username>/<your-repository>
 ```
 
-Having done all the steps above, navigate to the Github repository for the application, edit the workflow with the codes below. This will build the Docker image and send it to your Docker hub repository.
+Having done all the steps above, navigate to the Github repository for the application, edit the workflow with the code below. This will build the Docker image and send it to your Docker hub repository.
 
 ```yaml
 name: Python Package
@@ -275,12 +275,13 @@ jobs:
             tag_with_ref: true
 ```
 
-Upon successful building of the Docker image, you have something like the image below;
+Upon successful building of the Docker image, the following will be displayed on your screen;
 
 ![Successful Docker image Build](/ci-cd-pipelines-with-flask-docker-and-github-actions/dockerhub.png)
 
 ### Conclusion
-In this tutorial, we saw the overview of DevOps and built an automated pipeline. Then, developed a simple Flask application and continuously integrated it with Github actions. 
+In this tutorial, we saw the overview of DevOps and built an automated pipeline. Then, developed a simple Flask application and continuously integrated it with Github actions.
+
 We went ahead to build its Docker image through these Github actions and then pushed it to the Docker hub for proper storage.
 
 Happy coding!
