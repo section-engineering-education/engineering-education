@@ -6,7 +6,7 @@ url: /javascript-screen-recorder/
 title: Building a Screen Recorder application with Javascript
 description: This article guides us on implementing this functionality in a web browser using React and Node.js
 author: wilson-gichuhi
-date: 2022-01-01T00:00:00-01:34
+date: 2022-01-04T00:00:00-01:34
 topics: [Languages]
 excerpt_separator: <!--more-->
 images:
@@ -22,7 +22,7 @@ Computers are essential tools in our day-to-day business tasks. At times, we may
 - Knowledge of the [JavaScript](https://www.javascript.com/) programming language.
 - Basics of React library. Learn more on the official documentation [here](https://reactjs.org/).
 - A code editor or IDE such as [VS Code](https://code.visualstudio.com/download).
-- Have a Node.js LTS or later version on your development environment. You can download [here](https://nodejs.org/en/download/).
+- Have a Node.js LTS or later version on your development environment. You can download it [here](https://nodejs.org/en/download/).
   
 ### Getting started
 Our screen recorder application will use full-stack JavaScript. The main libraries on the client-side include:
