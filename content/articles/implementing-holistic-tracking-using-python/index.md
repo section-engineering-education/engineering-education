@@ -39,7 +39,7 @@ To follow through with this tutorial, you need to:
 - Visualize detections on the screen. 
 
 ### Introduction
-The [MediaPipe](https://google.github.io/mediapipe/) library provides a wide range of ML solution models. The model that we will use for this tutorial is the [MediaPipe Holistic](https://google.github.io/mediapipe/solutions/holistic).
+The [MediaPipe](https://google.github.io/mediapipe/) library provides a wide range of ML solution models. We will use [MediaPipe Holistic](https://google.github.io/mediapipe/solutions/holistic) model for this tutorial.
 
 The MediaPipe holistic model is made up of three different models:
 - [MediaPipe Pose](https://google.github.io/mediapipe/solutions/pose.html).
