@@ -318,3 +318,5 @@ To get this spam detection model in Google Colab, click [here](https://colab.res
 - [Scikit-learn documentation](https://scikit-learn.org/stable/)
 - [Naive bayes algorithm](https://en.wikipedia.org/wiki/Naive_Bayes_classifier)
 
+---
+Peer Review Contributions by: [Willies Ogola](/engineering-education/authors/willies-ogola/)
