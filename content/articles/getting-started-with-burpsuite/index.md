@@ -146,7 +146,7 @@ To make the request go through, all we need to do is to click the `Forward` butt
 - Repeater: This enables us to alter and reissue HTTP queries in order to examine application responses automatically. This is useful if we want to test how an application reacts by requesting the same page numerous times with various parameters.
 
 ### Conclusion
-You have learned how to set up and configure Burpsuite and DDVWA. Now, you can test some vulnerabilities by yourself.
+You have learned how to set up and configure Burpsuite and DVWA. Now, you can test some vulnerabilities by yourself.
 Burpsuite goes beyond inspecting and intercepting web traffic, this tool can also be used for credential brute-force and much more. You can read more on Burspsuite here:
 
 - [Burpsuite](https://portswigger.net/burp)
