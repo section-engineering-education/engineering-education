@@ -2,26 +2,26 @@
 layout: engineering-education
 status: publish
 published: true
-url: /whatsapp-spring-boot/
-title: Building a dictionary application using Twilio API and WhatsApp
+url: /twilio-api-whatsapp-spring-boot/
+title: Building a Dictionary Application using Twilio API and WhatsApp
 description: This tutorial will go over how to build a dictionary application using Twilio API and WhatsApp
 author: quinter-awuor
-date: 2021-12-31T00:00:00-20:00
+date: 2022-01-04T00:00:00-12:00
 topics: [API]
 excerpt_separator: <!--more-->
 images:
 
-  - url: /engineering-education/whatsapp-spring-boot/hero.png
+  - url: /engineering-education/twilio-api-whatsapp-spring-boot/hero.png
     alt: Building a dictionary application using Twilio API and WhatsApp Hero image
 ---
-
-### Introduction
 Whatsapp is the most popular messaging app in the world. It is used by millions of people worldwide, meaning that if we integrate our web applications with WhatsApp, we will have a massive amount of users at our disposal.
+<!--more-->
+Twilio is a cloud-based messaging platform that will help us integrate our web application with WhatsApp.
+### Introduction
+This tutorial will teach how to integrate WhatsApp API with a Spring Boot web application by building a dictionary application.
 
-Twilio is a cloud-based messaging platform that will help us integrate our web application with WhatsApp. This tutorial will teach how to integrate WhatsApp API with a Spring Boot web application by building a dictionary application.
 
-
-### Table of Contents
+### Table of contents
 - [Introduction](#introduction)
 - [Table of Contents](#table-of-contents)
 - [Prerequisites](#prerequisites)
