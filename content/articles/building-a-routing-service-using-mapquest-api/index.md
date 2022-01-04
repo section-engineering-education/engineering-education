@@ -14,7 +14,7 @@ images:
   - url: /engineering-education/building-a-routing-service-using-mapquest-api/hero.jpg
     alt: Building a routing service using mapquest API Hero Image
 ---
-Routing is a focal point in the mapping space. The need for routing services is essential in apps like Jumia foods delivery system,  Google maps and a host of location-based service companies. Routing in geography is taking a course from a designated starting point to a destination. We build routing services in JavaScript with some API's or plugins such as; Google directions API, OSRM (open street routing machine) and,  our focal point in this article, Mapquest directions API.
+Routing is a focal point in the mapping space. The need for routing services is essential in apps like Jumia foods delivery system,  Google maps and a host of location-based service companies. Routing in geography is taking a course from a designated starting point to a destination. We build routing services in JavaScript with some API's or plugins such as the Google directions API, open street routing machine (OSRM), and our focal point in this article, the Mapquest directions API.
 <!--more-->
 Mapquest created a plugin for leaflet maps to send a request to its direction API services, receive these results and display them on a map. We'll guide you on how to execute this feature in your maps.
 
@@ -24,7 +24,7 @@ The reader is required to have a strong foundation on the following:
 - HTML, CSS, JavaScript.
 - The reader should have a Mapquest API key. [Here](https://developer.mapquest.com/) is a link to get started in creating your API key.
 
-### Table of Contents
+### Table of contents
 - [Aim](#aim)
 - [Getting started](#getting-started)
   - [Creating the input form](#creating-the-input-form)
@@ -49,7 +49,7 @@ We'll split this article into different components beginning with:
 To begin, we'll create HTML, CSS and JavaScript files. Then, we can go to our first section. Let's go!
 
 #### Creating the input form
-After initialising our HTML boilerplate, we created a div tag with the class name formblock. Then, we built an input form containing a form, input and, button tag. The form tag has an id `form` with the input tags having a class name of `input`. The input form in this project is to accept our starting and endpoint (locations) for our routing processes.
+After initialising our HTML boilerplate, we created a div tag with the class name `formblock`. Then, we built an input form containing a form, input and, button tag. The form tag has an id `form` with the input tags having a class name of `input`. The input form in this project is to accept our starting and endpoint (locations) for our routing processes.
 
 Below is an example of our explanation above:
 
@@ -109,7 +109,7 @@ On the implementation of the above, we have our input form as:
 ![input](engineering-education/building-a-routing-service-using-mapquest-api/input-form.jpg)
 
 #### Adding a map layer
-Next, we added the leaflet JavaScript and CSS file through a content delivery network. We also included Mapquest and its leaflet routing plugin JavaScript file.
+Next, we added the leaflet JavaScript and CSS file in our header through a content delivery network. We also included Mapquest and its leaflet routing plugin JavaScript file.
 
 ```HTML
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.7/leaflet.css" />
@@ -397,6 +397,8 @@ Our final code should be as follows:
 </html>
 ```
 ![final-result](engineering-education/building-a-routing-service-using-mapquest-api/final.gif)
+
+In the gif above, our map is being run by a live server. If you use vscode, you might be quite familiar with the live server extension used for launching static pages. It serves the page by creating a web address through a secure port. To install it, go to the extension tab on vscode and type `live server` on the searchbar. It's that easy!
 
 ### Conclusion
 On careful implementation of the processes above, we have been able to create a map layer, an input form and a routing function. [Here](https://github.com/muyiwexy/mapquest-API) is a link to the Github repository.
