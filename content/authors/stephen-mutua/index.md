@@ -5,4 +5,4 @@ github: https://github.com/LynnMumo
 images:
   - url: /engineering-education/authors/stephen-mutua/avatar.jpg
 ---
-I’m interested in programming. I’m currently learning computer science. I’m looking to collaborate on software development. I  portray excellent skills and demonstrated the ability to improve knowledge advancement in technology.
+Stephen Mutua is interested in programming. He is currently learning computer science. He is looking to collaborate on software development. He portrays excellent skills and demonstrated the ability to improve knowledge advancement in technology.
