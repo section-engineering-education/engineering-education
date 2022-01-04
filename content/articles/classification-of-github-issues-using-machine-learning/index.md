@@ -1,5 +1,21 @@
-Classification of [GitHub issues](https://github.com/features/issues) involves analyzing GitHub issues and assigning labels using models. In GitHub, we have in-built labels such as `bug`, `help wanted`, `revision needed`, `enhancement`, and `question`. We also have custom labels that one can create.
+---
+layout: engineering-education
+status: publish
+published: true
+url: /classification-of-github-issues-using-machine-learning/
+title: Classification of GitHub Issues Using Machine Learning
+description: In this article, we will understand how to automatically classify GitHub labels based on GitHub issue title using machine learning.
+author: charles-kariuki
+date: 2022-01-04T00:00:00-19:30
+topics: [Machine Learning]
+excerpt_separator: <!--more-->
+images:
 
+ - url: /engineering-education/classification-of-github-issues-using-machine-learning/hero.jpg
+   alt: Classification of GitHub Issues Using Machine Learning example image
+---
+Classification of [GitHub issues](https://github.com/features/issues) involves analyzing GitHub issues and assigning labels using models. In GitHub, we have in-built labels such as `bug`, `help wanted`, `revision needed`, `enhancement`, and `question`. We also have custom labels that one can create.
+<!--more-->
 These labels help reviewers to know the status and progress of a given open GitHub issue. This ensures that we have an enhanced collaboration.
 
 In the classification of GitHub issues, we will train a machine learning model using a dataset that has different GitHub issues. The model will learn from the dataset and will be able to make predictions. Using this prediction, the model will be able to classify a given issue and assign the label.
@@ -416,3 +432,5 @@ To get the GitHub issues classification model, click [here](https://colab.resear
 - [Text cleaning with NeatText](https://pypi.org/project/neattext/)
 - [GH Archive](https://www.gharchive.org/)
 
+---
+Peer Review Contributions by: [Srishilesh P S](/engineering-education/authors/srishilesh-p-s/)
