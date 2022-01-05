@@ -164,7 +164,7 @@ It will generate a public URL that you can use to access the application on a we
 
 Results:
 
-![Blog post generated](/engineering-education/leveraging-gptneo-to-generate-ai--based-blog-content/blog-generator.png)
+![Blog post generated](/engineering-education/leveraging-gptneo-to-generate-ai-based-blog-content/blog-generator.png)
 
 Here's the Google Colab [link](https://colab.research.google.com/drive/1TphnblcE--PNWQjP3eonbix94I2pMqC6?usp=sharing) for this tutorial.
 
