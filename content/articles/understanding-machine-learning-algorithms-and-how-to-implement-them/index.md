@@ -6,7 +6,7 @@ url: /understanding-machine-learning-algorithms-and-how-to-implement-them/
 title: Understanding machine learning algorithms and how to Implement them
 description: This article will cover basic concept of machine learning algorithms and how to Implement them elements.
 author: kelvin-munene
-date: 2021-12-19T00:00:00-07:20
+date: 2022-01-05T00:00:00-06:02
 topics: [Languages]
 excerpt_separator: <!--more-->
 images:
@@ -14,7 +14,7 @@ images:
   - url: /engineering-education/understanding-machine-learning-algorithms-and-how-to-implement-them/hero.png
     alt: algorithm ML image
 ---
-Artificial Intelligence is growing at a dizzying speed. Machine learning is employed in practically every service we use daily. 
+Artificial Intelligence is growing at a dizzying speed. Machine learning is employed in practically every service we use daily.
 <!--more-->
 Machine learning is the study of creating and developing algorithms, which computers now learn. It is gaining popularity and becoming a key tool in the health, education, and business industries.
 
@@ -36,16 +36,16 @@ They include:
 Let's look at one algorithm at a time for better understanding.
 
 #### Reinforcement Machine Learning
-Data scientists employ reinforcement learning to teach algorithms how to interact with data. This system learns by making errors and succeeding. 
+Data scientists employ reinforcement learning to teach algorithms how to interact with data. This system learns by making errors and succeeding.
 
 Algorithms are trained to make decisions depending on the feedback and rewards. For example, a data scientist designs an algorithm that performs a task and is rewarded or punished.
 
 This is the reinforcing signal. Applications of reinforcement learning include resource management, video gaming, and robotics.
 
 #### Supervised Machine Learning
-Supervised learning applies existing knowledge to fresh data to predict future events. The algorithm is trained on a labeled dataset. 
+Supervised learning applies existing knowledge to fresh data to predict future events. The algorithm is trained on a labeled dataset.
 
-It contains a set of input variables (x) and output variables (y) that identify the mapping function. New data entering the algorithm balances weights until the algorithm is suitably fitted. 
+It contains a set of input variables (x) and output variables (y) that identify the mapping function. New data entering the algorithm balances weights until the algorithm is suitably fitted.
 
 This ensures that the algorithm does not over-or under-fit the data. This learning is important to businesses because it lets them recognize spam and place it in a separate folder from normal email.
 
@@ -55,8 +55,8 @@ Here are some examples of how supervised learning works:
 - Multi-class classification
 - Binary classification
 
-#### Semi-supervised machine learning 
-This machine learning technique uses a small amount of labeled data and a large amount of unlabeled data to learn. So both supervised and unsupervised machine learning is present. 
+#### Semi-supervised machine learning
+This machine learning technique uses a small amount of labeled data and a large amount of unlabeled data to learn. So both supervised and unsupervised machine learning is present.
 
 Unsupervised learning predicts labels before feeding them to supervised techniques. This strategy improves learning precision.
 
@@ -65,8 +65,8 @@ Unsupervised learning is effective in the following situations:
 - Machine translation
 - Fraud detection
 
-#### unsupervised machine learning
-Unsupervised learning, unlike supervised learning, focuses only on the input. The algorithm is taught using unlabeled, unstructured data. 
+#### Unsupervised machine learning
+Unsupervised learning, unlike supervised learning, focuses only on the input. The algorithm is taught using unlabeled, unstructured data.
 
 This technique focuses on systematic assessments of unclassified data. Algorithms can automatically organize data and uncover hidden patterns.
 
@@ -78,10 +78,12 @@ Unsupervised learning may be used in the following ways:
 
 ### Division of machine learning algorithms
 Problems in Machine Learning Algorithms are divided into two:
+
 1. `Regression` - The dependent and independent variables have a continuous relationship. The dependent variables might be numeric or category.
+
 2. `Classification` is the most typical issue statement in the actual world. The target variable has only two values (True/False, 0/1). The target variable in the Multinomial Classification problem has multiple classes (Apple, Orange, Mango). The target variable in ordinal classification is ordered (e.g., students' grades).
 
-Scientists and programmers devised programs or algorithms to examine data and anticipate outcomes. A tree-based algorithm is not linear. 
+Scientists and programmers devised programs or algorithms to examine data and anticipate outcomes. A tree-based algorithm is not linear.
 
 When the feature and the target variable are not linear, tree-based methods like Decision Tree, Random Forest, and Gradient Boosting are employed.
 
@@ -97,13 +99,14 @@ Here we will look at some of the machine learning algorithms.
 #### Linear regression
 Linear regression is a prominent machine learning method. It is a statistical forecasting method. Linear regression predicts sales, salary, age, product price, etc.
 
-A dependent `(y)` has a linear connection with one or more independent variables `(y)`. 
+A dependent `(y)` has a linear connection with one or more independent variables `(y)`.
 
 Since linear regression displays a linear connection, it finds how the dependent variable changes concerning the independent variable. It shows a straight line connecting variables.:
 
-![Image 1](/engineering-education/understanding-machine-learning-algorithms-and-how-to-implement-them/image1)
+![Image 1](/engineering-education/understanding-machine-learning-algorithms-and-how-to-implement-them/image1.png)
 
 Linear regression is stated mathematically as:
+
 ```bash
 y= a0+a1x+ ε
 ```
