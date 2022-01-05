@@ -29,7 +29,7 @@ The [best way](https://machinelearningmastery.com/a-data-driven-approach-to-mach
 - [Some Determinants That Transform Deep Learning Systems’ Performance](#Some-Determinants-That-Transform-Deep-Learning-Systems-Performance)
 - [How To Get A Perfect Performance Rate From A Deep Learning System](#How-To-Get-A-Perfect-Performance-Rate-From-A-Deep-Learning-System)
 - [Diagram demonstrating the different scenarios one can fall into when configuring the learning rate](#Diagram-demonstrating-the-different-scenarios-one-can-fall-into-when-configuring-the-learning-rate-.)
-- [Conclusion](#CONCULSION)
+- [Conclusion](#Conclusion)
 - [Further Reading](#Further-Reading)
 
 ### Prerequisites
@@ -137,7 +137,7 @@ You can train your deep learning project in a few different ways to apply regula
 1. They switch off a percentage of neurons at random during training, which is known as __*dropout*__. Dropout is a technique for preventing groups of neurons from overfitting one another.
 2. `Weight penalty L1 and L2:`Weight penalty is a technique for reducing overfitting of a deep learning neural network model on training data while also improving the model's performance on new data.
 
-   In deep learning, weights that expand in size can be a major concern and degrade accuracy. Adding all of our parameters (weights) to our loss function is one method to penalize complexity. That won't work because some of the parameters are positive while others are negative. The problem can be remedied by making changes to the learning algorithm to encourage the network to keep its weights low. This is known as **Weight regularization** and is regarded as a general method for reducing training dataset overfitting and increasing model generalization.
+   In deep learning, weights that expand in size can be a major concern and degrade accuracy. Adding all of our parameters (weights) to our loss function is one method to penalize complexity. That won't work because some of the parameters are positive while others are negative. The problem can be remedied by making changes to the learning algorithm to encourage the network to keep its weights low. This is known as __*weight regularization*__ and is regarded as a general method for reducing training dataset overfitting and increasing model generalization.
 
    Check out the [different methods on how to penalize and control larger weights](https://machinelearningmastery.com/weight-regularization-to-reduce-overfitting-of-deep-learning-models/). 
 #### Ensemble Methods
