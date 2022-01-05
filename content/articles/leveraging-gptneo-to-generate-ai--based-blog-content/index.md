@@ -6,7 +6,7 @@ url: /leveraging-gptneo-to-generate-ai--based-blog-content/
 title: Leveraging GPT-Neo to Generate AI-based Blog Content
 description: This tutorial will take you through how to build an AI-powered blog content generator using GPT-Neo.
 author: willies-ogola
-date: 2022-01-03T00:00:00-21:00
+date: 2022-01-05T00:00:00-21:00
 topics: [Machine Learning]
 excerpt_separator: <!--more-->
 images:
@@ -27,6 +27,7 @@ To follow along with this tutorial, you need to be familiar with:
 ### Table of contents 
 - [Introduction](#introduction)
 - [How to leverage GPT-Neo to Generate AI-based Blog Content](#how-to-leverage-gpt-neo-to-generate-ai-based-blog-content)
+- [Integration with the Gradio App](#integration-with-the-gradio-app)
 - [Wrapping up](#wrapping-up)
 - [Further reading](further-reading)
 
@@ -112,6 +113,58 @@ If we take a look at the results, we will see that it has generated a new block 
 [{'generated_text': "This is my first blog post, I'm really excited! I have been writing a lot lately, and I'm not getting around to it yet. Here's some of what I'm reading in my mind so I can get back to it.\n"}]
 ```
 If you'd like to generate more text, you need to increase the maximum length. 
+
+### Integration with the Gradio App
+Using Gradio is the fastest way to demo your machine learning model with a friendly web interface so that anyone can use it. As a developer, the section above is above board and you can decide to stop there as your code is working perfectly. However, from a user's standpoint, that's not the case. Most app users are not developers and wouldn't want to be working with command lines to process their results. Gradio creates user-friendly interfaces that make it easy to interact with the model. 
+
+We begin by installing it into our notebook.
+
+```bash
+!pip install gradio
+```
+Next, we need to import it into our notebook as `gr`.
+
+```python
+import gradio as gr
+```
+The next step involves encapsulating the function that we want our Gradio app to run.
+
+```python
+def generate(post):
+    results = generator(post, max_length=50, do_sample=True, temperature=0.9)
+    print (results)
+```
+We've created a new function using `def` and named it `generate`. To that function, we've passed in our post. We've then used the `generator` method to generate new posts. 
+
+Let's go ahead and integrate it with Gradio. We begin by creating a placeholder where a user can input a sentence. We save the result inside the `blog_inputs` variable.
+
+```python
+blog_inputs = gr.inputs.Textbox(lines=3, placeholder="Enter sentence to generate new posts...")
+```
+We now need to put it all together. 
+
+```python
+interface = gr.Interface(fn=generate, 
+                        inputs=blog_inputs,
+                        outputs='text',
+                        title='AI based blog content generator')
+```
+We've created a variable called `interface`. We've set that to be equal to `gr` which is Gradio. We've also used the `Interface()` class from Gradio. This class requires three arguments:
+- An ML function to run. That'll be the `generate` function.
+- The format for the inputs. That'll be `blog_inputs` that we created.
+- The output format. We need our output to be a text.
+- A title. You can give it any name you wish.
+
+To launch the Gradio app, we use the `launch()` method as shown below:
+
+```python
+interface.launch()
+```
+It will generate a public URL that you can use to access the application on a web browser. 
+
+Results:
+
+![Blog post generated](/engineering-education/leveraging-gptneo-to-generate-ai--based-blog-content/blog-generator.png)
 
 Here's the Google Colab [link](https://colab.research.google.com/drive/1TphnblcE--PNWQjP3eonbix94I2pMqC6?usp=sharing) for this tutorial.
 
