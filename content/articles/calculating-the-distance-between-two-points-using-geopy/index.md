@@ -43,9 +43,9 @@ Using Geopy, we can calculate or find the distance between two positions using t
 ### Geodesic measure
 Geodesic measure is used to determine the shortest path between any two points on the globe.
 
-Geodesics are not exactly the same as " the shortest curves" between any two given locations, despite their likeness. 
+It is not exactly the same as " the shortest curves" between any two given locations, despite their likeness. 
 
-Geodesics, on the other hand, are just the shortest distance between two points at a given position that is parameterized with "constant speed." 
+On the other hand, is just the shortest distance between two points at a given position that is parameterized with "constant speed." 
 
 A geodesic is the "long way around" on a great circle between two points on an earth's surface, even if it is not the shortest path between the two points.
 
