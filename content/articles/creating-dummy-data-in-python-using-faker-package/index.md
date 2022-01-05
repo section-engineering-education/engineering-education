@@ -116,7 +116,16 @@ Output:
 ```bash
 ('POT', 'PotCoin')
 ```
-#### 8. Providers
+#### 8. Creating a dummy dataset
+Data for 20 persons, including their employment and usernames, will be created for testing purposes. After that, we'll construct the data with Standard Provider `Profiles,` and save it in Pandas Dataframes.
+```python
+import pandas as pan
+ourProfile = [ourFake.profile() for i in range(20)]
+ourDataFrame = pan.DataFrame(ourProfile)
+ourDataFrame
+```
+You can view the code output by following this [link](https://colab.research.google.com/drive/1X9VLRsKpKOZisIzpRlfzIU_MneD1busP?usp=sharing).
+#### 9. Providers
 Assembling the items is made easier with the assistance of providers. Dependencies are injected into objects that they create. Create an object by calling the provider as if it were a function. The service provider is responsible for retrieving and injecting the underlying dependencies into the newly generated thing.
 
 Providers include many valuable attributes, such as `names()` and `address()`. Many standard providers are basic, like the internet and a person, while others are community-created, like music.
