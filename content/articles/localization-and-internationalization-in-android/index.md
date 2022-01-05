@@ -143,9 +143,9 @@ This feature can be implemented as follows:
 `Right-click` on the `resource` folder and navigate to the new `select android resource` directory.
 
 #### Step 2 - Naming newly created image subdirectory
-Name the directory similar to the available image directory and select drawable on the resource type on the wizard that appears under the available qualifier. 
+To avoid confusion the image subdirectory names should be similar.Name the subdirectory similar to the available image subdirectory and select `drawable` on the resource type on the wizard that appears under the `available qualifier`. 
 
-Select locale hit the forward arrows to choose the appropriate qualifier, and hit ok. You will notice that the directory name is appended with the specified qualifier symbol, as shown below.
+Select locale hit the forward arrows to choose the appropriate qualifier, and then press ok. You will notice that the directory name is appended with the specified qualifier symbol, as shown below.
 
 ![create_drawable_file](/engineering-education/localization-and-internationalization-in-android/create_drawable_file.png)
 
@@ -153,7 +153,7 @@ Select locale hit the forward arrows to choose the appropriate qualifier, and hi
 Right-click on the resource folder and open it in your files
 
 #### Step 4: Locate the drawable subdirectory in your files and add the required image
-Locate the newly created drawable subdirectory and add an image you wish to display for the specified locale. Ensure the image added within the new drawable folder has a similar name as that within the original drawable folder.
+Locate the newly created `drawable` subdirectory and add an image you wish to display for the specified locale. Ensure the image added within the new drawable folder has a similar name as that within the original `drawable folder`.
 
 ![image_files](/engineering-education/localization-and-internationalization-in-android/image_files.png)
 
@@ -169,24 +169,20 @@ When you run your application, expect the below output.
 There are always two types of media files in the Android application:
 -Text-to-Speech is audio that speaks out any text within the `string.xml` or hardcoded in the application. 
 
-It uses text-to-speech engine, which speaks out any text provided, which handles the localization process effectively as it speaks out its text.
-
-- Recorded Audio files - These are any audio file example, MP3, which are embedded in your application and played at different times.
+It uses text-to-speech audio, which speaks out any text provided, which handles the localization process effectively as it speaks out its text.
 
 ### Best Practices for localization
 - Provide a complete set of all the default resources to localize the application.
 - Do not think of the localization process at the final application development stage. Instead, think of the localization process at the design stage of the application, which makes it easy to localize.
-- Ensure that the qualifier naming rule is followed. The best way to follow this naming rule is by creating an alternate resource directory using the new resource directory wizard and not doing it manually.
+- Ensure that the qualifier naming rule is followed. The best way to stick to this naming rule is by creating an alternate resource directory using the new resource directory wizard and not doing it manually.
 - In cases where you want to use the same resource but with another name within your application. Avoid duplication of resources but rather use aliases instead, which reduces the growth of APK size.
 - When doing translation of strings, use professional translation services. To make sure the correct meaning is conveyed when each string is displayed.
-
-### Precautions when localizing your application
 - Avoid translation engines that could give you the wrong output of the string you want to localize. However, instead, use professional translation services.
 - Do not over-localize your application. Ensure you select the resources you want to localize according to the configuration type and not all the available resources
 - Think of localization in the early stage of application development.
 
 ### Conclusion
-In this tutorial, we have learned localization, globalization, and internationalization. How the Android SDK deals with localized resources. We also learned the localization of strings and images. Best practices to follow when localization and precautions are taken when localizing your application.
+In this tutorial, we have learned localization, globalization, and internationalization. How Android SDK deals with localized resources. We also learned the localization of strings and images. Best practices to follow when localizing your application.
 
 To get the full implementation of the project, visit this [GitHub Repository](https://github.com/nia-vee/LocalizationInternationalizationDemo)
 
