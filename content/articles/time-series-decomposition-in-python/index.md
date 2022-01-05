@@ -32,7 +32,9 @@ Thus a time series can be decomposed such that each component exists independent
 Analyzing a model with many causes of variation is computationally expensive. Therefore, we decompose those components whose variation is deterministic. The indeterministic ones, residuals, are then used to analyze autocorrelation.
 
 ### Prerequisites
-To gain the maximum benefit from this material, the learner must have basic Python programming knowledge. Also, they need to be familiar with the Google Colab or Jupiter Notebook.
+To gain the maximum benefit from this material, the learner must have the following:
+- Basic knowledge in Python programming language. 
+- Familiarity with the [Google Colab](https://colab.research.google.com/?utm_source=scs-index) or [Jupyter Notebook](https://jupyter.org/).
 
 ### Components of the time series
 At any given time, a time series is usually composed of the following components:
@@ -42,47 +44,46 @@ At any given time, a time series is usually composed of the following components
 
 Let us understand what these components are:
 
-1. Trend: The trend is the long-term direction of the time series. This component usually is either increasing, decreasing, or constant. The figure below illustrates a growing trend for a time series.
+1. Trend - This is the long-term direction of the time series. This component usually is either increasing, decreasing, or constant. The figure below illustrates a growing trend for a time series.
 
-![trend](/engineering-education/time-series-decomposition-in-python/trend.png)
+![Trend](/engineering-education/time-series-decomposition-in-python/trend.png)
 
-2. Seasonality: This is the periodic behavior of the time series that occurs within a year. The plot below is an example of the seasonality component of the time series.
+2. Seasonality - This is the periodic behavior of the time series that occurs within a year. The plot below is an example of the seasonality component of the time series.
 
-![seasonality](/engineering-education/time-series-decomposition-in-python/seasonality.png)
+![Seasonality](/engineering-education/time-series-decomposition-in-python/seasonality.png)
 
-3. Residual: This is what remains of the time series after the trend and seasonality are removed.
+3. Residual - This is what remains of the time series after the trend and seasonality are removed.
 
-![residual](/engineering-education/time-series-decomposition-in-python/residual.png)
+![Residual](/engineering-education/time-series-decomposition-in-python/residual.png)
 
 As we said, the time series value is usually a combination of the above components at any point in time. These values can be summed up all components, multiplying them together, or interacting with both operations.
 
 Therefore, we use the following three models when decomposing a time series:
-1. Additive time series model
-2. Multiplicative time series model
-3. Pseudo-Additive Model
+1. Additive time series model.
+2. Multiplicative time series model.
+3. Pseudo-Additive model.
 
-Now, it is usually the case that before we decompose the time series, we first discover the model to use. To discover this knowledge, we usually plot the time series and then see if the plot satisfies the following assumption for choosing an appropriate model to use.
+Now, it is usually the case that before we decompose the time series, we first discover the model to use. To discover this, we usually plot the time series and then see if the plot satisfies the following assumption for choosing an appropriate model to use.
 
-If the seasonality and residuals are independent of the trend in the plotted time series, we use an Additive model to decompose the data. The plot below shows the case where an additive time series model was used to decompose the data. As we can see, the seasonality component does not change with the change in trend.
+If the seasonality and residuals are independent of the trend in the plotted time series, we use an Additive model to decompose the data. The plot below shows the case where an additive time series model was used to decompose the data. As you can see, the seasonality component does not change with the change in trend.
 
-![additive model](/engineering-education/time-series-decomposition-in-python/additive-time-series.png)
+![Additive model](/engineering-education/time-series-decomposition-in-python/additive-time-series.png)
 
 The additive time series model we are talking about is of the form:
 `$O_t = T_t+S_t+R+t$`
 
 Where:
-- `$O_t$` is the observed value
-- `$T_t$` is the trend value
-- `$S_t$` is the seasonality value
-- `$R_t$` is residual value
+- `$O_t$` is the observed value.
+- `$T_t$` is the trend value.
+- `$S_t$` is the seasonality value.
+- `$R_t$` is residual value.
 - `$_t$` is a variable for a particular time indexing.
 
 If the plotted series shows the seasonality and residuals to change with the change in trend, we use a multiplicative model to decompose our series. An excellent example of using a multiplicative time series model is shown in the figure below.
 
-![multplicative model](/engineering-education/time-series-decomposition-in-python/multiplicative-time-series.png)
+![Multplicative model](/engineering-education/time-series-decomposition-in-python/multiplicative-time-series.png)
 
-From the time series plot above, we note that the seasonality increases with the trend increase.
-A multiplicative time series model is of the form:
+From the time series plot above, we note that the seasonality increases with the trend increase. A multiplicative time series model is of the form:
 
 `$O_t = T_t*S_t*R_t$`
 
@@ -136,7 +137,8 @@ plt.ylabel("product demand");
 
 ```
 Output:
-![trend component](/engineering-education/time-series-decomposition-in-python/trend.png)
+
+![Trend component](/engineering-education/time-series-decomposition-in-python/trend.png)
 
 Now that we have the trend component let us simulate our seasonality component. To do this, we shall adopt the sin function as it is the function that can yield those seasonal fluctuations of time series in the best way.
 
@@ -146,9 +148,9 @@ seasonality = 10 + np.sin(T_Series) * 10
 ```
 Output:
 
-![seasonality component](/engineering-education/time-series-decomposition-in-python/seasonality.png)
+![Seasonality component](/engineering-education/time-series-decomposition-in-python/seasonality.png)
 
-The remaining component to create is the residual component. Let's simulate it using the numpy random function.
+The remaining component to create is the residual component. Let's simulate it using the NumPY random function.
 
 ```python
 np.random.seed(10)  # for result reproducibility
@@ -165,18 +167,19 @@ plt.ylabel("Product demand");
 ```
 
 Output:
-![residual component](/engineering-education/time-series-decomposition-in-python/residual.png)
+
+![Residual component](/engineering-education/time-series-decomposition-in-python/residual.png)
 
 We have all the time series components now, and therefore, we can create the time series value at any particular point in time.
 
-The first thing we shall do with these components creates an additive model of our time series. So let us run the code below and get this done.
+The first thing we shall do with these components is to create an additive model of our time series. So let us run the code below and get this done.
 
 ```python
 # additive tine series model
 additive_Tmodel = Trend + seasonality + residual
 ```
 
-Now our additive time series model is created, and we  can go a step ahead and plot it for visualization as follows:
+Now our additive time series model is created, and we can go a step ahead and plot it for visualization as follows:
 
 ```python
 plt.plot(T_Series, additive_Tmodel, 'k.')
@@ -187,9 +190,9 @@ plt.ylabel("product demand");
 
 Output:
 
-![additive time series](/engineering-education/time-series-decomposition-in-python/additive-time-series.png)
+![A dditive time series](/engineering-education/time-series-decomposition-in-python/additive-time-series.png)
 
-It is straightforward to note that the seasonality component of the additive time series model above does not change with the change in trend, which is an essential feature for a time series to be considered an Additive time series.
+It is straightforward to note that the seasonality component of the additive time series model above does not change with the change in trend, which is an essential feature for a time series to be considered an additive time series.
 
 Similarly, let us create a multiplicative time series. To make the pattern more apparent, in this case, we will ignore the residuals in the model. We then create our model as follows:
 
@@ -211,7 +214,7 @@ plt.ylabel("product demand");
 
 This code returns:
 
-![multiplicative time series](/engineering-education/time-series-decomposition-in-python/multiplicative-time-series.png)
+![Multiplicative time series](/engineering-education/time-series-decomposition-in-python/multiplicative-time-series.png)
 
 From the output, we notice that the seasonality component of this time series changes with the change in the trend. We look for this characteristic to declare a time series model as a multiplicative time series model. Also, we should remember that we ignored the residual component in this case. So we need to understand that the residual component also changes with the change in the trend for a multiplicative time series.
 
@@ -221,11 +224,12 @@ To this point, we have created our two types of time series. The task in our han
 In this section, we shall get started by decomposing the Additive time series model we just created.
 
 - #### Additive time series decomposition
-Let's get the required library in place.
+Let us import the required library.
 
 ```python
 from statsmodels.tsa.seasonal import seasonal_decompose
 ```
+
 The code below will decompose our model into its initial components.
 
 ```python
@@ -235,6 +239,7 @@ trend_estimate = ts_dicomposition.trend
 seasonal_estimate = ts_dicomposition.seasonal
 residual_estimate = ts_dicomposition.resid
 ```
+
 We can plot the decomposed components by running the following code.
 
 ```python
@@ -258,7 +263,7 @@ axes[3].legend(loc='upper left');
 
 Output:
 
-![additive time series decomposition](/engineering-education/time-series-decomposition-in-python/additive-time-series-decomposition.png)
+![Additive time series decomposition](/engineering-education/time-series-decomposition-in-python/additive-time-series-decomposition.png)
 
 The first plot represents our original time series. The second plot represents the trend of our time series model extracted from the original time series. Finally, the third and fourth plots represent seasonality and residual components in the same time series.
 
@@ -296,7 +301,7 @@ axes[3].legend(loc='upper left');
 
 This code yield:
 
-![multiplicative time series decomposition](/engineering-education/time-series-decomposition-in-python/multiplicative-time-series-decomposition.png)
+![Multiplicative time series decomposition](/engineering-education/time-series-decomposition-in-python/multiplicative-time-series-decomposition.png)
 
 Now, this was a demo, and as we know, we are not Data scientists only to deal with the problem we create on our own. Instead, we train ourselves to handle real-world challenges using hidden knowledge in the data. 
 
@@ -330,7 +335,7 @@ data.head()
 
 This code should return an output similar to the one below.
 
-![facebook stock data](/engineering-education/time-series-decomposition-in-python/fb-stock-data.png)
+![Facebook stock data](/engineering-education/time-series-decomposition-in-python/fb-stock-data.png)
 
 Above is multivariate time series for the Facebook stocks data. You can change the tickers value and download datasets of other companies such as the Amazone, "AMZN," Tesla company as "TSLA," etc.
 
