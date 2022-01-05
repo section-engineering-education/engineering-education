@@ -20,9 +20,9 @@ K fold cross-validation is a superior technique to validate the performance of o
 
 We divide our data set into K folds. K represents the number of folds into which you want to split your data. If we use 5-folds, the data set divides into five sections. In different iterations, one part becomes the validation set.
 
-![5 Fold Cross-Validation](/engineering-education/how-to-implement-k-fold-cross-validation/5_fold_cv.jpeg)
+![5 Fold Cross-Validation](/engineering-education/how-to-implement-k-fold-cross-validation/5-fold-cv.jpeg)
 
-[Image Source: Great Learning Blog](https://www.mygreatlearning.com/blog/cross-validation/)
+*[Image Source: Great Learning Blog](https://www.mygreatlearning.com/blog/cross-validation/)*
 
 In the first iteration, we use the first part of the data for validation. We use the other parts of the data set for training as illustrated in the image above.
 
@@ -43,7 +43,7 @@ dataset = pd.read_csv('breast_cancer_data.csv')
 dataset
 ```
 
-![Dataset Preview](/engineering-education/how-to-implement-k-fold-cross-validation/dataset_preview.PNG)
+![Dataset Preview](/engineering-education/how-to-implement-k-fold-cross-validation/dataset-preview.png)
 
 The target variable is the diagnosis column. It has an index of 1. The features are all the columns except the id, diagnosis and Unnamed: 32 columns.
 
@@ -57,7 +57,7 @@ print("Target Variable", y, sep='\n')
 ```
 
 **Output:**
-```
+```bash
     Matrix of features
     [[1.799e+01 1.038e+01 1.228e+02 ... 2.654e-01 4.601e-01 1.189e-01]
      [2.057e+01 1.777e+01 1.329e+02 ... 1.860e-01 2.750e-01 8.902e-02]
@@ -116,7 +116,7 @@ print("Label Encoded Target Variable", encoded_y, sep="\n")
 ```
 
 **Output:**
-```
+```bash
     Mapping of Label Encoded Classes
     {'B': 0, 'M': 1}
     Label Encoded Target Variable
@@ -250,7 +250,7 @@ print(decision_tree_result)
 ```
 
 **Output:**
-```
+```bash
 {'Training Accuracy scores': array([1., 1., 1., 1., 1.]),
 'Mean Training Accuracy': 100.0,
 'Training Precision scores': array([1., 1., 1., 1., 1.]), 
@@ -281,7 +281,7 @@ plot_result(model_name,
             decision_tree_result["Validation Accuracy scores"])
 ```
 
-![Accuracy Plot of Decision Tree Model](/engineering-education/how-to-implement-k-fold-cross-validation/accuracy_1.png)
+![Accuracy Plot of Decision Tree Model](/engineering-education/how-to-implement-k-fold-cross-validation/accuracy-1.png)
 
 
 We can also visualize the training precision and validation precision in each fold.
@@ -295,7 +295,7 @@ plot_result(model_name,
             decision_tree_result["Validation Precision scores"])
 ```
 
-![Precision Plot of Decision Tree Model](/engineering-education/how-to-implement-k-fold-cross-validation/precision_1.png)
+![Precision Plot of Decision Tree Model](/engineering-education/how-to-implement-k-fold-cross-validation/precision-1.png)
 
 
 Let us visualize the training recall and validation recall in each fold.
@@ -309,7 +309,7 @@ plot_result(model_name,
             decision_tree_result["Validation Recall scores"])
 ```
 
-![Recall Plot of Decision Tree Model](/engineering-education/how-to-implement-k-fold-cross-validation/recall_1.png)
+![Recall Plot of Decision Tree Model](/engineering-education/how-to-implement-k-fold-cross-validation/recall-1.png)
 
 
 Finally, we visualize the training f1 score and validation f1 score in each fold.
@@ -323,7 +323,7 @@ plot_result(model_name,
             decision_tree_result["Validation F1 scores"])
 ```
 
-![F1 Score Plot of Decision Tree Model](/engineering-education/how-to-implement-k-fold-cross-validation/f1_score_1.png)
+![F1 Score Plot of Decision Tree Model](/engineering-education/how-to-implement-k-fold-cross-validation/f1-score-1.png)
 
 
 From the visualizations, we notice that the training accuracy, precision, recall, and f1 scores in each fold are 100%. But the validation accuracy, precision, recall and f1 scores are not as high. We call this over-fitting. The model performs admirably on the training data. But not so much on the validation set. 
@@ -339,7 +339,7 @@ print(decision_tree_result_2)
 ```
 
 **Output:**
-```
+```bash
 {'Training Accuracy scores': array([0.99340659, 0.99340659, 1.        , 0.9956044 , 0.99342105]), 
 'Mean Training Accuracy': 99.51677270098322, 
 'Training Precision scores': array([1.        , 1.        , 1.        , 1.        , 0.99408284]), 
@@ -369,7 +369,7 @@ plot_result(model_name,
             decision_tree_result_2["Validation Accuracy scores"])
 ```
 
-![Accuracy Plot of the Second Decision Tree Model](/engineering-education/how-to-implement-k-fold-cross-validation/accuracy_2.png)
+![Accuracy Plot of the Second Decision Tree Model](/engineering-education/how-to-implement-k-fold-cross-validation/accuracy-2.png)
 
 ```python
 # Plot Precision Result
@@ -380,7 +380,7 @@ plot_result(model_name,
             decision_tree_result_2["Validation Precision scores"])
 ```
 
-![Precision Plot of the Second Decision Tree Model](/engineering-education/how-to-implement-k-fold-cross-validation/precision_2.png)
+![Precision Plot of the Second Decision Tree Model](/engineering-education/how-to-implement-k-fold-cross-validation/precision-2.png)
 
 ```python
 # Plot Recall Result
@@ -391,7 +391,7 @@ plot_result(model_name,
             decision_tree_result_2["Validation Recall scores"])
 ```
 
-![Recall Plot of the Second Decision Tree Model](/engineering-education/how-to-implement-k-fold-cross-validation/recall_2.png)
+![Recall Plot of the Second Decision Tree Model](/engineering-education/how-to-implement-k-fold-cross-validation/recall-2.png)
 
 ```python
 # Plot F1-Score Result
@@ -402,7 +402,7 @@ plot_result(model_name,
             decision_tree_result_2["Validation F1 scores"])
 ```
 
-![F1-Score Plot of the Second Decision Tree Model](/engineering-education/how-to-implement-k-fold-cross-validation/f1_score_2.png)
+![F1-Score Plot of the Second Decision Tree Model](/engineering-education/how-to-implement-k-fold-cross-validation/f1-score-2.png)
 
 We can see that the validation results of the second model in each fold are better. It has a mean validation accuracy of 93.85% and a mean validation f1 score of 91.69%.
 
