@@ -346,11 +346,9 @@ export default {
 </script>
 ```
 
-The code above is completely Vue3 syntax. On Vue2 which is an older version of Vue, this will be in a methods option. So basically the Vue2 integrates the Options API while the Vue3 integrates the Compositions API. 
+The code above is completely Vue3 syntax. On Vue2 which is an older version of Vue, this will be in a methods option. So basically the Vue2 integrates the Options API while the Vue3 integrates the Compositions API which works just fine for building vue applications efficiently. 
 
-Here, we have to return every function or variable we use and all functions go into one particular option called the `setup()`  , unlike the Options API where we have different options like `methods`, `computed`, and `watchers`  .
-
-You'd notice I did `form.value` to access the value of the constant variable. That is how Vue3 works. On Vue2 you'd likely do `this.form`  and also the `inputFieldReset` variable.
+Here, we have to return every function or variable we use and all functions go into one particular option called the `setup()`.You'd notice I did `form.value` to access the value of the constant variable and also for the `inputFieldReset` variable. That is how Vue3 works.
 
 So our function fetches the `emailjs`  API, giving it the four parameters it needs. Then if our form sends successfully, it says "Message sent" and empties the input fields of the form. And if an error occurs it says "Message not sent" with the particular error message alongside it.
 
@@ -370,7 +368,6 @@ Now all you have to do is send a sample message from the contact form. And with 
 That's it! It’s that simple.
 
 ### Conclusion
-
 Javascript libraries help make it easier to write complex code easily. The email functionality we just added into our application will be very hectic setting it up from scratch. But with the help of this library it is painless setting it up and this will be a good piece for your portfolio. This library is not only meant for Vue, like I said it works on different client-side technologies. This library works on React and Angular as well. 
 
 Be sure to upgrade if you will be having more emails coming in as the free tier only works for 500 emails daily. You can find the code right [here](https://github.com/mercybassey/email-app-for-vue3). Thank you for reading, and happy coding.
