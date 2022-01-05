@@ -4,7 +4,7 @@ status: publish
 published: true
 url: /best-frameworks-for-developing-dapps/
 title: The Best Frameworks for Developing Decentralized Applications 
-description: In this article, we will look at the best frameworks for DApps development. We will also go through different kinds of DApps and understand why they are key to future technology. 
+description: In this article, we will look at the best frameworks for DApps development. We will also go through the different kinds of DApps and understand why they are key to future technology. 
 author: julie-ruguru
 date: 2022-01-03T00:00:00-13:10
 topics: [Blockchain]
@@ -12,26 +12,26 @@ excerpt_separator: <!--more-->
 images:
 
   - url: /engineering-education/best-frameworks-for-developing-dapps/hero.jpg
-    alt: image DApps
+    alt: DApps example image 
 ---
 Frameworks can help you develop better and faster apps. With the rise of blockchain technology, more decentralized applications (DApps) are being developed. Frameworks specifically created to simplify DApps development are becoming more and more common. DApps frameworks, like other frameworks, are pieces of code written to the software, making it easy to build blockchain applications.
 <!--more-->
 This guide will cover the best frameworks for developing DApps. Also, you will learn what DApps are, why they are key to future technology, and the different kinds of DApps. To follow this guide, you'll need to be familiar with blockchain, software development, and [Web 3.O](engineering-education/overview-of-web-3-0/).
 
 ### Table of contents
-- [Overview of Decentralized Applications (DApps)](#overview-of-decentralized-applications-dapps)
+- [Overview of decentralized applications (DApps)](#overview-of-decentralized-applications-dapps)
 - [Why DApps are key to future technology](#why-dapps-are-key-to-future-technology)
 - [Types of DApps](#types-of-dapps)
 - [DApps frameworks](#dapps-frameworks)
 - [Conclusion](#conclusion)
 
-### Overview of Decentralized Applications (DApps)
+### Overview of decentralized applications (DApps)
 Applications such as Google, Twitter, Facebook, and PayPal run on systems created and operated by the company. These applications run on a centralized server. As a result, the organizations have complete control over the apps and their functionality. DApps are very similar in how they work, except that this app reports to the blockchain instead of reporting back to Google or PayPal servers. You interact with the blockchain through the application.
 
 DApps are systems that run on peer-to-peer and blockchain networks instead of central servers. DApps are powered by blockchain, which explains why they are different from other applications and perhaps more superior.
 
-These features make DApps essential in the current and future world.
-- **Storage:** DApps operations are stored on a blockchain. Blockchain does not depend on intermediaries, and it, therefore, enhances productivity, trust, and transparency.
+The following features make DApps essential in the current and future world:
+- **Storage:** DApps operations are stored on a blockchain. Blockchain does not depend on intermediaries. Therefore, it enhances productivity, trust, and transparency.
 - **DApps are open source:** Any developer in the community can utilize, improve, and build on top of them. The complete code base is usually freely available.
 - **Autonomy:** DApps users are free to run their affairs. The goal is for anyone to publish or use these DApps. DApps have brought about decentralization as no central authority controls the users. 
 - **DApps give incentives:**. The blockchain network participants are awarded **cryptographic tokens** for their contributions. Cryptographic tokens are units of value in blockchain used for investment, storing value, and making purchases.
@@ -45,7 +45,7 @@ DApps will continue to grow tremendously in the future. They will become increas
 DApps' exciting benefits include:
 - **Censorship resistant:** Users can control their activities because DApps are more sovereign.
 - **Security:** DApps are cryptographically secure as attackers have no space for security breaches and unauthorized access. This is because DApps are powered by blockchain.
-- **No downtime:**  DApps relies on a peer-to-peer network. Therefore they continue to run even if an individual computer or network parts go down. 
+- **No downtime:**  DApps relies on a peer-to-peer network. Therefore, they continue to run even if an individual computer or network parts go down. 
 - **Data integrity:** Blockchain enables secure data storage because it's immutable. Malicious parties cannot forge transactions or other data already made public.
 
 ### Types of DApps
@@ -58,9 +58,7 @@ Bitcoin and Ethereum are some forms of decentralized funds we have. Bitcoin is a
 
 Today, all our financial institutions and services are entirely centralized. The centralized financial system (CIFI) has its risks. It's prone to mismanagement, fraud, and corruption. What if, like Bitcoin decentralized money, we could decentralize the whole financial system? Well, that's what DeFi is all about. DeFi refers to financial services that are not governed by a central authority.
 
-Decentralized money can be programmed to do automatic tasks. We can create exchanges, loan services, insurance businesses, and other organizations that are not centralized.
-
- DeFi's goal is to get rid of intermediaries and at the same time offer transparency and decentralization.
+Decentralized money can be programmed to do automatic tasks. We can create exchanges, loan services, insurance businesses, and other organizations that are not centralized. DeFi's goal is to get rid of intermediaries and at the same time offer transparency and decentralization.
 
 #### Decentralized autonomous organizations (DAOs)
 A decentralized autonomous organization (DAO) is an organization that is run by a code written on a collection of [smart contracts](https://www.ibm.com/topics/smart-contracts) written on ethereum. A DAO is like Google or Facebook, and the difference is that it's autonomous. It operates completely transparently, and it is independent without human intervention.
@@ -75,9 +73,9 @@ Truffle is a popular framework for building Ethereum-based DApps. It is a develo
 
 Here are some features that make Truffle such an effective tool for creating Ethereum-based DApps:
 - There is built-in support to compile, deploy and create smart contracts.
-- Automated contract testing.
+- There is automated contract testing.
 - Truffle console communicates with smart contracts directly.
-- Seamless migration.
+- There is seamless migration.
 - Truffle helps with network management for deploying to public and private networks.
 
 ##### Truffle installation
@@ -100,7 +98,7 @@ Brownie is a powerful and easy-to-use framework that handles deployment, debuggi
 Here are some features of Brownie:
 - There is [Solidity](https://github.com/ethereum/solidity) and [Vyper](https://github.com/vyperlang/vyper) support. Solidity is a programming language for writing smart contracts on the blockchain that automate transactions. Vyper is an experimental programming language based on python designed to run on the EVM. You can use it to write smart contracts.
 - For easy project engagement, there's a built-in console. 
-- It performs contract testing using [pytest](https://github.com/pytest-dev/pytest). Pytest is a framework for writing tests code using python for applications and libraries.
+- It performs contract testing using [Pytest](https://github.com/pytest-dev/pytest). Pytest is a framework for writing tests code using python for applications and libraries.
 - [EthPM](https://www.ethpm.com/) packages support. EthPM is a decentralized package manager that aims to package and distribute smart contracts in the ethereum ecosystem.
 - It supports property-based and [hypothesis-based](https://github.com/HypothesisWorks/hypothesis/tree/master/hypothesis-python) testing. Brownie makes use of the hypothesis framework to enable property-based testing.
 
@@ -123,10 +121,10 @@ Go through the [Brownie documentation](https://eth-brownie.readthedocs.io/_/down
 Hardhat is a framework for creating and testing smart contracts. With Hardhat, you can compile, deploy, test, and debug your decentralized applications.
 
 Here are some of the features that make Hardhat a fantastic framework for developing DApps:
-- Run solidity. It quickly deploys, runs tests, and debug the smart contracts solidity code.
-- Great debugging experience.
-- It is very flexible. You can change anything you like.
-- It is fully extensible. Hardhat comes with an ecosystem of plugins and tools that you can install to extend its functionalities.
+- **Running solidity:** It quickly deploys, runs tests, and debug the smart contracts solidity code.
+- **Debugging:** It provides a great debugging experience.
+- **Flexibility:** It is very flexible. You can change anything you like.
+- **It is fully extensible:** Hardhat comes with an ecosystem of plugins and tools that you can install to extend its functionalities.
 
 ##### Hardhat installation
 Ensure you have node.js V 12 or above installed on your computer to begin the installation. Run this command to install Hardhat:
@@ -145,9 +143,9 @@ Go through the [Hardhat documentation](https://hardhat.org/getting-started/) to 
 The Embark framework enables blockchain developers to efficiently build, test, and deploy serverless DApps. It makes a lot of the difficulty in building this application super simple.
 
 Some of Embark framework features include:
-- Enable Automatic smart contract deployment
+- It enables automatic smart contract deployment.
 - Embark integrates with IPFS decentralized storage and helps you distribute your DApp to the network.
-- Enables peer-to-peer communication
+- It enables peer-to-peer communication.
 
 ##### Embark Installation
 To begin the installation process, ensure these tools are installed on your computer:
@@ -155,7 +153,7 @@ To begin the installation process, ensure these tools are installed on your comp
 - [Ethereum Client](https://framework.embarklabs.io/docs/installation.html#Ethereum-Client-Optional).
 - [IPFS](https://docs.ipfs.io/install/).
 
-Note that it's optional to install Ethereum Client and IPFS. But it's recommended you
+Note that it's optional to install Ethereum Client and IPFS, but it's recommended you
 install them.
 
 Run this command to install Embark:
@@ -165,15 +163,14 @@ Run this command to install Embark:
 Go through the [Embark documentation](https://framework.embarklabs.io/docs/overview.html) to get more information.
 
 ### Conclusion
-DApps are gaining popularity among developers because they offer more functionality and benefits than centralized applications. Frameworks are used to build DApps.
+DApps are gaining popularity among developers because they offer more functionality and benefits than centralized applications. Frameworks are used to build DApps. To pick the ideal framework for a project, you must first figure out what you want to build and the tools you'll need. Brownie, for example, is the ideal alternative if you want a python-based program.
 
-To pick the ideal framework for a project, you must first figure out what you want to build and what tools you'll need. Brownie, for example, is the ideal alternative if you want a python-based program.
-
-To summarize, we learned:
+To summarize, we have learned:
 - What DApps are.
-- Why DApps are the key to future technology.
-- Various kinds of DApps.
+- Why DApps are key to future technology.
+- The various kinds of DApps.
 - Top frameworks for building DApps.
+- The features of these frameworks.
 
 ---
 Peer Review Contributions by: [Onesmus Mbaabu](/engineering-education/authors/onesmus-mbaabu/)
