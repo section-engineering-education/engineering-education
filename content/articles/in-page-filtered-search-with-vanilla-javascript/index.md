@@ -2,12 +2,12 @@
 layout: engineering-education
 status: publish
 published: true
-url: /engineering-education/in-page-filtered-search-with-vanilla-javascript/
-title: In-Page Filtered Search With Vanilla JavaScript
+url: /in-page-filtered-search-with-vanilla-javascript/
+title: In-Page Filtered Search with Vanilla JavaScript
 description: This tutorial will be an introduction to in-page filtered search for any webpages. We will be building a simple webpage to demonstrate in-page search.
 author: cecilia-wanjiru-wairimu
-date: 2021-12-26T00:00:00-16:45
-topics: []
+date: 2022-01-04T00:00:00-17:00
+topics: [Languages]
 excerpt_separator: <!--more-->
 images:
 
@@ -16,10 +16,10 @@ images:
 ---
 Manually searching for textual data on websites with a lot of information is difficult and time-consuming. This problem can be handled by providing a search option that filters the results down the page, making them easier to discover and read. In-page filtering is one answer to this problem.
 <!--more-->
-This tutorial will help the reader to understand in-page filtering and how it can be applied it using the vanilla script, a barebones version of JavaScript that does not include any extra types of libraries.
+This tutorial will help the reader to understand in-page filtering and how it can be applied using the vanilla script, a barebones version of JavaScript that does not include any extra types of libraries.
 
 ### Table of contents
-- [Pre-requisites](#pre-requisites)
+- [Prerequisites](#prerequisites)
 - [Objectives](#objectives)
 - [Overview of In-Page filtering search](#overview-of-in-page-filtering-search)
 - [Create sample webpage](#create-sample-web-page)
@@ -30,13 +30,13 @@ This tutorial will help the reader to understand in-page filtering and how it ca
 - [Caveat](#caveat)
 - [Conclusion](#conclusion)
 
-### Pre-requisites
+### Prerequisites
 To follow through this tutorial the reader should have:
 - A good understanding of the fundamentals of HTML and CSS.
 - Basic knowledge of JavaScript.
 
 ### Objectives
-By the end of this tutorial, the following is expected:
+By the end of this tutorial, the reader will know the following:
 - Understand the overview of the in-page filtered search.
 - Know how to create a sample web page.
 - Know how to create a time delay.
@@ -44,7 +44,7 @@ By the end of this tutorial, the following is expected:
 - Getting to know caveat.
 
 ### Overview of in-Page filtering search
-**In-page filtering**- is a type of search technology that filters down the web page content, making matching results easier to find and read more so on pages with a lot of information.
+**In-page filtering** - is a type of search technology that filters down the web page content, making matching results easier to find and read. More so on pages with a lot of information.
 
 JavaScript handles all the user interactions by:
 - Locating all of the site information that the users want to browse through.
@@ -101,7 +101,7 @@ We then add a search box together with its event that fires when the user tries 
 
 Then, we use the JavaScript code below to perform search and filter operations:
 
-```javascript
+```JavaScript
 function Search() {
   // Locate the card elements
   let cards = document.querySelectorAll('.cards')
@@ -128,7 +128,7 @@ function Search() {
 - If the text in the card matches the search query, the `.is_ hidden` class is removed, and the card is shown; if it doesn't, the class remains, and the card is hidden.
 
 ### Creating time delay
-To ensure that our script doesn't run too many times and slow down the page, we will run our `Search` function only after waiting for a few seconds using the code below:
+To ensure that our script doesn't run too many times and slows down the page, we will run our `Search` function only after waiting for a few seconds using the code below:
 
 ```JavaScript
 let Timer;        
@@ -165,7 +165,7 @@ Take, for example, a keyword-filled span. The code below will be used to use the
 </div>
 ```
 
-> NOTE: For the above to work, we will update our `Search` function and we'll use `.textContent` instead of `.innerText` to incorporate all hidden components.
+> NOTE: For the code above to work, we will update our `Search` function and we'll use `.textContent` instead of `.innerText` to incorporate all hidden components.
 
 ```JavaScript
 for (var i = 0; i < cards.length; i++) {
@@ -181,7 +181,7 @@ for (var i = 0; i < cards.length; i++) {
 #### Searching through an attribute
 Here, we put the keywords directly on the attribute's value and if a user tries to type a word in the search box, those queries match what it contained in the attribute's value.
 
-```JavaSCript
+```JavaScript
 for (var i = 0; i < cards.length; i++) {
   if(cards[i].getAttribute('alt').toLowerCase()
     .includes(search_query.toLowerCase())) {
@@ -200,10 +200,9 @@ These methods work only when all the searchable content is in the DOM of the pag
 You can find the full working code [here](https://github.com/Shee254/in-page-filtered-search-with-vanilla-javascript).
 
 ### Conclusion
-As we have seen, in-page filtering plays a crucial role in helping users to search for web content easily and quickly. Using vanilla JavaScript, we have been able to implement the above.
+As we have seen, in-page filtering plays a crucial role in helping users search for web content easily and quickly. Using vanilla JavaScript, we have been able to implement the above.
 
 To summarize, we have:
-
 - Learned what in-page filtering is.
 - How to use the in-page filtered search in the vanilla script.
 - How to create time delay to avoid page downtime.
