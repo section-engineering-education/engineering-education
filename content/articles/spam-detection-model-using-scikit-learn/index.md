@@ -6,7 +6,7 @@ url: /spam-detection-model-using-scikit-learn/
 title: Spam Detection Model using Scikit-Learn
 description: In this tutorial, we will build a machine learning model that will detect Youtube comments as either spam or non-spam.
 author: james-omina
-date: 2021-01-04T00:00:00-13:20
+date: 2021-01-05T00:00:00-21:00
 topics: [Machine Learning]
 excerpt_separator: <!--more-->
 images:
@@ -14,13 +14,13 @@ images:
   - url: /engineering-education/spam-detection-model-using-scikit-learn/hero.png
     alt: Spam Detection Model using Scikit-Learn example image 
 ---
-Spam is a large number of unsolicited messages that are sent to a large number of people. The messages may be for advertising, fraudulent purposes, or the spreading of malware. Spams can be informed of comments left on personal sites or emails sent in bulk.
+Spam is a large number of unsolicited messages that are sent to a large number of people. The messages may be for advertising, fraudulent purposes, or malware spreading. Spams can be informed of comments left on personal sites or emails sent in bulk.
 <!--more-->
 Spam detection helps in detecting these spam messages and comments. Spam detection models filter out unwanted messages and comments. This ensures an individual receives messages or notifications that are crucial to them.
 When building the spam detection model, we will provide the model with a dataset that consists of spam and non-spam comments.
 The model will learn from this dataset and find relevant patterns that will help it to distinguish between spam and non-spam comments. 
 
-In this tutorial, we will build a machine learning model that will detect Youtube comments as spam or non-spam. We will use a dataset that contains a list of comments from popular Youtube channels to train our model. Finally, we will implement the model using the Naive Bayes algorithm.
+This tutorial will demonstrate how to build a machine learning model that will detect Youtube comments as spam or non-spam. We will use a dataset that contains a list of comments from popular Youtube channels to train our model. Finally, we will implement the model using the Naive Bayes algorithm.
 
 ### Table of contents
 - [Prerequisites](#prerequisites)
@@ -36,7 +36,7 @@ In this tutorial, we will build a machine learning model that will detect Youtub
 - [References](#references)
 
 ### Prerequisites
-A reader should know the following to have a clear understanding of this tutorial.
+A reader should know the following to understand this tutorial clearly.
 
 - Be well equipped with [Python programming](/engineering-education/python-projects-for-beginners/) skills.
 - Understand the concepts of [machine learning.](/engineering-education/house-price-prediction/)
@@ -45,7 +45,7 @@ A reader should know the following to have a clear understanding of this tutoria
 - Know how to build a machine learning model using [Google Colab notebook](https://research.google.com/).
 
 ### Dataset preparation
-The dataset used contains a list of comments from popular Youtube channels. We will use a dataset collected from five Youtube channels. We need to prepare this dataset so that it can be ready for use. Data preparation involves correctly formatting our dataset to make it easy for use by the model during training.
+The dataset used contains a list of comments from popular Youtube channels. We will use a dataset collected from five Youtube channels. We need to prepare this dataset to be ready for use. Data preparation involves correctly formatting our dataset to make it easy for use by the model during training.
 
 First, we need to load these datasets into our machine. Let's import the packages that will load our dataset.
 
@@ -53,9 +53,9 @@ First, we need to load these datasets into our machine. Let's import the package
 import pandas as pd
 import numpy as np
 ```
-We will use `Pandas` to read the datasets and `Numpy` to perform mathematical operations on these datasets. Since we have collected the dataset from five Youtube channels, we will have a total of five datasets. 
+We will use `Pandas` to read the datasets and `Numpy` to perform mathematical operations on these datasets. We will have five datasets since we have collected the dataset from five Youtube channels. 
 
-To download the five datasets in a ZIP file, click [here](https://drive.google.com/file/d/1rF1qv4onQQ-DH0MRJdVtKnm0pAApDk96/view?usp=sharing). After downloading the ZIP file, extract the individual datasets which we will load onto our machine.
+To download the five datasets in a ZIP file, click [here](https://drive.google.com/file/d/1rF1qv4onQQ-DH0MRJdVtKnm0pAApDk96/view?usp=sharing). After downloading the ZIP file, extract the individual datasets, which we will load onto our machine.
 
 To load the five datasets, use the following code:
 
@@ -66,10 +66,10 @@ df3 = pd.read_csv("Youtube03-Channel3.csv")
 df4 = pd.read_csv("Youtube04-Channel4.csv")
 df5 = pd.read_csv("Youtube05-Channel5.csv")
 ```
-Now we have five datasets, we need to concatenate or merge them. The five datasets will be joined together so that we have a single data frame.
+Now we have five datasets, we need to concatenate or merge them. The five datasets will be joined together to have a single data frame.
 
 #### Datasets concatenation
-To join them together, we create a single data frame for the datasets and then apply the `concat` method.
+We create a single data frame for the datasets and then apply the `concat` method to join them together.
 
 ```python
 frames = [df1,df2,df3,df4,df5]
@@ -86,7 +86,7 @@ The output is shown below:
 
 From the image above, our dataset has five columns: `COMMENT_ID`, `AUTHOR`, `DATE`, `CONTENT`, and `CLASS`. The columns that we are most interested in are `CONTENT` and `CLASS` columns.
 
-`CONTENT` column represents the actual Youtube comments. The `CLASS` column is labeled either `0` or `1`. `0` represents non-spam comments and `1` represents spam comments.
+`CONTENT` column represents the actual Youtube comments. The `CLASS` column is labeled either `0` or `1`. `0` represents non-spam comments, and `1` represents spam comments.
 
 The merged dataset contains five datasets, we need to assign keys to our merged dataset to distinguish each dataset. 
 
@@ -152,7 +152,7 @@ From the output above, there are no missing values. Therefore, our dataset is re
 ### Extracting important columns
 We need to extract the important columns from our dataset. As mentioned earlier, we are interested in only two columns, `CONTENT` and `CLASS`. 
 
-The `CONTENT` column contains the actual Youtube comments, this column will be used as an input for the model. The `CLASS` column contains the labels `0` and `1`, this column will be used as an output or target for the model.
+The `CONTENT` column contains the actual Youtube comments. This column will be used as an input for the model. The `CLASS` column contains` 0` and `1` labels. This column will be used as an output or target for the model.
 
 To extract these two columns, use this code:
 
@@ -170,9 +170,9 @@ From the code above, `df_x` is the input variable and `df_y` is the output or ta
 ### Feature extraction from text
 Feature extraction is the process of getting important characteristics from the raw text. Machine learning models do not understand the text and can not use text directly, that's why we have to perform feature extraction. The extracted features will now be used as inputs for the model.
 
-During the process of feature extraction, we have to convert the raw text into a vector of numeric values. The vectors of numeric values represent the original raw text. Machine learning models easily understand numeric values and can use them directly.
+During feature extraction, we have to convert the raw text into a vector of numeric values. The vectors of numeric values represent the original raw text. Machine learning models easily understand numeric values and can use them directly.
 
-This process of converting raw text to vectors of numeric values will be done using the `CountVectorizer` Python package. `CountVectorizer` is a powerful tool from [Scikit-learn](https://scikit-learn.org/) library that speeds up this process of feature extraction from text.
+This process of converting raw text to vectors of numeric values will be done using the `CountVectorizer` Python package. `CountVectorizer` is a powerful tool from [Scikit-learn](https://scikit-learn.org/) library that speeds up this feature extraction process from text.
 
 Let's import `CountVectorizer`.
 
@@ -209,14 +209,14 @@ from sklearn.model_selection import train_test_split
 From the code above, we have imported two packages. The function of each package is explained below:
 
 **MultinomialNB**
-This is the classification method imported from the Naive Bayes algorithm. Naive Bayes algorithm has other methods such as GaussianNB but MultinomialNB is best suited because we are working with text.
+This is the classification method imported from the Naive Bayes algorithm. Naive Bayes algorithm has other methods such as GaussianNB, but MultinomialNB is best suited because we are working with text.
 
-The MultinomialNB method is what we will use to build our spam detection model.
+We will use the MultinomialNB method to build our spam detection model.
 
 For a detailed understanding of the different Naive Bayes algorithm methods, click [here.](https://towardsdatascience.com/naive-bayes-classifier-81d512f50a7c)
 
 **train_test_split**
-We will use this package to split our dataset into two sets. The model will use the first set for training and the second set is used for testing.
+We will use this package to split our dataset into two sets. The model will use the first set for training, and the second set for testing.
 
 We will start by splitting the dataset.
 
@@ -250,7 +250,7 @@ The accuracy score is shown below:
 ```bash
 Accuracy of Model 91.95046439628483 %
 ```
-This is a very high accuracy score, the model has a high chance of making accurate predictions. We can now evaluate this model using the testing dataset.
+This is a very high accuracy score, and the model has a high chance of making accurate predictions. We can now evaluate this model using the testing dataset.
 
 ### Model evaluation
 We will use this model to classify the Youtube comments in the testing dataset as either spam or non-spam.
@@ -262,12 +262,12 @@ We use the `predict` method to classify all the Youtube comments in the testing 
 
 ![Model evaluation](/engineering-education/spam-detection-model-using-scikit-learn/model-evaluation.png)
 
-From the image above, we can see the model was able to assign labels to our testing dataset. The labels are either `0` or `1`.
+From the image above, we can see the model assigned labels to our testing dataset. The labels are either `0` or `1`.
 
 We can use this model to make a single prediction.
 
 ### Making a single prediction
-We will use input text to predict as shown below.
+We will use input text to predict, as shown below.
 
 ```python
 comment = ["Check this out I will be giving 50% offer on your first purchase"]
@@ -303,11 +303,9 @@ array([0], dtype=int64)
 The prediction result is `0`, which shows that the comment is `non-spam`. Using these two predictions, we can see that our model can be able to distinguish between spam and non-spam comments. 
 
 ### Conclusion 
-In this tutorial, we have learned how to build a spam detection model. We started by preparing our dataset to correctly format our dataset.  We had five datasets that were collected from popular Youtube channels.
+In this tutorial, we have learned how to build a spam detection model. We started by preparing our dataset to correctly format our dataset. We had five datasets that were collected from popular Youtube channels. After preparing the dataset, we used it to build our spam detection model. The model was able to distinguish between spam and non-spam comments. This was the goal of this tutorial and we have successfully built a spam detection model.
 
-After preparing the dataset, we used it to build our spam detection model. The model was able to distinguish between spam and non-spam comments. This was the goal of this tutorial and we have successfully built a spam detection model.
-
-To get this spam detection model in Google Colab, click [here](https://colab.research.google.com/drive/1UPgeF-7EI1pZQ_QXS_h_D2VW2eI97BNl?usp=sharing)
+To get this spam detection model in Google Colab, click [here](https://colab.research.google.com/drive/1UPgeF-7EI1pZQ_QXS_h_D2VW2eI97BNl?usp=sharing).
 
 ### References
 - [Google Colab notebeook](https://colab.research.google.com/drive/1UPgeF-7EI1pZQ_QXS_h_D2VW2eI97BNl?usp=sharing)
