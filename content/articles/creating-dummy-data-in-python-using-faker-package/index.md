@@ -5,13 +5,19 @@ For testing and operational reasons, dummy data is used, and code can be tested 
 ### Prerequisites
 1. Before proceeding with this tutorial, you should know the python programming language.
 2. Have a python IDE or follow this [documentation](https://www.python.org/) to install.
+### Table of contents
+- [Methods and types of dummy data](#methods-and-types-of-dummy-data)
+- [Other dummy data creation methods](#other-dummy-data-creation-methods)
+- [A few more words regarding dummy data](#a-few-more-words-regarding-dummy-data)
+- [Conclusion](#conclusion)
+- [Reference](#reference)
 
 > Setup Faker with the pip command:
 
 ```Python
 pip install faker
 ```
-### Listed below are methods and types of dummy data
+### Methods and types of dummy data
 #### 1. Creating and initializing faker generators
 You can generate and initialize fake generators using `Faker().` Using the Faker generator, you'll be able to generate any data you desire.
 ```Python
