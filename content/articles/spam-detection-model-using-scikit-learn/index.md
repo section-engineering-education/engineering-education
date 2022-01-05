@@ -23,7 +23,6 @@ The model will learn from this dataset and find relevant patterns that will help
 In this tutorial, we will build a machine learning model that will detect Youtube comments as spam or non-spam. We will use a dataset that contains a list of comments from popular Youtube channels to train our model. Finally, we will implement the model using the Naive Bayes algorithm.
 
 ### Table of contents
-
 - [Prerequisites](#prerequisites)
 - [Dataset preparation](#dataset-preparation)
 - [Extracting important columns](#extracting-important-columns)
@@ -37,7 +36,6 @@ In this tutorial, we will build a machine learning model that will detect Youtub
 - [References](#references)
 
 ### Prerequisites
-
 A reader should know the following to have a clear understanding of this tutorial.
 
 - Be well equipped with [Python programming](/engineering-education/python-projects-for-beginners/) skills.
@@ -47,7 +45,6 @@ A reader should know the following to have a clear understanding of this tutoria
 - Know how to build a machine learning model using [Google Colab notebook](https://research.google.com/).
 
 ### Dataset preparation
-
 The dataset used contains a list of comments from popular Youtube channels. We will use a dataset collected from five Youtube channels. We need to prepare this dataset so that it can be ready for use. 
 Data preparation involves correctly formatting our dataset to make it easy for use by the model during training.
 
@@ -73,7 +70,6 @@ df5 = pd.read_csv("Youtube05-Channel5.csv")
 Now we have five datasets, we need to concatenate or merge them. The five datasets will be joined together so that we have a single data frame.
 
 #### Datasets concatenation
-
 To join them together, we create a single data frame for the datasets and then apply the `concat` method.
 
 ```python
@@ -96,7 +92,6 @@ From the image above, our dataset has five columns: `COMMENT_ID`, `AUTHOR`, `DAT
 The merged dataset contains five datasets, we need to assign keys to our merged dataset to distinguish each dataset. 
 
 #### Assigning keys
-
 Assigning keys enables the model to know the Youtube channel that a dataset belongs to. We will have five keys to represent the five datasets as shown below.
 
 ```python
@@ -138,7 +133,6 @@ After combining the five datasets, we have `9780` Youtube comments.
 Let's check for any missing values in our dataset.
 
 ### Checking for missing values
-
 To check for missing values, use the following code:
 
 ```python
@@ -157,7 +151,6 @@ dtype: int64
 From the output above, there are no missing values. Therefore, our dataset is ready for use.
 
 ### Extracting important columns
-
 We need to extract the important columns from our dataset. As mentioned earlier, we are interested in only two columns, `CONTENT` and `CLASS`. 
 
 The `CONTENT` column contains the actual Youtube comments, this column will be used as an input for the model. The `CLASS` column contains the labels `0` and `1`, this column will be used as an output or target for the model.
@@ -176,7 +169,6 @@ df_y = df_data['CLASS']
 From the code above, `df_x` is the input variable and `df_y` is the output or target variable. After specifying our input and output variables, let's perform feature extraction.
 
 ### Feature extraction from text
-
 Feature extraction is the process of getting important characteristics from the raw text. Machine learning models do not understand the text and can not use text directly, that's why we have to perform feature extraction. The extracted features will now be used as inputs for the model.
 
 During the process of feature extraction, we have to convert the raw text into a vector of numeric values. The vectors of numeric values represent the original raw text. Machine learning models easily understand numeric values and can use them directly.
@@ -209,7 +201,6 @@ The output is shown below:
 We can now use this vector of numbers to build the model.
 
 ### Model building
-
 To build our machine learning model, we need to import the packages that will be useful during this process.
 
 ```python
@@ -231,7 +222,6 @@ We will use this package to split our dataset into two sets. The model will use 
 We will start by splitting the dataset.
 
 #### Dataset splitting
-
 To split the dataset, use the following code:
 
 ```python
@@ -247,12 +237,10 @@ clf = MultinomialNB()
 After initializing this method, we fit our model into our dataset. This enables the model to learn by identifying useful insights and patterns from the dataset.
 
 #### Model fitting
-
 ```python
 clf.fit(X_train,y_train)
 ```
 ### Accuracy score of our model
-
 To calculate the accuracy score of this trained model, use this code:
 
 ```python
@@ -266,7 +254,6 @@ Accuracy of Model 91.95046439628483 %
 This is a very high accuracy score, the model has a high chance of making accurate predictions. We can now evaluate this model using the testing dataset.
 
 ### Model evaluation
-
 We will use this model to classify the Youtube comments in the testing dataset as either spam or non-spam.
 
 ```python
@@ -281,7 +268,6 @@ From the image above, we can see the model was able to assign labels to our test
 We can use this model to make a single prediction.
 
 ### Making a single prediction
-
 We will use input text to predict as shown below.
 
 ```python
@@ -303,7 +289,6 @@ array([1], dtype=int64)
 The prediction result is `1`, which shows that the Youtube comment above is `spam`. We can use this mode to make another prediction.
 
 ### Making another prediction
-
 We will follow the same steps as above to make a second prediction.
 
 ```python
@@ -319,7 +304,6 @@ array([0], dtype=int64)
 The prediction result is `0`, which shows that the comment is `non-spam`. Using these two predictions, we can see that our model can be able to distinguish between spam and non-spam comments. 
 
 ### Conclusion 
-
 In this tutorial, we have learned how to build a spam detection model. We started by preparing our dataset to correctly format our dataset.  We had five datasets that were collected from popular Youtube channels.
 
 After preparing the dataset, we used it to build our spam detection model. The model was able to distinguish between spam and non-spam comments. This was the goal of this tutorial and we have successfully built a spam detection model.
@@ -327,7 +311,6 @@ After preparing the dataset, we used it to build our spam detection model. The m
 To get this spam detection model in Google Colab, click [here](https://colab.research.google.com/drive/1UPgeF-7EI1pZQ_QXS_h_D2VW2eI97BNl?usp=sharing)
 
 ### References
-
 - [Google Colab notebeook](https://colab.research.google.com/drive/1UPgeF-7EI1pZQ_QXS_h_D2VW2eI97BNl?usp=sharing)
 - [What is spam detection?](https://bdtechtalks.com/2020/11/30/machine-learning-spam-detection/)
 - [Scikit-learn documentation](https://scikit-learn.org/stable/)
