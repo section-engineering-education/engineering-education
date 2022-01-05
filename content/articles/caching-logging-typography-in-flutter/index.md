@@ -20,6 +20,28 @@ Resources are scarce irrespective of your context, and adequate utilization will
 
 Similarly, knowing what happens when our apps are running is vital for debugging. We want to know if our application behaves in the way it should or in a way it should not. When something breaks, we want to detect what caused it, when it happened and where it happened to fix the issue causing the malfunction. To achieve this, we make use of logging.
 
+
+### Table of contents
+- [Table of contents](#table-of-contents)
+- [Prerequisites](#prerequisites)
+- [Goals](#goals)
+- [Caching](#caching)
+- [Benefits ofcCaching](#benefits-ofccaching)
+- [Caching implementation](#caching-implementation)
+  - [Step 1](#step-1)
+  - [Step 2](#step-2)
+  - [Step 3](#step-3)
+- [Step 5, Operation, problem, solution](#step-5-operation-problem-solution)
+- [Logging](#logging)
+- [Typography](#typography)
+- [Conclusion](#conclusion)
+- [Further reading](#further-reading)
+
+### Prerequisites
+- Proficiency in dart and flutter programming languages for creating applications.
+- Experience with integrating services and functionalities in applications.
+- Knowing the various data structures and data types available in the dart programming language will better guide you to developing efficient applications. For more info about the data structures in dart, check out this [website](https://www.tutorialspoint.com/dart_programming/dart_programming_collection.htm).
+
 ### Goals
 In this tutorial, we will:
 - Implement caching into our application codebase.
@@ -27,26 +49,6 @@ In this tutorial, we will:
 - Know when to cache and how our data.
 - See the benefits of logging our application.
 - Implement typography for our application fonts.
-
-### Prerequisites
-- Proficiency in dart and flutter programming languages for creating applications.
-- Experience with integrating services and functionalities in applications.
-- Knowing the various data structures and data types available in the dart programming language will better guide you to developing efficient applications. For more info about the data structures in dart, check out this [website](https://www.tutorialspoint.com/dart_programming/dart_programming_collection.htm).
-
-### Table of contents
-- [Caching, Logging, and Typography in Flutter](#caching-logging-and-typography-in-flutter)
-    - [Introduction](#introduction)
-    - [Goals](#goals)
-    - [Prerequisite](#prerequisite)
-    - [Table of Contents](#table-of-contents)
-    - [Caching](#caching)
-    - [Benefits of Caching](#benefits-of-caching)
-    - [Caching Implementation](#caching-implementation)
-    - [Operation, Problem, Solution](#operation-problem-solution)
-    - [Logging](#logging)
-    - [Typography](#typography)
-    - [Conclusion](#conclusion)
-    - [Further reading](#further-reading)
 
 ### Caching 
 Caching is a mechanism implemented by a system or a system creator that temporarily stores data in available memory. It makes it easier to access and retrieve that information stored. Cache memory is made available for system use in a computer system, and data currently being used by the user while operating the system are sometimes cached.
@@ -66,6 +68,7 @@ They do not have to wait for data to be fetched every time they switch between t
 ### Caching implementation
 To show a sample of this, we will perform an HTTP request in our flutter application to fetch data when the user navigates to a new screen where its contents are fetched.
 
+#### Step 1
 In your `main.dart` file set up your flutter application to display a button that navigates to a new screen when clicked.
 
 ```dart
@@ -117,7 +120,7 @@ class _CountriesSelectState extends State<CountriesSelect> {
  }
 }
 ```
-
+#### Step 2
 Next, we will make a widget containing a text titled, USA, the country we want to get more information.
 
 ```dart
@@ -131,6 +134,7 @@ We specify the screen we wish to navigate to by passing the selected country as 
 
 Based on the information gotten from the constructor, we store that in a data field, making it accessible to the class.
 
+#### Step 3
 Next, we will request information about the selected country using the HTTP flutter package and a public rest API repository for country information offered by the [rest country](https://restcountries.com/). To achieve this, head on to the HTTP package repo and get the latest installed version. In this case, our is `HTTP: ^0.13.4` and add it to the dependencies in our `pubspec.yaml` file in the root directory of our application.
 
 ```yaml
@@ -444,7 +448,7 @@ The `FetchMoreScreen()` performs its request to the same resource and populates 
 
 Though this may not be the most efficient of examples, it is still sufficient to represent the idea of caching which we are discussing. 
 
-### Operation, problem, solution
+### Step 5, Operation, problem, solution
 If you run the code as it is, you will get a list of the countries listed on the first screen, then select a country of choice. You will proceed to the next screen, where details about the selected country are fetched from the endpoint. The data takes a while to display, but it renders on the screen once gotten. 
 
 Clicking the "More" button takes you to the next screen, which similarly sends a request to the database fetching extra details about the country. It also has a button labeled as ''Less'' that takes you back to the previous screen where you need to fetch the initial few data about the country, which is an irrelevant request. 
@@ -640,7 +644,9 @@ class _FetchDataScreenState extends State<FetchDataScreen> {
 
 @override
 Widget build(BuildContext context) {
-	…
+	
+  // The code to go here is similar to code in the same method in the previous example
+
 }
 }
 ```
