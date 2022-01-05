@@ -114,13 +114,15 @@ y= a0+a1x+ ε
 `Y` denotes the Dependent Variable, `X` denotes an independent variable, `a0` represents the line's intercept, `a1` is the linear regression coefficient, `ε` is an abbreviation for random error.
 
 Linear regression algorithms are divided into two:
+
 - `Simple Linear Regression` uses a single independent variable to predict the value of a numerical dependent variable.
+
 - `Many Linear Regression` predicts the value of a numerical dependent variable using `multiple independent variables`.
 
 ##### Linear Regression Line
 This graph depicts the association between two variables. As a result, a regression line appears.
 
-- `positive linear connection`- Axis of the dependent variable increases as the independent variable X rises.
+- `Positive linear connection`- Axis of the dependent variable increases as the independent variable X rises.
 
 ![Image 2](/engineering-education/understanding-machine-learning-algorithms-and-how-to-implement-them/image2)
 
@@ -135,7 +137,9 @@ Using the cost function, we can find the optimum values for `a0` and `a1`.
 
 **Cost function**
 - The cost function may be used to determine the mapping function's accuracy. These are Hypothesis functions.
+
 - It maximizes regression coefficients. It assesses a linear regression.
+
 - The cost function estimates the best fit line's coefficients.
 
 Using linear regression, you employ the MSE cost function (average of anticipated and actual values). It is spelled:
@@ -150,16 +154,22 @@ Where `N` denotes the total number of observations, `Yi` is the actual value, an
 K-NN divides data into training and test samples. The `k` closest method is implemented as follows in a classification issue.
 
 - `k` is the number of training instances in the feature space.
+
 - Calculate unknown data points' distance from all training examples.
+
 - Find the `k` observations closest to the unknown data point in the training data.
+
 - Calculate the unknown data point's distance from the training set.
+
 - The closest neighbor is the training data with the least value.
+
 Lesser distances between training and sample points are indicated as closest neighbors in KNN regression. Finally, it forecasts the outcome using the whole sum's average.
 
 ##### How to Pick K Value
 Because of this, the appropriate `k` value is picked.
 
 - To boost performance, it is better to use a big `k` value.
+
 - It will be possible to capture fine structures if they exist in the feature space by choosing k as a small value.
 
 For example, an algorithm that works well on a training set may not perform well on unknown test data if `k` is too small, leading to overfitting.
@@ -180,7 +190,7 @@ The following methods may be used to compute distance:
 ![Image 7](/engineering-education/understanding-machine-learning-algorithms-and-how-to-implement-them/image7)
 
 ##### How to pick the weights
-The weighted distance approach may be utilized for both classification and regression issues. 
+The weighted distance approach may be utilized for both classification and regression issues.
 
 Assigning weights indicates the relative importance of each neighbor's contributions, with the closest neighbors receiving a higher weight indicating a greater overall contribution.
 
@@ -194,18 +204,22 @@ Weighing options include:
 
 2. Two traditional techniques help speed up the closest neighbor search.
 
-For example 
+For example:
 
 ![Image 8](/engineering-education/understanding-machine-learning-algorithms-and-how-to-implement-them/image8)
 
 We've got N locations in D-space and one unlabeled sample q. We need to identify the point closest to q. For big N and D, the KNN method is unworkable.
 
-There are two conventional algorithms for speeding up the search.
+There are two conventional algorithms for speeding up the search:
+
 1. `Bucketing technique:` The Bucketing technique divides space into identical cells, each containing a list of data items.  
-The cells are evaluated to increase the distance from q, and the distance between each cell's internal data points and q is calculated.  
+
+The cells are evaluated to increase the distance from q, and the distance between each cell's internal data points and q is calculated.
+
 The search ends when the distance from q to the cell exceeds the nearest point previously visited.
 
-2. `k-d trees`: A k-d tree is a high-dimensional binary search tree. Each internal node in a k-d tree has an orthogonal hyper-rectangle and hyperplane.  
+2. `k-d trees`: A k-d tree is a high-dimensional binary search tree. Each internal node in a k-d tree has an orthogonal hyper-rectangle and hyperplane.
+
 By using the hyper-plane, you may divide the hyper-rectangle into two halves. Partitioning continues until the number of data points in the hyper-rectangle falls below n.
 
 ### Conclusion
@@ -214,7 +228,6 @@ Machine learning is a newer component of data science. It's time for company own
 Humans and robots will soon work together to achieve even bigger technological marvels. Choose the finest machine learning approach. Collaboration between humans and machines will improve results.
 
 Happy learning!
-
 
 ---
 Peer Review Contributions by: [Miller Juma](/engineering-education/content/authors/miller-juma/)
