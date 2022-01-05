@@ -103,7 +103,7 @@ A dependent `(y)` has a linear connection with one or more independent variables
 
 Since linear regression displays a linear connection, it finds how the dependent variable changes concerning the independent variable. It shows a straight line connecting variables.:
 
-![Image 1](/engineering-education/understanding-machine-learning-algorithms-and-how-to-implement-them/image1.png)
+![Linear regression](/engineering-education/understanding-machine-learning-algorithms-and-how-to-implement-them/linear-regression.png)
 
 Linear regression is stated mathematically as:
 
@@ -124,11 +124,11 @@ This graph depicts the association between two variables. As a result, a regress
 
 - `Positive linear connection`- Axis of the dependent variable increases as the independent variable X rises.
 
-![Image 2](/engineering-education/understanding-machine-learning-algorithms-and-how-to-implement-them/image2)
+![Positive linear connection](/engineering-education/understanding-machine-learning-algorithms-and-how-to-implement-them/positive-linear-connection.png)
 
 - `Negative Linear Relationship` -Y drops while X rises, indicating a negative linear relationship.
 
-![Image 4](/engineering-education/understanding-machine-learning-algorithms-and-how-to-implement-them/image4)
+![Negative Linear Relationship](/engineering-education/understanding-machine-learning-algorithms-and-how-to-implement-them/negative-linear-relationship.png)
 
 ##### Choosing the best fit line
 In linear regression, the best fit line has the least anticipated and actual values. The ideal line.
@@ -146,7 +146,7 @@ Using linear regression, you employ the MSE cost function (average of anticipate
 
 The mean square error (MSE) for the linear equation above may be determined as follows:
 
-![Image 3](/engineering-education/understanding-machine-learning-algorithms-and-how-to-implement-them/image3)
+![MSE Formula](/engineering-education/understanding-machine-learning-algorithms-and-how-to-implement-them/mse-formula.png)
 
 Where `N` denotes the total number of observations, `Yi` is the actual value, and `(a1xi+a0)` predicted the value.
 
@@ -179,15 +179,15 @@ The following methods may be used to compute distance:
 
 1. Euclidian distance
 
-![Image 5](/engineering-education/understanding-machine-learning-algorithms-and-how-to-implement-them/image6)
+![Euclidian distance formula](/engineering-education/understanding-machine-learning-algorithms-and-how-to-implement-them/euclidian-distance.png)
 
 2. Manhattan distance
 
-![Image 6](/engineering-education/understanding-machine-learning-algorithms-and-how-to-implement-them/image6)
+![Manhattan distance formula](/engineering-education/understanding-machine-learning-algorithms-and-how-to-implement-them/manhattan-distance.png)
 
 3. Weighted distance
 
-![Image 7](/engineering-education/understanding-machine-learning-algorithms-and-how-to-implement-them/image7)
+![Weighted distance formula](/engineering-education/understanding-machine-learning-algorithms-and-how-to-implement-them/weighted-distance.png)
 
 ##### How to pick the weights
 The weighted distance approach may be utilized for both classification and regression issues.
@@ -206,7 +206,7 @@ Weighing options include:
 
 For example:
 
-![Image 8](/engineering-education/understanding-machine-learning-algorithms-and-how-to-implement-them/image8)
+![Illustration of two traditional techniques](/engineering-education/understanding-machine-learning-algorithms-and-how-to-implement-them/graph.png)
 
 We've got N locations in D-space and one unlabeled sample q. We need to identify the point closest to q. For big N and D, the KNN method is unworkable.
 
