@@ -1,3 +1,21 @@
+--
+-
+layout: engineering-education
+status: publish
+published: true
+url: /detecting-malicious-url-using-machine-learning/
+title: Detecting Malicious URL using Machine Learning
+description: In this tutorial, we will learn how to build a Machine Learning model to detect malicious URLs.
+author: bravin-wasike
+date: 2022-01-05T00:00:00-01:00
+topics: [Machine Learning]
+excerpt_separator: <!--more-->
+images:
+
+  - url: /engineering-education/detecting-malicious-url-using-machine-learning/hero.jpg
+    alt: Detecting Malicious URL using Machine Learning Hero Image
+---
+
 A malicious URL is a website link that is designed to promote virus attacks, phishing attacks, scams, and fraudulent activities. When a user clicks a malicious URL they can download computer viruses such as trojan horses, ransomware, worms, and spyware. 
 
 The end goal of these viruses is to access personal information, damage the user's device, and for financial gain. They may also destroy the company's network leading to losses.
@@ -280,3 +298,6 @@ The Google Colab notebook used in this tutorial is found [here](https://colab.re
 - [What is a malicious URL?](https://cheapsslsecurity.com/blog/what-is-a-malicious-url/)
 - [Google Colab notebook](https://colab.research.google.com/drive/1H9ZSa3S6E0inX8zDK9LxDdFbeQ2yNXsr?usp=sharing)
 - [Logistic Regression in Python](/engineering-education/logistic-regression-in-python/)
+
+---
+Peer Review Contributions by: [Ahmad Mardeni](/engineering-education/authors/ahmad-mardeni/)
