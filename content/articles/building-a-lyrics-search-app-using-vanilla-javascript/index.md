@@ -163,7 +163,7 @@ form {
 You have successfully designed the web page by adding colors, font-sizes, font-family, padding, margin, and so on just to make this web app look nice.
 
 Here is what your web page should look like:
-![Screenshot for design](/building-lyrics-search-app-using-vanilla-javascript/design-screenshot.png)
+![Screenshot for design](/engineering-education/building-lyrics-search-app-using-vanilla-javascript/design-screenshot.png)
 
 ### Adding functionality with JavaScript
 
