@@ -24,7 +24,6 @@ A malicious URL can also be used to lure people to submit their personal informa
 In this tutorial, we will build a machine learning model that can be able to detect these malicious URLs. We will train our model using a dataset with URLs labeled both `bad` and `good`. We will build the model using [Scikit-learn](https://scikit-learn.org/stable/) Python library.
 
 ### Table of contents
-
 - [Prerequisites](#prerequisites)
 - [Exploring our dataset](#exploring-our-dataset)
 - [Loading dataset](#loading-dataset)
@@ -42,7 +41,6 @@ In this tutorial, we will build a machine learning model that can be able to det
 - [References](#references)
 
 ### Prerequisites
-
 To understand this tutorial easily, a reader should:
 
 - Have [Python programming](/engineering-education/python-projects-for-beginners/) skills.
@@ -52,7 +50,6 @@ To understand this tutorial easily, a reader should:
 - Code using [Google Colab notebook](https://research.google.com/).
 
 ### Exploring our dataset
-
 To build this model, we will use a dataset with URLs labeled both `bad` and `good`. The model will learn from the dataset and gain useful knowledge which it will use to make predictions. The dataset is shown below.
 
 ![Dataset used](/engineering-education/detecting-malicious-url-using-machine-learning/dataset-used.jpg)
@@ -62,7 +59,6 @@ The URLs dataset can be downloaded from [here](https://drive.google.com/file/d/1
 After successfully downloading the URLs dataset, we can now load this dataset into our notebook.
 
 ### Loading dataset
-
 We will use the Pandas package to load our package. To import Pandas, use the following code:
 
 ```python
@@ -85,8 +81,8 @@ The output is shown below:
 From the image above, the dataset has two columns. The first column is `url` which represents the actual ULR links. The second column is `label` which contains both `bad` and `good` URLs.
 
 From here we now need to clean our dataset to make it ready for use by our model during training.
-### Dataset cleaning
 
+### Dataset cleaning
 Dataset cleaning involves removing noise from our dataset. Noise is unnecessary characters in the text data, punctuations, and repetitive words. 
 
 Removing noise from our dataset will enable the model to focus only on the most important information in the dataset. This will increase the model performance. the model will be able to make accurate predictions.
@@ -119,7 +115,6 @@ The function will also remove the redundant words in the text. Finally, it remov
 After this text cleaning, we now need to add features and labels to our dataset.
 
 ### Features and labels
-
 Features are the unique data points in our dataset that are used as input for the model during training. Features are represented by the `url` column which is our input column.
 
 In machine learning, a label is the model's output after prediction. It is represented using the `label` column. The model's output can either be `bad` or `good`.
@@ -133,7 +128,6 @@ y = urls_data["label"]
 Let's now start importing the machine learning packages.
 
 ### Importing packages
-
 To build our machine learning model, we have various Python packages that are essential for this process. We will import all the important packages and explain their functions later.
 
 To import these packages, use this code:
@@ -148,9 +142,10 @@ The functions of each of these packages are as follows:
 **LogisticRegression**
 
 This is a [Scikit-learn](https://scikit-learn.org/stable/) algorithm that we will use to train our model. This algorithm will enable our model to understand patterns and relationships in our dataset. The model will gain useful knowledge and insight which it will use to make predictions.
+
 **train_test_split**
 
-This is the package used to calculate the accuracy score of the model we will build. The higher the accuracy score the better the model will be in making predictions.
+This is the function in Sklearn model selection for splitting data arrays into two subsets: for training data and for testing data.
 
 **TfidfVectorizer**
 
@@ -163,7 +158,6 @@ For further reading on how `TfidfVectorizer` works, read this [article](https://
 Let's now use these packages.
 
 #### Convert the text data into vectors of numbers
-
 To convert the text data into vectors of numbers, use this code:
 
 ```python
@@ -179,7 +173,6 @@ X = vectorizer.fit_transform(url_list)
 The next step is to split our dataset.
 
 #### Dataset splitting
-
 We will use `train_test_split` to split our dataset into two sets. One set will be used for model training and the other one will be used for model testing.
 
 ```python
@@ -190,15 +183,14 @@ In this code, we have used `test_size=0.2`. This is the ratio applied when split
 We can now build the model using the `LogisticRegression`
 
 ### Model building using LogisticRegression
-
 We will initialize the `LogisticRegression` algorithm using the following code:
 
 ```python
 logit = LogisticRegression()
 ```
 After initializing the algorithm, we will fit the algorithm onto our training dataset. The model will learn from this dataset.
-#### Fitting algorithm
 
+#### Fitting algorithm
 To fit the algorithm, use this code:
 
 ```python
@@ -211,7 +203,6 @@ This process will train our model and produce the following output.
 The output shows our model trained with all the best parameters. Let's now calculate the accuracy score of our model.
 
 ### Calculating the model's accuracy score
-
 To calculate the accuracy score, run this code:
 
 ```python
@@ -225,7 +216,6 @@ Accuracy  0.96163771063
 The accuracy score is `96.164%`. This is a very high accuracy score and implies that our model was well trained. The model learned a lot from the dataset during the training phase and can now be used to make predictions.
 
 ### Making predictions
-
 To make predictions, we will use several URLs and see if the model can classify if the URL is `bad` or `good`. The URLs that we will use are shown below.
 
 ```python
@@ -259,7 +249,6 @@ From the prediction results, the model has predicted the first three websites as
 Let's make another prediction.
 
 #### Another prediction
-
 The following are the website URLs.
 
 ```python
@@ -284,7 +273,6 @@ The prediction result is shown below.
 The model has classified all the URLs as `bad`. Using this model we can able to classify URLs as either `bad` or `good`.
 
 ### Conclusion
-
 In this tutorial, we have learned how to detect malicious URLs using machine learning. We started by discussing the negative impact of clicking a malicious URL. 
 
 In the next section, we clean our dataset to ensure that is correctly formatted. Finally, we used our clean dataset to build a machine learning model that can detect malicious URLs. Our model was able to classify URLs as either `bad` or `good`. Following the steps outlined in this tutorial, a reader should be able to come up with the model.
@@ -292,7 +280,6 @@ In the next section, we clean our dataset to ensure that is correctly formatted.
 The Google Colab notebook used in this tutorial is found [here](https://colab.research.google.com/drive/1gsHe5AhCPVtsomlydwAfFmGJNTcXdnZ8?usp=sharing)
 
 ### References
-
 - [Scikit-learn documentation](https://scikit-learn.org/stable/)
 - [What is a malicious URL?](https://cheapsslsecurity.com/blog/what-is-a-malicious-url/)
 - [Google Colab notebook](https://colab.research.google.com/drive/1H9ZSa3S6E0inX8zDK9LxDdFbeQ2yNXsr?usp=sharing)
