@@ -195,8 +195,7 @@ corpus = df_x
 cv = CountVectorizer()
 X = cv.fit_transform(corpus)
 ```
-In the code above, we save the input variable into a new variable `corpus`. 
-The `fit_transform` ensures that the `CountVectorizer` completely fits our input dataset and no data point is left out. Therefore, all the raw text will be converted into vectors of numeric values.
+In the code above, we save the input variable into a new variable `corpus`. The `fit_transform` ensures that the `CountVectorizer` completely fits our input dataset and no data point is left out. Therefore, all the raw text will be converted into vectors of numeric values.
 
 To view these vectors of numeric values, use this code. The code will convert the numeric values into an array of numbers.
 
