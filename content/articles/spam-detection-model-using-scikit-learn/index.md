@@ -57,7 +57,7 @@ First, we need to load these datasets into our machine. Let's import the package
 import pandas as pd
 import numpy as np
 ```
-We will use Pandas to read the datasets and Numpy will be used to perform mathematical operations on these datasets. Since we have collected the dataset from five Youtube channels, we will have a total of five datasets. 
+We will use `Pandas` to read the datasets and `Numpy`  to perform mathematical operations on these datasets. Since we have collected the dataset from five Youtube channels, we will have a total of five datasets. 
 
 To download the five datasets in a ZIP file, click [here](https://drive.google.com/file/d/1rF1qv4onQQ-DH0MRJdVtKnm0pAApDk96/view?usp=sharing). After downloading the ZIP file, extract the individual datasets which we will load onto our machine.
 
