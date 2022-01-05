@@ -186,7 +186,15 @@ Here is what your web page should look like:
 ![Screenshot for design](/engineering-education/building-lyrics-search-app-using-vanilla-javascript/design-screenshot.png)
 
 ### Brief Introduction to the OVH API
-  
+  The OVH lyrics API, is a simple API that helps us retrieve lyrics of the song requested. While trying to get lyrics from this API, I noticed that it only has two parameters you can use to get data (lyrics), which are the artist name and title of the song. This basically means you can retrieve lyrics by using either the artist name or the title of the song. When a request is made, the data is returned in a JSON format.
+
+Using this API, you will get two status codes. They are:
+- Status code 200
+- Status code 404
+
+You should be familiar with status code 404, if you don't know, 404 stands for error. According to the usage of this API, code 200 simply means `Here the lyrics of the song` just as we have resolve and reject when will make use of `Promises` in JavaScript, so code 200 can be likened to resolve and code 404 which means `No lyrics found` can be likened to reject.
+
+This is how the url looks like: `https://api.lyrics.ovh/v1/artist/title`
 
 ### Adding functionality with JavaScript
 
