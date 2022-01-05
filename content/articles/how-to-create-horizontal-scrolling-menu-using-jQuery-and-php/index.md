@@ -5,7 +5,7 @@ published: true
 url: /how-to-create-horizontal-scrolling-menu-using-jquery-and-php/
 title: How to Create Horizontal Scrolling Menu using jQuery and PHP
 description: In this tutorial, we will create a simple horizontal scrollable menu using a simple model in jQuery and PHP.
-author: 
+author: bernard-njenga
 date: 2022-01-05T00:00:00-05:40
 topics: [Languages]
 excerpt_separator: <!--more-->
