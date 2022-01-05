@@ -14,7 +14,7 @@ images:
   - url: /engineering-education/collection-in-java/hero.jpg
     alt: Collection in Java Hero Image Hero Image
 ---
-Before introducing the collection framework, popular ways of grouping objects were arrays, Vvectors, and other ways. 
+Before introducing the collection framework, popular ways of grouping objects were arrays, vectors, and other ways. 
 <!--more-->
 The only disadvantage of all the collections mentioned above is that they had no standard interface. When implementing these collections, they have to be defined independently.
 
