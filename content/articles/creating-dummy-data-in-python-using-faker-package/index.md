@@ -125,7 +125,8 @@ Providers include many valuable attributes, such as `names()` and `address()`. 
 They are as follows:
 
 1. Accessing Numpy's Random module in Python: Pseudorandom numbers can be generated with the random package. Many functions are available, including `rand()`, `randint()`, and many more.
-**WExample**
+
+Example:
 ```python
 import numpy as num
 myArray = num.random.rand(5)
@@ -140,9 +141,9 @@ Array :
 ###  A few more words regarding dummy data
 Dummy variables are numeric variables that represent the dataset's categorical variables' subdivisions or groupings. We may use the data for regression analysis by utilizing a dummy variable that allows us to distinguish between distinct sub-groups of the data. As a result of dummy variables, a single regression equation like y= a + bc might represent multiple groups. The necessity for different equations for each subgroup is eliminated. Put it differently; dummy variables are like switches in an equation that can enable or disable other variables.
 
-Highly interconnected attributes and one predicts the value of the other are known as the **dummy variable trap**. Dummy variable traps can be avoided if you have many characteristics that are highly connected (Multicollinear). Multicollinearity occurs when the correlations between two or more independent variables are incredibly high in a regression model. 
+Highly interconnected attributes predicts the value of each other are known as the **dummy variable traps**. Dummy variable traps can be avoided if you have many characteristics that are highly connected (Multicollinear). Multicollinearity occurs when the correlations between two or more independent variables are incredibly high in a regression model. 
 ### Conclusion
-Various data was generated using faker, a Python library. T his package has a lot of possibilities. In the past, I demonstrated how to create fictitious data. How to create names and addresses as well as currency data was covered. As well as creating new dummy data, we honed our skills in reproducing existing dummies. During our investigation of the providers, we discovered the possibility of creating data specific to a specific location. You will save a lot of time and effort if you follow this information when testing your application.
+Various data was generated using faker, a Python library. This package has a lot of possibilities. In the past, I demonstrated how to create fictitious data. How to create names and addresses as well as currency data was covered. As well as creating new dummy data, we honed our skills in reproducing existing dummies. During our investigation of the providers, we discovered the possibility of creating data specific to a specific location. You will save a lot of time and effort if you follow this information when testing your application.
 ### Reference
 1. To see the whole code for this tutorial, click [here](https://colab.research.google.com/drive/1X9VLRsKpKOZisIzpRlfzIU_MneD1busP?usp=sharing)
 2. Dummy data [generation](https://dev.to/petercour/dummy-data-generation-with-python-1kjg) with Python
