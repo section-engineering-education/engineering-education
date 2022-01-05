@@ -25,7 +25,7 @@ The [best way](https://machinelearningmastery.com/a-data-driven-approach-to-mach
 - [Introduction](#INTRODUCTION)
 - [Prerequisites](#Prerequisites)
 - [The Concept of Deep Learning](#The-Concept-of-Deep-Learning)
-- [What are optimizers](#What-Are-Optimizers?)
+- [What are optimizers](#What-Are-Optimizers)
 - [Some Determinants That Transform Deep Learning Systems’ Performance](#Some-Determinants-That-Transform-Deep-Learning-Systems-Performance)
 - [How To Get A Perfect Performance Rate From A Deep Learning System](#How-To-Get-A-Perfect-Performance-Rate-From-A-Deep-Learning-System)
 - [Diagram demonstrating the different scenarios one can fall into when configuring the learning rate](#Diagram-demonstrating-the-different-scenarios-one-can-fall-into-when-configuring-the-learning-rate-.)
