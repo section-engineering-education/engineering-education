@@ -47,13 +47,14 @@ To follow along with this tutorial, you need to be familiar with the following;
 ### The Concept of Deep Learning
 In deep learning, an excessive volume of information [data sets](https://www.simplilearn.com/what-is-data-article) can be trained at the same time. This uses learning algorithms in deep learning. Deep learning systems tend to gather functional facts from larger datasets. This fact helps in enhancing predictions in the system more accurately. 
 
-Classifications and predictions of data are based on responses to a series of binary true or false questions involving highly complicated mathematical calculations while processing the data. This simply means a deep learning system can either accept data with similar features or reject data with little difference in complex algorithms while in procession. 
+Classifications and predictions of data are based on responses to a series of binary true or false questions involving highly complicated mathematical calculations while processing the data. This simply means a deep learning system algorithm is designed in such a way that it can easily recognize/predict and collect similar data sets or reject the data sets that does not fit the needed system model during the training of data sets.
+>**True** in this context means that the system's algorithm accepts the data to match the type of data needed to develop the required system while **False** means that the system's algorithm has rejected such data as it doesn't match the requirements.
 
 A facial recognition algorithm, for example, learns to detect and recognize face edges and lines, then more significant aspects of the faces, and finally overall representations of faces. The algorithm learns and improves with time, increasing the likelihood of getting it right. In this situation, the facial recognition software will recognize faces properly over time. Picking up the precise contour of everything's face will result in the collection of a larger number of datasets (big data) and an accurate extract result.
 
 This example shows that an excessive volume of data is needed to predict a deep learning system accurately.
 
-The ability to fine-tune the system and the considered problem are two enhancing variables in Deep Learning. Any optimizer’s accuracy is measured using these factors.
+The ability to fine-tune the system and consider the problem it is going to be used to solve are two enhancing variables in Deep Learning. Any optimizer’s accuracy is measured using these factors.
 ### What Are Optimizers?
 
 In deep learning, Optimizers are algorithms or approaches that are used to reduce an error function [(loss function)](https://shiva-verma.medium.com/understanding-different-loss-functions-for-neural-networks-dd1ed0274718)  or increase production efficiency.  Optimizers are mathematical functions that are based on the learnable parameters of a model, such as weights and biases. Optimizers assist in determining how to alter the weights and learning rate of a neural network to minimise losses. 
@@ -69,7 +70,7 @@ a) What kind of system should be built?
 
 b) How will the developed algorithm handle the immediate user’s demands?
 
-In such a problem, the engineer is faced with challenges like, picking the best optimizer that will produce accurate results.
+In such a problem, the engineer is faced with challenges like, picking the best optimizer that will produce accurate results. By doing this, the problem of loss function will be minimized.
 
 c) How easily will re-engineering be made possible?
 
@@ -98,13 +99,13 @@ The process of predicting the class of a set of data points is known as __*class
 In data optimization, a few factors are considered like;
 
 1.`The need for additional datasets into the deep learning system:`
-Having more depth of knowledge about a system model is the best savage for accuracy in deep learning. Allow the additional facts to speak for themselves rather than relying on assumptions and questionable relationships. Models that have more data are more accurate and better. As far as I'm aware, we don't have the ability to add more data. In some projects, for example, we don't have the option of increasing the training data size. However, if you're working on a company project, I strongly advise you to ask for more details if it's possible. As a result, working with small data sets will be more straightforward. As a result of these modifications, the training set's overfitting is decreased.
+Having more depth of knowledge about a system model is the best savage for accuracy in deep learning. Allow the additional facts to speak for themselves rather than relying on assumptions and questionable relationships. Models that have more data are more accurate and better. In such a situation as this, Individauls do not have the ability to add more data. In some projects, for example, we don't have the option of increasing the training data size. However, if you're working on a company project, It is strongly advisible that you to ask for more details if it's possible. As a result, working with small data sets will be more straightforward. As a result of these modifications, the training set's overfitting is decreased.
 
 #### Algorithm Tuning 
 Parameters are known to drive deep learning algorithms. The result of the learning process is heavily influenced by these variables. Parameter tuning is the process of determining the best value for each parameter in order to increase the model's accuracy. To fine-tune these factors, you must first grasp their meaning and how they affect the model individually. This technique can be repeated with a variety of successful system models.
 It's impossible to predict which deep learning algorithm will suit your system the best.
 
-When I'm presented with a new situation and don't have access to a deep research method that can quickly assist me in achieving my objectives, I look at a few options and attempt them all. Deep learning (CNNs, RNNs, and so on) and traditional machine learning techniques such as [Random Forests, Gradient Boosting]( https://www.analyticsvidhya.com/blog/2015/06/tuning-random-forest-model/) , and so on.
+When presented with a new situation and don't have access to a deep research method that can quickly be of assistance in achieving the required objectives, it is best to look at a few options and attempt them all. Deep learning (CNNs, RNNs, and so on) and traditional machine learning techniques such as [Random Forests, Gradient Boosting]( https://www.analyticsvidhya.com/blog/2015/06/tuning-random-forest-model/) , and so on.
 Rank the outcomes of all your trials and focus your efforts on the best-performing algorithms.
 
 #### Hyper-Parameter Optimization
@@ -131,15 +132,14 @@ For examples, [click here](https://stats.stackexchange.com/questions/231061/how-
 4.`Regularization:`
 Regularization is a reliable strategy for avoiding overfitting.
 
-You can train your deep learning project in a few different ways to apply regularization. If you haven't already, I recommend incorporating these techniques into every project you work on. 
+You can train your deep learning project in a few different ways to apply regularization. If you haven't already, incorporating these techniques into every project you work on is best. 
  
 1. They switch off a percentage of neurons at random during training, which is known as __*dropout*__. Dropout is a technique for preventing groups of neurons from overfitting one another.
-2. `Weight penalty L1 and L2:`In deep learning, weights that expand in size can be a major concern and degrade accuracy. Adding all of our parameters (weights) to our loss function is one method to penalize complexity. That won't work because some of the parameters are positive while others are negative. What if we multiply our loss function by the squares of all the parameters? We can do that, but it may result in such a large loss that the optimum model is to set all of the parameters to 0.
-To keep this from happening, we divide the total of squares by a smaller number. Weight decay or `wd`, is the name given to this figure.
+2. `Weight penalty L1 and L2:`Weight penalty is a technique for reducing overfitting of a deep learning neural network model on training data while also improving the model's performance on new data.
 
-     The following is our new loss function:
+   In deep learning, weights that expand in size can be a major concern and degrade accuracy. Adding all of our parameters (weights) to our loss function is one method to penalize complexity. That won't work because some of the parameters are positive while others are negative. The problem can be remedied by making changes to the learning algorithm to encourage the network to keep its weights low. This is known as **Weight regularization** and is regarded as a general method for reducing training dataset overfitting and increasing model generalization.
 
-     `MSE(y hat, y) + wd * sum(w2) = Loss`
+   Check out the [different methods on how to penalize and control larger weights](https://machinelearningmastery.com/weight-regularization-to-reduce-overfitting-of-deep-learning-models/). 
 #### Ensemble Methods
  This method essentially aggregates the output of several poor models to obtain superior results. This can be accomplished in a variety of ways:
 
@@ -163,7 +163,7 @@ This is for two reasons:
 
 ![Display Rate Charts](engineering-education/Factor-that-affects-the-performance-deep-learning-systems/display_rate_charts.png)
 
-Leslie N. Smith argued that you could estimate a good learning rate by training the model initially with a very low learning rate and increasing it (either linearly or exponentially) at each iteration.
+[Leslie N. Smith](https://arxiv.org/abs/1506.01186) argued that you could estimate a good learning rate by training the model initially with a very low learning rate and increasing it (either linearly or exponentially) at each iteration.
 
 >Note; Less training time, lesser money spent on GPU cloud computation.
 
@@ -173,7 +173,7 @@ Leslie N. Smith argued that you could estimate a good learning rate by training 
 
 ![Learning Rate Chart](engineering-education/Factor-that-affects-the-performance-deep-learning-systems/learning_rate_scale.png)
  
-### CONCULSION
+### Conclusion
 With the vast and rapid development of technology, deep learning is the key to today’s smart world. This has brought an ease in communication between humans and their daily environment. There are some difficulties in understanding the deep learning system algorithm.
 
 Some real-life postulates are cited to help design the deep network algorithm.
