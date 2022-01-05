@@ -11,7 +11,7 @@ topics: [Machine Learning]
 excerpt_separator: <!--more-->
 images:
 
-  - url: /engineering-education/leveraging-gptneo-to-generate-ai--based-blog-content/hero.png
+  - url: /engineering-education/leveraging-gptneo-to-generate-ai-based-blog-content/hero.png
     alt: GPT-Neo Hero Image
 ---
 In this tutorial, we will take you through how to build an AI-powered blog content generator using a GPT-3 clone known as GPT-Neo.
