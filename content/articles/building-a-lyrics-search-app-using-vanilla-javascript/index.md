@@ -1,11 +1,22 @@
 
 ## Building a Lyrics Search App Using Vanilla JavaScript
 
-![hero image](/building-lyrics-search-app-using-vanilla-javascript/hero.png)
+![hero image](/engineering-education/building-lyrics-search-app-using-vanilla-javascript/hero.png)
 
 Not knowing the lyrics of a song, is a problem most song-lovers encounter. In this article, you will be creating a platform where users can search for lyrics by entering the artist name or title of the song.
 
 You will be creating the search app using HTML5, CSS3, Vanilla JavaScript, async-await with fetch method, OVH API, and ECMAScript 2015 (ES6) features like arrow functions.
+
+###Table  Of Contents
+- Pre-requisites
+- Structuring the lyrics search app with HTML5
+- Designing the lyrics search app
+- Adding functionality with JavaScript
+- Testing the Current State Of the Web app
+- Inner - HTML
+- GetLyrics() async function
+- Styling and centering the lyrics
+- Conclusion
 
 ### Pre-requisites
 
@@ -18,7 +29,16 @@ To follow along with this tutorial, you need the following:
 ### Structuring the lyrics search app with HTML5
 To begin, create a folder named `lyrics-app`, then you need to create three files in the folder: `lyrics.html`, `lyrics.css`, and `lyrics.js`.
 
-In the `lyrics.html` file, copy the code below and paste it in your code editor to create the structure for the lyrics search app.
+The code snippet below creates the structure for the lyrics search app. In creating the structure of the lyrics search app, you will make use of HTML5. This section deals
+with the `lyrics.html` file you created. 
+
+In the head tag (<head></head>) of the HTML file, you will input the needed or pre-defined meta tags that is essential for all web apps. Still in the `head` tag, you would link the CSS file to the HTML file and also give the web app a title of `Lyrics Search App` embedded between the opening and closing `title` tag.
+
+Next, you would create a div with a class of `container`, this is the div that would house other divs which you will create. Moving forward, you will create another div with class of `intro-text`, in this div you will create two separate text using the `h1` and `h2` tag respectively. The content of the first text is `Learn your favourite`, it will be embedded in the `h1` tag, while the content of the second text is `song lyrics`, it will also be embedded in the `h2` tag. Those are the contents for the div that has the class of `intro-text`.
+
+Inside the div with class of `container`, you will create another div with id of `lyrics-search`. In this newly created div, you will create a form which an input field will be embedded in it, and also another separate div where the fetched lyrics would be displayed. 
+
+This is the code snippet for the structure of the web app:
 
 ```html
 
@@ -38,7 +58,7 @@ In the `lyrics.html` file, copy the code below and paste it in your code editor 
             <h2>song lyrics</h2>
         </div>
 
-        <div id="lyrics-serach">
+        <div id="lyrics-search">
             <form action="" id="searchMe">
                 <input type="text" id="lyricSearch" placeholder="artist name or song title"/>
             </form>
@@ -165,6 +185,9 @@ You have successfully designed the web page by adding colors, font-sizes, font-f
 Here is what your web page should look like:
 ![Screenshot for design](/engineering-education/building-lyrics-search-app-using-vanilla-javascript/design-screenshot.png)
 
+### Brief Introduction to the OVH API
+  
+
 ### Adding functionality with JavaScript
 
 In your `lyrics.js` file, declare variables and use the DOM selectors to connect with elements in the `lyrics.html` file, using the code snippet below:
@@ -228,15 +251,18 @@ async function startSearch(searchValue) {
     console.log(data);
     showData(data);
 }
-
-
 ```
 
-Comment out the showData function in the code snippet above (remember to uncomment the showData function), then launch the web app using the [live server vs code extension](https://marketplace.visualstudio.com/items?itemName=ritwickdey.LiveServer). Type in a song in the search field (note that some suggested song lyrics are not avilable on this API, you can get a paid API to explore more), after which you should console log the result. To access the console, right-click inside the webpage, click the inspect option then navigate to the console in the chrome dev tools.
+### Testing the Current State Of the Web app
+ At this point, you are going to test if the web app is actually returning the object of data from the OVH API when you input the title of a song or the name of an artist in the search field. The following are the task to carry out in this section.
+ - Comment out the showData function in the code snippet above (remember to uncomment the showData function).
+ - Launch the web app using the [live server vs code extension](https://marketplace.visualstudio.com/items?itemName=ritwickdey.LiveServer).
+ - Type in a song in the search field (note that some suggested song lyrics are not avilable on this API, you can get a paid API to explore more).
+ - Console log the result (To access the console, right-click inside the webpage, click the inspect option then navigate to the console in the chrome dev tools).
 
 Your screen should be like the screenshot below:
 
-![Screenshot for consoled data](/building-lyrics-search-app-using-vanilla-javascript/console-screenshot.png)
+![Screenshot for consoled data](/engineering-education/building-lyrics-search-app-using-vanilla-javascript/console-screenshot.png)
 
 The next thing to do is to create a function `showData()` that will display the data in the console (the screenshot above) on the webpage. The function `showData()` is being called from the async function `startSearch()`.
 
