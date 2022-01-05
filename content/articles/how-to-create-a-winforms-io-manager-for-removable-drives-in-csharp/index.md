@@ -61,7 +61,7 @@ After loading the project, you should see something similar to this:
 #### Renaming the form title
 To rename the form title, click on  `Form 1` and in the `properties`  sidebar under `Text`, change to `I/O Manager`.
 
-![Renaming Form1](/engineering-education/how-to-create-a-winforms-io-manager-for-removable-drives-in-c#/renaming-form1.jpg)
+![Renaming Form1](/engineering-education/how-to-create-a-winforms-io-manager-for-removable-drives-in-csharp/renaming-form1.jpg)
 
 #### Changing the background color
 Click on the `I/O Manager` form and in the `Properties` sidebar under `BackColor`, change the background color to `Teal`
