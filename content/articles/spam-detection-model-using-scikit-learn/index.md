@@ -45,8 +45,7 @@ A reader should know the following to have a clear understanding of this tutoria
 - Know how to build a machine learning model using [Google Colab notebook](https://research.google.com/).
 
 ### Dataset preparation
-The dataset used contains a list of comments from popular Youtube channels. We will use a dataset collected from five Youtube channels. We need to prepare this dataset so that it can be ready for use. 
-Data preparation involves correctly formatting our dataset to make it easy for use by the model during training.
+The dataset used contains a list of comments from popular Youtube channels. We will use a dataset collected from five Youtube channels. We need to prepare this dataset so that it can be ready for use. Data preparation involves correctly formatting our dataset to make it easy for use by the model during training.
 
 First, we need to load these datasets into our machine. Let's import the packages that will load our dataset.
 
@@ -54,7 +53,7 @@ First, we need to load these datasets into our machine. Let's import the package
 import pandas as pd
 import numpy as np
 ```
-We will use `Pandas` to read the datasets and `Numpy`  to perform mathematical operations on these datasets. Since we have collected the dataset from five Youtube channels, we will have a total of five datasets. 
+We will use `Pandas` to read the datasets and `Numpy` to perform mathematical operations on these datasets. Since we have collected the dataset from five Youtube channels, we will have a total of five datasets. 
 
 To download the five datasets in a ZIP file, click [here](https://drive.google.com/file/d/1rF1qv4onQQ-DH0MRJdVtKnm0pAApDk96/view?usp=sharing). After downloading the ZIP file, extract the individual datasets which we will load onto our machine.
 
