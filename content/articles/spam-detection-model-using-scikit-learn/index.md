@@ -272,7 +272,7 @@ We will use this model to classify the Youtube comments in the testing dataset a
 ```python
 clf.predict(X_test)
 ```
-We use the `predict` method, to classify all the Youtube comments in the testing dataset. The output is shown below.
+We use the `predict` method to classify all the Youtube comments in the testing dataset. The output is shown below:
 
 ![Model evaluation](/engineering-education/spam-detection-model-using-scikit-learn/model-evaluation.png)
 
