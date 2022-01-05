@@ -17,7 +17,7 @@ images:
 ### Introduction
 Localization is the process of modeling applications to a specific locale, market, or device. Localization is said to be translation.
 <!--more-->
-Globalization is the process of building and developing a software product that functions in multiple cultures and locales.
+Globalization is a term used in a wide variety of contexts such as transport, companies, and technology. In the field of technology, globalization is defined as the process of building and developing a software product that functions in multiple cultures and locales, which serve a diverse group of people on a single platform.
 
 Internationalization is the process of localizing and globalizing your application.
 
