@@ -309,11 +309,11 @@ There are several use cases for the ```when-then``` directive.
     private HostelRepository hostelRepository;
     private LocalDateTime time;
 
-    @BeforeEach
-        void setUp() {
-        time = null;
-        studentService = new StudentServiceImpl(studentRepository, hostelRepository);
-      }
+     @BeforeEach
+       void setUp() {
+           time = null;
+           studentService = new StudentServiceImpl(studentRepository, hostelRepository);
+       }
     }
     ```
    Next, we create a getter method called ```getTime``` that will return the value of the ```time``` variable whenever it is called:
@@ -498,23 +498,22 @@ When we *spy* on a class, Mockito spins an actual class object but now interacti
 We refactor the test case for the ```registerStudent``` method as follows:
 
 ```java
- @Test
-    void registerStudentTest() throws Exception {
-      RegistrationRequest registrationRequest = new RegistrationRequest("John", "Fallow",
-      "my_password", "PSC1004396", Gender.MALE);
-      Student student = Student.builder()
-                    .firstName("John")
-                    .lastName("Fallow")
-                    .matricNo("PSC100419")
-                    .password("my_password")
-                    .gender(Gender.MALE).build();
-      doReturn(student).when(studentRepository).save(any(Student.class));
-      StudentDto studentDto = studentService.registerStudent(registrationRequest);
-      assertThat(studentDto, hasProperty("firstName", equalTo("John")));
-      assertThat(studentDto, hasProperty("lastName", equalTo("Fallow")));
-      assertThat(studentDto, hasProperty("matricNo", equalTo("PSC100419")));
-      assertThat(studentDto, hasProperty("gender", equalTo(Gender.MALE)));
-  }
+@Test
+void registerStudentTest() throws Exception {
+    RegistrationRequest registrationRequest = new RegistrationRequest("John", "Fallow","my_password", "PSC1004396", Gender.MALE);
+    Student student = Student.builder()
+                            .firstName("John")
+                            .lastName("Fallow")
+                            .matricNo("PSC100419")
+                            .password("my_password")
+                            .gender(Gender.MALE).build();
+    doReturn(student).when(studentRepository).save(any(Student.class));
+    StudentDto studentDto = studentService.registerStudent(registrationRequest);
+    assertThat(studentDto, hasProperty("firstName", equalTo("John")));
+    assertThat(studentDto, hasProperty("lastName", equalTo("Fallow")));
+    assertThat(studentDto, hasProperty("matricNo", equalTo("PSC100419")));
+    assertThat(studentDto, hasProperty("gender", equalTo(Gender.MALE)));
+}
 ```
 
 > Notice ```doReturn(student).when(studentRepository).save(any(Student.class));``` is similar to writing ```when(studentRepository.save(any(Student.class)).thenReturn(student)```.  There is an important pitfall to note when using spy objects with the  ```when then```directive. The actual method will be called (because ```studentRepository.save(any(Student.class))``` is evaluated before ```when(..)``` at runtime). Using the ```when- then``` directive with spies can be a problem if our method contains logic that we do not want to invoke. Hence, we use```doReturn(student).when(studentRepository).save(any(Student.class));```
@@ -545,7 +544,7 @@ At this point, it is important to highlight that the ```do…when``` directive c
                    .password("securedPassword")
                    .registrationTime(getTime())
                    .gender(Gender.MALE).build();
-      }).when(studentRepository).save(any(Student.class))```
+      }).when(studentRepository).save(any(Student.class))
   ```
 
 ### Verifying method invocation using Mockito.verify()
