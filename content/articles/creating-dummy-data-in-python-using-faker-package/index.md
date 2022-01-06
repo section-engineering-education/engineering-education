@@ -14,7 +14,7 @@ images:
   - url: /engineering-education/creating-dummy-data-in-python-using-faker-package/hero.jpg
     alt: Creating Dummy Data using Python Faker Package Hero Image
 ---
-It's critical to test and evaluate software and hardware with dummy data before working with actual data. Running the code through various scenarios and test cases allows detection of possible bugs.
+It's critical to test and evaluate software and hardware with dummy data before working with actual data. Running the code through various scenarios and test cases allows the detection of possible bugs.
 <!--more-->
 Faked data can be easily generated with a Python library faker. In this tutorial, we will learn how dummy data is generated using the Python Faker library.
 
@@ -27,10 +27,10 @@ Faked data can be easily generated with a Python library faker. In this tutorial
 
 ### Pre-requisites
 To follow along, you must have:
-- A good understanding of Python programming language.
-- A Python IDE installed. To install Python visit [this documentation](https://www.python.org/).
+- A good understanding of the Python programming language.
+- Python IDE installed. To install Python visit [this documentation](https://www.python.org/).
 
-To begin with, let's install the Python library `Faker` as shown:
+To begin with, let's install the Python library, `Faker`, as shown:
 
 ```bash
 pip install faker
@@ -115,7 +115,7 @@ texts = [ourFake.unique.name() for b in range(10)]
 #### Command-line usage
 Command-line invocation of the faker package allows you to generate dummy data by directly typing for it in the command prompt.
 
-Here is an example typed in the command prompt:
+Here is an example in the command prompt:
 
 ```Python
 faker address
@@ -128,7 +128,7 @@ faker address
 ```
 
 #### Locales
-The Faker generator may generate localized fake data, if a locale is provided as an input.
+The Faker generator may generate localized fake data if a locale is provided as an input.
 
 Moreover, localized dummy data can be translated into various languages.
 
@@ -155,7 +155,7 @@ Melissa Barrera
 Juan Greene
 ```
 
-> Similarly, you can view full list of locales [here](https://faker.readthedocs.io/en/master/locales.html).
+> Similarly, you can view the full list of locales [here](https://faker.readthedocs.io/en/master/locales.html).
 
 #### Currency
 The Faker generator may generate fake data about currencies using the `currency()` method.
@@ -187,7 +187,7 @@ ourFake.cryptocurrency()
 #### Create a dummy dataset
 Now, let's try to create a dummy dataset that can be used for Machine Learning.
 
-Let's assume dataset generation for 20 people containing their employment status, type of job, company name, residence and so on.
+Let's assume dataset generation for 20 people containing their employment status, type of job, company name, residence, and so on.
 
 We'll construct the dataset using a [Standard Provider](https://faker.readthedocs.io/en/master/providers.html) called `profile()` and save it in Pandas Dataframes.
 
@@ -235,7 +235,7 @@ To test your code quickly, you can use this anytime.
 You can learn more about Fauxfactory [here](https://fauxfactory.readthedocs.io/en/latest/#).
 
 ### A few more words regarding dummy data
-Highly interconnected attributes that predicts the value of each other are known as the [dummy variable traps](https://www.geeksforgeeks.org/ml-dummy-variable-trap-in-regression-models/).
+Highly interconnected attributes that predict the value of each other are known as the [dummy variable traps](https://www.geeksforgeeks.org/ml-dummy-variable-trap-in-regression-models/).
 
 Dummy variable traps can be avoided if you have many characteristics that are highly connected (Multicollinear).
 
