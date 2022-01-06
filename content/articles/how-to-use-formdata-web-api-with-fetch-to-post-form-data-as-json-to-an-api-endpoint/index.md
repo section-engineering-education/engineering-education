@@ -1,9 +1,9 @@
-# How To Use FormData Web API With Fetch to POST Form Data As JSON To An API Endpoint 
+### How To Use FormData Web API With Fetch to POST Form Data As JSON To An API Endpoint 
 
-The [Fetch API](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API) is used to make requests from the web page front end to an API endpoint of the back end. The [FormData](https://developer.mozilla.org/en-US/docs/Web/API/FormData) API provides a precise way of accessing HTML form fields. Both of this two natively supported browser APIs make it easy to send requests, but to send data as JSON to an API endpoint extra bit of work is needed. In this tutorial, we explore a set by step procedure on how to capture form field data and send it as JSON data to an API endpoint.
+The [Fetch API](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API) is used to make requests from the web page front end to an API endpoint of the back end. The [FormData](https://developer.mozilla.org/en-US/docs/Web/API/FormData) API provides a precise way of accessing HTML form fields. Both of these two natively supported browser APIs make it easy to send requests, but to send data as JSON to an API endpoint extra bit of work is needed. In this tutorial, we explore a set by step procedure on how to capture form field data and send it as JSON data to an API endpoint.
 
-## Steps
-Here are the steps we are going to follow to achive our goal
+### Steps
+Here are the steps we are going to follow to achieve our goal
 
 1. [Listen for form submission](#Listen-for-form-submission).
 2. [Reading the form field values with the browser FormData API](#reading-the-form-field-values-with-the-browser-formdata-api).
@@ -11,15 +11,15 @@ Here are the steps we are going to follow to achive our goal
 4. [POST the JSON data to a URL endpoint with Fetch API as request body data](#post-the-json-data-to-a-url-endpoint-with-fetch-api-as-request-body-data).
 5. [Handling JSON request body with Express Nodejs API](#handling-json-request-body-with-express-nodejs-api).
 
-## Goal
-By the end of this tutorial, we will have a working HTML form that sends form data as JSON to an API endpoint. In the process, we will make use of the native browser Fetch and FormData APIs to achieve our goal. As a bonus, we have a simple Express Nodejs API which will listen for the request we send and send back response.
+### Goal
+By the end of this tutorial, we will have a working HTML form that sends form data as JSON to an API endpoint. In the process, we will make use of the native browser Fetch and FormData APIs to achieve our goal. As a bonus, we have a simple Express Nodejs API which will listen for the request we send and send back the response.
 
-## Prerequisites
+### Prerequisites
 It’s assumed you have prior experience with HTML, CSS and JS.
 
-Lets dive in.
+Let us dive in.
 
-## This is the HTML form we will be working with.
+### This is the HTML form we will be working with.
 ```html
 <!DOCTYPE html>
 <html>
@@ -73,7 +73,7 @@ Lets dive in.
 
 </html>
 ```
-and the accompanying css to add style to the form.
+and the accompanying CSS to add style to the form.
 
 ```css
 h1 {
@@ -161,10 +161,10 @@ exampleForm.addEventListener("submit", handleFormSubmit);
 ```
 We'll define the `handleFormSubmit()` event handler function in the next step.
 
-## Step 2: Reading the form field values with the FormData API.
+### Step 2: Reading the form field values with the FormData API.
 
 The FormData API provides a precise way of accessing the HTML form field values by passing it a reference to the form element. 
-Let's define Event handler for the form [submit event](https://developer.mozilla.org/en-US/docs/Web/API/HTMLFormElement/submit_event) and prevent the default browser behaviour of submitting the form so that we can handle it ourselves instead. Then get the [element attached to the event handler](https://developer.mozilla.org/en-US/docs/Web/API/Event/currentTarget).We then take the URL from the form's `action` attribute.Takes all the form fields and make the field values available through a [FormData](https://developer.mozilla.org/en-US/docs/Web/API/FormData) instance. Finally we call the `postFormDataAsJson()` function(We'll define it in the next step) and pass the `url` and the `formData` instance as arguments.
+Let's define Event handler for the form [submit event](https://developer.mozilla.org/en-US/docs/Web/API/HTMLFormElement/submit_event) and prevent the default browser behaviour of submitting the form so that we can handle it ourselves instead. Then get the [element attached to the event handler](https://developer.mozilla.org/en-US/docs/Web/API/Event/currentTarget). We then take the URL from the form's `action` attribute. Takes all the form fields and make the field values available through a [FormData](https://developer.mozilla.org/en-US/docs/Web/API/FormData) instance. Finally, we call the `postFormDataAsJson()` function(We'll define it in the next step) and pass the `url` and the `formData` instance as arguments.
 
 
 ```js
@@ -194,9 +194,9 @@ async function handleFormSubmit(e) {
 }
 
 ```
-## Step 3: Formatting the data as JSON and POST it to a URL endpoint with Fetch API.
+### Step 3: Formatting the data as JSON and POST it to a URL endpoint with Fetch API.
 
-Since our aim is to send the request body as JSON, we can't pass the `FormData` instance directly to `fetch` as that will cause it to automatically format the request body as "multipart" and set the `Content-Type` request header to `multipart/form-data. So we're converting it to a plain object and then into a JSON string.
+Since we aim to send the request body as JSON, we can't pass the `FormData` instance directly to `fetch` as that will cause it to automatically format the request body as "multipart" and set the `Content-Type` request header to `multipart/form-data. So we're converting it to a plain object and then into a JSON string.
 
   We first create an object from the the `formData` instance using the The [Object.fromEntries()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/fromEntries) method.
   
@@ -204,10 +204,10 @@ Since our aim is to send the request body as JSON, we can't pass the `FormData` 
 
   We then specify the the [HTTP request method as POST](https://developer.mozilla.org/en-US/docs/Web/HTTP/Methods/POST) and using [the header field of the Fetch API](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Content-Type) specify that we are sending a JSON body request and accepting [JSON responses](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Accept).
 
-  We then then set he body of our POST request as the JSON string that we created from the form data.
+  We then set the body of our POST request as the JSON string that we created from the form data.
 
-  We finally send the request and listen for the response.If the response was not OK, throw an error
-  otherwise if the response was OK, return the response body.
+  We finally send the request and listen for the response. If the response was not OK, throw an error
+  otherwise, if the response was OK, return the response body.
         
 
 ```js
@@ -249,7 +249,7 @@ async function postFormDataAsJson({ url, formData }) {
 This is the full js script with inline comments from the steps above that:
 1. Captures the form fields using the browser FormData API 
 2. Converts them to JSON.
-3. Finally sends them to an API endpoint using the browser Fetch API.
+3. Finally send them to an API endpoint using the browser Fetch API.
 
 ```js
 //Get the form element by id
@@ -364,11 +364,11 @@ The sample form data (`formDataJsonString`) object sent as JSON;
 {"title":"Male","username":"gisioraelvis","usermail":"gisioraelvis@gmail.com"}
 ```
 
-## Bonus: Handling JSON request body in a Nodejs and Express.js API
+### Bonus: Handling JSON request body in a Nodejs and Express.js API
 As a bonus we are going to implement a simple API using Nodejs and Express.js,  this will expose an endpoint where we will be sending our request.
 
-## Setting up the project
-Ensure you have Node.js machine. To check if Node.js is installed run the folliwing command in the terminal. 
+### Setting up the project
+Ensure you have Node.js on your machine. To check if Node.js is installed run the following command in the terminal. 
 ``` 
 node -v
 ``` 
@@ -380,7 +380,7 @@ npm init
 ```
 Fill in the relevant questions, and then follow through to the next steps.
 
-Alternatively, to auto initialize your project with NPM default values, you can run `npm init -y` . Check this in depth [npm guide](https://www.section.io/engineering-education/beginner-guide-to-npm/) to understand how to use NPM.
+Alternatively, to auto initialize your project with NPM default values, you can run `npm init -y`. Check this in-depth [npm guide](https://www.section.io/engineering-education/beginner-guide-to-npm/) to understand how to use NPM.
 
 ### npm packages used:
 - Express - Express will help us make the API endpoints that will communicate with the database server. Here is a link to [learn more about express.js](https://www.section.io/engineering-education/express/).
@@ -388,7 +388,7 @@ Alternatively, to auto initialize your project with NPM default values, you can 
 - [Nodemon](https://nodemon.io/) - a dev package (not needed for the app to function). Nodemon ensures that the server is running whenever you make changes. When you save changes, you don’t have to restart the server. Nodemon will handle this for you.
 - CORS - CORS stands for Cross-Origin Resource Sharing. It allows us to bypass security applied to a RESTful API. An awesome article on [using cors in express.js](https://www.section.io/engineering-education/how-to-use-cors-in-nodejs-with-express/).
 
-## Installing the necessary dependencies
+### Installing the necessary dependencies
 To install all the Node.js Packages that we listed above:
 ```
 npm install cors express
@@ -398,7 +398,7 @@ and
 npm install --save-dev nodemon
 ```
 
-## The Nodejs API/Server code.
+### The Nodejs API/Server code.
 ```js
 const express = require("express");
 const app = express();
@@ -439,21 +439,11 @@ The console response on the terminal from the API
 
 ![The console response on the terminal from the API](console-response-on-terminal-from-api.png)
 
-The console response on browser
+The console response on the browser
 ![The console response on browser](console-response-on-browser.png)
 
 > For code reference, here is the full project link on [GitHub](https://github.com/gisioraelvis/sending-formdata-as-json-using-fetch).
-## Conclusion
-You now have knowledge on how to use the FormData browser API with Fetch to POST Form Data As JSON to An API Endpoint. You can utilize this gained knowledge and skills to craft other powerful applications that make use of this powerful browser APIs.
+### Conclusion
+You now know how to use the FormData browser API with Fetch to POST Form Data As JSON to An API Endpoint. You can utilize this gained knowledge and skills to craft other powerful applications that make use of these powerful browser APIs.
 
 Happy coding!!
-
-
-
-
-
-
-
-
-
-
