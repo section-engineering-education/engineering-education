@@ -1,5 +1,5 @@
 
-## Building a Lyrics Search App Using Vanilla JavaScript
+## Building a Lyrics Search App Using Vanilla JavaScript With OVH API
 
 ![hero image](/engineering-education/building-lyrics-search-app-using-vanilla-javascript/hero.png)
 
