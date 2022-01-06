@@ -78,7 +78,7 @@ The box will be on the top center position of our page by setting its `position`
 
 The box should resemble the following picture in appearance.
 
-![output-box](output-box.png)
+![output-box](engineering-education/random-joke-generator-a-complete-guide/output-box.png)
 
 ### Adding a title
 
@@ -96,7 +96,7 @@ span {
 
 After adding the title, we should have something close to this.
 
-![output-title](output-title.png)
+![output-title](engineering-education/random-joke-generator-a-complete-guide/output-title.png)
 
 ### Set up Joke Viewing Zone
 
@@ -128,7 +128,7 @@ Using `.content-fade` we will set the `opacity` to `1` which essentially means w
 ```
 
 so far we should have the following as displayed below
-![output-joke-container](output-joke-container.png)
+![output-joke-container](engineering-education/random-joke-generator-a-complete-guide/output-joke-container.png)
 
 ### Set up Generate Joke Button
 
@@ -155,7 +155,7 @@ This button will help us generate random jokes when clicked and as a result, we 
 ```
 
 Below is the output after adding the button
-![output-btn](output-btn.png)
+![output-btn](engineering-education/random-joke-generator-a-complete-guide/output-btn.png)
 
 ### Activating The Button
 
@@ -205,7 +205,7 @@ The last part is to assign the method we just created so that it fires whenever 
 generateBtn.addEventListener("click", acquireJoke);
 ```
 
-![output-joke](output-joke.png)
+![output-joke](engineering-education/random-joke-generator-a-complete-guide/output-joke.png)
 
 ### Conclusion
 
