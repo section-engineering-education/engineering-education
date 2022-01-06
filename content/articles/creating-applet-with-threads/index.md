@@ -4,9 +4,9 @@ status: publish
 published: true
 url: /creating-applet-with-threads/
 title: Creating an Applet with Threads in Java
-description: In this article, we are going to discuss how to make applets using threads in the Java programming language. Threads allow programs to run more efficiently by allowing them to perform many tasks at once.
+description: In this article we will discuss how to make applets using threads in the Java programming language. Threads allow programs to run more efficiently by allowing them to perform many tasks at once.
 author: andrew-odera
-date: 2022-01-06T00:00:00-18:10
+date: 2022-01-06T00:00:00-11:05
 topics: [Languages]
 excerpt_separator: <!--more-->
 images:
@@ -14,9 +14,11 @@ images:
   - url: /engineering-education/creating-applet-with-threads/hero.jpg
     alt: Creating an Applet with Threads in Java Hero Image
 ---
-Threads allow programs to run more efficiently by allowing them to perform many tasks at once. They are used in the background to perform complex tasks without interfering with the main program. Threads improve the operations performed using a browser.
+Threads allow programs to run more efficiently by allowing them to perform many tasks at once. They are used in the background to perform complex tasks without interfering with the main program. 
+<!--more-->
+Threads improve the operations performed when using a browser.
 
-### Table of content
+### Table of contents
 - [Prerequisites](#prerequisites)
 - [Creating a thread class](#creating-a-thread-class)
 - [Creating an applet with threads](#creating-an-applet-with-threads)
@@ -30,9 +32,7 @@ To follow along with this tutorial, you should:
 - Understand [applets](https://www.javatpoint.com/java-applet).
 
 ### Creating a thread class
-Java has several essential tools. A thread class is one used in developing multithreaded systems. 
-
-Thread classes are used to create a subclass that behaves like the threads themselves. The subclass is declared when building a function thread. 
+Java has several essential tools. A thread class is one used in developing multithreaded systems. Thread classes are used to create a subclass that behaves like the threads themselves. The subclass is declared when building a function thread. 
 
 After developing the subclass, the thread `run()` method is overridden causing it to make the thread class behave like a thread, defining the class execution thread. The `start()` function is used to invoke the `run()` method and a class is instantiated.
 
@@ -61,8 +61,7 @@ To design an applet that uses threads, we have to make a few changes:
 - Change your `start()` method to do nothing more than spawn a thread and start it up.
 - Write a `run()` method that contains the actual code that launches your applet.
 
-To create an applet with threads, you must perform several actions. First, we need to define the first line in the class definition as shown below:
-
+To create an applet with threads, you must perform several actions. We need to define the first line in the class definition as shown below:
 
 ```java
 //Defines the class of the applet as public
@@ -110,7 +109,6 @@ The `run()` method contains things you may want to run in a separate thread. Suc
 
 Thread execution is stopped after running the threads. This can only be accomplished by including the `stop()` method as shown below:
 
-
 ```java
 public void stop()
 {
@@ -123,8 +121,8 @@ runner = null;//sets variable to value nulll
 ```
 
 The `stop()` method in the preceding code achieves two things:
-- Disables the thread's execution.
-- Sets the variable (runner) of the thread to null - When a variable is set to null, the thread object uses its previously contained variable for garbage collection. This results in the applet being erased from memory after a predetermined amount of time. The start method sets a new thread and reloads the page. As a result, we create a thread that runs on this applet.
+1. Disables the thread's execution.
+2. Sets the variable (runner) of the thread to null - When a variable is set to null, the thread object uses its previously contained variable for garbage collection. This results in the applet being erased from memory after a predetermined amount of time. The start method sets a new thread and reloads the page. As a result, we create a thread that runs on this applet.
 
 ### Program to create an applet with threads
 
