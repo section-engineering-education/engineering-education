@@ -67,7 +67,7 @@ To create an Android Resource File, go to the res directory, then New, then Andr
 ### Step 4: Importing icons
 Let's add some icons to our BottomNavigationView now. We'll bring in five icons, four for our BottomNavigationView and one for our Floating Action Button. To achieve this, go to the res directory, right-click on 'drawable', then choose New > Vector Asset from the menu. as seen in the diagram below
 
-![Icons](engineering-education/adding-custom-floating-action-button-to-bottom-navigation-bar-in-android/adding_vectorsAsset.jpg)
+![Icons](engineering-education/adding-custom-floating-action-button-to-bottom-navigation-bar-in-android/adding_vectors_asset.jpg)
 
 Now go to the clip art icon and click it. Search for a home icon, then choose it and click OK. Change the name to ic home, then click Next and Finish to complete the process.
 Follow the same procedure and add the remaining icons that are search icon, person icon, setting  icon and add icon
