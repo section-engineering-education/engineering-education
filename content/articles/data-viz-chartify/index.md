@@ -27,7 +27,7 @@ To follow along with this article, you should have a:
 - Basic knowledge in using Jupyter Notebooks or any other notebook-based technology. I would recommend Jupyter notebook or Google Colab for data visualization. However, for this tutorial, we will be using [jypter](https://jupyter.org/).
 
 ### What is Chartify?
-According to the documentation, [Chartify](https://chartify.readthedocs.io/en/latest/) is a Python library that aims to make it easy for data scientists to create charts. This open-source library was introduced to the world in this article by Spotify Lab, [Introducing Chartify: Easier chart creation in Python for data scientists](https://engineering.atspotify.com/2018/11/15/introducing-chartify-easier-chart-creation-in-python-for-data-scientists/), as a means for you and I to build visually appealing charts using Python.
+According to the documentation, [Chartify](https://chartify.readthedocs.io/en/latest/) is a Python library that aims to make it easy for data scientists to create charts. This open-source library was introduced to the world in this article by Spotify Lab, [Introducing Chartify: Easier chart creation in Python for data scientists](https://engineering.atspotify.com/2018/11/15/introducing-chartify-easier-chart-creation-in-python-for-data-scientists/), as a means for you and me to build visually appealing charts using Python.
 
 The library was built on Bokeh. Bokeh is a Python visualization framework that JavaScript based. Bokeh can be used to generate interactive visualizations for modern web browsers. You can use Bokeh to generate JavaScript-powered visualizations without having to write any JavaScript. I am sure you know what that means for Chartify... Yeah, you got it! Fantastic visuals.
 
@@ -63,7 +63,7 @@ If you're using the Jupyter notebook and want to install a package with pip, you
 Import sys
 !{sys.executale} -m pip install chartify
 ```
-Chartify required a ChromeDriver. This is required to generate a PNG output. You can download chromedriver from [the ChromeDriver for Chrome Website](https://sites.google.com/a/chromium.org/chromedriver/home). After downloading, you need to install it and copy it into the appropriate directory. This article will show you [how to add executables to your Windows PATH](https://medium.com/@kevinmarkvi/how-to-add-executables-to-your-path-in-windows-5ffa4ce61a53).
+Chartify required a ChromeDriver. This is required to generate a PNG output. You can download ChromeDriver from [the ChromeDriver for Chrome Website](https://sites.google.com/a/chromium.org/chromedriver/home). After downloading, you need to install it and copy it into the appropriate directory. This article will show you [how to add executables to your Windows PATH](https://medium.com/@kevinmarkvi/how-to-add-executables-to-your-path-in-windows-5ffa4ce61a53).
 
 ### Importing Chartify
 
@@ -100,7 +100,7 @@ pokemon_df.insert(loc =0, column = 's/n',value = np.arange(len(pokemon_df)))
 ### Problem Encounter while using Chartify
 While working with Charify I discovered a problem. I was unable to display my chart. 
 
-when I ran my codes for the first time, I got an error message. If we take a look at the error message, we will see it was a compatibility issue. The latest version of ChromeDriver available apparently only supports Chrome version 93 and my current Chrome browser version is 96.0.4664.45. 
+when I ran my codes for the first time, I got an error message. If we take a look at the error message, we will see it was a compatibility issue. The latest version of ChromeDriver available only supports Chrome version 93 and my current Chrome browser version is 96.0.4664.45. 
 
 ![Error message](/engineering-education/data-viz-chartify/errormessage.png)
 *Screenshot by author*
@@ -126,13 +126,13 @@ The code we just ran will give us the output below.
 ![Chartify](/engineering-education/data-viz-chartify/chartifyone.png)
 *Screenshot by author*
 
-Chartify makes it relatively easy for first timers to get started. That's one amazing thing about it. This empty chart that got displayed shows users of the library how they can fill the chart with data. 
+Chartify makes it relatively easy for first-timers to get started. That's one amazing thing about it. This empty chart that got displayed shows users of the library how they can fill the chart with data. 
 
 Let’s visualize the Pokemon type distribution using a bar chart.
 
 ### Pokemon type distribution
 
-A bar chart represent data by using bars of different heights. We would use on to see the distribution of the various pokemon types. First, we need to create a data frame by grouping the Pokemon type 1 and its generation. This can be done using the code snippet below:
+A bar chart represents data by using bars of different heights. We would use on to see the distribution of the various pokemon types. First, we need to create a data frame by grouping the Pokemon type 1 and its generation. This can be done using the code snippet below:
 
 ```python
 bar_data = (pokemon_df.groupby('type1')[['generation']].sum()
@@ -152,12 +152,12 @@ ch.plot.bar(
         numeric_column='generation')
 ch.show()
 ```
-The first few arguments that we passed are `.set_title` and `.set_subtitle` which are for your chart title and subtitle. You can specify a name for your x and y axes using `.axes.set_xaxis_label` and `.axes.set_yaxis_label` respectively. The last argument, `.plot.bar` requires your data_frame which is the data to be plotted. The other parameters define the catergorical and numerical columns you want to plot. 
+The first few arguments that we passed are `.set_title` and `.set_subtitle` which are for your chart title and subtitle. You can specify a name for your x and y axes using `.axes.set_xaxis_label` and `.axes.set_yaxis_label` respectively. The last argument, `.plot.bar` requires your data_frame which is the data to be plotted. The other parameters define the categorical and numerical columns you want to plot. 
 
 ![Chartify](/engineering-education/data-viz-chartify/chartifytwo.png)
 *Screenshot by author*
 
-Next let’s look at the pokemon type distribution but this time taking account of the ‘is_legendary’ attribute of each pokemon. We would also start by creating a dataframe of the data needed. We can achieve this by grouping our pokemon by the “type1” and “is_legendary” columns. This can be done by running the code snippet below:
+Next, let’s look at the pokemon type distribution but this time taking account of the ‘is_legendary’ attribute of each pokemon. We would also start by creating a dataframe of the data needed. We can achieve this by grouping our pokemon by the “type1” and “is_legendary” columns. This can be done by running the code snippet below:
 
 ```python
 Pokemon_type_distribution = (pokemon_df.groupby(['type1','is_legendary'])['s/n'].sum().reset_index())
@@ -248,7 +248,7 @@ ch.plot.parallel(
         color_column='type')
 ch.show()
 ```
-Just like the bar charts, the line graph takes the in a data_frame argument for our data. We will also specific the `categorical_column`, `numeric_column`, and `color_column` in the same way as it did in the bar chart. After that, we run the code, and our output is displayed.
+Just like the bar charts, the line graph takes the in a data_frame argument for our data. We will also specify the `categorical_column`, `numeric_column`, and `color_column` in the same way as it did in the bar chart. After that, we run the code, and our output is displayed.
 
 ![Chartify](/engineering-education/data-viz-chartify/chartifyfive.png)
 *Screenshot by author*
@@ -305,7 +305,7 @@ ch.show()
 
 ### Pokemon Weight distribution
 
-Let’s have a look at our pokemon weight. This will best be displayed in a histogram. In the “weight_kg” column, there were nan values. We will have to fill it. For the purpose of this article, we would fill it with 0.
+Let’s have a look at our pokemon weight. This will best be displayed in a histogram. In the “weight_kg” column, there were nan values. We will have to fill it. For this article, we would fill it with 0.
 
 ```python
 pokemon_df['weight_kg'] = pokemon_df['weight_kg'].fillna(0)
@@ -333,4 +333,4 @@ Happy coding.
 
 ### Resources
 - [Welcome to chartify’s documentation!](https://chartify.readthedocs.io/en/latest/)
-- [Chartify data visulaization](https://www.geeksforgeeks.org/data-visualisation-with-chartify/)
+- [Chartify data visualization](https://www.geeksforgeeks.org/data-visualisation-with-chartify/)
