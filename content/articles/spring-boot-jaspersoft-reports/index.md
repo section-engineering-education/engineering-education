@@ -51,7 +51,7 @@ To follow along the reader will need:
 ### Create a Spring Boot application
 On your browser, go to the [spring initializr](https://start.spring.io/) and create a new application. Add the dependencies: `Spring Web`, `MySQL Driver`, `Thymeleaf`, `Lombok`, and `Spring Data JPA`.
 
-![new project image](/spring-boot-jaspersoft-reports/spring-initializr.png)
+![new project image](/engineering-education/spring-boot-jaspersoft-reports/spring-initializr.png)
 
 Extract the zip file to the desired folder and import the application in Intellij. Maven will download all our dependencies from the internet.
 
@@ -174,7 +174,7 @@ In Jaspersoft studio, click on *help*, *install new software*, *manage*. Once yo
 
 Under *build path*, click on *classpath variables*. The *classpath variables* provide us with the capability to add, edit, and remove variables using the *new*, *edit*, and *remove* buttons. Click on *new* and add the jar file on the window that opens with the desired name as shown below:
 
-![java connector](/spring-boot-jaspersoft-reports/jaspersoft-connector.jpg)
+![java connector](/engineering-education/spring-boot-jaspersoft-reports/jaspersoft-connector.jpg)
 
 Add the MySQL connector and run the spring boot app. The spring boot app will generate the tables required by Jaspersoft studio. Create a design for our report from existing templates. On the Jaspersoft toolbar click on *file*, *new*, *jasper report*. 
 
@@ -184,28 +184,28 @@ There are situations where Jaspersoft studio does not connect to the database by
 
 The window that opens next requires us to provide our data source. The data source is our database URL, username, and password to connect to our database. Click on new and on the data adapters window select database JDBC connection and click next. A window then opens where we need to fill the database connection properties as shown below:
 
-![data source configuration](/spring-boot-jaspersoft-reports/data-source.jpg)
+![data source configuration](/engineering-education/spring-boot-jaspersoft-reports/data-source.jpg)
 
 Connect and write a query on the next window to select all the fields on the products table and click next:
 
-![all product fields](/spring-boot-jaspersoft-reports/all-products.png)
+![all product fields](/engineering-education/spring-boot-jaspersoft-reports/all-products.png)
 
 The new window that appears displays all the fields from our database table. Add all the fields we want to appear in the report. Add from the data fields on the left side to the fields section on the right side. You can do this using the button with the *greater-than* symbol:
 
-![report fields](/spring-boot-jaspersoft-reports/report-fields.jpg)
+![report fields](/engineering-education/spring-boot-jaspersoft-reports/report-fields.jpg)
 
 Click the Finish button to generate the final report. The report has our fields from the products entity as shown below. Edit the title and the description on the design header where necessary:
 
-![final design](/spring-boot-jaspersoft-reports/final-design.png)
+![final design](/engineering-education/spring-boot-jaspersoft-reports/final-design.png)
 
 ### Add the design to our spring boot application
 The design we have created generates XML describing the report structure. Get the code for it by clicking the source button on the bottom of the Jaspersoft design window:
 
-![source file](/spring-boot-jaspersoft-reports/source-file.png)
+![source file](/engineering-education/spring-boot-jaspersoft-reports/source-file.png)
 
 Remove the properties in the field tags in the source file. Ensure the class and name properties of the field tag are the same as that of our product model:
 
-![remove properties](/spring-boot-jaspersoft-reports/remove-properties.jpg)
+![remove properties](/engineering-education/spring-boot-jaspersoft-reports/remove-properties.jpg)
 
 The `productType` is an enum and it will throw a `ClassCastException` when we try to cast it to a string. To avoid this add a getter method in the products class that returns the string value of the enum.
 
@@ -217,7 +217,7 @@ public String getProductType() {
 
 Also, ensure that the text field expression in the details section is of the same name as that of our product fields.
 
-![change detail fields](/spring-boot-jaspersoft-reports/modify-detail-fields.jpg)
+![change detail fields](/engineering-education/spring-boot-jaspersoft-reports/modify-detail-fields.jpg)
 
 Copy the entire source code in our Spring Boot application. Name the file `products.jrxml` in the resources package.
 
@@ -724,14 +724,14 @@ public class JasperReportsApplication {
 ```
 Run the Spring Boot application and visit the page at localhost 8080. Our page displays a form and a list of products:
 
-![products page](/spring-boot-jaspersoft-reports/products-page.png)
+![products page](/engineering-education/spring-boot-jaspersoft-reports/products-page.png)
 
 Enter the current date, select PDF as the file type, and press the generate button. This redirects us to the generated PDF on a new browser tab as shown below.
 
 
 > Note that the dates will be different depending on the time you are reading this article.
 
-![generated report](/spring-boot-jaspersoft-reports/generated-report.png)
+![generated report](/engineering-education/spring-boot-jaspersoft-reports/generated-report.png)
 
 We can play with the results using the current and previous dates. Some of the products created have `LocalDate.now()` to get the current date. Some of the products have `LocalDate.now().minusDays(1)` to get the date of the previous day.
 
