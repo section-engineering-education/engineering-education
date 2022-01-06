@@ -1,6 +1,6 @@
 ### INTRODUCTION
 Deep learning neural networks are becoming easier to define and fit, but they remain challenging to configure. 
-This is because there are no hard-and-fast rules for configuring a network to tackle a specific problem. This is the case were mathematical analysis cannot be used to determine which model type or setup is appropriate for a given dataset. 
+This is because there are no hard-and-fast rules for configuring a network to tackle a specific problem. This is the case when mathematical analysis cannot be used to determine which model type or setup is appropriate for a given dataset. 
 
 In the past, deep learning neural network models had to be coded from scratch. As a result, the accuracy rate of the system was poor. 
 Nowadays, when given raw data, a deep learning system can now determine which properties are the most important on its own. 
@@ -11,11 +11,10 @@ After identifying the problem, carefully pick and assess a specific intervention
 
 There are three sorts of concerns that are straightforward to diagnose when it comes to poor deep learning performance:
 
-Poor performance or becoming stuck are both possible outcomes of problems with hyper-parameter optimization (i.e. challenges from learning rate).
+Poor performance or becoming stuck are both possible outcomes of problems with hyperparameter optimization (i.e., challenges from learning rate).
 Having issues with data optimization is a common occurrence.
 
-Generalization can result in overfitting or poor test set performance, for example, 
-More data is required if you want your system to perform better. Depending on your budget, you may want to acquire additional unlabeled data and train your feature extraction sub-model further.
+Generalization can lead to overfitting or poor test set performance, for example. If you want your system to perform better, you'll need more data. You may want to obtain additional unlabeled data and train your feature extraction sub-model further, depending on your budget.
 
 Tuning the algorithm, which is essentially a prediction problem on the final model, when the final model contains a lot of volatility, for example. 
 
@@ -47,59 +46,59 @@ To follow along with this tutorial, you need to be familiar with the following;
 ### The Concept of Deep Learning
 In deep learning, an excessive volume of information [data sets](https://www.simplilearn.com/what-is-data-article) can be trained at the same time. This uses learning algorithms in deep learning. Deep learning systems tend to gather functional facts from larger datasets. This fact helps in enhancing predictions in the system more accurately. 
 
-Classifications and predictions of data are based on responses to a series of binary true or false questions involving highly complicated mathematical calculations while processing the data. This simply means a deep learning system algorithm is designed in such a way that it can easily recognize/predict and collect similar data sets or reject the data sets that does not fit the needed system model during the training of data sets.
->**True** in this context means that the system's algorithm accepts the data to match the type of data needed to develop the required system while **False** means that the system's algorithm has rejected such data as it doesn't match the requirements.
+Classifications and predictions of data are based on responses to a series of binary true or false questions involving highly complicated mathematical calculations while processing the data. This simply means a deep learning system algorithm is designed in such a way that it can easily recognize, predict, and collect similar data sets or reject data sets that do not fit the needed system model during the training of data sets.
+>**True** in this context means that the system's algorithm accepts the data to match the type of data needed to develop the required system, while **False** means that the system's algorithm has rejected such data as it doesn't match the requirements.
 
-A facial recognition algorithm, for example, learns to detect and recognize face edges and lines, then more significant aspects of the faces, and finally overall representations of faces. The algorithm learns and improves with time, increasing the likelihood of getting it right. In this situation, the facial recognition software will recognize faces properly over time. Picking up the precise contour of everything's face will result in the collection of a larger number of datasets (big data) and an accurate extract result.
+For example, a facial recognition algorithm learns to identify and recognize face edges and lines first, then more critical parts of faces, and finally overall representations of faces. With time, the algorithm learns and improves, improving the chances of getting it right. In this case, the facial recognition program will eventually recognize faces correctly. The collecting of a bigger number of datasets (big data) and an accurate extract result will result from picking up the precise contour of everything's face.
 
-This example shows that an excessive volume of data is needed to predict a deep learning system accurately.
+This example demonstrates that a large amount of data is required to accurately predict a deep learning system.
 
 The ability to fine-tune the system and consider the problem it is going to be used to solve are two enhancing variables in Deep Learning. Any optimizer’s accuracy is measured using these factors.
 ### What Are Optimizers?
 
-In deep learning, Optimizers are algorithms or approaches that are used to reduce an error function [(loss function)](https://shiva-verma.medium.com/understanding-different-loss-functions-for-neural-networks-dd1ed0274718)  or increase production efficiency.  Optimizers are mathematical functions that are based on the learnable parameters of a model, such as weights and biases. Optimizers assist in determining how to alter the weights and learning rate of a neural network to minimise losses. 
->A `loss function`of a system calculates the difference between the current results and the expected results of the algorithm.
+In deep learning, optimizers are algorithms or approaches that are used to reduce an error function [(loss function)](https://shiva-verma.medium.com/understanding-different-loss-functions-for-neural-networks-dd1ed0274718)  or increase production efficiency.  Optimizers are mathematical functions that are based on the learnable parameters of a model, such as weights and biases. Optimizers assist in determining how to alter the weights and learning rate of a neural network to minimise losses. 
+>A `loss function` of a system calculates the difference between the current results and the expected results of the algorithm.
 ### Some Determinants That Transform Deep Learning Systems’ Performance
 #### Taking into account the issue of (considered problem) that the system will be tasked with resolving; 
 a) What kind of system should be built?
 
  In such a problem, the engineer is faced with challenges like; 
-- The size of the system about to be developed.
-- The amount of datasets the required to develop the needed system. 
-- How does the size of the system affect the performance of the system.
+- The size of the system that is about to be developed.
+- The number of datasets required to create the required system. 
+- How does the size of the system affect the performance of the system?
 
 b) How will the developed algorithm handle the immediate user’s demands?
 
-In such a problem, the engineer is faced with challenges like, picking the best optimizer that will produce accurate results. By doing this, the problem of loss function will be minimized.
+In such a problem, the engineer is faced with challenges like picking the best optimizer that will produce accurate results. By doing this, the problem of loss function will be minimized.
 
 c) How easily will re-engineering be made possible?
 
 In such a problem, the engineer is faced with challenges like; Will the developed system adapt to further changes in the future without affecting the performance of the system. 
 
-#### Evaluation difficulties of default hyperparameters for multiple optimisers.
-Hyperparameters are values that control the learning process and define which model parameters a learning algorithm learns.They are 'top-level' parameters that regulate the learning process and the model parameters that come from it, as the prefix 'hyper_' implies. 
+#### Evaluation difficulties of default hyperparameters for multiple optimizers.
+Hyperparameters are values that control the learning process and define which model parameters a learning algorithm learns. They are "top-level" parameters that regulate the learning process and the model parameters that come from it, as the prefix "hyper_" implies. 
  
 Poor [accuracy](https://sigopt.com/blog/common-problems-in-hyperparameter-optimization/) is obtained here as a result of low awareness from training the system data sets.
 In the adaptable deep system technique, [Adam optimizer](https://machinelearningmastery.com/adam-optimization-algorithm-for-deep-learning/) is the most extensively used adaptive optimizer. 
 
 #### Technical experience in deep learning system network design.
-The demand and need for deep learning experts is highly recommended here. Experience is needed to increase the learning rate and improve the system's performance.
+Deep learning professionals are in high demand and are highly recommended in this field. To raise the learning rate and improve the system's performance, experience is required.
 
-#### Which optimiser suits the deep network best?
+#### Which optimizer suits the deep network best?
 The optimizer that will perfectly match your deep learning system or model is highly considered. If the optimizer picked to train your system isn't a perfect match, such a system will encounter errors such as overfitting, underfitting, loss gradient descent, and so on, thereby not achieving an accurate output.
  
 ### How To Get A Perfect Performance Rate From A Deep Learning System
 >The performance rate of a deep learning system is focused on vision and pattern recognition.
 #### Data Optimization
 
-If your objective is [classification](https://towardsdatascience.com/machine-learning-classifiers-a5cc4e1b0623), one of the simplest ways to improve performance for underperforming deep learning system is to balance your dataset. Real-world data sets are frequently skewed, and if you want your deep learning system to learn with the greatest accuracy, you'll need to apply structured thinking to the problem, which is a thinking process that considers all of the conceivable elements of a problem.
+If your objective is [classification](https://towardsdatascience.com/machine-learning-classifiers-a5cc4e1b0623), one of the simplest ways to improve performance for an underperforming deep learning system is to balance your dataset. Real-world data sets are frequently skewed, and if you want your deep learning system to learn with the greatest accuracy, you'll need to apply structured thinking to the problem, which is a thinking process that considers all of the conceivable elements of a problem.
 
-The process of predicting the class of a set of data points is known as __*classification*__.
+>The process of predicting a similar class of dataset of data points or training sets is known as _*classification*_.
 
 In data optimization, a few factors are considered like;
 
-1.`The need for additional datasets into the deep learning system:`
-Having more depth of knowledge about a system model is the best savage for accuracy in deep learning. Allow the additional facts to speak for themselves rather than relying on assumptions and questionable relationships. Models that have more data are more accurate and better. In such a situation as this, Individauls do not have the ability to add more data. In some projects, for example, we don't have the option of increasing the training data size. However, if you're working on a company project, It is strongly advisible that you to ask for more details if it's possible. As a result, working with small data sets will be more straightforward. As a result of these modifications, the training set's overfitting is decreased.
+1.`The need for additional datasets in the deep learning system:`
+Having more depth of knowledge about a system model is the best savage for accuracy in deep learning. Allow the additional facts to speak for themselves rather than relying on assumptions and questionable relationships. Models that have more data are more accurate and better. In such a situation as this, individuals do not have the ability to add more data. In some projects, for example, we don't have the option of increasing the training data size. However, if you're working on a company project, it's strongly advised that you ask for more details if it's possible. As a result, working with small data sets will be more straightforward. As a result of these modifications, the training set's overfitting is decreased.
 
 #### Algorithm Tuning 
 Parameters are known to drive deep learning algorithms. The result of the learning process is heavily influenced by these variables. Parameter tuning is the process of determining the best value for each parameter in order to increase the model's accuracy. To fine-tune these factors, you must first grasp their meaning and how they affect the model individually. This technique can be repeated with a variety of successful system models.
@@ -116,7 +115,7 @@ Factors like those listed below are considered;
 1.`Learning Rate:`
 The learning rate is a hyper-parameter that determines how much the weights of our network are adjusted in relation to the expected error each time the system weights are updated (loss gradient).
 
-According to [research](https://optimization.cbe.cornell.edu/index.php?title=Adam/) , the Adam optimiser delivers the greatest and highest performance rate for large systems with enormous datasets. The ability to outperform other methodologies is lacking (optimisers). On all deep learning problems, it frequently produces remarkable results. Despite its excellent performance, it may nonetheless trap you in a local minimum that is specific to your problem. Stochastic Gradient Descent with Warm Restarts is an even better approach that has the benefits of Adam and helps eliminate the danger of obtaining something at a local minimum.
+According to [research](https://optimization.cbe.cornell.edu/index.php?title=Adam/), the Adam optimizer delivers the greatest and highest performance rate for large systems with enormous datasets. The ability to outperform other methodologies is lacking (optimizers). On all deep learning problems, it frequently produces remarkable results. Despite its excellent performance, it may nonetheless trap you in a local minimum that is specific to your problem. Stochastic Gradient Descent with Warm Restarts is an even better approach that has the benefits of Adam and helps eliminate the danger of obtaining something at a local minimum.
 
 2.`The number of epochs and the batch size:`
 The batch size refers to the number of samples that must be processed before the model may be updated. The number of epochs refers to the total number of times the training dataset has been traversed.
@@ -163,13 +162,13 @@ This is for two reasons:
 
 ![Display Rate Charts](engineering-education/Factor-that-affects-the-performance-deep-learning-systems/display_rate_charts.png)
 
-[Leslie N. Smith](https://arxiv.org/abs/1506.01186) argued that you could estimate a good learning rate by training the model initially with a very low learning rate and increasing it (either linearly or exponentially) at each iteration.
+According to [Leslie N. Smith](https://arxiv.org/abs/1506.01186), a good learning rate can be estimated by beginning with a very low learning rate and gradually increasing it (either linearly or exponentially) with each iteration.
 
 >Note; Less training time, lesser money spent on GPU cloud computation.
 
 ![Iteration chart](engineering-education/Factor-that-affects-the-performance-deep-learning-systems/iteration.png)
 
- If at each learning iteration recorded,  plot the learning rate (log) against loss; we will see that as the learning rate increase, there will be a point where the loss stops decreasing and starts to increase. In practice, our learning rate should ideally be somewhere to the left to the lowest point of the graph (as demonstrated in below graph). In this case, 0.001 to 0.01.
+If we plot the learning rate (log) versus loss for each learning iteration, we will notice that as the learning rate increases, the loss stops falling and begins to climb. In practice, our learning rate should ideally be near the bottom of the line, to the left (as demonstrated in the below graph). 0.001 to 0.01 in this situation.
 
 ![Learning Rate Chart](engineering-education/Factor-that-affects-the-performance-deep-learning-systems/learning_rate_scale.png)
  
