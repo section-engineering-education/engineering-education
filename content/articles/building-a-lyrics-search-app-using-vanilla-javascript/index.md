@@ -31,8 +31,7 @@ To follow along with this tutorial, you need the following:
 ### Structuring the lyrics search app with HTML5
 To begin, create a folder named `lyrics-app`, then you need to create three files in the folder: `lyrics.html`, `lyrics.css`, and `lyrics.js`.
 
-The code snippet below creates the structure for the lyrics search app. In creating the structure of the lyrics search app, you will make use of HTML5. This section deals
-with the `lyrics.html` file you created. 
+In creating the structure of the lyrics search app, you will make use of HTML5. This section deals with the `lyrics.html` file you created. 
 
 In the `head` tag of the HTML file, you will input the needed or pre-defined meta tags that is essential for all web apps. Still in the `head` tag, you would link the CSS file to the HTML file and also give the web app a title of `Lyrics Search App` embedded between the opening and closing `title` tag.
 
