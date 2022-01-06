@@ -1,9 +1,9 @@
 
-### Road layout design programmatacally using matlab
+### Road layout design programmatacally using Matlab
 ### Introduction
 In designing road layout, we use the `drivingscenario` function. `scenario` function allows for simulation of an activity or a structure in the real world.
 
-You can use the `Drivingscenario` function to create different road layout designs by plotting the road layout in 2D or 3d graphs. It is done by specifying the coordinates of the road center using function `roadCentre=[];` and the road width then plotting these points on the graph.
+You can use the `Drivingscenario` function to create different road layout designs by plotting the road layout in 2D or 3D graphs. It is done by specifying the coordinates of the road center using function `roadCentre=[];` and the road width then plotting these points on the graph.
 
 ### Prerequisites
 To follow along with this tutorial, you'll need:
@@ -11,7 +11,7 @@ To follow along with this tutorial, you'll need:
 - [Proper understanding](/engineering-education/getting-started-with-matlab/) of MATLAB basics.
 
 ### Table of content
-- [Road layout design programmatacally using matlab](#road-layout-design-programmatacally-using-matlab)
+- [Road layout design programmatacally using Matlab](#road-layout-design-programmatacally-using-Matlab)
 - [Objectives](#Objectives)
 - [Straight road](#straight-road)
 - [Roads with lanes](#roads-with-lanes)
