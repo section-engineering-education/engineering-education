@@ -6,7 +6,7 @@ url: /localization-and-internationalization-in-android/
 title: Localization and Internationalization in Android
 description: This article will go through the Android localization process in great depth and how to apply best practices to your translation efforts.
 author: vivian-odhiambo
-date: 2022-01-05T00:00:00-12:20
+date: 2022-01-06T00:00:00-10:30
 topics: [Languages]
 excerpt_separator: <!--more-->
 images:
@@ -14,7 +14,6 @@ images:
   - url: /engineering-education/localization-and-internationalization-in-android/hero.jpg
     alt: Localization and Internationalization in Android Hero Image
 ---
-### Introduction
 Localization is the process of modeling applications to a specific locale, market, or device. Localization can also be regarded as language translation.
 <!--more-->
 Globalization is a term used in a wide variety of contexts such as transport and trade. 
@@ -37,7 +36,7 @@ Internationalization is the process of localizing and globalizing your applicati
  - [Localizing images ](#localizing-images )
  - [Precautions when localizing your application](#precautions-when-localizing-your-application)
  - [Conclusion](#conclusion)
- - [Reference](#reference)
+ - [Further reading](#further-reading)
 
 ### Prerequisites
 - Have [Android Studio](https://developer.android.com/studio?gclid=Cj0KCQiAk4aOBhCTARIsAFWFP9HLlfZnjvuyknAbHQ8WOk8iH2_k3M6rEnIEPkca8LdDnvA3HXbQiKAaAhMbEALw_wcB&gclsrc=aw.ds) IDE installed.
@@ -88,7 +87,7 @@ To understand how each resource is localized, it's crucial to know the resource 
 
 How to access the resources:
 
-##### 1. In a `Class`  
+##### 1. Class
 `[<res_directory>].<resource-type>.<Resource_name>`
 
 Examples:
@@ -151,14 +150,14 @@ You will notice that the directory name is appended with the specified qualifier
 
 ![Create_drawable_file](/engineering-education/localization-and-internationalization-in-android/create_drawable_file.jpg)
 
-#### Step 3: Locate the drawable subdirectory in your files and add the required image
+#### Step 3 - Locate the drawable subdirectory in your files and add the required image
 Locate the newly created `drawable` subdirectory and add an image that you wish to display for the specified `locale`. 
 
 Ensure that the image within the new drawable folder has a similar name as that in the original `drawable folder`.
 
 ![Image_files](/engineering-education/localization-and-internationalization-in-android/image_files.jpg)
 
-#### Step 5 - Running your localized application
+#### Step 4 - Running your localized application
 When you run your application, you should see the following output:
 
 ![English](/engineering-education/localization-and-internationalization-in-android/english.png)
@@ -176,12 +175,12 @@ When you run your application, you should see the following output:
 
 - When doing translation of strings, use professional translation services to make sure that the correct meaning is conveyed.
 
-To get the full implementation of the project, visit this [GitHub Repository](https://github.com/nia-vee/Localization-Internationalization-Demo)
-
 We also discussed the localization of strings and images, as well as the best practices to follow when localizing your application.
 
+You can access the full code from this[GitHub Repository](https://github.com/nia-vee/Localization-Internationalization-Demo)
+
 ### Further reading
-- [Localization and internationalization in android](https://developer.android.com/guide/topics/resources/localization)
+- [Localization and internationalization in Android](https://developer.android.com/guide/topics/resources/localization)
 
 ---
 Peer Review Contributions by: [Briana Nzivu](/engineering-education/authors/briana-nzivu/)
