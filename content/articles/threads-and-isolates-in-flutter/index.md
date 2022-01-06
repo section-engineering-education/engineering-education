@@ -1,11 +1,28 @@
-### Threads and Isolates In Flutter Apps 
-### Introduction
-Threads and isolates are two of the essential abstractions you will need to know when developing apps in Flutter. They allow developers to utilize multicore processors, improve user experience by reducing UI stuttering, and reduce battery consumption on mobile devices. 
+---
+layout: engineering-education
+status: publish
+published: true
+url: /threads-and-isolates-in-flutter/
+title: Threads and Isolates In Flutter Applications
+description: This article will go through the use of Threads and Isolates in Flutter applications
+author: waigwa-kanoi
+date: 2022-01-06T00:00:00-10:30
+topics: [Languages]
+excerpt_separator: <!--more-->
+images:
+
+  - url: /engineering-education/threads-and-isolates-in-flutter/hero.jpg
+    alt: Threads and Isolates In Flutter Applications Hero Image
+---
+Threads and isolates are two of the essential abstractions you will need to know when developing apps in Flutter.
+<!--more-->
+Threads and isolates allow developers to utilize multicore processors, improve user experience by reducing UI stuttering, and reduce battery consumption on mobile devices.
+
 ### Table of contents
-- Introduction
+- [Introduction](#introduction)
 - Table of contents
 - Prerequisites
-- Topics to handles
+- Goal
 - Isolates in Flutter
 - Application Development 
 - Step 1 - Creating States
@@ -16,25 +33,27 @@ Threads and isolates are two of the essential abstractions you will need to know
 - Calls
 
 ### Prerequisites
-- Visual Studio or any code editor installed.
-- Have an Understanding of Flutter Widgets.
-- Familiar with dart programming languages.
-- Know coding flutter apps. 
-### Topics to handle
-This article describes how to use the Dart Thread and Isolate classes in your Flutter application. The goal is to give you a deeper understanding of Thread and Isolate and when appropriate to use them.
+Before we get started, it is imortant for the reader to have:
+- [Visual Studio](https://code.visualstudio.com/) or any code editor installed.
+- Have a basic understanding of [flutter widgets](https://docs.flutter.dev/development/ui/widgets).
+- Familiarity with dart programming languages.
+- Basic understanding in developing flutter applications. 
+- 
+### Goal
+The goal is to give you a deeper understanding of threads and isolates and when appropriate to use them.
 
 ### Isolates in Flutter: 
-You can use Isolate together with threads to improve the performance of your application and reduce battery consumption on mobile devices. Isolates are similar to other programming languages' threading concepts, but they have a few key differences.
+You can use isolate together with threads to improve the performance of your application and reduce battery consumption on mobile devices. Isolates are similar to other programming languages' threading concepts, but they have some key differences.
 
 You can use the Isolate API to spawn new isolates; you can pass messages between an isolate and its parent thread(s). However, you are not directly accessing shared mutable states from within an isolate.
-### Application Development 
+
+### Application development 
 To demonstrate their usage, we will build a simple counter-demo: An application that starts with an initial value at 0 and allows the user to increment or decrement that value.
 
-The application has a button that will start a new counter. When the corresponding Isolate is created, we store its
-instance in a variable and pass it through various message handlers to update the current counter value. The instance of the isolated thread is stored in a class member variable called _isolate.
+The application has a button that will start a new counter. When the corresponding isolate is created, we will store its instance in a variable and pass it through various message handlers to update the current counter value. The instance of the isolated thread is stored in a class member variable called `_isolate`.
 
 ### Step 1 - Creating States
-- In the following code snippets, a comment starting with // [START isolate] means that an isolated thread is started. A comment beginning with // [END isolate] means the corresponding isolation is terminated.
+In the following code snippets, a comment starting with // [START isolate] means that an isolated thread is started. A comment beginning with // [END isolate] means the corresponding isolation is terminated.
 
 ```dart
 /// Flutter Widget to display a counter and increment it.
@@ -58,7 +77,7 @@ static MyIsolate _isolate ;
   ```
 
 ### Step 2 -Sending messages through Isolate
-  - In the following example, we demonstrate how to pass a message from the main thread through an Isolate and back. The purpose of this is to allow updates to isolated data without breaking the Isolate's encapsulation.
+Next, we will demonstrate how to pass a message from the main thread through an Isolate and back. The purpose of this is to allow updates to isolated data without breaking the Isolate's encapsulation.
 
   ```dart
   void incrementCounter(MyMessage msg) { // [START isolate] 
@@ -80,7 +99,11 @@ static MyIsolate _isolate ;
   ```
 
 ### Step 3 - Passing parameters between threads
-  - Here, We show how to pass a parameter from the main thread to the Isolate thread. Notice that this argument must be serializable. It is not possible to send Future s or Stream s across an Isolate boundary. If you do want to pass a Future along, see the next section.
+In this step, we will understand how to pass a parameter from the `main` thread to the `isolate` thread. 
+
+**Note: Notice that this argument must be serializable. It is not possible to send `Future s` or `Stream s` across an isolate boundary.**
+
+If you do want to pass a `Future` along, see the next section.
 
   ```dart
   void incrementCounter(int delta, bool start) { 
@@ -102,8 +125,9 @@ static MyIsolate _isolate ;
   IncrementCounter ( currentCounter : _counter + newValue , isStarting : start ) ) ; 
   // [END isolate] }
   ```
+  
 ### Step 4 - Serialization
-  - The Isolate can also pass messages through to the main thread. These messages must be Serializable. If you want an event back from the isolated class, see Responding To Messages And Events.
+The isolate can also pass messages through to the `main` thread. These messages must be Serializable. If you want an event back from the isolated class, see responding to messages and events.
 
   ```dart
   void incrementCounter() { 
@@ -143,14 +167,14 @@ static MyIsolate _isolate ;
   IncrementCounterProviderFunction ( onMessage : callback . onMessage , messageType : 0 , dataType : 1 ) ) ; 
   // [END  isolate] 
   }
-  ```
-### Step 5 - Provide Function
-
-  We also provide a special type of function called a ProviderFunction.A ProviderFunction can be called from the main  thread, and it returns a non - Serializable value to the main thread. 
+```
   
-  This is useful for cases where you want to return an object or data which is not serialized by default (for example, a std::shared_ptr).
+### Step 5 - Provide Function
+We also provide a special type of function called a `ProviderFunction`. A ProviderFunction can be called from the `main` thread, and it returns a non - serializable value to the main thread. 
+  
+ This is useful for cases where you want to return an object or data which is not serialized by default (for example, a `std::shared_ptr`).
 
-  Here is an example:
+ Here is an example:
   
   ```dart
   /// Sends a message to update the counter with a value of newValue and /// with isStarting set to true if start
@@ -180,10 +204,12 @@ static MyIsolate _isolate ;
   IncrementCounterProviderFunction ( callback : this . onUpdate , messageType : 0 , dataType : 1 ) ; }
   ```
   
-  This makes it easier to encapsulate and group common callback functions instead of having one function for each different combination of parameters. 
-  > Note:  The IncrementCounterProviderFunction(or ProviderFunction) is a utility  the function provided by NGMessageComposeViewController, not the Isolate. However, to simplify the code, we provide this convenience method to allow the developer to write less boilerplate code.
- ### Calls
-  Here is an example of how you might call this from Objective - C:
+This makes it easier to encapsulate and group common callback functions instead of having one function for each different combination of parameters. 
+
+**Note:  The `IncrementCounterProviderFunction`(or ProviderFunction) is a utility  the function provided by `NGMessageComposeViewController`, not the isolate. However, to simplify the code, we provide this convenience method to allow the developer to write less boilerplate code.
+
+### Calls
+Here is an example of how you might call this from Objective - C:
   
 ```dart
 @interface ViewController: UIViewController < UITableViewDataSource, UITableViewDelegate> @property(strong, nonatomic)
@@ -202,9 +228,11 @@ IncrementValueProvider( callback : self.onIncrementValue, messageType: 0, dataTy
 value by a given amount. func incrementBy (amount: Int) { // [START isolate] let provider =
 IncrementValueProvider( callback: self.onUpdate, messageType: 0,Thread and Isolate in flutter.
 ```
-To see more of the implementation or have a view of the above Reachout @ [this GitHub repository](https://github.com/waigwakanoi/).
+To see more of the implementation or have a view of the above Reachout via [this GitHub repository](https://github.com/waigwakanoi/).
+
 ### Conclusion
-The reality is that you can use threads in Flutter to help you with the performance of your application. However, since you are using Dart, you cannot do it directly inside a widget; instead, you need to create an isolate. 
+The reality is that you can use threads in flutter to help you with the performance of your application. However, since you are using Dart, you cannot do it directly inside a widget; instead, you need to create an isolate. 
 You also have different options available if you do not want any threading or if you want some threading, you can use the Isolate. The idea is that you will create a new thread that will run in parallel with your main application code.
 It would be best to keep in mind that you cannot share any state between both threads but instead, you have to communicate by messaging or passing data through channels.
-Happy coding geeks.
+
+Happy coding geeks!
