@@ -34,7 +34,7 @@ The following features make DApps essential in the current and future world:
 - **Storage:** DApps operations are stored on a blockchain. Blockchain does not depend on intermediaries. Therefore, it enhances productivity, trust, and transparency.
 - **DApps are open source:** Any developer in the community can utilize, improve, and build on top of them. The complete code base is usually freely available.
 - **Autonomy:** DApps users are free to run their affairs. The goal is for anyone to publish or use these DApps. DApps have brought about decentralization as no central authority controls the users. 
-- **DApps give incentives:**. The blockchain network participants are awarded **cryptographic tokens** for their contributions. Cryptographic tokens are units of value in blockchain used for investment, storing value, and making purchases.
+- **DApps give incentives:** The blockchain network participants are awarded **cryptographic tokens** for their contributions. Cryptographic tokens are units of value in blockchain used for investment, storing value, and making purchases.
 - **Security:** Using the blockchain to run DApps adds an extra layer of protection. This is because the ethereum blockchain distributes and encrypts the transactions. As a result, there is no central location where hackers may break in and acquire access.
 
 ### Why DApps are key to future technology
