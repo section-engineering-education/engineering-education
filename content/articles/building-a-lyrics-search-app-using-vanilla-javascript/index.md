@@ -34,9 +34,9 @@ To begin, create a folder named `lyrics-app`, then you need to create three file
 The code snippet below creates the structure for the lyrics search app. In creating the structure of the lyrics search app, you will make use of HTML5. This section deals
 with the `lyrics.html` file you created. 
 
-In the head tag (<head></head>) of the HTML file, you will input the needed or pre-defined meta tags that is essential for all web apps. Still in the `head` tag, you would link the CSS file to the HTML file and also give the web app a title of `Lyrics Search App` embedded between the opening and closing `title` tag.
+In the `head` tag of the HTML file, you will input the needed or pre-defined meta tags that is essential for all web apps. Still in the `head` tag, you would link the CSS file to the HTML file and also give the web app a title of `Lyrics Search App` embedded between the opening and closing `title` tag.
 
-Next, you would create a div with a class of `container`, this is the div that would house other divs which you will create. Moving forward, you will create another div with class of `intro-text`, in this div you will create two separate text using the `h1` and `h2` tag respectively. The content of the first text is `Learn your favourite`, it will be embedded in the `h1` tag, while the content of the second text is `song lyrics`, it will also be embedded in the `h2` tag. Those are the contents for the div that has the class of `intro-text`.
+Next, you would create a div with a class of `container`, this is the div that would house other divs which you will create. Moving forward, you will create another div with class of `intro-text`, in this div you will create two separate text using the `h1` and `h2` tag respectively. The content of the first text is `Learn your favourite`, it will be embedded in the `h1` tag, while the content of the second text is `song lyrics`, it will be embedded in the `h2` tag. Those are the contents for the div that has the class of `intro-text`.
 
 Inside the div with class of `container`, you will create another div with id of `lyrics-search`. In this newly created div, you will create a form which an input field will be embedded in it, and also another separate div where the fetched lyrics would be displayed. 
 
