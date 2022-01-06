@@ -3,7 +3,6 @@
 The [Fetch API](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API) is used to make requests from the web page front end to an API endpoint of the back end. The [FormData](https://developer.mozilla.org/en-US/docs/Web/API/FormData) API provides a precise way of accessing HTML form fields. Both of these two natively supported browser APIs make it easy to send requests, but to send data as JSON to an API endpoint extra bit of work is needed. In this tutorial, we explore a set by step procedure on how to capture form field data and send it as JSON data to an API endpoint.
 
 ### Steps
-
 Here are the steps we are going to follow to achieve our goal
 
 1. [Listen for form submission](#Listen-for-form-submission).
@@ -281,13 +280,11 @@ In the root of the project folder, run the following command to initialize your 
 ```
 npm init
 ```
-
 Fill in the relevant questions, and then follow through to the next steps.
 
 Alternatively, to auto initialize your project with NPM default values, you can run `npm init -y`. Check this in-depth [npm guide](https://www.section.io/engineering-education/beginner-guide-to-npm/) to understand how to use NPM.
 
 ### npm packages used:
-
 - Express - Express will help us make the API endpoints that will communicate with the database server. Here is a link to [learn more about express.js](https://www.section.io/engineering-education/express/).
 
 - [Nodemon](https://nodemon.io/) - a dev package (not needed for the app to function). Nodemon ensures that the server is running whenever you make changes. When you save changes, you don’t have to restart the server. Nodemon will handle this for you.
@@ -308,12 +305,10 @@ npm install --save-dev nodemon
 ```
 
 ### The Nodejs API/Server code.
-
 ```js
 const express = require("express");
 const app = express();
 var cors = require("cors");
-
 //cors to allow cross origin resource sharing
 app.use(cors());
 //Middleware to parse the body of the request as JSON
