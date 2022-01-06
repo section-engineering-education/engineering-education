@@ -1,5 +1,22 @@
-### Optimizing and securing android applications with R8 
-R8 is a tool that is used to shrink, secure, and optimize Android applications. It uses proguard rules to change the application's behavior. People tend to confuse R8 and proguard. They are  similar but they have some slight differences. Later in this article, we will see how the two differ from each other.
+---
+layout: engineering-education
+status: publish
+published: true
+url: /optimizing-and-securing-android-apps-with-r8/
+title: Optimizing and Securing Android applications with R8
+description: This tutorial will show the reader how to optimize and secure Android applications with R8.
+author: kariuki-boniface
+date: 2022-01-07T00:00:00-00:00
+topics: [Languages]
+excerpt_separator: <!--more-->
+images:
+
+  - url: /engineering-education/optimizing-and-securing-android-apps-with-r8/hero.png
+    alt: Optimizing and Securing Android applications with R8
+---
+R8 is a tool that is used to shrink, secure, and optimize Android applications. It uses proguard rules to change the application's behavior.
+<!--more-->
+Developers tend to confuse R8 and proguard. They are similar but they have some slight differences. Later in this tutorial, we will see how the two differ from each other.
 
 ### Goals
 By the end of this tutorial, the reader should have an understanding of the following:
@@ -49,7 +66,7 @@ The code inside the `release{}` block means that this will be applied to the rel
 
 `minifyEnabled` is set to `true` so that it can perform the R8 functions.
 
-`shrinkResources` is also set to `true`. This will remove all unused resources that you created/added in your application.
+`shrinkResources` is also set to `true`. This removes all the unused resources that you created/added in your application.
 
 In cases where you want to optimize your code intensively and  minimize your code, add the following in `gradle.properties`:
 
@@ -97,7 +114,7 @@ This technique mainly focuses on the following:
 
 This shortens the names of classes and packages.
 
-- **Reducing Debug Information**
+- **Reducing debug information**
 
 R8 Canonicalizes debug information and compresses the debug number information.
 
@@ -105,7 +122,7 @@ In some situations, some code structures cannot be removed by the above techniqu
 
 Such classes may include:
 
-- Builders. eg `DatabaseBuilder` and `Retrofit.Builder`
+- Builders. eg `DatabaseBuilder` and `Retrofit.Builder`.
 - Lambdas. 
 
 This class may not be required at runtime and so they may slow the app build time. 
@@ -113,7 +130,6 @@ This class may not be required at runtime and so they may slow the app build tim
 Class inlining rewrites the code in a way that unused builders or lambdas can be removed.
 
 ### Proguard rules and `@keep` annotation
-
 R8 uses the proguard rules to optimize your code. It is not always advisable to rename all class names due to various reasons. But, R8 may delete a piece of code that your app actually requires. This may be because R8 did not check your code correctly.
 
 > NOTE: Always test your app to see if it works as expected. An app may not crash in its debug version but it might crash in its release version. You can always generate a report on removed code to see what code was removed by R8. 
@@ -139,19 +155,20 @@ You can also use the `@keep` annotation in a class instead of the `-keep` in the
 You can read more on customizing proguard rules on [ProGuard  Documentation.](https://www.guardsquare.com/manual/configuration/usage)
 
 ### Building to release version of an application
-
 By default, when you build an app in Android Studio, it is built to the debug version. In order to build it to release version, you just  need to do as follows:
 
 1. Click on `build` menu on Android Studio and navigate to select build Variant.
 
-![Screen one](/engineering-education/optimizing-and-securing-android-applications-with-R8/screen-one.png)
+![Screen one](/engineering-education/optimizing-and-securing-android-apps-with-r8/screen-one.png)
 
-1. Select build variants and active build variants will appear. Click on the drop-down and select the release version. This will rebuild your app in its release version.
+2. Select build variants and active build variants will appear. Click on the drop-down and select the release version. This will rebuild your app in its release version.
 
-![Screen one](/engineering-education/optimizing-and-securing-android-applications-with-R8/screen-two.png)
+![Screen one](/engineering-education/optimizing-and-securing-android-apps-with-r8/screen-two.png)
 
 ### Conclusion
-
-In this tutorial, we have seen that R8 is a tool used to shrink, optimize, secure, and obfuscate code in Android. R8 is slightly different from ProGuard despite it using the ProGuard rules to perform its tasks. When comparing the two, R8 is outstanding and best to optimize and shrink your application size.
+In this tutorial, we have seen that R8 is a tool used to shrink, optimize, secure, and obfuscate code in Android. R8 is slightly different from proguard despite it using the ProGuard rules to perform its tasks. When comparing the two, R8 is outstanding and best to optimize and shrink your application size.
 
 Happy Coding!
+
+---
+Peer Review Contributions by: [Eric Gacoki](/engineering-education/authors/eric-gacoki/)
