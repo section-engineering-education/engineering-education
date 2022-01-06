@@ -184,7 +184,7 @@ It uses text-to-speech audio, which speaks out any text provided, which handles 
 ### Conclusion
 In this tutorial, we have learned localization, globalization, and internationalization. How Android SDK deals with localized resources. We also learned the localization of strings and images. Best practices to follow when localizing your application.
 
-To get the full implementation of the project, visit this [GitHub Repository](https://github.com/nia-vee/localization_internationalization_demo)
+To get the full implementation of the project, visit this [GitHub Repository](https://github.com/nia-vee/Localization-Internationalization-Demo)
 
 ### Reference
 [Localization and internationalization in android](https://developer.android.com/guide/topics/resources/localization)
