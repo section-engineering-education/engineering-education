@@ -177,7 +177,7 @@ When you run your application, you should see the following output:
 
 We also discussed the localization of strings and images, as well as the best practices to follow when localizing your application.
 
-You can access the full code from this[GitHub Repository](https://github.com/nia-vee/Localization-Internationalization-Demo)
+You can access the full code from this [GitHub Repository](https://github.com/nia-vee/Localization-Internationalization-Demo)
 
 ### Further reading
 - [Localization and internationalization in Android](https://developer.android.com/guide/topics/resources/localization)
