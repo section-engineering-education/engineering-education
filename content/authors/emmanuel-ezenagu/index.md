@@ -1,7 +1,7 @@
 ---
 title: Ezenagu Emmanuel
 type: authors
-twitter: https://twitter.com/EzenaguEmmanue3?s=09
+twitter: https://twitter.com/EzenaguEmmanue3
 linkedin: https://www.linkedin.com/in/ezenaguemmanuel/
 website: https://emmanuel-ten.vercel.app/
 images:
