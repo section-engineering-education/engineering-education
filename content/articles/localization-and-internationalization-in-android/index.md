@@ -176,10 +176,7 @@ When you run your application, you should see the following output:
 
 - When doing translation of strings, use professional translation services to make sure that the correct meaning is conveyed.
 
-- Do not over-localize your application. Ensure you select the resources you want to localize according to the specified configuration.
-
-### Conclusion
-In this tutorial, we have learned localization, globalization, and internationalization.
+To get the full implementation of the project, visit this [GitHub Repository](https://github.com/nia-vee/Localization-Internationalization-Demo)
 
 We also discussed the localization of strings and images, as well as the best practices to follow when localizing your application.
 
