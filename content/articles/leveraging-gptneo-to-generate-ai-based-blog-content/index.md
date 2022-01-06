@@ -38,7 +38,7 @@ But, the model is not open-sourced and it's only available through a closed beta
 
 The GPT-3 Neo model that we will use in this tutorial is trained on 125 million parameters. It is not exactly the GPT-3 model with 175 billion parameters that was built by OpenAI but it's also equally as sophisticated as we will see in this tutorial. 
 
-> If you have a much powerful machine, you can train your model on the much powerful 1.3, and 2.7 billion parameters model for a better outcome.
+> If you have a very powerful machine, you can train your model on the much powerful 1.3, and 2.7 billion parameters model for a better outcome.
 
 ### How to leverage GPT-Neo to Generate AI-based Blog Content
 #### Installing and importing dependencies
@@ -73,7 +73,7 @@ generator = pipeline('text-generation', model ='EleutherAI/gpt-neo-2.7B')
 ```
 This block of code goes ahead and downloads our GPT-Neo model with 2.7 billion parameters from transformers. Specifically, focusing on the `text-generation` pipeline. We store this model inside a variable known as `generator`. This process is going to take a bit of time to download as it is a fairly large model, about 10GB. 
 
-There are the 1.3 billion and 125 million parameter models, if your computer is running slow, you can leverage that model instead using the following command:
+There are also the 1.3 billion and 125 million parameter models you can leverage.
 
 For the 1.3 billion parameter model, use:
 
