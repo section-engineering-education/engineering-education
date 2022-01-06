@@ -304,7 +304,7 @@ function showData(data) {
 In the code snippet above, a `showData()` function was created and data was passed as an argument. The name of the function is very descriptive, it is to display the lyrics on the webpage. The question that comes to mind is where you want to display the lyrics. The lyrics will be displayed inside an empty div in the `lyrics.html` file, the variable that connects the div to the JavaScript file is the variable output.
 
 ### Inner - HTML
-This is the DOM property that either sets or retrieves the content of an HTML element.In this instance, you will set the content of the empty div in the `lyrics.html` file to display the lyrics suggestions in a list form.
+This is the DOM property that either sets or retrieves the content of an HTML element. In this instance, you will set the content of the empty div in the `lyrics.html` file to display the lyrics suggestions in a list form.
 
 In other to access the data, refer to the screenshot above, you will notice that the data embodies some set of objects which has the properties we want to display on the webpage.
 
