@@ -1,15 +1,17 @@
 The cooperation between JavaScript and the web has been a standard. A few programming languages are utilized for web development, with a notable mention being Python. 
-Python's micro-frameworks, for example, `flask, Hug, Cherrypy,` have permitted Python to cooperate with the web. That carries us to our theme, 'Brython' (browser Python). 
-A scripting language, Brython is a Python3 execution adjusted to the HTML5 environment.
+Python's micro-frameworks, for example, `flask, Hug, Cherrypy,` have permitted Python to cooperate with the web.
 
-Brython interfaces smoothly with JavaScript and a portion of its libraries to build high-level web projects. 
-It incorporates; Vue.js, bokeh, Highchart, phaser, etc. We aim to tell you the best way to represent data utilizing piecharts and scatterplots in Brython. 
-As referenced before, this is conceivable because of the cooperation among Brython and Highchart.js libraries. Let us get on with it!
+That carries us to our theme, 'Brython' (browser Python). 
+A scripting language, Brython is a Python3 execution adjusted to the HTML5 environment. Brython interfaces smoothly with JavaScript and a portion of its libraries to build high-level web projects. It incorporates; Vue.js, bokeh, Highchart, phaser, etc. 
+
+We aim to tell you the best way to represent data utilizing piecharts and scatterplots in Brython. As referenced before, this is conceivable because of the cooperation among Brython and Highchart.js libraries. Let us get on with it!
 ### Prerequisites
+
 Brython requires a significant degree of knowledge on a couple of things. They include:
 - Python. The reader must install the [Python](https://www.python.org/downloads/) executable.
 - JavaScript.
 - Visual studio code.
+
 ### Aim
 We aim to guide the readers on how to:
 - Installing Brython in our local environment. We can achieve this using a host of methods:
@@ -21,28 +23,32 @@ We aim to guide the readers on how to:
 We will focus on the second and third methods for this tutorial.
 - Create a piechart using Brython.
 - Create a scatter plot using Brython.
+
 ### Getting started
+
 #### Installing brython with the node package manager
-What is node.js? Node.js is a JavaScript runtime used for building scalable network applications and executes JavaScript code outside a web browser. 
+Node.js is a JavaScript runtime used for building scalable network applications and executes JavaScript code outside a web browser. 
 To install Brython using npm, [Node.js](https://nodejs.org/en/) must be downloaded and installed. After installation, type the following command on your terminal:
 ```bash
 npm install brython
 ```
-Do this in your preferred directory for your project. You will notice a folder called node_modules, and within it contains the Brython module. 
+Do this in your preferred directory for your project. You will notice a folder called node_modules, and within it contains the Brython package. 
 Thus, you can add it to your web project using the script tag below:
 ```HTML
 <script type="text/javascript" src="../node_modules/brython/brython.js"></script>
 ```
+
 #### Installing brython using content delivery network
 Similar to the use of script tags above, Brython can be delivered directly from the web using CDN. 
-Content delivery network in JavaScript, delivers hosted stylsheets and JavaScript files using the `src` attribute in the script tag. The javascript file for brython is as below:
+Content delivery networks in JavaScript deliver hosted stylesheets and JavaScript files using the `src` attribute in the script tag. The javascript file for Brython is as below:
 ```JavaScript
 <script src="https://cdnjs.cloudflare.com/ajax/libs/brython/3.10.4/brython.js" 
 integrity="sha512-Dr8IR/2fk/pBmngFLduWN5Ys/t7lcPxGgLCulHdTdgDrDRnGb+ANMxGXq+DKVN87jom+N3BrzzI476Pf98RReA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 ```
-Any of the methods above is acceptable and, you should have your Brython project working as required. Let's move to the main thing!
+Any of the methods above is acceptable and, you should have your Brython project working as required.
+
 #### Create a piechart using brython.
-For arrangement's sake, we put these processes on a list. In a particular order, these are the steps required in achieving the above:
+For arrangement's sake, we listed these processes. In this particular order, here are the steps required in achieving the above:
 - Initialising our HTML5 boilerplate. On visual studio code, we did this by typing in the exclamation symbol and clicking enter on the suggestion.
  Below is our HTML5 boilerplate:
 
@@ -61,8 +67,9 @@ For arrangement's sake, we put these processes on a list. In a particular order,
 ```
 npm install highcharts
 ```
-Note! If you used the the node package manager, link your script to the exporting.js file in the node_module folder.
-#### Example 
+Note! If you used the Node package manager, link your script to the exporting.js file in the node_module folder.
+
+Example 
 ```HTML
 <!-- jquery -->
 <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
@@ -152,6 +159,7 @@ b_highchart({
     }]
 })
 ```
+
 - #### Explaining the code
     - `plotBackgroundColor` is the background color for the chart area.
     - `plotBorderWidth` is the width of the chart area in pixels.
@@ -165,6 +173,7 @@ On the execution of the above, our piechart should be as:
 ![piechart1](engineering-education/data-representation-with-react-and-ant-design/piechart1.png) 
 
 ![piechart2](engineering-education/data-representation-with-react-and-ant-design/piechart2.png)
+
 #### Create a scatterplot using Brython.
 A scatter plot tests the relationship between two factors. To achieve this, we implement the same method used in the piechart, with the difference being the code in the chart.py file.
 The chart.py file for scatterplot has the following code:
@@ -292,6 +301,7 @@ b_highchart({
 })
 ```
 The chart above shows how weight affects height using a sample of 600 individuals of different races. Here is the result of the analysis:
+
 ![scatterplot](engineering-education/data-representation-with-react-and-ant-design/scatterplot.png)
 
 - #### Explaining the code
