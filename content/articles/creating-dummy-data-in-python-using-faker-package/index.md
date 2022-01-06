@@ -1,5 +1,21 @@
-It's critical to test and evaluate software and hardware with dummy data before working with actual data. Running the code through various scenarios and test cases allows detection of possible bugs.
+---
+layout: engineering-education
+status: publish
+published: true
+url: /creating-dummy-data-in-python-using-faker-package/
+title: Creating Dummy Data using Python Faker Package
+description: This tutorial will help the reader understand how to create various types of dummy data using Faker package. We will also learn how to build a fake dataset for training machine learning models.
+author: diana-peter
+date: 2022-01-06T00:00:00-20:00
+topics: [Languages]
+excerpt_separator: <!--more-->
+images:
 
+  - url: /engineering-education/creating-dummy-data-in-python-using-faker-package/hero.jpg
+    alt: Creating Dummy Data using Python Faker Package Hero Image
+---
+It's critical to test and evaluate software and hardware with dummy data before working with actual data. Running the code through various scenarios and test cases allows detection of possible bugs.
+<!--more-->
 Faked data can be easily generated with a Python library faker. In this tutorial, we will learn how dummy data is generated using the Python Faker library.
 
 ### Table of contents
@@ -239,3 +255,7 @@ Happy coding!
 ### References
 - To see the whole code for this tutorial, click [here](https://colab.research.google.com/drive/1X9VLRsKpKOZisIzpRlfzIU_MneD1busP?usp=sharing).
 - Dummy data [generation](https://dev.to/petercour/dummy-data-generation-with-python-1kjg) with Python.
+- [Faker documentation](https://faker.readthedocs.io/en/master/index.html).
+
+---
+Peer Review Contributions by: [Srishilesh P S](/engineering-education/authors/srishilesh-p-s/)
