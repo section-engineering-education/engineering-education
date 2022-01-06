@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /spring-boot-spring-boot-jaspersoft-reports/
+url: /spring-boot-jaspersoft-reports/
 title: How to Generate Reports in a Spring Boot App Leveraging Jaspersoft
 description: In this tutorial the reader will learn how generate Jaspersoft reports in their Spring Boot application in the form of a hosted PDF file. 
 author: david-mbochi
