@@ -186,7 +186,7 @@ You have successfully designed the web page by adding colors, font-sizes, font-f
 Here is what your web page should look like:
 ![Screenshot for design](/engineering-education/building-lyrics-search-app-using-vanilla-javascript/design-screenshot.png)
 
-### Brief Introduction to the OVH API
+### Brief Introduction Of OVH API
   The OVH lyrics API, is a simple API that helps us retrieve lyrics of the song requested. While trying to get lyrics from this API, I noticed that it only has two parameters you can use to get data (lyrics), which are the artist name and title of the song. This basically means you can retrieve lyrics by using either the artist name or the title of the song. When a request is made, the data is returned in a JSON format.
 
 Using this API, you will get two status codes. They are:
@@ -263,7 +263,7 @@ async function startSearch(searchValue) {
 ```
 
 ### Testing the Current State Of the Web app
- At this point, you are going to test if the web app is actually returning the object of data from the OVH API when you input the title of a song or the name of an artist in the search field. The following are the task to carry out in this section.
+ At this point, you are going to test if the web app is actually returning the object of data from the OVH API when you input the title of a song or the name of an artist in the search field. The following are the tasks to carry out in this section.
  - Comment out the showData function in the code snippet above (remember to uncomment the showData function).
  - Launch the web app using the [live server vs code extension](https://marketplace.visualstudio.com/items?itemName=ritwickdey.LiveServer).
  - Type in a song in the search field (note that some suggested song lyrics are not avilable on this API, you can get a paid API to explore more).
@@ -520,6 +520,6 @@ form.addEventListener("submit", e => {
 ### Conclusion
 In this tutorial, you built a lyrics search web app using HTML5, CSS3, Vanilla JavaScript alongside ES6 features.
 
-I’m a big fan of you not just stopping at what is provided in this tutorial. If indeed you’ve learned something from this, I challenge you to add more features to this web app and also make the User Interface (UI) better. You can add a button that copies the lyrics to the clipboard or a button that helps you share lyrics with friends via social media platforms.
+I’m a big fan of you not just stopping at what is provided in this tutorial. If indeed you’ve learnt something from this, I challenge you to add more features to this web app and also make the User Interface (UI) better. You can add a button that copies the lyrics to the clipboard or a button that helps you share lyrics with friends via social media platforms.
 
 The source code is available on [Github](https://github.com/shegz101/Lyrics-Web-App).
