@@ -78,10 +78,11 @@ To link your script to the `exporting.js` file in the `node_module folder`, use 
 <!-- exporting.js -->
 <script src="exporting.js"></script>
 ```
-- Next, we add our brython.js file using our script tag. Also, we'll create a file and give it a name chart.py.
- We then import these files into our HTML file using the script tag and set the type to `"text/python3"`.
-- In our body section, we add the `onload` attribute `brython(1)`. It prints error messages on the browser's console.
- Next, Within the body tag, we add a div tag with id `container`, the div also has the inline styling below:
+3.  Adding the `brython.js` file using our script tag. 
+
+First, we will create a file named `chart.py.`  We then import these files into our HTML file using the script tag and set the type to `"text/python3"`.
+
+- In the body section,  add the `onload` attribute `brython(1)`. It prints error messages on the browser's console. Within the body tag,  add a div tag with id `container`, the div has the inline styling below:
 ```CSS
 #container{
     min-width: 310px; 
