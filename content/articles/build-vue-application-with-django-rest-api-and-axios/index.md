@@ -344,5 +344,4 @@ You can find more on this [site](https://codewithstein.com/combining-django-and-
 
 Happy coding.
 
----
-Peer Review Contributions by: 
+Peer Review Contributions by: [Mercy Meave](/engineering-education/authors/mercy-meave/)
