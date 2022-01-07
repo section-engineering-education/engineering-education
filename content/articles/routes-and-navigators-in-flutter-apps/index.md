@@ -4,7 +4,7 @@ Navigating in flutter apps, all you have to do is use the default navigation tha
 - learn the usage of navigator, routes in Flutter.
 - Passing between one page to another.
 - Learn how to put in place navigator and routes API.
-- Create a flutter application to show the usage of navigators and routes. 
+- navigators and routes implementation in flutter apps. 
 ### Disclaimers
 - By default, the MaterialApp widget has a routes property. 
 - Navigator 2.0 is also referred to as the router.
@@ -53,9 +53,9 @@ Take a case for an application used by users to stream songs or videos. When a u
 
 
 
-### Simple application that uses navigators and routes
+### Simple application that uses navigators and routes.
 
-For our application, we will have 3 screens. Navigator.push used navigate to the next page, Navigator.pop used to return to the previous page.
+For our application, we will have 3 screens. 
 1. Create a new flutter application
   Open your visual code. On the menu bar click on `view` then `command palette` then click on `new flutter project`. Specify the location where to create your project then specify the name of your project. You can also create using the vs code terminal by typing 
 ```cmd
@@ -63,7 +63,6 @@ flutter create name_of_project
 ```
 2. Open main. dart file and erase its content and replace it with this code.This case it uses named routes for all the three screen. It contains named routes of all the pages we have in our application.
 ```dart
-//start by importing packages and pages
 
 import 'allfiles.dart';
 void main() {
