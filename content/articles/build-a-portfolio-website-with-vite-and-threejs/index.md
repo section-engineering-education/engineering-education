@@ -4,7 +4,7 @@
 
 The majority of visually stunning websites follow a similar pattern, employing 3D animations to bring the material to life as the page is scrolled. We'll be working on something similar in this tutorial by building a portfolio website with Three.js. Three.js is a cross-browser Javascript library/API for creating and animating 3D computer graphics for web browser display.
 
-### What is Threejs
+### What Is Threejs
 
 Three.js is a Javascript framework that allows you to easily build a 3d or 2d graphic on your webpage without having to deal with WebGl directly. It's essentially an abstract layer built on top of webGl to make it easier to use; anyone can simply use the Web browser to experience 3D graphics without having to download any additional framework. Because Three.js is built on Javascript, adding interactivity between 3d objects and user interfaces is quite simple, making Three.js ideal for creating 3d games on the web platform. Aside from that, it has outstanding features like:
 
@@ -20,7 +20,7 @@ The arrival of Three.js simplified things in WebGl . One can now write a short l
 #### Limitations
 The main limitation of using Threejs is the performance. We don’t have the same performance between a native application and a web application with WebGl.
 
-### What is Vitejs?
+### What Is Vitejs?
 Cloned from the french word for `fast`, Vite is a build tool that aims to provide a faster development experience for modern web projects. It is a javascript development server that significantly improves the frontend development experience We can simply say it is a build tool for your development. It takes your code and transforms it into something that your browser understands.
 
 Another thing about Vite is that it allows you to have a development server and this development server is running while you work on your website it also handles refreshing the files based on what has changed and it does so in an extremely fast way.  Other features include:
@@ -32,7 +32,7 @@ Advance configuration.
 ### Prerequisites And Requirements
 For this tutorial, we need to have an understanding of just javascript and your own set of images.
 
-### Building the portfolio
+### Building The Portfolio
 
 The first thing we need to do is navigate into the folder we want to have our project installed and run :
 
