@@ -305,7 +305,9 @@ b_highchart({
 }]
 })
 ```
-The chart above shows how weight affects height using a sample of 600 individuals of different races. Here is the result of the analysis:
+The code above shows the relation between weight and height using a sample of 600 individuals of different races.
+
+When we execute this code, the scatterplot is as shown below:
 
 ![scatterplot](engineering-education/data-representation-with-react-and-ant-design/scatterplot.png)
 
