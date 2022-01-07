@@ -18,7 +18,7 @@ images:
 
 ### Introduction
 
- A flutter application is a  mobile app created using the flutter framework that runs on both iOS and Android.  Flutter uses Google's Skia library to draw widgets in UIs, which gives it high performance. Flutter is an advanced framework that allows for fast prototyping and amazing perfomance.
+ A flutter application is a crossplatform app created using the flutter framework that runs on both iOS and Android.  Flutter uses Google's Skia library to draw widgets in UIs, which gives it high performance. Flutter is an advanced framework that allows for fast prototyping and amazing perfomance.
 
 We will be using the blockchain library to create a simple application that will allow users to create and manage their blockchain.
 
@@ -33,7 +33,7 @@ To create a blockchain flutter application, we need to first install the Flutter
 
 Once you have installed the Flutter SDK, you can create a new project by running the following command in your terminal:
 
-```cmd
+```console
 flutter create my-blockchain-app
 ```
 
@@ -271,7 +271,7 @@ return new MaterialApp(
 
 Notice that we are connecting to my Devices, which is the name of my MQTT broker. You will need to change this to match the name of your broker. Now when you run the application on different devices, they will all be connected to the same blockchain network and will share the same blockchain data.
 
-To see more of the implementation or have a view of the above Reachout @ [this GitHub repository](https://github.com/johnniembugua/blockchain-app).
+To see more of the full implementation or have a view of the above Reachout @ [this GitHub repository](https://github.com/johnniembugua/blockchain-app).
 ### Conclusion
 
 Congratulations! You have now created a flutter application that uses a dart blockchain.This is just but a simple blockchain application consisting of several devices and every transaction made is broadcasted to all the other devices
