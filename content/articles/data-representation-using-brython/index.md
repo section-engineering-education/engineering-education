@@ -71,8 +71,8 @@ npm install highcharts
 ```
 Note! If you used the Node package manager, link your script to the exporting.js file in the node_module folder.
 
-Example 
-```HTML
+To link your script to the `exporting.js` file in the `node_module folder`, use this code:
+```html
 <!-- jquery -->
 <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
 <!-- exporting.js -->
