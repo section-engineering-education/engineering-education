@@ -90,8 +90,9 @@ First, we will create a file named `chart.py.`  We then import these files into 
     margin: 0 auto
 }
 ```
-Thus, our html should be as below:
-```HTML
+The `html` code is shown below:
+
+```html
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
