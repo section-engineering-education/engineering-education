@@ -7,22 +7,23 @@ A scripting language, Brython is a Python3 execution adjusted to the HTML5 envir
 We aim to tell you the best way to represent data utilizing piecharts and scatterplots in Brython. As referenced before, this is conceivable because of the cooperation among Brython and Highchart.js libraries. Let us get on with it!
 ### Prerequisites
 
-Brython requires a significant degree of knowledge on a couple of things. They include:
-- Python. The reader must install the [Python](https://www.python.org/downloads/) executable.
-- JavaScript.
-- Visual studio code.
+To follow along easily, the reader should:
 
-### Aim
-We aim to guide the readers on how to:
+- Install the [Python](https://www.python.org/downloads/) executable.
+-  Have [Python programming](/engineering-education/python-projects-for-beginners/) skills.
+-  Have [Javascript programming](https://www.w3schools.com/js/) skills.
+-  Have [Visual Studio Code.](https://code.visualstudio.com/)
+
+### Aim of this tutorial
+In this tutorial, we aim to guide the readers on how to:
+
 - Installing Brython in our local environment. We can achieve this using a host of methods:
-    - PyPI. Note! the reader must have Python3 installed prior.
-    - Content delivery network (CDN).
-    - Node package manager (npm).
-    - GITHUB.
-
-We will focus on the second and third methods for this tutorial.
-- Create a piechart using Brython.
-- Create a scatter plot using Brython.
+    1. PyPI. To use this method make sure you have installed Python3.
+    2. Content Delivery Network (CDN).
+    3. Node Package Manager (npm).
+    4. GitHub.
+     
+> NOTE: We will focus on the second and third methods in creating a piechart and scatter plot.
 
 ### Getting started
 
