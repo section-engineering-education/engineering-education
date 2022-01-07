@@ -17,20 +17,21 @@ images:
 Threads and isolates are two of the essential abstractions you will need to know when developing apps in Flutter.
 <!--more-->
 Threads and isolates allow developers to utilize multicore processors, improve user experience by reducing UI stuttering, and reduce battery consumption on mobile devices.
-
+Threading is an implementation of the cooperative, non-preemptive multitasking (software threads).An isolate is a thread that has an event loop that continuously processes events in its own memory space.
 ### Table of contents
 - [Introduction](#introduction)
-- Table of contents
-- Prerequisites
-- Goal
-- Isolates in Flutter
-- Application Development 
-- Step 1 - Creating States
-- Step 2 -Sending messages through Isolate
-- Step 3 - Passing parameters between threads
-- Step 4 - Serialization
-- Step 5 - Provide Function
-- Calls
+- [Table of contents].(#table of contents)
+- [Pre-requisites].(#pre-requisites)
+- [Goal].(#goal)
+- [Isolates in Flutter].(#isloates in flutter) 
+- [Application Development].(#application development) 
+- [Step 1 - Creating States].(#Step 1 - Creating States)
+- [Step 2 -Sending messages through Isolate].(#Step 2 -Sending messages through Isolate)
+- [Step 3 - Passing parameters between threads].(#Step 3 - Passing parameters between threads)
+- [Step 4 - Serialization of messages].(#Step 4 - Serialization of messages)
+- [Step 5 - Provider Function that returns non - serializable].(#Step 5 - provider function that returns non - serializable)
+- [Calls].(#calls)
+- [Conclusion].(#conclusion)
 
 ### Prerequisites
 Before we get started, it is imortant for the reader to have:
@@ -53,6 +54,7 @@ To demonstrate their usage, we will build a simple counter-demo: An application 
 The application has a button that will start a new counter. When the corresponding isolate is created, we will store its instance in a variable and pass it through various message handlers to update the current counter value. The instance of the isolated thread is stored in a class member variable called `_isolate`.
 
 ### Step 1 - Creating States
+In this step we are going to create a Class responsible for the counter.This class will contain createstate method used to create a new state.The Isolate will handle the counter of app as well as the changes in our Isolates.
 In the following code snippets, a comment starting with // [START isolate] means that an isolated thread is started. A comment beginning with // [END isolate] means the corresponding isolation is terminated.
 
 ```dart
@@ -126,7 +128,7 @@ If you do want to pass a `Future` along, see the next section.
   // [END isolate] }
   ```
   
-### Step 4 - Serialization
+### Step 4 - Serialization of messages
 The isolate can also pass messages through to the `main` thread. These messages must be Serializable. If you want an event back from the isolated class, see responding to messages and events.
 
   ```dart
@@ -169,7 +171,7 @@ The isolate can also pass messages through to the `main` thread. These messages 
   }
 ```
   
-### Step 5 - Provide Function
+### Step 5 - Provider Function that returns non - serializable
 We also provide a special type of function called a `ProviderFunction`. A ProviderFunction can be called from the `main` thread, and it returns a non - serializable value to the main thread. 
   
  This is useful for cases where you want to return an object or data which is not serialized by default (for example, a `std::shared_ptr`).
