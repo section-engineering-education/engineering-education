@@ -16,13 +16,14 @@ images:
 ---
 Caching is used to store data from slow memory to a faster memory to enhance easy access of data in a website. During app development, application performance is important. 
 <!--more-->
-The fact that your application works well during app development does not mean it will work well when thousands of people start using it. One main area to look at is data access. 
+During application development, our application will work well and faster since our application is in test mode. In test mode, there would be no much data that needs to be accessed from the database. After app development, our application needs to be used by more people, more data will need to be accessed from the database hence making our application to run slowly.
 
 Talking your database can be very expansive especially when your data might not change very often. This is where data caching comes in. This data can be cached in several ways such that we do not need to go back to the database to access it.
 
 In this article, we will discuss a caching method in the [.NET](https://docs.microsoft.com/en-us/dotnet/csharp/)framework called in-memory caching in [C#](https://docs.microsoft.com/en-us/dotnet/csharp/). We will create an application without caching, observe its performance and then introduce caching and observe how the performance is improved.
 
 ### Table of contents
+- [Table of contents](#table-of-contents)
 - [Prerequisites](#prerequisites)
 - [Building a blazor web application](#building-a-blazor-web-application)
 - [Accessing data without caching](#accessing-data-without-caching)
