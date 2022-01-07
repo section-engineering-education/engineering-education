@@ -1,6 +1,6 @@
 The easiest way for a user to get insight from information is through the use of data visualization. The most common tool for that is charts. In this article, we will create a simple admin dashboard that allows the user to view data using three commonly used charts- pie, bar, and line charts. Kotlin and an open-source chart library, MPAndroidChart, will be used. 
 
-The app will simulate wild animal data in a game park. For the data, we will get it from an SQLite database. The data source is not so vital for you can use any. It can be from an API through JSON, Room persistence library, simple arrays, local storage, etc. We will achieve this in the end.
+The app will simulate wild animal data in a game park. For the data, we will get it from an SQLite database. The data source is not so vital for you can use any. It can be from an API through JSON, Room persistence library, simple arrays, local storage, etc. We will achieve this in the end(The layout is configured for light mode only).
 
 ![Screenshot](/engineering-education/android-kotlin-mpandroidcharts-sqlite/screenshot-one.png)
 
