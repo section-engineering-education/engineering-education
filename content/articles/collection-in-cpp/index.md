@@ -1,23 +1,26 @@
 ### Introduction
-In c++, the collection is widely covered where it defines the framework under which data can be stored and manipulated. They can also be called containers.
+In C++, the collection is widely covered where it defines the framework under which data can be stored and manipulated. They can also be called containers.
+
 This article introduces you to these containers discussing them in detail and giving various examples of how data can be manipulated during runtime.
 
-Moreover, the article gives a clear explanation of the collection interface hierarchy as well as shows you sub-interfaces (classes) in it. Sub-interfaces like list, set, queue, etc will be explained further and show the relationship where it appears. Furthermore, we will see how to implement these sub-interfaces since we cannot implement collection itself. 
+Moreover, the article clearly explains the collection interface hierarchy and shows you sub-interfaces (classes) in it. 
+
+Sub-interfaces like list, set, queue, et cetera will be explained further and establish the relationship where it appears. Furthermore, we will see how to implement these sub-interfaces since we cannot implement collection itself. 
 
 ### Prerequisites
-For better understanding,
-- A have basics of  c & c++ programming
+For a better understanding, you should have a basic knowledge of C++.
 
-### Table of content
-- [collection interface hierarchy](#collection-interface-hierachy)
-- [relation of collection sub-interface](#relation-of-collection-sub-interface)
-- [implementation of interface](#implementation-of-interface)
-- [classes collection](#classes-collection)
+### Table of contents
+- [Collection interface hierarchy](#collection-interface-hierachy)
+- [Relation of collection sub-interface](#relation-of-collection-sub-interface)
+- [Implementation of interface](#implementation-of-interface)
+- [Classes collection](#classes-collection)
 
 ### Collection interface hierarchy
-In the c++ programming language collections, interfaces are the basic foundation of the collection framework. Here we get to know what is entailed in what collection(container). Therefore, the collection interface hierarchy consists of the following:-
-1. #### **List**
+In the C++ programming language collections, interfaces are the basic foundation of the collection framework. 
 
+Here we get to know what is entailed in what collection(container). Therefore, the collection interface hierarchy consists of the following:-
+#### 1.**List**
 In the list, we have  sub-classes  such as
 - ArrayList
 - LinkedList
@@ -26,31 +29,31 @@ In the list, we have  sub-classes  such as
 It consists of the following;
 - LinkedList
 - priorityqueue
-#### 3.Qequeue
+  
+#### 3.**Qequeue**
 Comprises of :
 - Arraydequeue
-
 
 #### 4. **Set**
 - HashSet
 
-
 ### Relation of collection sub interface
 
 #### 1. List 
-A list is a type of container which is built-in sequentially and allows allocation in it.
+A list is a type of container that is built-in sequentially and allows allocation.
+
 Since the list is doubly linked (data can be accessed bi-directionally and sequentially), it makes it possible for the insertion and deletion to be done faster. 
 
 **Syntax**
 
- Importing list header file(
+Importing list header file(
 
- template<class Type, class allocator
- <(X)>>class list: )
- - where x can be substituted data types.
+template<class Type, class allocator
+<(X)>>class list: )
+- where x can be substituted data types.
 
- example
- ```c++
+Example
+```c++
  #include<algorithm>
  #include<iostream>
  #include<list>
@@ -63,18 +66,19 @@ Since the list is doubly linked (data can be accessed bi-directionally and seque
         std::cout <<y<<'\n';
    }
  }
- ```
+```
 
-#### Why do we use list(std::list)
-The following are some of the reasons why we use std::list.
-- list make insertion, moving, deletion, and extracting data from any position of the list efficient.
+#### Why do we use list(`std::list`)
+The following are some of the reasons why we use `std::list`.
+- List makes insertion, moving, deletion, and extracting data from any position of the list efficient.
 - Its algorithms perform operations intensively.
-- It is taken as one of the best containers to use contrasted with others like vector etc.
+- It is taken as one of the best containers to use contrasted with others like vector et cetera.
+  
 #### **ArrayList**
 - They are containers that store different types of data.
 - Data stored in it is flexible and can be changed anytime.
 
-**Below we are going to see an example of Arraylist when doing insertion**
+Let's look at an example of how to use ArrayList.
 ```c++
 #include <list>
 using namespace std;
@@ -88,11 +92,21 @@ ylist.push_front(0);
 list <int> :: iterator it;cout<< "After insertion the elements will be as follows : " <<endl;
 for
       (it= ylist.begin();it != ylist.end();it++)cout<< *it  <<'\n';
+}
 ```
+
+In the above example, we create the list 'ylist' with integer values.
+
+Then we are trying to push the elements at the starting end, and that in last.
+
 #### LinkedList
-Here data is stored successively like in arrays. A linked list is a container whereby, we have nodes in which data is contained in them and the nodes also have a pointer that points to the next memory locations.
-Although data is stored sequentially the memory location does not share a border(not contiguous).
-**Below code shows how  we can create a node(structure) in linked list**
+Here data is stored successively like in arrays.
+
+A linked list is a container whereby we have nodes in which data is contained in them, and the nodes also have a pointer that points to the next memory locations.
+
+Although data is stored sequentially, the memory location does not share a border(not contiguous).
+
+Let's look at an example of how to use LinkedList.
 ```c++
 #include <iostream> using namespace std;
 //now we want to create the node
@@ -101,7 +115,12 @@ Although data is stored sequentially the memory location does not share a border
     int data;//we are using int since the data that we will put in the list will be an integer.
      node *next;};//not that,in c++ spaces can't affect the code .
 ```
-The above program has taught has how to create a node,  below now we are going to see how we can create a class of our choice that will contain now member data and functions required for the list. We should also know that the first node in the list is of much importance because when we access the first node of the list it means that, the access is to the entire list. So, in our example below, have decided to call my first node 'entry ' and the last node 'exit'.
+
+The above program has taught us how to create a node. Next, we will see how we can create a class of our choice that will contain member data and functions required for the list. 
+
+We should also know that the first node in the list is of much importance because when we access the first node of the list, the access is to the entire list.
+
+So, in our example below,let our first node be 'entry ' and the last node 'exit'.
 ```c++
 #include <iostream> using namespace std;
 //now we are creating the node.
@@ -110,7 +129,9 @@ The above program has taught has how to create a node,  below now we are going t
 int data;node *next;};
 //the class is now being created.
 class linked_list {
-private: node *entry,*exit;public: linked_list()
+private: node *entry,*exit;
+
+public: linked_list()
 {//below we are saying null since no data entered.
 entry = NULL;exit= NULL;//the list does not have any data(empty).
 };
@@ -119,7 +140,14 @@ int main()
 linked_list t;
 return 0;
 }
-In the above example, we have seen that constructor of the linked list has made the nodes to be empty. That is why both entry and exit nodes are null since there is no element was added to the list. Therefore, below we will see how to create a function that will enable us to add elements to the node in our linked list.
+};
+```
+
+In the above example, we have seen that constructor of the linked list has made the nodes to be empty. 
+
+That is why both entry and exit nodes are null since no element was added to the list. 
+
+Therefore, below we will see how to create a function that will enable us to add elements to the node in our linked list.
 ```c++
 #include <iostream> using namespace std;
 //now we are creating the node.
@@ -156,12 +184,21 @@ int main()
 }
 }
 ```
-Node 'tmp=new node' here we are doing allocation of a space required for the node by the 'new' operator so, (tmp) is used as a pointer which points to a node. 
-tmp->data=j - Here we are adding a value "data" to the node.
+
+Node `tmp=new node`, here we allocate a space required for the node by the `new` operator so, (tmp) is used as a pointer that points to a node. 
+
+`tmp->data=j` - Here we are adding a value "data" to the node.
+
 ### 2. Queue
 This is a kind of data structure where we use First in First Out(FIFO).
-Here data can be inserted and deleted from the queue. Therefore, the end at which the data is inserted is called **rear** and the end to which data is deleted is called **front** end.
-In the queue, LinkedList containers can also be used to store data(information). This becomes possible since in linked list data is stored successively. In this way, the queue is known to have an interaction with LinkedList.
+Here data can be inserted and deleted from the queue. 
+
+Therefore, the end at which the data is inserted is called `rear`, and the end to which data is deleted is called the `front` end.
+
+In the queue, LinkedList containers can also be used to store data(information). This becomes possible since data is stored successively in a linked list. 
+
+In this way, the queue is known to interact with LinkedList.
+
 The following program shows the implementation.
 ```c++
 #include <iostream> using namespace std;
@@ -243,31 +280,41 @@ int main() {
    return 0;
 }
 ```
+
 #### **Priorityqueue**
-In c++, a priority queue is a type of container where we give priority to elements during processing. like for instance, a scenario where you find the first elements are starting with the maximum to the minimum in decreasing order.
+In C++, a priority queue is a container that prioritizes elements during processing. 
+
+For instance, a scenario where you find the first elements starts with the maximum to the minimum in decreasing order.
+
 The following are methods used:
-- add(Ee) =   specific elements are inserted  in the priority queue.
-- clear()= it removes elements from the queue.
-#### **3. Dequeue**
-This is also a kind of datastructure where  deletion and insertion can be done just like  in the queue.
- operations done in dequeue
- - insert_at_beg():inserts from front  end of dequeue.
- - insert_at_end():inserts at rear end.
- - delete_fr_beg():you delete from front end.
- - nsert_fr_rear()romove/delete from rear end.
+- `add(Ee)` - specific elements are inserted  in the priority queue.
+- `clear()` - it removes elements from the queue.
+
+####  **3.Dequeue**
+This is also a kind of data structure where deletion and insertion can be done just like in the queue.
+
+Operations done in dequeue includes:
+ - `insert_at_beg()`-inserts from front  end of dequeue.
+ - `insert_at_end()`-inserts at rear end.
+ - `delete_fr_beg()`-you delete from front end.
+ - `insert_fr_rear()`- romove/delete from rear end.
+
+
 ### **4. set**
- 
- In c++, sets are used to store and retrieve data from containers.
- It contains HashSet classes which are unordered collections with unique elements.
- ### Implementation of interface
-Since the interfaces are the foundation of the collection, here we are going to see the implementation of some of the interfaces.
+In c++, sets are used to store and retrieve data from containers.
+It contains HashSet classes which are unordered collections with unique elements.
+
+### Implementation of interface
+Since the interfaces are the foundation of the collection, we will see the implementation of some of the interfaces.
+
 #### **1.List**
 The following are some of the functions used in the listing.
-- **Back()**-Here we return the last element in the list.
-- **Push front(t)**-A new element "t" is added at starting point of the list.
-- **Push_back(t)**- A new element ‘t’  is added at the end of the list.
-- **Pop_front()** – It removes the first element ant the list size is reduced by 1.
-- **Pop_back()** – The last element of the list is removed hence the list reduce.
+- **Back()** - Here, we return the last element in the list.
+- **Push front(t)** -A new element `t` is added at starting point of the list.
+- **Push_back(t)** - A new element `t`  is added at the end of the list.
+- **Pop_front()** - It removes the first element ant the list size by 1.
+- **Pop_back()** - The last element of the list is removed; hence the list reduce.
+  
 #### **2.Queue**
 Below is an implementation queue. It shows how to display elements in a queue. 
 ```c++
@@ -286,6 +333,7 @@ cout<<queue[n];
 }
 }
 ```
+
 #### **Set**
 Below shows an example of the HashSet program.
 ```c++
@@ -306,4 +354,6 @@ return 0;
 2022
 ```
 **Conclusion**
-In this article, we have learned what are collections in c++, interfaces found in these collections, and their hierarchy(showing classes found in each interface). Furthermore, we have seen how some of the sub-interface relate, and their implementation.
+This article has learned collections in c++, interfaces found in these collections, and their hierarchy(showing classes found in each interface).
+
+Furthermore, we have seen how some sub-interfaces relate and their implementation.
