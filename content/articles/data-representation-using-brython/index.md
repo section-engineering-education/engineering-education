@@ -48,10 +48,11 @@ integrity="sha512-Dr8IR/2fk/pBmngFLduWN5Ys/t7lcPxGgLCulHdTdgDrDRnGb+ANMxGXq+DKVN
 ```
 Any of the methods above is acceptable and, you should have your Brython project working as required.
 
-#### Create a piechart using brython.
-For arrangement's sake, we listed these processes. In this particular order, here are the steps required in achieving the above:
-- Initialising our HTML5 boilerplate. On visual studio code, we did this by typing in the exclamation symbol and clicking enter on the suggestion.
- Below is our HTML5 boilerplate:
+#### Create a piechart using Brython.
+In this section, we will start by creating a piechart using Brython. To create the piechart, we will follow the following steps:
+
+1. Initializing the HTML5 boilerplate.
+To initialize the HTML5 boilerplate, use the following code in VisualStudio Code:
 
 ```HTML
 <html lang="en">
