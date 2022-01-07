@@ -309,11 +309,16 @@ The chart above shows how weight affects height using a sample of 600 individual
 
 ![scatterplot](engineering-education/data-representation-with-react-and-ant-design/scatterplot.png)
 
-- #### Explaining the code
-    - The `chart` object:
-        - `type` specifies the chart type.
-        - `zoomType` specifies the zoom dimension when we move the mouse.
-        - `tooltip` is a small modal that pops up when we hover our mouse on the datasets in the plot. It displays any detail we wish to add to it.
+The code above plots the scatterplot using the `chart` object.  The `chart` object has the following methods that specify the behavior of our scatter plot.
+
+**`type`**
+This method is used to specify the chart type.
+
+**`zoomType`**
+ This method specifies the zoom dimension when we move the mouse.
+ 
+**`tooltip`** 
+This is a small modal that pops up when we hover our mouse on the datasets in the plot.  It displays all details added to the scatter plot.
 
 ### Conclusion
 The process of data representation is a delightful journey. Like all journeys, it must come to an end. 
