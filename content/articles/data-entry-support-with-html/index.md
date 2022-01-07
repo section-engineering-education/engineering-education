@@ -37,10 +37,6 @@ To have a better understanding of this article, the reader should:
 
 ### Table of contents
 
-- [Introduction](#introduction)
-- [Key Takeaways](#key-takeaways)
-- [Prerequisites](#prerequisites)
-- [Table of contents](#table-of-contents)
 - [Benefits of having an online data entry form](#benefits-of-having-an-online-data-entry-form)
   - [Brand Building](#brand-building)
   - [Targeted Notifications](#targeted-notifications)
