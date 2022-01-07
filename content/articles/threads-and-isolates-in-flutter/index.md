@@ -214,13 +214,21 @@ This makes it easier to encapsulate and group common callback functions instead 
 Here is an example of how you might call this from Objective - C:
   
 ```dart
-@interface ViewController: UIViewController < UITableViewDataSource, UITableViewDelegate> @property(strong, nonatomic)
-NSMutableArray * idsToUpdate;
+@interface ViewController: 
+  UIViewController < UITableViewDataSource, 
+  UITableViewDelegate> 
+@property(strong, nonatomic)
+  NSMutableArray * idsToUpdate;
 @end /// Sends a message to update the counter. 
 -( void ) sendUpdateCounter : ( int ) count callback : (
-IncrementCounterCallback ) callback { // [START isolate] 
-_isolate . send (UITableViewDelegate,  NGMessageComposeViewControllerDelegate> { @public id<IncrementCounterProviderFunction> _incrementCounterCallback; id
-<IncrementCounterCallback> _incrementCounterCallbackWithMessageTypeAndDataTypes; } @end
+  IncrementCounterCallback ) 
+  callback { // [START isolate] 
+  _isolate . send (UITableViewDelegate,  NGMessageComposeViewControllerDelegate> { 
+    @public id<IncrementCounterProviderFunction>
+    _incrementCounterCallback; id
+  <IncrementCounterCallback> 
+  _incrementCounterCallbackWithMessageTypeAndDataTypes; } 
+ @end
 ```
 
 Here is an example of how you can call this from Swift:
