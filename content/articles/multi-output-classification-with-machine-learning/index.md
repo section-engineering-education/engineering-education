@@ -175,7 +175,7 @@ This is used to calculate the accuracy score of the model after training.
 
 **MultiOutputClassifier**
 Since we are dealing with a multi-output classification problem, we need a more specific algorithm.
- `MultiOutputClassifier` is the most common [Scikit-learn](https://scikit-learn.org/stable/) algorithm that is used to build this model.
+`MultiOutputClassifier` is the most common [Scikit-learn](https://scikit-learn.org/stable/) algorithm used to build this model.
 
 We now need to specify features and labels for our model.
 
