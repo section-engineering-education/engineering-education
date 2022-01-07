@@ -163,15 +163,23 @@ b_highchart({
 })
 ```
 
-- #### Explaining the code
-    - `plotBackgroundColor` is the background color for the chart area.
-    - `plotBorderWidth` is the width of the chart area in pixels.
-    - `plotShadow` takes in boolean values. It adds a drop shadow to the area. 
-Note! Set the `plotBackgroundcolour`
-    - `renderTo` is similar to `document.getElementBy---` in javascript. In this case, it takes in the id of the div tag in our HTML.
-    - `tooltip` object contains the details in the small box when we hover on our chart.
+The code above is used to plot the pie chart using the following methods:
+**`plotBackgroundColor`** 
+It is used to plot the background color for the chart area.
 
-On the execution of the above, our piechart should be as:
+**`plotBorderWidth`** 
+This is used to plot the width of the chart area in pixels.
+
+**`plotShadow`**  
+This method takes in boolean values. It adds a drop shadow to the area. 
+
+**`renderTo` **
+This method is similar to `document.getElementBy` in javascript. It will take the `id` of the `div` tag in our HTML code.
+
+**`tooltip`**
+This object contains the details in the small box when we hover on our chart.
+
+When we execute this code, our piechart is as shown below:
 
 ![piechart1](engineering-education/data-representation-with-react-and-ant-design/piechart1.png) 
 
