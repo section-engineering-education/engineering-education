@@ -114,8 +114,9 @@ The `html` code is shown below:
     </body>
 </html>
 ```
-- Our chart.py file contains the following code:
-```Python
+### Chart.py file 
+The chart.py file contains the following code:
+```python
 from browser import window
 
 b_highchart = window.Highcharts.Chart.new
