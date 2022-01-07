@@ -16,7 +16,7 @@ images:
 ---
 Caching is used to store data from slow memory to a faster memory to enhance easy access of data in a website. During app development, application performance is important. 
 <!--more-->
-The fact that your application works well during app development does noit mean it will work well when thousands of people start using it. One main area to look at is data access. 
+The fact that your application works well during app development does not mean it will work well when thousands of people start using it. One main area to look at is data access. 
 
 Talking your database can be very expansive especially when your data might not change very often. This is where data caching comes in. This data can be cached in several ways such that we do not need to go back to the database to access it.
 
