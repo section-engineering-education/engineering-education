@@ -60,7 +60,6 @@ The symbol variables are t, w, T, and W, which we define by executing the comman
 ```Matlab
 syms t w T W
 ```
-`t` is used to show differentiation with respect to time.
 `w` is the angle theta.
 `T` is the time function.
 `W` is used to express the angular radians in the Fourier transform.
