@@ -177,10 +177,12 @@ On the execution of the above, our piechart should be as:
 
 ![piechart2](engineering-education/data-representation-with-react-and-ant-design/piechart2.png)
 
-#### Create a scatterplot using Brython.
-A scatter plot tests the relationship between two factors. To achieve this, we implement the same method used in the piechart, with the difference being the code in the chart.py file.
-The chart.py file for scatterplot has the following code:
-```Python
+#### Creating a scatterplot using Brython.
+A scatter plot is used to test the relationship between two factors. To achieve this, we will implement the same methods used in plotting the piechart. The only difference is the code in the chart.py file.
+
+The new `chart.py` file for the scatterplot is shown below:
+
+```python
 from browser import window
 
 b_highchart = window.Highcharts.Chart.new
