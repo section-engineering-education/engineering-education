@@ -1,10 +1,10 @@
-The cooperation between JavaScript and the web has been a standard. A few programming languages are utilized for web development, with a notable mention being Python. 
-Python's micro-frameworks, for example, `flask, Hug, Cherrypy,` have permitted Python to cooperate with the web.
+The cooperation between JavaScript and the web has been a standard. There are different programming languages used for web development, with a notable mention being Python.  Python has micro-frameworks such as `Flask`, `Hug`, and `Cherrypy` which have enabled Python to cooperate with the web.
 
-That carries us to our theme, 'Brython' (browser Python). 
-A scripting language, Brython is a Python3 execution adjusted to the HTML5 environment. Brython interfaces smoothly with JavaScript and a portion of its libraries to build high-level web projects. It incorporates; Vue.js, bokeh, Highchart, phaser, etc. 
+Instead of using Python micro-frameworks to run the client-side web applications, we have `Brython`. `Brython` stands for Browser Python.  `Brython` is a client-side scripting language with Python3 execution that is adjusted to the HTML5 environment. 
 
-We aim to tell you the best way to represent data utilizing piecharts and scatterplots in Brython. As referenced before, this is conceivable because of the cooperation among Brython and Highchart.js libraries. Let us get on with it!
+Brython interfaces smoothly with JavaScript and its libraries to build high-level web projects. It incorporates libraries such as Vue.js, Bokeh, Highchart, and Phaser.
+
+In this tutorial, we will represent data utilizing piecharts and scatterplots in Brython. This is possible because of the cooperation among Brython and Highchart.js libraries. Let's get started!
 ### Prerequisites
 
 To follow along easily, the reader should:
