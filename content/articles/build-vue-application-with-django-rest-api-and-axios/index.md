@@ -72,6 +72,7 @@ For the Vue.js and Axios library, we use the commands below:
 sudo npm install -g @vue/cli //for vue.js
 npm install axios
 ```
+
 ### Creating the Django application 
 After setting up Django, let us create our Todo application and all the required models.
 
@@ -132,10 +133,9 @@ class WorkTodo(models.Model):
 ```
 
 Since we use the rest_framework, we need to create another file under the todo application folder called `serializers.py`  and add the code below. This file is relatively similar to the Form and ModelForm classes in Django. It provides a convenient shortcut for creating serializers that deal with model instances and querysets, as well as a general approach to managing the output of your responses. With the serializers, the data is then transformed into a format that can be stored or transmitted.
+
 ```python
-
 from rest_framework import serializers
-
 from .models import WorkTodo
 
 class WorkSerializer(serializers.HyperlinkedModelSerializer):
@@ -335,10 +335,10 @@ Rerunning the project, you should see two tasks to the left(work to do) and one 
 ### Conclusion
 As seen from the above tutorial, we can use the Axios library to fetch and display data when building Vue.js applications where the Django framework is used purely as an API.
 
-To summarize, we have:
-- Learned how to combine Django and Vue.js
-- Explored the Django REST API and how we can use Axios to communicate with the Django backend.
-- Built a Todo Vue.js application showing how to fetch and display data from Django  REST APIs.
+To summarize, this tutorial enables us to:
+- Learn how to combine Django and Vue.js
+- Explore the Django REST API and how we can use Axios to communicate with the Django backend.
+- Build a Todo Vue.js application showing how to fetch and display data from Django  REST APIs.
 
 You can find more on this [site](https://codewithstein.com/combining-django-and-vuejs-everything-you-need-to-know/).
 
