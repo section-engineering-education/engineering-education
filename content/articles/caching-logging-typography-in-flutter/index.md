@@ -67,7 +67,7 @@ Users do not have to wait for data to be fetched every time they switch between 
 ### Caching implementation
 To show a sample of this, we will perform an HTTP request in our flutter application to fetch data when the user navigates to a new screen where its contents are fetched.
 
-#### Step 1
+#### Step One: Setting up our application
 In your `main.dart` file set up your flutter application to display a button that navigates to a new screen when clicked.
 
 ```dart
@@ -120,7 +120,6 @@ class _CountriesSelectState extends State<CountriesSelect> {
 }
 ```
 
-#### Step 2
 Next, we will make a widget containing a text titled, USA, the country we want to get more information.
 
 ```dart
@@ -135,7 +134,7 @@ We specify the screen we wish to navigate to by passing the selected country as 
 
 Based on the information gotten from the constructor, we store that in a data field, making it accessible to the class.
 
-#### Step 3
+#### Step Two: Analyzing inefficient scenario
 Next, we will request information about the selected country using the HTTP flutter package and a public rest API repository for country information offered by the [rest country](https://restcountries.com/). To achieve this, head on to the HTTP package repo and get the latest installed version. In this case, our is `HTTP: ^0.13.4` and add it to the dependencies in our `pubspec.yaml` file in the root directory of our application.
 
 ```yaml
@@ -449,7 +448,7 @@ The `FetchMoreScreen()` performs its request to the same resource and populates 
 
 Though this may not be the most efficient of examples, it is still sufficient to represent the idea of caching which we are discussing. 
 
-### Step 5, Operation, problem, solution
+### Step Three: Defining the Problem with our implementaion
 If you run the code as it is, you will get a list of the countries listed on the first screen.  Select a country of choice. You will proceed to the next screen, where details about the selected country are fetched from the endpoint. The data takes a while to display, but it renders on the screen once gotten. 
 
 Clicking the "More" button takes you to the next screen, which similarly sends a request to the database fetching extra details about the country. It also has a button labeled as ''Less'' that takes you back to the previous screen where you need to fetch the initial few data about the country, which is an irrelevant request. 
@@ -471,6 +470,8 @@ dependencies:
  http: ^0.13.4
  path_provider: ^2.0.8
 ```
+
+### Step Four: Implementation our Solution
 
 Run `flutter pub get` to install the dependency added. Import your `path_provider` package at the top of your file. Edit the `getCountryInfo()` function to effect your caching.
 
@@ -540,7 +541,7 @@ Using `file.existsSync()` we check if the file exists. If it does, we read from 
  // saving to cache
     file.writeAsStringSync(response.body, flush: true, mode:FileMode.write );
 ```
-
+### Step Five: Concluding
 When calling the file for the first time, we use the code snippet above to write our response to the file. Since the response from the HTTP package sending the request is already in JSON format, there is no need to decode it and store it in the database.
 
 If we run our code, we see that on the first click of the country name, we have a logged message saying fetched from API navigating back and forth between screens logs to the terminal the subsequent reads are fetched from the cached file. Our data access is fast, quick and saves resources fetching the same set of data from the endpoint every time the user navigates between screens.
