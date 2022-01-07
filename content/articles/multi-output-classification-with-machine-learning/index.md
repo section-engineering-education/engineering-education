@@ -163,7 +163,7 @@ Let's explain these packages that we have imported.
 This is the algorithm used to train the model. 
 
 **CountVectorizer**
-Since we are dealing with text, we need to convert the input text into vectors of numbers. Machine learning models do not understand the raw text. The converted vectors of numbers are the representation of the original text. CountVectorizer is the most common Python package that is used to perform this process.
+Since we are dealing with text, we need to convert the input text into vectors of numbers. Machine learning models do not understand the raw text. The converted vectors of numbers are the representation of the original text. `CountVectorizer` is the most common Python package used to perform this process.
 
 For further reading on CountVectorizer and how they convert raw text into vectors of numbers, click [here](https://towardsdatascience.com/basics-of-countvectorizer-e26677900f9c)
 
