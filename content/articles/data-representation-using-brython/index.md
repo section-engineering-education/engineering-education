@@ -46,7 +46,7 @@ Brython can be delivered directly from the web using CDN link. Content Delivery 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/brython/3.10.4/brython.js" 
 integrity="sha512-Dr8IR/2fk/pBmngFLduWN5Ys/t7lcPxGgLCulHdTdgDrDRnGb+ANMxGXq+DKVN87jom+N3BrzzI476Pf98RReA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 ```
-Any of the methods above is acceptable and, you should have your Brython project working as required.
+You can use any of the methods above to create your Brython project. After creating the Brython project, we can now create a piechart.
 
 #### Create a piechart using Brython.
 In this section, we will start by creating a piechart using Brython. To create the piechart, we will follow the following steps:
