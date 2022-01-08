@@ -1,11 +1,10 @@
-### How to Implement K fold Cross-Validation in Scikit-Learn
+### How to Implement K-fold Cross-Validation in Scikit-Learn
 
-The most typical strategy in machine learning is to divide a data set into training and validation sets. 70:30 or 80:20 could be the split ratio. It is the holdout method. The problem with this strategy is that we don't know if a high validation accuracy indicates a good model. What if the part of the data we utilized for validation turned out to be a success? Would our model still be accurate if we used a different section of the data set as a validation set? These are some questions that K fold CV answers. The GitHub repo for this project is [here](https://github.com/Inyrkz/breast_cancer/blob/main/k_fold_cv_article_guide.ipynb).
+The most typical strategy in machine learning is to divide a data set into training and validation sets. 70:30 or 80:20 could be the split ratio. It is the holdout method. The problem with this strategy is that we don't know if a high validation accuracy indicates a good model. What if the part of the data we utilized for validation turned out to be a success? Would our model still be accurate if we used a different section of the data set as a validation set? These are some questions that K-fold CV answers.
 
-### Prerequisites
-- Wisconsin Breast Cancer data set [here](https://www.kaggle.com/uciml/breast-cancer-wisconsin-data)
+To follow along wwith this tutorial, you need to have:
+- The Wisconsin Breast Cancer data set [here](https://www.kaggle.com/uciml/breast-cancer-wisconsin-data)
 - Google Colaboratory or Jupyter Notebook
-- Basic Knowledge of Decision Tree Algorithm [here](https://www.section.io/engineering-education/entropy-information-gain-machine-learning/)
 
 ### Outline
 - [Introduction](#introduction)
@@ -16,15 +15,15 @@ The most typical strategy in machine learning is to divide a data set into train
 - [References](#references)
 
 ### Introduction
-K fold cross-validation is a superior technique to validate the performance of our model. It evaluates the model using different chunks of the data set as the validation set. 
+K-fold cross-validation is a superior technique to validate the performance of our model. It evaluates the model using different chunks of the data set as the validation set. 
 
-We divide our data set into K folds. K represents the number of folds into which you want to split your data. If we use 5-folds, the data set divides into five sections. In different iterations, one part becomes the validation set.
+We divide our data set into K-folds. K represents the number of folds into which you want to split your data. If we use 5-folds, the data set divides into five sections. In different iterations, one part becomes the validation set.
 
-![5 Fold Cross-Validation](/engineering-education/how-to-implement-k-fold-cross-validation/5-fold-cv.jpeg)
+![5-Fold Cross-Validation](/engineering-education/how-to-implement-k-fold-cross-validation/5-fold-cv.jpeg)
 
 *[Image Source: Great Learning Blog](https://www.mygreatlearning.com/blog/cross-validation/)*
 
-In the first iteration, we use the first part of the data for validation. We use the other parts of the data set for training as illustrated in the image above.
+In the first iteration, we use the first part of the data for validation. As illustrated in the image above, we use the other parts of the data set for training.
 
 ### Data Preprocessing
  We import all the relevant libraries for the project and load the data set.
@@ -140,7 +139,7 @@ print("Label Encoded Target Variable", encoded_y, sep="\n")
 
 The number 0 represents benign, while 1 represents malignant. 
 
-### 5 Fold Cross-Validation
+### 5-Fold Cross-Validation
 We use the `cross_validate` function from the Scikit-Learn library's `model_selection` module. 
 
 ```python
@@ -190,7 +189,7 @@ def cross_validation(model, _X, _y, _cv=5):
               }
 ```
 
-The custom `cross_validation` function in the code above will perform 5 fold cross-validation. It returns the results of the metrics specified above. The `estimator` parameter of the `cross_validate` function receives the algorithm we want to use for training. The parameter `X` takes the matrix of features. The parameter `y` takes the target variable. The parameter `scoring` takes the metrics we want to use for evaluation. We pass a list containing metrics we want to use to check our model. For this guide, we will use accuracy, precision, recall, and f1 score. Setting the `return_train_score` to `True` will give us the training results.
+The custom `cross_validation` function in the code above will perform 5-fold cross-validation. It returns the results of the metrics specified above. The `estimator` parameter of the `cross_validate` function receives the algorithm we want to use for training. The parameter `X` takes the matrix of features. The parameter `y` takes the target variable. The parameter `scoring` takes the metrics we want to use for evaluation. We pass a list containing metrics we want to use to check our model. For this guide, we will use accuracy, precision, recall, and f1 score. Setting the `return_train_score` to `True` will give us the training results.
 
 
 We create a function to visualize the training and validation results in each fold. The function will display a grouped bar chart.
@@ -326,7 +325,7 @@ plot_result(model_name,
 ![F1 Score Plot of Decision Tree Model](/engineering-education/how-to-implement-k-fold-cross-validation/f1-score-1.png)
 
 
-From the visualizations, we notice that the training accuracy, precision, recall, and f1 scores in each fold are 100%. But the validation accuracy, precision, recall and f1 scores are not as high. We call this over-fitting. The model performs admirably on the training data. But not so much on the validation set. 
+The visualizations show that the training accuracy, precision, recall, and f1 scores in each fold are 100%. But the validation accuracy, precision, recall and f1 scores are not as high. We call this over-fitting. The model performs admirably on the training data. But not so much on the validation set. 
 
 Visualizing your results like this can help you see if your model is over-fitting. We adjust the `min_samples_split` hyper-parameter in the decision tree algorithm. It will fix the over-fitting problem.  The default value of the `min_samples_split` parameter is 2. We increase the value to 5.
 
@@ -404,11 +403,11 @@ plot_result(model_name,
 
 ![F1-Score Plot of the Second Decision Tree Model](/engineering-education/how-to-implement-k-fold-cross-validation/f1-score-2.png)
 
-We can see that the validation results of the second model in each fold are better. It has a mean validation accuracy of 93.85% and a mean validation f1 score of 91.69%.
+We can see that the validation results of the second model in each fold are better. It has a mean validation accuracy of 93.85% and a mean validation f1 score of 91.69%. The GitHub repo for this project is [here](https://github.com/Inyrkz/breast_cancer/blob/main/k_fold_cv_article_guide.ipynb).
 
 
 ### Conclusion
-When training a model on a small data set, the K fold cross-validation technique comes in handy. You may not need to use K fold cross-validation if your data collection is huge. The reason is you have enough records in your validation set to check the machine learning model.  It takes a lot of time to use K fold cross-validation on a large data collection. 
+When training a model on a small data set, the K-fold cross-validation technique comes in handy. You may not need to use K-fold cross-validation if your data collection is huge. The reason is you have enough records in your validation set to check the machine learning model.  It takes a lot of time to use K-fold cross-validation on a large data collection. 
 
 Finally, using more folds to check your model consumes more computing resources. The higher the value of K, the longer it will take to train the model. If K=5, the model trains five times using five different folds as the validation set. If K=10, the model trains ten times. 
 
