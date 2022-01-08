@@ -50,19 +50,22 @@ Open the file using Jupyter Notebook and follow through the following:
 #### Importing libraries
 Before starting to model, we first need to import a few necessary libraries below:
 ```python
-import pandas as pd
 import numpy as np
+import pandas as pd
 import seaborn as sns
+import re          #(regular expression)
 import matplotlib.pyplot as plt
-import re          #regular expression
 import warnings
 warnings.simplefilter("ignore")
 ```
+
 Once done, read the dataset using the following code below:
+
 ```python
 df= pd.read_csv("Language Detection.csv")
 df.head()
 ```
+
 We will then check the number of languages in the dataset using the following code:
 ```python 
 df["Language"].value_counts()
@@ -107,20 +110,22 @@ X.shape # check the shape of the data
 Once done with processing the data, we will now split the data into train and test sets as shown below:
 ```python
 from sklearn.model_selection import train_test_split
-x_train, x_test, y_train, y_test = train_test_split(X, y, test_size = 0.20, random_state=32)
+X_train, X_test, y_train, y_test = train_test_split(X, y, train_size = 0.80, random_state=32)
 ```
 
 Then, we will train our model using the `MultinomialNB` classifier which is best for classification with discrete features as shown below:
 ```python
 from sklearn.naive_bayes import MultinomialNB  
 model = MultinomialNB()
-model.fit(x_train, y_train)
+model.fit(X_train, y_train)
 ```
+
 Once it has finished training, we will now predict the output of the model using the test set.
-```pytho
-y_pred = model.predict(x_test)
+```python
+y_pred = model.predict(X_test)
 y_pred
 ```
+
 #### Model Evaluation
 After modeling, we will now evaluate the performance of our model.
 ```python
@@ -129,6 +134,7 @@ accuracy = accuracy_score(y_test, y_pred)
 cm = confusion_matrix(y_test, y_pred)
 print("Accuracy is :",accuracy)
 ```
+
 You can see the result of the model is pretty good.
 
 ![accuracy](/engineering-education/building-and-deploying-a-language-detection-system-using-flask/accuracy.jpg)
@@ -145,6 +151,7 @@ def predict(text):
 
 predict('I went home yesterday')  # Call the function
 ```
+
 The output of our prediction will be "English" as seen below:
 ![output](/engineering-education/building-and-deploying-a-language-detection-system-using-flask/output.jpg)
 
@@ -153,6 +160,7 @@ We can now save the model using `Pickle` as shown below:
 import pickle
 pickle.dump(model, open('model.pkl','wb'))
 ```
+
 After we've finished modeling, we will proceed to deploy the model using Flask.
 
 ### Deploying the model using Flask
@@ -160,6 +168,7 @@ Before we start the development process, we first need to install the Flask fram
 ```bash
 pip install flask
 ```
+
 Then, we need to create the following files:
 * `model.pkl` - The saved model we will use.
 * `apps.py` - To connect the web page with the model
@@ -200,90 +209,119 @@ On the `style.css` file make the following changes to style our webpage.
 
 ```css
 @import url(https://fonts.googleapis.com/css?family=Open+Sans);
-.btn-large { padding: 9px 14px; font-size: 15px; line-height: normal; -webkit-border-radius: 5px; -moz-border-radius: 5px; border-radius: 5px; }
-.btn-primary, .btn-primary:hover { text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25); color: #ffffff; }
-.btn-primary.active { color: rgba(255, 255, 255, 0.75); }
-.btn-primary { background-color: #4a77d4; background-image: -moz-linear-gradient(top, #6eb6de, #4a77d4); background-image: -ms-linear-gradient(top, #6eb6de, #4a77d4); background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#6eb6de), to(#4a77d4)); background-image: -webkit-linear-gradient(top, #6eb6de, #4a77d4); background-image: -o-linear-gradient(top, #6eb6de, #4a77d4); background-image: linear-gradient(top, #6eb6de, #4a77d4); background-repeat: repeat-x; filter: progid:dximagetransform.microsoft.gradient(startColorstr=#6eb6de, endColorstr=#4a77d4, GradientType=0);  border: 1px solid #3762bc; text-shadow: 1px 1px 1px rgba(0,0,0,0.4); box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.2), 0 1px 2px rgba(0, 0, 0, 0.5); }
 .btn-block { width: 100%; display:block; }
+.btn-large { padding: 8px 13px; font-size: 16px; line-height: normal; -webkit-border-radius: 4px; -moz-border-radius: 5px; border-radius: 5px; }
+.btn-primary.active { color: rgba(241, 241, 241, 0.75); }
+.btn-primary, .btn-primary:hover { text-shadow: 0 -1px 0 rgba(36, 33, 33, 0.25); color: #ffffff; }
+.btn-primary { background-color: #4871c4; background-image: -moz-linear-gradient(top, #67b9e6, #3d6dce); background-image: -ms-linear-gradient(top, #6eb6de, #4a77d4); background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#6eb6de), to(#4a77d4)); background-image: -webkit-linear-gradient(top, #6eb6de, #4a77d4); background-image: -o-linear-gradient(top, #6eb6de, #4a77d4); background-image: linear-gradient(top, #6eb6de, #4a77d4); background-repeat: repeat-x; filter: progid:dximagetransform.microsoft.gradient(startColorstr=#6eb6de, endColorstr=#4a77d4, GradientType=0);  border: 1px solid #3762bc; text-shadow: 1px 1px 1px rgba(0,0,0,0.4); box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.2), 0 1px 2px rgba(0, 0, 0, 0.5); }
 
-* { -webkit-box-sizing:border-box; -moz-box-sizing:border-box; -ms-box-sizing:border-box; -o-box-sizing:border-box; box-sizing:border-box; }
 
-html { width: 100%; height:100%; overflow:hidden; }
-
-body { 
-	width: 100%;
-	height:100%;
-	font-family: 'Open Sans', sans-serif;
-	background: #123f3f;
+body {
+	background: #123f3f; 
 	color: #fff;
+	height:100%;
+	width: 100%;
+	letter-spacing:1.2px;
+	font-family: 'Open Sans', sans-serif;
 	font-size: 18px;
 	text-align:center;
-	letter-spacing:1.2px;
 	
 }
 .login { 
-	position: absolute;
-	top: 40%;
-	left: 50%;
-	margin: -150px 0 0 -150px;
 	width:400px;
 	height:400px;
+	position: absolute;
+	margin: -150px 0 0 -150px;
+	top: 40%;
+	left: 50%;
 }
 
-.login h1 { color: #fff; text-shadow: 0 0 10px rgba(0,0,0,0.3); letter-spacing:1px; text-align:center; }
+.login h1 { color: #f3f6f4; text-shadow: 0 0 10px rgba(14, 13, 13, 0.3); letter-spacing:1px; text-align:center; }
 
 input { 
+	color: #f3f6f4;
+	background: rgba(0,0,0,0.3);
 	width: 100%; 
 	margin-bottom: 10px; 
-	background: rgba(0,0,0,0.3);
+	font-size: 14px;	
+	text-shadow: 1px 1px 1px rgba(0,0,0,0.3);
 	border: none;
 	outline: none;
 	padding: 10px;
-	font-size: 13px;
-	color: #fff;
-	text-shadow: 1px 1px 1px rgba(0,0,0,0.3);
 	border: 1px solid rgba(0,0,0,0.3);
 	border-radius: 4px;
 	box-shadow: inset 0 -5px 45px rgba(100,100,100,0.2), 0 1px 1px rgba(255,255,255,0.2);
-	-webkit-transition: box-shadow .5s ease;
-	-moz-transition: box-shadow .5s ease;
-	-o-transition: box-shadow .5s ease;
-	-ms-transition: box-shadow .5s ease;
-	transition: box-shadow .5s ease;
 }
-input:focus { box-shadow: inset 0 -5px 45px rgba(100,100,100,0.4), 0 1px 1px rgba(255,255,255,0.2); }
+input:focus { box-shadow: inset 0 -5px 40px rgba(77, 76, 76, 0.4), 0 1px 1px rgba(240, 237, 237, 0.2); }
 ```
 
 We will now proceed to connect the webpage with the model using `apps.py` by making the following changes.
 
 ```python
-# import libraries
-import numpy as np
+import pandas as pd
 from flask import Flask, request, render_template
 import pickle
 from sklearn.feature_extraction.text import CountVectorizer
 from sklearn.preprocessing import LabelEncoder
+import re
 
 cv = CountVectorizer()
 le = LabelEncoder()
 
-# Load the language detection model
 app = Flask(__name__)
-model = pickle.load(open('model.pkl', 'rb'))
 
 @app.route('/')
 def home():
     return render_template('index.html')
 
-# apply the model to the user's input
 @app.route('/predict',methods=['POST'])
 def predict():
-    txt = request.form.get('text') # get user input
-    y = cv.fit_transform([txt]).toarray() # convert text to bag of words model (Vector)
-    language = model.predict(y) # predict the language
-    language = le.inverse_transform(language) # find the language corresponding with the predicted value
     
-    output = language[0]
+    # Read data
+    df = pd.read_csv("Language Detection.csv")
+
+    # feature and label extraction
+    X = df["Text"]
+    y = df["Language"]
+
+    # Label encoding
+    from sklearn.preprocessing import LabelEncoder
+    le = LabelEncoder()
+    y = le.fit_transform(y)
+
+    # cleaning the data
+    text_list = []
+
+    # iterating through all the text
+    for text in X:         
+        text = re.sub(r'[!@#$(),n"%^*?:;~`0-9]', ' ', text) 
+        text = re.sub(r'[[]]', ' ', text)   
+        text = text.lower()
+        text_list.append(text)
+    
+    
+    # Encode the feature(text)
+
+    from sklearn.feature_extraction.text import CountVectorizer
+    cv = CountVectorizer() 
+    X = cv.fit_transform(text_list).toarray() 
+                                            
+    # split the dataset
+    from sklearn.model_selection import train_test_split
+    X_train, X_test, y_train, y_test = train_test_split(X, y, train_size = 0.80, random_state=32)
+
+    # Model Training
+    from sklearn.naive_bayes import MultinomialNB  
+    model = MultinomialNB()
+    model.fit(X_train, y_train)
+
+    if request.method == 'POST':
+        txt = request.form['text']
+        t_o_b = cv.transform([txt]).toarray()
+        language = model.predict(t_o_b) 
+        corr_language = le.inverse_transform(language) 
+    
+        output = corr_language[0]
 
     return render_template('index.html', prediction='Language is in {}'.format(output))
 
@@ -291,7 +329,7 @@ if __name__ == "__main__":
     app.run(debug=True)
 ```
 
-Once you've done the above changes, we can now run the webserver using the code below to see how our app works:
+Once you've done the above changes, we can now run the webserver using the following command to see how our app works:
 
 ```bash
 python apps.py
@@ -301,8 +339,10 @@ You should be able to see something like this:
 
 ![homepage](/engineering-education/building-and-deploying-a-language-detection-system-using-flask/index.jpg)
 
- Enter a word in any of the languages above and click on the **Predict** button to see your results as below:
- 
+ Enter a word in any of the languages above and click on the **Predict** button to see your results.
+
+ An example below is the results of a phrase *"Hur mår du"*.
+
  ![results](/engineering-education/building-and-deploying-a-language-detection-system-using-flask/results.jpg)
 
 ### Conclusion
