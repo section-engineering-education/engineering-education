@@ -23,6 +23,7 @@ Talking your database can be very expansive especially when your data might not 
 In this article, we will discuss a caching method in the [.NET](https://docs.microsoft.com/en-us/dotnet/csharp/)framework called in-memory caching in [C#](https://docs.microsoft.com/en-us/dotnet/csharp/). We will create an application without caching, observe its performance and then introduce caching and observe how the performance is improved.
 
 ### Table of contents
+- [Table of contents](#table-of-contents)
 - [Prerequisites](#prerequisites)
 - [Building a blazor web application](#building-a-blazor-web-application)
 - [Accessing data without caching](#accessing-data-without-caching)
@@ -47,7 +48,7 @@ After clicking `create new Project`, select `Blazor Server App` on the next scre
 
 On the next screen, we are required to enter the name of our application, enter the name and click `Next`. For this project, we will name our application `CachingApp` as shown in the figure below.
 
-![Name of Application](/engineering-education/building-a-checkout-form-with-stripe-elements/name.png)
+![Name of Application](/engineering-education/building-a-checkout-form-with-stripe-elements/name.jpg)
 
 On the next screen, we are required to select the target framework for our application, select `.Net Core 5.0(Current)`, and click `create` as shown in the figure below.
 
