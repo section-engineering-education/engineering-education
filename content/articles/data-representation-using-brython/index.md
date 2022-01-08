@@ -70,7 +70,7 @@ To install the Highcharts module, use this code:
 ```npm
 npm install highcharts
 ```
-Note! If you used the Node package manager, link your script to the exporting.js file in the node_module folder.
+> Note: If you used the Node Package Manager, make sure you link your script to the `exporting.js` file in the `node_module folder`.
 
 To link your script to the `exporting.js` file in the `node_module folder`, use this code:
 ```html
