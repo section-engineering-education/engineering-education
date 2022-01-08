@@ -18,7 +18,7 @@ Caching is used to store data from slow memory to a faster memory to enhance eas
 <!--more-->
 The fact that our application works well during app development does not mean it will work well when thousands of people start using it. One main area to look at is *data access*.
 
-Accessing our database often can be very expensive especially when our data is not always changing. Due to this reason, data caching is applied in our applications to reduce direct access time from the database. Thus, we enhance the performance of our application.
+Accessing our database often can be very expensive especially when the data is not changing. Due to this reason, data caching is applied in our applications to reduce direct access time from the database. Thus, we enhance the performance of our application.
 
 In this article, we will discuss a caching method in the [.NET](https://docs.microsoft.com/en-us/dotnet/csharp/)framework called in-memory caching in [C#](https://docs.microsoft.com/en-us/dotnet/csharp/). We will create an application without caching, observe its performance and then introduce caching and observe how the performance is improved.
 
@@ -31,13 +31,14 @@ In this article, we will discuss a caching method in the [.NET](https://docs.mic
 - [Conclusion](#conclusion)
 
 ### Prerequisites
-- A basic understanding of the [.NET Framework](https://docs.microsoft.com/en-us/dotnet/framework/)
-- [Microsoft Visual Studio](https://visualstudio.microsoft.com/downloads/) installed
-- Basic [C#](https://docs.microsoft.com/en-us/dotnet/csharp/) Knowledge
-- Configure your Microsoft Visual Studio with [.NET 5.0](https://dotnet.microsoft.com/en-us/download/dotnet/5.0)
+To follow along with this tutorial, the reader should have:
+- A basic understanding of the [.NET Framework](https://docs.microsoft.com/en-us/dotnet/framework/).
+- [Microsoft Visual Studio](https://visualstudio.microsoft.com/downloads/) installed.
+- A basic understanding of the [C#](https://docs.microsoft.com/en-us/dotnet/csharp/) language.
+- Microsoft Visual Studio configured with [.NET 5.0](https://dotnet.microsoft.com/en-us/download/dotnet/5.0).
 
 ### Building a blazor web application
-To be able to understand how in-memory caching works, we need to create a blazor application. Let's begin by opening Microsoft Visual Studio and select `create new project` as shown in the figure below.
+To be able to understand how in-memory caching works, we need to create a blazor application. Let us begin by opening Microsoft Visual Studio and select `create new project` as shown in the figure below.
 
 ![New project](/engineering-education/building-a-checkout-form-with-stripe-elements/newproject.png)
 
