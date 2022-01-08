@@ -1,5 +1,29 @@
+---
+layout: engineering-education
+status: publish
+published: true
+url: /data-representation-with-react-and-ant-design/
+title: Data Representation With React and Ant Design
+description: In this tutorial, we will take you on a journey of data representation using React and Antd.
+author: kuteyi-victor-toluwase
+date: 2022-01-08T00:00:00-11:40
+topics: [Languages]
+excerpt_separator: <!--more-->
+images:
+
+  - url: /engineering-education/data-representation-with-react-and-ant-design/hero.jpg
+    alt: data representation react ant image
+---
+Data representation! As old as time. According to home.adelphi.edu, data is the symbol that represents people, events, things, and ideas.
+<!--more-->
+Data representation is the form data is stored, processed, and expressed. 
+We express data using charts, graphs, points, all dependent on the analysis method. 
+
+In this tutorial, we will take you on a journey of data representation using [React](https://reactjs.org) and [Antd](https://ant.design). 
+
 ### Table of content
-- [Introduction](#introduction)
+- [Table of content](#table-of-content)
+- [Prerequisites](#prerequisites)
 - [Aim](#aim)
 - [Getting started](#getting-started)
   - [Node](#node)
@@ -10,25 +34,25 @@
   - [Data representation using step line](#data-representation-using-step-line)
 - [Conclusion](#conclusion)
 
-### Introduction
-Data representation! As old as time. According to home.adelphi.edu, data is the symbol that represents people, events, things, and ideas. Data representation is the form data is stored, processed, and expressed. 
-
-We express data using charts, graphs, points, all dependent on the analysis method. In this tutorial, we will take you on a journey of data representation using React and Antd. The reader is required to know the following:
+### Prerequisites
+The reader is required to know the following:
 - JavaScript.
 - React library.
 - Node.js.
 - HTML, CSS.
 
-The reader must download and install Node.js. With all this done, we can move to the next stage.
-
 ### Aim
 Data representation has no shortage of fun and, we are going to experience this together! At the end of the article, the reader should be able to:
 - Integrate Antd into a React project.
-- Visualize data with Basic line graphs using Antd.
-- Build Step line data representation using Antd.
+- Visualize data with basic line graphs using Antd.
+- Build step line data representation using Antd.
 
 ### Getting started
-To begin any React project, we need to install `node.js` to use the Node package manager to install the React package. Yarn (yet another resource negotiator) is also a program like npm. Developed by Facebook,  it is another package manager for JavaScript. We'll show you how to download and install Node and Yarn.
+To begin any React project, we need to install `node.js` to use the Node package manager to install the React package. 
+
+Yarn (yet another resource negotiator) is also a program like npm. Developed by Facebook,  it is another package manager for JavaScript. 
+
+We'll show you how to download and install Node and Yarn.
 
 #### Node
 - [Here](https://nodejs.org/en/) is the download link to Node.js executable. 
@@ -39,25 +63,33 @@ To begin any React project, we need to install `node.js` to use the Node package
 ```bash
 npm install --global yarn
 ```
+
 OR
-- [By clicking this link](https://classic.yarnpkg.com/latest.msi)
-Once done, we can move to the next stage of installing the Node modules.
+- [By clicking this link](https://classic.yarnpkg.com/latest.msi),
+then we can move to the next stage of installing the Node modules.
 
 #### Installing the node modules
-Installation of the Node modules is the most important part of this project. The Node modules contain the necessary package required to build our React project. To do this, we'll follow the steps below:
+Installation of the Node modules is the most important part of this project. The Node modules contain the necessary package required to build our React project. 
+
+To do this, we'll follow the steps below:
 - Create a base folder.
-- Within the base folder, we typed in the following command in our terminal
+- Within the base folder, we type in the following command in our terminal
 ```bash
 npx create-react-app my-apps
 ```
-Note! this will create a folder called `my-apps` and install the necessary dependencies into that folder.
+
+> Note: The above command will create a folder called `my-apps` and install the necessary dependencies into that folder.
+
 - In our terminal, we will type the commands below one after the other.
 ```bash
 cd my-apps
 
 npm start
 ```
-`cd` changes the directory and, `npm start` initializes the React script. The command above changes the current working directory to the `my-apps` folder. On implementation of the above, our React app should be as the below:
+
+The `cd` command changes the current working directory to `my-apps` and, `npm start` initializes the React script. 
+
+On implementation of the above, our React app should be as the below:
 
 ![react-app](engineering-education/data-representation-with-react-and-ant-design/react-app.png)
 
@@ -66,27 +98,34 @@ After installing the Node modules, type in the command on our terminal;
 ```bash
 npm install
 ````
-Doing this will install all the missing Node packages and, it can take some time. The command `npm install -target file-` installs specific Node packages. Below are lists of essential Antd packages needed and how to install them:
+
+Running above command installs all the missing node packages and, it can take some time. 
+
+The command `npm install -target file-` installs specific node packages. Below are lists of essential Antd packages needed and how to install them:
 - Antd.
 ```bash
 npm install antd
 ```
+
 - Ant design chart library. It is an essential piece in the development of charts for our analysis.
 ```bash
 npm install @ant-design/charts
 ```
+
 Antd charts rely on Antd icons and lodash. Thus, we'll need to install both packages to our app.
 ```
 npm install lodash
 npm install @ant-design/icons
 ```
-After, we can go to the next step.
 
 #### Data representation using basic line
-Within the src folder, we create a sub-folder called charts. It contains our Basic line and Step line javascript files. To create a Basic line chart, we need to initialize a React component to hold our data set. 
+Within the `src` folder, we create a sub-folder called `charts`. It contains our Basic line and Step line javascript files. 
+
+To create a basic line chart, we need to initialize a React component to hold our data set. 
 
 The React component contains `react, react-dom and line chart`. A line chart is part of the ant design chart library.
-Example
+
+**Example:**
 ```javascript
 import React, { useState, useEffect } from 'react';
 import ReactDOM from 'react-dom';
@@ -100,6 +139,7 @@ const DemoLine = () => {
 
 export default DemoLine;
 ```
+
 We did not make use of a large data set. So, we insert our data set as below:
 ```javascript
  const data = [
@@ -320,6 +360,7 @@ We did not make use of a large data set. So, we insert our data set as below:
 
  return <Line {...config} />;
 ```
+
 We should have our Basic line chat as below:
 
 ![basic-line](engineering-education/data-representation-with-react-and-ant-design/basic-line.png)
@@ -328,12 +369,16 @@ We should have our Basic line chat as below:
 - `yField` takes in `key` values in our dataset to be our y-axis.
 - The line that cuts through the chart divides it into the upper and lower median.
 - The `regionFilter` (indicated by the red color) are the values in the lower median. In this case, the median is around 1200. Thus, the red color identifies values below 1200.
-- The min takes the lowest valued number passed.
-- The max takes the highest valued number passed.
-- The median is the middle number in a list of numbers arranged in ascending order.
+- The `min` takes the lowest valued number passed.
+- The `max` takes the highest valued number passed.
+- The `median` is the middle number in a list of numbers arranged in ascending order.
 
 #### Data representation using step line
-Step line charts show the changes that occur at irregular intervals. To create our Step line chart, we'll follow all the steps used in our Basic line chart. Thus, our code is as below:
+Step line charts show the changes that occur at irregular intervals. 
+
+To create our step line chart, we'll follow all the steps used in our basic line chart. 
+
+Thus, our code is as below:
 ```javascript
 import React, { useState, useEffect } from 'react';
 import ReactDOM from 'react-dom';
@@ -393,6 +438,7 @@ const DemoLine = () => {
 
 export default DemoLine;
 ```
+
 On the implementation of the code above, we should have our Step line chart as:
 
 ![step-line](engineering-education/data-representation-with-react-and-ant-design/step-line.png)
@@ -401,3 +447,6 @@ On the implementation of the code above, we should have our Step line chart as:
 At this point, we've shown the reader how to represent data with React and Antd. [Here](https://github.com/Eze4Manuel/section_test) is a link to the GitHub repo containing the entire code snippet.
 
 Happy coding!
+
+---
+Peer Review Contributions by: [Miller Juma](/engineering-education/content/authors/miller-juma/)
