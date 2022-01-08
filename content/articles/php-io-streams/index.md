@@ -10,6 +10,9 @@ In this tutorial, we will learn how to handle large files in PHP using the conce
 - [Objectives](#objectives)
 - [Getting started with streams](#getting-started-with-streams)
 - [The file system handler](#the-file-system-handler)
+- [Working with streams](#working-with-streams)
+- [Retrieving file contents](#retrieving-file-contents)
+- [Writing to a file](#writing-to-a-file)
 - [Conclusion](#conclusion)
 
 
@@ -71,5 +74,105 @@ PHP Fatal error: Allowed memory size of 134217728 bytes exhausted (tried to allo
 
 The above error is due to the fact that the file is too large to be loaded into memory. As we may recall, PHP has the memory limit set to `128M`.
 
-Now that we understand how files are handled in PHP, 
+Now that we understand the problem that arises when handling large files, in the next section, let's introduce the concept of streams.
+
+### Working with streams
+Previously, we have seen how PHP default configurations restricts us to work within a set memory limit.
+
+In this section, let's first create a sample script to solve our above error using the concept of streams.
+```php
+//open the stream.php file and add the following:
+<?php
+$large_file = fopen(__DIR__ . '/large-test-file.txt', 'r');
+
+//the result is printed until the end of the file
+while(! feof($large_file)) {
+  $endLine = fgets($large_file);
+  echo $endLine. "<br>";
+}
+
+fclose($large_file);
+
+```
+
+In the above code, we are using the `fopen()` function to open the file. The `fopen()` function takes in 2 parameters, the first is the file path and the second is the mode.
+
+Next, we are using the `fgets()` function to read the contents of the file.
+Finally, we are using the `fclose()` function to close the file.
+
+When you execute the above code, you notice that it doesn't  give you an error as it was the case when we used the `file_get_contents()` function. This is the power of streams.
+
+### Retrieving file contents
+In the previous section, we have seen how we can use the power of streams in PHP to handle large files, in our case, using the `fopen()` function. 
+
+Now, let's understand how we can retrieve the contents of the file using the `fgets()` function.
+```php
+...
+while(! feof($large_file)) {
+  $endLine = fgets($large_file);
+  echo $endLine. "<br>";
+}
+...
+```
+
+In the above code, we have a `while` loop that will run until the end of the file. The `feof()` function will return `true` if the end of the file is reached.
+
+Next, the `fgets()` function takes in the file stream as the first parameter. We then use the `echo` function to print the contents of the file.
+
+### Writing to a file
+Now that we understand how to read file contents using the concept of streams, in this section, let's learn how to write to a file.  
+
+To simplify our streams code, let's create another file called `test2.txt` in the `/tmp` directory.
+
+> Note: we had already created a file called `test.txt` in the `/tmp` directory. You should create it if it's not there.
+
+In the following script, we will read the contents of the file `test.txt` and write it to the file `test2.txt`.
+```php
+<?php
+//open the stream.php file and add the following:
+// the source file
+$file_stream_source = fopen(__DIR__ . '/test.txt', 'r');
+// the destination file
+$file_stream_destination = fopen(__DIR__ . '/test2.txt', 'w');
+// while the end of the file is not reached
+while (true) {
+  // read the file
+    $file_line = fgets($file_stream_source);
+    // if the end of the file is reached
+    if (!$file_line) {
+      // break the loop
+        break;
+    }
+    // write the file to the destination file
+    fputs($file_stream_destination, $file_line);
+}
+// close the source file
+fclose($file_stream_destination);
+// close the destination file
+fclose($file_stream_source);
+
+```
+
+Output:
+```bash
+# contents of the test.txt file equals to the test2.txt file
+```
+
+When you execute the above script, you notice that the contents of the file `test.txt` is written to the file `test2.txt`.
+
+This is achieved in the above script by using the `fputs()` function. The `fputs()` function takes in the file stream as the first parameter and the contents of the file as the second parameter.
+
+We first open the source file using the `fopen()` function. The `fopen()` function takes in 2 parameters, the first is the file path and the second is the mode.
+
+Next, we use the `while(true)` loop to check if the end of the file is reached. Inside the loop, we read each line of the file using the `fgets()` function.
+
+However, we also check if the end of the line is reached. If it is, we break the loop. Otherwise, we write the line to the destination file using the `fputs()` function.
+
+Finally, we close the source and the destination files using the `fclose()` function.
+
 ### Conclusion
+In this article, we have extensively covered the concepts of streams and how to use them in PHP.
+
+I hope this article helps you build a strong foundation on these concepts to help you build a solid foundation on PHP.
+
+Happy coding!
