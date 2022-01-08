@@ -54,7 +54,7 @@ In this section, we will start by creating a piechart using Brython. To create t
 1. Initializing the HTML5 boilerplate.
 To initialize the HTML5 boilerplate, use the following code in VisualStudio Code:
 
-```HTML
+```html
 <html lang="en">
 <head>
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
