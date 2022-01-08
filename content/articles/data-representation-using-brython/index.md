@@ -40,9 +40,8 @@ To add the Brython package to your web project, use the script tag below:
 <script type="text/javascript" src="../node_modules/brython/brython.js"></script>
 ```
 
-#### Installing brython using content delivery network
-Similar to the use of script tags above, Brython can be delivered directly from the web using CDN. 
-Content delivery networks in JavaScript deliver hosted stylesheets and JavaScript files using the `src` attribute in the script tag. The javascript file for Brython is as below:
+#### Installing Brython using Content Delivery Network
+Brython can be delivered directly from the web using CDN link. Content Delivery Networks in JavaScript deliver hosted stylesheets and JavaScript files using the `src` attribute in the script tag. The JavaScript file for Brython is as below:
 ```JavaScript
 <script src="https://cdnjs.cloudflare.com/ajax/libs/brython/3.10.4/brython.js" 
 integrity="sha512-Dr8IR/2fk/pBmngFLduWN5Ys/t7lcPxGgLCulHdTdgDrDRnGb+ANMxGXq+DKVN87jom+N3BrzzI476Pf98RReA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
