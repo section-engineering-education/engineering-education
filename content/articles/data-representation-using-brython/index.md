@@ -33,8 +33,9 @@ To install Brython using `npm`, download and install [Node.js](https://nodejs.or
 ```bash
 npm install brython
 ```
-Do this in your preferred directory for your project. You will notice a folder called node_modules, and within it contains the Brython package. 
-Thus, you can add it to your web project using the script tag below:
+Run this command while in your working directory. This will create a folder called node_modules. This folder contains the Brython package.
+
+To add the Brython package to your web project, use the script tag below:
 ```HTML
 <script type="text/javascript" src="../node_modules/brython/brython.js"></script>
 ```
