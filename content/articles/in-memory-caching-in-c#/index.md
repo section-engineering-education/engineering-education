@@ -23,7 +23,6 @@ Accessing our database often can be very expensive especially when our data is n
 In this article, we will discuss a caching method in the [.NET](https://docs.microsoft.com/en-us/dotnet/csharp/)framework called in-memory caching in [C#](https://docs.microsoft.com/en-us/dotnet/csharp/). We will create an application without caching, observe its performance and then introduce caching and observe how the performance is improved.
 
 ### Table of contents
-- [Table of contents](#table-of-contents)
 - [Prerequisites](#prerequisites)
 - [Building a blazor web application](#building-a-blazor-web-application)
 - [Accessing data without caching](#accessing-data-without-caching)
