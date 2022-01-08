@@ -153,7 +153,7 @@ Centering the div container where the form and input field are embedded, using i
 
 ```
 
-You will complete the css code for now by styling up the form and the input field.
+You will complete the CSS code for now by styling up the form and the input field.
 
 ```css
 form {
