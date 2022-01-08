@@ -65,7 +65,8 @@ To initialize the HTML5 boilerplate, use the following code in VisualStudio Code
 </body>
 </html>
 ```
-- We'll add Jquery just as Highchart's exporting.js CDN to our boilerplate. Also, we'll install the Highcharts module using:
+2. Installing the Highcharts module.
+To install the Highcharts module, use this code:
 ```
 npm install highcharts
 ```
