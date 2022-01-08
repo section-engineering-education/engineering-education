@@ -26,10 +26,10 @@ In this tutorial, we aim to guide the readers on how to:
 > NOTE: We will focus on the second and third methods in creating a piechart and scatter plot.
 
 ### Getting started
-
-#### Installing brython with the node package manager
-Node.js is a JavaScript runtime used for building scalable network applications and executes JavaScript code outside a web browser. 
-To install Brython using npm, [Node.js](https://nodejs.org/en/) must be downloaded and installed. After installation, type the following command on your terminal:
+To get started, we will Install Brython with the Node Package Manager
+#### Installing Brython with the Node Package Manager
+Node.js is a JavaScript runtime used to build scalable network applications. It executes JavaScript code outside a web browser. 
+To install Brython using `npm`, download and install [Node.js](https://nodejs.org/en/). After installation, run this command in your terminal:
 ```bash
 npm install brython
 ```
