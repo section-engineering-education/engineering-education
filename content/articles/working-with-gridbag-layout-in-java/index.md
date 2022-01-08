@@ -16,7 +16,7 @@ images:
 ---
 Transitioning from console apps to GUI apps is a very challenging goal for up and coming developers. The challenge comes when you discover that GUI is only fun when you know how, when, and what to use.
 <!--more-->
-### Table of Contents
+### Table of contents
 - [Table of Contents](#table-of-contents)
 - [Introduction](#introduction)
 - [Prerequisites](#prerequisites)
@@ -82,7 +82,7 @@ Gridbag layout is one of the most flexible but complex layout managers among all
 
 Gridbag layout represents the position of each component in the form of a table containing rows and columns. The component's positions are outlined using gridlines like in the image below.
 
-![Gridbag layout sketch](/working-with-gridbag-layout-in-java/1-layout-sketch.jpg)
+![Gridbag layout sketch](/engineering-education/working-with-gridbag-layout-in-java/1-layout-sketch.jpg)
 
 It is always advisable to draft out the components in a panel using gridlines before coding them out with Gridbag layout. This will give you a visual insight into the location of each component on the panel. As seen from the image above, some components occupy only one grid, while some occupy more than one. 
 
@@ -197,7 +197,7 @@ In a case where you need to add more constraints, then specify these constraints
 
 #### The CAL user interface
 
-![Final looks](/working-with-gridbag-layout-in-java/2-final.jpg)
+![Final looks](/engineering-education/working-with-gridbag-layout-in-java/2-final.jpg)
  
 The user interface (UI) above is a good example demonstrating the capabilities of Gridbag layout. Let’s build the UI using Gridbag layout.
 
@@ -293,7 +293,7 @@ super("Computer Assisted Learning");
 
 The string passed in is the title of the application.
 
-![GUI title](/working-with-gridbag-layout-in-java/3-gui-title.jpg) 
+![GUI title](/engineering-education/working-with-gridbag-layout-in-java/3-gui-title.jpg) 
 
 It then creates a new panel object and sets the panel’s layout to “GridBagLayout”. This is the point where we set the layout of our panel. The layouts can be any of the layouts listed above, but for the sake of this tutorial, we will use “GridBagLayout”.
 
@@ -336,7 +336,7 @@ The main method of the program firsts creates an object of the class and then in
 
 The `setDefaultCloseOperation` takes in an operation that determines what will happen when the user clicks on the close icon on the window. In this case, `JFrame.EXIT_ON_CLOSE` will stop the app.
 
-![Close Window](/working-with-gridbag-layout-in-java/4-close-button.jpg)
+![Close Window](/engineering-education/working-with-gridbag-layout-in-java/4-close-button.jpg)
  
 ### Conclusion
 Building a GUI app in Java is an interesting adventure for developers as users can visually interact with your app. What’s more important is to know how to build the app using the right tools. 

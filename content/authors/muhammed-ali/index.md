@@ -6,4 +6,4 @@ twitter: https://twitter.com/mvhammedali/
 images:
   - url: /engineering-education/authors/muhammed-ali/avatar.jpg 
 ---
-Muhammed Ali is a Software Developer with a passion for technical writing and open source contribution. His area of expertise is Full-stack web development and DevOps.
+Muhammed Ali is a Software Developer with a passion for technical writing and open source contribution. His area of expertise is full-stack web development and DevOps.
