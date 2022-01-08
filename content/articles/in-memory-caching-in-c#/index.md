@@ -6,7 +6,7 @@ url: /in-memory-caching-in-c#/
 title: In-Memory Caching In C#
 description: In this article, we will discuss a caching method in the .NET framework called in-memory caching in C#.
 author: joseph-ongoma
-date: 2022-01-07T00:00:00-17:30
+date: 2022-01-08T00:00:00-17:30
 topics: [Languages]
 excerpt_separator: <!--more-->
 images:
@@ -18,7 +18,7 @@ Caching is used to store data from slow memory to a faster memory to enhance eas
 <!--more-->
 The fact that our application works well during app development does not mean it will work well when thousands of people start using it. One main area to look at is *data access*.
 
-Accessing our database often can be very expansive especially when our data is not changing always changing. Due to this reason, caching data is applied in our applications to reduce the data access time hence preventing direcg access from the database. This reduces time of data accesss and hence faster performance of our application.
+Accessing our database often can be very expensive especially when our data is not always changing. Due to this reason, data caching is applied in our applications to reduce direct access time from the database. Thus, we enhance the performance of our application.
 
 In this article, we will discuss a caching method in the [.NET](https://docs.microsoft.com/en-us/dotnet/csharp/)framework called in-memory caching in [C#](https://docs.microsoft.com/en-us/dotnet/csharp/). We will create an application without caching, observe its performance and then introduce caching and observe how the performance is improved.
 
@@ -47,7 +47,7 @@ After clicking `create new Project`, select `Blazor Server App` on the next scre
 
 On the next screen, we are required to enter the name of our application, enter the name and click `Next`. For this project, we will name our application `CachingApp` as shown in the figure below.
 
-![Name of Application](/engineering-education/building-a-checkout-form-with-stripe-elements/name.png)
+![Name of application](/engineering-education/building-a-checkout-form-with-stripe-elements/name.png)
 
 On the next screen, we are required to select the target framework for our application, select `.Net Core 5.0(Current)`, and click `create` as shown in the figure below.
 
@@ -56,7 +56,7 @@ On the next screen, we are required to select the target framework for our appli
 ### Accessing data without caching
 We will start by creating a new class library. To do this, on the solution explorer window, right-click on `Solution` and click on `Add`. Then select `New project`, search for `Class library` and click `Next`.
 
-![New Class Library](/engineering-education/building-a-checkout-form-with-stripe-elements/classlibrary.jpg)
+![New class library](/engineering-education/building-a-checkout-form-with-stripe-elements/classlibrary.jpg)
 
 On the next screen, we will give it the name `ClassLibrary`. Use the set target framework and click `Create`.
 
