@@ -48,7 +48,7 @@ After clicking `create new Project`, select `Blazor Server App` on the next scre
 
 On the next screen, we are required to enter the name of our application, enter the name and click `Next`. For this project, we will name our application `CachingApp` as shown in the figure below.
 
-![Name of application](/engineering-education/building-a-checkout-form-with-stripe-elements/name.png)
+![Name of application](/engineering-education/building-a-checkout-form-with-stripe-elements/name.jpg)
 
 On the next screen, we are required to select the target framework for our application, select `.Net Core 5.0(Current)`, and click `create` as shown in the figure below.
 
