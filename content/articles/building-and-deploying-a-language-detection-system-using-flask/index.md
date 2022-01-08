@@ -130,9 +130,9 @@ y_pred
 After modeling, we will now evaluate the performance of our model.
 ```python
 from sklearn.metrics import accuracy_score, confusion_matrix, classification_report
-accuracy = accuracy_score(y_test, y_pred)
+acc = accuracy_score(y_test, y_pred)
 cm = confusion_matrix(y_test, y_pred)
-print("Accuracy is :",accuracy)
+print("Accuracy is :",acc)
 ```
 
 You can see the result of the model is pretty good.
@@ -143,9 +143,9 @@ You can see the result of the model is pretty good.
 We will now try to use our model to predict a sentence written in a particular language.
 
 ```python
-def predict(text):
-     x = cv.transform([text]).toarray() # convert text to bag of words model (Vector)
-     language = model.predict(x) # predict the language
+def predict(txt):
+     lang = cv.transform([txt]).toarray() # convert text to bag of words model (Vector)
+     language = model.predict(lang) # predict the language
      language = le.inverse_transform(language) # find the language corresponding with the predicted value
      print ("The language is in", language[0]) # printing the language
 
@@ -171,9 +171,9 @@ pip install flask
 
 Then, we need to create the following files:
 * `model.pkl` - The saved model we will use.
-* `apps.py` - To connect the web page with the model
-* `index.html`- To display the web page
-* `style.css` - To style the HTML page.
+* `apps.py` - For connecting the web page with the model.
+* `index.html`- For displaying the web page.
+* `style.css` - For styling the HTML page.
 
 On the `index.html` file, make the following changes:
 ```html
