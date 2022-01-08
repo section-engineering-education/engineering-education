@@ -308,7 +308,7 @@ This is the DOM property that either sets or retrieves the content of an HTML el
 
 In other to access the data, refer to the screenshot above, you will notice that the data embodies some set of objects which has the properties we want to display on the webpage.
 
-Also, from the screenshot above, the object inside the data has a key of `title` that returns a property of the song title, likewise an artist object that embodies a key of `name` that returns a property of the song artist. Our concern is how to display the song title and song artist name on the webpage. You will make use of the `map` method to carry out this task.
+Also, from the screenshot above, the object inside the data has a key of `title` that returns a property of the song title, likewise an artist object that embodies a key of `name` that returns a property of the song artist. Our concern is how to display the song title and song artist name on the webpage.
 
 The `map()` method is one of the most used methods. The method returns a new array based on the values of the existing array. For example, we have array of numbers and we want to get an array that has value of triple of each of the number:
 
