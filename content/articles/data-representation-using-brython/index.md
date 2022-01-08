@@ -67,7 +67,7 @@ To initialize the HTML5 boilerplate, use the following code in VisualStudio Code
 ```
 2. Installing the Highcharts module.
 To install the Highcharts module, use this code:
-```
+```npm
 npm install highcharts
 ```
 Note! If you used the Node package manager, link your script to the exporting.js file in the node_module folder.
