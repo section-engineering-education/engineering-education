@@ -22,7 +22,7 @@ You will be creating a web application using HTML5, CSS3, Vanilla JavaScript, as
 - [Pre-requisites](#pre-requisites)
 - [Structuring the lyrics search app with HTML5](#structuring-the-lyrics-search-app-with-html5)
 - [Designing the lyrics search app](#designing-the-lyrics-search-app)
-- [Brief Introduction To OVH API](#a-brief-introduction-to-ovh-api)
+- [A Brief Introduction To OVH API](#a-brief-introduction-to-ovh-api)
 - [Adding functionality with JavaScript](#adding-functionality-with-javascript)
 - [Testing the Current State Of the Web app](#testing-the-current-state-of-the-web-app)
 - [Inner - HTML](#inner---html)
