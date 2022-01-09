@@ -151,7 +151,9 @@ pretty(f) gives:
 Now, we find the values of `w` and then plot these values. To find the values of `w`, we use the `subs()` function.
 ```MATLAB
 f_sub = subs(f, T, 0.5)
- 
+```
+The output is:
+```MATLAB
 f_sub =
  
 (2*sin(w/2))/w     % the output after execution of the code above.
@@ -159,24 +161,29 @@ f_sub =
 We are now plotting the absolute values of the variable `f-sub`.
 ```MATLAB
 ezplot(abs(f_sub), [-pi: pi])
-ezplot(abs(f_sub), [-2*pi: 2*pi])
-ezplot(abs(f_sub), [-4*pi: 4*pi])
-ezplot(abs(f_sub), [-8*pi: 8*pi])
 ```
-The output is:
-
+Output is:
 ![Range of -pi to pi](/engineering-education/how-to-use-symbolic-math's-toolbox-in-matlab-to-analyze-the-fourier-series/symbolic-five.png)
 
 *Plot for the range -pi to pi*
 
+```MATLAB
+ezplot(abs(f_sub), [-2*pi: 2*pi])
+```
 ![Range of -2pi to 2pi](/engineering-education/how-to-use-symbolic-math's-toolbox-in-matlab-to-analyze-the-fourier-series/symbolic-six.png)
 
 *Plot for the range -2pi to 2pi*
 
+```MATLAB
+ezplot(abs(f_sub), [-4*pi: 4*pi])
+```
 ![Range of -4pi to 4pi](/engineering-education/how-to-use-symbolic-math's-toolbox-in-matlab-to-analyze-the-fourier-series/symbolic-seven.png)
 
 *Plot for the range -4pi to 4pi*
 
+```MATLAB
+ezplot(abs(f_sub), [-8*pi: 8*pi])
+```
 ![Range of -8pi to 8pi](/engineering-education/how-to-use-symbolic-math's-toolbox-in-matlab-to-analyze-the-fourier-series/symbolic-eight.png)
 
 *Plot for the range -8pi to 8pi*
