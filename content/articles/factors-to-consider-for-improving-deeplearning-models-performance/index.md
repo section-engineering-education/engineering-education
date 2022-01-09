@@ -1,4 +1,3 @@
-### INTRODUCTION
 Deep learning neural networks are becoming easier to define and fit, but they remain challenging to configure. 
 This is because there are no hard-and-fast rules for configuring a network to tackle a specific problem. This is the case when mathematical analysis cannot be used to determine which model type or setup is appropriate for a given dataset. 
 
