@@ -212,7 +212,7 @@ private void Form1_Load(object sender, EventArgs e)
 
 When the form loads, the above method checks if the current user running the program has admin privileges. It also assesses the status of the USB ports, then the read/write status of the plugged in removable drives. 
 
-It then checks the `radio buttons` based on the status of the USB ports and the removable drives. ie: if the USB ports are already enabled, it checks the `enable usb ports` radio button option.
+It then checks the `radio buttons` based on the status of the USB ports and the removable drives. ie: if the USB ports are already enabled, it checks the `enable USB ports` radio button option.
 
 #### Radio buttons 
 In our form, the radio buttons are in the order of 1 to 4 ie: `radioButton1` to `radioButton4`. 
@@ -466,16 +466,15 @@ namespace IOManager
 }
 ```
 
-
 ### Testing
-We can now run the application. Remember to unplug and then re-plug USB devices after checking the `radiobuttons` and pressing `OK`.
+We can now run and test the application. Remember to unplug and then re-plug USB devices after checking the `radiobuttons` and pressing `OK`.
 
 > Note that when you run the app in Visual Studio, it will need to restart to access admin privileges. Therefore, grant the app permission to make changes.
 
 ### Conclusion
 In this tutorial, we have learned how to design a Winforms application, work with USB ports, as well as read/write permissions on removable drives. 
 
-We have also looked at changing the permission level of our app to run with admin privileges. Feel free to add more functionalities to the app.
+We have also looked at how to enable admin privileges in our application. Feel free to add more functionalities to the app.
 
 ---
 Peer Review Contributions by: [Wanja Mike](/engineering-education/authors/michael-barasa/)
