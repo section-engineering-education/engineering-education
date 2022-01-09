@@ -14,7 +14,7 @@ images:
   - url: /engineering-education/building-a-lyrics-search-app-using-vanilla-javascript/hero.png
     alt: Building a Lyrics Search App Using Vanilla JavaScript With OVH API Hero Image
 ---
-Not knowing the lyrics of a song, is a problem most song-lovers encounter. In this article, you will be creating a platform where users can search for lyrics by entering the artist name or the title of the song.
+Not knowing the lyrics of a song, is a problem most song-lovers encounter. In this article, you will be creating a platform where users can search for lyrics by entering the artist's name or the title of the song.
 <!--more-->
 You will be creating a web application using HTML5, CSS3, Vanilla JavaScript, async-await with fetch method, OVH API, and ECMAScript 2015 (ES6) features like arrow functions to build a search feature for lyrics. 
 
@@ -41,13 +41,13 @@ To begin, create a folder named `lyrics-app`, then you need to create three file
 
 For laying out the structure of the lyrics search app, you will use HTML5. This section deals with the `lyrics.html`.
 
-- In the `head` tag of the HTML file, you will input the needed or pre-defined meta tags that is essential for all web apps.
+- In the `head` tag of the HTML file, you will input the needed or pre-defined meta tags that are essential for all web apps.
 - Also, you would link the CSS file to the HTML file and also give the web app a title of `Lyrics Search App` embedded between within `title` tags.
-- Next, you would create a ``div`` with a class of `container`. This is the ``div`` that would house other ``div``s which you will create.
-- Moving forward, you will create another `div` with class of `intro-text` with two other separate headers `h1` and `h2` tag respectively.
+- Next, you would create a `div` with a class of `container`. This is the `div` that would house other `div`s which you will create.
+- Moving forward, you will create another `div` with a class of `intro-text` with two other separate headers `h1` and `h2` tag respectively.
 - The content of the first text is `Learn your favourite`, it will be embedded in the `h1` tag, while the content of the second text is `song lyrics`, it will be embedded in the `h2` tag.
 
-Inside the `div` with class of `container`, you will create a `div` with `id` of `lyrics-search` where we create a form containing an input field, and also another `div` to display fetched lyrics. 
+Inside the `div` with a class of `container`, you will create a `div` with `id` of `lyrics-search` where we create a form containing an input field, and also another `div` to display fetched lyrics. 
 
 This is the code snippet for the structure of the web app:
 
@@ -186,10 +186,10 @@ You have successfully designed the web page by adding colors, font-sizes, font-f
 Here is what your web page should look like:
 ![Screenshot for design](/engineering-education/building-lyrics-search-app-using-vanilla-javascript/design-screenshot.png)
 
-### Brief introduction to OVH API
-The OVH lyrics API, is a simple API that helps us retrieve lyrics of the song requested. While trying to fetch lyrics from this API, we use two parameters to fetch data (lyrics), which are the artist name and title of the song.
+### A brief introduction to OVH API
+The OVH lyrics API is a simple API that helps us retrieve the lyrics of the song requested. While trying to fetch lyrics from this API, we use two parameters to fetch data (lyrics), which are the artist name and title of the song.
 
-This basically means you can retrieve lyrics by using either the artist name or the title of the song. When a request is made, the data is returned in a JSON format.
+This basically means you can retrieve lyrics by using either the artist's name or the title of the song. When a request is made, the data is returned in JSON format.
 
 Using this API, you will get two status codes. They are:
 - Status code 200 while the API call is successful
@@ -199,9 +199,9 @@ You should be familiar with status code 404, if you don't know, `404` stands for
 
 You can read more about the OVH API [here](https://api.lyrics.ovh/v1/artist/title).
 
-An example of the URL in action, looks like this: `https://api.lyrics.ovh/v1/Drake/Toosie Slide`.
+An example of the URL in action looks like this: `https://api.lyrics.ovh/v1/Drake/Toosie Slide`.
 
-In the example above, `Drake` stands as the artist and `Toosie Slide` is the title of the song, so we basically slot them into the URL, where `Drake` replaces artist and `Toosie` Slide replaces title.
+In the example above, `Drake` stands as the artist and `Toosie Slide` is the title of the song, so we basically slot them into the URL, where `Drake` replaces the artist and `Toosie` Slide replaces the title.
 
 ### Adding functionality with JavaScript
 In your `lyrics.js` file, declare variables and use the DOM selectors to connect with elements in the `lyrics.html` file, using the code snippet below:
@@ -224,7 +224,7 @@ const api = "https://api.lyrics.ovh";
 
 The next phase is to submit the form. You will define what would happen if the input field is empty and likewise what would happen if the input field is not empty.
 
-To do this, let's create an event listener using DOM events to listen for a submit event and not click event because you didn't create a button to submit the form.
+To do this, let's create an event listener using DOM events to listen for a submit event and not click the event because you didn't create a button to submit the form.
 
 Here is the code snippet for this:
 
@@ -268,14 +268,14 @@ At this point, you are going to test if the web app is actually returning the ob
 The following are the tasks to carry out in this section:
 - Comment out the `showData` function in the code snippet above (remember to uncomment the showData function).
 - Launch the web app using the [live server vs code extension](https://marketplace.visualstudio.com/items?itemName=ritwickdey.LiveServer).
-- Type in a song in the search field (note that some suggested song lyrics are not avilable on this API, you can get a paid API to explore more).
+- Type in a song in the search field (note that some suggested song lyrics are not available on this API, you can get a paid API to explore more).
 - Console log the result (To access the console, right-click inside the webpage, click the inspect option then navigate to the console in the chrome dev tools).
 
 Your screen should be like the screenshot below:
 
 ![Screenshot for consoled data](/engineering-education/building-lyrics-search-app-using-vanilla-javascript/console-screenshot.png)
 
-In the screenshot above, the lyrics we searched for has a song-title of `cast`. If you wish to get the exact data that we got in the screenshot above, you can simply search for the lyrics with song-title of `cast`.
+In the screenshot above, the lyrics we searched for have a song title of `cast`. If you wish to get the exact data that we got in the screenshot above, you can simply search for the lyrics with song title of `cast`.
 
 The next thing to do is to create a function `showData()` that displays the data in the console (the screenshot above) on the webpage. The function `showData()` is being called from the async function `startSearch()`.
 
@@ -375,9 +375,9 @@ async function getLyrics(artist, songTitle) {
 }
 ```
 
-> Note, the API doesn't have access to all the lyrics, under it's free version. If you wish to have access to all the lyrics, I would suggest you get a paid lyrics API.
+> Note, the API doesn't have access to all the lyrics, under its free version. If you wish to have access to all the lyrics, I would suggest you get a paid lyrics API.
 
-If a particular lyrics is not available, it will return `undefined` in the `div` to display lyrics. It also alerts you that the lyrics is not available on the API.
+If a particular lyric is not available, it will return `undefined` in the `div` to display lyrics. It also alerts you that the lyrics are not available on the API.
 
 Next, you can decide to implement Regular Expression (REGEX) syntax in the variable lyrics using the `replace` method, by adding `.replace(/(\r\n|\r|\n)/g ,'<br>');` to the lyrics variable somewhat like this:
 
@@ -527,7 +527,7 @@ form.addEventListener("submit", e => {
 ### Conclusion
 In this tutorial, we learned to build a lyrics search web app using HTML5, CSS3, Vanilla JavaScript alongside ES6 features.
 
-I'm a big fan of you not just stopping at what is provided in this tutorial. If indeed you've learnt something from this, I challenge you to add more features to this web app and also make the User Interface (UI) better.
+I'm a big fan of you not just stopping at what is provided in this tutorial. If indeed you've learned something from this, I challenge you to add more features to this web app and also make the User Interface (UI) better.
 
 You can add a button that copies the lyrics to the clipboard or a button that helps you share lyrics with friends via social media platforms.
 
