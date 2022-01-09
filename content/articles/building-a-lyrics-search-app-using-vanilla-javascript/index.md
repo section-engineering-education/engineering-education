@@ -22,7 +22,7 @@ You will be creating a web application using HTML5, CSS3, Vanilla JavaScript, as
 - [Pre-requisites](#pre-requisites)
 - [Structuring the lyrics search app with HTML5](#structuring-the-lyrics-search-app-with-html5)
 - [Designing the lyrics search app](#designing-the-lyrics-search-app)
-- [Brief Introduction To OVH API](#brief-introduction-to-ovh-api)
+- [Brief Introduction To OVH API](#a-brief-introduction-to-ovh-api)
 - [Adding functionality with JavaScript](#adding-functionality-with-javascript)
 - [Testing the Current State Of the Web app](#testing-the-current-state-of-the-web-app)
 - [Inner - HTML](#inner---html)
@@ -42,7 +42,7 @@ To begin, create a folder named `lyrics-app`, then you need to create three file
 For laying out the structure of the lyrics search app, you will use HTML5. This section deals with the `lyrics.html`.
 
 - In the `head` tag of the HTML file, you will input the needed or pre-defined meta tags that are essential for all web apps.
-- Also, you would link the CSS file to the HTML file and also give the web app a title of `Lyrics Search App` embedded between within `title` tags.
+- Also, you would link the CSS file to the HTML file and also give the web app a title of `Lyrics Search App` embedded within `title` tags.
 - Next, you would create a `div` with a class of `container`. This is the `div` that would house other `div`s which you will create.
 - Moving forward, you will create another `div` with a class of `intro-text` with two other separate headers `h1` and `h2` tag respectively.
 - The content of the first text is `Learn your favourite`, it will be embedded in the `h1` tag, while the content of the second text is `song lyrics`, it will be embedded in the `h2` tag.
