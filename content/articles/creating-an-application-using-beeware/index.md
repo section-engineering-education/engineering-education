@@ -4,7 +4,7 @@ status: publish
 published: true
 url: /creating-an-application-using-beeware/
 title: Creating an application using BeeWare
-description: BeeWare is a python library used to create cross-platform applications. This article will build a simple application using BeeWare to introduce the reader to the library and appreciate how it works. 
+description: BeeWare is a Python library used to create cross-platform applications. This article will build a simple application using BeeWare to introduce the reader to the library and appreciate how it works. 
 author: john-kiguru
 date: 2021-01-09T00:00:00-07:17
 topics: [Languages]
@@ -27,7 +27,7 @@ This article will build a simple application using BeeWare to introduce the read
 ### Getting started
 This tutorial will create a simple calculator application, so to begin with, you need to be connected to the internet to create the app successfully. Next, navigate into a folder of your choice using the terminal then execute the `briefcase new` command. 
 
-This command will create a new application in that folder. Follow the instructions and input the required details or press enter to go with the default configurations. The new app should have the following structure:
+This command will create a new application in that folder. Follow the instructions and input the required details or repeatedly press enter to go with the default configurations. The new app should have the following structure:
 
 ```bash
 .
@@ -69,7 +69,7 @@ def main():
 
 The file begins by importing the `toga` toolkit. `Toga` is a Python native cross-platform Graphical User Interface(GUI) toolkit. Next, we define a class `SimpleCalculator` that contains a `startup` method. This method defines a `toga box` component. It serves as the main box. The name `main_box` is declared and initialized by default when you create the application but may be changed later as desired.
 
-We declare the main window whose title is the app name defined when creating the app with the ` briefcase new` command. Next, we have the window containing our empty main box as its content. Next, we have our application show our window. We finally define a `main` function that returns our `SimpleCalculator` class instance. This `main` method is called and invoked by the `__main__.py` file.
+We declare the main window whose title is the app's name defined when creating the app with the ` briefcase new` command. Next, we have the window containing our empty main box as its content. Next, we have our application show our window. We finally define a `main` function that returns our `SimpleCalculator` class instance. This `main` method is called and invoked by the `__main__.py` file.
 
 By now, you have a simple working application. You can change the directory into `Simple Calculator` and type `briefcase dev` to run the app in developer mode. You should have the following simple application:
 
@@ -120,7 +120,7 @@ We create six minor boxes and one main box with all the six boxes inside. We hav
 In the next section, we will have each box contain numbers and operators, apart from two which will have an input field and a calculate button, respectively. When you run the application, you will not see any changes. 
 
 ### Putting up the buttons
-We will now set up the numbers, operators, and calculate buttons. We will also have a box for an input text. Edit the `app.py` to appear as follows:
+We now set up the numbers, operators, and calculate buttons. We will also have a box for an input text. Edit the `app.py` to appear as follows:
 
 ```python
 """
