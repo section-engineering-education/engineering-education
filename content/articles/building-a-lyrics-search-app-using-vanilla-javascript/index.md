@@ -1,10 +1,21 @@
+---
+layout: engineering-education
+status: publish
+published: true
+url: /building-a-lyrics-search-app-using-vanilla-javascript/
+title: Building a Lyrics Search App Using Vanilla JavaScript With OVH API
+description: This tutorial will help the reader understand how to build a search app using Vanilla JavaScript and OVH API. We will be using OVH API and async-await to dynamically load the fetched lyrics from the API.
+author: bobate-olusegun
+date: 2022-01-09T00:00:00-19:30
+topics: [Languages]
+excerpt_separator: <!--more-->
+images:
 
-## Building a Lyrics Search App Using Vanilla JavaScript With OVH API
-
-![hero image](/engineering-education/building-lyrics-search-app-using-vanilla-javascript/hero.png)
-
+  - url: /engineering-education/building-a-lyrics-search-app-using-vanilla-javascript/hero.png
+    alt: Building a Lyrics Search App Using Vanilla JavaScript With OVH API Hero Image
+---
 Not knowing the lyrics of a song, is a problem most song-lovers encounter. In this article, you will be creating a platform where users can search for lyrics by entering the artist name or the title of the song.
-
+<!--more-->
 You will be creating a web application using HTML5, CSS3, Vanilla JavaScript, async-await with fetch method, OVH API, and ECMAScript 2015 (ES6) features like arrow functions to build a search feature for lyrics. 
 
 ### Table of contents
@@ -521,3 +532,6 @@ I'm a big fan of you not just stopping at what is provided in this tutorial. If 
 You can add a button that copies the lyrics to the clipboard or a button that helps you share lyrics with friends via social media platforms.
 
 You can find the full source code [here](https://github.com/shegz101/Lyrics-Web-App) on GitHub.
+
+---
+Peer Review Contributions by: [Srishilesh P S](/engineering-education/authors/srishilesh-p-s/)
