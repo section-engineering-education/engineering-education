@@ -1,49 +1,53 @@
-Deep learning neural networks are becoming easier to define and fit, but they remain challenging to configure. 
-This is because there are no hard-and-fast rules for configuring a network to tackle a specific problem. This is the case when mathematical analysis cannot be used to determine which model type or setup is appropriate for a given dataset. 
+Deep learning neural networks are becoming easier to define and fit, but they remain challenging to configure. In this article, we will learn about factors to consider that might affect the performance of the deep learning models.
 
-In the past, deep learning neural network models had to be coded from scratch. As a result, the accuracy rate of the system was poor. 
-Nowadays, when given raw data, a deep learning system can now determine which properties are the most important on its own. 
+There are no hard-and-fast rules for configuring a network to tackle a specific problem. This is the case when mathematical analysis cannot be used to determine which model type or setup is appropriate for a given dataset.
 
-[Artificial neural networks](https://www.simplilearn.com/tutorials/deep-learning-tutorial/multilayer-perceptron) are used to perform deep learning. 
-The first step towards improving deep learning performance is to figure out what kind of performance issue your system is having.
-After identifying the problem, carefully pick and assess a specific intervention that is appropriate for the problem.
+In the past, deep learning neural network models had to be coded from scratch. As a result, a good accuracy rate might not be possible to achieve, even at its best performance. 
 
-There are three sorts of concerns that are straightforward to diagnose when it comes to poor deep learning performance:
+Nowadays, when given raw data, a deep learning system can now determine which properties contribute significantly for improving models performance, on its own. 
 
-Poor performance or becoming stuck are both possible outcomes of problems with hyperparameter optimization (i.e., challenges from learning rate).
-Having issues with data optimization is a common occurrence.
+You can read more about artificial neural networks [here](https://www.simplilearn.com/tutorials/deep-learning-tutorial/multilayer-perceptron).
 
-Generalization can lead to overfitting or poor test set performance, for example. If you want your system to perform better, you'll need more data. You may want to obtain additional unlabeled data and train your feature extraction sub-model further, depending on your budget.
+### Table of contents
+- [Pre-requisites](#pre-requisites)
+- [Identifying the problem](#identifying-the-problem)
+- [The Concept of Deep Learning](#the-concept-of-deep-learning)
+- [What are optimizers](#what-are-optimizers)
+- [Some Determinants That Transform Deep Learning Systems’ Performance](#determinants-that-transform-deep-learning-systems-performance)
+- [How To Get A Perfect Performance Rate From A Deep Learning System](#how-to-get-a-perfect-performance-rate)
+- [Diagram demonstrating the different scenarios one can fall into when configuring the learning rate](#configuring-the-learning-rate)
+- [Conclusion](#conclusion)
+- [Further Reading](#further-reading)
 
-Tuning the algorithm, which is essentially a prediction problem on the final model, when the final model contains a lot of volatility, for example. 
-
-The [best way](https://machinelearningmastery.com/a-data-driven-approach-to-machine-learning/) to solve this is to rank the outcomes of all your trials and focus on the top algorithms.
-
-### Table Of Content
-- [Introduction](#INTRODUCTION)
-- [Prerequisites](#Prerequisites)
-- [The Concept of Deep Learning](#The-Concept-of-Deep-Learning)
-- [What are optimizers](#What-Are-Optimizers)
-- [Some Determinants That Transform Deep Learning Systems’ Performance](#Some-Determinants-That-Transform-Deep-Learning-Systems-Performance)
-- [How To Get A Perfect Performance Rate From A Deep Learning System](#How-To-Get-A-Perfect-Performance-Rate-From-A-Deep-Learning-System)
-- [Diagram demonstrating the different scenarios one can fall into when configuring the learning rate](#Diagram-demonstrating-the-different-scenarios-one-can-fall-into-when-configuring-the-learning-rate-.)
-- [Conclusion](#Conclusion)
-- [Further Reading](#Further-Reading)
-
-### Prerequisites
-To follow along with this tutorial, you need to be familiar with the following;
-- Programming Languages like Python, Java, C++
-- Calculus
-- Probability
-- Statistics
-- Linear Algebra
+### Pre-requisites
+To follow along with this tutorial, you need to be familiar with the following:
+- Programming languages like Python, Java, or C++.
+- Mathematical concepts like calculus, probability, statistics, and linear algebra.
 - [TensorFlow](https://www.tensorflow.org/) 
 - [Microsoft Cognitive Toolkit](https://docs.microsoft.com/en-us/cognitive-toolkit/) 
 - [Pytorch]( https://pytorch.org/) 
 - [Keras]( https://keras.io/about/)
+  
+### Identifying the problem
+The first step towards improving deep learning performance is to figure out what kind of performance issue your system or model is having.
 
-### The Concept of Deep Learning
-In deep learning, an excessive volume of information [data sets](https://www.simplilearn.com/what-is-data-article) can be trained at the same time. This uses learning algorithms in deep learning. Deep learning systems tend to gather functional facts from larger datasets. This fact helps in enhancing predictions in the system more accurately. 
+After identifying the problem, carefully pick and assess a specific intervention that is appropriate for the problem.
+
+There are three sorts of concerns that are straightforward to diagnose when it comes to poor deep learning performance:
+
+#### Model optimization
+Poor performance of models is a possible outcome of problems with hyperparameter optimization. Having issues with data optimization is a common occurrence.
+
+#### Generalization
+It can lead to overfitting or poor test set performance. If you want your system to perform better, you'll need more data. You may want to obtain additional unlabeled data and train your feature extraction sub-model further, depending on your budget.
+
+#### Model tuning
+Tuning the algorithm, which is essentially a prediction problem on the final model, when the final model contains a lot of volatility. 
+
+The [best way](https://machinelearningmastery.com/a-data-driven-approach-to-machine-learning/) to solve this is to rank the outcomes of all your trials and focus on the top algorithms.
+
+### The concept of deep learning
+In deep learning, an excessive volume of information [datasets](https://www.simplilearn.com/what-is-data-article) can be trained at the same time. This uses learning algorithms in deep learning. Deep learning systems tend to gather functional facts from larger datasets. This fact helps in enhancing predictions in the system more accurately. 
 
 Classifications and predictions of data are based on responses to a series of binary true or false questions involving highly complicated mathematical calculations while processing the data. This simply means a deep learning system algorithm is designed in such a way that it can easily recognize, predict, and collect similar data sets or reject data sets that do not fit the needed system model during the training of data sets.
 >**True** in this context means that the system's algorithm accepts the data to match the type of data needed to develop the required system, while **False** means that the system's algorithm has rejected such data as it doesn't match the requirements.
@@ -53,11 +57,12 @@ For example, a facial recognition algorithm learns to identify and recognize fac
 This example demonstrates that a large amount of data is required to accurately predict a deep learning system.
 
 The ability to fine-tune the system and consider the problem it is going to be used to solve are two enhancing variables in Deep Learning. Any optimizer’s accuracy is measured using these factors.
-### What Are Optimizers?
 
+### What are optimizers?
 In deep learning, optimizers are algorithms or approaches that are used to reduce an error function [(loss function)](https://shiva-verma.medium.com/understanding-different-loss-functions-for-neural-networks-dd1ed0274718)  or increase production efficiency.  Optimizers are mathematical functions that are based on the learnable parameters of a model, such as weights and biases. Optimizers assist in determining how to alter the weights and learning rate of a neural network to minimise losses. 
 >A `loss function` of a system calculates the difference between the current results and the expected results of the algorithm.
-### Some Determinants That Transform Deep Learning Systems’ Performance
+
+### Determinants that transform deep learning systems' performance
 #### Taking into account the issue of (considered problem) that the system will be tasked with resolving; 
 a) What kind of system should be built?
 
@@ -86,9 +91,9 @@ Deep learning professionals are in high demand and are highly recommended in thi
 #### Which optimizer suits the deep network best?
 The optimizer that will perfectly match your deep learning system or model is highly considered. If the optimizer picked to train your system isn't a perfect match, such a system will encounter errors such as overfitting, underfitting, loss gradient descent, and so on, thereby not achieving an accurate output.
  
-### How To Get A Perfect Performance Rate From A Deep Learning System
+### How to get a perfect performance rate?
 >The performance rate of a deep learning system is focused on vision and pattern recognition.
-#### Data Optimization
+#### Data optimization
 
 If your objective is [classification](https://towardsdatascience.com/machine-learning-classifiers-a5cc4e1b0623), one of the simplest ways to improve performance for an underperforming deep learning system is to balance your dataset. Real-world data sets are frequently skewed, and if you want your deep learning system to learn with the greatest accuracy, you'll need to apply structured thinking to the problem, which is a thinking process that considers all of the conceivable elements of a problem.
 
@@ -157,7 +162,7 @@ This is for two reasons:
 
 >[Check out](https://www.analyticsvidhya.com/blog/2015/08/introduction-ensemble-learning/) for more information regarding ensemble methods.
 
-### Diagram demonstrating the different scenarios one can fall into when configuring the learning rate.
+### Configuring the learning rate
 
 ![Display Rate Charts](engineering-education/Factor-that-affects-the-performance-deep-learning-systems/display_rate_charts.png)
 
@@ -187,7 +192,7 @@ There are some steps to aim at in order to achieve a perfect performance rate in
 - Hyperparameters Optimization
 - Ensemble methods
 
-### Further Reading
-- [Convolutional Neural Networks (CNN)]( https://towardsdatascience.com/applied-deep-learning-part-4-convolutional-neural-networks-584bc134c1e2) 
-- [Hyperparameter Optimization]( https://towardsdatascience.com/hyperparameter-optimization-for-optimum-transformer-models-b95a32b70949) 
-- [Performance rate improvement in deep learning]( https://machinelearningmastery.com/improve-deep-learning-performance/) 
+### Further reading
+- [Convolutional Neural Networks (CNN)](https://towardsdatascience.com/applied-deep-learning-part-4-convolutional-neural-networks-584bc134c1e2) 
+- [Hyperparameter Optimization](https://towardsdatascience.com/hyperparameter-optimization-for-optimum-transformer-models-b95a32b70949) 
+- [Performance rate improvement in deep learning](https://machinelearningmastery.com/improve-deep-learning-performance/) 
