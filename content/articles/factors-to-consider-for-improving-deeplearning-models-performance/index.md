@@ -1,5 +1,21 @@
-Deep learning neural networks are becoming easier to define and fit, but they remain challenging to configure. In this article, we will learn about factors to consider that might affect the performance of the deep learning models.
+---
+layout: engineering-education
+status: publish
+published: true
+url: /factors-to-consider-for-improving-deeplearning-models-performance/
+title: Factors To Consider For Improving Deep Learning Models Performance
+description: This tutorial will help the reader understand how to figure the factors that might improve the performance of deep learning models.
+author: kingsley-tom
+date: 2022-01-09T00:00:00-20:30
+topics: [Machine Learning]
+excerpt_separator: <!--more-->
+images:
 
+  - url: /engineering-education/factors-to-consider-for-improving-deeplearning-models-performance/hero.png
+    alt: Factors To Consider For Improving Deep Learning Models Performance Hero Image
+---
+Deep learning neural networks are becoming easier to define and fit, but they remain challenging to configure. In this article, we will learn about factors to consider that might affect the performance of the deep learning models.
+<!--more-->
 There are no hard-and-fast rules for configuring a network to tackle a specific problem. This is the case when mathematical analysis cannot be used to determine which model type or setup is appropriate for a given dataset.
 
 In the past, deep learning neural network models had to be coded from scratch. As a result, a good accuracy rate might not be possible to achieve, even at its best performance. 
@@ -196,3 +212,6 @@ There are some steps to aim at in order to achieve a perfect performance rate in
 - [Convolutional Neural Networks (CNN)](https://towardsdatascience.com/applied-deep-learning-part-4-convolutional-neural-networks-584bc134c1e2) 
 - [Hyperparameter Optimization](https://towardsdatascience.com/hyperparameter-optimization-for-optimum-transformer-models-b95a32b70949) 
 - [Performance rate improvement in deep learning](https://machinelearningmastery.com/improve-deep-learning-performance/) 
+
+---
+Peer Review Contributions by: [Srishilesh P S](/engineering-education/authors/srishilesh-p-s/)
