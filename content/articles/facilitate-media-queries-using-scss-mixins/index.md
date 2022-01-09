@@ -8,7 +8,7 @@ In web development, it is essential to build sites and applications that are use
 - [Prerequisites](#prerequisites)
 - [Key-takeaways](#key-takeaways)
 - [CSS Media Queries](#css-media-queries)
-- [CSS Preprocessor scripting language (SCSS)](#css-preprocessor-scripting-language-(scss))
+- [CSS Preprocessor scripting language (SCSS)](#css-preprocessor-scripting-language-scss))
 - [Setting up the SCSS Mixins](setting-up-the-sccs-mixins)
 - [Media queries using SCSS Mixins](#media-queries-using-scss-mixins)
 - [Conclusion](#conclusion)
@@ -16,8 +16,8 @@ In web development, it is essential to build sites and applications that are use
 
 ### Prerequisites
 To comprehend this article better, the reader should have an understanding of the following: 
-HTML and CSS 
-Elementary knowledge of the CSS preprocessor - [SASS/SCSS](http://sass-lang.com)
+- HTML and CSS 
+- Elementary knowledge of the CSS preprocessor - [SASS/SCSS](http://sass-lang.com)
 
 ### Key Takeaways 
 By the end of this article, the reader is expected to acquire the following knowledge: 
@@ -47,7 +47,7 @@ That’s all. If you need more assistance on sass installation, you can visit th
 **Setting up the SCSS Mixins**
 SCSS mixins give the ability to produce reusable blocks of codes which aids to avoid repetition, creating cleaner codes and enabling easy maintainability. There is no need to lay out the individual rules with tons of breakpoints which can be time-consuming and break up your code. Plus, you can avoid going through the frustration of searching through the CSS files for specific elements. Hence, it makes sense to use SCSS, particularly its mixins, to handle the media queries.
  
-At this point, It is assumed that you have a sass compiler on your system and are ready to go. To use the mixins, you need to create a file titled "style.scss" and then place it in the root folder for your project. Then execute this code: ```sass --watch style.scss:style.css``` on the command prompt for the compiler to read the scss file. This action automatically creates a new CSS file named style.css in the folder.
+ At this point, It is assumed that you have a sass compiler on your system and are ready to go. To use the mixins, you need to create a file titled "style.scss" and then place it in the root folder for your project. Then execute this code: ```sass --watch style.scss:style.css``` on the command prompt for the compiler to read the scss file. This action automatically creates a new CSS file named style.css in the folder.
  
 Now mixins help you manage your media query by defining it in one location. So you can apply it as needed, and then sass enables you to compile it to the corresponding CSS codes.
 Let’s open our style.scss file and input the necessary codes to set up the mixins:
@@ -126,7 +126,8 @@ Now, you can simply use the mixins where you choose and alter the media queries 
 
 ### Conclusion
 You have successfully acquired guidelines on how to install the SASS compiler, learnt how to set up the SCSS mixins and then utilized the best technique that uses SCSS mixins to build a website that would fit in appropriately and display perfectly across all devices. 
-With the SCSS mixins, I didn’t have to bury a long list of breakpoints in my code but have them in a centralized location for easy management and better responsiveness. I hope you found this article helpful in building responsive websites quickly and efficiently. Thanks to SCSS, you can see CSS media queries in a less intimidating light. 
+With the SCSS mixins, you don't have to bury a long list of breakpoints in my code but have them in a centralized location for easy management and better responsiveness. 
+I hope you found this article helpful in building responsive websites quickly and efficiently. Thanks to SCSS, you can see CSS media queries in a less intimidating light. 
 
 ### Further reading
 - [The easier way to write media queiries](https://levelup.gitconnected.com/the-easier-way-to-write-media-queries-with-scss-mixin-c7c956150551)
