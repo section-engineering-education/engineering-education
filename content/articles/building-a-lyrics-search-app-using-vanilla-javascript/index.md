@@ -275,7 +275,7 @@ Your screen should be like the screenshot below:
 
 ![Screenshot for consoled data](/engineering-education/building-lyrics-search-app-using-vanilla-javascript/console-screenshot.png)
 
-In the screenshot above, the lyrics we searched for have a song title of `cast`. If you wish to get the exact data that we got in the screenshot above, you can simply search for the lyrics with song title of `cast`.
+In the screenshot above, the lyrics we searched for have a song title of `cast`. If you wish to get the exact data that is displayed in the screenshot above, you can simply search for the lyrics with song title of `cast`.
 
 The next thing to do is to create a function `showData()` that displays the data in the console (the screenshot above) on the webpage. The function `showData()` is being called from the async function `startSearch()`.
 
