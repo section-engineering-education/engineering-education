@@ -20,7 +20,7 @@ There are no hard-and-fast rules for configuring a network to tackle a specific 
 
 In the past, deep learning neural network models had to be coded from scratch. As a result, a good accuracy rate might not be possible to achieve, even at its best performance. 
 
-Nowadays, when given raw data, a deep learning system can now determine which properties contribute significantly for improving models performance, on its own. 
+Nowadays, when given raw data, a deep learning system can now determine which properties contribute significantly to improving models' performance, on its own. 
 
 You can read more about artificial neural networks [here](https://www.simplilearn.com/tutorials/deep-learning-tutorial/multilayer-perceptron).
 
@@ -67,18 +67,18 @@ In deep learning, an excessive volume of information i.e. [datasets](https://www
 
 Classifications and predictions of data are based on responses to a series of binary true or false questions involving highly complicated mathematical calculations while processing the data.
 
-This simply means a deep learning algorithm is designed in such a way that it can easily recognize, predict, and collect or reject information that do not fit (or help in predictio) the model during the training of dataset.
+This simply means a deep learning algorithm is designed in such a way that it can easily recognize, predict, and collect or reject information that does not fit (or help in prediction) the model during the training of the dataset.
 
 For example, a facial recognition algorithm learns to identify and recognize face edges and lines first, then more critical parts of faces, and finally overall representations of faces. With time, the algorithm learns and improves, thus improving the chances of getting it right.
 
-In this case, the facial recognition program will eventually recognize faces correctly. Collecting bigger number of datasets (big data) would lead to better model learning that leads to better accuracy of predictions.
+In this case, the facial recognition program will eventually recognize faces correctly. Collecting a bigger number of datasets (big data) would lead to better model learning that leads to better accuracy of predictions.
 
 This example demonstrates that a large amount of data is required to accurately predict a deep learning system.
 
 ### What are optimizers?
 In deep learning, optimizers are algorithms or approaches that are used to reduce an error function [(loss function)](https://shiva-verma.medium.com/understanding-different-loss-functions-for-neural-networks-dd1ed0274718)  or increase production efficiency.
 
-Optimizers are mathematical functions that are based on the learnable parameters of a model, such as weights and biases. They assist in determining how to alter the weights and learning rate of a neural network to minimise losses. 
+Optimizers are mathematical functions that are based on the learnable parameters of a model, such as weights and biases. They assist in determining how to alter the weights and learning rate of a neural network to minimize losses. 
 
 > A `loss function` of a system calculates the difference between the current results and the expected results of the algorithm.
 
@@ -94,7 +94,7 @@ In such a problem, the engineer is faced with challenges like picking the best o
 
 ##### Model adaptability
 In such a problem, the engineer is faced with challenges like:
-- Will the developed system adapt to further changes in the future without affecting the performance of the system. 
+- Will the developed system adapt to further changes in the future without affecting the performance of the system?
 
 #### Difficulties with default hyperparameters
 Hyperparameters are values that control the learning process and define which model parameters the algorithm learns with. They are "top-level" model parameters that regulate the learning process.
@@ -130,7 +130,7 @@ The learning rate is a hyper-parameter that determines the weights adjusted with
 
 According to [research](https://optimization.cbe.cornell.edu/index.php?title=Adam/), the Adam optimizer delivers the greatest and highest performance rate for large systems with enormous datasets.
 
-Despite its excellent performance, it may nonetheless trap you in a local minimum that is specific to your problem. Therefore, choice of learning rate must be determined only by experimentation.
+Despite its excellent performance, it may nonetheless trap you in a local minimum that is specific to your problem. Therefore, the choice of learning rate must be determined only by experimentation.
 
 ##### Epochs and batch size
 The batch size refers to the number of samples that must be processed before the model is updated. The number of epochs refers to the total number of times the training dataset has been traversed to train a model.
@@ -148,8 +148,8 @@ You can read more early-stopping of model training [here](https://stats.stackexc
 Regularization is a reliable strategy for avoiding overfitting.
 
 The following techniques can be used for regularization:
-- Switching off a percentage of neurons at random during training, which is known as __*dropout*__. Dropout is a technique for preventing groups of neurons from overfitting one another.
-- Weight penalty is a technique for reducing overfitting of a deep learning model on training data while improving the model's performance on the new data.
+- Switching off a percentage of neurons at random during training, which is known as a __*dropout*__. Dropout is a technique for preventing groups of neurons from overfitting one another.
+- The weight penalty is a technique for reducing the overfitting of a deep learning model on training data while improving the model's performance on the new data.
 
 In deep learning, weights that expand in size can be a major concern for degrading accuracy. Adding all of our parameters (weights) to our loss function is one method to penalize complexity.
 
@@ -168,7 +168,7 @@ A common strategy for decreasing variation in a noisy dataset is __*Bagging*__.
 
 The practice of picking and replacing a random sample of data from a training batch is known as bagging. As a result, each data point can be chosen multiple times.
 
-__*Boosting*__ is an ensemble learning approach that combines a collection of weak learners into a strong learner to reduce training errors. A random sample of data is picked, a model is fitted, and the models are then trained progressively, with each model aiming to correct for the flaws of the one before it.
+__*Boosting*__ is an ensemble learning approach that combines a collection of weak learners into strong learners to reduce training errors. A random sample of data is picked, a model is fitted, and the models are then trained progressively, with each model aiming to correct for the flaws of the one before it.
 
 To improve the accuracy of your model, it's always a good idea to use ensemble approaches for 2 main reasons: 
 1. They are often more complicated than traditional procedures. 
@@ -192,7 +192,7 @@ In practice, our learning rate should ideally be near the bottom of the line, to
 ![Learning Rate Chart](/engineering-education/Factor-that-affects-the-performance-deep-learning-systems/learning_rate_scale.png)
  
 ### Conclusion
-With the vast and rapid development of technology, deep learning is the key to today's smart world. This has brought an ease in communication between humans and their daily environment.
+With the vast and rapid development of technology, deep learning is the key to today's smart world. This has brought ease in communication between humans and their daily environment.
 
 Some real-life postulates are cited to help design the deep network algorithm. These factors include:
 - Architecture
@@ -200,7 +200,7 @@ Some real-life postulates are cited to help design the deep network algorithm. T
 - Technical know-how
 - Choice of optimizers
 
-There are some steps to aim at in order to achieve a perfect performance rate in a deep learning system:
+There are some steps to aim at to achieve a perfect performance rate in a deep learning system:
 - Data optimization.
 - Algorithm tuning.
 - Hyperparameters optimization
