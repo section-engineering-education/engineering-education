@@ -52,7 +52,7 @@ In this tutorial, we will:
 ### Caching 
 Caching is a mechanism implemented by a system or a system creator that temporarily stores data in available memory. It makes it easier to access and retrieve that information stored. Cache memory is made available for system use in a computer system, and data currently being used by the user while operating the system are sometimes cached.
 
-Caching is implemented by the system's creator, the programmer since he writes the instructions that the computer executes. Caching stores frequently access data, images, and objects near where needed, making accessing this information faster.
+Caching is implemented by the system's creator, the programmer since he writes the instructions that the computer executes. Caching stores frequently access data, images, and objects where needed, making accessing this information faster.
 
 In a situation where there is an HTTP request made to a server for a stale resource (data that does not change) when a user switches between screens in your application, caching is vital in such situations, which improves user experience.
 
@@ -67,7 +67,7 @@ Users do not have to wait for data to be fetched every time they switch between 
 ### Caching implementation
 To show a sample of this, we will perform an HTTP request in our flutter application to fetch data when the user navigates to a new screen where its contents are fetched.
 
-#### Step One: Setting up our application
+#### Step one: Setting up our application
 In your `main.dart` file set up your flutter application to display a button that navigates to a new screen when clicked.
 
 ```dart
@@ -134,7 +134,7 @@ We specify the screen we wish to navigate to by passing the selected country as 
 
 Based on the information gotten from the constructor, we store that in a data field, making it accessible to the class.
 
-#### Step Two: Analyzing inefficient scenario
+#### Step two: Analyzing an inefficient scenario
 Next, we will request information about the selected country using the HTTP flutter package and a public rest API repository for country information offered by the [rest country](https://restcountries.com/). To achieve this, head on to the HTTP package repo and get the latest installed version. In this case, our is `HTTP: ^0.13.4` and add it to the dependencies in our `pubspec.yaml` file in the root directory of our application.
 
 ```yaml
@@ -145,9 +145,9 @@ dependencies:
 
 ```
 
-Above is the section between dependencies and `dev_dependencies` in our flutter application. Once our HTTP package is added run the code below:
+Above is the section between dependencies and `dev_dependencies` in our flutter application. Once our HTTP package is added, run the code below:
 
-```dart
+```bash
 Flutter pub get
 ```
 
@@ -448,7 +448,7 @@ The `FetchMoreScreen()` performs its request to the same resource and populates 
 
 Though this may not be the most efficient of examples, it is still sufficient to represent the idea of caching which we are discussing. 
 
-### Step Three: Defining the Problem with our implementaion
+### Step three: Defining the problem with our implementation
 If you run the code as it is, you will get a list of the countries listed on the first screen.  Select a country of choice. You will proceed to the next screen, where details about the selected country are fetched from the endpoint. The data takes a while to display, but it renders on the screen once gotten. 
 
 Clicking the "More" button takes you to the next screen, which similarly sends a request to the database fetching extra details about the country. It also has a button labeled as ''Less'' that takes you back to the previous screen where you need to fetch the initial few data about the country, which is an irrelevant request. 
@@ -471,8 +471,7 @@ dependencies:
  path_provider: ^2.0.8
 ```
 
-### Step Four: Implementation our Solution
-
+### Step four: Implementation of our solution
 Run `flutter pub get` to install the dependency added. Import your `path_provider` package at the top of your file. Edit the `getCountryInfo()` function to effect your caching.
 
 ```dart
@@ -541,7 +540,7 @@ Using `file.existsSync()` we check if the file exists. If it does, we read from 
  // saving to cache
     file.writeAsStringSync(response.body, flush: true, mode:FileMode.write );
 ```
-### Step Five: Concluding
+### Step five: Concluding the caching process
 When calling the file for the first time, we use the code snippet above to write our response to the file. Since the response from the HTTP package sending the request is already in JSON format, there is no need to decode it and store it in the database.
 
 If we run our code, we see that on the first click of the country name, we have a logged message saying fetched from API navigating back and forth between screens logs to the terminal the subsequent reads are fetched from the cached file. Our data access is fast, quick and saves resources fetching the same set of data from the endpoint every time the user navigates between screens.
@@ -676,13 +675,13 @@ ${record.level.name}: ${record.time}: ${record.message}');
 });
 ```
 
-If we run our application we get the response just as we specified printed out the console.
+If we run our application, we get the response just as we specified printed out the console.
 
 ```bash
 MyApp - FIINE: 2021-12-22 19:37:00.608065: Fetching from API
 ```
 
-This is great because now we have more information about our logs, but still, it is not so great because we are still using print to log to the terminal. We can do it with most live applications to write these logs to a file and store them in memory. 
+This is great because now we have more information about our logs, but still, it is not so great because we are still using print to log to the terminal. With most live applications, we can do it to write these logs to a file and store them in memory.
 
 They are other properties provided by the record value return in the listener. You can head over to the logging docs to check or, better still, play around with the information you have access to:
 - Loggername - The name specified in the logger instantiation.
@@ -711,7 +710,7 @@ while(logs.length > 100) {
 ```
 
 ### Typography
-Fonts are essential when creating any application because texts are present within our application. Most applications are made up of 80% text content, so looking and feeling is very important for good application designs.
+Fonts are essential when creating any application because texts are present within our application. Most applications are 80% text content, so looking and feeling is very important for good application designs.
 
 One way to handle typography styling is by downloading the font you wish to use in the application, mapping your application to access the fonts in the `pubspec.yaml` file and then adding font family to the TextStyle widget. 
 
