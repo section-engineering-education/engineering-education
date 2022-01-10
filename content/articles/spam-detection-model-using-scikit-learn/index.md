@@ -6,7 +6,7 @@ url: /spam-detection-model-using-scikit-learn/
 title: Spam Detection Model using Scikit-Learn
 description: In this tutorial, we will build a machine learning model that will detect Youtube comments as either spam or non-spam.
 author: james-omina
-date: 2021-01-05T00:00:00-21:00
+date: 2022-01-10T00:00:00-21:00
 topics: [Machine Learning]
 excerpt_separator: <!--more-->
 images:
@@ -66,7 +66,7 @@ df3 = pd.read_csv("Youtube03-Channel3.csv")
 df4 = pd.read_csv("Youtube04-Channel4.csv")
 df5 = pd.read_csv("Youtube05-Channel5.csv")
 ```
-Now we have five datasets, we need to concatenate or merge them. The five datasets will be joined together to have a single data frame.
+Now we have five datasets, we need to concatenate or merge them. We will join the five datasets together to have a single data frame.
 
 #### Datasets concatenation
 We create a single data frame for the datasets and then apply the `concat` method to join them together.
@@ -88,7 +88,7 @@ From the image above, our dataset has five columns: `COMMENT_ID`, `AUTHOR`, `DAT
 
 `CONTENT` column represents the actual Youtube comments. The `CLASS` column is labeled either `0` or `1`. `0` represents non-spam comments, and `1` represents spam comments.
 
-The merged dataset contains five datasets, we need to assign keys to our merged dataset to distinguish each dataset. 
+The merged dataset contains five datasets. We need to assign keys to our merged dataset to distinguish each dataset. 
 
 #### Assigning keys
 Assigning keys enables the model to know the Youtube channel that a dataset belongs to. We will have five keys to represent the five datasets as shown below.
@@ -168,9 +168,9 @@ df_y = df_data['CLASS']
 From the code above, `df_x` is the input variable and `df_y` is the output or target variable. After specifying our input and output variables, let's perform feature extraction.
 
 ### Feature extraction from text
-Feature extraction is the process of getting important characteristics from the raw text. Machine learning models do not understand the text and can not use text directly, that's why we have to perform feature extraction. The extracted features will now be used as inputs for the model.
+Feature extraction is the process of getting important characteristics from the raw text. Machine learning models do not understand the text and can not use text directly. That's why we have to perform feature extraction. The extracted features will now be used as inputs for the model.
 
-During feature extraction, we have to convert the raw text into a vector of numeric values. The vectors of numeric values represent the original raw text. Machine learning models easily understand numeric values and can use them directly.
+We have to convert the raw text into a vector of numeric values during feature extraction. The vectors of numeric values represent the original raw text. Machine learning models easily understand numeric values and can use them directly.
 
 This process of converting raw text to vectors of numeric values will be done using the `CountVectorizer` Python package. `CountVectorizer` is a powerful tool from [Scikit-learn](https://scikit-learn.org/) library that speeds up this feature extraction process from text.
 
@@ -186,7 +186,7 @@ corpus = df_x
 cv = CountVectorizer()
 X = cv.fit_transform(corpus)
 ```
-In the code above, we save the input variable into a new variable `corpus`. The `fit_transform` ensures that the `CountVectorizer` completely fits our input dataset and no data point is left out. Therefore, all the raw text will be converted into vectors of numeric values.
+In the code above, we save the input variable into a new variable, `corpus`. The `fit_transform` ensures that the `CountVectorizer` completely fits our input dataset and no data point is left out. Therefore, all the raw text will be converted into vectors of numeric values.
 
 To view these vectors of numeric values, use this code. The code will convert the numeric values into an array of numbers.
 
@@ -226,7 +226,7 @@ To split the dataset, use the following code:
 ```python
 X_train, X_test, y_train, y_test = train_test_split(X, df_y, test_size=0.30, random_state=42)
 ```
-From the code above, we have a `test_size=0.30`. This means 70% of data is used by the algorithm for training the model and `30%` will be used to test the model.
+From the code above, we have a `test_size=0.30`. This means the algorithm uses 70% of data for training the model, and `30%` will be used to test the model.
 
 Let's now build the model using the `MultinomialNB` method. First, we initialize the `MultinomialNB` method as follows:
 
@@ -300,10 +300,10 @@ The prediction result is shown below:
 ```bash
 array([0], dtype=int64)
 ```
-The prediction result is `0`, which shows that the comment is `non-spam`. Using these two predictions, we can see that our model can be able to distinguish between spam and non-spam comments. 
+The prediction result is `0`, which shows that the comment is `non-spam`. Using these two predictions, we can see that our model can distinguish between spam and non-spam comments. 
 
 ### Conclusion 
-In this tutorial, we have learned how to build a spam detection model. We started by preparing our dataset to correctly format our dataset. We had five datasets that were collected from popular Youtube channels. After preparing the dataset, we used it to build our spam detection model. The model was able to distinguish between spam and non-spam comments. This was the goal of this tutorial and we have successfully built a spam detection model.
+In this tutorial, we have learned how to build a spam detection model. We started by preparing our dataset to format our dataset correctly. We had five datasets that were collected from popular Youtube channels. After preparing the dataset, we used it to build our spam detection model. The model was able to distinguish between spam and non-spam comments. This was the tutorial's goal, and we have successfully built a spam detection model.
 
 To get this spam detection model in Google Colab, click [here](https://colab.research.google.com/drive/1UPgeF-7EI1pZQ_QXS_h_D2VW2eI97BNl?usp=sharing).
 
