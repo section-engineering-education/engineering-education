@@ -429,3 +429,6 @@ Finally, using more folds to check your model consumes more computing resources.
 ### References
 1. https://stats.stackexchange.com/questions/52274/how-to-choose-a-predictive-model-after-k-fold-cross-validation
 2. [Great Learning Blog](https://www.mygreatlearning.com/blog/cross-validation/)
+
+---
+Peer Review Contributions by: [Wilkister Mumbi](/engineering-education/authors/wilkister-mumbi/)
