@@ -1,4 +1,4 @@
-GeoJson is a conventional method of storing geographic points in a database using JavaScript Object Notation fromat. Being based on JSON GeoJson easily integrates with JavaScript. Geojson allowa the encoding of Geographic features like Latitude, Longitude, line strings, and Polygons.
+GeoJson is a conventional method of storing geographic points in a database using JavaScript Object Notation format. Being based on JSON, GeoJson easily integrates with JavaScript. In addition, GeoJson allows the encoding of Geographic features like Latitude, Longitude, line strings, and Polygons.
 
 This article will walk the reader through the use of GeoJson to build a place locator application using Javascript. In the article, we will develop an application that adds a location to a MongoDB database, Geocodes it to obtain the latitude, longitude and a readable address of the location then displays the latitudinal and longitudinal mapping of the locations on a map. 
 
@@ -110,7 +110,7 @@ const connectDatabase = require('./config/database')
 connectDatabase();
 ```
 
-### Creating the developer model.
+### Creating the developer model
 A model is like a scaffolding that provides a way of representing data in the database. It specifies all the properties of a given data element and the data type of each property. We will store the developer's name, address, location,  and the date he is registered for our case. Create a file named `Developer.js` in the `models` folder. The following piece of code represents the schema for a developer. 
 
 ```js
@@ -247,7 +247,7 @@ const map = new mapboxgl.Map({
 })
 ```
 
-The snippet specifies the zoom level, map style, and the center, which is chosen based on where you want to map out the developers.
+The snippet specifies the zoom level, map style, and the centre, which is chosen based on where you want to map out the developers.
 
 ### Getting developers and displaying them on the map
 In this step, we want to collect all the developers in the database then display them on the map depending on the specific latitude and longitude. 
