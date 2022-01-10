@@ -18,26 +18,26 @@ To follow along with this tutorial, you will need:
 ### Standard hough transform
 We can use this transform to measure the length of a line. For example, suppose a line in an image needs to be detected; it can do that.
 
-![straight line](image-one.png)
+![straight line](/engineering-education/line-detection-using-hough-transform-in-matlab/image-one.png)
 
 The general expression of a line is y=mx+c. It means that you can map a line into a coordinate pair, `m, c`. However, vertical lines have a problem since the slope value is unbounded. In this case, the hough transform uses a different parametric representation. The parameters are $\theta$ and $\rho$. Here, $\theta$ is the angle between the axis and the origin line connecting that closest point. $\rho$ corresponds to the distance from the origin to the nearest point on the straight line.
 
-![expression using rho and theta](image-two.png)
+![expression using rho and theta](/engineering-education/line-detection-using-hough-transform-in-matlab/image-two.png)
 
 Conceptually, hough transform is the mapping of image coordinate in the x and y into the parametric coordinate $\theta, \rho$
 
 ### Using hough transform to detect a line
 Suppose an image consists of a line as shown below;
 
-![your line](image-three.png)
+![your line](/engineering-education/line-detection-using-hough-transform-in-matlab/image-three.png)
 
 A line is made up of multiple points. Similarly, multiple lines can pass through the same point. We visualize multiple lines in a hough transform plane where the parameters $\theta$ are on the x-axis and $\rho$ on the y-axis. Every point on the image is transformed into a sinusoid.
 
-![image in the hough transform plane](image-four.png)
+![image in the hough transform plane](/engineering-education/line-detection-using-hough-transform-in-matlab/image-four.png)
 
 It makes sense because many lines may pass through a given point in an image plane. It translates into a sinusoid in the hough plane. If two or more of these lines coincide to form a line in the image plane, they will intersect in the hough transform plane. This intersection corresponding to the $\theta, \rho$ pair corresponds to the detected line.
 
-![conciding lines](image-five.png)
+![conciding lines](/engineering-education/line-detection-using-hough-transform-in-matlab/image-five.png)
 
 > Note that the number of sinusoids intersecting determined the strengths of a line. It is how hough transform works.
 
@@ -49,7 +49,7 @@ Suppose you have an image with a line and you want to extract the line segments;
 
 Now, we use a simple image to implement the above algorithm. We have two binary images shown below;
 
-![binary images](image-six.png)
+![binary images](/engineering-education/line-detection-using-hough-transform-in-matlab/image-six.png)
 
 These images are binary because hough transform function works on binary images. Note that it is possible to plot these two images in Matlab. We will first plot these two images and extract line segments. We first plot the image with the two dots and extract lines from it before going to the second.
 To plot the image with the two dots, we use execute the code below;
@@ -92,7 +92,7 @@ ylabel('\rho');
 
 When we execute this code, we get two sinusoids that correspond to the two points in the image, as shown below:
 
-![Two sinusoids corresponding to the two points](image-seven.png)
+![Two sinusoids corresponding to the two points](/engineering-education/line-detection-using-hough-transform-in-matlab/image-seven.png)
 
 We use the `houghpeaks()` function to find the peaks. Using this function, you can provide the number of peaks required to be returned as the output. The output will be the largest peak if you fail to provide this.
 ```Matlab
@@ -108,7 +108,7 @@ plot(x,y,'gs')
 ```
 The output is:
 
-![Peak](image-eight.png)
+![Peak](/engineering-education/line-detection-using-hough-transform-in-matlab/image-eight.png)
 
 The green square is the peak location. Peak location is the line that goes through the two image dots.
 Now, we will apply the same logic to the second image. The only difference here is that we extract line segments to redraw the detected lines.
@@ -121,7 +121,7 @@ title('Image with a line')
 ```
 Here, we use the function `eye()` to give an MxN matrix wherewith the ones in the main diagonal and zeros in other parts. When we use this function, we get the plot as shown below:
 
-![plot of line](image-nine.png)
+![plot of line](/engineering-education/line-detection-using-hough-transform-in-matlab/image-nine.png)
 
 In the image, there are many sinusoids. Each of these sinusoids corresponds to a point on a line.
 The last step is to map the peak back into the image plane and extract the line segments. It can be done using `houghlines()` function. This function takes in the original image as the input for the image reference, an array of T, R values and the peaks, which must be marked back into the image plane as the arguments.
@@ -139,7 +139,7 @@ title('Detected line')
 ```
 Here, we use the `hlines` structure to create two points, i.e. `hlines.point1` and `hlines.point2`. On top of the original image, we plot the points with different linestyle(--), colour (g) and linewidth(5). It gives the below plot.
 
-![reconstruction](image-ten.png)
+![reconstruction](/engineering-education/line-detection-using-hough-transform-in-matlab/image-ten.png)
 
 We see the original line in the figure, and the dashed line represents the detected line. Now using this method, we can extract lines from images.
 
