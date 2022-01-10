@@ -1,6 +1,21 @@
-### How to Implement K-fold Cross-Validation in Scikit-Learn
+---
+layout: engineering-education
+status: publish
+published: true
+url: /how-to-implement-k-fold-cross-validation/
+title: How to Implement K fold Cross-Validation in Scikit-Learn
+description: This tutorial will explain how to implement K-fold Cross-Validation in Scikit-Learn.
+author: iniabasi-affiah
+date: 2022-01-10T00:00:00-21:00
+topics: [Machine Learning]
+excerpt_separator: <!--more-->
+images:
 
-The most typical strategy in machine learning is to divide a data set into training and validation sets. 70:30 or 80:20 could be the split ratio. It is the holdout method. The problem with this strategy is that we don't know if a high validation accuracy indicates a good model. What if the part of the data we utilized for validation turned out to be a success? Would our model still be accurate if we used a different section of the data set as a validation set? These are some questions that K-fold CV answers.
+  - url: /engineering-education/how-to-implement-k-fold-cross-validation/hero.png
+    alt: K fold Cross-Validation in Scikit-Learn example image
+---
+The most typical strategy in machine learning is to divide a data set into training and validation sets. 70:30 or 80:20 could be the split ratio. It is the holdout method. <!--more-->
+The problem with this strategy is that we don't know if a high validation accuracy indicates a good model. What if the part of the data we utilized for validation turned out to be a success? Would our model still be accurate if we used a different section of the data set as a validation set? These are some questions that K-fold CV answers.
 
 To follow along wwith this tutorial, you need to have:
 - The Wisconsin Breast Cancer data set [here](https://www.kaggle.com/uciml/breast-cancer-wisconsin-data)
