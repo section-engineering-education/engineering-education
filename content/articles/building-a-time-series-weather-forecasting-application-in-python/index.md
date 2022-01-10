@@ -4,9 +4,9 @@ status: publish
 published: true
 url: /building-a-time-series-weather-forecasting-application-in-python/
 title: Building a Time Series Weather Forecasting Application in Python
-description: In this tutorial, we'll discuss how we can forecast the weather using a time series package known as Neural Prophet..
+description: In this tutorial, we'll discuss forecasting the weather using a time series package known as Neural Prophet.
 author: monica-dalmas
-date: 2021-01-05T00:00:00-10:20
+date: 2022-01-10T00:00:00-10:20
 topics: [Machine Learning]
 excerpt_separator: <!--more-->
 images:
@@ -14,9 +14,9 @@ images:
   - url: /engineering-education/building-a-time-series-weather-forecasting-application-in-python/hero.png
     alt: Time Series Weather Forecasting Application Hero image
 ---
-This tutorial will take a look at how we can forecast the weather using a time series package known as Neural Prophet. 
+This tutorial will look at how we can forecast the weather using a time series package known as Neural Prophet. 
 <!--more-->
-In this walkthrough, we'll be going through a couple of key things:
+In this walkthrough, we will be going through a couple of key things:
 - We'll start by preprocessing our data fetched from Kaggle using the Pandas library.
 - We'll train a time series forecasting model to predict temperature using the model.
 - We'll learn how to forecast the temperature into the future.
@@ -40,12 +40,12 @@ In this walkthrough, we'll be going through a couple of key things:
 It is a package that has been built on top of AR-Net and Facebook Prophet.
 
 ### Installing and importing the required dependencies
-The main package that we are going to install is the Neural prophet package. 
+The main package that we will install is the Neural prophet package. 
 
 ```bash
 !pip install neuralprophet
 ```
-We need to now import the necessary dependencies into our notebook. We'll import Pandas, Neural Prophet, Matplotlib, and Pickle. 
+We need to import the necessary dependencies into our notebook. We will import Pandas, Neural Prophet, Matplotlib, and Pickle. 
 
 ```python
 import pandas as pd
@@ -59,15 +59,15 @@ from matplotlib import pyplot as plt
 The next step involves us importing our data.
 
 ### Loading the dataset 
-We will use the [Rain in Australia](https://www.kaggle.com/jsphyg/weather-dataset-rattle-package) dataset from Kaggle. Although it is a rain dataset, we are specifically going to predict the temperature. That means we will only work with the temperature data from the dataset. You need to download it and upload the `weatherAUS.csv` file into your notebook.
+We will use the [Rain in Australia](https://www.kaggle.com/jsphyg/weather-dataset-rattle-package) dataset from Kaggle. Although it is a rain dataset, we will predict the temperature. That means we will only work with the temperature data from the dataset. You need to download it and upload the `weatherAUS.csv` file into your notebook.
 
 ```python
 df = pd.read_csv('weatherAUS.csv')
 df.tail()
 ```
-We've used Pandas `read_csv()` method to load in our dataset. In addition, we've used the `tail()` method to view the last five rows in our dataset.
+We have used Pandas `read_csv()` method to load our dataset. In addition, we've used the `tail()` method to view the last five rows in our dataset.
 
-Let's do a bit of exploratory data analysis on the data.
+Let us do a bit of exploratory data analysis on the data.
 
 ```python
 df.Location.unique()
@@ -105,7 +105,7 @@ Index(['Date', 'Location', 'MinTemp', 'MaxTemp', 'Rainfall', 'Evaporation',
       dtype='object')
 ```
 
-Going forward, we will be focusing on the temperature column.
+As we advance, we will be focusing on the temperature column.
 
 Let's now do a bit of preprocessing.
 
@@ -163,7 +163,7 @@ Date             datetime64[ns]
 Location                 object
 dtype: object
 ```
-This is a requirement whenever you're working with Neural Prophet. Neural prophet requires you to give it two columns only. A `ds` column which is a timestamp and a `y` column which is the numeric column that we want to predict. In this case, our `ds` will be `Date` while our `y` will be `Temp3pm`.
+This is a requirement whenever you're working with Neural Prophet. Neural prophet requires you to give it two columns only. The `ds` column is a timestamp, and a `y` column is the numeric one we want to predict. In this case, our `ds` will be `Date` while our `y` will be `Temp3pm`.
 
 Let's use `matplotlib` to plot our temperature over time.
 
@@ -179,7 +179,7 @@ Result:
 To plot the graph above, we've used `plt.plot()` method from Matplotlib. We've passed `bris['Date']` as the x variable and `bris['Temp3pm']` as the y variable. 
 > Always check whether your data has missing values as you would not want to pass data with missing values to Neural Prophet. For our case, the data looks good.
 
-The next thing that we will do is filter out a couple of our columns. As mentioned earlier, Neural Prophet only expects two columns. 
+Next, we will filter out a couple of our columns. As mentioned earlier, Neural Prophet only expects two columns. 
 
 ```python
 new_column = bris[['Date', 'Temp3pm']] 
@@ -194,7 +194,7 @@ When you run the code above, you'll notice that our dataset has been filtered to
 We can now go ahead and train our model.
 
 ### Training the forecasting model
-We need to first create a new instance of Neural Prophet using the `NeuralProphet()` class we imported earlier. We store this instance inside a variable `n`. Secondly, we'll use the `fit()` method to go ahead and train.
+We need first to create a new instance of Neural Prophet using the `NeuralProphet()` class we imported earlier. We store this instance inside a variable `n`. Secondly, we'll use the `fit()` method to go ahead and train.
 
 ```python
 n = NeuralProphet()
@@ -213,7 +213,7 @@ future = n.make_future_dataframe(new_column, periods=400)
 forecast = n.predict(future)
 forecast.tail()
 ```
-We are forecasting for 400 periods (400 days into the future). We've also used the `n.predict()` method to go ahead and predict our future values. Finally, we are using the `tail()` method to list our five last rows. You'll notice that the last row is our 400th prediction. That is, `2018-07-30`. Remember, our dataset only has values up to the date `2017-06-25`.
+We are forecasting for 400 periods (400 days into the future). We've also used the `n.predict()` method to go ahead and predict our future values. Finally, we use the `tail()` method to list our five last rows. You'll notice that the last row is our 400th prediction. That is, `2018-07-30`. Remember, our dataset only has values up to the date `2017-06-25`.
 
 Let's visualize these predictions.
 
@@ -224,7 +224,7 @@ Result:
 
 ![Visualizing our prediction](/engineering-education/building-a-time-series-weather-forecasting-application-in-python/vusual.png)
 
-From these results, we can deduce that between `2018-01` and `2018-03`, we expect the temperature to be very high. In addition, in the months between June and July, we expect a lot colder temperatures. This result mimics the one that we had earlier with hotter temperatures in January - March and colder temperatures between June and July. 
+From these results, we can deduce that we expect the temperature to be very high between `2018-01` and `2018-03`. In addition, in June and July, we expect a lot of colder temperatures. This result mimics the one that we had earlier with hotter temperatures in January - March and colder temperatures between June and July. 
 
 You can find the complete code for this tutorial [here](https://colab.research.google.com/drive/1-jV0KIAxJEuozwS6quVGVf4tpRlfEZTE?usp=sharing).
 
