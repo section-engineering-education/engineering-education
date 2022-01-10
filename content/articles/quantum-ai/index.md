@@ -14,9 +14,8 @@
 
 Quantum AI, as the title suggests, is the application of quantum technology to the calculation of machine learning procedures. Quantum technology and machine learning are game-changing innovations that will make tasks easier. So, Artificial intelligence will need a better knowledge of quantum computing and quantum physics.  
 
-Quantum computers are information storage and processing systems that use quantum physics features. It may have a great benefit for some jobs, as they can surpass even the most powerful supercomputers.
-
-Typical computing devices, such as laptops and tablets, store data in binary "bits," in either 0s or 1s. A qubit (quantum bit) is the primary storage bit of a quantum computer. Quantum consistency is a characteristic that allows quantum systems to be in several places at the same time. Its entanglement is a condition that enables qubits to be connected. As an outcome, a set of qubits may signify several elements .
+Quantum computers store and process data using quantum technology. These computer systems can have substancial advantages to some jobs in that they can work more efficiently. 
+A quantum computer stores its data in qubit form also known as quantum bits. Quantum's system consistency and its connected qubits permits it to be in more than one place at a time. This results to qubits representing several elements once.
 
 #### Key Takeaways
 By the end of this article, the reader should be able to understand the following:
@@ -27,13 +26,13 @@ By the end of this article, the reader should be able to understand the followin
 
 ### How Quantum AI works
 
-TensorFlow Quantum (TFQ) is a quantum machine learning open-source framework. Its goal is to offer tools to manage and model natural and artificial quantum processes. TensorFlow Quantum is an example of a toolkit that blends quantum computing with machine learning.
+TensorFlow Quantum is a technology with an open-source framework. Its goal is to offer tools to manage and model natural and artificial quantum processes. TensorFlow Quantum blends quantum computing with machine learning.
 
 TensorFlow Quantum can create tensors using quantum data sets, quantum models, and conventional command variables in a single computer network. TensorFlow Operations get the results of quantum experiments that result in classical probabilistic occurrences. Standard Keras algorithms are being used to train it.
 
-Consider a guided categorization of quantum states by a quantum neural system to understand how to use quantum data. A crucial issue of quantum Machine Learning, like conventional Machine Learning, is to categorize "noisy data." A researcher can undertake the following steps to develop and train such a framework:
+Consider a guided categorization of quantum states by a quantum neural system to understand how to use quantum data. A crucial issue of quantum Machine Learning, like conventional Machine Learning, is to categorize "noisy data." To develop and train a quantum framework follow the steps below.
 
-1. Construct a quantum data collection - Tensors represent quantum data. Every tensor of quantum data is described as a Cirq quantum network that creates quantum data on the run. TensorFlow runs the tensor on the quantum computing device, generating a quantum database.
+1. Construct a quantum data collection - Tensors represent quantum data. Cirq quantum network generates quantum data. TensorFlow controls all the activities on the system creating a quantum database.
 
 2. Assess the quantum neural system design - Cirq can be used to design a quantum neural system that will then be embedded in a TensorFlow computing structure. Customized quantum systems may be chosen from many groups depending on the quantum's data nature. The model's purpose is to use quantum computation to retrieve information concealed in a usually entangled form. The quantum model frees the incoming quantum data. It then retains the concealed information stored in classical associations. Hence available to localized measures and classical post-processing.
 
@@ -75,11 +74,11 @@ These crucial stages will pave the way for future quantum AI advancements.
 
 #### Quantum AI crypto Bot
 
-Quantum AI Crypto Bot is Quantum AI's innovation that enables you to make money online by betting on foreign exchange, equities, commodities, market indices, and cryptocurrencies.
+Quantum AI Crypto Bot is a technology developed using quantum methods that enables you to earn money online by betting on foreign exchange, market indices, and cryptocurrencies.
 
-So, this trading method is well known for cryptocurrency trading. The crypto bot is one of the world's best and effective auto-trading technologies. Quantum AI uses Artificial Intelligence to ease accurate trading.
+This trading method is well known as cryptocurrency trading. The crypto bot is effective as it has all its activities automated. It uses Artificial Intelligence to facilitate a more accurate trading.
 
-The platform runs on the blockchain to improve user security. It uses the blockchain version of Smart Contracts. It provides a streamlined dispute resolution mechanism.
+The site is overlooked by blockchain to enhance its user's security. It uses the blockchain version of Smart Contracts. It provides a streamlined dispute resolution mechanism.
 
 ### How Quantum AI Checks Crypto Markets
 
