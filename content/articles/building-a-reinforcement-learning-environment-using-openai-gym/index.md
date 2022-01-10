@@ -1,6 +1,6 @@
-If you've ever worked with Deep Learning (DL) or Machine Learning (ML), you know that the two crucial techniques used are supervised and unsupervised learning. Reinforcement Learning (RL) is a little different from these two techniques as you tend to train models in a live environment. There are many standard OpenAI RL environment that can enable you build a project, i.e., the [CartPole-v0](https://gym.openai.com/envs/CartPole-v0/) and [SpaceInvaders-v0](https://gym.openai.com/envs/SpaceInvaders-v0/) environment. However, they can be limiting as some of these environments have been built to solve specific tasks. 
+If you've ever worked with Deep Learning (DL) or Machine Learning (ML), you know that supervised and unsupervised learning are the two crucial techniques used. Reinforcement Learning (RL) is slightly different from these two techniques as you tend to train models in a live environment. Many standard OpenAI RL environments can enable you to build a project, i.e., the [CartPole-v0](https://gym.openai.com/envs/CartPole-v0/) and [SpaceInvaders-v0](https://gym.openai.com/envs/SpaceInvaders-v0/) environment. However, they can be limiting as some of these environments have been built to solve specific tasks. 
 
-This tutorial will show you how you can build your own custom RL environment using OpenAI Gym. Specifically, we will build an RL model to automatically regulate temperature and get it to an optimal range in our shower. We will accomplish this task by using OpenAI Gym which is a reinforcement learning toolkit that enable you develop and compare RL algorithms. 
+This tutorial will show you how to build your custom RL environment using OpenAI Gym. Specifically, we will build an RL model to automatically regulate temperature and get it to an optimal range in our shower. We will accomplish this task by using OpenAI Gym, a reinforcement learning toolkit that enables you to develop and compare RL algorithms. 
 
 ### Prerequisites
 To follow along with this tutorial, you need to be familiar with:
@@ -20,18 +20,18 @@ To follow along with this tutorial, you need to be familiar with:
 
 ### Goals
 There are a couple of things we need to note before we begin:
-- We want our optimal temperature to be between 37 and 39 degrees celcius. 
-- The shower length will be 60 seconds. If you've worked with other standard RL environment, you know that they have an episode length. In this case, our episode length will be 60 seconds. This means that the model will try to get into that optimal temperature range within 60 seconds.
+- We want our optimal temperature to be between 37 and 39 degrees Celcius. 
+- The shower length will be 60 seconds. If you've worked with other standard RL environments, you know that they have an episode length. In this case, our episode length will be 60 seconds. This means that the model will try to get into that optimal temperature range within 60 seconds.
 - Our model will be performing three actions; Turn up, leave, and turn down. We can turn our temperature up, turn it down, or leave it as it is. 
 
-Let's begins by installing our dependencies
+Let's begin by installing our dependencies.
 
 ### Installing and importing required dependencies
 We will be installing four key dependencies:
 - `TensorFlow` allows us to perform training and inferencing of deep learning models.
-- `OpenAI Gym` to allow us build our environment.
+- `OpenAI Gym` to allow us to build our environment.
 - `Keras` is a high-level API that allows us to build deep learning models.
-- `Keras-rl2` gives us a number of pre-defined agents to build RL models.
+- `Keras-rl2` gives us several pre-defined agents to build RL models.
 
 ```bash
 !pip install tensorflow==2.3.0
@@ -48,22 +48,22 @@ import numpy as np
 import random
 ```
 We've imported:
-- The `Env` class from OpenAI Gym. It is the placeholder class that allows us to build our custom environment on top of it.
+- The `Env` class from OpenAI Gym. The placeholder class allows us to build our custom environment on top of it.
 - The `Discrete` and `Box` spaces from `gym.spaces`. They allow us to define the actions and the current state we can take on our environment. 
 - `numpy` to help us with the math.
 - `random` to allow us to test out our random environment.
 
 ### Building the custom RL environment with OpenAI Gym
-We begin by creating a `CustomEnv` class. By passing `Env` to the `CustomEnv` class, we are inheriting the methods and properties from the OpenAI Gym environment class.
+We begin by creating a `CustomEnv` class. By passing `Env` to the `CustomEnv` class, we inherit the methods and properties from the OpenAI Gym environment class.
 
 ```python
 class CustomEnv(Env):
 ```
-We've gone ahead and implemented four different functions within the `CustomEnv` class. We being by creating the `__init__` function to initialize the actions, observations, and episode length that we can take when creating your environment. 
+We've gone ahead and implemented four different functions within the `CustomEnv` class. We are creating the `__init__` function to initialize the actions, observations, and episode length that we can take when creating your environment. 
 
-`Discrete` spaces takes in a fixed range of non-negative values. For our case, it takes three actions; `down (0)`, `stay(1)`, `up (2)`. The `observation_space` will hold an array of our current temperature. Next, we set our start temperature to `38` degrees plus a random integer. Finally, we've set the shower length to `60` seconds.
+`Discrete` spaces take in a fixed range of non-negative values. For our case, it takes three actions; `down (0)`, `stay(1)`, `up (2)`. The `observation_space` will hold an array of our current temperature. Next, we set our start temperature to `38` degrees plus a random integer. Finally, we've set the shower length to `60` seconds.
 
-> Unlike `Discrete` spaces, `Box` spaces is much more flexible and allows you to pass through multiple values between `0` and `100`. In addition, you can use it to hold images, audio, and dataframes.
+> Unlike `Discrete` spaces, `Box` spaces are much more flexible and allow you to pass through multiple values between `0` and `100`. In addition, you can use it to hold images, audio, and data frames.
 
 ```python
     def __init__(self):
@@ -72,14 +72,14 @@ We've gone ahead and implemented four different functions within the `CustomEnv`
         self.state = 38 + random.randint(-3,3)
         self.shower_length = 60
 ```
-The `step` function that defines what we do after we take an action. We've set our action value to `-1`. Ideally, this means that:
+The `step` function defines what we do after we take action. We've set our action value to `-1`. Ideally, this means that:
 - If we apply action (0), and apply `-1`, we get a `-1` value. This action will lower the temperature by `1`.
 - If we apply action (1), and apply `-1`, we get a `0` value. This action will make the temperature stay where it is.
 - If we apply action (2), and apply `-1`, we get a `1` value. This action will increase the temperature by `1`.
 
 We are also reducing the shower length by `1`.
 
-When calculating the reward, if our temperature is in it's optimal range of between `37`, and `39`, we give a reward of `1`. If it isn't in this optimal range, give a reward of `-1`. With this function, our model will always try to converge so that the temperature is within the optimal range.
+When calculating the reward, if our temperature is in its optimal range of `37`, and `39`, we give a reward of `1`. If it isn't in this optimal range, give a reward of `-1`. Our model will always try to converge with this function so that the temperature is within the optimal range.
 
 ```python
     def step(self, action):
@@ -104,7 +104,7 @@ When calculating the reward, if our temperature is in it's optimal range of betw
         # Returning the step information
         return self.state, reward, done, info
 ```
-The `render` function is used when you want to visualize your results. However, we won't be using it for this tutorial. But, this is where you'd write the visualization code.
+The `render` function is used to visualize your results. However, we won't be using it for this tutorial. But, this is where you'd write the visualization code.
 
 ```python
     def render(self):
@@ -211,9 +211,9 @@ dqn = build_agent(model, actions)
 dqn.compile(Adam(lr=1e-3), metrics=['mae'])
 dqn.fit(env, nb_steps=60000, visualize=False, verbose=1)
 ```
-In the code above, we've taken our custom environment and we are now able to train our `dqn` model. At this point, we have built a custom RL environment and we are now training our model to get it right in that optimal temperature. We are training it for 60000 steps, but you could train the agent for longer to produce better results. You can change it using the `nb_steps` parameter. 
+In the code above, we've taken our custom environment and can now train our `dqn` model. At this point, we have built a custom RL environment, and we are now training our model to get it right at that optimal temperature. We are training it for 60000 steps, but you could train the agent for longer to produce better results. You can change it using the `nb_steps` parameter. 
 
->If you happen to encounter this attribute error, `'Sequential' object has no attribute '_compile_time_distribution_strategy'`, make sure to include the `del model` after the `build_model` function, then you can rerun the cells again.
+>If you happen to encounter this attribute error, the `'Sequential' object has no attribute '_compile_time_distribution_strategy'`, make sure to include the `del model` after the `build_model` function, then you can rerun the cells.
 
 ### Testing our custom RL environment
 After training our model, we can go ahead and test it out. To test it, let's write the following code:
@@ -226,7 +226,7 @@ print(np.mean(scores.history['episode_reward']))
 Please find the complete code for this tutorial [here](https://colab.research.google.com/drive/1oBe07b28h9GCBy_bKtLJisC98mayDcwn?usp=sharing).
 
 ### Wrapping up
-That wraps it up on how to build a custon RL environment using OpenAI Gym. You could play around with this environment, you could tweak some parameters, or add noise to replicate real-life scenarios such as someone manually adjusting the temperature. Try it out and use it to build a custom RL environment for your project.  
+That wraps it up on building a custom RL environment using OpenAI Gym. You could play around with this environment, tweak some parameters, or add noise to replicate real-life scenarios, such as someone manually adjusting the temperature. Try it out and build a custom RL environment for your project.  
 
 ### Further reading
 - [OpenAI Gym](https://openai.com)
