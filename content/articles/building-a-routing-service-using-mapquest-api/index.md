@@ -408,7 +408,8 @@ In the gif above, our map is being run by a live server. If you use `vscode`, yo
 [Here](https://github.com/muyiwexy/mapquest-API) is a link to the Github repository.
 
 ### Conclusion
-On careful implementation of the processes above, we have been able to create a map layer, an input form, and a routing function.
+On careful implementation of the processes above, we have been able to create a map layer, an input form, and a routing function. As we said earlier, there are several location routing service implemented with leaflet but the mapquest routing API is by far the easiest of them all. Easy doesn't mean the best though. Thus, on a personal opinion, open street routing machine (OSRM) is a good choice for more experienced programmers looking to build similar services in JavaScript. 
+
 
 Happy coding!
 
