@@ -32,7 +32,7 @@ In February 2002, Microsoft announced WinForms as a GUI-based alternative to the
 
 Because WinForms is a wrapper for a collection of C++ classes, each WinForms control is an instance of that class. Developers may quickly drag and drop controls from a toolbox in Microsoft's Visual Studio, making workarounds with WinForms simpler.
 
-WinForms is a graphical library in the .NET framework that lets the developer build rich client applications with event-driven design. It is a simple concatenation of Windows Forms applications.
+WinForms is a graphical library in the .NET framework that lets the developer build rich client applications with event-driven design. WinForms is a simple concatenation of Windows Forms Applications.
 <!--  -->
 ### Creating a WinForms application
 Assuming we have installed [Visual Studio](https://visualstudio.microsoft.com/), we can create a new project in the solution explorer by choosing the WinForms application from the list. You can change the name of the form as you desire. In our case, it will remain as `Form1.cs`. After creating the project, we can note that Visual Studio created the `Form1.cs` file and generated the `Program.cs` file:
@@ -60,7 +60,7 @@ When we run the application, it prompts for two numbers and after clicking the a
 
 ![Results after adding two numbers](/engineering-education/wpf-vs-winforms/results.png)
 
-Controls are readily employed in Windows Forms, making them easy to use but when designing is necessary, Windows forms should not be utilized.
+Controls are readily employed in Windows Forms, making them easy to use but when designing is necessary, Windows forms should not be utilized. This is because the code for each event and procedure in WinForms, is firmly tied with the UI element. Even if you utilized the visual designer in WinForms, the designer extension component of your form had layout code created in the language of your choice (for example, C#, VB.NET, or C++). Without that code, you wouldn't be able to construct the form individually. This means that in order to create the UI, you have to be familiar with the language.
 <!--  -->
 ### What is WPF?
 After Microsoft introduced Windows Presentation Foundation (WPF) in 2007, which replaced Windows Form, the creation of desktop applications has altered considerably.
@@ -68,6 +68,8 @@ After Microsoft introduced Windows Presentation Foundation (WPF) in 2007, which 
 WPF is another graphical library developed by Microsoft. WPF allows developers to create event-driven rich client applications for usage on Windows desktop operating systems. It can be used to develop and design both **Windows applications and web applications** while WinForms can only be used to develop and design **Windows applications**.
 
 XAML (Extensible Application Markup Language) is used by WPF to define the user interface of a WPF application. It is a declarative language that describes the UI of a WPF application.
+
+In WPF, the user interface and the code can be created and organised separately. The UI in WPF is based on XAML, which is extensible and allows you to design a specific UI without knowing whether it will be written in C# or VB.NET. As a result, the full UI design can (but is not required) be completed by someone who is unfamiliar with the programming language to be used.
 
 WPF comes with support for a wide range of video formats, records, 3D material, and a lot of built-in animation while WinForms does not offer much rich, interactive, animated, hardware accelerated, vector 2D, and 3D capabilities as compared to WPF.
 
@@ -125,7 +127,7 @@ In reality, we can also drag and drop controls into the designer window. The rel
 </Window>
 ```
 
-Unlike Winforms, XAML makes it easy to create and edit your GUI and allows the work to be split between a designer (XAML) and a program (C#).
+In WPF, XAML makes it easy to create and edit your GUI and allows the work to be split between a designer (XAML) and a program (C#) unlike in WinForms where the design and the program are not separeted.
 
 In WPF, we have to add a click event handler to the button while in WinForms, it is not required. Read more about the click event handler [here](https://www.tutorialspoint.com/xaml/xaml_event_handling.htm).
 <!--  -->
