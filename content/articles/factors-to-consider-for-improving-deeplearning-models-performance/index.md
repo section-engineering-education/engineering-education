@@ -6,7 +6,7 @@ url: /factors-to-consider-for-improving-deeplearning-models-performance/
 title: Factors To Consider For Improving Deep Learning Models Performance
 description: This tutorial will help the reader understand how to figure the factors that might improve the performance of deep learning models.
 author: kingsley-tom
-date: 2022-01-09T00:00:00-20:30
+date: 2022-01-10T00:00:00-20:00
 topics: [Machine Learning]
 excerpt_separator: <!--more-->
 images:
@@ -27,11 +27,11 @@ You can read more about artificial neural networks [here](https://www.simplilear
 ### Table of contents
 - [Pre-requisites](#pre-requisites)
 - [Identifying the problem](#identifying-the-problem)
-- [The Concept of Deep Learning](#the-concept-of-deep-learning)
-- [What are optimizers](#what-are-optimizers)
-- [Some Determinants That Transform Deep Learning Systems' Performance](#determinants-that-transform-deep-learning-systems-performance)
-- [How To Get A Perfect Performance Rate From A Deep Learning System](#how-to-get-a-perfect-performance-rate)
-- [Diagram demonstrating the different scenarios one can fall into when configuring the learning rate](#configuring-the-learning-rate)
+- [The concept of deep learning](#the-concept-of-deep-learning)
+- [What are optimizers?](#what-are-optimizers)
+- [Determinants for deep learning system performance](#determinants-for-deep-learning-system-performance)
+- [How to get a perfect performance rate?](#how-to-get-a-perfect-performance-rate)
+- [Configuring the learning rate](#configuring-the-learning-rate)
 - [Conclusion](#conclusion)
 - [Further Reading](#further-reading)
 
