@@ -1,4 +1,20 @@
-### Getting Started with Recursive Feature Elimination Algorithm in Machine Learning
+---
+layout: engineering-education
+status: publish
+published: true
+url: /recursive-feature-elimination/
+title: Getting started with Recursive Feature Elimination algorithm in Machine Learning
+description: This tutorial aims to help the reader get started with the Recursive Feature Elimination algorithm and implement it in Python.
+author: daniel-mwanthi
+date: 2021-01-10T00:00:00-11:00
+topics: [Machine Learning]
+excerpt_separator: <!--more-->
+images:
+
+  - url: /engineering-education/recursive-feature-elimination/hero.png
+    alt:  Recursive Feature Elimination Algorithm Hero Image
+---
+
 Most of the time, the data we work with in machine learning is usually in high dimensions. As a result, models implemented on these data are victims of the Curse of dimensionality. 
 
 The Curse of dimensionality refers to all problems associated with high dimensional datasets. For example, when the dataset dimensionality is too high, it is possible to be highly detailed, and therefore, the information contained in some features is already captured in other features in the same dataset. As a result, features end up being highly correlated. 
@@ -24,7 +40,7 @@ For maximum benefit from this material, you need to be familiar with the followi
 
 
 ### Introduction to Recursive Feature Elimination
-Recursive Feature Elimination(RFE) is the Wrapper method, i.e.; it can ta. This algorithm fits a model and determines how significant features explain the variation in the dataset. Once the feature importance has been determined, it then removes those less important features one at a time in each iteration. 
+Recursive Feature Elimination(RFE) is the Wrapper method, i.e., it can ta. This algorithm fits a model and determines how significant features explain the variation in the dataset. Once the feature importance has been determined, it then removes those less important features one at a time in each iteration. 
 
 These features are repeatedly eliminated until a certain threshold(optimal number of features needed) is met. First, let us understand how this algorithm works in sklearn.
 
@@ -39,14 +55,14 @@ On the other hand, if we fit a linear regression model, the feature importance w
 
 However, we run cross-validation on the top of the RFE class, which automatically determines the optimal number of features to keep. With sklearn, we do not need to do this separately. 
 
-Instead, the sklearn provides us with the `RFECV` class, which implements the RFE together with the cross-validation and automatically selects the optimal number of features for us. With this said, we can now proceed and implement this algorithm in python.
+Instead, the sklearn provides us with the `RFECV` class, which implements the RFE together with the cross-validation and automatically selects the optimal number of features for us. With this said, we can now proceed and implement this algorithm in Python.
 
 
 ### Implementing RFE algorithm in Python
 #### Data Preparation
 To start with, we will import the following libraries.
 
-```python
+```Python
 # for numeric handling
 import numpy as np
 # to handle dataframes
@@ -67,7 +83,7 @@ data.shape
 
 Our data was successfully imported. This data has 1470 instances, 34 features, and a study variable. It contains information about employees of a particular company. Therefore, it will determine whether an employee will leave the organization or remain. Using the `head` function, let us look at the first five observations of this dataset.
 
-```python
+```Python
 # check for the first five observations of the dataset
 data.head()
 
@@ -235,4 +251,4 @@ The output above shows that the optimal number of features is three. So, out of 
 If we train our predictive model on these features, the time and processing power required in the training process is much less than if we were to train the model on all 35 features of the original dataset. As a result, the model's chances of suffering from overfitting are reduced by a higher chance.
 
 ### Summary
-This article explained how to implement the Recursive Feature Elimination algorithm in python. Before implementing this model, we discussed why it is essential to reduce dataset dimensionality, and later we looked at features selection with the Recursive Feature Elimination algorithm. I hope this article helped you get to understand the RFE algorithm.
+This article explained how to implement the Recursive Feature Elimination algorithm in Python. Before implementing this model, we discussed why it is essential to reduce dataset dimensionality, and later we looked at features selection with the Recursive Feature Elimination algorithm. I hope this article helped you get to understand the RFE algorithm.
