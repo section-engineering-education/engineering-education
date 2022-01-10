@@ -1,4 +1,4 @@
-An application programming interface is a software middleware that sits between two applications and allows them to communicate and exchange data. This intermediary software, therefore, allows data transmission between two applications. For example, an application may be built and an API  created through which other applications may be used to communicate with it.
+An application programming interface is a software middleware that sits between two applications and allows them to communicate and exchange data. This intermediary software, therefore, enables data transmission between two applications. For example, an application may be built and an API  created through which other applications may be used to communicate with it.
 
 The superhero API is an application programming interface that provides data and information about a list of superheroes from the comic universe, including their physical capabilities, biography information, occupations, power statistics, connections with other heroes, and appearances in movies.
 
@@ -52,7 +52,7 @@ The project folder structure as of now should be as shown below:
 └── .superhero/
 ```
 
-In the next step, we will install `requests`. `Requests` is a simple HTTP library used to send HTTP requests using Python. This library allows one to pass different parameters to the HTTP request inclusion headers, form data, and multipart files. Moreover, it allows one to access response data from the request made in JSON format.
+In the next step, we will install `requests`. `Requests` is a simple HTTP library used to send HTTP requests using Python. This library allows one to pass different parameters to the HTTP request inclusion headers, form data, and multipart files. Moreover, it will enable one to access response data from the request made in JSON format.
 
 Run the following command in the terminal to install the `requests`  library:
 
@@ -92,7 +92,7 @@ A Universal Resource Locator is what specifies the path to a given resource in t
 
 This function tells Django where the template to be rendered is. We will have two paths that specify the default home page and a single hero page. In the `urls.py` file, add the following snippets.
 
-```Python
+```py
 from Django.URLs import path
 from . import views
 from Django.conf import settings
@@ -116,7 +116,7 @@ import requests
 
 We will have two functions in this file. The first function will be the `homepage()`. This function will take in requests and use the `requests` library to fetch all superheroes from the API url. Next, it converts the list of superheroes to json the passes it to the template rendered.
 
-```python
+```py
 def homepage(request):
     res = requests.get('https://akabab.github.io/superhero-api/api/all.json')
     heroes = res.json()
@@ -126,7 +126,7 @@ def homepage(request):
 
 The next function will be called `single_hero`, which tackles requests and an ID of a specific superhero. With the ID in place, we can follow the same url but with a different ID to get the details about different superheroes. After getting the superhero, the response data is converted into JSON the passed to the `single-hero.html` template.
 
-```python
+```py
 def single_hero(request, id):
     response = requests.get(f"https://akabab.github.io/superhero-api/api/id/{id}.json")
     response.raise_for_status()  # raises exception when not a 2xx response
@@ -438,7 +438,7 @@ The static folder contains all the static files required for the project. These 
 
 Add the following snippets to the `settings.py` file to set up the static folder.
 
-```Python
+```py
 #at the beginning of the file
 from pathlib import Path
 import environ
@@ -466,4 +466,4 @@ The final application should look as shown below:
 
 
 ### Conclusion
-The superhero API is a simple and easy-to-use middleware. This tutorial discussed how to use the API in building a superhero application. First, we fetched the data and rendered it on a user interface. In combination with the Django framework, this tutorial should provide a headstart in using the Superhero API and other APIs. 
+The superhero API is a simple and easy-to-use middleware. This tutorial discussed how to use the API in building a superhero application. First, we fetched the data and rendered it on a user interface. This tutorial should provide a headstart in using the Superhero API and other APIs in combination with the Django framework. 
