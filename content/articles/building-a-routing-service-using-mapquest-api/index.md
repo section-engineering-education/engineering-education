@@ -6,7 +6,7 @@ url: /building-a-routing-service-using-mapquest-api/
 title: Building a routing service using mapquest API
 description: This tutorial will show the reader how to build a routing service using mapquest API.
 author: femi-ige-muyiwa-oladele
-date: 2021-01-04T00:00:00-21:00
+date: 2022-01-10T00:00:00-10:30
 topics: [Languages]
 excerpt_separator: <!--more-->
 images:
@@ -14,13 +14,14 @@ images:
   - url: /engineering-education/building-a-routing-service-using-mapquest-api/hero.jpg
     alt: Building a routing service using mapquest API Hero Image
 ---
-Routing is a focal point in the mapping space. The need for routing services is essential in apps like Jumia foods delivery system,  Google maps, and a host of location-based service companies. Routing in geography is taking a course from a designated starting point to a destination. We build routing services in JavaScript with some APIs or plugins such as the Google directions API, open street routing machine (OSRM), and our focal point in this article, the Mapquest directions API.
+Routing is a focal point in the mapping space. The need for routing services is essential in apps like Jumia foods delivery system,  Google maps, and a host of location-based service companies.
 <!--more-->
-Mapquest created a plugin for leaflet maps to send a request to its direction API services, receive these results and display them on a map. We'll guide you on how to execute this feature in your maps.
+Routing in geography is taking a course from a designated starting point to a destination. We build routing services in JavaScript with some APIs or plugins such as the Google directions API, open street routing machine (OSRM), and our focal point in this article, the Mapquest directions API.
+
+Mapquest created a plugin for leaflet maps to send a request to its direction API services, receive these results and display them on a map. This tutorial will guide you on how to execute this feature in your maps.
 
 ### Prerequisites
-The reader is required to have a strong foundation on the following:
-
+The reader is required to have a strong foundation in the following:
 - HTML, CSS, JavaScript.
 - The reader should have a Mapquest API key. [Here](https://developer.mapquest.com/) is a link to get started in creating your API key.
 
@@ -40,18 +41,21 @@ At the end of the tutorial, the reader should be able to:
 - Clear form data by replacing the map layer `onload`.
 
 ### Getting started
-We'll split this article into different components beginning with:
-
+We'll split this article into different components:
 - Creating an input form.
 - Adding a map layer.
 - Implementing the routing function.
 
-To begin, we'll create HTML, CSS, and JavaScript files. Then, we can go to our first section. 
+To begin, we'll create HTML, CSS, and JavaScript files. Then, we can go to our first section.
 
 #### Creating the input form
-After initializing our HTML boilerplate, we create a div tag with the class name, `formBlock`. Then, we build an input form containing a form, input and, button tag. The form tag has an id `form` with the input tags having a class name of `input`. The input form in this project is to accept our starting and endpoint (locations) for our routing processes.
+After initializing our HTML boilerplate, we create a div tag with the class name, `formBlock`.
 
-Below is an example of our explanation above:
+Then let's build an input form containing a form, input and, button tag. The form tag has an id `form` with the input tags having a class name of `input`.
+
+The input form in this project is to accept our starting and endpoint (locations) for our routing processes.
+
+Below is the code snippet explained above:
 
 ```HTML
 <div class="formBlock">
@@ -63,7 +67,7 @@ Below is an example of our explanation above:
 </div>
 ```
 
-We add some styling to our input form above. In our CSS file, we add the following:
+Add some styling to our input form above. In our CSS file, add the following:
 
 ```CSS
 
@@ -104,12 +108,12 @@ input:nth-child(1) {
 }
 ```
 
-On the implementation of the above, we have our input form as:
+On the implementation of the above, we should have our input form as:
 
 ![input](engineering-education/building-a-routing-service-using-mapquest-api/input-form.jpg)
 
 #### Adding a map layer
-Next, we add the leaflet JavaScript and CSS file in our header through a content delivery network. We also included Mapquest and its leaflet routing plugin JavaScript file.
+Next, add the leaflet JavaScript and CSS file in our header through a CDN. Let's also include Mapquest and its leaflet routing plugin JavaScript file.
 
 ```HTML
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.7/leaflet.css" />
@@ -120,9 +124,9 @@ Next, we add the leaflet JavaScript and CSS file in our header through a content
 <script src="https://www.mapquestapi.com/sdk/leaflet/v2.2/mq-map.js?key=QGer4kg9yzSEAajj53JtHB4ngaooYSVs"></script>
 <script src="https://www.mapquestapi.com/sdk/leaflet/v2.2/mq-routing.js?key=QGer4kg9yzSEAajj53JtHB4ngaooYSVs"></script>
 ```
-> Note! The reader needs a Mapquest API key to use their (Mapquest's) service.
+> Note! You need a Mapquest API key to use the (Mapquest's) service.
 
-We create a div with the id `map`. This div serves as a container for our map layer. Next, we load our map layer by initializing our Mapquest API key and defining our map objects (center and zoom).
+Let's create a div with the id `map`. This div serves as a container for our map layer. Next, load the map layer by initializing our Mapquest API key and defining our map objects (center and zoom).
 
 ```JavaScript
 // default map layer
@@ -132,7 +136,8 @@ let map = L.map('map', {
     zoom: 8
 });
 ```
-To display our map, we implemented a simple styling to our map:
+To display the map, add the style below:
+
 ```CSS
 #map {
     height:100vh;
@@ -142,16 +147,16 @@ To display our map, we implemented a simple styling to our map:
 ```
 ![map](engineering-education/building-a-routing-service-using-mapquest-api/map.jpg)
 
-Our map looks good at the moment🚀! To move our zoom control we add the styling:
+The map looks good at the moment🚀! To move our zoom control add the styling:
 ```CSS
 .leaflet-top .leaflet-control {
     margin-top: 180px;
 }
 ```
 #### Implementing the routing function
-Before we do this, we need to create a submit event function. First, we invoke a JavaScript function called `submitForm` with the argument event. We add a `preventDefault()` method to prevent submitting an empty form. Concurrently, we add the `map.remove()` to remove the current map layer once we add a new input.
+Before we do this, we need to create a submit event function. First, invoke a JavaScript function called `submitForm` with the argument event. Add a `preventDefault()` method to prevent submitting an empty form. Concurrently, add the `map.remove()` to remove the current map layer once we add a new input.
 
-Next, with the `getElemenetById()` method, we get each values inputted in our form. We also added a callback function called `runDirection(start, end)` to send the values in our input forms. Below is an example of these explanation:
+Next, with the `getElemenetById()` method, get each values inputted in our form. Add a callback function called `runDirection(start, end)` to send the values in our input forms.
 
 ```JavaScript
 function submitForm(event) {
@@ -168,7 +173,7 @@ function submitForm(event) {
 }
 ```
 
-Our routing function requires a new map layer once the form is submitted. We take the liberty of having our custom markers. Next, we create a marker object for the starting and endpoint. Below is the implementation of the routing function:
+Our routing function requires a new map layer once the form is submitted. We'll take the liberty of having our custom markers. Next, create a marker object for the starting and endpoint.
 
 ```JavaScript
 function runDirection(start, end) {
@@ -229,8 +234,8 @@ function runDirection(start, end) {
         fitBounds: true
     }));
 }
-``` 
-Finally, we invoke our `addEventListener` method to submit the form result and our map should be as follows:
+```
+Finally, invoke our `addEventListener` method to submit the form result and our map should be as follows:
 
 ```JavaScript
 const form = document.getElementById('form');
@@ -403,7 +408,7 @@ In the gif above, our map is being run by a live server. If you use `vscode`, yo
 [Here](https://github.com/muyiwexy/mapquest-API) is a link to the Github repository.
 
 ### Conclusion
-On careful implementation of the processes above, we have been able to create a map layer, an input form, and a routing function. 
+On careful implementation of the processes above, we have been able to create a map layer, an input form, and a routing function.
 
 Happy coding!
 
