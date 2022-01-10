@@ -14,7 +14,7 @@ images:
   - url: /engineering-education/building-a-routing-service-using-mapquest-api/hero.jpg
     alt: Building a routing service using mapquest API Hero Image
 ---
-Routing is a focal point in the mapping space. The need for routing services is essential in apps like Jumia foods delivery system,  Google maps, and a host of location-based service companies.
+Routing is a focal point in the mapping space. Routing services are essential in apps like Jumia foods delivery system,  Google maps, and a host of location-based service companies.
 <!--more-->
 Routing in geography is taking a course from a designated starting point to a destination. We build routing services in JavaScript with some APIs or plugins such as the Google directions API, open street routing machine (OSRM), and our focal point in this article, the Mapquest directions API.
 
@@ -408,8 +408,7 @@ In the gif above, our map is being run by a live server. If you use `vscode`, yo
 [Here](https://github.com/muyiwexy/mapquest-API) is a link to the Github repository.
 
 ### Conclusion
-On careful implementation of the processes above, we have been able to create a map layer, an input form, and a routing function. As we said earlier, there are several location routing service implemented with leaflet but the mapquest routing API is by far the easiest of them all. Easy doesn't mean the best though. Thus, on a personal opinion, open street routing machine (OSRM) is a good choice for more experienced programmers looking to build similar services in JavaScript. 
-
+On careful implementation of the processes above, we have been able to create a map layer, an input form, and a routing function. As we said earlier, several location routing services are implemented with leaflet, but the mapquest routing API is by far the easiest of them all. But, easy doesn't mean the best. Thus, in my personal opinion, the open street routing machine (OSRM) is a good choice for more experienced programmers looking to build similar services in JavaScript. 
 
 Happy coding!
 
