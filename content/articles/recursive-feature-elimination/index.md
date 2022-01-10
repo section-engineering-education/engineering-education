@@ -252,3 +252,6 @@ If we train our predictive model on these features, the time and processing powe
 
 ### Summary
 This article explained how to implement the Recursive Feature Elimination algorithm in Python. Before implementing this model, we discussed why it is essential to reduce dataset dimensionality, and later we looked at features selection with the Recursive Feature Elimination algorithm. I hope this article helped you get to understand the RFE algorithm.
+
+---
+Peer Review Contributions by: [Mercy Meave](/engineering-education/authors/mercy-meave/)
