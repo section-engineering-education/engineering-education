@@ -110,7 +110,7 @@ input:nth-child(1) {
 
 On the implementation of the above, we should have our input form as:
 
-![input](engineering-education/building-a-routing-service-using-mapquest-api/input-form.jpg)
+![input](engineering-education/building-a-routing-service-using-mapquest-api/input-form.png)
 
 #### Adding a map layer
 Next, add the leaflet JavaScript and CSS file in our header through a CDN. Let's also include Mapquest and its leaflet routing plugin JavaScript file.
