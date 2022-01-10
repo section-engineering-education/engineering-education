@@ -6,7 +6,7 @@ url: /understanding-machine-learning-algorithms-and-how-to-implement-them/
 title: Understanding machine learning algorithms and how to Implement them
 description: This article will cover basic concept of machine learning algorithms and how to Implement them elements.
 author: kelvin-munene
-date: 2022-01-05T00:00:00-06:02
+date: 2022-01-10T00:00:00-04:26
 topics: [Languages]
 excerpt_separator: <!--more-->
 images:
@@ -101,7 +101,7 @@ Linear regression is a prominent machine learning method. It is a statistical fo
 
 A dependent `(y)` has a linear connection with one or more independent variables `(y)`.
 
-Since linear regression displays a linear connection, it finds how the dependent variable changes concerning the independent variable. It shows a straight line connecting variables.:
+Since linear regression displays a linear connection, it finds how the dependent variable changes concerning the independent variable. It shows a straight line connecting variables.
 
 ![Linear regression](/engineering-education/understanding-machine-learning-algorithms-and-how-to-implement-them/linear-regression.png)
 
