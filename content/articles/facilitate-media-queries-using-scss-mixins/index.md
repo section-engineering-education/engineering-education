@@ -8,9 +8,9 @@ In web development, it is essential to build sites and applications that are use
 - [Prerequisites](#prerequisites)
 - [Key-takeaways](#key-takeaways)
 - [CSS Media Queries](#css-media-queries)
-- [CSS Preprocessor scripting language (SCSS)](#css-preprocessor-scripting-language-scss))
+- [CSS Preprocessor scripting language (SCSS)](css-preprocessor-scripting-language-(SCSS))
 - [Setting up the SCSS Mixins](setting-up-the-sccs-mixins)
-- [Media queries using SCSS Mixins](#media-queries-using-scss-mixins)
+- [Media Queries Using SCSS Mixins](media-queries-using-scss-mixins)
 - [Conclusion](#conclusion)
 - [Further reading](#further-reading)
 
@@ -21,10 +21,10 @@ To comprehend this article better, the reader should have an understanding of th
 
 ### Key Takeaways 
 By the end of this article, the reader is expected to acquire the following knowledge: 
-How the CSS preprocessor scripting language works
-The best approach for handling media queries.
-How to design responsive applications using SCSS mixins.
-How best to implement the SCSS mixins for cleaner and easier to maintain codes.
+- How the CSS preprocessor scripting language works
+- The best approach for handling media queries.
+- How to design responsive applications using SCSS mixins.
+- How best to implement the SCSS mixins for cleaner and easier to maintain codes.
 
 
 ### CSS Media Queries 
@@ -53,7 +53,7 @@ Now mixins help you manage your media query by defining it in one location. So y
 Let’s open our style.scss file and input the necessary codes to set up the mixins:
  
  
-```
+```SCSS
 // We define the mixins for two major breakpoints mobile and tablet
  
  // $breakpoint is the variable that can have several values
@@ -78,7 +78,7 @@ The above block of codes shows how mixins are mapped out and associated with nam
 ### STEP 3
 **Media Queries Using SCSS Mixins**
 As you can see in the snippet below, the styling can be affected by simply calling up the mixins. From what has been defined, the color changes appropriately for tablet and mobile screen sizes.
-```
+```SCSS
 // HANDLING THE RESPONSIVENESS
 .responsive {
     background: yellow;
@@ -101,7 +101,7 @@ As you can see in the snippet below, the styling can be affected by simply calli
 ```
 By simply calling up the mixins created, you can apply stylings as you wish. These SCSS codes will compile to generate the corresponding CSS codes:
  
-```
+```CSS
 .responsive { 
   background: yellow;
 }
