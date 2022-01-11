@@ -50,9 +50,9 @@ For example:
 ```
 ![image title](/new-folder-name/image-name.jpg)
 ```
-If you have a header (hero) image in mind, feel free to include it your PR as well. Please try to keep images as close to 600X400 pixels (images can be resized using [Pixlr Image Editor](https://pixlr.com/e)) and make sure you have the appropriate copyright to use it. Sites like [Unsplash](https://unsplash.com) have Creative Commons images which you can use for free.
+If you have a header (hero) image in mind, feel free to include it your PR as well. Please try to keep images as close to **600X400 pixels** (images can be resized using [Pixlr Image Editor](https://pixlr.com/e)) and make sure you have the appropriate copyright to use it. Sites like [Unsplash](https://unsplash.com) have Creative Commons images which you can use for free.
 
-Any images within the article need to be hosted on our site - place the image in the proper folder) - and have the proper image paths in the article similar to the hero image and have citations (attribution) if required.
+Any images within the article need to be hosted on our site - (place the image in the proper folder) - and have the proper image paths in the article similar to the hero image and have citations (attribution) if required.
 
 Your folder should look similar to this:
 
