@@ -286,11 +286,11 @@ From the output above we can see `Movie` had a higher probability of `0.74445483
 In the next prediction, `TV-MA` has a higher probability of `0.46916205` compared to the other rating. That's why the model classified the rating as `TV-MA`. Using these prediction probabilities, we can see that our model was able to make the right predictions.
 
 ### Conclusion
-In this tutorial, we have learned how to build a multi-output classification model. We started by cleaning our Netflix dataset to ensure that is correctly formatted before we can use it. 
+In this tutorial, we have learned how to build a multi-output classification model. We started by cleaning our Netflix dataset to ensure that it was correctly formatted before using it. 
 
-We then used the clean dataset to build the multi-output text classification model. We used both the `LogisticRegression` and `MultiOutputClassifier` algorithms in training the model. We implemented all the machine learning processes using the pipeline package, it sped up the process and made our work easier. 
+We then used the clean dataset to build the multi-output text classification model. We used the `LogisticRegression` and `MultiOutputClassifier` algorithms to train the model. We implemented all the machine learning processes using the pipeline package. It sped up the process and made our work easier. 
 
-Finally, we used our model to make predictions, the trained model was able to make the right predictions. To get the multi-output classification model we have built in this tutorial, click [here](https://colab.research.google.com/drive/11-SVWysrpK0SGp7d7EYnuArlYeLsv1K0?usp=sharing).
+Finally, we used our model to make predictions, and the trained model could make the right predictions. To get the multi-output classification model we have built in this tutorial, click [here](https://colab.research.google.com/drive/11-SVWysrpK0SGp7d7EYnuArlYeLsv1K0?usp=sharing).
 
 ### References
 - [Google Colab notebook](https://colab.research.google.com/drive/11-SVWysrpK0SGp7d7EYnuArlYeLsv1K0?usp=sharing)
