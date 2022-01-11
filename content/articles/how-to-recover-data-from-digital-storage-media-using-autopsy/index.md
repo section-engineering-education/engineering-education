@@ -64,7 +64,7 @@ Create an image of the drive whose data is to be recovered to preserve data in c
 
 We treat the created image as the source from which we recover data. The following is an example of a disk image created using [Access Data FTK imager](https://accessdata.com/product-download/ftk-imager-version-4-5).
 
-![ftk disk imaging](/how-to-recover-data-from-digital-storage-media-using-autopsy/ftk-imaging.jpg)
+![ftk disk imaging](/engineering-education/how-to-recover-data-from-digital-storage-media-using-autopsy/ftk-imaging.jpg)
 
 Ensure that you have enough storage to accommondate the recovered data. In some cases, the recovered data is larger than the disk default capacity.
 
@@ -84,13 +84,13 @@ Download and install [Autopsy](https://www.autopsy.com/).
 
 When the installation is complete, launch the Autopsy software and click create a `new case` as shown below:
 
-![Creating a new case](/how-to-recover-data-from-digital-storage-media-using-autopsy/create-new-case.jpg)
+![Creating a new case](/engineering-education/how-to-recover-data-from-digital-storage-media-using-autopsy/create-new-case.jpg)
 
 **[Image source](Sleuthkit.org)**
 
 Key in the `case` details as you wish in the dialog box shown below:
 
-![New case information](/how-to-recover-data-from-digital-storage-media-using-autopsy/new-case-info.jpg)
+![New case information](/engineering-education/how-to-recover-data-from-digital-storage-media-using-autopsy/new-case-info.jpg)
 
 **[image source](sleuthkit.org)**
 
@@ -98,7 +98,7 @@ The additional information is not necessary if you're not recovering data under 
 
 When you click `finish`, the following dialog box pops up:
 
-![Data Source created](/how-to-recover-data-from-digital-storage-media-using-autopsy/data-source.jpg)
+![Data Source created](/engineering-education/how-to-recover-data-from-digital-storage-media-using-autopsy/data-source.jpg)
 
 **[image source](Datascience.foundation)**
 
@@ -119,7 +119,7 @@ When the analysis is complete, the data is displayed in different categories. Th
 #### Step 3: Data restoration
 Open the folder of the files you'd want to be recovered. In this case, we want to restore deleted files as shown below:
 
-![Data Recovery Window](/how-to-recover-data-from-digital-storage-media-using-autopsy/data-recovery.jpg)
+![Data Recovery Window](/engineering-education/how-to-recover-data-from-digital-storage-media-using-autopsy/data-recovery.jpg)
 
 We will `right-click` on the data we want to `restore` and select `export`. Choose a `location` to export the data to, then click `save`.
 
