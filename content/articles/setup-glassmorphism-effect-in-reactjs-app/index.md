@@ -1,14 +1,14 @@
-In this guide, we will be implementing glassmorphism effect on a card component using React.js
+Glassmorphism is an interface-based concept applied to web apps, websites, mobile apps, etc. Its commonly used in card-based interfaces. Glassmorphism creates glassy panels that float in the set background space. This creates a transparent background blur with frosted-glassy-like effects.
+
+In this guide, we will be implementing the glassmorphism effect on a card component using React.js.
 
 ### Prerequisites
-
 It will be advantageous to have the following to fully understand this article:
 
-- Working knowledge with React.js and some basic understanding of using the Material UI
+- Basic knowledge working with React.js and some basic understanding of using the Material UI
 - [Node.js](https://nodejs.org/en/) runtime installed on your computer.
 
 ### Overview
-
 - [Prerequisites](#prerequisites)
 - [Overview](#overview)
 - [Setting up a React application using Create React App(CRA)](#setting-up-a-react-application-using-create-react-appcra)
@@ -17,34 +17,28 @@ It will be advantageous to have the following to fully understand this article:
 - [Conclusion](#conclusion)
 
 ### Setting up a React application using Create React App(CRA)
-
-[CRA](https://reactjs.org/docs/create-a-new-react-app.html) is a tool provided by the React.js team for bootstrapping a single page application in React.
-
-Navigate to your desired project directory and run the following command to initialize the React.js application using Typescript:
+[CRA](https://reactjs.org/docs/create-a-new-react-app.html) is a tool provided by the React.js team for bootstrapping a single page application in React. To create a basic React app using CRA, navigate to your desired project directory and run the following command to initialize the React.js application using Typescript:
 
 ```bash
 npx creat-react-app react-glassmorphism-app --template typescript
 ```
 
-Proceed to the newly created directory:
+Then run the following command to access the newly-created directory.
 
 ```bash
 cd react-glassmorphism-app
 ```
 
-Start the development server:
+To test this out, start the development server using the below command.
 
 ```bash
 npm run start 
 ```
 
-On your default browser, the default React page will be loaded to signify everything is okay.
+The default React page will be loaded on your default browser to indicate everything is okay.
 
 ### Implementing a simple form
-
-We will start by the simple form and styling it.
-
-In the `src/App.tsx`, add the following changes:
+We will start by creating a simple form and adding some CSS styling to it. In the `src/App.tsx`, add the following changes:
 
 - Import `App.css` at the top:
 
@@ -52,7 +46,7 @@ In the `src/App.tsx`, add the following changes:
 import './App.css';
 ```
 
-- Edit the render function to edit a form with `name`,`email`, and `password` fields as follows:
+- Edit the render function to edit a form with `name`, `email`, and `password` fields as follows:
 
 ```ts
 <div className="form-container">
@@ -75,9 +69,7 @@ import './App.css';
 
 Since we just need a view for this article, the above view is enough.
 
-The next step is to now style our form.
-
-In the `src/App.css`, we will add the following styles:
+The next step is to now style our form. In the `src/App.css`, we will add the following styles:
 
 - To the `form-container` class:
 
@@ -104,6 +96,8 @@ In the `src/App.css`, we will add the following styles:
 }
 ```
 
+Glassmorphism works well with multi-layered styles. In this case, we set a form container with an image as background. We will then layout a form card above this `form-container`.
+
 - To the `form` class:
 
 ```css
@@ -122,7 +116,7 @@ In the `src/App.css`, we will add the following styles:
     justify-content: center;
     /** Smooth corners **/
     border-radius:10px;
-    /** Top, bottom, right, and left spacing between form and it's content **/
+    /** Top, bottom, right, and left spacing between form and its content **/
     padding:20px; 
 }
 ```
@@ -176,18 +170,19 @@ In the `src/App.css`, we will add the following styles:
 }
 ```
 
-Ensure your development server is running. If not start it with the following command from the terminal:
+The form will form attributes will now float above the background image. This will help us create a colorful and transparent layer that can easily adjust to set up a blurred background.
+
+Ensure your development server is running. If not, start it with the following command from the terminal:
 
 ```bash
 npm run start
 ```
 
-Then on your browser visit `http://localhost:300`. Your page should be similar to the one below:
+Then on your browser, open `http://localhost:300`. Your page should be similar to the one below:
 
 ![styled-home-page](/engineering-education/setup-glassmorphism-effect-in-reactjs-app/styled-home-page.png)
 
 ### Implementing the glassmorphism effect on the form
-
 To add the glassmorphism effect to our form, we will add the following styles:
 
 - A linear gradient as the background image:
@@ -204,6 +199,8 @@ background-image:linear-gradient(to bottom right, rgba(255,255,255,0.2), rgba(25
 backdrop-filter: "blur(10px)"; 
 ```
 
+`backdrop-filter` sets up a colorful and transparent layer that sets a blurred background. The blurred objects induce a layer that has a 3d perspective layout.
+
 - A box shadow:
 
 ```css
@@ -211,7 +208,7 @@ backdrop-filter: "blur(10px)";
 box-shadow: 10px 10px 10px rgba(30,30,30,0.5);
 ```
 
-- A border to the left and to the top:
+- A border to the left and the top:
 
 ```css
 /** Glass panel effect to the left **/
@@ -225,6 +222,6 @@ After adding the styles, refresh your previously opened tab. The form should app
 ![form-with-glassmorphism-effect](/engineering-education/setup-glassmorphism-effect-in-reactjs-app/form-with-glassmorphism-effect.png)
 
 ### Conclusion
-Glassmorphism is a cool artwork to add to your applications. However, it can be misused when overused. It shines most when used to highlight specific contents of your applications such as cards, like the one we have created above.
+Glassmorphism is an incredible artwork to add to your applications. However, it can be misused when overused. When used in inappropriate layouts, glassmorphism can create readability problems, especially for the visually impaired. It shines most when used to highlight specific contents of your applications, such as cards, like the one we have created above.
 
 Glassmorphism can be implemented in any application of your choice. This guide helped you implement a glassmorphism effect in React.js.
