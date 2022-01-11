@@ -34,25 +34,16 @@ To follow along with this tutorial, the reader should have:
 ### Causes of data loss
 Data loss can be caused by several reasons, some of which are as follows:
 
-1. Theft of storage media – When computers, laptops, hard drives, or USB drives are stolen from the owner, the data stored within it is equally considered stolen and, therefore, lost.
-
-2. Liquid spillage - Accidentally spilling liquid on a laptop, hard drive, USB drive, or computer can cause a short circuit within the computer electric components. When this happens, both recovery of the computer functionalities and the data stored inside becomes difficult.
-
-3. Natural Disasters – Disasters such as fire, floods, and earthquakes can happen when they are least expected and thus, pose devastating impacts on business. They can destroy computers and the data stored altogether.
-
-4. Computer software corruption – When software shuts down unexpectedly or improperly, serious issues such as corruption or deletion of data can occur.
-
-5. Hard drive formatting – hard drives can be accidentally formatted which results in instant data loss.
-
-6. Bad actors – When unauthorized people get access to data on a network, they can cause serious damage. This includes deletion and corruption of data.
-
-7. Human error – Human mistakes such as the unintentional deletion of data files cannot be avoided completely. They can cause massive loss of computer data.
-
-8. Computer viruses and malware - Some computer viruses can steal and delete data.
-
-9. Hard drive damage - Computer disks that malfunction or get damaged could cause data losses. This accounts for the majority loss of data.
-
-10. Power Loss – Power losses often result in improper shutdown procedures. This issue not only causes loss of unsaved data but may corrupt some existing files.
+1. **Theft of storage media** – When computers, laptops, hard drives, or USB drives are stolen from the owner, the data stored within it is equally considered stolen and, therefore, lost.
+2. **Liquid spillage** - Accidentally spilling liquid on a laptop, hard drive, USB drive, or computer can cause a short circuit within the computer electric components. When this happens, both recovery of the computer functionalities and the data stored inside becomes difficult.
+3. **Natural Disasters** – Disasters such as fire, floods, and earthquakes can happen when they are least expected and thus, pose devastating impacts on business. They can destroy computers and the data stored altogether.
+4. **Computer software corruption** – When software shuts down unexpectedly or improperly, serious issues such as corruption or deletion of data can occur.
+5. **Hard drive formatting** – hard drives can be accidentally formatted which results in instant data loss.
+6. **Bad actors** – When unauthorized people get access to data on a network, they can cause serious damage. This includes deletion and corruption of data.
+7. **Human error** – Human mistakes such as the unintentional deletion of data files cannot be avoided completely. They can cause massive loss of computer data.
+8. **Computer viruses and malware** - Some computer viruses can steal and delete data.
+9. **Hard drive damage** - Computer disks that malfunction or get damaged could cause data losses. This accounts for the majority loss of data.
+10. **Power Loss** – Power losses often result in improper shutdown procedures. This issue not only causes loss of unsaved data but may corrupt some existing files.
 
 ### Tools used in data recovery
 There are various tools used in data recovery, some are free, and others require payment.
@@ -89,7 +80,7 @@ Files that need to be analyzed, as well as the data to be recovered are called `
 
 Let's learn how to use Autopsy now.
 
-Download and install [Autopsy](https://www.autopsy.com/). 
+Download and install [Autopsy](https://www.autopsy.com/).
 
 When the installation is complete, launch the Autopsy software and click create a `new case` as shown below:
 
@@ -121,11 +112,8 @@ The next step indicates whether a data source has been added and that analysis h
 When the analysis is complete, the data is displayed in different categories. The major sections include:
 
 - *Data sources* – This section shows the image from which the data under analysis is stored.
-
 - *Views* – It shows the files in the image. They are classified by size, and type.
-
 - *Results* – This category contains the findings of the analysis classified as; extracted content, keyword hits, HashSet hits, e-mail messages, interesting items, and accounts.
-
 - *Tags and reports* - It contains a summary of the analysis in excel format.
 
 #### Step 3: Data restoration
