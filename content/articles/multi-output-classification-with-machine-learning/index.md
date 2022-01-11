@@ -223,7 +223,7 @@ Now that we have initialized the processes, let's fit the pipeline into our trai
 ```python
 pipe_lr.fit(x_train,y_train)
 ```
-During this stage, the two processes will run automatically and produce a trained model as shown below.
+The two processes will run automatically during this stage and produce a trained model, as shown below:
 
 ![Training process](/engineering-education/multi-output-classification-with-machine-learning/training-process.png)
 
