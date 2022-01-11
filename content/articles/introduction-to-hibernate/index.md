@@ -6,7 +6,7 @@ url: /introduction-to-hibernate/
 title: Introduction to Hibernate
 description: This tutorial will introduce the reader to Hibernate. This framework allows users to map regular objects to database tables. 
 author: cosmas-morwabe
-date: 2021-01-04T00:00:00-09:33
+date: 2022-01-11T00:00:00-04:54
 topics: [Languages]
 excerpt_separator: <!--more-->
 images:
@@ -33,10 +33,10 @@ Hibernate has a layered architecture that allows users to operate without being 
 Hibernate makes use of databases and other configurable information to provide unique features.
 
 Hibernate's architecture is divided into four major levels:
-- Hibernate framework
-- Backhand API
-- Java application layer
-- Database level
+- Hibernate framework.
+- Backhand API.
+- Java application layer.
+- Database level.
 
 Hibernate's architecture is shown in the following diagram:
 
@@ -44,7 +44,7 @@ Hibernate's architecture is shown in the following diagram:
 
 The diagram below highlights Hibernate's core classes:
 
-![Detailed View Architecture](/engineering-education/introduction-to-hibernate/detailed.jpg)
+![Detailed View Architecture](/engineering-education/introduction-to-hibernate/Detailed.jpg)
 
 ### Architecture components
 Application-level class objects are summarized in this section:
@@ -91,7 +91,7 @@ Hibernate framework is simple to use. Its mapping procedure can be implemented w
 
 The following are some of Hibernate's advantages:
 
-#### Object Relational Mapping(ORM)
+#### Object relational mapping(ORM)
 ORM conveniently resolves data mismatches between an application's object-oriented
 classes and a relational database. Hibernate's flexibility and power are also enhanced by this functionality.
 
@@ -100,10 +100,10 @@ Hibernate is database-agnostic. This means that it can connect to any database, 
 
 A database can be made portable by simply altering the 'database dialect' variable in the `config` file.
 
-#### Fast Performance
+#### Fast performance
 Hibernate uses cache to keep items in memory. This reduces the number of times they are accessed from the database. 
 
-#### Hibernate Query Language
+#### Hibernate query language
 Hibernate supports HQL which is a sophisticated query language. This language is both more efficient and object-oriented than SQL. 
 
 Functionalities such as inheritance, polymorphism, association, as well as other object-oriented concepts can be implemented using HQL.
@@ -134,7 +134,7 @@ Thirdly, Hibernate is not suitable for a small project. Such apps may have few t
 
 Hibernate is quite poor when it comes to batch processing. It's, therefore, better to stick with JDBC during batch processing.
 
-#### Hibernate Example
+#### Hibernate example
 Here's an example of bi-directional mapping using Hibernate.
 
 ```java
@@ -258,8 +258,7 @@ Hibernate is an ORM technology that is used to map database structures to Java o
 The use of Hibernate, a persistent framework, lets developers concentrate solely on developing business logic code.
 
 #### Further Reading
-- [What is Hibernate in Java and why do we need it?](https://www.edureka.co/blog/what-is-hibernate-
-in-java/)
+- [What is Hibernate in Java and why do we need it?](https://www.edureka.co/blog/what-is-hibernate-in-java/)
 - [Introduction to Hibernate](https://www.wideskills.com/hibernate/introduction-to-hibernate)
 - [Hibernate framework](https://en.wikipedia.org/wiki/Hibernate_(framework))
 
