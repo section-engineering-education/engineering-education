@@ -6,7 +6,7 @@ url: /how-to-recover-data-from-digital-storage-media-using-autopsy/
 title: How to Recover Data from Digital Storage Media using Autopsy
 description: This article will outline some of the tools used in data recovery. It will also discuss how to recover deleted files using Autopsy.
 author: ruth-mare
-date: 2022-01-11T01:00:00-11:30
+date: 2022-01-11T00:00:00-11:30
 topics: [Security]
 excerpt_separator: <!--more-->
 images:
