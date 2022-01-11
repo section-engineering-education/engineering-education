@@ -3,16 +3,16 @@ layout: engineering-education
 status: publish
 published: true
 url: /classification-of-github-issues-using-machine-learning/
-title: Classification of GitHub Issues Using Machine Learning
+title: Classification of GitHub Issues using Machine Learning
 description: In this article, we will understand how to automatically classify GitHub labels based on GitHub issue title using machine learning.
 author: charles-kariuki
-date: 2022-01-04T00:00:00-19:30
+date: 2022-01-11T00:00:00-04:03
 topics: [Machine Learning]
 excerpt_separator: <!--more-->
 images:
 
  - url: /engineering-education/classification-of-github-issues-using-machine-learning/hero.jpg
-   alt: Classification of GitHub Issues Using Machine Learning example image
+   alt: Classification of GitHub Issues using Machine Learning example image
 ---
 Classification of [GitHub issues](https://github.com/features/issues) involves analyzing GitHub issues and assigning labels using models. In GitHub, we have in-built labels such as `bug`, `help wanted`, `revision needed`, `enhancement`, and `question`. We also have custom labels that one can create.
 <!--more-->
@@ -25,7 +25,7 @@ For example, if an issue requires a revision or enhancement, it will assign eith
 In this tutorial, we will implement the model using the Scikit-Learn library. We will then test the model using the [Streamlit GitHub repository](https://github.com/streamlit/streamlit/issues) to see if the model can make accurate predictions.
 
 ### Table of contents
-- [Pre-requisites](#pre-requisites)
+- [Prerequisites](#prerequisites)
 - [GitHub issues dataset](#github-issues-dataset)
 - [Dataset preparation](#dataset-preparation)
 - [Adding column names](#adding-column-names)
@@ -43,11 +43,11 @@ In this tutorial, we will implement the model using the Scikit-Learn library. We
 - [Conclusion](#conclusion)
 - [References](#references)
 
-### Pre-requisites
+### Prerequisites
 To follow along easily, a reader should:
-- Know [Python programming](/engineering-education/python-projects-for-beginners/)
-- Have some knowledge about [machine learning models](/engineering-education/house-price-prediction/)
-- Know some concepts of [natural language processing](/engineering-education/nlp-based-detection-model-using-neattext-and-scikit-learn/)
+- Know [Python programming](/engineering-education/python-projects-for-beginners/).
+- Have some knowledge about [machine learning models](/engineering-education/house-price-prediction/).
+- Know some concepts of [natural language processing](/engineering-education/nlp-based-detection-model-using-neattext-and-scikit-learn/).
 - know how to use some of the [Scikit-learn](https://scikit-learn.org/stable/) algorithms in building machine learning models.
 - Must use [Google Colab notebook](https://research.google.com/) for easy code reproducibility.
 
@@ -301,15 +301,15 @@ from sklearn.feature_extraction.text import CountVectorizer
 
 Let's explore the function of each imported package as follows:
 
-#### `DecisionTreeClassifier`
+#### DecisionTreeClassifier
 This is a [Scikit-learn](https://scikit-learn.org/stable/) algorithm that we will use to build our GitHub issue classification model.
 
 We have chosen to use this algorithm because it will balance our dataset improving the model's performance. Generally, the models built using the `DecisionTreeClassifier` algorithm have a higher accuracy score.
 
-#### `accuracy_score`
+#### accuracy_score
 We use this package to get the accuracy score of the model after training. This is the probability of the model making an accurate prediction.
 
-#### `CountVectorizer`
+#### CountVectorizer
 This package enables machine learning models to understand the text. Machines learning models have a problem of understanding and using raw texts. However, machine learning models work well with numbers.
 
 `CountVectorizer` converts the raw text into vectors of numbers. It ensures that the converted vectors of numbers represent the original text.
@@ -327,7 +327,7 @@ We import the package using the following code:
 from sklearn.pipeline import Pipeline
 ```
 
-To automate the process of model building using this `Pipeline` package, we initialize all the stages in building the model. After initializing the stages, they will be automated.
+To automate the process of a model building using this `Pipeline` package, we initialize all the stages in building the model. After initializing the stages, they will be automated.
 
 We have two stages as follows:
 1. `CountVectorizer` converting the input text to vectors of numbers.
@@ -423,7 +423,7 @@ We started with dataset preparation ensuring we correctly format our dataset. Af
 
 Finally, we used the clean dataset to build our model. After training the model, we used the model to make predictions. Our model was able to predict if a given GitHub issue is an `enhancement`, `bug`, or `question`. This model is ready to be deployed and used in production.
 
-To get the GitHub issues classification model, click [here](https://colab.research.google.com/drive/1H9ZSa3S6E0inX8zDK9LxDdFbeQ2yNXsr?usp=sharing)
+To get the GitHub issues classification model, click [here.](https://colab.research.google.com/drive/1H9ZSa3S6E0inX8zDK9LxDdFbeQ2yNXsr?usp=sharing)
 
 ### References
 - [Google Colab notebook](https://colab.research.google.com/drive/1H9ZSa3S6E0inX8zDK9LxDdFbeQ2yNXsr?usp=sharing)
