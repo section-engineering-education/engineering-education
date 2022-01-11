@@ -132,7 +132,7 @@ The output of the above example is as shown below:
 
 ![convolution of matrices](/engineering-education/implementation-of-convolution-integral-of-continuous-time-linear-time-invariant-systems-in-matlab/convolution-three.png)
 
-As we can see, vector and matrix Convolution is different, but performing Convolution to find the convolution integrals. Also, the linear and circular Convolution in this example are different. It is because `N` is defined for the circular Convolution.
+As we can see, the output of the vector and matrix Convolution is different, but we can perform Convolution to find the convolution integrals. Also, the linear and circular Convolution in this example are different. It is because `N` is defined for the circular Convolution.
 
 ### Conclusion
 It is easier to find the convolution integrals for both vectors and matrices using Matlab. This is because of the in-built functions, which has a quick algorithm for calculating the convolution integrals.
