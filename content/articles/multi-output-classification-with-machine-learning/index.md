@@ -197,7 +197,7 @@ To build this model we will use the machine learning pipeline package to speed u
 
 The machine learning pipeline will automate the process of `CountVectorizer`. It will also automate the process of model training using `LogisticRegression` and `MultiOutputClassifier` algorithms.
 
-To implement this pipeline process, we will import the `Pipeline` package. 
+We will import the `Pipeline` package to implement this pipeline process. 
 
 ### Importing pipeline
 To import the `Pipeline`, use the following code:
