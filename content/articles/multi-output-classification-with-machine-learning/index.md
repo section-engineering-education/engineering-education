@@ -250,7 +250,7 @@ The output of this sample text is `the midnight sky`. Let's save this text in a 
 ```python
 pred1 = x_test.iloc[0]
 ```
-The model will use this input text to make a prediction. The model should be able to classify the input text as either a `Movie` or `TV Show` and also provide its rating.
+The model will use this input text to make a prediction. The model should classify the input text as either a `Movie` or `TV Show` and provide its rating.
 
 To make this prediction, run this code:
 
