@@ -3,10 +3,10 @@ layout: engineering-education
 status: publish
 published: true
 url: /spam-detection-model-using-scikit-learn/
-title: Spam Detection Model using Scikit-Learn
+title: Building a Spam Detection Model using Scikit-Learn
 description: In this tutorial, we will build a machine learning model that will detect Youtube comments as either spam or non-spam.
 author: james-omina
-date: 2022-01-10T00:00:00-21:00
+date: 2022-01-11T00:00:00-09:37
 topics: [Machine Learning]
 excerpt_separator: <!--more-->
 images:
@@ -36,7 +36,7 @@ This tutorial will demonstrate how to build a machine learning model that will d
 - [References](#references)
 
 ### Prerequisites
-A reader should know the following to understand this tutorial clearly.
+A reader should know the following to understand this tutorial clearly:
 
 - Be well equipped with [Python programming](/engineering-education/python-projects-for-beginners/) skills.
 - Understand the concepts of [machine learning.](/engineering-education/house-price-prediction/)
@@ -82,7 +82,7 @@ df_merged
 ```
 The output is shown below:
 
-![Merged dataset](/engineering-education/spam-detection-model-using-scikit-learn/merged-dataset.png)
+![Merged dataset](/engineering-education/spam-detection-model-using-scikit-learn/merged-dataset.jpg)
 
 From the image above, our dataset has five columns: `COMMENT_ID`, `AUTHOR`, `DATE`, `CONTENT`, and `CLASS`. The columns that we are most interested in are `CONTENT` and `CLASS` columns.
 
@@ -110,7 +110,7 @@ df_with_keys
 ```
 The output is shown below:
 
-![Merged dataset with keys](/engineering-education/spam-detection-model-using-scikit-learn/added-keys.png)
+![Merged dataset with keys](/engineering-education/spam-detection-model-using-scikit-learn/added-keys.jpg)
 
 We can save the dataset into a new variable, `df`.
 
@@ -195,7 +195,7 @@ X.toarray()
 ```
 The output is shown below:
 
-![Converted text](/engineering-education/spam-detection-model-using-scikit-learn/vectors-numbers.png)
+![Converted text](/engineering-education/spam-detection-model-using-scikit-learn/vectors-numbers.jpg)
 
 We can now use this vector of numbers to build the model.
 
@@ -206,9 +206,9 @@ To build our machine learning model, we need to import the packages that will be
 from sklearn.naive_bayes import MultinomialNB
 from sklearn.model_selection import train_test_split
 ```
-From the code above, we have imported two packages. The function of each package is explained below:
 
 **MultinomialNB**
+
 This is the classification method imported from the Naive Bayes algorithm. Naive Bayes algorithm has other methods such as GaussianNB, but MultinomialNB is best suited because we are working with text.
 
 We will use the MultinomialNB method to build our spam detection model.
@@ -216,6 +216,7 @@ We will use the MultinomialNB method to build our spam detection model.
 For a detailed understanding of the different Naive Bayes algorithm methods, click [here.](https://towardsdatascience.com/naive-bayes-classifier-81d512f50a7c)
 
 **train_test_split**
+
 We will use this package to split our dataset into two sets. The model will use the first set for training, and the second set for testing.
 
 We will start by splitting the dataset.
@@ -260,7 +261,7 @@ clf.predict(X_test)
 ```
 We use the `predict` method to classify all the Youtube comments in the testing dataset. The output is shown below:
 
-![Model evaluation](/engineering-education/spam-detection-model-using-scikit-learn/model-evaluation.png)
+![Model evaluation](/engineering-education/spam-detection-model-using-scikit-learn/model-evaluation.jpg)
 
 From the image above, we can see the model assigned labels to our testing dataset. The labels are either `0` or `1`.
 
