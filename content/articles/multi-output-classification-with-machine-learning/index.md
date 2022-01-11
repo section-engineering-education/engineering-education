@@ -237,7 +237,7 @@ The accuracy score is shown below:
 ```bash
 0.8969221004536385
 ```
-The accuracy score for our model is `0.896922`, this represents `89.6922%`. This is a good accuracy score, we can use this trained model to make predictions.
+The accuracy score for our model is `0.896922`. This represents `89.6922%`. It is a good accuracy score, and we can use this trained model to make predictions.
 
 ### Making predictions
 To make a prediction we need to extract a sample input text. To extract a sample text run this code:
