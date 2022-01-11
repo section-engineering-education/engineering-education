@@ -153,14 +153,14 @@ So basically I am giving my function calls a way to communicate to each other be
 
 ##### Below is our complete memoized code:
 ```js
-const fib=(n,memo={})=>{
+const fib=(n, memo ={})=>{
 if(n in memo)return memo[n];
 ```
 - In the above called the changes I made is I added a new argument and a new base case in the line above.
 
 ```js
-if (n<=2)return1;
-memo[n]=fib(n-1,memo)+fib(n-2,memo);
+if(n <=2) return 1;
+memo[n]=fib(n-1, memo) + fib(n-2, memo);
 return memo[n];
 };
 ```
