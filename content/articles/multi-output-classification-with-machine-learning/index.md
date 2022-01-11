@@ -191,7 +191,7 @@ To split the dataset into two, use this code:
 ```python
 x_train,x_test,y_train,y_test = train_test_split(Xfeatures,ylabels,test_size=0.3,random_state=7)
 ```
-In the code above, we use a `test_size=0.3`. This will split our dataset so that `70%` of the dataset is used for training and `30%` will be used for testing. We have split our dataset, we are now ready to build the model.
+In the code above, we use a `test_size=0.3`. It will split our dataset so that `70%` of the dataset is used for training and `30%` for testing. We have split our dataset, and we are now ready to build the model.
 
 To build this model we will use the machine learning pipeline package to speed up the process of building our model. It will speed up the process by automating all the processes involved in building the model.
 
