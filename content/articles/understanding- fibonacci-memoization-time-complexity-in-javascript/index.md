@@ -1,9 +1,10 @@
 ### Understanding Fibonacci memoization time complexity in Javascript
 
 #### Introduction
-First let's start by understanding what is a Fibonacci number, what is memoization, and what time complexity means. We get the Fibonacci number by adding two previous numbers in a Fibonacci sequence. Memoization is an optimization procedure used to speed up computer programs by storing the values of distinct function calls and then returning the stored input when the same function is called again. The time complexity in a computer program describes the amount of time taken by the computer to run an algorithm.
+First, let's start by understanding what is a Fibonacci number. What is memoization, and what time complexity means? We get the Fibonacci number by adding two previous numbers in a Fibonacci sequence. Memoization is an optimization procedure used to speed up computer programs by storing the values of distinct function calls and then returning the stored input when the same function is called again. The time complexity in a computer program describes the amount of time taken by the computer to run an algorithm.
 
 In this tutorial, we will be using Dynamic programming to solve the Fibonacci sequence and learn about the time complexity of our solutions. Dynamic programming problems are mostly solved using two ways which are **tabulation**(bottom-up) and **memoization**(top-down). But we will be talking about memoization.
+
 #### Prerequisites
 To effectively understand the tutorial, the reader will need the following:
 
@@ -80,7 +81,7 @@ Since we don't know the third Fibonacci number, the function in the code above d
  we should test our code, what I'll do is call examples of the `fib()` function. So I'll try Fib of 6,7,8. The output should be 813 and 21.
  ```js
  console.log(fib(6));
-  console.log(fib(7));
+ console.log(fib(7));
  console.log(fib(8));
  ```
 There we have it right. 813 and 21. So this is the classic implementation of Fibonacci, and we did solve it recursively.
@@ -89,7 +90,7 @@ What I want to do is give  a larger number to this `fib()` function. So what if 
 ```js
  console.log(fib(70));
 ```
-Looks like the first three calls of Fibonacci do work fine, I get 813 and 21. But the fourth call take too much time. So obviously, this Fibonacci function needs some work.
+Looks like the first three calls of Fibonacci do work fine, I get 8,13 and 21. But the fourth call takes too much time. So obviously, this Fibonacci function needs some work.
 
 ### Visualizing the fib function
 We will use a recursive tree to visualize our problem. Let's trace through what happens when we call `fib` with number 7. Starting with 7 we will branch out our tree. We will start by subtracting 1 `(n-1)` at the left branch and 2 `(n-2)` at the right branch. Use the same logic on other nodes of the structure. Our base cases are 2 and 1 when we reach there we can't branch out further.
@@ -102,7 +103,7 @@ In this case, we will build the entire tree and stop branching out whenever we h
 
 Let's take a look at some nodes in particular, as we can see in the figure below, this node has a base case, so it's going to return the value of one according to my base case. When we say return that just means, return to your call/parents. So this node of two is going to return one to a parent of three. In the same way. This node on the right-hand side of one is also a base case, it will also return one.
 
-Both of those values that are returning go back to the parent of three, and three is going to add those two values of one plus one which will output two. And this makes a lot of sense because we know that the third Fibonacci number is two. So we can continue this process. ***NB:All the base cases return 1 to their parents.***
+Both of those values that are returning go back to the parent of three, and three is going to add those two values of one plus one which will output two. And this makes a lot of sense because we know that the third Fibonacci number is two. So we can continue this process. ***NB: All the base cases return 1 to their parents.***
 
 The values are going to add up. This process continues up the tree, just adding our left and right children. To get the answer we should return the very top of our tree, the final result is 13 which makes a lot of sense because at the start we said that the `fib 7-> 13`.
 
@@ -136,7 +137,7 @@ if(n in memo)return memo[n];
 We are going to return the value that corresponds to the memo's key using the original argument `n` as a key in my `memo`. 
 **NB: `(n in the memo)` condition is just some classic javascript syntax. I am checking if some key is inside of the javascript object**
 
-Let's now store our entire result inside of our memo , our key is `n`. The key you use to access is always just what your argument is. I want to complete the original return so I can just go ahead and return what I just put in that memo, so I am not changing any return values. But now I am also saving the value inside of the memo object.
+Let's now store our entire result inside of our memo, our key is `n`. The key you use to access is always just what your argument is. I want to complete the original return so I can just go ahead and return what I just put in that memo, so I am not changing any return values. But now I am also saving the value inside of the memo object.
 ```js
 memo [n]= fib(n-1)-fib(n-2);
 return memo[n];
@@ -156,7 +157,7 @@ So basically I am giving my function calls a way to communicate to each other be
 const fib=(n, memo ={})=>{
 if(n in memo)return memo[n];
 ```
-- In the above called the changes I made is I added a new argument and a new base case in the line above.
+- In the above code changes, I made is I added a new argument and a new base case in the line above.
 
 ```js
 if(n <=2) return 1;
@@ -179,6 +180,6 @@ When you write a call tree for something larger or smaller than fib(7). Maybe fi
 Let's take  time complexity  of `n` to be`T(n)` , hence` T(n) = T(n-1) + T(n-2).` This is because `F(n-2)` is  the one which is in the cache when we calculate `F(n - 1)`, so the function of `F(n-2)` is 1(reading from cached equation), hence `T(n) = T(n-1) + 1 = T(n-2) + 2 = ... = T(n-n) + n.` And `T(0) is 1`, hence `T(n) = O(n + 1) = O(n)`.
 
 #### conclusion
-The pattern of overlapping problems to reduce the time complexity of the Fibonacci series from O(2n) to O(n) is known as Dynamic programming. For us, the dynamic program is going to be any instance where we have some larger Fibonacci problem and we can decompose it in to smaller instances of the same problem, hence we will have an overlapping structure.
+The pattern of overlapping problems to reduce the time complexity of the Fibonacci series from O(2n) to O(n) is known as Dynamic programming. For us, the dynamic program is going to be any instance where we have some larger Fibonacci problem and we can decompose it into smaller instances of the same problem, hence we will have an overlapping structure.
 
 happy learning!
