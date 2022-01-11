@@ -6,7 +6,7 @@ url: /multi-output-classification-with-machine-learning/
 title: Multi-Output Classification with Machine Learning
 description: This tutorial aims to build a multi-output text classification model using the Netflix dataset. The model will classify the input text as either `TV Show` or `Movie`.
 author: willyngashu
-date: 2021-12-30T00:00:00-21:00
+date: 2022-01-11T00:00:00-21:00
 topics: [Machine Learning]
 excerpt_separator: <!--more-->
 images:
@@ -14,12 +14,11 @@ images:
   - url: /engineering-education/multi-output-classification-with-machine-learning/hero.jpg
     alt: Multi-Output Classification with Machine Learning Hero image
 ---
-Multi-output classification is a type of machine learning that predicts multiple outputs at the same time. In multi-output classification, the model will give two or more outputs after making any prediction. In other types of classifications, the model usually predicts only a single output.
+Multi-output classification is a type of machine learning that predicts multiple outputs simultaneously. In multi-output classification, the model will give two or more outputs after making any prediction. In other types of classifications, the model usually predicts only a single output.
 <!--more-->
+An example of a multi-output classification model is a model that predicts the “type” and “color” of fruit simultaneously. The “type of fruit” can be, “orange”, “mango” and “pineapple”. The “color” can be, “red”, “green”, “yellow”, and “orange". The multi-output classification solves this problem and gives two prediction results.
 
-An example of a multi-output classification model is a model that predicts the “type” and “color” of fruit at the same time. The “type of fruit” can be, “orange”, “mango” and “pineapple”. The “color” can be, “red”, “green”, “yellow”, and “orange". The multi-output classification is used to solve this problem and gives two prediction results.
-
-In this tutorial, we will build a multi-output text classification model using the Netflix dataset. The model will classify the input text as either `TV Show` or `Movie`. This will be the first output. The model will also classify the rating as: `TV-MA`, `TV-14`, `TV-PG`, `R`, `PG-13` and `TV-Y`.  The rating will be the second output. We will use Scikit-Learn `MultiOutputClassifier` algorithm to build this model.
+In this tutorial, we will build a multi-output text classification model using the Netflix dataset. The model will classify the input text as either `TV Show` or `Movie`. This will be the first output. The model will also classify the rating as: `TV-MA`, `TV-14`, `TV-PG`, `R`, `PG-13` and `TV-Y`. The rating will be the second output. We will use Scikit-Learn `MultiOutputClassifier` algorithm to build this model.
 
 ### Table of contents
 - [Prerequisites](#prerequisites)
@@ -73,11 +72,11 @@ To check if our dataset is loaded successfully, run the code:
 ```python
 df.head()
 ```
-This command will output the structure of our dataset, it shows all the columns on our dataset. It should have the same structure as the dataset you have downloaded. The output is shown below:
+This command will output the structure of our dataset, and it shows all the columns on our dataset. It should have the same structure as the dataset you have downloaded. The output is shown below:
 
 ![Loaded dataset](/engineering-education/multi-output-classification-with-machine-learning/loaded-dataset.png)
 
-Now that we have loaded our dataset successfully, let's now check the distribution of our target/output columns.
+Now that we have loaded our dataset successfully, let's check the distribution of our target/output columns.
 
 ### Output columns distribution
 From our dataset, we have two output columns: `type` and `rating`. Column distribution is the value count of each column in the entire dataset. We will start with the `type` column.
@@ -114,13 +113,13 @@ Name: rating, dtype: int64
 ```
 The output above shows the distribution of all the ratings in our dataset. We have seven ratings: `TV-MA`, `TV-14`, `TV-PG`, `R`, `PG-13` and `TV-Y`.
 
-Before we start building our model, we also need to clean our dataset. Dataset cleaning involves correctly formatting our dataset.
+Before building our model, we also need to clean our dataset. Dataset cleaning involves correctly formatting our dataset.
 
 ### Text cleaning
-For text cleaning, we will convert all our text data into lower case and also remove stop words. We will use the NeatText Python package to perform this process. We will install Neattext using the following code:
+For text cleaning, we will convert all our text data into lower case and remove stop words. We will use the `NeatText` Python package to perform this process. We will install Neattext using the following code:
 
 ```bash
-! pip install neattext
+!pip install neattext
 ```
 Let's import the Neattext functions that we will use for text cleaning.
 
@@ -133,14 +132,13 @@ To convert the text data into lower case, run this command:
 df['title'] = df['title'].nfx.lower()
 ```
 
-Let's remove stopwords from our test dataset. Stopwords are the most common words that are used in any language. They have little weight on the model during training. 
-Removing stopwords removes words with little weight. This allows the model to focus on the words that will have a greater impact during training. 
+Let's remove stopwords from our test dataset. Stopwords are the most common words that are used in any language. They have little weight on the model during training. Removing stopwords removes words with little weight. This allows the model to focus on the words that will have a greater impact during training. 
 To remove the stopwords, run this code:
 
 ```python
 df['title'] = df['title'].apply(nfx.remove_stopwords)
 ```
-Now that we have removed stop words and correctly formatted our dataset, let's import all the packages that will be building the model.
+Now that we have removed stop words and correctly formatted our dataset, let's import all the packages we will use to build the model.
 
 ### Importing important packages
 To import all the important packages, run this code:
@@ -169,19 +167,18 @@ It is the Python package that is used for dataset splitting. In machine learning
 It is used to calculate the accuracy score of the model after training.
 
 **MultiOutputClassifier**
-Since we are dealing with a multi-output classification problem, we need a more specific algorithm.
-`MultiOutputClassifier` is the most common [Scikit-learn](https://scikit-learn.org/stable/) algorithm used to build this model.
+Since we are dealing with a multi-output classification problem, we need a more specific algorithm. `MultiOutputClassifier` is the most common [Scikit-learn](https://scikit-learn.org/stable/) algorithm used to build this model.
 
 We now need to specify features and labels for our model.
 
 ### Adding features and labels
-Features and labels are essential in any machine learning label. Features represent all the columns used by the model as inputs during training. Labels represent the output or target columns, this is what the model wants to predict. We add the using the following code:
+Features and labels are essential in any machine learning label. Features represent all the columns used by the model as inputs during training. Labels represent the output or target columns, which the model wants to predict. We add the using the following code:
 
 ```python
 Xfeatures = df['title']
 ylabels = df[['type','rating']]
 ```
-From this code, our feature is the `title`, this is the input for our model. The labels are `type` and `rating`, these are the output for our model. We have two labels because we are dealing with a multi-output classification problem.
+From this code, our feature is the `title`, and we will use it as input for our model. The labels are `type` and `rating`, and are the output of our model. We have two labels because we are dealing with a multi-output classification problem.
 
 The next step is to split our dataset using the `train_test_split` method.
 
@@ -193,7 +190,7 @@ x_train,x_test,y_train,y_test = train_test_split(Xfeatures,ylabels,test_size=0.3
 ```
 In the code above, we use a `test_size=0.3`. It will split our dataset so that `70%` of the dataset is used for training and `30%` for testing. We have split our dataset, and we are now ready to build the model.
 
-To build this model we will use the machine learning pipeline package to speed up the process of building our model. It will speed up the process by automating all the processes involved in building the model.
+To build this model, we will use the machine learning pipeline package to speed up the process of building our model. It will speed up the process by automating all the processes involved in building the model.
 
 The machine learning pipeline will automate the process of `CountVectorizer`. It will also automate the process of model training using `LogisticRegression` and `MultiOutputClassifier` algorithms.
 
@@ -212,7 +209,7 @@ The first process is `CountVectorizer`: converting raw text to vectors of number
 Let's initialize these two processes.
 
 #### Initializing the processes
-These processes are usually in sequential steps. The output of one process is used as the input of the next process as shown in the code below.
+These processes are usually in sequential steps. The output of one process is used as the input of the next process, as shown in the code below.
 
 ```python
 pipe_lr = Pipeline(steps=[('cv',CountVectorizer()),
@@ -237,7 +234,7 @@ The accuracy score is shown below:
 ```bash
 0.8969221004536385
 ```
-The accuracy score for our model is `0.896922`, this represents `89.6922%`. It is a good accuracy score, and we can use this trained model to make predictions.
+The accuracy score for our model is `0.896922`. This represents `89.6922%`. It is a good accuracy score, and we can use this trained model to make predictions.
 
 ### Making predictions
 To make a prediction, we need to extract a sample input text. To extract a sample text, run this code:
@@ -283,12 +280,10 @@ The output is shown below:
 ```
 From the output above, we can see `Movie` had a higher probability of `0.74445483` than `0.25554517` of `TV Show`. That's why the model classified the text as `Movie`.
 
-In the next prediction, `TV-MA` has a higher probability of `0.46916205` compared to the other rating. That's why the model classified the rating as `TV-MA`. Using these prediction probabilities, we can see that our model was able to make the right predictions.
+In the next prediction, `TV-MA` has a higher probability of `0.46916205` than the other rating. That's why the model classified the rating as `TV-MA`. Using these prediction probabilities, we can see that our model could make the right predictions.
 
 ### Conclusion
-In this tutorial, we have learned how to build a multi-output classification model. We started by cleaning our Netflix dataset to ensure that it was correctly formatted before using it. 
-
-We then used the clean dataset to build the multi-output text classification model. We used the `LogisticRegression` and `MultiOutputClassifier` algorithms to train the model. We implemented all the machine learning processes using the pipeline package. It sped up the process and made our work easier. 
+In this tutorial, we have learned how to build a multi-output classification model. We started by cleaning our Netflix dataset to ensure that we correctly formatted it before use. We then used the clean dataset to build the multi-output text classification model. We used the `LogisticRegression` and `MultiOutputClassifier` algorithms to train the model. We implemented all the machine learning processes using the pipeline package. It sped up the process and made our work easier. 
 
 Finally, we used our model to make predictions, and the trained model could make the right predictions. To get the multi-output classification model we have built in this tutorial, click [here](https://colab.research.google.com/drive/11-SVWysrpK0SGp7d7EYnuArlYeLsv1K0?usp=sharing).
 
