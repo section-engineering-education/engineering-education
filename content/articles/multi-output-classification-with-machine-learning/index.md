@@ -281,7 +281,7 @@ The output is shown below:
  array([[0.12310188, 0.07038494, 0.21476461, 0.46916205, 0.10270243,
          0.01988409]])]
 ```
-From the output above we can see `Movie` had a higher probability of `0.74445483` compared to `0.25554517` of `TV Show`. That's why the model classified the text as `Movie`.
+From the output above, we can see `Movie` had a higher probability of `0.74445483` than `0.25554517` of `TV Show`. That's why the model classified the text as `Movie`.
 
 In the next prediction, `TV-MA` has a higher probability of `0.46916205` compared to the other rating. That's why the model classified the rating as `TV-MA`. Using these prediction probabilities, we can see that our model was able to make the right predictions.
 
