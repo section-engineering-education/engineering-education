@@ -61,7 +61,7 @@ There are various exploratory data analysis (EDA) packages that will load our da
 import pandas as pd
 import numpy as np
 ```
-We will use Pandas to load the dataset. Numpy will be used to perform computational operations on our dataset. It also works well with arrays.
+We will use Pandas to load the dataset. We will use Numpy to perform computational operations on our dataset. It also works well with arrays.
 
 Let's now load the Netflix dataset that you have downloaded from the link above.
 
@@ -122,7 +122,7 @@ For text cleaning, we will convert all our text data into lower case and also re
 ```bash
 ! pip install neattext
 ```
-Let's import the Neattext functions that will be used for text cleaning.
+Let's import the Neattext functions that we will use for text cleaning.
 
 ```python
 import neattext.functions as nfx
@@ -155,7 +155,7 @@ from sklearn.multioutput import MultiOutputClassifier
 Let's explain these packages that we have imported.
 
 **LogisticRegression**
-This is the algorithm used to train the model. 
+It is the algorithm used to train the model. 
 
 **CountVectorizer**
 Since we are dealing with text, we need to convert the input text into vectors of numbers. Machine learning models do not understand the raw text. The converted vectors of numbers are the representation of the original text. `CountVectorizer` is the most common Python package used to perform this process.
@@ -163,10 +163,10 @@ Since we are dealing with text, we need to convert the input text into vectors o
 For further reading on CountVectorizer and how they convert raw text into vectors of numbers, click [here](https://towardsdatascience.com/basics-of-countvectorizer-e26677900f9c)
 
 **train_test_split**
-This is the Python package that is used for dataset splitting. In machine learning, it's essential to split a dataset into two sets. One set is to be used for training and another one for testing.
+It is the Python package that is used for dataset splitting. In machine learning, it's essential to split a dataset into two sets. One set is to be used for training and another one for testing.
 
 **accuracy_score**
-This is used to calculate the accuracy score of the model after training.
+It is used to calculate the accuracy score of the model after training.
 
 **MultiOutputClassifier**
 Since we are dealing with a multi-output classification problem, we need a more specific algorithm.
@@ -237,10 +237,10 @@ The accuracy score is shown below:
 ```bash
 0.8969221004536385
 ```
-The accuracy score for our model is `0.896922`. This represents `89.6922%`. It is a good accuracy score, and we can use this trained model to make predictions.
+The accuracy score for our model is `0.896922`, this represents `89.6922%`. It is a good accuracy score, and we can use this trained model to make predictions.
 
 ### Making predictions
-To make a prediction we need to extract a sample input text. To extract a sample text run this code:
+To make a prediction, we need to extract a sample input text. To extract a sample text, run this code:
 
 ```python
 print(x_test.iloc[0])
