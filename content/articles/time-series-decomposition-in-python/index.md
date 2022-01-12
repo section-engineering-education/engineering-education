@@ -11,10 +11,9 @@ topics: [Languages]
 excerpt_separator: <!--more-->
 images:
 
-  - url: /time-series-decomposition-in-python/hero.png
-    alt: Getting started with Time Series Decomposition in Python Hero Image
+  - url: /engineering-education/time-series-decomposition-in-python/hero.png
+    alt: Time Series Decomposition in Python Hero Image
 ---
-
 Time series refers to the data that is sequentially collected over time. Various components usually contribute to any observed time series value at any particular point in time.
 <!--more-->
 Thus a time series can be decomposed such that each component exists independently. Usually, it is challenging to work with a model whose most of the cause of variation is unknown. In time series, some of the causes of variation to the model are deterministic.
