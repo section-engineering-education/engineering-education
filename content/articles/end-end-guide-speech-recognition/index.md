@@ -166,7 +166,7 @@ Parameters in recording include:
 Duration is the time taken for an action to start or complete. It is used in speech recognition to specify the time taken when working with audio data. For example, the line code states that "I like traveling and nature walk" Let say that in 6 seconds the sentence cannot be read in that duration then:
 
 ```python
-with audio_file_ as source:
+with audio_file_ as start:
   audio_file = recognizer.record(source, duration = 0.06)#specify the duration in seconds 0.06
   result = recognizer.recognize_google(audio_data=audio_file)
 ```
