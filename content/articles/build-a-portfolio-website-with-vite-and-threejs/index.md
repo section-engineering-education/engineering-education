@@ -2,18 +2,23 @@
 
 ### Introduction
 
-The majority of visually stunning websites follow a similar pattern, employing 3D animations to bring the material to life as the page is scrolled. We'll be working on something similar in this tutorial by building a portfolio website with Three.js. Three.js is a cross-browser Javascript library/API for creating and animating 3D computer graphics for web browser display.
+The majority of visually stunning websites follow a similar pattern, employing 3D animations to bring the material to life as the page is scrolled. We'll be working on something similar in this tutorial by building a portfolio website with Three.js. So let's get started.
 
 ### What Is Threejs
 
-Three.js is a Javascript framework that allows you to easily build a 3d or 2d graphic on your webpage without having to deal with WebGl directly. It's essentially an abstract layer built on top of webGl to make it easier to use; anyone can simply use the Web browser to experience 3D graphics without having to download any additional framework. Because Three.js is built on Javascript, adding interactivity between 3d objects and user interfaces is quite simple, making Three.js ideal for creating 3d games on the web platform. Aside from that, it has outstanding features like:
+Three.js is a Javascript framework that allows you to easily build a 3d or 2d graphic on your webpage without having to deal with WebGl directly. It's essentially an abstract layer built on top of webGl to make it easier to use, anyone can simply use the Web browser to experience 3D graphics without having to download any additional framework. Since Three.js is built on Javascript, adding interactivity between 3d objects and user interfaces is quite simple, making Three.js ideal for creating 3d games on the web platform. Aside from that, it has outstanding features like:
 
-- Effects: Anaglyph, cross-eyed, and parallax barrier.
-- Scenes: add and remove objects at run-time; fog.
-- Cameras: perspective and orthographic; controllers: trackball, FPS, path, and more.
-- Animation: armatures, forward kinematics, inverse kinematics, morph, and keyframe.
+- Effects.
+- Scenes.
+- Cameras.
+- Animation.
+- Materials.
+- Mesh making.
+- Lights.
+- Scaling.
+- Render.
  
- Three.js has been around for a while, but before we can grasp it, we must first understand WebG. WebGl is a Javascript API for generating high-performance interactive 3D and 2D graphics without the usage of plug-ins in any supported web browser. WebGl is an OpenGl version based on OpenGL ES (embedded systems). It's a low-level language API that's good because it can read data quickly thanks to the GPU (graphic programming interface), but it's also complicated. That is to say, while it is supported by most modern browsers, it is not particularly enjoyable to deal with because it necessitates the development of extensive, heavy code.
+ Three.js has been around for a long time. To understand Three.js we must first have an understanding of what  WebGl is. WebGl is a Javascript API for generating high-performance interactive 3D and 2D graphics without the usage of plug-ins in any supported web browser. WebGl is an OpenGl version based on OpenGL ES (embedded systems). It's a low-level language API that's good because it can read data quickly thanks to the GPU (graphic programming interface), but it's also complicated. That is to say, while it is supported by most modern browsers, it is not particularly enjoyable to deal with because it necessitates the development of extensive, heavy code.
 
 The arrival of Three.js simplified things in WebGl . One can now write a short line of codes and be able to play with it instead of writing long lines of codes plus it is very slow and still does not understand what you just did. With three js we can create video games, use it to showcase our products(in a 3d form), we can also import into three js when we have to make a complex object using a 3d software like blender in formats like `gltf`,`obj`,`poly`, and so much more. To get started with three js we can visit their website [here](https://threejs.org/) and read their documentation.
 
@@ -249,7 +254,7 @@ Next up let’s head to our `index.html` to add some markups inside our `canvas`
 <main>
  
       <header>
-        <h1>temitope</h1>
+        <h1>Temitope</h1>
         <p>🚀 Welcome to my website!</p>
       </header>
  
@@ -259,7 +264,7 @@ Next up let’s head to our `index.html` to add some markups inside our `canvas`
       </blockquote>
  
       <section>
-        <h2>📜 about me</h2>
+        <h2>📜 About me</h2>
         <p>
           Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
         </p>
@@ -275,7 +280,7 @@ Next up let’s head to our `index.html` to add some markups inside our `canvas`
       </section>
  
       <section class="light">
-        <h2>👩🏽‍🚀 my Projects</h2>
+        <h2>👩🏽‍🚀 My Projects</h2>
  
         <p>
           Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
@@ -294,17 +299,17 @@ Next up let’s head to our `index.html` to add some markups inside our `canvas`
       </blockquote>
  
       <section class="left">
-        <h2>🌮 places i've worked</h2>
+        <h2>🌮 Places i've worked</h2>
  
         <h3>Mcanderson institute of technology</h3>
         <p>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Curabitur ullamcorper ultricies nisi. Nam eget dui. Etiam rhoncus. Maecenas tempus, tellus eget condimentum rhoncus, sem quam semper. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
         </p>
-        <h3>strapi</h3>
+        <h3>Strapi</h3>
         <p>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.  Curabitur ullamcorper ultricies nisi. Nam eget dui. Etiam rhoncus. Maecenas tempus, tellus eget condimentum rhoncus, sem quam semper.Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
         </p>
-        <h3>logrocket</h3>
+        <h3>Logrocket</h3>
         <p>
           Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
         </p>
