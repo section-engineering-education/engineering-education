@@ -1,3 +1,19 @@
+---
+layout: engineering-education
+status: publish
+published: true
+url: /routes-and-navigators-in-flutter-apps/
+title: Introduction to Routing and Navigation in Flutter Applications
+description: In this tutorial, we will learn about routing and navigation in Flutter applications.
+author: naomi-wangari
+date: 2022-01-12T00:00:00-06:10
+topics: [Languages]
+excerpt_separator: <!--more-->
+images:
+
+  - url: /engineering-education/routes-and-navigators-in-flutter-apps/hero.jpg
+    alt: Introduction to Routing and Navigation in Flutter Applications Hero Image
+---
 ### Introduction
 Navigating in flutter apps, all you have to do is use the default navigation that comes with Flutter. For complex flutter application consider the addition of  dynamic links, authorizations, and authentication . GetX does a good job of helping you with this by using middleware and bindings, child routes.
 ### Topics to handle
