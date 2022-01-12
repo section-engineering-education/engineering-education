@@ -1,4 +1,4 @@
-Prisma is an ORM that allows you to write type-safe database schemas. Prisma allows you to write type-safe database schemas. When setting a database, everything needs to be well set to define what that database will look like. In this case, Prisma abstracts you from writing database queries. Thus you have to make sure you write safe database access schemas.
+Prisma is an ORM that allows you to write type-safe database schemas. Prisma will enable you to write type-safe database schemas. When setting a database, everything needs to be well set to define what that database will look like. In this case, Prisma abstracts you from writing database queries. Thus you have to make sure you write safe database access schemas.
 
 Prisma supports major databases such as MySQL, PostgreSQL, MongoDB, MariaDB, Azure SQL, Microsoft SQL Server AWS Aurora, and AWS Aurora Serverless. This means that you can easily pick the database that fits the code structure of your application and even switch between databases without the need to change any code structure of your application.
 
@@ -34,11 +34,11 @@ Once you have your account set up, create a free tie shared cluster. Your databa
 
 ![free-mongodb-cluster](/engineering-education/how-to-setup-prisma-client-server-that-uses-mongodb-as-the-database/free-mongodb-cluster.png)
 
-To connect your application with the set Mongodb Atlas, Click the **Connect** button on the created cluster. This will prompt you to **Add a connection IP address.** For the purpose of this tutorial, set this to **Allow Access from Anywhere**, then click **Add IP address** to set it up.
+To connect your application with the set MongoDB Atlas, Click the **Connect** button on the created cluster. This will prompt you to **Add a connection IP address.** For the purpose of this tutorial, set this to **Allow Access from Anywhere**, then click **Add IP address** to set it up.
 
-To use an Atlas, you need to create a database user. Fill in a **username**, and **password** on the provided **Create a Database User** form and click Create to set the database user.
+To use an Atlas, you need to create a database user. Fill in a **username**and **password** on the provided **Create a Database User** form and click Create to set the database user.
 
-Then **Choose a connection method** and select the Node.js drivers. This will provide you with a connection string that will allow you to connect your application to the atlas. Below is a sample string connection with all the required parameters.
+Then **Choose a connection method** and select the Node.js drivers. This will provide you with a connection string that will allow you to connect your application to Atlas. Below is a sample string connection with all the required parameters.
 
 ```bash
 mongodb+srv://<username>:<password>@cluster0.sium6.mongodb.net/myFirstDatabase?retryWrites=true&w=majority
@@ -398,6 +398,24 @@ This will create a save a new task to the MongoDB database. If the task was succ
   "msg": "Task Registration successfully Completed!"
 }
 ```
+
+Go ahead and try adding new tasks. And if you want to get all the added tasks, head over to Postman and select a GET method to `http://localhost:3000/tasks`.
+
+![get-tasks](/engineering-education/how-to-setup-prisma-client-server-that-uses-mongodb-as-the-database/get-tasks.png)
+
+To get a single task, use a GET method and URL `http://localhost:3000/tasks/:id`. In this case, replace the `:id` with the task id you want to fetch.
+
+To update the task's values, send a PUT method to `http://localhost:3000/tasks/:id`, where `:id` represents the task you want to edit. Below is an example of how to carry this out.
+
+![update-a-task](/engineering-education/how-to-setup-prisma-client-server-that-uses-mongodb-as-the-database/update-a-task.png)
+
+The new values should be reflected in your database when a task is updated successfully.
+
+Finally, to delete a task, send a Delete method to `http://localhost:3000/tasks/:id`, where `:id` represents the task you want to delete, as shown below.
+
+![delete-a-task](/engineering-education/how-to-setup-prisma-client-server-that-uses-mongodb-as-the-database/delete-a-task.png)
+
+>Note: You might encounter an error response when sending PUT or DELETE requests. To solve this, first, stop your server, run `prisma generate`, and then rerun your server with `npm run dev`.
 
 ### Conclusion
 SQL and NoSQL have different data structures. This guide used Prisma as an ORM to generate schemes for a MongoDB JSON document. Then created a server that leverages the advantages of running Prisma with MongoDB to show how MongoDB-Prisma connector can be used in a typical project.
