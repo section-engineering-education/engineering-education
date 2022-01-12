@@ -6,7 +6,7 @@ url: /how-to-create-a-winforms-io-manager-for-removable-drives-in-csharp/
 title: How to Manage Removable Drives in C#
 description: This article will help readers understand how to manage USB devices in C#. This feature is important when granting read/write permissions to removable drives.
 author: donel-mwangi
-date: 2022-01-03T00:00:00-12:25
+date: 2022-01-12T00:00:00-09:12
 topics: [Languages]
 excerpt_separator: <!--more-->
 images:
@@ -64,14 +64,14 @@ To rename the form title, click on  `Form 1` and in the `properties`  sidebar un
 ![Renaming Form1](/engineering-education/how-to-create-a-winforms-io-manager-for-removable-drives-in-csharp/renaming-form1.jpg)
 
 #### Changing the background color
-Click on the `I/O Manager` form and in the `Properties` sidebar under `BackColor`, change the background color to `Teal`
+Click on the `I/O Manager` form and in the `Properties` sidebar under `BackColor`, change the background color to `Teal`.
 
 ![Changing form1 background color](/engineering-education/how-to-create-a-winforms-io-manager-for-removable-drives-in-csharp/form1-bgcolor.jpg)
 
 #### Changing form border
 This property changes how the border of our form shall look. For example, it removes the `maximize` and `minimize` buttons. 
 
-To do it, click the `I/O Manager` form and in the `Properties`  sidebar under `FormBorderStyle`, select `FixedToolWindow`.
+To do it, click on the `I/O Manager` form and in the `Properties`  sidebar under `FormBorderStyle`, select `FixedToolWindow`.
 
 ![Form border style](/engineering-education/how-to-create-a-winforms-io-manager-for-removable-drives-in-csharp/form-border-style.jpg)
 
@@ -160,10 +160,10 @@ bool isUserAdmin;
 [DllImport("shell32")]static extern bool IsUserAnAdmin();
 ```
 
-The strings in the above snippet contain paths to windows operating system device configurations ie: windows registry.
+The strings in the above snippet contain paths to windows operating system device configurations (ie: windows registry).
 
 ####  On loading the form
-In this section, we will add the code that will be executed immediately our form starts. 
+In this section, we will add the code that will be executed immediately after our form starts.
 
 In the `Form1` design, `double-click` on the `teal` background. You will be directed to the `Form1_Load()` method.
 
@@ -215,7 +215,7 @@ When the form loads, the above method checks if the current user running the pro
 It then checks the `radio buttons` based on the status of the USB ports and the removable drives. ie: if the USB ports are already enabled, it checks the `enable USB ports` radio button option.
 
 #### Radio buttons 
-In our form, the radio buttons are in the order of 1 to 4 ie: `radioButton1` to `radioButton4`. 
+In our form, the radio buttons are in the order of 1 to 4 (ie: `radioButton1` to `radioButton4`).
 
 The first two radiobuttons hold the values used to change the status of the USB ports. If the value is `3`, then they are `enabled`, and if it's `4` then they are `disabled`. 
 
@@ -248,7 +248,7 @@ private void radioButton4_CheckedChanged(object sender, EventArgs e){
 #### Buttons
 We will use the `Click()` method to check if the buttons in our form have been pressed.
 
-We will utilize `button1` (OK) to change the USB ports status and removable drives read/write permissions based on the values set by the radio buttons.
+We will utilize `button1` (OK) to change the USB ports status and removable drives `read/write` permissions based on the values set by the radio buttons.
 
 > NB: To add code for each button, double-click the button and let it create the `button_Click()` method for you. Copy pasting the whole method might lead to malfunctioning of your application
 
