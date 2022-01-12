@@ -1,5 +1,6 @@
 #### Implementing Pre-Loading and Buffering Videos in Android with ExoPlayer
-Just like Youtube App, it is the wish of every Android Developer to understand how a video can be loaded so that a user doesn't have to wait while a video is loading.
+Just like the Youtube App, it is the wish of every Android Developer to understand how a video can be loaded so that a user doesn't have to wait while a video is loading.
+Before a user opens the video streaming app, a video can be loaded and cached. When the user finally decides to watch the video. It's simply fun because the waiting time for the video to load is very minimal. 
 
 ### Table of contents
 - [Prerequisites](#prerequisites)
@@ -10,7 +11,7 @@ Just like Youtube App, it is the wish of every Android Developer to understand h
 - [Creating a User Interface](#step-3---creating-a-user-interface)
 - [Creating a Base Application Class](#step-4---creating-a-base-application-class)
 - [Creating a Video Preloading Worker](#step-5---creating-a-video-preloading-worker)
-- [PreCaching](#step-6---precaching)
+- [Caching the Video](#step-6---caching-the-video)
 - [Playing the Video](#step-7---playing-the-video)
 - [Demo](#demo)
 - [Conclusion](#conclusion)
@@ -19,23 +20,23 @@ Just like Youtube App, it is the wish of every Android Developer to understand h
 To follow along with this tutorial, the reader should:
 - Have good knowledge in creating Android Apps.
 - Good knowledge of Kotlin Programming language.
-- An understanding of using Work manager.
-- Some knowledge in using Kotlin Coroutines.
-- Basic knowledge of ViewBinding.
+- Basic understanding of using Work manager, ViewBinding, and Kotlin Coroutines.
 
 ### What is Video Preloading and Buffering
-Buffering occurs in video streaming when the software downloads a particular amount of data before beginning to play the video. While the next section of the file downloads in the background, you may see the data stored in the buffer. Before the consumer opens the video, it can be loaded and cached. When the user finally decides to watch the video. It's simply for fun. ExoPlayer is a library developed by Google. 
+Buffering occurs in video streaming when the software downloads a particular amount of data before beginning to play the video. While the next section of the file downloads in the background, you may stream the data that has already been preloaded and stored in the buffer. 
+
+ExoPlayer is a library developed by Google. It provides an alternative to Android’s MediaPlayer API for playing audio and video both locally and over the Internet. ExoPlayer support features that are not currently supported by Android’s MediaPlayer API.
 
 ### Getting Started
-In this tutorial, we will create a simple app that displays a video from the internet and caches it before the user views it.
+In this tutorial, we will create a simple app that plays a video from the internet and caches it before the user views it.
 
 ### Step 1 - Creating an Android Project
-Launch your Android Studio and create an empty project
+Launch your Android Studio and create an empty project..
 
 ![New Android App](section-engineering/implementing-preloading-and-buffering-videos-in-android-with-exoplayer/create_app.png)
 
 ### Step 2 - Setting Up the Project
-In this step, we will add the necessary dependencies so that we can proceed.
+In this step, we will add the necessary dependencies so as to proceed.
 
 ```Gradle
 def exoplayer_version = "2.16.1"
@@ -46,12 +47,12 @@ def work_version = "2.5.0"
 implementation "androidx.work:work-runtime-ktx:$work_version"
 ```
 
-> While still in your app-level `build.gradle` enable `viewBinding`
+> While still in your app-level `build.gradle` enable `viewBinding`.
 
-> In your Manifest file, add Internet permission
+> In your Manifest file, add internet permission because we will be streaming the video from the internet.
 
 ### Step 3 - Creating a User Interface
-In `activity_main.xml` Design a simple layout that will contain a `PlayerView`
+In `activity_main.xml` Design a simple layout that will contain Exoplayer `PlayerView`.
 
 ```Xml
 <com.google.android.exoplayer2.ui.PlayerView
@@ -66,29 +67,43 @@ In `activity_main.xml` Design a simple layout that will contain a `PlayerView`
     app:show_buffering="when_playing"
     app:show_shuffle_button="true" />
 ```
-
 ![Demo2](section-engineering/implementing-preloading-and-buffering-videos-in-android-with-exoplayer/demo2.png)
 
+### Step 4 - Creating a Base Application Class
+In this step, we will create a base class that will inherit from the `Application` class.
 
+```Kotlin
+class VideoApp : Application() {
+    companion object{
+        lateinit var cache: SimpleCache
+    }
+ 
+    private val cacheSize: Long = 90 * 1024 * 1024
+    private lateinit var cacheEvictor: LeastRecentlyUsedCacheEvictor
+    private lateinit var exoplayerDatabaseProvider: ExoDatabaseProvider
 
-
+    override fun onCreate() {
+        super.onCreate()
+        cacheEvictor = LeastRecentlyUsedCacheEvictor(cacheSize)
+        exoplayerDatabaseProvider = ExoDatabaseProvider(this)
+        cache = SimpleCache(cacheDir, cacheEvictor, exoplayerDatabaseProvider)
+    }
+}
+```
 #### Explanation
-We have defined the cache size that our app will use. Also, we have defined the cache evictor which clears our cache,`ExoDatabaseProvider`, and passed all of them inside our `cache` instance.
-
+In this class, we have defined the cache size that our app will use. Also, we have defined the cache evictor which clears our cache, an `ExoDatabaseProvider`, and passed all of them inside our `cache` instance.
 
 ### Step 5 - Creating a Video Preloading Worker
 Here, we create a Worker class from the Workmanager library that will do the preloading and precaching work in the background.
 
 ```Kotlin
-class VideoPreloadWorker(private val context: Context, workerParameters: WorkerParameters) :
-    Worker(context, workerParameters) {
-
+class VideoPreloadWorker(private val context: Context, workerParameters: WorkerParameters) : Worker(context, workerParameters) {
     private var videoCachingJob: Job? = null
     private lateinit var mHttpDataSourceFactory: HttpDataSource.Factory
     private lateinit var mDefaultDataSourceFactory: DefaultDataSourceFactory
     private lateinit var mCacheDataSource: CacheDataSource
     private val cache: SimpleCache = VideoApp.cache
-    
+
     ...
 }        
 ```
@@ -107,7 +122,7 @@ companion object {
 }
 ```
 
-For the video caching logic, let's define two methods that will make that work
+For the video caching logic, let's define two methods that will do that work.
 
 ```Kotlin
 private fun preCacheVideo(videoUrl: String?) {
@@ -128,12 +143,7 @@ private fun preCacheVideo(videoUrl: String?) {
 
 private fun cacheVideo(mDataSpec: DataSpec, mProgressListener: CacheWriter.ProgressListener) {
     runCatching {
-        CacheWriter(
-            mCacheDataSource,
-            mDataSpec,
-            null,
-            mProgressListener,
-        ).cache()
+        CacheWriter(mCacheDataSource,mDataSpec,null,mProgressListener,).cache()
     }.onFailure {
         it.printStackTrace()
     }
@@ -145,9 +155,7 @@ The first function `preCacheVideo` -  takes in a video url and passes it into a 
 
 The second function `cacheVideo` - does the caching of the video with the help of a caching-related utility method - `CacheWriter`.
 
-
 After defining the two methods, inside the `doWork` method, we do initializations and call our `preCacheVideo` function.
-
 ```Kotlin
 override fun doWork(): Result {
     try {
@@ -173,8 +181,8 @@ override fun doWork(): Result {
 }
 ```
 
-### Step 6 - PreCaching
-When pre-caching a video, it is good to do it in a different `Activity` or `Fragment`. So that when the user navigates to the actual Destination, he/she finds the video is ready. Like on youtube, videos are displayed in a list, when a user selects a particular video, that when they are navigated to a different screen, where the video now plays. In some cases, other developers prefer displaying thumbnails of videos in a recyclerview, then when a user selects a particular one, the video is played on a different screen.
+### Step 6 - Caching the Video
+When pre-caching a video, it is good to do it in a different `Activity` or `Fragment`. So that when the user navigates to the actual Destination, he/she finds the video ready. Like on youtube, videos are displayed in a list, when a user selects a particular video, that is when they are navigated to a different screen, where the video now plays. In some cases, other developers prefer displaying thumbnails of videos in a recyclerview, then, when a user selects a particular one, the video is played on a different screen.
 
 In our case, we are going to define an Activity that does the preloading, then when a user clicks on the play video `Button`, He/she is navigated to another activity where the video plays.
 
@@ -184,16 +192,14 @@ In its layout, just create a single button.
 
 ![Demo1](section-engineering/implementing-preloading-and-buffering-videos-in-android-with-exoplayer/demo1.png)
 
-> In real life you may have a recyclerview.
+> In a real life scenario you may have a `Recyclerview`.
 
 #### FirstActivity Logic
+First of all, let's define a variable that will hold the URL for the video which we'll be caching.
 
-First of all, let's define a variable that will hold the URL for the video which we'll be caching
+`private val videoUrl = "VIDEO_URL"`
 
-`private val videoUrl =
-        "https://firebasestorage.googleapis.com/v0/b/testi-30703.appspot.com/o/Android%20Kotlin%20Developer%20-%20Wake%20Up%2C%20Aleks!%201.mkv?alt=media&token=251ab4ab-284c-4820-9d5c-09d656bc8739"`
-
-Then define a method that will schedule our preloading work
+Then define a method that will schedule our preloading work.
 
 ```Kotlin
 private fun schedulePreloadWork(videoUrl: String) {
@@ -210,17 +216,13 @@ private fun schedulePreloadWork(videoUrl: String) {
 #### Explanation
 The `schedulePreloadWork` function does the instantiation `WorkManager` and passes the url of the video that is to be cached. We then enqueue the work and add an `ExistingWorkPolicy.KEEP` policy. If there is existing pending (uncompleted) work with the same unique name, do nothing.  
 
-
-In `onCreate`, we'll invoke the `schedulePreloadWork` method and pass our `videoUrl`. Also, set an `OnClickListener` to the button, so that we can navigate to `MainActivity` carrying the url of the video that will be played.
+In our FirstActivity's `onCreate` method, we'll invoke the `schedulePreloadWork` method and pass our `videoUrl`. Also, set an `OnClickListener` to the button, so that we can navigate to `MainActivity` carrying the url of the video that will be played.
 
 ### Step 7 - Playing the Video
 For MainActivity, let's define the same variables that we had defined, in the Worker Class.
-
 ```Kotlin
 class MainActivity : AppCompatActivity() {
-
     private lateinit var binding: ActivityMainBinding
-
     private lateinit var mHttpDataSourceFactory: HttpDataSource.Factory
     private lateinit var mDefaultDataSourceFactory: DefaultDataSourceFactory
     private lateinit var mCacheDataSourceFactory: DataSource.Factory
@@ -228,8 +230,6 @@ class MainActivity : AppCompatActivity() {
     private val cache: SimpleCache = VideoApp.cache
 
     ...
-
-
 ```
 
 Inside the `onCreate` method:
@@ -255,7 +255,15 @@ mCacheDataSourceFactory = CacheDataSource.Factory()
 
 To our `exoPlayer` we will initialize it and pass a `CacheDataSourceFactory` as its default media source factory. We then parse our video Url and pass it to the `MediaSource`.
 
-
+```Kotlin
+exoPlayer = SimpleExoPlayer.Builder(applicationContext)
+    .setMediaSourceFactory(DefaultMediaSourceFactory(mCacheDataSourceFactory)).build()
+ 
+val videoUri = Uri.parse(videoUrl)
+val mediaItem = MediaItem.fromUri(videoUri)
+val mediaSource =
+ProgressiveMediaSource.Factory(mCacheDataSourceFactory).createMediaSource(mediaItem)
+```
 
 We then bind our `exoPlayer` to the `playerView` in the `activity_main.xml`. We then set some properties to `exoPlayer` such as to play when ready, to seek to `(0,0)` and also give it the `MediaSource`.
 
@@ -272,6 +280,4 @@ That's all, when you run the app, you should be having something similar to this
 ![Gif](section-engineering/implementing-preloading-and-buffering-videos-in-android-with-exoplayer/demo.gif)
 
 ### Conclusion
-In this tutorial, we have understood what preloading and precaching are. We went ahead and implemented a simple app that preloads video Url. With this knowledge, go ahead and implement it in your media app.
-
-For the full implementation of the code, check out this Github repository [VideoPreLoadingExoplayer](https://github.com/codewithjudy/VideoPreLoadingExoplayer)
+In this tutorial, we have learned what video preloading and precaching are. We then used Exoplayer and Workmanager to schedule background work that preloads a video before it is played. With this knowledge, go ahead and implement it in your media app. For a full implementation of the code, check out this Github repository [VideoPreLoadingExoplayer](https://github.com/codewithjudy/VideoPreLoadingExoplayer)
