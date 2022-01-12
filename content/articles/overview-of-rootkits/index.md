@@ -10,8 +10,7 @@ Rootkits are exceptionally good at disguising themselves from system security me
 
 The malware helps the hackers to steal personal data and financial information once they have gained illegal access to computers.
 
-Although this may sound concerning, rootkits can sometimes be put to good use. For example, they are purposefully deployed for R&D to see how the system reacts to it. Then the report can be recorded, studied, and used to improve existing and future systems to avoid any future threats.
-<!-- what is R&D? Please explain -->
+Although this may sound concerning, rootkits can sometimes be put to good use. For example, they are purposefully deployed during the research and development phase. In this stage, the rootkits are developed and installed to see how the system reacts to it. Then the report can be recorded, studied, and used to improve existing and future systems to avoid any future threats.
 
 ### How it affects our systems
 Once the rootkit is on the system, it makes the operating system vague about its presence. It achieves this by avoiding standard operating system services such as detecting and tracking unusual activity and other third-party applications such as anti-virus software and anti-malware components.
@@ -35,12 +34,16 @@ A firmware rootkit is a type of rootkit that exploits essential hardware such as
 ### Preventive measures
 As previously stated, the rootkit hides among other system modules in the operating system, making it not vulnerable to detection. Detection software can only identify those rootkits if there is a flaw in the rootkits' ability to hide. It becomes impossible to find them if they are flawless in hiding or if they latch themselves onto the kernel.
 
+1. **Memory Dumping** - 
 In this case, the memory dump analysis method would be useful. A memory dump is a process of dumping all information contained in RAM into a storage drive. These dumps can be helpful to recover relevant data and information about the rootkits regarding their issues, flaws, and whereabouts in the system.
 
+2. **Behavioral Analysis** - 
 Rootkits can also be discovered through behavioral analysis. Instead of looking for rootkits, we search for rootkit-like behavior. Because they hide and can be difficult to detect, learning about its behavior and anticipating its whereabouts can be beneficial. The root cause can be discovered using the acquired data, patterns, and algorithms, which leads to the discovery of the rootkit. Although this procedure may not always produce viable results, it is still worth a shot.
 
+3. **Kernel shut-down** - 
 Taking down the kernel will help in the identification of a kernel-mode rootkit. Since the rootkit gets decommissioned when the kernel is turned off, it becomes harder for it to hide. This helps in eliminating the rootkit from the memory dump.
 
+4. **Principle of least privilege** - 
 Following the [principle of least privilege](https://en.wikipedia.org/wiki/Principle_of_least_privilege) is another strategy that can benefit in tackling the problem of rootkits. It simply implies, giving the user access only to those parts of the system that they need to execute any computing operation. This prohibits the user from modifying any key files or modules on the operating system that could compromise the device's core functionality thus prohibiting the installation of any unwanted software into the kernel.
 
 ### Conclusion
