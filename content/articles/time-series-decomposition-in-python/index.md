@@ -6,7 +6,7 @@ url: /time-series-decomposition-in-python/
 title: Getting started with Time Series Decomposition in Python
 description: This article will discuss the decomposition of the time series data and the type of models we use when decomposing this data(Additive, Multiplicative, and Pseudo-additive Models).
 author: sumba-elvis
-date: 2021-12-23T00:00:00-12:20
+date: 2022-01-12T00:00:00-01:10
 topics: [Languages]
 excerpt_separator: <!--more-->
 images:
@@ -14,6 +14,13 @@ images:
   - url: /time-series-decomposition-in-python/hero.png
     alt: Getting started with Time Series Decomposition in Python Hero Image
 ---
+
+Time series refers to the data that is sequentially collected over time. Various components usually contribute to any observed time series value at any particular point in time.
+<!--more-->
+Thus a time series can be decomposed such that each component exists independently. Usually, it is challenging to work with a model whose most of the cause of variation is unknown. In time series, some of the causes of variation to the model are deterministic.
+
+Analyzing a model with many causes of variation is computationally expensive. Therefore, we decompose those components whose variation is deterministic. The indeterministic ones, residuals, are then used to analyze autocorrelation.
+
 
 ### Table of contents
 - [Time Series Decomposition in Python](#time-series-decomposition-in-python)
@@ -24,16 +31,9 @@ images:
   - [Step 2: Time series decomposition](#step-2-time-series-decomposition)
 - [Conclusion](#conclusion)
 
-### Time series decomposition in python
-Time series refers to the data that is sequentially collected over time. Various components usually contribute to any observed time series value at any particular point in time.
-<!--more-->
-Thus a time series can be decomposed such that each component exists independently. Usually, it is challenging to work with a model whose most of the cause of variation is unknown. In time series, some of the causes of variation to the model are deterministic.
-
-Analyzing a model with many causes of variation is computationally expensive. Therefore, we decompose those components whose variation is deterministic. The indeterministic ones, residuals, are then used to analyze autocorrelation.
-
 ### Prerequisites
 To gain the maximum benefit from this material, the learner must have the following:
-- Basic knowledge in Python programming language. 
+- Basic knowledge of Python programming language. 
 - Familiarity with the [Google Colab](https://colab.research.google.com/?utm_source=scs-index) or [Jupyter Notebook](https://jupyter.org/).
 
 ### Components of the time series
@@ -44,7 +44,7 @@ At any given time, a time series is usually composed of the following components
 
 Let us understand what these components are:
 
-1. Trend - This is the long-term direction of the time series. This component usually is either increasing, decreasing, or constant. The figure below illustrates a growing trend for a time series.
+1. Trend - This is the long-term direction of the time series. This component usually is increasing, decreasing, or constant. The figure below illustrates a growing trend for a time series.
 
 ![Trend](/engineering-education/time-series-decomposition-in-python/trend.png)
 
@@ -65,7 +65,7 @@ Therefore, we use the following three models when decomposing a time series:
 
 Now, it is usually the case that before we decompose the time series, we first discover the model to use. To discover this, we usually plot the time series and then see if the plot satisfies the following assumption for choosing an appropriate model to use.
 
-If the seasonality and residuals are independent of the trend in the plotted time series, we use an Additive model to decompose the data. The plot below shows the case where an additive time series model was used to decompose the data. As you can see, the seasonality component does not change with the change in trend.
+If the seasonality and residuals are independent of the trend in the plotted time series, we use an additive model to decompose the data. The plot below shows the case where an additive time series model was used to decompose the data. As you can see, the seasonality component does not change with the change in trend.
 
 ![Additive model](/engineering-education/time-series-decomposition-in-python/additive-time-series.png)
 
@@ -157,7 +157,7 @@ np.random.seed(10)  # for result reproducibility
 residual = np.random.normal(loc=0.0, scale=1, size=len(T_Series))
 ```
 
-We the plot this residual component as follows:
+We then plot this residual component as follows:
 
 ```python
 plt.plot(T_Series, residual, 'r-.')
@@ -190,7 +190,7 @@ plt.ylabel("product demand");
 
 Output:
 
-![A dditive time series](/engineering-education/time-series-decomposition-in-python/additive-time-series.png)
+![Additive time series](/engineering-education/time-series-decomposition-in-python/additive-time-series.png)
 
 It is straightforward to note that the seasonality component of the additive time series model above does not change with the change in trend, which is an essential feature for a time series to be considered an additive time series.
 
@@ -270,7 +270,7 @@ The first plot represents our original time series. The second plot represents t
 - #### Decomposing multiplicative time series model
 We shall follow similar steps as the ones we used to decompose the Additive time series except that we specify the model as the multiplicative time series.
 
-So the the following code carry out this activity.
+So the following code carries out this activity.
 
 ```python
 ts_decomposition = seasonal_decompose(x=multiplicative_Tmodel, model='multiplicative', freq=6)
@@ -303,7 +303,7 @@ This code yield:
 
 ![Multiplicative time series decomposition](/engineering-education/time-series-decomposition-in-python/multiplicative-time-series-decomposition.png)
 
-Now, this was a demo, and as we know, we are not Data scientists only to deal with the problem we create on our own. Instead, we train ourselves to handle real-world challenges using hidden knowledge in the data. 
+Now, this was a demo, and as we know, we are not data scientists only to deal with the problem we create on our own. Instead, we train ourselves to handle real-world challenges using hidden knowledge in the data. 
 
 So, to learn the correlation in real-world data, we shall be required to decompose the data first to eliminate the deterministic causes of variation in the data. So, to train ourselves on decomposing these data, let us first learn where to quickly obtain time-series data for practice.
 
@@ -326,7 +326,7 @@ import yfinance as yf
 
 We can now access any time series data loaded in the `yfinance` library. So, for instance, we can access data for the Facebook stock as shown in the code below.
 
-For instance we can obtain Facebook stock data as follows:
+For instance, we can obtain Facebook stock data as follows:
 
 ```python
 data =  yf.download(tickers="FB", start="2016-1-1",end="2020-12-31",progress=False)
@@ -337,9 +337,9 @@ This code should return an output similar to the one below.
 
 ![Facebook stock data](/engineering-education/time-series-decomposition-in-python/fb-stock-data.png)
 
-Above is multivariate time series for the Facebook stocks data. You can change the tickers value and download datasets of other companies such as the Amazone, "AMZN," Tesla company as "TSLA," etc.
+Above is multivariate time series for the Facebook stocks data. You can change the tickers' value and download datasets of other companies such as Amazon "AMZN," Tesla "TSLA," etc.
 
-Since the Facebook data we have above is a multivariant time series, which we will not discuss in this session, let us extract a univariant one by indexing a column, `High`, and plot it.
+Since the Facebook data we have above is a multi-variant time series, which we will not discuss in this session, let us extract a univariant one by indexing a column, `High`, and plot it.
 
 ```python
 data['High'].plot()
@@ -349,7 +349,7 @@ This code returns an output similar to the one provided below:
 
 ![plot](/engineering-education/time-series-decomposition-in-python/high-ts.png)
 
-We note that the series has an increasing trend upon plotting the `High` time series. Also, the time series has no seasonal component; instead, it has a Cyclic component. That is why we accessed data within a year-plus period of more than one year. 
+We note that the series has an increasing trend upon plotting the `High` time series. Also, the time series has no seasonal component, instead, it has a Cyclic component. That is why we accessed data within a year-plus period of more than one year. 
 
 Therefore, we will decompose this data using the same procedure we used before, but the frequency, in this case, will be more than 12 months. Let us see this in the code below:
 
@@ -395,5 +395,6 @@ Using a simple approach, we simulated a time series data and later decomposed it
 We learned of a library from which we fetch time series data. We fetched data for the Facebook stocks and decomposed one of its time series from that library. This end finalizes our session, and I hope you enjoyed it. 
 
 Happy coding!
+
 ---
 Peer Review Contributions by: [Briana Nzivu](/engineering-education/authors/briana-nzivu/)
