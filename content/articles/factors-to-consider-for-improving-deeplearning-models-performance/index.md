@@ -177,7 +177,7 @@ To improve the accuracy of your model, it's always a good idea to use ensemble a
 You can read more about Ensemble methods [here](/engineering-education/ensemble-learning/).
 
 ### Configuring the learning rate
-![Display Rate Charts](/engineering-education/Factor-that-affects-the-performance-deep-learning-systems/display_rate_charts.png)
+![Display Rate Charts](/engineering-education/Factor-that-affects-the-performance-deep-learning-systems/display-rate-charts.png)
 
 According to [Leslie N. Smith](https://arxiv.org/abs/1506.01186), a good learning rate can be estimated by beginning with a very low learning rate and gradually increasing it (either linearly or exponentially) with each iteration.
 
@@ -189,7 +189,7 @@ If we plot the learning rate (log) versus loss for each learning iteration, we w
 
 In practice, our learning rate should ideally be near the bottom of the line, to the left (as demonstrated in the below graph). `0.001` to `0.01` in this situation.
 
-![Learning Rate Chart](/engineering-education/Factor-that-affects-the-performance-deep-learning-systems/learning_rate_scale.png)
+![Learning Rate Chart](/engineering-education/Factor-that-affects-the-performance-deep-learning-systems/learning-rate-scale.png)
  
 ### Conclusion
 With the vast and rapid development of technology, deep learning is the key to today's smart world. This has brought ease in communication between humans and their daily environment.
