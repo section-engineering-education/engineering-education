@@ -22,7 +22,7 @@ In this tutorial, we will discuss the operations, logic, and dependencies requir
 
 ### Key takeaways
 By the end of this tutorial, the reader will understand:
-- Getting started with React.js development cycle.
+- Getting started with the React.js development cycle.
 - Creating an image cropping component with React.js.
 - Limiting the numbers and size of unloadable files in React.js.
 - Image compression with React.js and CSS.
@@ -80,7 +80,7 @@ We will be looking at the cropping and compression techniques in this article. W
 Image cropping can be done the hard way with a lot of code and manipulations but we have a package dependency that reduces the burden of image cropping. The `react-image-crop` package proves to be efficient in front-end image cropping.
 
 #### Step 1 – Installing the react-image-crop dependency
-To install the `react-image-crop` package in our project, we open up the `command terminal` and run command below to install it:
+To install the `react-image-crop` package in our project, we open up the `command terminal` and run the command below to install it:
 
 ```bash
 npm install react-image-crop
@@ -92,7 +92,7 @@ Or, for yarn users:
 yarn add react-image-crop
 ```
 
-Once that it is completed, we will import and use the package in our project.
+Once it is completed, we will import and use the package in our project.
 
 #### Step 2 – Setting up the cropping component (App.js)
 The component will allow a user to select an image file from their local device. Thereafter, the user can go ahead and crop the image to their desired dimensions. 
@@ -278,7 +278,7 @@ In the CSS snippet above, we targeted the `classNames` assigned earlier to our p
 Finally, we resized the image `height` and `width` to ensure it is properly displayed.
 
 ### Conclusion
-In this article, we used the React.js alongside `react-image-crop` package to create an image cropping component capable of cropping an image to the size desired by the user. We also looked at how to specify the acceptable file type a user can upload and prevent multiple files selection. 
+In this article, we used the React.js alongside `react-image-crop` package to create an image cropping component. This component is capable of cropping an image to the size desired by the user. We also looked at how to specify the acceptable file type a user can upload and prevent multiple files selection. 
 
 Finally, we explored the ways to optimize image display in CSS. I hope this article was helpful to your web development journey.
 
