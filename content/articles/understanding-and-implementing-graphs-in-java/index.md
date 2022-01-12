@@ -14,7 +14,7 @@ While covering graph data structure we will additionally learn about the many ki
 - [Breadth-first traversal and its implementation](#breadth-first-traversal-and-its-implementation)
 
 ### Understanding graphs in Java
-A graph data structure holds related data like a network of people or cities. Nodes are vertices that make up the graph data structure. The linkages are formed as a connection of a vertex another forming edges
+A graph data structure holds data that is related like a network of people or cities and is made up of nodes which are vertices. The linkages are formed as a connection of a vertex another forming edges
 There are several types of graphs, but the most common one is the directed acyclic graph (directed Graph). Instead, it might be characterized as being made up of a set of connected vertices (V) and edges (E).
 
 #### Types of graphs
@@ -38,11 +38,11 @@ It usually assigns value to the graph edge. In most cases, the weight is used to
 ### Storing graphs in memory
 In either of the following three ways there is a possibility of storing a graph in memory:
 1. Nodes and vertices may be stored as objects, whereas edges can be stored as pointers.
-2. To store a graph, you can use adjacency matrices with equal rows and columns. A border appears when columns and rows overlap. A weighted edge is more essential than an unweighted edge, which is denoted by number `1`.
+2. Adjacency matrices can be used and it should have equal rows and columns. A border appears when columns and rows overlap. A weighted edge is more essential than an unweighted edge, which is denoted by number `1`.
 3. An adjacency list between graph nodes and vertices can also be stored. Each node or vertex has an unique set of adjacency list neighbors.
 
 ### Representing Graphs in Code
-Adjacency matrices and lists are two typical approaches to generate graphs.
+Adjacency matrices and lists are approaches to generate graphs.
 
 #### Adjacency matrix
 As the number of graph vertices increases, so does the number of adjacency matrix dimensions.
@@ -54,13 +54,13 @@ The array index list contains all vertices nearest to the index's vertex.
 
 ### Graph implementation in Java
 Java Collections, such as the Generic Class, can be used in place of a graph data structure because Java does not provide a default implementation of this data structure.
-The syntax for creating a Java generic class object is shown below:
+The syntax for creating a Java generic class object:
 
 ```Java
 BaseType <ParameterType> obj = new BaseType <ParameterType>();
 ```
 
->Bear in mind that primitive types cannot be used as parameter types.
+>As the name implies, primitive types cannot be used as parameter types.
 
 #### Defining a vertex
 
@@ -73,7 +73,7 @@ class Apex {
 }
 ```
 
-Override the `equals()` and `hashCode()` methods as dealing with Java Collections requires it.
+There is need to override the `equals()` and `hashCode()` methods to cope with Java Collections.
 
 #### Defining vertex using an adjacency list:
 
@@ -84,7 +84,7 @@ class Chart {
 ```
 
 In this case, the adjacency list is defined by the class `Plot`, which is an instance of `Chart`.
-We may employ the graph data structure along with the conventional techniques of generating, updating, and searching the graph.
+We may use the graph data structure to generate, update, and search the graph.
 
 ### Common operations to implement in Java
 1. Vertices are being added and eliminated.
@@ -162,7 +162,7 @@ Any relevant action, such as searching inside the graph, requires traversing the
 A graph may be traversed using either the depth-first or the breadth-first approach.
 
 #### Depth-first traversal and its implementation
-Backtracking to discover the optimum answer is at the heart of the Depth-first traversal (DFS) algorithm's design. Starting with the first node, an algorithm continues searching until it reaches the last node (a node that has no child).
+Backtracking to discover the optimum answer is at the heart of the Depth-first traversal (DFS) algorithm's design. An algorithm searches from the first node to the last node.
 Reversing the path is achievable along the same route that was used to advance. This is known as backtracking.
 
 - `DepthFirstSearch.java`
@@ -234,8 +234,8 @@ This is the Depth-first traversal of graph:
 ```
 
 #### Breadth-first traversal and its implementation
-To traverse a graph, Breadth-first traversal (BFS) is the most used method. The first step in the traversal procedure is to analyze nodes that are close to the source node (child of the current node).
-This means that you'll spend most of your time going horizontally and checking out all of your nodes in the current layer. Go to the next layer and do it all over again.
+To traverse a graph, Breadth-first traversal (BFS) is the most used method. Traversal starts by analyzing nodes near the source node, which is the current node's child.
+This means that you'll spend most of your time going horizontally and checking out all of your nodes in the current layer. Repeat on the layer that follows.
 
 - `BreadthFirstSearch.java`
 
