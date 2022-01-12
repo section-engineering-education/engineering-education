@@ -1,7 +1,7 @@
 ### Cheat Sheet: Template Responses
 Below are some copy and paste responses we have useful from time to time: Feel free to modify and/or edit for your situation and document here.
 
-### Closing Topic Suggestions
+### Closing Topic/Article Suggestions (or PRs)
 
 #### Closing Due to Grammar/Readability
 
@@ -26,6 +26,14 @@ We will be closing the PR simply to make room in the queue - but we can gladly r
 #### Closing Due to Multiple Queued Articles
 
 To help avoid a backlog queue (and longer review times) we are currently only accepting ONE article TOPIC/PR approved at a time 👍. We can re-open this topic - once the 1st one has been merged/published.
+
+#### Closing an article due to it NOT being publish ready
+It seems this PR is still quite a bit aways from being completed. It also seems this PR is rather light on substance. We will be closing this and please re-submit when it is ready to be published as a new PR (and you can add the duplicate label) and ping the reviewer.
+
+Closing a PR does NOT mean the article can not be published (or fixed) it simply means that the edits, revisions, and fixes will happen outside of the queue. 👍
+Be sure to consult previously published materials to get a better understanding of the level of quality the community expects.
+
+Please feel free to go through our provided resources as well - those are there to help all our students improve their overall technical writing. To be able to take those skills to any position or program.
 
 ### Asking Questions in Topic Suggestions
 
