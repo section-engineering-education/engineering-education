@@ -6,7 +6,7 @@ url: /javascript-screen-recorder/
 title: Building a Screen Recorder application with Javascript
 description: This article guides us on implementing this functionality in a web browser using React and Node.js
 author: wilson-gichuhi
-date: 2022-01-04T00:00:00-01:34
+date: 2022-01-12T00:00:00-11:00
 topics: [Languages]
 excerpt_separator: <!--more-->
 images:
@@ -14,30 +14,32 @@ images:
     alt:  Building a Screen Recorder application with Javascript Image
 ---
 
-Computers are essential tools in our day-to-day business tasks. At times, we may find it helpful to record online zoom meetings, create presentation videos from slides, or support customers with a video tutorial on how to complete tasks. To achieve such actions, utility software with screen capture ability is needed.
+Computers are essential tools in our day-to-day business tasks. At times, we may find it helpful to record online zoom meetings, create presentation videos from slides, or support customers with a video tutorial on how to complete tasks.
 <!--more-->
- A screen recorder app can generate digital video content by recording the activities of footage on a computer or mobile screens in real-time. This article guides us on implementing this functionality in a web browser using React and Node.js.
+To achieve such actions, utility software with screen capture ability is needed. A screen recorder app can generate digital video content by recording the activities of footage on a computer or mobile screens in real-time.
+
+This article guides us on implementing this functionality in a web browser using React and Node.js.
 
 ### Prerequisites
 - Knowledge of the [JavaScript](https://www.javascript.com/) programming language.
 - Basics of React library. Learn more on the official documentation [here](https://reactjs.org/).
-- A code editor or IDE such as [VS Code](https://code.visualstudio.com/download).
+- A code editor such as [VS Code](https://code.visualstudio.com/download) or an IDE.
 - Have a Node.js LTS or later version on your development environment. You can download it [here](https://nodejs.org/en/download/).
-  
+
 ### Getting started
 Our screen recorder application will use full-stack JavaScript. The main libraries on the client-side include:
-
 - `React`- A frontend JavaScript library for dynamic apps.
 - `socket.io-client` for interacting with the webserver.
 
-For the backend side, we will use:
-
+For the backend, we will use:
 - `Express.js` - A Node.js framework for servers.
 - `Socket.io` - a Node.js library for developing real-time bi-directional applications using web sockets.
 - `FFmpeg` - an open-source tool for working with multimedia streams such as audio and video.
-  
+
 ### Application setup
-Our application structure includes a backend(`server` directory) and a React `client` folder. So, first, we will create our application folder and name it `screen-recorder-app`. Then, we will have the two directories inside the folder; the `server` folder for the backend and the `client` folder for the React application.
+Our application structure includes a backend(`server` directory) and a React `client` folder.
+
+First, we will create our application folder and name it `screen-recorder-app`. Then, we will have the two directories inside the folder; the `server` folder for the backend and the `client` folder for the React application.
 
 On your bash terminal, create the `screen-recorder-app` project folder:
 
@@ -53,7 +55,9 @@ cd screen-recorder-app
 npx create-react-app client
 ```
 
-The `create-react-app` command-line tool creates a boilerplate code for our application. However, our entire code will be on the `src/App.js` file. Our application needs the web sockets interface to reach the backend; therefore, for this functionality, let us add the `socket.io-client` and `react-loader-spinner` module:
+The `create-react-app` command-line tool creates a boilerplate code for our application. However, our entire code will be on the `src/App.js` file.
+
+Our application needs the web sockets interface to reach the backend. For this functionality, let us add the `socket.io-client` and `react-loader-spinner` module:
 
 ```bash
 npm install socket.io-client react-loader-spinner
@@ -61,11 +65,11 @@ npm install socket.io-client react-loader-spinner
 
 Finally, open the folder on your IDE. For VS Code, run the command:
 
-```bash 
+```bash
 code  .
 ```
 
-To set up our component, head over to your `src/App.js` file and import the `useEffect` hook, `useRef` hook, and `useState` hook. Next, from our `socket.io-client` module, we need to import the `io` object to initialize our client.
+To set up our component, head over to your `src/App.js` file and import the `useEffect`, `useRef`, and `useState` hooks. Next, from our `socket.io-client` module, import the `io` object to initialize our client.
 
 ```js
 import { useEffect, useRef, useState, Fragment } from 'react';
@@ -88,7 +92,7 @@ let data_chunks = [];
 let media_recorder = null;
 ```
 
-We will write everything in the `App.js` file for our client-side React. However, first, let us add a functional component rendered from the JSX with a `<h1>` tag of Recorder App.
+We will write everything in the `App.js` file for our client-side React. Let's add a functional component rendered from the JSX with a `<h1>` tag of Recorder App.
 
 ```js
 function App() {
@@ -105,7 +109,7 @@ function App() {
 If we start our server using the CLI command of `npm start`, then head over to our browser, we should see something like:
 
 ### The App component
-Above your return statement, add the following code in your `App.js` component.
+In your `App.js` component, add the following code above your return statement.
 
 ```js
 function App() {
@@ -113,7 +117,7 @@ function App() {
   const username = useRef(`User_${Date.now().toString().slice(-4)}`)
 
   const socketRef = useRef(io(LOCAL_SERVER))
- 
+
   const linkRef = useRef()
   const videoRef = useRef()
 
@@ -128,7 +132,7 @@ function App() {
 
   // recording status indicator
   const [recording, setRecording] = useState(false)
-  
+
   return (
     <Fragment>
       <h1>Recorder App</h1>
@@ -137,46 +141,52 @@ function App() {
 }
 ```
 
-Since our application does not authenticate any user, we need to generate a random username from the current timestamp using the `useRef` hook to create a reference to the DOM element. The socketRef will initiate a call to our backend web socket connection using the server URL. This creates an interface to start the stream of sending and receiving data. The `videoRef` hook maps to the DOM to allow the user to download the screen capture in video format. 
-The goal of WebSockets API is to create a full-duplex communication channel over a single TCP connection. To trigger an event, the `socket.emit` method will accept the event type as well as the data sent. At the end of the client connection, we process events by listening to the WebSockets using `socket.on` method. This method accepts the event type as an argument and the callback function to execute once the event is emitted. 
+Since our application does not authenticate any user, we need to generate a random username from the current timestamp using the `useRef` hook to create a reference to the DOM element.
+
+The socketRef will initiate a call to our backend web socket connection using the server URL. This creates an interface to start the stream of sending and receiving data. The `videoRef` hook maps to the DOM to allow the user to download the screen capture in video format.
+
+The goal of WebSockets API is to create a full-duplex communication channel over a single TCP connection. To trigger an event, the `socket.emit` method will accept the event type as well as the data sent.
+
+At the end of the client connection, we process events by listening to the WebSockets using `socket.on` method. This method accepts the event type as an argument and the callback function to execute once the event is emitted.
 
 Next, we need to capture the screen:
 
 ```js
-
   /**
-   *  First, the client needs to notify the server 
+   *  First, the client needs to notify the server
    *  when a new user has connected from the random username
   */
 
   useEffect(() => {
-    ;(async () => { 
+    ;(async () => {
       if (navigator.mediaDevices.getDisplayMedia) {
 
         try {
-        //  grant screen 
+        //  grant screen
           const screenStream = await navigator.mediaDevices.getDisplayMedia({
             video: true
           })
            // get the video stream
           setScreenStream(screenStream)
-        } 
+        }
         // exception handling
         catch (err) {
           setLoading(false)
-          console.log('getDisplayMedia', err)          
+          console.log('getDisplayMedia', err)
         }
 
       } else {
         setLoading(false)
-        console.log('getDisplayMedia is not supported...')  
+        console.log('getDisplayMedia is not supported...')
       }
 
     })()
   }, [])
 ```
 
-- Navigator is a browser window object. Under the `navigator.mediaDevices` object, we have access to all connected media inputs that include microphones, cameras, and screen sharing. In this case, we are capturing screen data capture as a live stream of the `screenStream`.
+Navigator is a browser window object. Under the `navigator.mediaDevices` object, we have access to all connected media inputs that include microphones, cameras, and screen sharing.
+
+In this case, we are capturing screen data capture as a live stream of the `screenStream`.
 
 >In Chrome and Microsoft Edge, the method `getDisplayMedia` can capture audio content.
 
@@ -196,7 +206,7 @@ To start receiving media stream from the user's device, create a `startRecording
       let mediaStream
       if (voiceStream === 'unavailable') {
         mediaStream = screenStream
-      } 
+      }
 
       // update media streams (... spread operator)
       else {
@@ -215,7 +225,7 @@ To start receiving media stream from the user's device, create a `startRecording
           data
         })
       }
-            
+
       mediaRecorder.onstop = stopRecording;
 
       // ..
@@ -226,11 +236,9 @@ To start receiving media stream from the user's device, create a `startRecording
 
 We are ready to write the screen without sound, so if any error occurs related to receiving an audio stream (including the user's refusal to grant permission to use the microphone), we set the voice stream to unavailable.
 
-Let us take a look at the markup:
+Let's take a look at the markup:
 
 ```js
-
-  // a function to 
 function stopRecording() {
     setRecording(false)
 
@@ -269,7 +277,6 @@ function stopRecording() {
 ```
 
 The JSX in the return statement includes:
-
 - `video` item to view item
 - A link to download video records
 - A button to start or stop recording
@@ -375,8 +382,8 @@ export const onConnection = (socket) => {
   socket.on('screenData:start', ({ data, username }) => {
     if (dataChunks[username]) {
       dataChunks[username].push(data)
-    } 
-    
+    }
+
     else {
       dataChunks[username] = [data]
     }
@@ -389,7 +396,7 @@ export const onConnection = (socket) => {
     }
   })
 
-  // event handler on disconnect 
+  // event handler on disconnect
   socket.on('disconnect', () => {
     const username = socketByUser[socket.id]
     if (dataChunks[username] && dataChunks[username].length) {
@@ -412,9 +419,12 @@ server.listen(5000, () => {
 ![demo 1](/engineering-education/js-screen-recorder/demo1.png)
 ![demo 2](/engineering-education/js-screen-recorder/demo2.png)
 
-Check source code on [GitHub repo](https://github.com/Qodestackr/screen-recorder-app).
+Check source code on [GitHub](https://github.com/Qodestackr/screen-recorder-app).
 
 ### Conclusion
-With the help of screen recording apps, we can save, copy, and reuse videos helpful to businesses or customers in a wide array of enterprise tasks. In this article, we have learned about screen recording software, what it is, how to build one using React and Node.js, and some of its benefits. Thanks for reading!
+With the help of screen recording apps, we can save, copy, and reuse videos helpful to businesses or customers in a wide array of enterprise tasks.
 
+In this article, we have learned about screen recording software, what it is, how to build one using React and Node.js, and some of its benefits. Thanks for reading!
+
+---
 Peer Review Contributions by: [Mercy Meave](/engineering-education/authors/mercy-meave/)
