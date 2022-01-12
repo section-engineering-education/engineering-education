@@ -39,7 +39,7 @@ It usually assigns value to the graph edge. In most cases, the weight is used to
 In either of the following three ways there is a possibility of storing a graph in memory:
 1. Nodes and vertices may be stored as objects, whereas edges can be stored as pointers.
 2. Adjacency matrices can be used and it should have equal rows and columns. A border appears when columns and rows overlap. A weighted edge is more essential than an unweighted edge, which is denoted by number `1`.
-3. An adjacency list between graph nodes and vertices can also be stored. Each node or vertex has an unique set of adjacency list neighbors.
+3. In addition to storing, an adjacency list between graph nodes and vertices may also be employed. A distinct set of adjacency list neighbors may be found for each node or vertex.
 
 ### Representing Graphs in Code
 Adjacency matrices and lists are approaches to generate graphs.
@@ -54,13 +54,13 @@ The array index list contains all vertices nearest to the index's vertex.
 
 ### Graph implementation in Java
 Java Collections, such as the Generic Class, can be used in place of a graph data structure because Java does not provide a default implementation of this data structure.
-The syntax for creating a Java generic class object:
+Below is the syntax to use in the case of generic object in java:
 
 ```Java
 BaseType <ParameterType> obj = new BaseType <ParameterType>();
 ```
 
->As the name implies, primitive types cannot be used as parameter types.
+>There is no way you can utilize primitive types as parameter types.
 
 #### Defining a vertex
 
@@ -73,7 +73,7 @@ class Apex {
 }
 ```
 
-There is need to override the `equals()` and `hashCode()` methods to cope with Java Collections.
+Coping with Java Collections implies overriding the `equals()` and `hashcode()` methods.
 
 #### Defining vertex using an adjacency list:
 
@@ -83,8 +83,8 @@ class Chart {
 }
 ```
 
-In this case, the adjacency list is defined by the class `Plot`, which is an instance of `Chart`.
-We may use the graph data structure to generate, update, and search the graph.
+In this case, the adjacency list is defined by the class `Plot`, which is an instance of `Chart`. Generating, updating and searching 
+In the graph we can generate, update, and search. These are some of the ways we can utilize the graph data structure in. 
 
 ### Common operations to implement in Java
 1. Vertices are being added and eliminated.
@@ -234,7 +234,7 @@ This is the Depth-first traversal of graph:
 ```
 
 #### Breadth-first traversal and its implementation
-To traverse a graph, Breadth-first traversal (BFS) is the most used method. Traversal starts by analyzing nodes near the source node, which is the current node's child.
+To traverse a graph, Breadth-first traversal (BFS) is the most used method. Analyzing of the nodes near the source node, which is the current node's child forms the start of the traversal.
 This means that you'll spend most of your time going horizontally and checking out all of your nodes in the current layer. Repeat on the layer that follows.
 
 - `BreadthFirstSearch.java`
