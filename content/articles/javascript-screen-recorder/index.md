@@ -108,6 +108,8 @@ function App() {
 
 If we start our server using the CLI command of `npm start`, then head over to our browser, we should see something like:
 
+![local server](/engineering-education/js-screen-recorder/img1.png)
+
 ### The App component
 In your `App.js` component, add the following code above your return statement.
 
