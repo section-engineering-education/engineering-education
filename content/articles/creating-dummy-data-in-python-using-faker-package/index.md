@@ -6,7 +6,7 @@ url: /creating-dummy-data-in-python-using-faker-package/
 title: Creating Dummy Data using Python Faker Package
 description: This tutorial will help the reader understand how to create various types of dummy data using Faker package. We will also learn how to build a fake dataset for training machine learning models.
 author: diana-peter
-date: 2022-01-06T00:00:00-20:00
+date: 2022-01-12T00:00:00-07:59
 topics: [Languages]
 excerpt_separator: <!--more-->
 images:
@@ -14,7 +14,7 @@ images:
   - url: /engineering-education/creating-dummy-data-in-python-using-faker-package/hero.jpg
     alt: Creating Dummy Data using Python Faker Package Hero Image
 ---
-It's critical to test and evaluate software and hardware with dummy data before working with actual data. Running the code through various scenarios and test cases allows the detection of possible bugs.
+It is critical to test and evaluate software and hardware with dummy data before working with actual data. Running the code through various scenarios and test cases allows the detection of possible bugs.
 <!--more-->
 Faked data can be easily generated with a Python library faker. In this tutorial, we will learn how dummy data is generated using the Python Faker library.
 
@@ -45,7 +45,7 @@ from faker import Faker
 ourFake = Faker()
 ```
 
-#### Create random text 
+#### Create random text
 We use `text()` method to create a paragraph with random text message:
 
 ```Python
@@ -69,7 +69,6 @@ ourFake.address()
 ```bash
 3722 Garza Port\nSmithshire, UT 28618
 ```
-
 
 ```python
 ourFake.name()
@@ -198,7 +197,7 @@ ourDataFrame = pan.DataFrame(ourProfile)
 print(ourDataFrame)
 ```
 
-![Profile data](/engineering-education/creating-dummy-data-in-python-using-faker-package/profile-data.PNG)
+![Profile data](/engineering-education/creating-dummy-data-in-python-using-faker-package/profile-data.png)
 
 Let's understand more about providers.
 
@@ -206,7 +205,7 @@ Assembling the items is made easier with the assistance of providers. Create an 
 
 The service provider is responsible for retrieving and injecting the underlying dependencies into the newly generated data.
 
-Providers include many valuable attributes, such as `names()` and `address()`. Many standard providers are basic, like the internet and a person, while others are community-created, like music.
+Providers include many valuable attributes, such as `names()` and `address()`. Many standard providers are basic, like the internet and a person, while others are community-created, like music.
 
 ### Other dummy data creation methods
 They are as follows:
@@ -239,7 +238,7 @@ Highly interconnected attributes that predict the value of each other are known 
 
 Dummy variable traps can be avoided if you have many characteristics that are highly connected (Multicollinear).
 
-Multicollinearity occurs when the correlations between two or more independent variables are incredibly high in a regression model.
+Multicollinearity occurs when the correlations between two or more independent variables are incredibly high in a regression model.
 
 ### Conclusion
 We were able to generate various types of dummy data using faker, a Python library. In the past, we learned how to create fictitious data like names, addresses, and currency data.
@@ -248,7 +247,7 @@ During our investigation of the providers, we discovered the possibility of crea
 
 We also learned how dummy datasets can be generated for training your machine learning models.
 
-You will save a lot of time and effort if you follow this information when testing your application.
+You will save a lot of time and effort if you follow this information when testing your application.
 
 Happy coding!
 
