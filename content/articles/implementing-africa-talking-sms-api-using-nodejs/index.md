@@ -108,9 +108,9 @@ import express,{Application,Request,Response} from 'express';
 
 Next, import *Client* from the *africastalking* package:
 
-    ```ts
-    import {Client}  from 'africastalking-ts';
-    ```
+```ts
+import {Client}  from 'africastalking-ts';
+```
 
 Then initialize a *Client* using your *apiKey* and *username*:
 
