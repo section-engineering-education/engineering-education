@@ -15,13 +15,13 @@ images:
     alt:  Recursive Feature Elimination Algorithm Hero Image
 ---
 
-Most of the time, the data we work with in machine learning is usually in high dimensions. As a result, models implemented on these data are victims of the Curse of dimensionality. 
+Most of the time, the data we work with in machine learning is usually in high dimensions. As a result, models implemented on these data are victims of the Curse of Dimensionality. 
 
-The Curse of dimensionality refers to all problems associated with high dimensional datasets. For example, when the dataset dimensionality is too high, it is possible to be highly detailed, and therefore, the information contained in some features is already captured in other features in the same dataset. As a result, features end up being highly correlated. 
+The Curse of Dimensionality refers to all problems associated with high dimensional datasets. For example, when the dataset dimensionality is too high, it is possible to be highly detailed, and therefore, the information contained in some features is already captured in other features in the same dataset. As a result, features end up being highly correlated. 
 
 We need to understand is that the dimensionality we are discussing refers to the number of features in the dataset and not the instances(rows).
 
-Although more information is good, when the data contain duplicated or highly detailed information, then the training speed of our machine learning model is slowed down. Also, high processing power is needed to accomplish the training process. 
+Although more information is good, when the data contain duplicated or highly detailed information, the training speed of our machine learning model is slowed down. Additionally, high processing power is needed to accomplish the training process. 
 
 Another problem associated with high dimensional datasets is that the model trained on them ends up overfitting and, therefore, lousy generalization of the data. From this discussion, it is evident that high-dimensional datasets are likely to yield a poor-performing model. Thus we need to take care of this problem.
 
@@ -38,11 +38,10 @@ For maximum benefit from this material, you need to be familiar with the followi
 - Python programming knowledge.
 - [Dataset](https://github.com/Madrinmarison/datasets/blob/main/Data.csv)
 
-
 ### Introduction to Recursive Feature Elimination
 Recursive Feature Elimination(RFE) is the Wrapper method, i.e., it can ta. This algorithm fits a model and determines how significant features explain the variation in the dataset. Once the feature importance has been determined, it then removes those less important features one at a time in each iteration. 
 
-These features are repeatedly eliminated until a certain threshold(optimal number of features needed) is met. First, let us understand how this algorithm works in sklearn.
+These features are repeatedly eliminated until a certain threshold(optimal number of features needed) is met. First, let us understand how this algorithm works in [sklearn](https://scikit-learn.org/stable/).
 
 At a high level, the RFE algorithm takes two parameters.
 1. `Estimator`: The RFC wraps any model adapted to fit the data and compute features significance in the dataset through this parameter. How features significance is computed depends on the model passed to the RFC class. For instance, if the model we give is a decision tree, the features' importance will be obtained by ranking all the features from the most important to the least important. 
@@ -72,7 +71,8 @@ import matplotlib.pyplot as plt
 
 ```
 
-The dataset we will use in this implementation can be downloaded from the link provided in the prerequisite section.
+The dataset we will use in this implementation can be downloaded from the link provided in the prerequisite section.'
+
 #### Read the dataset
 
 ```python
@@ -93,7 +93,7 @@ data.head()
 
 The `Attrition` column is our study variable from the data subset above. This column has two possible values, `Yes` and `No`. The `Yes` value means an employee will leave the company soon, and `No` means an employee will not leave the company soon. This data is thus intended to build a model that will predict which employee will leave the company and who will stay.
 
-However, since this dataset has many features, also known as explanatory variables, building a model with these features can be very expensive. Also, the model built on this dataset can be highly complex for the intended purpose. Furthermore, in the attempt to capture all the features, the model may be overfitting.
+However, since this dataset has many features; also known as explanatory variables; building a model with these features can be very expensive. The model built on this dataset can be highly complex for the intended purpose. Furthermore, in the attempt to capture all the features, the model may be overfitting.
 
 To ensure this problem does not occur, we need to analyze our features space and select a subset of features that explain at least 95% of the variance in the dataset. We will use the Recursive Feature Elimination technique to achieve this objective. However, the Recursive Feature Elimination is computationally expensive, and therefore, we need to preprocess our data as much as possible.
 
