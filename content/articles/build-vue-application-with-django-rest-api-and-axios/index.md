@@ -1,20 +1,20 @@
 ---
 layout: engineering-education
-status: draft
+status: publish
 published: true
 url: /build-vue-application-with-django-rest-api-and-axios/
 title: Building a Vue Application with Django REST API and Axios
 description: This tutorial aims to help the reader understand building Vue web applications that can consume and display data from APIs using the Axios library.
 author: atonya-dennis
-date: 2022-01-04T00:00:00-06:40
+date: 2022-01-12T00:00:00-06:40
 topics: [Languages]
 excerpt_separator: <!--more-->
 images:
   - url: /engineering-education/build-vue-application-with-django-rest-api-and-axios/hero.jpg
-    alt: Vue application builT with Djnago Image
+    alt: Vue application builT with Django Image
 ---
 
-It is common when developing applications to use APIs to consume and display data. This can be made possible using the Axios library to create Vue.js apps where Django, a python-based backend framework, is only used as an API using the Django rest framework package.
+It is common when developing applications to use APIs to consume and display data. This process can be made possible using the Axios library to create Vue.js apps where Django, a python-based backend framework, is only used as an API using the Django rest framework package.
 <!--more-->
 To help you grasp this concept, we will cover using Vue, Axios, and the Django REST APIs to consume and display data from APIs.
 
@@ -32,7 +32,7 @@ To help you grasp this concept, we will cover using Vue, Axios, and the Django R
 - [Conclusion](#conclusion)
 
 ### Prerequisites
-The reader should have  the following to follow along with this tutorial:
+The reader should have the following to follow along with this tutorial:
 - Fundamental understanding of the [Django REST framework](https://www.django-rest-framework.org/) and REST API.
 - Knowledge about [Vue.js](https://vuejs.org/) and the [Axios](https://www.axios.com/) library.
 - Know how to use [PyCharm](https://www.jetbrains.com/pycharm/download/#section=windows), [Visual Studio Code](https://code.visualstudio.com/download), or any other IDE for working with [Python Django](https://www.djangoproject.com/start/) and [Vue.js](https://vuejs.org/).
@@ -46,20 +46,19 @@ This process is made possible by including the Vue.js scripts directly into the 
 To implement this, we will create a simple Vue Todo Application together with the Django REST API and Axios.
 
 ### Setting up Django and Vue
-We start by setting up the Django and Vue.js in our machines and the Axios library.
-Use the command below to check if Django is installed:
+We have to set up Django, Vue.js, and the Axios library in the development machine to get started. Use the command below to check if Django is installed:
 
 ```bash
-pip show django
+pip show Django
 ```
 
 If not, install it using the following command:
 
 ```bash
-pip install django
+pip install Django
 ```
 
-Since we use the Django REST API and Axios, we need to install both the Django rest framework package to handle API requests and the Django-cors-headers to allow requests done via Ajax.
+Since we will use the Django REST API and Axios, we need to install both the `Django rest framework` package to handle API requests and the `Django-cors-headers` to allow requests done via Ajax.
 
 ```bash
 pip install djangorestframework
@@ -70,20 +69,20 @@ For the Vue.js and Axios library, we use the commands below:
 
 ```bash
 sudo npm install -g @vue/cli //for vue.js
-npm install axios
+npm install Axios
 ```
 
 ### Creating the Django application 
 After setting up Django, let us create our Todo application and all the required models.
 
 #### Django TodoApp project
-We first create the Django project and activate all the environments.
+We begin by creating the Django project and activating the virtual environment.
 
 ```bash
 django-admin.py startproject TodoApp
 ```
 
-To create and activate the environments:
+To create and activate the virtual environments:
 
 ```bash
 virtualenv -p env
@@ -92,23 +91,24 @@ source bin/activate
 
 Inside the TodoApp folder, add the installed Django rest_framework and cors headers inside the `settings.py` file under the INSTALLED_APPS section.
 
-Run the application after making all the migrations using the commands below, and the output produced should be as shown.
+Next, run the application after making all the migrations using the commands below, and the output produced should be as shown.
 
 ```python
 python manage.py runserver
 ```
 
 ![Django Output](/engineering-education/build-vue-application-with-django-rest-api-and-axios/output.jpg)
->NOTE: In order to tell the Django project that connections are accepted, ensure to add the line `CORS_ORIGIN_ALLOW_ALL = True` inside the `settings.py` file.
+
+>NOTE: To tell the Django project that connections are accepted, ensure to add the line `CORS_ORIGIN_ALLOW_ALL = True` inside the `settings.py` file.
 
 #### Django TodoApp Models 
-Since we need only one application in our project, we create the Todo Application inside the `TodoApp` folder using the command shown and then add the name of the application inside the `settings.py` file under the INSTALLED_APPS section:
+We  need to create the Todo Application inside the `TodoApp` folder using the command shown and then add the name of the application inside the `settings.py` file under the INSTALLED_APPS section:
 
 ```python
 python manage.py startapp todo
 ```
 
-We then create the superuser and the database models required with the help of the codes below:
+Next, we need to create the superuser and the database models required with the help of the command below:
 
 ```python
 python manage.py createsuperuser #set the username, email, and password
@@ -132,7 +132,7 @@ class WorkTodo(models.Model):
                               default=WORKTODO)  
 ```
 
-Since we use the rest_framework, we need to create another file under the todo application folder called `serializers.py`  and add the code below. This file is relatively similar to the Form and ModelForm classes in Django. It provides a convenient shortcut for creating serializers that deal with model instances and querysets, as well as a general approach to managing the output of your responses. With the serializers, the data is then transformed into a format that can be stored or transmitted.
+Since we use the rest_framework, we need to create another file under the todo application folder called `serializers.py`. This file is relatively similar to the Form and ModelForm classes in Django. It provides a convenient shortcut for creating serializers that deal with model instances and querysets, as well as a general approach to managing the output of your responses. With the serializers, the data is then transformed into a format that can be stored or transmitted.
 
 ```python
 from rest_framework import serializers
@@ -144,7 +144,7 @@ class WorkSerializer(serializers.HyperlinkedModelSerializer):
         fields = ('id', 'work_description', 'work_status')
 ```
 
-To return the tasks of the todo application, we add the code to the `views.py`
+To return the tasks of the todo application, we add the code to the `views.py` file.
 
 ```python
 from django.shortcuts import render
@@ -163,7 +163,7 @@ class WorkViewSet(viewsets.ModelViewSet):
     serializer_class = WorkSerializer 
 ```
 
-Run all the database migrations and open the python shell using the commands below. Type a few of the tasks and their descriptions inside the shell then close it.
+Run all the database migrations, then open the python shell and execute the commands below.
 
 ```python
 python manage.py shell 
@@ -180,7 +180,7 @@ python manage.py shell
 For the api to be viewed by the Vue application, add the code below inside the `TodoApp/urls.py` file.
 
 ```python
-from django.contrib import admin
+from Django.contrib import admin
 from Django.URLs import path, include
 
 from rest_framework import routers 
@@ -217,12 +217,10 @@ cd TodoApp
 npm run serve
 ```
 
-Once the project runs successfully, the output below is displayed in the browser.
-
 ![Vue Output](/engineering-education/build-vue-application-with-django-rest-api-and-axios/vue-output.jpg)
 
 ### Getting and displaying application data 
-Once the Vue.js app is created, we then communicate with the backend using the `Axios` library and display the tasks by inserting the code below inside the `HelloWorld.vue` file under the `src` folder.
+Once the Vue.js app is created, we need the application to communicate with the backend using the `Axios` library and display the tasks. Add the code snippets below in the `HelloWorld.vue` file under the `src` folder.
 
 ```html
 <template>
@@ -330,15 +328,12 @@ export default {
 </script>
 ```
 
-Rerunning the project, you should see two tasks to the left(work to do) and one to the right, which is done. The complete code can be found [here](https://github.com/dentonya/Todo-Application-using-Vue.js-Django-REST-API-and-Axios/tree/master/vue.js/todoapp).
+Rerunning the project, you should see two sets of tasks. The ones to be done appear on the left while the ponce that is already done should appear on the right. The complete code for this application can be found [here](https://github.com/dentonya/Todo-Application-using-Vue.js-Django-REST-API-and-Axios/tree/master/vue.js/todoapp).
 
 ### Conclusion
-As seen from the above tutorial, we can use the Axios library to fetch and display data when building Vue.js applications where the Django framework is used purely as an API.
+As seen from the above tutorial, we can use the Axios library to fetch and display data when building Vue.js applications where the Django framework is used purely as a backend API.
 
-To summarize, this tutorial enables us to:
-- Learn how to combine Django and Vue.js
-- Explore the Django REST API and how we can use Axios to communicate with the Django backend.
-- Build a Todo Vue.js application showing how to fetch and display data from Django  REST APIs.
+We learned how to combine Django and Vue.js, explored Django REST API and used it with Axios, and finally, built a TODO application using the libraries to demonstrate how to fetch data from Django REST API and display it in a Vue application.
 
 You can find more on this [site](https://codewithstein.com/combining-django-and-vuejs-everything-you-need-to-know/).
 
