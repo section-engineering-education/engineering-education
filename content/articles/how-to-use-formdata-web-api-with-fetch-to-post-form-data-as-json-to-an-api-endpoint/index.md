@@ -313,7 +313,6 @@ npm install --save-dev nodemon
 const express = require("express");
 const app = express();
 var cors = require("cors");
-
 //cors to allow cross origin resource sharing
 app.use(cors());
 //Middleware to parse the body of the request as JSON
