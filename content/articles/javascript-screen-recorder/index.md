@@ -6,11 +6,11 @@ url: /javascript-screen-recorder/
 title: Building a Screen Recorder application with Javascript
 description: This article guides us on implementing this functionality in a web browser using React and Node.js
 author: wilson-gichuhi
-date: 2022-01-12T00:00:00-11:00
+date: 2022-01-12T00:00:00-11:45
 topics: [Languages]
 excerpt_separator: <!--more-->
 images:
-  - url: /engineering-education/javascript-screen-recorder/hero.jpeg
+  - url: /engineering-education/javascript-screen-recorder/hero.jpg
     alt:  Building a Screen Recorder application with Javascript Image
 ---
 
@@ -108,7 +108,7 @@ function App() {
 
 If we start our server using the CLI command of `npm start`, then head over to our browser, we should see something like:
 
-![local server](/engineering-education/js-screen-recorder/img1.png)
+![local server](/engineering-education/javascript-screen-recorder/img1.png)
 
 ### The App component
 In your `App.js` component, add the following code above your return statement.
@@ -418,8 +418,8 @@ server.listen(5000, () => {
 ```
 
 ### A running demo
-![demo 1](/engineering-education/js-screen-recorder/demo1.png)
-![demo 2](/engineering-education/js-screen-recorder/demo2.png)
+![demo 1](/engineering-education/javascript-screen-recorder/demo1.png)
+![demo 2](/engineering-education/javascript-screen-recorder/demo2.png)
 
 Check source code on [GitHub](https://github.com/Qodestackr/screen-recorder-app).
 
