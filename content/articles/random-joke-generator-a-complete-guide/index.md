@@ -1,3 +1,19 @@
+---
+layout: engineering-education
+status: publish
+published: true
+url: /random-joke-generator-a-complete-guide/
+title: Random Joke Generator in Javascript: A Complete Guide
+description: In this tutorial, we will create a random joke generator using Javascript.
+author: esther-maina
+date: 2022-01-12T00:00:00-06:10
+topics: [Languages]
+excerpt_separator: <!--more-->
+images:
+
+  - url: /engineering-education/random-joke-generator-a-complete-guide/hero.jpg
+    alt: Random Joke Generator in Javascript: A Complete Guide Hero Image
+---
 ### Introduction
 
 API links allow you to acquire content from other websites and display it wherever you like. In this tutorial, you will learn how to create a javaScript joke generator using API links which is an excellent project for novice developers who may want to rapidly make plenty of humorous jokes.
