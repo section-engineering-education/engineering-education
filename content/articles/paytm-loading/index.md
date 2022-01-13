@@ -1,5 +1,24 @@
+---
+layout: engineering-education
+status: publish
+published: true
+url: /paytm-loading/
+title: Building a Paytm loading effect from scratch
+description: This article takes the reader through the benefits of a custom preloader and how to use  various CSS properties to build a custom Paytm loading animation from scratch.
+author: phina-kersly
+date: 2022-13-01T00:00:00-02:00
+topics: [Languages]
+excerpt_separator: <!--more-->
+images:
+
+  - url: /engineering-education/paytm-loading/hero.png
+    alt: Paytm Loading Image Example
+---
+
 ### Introduction
-A good user interface is composed of several parameters. One of the parameters is an appealing loading effect. Loading effects are crucial in both mobile and web applications. The benefit may not be seen when the internet speed is good and the web content is light; however, in a case where web pages are heavy in content the advantage may be apparent and brings the most benefit to the user interface. 
+A good user interface is composed of several parameters. One of the parameters is an appealing loading effect. Loading effects are crucial in both mobile and web applications. 
+<!--more-->
+The benefit may not be seen when the internet speed is good and the web content is light; however, in a case where web pages are heavy in content the advantage may be apparent and brings the most benefit to the user interface. 
 
 ### Table of content
 This article requires the reader to have an understanding of the following tools and languages:
