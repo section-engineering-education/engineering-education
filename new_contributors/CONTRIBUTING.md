@@ -43,7 +43,7 @@ Once your topic has been approved and you have a final draft of your article rea
 ## Submitting your article
 Only submit or create a PR (pull request) when your draft is completely polished and publish ready, (that is, the article could be published as is - take in mind this is an opportunity to create a presense in the larger developer community and your work may be seen by future potential employers). 
 
-Once again you can follow these [step-by-step instructions](https://github.com/section-io/engineering-education/blob/master/UPLOAD_INSTRUCTIONS.md) once your article is ready to be published.
+Once again you can follow these [step-by-step instructions](https://github.com/section-engineering-education/engineering-education/blob/master/new_contributors/UPLOAD_INSTRUCTIONS.md) once your article is ready to be published.
 
 The instructions walk through how to submit a PR in GitHub with  your fully prepared article.
 
