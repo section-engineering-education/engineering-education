@@ -47,7 +47,7 @@ For laying out the structure of the lyrics search app, you will use HTML5. This 
 - Moving forward, you will create another `div` with a class of `intro-text` with two other separate headers `h1` and `h2` tags, respectively.
 - The content of the first text is `Learn your favorite`, it will be embedded in the `h1` tag, while the content of the second text is `song lyrics`, it will be embedded in the `h2` tag.
 
-Inside the `div` with a class of `container`, you will create a `div` with `id` of `lyrics-search` where we create a form containing an input field, and also another `div` to display fetched lyrics. 
+Inside the `div` with a class of `container`, you will create a `div` with an `id` of `lyrics-search` where we create a form containing an input field, and also another `div` to display fetched lyrics. 
 
 This is the code snippet for the structure of the web app:
 
@@ -349,7 +349,7 @@ output.addEventListener('click', e=>{
 - The code above helps to know if the clicked element is the span tag (if the variable `clickedElement` contains `span` as `tagName`).
 - If so, the statement in the `if` block is executed because the span tag bears the tagname `SPAN`. You will store the attribute `data-songtitle` in variable `songTiltle` as well as the attribute `data-artist` for song artist in variable `artist`, which the `getLyrics()` function takes in the two variables as parameters.
 
-Note, arguments are the actual values passed to a function, while parameters are the values passed when a function is defined. Arguments are values passed when a function is invoked. That's why we referred the two variables passed into the `getLyrics()` function as parameters and not arguments.
+Note, arguments are the actual values passed to a function, while parameters are the values passed when a function is defined. Arguments are values passed when a function is invoked. That's why we referred to the two variables passed into the `getLyrics()` function as parameters and not arguments.
 
 ### GetLyrics() async function
 This is the most important function because this is what makes us get the lyrics themselves displayed.
