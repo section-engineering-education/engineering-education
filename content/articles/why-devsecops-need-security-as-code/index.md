@@ -3,7 +3,7 @@ layout: engineering-education
 status: publish
 published: true
 url: /why-devsecops-need-security-as-code/
-title: Why DevSecOps Need Security as Code
+title: Why DevSecOps Needs Security as Code
 description: This article will discuss DevSecOps, continuous delivery, and security as code as a solution to risks in development and runtime.
 author: nelly-atieno
 date: 2022-01-13T00:00:00-16:00
@@ -19,13 +19,13 @@ The introduction of DevOps made software development faster and simpler. Many fi
 
 DevSecOps utilizes security as code to bypass the security issues noted in DevOps. Security as code ensures that development teams define security at the start of the project. A software then undergoes repeated codification for consistent use.
 
-This article discusses DevSecOps, security as code and continuous delivery, which is a foundation for security as code. It also discusses security as code as a solution to risks in development and runtime.
+This article discusses DevSecOps, security as code, and continuous delivery, which is a foundation for security as code. It also discusses security as code as a solution to risks in development and runtime.
 
 ### What is security as code
 
 Security as code constitutes a toolset of resources that codify security and policy decisions in a DevOps setup. The aim of Security as Code is to protect the software development lifecycle. Since DevOps is [popular](https://www.bmc.com/blogs/security-as-code/) with many organizations, introducing security as code is crucial.
 
-During the implementation of security as code, several scans and testing ensure that the continuous integration/continuous delivery pipeline stays protected from security bugs and other vulnerabilities. Security as code represents the next direction of DevOps in a time when businesses prioritize data safety. security as code couples application development with security management. It thus allows developers to focus on core features and software functionality.
+During the implementation of security as code, several scans and testing ensure that the continuous integration/continuous delivery pipeline stays protected from security bugs and other vulnerabilities. Security as code represents the next direction of DevOps in a time when businesses prioritize data safety. Security as code couples application development with security management. It thus allows developers to focus on core features and software functionality.
 
 ### What is DevSecOps
 
@@ -59,6 +59,9 @@ Besides, security as code minimizes the risks of making errors during software a
 
 ### Conclusion
 
-In the world today, cyber-security has become very crucial for every firm. Digitalization has made the need to protect data necessary for organizations to prevent unauthorized access. With the acceleration of the software and application development cycles under DevOps, integrating security as code to create DevSecOps became paramount. Security as code provides a viable option for organizations to instil security measures to safeguard their software development cycles.
+In the world today, cyber-security has become very crucial for every firm. Digitalization has made the need to protect data necessary for organizations to prevent unauthorized access. With the acceleration of the software and application development cycles under DevOps, integrating security as code to create DevSecOps became paramount. Security as code provides a viable option for organizations to instill security measures to safeguard their software development cycles.
 
 Security as code has been integrated into DevSecOps to improve proactive security. It has transformed DevSecOps to introduce more secure processes that bar cybercriminals from infiltrating company apps and software. Throughout the development cycle, security as code allows for regular reviewing of input code. It identifies errors in code for correction. It can also stop the building process upon detecting malware attacks. So, security as code in DevSecOPs has made securing apps and software faster, simpler, and more effective.
+
+---
+Peer Review Contributions by: [Collins Ayuya](https://www.section.io/engineering-education/authors/collins-ayuya/)
