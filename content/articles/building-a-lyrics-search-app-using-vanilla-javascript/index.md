@@ -200,12 +200,12 @@ You can read more about the OVH API [here](https://api.lyrics.ovh/v1/artist/titl
 
 An example of the URL in action looks like this: `https://api.lyrics.ovh/v1/Drake/Toosie Slide`.
 
-In the example above, `Drake` stands as the artist, and `Toosie Slide` is the title of the song, so we basically slot them into the URL, where `Drake` replaces the artist and `Toosie` Slide replaces the title.
+In the example above, `Drake` stands as the artist's name, and `Toosie Slide` represents the title of the song. `Drake` replaces the artist and `Toosie` Slide replaces the title.
 
 ### Adding functionality with JavaScript
 In your `lyrics.js` file, declare variables and use the DOM selectors to connect with elements in the `lyrics.html` file, using the code snippet below:
 
-```javascript
+```Javascript
 //you comment in js using double slash, with vscode just highlight what you want to comment and then press "ctrl + /"
 //defining variables
 const form = document.getElementById("searchMe");//target the form tag in the html file
@@ -241,8 +241,8 @@ form.addEventListener("submit", e => {
 })
 ```
 
-- In the code above, you listened for a submit event after which you declared a variable `searchValue` to be equal to `search.value.trim()`, the `trim()` method simply trims whitespaces.
-- The `if` statement validates if `searchValue` equals an empty string to alert "Nothing to search", otherwise invokes the `startSearch()` function taking the `searchValue` as the argument.
+- In the code above, you listened for a submit event after which you declared a variable `searchValue` to be equal to `search.value.trim()`. The `trim()` method simply trims whitespaces.
+- The `if` statement validates if `searchValue` equals an empty string to alert "Nothing to search", otherwise invokes the `startSearch()` function taking the `searchValue` as an argument.
 
 It is highly recommended to go through the [OVH API documentation](https://api.lyrics.ovh) before proceeding further.
 
@@ -262,7 +262,7 @@ async function startSearch(searchValue) {
 ```
 
 ### Testing the current state Of the Web app
-At this point, you are going to test if the web app is actually returning the object of data from the OVH API when you input the title of a song or the name of an artist in the search field.
+At this point, you are going to test if the web app is actually returning the object of data from the OVH API when you input the title of a song or artist's name in the search field.
 
 The following are the tasks to carry out in this section:
 - Comment out the `showData` function in the code snippet above (remember to uncomment the showData function).
@@ -274,7 +274,7 @@ Your screen should be like the screenshot below:
 
 ![Screenshot for consoled data](/engineering-education/building-lyrics-search-app-using-vanilla-javascript/console-screenshot.png)
 
-In the screenshot above, the lyrics we searched for have a song title of `cast`. If you wish to get the exact data that is displayed in the screenshot above, you can simply search for the lyrics with the song title of `cast`.
+In the screenshot above, the lyrics I searched for has a song title of `cast`. If you wish to get the exact data that is displayed in the screenshot above, you can simply search for the lyrics with the song title of `cast`.
 
 The next thing to do is to create a function `showData()` that displays the data in the console (the screenshot above) on the webpage. The function `showData()` is being called from the async function `startSearch()`.
 
@@ -301,7 +301,7 @@ function showData(data) {
 
 - In the code snippet above, a `showData()` function is created and data is passed as an argument.
 - The name of the function is very descriptive, it is to display the lyrics on the webpage. The question that comes to mind is where you want to display the lyrics.
-- The lyrics will be displayed inside an empty `div` in the `lyrics.html` file, the variable that connects the `div` to the JavaScript file is the variable output.
+- The lyrics will be displayed inside an empty `div` in the `lyrics.html` file. The variable that connects the `div` to the JavaScript file is the variable output.
 
 ### Inner - HTML
 This is the DOM property that either sets or retrieves the content of an HTML element. In this instance, you will set the content of the empty `div` in the `lyrics.html` file to display the lyrics' suggestions in a list form.
@@ -325,9 +325,9 @@ function tripleNum(number) {
 console.log(tripleNo);//[6,12,18,24] this should be displayed in your console.
 ```
 
-Normally, to access the song title and song artist name, you would have invoked `data.data.title` for song title and `data.data.artist.name` for the song artist name. If you recall, the argument - song represents the resulting data. 
+Normally, to access the song title and artist's name, you would have invoked `data.data.title` for the song title and `data.data.artist.name` for the artist's name. If you recall, the argument - song represents the resulting data. 
 
-Since the data has been mapped, you can access the song title using `song.title` as well as the song artist name by using `song.artist.name`.
+Since the data has been mapped, you can access the song title using `song.title` as well as the artist's name by using `song.artist.name`.
 
 The following code helps us listen for a click event inside the output InnerHTML:
 
@@ -347,14 +347,14 @@ output.addEventListener('click', e=>{
 ```
 
 - The code above helps to know if the clicked element is the span tag (i.e if the variable `clickedElement` contains `span` as `tagName`).
-- If so, the statement in the `if` block is executed because the span tag bears the tagname `SPAN`. You will store the attribute `data-songtitle` in variable `songTiltle` as well as the attribute `data-artist` for song artist in variable `artist`, which the `getLyrics()` function takes in the two variables as parameters.
+- If so, the statement in the `if` block is executed because the span tag bears the tagname `SPAN`. You will store the attribute `data-songtitle` in the variable `songTiltle` as well as the attribute `data-artist` for song artist in the variable `artist`, which the `getLyrics()` function takes in the two variables as parameters.
 
 Note, arguments are the actual values passed to a function, while parameters are the values passed when a function is defined. Arguments are values passed when a function is invoked. That's why we referred to the two variables passed into the `getLyrics()` function as parameters and not arguments.
 
 ### GetLyrics() async function
 This is the most important function because this is what makes us get the lyrics themselves displayed.
 
-The function takes in two parameters, `artist` and `songTitle` respectively. Recall that you can search for lyrics by inputting either the song artist name or the song title. This is the reason why the `getLyrics()` function is taking those parameters.
+The function takes in two parameters, `artist` and `songTitle` respectively. Recall that you can search for lyrics by inputting either the artist's name or the song title. This is the reason why the `getLyrics()` function is taking those parameters.
 
 Below is the code for `getLyrics()` async function:
 
@@ -392,7 +392,7 @@ If any of the instances defined above is found, REGEX `replace` method replaces 
 
 The `/g` is a regular expression flag, it means globally. The entire data (lyrics) should be searched through (for all matches).
 
-The content of the variable output displays song titles in bolder form compared to the artist name because of the strong tag.
+The content of the variable output displays song titles in bolder form compared to the artist's name because of the strong tag.
 
 Finally, the lyrics are displayed in the paragraph tag when the span tag is clicked.
 
