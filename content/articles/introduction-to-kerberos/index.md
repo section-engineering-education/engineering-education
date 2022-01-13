@@ -5,7 +5,7 @@ published: true
 url: /introduction-to-kerberos/
 title: Getting Started With Kerberos
 description: This article will discuss how Kerberos authentication protocol helps in promoting secure communication between the client and server.
-author: francis-ndiritu
+author: kanishkvardhan-a-n
 date: 2021-10-25T00:00:00-10:40
 topics: [Networking]
 excerpt_separator: <!--more-->
