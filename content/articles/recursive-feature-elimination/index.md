@@ -5,7 +5,7 @@ published: true
 url: /recursive-feature-elimination/
 title: Getting started with Recursive Feature Elimination algorithm in Machine Learning
 description: This tutorial aims to help the reader get started with the Recursive Feature Elimination algorithm and implement it in Python.
-author: daniel-mwanthis
+author: daniel-mwanthi
 date: 2022-01-13T00:00:00-01:36
 topics: [Machine Learning]
 excerpt_separator: <!--more-->
