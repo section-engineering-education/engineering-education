@@ -1,10 +1,25 @@
-Why DevSecOps Need Security as Code
+---
+layout: engineering-education
+status: publish
+published: true
+url: /why-devsecops-need-security-as-code/
+title: Why DevSecOps Need Security as Code
+description: This article will discuss DevSecOps, continuous delivery, and security as code as a solution to risks in development and runtime.
+author: nelly-atieno
+date: 2022-01-13T00:00:00-16:00
+topics: [Security]
+excerpt_separator: <!--more-->
+images:
+
+  - url: /engineering-education/why-devsecops-need-security-as-code/hero.jpg
+    alt: Devsecops Example Image
+---
 
 The introduction of DevOps made software development faster and simpler. Many firms found this product beneficial because it smoothened developing applications for the development teams. But DevOps had a challenge related to security implementation. DevSecOps was introduced to solve this problem.
 
 DevSecOps utilizes security as code to bypass the security issues noted in DevOps. Security as code ensures that development teams define security at the start of the project. A software then undergoes repeated codification for consistent use.
 
-This article discusses DevSecOps, security as a code and continuous delivery, which is a foundation for security as a code. It also discusses security as a code as a solution to risks in development and runtime.
+This article discusses DevSecOps, security as code and continuous delivery, which is a foundation for security as code. It also discusses security as code as a solution to risks in development and runtime.
 
 ### What is security as code
 
