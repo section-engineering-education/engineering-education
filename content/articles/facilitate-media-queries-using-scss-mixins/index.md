@@ -9,7 +9,7 @@ In web development, it is essential to build sites and applications that are use
 - [Key-takeaways](#key-takeaways)
 - [CSS Media Queries](#css-media-queries)
 - [CSS Preprocessor scripting language (SCSS)](css-preprocessor-scripting-language-(SCSS))
-- [Setting up the SCSS Mixins](setting-up-the-sccs-mixins)
+- [Creating the SCSS File](creating-the-sccs-file)
 - [Media Queries Using SCSS Mixins](media-queries-using-scss-mixins)
 - [Conclusion](#conclusion)
 - [Further reading](#further-reading)
@@ -34,20 +34,21 @@ With the aid of the CSS preprocessor, particularly SCSS, one can build tidier an
 
 ### Step 1
 **CSS Preprocessor scripting language (SCSS)**
-CSS Preprocessors are tools with extended functionalities that take written codes and compile them into traditional CSS that a browser can read and work with. SAAS (or SCSS), LESS, and Stylus are the most popular CSS preprocessors, but for this article, our focus would be on SCSS.
+
+CSS Preprocessors are tools with extended functionalities that take written codes and compile them into traditional CSS that a browser can read and work with. Generally, Leaner Style Sheets (LESS), Syntactically Awesome Stylesheets (SAAS)/Sassy CSS (SCSS), and Stylesheet Language (Stylus) are the most prominent CSS preprocessors among developers. In this article, we would be making use of SCSS.
  
-To avoid any confusion, let me clarify that SASS and SCSS are of the same origin, but the differences lie in their syntaxes and that SCSS is more flexible than SASS and provides more programming power. Sass is an acronym for Syntactically Awesome Stylesheets while SCSS stands for Sassy CSS. No worries, SCSS is a superset of CSS, which guarantees that the CSS code works perfectly in SCSS and the features of SASS are still fully contained in it. 
+SASS and SCSS should not be confused with each other, despite the similarity in their fundamental structure and their functionality as it concerns CSS. SCSS is a higher version of SASS, with greater programming features and flexibility when handling CSS codes. Thankfully, their distinctions can be seen easily in their different syntaxes and file extensions.
  
-To take advantage of a CSS preprocessor, one needs to install the CSS compiler on the web server. So, you would need to install sass if you don’t already have it installed on your system.
- 
-The most straightforward approach is to install Sass on Windows, Mac, or Linux by downloading the operating system package from [GitHub](https://github.com/sass/dart-sass/releases/tag/1.43.5) and adding it to your PATH. The path here refers to the listed directories where the OS looks for programs. 
-That’s all. If you need more assistance on sass installation, you can visit the official [sass website](https://sass-lang.com)
- 
+To take advantage of a CSS preprocessor, one needs to install the CSS compiler on the web server. There are various means of doing this, but an easy method is to locate the appropriate SASS package for your operating system on this [GitHub page](https://github.com/sass/dart-sass/releases/tag/1.43.5) and download it. Then you can simply install it and add the directory to your PATH. The path here refers to the listed directories where the OS looks for programs. That’s all. 
+
+For further instructions or directions on the installation process, the official [sass website](https://sasslang.com) is always available.
+
 ### STEP 2
-**Setting up the SCSS Mixins**
+**Creating the SCSS File**
+
 SCSS mixins give the ability to produce reusable blocks of codes which aids to avoid repetition, creating cleaner codes and enabling easy maintainability. There is no need to lay out the individual rules with tons of breakpoints which can be time-consuming and break up your code. Plus, you can avoid going through the frustration of searching through the CSS files for specific elements. Hence, it makes sense to use SCSS, particularly its mixins, to handle the media queries.
  
- At this point, It is assumed that you have a sass compiler on your system and are ready to go. To use the mixins, you need to create a file titled "style.scss" and then place it in the root folder for your project. Then execute this code: ```sass --watch style.scss:style.css``` on the command prompt for the compiler to read the scss file. This action automatically creates a new CSS file named style.css in the folder.
+At this point, It is assumed that you have a sass compiler on your system and are ready to go. To use the mixins, you need to create a file titled "style.scss" and then place it in the root folder for your project. Then execute this code: ```sass --watch style.scss:style.css``` on the command prompt for the compiler to read the scss file. This action automatically creates a new CSS file named style.css in the folder.
  
 Now mixins help you manage your media query by defining it in one location. So you can apply it as needed, and then sass enables you to compile it to the corresponding CSS codes.
 Let’s open our style.scss file and input the necessary codes to set up the mixins:
@@ -75,8 +76,10 @@ Let’s open our style.scss file and input the necessary codes to set up the mix
 ```
  
 The above block of codes shows how mixins are mapped out and associated with names.
+
 ### STEP 3
 **Media Queries Using SCSS Mixins**
+
 As you can see in the snippet below, the styling can be affected by simply calling up the mixins. From what has been defined, the color changes appropriately for tablet and mobile screen sizes.
 ```SCSS
 // HANDLING THE RESPONSIVENESS
@@ -138,6 +141,7 @@ I hope you found this article helpful in building responsive websites quickly an
 - [How to write CSS Media Queries](https://www.educative.io/edpresso/how-to-write-css-media-queries-using-sass-mixins)
 - [Creating better Queries with SASS](https://medium.com/nerd-for-tech/use-sass-to-create-better-media-queries-f5f149dc618c)
 - [Learn CSS Media Queries](https://www.freecodecamp.org/news/learn-css-media-queries-by-building-projects/)
+
 
 
 
