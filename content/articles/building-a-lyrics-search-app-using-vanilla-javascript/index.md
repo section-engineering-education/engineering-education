@@ -14,7 +14,7 @@ images:
   - url: /engineering-education/building-a-lyrics-search-app-using-vanilla-javascript/hero.png
     alt: Building a Lyrics Search App Using Vanilla JavaScript With OVH API Hero Image
 ---
-Not knowing the lyrics of a song, is a problem most song-lovers encounter. In this article, you will be creating a platform where users can search for lyrics by entering the artist's name or the title of the song.
+Not knowing the lyrics of a song is a problem most song-lovers encounter. In this article, you will be creating a platform where users can search for lyrics by entering the artist's name or the title of the song.
 <!--more-->
 You will be creating a web application using HTML5, CSS3, Vanilla JavaScript, async-await with fetch method, OVH API, and ECMAScript 2015 (ES6) features like arrow functions to build a search feature for lyrics. 
 
@@ -44,8 +44,8 @@ For laying out the structure of the lyrics search app, you will use HTML5. This 
 - In the `head` tag of the HTML file, you will input the needed or pre-defined meta tags that are essential for all web apps.
 - Also, you would link the CSS file to the HTML file and also give the web app a title of `Lyrics Search App` embedded within `title` tags.
 - Next, you would create a `div` with a class of `container`. This is the `div` that would house other `div`s which you will create.
-- Moving forward, you will create another `div` with a class of `intro-text` with two other separate headers `h1` and `h2` tag respectively.
-- The content of the first text is `Learn your favourite`, it will be embedded in the `h1` tag, while the content of the second text is `song lyrics`, it will be embedded in the `h2` tag.
+- Moving forward, you will create another `div` with a class of `intro-text` with two other separate headers `h1` and `h2` tags, respectively.
+- The content of the first text is `Learn your favorite`, it will be embedded in the `h1` tag, while the content of the second text is `song lyrics`, it will be embedded in the `h2` tag.
 
 Inside the `div` with a class of `container`, you will create a `div` with `id` of `lyrics-search` where we create a form containing an input field, and also another `div` to display fetched lyrics. 
 
@@ -110,9 +110,8 @@ body {
 }
 ```
 
-Now, you are going to style the contents in the `body` tag, starting from the text that defines what the web app does, to the placeholder and then the input field.
-
-```css
+Now, you are going to style the contents in the `body` tag, starting from the text that defines what the web app does, to the placeholder, and then the input field.
+does```css
 /**This is how placeholders are styled**/
 ::placeholder {
     color:gold;
@@ -187,7 +186,7 @@ Here is what your web page should look like:
 ![Screenshot for design](/engineering-education/building-lyrics-search-app-using-vanilla-javascript/design-screenshot.png)
 
 ### A brief introduction to OVH API
-The OVH lyrics API is a simple API that helps us retrieve the lyrics of the song requested. While trying to fetch lyrics from this API, we use two parameters to fetch data (lyrics), which are the artist name and title of the song.
+The OVH lyrics API is a simple API that helps us retrieve the lyrics of the song requested. While trying to fetch lyrics from this API, we use two parameters to fetch data (lyrics), which are the artist's name and title of the song.
 
 This basically means you can retrieve lyrics by using either the artist's name or the title of the song. When a request is made, the data is returned in JSON format.
 
@@ -201,7 +200,7 @@ You can read more about the OVH API [here](https://api.lyrics.ovh/v1/artist/titl
 
 An example of the URL in action looks like this: `https://api.lyrics.ovh/v1/Drake/Toosie Slide`.
 
-In the example above, `Drake` stands as the artist and `Toosie Slide` is the title of the song, so we basically slot them into the URL, where `Drake` replaces the artist and `Toosie` Slide replaces the title.
+In the example above, `Drake` stands as the artist, and `Toosie Slide` is the title of the song, so we basically slot them into the URL, where `Drake` replaces the artist and `Toosie` Slide replaces the title.
 
 ### Adding functionality with JavaScript
 In your `lyrics.js` file, declare variables and use the DOM selectors to connect with elements in the `lyrics.html` file, using the code snippet below:
@@ -214,7 +213,7 @@ const search = document.getElementById("lyricSearch");//target th input field
 const output = document.getElementById("search-result");//target the output `div`
 ```
 
-The desired API to get data (lyrics) for this web app to be fully functional, is the [OVH API](https://api.lyrics.ovh).
+The desired API to get data (lyrics) for this web app to be fully functional is the [OVH API](https://api.lyrics.ovh).
 
 Declare the API URL using the code below:
 
@@ -275,7 +274,7 @@ Your screen should be like the screenshot below:
 
 ![Screenshot for consoled data](/engineering-education/building-lyrics-search-app-using-vanilla-javascript/console-screenshot.png)
 
-In the screenshot above, the lyrics we searched for have a song title of `cast`. If you wish to get the exact data that is displayed in the screenshot above, you can simply search for the lyrics with song title of `cast`.
+In the screenshot above, the lyrics we searched for have a song title of `cast`. If you wish to get the exact data that is displayed in the screenshot above, you can simply search for the lyrics with the song title of `cast`.
 
 The next thing to do is to create a function `showData()` that displays the data in the console (the screenshot above) on the webpage. The function `showData()` is being called from the async function `startSearch()`.
 
@@ -305,9 +304,9 @@ function showData(data) {
 - The lyrics will be displayed inside an empty `div` in the `lyrics.html` file, the variable that connects the `div` to the JavaScript file is the variable output.
 
 ### Inner - HTML
-This is the DOM property that either sets or retrieves the content of an HTML element. In this instance, you will set the content of the empty `div` in the `lyrics.html` file to display the lyrics suggestions in a list form.
+This is the DOM property that either sets or retrieves the content of an HTML element. In this instance, you will set the content of the empty `div` in the `lyrics.html` file to display the lyrics' suggestions in a list form.
 
-To access the data, refer to the screenshot above, you will notice that the data embodies some set of objects which has the properties we want to display on the webpage.
+To access the data, refer to the screenshot above. You will notice that the data embodies some set of objects which have the properties we want to display on the webpage.
 
 Also, from the screenshot above, the object inside the data has a key of `title` that returns a property of the song title, likewise an artist object that embodies a key of `name` that returns a property of the song artist.
 
@@ -315,7 +314,7 @@ Our concern is how to display the song title and song artist name on the webpage
 
 The `map()` method is one of the most used methods. The method returns a new array based on the values of the existing array. 
 
-For example, we have array of numbers and we want to get an array that has value of triple of each of the number:
+For example, we have an array of numbers and we want to get an array that has a value of a triple of each of the numbers:
 
 ```JavaScript
 const numbers = [2 , 4, 6, 8];
