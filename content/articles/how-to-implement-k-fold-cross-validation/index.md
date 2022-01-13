@@ -17,8 +17,9 @@ images:
 The most typical strategy in machine learning is to divide a data set into training and validation sets. 70:30 or 80:20 could be the split ratio. It is the holdout method. <!--more-->
 The problem with this strategy is that we don't know if a high validation accuracy indicates a good model. What if the part of the data we utilized for validation turned out to be a success? Would our model still be accurate if we used a different section of the data set as a validation set? These are some questions that K-fold CV answers.
 
-To follow along wwith this tutorial, you need to have:
-- The Wisconsin Breast Cancer data set [here](https://www.kaggle.com/uciml/breast-cancer-wisconsin-data)
+### Prerequisites
+To follow along with this tutorial, you need to have:
+- The Wisconsin Breast Cancer data set. You can find it [here](https://www.kaggle.com/uciml/breast-cancer-wisconsin-data)
 - Google Colaboratory or Jupyter Notebook
 
 ### Outline
@@ -40,7 +41,7 @@ We divide our data set into K-folds. K represents the number of folds into which
 
 In the first iteration, we use the first part of the data for validation. As illustrated in the image above, we use the other parts of the data set for training.
 
-### Data Preprocessing
+### Data preprocessing
  We import all the relevant libraries for the project and load the data set.
 
 ```python
@@ -154,7 +155,7 @@ print("Label Encoded Target Variable", encoded_y, sep="\n")
 
 The number 0 represents benign, while 1 represents malignant. 
 
-### 5-Fold Cross-Validation
+### 5-Fold cross-validation
 We use the `cross_validate` function from the Scikit-Learn library's `model_selection` module. 
 
 ```python
@@ -164,13 +165,13 @@ def cross_validation(model, _X, _y, _cv=5):
       '''Function to perform 5 Folds Cross-Validation
        Parameters
        ----------
-      model : Python Class, default=None
+      model: Python Class, default=None
               This is the machine learning algorithm to be used for training.
-      _X : array
+      _X: array
            This is the matrix of features.
       _y: array
-           This is the  target variable.
-      _cv : int, default=5
+           This is the target variable.
+      _cv: int, default=5
           Determines the number of folds for cross-validation.
        Returns
        -------
@@ -252,7 +253,7 @@ def plot_result(x_label, y_label, plot_title, train_data, val_data):
         plt.show()
 ```
 
-### Model Training
+### Model training
 Now we can train our machine learning algorithm. We will use a decision tree algorithm. We import the `DecisionTreeClassifier` from the `tree` module of the `Scikit-Learn` library.  We also invoke the `cross_validation` function we created earlier to perform 5-fold cross-validation.
  
 ```python
@@ -418,7 +419,7 @@ plot_result(model_name,
 
 ![F1-Score Plot of the Second Decision Tree Model](/engineering-education/how-to-implement-k-fold-cross-validation/f1-score-2.png)
 
-We can see that the validation results of the second model in each fold are better. It has a mean validation accuracy of 93.85% and a mean validation f1 score of 91.69%. The GitHub repo for this project is [here](https://github.com/Inyrkz/breast_cancer/blob/main/k_fold_cv_article_guide.ipynb).
+We can see that the validation results of the second model in each fold are better. It has a mean validation accuracy of 93.85% and a mean validation f1 score of 91.69%. Please find the GitHub repo for this project [here](https://github.com/Inyrkz/breast_cancer/blob/main/k_fold_cv_article_guide.ipynb).
 
 
 ### Conclusion
