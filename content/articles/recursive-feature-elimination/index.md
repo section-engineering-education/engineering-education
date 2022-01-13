@@ -5,8 +5,8 @@ published: true
 url: /recursive-feature-elimination/
 title: Getting started with Recursive Feature Elimination algorithm in Machine Learning
 description: This tutorial aims to help the reader get started with the Recursive Feature Elimination algorithm and implement it in Python.
-author: daniel-mwanthi
-date: 2021-01-10T00:00:00-11:00
+author: daniel-mwanthis
+date: 2022-01-13T00:00:00-01:36
 topics: [Machine Learning]
 excerpt_separator: <!--more-->
 images:
@@ -14,12 +14,11 @@ images:
   - url: /engineering-education/recursive-feature-elimination/hero.png
     alt:  Recursive Feature Elimination Algorithm Hero Image
 ---
-
 Most of the time, the data we work with in machine learning is usually in high dimensions. As a result, models implemented on these data are victims of the Curse of Dimensionality. 
 
 The Curse of Dimensionality refers to all problems associated with high dimensional datasets. For example, when the dataset dimensionality is too high, it is possible to be highly detailed, and therefore, the information contained in some features is already captured in other features in the same dataset. As a result, features end up being highly correlated. 
 
-We need to understand is that the dimensionality we are discussing refers to the number of features in the dataset and not the instances(rows).
+We need to understand that the dimensionality we are discussing refers to the number of features in the dataset and not the instances(rows).
 
 Although more information is good, when the data contain duplicated or highly detailed information, the training speed of our machine learning model is slowed down. Additionally, high processing power is needed to accomplish the training process. 
 
@@ -36,7 +35,7 @@ In this article, we shall look at the problem of feature reduction with feature 
 ### Prerequisite
 For maximum benefit from this material, you need to be familiar with the following:
 - Python programming knowledge.
-- [Dataset](https://github.com/Madrinmarison/datasets/blob/main/Data.csv)
+- This [dataset](https://github.com/Madrinmarison/datasets/blob/main/Data.csv).
 
 ### Introduction to Recursive Feature Elimination
 Recursive Feature Elimination(RFE) is the Wrapper method, i.e., it can ta. This algorithm fits a model and determines how significant features explain the variation in the dataset. Once the feature importance has been determined, it then removes those less important features one at a time in each iteration. 
@@ -68,10 +67,9 @@ import numpy as np
 import pandas as pd 
 # for plotting
 import matplotlib.pyplot as plt
-
 ```
 
-The dataset we will use in this implementation can be downloaded from the link provided in the prerequisite section.'
+The dataset we will use in this implementation can be downloaded from the link provided in the prerequisite section.
 
 #### Read the dataset
 
@@ -86,7 +84,6 @@ Our data was successfully imported. This data has 1470 instances, 34 features, a
 ```Python
 # check for the first five observations of the dataset
 data.head()
-
 ```
 ![Output](/engineering-education/recursive-feature-elimination/data-head.png)
 
@@ -123,12 +120,11 @@ Output:
 31
 ```
 
-Unlike the original dimensionality, our data now has 31 columns, which had 35 of them. So now, let us check if there are missing values in the data.
+Unlike the original dimensionality, our data now has 31 columns (35 previously). So now, let us check if there are missing values in the data.
 
 ```python
 # Check for missing values in our dataset and impute them if any
 data.isnull().sum().sum()
-
 ```
 
 Output:
@@ -150,7 +146,7 @@ data.select_dtypes("object").head(5)
 
 The above output reveals 8 out of our 31 columns to contain non-numeric data types. We have the Attrition column, our study variable, out of these eight columns. 
 
-As we will not befitting the study variable to our future estimator model, at the moment, we will not encode it. With this said, let us encode the remaining seven columns into numeric data type with the help of the `label encoder` class.
+As we will not be fitting the study variable to our future estimator model, at the moment, we will not encode it. With this said, let us encode the remaining seven columns into numeric data type with the help of the `label encoder` class.
 
 ```python
 # Encoding object data type
@@ -181,11 +177,10 @@ X = data.drop(["Attrition"], axis=1)
 Y = data["Attrition"]
 ```
 
-We need to check if our dataset is balanced or not. If it is balanced, we shall continue with our activities, not, then we will balance it. So let us run the code below and check this.
+We need to check if our dataset is balanced or not. If it is balanced, we shall continue with our activities, if not, then we will balance it. So let us run the code below and check this.
 
 ```python
 data["Attrition"].value_counts()
-
 ```
 Output:
 ```bash
@@ -194,7 +189,7 @@ Yes     237
 Name: Attrition, dtype: int64
 ```
 
-Our data has 1233 observations for No and 237 for Yes from this output. From this output, it is clear that our data is highly imbalanced. Therefore, we need to balance it. To do so, we use a `smoteen` sampling technique as in the following code.
+Our data has 1233 observations for No and 237 for Yes from this output. From this output, it is clear that our data is highly imbalanced. Therefore, we need to balance it. To do so, we use a `smoteen` sampling technique:
 
 ```python
 from imblearn.combine import SMOTEENN
@@ -204,7 +199,6 @@ smtn.fit(X,Y)
 # Making samples
 X, Y = smtn.fit_resample(X,Y)
 Y.value_counts()
-
 ```
 Once the code above is executed, it will return:
 
