@@ -1,6 +1,20 @@
-### Building a playlist exporter in Python using Mutagen
+---
+layout: engineering-education
+status: publish
+published: true
+url: /building-a-playlist-exporter-in-python/
+title: Building a Playlist Exporter in Python Using Mutagen
+description: This article will walk you through building a playlist exporter in Python using the Mutagen. The exporter will be able to export a playlist in M3U and JSON formats.
+author: wanjiru-alice
+date: 2022-01-14T00:00:00-13:30
+topics: [Languages]
+excerpt_separator: <!--more-->
+images:
+  - url: /engineering-education/building-a-playlist-exporter-in-python/hero.jpg
+    alt: Building a playlist exporter in Python using Mutagen
+---
 Music is one of the most important parts of the human experience. Although nowadays most of the music is streamed online, some people still prefer to download it as audio files for offline listening.
-
+<!--more-->
 Audio files are a great way to store music as well as other information about the music. However, it is not always easy to export the information from the audio files to a playlist format.
 
 That's where a playlist exporter comes in. It's a software that can be used to export the information from the audio files to a format that can be interpretted by audio players. The resulting playlist can also be used to find your music in streaming services with the help of uploaders like [Soundiiz](https://soundiiz.com/).
@@ -53,7 +67,7 @@ The paths of the items listed above are relative to the directory where the M3U 
 
 It's important to note that if full paths to the music files is used, the M3U file can be moved around without breaking. Also, if you use relative file paths, moving the M3U file alone will break the playlist. In this case, you are required to store the playlist file inside the music folder.
 
-Let's create a M3U playlist. My music files are located in the `~/Music/Nirvana - Nevermind` directory.
+Let's generate a M3U playlist. My music files are located in the `~/Music/Nirvana - Nevermind` directory.
 
 Create an `app.py` in your virtual environment and write the following code:
 
@@ -191,3 +205,6 @@ Happy coding!
 ### Further reading
 - [Mutagen Docs](https://mutagen.readthedocs.io/en/latest/)
 - [All ID3 tags - MP3TAG.de](https://help.mp3tag.de/main_tags.html)
+
+---
+Peer Review Contributions by: [Geoffrey Mungai](/engineering-education/authors/geoffrey-mungai/)
