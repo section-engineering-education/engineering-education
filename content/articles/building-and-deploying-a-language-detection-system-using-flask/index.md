@@ -205,55 +205,8 @@ On the `index.html` file, make the following changes:
 </body>
 </html>
 ```
-On the `style.css` file make the following changes to style our webpage.
 
-```css
-@import url(https://fonts.googleapis.com/css?family=Open+Sans);
-.btn-block { width: 100%; display:block; }
-.btn-large { padding: 8px 13px; font-size: 16px; line-height: normal; -webkit-border-radius: 4px; -moz-border-radius: 5px; border-radius: 5px; }
-.btn-primary.active { color: rgba(241, 241, 241, 0.75); }
-.btn-primary, .btn-primary:hover { text-shadow: 0 -1px 0 rgba(36, 33, 33, 0.25); color: #ffffff; }
-.btn-primary { background-color: #4871c4; background-image: -moz-linear-gradient(top, #67b9e6, #3d6dce); background-image: -ms-linear-gradient(top, #6eb6de, #4a77d4); background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#6eb6de), to(#4a77d4)); background-image: -webkit-linear-gradient(top, #6eb6de, #4a77d4); background-image: -o-linear-gradient(top, #6eb6de, #4a77d4); background-image: linear-gradient(top, #6eb6de, #4a77d4); background-repeat: repeat-x; filter: progid:dximagetransform.microsoft.gradient(startColorstr=#6eb6de, endColorstr=#4a77d4, GradientType=0);  border: 1px solid #3762bc; text-shadow: 1px 1px 1px rgba(0,0,0,0.4); box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.2), 0 1px 2px rgba(0, 0, 0, 0.5); }
-
-
-body {
-	background: #123f3f; 
-	color: #fff;
-	height:100%;
-	width: 100%;
-	letter-spacing:1.2px;
-	font-family: 'Open Sans', sans-serif;
-	font-size: 18px;
-	text-align:center;
-	
-}
-.login { 
-	width:400px;
-	height:400px;
-	position: absolute;
-	margin: -150px 0 0 -150px;
-	top: 40%;
-	left: 50%;
-}
-
-.login h1 { color: #f3f6f4; text-shadow: 0 0 10px rgba(14, 13, 13, 0.3); letter-spacing:1px; text-align:center; }
-
-input { 
-	color: #f3f6f4;
-	background: rgba(0,0,0,0.3);
-	width: 100%; 
-	margin-bottom: 10px; 
-	font-size: 14px;	
-	text-shadow: 1px 1px 1px rgba(0,0,0,0.3);
-	border: none;
-	outline: none;
-	padding: 10px;
-	border: 1px solid rgba(0,0,0,0.3);
-	border-radius: 4px;
-	box-shadow: inset 0 -5px 45px rgba(100,100,100,0.2), 0 1px 1px rgba(255,255,255,0.2);
-}
-input:focus { box-shadow: inset 0 -5px 40px rgba(77, 76, 76, 0.4), 0 1px 1px rgba(240, 237, 237, 0.2); }
-```
+On the `style.css` file make the [following changes](https://github.com/FREDERICO23/Language-detection/blob/main/static/css/style.css) to style the webpage.
 
 We will now proceed to connect the webpage with the model using `apps.py` by making the following changes.
 
@@ -337,7 +290,7 @@ python apps.py
 
 You should be able to see something like this:
 
-![homepage](/engineering-education/building-and-deploying-a-language-detection-system-using-flask/index.jpg)
+![homepage](/engineering-education/building-and-deploying-a-language-detection-system-using-flask/home.jpg)
 
  Enter a word in any of the languages above and click on the **Predict** button to see your results.
 
