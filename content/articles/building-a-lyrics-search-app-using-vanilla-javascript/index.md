@@ -528,7 +528,7 @@ In this tutorial, we learned to build a lyrics search app using HTML5, CSS3, Van
 
 I'm a big fan of you not just stopping at what is provided in this tutorial. If indeed you've learned something from this, I challenge you to add more features to this web app and also make the User Interface (UI) better.
 
-You can decide add a button that copies the lyrics to the clipboard or a button that helps you share lyrics with friends via social media platforms.
+You can decide to add a button that copies the lyrics to the clipboard or a button that helps you share lyrics with friends via social media platforms.
 
 You can find the full source code [here](https://github.com/shegz101/Lyrics-Web-App) on GitHub.
 
