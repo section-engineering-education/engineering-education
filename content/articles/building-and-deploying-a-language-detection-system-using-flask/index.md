@@ -1,14 +1,14 @@
 ﻿
 ### Building and deploying a Language Detection System using Flask
 
-With more than a thousand languages being used today, communication between people of different native languages is crucial. That is why companies like Google are applying Natural Language Processing into their products like language detection on Chrome browser to give their users a smooth experience regardless of their preferred language.
+With more than a thousand languages being used today, communication between people of different native languages is crucial. That is why companies like Google are applying Natural Language Processing into their products like language detection on Chrome browser to give users a smooth experience.
 
-This article will tackle language detection from the basic idea to implementation. This article will build your understanding of NLP and boost your portfolio as a real-world project.
+This article will tackle language detection from basic to implementation, thereby building your understanding of NLP and boosting your portfolio as a real-world project.
 
 ### Introduction
 Language detection is a task in Natural Language Processing (NLP) that identifies the language of a given text or phrase. It helps in language translation.
 
-This article will build a language detection model using Python and the [Language detection](https://www.kaggle.com/basilb2s/language-detection) dataset from Kaggle and deploy it using Flask. Flask is an easy-to-use Python micro web framework.
+This article will build a language detection model using Python, the [Language detection](https://www.kaggle.com/basilb2s/language-detection) dataset from Kaggle and deploy it using Flask. Flask is an easy-to-use Python micro web framework.
 
 ### Table of contents
 - [Building the language detection model](#building-the-language-detection-model)
@@ -30,7 +30,7 @@ To follow along with this article, you should have the following:
 It would be best if you started by setting up a development environment.
 
 #### Setting up the development environment
-The first step will be to create a project folder and create a virtual environment to handle our project dependencies.
+The first step will be to create a project folder and create a virtual environment to handle the project dependencies.
 
 Run the following commands to create the project's folder:
 
@@ -49,7 +49,7 @@ cd .env/Scripts/activate # activate the environment
 Next,  create a new file, `languagedetection.ipynb` in the `langdetect` folder. Then, open the file using Jupyter Notebook.
 
 #### Importing libraries
-Before starting to model, we first need to import a few necessary libraries below:
+Before starting to model, we need to import a few necessary libraries below:
 
 ```Python
 import numpy as np
@@ -93,7 +93,7 @@ from sklearn.preprocessing import LabelEncoder
 le = LabelEncoder()
 y = le.fit_transform(y)
 ```
-In the next step, we move to preprocess our feature (**Text**) as shown below:
+In the next step, we need to preprocess our feature (**Text**) as shown below:
 
 ```Python
 text_list = []
@@ -121,7 +121,7 @@ Once done with processing the data, we need to split the data into training  and
 from sklearn.model_selection import train_test_split
 X_train, X_test, y_train, y_test = train_test_split(X, y, train_size = 0.80, random_state=32)
 ```
-Then, we w train our model using the `MultinomialNB` classifier, which is best for classification with discrete features as shown below:
+Then, we will train our model using the `MultinomialNB` classifier, which is best for classification with discrete features as shown below:
 
 ```Python
 from sklearn.naive_bayes import MultinomialNB  
@@ -137,7 +137,7 @@ y_pred
 ```
 
 #### Model evaluation
-After modelling, we will need to evaluate the performance of our model.
+After modelling, we will need to evaluate the performance of our model using the snippet below:
 
 ```python
 from sklearn.metrics import accuracy_score, confusion_matrix, classification_report
