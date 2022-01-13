@@ -1,4 +1,21 @@
-Why Move from ETL to ELT for your Fintech Products?
+---
+layout: engineering-education
+status: publish
+published: true
+url: /why-move-from-etl-to-elt-for-your-fintech-products/
+title: Why Move from ETL to ELT for your Fintech Products?
+description: This article will discuss popular ELT and ETL tools and compare the application of ELT and ETL technologies in extracting fintech data.
+author: jeska-mweni
+date: 2022-01-13T00:00:00-14:00
+topics: []
+excerpt_separator: <!--more-->
+images:
+
+  - url: /engineering-education/why-move-from-etl-to-elt-for-your-fintech-products/hero.png
+    alt: ELT ETL Example Image
+---
+Today, fintech companies are dealing with mass data. They need to find ways to transform this data into a valuable state quickly. Otherwise, such data would become less beneficial.
+<!--more-->
 
 Today, fintech companies are dealing with mass data. They need to find ways to transform this data into a valuable state quickly. Otherwise, such data would become less beneficial. These organizations require a fast and effective method to transfer collected data into their analytical systems. Extract, Transform, Load (ETL) technology was the conventional choice before the cloud became a mainstay for these companies.
 
@@ -6,7 +23,7 @@ But now, companies are contemplating moving towards Extract, Load, and Transform
 
 This article compares ELT and ETL technologies in terms of their application in extracting fintech data. It also discusses popular ETL and ELT tools.
 
-### An overview of ETL and ELT?
+### An overview of ETL and ELT
 ETL stands for Extract, Transform, and Load. ELT is an abbreviation for Extract, Load, and Transform. ETL has been the conventional approach for data management for many years. Shifts towards ELT are increasingly becoming popular since Fintech companies started embracing cloud-based services.
 
 The extraction process refers to obtaining data from a source, reading and storing it. During transformation, data undergoes conversion into an acceptable format for a particular database. Loading refers to stacking data in a database. These three processes underline the basis for the ETL and ELT processes and their importance to fintech companies.
