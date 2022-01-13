@@ -4,8 +4,6 @@ Data encryption is an important practice used to protect data transfer on the in
 RSA is a public key algorithm widely used for secure data transmission. This is one of the major cyber security methods of data protection. In this tutorial, we will be looking at how RSA algorithm works and how this algorithm can be implemented in Python.
 
 ### Table of Contents
-- [Introduction](#introduction)
-- [Table of Contents](#table-of-contents)
 - [Prerequisites](#prerequisites)
 - [How does RSA encryption and decryption work](#how-does-rsa-encryption-and-decryption-work)
 - [Implementing the RSA algorithm in Python](#implementing-the-rsa-algorithm-in-python)
