@@ -31,15 +31,11 @@ The extraction process refers to obtaining data from a source, reading and stori
 ### ETL vs ELT
 Both ETL and ELT are data integration processes that combine data from several sources then load it into a data target system. The primary difference between ETL and ELT lies in the sequence of activities. In ETL, data transformation occurs on a staging area before loading it to the target. But in ELT, an organization can load its raw data on the target system and convert it later to create value.
 
-ELT allows direct loading of raw data. In this case, ELT is preferable when dealing with high-volume and unstructured data. Often, raw data comes in various forms and does not make much sense until processed. But ELT does not need you to organize the data when loading, so it is preferable for data extraction and loading.
-
-On the other hand, ETL is undesirable when dealing with big data. It is most valuable when extracting a limited amount of data because it requires data to transform before loading it into a database.
+ELT allows direct loading of raw data. In this case, ELT is preferable when dealing with high-volume and unstructured data. Often, raw data comes in various forms and does not make much sense until processed. But ELT does not need you to organize the data when loading, so it is preferable for data extraction and loading. On the other hand, ETL is undesirable when dealing with big data. It is most valuable when extracting a limited amount of data because it requires data to transform before loading it into a database.
 
 ETL is a time-intensive process. It requires loading data into the staging server for transformation and later to the target system. ETL process cannot proceed unless data transformation is complete. ELT saves on this time because data loading skips the staging server. Since data transformation occurs as the final step, it becomes easier to load large amounts of data in a short time.
 
-Besides, ETL is an easier-to-implement process compared to ELT. Notably, ELT requires a deep knowledge of tools and skills to execute. These needs make its implementation more complex, unlike ETL.
-
-These two data integration processes also differ in their support for data warehouses. ETL supports on-premise and structured data. Since ELT uses cloud infrastructure, it supports both structured and unstructured data.
+Besides, ETL is an easier-to-implement process compared to ELT. Notably, ELT requires a deep knowledge of tools and skills to execute. These needs make its implementation more complex, unlike ETL. These two data integration processes also differ in their support for data warehouses. ETL supports on-premise and structured data. Since ELT uses cloud infrastructure, it supports both structured and unstructured data.
 
 Also, ELT and ETL differ in their levels of maturity. ETL has been in existence for the last [two decades](https://www.guru99.com/etl-vs-elt.html). Its applications are known, and best practices are easy to access. However, ELT is relatively new. Its immaturity is one of the reasons for its complexity during implementation.
 
