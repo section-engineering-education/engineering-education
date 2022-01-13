@@ -1,10 +1,9 @@
-### Develop a voice password flutter app
 
 ### Introduction
 
-In today's world, security is a major concern. Many websites and applications need a password for authentication. Yet, traditional passwords are guessed or stolen. Users are required to remember many passwords for different applications and websites. This can be difficult, especially if the user has a poor memory.
+In today's world, security is a major concern. Many websites and applications need a password for authentication. Yet, traditional passwords  guessed or stolen . Users  need to remember many passwords for different applications and websites. This can be difficult, especially if the user has a poor memory.
 
-One solution to this problem is a voice password. With a voice password, the user must speak a specific phrase to authenticate. A computer or mobile device can compare the spoken passcode to one previously stored. Authorized users do not need to remember multiple passwords for different systems.
+One solution to this problem is a voice password. With a voice password, the user must speak a specific phrase to authenticate. A computer or mobile device can compare the spoken passcode to one before stored. Authorized users do not need to remember many passwords for different systems.
 
 In this tutorial, we are going to develop a voice password flutter app. This app will allow the user to input their password by speaking it instead of typing it. We will use the Google Voice API to convert the user's spoken password into text.
 
@@ -14,7 +13,7 @@ First, we need to create a new flutter project. To do this we need to run the fo
  flutter create voice_password
 ```
 
-Now, let us change the default code in `main.dart` as shown below. This will display a simple text field on-screen with no text entered into it. We will use our own custom class called `PasswordTextField` instead of the TextField widget from the Flutter library. This class will take care of capturing the user's input and verifying it against the Google Voice API.
+Now, let us change the default code in `main.dart` as shown below. This will display a simple text field on-screen with no text entered into it. We will use our own custom class called `PasswordTextField`. This instead of the TextField widget from the Flutter library. This class will take care of capturing the user's input and verifying it against the Google Voice API.
 
 ```dart
 class Main extends StatefulWidget {
@@ -116,9 +115,9 @@ import 'dart:io';
 ```
 
 Now, we can run the app on our device or emulator.
-Once we have entered our password, we can hit the save button to save it in a file called `voice_password.txt`. Let's go ahead and try using this password to log into our app. When we type the password, instead of seeing it typed on the screen, it is spoken out loud.
+Once we have entered our password, we can hit the save button to save it in a file called `voice_password.txt`. Let's go ahead and try using this password to log into our app. When we type the password, instead of seeing it typed on the screen, it will spoken out loud.
 
-This is how easy it is to use Google Voice API in Flutter applications. It provides an extra layer of security to prevent users from typing their passwords. With a little bit of coding, you can easily add voice authentication to your app.
+This is how easy it is to use Google Voice API in Flutter applications. It provides an extra layer of security to prevent users from typing their passwords. With a little bit of coding, you can add voice authentication to your app.
 
 Now that we have our Google Voice password, let's see how we can use it in our app. First, we need to import the dart:io library at the top of our main.dart file.
 
@@ -184,7 +183,7 @@ import 'dart:async';
 
 This allow us to use the `Future<String>` type inside our getGoogleVoicePassword() method.
 
-Then, we need to update our loginState method inside LoginPage to save this password. Inside the if statement of the 'if (googlePlayServices) {...}' statement, add these code to call our getGoogleVoicePassword() method and use the returned value as the second parameter for a new FileSavePicker().
+Then, we need to update our loginState method inside LoginPage to save this password. Inside the if statement of the 'if (googlePlayServices) {...}' statement. We add these code to call our getGoogleVoicePassword() method.  Then use the returned value as the second parameter for a new FileSavePicker().
 
 ```dart
 if (googlePlayServices) {
@@ -240,6 +239,6 @@ We can now run our app and log in using our Google Voice password. After we have
 
 Saved voice password to C:\Users\username\AppData\Local\Temp\flutter_test\voice_password.txt
 
-Congratulations! You have now successfully written an app that stores a user's voice password and uses it to verify the identity of the user.
+Congratulations! You have now written an app that stores a user's voice password and uses it to verify the identity of the user. This app an example of how one can  allow the users to input their password by speaking it instead of typing it. By the use the Google Voice API to convert the user's spoken password into text. 
 
 HAPPY CODING GEEKS
