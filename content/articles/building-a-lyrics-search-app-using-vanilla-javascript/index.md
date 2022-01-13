@@ -327,9 +327,9 @@ console.log(tripleNo);//[6,12,18,24] this should be displayed in your console.
 
 Normally, to access the song title and song artist name, you would have invoked `data.data.title` for song title and `data.data.artist.name` for the song artist name. If you recall, the argument - song represents the resulting data. 
 
-Since the data has been mapped, you will access the song title using `song.title` as well as the song artist name by using `song.artist.name`.
+Since the data has been mapped, you can access the song title using `song.title` as well as the song artist name by using `song.artist.name`.
 
-The following code helps us listen to click event inside the output InnerHTML:
+The following code helps us listen for a click event inside the output InnerHTML:
 
 ```JavaScript
 //event listener in get lyrics button
@@ -346,7 +346,7 @@ output.addEventListener('click', e=>{
 })
 ```
 
-- The code above helps to know if the clicked element is the span tag (if the variable `clickedElement` contains `span` as `tagName`).
+- The code above helps to know if the clicked element is the span tag (i.e if the variable `clickedElement` contains `span` as `tagName`).
 - If so, the statement in the `if` block is executed because the span tag bears the tagname `SPAN`. You will store the attribute `data-songtitle` in variable `songTiltle` as well as the attribute `data-artist` for song artist in variable `artist`, which the `getLyrics()` function takes in the two variables as parameters.
 
 Note, arguments are the actual values passed to a function, while parameters are the values passed when a function is defined. Arguments are values passed when a function is invoked. That's why we referred to the two variables passed into the `getLyrics()` function as parameters and not arguments.
@@ -354,7 +354,7 @@ Note, arguments are the actual values passed to a function, while parameters are
 ### GetLyrics() async function
 This is the most important function because this is what makes us get the lyrics themselves displayed.
 
-The function takes in two parameters, `artist` and `songTitle` respectively. Recall that you can search for lyrics through inputting song artist or song title. This is the reason why the `getLyrics()` function is taking those parameters.
+The function takes in two parameters, `artist` and `songTitle` respectively. Recall that you can search for lyrics by inputting either the song artist name or the song title. This is the reason why the `getLyrics()` function is taking those parameters.
 
 Below is the code for `getLyrics()` async function:
 
@@ -374,11 +374,11 @@ async function getLyrics(artist, songTitle) {
 }
 ```
 
-> Note, the API doesn't have access to all the lyrics, under its free version. If you wish to have access to all the lyrics, I would suggest you get a paid lyrics API.
+> Note, the OVH API doesn't have access to all the lyrics, under its free version. If you wish to have access to all the lyrics, I would suggest you get a paid lyrics API.
 
 If a particular lyric is not available, it will return `undefined` in the `div` to display lyrics. It also alerts you that the lyrics are not available on the API.
 
-Next, you can decide to implement Regular Expression (REGEX) syntax in the variable lyrics using the `replace` method, by adding `.replace(/(\r\n|\r|\n)/g ,'<br>');` to the lyrics variable somewhat like this:
+Next, you can decide to implement Regular Expression (REGEX) syntax in the variable lyrics using the `replace` method by adding `.replace(/(\r\n|\r|\n)/g ,'<br>');` to the lyrics variable somewhat like this:
 
 `const lyrics = data.lyrics.replace(/(\r\n|\r|\n)/g ,'<br>');`
 
@@ -390,7 +390,7 @@ REGEX usage helps to look through our data (lyrics) for:
 
 If any of the instances defined above is found, REGEX `replace` method replaces it with the `<br>` (break line). 
 
-The `/g` is a regular expression flag, it means globally, the entire data (lyrics) should be searched through (for all matches).
+The `/g` is a regular expression flag, it means globally. The entire data (lyrics) should be searched through (for all matches).
 
 The content of the variable output displays song titles in bolder form compared to the artist name because of the strong tag.
 
@@ -524,11 +524,11 @@ form.addEventListener("submit", e => {
 ```
 
 ### Conclusion
-In this tutorial, we learned to build a lyrics search web app using HTML5, CSS3, Vanilla JavaScript alongside ES6 features.
+In this tutorial, we learned to build a lyrics search app using HTML5, CSS3, Vanilla JavaScript, OVH API, alongside ES6 features.
 
 I'm a big fan of you not just stopping at what is provided in this tutorial. If indeed you've learned something from this, I challenge you to add more features to this web app and also make the User Interface (UI) better.
 
-You can add a button that copies the lyrics to the clipboard or a button that helps you share lyrics with friends via social media platforms.
+You can decide add a button that copies the lyrics to the clipboard or a button that helps you share lyrics with friends via social media platforms.
 
 You can find the full source code [here](https://github.com/shegz101/Lyrics-Web-App) on GitHub.
 
