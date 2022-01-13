@@ -19,12 +19,12 @@ Today, fintech companies are dealing with mass data. They need to find ways to t
 
 Today, fintech companies are dealing with mass data. They need to find ways to transform this data into a valuable state quickly. Otherwise, such data would become less beneficial. These organizations require a fast and effective method to transfer collected data into their analytical systems. Extract, Transform, Load (ETL) technology was the conventional choice before the cloud became a mainstay for these companies.
 
-But now, companies are contemplating moving towards Extract, Load, and Transform (ELT) technology. Cloud services favor this form of technology. The reverse order of the processes is not the only difference that ETL and ELT have but rather their efficiency when dealing with big data. Fintech companies may favor an ELT approach owing to its better handling of high volume, velocity, veracity, value, and variety of data.
+But now, companies are contemplating moving towards Extract, Load, and Transform (ELT) technology. Cloud services favor this form of technology. The reverse order of the processes is not the only difference that ETL and ELT have but rather their efficiency when dealing with big data. fintech companies may favor an ELT approach owing to its better handling of high volume, velocity, veracity, value, and variety of data.
 
 This article compares ELT and ETL technologies in terms of their application in extracting fintech data. It also discusses popular ETL and ELT tools.
 
 ### An overview of ETL and ELT
-ETL stands for Extract, Transform, and Load. ELT is an abbreviation for Extract, Load, and Transform. ETL has been the conventional approach for data management for many years. Shifts towards ELT are increasingly becoming popular since Fintech companies started embracing cloud-based services.
+ETL stands for Extract, Transform, and Load. ELT is an abbreviation for Extract, Load, and Transform. ETL has been the conventional approach for data management for many years. Shifts towards ELT are increasingly becoming popular since fintech companies started embracing cloud-based services.
 
 The extraction process refers to obtaining data from a source, reading and storing it. During transformation, data undergoes conversion into an acceptable format for a particular database. Loading refers to stacking data in a database. These three processes underline the basis for the ETL and ELT processes and their importance to fintech companies.
 
@@ -45,7 +45,7 @@ Also, ELT and ETL differ in their levels of maturity. ETL has been in existence 
 Fintech data is found in organizations like banks and financial organizations. The most renowned ones include [Wall Street, Crypto, and real estate investment companies](https://www.analyticssteps.com/blogs/big-data-fintech-benefits-and-importance). The common thing their data has is its big data characteristics. It comes in large volumes and velocities, different varieties, and high integrity. This data comes unstructured, yet it requires intensive processing to create meaning. Every detail matter because financial information is sensitive. Fintech data helps organizations to forecast their clientele behavior. It is also critical in making correct predictions of the risks they face. Thus, these organizations need a system that can handle big data and help them make good decisions.
 
 #### Why is ELT more suitable for fintech data?
-The characteristics of Fintech data make ELT the best data integration approach for such firms. ELT can handle big data because it deals with structured and unstructured data. Besides, it does not need to transform data before loading it on a target system. Fintech companies value speed because data is massive and requires urgent analysis. So, ELT is their best choice as it can perform data loading and transformation in parallel. The high speeds and flexibility in ELT make it advantageous because they can handle fintech data regardless of its structure. Fintech companies want to extract data and load it up fast without sorting it every time. Because ELT allows firms to load up raw data, it becomes the best choice for data integration.
+The characteristics of fintech data make ELT the best data integration approach for such firms. ELT can handle big data because it deals with structured and unstructured data. Besides, it does not need to transform data before loading it on a target system. Fintech companies value speed because data is massive and requires urgent analysis. So, ELT is their best choice as it can perform data loading and transformation in parallel. The high speeds and flexibility in ELT make it advantageous because they can handle fintech data regardless of its structure. Fintech companies want to extract data and load it up fast without sorting it every time. Because ELT allows firms to load up raw data, it becomes the best choice for data integration.
 
 #### ETL and ELT security
 ETL and ELT have significant differences in their ability to confer adequate data security. The differences relate to their differences in maturity. They are also a result of their different approaches to data transfer from a data warehouse to the target system.
@@ -84,3 +84,6 @@ Also, ELT's immaturity makes its security questionable. Because it is new, it la
 
 ### Conclusion
 Big data is becoming an essential aspect of business activities. This is the case especially for fintech companies that operate with massive data inflow. Collecting and converting this data into a meaningful form is critical. Delays in data processing are undesirable because they have an adverse financial impact on these organizations. Thus, fintech companies require data integration systems that handle big data effectively. And that is where ELT's role is crucial for these fintech companies.
+
+---
+Peer Review Contributions by: [Collins Ayuya](https://www.section.io/engineering-education/authors/collins-ayuya/)
