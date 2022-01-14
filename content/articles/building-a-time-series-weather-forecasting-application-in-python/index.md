@@ -6,7 +6,7 @@ url: /building-a-time-series-weather-forecasting-application-in-python/
 title: Building a Time Series Weather Forecasting Application in Python
 description: In this tutorial, we'll discuss how to build a weather forecast application using a time series package known as Neural Prophet.
 author: monica-dalmas
-date: 2022-01-15T00:00:00-10:20
+date: 2022-01-14T00:00:00-10:00
 topics: [Machine Learning]
 excerpt_separator: <!--more-->
 images:
@@ -16,15 +16,15 @@ images:
 ---
 This tutorial will look at how we can forecast the weather using a time series package known as Neural Prophet. 
 <!--more-->
-In this walkthrough, we will be going through a couple of key things:
+In this tutorial, we will be going through a couple of key things:
 - We'll start by preprocessing our data fetched from Kaggle using the Pandas library.
 - We'll train a time series forecasting model to predict temperature using the model.
 - We'll learn how to forecast the temperature into the future.
 
 ### Prerequisites
-- You need to be familiar with Machine Learning modeling. 
-- You can use either Google Colab or Jupyter Notebook.
-> To follow along, please use Google Colab.
+To follow along with this tutorial, you need to:
+- Be familiar with Machine Learning modeling. 
+- Use either Google Colab or Jupyter Notebook.
 
 ### Table of contents
 - [About Neural Prophet](#about-neural-prophet)
@@ -36,7 +36,9 @@ In this walkthrough, we will be going through a couple of key things:
 - [Wrapping up](#wrapping-up)
 
 ### About Neural Prophet
-It is a time-series model built on top of [AR-Net](https://ai.facebook.com/blog/ar-net-a-simple-autoregressive-neural-network-for-time-series/) and [Facebook Prophet](https://github.com/facebook/prophet). It is an upgraded version of Facebook Prophet. It uses the PyTorch framework as a backend. It is beginner-friendly, and one can get started using a quick `pip` install. It incorporates traditional statistical and neural network models for time series modeling, used in forecasting and anomaly detection. The model generates high-quality forecasts for time series data that have multiple seasonality with linear or non-linear growth.
+It is a time-series model built on top of [AR-Net](https://ai.facebook.com/blog/ar-net-a-simple-autoregressive-neural-network-for-time-series/) and [Facebook Prophet](https://github.com/facebook/prophet). It is an upgraded version of Facebook Prophet. It uses the PyTorch framework as a backend. It is beginner-friendly, and one can get started using a quick `pip` install.
+
+It incorporates traditional statistical and neural network models for time series modeling, used in forecasting and anomaly detection. The model generates high-quality forecasts for time series data that have multiple seasonality with linear or non-linear growth.
 
 We will use the model to forecast the future temperature of Austin, Texas, given past temperature data of the same location.
 
@@ -54,13 +56,13 @@ from neuralprophet import NeuralProphet
 from matplotlib import pyplot as plt
 ```
 - `Pandas` will help us read our data into our notebook.
-- `NeuralProphet` is the class we will use to help us predict the future temperature.
-- `Matplotlib` will help us in plotting.
+- `NeuralProphet` is the class we will use to predict the future temperature.
+- `Matplotlib` will be used in plotting.
 
 The next step involves us importing our data.
 
 ### Loading the dataset 
-We will use the [Austin Weather](https://www.kaggle.com/grubenm/austin-weather) dataset from Kaggle. Although it is a dataset containing the historical temperature, precipitation, humidity, and windspeed for Austin, Texas, we will only predict the temperature. That means we will only work with the temperature data from the dataset. You need to download it and upload the `austin_weather.csv` file into your notebook.
+We will use the [Austin Weather](https://www.kaggle.com/grubenm/austin-weather) dataset from Kaggle. Although it is a dataset contains the historical temperature, precipitation, humidity, and windspeed for Austin, Texas, we will only predict the temperature. That means we will only work with the temperature data from the dataset. You need to download it and upload the `austin_weather.csv` file into your notebook.
 
 ```python
 df = pd.read_csv('austin_weather.csv')
@@ -73,7 +75,7 @@ Let us do a bit of exploratory data analysis on the data.
 ```python
 df.Date.unique()
 ```
-When you run the code above, you'll see that the dates in our dataset that'll be used for training range between `2013-12-21` and `2017-07-31`. That's about four years' worth of data. 
+When you run the code above, you'll see that the dates in our dataset that'll be used for training range between `2013-12-21` and `2017-07-31`. That's about four years worth of data. 
 
 Output:
 
@@ -214,7 +216,7 @@ plot = n.plot(forecast)
 ```
 Result:
 
-![Visualizing our prediction](/engineering-education/building-a-time-series-weather-forecasting-application-in-python/vusual.png)
+![Visualizing our prediction](/engineering-education/building-a-time-series-weather-forecasting-application-in-python/visual.png)
 
 From these results, we can deduce that we expect the temperature to be very high in the middle of the year between June and August. In addition, between November and February, we expect a lot of colder temperatures. This result mimics the one that we had earlier with hotter temperatures between June - August and colder temperatures between November and February. 
 
