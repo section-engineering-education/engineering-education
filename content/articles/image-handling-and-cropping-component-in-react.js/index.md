@@ -6,7 +6,7 @@ url: /image-handling-and-cropping-component-in-react.js/
 title: Creating image handling and cropping component in React.js
 description: In this tutorial, we will discuss the operations, logic, and dependencies required to create an image handler and cropper in React.js.
 author: fred-benson
-date: 2022-01-12T00:00:00-10:50
+date: 2022-01-14T00:00:00-10:50
 topics: [Languages]
 excerpt_separator: <!--more-->
 images:
@@ -213,12 +213,12 @@ From the code snippet above we:
 - To prevent multiple files selection, we added the `multiple={false}` flag.
 - Created the `allowedFileTypes` constant to specify the allowed file types which the user can upload which included gif, png, jpeg, and x-png.
 - We defined some default arguments such as `aspect`, `height`, `unit`, `width`, etc. which we will use in the image cropping and reconstruction process.
-- We also created some functions which included `handleFileChange` that accepts files and with the help of the `FileReader` method, we loaded the image to the `ReactCrop` component for cropping.
+- We also created some functions which included `handleFileChange` that accepts files. With the help of the `FileReader` method, we loaded the image to the `ReactCrop` component for cropping.
 
 The second part of the code snippet covered the cropping operation. In that part, we did the following:
 - Created the `imageLoaded` function to load and get the image ready for cropping.
 - We also created the `userCrop` function that accepts the crop dimensions ie. `cropHeight` and `cropWidth` from the user, which will be provided by adjusting the cropping lines shown on the screen.
-- Once the user sets the crop dimensions, the `getCroppedImage` function receives the new image data (filename, crop, and image) which will be used to reconstruct the final image for upload. The process is achieved using a 2D canvas which is used to generate, manipulate and render graphical elements in React.js.
+- Once the user sets the crop dimensions, the `getCroppedImage` function receives the new image data (filename, crop, and image). This will be used to reconstruct the final image for upload. The process is achieved using a 2D canvas which is used to generate, manipulate and render graphical elements in React.js.
 - Finally, a new image is drawn to scale with the dimensions and image meta-data provided in the canvas. If no error occurs, a new file name (image1.jpeg) is attached to the image and displayed.
 
 Save the changes and open up the browser to test out the `ImageCropper` component.
