@@ -329,7 +329,7 @@ To gain insight into their vast amounts of data, data visualization is vital. An
 
 Finally, if you want to take a look at the code used in this post, you can find it [here](https://github.com/Bennykillua/Project/blob/main/Data%20visualization%20using%20Charify/Chartify.ipynb).
 
-Happy coding.
+Happy coding...
 
 ### Resources
 - [Welcome to chartify’s documentation!](https://chartify.readthedocs.io/en/latest/)
