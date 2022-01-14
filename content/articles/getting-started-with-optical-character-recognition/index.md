@@ -1,3 +1,23 @@
+---
+layout: engineering-education
+status: publish
+published: true
+url: /getting-started-with-optical-character-recognition/
+title: Getting Started with Optical Character Recognition
+description: This tutorial will help the reader understand how to extract text from images and visualize these results using the OpenCV library.
+author: lilian-cheptoo
+date: 2022-01-15T00:00:00-21:00
+topics: [Machine Learning]
+excerpt_separator: <!--more-->
+images:
+
+  - url: /engineering-education/getting-started-with-optical-character-recognition/hero.png
+    alt: Getting Started with Optical Character Recognition Hero image
+---
+Optical character recognition is a technology where each character on a page is scanned individually so that your texts are uploaded as text documents and not images.
+<!--more-->
+EasyOCR is a python package that makes it easy to perform optical character recognition. We'll use it to extract text from images. We will be able to visualize these results using OpenCV. 
+
 ### Prerequisites
 You need to:
 - Be familiar with Machine Learning modeling.
@@ -5,7 +25,6 @@ You need to:
 > We will use Google Colab for this tutorial.
 
 ### Table of contents
-- [What is Optical Character Recognition](#what-is-optical-character-recognition)
 - [Installing and importing dependencies](#installing-and-importing-dependencies)
 - [Reading our image](#reading-our-image)
 - [Using EasyOCR to extract text from our image](#using-easyocr-to-extract-text-from-our-image)
@@ -13,11 +32,6 @@ You need to:
 - [Handling multiple lines](#handling-multiple-lines)
 - [Wrapping up](#wrapping-up)
 - [Further reading](#further-reading)
-
-### What is Optical Character Recognition
-Optical character recognition is a technology where each character on a page is scanned individually so that your texts are uploaded as text documents and not images.
-
-EasyOCR is a python package that makes it easy to perform optical character recognition. We'll use it to extract text from images. We will be able to visualize these results using OpenCV. 
 
 ### Installing and importing dependencies
 The first dependency that we will need to install is PyTorch as EasyOCR runs on top of the PyTorch library. To install PyTorch, we need to head on to their main [website](https://pytorch.org/get-started/locally/). Select your preference and an installation code will be generated. For our case, we've selected the `Stable (1.10.1)` PyTorch build, `Linux` OS, `Pip` package, `Python` language, and `CUDA 10.2` compute platform. The following code is generated after selecting those preferences. 
@@ -151,3 +165,6 @@ Happy coding!
 
 ### Further reading
 - [EasyOCR documentation](https://github.com/JaidedAI/EasyOCR)
+
+---
+Peer Review Contributions by: [Collins Ayuya](https://www.section.io/engineering-education/authors/collins-ayuya/)
