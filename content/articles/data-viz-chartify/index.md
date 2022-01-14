@@ -24,7 +24,7 @@ In this article, I'll show you how to visualize your dataset with Chartify. This
 ### Prerequisites
 To follow along with this article, you should have a:
 - Basic knowledge of Python.
-- Basic knowledge in using Jupyter Notebooks or any other notebook-based technology. I would recommend Jupyter notebook or Google Colab for data visualization. However, for this tutorial, we will be using [jypter](https://jupyter.org/).
+- Basic knowledge in using Jupyter Notebooks or any other notebook-based technology. I would recommend Jupyter notebook or Google Colab for data visualization. However, for this tutorial, we will be using [Jupyter](https://jupyter.org/).
 
 ### What is Chartify?
 According to the documentation, [Chartify](https://chartify.readthedocs.io/en/latest/) is a Python library that aims to make it easy for data scientists to create charts. This open-source library was introduced to the world in this article by Spotify Lab, [Introducing Chartify: Easier chart creation in Python for data scientists](https://engineering.atspotify.com/2018/11/15/introducing-chartify-easier-chart-creation-in-python-for-data-scientists/), as a means for you and me to build visually appealing charts using Python.
@@ -63,7 +63,7 @@ If you're using the Jupyter notebook and want to install a package with pip, you
 Import sys
 !{sys.executale} -m pip install chartify
 ```
-Chartify required a ChromeDriver. This is required to generate a PNG output. You can download ChromeDriver from [the ChromeDriver for Chrome Website](https://sites.google.com/a/chromium.org/chromedriver/home). After downloading, you need to install it and copy it into the appropriate directory. This article will show you [how to add executables to your Windows PATH](https://medium.com/@kevinmarkvi/how-to-add-executables-to-your-path-in-windows-5ffa4ce61a53).
+Chartify requires a ChromeDriver. The library requires this to generate a PNG output. You can download ChromeDriver from [the ChromeDriver for Chrome Website](https://sites.google.com/a/chromium.org/chromedriver/home). After downloading, you need to install it and copy it into the appropriate directory. This article will show you [how to add executables to your Windows PATH](https://medium.com/@kevinmarkvi/how-to-add-executables-to-your-path-in-windows-5ffa4ce61a53).
 
 ### Importing Chartify
 
@@ -92,7 +92,7 @@ Now let us read and display the dataset by running the code below.
 pokemon_df = pd.read_csv('pokemon.csv')
 pokemon_df.head(5)
 ```
-We will check our column using the `.columns` and add an s/n column using the code snippet below.
+We will check our column using the `.columns` and add an `s/n` column using the code snippet below.
 
 ```python
 pokemon_df.insert(loc =0, column = 's/n',value = np.arange(len(pokemon_df)))
@@ -212,7 +212,7 @@ We did not discuss the `color_column` in the previous bar chart. The `color_colu
 
 ### Number of Pokemon of each type in each generation
 
-Let us try out a line graph. We would use our knowledge of python to extract our data from our pokemon data. We would start by getting a count of each type.
+Let us try out a line graph. We would use our knowledge of Python to extract our data from our pokemon data. We would start by getting a count of each type.
 
 ```python
 data2 = pokemon_df[pokemon_df.type2.notna()].copy()
@@ -305,7 +305,7 @@ ch.show()
 
 ### Pokemon Weight distribution
 
-Let’s have a look at our pokemon weight. This will best be displayed in a histogram. In the “weight_kg” column, there were nan values. We will have to fill it. For this article, we would fill it with 0.
+Let’s have a look at our pokemon weight. This will best be displayed in a histogram. In the `weight_kg` column, there were nan values. We will have to fill it. For this article, we would fill it with `0`.
 
 ```python
 pokemon_df['weight_kg'] = pokemon_df['weight_kg'].fillna(0)
