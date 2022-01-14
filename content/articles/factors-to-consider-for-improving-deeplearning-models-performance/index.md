@@ -12,7 +12,7 @@ excerpt_separator: <!--more-->
 images:
 
   - url: /engineering-education/factors-to-consider-for-improving-deeplearning-models-performance/hero.png
-    alt: Factors To Consider For Improving Deep Learning Models Performance Hero Image
+    alt: Improving Deep Learning Models Performance Hero Image
 ---
 Deep learning neural networks are becoming easier to define and fit, but they remain challenging to configure. In this article, we will learn about factors to consider that might affect the performance of the deep learning models.
 <!--more-->
@@ -149,12 +149,12 @@ You can read more early-stopping of model training [here](https://stats.stackexc
 Regularization is a reliable strategy for avoiding overfitting.
 
 The following techniques can be used for regularization:
-- Switching off a percentage of neurons at random during training, which is known as a __*dropout*__. Dropout is a technique for preventing groups of neurons from overfitting one another.
+- Switching off a percentage of neurons at random during training, which is known as a ***dropout***. Dropout is a technique for preventing groups of neurons from overfitting one another.
 - The weight penalty is a technique for reducing the overfitting of a deep learning model on training data while improving the model's performance on the new data.
 
 In deep learning, weights that expand in size can be a major concern for degrading accuracy. Adding all of our parameters (weights) to our loss function is one method to penalize complexity.
 
-The problem can be remedied by making changes to the learning algorithm to encourage the network to keep its weights low. This is known as __*weight regularization*__ and is regarded as a general method for reducing training dataset overfitting and increasing model generalization.
+The problem can be remedied by making changes to the learning algorithm to encourage the network to keep its weights low. This is known as ***weight regularization*** and is regarded as a general method for reducing training dataset overfitting and increasing model generalization.
 
 You read about different methods on how to penalize and control larger weights [here](/engineering-education/regularization-to-prevent-overfitting/).
 
@@ -165,7 +165,7 @@ This can be accomplished with:
 - Bagging (Bootstrap aggregating)
 - [Boosting](/engineering-education/boosting-algorithms-python/)
 
-A common strategy for decreasing variation in a noisy dataset is __*Bagging*__.
+A common strategy for decreasing variation in a noisy dataset is ***Bagging***.
 
 The practice of picking and replacing a random sample of data from a training batch is known as bagging. As a result, each data point can be chosen multiple times.
 
@@ -178,19 +178,19 @@ To improve the accuracy of your model, it's always a good idea to use ensemble a
 You can read more about Ensemble methods [here](/engineering-education/ensemble-learning/).
 
 ### Configuring the learning rate
-![Display Rate Charts](/engineering-education/Factor-that-affects-the-performance-deep-learning-systems/display-rate-charts.png)
+![Display Rate Charts](/engineering-education/factors-to-consider-for-improving-deeplearning-models-performance/display-rate-charts.png)
 
 According to [Leslie N. Smith](https://arxiv.org/abs/1506.01186), a good learning rate can be estimated by beginning with a very low learning rate and gradually increasing it (either linearly or exponentially) with each iteration.
 
 > Note: Less training time, lesser money spent on GPU cloud computation.
 
-![Iteration chart](/engineering-education/Factor-that-affects-the-performance-deep-learning-systems/iteration.png)
+![Iteration chart](/engineering-education/factors-to-consider-for-improving-deeplearning-models-performance/iteration.png)
 
 If we plot the learning rate (log) versus loss for each learning iteration, we will notice that as the learning rate increases, the loss stops falling and begins to climb.
 
 In practice, our learning rate should ideally be near the bottom of the line, to the left (as demonstrated in the below graph). `0.001` to `0.01` in this situation.
 
-![Learning Rate Chart](/engineering-education/Factor-that-affects-the-performance-deep-learning-systems/learning-rate-scale.png)
+![Learning Rate Chart](/engineering-education/factors-to-consider-for-improving-deeplearning-models-performance/learning-rate-scale.png)
 
 ### Conclusion
 With the vast and rapid development of technology, deep learning is the key to today's smart world. This has brought ease in communication between humans and their daily environment.
