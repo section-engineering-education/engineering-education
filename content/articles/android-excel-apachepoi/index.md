@@ -145,7 +145,7 @@ Three parameters are passed in:
 2. `columnIndex` - The column number where a value is added.
 3. `cellValue` - The value to be added to the cell.
 
-In the `createCell()` method, we create a cell at a passed-in index and add the value to it. The library's `setCellValue(value)` method is used to add value to a cell.
+In the `createCell()` method, we create a cell at a passed-in index and add the value to it. The library's `setCellValue(value)` method is used in adding values to cells.
 
 ```kotlin
     private fun createCell(sheetRow: Row, columnIndex: Int, cellValue: String?) {
@@ -252,7 +252,7 @@ Here, we read the workbook from the loaded spreadsheet as an input stream and th
 ```
 
 #### 3. Selecting the worksheet
-We use the library's `getSheetAt(position)` method for this. After the selection, we return it. Since a worksheet may not be present, it may return a null value.
+We use the library's `getSheetAt(position)` method for this. After the selection, we return it. Since a worksheet may not be present, this method may return a null value.
 
 ```kotlin
     private fun selectSheet(): Sheet? {
