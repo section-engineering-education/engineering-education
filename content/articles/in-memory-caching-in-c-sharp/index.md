@@ -2,27 +2,28 @@
 layout: engineering-education
 status: publish
 published: true
-url: /in-memory-caching-in-c#/
+url: /in-memory-caching-in-c-sharp/
 title: In-Memory Caching In C#
 description: In this article, we will discuss a caching method in the .NET framework called in-memory caching in C#.
 author: joseph-ongoma
-date: 2022-01-08T00:00:00-17:30
+date: 2022-01-14T00:00:00-09:10
 topics: [Languages]
 excerpt_separator: <!--more-->
 images:
 
-  - url: /engineering-education/in-memory-caching-in-c#/hero.jpg
+  - url: /engineering-education/in-memory-caching-in-c-sharp/hero.jpg
     alt: In-Memory Caching In C# Hero Image
 ---
-Caching is used to store data from slow memory to a faster memory to enhance easy access of data in a website. During app development, application performance is important. 
+Caching is used to store data from slow memory to a faster memory to enhance easy access of data in a website. During app development, application performance is important.
 <!--more-->
-The fact that our application works well during app development does not mean it will work well when thousands of people start using it. One main area to look at is *data access*.
+The fact that our application works well during app development does not mean it will work well when thousands of people start using it. One main area to look at is _data access_.
 
 Accessing our database often can be very expensive especially when the data is not changing. Due to this reason, data caching is applied in our applications to reduce direct access time from the database. Thus, we enhance the performance of our application.
 
-In this article, we will discuss a caching method in the [.NET](https://docs.microsoft.com/en-us/dotnet/csharp/)framework called in-memory caching in [C#](https://docs.microsoft.com/en-us/dotnet/csharp/). We will create an application without caching, observe its performance and then introduce caching and observe how the performance is improved.
+In this article, we will discuss a caching method in the [.NET](https://docs.microsoft.com/en-us/dotnet/csharp/) framework called in-memory caching in [C#](https://docs.microsoft.com/en-us/dotnet/csharp/). We will create an application without caching, observe its performance and then introduce caching and observe how the performance is improved.
 
 ### Table of contents
+- [Table of contents](#table-of-contents)
 - [Prerequisites](#prerequisites)
 - [Building a blazor web application](#building-a-blazor-web-application)
 - [Accessing data without caching](#accessing-data-without-caching)
@@ -34,36 +35,36 @@ In this article, we will discuss a caching method in the [.NET](https://docs.mic
 To follow along with this tutorial, the reader should have:
 - A basic understanding of the [.NET Framework](https://docs.microsoft.com/en-us/dotnet/framework/).
 - [Microsoft Visual Studio](https://visualstudio.microsoft.com/downloads/) installed.
-- A basic understanding of the [C#](https://docs.microsoft.com/en-us/dotnet/csharp/) language.
+- A basic understanding of the [C#](https://docs.microsoft.com/en-us/dotnet/csharp/) programming language.
 - Microsoft Visual Studio configured with [.NET 5.0](https://dotnet.microsoft.com/en-us/download/dotnet/5.0).
 
 ### Building a blazor web application
-To be able to understand how in-memory caching works, we need to create a blazor application. Let us begin by opening Microsoft Visual Studio and select `create new project` as shown in the figure below.
+To understand how in-memory caching works, we need to create a blazor application. Let us begin by opening Microsoft Visual Studio and selecting `create new project` as shown in the figure below:
 
-![New project](/engineering-education/building-a-checkout-form-with-stripe-elements/newproject.png)
+![New project](/engineering-education/in-memory-caching-in-c-sharp/newproject.png)
 
-After clicking `create new Project`, select `Blazor Server App` on the next screen and click `Next` as shown in the figure below.
+After clicking `create new project`, select `Blazor Server App` on the next screen and click `Next` as shown in the figure below:
 
-![Application type](/engineering-education/building-a-checkout-form-with-stripe-elements/blazor.png)
+![Application type](/engineering-education/in-memory-caching-in-c-sharp/blazor.png)
 
-On the next screen, we are required to enter the name of our application, enter the name and click `Next`. For this project, we will name our application `CachingApp` as shown in the figure below.
+On the next screen, we are required to enter the name of our application, enter the name and click `Next`. For this project, we will name our application `CachingApp` as shown in the figure below:
 
-![Name of application](/engineering-education/building-a-checkout-form-with-stripe-elements/name.jpg)
+![Name of application](/engineering-education/in-memory-caching-in-c-sharp/name.jpg)
 
-On the next screen, we are required to select the target framework for our application, select `.Net Core 5.0(Current)`, and click `create` as shown in the figure below.
+On the next screen, we are required to select the target framework for our application, select `.Net Core 5.0(Current)`, and click `create` as shown in the figure below:
 
-![Target framework](/engineering-education/building-a-checkout-form-with-stripe-elements/framework.png)
+![Target framework](/engineering-education/in-memory-caching-in-c-sharp/framework.png)
 
 ### Accessing data without caching
 We will start by creating a new class library. To do this, on the solution explorer window, right-click on `Solution` and click on `Add`. Then select `New project`, search for `Class library` and click `Next`.
 
-![New class library](/engineering-education/building-a-checkout-form-with-stripe-elements/classlibrary.jpg)
+![New class library](/engineering-education/in-memory-caching-in-c-sharp/classlibrary.jpg)
 
 On the next screen, we will give it the name `ClassLibrary`. Use the set target framework and click `Create`.
 
 In the created class, we will delete the `Class1.cs` and create a new class called `UserModel`. To do this, right-click on `ClassLibrary` and select `Add`. Select `Class` on the next screen, enter the name of the class as `UserModel` and click `Add`.
 
-We will make this class public so that it is accessed by other functions in the application. This class will hold the information of the user, that is, the first name and last name.
+We will make this class public so it can be accessed by other functions in the application. This class will hold the information of the user, that is, the first and last name.
 
 We will use the following code snippet in this class.
 
@@ -78,11 +79,11 @@ namespace ClassLibrary
 }
 ```
 
-We will create another class that will simulate the idea of talking to our database. To do this, right-click on `ClassLibrary` and select `Add`. Select `Class` on the next screen enter the name of the class as `UserModel` and click `Add`.
+We will create another class that will simulate the idea of talking to our database. To do this, right-click on `ClassLibrary` and select `Add`. Select `Class`, on the next screen, enter the name of the class as `UserModel` and click `Add`.
 
 In this class, we will create a list of user models to get users, call it output and create a `new` instance of it. This class returns the output of the data passed.
 
-Now, we have a list of employees that returns the list of employees. But in real-life scenarios, we will not be accessing two or three files, we will be accessing thousands of files. Due to this reason, we will be simulating a delay of four seconds to show its operation slowly.
+Now we have a list of employees. But in real-life scenarios, we will not be accessing two or three files, we will be accessing thousands of files. Due to this reason, we will be simulating a delay of four seconds to show that it is operating slowly:
 
 ```C#
 namespace ClassLibrary
@@ -104,7 +105,7 @@ namespace ClassLibrary
 }
 ```
 
-Next, right-click on dependencies in the `Solution Explorer` window, click  `Add Project Reference...` and check on `ClassLibrary` on the next screen and click `Ok`.
+Next, right-click on dependencies in the `Solution Explorer` window, click `Add Project Reference...` and check on `ClassLibrary` on the next screen and click `Ok`.
 
 In our `program.cs` file, we will add a reference to the code above. We will add the sample class library service as shown in the code below.
 
@@ -112,7 +113,7 @@ In our `program.cs` file, we will add a reference to the code above. We will add
 builder.Services.AddTransient<SampleClassLibrary>();
 ```
 
-With our data class libray, we can now fetch this data in the pages folder under `FetchData.razor` file. We will delete the code in this file and add the one in the code snippet below.
+With our data class library, we can now fetch this data in the pages folder under `FetchData.razor` file. We will delete the code in this file and add the one in the code snippet below.
 
 ```C#
 @inject WeatherForecastService ForecastService
@@ -162,7 +163,7 @@ public async Task <List<UserModel>> GetUsers()
             return output;
 ```
 
-We are using the `await Task.Delay(3000);` instead of `Thread.Sleep(400)` to delay our data access time for four seconds. Now that we have an asynchronous call, we can go to the `FetchData.razor` file and use the code snippet below.
+We are using the `await Task.Delay(3000);` instead of `Thread.Sleep(400)` to delay our data access time for four seconds. Now that we have an asynchronous call, we can go to the `FetchData.razor` file and use the code snippet below:
 
 ```C#
 @inject WeatherForecastService ForecastService
@@ -193,7 +194,7 @@ To add in-memory caching, we will start by going to the `Program.cs` file and ad
 builder.Services.AddMemoryCache();
 ```
 
-This code creates a singleton for us so that we can call it across all of our different instances. This means that we are not supposed to input data here that our end-users will have access to if they are not allowed to access it.
+This code creates a singleton so that we can call it across all our different instances. This means that we are not supposed to input data here that our end-users will have access to if they are not allowed to access it.
 
 We will now go to our `SampleClassLibrary` file and create a new method that will get the cached list of users. To do this, we will use the code snippet below:
 
@@ -217,11 +218,11 @@ public async Task <List<UserModel>>GetUserCache()
 }
 ```
 
-In the code above, we are accessing the data in cache memory. The `if` statement accessess the data in the database when the data is being accessed for the first time and the cache memory output returns null.
+In the code above, we are accessing the data in cache memory. The `if` statement accesses the data in the database when the data is being accessed for the first time and the cache memory output returns null.
 
 We are also storing the data from the database in the cache memory called `users` for a period of only two minutes. After two minutes, the data in the application is accessed from the database.
 
-Our output has an unknown instance hence it returns null but we need to grab the cached version of our users list, so we will create a constructor of `SampleClassLibrary` and pass the dependency injection of `IMemoryCache`.
+Our output has an unknown instance hence returns null. However, we need to grab the cached version of our users list, so we create a constructor of `SampleClassLibrary` and pass the dependency injection of `IMemoryCache`.
 
 ```C#
 private readonly IMemoryCache _memoryCache;
@@ -232,7 +233,7 @@ public SampleClassLibrary(IMemoryCache memoryCache)
 ```
 
 ### Conclusion
-In this article, we have learned how in-memory caching enhances quick data access. But, there are a few things to take note of, they are:
+In this article, we have learned how in-memory caching enhances quick data access. But, there are a few things to take note of, these are:
 - You should know how to properly use in-memory caching - If you put too much data into cache memory, you will run out of memory.
 - Cache memory does not have the idea of limiting based upon the number of kilobytes it will access data - You can limit by limiting the number of objects to be stored in the memory at a given time.
 - When we use cache memory for data that is not too strenuous to the memory, it will make our cache memory lighter.
