@@ -6,7 +6,7 @@ url: /building-a-time-series-weather-forecasting-application-in-python/
 title: Building a Time Series Weather Forecasting Application in Python
 description: In this tutorial, we'll discuss forecasting the weather using a time series package known as Neural Prophet.
 author: monica-dalmas
-date: 2022-01-10T00:00:00-10:20
+date: 2022-01-15T00:00:00-10:20
 topics: [Machine Learning]
 excerpt_separator: <!--more-->
 images:
@@ -59,10 +59,10 @@ from matplotlib import pyplot as plt
 The next step involves us importing our data.
 
 ### Loading the dataset 
-We will use the [Rain in Australia](https://www.kaggle.com/jsphyg/weather-dataset-rattle-package) dataset from Kaggle. Although it is a rain dataset, we will predict the temperature. That means we will only work with the temperature data from the dataset. You need to download it and upload the `weatherAUS.csv` file into your notebook.
+We will use the [Austin Weather](https://www.kaggle.com/grubenm/austin-weather) dataset from Kaggle. Although it is a dataset containing the historical temperature, precipitation, humidity, and windspeed for Austin, Texas, we will only predict the temperature. That means we will only work with the temperature data from the dataset. You need to download it and upload the `austin_weather.csv` file into your notebook.
 
 ```python
-df = pd.read_csv('weatherAUS.csv')
+df = pd.read_csv('austin_weather.csv')
 df.tail()
 ```
 We have used Pandas `read_csv()` method to load our dataset. In addition, we've used the `tail()` method to view the last five rows in our dataset.
@@ -70,23 +70,15 @@ We have used Pandas `read_csv()` method to load our dataset. In addition, we've 
 Let us do a bit of exploratory data analysis on the data.
 
 ```python
-df.Location.unique()
+df.Date.unique()
 ```
-When you run the code above, you'll see that we have a couple of different locations in Australia. We'll pick one. 
+When you run the code above, you'll see that the dates in our dataset that'll be used for training range between `2013-12-21` and `2017-07-31`. That's about four years worth of data. 
 
 Output:
 
 ```bash
-array(['Albury', 'BadgerysCreek', 'Cobar', 'CoffsHarbour', 'Moree',
-       'Newcastle', 'NorahHead', 'NorfolkIsland', 'Penrith', 'Richmond',
-       'Sydney', 'SydneyAirport', 'WaggaWagga', 'Williamtown',
-       'Wollongong', 'Canberra', 'Tuggeranong', 'MountGinini', 'Ballarat',
-       'Bendigo', 'Sale', 'MelbourneAirport', 'Melbourne', 'Mildura',
-       'Nhil', 'Portland', 'Watsonia', 'Dartmoor', 'Brisbane', 'Cairns',
-       'GoldCoast', 'Townsville', 'Adelaide', 'MountGambier', 'Nuriootpa',
-       'Woomera', 'Albany', 'Witchcliffe', 'PearceRAAF', 'PerthAirport',
-       'Perth', 'SalmonGums', 'Walpole', 'Hobart', 'Launceston',
-       'AliceSprings', 'Darwin', 'Katherine', 'Uluru'], dtype=object)
+array(['2013-12-21', '2013-12-22', '2013-12-23', ..., '2017-07-29',
+       '2017-07-30', '2017-07-31'], dtype=object)
 ```
 
 Let's take a look at all the columns available in our dataset.
@@ -97,15 +89,17 @@ df.columns
 Output:
 
 ```bash
-Index(['Date', 'Location', 'MinTemp', 'MaxTemp', 'Rainfall', 'Evaporation',
-       'Sunshine', 'WindGustDir', 'WindGustSpeed', 'WindDir9am', 'WindDir3pm',
-       'WindSpeed9am', 'WindSpeed3pm', 'Humidity9am', 'Humidity3pm',
-       'Pressure9am', 'Pressure3pm', 'Cloud9am', 'Cloud3pm', 'Temp9am',
-       'Temp3pm', 'RainToday', 'RainTomorrow'],
+Index(['Date', 'TempHighF', 'TempAvgF', 'TempLowF', 'DewPointHighF',
+       'DewPointAvgF', 'DewPointLowF', 'HumidityHighPercent',
+       'HumidityAvgPercent', 'HumidityLowPercent',
+       'SeaLevelPressureHighInches', 'SeaLevelPressureAvgInches',
+       'SeaLevelPressureLowInches', 'VisibilityHighMiles',
+       'VisibilityAvgMiles', 'VisibilityLowMiles', 'WindHighMPH', 'WindAvgMPH',
+       'WindGustMPH', 'PrecipitationSumInches', 'Events'],
       dtype='object')
 ```
 
-As we advance, we will be focusing on the temperature column.
+As we advance, we will only be focusing on the `TempAvgF` column.
 
 Let's now do a bit of preprocessing.
 
@@ -118,57 +112,54 @@ df.dtypes
 Output:
 
 ```bash
-Date              object
-Location          object
-MinTemp          float64
-MaxTemp          float64
-Rainfall         float64
-Evaporation      float64
-Sunshine         float64
-WindGustDir       object
-WindGustSpeed    float64
-WindDir9am        object
-WindDir3pm        object
-WindSpeed9am     float64
-WindSpeed3pm     float64
-Humidity9am      float64
-Humidity3pm      float64
-Pressure9am      float64
-Pressure3pm      float64
-Cloud9am         float64
-Cloud3pm         float64
-Temp9am          float64
-Temp3pm          float64
-RainToday         object
-RainTomorrow      object
+Date                          object
+TempHighF                      int64
+TempAvgF                       int64
+TempLowF                       int64
+DewPointHighF                 object
+DewPointAvgF                  object
+DewPointLowF                  object
+HumidityHighPercent           object
+HumidityAvgPercent            object
+HumidityLowPercent            object
+SeaLevelPressureHighInches    object
+SeaLevelPressureAvgInches     object
+SeaLevelPressureLowInches     object
+VisibilityHighMiles           object
+VisibilityAvgMiles            object
+VisibilityLowMiles            object
+WindHighMPH                   object
+WindAvgMPH                    object
+WindGustMPH                   object
+PrecipitationSumInches        object
+Events                        object
 dtype: object
 ```
 
-We'll need to change the `Date` format from an `Object` to a `Date time` format. 
+We'll need to change the `Date` format from an `object` to a `Date time` format. This is because the algorithm only accepts the `date-time` format for the date column. 
 
 ```python
-bris = df[df['Location']=='Brisbane'] 
-bris['Date'] = pd.to_datetime(bris['Date']) 
+df ['Date'] = pd.to_datetime(df ['Date'])
+df.tail()
 ```
-We've done two things:
-- We've filtered out the Brisbane location. If you want to use a different location, you can. You need to replace "Brisbane" with any location you wish.
-- We've converted our date column from an object to a date-time type.
-
-If you type in `bris.dtypes`, you will see that the formatting has changed.
+We've converted our date column from an object to a date-time type. If you type in `df.dtypes`, you will see that the formatting has changed.
 
 Results:
 
 ```bash
-Date             datetime64[ns]
-Location                 object
+Date                          datetime64[ns]
+TempHighF                              int64
+TempAvgF                               int64
 dtype: object
 ```
-This is a requirement whenever you're working with Neural Prophet. Neural prophet requires you to give it two columns only. The `ds` column is a timestamp, and a `y` column is the numeric one we want to predict. In this case, our `ds` will be `Date` while our `y` will be `Temp3pm`.
+This is a requirement whenever you're working with Neural Prophet. 
+
+Neural prophet requires you to give it two columns only. The `ds` column is a timestamp, and a `y` column is the numeric one we want to predict. In this case, our `ds` will be `Date` while our `y` will be `TempAvgF`.
 
 Let's use `matplotlib` to plot our temperature over time.
 
 ```python
-plt.plot(bris['Date'], bris['Temp3pm'])
+plt.plot(df ['Date'], df ['TempAvgF'])
 plt.show()
 ```
 
@@ -176,20 +167,20 @@ Result:
 
 ![Plot](/engineering-education/building-a-time-series-weather-forecasting-application-in-python/plot.png)
 
-To plot the graph above, we've used `plt.plot()` method from Matplotlib. We've passed `bris['Date']` as the x variable and `bris['Temp3pm']` as the y variable. 
+To plot the graph above, we've used `plt.plot()` method from Matplotlib. We've passed `df['Date']` as the x variable and `df ['TempAvgF']` as the y variable. 
 > Always check whether your data has missing values as you would not want to pass data with missing values to Neural Prophet. For our case, the data looks good.
 
 Next, we will filter out a couple of our columns. As mentioned earlier, Neural Prophet only expects two columns. 
 
 ```python
-new_column = bris[['Date', 'Temp3pm']] 
+new_column = df[['Date', 'TempAvgF']] 
 new_column.dropna(inplace=True)
 new_column.columns = ['ds', 'y'] 
 new_column.tail()
 ```
 
-When you run the code above, you'll notice that our dataset has been filtered to only two columns, `ds` and `y`. With our `Date` now being `ds` and the `Temp3pm` being `y`.
-> If you want to forecast something else such as `Humidity9am` or `Pressure9am`, you only need to change the second variable in `bris[['Date', 'Temp3pm']]` to your desired target. For example, `bris[['Date', 'Humidity9am']]`.
+When you run the code above, you'll notice that our dataset has been filtered to only two columns, `ds` and `y`. With our `Date` now being `ds` and the `TempAvgF` being `y`.
+> If you want to forecast something else such as `HumidityAvgPercent` or `DewPointAvgF`, you only need to change the second variable in `df[['Date', 'TempAvgF']]` to your desired target. For example, `df[['Date', 'HumidityAvgPercent']]`.
 
 We can now go ahead and train our model.
 
@@ -209,11 +200,11 @@ Up until now, we've been doing preprocessing and training. Let's go ahead and pe
 ### Forecasting the temperature into the future
 
 ```python
-future = n.make_future_dataframe(new_column, periods=400)
+future = n.make_future_dataframe(new_column, periods=1500)
 forecast = n.predict(future)
 forecast.tail()
 ```
-We are forecasting for 400 periods (400 days into the future). We've also used the `n.predict()` method to go ahead and predict our future values. Finally, we use the `tail()` method to list our five last rows. You'll notice that the last row is our 400th prediction. That is, `2018-07-30`. Remember, our dataset only has values up to the date `2017-06-25`.
+We are forecasting for 1500 periods (1500 days into the future). We've also used the `n.predict()` method to go ahead and predict our future values. Finally, we use the `tail()` method to list our five last rows. You'll notice that the last row is our 1500th prediction. That is, `2021-09-08`. Remember, our dataset only has values up to the date `2017-07-31`.
 
 Let's visualize these predictions.
 
@@ -224,7 +215,7 @@ Result:
 
 ![Visualizing our prediction](/engineering-education/building-a-time-series-weather-forecasting-application-in-python/vusual.png)
 
-From these results, we can deduce that we expect the temperature to be very high between `2018-01` and `2018-03`. In addition, in June and July, we expect a lot of colder temperatures. This result mimics the one that we had earlier with hotter temperatures in January - March and colder temperatures between June and July. 
+From these results, we can deduce that we expect the temperature to be very high in the middle of the year between June and August. In addition, between November and February, we expect a lot of colder temperatures. This result mimics the one that we had earlier with hotter temperatures between June - August and colder temperatures between November and February. 
 
 You can find the complete code for this tutorial [here](https://colab.research.google.com/drive/1-jV0KIAxJEuozwS6quVGVf4tpRlfEZTE?usp=sharing).
 
