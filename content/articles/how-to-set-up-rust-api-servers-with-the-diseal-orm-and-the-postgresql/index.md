@@ -50,17 +50,17 @@ Cargo also allows you to install and remote libraries that you want to run with 
 
 To use these libraries, head over to the `Cargo.toml` and update the dependencies as follows:
 
-```toml
+```rust
 [dependencies]
+serde_json = "1.0"
+dotenv = "0.9.0"
+serde_derive = "1.0"
+juniper = "0.13.1"
+serde = "1.0"
+actix-web = "1.0.0"
 diesel = { version = "1.0.0", features = ["postgres"] }
 futures = "0.1"
 env_logger = "0.6"
-serde = "1.0"
-actix-web = "1.0.0"
-serde_derive = "1.0"
-juniper = "0.13.1"
-serde_json = "1.0"
-dotenv = "0.9.0"
 ```
 
 ### Set up the GraphQL Schema
@@ -148,13 +148,13 @@ Now we proceed to `main.rs` to set up the HTTP server is started and that the sc
 #[macro_use]
 extern crate juniper;
 
-use std::io;
-use std::sync::Arc;
-
-use actix_web::{web, App, Error, HttpResponse, HttpServer};
 use futures::future::Future;
-use juniper::http::graphiql::graphiql_source;
+use std::io;
 use juniper::http::GraphQLRequest;
+use actix_web::{web, App, Error, HttpResponse, HttpServer};
+use std::sync::Arc;
+use juniper::http::graphiql::graphiql_source;
+
 
 mod graphql_schema;
 use graphql_schema::{create_schema, Schema};
@@ -178,7 +178,7 @@ HttpServer::new(move || {
 
 Here we have defined the `main()` will return an `io::Result<()>` type. We are calling the `create_schema()` to initialize the GraphQL schema. `HttpServer::new` is marked with `move` so that the closure can take ownership of inner variables, which in our case will be a copy of schema. Inside the `data` function, we are passing schema to imply that it will be used in the two services.
 
-The `/graphql` service will be executing our request against our schema, whereas the `/graphiql` service will provide an interface for sending the GraphQL requests. Implement the handler for `/graphql` service as shown below:
+The `/graphql` service will run our request against our schema, whilst the `/graphiql` service will serve as an interface for making GraphQL requests. As illustrated below, implement the handler for the `/graphql` service:
 
 ```rust
 fn graphql(
@@ -198,7 +198,7 @@ fn graphql(
     }
 ```
 
-The above handler simply gets the GraphQL request in JSON, creates `futures` from `web::block`, and chains two handlers: `map_err` for error states and `and_then` for success states. To view the GraphQL API data, implement the handler for `/graphiql` service as shown below.
+The above handler simply gets the GraphQL request in JSON, creates `futures` from `web::block`, and chains two handlers: `map_err` for error states and `and_then` for success states. Implement the handler for the `/graphiql` service as described below to access the GraphQL API data.
 
 ```rust
 fn graphiql() -> HttpResponse {
@@ -209,7 +209,7 @@ fn graphiql() -> HttpResponse {
 }
 ```
 
-This handler basically returns HTML for the GraphQL playground environment.
+This handler essentially generates HTML for the GraphQL playground.
 
 At this point, our server should be ready to be tested out. To do this, run the following command from your terminal:
 
@@ -234,7 +234,7 @@ Hit the play button on top and observe the results on the right pane. Your resul
 ![dummy-todos-query](/engineering-education/how-to-set-up-rust-api-servers-with-the-diseal-orm-and-the-postgresql/dummy-todos-query.png)
 
 ### Setting up diesel
-Diesel is a safe and extensible query builder for Rust applications. Diesel generates client code and provides an interactive way to connect to a database server with the Diesel ORM library for Rust.
+[Diesel](https://github.com/diesel-rs/diesel) is a safe and extensible query builder for Rust applications. Diesel generates client code and provides an interactive way to connect to a database server with the Diesel ORM library for Rust.
 
 Diesel has features such as;
 
@@ -266,7 +266,7 @@ The above command will create a `migrations` folder at the project root director
 diesel migration generate create_todos
 ```
 
-This will create a directory inside the `migrations` folder consisting of two files:
+This will generate a subfolder under the `migrations` folder that contains two files:
 
 - `up.sql`: Hosts SQL commands for setting up the database.
 - `down.sql`: Hosts SQL commands for bringing the database down.
@@ -325,7 +325,7 @@ use crate::schema::todos;
 
 Create a function to establish database connection:
 
-```rs
+```rust
 fn establish_connection() -> PgConnection {
     dotenv().ok();
 
