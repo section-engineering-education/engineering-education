@@ -118,7 +118,7 @@ To use Mockito, first, we add the following dependencies to our ```pom.xml``` fi
 ```
 The following describes the different ways of using Mockito.
 
-1. #### Using Plain Mockito to create mocks
+#### Using Plain Mockito to create mocks
    We can create mock manually with [Mockito::mock](http://static.javadoc.io/org.mockito/mockito-core/2.2.28/org/mockito/Mockito.html#mock(java.lang.Class)).
 
     ```java
