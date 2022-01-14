@@ -531,15 +531,15 @@ class MainActivity : AppCompatActivity() {
 ### Output
 After running the code, we will get the following output:
 
-![screen](shot-one.png)
+![screen](/engineering-education/android-excel-apachepoi/shot-one.png)
 
 The Excel file will resemble this:
 
-![excel](excel-sheet.png)
+![excel](/engineering-education/android-excel-apachepoi/excel-sheet.png)
 
 You can access the Excel file in your Device Explorer using your IDE. To access your app's file, follow these steps: **View** -> **Tool Windows** -> **Device File Explorer** -> **data** > **your-package-name** -> **files**.
 
-![device](device.png)
+![device](/engineering-education/android-excel-apachepoi/device.png)
 
 The GitHub repository is found [here](https://github.com/vinstex/androidExcelTest) and the APK file [here](https://drive.google.com/file/d/1ShuOV-lJ5mnDMYrUEpG7tz_QAneSrlly/view?usp=sharing).
 
