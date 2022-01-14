@@ -137,7 +137,7 @@ Events                        object
 dtype: object
 ```
 
-We'll need to change the `Date` format from an `object` to a `Date time` format. This is because the algorithm only accepts the `date-time` format for the date column. 
+We will need to change the `Date` format from an `object` to a `Date time` format. The algorithm only accepts the `date-time` format for the date column.
 
 ```python
 df ['Date'] = pd.to_datetime(df ['Date'])
