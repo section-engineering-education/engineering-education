@@ -16,7 +16,7 @@ images:
 ---
 Not knowing the lyrics of a song is a problem most song-lovers encounter. In this article, you will be creating a platform where users can search for lyrics by entering the artist's name or the title of the song.
 <!--more-->
-You will be creating a web application using HTML5, CSS3, Vanilla JavaScript, async-await with fetch method, OVH API, and ECMAScript 2015 (ES6) features like arrow functions to build a search feature for lyrics. 
+You will be creating a web application using HTML5, CSS3, Vanilla JavaScript, async-await with `fetch()` method, OVH API, and ECMAScript 2015 (ES6) features like arrow functions to build a search feature for lyrics. 
 
 ### Table of contents
 - [Pre-requisites](#pre-requisites)
@@ -43,11 +43,11 @@ For laying out the structure of the lyrics search app, you will use HTML5. This 
 
 - In the `head` tag of the HTML file, you will input the needed or pre-defined meta tags that are essential for all web apps.
 - Also, you would link the CSS file to the HTML file and also give the web app a title of `Lyrics Search App` embedded within `title` tags.
-- Next, you would create a `div` with a class of `container`. This is the `div` that would house other `div`s which you will create.
-- Moving forward, you will create another `div` with a class of `intro-text` with two other separate headers `h1` and `h2` tags, respectively.
+- Next, you would create a `div` with a class `container`. This is the `div` would house other `div`s that you create.
+- Moving forward, you create another `div` with a class `intro-text` with two other separate headers `h1` and `h2` tags, respectively.
 - The content of the first text is `Learn your favorite`, it will be embedded in the `h1` tag, while the content of the second text is `song lyrics`, it will be embedded in the `h2` tag.
 
-Inside the `div` with a class of `container`, you will create a `div` with an `id` of `lyrics-search` where we create a form containing an input field, and also another `div` to display fetched lyrics. 
+Inside the `div` with a class `container`, you will create a `div` with an `id` of `lyrics-search` where we create a form containing an input field, and also another `div` to display fetched lyrics. 
 
 This is the code snippet for the structure of the web app:
 
@@ -110,15 +110,16 @@ body {
 }
 ```
 
-Now, you are going to style the contents in the `body` tag, starting from the text that defines what the web app does, to the placeholder, and then the input field.
-does```css
+Now, you are going to style the contents in the `body` tag - starting from the text that defines what the web app does, to the placeholder, and then the input field:
+
+```css
 /**This is how placeholders are styled**/
 ::placeholder {
     color:gold;
 }
 ```
 
-Next, style up the page description text (`Learn your favorite song lyrics`) as shown:
+Next, style up the page description with the text `Learn your favorite song lyrics` as shown:
 
 ```css
 /**Styling the intro text `div` which has the content of “learn your favorite song” lyrics**/
@@ -153,7 +154,7 @@ Centering the `div` container where the form and input field are embedded, using
 }
 ```
 
-You will complete the CSS code for now by styling up the form and the input field.
+You will complete the CSS code by styling up the form and the input field as shown:
 
 ```css
 form {
@@ -180,7 +181,7 @@ form {
 }
 ```
 
-You have successfully designed the web page by adding colors, font-sizes, font-family, padding, margin, and so on, just to make this web app look nice.
+You have successfully designed the web page by adding colors, font sizes, font family, padding, margin, and so on, just to make this web app look nice.
 
 Here is what your web page should look like:
 ![Screenshot for design](/engineering-education/building-lyrics-search-app-using-vanilla-javascript/design-screenshot.png)
@@ -194,7 +195,7 @@ Using this API, you will get two status codes. They are:
 - Status code 200 while the API call is successful
 - Status code 404 while the API call fails
 
-You should be familiar with status code 404, if you don't know, `404` stands for `Page/Method Not Found`.
+You should be familiar with status code `404`, if you don't know, `404` stands for `Page/Method Not Found`.
 
 You can read more about the OVH API [here](https://api.lyrics.ovh/v1/artist/title).
 
@@ -241,7 +242,8 @@ form.addEventListener("submit", e => {
 })
 ```
 
-- In the code above, you listened for a submit event after which you declared a variable `searchValue` to be equal to `search.value.trim()`. The `trim()` method simply trims whitespaces.
+In the code above:
+- You listened for a submit event after which you declared a variable `searchValue` to be equal to `search.value.trim()`. The `trim()` method simply trims whitespaces.
 - The `if` statement validates if `searchValue` equals an empty string to alert "Nothing to search", otherwise invokes the `startSearch()` function taking the `searchValue` as an argument.
 
 It is highly recommended to go through the [OVH API documentation](https://api.lyrics.ovh) before proceeding further.
@@ -261,7 +263,7 @@ async function startSearch(searchValue) {
 }
 ```
 
-### Testing the current state Of the Web app
+### Testing the current state of the web app
 At this point, you are going to test if the web app is actually returning the object of data from the OVH API when you input the title of a song or artist's name in the search field.
 
 The following are the tasks to carry out in this section:
@@ -274,7 +276,7 @@ Your screen should be like the screenshot below:
 
 ![Screenshot for consoled data](/engineering-education/building-lyrics-search-app-using-vanilla-javascript/console-screenshot.png)
 
-In the screenshot above, the lyrics I searched for has a song title of `cast`. If you wish to get the exact data that is displayed in the screenshot above, you can simply search for the lyrics with the song title of `cast`.
+In the screenshot above, the lyrics I searched for have a song title of `cast`. If you wish to get the exact data that is displayed in the screenshot above, you can simply search for the lyrics with the song title of `cast`.
 
 The next thing to do is to create a function `showData()` that displays the data in the console (the screenshot above) on the webpage. The function `showData()` is being called from the async function `startSearch()`.
 
@@ -388,7 +390,7 @@ REGEX usage helps to look through our data (lyrics) for:
 - Carriage return alone.
 - Carriage return with a new line. 
 
-If any of the instances defined above is found, REGEX `replace` method replaces it with the `<br>` (break line). 
+If any of the instances defined above is found, REGEX `replace()` method replaces it with the `<br>` (break line). 
 
 The `/g` is a regular expression flag, it means globally. The entire data (lyrics) should be searched through (for all matches).
 
