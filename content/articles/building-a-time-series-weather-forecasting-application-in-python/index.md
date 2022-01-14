@@ -4,7 +4,7 @@ status: publish
 published: true
 url: /building-a-time-series-weather-forecasting-application-in-python/
 title: Building a Time Series Weather Forecasting Application in Python
-description: In this tutorial, we'll discuss forecasting the weather using a time series package known as Neural Prophet.
+description: In this tutorial, we'll discuss how to build a weather forecast application using a time series package known as Neural Prophet.
 author: monica-dalmas
 date: 2022-01-15T00:00:00-10:20
 topics: [Machine Learning]
@@ -22,9 +22,9 @@ In this walkthrough, we will be going through a couple of key things:
 - We'll learn how to forecast the temperature into the future.
 
 ### Prerequisites
+- You need to be familiar with Machine Learning modeling. 
 - You can use either Google Colab or Jupyter Notebook.
 > To follow along, please use Google Colab.
-- You need to be familiar with Machine Learning modeling. 
 
 ### Table of contents
 - [About Neural Prophet](#about-neural-prophet)
@@ -46,7 +46,7 @@ The main package that we will install is the Neural prophet package.
 ```bash
 !pip install neuralprophet
 ```
-We need to import the necessary dependencies into our notebook. We will import Pandas, Neural Prophet, Matplotlib, and Pickle. 
+We need to import the necessary dependencies into our notebook. We will import `Pandas`, `Neural Prophet`, `Matplotlib`, and `Pickle`. 
 
 ```python
 import pandas as pd
@@ -137,7 +137,7 @@ Events                        object
 dtype: object
 ```
 
-We will need to change the `Date` format from an `object` to a `Date time` format. The algorithm only accepts the `date-time` format for the date column.
+We will need to change the `Date` format from an `object` to a `datetime` format. The model only accepts the `datetime` format for the date column.
 
 ```python
 df ['Date'] = pd.to_datetime(df ['Date'])
