@@ -12,22 +12,25 @@ The arrival of Three.js simplified things in WebGl . One can now write a short l
 The main limitation of using Three.js is the performance. We don’t have the same performance between a native application and a web application with WebGl.
 
 ### What Is Vitejs?
+
  Vite is a build tool that aims to provide a faster development experience for modern web projects. It's a JavaScript development server that significantly improves the frontend development experience We can simply say it is a build tool for your development. It takes your code and transforms it into something that your browser understands.
 
-Another thing about Vite is that it allows you to have a development server and this development server is running while you work on your website it also handles refreshing the files based on what has changed and it does so in an extremely fast way.  Other features include:
+Vite allows you to have a development server running while it handles and refreshes your files based on what has changed. This process is done extremely fast to reflect your changes on the browser. Other features include:
+
 - Bare module resolving.
 - Hot module replacement.
 - On-demand compilation.
 - Advance configuration.
 
 ### Prerequisites 
+
 To follow along with this guide, you need to:
 - Basic understanding of the JavaScript programming language.
 - A set of image templates
 
 ### Building The Portfolio
 
-The first thing we need to do is navigate into the folder we want to have our project installed and run :
+First, navigate to the folder where you want your project to live and run the following command:
 
 ```bash
 npm init @vitejs/app
