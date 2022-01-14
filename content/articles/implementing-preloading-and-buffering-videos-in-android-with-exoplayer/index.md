@@ -1,4 +1,22 @@
-Every Android Developer needs to understand how a video can be loaded so that users won't have to wait while a video is loading, just as the YouTube app does. A video can be loaded and cached before it is played. This is fun because the waiting time is minimized.
+---
+layout: engineering-education
+status: publish
+published: true
+url: /pre-loading-and-buffering-videos-in-android-with-exoplayer/
+title: Pre-Loading and Buffering Videos in Android with ExoPlayer
+description: This tutorial will show the reader how to pre-load and buffer videos in Android using ExoPlayer.
+author: judy-wangari
+date: 2022-01-14T00:00:00-21:50
+topics: [Languages]
+excerpt_separator: <!--more-->
+images:
+
+  - url: /engineering-education/pre-loading-and-buffering-videos-in-android-with-exoplayer/hero.jpg
+    alt: Pre-Loading and Buffering Videos in Android with ExoPlayer
+---
+Every Android developer needs to understand how a video can be pre-loaded so that users won't have to wait while a video is loading, just as the YouTube app does.
+<!--more-->
+A video can be loaded and cached before it is played. This is fun because the waiting time is minimized.
 
 ### Table of contents
 - [Prerequisites](#prerequisites)
@@ -31,7 +49,7 @@ In this tutorial, we will create a simple app that plays a video from the intern
 ### Step 1 - Creating an Android Project
 Launch your Android Studio and create an empty project.
 
-![New Android App](section-engineering/implementing-preloading-and-buffering-videos-in-android-with-exoplayer/create_app.png)
+![New Android App](/engineering-education/pre-loading-and-buffering-videos-in-android-with-exoplayer/create_app.png)
 
 ### Step 2 - Setting Up the Project
 In this step, we will add the necessary dependencies so as to proceed.
@@ -66,7 +84,7 @@ In `activity_main.xml` design a simple layout that will contain Exoplayer `Playe
     app:show_shuffle_button="true" />
 ```
 
-![Demo2](section-engineering/implementing-preloading-and-buffering-videos-in-android-with-exoplayer/demo2.png)
+![Player View](/engineering-education/pre-loading-and-buffering-videos-in-android-with-exoplayer/demo2.png)
 
 ### Step 4 - Creating a base Application class
 In this step, we will create a base class that will inherit from the `Application` class.
@@ -195,7 +213,7 @@ Create an empty activity (mine will be called `FirstActivity`).
 
 In its layout, create a single button.
 
-![Demo1](section-engineering/implementing-preloading-and-buffering-videos-in-android-with-exoplayer/demo1.png)
+![Play Button](/engineering-education/pre-loading-and-buffering-videos-in-android-with-exoplayer/demo1.png)
 
 > In a more complex scenario, you may have a `RecyclerView`.
 
@@ -284,9 +302,14 @@ exoPlayer.prepare()
 ### Demo
 That's all. When you run the app, you should expect something similar to this:
 
-![Gif](section-engineering/implementing-preloading-and-buffering-videos-in-android-with-exoplayer/demo.gif)
+![Demo Gif](/engineering-education/pre-loading-and-buffering-videos-in-android-with-exoplayer/demo.gif)
 
 ### Conclusion
 In this tutorial, we have learned what video preloading and precaching are. We have used Exoplayer and Workmanager to schedule background work that preloads a video before it is played.
 
 You can go ahead and implement this knowledge in your media app. For a full code implementation, check out this [GitHub repository](https://github.com/codewithjudy/VideoPreLoadingExoplayer).
+
+Happy Coding!
+
+---
+Peer Review Contributions by: [Eric Gacoki](/engineering-education/authors/eric-gacoki/)
