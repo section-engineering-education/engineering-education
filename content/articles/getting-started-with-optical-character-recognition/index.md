@@ -125,17 +125,17 @@ Handling it is all the same as in the previous reader code, what changes is how 
 > As a side note, it will be taking a little longer to process as we are now working with multiple texts.
 
 ```python
-img = cv2.imread("image-one.jpg")
-spacer = 100
+image = cv2.imread("image-one.jpg")
+spacer = 150
 for detection in results: 
-    top_left = tuple(detection[0][0])
-    bottom_right = tuple(detection[0][2])
-    text = detection[1]
-    img = cv2.rectangle(img,top_left,bottom_right,(0,255,0),3)
-    img = cv2.putText(img,text,(20,spacer), font, 0.5,(0,255,0),2,cv2.LINE_AA)
-    spacer+=15
+    top_left_detection = tuple(detection[0][0])
+    bottom_right_detection = tuple(detection[0][2])
+    text_detection = detection[1]
+    image = cv2.rectangle(image,top_left_detection,bottom_right_detection,(255,0,0),3)
+    image = cv2.putText(image,text_detection,(20,spacer), font, 0.5,(255,0,0),2,cv2.LINE_AA)
+    spacer+=20
     
-plt.imshow(img)
+plt.imshow(image)
 plt.show()
 ```
 Result:
