@@ -2,7 +2,7 @@ When trying to preprocess data for a custom on-device model or creating your spr
 
 Apache POI is an open-source library providing a Java API for manipulating file formats based on the Office Open XML (OOXML) and OLE2 standards from Microsoft. Apache POI releases are available under the Apache License (V2.0).
 
->This is a definition based on this [GeeksForGeeks](https://www.geeksforgeeks.org/apache-poi-introduction/) definition. 
+> This is a definition based on this [GeeksForGeeks](https://www.geeksforgeeks.org/apache-poi-introduction/) blog. 
 
 Based on the definition, we get a clue that this library can also be used to manipulate Word and PowerPoint(slide) file formats. 
 
