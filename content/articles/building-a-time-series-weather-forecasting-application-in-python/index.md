@@ -73,7 +73,7 @@ Let us do a bit of exploratory data analysis on the data.
 ```python
 df.Date.unique()
 ```
-When you run the code above, you'll see that the dates in our dataset that'll be used for training range between `2013-12-21` and `2017-07-31`. That's about four years worth of data. 
+When you run the code above, you'll see that the dates in our dataset that'll be used for training range between `2013-12-21` and `2017-07-31`. That's about four years' worth of data. 
 
 Output:
 
