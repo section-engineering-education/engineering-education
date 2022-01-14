@@ -37,7 +37,7 @@ Importing library functions and objects into your code is necessary to get the r
 - The **torch.nn** module: Contains code that we will be using in our model.
 - The **torchvision.datasets**: Includes MNIST dataset of handwritten digits that we shall be using here.
 - The **torchvision.transforms**: We shall be using it to transform from images to PyTorch tensors.
-- The **torch.autograd**: This will be used to define our tensors.
+- The **torch.autograd**: Allows for the rapid and easy computation of multiple partial derivatives. 
 
 Type the code below to import the library functions and objects;
 ```Python
@@ -74,7 +74,7 @@ learning_rate = 0.001
 ```
 The image size that we will use for our image will be 28*28. This means that our input size will be 784. In addition, there are ten digits in this. Thus we can generate ten alternative results. In this way, `number_classes` will be set to ten. In addition, we'll run the full dataset through five iterations of training. Finally, we will train in small batches of 100 images each so that the software does not crash because of memory overflow.
 
-After that, we'll lay out our model in the following manner. In this section, we'll define the forward pass after setting up our model as a subclass of __torch.tn.Module__. As we are building the code, we will not need to mention the softmax in the __forward()__ function because it will be determined internally during each forward run.
+After that, we'll lay out our model in the following manner. In this section, we'll define the forward pass after setting up our model as a subclass of __torch.nn.Module__. As we are building the code, we will not need to mention the softmax in the __forward()__ function because it will be determined internally during each forward run.
 ```Python
 class LogisticRegression(tn.Module):
 	def __init__(self, input_size, num_classes):
@@ -90,7 +90,7 @@ Now that our class has been established, we may create an instance of it.
 model = LogisticRegression(input_size, num_classes)
 ```
 ### Building The Neural Network
-Our loss function and optimizer are now set. As specified in the hyperparameter above, we'll use the [cross-entropy loss](https://en.wikipedia.org/wiki/Cross_entropy) and the [stochastic gradient descent algorithm](https://en.wikipedia.org/wiki/Stochastic_gradient_descent) with a reading rate of 0.001 for the optimizer.
+Our loss function and optimizer are now set. As specified in the hyperparameters above, we'll use the [cross-entropy loss](https://en.wikipedia.org/wiki/Cross_entropy) and the [stochastic gradient descent algorithm](https://en.wikipedia.org/wiki/Stochastic_gradient_descent) for the optimizer.
 Let's build a new class for the network we're developing.
 ```python
 # create a new class for the network
@@ -118,7 +118,7 @@ criterion = tn.CrossEntropyLoss()
 network = NeuralNetwork()
 opti = torch.optim.SGD(newmodel.parameters(), lr = reading_rate)
 ```
-We're ready to begin training now. Resetting all gradients to 0 will be the first step here, followed by a forward pass, the loss calculation, backpropagation, and updating all weights. Dataloader will load the individual batches. We set the gradients to zero using `optimizer.zero_grad().` The `backward()` call will now collect a new set of gradients which we propagate back into each of the network’s parameters using the optimizer.step().
+We're ready to begin training now. Resetting all gradients to 0 will be the first step here, followed by a forward pass, the loss calculation, backpropagation, and updating all weights. Dataloader will load the individual batches. We set the gradients to zero using `optimizer.zero_grad().` The `backward()` call will now collect a new set of gradients which we propagate back into each of the network’s parameters using the `optimizer.step()`.
 ```python
 # Training the Model
 for epoch in range(num_epochs):
