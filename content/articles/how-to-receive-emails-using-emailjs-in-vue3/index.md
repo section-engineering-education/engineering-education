@@ -1,17 +1,18 @@
 # How to receive emails using Emailjs in Vue3
 ### Introduction
-One of the best and fast ways of connecting with your potential employer is through email. The ability to receive emails is a very important feature especially when you are trying to put yourself out in the labor market.
+One of the best and fast ways of connecting with your potential employer is through email. The ability to receive emails is an important feature, especially when putting yourself out in the labour market.
 
-This article will teach you how to receive emails with emailjs specifically for  Vue3. You of course may be wondering what emailjs is, hang in there! I'll tell you before we begin to work with it.
+This article will teach you to receive emails with emailjs specifically for  Vue3 framework. 
 
-Emailjs is a JavaScript library that is used to send and receive emails. These emails can be personal or transaction emails. It is a library that supports different email services like, Gmail, Fast mail, Outlook, Yahoo, and many others depending on which you prefer to use in your application.
+Emailjs is a JavaScript library that is used to send and receive emails. These emails can be personal or transaction emails. 
 
-It is only used on client-side technologies (on the frontend) like Vue, react, and angular. So no backend code is needed. All you have to do is sign up, choose a supported email service and then connect the email you'd like to receive messages to that email service.
+It is a library that supports different email services like Gmail, Fast mail, Outlook, Yahoo, and many others depending on which you prefer to use in your application.
 
+It is only used on client-side technologies (on the frontend) like Vue, react, and angular. So no backend code is needed. 
 
+All you have to do is sign up, choose a supported email service and then connect the email you'd like to receive messages to that email service.
 
-In this article you will be learning how to :
-
+In this article you will be learning how to:
 - Sign up
 - Choose a supported email service
 - Connect your email account to that email  service
@@ -20,90 +21,87 @@ In this article you will be learning how to :
 
 ### Prerequisites
 To follow this article, you need to have the following:
-
 - Node
 - Terminal app (Command Line)
-- Text editor (E.g Vs code)
+- Text editor (e.g. Vscode)
 - Basic understanding of Vue.
 
 ### Signing Up
-To integrate the emailjs service in your application it is required that you sign up for a free account. Head over to the [emailjs](https://www.emailjs.com/) official website to sign up for a free account.
+To integrate the emailjs service in your application, it is required that you sign up for a free account. Head over to the [emailjs](https://www.emailjs.com/) official website to sign up for a free account.
 
-Once you have successfully created your account you will be having this screen below on your browser:
+Once you have successfully created your account, you will have this screen below on your browser:
 
-![email1.png](/engineering-education/how-to-receive-emails-using-emailjs-in-vue3/email1.png)
+![account](/engineering-education/how-to-receive-emails-using-emailjs-in-vue3/email1.png)
 
 ### Choosing a supported email service
-Once you have successfully created your account click on the "Add New Service" button to choose a supported email service. Like this:
+Once you have successfully created your account, click on the `Add New Service` button to choose a supported email service. Like this:
 
-![email2.png](/engineering-education/how-to-receive-emails-using-emailjs-in-vue3/email2.png)
+![service](/engineering-education/how-to-receive-emails-using-emailjs-in-vue3/email2.png)
 
 You will be prompted with the types of email services available. In this article, we will be using Gmail. Choose Gmail. Like this:
 
-![email3.png](/engineering-education/how-to-receive-emails-using-emailjs-in-vue3/email3.png)
+![Gmail](/engineering-education/how-to-receive-emails-using-emailjs-in-vue3/email3.png)
 
-The email service is totally up to you and the process still remains the same. Once you click on Gmail, you'll be having the screen below :
+The email service is totally up to you, and the process remains the same. Once you click on Gmail, you'll be having the screen below :
 
-![email4.png](/engineering-education/how-to-receive-emails-using-emailjs-in-vue3/email4.png)
+![account](/engineering-education/how-to-receive-emails-using-emailjs-in-vue3/email4.png)
 
 ### Connecting An Account to the email service
-The next step is to connect your email account. This email account will be the email account you want to receive and send emails to. Click on "Connect Account" to connect an email account.
+The next step is to connect your email account. This email account will be the email account you want to receive and send emails to. 
 
-![email5.png](/engineering-education/how-to-receive-emails-using-emailjs-in-vue3/email5.png)
+Click on "Connect Account" to connect an email account.
 
-At this point, you should be prompted to choose an email account associated with Gmail since that is the email service we are trying to incorporate. Choose an email account you'd like to connect and you should have the following screen:
+![Connect](/engineering-education/how-to-receive-emails-using-emailjs-in-vue3/email5.png)
 
-![email6.png](/engineering-education/how-to-receive-emails-using-emailjs-in-vue3/email6.png)
+At this point, you should be prompted to choose an email account associated with Gmail since that is the email service we are trying to incorporate. 
 
-Click on the "Continue" button. After that, you will be taken to the previous screen that to create a service. Like this:
+Choose an email account you'd like to connect, and you should have the following screen:
 
-![email7.png](/engineering-education/how-to-receive-emails-using-emailjs-in-vue3/email7.png)
+![account](/engineering-education/how-to-receive-emails-using-emailjs-in-vue3/email6.png)
 
-After creating the Gmail service, you should have a test email sent to the connected email account which indicates that the email account is successfully connected to the Gmail email service.
+Click on the "Continue" button. After that, you will be taken to the previous screen to create a service. Like this:
+
+![service](/engineering-education/how-to-receive-emails-using-emailjs-in-vue3/email7.png)
+
+After creating the Gmail service, you should have a test email sent to the connected email account, which indicates that the email account is successfully connected to the Gmail email service.
 
 ### Creating an email template
+Click on the `Email Templates` tab and click on the `Create New Template` button on the sidebar. Like this:
 
-On the sidebar click on the "Email Templates" tab and then, click on the "Create New Template" button. Like this:
-
-![email8.png](/engineering-education/how-to-receive-emails-using-emailjs-in-vue3/email8.png)
+![template](/engineering-education/how-to-receive-emails-using-emailjs-in-vue3/email8.png)
 
 With that done, you should have this screen:
 
-![email9.png](/engineering-education/how-to-receive-emails-using-emailjs-in-vue3/email9.png)
+![output](/engineering-education/how-to-receive-emails-using-emailjs-in-vue3/email9.png)
 
-The email template style is up to you. You can add more fields if you want to, you can change the font, the size of the font, and other things. The template customization is totally up to you. For the purpose of this article, our own template will look like this:
+The email template style is up to you. You can add more fields if you want to; you can change the font, the size of the font, and other things. 
 
-![email10.png](/engineering-education/how-to-receive-emails-using-emailjs-in-vue3/email10.png)
+The template customization is totally up to you. For this article, our template will look like this:
 
-So, we go-ahead to save and test out our template like so:
+![sample-output](/engineering-education/how-to-receive-emails-using-emailjs-in-vue3/email10.png)
 
-![email11.png](/engineering-education/how-to-receive-emails-using-emailjs-in-vue3/email11.png)
+So, we go ahead to save and test out our template like so:
 
-After clicking on the "Test it" button, you will have this screen:
+![test](/engineering-education/how-to-receive-emails-using-emailjs-in-vue3/email11.png)
 
-![email12.png](/engineering-education/how-to-receive-emails-using-emailjs-in-vue3/email12.png)
+After clicking on the `Test it` button, you will have this screen:
 
-Now fill up the fields and click on the "Send Test Email" button. If you have a 200 status code, then we are good to go. Like this:
+![test-output](/engineering-education/how-to-receive-emails-using-emailjs-in-vue3/email12.png)
 
-![email13.png](/engineering-education/how-to-receive-emails-using-emailjs-in-vue3/email13.png)
+Now fill up the fields and click on the `Send Test Email` button. We are good to go if you have a 200 status code. Like this:
 
- 
+![status](/engineering-education/how-to-receive-emails-using-emailjs-in-vue3/email13.png)
 
-Before we go ahead with the code, we will be needing three things from our Emailjs account, which are:
+Before we go ahead with the code, we will need three things from our Emailjs account, which are:
+- SERVICE_ID
+-TEMPLATE_ID
+-USER_ID
 
-SERVICE_ID
+To get your `SERVICE_ID`, go to the sidebar and click on the `Email Services` tab. Like this:
 
-TEMPLATE_ID
+![service](/engineering-education/how-to-receive-emails-using-emailjs-in-vue3/email14.png)
 
-USER_ID
-
-To get your SERVICE_ID, go to the sidebar and click on the "Email Services" tab. Like this:
-
- 
-
-![email14.png](/engineering-education/how-to-receive-emails-using-emailjs-in-vue3/email14.png)
-
-For your TEMPLATE_ID, on the sidebar, click on the "Email Templates" tab. Like this:
+For your TEMPLATE_ID, click on the "Email Templates" tab on the sidebar. Like this:
 
 ![email15.png](/engineering-education/how-to-receive-emails-using-emailjs-in-vue3/email15.png)
 
@@ -124,8 +122,7 @@ vue create email-app
 
 Be sure to select the default settings for vue3, As we will be using the latest version of Vue.
 
-Open up the project on your text editor. We will only be needing one component in this project which we will call `Email.vue` . The file structure for this project will look like this:
-
+Open up the project on your text editor. We will only be needing one component in this project which we will call `Email.vue`. The file structure for this project will look like this:
 <aside>
   |_ email-app
 
@@ -274,8 +271,7 @@ And then, the `Email.vue` component should look like this:
   </template> 
 ```
 #### Output:
-
-You should have this as an output on your browser. With that, we have our scaffolding set.
+It would help if you had this as an output on your browser. So with that, we have our scaffolding set.
 
 ![output.png](/engineering-education/how-to-receive-emails-using-emailjs-in-vue3/output.png)
 
@@ -299,12 +295,15 @@ Since we are using the vue3 Composition API, we have to import `ref` right after
 import {ref} from 'vue';
 </aside>
 
-Now, we are to write a function that fetches the emailjs API. This API accepts four parameters which are: the `SERVICE_ID`, `TEMPLATE_ID`, the `DOM` element we want to access, and the `USER_ID`. We will be using the browser Fetch API, which returns a promise that resolves into a response object.
+Now, we are to write a function that fetches the emailjs API. This API accepts four parameters: the `SERVICE_ID`, `TEMPLATE_ID`, the `DOM` element we want to access, and the `USER_ID`. 
 
-so we declare two constant variables called `form` and `inputFieldReset`  and set them to the value of null.  The `form` acts as the reference to the DOM element we want to access which in this case is our form element, and the `inputFieldReset` is to reset the form fields after our message has been sent successfully.
+We will be using the browser Fetch API, which returns a promise that resolves into a response object.
+
+So we declare two constant variables called `form` and `inputFieldReset`  and set them to the value of null.  
+
+The `form` acts as the reference to the DOM element we want to access, which is our form element, and the `inputFieldReset` is to reset the form fields after our message has been sent successfully.
 
 So we have our function to look like this:
-
 ```jsx
 <script>
 import emailjs from 'emailjs-com';
@@ -336,28 +335,39 @@ export default {
 </script>
 ```
 
-The code above is completely Vue3 syntax. On Vue2 which is an older version of Vue, this will be in a methods option. So basically the Vue2 integrates the Options API while the Vue3 integrates the Compositions API which works just fine for building Vue applications efficiently. 
+The code above is completely Vue3 syntax. On Vue2, an older version of Vue, this will be in a methods option. 
 
-Here, we have to return every function or variable we use and all functions go into one particular option called the `setup()`.You'd notice I did `form.value` to access the value of the constant variable and also for the `inputFieldReset` variable. That is how Vue3 works.
+So basically, the Vue2 integrates the Options API while the Vue3 integrates the Compositions API, which works just fine for building Vue applications efficiently. 
 
-So our function fetches the `emailjs`  API, giving it the four parameters it needs. Then if our form sends successfully, it says "Message Sent" and empties the input fields of the form. And if an error occurs it says "Message not sent" with the particular error message alongside it.
+Here, we have to return every function or variable we use, and all functions go into one particular option called the `setup()`.
 
-Be sure to replace the parameters in the `sendMail` function with your credentials. And also have the name of your input tags in the form correspond to the field names of your email template.
+You'd notice I did `form.value` to access the constant variable's value and the `inputFieldReset` variable. That is how Vue3 works.
+
+So our function fetches the `emailjs`  API, giving it the four parameters it needs. Then if our form sends successfully, it says "Message Sent" and empties the form's input fields. 
+
+And if an error occurs, it says "Message not sent" with the particular error message alongside it.
+
+Be sure to replace the parameters in the `sendMail` function with your credentials. And also, have the name of your input tags in the form correspond to the field names of your email template.
 
 On the form element in our template we do this:
-
 ```html
 <form class="form" ref="form" @submit.prevent="sendMail" >
 </form>
 ```
 
-When it comes to Vue3 we use the  `ref` attribute to reference a DOM element from the render context to be able to manipulate it right from our javascript code. Then we prevent the default behavior of our `form` element with the `@submit.prevent` method passing in our function, so when the form is submitted it runs our `sendMail` function.
+When it comes to Vue3, we use the  `ref` attribute to reference a DOM element from the render context to manipulate it right from our javascript code. 
 
-Now all you have to do is send a sample message from the contact form. And with that done you should see your sample mail right in your mailbox.
+Then we prevent the default behaviour of our `form` element with the `@submit.prevent` method passing in our function, so when the form is submitted, it runs our `sendMail()` function.
+
+All you have to do is send a sample message from the contact form. And with that done, you should see your sample mail right in your mailbox.
 
 That's it! It’s that simple.
 
 ### Conclusion
-Javascript libraries help make it easier to write complex code easily. The email functionality we just added into our application will be very hectic setting it up from scratch. But with the help of this library, it is painless setting it up and this will be a good piece for your portfolio. This library is not only meant for Vue, like I said it works on different client-side technologies. This library works on React and Angular as well. 
+Javascript libraries help make it easier to write complex code easily. For example, the email functionality we just added into our application will be very hectic setting it up from scratch.
 
-Be sure to upgrade if you will be having more emails coming in as the free tier only works for 500 emails daily. You can find the code right [here](https://github.com/mercybassey/email-app-for-vue3). Thank you for reading, and happy coding.
+But with the help of this library, it is painless setting it up, and this will be a good piece for your portfolio. 
+
+This library is not only meant for Vue; as I said, it works on different client-side technologies. So, for example, this library works on React and Angular. 
+
+Be sure to upgrade if you have more emails coming in, as the free tier only works for 500 emails daily. You can find the code right [here](https://github.com/mercybassey/email-app-for-vue3). Thank you for reading, and happy coding.
