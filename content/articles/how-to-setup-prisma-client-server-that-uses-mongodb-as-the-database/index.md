@@ -1,6 +1,4 @@
-Prisma is an ORM that allows you to write type-safe database schemas. Prisma will enable you to write type-safe database schemas. When setting a database, everything needs to be well set to define what that database will look like. In this case, Prisma abstracts you from writing database queries. Thus you have to make sure you write safe database access schemas.
-
-Prisma supports major databases such as MySQL, PostgreSQL, MongoDB, MariaDB, Azure SQL, Microsoft SQL Server AWS Aurora, and AWS Aurora Serverless. This means that you can easily pick the database that fits the code structure of your application and even switch between databases without the need to change any code structure of your application.
+Prisma is an ORM that allows you to write type-safe database schemas. It supports major databases such as MySQL, PostgreSQL, MongoDB, MariaDB, Azure SQL, Microsoft SQL Server AWS Aurora, and AWS Aurora Serverless. This means that you can easily pick the database that fits the code structure of your application and even switch between databases without the need to change any code structure of your application.
 
 Prisma also supports different languages. As of the time of writing articles, Prisma has support for three major languages. These are TypeScript, JavaScript, and Go.
 
@@ -14,14 +12,14 @@ To follow along with this guide;
 - Make sure you have [Postman](https://www.postman.com/downloads/) installed to test out API endpoints.
 - Ensure you have Prisma installed on your computer. Here we are using a text editor to write this schema.
 
-So make sure you have Prisma installed in your text editor to help you write type-safe Prisma codes. For example, if you are using [Visual Studio Code](https://code.visualstudio.com/), ensure you have the [Prisma extension](https://marketplace.visualstudio.com/items?itemName=Prisma.prisma) installed. Prisma extension adds syntax highlighting, formatting, auto-completion, type definitions, and linting for Prisma schemas. This helps you avoid errors while setting up your Prisma schemas.
+So make sure you have Prisma installed in your text editor to help you write type-safe Prisma codes. For example, if you are using [Visual Studio Code](https://code.visualstudio.com/), ensure you have the [Prisma extension](https://marketplace.visualstudio.com/items?itemName=Prisma.prisma) installed. It provides intellisense, formatting, auto-completion, type definitions, and linting to Prisma schemas. This ensures that you don't make any mistakes when creating Prisma schemas.
 
 ### Setting up a Node.js Application
 Create a project folder, call it `prisma-server` and open it using the Visual Studio code. We will use Node.js. Inside the directory, you have the created, initialize Node.js using `npm init -y`. Then install the Node.js Prisma package using `npm install Prisma` and `npm install @prisma/client --save-dev` to install Prisma client.
 
 Finally, run `npx prisma init` to initialize Prisma in your Node.js project.
 
-This will download the Prisma engines for Node-API and then automatically create a Prisma folder with a `schema.prisma` file. And here is where you start setting up your Prisma client, the database you want to use, and modeling the database data. Also, a `.env` will be created within your project folder. This file is used to store sensitive values such as your database connection strings.
+This will download the Prisma engines for Node-API and then automatically create a Prisma folder with a `schema.prisma` file. This is where you start configuring your Prisma client, the database you want to utilize, and the data you want to represent. Also, a `.env` will be created within your project folder. This file is used to store sensitive values such as your database connection strings.
 
 ### Setting up MongoDB
 As we said, Prisma supports numerous databases. By default, Prisma sets PostgreSQL when you first initialize your Prisma project. Let's see how we can add MongoDB to Prisma.
@@ -64,9 +62,7 @@ Now head over to your project `.env` file and add the MongoDB Database connectio
 ### Data modeling using Prisma
 Once you initialize your Prisma project, two main blocks are created in the `schema.prisma`, `datasource` and `generator`.
 
-`datasource` defines the database connected to. This takes two main parameters, the `provider` and the `url`. The `provider` sets the database you want to use. This can the `sqlite`, `mysql`, `mongodb`, `postgresql` and `sqlserver`. `url` sets a connection string based on the server running the database of your choice. We have already set this in the `.env` file.
-
-`generator` determines the assets to be created when generating data database types that generate the actual database queries.
+`datasource` defines the database connected to. This takes two main parameters, the `provider` and the `url`. The `provider` sets the database you want to use such as the `sqlite`, `mysql`, `mongodb`, `postgresql` and `sqlserver`. 'url' creates a connection string depending on the server hosting your preferred database. We have already set this in the `.env` file. When producing data database types that generate the actual database queries, 'generator' decides which assets should be created.
 
 Below is how `datasource` and `generator` should be set up when using MongoDB.
 
@@ -418,9 +414,7 @@ Finally, to delete a task, send a Delete method to `http://localhost:3000/tasks/
 >Note: You might encounter an error response when sending PUT or DELETE requests. To solve this, first, stop your server, run `prisma generate`, and then rerun your server with `npm run dev`.
 
 ### Conclusion
-SQL and NoSQL have different data structures. This guide used Prisma as an ORM to generate schemes for a MongoDB JSON document. Then created a server that leverages the advantages of running Prisma with MongoDB to show how MongoDB-Prisma connector can be used in a typical project.
-
-The beauty with the Prisma is that it made working with databases feel so intuitive and straightforward from the data modeling, running, migrations, writing the queries, and integrating it with the API.
+SQL and NoSQL have different data structures. This tutorial utilizes Prisma as an ORM to create schemes for a MongoDB JSON dataset. Then created a server that leverages the advantages of running Prisma with MongoDB to show how MongoDB-Prisma connector can be used in a typical project.
 
 Prisma client generates and provides functions or methods depending on the database model you want to create. We use those functions to create a stateful connection to a database. That will then be used to create, delete, update, or do an operation related to the database. Thus providing very simple and intuitive steps to set up all this without manually writing a single database query.
 
