@@ -36,7 +36,7 @@ In this walkthrough, we will be going through a couple of key things:
 - [Wrapping up](#wrapping-up)
 
 ### About Neural Prophet
-It is a time-series model that has been built on top of [AR-Net](https://ai.facebook.com/blog/ar-net-a-simple-autoregressive-neural-network-for-time-series/) and [Facebook Prophet](https://github.com/facebook/prophet). It is an upgraded version of Facebook Prophet. It uses the PyTorch framework as a backend. It is beginner friendly and one can get started using it a quick `pip` install. It incorporates traditional statistical and neural network models for time series modeling, used in forecasting and anomaly detection. The model generates high quality forecasts for time series data that has multiple seasonality with linear or non-linear growth.
+It is a time-series model built on top of [AR-Net](https://ai.facebook.com/blog/ar-net-a-simple-autoregressive-neural-network-for-time-series/) and [Facebook Prophet](https://github.com/facebook/prophet). It is an upgraded version of Facebook Prophet. It uses the PyTorch framework as a backend. It is beginner-friendly, and one can get started using a quick `pip` install. It incorporates traditional statistical and neural network models for time series modeling, used in forecasting and anomaly detection. The model generates high-quality forecasts for time series data that have multiple seasonality with linear or non-linear growth.
 
 We will use the model to forecast the future temperature of Austin, Texas, given past temperature data of the same location.
 
