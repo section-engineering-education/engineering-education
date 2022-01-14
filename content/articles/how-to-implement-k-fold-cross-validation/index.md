@@ -6,7 +6,7 @@ url: /how-to-implement-k-fold-cross-validation/
 title: How to Implement K fold Cross-Validation in Scikit-Learn
 description: This tutorial will explain how to implement K-fold Cross-Validation in Scikit-Learn.
 author: iniabasi-affiah
-date: 2022-01-10T00:00:00-21:00
+date: 2022-01-14T00:00:00-00:48
 topics: [Machine Learning]
 excerpt_separator: <!--more-->
 images:
@@ -19,8 +19,8 @@ The problem with this strategy is that we don't know if a high validation accura
 
 ### Prerequisites
 To follow along with this tutorial, you need to have:
-- The Wisconsin Breast Cancer data set. You can find it [here](https://www.kaggle.com/uciml/breast-cancer-wisconsin-data)
-- Google Colaboratory or Jupyter Notebook
+- The Wisconsin Breast Cancer data set. You can find it [here](https://www.kaggle.com/uciml/breast-cancer-wisconsin-data).
+- Google Colaboratory or Jupyter Notebook.
 
 ### Outline
 - [Introduction](#introduction)
@@ -205,7 +205,11 @@ def cross_validation(model, _X, _y, _cv=5):
               }
 ```
 
-The custom `cross_validation` function in the code above will perform 5-fold cross-validation. It returns the results of the metrics specified above. The `estimator` parameter of the `cross_validate` function receives the algorithm we want to use for training. The parameter `X` takes the matrix of features. The parameter `y` takes the target variable. The parameter `scoring` takes the metrics we want to use for evaluation. We pass a list containing metrics we want to use to check our model. For this guide, we will use accuracy, precision, recall, and f1 score. Setting the `return_train_score` to `True` will give us the training results.
+The custom `cross_validation` function in the code above will perform 5-fold cross-validation. It returns the results of the metrics specified above.
+
+The `estimator` parameter of the `cross_validate` function receives the algorithm we want to use for training. The parameter `X` takes the matrix of features. The parameter `y` takes the target variable. The parameter `scoring` takes the metrics we want to use for evaluation. We pass a list containing metrics we want to use to check our model.
+
+For this guide, we will use accuracy, precision, recall, and f1 score. Setting the `return_train_score` to `True` will give us the training results.
 
 
 We create a function to visualize the training and validation results in each fold. The function will display a grouped bar chart.
@@ -375,6 +379,7 @@ print(decision_tree_result_2)
 
 Let us visualize the results of the second model.
 
+The training accuracy and validation accuracy in each fold:
 ```python
 # Plot Accuracy Result
 plot_result(model_name,
@@ -386,6 +391,7 @@ plot_result(model_name,
 
 ![Accuracy Plot of the Second Decision Tree Model](/engineering-education/how-to-implement-k-fold-cross-validation/accuracy-2.png)
 
+The training precision and validation precision in each fold:
 ```python
 # Plot Precision Result
 plot_result(model_name,
@@ -397,6 +403,7 @@ plot_result(model_name,
 
 ![Precision Plot of the Second Decision Tree Model](/engineering-education/how-to-implement-k-fold-cross-validation/precision-2.png)
 
+The training recall and validation recall in each fold:
 ```python
 # Plot Recall Result
 plot_result(model_name,
@@ -408,6 +415,7 @@ plot_result(model_name,
 
 ![Recall Plot of the Second Decision Tree Model](/engineering-education/how-to-implement-k-fold-cross-validation/recall-2.png)
 
+The training f1 score and validation f1 score in each fold:
 ```python
 # Plot F1-Score Result
 plot_result(model_name,
@@ -419,8 +427,7 @@ plot_result(model_name,
 
 ![F1-Score Plot of the Second Decision Tree Model](/engineering-education/how-to-implement-k-fold-cross-validation/f1-score-2.png)
 
-We can see that the validation results of the second model in each fold are better. It has a mean validation accuracy of 93.85% and a mean validation f1 score of 91.69%. Please find the GitHub repo for this project [here](https://github.com/Inyrkz/breast_cancer/blob/main/k_fold_cv_article_guide.ipynb).
-
+We can see that the validation results of the second model in each fold are better. It has a mean validation accuracy of 93.85% and a mean validation f1 score of 91.69%. You can find the GitHub repo for this project [here](https://github.com/Inyrkz/breast_cancer/blob/main/k_fold_cv_article_guide.ipynb).
 
 ### Conclusion
 When training a model on a small data set, the K-fold cross-validation technique comes in handy. You may not need to use K-fold cross-validation if your data collection is huge. The reason is you have enough records in your validation set to check the machine learning model.  It takes a lot of time to use K-fold cross-validation on a large data collection. 
