@@ -354,6 +354,12 @@ The above command will open a local development server on `127.0.0.1:3000`
 
 To test the service, open the browser and navigate to the following URL, `127.0.0.1:3000`. Make sure that server is running. Input the long URL on the input field provided and click on the `shorten` button. A short URL will be rendered, and after clicking on it, it redirects to the same webpage as the long URL. This means that our shortener service is working.
 
+**Proof of working application:**
+![Working application](engineering-education/react-drf-shortener/workingApp.PNG)
+
+**Proof of short URL redirecting you to the same page as the long URL:**
+![Redirected to same URL](engineering-education/react-drf-shortener/redirectedtosameurl.PNG)
+
 ### Conclusion
 
 We have how to implement a simple shortener service using React and Django. However, this project can be taken to the next level by styling the user interface and adding more features. One of the features that may be added is counting the number of times a link has been created.
