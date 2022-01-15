@@ -22,13 +22,13 @@ To help you grasp this concept, we will cover using Vue, Axios, and the Django R
 - [Table of contents](#table-of-contents)
 - [Prerequisites](#prerequisites)
 - [Introduction](#introduction)
-- [Setting Up Django and Vue](#setting-up-django-and-vue)
-- [Creating the Django App](#creating-the-django-app)
-  - [Django TodoApp Project](#django-todoapp-project)
+- [Setting up Django and Vue](#setting-up-django-and-vue)
+- [Creating the Django application](#creating-the-django-application)
+  - [Django TodoApp project](#django-todoapp-project)
   - [Django TodoApp Models](#django-todoapp-models)
-  - [API Accessibility by Vue App](#api-accessibility-by-vue-app)
-- [Creating the Vue App](#creating-the-vue-app)
-- [Getting and Displaying App Data](#getting-and-displaying-app-data)
+  - [API accessibility by Vue application](#api-accessibility-by-vue-application)
+- [Creating the Vue application](#creating-the-vue-application)
+- [Getting and displaying application data](#getting-and-displaying-application-data)
 - [Conclusion](#conclusion)
 
 ### Prerequisites
@@ -329,7 +329,7 @@ export default {
 ```
 
 Rerunning the project, you should see two sets of tasks. The ones to be done appear on the left while the ponce that is already done should appear on the right. The complete code for this application can be found [here](https://github.com/dentonya/Todo-Application-using-Vue.js-Django-REST-API-and-Axios/tree/master/vue.js/todoapp).
-
+![Final Output](/engineering-education/build-vue-application-with-django-rest-api-and-axios/final_output.jpg)
 ### Conclusion
 As seen from the above tutorial, we can use the Axios library to fetch and display data when building Vue.js applications where the Django framework is used purely as a backend API.
 
