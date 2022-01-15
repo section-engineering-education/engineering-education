@@ -1,5 +1,21 @@
-### Mocking with JUnit and Mockito - The Why and How
+---
+layout: engineering-education
+status: publish
+published: true
+url: /mocking-with-junit-and-mockito-the-why-and-how/
+title: Mocking with JUnit and Mockito - The Why and How
+description: This tutorial will help the reader understand what JUnit and Mockito are and how to used them in testing Java projects.
+author: ehis-edemakhiota
+date: 2022-01-15T00:00:00-11:11
+topics: [Languages]
+excerpt_separator: <!--more-->
+images:
+
+  - url: /engineering-education/mocking-with-junit-and-mockito-the-why-and-how/hero.png
+    alt: Mocking with JUnit and Mockito - The Why and How
+---
 The essence of unit testing is to verify that our code works regardless of its dependencies. Imagine that we want to write a mock test for a service that depends on a database for processing orders.
+<!--more-->
 To test our service, we can use a mock implementation of our database instead of having to use an actual database. This is possible since we know how an actual database behaves given certain scenarios. Mocking enables us to test code independent of its dependencies, helping us achieve introspection and code isolation.
 
 Our system under testing will be the service class of a Hostel Management System built with:
@@ -867,3 +883,8 @@ Happy Coding!
 10. [mockito/InOrder.java at main · mockito/mockito · GitHub](https://github.com/mockito/mockito/blob/main/src/main/java/org/mockito/InOrder.java)
 11. [When to mock](https://blog.cleancoder.com/uncle-bob/2014/05/10/WhenToMock.html).
 12. Mastering Unit Testing Using Mockito and JUnit- An advanced guide to mastering unit testing using Mockito and JUnit by Sujoy Acharya.
+
+Happy Coding!
+
+---
+Peer Review Contributions by: [Joel Kanyi](/engineering-education/authors/joel-kanyi/)
