@@ -28,8 +28,6 @@ Svelte is the shiny new framework for frontend developers. It seems to do a whol
 
 5. [Conclusion](#conclusion)
 
-6. [References](#references)
-
 ### Prerequisites
 
 - A proper grasp of Javascript and its ecosystem
@@ -710,7 +708,7 @@ Running
   yarn dev
 ```
 
-would still throw an error as we currently have no assets to import. 
+would still throw an error as we currently have no assets to import.
 
 Create a folder named `assets` in the `src` directory and paste these three files:
 
@@ -926,13 +924,13 @@ We do 2 important things in this file:
 - The `markTodo` function updates the `completed` state of a `todo` locally and on Firestore.
 - The `getTodos` function is called to fetch all the todos from Firestore and save it in our `TodoStore`
 
-We have to add our environmental variables into the project so we can access it. Install the packages that enable us do that by running 
+We have to add our environmental variables into the project so we can access it. Install the packages that enable us do that by running
 
 ```terminal
 yarn add -D @rollup/plugin-replace & yarn add dotenv
 ```
 
-We also need access to the Firebase SDK. Install that by running 
+We also need access to the Firebase SDK. Install that by running
 
 ```terminal
 yarn add firebase
