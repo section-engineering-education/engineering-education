@@ -48,53 +48,53 @@ Svelte runs at build time and spits out imperative code that updates the DOM. Th
 
 - Head over to the Firebase [homepage](https://firebase.google.com/) and click the 'Go To Console' button.
 
-![Firebase homepage](./firebase-home.png)
+![Firebase homepage](/engineering-education/todolist-with-svelte-and-firebase/firebase-home.png)
 
 On the console, create a new project by clicking the '+' icon and give it whatever name you desire.
 
-![Add project in Firebase](./firebase-add-project.png)
+![Add project in Firebase](/engineering-education/todolist-with-svelte-and-firebase/firebase-add-project.png)
 
 I'll call mine 'svelte-todo' and uncheck Google Analytics as we won't be needing it.
 
-![Create project in Firebase](./firebase-create-project.png)
+![Create project in Firebase](/engineering-education/todolist-with-svelte-and-firebase/firebase-create-project.png)
 
 #### Setting up Google OAuth
 
 We have to create an app for the platform we're building. Click on the web icon.
 
-![Add web app in Firebase](./firebase-add-web-app.png)
+![Add web app in Firebase](/engineering-education/todolist-with-svelte-and-firebase/firebase-add-web-app.png)
 
 After registering the app with your nickname of choice, you'd see this:
 
-![Firebase SDK Variables](./firebase-sdk-vars.png)
+![Firebase SDK Variables](/engineering-education/todolist-with-svelte-and-firebase/firebase-sdk-vars.png)
 
 Copy the firebaseConfig object as we'll be using it later. DO NOT attempt to use the variables in the picture as they would have been deleted.
 
 Back on the console, Click on Authentication in the sidebar.
 
-![Firebase Authentication Link](./firebase-show-auth.png)
+![Firebase Authentication Link](/engineering-education/todolist-with-svelte-and-firebase/firebase-show-auth.png)
 
 Click on 'Get Started' and select Google as your auth provider.
 
-![Selecting Google as Auth Provider](./firebase-google-oauth.png)
+![Selecting Google as Auth Provider](/engineering-education/todolist-with-svelte-and-firebase/firebase-google-oauth.png)
 
 Enable the provider, choose your support email and click 'Save'.
 
-![Enabling Google as Auth Provider](./firebase-enable-google.png)
+![Enabling Google as Auth Provider](/engineering-education/todolist-with-svelte-and-firebase/firebase-enable-google.png)
 
 #### Setting up Firestore
 
 To set up Firestore, head back to the console homepage and click on 'Cloud Firestore'
 
-![Opening Firestore Console](./firebase-show-firestore.png)
+![Opening Firestore Console](/engineering-education/todolist-with-svelte-and-firebase/firebase-show-firestore.png)
 
 Click on 'Create Database', set it to 'Test Mode' and leave the location as is.
 
-![Creating Store](./firebase-create-store.png)
+![Creating Store](/engineering-education/todolist-with-svelte-and-firebase/firebase-create-store.png)
 
 At this point, Firestore should be enabled for your project. You can add collections or documents from here to play around with it.
 
-![Firestore Console](./firebase-store.png)
+![Firestore Console](/engineering-education/todolist-with-svelte-and-firebase/firebase-store.png)
 
 ### Building the frontend with Svelte
 
@@ -128,7 +128,7 @@ yarn dev
 
 to start the server.
 
-![Starting The Server](./cmd-yarn-dev.png)
+![Starting The Server](/engineering-education/todolist-with-svelte-and-firebase/cmd-yarn-dev.png)
 
 Head to the URL specified on 'Local' and you'd see your Svelte application running.
 
@@ -236,14 +236,14 @@ yarn dev
 
 and you should see this:
 
-![Svelte Default Page with blue header](./browser-2.png)
+![Svelte Default Page with blue header](/engineering-education/todolist-with-svelte-and-firebase/browser-2.png)
 
 #### Enabling Routing with page.js
 
 Since we're building an app that has users, we'll need a page to log in and another to add/view your todos. In the `src` folder, create a folder `pages` and add `home.svelte` and `login.svelte` into it.
 The folder structure should look like this:
 
-![Folder Structure](./vs-folder-structure.png)
+![Folder Structure](/engineering-education/todolist-with-svelte-and-firebase/vs-folder-structure.png)
 
 We're going to use a package called `page`. Run
 
@@ -812,7 +812,7 @@ export const UserStore = writable({
 
 Now, we should get something like this:
 
-![Showing project in browser](./browser-1.png)
+![Showing project in browser](/engineering-education/todolist-with-svelte-and-firebase/browser-1.png)
 
 #### Connecting the frontend with Firebase
 
