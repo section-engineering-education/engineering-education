@@ -22,34 +22,34 @@ Companies like [Amazon-Alexa](https://developer.amazon.com/en-US/alexa) use spee
 
 When building a Python application, one needs to incorporate speech recognition in their work to allow easier interaction between the user and the system providing better accessibility.
 
-Let's learn more about speech recognition - how it works, applications that use speech recognition, and a simple implementation in Python to recognize speeches.
+Let's learn more about speech recognition - how it works, applications that use speech recognition, and simple implementation in Python to recognize speeches.
 
 ### Table of contents
 - [Pre-requisites](#pre-requisites)
 - [Working principle of speech recognition](#working-principle-of-speech-recognition)
 - [Packages in speech recognition](#packages-in-speech-recognition)
 - [Application of speech recognition](#application-of-speech-recognition)
-- [Open source project for speech to text](#open-source-project-for-speech-to-text)
+- [Open-source project for speech to text](#open-source-project-for-speech-to-text)
 - [Conclusion](#conclusion)
 
 ### Pre-requisites
 For one to understand this tutorial better, the reader needs to have the following:
 - A good understanding of [Machine learning](https://www.w3schools.com/python/python_ml_getting_started.asp)
 - Basic knowledge in [Python programming](https://www.w3schools.com/python/default.asp)
-- Have [Jupyter notebook](https://jupyter.org/install) installed and knows how to use it.
+- Have [Jupyter notebook](https://jupyter.org/install) installed and know how to use it.
 - Have [Python](https://www.python.org/downloads/release/python-372/) installed on a machine.
 
 ### Working principle of speech recognition
-Speech recognition was first developed in Bell Labs, in the year 1952. Three researchers developed the system `audrey` that uses a single speaker for digit recognition - the evolution continued, and more inventions were developed. Now, speech recognition comes built-in with many packages that can understand many languages.
+Speech recognition was first developed in Bell Labs, in the year 1952. Three researchers developed the system `Audrey` that uses a single speaker for digit recognition - the evolution continued, and more inventions were developed. Now, speech recognition comes built-in with many packages that can understand many languages.
 
 The speech recognition working principle entails converting speech to electrical signals using a microphone. The signals are digitized to digital data that can be understood by the machine. After digitizing, many models have been used to translate the audio data to text data.
 
-The modern speech recognition relies on [Hidden Markov Model](https://the-learning-machine.com/article/ml/hidden-markov-models) approach (HMM) which works on the assumption that speech signal when viewed on a short timescale (like 10 millseconds), it appears to be a stagnant process - meaning there is no change on the waves patterns. The HMM is used in finding temporal patterns and improving accuracy.
+The modern speech recognition relies on [Hidden Markov Model](https://the-learning-machine.com/article/ml/hidden-markov-models) approach (HMM) which works on the assumption that speech signal when viewed on a short timescale (like 10 milliseconds), it appears to be a stagnant process - meaning there is no change in the waves patterns. The HMM is used in finding temporal patterns and improving accuracy.
 
 As a programmer, let's not worry about the working principles of speech recognition, since numerous services working with speech recognition are available free online for developers than APIs. One just needs to install the package to start recognizing sounds.
 
 ### Packages in speech recognition
-Speech recognition since its implementation, there are several packages available that deal with the speech exists on Python manager [PYPI](https://pypi.org).
+Speech recognition since its implementation, there are several packages available that deal with the speech exists on Python manager [PyPI](https://pypi.org).
 
 We will have a look at a few of them:
 - [Apiai](https://pypi.org/project/apiai/)
@@ -62,12 +62,12 @@ We will have a look at a few of them:
 - [Assembyai](https://pypi.org/project/assemblyai/)
 
 - The speech recognition package works the best when dealing with or developing a speech recognition application.
-- Packages like `Apiais` offers additional functionalities for NLP (Natural Language Processing) that are used for identifying the intent of speakers.
+- Packages like `Apiais` offer additional functionalities for NLP (Natural Language Processing) that are used for identifying the intent of speakers.
 - `CMU sphinx` designed with low resource platforms does focus on some fieldwork application creation.
 - Google Cloud speech offers speech to text messaging.
 - In addition, speech recognition offers simple audio processing and easy microphone accessibility.
 
-For this matter, we will use the SpeechRecognition package for the the following reasons:
+For this matter, we will use the SpeechRecognition package for the following reasons:
 - Saves audio data into an audio file.
 - Simple understandable results.
 - Speech can be recognized easily by a microphone.
@@ -75,7 +75,7 @@ For this matter, we will use the SpeechRecognition package for the the following
 
 ### How to implement speech recognition
 #### Installation
-Run the command to install speech recognition package:
+Run the command to install the speech recognition package:
 
 ```bash
 pip install speechrecognition
@@ -110,7 +110,7 @@ The threshold value is a value that determines the loudness of an audio file.
 
 To determine the energy threshold of an audio file, consider the ideal energy of audio files which is equivalent to `300` (recommended by `SpeechRecognition` library), and works best within that limit when dealing with the audio files.
 
-When working an audio data, increasing the energy threshold does nothing but only improves speech recognition. When values exceed the energy threshold of `300`, we consider them to be speech.
+When working on audio data, increasing the energy threshold does nothing but only improves speech recognition. When values exceed the energy threshold of `300`, we consider them to be speech.
 
 However, when they go below that barrier, they are deemed silent or no speech is found.
 
@@ -129,7 +129,7 @@ The methods below are used for recognizing speech from the audio data using diff
 - `recognize_google()` - Google web speech API
 - `recognize_google_cloud()` - Google Cloud Speech (need to install google-cloud-speech package).
 
-The `recognize_sphinx()` can work offline with the CMU Sphinx engine. But, other functions requires a stable internet connection.
+The `recognize_sphinx()` can work offline with the CMU Sphinx engine. But, other functions require a stable internet connection.
 
 Google has a free API `recognize_google()` method, that runs on its own without the help of any API. One disadvantage in that is, it gives a limit when trying to process audio files that take a long time during processing.
 
@@ -211,7 +211,7 @@ print(result)
 "and nature walk"
 ```
 
-### Open source project for speech to text
+### Open-source project for speech to text
 #### DeepSpeech
 This is an open-source embedded speech-to-text engine that runs on real-time devices with higher power GPU servers to those with less power like Raspberry. Mostly exists and runs on pre-trained machine models.
 
@@ -237,16 +237,16 @@ Espnet is an end-to-end speech processing toolkit that covers text to speech, sp
 
 For more information, read [this](https://espnet.github.io/espnet/).
 
-Few other open source projects includes:
+Few other open-source projects include:
 - [wenet](https://wenet-e2e.github.io/wenet/)
 - [Annyang](https://github.com/TalAter/annyang)
 - [Dragon fire](https://3c5.com/XBByt)
 - [speech py](https://pypi.org/project/SpeechRecognition/)
 
 ### Conclusion
-After going through this article, you will get to know what speech recognition is, where it is used in real life, and its working principles as well.
+After going through this article, you will get to know what speech recognition is, where it is used in real life, and it's working principles as well.
 
-Furthermore, you will gain knowledge on various open-source projects where you can configure and make your speech recognition application. Also, we have covered implementation of one such library in-detail.
+Furthermore, you will gain knowledge on various open-source projects where you can configure and make your speech recognition application. Also, we have covered the implementation of one such library in detail.
 
 Happy coding!
 
