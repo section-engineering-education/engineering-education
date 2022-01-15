@@ -358,4 +358,6 @@ To test the service, open the browser and navigate to the following URL, `127.0.
 
 We have how to implement a simple shortener service using React and Django. However, this project can be taken to the next level by styling the user interface and adding more features. One of the features that may be added is counting the number of times a link has been created.
 
+Full code for the application can be found [here](https://github.com/KayveTech/url-shortener).
+
 Happy coding!
