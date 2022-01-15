@@ -1,6 +1,21 @@
-### End-to-End SpeechRecognition Guide in Python
-Speech recognition is the process of enabling computers to identify and transcript appropriately from human voices or any other sounds. Speech is the best and widely used means of communication in the world. People rely on it to pass messages to one another for first-hand information.
+---
+layout: engineering-education
+status: publish
+published: true
+url: /end-to-end-speech-recognition-guide-in-python/
+title: End-to-End Speech Recognition Guide in Python
+description: This tutorial will help the reader understand what speech recognition is, where it is used, and different APIs that helps us with recognizing speeches. Also, we will be implementing a simple Python program to recognize sounds.
+author: jose-yusuf
+date: 2022-01-15T00:00:00-12:30
+topics: []
+excerpt_separator: <!--more-->
+images:
 
+  - url: /engineering-education/end-to-end-speech-recognition-guide-in-python/hero.png
+    alt: End-to-End Speech Recognition Guide in Python Hero Image
+---
+Speech recognition is the process of enabling computers to identify and transcript appropriately from human voices or any other sounds. Speech is the best and widely used means of communication in the world. People rely on it to pass messages to one another for first-hand information.
+<!--more-->
 Companies like Google have made work easier by implementing [Cloud Speech-to-Text](https://cloud.google.com/speech-to-text) to convert speech to text. Through this, speech recognition has helped us save time from typing things. It has also given us an easy way to interact and communicate with our devices without having to write a line of code.
 
 Companies like [Amazon-Alexa](https://developer.amazon.com/en-US/alexa) use speech recognition for easy navigation to their products. Speech recognition has helped the disabled, children, and visually impaired to interact with their system efficiently since no GUI is needed.
@@ -234,3 +249,6 @@ After going through this article, you will get to know what speech recognition i
 Furthermore, you will gain knowledge on various open-source projects where you can configure and make your speech recognition application. Also, we have covered implementation of one such library in-detail.
 
 Happy coding!
+
+---
+Peer Review Contributions by: [Srishilesh P S](/engineering-education/authors/srishilesh-p-s/)
