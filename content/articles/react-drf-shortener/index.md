@@ -4,7 +4,7 @@ This article covers creating a custom URL(Uniform Resource Locator) shortener se
 
 The user will copy a link in the input field provided and click the `shorten` button. The link will be sent to the backend using the `Fetch API`, and the backend will apply a procedure to provide an equivalent short 6-digit URL. Equivalent means that the short URL will redirect the user to the same page as the long URL.
 
-#### Prerequisites
+### Prerequisites
 
 To follow along, the reader should have:
 
@@ -16,7 +16,7 @@ To follow along, the reader should have:
 -   A browser, preferably Google Chrome.
 -   A code editor, preferably VS Code.
 
-#### Goals
+### Goals
 
 By the end of this article, the reader should be able to:
 
@@ -24,7 +24,7 @@ By the end of this article, the reader should be able to:
 -   Work with React and Django.
 -   Fetch data from a database using Django and display it on React webpage.
 
-#### Setting up the Backend and Exposing the API Routes.
+### Setting up the Backend and Exposing the API Routes.
 
 Create a folder named `react-drf-shortener` and `cd` into it. First, create a virtual environment for the Django backend. More information about Django virtual environments can be found [here](https://docs.python.org/3/tutorial/venv.html).
 
@@ -86,7 +86,7 @@ python -m pip install django-cors-headers
 
 `python -m pip install django-cors-headers` - This will install CORS to allow the Django backend to communicate with the React front-end.
 
-#### Registering the api app and the installed packages
+### Registering the api app and the installed packages
 
 Open the `settings.py` file and modify its contents as shown below:
 
@@ -149,9 +149,9 @@ urlpatterns = [
 ]
 ```
 
-#### Working on the api app
+### Working on the api app
 
-##### Creating the model
+#### Creating the model
 
 Open the `models.py` file in the api folder and modify it as shown below:
 
@@ -179,7 +179,7 @@ python manage.py makemigrations
 python manage.py migrate
 ```
 
-##### Creating the Serializer
+#### Creating the Serializer
 
 In the `app` folder, create a `serializers.py` file and modify it as shown below:
 
@@ -197,7 +197,7 @@ The above code will serialize all fields in the `urlShortener` model.
 
 More information about Serializers can be found [here](https://www.django-rest-framework.org/api-guide/serializers/).
 
-##### Working on the views
+#### Working on the views
 
 Open the `views.py` file and modify it as shown below:
 
@@ -238,7 +238,7 @@ In the `makeshorturl` view, we use the `@api_view` decorator provided by the Dja
 
 The `redirectUrl` view takes in the `request` and `shorturl`. The `shorturl` parameter will be specified in the `urls.py` file. This view uses a `try except` statement to retrieve an object from the database where the `shorturl` provided is equal to the shorturl in the database. The user is redirected to the `longurl` in the object retrieved from the database if the object is found.
 
-##### Working on the urls
+#### Working on the urls
 
 Open the `urls.py` file and modify it as shown below:
 
@@ -260,7 +260,7 @@ To run the server, run the following command:
 python manage.py runserver
 ```
 
-#### Setting up the Frontend
+### Setting up the Frontend
 
 `cd` into the `react-drf-shortener` folder using the command prompt and run the following commands:
 
@@ -350,11 +350,11 @@ npm start
 
 The above command will open a local development server on `127.0.0.1:3000`
 
-#### Testing the Shortener Service.
+### Testing the Shortener Service.
 
 To test the service, open the browser and navigate to the following URL, `127.0.0.1:3000`. Make sure that server is running. Input the long URL on the input field provided and click on the `shorten` button. A short URL will be rendered, and after clicking on it, it redirects to the same webpage as the long URL. This means that our shortener service is working.
 
-#### Conclusion
+### Conclusion
 
 We have how to implement a simple shortener service using React and Django. However, this project can be taken to the next level by styling the user interface and adding more features. One of the features that may be added is counting the number of times a link has been created.
 
