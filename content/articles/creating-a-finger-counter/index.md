@@ -20,21 +20,21 @@ The fun part makes us keep working on the project when the code is throwing erro
 
 Even so, they keep working on the code and research what is causing the errors to occur. Most of the time this is because they would love to see the output of the projects they are working on.
 
-In this tutorial, we will work on a fun but relatively challenging project. We will look at how to create a finger counter using computer vision, opencv, and python.
+In this tutorial, we will work on a fun but relatively challenging project. We will look at how to create a finger counter using computer vision, OpenCv, and Python.
 
 ### Introduction
-Python has libraries that will help us develop our project. We will be needing opencv and mediapipe. We will later look at why and how we will be using these two libraries. 
+Python has libraries that will help us develop our project. We will need OpenCv and MediaPipe. We will later look at why and how we will use these two libraries. 
 
-We will also need an IDE to work with python. We will use **pycharm community edition** as it is freely available on the internet.
+We will also need an IDE to work with Python. We will use **pycharm community edition** as it is freely available on the internet.
 
-In this tutorial, we will learn how to hand track using python with the help of mediapipe library. We will also learn to implement computer vision in our project using opencv.
+In this tutorial, we will learn how to hand track using python with the help of MediaPipe library. We will also learn to implement computer vision in our project using OpenCv.
 
-We will finally learn how to combine mediapipe, opencv, and python to create a program that will count the number of fingers in an input image. A person using Windows or Linux can follow through.
+We will finally learn how to combine MediaPipe, OpenCv, and Python to create a program that will count the number of fingers in an input image. A person using Windows or Linux can follow through.
 
 ### Table of contents
 - [Prerequisites](#prerequisites)
 - [Understanding the hand landmark model](#understanding-the-hand-landmark-model)
-- [Creating a finger counter program using computer vision, opencv, and python](#creating-a-finger-counter-program-using-computer-vision-opencv-and-python)
+- [Creating a finger counter program using computer vision, OpenCv, and Python](#creating-a-finger-counter-program-using-computer-vision-opencv-and-python)
 - [Results](#results)
 - [Conclusion](#conclusion)
 
@@ -48,7 +48,7 @@ To understand this article, a person needs to:
 
 _[Image Source: Mediapipe](https://google.github.io/mediapipe/images/mobile/hand_landmarks.png)_
 
-The diagram above shows a hand landmark model that shows how mediapipe can track hands. For us, we are interested in hand-knuckles. 
+The diagram above shows a hand landmark model that shows how MediaPipe can track hands. For us, we are interested in hand-knuckles. 
 
 The diagram shows numbers from 0 to 20 displayed over the knuckles. We will be using the position of these knuckles to determine whether a finger is open or closed.
 
@@ -56,21 +56,21 @@ Let us take a look at the logic we will be using. If knuckle number 8 is above k
 
 This will apply to all fingers except the thumb. For the thumb, we will check whether knuckle number `4` is above knuckle number `2`. If this is the case then the thumb is open else the thumb is closed.
 
-### Creating a finger counter program using computer vision, opencv, and python
+### Creating a finger counter program using computer vision, OpenCv, and Python
 We first of all need to prepare our working environment in _Pycharm_. Open the pycharm app and click `create a new project` on the window that appears. 
 
 This will be as shown in the screenshot below.
 
 ![Project](/engineering-education/creating-a-finger-counter/project.png)
 
-After clicking `create a new project`, a new window will appear. Click the `create` button. Now that we have Pycharm ready, we need to install the python libraries we need for our project.
+After clicking `create a new project`, a new window will appear. Click the `create` button. Now that we have Pycharm ready, we need to install the Python libraries we need for our project.
 
-### Installing the python libraries we need for our project
+### Installing the Python libraries we need for our project
 Click the `terminal` as shown in the screenshot below then follow the steps below it.
 
 ![Terminal](/engineering-education/creating-a-finger-counter/terminal.png)
 
-To install `mediapipe`, use the command below:
+To install `MediaPipe`, use the command below:
 
 ```bash
 pip install mediapipe
@@ -99,8 +99,8 @@ import cv2
 import mediapipe as mp
 ```
 
-#### Step 2 - Declaring the `mediapipe` objects and the finger and thumb coordinates
-We will then capture an image using our webcam and declare the `mediapipe` objects that we will need. We will also declare the finger and thumb coordinates that we will need to determine whether a finger is open or closed. 
+#### Step 2 - Declaring the `MediaPipe` objects and the finger and thumb coordinates
+We will then capture an image using our webcam and declare the `MediaPipe` objects that we will need. We will also declare the finger and thumb coordinates that we will need to determine whether a finger is open or closed. 
 
 We use the code below to achieve this.
 
