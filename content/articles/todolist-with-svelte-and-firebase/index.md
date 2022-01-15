@@ -12,7 +12,7 @@ images:
     alt: svelte and firebase image
 ---
 
-Svelte is the shiny new framework for frontend developers. It seems to do a whole lot differently than the big three frameworks. We'll be taking a deep dive into it in this article.
+Svelte is the shiny new framework for frontend developers. It seems to do a whole lot different than other frameworks. In this article, we'll be looking at how we can use Svelte to build a simple web application.
 
 <!--more-->
 
@@ -34,15 +34,13 @@ Svelte is the shiny new framework for frontend developers. It seems to do a whol
 
 - A proper grasp of Javascript and its ecosystem
 - Node v14 or higher
-- A Node Package Manaager (npm or yarn)
+- A Node Package Manager (npm or yarn)
 
 ### Introduction
 
-You might be wondering ' What is Svelte? '. Well, Svelte is a relatively new Javascript Framework (actually a compiler) created by Rich Harris that has brought about a radical change in how frameworks go about editing the DOM(Document Object Module). The big three frameworks (React, Angular, Vue) we currently have mostly advise developers to use declarative code when building out components as opposed to imperative code. For context, writing declarative code is a programming paradigm that encourages developers to simply define the end state of a particular component and the framework handles how to go about getting to that state. Imperative code on the other hand encourages developers to follow through with the updating of the component at every step of the way till we get to our final destination.
+Svelte is a new Javascript Framework (actually a compiler) created by Rich Harris.  It has brought about a radical change in how to go about editing the DOM(Document Object Module).
 
-Svelte instead runs at build time, compiles our code, and spits out imperative code that updates our DOM in the most efficient way possible. This eliminates the need for a Virtual DOM which is used in React and Vue to update the DOM based on the difference between the current DOM and what the DOM is supposed to be. It also takes the good parts of Vue as components can have scoped styles that don't affect nested elements as well as updating state by simply changing the value of a variable. Topping all of these, Svelte ships with its in-built methods of storing state ( think Redux for React or VueX for Vue ) and it is more lightweight and performant when compared to a React App.
-
-Firebase on
+Svelte runs at build time and spits out imperative code that updates the DOM. This eliminates the need for a Virtual DOM used in other frameworks. It also has features like 'scoped styling' and 'reactive assignment'. Furthermore, Svelte also has 'stores' to help to store state.
 
 ### Setting Up Firebase
 
@@ -50,11 +48,11 @@ Firebase on
 
 - If you don't have a Google Account, you can go ahead to create one and sign in.
 
-- Head over to the Firebase [homepage](https://firebase.google.com/) and click the 'Go To Console' button
+- Head over to the Firebase [homepage](https://firebase.google.com/) and click the 'Go To Console' button.
 
 ![Firebase homepage](./firebase-home.png)
 
-On the console, create a new project by clicking the '+' icon and give it whatever name you desire. 
+On the console, create a new project by clicking the '+' icon and give it whatever name you desire.
 
 ![Add project in Firebase](./firebase-add-project.png)
 
@@ -64,7 +62,7 @@ I'll call mine 'svelte-todo' and uncheck Google Analytics as we won't be needing
 
 #### Setting up Google OAuth
 
-Firstly, we have to create an app for the platform we're building. Click on the web icon
+We have to create an app for the platform we're building. Click on the web icon.
 
 ![Add web app in Firebase](./firebase-add-web-app.png)
 
@@ -74,7 +72,7 @@ After registering the app with your nickname of choice, you'd see this:
 
 Copy the firebaseConfig object as we'll be using it later. DO NOT attempt to use the variables in the picture as they would have been deleted.
 
-Back on the console, Click on Authentication in the sidebar
+Back on the console, Click on Authentication in the sidebar.
 
 ![Firebase Authentication Link](./firebase-show-auth.png)
 
@@ -82,7 +80,7 @@ Click on 'Get Started' and select Google as your auth provider.
 
 ![Selecting Google as Auth Provider](./firebase-google-oauth.png)
 
-Enable the provider, select your support email and click 'Save'.
+Enable the provider, choose your support email and click 'Save'.
 
 ![Enabling Google as Auth Provider](./firebase-enable-google.png)
 
@@ -96,17 +94,41 @@ Click on 'Create Database', set it to 'Test Mode' and leave the location as is.
 
 ![Creating Store](./firebase-create-store.png)
 
-At this point, Firestore should have been enabled for your project. You can add collections or documents from here to play around with it.
+At this point, Firestore should be enabled for your project. You can add collections or documents from here to play around with it.
 
 ![Firestore Console](./firebase-store.png)
 
 ### Building the frontend with Svelte
 
-To create a Svelte project, run `npx degit sveltejs/template [PROJECT-NAME]` then run `cd [PROJECT-NAME]` to enter into that directory.
+To create a Svelte project, run
 
-This creates a basic Svelte project for us from this [template](https://github.com/sveltejs/template) but we still have to install the packages that comes with the template. We can use either yarn or npm for this but I'll use yarn.
+```terminal
+npx degit sveltejs/template [PROJECT-NAME]
+```
 
-Run `yarn` to install packages, then run `yarn dev` to start the server. 
+then run
+
+```terminal
+cd [PROJECT-NAME]
+```
+
+to enter into that directory.
+
+ This creates a basic Svelte project for us from this [template](https://github.com/sveltejs/template). We still have to install the packages that come with the template though. We can use either yarn or npm for this but I'll use yarn.
+
+Run
+
+```terminal
+yarn
+```
+
+to install packages, then run
+
+```terminal
+yarn dev
+```
+
+to start the server.
 
 ![Starting The Server](./cmd-yarn-dev.png)
 
@@ -114,7 +136,13 @@ Head to the URL specified on 'Local' and you'd see your Svelte application runni
 
 #### Enabling SCSS in the project
 
-To do this, we have to install some new packages to help us parse SCSS. Run `yarn add -D node-sass svelte-preprocess`. Edit the `rollup.config.js` file in the root of the directory to look like so :
+To do this, we have to install some new packages to help us parse SCSS. Run
+
+```terminal
+yarn add -D node-sass svelte-preprocess
+```
+
+Edit the `rollup.config.js` file in the root of the directory to look like so:
 
 ```js
 import svelte from "rollup-plugin-svelte";
@@ -129,30 +157,7 @@ import preprocess from "svelte-preprocess";
 
 const production = !process.env.ROLLUP_WATCH;
 
-function serve() {
-  let server;
-
-  function toExit() {
-    if (server) server.kill(0);
-  }
-
-  return {
-    writeBundle() {
-      if (server) return;
-      server = require("child_process").spawn(
-        "npm",
-        ["run", "start", "--", "--dev"],
-        {
-          stdio: ["ignore", "inherit", "inherit"],
-          shell: true,
-        }
-      );
-
-      process.on("SIGTERM", toExit);
-      process.on("exit", toExit);
-    },
-  };
-}
+//CODE OMITTED FOR BREVITY
 
 export default {
   input: "src/main.js",
@@ -167,41 +172,13 @@ export default {
       //NEW LINE HERE
       preprocess: preprocess(),
       compilerOptions: {
-        // enable run-time checks when not in production
         dev: !production,
       },
     }),
-    // we'll extract any component CSS out into
-    // a separate file - better for performance
     css({ output: "bundle.css" }),
-
-    // If you have external dependencies installed from
-    // npm, you'll most likely need these plugins. In
-    // some cases you'll need additional configuration -
-    // consult the documentation for details:
-    // https://github.com/rollup/plugins/tree/master/packages/commonjs
-    resolve({
-      browser: true,
-      dedupe: ["svelte"],
-    }),
-    commonjs(),
-
-    // In dev mode, call `npm run start` once
-    // the bundle has been generated
-    !production && serve(),
-
-    // Watch the `public` directory and refresh the
-    // browser on changes when not in production
-    !production && livereload("public"),
-
-    // If we're building for production (npm run build
-    // instead of npm run dev), minify
-    production && terser(),
-  ],
-  watch: {
-    clearScreen: false,
-  },
-};
+    
+    //CODE OMITTED FOR BREVITY
+    
 
 ```
 
@@ -243,48 +220,66 @@ To test if SCSS works, go into the `App.svelte` file and paste the below:
 
 ```
 
-I'm sure you're already wondering how this file works. Well, Svelte expects each component to have 3 sections:
+I'm sure you're already wondering how this file works. Well, Svelte expects each component to have three sections:
 
-- The Script: It is represented by the `<script></script>` tag and contains most javascript related functionalities in our component.
-- The Component Body: This is the main part of our component. It includes the HTML and dictates exactly what is to be displayed.
-- The Component Styles: It is represented by the `<style></>` tag and contains our styling code. In our case, we're using SCSS so we set the lang attribute on the style tag to `scss`
+- The Script: It is represented by the `<script></script>` tag and contains most javascript related functionalities.
+- The Component Body: This is the main part of our component. It includes the HTML and dictates what is to be displayed.
+- The Component Styles: It is represented by the `<style></style>` tag and contains our styling code. In our case, we're using SCSS so we set the lang attribute on the style tag to `scss`.
 
-`export let name` in the `script` means we want our component to accept a prop called `name` from its parent. We can accept as many props as we want.
+Our component is to accept a prop called `name` from its parent. `export let name` achieves this functionality for us. We can accept as many props as we want.
 
-In the component body, we can display any of the variables in our script by wrapping them in curly braces as was done to `name` in the `h1` tag.
+In the component body, we can display any of the variables in our script by wrapping them in curly braces.
 
-Now that we understand the component, you can start the server again by running `yarn dev` and you should see this:
+Now that we understand the component, you can start the server again by running
+
+```terminal
+yarn dev
+```
+
+and you should see this:
 
 ![Svelte Default Page with blue header](./browser-2.png)
 
 #### Enabling Routing with page.js
 
-Since we're building an app that has users, we'll need a page to login and another to add/view your todos. In the `src` folder, create a new folder `pages` and add `home.svelte` and `login.svelte` into it.
+Since we're building an app that has users, we'll need a page to log in and another to add/view your todos. In the `src` folder, create a folder `pages` and add `home.svelte` and `login.svelte` into it.
 The folder structure should look like this:
 
 ![Folder Structure](./vs-folder-structure.png)
 
-We're going to use a package called `page`. Run `yarn add page` to install it and open `package.json` when it's done installing. Change the `start` script to `"start": "sirv public --single"`. Finally, go into the `App.svelte` file and paste the below.
+We're going to use a package called `page`. Run
+
+```terminal
+yarn add page
+```
+
+to install it and open `package.json` when it's done installing. Change the `start` script to
+
+```g
+"start": "sirv public --single"
+```
+
+Finally, go into the `App.svelte` file and paste the below.
 
 ```js
 <script>
   import router from "page";
   import Home from "./pages/home.svelte";
-	import Login from "./pages/login.svelte";
+  import Login from "./pages/login.svelte";
   
-	let page;
+  let page;
   
-	router("/", () => page = Home);
+  router("/", () => page = Home);
   
-	router("/login", () => page = Login);
+  router("/login", () => page = Login);
   
-	router.start();
+  router.start();
 </script>
   
 <svelte:component this={page} />
 ```
 
-We're simply importing the router, adding our different routes and starting the router. Our pages are empty but before adding their content, we need to think about where we'll store our data. Well, don't think too much because Svelte ships with a store (think how ContextAPI is to React) right out of the box. In the `src` folder, create a `stores.js` file and paste the following into it:
+We're importing the router, adding our different routes and starting the router. Our pages are empty but before adding their content, we need to set up our store. In the `src` folder, create a `stores.js`file and paste the following into it:
 
 ```js
 import { writable } from "svelte/store";
@@ -363,7 +358,7 @@ Open the `login.svelte` file and paste:
 </style>
 ```
 
-Here, we're displaying a large centered button, that will log the user in when clicked. The `$UserStore` is used to access the value inside of a store.
+Here, we're displaying a large centred button, that will log the user in when clicked. The `$UserStore` is used to access the value inside of the store.
 
 In Svelte, statements written after `$:` like so `$: if ($UserStore) page.redirect("/")` are called `Reactive Statements`. They are run before a component updates if the values they depend on have changed. The \$ in `$UserStore` and `Reactive Statements` do not have the same function.
 
@@ -491,11 +486,11 @@ Open the `edit-todo.svelte` file and paste this too:
   </style>
 ```
 
-In this component, we display a form that enables users to create todos by entering the name of the todo and its priority. You'll notice `bind:value` in both inputs. It is called a `directive` and its purpose is to attach the current value of that input to the variable specified. Implementing this functionality in React uses significantly longer code as you'd have to create state, set the input's onChange handler and assign the value to the state.
+In this component, we display a form that enables users to create todos by entering the name of the todo and its priority. You'll notice `bind:value` in both inputs. It is called a `directive` and it attaches the current value of that input to the variable specified.
 
 The button in the form has a property `on:click|preventDefault`. This is also a `directive` but it has a `modifier` as well. Modifiers simply customize the directive we're currently using. `on:click` is a directive that helps us attach our click event handler to the button. The `|` is used to add modifiers and the `preventDefault` modifier calls the `event.preventDefault()` method for us before calling the event handler.
 
-The submitTodo function currently logs out the todo we have created. We'll connect it to Firestore soon.
+The `submitTodo` function currently logs out the todo we have created. We'll connect it to Firestore soon.
 
 Open the `header.svelte` file and paste:
 
@@ -607,11 +602,11 @@ Lastly, we have the `view-todos` component that displays all the todos. Open the
 
 ```
 
-The 2 reactive statements in this component help us generate arrays for the `completed` and `incompleted` todos. We sort the `incompleted` todos based on priority but leave the `completed` as is. We then keep track of the current tab we're on, `complete` or `incomplete` and display the right todos based on that.
+The two reactive statements in this component help us generate arrays for the 'completed' and 'incompleted' todos. We sort the 'incompleted' todos based on priority but leave the 'completed' as is. We then keep track of the current tab we're on and display the right todos based on that.
 
 We do this with the `{#if CONDITION}` which displays a component depending on the condition. We also use `{#each ARRAY as ARRAY_ITEM (ITEM_ID)}` to help us display a component for each item in an array. Both of them have to be closed though with matching `{/if}` and `{/each}` respectively. We come across another directive, `class:active` which adds a class to the element depending on the condition.
 
-We imported one more component, `TodoItem`. This is the last component we have to build :).
+We imported one more component, `TodoItem`.
 Create a new file in the `components` folder called `todo-item.svelte` and paste the following into the file:
 
 ```js
@@ -675,57 +670,25 @@ Create a new file in the `components` folder called `todo-item.svelte` and paste
 </style>
 ```
 
-This component takes a `todo` and renders its name as well as stars to represent its priority. It also has a button that marks it as `complete` or `incomplete` depending on its current state.
+This component takes a `todo` as a prop and renders its name as well as stars to represent its priority. It also has a button that marks its `complete` or `incomplete` state.
 
-There's just one issue, Svelte cannot import `.svg` files by itself. We need to add packages to help us do that. Run `yarn add -D rollup-plugin-svelte-svg` and replace the `rollup.config.js` file with this:
+There's just one issue, Svelte cannot import `.svg` files by itself. We need to add packages to help us do that. Run
+
+```terminal
+yarn add -D rollup-plugin-svelte-svg
+```
+
+ and replace the `rollup.config.js` file with this:
 
 ```js
-//NEW LINE HERE
-import preprocess from "svelte-preprocess";
-import svelte from "rollup-plugin-svelte";
-import commonjs from "@rollup/plugin-commonjs";
-import resolve from "@rollup/plugin-node-resolve";
-import livereload from "rollup-plugin-livereload";
-import { terser } from "rollup-plugin-terser";
+//CODE OMITTED FOR BREVITY
 import css from "rollup-plugin-css-only";
+
 //NEW LINE HERE
 import { svelteSVG } from "rollup-plugin-svelte-svg";
 
-const production = !process.env.ROLLUP_WATCH;
 
-function serve() {
-  let server;
-
-  function toExit() {
-    if (server) server.kill(0);
-  }
-
-  return {
-    writeBundle() {
-      if (server) return;
-      server = require("child_process").spawn(
-        "npm",
-        ["run", "start", "--", "--dev"],
-        {
-          stdio: ["ignore", "inherit", "inherit"],
-          shell: true,
-        }
-      );
-
-      process.on("SIGTERM", toExit);
-      process.on("exit", toExit);
-    },
-  };
-}
-
-export default {
-  input: "src/main.js",
-  output: {
-    sourcemap: true,
-    format: "iife",
-    name: "app",
-    file: "public/build/bundle.js",
-  },
+//CODE OMITTED FOR BREVITY
   plugins: [
     //NEW LINE HERE
     svelteSVG({
@@ -734,45 +697,22 @@ export default {
     svelte({
       preprocess: preprocess(),
       compilerOptions: {
-        // enable run-time checks when not in production
         dev: !production,
       },
     }),
-    // we'll extract any component CSS out into
-    // a separate file - better for performance
-    css({ output: "bundle.css" }),
-
-    // If you have external dependencies installed from
-    // npm, you'll most likely need these plugins. In
-    // some cases you'll need additional configuration -
-    // consult the documentation for details:
-    // https://github.com/rollup/plugins/tree/master/packages/commonjs
-    resolve({
-      browser: true,
-      dedupe: ["svelte"],
-    }),
-    commonjs(),
-
-    // In dev mode, call `npm run start` once
-    // the bundle has been generated
-    !production && serve(),
-
-    // Watch the `public` directory and refresh the
-    // browser on changes when not in production
-    !production && livereload("public"),
-
-    // If we're building for production (npm run build
-    // instead of npm run dev), minify
-    production && terser(),
-  ],
-  watch: {
-    clearScreen: false,
-  },
-};
-
+//CODE OMITTED FOR BREVITY
+    
 ```
 
-Running `yarn dev` would still throw an error as we currently have no assets to import. Create a folder named `assets` in the `src` directory and paste these three files:
+Running
+
+```terminal
+  yarn dev
+```
+
+would still throw an error as we currently have no assets to import. 
+
+Create a folder named `assets` in the `src` directory and paste these three files:
 
 - cancel.svg
   
@@ -792,7 +732,7 @@ Running `yarn dev` would still throw an error as we currently have no assets to 
   <?xml version="1.0" ?><svg id="Layer_1" style="enable-background:new 0 0 50 50;" version="1.1" viewBox="0 0 50 50" xml:space="preserve" fill='#fff' xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><g id="Layer_1_1_"><polygon points="47.293,6.94 14,40.232 2.707,28.94 1.293,30.353 14,43.06 48.707,8.353  "/></g></svg>
   ```
 
-All our errors should have been cleared by now but on running it, the styling might look a bit off. Replace the `global.css` in `public/build` directory with:
+We should be error-free now but on running it, the styling might look a bit off. Replace the `global.css` file in the `public/build` directory with:
 
 ```css
 html,
@@ -878,9 +818,9 @@ Now, we should get something like this:
 
 #### Connecting the frontend with Firebase
 
-Since we're connecting Firebase to the frontend, we need to add our Firebase Configuration variables to the project (recall we got them earlier from the  Firebase Console). We can't add the variables directly into the project though because they're supposed to be kept secret. We use environmental variables instead to keep them. Create a file in the root of the project, name it `.env` and add it to your `.gitignore` file.
+We need to add our Firebase Configuration variables to the project.  Recall we got them earlier from the Firebase Console. We can't add the variables into the project though because they're to be kept secret. We use environmental variables instead to keep them. Create a file in the root of the project, name it `.env` and add it to your `.gitignore` file.
 
-Put your config variables into this file like so:
+Put your configuration variables into this file like so:
 
 ```js
 FIREBASE_API_KEY="YOUR_API_KEY"
@@ -978,7 +918,7 @@ export const markTodo = async (completed, id) => {
 
 We do 2 important things in this file:
 
-1. We initialize Firebase with our config variables.
+1. We initialize Firebase with our configuration variables.
 2. We export all the utility functions we'll be using in the components.
 
 - The `signInWithGoogle` and `logOut` function do exactly what their names imply.
@@ -986,57 +926,29 @@ We do 2 important things in this file:
 - The `markTodo` function updates the `completed` state of a `todo` locally and on Firestore.
 - The `getTodos` function is called to fetch all the todos from Firestore and save it in our `TodoStore`
 
-The first thing we have to do is to add our environmental variables into the project so we can access it. Install the packages by running `yarn add -D @rollup/plugin-replace & yarn add dotenv`.We also need access to the Firebase SDK. Install that by running `yarn add firebase`. We also have to update our `rollup.config.js` to:
+We have to add our environmental variables into the project so we can access it. Install the packages that enable us do that by running 
+
+```terminal
+yarn add -D @rollup/plugin-replace & yarn add dotenv
+```
+
+We also need access to the Firebase SDK. Install that by running 
+
+```terminal
+yarn add firebase
+```
+
+Then update your `rollup.config.js` to:
 
 ```js
-//NEW LINE HERE
-import preprocess from "svelte-preprocess";
-import svelte from "rollup-plugin-svelte";
-import commonjs from "@rollup/plugin-commonjs";
-import resolve from "@rollup/plugin-node-resolve";
-import livereload from "rollup-plugin-livereload";
-import { terser } from "rollup-plugin-terser";
-import css from "rollup-plugin-css-only";
+//CODE OMITTED FOR BREVITY
 import { svelteSVG } from "rollup-plugin-svelte-svg";
 //NEW LINE HERE
 import replace from "@rollup/plugin-replace";
 import { config } from "dotenv";
 
-const production = !process.env.ROLLUP_WATCH;
+//CODE OMITTED FOR BREVITY
 
-function serve() {
-  let server;
-
-  function toExit() {
-    if (server) server.kill(0);
-  }
-
-  return {
-    writeBundle() {
-      if (server) return;
-      server = require("child_process").spawn(
-        "npm",
-        ["run", "start", "--", "--dev"],
-        {
-          stdio: ["ignore", "inherit", "inherit"],
-          shell: true,
-        }
-      );
-
-      process.on("SIGTERM", toExit);
-      process.on("exit", toExit);
-    },
-  };
-}
-
-export default {
-  input: "src/main.js",
-  output: {
-    sourcemap: true,
-    format: "iife",
-    name: "app",
-    file: "public/build/bundle.js",
-  },
   plugins: [
     //NEW LINE HERE
     replace({
@@ -1050,48 +962,12 @@ export default {
     svelteSVG({
       svgo: {},
     }),
-    svelte({
-      preprocess: preprocess(),
-      compilerOptions: {
-        // enable run-time checks when not in production
-        dev: !production,
-      },
-    }),
-    // we'll extract any component CSS out into
-    // a separate file - better for performance
-    css({ output: "bundle.css" }),
-
-    // If you have external dependencies installed from
-    // npm, you'll most likely need these plugins. In
-    // some cases you'll need additional configuration -
-    // consult the documentation for details:
-    // https://github.com/rollup/plugins/tree/master/packages/commonjs
-    resolve({
-      browser: true,
-      dedupe: ["svelte"],
-    }),
-    commonjs(),
-
-    // In dev mode, call `npm run start` once
-    // the bundle has been generated
-    !production && serve(),
-
-    // Watch the `public` directory and refresh the
-    // browser on changes when not in production
-    !production && livereload("public"),
-
-    // If we're building for production (npm run build
-    // instead of npm run dev), minify
-    production && terser(),
-  ],
-  watch: {
-    clearScreen: false,
-  },
-};
+  
+//CODE OMITTED FOR BREVITY
 
 ```
 
-Firebase should be set up properly by this point. We just have to add Firebase functionalities into the components.
+Firebase should be set up properly by now. We just have to add Firebase functionalities into the components.
 
 - `login.svelte`
   
@@ -1162,7 +1038,7 @@ Firebase should be set up properly by this point. We just have to add Firebase f
   </header>
   ```
 
-  This updated the button so it can call the logOut function when it's clicked.
+  The 'Log Out' button can now log users out.
 
 - `edit-todo.svelte`
   
@@ -1252,7 +1128,7 @@ Firebase should be set up properly by this point. We just have to add Firebase f
 
   ```
 
-We call the `onMount` function to help us run a function after a component has been mounted. The `onAuthStateChanged` function calls it callback whenever the user state changes. We then update the `UserStore` based on the value we receive. `onAuthStateChanged` returns its cleanup function when it's called and Svelte helps us call it when the component is unmounted.
+We call the `onMount` function to help us run a function after a component has been mounted. The `onAuthStateChanged` function calls its callback whenever the user state changes. We then update the `UserStore` based on the value we receive.
   
 Clear the stores in the `stores.js` file so Firebase can take over and !Voila! we're done.
 
