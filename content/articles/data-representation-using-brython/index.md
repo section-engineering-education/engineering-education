@@ -200,20 +200,20 @@ b_highchart(
 ```
 
 The code above is used to plot the pie chart using the following methods:
-- **`plotBackgroundColor`** 
-  It is used to plot the background color for the chart area.
+- `plotBackgroundColor`
+It is used to plot the background color for the chart area.
 
-- **`plotBorderWidth`** 
-  This is used to plot the width of the chart area in pixels.
+- `plotBorderWidth`
+It is used to plot the width of the chart area in pixels.
 
-- **`plotShadow`**  
-  This method takes in boolean values. It adds a drop shadow to the area. 
+- `plotShadow`
+This method takes in boolean values. It adds a drop shadow to the area. 
 
-- **`renderTo`**
-  This method is similar to `document.getElementBy` in javascript. It will take the `id` of the `div` tag in our HTML code.
+- `renderTo`
+This method is similar to `document.getElementBy` in javascript. It will take the `id` of the `div` tag in our HTML code.
 
-- **`tooltip`**
-  This object contains the details in the small box when we hover on our chart.
+- `tooltip`
+This object contains the details in the small box when we hover on our chart.
 
 When we execute this code, our piechart is as shown below:
 
