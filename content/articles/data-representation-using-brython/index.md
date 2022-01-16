@@ -312,9 +312,7 @@ This method is used to specify the chart type.
 This is a small modal that pops up when we hover our mouse on the datasets in the plot.  It displays all details added to the scatter plot.
 
 ### Conclusion
-The process of data representation is a delightful journey. Like all journeys, it must come to an end. 
-Through the use of a content delivery network, we were able to import Brython and highchart's Javascript files. This further enabled us to represent data in the form of piechart and scatter plot using Brython.
-[Here](https://github.com/ayodele96/brython) is the link to the repository containing the code snippets.
+The process of data representation is a delightful journey. Like all journeys, it must come to an end.  Through the use of a Content Delivery Network, we were able to import Brython and Highchart's Javascript files. This further enabled us to represent data in the form of piechart and scatter plot using Brython. To get the Python code used in this tutorial, click [here](https://github.com/ayodele96/brython).
 
 ### Reference
 For more exposure on this topic, go through the [Brython documentation](https://brython.info/static_doc/en/intro.html).
