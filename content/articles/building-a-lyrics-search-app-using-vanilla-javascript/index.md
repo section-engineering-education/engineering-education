@@ -187,7 +187,9 @@ Here is what your web page should look like:
 ![Screenshot for design](/engineering-education/building-lyrics-search-app-using-vanilla-javascript/design-screenshot.png)
 
 ### A brief introduction to OVH API
-The OVH lyrics API is a simple API that helps us retrieve the lyrics of the song requested. While trying to fetch lyrics from this API, we use two parameters to fetch data (lyrics),which are the artist's name and title of the song.
+The OVH lyrics API is a simple API that helps us retrieve the lyrics of the song requested. While trying to fetch lyrics from this API, we use two parameters to fetch data (lyrics). They are:
+- Artist's name.
+- Title of the song.
 
 This basically means you can retrieve lyrics by using either the artist's name or the title of the song. When a request is made, the data is returned in JSON format.
 
