@@ -92,3 +92,8 @@ The Quantum-based robot performs all the work for you since it is automated. To 
 
 At the moment, a typical home computer is incapable of processing enormous volumes of data at once. Quantum computers may be capable of reaching into a database. It accesses all things at once, and delivering an evaluation in seconds. We may discover patterns using quantum technology.
 
+#### Further Reading
+For further reading you can go through the following:
+* Google's [Quantum AI](https://quantumai.google/)
+* Quantum [Trading bot](https://quantum-ai.io/)
+* [Quantum's AI breakthroughs](https://www.captechu.edu/blog/recent-breakthroughs-quantum-ai) 
