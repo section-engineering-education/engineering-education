@@ -1,5 +1,12 @@
 ### Overview of Quantum AI
 
+#### Introduction
+
+Quantum Artificial intelligence (AI), as the name suggests, is the application of quantum technology to machine learning procedures. Quantum technology and machine learning are game-changing innovations that will make tasks easier. This branch of  Artificial Intelligence will require a better knowledge of quantum computing and quantum physics.  
+
+Quantum computers store and process data using quantum technology. These computer systems can have substantial advantages to some jobs in that they can work more efficiently. 
+A quantum computer stores its data in **qubit** form also known as **quantum bits**. Quantum's system consistency and its connected qubits permit it to be in more than one place at a time. This results in qubits representing several elements once.
+
 #### Table of contents
 - [Introduction](#introduction)
 - [Key Takeaways](#key-takeaways)
@@ -9,13 +16,6 @@
 - [Quantum AI crypto Bot](#quantum-ai-crypto)
 - [How Quantum AI Checks Crypto Markets](#how-quontum-ai-checks-crypto-markets)
 - [Conclusion](#conclusion)
-
-#### Introduction
-
-Quantum Artificial intelligence (AI), as the name suggests, is the application of quantum technology to machine learning procedures. Quantum technology and machine learning are game-changing innovations that will make tasks easier. This branch of  Artificial Intelligence will require a better knowledge of quantum computing and quantum physics.  
-
-Quantum computers store and process data using quantum technology. These computer systems can have substantial advantages to some jobs in that they can work more efficiently. 
-A quantum computer stores its data in **qubit** form also known as **quantum bits**. Quantum's system consistency and its connected qubits permit it to be in more than one place at a time. This results in qubits representing several elements once.
 
 #### Key Takeaways
 By the end of this article, the reader should be able to understand the following:
