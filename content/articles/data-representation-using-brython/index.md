@@ -338,14 +338,14 @@ When we execute this code, the scatterplot is as shown below:
 
 The code above plots the scatterplot using the `chart` object.  The `chart` object has the following methods that specify the behavior of our scatter plot.
 
-- **`type`**
-  This method is used to specify the chart type.
+- `type`
+This method is used to specify the chart type.
 
-- **`zoomType`**
-  This method specifies the zoom dimension when we move the mouse.
+- `zoomType`
+This method specifies the zoom dimension when we move the mouse.
  
-- **`tooltip`** 
-  This is a small modal that pops up when we hover our mouse on the datasets in the plot.  It displays all details added to the scatter plot.
+- `tooltip`
+This is a small modal that pops up when we hover our mouse on the datasets in the plot.  It displays all details added to the scatter plot.
 
 ### Conclusion
 The process of data representation is a delightful journey. Like all journeys, it must come to an end.  Through the use of a Content Delivery Network, we were able to import Brython and Highchart's Javascript files. This further enabled us to represent data in the form of piechart and scatter plot using Brython. To get the Python code used in this tutorial, click [here](https://github.com/ayodele96/brython).
