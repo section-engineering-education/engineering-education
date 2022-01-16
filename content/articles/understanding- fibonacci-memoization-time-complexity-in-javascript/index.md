@@ -1,6 +1,6 @@
 ### Understanding Fibonacci memoization time complexity in Javascript
-
 #### Introduction
+
 First, let's start by understanding what is a Fibonacci number. What is memoization, and what time complexity means? We get the Fibonacci number by adding two previous numbers in a Fibonacci sequence. Memoization is an optimization procedure used to speed up computer programs by storing the values of distinct function calls and then returning the stored input when the same function is called again. The time complexity in a computer program describes the amount of time taken by the computer to run an algorithm.
 
 In this tutorial, we will be using Dynamic programming to solve the Fibonacci sequence and learn about the time complexity of our solutions. Dynamic programming problems are mostly solved using two ways which are **tabulation**(bottom-up) and **memoization**(top-down). But we will be talking about memoization.
@@ -164,7 +164,6 @@ return memo[n];
 - When we also check our test cases we see our runtime as improved greatly.
 
 #### Tree implementation
-
 ![memo](https://user-images.githubusercontent.com/61587290/148676929-8c8a84f9-0fd0-4c0f-bde5-3562d7be6859.jpeg)
 
 The  nodes with the red color around them are  returning the memoized result. If you ignore them, as you can see the algorithm gets called once for each value from 0 to n.
@@ -178,10 +177,3 @@ Let's take  time complexity  of `n` to be`T(n)` , hence` T(n) = T(n-1) + T(n-2).
 The pattern of overlapping problems to reduce the time complexity of the Fibonacci series from O(2n) to O(n) is known as Dynamic programming. For us, the dynamic program is going to be any instance where we have some larger Fibonacci problem and we can decompose it into smaller instances of the same problem, hence we will have an overlapping structure.
 
 happy learning!
-
-
-
-
-
-
-
