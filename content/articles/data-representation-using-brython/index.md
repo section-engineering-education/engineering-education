@@ -1,6 +1,6 @@
 The cooperation between JavaScript and the web has been a standard. There are different programming languages used for web development, with a notable mention being Python.  Python has micro-frameworks such as `Flask`, `Hug`, and `Cherrypy` which have enabled Python to cooperate with the web.
 
-Instead of using Python micro-frameworks to run the client-side web applications, we have `Brython`.  `Brython` stands for Browser Python.  `Brython` is a client-side scripting language with Python3 execution that is adjusted to the HTML5 environment. 
+Instead of using Python micro-frameworks to run the client-side web applications, we have `Brython`. `Brython` stands for Browser Python. `Brython` is a client-side scripting language with Python3 execution that is adjusted to the HTML5 environment. 
 
 Brython interfaces smoothly with JavaScript and its libraries to build high-level web projects. It incorporates libraries such as Vue.js, Bokeh, Highchart, and Phaser.
 
