@@ -49,7 +49,7 @@ cd .env/Scripts/activate # activate the environment
 Next,  create a new file, `languagedetection.ipynb` in the `langdetect` folder. Then, open the file using Jupyter Notebook.
 
 #### Importing libraries
-Before starting to model, we need to import a few necessary libraries below:
+Before starting to model, we need to import the libraries listed below:
 
 ```Python
 import numpy as np
@@ -105,7 +105,7 @@ for text in X:
     text = text.lower()          # converts all the text to lower case
     text_list.append(text)       # appends the text to the text_list
 ```
-Then, we encode our feature(**Text**) through a Bag of Words model using the `CountVectorizer()` method as shown below:
+Then, we encode our feature(**Text**) through a *Bag of Words* model using the `CountVectorizer()` method as shown below:
 
 ```python
 from sklearn.feature_extraction.text import CountVectorizer
@@ -115,7 +115,7 @@ X = cv.fit_transform(text_list).toarray() # tokenize a collection of text docume
 X.shape # check the shape of the data
 ```
 #### Modeling
-Once done with processing the data, we need to split the data into training  and testing sets as shown below:
+Once we are done with processing the data, we need to split the data into training  and testing sets as shown below:
 
 ```Python
 from sklearn.model_selection import train_test_split
@@ -129,7 +129,7 @@ model = MultinomialNB()
 model.fit(X_train, y_train)
 ```
 
-Once the training is finished, we predict the model's output using the test set.
+Once the training is finished, we need to predict the model's output using the test set.
 
 ```python
 y_pred = model.predict(X_test)
@@ -222,7 +222,7 @@ On the `index.html` file, add the following snippet:
 </html>
 ```
 
-On the `style.css` file make the [following changes](https://github.com/FREDERICO23/Language-detection/blob/main/static/css/style.css) to style the webpage.
+Make the [following changes](https://github.com/FREDERICO23/Language-detection/blob/main/static/css/style.css)on the `style.css` file to style the webpage.
 
 Connect the webpage to the model using `apps.py` by making the following changes.
 
