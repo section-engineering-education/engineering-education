@@ -33,12 +33,11 @@ To follow along easily, the reader should:
 ### Aim of this tutorial
 In this tutorial, we aim to guide the readers on how to:
 
-- Installing Brython in our local environment. We can achieve this using a host of methods:
-  - PyPI. To use this method make sure you have installed Python3.
-  - Content Delivery Network (CDN).
-  - Node Package Manager (npm).
-  - GitHub.
-
+- Install Brython in our local environment. We can achieve this using a host of methods:
+1. PyPI. To use this method make sure you have installed Python3.
+2. Content Delivery Network (CDN).
+3. Node Package Manager (npm).
+4. GitHub.
 > NOTE: We will focus on the second and third methods in creating a piechart and scatter plot.
 
 ### Getting started
