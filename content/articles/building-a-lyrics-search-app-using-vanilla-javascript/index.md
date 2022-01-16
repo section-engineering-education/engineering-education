@@ -43,7 +43,7 @@ For laying out the structure of the lyrics search app, you will use HTML5. This 
 
 - In the `head` tag of the HTML file, you will input the needed or pre-defined meta tags that are essential for all web apps.
 - Also, you would link the CSS file to the HTML file and also give the web app a title of `Lyrics Search App` embedded within `title` tags.
-- Next, you would create a `div` with a class `container`. This is the `div` would house other `div`s that you create.
+- Next, you would create a `div` with a class `container`. This `div` would house other `div`s that you will create.
 - Moving forward, you create another `div` with a class `intro-text` with two other separate headers `h1` and `h2` tags, respectively.
 - The content of the first text is `Learn your favorite`, it will be embedded in the `h1` tag, while the content of the second text is `song lyrics`, it will be embedded in the `h2` tag.
 
