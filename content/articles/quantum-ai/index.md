@@ -12,7 +12,7 @@
 
 #### Introduction
 
-Quantum AI, as the title suggests, is the application of quantum technology to the calculation of machine learning procedures. Quantum technology and machine learning are game-changing innovations that will make tasks easier. So, Artificial intelligence will need a better knowledge of quantum computing and quantum physics.  
+Quantum Artificial intelligence (AI), as the name suggests, is the application of quantum technology to machine learning procedures. Quantum technology and machine learning are game-changing innovations that will make tasks easier. This branch of  Artificial Intelligence will require a better knowledge of quantum computing and quantum physics.  
 
 Quantum computers store and process data using quantum technology. These computer systems can have substancial advantages to some jobs in that they can work more efficiently. 
 A quantum computer stores its data in qubit form also known as quantum bits. Quantum's system consistency and its connected qubits permits it to be in more than one place at a time. This results to qubits representing several elements once.
