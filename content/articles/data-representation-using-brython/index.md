@@ -6,7 +6,7 @@ Brython interfaces smoothly with JavaScript and its libraries to build high-leve
 
 In this tutorial, we will represent data utilizing piecharts and scatterplots in Brython. This is possible because of the cooperation among Brython and Highchart.js libraries. Let's get started!
 
-### Table of Contents
+### Table of contents
 - [Prerequisites](#prerequisites)
 - [Aim of this tutorial](#aim-of-this-tutorial)
 - [Getting started](#getting-started)
