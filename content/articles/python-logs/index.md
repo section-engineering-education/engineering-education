@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /how-to-collect-update-and-organize-python-logs/
+url: /how-python-logs/
 title: How to collect, update and organize python logs
 description: In this tutorial, we will learn about Python logging. We will learn how to collect logs from Python code and how to organize them
 author: moris-wanyiri
@@ -11,7 +11,7 @@ topics: [Languages]
 excerpt_separator: <!--more-->
 images:
 
-  - url: /engineering-education/how-to-collect-update-and-organize-python-logs/hero.png
+  - url: /engineering-education/python-logs/hero.png
     alt: How to collect, update and organize python logs
 ---
 
@@ -24,16 +24,15 @@ The logging library comprises four classes: `loggers,` `handlers`, `filters,` an
 ### Table of Contents
 - [Introduction](#introduction)
 - [Table of Contents](#table-of-contents)
-- [Modifying your logs' configuration](#modifying-your-logs-configuration)
+- [Modifying log configuration](#modifying-log-configuration)
   - [Benefits of logging](#benefits-of-logging)
-  - [Representation of `basicConfig()`](#representation-of-basicconfig)
+  - [Representation of `basicConfig()` method](#representation-of-basicconfig-method)
 - [Setting up the logging module](#setting-up-the-logging-module)
-- [Log tracebacks and exceptional case managing in your logs](#log-tracebacks-and-exceptional-case-managing-in-your-logs)
 - [Styling and Merging JSON Logs](#styling-and-merging-json-logs)
 - [Conclusion](#conclusion)
 - [Further activity reading](#further-activity-reading)
 
-### Modifying your logs' configuration
+### Modifying log configuration
 The `basicConfig()` method in the logging module is the quickest way for setting up the log configuration. However, the [Python documentation](https://docs.python.org/3.7/library/logging.html#logger-objects) proposes making a logger for every module in your application. Utilizing `basicConfig()` alone can be difficult.
 
 The three significant configurations of `basicConfig()` method are:
@@ -47,21 +46,21 @@ You could be losing out on truly low logs that can help you work easier, based o
 - When a network connection is interrupted, we will not lose the logs since the logs are stored in the file system.
 - Logs makes it easier to monitor the applications and fix bugs in the applications whenever we get an error log.
 
-#### Representation of `basicConfig()`
+#### Representation of `basicConfig()` method
 Logs follow a specific design that includes the following:
 - `%(asctime)s`: it yields the date and season of the log, in [local time](https://docs.python.org/3.7/library/time.html#time.asctime).
 - `%(levelname)s`: the logging rank of the information.
 - `%(message)s`: the content of the log. [Read more about log attributes](https://docs.python.org/3/library/logging.html#logrecord-ascribes).
 
 ### Setting up the logging module
-The more your application expands, the more you need to utilize a reliable way of designing each logger by incorporating the log name as a log section. The following are the steps to set up the logging module:
-- Arrange various logs and record their properties to self-assertively set the log title to suit the attributes of your module. Utilize the logging library's incorporated [getLogger() approach](https://docs.python.org/3.7/library/logging.html#logging.getLogger):
+The more the application expands, the more we need to utilize a reliable way of designing each logger by incorporating the log name as a log section. The following are the steps to set up the logging module:
+- Arrange various logs and record their properties to self-assertively set the log title to suit the attributes of our module. Utilize the logging library's incorporated [getLogger() approach](https://docs.python.org/3.7/library/logging.html#logging.getLogger):
 
 ```bash
 logger = logging.getLogger(__name__)
 ```
 
-- `getLogger()` sets log character to __identity__ , which [coincides with the productive ID of the module](https://docs.python.org/3/reference/import.html?highlight=__name__#__name__) from which the strategy is determined. This guides you to realize which portion of your application brought about each message. Then, at that point, you can interpret your logs. Thus, when you change the log design and include the log identities, the description  will be shown in each log message.
+- `getLogger()` sets log character to __identity__ , which [coincides with the productive ID of the module](https://docs.python.org/3/reference/import.html?highlight=__name__#__name__) from which the strategy is determined. This guides us to realize which portion of our application brought about each message. Then, at that point, we can interpret our logs. Thus, when we change the log design and include the log identities, the description  will be shown in each log message.
 
 ```python
 # lessermodule.py
@@ -70,22 +69,22 @@ import traceback
 logging.config.fileConfig('logging.ini', disable_existing_loggers=False)
 logger = logging.getLogger(__name__)
 def word_count(myid):
-    try:
-        # count the number of words in a file, myid, and log the result
-        with open(myfile, 'r+') as f:
-            file_data = f.read()
-            words = file_data.split(" ")
-            final_word_count = len(words)
-            logger.info("this file has %d words", final_word_count)
-            f.write("this file has %d words", final_word_count)
-            return final_word_count
-    except OSError as e:
-        logger.error(e, exc_info=True)
-    except:
-        logger.error("uncaught exception: %s", traceback.format_exc())
-        return False
+    try:
+        # count the number of words in a file, myid, and log the result
+        with open(myfile, 'r+') as f:
+            file_data = f.read()
+            words = file_data.split(" ")
+            final_word_count = len(words)
+            logger.info("this file has %d words", final_word_count)
+            f.write("this file has %d words", final_word_count)
+            return final_word_count
+    except OSError as e:
+        logger.error(e, exc_info=True)
+    except:
+        logger.error("uncaught exception: %s", traceback.format_exc())
+        return False
 if __name__ == '__main__':
-    word_count('myid.txt')
+    word_count('myid.txt')
 ```
 Running the `higher_module.py`, the logging will yield the following results.
 
@@ -102,19 +101,19 @@ Log label is set certainly after the timestamp, and in this manner, you can foll
 
 Messages created from `higher_module.py` count the __main__ [module](https://docs.python.org/3/library/__main__.html) as the log label since the `higher_module.py` was executed at the high levels script. Remembering that we are powerfully fusing the logs way of life as a section of the log design, both of these logs are set up with the equivalent `basicConfig()`.
 
-- use `fileConfig()` to send out logs to multiple stations. 
+- use `fileConfig()` to send out logs to multiple stations. 
 Utilizing record based (indexConfig()) or [dictionary-based (dictConfig()) configurations](https://docs.python.org/3.7/library/logging.config.html#logging.config.dictConfig) gives access to order more custom arranging and directing choices for each log in your application.
 
 A logging setup record needs to contain the most extreme three sections:
-1. `[loggers]`: the identity of the logs you will design. 
-2. `[handlers]`: controllers intended to be utilized by these loggers.
-3. `[formatters]`: the structure you need each log to follow. 
+1. `[loggers]`: the identity of the logs you will design. 
+2. `[handlers]`: controllers intended to utilise these loggers.
+3. `[formatters]`: the structure you need each log to follow. 
 
 Keys direct the labels of different parts that you will be required to design, arranged as `[<SECTION_NAME>_<KEY_NAME>]`, by which the section name is either logger, controller, or formatter.
 
 The following is a basic outline of a logging setup file.
 
-```python 
+```python 
 [loggers]
 keys=root
 [handlers]
@@ -133,14 +132,14 @@ args=("/path/to/log/file.log",)
 format=%(asctime)s %(name)s - %(levelname)s:%(message)s
 ```
 
-The Python library states that we can include only one handler in one log. More data on propagation see the [documentation](https://docs.python.org/3/library/logging.html#logging.Logger.propagate). Taking a look at the outline '( parent module and child module)', the two logs will give a DEBUG yield and high-need signs in the arrangement '(formatter_simpleFormatter)' and incorporate them into a log record (`file.log`). This will take out the need to include  `logging.basicConfig(level=logging.DEBUG, format='%(asctime)s %(name)s %(levelname)s:%(message)s')` in your sections. 
+The Python library states that we can include only one handler in one log. More data on propagation see the [documentation](https://docs.python.org/3/library/logging.html#logging.Logger.propagate). Taking a look at the outline '( parent module and child module)', the two logs will give a DEBUG yield and high-need signs in the arrangement '(formatter_simpleFormatter)' and incorporate them into a log record (`file.log`). This will take out the need to include  `logging.basicConfig(level=logging.DEBUG, format='%(asctime)s %(name)s %(levelname)s:%(message)s')` in your sections. 
 
 With the inclusion of the previously stated format, you can add `logging.config.fileConfig()`.
 
-``` python
-import logging.config 
-logging.config.fileConfig('/way/to/logging.ini', disable_existing_loggers=False) 
-lumberjack = logging.getLogger(__name__) 
+``` python
+import logging.config 
+logging.config.fileConfig('/way/to/logging.ini', disable_existing_loggers=False) 
+lumberjack = logging.getLogger(__name__) 
 ```
 
 Alternatively, you can use the Django application to log your files since it utilizes Python modules. The following steps should be adhered to while utilizing Django logging:
@@ -151,100 +150,50 @@ Alternatively, you can use the Django application to log your files since it uti
 The method used in Django is `dictConfig` since it works under different modules. A sample illustration is as below:
 
 ```python
-# Logging Information 
-LOGGING = { 
-'variant': 1, 
-# Version of logging 
-'disable_existing_loggers': False, 
-# disable logging 
-# Handlers contained 
-'overseers': { 
-'record': { 
-'level': 'Investigate', 
-'class': 'logging.FileHandler', 
+# Logging Information 
+LOGGING = { 
+'variant': 1, 
+# Version of logging 
+'disable_existing_loggers': False, 
+# disable logging 
+# Handlers contained 
+'overseers': { 
+'record': { 
+'level': 'Investigate', 
+'class': 'logging.FileHandler', 
 'filename': 'dataflair-debug.log',
-        }, 
-'console': { 
+        }, 
+'console': { 
 'class': 'logging.StreamHandler',
-        },
-    }, 
+        },
+    }, 
 # Loggers appended
-'loggers': { 
-'django': { 
+'loggers': { 
+'django': { 
 'overseers': ['file', 'console'
-            ], 
-'level': 'Investigate', 
-'proliferate': True, 
+            ], 
+'level': 'Investigate', 
+'proliferate': True, 
 'level': os.getenv('DJANGO_LOG_LEVEL', 'Investigate')
-        },
-    },
+        },
+    },
 }
 ```
 
 In Django, there is an in-built variable contained in the library. In addition, there are keynotes in the logging dictionary; version, `disable-existing-loggers`, handlers, and loggers. The Version key displays the mapping form, which has a value of 1 by default.
 
-The `disable-existing-logger`  key tells Django not to disable loggers. This key, by custom, is true. However, it's important not to set it to true while working with database queries and functions.
+The `disable-existing-logger`  key tells Django not to disable loggers. This key, by custom, is true. However, it's important not to set it to true while working with database queries and functions.
 
 Handlers handle the messages and pass them to support records and more. The actual controllers are a word reference. Those word reference key names will be the names of the controllers. There are various types, but more emphasis is placed on:
 - `FileHandler`: stores the logs in a file.
 - `StreamHandler`: streams the logs on the console.
 
-Loggers log your server or software details. Django provides several loggers, for example, `django.request`. You should start your server with `$python manage.py runserver` to implement logging. After that, hit enter, and we will display the following messages since the default level is set to debug.
-
-### Log tracebacks and exceptional case managing in your logs
-`Logging.error()` doesn't connect any tracebacks anyway. It shows an exception as an error. Set the `sys.exc_info` to True to enable `logging.error()` get tracebacks.
-
-Description of `exc_info` :
-
-```python
-# lessermodule.py
-logging.config.fileConfig('/path/to/logging.ini', disable_existing_loggers=False)
-logger = logging.getLogger(__name__)
-def word_count(myid):
-    try:
-    # count the number of words in a file, myid, and log the result
-    [...]
-    except OSError as e:
-        logger.error(e)
-        logger.error(e, exc_info=True)
-```
-
-It isn't easy to resolve each achievable exceptional case. But, fundamentally, guarantee your logs can get every exclusion, and you can deal with them later.
-
-An unhandled exception when the application code doesn't return true to handle abnormal cases outside the `try... except` block. What is more, you can use Python's standard [traceback library](https://docs.python.org/3/library/traceback.html) to coordinate traceback and connect it to the log message in an event as shown below:
-
-```python
-# lessermodule.py
-import logging.config
-import traceback
-logging.config.fileConfig('logging.ini', disable_existing_loggers=False)
-logger = logging.getLogger(__name__)
-def word_count(myid):
-    try:
-        # count the number of words in a file, myid, and log the result
-        with open(myid, 'r+') as f:
-            file_data = f.read()
-            words = file_data.split(" ")
-            final_word_count = len(words)
-            logger.info("this file has %d words", final_word_count)
-            f.write("this file has %d words", final_word_count)
-            return final_word_count
-    except OSError as e:
-        logger.error(e, exc_info=True)
-    except:
-        logger.error("uncaught exception: %s", traceback.format_exc())
-        return False
-if __name__ == '__main__':
-    word_count('myid.txt')
-```
-
-This means that the code contains a `TypeError` unique case that isn't dealt with in the try-except block, yet it will be logged since we fused the `traceback` code.
+Loggers log the server or software details. Django provides several loggers, for example, `django.request`. You should start your server with `$python manage.py runserver` to implement logging. After that, hit enter, and the application will display the log messages in the console since the default level is set to debug.
 
 ### Styling and Merging JSON Logs
-This part will examine how to style logs in JSON, add attributes, unify and break down information with a log board management solution.
+When your framework produces numerous logs in a given term, it becomes difficult to recognize logs that can help you during troubleshooting. Generally, the logs are dispersed across various servers or files.
 
-- Style logs in JSON. When your framework produces numerous logs in a given term, it becomes difficult to recognize logs that can help you during troubleshooting. Generally, the logs are dispersed across various servers, documents, or administrations. Bringing your logs together helps you when you need to look at and organize your logs. In addition, the JSON design/style is significant in that it is effectively adaptable. For example, if you want to add attributes to each log design, you won't have to refresh your log handling pathways each time you add or eliminate credits from your log design.
-
+Bringing your logs together helps you when you need to look at and organize your logs. In addition, the JSON design/style is significant in that it is effectively adaptable. For example, if you want to add attributes to each log design, you won't have to refresh your log handling pathways each time you add or eliminate credits from your log design.
 
 The initial step is to introduce it in your current logs:'
 
@@ -252,7 +201,7 @@ The initial step is to introduce it in your current logs:'
 pip introduce python-json-logger
 ```
 
-After establishment, you'll need to refresh design records to make the current formatter or add a new formatter that will style logs in JSON. JSON formatter utilizes [pythonjsonlogger.jsonlogger.JsonFormater class](https://github.com/madzak/python-json-logger#using-a-config-document). You can determine the characteristics you need to remember for each log record.
+After establishment, you'll need to refresh design records to make the current formatter or add a new formatter that will style logs in JSON. JSON formatter utilizes [pythonjsonlogger.jsonlogger.JsonFormater class](https://github.com/madzak/python-json-logger#using-a-config-document). We can determine the characteristics we need to remember for each log record.
 
 ```python
 [loggers]
@@ -285,7 +234,7 @@ format=%(asctime)s %(name)s %(levelname)s %(message)s
 format=%(asctime)s %(name) s-%(levelname)s: %(message)s
 ```
 
-Logs shipped from the command prompt `(with consoleHandler)` follow the `simpleFormatter` style to enhance readability. After the inclusion of `pythonjsonlogger.jsonlogger.JsonFormatter` class in your configuration file, the `fileConfig()` function will create the JsonFormatter if the code runs in an environment that can import `pythonjsonlogger`. In case you're not utilizing a record based setup, you should include the `python-json-logger` assortment in your function code and characterize a controller and formatter, as depicted in the [library](https://github.com/madzak/python-json-logger#integrating-with-pythons-logging-framework):
+Logs shipped from the command prompt `(with consoleHandler)` follow the `simpleFormatter` style to enhance readability. After the inclusion of `pythonjsonlogger.jsonlogger.JsonFormatter` class in your configuration file, the `fileConfig()` function will create the JsonFormatter if the code runs in an environment that can import `pythonjsonlogger`. For example, suppose you're not utilizing a record based setup. In that case, you should include the `python-json-logger` assortment in your function code and characterize a controller and formatter, as depicted in the [library](https://github.com/madzak/python-json-logger#integrating-with-pythons-logging-framework).
 
 One more advantage of signing in JSON is adding attributes that an external log management service can parse and investigate consequently. For example, prior, we arranged for the format to incorporate standard ascribes like `%(asctime)s`, `%(name)s`, `%(levelname)s`, and `%(message)s`.
 
@@ -295,20 +244,20 @@ import logging.config
 import traceback
 import time
 def word_count(myid):
-    logger = logging.getLogger(__name__)
-    logging.fileConfig('logging.ini', disable_existing_loggers=False)
-    try:
-        starttime = time.time()
-        with open(myfile, 'r') as f:
-            file_data = f.read()
-            words = file_data.split(" ")
-            final_word_count = len(words)
-            endtime = time.time()
-            duration = endtime - starttime 
-            logger.info("this file has %d words", final_word_count, extra={"run_duration":duration})
-            return final_word_count
-    except OSError as e:
-        [...]
+    logger = logging.getLogger(__name__)
+    logging.fileConfig('logging.ini', disable_existing_loggers=False)
+    try:
+        starttime = time.time()
+        with open(myfile, 'r') as f:
+            file_data = f.read()
+            words = file_data.split(" ")
+            final_word_count = len(words)
+            endtime = time.time()
+            duration = endtime - starttime 
+            logger.info("this file has %d words", final_word_count, extra={"run_duration":duration})
+            return final_word_count
+    except OSError as e:
+        [...]
 ```
 
 In the program above, `run_duration` represents the estimation of the span of the action right away.
@@ -318,9 +267,9 @@ In the program above, `run_duration` represents the estimation of the span of th
 ```
 
 ### Conclusion
-The logging module simplifies everything and eases the pressure of complexity. It is considered to be versatile. Its arrangement is sensible and ought to satisfy your usage case out of the box. You can add fundamental logging to a bit of activity, or you can comparatively make your practice log levels.
+The logging module simplifies everything and eases the pressure of complexity. It is considered to be versatile. Its arrangement is sensible and ought to satisfy your usage case out of the box.
 
-If you haven't been using logs in your applications, this is an excellent chance to start. When done right, logging will undoubtedly take a massive load of contact from your progression cycle and will assist you in taking your function to a more significant level. I prefer logging since it simplifies load complexity and is very precise and understandable.
+If you haven't been using logs in your applications, this is an excellent chance to start. When done right, logging will undoubtedly improve your productivity.
 
 ### Further activity reading
 More on python logs [visit](https://docs.python.org/3/library/logging.html)
