@@ -96,14 +96,14 @@ from comtypes import CLSCTX_ALL
 from pycaw.pycaw import AudioUtilities, IAudioEndpointVolume
 import numpy as np
 ```
-In the above code segment, we are importing each library we installed in our project.
+In the code segment above, we are importing each library we installed in our project.
 
 ```python
 cap = cv2.VideoCapture(0) 
 ```
 We then get the video input from our computer's primary camera. If you are using any other camera, replace the number `0` with that of the camera you are using.
 
- Lets now detect, initialize and configure the hands in the video input.
+ Let's now detect, initialize and configure the hands in the video input.
 
 ### Step 2: Detecting, initializing, and configuring the hands
 ```python
@@ -111,7 +111,7 @@ mpHands = mp.solutions.hands
 hands = mpHands.Hands()
 mpDraw = mp.solutions.drawing_utils
 ```
-In the above code, we are calling on the `mediapipe` hand module to detect the hands from the video input we got from our primary camera. `MpHands.Hands()` then completes the initialization and configuration of the detected hands. We finally draw the *connections* and *landmarks* on the detected hand using `mp.solutions.drawing_utils`. 
+In the code above, we are calling on the `mediapipe` hand module to detect the hands from the video input we got from our primary camera. `MpHands.Hands()` then completes the initialization and configuration of the detected hands. We finally draw the *connections* and *landmarks* on the detected hand using `mp.solutions.drawing_utils`. 
  
 ### Step 3: Accessing the speaker using pycaw
 ```python
@@ -121,7 +121,7 @@ volume = cast(interface, POINTER(IAudioEndpointVolume))
 ```
 These are the initializations we need for `pycaw` to run smoothly. The developer provides this library together with the initializations. We are not going to change anything. You can find the documentation [here](https://github.com/AndreMiras/pycaw).
 
-### Step4: Finding the volume range between the minimum and maximum volume
+### Step 4: Finding the volume range between the minimum and maximum volume
 ```python
 volMin, volMax = volume.GetVolumeRange()[:2]
 ```
@@ -134,7 +134,7 @@ while True:
     imgRGB = cv2.cvtColor(img, cv2.COLOR_BGR2RGB)
     results = hands.process(imgRGB)
 ```
-The above code checks whether the camera we have specified works. If it works, we will capture an image. We then convert the image to `RGB` and complete the processing of the converted image.
+The code above checks whether the camera we have specified works. If it works, we will capture an image. We then convert the image to `RGB` and complete the processing of the converted image.
 
 We now need to check whether we have multiple hands in the image we captured.
 
@@ -156,7 +156,7 @@ for handlandmark in results.multi_hand_landmarks:
         lmList.append([id, cx, cy]) 
     mpDraw.draw_landmarks(img, handlandmark, mpHands.HAND_CONNECTIONS)
 ```
-- In the code above, we are using the first for loop to interact with each hand in the results. We are then using the second for loop to get the `id` (id number) and `lm` (landmark information) for each handlandmark. The landmark information will give us the `x` and `y` coordinates. The id number is the number assigned to the various hand points.
+- In the code above, we use the first for loop to interact with each hand in the results. We use the second for loop to get the `id` (id number) and `lm` (landmark information) for each hand landmark. The landmark information will give us the `x` and `y` coordinates. The id number is the number assigned to the various hand points.
 
 - `h, w, c = img.shape`: this line of code checks the height, width, and channels of our image. This will give us the width and height of the image.
 
@@ -181,8 +181,8 @@ Refer to the hand image diagram we discussed to identify the [points](#referral-
        cv2.circle(img, (x1, y1), 15, (255, 0, 0), cv2.FILLED)  
        cv2.circle(img, (x2, y2), 15, (255, 0, 0), cv2.FILLED)  
 ```
-The above code draws a circle at the tip of the thumb and at the tip of the index finger.
-- ` (x1, y1)`specifies that we will draw the circle at the tip of the thumb. `15`is the *radius* of the circle. `(255, 0, 0)` is the *color* of the circle. `cv2.FILLED` refers to the thickness of `-1` pixels which will fill the circle with the color we specify.
+The code above draws a circle at the tip of the thumb and the tip of the index finger.
+- ` (x1, y1)` specifies that we will draw the circle at the tip of the thumb. `15` is the *radius* of the circle. `(255, 0, 0)` is the *color* of the circle. `cv2.FILLED` refers to the thickness of `-1` pixels which will fill the circle with the color we specify.
 
 - We will repeat the same for the index finger in the line of code: 
 
@@ -190,13 +190,13 @@ The above code draws a circle at the tip of the thumb and at the tip of the inde
 ```python
 cv2.line(img, (x1, y1), (x2, y2), (255, 0, 0), 3)
 ```
-In the code above, we use the `cv2.line` function to draw a line between point four of the hand and point `8`. The line will connect point `4` (`(x1, y1)`) which is the tip of the thumb, and point `8` (`(x2, y2)`) which is the tip of the index finger. `(255, 0, 0)` is the color of the line and `3` is its thickness.
+In the code above, we use the `cv2.line` function to draw a line between point four of the hand and point `8`. The line will connect point `4` (`(x1, y1)`), which is the tip of the thumb, and point `8` (`(x2, y2)`), which is the tip of the index finger. `(255, 0, 0)` is the line color and `3` is its thickness.
 
 ### Step 11: Finding the distance between points 4 and 8
 ```python
 length = hypot(x2 - x1, y2 - y1)
 ```
-In the code above, we find the distance between the tip of the thumb and the index finger using hypotenuse. We achieve this by calling the math `hypot` function and passing the difference between `x2` and `x1` and the difference between `y2` and `y1`.
+In the code above, we find the distance between the tip of the thumb and the index finger using a hypotenuse. We achieve this by calling the math `hypot` function then passing the difference between `x2` and `x1` and the difference between `y2` and `y1`.
 
 ### Step 12: Converting the hand range to the volume range
 ```python                                          
@@ -221,7 +221,7 @@ We are setting the master volume level following the hand range. We achieve this
 cv2.imshow('Image', img) 
 ```
 
-The above code shows the real-time video of the user interacting with the program, i.e., the user uses the thumb finger and the index finger to control the volume.
+The code above shows the real-time video of the user interacting with the program, i.e., the user uses the thumb finger and the index finger to control the volume.
 
 ### Step 15: Terminating the program
 ```python
