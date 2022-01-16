@@ -1,11 +1,27 @@
 ### Polymorphism in Java
 
+### Introduction
+`Polymorphism` is the ability of an object to have more than one form. In this article, we will introduce polymorphism and give some examples to understand more about polymorphism. We will further discuss the two types of polymorphism which are `static` and `dynamic` polymorphism. Furthermore, we will take a look at the advantages of polymorphism and lastly the characteristics of polymorphism.
+Let's now get into the details.
+
+Polymorphism is where an object has more than one form. We can also say that polymorphism is a feature that allows one task to be performed in more than one way.
+To get the idea better, we will use the examples below.
+
+Polymorphism examples include:
+* A human has one body, but inside the body, there are various organs that perform different tasks. The heart pumps blood, the stomach digests food, the lungs if for breathing, etc.
+In this example, you can note that the human body allows more than one task to take place in the body.
+
+* Another example is the man. A man can have different tasks depending on the role they play. He can be a father in a family and perform fatherly roles. He can be a boss at work and similarly perform a boss's job. Lastly, he can be studying and he becomes a student for that matter.
+From the above, you can note that the man can be a father, a boss, and a student. That shows how polymorphic the man can be.
+
 ### Table of Contents
 * [Introduction](#introduction)
 * [What is Polymorphism](#what-is-polymorphism)
 * [Types of Polymorphism](#types-of-polymorphism)
 * [Adantages of Polymorphism](#advantages-of-polymorphism)
-* [Charactaristics of Polymorphism](#charactaristics-of-polymorphism)
+* [Characteristics of Polymorphism](#characteristics-of-polymorphism)
+* [Conclusion](#conclusion)
+* [Further Reading](#further-reading)
 
 Java is an Object-oriented programming language.
 But what is OOP commonly known for?. Yeah, the four pillars of Object-Oriented Programming.
@@ -17,26 +33,16 @@ The four pillars include:
 * Polymorphism
 
 To breakdown the four pillars of OOP:
-* `Abstraction` - This is the process of hiding the less important functionalities to the user and displaying what is only important. This fundamental gives the user the knowledge of *what a program does* rather than *how a program does* it.
+* `Abstraction` is the process of hiding the less important functionalities to the user and displaying what is only important. This fundamental gives the user the knowledge of *what a program does* rather than *how a program does* it.
 
-* `Inheritance` - This is where one class, normally the *child class* inherits the properties of another class known as the *parent class*
+* `Inheritance` is where one class, normally the *child class* inherits the properties of another class known as the *parent class*.
 
-* `Encapsulation` - This is a fundamental where related data is bound together into a single unit.
+* `Encapsulation` is a fundamental where related data is bound together into a single unit.
 
 * `Polymorphism` - The simplest way to understand polymorphism is **having many forms**. We will discuss more on polymorphism in this tutorial.
 
-
-### Introduction
-Polymorphism is where an object has more than one form. We can also say that polymorphism is a feature that allows one task to be performed in more than one way.
-
-Polymorphism examples include:
-* A human has one body, but inside the body, there are various organs that perform different tasks. The heart pumps blood, the stomach digests food, the lungs if for breathing, etc.
-In this example, you can note that the human body allows more than one task to take place in the body.
-
-* Another example is the chameleon. The chameleon can camouflage into different colors depending on the environment. On a green surface, it can turn to color green, turn brown on a brown surface, and so on. We can say that the chameleon has more than one form and that is polymorphism.
-
 ### What is Polymorphism 
-Polymorphism is a Greek word where two words are combined to give one meaning. Funny, You can say the word is polymorphic.
+Polymorphism is a Greek word where two words are combined to give one meaning. Funny, you can say the word is polymorphic.
 
 The two words are `poly` and `morph` where *poly means many* and *morph means one or more forms*
 
@@ -45,14 +51,16 @@ Polymorphism can be divided into two:
 
 #### 1. Static Polymorphism
 
-> **Static Polymorphism** - When you are writing a code, probably creating a method, and you by chance create two or more methods with the same name, you will get an alert that you have a duplicate method in your code. This error is called `Compile-time error`. The ability to receive alerts on errors in your code is made possible by the **compiler**. When the compiler resolves conflict on matters regarding polymorphism, it is regarded as `Compile-time Polymorphism`
-Examples include Overloading also known as Method overloading or Function overloading.
+> **Static Polymorphism** is the linking of a function or a method with the object when compiling the code. This is before running the code.
+To understand what compile-time error and compile-time polymorphism is, let's take a case. When you are writing a code, probably creating a method, and you by chance create two or more methods with the same name. You will get an alert that you have a duplicate method in your code. This error is called `Compile-time error`. The ability to receive alerts on errors in your code is made possible by the **compiler**. When the compiler resolves conflict on matters regarding polymorphism, it is regarded as `Compile-time Polymorphism`.
+
+An example includes Method overloading or Function overloading.
 
 For clarity:
 
-`Method overloading` is achieved by having multiple methods to have the same name but different parameters. The parameters can differ by having different arguments, having different types of data types, or having different sizes the arguments. This will avoid the compile-time error.
+`Method overloading` is achieved by having multiple methods to have the same name but different parameters or having different sizes of arguments. The parameters can differ by having different arguments, having different types of data types, or having different sizes the arguments. This will avoid the compile-time error.
 
-Let us use a code snippet to try to understand more about static polymorphism.
+Let us use a code snippet understand more about static polymorphism.
 
 ```java
 
@@ -87,21 +95,18 @@ public class Main {
 
 ```
 
-```java
+```bash
 //Output
 Building new house that is 10 feet tall
 House is 10 feet tall
 overloaded method: House is 10 feet tall
 bricks
 ```
-
-In the example above, you can see that we created two methods, both of which share the same name `MyClass`. 
-You will further note that the classes have different parameters. When the first class is called, it gives a void output of the string stated since there is no specific 
-data type stated to be returned. On the other hand, the second class, MyClass, has a parameter of an integer. When we call it, the output will not only have the printed output but will also recognize an integer included in the output.
+In the example above, you can see that we created two methods, both of which share the same name `MyClass` but have different parameters. When the first class is called, it gives avoid the output of the string stated since there is no specific data type stated to be returned. On the other hand, the second class, MyClass, has a parameter of an integer. When we call it, the output will not only have the printed output but will also recognize an integer included in the output. The example shows that we can have multiple methods having the same name but different parameters and that is known as method overloading.
 
 #### 2. Dynamic Polymorphism
 
-> **Dynamic Polymorphism** - This is a type of polymorphism wherein the case when you call an overridden method, this conflict is resolved when you run the code, normally known as run time. It can also be referred to as `run time polymorphism`.
+> **Dynamic Polymorphism** is a type of polymorphism where in the case when you call an overridden method, this conflict is resolved when you run the code, normally known as run time. It can also be referred to as `run time polymorphism`.
 
 Method Overriding is an example of dynamic polymorphism.
 
@@ -139,7 +144,7 @@ public class Main() {
     }
 }
 ```
-```
+```bash
 // Output
 Woof
 Meou
@@ -173,7 +178,7 @@ x=2;
 In the first example, you first have to initialize the data type, and then when allocating the variable, you specify the type of the variable. The case is different in Implicit type conversion. After you initialize the data type, you only have to allocate the variable and the compiler will automatically recognize it as a double.
 
 2. *Operator Overloading* - This is where the same symbol or operator has more than one meaning even when used in the same code. Below is an example to explain operator overloading.
-```java
+```bash
 String str = "5"+5;
 int sum = 5+5;
 
@@ -205,16 +210,13 @@ Declaring of polymorphic parameters can lead to `variable hiding`.
 
 **Variable hiding** occurs where the declaration of a local variable overrides the global variable with the same name.
 
-In the above example, we have declared the legs globally as a string and then declared them locally as an integer. Normally variable hiding would have occurred. But to solve for that, we have used a global reference `this` to point to the global variables within the local context.
+In the above example, we have declared the legs globally as a string and then declared them locally as an integer. Normally, variable hiding would have occurred. But to solve for that, we have used a global reference `this` to point to the global variables within the local context.
 
-### Summary
-From this tutorial, we have gone through the following:
-1. Introduced and gone through some examples of polymorphism
-2. Types of Polymorphism
-      * Static Polymorphism
-      * Dynamic Polymorphism
-3. Advantages of Polymorphism
-4. Characteristics of Polymorphism
-      * Polymorphic Coercion
-      * Operator Overloading
-      * Polymorphic parameters
+### Conclusion
+From this article, you can now acknowledge that polymorphism is indeed a pillar of not only java but also any OOP language. The different types of polymorphism show how polymorphism can be executed in different ways. Knowing compile-time and run-time polymorphism will greatly help since it applies in the major programming languages.
+
+### Further Reading
+Having known one of the major pillars of OOP languages, you might want to know more about the other pillars of OOP.
+- [Abstraction](https://www.w3schools.com/java/java_abstract.asp)
+- [Encapsulation](https://www.tutorialspoint.com/java/java_encapsulation.htm#:~:text=Encapsulation%20in%20Java%20is%20a,methods%20of%20their%20current%20class.)
+- [Inheritance](https://www.geeksforgeeks.org/inheritance-in-java/)
