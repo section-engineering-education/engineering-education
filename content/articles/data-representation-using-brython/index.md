@@ -128,21 +128,15 @@ The `html` code is shown below:
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
         <title>Piechart</title>
-
         <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
-
         <script src="./node_modules/highcharts/highcharts.js"></script>
         <script src="exporting.js"></script>
-
         <script type="text/javascript" src="./node_modules/brython/brython.js"></script>
         <script src="./node_modules/brython/brython_stdlib.js"></script>
         <script type="text/python3" src="chart.py"></script>
-
     </head>
     <body onload="brython(1)">
-
         <div id="container" style="min-width: 310px; height: 400px; margin: 0 auto"></div>
-
     </body>
 </html>
 ```
@@ -152,9 +146,7 @@ The chart.py file contains the following code:
 
 ```python
 from browser import window
-
 b_highchart = window.Highcharts.Chart.new
-
 b_highchart(
     {
         "chart": {
@@ -226,9 +218,7 @@ The new `chart.py` file for the scatterplot is shown below:
 
 ```python
 from browser import window
-
 b_highchart = window.Highcharts.Chart.new
-
 b_highchart(
     {
         "chart": {"type": "scatter", "zoomType": "xy", "renderTo": "container"},
