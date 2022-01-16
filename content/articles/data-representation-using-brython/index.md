@@ -23,9 +23,9 @@ In this tutorial, we will represent data utilizing piecharts and scatterplots in
 To follow along easily, the reader should:
 
 - Install the [Python](https://www.python.org/downloads/) executable.
--  Have [Python programming](/engineering-education/python-projects-for-beginners/) skills.
--  Have [Javascript programming](https://www.w3schools.com/js/) skills.
--  Have [Visual Studio Code.](https://code.visualstudio.com/)
+- Have [Python programming](/engineering-education/python-projects-for-beginners/) skills.
+- Have [Javascript programming](https://www.w3schools.com/js/) skills.
+- Have [Visual Studio Code](https://code.visualstudio.com/) installed.
 
 ### Aim of this tutorial
 In this tutorial, we aim to guide the readers on how to:
