@@ -314,5 +314,5 @@ This is a small modal that pops up when we hover our mouse on the datasets in th
 ### Conclusion
 The process of data representation is a delightful journey. Like all journeys, it must come to an end.  Through the use of a Content Delivery Network, we were able to import Brython and Highchart's Javascript files. This further enabled us to represent data in the form of piechart and scatter plot using Brython. To get the Python code used in this tutorial, click [here](https://github.com/ayodele96/brython).
 
-### Reference
-For more exposure on this topic, go through the [Brython documentation](https://brython.info/static_doc/en/intro.html).
+### Further Reading
+For further reading on Brython, read this [documentation](https://brython.info/static_doc/en/intro.html).
