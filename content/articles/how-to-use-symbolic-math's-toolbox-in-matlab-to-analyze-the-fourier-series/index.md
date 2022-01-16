@@ -20,7 +20,7 @@ images:
 ### Introduction
 Symbolic math toolbox provides an easy, intuitive and complete environment to interactively learn and apply math operations such as calculus, algebra, and differential equations. It can also perform common analytical computation such as differentiation and integration to get close form results, simplify and manipulate expression for great insights and solve algebraic and differential equations.
 
-In this tutorial, the Fourier series is implemented and simulated using Symbolic Math's Toolbox of MATLAB. Both forms of the Fourier series, Trigonometric and Exponential, are implemented. The proposed programs are versatile and can receive any function of time(t). It means the function is dependent on time. Moreover, the program gives plots of harmonics, original and approximated functions, magnitude spectrum, and phase spectrum. The advantage is that this toolbox is already available in MATLAB. You can check [here](https://www.mathsisfun.com/calculus/fourier-series.html) to understand more about the Fourier series..
+In this tutorial, the Fourier series is implemented and simulated using Symbolic Math's Toolbox of MATLAB. Both forms of the Fourier series, Trigonometric and Exponential, are implemented. The proposed programs are versatile and can receive any function of time(t). It means the function is dependent on time. Moreover, the program gives plots of harmonics, original and approximated functions, magnitude spectrum, and phase spectrum. The advantage is that this toolbox is already available in MATLAB, and you don't have to get it from an external source. To understand more about the Fourier series, you can check [here](https://www.mathsisfun.com/calculus/fourier-series.html) to understand more about the Fourier series.
 
 ### Prerequisites
 To follow along with this tutorial, you will need:
@@ -62,7 +62,7 @@ When using the `syms` function, the variable `x` is saved without the error mess
 ```MATLAB
 syms a b
 ```
-After defining the symbols and rerunning the code above, our variables are stored in our workspace. We will then have:
+After defining the symbols and rerunning the code above, our workspace stored our variables. We will then have:
 
 ```MATLAB
 syms a b
@@ -110,10 +110,13 @@ f =
  
 2/(1 + w*2i) - (2*limit(exp(-t/2)*exp(-t*w*1i), t, Inf))/(1 + w*2i)
 ```
-For formatting of this output to a user-friendly manner, we use a function `pretty()`. `pretty(f)` prints the symbolic expression `f` in a format that resembles type-set mathematical equations.
+For formatting this output to a user-friendly manner, we use the function `pretty()`. `pretty(f)` prints the symbolic expression `f` in a format that resembles type-set mathematical equations. When you execute this function in the command window, we have:
 
 ```MATLAB
  pretty(f)
+ ```
+ Output
+ ```matlab
            /             /   t \              \
            |    lim   exp| - - | exp(-t w 1i) | 2
     2      \ t -> Inf    \   2 /              /
