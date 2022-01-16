@@ -6,17 +6,17 @@ Brython interfaces smoothly with JavaScript and its libraries to build high-leve
 
 In this tutorial, we will represent data utilizing piecharts and scatterplots in Brython. This is possible because of the cooperation among Brython and Highchart.js libraries. Let's get started!
 
-### Table of contents
+### Table of Contents
 - [Prerequisites](#prerequisites)
 - [Aim of this tutorial](#aim-of-this-tutorial)
 - [Getting started](#getting-started)
-  - [Installing Brython with the Node Package Manager](#installing-brython-with-the-node-package-manager)
-  - [Installing Brython using Content Delivery Network](#installing-brython-using-content-delivery-network)
-  - [Create a piechart using Brython.](#create-a-piechart-using-brython)
+- [Installing Brython with the Node Package Manager](#installing-brython-with-the-node-package-manager)
+- [Installing Brython using Content Delivery Network](#installing-brython-using-content-delivery-network)
+- [Create a piechart using Brython.](#create-a-piechart-using-brython)
 - [Chart.py file](#chartpy-file)
-  - [Creating a scatterplot using Brython.](#creating-a-scatterplot-using-brython)
+- [Creating a scatterplot using Brython.](#creating-a-scatterplot-using-brython)
 - [Conclusion](#conclusion)
-- [Reference](#reference)
+- [Further Reading](#further-reading)
 
 ### Prerequisites
 
