@@ -60,7 +60,7 @@ To add the Brython and Brython stdlib package to your web project, use the scrip
 ```
 
 #### Installing Brython using Content Delivery Network
-Brython can be delivered directly from the web using a CDN link. Content Delivery Networks in JavaScript deliver hosted stylesheets and JavaScript files using the `src` attribute in the script tag. The JavaScript file for Brython and Brython stdlib are as below:
+Brython can be delivered directly from the web using a CDN link. Content Delivery Networks in JavaScript deliver hosted stylesheets and JavaScript files using the `src` attribute in the script tag. The JavaScript file for Brython and Brython `stdlib` are as below:
 
 ```javascript
 <script src="https://cdnjs.cloudflare.com/ajax/libs/brython/3.10.4/brython.js" 
