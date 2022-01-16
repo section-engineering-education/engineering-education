@@ -74,7 +74,7 @@ You can use any of the methods above to create your Brython project. After creat
 #### Create a piechart using Brython.
 In this section, we will start by creating a piechart using Brython. To create the piechart, we will follow the following steps:
 
-1. Initializing the HTML5 boilerplate.
+##### Initializing the HTML5 boilerplate.
 To initialize the HTML5 boilerplate, use the following code in VisualStudio Code:
 
 ```html
