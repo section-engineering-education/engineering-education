@@ -30,7 +30,8 @@ TensorFlow Quantum is a technology with an open-source framework. Its goal is to
 
 TensorFlow Quantum can create tensors using quantum data sets, quantum models, and conventional command variables in a single computer network. TensorFlow Operations get the results of quantum experiments that result in classical probabilistic occurrences. Standard Keras algorithms are being used to train it.
 
-Consider a guided categorization of quantum states by a quantum neural system to understand how to use quantum data. A crucial issue of quantum Machine Learning, like conventional Machine Learning, is to categorize "noisy data." To develop and train a quantum framework follow the steps below.
+To understand how to use quantum data, consider a guided categorization of quantum states by a quantum neural system.  A crucial issue of quantum Machine Learning, like conventional Machine Learning, is to categorize "noisy data." 
+To develop and train a quantum framework follow the steps below.
 
 1. Construct a quantum data collection - Tensors represent quantum data. Cirq quantum network generates quantum data. TensorFlow controls all the activities on the system creating a quantum database.
 
