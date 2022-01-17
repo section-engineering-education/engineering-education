@@ -1,6 +1,9 @@
 ### How to Create a URL Shortener with React, Django Rest Framework, and SQLite Database
 
-This article covers creating a custom URL(Uniform Resource Locator) shortener service. The URL shortener will take in a long URL and provide an equivalent short URL suitable for posting on social media and sharing with friends. The shortener service will be made up of 3 parts; the front-end for interacting with the client(we will create the front-end using React), the backend for creating the server, and providing the API routes(we will create the backend using Django Rest Framework), and the database for storing the data(We will use SQLite Database).
+This article covers creating a custom URL(Uniform Resource Locator) shortener service. The URL shortener will take in a long URL and provide an equivalent short URL suitable for posting on social media and sharing with friends. The shortener service will be made up of 3 parts: 
+- The front-end for interacting with the client(we will create the front-end using React).
+- The backend for creating the server, and providing the API routes(we will create the backend using Django Rest Framework).
+- The database for storing the data(We will use SQLite Database).
 
 The user will copy a link in the input field provided and click the `shorten` button. The link will be sent to the backend using the `Fetch API`, and the backend will apply a procedure to provide an equivalent short 6-digit URL. Equivalent means that the short URL will redirect the user to the same page as the long URL.
 
