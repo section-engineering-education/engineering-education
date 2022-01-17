@@ -111,6 +111,9 @@ INSTALLED_APPS = [
     'corsheaders'
 ]
 ```
+The `INSTALLED_APPS` section holds the names of all Django applications that are activated in this particular Django instance. In this section, we add: 
+- `api.apps.ApiConfig` - This registers the api app we created earlier.
+- `rest_framework` and `corsheaders` - This registers the modules we installed using `pip`.
 
 For the `MIDDLEWARE` section:
 
@@ -128,6 +131,7 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 ```
+The `MIDDLEWARE` section is a framework of hooks into Django’s request/response processing. It is a “plugin” system for globally altering Django’s input or output. In the above code we have added `corsheaders.middleware.CorsMiddleware` to listen in on responses
 
 Append the following code to the `settings.py` file:
 
