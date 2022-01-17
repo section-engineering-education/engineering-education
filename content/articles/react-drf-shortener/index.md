@@ -205,6 +205,7 @@ The above code will serialize all fields in the `urlShortener` model.
 More information about Serializers can be found [here](https://www.django-rest-framework.org/api-guide/serializers/).
 
 #### Working on the views
+A view is a function in Python that takes in a request from the client and returns a response. The view contains all the required logic to return the response. To learn more about views in Django, click [here](https://docs.djangoproject.com/en/4.0/topics/http/views/).
 
 Open the `views.py` file and modify it as shown below:
 
