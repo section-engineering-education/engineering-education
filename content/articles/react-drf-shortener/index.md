@@ -23,9 +23,9 @@ To follow along, the reader should have:
 
 By the end of this article, the reader should be able to:
 
--   Create a custom URL shortener.
--   Work with React and Django.
--   Fetch data from a database using Django and display it on React webpage.
+- Create a custom URL shortener.
+- Work with React and Django.
+- Fetch data from a database using Django and display it on React webpage.
 
 ### Setting up the Backend and Exposing the API Routes.
 
