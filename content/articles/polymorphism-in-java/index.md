@@ -113,43 +113,46 @@ Method Overriding is an example of dynamic polymorphism.
 `Method overriding` is a feature where you can have a parent method and a child method. Both the parent and child methods have the same name but the child method will tend to modify or override the parent method.
 
 Below is a snippet that explains the concept in detail.
+
 ```java
-public class Dog extends Animal {
+class Animal {
+    public void sound() {
+        System.out.println("Animals make sound");
+    }
+}
+class Dog extends Animal {
     @Override
     public void sound() {
         System.out.println("Woof");
     }
 }
-```
-
-```java
-public class Cat extends Animal {
+class Cat extends Animal {
     @Override
     public void sound() {
-        System.out.println("Meou");
+        System.out.println("Meow");
     }
 }
-```
-
-```java
-public class Main() {
+public class Main {
     public static void main(String[] args) {
-        
-        Animal a = new Dog();
-        Animal b = new Cat();
-        
+        Animal a = new Animal();
+        Animal b = new Dog();
+        Animal c = new Cat();
+
         a.sound();
         b.sound();
-    
+        c.sound();
     }
 }
+
 ```
 ```bash
 // Output
+Animals make sound
 Woof
-Meou
+Meow
 ```
-In the example above, we have created two classes, the dog class, and the cat class. Both the classes extend the class animal. You can note that when we called the object dog and cat, we receive the outputs for the methods in their respective classes. This indicates that the method in the class animal was overridden. This gives a good example of dynamic polymorphism.
+
+In the example above, we have two classes, the dog class, and the cat class which both extend the class animal. You can note that when we called the object dog and cat, we receive the outputs for the methods in their respective classes. This indicates that the method in the class animal was overridden by thr child class. Normally, for easier understanding of the code, we use `@Override` keyword to indicate which method is overriding the parent method. This gives a good example of dynamic polymorphism.
 
 ### Advantages of Polymorphism
 We are now going to look at the advantages of each of the types of polymorphism.
@@ -178,14 +181,14 @@ x=2;
 In the first example, you first have to initialize the data type, and then when allocating the variable, you specify the type of the variable. The case is different in Implicit type conversion. After you initialize the data type, you only have to allocate the variable and the compiler will automatically recognize it as a double.
 
 2. *Operator Overloading* - This is where the same symbol or operator has more than one meaning even when used in the same code. Below is an example to explain operator overloading.
-```bash
+```java
 String str = "5"+5;
 int sum = 5+5;
 
 System.out.println("str=%s sum=%d",str,sum);
 ```
 
-```java
+```bash
 //Output
 str = 55
 str = 10
