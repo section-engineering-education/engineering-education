@@ -11,13 +11,13 @@ The user will copy a link in the input field provided and click the `shorten` bu
 
 To follow along, the reader should have:
 
--   Understanding of the Django Rest Framework.
--   Understanding of Serializers in Django Rest Framework.
--   Basic understanding of the React hooks.
--   Understanding of the Fetch API.
--   Python and Node.js installed on the computer.
--   A browser, preferably Google Chrome.
--   A code editor, preferably VS Code.
+- Understanding of the Django Rest Framework.
+- Understanding of Serializers in Django Rest Framework.
+- Basic understanding of the React hooks.
+- Understanding of the Fetch API.
+- Python and Node.js installed on the computer.
+- A browser, preferably Google Chrome.
+- A code editor, preferably VS Code.
 
 ### Goals
 
