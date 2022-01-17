@@ -3,12 +3,12 @@
 
 With more than a thousand languages being used today, communication between people of different native languages is crucial. That is why companies like Google are applying Natural Language Processing into their products like language detection on Chrome browser to give users a smooth experience.
 
-This article will tackle language detection from basic to implementation, thereby building your understanding of NLP and boosting your portfolio as a real-world project.
+This article will illustrate the basic implementation a language detection system, thereby building your understanding of NLP and boosting your portfolio.
 
 ### Introduction
 Language detection is a task in Natural Language Processing (NLP) that identifies the language of a given text or phrase. It helps in language translation.
 
-This article will build a language detection model using Python, the [Language detection](https://www.kaggle.com/basilb2s/language-detection) dataset from Kaggle and deploy it using Flask. Flask is an easy-to-use Python micro web framework.
+This article will build a language detection model using Python and the [Language detection](https://www.kaggle.com/basilb2s/language-detection) dataset from Kaggle,  and deploy it using Flask. Flask is an easy-to-use Python micro web framework.
 
 ### Table of contents
 - [Building the language detection model](#building-the-language-detection-model)
