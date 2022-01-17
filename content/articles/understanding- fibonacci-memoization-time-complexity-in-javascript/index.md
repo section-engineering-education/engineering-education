@@ -39,7 +39,7 @@ When we try to analyze the time complexity of programs we assume that each simpl
 For seed values F(0) = 0 and F(1) = 1
 F(n) = F(n-1) + F(n-2)
 ```
-So Let's say the time taken to calculate fib of n is `T(n)`.The recursive equation of a Fibonacci number is `T(n)=T(n-1)+T(n-2)+O(1)`. The equation means, the time  we will take to calculate `fib(n)` equals the sum of time we will take to calculate `fib(n-1)` and `fib(n-2)`. We should also include constant time to perform addition.
+So Let's say the time taken to calculate fib of n is `T(n)`.The recursive equation of a Fibonacci number is `T(n)=T(n-1)+T(n-2)+O(1)`. This is because, the time  we will take to compute `fib(n)` equals the quantity of time we will take to compute `fib(n-1)` and `fib(n-2)`. We should also include constant time to perform addition.
 
 Fibonacci is now defined as:
 ```
@@ -69,7 +69,7 @@ x^2 – x–1 = 0
 const fib =(n)=>{
 if (n<=2)return 1;
 ```
-In the code above we are taking in a number and returning the number of the Fibonacci sequence. In other words, if I am given sum n that is less than or equal to 2 then what I should do is just return 1. This is because the first two  Fibonacci numbers are 1. 
+In the code above we are taking in a number and returning the number of the Fibonacci sequence. In other words, if I am given sum n that is less than or equal to 2 then what I should do is just return 1. 
 
 ```js
  return fib (n-1)+fib(n-2)
