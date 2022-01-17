@@ -85,9 +85,9 @@ python -m pip install django-cors-headers
 
 **Code Explanation**:
 
-`pip install djangorestframework` will install Django Rest Framework(DRF). DRF allows us to create an API using Django.
+- `pip install djangorestframework` will install Django Rest Framework(DRF). DRF allows us to create an API using Django.
 
-`python -m pip install django-cors-headers` - This will install CORS to allow the Django backend to communicate with the React front-end.
+- `python -m pip install django-cors-headers` - This will install CORS to allow the Django backend to communicate with the React front-end.
 
 ### Registering the api app and the installed packages
 
