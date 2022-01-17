@@ -6,7 +6,7 @@ url: /creating-a-finger-counter/
 title: Creating a finger counter using computer vision, OpenCv and Python
 description: In this tutorial, we will discuss how to create a finger counter using computer vision, opencv and python.
 author: denis-kuria
-date: 2022-01-14T00:00:00-10:40
+date: 2022-01-17T00:00:00-10:05
 topics: [Languages]
 excerpt_separator: <!--more-->
 images:
@@ -16,20 +16,20 @@ images:
 ---
 When it comes to coding, the best way of learning is by working on fun but challenging projects. The challenging part makes us research the concepts we are dealing with more in-depth.
 <!--more-->
-The fun part makes us keep working on the project when the code is throwing errors. Every programmer has had a time during their coding experience when the code is throwing errors but can't identify what is causing this.
+The fun part makes us keep working on the project even when the code is throwing errors. Every programmer has had a time during their coding experience when their code is throwing errors but can't identify what is causing this.
 
-Even so, they keep working on the code and research what is causing the errors to occur. Most of the time this is because they would love to see the output of the projects they are working on.
+Even so, they keep working on the code and research what is causing them. Most of the time this is because they would love to see the output of the projects they are working on.
 
 In this tutorial, we will work on a fun but relatively challenging project. We will look at how to create a finger counter using computer vision, OpenCv, and Python.
 
 ### Introduction
-Python has libraries that will help us develop our project. We will need OpenCv and MediaPipe. We will later look at why and how we will use these two libraries. 
+Python has libraries that will help us develop our project. We will need OpenCv and MediaPipe. We will later look at why and how we will use these two libraries.
 
 We will also need an IDE to work with Python. We will use **pycharm community edition** as it is freely available on the internet.
 
-In this tutorial, we will learn how to hand track using python with the help of MediaPipe library. We will also learn to implement computer vision in our project using OpenCv.
+This tutorial will discuss how to hand track using python with the help of a MediaPipe library. We will also learn to implement computer vision in our project using OpenCv.
 
-We will finally learn how to combine MediaPipe, OpenCv, and Python to create a program that will count the number of fingers in an input image. A person using Windows or Linux can follow through.
+Lastly, we will learn how to combine MediaPipe, OpenCv, and Python to create a program that will count the number of fingers in an input image. A person using Windows or Linux can follow through.
 
 ### Table of contents
 - [Prerequisites](#prerequisites)
@@ -39,8 +39,8 @@ We will finally learn how to combine MediaPipe, OpenCv, and Python to create a p
 - [Conclusion](#conclusion)
 
 ### Prerequisites
-To understand this article, a person needs to:
-- Be familiar with the python programming language.
+To understand this article, the reader needs to:
+- Be familiar with the Python programming language.
 - Have pycharm installed on their computer. If you don't have it installed, you can download it [here](https://www.jetbrains.com/pycharm/download/).
 
 ### Understanding the hand landmark model
@@ -48,16 +48,16 @@ To understand this article, a person needs to:
 
 _[Image Source: Mediapipe](https://google.github.io/mediapipe/images/mobile/hand_landmarks.png)_
 
-The diagram above shows a hand landmark model that shows how MediaPipe can track hands. For us, we are interested in hand-knuckles. 
+The diagram above shows a hand landmark model that shows how MediaPipe can track hands. This article is interested with the hand-knuckles.
 
 The diagram shows numbers from 0 to 20 displayed over the knuckles. We will be using the position of these knuckles to determine whether a finger is open or closed.
 
-Let us take a look at the logic we will be using. If knuckle number 8 is above knuckle number 6 then the finger is open. If it is below knuckle number 6 then the finger is closed. 
-
-This will apply to all fingers except the thumb. For the thumb, we will check whether knuckle number `4` is above knuckle number `2`. If this is the case then the thumb is open else the thumb is closed.
+Let us take a look at the logic we will be using:
+- If knuckle number 8 is above knuckle number 6 then the finger is open. If it is below knuckle number 6 then the finger is closed.
+- This will apply to all fingers except the thumb. For the thumb, we will check whether knuckle number `4` is above knuckle number `2`. If this is the case then the thumb is open else, the thumb is closed.
 
 ### Creating a finger counter program using computer vision, OpenCv, and Python
-We first of all need to prepare our working environment in _Pycharm_. Open the pycharm app and click `create a new project` on the window that appears. 
+First, we need to prepare our working environment in _Pycharm_. Open the pycharm app and click `create a new project` on the window that appears.
 
 This will be as shown in the screenshot below.
 
@@ -90,7 +90,7 @@ We will use the library above to take our input through the webcam. It will also
 After installing the libraries above, we are now ready to start coding. We will write our code on the `main.py` file that pycharm automatically creates for us.
 
 #### Step 1 - Importing the libraries we need
-We will start by importing the libraries we discussed into our project. This will enable to us use their dependencies in our code. 
+We will start by importing the libraries we discussed into our project. This will enable to us use their dependencies in our code.
 
 To do so, use the code below:
 
@@ -100,9 +100,9 @@ import mediapipe as mp
 ```
 
 #### Step 2 - Declaring the `MediaPipe` objects and the finger and thumb coordinates
-We will then capture an image using our webcam and declare the `MediaPipe` objects that we will need. We will also declare the finger and thumb coordinates that we will need to determine whether a finger is open or closed. 
+We will then capture an image using our webcam and declare the `MediaPipe` objects that we will need. Also, we will declare the finger and thumb coordinates that we use to determine whether a finger is open or closed.
 
-We use the code below to achieve this.
+The code below is used to achieve this:
 
 ```python
 cap = cv2.VideoCapture(0)
@@ -116,9 +116,9 @@ thumb_Coord = (4,2)
 > We will use `mp_Hands` to detect the hands in our input image, `hands` to process the detected hands, and `mpDraw` to draw the hand connections and landmarks present in the hands.
 
 #### Step 3 - Converting the input image to `RGB` image
-We will now check whether there is an input image using the code below. If it is successful and the image does exist, we will first of all convert it to `RGB`. 
+Next, we check whether there is an input image using the code below. If it is successful and the image does exist, we will first of all convert it to `RGB`.
 
-We will then process the `RGB` image using the `hands` module to locate the hands and identify all the landmarks present in them. This is shown below:
+Afterwards, we process the `RGB` image using the `hands` module to locate the hands and identify all the landmarks present in them. This is shown below:
 
 ```python
 while True:
@@ -129,9 +129,9 @@ while True:
 ```
 
 #### Step 4 - Drawing the landmarks present in the hand
-So far we have identified the landmarks present on the hands but we have not drawn the identified landmarks. The code below will help ensure that the hand landmarks do exist using the `if` statement. 
+So far we have identified the landmarks present on the hands but we have not drawn the identified landmarks. The code below will help ensure that the hand landmarks do exist using the `if` statement.
 
-We will then create a nested `for` loop to enable us to work on one hand at a time and draw the hand landmarks present on each hand. The empty list that is created will be used later in the code.
+We will create a nested `for` loop to enable us to work on one hand at a time and draw the hand landmarks present on each hand. The empty list that is created will be used later in the code.
 
 ```python
 
@@ -143,11 +143,11 @@ We will then create a nested `for` loop to enable us to work on one hand at a ti
 ```
 
 #### Step 5 - Changing the hand points coordinates into image pixels
-Working with the actual coordinates is challenging. We will therefore change them into pixels.
+Working with the actual coordinates is challenging. Therefore, we need to change them into pixels.
 
-We will, first of all, use the `image.shape` function to get the height, width, and color channel of the image. We will then get the `x` and `y` coordinates of each hand point in form of pixels. We will then save these hand points in the list we previously created. 
+First of all, we use the `image.shape` function to get the height, width, and color channel of the image. We will then get the `x` and `y` coordinates of each hand point in form of pixels. We will then save these hand points in the list we previously created.
 
-The code below will implement this.
+The code below will implement this:
 
 ```python
               h, w, c = image.shape
@@ -176,9 +176,9 @@ We will now use the logic we discussed [here](#understanding-the-hand-landmark-m
 ```
 
 #### Step 8 - Displaying our output
-The final step involves us displaying the output. We will display the number of open fingers using the value of the `upcount`. This is because it is only incremented when a finger is open. 
+The final step involves us displaying the output. We will display the number of open fingers using the value of the `upcount`. This is because it is only incremented when a finger is open.
 
-We will also output a real-time video that shows the user opening and closing their fingers. Use the code below to achieve this.
+We will also output a real-time video that shows the user opening and closing their fingers. Use the code below to achieve this:
 
 ```python
         cv2.putText(image, str(upCount), (150,150), cv2.FONT_HERSHEY_PLAIN, 12, (0,255,0), 12)
