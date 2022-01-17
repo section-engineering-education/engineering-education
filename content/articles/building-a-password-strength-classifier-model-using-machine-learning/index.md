@@ -211,7 +211,7 @@ The output:
 669639
 ```
 
-From the image above this dataset is big and has many data samples, we can now use this dataset to build our model.
+From the output above this dataset is big and has many data samples, we can now use this dataset to build our model.
 
 ### Tokenization process
 Tokenization is the process of breaking text data into simpler characters called tokens. We will break our password text into word tokens which we will use as input for our model.
