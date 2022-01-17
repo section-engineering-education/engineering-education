@@ -6,18 +6,17 @@ url: /etl-to-elt-for-your-fintech-products/
 title: Why Move from ETL to ELT for your Fintech Products?
 description: This article will discuss popular ELT and ETL tools and compare the application of ELT and ETL technologies in extracting fintech data.
 author: jeska-mweni
-date: 2022-01-13T00:00:00-14:00
+date: 2022-01-17T00:00:00-10:00
 topics: []
 excerpt_separator: <!--more-->
 images:
 
   - url: /engineering-education/etl-to-elt-for-your-fintech-products/hero.png
-    alt: ELT ETL Example Image
+    alt: ELT Extract Transform Load Example Image
 ---
 Today, fintech companies are dealing with mass data. They need to find ways to transform this data into a valuable state quickly. Otherwise, such data would become less beneficial.
 <!--more-->
-
-Today, fintech companies are dealing with mass data. They need to find ways to transform this data into a valuable state quickly. Otherwise, such data would become less beneficial. These organizations require a fast and effective method to transfer collected data into their analytical systems. Extract, Transform, Load (ETL) technology was the conventional choice before the cloud became a mainstay for these companies.
+These organizations require a fast and effective method to transfer collected data into their analytical systems. Extract, Transform, Load (ETL) technology was the conventional choice before the cloud became a mainstay for these companies.
 
 But now, companies are contemplating moving towards Extract, Load, and Transform (ELT) technology. Cloud services favor this form of technology. The reverse order of the processes is not the only difference that ETL and ELT have but rather their efficiency when dealing with big data. fintech companies may favor an ELT approach owing to its better handling of high volume, velocity, veracity, value, and variety of data.
 
