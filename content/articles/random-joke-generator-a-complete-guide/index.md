@@ -3,10 +3,10 @@ layout: engineering-education
 status: publish
 published: true
 url: /random-joke-generator-a-complete-guide/
-title: Random Joke Generator in Javascript: A Complete Guide
+title: Random Joke Generator in Javascript: A Complete Guiden
 description: In this tutorial, we will create a random joke generator using Javascript.
 author: esther-maina
-date: 2022-01-12T00:00:00-06:10
+date: 2022-01-12T00:00:00-01:10
 topics: [Languages]
 excerpt_separator: <!--more-->
 images:
@@ -14,7 +14,6 @@ images:
   - url: /engineering-education/random-joke-generator-a-complete-guide/hero.jpg
     alt: Random Joke Generator in Javascript: A Complete Guide Hero Image
 ---
-
 Application programming interface(API) enables one to get material from other websites and display it anywhere you wish.
 
 <!--more-->
@@ -22,7 +21,6 @@ Application programming interface(API) enables one to get material from other we
 This tutorial will teach you how to design a javaScript joke generator utilizing API links, a fantastic project for beginner developers to practice learning JavaScript.
 
 ### Table of contents
-
 - [Table of contents](#table-of-contents)
 - [Prerequisites](#prerequisites)
 - [Objectives](#objectives)
@@ -36,36 +34,30 @@ This tutorial will teach you how to design a javaScript joke generator utilizing
 - [Further reading](#further-reading)
 
 ### Prerequisites
-
 To follow this tutorial, the reader should have the following:
-
 - Essential expertise in HTML, CSS, and JavaScript.
 - A code editor, preferably [Visual Code Studio](https://code.visualstudio.com/).
 
 ### Objectives
-
 By the end of this tutorial, learners should be able to:
-
 - Design a basic `HTML` container to contain content.
 - Connect API links to get data from other web pages.
 - Assign actions to `HTML` buttons with `eventListeners` in `javaScript`.
 - Develop a complete functional random joke generator.
 
-### Random Joke Generator Project Example
+### Random joke enerator project example
+This project will generate random jokes using API links. For this, you need to have basic knowledge of HTML, CSS, and JavaScript. First, we will make a box on the web page and add a title. Then we will create an area in which all the joke generators will be seen. 
 
-This project will generate random jokes using API links. For this you need to have a basic idea about HTML CSS and JavaScript. First we will make a box on the web page and add a title. Then we will create an area in which all the joke generators will be seen. Below will be a generate button that will generate a different joke each time it is clicked on. Here we will not use any text manually. Here we will use API link to which it will collect all the information from other places with the help of fetch method and then display it in the webpage with the help of textContent.
-The following files will be available:
-
-- index.html
-- style.css
-- app.js
+Below will be a generate button that will generate a different joke each time it is clicked on. Here we will not use any text manually. Here we will use an API link to collect all the information from other places with the help of the fetch method and then display it on the webpage with the help of textContent. The following files will be available:
+- `index.html`
+- `style.css`
+- `app.js`
 
 This is the file structure.
 
 ![Output file arrangement](engineering-education/random-joke-generator-a-complete-guide/output-file-arrangement.png)
 
 #### Step 1: Basic structure of the joke generator
-
 We will start by setting up the basic structure of the joke generator in that the `background-color` of our basic box will be `#0C0C0C` and it will be `550px` wide. We will use a border radius of `5px` to round the edges of the box. Refer to the snippet below:
 
 ```html
@@ -84,7 +76,7 @@ We will start by setting up the basic structure of the joke generator in that th
 </html>
 ```
 
-The box will be on the top center position of our page by setting its `position` to `absolute`, on the `left` of our page, we will have `50%` as well as the `top` and lastly, we will `transform` and `translate` our box from the top and left as `-50%`.
+The box will be on the top center position of our page by setting its `position` to `absolute`, on the `left` side of our page, we will have `50%` as well as the `top` and lastly, we will `transform` and `translate` our box from the top and left as `-50%`.
 
 ```css
 .box {
@@ -104,7 +96,6 @@ The box should resemble the following picture in appearance.
 ![Output box](engineering-education/random-joke-generator-a-complete-guide/output-box.png)
 
 #### Step 2: Adding a title
-
 The next step is to add a title. The title is there to enhance the page's appearance. The title will be oriented center to keep it in the box and will be `24px` in font size. See the example below.
 
 ```css
@@ -122,8 +113,7 @@ After adding the title, we should have something close to this.
 ![Output title](engineering-education/random-joke-generator-a-complete-guide/output-title.png)
 
 #### Step 3: Set up the joke viewing zone
-
-Moving on to the third task where we will create an area of loading all our jokes where this will be made possible by `<p>` tags. There is no need for a specific height and its size will be automatically determined based on the size of the content in it. It will have `opacity` set to `0` to visually hide everything in this section.
+Moving on to the third task, we will create an area of loading all our jokes where this will be made possible by `<p>` tags. There is no need for a specific height and its size will be automatically determined based on the size of the content in it. It will have `opacity` set to `0` to visually hide everything in this section.
 
 ```html
 <div id="joke-section"></div>
@@ -155,8 +145,7 @@ So far, we should have the following, as displayed below.
 ![Output joke container](engineering-education/random-joke-generator-a-complete-guide/output-joke-container.png)
 
 #### Step 4: Set up the generate joke button
-
-This button will help us generate random jokes when clicked and as a result, we will design it as shown.
+This button will help us generate random jokes when clicked. We will design the button using the code snippet below.
 
 ```html
 <input type="submit" id="btn" value="Generate Jokes" />
@@ -183,7 +172,6 @@ Below is the output after adding the button.
 ![Output button](engineering-education/random-joke-generator-a-complete-guide/output-btn.png)
 
 #### Step 5: Activating the button
-
 Since we have the required layout, it is time for implementing this example with the help of javaScript. First, we must get the joke container and the generate joke button, as shown below.
 
 ```javascript
@@ -193,7 +181,7 @@ let jokeSection = document.querySelector("#joke-section");
 let generateBtn = document.querySelector("#btn");
 ```
 
-The next thing we have to do is include an API in our project so that we can fetch content from other websites. Refer to the following code snippet.
+The next thing we have to do is include an API in our project to fetch content from other websites. Refer to the following code snippet.
 
 ```javascript
 let API =
@@ -201,7 +189,6 @@ let API =
 ```
 
 Next, we will code a method and name it `acquireJoke`. This method will be ideal since it will help us achieve the following:
-
 - First, we will eliminate class `.content-fade`, ensuring that nothing can be viewed with the help of `classList.remove`.
 - The data obtained from the API using the fetch method will be arranged to display with the help of `textContent`.
 - We will create a display using paragraph tags and add class `.content-fade` using `classList`. As a result, our text will be seen in the display.
@@ -231,11 +218,11 @@ generateBtn.addEventListener("click", acquireJoke);
 ![Output joke](engineering-education/random-joke-generator-a-complete-guide/output-joke.png)
 
 ### Conclusion
-
-As a result of all you have learned so far, we may wrap up this tutorial. We have covered how to use API links to bring material from another website to your website and develop a random joke generator in javaScript. You may access and download the complete source code for this practice project [here](https://github.com/EssyG10/random-joke-generator).
+As a result of all you have learned so far, we may wrap up this tutorial. We have covered using API links to bring material from another website to your website and develop a random joke generator in javaScript. You may access and download the complete source code for this practice project [here](https://github.com/EssyG10/random-joke-generator).
 
 ### Further reading
-
 [Web APIs](https://developer.mozilla.org/en-US/docs/Web/API/Document/links)
 
 Happy Coding!
+---
+Peer Review Contributions by: [Briana Nzivu](/engineering-education/authors/briana-nzivu/)
