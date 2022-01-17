@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /why-move-from-etl-to-elt-for-your-fintech-products/
+url: /etl-to-elt-for-your-fintech-products/
 title: Why Move from ETL to ELT for your Fintech Products?
 description: This article will discuss popular ELT and ETL tools and compare the application of ELT and ETL technologies in extracting fintech data.
 author: jeska-mweni
@@ -11,7 +11,7 @@ topics: []
 excerpt_separator: <!--more-->
 images:
 
-  - url: /engineering-education/why-move-from-etl-to-elt-for-your-fintech-products/hero.png
+  - url: /engineering-education/etl-to-elt-for-your-fintech-products/hero.png
     alt: ELT ETL Example Image
 ---
 Today, fintech companies are dealing with mass data. They need to find ways to transform this data into a valuable state quickly. Otherwise, such data would become less beneficial.
