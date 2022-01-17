@@ -1,6 +1,20 @@
-### Overview of Rootkits
+---
+layout: engineering-education
+status: publish
+published: true
+url: /overview-of-rootkits/
+title: Overview of Rootkits
+description: This article will provide an overview of how rootkits works, the several types of rootkits, how they affect our systems and how we can protect our systems from them.
+author: francis-ndiritu
+date: 2022-01-18T00:00:00-13:30
+topics: [Security]
+excerpt_separator: <!--more-->
+images:
+  - url: /engineering-education/overview-of-rootkits/hero.jpg
+    alt: Overview of Rootkits
+---
 In this modern digitized world, it has become almost impossible to achieve privacy and security. As much as data has become crucial, its protection has become even more valuable.
-
+<!--more-->
 Today, securing our data and information is our top priority. There are numerous ways in which someone can get unauthorized access to our systems and steal data. Rootkits are one such method.
 
 ### What are Rootkits?
@@ -34,16 +48,16 @@ A firmware rootkit is a type of rootkit that exploits essential hardware such as
 ### Preventive measures
 As previously stated, the rootkit hides among other system modules in the operating system, making it not vulnerable to detection. Detection software can only identify those rootkits if there is a flaw in the rootkits' ability to hide. It becomes impossible to find them if they are flawless in hiding or if they latch themselves onto the kernel.
 
-1. **Memory Dumping** - 
+#### 1. Memory Dumping
 In this case, the memory dump analysis method would be useful. A memory dump is a process of dumping all information contained in RAM into a storage drive. These dumps can be helpful to recover relevant data and information about the rootkits regarding their issues, flaws, and whereabouts in the system.
 
-2. **Behavioral Analysis** - 
+#### 2. Behavioral Analysis
 Rootkits can also be discovered through behavioral analysis. Instead of looking for rootkits, we search for rootkit-like behavior. Because they hide and can be difficult to detect, learning about its behavior and anticipating its whereabouts can be beneficial. The root cause can be discovered using the acquired data, patterns, and algorithms, which leads to the discovery of the rootkit. Although this procedure may not always produce viable results, it is still worth a shot.
 
-3. **Kernel shut-down** - 
+#### 3. Kernel shut-down
 Taking down the kernel will help in the identification of a kernel-mode rootkit. Since the rootkit gets decommissioned when the kernel is turned off, it becomes harder for it to hide. This helps in eliminating the rootkit from the memory dump.
 
-4. **Principle of least privilege** - 
+#### 4. Principle of least privilege
 Following the [principle of least privilege](https://en.wikipedia.org/wiki/Principle_of_least_privilege) is another strategy that can benefit in tackling the problem of rootkits. It simply implies, giving the user access only to those parts of the system that they need to execute any computing operation. This prohibits the user from modifying any key files or modules on the operating system that could compromise the device's core functionality thus prohibiting the installation of any unwanted software into the kernel.
 
 ### Conclusion
@@ -56,3 +70,5 @@ Since it is widely acknowledged that prevention is better than cure, actions sho
 
 [What is Rootkit? - Kaspersky](https://www.kaspersky.com/resource-center/definitions/what-is-rootkit)
 
+---
+Peer Review Contributions by: [Geoffrey Mungai](/engineering-education/authors/geoffrey-mungai/)
