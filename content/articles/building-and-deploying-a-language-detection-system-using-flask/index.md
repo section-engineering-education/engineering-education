@@ -148,7 +148,7 @@ print("Accuracy is :",acc)
 
 As shown below, the result of the model is pretty good.
 
-![accuracy](/engineering-education/building-and-deploying-a-language-detection-system-using-flask/accuracy.jpg)
+![accuracy](/engineering-education/building-and-deploying-a-language-detection-system-using-flask/acuracy.jpg)
 
 #### Inference
 We will now try to use our model to predict a sentence written in a particular language.
@@ -165,7 +165,7 @@ predict('I went home yesterday')  # Call the function
 
 The output of our prediction will be "English", as seen below:
 
-![output](/engineering-education/building-and-deploying-a-language-detection-system-using-flask/output.jpg)
+![output](/engineering-education/building-and-deploying-a-language-detection-system-using-flask/out.jpg)
 
 We can now save the model using `Pickle` as shown below:
 
@@ -304,13 +304,13 @@ Once the above changes are done,  run the webserver using the following command 
 python apps.py
 ```
 
-![homepage](/engineering-education/building-and-deploying-a-language-detection-system-using-flask/home.jpg)
+![homepage](/engineering-education/building-and-deploying-a-language-detection-system-using-flask/homepage.jpg)
 
  Enter a word in any of the languages above and click on the **Predict** button to see the results.
 
  An example below is the results of a phrase *"Hur mår du"*.
 
- ![results](/engineering-education/building-and-deploying-a-language-detection-system-using-flask/results.jpg)
+ ![results](/engineering-education/building-and-deploying-a-language-detection-system-using-flask/result.jpg)
 
 ### Conclusion
 We have built a language detection model and deployed it using Flask, as discussed above. The knowledge can be applied to other NLP projects like fraud detection and hate speech detection.
