@@ -15,6 +15,7 @@ images:
 ---
 W.P.F stands for Windows Presentation Foundation and WinForms stands for Windows Forms Applications. Both these are Windows application graphical user interfaces that developers may use to construct Windows desktop programs.
 <!--more-->
+
 The objective of this article is to describe the fundamental distinctions between the two technologies for designing Windows desktop applications that might be more useful in today's systems development. To point out the differences between the two technologies, we will create a simple WinForms and WPF application to add two numbers.
 
 ### Prerequisites
@@ -33,7 +34,7 @@ In February 2002, Microsoft announced WinForms as a GUI-based alternative to the
 Because WinForms is a wrapper for a collection of C++ classes, each WinForms control is an instance of that class. Developers may quickly drag and drop controls from a toolbox in Microsoft's Visual Studio, making workarounds with WinForms simpler.
 
 WinForms is a graphical library in the .NET framework that lets the developer build rich client applications with event-driven design. WinForms is a simple concatenation of Windows Forms Applications.
-<!--  -->
+
 ### Creating a WinForms application
 Assuming we have installed [Visual Studio](https://visualstudio.microsoft.com/), we can create a new project in the solution explorer by choosing the WinForms application from the list. You can change the name of the form as you desire. In our case, it will remain as `Form1.cs`. After creating the project, we can note that Visual Studio created the `Form1.cs` file and generated the `Program.cs` file:
 
@@ -44,7 +45,7 @@ From our toolbox window, we can drag and drop a textbox, label, and a button:
 
 By double-clicking the add button, let's add the following code:
 
-```csharp
+```c#
 private void button1_Click(object sender, EventArgs e)
 {
     var y = Convert.ToInt32(textBox1.Text);
@@ -60,8 +61,10 @@ When we run the application, it prompts for two numbers and after clicking the a
 
 ![Results after adding two numbers](/engineering-education/wpf-vs-winforms/results.png)
 
-Controls are readily employed in Windows Forms, making them easy to use but when designing is necessary, Windows forms should not be utilized. This is because the code for each event and procedure in WinForms, is firmly tied with the UI element. Even if you utilized the visual designer in WinForms, the designer extension component of your form had layout code created in the language of your choice (for example, C#, VB.NET, or C++). Without that code, you wouldn't be able to construct the form individually. This means that in order to create the UI, you have to be familiar with the language.
-<!--  -->
+Controls are readily employed in Windows Forms, making them easy to use but when designing is necessary, Windows forms should not be utilized. This is because the code for each event and procedure in WinForms, is firmly tied with the UI element.
+
+Even if you utilized the visual designer in WinForms, the designer extension component of your form had layout code created in the language of your choice (for example, C#, VB.NET, or C++). Without that code, you wouldn't be able to construct the form individually. This means that in order to create the UI, you have to be familiar with the language.
+
 ### What is WPF?
 After Microsoft introduced Windows Presentation Foundation (WPF) in 2007, which replaced Windows Form, the creation of desktop applications has altered considerably.
 
@@ -78,7 +81,7 @@ Let's start by creating a new project in the solution explorer. Here, we shall c
 
 ![creating wpf project](/engineering-education/wpf-vs-winforms/wpf-window.png)
 
-The layout of a WPF application is shown above, with the XAML file beside the Designer. There is a distinction between WinForms and WPF here: WPF utilizes XAML to define a WPF application's user interface while WinForms provides access to the native windows library of common controls.
+The layout of a WPF application is shown above, with the XAML file beside the designer. There is a distinction between WinForms and WPF here: WPF utilizes XAML to define a WPF application's user interface while WinForms provides access to the native windows library of common controls.
 
 Note that we can manually add a textbox, label, and button to the associated XAML file. For example, we can add a button in WPF using the following code in the `MainWindow.xaml` file:
 
@@ -130,7 +133,6 @@ In reality, we can also drag and drop controls into the designer window. The rel
 In WPF, XAML makes it easy to create and edit your GUI and allows the work to be split between a designer (XAML) and a program (C#) unlike in WinForms where the design and the program are not separeted.
 
 In WPF, we have to add a click event handler to the button while in WinForms, it is not required. Read more about the click event handler [here](https://www.tutorialspoint.com/xaml/xaml_event_handling.htm).
-<!--  -->
 
 When the user selects the add button, the sum of the values supplied by the user in the top two TextBox controls should be shown in the third TextBox control.
 
@@ -160,7 +162,14 @@ namespace addingTwoNumbers
 Unlike WinForms, WPF is primarily used to create an application's user interface (UI), and it includes security capabilities.
 
 ### Conclusion
-In this tutorial, we have learned the major differences between WinForms and WPF by creating a simple application in both instances. Improved graphical user interfaces, animation, 2D and 3D visualization capabilities, web application compatibility, faster acceleration, and cross-platform support are all characteristics of WPF over Winforms.
+In this tutorial, we have learned the major differences between WinForms and WPF by creating a simple application in both instances. The following are some of the characteristics of WPF over Winforms:
+
+- Improved graphical user interfaces
+- Animation
+- 2D and 3D visualization capabilities
+- Web application compatibility
+- Faster acceleration
+- Cross-platform support
 
 WPF is the most common development platform for native Windows programs, thus you should use it if you're making new applications.
 
