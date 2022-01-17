@@ -1,5 +1,21 @@
-Firebase Realtime database is a NoSQL database that allows us to store and sync data in real-time between users. This is a large JSON object that developers can manage using a single API in real-time.
+---
+layout: engineering-education
+status: publish
+published: true
+url: /custom-searching-and-filtering-in-firebase-database-in-android/
+title: Implementing Custom Searching and Filtering in Firebase Database in Android
+description: This tutorial shows the reader how to implement custom searching and filtering in Firebase Database in Android using Kotlin.
+author: brandy-odhiambo
+date: 2022-01-17T00:00:00-11:50
+topics: [Languages]
+excerpt_separator: <!--more-->
+images:
 
+  - url: /engineering-education/custom-searching-and-filtering-in-firebase-database-in-android/hero.jpg
+    alt: Implementing Custom Searching and Filtering in Firebase Database in Android
+---
+Firebase Realtime database is a NoSQL database that allows us to store and sync data in real-time between users. This is a large JSON object that developers can manage using a single API in real-time.
+<!--more-->
 Query instructions make filtering and searching data with different attributes in relational databases like MySQL and SQLite very simple. Even when conducting simple data queries, filtering and searching can be relatively difficult in Firebase Realtime database.
 
 ### Prerequisites
@@ -18,7 +34,7 @@ To create this tree-like structure, elements called nodes are joined by a genera
 
 A child can be nested in the connected nodes to create a widely nested structure, as seen in the diagram below.
 
-![database structure](/engineering-education/implementing-custom-searching-and-filtering-in-firebase-database-in-android-with-kotlin/firebase_database.png)
+![database structure](/engineering-education/custom-searching-and-filtering-in-firebase-database-in-android/firebase_database.png)
 
 ### Advantages of Firebase Realtime database
 - Ability to access the data in the database through a single path.
@@ -60,7 +76,7 @@ Let's get started :)
 ### Step 1: Creating an empty project
 Launch Android studio and create an empty activity project to start a new project from scratch. Next, give your project a descriptive name.
 
-![project](/engineering-education/implementing-custom-searching-and-filtering-in-firebase-database-in-android-with-kotlin/creating_project.png)
+![project](/engineering-education/custom-searching-and-filtering-in-firebase-database-in-android/creating_project.png)
 
 ### Step 2: Linking your project to Firebase
 To gain access to the Firebase database, your project must be connected to Firebase, which can be done in the following way:
@@ -76,7 +92,7 @@ In this step, we will create a simple layout that will help in displaying data i
 
 The user interface should appear as shown below:
 
-![user_interface](/engineering-education/implementing-custom-searching-and-filtering-in-firebase-database-in-android-with-kotlin/ui.png)
+![user_interface](/engineering-education/custom-searching-and-filtering-in-firebase-database-in-android/ui.png)
 
 ### Step 4: Creating Model Class and Adapter class
 A model class is used to map data in Firebase and establish an access point for that data. The code below demonstrates how to create a model class:
@@ -275,11 +291,14 @@ private fun searchByName(name: String) {
 
 When you run the app, you should get the following output:
 
-![demo](/engineering-education/implementing-custom-searching-and-filtering-in-firebase-database-in-android-with-kotlin/demo.gif)
+![demo](/engineering-education/custom-searching-and-filtering-in-firebase-database-in-android/demo.gif)
 
 ### Conclusion
-In this tutorial, we've discussed how Firebase realtime database structures its data, the different ways we can perform searching and filtering, methods used when filtering data, and finally implemented search and filtering in Android.
+In this tutorial, we've discussed how Firebase realtime database structures its data, the different ways we perform searching and filtering, methods used when filtering data, and finally implemented search and filtering in Android.
 
 You can get the full code implementation of this tutorial on [this GitHub repository](https://github.com/brandy-kay/FirebaseSearchFilteringDemo).
 
 Happy Coding!
+
+---
+Peer Review Contributions by: [Eric Gacoki](/engineering-education/authors/eric-gacoki/)
