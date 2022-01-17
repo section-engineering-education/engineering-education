@@ -4,7 +4,7 @@ status: publish
 published: true
 url: /implementation-of-convolution-integral-of-continuous-time-linear-time-invariant-systems-in-matlab/
 title: Implementation of Convolution Integral of Continuous Time Linear Time Invariant Systems in Matlab
-description: This article discusses 
+description: This article discusses the various types of convolution integrals of LTI systems and how they can be implemented using functions in Matlab.
 author: queenter-bruce
 date: 2022-01-12T00:00:00-00:00
 topics: [Languages]
@@ -14,7 +14,6 @@ images:
   - url: /engineering-education/implementation-of-convolution-integral-of-continuous-time-linear-time-invariant-systems-in-matlab/hero.jpg
     alt: Implementation of Convolution Integral of Continuous Time Linear Time Invariant Systems in Matlab Hero image.
 ---
-
 Convolution is integral that shows the overlap of a function f(x) when it shifts another function. This integral is used to blend two functions. In image synthesis, the dirty map is the Convolution of the clean map having the dirty beam.
 <!--more-->
 
