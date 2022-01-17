@@ -39,7 +39,7 @@ When we try to analyze the time complexity of programs we assume that each simpl
 For seed values F(0) = 0 and F(1) = 1
 F(n) = F(n-1) + F(n-2)
 ```
-So Let's say the time taken to calculate fib of n is `T(n)`.The recursive equation of a Fibonacci number is `T(n)=T(n-1)+T(n-2)+O(1)`. This is because, the time  we will take to compute `fib(n)` equals the quantity of time we will take to compute `fib(n-1)` and `fib(n-2)`. We should also include constant time to perform addition.
+So Let's say the time taken to calculate fib of n is `T(n)`.The recursive equation of a Fibonacci number is `T(n)=T(n-1)+T(n-2)+O(1)`. This is because the time  we will take to compute `fib(n)` equals the quantity of time we will take to compute `fib(n-1)` and `fib(n-2)`. We should also include constant time to perform addition.
 
 Fibonacci is now defined as:
 ```
@@ -77,7 +77,7 @@ In the code above we are taking in a number and returning the number of the Fibo
  ```
 Since we don't know the third Fibonacci number, the function in the code above does its work. It knows that the 3rd Fibonacci number is a sum of the 1st and the 2nd. It runs itself for the 1st and 2nd numbers to figure out that both of them are 1. Now it sums them up and returns them to the original instance of the function which now sums up 2 and 1 to arrive at the result 3.
  
- Let's now test our code to check our codes efficiency. Let's try Fib of five,six and seven. The output should be 5, 8,and 13.
+ Let's now test our code to check the efficiency of our code. Let's try Fib of five, six, and seven. The output should be 5, 8, and 13.
  ```js
  console.log(fib(5));
  console.log(fib(6));
@@ -87,7 +87,7 @@ Since we don't know the third Fibonacci number, the function in the code above d
 ```js
  console.log(fib(70));
 ```
-Looks like the first three calls of Fibonacci do work fine, I get 5, 8, and 13. however the fourth call takes too much time. Hence, We need to work on this Fibonacci function.
+Looks like the first three calls of Fibonacci do work fine, I get 5, 8, and 13. However, the fourth call takes too much time. Hence, We need to work on this Fibonacci function.
 
 ### Visualizing the fib function
 We will use a recursive tree to visualize our problem. Let's trace through what happens when we call `fib` with number 7. Starting with 7 we will branch out our tree. We will start by subtracting 1 `(n-1)` at the left branch and 2 `(n-2)` at the right branch. Use the same logic on other nodes of the structure. Our base cases are 2 and 1, when we reach there we can't branch out further.
@@ -98,7 +98,7 @@ In this case, we will build the entire tree and stop branching out whenever we h
 
 ![fibo](https://user-images.githubusercontent.com/61587290/148641468-cf520425-9d4c-4742-80d9-f104e3343f60.jpeg)
 
-Let's take a look at our tree in our tree,we will have one and two as our base cases hence the base cases will return 1 to the parent.  We add the two values  returned to the call/parent. So we will add `1+1`  which equals  `2`. ***NB: All the base cases return 1 to their parents.***
+Let's take a look at our tree in our tree, we will have one and two as our base cases hence the base cases will return 1 to the parent.  We add the two values  returned to the call/parent. So we will add `1+1`  which equals  `2`. ***NB: All the base cases return 1 to their parents.***
 
 We will now add up our right and left children as we go up the tree. We will add the values until we reach the top of our tree, the final result is 13  as we indicated at the beginning that the `fib 7-> 13`.
 
@@ -110,23 +110,23 @@ Classic recursive implementation usually has `0(2^n)` time complexity as shown a
 Our tree's first level is one call: fib 7. We have two calls in the next level fib 6 and fib 5 and four calls in the next level. We have two additional nodes each time our node branches off, so it's `2*2*2... = 2^n.` making it `O(2^n)`, it's not usually `2^n`. You can see that in level 5 a node is missing and in level 6 there is only one node. This means that our tree is asymmetric.
 
 ####  Memoization
-`o(2^n)` is not a desirable time complexity. This means if we ask for fib 70 it will take `2^70` steps to be executed. and hence we will get a very large number because it takes a lot of steps. We will now look for any repeated sub-trees  in  the recursive nature of our tree . The subtrees duplicate themselves in the figure above.
+`0(2^n)` is not a desirable time complexity. This means if we ask for fib 70 it will take `2^70` steps to be executed. and hence we will get a very large number because it takes a lot of steps. Let's look for any repeated sub-trees  in  the recursive nature of our tree. The subtrees duplicate themselves in the figure above.
 
-We will now implement  memoization. What we will do now is capture a duplicate subtree, reuse these calculations then we should store that because later on, it might be useful when we will need to recalculate we can just use our stored data.
+Let's now implement  memoization. What we will do is capture a duplicate subtree, reuse these calculations then store that because later on, it might be useful when we will need to recalculate we can just use our stored data.
 
-We will be using a JavaScript object to memoize our code. Our keys to the object will be the argument to our function and then the value will be our return value. we will now add some optional arguments to our existing `fib()` function. So we will assign a memo to an empty object as shown below:
+We will be using a JavaScript object to memoize our code. Our keys to the object will be the argument to our function and then the value will be our return value. Let's now add some optional arguments to our existing `fib()` function. Hence, we will assign a memo to an empty object as shown below:
 ```js
 const fib=(n,memo={})=>{
 }
 ```
-This means if we call the `fib()` function without  passing in an argument,  a `memo` will be created by default in the code above.  The `memo` will be created containing a new empty javascript object. We will now treat it as if the `memo` is going to store `n` as the key and the values are going to be  the return values for the `fib()` function.
+This means if we call the `fib()` function without  passing in an argument,  a `memo` will be created by default in the code above.  The `memo` will be created containing a new empty javascript object. Let's treat it as if the `memo` is going to store `n` as the key and the values are going to be  the return values for the `fib()` function.
 
 We are going to check the existence of our argument `n` inside of our `memo` by adding a base case. And if it is there, then we can just get the stored value from that `memo` hence we will do an early return.
 ```js
 if(n in memo)return memo[n];
 // memo fetching logic
 ```
-We will use the original argument `n` as a key in my `memo` to return the value that correlates with the memo's key.
+We used the original argument `n` as a key in our `memo` to return the value that correlates with the memo's key.
 
 **NB: `(n in the memo)` condition is just some classic javascript syntax. We are checking if some key is inside of the javascript object**
 
