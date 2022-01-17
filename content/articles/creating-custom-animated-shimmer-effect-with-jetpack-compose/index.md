@@ -118,7 +118,7 @@ The code will be as follows:
 @Composable
 fun ShimmerGridItem(brush: Brush) {
    Row(modifier = Modifier
-       .fillMaxWidth()
+       .fillMaxSize()
        .padding(all = 10.dp), verticalAlignment = Alignment.Top) {
 
        Spacer(modifier = Modifier
