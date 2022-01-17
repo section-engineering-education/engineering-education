@@ -242,9 +242,13 @@ def redirectUrl(request, shorturl):
         return redirect(obj.longurl)
 ```
 
-In the `makeshorturl` view, we use the `@api_view` decorator provided by the Django Rest Framework to limit only POST requests to the view. The view receives the front-end data and creates a `shorturl` from a string of predefined letters, numbers, and symbols. The `shorturl` has a length of six characters. The `longurl` and `shorturl` objects are then stored in the database, and a `Reponse` is returned to the user with the long URL and the generated short URL.
+- In the `makeshorturl` view, we use the `@api_view` decorator provided by the Django Rest Framework to limit only POST requests to the view. The view receives the front-end data and creates a `shorturl` from a string of predefined letters, numbers, and symbols. The `shorturl` has a length of six characters. The `longurl` and `shorturl` objects are then stored in the database, and a `Reponse` is returned to the user with the long URL and the generated short URL.
+* The logic for creating the `shorturl` is as follows: 
+  - We create a variable `s` that has a set of predefined characters.
+  - We then use the `random.sample()` method to create to randomly pick six characters from the variable `s`. This returns a Python list.
+  - We then use the `join()` method to join all the items in the list to form the `shorturl`. 
 
-The `redirectUrl` view takes in the `request` and `shorturl`. The `shorturl` parameter will be specified in the `urls.py` file. This view uses a `try except` statement to retrieve an object from the database where the `shorturl` provided is equal to the shorturl in the database. The user is redirected to the `longurl` in the object retrieved from the database if the object is found.
+- The `redirectUrl` view takes in the `request` and `shorturl`. The `shorturl` parameter will be specified in the `urls.py` file. This view uses a `try except` statement to retrieve an object from the database where the `shorturl` provided is equal to the shorturl in the database. The user is redirected to the `longurl` in the object retrieved from the database if the object is found.
 
 #### Working on the urls
 
