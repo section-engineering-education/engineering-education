@@ -69,7 +69,7 @@ x^2 – x–1 = 0
 const fib =(n)=>{
 if (n<=2)return 1;
 ```
-In the code above we are taking in a number and returning the number of the Fibonacci sequence. In other words, if I am given sum n that is less than or equal to 2 then what I should do is just return 1. This is because the first two numbers of the Fibonacci sequence are 1. 
+In the code above we are taking in a number and returning the number of the Fibonacci sequence. In other words, if I am given sum n that is less than or equal to 2 then what I should do is just return 1. This is because the first two  Fibonacci numbers are 1. 
 
 ```js
  return fib (n-1)+fib(n-2)
@@ -77,19 +77,17 @@ In the code above we are taking in a number and returning the number of the Fibo
  ```
 Since we don't know the third Fibonacci number, the function in the code above does its work. It knows that the 3rd Fibonacci number is a sum of the 1st and the 2nd. It runs itself for the 1st and 2nd numbers to figure out that both of them are 1. Now it sums them up and returns them to the original instance of the function which now sums up 2 and 1 to arrive at the result 3.
  
- we should test our code, what I'll do is call examples of the `fib()` function. So we will try Fib of 6,7,8. The output should be 813 and 21.
+ Let's now test our code to check our codes efficiency. Let's try Fib of five,six and seven. The output should be 5, 8,and 13.
  ```js
+ console.log(fib(5));
  console.log(fib(6));
  console.log(fib(7));
- console.log(fib(8));
  ```
- There we have it right. 813 and 21. So this is the classic implementation of Fibonacci, and we did solve it recursively.
-
-What I want to do is give  a larger number to this `fib()` function. So what if I asked for the 70th  Fibonacci number:
+ There we have it right 5, 8, and 13. This is the classic recursive implementation of Fibonacci. Let's now give  a bigger number to the `fib()` function. Let's ask for the 70th  Fibonacci number:
 ```js
  console.log(fib(70));
 ```
-Looks like the first three calls of Fibonacci do work fine, I get 8,13 and 21. But the fourth call takes too much time. So obviously, this Fibonacci function needs some work.
+Looks like the first three calls of Fibonacci do work fine, I get 5, 8, and 13. however the fourth call takes too much time. Hence, We need to work on this Fibonacci function.
 
 ### Visualizing the fib function
 We will use a recursive tree to visualize our problem. Let's trace through what happens when we call `fib` with number 7. Starting with 7 we will branch out our tree. We will start by subtracting 1 `(n-1)` at the left branch and 2 `(n-2)` at the right branch. Use the same logic on other nodes of the structure. Our base cases are 2 and 1, when we reach there we can't branch out further.
