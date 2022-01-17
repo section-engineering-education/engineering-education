@@ -1,5 +1,21 @@
-The easiest way for a user to get insight from information is through the use of data visualization. The most common tool for that is charts. In this article, we will create a simple admin dashboard that allows the user to view data using three commonly used charts- pie, bar, and line charts. Kotlin and an open-source chart library, MPAndroidChart, will be used. 
+---
+layout: engineering-education
+status: publish
+published: true
+url: /android-kotlin-mpandroidcharts-sqlite/
+title: Creating a data visualization dashboard using MPAndroid Chart library
+description: This article, will cover creating an admin dashboard that allows the user to view his/her data using different kind of charts using Kotlin and an open-source chart library, MPAndroidChart.
+author: sandra-moringa
+date: 2022-01-17T00:00:00-01:10
+topics: [Languages]
+excerpt_separator: <!--more-->
+images:
 
+  - url: /engineering-education/android-kotlin-mpandroidcharts-sqlite/hero.jpg
+    alt: Creating a data visualization dashboard using MPAndroid Chart library Hero Image
+---
+The easiest way for a user to get insight from information is through data visualization. The most common tool for that is charts. This tutorial will create a simple admin dashboard that allows the user to view data using three commonly used charts- pie, bar, and line charts using Kotlin and an open-source chart library, MPAndroidChart.
+<!--more-->
 The app will simulate wild animal data in a game park. For the data, we will get it from an SQLite database. The data source is not so vital for you can use any. It can be from an API through JSON, Room persistence library, simple arrays, local storage, etc. We will achieve this in the end(The layout is configured for light mode only).
 
 ![Screenshot](/engineering-education/android-kotlin-mpandroidcharts-sqlite/screenshot-one.png)
@@ -18,9 +34,9 @@ The app will simulate wild animal data in a game park. For the data, we will get
 9. [Conclusion](#conclusion)
 
 ### Prerequisites
-1. A basic knowledge of Kotlin programming language and its use in developing android applications.
-2. Android Studio or IntellijIDEA(configured for android development) installed in your machine.
-3. A knowledge of SQLite databases. Again, this is not a necessity because you can use any other data source. More about SQLite is found [here](https://developer.android.com/training/data-storage/sqlite).
+1. Basic knowledge of Kotlin programming language and its use in developing android applications.
+2. [Android Studio](https://developer.android.com/studio?gclid=CjwKCAiAxJSPBhAoEiwAeO_fP-Hw958g745_zng07OQLg4N2Z-RLxaOxJJ-Edd-gH6UCHjFAa4EJqRoCXgkQAvD_BwE&gclsrc=aw.ds) or [IntellijIDEA](https://www.jetbrains.com/idea/)(configured for android development) installed in your machine.
+3. Knowledge of [SQLite](https://developer.android.com/training/data-storage/sqlite) databases. Again, this is not necessary because you can use any other data source. 
 4. General Object-Oriented Programming(OOP) concepts.
 
 ### What we will be doing
@@ -43,24 +59,25 @@ Add this line to the `repositories` section:
 maven { url 'https://jitpack.io' }
 ```
 
-**NOTE:** If you run through a build error, you can also modify the `repositories` section of the *settings.gradle* file to this line:
+**Note: If you run through a build error, you can also modify the `repositories` section of the *settings.gradle* file to this line:**
 
 ```kotlin
 maven { url 'https://jitpack.io' }
 ```
 
 ### Creating a model class
-For organized and eased data manipulation, we will create a model class called *AnimalModel*. Create a new Kotlin file and give it the same name as the class name. Add the following code to it:
+For organized and eased data manipulation, we will create a model class called `AnimalModel`. Create a new kotlin file and give it the same class name. Add the following code to it:
 
 ```kotlin
 class AnimalModel (var animalId: Int, var animalName:String, var totNumber:Int, var avgAge: Int, var avgGrowth: Int)
 ```
-It models an animal's id in the database, its name, total number, average age, and average growth rate.
+
+It models an animal's id, name, total number, average age, and average growth rate in the database.
 
 ### Database Handler class
-For the handling of the database logic, we will create a class called *DatabaseHandler* that extends the `SQLiteOpenHelper` class. The extended class provides us with methods that enable the manipulation of the SQLite database. The database will not be a full CRUD(Create, Read, Update, and Delete) but only CR. We only need to create the records and then fetch them to populate the charts.
+To handle the database logic, we will create a class called DatabaseHandler that extends the SQLiteOpenHelper class. The extended class provides us with methods that enable the manipulation of the SQLite database. The database will not be a full CRUD(Create, Read, Update, and Delete) but only CR. We only need to create the records and then fetch them to populate the charts.
 
-This handler class will have a [companion object](https://blog.mindorks.com/companion-object-in-kotlin) that has constant variables for storing the database, table, and field names.
+This handler class will have a [companion object](https://blog.mindorks.com/companion-object-in-kotlin) with constant variables for storing the database, table, and field names.
 
 ```kotlin
     companion object {
@@ -77,7 +94,7 @@ This handler class will have a [companion object](https://blog.mindorks.com/comp
 
 We will also have two overriden methods, `onCreate()` and `onUpgrade()`.
 
-The `onCreate()` will be used to create our table and its fields using the normal SQL statements. The database is passed in as a parameter.
+The `onCreate()` method will create our table and its fields using the normal SQL statements. The database is passed in as a parameter.
 
 ```kotlin
     override fun onCreate(ourDB: SQLiteDatabase?) {
@@ -105,7 +122,7 @@ When you want to safely update the database, you will use the `onUpgrade()` meth
 
 ```
 
-To insert records, we use a function called `addAnimalDetails()`. We pass in our animal model class as a parameter, open the database in a writable mode to be able to make changes in it, and then insert the values gotten from the model class using a [ContentValues](https://developer.android.com/reference/android/content/ContentValues) object. After the insertion, we close the database and then return a status code to show if the operation was successful or not.
+To insert records, we will use a function called `addAnimalDetails()`. First, we pass in our animal model class as a parameter, open the database in a writable mode to make changes in it, and then insert the values gotten from the model class using a [ContentValues](https://developer.android.com/reference/android/content/ContentValues) object. After the insertion, we close the database and then return a status code to show if the operation was successful or not.
 
 ```kotlin
     //a method to insert records
@@ -125,7 +142,11 @@ To insert records, we use a function called `addAnimalDetails()`. We pass in our
     }
 ```
 
-Finally, we have a method to read the records. We call it `retreiveAnimals()`. It returns a generic list containing the retrieved records. We run a `SELECT` query, open the database in a readable mode for us to 'read' the records, and then create a cursor object for storing the retrieved records. Thereafter, we execute the query and then iterate through the cursor while assigning the values to the model class until all records are fetched. The `try-catch` helps us catch any SQLite exceptions that may arise when executing the query. The `@SuppressLint("Range")` annotation is used to suppress the error that comes about requiring us to explicitly set a range in for the `cursor.getInt()` method.
+Finally, we have a method to read the records. We call it `retreiveAnimals()`. It returns a generic list containing the retrieved records. We run a select query and open the database in a readable mode to 'read' the records, and then create a cursor object for storing the retrieved records.
+
+Next, we execute the query and iterate through the cursor while assigning the values to the model class until all records are fetched. The try-catch helps us catch any SQLite exceptions when executing the query. 
+
+**Note: The `@SuppressLint("Range")` annotation is used to suppress the error that comes about requiring us to explicitly set a range in for the `cursor.getInt()` method.**
 
 ```kotlin
     //method to read the animal records
@@ -274,10 +295,10 @@ class DatabaseHandler(context: Context): SQLiteOpenHelper(context,DB_NAME,null,D
 ```
 
 ### Adding data to the database and populating the charts
-In this section, we will add records to our database and then populate the charts using fetched records from the database. We will achieve this by calling the database handler class methods we just created.
+This section will add records to our database and then populate the charts using fetched records from the database. We will achieve this by calling the database handler class methods we just created.
 
 #### Saving the records
-We do this by using a method called `saveAnimals()` and passing in the appropriate fields using the model class.
+We do this by using `saveAnimals()` method and passing in the appropriate fields using the model class.
 
 ```kotlin
     //method for saving records in database
@@ -290,8 +311,9 @@ We do this by using a method called `saveAnimals()` and passing in the appropria
         val record4 = databaseHandler.addAnimalDetails(AnimalModel(4, "Crocodile", 150, 30, 66))
     }
 ```
+
 #### Retrieve the records
-In this method, we call the `retreiveAnimals()` method of DatabaseHandler class to read the records and store them in arrays. Lastly, we call the methods for populating the charts by passing in the arrays.
+We call the `retreiveAnimals()` method of `DatabaseHandler` class to read the records and store them in arrays. Lastly, we call the methods for populating the charts by passing in the arrays.
 
 ```kotlin
     fun retrieveRecordsAndPopulateCharts() {
@@ -325,9 +347,7 @@ In this method, we call the `retreiveAnimals()` method of DatabaseHandler class 
 ```
 
 #### Populating the charts
-The MPAndroid chart library is so easy to use. Let's see how the charts are populated with data. We start by looking at doing that for the pie chart. The values and labels of the pie chart are obtained from the arrays passed in. An array to store the pie slices entries,`ourPieEntry`, is created after which it's added the values and labels using a loop.
-
-> This will be done in the MainActivity class.
+The MPAndroid chart library is so easy to use. Let's see how the charts are populated with data. Let us begin with the pie chart. The values and labels of the pie chart are obtained from the arrays passed in. The array will store the pie slices entries, ourPieEntry, is created after which it's added the values and labels using a loop which will be done in the `MainActivity` class.
 
 ```kotlin
         //an array to store the pie slices entry
@@ -343,6 +363,7 @@ The MPAndroid chart library is so easy to use. Let's see how the charts are popu
             i++
         }
 ```
+
 Next, we add the colors for the slices- again, using an array.
 
 ```kotlin
@@ -353,6 +374,7 @@ Next, we add the colors for the slices- again, using an array.
         pieShades.add(Color.parseColor("#5E6D4E"))
         pieShades.add(Color.parseColor("#DA1F12"))
 ```
+
 A dataset used by the library to add data to the pie chart is passed in the pie slices entry values.
 
 ```kotlin
@@ -361,7 +383,7 @@ A dataset used by the library to add data to the pie chart is passed in the pie 
         val data = PieData(ourSet)
 ```
 
-We then set the slices' divider width, add colors to the data set, and then set the data object to the pie chart's `data` property.
+We then set the slices' divider width, add colors to the data set, and set the data object to the pie chart's `data` property.
 
 ```kotlin
         //setting the slices divider width
@@ -371,7 +393,8 @@ We then set the slices' divider width, add colors to the data set, and then set 
         ourSet.colors = pieShades
         ourPieChart.data = data
 ```
-The next segment is about manipulating the chart's appearance. There are a vast number of methods and properties provided by the chart which you can explore. We can't exhaust all of them here. I've added inline comments for a guide. The last line is important because it refreshes the chart.
+
+The next segment is about manipulating the chart's appearance. There are many methods and properties provided by the chart that you can explore. We can't exhaust all of them here. I've added inline comments for a guide. The last line is important because it refreshes the chart.
 
 ```kotlin
         //refreshing the chart
@@ -435,7 +458,7 @@ Here is the full code for the `populatePieChart()` method.
     }
 ```
 
-For the bar and line charts, the logic is the same. We pass in the values, set them using their entry arrays, set their properties, and then display them. The only difference is in what is passed in by the arrays. For the pie chart, we passed in the labels and values, but for the other two, we only pass the values and the positions. Here is a snippet for the Bar Chart entry.
+For the bar and line charts, the logic is the same. We pass in the values, set them using their entry arrays, set their properties, and then display them. The only difference is in what is passed in by the arrays. We passed in the labels and values for the pie chart, but for the other two, we only passed the values and the positions. Here is a snippet for the Bar Chart entry.
 
 ```kotlin
         //adding values
@@ -449,7 +472,7 @@ For the bar and line charts, the logic is the same. We pass in the values, set t
         }
 ```
 
- If you want to display the values using custom axes, have a look at these two blogs:
+If you want to display the values using custom axes, have a look at these two blogs:
 
  1. [Intense Coder MPAndroid Line Chart tutorial](https://intensecoder.com/line-chart-tutorial-using-mpandroidchart-in-kotlin/).
  2. [Intense Coder MPAndroid Bar Chart tutorial](https://intensecoder.com/bar-chart-tutorial-in-android-using-kotlin/).
@@ -524,6 +547,7 @@ Here is the code for the two methods:
 ```
 
 #### The full MainActivity code
+
 ```kotlin
 import android.os.Bundle
 import android.graphics.Color
@@ -716,7 +740,7 @@ class MainActivity : AppCompatActivity() {
 ```
 
 ### Layout XML file
-I won't go deep into explaining this. It will be a summary. We have a root vertical layout that has a horizontal linear layout. In the root layout, we have two linear layouts with equal weights, `android:layout_weight="2"`. The first inner layout has a horizontal orientation with two linear layouts of equal weights. This enables us to split the screen into two equal parts where we will have the pie and bar charts placed(The pie and bar charts are rendered in cards). The line chart is placed in the second layout. You can customize the UI.
+I won't go deep into explaining this. It will be a summary. We have a root vertical layout that has a horizontal linear layout. We have two linear layouts with equal weights in the root layout, `android:layout_weight="2"`. The first inner layout has a horizontal orientation with two linear layouts of equal weights, which enables us to split the screen into two equal parts where we will have the pie and bar charts placed(The pie and bar charts are rendered in cards). The line chart is placed in the second layout. 
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
@@ -805,7 +829,7 @@ I won't go deep into explaining this. It will be a summary. We have a root verti
 ```
 
 ### GitHub code and sample APK
-The GitHub code for this is found [here](https://github.com/munubi254/sqliteMPAndroid) and the demo APK file [here](https://drive.google.com/file/d/1PilUpi50eKvqane86KKHEwGPOvJATZ-Z/view?usp=sharing).
+The GitHub code for this project is found [here](https://github.com/munubi254/sqliteMPAndroid) and the demo APK file [here](https://drive.google.com/file/d/1PilUpi50eKvqane86KKHEwGPOvJATZ-Z/view?usp=sharing).
 
 ### Conclusion
 We looked at setting up the MPAndroid chart for our project, creating the model and Database handler class, populating the charts, and creating the UI. I hope you got some insights to use for your next project.
