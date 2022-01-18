@@ -1,3 +1,19 @@
+---
+layout: engineering-education
+status: publish
+published: true
+url: /how-to-setup-prisma-client-server-that-uses-mongodb-as-the-database/
+title: How to set up Prisma Client Server that uses MongoDB as the database
+description: In this guide, we learn how to set up a Prisma Client Node.js server with MongoDB.
+author: rose-waitherero
+date: 2021-12-15T00:00:00-13:40
+topics: [Languages, Node.js]
+excerpt_separator: <!--more-->
+images:
+  - url: /engineering-education/how-to-setup-prisma-client-server-that-uses-mongodb-as-the-database/hero.png
+    alt: How to set up Prisma Client Server that uses MongoDB as the database
+---
+
 Prisma is an ORM that allows you to write type-safe database schemas. It supports major databases such as MySQL, PostgreSQL, MongoDB, MariaDB, Azure SQL, Microsoft SQL Server AWS Aurora, and AWS Aurora Serverless. This means that you can easily pick the database that fits the code structure of your application and even switch between databases without the need to change any code structure of your application.
 
 Prisma also supports different languages. As of the time of writing articles, Prisma has support for three major languages. These are TypeScript, JavaScript, and Go.
@@ -443,3 +459,7 @@ SQL and NoSQL have different data structures. This tutorial utilizes Prisma as a
 Prisma client generates and provides functions or methods depending on the database model you want to create. We use those functions to create a stateful connection to a database. That will then be used to create, delete, update, or do an operation related to the database. Thus providing very simple and intuitive steps to set up all this without manually writing a single database query.
 
 I hope you found this helpful.
+
+---
+
+Peer Review Contributions by: [Daniel Katungi](/engineering-education/authors/daniel-katungi/)
