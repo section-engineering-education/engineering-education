@@ -47,6 +47,7 @@ According to the documentation, [Chartify](https://chartify.readthedocs.io/en/la
 The library was built on Bokeh. Bokeh is a Python visualization framework that JavaScript based. Bokeh can be used to generate interactive visualizations for modern web browsers. You can use Bokeh to generate JavaScript-powered visualizations without having to write any JavaScript. I am sure you know what that means for Chartify... Yeah, you got it! Fantastic visuals.
 
 ![Introduction to Chartify](/engineering-education/data-viz-chartify/chartifydoc.png)
+
 *Screenshot by author*
 
 But, with so many Python libraries available for data visualization, such as Matplotlib, Seaborn, Plotly, Ggplot2, D3, and Bokeh, what sets Chartify apart?
