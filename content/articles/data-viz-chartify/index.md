@@ -98,7 +98,7 @@ Chartify comes with an in-built dataset. Run the code below to access it.
 data = chartify.examples.example_data()
 data.head()
 ```
-However, for this tutorial, we are going to make use of the [complete pokemon dataset](https://www.kaggle.com/rounakbanik/pokemon) which you can download for free from Kaggle. After unzipping the file, you should create a python file on your local machine in the same folder as your dataset. 
+However, for this tutorial, we are going to make use of the [complete Pokemon dataset](https://www.kaggle.com/rounakbanik/pokemon) which you can download for free from Kaggle. After unzipping the file, you should create a python file on your local machine in the same folder as your dataset. 
 
 This dataset was also used in this tutorial piece on [Seaborn](https://www.section.io/engineering-education/seaborn-tutorial/). We would reproduce some of the graphs from the article and add other charts.
 
