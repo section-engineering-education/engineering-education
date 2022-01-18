@@ -242,7 +242,7 @@ type_count = pd.DataFrame ({'count': type_count})
 type_count
 ```
 
-Next, we would create a dataset that has the total for each pokemon type for each generation by using the `.groupby` and `.value_counts` function.
+Next, we wil create a dataset that has the total for each Pokemon type for each generation by using the `.groupby` and `.value_counts` function.
 
 ```python
 generations_types = type_data.groupby (['generation']).type1.value_counts()
