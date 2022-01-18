@@ -350,7 +350,7 @@ ch.show()
 
 ### Conclusion 
 
-To gain insight into their vast amounts of data, data visualization is vital. And Chartify ensures you get it done with less code. We hope that this post will help you get a feel of how you can use Chartify for data visualization. 
+Data visualization is essential for gaining insight into large datasets. And Chartify ensures you get it done with less code. We hope that this post will help you get a feel of how you can use Chartify for data visualization. 
 
 Finally, if you want to take a look at the code used in this post, you can find it [here](https://github.com/Bennykillua/Project/blob/main/Data%20visualization%20using%20Charify/Chartify.ipynb).
 
