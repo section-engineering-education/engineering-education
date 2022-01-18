@@ -267,6 +267,7 @@ ch.show()
 Just like the bar charts, the line graph takes the in a data_frame argument for our data. We will also specify the `categorical_column`, `numeric_column`, and `color_column` in the same way as it did in the bar chart. After that, we run the code, and our output is displayed.
 
 ![Chartify](/engineering-education/data-viz-chartify/chartifyfive.png)
+
 *Screenshot by author*
 
 We can reproduce this data in a lollipop chart.  
