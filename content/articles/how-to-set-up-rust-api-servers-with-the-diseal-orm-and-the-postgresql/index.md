@@ -1,13 +1,13 @@
-ORM (Object Relation Mapping) is a common technique for storing, retrieving, updating, and deleting data from a database, specifically within a relational database. Common languages such as Node.js have different ORM libraries that help you achieve the general application of ORM when connecting the database and the application. The application wants to access the data from a database. However, it cannot do that directly. An ORM helps your application connect to a database. The significant advantage is that an ORM helps you create data schemas and relations within your application. Whenever you need to change a specific database field, you only so it in your application with just a few lines of codes to change. This helps you avoid the hectic work of recreating your databases every time to match your new data registry.
+ORM (Object Relation Mapping) is a common technique for storing, retrieving, updating, and deleting data from a database. Common frameworks such as Node.js have different ORM libraries that help you achieve the general usability of ORM when connecting the database and the application.
 
-The concept of ORM is widely supported by many languages such as Rust. Rust uses the Diseal framework to help you write your schema queries within your rust application. In this guide, we learn more about the Rust Diseal and finally set up a Rust API that uses Diseal to communicate with a PostgreSQL relational database.
+An ORM helps your application connect to a database. ORM helps you create data schemas and relations within your application. Whenever you need to change a specific database field, you only do it in your application with just a few lines of code. This helps you avoid the hectic work of recreating your databases every time to match your new data registry.
 
-This tutorial will help you learn more about the ORM and understand how to use ORM in Rust using Diseal. We will also create a Rust API server that uses Diseal to connect to PostgreSQL and then generate and retrieve the application's data stored in the database. This will help you understand the use of the concept of ORM using the Rust Diseal in an ideal application.
+The concept of ORM is widely supported by many languages such as Rust, JavaScript, and Python. Rust, for example, uses the [Diesel](https://docs.rs/diesel/1.0.0/diesel/) framework to help you write your schema queries within your Rust application. In this guide, we will learn more about the ORM and understand how to use ORM in Rust using Diseal. We will also create a Rust API server that uses Diseal to connect to PostgreSQL and then generate and retrieve the application's data stored in the database. This will help you understand the use of the concept of ORM using the Rust Diseal in an ideal application.
 
 ### Prerequisites
-To follow along with this guide, it is recommended to have the following toolsets.
+To follow along with this guide, it is recommended to have the following toolset.
 
-- Prior knowledge of writing the Rust APIs and being able to set up a primary Rust GraphQL server.
+- Prior knowledge of writing the Rust APIs and being able to set up a primary Rust [GraphQL server](https://blog.logrocket.com/how-to-create-a-graphql-server-in-rust/).
 - [PostgreSQL](https://www.postgresql.org/download/) installed on your computer.
 - [Rust compiler](https://www.rust-lang.org/tools/install) installed and well set up on your computer.
 
@@ -15,7 +15,7 @@ To follow along with this guide, it is recommended to have the following toolset
 - [Prerequisites](#prerequisites)
 - [Tables of contents](#tables-of-contents)
 - [Setting up a Rust application](#setting-up-a-rust-application)
-- [Set up the GraphQL Schema](#set-up-the-graphql-schema)
+- [Set up the GraphQL schema](#set-up-the-graphql-schema)
 - [Set up the GraphQL server](#set-up-the-graphql-server)
 - [Setting up diesel](#setting-up-diesel)
 - [Handling queries](#handling-queries)
@@ -23,7 +23,9 @@ To follow along with this guide, it is recommended to have the following toolset
 - [Conclusion](#conclusion)
 
 ### Setting up a Rust application
-Rust uses Cargo to set up and run its applications. Cargo gets installed once the Rust compiler gets installed in your computer. To set up a basic Rust application, proceed to your desired project location, open the terminal, and run the following command to initialize the project using [cargo](https://doc.rust-lang.org/cargo/).
+Rust uses cargo to set up and run its applications. Cargo gets installed once the Rust compiler gets installed in your computer. Cargo helps you set and run Rust applications. It allows you to access and install remote libraries and use them in your application.
+
+To set up a basic Rust application, navigate to your desired project location, and run the following command to initialize the project using [cargo](https://doc.rust-lang.org/cargo/).
 
 ```bash
 cargo new todos-graphql-api
@@ -35,15 +37,15 @@ This will create a new directory `todos-graphql-api` that has a basic Rust appli
 cd todos-graphql-api
 ```
 
-In the current directory, we have a `Cargo.toml` that contains project dependencies. The `main.rs` inside the `src` has a `main` function that just prints a `Hello, world!` to the console. You can test this out by running `cargo run` inside the `todos-graphql-api` directory.
+In the current directory, we have a `Cargo.toml` that contains project dependencies. The `main.rs` inside the `src` has a `main` function that prints a `Hello, world!` to the console. You can test this out by running `cargo run` inside the `todos-graphql-api` directory.
 
-Cargo also allows you to install and remote libraries that you want to run with your application. The application that we will create will use the following dependencies/libraries.
+Cargo also allows you to install remote libraries that you want to run with your application. The application that we will create will use the following dependencies/libraries.
 
 - [Actix-web](https://docs.rs/actix-web/1.0.0/actix_web/): For setting up Rust based HTTP servers.
 - [Diesel](https://docs.rs/diesel/1.0.0/diesel/): For interacting with PostgreSQL as an ORM and query builder. Diesel lets you build schemas and queries and let them interact with a database of your choice while using the Rust language.
 - [Dotenv](https://docs.rs/dotenv/0.9.0/dotenv/): For loading database connection environmental variables.
 - [Env_logger](https://docs.rs/env_logger/0.6.0/env_logger/): For logging environmental variables.
-- [Features](https://docs.rs/futures/0.1/futures/): For handling Rust HTTP server asynchronous calls.
+- [Features](https://docs.rs/futures/0.1/futures/): For handling Rust HTTP asynchronous calls.
 - [Serde](https://docs.serde.rs/serde/): For serializing and deserializing data structures.
 - [Serde_derive](https://serde.rs/derive.html): For serializing and desirializing data structures.
 - [Serde_json](https://docs.serde.rs/serde_json/): For serializing JSON file format.
@@ -63,8 +65,10 @@ futures = "0.1"
 env_logger = "0.6"
 ```
 
-### Set up the GraphQL Schema
-A GraphQL Schema is made up of a root query and mutation. We will start by setting up a root query and an empty mutation that rides on some dummy data. We will then integrate the PostgreSQL database for dynamic data later in this guide. In your `src` folder, create a `graphql_schema.rs` file and import `EmptyMutation`, and `RootNode` from `juniper` as shown below.
+### Set up the GraphQL schema
+A GraphQL schema is made up of a root query and mutation. We will start by setting up a root query and an empty mutation that rides on some dummy data. We will then integrate the PostgreSQL database for dynamic data later in this guide.
+
+In your `src` folder, create a `graphql_schema.rs` file and import `EmptyMutation`, and `RootNode` from `juniper` as shown below.
 
 ```rust
 use juniper::{EmptyMutation,RootNode};
@@ -142,7 +146,7 @@ pub fn create_schema() -> Schema {
 ```
 
 ### Set up the GraphQL server
-Now we proceed to `main.rs` to set up the HTTP server is started and that the schema is passed and called. First, update the imports as follows.
+Now proceed to `main.rs` and set up the HTTP server that will ensure the schema is passed and called. First, update the imports as follows.
 
 ```rust
 #[macro_use]
@@ -176,7 +180,7 @@ HttpServer::new(move || {
 }
 ```
 
-Here we have defined the `main()` will return an `io::Result<()>` type. We are calling the `create_schema()` to initialize the GraphQL schema. `HttpServer::new` is marked with `move` so that the closure can take ownership of inner variables, which in our case will be a copy of schema. Inside the `data` function, we are passing schema to imply that it will be used in the two services.
+Here we have defined the `main()` which return an `io::Result<()>` type. We are calling the `create_schema()` to initialize the GraphQL schema. `HttpServer::new` is marked with `move` so that the closure can take ownership of inner variables, which in our case will be a copy of schema. Inside the `data` function, we are passing schema to imply that it will be used in set `web` services.
 
 The `/graphql` service will run our request against our schema, whilst the `/graphiql` service will serve as an interface for making GraphQL requests. As illustrated below, implement the handler for the `/graphql` service:
 
@@ -198,7 +202,9 @@ fn graphql(
     }
 ```
 
-The above handler simply gets the GraphQL request in JSON, creates `futures` from `web::block`, and chains two handlers: `map_err` for error states and `and_then` for success states. Implement the handler for the `/graphiql` service as described below to access the GraphQL API data.
+The above handler simply gets the GraphQL request in JSON, creates `futures` from `web::block`, and chains two handlers. `map_err` for error states and `and_then` for success states.
+
+Implement the handler for the `/graphiql` service as described below to access the GraphQL API data.
 
 ```rust
 fn graphiql() -> HttpResponse {
@@ -217,7 +223,7 @@ At this point, our server should be ready to be tested out. To do this, run the 
 cargo run
 ```
 
-When the build is complete, from your browser, open `http://localhost:8080/graphiql`. You should receive a GraphQL playground interface. On the left pane, write the following query to get todos:
+When the build is complete open `http://localhost:8080/graphiql` on a browser, you should receive a GraphQL playground interface. On the left pane, write the following query to get todos:
 
 ```rust
 query GetTodos{
@@ -234,11 +240,11 @@ Hit the play button on top and observe the results on the right pane. Your resul
 ![dummy-todos-query](/engineering-education/how-to-set-up-rust-api-servers-with-the-diseal-orm-and-the-postgresql/dummy-todos-query.png)
 
 ### Setting up diesel
-[Diesel](https://github.com/diesel-rs/diesel) is a safe and extensible query builder for Rust applications. Diesel generates client code and provides an interactive way to connect to a database server with the Diesel ORM library for Rust.
+[Diesel](https://github.com/diesel-rs/diesel) is a safe and extensible query builder for Rust applications. Diesel generates client code and provides an interactive way to connect to a database server.
 
 Diesel has features such as;
 
-Table macros - generate database tables that bind to the different columns within an SQL database that you can query against.
+- Table macros - generate database tables that bind to the different columns within an SQL database that you can query against.
 
 - Database migrations- it comes with migrations that allow you to save the previous queries/tables. This saves databases that already exist. You can roll back and use any of the previous migrations.
 
@@ -260,7 +266,7 @@ Setup diesel on your project:
 diesel setup
 ```
 
-The above command will create a `migrations` folder at the project root directory. Go ahead and generate a migration to create todos:
+The above command will create a `migrations` folder in the project root directory. Go ahead and generate a migration to create todos:
 
 ```bash
 diesel migration generate create_todos
@@ -311,7 +317,6 @@ table! {
 ```
 
 ### Handling queries
-
 We have set up Diseal and the queries that we need for the todos application to work. Let's now handle how the application will access these queries. Inside the `graphql_schema.rs` add the libraries imports as follows;
 
 ```rust
@@ -365,10 +370,22 @@ Start the development server by running:
 cargo run
 ```
 
-Open the browser's previous tab, `http://localhost:8080/graphiql`, and run the same query. You should now receive todos now being fetched directly from the database.
+Open the browser's previous tab, `http://localhost:8080/graphiql`, and run the same query, i.e.;
+
+```rust
+query GetTodos{
+    todos{
+        id
+        title
+        completed
+    }
+}
+```
+
+You should now receive todos now being fetched directly from the database.
 
 ### Handling mutation
-Import `Insertable` from diesel:
+Import `Insertable` from Diesel:
 
 ```rust
 use diesel::Insertable;
@@ -431,7 +448,7 @@ pub fn create_schema() -> Schema {
 }
 ```
 
-Rerun your development server, and on the same browser tab, write a similar GraphQL request as below on the left pane:
+Rerun your development server, and on the same browser tab, write a similar GraphQL request as shown below:
 
 ```rust
 mutation CreateTodoMutation($data: NewTodo!) {
@@ -449,4 +466,4 @@ mutation CreateTodoMutation($data: NewTodo!) {
 Hit the play button, and the newly added todo should be printed on the right pane.
 
 ### Conclusion
-In this guide, we have learned how you can set up a Diesel ORM and use it with an ideal Rust application. We focused on PostgreSQL as the ideal database. You can go ahead and try using different databases to model your queries using the Diesel ORM.
+In this guide, we have learned how to set up a Diesel ORM and use it with an ideal Rust application. We focused on PostgreSQL as the ideal database. You can go ahead and try using different databases to model your queries using the Diesel ORM.
