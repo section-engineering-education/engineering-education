@@ -79,7 +79,7 @@ If you're using the Jupyter notebook and want to install a package with pip, you
 Import sys
 !{sys.executale} -m pip install chartify
 ```
-Chartify requires a ChromeDriver. The library requires this to generate a PNG output. You can download ChromeDriver from [the ChromeDriver for Chrome Website](https://sites.google.com/a/chromium.org/chromedriver/home). After downloading, you need to install it and copy it into the appropriate directory. This article will show you [how to add executables to your Windows PATH](https://medium.com/@kevinmarkvi/how-to-add-executables-to-your-path-in-windows-5ffa4ce61a53).
+Chartify requires a ChromeDriver. The library requires this to generate a PNG output. You can download ChromeDriver from [the Chrome Website](https://sites.google.com/a/chromium.org/chromedriver/home). After downloading, you need to install it and copy it into the appropriate directory. This article will show you [how to add executables to your Windows PATH](https://medium.com/@kevinmarkvi/how-to-add-executables-to-your-path-in-windows-5ffa4ce61a53).
 
 ### Importing Chartify
 
