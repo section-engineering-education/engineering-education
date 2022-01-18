@@ -22,6 +22,17 @@ The app will simulate wild animal data in a game park. For the data, we will get
 
 > Find more about MPAndroidChart [here](https://weeklycoding.com/mpandroidchart/).
 
+### Table of contents
+1. [Prerequisites](#prerequisites)
+2. [Goals](goals)
+3. [Setting up the library](#step-1)
+4. [Creating a model class](#creating-a-model-class)
+5. [Database Handler class](#database-handler-class)
+6. [Adding data to the database and populating the charts](#adding-data-to-the-database-and-populating-the-charts)
+7. [Layout XML file](#layout-xml-file)
+8. [GitHub code and sample APK](#github-code-and-sample-apk)
+9. [Conclusion](#conclusion)
+
 ### Prerequisites
 1. Basic knowledge of Kotlin programming language and its use in developing android applications.
 2. [Android Studio](https://developer.android.com/studio?gclid=CjwKCAiAxJSPBhAoEiwAeO_fP-Hw958g745_zng07OQLg4N2Z-RLxaOxJJ-Edd-gH6UCHjFAa4EJqRoCXgkQAvD_BwE&gclsrc=aw.ds) or [IntellijIDEA](https://www.jetbrains.com/idea/)(configured for android development) installed in your machine.
