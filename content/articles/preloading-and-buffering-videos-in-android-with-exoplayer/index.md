@@ -6,7 +6,7 @@ url: /preloading-and-buffering-videos-in-android-with-exoplayer/
 title: Preloading and Buffering Videos in Android with ExoPlayer
 description: This tutorial will show the reader how to pre-load and buffer videos in Android using ExoPlayer.
 author: judy-wangari
-date: 2022-01-18T00:00:00-13:50
+date: 2022-01-18T00:00:00-13:30
 topics: [Languages]
 excerpt_separator: <!--more-->
 images:
