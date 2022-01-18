@@ -10,7 +10,6 @@ date: 2022-01-17T00:00:00-09:00
 topics: [Machine Learning]
 excerpt_separator: <!--more-->
 images:
-
    - url: /engineering-education/building-a-password-strength-classifier-model-using-machine-learning/hero.jpg
      alt: Building a Password Strength Classifier Model Using Machine Learning Hero Image
 ---
@@ -47,7 +46,6 @@ In this tutorial, we will build a password classification model using [Scikit-Le
 
 ### Prerequisites
 To understand the concepts explained in this tutorial easily, a reader should:
-
 - Have [Python programming](/engineering-education/python-projects-for-beginners/) knowledge.
 - Be able to build a simple [machine learning](/engineering-education/house-price-prediction/) model.
 - Have some [data analysis](https://www.datapine.com/blog/data-analysis-methods-and-techniques/) knowledge.
@@ -379,7 +377,6 @@ After training the model, our model was able to make accurate predictions. This 
 This tutorial has used guided steps, the Python code used in this tutorial is found [here](https://colab.research.google.com/drive/1I_sXiqaN6fGKtsYXWGnxfv4MiyVfTUim?usp=sharing)
 
 ### References
-
 - [Trained model in this tutorial](https://colab.research.google.com/drive/1I_sXiqaN6fGKtsYXWGnxfv4MiyVfTUim?usp=sharing)
 - [Scikit-learn documentation](https://scikit-learn.org/stable/)
 - [Decision tree algorithm](/engineering-education/decision-tree-in-python/)
