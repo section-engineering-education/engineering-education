@@ -21,6 +21,12 @@ Navigating in flutter apps, all you have to do is use the default navigation tha
 - Passing between one page to another.
 - Learn how to put in place navigator and routes API.
 - navigators and routes implementation in flutter apps. 
+
+### Prerequisites
+- Have Visual Studio Code or android studio installed.
+- Understand how to code flutter widgets.
+- Under flutter basics.
+- Understand widgets and how to import packages in Flutter.
 ### Disclaimers
 - By default, the MaterialApp widget has a routes property. 
 - Navigator 2.0 is also referred to as the router.
@@ -29,12 +35,6 @@ Navigating in flutter apps, all you have to do is use the default navigation tha
 - Navigator is a component that manages a stack made of routes. This feature allows the user to transit from one screen to another. Navigator performs these transitions of the screen either by declarative or Imperative Api or Navigator. pages. Navigator.push and Navigator.pop are the most common method used. Stack of routes means that once you navigate from one page to another you can always go back to the previous page.
 - Route -A route defines the navigation of the app. It tells which page the navigator takes the user to. Routes made of screens and pages.
 To navigate through apps screen,one can navigate using Navigator.push(),navigator.pop().
-### Prerequisites
-- Have Visual Studio Code or android studio installed.
-- Understand how to code flutter widgets.
-- Under flutter basics.
-- Understand widgets and how to import packages in Flutter.
-
 ### Types of navigator
 - Using named routes
 One of the best ways to manage many routes is using references. One can refer to a route either by Name, convention, or path.
@@ -72,12 +72,14 @@ Take a case for an application used by users to stream songs or videos. When a u
 ### Simple application that uses navigators and routes.
 
 For our application, we will have 3 screens. 
-1. Create a new flutter application
+
+### Step one: Create a new flutter application
   Open your visual code. On the menu bar click on `view` then `command palette` then click on `new flutter project`. Specify the location where to create your project then specify the name of your project. You can also create using the vs code terminal by typing 
 ```cmd
 flutter create name_of_project 
 ```
-2. Open main. dart file and erase its content and replace it with this code.This case it uses named routes for all the three screen. It contains named routes of all the pages we have in our application.
+### Step two: Named routes
+Open main. dart file and erase its content and replace it with this code.This case it uses named routes for all the three screen. It contains named routes of all the pages we have in our application.
 ```dart
 
 import 'allfiles.dart';
@@ -104,7 +106,7 @@ class ThisApp extends StatelessWidget {
 }
 
 ```
-3. Coding firstpage.
+### Step three: Coding firstpage.
   Create firstscreen.dart . This file represents the first page of our application. It contains a class that has an app bar, text, and button to navigate to the second screen. This case uses a navigator. push to navigate to the next page.
 ```dart
 import 'allfiles.dart';
@@ -147,7 +149,8 @@ class MyDetails extends StatelessWidget {
 }
 
 ```
-5. Let's create the Secondscreen. dart. This is the second screen of our application. It contains text and two buttons to navigate to the first and third screens. The first button uses the `navigator. push(context)` to help navigate to the third screen while the second button uses the `navigator. pop(context)` to navigate back to the previous page.   
+### Step 4: Coding Second screen
+Let's create the Secondscreen. dart. This is the second screen of our application. It contains text and two buttons to navigate to the first and third screens. The first button uses the `navigator. push(context)` to help navigate to the third screen while the second button uses the `navigator. pop(context)` to navigate back to the previous page.   
 ```dart
 import 'allfiles.dart';
 class Secondscreen extends StatelessWidget {
@@ -188,7 +191,8 @@ class Secondscreen extends StatelessWidget {
 }
 
 ```
-6. Let's create the third screen. dart. This is the last page of our flutter mobile application. It also contains text and two buttons to navigate to the first and second screens. The first button uses the `navigator. push(context)` to help navigate to the first screen while the second button uses the `navigator. pop(context)` to navigate back to the previous page.   
+### Step5: Coding Third Screen
+Let's create the third screen. dart. This is the last page of our flutter mobile application. It also contains text and two buttons to navigate to the first and second screens. The first button uses the `navigator. push(context)` to help navigate to the first screen while the second button uses the `navigator. pop(context)` to navigate back to the previous page.   
 ```dart
 import 'allfiles.dart';
 
@@ -231,7 +235,7 @@ class Thirdscreen extends StatelessWidget {
 }
 
 ```
-7. Create allfiles.dart.It contains all the exports of all other files.It will be used as one import to reduce repitition of imports.
+### Step 6. Create allfiles.dart.It contains all the exports of all other files.It will be used as one import to reduce repitition of imports.
 ```dart
 export 'package:flutter/material.dart';
 export 'firstscreen.dart';
