@@ -188,8 +188,8 @@ Here is what your web page should look like:
 
 ### A brief introduction to OVH API
 The OVH lyrics API is a simple API that helps us retrieve the lyrics of the song requested. While trying to fetch lyrics from this API, we use two parameters to fetch data (lyrics). They are:
-- Artist's name.
-- Title of the song.
+- Artist's name
+- Title of the song
 
 This basically means you can retrieve lyrics by using either the artist's name or the title of the song. When a request is made, the data is returned in JSON format.
 
@@ -203,7 +203,7 @@ You can read more about the OVH API [here](https://api.lyrics.ovh/v1/artist/titl
 
 An example of the URL in action looks like this: `https://api.lyrics.ovh/v1/Drake/Toosie Slide`.
 
-In the example above, `Drake` stands as the artist's name, and `Toosie Slide` represents the title of the song. `Drake` replaces the artist and `Toosie` Slide replaces the title.
+In the example above, `Drake` stands as the artist's name, and `Toosie Slide` represents the title of the song.
 
 ### Adding functionality with JavaScript
 In your `lyrics.js` file, declare variables and use the DOM selectors to connect with elements in the `lyrics.html` file, using the code snippet below:
