@@ -29,7 +29,7 @@ The app will simulate wild animal data in a game park. For the data, we will get
 4. General Object-Oriented Programming(OOP) concepts.
 
 ### Goals
-At the end of the article, we shall be well-versed in:
+At the end of this article, we shall be well-versed in:
 - Creating an SQLite database.
 - Adding charts to our projects using MPAndroid Chart library.
 - Populating the charts using data loaded from the SQLite database.
