@@ -88,7 +88,7 @@ import numpy as np
 import pandas as pd
 import chartify
 ```
-Pandas is a python library that is required for data cleaning and manipulation while Numpy is a python library for scientific computing. 
+Pandas is a Python library that is required for data cleaning and manipulation while Numpy is a Python library for scientific computing. 
 
 ### Loading the dataset
 
