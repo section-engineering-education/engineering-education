@@ -1,16 +1,17 @@
 ### Introduction to handle and handle pruning
 
-#### Introductory Background
-A handle is a concept used in the bottom-up parsing of compiler design. Bottom-up parsing is the method of syntax analysis in which sentences belonging to certain [context-free grammars](https://www.tutorialspoint.com/automata_theory/context_free_grammar_introduction.htm) whose role is to afford the construction of parse trees. This construction begins at the leaf nodes and proceeds to the root non-terminal hence the name bottom up which is sometimes called the shift-reduce parsing.
+### Introductory Background
+A handle is a concept used in the bottom-up parsing of compiler design. Bottom-up parsing is the method of syntax analysis in which sentences belonging to certain [context-free grammars](https://www.tutorialspoint.com/automata_theory/context_free_grammar_introduction.htm) are analyzed. This analysis results in the construction of parse trees. This construction begins at the leaf nodes and proceeds to the root non-terminal hence the name bottom up which is sometimes called the shift-reduce parsing.
 
 Each symbol is moved onto the stack until there is a matching right-hand side nonterminal. This is followed by a reduction by the replacement of the production's right-hand side by its left-hand side. This process continues until eventually the string is reduced to the start non-terminal.
 
 The set of strings to be replaced at each reduction step is called a handle. 
 
 ### Prerequisites
-The reader should have a prior understanding of the following concept:
+To understand this article, you should have a prior understanding of the following concept:
 - Lexical analysis in compiler design.
 - Syntax analysis in compiler design specifically top-down parsing.
+- C programming language.
 
 Although a handle of a string can be described informally as a substring that equals the right side of a production rule, not every substring that is the same as the right side of a production rule is considered a handle.
 
@@ -138,7 +139,7 @@ Length→id
 
 
 
-### Program implementation of handles and handle pruning
+### Program implementation of handles and handle pruning through bottom-up parsing using C language.
 ```c
 //Including all the required Libraries
 
@@ -159,89 +160,110 @@ char rw[20];
 char stk[15];
 char action[10]; 
 
-//Checks if the stack has reducible production rules
+//This function Checks if the stack has a Handle
 void checking()
 {
-strcpy(rw,"Reduction to S -> ");
-// c is the length of input string
-for(x = 0; x < w; x++)
-{
-//identifying for producing the rule S->6
-if(stk[x] == '6')
-{
-printf("%s6", rw);
-stk[x] = 'S';
-stk[x + 1] = '\0';
-//output the following
-printf("\n$%s\t%s$\t", stk, r);
-}
-}
-for(x = 0; x < w - 2; x++)
-{
-//checking for a production
-if(stk[x] == '7' && stk[x + 1] == 'S' &&
-stk[x + 2] == '7')
-{
-printf("%s7S7", rw);
-stk[x] = 'S';
-stk[x + 1] = '\0';
-stk[x + 2] = '\0';
-printf(stk, a);
-y = y - 2;
-}
-}
-for(x=0; x<w-2; x++)
-{
-//checking
-if(stk[x] == '8' && stk[x + 1] == 'S' &&
-stk[x + 2] == '8')
-{
-printf("%s8S8", rw);
-stk[x]='S';
-stk[x + 1]='\0';
-stk[x + 1]='\0';
-printf( stk, a);
-y = y - 2;
-}
-}
+     strcpy(rw,"Reduction to S -> ");
+     // c is the length of input string
+     for(x = 0; x < w; x++)
+     {
+          //identifying for producing the rule S->6
+          if(stk[x] == '6')
+          {
+             printf("%s6", rw);
+             stk[x] = 'S';
+             stk[x + 1] = '\0';
+             //output the following
+             printf("\n$%s\t%s$\t", stk, r);
+          }
+     }
+     for(x = 0; x < w - 2; x++)
+     {
+         //checking for a production
+         if(stk[x] == '7' && stk[x + 1] == 'S' && stk[x + 2] == '7')
+         {
+            printf("%s7S7", rw);
+            stk[x] = 'S';
+            stk[x + 1] = '\0';
+            stk[x + 2] = '\0';
+            printf(stk, a);
+            y = y - 2;
+         }
+    }
+    for(x=0; x<w-2; x++)
+    {
+         //checking
+         if(stk[x] == '8' && stk[x + 1] == 'S' && stk[x + 2] == '8')
+         {
+            printf("%s8S8", rw);
+            stk[x]='S';
+            stk[x + 1]='\0';
+            stk[x + 1]='\0';
+            printf( stk, a);
+            y = y - 2;
+         }
+    }
 return ; //return to the  main program
 }
 
 //Main Function
 int main()
 {
-printf("GRAMMAR is -\nS->7S7 \nS->8S8 \nS->6\n");
-// r is input string
-strcpy(r,"87678");
-// This will return the lengths of r to w
-c=strlen(r);
-strcpy(action,"Shift");
-// This will print names of columns
-printf("\nstack \t input \t action");
-printf("\n$\t%s$\t", r);
+   //Prints the grammar
+   printf("GRAMMAR is -\nS->7S7 \nS->8S8 \nS->6\n");
+   // r is input string
+   strcpy(r,"87678");
+   // This will return the lengths of r to w
+   c=strlen(r);
+   strcpy(action,"Shift");
+   // This will print names of columns
+   printf("\nstack \t input \t action");
+   printf("\n$\t%s$\t", r);
 
-for(y = 0; k < w; y++, k++)
-{
-// Printing action
-printf("%s", action);
-stk[y] = r[k]; 
-stk[y + 1] = '\0';
-r[k]=' ';
-// Printing action
-printf( stk, r);
-checking();
-}
-// Checking for valid productions
-checking();
-//Checks if the start symbol is on top of the stack
-if(stk[0] == 'S' && stk[1] == '\0')
-printf("Accept");
-else //do not allow
-printf("Rejection");
+   for(y = 0; k < w; y++, k++)
+   {
+          // Printing action
+          printf("%s", action);
+          stk[y] = r[k]; 
+          stk[y + 1] = '\0';
+          r[k]=' ';
+          // Printing action
+          printf( stk, r);
+          checking();
+   }
+   
+   // Checking for valid productions
+   checking();
+   
+   //Checks if the start symbol is on top of the stack
+   if(stk[0] == 'S' && stk[1] == '\0')
+         printf("Accept");
+   else //do not allow
+         printf("Rejection");
 }
 ```
-### Conclusion
-Determining handles and going ahead to prune the handle is the key to bottom-up parsing which is the most commonly used parsing strategy used in compiler design hence a lot of effort should be put into learning the concept of handle and handle pruning.
+This program checks for handles that are matching to what is on top of the stack and uses the production rules to reduce them. This is done until only the start non-terminal is left on top of the stack. If the start symbol is on top of the stack, It accepts and allows for the production of a parse tree. Otherwise, it rejects the input alphabet.
+The program parses the input alphabet `87678` through bottom-up parsing and prints the grammar and then outputs the parsing table as shown below:
+
+`
+S→7S7
+
+S→8S8
+
+S→6
+`
+
+|Stack|Input|Action|Handle|
+| -----------   | ----------- |----------- |----------- |
+| $ | 87678$ |Shift ||
+|$8|7678$|Shift||
+|$87|678$|Shift||
+|$876|78$|Reduce to S→6|6|
+|$87S|78$|Shift||
+|$87S7|8$|Reduce to S→7S7|7S7|
+|$8S|8$|Shift||
+|$8S8|$|Reduce to S→8S8|8S8|
+|$S|$|Accept||
 
 
 Blissful reading
