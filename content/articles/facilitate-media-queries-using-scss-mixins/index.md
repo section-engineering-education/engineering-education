@@ -10,7 +10,7 @@ In web development, it is essential to build sites and applications that are use
 - [CSS Media Queries](#css-media-queries)
 - [CSS Preprocessor scripting language (SCSS)](#css-preprocessor-scripting-language-(SCSS))
 - [Creating the SCSS File](#creating-the-sccs-file)
-- [Media Queries Using SCSS Mixins](#media-queries-using-scss-mixins)
+- [Facilitating Media Queries Using SCSS Mixins](#facilitating-media-queries-using-scss-mixins)
 - [Conclusion](#conclusion)
 - [Further reading](#further-reading)
 
@@ -80,7 +80,7 @@ Let’s open our `style.scss` file and input the necessary code to set up the mi
 The above block of code shows how mixins are mapped out and associated with names.
 
 ### STEP 3
-#### Media queries using SCSS mixins
+#### Facilitating Media queries using SCSS mixins
 
 As you can see in the snippet below, the styling can be affected by simply calling up the mixins. From what has been defined, the color changes appropriately for tablet and mobile screen sizes.
 
@@ -143,12 +143,12 @@ I hope you found this article helpful in building responsive websites quickly an
 Thanks to SCSS, you can see CSS media queries in a less intimidating light. 
 
 ### Further reading
-- [The easier way to write media queiries](https://levelup.gitconnected.com/the-easier-way-to-write-media-queries-with-scss-mixin-c7c956150551)
-- [Mixin documentation](https://sass-lang.com/documentation/at-rules/mixin)
-- [Writing Media Queries with Sass Mixins](https://itnext.io/writing-media-queries-with-sass-mixins-3ea591ea3ea4)
-- [SASS Basics](https://sass-lang.com/guide)
-- [Writing media Queries](https://dev.to/heytulsiprasad/easy-to-write-media-queries-using-sass-mixins-1p2f)
-- [How to write CSS Media Queries](https://www.educative.io/edpresso/how-to-write-css-media-queries-using-sass-mixins)
-- [Creating better Queries with SASS](https://medium.com/nerd-for-tech/use-sass-to-create-better-media-queries-f5f149dc618c)
-- [Learn CSS Media Queries](https://www.freecodecamp.org/news/learn-css-media-queries-by-building-projects/)
+- The easier way to write media queiries - https://levelup.gitconnected.com/the-easier-way-to-write-media-queries-with-scss-mixin-c7c956150551
+- Mixin documentation - https://sass-lang.com/documentation/at-rules/mixin
+- Writing Media Queries with Sass Mixins - https://itnext.io/writing-media-queries-with-sass-mixins-3ea591ea3ea4
+- SASS Basics - https://sass-lang.com/guide
+- Writing media Queries - https://dev.to/heytulsiprasad/easy-to-write-media-queries-using-sass-mixins-1p2f
+- How to write CSS Media Queries - https://www.educative.io/edpresso/how-to-write-css-media-queries-using-sass-mixins
+- Creating better Queries with SASS - https://medium.com/nerd-for-tech/use-sass-to-create-better-media-queries-f5f149dc618c
+- Learn CSS Media Queries - https://www.freecodecamp.org/news/learn-css-media-queries-by-building-projects/
 
