@@ -1,4 +1,19 @@
-Although Chartify isnít the new kid on the block, many data scientists are still unfamiliar with it. Thatís a bummer, considering that it was developed to make data visualization easier for data scientists and is more 'intuitive' than other Python charting libraries. Data visualization is an important aspect of data analytics since it allows you to communicate information to shareholders in a visually appealing and understandable way.
+---
+layout: engineering-education
+status: publish
+published: true
+url: /data-viz-chartify/
+title: Data Visualization with Chartify
+description: Chartify is an open-source data visualization library from Spotify that makes it easy for data analysts to create charts and graphs. This article gives a brief introduction to this technology. 
+author: benedict-ifeanyi-iheagwara
+date: 2022-01-18T00:00:00-00:20
+topics: [API]
+excerpt_separator: <!--more-->
+images:
+  - url: /engineering-education/data-viz-chartify/hero.png
+    alt: Data visualisation with Chartify
+---
+Although Chartify isnÔøΩt the new kid on the block, many data scientists are still unfamiliar with it. ThatÔøΩs a bummer, considering that it was developed to make data visualization easier for data scientists and is more 'intuitive' than other Python charting libraries. Data visualization is an important aspect of data analytics since it allows you to communicate information to shareholders in a visually appealing and understandable way.
 <!--more-->
 
 In this article, I'll show you how to visualize your dataset with Chartify. This article will follow a very clear structure, starting with an overview of Chartify to what makes distinguishes it from other charting libraries and ending with a demonstration of Chartify in action.
@@ -6,7 +21,7 @@ In this article, I'll show you how to visualize your dataset with Chartify. This
 ### Table of content
 1. [Prerequisites](#prequisites)
 2. [What is Chartify?](#what-is-chartify)
-3. [What makes Chartify ëintuitiveí?](#what-makes-chartify-intuitive)
+3. [What makes Chartify ‚Äòintuitive‚Äô?](#what-makes-chartify-intuitive)
 4. [Installing Chartify](#installing-chartify)
 5. [Importing Chartify](#importing-chartify)
 6. [Loading the dataset](#loading-the-dataset)
@@ -36,13 +51,13 @@ The library was built on Bokeh. Bokeh is a Python visualization framework that J
 
 But, with so many Python libraries available for data visualization, such as Matplotlib, Seaborn, Plotly, Ggplot2, D3, and Bokeh, what sets Chartify apart?
 
-### What makes Chartify ëintuitiveí?
+### What makes Chartify ‚Äòintuitive‚Äô?
 
-It was observed that data scientists spend a lot of time customizing various details when using most of the other libraries to create charts. Youíll frequently find yourself spending hours on StackOverflow troubleshooting and writing a lot of code simply to get your charts to work. The main intent behind the creation of Charity was to solve this problem.
+It was observed that data scientists spend a lot of time customizing various details when using most of the other libraries to create charts. You‚Äôll frequently find yourself spending hours on StackOverflow troubleshooting and writing a lot of code simply to get your charts to work. The main intent behind the creation of Charity was to solve this problem.
 
 Giving you the ability to create charts with only a few lines of code and little customization.
 
-This isn't to say you won't be able to make changes to your charts. Chartify like I earlier mentioned was built on top of Bokeh, so you can use Bokehís API and customize as you please. Chartify also makes data plotting and data frame manipulation simple, even when you have different input and data types.
+This isn't to say you won't be able to make changes to your charts. Chartify like I earlier mentioned was built on top of Bokeh, so you can use Bokeh‚Äôs API and customize as you please. Chartify also makes data plotting and data frame manipulation simple, even when you have different input and data types.
 
 Let's see how Chartify can help you visualize your data, but first, let's get it installed.
 
@@ -105,7 +120,7 @@ when I ran my codes for the first time, I got an error message. If we take a loo
 ![Error message](/engineering-education/data-viz-chartify/errormessage.png)
 *Screenshot by author*
 
-Why was this affecting chartifyís ability to display the visual? This is because like I mentioned earlier, ChromeDriver is needed for our PNG output (Visual). To resolve this problem, we will need to downgrade our Chrome browser. This can be achieved in 3 easy steps:
+Why was this affecting chartify‚Äôs ability to display the visual? This is because like I mentioned earlier, ChromeDriver is needed for our PNG output (Visual). To resolve this problem, we will need to downgrade our Chrome browser. This can be achieved in 3 easy steps:
 
 - **Step 1**: Uninstall Chrome.
 - **Step 2**: Download Older Chrome Version. You can get this from sites like [FileHippo](https://www.slimjet.com/chrome/google-chrome-old-version.php) and [SlimJet](https://filehippo.com/download_google-chrome/history/) since there is an official repository hosting an older build of the Chrome browser.
@@ -128,7 +143,7 @@ The code we just ran will give us the output below.
 
 Chartify makes it relatively easy for first-timers to get started. That's one amazing thing about it. This empty chart that got displayed shows users of the library how they can fill the chart with data. 
 
-Letís visualize the Pokemon type distribution using a bar chart.
+Let‚Äôs visualize the Pokemon type distribution using a bar chart.
 
 ### Pokemon type distribution
 
@@ -157,7 +172,7 @@ The first few arguments that we passed are `.set_title` and `.set_subtitle` whic
 ![Chartify](/engineering-education/data-viz-chartify/chartifytwo.png)
 *Screenshot by author*
 
-Next, letís look at the pokemon type distribution but this time taking account of the ëis_legendaryí attribute of each pokemon. We would also start by creating a dataframe of the data needed. We can achieve this by grouping our pokemon by the ìtype1î and ìis_legendaryî columns. This can be done by running the code snippet below:
+Next, let‚Äôs look at the pokemon type distribution but this time taking account of the ‚Äòis_legendary‚Äô attribute of each pokemon. We would also start by creating a dataframe of the data needed. We can achieve this by grouping our pokemon by the ‚Äútype1‚Äù and ‚Äúis_legendary‚Äù columns. This can be done by running the code snippet below:
 
 ```python
 Pokemon_type_distribution = (pokemon_df.groupby(['type1','is_legendary'])['s/n'].sum().reset_index())
@@ -205,7 +220,7 @@ ch.plot.text(
         color_column='generation')
 ch.show()
 ```
-We did not discuss the `color_column` in the previous bar chart. The `color_column` parameter gives your plot a color-based argument that colors the plot of the basis of the column specified. In our graph, Chartify will assign different colors to the different generations because we set `color_column` to be the column ìgenerationî.
+We did not discuss the `color_column` in the previous bar chart. The `color_column` parameter gives your plot a color-based argument that colors the plot of the basis of the column specified. In our graph, Chartify will assign different colors to the different generations because we set `color_column` to be the column ‚Äúgeneration‚Äù.
 
 ![Chartify](/engineering-education/data-viz-chartify/chartifyfour.png)
 *Screenshot by author*
@@ -305,7 +320,7 @@ ch.show()
 
 ### Pokemon Weight distribution
 
-Letís have a look at our pokemon weight. This will best be displayed in a histogram. In the `weight_kg` column, there were nan values. We will have to fill it. For this article, we would fill it with `0`.
+Let‚Äôs have a look at our pokemon weight. This will best be displayed in a histogram. In the `weight_kg` column, there were nan values. We will have to fill it. For this article, we would fill it with `0`.
 
 ```python
 pokemon_df['weight_kg'] = pokemon_df['weight_kg'].fillna(0)
@@ -332,5 +347,5 @@ Finally, if you want to take a look at the code used in this post, you can find 
 Happy coding...
 
 ### Resources
-- [Welcome to chartifyís documentation!](https://chartify.readthedocs.io/en/latest/)
+- [Welcome to chartify‚Äôs documentation!](https://chartify.readthedocs.io/en/latest/)
 - [Chartify data visualization](https://www.geeksforgeeks.org/data-visualisation-with-chartify/)
