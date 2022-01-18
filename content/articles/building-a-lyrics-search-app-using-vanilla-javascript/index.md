@@ -14,7 +14,7 @@ images:
   - url: /engineering-education/building-a-lyrics-search-app-using-vanilla-javascript/hero.png
     alt: Building a Lyrics Search App Using Vanilla JavaScript With OVH API Hero Image
 ---
-Not knowing the lyrics of a song is a problem most song-lovers encounter. In this article, you will be creating a platform where users can search for lyrics by entering the artist's name or the title of the song.
+Not knowing the lyrics of a song is a problem most song-lovers encounter. In this article, you will create a platform where users can search for lyrics by entering the artist's name or the title of the song.
 <!--more-->
 You will create a web application using HTML5, CSS3, Vanilla JavaScript, async-await with `fetch()` method, OVH API, and ECMAScript 2015 (ES6) feature like arrow functions to build a search feature for lyrics. 
 
