@@ -110,7 +110,7 @@ body {
 }
 ```
 
-Now, you are going to style the contents in the `body` tag - starting from the text that defines what the web app does, to the placeholder, and then the input field:
+Now, you are going to style the contents in the `body` tag - starting from the text that defines what the web app does to the placeholder, and then the input field:
 
 ```css
 /**This is how placeholders are styled**/
@@ -197,7 +197,7 @@ Using this API, you will get two status codes. They are:
 - Status code 200 while the API call is successful
 - Status code 404 while the API call fails
 
-You should be familiar with status code `404`, if you don't know, `404` stands for `Page/Method Not Found`.
+You should be familiar with the status code `404`. If you don't know, `404` stands for `Page/Method Not Found`.
 
 You can read more about the OVH API [here](https://api.lyrics.ovh/v1/artist/title).
 
@@ -212,7 +212,7 @@ In your `lyrics.js` file, declare variables and use the DOM selectors to connect
 //you comment in js using double slash, with vscode just highlight what you want to comment and then press "ctrl + /"
 //defining variables
 const form = document.getElementById("searchMe");//target the form tag in the html file
-const search = document.getElementById("lyricSearch");//target th input field
+const search = document.getElementById("lyricSearch");//target the input field
 const output = document.getElementById("search-result");//target the output `div`
 ```
 
