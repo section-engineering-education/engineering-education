@@ -4,7 +4,7 @@ status: publish
 published: true
 url: /routes-and-navigators-in-flutter-apps/
 title: Introduction to Routing and Navigation in Flutter Applications
-description: In this tutorial, we will learn about routing and navigation in Flutter applications.
+description: In this tutorial, we learn about routing and navigation in Flutter applications.
 author: naomi-wangari
 date: 2022-01-12T00:00:00-06:10
 topics: [Languages]
@@ -15,7 +15,7 @@ images:
     alt: Introduction to Routing and Navigation in Flutter Applications Hero Image
 ---
 ### Introduction
-Navigating in flutter apps, all you have to do is use the default navigation that comes with Flutter. For complex flutter application consider the addition of  dynamic links, authorizations, and authentication . GetX does a good job of helping you with this by using middleware and bindings, child routes.
+Navigating in flutter apps, all you have to do is use the default navigation that comes with Flutter. For complex Flutter, applications consider the addition of dynamic links, authorizations, and authentication. GetX does a good job of helping you with this by using middleware and bindings, child routes.
 ### Topics to handle
 - learn the usage of navigator, routes in Flutter.
 - Passing between one page to another.
@@ -30,9 +30,9 @@ Navigating in flutter apps, all you have to do is use the default navigation tha
 ### Disclaimers
 - By default, the MaterialApp widget has a routes property. 
 - Navigator 2.0 is also referred to as the router.
-- DefaultTransitionDelegate helps navigator to decide the transition of the screens.  
+- DefaultTransitionDelegate helps the navigator to decide the transition of the screens.  
 ### Definition of Navigator and Routes as used in Flutter
-- Navigator is a component that manages a stack made of routes. This feature allows the user to transit from one screen to another. Navigator performs these transitions of the screen either by declarative or Imperative Api or Navigator. pages. Navigator.push and Navigator.pop are the most common method used. Stack of routes means that once you navigate from one page to another you can always go back to the previous page.
+- Navigator is a component that manages a stack made of routes. This feature allows the user to transit from one screen to another. Navigator performs screen transitions either by declarative or Imperative Api or Navigator. pages. Navigator.push and Navigator.pop are the most common method used. Stack of routes means that once you navigate from one page to another you can always go back to the previous page.
 - Route -A route defines the navigation of the app. It tells which page the navigator takes the user to. Routes made of screens and pages.
 To navigate through apps screen,one can navigate using Navigator.push(),navigator.pop().
 ### Types of navigator
@@ -79,7 +79,7 @@ For our application, we will have 3 screens.
 flutter create name_of_project 
 ```
 ### Step two: Named routes
-Open main. dart file and erase its content and replace it with this code.This case it uses named routes for all the three screen. It contains named routes of all the pages we have in our application.
+Open main. dart file. Erase its content and replace it with this code. This case uses named routes for all three screens. It contains named routes of all the pages we have in our application.
 ```dart
 
 import 'allfiles.dart';
@@ -235,7 +235,7 @@ class Thirdscreen extends StatelessWidget {
 }
 
 ```
-### Step 6. Create allfiles.dart.It contains all the exports of all other files.It will be used as one import to reduce repitition of imports.
+### Step 6. Create allfiles.dart. It contains all the exports of all other files. File used as one import to reduce the repetition of imports.
 ```dart
 export 'package:flutter/material.dart';
 export 'firstscreen.dart';
@@ -265,7 +265,7 @@ For any query Reachout @ [this GitHub repository](https://github.com/karehnikita
 
 ### Conclusion
 
-The navigators and routing in flutter applications are key to flutter application development. I recommend all flutter developers to use navigator developing mobile and web applications. 
+The navigators and routing in flutter applications are key to flutter application development. I recommend all flutter developers to use navigators developing mobile and web applications. 
 ### References:
 - https://api.flutter.dev/flutter/widgets/Navigator-class.html
 - https://medium.com/flutter-community/flutter-routes-and-navigation-69f128a9ea8f
