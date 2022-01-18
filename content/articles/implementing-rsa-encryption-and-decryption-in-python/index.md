@@ -1,34 +1,35 @@
 ### Introduction
-Data encryption is an important practice used to protect data transfer on the internet. This helps to prevent data sent on the internet from unauthorised access.One of the major algorithms used for data protection on the internet is the *Rivest, Shamir, and Adleman* (RSA algorithm), named after the inventors of this encryption and decryption algorithm.
+Data encryption is an important practice used to protect data transfer on the internet. This helps prevent data sent on the internet from unauthorised access.
 
-RSA is a public key algorithm widely used for secure data transmission. This is one of the major cyber security methods of data protection. In this tutorial, we will be looking at how RSA algorithm works and how this algorithm can be implemented in Python.
+One of the major algorithms used for data protection on the internet is the _Rivest, Shamir, and Adleman_ (RSA algorithm), named after the inventors of this encryption and decryption algorithm.
 
-### Table of Contents
+RSA is a public key algorithm widely used for secure data transmission. This is one of the major cyber security methods of data protection. 
+
+In this tutorial, we will be looking at how RSA algorithm works and how this algorithm can be implemented in Python.
+
+### Table of contents
 - [Prerequisites](#prerequisites)
-- [How does RSA encryption and decryption work](#how-does-rsa-encryption-and-decryption-work)
+- [How the RSA encryption and decryption work](#how-the-rsa-encryption-and-decryption-work)
 - [Implementing the RSA algorithm in Python](#implementing-the-rsa-algorithm-in-python)
 - [Conclusion](#conclusion)
 
 ### Prerequisites
-For a better understanding of this tutorial:
-We will need to have a basic knowledge of ;
-- [RSA algorithm](https://www.tutorialspoint.com/cryptography_with_python/cryptography_with_python_understanding_rsa_algorithm.htm)
-- [Python](https://www.javatpoint.com/python-tutorial)
-
-A code editor installed and well set up. We can download either;
-- [Pycharm](https://www.filehorse.com/download-pycharm/) or [Visual Studio Code](https://code.visualstudio.com/download)
+To follow along with this tutorial, the reader will need to have:
+- A basic knowledge of the [RSA algorithm](https://www.tutorialspoint.com/cryptography_with_python/cryptography_with_python_understanding_rsa_algorithm.htm)
+- A basic knowledge of the [Python](https://www.javatpoint.com/python-tutorial) programming language.
+- A code editor installed and well set up. We can download either [Pycharm](https://www.filehorse.com/download-pycharm/) or [Visual Studio Code](https://code.visualstudio.com/download)
 
 I will be using Visual Studio Code for this tutorial.
 
 ### How does RSA encryption and decryption work
 Each pair of the RSA algorithm has two keys, i.e, public key and private key. One key is used for encypting the message which can only be decrypted by the other key.
 
-For instance, let's say we have two peers communicating with each other in a channel secured by RSA algorithm. The sender will encrypt the plain text with the recipient's public key, so that the receiver is the only one who can decrypt the message using there private key.
+For instance, let's say we have two peers communicating with each other in a channel secured by RSA algorithm. The sender will encrypt the plain text with the recipient's public key. This is so that the receiver is the only one who can decrypt the message using their private key.
 
 Typically, the public key will be available in a public key repository. However, for the private key, as the name suggests, it is kept privately at the recipient's side.
 
 ### Implementing the RSA algorithm in Python
-In this tutorial, we will be using `rsa python package`, hence, we will open up our terminal and use the command:
+In this tutorial, we will be using `rsa python package`. Hence, we will open up our terminal and use the command below:
 
 ```bash
 pip install rsa
@@ -40,9 +41,11 @@ Once our package is downloaded, then we are good to go. The first thing we need 
 import rsa
 ```
 
-We will start by implementing two helper methods to generate the private and public keys. The keys will be a tuple of pucblic and priavate keys, and then write the keys into files.
+We will start by implementing two helper methods to generate the private and public keys. The keys will be a tuple of pucblic and private keys, and then write the keys into files.
 
-For writing the keys into files, we will create a folder called `Keys` in our project folder. The `Keys` folder will have two files for holding private and public keys, one key in each file. We will implement this using the code below.
+To write the keys into the files, we will create a folder called `Keys` in our project folder. The `Keys` folder will have two files for holding private and public keys, one key in each file.
+
+ We will implement this using the code below:
 
 ```python
 def generateKeys():
@@ -66,7 +69,7 @@ def loadKeys():
     return privateKey, publicKey
 ```
 
-Now, we will create other two methods to encrypt and decrypt our message.
+Next, we will create two other methods to encrypt and decrypt our message.
 
 We will start by creating the encryption method using the code below. The encrypt method will take the message and the encryption key.
 
@@ -123,7 +126,7 @@ generateKeys()
 publicKey, privateKey =load_keys()
 ```
 
-We will then take the message input from the user, and encrypt the message using the public key, this represents the sender of the message.
+We will then take the message input from the user, and encrypt the message using the public key. This represents the sender of the message.
 
 ```Python
 message = input('Write your message here:')
@@ -136,20 +139,20 @@ Now that we have the ciphertext, we will generate the signatures using the code 
 signature = sign(message, privateKey)
 ```
 
-Now, we will be decrypting our encrypted message to have a plain text. To implement this, we will create a decryption method and pass in the ciphertext and the private key as shown below.
+Next, we will decrypt our encrypted message to have a plain text. To implement this, we will create a decryption method and pass in the ciphertext and the private key as shown below.
 
 ```Python
 text = decrypt(ciphertext, privateKey)
 ```
 
-Now that we have our plain text, the next thing to do is to print out the cipher text and the  signature.
+Now that we have our plain text, the next thing to do is to print out the cipher text and the signature.
 
 ```Python
 print(f'Cipher text: {ciphertext}')
 print(f'Signature: {signature}')
 ```
 
-Now, we will check the plain text, if it is a plain text, then we indicate that the message was successfully decrypted otherwise we were unable to decrypt the message.
+We will check the plain text in  the next step. If it is a plain text, then we indicate `message was successfully decrypted` otherwise, we were unable to decrypt the message.
 
 ```Python
 if text:
@@ -158,7 +161,7 @@ else:
     print(f'Unable to decrypt the message.')
 ```
 
-Now, let's verify our signature.
+Let Us verify our signature.
 
 ```Python
 if verify(text, signature, publicKey):
@@ -172,8 +175,8 @@ With that you can enter your message, encrypt, and then decrypt it.
 ### Conclusion
 From this tutorial, we have encrypted the message using public key and signed it using our own private key.
 
-Typically, if you are having two peers; i.e, peer A talking to peer B, then peer A is sending a message to peer B, the message should be encrypted using the public key of peer B. However, this method is signed using the private key of peer A, who is actually the peer sending the message.
+Typically, if you havE two peers; i.e, peer A talking to peer B, then peer A is sending a message to peer B, the message should be encrypted using the public key of peer B. However, this method is signed using the private key of peer A, who is actually the peer sending the message.
 
-On the recipient's side, who is peer B, peer B is going to decrypt the message using there own private key and then verify the siganture of the message using the public key of peer A who is the sender of the message.
+On the recipient's side, who is peer B, peer B is going to decrypt the message using there own private key and then verify the signAture of the message using the public key of peer A who is the sender of the message.
 
 However, this is not the case in this tutorial since we don't have the sender or the receiver of the message, hence we are getting the knowledge on the use of signature, signing a message, and verifying the signature.
