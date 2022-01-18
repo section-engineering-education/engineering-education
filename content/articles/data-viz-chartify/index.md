@@ -42,7 +42,7 @@ To follow along with this article, you should have a:
 - Basic knowledge in using Jupyter Notebooks or any other notebook-based technology. I would recommend Jupyter notebook or Google Colab for data visualization. However, for this tutorial, we will be using [Jupyter](https://jupyter.org/).
 
 ### What is Chartify?
-According to the documentation, [Chartify](https://chartify.readthedocs.io/en/latest/) is a Python library that aims to make it easy for data scientists to create charts. This open-source library was introduced to the world in this article by Spotify Lab, [Introducing Chartify: Easier chart creation in Python for data scientists](https://engineering.atspotify.com/2018/11/15/introducing-chartify-easier-chart-creation-in-python-for-data-scientists/), as a means for you and me to build visually appealing charts using Python.
+According to the documentation, [Chartify](https://chartify.readthedocs.io/en/latest/) is a Python library that aims to make it easy for data scientists to create charts. This open-source library was introduced to the world in this article by [Spotify Lab](https://engineering.atspotify.com/2018/11/15/introducing-chartify-easier-chart-creation-in-python-for-data-scientists/), as a means for you and me to build visually appealing charts using Python.
 
 The library was built on Bokeh. Bokeh is a Python visualization framework that JavaScript based. Bokeh can be used to generate interactive visualizations for modern web browsers. You can use Bokeh to generate JavaScript-powered visualizations without having to write any JavaScript. I am sure you know what that means for Chartify... Yeah, you got it! Fantastic visuals.
 
