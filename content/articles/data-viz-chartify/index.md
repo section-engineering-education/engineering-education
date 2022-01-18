@@ -348,7 +348,7 @@ ch.show()
 
 *Screenshot by author*
 
-### Conclusion
+### Conclusion 
 
 To gain insight into their vast amounts of data, data visualization is vital. And Chartify ensures you get it done with less code. We hope that this post will help you get a feel of how you can use Chartify for data visualization. 
 
