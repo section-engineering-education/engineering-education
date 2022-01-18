@@ -148,7 +148,7 @@ Let’s visualize the Pokemon type distribution using a bar chart.
 
 ### Pokemon type distribution
 
-A bar chart represents data by using bars of different heights. We would use on to see the distribution of the various pokemon types. First, we need to create a data frame by grouping the Pokemon type 1 and its generation. This can be done using the code snippet below:
+A bar chart represents data by using bars of different heights. We would use on to see the distribution of the various Pokemon types. First, we need to create a data frame by grouping the Pokemon type 1 and its generation. This can be done using the code snippet below:
 
 ```python
 bar_data = (pokemon_df.groupby('type1')[['generation']].sum()
