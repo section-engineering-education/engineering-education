@@ -116,7 +116,7 @@ pokemon_df.insert(loc =0, column = 's/n',value = np.arange(len(pokemon_df)))
 ### Problem Encounter while using Chartify
 While working with Charify I discovered a problem. I was unable to display my chart. 
 
-when I ran my codes for the first time, I got an error message. If we take a look at the error message, we will see it was a compatibility issue. The latest version of ChromeDriver available only supports Chrome version 93 and my current Chrome browser version is 96.0.4664.45. 
+When I ran my codes for the first time, I got an error message. If we take a look at the error message, we will see it was a compatibility issue. The latest version of ChromeDriver available only supports Chrome version 93 and my current Chrome browser version is 96.0.4664.45. 
 
 ![Error message](/engineering-education/data-viz-chartify/errormessage.png)
 *Screenshot by author*
