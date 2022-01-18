@@ -83,5 +83,5 @@ For revisions services we recommend using a few of the [services we have vetted]
 We ask that if you would like to repost your Section work elsewhere, that new work reference the original Section (EngEd) article. Adding a rel=canonical tag is the preferred path forward. This does **not** mean that published work on EngEd can be previosly published elsewhere - we still ask for original and unique work.
 
 ### How do I respond to comments on my article?
-After you have published your article with us - be sure to check on your content periodically to respond to any comments or questions that the audience may post. Please sign up with HyvorTalk to reply to any comments or questions left on your articles.
+After you have published your article with us - be sure to check on your content periodically to respond to any comments or questions that the audience may post. Please [sign up with HyvorTalk](https://auth.hyvor.com/signup/?redirect=https%3A%2F%2Ftalk.hyvor.com%2Fapi%2Fembed%2Flogin%3FwebsiteId%3D5716%26pageId%3D31662502%26isSignup%3D%255Bobject%2520PointerEvent%255D%26isLogout%3Dfalse) to reply to any comments or questions left on your articles.
 
