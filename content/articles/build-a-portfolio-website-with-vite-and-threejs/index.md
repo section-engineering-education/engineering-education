@@ -1,11 +1,12 @@
-A portfolio is a collection of photos or photographs of examples of your works used when entering competitions or applying for jobs. Your portfolio website is likely to be the first place someone goes after reading your CV, so it's vital to make a great first impression! In this tutorial, we'll be building a portfolio website with Three.js. So let's get started.
+A portfolio is a collection of photos or photographs of examples of your works used when entering competitions or applying for jobs. Your portfolio website is likely to be the first place someone goes after reading your CV, so it's vital to make a great first impression. In this tutorial, we'll be building a portfolio website with Three.js. So let's get started.
+
 ### What Is Threejs
 
-Three.js is a JavaScript framework that allows you to easily build a 3d or 2d graphic on your webpage. With Three.js, we don't have to use  WebGL directly. It's essentially an abstract layer built on top of webGL to make it easier to use. Anyone can use a Web browser to view 3D graphics without needing to download any extra framework. Because Three.js is built on JavaScript, integrating interactivity is a breeze. This makes Three.js ideal for creating 3d games on the web platform. It also offers exceptional features such as effects, scenes, cameras, and many more.
+Three.js is a JavaScript framework that allows you to easily build a 3D or 2D graphic on your webpage. With Three.js, we don't have to use  WebGL directly. It's essentially an abstract layer built on top of webGL to make it easier to use. Anyone can use a Web browser to view 3D graphics without downloading any extra frameworks. Since Three.js is built on JavaScript, adding interactivity between 3D objects and user interfaces is quite simple. This makes Three.js ideal for creating 3D games on the web platform. It also offers exceptional features such as effects, scenes, cameras, etc.
 
- Three.js has been around for a long time. To understand Three.js we must first have an understanding of what  WebGL is. WebGL is a JavaScript API for generating high-performance interactive 3D and 2D graphics.  WebGL can be used without any plug-ins in any supported web browser. WebGL is an OpenGL version based on OpenGL ES (embedded systems). The main drawback of WebGL is that its application development has extensive and heavy code.
+ Three.js has been around for a long time. To understand Three.js we must first have an understanding of what  WebGL is. WebGL is a JavaScript API for generating high-performance interactive 3D and 2D graphics.  WebGL can be used without any plug-ins in any supported web browser. WebGL is an OpenGL version based on OpenGL ES (embedded systems). The main drawback of WebGL is that its application development has extensive and heavy code. You can check out their [documentation to know more](https://get.webgl.org/).
 
-Three.js allows you to write short lines of code. With Three.js, you can create video games and showcase products in a 3d form. You can also import into Three.js whenever you want to create a complex object using a 3d software such as blender. To get started with Three.js, we can visit their website [here](https://threejs.org/) and read their documentation.
+Three.js allows you to write short lines of code. With Three.js, you can create video games and showcase products in a 3D form. You can also import into Three.js whenever you want to create a complex object using a 3D software such as blender. To learn more about Three.js, go to their [website and check the documentation](https://threejs.org/).
 
 The main limitation of using Three.js is the performance. We don’t have the same performance between a native application and a web application with WebGL.
 
@@ -20,9 +21,10 @@ Vite allows you to have a development server running.  It also handles and refre
 - On-demand compilation.
 - Advance configuration.
 
-### Prerequisites 
+### Prerequisites
 
 To follow along with this guide, you need to have:
+
 - Basic understanding of the JavaScript programming language.
 - A set of image templates
 
@@ -31,15 +33,19 @@ To follow along with this guide, you need to have:
 First, navigate to the folder where you want your project to live and run the following command:
 
 ```bash
-npm init @vitejs/app
+npm init vite
 ```
+
 After running these instructions, we will be able to name our project. We'll also choose a framework from a list of alternatives. Select `vanilla:vanilla`.
 
-Navigate to the project folder we just created using the `cd` command and install the Three.js package :
+Navigate to the project folder we just created using the `cd` command and install the Three.js package:
+
 ```bash
  cd your project folder
 ```
-Install Three.js
+
+Install Three.js.
+
 ```bash
 npm install three   
 ```
@@ -50,13 +56,16 @@ Let’s start up our application:
 npm run dev
 ```
 
-Next, edit the `style.css` and `main.js.` Go to `style.css` and `main.js` and delete the existing code to start building our portfolio application.
+Open up `http://localhost:3000/` in your browser.
+
+Let's go back to our code editor where we have our project. We want to edit the `style.css` and `main.js.`. Go to `style.css` and `main.js` and delete the existing code to start building our portfolio application.
 
 First, head over to `index.html` and add a `canvas` to the body with an `id` of `bg`. This will be the element that shows the actual Three.js scene:
 
 ```html
 <canvas id="bg"></canvas>
 ```
+
 Let’s head over to `styles.css` to give the canvas fixed positioning and also pin it to the top left corner of the screen:
 
 ```css
@@ -67,19 +76,19 @@ canvas{
 }
 ```
 
-This will serve as a background for our portfolio. Now we’ll go into our `main.js` file and import our Three.js library :
+This will serve as a background for our portfolio. Now we’ll go into our `main.js` file and import our Three.js library:
 
 ```javascript
 import * as THREE from 'three'
 ```
 
-When working with 3d development using Three.js, there are elements that we need to change. These include:
+When working with 3D development using Three.js, there are elements that we need to change. These include:
 
 - Scene - a scene is a container of layers. It also holds our objects, cameras, and lights.
 - Camera - allow the perception of the object to replicate three dimensions.
 - Renderer - used to render the actual graphic to the scene.
   
- We need to import the above objects to our project. Let’s paste this code block just below the imported package of the main.js file:
+ We need to import the above objects to our project. Let’s paste this code block just below the imported package of the `main.js` file:
 
 ```javascript
 const scene  = new THREE.Scene();
@@ -97,16 +106,16 @@ camera.position.setZ(30);
 renderer.render(scene, camera);
 ```
 
-The `perspectiveCamera` used to behave just like how the human eyeballs do. When we take a look at our app, we should see that it's all black. That's because we haven't created an object yet. Let's do so using these steps:
+The `perspectiveCamera` used to behave just like how the human eyeballs do. When we take a look at our app,the output should be black. That's because we haven't created an object yet. Let's do so using these steps:
 
-- Geometry is a set of vectors that define the object itself. In Three.js, there are a bunch of geometries such as cylinder, cone, box, and many more. Let’s go ahead and create new geometry. Paste this code inside the `main.js` file:
+- Geometry is a set of vectors that define the object itself. In Three.js, there are a bunch of geometries such as cylinder, cone, box, etc. Let’s go ahead and create new geometry. Paste this code inside the `main.js` file:
 
 ```javascript
 const geometry =  new THREE.TorusGeometry(10,3,16,100)
 ```
 
 - Material: Now that we created a geometry, let's add a material. Think of material as wrapping paper for geometry. Three.js has different materials that give different results. We’ll be using a basic material with no light source. So let’s paste this right under our geometry:
- 
+
 ```javascript
 const material =  new THREE.MeshBasicMaterial({color:0xFF6347, wireframe:true});
 ```
@@ -132,7 +141,8 @@ animate()
 ```
 
 Here we have a function named `animate`. This calls the `requestAnimationFrame` in the browser. It is a mechanism that tells the browser that you want to perform an animation. The browser can then call the render method to update the UI. Just think of this as a game loop.
-Let’s check our browser
+
+Let’s check our browser.
 
 ![torus](/engineering-education/build-a-portfolio-website-with-vite-and-threejs/torus-shape.png)
 
@@ -148,7 +158,7 @@ Every shape used has a different position, rotation, and scale properties. What 
 
 ![torus_round](/engineering-education/build-a-portfolio-website-with-vite-and-threejs/torus-round.gif)
 
-As you can see, it’s animating in an infinite loop. Pretty cool, right? Now we want to introduce the concept of lightning. Lightening is what makes your 3d objects come to life. Let’s go back to our material. Change from `MeshBasicMaterial` to `MeshStandardMaterial`. This is a material that will react to light bouncing off it. Let’s also remove the `wireframe` property, so our material will look like this:
+As you can see, it’s animating in an infinite loop. Pretty cool, right? Now we want to introduce the concept of lightning. Lightening is what makes your 3D objects come to life. Let’s go back to our material. Change from `MeshBasicMaterial` to `MeshStandardMaterial`. This is a material that will react to light bouncing off it. Let’s also remove the `wireframe` property, so our material will look like this:
 
 ```javascript
 const material =  new THREE.MeshStandardMaterial({color:0xFF6347});
@@ -173,20 +183,22 @@ const lightHelper = new THREE.PointLightHelper(pointLight)
  const gridHelper = new THREE.GridHelper(200,50);
  scene.add(lightHelper)
  ```
- 
-Let’s add orbit controls to it. This will allow us to move around the scene using our mouse. To do that, we first have to import the orbits control from Three.js:
+
+Let’s add `OrbitControls` to it. This will allow us to move around the scene using our mouse. To do that, we first have to import the `OrbitsControls` from Three.js:
 
 ```javascript
 import {OrbitControls} from 'three/examples/jsm/controls/OrbitControls';
 ```
 
-Once we’ve done that we now have to instantiate the controls class and pass in our arguments. Right after our `scene.add` we input the following:
+Once we’ve done that, we can now instantiate the OrbitControls class and pass in our arguments. Right after our `scene.add`, add the following:
+
 ```javascript
 const controls = new OrbitControls(camera,renderer.domElement);
 ```
 
 This would listen to `dom` events on the mouse and update the camera position accordingly.
-We then need to call a `controls.update` in the animation loop to ensure that the changes are reflected in the UI.Inside our `requestAnimationFrame` add this:
+
+We then need to call a `controls.update` in the animation loop to ensure that the changes are reflected in the UI. Inside our function `animate` add this:
 
 ```javascript
 controls.update();
@@ -194,7 +206,7 @@ controls.update();
 
 Check out the result in the browser by panning around with your mouse.
 
-Now that we’re done with, that let’s generate a large number of objects for our scene. We'll use the math helpers in Three.js to do that. We’ll create a function and instantiate a sphere geometry so let’s input this:
+Now that we’re done with that, let’s generate a large number of objects for our scene. We'll use the math helpers in Three.js to do that. We’ll create a function and instantiate a sphere geometry. Let's add this code block:
 
 ```javascript
 function addStar(){
@@ -213,7 +225,7 @@ function addStar(){
 If you look at your browser, you will see that the scene is populated with 250 randomly generated stars.
 
 Let’s add a simple image background into it. We’ll  be using Three.js `textureLoader`:
- 
+
  ```javascript
  const spaceTexture = new THREE.TextureLoader().load('your image.jpg');
  scene.background = spaceTexture;
@@ -232,7 +244,7 @@ const avatar = new THREE.Mesh(
 scene.add(avatar);
 ```
 
-When we check our browser, we should see 3d cube with the image map to all 6 sides. We can also combine many maps to create more interesting objects, just like what we’ll do for our image cube. Let’s create a new mesh named planet :
+When we check our browser, we should see 3D cube with the image map to all 6 sides. We can also combine many maps to create more interesting objects, just like what we’ll do for our image cube. Let’s create a new mesh named planet:
 
 ```javascript
 const planetTexture = new THREE.TextureLoader().load('your image');
@@ -321,6 +333,7 @@ Next up, let’s head to our `index.html` and add some markups inside our `canva
  
  </main>
 ```
+
 Let’s make our main element absolute. In our `style.css`, add this code block:
 
 ```css
@@ -350,7 +363,7 @@ camera.rotation.y = t * -0.0002;
 }
  
 document.body.onscroll = moveCamera
-``` 
+```
 
 The `GetboundlingClientRect` gives the dimension of the viewport. This helps us calculate where the user is usually scrolled to. We also gave rotation properties to the planet, avatar, and the position of the camera.
 
@@ -444,6 +457,8 @@ Check out the result in our browser.
 
 ![final_view](/engineering-education/build-a-portfolio-website-with-vite-and-threejs/final-view.gif)
 
-We just built ourselves a portfolio website!!! You add can more features but this is how far we’ll go in this article.
+We have created a portfolio website using Three.js. You can go ahead and add more Three.js features.
+
 ### Conclusion
-In this article, we discussed what Three.js is and what it can be used for, its relationship with WebGL. We also talked briefly about some terms, and concepts while building our portfolio project. I hope you enjoyed this article. Here’s a link to the[ github](https://github.com/oyedeletemitope/Build-a-portfolio-website-with-vite-and-threejs) repository for this project. Please share if you find this helpful. Happy coding!!!
+
+In this article, we discussed what Three.js is and what it can be used for, its relationship with WebGL. We also talked briefly about some terms, and concepts while building our portfolio project. I hope you enjoyed this article. Here’s a link to the[GitHub](https://github.com/oyedeletemitope/Build-a-portfolio-website-with-vite-and-threejs) repository for this project. Please share if you find this helpful. Happy coding!
