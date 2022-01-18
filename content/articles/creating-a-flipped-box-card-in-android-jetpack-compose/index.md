@@ -83,13 +83,13 @@ Let us get started.
 ### Step 1 - Creating a Compose project
 Launch your Android Studio and create an empty Compose project.
 
-![compose_proj](/engineering-education/creating-a-flipped-box-card-in-android-jetpack-compose/compose_project.png)
+![compose-proj](/engineering-education/creating-a-flipped-box-card-in-android-jetpack-compose/compose-project.png)
 
 > Make sure you have selected empty Compose activity.
 
 Give it the name of your choice.
 
-![empty_proj](/engineering-education/creating-a-flipped-box-card-in-android-jetpack-compose/empty_proj.png)
+![empty-proj](/engineering-education/creating-a-flipped-box-card-in-android-jetpack-compose/empty-proj.png)
 
 ### Step 2 - Creating a custom composable
 In this step, we will create a composable that we will apply some `Canvas` operations. In your `MainActivity`, outside everything, define a composable and name it `FlippedCard`.
@@ -145,7 +145,7 @@ Let us create a variable that represents a `Path` that will go through our recta
 
 This will be our graph:
 
-![card_graph](/engineering-education/creating-a-flipped-box-card-in-android-jetpack-compose/card_graph.png)
+![card-graph](/engineering-education/creating-a-flipped-box-card-in-android-jetpack-compose/card-graph.png)
 
 ```kotlin
 val path = Path().apply {
