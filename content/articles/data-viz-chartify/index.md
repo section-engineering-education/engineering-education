@@ -56,7 +56,7 @@ But, with so many Python libraries available for data visualization, such as Mat
 
 It was observed that data scientists spend a lot of time customizing various details when using most of the other libraries to create charts. You’ll frequently find yourself spending hours on StackOverflow troubleshooting and writing a lot of code simply to get your charts to work. The main intent behind the creation of Charity was to solve this problem.
 
-Giving you the ability to create charts with only a few lines of code and little customization.
+*Chartify is giving you the ability to create charts with only a few lines of code and little customization.*
 
 This isn't to say you won't be able to make changes to your charts. Chartify like I earlier mentioned was built on top of Bokeh, so you can use Bokeh’s API and customize as you please. Chartify also makes data plotting and data frame manipulation simple, even when you have different input and data types.
 
@@ -119,6 +119,7 @@ While working with Charify I discovered a problem. I was unable to display my ch
 When I ran my codes for the first time, I got an error message. If we take a look at the error message, we will see it was a compatibility issue. The latest version of ChromeDriver available only supports Chrome version 93 and my current Chrome browser version is 96.0.4664.45. 
 
 ![Error message](/engineering-education/data-viz-chartify/errormessage.png)
+
 *Screenshot by author*
 
 Why was this affecting chartify’s ability to display the visual? This is because like I mentioned earlier, ChromeDriver is needed for our PNG output (Visual). To resolve this problem, we will need to downgrade our Chrome browser. This can be achieved in 3 easy steps:
@@ -140,6 +141,7 @@ ch.show()
 The code we just ran will give us the output below. 
 
 ![Chartify](/engineering-education/data-viz-chartify/chartifyone.png)
+
 *Screenshot by author*
 
 Chartify makes it relatively easy for first-timers to get started. That's one amazing thing about it. This empty chart that got displayed shows users of the library how they can fill the chart with data. 
@@ -174,7 +176,7 @@ The first few arguments that we passed are `.set_title` and `.set_subtitle` whic
 
 *Screenshot by author*
 
-Next, let’s look at the pokemon type distribution but this time taking account of the ‘is_legendary’ attribute of each pokemon. We would also start by creating a dataframe of the data needed. We can achieve this by grouping our pokemon by the “type1” and “is_legendary” columns. This can be done by running the code snippet below:
+Next, let’s look at the pokemon type distribution but this time taking account of the ‘is_legendary’ attribute of each Pokemon. We would also start by creating a dataframe of the data needed. We can achieve this by grouping our Pokemon by the “type1” and “is_legendary” columns. This can be done by running the code snippet below:
 
 ```python
 Pokemon_type_distribution = (pokemon_df.groupby(['type1','is_legendary'])['s/n'].sum().reset_index())
@@ -193,11 +195,12 @@ ch.plot.bar(
 ch.show()
 ```
 ![Chartify](/engineering-education/data-viz-chartify/chartifythree.png)
+
 *Screenshot by author*
 
 ### Number of Pokemon in each generation
 
-Let's take a look at the number of pokemon in each generation. We would extract this data from the pokemon data by running the code snippet below.
+Let's take a look at the number of Pokemon in each generation. We would extract this data from the Pokemon data by running the code snippet below.
 
 ```python
 generations = pd.DataFrame ({'count': pokemon_df.generation.value_counts().sort_index()})
@@ -225,6 +228,7 @@ ch.show()
 We did not discuss the `color_column` in the previous bar chart. The `color_column` parameter gives your plot a color-based argument that colors the plot of the basis of the column specified. In our graph, Chartify will assign different colors to the different generations because we set `color_column` to be the column “generation”.
 
 ![Chartify](/engineering-education/data-viz-chartify/chartifyfour.png)
+
 *Screenshot by author*
 
 ### Number of Pokemon of each type in each generation
@@ -291,11 +295,12 @@ ch.show()
 ```
 
 ![Chartify](/engineering-education/data-viz-chartify/chartifysix.png)
+
 *Screenshot by author*
 
 ### Pokemon Type Combination
 
-We would plot a heatmap to see the pokemon type combination. Just as we did for the other visualizations, we would create a data frame. 
+We would plot a heatmap to see the Pokemon type combination. Just as we did for the other visualizations, we would create a data frame. 
 
 ```Python
 type_combos= (pokemon_df.groupby(['type1', 'type2'])['generation'].mean().reset_index())
@@ -319,11 +324,12 @@ ch.show()
 ```
 
 ![Chartify](/engineering-education/data-viz-chartify/chartifyseven.png)
+
 *Screenshot by author*
 
 ### Pokemon Weight distribution
 
-Let’s have a look at our pokemon weight. This will best be displayed in a histogram. In the `weight_kg` column, there were nan values. We will have to fill it. For this article, we would fill it with `0`.
+Let’s have a look at our Pokemon weight. This will best be displayed in a histogram. In the `weight_kg` column, there were nan values. We will have to fill it. For this article, we would fill it with `0`.
 
 ```python
 pokemon_df['weight_kg'] = pokemon_df['weight_kg'].fillna(0)
@@ -339,6 +345,7 @@ ch.plot.histogram(data_frame=pokemon_df, values_column='weight_kg',bins=50)
 ch.show()
 ```
 ![Chartify](/engineering-education/data-viz-chartify/chartifyeight.png)
+
 *Screenshot by author*
 
 ### Conclusion
