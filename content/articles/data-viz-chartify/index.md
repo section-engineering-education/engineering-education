@@ -180,7 +180,7 @@ Next, let’s look at the pokemon type distribution but this time taking account
 Pokemon_type_distribution = (pokemon_df.groupby(['type1','is_legendary'])['s/n'].sum().reset_index())
 print(Pokemon_type_distribution.head())
 ```
-Then we would visualize this data with Chartify by running:
+Then we would visualize this data with Chartify by running the code below:
 
 ```python
 ch = chartify.Chart(blank_labels=True, x_axis_type='categorical')
