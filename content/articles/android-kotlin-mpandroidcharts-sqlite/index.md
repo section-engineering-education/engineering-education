@@ -285,7 +285,7 @@ class DatabaseHandler(context: Context): SQLiteOpenHelper(context,DB_NAME,null,D
 ```
 
 ### STEP 4: Adding data to the database and populating the charts
-This section will add records to our database and then populate the charts using fetched records from the database. We will achieve this by calling the database handler class methods we just created.
+In this step, we will add records to our database and then populate the charts using fetched records from the database. We will achieve this by calling the database handler class methods we just created.
 
 #### Saving the records
 We do this by using `saveAnimals()` method and passing in the appropriate fields using the model class.
