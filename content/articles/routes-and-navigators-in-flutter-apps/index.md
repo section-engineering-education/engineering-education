@@ -14,8 +14,10 @@ images:
   - url: /engineering-education/routes-and-navigators-in-flutter-apps/hero.jpg
     alt: Introduction to Routing and Navigation in Flutter Applications Hero Image
 ---
-### Introduction
-Navigating in flutter apps, all you have to do is use the default navigation that comes with Flutter. For complex Flutter, applications consider the addition of dynamic links, authorizations, and authentication. GetX does a good job of helping you with this by using middleware and bindings, child routes.
+Navigation in simple flutter applications mostly requires using the default navigation that comes with flutter. One considers adding dynamic links, authorizations, and authentication for complex flutter applications. 
+<!--more-->
+`GetX` does an excellent job of helping you with this by using middleware, bindings, and child routes.
+
 ### Topics to handle
 - learn the usage of navigator, routes in Flutter.
 - Passing between one page to another.
@@ -23,23 +25,25 @@ Navigating in flutter apps, all you have to do is use the default navigation tha
 - navigators and routes implementation in flutter apps. 
 
 ### Prerequisites
-- Have Visual Studio Code or android studio installed.
-- Understand how to code flutter widgets.
-- Under flutter basics.
-- Understand widgets and how to import packages in Flutter.
-### Disclaimers
-- By default, the MaterialApp widget has a routes property. 
-- Navigator 2.0 is also referred to as the router.
-- DefaultTransitionDelegate helps the navigator to decide the transition of the screens.  
-### Definition of Navigator and Routes as used in Flutter
-- Navigator is a component that manages a stack made of routes. This feature allows the user to transit from one screen to another. Navigator performs screen transitions either by declarative or Imperative Api or Navigator. pages. Navigator.push and Navigator.pop are the most common method used. Stack of routes means that once you navigate from one page to another you can always go back to the previous page.
-- Route -A route defines the navigation of the app. It tells which page the navigator takes the user to. Routes made of screens and pages.
-To navigate through apps screen,one can navigate using Navigator.push(),navigator.pop().
+To follow along, the reader should have the following:
+- Have [Visual Studio Code](https://code.visualstudio.com/) or [Android Studio](https://developer.android.com/studio?gclid=CjwKCAiA55mPBhBOEiwANmzoQuHgn0i1aR9iMeLhHd157SvwfopjLcSpyCZ0i87nCuKYk7FQYfwgkhoC7KcQAvD_BwE&gclsrc=aw.ds) installed.
+- Experience in how to code and integrate flutter widgets.
+- Basic knowledge and understanding in developing flutter applications.
+
+### Disclaimer
+- By default, the `MaterialApp` widget has a routes property. 
+- `Navigator 2.0` is also referred to as the `router`.
+- `DefaultTransitionDelegate` helps the navigator to decide the transition of the screens. 
+ 
+### Definition of navigator and routes as used in flutter
+Navigator is a component that manages a stack made of routes. This feature allows the user to transition from one screen to another. Navigator performs screen transitions either by `Declarative` or `Imperative` Api or through `Navigator.pages`, `Navigator.push` and `Navigator.pop`, which are the most common method used.
+>Note: Stack of routes means that you can always go back to the previous page once you navigate from one page to another.
+
+A Route defines the navigation of the app. It tells which page the navigator takes the user to. Routes made of screens and pages. To navigate through apps screen, one can navigate using `Navigator.push(),navigator.pop()`.
+
 ### Types of navigator
-- Using named routes
-One of the best ways to manage many routes is using references. One can refer to a route either by Name, convention, or path.
-To map navigator route one uses builder functions. Material app uses this style to create value for callback methods.
-Illustration using code to show route names
+- Using named routes: One of the best ways to manage many routes is using references. One can refer to a route by name, convention, or path. To map the navigator route, one uses builder functions. The material app uses this style to create value for callback methods. Below is a code snippet illustrating route names.
+
 ```dart
 void main() {
  runApp(MaterialApp(
@@ -52,33 +56,32 @@ void main() {
  ));
 }
 ```
-- Using navigator.pop:
-To create a new route to a new page using this method :
+- Using `navigator.pop` method as illustrated below.
 
 ```dart
  Navigator.pop(context);
 ```
-- Using navigator.push:
-To create a new route to a new page using this method :
+
+- Using navigator.push  method as illustrated below.
 
 ```dart
  Navigator.push(context);
 ```
-### Example to understand this better
-Take a case for an application used by users to stream songs or videos. When a user taps on a song from a list of many songs, the new screen that pops up contains more details about the tapped one.
 
+An example to understand this better, take a case for an application used by users to stream songs or videos. When a user taps on a song from a list of many songs, the new screen that pops up contains more details about the tapped one.
 
-
-### Simple application that uses navigators and routes.
-
+### Simple application that use navigators and routes.
 For our application, we will have 3 screens. 
 
 ### Step one: Create a new flutter application
-  Open your visual code. On the menu bar click on `view` then `command palette` then click on `new flutter project`. Specify the location where to create your project then specify the name of your project. You can also create using the vs code terminal by typing 
+Open your visual code. On the menu bar click on view --> Command palette --> New flutter project. Specify the location where to create your project, then specify the name of your project. 
+
+You can also create a new flutter project using the VScode terminal by typing:
 ```cmd
 flutter create name_of_project 
 ```
-### Step two: Named routes
+
+#### Step two: Named routes
 Open main. dart file. Erase its content and replace it with this code. This case uses named routes for all three screens. It contains named routes of all the pages we have in our application.
 ```dart
 
@@ -106,8 +109,9 @@ class ThisApp extends StatelessWidget {
 }
 
 ```
-### Step three: Coding firstpage.
-  Create firstscreen.dart . This file represents the first page of our application. It contains a class that has an app bar, text, and button to navigate to the second screen. This case uses a navigator. push to navigate to the next page.
+#### Step three: Coding firstpage.
+Create `firstscreen` dart file. This file represents the first page of our application. It contains a class with an app bar, text, and button to navigate to the second screen. We will use the `navigator.push` method to navigate to the next page.
+
 ```dart
 import 'allfiles.dart';
 class FirstScreen extends StatelessWidget {
@@ -149,8 +153,10 @@ class MyDetails extends StatelessWidget {
 }
 
 ```
-### Step 4: Coding Second screen
-Let's create the Secondscreen. dart. This is the second screen of our application. It contains text and two buttons to navigate to the first and third screens. The first button uses the `navigator. push(context)` to help navigate to the third screen while the second button uses the `navigator. pop(context)` to navigate back to the previous page.   
+
+#### Step 4: Coding Second screen
+Let us create the `Secondscreen` dart file, which is the second screen of our application. It will contain text and two buttons to navigate the first and third screens. The first button uses the `navigator.push(context)` method to help navigate the third screen while the second button uses the `navigator.pop(context)` to navigate back to the previous page.  
+
 ```dart
 import 'allfiles.dart';
 class Secondscreen extends StatelessWidget {
@@ -189,10 +195,11 @@ class Secondscreen extends StatelessWidget {
     );
   }
 }
-
 ```
-### Step5: Coding Third Screen
-Let's create the third screen. dart. This is the last page of our flutter mobile application. It also contains text and two buttons to navigate to the first and second screens. The first button uses the `navigator. push(context)` to help navigate to the first screen while the second button uses the `navigator. pop(context)` to navigate back to the previous page.   
+
+#### Step five: Coding Third Screen
+Create the `Thirdscreen` dart file, which is the last page of our flutter mobile application. It also contains text and two buttons to navigate the first and second screens. The first button uses the `navigator.push(context)` method to help navigate the first screen while the second button uses the `navigator.pop(context)` to navigate back to the previous page.  
+
 ```dart
 import 'allfiles.dart';
 
@@ -235,18 +242,24 @@ class Thirdscreen extends StatelessWidget {
 }
 
 ```
-### Step 6. Create allfiles.dart. It contains all the exports of all other files. File used as one import to reduce the repetition of imports.
+
+### Step six: Create allfiles.dart. 
+It contains all the exports of all other files. File used as one import to reduce the repetition of imports.
+
 ```dart
 export 'package:flutter/material.dart';
 export 'firstscreen.dart';
 export 'Secondscreen.dart';
 export 'Thirdscreen.dart';
 ```
+
 1. To run the flutter app use the following commands:
+
 ```cmd
 flutter run -d chrome //runs the flutter app in chrome browser
 ```
-or you can run using a browser
+or you can run using a browser:
+
 ```cmd
 flutter run -d edge //runs the flutter app in the edge browser
 ```
@@ -255,8 +268,6 @@ Below are screenshots showing the expected results
 ![FirstPage](/engineering-education/introduction-of-routing-and-navigation-in-flutter-applications/firstpage.jpg)
 
 ![SecondPage](/engineering-education/introduction-of-routing-and-navigation-in-flutter-applications/secondpage.jpg)
-
-
 
 ![ThirdPage](/engineering-education/introduction-of-routing-and-navigation-in-flutter-applications/thirdpage.jpg)
 
@@ -271,4 +282,4 @@ The navigators and routing in flutter applications are key to flutter applicatio
 - https://medium.com/flutter-community/flutter-routes-and-navigation-69f128a9ea8f
 - https://medium.com/flutter/learning-flutters-new-navigation-and-routing-system-7c9068155ade
  
-Enjoy Coding !!!
+Happy coding !!!
