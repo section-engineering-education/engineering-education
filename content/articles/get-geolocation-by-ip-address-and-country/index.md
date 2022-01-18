@@ -1,6 +1,6 @@
 ### Introduction
 
-Due to a shortage of data collection methods, geolocation is currently in progress. Most geolocation providers were aware of pranks and monitoring GPS tracking devices. APIs may now be used by developers to move around. New communication points in programming languages are required for cross-framework collaboration (APIs). Customers that have been coerced have IP addresses that correspond to the country where they live. Take advantage of anonymizers, VPNs, and intermediaries to keep your identity secret.
+Is your website requesting the customers to submit their nationality or other location related data? if so, it is better to retrieve it automatically by using a geolocation API. For my digital product shop, I used a popular geolocation API service to collect the clients' whereabouts. It's usually a good idea to make data entry easier for the end user. We should make them happy by making the process as painless as possible. We'll look at how to get geolocation using an IP address and a country name and code. It’s a two step process where the step1 is to get the IP address and the step 2 is to get the geolocation.
 
 ### Table of content
 
@@ -9,11 +9,11 @@ Due to a shortage of data collection methods, geolocation is currently in progre
 - [Prerequisites](#prerequisites)
 - [Objectives](#objectives)
 - [Geolocation Marketing for Business](#geolocation-marketing-for-business)
-- [Methods of Geolocation](#methods-of-geolocation)
-- [Sign the current IP address.](#sign-the-current-ip-address)
-- [Plan a PHP cURL API call for geolocation data.](#plan-a-php-curl-api-call-for-geolocation-data)
+- [Different uses of getting Geolocation](#different-uses-of-getting-geolocation)
+- [Get and validate current IP address](#get-and-validate-current-ip-address)
+- [Prepare API request to get geolocation via PHP cURL](#prepare-api-request-to-get-geolocation-via-php-curl)
 - [country geolocation in response to an API call](#country-geolocation-in-response-to-an-api-call)
-- [Swap Geolocation API](#swap-geolocation-api)
+- [Alternate Geolocation API](#alternate-geolocation-api)
 - [Conclusion](#conclusion)
   - [Further reading](#further-reading)
 
@@ -27,7 +27,7 @@ Due to a shortage of data collection methods, geolocation is currently in progre
 
 - Get the current IP address.
 - Get the area using the PHP cURL API.
-- Geolocation data is employed with programming connection point response to recall a nation.
+- Different uses of getting Geolocation
 - How to enable/disable Geolocation API.
 
 ### Geolocation Marketing for Business
@@ -39,40 +39,151 @@ Due to a shortage of data collection methods, geolocation is currently in progre
 - Constant geolocation progress of logs and other IT information
   > Businesses need a geolocation and mobile technology. With cross-platform mobile applications, companies may combine location with online media and other data to generate superior services.
 
-### Methods of Geolocation
+### Different uses of getting Geolocation
 
-IP addresses can find consumers. Consumer mistakes may nevertheless maintain data consistency and integrity. A common function in applications like currency converters and transit planners is to estimate district visits. The site's single language aids translation. A second layer displays the client's location. To show customers and equipment on Google Maps, utilize the Google Maps API.
+There are more uses for getting the geolocation of the users by the IP address.
 
-### Sign the current IP address.
+- It gives accuracy and dependability of the location data whereas the user may enter wrong data.
+- It provides a single entry point to get the data that will be used in many places, like location-based currency convertor, shipping calculation or many.
+- To calculate the visit statistics based on the region.
+- It helps to switch the language of the multilingual website content by localizing the visitors.
+- To plot the users’ location on a map layer of the UI. Google Maps JavaScript API provides Geolocation services to display the location of the users and device on a map.
 
-This is the mark of appearance code that allows consumers to be viewed based on their current geolocation data. It also exchanges the district association class and imports the region association class. When the IP address is valid and produces a lot of data, it asks for the geolocation. Alternatively, something terrible may occur, in which case the UI will be informed through the oversight message.
+### Get and validate current IP address
+
+This is the home page code which contains the HTML code to acknowledge users with the current geolocation data. It imports the location service class invokes the methods to get and validate the IP address. Once the IP is validated and returns true, it requests the geolocation data. Or else, it will display the error message to the UI.
 
 - index.php
 
-  ![layout](layout.jpg)
+```php
+<?php
+require_once 'lib/Request.php';
+$requestModel = new Request();
+$ip = $requestModel->getIpAddress();
+$isValidIpAddress = $requestModel->isValidIpAddress($ip);
+?>
+<HTML>
+<HEAD>
+<TITLE>Get Geo Location by the IP address</TITLE>
+<link href="assets/css/style.css" type="text/css" rel="stylesheet" />
+</HEAD>
+<BODY>
+	<div class="txt-heading">Get Geo Location by the IP address</div>
+			<?php
+if ($isValidIpAddress == "") {
+    echo "<div class='error'>Invalid IP address $ip</div>";
+} else {
+    $geoLocationData = $requestModel->getLocation($ip);
+    print "<PRE>";
+    print_r($geoLocationData);
+    ?>
+	<div id="location">
+		<div class="geo-location-detail">
 
-### Plan a PHP cURL API call for geolocation data.
+			<div class="row">
+				<div class="form-label">
+					Country Name: <?php  echo $geoLocationData['country'];?>
+				</div>
+			</div>
+			<div class="row">
+				<div class="form-label">
+					Country Code: <?php   echo $geoLocationData['country_code'];?>
+				</div>
+			</div>
+			<div class="row">
+				<div class="form-label">
+					Ip Address: <?php  echo $geoLocationData['ip'];?>
+				</div>
+			</div>
+		</div>
+	</div>
+<?php }?>
+</BODY>
+</HTML>
+```
 
-`$_SERVER` is used to form an if-else conditional ladder for the IP address acquisition.
-`GetLocation()` may utilize cURL to access the `ipwhois API` when an IP address is supported, which gives a large amount of data. Afterward, the API will return a JSON object. Geolocation data is used to determine the nation's location.
+### Prepare API request to get geolocation via PHP cURL
 
-![layout-2](layout-2.jpg)
+The `getIPAddress()` function builds an if-else-if ladder of the majority of the scenario to get the non-empty IP address using the `$_SERVER` variable. Once the IP is validated and returns true, the `getLocation()` function to request the ipwhois API via cURL. The API will return a JSON response as a result. This example decodes the JSON response and parses the geolocation data to get the country details from it.
+
+```php
+<?php
+class Request
+{
+
+    public function getIpAddress()
+    {
+        $ipAddress = '';
+        if (! empty($_SERVER['HTTP_CLIENT_IP']) && $this->isValidIpAddress($_SERVER['HTTP_CLIENT_IP'])) {
+            // check for shared ISP IP
+            $ipAddress = $_SERVER['HTTP_CLIENT_IP'];
+        } else if (! empty($_SERVER['HTTP_X_FORWARDED_FOR'])) {
+            // check for IPs passing through proxy servers
+            // check if multiple IP addresses are set and take the first one
+            $ipAddressList = explode(',', $_SERVER['HTTP_X_FORWARDED_FOR']);
+            foreach ($ipAddressList as $ip) {
+                if ($this->isValidIpAddress($ip)) {
+                    $ipAddress = $ip;
+                    break;
+                }
+            }
+        } else if (! empty($_SERVER['HTTP_X_FORWARDED']) && $this->isValidIpAddress($_SERVER['HTTP_X_FORWARDED'])) {
+            $ipAddress = $_SERVER['HTTP_X_FORWARDED'];
+        } else if (! empty($_SERVER['HTTP_X_CLUSTER_CLIENT_IP']) && $this->isValidIpAddress($_SERVER['HTTP_X_CLUSTER_CLIENT_IP'])) {
+            $ipAddress = $_SERVER['HTTP_X_CLUSTER_CLIENT_IP'];
+        } else if (! empty($_SERVER['HTTP_FORWARDED_FOR']) && $this->isValidIpAddress($_SERVER['HTTP_FORWARDED_FOR'])) {
+            $ipAddress = $_SERVER['HTTP_FORWARDED_FOR'];
+        } else if (! empty($_SERVER['HTTP_FORWARDED']) && $this->isValidIpAddress($_SERVER['HTTP_FORWARDED'])) {
+            $ipAddress = $_SERVER['HTTP_FORWARDED'];
+        } else if (! empty($_SERVER['REMOTE_ADDR']) && $this->isValidIpAddress($_SERVER['REMOTE_ADDR'])) {
+            $ipAddress = $_SERVER['REMOTE_ADDR'];
+        }
+        return $ipAddress;
+    }
+
+    public function isValidIpAddress($ip)
+    {
+        if (filter_var($ip, FILTER_VALIDATE_IP, FILTER_FLAG_IPV4 | FILTER_FLAG_IPV6 | FILTER_FLAG_NO_PRIV_RANGE | FILTER_FLAG_NO_RES_RANGE) === false) {
+            return false;
+        }
+        return true;
+    }
+
+    public function getLocation($ip)
+    {
+        $ch = curl_init('http://ipwhois.app/json/' . $ip);
+        curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+        $json = curl_exec($ch);
+        curl_close($ch);
+        // Decode JSON response
+        $ipWhoIsResponse = json_decode($json, true);
+        // Country code output, field "country_code"
+        return $ipWhoIsResponse;
+    }
+}
+```
 
 ### country geolocation in response to an API call
 
-The area measurements, nation name, and ISO 3166 code are all shown on the map below.
+The below images show the location data with the country name, code.
 
-![geolocation-output-2](geolocation-output-2.jpg)
+![geolocation-output-2](/engineering-education/get-geolocation-by-ip-address-and-country/geolocation-output-2.jpg)
 
-An error message is shown to the client if the IP address is invalid.
+If the IP address is not a valid one, then the code will return the error message to acknowledge the user.
 
-![geolocation-output-1](geolocation-output-1.jpg)
+![geolocation-output-1](/engineering-education/get-geolocation-by-ip-address-and-country/geolocation-output-1.jpg)
 
-### Swap Geolocation API
+### Alternate Geolocation API
 
-There are a variety of ways APIs may assist you to get new acceptance for local data. The plugin affiliation allows access via PHP, ASP, and JavaScript, despite the restriction. Using token-based authentication, this library identifies IP address space. Local data may be recovered using PHP's built-in GeoIP2 PECL extension. Using either the IP address or the space name, wrap up the country name:
+These are some of the alternatives API providing services to access location data programmatically.
 
-![geo-ip](geo-ip.jpg)
+- GeoPlugin service allows access from PHP, ASP, JavaScript and more.
+- IPinfo library to get location via token-based authentication.
+- PHP supports integrating the GeoIP2 package of PECL extension to get the location data by using predefined functions. The code to get the country name from the IP address or domain name is,
+
+```php
+geoip_country_name_by_name ( $hostname );
+```
 
 ### Conclusion
 
