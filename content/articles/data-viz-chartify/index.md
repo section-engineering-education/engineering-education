@@ -171,6 +171,7 @@ ch.show()
 The first few arguments that we passed are `.set_title` and `.set_subtitle` which are for your chart title and subtitle. You can specify a name for your x and y axes using `.axes.set_xaxis_label` and `.axes.set_yaxis_label` respectively. The last argument, `.plot.bar` requires your data_frame which is the data to be plotted. The other parameters define the categorical and numerical columns you want to plot. 
 
 ![Chartify](/engineering-education/data-viz-chartify/chartifytwo.png)
+
 *Screenshot by author*
 
 Next, let’s look at the pokemon type distribution but this time taking account of the ‘is_legendary’ attribute of each pokemon. We would also start by creating a dataframe of the data needed. We can achieve this by grouping our pokemon by the “type1” and “is_legendary” columns. This can be done by running the code snippet below:
