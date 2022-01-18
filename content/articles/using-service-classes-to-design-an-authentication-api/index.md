@@ -25,13 +25,13 @@ You can contact this service class when you construct an API for it in your appl
 
 - To remove third-party packages from your codebase.
 - When there is a collection of features that can be combined.
-- To exchange functionality between different ViewModels.
+- To exchange functionality between different view models.
 ### Common scenarios for which you might develop a service
-- Local storage can be read and written to.
-- Make use of a web API.
-- Create a user account.
-- Make some complex calculations.
-- Wrap firebase or another third-party package with a wrapper.
+- when local storage can be read and written to.
+- When making use of a web API.
+- When creating a user account.
+- When making some complex calculations.
+- When wrapping firebase or another third-party package with a wrapper.
 ### Authentication with Firebase
 Install and import the firebase auth plugin into your Dart code before using firebase authentication:
 ```dart
