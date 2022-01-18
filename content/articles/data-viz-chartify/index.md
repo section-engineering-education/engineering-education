@@ -19,7 +19,7 @@ Although Chartify isn�t the new kid on the block, many data scientists are sti
 In this article, we'll learn how to visualize  datasets with Chartify. This article will follow a very clear structure, starting with an overview of Chartify to what makes distinguishes it from other charting libraries and ending with a demonstration of Chartify in action.
 
 ### Table of content
-1. [Prerequisites](#prequisites)
+1. [Prerequisites](#prerequisites)
 2. [What is Chartify?](#what-is-chartify)
 3. [What makes Chartify ‘intuitive’?](#what-makes-chartify-intuitive)
 4. [Installing Chartify](#installing-chartify)
@@ -44,7 +44,7 @@ To follow along with this article, you should have a:
 ### What is Chartify?
 According to the documentation, [Chartify](https://chartify.readthedocs.io/en/latest/) is a Python library that aims to make it easy for data scientists to create charts. This open-source library was introduced to the world in this article by [Spotify Lab](https://engineering.atspotify.com/2018/11/15/introducing-chartify-easier-chart-creation-in-python-for-data-scientists/), as a means for you and me to build visually appealing charts using Python.
 
-The library was built on Bokeh. Bokeh is a Python visualization framework that JavaScript based. Bokeh can be used to generate interactive visualizations for modern web browsers. You can use Bokeh to generate JavaScript-powered visualizations without having to write any JavaScript. I am sure you know what that means for Chartify... Yeah, you got it! Fantastic visuals.
+The library was built on [Bokeh](https://docs.bokeh.org/en/latest/docs/user_guide/styling.html). Bokeh is a Python visualization framework that JavaScript based. Bokeh can be used to generate interactive visualizations for modern web browsers. You can use Bokeh to generate JavaScript-powered visualizations without having to write any JavaScript. I am sure you know what that means for Chartify... Yeah, you got it! Fantastic visuals.
 
 ![Introduction to Chartify](/engineering-education/data-viz-chartify/chartifydoc.png)
 
@@ -66,7 +66,7 @@ Let's see how Chartify can help you visualize your data, but first, let's get it
 
 All code used for this project is available on [GitHub](https://github.com/Bennykillua/Project/blob/main/Data%20visualization%20using%20Charify/Chartify.ipynb)
 
-If you are working on your local machine, you will need to install Chartify. I highly recommend creating a virtual environment to better manage your packages. 
+If you are working on your local machine, you will need to install Chartify. I highly recommend creating a [virtual environment](https://www.section.io/engineering-education/introduction-to-virtual-environments-and-dependency-managers/) to better manage your packages. 
 
 Chartify can be installed by running the code below:
 
