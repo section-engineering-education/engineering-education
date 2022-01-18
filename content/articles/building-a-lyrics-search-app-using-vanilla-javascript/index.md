@@ -16,7 +16,7 @@ images:
 ---
 Not knowing the lyrics of a song is a problem most song-lovers encounter. In this article, you will be creating a platform where users can search for lyrics by entering the artist's name or the title of the song.
 <!--more-->
-You will be creating a web application using HTML5, CSS3, Vanilla JavaScript, async-await with `fetch()` method, OVH API, and ECMAScript 2015 (ES6) features like arrow functions to build a search feature for lyrics. 
+You will create a web application using HTML5, CSS3, Vanilla JavaScript, async-await with `fetch()` method, OVH API, and ECMAScript 2015 (ES6) feature like arrow functions to build a search feature for lyrics. 
 
 ### Table of contents
 - [Pre-requisites](#pre-requisites)
@@ -31,7 +31,7 @@ You will be creating a web application using HTML5, CSS3, Vanilla JavaScript, as
 - [Conclusion](#conclusion)
 
 ### Pre-requisites
-To follow along with this tutorial, you need the following:
+To follow along with this tutorial, you need:
 - A code editor (like Visual Studio Code).
 - Basic knowledge of HTML5, CSS, and JavaScript.
 - A laptop with an internet connection.
@@ -44,8 +44,8 @@ For laying out the structure of the lyrics search app, you will use HTML5. This 
 - In the `head` tag of the HTML file, you will input the needed or pre-defined meta tags that are essential for all web apps.
 - Also, you would link the CSS file to the HTML file and also give the web app a title of `Lyrics Search App` embedded within `title` tags.
 - Next, you would create a `div` with a class `container`. This `div` would house other `div`s that you will create.
-- Moving forward, you create another `div` with a class `intro-text` with two other separate headers `h1` and `h2` tags, respectively.
-- The content of the first text is `Learn your favorite`, it will be embedded in the `h1` tag, while the content of the second text is `song lyrics`, it will be embedded in the `h2` tag.
+- You create another `div` with a class `intro-text` with two other separate headers `h1` and `h2` tags, respectively.
+- The content of the first text is `Learn your favorite`, it will be embedded in the `h1` tag, while the content of the second text is `song lyrics`, we will embed it in the `h2` tag.
 
 Inside the `div` with a class `container`, you will create a `div` with an `id` of `lyrics-search` where we create a form containing an input field, and also another `div` to display fetched lyrics. 
 
@@ -64,7 +64,7 @@ This is the code snippet for the structure of the web app:
 <body>
     <div class="container">
         <div class="intro-text">
-            <h1>Learn your favourite</h1>
+            <h1>Learn your favorite</h1>
             <h2>song lyrics</h2>
         </div>
         <div id="lyrics-search">
@@ -140,7 +140,7 @@ h2 {
     text-align:center;
     padding:1rem 0;
 }
- /**You might decide to use the comma-separated form of styling tags with the same properties. I decided to be more explicit here for the sake of clarity**/
+ /**You might decide to use the comma-separated form of styling tags with the same properties. I was more explicit here for the sake of clarity**/
 ```
 
 Centering the `div` container where the form and input field are embedded, using its `id` (`lyrics-search`).
@@ -266,7 +266,7 @@ async function startSearch(searchValue) {
 ```
 
 ### Testing the current state of the web app
-At this point, you are going to test if the web app is actually returning the object of data from the OVH API when you input the title of a song or artist's name in the search field.
+You are going to test if the web app is actually returning the object of data from the OVH API when you input the title of a song or artist's name in the search field.
 
 The following are the tasks to carry out in this section:
 - Comment out the `showData` function in the code snippet above (remember to uncomment the showData function).
@@ -303,18 +303,18 @@ function showData(data) {
 }
 ```
 
-- In the code snippet above, a `showData()` function is created and data is passed as an argument.
+- In the code snippet above, a `showData()` function is created and we passed data as an argument.
 - The name of the function is very descriptive, it is to display the lyrics on the webpage. The question that comes to mind is where you want to display the lyrics.
 - The lyrics will be displayed inside an empty `div` in the `lyrics.html` file. The variable that connects the `div` to the JavaScript file is the variable output.
 
 ### Inner - HTML
-This is the DOM property that either sets or retrieves the content of an HTML element. In this instance, you will set the content of the empty `div` in the `lyrics.html` file to display the lyrics' suggestions in a list form.
+This is the DOM property that either sets or retrieves the content of an HTML element. You will set the content of the empty `div` in the `lyrics.html` file to display the lyrics' suggestions in a list form.
 
-To access the data, refer to the screenshot above. You will notice that the data embodies some set of objects which have the properties we want to display on the webpage.
+To access the data, refer to the screenshot above. You notice the data embodies some set of objects which have the properties we want to display on the webpage.
 
 Also, from the screenshot above, the object inside the data has a key of `title` that returns a property of the song title, likewise an artist object that embodies a key of `name` that returns a property of the song artist.
 
-Our concern is how to display the song title and song artist name on the webpage.
+Our concern is how to display the song title and song artist's name on the webpage.
 
 The `map()` method is one of the most used methods. The method returns a new array based on the values of the existing array. 
 
@@ -326,12 +326,12 @@ const tripleNo = numbers.map(tripleNum);
 function tripleNum(number) {
    return number * 3;
 }
-console.log(tripleNo);//[6,12,18,24] this should be displayed in your console.
+console.log(tripleNo);//logs [6,12,18,24]
 ```
 
 Normally, to access the song title and artist's name, you would have invoked `data.data.title` for the song title and `data.data.artist.name` for the artist's name. If you recall, the argument - song represents the resulting data. 
 
-Since the data has been mapped, you can access the song title using `song.title` as well as the artist's name by using `song.artist.name`.
+Since we have mapped the data, you can access the song title using `song.title` as well as the artist's name by using `song.artist.name`.
 
 The following code helps us listen for a click event inside the output InnerHTML:
 
@@ -356,7 +356,7 @@ output.addEventListener('click', e=>{
 Note, arguments are the actual values passed to a function, while parameters are the values passed when a function is defined. Arguments are values passed when a function is invoked. That's why we referred to the two variables passed into the `getLyrics()` function as parameters and not arguments.
 
 ### GetLyrics() async function
-This is the most important function because this is what makes us get the lyrics themselves displayed.
+This is the most important function because this makes us get the lyrics themselves displayed.
 
 The function takes in two parameters, `artist` and `songTitle` respectively. Recall that you can search for lyrics by inputting either the artist's name or the song title. This is the reason why the `getLyrics()` function is taking those parameters.
 
@@ -492,7 +492,7 @@ async function getLyrics(artist, songTitle) {
     const lyrics = data.lyrics;
     if (lyrics === undefined){
         alert('lyrics doesnt exist in this api');
-        console.log('lyrics doesnt exist in this api');
+        console.log('lyrics doesn't exist in this api');
     }
   
     output.innerHTML = `<h2><strong>${artist}</strong> - ${songTitle}</h2>
