@@ -351,3 +351,7 @@ Happy coding...
 ### Resources
 - [Welcome to chartify’s documentation!](https://chartify.readthedocs.io/en/latest/)
 - [Chartify data visualization](https://www.geeksforgeeks.org/data-visualisation-with-chartify/)
+
+
+---
+Peer Review Contributions by: [Bonface Muriithi](/engineering-education/authors/bonface-muriithi)
