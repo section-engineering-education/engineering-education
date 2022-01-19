@@ -176,7 +176,7 @@ The first few arguments that we passed are `.set_title` and `.set_subtitle` whic
 
 *Screenshot by author*
 
-Next, let’s look at the pokemon type distribution but this time taking account of the ‘is_legendary’ attribute of each Pokemon. We would also start by creating a dataframe of the data needed. We can achieve this by grouping our Pokemon by the “type1” and “is_legendary” columns. This can be done by running the code snippet below:
+Next, let’s look at the Pokemon type distribution but this time taking account of the `is_legendary` attribute of each Pokemon. We would also start by creating a data-frame of the data needed. We can achieve this by grouping our Pokemon by the `type1` and `is_legendary` columns. This can be done by running the code snippet below:
 
 ```python
 Pokemon_type_distribution = (pokemon_df.groupby(['type1','is_legendary'])['s/n'].sum().reset_index())
