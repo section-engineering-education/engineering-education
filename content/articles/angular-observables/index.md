@@ -6,7 +6,7 @@ url: /angular-observables/
 title: How to Work with Observables in Angular 12
 description: In this tutorial, we discuss the concepts of Angular observables, learn what they are, how they are used in Angular applications, and finally build a sample project.
 author: owino-wendy
-date: 2022-01-03T00:00:00-17:10
+date: 2022-01-19T00:00:00-10:22
 topics: [Languages]
 excerpt_separator: <!--more-->
 images:
@@ -14,7 +14,7 @@ images:
   - url: /engineering-education/angular-observables/hero.png
     alt: Subscribe to Observables image alt
 ---
-Observables concept in JavaScript is very crucial when it comes to asynchronous programming or whenever you're handling events. 
+The JavaScript concept, Observables is very crucial when it comes to asynchronous programming or whenever you are handling events.
 <!--more-->
 They play a significant role whenever message passage is required within an Angular application.
 
@@ -47,12 +47,13 @@ It's a declarative way of defining methods in your application for publishing sp
 
 One concept we constantly interact with when discussing observables is the use of an observer. Observers are used in defining the functions, in this case, (callback functions). These methods include  `next()`, `error()`, and `complete()`.
 
-The observer objects are typically passed to observable methods as arguments. Then, the observable function calls these observer functions due to triggers such as events. 
+The observer objects are typically passed to observable methods as arguments. Then, the observable function calls these observer functions due to triggers such as events.
 
 ### Sample JavaScript observable
 With a basic idea of observables, let's implement a sample observer class to get in-depth knowledge on how they work.
 
 Open `index.js` file and add the following:
+
 ```javascript
 //define observable class here
 class ObservableExample {
@@ -107,7 +108,7 @@ Previously, we had created a constructor for this class; hence we pass in an obs
 
 Additionally, we use the timer method since we assume that an HTTP response takes some time, hence the mimic. In our case, we use a rather worst-case scenario of 5s.
 
-> It's important to note that responses from the server may take some time to arrive.   
+> It's important to note that responses from the server may take some time to arrive.
 > We have therefore used the `setTimout()` method to mimic this functionality. You may as well set the time that meets your demands.
 
 As you may recall, we discussed that observers have some methods. In this case, we call the `next()` and `complete()` operations.
@@ -115,6 +116,7 @@ As you may recall, we discussed that observers have some methods. In this case, 
 Finally, we implement the callback functions that our observable sends. We then run our observable whenever a subscription occurs (via the `subscribe()` method).
 
 Output:
+
 ```bash
 // Upon execution
 // ( 5 seconds) I have got the response!
@@ -125,6 +127,7 @@ Output:
 Now that we've basic concepts of an observable in pure JavaScript, let's proceed and set up our Angular 12 project.
 
 First, open the terminal (Ctrl+Alt+T), and run the following commands:
+
 ```bash
 ng new observable-example
 ```
@@ -132,11 +135,13 @@ ng new observable-example
 ![project-setup](/engineering-education/angular-observables/project-setup.png)
 
 Next, create an observable component by running the following commands:
+
 ```bash
 ng g component observable
 ```
 
 To ensure that observable component works effectively, edit the `app.component.html` template as shown below:
+
 ```html
 <app-observable></app-observable>
 ```
@@ -151,11 +156,13 @@ To create an observer is simple in Angular, unlike the previous example where we
 Here, we call the already defined class `Observable` from the [RxJs](https://rxjs.dev) and then pass the necessary arguments, as we will see shortly.
 
 Create an API service by running the following commands:
+
 ```bash
 ng g service api
 ```
 
 Next, proceed and edit the service as shown below:
+
 ```typescript
 // edit the api.service.ts file
 import { Injectable } from '@angular/core';
@@ -179,9 +186,10 @@ We have defined the above service since we interact primarily with observable co
 
 We inject the HTTP client in the above code, which makes API requests to a remote server.
 
-Next, we are now sure that our API returns an observable. 
+Next, we are now sure that our API returns an observable.
 
 To subscribe to this observable, let's  now edit the observable component as shown below:
+
 ```typescript
 //edit the observable.component.ts file as follows
 import { Component, OnInit } from '@angular/core';
@@ -212,6 +220,7 @@ clients$: Observable<User[]>
 ```
 
 Next, edit the template to list the clients as follows:
+
 ```html
 <!--edit the observable.component.html template as follows -->
 <h3>Clients List</h3>
@@ -222,7 +231,7 @@ Next, edit the template to list the clients as follows:
 </ol>
 ```
 
-You notice from the script above that we're importing the service we had previously created. 
+You notice from the script above that we're importing the service we had previously created.
 
 We then use the concept of dependency injection to inject this service into our component constructor.
 
@@ -232,7 +241,8 @@ We have also created a `User` interface to act as our user model. We then define
 
 Next, we define the method `getClients()`. Using this method, we subscribe to it such that whenever we receive the user's list, we get that value and pass it to the `clients$` public variable.
 
-We may also modify the `getClients()` method to handle errors that may result from the API. 
+We may also modify the `getClients()` method to handle errors that may result from the API.
+
 ```typescript
  getClients(){
     this.apiService.getAll()
@@ -247,9 +257,10 @@ We may also modify the `getClients()` method to handle errors that may result fr
 
 Notice that we pass both the response and the error as callbacks, as we had defined them manually in the previous section.
 
-Well, this is just one way of working with observables in Angular. 
+Well, this is just one way of working with observables in Angular.
 
 The other way involves using pipes in the template, as we will learn shortly.
+
 ```typescript
 // define another method in the observable.component.ts  file
   getClients2(){
@@ -257,11 +268,12 @@ The other way involves using pipes in the template, as we will learn shortly.
   }
 ```
 
-The reason why this method is more efficient as compared to the previous is that it avoids memory leaks since our subscriptions are not left open. 
+The reason why this method is more efficient as compared to the previous is that it avoids memory leaks since our subscriptions are not left open.
 
 Additionally, this method ensures that we don't have to worry about our subscriptions management since it's being handled for us by the application.
 
 Now that we understand the importance of this method, let's edit our template to ensure subscription during the lifecycle of our component.
+
 ```html
 <ol>
     <li *ngFor="let client of clients$ | async">
@@ -273,11 +285,12 @@ Now that we understand the importance of this method, let's edit our template to
 Notice that we're using the `async` pipe. The async pipe ensures our observable's automatic `subscribe/unsubscribe`  operations.
 
 ### Defining manual observables
-Previously, we defined our class for observables and worked with basic examples. 
+Previously, we defined our class for observables and worked with basic examples.
 
 However, JavaScript has a library, [RxJS](https://rxjs.dev) (Reactive Extension for Javascript), that we can use to handle our observables.
 
 Now, create a file, `index.ts`, and edit it as described below:
+
 ```typescript
 //import an observable from the rxjs
 import { Observable } from "rxjs/Observable"
