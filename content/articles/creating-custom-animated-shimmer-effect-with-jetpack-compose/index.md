@@ -2,29 +2,29 @@
 layout: engineering-education
 status: publish
 published: true
-url: /custom-animated-shimmer-effect-with-jetpack-compose/
+url: /creating-custom-animated-shimmer-effect-with-jetpack-compose/
 title: Creating a Custom Animated Shimmer Effect with Jetpack Compose
 description: This tutorial takes the reader through the process of creating a custom animated shimmer effect with Jetpack Compose.
 author: Kirwa-Elyjah
-date: 2022-01-17T00:00:00-11:40
+date: 2022-01-19T00:00:00-04:30
 topics: [Languages]
 excerpt_separator: <!--more-->
 images:
 
-  - url: /engineering-education/custom-animated-shimmer-effect-with-jetpack-compose/hero.png
-    alt: Custom Animated Shimmer Effect with Jetpack Compose
+  - url: /engineering-education/creating-custom-animated-shimmer-effect-with-jetpack-compose/hero.png
+    alt: Creating Custom Animated Shimmer Effect with Jetpack Compose
 ---
-The shimmer effect gives an appealing appearance of the desired parts in an app. It is used as a placeholder when the content of the app is loading.
+The shimmer effect gives an appealing appearance on specific parts in an application. It is used as a placeholder when the content of the app is loading.
 <!--more-->
-This content could be from the internet or from the device's local storage. When the data is fetched, the shimmer stops, and the data is displayed.
+This content could be from the internet or from the device's local storage. When the data is fetched, the shimmer effect stops, and the data is displayed.
 
-In this tutorial, we will create an animated shimmer effect in Jetpack Compose
+In this tutorial, we will create an animated shimmer effect in Jetpack Compose.
 
 ### Prerequisites
 To follow along with this tutorial, the reader should:
 - Have [Android Studio](https://developer.android.com/studio#downloads) installed.
 - Have an understanding of the [Kotlin](https://developer.android.com/kotlin) programming language.
-- Have an understanding and experience of building apps with [Jetpack Compose](https://developer.android.com/jetpack/compose).
+- Have an understanding and experience of building Android apps using [Jetpack Compose](https://developer.android.com/jetpack/compose).
 
 ### Goals
 By the end of this tutorial, the reader will be able to:
@@ -34,28 +34,28 @@ By the end of this tutorial, the reader will be able to:
 
 ### Terminologies
 In this tutorial, you will encounter the following Compose terminologies:
-- `Modifier` - It is a property that is used to change component's appearance.
-- `Composables` - Functions that programmatically define an app's UI by describing how it should appear.
+- `Modifier` - This property is used to change a component's appearance.
+- `Composables` - Functions that programmatically define an app's UI. They describe how it should appear.
 - `Spacer` - It is a component that displays an empty space between objects on the UI.
-- `Row` - In compose, a `row` aligns items horizontally.
+- `Row` - In Compose, a `row` aligns items horizontally.
 - `Column` - Aligns items vertically.
-- `Easing` - Easing is a way to adjust an animation’s fraction. It determines the acceleration of the animation during the start-end interoperation.
+- `Easing` - Easing is a way to adjust an animation's fraction. It determines the acceleration of the animation during the start-end interoperation.
 
-Let's get started :)
+Let's get started.
 
-### Step 1. Creating a new Compose Project
-To create a new Compose project, launch Android studio and select `New Project` then `Compose Activity`. Name it `ShimmerDemo` and click on `finish` to build the project.
+### Step 1 - Creating a new Compose project
+To create a new Compose project, launch Android Studio and select `New Project` then `Compose Activity`. Name it `ShimmerDemo` and click on `finish` to build the project.
 
 Wait till the building is finished.
 
-![Create Project-1](/engineering-education/custom-animated-shimmer-effect-with-jetpack-compose/create-project-step-one.png)
+![Create Project-1](/engineering-education/creating-custom-animated-shimmer-effect-with-jetpack-compose/create-project-step-one.png)
 
-![Create Project-2](/engineering-education/custom-animated-shimmer-effect-with-jetpack-compose/create-project-step-two.png)
+![Create Project-2](/engineering-education/creating-custom-animated-shimmer-effect-with-jetpack-compose/create-project-step-two.png)
 
-### Step 2. Creating a new Kotlin file
+### Step 2 - Creating a new Kotlin file
 Right-click on the app's package folder and create a new Kotlin file. Name this file `Shimmer` or any other name of your choice.
 
-In this file, we will create a composable function that will define how the Shimmer will appear.
+In the `Shimmer` file, we will create a composable function that will define how the Shimmer will appear.
 
 We'll declare a list of colors to be used for our brush tool in a function. The colors are arranged in such a way that the lighter color is at the center. This gives some visual appeal.
 
@@ -67,7 +67,7 @@ The composable `LoadingShimmerEffect()` function will look as follows:
 @Composable
 fun LoadingShimmerEffect(){
 
-   //These colors will be used on the brush and the lightest color should be in the middle
+   //These colors will be used on the brush. The lightest color should be in the middle
 
    val gradient = listOf(
        Color.LightGray.copy(alpha = 0.9f), //darker grey (90% opacity)
@@ -97,20 +97,22 @@ fun LoadingShimmerEffect(){
 }
 ```
 
-The `rememberInfiniteTransition()` is a composable function that animates the shimmer infinitely. The `translateAnimation` will animate the shimmer with the values provided.
+The `rememberInfiniteTransition()` is a composable function that animates the shimmer infinitely. The `translateAnimation` will animate the shimmer with the provided values.
 
 `translateAnimation` takes in `initialValue`, `targetValue` and `animationSpec` parameters. The animation will run from `initialValue` to `targetValue` and repeat.
 
-During the animation, if `initialValue` changes, the animation will restart with the new value. This also applies when the `targetValue` changes. The animation will thus  have no consistency.
+During the animation, if the `initialValue` changes, the animation will restart with the new value. This also applies when the `targetValue` changes. The animation will thus, have no consistency.
 
 You can customize the delay time for your shimmer effect using `durationMillis`. In our case, we specified the value to `1000 milliseconds`. That is equal to 1 second.
 
-For the animation specifications, you can use any animationSpec of your choice. You can specify the data type to be animated, and the animation configuration.
+For the animation specifications, you can use any `animationSpec` of your choice. You can specify the data type to be animated, as well as the animation configuration.
 
-For `easing`, you can choose any type you wish to apply in your application. To expand more of this, read on [Jetpack Compose Animations](https://www.section.io/engineering-education/animations-in-jetpack-compose/).
+For `easing`, you can choose any type you wish to apply in your application. To expand more of this, read on [Jetpack Compose animations](https://www.section.io/engineering-education/animations-in-jetpack-compose/).
 
-### Step 3: Creating Shimmer Grid Items
-Start by creating a `Composable` function named `ShimmerGridItem()`. This function will define how our single shimmer item will appear on the screen. We are going to create a single row containing several shapes. We'll then use these shapes for our shimmer effect.
+### Step 3 - Creating Shimmer grid items
+Start by creating a `Composable` function named `ShimmerGridItem()`. This function will define how our single shimmer item will appear on the screen. 
+
+We are going to create a single row containing several shapes. We'll then use these shapes for our shimmer effect.
 
 The code will be as follows:
 
@@ -156,11 +158,11 @@ fun ShimmerGridItem(brush: Brush) {
 
 In the above function, we have created a single row containing all the items we needed. These items are a shape to represent an image placeholder and three more rounded shapes to act as text placeholders.
 
-> Make sure you call the `ShimmerGridItem()` function inside the `LoadingShimmerEffect()` function. 
+> Make sure you call the `ShimmerGridItem()` method inside the `LoadingShimmerEffect()` function. 
 
 Upon preview, the row we just created will appear as follows:
 
-![Row preview](/engineering-education/custom-animated-shimmer-effect-with-jetpack-compose/shimmer-row.png)
+![Row preview](/engineering-education/creating-custom-animated-shimmer-effect-with-jetpack-compose/shimmer-row.png)
 
 ### Previewing
 Previewing on the screen is done as follows:
@@ -180,11 +182,11 @@ fun ShimmerPreview(){
 }
 ```
 
-> NOTE: All the above functions are in the same kotlin file we created. ie. `Shimmer.kt` file.
+> NOTE: All the above functions are in the same Kotlin file we created. ie. `Shimmer.kt`.
 
-`@Preview` feature is provided by the Android studio to offer composable previews. Setting it to true will make the composable function appear on the design screen.
+`@Preview` feature is provided by the Android Studio to offer composable previews. Setting it to true will make the composable function to appear on the design screen.
 
-If the preview doesn't render, add the following dependency in the `build.gradle(:app)` file.
+If the preview doesn't render, add the following dependency in the app-level `build.gradle`.
 
 ```gradle
 implementation "androidx.compose.ui:ui-tooling:1.0.5"
@@ -196,7 +198,7 @@ This interactive mode has some limitations though. Some of them are:
 - There is neither network nor files access.
 - Not all `Context` APIs are available.
 
-### Step 4: MainActivity.kt
+### Step 4 - MainActivity.kt
 To run our app on a physical device/emulator, make sure you add the following in the `MainActivity.kt` file.
 
 ```kotlin
@@ -216,14 +218,14 @@ class MainActivity : ComponentActivity() {
 }
 ```
 
-> NOTE: `ShimmerTheme` is created by Android studio. If you gave your app another name, it will appear as `YourClassNameTheme`
+> NOTE: `ShimmerTheme` is created by Android Studio. If you gave your app another name, it will appear as `YourAppNameTheme`
 
 Inside the `ShimmerTheme` we created a `column` and repeated the `Shimmer` eight times. This will display our single shimmer grid items eight times.
 
 After the data is fetched successfully, make sure you stop the shimmer effect. This will allow the data to be displayed on the screen.
 
 ### Conclusion
-Creating a shimmer effect in Jetpack Compose is easy. You can create a shimmer effect of your own design, colors, and delay time to make your app more appealing to users. Continue exploring the new features of Jetpack Compose.
+Creating a shimmer effect in Jetpack Compose is easy. You can create a shimmer effect of your own design, colors, and delay time to make your app more appealing to users. 
 
 Happy Composing!
 
