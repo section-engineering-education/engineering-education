@@ -37,8 +37,13 @@ We will start by creating a new Django project that we will use throughout this 
    ```bash
    django-admin startproject polymorphic
    ```
-
+4. Since the Django project is organised into applications, execute the command below to create a `modelling` application. This is where we will model our application database.
+   ```bash
+   python manage.py startapp modelling
+   ```
 #### Default modeling
+This section will model our online bookstore using the default Django modelling features. Add the code snippet below in the `models.py` file in the `modelling` application.
+
 ```python
 from django.contrib.auth import get_user_model
 from django.db import models
@@ -56,7 +61,7 @@ class Publication(models.Model):
 
 # UserCart manages the user publications add on the cart
 class UserCart(models.Model):
-    visitor = models.OneToOneField(
+    visitor_cart = models.OneToOneField(
         get_user_model(),  # Maps the visitor fields with the currently logged-in user
         primary_key=True,
         on_delete=models.CASCADE,
@@ -64,7 +69,18 @@ class UserCart(models.Model):
     publications = models.ManyToManyField(Publication)
 
 ```
+- In the code snippet above, we create a publication model which will hold the information about the books being sold in the store.
+- `UserCart` model holds the information about the currently logged in user and the publications a user has added to the cart before checking out.
+
+|**Advantages**   |  **Disadvantages** |
+|---|---|
+| Easy to model and maintain  | Only suitable for products with same attributes  |
+
 #### Sparse Modelling
+Now that our online store has gained several customers, they are requesting ebooks instead of print books. Therefore, we need to modify the `Publication` model to accommodate print and ebooks.
+
+Replace the code snippet in the `models.py` file in the `modelling` application that we created earlier with the code snippet below.
+
 ```python
 # Publication is a journal that can be ordered from the bookstore a hard copy file
 class Publication(models.Model):
@@ -88,14 +104,28 @@ class Publication(models.Model):
 
 # UserCart manages the user publications add on the cart
 class UserCart(models.Model):
-    visitor = models.OneToOneField(
+    visitor_cart = models.OneToOneField(
         get_user_model(),  # Maps the visitor fields with the currently logged-in user
         primary_key=True,
         on_delete=models.CASCADE,
     )
     publications = models.ManyToManyField(Publication)
 ```
+- In the code snippet above, we added two fields to the `Publication` model. The `publication_weight` property stores the weight of the print publication. We can use this field to calculate the delivery charges of the publication. The `publication_download_link` field stores the download link for the publication if it is an ebook.
+
+|**Advantages**   | **Disadvantages**  |
+|---|---|
+| Easy to model and maintain  | Does not utilize the NOT NULL database constraints   |
+| | Adding new attributes to the model requires model changes |
+
 #### Semi-structured modelling
+With the increase in book sales in our online store, there is an increase in the number of nullable fields. Unfortunately, this is becoming hard to maintain.
+
+To address the increasing number of nullable fields, we can use a `JSONField` to store other properties and a model to store the common properties.
+
+Update the `models.py` file in the `modelling` application with the code snippet below.
+
+
 ```python
 from django.contrib.auth import get_user_model
 from django.db import models
@@ -125,7 +155,7 @@ class Publication(models.Model):
 
 # UserCart manages the user publications add on the cart
 class UserCart(models.Model):
-    visitor = models.OneToOneField(
+    visitor_cart = models.OneToOneField(
         get_user_model(),  # Maps the visitor fields with the currently logged-in user
         primary_key=True,
         on_delete=models.CASCADE,
@@ -133,34 +163,37 @@ class UserCart(models.Model):
     publications = models.ManyToManyField(Publication)
 
 ```
+- With the semi-structured model, we keep the common fields on the model and other fields like `weight` and `download link` in the `JSONField`.
+
+| **Advantages**  | **Disadvantages**  |
+|---|---|
+|  Reduces the number of nullable fields | Complex validation, we have to validate all the JSON data fields independently before saving |
+|  Easier to add new attributes.| Restricted database support since not all databases support JSON field|
+
 #### Abstract base modelling
+So far, we have modelled our product using a single Django model. Our online book store has expanded, and we now want to sell other products i.e journals. Our previous model design will not be efficient enough to allow us to sell different types of products. We need to develop an optimal solution to design our database model.
+
+Update the `models.py` in the `modelling` application with the code snippet below.
+
 ```python
 from django.db import models
 
 # Publication is a journal that can be ordered from the bookstore a hard copy file
 from django.db.models import JSONField
 
-
-class Publication(models.Model):
-    class Meta:
-        abstract = True
-
-    publication_name = models.CharField(
-        max_length=100,
-    )
-    publication_price = models.PositiveIntegerField()
-
-    def __str__(self) -> str:
-        return self.publication_name
-
-
-class Book(Publication):
-    book_weight = models.PositiveIntegerField()
-
-
-# UserCart manages the user publications add on the cart
+# This model represents the pdf downloadable version of a publication
 class Ebook(models.Model):
     ebook_download_link = models.URLField()
+
+# This the new type of publication that the users can download
+class Journal(models.Model):
+    journal_download_link = models.URLField()
 ```
+- In the code snippet above, we create a standard model `Publication` that other products will extend. With this type of design, the common properties of the products we sell are in the `Publication` model, while the specific properties of the product we sell are in the particular product model. For example, the `Ebook` product has a specific field `book_weight`.
+
+|**Advantages**   | **Disadvantages**  |
+|---|---|
+| Easy to maintain, design and test  | Hard to scale since every new product requires an additional model  |
+
 ### Conclusion
-In this article, you have learned how to create polymorphic Django models. However, you have learned a few approaches that you can use to build complex polymorphic Django models. Try implementing polymorphic Django models in your application to reduce complexity in your models using the best polymorphic approach that fits best your use case.
+In this article, you have learned how to create polymorphic Django models.Try implementing polymorphic Django models in your application to reduce complexity in your models using the best polymorphic approach that fits best your use case.
