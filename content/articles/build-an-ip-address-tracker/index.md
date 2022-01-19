@@ -4,7 +4,7 @@ status: publish
 published: true
 url: /ip-tracker/
 title: How to Build an IP Address Tracker using Mapbox API and Vue
-description: In this artcile, we are going look at building an IP Address Tracker using Mapbox API and Vue
+description: In this article, we are going to look at building an IP Address Tracker using Mapbox API and Vue
 author: abiola-farounbi
 date: 2022-01-05T00:00:00-11:10
 topics: []
@@ -15,14 +15,14 @@ images:
     alt: How to Build an IP Address Tracker with Mapbox API and Vue hero image
 ---
 
-An IP(Internet Protocol) address is a set of numbers that represents the location website or device. Each number in the set ranges from 0 to 255, that is from 0.0.0.0 to 255.255.255.255.
+An IP(Internet Protocol) address is a set of numbers representing the location website or device. Each number in the set ranges from 0 to 255, from 0.0.0.0 to 255.255.255.255.
 
 They are of two types- IPv4 and IPv6.
-IPv4 is old and limited to a 32-bit addresses while IPv6 is the new standard and allows for 128-bit addresses. The creation of IPv6 is because all possible IPv4 addresses are close to being exhausted as there are many new devices being assigned to them, so IPv6 is the new standard. Find more about IP addresses [here](https://www.elegantthemes.com/blog/wordpress/what-is-an-ip-address).
+IPv4 is old and limited to 32-bit addresses, while IPv6 is the new standard and allows for 128-bit addresses. The creation of IPv6 is because all possible IPv4 addresses are exhausted as many new devices are being assigned to them, so IPv6 is the new standard. Find more about IP addresses [here](https://www.elegantthemes.com/blog/wordpress/what-is-an-ip-address).
 
-The IP Address of a user can be used for various dynamic purposes one of which is **IP Geolocation**. This is the identification of a geographic location of a device by using an IP address. This involves tracking the device based on the IP address assigned to it. The IP address contains information pointing to where the device is located such as the latitude, longitude, country, region(city), timezone, etc.
+The IP Address can be used for various dynamic purposes, one of which is **IP Geolocation**. This is the identification of a device's geographic location by using an IP address. This involves tracking the device based on the IP address assigned to it. In addition, the IP address contains information pointing to where the device is located, such as the latitude, longitude, country, region(city), timezone, etc.
 
-Various types of IP Geolocation APIs are available through different services to make the tracking process easier. By making a GET request to the API, we can get result as the geographic information of the device such as:
+Various types of IP Geolocation APIs are available through different services to make the tracking process more accessible. By making a GET request to the API, we can get the result as the geographic information of the device such as:
 
 - IP Address
 - Country Details - continent, capital, city, region, flag.
@@ -31,7 +31,7 @@ Various types of IP Geolocation APIs are available through different services to
 - Currency Details - code, symbol, and rates.
 - Latitude and Longitude values.
 
-In this guide, we’ll build an IP Address Tracker from scratch using the Vue.js framework, an IP geolocation API, and the Mapbox API. We’ll cover the process of building the front-end, handling the user's IP address, and visualizing the location on a map. At the end of this tutorial, readers would have a functional and a ready-to-deploy web application.
+This guide will build an IP Address Tracker from scratch using the Vue.js framework, an IP geolocation API, and the Mapbox API. We’ll cover the process of building the front-end, handling the user's IP address, and visualizing the location on a map. At the end of this tutorial, readers would have a functional and a ready-to-deploy web application.
 
 > It is important to note that result gotten from each API service varies. In this tutorial, we will be using the [IPWHOIS](https://ipwhois.io/) API service.
 
