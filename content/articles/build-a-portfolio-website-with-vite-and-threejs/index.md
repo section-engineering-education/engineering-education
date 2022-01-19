@@ -56,9 +56,9 @@ Let’s start up our application:
 npm run dev
 ```
 
-Open up `http://localhost:3000/` in your browser.
+Open up [http://localhost:3000/](http://localhost:3000/) in your browser.
 
-Let's go back to our code editor where we have our project. We want to edit the `style.css` and `main.js.`. Go to `style.css` and `main.js` and delete the existing code to start building our portfolio application.
+We want to edit the `style.css` and `main.js.`. Go to `style.css` and `main.js` and delete the existing code to start building our portfolio application.
 
 First, head over to `index.html` and add a `canvas` to the body with an `id` of `bg`. This will be the element that shows the actual Three.js scene:
 
@@ -120,7 +120,7 @@ const geometry =  new THREE.TorusGeometry(10,3,16,100)
 const material =  new THREE.MeshBasicMaterial({color:0xFF6347, wireframe:true});
 ```
 
-- Mesh: This is the third step. We can achieve this by combining geometry with the material. let’s paste this:
+- Mesh: We can achieve this by combining geometry with the material. Let’s paste this:
 
 ```javascript
 const torus = new THREE.Mesh(geometry, material);
