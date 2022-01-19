@@ -11,7 +11,7 @@ topics: [Android]
 excerpt_separator: <!--more-->
 images:
 
-  - url: /engineering-education/creating-a-flipped-box-card-in-android-jetpack-compose/hero.png
+  - url: /engineering-education/creating-a-flipped-box-card-in-android-jetpack-compose/hero.jpg
     alt: Creating a Flipped Box Card in Android Jetpack Compose Hero Image
 ---
 Just like how a paper looks when it is flipped on one side, as a developer you may like to create a card that is the same. This card may be used to display some notes or items in your app.
