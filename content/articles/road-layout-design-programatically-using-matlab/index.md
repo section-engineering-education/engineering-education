@@ -1,18 +1,37 @@
+---
+layout: engineering-education
+status: publish
+published: true
+url: /road-layout-design-programmatically-using-matlab/
+title: Road Layout Design Programmatically Using Matlab
+description: 
+author: vitalis-odhiambo
+date: 2022-01-19T00:00:00-12:55
+topics: [Languages]
+excerpt_separator: <!--more-->
+images:
 
-### Road layout design programmatacally using Matlab
+ - url: /engineering-education/road-layout-design-programmatically-using-matlab/hero.jpg
+   alt: Programming Road Layout using MATLAB example image
+---
+
 ### Introduction
 In designing road layout, we use the `drivingscenario` function. `scenario` function allows for simulation of an activity or a structure in the real world.
 
 You can use the `Drivingscenario` function to create different road layout designs by plotting the road layout in 2D or 3D graphs. It is done by specifying the coordinates of the road center using function `roadCentre=[];` and the road width then plotting these points on the graph.
+
+<!-- more -->
 
 ### Prerequisites
 To follow along with this tutorial, you'll need:
 - [MATLAB](https://www.mathworks.com/products/get-matlab.html?s_tid=gn_getml) installed.
 - [Proper understanding](/engineering-education/getting-started-with-matlab/) of MATLAB basics.
 
-### Table of content
-- [Road layout design programmatacally using Matlab](#road-layout-design-programmatacally-using-Matlab)
-- [Objectives](#Objectives)
+### Table of contents
+- [Introduction](#introduction)
+- [Prerequisites](#prerequisites)
+- [Table of contents](#table-of-contents)
+- [Objectives](#objectives)
 - [Straight road](#straight-road)
 - [Roads with lanes](#roads-with-lanes)
 - [Road intersection](#road-intersection)
@@ -23,7 +42,7 @@ To follow along with this tutorial, you'll need:
 - [Conclusion](#conclusion)
 
 ### Objectives
-This article will discuss the design of the  following road layout using Matlab functions:
+This article will discuss the design of the following road layout using Matlab functions:
 - Straight road.
 - Roads with lanes.
 - Intersecting roads.
@@ -35,11 +54,12 @@ This article will discuss the design of the  following road layout using Matlab 
 ### Straight road
 A straight road layout has a fixed width. It can be designed by defining the road center coordinates with two points and a specified width. The graph axis is labeled in meters.
 
-The first step of designing any road layout is defining the `Scenario` as `scenario=drivingScenario`. 
+The first step of designing any road layout is defining the `scenario` as `scenario=drivingScenario`. 
 
-After declaring the scenario function, the road center coordinates are specified. For our case, we will use (0 10) and (60 10) with a road width of 8 meters. 
+After declaring the scenario function, the road center coordinates are specified. For our case, we will use `(0 10)` and `(60 10)` with a road width of 8 meters. 
 
 The final road layout is obtained by plotting the `scenario`, road centerline, and width. The resultant figure will have a straight road layout.
+
 ```matlab
 scenario = drivingScenario; %declering the scenario function
 road_center = [0 10;60 10]; %specifying road center coordinates
@@ -118,7 +138,7 @@ Roundabout roads are circular and have four existing roads. When designing a rou
 
 The first coordinate of the clothoid curve is repeated at the end of the coordinate description to form a continuous circular loop. 
 
-Four roads are then added to the circular road to complete the road layout. The exit roads coordinate should be defined so that they cut the circular road circumference into a quarter.
+Four roads are then added to the circular road to complete the road layout. Finally, the exit road coordinates should be defined to cut the circular road circumference into a quarter.
 
 The example below illustrates designing of the roundabout layout. 
 
@@ -196,4 +216,11 @@ view(40,25)
 ![Overpass road](/engineering-education/road-layout-design-programmatically-using-matlab/roadlayout-g.png)
 
 ### Conclusion
-Matlab provides a platform for designing road layouts using either a driving scenario designer app or programmatically, as shown in the articles. Road layouts design techniques are applicable in traffic simulation, road plans, and game development.
+Matlab provides a platform for designing road layouts using either a driving scenario designer app or programmatically, as shown in the article. Road layouts design techniques are applicable in traffic simulation, road plans, and game development. In this article, we have looked at the various aforementioned components to design a road layout. 
+
+Happy coding!
+
+
+---
+Peer Review Contributions by: [Owino Wendy](/engineering-education/authors/owino-wendy/)
+
