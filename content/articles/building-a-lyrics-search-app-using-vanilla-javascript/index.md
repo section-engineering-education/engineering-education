@@ -226,7 +226,7 @@ const api = "https://api.lyrics.ovh";
 
 The next phase is to submit the form. You will define what would happen if the input field is empty and likewise what would happen if the input field is not empty.
 
-To do this, let's create an event listener using DOM events to listen for a submit event and not click the event because you didn't create a button to submit the form.
+To do this, let's create an event listener using DOM events to listen for a submit event and not the click event because you didn't create a button to submit the form.
 
 Here is the code snippet for this:
 
@@ -248,7 +248,7 @@ In the code above:
 - You listened for a submit event after which you declared a variable `searchValue` to be equal to `search.value.trim()`. The `trim()` method simply trims whitespaces.
 - The `if` statement validates if `searchValue` equals an empty string to alert "Nothing to search", otherwise invokes the `startSearch()` function taking the `searchValue` as an argument.
 
-It is highly recommended to go through the [OVH API documentation](https://api.lyrics.ovh) before proceeding further.
+It is highly recommended to go through the [OVH API documentation](https://api.lyrics.ovh) before proceeding.
 
 Now, you can use async-await with the fetch method to get data from the OVH lyrics API.
 
