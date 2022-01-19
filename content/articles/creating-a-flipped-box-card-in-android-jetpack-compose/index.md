@@ -6,7 +6,7 @@ url: /creating-a-flipped-box-card-in-android-jetpack-compose/
 title: Creating a Flipped Box Card in Android Jetpack Compose
 description: In this tutorial, we will go through some Canvas concepts in Compose, then we will jump directly to creating a flipped card.
 author: osir-evaline
-date: 2022-01-01T00:00:00-13:45
+date: 2022-01-19T00:00:00-10:28
 topics: [Android]
 excerpt_separator: <!--more-->
 images:
@@ -56,7 +56,6 @@ Canvas(modifier = Modifier.fillMaxSize()) {
 
 ```kotlin
 clipPath(path) {
-    ...
 }
 ```
 
@@ -64,7 +63,6 @@ clipPath(path) {
 
 ```kotlin
 val path = Path().apply {
-    ...
 }
 ```
 
@@ -74,7 +72,6 @@ val path = Path().apply {
 
 ```kotlin
 drawRoundRect(
-    ...
 )
 ```
 
@@ -121,7 +118,6 @@ After creating our `FlippedCard` composable, inside it, we will add a `Box` that
 Box(
     modifier = modifier.padding(10.dp)
 ) {
-    ...
 }
 ```
 
@@ -130,11 +126,10 @@ In this step, inside the `Box` we add a `Canvas`
 
 ```Kotlin
 Canvas(modifier = Modifier.matchParentSize()) {
-    ...
 }
 ```
 
-We make sure we use `matchParentSize` as its size other than `fillMaxSize`. Our Canvas needs a fixed size - a size that the Canvas knows the moment it is called. 
+We make sure we use `matchParentSize` as its size other than `fillMaxSize`. Our Canvas needs a fixed size - a size that the Canvas knows the moment it is called.
 
 The `matchParentSize` will give the `Canvas` size immediately after the parent has measured its size. In that case, our parent is the Box.
 
@@ -158,7 +153,6 @@ val path = Path().apply {
 ```
 
 > We make sure our `cutCornerSize` is converted to pixels using the `toPx` method.
-
 > `size` is the size of the `Canvas`.
 
 In the code snippet above:
@@ -240,7 +234,7 @@ After running the project, you will see something like this:
 ![demo](/engineering-education/creating-a-flipped-box-card-in-android-jetpack-compose/demo.png)
 
 ### Conclusion
-In this tutorial, we have learned what a Canvas is, how to use a Drawscope to do graphics operations, drawing a line using the lineTo method to complete a Path, using clipPath to remove unwanted parts in our Canvas, drawing round rectangles, and finally, we used these concepts to create a FlippedCard composable. Keep exploring more about the power of Graphics in Compose. 
+In this tutorial, we have learned what a Canvas is, how to use a Drawscope to do graphics operations, drawing a line using the lineTo method to complete a Path, using clipPath to remove unwanted parts in our Canvas, drawing round rectangles, and finally, we used these concepts to create a FlippedCard composable. Keep exploring more about the power of Graphics in Compose.
 
 To see a full implementation of the FlippedCard, check out this Github repository [Flipped Card Demo](https://github.com/osirevaline/FlippedCardDemo).
 
