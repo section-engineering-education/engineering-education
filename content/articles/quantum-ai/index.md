@@ -33,7 +33,7 @@ TensorFlow Quantum can create tensors using quantum data sets, quantum models, a
 To understand how to use quantum data, consider a guided categorization of quantum states by a quantum neural system.  A crucial issue of quantum Machine Learning, like conventional Machine Learning, is to categorize "noisy data." 
 To develop and train a quantum framework follow the steps below.
 
-1. Construct a quantum data collection - Tensors represent quantum data. Cirq quantum network generates quantum data. You learn more on Cirq on [cirq](https://quantumai.google/cirq). TensorFlow controls all the activities on the system creating a quantum database.
+1. Construct a quantum data collection - Tensors represent quantum data. [Cirq quantum network](https://quantumai.google/cirq)  generates  this quantum data and TensorFlow controls all the activities on the system creating a quantum database.
 
 2. Assess the quantum neural system design - Cirq can be used to design a quantum neural system that will then be embedded in a TensorFlow computing structure. Customized quantum systems may be chosen from many groups depending on the quantum's data nature. The model's purpose is to use quantum computation to retrieve information concealed in a usually entangled form. The quantum model frees the incoming quantum data. It then retains the concealed information stored in classical associations. Hence available to localized measures and classical post-processing.
 
