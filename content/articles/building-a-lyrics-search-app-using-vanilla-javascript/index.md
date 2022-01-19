@@ -358,7 +358,7 @@ Note, arguments are the actual values passed to a function, while parameters are
 ### GetLyrics() async function
 This is the most important function because this makes us get the lyrics themselves displayed.
 
-The function takes in two parameters, `artist` and `songTitle` respectively. Recall that you can search for lyrics by inputting either the artist's name or the song title. This is the reason why the `getLyrics()` function is taking those parameters.
+The function takes in two parameters, `artist` and `songTitle` respectively. Recall that you can search for lyrics by inputting either the artist's name or the song title. This is the reason the `getLyrics()` function is taking those parameters.
 
 Below is the code for `getLyrics()` async function:
 
@@ -392,7 +392,7 @@ REGEX usage helps to look through our data (lyrics) for:
 - Carriage return alone.
 - Carriage return with a new line. 
 
-If any of the instances defined above is found, REGEX `replace()` method replaces it with the `<br>` (break line). 
+If any of the instances defined above are found, REGEX `replace()` method replaces it with the `<br>` (break line). 
 
 The `/g` is a regular expression flag, it means globally. The entire data (lyrics) should be searched through (for all matches).
 
