@@ -91,7 +91,7 @@ The Quantum-based robot performs all the work for you since it is automated. To 
 
 #### Conclusion
 
-At the moment, a typical home computer is incapable of processing enormous volumes of data at once. Quantum computers may be capable of reaching into a database. It accesses all things at once, and delivering an evaluation in seconds. We may discover patterns using quantum technology.
+At the moment, a typical home computer is incapable of processing enormous volumes of data at once. Quantum computers may be capable of reaching into a large database and delivering an evaluation in seconds, with this we can discover patterns within a short period of time using quantum technology.
 
 #### Further Reading
 For further reading you can go through the following:
