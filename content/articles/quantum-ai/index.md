@@ -95,6 +95,6 @@ At the moment, a typical home computer is incapable of processing enormous volum
 
 #### Further Reading
 For further reading you can go through the following:
-* Google's [Quantum AI](https://quantumai.google/)
-* Quantum [Trading bot](https://quantum-ai.io/)
+* [Google's Quantum AI](https://quantumai.google/)
+* [Quantum Trading bot](https://quantum-ai.io/)
 * [Quantum's AI breakthroughs](https://www.captechu.edu/blog/recent-breakthroughs-quantum-ai) 
