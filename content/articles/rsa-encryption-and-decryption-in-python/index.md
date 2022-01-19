@@ -44,7 +44,7 @@ For instance, let's say we have two peers communicating with each other in a cha
 The public key will be available in a public key repository. But, for the private key, as the name suggests, it is kept private at the recipient's side.
 
 ### Implementing the RSA algorithm in Python
-In this tutorial, we will be using `rsa python package`. Hence, we will open up our terminal and use the command below:
+In this tutorial, we will be using `rsa python package`. Hence, we will open our terminal and use the command below to install it:
 
 ```bash
 pip install rsa
@@ -52,7 +52,7 @@ pip install rsa
 
 Once our package is downloaded, then we are good to go. The first thing we need to do is to import `rsa` into our program.
 
-```python
+```py
 import rsa
 ```
 
@@ -62,7 +62,7 @@ To write the keys into the files, we will create a folder called `Keys` in our p
 
  We will implement this using the code below:
 
-```python
+```py
 def generateKeys():
     (publicKey, privateKey) = rsa.newkeys(1024)
     with open('keys/publcKey.pem', 'wb') as p:
@@ -75,7 +75,7 @@ Now that we have saved the keys in our files, the next thing we need to do is to
 
 To load the keys, we will use the code snippet below that opens the files that we created above, and return both the private and public keys.
 
-```python
+```py
 def loadKeys():
     with open('keys/publicKey.pem', 'rb') as p:
         publicKey = rsa.PublicKey.load_pkcs1(p.read())
@@ -90,7 +90,7 @@ We will start by creating the encryption method using the code below. The encryp
 
 After defining the encrypt method, we need to return the encrypted message. We will encode the message in `ASCII` and give it the key.
 
-```Python
+```py
 def encrypt(message, key):
     return rsa.encrypt(message.encode('ascii'), key)
 ```
@@ -99,9 +99,9 @@ Let us now create the decryption method. This method will take the ciphertext an
 
 Since we used the `ASCII` encoding, we will use `ASCII` decoding as well.
 
-If this fails, it means that the key was not able to decrypt the message, so what we will do is to return false. We will use the code below to implement the decryption method.
+If this fails, it means that the key was not able to decrypt the message, so what we will do is return false. We will use the code below to implement the decryption method.
 
-```Python
+```py
 def decrypt(ciphertext, key):
     try:
         return rsa.decrypt(ciphertext, key).decode('ascii')
@@ -111,11 +111,11 @@ def decrypt(ciphertext, key):
 
 Finally, we will create two methods to sign and verify our message with a key using the `sha1 hash function`. This method will take the message and the key so that we sign our message with a key.
 
-The message that we will be encoding will be given the key and our hashing algorithm, in this case, `SHA-1`.
+The message that we will encode will be given the key and our hashing algorithm. In this case, `SHA-1`.
 
-The sign method is implemented by the code below.
+The sign method is implemented using the code below:
 
-```Python
+```py
 def sign(message, key):
     return rsa.sign(message.encode('ascii'), key, 'SHA-1')
 ```
@@ -124,9 +124,9 @@ For the verification of the message, we will create the verify method and pass i
 
 This verify method returns the hash algorithm used in the signature. So, what we do is to check that this is equal to the hash algorithm, i.e; `SHA-1`.
 
-If the signature is authentic, then it returns true. In case there is an exception, then it will return false which means that the verification has failed and either the message or the signature were manipulated or are not authentic.
+If the signature is authentic, then it returns true. In case there is an exception, it will return false which means that the verification has failed. This means either the message or the signature were manipulated and are not authentic.
 
-```Python
+```py
 def verify(message, signature, key):
     try:
         return rsa.verify(message.encode('ascii'), signature, key,) == 'SHA-1'
@@ -134,51 +134,53 @@ def verify(message, signature, key):
         return False
 ```
 
-Now that we have the RSA algorithm, we will create our program. We will start by generating our keys. We will call the generate keys method, load the public and private keys as implemented in the code below.
+Now that we have the RSA algorithm, we will create our program. We will start by generating our keys. 
 
-```Python
+We will call the generate keys method, load the public and private keys as implemented in the code below.
+
+```py
 generateKeys()
 publicKey, privateKey =load_keys()
 ```
 
 We will then take the message input from the user, and encrypt the message using the public key. This represents the sender of the message.
 
-```Python
+```py
 message = input('Write your message here:')
 ciphertext = encrypt(message, publicKey)
 ```
 
 Now that we have the ciphertext, we will generate the signatures using the code below to sign the message with our private key. This enables the sender to verify the message with the public key and determine if the message is authentic.
 
-```Python
+```py
 signature = sign(message, privateKey)
 ```
 
 Next, we will decrypt our encrypted message to have plain text. To implement this, we will create a decryption method and pass it in the ciphertext and the private key as shown below.
 
-```Python
+```py
 text = decrypt(ciphertext, privateKey)
 ```
 
 After getting our plain text, the next thing to do is to print out the ciphertext and the signature.
 
-```Python
+```py
 print(f'Cipher text: {ciphertext}')
 print(f'Signature: {signature}')
 ```
 
 We will check the plain text in the next step. If it is plain text, then we indicate `message was successfully decrypted` otherwise, `unable to decrypt the message`.
 
-```Python
+```py
 if text:
     print(f'Message text: {text}')
 else:
     print(f'Unable to decrypt the message.')
 ```
 
-Let Us verify our signature.
+We verify our signature using the code below:
 
-```Python
+```py
 if verify(text, signature, publicKey):
     print(Successfully verified signature)
 else:
@@ -188,13 +190,13 @@ else:
 With that, you can enter your message, encrypt, and then decrypt it.
 
 ### Conclusion
-From this tutorial, we have encrypted a message using a public key and signed it using our private key.
+In this tutorial, we have encrypted a message using a public key and signed it using our private key.
 
-If you have two peers; i.e, peer A talking to peer B, then peer A is sending a message to peer B, the message should be encrypted using the public key of peer B. But, this method is signed using the private key of peer A, who is the peer sending the message.
+If you have two peers; i.e, peer A talking to peer B, then peer A is sending a message to peer B. The message should be encrypted using the public key of peer B. But, this method is signed using the private key of peer A, which is the peer sending the message.
 
-On the recipient's side, who is peer B, peer B is going to decrypt the message using their private key and then verify the signature of the message using the public key of peer A who is the sender of the message.
+On the recipient's side, which is peer B, it is going to decrypt the message using the private key and then verify the signature of the message using the public key of peer A which is the sender of the message.
 
-However, this is not the case in this tutorial since we don't have the sender or the receiver of the message, hence we are getting the knowledge on the use of signature, signing a message, and verifying the signature.
+However, this is not the case in this tutorial since we don't have the sender or the receiver of the message, hence we are getting the knowledge on the use of a signature, signing a message, and verifying the signature.
 
 ---
 Peer Review Contributions by: [Dawe Daniel](/engineering-education/authors/dawe-daniel/)
