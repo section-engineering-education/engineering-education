@@ -6,7 +6,7 @@ url: /creating-a-hand-gesture-volume-controller-using-python-and-pycharm/
 title: Creating a Hand Gesture Volume Controller using Python and Pycharm
 description: This tutorial aims to create a hand gesture volume controller using Python and Pycharm.
 author: denis-mwangi
-date: 2021-12-27T00:00:00-17:00
+date: 2022-01-19T00:00:00-17:00
 topics: [Machine Learning]
 excerpt_separator: <!--more-->
 images:
@@ -41,7 +41,7 @@ For you to follow through this article, you need:
 
 *[Image Source: Mediapipe](https://google.github.io/mediapipe/solutions/hands.html)*
 
-The above image shows the numbers of the points that mediapipe uses to refer to different points of the hand. This tutorial will use point `4` and point `8` which are the thumb and the index finger respectively.
+The above image shows the numbers of the points that MediaPipe uses to refer to different points of the hand. This tutorial will use point `4` and point `8` which are the thumb and the index finger respectively.
 ### **Creating a hand gesture volume controller**
 ### Setting up
 First of all, we will prepare our workspace. Launch the Pycharm app. Click on the create a new project.
@@ -96,7 +96,7 @@ from comtypes import CLSCTX_ALL
 from pycaw.pycaw import AudioUtilities, IAudioEndpointVolume
 import numpy as np
 ```
-In the code segment above, we are importing each library we installed in our project.
+In the code segment above, we import each library we installed in our project.
 
 ```python
 cap = cv2.VideoCapture(0) 
@@ -134,7 +134,7 @@ while True:
     imgRGB = cv2.cvtColor(img, cv2.COLOR_BGR2RGB)
     results = hands.process(imgRGB)
 ```
-The code above checks whether the camera we have specified works. If it works, we will capture an image. We then convert the image to `RGB` and complete the processing of the converted image.
+The code above checks whether the camera we have specified works. If it works, we will capture an image. We then convert the image to `RGB` and complete the processing of the image.
 
 We now need to check whether we have multiple hands in the image we captured.
 
@@ -172,7 +172,7 @@ if lmList != []:
     x1, y1 = lmList[4][1], lmList[4][2]
     x2, y2 = lmList[8][1], lmList[8][2]
 ```
-In the code above, we specify that the number of elements in `lmlist` should not be null. We are then assigning variables `x1` and `y1` the `x` and `y` coordinates of point `4` respectively. This is the tip of the thumb. We then repeat the same for the index finger in the last line.
+In the code above, we specify the number of elements in `lmlist`. It should not be null. We assign variables `x1` and `y1` the `x` and `y` coordinates of point `4` respectively. This is the tip of the thumb. We then repeat the same for the index finger in the last line.
 
 Refer to the hand image diagram we discussed to identify the [points](#referral-hand-image).
 
@@ -181,7 +181,7 @@ Refer to the hand image diagram we discussed to identify the [points](#referral-
        cv2.circle(img, (x1, y1), 15, (255, 0, 0), cv2.FILLED)  
        cv2.circle(img, (x2, y2), 15, (255, 0, 0), cv2.FILLED)  
 ```
-The code above draws a circle at the tip of the thumb and the tip of the index finger.
+The code above draws a circle at the tip of the thumb and that of the index finger.
 - ` (x1, y1)` specifies that we will draw the circle at the tip of the thumb. `15` is the *radius* of the circle. `(255, 0, 0)` is the *color* of the circle. `cv2.FILLED` refers to the thickness of `-1` pixels which will fill the circle with the color we specify.
 
 - We will repeat the same for the index finger in the line of code: 
@@ -203,7 +203,7 @@ In the code above, we find the distance between the tip of the thumb and the ind
 vol = np.interp(length, [15, 220], [volMin, volMax])
 print(vol, length)
 ```
-We call the numpy function `np.interp` to convert the hand range to the volume range. The arguments used are:
+We call the NumPy function `np.interp`, to convert the hand range to the volume range. The arguments used are:
 
 - `length`: This is the value we want to convert.
 - `[15 - 220]`: This is the hand range.
