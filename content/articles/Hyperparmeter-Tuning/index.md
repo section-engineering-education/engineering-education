@@ -29,7 +29,7 @@ So all-in-all, decision trees are **a hierarchical series of binary decisions** 
 To understand how our model splits our training data and grows into a decision tree, we need to understand some fundamental splitting parameters that it uses to define those conditions, like Gini Index, Entropy, Information Gain, etc...
 
 ##### Gini Score/ Gini Index:
-Every Machine Learning model has a loss function or a cost function, whose objective is to minimize the cost. i.e the tentative distance between the predicted value and actual value. (For classification problems, probabilities of predicted class are used). **Gini Index** is the **loss function** used by decision trees to decide which column should be used for splitting the data, and at what point the column should be split.
+Every Machine Learning model has a loss function or a cost function, whose objective is to minimize the cost. i.e the tentative distance between the predicted value and actual value. (For classification problems, probabilities of predicted class are used). **Gini Index** is the **cost/loss function** that is used by decision trees to decide which feature shall be used for splitting the data, and at what point the column should be split.
 
 $$
 Lower\space Gini\space Score \iff Lower\space Cost \iff Good\space Split
@@ -45,7 +45,7 @@ entropy = - \sum_{i = 1}^{k}{P(value_i).{log_2}(P(value_i))}
 $$
  
 ##### Information Gain:
-Information gain or **IG** measures how much information is provided by a given attribute/feature about a certain target class. While constructing a decision tree, the goal is **to find the attribute with the highest Information Gain and the lowest entropy.** It is calculated as the difference in the entropy before and after the split. i.e,
+Information gain or **IG** measures how much information is provided by a given attribute/feature about a certain target class. While constructing a decision tree, our goal is **to find the attribute that has the highest Information Gain and conversely the lowest entropy.** Mathematically it is calculated as the difference in the entropy before and after the split. i.e,
 
 $$
 I_{gain} = Entropy_{before} - Entropy_{after}
@@ -53,12 +53,13 @@ $$
 
 _This is how information gain and entropy are used to improve the quality of splitting._
 
-**NOTE:** While using Information Gain as a criterion, we assume attributes to be _categorical_, and for the Gini index, attributes are assumed to be _continuous_. For our dataset, we will work with Gini Index. 
+**NOTE:** If we use Information Gain as a criterion, we assume that our attributes are _categorical_, and as per Gini index, we assume that our attributes are _continuous_. For our dataset, we will work with Gini Index. 
+
 
 
 **Working:**
 
-- While training, our decision tree model evaluates all possible splits across all possible columns and picks the best one, i.e the one with the lowest Gini Score.  
+- While training, our decision tree model evaluates all possible splits across all possible columns and picks the split with the lowest Gini Score.  
 - With the first split, all the data according to a specific condition falls towards either the left or the right of the root node.
 - Now, for each side of training data under the root node, all possible splits are calculated again and the split with the lowest Gini Index is chosen. The process repeats for both left and right sides till we reach the terminating nodes representing a class in the target column.
 
@@ -75,7 +76,7 @@ model2.fit(train_inputs, train_targets)
 
 **Please note,** I have split the training data into **train, validation, and test sets,** which is another very important step in preprocessing.
 
-For visualization, make sure you have imported the necessary libraries like matplotlib, seaborn, etc. We can visualize a decision tree using `plot_tree` from sklearn.
+For visualization, make sure you have imported the necessary libraries like matplotlib, seaborn, etc. To visualize a decision tree we use the `plot_tree` function from sklearn.
 
 ```
 #Visualizing a Decision Tree
@@ -115,27 +116,28 @@ It is axiomatic in the results above that our model is not performing well on da
 This process of calibrating our model by finding the right hyperparameters to generalize our model is called **HyperParameter Tuning.** We will look at a few of these hyperparameters:
 
 ###### a. Max Depth: 
-This argument represents the maximum depth of the tree. If not specified, the tree is expanded until the last leaf nodes contain a single value. Hence by reducing this meter, we can prevent the tree from memorizing all training samples.
+This argument represents the maximum depth of a tree. If not specified, the tree is expanded until the last leaf nodes contain a single value. Hence by reducing this meter, we can preclude the tree from memorizing all training samples.
 
 ![max_depth_1.png](/engineering-education/Hyperparameter-Tuning/max_depth_1.png)
 
 - We can check the current maximum depth of our decision tree with `model2.tree_.max_depth`. 
-- We can see that even though the training accuracy has reduced, the validation accuracy has gone up.
+- It's axiomatic that even though the training accuracy has reduced, the validation accuracy has improved.
 
 Since we are not sure what depth our ideal model would have, we can run a for loop from a range of numbers to find out. You can see below, I've used this basic for loop to print the training and validation accuracy of my model across the range 1–21.
 ```
-for md in range(1,21):
-  model = DecisionTreeClassifier(max_depth=md, random_state=42) 
+for max_d in range(1,21):
+  model = DecisionTreeClassifier(max_depth=max_d, random_state=42) 
   model.fit(train_inputs, train_targets)
-  print('Training Accuracy for max_depth {} is:'.format(md), model.score(train_inputs, train_targets))
-  print('Validation Accuracy for max_depth {} is:'.format(md), model.score(val_inputs,val_targets))
+  print('The Training Accuracy for max_depth {} is:'.format(max_d), model.score(train_inputs, train_targets))
+  print('The Validation Accuracy for max_depth {} is:'.format(max_d), model.score(val_inputs,val_targets))
   print('')
 ```
+
 
 By carefully looking at the results we can find out the max_depth value where the validation accuracy starts decreasing and the training accuracy starts mounting inordinately.
 ![Max_depth_result1](/engineering-education/Hyperparameter-Tuning/max_depth_result1.png)
 
-Like you can see above, in my case the appropriate max_depth=8.
+As you can see above, in my case the pertinent max_depth=8.
 
 To get a better understanding I've even plotted the resulting accuracies. You can see the curve where the model incipients overfitting.
 
@@ -155,18 +157,21 @@ Here is the result of my model's training and validation accuracy at different v
 
 									--🌴--🌳--🌲--
 
-While tuning the hyperparameters of a single decision tree is giving us some improvement, a more effective stratagem is to combine the results of several decision trees with slightly different parameters. Which is what we will understand in a **random forest.** So let's practice some other hyperparameters like `max_features`, `min_samples_split`, etc...under random forests.
+While tuning the hyper-parameters of a single decision tree is giving us some improvement, a more effective stratagem would be to combine the results of diverse decision trees(like a forest) with slightly different parameters. Which is what we will understand in a **random forest.** So let's practice some other hyper-parameters like `max_features`, `min_samples_split`, etc...under random forests.
+
 
 #### Random Forests: 
-Random forests are supervised  machine learning models that fit a number of decision trees and combine the outcome by averaging their results. Each decision tree will make different kinds of errors and upon averaging many of their errors will cancel out. _This general technique of combining results of many models is called **"Emsembling"**._ Or very famously said **"Wisdom of the crowd"**.
+Random forests are supervised machine learning models that fit a number of decision trees and combine the outcome by averaging their results. Each decision tree will make different kinds of errors and upon averaging them, many of these errors will cancel out. _This general practice of combining the results of many models is called **"Emsembling technique"**._ Or very famously said **"Wisdom of the crowd"**. 
+
 
 ![random_forest.png](/engineering-education/Hyperparameter-Tuning/random_forest.png)
 
 ```
 from sklearn.ensemble import RandomForestClassifier
-model3 = RandomForestClassifier(n_jobs = -1, random_state = 42)
+model3 = RandomForestClassifier(random_state = 24, n_jobs = -1)
 model3.fit(train_inputs, train_targets)
 ```
+
 
 **Note:** In the above code the function of the argument `n_jobs = -1` is to train multiple decision trees parallelly.
 
@@ -177,17 +182,18 @@ To compare results, I've created a base model without any hyperparameters.
 
 ![random_base_model.png](/engineering-education/Hyperparameter-Tuning/random_base_model.png)
 
-Arguments like `max_leaf_nodes` and `max_depth` that we did above, are passed directly to each decision tree and control the depth and maximum nodes of each tree respectively. Now let's explore some other hyperparameters:
+Arguments like `max_leaf_nodes` and `max_depth` that we did above, are directly passed on to each decision tree. This controls the depth and maximum nodes of each tree respectively. Now let's explore some other hyperparameters:
 
 ###### c. n_estimators: 
-This argument controls the number of decision trees in the random forests. The default value is 100. For larger datasets, it's better to have a greater number of estimators. 
+This argument limits the number of decision trees in random forests. By default, its value is calibrated to 100, but in the case of larger datasets, 100 can prove to be a meager quantity hence it's better to try a higher number of estimators. 
 
 ```
 model = RandomForestClassifier(random_state=42, n_jobs=-1, n_estimators=10)
 model.fit(train_inputs, train_targets)
 ```
 
-🌟 But, as a general rule: Keep the estimators as low as possible. For example: In my model, the validation accuracy at 100 and 200 estimators is approximately the same. So in such cases, I shall stick to the lower number of estimators.
+🌟 But, as a general rule: We should keep as few estimators as possible. For example: In my model, the validation accuracy at 100 and 200 estimators is approximately the same. So in such cases, I shall stick to the lower number of estimators.
+
 
 ![n_estimator.png](/engineering-education/Hyperparameter-Tuning/n_estimator.png)
 
@@ -201,18 +207,20 @@ Hence, `max_features` will help to make each tree in the forest different. The d
 ![max_features.png](/engineering-education/Hyperparameter-Tuning/max_features.png)
 
 ###### e. min_samples_split: 
-Minimum samples split represents the minimum number of samples required to split an internal node. By default, the decision tree tries to split every node that has two or more rows of data inside it. This can again cause memorization of training data, resulting in a lesser generalized model.
+Minimum samples split decides or holds the value for the minimum number of samples necessary to split a nonterminal node. By default, the decision tree tries to split every node that has two or more rows of data inside it. This can again cause memorization of training data, resulting in a lesser generalized model.
 
-Higher values prevent a model from learning relations that might be highly specific to a particular sample selected for a tree. Too high values can also lead to under-fitting the model hence depending on the model's level fitting the data, you can tune the values for `min_samples_split`.
+Higher values prevent a model from learning relations that might be highly specific to a particular row or sample of rows selected for a tree. But again, much-exceeded values will lead to under-fitting the model hence depending upon the model's fitting levels for the chosen data, you can tune the values for `min_samples_split`.
+
 
 ![min_samples_split.png](/engineering-education/Hyperparameter-Tuning/min_samples_split.png)
 
 **Note:** The `test_params` function used above has the following code. It's used to test different hyper parameters and returns the training and validation accuracy. 
 ```
 def test_params(**params):
-    model = RandomForestClassifier(random_state=42, n_jobs=-1, **params).fit(X_train, train_targets)
+    model = RandomForestClassifier(n_jobs=-1, random_state=24, **params).fit(X_train, train_targets)
     return model.score(X_train, train_targets), model.score(X_val, val_targets)
 ```
+
 
 
 ###### f. min_samples_leaf:
@@ -226,7 +234,7 @@ Since the number of features in my dataset is very limited, I didn't try this pa
 Some default hyperparamters used in random forests are Bootstrapping.
 
 ###### Bootstrap:
-By default, Random Forests do not use the entire dataset for training each decision tree. Instead, for each tree, rows from the dataset are picked one by one randomly, with repetition. i.e While training, some rows may not show up at all, whereas some might show up twice. This random picking is done for the entire dataset.  
+By default, Random Forests do not use the entire dataset for training each decision tree. Instead, while creating decision trees, random rows of the dataset are selected consecutively. i.e While training, some rows may not show up at all, whereas some might show up twice. This random picking is done for the entire dataset.  
 
 You can change `default=False` to disable it, and in that case, the entire dataset will be used to create decision trees.
 
