@@ -35,7 +35,8 @@ To develop and train a quantum framework follow the steps below.
 
 1. Construct a quantum data collection - Tensors represent quantum data. [Cirq quantum network](https://quantumai.google/cirq)  generates  this quantum data and TensorFlow controls all the activities on the system creating a quantum database.
 
-2. Assess the quantum neural system design - Cirq can be used to design a quantum neural system that will then be embedded in a TensorFlow computing structure. Customized quantum systems may be chosen from many groups depending on the quantum's data nature. The model's purpose is to use quantum computation to retrieve information concealed in a usually entangled form. The quantum model frees the incoming quantum data. It then retains the concealed information stored in classical associations. Hence available to localized measures and classical post-processing.
+2. Assess the quantum neural system design - Cirq can be used to design a quantum neural system that will then be embedded in a TensorFlow computing structure. Customized quantum systems may be chosen from many groups depending on the quantum's data nature. 
+The model's purpose is to use quantum computation to retrieve information concealed in an entangled form. The quantum model frees incoming quantum data and then retains the concealed information stored in classical associations. Hence available to localized measures and classical post-processing.
 
 3. Sample or Average - Quantum form measurement derives classical information from classical randomized variables in samples. The quantum state and the observable influence after the dispersion of values from the random variable. Many variational algorithms rely on average measurement values, also called expectation values. TensorFlow Quantum includes techniques for combining over many runs comprising steps (1) and (2). 
 
