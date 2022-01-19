@@ -225,7 +225,7 @@ ch.plot.text(
         color_column='generation')
 ch.show()
 ```
-We did not discuss the `color_column` in the previous bar chart. The `color_column` parameter gives your plot a color-based argument that colors the plot of the basis of the column specified. In our graph, Chartify will assign different colors to the different generations because we set `color_column` to be the column “generation”.
+The `color_column` parameter gives your plot a color-based argument that colors the plot of the basis of the column specified. In our graph, Chartify will assign different colors to the different generations because we set `color_column` to be the column `generation`.
 
 ![Chartify](/engineering-education/data-viz-chartify/chartifyfour.png)
 
