@@ -13,7 +13,7 @@ images:
   - url: /engineering-education/data-viz-chartify/hero.png
     alt: Data visualisation with Chartify
 ---
-Although Chartify isn�t the new kid on the block, many data scientists are still unfamiliar with it. That�s a bummer, considering that it was developed to make data visualization easier for data scientists and is more 'intuitive' than other Python charting libraries. Data visualization is an important aspect of data analytics since it allows you to communicate information to shareholders in a visually appealing and understandable way.
+Although Chartify isn't the new kid on the block, many data scientists are still unfamiliar with it. That's a bummer, considering that it was developed to make data visualization easier for data scientists and is more 'intuitive' than other Python charting libraries. Data visualization is an important aspect of data analytics since it allows you to communicate information to shareholders in a visually appealing and understandable way.
 <!--more-->
 
 In this article, we'll learn how to visualize  datasets with Chartify. This article will follow a very clear structure, starting with an overview of Chartify to what makes distinguishes it from other charting libraries and ending with a demonstration of Chartify in action.
