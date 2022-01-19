@@ -42,9 +42,9 @@ To follow along with this article, you should have a:
 - Basic knowledge in using Jupyter Notebooks or any other notebook-based technology. I would recommend Jupyter notebook or Google Colab for data visualization. However, for this tutorial, we will be using [Jupyter](https://jupyter.org/).
 
 ### What is Chartify?
-According to the documentation, [Chartify](https://chartify.readthedocs.io/en/latest/) is a Python library that aims to make it easy for data scientists to create charts. This open-source library was introduced to the world in this article by [Spotify Lab](https://engineering.atspotify.com/2018/11/15/introducing-chartify-easier-chart-creation-in-python-for-data-scientists/), as a means for you and me to build visually appealing charts using Python.
+According to the documentation, [Chartify](https://chartify.readthedocs.io/en/latest/) is a Python library that aims to make it easy for data scientists to create charts. This open-source library was introduced to the world in this article by [Spotify Lab](https://engineering.atspotify.com/2018/11/15/introducing-chartify-easier-chart-creation-in-python-for-data-scientists/), as a means for you and I to build visually appealing charts using Python.
 
-The library was built on [Bokeh](https://docs.bokeh.org/en/latest/docs/user_guide/styling.html). Bokeh is a Python visualization framework that JavaScript based. Bokeh can be used to generate interactive visualizations for modern web browsers. You can use Bokeh to generate JavaScript-powered visualizations without having to write any JavaScript. I am sure you know what that means for Chartify... Yeah, you got it! Fantastic visuals.
+The library was built on [Bokeh](https://docs.bokeh.org/en/latest/docs/user_guide/styling.html). Bokeh is a Python visualization framework that is JavaScript based. Bokeh can be used to generate interactive visualizations for modern web browsers. You can use Bokeh to generate JavaScript-powered visualizations without having to write any JavaScript. I am sure you know what that means for Chartify... Yeah, you got it! Fantastic visuals.
 
 ![Introduction to Chartify](/engineering-education/data-viz-chartify/chartifydoc.png)
 
@@ -66,7 +66,7 @@ Let's see how Chartify can help you visualize your data, but first, let's get it
 
 All code used for this project is available on [GitHub](https://github.com/Bennykillua/Project/blob/main/Data%20visualization%20using%20Charify/Chartify.ipynb)
 
-If you are working on your local machine, you will need to install Chartify. I highly recommend creating a [virtual environment](https://www.section.io/engineering-education/introduction-to-virtual-environments-and-dependency-managers/) to better manage your packages. 
+If you are working on your local machine, you will need to install Chartify. I highly recommend creating a [virtual environment](https://www.section.io/engineering-education/introduction-to-virtual-environments-and-dependency-managers/) to better manage your packages. But for this article, I would only be Jupyter notebook. lets open our notebook.
 
 Chartify can be installed by running the code below:
 
@@ -79,7 +79,7 @@ If you're using the Jupyter notebook and want to install a package with pip, you
 Import sys
 !{sys.executale} -m pip install chartify
 ```
-Chartify requires a ChromeDriver. The library requires this to generate a PNG output. You can download ChromeDriver from [the Chrome Website](https://sites.google.com/a/chromium.org/chromedriver/home). After downloading, you need to install it and copy it into the appropriate directory. This article will show you [how to add executables to your Windows PATH](https://medium.com/@kevinmarkvi/how-to-add-executables-to-your-path-in-windows-5ffa4ce61a53).
+Chartify requires a ChromeDriver. The library requires a ChromeDriver to generate a PNG output. You can download ChromeDriver from [the Chrome Website](https://sites.google.com/a/chromium.org/chromedriver/home). After downloading, you need to install it and copy it into the appropriate directory. This article will show you [how to add executables to your Windows PATH](https://medium.com/@kevinmarkvi/how-to-add-executables-to-your-path-in-windows-5ffa4ce61a53).
 
 ### Importing Chartify
 
@@ -111,6 +111,7 @@ pokemon_df.head(5)
 We will check our column using the `.columns` and add an `s/n` column using the code snippet below.
 
 ```python
+pokemon_df.columns
 pokemon_df.insert(loc =0, column = 's/n',value = np.arange(len(pokemon_df)))
 ```
 ### Problem Encounter while using Chartify
@@ -125,7 +126,7 @@ When I ran my codes for the first time, I got an error message. If we take a loo
 Why was this affecting chartify’s ability to display the visual? This is because like I mentioned earlier, ChromeDriver is needed for our PNG output (Visual). To resolve this problem, we will need to downgrade our Chrome browser. This can be achieved in 3 easy steps:
 
 - **Step 1**: Uninstall Chrome.
-- **Step 2**: Download Older Chrome Version. You can get this from sites like [FileHippo](https://www.slimjet.com/chrome/google-chrome-old-version.php) and [SlimJet](https://filehippo.com/download_google-chrome/history/) since there is an official repository hosting an older build of the Chrome browser.
+- **Step 2**: Download Older Chrome Version. You can get this from sites like [FileHippo](https://www.slimjet.com/chrome/google-chrome-old-version.php) and [SlimJet](https://filehippo.com/download_google-chrome/history/) since there is an official repository hosting older build of Chrome browser.
 - **Step 3**:  Disable Chrome Auto-Updates. 
 
 You can get a more detailed step-by-step tutorial in this article, [How to Downgrade and Install Older Versions of Chrome?](https://browserhow.com/how-to-downgrade-and-install-older-version-of-chrome/).
