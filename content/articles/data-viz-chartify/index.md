@@ -233,7 +233,7 @@ We did not discuss the `color_column` in the previous bar chart. The `color_colu
 
 ### Number of Pokemon of each type in each generation
 
-Let us try out a line graph. We would use our knowledge of Python to extract our data from our pokemon data. We would start by getting a count of each type.
+Let us try out a line graph. We would use our knowledge of Python to extract our data from our Pokemon data. We would start by getting a count of each type.
 
 ```python
 data2 = pokemon_df[pokemon_df.type2.notna()].copy()
