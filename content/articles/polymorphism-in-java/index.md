@@ -60,7 +60,7 @@ For clarity:
 
 `Method overloading` is achieved by having multiple methods to have the same name but different parameters or having different sizes of arguments. The parameters can differ by having different arguments, having different types of data types, or having different sizes the arguments. This will avoid the compile-time error.
 
-Let us use a code snippet understand more about static polymorphism.
+Let us use a code snippet to understand more about static polymorphism.
 
 ```java
 
