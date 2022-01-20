@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /how-to-use-symbolic-math's-toolbox-in-matlab-to-analyze-the-fourier-series/
+url: /how-to-use-symbolic-maths-toolbox-in-matlab-to-analyze-the-fourier-series/
 title: How to use the symbolic maths toolbox in MATLAB to analyze the Fourier series
 description: In this article, we are going to use the Symbolic math toolbox in MATLAB to analyze the Fourier series
 author: linet-achieng
@@ -11,7 +11,7 @@ topics: [Languages]
 excerpt_separator: <!--more-->
 images:
 
-  - url: /engineering-education/how-to-use-symbolic-math's-toolbox-in-matlab-to-analyze-the-fourier-series/hero.jpg
+  - url: /engineering-education/how-to-use-symbolic-maths-toolbox-in-matlab-to-analyze-the-fourier-series/hero.jpg
     alt: How to use the symbolic math toolbox in MATLAB to analyze the Fourier series hero image
 ---
 
@@ -33,14 +33,14 @@ This toolbox has a wide range of applications:
 2. Symbolic math in the **live editor**(mode in MATLAB) lets you interactively update and display Symbolic math computations. Also, MATLAB code formatted text, equations, and images can be published as executable live scripts, PDFs, or HTML documents. While working with analytical problems, you can get suggestions for the next step. These suggestions help you insert and execute function calls or live editor tasks directly into live scripts.
 3. In addition to providing exact rational math, the Symbolic toolbox provides precision for higher or lower positions, allowing algorithms to run higher or lower than MATLAB's in-built double. It also includes units for working with physical quantities and performing dimensional analysis.
 
-![Units for working with physical quantities](/engineering-education/how-to-use-symbolic-math's-toolbox-in-matlab-to-analyze-the-fourier-series/symbolic-one.jpeg)
+![Units for working with physical quantities](/engineering-education/how-to-use-symbolic-maths-toolbox-in-matlab-to-analyze-the-fourier-series/symbolic-one.jpeg)
 
 *This is an example of how this toolbox adds units for physical quantities*
 
 4. This toolbox is widely applied in many engineering and scientific application such as optimization, where symbolic expressions of exact gradient and Hessians improves accuracy and speed of optimization.
 5. In non-linear control design, the Symbolic toolbox improves recalculation speed at any operating point during execution. Furthermore, you can integrate symbolic results with MATLAB and Simulink applications by converting symbolic expressions into numeric MATLAB functions, Simulink, and Simscape blocks.
 
-![converting functions to simulink](/engineering-education/how-to-use-symbolic-math's-toolbox-in-matlab-to-analyze-the-fourier-series/symbolic-two.jpeg.jpeg)
+![converting functions to simulink](/engineering-education/how-to-use-symbolic-maths-toolbox-in-matlab-to-analyze-the-fourier-series/symbolic-two.jpeg.jpeg)
 
 *Sample of function converted to Simulink*
 
@@ -147,7 +147,7 @@ title('phase spectrum')   % title
 ```
 `plot(angle(double(data_value)))` gives the phase spectrum plot. The function `subplot()` is for making a subplot. `title()` gives the plot a title.  
 
-![phase spectrum](/engineering-education/how-to-use-symbolic-math's-toolbox-in-matlab-to-analyze-the-fourier-series/symbolic-three.png)
+![phase spectrum](/engineering-education/how-to-use-symbolic-maths-toolbox-in-matlab-to-analyze-the-fourier-series/symbolic-three.png)
 
 *Phase spectrum plot*
 
@@ -161,14 +161,14 @@ title('magnitude spectrum')
 
 The code `plot(abs(double(data_values)))` gives the magnitude spectrum. This plot uses the absolute values of the data, thus `abs()`.
 
-![magnitude spectrum](/engineering-education/how-to-use-symbolic-math's-toolbox-in-matlab-to-analyze-the-fourier-series/symbolic-four.png)
+![magnitude spectrum](/engineering-education/how-to-use-symbolic-maths-toolbox-in-matlab-to-analyze-the-fourier-series/symbolic-four.png)
 
 *Magnitude spectrum plot*
 
 ### Example 2
 Let's look at another example:
 
-![example 2](/engineering-education/how-to-use-symbolic-math's-toolbox-in-matlab-to-analyze-the-fourier-series/symbolic-nine.jpeg)
+![example 2](/engineering-education/how-to-use-symbolic-maths-toolbox-in-matlab-to-analyze-the-fourier-series/symbolic-nine.jpeg)
 
 We will have:
 
@@ -214,7 +214,7 @@ ezplot(abs(f_sub), [-pi: pi])
 ```
 Output is:
 
-![Range of -pi to pi](/engineering-education/how-to-use-symbolic-math's-toolbox-in-matlab-to-analyze-the-fourier-series/symbolic-five.png)
+![Range of -pi to pi](/engineering-education/how-to-use-symbolic-maths-toolbox-in-matlab-to-analyze-the-fourier-series/symbolic-five.png)
 
 *Plot for the range -pi to pi*
 
@@ -222,7 +222,7 @@ Output is:
 ezplot(abs(f_sub), [-2*pi: 2*pi])
 ```
 
-![Range of -2pi to 2pi](/engineering-education/how-to-use-symbolic-math's-toolbox-in-matlab-to-analyze-the-fourier-series/symbolic-six.png)
+![Range of -2pi to 2pi](/engineering-education/how-to-use-symbolic-maths-toolbox-in-matlab-to-analyze-the-fourier-series/symbolic-six.png)
 
 *Plot for the range -2pi to 2pi*
 
@@ -230,7 +230,7 @@ ezplot(abs(f_sub), [-2*pi: 2*pi])
 ezplot(abs(f_sub), [-4*pi: 4*pi])
 ```
 
-![Range of -4pi to 4pi](/engineering-education/how-to-use-symbolic-math's-toolbox-in-matlab-to-analyze-the-fourier-series/symbolic-seven.png)
+![Range of -4pi to 4pi](/engineering-education/how-to-use-symbolic-maths-toolbox-in-matlab-to-analyze-the-fourier-series/symbolic-seven.png)
 
 *Plot for the range -4pi to 4pi*
 
@@ -238,7 +238,7 @@ ezplot(abs(f_sub), [-4*pi: 4*pi])
 ezplot(abs(f_sub), [-8*pi: 8*pi])
 ```
 
-![Range of -8pi to 8pi](/engineering-education/how-to-use-symbolic-math's-toolbox-in-matlab-to-analyze-the-fourier-series/symbolic-eight.png)
+![Range of -8pi to 8pi](/engineering-education/how-to-use-symbolic-maths-toolbox-in-matlab-to-analyze-the-fourier-series/symbolic-eight.png)
 
 *Plot for the range -8pi to 8pi*
 
