@@ -20,7 +20,7 @@ It will be advantageous to have the following to fully understand this article:
 [CRA](https://reactjs.org/docs/create-a-new-react-app.html) is a tool provided by the React.js team for bootstrapping a single page application in React. To create a basic React app using CRA, navigate to your desired project directory and run the following command to initialize the React.js application using Typescript:
 
 ```bash
-npx creat-react-app react-glassmorphism-app --template typescript
+npx create-react-app react-glassmorphism-app --template typescript
 ```
 
 Then run the following command to access the newly-created directory.
@@ -170,7 +170,7 @@ Glassmorphism works well with multi-layered styles. In this case, we set a form 
 }
 ```
 
-The form will form attributes will now float above the background image. This will help us create a colorful and transparent layer that can easily adjust to set up a blurred background.
+The form and the form attributes will now float above the background image. This will help us create a colorful and transparent layer that can easily adjust to set up a blurred background.
 
 Ensure your development server is running. If not, start it with the following command from the terminal:
 
@@ -183,7 +183,7 @@ Then on your browser, open `http://localhost:300`. Your page should be similar t
 ![styled-home-page](/engineering-education/setup-glassmorphism-effect-in-reactjs-app/styled-home-page.png)
 
 ### Implementing the glassmorphism effect on the form
-To add the glassmorphism effect to our form, we will add the following styles:
+To add the glassmorphism effect to our form, we will add the following styles. Head over to the `src/App.css`, and add the following styling to the `form` class:
 
 - A linear gradient as the background image:
 
