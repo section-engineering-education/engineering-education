@@ -1,35 +1,38 @@
 ### How to Create a URL Shortener with React, Django Rest Framework, and SQLite Database
 
-This article covers creating a custom URL(Uniform Resource Locator) shortener service. The URL shortener will take in a long URL and provide an equivalent short URL suitable for posting on social media and sharing with friends. The shortener service will be made up of 3 parts: 
-- The front-end for interacting with the client(we will create the front-end using React).
-- The backend for creating the server, and providing the API routes(we will create the backend using Django Rest Framework).
-- The database for storing the data(We will use SQLite Database).
+In this article, we will learn to create a custom URL (Uniform Resource Locator) shortener service. The URL shortener will take in a long URL and provide an equivalent short URL suitable for posting on the social media and sharing with friends.
 
-The user will copy a link in the input field provided and click the `shorten` button. The link will be sent to the backend using the `Fetch API`, and the backend will apply a procedure to provide an equivalent short 6-digit URL. Equivalent means that the short URL will redirect the user to the same page as the long URL.
+The shortener service will be made up of 3 parts: 
+- The front-end for interacting with the client (we will build the front-end using React.js).
+- The backend for creating the server, and providing the API routes (we will build the backend using Django REST Framework).
+- The database for storing the data (we will use SQLite database).
+
+The user will copy an URL and paste it in the input field provided and click the `shorten` button. The URL will be sent to the backend using the `Fetch API`, and the backend will apply a procedure to provide an equivalent short 6-digit URL.
+
+> Equivalent URL means that the short URL will redirect the user to the same page as the long URL.
 
 ### Pre-requisites
-
 To follow along, the reader should have:
-
-- Understanding of the Django Rest Framework.
-- Understanding of Serializers in Django Rest Framework.
+- Understanding of the Django REST framework.
+- Understanding of Serializers in Django REST framework.
 - Basic understanding of the React hooks.
 - Understanding of the Fetch API.
 - Python and Node.js installed on the computer.
-- A browser, preferably Google Chrome.
-- A code editor, preferably VS Code.
+- A browser (preferably Google Chrome).
+- A code editor (preferably VS Code).
 
 ### Goals
-
 By the end of this article, the reader should be able to:
-
 - Create a custom URL shortener.
 - Work with React and Django.
 - Fetch data from a database using Django and display it on React webpage.
 
-### Setting up the Backend and Exposing the API Routes.
+### Setting up the backend and exposing the API routes
+Create a folder named `react-drf-shortener` and `cd` into it.
 
-Create a folder named `react-drf-shortener` and `cd` into it. First, create a virtual environment for the Django backend. More information about Django virtual environments can be found [here](https://docs.python.org/3/tutorial/venv.html).
+First, create a virtual environment for the Django backend.
+
+> More information about Django virtual environments can be found [here](https://docs.python.org/3/tutorial/venv.html).
 
 Run the commands below in the terminal to create the virtual environment, activate it, and install Django in it:
 
@@ -41,15 +44,13 @@ python -m venv shortener-env
 python -m pip install Django
 ```
 
-After Django has been successfully installed, run the following commands in the same directory to create a Django project named `urlshortener` and open it in VS Code:
+After Django is successfully installed, run the following commands in the same directory to create a Django project named `urlshortener` and open the folder in VS Code:
 
 ```bash
 django-admin startproject urlshortener
-
-code urlshortener
 ```
 
-Open the integrated terminal in the code editor and ensure that the virtual environment is still active. If it is not, run the following commands to activate it:
+Open the integrated terminal in the code editor and ensure that the virtual environment is still active. If not, run the following commands to activate it:
 
 ```bash
 cd ..
@@ -67,9 +68,9 @@ Run the following code to make sure that the server is working:
 python manage.py runserver
 ```
 
-If the server is working perfectly, this will open a development server at `http://127.0.0.1:8000/`
+If the server is working perfectly, this will open a development server at `http://127.0.0.1:8000/`.
 
-Now that the server is working perfectly, we will create a new app to handle all the API requests from the front end. Run the code below:
+Now that the server is working perfectly, we will create a new app to handle all the API requests from the front end as shown below:
 
 ```bash
 django-admin startapp api
@@ -83,14 +84,11 @@ pip install djangorestframework
 python -m pip install django-cors-headers
 ```
 
-**Code Explanation**:
+The above code does the following:
+- `pip install djangorestframework` will install Django Rest Framework (DRF). DRF allows us to create an API using Django.
+- `python -m pip install django-cors-headers` will install CORS to allow the Django backend to communicate with the React front-end.
 
-- `pip install djangorestframework` will install Django Rest Framework(DRF). DRF allows us to create an API using Django.
-
-- `python -m pip install django-cors-headers` - This will install CORS to allow the Django backend to communicate with the React front-end.
-
-### Registering the api app and the installed packages
-
+### Registering the API and the installed packages
 Open the `settings.py` file and modify its contents as shown below:
 
 For the `INSTALLED_APPS` section:
@@ -111,9 +109,12 @@ INSTALLED_APPS = [
     'corsheaders'
 ]
 ```
-The `INSTALLED_APPS` section holds the names of all Django applications that are activated in this particular Django instance. In this section, we add: 
-- `api.apps.ApiConfig` - This registers the api app we created earlier.
-- `rest_framework` and `corsheaders` - This registers the modules we installed using `pip`.
+
+The `INSTALLED_APPS` section holds the names of all Django applications that are activated in this particular Django instance.
+
+In this section, we add: 
+- `api.apps.ApiConfig` - This registers the API app that we created earlier.
+- `rest_framework` and `corsheaders` - This registers the modules that we installed using `pip`.
 
 For the `MIDDLEWARE` section:
 
@@ -131,7 +132,10 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 ```
-The `MIDDLEWARE` section is a framework of hooks into Django’s request/response processing. It is a “plugin” system for globally altering Django’s input or output. In the above code we have added `corsheaders.middleware.CorsMiddleware` to listen in on responses
+
+The `MIDDLEWARE` section is a framework of hooks into Django’s request/response processing. It is a "plugin" system for globally altering Django's input or output.
+
+In the above code, we have added `corsheaders.middleware.CorsMiddleware` to listen in on responses.
 
 Append the following code to the `settings.py` file:
 
@@ -144,7 +148,7 @@ CORS_ALLOWED_ORIGINS = [
 
 The above code specifies the clients that communicate with the Django backend.
 
-Open the `urls.py` file in the `urlshortener` folder and modify it as shown below to route all the requests to the `api` app we previously created.
+Open the `urls.py` file in the `urlshortener` folder and modify it as shown below to route all the requests to the `api` app that we previously created.
 
 ```python
 from django.contrib import admin
@@ -156,11 +160,9 @@ urlpatterns = [
 ]
 ```
 
-### Working on the api app
-
+### Working on the API app
 #### Creating the model
-
-Open the `models.py` file in the api folder and modify it as shown below:
+Open the `models.py` file in the `api` folder and modify it as shown below:
 
 ```python
 from django.db import models
@@ -174,9 +176,8 @@ class urlShortener(models.Model):
 ```
 
 The above code will create a table in the database with two fields:
-
--   `longurl` - This will store the long URL submitted by the user from the front-end.
--   `shorturl` - This will store the short URL equivalent of the long URL generated by the server.
+- `longurl` - to store the long URL submitted by the user from the front-end.
+- `shorturl` - to store the short URL equivalent of the long URL generated by the server.
 
 Run the commands below to propagate the changes made to the model into the database schema:
 
@@ -186,8 +187,7 @@ python manage.py makemigrations
 python manage.py migrate
 ```
 
-#### Creating the Serializer
-
+#### Creating the serializer
 In the `app` folder, create a `serializers.py` file and modify it as shown below:
 
 ```python
@@ -205,7 +205,9 @@ The above code will serialize all fields in the `urlShortener` model.
 More information about Serializers can be found [here](https://www.django-rest-framework.org/api-guide/serializers/).
 
 #### Working on the views
-A view is a function in Python that takes in a request from the client and returns a response. The view contains all the required logic to return the response. To learn more about views in Django, click [here](https://docs.djangoproject.com/en/4.0/topics/http/views/).
+A view is a function in Python that takes in a request from the client and returns a response. The view contains all the required logic to return the response.
+
+To learn more about views in Django, click [here](https://docs.djangoproject.com/en/4.0/topics/http/views/).
 
 Open the `views.py` file and modify it as shown below:
 
@@ -242,16 +244,21 @@ def redirectUrl(request, shorturl):
         return redirect(obj.longurl)
 ```
 
-- In the `makeshorturl` view, we use the `@api_view` decorator provided by the Django Rest Framework to limit only POST requests to the view. The view receives the front-end data and creates a `shorturl` from a string of predefined letters, numbers, and symbols. The `shorturl` has a length of six characters. The `longurl` and `shorturl` objects are then stored in the database, and a `Reponse` is returned to the user with the long URL and the generated short URL.
-* The logic for creating the `shorturl` is as follows: 
-  - We create a variable `s` that has a set of predefined characters.
-  - We then use the `random.sample()` method to create to randomly pick six characters from the variable `s`. This returns a Python list.
-  - We then use the `join()` method to join all the items in the list to form the `shorturl`. 
+The code above does the following:
+- In the `makeshorturl` view, we use the `@api_view` decorator provided by the Django REST Framework to limit only POST requests to the view.
+- The view receives the front-end data and creates a `shorturl` from a string of predefined letters, numbers, and symbols.
+- The `shorturl` has a length of six characters.
+- The `longurl` and `shorturl` objects are then stored in the database, and a `Response` is returned to the user with the long URL and the generated short URL.
+- The `redirectUrl` view takes in the `request` and `shorturl`. The `shorturl` parameter will be specified in the `urls.py` file.
+- This view uses a `try except` statement to retrieve an object from the database where the `shorturl` provided is equal to the shorturl in the database.
+- The user is redirected to the `longurl` in the object retrieved from the database if the object is found.
 
-- The `redirectUrl` view takes in the `request` and `shorturl`. The `shorturl` parameter will be specified in the `urls.py` file. This view uses a `try except` statement to retrieve an object from the database where the `shorturl` provided is equal to the shorturl in the database. The user is redirected to the `longurl` in the object retrieved from the database if the object is found.
+The logic for creating the `shorturl` is as follows: 
+- We create a variable `s` that has a set of predefined characters.
+- We then use the `random.sample()` method to create to randomly pick six characters from the variable `s`. This returns a Python list.
+- We then use the `join()` method to join all the items in the list to form the `shorturl`.
 
 #### Working on the urls
-
 Open the `urls.py` file and modify it as shown below:
 
 ```python
@@ -272,8 +279,7 @@ To run the server, run the following command:
 python manage.py runserver
 ```
 
-### Setting up the Frontend
-
+### Setting up the frontend
 `cd` into the `react-drf-shortener` folder using the command prompt and run the following commands:
 
 ```bash
@@ -342,13 +348,10 @@ function App() {
 export default App;
 ```
 
-Code explanation:
-
 We import the `useState()` hook from `react` in the code above. We then set up three pieces of state as explained below:
-
--   `longurl` - this will be used to track the input provided by the user.
--   `shorturl` - this will be used to hold the value of the short URL returned by the server.
--   `returnLongURL` - this will be used to hold the value of the long URL provided by the server.
+- `longurl` - will be used to track the input provided by the user.
+- `shorturl` - will be used to hold the value of the short URL returned by the server.
+- `returnLongURL` - will be used to hold the value of the long URL provided by the server.
 
 In the `return` section, there is an input field and a button that calls the `handleSubmit()` function when clicked. This function uses the `fetch API` to send the `longurl` to the backend. The `fetch API` returns a response and sets the `shorturl` and `returnLongURL` values.
 
@@ -362,9 +365,12 @@ npm start
 
 The above command will open a local development server on `127.0.0.1:3000`
 
-### Testing the Shortener Service.
+### Testing the shortener service
+To test the service, open the browser and navigate to the following URL, `127.0.0.1:3000`.
 
-To test the service, open the browser and navigate to the following URL, `127.0.0.1:3000`. Make sure that server is running. Input the long URL on the input field provided and click on the `shorten` button. A short URL will be rendered, and after clicking on it, it redirects to the same webpage as the long URL. This means that our shortener service is working.
+Make sure that server is running. Input the long URL on the input field provided and click on the `shorten` button. A short URL will be rendered, and on clicking it, it redirects to the same webpage as the long URL.
+
+This means that our shortener service is working.
 
 **Proof of working application:**
 ![Working application](engineering-education/react-drf-shortener/workingApp.png)
@@ -373,8 +379,9 @@ To test the service, open the browser and navigate to the following URL, `127.0.
 ![Redirected to same URL](engineering-education/react-drf-shortener/redirectedtosameurl.png)
 
 ### Conclusion
+We have learned how to implement a simple shortener service using React and Django. However, this project can be taken to the next level by styling the user interface and adding more features.
 
-We have how to implement a simple shortener service using React and Django. However, this project can be taken to the next level by styling the user interface and adding more features. One of the features that may be added is counting the number of times a link has been created.
+One of the features that may be added is counting the number of times a link has been created.
 
 Full code for the application can be found [here](https://github.com/KayveTech/url-shortener).
 
