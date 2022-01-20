@@ -14,7 +14,7 @@ images:
   - url: /engineering-education/url-shortener-with-react-django/hero.jpg
     alt: URL shortener with React and Django image
 ---
-In this article, we will learn to create a custom URL (Uniform Resource Locator) shortener service. The URL shortener will take in a long URL and provide an equivalent short URL suitable for posting on the social media and sharing with friends.
+In this article, we will learn to create a custom URL (Uniform Resource Locator) shortener service. The URL shortener will take in a long URL and provide an equivalent short URL suitable for posting on social media and sharing with friends.
 <!--more-->
 The shortener service will be made up of 3 parts: 
 - The front-end for interacting with the client (we will build the front-end using React.js).
@@ -23,7 +23,7 @@ The shortener service will be made up of 3 parts:
 
 The user will copy an URL and paste it in the input field provided and click the `shorten` button. The URL will be sent to the backend using the `Fetch API`, and the backend will apply a procedure to provide an equivalent short 6-digit URL.
 
-> Equivalent URL means that the short URL will redirect the user to the same page as the long URL.
+> An equivalent URL means that the short URL will redirect the user to the same page as the long URL.
 
 ### Pre-requisites
 To follow along, the reader should have:
@@ -397,7 +397,7 @@ We have learned how to implement a simple shortener service using React and Djan
 
 One of the features that may be added is counting the number of times a link has been created.
 
-Full code for the application can be found [here](https://github.com/KayveTech/url-shortener).
+The full code for the application can be found [here](https://github.com/KayveTech/url-shortener).
 
 Happy coding!
 
