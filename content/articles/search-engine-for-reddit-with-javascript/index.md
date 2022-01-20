@@ -15,8 +15,11 @@ images:
     alt: Reddit Search Engine
 ---
 ### Introduction
-In this article, we would be looking at how to build a front-end application that uses the parcel-bundler and Reddit API. The aim of this application is a search engine that searches article content on Reddit, the search result can be limited between the ranges of 5 to 100 results, we can also sort the article by either relevance or date(latest).
-<!--more-->
+In this article, we would be looking at how to build a front-end application that uses the parcel-bundler and Reddit API. 
+This application should:
+1. Allow us to search article content on Reddit.
+2. Allow us to limit the number of results between the ranges of 5 to 100 results
+3. Allow us to sort the results by either relevance or date(latest).
 We would also add an alert that would trigger if a user does not add a search term.
 
 #### Prerequisites
@@ -31,7 +34,7 @@ To install [parcel](https://parceljs.org/getting-started/webapp/) globally, we o
 
 When you install the package completely, you then type in `npm init` still in the terminal. This would create our `package.json` file where we would enter the package name, description, entry point, author, and license.
 
-After that, you create an `index.html` and `index.js` file within the folder we just created. What the parcel is going to do is to package it up and put it in a `dist folder`. The parcel also starts the development server on the terminal, which you can do by running `parcel index.html` in the terminal.
+After that, you create an `index.html` and `index.js` file within the folder we just created. What the parcel is going to do is to package it up and put it in a `dist folder`. The parcel also starts the development server on the terminal, which you can do by running `npx parcel index.html` in the terminal.
 
 ### Building the Application
 This app is built using HTML, Bootstrap, and JavaScript, here we would discuss more on JavaScript. But then let's brush through the HTML, Since we are using bootstrap, we would have to get the [CDN](https://www.bootstrapcdn.com/) link from the site and copy only the CSS link tag.
