@@ -6,7 +6,7 @@ url: /custom-searching-and-filtering-in-firebase-database-in-android/
 title: Implementing Custom Searching and Filtering in Firebase Database in Android
 description: This tutorial shows the reader how to implement custom searching and filtering in Firebase Database in Android using Kotlin.
 author: brandy-odhiambo
-date: 2022-01-17T00:00:00-11:50
+date: 2022-01-20T00:00:00-10:25
 topics: [Languages]
 excerpt_separator: <!--more-->
 images:
@@ -14,9 +14,12 @@ images:
   - url: /engineering-education/custom-searching-and-filtering-in-firebase-database-in-android/hero.jpg
     alt: Implementing Custom Searching and Filtering in Firebase Database in Android
 ---
+
 Firebase Realtime database is a NoSQL database that allows us to store and sync data in real-time between users. This is a large JSON object that developers can manage using a single API in real-time.
+
 <!--more-->
-Query instructions make filtering and searching data with different attributes in relational databases like MySQL and SQLite very simple. Even when conducting simple data queries, filtering and searching can be relatively difficult in Firebase Realtime database.
+
+Query instructions simplify filtering and searching data with different attributes in relational databases like MySQL and SQLite. However, filtering and searching can be relatively complex in the Firebase Realtime database, even when conducting simple data queries.
 
 ### Prerequisites
 To follow along with this tutorial, you should:
@@ -25,38 +28,38 @@ To follow along with this tutorial, you should:
 - Be familiar with how to connect your project to Firebase.
 
 ### Goals
-This article intends to guide and assist readers in fully comprehending the searching and filtering in firebase real-time database, as well as all of the implementation and methods necessary to make this process a success.
+This article intends to guide and assist readers in fully comprehending the searching and filtering in firebase real-time database and all of the implementation and methods necessary to make this process a success.
 
 ### How Firebase Realtime database is structured
-In most databases, data is organized in tables and rows. However, the firebase real-time database, which is a NoSQL database, organizes data in JSON format, which is arranged in a tree-like structure called a collection.
+In most databases, data is organized in tables and rows. However, the Firebase Realtime database, a NoSQL database, organizes data in JSON format, which is arranged in a tree-like structure called a collection.
 
-To create this tree-like structure, elements called nodes are joined by a general path that is shared by both connected nodes.
+To create this tree-like structure, elements called nodes are joined by a general path shared by both connected nodes.
 
-A child can be nested in the connected nodes to create a widely nested structure, as seen in the diagram below.
+As seen in the diagram below, a child can be nested in the connected nodes to create a widely nested structure.
 
 ![database structure](/engineering-education/custom-searching-and-filtering-in-firebase-database-in-android/firebase_database.png)
 
 ### Advantages of Firebase Realtime database
 - Ability to access the data in the database through a single path.
 - Creating a data format in Firebase is simple because you may use an automatically generated ID or define your own.
-- A single child path lists all the changes that occur inside the stored data.
+- A single child path lists all the changes inside the stored data.
 - It is a NoSQL database, which means that it is not limited to relational databases.
 
 ### Disadvantages of Firebase Realtime database
 - Finding a certain item is difficult because there is no query language to use.
-- Deleting a specific child item is difficult since it requires searching through all of the data to locate the item to be deleted.
+- Deleting a specific child item is difficult since it requires searching through all the data to locate the item to be deleted.
 
 ### Ways to Filter and Search data in Firebase Realtime database
 Even though searching data in a Firebase database is difficult, there are various techniques for searching and filtering data.
 
 These criteria are:
-- use of `id`, which is typically used to look for a specific value that has its "id".
-- Use of a child path from which any changes to data in the database are listed.
-- Use of a variable that can be given as a parameter.
+- Through the use of `id`, which is typically used to look for a specific value that has its `id`.
+- Through the use of a child path from which any changes to data in the database are listed.
+- Through the use of a variable that can be given as a parameter.
 - Employing filtering techniques, such as`orderByChild`.
 
 ### Methods Used in Filtering data
-Several methods help in the filtering and sorting of firebase data. To perform sorting the below methods are used:
+Several methods help in the filtering and sorting of firebase data. To perform sorting, the below methods are used:
 
 - `orderByChild` - This method sorts the data according to specified sub-collection or child path.
 - `orderByKey` - Performs sorting according to the specified key value.
@@ -74,7 +77,7 @@ Also, filtering is handled by the following methods:
 Let's get started :)
 
 ### Step 1: Creating an empty project
-Launch Android studio and create an empty activity project to start a new project from scratch. Next, give your project a descriptive name.
+Launch Android Studio and create an empty activity project to start a new project from scratch. Next, give your project a descriptive name.
 
 ![project](/engineering-education/custom-searching-and-filtering-in-firebase-database-in-android/creating_project.png)
 
@@ -83,10 +86,10 @@ To gain access to the Firebase database, your project must be connected to Fireb
 
 On your browser, search Firebase console, go to `Add project` -> Enter project name -> choose default account for Firebase -> Create project.
  
-> Ensure you have enabled Realtime database.
+> Ensure you have enabled the Realtime database.
 
 ### Step 3: Designing the user interface
-In this step, we will create a simple layout that will help in displaying data in a list-like manner. We will have an `EditText` that a user can enter a search term. Also, the layout will have two buttons: one for filtering data and another one for searching.
+In this step, we will create a simple layout that will help display data in a list-like manner. For example, we will have an `EditText` to enter a search term. Also, the layout will have two buttons: one to filter data and another to search.
 
 > Note: You must create a row layout that maps how your data will appear in a RecyclerView.
 
@@ -108,7 +111,7 @@ data class Students(
 )
 ```
 
-Adapter class serves as a link between accessed data and RecyclerViews. The code below demonstrates how to create an adapter class:
+The adapter class serves as a link between accessed data and RecyclerViews. The code below demonstrates how to create an adapter class:
 
 ```kotlin
 class StudentsAdapter: ListAdapter<Students, StudentsAdapter.MyHolder>(COMPARATOR) {
@@ -154,13 +157,13 @@ First, create an instance of `DatabaseReference`.
 private lateinit var databaseReference: DatabaseReference
 ```
 
-Inside your `onCreate` make sure you have initialized the `databaseReference`.
+Inside your `onCreate`, make sure you have initialized the `databaseReference`.
 
 ```kotlin
 databaseReference = FirebaseDatabase.getInstance().getReference("students")
 ```
 
-To fetch data, define the following method and call it in your `onCreate` method.
+Define the following method and call it in your `onCreate` method to fetch data.
 
 ```kotlin
 // fetching all values from firebase
@@ -193,7 +196,7 @@ Filtering can be accomplished in two ways:
 - Passing the filter parameter or
 - Using a common value in the data, such as Gender.
 
-To filter using a common category, we can define such a function:
+To filter using a standard category, we can define such a function:
 
 ```kotlin
 // filtering in general
@@ -221,7 +224,7 @@ private fun filterGender(){
 }
 ```
 
-To filter using a specific parameter, from the list that is being displayed in the RecyclerView. We can do the search by first defining a method called `filter`.
+To filter using a specific parameter from the list displayed in the RecyclerView. We can search by first defining a method called `filter`.
 
 ```kotlin
 private  fun filter(e: String) {
@@ -257,7 +260,7 @@ binding.etSearch.addTextChangedListener(object : TextWatcher {
 ```
 
 ### Step 7: Implementing searching
-One can opt to search for data based on a certain value, such as a name. This can be accomplished by defining a method that takes in search terms and performs a search from Firebase.
+One can search for data based on a certain value, such as a name. This can be accomplished by defining a method that takes in search terms and performs a search from Firebase.
 
 ```kotlin
 private fun searchByName(name: String) {
@@ -294,9 +297,9 @@ When you run the app, you should get the following output:
 ![demo](/engineering-education/custom-searching-and-filtering-in-firebase-database-in-android/demo.gif)
 
 ### Conclusion
-In this tutorial, we've discussed how Firebase realtime database structures its data, the different ways we perform searching and filtering, methods used when filtering data, and finally implemented search and filtering in Android.
+In this tutorial, we've discussed how Firebase real-time database structures its data, the different ways we perform searching and filtering, methods used when filtering data, and finally implemented search and filtering in Android.
 
-You can get the full code implementation of this tutorial on [this GitHub repository](https://github.com/brandy-kay/FirebaseSearchFilteringDemo).
+You can get the complete code implementation of this tutorial on [this GitHub repository](https://github.com/brandy-kay/FirebaseSearchFilteringDemo).
 
 Happy Coding!
 
