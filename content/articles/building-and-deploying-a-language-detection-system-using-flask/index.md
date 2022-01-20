@@ -1,36 +1,39 @@
-﻿
-### Building and deploying a Language Detection System using Flask
+﻿### Building and deploying a Language Detection System using Flask
 
-With more than a thousand languages being used today, communication between people of different native languages is crucial. That is why companies like Google are applying Natural Language Processing into their products like language detection on Chrome browser to give users a smooth experience.
+With more than a thousand languages being used today, communication between people of different native languages is crucial. 
 
-This article will tackle language detection from basic to implementation, thereby building your understanding of NLP and boosting your portfolio as a real-world project.
+That is why companies like Google are applying Natural Language Processing(NLP) into their products like language detection on Chrome browser, to give users a smooth experience.
+
+This article will illustrate a basic implementation of a language detection model, to build the readers' understanding of NLP and boost thier portfolio.
 
 ### Introduction
-Language detection is a task in Natural Language Processing (NLP) that identifies the language of a given text or phrase. It helps in language translation.
+Language detection is a task in Natural Language Processing (NLP) that identifies the language of a given text or phrase and provide its translation.
 
-This article will build a language detection model using Python, the [Language detection](https://www.kaggle.com/basilb2s/language-detection) dataset from Kaggle and deploy it using Flask. Flask is an easy-to-use Python micro web framework.
+In this article, we will build a language detection model using Python and the language detection dataset from [Kaggle](https://www.kaggle.com/basilb2s/language-detection).
 
-### Table of contents
+Additionally, we will test and deploy the model using [Flask,](https://flask.palletsprojects.com/en/2.0.x/) an easy-to-use Python micro web framework.
+
+### Table of content
 - [Building the language detection model](#building-the-language-detection-model)
 	- [Setting up the development environment](#setting-up-the-development-environment)
 	- [Importing Libraries](#importing-libraries)
 	- [Data Preprocessing](#data-preprocessing)
-	- [Modeling](#modeling)
+	- [Modeling](#modeling-the-data)
 	- [Model evaluation](#model-evaluation)
-	- [Inference](#inference)
+	- [Inference](#inferencing-using-the-model)
 - [Deploying the model using Flask](#deploying-the-model-using-flask)
 
 ### Prerequisites
-To follow along with this article, you should have the following:
-- Basic knowledge of Machine Learning
-- Python and [Jupyter Notebook](https://jupyter.org/)]( installed on your machine
-- Know the basics of [Flask](https://flask.palletsprojects.com/en/2.0.x/tutorial/)
+To follow along with this article, the reader should have the following:
+- A basic knowledge of Machine Learning.
+- Python and [Jupyter Notebook](https://jupyter.org/) installed on thier machine.
+- Basics of the [Flask](https://flask.palletsprojects.com/en/2.0.x/tutorial/) framwework.
 
 ### Building the language detection model
-It would be best if you started by setting up a development environment.
+To work on the project, it would be best if you started by setting up a development environment.
 
 #### Setting up the development environment
-The first step will be to create a project folder and create a virtual environment to handle the project dependencies.
+The first step will be creating a project folder and a virtual environment to handle the project dependencies.
 
 Run the following commands to create the project's folder:
 
@@ -49,9 +52,9 @@ cd .env/Scripts/activate # activate the environment
 Next,  create a new file, `languagedetection.ipynb` in the `langdetect` folder. Then, open the file using Jupyter Notebook.
 
 #### Importing libraries
-Before starting to model, we need to import the libraries listed below:
+We need to import the libraries as shown by the snippets below:
 
-```Python
+```python
 import numpy as np
 import pandas as pd
 import seaborn as sns
@@ -68,9 +71,9 @@ df= pd.read_csv("Language Detection.csv")
 df.head()
 ```
 
-We will then check the number of languages in the dataset using the following code snippet:
+We need to check the number of languages in the dataset. Use the following code snippet for that operation.
 
-```Python 
+```python 
 df["Language"].value_counts()
 ```
 
@@ -83,7 +86,7 @@ Here, we will transform the data into a desired usable format by the model.
 
 First, split the data into dependent and independent variables. We will use `X` for the independent variables(features) and `y` for the dependent variable(label/target).
 
-```Python
+```python
 X = df["Text"]
 y = df["Language"]
 ```
@@ -99,7 +102,7 @@ y = le.fit_transform(y)
 ```
 In the next step, we need to preprocess our feature (**Text**) as shown below:
 
-```Python
+```python
 text_list = []
 
 # iterating through all the text
@@ -120,16 +123,21 @@ X = cv.fit_transform(text_list).toarray() # tokenize a collection of text docume
                                             #in an array
 X.shape # check the shape of the data
 ```
-#### Modeling
-Once we are done with processing the data, we need to split the data into training  and testing sets as shown below:
+#### Modeling the data
+Once we are done processing the data, we need to split the data into training and testing sets. 
 
-```Python
+Use the snippets below to split the data into training and testing sets.
+
+```python
 from sklearn.model_selection import train_test_split
 X_train, X_test, y_train, y_test = train_test_split(X, y, train_size = 0.80, random_state=32)
 ```
-Then, we will train our model using the `MultinomialNB` classifier, which is best for classification with discrete features as shown below:
 
-```Python
+By this point, we need to train the model. We will use the `MultinomialNB` classifier, which is best for classifying discrete features.
+
+Use the code snippets below to apply the `MultinomialNB` classifier to train your model.
+
+```python
 from sklearn.naive_bayes import MultinomialNB  
 model = MultinomialNB()
 model.fit(X_train, y_train)
@@ -143,7 +151,7 @@ y_pred
 ```
 
 #### Model evaluation
-After modelling, we will need to evaluate the performance of our model using the snippet below:
+After modelling, evaluate the performance of the model using the snippet below:
 
 ```python
 from sklearn.metrics import accuracy_score, confusion_matrix, classification_report
@@ -152,12 +160,12 @@ cm = confusion_matrix(y_test, y_pred)
 print("Accuracy is :",acc)
 ```
 
-As shown below, the result of the model is pretty good.
+The result is good, as shown in the picture below:
 
 ![accuracy](/engineering-education/building-and-deploying-a-language-detection-system-using-flask/acuracy.jpg)
 
-#### Inference
-We will now try to use our model to predict a sentence written in a particular language.
+#### Inferencing using the model
+We will now try to use our model to predict the language of a sentence. When supplied with the sentence, the model should output the language of the sentence.
 
 ```python
 def predict(txt):
@@ -169,7 +177,7 @@ def predict(txt):
 predict('I went home yesterday')  # Call the function
 ```
 
-The output of our prediction will be "English", as seen below:
+The output of our prediction is "English", as seen below:
 
 ![output](/engineering-education/building-and-deploying-a-language-detection-system-using-flask/out.jpg)
 
@@ -183,7 +191,7 @@ pickle.dump(model, open('model.pkl','wb'))
 After the modelling process, we will deploy the model using Flask.
 
 ### Deploying the model using Flask
-Before the deployment, we first need to install the Flask framework package.
+Before the deployment, we need to install the Flask framework package.
 
 ```bash
 pip install flask
@@ -191,48 +199,46 @@ pip install flask
 
 Then, we need to create the following files:
 
- `model.pkl` - The saved model we will use.
- `apps.py` - For connecting the web page with the model.
- `index.html`- For displaying the web page.
- `style.css` - For styling the HTML page.
+- `model.pkl` - The saved model to be used.
+- `apps.py` - For connecting the web page with the model.
+- `index.html`- For displaying the web page.
+- `style.css` - For styling the HTML page.
 
 On the `index.html` file, add the following snippet:
 
 ```html
 <!DOCTYPE  html>
 <html  >
-<head>
-<meta  charset="UTF-8">
-<title>Language Detection</title>
+    <head>
+        <meta  charset="UTF-8">
+        <title>Language Detection</title>
 
-<link  href='https://fonts.googleapis.com/css?family=Pacifico'  rel='stylesheet'  type='text/css'>
-<link  href='https://fonts.googleapis.com/css?family=Arimo'  rel='stylesheet'  type='text/css'>
-<link  href='https://fonts.googleapis.com/css?family=Hind:300'  rel='stylesheet'  type='text/css'>
-<link  href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300'  rel='stylesheet'  type='text/css'>
-<link  rel="stylesheet"  href="{{ url_for('static', filename='css/style.css') }}">
+        <link  href='https://fonts.googleapis.com/css?family=Pacifico'  rel='stylesheet'  type='text/css'>
+        <link  href='https://fonts.googleapis.com/css?family=Arimo'  rel='stylesheet'  type='text/css'>
+        <link  href='https://fonts.googleapis.com/css?family=Hind:300'  rel='stylesheet'  type='text/css'>
+        <link  href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300'  rel='stylesheet'  type='text/css'>
+        <link  rel="stylesheet"  href="{{ url_for('static', filename='css/style.css') }}">
 
-</head>
-<body>
-<div  class="login">
-<h1>What Language is this?</h1>
-<!-- User Input -->
-<form  action="{{ url_for('predict')}}"method="post">
-<input  type="text"  name="text"  placeholder="Text"  required="required"  />
-<button  type="submit"  class="btn btn-primary btn-block btn-large">Predict</button>
-</form>
-<br>
-<br>
-{{ prediction_text }}
-</div>
-</body>
+    </head>
+    <body>
+        <div  class="login">
+        <h1>What Language is this?</h1>
+        <!-- User Input -->
+            <form  action="{{ url_for('predict')}}"method="post">
+                <input  type="text"  name="text"  placeholder="Text"  required="required"  />
+                <button  type="submit"  class="btn btn-primary btn-block btn-large">Predict</button>
+            </form>
+        <br>
+        <br>
+        {{ prediction_text }}
+        </div>
+    </body>
 </html>
 ```
 
-Make the [following changes](https://github.com/FREDERICO23/Language-detection/blob/main/static/css/style.css)on the `style.css` file to style the webpage.
+Make the [following changes](https://github.com/FREDERICO23/Language-detection/blob/main/static/css/style.css) on the `style.css` file to style the web page then connect the web page to the model using the `apps.py` file by adding the following code snippet:
 
-Connect the webpage to the model using `apps.py` by making the following changes.
-
-```Python
+```python
 import pandas as pd
 from flask import Flask, request, render_template
 import pickle
@@ -304,25 +310,22 @@ if __name__ == "__main__":
     app.run(debug=True)
 ```
 
-Once the above changes are done,  run the webserver using the following command to see how the app works:
+Once the above changes are done,  run the web server using the following command to see how the model works:
 
 ```bash
 python apps.py
 ```
 
-![homepage](/engineering-education/building-and-deploying-a-language-detection-system-using-flask/homepage.jpg)
+![home page](/engineering-education/building-and-deploying-a-language-detection-system-using-flask/homepage.jpg)
 
- Enter a word in any of the languages above and click on the **Predict** button to see the results.
+Enter a word in any of the languages above, then click on the **Predict** button to see the results. An example below is the results of a phrase *"Hur mår du"*.
 
- An example below is the results of a phrase *"Hur mår du"*.
-
- ![results](/engineering-education/building-and-deploying-a-language-detection-system-using-flask/result.jpg)
+![results](/engineering-education/building-and-deploying-a-language-detection-system-using-flask/result.jpg)
 
 ### Conclusion
-We have built a language detection model and deployed it using Flask, as discussed above. The knowledge can be applied to other NLP projects like fraud detection and hate speech detection.
+We have built a language detection model and deployed it using Flask. As discussed above, the knowledge can be applied to other NLP projects like fraud and hate speech detection.
 
-You can find the project's code on [GitHub](https://github.com/FREDERICO23/Language-detection)
+You can find the code for this project  on [GitHub.](https://github.com/FREDERICO23/Language-detection)
 
 ### Further reading
-
-- Read more on [Flask](https://flask.palletsprojects.com/en/2.0.x/tutorial/factory/).
+- [Flask](https://flask.palletsprojects.com/en/2.0.x/tutorial/factory/)
