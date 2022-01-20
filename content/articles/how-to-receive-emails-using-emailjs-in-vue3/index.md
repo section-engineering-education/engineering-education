@@ -276,21 +276,22 @@ The next thing we have to do is install the EmailJS library and import it into o
 
 #### Installation
 
-<aside>
-npm install emailjs-com
-</aside>
+```bash
+import install emailjs-com;
+```
 
 In our `Email.vue` component, inside the `script` tag, we import it like this:
 
-<aside>
+```bash
 import emailjs from 'emailjs-com';
-</aside>
+```
 
 Since we are using the vue3 Composition API, we have to import `ref` right after the EmailJS import like this:
 
-<aside>
+
+```bash
 import {ref} from 'vue';
-</aside>
+```
 
 Now, we are to write a function that fetches the EmailJS API. This API accepts four parameters: the `SERVICE_ID`, `TEMPLATE_ID`, the `DOM` element we want to access, and the `USER_ID`. 
 
