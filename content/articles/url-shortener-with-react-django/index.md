@@ -1,7 +1,21 @@
-### How to Create a URL Shortener with React, Django Rest Framework, and SQLite Database
+---
+layout: engineering-education
+status: publish
+published: true
+url: /url-shortener-with-react-django/
+title: How to Create an URL Shortener with React, Django REST Framework, and SQLite Database
+description: This article will be an introduction to building an URL shortener with React.js, Django, and SQLite database.
+author: kevin-kimani
+date: 2022-01-20T00:00:00-23:45
+topics: [API]
+excerpt_separator: <!--more-->
+images:
 
+  - url: /engineering-education/url-shortener-with-react-django/hero.jpg
+    alt: URL shortener with React and Django image
+---
 In this article, we will learn to create a custom URL (Uniform Resource Locator) shortener service. The URL shortener will take in a long URL and provide an equivalent short URL suitable for posting on the social media and sharing with friends.
-
+<!--more-->
 The shortener service will be made up of 3 parts: 
 - The front-end for interacting with the client (we will build the front-end using React.js).
 - The backend for creating the server, and providing the API routes (we will build the backend using Django REST Framework).
@@ -373,10 +387,10 @@ Make sure that server is running. Input the long URL on the input field provided
 This means that our shortener service is working.
 
 **Proof of working application:**
-![Working application](engineering-education/react-drf-shortener/workingApp.png)
+![Working application](engineering-education/url-shortener-with-react-django/workingApp.png)
 
 **Proof of short URL redirecting you to the same page as the long URL:**
-![Redirected to same URL](engineering-education/react-drf-shortener/redirectedtosameurl.png)
+![Redirected to same URL](engineering-education/url-shortener-with-react-django/redirectedtosameurl.png)
 
 ### Conclusion
 We have learned how to implement a simple shortener service using React and Django. However, this project can be taken to the next level by styling the user interface and adding more features.
@@ -386,3 +400,6 @@ One of the features that may be added is counting the number of times a link has
 Full code for the application can be found [here](https://github.com/KayveTech/url-shortener).
 
 Happy coding!
+
+---
+Peer Review Contributions by: [Srishilesh P S](/engineering-education/authors/srishilesh-p-s/)
