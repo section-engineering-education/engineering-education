@@ -170,7 +170,7 @@ list_slice <- first_quarter[c(1:2)] # list_slice contains Jan and Feb as element
 If we observe, in the above code, we begin the slicing operation from index 1. R is a one-indexed programming language. Most of the programming languages like C, Java, and Python are zero-indexed programming languages. The index in R starts with 1; that is, the index assigned to the first element in a list is 1.
 
 #### Matrices
-Matrices are 2-dimensional (rectangular) structures used commonly in the field of computer science. One application of matrices is in the field of [computer vision](/computer-vision-straight-lines/). Each image is treated as a stack of three matrices, each representing a different color channel. R offers libraries highly optimized for matrix operations.
+Matrices are 2-dimensional (rectangular) structures used commonly in the field of computer science. One application of matrices is in the field of [computer vision](/engineering-education/computer-vision-straight-lines/). Each image is treated as a stack of three matrices, each representing a different color channel. R offers libraries highly optimized for matrix operations.
 
 Let's look at defining matrices.
 

@@ -20,8 +20,8 @@ This pipeline creation process involves loading the dataset, cleaning and pre-pr
 ### Prerequisites
 There are a few theoretical and programming pre-requisites required for this article. They are helpful but not required to understand the article.
 
-1. [Introduction to Pandas](/data-analytics-using-pandas/)
-2. [Introduction to Supervised Learning Algorithms using Scikit-Learn](/supervised-learning-algorithms/)
+1. [Introduction to Pandas](/engineering-education/data-analytics-using-pandas/)
+2. [Introduction to Supervised Learning Algorithms using Scikit-Learn](/engineering-education/supervised-learning-algorithms/)
 
 ### Installation
 We'll install the packages required for this tutorial in a virtual environment. You may bypass the process of creating the virtual environment. We will use `conda` to create a virtual environment. For more installation information, refer to the [Anaconda Package Manager website](https://www.anaconda.com/products/individual).

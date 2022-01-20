@@ -69,14 +69,14 @@ Instead of having to deal with the messy aftermath of a ransomware attack, you c
 - Overall, just be aware of any suspicious activity in your email accounts, and on your electronic devices.
 
 ### Conclusion
-In the age of the Internet, keeping yourself safe from potential threats to your privacy is extremely important. Regardless of how many measures you take, the first step should be to stay vigilant and informed. Check out [this](engineering-education/what-is-anti-virus-software/) article on anti-malware for more information.
+In the age of the Internet, keeping yourself safe from potential threats to your privacy is extremely important. Regardless of how many measures you take, the first step should be to stay vigilant and informed. Check out [this](/engineering-education/what-is-anti-virus-software/) article on anti-malware for more information.
 
 ### Additional Resources & Readings
 
-- [What is Anti-Malware?](/what-is-anti-virus-software/)
-- [What is a Denial of Service Attack?](/denial-of-service/)
-- [Man in the Middle Attacks Explained](/man-in-the-middle-attack/)
-- [Web Application Firewall vs Bot Mitigation Solutions](/web-application-firewall-bot-mitigation-comparison/)
+- [What is Anti-Malware?](/engineering-education/what-is-anti-virus-software/)
+- [What is a Denial of Service Attack?](/engineering-education/denial-of-service/)
+- [Man in the Middle Attacks Explained](/engineering-education/man-in-the-middle-attack/)
+- [Web Application Firewall vs Bot Mitigation Solutions](/engineering-education/web-application-firewall-bot-mitigation-comparison/)
 
 ---
 Peer Review Contributions by: [Sophia Raji](/engineering-education/authors/sophia-raji/)

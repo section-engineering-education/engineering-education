@@ -327,7 +327,7 @@ Redux allows the flow of data triggered by client actions through the applicatio
 
 Reducers act as intermediaries that switch the action type and return part of the updated state to the store. 
 
-You can read more about Redux from [here](/https://redux.js.org/introduction/getting-started).
+You can read more about Redux from [here](https://redux.js.org/introduction/getting-started).
 
 Happy coding!
 

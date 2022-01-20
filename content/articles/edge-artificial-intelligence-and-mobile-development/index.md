@@ -7,7 +7,7 @@ title: How Edge AI is Revolutionizing Mobile App Development
 description: This article will explain how edge artificial intelligence can help to revolutionize software development.
 author: bashiir-isla
 date: 2021-09-10T00:08:30-04:50
-topics: [Artificial Intelligence]
+topics: [Machine Learning]
 excerpt_separator: <!--more-->
 images:
 

@@ -20,8 +20,8 @@ This article goes through the creation of classes, objects, and objects as funct
 ### Prerequisites
 To follow this article, you will need to have:
 - A [codeblocks IDE](http://www.codeblocks.org/downloads) to run the code.
-- A basic understanding of the [C++ language](/intro-to-c-part1/).
-- A basic understanding of [functions](/functions-in-cpp/).
+- A basic understanding of the [C++ language](/engineering-education/intro-to-c-part1/).
+- A basic understanding of [functions](/engineering-education/functions-in-cpp/).
 
 ### What is a class?
 A class is a logical method of grouping data and functions in the same construct. It is declared using the `class` keyword, whose functionality is similar to that of the `struct` C keyword. Only with the option of including functions as members rather than data. Classes are data types specified by users and behave like a programming language's built-in types. We can construct any number of objects, belonging to that class after the class has been defined.

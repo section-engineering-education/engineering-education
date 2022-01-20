@@ -175,7 +175,7 @@ Congratulations! We have finished setting up Firebase authentication.
 ### Step 5 - Application code
 At this stage, we're going to create the user interface (UI) and the backend for our app. This is where `XML` and `Kotlin` come in. We don't need to code the server-side backend as the irebase APIs will do that for us. Isn't that awesome?
 
-First of all, we need to keep our app organized. This is referred to as [application architecture](/web-application-architectures-101/). Expand the `java` directory `>` right-click on the package name directory `>` add 3 new `packages` namely `extensions`, `utils` and `views`. 
+First of all, we need to keep our app organized. This is referred to as [application architecture](/engineering-education/web-application-architectures-101/). Expand the `java` directory `>` right-click on the package name directory `>` add 3 new `packages` namely `extensions`, `utils` and `views`. 
 
 We'll learn more about them as we proceed.
 

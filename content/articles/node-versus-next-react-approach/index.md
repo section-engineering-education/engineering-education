@@ -51,7 +51,7 @@ The two diagrams mentioned below detail the processes involved in server-side re
 
 [Image Source](medium.com)
 
-We have looked at building React applications using create-react-app in a previous two article series. You can review them [here](/build-an-outlook-clone-using-react/) and [here](/build-an-outlook-clone-using-react-hooks/).
+We have looked at building React applications using create-react-app in a previous two article series. You can review them [here](/engineering-education/build-an-outlook-clone-using-react/) and [here](/engineering-education/build-an-outlook-clone-using-react-hooks/).
 
 We will be using `create-next-app` instead of `create-react-app` for building next.js applications. Next.js [documentation](https://nextjs.org/learn/basics/create-nextjs-app) provides a detailed step-by-step tutorial on how to implement a Next.js project. We will focus on the major differences between the two and understand the features in depth.
 

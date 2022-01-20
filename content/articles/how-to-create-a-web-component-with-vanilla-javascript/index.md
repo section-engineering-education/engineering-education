@@ -3,18 +3,17 @@ layout: engineering-education
 status: publish
 published: true
 url: /how-to-create-a-web-component-with-vanilla-javascript/
-title: Creating a web component with Vanilla JavaScript
+title: Creating a web Component With Vanilla JavaScript
 description: This article will walk the user through understanding web components and how one can create a web component using vanilla javascript.
 author: wangui-leah
 date: 2021-09-20T00:00:00-00:30
-topics: [Langauges]
+topics: [Languages]
 excerpt_separator: <!--more-->
 images:
 
   - url:  /engineering-education/how-to-create-a-web-component-with-vanilla-javascript/hero.jpg
-    alt: Vanilla javascript web component image
+    alt: Vanilla Javascript web Component image
 ---
-
 Web application development is a pretty crowded field of technology. There are different types of frameworks, libraries, and tools. While developing web apps, the main objective is delivering high-quality user interfaces (UI) with encapsulated components. 
 <!--more-->
 Therefore, when you use frameworks like React, Vue, Angular, or any other front-end framework, you break everything in your UI up into components. However, we can do something similar without even using a framework or a library, and that's plain JavaScript (Vanilla JavaScript).
