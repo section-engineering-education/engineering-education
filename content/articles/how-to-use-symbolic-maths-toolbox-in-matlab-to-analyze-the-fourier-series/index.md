@@ -19,6 +19,7 @@ images:
 
 ### Introduction
 Symbolic math toolbox provides an easy, intuitive and complete environment to interactively learn and apply math operations such as calculus, algebra, and differential equations. It can also perform common analytical computation such as differentiation and integration to get close form results, simplify and manipulate expression for great insights and solve algebraic and differential equations.
+<!--more-->
 
 In this tutorial, the Fourier series is implemented and simulated using Symbolic Math's Toolbox of MATLAB. Both forms of the Fourier series, Trigonometric and Exponential, are implemented. The proposed programs are versatile and can receive any function of time(t). It means the function is dependent on time. Moreover, the program gives plots of harmonics, original and approximated functions, magnitude spectrum, and phase spectrum. The advantage is that this toolbox is already available in MATLAB, and you don't have to get it from an external source. To understand more about the Fourier series, you can check [here](https://www.mathsisfun.com/calculus/fourier-series.html) to understand more about the Fourier series.
 
