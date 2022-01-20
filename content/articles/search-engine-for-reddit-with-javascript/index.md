@@ -1,21 +1,16 @@
-### How To Build A Search Engine For Reddit With JavaScript
+# How To Build A Search Engine For Reddit With JavaScript
 
-
-#### Introduction
-
+### Introduction
 In this article, we would be looking at how to build a front-end application that uses the parcel-bundler and Reddit API. The aim of this application is a search engine that searches article content on Reddit, the search result can be limited between the ranges of 5 to 100 results, we can also sort the article by either relevance or date(latest).
 
 We would also add an alert that would trigger if a user does not add a search term.
 
-##### Prerequisites
-
+#### Prerequisites
 If you’d like to follow along with this tutorial, be sure you have:
-
 1. Basic Knowledge of API
 2. Basic knowledge of JavaScript
 
-#### How to Set up Parcel
-
+### How to Set up Parcel
 This is a package manager similar to a [webpack](https://webpack.js.org/) with zero configuration, very simple to set up. First, we would create a new folder for the project on your desktop and open the folder with VS Code or any text editor you prefer. 
 
 To install [parcel](https://parceljs.org/getting-started/webapp/) globally, we open up our terminal and run the following command, `npm I -g parcel-bundler`.
@@ -24,14 +19,12 @@ When you install the package completely, you then type in `npm init` still in th
 
 After that, you create an `index.html` and `index.js` file within the folder we just created. What the parcel is going to do is to package it up and put it in a `dist folder`. The parcel also starts the development server on the terminal, which you can do by running `parcel index.html` in the terminal.
 
-##### Building the Application
-
+### Building the Application
 This app is built using HTML, Bootstrap, and JavaScript, here we would discuss more on JavaScript. But then let's brush through the HTML, Since we are using bootstrap, we would have to get the [CDN](https://www.bootstrapcdn.com/) link from the site and copy only the CSS link tag.
 
 We will be going straight to the JavaScript work, so you can get the full HTML code from this [link](https://github.com/khabdrick/reddit-search-engine/blob/main/index.html) to flow along.
 
-##### Developing the JavaScript Section
-
+#### Developing the JavaScript Section
 We have to get the search button and input form, then add an event listener so that when you submit the form, it will trigger a function that will get the sort by input value, and the limit.
 
 ```js
@@ -100,8 +93,7 @@ setTimeout(()=> document.querySelector('.alert').remove(),3000)
 
 You can see the alert message displayed in the image above when the search is empty.
 
-##### **Fetching the Reddit API**
-
+#### Fetching the Reddit API
 First, we will create another JavaScript file in the root of your project, **not in the dist folder**, and name it `redditapi.js`. In this file, this is where we will create a module object and make the request to fetch the API, and export the file to `index.js`.
 
 In the file you just created, paste the code below.
@@ -171,6 +163,5 @@ function truncateText(text,limit){
 
 From the image above we can see that the search brought out the word searched which are in a card form. The **read more** button when clicked will open in a new tab the content of the search for one to read.
 
-#### Conclusion
-
+### Conclusion
  In this article, I showed you how the parcel bundle works and how to install it globally using `npm`. We built an application that searches the Reddit API directly and fetches the data inputted in the form. We also found a way to filter the searched items based on relevance, latest, and the number of results you want to receive. I advise you get familiar with the Reddit API documentation, so you will be able to implement more features of the API in your future projects. You can find the code used in this article on [GitHub](https://github.com/khabdrick/reddit-search-engine).
