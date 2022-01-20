@@ -1,6 +1,6 @@
 ### Create a registration form using React.js ( Hooks )
 
-We will make a registration form using React.js from scratch using react hooks and bootstrap, In the end, you will have the form ready
+We will make a registration form using React.js and connect it with firebase from scratch using react hooks, bootstrap and Firebase In the end, you will have the form ready
 
 ![Final form](./finalRegistratoionForm.png)
 
@@ -18,7 +18,7 @@ npm start
 
 If your setup is complete you will get to see the below screen:-
 
-![starting](./start.png)
+![starting](start.png)
 
 This is a boilerplate code that comes when we create a react app. Now open the login form folder and open index.html in the `public` folder add bootstrap scripts there, here are the CDN links:-
 
@@ -323,7 +323,114 @@ Here is the link to find the full code of this registration form
 [link](https://replit.com/@AnubhavBansal1/Registration-Form-1#README.md)
 
 
+Our Registration from is completed but we need to store the information registered by the user, for that we will use fire base.
 
+![Logo](./logo.png)
+
+Good news! Guys for using fire base we don't need to install any app just need Google/Gmail mail id. We all do have that I'd right?
+
+Now we will start learning how to connect fire base to our Registration from. For that we need to do the following.
+
+- At first what we required? We required a space where we can record our data. For that we will go to firebase homepage [Click here.](https://firebase.google.com/) Or Type firebase.google.com
+ Homepage will appear 
+
+![Home Page](./homepage.png)
+
+Then, Click on the Get Started button 
+
+- We will start our project. Click on Add project. 
+ 
+ ![New Project](./newproject.png)
+ 
+ - Give the preferable name to the project. We have taken Registration-Form. 
+  
+![Name of Project](./Nameofproject.png)
+
+Then click on continue. 
+
+-  Next step will appear click on continue then after that we need to choose Default Account for Firebase. 
+  
+![Default Setting](./Deaultsetting.png)
+
+Then click on "Create project"
+
+Now our project file is ready we will use it to build real time data base. 
+
+- To make a setup for real-time data we will select "Realtime Database"  form the left panel. 
+
+![Real Time Database](./realtimedatabase.png)
+
+Then click on the "Create Database" button. The Set up database dialog box will appear 
+
+![Settings](./Settings.png)
+
+We will go to next step by leaving the default location. Since we are in developing mode, we will select "Start in test mode" and enable it.
+
+Now our place is ready where real time data is stored.
+image of real time data 
+
+We need to create linkage between our react project and real time data base. 
+ 
+- For that we will go to project overview from the left panel and then click on Web button.
+
+![Button](./Button.png)
+
+- We have to Register our app and give nickname to it. We are giving "Registration Form" or we can choose any name of our choice. Since we are not hosting we will not select the option "set up Firebase hosting for this app" and then click on Register App. 
+
+![Register App](./Registerapp.png)
+
+- We go to our react project there we will connect our real time database. For that we need to type this command into the terminal or we can copy paste it too.
+   
+`npm install firebase`
+
+- To add the package into your react app we have to install firebase package over there. Now using terminal or command prompt go to the directory where your project is and run this command. 
+ 
+![package](./package.png)
+
+Create a new file with the name "firebase.js" in the Src folder where we will copy the code. 
+
+we have initialize the fire base. Now we will import data base in our code. 
+- For importing the data write the following statement
+
+`import { getDatabase } from "firebase/database"`
+
+- In order to use this data base in our registration form component we will use  export statement. Add the following statements in the code.
+`export const database = getDatabase(app);`
+
+In the registration form component import the following files
+
+`import {database} from '../firebase'
+import {ref,push,child,update} from "firebase/database";`
+
+- To store the input entered by the user we need to add the following code into the handle Submit function we made earlier 
+
+```java script
+let obj = {
+            firstName : firstName,
+            lastName:lastName,
+            email:email,
+            password:password,
+            confirmPassword:confirmPassword,
+        }       
+        const newPostKey = push(child(ref(database), 'posts')).key;
+        const updates = {};
+        updates['/' + newPostKey] = obj
+        return update(ref(database), updates);
+```
+
+Npw we have completed our steps successfully. 
+
+****Now we will see how it work****
+
+We will fill the details in the form then click on register .
+
+![Details](./Details.png)
+
+When we go to your firebase base account and check your Realtime database the your input is available there as shown in below pic.
+
+![Datainfirebase](./Datainfirebase.png)
+
+Congratulation you have successfully learn how to make registration form and connect it to firebase to store real time data.
 
 
 
