@@ -6,7 +6,7 @@ url: /road-layout-design-programmatically-using-matlab/
 title: Road Layout Design Programmatically Using Matlab
 description: 
 author: vitalis-odhiambo
-date: 2022-01-19T00:00:00-12:55
+date: 2022-01-20T00:00:00-10:05
 topics: [Languages]
 excerpt_separator: <!--more-->
 images:
@@ -28,8 +28,7 @@ To follow along with this tutorial, you'll need:
 - [Proper understanding](/engineering-education/getting-started-with-matlab/) of MATLAB basics.
 
 ### Table of contents
-- [Introduction](#introduction)
-- [Prerequisites](#prerequisites)
+
 - [Table of contents](#table-of-contents)
 - [Objectives](#objectives)
 - [Straight road](#straight-road)
