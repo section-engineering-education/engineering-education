@@ -194,7 +194,7 @@ function do_sth() {
 }
 ```
 
-(add other ways of refactoring code)
+[Here are other ways of refactoring code](https://www.geeksforgeeks.org/7-code-refactoring-techniques-in-software-engineering/#:~:text=There%20are%20so%20many%20ways,conditional%20with%20guard%20clauses%2C%20etc.)
 
 #### Conclusion
 
