@@ -6,7 +6,7 @@ url: /gradient-descent-based-optimization-techniques/
 title: Gradient Descent Based Optimization Techniques 
 description: In this article, we consider Adaptive Optimization Algorithms and compare their convergence abilities from traditional gradient descent algorithms 
 author: bonface-ndolo
-date: 2021-12-12T00:00:00-18:00
+date: 2021-12-23T00:00:00-15:00
 topics: [Machine Learning]
 excerpt_separator: <!--more-->
 images:
@@ -14,7 +14,9 @@ images:
  - url: /engineering-education/gradient-descent-based-optimization-techniques/hero.jpg
    alt: Gradient Descent Based Optimization Techniques example image
 ---
-Gradient descent is used to optimize neural networks and machine learning algorithms. This post delves into the inner workings of some of the most popular gradient-based optimization algorithms. These algorithms include Momentum, Adagrad, and Adam.
+Gradient descent is used to optimize neural networks and machine learning algorithms. This post delves into the inner workings of some of the most popular gradient-based optimization algorithms. 
+<!--more-->
+These algorithms include Momentum, Adagrad, and Adam.
 
 ### Table of contents
 - [Table of contents](#table-of-contents)
@@ -35,7 +37,7 @@ Gradient descent is used to optimize neural networks and machine learning algori
 - [Conclusion](#conclusion)
 
 ### Optimization techniques
-We will look at various optimization methods frequently employed in deep learning. We will also look at some Adaptive Optimization Algorithms (AOA). Compiling a program based on the current execution profile is known as adaptive optimization in computer science. You can easily make a tradeoff between Just-In-Time (JIT) compilation and instruction interpretation in an adaptive optimizer solution.
+We will look at various optimization methods frequently employed in deep learning. We will review Adaptive Optimization Algorithms (AOA). Compiling a program based on the current execution profile is known as adaptive optimization in computer science. You can easily make a tradeoff between Just-In-Time (JIT) compilation and instruction interpretation in an adaptive optimizer solution.
 
 #### Why do we optimize our machine learning models?
 Every iteration is compared to the previous one, and the hyper-parameters are tweaked until the results are as good as they can be. We can produce a model that is both accurate and error-free. 
@@ -45,66 +47,55 @@ This page includes a quick overview of the many approaches that are accessible, 
 ### Momentum-based optimization
 Momentum-based optimization utilizes an Adaptive Optimization Algorithm (AOA) that uses exponentially-weighted averaging gradients from prior rounds to keep convergence from deviating. Unfortunately, most real-world applications such as deep neural networks rely on noisy input to train.
 
-There is a systematic approach to feeding the data to minimize the impact of noise during optimization. For example, using exponentially weighted averages can solve.
+There is a systematic approach to feeding the data to minimize the impact of noise during optimization. For example, using exponentially weighted averages can solve. Using an iterative process, we can approximate the trends in a P-dimensional noisy dataset by calculating the parameters as we go through the data:
 
-Using an iterative process, we can approximate the trends in a P-dimensional noisy dataset by calculating the parameters as we go through the data:
+$On\; iteration\; p$
+$Get\; next$
+$\theta_p$
+$V_\theta = \beta V_\theta + (1 - \beta)\theta_p$
 
-$$
-On\; iteration\; p\\
-Get\; next\\
-\theta_p \\
-V_\theta = \beta V_\theta + (1 - \beta)\theta_p
-$$
-
-$V_\theta$ is averaged across its preceding $\frac{1}{(1 - \beta)\theta_p}$ iterations, giving a value of $V_\theta$. With the help of averages, you can eliminate all the randomness and merely keep track of the overall trend. As a result of this method, the algorithm is more resistant to sample noise and can be trained more quickly.
+$V_\theta$ is averaged across its preceding $\frac{1}{(1 - \beta)\theta_p}$ iterations, giving a value of $V_\theta$. With the help of averages, we eliminate all the randomness and merely keep track of the overall trend. As a result of this method, the algorithm is more resistant to sample noise and can be trained more quickly.
 
 ### How does momentum help in gradient descent?
 When this method is in use, it looks for the direction of the steepest slope in its current state. Then it moves in the direction of that steepest slope to change its status.
 
-Momentum helps Gradient Descent distinguish recent derivatives as it nears the middle of the ravine allowing the gradient descent to move in the right direction.
+Momentum helps gradient descent distinguish recent derivatives as it nears the middle of the ravine allowing the gradient descent to move in the right direction.
 
 Momentum looks at the gradients of the steps that came before and the following to determine which one is the best to take.
 
 ### Stochastic Gradient Descent
-It's better to use Stochastic Gradient Descent because it fixes many problems. It tries to make up for its inability to do calculations very well. However, it makes a lot more noise than Gradient Descent. Using SGD takes a lot longer to get to a simple solution. It is different from Gradient Descent in that SGD does the derivatives for all points simultaneously.
+Stochastic Gradient Descent (SGD) is better because it fixes many problems. It tries to make up for its inability to do calculations very well. However, it makes a lot more noise than Gradient Descent. Using SGD takes a lot longer to get to a simple solution. It is different from Gradient Descent in that SGD does the derivatives for all points simultaneously.
 
 ### Adaptive Moment Estimation
-RMSProp and momentum combine to create this. Like momentum, it saves the declining arithmetic mean of the squared gradients and an average of past gradients, which is similar.
-
-On a smooth surface, it's considerably easier for Adam to make a mistake because of its high coefficient of friction.
+RMSProp and momentum combine to create this. Like momentum, it saves the declining arithmetic mean of the squared gradients and an average of past gradients, which is similar. On a smooth surface, it's considerably easier for Adam to make a mistake because of its high coefficient of friction.
 
 This strategy's pseudocode appears like this:
 
-$$
-D = 0\newline
- K = 0\newline \text{for each iteration }  p \newline
- \text{compute } dW\newline
-D= \beta_1K + (1 - \beta_1)dw\newline
-D= V/(1 - \beta_1^i)\newline
- K= \beta_2K + (1 - \beta_2)dw^2\newline
- K= \frac{S}{(1 - \beta_2^i)}\newline
- W= W - \alpha \frac{V}{\sqrt{S} + \epsilon}
-$$
+$D = 0$
+$K = 0$
+$for\; each\; iteration\; p$
+$compute\; dW$
+$D= \beta_1K + (1 - \beta_1)dw$
+$D= V/(1 - \beta_1^i)$
+$K= \beta_2K + (1 - \beta_2)dw^2$
+$K= \frac{S}{(1 - \beta_2^i)}$
+$W= W - \alpha \frac{V}{\sqrt{S} + \epsilon}$
 
 ### RMSProp
-It is an extension of gradient descent and AdaGrad that employs a decaying average of partial gradients to change the step size for each parameter.
+It is an extension of gradient descent and AdaGrad that employs a decaying average of partial gradients to change the step size for each parameter. The drawback of AdaGrad is overcome by using a decaying moving average.
 
-The drawback of AdaGrad is overcome by using a decaying moving average allowing the algorithm to ignore early slopes and concentrate on the most recently recorded partial gradients as the search progresses.
+This allows the algorithm to ignore early slopes and concentrate on the most recently recorded partial gradients as the search progresses. RMSProp takes the learning rate and smooths it down by an average. 
 
-RMSProp takes the learning rate and smooths it down by an average. This strategy's pseudocode appears like this:
+This strategy's pseudocode appears like this:
 
-$$
-K = 0\\
-for\; each\; iteration\; i\\
-compute\; dW\\
-K = \beta K + (1- \beta)dW^2\\
-W = W- \alpha \frac{dW}{(\sqrt{S} + \epsilon)}
-$$
+$K = 0$
+$for\; each\; iteration\; i$
+$compute\; dW$
+$K = \beta K + (1- \beta)dW^2$
+$W = W- \alpha \frac{dW}{(\sqrt{S} + \epsilon)}$
 
 ### AdaGrad
-When employing an adaptive gradient, you'll have to adjust the learning rate for parameters at each iteration based on where they're found. The learning rate equals squared times the square root of that number ($\gamma^2*\sqrt{N}$). This method works.
-
-According to earlier AdaGrad computations in the update rule for all parameters, AdaGrad changes the general learning rate.
+When employing an adaptive gradient, you'll have to adjust the learning rate for parameters at each iteration based on where they're found. The learning rate equals squared times the square root of that number ($\gamma^2*\sqrt{N}$). According to earlier AdaGrad computations in the update rule for all parameters, AdaGrad changes the general learning rate.
 
 **Cons:** The denominator rises in a quadratic fashion, making it challenging to work with since adding each additional word raises the total value. The value grows with time. As a result, learning becomes sluggish and eventually comes to a halt.
 
@@ -121,7 +112,7 @@ Adadelta has implemented two new ideas to overcome Adagrad's shortcomings:
 - Within a limited time, the sum of squared gradients accumulated. The sum of squared slopes in Adagrad can be accumulated up to infinity, for example, but this is not the case here. Learning rate approaches 0 as sum approaches infinite since this total is in denominator and learning rate is in the numerator. To keep the learning going even after many iterations, Adadelta limits the maximum size of the whole computed.
 - Correct the inconsistencies in the units used in gradient descent algorithms. In other words, the update's teams don't line up with the parameter's units. A Hessian approximation is used in place of the learning to ensure that the update direction matches the negative gradient at every step as in SGD. As a result, there is no longer a need to set the learning rate in the update rule manually.
 
-### Mini Batch Stochastic Gradient Descent
+### Mini Batch Stochastic Gradient Descent (MB-SGD)
 Several improvements have been made to the SGD algorithm in recent years. However, SGD is time-consuming since it computes derivatives individually for every point in the dataset.
 
 After a few iterations, the MB-SGD loss function's derivative resembles the GD loss function. However, far more iterations are required to reach a minimum in the MB-SGD case than in the GD case, making it computationally costly. In addition, because the derivative does not always point towards minima, the weights update has a more significant impact.
@@ -137,28 +128,22 @@ Continuous function optimization is the most prevalent optimization problem in m
 Problems of this type can be referred to as "continuous function optimization", in contrast to "combinatorial optimization problems", which deals with functions that accept discrete variables.
 
 Continuous function optimization problems can benefit from a wide variety of optimization procedures, and there are probably just as many alternative ways to categorize and describe them.
-
 Grouping optimization methods by the amount of information available about the goal function that may be exploited and harnessed by the optimization process is one option.
 
-Generally, the more information about the target function is accessible, the easier it is to optimize if the knowledge can be successfully utilized in the search.
+Generally, the more information about the target function is accessible, the easier it is to optimize if the knowledge can be successfully utilized in the search. One of the most significant differences for optimization methods is whether or not a point exists in the objective function.
 
-One of the most significant differences for optimization methods is whether or not a point exists in the objective function. Therefore, a candidate solution's first derivative (gradient or slope) calculability is evaluated in this manner.
-
-There are two kinds of algorithms: those that can use the gradient information and others that can't use it.
+Therefore, a candidate solution's first derivative (gradient or slope) calculability is evaluated in this manner. There are two kinds of algorithms: those that can use the gradient information and others that can't use it.
 
 #### Optimizer to use
 What's the best way to improve your website now? In cases when the input data is sparse, adaptive learning-rate approaches are likely to be the most effective. You won't have to fiddle with the learning rate because the default number will likely produce the most outstanding results.
 
 As a result, RMSprop is an Adagrad module that addresses Adagrad's rapidly decreasing learning rates. Adadelta employs the RMS of parameter changes in the nominator update rule, whereas this algorithm does not. In a long-awaited update, Adam finally adds bias correction and momentum to RMSprop. As far as I can tell, RMSprop, Adadelta, and Adam all perform well in similar situations. Adam may be the best overall option.
 
-Interestingly, several recent works have used a simple learning rate annealing schedule and vanilla SGD without momentum.
-
-It is well known that SGD can discover a minimum. Still, it may take longer than some other optimizers, is more dependent on a solid initialization and anneal scheduling, and may get trapped at saddle points rather than local minima.
+Interestingly, several recent works have used a simple learning rate annealing schedule and vanilla SGD without momentum. It is well known that SGD can discover a minimum. It still may take longer than some other optimizers, as it is more dependent on a solid initialization and anneal scheduling, and may get trapped at saddle points rather than local minima.
 
 The adaptive learning rate approaches, on the other hand, are ideal if you want to achieve fast convergence and train a deep or complicated neural network.
 
 ### Conclusion
-
 In other words, optimization algorithms are in charge of cutting costs while delivering the most precise outcomes. For each new epoch, the weight is reset using several initialization procedures. As a result, some optimization procedures or algorithms dubbed optimizers produce the best results.
 
 ---

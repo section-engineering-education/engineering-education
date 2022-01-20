@@ -7,7 +7,7 @@ title: Understanding the Downsides of Load Balancing
 description: This article will discuss methods used in load balancing, related challenges, as well as possible solutions.
 author: martha-ngugi
 date: 2021-12-21T00:00:00-04:30
-topics: [cloud computing]
+topics: []
 excerpt_separator: <!--more-->
 images:
 

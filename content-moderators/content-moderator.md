@@ -20,7 +20,7 @@ They will:
 - assign open PRs out (if needed)
 - approve new peer reviewers (when needed - see docs)
 - approve new article topics (see docs)
-- merge fully polished PRs to EngEd site (publish/merge) [estimating a minimum of 30 total articles published weekly]
+- merge fully polished PRs to EngEd site (publish/merge), CM will go through list of "ready for final review" and publish the oldest ones in the queue [estimating a minimum of 30 total articles published weekly]
 - communicate with Section EngEd Program Managers on overall program status
 - help create community docs to guide and instruct new contributors and peer reviewers.
 
