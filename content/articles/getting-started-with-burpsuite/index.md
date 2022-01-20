@@ -3,8 +3,8 @@ layout: engineering-education
 status: publish
 published: true
 url: /getting-started-with-burpsuite/
-title: Getting Started with Burpsuite
-description: This article will introduce the reader to Burpsuite. We will learn how to configure Burpsuite, set up and test DVWA.
+title: Getting Started with Burp Suite
+description: This article will introduce the reader to Burpsuite. We will learn how to configure Burp Suite, set up and test DVWA.
 author: shuaib-oseni
 date: 2022-01-20T00:00:00-06:30
 topics: [Security]
@@ -12,17 +12,17 @@ excerpt_separator: <!--more-->
 images:
 
   - url: /engineering-education/getting-started-with-burpsuite/hero.png
-    alt: Getting Started with Burpsuite Hero Image
+    alt: Getting Started with Burp Suite Hero Image
 ---
 Burp Suite is a proxy tool that allows us to intercept, analyze and modify requests coming from our browsers before they are sent to the remote server. 
 <!--more-->
-Burpsuite is one of the most popular web application security tools. It enables us to intercept HTTP messages, modify the header and body of a message, and manually test for vulnerabilities.
+Burp Suite is one of the most popular web application security tools. It enables us to intercept HTTP messages, modify the header and body of a message, and manually test for vulnerabilities.
 
-Burpsuite is popular among security researchers, CTF players, as well as bug bounty hunters. 
+Burp Suite is popular among security researchers, CTF players, as well as bug bounty hunters. 
 
 ![Proxy](/engineering-education/getting-started-with-burpsuite/illustration.png)
 
-### Why Burpsuite?
+### Why Burp Suite?
 Burp Suite is not only a proxy tool but also a master framework that can be used to perform a series of tasks, like:
 
 - Web spidering.
