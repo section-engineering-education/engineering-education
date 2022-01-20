@@ -1,8 +1,22 @@
-# How To Build A Search Engine For Reddit With JavaScript
+---
+layout: engineering-education
+status: publish
+published: true
+url: /search-engine-for-reddit-with-javascript/
+title: How to Build a Search Engine for Reddit with JavaScript
+description: This article shows the reader how to build a Reddit Search application that uses the parcel-bundler and Reddit API.
+author: muhammed-ali
+date: 
+topics: []
+excerpt_separator: <!--more-->
+images:
 
+  - url: /engineering-education/search-engine-for-reddit-with-javascript/hero.jpg
+    alt: Reddit Search Engine
+---
 ### Introduction
 In this article, we would be looking at how to build a front-end application that uses the parcel-bundler and Reddit API. The aim of this application is a search engine that searches article content on Reddit, the search result can be limited between the ranges of 5 to 100 results, we can also sort the article by either relevance or date(latest).
-
+<!--more-->
 We would also add an alert that would trigger if a user does not add a search term.
 
 #### Prerequisites
@@ -165,3 +179,6 @@ From the image above we can see that the search brought out the word searched wh
 
 ### Conclusion
  In this article, I showed you how the parcel bundle works and how to install it globally using `npm`. We built an application that searches the Reddit API directly and fetches the data inputted in the form. We also found a way to filter the searched items based on relevance, latest, and the number of results you want to receive. I advise you get familiar with the Reddit API documentation, so you will be able to implement more features of the API in your future projects. You can find the code used in this article on [GitHub](https://github.com/khabdrick/reddit-search-engine).
+
+---
+Peer Review Contributions by: [Adrian Murage](/engineering-education/authors/adrian-murage/)
