@@ -1,7 +1,9 @@
 # Simulating a Simple Epidemic Spreading Process on Graphs with Julia
+
 In this tutorial, we are going to create a simple epidemic spreading simulation using Julia. We will model the spreading using a Graph.
 
 ### Introduction
+
 Graphs are structures that represent a set of objects and the relations between them. Formally, we say the objects are the vertices or nodes and the relations are the edges or links. We can often see graphs *“appearing”* around us. For example:
 
 - vertices are cities and edges are roads that directly connect two cities;
@@ -12,7 +14,7 @@ Those are just some of the applications of graphs — the list is huge.
 
 We usually represent graphs visually drawing the vertices as circles and the edges as lines connecting two circles. For example:
 
-![Source: [Wikipedia](https://en.wikipedia.org/wiki/Graph_(discrete_mathematics)#/media/File:6n-graf.svg)](graph0.png)
+![](graph0.png)
 
 Source: [Wikipedia](https://en.wikipedia.org/wiki/Graph_(discrete_mathematics)#/media/File:6n-graf.svg)
 
@@ -21,6 +23,7 @@ That is a graph with the vertices `{1, 2, 3, 4, 5, 6}` and the edges `{(1, 2), (
 In this tutorial, we are going to use a Graph to model a epidemic spreading.
 
 ### Table of Contents
+
 - [Introduction](#introduction)
 - [Pre-requisites](#pre-requisites)
 - [The Spreading Dynamics](#the-spreading-dynamics)
@@ -33,6 +36,7 @@ In this tutorial, we are going to use a Graph to model a epidemic spreading.
 - [References](#references)
 
 ### Pre-requisites
+
 For this tutorial, you will need:
 
 - [Julia](https://julialang.org/) installed
@@ -44,21 +48,23 @@ For this tutorial, you will need:
 It’s good if you also have some background in Julia, but if you don’t that’s not a problem! If you have some programming knowledge, you won’t have major difficulties understanding what the code snippets are doing.
 
 ### The spreading dynamics
+
 Thanks to the nature of graphs, that is, the representation of pairwise interactions/relations, they are good structures to model the spreading of an epidemic. We can represent the individuals (people or animals, for example) as the vertices, and the contact/exposure as the edges.
 
 We are going to model the epidemic as follows:
 
 - every vertex will be in one of the following states:
-    - S — Susceptible
-    - I — Infected
-    - R — Recovered
+  - S — Susceptible
+  - I — Infected
+  - R — Recovered
 - at each time step:
-    - some exposed susceptible vertices (neighbors of the previously infected vertices) are going to be infected
-    - the previously infected vertices will recover and be no longer susceptible or infectious
+  - some exposed susceptible vertices (neighbors of the previously infected vertices) are going to be infected
+  - the previously infected vertices will recover and be no longer susceptible or infectious
 
 That’s a simple model and it’s actually meant to be! But at the end of the tutorial, you will be able to make your own modifications and add new features or dynamics as you want.
 
 ### Step 1: Setting things up
+
 First things first, let’s install the modules we need. For this project, we are going to need the following packages:
 
 - [Graphs.jl](https://github.com/JuliaGraphs/Graphs.jl)
@@ -95,6 +101,7 @@ Package installation is done, now let’s open Jupyter-lab:
 Create a new Julia notebook for this tutorial and let’s go to the next step!
 
 ### Step 2: Creating and Plotting a Simple Graph
+
 If we needed to manipulate just simple graphs, the Graphs.jl package would be enough. But, as we saw early, each vertex needs some meta-data: its state. So we also need the MetaGraphs.jl package. Let’s import them:
 
 ```julia
@@ -146,6 +153,7 @@ And you should see something *(maybe not exactly)* like that:
 Our first graph!
 
 ### Step 3: Setting and Getting the Props
+
 Until now, we only have a simple graph with no additional information. We add meta-data to a vertex `v` by passing a dictionary with the desired information to `set_props!`. Let’s write a function to set the state of all vertices in `G` to `S` (Susceptible).
 
 ```julia
@@ -195,7 +203,7 @@ Let’s plot our graph with the new colors:
 
 ```julia
 function plot_graph(G)
-    fillcolors = [get_prop(G, i, :color) for i in vertices(G)]
+    fillcolors = [get_prop(G, i, :color) for i in vertices(G)]
     return gplot(G, nodefillc=fillcolors, layout=spectral_layout)
 end
 ```
@@ -207,6 +215,7 @@ plot_graph(G)
 In `plot_graph` we are computing the `color` prop for each vertex in `G` and passing the colors to the `nodefillc` parameter of `gplot`. We are also using the `spectral_layout` now. According to [NetworkLayout.jl website](https://juliagraphs.org/NetworkLayout.jl/stable/#Spectral-Layout), this is *“an under-appreciated method of graph layouts; easier, simpler, and faster than the more common spring-based methods”*. Besides, the standard *(spring-based)* layout method generates different graphs each time, and that’s not good for our visualizations.
 
 ### Step 4: Programming the Dynamics
+
 Until now, we know how to create, manipulate, and plot graphs. Now we need to program the dynamics. Our dynamics will function in a steps manner. We already outlined what happens at each step (if you don’t remember, refer to The Spreading Dynamics section). So we know how our function would look like:
 
 ```julia
@@ -244,17 +253,17 @@ First, `update_nodes!` will compute the susceptible neighbors of the infected no
 
 ```julia
 function update_nodes!(G, I)
-		# looping through the infected vertices
-    for v in I
-        potential_infected_neighbors = []
-				# looping through their neighbors
-        for u in neighbors(G, v)
-            if get_prop(G, u, :state)=="S"
-								# a susceptible neighbor goes to potential_infected_neighbors
-                push!(potential_infected_neighbors, u)
-            end
-				end
-		end	
+    # looping through the infected vertices
+    for v in I
+        potential_infected_neighbors = []
+        # looping through their neighbors
+        for u in neighbors(G, v)
+            if get_prop(G, u, :state)=="S"
+                # a susceptible neighbor goes to potential_infected_neighbors
+                push!(potential_infected_neighbors, u)
+            end
+        end
+    end    
 end
 ```
 
@@ -282,20 +291,20 @@ As stated before, the infected nodes in the previous step recovers in the next. 
 
 ```julia
 function update_nodes!(G, I)
-		# looping through the infected vertices
-    for v in I
-				# updating the infected nodes
-				set_node_recovered!(G, v)
+    # looping through the infected vertices
+    for v in I
+        # updating the infected nodes
+        set_node_recovered!(G, v)
 
-        potential_infected_neighbors = []
-				# looping through their neighbors
-        for u in neighbors(G, v)
-            if get_prop(G, u, :state)=="S"
-								# a susceptible neighbor goes to potential_infected_neighbors
-                push!(potential_infected_neighbors, u)
-            end
-				end
-		end	
+        potential_infected_neighbors = []
+        # looping through their neighbors
+        for u in neighbors(G, v)
+            if get_prop(G, u, :state)=="S"
+                # a susceptible neighbor goes to potential_infected_neighbors
+                push!(potential_infected_neighbors, u)
+            end
+        end
+    end    
 end
 ```
 
@@ -313,9 +322,9 @@ We can get a sample of size `r` using `sample(potential_infected_neighbors, r)`.
 
 ```julia
 function update_nodes!(G, I, r)
-		next_infected_nodes = []
-		
-		# rest of function here...
+    next_infected_nodes = []
+
+    # rest of function here...
 end
 ```
 
@@ -323,32 +332,32 @@ Now we can add the `potential_infected_neighbors` sample to `next_infected_nodes
 
 ```julia
 function update_nodes!(G, I, r)
-		next_infected_nodes = []
+    next_infected_nodes = []
 
-		# looping through the infected vertices
+    # looping through the infected vertices
     for v in I
-				# updating the infected nodes
-				set_node_recovered!(G, v)
+        # updating the infected nodes
+        set_node_recovered!(G, v)
 
         potential_infected_neighbors = []
-				# looping through their neighbors
+        # looping through their neighbors
         for u in neighbors(G, v)
             if get_prop(G, u, :state)=="S"
-								# a susceptible neighbor goes to potential_infected_neighbors
+                # a susceptible neighbor goes to potential_infected_neighbors
                 push!(potential_infected_neighbors, u)
             end
-				end
+        end
 
-				# getting the samples
-				l = length(potential_infected_neighbors)
+        # getting the samples
+        l = length(potential_infected_neighbors)
         if r <= l
-						# if there are more than r neighbors, we add the sample to next_infected_nodes
+            # if there are more than r neighbors, we add the sample to next_infected_nodes
             union!(next_infected_nodes, sample(potential_infected_neighbors, r))
         else
-						# if there are less than r neighbors, all the neighbors will be infected
+            # if there are less than r neighbors, all the neighbors will be infected
             union!(next_infected_nodes, potential_infected_neighbors)
         end
-		end	
+    end    
 end
 ```
 
@@ -368,35 +377,36 @@ Finally, we have the following `update_nodes!`:
 
 ```julia
 function update_nodes!(G, I, r)
-		next_infected_nodes = []
+    next_infected_nodes = []
 
-		# looping through the infected vertices
+    # looping through the infected vertices
     for v in I
-				# updating the infected nodes
-				set_node_recovered!(G, v)
+        # updating the infected nodes
+        set_node_recovered!(G, v)
 
         potential_infected_neighbors = []
-				# looping through their neighbors
+        # looping through their neighbors
         for u in neighbors(G, v)
             if get_prop(G, u, :state)=="S"
-								# a susceptible neighbor goes to potential_infected_neighbors
+                # a susceptible neighbor goes to potential_infected_neighbors
                 push!(potential_infected_neighbors, u)
             end
-				end
+        end
 
-				# getting the samples
-				l = length(potential_infected_neighbors)
+        # getting the samples
+        l = length(potential_infected_neighbors)
         if r <= l
-						# if there are more than r neighbors, we add the sample to next_infected_nodes
+            # if there are more than r neighbors, we add the sample to next_infected_nodes
             union!(next_infected_nodes, sample(potential_infected_neighbors, r))
         else
-						# if there are less than r neighbors, all the neighbors will be infected
+            # if there are less than r neighbors, all the neighbors will be infected
             union!(next_infected_nodes, potential_infected_neighbors)
         end
-		end	
-		for v in next_infected_nodes
-		    set_node_infectious!(G, v)
-		end
+    end    
+
+    for v in next_infected_nodes
+        set_node_infectious!(G, v)
+    end
 end
 ```
 
@@ -429,6 +439,7 @@ You should be seeing something like this:
 We infected the vertex 1 and ran the spreading process. It has two neighbors, but because `r = 1`, it infected only one of them: the vertex that is red in the figure. The vertex 1 also recovered because in the previous step it was infected. The rest of the vertices are still susceptible.
 
 ### Step 5: Generating an Animation
+
 It would be nice if we could see the spreading process happening step by step and in a bigger graph, right? So, let’s make this now!
 
 Import these packages:
@@ -453,17 +464,16 @@ Now we generate the frames for our animation — each frame is a step:
 
 ```julia
 for i in 1:t
-		# getting plot
+        # getting plot
     p = spreading_plot!(G, r)
-    output = compose(p,
-        (context(), Compose.rectangle(-10,-10,20,20), fill("white"), Compose.stroke("black")))
-    
-		# saving the frames
-		tmpfilename=joinpath(anim.dir, @sprintf("%06d.png",i))
+    output = compose(p, (context(), Compose.rectangle(-10,-10,20,20), fill("white"), Compose.stroke("black")))
+
+    # saving the frames
+    tmpfilename=joinpath(anim.dir, @sprintf("%06d.png",i))
     Compose.draw(PNG(tmpfilename),output)
-    
-		# adding the frames to our animation
-		push!(anim.frames, tmpfilename)
+
+    # adding the frames to our animation
+    push!(anim.frames, tmpfilename)
 end
 ```
 
@@ -482,8 +492,7 @@ function make_anim(G, r, t)
     anim = Animation()
     for i in 1:t
         p = spreading_plot!(G, r)
-        output = compose(p,
-            (context(), Compose.rectangle(-10,-10,20,20), fill("white"), Compose.stroke("black")))
+        output = compose(p, (context(), Compose.rectangle(-10,-10,20,20), fill("white"), Compose.stroke("black")))
         tmpfilename=joinpath(anim.dir, @sprintf("%06d.png",i))
         Compose.draw(PNG(tmpfilename),output)
         push!(anim.frames, tmpfilename)
@@ -527,6 +536,7 @@ You should see something like this:
 Look at how fast the infections grow!
 
 ### Conclusion
+
 In this tutorial, you learned how to create graphs and manipulate them in Julia using the packages Graphs.jl and MetaGraphs.jl. You also viewed how graphs are a powerful tool for modelling, once it can be used to model relationships between objects or agents. Taking advantage of this property of graphs, you created a simple epidemic spreading model. You also learned how to create visualizations of graphs using GraphPlot.jl. Finally, you put all together creating an animation that shows the epidemic spreading step by step.
 
 That’s it! It’s a really simple model but please take your time to play around with it and make your own modifications. Here are some suggestions:
@@ -540,6 +550,7 @@ That’s it! It’s a really simple model but please take your time to play arou
 Make your own questions and create your own models!
 
 ### References
+
 - [The Julia Programming Language](https://julialang.org/)
 - [Graph (Discrete Mathematics) - Wikipedia](https://en.wikipedia.org/wiki/Graph_(discrete_mathematics))
 - [Spreading processes on networks](https://aaronclauset.github.io/courses/5352/csci5352_F21_L9.pdf)
