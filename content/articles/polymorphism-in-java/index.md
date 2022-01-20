@@ -1,6 +1,20 @@
-### Polymorphism in Java
+---
+layout: engineering-education
+status: publish
+published: true
+url: /polymorphism-in-java/
+title: Polymorphism in Java
+description: This article will help you understand Polymorphism in java.
+author: Meshack Kimosop
+date: 2021-1-19
+topics: [Languages]
+excerpt_separator: <!--more-->
+images:
 
-### Introduction
+  - url: /polymorphism-in-java/hero.jpg
+    alt: Polymorphism in Java
+---
+
 `Polymorphism` is the ability of an object to have more than one form. In this article, we will introduce polymorphism and give some examples to understand more about polymorphism. We will further discuss the two types of polymorphism which are `static` and `dynamic` polymorphism. Furthermore, we will take a look at the advantages of polymorphism and lastly the characteristics of polymorphism.
 Let's now get into the details.
 
@@ -223,3 +237,6 @@ Having known one of the major pillars of OOP languages, you might want to know m
 - [Abstraction](https://www.w3schools.com/java/java_abstract.asp)
 - [Encapsulation](https://www.tutorialspoint.com/java/java_encapsulation.htm#:~:text=Encapsulation%20in%20Java%20is%20a,methods%20of%20their%20current%20class.)
 - [Inheritance](https://www.geeksforgeeks.org/inheritance-in-java/)
+
+---
+Peer Review Contributions by: [Mohamed Alghadban](/engineering-education/authors/mohamed-alghadban/)
