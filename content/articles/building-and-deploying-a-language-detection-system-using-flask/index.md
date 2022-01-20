@@ -79,14 +79,18 @@ Our dataset has 17 languages: English, French, Spanish, Portuguese, Italian, Rus
 Next, proceed to preprocess our data.
 
 #### Data preprocessing
-We will differentiate the dataset features from the labels as shown below:
+Here, we will transform the data into a desired usable format by the model.
+
+First, split the data into dependent and independent variables. We will use `X` for the independent variables(features) and `y` for the dependent variable(label/target).
 
 ```Python
 X = df["Text"]
 y = df["Language"]
 ```
 
-Next, we will encode the label (**Language**) using the `LabelEncoder()` method as shown below:
+Next, we will encode the label (**Language**) using the `LabelEncoder()`.
+
+Encoding is the process of converting categorical data to numerical data. Encoding is necessary to allow data to be easily fitted into the model and improve its performance.
 
 ```python
 from sklearn.preprocessing import LabelEncoder
@@ -105,7 +109,9 @@ for text in X:
     text = text.lower()          # converts all the text to lower case
     text_list.append(text)       # appends the text to the text_list
 ```
-Then, we encode our feature(**Text**) through a *Bag of Words* model using the `CountVectorizer()` method as shown below:
+Then, we encode our feature(**Text**) through a *Bag of Words* model using the `CountVectorizer()` method.
+
+A **Bag of Words** is a method used to transform text to a vector which allows the model to access the number of times a word appears in a document. In summary, it represents a phrase or a sentence as a bag(container) of words without considering the structure or the pattern of the words.
 
 ```python
 from sklearn.feature_extraction.text import CountVectorizer
