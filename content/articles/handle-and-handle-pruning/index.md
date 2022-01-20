@@ -7,6 +7,15 @@ Each symbol is moved onto the stack until there is a matching right-hand side no
 
 The set of strings to be replaced at each reduction step is called a handle. 
 
+### Table of contents
+
+1. [Introductory Background](#introductory-background)
+2. [Prerequisites](#prerequisites)
+3. [What is handle pruning?](#what-is-handle-pruning)
+4. [Implementation of handle pruning](#implementation-of-handle-pruning)
+5. [Program implementation of handles and handle pruning through bottom-up parsing using C language](#program-implementation-of-handles-and-handle-pruning-through-bottom-up-parsing-using-c-language)
+6. [Conclusion](#conclusion)
+
 ### Prerequisites
 To understand this article, you should have a prior understanding of the following concept:
 - Lexical analysis in compiler design.
@@ -161,13 +170,14 @@ char stk[15];
 char action[10]; 
 
 //This function Checks if the stack has a Handle
+//This means if any on the production rules can be used to reduce whats on top of the stack
 void checking()
 {
      strcpy(rw,"Reduction to S -> ");
      // c is the length of input string
      for(x = 0; x < w; x++)
      {
-          //identifying for producing the rule S->6
+          //identifying for production with the rule S->6
           if(stk[x] == '6')
           {
              printf("%s6", rw);
@@ -176,10 +186,12 @@ void checking()
              //output the following
              printf("\n$%s\t%s$\t", stk, r);
           }
+         
      }
+      //Looks for a production that has a rule where S implies 6
      for(x = 0; x < w - 2; x++)
      {
-         //checking for a production
+         //checking for a production with S implies 7S7
          if(stk[x] == '7' && stk[x + 1] == 'S' && stk[x + 2] == '7')
          {
             printf("%s7S7", rw);
@@ -190,9 +202,10 @@ void checking()
             y = y - 2;
          }
     }
+    
     for(x=0; x<w-2; x++)
     {
-         //checking
+         //checking for a production with S implies 8S8
          if(stk[x] == '8' && stk[x + 1] == 'S' && stk[x + 2] == '8')
          {
             printf("%s8S8", rw);
@@ -219,6 +232,7 @@ int main()
    // This will print names of columns
    printf("\nstack \t input \t action");
    printf("\n$\t%s$\t", r);
+   //If there is a handle you reduce it using the production rules if not you shift
 
    for(y = 0; k < w; y++, k++)
    {
@@ -235,10 +249,11 @@ int main()
    // Checking for valid productions
    checking();
    
-   //Checks if the start symbol is on top of the stack
+   //Checks if the start symbol is on top of the stack accept
    if(stk[0] == 'S' && stk[1] == '\0')
          printf("Accept");
-   else //do not allow
+   else
+   // if fthe start sysmbol is not on top of the stack you do not allow
          printf("Rejection");
 }
 ```
@@ -265,5 +280,7 @@ S→6
 |$8S8|$|Reduce to S→8S8|8S8|
 |$S|$|Accept||
 
+### Conclusion
+Determining handles in a grammar and pruning them is the first step in parsing an input string. It is therefore responsible for the construction of the parsing table and the parsing tree hence a key concept of bottom up parsing in compiler design. 
 
 Blissful reading
