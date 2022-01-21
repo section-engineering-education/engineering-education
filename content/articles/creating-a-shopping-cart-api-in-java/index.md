@@ -588,6 +588,6 @@ public class customerTest {
 In the end, we've seen how to code to an interface, how to write a unit test, how to create an endpoint, and also how to use postman to view our endpoint. You may go on and start creating different APIs.
 Once again you can check [Github](https://github.com/kingsleynwafor54/shopping_cart_with_springboot)
 #### Referrence
-[Rapidapi](https://rapidapi.com/section.io/api/section-io/details)
-[Getting Started with Stripe-springboot](https://www.section.io/engineering-education/stripe-springboot/).
-<!-- Happy coding! -->
+1. [Rapidapi](https://rapidapi.com/section.io/api/section-io/details)
+2. [Getting Started with Stripe-springboot](https://www.section.io/engineering-education/stripe-springboot/).
+Happy coding! 
