@@ -14,7 +14,7 @@ images:
   - url: /engineering-education/getting-started-with-optical-character-recognition/hero.png
     alt: Getting Started with Optical Character Recognition Hero image
 ---
-Optical character recognition is a technology where each character on a page is scanned individually so that your texts are uploaded as text documents and not images.
+Optical character recognition is a technology where each character on a page is scanned individually so that your text is uploaded as text documents and not images.
 <!--more-->
 EasyOCR is a python package that makes it easy to perform optical character recognition. We'll use it to extract text from images. We will be able to visualize these results using OpenCV. 
 
@@ -104,7 +104,7 @@ Results:
   'COMING',
   0.9999751310992928)]
 ```
-After applying EasyOCR on the image, we can see that it has been able to extract the text from the image with a good confidence value. The different values indicate the coordinates where our text is in the image. This is okay but it'll be nice if we visualized it on the image.
+After applying EasyOCR on the image, we can see that it has been able to extract the text from the image with a good confidence value. The different values indicate the coordinates where our text is in the image.
 
 ### Visualizing results using the OpenCV library
 Let's begin by defining a couple of key variables to determine where our different coordinates are. We'll use the OpenCV library for this task.
@@ -130,7 +130,7 @@ plt.show()
 ```
 ![Box](/engineering-education/getting-started-with-optical-character-recognition/box.png)
 
-Though small, we can see that a green bounding box has been drawn on the top right text. That's optical character recognition in a nutshell. Currently, it's only able to handle a single text. What happens if we have an image with multiple lines of text?
+Though small, we can see that a green bounding box has been drawn on the top right text. That's optical character recognition in a nutshell. Currently, it's only able to handle a single line of text. What happens if we have an image with multiple lines of text?
 
 Let's try and make EasyOCR handle multiple lines of the extracted text.
 
