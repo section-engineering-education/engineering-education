@@ -6,7 +6,7 @@ url: /building-a-checkout-form-with-stripe-elements/
 title: Building a Checkout Form With Stripe Elements 
 description: This tutorial will take the reader through Stripe elements and how we can use it to create a payment checkout form. It discusses the payment collection flow process and how taxation can be handled.
 author: geoffrey-omukuba
-date: 2022-01-21T00:00:00-12:10
+date: 2022-01-21T00:00:00-13:30
 topics: [Languages]
 excerpt_separator: <!--more-->
 images:
