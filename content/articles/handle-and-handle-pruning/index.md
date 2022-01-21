@@ -8,7 +8,6 @@ Each symbol is moved onto the stack until there is a matching right-hand side no
 The set of strings to be replaced at each reduction step is called a handle. 
 
 ### Table of contents
-
 1. [Introductory Background](#introductory-background)
 2. [Prerequisites](#prerequisites)
 3. [What is handle pruning?](#what-is-handle-pruning)
@@ -30,14 +29,12 @@ Expression → Expression + Term | Term
 Term → Term * Factor | Factor
 Factor → (Expression) | id
 id → number
-
 ```
 Right-Most Derivation of 5+6*3 is
 
 Expression ⇒ Expression + Term ⇒ Expression + Term * Factor ⇒ Expression + Term * id ⇒ Expression + Factor * id ⇒ Expression + id * id ⇒ Term + id * id ⇒ Factor + id * id ⇒ id + id * id → number+number*number → 5+6*3. The handles here are "id", "Expression + Term" and "number".
 
 ### What is handle pruning?
-
 This describes the process of identifying handles and reducing them to the appropriate left most non-terminals. It is the basis of bottom-up parsing and is responsible for the accomplishment of syntax analysis using bottom-up parsing.
 
 [Right most derivation](https://www.tutorialspoint.com/compiler_design/compiler_design_bottom_up_parser.htm) is achieved using handle pruning in reverse order.
@@ -76,12 +73,11 @@ Determine handle Aj → βj in γj
 
 Replace βj with Aj  in an attempt to generate γj-1
 ```
-### Implementation of handle pruning
 
+### Implementation of handle pruning
 Below is an illustration using an example:
 
 #### Example 1
-
 For the grammar:
 
 ```
@@ -102,7 +98,6 @@ For the grammar:
 8. Fact → number
 
 9. | id
-
 ```
 
 The following are the handles for the derivation of the string `a – 2 * b`
@@ -122,22 +117,22 @@ The following are the handles for the derivation of the string `a – 2 * b`
 |<id,a> – <number,2> * <id,b>|9, 1|
 
 #### Example 2
-
 Consider the following [CFG](https://www.tutorialspoint.com/automata_theory/context_free_grammar_introduction.htm)
 
 ```
-S→Term Length
+S → Term Length
 
-Term→integer
+Term → integer
 
-Term→float
+Term → float
 
-Term→character
+Term → character
 
-Length→ Length, id
+Length → Length, id
 
-Length→id
+Length → id
 ```
+
 |Input string | Action |Handle|
 | -----------   | ----------- | ----------- |
 | Integer id,id | Reduce Term→integer| integer|
@@ -257,16 +252,17 @@ int main()
          printf("Rejection");
 }
 ```
+
 This program checks for handles that are matching to what is on top of the stack and uses the production rules to reduce them. This is done until only the start non-terminal is left on top of the stack. If the start symbol is on top of the stack, It accepts and allows for the production of a parse tree. Otherwise, it rejects the input alphabet.
 The program parses the input alphabet `87678` through bottom-up parsing and prints the grammar and then outputs the parsing table as shown below:
 
-`
-S→7S7
+```
+S → 7S7
 
-S→8S8
+S → 8S8
 
-S→6
-`
+S → 6
+```
 
 |Stack|Input|Action|Handle|
 | -----------   | ----------- |----------- |----------- |
@@ -283,4 +279,3 @@ S→6
 ### Conclusion
 Determining handles in a grammar and pruning them is the first step in parsing an input string. It is therefore responsible for the construction of the parsing table and the parsing tree hence a key concept of bottom up parsing in compiler design. 
 
-Blissful reading
