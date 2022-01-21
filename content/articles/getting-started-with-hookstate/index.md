@@ -1,5 +1,5 @@
 
-React is a mature JavaScript libraries that we use to create declarative and dynamic UIs. React breaks the UI into components. However, over a large codebase, these components will need to share data between them. For this reason, the concept of state in React development is crucial. We need to understand - what it is, how to properly manage it, and how to handle complexity as the application grows.
+React is a mature JavaScript library that we use to create declarative and dynamic UIs. React breaks the UI into components. However, over a large codebase, these components will need to share data between them. For this reason, the concept of state in React development is crucial. We need to understand - what it is, how to properly manage it, and how to handle complexity as the application grows.
 
 ### Goal
 In JavaScript web applications, state refers to the object that holds information generated through user actions. Since in modern applications we break the UI into components, these components depend on dynamic data. This article will cover the essentials of state management and the efficiencies that the Hookstate library provides in React applications.
@@ -93,7 +93,7 @@ import React from "react";
 import { useTaskState } from "../states/TaskState";
 ```
 
-Our `AddTodo` component contains the form that to add or delete a to-do item. Create a `components` folder for our component and add a `AddTodo.js` file to it.
+Our `AddTodo` component contains the form to add or delete a to-do item. Create a `components` folder for our component and add the `AddTodo.js` file.
 
 ```js
 const AddTodo = () => {
