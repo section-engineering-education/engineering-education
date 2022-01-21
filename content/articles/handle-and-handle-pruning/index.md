@@ -1,8 +1,20 @@
-### Introduction to handle and handle pruning
-
-### Introductory Background
+---
+layout: engineering-education
+status: publish
+published: true
+url: /handle-and-handle-pruning/
+title: Introduction to Handles and Handle Pruning in Compiler Design
+description: This tutorial will help the reader understand what handles and handle pruning is in compiler design.
+author: mackrine-awino
+date: 2022-01-21T00:00:00-02:33
+topics: [Languages]
+excerpt_separator: <!--more-->
+images:
+  - url: /engineering-education/handle-and-handle-pruning/hero.jpg
+    alt: Introduction to handles and handle pruning in compiler design Hero Image
+---
 A handle is a concept used in the bottom-up parsing of compiler design. Bottom-up parsing is the method of syntax analysis in which sentences belonging to certain [context-free grammars](https://www.tutorialspoint.com/automata_theory/context_free_grammar_introduction.htm) are analyzed. This analysis results in the construction of parse trees. This construction begins at the leaf nodes and proceeds to the root non-terminal hence the name bottom up which is sometimes called the shift-reduce parsing.
-
+<!--more-->
 Each symbol is moved onto the stack until there is a matching right-hand side nonterminal. This is followed by a reduction by the replacement of the production's right-hand side by its left-hand side. This process continues until eventually the string is reduced to the start non-terminal.
 
 The set of strings to be replaced at each reduction step is called a handle. 
@@ -279,3 +291,5 @@ S → 6
 ### Conclusion
 Determining handles in a grammar and pruning them is the first step in parsing an input string. It is therefore responsible for the construction of the parsing table and the parsing tree hence a key concept of bottom up parsing in compiler design. 
 
+---
+Peer Review Contributions by: [Jethro Magaji](/engineering-education/authors/jethro-magaji/)
