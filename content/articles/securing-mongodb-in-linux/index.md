@@ -1,8 +1,6 @@
 
 ### Securing MongoDB in Linux
-
 ### Content
-
 - [Prerequisites](#prerequisites)
 - [Introduction](#introduction)
 - [Check the environment](#check-the-environment)
@@ -12,20 +10,16 @@
 - [Authentication Testing](#authentication-testing)
 - [Wrapping it up](#wrapping-it-up)
 
-### prerequisites
-
+### Prerequisites
 Before you start reading this tutorial you need to have the  following in your machine:
-
 - [Ubuntu](https://ubuntu.com/download/server) 20.05 server installed.
 - UFW-configured proxy server.
 - Installed [MongoDB](https://www.mongodb.com/try/download/community)
 
 ### Introduction
-
 MongoDB is one of the most used modern web applications for a database. MongoDB is not secure by default. Once installed, one will have a difficult time before configuring it for authentication, since people can browse, write, delete, or modify data on your server without ever needing to log in or authenticate. Securing the database is simple and may be completed in a few steps. In this article, I'll show you how to protect your MongoDB setup by using some activation command lines.
 
 ### Check the environment
-
 To check if MongoDB is running on Linux kernel, we use the command below:
 
 ```bash
@@ -34,7 +28,6 @@ mongod --dbpath = "C:\data\mongo"
 #or use this below to check.
 ps -e|grep 'Mongod'
 ```
-
 The output if MongoDB is installed will be similar to this:
 `909070 ttys023 2:43.486 ./mongodb`
 To configure MongoDB we navigate to the default file location `/etc/mongodb.conf` where it runs on the default port. To change this file location, we use the command below:
@@ -59,8 +52,7 @@ Through binding Ip address this ensures that MongoDB runs in a safe network envi
 bindIp: 192.168.1.7
 ```
 
-### securing MongoDB
-
+### Securing MongoDB
 To secure your MongoDB, we use the following steps:
 
 - Create a user with admin access.
@@ -68,7 +60,6 @@ To secure your MongoDB, we use the following steps:
 - Assign administrative users access to the database.
 
 ### Create a user with system access
-
 MongoDB version accepts connection from local Unix socket. As a result, it cannot connect a huge internet connection. Furthermore, authentication is disabled by default. Users having MongoDB installed can still have access to the database. To secure your database you need to add administrative user. To add an administrative user, we first connect to the Mongo  shell prompt using the command below: 
 
 ```bash
@@ -91,7 +82,7 @@ db-config  0.0001GB
 local   0.0100GB
 ```
 
-The output displays default databases, and any user can still find important data in one system. To end this situation, we add an administrative user by connecting to the database. To start connecting to the database, we call an admin user to the database using the command below:
+The output will display default databases, and any user can still find important data in one system. To end this situation, we add an administrative user by connecting to the database. To start connecting to the database, we call an admin user to the database using the command below:
 
 ```bash
 use admin
@@ -144,7 +135,6 @@ $sudo systemctl restart mongodb
 ```
 
 ### Turn on authentication
-
 To make authentication to enable, edit `mongod.conf files` as we have done before then restart your mongo service. This will still allow users to access the database without varifying for passwords. They will not be able to make changes to the database since they do not have the correct username and password. Open the configuration file using the command below and move down to the security. Remove the #sign to the security and add authorization colon and set it to enable as shown:
 
 ```bash
@@ -167,7 +157,6 @@ $sudo systemctl restart mongod
 ```
 
 ### Authentication Testing
-
 To test the authentication is working correctly, connect to the database without placing the credentials and check the action of the database you are accessing if it's restricted or not. To check, use the command:
 
 ```bash
@@ -180,13 +169,13 @@ No warning will appear since authentication is already enabled. The output will 
 MongoDB shell version v3.5.0
 ```
 
-The command `show dbs` is used to show if access is restricted.
+The command `show dbs` shows if access is restricted.
 
 ```bash
 show dbs
 ```
 
-If there is no message displayed, we say that the authentication is running as expected. Users will not be able to access the database anad modify any other things in the database. Exit the shell by pressing `CTRL + C.` To check if the administrative user authenticates, we run the following commands to connect the user. The `-u` flag for a user to connect to and the `-p` flag requests the user for a password.
+If there is no message displayed, mean authentication is running as expected. Users will not be able to access the database and modify any other things in the database. Exit the shell by pressing `CTRL + C.` To check if the administrative user authenticates, we run the following commands to connect the user. The `-u` flag for a user to connect to and the `-p` flag requests the user for a password.
 
 ```bash
 mongo -u AndrewKulundeng' -p --authentication database admin
@@ -208,7 +197,6 @@ local 127.68.390/44
 ```
 
 ### Adding user to the database
-
 To add a user to the command we use the command below:
 
 ```bash
@@ -224,6 +212,3 @@ You can check if the user has been added using the commands discussed above.
 By completing this tutorial, we will be in the condition of having an administrative MongoDB set. Afterward, users can create roles and change usernames in the database.
 
 Thanks for reading!
-
----
-Peer Review Contributions by: [Willies Ogola](/engineering-education/authors/willies-ogola/)
