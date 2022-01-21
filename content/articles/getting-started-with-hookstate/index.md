@@ -1,11 +1,10 @@
-
 The React library has undergone massive developments in recent times, resulting in various state management libraries. With React projects making use of an enormous code base, there is a need to centralize and maintain code and handle data flow across the application. State Management manages code and data maintenance, improving code quality and data sharing between application components. 
 
-One of the most important concepts for every React developer to understand is state – what it is, how to properly use it, and how to avoid common pitfalls as you build your applications.
+The concept of state in React development is crucial - what it is, how to properly manage it, and how to handle complexity as the application grows.
 
 ### Goal
 
-In JavaScript web applications, state refers to the the object that holds information generated through user actions. Since in modern applications we break the UI in components, this components depend on dynamic data. This article will cover the essentials of state management and the efficiencies that the Hookstate library provides in React applications.
+In JavaScript web applications, state refers to the object that holds information generated through user actions. Since in modern applications we break the UI into components, these components depend on dynamic data. This article will cover the essentials of state management and the efficiencies that the Hookstate library provides in React applications.
 
 ### Prerequisites
 
@@ -17,9 +16,9 @@ In JavaScript web applications, state refers to the the object that holds inform
 
 ### Understanding State and Hookstate
 
-In a nutshell, state management is a pattern in which we control the communication and sharing of data across the reusable components of the modern [frontend frameworks](https://www.sitepoint.com/most-popular-frontend-frameworks-compared/). To achieve this, our application wraps data in a data structure that will represent our application logical state that we can access and manipulate to transition between these states. Often, the changes are made depending on the user's actions.
+In a nutshell, state management is a pattern in which we control the communication and sharing of data across the reusable components of the modern [frontend frameworks](https://www.sitepoint.com/most-popular-frontend-frameworks-compared/). To achieve this, our application wraps data in a data structure that will represent our application's logical state that we can access and manipulate to transition between these states. Often, the changes are made depending on the user's actions.
 
-A case study can be an e-commerce application. To build such app, we can break the UI into components such as `Button`, `Cart`, `Checkout`, `Login`, and more. When a user adds an item to the `Cart` component, or performs a successful login, this actions will alter the state of the component and hence the entire application. In large application, it can become a tedious work to track the global state while still [prop drilling] is complicated and redundant. This is where state management libraries comes in.
+A case study can be an e-commerce application. To build such an app, we can break the UI into components such as `Button`, `Cart`, `Checkout`, `Login`, and more. When a user adds an item to the `Cart` component or performs a successful login, these actions will alter the state of the component and hence the entire application. In a large application, it can become tedious work to track the global state while still [prop drilling] is complicated and redundant. This is where state management libraries come in.
 
 Hookstate library takes the management of state in React to a new level. The library wraps the concept of the declarative React `useState` to a global version and extends it with useful features.
 
@@ -31,39 +30,55 @@ To generate a new React app, we will use the `create-react-app` CLI utility.
 npx create-react-app hookstate-demo
 ```
 
-Next, navigate inside the `hookstate-demo` folder on your termnial and install the `hookstate` package. Run the command:
+Next, navigate inside the `hookstate-demo` folder on your terminal and install the `hookstate`, and `uuid` packages. Run the command:
 
 ```bash
-npm install --save @hookstate/core
+npm install --save @hookstate/core uuid
 ```
+
+With our setup done, let's head over to our `./src` folder to build our global state and components.
 
 ###  Creating the Global Store
 
-We use the createState function to create a global state.
+To create and manage a global state, add a folder in your `src` directory and name it `states`. Inside the states folder, we will create a `TaskState.js` file where we will 
 
-We call get to get the current state.
-And we call set to set the new state.
+Creates a new state and returns it. This is mainly used to create a global state of an application. Unlike useState you can destroy this state by calling destroy() method to delete the state(only applicable for special scenarios).
 
-<!-- Note: If you are using useState from both React and hookstate, make sure to alias useState from @hookstate/core to eliminate a naming conflict with React’s useState. -->
-
-`TaskState.js`
+To create a global state, import the `uuid`, and the `@hookstate/core` package. 
 
 ```js
 import { createState, useState } from "@hookstate/core";
 const { v4: uuidv4 } = require("uuid");
+```
 
+Notice that the `useState` hook is similar to React's built-in hook. Where we are using both hooks in one file, we can use an alias to remove the conflicting cases.
+
+Belo our imports, instantiate the `createState` to create and a new state, it is an empty array.
+
+```js
 const taskState = createState([]);
+```
 
+Lastly, create and export the `useTaskState` custom hook:
+
+```js
 export function useTaskState() {
+
+  // assign state
   const state = useState(taskState);
 
   return {
+    // addTask method takes the new state and returns a new state using the .set(method)
     addTask(text) {
       return state.set((tasks) => [...tasks, { text, id: uuidv4() }]);
     },
+
+    // we can filter task lists to remove a list item
     removeTask(id) {
       return state.set((tasks) => tasks.filter((task) => task.id !== id));
     },
+
+    // state.get() retieves the Todo list state 
     get getTasks() {
       return state.get();
     }
@@ -71,11 +86,7 @@ export function useTaskState() {
 }
 ```
 
-<!-- The store folder will hold our state. We’ll create a AuthStore file and it will implement a global state and will act as a Model in MVC Pattern
-Our stores will expose react hook: useAuthState() that can be used on our page later. -->
-
-<!-- createState
-Creates a new state and returns it. This is mainly used to create a global state of an application. Unlike useState you can destroy this state by calling destroy() method to delete the state(only applicable for special scenarios). -->
+With global state, Hookstate provides the `get` method on the newly created state, and the `set` method to set a new state. In our case, we will manipulate a list of todo tasks. The `uuid` module generates a random ID for each item on the todo list. This simplifies the way we need to organise our application structure. 
 
 ### The `AddTodo` component
 
@@ -134,6 +145,27 @@ const ToDoList = () => {
 export default ToDoList;
 ```
 
+### The `App.js` Component
+
+```js
+import { useTaskState } from "./states/TaskState";
+import ToDoList from "./components/ToDoList";
+import AddTodo from "./components/AddTodo";
+
+// 
+
+export default function App() {
+  const taskState = useTaskState();
+  console.log(taskState.getTasks);
+  return (
+    <div className="App">
+      <AddTodo />
+      <ToDoList />
+    </div>
+  );
+}
+
+```
 
 ### Demo
 
@@ -145,5 +177,4 @@ For more, check the project source code on [GitHub](https://github.com/marienjus
 
 
 ### Conclusion
-Choosing the right state management library for your project will be a huge factor in development of your React applications. The Hookstate library provides a flexible, customizable, and easy to lwarn API that wraps the inbuilt React Hooks. 
-It allows us to track the application's state in a more predictable manner making it easy tackle the state management for React developers. Happy coding!
+Choosing the right state management library for your project will be a huge factor in the development of your React applications. The Hookstate library provides a flexible, customizable, and easy to learn API that wraps the inbuilt React Hooks. It allows us to track the application's state in a more predictable manner making it easy to tackle the state management for React developers. Happy coding!
