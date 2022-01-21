@@ -212,3 +212,5 @@ You can check if the user has been added using the commands discussed above.
 By completing this tutorial, we will be in the condition of having an administrative MongoDB set. Afterward, users can create roles and change usernames in the database.
 
 Thanks for reading!
+---
+Peer Review Contributions by: [Willies Ogola](/engineering-education/authors/willies-ogola/)
