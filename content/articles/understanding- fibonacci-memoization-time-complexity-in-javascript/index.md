@@ -1,7 +1,7 @@
 ### Understanding Fibonacci memoization time complexity in Javascript
 #### Introduction
 
-First, let's start by understanding what is a Fibonacci number. What is memoization, and what time complexity means? We get the Fibonacci number by adding two previous numbers in a Fibonacci sequence. Memoization is an optimization procedure used to speed up computer programs by storing the values of distinct function calls and then returning the stored input when the same function is called again. The time complexity in a computer program describes the amount of time taken by the computer to run an algorithm.
+Let's begin by comprehending what is a Fibonacci number, What is memoization, and what time complexity means? We get the Fibonacci number by adding two previous numbers in a Fibonacci sequence. Memoization is an enhancement procedure used to speed up computer programs by keeping the values of distinct function calls and then returning the stored input when the same function is called again. The time complexity in a computer program describes the amount of time taken by the computer to run an algorithm.
 
 In this tutorial, we will be using Dynamic programming to solve the Fibonacci sequence and learn about the time complexity of our solutions. Dynamic programming problems are mostly solved using two ways which are **tabulation**(bottom-up) and **memoization**(top-down). But we will be talking about memoization.
 
@@ -83,7 +83,7 @@ Since we don't know the third Fibonacci number, the function in the code above d
  console.log(fib(6));
  console.log(fib(7));
  ```
- There we have it right 5, 8, and 13. This is the classic recursive implementation of Fibonacci. Let's now give  a bigger number to the `fib()` function. Let's ask for the 70th  Fibonacci number:
+ There we have it right 5, 8, and 13.Let's now give  a bigger number to the `fib()` function. Let's ask for the 70th  Fibonacci number:
 ```js
  console.log(fib(70));
 ```
