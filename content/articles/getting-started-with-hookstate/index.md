@@ -1,5 +1,4 @@
-
-In recent years, React has matured quickly to become one of the most popular JavaScript UI libraries. React breaks the UI into components. However, over a large codebase, these components will need to share data between them. For this reason, the concept of state in React development is crucial. We need to understand - what it is, how to properly manage it, and how to handle complexity as the application grows.
+React is a mature JavaScript libraries that we use to create declarative and dynamic UIs. React breaks the UI into components. However, over a large codebase, these components will need to share data between them. For this reason, the concept of state in React development is crucial. We need to understand - what it is, how to properly manage it, and how to handle complexity as the application grows.
 
 ### Goal
 In JavaScript web applications, state refers to the object that holds information generated through user actions. Since in modern applications we break the UI into components, these components depend on dynamic data. This article will cover the essentials of state management and the efficiencies that the Hookstate library provides in React applications.
@@ -84,9 +83,7 @@ export function useTaskState() {
 
 With global state, Hookstate provides the `get` method on the newly created state and the `set` method to set a new state. In our case, we will manipulate a list of to-do tasks. The `uuid` module generates a random ID for each item on the to-do list. This simplifies the way we need to organize our application structure. 
 
-### The `AddTodo` component
-
-The `AddTodo` component is a form that we will use to create a new to-do item. For our component, create a `components` folder and add an `AddTodo.js` file.
+### Create `AddTodo` component
 
 First, let's import React and the `useTaskState` custom hook:
 
@@ -95,7 +92,7 @@ import React from "react";
 import { useTaskState } from "../states/TaskState";
 ```
 
-Below is the rest of the component with the form fields:
+Our `AddTodo` component contains the form that to add or delete a to-do item. Create a `components` folder for our component and add a `AddTodo.js` file to it.
 
 ```js
 const AddTodo = () => {
@@ -119,6 +116,7 @@ const AddTodo = () => {
   );
 };
 
+// Export component: AddTodo
 export default AddTodo;
 ```
 
