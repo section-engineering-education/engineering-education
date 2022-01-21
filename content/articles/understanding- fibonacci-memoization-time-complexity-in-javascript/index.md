@@ -87,12 +87,12 @@ Since we don't know the third Fibonacci number, the function in the code above d
 ```js
  console.log(fib(70));
 ```
-Looks like the first three calls of Fibonacci do work fine, I get 5, 8, and 13. However, the fourth call takes too much time. Hence, We need to work on this Fibonacci function.
+Looks like the first three calls of Fibonacci do work fine, I get 5, 8, and 13. Though, the fourth call takes lots of time. Hence, We need to work on this Fibonacci function.
 
 ### Visualizing the fib function
 We will use a recursive tree to visualize our problem. Let's trace through what happens when we call `fib` with number 7. Starting with 7 we will branch out our tree. We will start by subtracting 1 `(n-1)` at the left branch and 2 `(n-2)` at the right branch. Use the same logic on other nodes of the structure. Our base cases are 2 and 1, when we reach there we can't branch out further.
 
-In this case, we will build the entire tree and stop branching out whenever we have a base case scenario. Numbers inside of the nodes here represent the `n` that we passed in. That being said, let's check how this tree calculates if we have the visualization.
+In this case, we will build the entire tree and stop branching out whenever we have a base case scenario. That being said, let's check how this tree calculates if we have the visualization.
 
 ***Call tree without Memoization***
 
