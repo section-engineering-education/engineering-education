@@ -206,7 +206,7 @@ Weighing options include:
 
 For example:
 
-![Illustration of two traditional techniques](/engineering-education/understanding-machine-learning-algorithms-and-how-to-implement-them/graph.png)
+![Illustration of two traditional techniques](/engineering-education/understanding-machine-learning-algorithms-and-how-to-implement-them/improvement-graph.png)
 
 We've got N locations in D-space and one unlabeled sample q. We need to identify the point closest to q. For big N and D, the KNN method is unworkable.
 
