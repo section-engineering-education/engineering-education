@@ -6,7 +6,7 @@ url: /threads-and-isolates-in-flutter/
 title: Threads and Isolates In Flutter Applications
 description: This article will go through the use of Threads and Isolates in Flutter applications
 author: waigwa-kanoi
-date: 2022-01-06T00:00:00-10:30
+date: 2022-01-21T00:00:00-12:00
 topics: [Languages]
 excerpt_separator: <!--more-->
 images:
@@ -14,9 +14,9 @@ images:
   - url: /engineering-education/threads-and-isolates-in-flutter/hero.jpg
     alt: Threads and Isolates In Flutter Applications Hero Image
 ---
-Threads and isolates are two of the essential abstractions you will need to know when developing apps using flutter.
+Threads and isolates are two essential abstractions you will need to know when developing apps using Flutter.
 <!--more-->
-Threads and isolates allow developers to utilize multicore processors, improve user experience by reducing UI stuttering, and reducing battery consumption on mobile devices.
+Threads and isolates allow developers to utilize multicore processors to improve user experience by reducing UI stuttering and battery consumption on mobile devices.
 
 Threading is an implementation of cooperative, non-preemptive multitasking (software threads) whereas, an Isolate is a thread with an event loop that continuously processes events in its own memory space.
 
@@ -52,9 +52,9 @@ The application has a button that will start a new counter. When the correspondi
 Let us get started!
 
 ### Step one: Creating states
-In this step, we will create a class responsible for the counter. The counter class will contain createstate method used to create a new state. The isolate will handle the counter of the app and the changes in our isolates.
+In this step, we will create a class responsible for the counter. The counter class will contain the createstate method used to create a new state. Finally, the isolate will handle the counter of the app and the changes in our isolates.
 
-A comment starting with // [START isolate] in the following code snippets means that an isolated thread is started. A comment beginning with // [END isolate] means the corresponding isolation is terminated.
+A comment starting with // [START isolate] in the following code snippets means an isolated thread is started. A comment beginning with // [END isolate] means the corresponding isolation is terminated.
 
 ```dart
 /// Flutter Widget to display a counter and increment it.
@@ -102,9 +102,9 @@ Next, we will demonstrate how to pass a message from the main thread through an 
 ### Step three: Passing parameters between threads
 This step will cover passing a parameter from the `main` thread to the `isolate` thread.
 
->Note: Notice that this argument must be serializable. It is impossible to send `Future s` or `Stream s` across an isolate boundary.
+>Note: Notice that this argument must be serializable. It is impossible to send `Future s` or `Stream s` across an isolated boundary.
 
-If you do want to pass a `Future` along, see the next section.
+If you want to pass a `Future` along, see the next section.
 
 ```dart
   void incrementCounter(int delta, bool start) { 
@@ -237,13 +237,14 @@ value by a given amount. func incrementBy (amount: Int) { // [START isolate] let
 IncrementValueProvider( callback: self.onUpdate, messageType: 0,Thread and Isolate in flutter.
 ```
 
-To see more of the implementation or have a view of the above Reachout via [my GitHub profile](https://github.com/waigwakanoi/).
+To see more of the implementation or view the above Reachout via [my GitHub profile](https://github.com/waigwakanoi/).
 
 ### Conclusion
-The reality is that you can use threads in flutter to help you with the performance of your application. However, since you are using dart, you cannot do it directly inside a widget; instead, you need to create an isolate. 
+The reality is that you can use threads in Flutter to help you with the performance of your application. However, since you are using Dart, you cannot do it directly inside a widget; instead, you need to create an isolate. 
 
 You also have different options available if you do not want any threading or if you want some threading, you can use the isolate. The idea is that you will create a new thread that will run in parallel with your main application code. It would be best to keep in mind that you cannot share any state between both threads but instead, you have to communicate by messaging or passing data through channels.
 
 Happy coding!
+
 ---
 Peer Review Contributions by: [Briana Nzivu](/engineering-education/authors/briana-nzivu/)
