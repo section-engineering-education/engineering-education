@@ -1,3 +1,4 @@
+
 React is a mature JavaScript libraries that we use to create declarative and dynamic UIs. React breaks the UI into components. However, over a large codebase, these components will need to share data between them. For this reason, the concept of state in React development is crucial. We need to understand - what it is, how to properly manage it, and how to handle complexity as the application grows.
 
 ### Goal
@@ -168,6 +169,8 @@ export default function App() {
   // console.log(taskState.getTasks);
   return (
     <div className="App">
+      <h1>TODO APP</h1>
+
       <AddTodo />
       <ToDoList />
     </div>
@@ -177,12 +180,9 @@ export default function App() {
 
 ### Demo
 
-![todo demo]()
-
-![todo task demo]()
+![todo demo](/engineering-education/getting-started-with-hookstate/demo1.png)
 
 For more, check the project source code on [GitHub](https://github.com/marienjus/hookstate/).
-
 
 ### Conclusion
 Choosing the right state management library for your project will be a huge factor in the development of your React applications. The Hookstate library provides a flexible, customizable, and easy to learn API that wraps the inbuilt React Hooks. It allows us to track the application's state in a more predictable manner making it easy to tackle the state management for React developers. Happy coding!
