@@ -24,6 +24,15 @@ We will explain how this process is possible using [geopy](https://geopy.readthe
 
 You can install `geopy` using the following command:
 
+But before executing the command below, there is a series of steps that are followed so that the command is finally arrived at.
+1. Open your cmd and make sure it is running as an administrator.
+2. Make sure that you are operating from the root by performing the following.
+cd..
+
+3. cd.. This shows that you are already at the root.
+
+4. After that now you can perform the command below and geopy will be installed in your machine.
+
 ```Python
 pip install geopy
 ```
