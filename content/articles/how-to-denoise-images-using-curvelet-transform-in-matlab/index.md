@@ -18,7 +18,7 @@ This tutorial will look into the Curvelet transform analysis and denoising of im
 - An understanding of [Matlab](/engineering-education/getting-started-with-matlab/) basics.
 
 ### Theoretical background of Curvelet transform
-Curvelet transform is a multi-scale geometric transform, That can represent edges and curves singularity more efficiently than traditional wavelets. However, wavelets have the disadvantage of poor directionality. They are good in capturing coefficients along the horizontal, vertical, and diagonal axis but poor in capturing coefficients along the curvature.
+Curvelet transform is a geometric scale transform, used in the representation of edges and curves effeciently than any traditional wavelet. However, wavelets have the disadvantage of poor directionality. They are good in capturing coefficients along the horizontal, vertical, and diagonal axis but poor in capturing coefficients along the curvature.
 The complex transform is one way to improve directional selectivity. However, it is difficult to design complex wavelets with perfect reconstruction properties and filter characteristics.
 In 1999 Ridgelet transform, which is an anisotropic geometric wavelet transform, was proposed by Candes and Donoho. In 2000, the same authors introduced 1st generation curvelet transform, called Ridgelet transform-based Curvelet transform. Later, a 2nd generation was introduced by the same authors.
 This 2nd generation curvelet transform is an efficient tool for many different applications. These applications include image processing, seismic data exploration, fluid mechanics, and solving partial differential equations. It is also efficient in representing curve-like edges. This 2nd generation suffered two main drawbacks, these are;
@@ -219,3 +219,33 @@ As we can see, there is an improvement in the SNR from 16 to 19. So that is how 
 Curvelet transform is efficient for denoising and performing a transform for the images. The curvelet org. It has made it easy. In the curve lab, we have the Matlab functions and C++. It makes it an efficient tool for performing this operation. Also, the performance of this Curvelet is very effective, as we have seen.
 
 Happy coding!
+
+<!-- MathJax script -->
+<script type="text/javascript" async
+    src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+    MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [['$','$'], ['\\(','\\)']],
+      displayMath: [['$$','$$']],
+      processEscapes: true,
+      processEnvironments: true,
+      skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
+      TeX: { equationNumbers: { autoNumber: "AMS" },
+           extensions: ["AMSmath.js", "AMSsymbols.js"] }
+    }
+    });
+    MathJax.Hub.Queue(function() {
+      // Fix <code> tags after MathJax finishes running. This is a
+      // hack to overcome a shortcoming of Markdown. Discussion at
+      // https://github.com/mojombo/jekyll/issues/199
+      var all = MathJax.Hub.getAllJax(), i;
+      for(i = 0; i < all.length; i += 1) {
+          all[i].SourceElement().parentNode.className += ' has-jax';
+      }
+    });
+    MathJax.Hub.Config({
+    // Autonumbering by mathjax
+    TeX: { equationNumbers: { autoNumber: "AMS" } }
+    });
+  </script>
+
