@@ -17,7 +17,13 @@ To understand what a DEX File is, we will look at the Android Build System in a 
 
 #### Why Multidex
 Multidex comes in handy when you exceed the 64K reference limit. Sometimes you are building a very complex application that requires you to use various dependencies and methods. In that case, Multidex library will help you avoid encountering build error.
+The error you will encounter looks like the one below:
 
+```build
+trouble writing output:
+Too many field references: 120000; max is 65536.
+You may try using --multi-dex option.
+```
 To solve this error, you can optimize your code or enable Multidex support library in your project.
 
 ### Optimizing your App to Avoid the 64K Reference Limit
@@ -63,10 +69,80 @@ buildTypes {
         }
     }
 ```
-
 The above strategies when configured can help prevent exceeding the 64K reference limit but if it fails, then you have to enable Multidex. 
 
 > Note: Multidex support library is enabled by default in API level higher than 21(Android 5 and higher) and therefore, you do not require to add the Multidex support library.
+
+### How to Configure an App to Support Multidex for API Level Lower Than 21
+
+In this case, we are dealing with applications whose `minSdk` is set to 20 and below. Setting `minSdk` is done in the module-level `build.gradle` file. API levels lower than 21 executes app code using Dalvik runtime. By default, Dalvik is limited to one `classes.dex` bytecode file per APK. You can overcome this limitation by enabling Multidex support library.
+
+1. In your module's 'build.gradle' file, add the Multidex dependency. 
+
+```gradle
+dependencies{
+    def multidex_version = "2.0.1"
+    implementation "androidx.multidex:multidex:$multidex_version"
+}
+```
+Once this dependency is added to your project, in the `build.gradle` file, your app can manage the access to extra DEX files.
+
+To enable Multidex, edit the 'build.gradle' file at the module level. 
+```gradle
+android {
+    compileSdk 31
+
+    defaultConfig {
+        ...
+        minSdk 21
+        targetSdk 31
+        versionCode 1
+        versionName "1.0"
+        multiDexEnabled true // Add this to enable Multidex
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+    ...
+}
+```
+2. If possible, extend the 'MultidexApplication' class if you have overridden the 'Application' class: 
+
+```kotlin
+class MultidexDemoApp : MultiDexApplication(){
+    ...
+}
+```
+3. In your manifest, set `android:name` in the `application` tag if the `Application` is not overridden as shown below:
+```manifest
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example.kotlinflowzipopdemo">
+
+    <application
+        android:name="androidx.multidex.MultiDexApplication">
+        ...
+        <activity
+            ...
+        </activity>
+    </application>
+</manifest>
+```
+3. If you have overridden the `Application` class and it is impossible to change the base class, then you can instead override the `attachBaseContext()` method and inside it, you call `MultiDex.install(this)` to enable Multidex. 
+
+```kotlin
+class MultidexDemoApp : SomeExtendedApplicatio(){
+    override fun attachBaseContext(base: Context?) {
+        super.attachBaseContext(base)
+        MultiDex.install(this)
+    }
+}
+```
+After doing all these configurations, when building your app, the Android build tools will construct a primary DEX file `(classes.dex)` and other supporting DEX files `(classes1.dex, classes2.dex, ... classesN.dex)`. The android build system then packages all the constructed DEX files into a single APK.
+
+### Limitations of Multidex Support Library
+Although Multidex library helps in solving the multidex build error, it has the following limitations:
+
+- An Application Not Responding (ANR) problem is likely to occur if the secondary DEX file is larger than the primary DEX file. 
+- When targeting API levels lower than 21, it's a good idea to test exhaustively on those platforms, as your app can have difficulty starting up or loading specific sets of classes. 
 
 ### References
 - https://developer.android.com/studio/build/multidex
