@@ -31,7 +31,7 @@ Use the code below to create the Strapi app:
 npx create-strapi-app backend
 ```
 You will be given these options:
-![Installation Type](./installation-type.png)
+![Installation Type](./section-engineering/getting-started-with-react-strapi-graphql/installation-type.png)
 
 Choose `Quickstart (recommended)` to install Strapi with the recommended settings.
 
@@ -45,26 +45,26 @@ If this does not happen automatically, `cd` into the `backend` folder and run th
 npm run develop
 ```
 You will then be redirected to `http://localhost:1337/admin/` which is the Strapi admin dashboard. The dashboard looks like this:
-![Admin Dashboard](./admin.png)
+![Admin Dashboard](./section-engineering/getting-started-with-react-strapi-graphql/admin.png)
 
 ### Creating Content Types
 A content type is basically a blueprint for a piece of content. It describes what fields the content should have and the data types. For example, a blog content type might have a title field, a body field, and an author field.
 
 To create a content type, click on the `Content-Type Builder` on the left sidebar. The following screen will appear:
-![Content Type](./content-type-builder.png)
+![Content Type](./section-engineering/getting-started-with-react-strapi-graphql/content-type-builder.png)
 
 Under `COLLECTION TYPES`, click on `Create new collection type`.
 
-![New Collection TYpe](./content-type-builder-screen.png)
+![New Collection TYpe](./section-engineering/getting-started-with-react-strapi-graphql/content-type-builder-screen.png)
 Under display name, input `blog` as shown above and the other fields will automatically generate their text. Click on `Continue`.
 
 You will then be presented with the following screen where you will choose a field for your content type. Choose `Text`.
 
-![Blog Fields](./fields.png)
+![Blog Fields](./section-engineering/getting-started-with-react-strapi-graphql/fields.png)
 
 On the next screen which is shown below, add a name for your field, input `Title`, which is going to represent the title of the blog.
 
-![Text Fields](./text-filed.png)
+![Text Fields](./section-engineering/getting-started-with-react-strapi-graphql/text-filed.png)
 
 Click on `Add another field` to add other fields. Follow the process and add the following two fields:
 
@@ -76,7 +76,7 @@ After you add all the fields, click finish.
 ### Creating New Blogs
 To create new blogs which we will later fetch from the frontend, click on `Content Manager` on the sidebar of the admin dashboard and you will be presented with the screen shown below:
 
-![Add Blogs](./add-blogs.png)
+![Add Blogs](./section-engineering/getting-started-with-react-strapi-graphql/add-blogs.png)
 
 Click on `Create new entry` to add a blog. Input the blog title, body, and author. Then click `Save` and `Publish` so that the blog can be retrieved from the frontend.
 
@@ -86,10 +86,10 @@ To add new blogs, click on the `Back` button at the top and select `Add new entr
 By default, Strapi protects content types so that they can't be accessed by the public. To be able to access the data in Strapi from the frontend, we will need to update permissions.
 
 To do this, on the admin dashboard, click `Settings`. Under `USERS & PERMISSIONS PLUGIN`, select `Roles` and you will be presented with the screen below:
-![Roles](./roles.png)
+![Roles](./section-engineering/getting-started-with-react-strapi-graphql/roles.png)
 
 Click on `Public` and under permissions select `Blog` and tick the `find` and `findOne` fields as shown below:
-![](./find-findOne.png)
+![Permissions](./section-engineering/getting-started-with-react-strapi-graphql/find-findOne.png)
 
 Click `Save`. The above configuration will enable the frontend to retrieve a single as well as many blogs.
 
@@ -330,11 +330,11 @@ Make sure the Strapi backend is also running. If it is not run it using:
 npm run develop
 ```
 Now open `localhost:3000` on the browser. You will see the following:
-![All Blogs](./allblogs.png)
+![All Blogs](./section-engineering/getting-started-with-react-strapi-graphql/allblogs.png)
 Note that the content will be different based on what you put in your backend.
 
 After clicking on `Read more...` the following page will be shown:
-![Single Blog](./singleblog.png)
+![Single Blog](./section-engineering/getting-started-with-react-strapi-graphql/singleblog.png)
 This shows that the routing is working correctly.
 
 ### Conclusion
