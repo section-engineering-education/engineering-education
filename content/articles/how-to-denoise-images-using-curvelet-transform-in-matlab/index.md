@@ -1,12 +1,19 @@
 #### How to denoise images using curvelet transform in Matlab
 ### Table of content
 [Introduction](#introduction)
+
 [Prerequisites](#prerequisite)
+
 [Theoritical background of Curvelet transform](#theoritical-background-of-curvelet-transform)
+
 [Curvelet Toolbox](#curvelet-toolbox)
+
 [Curvelet transform of an image](#curvelet-transform-of-an-image)
+
 [Curvelet based denoising of an image](#curvelet-based-denoising-of-an-image)
+
 [Matlab code for denoising](#matlab-code-for-denoising)
+
 [Conclusion](#conclusion)
 
 ### Introduction
