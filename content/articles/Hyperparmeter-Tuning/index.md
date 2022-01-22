@@ -29,7 +29,7 @@ So all-in-all, decision trees are **a hierarchical series of binary decisions** 
 To understand how our model splits our training data and grows into a decision tree, we need to understand some fundamental splitting parameters that it uses to define those conditions, like Gini Index, Entropy, Information Gain, etc...
 
 ##### Gini Score/ Gini Index:
-Every Machine Learning model has a loss function or a cost function, whose objective is to minimize the cost. i.e the tentative distance between the predicted value and actual value. (For classification problems, probabilities of predicted class are used). **Gini Index** is the **cost/loss function** that is used by decision trees to decide which feature shall be used for splitting the data, and at what point the column should be split.
+Every Machine Learning model has a loss function or a cost function, whose objective is to minimize the cost. i.e the tentative distance between the predicted value and actual value. (For classification problems, probabilities of predicted class are used). **Gini Index** is the **cost/loss function** that is used by decision trees to choose which feature shall be used for splitting the data, and at what point the column should be split.
 
 $$
 Lower\space Gini\space Score \iff Lower\space Cost \iff Good\space Split
@@ -45,10 +45,10 @@ entropy = - \sum_{i = 1}^{k}{P(value_i).{log_2}(P(value_i))}
 $$
  
 ##### Information Gain:
-Information gain or **IG** measures how much information is provided by a given attribute/feature about a certain target class. While constructing a decision tree, our goal is **to find the attribute that has the highest Information Gain and conversely the lowest entropy.** Mathematically it is calculated as the difference in the entropy before and after the split. i.e,
+Information gain or **IG** measures the amount of information provided by a given feature or attribute about a particular  target class. While creating a decision tree, our goal is **to find the attribute that has the highest Information Gain and conversely the lowest entropy.** Mathematically it is calculated as the difference of the initial and final entropy. i.e,
 
 $$
-I_{gain} = Entropy_{before} - Entropy_{after}
+I_{gain} = Entropy_{before\space split} - Entropy_{after\space split}
 $$
 
 _This is how information gain and entropy are used to improve the quality of splitting._
@@ -116,7 +116,7 @@ It is axiomatic in the results above that our model is not performing well on da
 This process of calibrating our model by finding the right hyperparameters to generalize our model is called **HyperParameter Tuning.** We will look at a few of these hyperparameters:
 
 ###### a. Max Depth: 
-This argument represents the maximum depth of a tree. If not specified, the tree is expanded until the last leaf nodes contain a single value. Hence by reducing this meter, we can preclude the tree from memorizing all training samples.
+This argument represents the maximum depth of a tree. If not specified, the tree is expanded until the last leaf nodes contain a single value. Hence by reducing this meter, we can preclude the tree from learning all training samples thereby, preventing over-fitting.
 
 ![max_depth_1.png](/engineering-education/Hyperparameter-Tuning/max_depth_1.png)
 
@@ -157,11 +157,11 @@ Here is the result of my model's training and validation accuracy at different v
 
 									--🌴--🌳--🌲--
 
-While tuning the hyper-parameters of a single decision tree is giving us some improvement, a more effective stratagem would be to combine the results of diverse decision trees(like a forest) with slightly different parameters. Which is what we will understand in a **random forest.** So let's practice some other hyper-parameters like `max_features`, `min_samples_split`, etc...under random forests.
+While tuning the hyper-parameters of a single decision tree is giving us some improvement, a stratagem would be to merge the results of diverse decision trees (like a forest) with moderately different parameters. Which is what we will understand in a **random forest.** So let's practice some other hyper-parameters like `max_features`, `min_samples_split`, etc...under random forests.
 
 
 #### Random Forests: 
-Random forests are supervised machine learning models that fit a number of decision trees and combine the outcome by averaging their results. Each decision tree will make different kinds of errors and upon averaging them, many of these errors will cancel out. _This general practice of combining the results of many models is called **"Emsembling technique"**._ Or very famously said **"Wisdom of the crowd"**. 
+Random forests are supervised machine learning models that train multiple decision trees and integrate the results by averaging them. Each decision tree makes various kinds of errors and upon averaging their results, many of these errors will be counter balanced. _This general practice of combining the results of many models is called **"Emsembling technique"**._ Or very famously said **"Wisdom of the crowd"**. 
 
 
 ![random_forest.png](/engineering-education/Hyperparameter-Tuning/random_forest.png)
@@ -192,13 +192,13 @@ model = RandomForestClassifier(random_state=42, n_jobs=-1, n_estimators=10)
 model.fit(train_inputs, train_targets)
 ```
 
-🌟 But, as a general rule: We should keep as few estimators as possible. For example: In my model, the validation accuracy at 100 and 200 estimators is approximately the same. So in such cases, I shall stick to the lower number of estimators.
+🌟 Typically; n_estimators should be kept minimal. For example: In my model, the validation accuracy at 100 and 200 estimators is approximately the same. So in such cases, I shall stick to the lower number of estimators.
 
 
 ![n_estimator.png](/engineering-education/Hyperparameter-Tuning/n_estimator.png)
 
 ###### d. max_features:
-Instead of picking all features for all splits, we can specify that only a fraction of columns should be chosen. Meaning,
+Instead of taking all the features into account for a spilt, we can circumscribe that only a few columns be selected. Meaning,
 
 Each time a split is to occur, the model will only consider a fraction of columns. This will help to generalize our random forest model because if every time, all the features are considered at all splits… the random forest model will contain identical trees.
 
@@ -209,7 +209,7 @@ Hence, `max_features` will help to make each tree in the forest different. The d
 ###### e. min_samples_split: 
 Minimum samples split decides or holds the value for the minimum number of samples necessary to split a nonterminal node. By default, the decision tree tries to split every node that has two or more rows of data inside it. This can again cause memorization of training data, resulting in a lesser generalized model.
 
-Higher values prevent a model from learning relations that might be highly specific to a particular row or sample of rows selected for a tree. But again, much-exceeded values will lead to under-fitting the model hence depending upon the model's fitting levels for the chosen data, you can tune the values for `min_samples_split`.
+Larger values can restrict a model from learning relations that could be extremely specific to a particular row. But again, much-exceeded values for the same will lead to under-fitting the model. Therefore, depending upon the model requirements and chosen data, you can tune the values for `min_samples_split`.
 
 
 ![min_samples_split.png](/engineering-education/Hyperparameter-Tuning/min_samples_split.png)
@@ -224,17 +224,17 @@ def test_params(**params):
 
 
 ###### f. min_samples_leaf:
-Minimum sample leaf may sound like minimum sample split, and is somewhat similar too but in this case, we are talking about the minimum number of samples required to be left at the **leaf node**. A split will only be considered if, there is a minimum of `min_samples_leaf` samples on the left and right branches.
+Minimum sample leaf may sound like minimum sample split, and is somewhat similar too but in this case, we are talking about the minimum number of samples required to be left at the **leaf node**. A split will only be considered if there is atleast `min_samples_leaf` samples on the left and right branches.
 
 ###### g. min_impurity_decrease:
-This argument is used to control the **threshold for splitting nodes**. i.e A split will only be split if it induces a decrease of the Gini Impurity greater than or equal to the `min_impurity_decrease` value. It's default value is 0, and we can modify it to reduce over-fitting. 
+This argument is used to supervise the **threshold for splitting nodes**. i.e A split will only take place if it reduces the Gini Impurity, greater than or equal to the `min_impurity_decrease` value. It's default value is 0, and we can modify it to decrease over-fitting. 
 
 Since the number of features in my dataset is very limited, I didn't try this particular hyperparamter. 
 
 Some default hyperparamters used in random forests are Bootstrapping.
 
 ###### Bootstrap:
-By default, Random Forests do not use the entire dataset for training each decision tree. Instead, while creating decision trees, random rows of the dataset are selected consecutively. i.e While training, some rows may not show up at all, whereas some might show up twice. This random picking is done for the entire dataset.  
+By default, Random Forest does not use the whole dataset for fitting each decision tree. Instead, while creating decision trees, random rows of the dataset are selected consecutively. i.e While training, some rows may not show up at all, whereas some might show up twice. This random picking is done for the entire dataset.  
 
 You can change `default=False` to disable it, and in that case, the entire dataset will be used to create decision trees.
 
