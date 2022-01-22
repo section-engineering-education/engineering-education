@@ -74,7 +74,7 @@ Now the CSS:
 
 ```css
 
-@media (min-width: 400px) {
+@media (min-width: 410px) {
 * {
   box-sizing: border-box;
   font-family: "Nunito", sans-serif;
