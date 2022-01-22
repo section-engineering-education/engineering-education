@@ -29,7 +29,7 @@ There are two different kinds of constructors in Kotlin, which are:
 - The secondary constructor
 
 #### Primary constructors
-The primary constructor is a section of the class header that comes after the class name. The constructor keyword is used after the class name. The example below exemplifies the definition:
+The primary constructor is a section of the class header that comes after the class name, using the `constructor` keyword. The example below exemplifies the definition:
 
 ```kotlin
 class student Constructor(name:string,age:Int,Email:string)
@@ -45,10 +45,7 @@ class AtmMachine(_moneyInMachine:Boolen,_location:string){
     ///code to be exercuted
 }
 ```
-
-
-
-In the preceding example, we are not going to use the `constructor` keyword. By default, all the constructors are public which means they are visible everywhere in the class. Therefore we don't have to include the `constructor` keyword, as shown below:
+In the preceding example, we don't use the `constructor` keyword. By default, all constructors are public which means they are visible everywhere in the class. Therefore we don't have to include the `constructor` keyword, as shown below:
 
 ```kotlin
 class student(name:string,age:Int,Email:string){ }
@@ -140,7 +137,7 @@ Email = Alex@gmail
 ```
 
 ### Init blocks
-Init short for initializer. It is a block of code that is executed every time the class is instantiated.They are used when you need to add a block of code that cannot be added to constructor  which simplifies a lot for the programmer it is called immediately after the primary constructor. To declare one, use the `init` keyword:
+Init is short for initializer. It is a block of code that is executed every time the class is instantiated. They are used when you need to add a block of code that cannot be added to the constructor, simplifying a lot for the programmer. Init blocks are called immediately after the primary constructor. To declare one, use the `init` keyword:
 
 ```kotlin
 init
@@ -164,15 +161,8 @@ class person(name:string,id:Int){
         val Person=person("Alex",200) 
 }
 ```
-Explanation:
-When a person object is created, the parameters name and id accept the values "Alex" and "200."
-The properties name and id are not properties of the person class because they are not preceded by "val" or "var."
 
-
-When a person object is created, the initializer block is executed, which initializes pname and pId. 
-
-
-When ran this would output:
+When a person object is created, the parameters name and id accept the values `Alex` and `200`. The properties name and id are not properties of the Person class because they are not preceded by `val` or `var`. After the constructor is called, the initializer block is executed which initializes `pname` and `pId`. When run this would be the output:
 
 ```
 Name = Alex
@@ -184,13 +174,13 @@ The main difference between a primary and secondary constructor is that the form
 
 ### Best practices for object-oriented programming
 The clean use of classes is required for effective Kotlin. We learned about constructors above but never discussed best practices with them. We can make the following changes to our code to make it more readable while using constructors:
-- Minimize visibility of properties, i.e., private, public, protected. It allows you to control where your class members can be accessed from.
+- Minimize the visibility of properties, i.e., when using the private, public, protected keywords. It allows you to control where your class members can be accessed from.
 - Combine property declaration. This is achieved by taking a property and setting it to a constructor parameter.
 - Improve variable naming. This is achieved by using variable naming rules; your variable names should: 
   - Be based on the variable's purpose so it's clear what the variable is for.
   - Have no spaces between words. Ex. myClass.
   - Be greater than a single character.
-  - Not use special prefixes or suffixes (e.g. name_, mName, s_name, and kName), except in the case of backing properties.
+  - Not use special prefixes or suffixes (e.g. `name_`, `mName`, `s_name`, and `kName`), except in the case of backing properties.
 
 ### Conclusion
-In this article, we have covered various ways of creating constructors using Kotlin as our language, and when to use the init block. We also learned that the init block is called just after the primary constructor, and the secondary constructor is called using the `this` keyword. Finally, we went through best practices in object-oriented programming. 
+In this article, we have covered various ways of creating constructors using Kotlin as our language, and when to use the init block. We also learned that the init block is called just after the primary constructor, and the secondary constructor is called using the `this` keyword. Finally, we went through best practices in object-oriented programming as it relates to constructors. 
