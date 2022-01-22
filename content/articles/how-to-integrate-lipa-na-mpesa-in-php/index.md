@@ -16,8 +16,6 @@ To create an account in Safaricom Daraja, open the Safaricom API portal via this
 ### Step 2 - Creating a new app in Safaricom Daraja.
 After creating an account, log in and create a new app, and give it a name of your own choice. Take note of the `CONSUMER KEY` and `CONSUMER SECRET` and also take note of `Lipa na Mpesa pass key` which is obtained through simulation of the newly created app because we will use them later.
 
-![Creating Saf App](/engineering-education/how-to-integrate-Safaricom-lipa-na-mpesa-in-php/create_app.png)
-
 ### Step 3 - We now simulate our new app to obtain Lipa na mpesa pass key.
 To simulate the app just click on APIS which is on the menu bar and choose the simulation of Customer to business in order then thereafter we need to select the app that we created and start simulating to obtain the passkeys and business shortcode.
 
