@@ -17,18 +17,18 @@ These variables are then exported in Matlab and test your sensor algorithm. Let 
 The first locate this App in the apps section. You can locate this App in two ways in Matlab. 
 - At the top of the Matlab window, click on the App section.
 
-![Apps](driving-1.png)
+![Apps](driving-one.png)
 
 - Click on the dropdown arrow to locate the automotive section.
 - In the automotive section, select the `Driving Scenario App`.
 
-![driving scenario app](driving-2.png)
+![driving scenario app](driving-two.png)
 
 - Double-click the App to open it.
 
 Alternatively, you can execute the `drivingScenarioDesigner` command in the command window. This command automatically opens the App. When you open the App, the display will be as shown below:
 
-![App window](driving-3.png)
+![App window](driving-three.png)
 
 You can add roads and movable objects known as actors in the driving scenario App. Actors are of different types depending on what you want to carry out. The actors are such as cars, trucks, bicycles and barriers.
 When you open this App, you find it is divided into three parts. These three parts are actors/roads, scenario canvas, and egocentric view. The actors/roads section shows the roads' properties or the actors you have added. You use the scenario canvas to add your scenarios. It acts as the working space for the App. Egocentric section where your scenarios appear as a reality. This section makes them appear in a more practical form.
@@ -36,22 +36,22 @@ When you open this App, you find it is divided into three parts. These three par
 ### Adding scenarios to the scenario canvas
 We will start by adding a road to our scenario canvas. To add a road, click on the `add road` at the top bar of the App. After this, move the cursor to the scenario canvas. Click at the starting point, the second point, and make a shape you desire and then click `enter`. Example as shown below:
 
-![Adding roads](driving-4.png)
+![Adding roads](driving-four.png)
 
 When you click enter, you have:
 
-![The road](driving-5.png)
+![The road](driving-five.png)
 
 After adding your road, the road description is given in the road/actor section. For example, our road has four centres and a width of six metres. The centres are the number of endpoints when creating the road.
 We can also add actors to our road. The actors that we want to add are vehicles/cars. In adding your cars, you have to specify your ego car. An ego car is a car that is controlled by automated driving systems. By default, the first car you add into the scenario canvas is the ego car. It is possible to change the ego car as per your desire.
 To add a car into the scenario canvas, click on the `actors` and select your prefered actor. After that, you drive the cursor to the position you require on the road. 
 
-![Adding cars](driving-6.png)
+![Adding cars](driving-six.png)
 
 Since these are automated cars, you have to create a `way point`. A waypoint is a specific lane where the car will follow. When creating a scenario and an actor is involved, you cannot run this program without adding a waypoint. In adding a waypoint, every car has its waypoint. Select the car/ truck that you want to add a waypoint, then right-click on it and select `add way point`. It creates a cursor that enables you to create this waypoint.
 After this, you can now run your simulation to see how it works. Again, we see the program run as we want it to run when you run it.
 
-![running program](driving-7.png)
+![running program](driving-seven.png)
 
 This App allows you to add any property you need for your simulation. Alternatively, you can add these properties programmatically.
 
@@ -123,7 +123,7 @@ ylim([-20 20]);
 ```
 The `set()` function sets properties to your scenario. The `gcf` returns the handle to the current figure since this execution is done in the command window. The output here is:
 
-![Output of the program](driving-8.png)
+![Output of the program](driving-eight.png)
 
 We can create a relative vehicle placement by using a `chasePlot`. This plot makes the egocentric view of your simulation. This plot displays the projective perspective view from a distance by default. For example, let us show the perspective view of the second car using the `chasePlot` function.
 ```Matlab
@@ -132,7 +132,7 @@ set(gcf,'Name','Chase Plot')
 ```
 The output is:
 
-![chase plot](driving-9.png)
+![chase plot](driving-nine.png)
 
 This output shows the perspective as it is seen some distance from the second car. The cars are 10m apart with 6m between them from the plot.
 
@@ -150,7 +150,7 @@ plot(driving);
 ```
 The `road()` function is used to plot the roads. This function takes your scenario, the bank angles and the road centres as the arguments. Running this program gives:
 
-![road plot](driving-10.png)
+![road plot](driving-ten.png)
 
 Let us now add our ego car using the `vehicle()` function and its position as the arguement.
 ```matlab
@@ -158,7 +158,7 @@ egoCar = vehicle(driving,'ClassID',1,'Position',[80 -40 0.45],'Yaw',30);
 ```
 The output plot with the ego vehicle is shown below:
 
-![ego vehicle added](driving-11.png)
+![ego vehicle added](driving-eleven.png)
 
 ### Adding trajectories for our actors
 As we said before, we have to give it trajectories for our vehicle to move. We add the second actor car, and both of these vehicles are given a trajectory. To add our second car, 'fastCar`, you use the code below:
@@ -186,9 +186,9 @@ smoothTrajectory(fastCar,lWayPoints(:,:), 50);
 ```
 Here, we get:
 
-![figure 1](driving-12.png)
+![figure 1](driving-twelve.png)
 
-![figure 2](driving-13.png)
+![figure 2](driving-thirteen.png)
 
 ### Conclusion
 Using the driving scenario designer App has made the simulation of the automated driving system easier. It is possible to create any scenario using this toolbox. These data from this toolbox can then be exported and used to improve various automated driving systems algorithms. It makes it a widely used toolbox.
