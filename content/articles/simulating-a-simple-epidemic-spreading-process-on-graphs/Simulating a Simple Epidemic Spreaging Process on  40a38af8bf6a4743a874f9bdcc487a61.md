@@ -27,7 +27,6 @@ Those are just some of the applications of graphs — the list is huge.
 We usually represent graphs visually drawing the vertices as circles and the edges as lines connecting two circles. For example:
 
 ![graph-example](/engineering-education/simulating-a-simple-epidemic-spreading-process-on-graphs/graph0.png)
-
 Source: [Wikipedia](https://en.wikipedia.org/wiki/Graph_(discrete_mathematics)#/media/File:6n-graf.svg)
 
 That is a graph with the vertices `{1, 2, 3, 4, 5, 6}` and the edges `{(1, 2), (1, 5), (2, 5), (2, 3), (3, 4), (4, 5), (4, 6)}`. 
@@ -155,7 +154,6 @@ gplot(G)
 And you should see something *(maybe not exactly)* like that:
 
 ![Our first graph!](/engineering-education/simulating-a-simple-epidemic-spreading-process-on-graphs/graph1.png)
-
 Our first graph!
 
 ### Step 3: Setting and Getting the Props
@@ -375,7 +373,7 @@ for v in next_infected_nodes
 end
 ```
 
-In this snippet, we are looping through `next_infected_nodes` that we just computed apllying `set_node_infectious!` to each vertex in `next_infected_nodes`. Now we already have the revored vertices and the infected vertices of the next step.
+In this snippet, we are looping through `next_infected_nodes` that we just computed applying `set_node_infectious!` to each vertex in `next_infected_nodes`. Now we already have the revored vertices and the infected vertices of the next step.
 
 Finally, we have the following `update_nodes!`:
 
