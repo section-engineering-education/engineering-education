@@ -1,6 +1,22 @@
-### Introduction
+---
+layout: engineering-education
+status: publish
+published: true
+url: /get-geolocation-by-ip-address-and-country/
+title: How to Get Geolocation using and IP Address and Country Code
+description: In this tutorial will walk through how to get a geolocation using an Ip address, country name and code.
+author: frankline-mwangi
+date: 2022-01-23T01:00:00-18:10
+topics: [Languages]
+excerpt_separator: <!--more-->
+images:
 
-Geolocation provides information about the geographic location of a user. Specifically, the IP address is used by the geolocation service to determine the location. We'll look at how to get geolocation using an IP address and a country name and code. It’s a two step process where the first is to get the IP address and the second is to get the geolocation.
+  - url: /engineering-education/get-geolocation-by-ip-address-and-country/hero.png
+    alt: How to Get Geolocation using and IP Address and Country Code Hero Image
+---
+Geolocation provides information about the geographic location of a user. Specifically, the IP address is used by the geolocation service to determine the location.
+<!--more-->
+We'll look at how to get geolocation using an IP address and a country name and code. It’s a two step process where the first is to get the IP address and the second is to get the geolocation.
 
 ### Table of content
 - [Introduction](#introduction)
@@ -197,3 +213,5 @@ Throughout the article you have learned how you can get geolocation data of your
 ### Further reading
 - [Google Maps](https://developers.google.com/maps/documentation/javascript/)
 
+---
+Peer Review Contributions by: [Jethro Magaji](/engineering-education/authors/jethro-magaji/)
