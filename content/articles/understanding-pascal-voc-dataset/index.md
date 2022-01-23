@@ -236,6 +236,8 @@ To summarize:
 - The reader understood the different meta-data parameters required for PASCAL VOC dataset representation.
 - Finally, the reader implemented a simple Python validation script to verify the authenticity of the PASCAL VOC dataset.
 
+You can find the source code [here](https://gist.github.com/srishilesh/a2c781a7c6376861844fb7234c5aea11).
+
 ### Further reading
 - [PASCAL VOC homepage](http://host.robots.ox.ac.uk/pascal/VOC/)
 - [PASCAL research paper](https://www.researchgate.net/publication/280087130_Pattern_Analysis_Statistical_Modelling_and_Computational_Learning_2004-2008)
