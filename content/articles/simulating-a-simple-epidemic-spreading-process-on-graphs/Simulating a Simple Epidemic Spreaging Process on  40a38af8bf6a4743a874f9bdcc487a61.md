@@ -26,7 +26,7 @@ Those are just some of the applications of graphs — the list is huge.
 
 We usually represent graphs visually drawing the vertices as circles and the edges as lines connecting two circles. For example:
 
-![](graph0.png)
+![graph-example](/engineering-education/simulating-a-simple-epidemic-spreading-process-on-graphs/graph0.png)
 
 Source: [Wikipedia](https://en.wikipedia.org/wiki/Graph_(discrete_mathematics)#/media/File:6n-graf.svg)
 
@@ -154,7 +154,7 @@ gplot(G)
 
 And you should see something *(maybe not exactly)* like that:
 
-![Our first graph!](graph1.png)
+![Our first graph!](/engineering-education/simulating-a-simple-epidemic-spreading-process-on-graphs/graph1.png)
 
 Our first graph!
 
@@ -438,7 +438,7 @@ We infected the vertex `1` in `G`. We also set `r = 1`, meaning every vertex wil
 
 You should be seeing something like this:
 
-![spreading_plot](graph2.png)
+![spreading_plot](/engineering-education/simulating-a-simple-epidemic-spreading-process-on-graphs/graph2.png)
 
 We infected the vertex 1 and ran the spreading process. It has two neighbors, but because `r = 1`, it infected only one of them: the vertex that is red in the figure. The vertex 1 also recovered because in the previous step it was infected. The rest of the vertices are still susceptible.
 
@@ -534,7 +534,7 @@ make_anim(G, r, τ)
 
 You should see something like this:
 
-![Look at how fast the infections grow!](spreading_infection_2.gif)
+![Look at how fast the infections grow!](/engineering-education/simulating-a-simple-epidemic-spreading-process-on-graphs/spreading_infection_2.gif)
 
 Look at how fast the infections grow!
 
