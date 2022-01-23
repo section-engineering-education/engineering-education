@@ -1,10 +1,22 @@
-# Simulating a Simple Epidemic Spreading Process on Graphs with Julia
+---
+layout: engineering-education
+status: publish
+published:
+url: /simulating-a-simple-epidemic-spreading-process-on-graphs/
+title: Simulating a Simple Epidemic Spreading Process on Graphs with Julia
+description: In this tutorial, the reader would learn how to create a simple epidemic spreading simulation using Julia and model the spreading using a Graph.
+author: samuel-santos
+date: 2022-01-23T01:00:00-2:00
+topics: [Languages]
+excerpt_separator: <!--more-->
+images:
 
-In this tutorial, we are going to create a simple epidemic spreading simulation using Julia. We will model the spreading using a Graph.
-
-### Introduction
-
-Graphs are structures that represent a set of objects and the relations between them. Formally, we say the objects are the vertices or nodes and the relations are the edges or links. We can often see graphs *“appearing”* around us. For example:
+  - url: /engineering-education/simulating-a-simple-epidemic-spreading-process-on-graphs/hero.png
+    alt: Simulating a Simple Epidemic Spreading Process on Graphs with Julia Hero Image
+---
+Graphs are structures that represent a set of objects and the relations between them. 
+<!--more-->
+Formally, we say the objects are the vertices or nodes and the relations are the edges or links. We can often see graphs *“appearing”* around us. For example:
 
 - vertices are cities and edges are roads that directly connect two cities;
 - vertices are pages on the Web and edges are links that connect two pages;
@@ -23,8 +35,7 @@ That is a graph with the vertices `{1, 2, 3, 4, 5, 6}` and the edges `{(1, 2), (
 In this tutorial, we are going to use a Graph to model a epidemic spreading.
 
 ### Table of Contents
-- [Introduction](#introduction)
-- [Pre-requisites](#pre-requisites)
+- [Prerequisites](#prerequisites)
 - [The Spreading Dynamics](#the-spreading-dynamics)
 - [Step 1: Setting things up](#step-1-setting-things-up)
 - [Step 2: Creating and Plotting a Simple Graph](#step-2-creating-and-plotting-a-simple-graph)
@@ -34,7 +45,7 @@ In this tutorial, we are going to use a Graph to model a epidemic spreading.
 - [Conclusion](#conclusion)
 - [References](#references)
 
-### Pre-requisites
+### Prerequisites
 For this tutorial, you will need:
 
 - [Julia](https://julialang.org/) installed
@@ -544,3 +555,7 @@ Make your own questions and create your own models!
 - [The Julia Programming Language](https://julialang.org/)
 - [Graph (Discrete Mathematics) - Wikipedia](https://en.wikipedia.org/wiki/Graph_(discrete_mathematics))
 - [Spreading processes on networks](https://aaronclauset.github.io/courses/5352/csci5352_F21_L9.pdf)
+
+
+---
+Peer Review Contributions by: [Jethro Magaji](/engineering-education/authors/jethro-magaji/)
