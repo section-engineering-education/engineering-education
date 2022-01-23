@@ -6,7 +6,7 @@ url: /calculating-the-distance-between-two-points-using-geopy/
 title: How to Calculate Distance between Two Points using Geopy in Python
 description: This tutorial will help readers understand how to calculate distance between two locations using the Geopy library in Python.
 author: joshua-wainaina
-date: 2022-01-10T00:00:00-17:33
+date: 2022-01-23T00:00:00-17:33
 topics: [Languages]
 excerpt_separator: <!--more-->
 images:
