@@ -185,7 +185,7 @@ The distance between Abuja and Dakar is:  2785.183036572855 K.M
 ```
 
 ### Conclusion
-In this tutorial, we have discussed how to use the geopy package to determine the distance between two points on the earth's surface. 
+In this tutorial, we have discussed how to use the geopy package to determine the distance between two locations on the earth's surface. 
 
 You can, therefore, use this knowledge to craft other high quality applications.
     
