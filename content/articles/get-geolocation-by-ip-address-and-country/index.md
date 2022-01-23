@@ -1,6 +1,6 @@
 ### Introduction
 
-Is your website requesting the customers to submit their nationality or other location related data? if so, it is better to retrieve it automatically by using a geolocation API. For my digital product shop, I used a popular geolocation API service to collect the clients' whereabouts. It's usually a good idea to make data entry easier for the end user. We should make them happy by making the process as painless as possible. We'll look at how to get geolocation using an IP address and a country name and code. It’s a two step process where the step1 is to get the IP address and the step 2 is to get the geolocation.
+Geolocation provides information about the geographic location of a user. Specifically, the IP address is used by the geolocation service to determine the location. We'll look at how to get geolocation using an IP address and a country name and code. It’s a two step process where the step1 is to get the IP address and the step 2 is to get the geolocation.
 
 ### Table of content
 
@@ -8,48 +8,45 @@ Is your website requesting the customers to submit their nationality or other lo
 - [Table of content](#table-of-content)
 - [Prerequisites](#prerequisites)
 - [Objectives](#objectives)
-- [Geolocation Marketing for Business](#geolocation-marketing-for-business)
-- [Different uses of getting Geolocation](#different-uses-of-getting-geolocation)
-- [Get and validate current IP address](#get-and-validate-current-ip-address)
-- [Prepare API request to get geolocation via PHP cURL](#prepare-api-request-to-get-geolocation-via-php-curl)
+- [About Example](#about-example)
+- [File structure](#file-structure)
+- [Step 1: Get and validate current IP address](#step-1-get-and-validate-current-ip-address)
+- [Step 2: Prepare API request to get geolocation via PHP cURL](#step-2-prepare-api-request-to-get-geolocation-via-php-curl)
 - [country geolocation in response to an API call](#country-geolocation-in-response-to-an-api-call)
 - [Alternate Geolocation API](#alternate-geolocation-api)
+- [Different uses of getting Geolocation](#different-uses-of-getting-geolocation)
 - [Conclusion](#conclusion)
-  - [Further reading](#further-reading)
+- [Further reading](#further-reading)
 
 ### Prerequisites
 
-- Fundamentals of PHP
+- Fundamentals of PHP.
+- Text-Editor - vscode.
 
 ### Objectives
 
-> After completing this model, students should know the major principles of geolocation.
+> After completing this model, the following is outcomes are expected.
 
 - Get the current IP address.
 - Get the area using the PHP cURL API.
 - Different uses of getting Geolocation
 - How to enable/disable Geolocation API.
 
-### Geolocation Marketing for Business
+### About Example
 
-- Customizing and delivering material (e.g., truck area and manifest status)
-- Suit and administrative e-disclosure
-- Autonomous vehicles
-- Coercion recognition and forecasting using IP area technology and misrepresentation profile data
-- Constant geolocation progress of logs and other IT information
-  > Businesses need a geolocation and mobile technology. With cross-platform mobile applications, companies may combine location with online media and other data to generate superior services.
+This example uses IPWhoIs geolocation API tool to lookup the location data by using the IP address.This API endpoint looks for any IPV4, IPv6 or any domain as a parameter along with the geolocation request to read.
 
-### Different uses of getting Geolocation
+![Example](/engineering-education/get-geolocation-by-ip-address-and-country/example.jpg)
 
-There are more uses for getting the geolocation of the users by the IP address.
+This code executes a 2-step process to output the location data. It creates a PHP service with a function to get the user IP address from the `$_SERVER` array. Then, it will use the IP address to set the cURL option to read the geolocation data. This will output the country name, code and the given IP by parsing the API JSON response.
 
-- It gives accuracy and dependability of the location data whereas the user may enter wrong data.
-- It provides a single entry point to get the data that will be used in many places, like location-based currency convertor, shipping calculation or many.
-- To calculate the visit statistics based on the region.
-- It helps to switch the language of the multilingual website content by localizing the visitors.
-- To plot the users’ location on a map layer of the UI. Google Maps JavaScript API provides Geolocation services to display the location of the users and device on a map.
+### File structure
 
-### Get and validate current IP address
+The below file structure image shows the simplicity of this example with the minimal number of files. The `Request.php` file has the prime functions that execute the two steps to get IP and geolocation data. The `index.php` file calls the service to get the location data and populate them in the UI.
+
+![File-structure](/engineering-education/get-geolocation-by-ip-address-and-country/file-structure.jpg)
+
+### Step 1: Get and validate current IP address
 
 This is the home page code which contains the HTML code to acknowledge users with the current geolocation data. It imports the location service class invokes the methods to get and validate the IP address. Once the IP is validated and returns true, it requests the geolocation data. Or else, it will display the error message to the UI.
 
@@ -102,11 +99,14 @@ if ($isValidIpAddress == "") {
 </HTML>
 ```
 
-### Prepare API request to get geolocation via PHP cURL
+### Step 2: Prepare API request to get geolocation via PHP cURL
 
 The `getIPAddress()` function builds an if-else-if ladder of the majority of the scenario to get the non-empty IP address using the `$_SERVER` variable. Once the IP is validated and returns true, the `getLocation()` function to request the ipwhois API via cURL. The API will return a JSON response as a result. This example decodes the JSON response and parses the geolocation data to get the country details from it.
 
+- Request.php
+
 ```php
+
 <?php
 class Request
 {
@@ -185,16 +185,28 @@ These are some of the alternatives API providing services to access location dat
 geoip_country_name_by_name ( $hostname );
 ```
 
+### Different uses of getting Geolocation
+
+There are more uses for getting the geolocation of the users by the IP address.
+
+- It gives accuracy and dependability of the location data whereas the user may enter wrong data.
+- It provides a single entry point to get the data that will be used in many places, like location-based currency convertor, shipping calculation or many.
+- To calculate the visit statistics based on the region.
+- It helps to switch the language of the multilingual website content by localizing the visitors.
+- To plot the users’ location on a map layer of the UI. Google Maps JavaScript API provides Geolocation services to display the location of the users and device on a map.
+
 ### Conclusion
 
-> Your customers' actual location is available at all times thanks to geolocation, which can be used on any Internet-connected device. Geolocation data may be utilized for several reasons in this context, including:
+Throughout the article we have learnt how you can get geolocation data of your website clients Furthermore Geolocation data may be utilized for several reasons in this context, including:
 
 - Personalization and limitation of access to certain parts of the site
 - Restrictions on access and delivery based on topography.
 - Avoiding dishonesty.
 - Keeping tabs on the flow of information throughout the firm.
+  With what you have studied you can now get geolocation by ip address and country like a pro!
+  For practice sake be sure to check the source code [here](https://github.com/Frankline012/get-geolocation-by-ip-address-and-country)
 
-#### Further reading
+### Further reading
 
 - [Google Maps](https://developers.google.com/maps/documentation/javascript/)
 
