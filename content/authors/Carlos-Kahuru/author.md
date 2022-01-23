@@ -1,0 +1,1 @@
+Carlos Kaharu is a student at Meru University. Developing  Artificial Intelligence software and applications that a particular business might use is what I'm always interested in. To program systems that will change to suit the business’s needs based on the data collected and analyzed is the main goal.
