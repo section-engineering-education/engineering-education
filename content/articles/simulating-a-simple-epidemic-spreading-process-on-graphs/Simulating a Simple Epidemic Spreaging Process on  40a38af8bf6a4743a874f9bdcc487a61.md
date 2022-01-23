@@ -1,7 +1,7 @@
 ---
 layout: engineering-education
 status: publish
-published:
+published: true
 url: /simulating-a-simple-epidemic-spreading-process-on-graphs/
 title: Simulating a Simple Epidemic Spreading Process on Graphs with Julia
 description: In this tutorial, the reader would learn how to create a simple epidemic spreading simulation using Julia and model the spreading using a Graph.
@@ -553,7 +553,6 @@ Make your own questions and create your own models!
 - [The Julia Programming Language](https://julialang.org/)
 - [Graph (Discrete Mathematics) - Wikipedia](https://en.wikipedia.org/wiki/Graph_(discrete_mathematics))
 - [Spreading processes on networks](https://aaronclauset.github.io/courses/5352/csci5352_F21_L9.pdf)
-
 
 ---
 Peer Review Contributions by: [Jethro Magaji](/engineering-education/authors/jethro-magaji/)
