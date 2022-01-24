@@ -1,6 +1,6 @@
 React Native runs of JavaScript by default. However, to leverage Typescript's advantages (a superset of JavaScript) offers, it is possible to set up your whole React Native apps to run entirely on Typescript. This guide aims to briefly introduce you to running React Native apps with Typescript. You will learn the advantages of running React Native apps with Typescript and how to set them up with React Native. In the end, you will create a very handy blog application that uses Typescript to run the React Native application.
 
-### Requirements
+### Pre-requisites
 To follow along with this tutorial, you'll need the following:
 
 - Beginner knowledge working with React.js for the web or React Native.
@@ -9,8 +9,6 @@ To follow along with this tutorial, you'll need the following:
 - [Node.js](https://nodejs.org/en/) installed on  your computer.
 
 ### Overview
-- [Requirements](#requirements)
-- [Overview](#overview)
 - [Initializing your first React Native project with Typescript](#initializing-your-first-react-native-project-with-typescript)
 - [Set up a Typescript Blog app using React Native](#set-up-a-typescript-blog-app-using-react-native)
 - [Creating application components](#creating-application-components)
@@ -18,6 +16,7 @@ To follow along with this tutorial, you'll need the following:
 - [Fetching posts](#fetching-posts)
 - [Fetching a single post](#fetching-a-single-post)
 - [Conclusion](#conclusion)
+- [Further reading](#further-reading)
 
 ### Initializing your first React Native project with Typescript
 To get the project up and running, use the [Expo CLI](https://docs.expo.dev/workflow/expo-cli/), a command-line tool with a variety of use-cases that include getting a React Native project up and running.
@@ -74,7 +73,7 @@ Scan the QR code logged on your terminal using the `Expo Go` application on your
 ![default-landing-screen](/engineering-education/guide-to-run-react-native-app-with-typescript/default-landing-screen.jpg)
 
 ### Set up a Typescript Blog app using React Native
-Now that a basic Typescript React Native app is set let's extend this and create a handly application. This guide will create a blog app that will show you how to run your apps with both Typescript and React Native.
+Now that a basic Typescript React Native app is set, let's extend this and create a handly application. This guide will create a blog app that will show you how to run your apps with both Typescript and React Native.
 
 ### Creating application components
 Create a directory inside the project folder and name it `components`. Inside the `components` directory, create two files:
@@ -346,6 +345,15 @@ When you click on a post, you will be redirected to the specific page of the pag
 ![post-screen-example](/engineering-education/guide-to-run-react-native-app-with-typescript/post-screen-example.jpg)
 
 ### Conclusion
-This guide walked you through a reflective introduction to Typescript and React Native. For better understanding, we have created a whole application that uses React Native to run the Typescript code.
+This guide walked you through a reflective introduction to Typescript and React Native. For better understanding, we have created a whole application that uses React Native to run the Typescript code. Check the code used in this guide on [GitHub](https://github.com/kimkimani/React-native-typescript-blog-app).
 
 I hope you found this helpful. Happy coding!
+
+### Further reading
+- [A Friendly Beginner's Guide to TypeScript](/engineering-education/a-friendly-beginner-guide-to-typescript/)
+- [Why Static Typing & Why is TypeScript so popular?](/engineering-education/typescript-static-typing/)
+- [JavaScript vs. TypeScript](/engineering-education/javascript-vs-typescript/)
+- [Getting Started with Firebase 9 with React Native](/engineering-education/firebase-nine-and-above-with-react-native/)
+- [Getting Started with React-Query for Data Fetching and State Management](/engineering-education/react-query-data-fetching-and-server-state-management/)
+- [Creating a React App using Vite](/engineering-education/creating-a-react-app-using-vite/)
+- [Native vs Hybrid Applications](/engineering-education/choose-native-vs-hybrid/)
