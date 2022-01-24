@@ -16,10 +16,9 @@ images:
 ---
 Geolocation provides information about the geographic location of a user. Specifically, the IP address is used by the geolocation service to determine the location.
 <!--more-->
-We'll look at how to get geolocation using an IP address and a country name and code. It’s a two step process where the first is to get the IP address and the second is to get the geolocation.
+In this tutorial, you will learn how to get geolocation using an IP address and a country name and code. It’s a two step process where the first is to get the IP address and the second is to get the geolocation.
 
 ### Table of content
-- [Introduction](#introduction)
 - [Table of content](#table-of-content)
 - [Prerequisites](#prerequisites)
 - [Objectives](#objectives)
@@ -27,7 +26,7 @@ We'll look at how to get geolocation using an IP address and a country name and 
 - [File structure](#file-structure)
 - [Step 1: Get and validate current IP address](#step-1-get-and-validate-current-ip-address)
 - [Step 2: Prepare API request to get geolocation via PHP cURL](#step-2-prepare-api-request-to-get-geolocation-via-php-curl)
-- [country geolocation in response to an API call](#country-geolocation-in-response-to-an-api-call)
+- [Country geolocation in response to an API call](#country-geolocation-in-response-to-an-api-call)
 - [Alternate Geolocation API](#alternate-geolocation-api)
 - [Different uses of getting Geolocation](#different-uses-of-getting-geolocation)
 - [Conclusion](#conclusion)
@@ -42,7 +41,7 @@ After completing this tutorial, you should be able to do the following:
 
 - Get the current IP address.
 - Get the area using the PHP cURL API.
-- Different uses of getting Geolocation
+- Know the different uses of getting Geolocation
 - How to enable/disable Geolocation API.
 
 ### About Example
@@ -171,7 +170,7 @@ class Request
 }
 ```
 
-### country geolocation in response to an API call
+### Country geolocation in response to an API call
 The below images show the location data with the country name and code.
 
 ![geolocation-output-2](/engineering-education/get-geolocation-by-ip-address-and-country/geolocation-output-2.jpg)
@@ -207,7 +206,7 @@ Throughout the article you have learned how you can get geolocation data of your
 - Restrictions on access and delivery based on topography.
 - Avoiding dishonesty.
 - Keeping tabs on the flow of information throughout the firm.
-  With what you have studied you can now get geolocation by ip address and country like a pro!
+  With what you have learned you can now get geolocation by ip address and country like a pro!
   For practice sake be sure to check the source code [here](https://github.com/Frankline012/get-geolocation-by-ip-address-and-country)
 
 ### Further reading
