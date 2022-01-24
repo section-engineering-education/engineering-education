@@ -1,5 +1,22 @@
-An application programming interface is a software middleware that sits between two applications and allows them to communicate and exchange data. This intermediary software, therefore, enables data transmission between two applications. For example, an application may be built and an API  created through which other applications may be used to communicate with it.
+---
+layout: engineering-education
+status: publish
+published: true
+url: /superhero-api/
+title: Working with the Superhero API
+description: This article explores the superhero API by consuming its data in a Django application.
+author: victor-elvis
+date: 2021-09-21T00:00:00-00:30
+topics: [Containers]
+excerpt_separator: <!--more-->
+images:
 
+  - url:  /engineering-education/superhero-api/hero.png
+    alt: Working with the Superhero API Image
+---
+
+An application programming interface is a software middleware that sits between two applications and allows them to communicate and exchange data. This intermediary software, therefore, enables data transmission between two applications. For example, an application may be built and an API  created through which other applications may be used to communicate with it.
+<!--more-->
 The superhero API is an application programming interface that provides data and information about a list of superheroes from the comic universe, including their physical capabilities, biography information, occupations, power statistics, connections with other heroes, and appearances in movies.
 
 This article explores the superhero API by consuming its data in a Django application. First, we will create a Django application that lists all the superheroes in the comic world. Additionally, each superhero will have his page to showcase his characteristics.
