@@ -38,13 +38,9 @@ We aim to guide you on a step-by-step process of data representation using pie c
 To follow along, the reader should:
 
 - Install the [Python](https://www.python.org/downloads/) executable.
-
 - Have [Python programming](/engineering-education/python-projects-for-beginners/) skills.
-
 - Have [Javascript programming](https://www.w3schools.com/js/) skills.
-
 - Have [Visual Studio Code](https://code.visualstudio.com/) installed.
-
 ### Aim
 The purpose of this tutorial is to walk readers through how to:
 
