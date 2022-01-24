@@ -46,7 +46,7 @@ This process is made possible by including the Vue.js scripts directly into the 
 To implement this, we will create a simple Vue Todo Application together with the Django REST API and Axios.
 
 ### Setting up Django and Vue
-We have to set up Django, Vue.js, and the Axios library in the development machine to get started. Use the command below to check if Django is installed:
+We have to set up Django, Vue.js, and the Axios library in the development machine to get started. First, use the command below to check if Django is installed:
 
 ```bash
 pip show Django
@@ -99,10 +99,10 @@ python manage.py runserver
 
 ![Django Output](/engineering-education/build-vue-application-with-django-rest-api-and-axios/output.jpg)
 
->NOTE: To tell the Django project that connections are accepted, ensure to add the line `CORS_ORIGIN_ALLOW_ALL = True` inside the `settings.py` file.
+> NOTE: To tell the Django project that connections are accepted, ensure to add the line `CORS_ORIGIN_ALLOW_ALL = True` inside the `settings.py` file.
 
 #### Django TodoApp Models 
-We  need to create the Todo Application inside the `TodoApp` folder using the command shown and then add the name of the application inside the `settings.py` file under the INSTALLED_APPS section:
+We need to create the Todo Application inside the `TodoApp` folder using the command shown and then add the application's name inside the `settings.py` file under the INSTALLED_APPS section.
 
 ```python
 python manage.py startapp todo
@@ -132,7 +132,9 @@ class WorkTodo(models.Model):
                               default=WORKTODO)  
 ```
 
-Since we use the rest_framework, we need to create another file under the todo application folder called `serializers.py`. This file is relatively similar to the Form and ModelForm classes in Django. It provides a convenient shortcut for creating serializers that deal with model instances and querysets, as well as a general approach to managing the output of your responses. With the serializers, the data is then transformed into a format that can be stored or transmitted.
+Since we use the rest_framework, we need to create another file under the todo application folder called `serializers.py`. 
+
+This file is relatively similar to the Form and ModelForm classes in Django. It provides a convenient shortcut for creating serializers that deal with model instances and querysets and a general approach to managing the output of your responses. With the serializers, the data is then transformed into a format that can be stored or transmitted.
 
 ```python
 from rest_framework import serializers
@@ -144,7 +146,7 @@ class WorkSerializer(serializers.HyperlinkedModelSerializer):
         fields = ('id', 'work_description', 'work_status')
 ```
 
-To return the tasks of the todo application, we add the code to the `views.py` file.
+To return the tasks of the todo application, we add the code snippet to the `views.py` file.
 
 ```python
 from django.shortcuts import render
@@ -163,7 +165,7 @@ class WorkViewSet(viewsets.ModelViewSet):
     serializer_class = WorkSerializer 
 ```
 
-Run all the database migrations, then open the python shell and execute the commands below.
+Run all the database migrations, open the python shell and execute the commands below.
 
 ```python
 python manage.py shell 
@@ -209,7 +211,7 @@ The command produces the output below:
 The complete Django code can be found from [here](https://github.com/dentonya/Todo-Application-using-Vue.js-Django-REST-API-and-Axios/tree/master/django/TodoApp).
 
 ### Creating the Vue application
-After setting up the Vue.js, we create and run our Vue project with the commands below:
+After setting up the Vue.js, we create and run our project using the commands below:
 
 ```bash
 vue create TodoApp
@@ -328,12 +330,14 @@ export default {
 </script>
 ```
 
-Rerunning the project, you should see two sets of tasks. The ones to be done appear on the left while the ponce that is already done should appear on the right. The complete code for this application can be found [here](https://github.com/dentonya/Todo-Application-using-Vue.js-Django-REST-API-and-Axios/tree/master/vue.js/todoapp).
+Re-running the project, you should see two sets of tasks. The tasks to be done appear on the left, while the ones already done on the right. The complete code for this application can be found [here](https://github.com/dentonya/Todo-Application-using-Vue.js-Django-REST-API-and-Axios/tree/master/vue.js/todoapp).
+
 ![Final Output](/engineering-education/build-vue-application-with-django-rest-api-and-axios/final_output.jpg)
+
 ### Conclusion
 As seen from the above tutorial, we can use the Axios library to fetch and display data when building Vue.js applications where the Django framework is used purely as a backend API.
 
-We learned how to combine Django and Vue.js, explored Django REST API and used it with Axios, and finally, built a TODO application using the libraries to demonstrate how to fetch data from Django REST API and display it in a Vue application.
+We learned how to combine Django and Vue.js, explored Django REST API and used it with Axios. Finally, we built a TODO application using the libraries to demonstrate how to fetch data from Django REST API and display it in a Vue.js application.
 
 You can find more on this [site](https://codewithstein.com/combining-django-and-vuejs-everything-you-need-to-know/).
 
