@@ -66,7 +66,7 @@ npm install brython
 
 >NOTE: Ensure you run the above command while in your working directory. This will create a folder called node_modules which contains the Brython package.
 
-To add the Brython and Brython stdlib package to our web project, we'll use the script tag below:
+To add the `brython.js` and `brython_stdlib.js` files  to our web project, we will use the script tag below:
 
 ```html
 <script type="text/javascript" src="./node_modules/brython/brython.js"></script>
