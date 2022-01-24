@@ -1,17 +1,28 @@
-﻿### Building and deploying a Language Detection System using Flask
+---
+layout: engineering-education
+status: publish
+published: true
+url: /building-and-deploying-a-language-detection-system-using-flask/
+title: Flask Language Detection system 
+description: This tutorial will walk the reader through the basic implementation of a language detection model and deployment using Flask.
+author: adhinga-fredrick
+date: 2022-01-24T00:00:00-06:30
+topics: [Machine Learning]
+excerpt_separator: <!--more-->
+images:
 
-With more than a thousand languages being used today, communication between people of different native languages is crucial. 
+  - url: /building-and-deploying-a-language-detection-system-using-flask/hero.jpg
+    alt: Flask language detection system Hero Image
+---
 
-That is why companies like Google are applying Natural Language Processing(NLP) into their products like language detection on Chrome browser, to give users a smooth experience.
-
+With more than a thousand languages being used today, communication between people of different native languages is crucial. That is why companies like Google are applying Natural Language Processing(NLP) into their products like language detection on Chrome browser, to give users a smooth experience.
+ <!--more-->
 This article will illustrate a basic implementation of a language detection model, to build the readers' understanding of NLP and boost thier portfolio.
 
 ### Introduction
 Language detection is a task in Natural Language Processing (NLP) that identifies the language of a given text or phrase and provide its translation.
 
-In this article, we will build a language detection model using Python and the language detection dataset from [Kaggle](https://www.kaggle.com/basilb2s/language-detection).
-
-Additionally, we will test and deploy the model using [Flask,](https://flask.palletsprojects.com/en/2.0.x/) an easy-to-use Python micro web framework.
+In this article, we will build a language detection model using Python and the language detection dataset from [Kaggle](https://www.kaggle.com/basilb2s/language-detection). Additionally, we will test and deploy the model using [Flask,](https://flask.palletsprojects.com/en/2.0.x/) an easy-to-use Python micro web framework.
 
 ### Table of content
 - [Building the language detection model](#building-the-language-detection-model)
@@ -124,18 +135,14 @@ X = cv.fit_transform(text_list).toarray() # tokenize a collection of text docume
 X.shape # check the shape of the data
 ```
 #### Modeling the data
-Once we are done processing the data, we need to split the data into training and testing sets. 
-
-Use the snippets below to split the data into training and testing sets.
+Once we are done processing the data, we need to split the data into training and testing sets. Use the snippets below to split the data into training and testing sets.
 
 ```python
 from sklearn.model_selection import train_test_split
 X_train, X_test, y_train, y_test = train_test_split(X, y, train_size = 0.80, random_state=32)
 ```
 
-By this point, we need to train the model. We will use the `MultinomialNB` classifier, which is best for classifying discrete features.
-
-Use the code snippets below to apply the `MultinomialNB` classifier to train your model.
+By this point, we need to train the model. We will use the `MultinomialNB` classifier, which is best for classifying discrete features. Use the code snippets below to apply the `MultinomialNB` classifier to train your model.
 
 ```python
 from sklearn.naive_bayes import MultinomialNB  
