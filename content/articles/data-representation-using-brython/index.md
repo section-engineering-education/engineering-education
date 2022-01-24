@@ -1,5 +1,21 @@
-The cooperation between JavaScript and the web has been a standard for ages. Python is the closest alternative in web development, and it's made possible through its micro-frameworks such as Flask, Hug, Cherrypy, etc. These frameworks have enabled Python to cooperate with the web.
+---
+layout: engineering-education
+status: publish
+published: true
+url: /data-representation-using-brython/
+title: Data Representation using Brython
+description: In this article, We aim to guide the reader on a step-by-step process of data representation using pie charts and scatterplots in Brython.
+author: femi-ige-ayodele
+date: 2022-01-24T00:00:00-10:23
+topics: [languages]
+excerpt_separator: <!--more-->
+images:
 
+  - url: /engineering-education/data-representation-using-brython/hero.jpg
+    alt: Data Representation using Brython Hero Image.
+---
+The cooperation between JavaScript and the web has been a standard for ages. Python is the closest alternative in web development, and it's made possible through its micro-frameworks such as Flask, Hug, Cherrypy, etc. These frameworks have enabled Python to cooperate with the web.
+<!--more-->
 Instead of using Python micro-frameworks to run the client-side web applications, we have `Brython`. Brython, which stands for "Browser Python" is a client-side scripting language with Python3 performance that adapts to the HTML5 environment. Brython interfaces with JavaScript and its libraries like Vue, Bokeh, Highchart, and Phaser to build high-level web projects.
 
 We aim to guide you on a step-by-step process of data representation using pie charts and scatterplots in Brython. This is possible because of the cooperation among Brython and Highchart libraries. Let's get started!
