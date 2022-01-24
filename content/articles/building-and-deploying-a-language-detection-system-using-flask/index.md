@@ -10,7 +10,6 @@ date: 2022-01-24T00:00:00-06:30
 topics: [Machine Learning]
 excerpt_separator: <!--more-->
 images:
-
   - url: /building-and-deploying-a-language-detection-system-using-flask/hero.jpg
     alt: Flask language detection system Hero Image
 ---
@@ -207,9 +206,9 @@ pip install flask
 Then, we need to create the following files:
 
 - `model.pkl` - The saved model to be used.
-- `apps.py` - For connecting the web page with the model.
-- `index.html`- For displaying the web page.
-- `style.css` - For styling the HTML page.
+- `apps.py` - To connect the web page with the model.
+- `index.html`- To display the web page.
+- `style.css` - To style the HTML page.
 
 On the `index.html` file, add the following snippet:
 
@@ -336,3 +335,6 @@ You can find the code for this project  on [GitHub.](https://github.com/FREDERIC
 
 ### Further reading
 - [Flask](https://flask.palletsprojects.com/en/2.0.x/tutorial/factory/)
+
+---
+Peer Review Contributions by: [Jerim Kaura](/engineering-education/authors/jerim-kaura/)
