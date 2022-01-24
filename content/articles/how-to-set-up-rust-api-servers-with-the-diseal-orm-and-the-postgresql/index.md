@@ -2,9 +2,9 @@ Object Relation Mapping(ORM) is a technique for storing, retrieving, updating, a
 
 An ORM helps us create data schemas and relationships within an application such that whenever we need to change a specific database field, we only do it in our application with just a few lines of code. It helps us avoid the hectic work of recreating our databases every time to match the new database structure.
 
-The concept of ORM is widely supported by many languages such as Rust, JavaScript, and Python. Rust, for example, uses the [Diesel](https://docs.rs/diesel/1.0.0/diesel/) framework to help you write your schema queries within your Rust application. 
+The concept of ORM is widely supported by many languages such as Rust, JavaScript, and Python. Rust, for example, uses the [Diesel](https://docs.rs/diesel/1.0.0/diesel/) framework to help you write your schema queries within your Rust application.
 
-In his article, we will learn about ORM and how to use it in Rust together with  Diesel. Then, we will create a Rust API server that uses Diseal to connect to the PostgreSQL database. Finally, we will generate and retrieve the application's data stored in the database. 
+In his article, we will learn about ORM and how to use it in Rust together with  Diesel. Then, we will create a Rust API server that uses Diseal to connect to the PostgreSQL database. Finally, we will generate and retrieve the application's data stored in the database.
 
 This article will help the reader understand the use of the concept of ORM using the Rust Diseal in an ideal application.
 
@@ -25,10 +25,8 @@ In order to follow along with this article, it is recommended to have the follow
 - [PostgreSQL](https://www.postgresql.org/download/) installed on your computer.
 - [Rust compiler](https://www.rust-lang.org/tools/install) installed and set up on your computer.
 
-
-
 ### Setting up a Rust application
-Rust uses [Cargo](https://doc.rust-lang.org/cargo/) to set up and run its applications. Cargo is a Rust package manager that allows us to access and install remote libraries and use them in our application. It gets installed together with the Rust compiler. 
+Rust uses [Cargo](https://doc.rust-lang.org/cargo/) to set up and run its applications. Cargo is a Rust package manager that allows us to access and install remote libraries and use them in our application. It gets installed together with the Rust compiler.
 
 To set up the Rust application, navigate to your desired location, and run the following command to initialize the project using Cargo.
 
@@ -47,12 +45,11 @@ We have a `cargo.toml` file that contains the project dependencies in the curren
 Our application will use the following dependencies/libraries.
 
 - [Actix-web](https://docs.rs/actix-web/1.0.0/actix_web/): For setting up Rust based HTTP servers.
-- [Diesel](https://docs.rs/diesel/1.0.0/diesel/): For interacting with PostgreSQL as an ORM and query builder. 
+- [Diesel](https://docs.rs/diesel/1.0.0/diesel/): For interacting with PostgreSQL as an ORM and query builder.
 - [Dotenv](https://docs.rs/dotenv/0.9.0/dotenv/): For loading database connection environmental variables.
 - [Env_logger](https://docs.rs/env_logger/0.6.0/env_logger/): For logging environmental variables.
 - [Features](https://docs.rs/futures/0.1/futures/): For handling Rust HTTP asynchronous calls.
-- [Serde](https://docs.serde.rs/serde/): For serializing and deserializing data structures.
-- [Serde_derive](https://serde.rs/derive.html): For serializing and desirializing data structures.
+- [Serde](https://docs.serde.rs/serde/) and [Serde_derive](https://serde.rs/derive.html): For serializing and desirializing Rust data structures.
 - [Serde_json](https://docs.serde.rs/serde_json/): For serializing JSON file format.
 
 To use these libraries, head over to the `cargo.toml` and update the dependencies as follows:
@@ -71,11 +68,11 @@ env_logger = "0.6"
 ```
 
 ### Set up the GraphQL schema
-A GraphQL schema is made up of a root query and mutation. We will set up a root query and an empty mutation that rides on some dummy data. 
+A GraphQL schema is made up of a root query and mutation. We will set up a root query and an empty mutation that rides on some dummy data. A query specifies the data to be returned by the GraphQL API. Mutations are similar to queries and can return data from the GraphQL API. Mutations are used to run a query that writes data to a GraphQL server.
 
 We will then integrate the PostgreSQL database for dynamic data later in this guide.
 
-In the `src` folder, create a `graphql_schema.rs` file and import `EmptyMutation` and `RootNode` from `juniper` as shown below.
+In the `src` folder, create a `graphql_schema.rs` file and import `EmptyMutation` and `RootNode` from `juniper` as shown below. Then implement GraphQL schema as shown in the following steps;
 
 ```rust
 use juniper::{EmptyMutation,RootNode};
@@ -138,13 +135,13 @@ impl QueryRoot {
 }
 ```
 
-Initialize the schema with the root query and empty mutation.
+This will create two dummy Todos as shown in the above `QueryRoot`. Next, initialize the schema with the root query and empty mutation.
 
 ```rust
 pub type Schema = RootNode<'static, QueryRoot, EmptyMutation<()>>;
 ```
 
-Define a function to create the schema.
+Define a function to create the schema and execute the `QueryRoot` and `EmptyMutation`.
 
 ```rust
 pub fn create_schema() -> Schema {
@@ -187,7 +184,7 @@ HttpServer::new(move || {
 }
 ```
 
-Here we have defined the `main()` which return an `io::Result<()>` type. Next, we call the `create_schema()` to initialize the GraphQL schema. 
+Here we have defined the `main()` which return an `io::Result<()>` type. Next, we call the `create_schema()` to initialize the GraphQL schema.
 
 `HttpServer::new` is marked with `move` so that the closure can take ownership of inner variables, which in our case will be a copy of the schema. Then, inside the `data` function, we pass schema to imply using it to set `web` services.
 
@@ -267,7 +264,7 @@ Create a `.env` file at the root of the project and set the database URL:
 echo DATABASE_URL=postgres://your_username:your_password@localhost/graphql_todos_example > .env
 ```
 
-Se tup diesel on the project using the command below:
+Set up diesel on the project using the command below:
 
 ```bash
 diesel setup
@@ -324,7 +321,7 @@ table! {
 ```
 
 ### Handling queries
-We have set up Diseal and the queries that we need for the todos application to work. Now, we need to handle how the application will access these queries. 
+We have set up Diseal and the queries that we need for the todos application to work. Now, we need to handle how the application will access these queries.
 
 Inside the `graphql_schema.rs`, add the libraries imports as follows;
 
@@ -443,7 +440,7 @@ impl MutationRoot {
 
 The `create_todo()` receives the new todo as a parameter, establishes database connection, inserts the todo, and returns the newly inserted todo.
 
-Replace `EmptyMutation` from a schema with `MutationRoot`:
+Replace `EmptyMutation` from a schema with `MutationRoot`. This will help us execute the dynamic mutation instead of the empty mutation we set earlier.
 
 ```rust
 pub type Schema = RootNode<'static, QueryRoot, MutationRoot>;
