@@ -11,7 +11,7 @@ topics: [Languages]
 excerpt_separator: <!--more-->
 images:
 
-  - url: /engineering-education/get-geolocation-by-ip-address-and-country/hero.png
+  - url: /engineering-education/get-geolocation-by-ip-address-and-country/hero.jpg
     alt: How to Get Geolocation using and IP Address and Country Code Hero Image
 ---
 Geolocation provides information about the geographic location of a user. Specifically, the IP address is used by the geolocation service to determine the location.
