@@ -7,7 +7,7 @@ title: Working with the Superhero API
 description: This article explores the superhero API by consuming its data in a Django application.
 author: victor-elvis
 date: 2021-09-21T00:00:00-00:30
-topics: [Containers]
+topics: [Languages, API]
 excerpt_separator: <!--more-->
 images:
 
