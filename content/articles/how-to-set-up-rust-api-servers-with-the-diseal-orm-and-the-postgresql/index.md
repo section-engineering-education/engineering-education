@@ -19,7 +19,7 @@ This article will help the reader understand the use of the concept of ORM using
 - [Conclusion](#conclusion)
 
 ### Prerequisites
-In order to follow along with this article, it is recommended to have the following tools:
+To follow along with this article, it is recommended to have the following tools:
 
 - Prior knowledge of writing the Rust APIs and setting up a primary Rust [GraphQL server](https://blog.logrocket.com/how-to-create-a-graphql-server-in-rust/).
 - [PostgreSQL](https://www.postgresql.org/download/) installed on your computer.
@@ -68,11 +68,13 @@ env_logger = "0.6"
 ```
 
 ### Set up the GraphQL schema
-A GraphQL schema is made up of a root query and mutation. We will set up a root query and an empty mutation that rides on some dummy data. A query specifies the data to be returned by the GraphQL API. Mutations are similar to queries and can return data from the GraphQL API. Mutations are used to run a query that writes data to a GraphQL server.
+A GraphQL schema is made up of a root query and mutation. We will set up a root query and an empty mutation that rides on some dummy data. 
+
+A query specifies the data to be returned by the GraphQL API. Mutations are similar to queries and can return data from the GraphQL API. Mutations are used to run a query that writes data to a GraphQL server.
 
 We will then integrate the PostgreSQL database for dynamic data later in this guide.
 
-In the `src` folder, create a `graphql_schema.rs` file and import `EmptyMutation` and `RootNode` from `juniper` as shown below. Then implement GraphQL schema as shown in the following steps;
+In the `src` folder, create a `graphql_schema.rs` file and import `EmptyMutation` and `RootNode` from `juniper`. Then implement GraphQL schema as shown in the following steps;
 
 ```rust
 use juniper::{EmptyMutation,RootNode};
@@ -210,7 +212,7 @@ fn graphql(
 
 The above handler gets the GraphQL request in JSON, creates `futures` from `web::block`, and chains two handlers. `map_err` for error states and `and_then` for success states.
 
-Implement the handler for the `/graphiql` service as described below to access the GraphQL API data.
+Implement the handler for the `/graphiql` service to access the GraphQL API data.
 
 ```rust
 fn graphiql() -> HttpResponse {
@@ -472,4 +474,4 @@ mutation CreateTodoMutation($data: NewTodo!) {
 Hit the play button, and the newly added todo should be printed on the right pane.
 
 ### Conclusion
-In this guide, we have learned how to set up a Diesel ORM and use it with an ideal Rust application. We focused on PostgreSQL as the ideal database. You can go ahead and try using different databases to model queries using the Diesel ORM.
+In this guide, we have learned how to set up a Diesel ORM and use it with an ideal Rust application. We focused on PostgreSQL as the ideal database. You can try using different databases to model queries using the Diesel ORM.
