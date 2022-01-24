@@ -221,7 +221,7 @@ When we execute this code, our pie chart is as shown below:
 A scatterplot tests the relationship between two factors. To achieve this, we will use the HTML file that we have previously used to create the pie chart. We only need to make some changes to the created chart.py file.
 
 ##### Making changes to the Chart.py file
-The `chart.py` file for the scatterplot is as below:
+The new `chart.py` file that we will use to plot the scatterplot is shown below:
 
 ```python
 from browser import window
