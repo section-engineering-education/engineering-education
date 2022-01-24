@@ -140,16 +140,16 @@ Handling it is all the same as in the previous reader code, what changes is how 
 
 ```python
 image = cv2.imread("image-one.jpg")
-spacer = 150
+spacer = 100
 for detection in results: 
-    top_left_detection = tuple(detection[0][0])
-    bottom_right_detection = tuple(detection[0][2])
-    text_detection = detection[1]
-    image = cv2.rectangle(image,top_left_detection,bottom_right_detection,(255,0,0),3)
-    image = cv2.putText(image,text_detection,(20,spacer), font, 0.5,(255,0,0),2,cv2.LINE_AA)
-    spacer+=20
+    top_left_detection = tuple([int(val) for val in detection[0][0]])
+    bottom_right_detection = tuple([int(val) for val in detection[0][2]])
+    text = detection[1]
+    image = cv2.rectangle(img,top_left_detection,bottom_right_detection,(0,255,0),3)
+    image = cv2.putText(image,text,(20,spacer), font, 0.5,(0,255,0),2,cv2.LINE_AA)
+    spacer+=15
     
-plt.imshow(image)
+plt.imshow(img)
 plt.show()
 ```
 Result:
