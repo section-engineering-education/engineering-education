@@ -1,3 +1,19 @@
+---
+layout: engineering-education
+status: publish
+published: true
+url: /understanding-and-implementing-graphs-in-java/
+title: Understanding and implementing graphs in Java
+description: This tutorial will cover the types, implementation of and basic concepts of a graph as a data structure in Java.
+author: teresia-mburu
+date: 2022-01-24T00:00:00-14:20
+topics: [Languages]
+excerpt_separator: <!--more-->
+images:
+
+  - url: /engineering-education/understanding-and-implementing-graphs-in-java/hero.jpg
+    alt: Understanding and implementing graphs in Java Hero Image
+---
 ### Introduction
 There are possibilities of storing information as necessitated by outlined in the Java data structure Graph. The idea of a graph depicts a network that links several different points in time.
 While covering graph data structure we will additionally learn about the many kinds of graphs, their implementation, and traversal over the graph, as well as the fundamental principles of a graph as a data structure, its implementation in Java, and the numerous operations that can be performed on a graph.
