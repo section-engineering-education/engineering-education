@@ -220,7 +220,7 @@ When we execute this code, our pie chart is as shown below:
 #### Creating a scatterplot using Brython.
 A scatterplot tests the relationship between two factors. To achieve this, we will use the HTML file that we have previously used to create the pie chart. We only need to make some changes to the created chart.py file.
 
-##### Chart.py file
+##### Making changes to the Chart.py file
 The `chart.py` file for the scatterplot is as below:
 
 ```python
