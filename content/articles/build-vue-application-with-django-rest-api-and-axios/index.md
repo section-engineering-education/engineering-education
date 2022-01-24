@@ -6,7 +6,7 @@ url: /build-vue-application-with-django-rest-api-and-axios/
 title: Building a Vue Application with Django REST-API and Axios
 description: This tutorial aims to help the reader understand building Vue web applications that can consume and display data from APIs using the Axios library.
 author: atonya-dennis
-date: 2022-01-12T00:00:00-06:40
+date: 2022-01-24T00:00:00-06:40
 topics: [Languages]
 excerpt_separator: <!--more-->
 images:
@@ -16,7 +16,7 @@ images:
 
 It is common when developing applications to use APIs to consume and display data. This process can be made possible using the Axios library to create Vue.js apps where Django, a python-based backend framework, is only used as an API using the Django rest framework package.
 <!--more-->
-To help you grasp this concept, we will cover using Vue, Axios, and the Django REST APIs to consume and display data from APIs.
+To help you grasp this concept, we will cover using Vue.js, Axios, and the Django REST APIs to consume and display data from APIs.
 
 ### Table of contents
 - [Table of contents](#table-of-contents)
@@ -41,9 +41,7 @@ The reader should have the following to follow along with this tutorial:
 ### Introduction
 **Django** is a Python-based backend framework used to create native applications or APIs using the Django rest framework package. We can also combine it with Vue.js, a JavaScript-based front-end framework, in building applications.
 
-This process is made possible by including the Vue.js scripts directly into the Django template HTML code. However, we can also use the Django API to consume and display data using the HTTP client library called **Axios**. 
-
-To implement this, we will create a simple Vue Todo Application together with the Django REST API and Axios.
+This process is made possible by including the Vue.js scripts directly into the Django template HTML code. However, we can also use the Django API to consume and display data using the HTTP client library called **Axios**. To implement this, we will create a simple Vue Todo Application together with the Django REST API and Axios.
 
 ### Setting up Django and Vue
 We have to set up Django, Vue.js, and the Axios library in the development machine to get started. First, use the command below to check if Django is installed:
