@@ -231,7 +231,6 @@ This page is rendered by the `def single_hero(request, id)` function. On this pa
 
 In the templates folder, create a new file called `single-hero.html`, then add the snippets below to display the superheroes image:
 
-
 ```html
 {% extends 'base.html' %}
 {% load static %}
