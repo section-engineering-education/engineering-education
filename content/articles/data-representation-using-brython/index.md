@@ -327,20 +327,18 @@ b_highchart(
 )
 ```
 
-The code above shows the relation between weight and height using a sample of 53 individuals of different races.
+The code snippet above shows the relation between weight and height using a sample of 53 individuals of different races.
 
-When we execute this code, the scatterplot is as shown below:
-
-![scatterplot](engineering-education/data-representation-with-react-and-ant-design/scatterplot.png)
-
-The code above plots the scatterplot using the `chart` object. The `chart` object has the following methods that specify the behavior of our scatterplot.
-
+The code is used to plot the scatterplot using the `chart` object. The `chart` object has the following methods that specify the behavior of our scatterplot.
 - `type`: This method specifies the chart type. In this case, it is a scatterplot. Thus, it taking the value `scatter`
 - `zoomType`: This method specifies the zoom dimension when we move the mouse.
 - `radius`: This specifies the horizontal distance between the two closest points in a series.
 - `hover`: if enabled as true, hover takes effect when the mouse is placed over any of the series, thereby highlighting them.
 - `tooltip`: This is a small modal that pops up when we hover our mouse on the datasets in the plot. It displays all details added to the scatterplot.
 
+When we execute this code, the scatterplot is as shown below:
+
+![scatterplot](engineering-education/data-representation-with-react-and-ant-design/scatterplot.png)
 ### Conclusion
 The process of data representation is a delightful journey. Like all journeys, it must come to an end.  Through the use of a Content Delivery Network, we were able to import Brython and Highchart's Javascript files. This further enabled us to represent data in the form of a pie chart and scatterplot using Brython. To get the Python code used in this tutorial, click [here](https://github.com/ayodele96/brython).
 
