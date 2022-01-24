@@ -89,7 +89,7 @@ This is the easiest method of installing Brython. For this method to successfull
 The two methods are efficient in integrating `brython.js` and `brython_stdlib.js` into our project. After adding `brython.js` and `brython_stdlib.js` into our project, let's move to the next step.
 
 #### Setting up the environment
-The following steps will contain how the HTML file should be set up for our pie chart and scatterplot. Here is a step by step method to achieve this:
+The following steps will show how to set up the HTML file that will be used to create the pie chart and scatterplot.
 
 ##### Installing the Highcharts module.
 To install the Highcharts module, use this code:
