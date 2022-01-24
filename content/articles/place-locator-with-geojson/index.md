@@ -1,5 +1,20 @@
+---
+layout: engineering-education
+status: publish
+published: true
+url: /place-locator-with-geojson/
+title: Building a Place Locator using GeoJson and Javascript.
+description: This article will walk the reader through the use of GeoJson to build a place locator application using GeoJson, MongoDB, Mapbox and Javascript.
+author: jamila-laureen
+date: 2022-01-24T00:00:00-05:14
+topics: [Languages]
+excerpt_separator: <!--more-->
+images:
+  - url: /engineering-education/place-locator-with-geojson/hero.png
+    alt: Place Locator using GeoJson and Javascript Hero Image
+---
 GeoJson is a conventional method of storing geographic points in a database using JavaScript Object Notation format. Being based on JSON, GeoJson easily integrates with JavaScript. In addition, GeoJson allows the encoding of Geographic features like Latitude, Longitude, line strings, and Polygons.
-
+ <!--more-->
 This article will walk the reader through the use of GeoJson to build a place locator application using Javascript. In the article, we will develop an application that adds a location to a MongoDB database, Geocodes it to obtain the latitude, longitude and a readable address of the location then displays the latitudinal and longitudinal mapping of the locations on a map. 
 
 This project explores several APIs that work together with GeoJson. The APIs used are Mapbox to render a map on a web page, mapquest to send location requests, and geocode the locations' names into matching latitudes and longitudes.
@@ -332,3 +347,6 @@ However, after adding the developers, the Map should look as shown below:
 This article covered how to use Mapbox with GeoJson to build an application that locates developers on a map. We explored how to geocode the location names into latitudes and longitudes that we then stored in a MongoDB database. 
 
 The stored locations of the developers were then pinned onto the Map using Mapbox. Exploring GeoJson, Mapbox, and Mapquest in this project can be a great starting point for using maps and Geocoding.
+
+---
+Peer Review Contributions by: [Mercy Meave](/engineering-education/authors/mercy-meave/)
