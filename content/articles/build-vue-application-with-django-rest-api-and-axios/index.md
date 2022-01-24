@@ -3,7 +3,7 @@ layout: engineering-education
 status: publish
 published: true
 url: /build-vue-application-with-django-rest-api-and-axios/
-title: Building a Vue Application with Django REST API and Axios
+title: Building a Vue Application with Django REST-API and Axios
 description: This tutorial aims to help the reader understand building Vue web applications that can consume and display data from APIs using the Axios library.
 author: atonya-dennis
 date: 2022-01-12T00:00:00-06:40
@@ -26,7 +26,7 @@ To help you grasp this concept, we will cover using Vue, Axios, and the Django R
 - [Creating the Django application](#creating-the-django-application)
   - [Django TodoApp project](#django-todoapp-project)
   - [Django TodoApp Models](#django-todoapp-models)
-  - [API accessibility by Vue application](#api-accessibility-by-vue-application)
+  - [API accessibility the by Vue application](#api-accessibility-by-the-vue-application)
 - [Creating the Vue application](#creating-the-vue-application)
 - [Getting and displaying application data](#getting-and-displaying-application-data)
 - [Conclusion](#conclusion)
@@ -178,7 +178,7 @@ python manage.py shell
 >>> 
 ```
 
-#### API accessibility by Vue application
+#### API accessibility by the Vue application
 For the api to be viewed by the Vue application, add the code below inside the `TodoApp/urls.py` file.
 
 ```python
