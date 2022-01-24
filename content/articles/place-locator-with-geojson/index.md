@@ -13,6 +13,8 @@ images:
   - url: /engineering-education/place-locator-with-geojson/hero.png
     alt: Place Locator using GeoJson and Javascript Hero Image
 ---
+
+### Introduction
 GeoJson is a conventional method of storing geographic points in a database using JavaScript Object Notation format. Being based on JSON, GeoJson easily integrates with JavaScript. In addition, GeoJson allows the encoding of Geographic features like Latitude, Longitude, line strings, and Polygons.
  <!--more-->
 This article will walk the reader through the use of GeoJson to build a place locator application using Javascript. In the article, we will develop an application that adds a location to a MongoDB database, Geocodes it to obtain the latitude, longitude and a readable address of the location then displays the latitudinal and longitudinal mapping of the locations on a map. 
