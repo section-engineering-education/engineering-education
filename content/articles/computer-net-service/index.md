@@ -159,9 +159,9 @@ This is achieved through the following steps by step approaches:
 2. Proceed to the configuration as per the below directives
 3. Save your changes.
 
-```
-| The Settings      |  The configuration Guidelines  |
-| -----------   | ---------|
+
+| The Settings  |  The configuration Guidelines  |
+| -----------   | ----------- |
 | Status        | Show all the interface statistics for all the required ports   |
 | Hostname      | Select a good and descriptive hostname with characters not exceeding 30.| 
 | Primary DNS   | Indicate primary DNS server IP address.|
@@ -172,11 +172,11 @@ This is achieved through the following steps by step approaches:
 | Maximum Bandwidth| It Specifies the maximum bandwidth for all traffic in the network.|
 | Tunnels Maximum | It Specifies the maximum bandwidth for traffic in the VPN. |
 | Bandwidth | The total maximum bandwidth must be higher than the value of VPN  maximum bandwidth. |
-```
 
-### COnclusion
-In this article, we have covered the following topics:
-- Networking
+
+
+### Conclusion
+Computer network  services are basically the core of the internet. All the services that a user can achieve from the internet are based on computer network services and data communication. It is therefore incumbent that more research and learning be done in line with the question at hand.
   
 
 Happy Reading!
