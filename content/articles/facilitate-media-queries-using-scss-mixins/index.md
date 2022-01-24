@@ -73,19 +73,18 @@ Let’s open our `style.scss` file and input the necessary code to set up the mi
  // $breakpoint is the variable that can have several values
 @mixin devices ($breakpoint) { //the name of the mixin is devices
   
-    @if $breakpoint==tablet {    
+    @if $breakpoint == tablet {    
     @media only screen and (max-width: 680px) {
       @content;
     }
   }
  
-  @if $breakpoint==mobile {
+  @if $breakpoint == mobile {
     @media only screen and (max-width: 481px) {
       @content;
     }
   }
 }
- 
 ```
 
 The above block of code shows how mixins are mapped out and associated with names.
@@ -112,7 +111,6 @@ As you can see in the snippet below, the styling can be affected by simply calli
         // code set for mobile    
     }
 }
- 
 ```
 
 By simply calling up the mixins created, you can apply stylings as you wish. These SCSS code will compile to generate the corresponding CSS code:
