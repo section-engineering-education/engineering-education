@@ -41,25 +41,17 @@ To follow along, the reader should:
 - Have [Python programming](/engineering-education/python-projects-for-beginners/) skills.
 - Have [Javascript programming](https://www.w3schools.com/js/) skills.
 - Have [Visual Studio Code](https://code.visualstudio.com/) installed.
-### Aim
-The purpose of this tutorial is to walk readers through how to:
+### Aim of this tutorial
+The purpose of this tutorial is to guide the reader through how to:
 
-1. Install Brython in our local environment. We can achieve this using a host of methods, they are:
-
-   - PyPI. To use this method, make sure you have installed Python3.
-
-   - Content Delivery Network (CDN).
-
-   - Node Package Manager (npm).
-
-   - GitHub.
-
-> NOTE: We will focus on the second and third methods in our project.
-
+1. Install Brython in our local environment. We can achieve this using the following host methods:
+- PyPI. To use this method, make sure you have installed Python3.
+- Content Delivery Network (CDN).
+- Node Package Manager (npm).
+- GitHub.
+> NOTE: We will focus on the Content Delivery Network (CDN) and Node Package Manager (npm) in our project.
 2. Create a pie chart using Highchart and Brython.
-
 3. Create a scatterplot using Highchart and Brython.
-
 ### Getting started
 
 #### Installing Brython to our local environment
