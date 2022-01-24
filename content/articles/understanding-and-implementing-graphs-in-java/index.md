@@ -15,17 +15,18 @@ images:
     alt: Understanding and implementing graphs in Java Hero Image
 ---
 ### Introduction
-There are possibilities of storing information as necessitated by outlined in the Java data structure Graph. The idea of a graph depicts a network that links several different points in time.
-While covering graph data structure we will additionally learn about the many kinds of graphs, their implementation, and traversal over the graph, as well as the fundamental principles of a graph as a data structure, its implementation in Java, and the numerous operations that can be performed on a graph.
+There are possibilities of storing information as necessitated by outlined in the Java data structure graph. The idea of a graph depicts a network that links several different points in time.
+<!--more-->
+While covering graph data structure, we will additionally learn about the various types of graphs, their implementation, and traversal over the graph. We will also cover the fundamental principles of a graph as a data structure, its implementation in java, and the numerous operations that can be performed on a graph.
 
 ### Table of contents
-- [Understanding graphs in Java](#understanding-graphs-in-java)
-- [Graphs With Various Configurations](#graphs-with-various-configurations)
+- [Understanding graphs in java](#understanding-graphs-in-java)
+- [Graphs with various configurations](#graphs-with-various-configurations)
 - [Storing graphs in memory](#storing-graphs-in-memory)
-- [Representing Graphs in Code](#representing-graphs-in-code)
-- [Graph implementation in Java](#graph-implementation-in-java)
-- [Common operations to implement in Java](#common-operations-to-implement-in-java)
-- [Graph traversal methods and how they are implemented](#graph-traversal-methods-and-how-they-are-implemented)
+- [Representing graphs in code](#representing-graphs-in-code)
+- [Graph implementation in java](#graph-implementation-in-java)
+- [Common operations to implement in java](#common-operations-to-implement-in-java)
+- [Graph traversal methods and their implementation](#graph-traversal-methods-and-how-they-are-implemented)
 - [Depth-first traversal and its implementation](#depth-first-traversal-and-its-implementation)
 - [Breadth-first traversal and its implementation](#breadth-first-traversal-and-its-implementation)
 
