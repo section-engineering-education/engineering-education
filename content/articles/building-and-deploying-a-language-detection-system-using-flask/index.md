@@ -3,8 +3,8 @@ layout: engineering-education
 status: publish
 published: true
 url: /building-and-deploying-a-language-detection-system-using-flask/
-title: Flask Language Detection system 
-description: This tutorial will walk the reader through the basic implementation of a language detection model and deployment using Flask.
+title: Flask Language Detection System 
+description: This tutorial will walk the reader through the basic implementation of a language detection model and deployment using the Flask framework.
 author: adhinga-fredrick
 date: 2022-01-24T00:00:00-06:30
 topics: [Machine Learning]
