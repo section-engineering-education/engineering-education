@@ -53,11 +53,12 @@ The purpose of this tutorial is to guide the reader through how to:
 2. Create a pie chart using Highchart and Brython.
 3. Create a scatterplot using Highchart and Brython.
 ### Getting started
+To get started, we will install Brython in our local environment.
 
-#### Installing Brython to our local environment
-
-##### With the Node Package Manager
-Node.js is a JavaScript runtime used to build scalable network applications. Node executes JavaScript code outside a web browser. To install Brython using the Node package manager (npm), we download and install [Node.js](https://nodejs.org/en/). After the installation, we'll run the command below in our terminal:
+#### Installing Brython in our local environment
+There are two ways to install Brython, we will first install Brython using the Node Package Manager.
+##### Using the Node Package Manager
+Node.js is a JavaScript runtime used to build scalable network applications. Node executes JavaScript code outside a web browser. To install Brython using the Node package manager (npm), we download and install [Node.js](https://nodejs.org/en/). After the installation, we will run the command below in our terminal:
 
 ```bash
 npm install brython
