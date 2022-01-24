@@ -75,9 +75,10 @@ To add the `brython.js` and `brython_stdlib.js` files  to our web project, we wi
 
 Using the code snippets above, we have successfully installed Brython using the Node Package Manager. 
 
-##### With Content Delivery Network
-Also, Brython is delivered from the web using a CDN link. First, what's a CDN? A Content Delivery Networks (CDN) in JavaScript delivers hosted stylesheets and JavaScript files using the `src` attribute in the script tag. Using a CDN, we get the JavaScript file for Brython and Brython `stdlib` from the web into our HTML file.
+##### Using the Content Delivery Network
+ Brython can also be delivered from the web using a CDN link. A Content Delivery Network (CDN) in JavaScript delivers hosted stylesheets and JavaScript files using the `src` attribute in the script tag. Using a CDN, we will get the `brython.js` and `brython_stdlib.js` files from the web.
 
+To get the `brython.js` and `brython_stdlib.js` files, use the following code snippet:
 ```javascript
 <script src="https://cdnjs.cloudflare.com/ajax/libs/brython/3.10.4/brython.js" integrity="sha512-Dr8IR/2fk/pBmngFLduWN5Ys/t7lcPxGgLCulHdTdgDrDRnGb+ANMxGXq+DKVN87jom+N3BrzzI476Pf98RReA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/brython/3.10.4/brython_stdlib.js" integrity="sha512-kMRN6F4Yq4sNLbPG2lH3EO9n776JHHZub+UWogDxVjh9uTnoVo3wtN/rnQD4C4/AZtqI2zQdvdouGAAxOGwNeA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
