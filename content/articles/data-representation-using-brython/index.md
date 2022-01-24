@@ -86,15 +86,18 @@ To get the `brython.js` and `brython_stdlib.js` files, use the following code sn
 
 This is the easiest method of installing Brython. For this method to successfully work, you need to be online.
 
-The two methods are efficient in integrating `brython.js` and `brython_stdlib.js` into our project. After adding `brython.js` and `brython_stdlib.js` into our project, let's move to the next step.
+Both methods are efficient in integrating `brython.js` and `brython_stdlib.js` into our project. After adding `brython.js` and `brython_stdlib.js` into our project, let's move to the next step.
 
 #### Setting up the environment
-The following steps will show how to set up the HTML file that will be used to create the pie chart and scatterplot.
+The following steps will show how to set up the HTML file that will be used to create the pie chart and scatterplot. In addition to the brython modules, a few packages are needed for our project. They include:
+- Highchart.js
+- JQuery
+- Exporting.js
 
 ##### Installing the Highcharts module.
 To install the Highcharts module, use this code:
 
-```npm
+```bash
 npm install highcharts
 ```
 
@@ -111,10 +114,8 @@ In our HTML boilerplate, we will add the  `Jquery` script, the `exporting.js` fi
 <script src="./node_modules/highcharts/modules/exporting.js"></script>
 ```
 
-##### Adding the `brython.js and brython_stdlib.js` file using our script tag. 
-Having created our `chart.py` file, We import this file into our boilerplate using the script tag and set the type attribute to `"text/python3"`.
-
-In the body section, we set the `onload` attribute to `brython(1)`. This enables us to print error messages on the browser's console. Within the `body` tag, we add a `div` tag with id `container`, the div has the inline styling below:
+##### Adding the `brython.js and brython_stdlib.js` file using our script tag.
+To do this, We add the brython modules above into our boilerplate using a script tag. Next, we set the `onload` attribute in the body tag to `brython(1)`. This enables us to print error messages on the browser's console. Within the `body` tag, we add a `div` tag with id `container`, the div has the inline styling below:
 
 ```css
 #container{
@@ -141,8 +142,6 @@ The implementation of the aforementioned steps, our HTML file is as below:
     <script type="text/javascript" src="./node_modules/brython/brython.js"></script>
     <!-- brython stdlib -->
     <script src="./node_modules/brython/brython_stdlib.js"></script>
-    <!-- chart.py -->
-    <script type="text/python3" src="chart.py"></script>
 </head>
 <body onload="brython(1)">
     <div id="container" style="min-width: 310px; height: 400px; margin: 0 auto"></div>
@@ -151,9 +150,15 @@ The implementation of the aforementioned steps, our HTML file is as below:
 ```
 
 #### Creating a pie chart using Brython.
-In statistics, a pie chart is a `circular` graph divided into pieces to show numerical proportions. In this section, we'll guide you on how to create a pie chart using Brython. To create the pie chart, we created a Python file called chart.py. As we progress, this file will contain some necessary code required in building our pie chart. Let us get started!🚀.
+In statistics, a pie chart is a `circular` graph divided into pieces to show numerical proportions. In this section, we'll guide you on how to create a pie chart using Brython. To build the pie chart, we create a Python file called chart.py. As we progress, this file will contain some necessary code required in building our pie chart. Let us get started!🚀.
 
 ##### Chart.py file
+Having created our `chart.py` file, We import this file into our boilerplate using the script tag and set the type attribute to `"text/python3"`. This file is imported into our HTML boilerplate using the script tag below:
+```html
+<!-- chart.py -->
+<script type="text/python3" src="chart.py"></script>
+```
+
 The chart.py file contains the following code:
 
 ```python
