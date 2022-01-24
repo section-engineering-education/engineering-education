@@ -98,9 +98,9 @@ To install the Highcharts module, use this code:
 npm install highcharts
 ```
 
-Doing this will download some important Highchart modules such as `highchart.js` and `exporting.js`. The exporting module allows you to download the charts in different file formats like PDF, PNG, SVG vector images, OR JPG.
+Using the command above, we will download some important Highchart modules such as `highchart.js` and `exporting.js`. The `exporting.js` allows us to download the charts in different file formats like PDF, PNG, vector images(SVG), and JPG.
 
-We will need to add `Jquery, exporting and highchart modules` to our HTML boilerplate. To do this, we'll refer to their respective file using the script tag below:
+In our HTML boilerplate, we will add the  `Jquery` script, the `exporting.js` file, and the `highchart.js` module. Use the following code snippet:
 
 ```html
 <!-- jquery -->
