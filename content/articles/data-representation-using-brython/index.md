@@ -84,9 +84,9 @@ To get the `brython.js` and `brython_stdlib.js` files, use the following code sn
 <script src="https://cdnjs.cloudflare.com/ajax/libs/brython/3.10.4/brython_stdlib.js" integrity="sha512-kMRN6F4Yq4sNLbPG2lH3EO9n776JHHZub+UWogDxVjh9uTnoVo3wtN/rnQD4C4/AZtqI2zQdvdouGAAxOGwNeA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 ```
 
-This is by far the easiest method to import external files in HTML. In cases of you being offline, it is a huge disadvantage.
+This is the easiest method of installing Brython. For this method to successfully work, you need to be online.
 
-Any of the methods above is efficient to integrate Brython JavaScript and CSS into our project. Now, We can go to the next step.
+The two methods are efficient in integrating `brython.js` and `brython_stdlib.js` into our project. After adding `brython.js` and `brython_stdlib.js` into our project, let's move to the next step.
 
 #### Setting up the environment
 The following steps will contain how the HTML file should be set up for our pie chart and scatterplot. Here is a step by step method to achieve this:
