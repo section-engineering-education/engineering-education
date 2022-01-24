@@ -73,7 +73,7 @@ To add the Brython and Brython stdlib package to our web project, we'll use the 
 <script src="./node_modules/brython/brython_stdlib.js"></script>
 ```
 
-With two blocks of code, you can add Brython using npm. It's as simple as that.
+Using the code snippets above, we have successfully installed Brython using the Node Package Manager. 
 
 ##### With Content Delivery Network
 Also, Brython is delivered from the web using a CDN link. First, what's a CDN? A Content Delivery Networks (CDN) in JavaScript delivers hosted stylesheets and JavaScript files using the `src` attribute in the script tag. Using a CDN, we get the JavaScript file for Brython and Brython `stdlib` from the web into our HTML file.
