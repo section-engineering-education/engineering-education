@@ -235,7 +235,7 @@ _Arrays of objects returned by the `getMatches` Function_
 
 ### Displaying Data to the UI
 
-Now that we can get the `getMatches` function display arrays of searched words to the console, let us find a way to hook them up to the `ul`.
+Now that we can get the `getMatches` function display arrays of searched words to the 'console', let us find a way to hook them up to the `ul`.
 
 - First, listen to the UI element that will call trigger the display.
 
@@ -300,7 +300,7 @@ if (searchTerm === "") {
 
 ### Formating the output (Optional)
 
-Next, let's format the output to highlight the text on the result which matches the text the user entered in the search box. Also, we will format the population to be comma-separated.
+Next, let us format the output to highlight the text on the result, which matches the text the user entered in the search box. Also, we will format the population to be comma-separated.
 
 This is achieved by replacing the following code.
 
@@ -350,7 +350,7 @@ Read more about replacing string with `.replace` and **regex** [here.](https://w
 
 ### The Complete JavaScript Code
 
-Below is the complete JS code for this tutorial. save the javascript in the same folder as the HTML file and link them using the `script` tag.
+Below is the complete JS code for this tutorial. Save the javascript in the same folder as the HTML file and link them using the `script` tag.
 
 ```js
 const dataEndpoint =
@@ -421,7 +421,7 @@ You can use the lessons from this tutorial on any project, with a different data
 
 I hope you find this tutorial helpful one way or another.
 
-Thanks for reading and happy coding.
+Thanks for reading, and happy coding.
 
 ### References
 
