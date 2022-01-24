@@ -460,7 +460,7 @@ STATICFILES_DIRS = (
 )
 ```
 
-You can  find the css and js file in [this link]
+You can  find the css and js file in [this link.](https://github.com/victorelvice/superhero/tree/main/static) and the entire application [here](https://github.com/victorelvice/superhero)
 
 The final application should look as shown below:
 
