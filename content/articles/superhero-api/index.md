@@ -207,10 +207,12 @@ This template is the html file that contains the list of all superheroes, their 
 {% endblock %}
 ```
 
-We are using a for loop to loop through the list of superheroes fetched from the API,  and for each superhero, we display the name, image a button to go to the superhero's specific page.
+We use a for loop to loop through the list of superheroes fetched from the API. Finally, we display the name,  image, and a button to go to each superhero's specific page.
 
 ### The single superhero page
-This page is rendered by the `def single_hero(request, id)` function. On this page, we access all the properties of a single superhero. In the templates folder, create a new file called `single-hero.html`, then add the snippets below to display the superheroes image:
+This page is rendered by the `def single_hero(request, id)` function. On this page, we access all the properties of a single superhero.
+
+In the templates folder, create a new file called `single-hero.html`, then add the snippets below to display the superheroes image:
 
 
 ```html
@@ -458,7 +460,7 @@ STATICFILES_DIRS = (
 )
 ```
 
-You can then find the css and js file in [this link]
+You can  find the css and js file in [this link]
 
 The final application should look as shown below:
 
@@ -466,4 +468,4 @@ The final application should look as shown below:
 
 
 ### Conclusion
-The superhero API is a simple and easy-to-use middleware. This tutorial discussed how to use the API in building a superhero application. First, we fetched the data and rendered it on a user interface. This tutorial should provide a headstart in using the Superhero API and other APIs in combination with the Django framework. 
+The superhero API is a simple and easy-to-use middleware. This tutorial discussed how to use the API in building a superhero application. First, we fetched the data and rendered it on a user interface. This tutorial should provide a headstart in using the Superhero API and other APIs with the Django framework. 
