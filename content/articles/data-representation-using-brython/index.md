@@ -218,7 +218,7 @@ The code above plots the pie chart using the following methods and attributes:
 
 When we execute this code, our pie chart is as shown below:
 
-![piechart1](engineering-education/data-representation-using-brython/piechart1.png) 
+![Piechart](engineering-education/data-representation-using-brython/piechart1.png) 
 
 
 #### Creating a scatterplot using Brython.
