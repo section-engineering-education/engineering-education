@@ -1,4 +1,21 @@
+---
+layout: engineering-education
+status: publish
+published: true
+url: /leveraging-openai-gym-and-the-anytrading-environment-for-trading/
+title: Leveraging OpenAI Gym and the Anytrading Environment for Trading
+description: This tutorial will take you through how to leverage OpenAI Gym and the AnyTrading Environment for trading.
+author: willies-ogola
+date: 2022-01-25T00:00:00-17:00
+topics: [Machine Learning]
+excerpt_separator: <!--more-->
+images:
+
+  - url: /engineering-education/leveraging-openai-gym-and-the-anytrading-environment-for-trading/hero.png
+    alt: OpenAI Gym and the Anytrading Environment Hero Image
+---
 This tutorial will show you how to leverage Reinforcement Learning for trading. 
+<!--more-->
 
 ### Prerequisites
 To follow along with this tutorial, you need to be familiar with:
