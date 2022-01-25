@@ -6,7 +6,7 @@ url: /build-vue-application-with-django-rest-api-and-axios/
 title: Building a Vue Application with Django REST-API and Axios
 description: This tutorial aims to guide the reader on how to build Vue web applications that can consume and display data from APIs using the Axios library.
 author: atonya-dennis
-date: 2022-01-25T00:00:00-01:40
+date: 2022-01-25T00:00:00-09:50
 topics: [Languages]
 excerpt_separator: <!--more-->
 images:
