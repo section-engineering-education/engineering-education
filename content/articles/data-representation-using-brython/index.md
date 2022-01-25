@@ -159,7 +159,7 @@ We will create the `chart.py` file. After creating the file, we import this file
 <script type="text/python3" src="chart.py"></script>
 ```
 
-The chart.py file contains the following code:
+The chart.py file we have created contains the following code:
 
 ```python
 from browser import window
