@@ -206,7 +206,7 @@ b_highchart(
     }
 )
 ```
-The code above plots the pie chart using the following methods:
+The code above plots the pie chart using the following methods and attributes:
 - `from browser import window`: imports the window module from, thus allowing Brython access to Javascript object.
 - `plotBackgroundColor`: It plots the background color for the chart area.
 - `plotBorderWidth`: It plots the width of the chart area in pixels.
