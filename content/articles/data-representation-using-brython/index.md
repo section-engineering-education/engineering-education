@@ -345,9 +345,16 @@ When we execute this code, the scatterplot is as shown below:
 
 ![Scatterplot](engineering-education/data-representation-using-brython/scatterplot.png)
 ### Conclusion
-The process of data representation is a delightful journey. Like all journeys, it must come to an end.  Through the use of a Content Delivery Network, we were able to import Brython and Highchart's Javascript files. This further enabled us to represent data in the form of a pie chart and scatterplot using Brython. To get the Python code used in this tutorial, click [here](https://github.com/ayodele96/brython).
-Happy coding!
----
-Peer Review Contributions by: [Bravin Wasike](/engineering-education/authors/bravin-wasike/)
+The process of data representation is a delightful journey. Like all journeys, it must come to an end. Through the use of a Content Delivery Network, we were able to import Brython and Highchart's Javascript files. This further enabled us to represent data in the form of a pie chart and scatterplot using Brython. 
+
+To get the Python code used in this tutorial, click [here](https://github.com/ayodele96/brython).
+
 ### Further Reading
 For further reading on Brython, read this [documentation](https://brython.info/static_doc/en/intro.html).
+
+I hope you find this article helpful.
+
+Happy coding!
+
+---
+Peer Review Contributions by: [Bravin Wasike](/engineering-education/authors/bravin-wasike/)
