@@ -1,18 +1,19 @@
 
 ### Adding permission to flutter applications
 ### Introduction
-The first important thing to know is that the android system uses permissions. You can for example for your app to be able to use the internet or access the camera.
+The first important thing to know is that android system uses permissions. You can for example use your app to use the internet or access the camera.
 So you may not want to let your user's friends download the app on their device if it is not necessary.
 The same, you may not want your user's apps to use your camera if they are not necessary.
 This article is about how to add permission when you create an app with flutter (if you want). It's simple but there are some things to know to avoid.  Your camera usage without permission, for example.
-
-I will write my application so that the user has to accept permissions when he wants them. Users have an option to see all installed apps and select which one can see your camera.
-(To know if the user accepted the permissions I am going to use a new flutter thing called StreamBuilder. If you do not know what it is, never mind for now).
-What's important here is that when I get this app installed on my device. I will see a screen with two buttons, one to 'accept permissions' and the other to 'dismiss'. This is not what you will do in your app but it's to show how StreamBuilder works.
 ### Prerequisite 
 - adding permission requests to a flutter app.
 - how the flutter engine manages permissions.
 - what use cases are best for custom permission handlers.
+### Disclaimer
+You will write your application so that the user has to accept permissions when he wants them. Users have an option to see all installed apps and select which one can see your camera.
+(To know if the user accepted the permissions You are going to use a new flutter thing called StreamBuilder. If you do not know what it is, never mind for now).
+What's important here is that when You get this app installed on your device. You will see a screen with two buttons, one to 'accept permissions' and the other to 'dismiss'. This is not what you will do in your app but it's to show how StreamBuilder works.
+
 ### Project development
 OK, let's start. After  creating new project structure in editor:
 You have a main folder in the middle called 'android' where you can find lots of files. 
@@ -75,22 +76,25 @@ The things that we did:
 First: You created a class called HomePage. Then you created a constructor in this file (between brackets: '{}'), which is mandatory for classes.
 Second: You put the widgets inside of the constructor. Its job will be to instantiate all these widgets and add them to a parent widget (which we will see later). This way, they won't overlap each other on-screen.
 The second thing you created was an empty class called MyApp (main/app.dart).
+
 ```dart
     MyApp() { }
  ```
+
 It is a 'StatefulWidget' because it has a state that changes. Its current state you can read from the variable that I have called 'currentState'. This state contains all your widgets that are inside the "home_page.dart" file.
-The first method that you can see inside of the class is 'initState'. This function runs when you start your app (when the main function starts). It should be self-explanatory. It creates all your widgets, sets them as 'current'. By current, I mean the ones marked with "current" are the ones shown first. But, the ones without "current" are the ones that can be shown inside of another widget), etc.
+The first method that you can see inside of the class is 'initState'. This function runs when you start your app (when the main function starts). It should be self-explanatory. It creates all your widgets, sets them as 'current'. By current, I mean the ones marked with "current" are the ones shown first. But, the ones without "current" are the ones that can be inside of another widget), etc.
 What is 'MyAppState'? This class is an abstract class that defines what a StatefulWidget must have. So, I have to declare it before I create my own stateful widget. And now, let's see the most important part of the application.
 ```dart
      State createState() => new _MyAppState();
  ```
 To make it simpler for you, I took out the code from the file. Its job is to tell Flutter that this class will contain all your widgets as a state.
 Now, let's dig into the '_MyAppState' class (main/home_page.dart).
+
 ```dart
     GesturesState gestureState;
      _MyAppState() {
        current = widgets;
-	}
+     }
 ```
 Let's take a look at what we did there: 
 First: I created an empty class called '_MyApp'. The only thing it does is to call the constructor of the parent class.
@@ -125,6 +129,6 @@ Finally, let's focus on what is inside of that file, which I have mentioned abov
 Now, let's focus on the most important part of it.
 First: At the beginning of this class, I have created a variable that contains all my gestures. 
 Second: At the end, I set a listener for all kind of gestures.
+### Conclusion
+That's it! As you can see, there are many methods to add permissions. Check flutter documentation and the packages installed. To get more knowledge about this topic. After doing this project, you have learned how to add permissions to an application. You can do this by using different methods that are available in a flutter. Hope you enjoyed it! I know that there are some parts of this article where it isn't very clear. So, if you have any comments or questions, feel free to reach out [Github User](https://github.com/jasminemilito)! Thanks for reading :)
 
-That's it! As you can see, there are many methods to add permissions. Check flutter documentation and the packages installed. To get more knowledge about this topic. After doing this project, you have learned how to add permissions to an application. You can do this by using different methods that are available in a flutter. Hope you enjoyed it! I know that there are some parts of this article where it isn't very clear. So, if you have any comments or questions, feel free to leave a comment below! Thanks for reading :)
-[Github User](https://github.com/jasminemilito)
