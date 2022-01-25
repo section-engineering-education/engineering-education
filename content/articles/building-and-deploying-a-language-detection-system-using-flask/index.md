@@ -3,41 +3,39 @@ layout: engineering-education
 status: publish
 published: true
 url: /building-and-deploying-a-language-detection-system-using-flask/
-title: Flask Language Detection System 
+title: Building a Flask Language Detection System 
 description: This tutorial will walk the reader through the basic implementation of a language detection model and deployment using the Flask framework.
 author: adhinga-fredrick
-date: 2022-01-24T00:00:00-06:30
+date: 2022-01-25T00:00:00-10:40
 topics: [Machine Learning]
 excerpt_separator: <!--more-->
 images:
   - url: /building-and-deploying-a-language-detection-system-using-flask/hero.jpg
-    alt: Flask language detection system Hero Image
+    alt: Building a Flask language detection system Hero Image
 ---
 
 With more than a thousand languages being used today, communication between people of different native languages is crucial. That is why companies like Google are applying Natural Language Processing(NLP) into their products like language detection on Chrome browser, to give users a smooth experience.
  <!--more-->
-This article will illustrate a basic implementation of a language detection model, to build the readers' understanding of NLP and boost thier portfolio.
 
-### Introduction
-Language detection is a task in Natural Language Processing (NLP) that identifies the language of a given text or phrase and provide its translation.
+Language detection is a task in Natural Language Processing (NLP) that identifies the language of a given text or phrase and provides its translation.
 
 In this article, we will build a language detection model using Python and the language detection dataset from [Kaggle](https://www.kaggle.com/basilb2s/language-detection). Additionally, we will test and deploy the model using [Flask,](https://flask.palletsprojects.com/en/2.0.x/) an easy-to-use Python micro web framework.
 
 ### Table of content
 - [Building the language detection model](#building-the-language-detection-model)
-	- [Setting up the development environment](#setting-up-the-development-environment)
-	- [Importing Libraries](#importing-libraries)
-	- [Data Preprocessing](#data-preprocessing)
-	- [Modeling](#modeling-the-data)
-	- [Model evaluation](#model-evaluation)
-	- [Inference](#inferencing-using-the-model)
+    - [Setting up the development environment](#setting-up-the-development-environment)
+    - [Importing Libraries](#importing-libraries)
+    - [Data Preprocessing](#data-preprocessing)
+    - [Modeling](#modeling-the-data)
+    - [Model evaluation](#model-evaluation)
+    - [Inference](#inferencing-using-the-model)
 - [Deploying the model using Flask](#deploying-the-model-using-flask)
 
 ### Prerequisites
 To follow along with this article, the reader should have the following:
 - A basic knowledge of Machine Learning.
-- Python and [Jupyter Notebook](https://jupyter.org/) installed on thier machine.
-- Basics of the [Flask](https://flask.palletsprojects.com/en/2.0.x/tutorial/) framwework.
+- Python and [Jupyter Notebook](https://jupyter.org/) installed on their machine.
+- Basics of the [Flask](https://flask.palletsprojects.com/en/2.0.x/tutorial/) framework.
 
 ### Building the language detection model
 To work on the project, it would be best if you started by setting up a development environment.
@@ -89,8 +87,6 @@ df["Language"].value_counts()
 
 Our dataset has 17 languages: English, French, Spanish, Portuguese, Italian, Russian, Swedish, Malayalam, Dutch, Arabic, Turkish,   German, Tamil, Danish, Kannada, Greek, and Hindi. 
 
-Next, proceed to preprocess our data.
-
 #### Data preprocessing
 Here, we will transform the data into a desired usable format by the model.
 
@@ -122,7 +118,7 @@ for text in X:
     text = text.lower()          # converts all the text to lower case
     text_list.append(text)       # appends the text to the text_list
 ```
-Then, we encode our feature(**Text**) through a *Bag of Words* model using the `CountVectorizer()` method.
+Then, we encode our feature(**Text**) through a **Bag of Words** model using the `CountVectorizer()` method.
 
 A **Bag of Words** is a method used to transform text to a vector which allows the model to access the number of times a word appears in a document. In summary, it represents a phrase or a sentence as a bag(container) of words without considering the structure or the pattern of the words.
 
@@ -194,7 +190,7 @@ import pickle
 pickle.dump(model, open('model.pkl','wb'))
 ```
 
-After the modelling process, we will deploy the model using Flask.
+After the modeling process, we will deploy the model using Flask.
 
 ### Deploying the model using Flask
 Before the deployment, we need to install the Flask framework package.
@@ -210,7 +206,7 @@ Then, we need to create the following files:
 - `index.html`- To display the web page.
 - `style.css` - To style the HTML page.
 
-On the `index.html` file, add the following snippet:
+In the `index.html` file, add the following snippet:
 
 ```html
 <!DOCTYPE  html>
@@ -316,7 +312,7 @@ if __name__ == "__main__":
     app.run(debug=True)
 ```
 
-Once the above changes are done,  run the web server using the following command to see how the model works:
+Once the above changes are done,  run the webserver using the following command to see how the model works:
 
 ```bash
 python apps.py
