@@ -6,7 +6,7 @@ url: /implementation-of-convolution-integral-of-continuous-time-linear-time-inva
 title: Implementation of Convolution Integral of Continuous Time Linear Time Invariant Systems in Matlab
 description: This article discusses the various types of convolution integrals of LTI systems and how they can be implemented using functions in Matlab.
 author: queenter-bruce
-date: 2022-01-12T00:00:00-00:00
+date: 2022-01-25T00:00:00-12:00
 topics: [Languages]
 excerpt_separator: <!--more-->
 images:
@@ -14,16 +14,17 @@ images:
   - url: /engineering-education/implementation-of-convolution-integral-of-continuous-time-linear-time-invariant-systems-in-matlab/hero.jpg
     alt: Implementation of Convolution Integral of Continuous Time Linear Time Invariant Systems in Matlab Hero image.
 ---
-Convolution is integral that shows the overlap of a function f(x) when it shifts another function. This integral is used to blend two functions. In image synthesis, the dirty map is the Convolution of the clean map having the dirty beam.
+Convolution is an integral that shows the overlap of a function f(x) when it shifts another function. This integral is used to blend two functions.
 <!--more-->
+In image synthesis, the dirty map is the Convolution of the clean map having the dirty beam.
 
-A dirty beam is the point spread function(PSF) in an observation. The PSF shows how the response system of an image response to the source of the image. 
+A dirty beam is the point spread function(PSF) in an observation. The PSF shows how the response system of an image response to the source of the image.
 
 Linear time invariants(LTI) is a system that receives input and gives output. The input is known as the excitation since the output depends on it, while the output is the system's response.
 
 LTI systems can be characterized entirely by a single system impulse response function. It is represented by h(t) for the continuous system. The inputs can be obtained for any input x(t) by Convolution of inputs and impulse response.
 
-An impulse response is a function that is one at a time and 0 at all other times. In this article, we will be looking at the various types of convolution integrals of LTI systems and how they can be implemented in Matlab.
+An impulse response is a function that is 1 at a time and 0 at all other times. In this article, we will be looking at the various types of convolution integrals of LTI systems and how they can be implemented in Matlab.
 
 ### Prerequisites
 - Have [Matlab](https://www.mathworks.com/products/matlab.html) installed in your computer.
@@ -35,7 +36,7 @@ There are two different types of Convolution, which are:
 - Circular Convolution
 
 ### Linear convolution intergrals
-This is an operation that gives the output of an LTI system given the input. Convolution can be used in finding output responses in digital systems. 
+This is an operation that gives the output of an LTI system given the input. Convolution can be used in finding output responses in digital systems.
 
 When you have two signals x(n) and h(n), the linear convolution of the two signals can be defined by the product of the functions(y(n) = x(n)\*h(n)).
 
@@ -46,7 +47,7 @@ The algorithm that we will be using to implement the convolution integral is as 
 3. Input the sequence length.
 4. Calculate the linear Convolution.
 5. Stop.
-   
+
 ### The program
 ```matlab
 %program to find convolution of two sequences
@@ -75,35 +76,39 @@ title('-----linear convolution-1--');
 ```
 
 ### Matlab functions used
-1. `conv`: It is the function for Convolution and polynomial multiplication. `a = conv(x,h)` gives the Convolution of the two vectors `x` and `h`. The results of `conv(x,h)` is the length `MAX([LENGTH(A)+LENGTH(B)-1,LENGTH(A),LENGTH(B)])`. 
- 
-If the vectors are polynomials, then the Convolution is the product of the two polynomials. At points, you can get the subsection of the Convolution using `conv(x, h, 'shape')` where `shape` is the shape of the subsection.
+`conv` is the function for convolution and polynomial multiplication. `a = conv(x,h)` gives the convolution of the two vectors `x` and `h`. The results of `conv(x,h)` is the length `MAX([LENGTH(A)+LENGTH(B)-1,LENGTH(A),LENGTH(B)])`.
+
+If the vectors are polynomials, then the convolution is the product of the two polynomials. At points, you can get the subsection of the convolution using `conv(x, h, 'shape')` where `shape` is the shape of the subsection.
 
 There are other convolution options that you can use in Matlab. They include:
+- `conv(x,h, 'full')`: The output gives the full convolution of the input vectors.
+- `conv(x,h, 'same')`: Here, the output is the center of the convolution and has the same size as the first vector.
+- `conv(x,h, 'valid')`: This code gives output as the part of the convolution computed with zero-padded edges. Zero padded-edges are matrix surrounded with zeros.
 
-- `conv(x,h, 'full')` - The output gives the full convolution of the input vectors.
-  `conv(x,h, 'same')` - Here, the output is the center of the Convolution and has the same size as the first vector.
-- `conv(x,h, 'valid')` - This code gives output as the part of the Convolution computed with zero-padded edges. Zero padded-edges are matrix surrounded with zeros.
+`length` gives the length of the vector. For example, `length(x)` gives the length of vector `x`.
 
-2. `length`: This gives the length of the vector; for example, `length(x)` gives the length of vector `x`.
-3. `clc`: This function clears the window and returns the cursor at the home tab.
-4. `close all`: The function closes all the open figures.
-5. `clear all`: It is used to clear the software's memory which is the workspace. It is done by clearing all the variables and functions.
-6. `stem`: This function gives stem plot. `stem(y)` plots the data as stem from the x-axis with circles at the data value. We will understand this better after executing the program below;
+The `clc` function clears the window and returns the cursor at the home tab. It closes all the open figures.
+
+`clear all` is used to clear the software's memory which is the workspace. It is done by clearing all the variables and functions.
+
+The `stem` function gives a stem plot. `stem(y)` plots the data as stem from the x-axis with circles at the data value. We will understand this better after executing the program below;
 
 When we execute the code, the output is as shown in the figure below:
 
 ![convolution of two sequences](/engineering-education/implementation-of-convolution-integral-of-continuous-time-linear-time-invariant-systems-in-matlab/convolution-one.png)
 
-The first plot is the stem plot of the `x1` vectors, the second plot is the stem plot of the second vector `h1`, and the last plot is the stem plot of the linear convolution integrals of vector `x1` and `h1`. 
+The first plot is the stem plot of the `x1` vectors, the second plot is the stem plot of the second vector `h1`, and the last plot is the stem plot of the linear convolution integrals of vector `x1` and `h1`.
 
 As you can see, a stem plot plots data as a stem from the x-axis and a circle at the data value. If you look at the first plot, the data values were `[1 2 3 4]`, and the circles are at these points.
 
-### Circular Convolution
-It is the Convolution of two periodic functions. These functions have the same period. This type of Convolution is used in maximizing the efficiency of different common filters.
+### Circular convolution
+It is the convolution of two periodic functions. These functions have the same period. This type of convolution is used in maximizing the efficiency of different common filters.
 
-> function used is:
-> `cconv`: This function gives the circular Convolution. It uses the vectors and the convolution length as the inputs. This function is executed as `cconv(x, h, N)`.In this case, N is the length of the resulting vector. If `N` is not defined, the default length, `LENGTH(A)+LENGTH(B)-1`, is used. When this length is used, the resulting Convolution is similar to that of the linear Convolution.
+The function used is `cconv`. This function gives the circular convolution. It uses the vectors and the convolution length as the inputs.
+
+This function is executed as `cconv(x, h, N)`. In this case, N is the length of the resulting vector. If `N` is not defined, the default length, `LENGTH(A)+LENGTH(B)-1`, is used.
+
+When this length is used, the resulting convolution is similar to that of the linear convolution.
 
 ```matlab
 %%%%%%%%%% circular convolution %%%%%%%%%%%5
@@ -116,14 +121,14 @@ stem (c1); %plots the stem plot of the circular convolution integrals.
 title('-----circular convolution-1---');
 ```
 
-The output for the circular Convolution is as shown in the figure below:
+The output for the circular convolution is as shown in the figure below:
 
 ![circular convolution](/engineering-education/implementation-of-convolution-integral-of-continuous-time-linear-time-invariant-systems-in-matlab/convolution-two.png)
 
 ### Example 2(matrix convolution integrals)
-We use two vectors of `zeros` and `ones` in this example. These two matrices are stored into a single variable, and the linear and circular convolutions are determined. We use the `zeros` and `ones` function to get the two matrices.
+We use two vectors of `zeros` and `ones` in this example. These two matrices are stored in a single variable, and the linear and circular convolutions are determined. We use the `zeros` and `ones` function to get the two matrices.
 
-`zeros(M, N)` gives a matrix of zeros with `MxN` dimensions. The function `ones(M, N)` gives a matrix of 'ones' with `MxN` dimensions. We plot both the linear and circular convolution in this example's same script.
+`zeros(M, N)` gives a matrix of zeros with `MxN` dimensions. The function `ones(M, N)` gives a matrix of 'ones' with `MxN` dimensions. We plot both the linear and circular convolution in this example' script.
 
 ```matlab
 x2 = [zeros(1,10) ones(1,11)]; %combining two matrix ones and zeros.
@@ -155,14 +160,12 @@ The output of the above example is as shown below:
 
 ![convolution of matrices](/engineering-education/implementation-of-convolution-integral-of-continuous-time-linear-time-invariant-systems-in-matlab/convolution-three.png)
 
-As we can see, the output of the vector and matrix Convolution is different, but we can perform Convolution to find the convolution integrals. Also, the linear and circular Convolution in this example are different. It is because `N` is defined for the circular Convolution.
+As we can see, the output of the vector and matrix convolution is different, but we can perform convolution to find the convolution integrals. Also, the linear and circular convolution in this example are different. This is because `N` is defined for the circular convolution.
 
 ### Conclusion
-It is easier to find the convolution integrals for both vectors and matrices using Matlab. This is because of the in-built functions, which has a quick algorithm for calculating the convolution integrals.
+It is easier to find the convolution integrals for both vectors and matrices using Matlab. This is because of the in-built functions, which have a quick algorithm for calculating the convolution integrals.
 
-The convolution integrals are very important in the science field. If we leave their use in the LTI systems alone, they maximize filter efficiencies. It makes it a widely used mechanism, and Matlab is most preferred for the operation.
-
-I hope you find this article helpful.
+The convolution integrals are very important in the science field. If we leave their use in the LTI systems alone, they maximize filter efficiencies. It makes it a widely used mechanism, with Matlab being the most preferred software for the operation.
 
 Happy coding!
 
