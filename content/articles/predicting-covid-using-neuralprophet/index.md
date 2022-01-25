@@ -1,7 +1,7 @@
 ## Predicting Covid-19 Cases using NeuralProphet
 
 Performing predictions on datasets where a time series is the independent variable can prove challenging using traditional machine learning methods. Facebook (now Meta) in 2017 came up with a library which extracts non-linear patterns which may have daily, weekly or other seasonality. This library is called Prophet (previously known as FbProphet).
-One limitation of the library is that it does not generalize well to complext trends thus tends to under-fit. The Data Science Core Team at the company thus came up with NeuralProphet, a library based on AR-Net, a simple auto-regressive Neural Network for time-series and Pytorch.
+One limitation of the library is that it does not generalize well to complext trends thus tends to under-fit. The Data Science Core Team at the company thus came up with NeuralProphet, a library based on AR-Net (a simple auto-regressive Neural Network for time-series) and Pytorch.
 
 We shall use the global cases dataset from [Johns Hopkins University Center for Systems Science and Engineering (JHU CSSE) Global Covid-19 Data repository](https://github.com/CSSEGISandData/COVID-19) to perform forecasting. This is a very useful dataset as it has a lot of seasonality and complex time series patterns.
 
@@ -49,13 +49,14 @@ dataset=pd.read_csv(path,engine='python')
 print(dataset)
 ```
 
-#### Dataset
+#### The Dataset
 We will be using the Covid-19 Global Cases Dataset from [COVID-19 Data Repository by the Center for Systems Science and Engineering (CSSE) at Johns Hopkins University](https://github.com/CSSEGISandData/COVID-19). To manually navigate to the CSV file within the repository, follow the path 'csse_covid_19_data/csse_covid_19_time_series/time_series_covid19_confirmed_global.csv'.
 
 This dataset is a collection of reporting from various countries health departments, agencies and universities that is updated daily by the CSSE at JHU.
 
+#### Preparation of the data
 The data has some countries having their data presented by Province or State. The 'Province/State' column should be combined into one country's column.
-We also need to drop Lat and Long column since they're not useful for this task.
+We also need to drop 'Lat' and 'Long' column since they're not useful for this task.
 
 ```python
 dataset=dataset.groupby('Country/Region').sum()
@@ -86,7 +87,7 @@ data.dropna(inplace=True)
 print(data)
 ```
 **Output:**
-![DataFrame 'data'](/engineering-education/covid-forecasting-using-neuralprophet/df1.png)
+![DataFrame](/content/articles/predicting-covid-using-neuralprophet/df1.PNG)
 
 *Screenshot of the dataset by author*
 
@@ -104,6 +105,8 @@ m = NeuralProphet()
 m.fit(data,freq='D',epochs=1000)
 ```
 After the training process is complete, we can obtain the model's metrics such as Mean Absolute Error (MAE) from the output of the cell.
+
+You can note that the MAE reduces significantly (~ 90%) during the training process.
 
 ### Forecasting
 Forecast on future trends by calling the make_future_dataframe() method with the data and number of periods(days) to predict.
@@ -125,9 +128,36 @@ fig1 = m.plot(forecast)
 ```
 **Output:**
 
-![Predicted cases](/engineering-education/covid-forecasting-using-neuralprophet/df2.png)
+![Predicted cases](/content/articles/predicting-covid-using-neuralprophet/df2.png)
 
 *Image of plot by author*
+
+The predictions can be represented to the nearest integer.
+
+```python
+round(forecast['yhat1'])
+```
+
+The ```yhat1``` values are:
+
+```
+0     655667.0
+1     661932.0
+2     660310.0
+3     672405.0
+4     624336.0
+5     612466.0
+6     654910.0
+7     645875.0
+8     650355.0
+9     647241.0
+10    658139.0
+11    609167.0
+12    596686.0
+13    638807.0
+
+```
+
 
 As you can see, we have built a NeuralProphet model and used it for predicting Covid-19 cases.
 
