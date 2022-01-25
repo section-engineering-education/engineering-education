@@ -343,7 +343,7 @@ The code is used to plot the scatterplot using the `chart` object. The `chart` o
 
 When we execute this code, the scatterplot is as shown below:
 
-![scatterplot](engineering-education/data-representation-with-react-and-ant-design/scatterplot.png)
+![Scatterplot](engineering-education/data-representation-using-brython/scatterplot.png)
 ### Conclusion
 The process of data representation is a delightful journey. Like all journeys, it must come to an end.  Through the use of a Content Delivery Network, we were able to import Brython and Highchart's Javascript files. This further enabled us to represent data in the form of a pie chart and scatterplot using Brython. To get the Python code used in this tutorial, click [here](https://github.com/ayodele96/brython).
 Happy coding!
