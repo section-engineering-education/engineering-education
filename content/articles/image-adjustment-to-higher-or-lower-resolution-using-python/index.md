@@ -27,7 +27,6 @@ In this tutorial, we will be requiring some basic tools to be used such as OpenC
 - [Laplacian Pyramid Super-Resolution Network](#Laplacian-pyramid-super-resolution-network)
 - [Scaling down the images to lower resolutions](#scaling-down-the-images-to-lower-resolutions)
 - [Scaling up the images to higher resolutions](#scaling-up-the-images-to-higher-resolutions)
-- [Having the colors fixed](#having-the-colors-fixed)
 - [Application fields for adjusting image resolution](#application-fields-for-adjusting-image-resolution)
 - [Conclusion](#conclusion)
 
@@ -44,20 +43,20 @@ To implement that, in your terminal, you will be required to run the command bel
 ```
 
 After openCV has been successfully installed, it allows for importing modules such as cv2.
-The second installation to be done is the
+The second installation to be done is for the `numpy`.
 
 ```bash
  pip install numpy
 ```
 
 This allows for the usage of packages implementing multidimensional arrays.
-The third installation to be carried out is involves
+The third installation to be carried out is involves `pillow` installation.
 
 ```bash
 pip install pillow
 ```
 
-Also known as PIL module, allows for manipulating and processing of images.
+Also known as `PIL` module, allows for manipulating and processing of images.
 Depending on the versions you may be required to update to the later version. For updating you will use the below command:
 
 ```bash
@@ -67,9 +66,11 @@ C:\Users\lizpa\PycharmProjects\jupyter\venv\Scripts\python.exe -m pip install --
 You will have to change the path according to your machine's directory.
 
 ### Having the colors fixed
-Images are made up of pixels in the form of X and Y coordinates. Having the colors fixed, we will have to use the RGB color format. This occurs when one color in the RGB format is omitted, let's say if blue is, the image will lack the blue pigment and any traces of it since every single pixel has blue taken away from it. Leaving only red and green components. We also learn that multiplying the RGB by factors of half, it reduces the amount of light in the image hence the image becomes darker. Bellow is a program for further illustrations:
+Images are made up of pixels in the form of X and Y coordinates. Having the colors fixed, we will have to use the RGB color format. This occurs when one color in the RGB format is omitted, let's say if blue is, the image will lack the blue pigment and any traces of it since every single pixel has blue taken away from it. Leaving only red and green components.
 
-```python
+Below is a program for further illustrations:
+
+```py
 from PIL import Image
 pict = Image.open("sportscar.jpg")
 #We will have to use the .bmp extension.
@@ -88,14 +89,14 @@ pict.show()
 ```
 
 Original image:
-![original](/engineering-education/how-to-adjust-image-to-higher-or-lower-resolution-using-python/original.png)
-Fixed image with Blue pixels omited:
-![fixed](/engineering-education/how-to-adjust-image-to-higher-or-lower-resolution-using-python/fixed.png)
+![original](/engineering-education/image-adjustment-to-higher-or-lower-resolution-using-python/original.png)
+Fixed image with Blue pixels omitted:
+![fixed](/engineering-education/image-adjustment-to-higher-or-lower-resolution-using-python/fixed.png)
 
 ### Implementing contrast enhancement
-Contrast deals with the intensity ,saturation and brightness level in an image. We will be adjusting the contrast with the help of ImageFilter function provided by the PIL module. With the above in place we are fit to dive into the coding section using an image of your choice:
+Contrast deals with the intensity ,saturation and brightness level in an image. We will be adjusting the contrast with the help of `ImageFilter` function provided by the PIL module. With the above in place we are fit to dive into the coding section using an image of your choice:
 
-```python
+```py
 from PIL import Image, ImageFilter
 img = Image.open("cool.jpg")
 enc_img = img.filter(ImageFilter.DETAIL)
@@ -105,7 +106,7 @@ enc_img.show()
 
 Now we will be running the code for image enhancement.
 
-```python
+```py
  from PIL import Image, ImageEnhancement
  img = Image.open("cool.jpg")
  img_con = ImageEnhancement.Contrast(img)
@@ -115,23 +116,26 @@ Now we will be running the code for image enhancement.
 For the above to work smoothly you will have to put the images to be used in the same directory as where the main python file is.
 
 ### Laplacian Pyramid Super-Resolution Network
-In a coarse-to-fine Laplacian pyramid structure, the LapSRN super-resolves low-resolution pictures. On a given out of five benchmark datasets for 4x and 8x Super-Resolution, our technique is quick and achieves state-of-the-art performance. LapSRN is a middle ground between the two upscaling procedures used at the beginning and conclusion of a project. It suggests a gradual increase in size till the end. Its name is derived from Laplacian pyramids, and the construction is similar to a pyramid, with the lower quality image being upscaled till the finish. Parameter sharing is frequently used for speed.
-It mainly has got two parts, the extraction stage and the stage for reconstruction.
-To implement the Laplacian pyramid is formed by the difference between that level in the Gausian Pyramid and extended version of its upper level in the Gausian Pyramid.
-Explaining in coed snippets yields much understanding. Lets dive in:
+In a coarse-to-define `Laplacian pyramid` structure, the LapSRN super-resolves low-resolution pictures. On a given out of five benchmark datasets for 4x and 8x Super-Resolution, our technique is quick and achieves state-of-the-art performance. LapSRN is a middle ground between the two upscaling procedures used at the beginning and conclusion of a project. 
+
+It suggests a gradual increase in size till the end. Its name is derived from Laplacian pyramids, and the construction is similar to a pyramid, with the lower quality image being upscaled till the finish. Parameter sharing is frequently used for speed.
+
+It mainly has got two parts, the extraction stage, and the reconstruction stage.
+To implement the Laplacian pyramid is formed by the difference between that level in the `Gaussian Pyramid` and the extended version of its upper level in the Gaussian Pyramid.
+Explaining in code snippets yields much understanding. Let's dive in:
 
 ## Instance #1
 ### Scaling down the images to lower resolution
-Now we will be scaling down the images to lower resolutions in the Gausian Pyramid model.
-To perform this task we will be using the image bellow:
-![sean](/engineering-education/how-to-adjust-image-to-higher-or-lower-resolution-using-python/sean.jpg)
+Now we will be scaling down the images to lower resolutions in the Gaussian Pyramid model.
+To perform this task we will be using the image below:
+![sean](/engineering-education/image-adjustment-to-higher-or-lower-resolution-using-python/sean.jpg)
 
-```python
+```py
 import cv2
 import numpy as np
 img = cv2.imread("sean.jpg")#Here we will be reading the image
 layer = img.copy()
-gp = [layer] #Declaring a variable hence creating the Gausian Pyramid array.
+gp = [layer] #Declaring a variable hence creating the Gaussian Pyramid array.
 for j in range(10):#Providing room for iteration.
     layer = cv2.pyrDown(layer)
     gp.append(layer)
@@ -142,13 +146,13 @@ cv2.destroyAllWindows()
 ```
 
 Your output should match the bellow image.
-![low](/engineering-education/how-to-adjust-image-to-higher-or-lower-resolution-using-python/low.jpg)
+![low](/engineering-education/image-adjustment-to-higher-or-lower-resolution-using-python/low.jpg)
 
 ## Instance #2
-### Scaling up the images to higher resolution.
-Once you increase the resolution of an already lowered resolution it will not go back to its original form since lowering the resolution losses some information about the image using the pyrDown method. Hence the reults looks alittle blurred. Note that this is different from scaling up an original image.
+### Scaling up the images to higher resolutions.
+Once you increase the resolution of an already lowered resolution it will not go back to its original form since lowering the resolution losses some information about the image using the `pyrDown` method. Hence the reults looks alittle blurred. Note that this is different from scaling up an original image.
 
-```python
+```py
 import cv2
 import numpy as np
 img = cv2.imread("sean.jpg")
@@ -172,13 +176,13 @@ cv2.destroyAllWindows()
 ```
 
 The output should be similar to the bellow image:
-![high](/engineering-education/how-to-adjust-image-to-higher-or-lower-resolution-using-python/high.jpg)
+![high](/engineering-education/image-adjustment-to-higher-or-lower-resolution-using-python/high.jpg)
 
 ## Instance #3
-To construct the Laplacian pyramid Super-Resolution Network, we will be taking the top level layer of the Gausian Pyramid which is the last image generated using the loop function then create a list for the Laplacian pyramid then create the extended version of the upper level of the Gausian Pyramid.
+To construct the Laplacian pyramid Super-Resolution Network, we will be taking the top-level layer of the Gaussian Pyramid which is the last image generated using the loop function then create a list for the Laplacian pyramid then create the extended version of the upper level of the Gaussian Pyramid.
 To understand it better a code snippet will do:
 
-```python
+```py
 import cv2
 img = cv2.imread("sean.jpg")
 layer = img.copy()
@@ -203,13 +207,13 @@ cv2.destroyAllWindows()
 
 Confirm with the below displayed:
 
-![lapsn](/engineering-education/how-to-adjust-image-to-higher-or-lower-resolution-using-python/lapsn.png)
+![lapsn](/engineering-education/image-adjustment-to-higher-or-lower-resolution-using-python/lapsn.png)
 
-The Laplacian pyramid and the Gausian Pyramid is applied in the blending and reconstruction of the images.
+The Laplacian pyramid and the Gaussian Pyramid are applied in the blending and reconstruction of the images.
 
 ### Application fields for adjusting image resolution
 - **Applied in the field of Astronomy**: This is achieved by focusing on tiny information of images to higher resolutions that bring out clearer vision.
-- **Closed Circuit Television**: Feeds received from the CCTV footage can be focused to get more clearer images by resolving and fixing the colors where possible.
+- **Closed Circuit Television**: Feeds received from the CCTV footage can be focused to get clearer images by resolving and fixing the colors where possible.
 - **Medicine**: Images received from scans such as the X-Rays require adjustment of resolutions to provide detailed and accurate information.
 
 ### Conclusion
