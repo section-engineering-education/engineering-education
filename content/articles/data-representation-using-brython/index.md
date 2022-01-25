@@ -150,10 +150,10 @@ The implementation of the aforementioned steps, our HTML file is as below:
 ```
 
 #### Creating a pie chart using Brython.
-In statistics, a pie chart is a `circular` graph divided into pieces to show numerical proportions. In this section, we'll guide you on how to create a pie chart using Brython. To build the pie chart, we create a Python file called chart.py. As we progress, this file will contain some necessary code required in building our pie chart. Let us get started!🚀.
+In statistics, a pie chart is a `circular` graph divided into pieces to show numerical proportions. In this section, we will guide the reader on how to create a pie chart using Brython. To build the pie chart, we will create a Python file called `chart.py.` As we progress, this file will contain some necessary code required in building our pie chart. Let's get started!🚀.
 
 ##### Chart.py file
-Having created our `chart.py` file, We import this file into our boilerplate using the script tag and set the type attribute to `"text/python3"`. This file is imported into our HTML boilerplate using the script tag below:
+We will create the `chart.py` file. After creating the file, we import this file into our boilerplate using the script tag and set the type attribute to `"text/python3"`. This file is imported into our HTML boilerplate using the script tag below:
 ```html
 <!-- chart.py -->
 <script type="text/python3" src="chart.py"></script>
