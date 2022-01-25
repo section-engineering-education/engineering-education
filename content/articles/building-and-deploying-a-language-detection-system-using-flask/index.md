@@ -10,7 +10,7 @@ date: 2022-01-25T00:00:00-10:40
 topics: [Machine Learning]
 excerpt_separator: <!--more-->
 images:
-  - url: /building-and-deploying-a-language-detection-system-using-flask/hero.jpg
+  - url: /engineering-education/building-and-deploying-a-language-detection-system-using-flask/hero.jpg
     alt: Building a Flask language detection system Hero Image
 ---
 With more than a thousand languages being used today, communication between people of different native languages is crucial. That is why companies like Google are applying Natural Language Processing(NLP) into their products like language detection on Chrome browser, to give users a smooth experience.
