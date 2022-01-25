@@ -11,10 +11,10 @@ topics: [Machine Learning]
 excerpt_separator: <!--more-->
 images:
   - url: /engineering-education/building-and-deploying-a-language-detection-system-using-flask/hero.jpg
-    alt: Building a Flask language detection system Hero Image
+    alt: Flask language detection system Hero Image
 ---
 With more than a thousand languages being used today, communication between people of different native languages is crucial. That is why companies like Google are applying Natural Language Processing(NLP) into their products like language detection on Chrome browser, to give users a smooth experience.
- <!--more-->
+<!--more-->
 
 Language detection is a task in Natural Language Processing (NLP) that identifies the language of a given text or phrase and provides its translation.
 
