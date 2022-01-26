@@ -4,9 +4,9 @@ status: publish
 published:
 url: /implementing-africa-talking-sms-api-using-nodejs/
 title: Implementing Africa's Talking SMS API using Node.js
-description: This article will guide the reader on how to incorporate Africa Talking API in a RESTful API. This framework allows one to send and receive SMSes. 
+description: This article will guide the reader on how to incorporate Africa Talking API in a RESTful API. This framework allows one to send and receive SMSes.
 author: kennedy-mwangi
-date: 2022-01-11T01:00:00-17:40
+date: 2022-01-26T01:00:00-10:45
 topics: [Security]
 excerpt_separator: <!--more-->
 images:
@@ -14,7 +14,7 @@ images:
   - url: /engineering-education/implementing-africa-talking-sms-api-using-nodejs/hero.jpg
     alt: Implementing Africa's talking SMS API using Node.js Hero Image
 ---
-In this article, we will implement Africa's Talking SMS API on a RESTful API using TypeScript and Node.js. 
+In this article, we will implement Africas Talking SMS API on a RESTful API using TypeScript and Node.js.
 <!--more-->
 Africa's Talking SMS API is an infrastructure provided by [Africa's Talking](https://africastalking.com/) to enable software platforms to communicate with their users through SMS.
 
@@ -22,7 +22,6 @@ By the end of this article, we will have created a RESTful API that sends a mess
 
 ### Prerequisites
 To follow along with this tutorial, you need:
-
 - Some basic knowledge of TypeScript.
 - [Node.js](https://nodejs.org/en/) installed on your computer.
 
@@ -35,29 +34,16 @@ To follow along with this tutorial, you need:
 - [Conclusion](#conclusion)
 
 ### Setting up an account
-If you already have an account with Africa's Talking:
+If you already have an account with Africa's Talking login from [here](https://account.africastalking.com/auth/login). On the redirected [page](https://account.africastalking.com/), click on [Go to sandbox app](https://account.africastalking.com/apps/sandbox)
 
-- Login from [here](https://account.africastalking.com/auth/login).
+If you don't have an account, visit the registration page from [here](https://account.africastalking.com/auth/register), enter the required details and click *Register*.
 
-- On the redirected [page](https://account.africastalking.com/) click on [Go to sandbox app](https://account.africastalking.com/apps/sandbox)
-
-Else, if you don't have an account, follow the below steps:
-
-- Visit the registration page from [here](https://account.africastalking.com/auth/register).
-
-- Enter the required details and click *Register*.
-
-- Verify your email address by clicking on the link sent to your email address.
-
-- On the redirected dashboard [page](https://account.africastalking.com/), click on [Go to sandbox app](https://account.africastalking.com/apps/sandbox).
+Verify your email address by clicking on the link sent to your email address. On the redirected dashboard [page](https://account.africastalking.com/), click on [Go to sandbox app](https://account.africastalking.com/apps/sandbox).
 
 ### Setting up the Node.js application
 We will use the following third-party packages:
-
 - [ngrok](https://www.npmjs.com/package/ngrok): For exposing our local development server to Africa's Talking SMS API.
-
 - [express](https://www.npmjs.com/package/express): For setting up the RESTful architecture using Node.js. Express is preferred due to its simplicity and efficiency.
-
 - [africastalking-ts](https://www.npmjs.com/package/africastalking-ts): For consuming Africa's Talking SMS API with TypeScript support.
 
 Proceed to your desired project location and run the following command to initialize your node project with default configurations:
@@ -75,7 +61,7 @@ npm i ngrok express africastalking-ts
 To enable TypeScript support on our project, install the following `dev` dependencies:
 
 ```bash
-npm i --save-dev @types/express @types/node ts-node typescript 
+npm i --save-dev @types/express @types/node ts-node typescript
 ```
 
 In *package.json*, under *scripts*, add the following:
@@ -104,7 +90,7 @@ Import *express* with the corresponding types: *Application*, *Request*, and *Re
 
 ```ts
 import express,{Application,Request,Response} from 'express';
-```    
+```
 
 Next, import *Client* from the *africastalking* package:
 
@@ -123,7 +109,7 @@ const africasTalking = new Client({
 
 To get your API key:
 
-Navigate to your [Sandbox's page](https://account.africastalking.com/apps/sandbox), on the left menu, click on *Settings* and then *API Key*. 
+Navigate to your [Sandbox's page](https://account.africastalking.com/apps/sandbox), on the left menu, click on *Settings* and then *API Key*.
 
 Enter your password and then click *Generate*. Copy the generated *API Key* and paste it into the above code.
 
@@ -162,14 +148,11 @@ app.get('/send-a-message', (req:Request, res:Response) => {
 })
 ```
 
-In the above code, we are calling the *sendSMS* function from *africasTalking* client on a *try/catch* block since it is *promise-based*.
+In the above code, we are calling the *sendSMS* function from *africasTalking* client on a *try/catch* block since it's *promise-based*.
 
 Inside the *sendSMS* function, we are sending the following parameters:
-
 - *to*: The Recipient's mobile phone number. Ensure you include your country code.
-
 - *message*: Short message you wish to deliver.
-
 - *shortcode/alphanumeric*: A shortcode is meant for sending and receiving messages whereas an alphanumeric is meant for only sending messages. To generate a shortcode:
 
 Navigate to your [sandbox app](https://account.africastalking.com/apps/sandbox). On the left pane, Click on *SMS*.
@@ -180,7 +163,7 @@ Enter your preferred *Shortcode* ranging from `4` to `5` digits and submit it. O
 
 In case you wish to create an alphanumeric, follow the same steps as in the prior step using the `shortcode`.
 
-Click on *Alphanumerics* and then on [*Create alphanumeric*](https://account.africastalking.com/apps/sandbox/sms/alphanumerics/create). 
+Click on *Alphanumerics* and then on [*Create alphanumeric*](https://account.africastalking.com/apps/sandbox/sms/alphanumerics/create).
 
 Enter any preferred alphanumeric and then click *Submit*. Once successfully created, it should be listed in the table.
 
@@ -198,7 +181,7 @@ Run the following command to start the development server:
 npm run start
 ```
 
-To view the message sent, we must launch the simulator. Navigate back to your [sandbox page](https://account.africastalking.com/apps/sandbox) and on the left pane, click on *Launch Simulator*. 
+To view the message sent, we must launch the simulator. Navigate back to your [sandbox page](https://account.africastalking.com/apps/sandbox) and on the left pane, click on *Launch Simulator*.
 
 In the proceeding popup, enter your phone number and then click *Launch*. You will receive a phone simulator with the following interface:
 
@@ -210,17 +193,17 @@ From your browser, visit *http://localhost:3000/send-a-message*. If everything i
 
 You will also see a new message in the simulator:
 
-![simulator-new-message](/engineering-education/implementing-africa-talking-sms-api-using-nodejs/simulator-new-message.PNG)
+![simulator-new-message](/engineering-education/implementing-africa-talking-sms-api-using-nodejs/simulator-new-message.png)
 
 If you got an error, please revisit the above steps.
 
-### Receiving an SMS 
+### Receiving an SMS
 We first need to add a route to listen to incoming messages:
 
 ```ts
 app.post('/incoming-messages', (req:Request,res:Response) => {
     const data = req.body;
-    console.log(`Received message \n`,data); 
+    console.log(`Received message \n`,data);
     res.sendStatus(200);
 });
 ```
@@ -243,7 +226,7 @@ To receive an SMS, we will need to add a *callback*. The *callback* will be our 
 
 Copy the *HTTPS URL* that is logged when you started ngrok e.g *https://e9ab-102-222-146-62.ngrok.io*
 
-From your [Sandbox page](https://account.africastalking.com/apps/sandbox), on the left pane, click on *SMS*. 
+From your [Sandbox page](https://account.africastalking.com/apps/sandbox), on the left pane, click on *SMS*.
 
 In the resulting dropdown, click on *SMS Callback URLs*, and then click *Incoming Messages*.
 
@@ -253,16 +236,16 @@ To receive the incoming message, we will have to send a test message. You must a
 
 Ensure that you have launched your simulator.
 
-Click on the *SMS* tab on the simulator. In the resulting screen, click on the floating action button and then select *New message*. 
+Click on the *SMS* tab on the simulator. In the resulting screen, click on the floating action button and then select *New message*.
 
 Enter your shortcode on the *To* input, and then your *Message* below, and then hit *Send*. In your console, you should receive data with a similar format as shown below:
 
 ```js
-{     
+{
   linkId: 'specific-link-id',
   text: 'your-message',
   to: 'your-shortcode',
-  id: 'specific message id',    
+  id: 'specific message id',
   date: 'date sent',
   from: 'your-phone-number'
 }
@@ -291,7 +274,7 @@ Restart your development server by pressing *CTRL+C* and then running the comman
 npm run dev
 ```
 
-Copy the *HTTPS* URL you used in the previous step and proceed to your [Sandbox page](https://account.africastalking.com/apps/sandbox). On the left pane, click on *SMS*, *SMS Callback URLs*, and then *Delivery Reports*. 
+Copy the *HTTPS* URL you used in the previous step and proceed to your [Sandbox page](https://account.africastalking.com/apps/sandbox). On the left pane, click on *SMS*, *SMS Callback URLs*, and then *Delivery Reports*.
 
 In the next form, paste the *HTTPS* link and append */delivery-reports*. Then click *Submit*.
 
