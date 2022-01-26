@@ -1,4 +1,3 @@
-
 ---
 layout: engineering-education
 status: publish
@@ -83,10 +82,10 @@ Doppler is a fault-tolerant, managed, multi-infrastructure service that gives de
 
 ### Doppler CLI/Doppler Dashboard
 
-[Doppler CLI](https://docs.doppler.com/docs/cli) is a lightweight installable file that provides a consistent experience between developing locally and production. Whether working locally or in a production environment, you can initiate your application's secrets using the "`bash doppler run` "command. This will execute your application, with your latest secrets being injected into your working environment.
+[Doppler CLI](https://docs.doppler.com/docs/cli) is a lightweight installable file that provides a consistent experience between developing locally and production. Whether working locally or in a production environment, you can initiate your application's secrets using the ```bash doppler run``` command. This will execute your application, with your latest secrets being injected into your working environment.
 Installing Doppler CLI requires package managers such as [scoop](https://scoop.sh/).To reach the Doppler's scoop repository for installation, run the script below in a command prompt. 
 
-"`bash
+```bash
 scoop bucket add doppler https://github.com/DopplerHQ/scoop-doppler.git
 ```
 Example: ![Connecting to Doppler Repo](/engineering-education/introduction-to-secrets-management-with-doppler/scoop.png).
@@ -94,7 +93,7 @@ Example: ![Connecting to Doppler Repo](/engineering-education/introduction-to-se
 
 After the Doppler bucket is successfully added, you'll install Doppler CLI through the script below:
 
-"`bash
+```bash
 scoop install doppler
 ```
 
@@ -134,7 +133,7 @@ Example: ![URL Secret Example](/engineering-education/introduction-to-secrets-ma
 
 You can connect the local project environment to your Doppler secrets through the Doppler CLI. Navigate to the existing local project folder within your terminal or code editor and run the snippet below. The command will set up your current Doppler project in the local development environment.
 
-"`bash
+```bash
 doppler setup 
 ``` 
 Example: ![Set Up](/engineering-education/introduction-to-secrets-management-with-doppler/local_configs.png)
@@ -145,11 +144,11 @@ Example: ![Project](/engineering-education/introduction-to-secrets-management-wi
 
 From here, you can see your project and its environment, whether dev, prod, or staging. Next, we will access secrets stored in the Doppler project. To get this done, run the following commands in the terminal.
 First, run,
-"`bash
+```bash
 doppler secrets --only-names
 ```
 then run 
-"`bash
+```bash
 doppler secrets 
 ``` 
 All secrets stored will be as shown in the screenshot below.
