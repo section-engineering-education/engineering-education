@@ -2,9 +2,7 @@ Object Relation Mapping(ORM) is a technique for storing, retrieving, updating, a
 
 An ORM helps us create data schemas and relationships within an application such that whenever we need to change a specific database field, we only do it in our application with just a few lines of code. 
 
-An ORM helps us avoid the hectic work of recreating our databases every time to match the new database structure.
-
-The concept of ORM is widely supported by many languages such as Rust, JavaScript, and Python. Rust, for example, uses the [Diesel](https://docs.rs/diesel/1.0.0/diesel/) framework to help you write schema queries within your Rust application.
+An ORM helps us avoid the hectic work of recreating our databases every time to match the new database structure.The concept of ORM is widely supported by many languages such as Rust, JavaScript, and Python. Rust, for example, uses the [Diesel](https://docs.rs/diesel/1.0.0/diesel/) framework to help you write schema queries within your Rust application.
 
 In his article, we will learn about ORM and how to use it in Rust together with  Diesel. Then, we will create a Rust API server that uses Diesel to connect to the PostgreSQL database. Finally, we will generate and retrieve the application's data stored in the database.
 
