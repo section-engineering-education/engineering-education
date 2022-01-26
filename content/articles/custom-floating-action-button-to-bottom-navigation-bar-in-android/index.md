@@ -2,16 +2,16 @@
 layout: engineering-education
 status: publish
 published: true
-url: /adding-custom-floating-action-button-to-bottom-navigation-bar-in-android/
-title: Adding a Custom Floating Action Button to Bottom Navigation Bar in Android
-description: This tutorial will help the reader understand how to add a floating action button to the bottom navigation bar in Android.. 
-author: 
+url: /custom-floating-action-button-to-bottom-navigation-bar-in-android/
+title: Adding a Floating Action Button to Bottom Navigation Bar in Android
+description: This tutorial will help the reader understand how to add a floating action button to the bottom navigation bar in Android.
+author: jackline-adhiambo
 date: 2022-01-25T00:00:00-04:54
 topics: [Languages]
 excerpt_separator: <!--more-->
 images:
 
-  - url: /engineering-education/adding-custom-floating-action-button-to-bottom-navigation-bar-in-android/
+  - url: /engineering-education/custom-floating-action-button-to-bottom-navigation-bar-in-android/
     alt: Custom Floating Action Button to Bottom Navigation Bar in Android Hero Image
 ---
 Triggering actions is a critical factor to consider while designing an Android app. In most cases, buttons help to fulfill this purpose.
@@ -37,14 +37,14 @@ At the end of this tutorial, the reader will understand how to use material desi
 
 Our final UI should look as follows:
 
-![UI](/engineering-education/adding-custom-floating-action-button-to-bottom-navigation-bar-in-android/ui.jpg)
+![UI](/engineering-education/custom-floating-action-button-to-bottom-navigation-bar-in-android/ui.jpg)
 
 ### Step 1 - Creating a new project
 To create a new project in Android Studio, go to *File > New > New Project > Empty Activity*, as shown below:
 
-![Creating a project](/engineering-education/adding-custom-floating-action-button-to-bottom-navigation-bar-in-android/creating_project.jpg)
+![Creating a project](/engineering-education/custom-floating-action-button-to-bottom-navigation-bar-in-android/creating_project.jpg)
 
-Give the project a descriptive name, such as *FloatingActionButton*, and then select Kotlin as your preferred programming language. Finally, click *Finish* to complete the project.
+Give the project a descriptive name, such as *FloatingActionButton*, and then select *Kotlin* as your preferred programming language. Finally, click *Finish* to complete the project.
 
 ### Step 2 - Adding Material design dependencies
 To add Material design dependencies, navigate to the app level *build.Gradle* file. Under *plugins* add `id 'kotlin-android-extensions` then under dependencies, add the material design dependencies as shown below, and then click on *Sync*:
@@ -53,7 +53,7 @@ To add Material design dependencies, navigate to the app level *build.Gradle* fi
 implementation 'com.google.android.material:material:1.3.0-alpha03' 
 ```
 
-### Step 3 - Creating a menu for BottomNavigationView
+### Step 3 - Creating a menu for the BottomNavigationView
 To create an *Android Resource* file, navigate to the *res* directory and create a new *Android Resource* file. 
 
 Choose *menu* as your preferred *Resource Type* and give a descriptive file name such as `bottom_menu_nav`, then click *Ok*. Use the following code to assemble your menu:
@@ -85,7 +85,7 @@ Let's add some icons to our *BottomNavigationView*. We will use *five* icons, *f
 
 To achieve this, navigate to the *res* directory, *right-click* on *drawable*, then choose *New > Vector Asset* from the menu:
 
-![Icons](/engineering-education/adding-custom-floating-action-button-to-bottom-navigation-bar-in-android/adding_vectors_asset.jpg)
+![Icons](/engineering-education/custom-floating-action-button-to-bottom-navigation-bar-in-android/adding_vectors_asset.jpg)
 
 Proceed to the *clip art* icon and then click it. Search for a *home* icon, then choose it and change the name to *ic_home_bnb*. Finally, click *Next* and *Finish* to complete the process.
 
@@ -94,9 +94,9 @@ Follow the same procedure and add the remaining *search, person, setting*, and *
 > Note that you can add icons that best fit your needs
 
 ### Step 5 - Designing the user interface with FAB
-The user interface allows users to interact with the program. It is vital to have an appealing UI design. In our case, the application interface should look as follows:
+The user interface allows users to interact with the app. It is vital to have an appealing UI design. In our case, the application interface should look as follows:
 
-![UI](/engineering-education/adding-custom-floating-action-button-to-bottom-navigation-bar-in-android/ui.jpg)
+![UI](/engineering-education/custom-floating-action-button-to-bottom-navigation-bar-in-android/ui.jpg)
 
 The floating action button's background should contrast with the application's color scheme. We can do this by customizing the button's color using the `color accent` attribute.  
 
@@ -114,9 +114,9 @@ bottomNavView.background = null
 ```
 
 ### Step 7 - MainActivity.kt Class
-The following bottomnavigation code and floating button implementation should be included in the *MainActivity.kt* file, as illustrated below:
+The following bottom navigation code and floating button implementation should be included in the *MainActivity.kt* file, as illustrated below:
 
-```kotlin
+```kt
 class MainActivity : AppCompatActivity() {   
     //declare a variable  
   private lateinit var floatingActionButton: FloatingActionButton  
@@ -146,8 +146,8 @@ We also learned how to create a bottom navigation bar and incorporate a floating
 You can access the full code from this [GitHub repository](https://github.com/jackline-ke/FloatingActionButton2).
 
 ### Further reading
--[Material design](https://material.io/components/app-bars-bottom)
--[Android Developers](https://developer.android.com/guide/topics/ui/floating-action-button)
+- [Material design](https://material.io/components/app-bars-bottom)
+- [Android Developers](https://developer.android.com/guide/topics/ui/floating-action-button)
 
 ---
 Peer Review Contributions by: [Wanja Mike](/engineering-education/authors/michael-barasa/)
