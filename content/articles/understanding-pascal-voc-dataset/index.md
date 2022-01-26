@@ -6,7 +6,7 @@ url: /understanding-pascal-voc-dataset/
 title: Understanding PASCAL VOC Dataset
 description: This article will introduce the reader to PASCAL VOC dataset. We will also implement a simple dataset validator using Python.
 author: srishilesh-p-s
-date: 2022-01-26T00:00:00-00:00
+date: 2022-01-26T00:00:00-01:00
 topics: [Machine Learning]
 excerpt_separator: <!--more-->
 images:
@@ -109,36 +109,36 @@ The absolute path where the image file is present.
 
 Here, we have all the image files present under the absolute path `MARMOT_ANNOTATION/10.1.1.1.2006_3.bmp`.
 
-##### `source`
+##### source
 Specifies the original location of the file in a database.
 
 Since we do not use a database, it is set to `Unknown` by default.
 
-##### `size`
+##### size
 Specifies the `width`, `height`, `depth` of an image.
 
 As you can see the image is `793` pixels wide, `1123` pixels tall, and `3` pixels deep.
 
 > In images, usually, `depth` field represents the RGB color scale i.e. 3.
 
-##### `segmented`
+##### segmented
 This field signifies if the images contain annotations that are non-linear (irregular) in shape - commonly referred to as polygons.
 
 By default, the `segmented` value is set as `0` (linear shape).
 
-##### `object: name`
+##### object: name
 This field specifies the name of the annotated label. Here, the label is a `column`.
 
-##### `object: pose`
+##### object: pose
 Specifies the skewness or orientation of the image. By default, it is specified as `Unspecified`, which means that the image is not skewed.
 
-##### `object: truncated`
+##### object: truncated
 Tells if an object is fully or partially visible (can be either 0 or 1 respectively).
 
-##### `object: difficult`
+##### object: difficult
 Tells if an object is difficult to recognize from an image (can be either 0 - easy or 1 - difficult).
 
-##### `object: bndbox`
+##### object: bndbox
 These are coordinates that determine the location of the object.
 
 These coordinates are represented as `[xmin, ymin, xmax, ymax]` where they correspond to `(x, y)` coordinates of top-left and bottom-right positions of an object.
