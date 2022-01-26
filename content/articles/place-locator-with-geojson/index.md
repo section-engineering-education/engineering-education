@@ -6,7 +6,7 @@ url: /place-locator-with-geojson/
 title: Building a Place Locator using GeoJson and Javascript
 description: This article will walk the reader through the use of GeoJson to build a place locator application using GeoJson, MongoDB, Mapbox and Javascript.
 author: jamila-laureen
-date: 2022-01-25T00:00:00-01:45
+date: 2022-01-26T00:00:00-01:45
 topics: [Languages]
 excerpt_separator: <!--more-->
 images:
