@@ -3,10 +3,10 @@ layout: engineering-education
 status: publish
 published: true
 url: /image-handling-and-cropping-component-in-react.js/
-title: Creating image handling and cropping component in React.js
+title: Creating Image Handling and Cropping Component in React.js
 description: In this tutorial, we will discuss the operations, logic, and dependencies required to create an image handler and cropper in React.js.
 author: fred-benson
-date: 2022-01-14T00:00:00-10:50
+date: 2022-01-26T00:00:00-10:50
 topics: [Languages]
 excerpt_separator: <!--more-->
 images:
@@ -29,12 +29,12 @@ By the end of this tutorial, the reader will understand:
 - Error handling in image management.
 
 ### Prerequisites
-To follow along with this tutorial, basic knowledge of React.js and CSS is required. Also, I recommend using Visual Studio Code as the preferred text editor. 
+To follow along with this tutorial, basic knowledge of React.js and CSS is required. Also, I recommend using Visual Studio Code as the preferred text editor.
 
 Here is a link to download [Visual Studio Code](https://code.visualstudio.com/download) for free. You may also enroll in a [React crash course](https://scrimba.com/learn/learnreact) by Scrimba for free if you are not comfortable with React.js.
 
 ### Getting started with React.js development cycle
-React development cycle is pretty straightforward. React gets you started with a clean slate boilerplate for your code snippets with all the default dependencies installed. A simple bash command will bootstrap the `react-app` for you. 
+React development cycle is pretty straightforward. React gets you started with a clean slate boilerplate for your code snippets with all the default dependencies installed. A simple bash command will bootstrap the `react-app` for you.
 
 Open up the command terminal on your computer and run the command below to create a new React application:
 
@@ -42,7 +42,7 @@ Open up the command terminal on your computer and run the command below to creat
 npx create-react-app image-app-demo
 ```
 
-Or, yarn users can use:
+Yarn users can use:
 
 ```bash
 yarn create-react-app image-app-demo
@@ -57,17 +57,17 @@ cd image-app-demo
 npm start
 ```
 
-Or, for yarn users:
+For yarn users:
 
 ```bash
 cd image-app-demo
 yarn start
 ```
 
-If correctly implemented, a new tab will open up on your default browser and a React landing page will be displayed on http://localhost:3000.
+If correctly implemented, a new tab will open up on your default browser and a React landing page will be displayed on [http://localhost:3000](http://localhost:3000).
 
 ### Image optimization in React.js
-To frontend web developers, image optimization involves the various techniques used to improve image rendering and upload. It involves cropping, compression, resizing, and other best practices. 
+To frontend web developers, image optimization involves the various techniques used to improve image rendering and upload. It involves cropping, compression, resizing, and other best practices.
 
 We will be looking at the cropping and compression techniques in this article. We will go through the steps and processes involved in performing the following:
 - Building an image cropping component with React and `react-image-crop`.
@@ -86,7 +86,7 @@ To install the `react-image-crop` package in our project, we open up the `comman
 npm install react-image-crop
 ```
 
-Or, for yarn users:
+For yarn users:
 
 ```bash
 yarn add react-image-crop
@@ -95,11 +95,11 @@ yarn add react-image-crop
 Once it is completed, we will import and use the package in our project.
 
 #### Step 2 – Setting up the cropping component (App.js)
-The component will allow a user to select an image file from their local device. Thereafter, the user can go ahead and crop the image to their desired dimensions. 
+The component will allow a user to select an image file from their local device. Thereafter, the user can go ahead and crop the image to their desired dimensions.
 
 Uploading the cropped image is not covered in this article, but platforms like [Cloudinary](https://cloudinary.com/) provide cloud-based services which you could utilize for image upload. Feel free to check up on their free and paid services.
 
-To create an image cropping component, in the `App.js` file, we use the code snippet below:
+To create an image cropping component, in the `App.js` file, paste the code snippet below:
 
 ```JavaScript
 import React, { useState } from "react";
@@ -207,12 +207,12 @@ export function ImageCropper() {
 }
 ```
 
-From the code snippet above we:
+From the code snippet above, we:
 - Imported and used `ReactCrop` from the `react-image-crop` package installed earlier.
 - Used an `input` tag to allow the user to select a file for cropping.
 - To prevent multiple files selection, we added the `multiple={false}` flag.
 - Created the `allowedFileTypes` constant to specify the allowed file types which the user can upload which included gif, png, jpeg, and x-png.
-- We defined some default arguments such as `aspect`, `height`, `unit`, `width`, etc. which we will use in the image cropping and reconstruction process.
+- Defined some default arguments such as `aspect`, `height`, `unit`, `width`, etc. which we will use in the image cropping and reconstruction process.
 - We also created some functions which included `handleFileChange` that accepts files. With the help of the `FileReader` method, we loaded the image to the `ReactCrop` component for cropping.
 
 The second part of the code snippet covered the cropping operation. In that part, we did the following:
@@ -226,9 +226,9 @@ Save the changes and open up the browser to test out the `ImageCropper` componen
 ### Image optimization and resizing with CSS
 Large image files may display beyond the allowed container size thereby distorting the page layout. Image overflow may also be displayed on top of another page element if unchecked, and we do not want that to happen.
 
-A simple CSS trick to optimize and reduce the file size of an image is to perform a resizing operation. Also, hiding the image overflow helps check outsized image display. 
+A simple CSS trick to optimize and reduce the file size of an image is to perform a resizing operation. Also, hiding the image overflow helps check outsized image display.
 
-Let us run an example code snippet to show how it is achieved.
+Let us run an example code snippet to show how it is achieved:
 
 ```JavaScript
 import React from "react";
@@ -273,20 +273,20 @@ In the CSS file (App.css), copy and paste the code snippet below:
 }
 ```
 
-In the CSS snippet above, we targeted the `classNames` assigned earlier to our page elements and added some styles. We prevented the image overflow from going beyond the container by adding the `overflow:hidden` flag. 
+In the CSS snippet above, we targeted the `classNames` assigned earlier to our page elements and added some styles. We prevented the image overflow from going beyond the container by adding the `overflow:hidden` flag.
 
 Finally, we resized the image `height` and `width` to ensure it is properly displayed.
 
 ### Conclusion
-In this article, we used the React.js alongside `react-image-crop` package to create an image cropping component. This component is capable of cropping an image to the size desired by the user. We also looked at how to specify the acceptable file type a user can upload and prevent multiple files selection. 
+In this article, we used the React.js alongside `react-image-crop` package to create an image cropping component. This component is capable of cropping an image to the size desired by the user. We also looked at how to specify the acceptable file type a user can upload and prevent multiple files selection.
 
 Finally, we explored the ways to optimize image display in CSS. I hope this article was helpful to your web development journey.
 
 Happy coding!
 
 ### References
-https://www.geeksforgeeks.org/resize-image-proportionally-with-css/
-https://www.npmjs.com/package/react-image-crop
+[https://www.geeksforgeeks.org/resize-image-proportionally-with-css/](https://www.geeksforgeeks.org/resize-image-proportionally-with-css/)
+[https://www.npmjs.com/package/react-image-crop](https://www.npmjs.com/package/react-image-crop)
 
 ---
 Peer Review Contributions by: [Dawe Daniel](/engineering-education/authors/dawe-daniel/)
