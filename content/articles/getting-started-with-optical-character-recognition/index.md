@@ -6,7 +6,7 @@ url: /getting-started-with-optical-character-recognition/
 title: Getting Started with Optical Character Recognition
 description: This tutorial will help the reader understand how to extract text from images and visualize these results using the OpenCV library.
 author: lilian-cheptoo
-date: 2022-01-15T00:00:00-21:00
+date: 2022-01-25T00:00:00-02:13
 topics: [Machine Learning]
 excerpt_separator: <!--more-->
 images:
@@ -19,7 +19,7 @@ Optical character recognition is a technology where each character on a page is 
 EasyOCR is a python package that makes it easy to perform optical character recognition. We'll use it to extract text from images. We will be able to visualize these results using OpenCV. 
 
 ### Prerequisites
-You need to:
+To follow along with this tutorial, you need to:
 - Be familiar with Machine Learning modeling.
 - Use either Jupyter Notebook or Google Colab.
 > We will use Google Colab for this tutorial.
@@ -53,7 +53,7 @@ import easyocr
 import numpy as np
 from matplotlib import pyplot as plt
 ```
-We've imported for things:
+We've imported four things:
 - `EasyOCR` is the main package that we will use to perform optical character recognition.
 - OpenCV as `cv2`. It will help us import our image and visualize it.
 - `Matplotlib` also helps in visualization.
@@ -76,7 +76,8 @@ Now that our image is loaded onto our notebook, let's use EasyOCR to go ahead an
 
 ### Using EasyOCR to extract text from our image
 First, we need to pass in the `easyocr` reader and pass in the language that we want to use. In our case, that'll be English.
-Secondly, using the `ocr_reader`, we pass in the `readtext` command and pass in our image. We save these results in a variable called `results`
+
+Secondly, using the `ocr_reader`, we pass in the `readtext` command and pass in our image. We save these results in a variable called `results`.
 
 ```python
 ocr_reader = easyocr.Reader(['en'])
