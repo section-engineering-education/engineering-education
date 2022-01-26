@@ -96,8 +96,7 @@ class Chart {
 }
 ```
 
-In this case, the adjacency list is defined by the class `Plot`, which is an instance of `Chart`. Generating, updating and searching 
-In the graph we can generate, update, and search. These are some of the ways we can utilize the graph data structure in. 
+In this case, the adjacency list is defined by the class `Plot`, which is an instance of `Chart`. In the graph we can generate, update, and search. These are some of the ways we can utilize the graph data structure in. 
 
 ### Common operations to implement in java
 
@@ -183,60 +182,52 @@ To discover the optimum answer, backtracking is at the heart of the Depth-first 
 ```java
 package plot;
 
-import java.io.*;   
-import java.util.*;     
-class Plot   
-{         
-private int Apexes;     
-private LinkedList<Integer> adjlist[];     
-Plot(int count_x)   
-{   
-Apexes = count_x;   
-adjlist = new LinkedList[count_x];     
-for (int i=0; i<count_x; ++i)   
-adjlist[i] = new LinkedList();   
-}     
-void addNewEdge(int x, int y)   
-{   
-adjlist[x].add(y);     
-}     
-void traversalDFS(int x, boolean vnodelist[])   
-{   
-vnodelist[x] = true;   
-System.out.print(x+" ");  
-Iterator<Integer> i = adjlist[x].listIterator();   
-while (i.hasNext())   
-{     
-int n = i.next();  
-if (!vnodelist[n])
-traversalDFS(n, vnodelist);   
+import java.io.*;
+import java.util.*;
+class Plot {
+    private int Apexes;
+    private LinkedList < Integer > adjlist[];
+    Plot(int count_x) {
+        Apexes = count_x;
+        adjlist = new LinkedList[count_x];
+        for (int i = 0; i < count_x; ++i)
+            adjlist[i] = new LinkedList();
+    }
+    void addNewEdge(int x, int y) {
+        adjlist[x].add(y);
+    }
+    void traversalDFS(int x, boolean vnodelist[]) {
+        vnodelist[x] = true;
+        System.out.print(x + " ");
+        Iterator < Integer > i = adjlist[x].listIterator();
+        while (i.hasNext()) {
+            int n = i.next();
+            if (!vnodelist[n])
+                traversalDFS(n, vnodelist);
+        }
+    }
+    void DFS(int v) {
+        boolean visited[] = new boolean[Apexes];
+        traversalDFS(v, visited);
+    }
 }
+public class DepthFirstSearch {
+    public static void main(String args[]) {
+        Plot p = new Plot(20);
+        p.addNewEdge(2, 4);
+        p.addNewEdge(4, 6);
+        p.addNewEdge(6, 8);
+        p.addNewEdge(8, 10);
+        p.addNewEdge(10, 14);
+        p.addNewEdge(16, 6);
+        p.addNewEdge(2, 10);
+        p.addNewEdge(10, 10);
+        p.addNewEdge(4, 12);
+        p.addNewEdge(6, 14);
+        System.out.println("This is the Depth-first traversal of graph: ");
+        p.DFS(2);
+    }
 }
-void DFS(int v)   
-{    
-boolean visited[] = new boolean[Apexes];      
-traversalDFS(v, visited);   
-}   
-}  
-public class DepthFirstSearch  
-{  
-public static void main(String args[])   
-{    
-Plot p = new Plot(20);   
-p.addNewEdge(2, 4);   
-p.addNewEdge(4, 6);   
-p.addNewEdge(6, 8);   
-p.addNewEdge(8, 10);   
-p.addNewEdge(10, 14);  
-p.addNewEdge(16, 6);   
-p.addNewEdge(2, 10);   
-p.addNewEdge(10, 10);   
-p.addNewEdge(4, 12);   
-p.addNewEdge(6, 14); 
-System.out.println("This is the Depth-first traversal of graph: ");  
-p.DFS(2);   
-}   
-} 
 ```
 
 **Output**
@@ -254,67 +245,58 @@ Breadth-first traversal (BFS) is the most used method to traverse a graph. Analy
 ```Java
 package plot;
 
-import java.util.*;     
-class Plot   
-{      
-private int Apexes;    
-private LinkedList<Integer> adjlist[];   
-Graph(int count_x)   
-{   
-Apexes = count_x;   
-adjlist = new LinkedList[count_x];     
-for (int i=0; i<count_x; ++i)           
-adjlist[i] = new LinkedList();   
-}     
-void addNewEdge(int x, int w)   
-{   
-adjlist[x].add(w);   
-}      
-void traversalBFS(int rnode)     
-{   
-boolean visitednode[] = new boolean[Apexes];     
-LinkedList<Integer> vnodelist = new LinkedList<Integer>();   
-visitednode[rnode]=true;     
-vnodelist.add(rnode);   
-while (vnodelist.size() != 0)    
-{    
-rnode = vnodelist.poll();   
-System.out.print(rnode+" ");      
-Iterator<Integer> i = adjlist[rnode].listIterator();   
-while (i.hasNext())  
-{        
-int n = i.next();    
-if (!visitednode[n])   
-{     
-visitednode[n] = true;    
-vnodelist.add(n);   
-}   
-}   
-}   
-}   
-}  
-public class BreadthFirstSearch   
-{   
-public static void main(String args[])   
-{    
-Plot plot = new Plot(20);       
-plot.addNewEdge(4, 10);   
-plot.addNewEdge(6, 10);   
-plot.addNewEdge(2, 4);   
-plot.addNewEdge(4, 8);   
-plot.addNewEdge(8, 2);   
-plot.addNewEdge(12, 4);   
-plot.addNewEdge(10, 12);   
-plot.addNewEdge(2, 12);   
-plot.addNewEdge(12, 6);   
-plot.addNewEdge(6, 2);   
-plot.addNewEdge(14, 6);   
-plot.addNewEdge(6, 14);   
-plot.addNewEdge(14, 10);     
-System.out.println("This is the Breadth-first traversal sequence: ");    
-plot.traversalBFS(4);   
-}   
-} 
+import java.util.*;
+class Plot {
+    private int Apexes;
+    private LinkedList < Integer > adjlist[];
+    Graph(int count_x) {
+        Apexes = count_x;
+        adjlist = new LinkedList[count_x];
+        for (int i = 0; i < count_x; ++i)
+            adjlist[i] = new LinkedList();
+    }
+    void addNewEdge(int x, int w) {
+        adjlist[x].add(w);
+    }
+    void traversalBFS(int rnode) {
+        boolean visitednode[] = new boolean[Apexes];
+        LinkedList < Integer > vnodelist = new LinkedList < Integer > ();
+        visitednode[rnode] = true;
+        vnodelist.add(rnode);
+        while (vnodelist.size() != 0) {
+            rnode = vnodelist.poll();
+            System.out.print(rnode + " ");
+            Iterator < Integer > i = adjlist[rnode].listIterator();
+            while (i.hasNext()) {
+                int n = i.next();
+                if (!visitednode[n]) {
+                    visitednode[n] = true;
+                    vnodelist.add(n);
+                }
+            }
+        }
+    }
+}
+public class BreadthFirstSearch {
+    public static void main(String args[]) {
+        Plot plot = new Plot(20);
+        plot.addNewEdge(4, 10);
+        plot.addNewEdge(6, 10);
+        plot.addNewEdge(2, 4);
+        plot.addNewEdge(4, 8);
+        plot.addNewEdge(8, 2);
+        plot.addNewEdge(12, 4);
+        plot.addNewEdge(10, 12);
+        plot.addNewEdge(2, 12);
+        plot.addNewEdge(12, 6);
+        plot.addNewEdge(6, 2);
+        plot.addNewEdge(14, 6);
+        plot.addNewEdge(6, 14);
+        plot.addNewEdge(14, 10);
+        System.out.println("This is the Breadth-first traversal sequence: ");
+        plot.traversalBFS(4);
+    }
+}
 ```
 
 **Output:**
