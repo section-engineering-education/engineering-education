@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /using-logistic-regression-in-pytorch-to-identify-handwritten-digits/
+url: /logistic-regression-for-digits-recognition-pytorch/
 title: Using Logistic Regression in PyTorch to Identify Handwritten Digits
 description: 
 author: masese-gavin
@@ -11,8 +11,8 @@ topics: [Machine Learning]
 excerpt_separator: <!--more-->
 images:
 
- - url: /engineering-education/implementing-gan-from-scratch/hero.jpg
-   alt: Implementing GANs example image
+ - url: /engineering-education/logistic-regression-for-digits-recognition-pytorch/hero.jpg
+   alt: Logistic Regression in PyTorch example image
 ---
 
 ### Introduction
@@ -50,7 +50,8 @@ import torchvision.transforms as transforms
 from torch.autograd import Variable
 
 ```
-After importing we shall now download and load our dataset to memory. This will be done in the following code:
+After importing, we download and load the dataset to memory. This will be done in the following code:
+
 ```Python
 # MNIST Dataset 
 train_dataset = dsets.MNIST(root ='./data',train = True, download = True)
@@ -72,11 +73,11 @@ batch_size = 100
 learning_rate = 0.001
 
 ```
-The image size that we will use for our image will be 28*28. This means that our input size will be 784. In addition, there are ten digits in this. Thus we can generate ten alternative results. In this way, `number_classes` will be set to ten. In addition, we'll run the full dataset through five iterations of training. 
+The image size we will use for our image will be 28*28. This means that our input size will be 784. In addition, there are ten digits in this. Thus we can generate ten alternative results. In this way, `number_classes` will be set to ten. In addition, we'll run the full dataset through five iterations of training. 
 
 Finally, we will train in small batches of 100 images each so that the software does not crash because of memory overflow. After that, we'll lay out our model in the following manner. 
 
-In this section, we'll define the forward pass after setting up our model as a subclass of __torch.nn.Module__. As we are building the code, we will not need to mention the softmax in the __forward()__ function because it will be determined internally during each forward run.
+In this section, we'll define the forward pass after setting up our model as a subclass of __torch.nn.Module__. As we are building the code, we need not mention softmax in the __forward()__ function. It will be determined internally during each forward run.
 ```Python
 class LogisticRegression(tn.Module):
     def __init__(self, input_size, num_classes):
@@ -88,10 +89,11 @@ class LogisticRegression(tn.Module):
         return out
 ```
 Now that our class has been established, we may create an instance.
-```Python
+
+```python3
 model = LogisticRegression(input_size, num_classes)
 ```
-### Building The Neural Network
+### Building the neural network
 Our loss function and optimizer are now set. As specified in the hyperparameters above, we'll use the [cross-entropy loss](https://en.wikipedia.org/wiki/Cross_entropy) and the [stochastic gradient descent algorithm](https://en.wikipedia.org/wiki/Stochastic_gradient_descent) for the optimizer.
 
 Let's build a new class for the network we're developing.
@@ -106,6 +108,7 @@ class NeuralNetwork(tn.Module):
       self.c2_drop = tn.Dropout2d()
       self.fch1 = tn.Linear(320, 50)
       self.fch2 = tn.Linear(50, 10)
+
    def forward(self, b):
       b = tF.relu(tF.max_pool2d(self.c1(b), 2))
       b = tF.relu(tF.max_pool2d(self.c2_drop(self.c2(b)), 2))
@@ -116,6 +119,7 @@ class NeuralNetwork(tn.Module):
       return tF.log_softmax(b)
 ```
 To get the network and the optimizer up and running;
+
 ```python
 criterion = tn.CrossEntropyLoss()
 network = NeuralNetwork()
@@ -124,6 +128,7 @@ opti = torch.optim.SGD(newmodel.parameters(), lr = reading_rate)
 We're ready to begin training now. Resetting all gradients to 0 will be the first step here, followed by a forward pass, the loss calculation, backpropagation, and updating weights. 
 
 Dataloader will load the individual batches. We set the gradients to zero using `optimizer.zero_grad().` The `backward()` call will now collect a new set of gradients which we propagate back into each of the network’s parameters using the `optimizer.step()`.
+
 ```python
 # Training the Model
 for epoch in range(num_epochs):
@@ -141,6 +146,7 @@ for epoch in range(num_epochs):
             print('Epoch: [% d/% d], Step: [% d/% d], Loss: %.4f'% (epoch + 1, num_epochs, i + 1, len(train_dataset) // batch_size, loss.data))
 ```
 Finally, we'll run the model through its paces using the code below.
+
 ```Python
 correct = 0
 total = 0
@@ -153,11 +159,11 @@ for images, labels in test_loader:
 
 print('Accuracy of the model on the 10000 test images: % d %%' % (
             100 * correct / total))
-
 ```
 To put it another way, I got 91 percent by following the steps, which is significantly lower than the current best model, which also uses a different type of neural network architecture.
 
 You can run the whole code [here](https://colab.research.google.com/drive/1eL6a4_QxAZxqLV83vJOsLkPF09hYwThn?usp=sharing)
+
 ### Extra information 
 Recognizing and classifying human handwritten numbers from various media (such as photographs, documents, and touch displays) is known as handwritten digit recognition (0-9). In deep learning, this has been a constant focus of the investigation.
 
@@ -171,8 +177,9 @@ With the help of Logistic Regression and PyTorch, we learned how the MNIST handw
 In the data folder, the MNIST dataset is initially downloaded. The hyperparameters are then set up, loaded into the environment, and built into a neural network. The logistic regression model can then be defined and used. The MNIST dataset is used here to train and test the model.
 
 Happy coding!
+
 ### References 
-1. [To see whole code click here](https://colab.research.google.com/drive/1eL6a4_QxAZxqLV83vJOsLkPF09hYwThn?usp=sharing)
+1. [To run the code, click here](https://colab.research.google.com/drive/1eL6a4_QxAZxqLV83vJOsLkPF09hYwThn?usp=sharing)
 2. [PyTorch](https://pytorch.org/)
 3. [Linear Regression](https://machinelearningmastery.com/linear-regression-for-machine-learning/)
 ---
