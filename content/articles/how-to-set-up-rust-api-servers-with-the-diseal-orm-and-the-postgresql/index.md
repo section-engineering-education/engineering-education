@@ -324,7 +324,7 @@ table! {
 }
 ```
 
-### Handling queries
+### Handling Queries
 We have set up Diseal and the queries that we need for the todos application to work. Now, we need to handle how the application will access these queries.
 
 Inside the `graphql_schema.rs`, add the libraries imports as follows;
@@ -394,7 +394,7 @@ query GetTodos{
 
 You should now receive todos now being fetched directly from the database.
 
-### Handling mutation
+### Handling Mutation
 Import `Insertable` from Diesel:
 
 ```rust
