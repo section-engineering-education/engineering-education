@@ -15,8 +15,7 @@ images:
     alt: Secrets example Image
 ---
 
-Items like API keys, database configurations, SSH credentials and many alike present a need for management and security.
-Without knowing the right tools or management methods, software developers often fail to keep their secrets safe, leading to poor secrets life cycle.
+Items like API keys, database configurations, SSH credentials and many alike present a need for management and security. Without knowing the right tools or management methods, software developers often fail to keep their secrets safe, leading to poor secrets life cycle.
 
 In this tutorial, we’ll learn about secrets and how to manage the secret keys.
 In the end, we’ll get to interact with the best tool/platform that you can use as a developer for managing secrets – Doppler.
