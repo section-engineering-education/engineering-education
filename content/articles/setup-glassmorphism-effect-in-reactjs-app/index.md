@@ -4,7 +4,7 @@ status: publish
 published: true
 url: /setup-glassmorphism-effect-in-reactjs-app/
 title: Setting up Glassmorphism Effect in ReactJs App
-description: This guide will walk the reader through setting up a React app that utilizes the glassmorphism effect.
+description: In this guide, we will build a basic login form card. We will then implement the glassmorphism effect to the card component using React.js
 author: moses-maina
 date: 
 topics: []
@@ -14,13 +14,14 @@ images:
  - url: /engineering-education/setup-glassmorphism-effect-in-reactjs-app/hero.png
    alt: Setting up a Glassmorphism Effect in ReactJs App
 ---
-Glassmorphism is an interface-based concept applied to web apps, websites, mobile apps, etc. Its commonly used in card-based interfaces. Glassmorphism creates glassy panels that float in the set background space. This creates a transparent background blur with frosted-glassy-like effects.
+Glassmorphism is an interface-based concept applied to web apps, websites, mobile apps, etc. Its commonly used in card-based interfaces.
+
+Glassmorphism creates glassy panels that float in the set background space. This creates a transparent background blur with frosted-glassy-like effects.
  <!--more-->
 In this guide, we will build a basic login form card. We will then implement the glassmorphism effect to the card component using React.js.
 
 ### Prerequisites
 It will be advantageous to have the following to fully understand this article:
-
 - Basic knowledge working with React.js and some basic understanding of using the Material UI
 - [Node.js](https://nodejs.org/en/) runtime installed on your computer.
 
@@ -244,7 +245,9 @@ Once you have added the above, head over to your browser `http://localhost:300` 
 ![form-with-glassmorphism-effect](/engineering-education/setup-glassmorphism-effect-in-reactjs-app/form-with-glassmorphism-effect.png)
 
 ### Conclusion
-Glassmorphism can be implemented in any application of your choice. This guide helped you implement a glassmorphism effect in React.js. It is an incredible artwork to add to your applications. However, it can be misused when overused. When used in inappropriate layouts, glassmorphism can create readability problems, especially for the visually impaired. It shines most when used to highlight specific contents of your applications, such as cards, like the one we have created above. In this case, the glassmorphism effect should be not be overused across different application components. It aims to highlight specific areas of your page that focus on specific content.
+Glassmorphism can be implemented in any application of your choice. This guide helped you implement a glassmorphism effect in React.js. It is an incredible artwork to add to your applications. However, it can be misused when overused. When used in inappropriate layouts, glassmorphism can create readability problems, especially for the visually impaired.
+
+It shines most when used to highlight specific contents of your applications, such as cards, like the one we have created above. In this case, the glassmorphism effect should be not be overused across different application components. It aims to highlight specific areas of your page that focus on specific content.
 
 The critical aspect of glassmorphism effect adding is specifying `backdrop-filter` to your components. Other properties such as borders, box-shadow, and background can be adjusted to fit the design of your choice.
 
