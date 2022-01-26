@@ -6,23 +6,23 @@ url: /building-a-password-strength-classifier-model-using-machine-learning/
 title: Building a Password Strength Classifier Model Using Machine Learning
 description: This tutorial gives a step-by-step guide on how to build a password classification model with machine learning, from model building to training datasets.
 author: kelvin-kimani-ngure
-date: 2022-01-17T00:00:00-09:00
+date: 2022-01-26T00:00:00-10:20
 topics: [Machine Learning]
 excerpt_separator: <!--more-->
 images:
-   - url: /engineering-education/building-a-password-strength-classifier-model-using-machine-learning/hero.jpg
-     alt: Building a Password Strength Classifier Model Using Machine Learning Hero Image
+
+  - url: /engineering-education/building-a-password-strength-classifier-model-using-machine-learning/hero.jpg
+    alt: Building a Password Strength Classifier Model Using Machine Learning Hero Image
 ---
-Password strength is used to measure how effective a password is against external attacks. External attacks are in form of password cracking or brute-force attacks. They aim to gain unauthorized access to a computer system or a company's network.
+Password strength is used to measure how effective a password is against external attacks. External attacks are in form of password cracking or brute-force attacks. They aim to gain unauthorized access to a computer system or network.
 <!--more-->
 The strength of a password is usually measured using its complexity, length, and unpredictability.
 
-Cyber crimes and data breaches are on the rise, and the main cause for this is usually compromised passwords. Therefore, we will build a machine learning model that can determine the strength of a user's password. This enables us to have more secure systems that can not be easily cracked.
+Cyber crimes and data breaches are on the rise, and the main cause for this is usually compromised passwords.
 
 In this tutorial, we will build a password classification model using [Scikit-Learn](https://scikit-learn.org/). The model will give the strength of a password from the lowest strength labeled `0` to the highest strength labeled `2`.
 
 ### Table of contents
-
 - [Table of contents](#table-of-contents)
 - [Prerequisites](#prerequisites)
 - [Passwords dataset](#passwords-dataset)
@@ -36,7 +36,7 @@ In this tutorial, we will build a password classification model using [Scikit-Le
 - [Converting word tokens into numerical data](#converting-word-tokens-into-numerical-data)
   - [Initialiazing TfidfVectorizer](#initialiazing-tfidfvectorizer)
 - [Splitting vectorized dataset](#splitting-vectorized-dataset)
-- [Model building](#model-building)
+- [Building the model](#building-the-model)
 - [Accuracy score using the training dataset](#accuracy-score-using-the-training-dataset)
 - [Model testing](#model-testing)
 - [Accuracy score using the testing dataset](#accuracy-score-using-the-testing-dataset)
@@ -45,12 +45,12 @@ In this tutorial, we will build a password classification model using [Scikit-Le
 - [References](#references)
 
 ### Prerequisites
-To understand the concepts explained in this tutorial easily, a reader should:
+To understand the concepts explained in this tutorial easily, you should:
 - Have [Python programming](/engineering-education/python-projects-for-beginners/) knowledge.
 - Be able to build a simple [machine learning](/engineering-education/house-price-prediction/) model.
 - Have some [data analysis](https://www.datapine.com/blog/data-analysis-methods-and-techniques/) knowledge.
-- Understand basic concepts about [natural language processing.](/engineering-education/nlp-based-detection-model-using-neattext-and-scikit-learn)
-- Write the Python code using [Google Colab notebook.](https://research.google.com/)
+- Understand basic concepts about [natural language processing](/engineering-education/nlp-based-detection-model-using-neattext-and-scikit-learn).
+- Write the Python code using [Google Colab notebook](https://research.google.com/).
 
 ### Passwords dataset
 The dataset used was collected from different websites through web scraping. The dataset contains several passwords with different strengths. We will use this dataset to train our model.
@@ -128,20 +128,20 @@ To check if the missing value is removed, run this code:
 data.isnull().sum()
 ```
 
-The output is shown below:
+The output is as shown below:
 
 ![Removing missing values](/engineering-education/building-a-password-strength-classifier-model-using-machine-learning/removing-missing-values.jpg)
 
 After removing the missing values, we will convert our dataset into an array.
 
 ### Convert dataset into an array
-An array is much easier to work with. We will therefore use the NumPy Python library. To import NumPy use this code:
+An array is much easier to work with. We will therefore use the NumPy Python library. To import NumPy, use this code:
 
 ```python
 pswd = np.array(pswd_data)
 ```
 
-To see our the array, run this code:
+To see the array, run this code:
 
 ```python
 pswd
@@ -152,7 +152,6 @@ The output is shown below:
 ![Removing missing values](/engineering-education/building-a-password-strength-classifier-model-using-machine-learning/dataset-array.jpg)
 
 The next step is to shuffle our dataset randomly. Shuffling the dataset will make the dataset more robust. This will prevent the model from memorizing the dataset and ensure the model learns from the dataset.
-
 
 ### Dataset shuffling
 When using a shuffled dataset, the model will understand patterns and relationships within our dataset.
@@ -172,7 +171,7 @@ random.shuffle(pswd)
 ### Adding features and labels
 In machine learning, features are all the unique independent variables in our dataset that are used as the model's input. Here, our features are located in the `password` column. The `password` column holds all the text passwords that will train our model.
 
-Labels are variables in our dataset that are used as output for the model. Here, our labels are located in the `strength` column. The `strength` column has three values, 0 to 2.
+Labels are variables in our dataset that are used as output for the model. Here, our labels are located in the `strength` column. The `strength` column has three values, 0, 1, and 2.
 
 We will add the features and labels using the following code:
 
@@ -181,11 +180,11 @@ ylabels  = [s[1] for s in pswd]
 allpasswords = [s[0] for s in pswd]
 ```
 
-In the code above we save our labels in the `ylabels` variable. The code loops through the columns and selects the last column(1) as the labels. We also save our features in the `allpasswords` column. The code loops through the columns and selects the column(0) as the features.
+In the code above, we save our labels in the `ylabels` variable. The code loops through the columns and selects the last column(1) as the labels. We also save our features in the `allpasswords` column. The code loops through the columns and selects the column(0) as the features.
 
 Run the following code to check the number of passwords and labels in our dataset:
 
-- Number of labels
+Number of labels:
 
 ```python
 len(ylabels)
@@ -197,7 +196,7 @@ The output is shown below:
 669639
 ```
 
-- Number of passwords
+Number of passwords:
 
 ```python
 len(allpasswords)
@@ -209,7 +208,7 @@ The output:
 669639
 ```
 
-From the output above this dataset is big and has many data samples, we can now use this dataset to build our model.
+From the output above, the dataset is big and has many data samples. We can now use the dataset to build our model.
 
 ### Tokenization process
 Tokenization is the process of breaking text data into simpler characters called tokens. We will break our password text into word tokens which we will use as input for our model.
@@ -227,9 +226,9 @@ def createTokens(f):
 ### Converting word tokens into numerical data
 Machine learning models do not comprehend text. We therefore need to further convert the word tokens to numeric data.
 
-We will use the `TfidfVectorizer` package to convert the word tokens into numeric data(vectors of numbers). Using the `TfidfVectorizer`, it will convert based on the frequency of occurrence of each word token in the dataset.
+We will use the `TfidfVectorizer` package to convert the word tokens into numeric data (vectors of numbers). Using the `TfidfVectorizer`, it will convert based on the frequency of occurrence of each word token in the dataset.
 
-For further understand how `TfidfVectorizer` works in details, click [here](https://medium.com/@cmukesh8688/tf-idf-vectorizer-scikit-learn-dbc0244a911a).
+For further understanding of how `TfidfVectorizer` works in details, click [here](https://medium.com/@cmukesh8688/tf-idf-vectorizer-scikit-learn-dbc0244a911a).
 
 We will import this package using the following code:
 
@@ -237,9 +236,10 @@ We will import this package using the following code:
 from sklearn.feature_extraction.text import TfidfVectorizer
 ```
 
-Lets initialize `TfidfVectorizer`
+Lets initialize `TfidfVectorizer`:
 
 #### Initialiazing TfidfVectorizer
+
 ```python
 vectorizer = TfidfVectorizer(tokenizer=createTokens)
 ```
@@ -250,7 +250,7 @@ In the code above we have initialized `TfidfVectorizer` and also passed `createT
 X = vectorizer.fit_transform(allpasswords)
 ```
 
-Our input data(features) is saved in the `allpasswords` variable. 
+Our input data (features) is saved in the `allpasswords` variable.
 
 ### Splitting vectorized dataset
 Splitting datasets creates two sets; one will be used for training the model and the other for testing. To split the dataset, we will use `train_test_split`.
@@ -269,8 +269,8 @@ We have used a `test_size=0.2` so that `80%` of the data is used for training an
 
 Let's now build the model!
 
-### Model building
-We will build our model using the `DecisionTreeClassifier` algorithm. This algorithm is best suited for classification problems. It produces a model with a very accurate score.
+### Building the model
+We will build our model using the `DecisionTreeClassifier` algorithm. This algorithm is best suited for classification problems. It produces a model with a very accurate score:
 
 ```python
 from sklearn.tree import DecisionTreeClassifier
@@ -282,7 +282,7 @@ To use the algorithm, we will initialize it using the following code:
 clf=DecisionTreeClassifier()
 ```
 
-Finally, we fit the algorithm onto the train set dataset. This will ensure that the model fully learns from the dataset. Over time, the model will understand patterns and relationships within our dataset.
+Finally, we fit the algorithm onto the train set dataset. This will ensure that the model fully learns from the dataset. Over time, the model will understand patterns and relationships within our dataset:
 
 ```python
 clf.fit(X_train, y_train)
@@ -297,13 +297,13 @@ To get the accuracy score, use this code:
 print("Accuracy :",logit.score(X_test, y_test))
 ```
 
-The accuracy score is seen below:
+The accuracy score is shown below:
 
 ```bash
 Accuracy : 0.9998114655103219
 ```
 
-This is `99.98114%`. This being the first training this is a good accuracy score. We will test this model using the test dataset.
+This is `99.98114%`. This being the first training; it is a good accuracy score. We will test this model using the test dataset.
 
 ### Model testing
 We will use the data as input for the trained model so that it can classify the data points in this dataset.
@@ -320,7 +320,7 @@ array([0, 0, 1, ..., 1, 1, 0])
 ```
 
 ### Accuracy score using the testing dataset
-In this section, we will be checking the accuracy score using the testing dataset so that we can know if our model is overfitted. Overfitting occurs when the model performs very well using the training dataset but poorly using the testing dataset.
+In this section, we will be checking the accuracy score using the testing dataset so we get to know if our model is over-fitted. Over-fitting occurs when the model performs very well using the training dataset but poorly using the testing dataset.
 
 Use this code:
 
@@ -328,15 +328,15 @@ Use this code:
 print("Accuracy :",clf.score(X_test, y_test))
 ```
 
-The output is shown below:
+The output is as shown below:
 
 ```bash
 Accuracy : 0.9738516217669195
 ```
 
-This is `97.385`. This is still a good accuracy score if we compare it with the one gotten using the training dataset. Therefore, our model is not overfitted and can be used to make single predictions.
+This is `97.385`. It is still a good accuracy score if we compare it with the one obtained using the training dataset. Therefore, our model is not over-fitted and can be used to make single predictions.
 
-For more information on model overfitting, click [here](/engineering-education/dropout-regularization-to-handle-overfitting-in-deep-learning-models/)
+For more information on model over-fitting, click [here](/engineering-education/dropout-regularization-to-handle-overfitting-in-deep-learning-models/).
 
 ### Single prediction
 In a single prediction, we input sample passwords to our model for it to make predictions. We will use the following input passwords:
@@ -372,9 +372,9 @@ From the output above, the model was able to classify the password strengths. `0
 ### Conclusion
 In this tutorial, we have learned how to build a password strength classifier model using machine learning. We started by performing data pre-processing to correctly format our dataset. We then used this dataset to train our model.
 
-After training the model, our model was able to make accurate predictions. This model can further be deployed and used as a real application.
+After training the model, it was able to make accurate predictions. This model can further be deployed and used as a real application.
 
-This tutorial has used guided steps, the Python code used in this tutorial is found [here](https://colab.research.google.com/drive/1I_sXiqaN6fGKtsYXWGnxfv4MiyVfTUim?usp=sharing)
+This tutorial has used guided steps, the Python code used in this tutorial can be found [here](https://colab.research.google.com/drive/1I_sXiqaN6fGKtsYXWGnxfv4MiyVfTUim?usp=sharing).
 
 ### References
 - [Trained model in this tutorial](https://colab.research.google.com/drive/1I_sXiqaN6fGKtsYXWGnxfv4MiyVfTUim?usp=sharing)
