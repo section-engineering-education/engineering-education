@@ -3,21 +3,20 @@ layout: engineering-education
 status: publish
 published: true
 url: /place-locator-with-geojson/
-title: Building a Place Locator using GeoJson and Javascript.
+title: Building a Place Locator using GeoJson and Javascript
 description: This article will walk the reader through the use of GeoJson to build a place locator application using GeoJson, MongoDB, Mapbox and Javascript.
 author: jamila-laureen
-date: 2022-01-24T00:00:00-05:14
+date: 2022-01-25T00:00:00-01:45
 topics: [Languages]
 excerpt_separator: <!--more-->
 images:
-  - url: /engineering-education/place-locator-with-geojson/hero.png
+
+  - url: /engineering-education/place-locator-with-geojson/hero.jpg
     alt: Place Locator using GeoJson and Javascript Hero Image
 ---
-
-### Introduction
 GeoJson is a conventional method of storing geographic points in a database using JavaScript Object Notation format. Being based on JSON, GeoJson easily integrates with JavaScript. In addition, GeoJson allows the encoding of Geographic features like Latitude, Longitude, line strings, and Polygons.
  <!--more-->
-This article will walk the reader through the use of GeoJson to build a place locator application using Javascript. In the article, we will develop an application that adds a location to a MongoDB database, Geocodes it to obtain the latitude, longitude and a readable address of the location then displays the latitudinal and longitudinal mapping of the locations on a map. 
+This article will walk the reader through the use of GeoJson to build a place locator application using Javascript. In the article, we will develop an application that adds a location to a MongoDB database, Geocodes it to obtain the latitude, longitude, and a readable address of the location then displays the latitudinal and longitudinal mapping of the locations on a map. 
 
 This project explores several APIs that work together with GeoJson. The APIs used are Mapbox to render a map on a web page, mapquest to send location requests, and geocode the locations' names into matching latitudes and longitudes.
 
@@ -26,8 +25,8 @@ To follow along with this article, you need to have the following:
 - A code editor. I prefer [VS Code](https://code.visualstudio.com/download) for its availability of helpful extensions for web development.
 - Mapquest Account for the API Key.
 - [Mapbox account](https://account.mapbox.com/) to have the mapquest API key.
-- Understanding of Javascript
-- A working installation of Node.js
+- Understanding of Javascript.
+- A working installation of Node.js.
 
 ### Project environmental setup
 Run npm init -y to create an empty `package.json` file to get started. This file contains all the dependencies required to develop and run the application. It is essential to include the dependencies in this file so that when the project is executed anywhere apart from the local development environment, the user executes a single command to get the project running.
@@ -40,16 +39,16 @@ npm install express cors node-geocoder mongoose dotenv
 
 After successfully installing the dependencies, we need to set up a mongo DB database for the project. One can follow these steps to set up a database and obtain a [connection URL](https://docs.mongodb.com/manual/reference/connection-string/) that he will use for the project.
 
-In the next step, log in or create a new account with [Mapbox](https://www.mapbox.com/) to get an API key to generate a map on the project website. Then, the same procedure should be done with Mapquest(https://developer.mapquest.com/user/me/apps). 
+In the next step, log in or create a new account with [Mapbox](https://www.mapbox.com/) to get an API key to generate a map on the project website. Then, the same procedure should be done with [Mapquest](https://developer.mapquest.com/user/me/apps). 
 
-However, the key needs to be global with mapquest, while the Mapbox API key comes with a startup code that we will use in the javascript file in the website folder.
+However, the key needs to be global with mapquest, while the Mapbox API key comes with a startup code that we will use in the JavaScript file in the website folder.
 
 Both Mapbox and Mapquest are used to map location data and geocode place names to latitudes and longitudes, respectively. Mapquest ensures that given a place name, it returns all the information related to that place, including the formatted address, latitude, longitude, street name, zip code, and the country. However, we only need the latitude and longitude for our project to locate the place on a map provided by Mapbox.
 
 ### Folder organization
-This project explodes MVC development pattern. However, the size of the project will deviate from it a bit. Therefore, we will separate our models, controller, and routes into separate folders. Additionally, we will have a website folder that contains the files required to render the data on the user interface. Lastly, we will have a utility folder to contain the utility files required for the project. 
+We are going to use the MVC development pattern. However, the size of the project will deviate from it a bit. Therefore, we will separate our models, controller, and routes into separate folders. Additionally, we will have a website folder that contains the files required to render the data on the user interface. Lastly, we will have a utility folder to contain the utility files required for the project. 
 
-The final for the organization for the project is as shown below.
+The final folder organization for the project is as shown below:
 
 ```bash
 developer-locator
@@ -103,7 +102,7 @@ app.listen(PORT, () =>{
 ```
 
 ### Setting the database connection
-We need the database to store a developer's information, including the name, location, and date registered to the system. First, We need to set up a database connection to the remote mongo DB database that we created earlier. In the `config` folder, create a new file called `database.js` and at the snippet below:
+We need the database to store a developer's information, including the name, location, and date registered to the system. First, we need to set up a database connection to the remote mongo DB database that we created earlier. In the `config` folder, create a new file called `database.js` and at the snippet below:
 
 ```js
 const mongoose = require('mongoose');
@@ -114,7 +113,7 @@ const connectDatabase = async() => {
             useUnifiedTopology: true,
         });
 
-        console.log(`Database conneted to ${connection.connection.host}`)
+        console.log(`Database connected to ${connection.connection.host}`)
     } catch (error) {
         console.log(error);
         process.exit(1);
@@ -146,7 +145,7 @@ const DeveloperSchema = new mongoose.Schema(
         },
         address: {
             type: String,
-            required: [true, 'Please add develper address']
+            required: [true, 'Please add developer address']
         },
         location: {
             type: {
@@ -167,7 +166,7 @@ const DeveloperSchema = new mongoose.Schema(
 );
 ```
 
-After creating the developer schema, we need to add a middleware that picks up the location string provided by the user and geocodes it into latitude, longitude, and a readable address which are then stored in the respective properties in the location object.
+After creating the developer schema, we need to add a middleware that picks up the location string provided by the user and geocodes it into latitude, longitude, and a readable address, which are then stored in the respective properties in the location object.
 
 All these are done before the developer object is saved into the database. We also set `this.location` to undefined to prevent the geocoded location data from being saved into the database.
 
@@ -241,7 +240,7 @@ exports.addDeveloper = async (req, res, next) =>{
 ```
 
 ### Passing the data to the router
-Routing is necessary to specify where to channel a request and where url does the fetch data goes. Our route file took the functions from the controller and applied the necessary function depending on the request.
+Routing is necessary to specify where to channel a request and where the URL does the fetch data goes. Our route file took the functions from the controller and applied the necessary function depending on the request.
 
 We will instantiate a router and pass the functions from the controller, then export the file to the server file, which is the applications entry point.
 
@@ -258,7 +257,7 @@ Our website will have a title and a map area showing the developers available in
 
 Additionally, we will have a form to add the developers to the system. The form will submit the data to invoke the `addDeveloper` function in the `controller` file.
 
-Next, we have a javascript file that renders the Map on the browser. This code snippet is provided once you create the API key in Mapbox.
+Next, we have a JavaScript file that renders the Map on the browser. This code snippet is provided once you create the API key in Mapbox.
 
 ```js
 mapboxgl.accessToken = 'yourmapboxapikey;
@@ -270,7 +269,7 @@ const map = new mapboxgl.Map({
 })
 ```
 
-The snippet specifies the zoom level, map style, and the centre, which is chosen based on where you want to map out the developers.
+The snippet specifies the zoom level, map style, and the center, which is chosen based on where you want to map out the developers.
 
 ### Getting developers and displaying them on the Map
 In this step, we want to collect all the developers in the database then display them on the Map depending on the specific latitude and longitude. 
@@ -336,7 +335,7 @@ getDevelopers()
 ```
 
 ### Testing the application
-To run the application, use `npm start` to start your server theN head to the [localhost](http://localhost:5000/) on the port you specified in the `config.env` file to access your site.
+To run the application, use `npm start` to start your server then head to the [localhost](http://localhost:5000/) on the port you specified in the `config.env` file to access your site.
 
 Your site should be as below before adding the developers.
 ![Map without developers](/engineering-education/place-locator-with-geojson/empty-map.png)
