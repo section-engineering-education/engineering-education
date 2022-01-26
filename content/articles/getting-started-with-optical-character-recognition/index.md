@@ -6,7 +6,7 @@ url: /getting-started-with-optical-character-recognition/
 title: Getting Started with Optical Character Recognition
 description: This tutorial will help the reader understand how to extract text from images and visualize these results using the OpenCV library.
 author: lilian-cheptoo
-date: 2022-01-25T00:00:00-02:13
+date: 2022-01-26T00:00:00-02:13
 topics: [Machine Learning]
 excerpt_separator: <!--more-->
 images:
