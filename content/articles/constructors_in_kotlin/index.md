@@ -1,4 +1,7 @@
-A constructor is a quick and easy technique to set up class properties. It's also known as a specific member function that's invoked when a new object is formed. Note: If the programmer does not define the constructor, the compiler is designed to generate a default one.
+A constructor is a quick and easy technique to set up class properties. It's also known as a specific member function that's invoked when a new object is formed.
+
+
+Note: If the programmer does not define the constructor, the compiler is designed to generate a default one.
 
 This article explains the basic structure of a constructor, the two types of constructors, then the init block. Finally, we'll also discuss some best practices related to object-oriented programming.
 
@@ -27,6 +30,10 @@ There are two different kinds of constructors in Kotlin, which are:
 
 - The primary constructor
 - The secondary constructor
+
+
+### How to use constructors to create an object
+The primary constructor must be defined with the same name as the class, followed by parentheses. However, the secondary constructor must be expressed with the `constructor` keyword.
 
 #### Primary constructors
 The primary constructor is a section of the class header that comes after the class name, using the `constructor` keyword. The example below exemplifies the definition:
@@ -181,6 +188,9 @@ The clean use of classes is required for effective Kotlin. We learned about cons
   - Have no spaces between words. Ex. myClass.
   - Be greater than a single character.
   - Not use special prefixes or suffixes (e.g. `name_`, `mName`, `s_name`, and `kName`), except in the case of backing properties.
+  
+
+Note:The init block is called just after the primary constructor, and the secondary constructor is called using the `this` keyword.
 
 ### Conclusion
-In this article, we have covered various ways of creating constructors using Kotlin as our language, and when to use the init block. We also learned that the init block is called just after the primary constructor, and the secondary constructor is called using the `this` keyword. Finally, we went through best practices in object-oriented programming as it relates to constructors. 
+In this article, we have covered various ways of creating constructors using Kotlin as our language, and when to use the init block. We also learned when the init block is exercuted vs when the primary constructor is exercuted,along with how secondary constructors are inovoked . Finally, we went through best practices in object-oriented programming as it relates to constructors. 
