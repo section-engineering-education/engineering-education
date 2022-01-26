@@ -4,23 +4,27 @@ status: publish
 published: true
 url: /understanding-pascal-voc-dataset/
 title: Understanding PASCAL VOC Dataset
-description: This article will be an introduction to understanding what PASCAL VOC dataset is and how it works. We will also implement a simple dataset validator using Python.
+description: This article will introduce the reader to PASCAL VOC dataset. We will also implement a simple dataset validator using Python.
 author: srishilesh-p-s
-date: 2022-01-23T00:00:00-00:00
+date: 2022-01-26T00:00:00-00:00
 topics: [Machine Learning]
 excerpt_separator: <!--more-->
 images:
   - url: /engineering-education/understanding-pascal-voc-dataset/hero.jpg
     alt: Understanding PASCAL VOC Dataset Hero Image
 ---
-Object detection refers to the ability of computer systems to locate desired objects from an image/scene and identify the type of object. For object detection, the train data are either represented using XML files or JSON files. Each representation has its pros and cons.
+Object detection refers to the ability of computer systems to locate desired types of objects from an image/scene. 
 <!--more-->
-In this article, we will be understanding how one such dataset representation helps us with object detection. We will understand what the PASCAL VOC format is, the history behind it, and how we use it for object detection.
+For object detection, the train data are either represented using XML files or JSON files. Each representation has its pros and cons.
 
-Also, we will build a simple dataset format validator using Python to verify if the dataset adheres to the rules of the PASCAL VOC format.
+In this article, we will be understanding how one such dataset representation helps us with object detection. 
+
+We will discuss what the PASCAL VOC format is, the history behind it, and how we use it for object detection.
+
+We will also build a simple dataset format validator using Python to verify if the dataset adheres to the rules of the PASCAL VOC format.
 
 ### Table of contents
-- [Pre-requisites](#pre-requisites)
+- [Prerequisites](#pre-requisites)
 - [Introduction](#introduction)
 - [PASCAL VOC](#pascal-voc)
   - [History](#history-behind-pascal-voc)
@@ -29,8 +33,8 @@ Also, we will build a simple dataset format validator using Python to verify if 
 - [Conclusion](#conclusion)
 - [Further reading](#further-reading)
 
-### Pre-requisites
-As a pre-requisite, the reader must have the following:
+### Prerequisites
+To follow along, the reader must have the following:
 - A good understanding of how to work with machine learning datasets.
 - A decent understanding of [object detection](https://en.wikipedia.org/wiki/Object_detection).
 - Good knowledge of [Python](https://www.python.org).
@@ -39,36 +43,39 @@ As a pre-requisite, the reader must have the following:
 ### Introduction
 For a machine learning model to detect objects of an image, it must be trained with a [dataset](https://en.wikipedia.org/wiki/Data_set) that holds all information about the objects present in an image.
 
-The dataset that contains information about all objects present in an image is built using a process called "[Annotation](https://en.wikipedia.org/wiki/Annotation)".
+The dataset that contains information about all objects present in an image is built using a process called [Annotation](https://www.cloudfactory.com/data-annotation-tool-guide).
 
 In the context of object detection, annotation helps us map an object to its respective label by drawing a rectangular box (called bounding box) over the object.
 
 ![An example of annotation](/engineering-education/understanding-pascal-voc-dataset/annotation-example.png)
+
 *Source: An example of annotation by [becominghuman.ai](https://becominghuman.ai/why-data-annotation-is-important-for-machine-learning-2c50520bd2d8)*
 
 As you can see in the above image, we map the objects with their respective labels like a `car`, `person`, `bicycle`, or `traffic light`.
 
-Each object-label mapping is represented with a rectangular box called "[Bounding box](https://medium.com/analytics-vidhya/basics-of-bounding-boxes-94e583b5e16c)". Bounding boxes are a series of coordinates or values that represents the position of an object in an image.
+Each object-label mapping is represented with a rectangular box called "[Bounding box](https://medium.com/analytics-vidhya/basics-of-bounding-boxes-94e583b5e16c)". Bounding boxes are a series of coordinates or values that represent the position of an object in an image.
 
 > The representation of bounding boxes might vary according to the dataset.
 
-Let's understand more about bounding boxes in the upcoming sections.
+Let's discuss more about bounding boxes in the upcoming sections.
 
 ### PASCAL VOC
-This dataset provides standardized images for object detection and segmentation problems. These datasets are built using tools that follow standardized procedures for the evaluation and comparison of different methods.
+This dataset provides standardized images for object detection and segmentation problems. 
+
+These datasets are built using tools that follow standardized procedures for the evaluation and comparison of different methods.
 
 In 2008, PASCAL VOC datasets were declared as the benchmark for object detection.
 
 #### History behind PASCAL VOC
 [Pattern Analysis, Statistical Modelling, and Computational Learning (PASCAL)](https://www.researchgate.net/publication/280087130_Pattern_Analysis_Statistical_Modelling_and_Computational_Learning_2004-2008) ran a series of [challenges for object detection from 2005 to 2012](http://host.robots.ox.ac.uk/pascal/VOC/) following a standardized file structure for holding these image annotations.
 
-[PASCAL Visual Object Classes (VOC)](http://host.robots.ox.ac.uk/pascal/VOC/pubs/everingham10.pdf) challenge had 2 main components:
+The [PASCAL Visual Object Classes (VOC)](http://host.robots.ox.ac.uk/pascal/VOC/pubs/everingham10.pdf) challenge had two main components:
 1. A publicly available dataset with standardized evaluation software.
 2. An annual competition and a workshop.
 
 The main objectives of this challenge were to find out the ability of models to perform:
-- `Classification` - check if an object is part of the image.
-- `Detection` - locate the position of the objects present in the image.
+- `Classification` - Check if an object is part of the image.
+- `Detection` - Locate the position of the objects present in the image.
 
 This series of challenges came to end in 2012 with major enhancements and improvements to the dataset.
 
@@ -80,23 +87,24 @@ To understand more about PASCAL VOC, it is highly recommended to read [this](htt
 Here is a sample of what the structure of the PASCAL VOC dataset looks like:
 
 ![PASCAL VOC sample](/engineering-education/understanding-pascal-voc-dataset/pascal-voc-sample.png)
+
 *Source: [Marmot dataset](https://www.icst.pku.edu.cn/cpdp/sjzy/) for table recognition*
 
 > You can find the above sample dataset [here](https://gist.github.com/srishilesh/e1b180b55576a6747cecc6e389e86a0b).
 
 As you can see in the above image, these object annotations are represented using the following fields:
 
-##### `folder`
-The name of the parent folder that the dataset is present in. This field helps us locate the annotated images within a folder.
+##### folder
+The name of the parent folder that the dataset is present in. This field helps us locate the annotated images within a directory.
 
 Here, as you can see, the image file is present within a folder named `MARMOT_ANNOTATION`.
 
-##### `filename`
+##### filename
 The image filename where the data is annotated on. This field specifies a relative path of the annotated image file.
 
 Here, the file we are working on is `10.1.1.1.2006_3.bmp`.
 
-##### `path`
+##### path
 The absolute path where the image file is present.
 
 Here, we have all the image files present under the absolute path `MARMOT_ANNOTATION/10.1.1.1.2006_3.bmp`.
@@ -165,7 +173,7 @@ root = xml_tree.getroot() # Find the root element
 ##### Assertions
 To verify the validity of a PASCAL VOC dataset, we will be using `assert()` assertion statements in Python.
 
-In simple words, `assert()` is used to debug codes by testing for certain criteria. If it does not meet the criteria, it throws a default error. Although, we can customize the errors to be raised.
+In simple words, `assert()` is used to debug code by testing for certain criteria. If it does not meet the criteria, it throws a default error. Although, we can customize the errors to be raised.
 
 > To learn more about assertions in Python, it is recommended to read [this article](https://www.geeksforgeeks.org/python-assert-keyword).
 
@@ -190,16 +198,15 @@ The code above does the following:
 - Checks if the `root` is `annotation`. Having the `verified` attribute to be `yes`, is optional.
 - Checks if the dataset contains a `folder`, `filename`, `path`, and `source` by verifying the length to be greater than `0`.
 - Checks for the `size` object to contain `width`, `height`, and `depth`.
-- Finally, it checks for the `segmented` parameter. Either it must contain value `0` or an empty list.
+- Finally, it checks for the `segmented` parameter. It must either contain a value of `0` or an empty list.
 
-> A `segmented` list denotes that the object is not in linear shape. Therefore, the mask values for the polygon (non-linear) shape must be present to identify such objects.
-> You can read more about this [here](https://towardsdatascience.com/generating-image-segmentation-masks-the-easy-way-dd4d3656dbd1).
+> A `segmented` list denotes that the object is not in linear shape. Therefore, the mask values for the polygon (non-linear) shape must be present to identify such objects. You can read more about this [here](https://towardsdatascience.com/generating-image-segmentation-masks-the-easy-way-dd4d3656dbd1).
 
 Having covered all the meta-data about the image, let's move into validating each object.
 
 > Under the `annotation` key, there may be more than one object. Therefore, we loop through all the `object` keys.
 
-```python
+```py
 required_objects = ['name', 'pose', 'truncated', 'difficult', 'bndbox'] # All possible meta-data about an object
 
 for obj in root.findall('object'):
@@ -229,11 +236,11 @@ The above code snippets help us validate and point out errors if we have missed 
 ### Conclusion
 PASCAL VOC dataset is used for object detection and segmentation. Its representation as XML files helps us customize datasets easily while using a standardized format for representation.
 
-To summarize:
+To summarize, the reader learned:
 
-- The reader learned how objects are detected by training the annotations.
-- The reader learned what PASCAL VOC is and how it originated.
-- The reader understood the different meta-data parameters required for PASCAL VOC dataset representation.
+- How objects are detected by training the annotations.
+- What PASCAL VOC is and how it originated.
+- The different meta-data parameters required for PASCAL VOC dataset representation.
 - Finally, the reader implemented a simple Python validation script to verify the authenticity of the PASCAL VOC dataset.
 
 You can find the source code [here](https://gist.github.com/srishilesh/a2c781a7c6376861844fb7234c5aea11).
@@ -244,4 +251,4 @@ You can find the source code [here](https://gist.github.com/srishilesh/a2c781a7c
 - [Research paper on PASCAL VOC challenge](http://host.robots.ox.ac.uk/pascal/VOC/pubs/everingham10.pdf)
 
 ---
-Peer Review Contributions by: []()
+Peer Review Contributions by: [Wanja Mike](/engineering-education/authors/michael-barasa/)
