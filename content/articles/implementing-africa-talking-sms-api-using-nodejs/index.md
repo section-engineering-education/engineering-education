@@ -7,7 +7,7 @@ title: Implementing Africa's Talking SMS API using Node.js
 description: This article will guide the reader on how to incorporate Africa Talking API in a RESTful API. This framework allows one to send and receive SMSes.
 author: kennedy-mwangi
 date: 2022-01-26T01:00:00-10:45
-topics: [Security]
+topics: [Languages]
 excerpt_separator: <!--more-->
 images:
 
