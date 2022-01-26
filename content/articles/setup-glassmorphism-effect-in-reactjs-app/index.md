@@ -1,5 +1,21 @@
-Glassmorphism is an interface-based concept applied to web apps, websites, mobile apps, etc. Its commonly used in card-based interfaces. Glassmorphism creates glassy panels that float in the set background space. This creates a transparent background blur with frosted-glassy-like effects.
+---
+layout: engineering-education
+status: publish
+published: true
+url: /setup-glassmorphism-effect-in-reactjs-app/
+title: Setting up Glassmorphism Effect in ReactJs App
+description: This guide will walk the reader through setting up a React app that utilizes the glassmorphism effect.
+author: moses-maina
+date: 
+topics: []
+excerpt_separator: <!--more-->
+images:
 
+ - url: /engineering-education/setup-glassmorphism-effect-in-reactjs-app/hero.jpg
+   alt: Setting up a Glassmorphism Effect in ReactJs App
+---
+Glassmorphism is an interface-based concept applied to web apps, websites, mobile apps, etc. Its commonly used in card-based interfaces. Glassmorphism creates glassy panels that float in the set background space. This creates a transparent background blur with frosted-glassy-like effects.
+ <!--more-->
 In this guide, we will build a basic login form card. We will then implement the glassmorphism effect to the card component using React.js.
 
 ### Prerequisites
@@ -233,3 +249,6 @@ Glassmorphism can be implemented in any application of your choice. This guide h
 The critical aspect of glassmorphism effect adding is specifying `backdrop-filter` to your components. Other properties such as borders, box-shadow, and background can be adjusted to fit the design of your choice.
 
 I hope you found this helpful. Happy coding!
+
+---
+Peer Review Contributions by: [Adrian Murage](/engineering-education/authors/adrian-murage/)
