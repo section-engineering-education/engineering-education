@@ -6,23 +6,23 @@ url: /building-a-playlist-exporter-in-python/
 title: Building a Playlist Exporter in Python Using Mutagen
 description: This article will walk you through building a playlist exporter in Python using the Mutagen. The exporter will be able to export a playlist in M3U and JSON formats.
 author: wanjiru-alice
-date: 2022-01-14T00:00:00-13:30
+date: 2022-01-26T00:00:00-10:30
 topics: [Languages]
 excerpt_separator: <!--more-->
 images:
   - url: /engineering-education/building-a-playlist-exporter-in-python/hero.jpg
-    alt: Building a playlist exporter in Python using Mutagen
+    alt: Building a playlist exporter in Python using Mutagen image
 ---
-Music is one of the most important parts of the human experience. Although nowadays most of the music is streamed online, some people still prefer to download it as audio files for offline listening.
+Music is one of the most important parts of the human experience. Although nowadays most music is streamed online, some people still prefer to download it as audio files for offline listening.
 <!--more-->
-Audio files are a great way to store music as well as other information about the music. However, it is not always easy to export the information from the audio files to a playlist format.
+Audio files are a great way to store music as well as other information about the music. However, it's not always easy to export the information from the audio files to a playlist format.
 
 That's where a playlist exporter comes in. It's a software that can be used to export the information from the audio files to a format that can be interpretted by audio players. The resulting playlist can also be used to find your music in streaming services with the help of uploaders like [Soundiiz](https://soundiiz.com/).
 
 In this tutorial, we will learn how to build a playlist exporter in Python using the Mutagen audio library.
 
 ### Prerequisites
-To follow along with this tutorial, you will need to have Python 3.6 or later installed. You will also a bunch of music files to work with. Both MP3 and FLAC are OK.
+To follow along with this tutorial, you will need to have Python 3.6 or later installed. You will also a bunch of music files to work with. Both MP3 and FLAC formats are okay.
 
 ### Step 1: Setting up the environment
 To get started, you will need a virtual environment to separate your Python code from the rest of your system.
@@ -96,9 +96,9 @@ file.writelines(playlist)
 file.close()
 ```
 
-We are using the `os.scandir()` function to scan the directory for files. The `os.scandir()` function returns an iterator that yields `os.DirEntry` objects.
+We are using the `os.scandir` function to scan the directory for files. The function returns an iterator that yields `os.DirEntry` objects.
 
-We check if the entry is a file by calling the `is_file()` method. If the file has the extension we are looking for, we add it to the playlist. We then open a M3U file with the same name as the directory basename and write the playlist to it.
+We check if the entry is a file by calling the `is_file` method. If the file has the extension we are looking for, we add it to the playlist. We then open a M3U file with the same name as the directory basename and write the playlist to it.
 
 Now I have a `Nirvana - Nevermind.M3U` in my `~/Music/Nirvana - Nevermind` directory.
 
@@ -193,7 +193,7 @@ file.write(tags_json)
 file.close()
 ```
 
-We are combining all the tags into a single dictionary and dumping it to a JSON file. We use the `json.dumps()` function to convert the dictionary to a JSON string. We use the `indent=4` option to make the JSON file more readable.
+We are combining all the tags into a single dictionary and dumping it to a JSON file. We use the `json.dumps` function to convert the dictionary to a JSON string. We use the `indent=4` option to make the JSON file more readable.
 
 I now have a `Nirvana - Nevermind.json` in my `~/Music/Nirvana - Nevermind` directory.
 
