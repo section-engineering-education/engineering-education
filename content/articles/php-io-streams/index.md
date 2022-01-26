@@ -1,10 +1,24 @@
-### Introduction
-Working with files on the server-side environment is a prevalent task yet complex. However, most PHP installations do not provide enough memory to handle large files.
+---
+layout: engineering-education
+status: publish
+published: true
+url: /php-io-streams/
+title: Getting Started with Input and Output Streams in PHP 8
+description: In this tutorial, we will learn how to handle large files in PHP using the concept of streams.
+author: theresa-atieno
+date: 2022-01-26T00:00:00-11:40
+topics: [Languages]
+excerpt_separator: <!--more-->
+images:
 
+  - url: /engineering-education/php-io-streams/hero.png
+    alt: PHP Streams data I/O img
+---
+Working with files on the server-side environment is a prevalent task yet complex. However, most PHP installations do not provide enough memory to handle large files.
+<!--more-->
 In this tutorial, we will learn how to handle large files in PHP using the concept of streams.
 
 ### Table of contents
-- [Introduction](#introduction)
 - [Table of contents](#table-of-contents)
 - [Prerequisites](#prerequisites)
 - [Objectives](#objectives)
@@ -22,7 +36,7 @@ To follow along with this tutorial, you will need the following:
 - Local development environment.
 
 ### Objectives
-This tutorial will teach you how to handle large files in PHP using streams.
+This tutorial will teach you how to handle large files in PHP using streams. By the end, you will be able to appreciate the benefits of streams over the traditional file system.
 
 ### Getting started with streams
 Stream is a very powerful concept in PHP. It allows you to handle large files without memory issues.
@@ -32,7 +46,6 @@ Streams simplify the process of reading and writing files. They work by providin
 This on-demand data read ensures that you do not have to load the entire file into memory.
 
 > It's important to note that PHP installations have a memory limit. So if you try to load a too large file, you will get an error.
-
 Streams have implementation wrappers that allow you to handle specific protocols.
 
 ### The file system handler
@@ -83,15 +96,12 @@ In this section, let's first create a sample script to solve our above error usi
 //open the stream.php file and add the following:
 <?php
 $large_file = fopen(__DIR__ . '/large-test-file.txt', 'r');
-
 //the result is printed until the end of the file
 while(! feof($large_file)) {
   $endLine = fgets($large_file);
   echo $endLine. "<br>";
 }
-
 fclose($large_file);
-
 ```
 
 In the above code, we use the `fopen()` function to open the file. The `fopen()` function takes in 2 parameters. The first is the file path, and the second is the mode.
@@ -100,6 +110,8 @@ Next, we are using the `fgets()` function to read the file's contents.
 Finally, we use the `fclose()` function to close the file.
 
 When you execute the above code, you notice that it doesn't give you an error, as was the case when we used the `file_get_contents()` function. This is the power of streams.
+
+With streams, we are able to read any file size without running into memory management problems which maybe very frustrating to a developer.
 
 ### Retrieving file contents
 In the previous section, we have seen how we can use the power of streams in PHP to handle large files, in our case, using the `fopen()` function. 
@@ -125,7 +137,7 @@ Let's create another file called `test2.txt` in the `/tmp` directory to simplify
 
 > Note: we had already created a file called `test.txt` in the `/tmp` directory. You should create it if it's not there.
 
-In the following script, we will read the contents of the file `test.txt` and write it to the file `test2.txt`.
+In the following script, we will read the contents of the file `test.txt` and write it to the file `test2.txt` as described below:
 ```php
 <?php
 //open the stream.php file and add the following:
@@ -149,7 +161,6 @@ while (true) {
 fclose($file_stream_destination);
 // close the destination file
 fclose($file_stream_source);
-
 ```
 
 Output:
@@ -174,4 +185,7 @@ In this article, we have extensively covered the concepts of streams and how to 
 
 I hope this article helps you build a strong foundation on these concepts to help you build a solid foundation on PHP.
 
-Happy coding!
+Happy Reading!
+
+---
+Peer Review Contributions by: [Miller Juma](/engineering-education/content/authors/miller-juma/)
