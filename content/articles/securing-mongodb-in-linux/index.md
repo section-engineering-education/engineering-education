@@ -42,7 +42,7 @@ mongod --dbpath = "C:\data\mongo"
 #or use this below to check.
 ps -e|grep 'Mongod'
 ```
-The output if MongoDB is installed will be similar to this:
+If MongoDB is installed, the output will be similar to this:
 `909070 ttys023 2:43.486 ./mongodb`
 To configure MongoDB we navigate to the default file location `/etc/mongodb.conf` where it runs on the default port. To change this file location, we use the command below:
 
