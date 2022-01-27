@@ -59,7 +59,7 @@ net:
     bindIp: 127.0.0.1
 ```
 
-Through binding Ip address this ensures that MongoDB runs in a safe network environment thus safeguarding incoming connection. This is done by changing the Ip address using the bind command:
+Through binding IP address, we ensures that MongoDB runs in a safe network environment. Thus, safeguarding incoming connection. This is done by changing the IP address using the bind command:
 
 ```bash
 #binding command for secure Vlan connection
