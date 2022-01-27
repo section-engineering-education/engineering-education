@@ -1,7 +1,11 @@
 ### Understanding Moore Penrose Pseudoinverse with Python
-Moore-Penrose Pseudoinverse is a linear algebra technique used to approximate the inverse of non-invertible matrices. This technique can approximate an inverse of any matrix regardless of whether the matrix is square or not. In short, Pseudo-inverse exists for all matrices. If a matrix has an inverse, its Pseudo-inverse equals its inverse.
+Moore-Penrose Pseudoinverse is a linear algebra technique used to approximate the inverse of non-invertible matrices. 
 
-The idea behind the pseudo-inverse is very close to what we already know about the inverse of a matrix. When we create an inverse of a matrix, we usually find a matrix that undoes what the original matrix did. It's good to think of an inverse of a matrix as the matrix that maps a transformed vector(s) back to its original space. The inverse of a matrix is applicable in solving a system of linear equations. When solving these systems, the challenge that often arises is that it's only possible to determine the solution of the system if the coefficient matrix is [non-singular](https://www.sciencedirect.com/topics/engineering/nonsingular-matrix) and square. If the coefficient matrix meets these two conditions, then it's invertible, and therefore there exists a unique solution to the system, i.e.,
+This technique can approximate an inverse of any matrix regardless of whether the matrix is square or not. In short, Pseudo-inverse exists for all matrices. If a matrix has an inverse, its Pseudo-inverse equals its inverse.
+
+The idea behind the pseudo-inverse is very close to what we already know about the inverse of a matrix. When we create an inverse of a matrix, we usually find a matrix that undoes what the original matrix did. So it is good to think of an inverse of a matrix as the matrix that maps a transformed vector(s) back to its original space. 
+
+The inverse of a matrix is applicable in solving a system of linear equations. When solving these systems, the challenge that often arises is that it's only possible to determine the solution of the system if the coefficient matrix is [non-singular](https://www.sciencedirect.com/topics/engineering/nonsingular-matrix) and square. If the coefficient matrix meets these two conditions, then it's invertible, and therefore there exists a unique solution to the system, i.e.,
 
 If $A \in M_{n\times m}$ is invertible, then the linear system, 
 $Ax=b$ has a unique solution, i.e.,
@@ -14,13 +18,19 @@ $x=A^{-1}b$
 - Knowledge of the Systems of Linear equations
 
 ### Introduction to Pseudo-inverse
-Most of the time, the coefficient matrix of linear systems of equations is not always square and, therefore, impossible to determine its inverse. This implies that we can't directly find a solution to a linear system if this is the case. These situations can arise in two possible ways. First, when a linear system is, *Underdetermined*(short-fat matrix). A system is said to be underdetermined is if the number of variables in the system is more than the number of the equations. In this case, the system may have infinitely many solutions.
+Most of the time, the coefficient matrix of linear systems of equations is not always square and, therefore, impossible to determine its inverse.
+
+This implies that we can't directly find a solution to a linear system if this is the case. These situations can arise in two possible ways. First, when a linear system is, *Underdetermined*(short-fat matrix). 
+
+A system is said to be underdetermined is if the number of variables in the system is more than the number of the equations. In this case, the system may have infinitely many solutions.
 
 The next case is the *Overdetermined* system(tall-skinny matrix). A system is termed overdetermined if it has a much higher number of equations than the number of variables. In this case, the system may have many solutions or no solution.
 
 Now, to approximate the best solution for such systems with no unique solutions, we make use of [Singular Value Decomposition](https://www.section.io/engineering-education/singular-value-decomposition-in-python/)(SVD). Let's see how the SVD facilitates this.
 
-Suppose we have a system of linear equations, $$Ax = b,$$ where the rectangular matrix A and vector b are known and vector x unknown. To solve this system, we find values for the vector x. In this case, A has no inverse, but we can approximate it using Singular Value Decomposition.
+Suppose we have a system of linear equations, $$Ax = b,$$ where the rectangular matrix A and vector b are known and vector x unknown. 
+
+To solve this system, we find values for the vector x. In this case, A has no inverse, but we can approximate it using Singular Value Decomposition.
 
 We know, the SVD of a matrix,  $$A = UΣV^T.$$
 
@@ -40,7 +50,9 @@ This gives:
 
 $\hat x= A^\dagger b$
 
-The quantity $A^\dagger$ is what we call the *Pseudo-inverse* or, more generally, the *Moore Penrose Pseudo-inverse* of matrix A. This quantity generalizes the inverse of a matrix, and it exists for any matrix regardless of whether a matrix is square or not.
+The quantity $A^\dagger$ is what we call the *Pseudo-inverse* or, more generally, the *Moore Penrose Pseudo-inverse* of matrix A. 
+
+This quantity generalizes the inverse of a matrix, and it exists for any matrix regardless of whether a matrix is square or not.
 
 The $A^\dagger$ must satisfy four conditions known as Moore Penrose pseudo-inverse condition.
 These are:
@@ -51,7 +63,7 @@ These are:
 
 We will not prove these conditions, but if you are interested in proofs, you can refer [here](https://www.youtube.com/watch?v=8dhnUcc_dLM&t=71s).
 
-Now, let's look at a numerical example so that we can develop a deep understanding of how this technique works.
+Now, let's look at a numerical example to develop a deep understanding of how this technique works.
 
 Suppose we are given the following matrix,
 
@@ -63,7 +75,9 @@ $A=\begin{bmatrix}
 
 We are required to find its Pseudo-inverse.
 
-This matrix is a non-square matrix, so we cannot compute its inverse. Instead, we can approximate it using Pseudo-inverse. To do so, we first compute its Singular Value Decomposition. The Singular Value Decomposition of this matrix should return an output similar to the one provided below.
+This matrix is a non-square matrix, so we cannot compute its inverse. Instead, we can approximate it using Pseudo-inverse. To do so, we first compute its Singular Value Decomposition. 
+
+The Singular Value Decomposition of this matrix should return an output similar to the one provided below.
 
 $U=\begin{bmatrix}
     \frac{1}{\sqrt 3} & \frac{1}{\sqrt 2} & \frac{1}{\sqrt 6}\\
@@ -168,7 +182,9 @@ Output:
  [ 3 -2]
  [ 5  7]]
 ```
-We got a matrix of 3 x 2, just as we expected. Since this matrix is not square, we can not find its inverse. However, it has a pseudo-inverse. To determine its pseudo-inverse, let's first obtain its Singular Value Decomposition.
+We got a matrix of 3 x 2, just as expected, but since this matrix is not square, we can not find its inverse. 
+
+However, it has a pseudo-inverse. To determine its pseudo-inverse, let's first obtain its Singular Value Decomposition.
 
 ```python
 U,d,VT = np.linalg.svd(A)
@@ -207,7 +223,9 @@ array([[ 0.55798885,  0.82984845],
        [-0.82984845,  0.55798885]])
 
 ```
-Now, to compute $A^\dagger$, we need V and $D^\dagger$ from the above SVD outputs. It's easy to compute V using the `VT` matrix returned from the SVD. So, the only task we have is to compute $D^\dagger$. We create these matrices as follows.
+Now, to compute $A^\dagger$, we need V and $D^\dagger$ from the above SVD outputs. 
+
+It is easy to compute V using the `VT` matrix returned from the SVD. So, the only task we have is to compute $D^\dagger$. We create these matrices as follows.
 
 To determine $D^\dagger$, we first create a diagonal matrix D using singular values of the vector d obtained above.
 
@@ -238,9 +256,12 @@ Executing the code we get:
 ```bash
 array([[0.1153511 , 0.        ],
        [0.        , 0.24364718]])
-
 ```
-Next, we to get the transpose of the `D_inver` above. Also, we need to note that the `D_inver` is a 2 x 2 square matrix. In order to meet the law of matrix multiplication, we need to ensure the number of columns of $D^{\dagger}$ matches the number of rows of U. Since $U$ have three rows, we concatenate a zero column on $D^{\dagger}$. Let's do this using the code below.
+Next, we to get the transpose of the `D_inver` above. Also, we need to note that the `D_inver` is a 2 x 2 square matrix.
+
+To meet the law of matrix multiplication, we need to ensure the number of columns of $D^{\dagger}$ matches the number of rows of U. 
+
+Since $U$ have three rows, we concatenate a zero column on $D^{\dagger}$. Let's do this using the code below.
 
 ```python
 Dplus = np.concatenate((D_inver, np.array([[0,0]]).T),axis = 1)
@@ -266,7 +287,9 @@ Output:
 array([[-0.08767773,  0.17772512,  0.07582938],
        [ 0.07661927, -0.1192733 ,  0.08688784]])
 ```
-Above is the Pseudo-inverse of our matrix. We can test what it gives by multiplying it with the original matrix. Does it provide an identity matrix as we expect when we multiply a matrix with its inverse or not? Let's see this in practice.
+Above is the Pseudo-inverse of our matrix. We can test what it gives by multiplying it with the original matrix. 
+
+Does it provide an identity matrix as we expect when we multiply a matrix with its inverse or not? Let's see this in practice.
 
 ```python
 np.dot(Aplus, A)
@@ -277,7 +300,9 @@ Output:
 array([[ 1.00000000e+00, -2.91433544e-16],
        [-2.77555756e-17,  1.00000000e+00]])
 ```
-Indeep, the output is not far away from an identity matrix. Note, the leading diagonal has ones, and all other elements in off-diagonal are so negligible that they can be assumed to be zero. So, we can conclude that the Pseudo-inverse approximates a matrix's inverse very appropriately.
+Indeep, the output is not far away from an identity matrix. Note, the leading diagonal has ones, and all other elements in off-diagonal are so negligible that they can be assumed to be zero. 
+
+So, we can conclude that the Pseudo-inverse approximates a matrix's inverse very appropriately.
 
 Now, it's time-consuming to perform all these steps one by one, if we've noticed. If you are only interested in getting the final answer, there exists a method in `Numpy` under the Linear Algebra model that automatically computes the pseudo-inverse. Let's see if we can use that method and obtain the same answer as above.
 
@@ -293,7 +318,11 @@ array([[-0.08767773,  0.17772512,  0.07582938],
 The `pinv()` method gave us the same answer we had earlier computed.
 
 ### Conclusion
-This article has introduced us to *Moore Penrose Pseudo-inverse*. Utilizing this concept, we could approximate the inverse of non-square matrices manually and practically. We have seen why it's important to perform such an operation, especially with real data, which involve finding a solution for variables where the data is a non-square matrix. Furthermore, we have explained how pseudo-inverse can be used and simplify the work. Now that you know how to perform the Pseudo-inverse, you can on and challenge yourself by solving a system of linear equations by applying the knowledge you've gained in this material. This will your understanding reinforced.
+This article has introduced us to *Moore Penrose Pseudo-inverse*. Utilizing this concept, we could approximate the inverse of non-square matrices manually and practically. 
+
+We have seen why it is important to perform such an operation, especially with real data, which involve finding a solution for variables where the data is a non-square matrix. Furthermore, we have explained how pseudo-inverse can be used and simplify the work. 
+
+Now that you know how to perform the Pseudo-inverse, you can on and challenge yourself by solving a system of linear equations by applying the knowledge you've gained in this material. This will your understanding reinforced.
 
 References:
 [More on Pseudo-Inverse](https://www.math.ucla.edu/~laub/33a.2.12s/mppseudoinverse.pdf)
