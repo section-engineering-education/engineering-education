@@ -64,7 +64,7 @@ This is the file structure.
 ![Output file arrangement](/engineering-education/random-joke-generator-a-complete-guide/output-file-arrangement.png)
 
 #### Step 1: Basic structure of the joke generator
-We will start by setting up the basic structure of the joke generator in that the `background-color` of our basic box will be `#0C0C0C` and it will be `550px` wide. We will use a border radius of `5px` to round the edges of the box. Refer to the snippet below:
+We will start by setting up the basic structure of the joke generator. The `background-color` of our basic box will be `#0C0C0C` and it will be `550px` wide. We will use a border radius of `5px` to round the edges of the box. Refer to the snippet below:
 
 ```html
 <!DOCTYPE html>
@@ -99,10 +99,12 @@ The box will be on the top center position of our page by setting its `position`
 
 The box should resemble the following picture in appearance.
 
-![Output box](engineering-education/random-joke-generator-a-complete-guide/output-box.png)
+![Output box](/engineering-education/random-joke-generator-a-complete-guide/output-box.png)
 
 #### Step 2: Adding a title
-The next step is to add a title. The title is there to enhance the page's appearance. The title will be oriented center to keep it in the box and will be `24px` in font size. See the example below.
+The next step is to add a title.
+
+The title is there to enhance the page's appearance. The title will be oriented center to keep it in the box and will be `24px` in font size. See the example below.
 
 ```css
 span {
@@ -116,10 +118,12 @@ span {
 
 After adding the title, we should have something close to this.
 
-![Output title](engineering-education/random-joke-generator-a-complete-guide/output-title.png)
+![Output title](/engineering-education/random-joke-generator-a-complete-guide/output-title.png)
 
 #### Step 3: Set up the joke viewing zone
-Moving on to the third task, we will create an area of loading all our jokes where this will be made possible by `<p>` tags. There is no need for a specific height and its size will be automatically determined based on the size of the content in it. It will have `opacity` set to `0` to visually hide everything in this section.
+Moving on to the third task, we will create an area to load all our jokes. This will be made possible by using `<p>` tags.
+
+There is no need for a specific height and its size will be automatically determined based on the size of the content in it. It will have `opacity` set to `0` to visually hide everything in this section.
 
 ```html
 <div id="joke-section"></div>
@@ -148,7 +152,7 @@ Using `.content-fade` we will set the `opacity` to `1` which essentially means w
 
 So far, we should have the following, as displayed below.
 
-![Output joke container](engineering-education/random-joke-generator-a-complete-guide/output-joke-container.png)
+![Output joke container](/engineering-education/random-joke-generator-a-complete-guide/output-joke-container.png)
 
 #### Step 4: Set up the generate joke button
 This button will help us generate random jokes when clicked. We will design the button using the code snippet below.
@@ -175,10 +179,10 @@ This button will help us generate random jokes when clicked. We will design the 
 
 Below is the output after adding the button.
 
-![Output button](engineering-education/random-joke-generator-a-complete-guide/output-btn.png)
+![Output button](/engineering-education/random-joke-generator-a-complete-guide/output-btn.png)
 
 #### Step 5: Activating the button
-Since we have the required layout, it is time for implementing this example with the help of javaScript. First, we must get the joke container and the generate joke button, as shown below.
+Since we have the required layout, it's time to implement this example with the help of javaScript. First, we must get the joke container and then generate joke button, as shown below.
 
 ```javascript
 // get the joke section container
@@ -221,10 +225,12 @@ The last part is to assign the method we just created to display a joke whenever
 generateBtn.addEventListener("click", acquireJoke);
 ```
 
-![Output joke](engineering-education/random-joke-generator-a-complete-guide/output-joke.png)
+![Output joke](/engineering-education/random-joke-generator-a-complete-guide/output-joke.png)
 
 ### Conclusion
-As a result of all you have learned so far, we may wrap up this tutorial. We have covered using API links to bring material from another website to your website and develop a random joke generator in javaScript. You may access and download the complete source code for this practice project [here](https://github.com/EssyG10/random-joke-generator).
+We have covered using API links to bring material from another website to your website and develop a random joke generator in javaScript.
+
+You can access and download the complete source code for this practice project [here](https://github.com/EssyG10/random-joke-generator).
 
 ### Further reading
 [Web APIs](https://developer.mozilla.org/en-US/docs/Web/API/Document/links)
