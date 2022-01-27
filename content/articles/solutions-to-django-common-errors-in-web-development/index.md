@@ -37,7 +37,7 @@ To have a better understanding of this article, the reader should:
 This means that the particular page you are looking for, for example, home.html is not present in the folder. Admittedly, the template folder stores all HTML files in Django.
 ### Causes of 404 page not found error
 There are three possible causes of this error in the Django framework.
-1. Page is not present in the template folder.
+- #### Page is not present in the template folder.
 
 This means that the particular folder you are looking for, for example, home.html is not present in the folder. Admittedly, the template folder stores all HTML files in Django.
 
@@ -45,7 +45,7 @@ This means that the particular folder you are looking for, for example, home.htm
 
 Make sure your HTML file is well created with correct naming in the template directory.
 
-2. Page has no function in views.py
+- #### Page has no function in views.py
 
 Every page must have a function in the views.py file without any denial. The absence of page function in views.py will cause this error.
 
@@ -53,7 +53,7 @@ Every page must have a function in the views.py file without any denial. The abs
 
 views.py in Django store functions that return page on the browser without a function in views.py because most of this function has a role of rendering HTML files to the browser. If there is an error that page is not found but we have the HTML existing in the template file, then we need to create a python function that will display an HTML file on the browser.
 
-3. Absence in URL
+- #### Absence in URL
 
 The last thing to make sure you do is to create the URL, the function we have created in views.py should be defined in url.py as shown below. Remember to import views!
 
