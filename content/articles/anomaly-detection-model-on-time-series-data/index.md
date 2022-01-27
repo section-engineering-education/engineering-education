@@ -323,3 +323,5 @@ To access the Google Colab notebook for this tutorial, use this [link](https://c
 - [Time series decomposition in python](/engineering-education/time-series-decomposition-in-python/)
 - [Time Series analysis with Facebook Prophet](https://towardsdatascience.com/time-series-analysis-with-facebook-prophet-how-it-works-and-how-to-use-it-f15ecf2c0e3a)
 
+---
+Peer Review Contributions by: [Wilkister Mumbi](/engineering-education/authors/wilkister-mumbi/)
