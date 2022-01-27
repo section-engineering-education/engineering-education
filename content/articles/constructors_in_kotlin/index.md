@@ -1,8 +1,5 @@
 A constructor is a quick and easy technique to set up class properties. It's also known as a specific member function that's invoked when a new object is formed.
 
-
-Note: If the programmer does not define the constructor, the compiler is designed to generate a default one.
-
 This article explains the basic structure of a constructor, the two types of constructors, then the init block. Finally, we'll also discuss some best practices related to object-oriented programming.
 
 ### Table of Contents
@@ -29,7 +26,7 @@ There are two different kinds of constructors in Kotlin, which are:
 - The secondary constructor
 
 #### How to use constructors to create an object
-The primary constructor must be defined with the same name as the class, followed by parentheses. However, the secondary constructor must be expressed with the `constructor` keyword.
+The primary constructor must be defined with the same name as the class, followed by parentheses. However, the secondary constructor must be expressed with the `constructor` keyword. Note: If the programmer does not define the constructor, the compiler is designed to generate a default one.
 
 #### Primary constructors
 The primary constructor is a section of the class header that comes after the class name, using the `constructor` keyword. The example below exemplifies the definition:
