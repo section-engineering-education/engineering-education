@@ -6,7 +6,7 @@ url: /random-joke-generator-a-complete-guide/
 title: Random Joke Generator in Javascript
 description: In this tutorial, we will create a random joke generator using Javascript.
 author: esther-maina
-date: 2022-01-12T00:00:00-01:10
+date: 2022-01-27T00:00:00-11:00
 topics: [Languages]
 excerpt_separator: <!--more-->
 images:
