@@ -73,7 +73,7 @@ We have set up our development environment to install the required dependencies.
 pip install Django
 ```
 
-- Next, we need to install [Python Decouple](https://pypi.org/project/python-decouple/) to help us organize our configuration files appropriately and hide confidential application details like API-key during deployment.
+Next, we need to install [Python Decouple](https://pypi.org/project/python-decouple/) to help us organize our configuration files appropriately and hide confidential application details like the API key during deployment.
 
 ```bash
 pip install python-decouple
