@@ -22,17 +22,13 @@ To fully understand the article, you are required to have the following:
 ### What is a constructor?
 A constructor is a block of code that is similar to a procedure or a method, usually declared alongside the class. They are mostly used when you need to initialize variables while creating an object.
 
-### How to use constructors to create an object
-The primary constructor must be defined with the same name as the class, followed by parentheses. However, the secondary constructor must be expressed with the `constructor` keyword.
-
 ### Types of constructors in Kotlin
 There are two different kinds of constructors in Kotlin, which are:
 
 - The primary constructor
 - The secondary constructor
 
-
-### How to use constructors to create an object
+#### How to use constructors to create an object
 The primary constructor must be defined with the same name as the class, followed by parentheses. However, the secondary constructor must be expressed with the `constructor` keyword.
 
 #### Primary constructors
@@ -190,7 +186,7 @@ The clean use of classes is required for effective Kotlin. We learned about cons
   - Not use special prefixes or suffixes (e.g. `name_`, `mName`, `s_name`, and `kName`), except in the case of backing properties.
   
 
-Note:The init block is called just after the primary constructor, and the secondary constructor is called using the `this` keyword.
+Note: The init block is called just after the primary constructor, and the secondary constructor is called using the `this` keyword.
 
 ### Conclusion
-In this article, we have covered various ways of creating constructors using Kotlin as our language, and when to use the init block. We also learned when the init block is exercuted vs when the primary constructor is exercuted,along with how secondary constructors are inovoked . Finally, we went through best practices in object-oriented programming as it relates to constructors. 
+In this article, we have covered various ways of creating constructors using Kotlin as our language, and when to use the init block. We also learned when the init block is executed vs when the primary constructor is executed, along with how secondary constructors are invoked. Finally, we went through best practices in object-oriented programming as it relates to constructors.
