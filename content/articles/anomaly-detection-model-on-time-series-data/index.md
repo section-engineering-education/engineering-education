@@ -1,4 +1,20 @@
-In machine learning, a time series is a series of data points that are in successive order over a given time. The time can be minutes, hours, days, weeks, or years.
+---
+layout: engineering-education
+status: publish
+published: true
+url: /anomaly-detection-model-on-time-series-data/
+title: Anomaly Detection Model on Time Series data
+description: This tutorial will guide a reader how to use Facebook Prophet to build an anomaly detection model..
+author: charles-ndirutu
+date: 2022-01-27T00:00:00-04:00
+topics: [Machine Learning]
+excerpt_separator: <!--more-->
+images:
+
+  - url: /engineering-education/anomaly-detection-model-on-time-series-data/hero.jpg
+    alt: Anomaly Detection Model on Time Series data Hero Image
+---
+In machine learning, a time series is a series of data points that are in successive order over a given time. The time can be minutes, hours, days, weeks, or years.<!--more-->
 Time series models analyze datasets and extract meaningful data characteristics. This makes the model understand patterns from data and gain useful insights. The model uses the knowledge gained to make future predictions. In time series modeling, we use diagrams and plots to show the predicted values.  
 
 The application of time series is as follows:  Weather forecasting, stock price prediction, forex trading, the field of science and engineering.   
