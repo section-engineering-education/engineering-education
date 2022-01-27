@@ -31,7 +31,7 @@ Before you start reading this tutorial, you need to have the following in your m
 - [MongoDB](https://www.mongodb.com/try/download/community) installed
 
 ### Introduction
-MongoDB is one of the most used modern web applications for a database. MongoDB is not secure by default. Once installed, one will have a difficult time before configuring it for authentication, since people can browse, write, delete, or modify data on your server without ever needing to log in or authenticate. Securing the database is simple and may be completed in a few steps. In this article, I'll show you how to protect your MongoDB setup by using some activation command lines.
+MongoDB is one of the most used modern web applications for a database. MongoDB is not secure by default. Once installed, one will have a difficult time before configuring it for authentication. Since people can browse, write, delete, or modify data on your server without ever needing to log in or authenticate. Securing the database is simple and may be completed in a few steps. In this article, you will learn how to secure and activate authentication on MongoDB.
 
 ### Check the environment
 To check if MongoDB is running on Linux kernel, we use the command below:
@@ -87,7 +87,7 @@ The output displays the shell's version, the connection of MongoDB that is its I
 show dbs
 ```
 
- something like this will appear:
+ The output will appear something like this:
 
 ```output
 db-job-admin   0.0091GB
@@ -140,7 +140,7 @@ Successfully added user: {
 
 ```
 
-Exist MongoDB after the operation. Users will be allowed to enter details after authentication is enabled and the MongoDB daemon restarts. we can as well restart using the command below:
+Then exist MongoDB after the operation. Users will be allowed to enter details after authentication is enabled and the MongoDB daemon restarts. we can as well restart using the command below:
 
 ```bash
 mongod --auth --dbpath="C:\data\mongo" 0r
@@ -179,7 +179,7 @@ $mongo
 
 No warning will appear since authentication is already enabled. The output will appear similar to this:
 
-```Output
+```bash
 MongoDB shell version v3.5.0
 ```
 
