@@ -3,7 +3,7 @@ layout: engineering-education
 status: publish
 published: true
 url: /random-joke-generator-a-complete-guide/
-title: Random Joke Generator in Javascript: A Complete Guiden
+title: Random Joke Generator in Javascript
 description: In this tutorial, we will create a random joke generator using Javascript.
 author: esther-maina
 date: 2022-01-12T00:00:00-01:10
@@ -12,7 +12,7 @@ excerpt_separator: <!--more-->
 images:
 
   - url: /engineering-education/random-joke-generator-a-complete-guide/hero.jpg
-    alt: Random Joke Generator in Javascript: A Complete Guide Hero Image
+    alt: Random Joke Generator in Javascript Hero Image
 ---
 Application programming interface(API) enables one to get material from other websites and display it anywhere you wish.
 
@@ -46,16 +46,22 @@ By the end of this tutorial, learners should be able to:
 - Develop a complete functional random joke generator.
 
 ### Random joke enerator project example
-This project will generate random jokes using API links. For this, you need to have basic knowledge of HTML, CSS, and JavaScript. First, we will make a box on the web page and add a title. Then we will create an area in which all the joke generators will be seen. 
+This project will generate random jokes using API links.
 
-Below will be a generate button that will generate a different joke each time it is clicked on. Here we will not use any text manually. Here we will use an API link to collect all the information from other places with the help of the fetch method and then display it on the webpage with the help of textContent. The following files will be available:
+First, we will make a box on the web page and add a title. Then we will create an area in which all the joke generators will be seen.
+
+Below the area will be a generate button that will generate a different joke each time it is clicked on.
+
+We will not use any text manually. Here we will use an API link to collect all the information from other places with the help of the fetch method and then display it on the webpage with the help of textContent.
+
+Create the following files:
 - `index.html`
 - `style.css`
 - `app.js`
 
 This is the file structure.
 
-![Output file arrangement](engineering-education/random-joke-generator-a-complete-guide/output-file-arrangement.png)
+![Output file arrangement](/engineering-education/random-joke-generator-a-complete-guide/output-file-arrangement.png)
 
 #### Step 1: Basic structure of the joke generator
 We will start by setting up the basic structure of the joke generator in that the `background-color` of our basic box will be `#0C0C0C` and it will be `550px` wide. We will use a border radius of `5px` to round the edges of the box. Refer to the snippet below:
