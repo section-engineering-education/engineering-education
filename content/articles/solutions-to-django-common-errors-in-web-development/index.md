@@ -6,18 +6,18 @@ It is almost impossible to reach your destinations in web development using any 
 
 By the end of this tutorial, the reader should be able to solve the following:
   
-* 404 page not found error 
-* No module named error
-* Django-admin is not recognized as an internal or external command
-* Django is not able to find static files
-* Name error
+- 404 page not found error 
+- No module named error
+- Django-admin is not recognized as an internal or external command
+- Django is not able to find static files
+- Name error
 Internal server error
 
 ### Prerequisites
 To have a better understanding of this article, the reader should:
-* Know how to create websites using the Django framework
-* Have a good working machine with the preferred IDE set up
-* Be familiar with different Django errors
+- Know how to create websites using the Django framework
+- Have a good working machine with the preferred IDE set up
+- Be familiar with different Django errors
 
 ### Table of Contents
 1. Handling 404 page not found error
@@ -135,10 +135,10 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 ### Further learning
 For further learning, I recommend you go through the following:
 
-* [404 page not found error 
+- [404 page not found error 
 No module named error](https://www.youtube.com/watch?v=0M_PZU8wcXY&t=23s)
-* [Django-admin is not recognized as an internal or external command](https://www.youtube.com/watch?v=EwJoN-G3w-s)
-* [Django is not able to find static files](https://www.youtube.com/watch?v=0SAZByRZB9U)
-* [Name error](https://www.youtube.com/watch?v=AFhpBvKilPA)
-* [Internal server error](https://www.youtube.com/watch?v=y8DN8LOm8WA&t=9s)
-* [Template does not exist error](https://www.youtube.com/watch?v=RWAKahsR1_g)
+- [Django-admin is not recognized as an internal or external command](https://www.youtube.com/watch?v=EwJoN-G3w-s)
+- [Django is not able to find static files](https://www.youtube.com/watch?v=0SAZByRZB9U)
+- [Name error](https://www.youtube.com/watch?v=AFhpBvKilPA)
+- [Internal server error](https://www.youtube.com/watch?v=y8DN8LOm8WA&t=9s)
+- [Template does not exist error](https://www.youtube.com/watch?v=RWAKahsR1_g)
