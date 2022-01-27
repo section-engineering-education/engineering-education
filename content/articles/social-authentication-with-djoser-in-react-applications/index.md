@@ -202,14 +202,14 @@ We can now run `python3 manage.py makemigrations` and `python3 manage.py migrate
 ### Creating Google OAuth Credentials
 
 Visit [Google Cloud Plaform](https://console.developers.google.com/) and create a new project as follows:
-![Create Project](create_new_project_google_console.png)
+![Create Project](/engineering-education/content/articles/social-authentication-with-djoser-in-react-applications/create_new_project_google_console.png)
 
 With the project selected, click `Credentials` and then click OAuth Client ID after navigating to create credentials.
-![Create OAuth Client ID](creating_oauth_client_id.png)
+![Create OAuth Client ID](/engineering-education/content/articles/social-authentication-with-djoser-in-react-applications/creating_oauth_client_id.png)
 You may need to set up OAuth consent. Select web application. For authorized javascript origins enter `http://127.0.0.1:8000` and for authorized redirect URIs
 have these URLs: `http://127.0.0.1:8000`, `http://127.0.0.1:8000/home`, `http://127.0.0.1:8000/login`
 
-![Set up the uris](setting_up_the_uris.png)
+![Set up the uris](/engineering-education/content/articles/social-authentication-with-djoser-in-react-applications/setting_up_the_uris.png)
 
 After you click create, you will get your client id and client secret which you will use in your `settins.py` file for this part:
 
@@ -487,7 +487,7 @@ export default App;
 
 ```
 You can now run `npm start` and you should be able to see this welcome page:
-![Home Page](home_page.png)
+![Home Page](/engineering-education/content/articles/social-authentication-with-djoser-in-react-applications/home_page.png)
 
 You should also be able to navigate to login and signup pages.
 
@@ -965,10 +965,10 @@ We check if a user is authenticated and if so, have the user only have the optio
 The logout function is called when a user clicks the Logout link.
 
 You should now be able to fully authenticate using a google account:
-![Authenticating using Google](authenticating_with_google.png)
+![Authenticating using Google](/engineering-education/content/articles/social-authentication-with-djoser-in-react-applications/authenticating_with_google.png)
 
 You will be redirected to the home page with the option of logging out.
-![The home page after authentication](home_page_after_authentication.png)
+![The home page after authentication](/engineering-education/content/articles/social-authentication-with-djoser-in-react-applications/home_page_after_authentication.png)
 
 > Notice that the user will be authenticated as long as they have signed out of their google account. This way the user does not have to keep entering the email and password 
 > every time they want to login.
