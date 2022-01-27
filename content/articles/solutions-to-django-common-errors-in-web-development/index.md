@@ -16,7 +16,6 @@ By the end of this tutorial, the reader should be able to solve the following:
 To have a better understanding of this article, the reader should:
 - Know how to create websites using the Django framework
 - Have a well-functioning Computer
-- Be familiar with different Django errors
 - Have Python, and Django installed
 
 ### Table of Contents
