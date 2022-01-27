@@ -1,82 +1,108 @@
-### Mocking with JUnit and Mockito - The Why and How
-The essence of unit testing is to verify that our code works regardless of its dependencies. Imagine that we want to write a mock test for a service that depends on a database for processing orders.
-To test our service, we can use a mock implementation of our database instead of having to use an actual database. This is possible since we know how an actual database behaves given certain scenarios. Mocking enables us to test code independent of its dependencies, helping us achieve introspection and code isolation.
+---
+layout: engineering-education
+status: publish
+published: true
+url: /mocking-with-junit-and-mockito-the-why-and-how/
+title: Testing Java Projects using JUnit and Mockito
+description: This tutorial will help the reader understand JUnit and Mockito. It will also demonstrate how to use these concepts to test Java projects.
+author: ehis-edemakhiota
+date: 2022-01-18T00:00:00-14:11
+topics: [Languages]
+excerpt_separator: <!--more-->
+images:
 
-Our system under testing will be the service class of a Hostel Management System built with:
+  - url: /engineering-education/mocking-with-junit-and-mockito-the-why-and-how/hero.png
+    alt: Mocking with JUnit and Mockito - The Why and How
+---
+The essence of unit testing is to verify that our code works regardless of its dependencies. 
+<!--more-->
+Imagine that we want to write a mock test for a service that depends on a database to process orders.
+
+To test our service, we can use a mock implementation of a database instead of having to use an actual database. 
+
+This is possible since we know how an actual database behaves in different scenarios. Mocking enables us to test code independent of its dependencies. As a result, we can achieve introspection and code isolation.
+
+In this tutorial, we will test the service class of a Hostel Management System built using:
 - Java
-- [Hamcrest](http://hamcrest.org) - a framework that provides intuitive matchers for testing.
-- [JUnit5](https://junit.org/junit5/) - a java test engine.
-- [AssertJ](https://github.com/assertj/assertj-core) - a library that provides fluent assertions for java unit tests. We use AssertJ in this project because Hamcrest does not offer an intuitive API for testing for exceptions.
-- [Spark web framework](https://sparkjava.com/) - a lightweight java web framework for exposing our API endpoints.
+- [Hamcrest](http://hamcrest.org) - A framework that provides intuitive matchers for testing.
+- [JUnit5](https://junit.org/junit5/) - A Java test engine.
+- [AssertJ](https://github.com/assertj/assertj-core) - A library that provides fluent assertions for Java unit tests. We use AssertJ in this project because Hamcrest does not offer an intuitive API for testing exceptions.
+- [Spark web framework](https://sparkjava.com/) - A lightweight Java web framework for exposing API endpoints.
 
-You can find the project in this repository - [bedspaces](https://github.com/ehizman/bedspaces).
+You can find the project in this [repository](https://github.com/ehizman/bedspaces).
 
 ### Prerequisites
 As a prerequisite for this tutorial, the reader should have the following:
 - An understanding of Java programming language.
-- A basic knowledge of how to use Data Transfer Objects(DTOs) to receive requests and send out responses.
+- A basic knowledge of how to use Data Transfer Objects (DTOs) to receive requests and send out responses.
 - A basic knowledge of how to use the [ModelMapper](http://modelmapper.org/) for mapping models to each other.
 - Knowledge of how to use [Lombok](https://projectlombok.org/) and its associated methods.
 - A basic understanding of how to use [JUnit](https://en.wikipedia.org/wiki/JUnit) for unit tests.
 - Java Development Kit (JDK) [installed](https://www.oracle.com/java/technologies/downloads/) on your computer.
 - IntelliJ code editor [installed](https://www.jetbrains.com/idea/download/).
 - Maven [installed](https://maven.apache.org/).
-- Internet access to download Maven dependencies.
+- Internet access to download other Maven dependencies.
 
 ### Goals
 At the end of this tutorial, the reader should understand the following:
-1. How mock objects work and the different methods used by mocking frameworks.
-2. Why mocking is essential, what to mock and what not to mock.
+1. How mock objects work, as well as the different methods used by mocking frameworks.
+2. Why mocking is essential.
 3. How to integrate Mockito dependency into a Java project.
 4. How to use simple Mockito stubbing mechanisms.
 5. How to verify method invocation using `Mockito.verify`
 6. How to use `ArgumentCaptor` for verifying arguments passed to stubbed methods.
 7. How to create user-defined responses from mocks using the `Answer` interface.
 
-### Why mocking is essential, what to mock and what not to mock
-A test double is a mock implementation of an external dependency used to test a system's interaction with the external dependency. In Mockito, we generally refer to all kinds of test doubles as mocks, but in reality, they can fall into one of the following three categories: stubs, mocks, and spies.
+### Why mocking is essential
+A test double is a mock implementation of an external dependency used to test a system's interaction with the external dependency. 
+
+In Mockito, we generally refer to all kinds of test doubles as mocks, but in reality, they can fall into one of the following three categories: stubs, mocks, and spies.
 
 | Type |                                                        Description                                                         |
 |------|:--------------------------------------------------------------------------------------------------------------------------:|
 | Stub | A *stub* is an object that always returns a specified value regardless of which parameters we pass into the stub's methods |
-| Mock |    A *mock* is an object whose behavior -in the form of parameters and return values- we declare before running a test    |
+| Mock |    A *mock* is an object whose behavior - in the form of parameters and return values - we declare before running a test    |
 | Spy  |           A *spy* is an object that logs interactions. Spies are useful for verifying interactions with a system           |
 
-Mockito supports creating mock objects and spies.
-Mocking is a powerful concept in testing across languages. Without mocks and Mocking:
-- It will take much boilerplate code to set up some system dependencies(web servers, databases, and services that require calls made over the internet) for testing our system.
-- Without mocks, the execution of our test suite will be slow.
-- It will be impossible to test error conditions, exceptions, and functions that perform costly tasks such as deleting files or database tables since we are testing with the actual objects.
+Mockito supports the creation of mock objects and spies. Mocking is a powerful concept in testing across languages. Without mocking:
 
-On the other hand, mocks are not a one-size fit all solution for the following reasons:
-- Mocking systems makes our test classes run very slowly since mocking depend on  [reflection](https://en.wikipedia.org/wiki/Reflective_programming)
-- Over mocking leads to over-abstraction, making our code extremely complicated.
+- It will take much boilerplate code to set up some system dependencies (web servers, databases, and services that require calls made over the internet) for testing our system.
+- The execution of the test suite will also be slow.
+- It will be impossible to test error conditions, exceptions, and functions that perform time-consuming tasks such as deleting files.
 
-[Robert C. Martin](https://en.wikipedia.org/wiki/Robert_C._Martin) suggests mocking sparingly. He recommends that we
-"mock across architecturally significant boundaries, but not within those boundaries." He means that we should only mock out the database, web servers, and any other external service(for example, parts of our code that interact with SMTP servers to send emails or perform I/O operations).
+Disadvantages of mocks include:
+- Mocking systems make our test classes run slowly since they depend on [reflection](https://en.wikipedia.org/wiki/Reflective_programming)
+- Over mocking leads to over-abstraction. This makes our code extremely complicated.
 
-> Mock across architecturally significant boundaries, but not within those boundaries
+[Robert C. Martin](https://en.wikipedia.org/wiki/Robert_C._Martin) suggests mocking sparingly. He recommends that we "mock across architecturally significant boundaries, but not within those boundaries." 
+
+He means that we should only mock out the database, web servers, and any other external service. 
+
+For example, parts of our code that interact with SMTP servers to send emails or perform I/O operations.
 
 ### How mock objects work
-This [article on devopedia](https://devopedia.org/mock-testing) suggests that there are essentially two types of mocking frameworks- Proxy-based mocking frameworks and Classloader-remapping-based frameworks.
+This [article on devopedia](https://devopedia.org/mock-testing) suggests that there are two types of mocking frameworks - Proxy-based and Classloader remapping-based frameworks.
 
-- In Proxy-based mocking, a proxy object imitates the actual object. We inject the proxy object as a dependency through either the constructor or the setter. Dependency Injection (DI) frameworks such as Spring utilize this form of mocking. This form of mocking is offered by Mocking frameworks such as *EasyMock*, *JMock*, and *Mockito*.
+In Proxy-based mocking, a proxy object imitates the actual object. We inject the proxy object as a dependency through either the constructor or the setter. 
 
-However, this form of mocking is limited when it comes to mocking static/private/final methods or a final class.
+Dependency Injection (DI) frameworks such as Spring utilize this form of mocking. It is also used by frameworks such as *EasyMock*, *JMock*, and *Mockito*.
 
-- In Classloader-remapping-based mocking, the `.class` file of a dependency is remapped to the `.class` file of the mock object by the class-loader.
-  Thus, when a dependency is required the mock object is loaded instead of the actual object. Mocking frameworks such as *JMockit* and *PowerMock* support this form of mocking.
+However, this type of mocking is limited when it comes to static/private/final methods or final classes.
 
-Classloader-remapping-based mocking can mock static/private/final methods or a final class, unlike Proxy-based mocking.
+In classloader remapping-based mocking, the `.class` file of a dependency is remapped to the `.class` file of the mock object by the class-loader.
+
+Therefore, when a dependency is required the mock object is loaded instead of the actual object. Mocking frameworks such as *JMockit* and *PowerMock* support this form of mocking.
+
+Classloader remapping-based mocking can mock static/private/final methods or final classes, unlike proxy-based mocking.
 
 ### Mockito in use
-This section demonstrates the use of Mockito while building a Hostel Management System. The system allows the following actions:
+This section demonstrates the use of Mockito while building a Hostel Management System. The system supports the following actions:
 - Students can register on the system.
 - Students can request a bed space.
 - You can find all students in a Hostel by providing the name of the Hostel.
 - You can find all students in a room by providing the room id.
 
-The domain classes used in the program are *Hostel, Room, Student, HostelName, BedSpace, and Gender*.
+The domain classes used in this program are *Hostel, Room, Student, HostelName, BedSpace, and Gender*.
 
 The system's class diagrams are as shown below:
 
@@ -84,15 +110,16 @@ The system's class diagrams are as shown below:
 
 > *Hostel* represents a real-world Hostel.
 
-The system comprises two male hostels and two female hostels.
-Each *Hostel* consists of twenty *Rooms*.
-Each *Room* consists of four *Bedspaces*.
-Our `HostelRepository` exists as an array of `Hostel` objects, and our `StudentRepository` exists as a Map of student matricNo: student-object pairs.
+- The system comprises two male hostels and two female hostels.
+- Each *Hostel* consists of twenty *Rooms*.
+- Each *Room* consists of four *Bedspaces*.
+
+The `HostelRepository` exists as an array of `Hostel` objects, and the `StudentRepository` is a map of student `matricNo: student-object` pairs.
 
 The `StudentServiceImpl` class is dependent on the `StudentRespository` class and the `HostelRepository` class.
 
 ### Setting up Mockito
-To use Mockito, first, we add the following dependencies to our ```pom.xml``` file:
+To use Mockito, we first need to add the following dependencies to our ```pom.xml``` file:
 
 ```xml
 <dependencies>
@@ -116,21 +143,24 @@ To use Mockito, first, we add the following dependencies to our ```pom.xml``` fi
     </dependency>
 </dependencies>
 ```
-The following describes the different ways of using Mockito.
 
-#### Using Plain Mockito to create mocks
-We can create mock manually with [Mockito::mock](http://static.javadoc.io/org.mockito/mockito-core/2.2.28/org/mockito/Mockito.html#mock(java.lang.Class)).
+**The following methods describe the different ways of using Mockito:**
 
-    ```java
-    private HostelRepository hostelRepository = Mockito.mock(HostelRepository.class);
-    private StudentRepository studentRepository = Mockito.mock(StudentRepository.class);
-    private StudentService studentService = new StudentService(hostelRepository, studentRepository);
-    ```
-In the above example, we mocked the
-`HostelRepository` and `StudentRepository`. Then, we passed the mock objects into the constructor of the `StudentService`-the system under test.
+#### Using plain Mockito to create mocks
+We can create mock manually using [Mockito::mock](http://static.javadoc.io/org.mockito/mockito-core/2.2.28/org/mockito/Mockito.html#mock(java.lang.Class)).
+
+```java
+private HostelRepository hostelRepository = Mockito.mock(HostelRepository.class);
+private StudentRepository studentRepository = Mockito.mock(StudentRepository.class);
+private StudentService studentService = new StudentService(hostelRepository, studentRepository);
+```
+
+In the above example, we mocked the `HostelRepository` and `StudentRepository`. Then, we passed the mock objects into the constructor of the `StudentService` (the system under test).
 
 #### Initializing Mocks with Mockito Annotations
-The [MockitoAnnotations::initMocks](https://static.javadoc.io/org.mockito/mockito-core/2.2.28/org/mockito/MockitoAnnotations.html) is used to create mocks programmatically by annotating the objects to mock with the [@Mock](https://static.javadoc.io/org.mockito/mockito-core/2.2.28/org/mockito/Mock.html) annotation. We use Mockito annotations when we have several dependencies to mock, and we do not want to create mock manually for each dependency.
+The [MockitoAnnotations::initMocks](https://static.javadoc.io/org.mockito/mockito-core/2.2.28/org/mockito/MockitoAnnotations.html) is used to create mocks programmatically by annotating the objects to mock with the [@Mock](https://static.javadoc.io/org.mockito/mockito-core/2.2.28/org/mockito/Mock.html) annotation. 
+
+We use Mockito annotations when we have several dependencies to mock.
 
 ```java
 class StudentServiceImpl_StubbingTests {
@@ -150,13 +180,16 @@ class StudentServiceImpl_StubbingTests {
     //test cases excluded for the sake of brevity
 }
 ```
-We create mocks using the `@Mock` annotation on fields that we intend to mock. To initialize our mocks, we call `MockitoAnnotations.openMocks(this)` in the `@BeforeEach` section before injecting the mocks into the constructor of our service.
+
+We create mocks using the `@Mock` annotation on fields that we intend to mock. 
+
+To initialize our mocks, we call `MockitoAnnotations.openMocks(this)` in the `@BeforeEach` section before injecting the mocks into the constructor of our service.
 
 #### Using JUnit Jupiter's MockitoExtension
-[JUnit 5](https://junit.org/junit5/) provides an extension - [org.mockito:mockito-JUnit-jupiter](https://search.maven.org/search?q=g:org.mockito%20AND%20a:mockito-junit-jupiter).
+[JUnit 5](https://junit.org/junit5/) provides the [org.mockito:mockito-JUnit-jupiter](https://search.maven.org/search?q=g:org.mockito%20AND%20a:mockito-junit-jupiter) extension.
 
-To use the extension:
-- We add the following dependency to our `pom.xml` file.
+To use the extension, we add the following dependency to our `pom.xml` file.
+
 ```xml
 <dependency>
     <groupId>org.mockito</groupId>
@@ -168,10 +201,10 @@ To use the extension:
 
 > This single dependency replaces both the `mockito core` and the `junit` dependencies defined above.
 
-- We add `@ExtendWith(MockitoExtension.class)` to the test class
-- We annotate fields that we want to mock with the `@Mock`  annotation.
+We then add `@ExtendWith(MockitoExtension.class)` to the test class and annotate fields that we want to mock with the `@Mock`  annotation.
 
-Using the Mockito extension makes our test classes neat and concise.
+The Mockito extension makes our test classes neat and concise, as shown below:
+
 ```java
 @ExtendWith(MockitoExtension.class)
 class StudentServiceImpl_StubbingTests {
@@ -194,6 +227,7 @@ class StudentServiceImpl_StubbingTests {
 
 #### Using @InjectMocks with Spring
 When using Spring, we can inject a mock object into Spring's `ApplicationContext` making use of the `@MockBean` annotation:
+
 ```java
 @ExtendWith(MockitoExtension.class)
 class StudentServiceImplTest {
@@ -210,28 +244,31 @@ class StudentServiceImplTest {
 
 > `@MockBean` is a SpringBoot annotation. Spring automatically injects the mock object as a replacement for the actual object wherever a dependency of an appropriate bean is required.
 
-### Knowing when to use `Mockito.mock` and when to use @MockBean from Springboot.
+### Knowing when to use Mockito.mock and @MockBean from Springboot
+We use `Mockito.mock` when our test does not rely on the `SpringBoot` container. `Mockito.mock` is fast and ensures the isolation of each test component.
 
-We use `Mockito.mock` when our test does not rely on the SpringBoot container. Using `Mockito.mock` is fast and ensures the isolation of each test component.
+We use `@MockBean` from SpringBoot when our test relies on the SpringBoot container, and when we want to mock one of the container's beans. 
 
-We use  `@MockBean` from SpringBoot when our test relies on the SpringBoot container, and when we want to mock one of the container's beans. Typical usage of SpringBoot  `@MockBean` is in writing controller tests with test classes annotated with `@WebMvcTest`.
+Typical usage of SpringBoot `@MockBean` is in writing controller tests with test classes annotated with `@WebMvcTest`.
 
-### Defining the behavior of mock objects- performing basic stubbing with Mockito
+### Defining the behavior of mock objects
 We use stubbing operations to define the behaviors of mock objects. The simple stubbing directive `when(something).thenReturn(somethingElse)` allows us to return a given value whenever we invoke a specific method.
 
-The `when()` method represents a **trigger**. The `when` trigger does not work when the method is void.
+The `when()` method represents a *trigger*. The `when` trigger does not work when the method is void.
 
 We can import `Mockito.when` as follows:
+
 ```java
 import static org.mockito.Mockito.when;
 ```
 
-There are several use cases for the `when-then` directive.
+There are several use cases for the `when-then` directive:
+
 1. `when- thenReturn()` - This stubbing directive returns a particular hardcoded value whenever we invoke a specific method on a mock object.
 
 To demonstrate the `when- theReturn()` directive, let us consider the *student can register* use-case of our hostel management system.
 
-![register-student-activity-diagram](/engineering-education/mocking-with-junit-and-mockito-the-why-and-how/register-student-activity.png "hostel management system - register student activity diagram")
+![register-student-activity-diagram](/engineering-education/mocking-with-junit-and-mockito-the-why-and-how/register-student-activity.png)
 
 The `registerStudent` method code snippet is shown below:
 
@@ -249,6 +286,7 @@ public StudentDto registerStudent(RegistrationRequest registrationRequest) throw
 ```
 
 The test case code snippet for `registerStudent` method is as follows:
+
 ```java
 @Test
 void registerStudentTest() throws Exception {
@@ -273,10 +311,11 @@ void registerStudentTest() throws Exception {
 
 The `save` method in the `studentRepository` class is stubbed to return `studentToSave` object whenever we invoke the `save` method.
 
-> The `any(Student.class)` [Mockito Argument Matcher](https://javadoc.io/doc/org.mockito/mockito-core/latest/org/mockito/ArgumentMatchers.html) means that whenever we invoke the `save` method with any object of class `Student`, the mock `studentRepository` will return `studentToSave` object.
+> The `any(Student.class)` [Mockito Argument Matcher](https://javadoc.io/doc/org.mockito/mockito-core/latest/org/mockito/ArgumentMatchers.html) means that whenever we invoke the `save` method with any object of the `Student` class, the mock `studentRepository` will return `studentToSave` object.
 
 
-2. `when- thenThrow(e)` - This throws an exception- `e` whenever we invoke the stubbed method. To explain how `when- thenThrow` works, let us stub the `save` method in our `StudentRepository`
+2. `when- thenThrow(e)` - This throws an exception whenever we invoke the stubbed method. To explain how `when- thenThrow` works, let us stub the `save` method in our `StudentRepository`, as demonstrated below:
+
 ```java
 public Student save(Student student) throws HostelManagementException {
     if (student == null){
@@ -288,23 +327,29 @@ public Student save(Student student) throws HostelManagementException {
 ```
 
 We can direct our mock `studentRepository` to throw a `NullEntityException` whenever a null object is passed into the `save` method as follows:
+
 ```java
 when(studentRepository.save(null)).thenThrow(NullPointerException.class);
 ```
 
-3. `thenAnswer(Answer answer)` - Instead of returning a hard-coded value, we can use the `thenAnswer(Answer answer)` stubbing method to return a user-defined value computed at runtime. `Answer` is an interface. To demonstrate the usage of the `thenAnswer()` stubbing method, let us add a `registrationTime` field of type `LocalDateTime` to our `Student` model.
+3. `thenAnswer(Answer answer)` - Instead of returning a hard-coded value, we can use the `thenAnswer(Answer answer)` stubbing method to return a user-defined value computed at runtime. In this case, `Answer` is an interface. 
 
-`thenAnswer` makes sense to use in this scenario because we want our mock to return the exact time a student registered.
+To demonstrate the usage of the `thenAnswer()` stubbing method, let us add a `registrationTime` field of type `LocalDateTime` to our `Student` model.
+
+`thenAnswer` makes sense in this scenario because we want our mock to return the exact time a student registered.
 
 To do this:
 
-First, we declare a variable `time` in our test class and initialize it to `null` in our `@BeforeEach`
+First, we declare a variable `time` in our test class and initialize it to `null` in our `@BeforeEach`.
+
 ```java
 @ExtendWith(MockitoExtension.class)
 class StudentServiceImpl_StubbingTests {
 private StudentService studentService;
+
 @Mock
 private StudentRepository studentRepository;
+
 @Mock
 private HostelRepository hostelRepository;
 private LocalDateTime time;
@@ -316,14 +361,18 @@ private LocalDateTime time;
     }
 }
 ```
+
 Next, we create a getter method called `getTime` that will return the value of the `time` variable whenever it is called:
+
 ```java
 private LocalDateTime getTime() {
     time = LocalDateTime.now();
     return time;
 }
 ```
+
 Finally, we write our test case as follows:
+
 ```java
 @Test
 void registerStudentTest_WithRegistrationTime() throws Exception {
@@ -351,17 +400,23 @@ void registerStudentTest_WithRegistrationTime() throws Exception {
     assertThat(studentDto, hasProperty("gender", equalTo(Gender.MALE)));
 }
 ```
-4. `thenCallRealMethod()` - This method invokes the actual method on a mock object.
 
-> Using `thenCallRealMethod` or `doCallRealMethod` (for mocking void methods) on mock objects skip constructor and initializer calls defined in the actual object. Hence, instance variables defined in the class we are mocking are not initialized. However, with a Mockito *spy* we can create a more realistic interaction with our mock object.
+4. `thenCallRealMethod()` - This method invokes the actual function on a mock object. When we use `thenCallRealMethod` or `doCallRealMethod`, instance variables defined in the class we are mocking are not initialized. 
 
-Let us say we want to return the names of all students that have bed spaces in two hostels- *HALL3 and HALL4*. Also, let us say that `returnNamesOfAllStudentsInAHostel` method in the `studentServiceImpl` class involved some complex algorithm in finding all students in a hostel and returning their names as a list. In this scenario, we will want to call the actual implementation of the `returnNamesOfAllStudentsInAHostel` method because it interfaces with many methods in other classes.
+However, with a Mockito *spy* we can create a more realistic interaction with our mock object.
+
+Let us say we want to return the names of all students that have bed spaces in two hostels - *HALL3* and *HALL4*. 
+
+Also, let's say that `returnNamesOfAllStudentsInAHostel` method in the `studentServiceImpl` class involved some complex algorithm in finding all students in a hostel and returning their names in a list. 
+
+In this scenario, we will want to call the actual implementation of the `returnNamesOfAllStudentsInAHostel` method because it interfaces with many methods in other classes.
 
 The activity diagram for the `returnNamesOfAllStudentsInAHostel` method is as shown below:
 
 ![return-names-of-all-students-in-a-hostel](/engineering-education/mocking-with-junit-and-mockito-the-why-and-how/return-names-of-all-students-in-hostel-diagram.png)
 
-The implementation of `returnNamesOfAllStudentsInAHostel` method is given as:
+The implementation of `returnNamesOfAllStudentsInAHostel` method is given as follows:
+
 ```java
 public List<String> returnNamesOfAllStudentsInAHostel(String hostelName) throws Exception {
     List<String> studentNames = new ArrayList<>();
@@ -375,7 +430,8 @@ public List<String> returnNamesOfAllStudentsInAHostel(String hostelName) throws 
 }
 ```
 
-Our test case for `returnNamesOfAllStudentsInAHostel` method will be as follows:
+The test case for `returnNamesOfAllStudentsInAHostel` method will be as follows:
+
 ```java
 @Test
 void testReturnNamesOfAllStudentsInAHostel() throws Exception {
@@ -411,16 +467,20 @@ private List<StudentDto> registerStudents() throws Exception {
 
 First, we make a call to a helper method- `registerStudents` which registers students and then returns a list of `StudentDto` objects.
 
-> Notice the use of `when- thenCallRealMethod`. `when(studentRepository.findAll()).thenCallRealMethod()`  instructs the `studentRepository` to make a real call to the `findAll` method. `when(hostelRepository.findHostelByName(anyString()).thenCallRealMethod()` instructs the `hostelRepository` to make a real call to the `save` method whenever any `String` object is passed into it.
+The use of `when- thenCallRealMethod`. `when(studentRepository.findAll()).thenCallRealMethod()`  instructs the `studentRepository` to make a real call to the `findAll` method. 
+
+`when(hostelRepository.findHostelByName(anyString()).thenCallRealMethod()` instructs the `hostelRepository` to make a real call to the `save` method whenever any `String` object is passed into it.
 
 However, when we run our test case, we get the following error:
-```
+
+```bash
 java.lang.NullPointerException: Cannot invoke "java.util.Map.getOrDefault(Object, Object)" because "this.database" is null
 ```
 
-We get this error because, as explained earlier, creating a mock object of a class will skip all constructor and initializer calls therefore the instance variables that we initialized in the constructor will be null.
+We get this error because, as explained earlier, creating a mock object of a class will skip all constructor and initializer calls. Ttherefore, the instance variables that we initialized in the constructor will be null.
 
-To fix the error, we create **spies** of the dependencies using one of the following methods:
+To fix the error, we create *spies* of the dependencies using one of the following methods:
+
 ```java
 // 1. Using Mockito- JUnit extension
 @Spy
@@ -494,7 +554,8 @@ public class StudentServicePartialMockingTests {
 
 When we *spy* on a class, Mockito spins an actual class object but now interactions with the object can be logged.
 
-> Notice that we have removed the `when -then` directives from our test case.
+> Notice that we have removed the `when-then` directives from our test case.
+
 We refactor the test case for the `registerStudent` method as follows:
 
 ```java
@@ -516,15 +577,20 @@ void registerStudentTest() throws Exception {
 }
 ```
 
-> Notice `doReturn(student).when(studentRepository).save(any(Student.class));` is similar to writing `when(studentRepository.save(any(Student.class)).thenReturn(student)`.  There is an important pitfall to note when using spy objects with the  `when then` directive. The actual method will be called (because `studentRepository.save(any(Student.class))` is evaluated before `when(..)` at runtime). Using the `when- then` directive with spies can be a problem if our method contains logic that we do not want to invoke. Hence, we use`doReturn(student).when(studentRepository).save(any(Student.class));`
+`doReturn(student).when(studentRepository).save(any(Student.class))` is similar to `when(studentRepository.save(any(Student.class)).thenReturn(student)`.  
 
-At this point, it is important to highlight that the `do…when` directive can be used as an alternative to the `when - then` directive:
-- `when(studentRepository.save(any(Student.class))).thenReturn(student)` can be rewritten as `doReturn(student).when(studentRepository).save(any(Student.class))`
+There is an important pitfall to note when using spy objects with the  `when then` directive. The actual method will be called (because `studentRepository.save(any(Student.class))` is evaluated before `when(..)` at runtime). 
 
-- `when(studentRepository.save(null)).thenThrow(NullEntityException.class)` can be rewritten as `doThrow(NullEntityException.class).when(studentRepository).save(null)`
+Using the `when-then` directive with spies can be a problem if the method contains logic that we do not want to invoke. Hence, we use `doReturn(student).when(studentRepository).save(any(Student.class))`.
 
-- ``` java
-  when(studentRepository.save(any(Student.class))).thenAnswer(answer->{
+At this point, it is important to highlight that the `do… when` directive can be used as an alternative to the `when - then` directive:
+
+- `when(studentRepository.save(any(Student.class))).thenReturn(student)` can be rewritten as `doReturn(student).when(studentRepository).save(any(Student.class))`.
+
+- `when(studentRepository.save(null)).thenThrow(NullEntityException.class)` can be rewritten as `doThrow(NullEntityException.class).when(studentRepository).save(null)`.
+
+``` java
+when(studentRepository.save(any(Student.class))).thenAnswer(answer->{
   return Student.builder()
   .firstName("John")
   .lastName("Doe")
@@ -534,40 +600,43 @@ At this point, it is important to highlight that the `do…when` directive can b
   .gender(Gender.MALE)
   .build();
   });
-  ```
-  can be rewritten as:
-  ```java
-   doAnswer(answer->{ return Student.builder()
-                   .firstName("John")
-                   .lastName("Doe")
-                   .matricNo("MAT100419")
-                   .password("securedPassword")
-                   .registrationTime(getTime())
-                   .gender(Gender.MALE).build();
-      }).when(studentRepository).save(any(Student.class))
-  ```
+```
+
+The above code can be rewritten as:
+  
+```java
+doAnswer(answer->{ return Student.builder()
+                .firstName("John")
+                .lastName("Doe")
+                .matricNo("MAT100419")
+                .password("securedPassword")
+                .registrationTime(getTime())
+                .gender(Gender.MALE).build();
+    }).when(studentRepository).save(any(Student.class))
+```
 
 ### Verifying method invocation using Mockito.verify()
-Mockito's static `verify` method helps us verify that a stubbed method was invoked and the number of times the method was invoked. `verify` becomes handy when testing `void` methods.
+Mockito's static `verify` method helps us confirm if a stubbed method was invoked and the number of times it was called. `verify` becomes handy when testing `void` methods.
 
 #### How to use Mockito.verify()
-The `verify` method is overloaded. It can take `Times` as an argument. `Times` accepts an integer argument- `wantedNumberOfInvocations`.
+The `verify` method is overloaded. It can take `Times` as an argument. `Times` accepts an integer argument (`wantedNumberOfInvocations`).
 
 If we pass *1* as an argument to `Times`, it infers that the stubbed method will be invoked only once in the testing path.
 
-If we pass *0* as an argument to `Times`, it infers that we do not expect the stubbed method to be invoked in the testing path.
+If we pass *0* as an argument to `Times`, it means that we do not expect the stubbed method to be invoked in the testing path.
 
-Passing a negative number to the `Times` constructor, triggers a "`MockitoException -org.mockito.exceptions.base.MockitoException` " with the error message- " **Negative value is not allowed here**."
+Passing a negative number to the `Times` constructor, triggers a "`MockitoException -org.mockito.exceptions.base.MockitoException` " with the error message - " *Negative value is not allowed here.*"
 
-The following demonstrates how we can use `verify` using several [verification modes](https://www.javadoc.io/doc/org.mockito/mockito-core/2.2.6/org/mockito/verification/VerificationMode.html).
+The following demonstrates how we can `verify` using several [verification modes](https://www.javadoc.io/doc/org.mockito/mockito-core/2.2.6/org/mockito/verification/VerificationMode.html).
 
 1. `times(int wantedNumberOfInvocations)` - This verifies the number of times a stubbed method is invoked. Our test case fails if the stubbed method is not invoked the specified `wantedNumberOfInvocations` times.
 
-To demonstrate this, let us consider the *assign bed-space to student* use case of our Hostel Management System.
+To demonstrate this, let's consider the *assign bed-space to student* use case of our Hostel Management System.
 
-![assign bed space to student](/engineering-education/mocking-with-junit-and-mockito-the-why-and-how/assign-bedspace-to-student.png)
+![Assign bed space to student](/engineering-education/mocking-with-junit-and-mockito-the-why-and-how/assign-bedspace-to-student.png)
 
 The implementation of the `assignBedSpace` method is as follows:
+
 ``` java
 @Override
 public void assignBedSpace(StudentDto studentDto) throws Exception {
@@ -616,7 +685,8 @@ public class StudentServiceImpl_VerifyTests {
 }
 ```
 
-Our test case is as shown below:
+The test case is as follows:
+
 ```java
 @Test
 void test_assignBedSpaceToStudent() throws Exception {
@@ -631,15 +701,18 @@ void test_assignBedSpaceToStudent() throws Exception {
     verify(hostelRepository, times(1)).returnAvailableMaleSpace();
 }
 ```
-- First, we attempt to register a student. Next, we verify that the `findById` method is invoked on the `studentRepository` spy exactly once with an argument of value -" MAT100419".
-- Next,  we reset the behavior of our mock object using Mockito's static `reset` method.
+In the above code:
+
+- First, we attempt to register a student. Next, we verify that the `findById` method is invoked on the `studentRepository` spy only once with an argument of value - "MAT100419".
+- We then reset the behavior of our mock object using Mockito's static `reset` method.
 - Next, we attempt to assign a space to a student.
 - We verify that we correctly invoked the `findById` method on the `studentRepository` spy exactly once with an argument of value- "MAT100419".
 - We also verify that the `returnAvailableFemaleSpace` method is not invoked since our subject is a male student.
-- Finally, we verify that `returnAvailableMaleSpace` is invoked exactly once.
+- Finally, we verify that `returnAvailableMaleSpace` is invoked only once.
 
-2. `never()` - This method signifies that the stubbed method is never invoked on the mock object. As an alternative, we can use `times(0)` to represent the same scenario. The test fails if the stubbed method is invoked at least once.
-   To demonstrate this, let us consider the following test case for the `returnNamesOfAllStudentsInARoom` method.
+2. `never()` - This method signifies that the stubbed method is never invoked on the mock object. As an alternative, we can use `times(0)` to represent the same scenario. 
+
+The test fails if the stubbed method is invoked at least once. To demonstrate this functionality, let's consider the following test case for the `returnNamesOfAllStudentsInARoom` method.
 
 ```java
 @Test
@@ -665,28 +738,43 @@ void test_returnNamesOfStudentInARoom() throws Exception {
     assertThat(studentNames).contains("Mary Fallow");
 }
 ```
-We verify that the `findById` method is never invoked on the `studentRepository` spy object.
+
+In the above code, we verify that the `findById` method is never invoked on the `studentRepository` spy object.
 
 3. `atLeastOnce()` - This method signifies that we invoked the stubbed method at least once. It fails if the stubbed method is not invoked at all.
-   To verify that the `findById` method is called on the `studentRepository` object at least once with any string as a parameter, we can write:
+
+To verify that the `findById` method is called on the `studentRepository` object at least once with a string as a parameter, we can write:
+
 ```java
 verify(studentRepository, atLeastOnce()).findById(anyString());
 ```
-4. `at Least(int minNumberOfInvocations)` - This method verifies that a stubbed method is invoked at least `minNumberOfInvocation` times. It works fine if the method is called more than `minNumberOfInvocation` times. However, it fails if the method is not called at least `minNumberOfInvocation` times.
+
+4. `at Least(int minNumberOfInvocations)` - This function verifies that a stubbed method is invoked at least `minNumberOfInvocation` times. 
+
+It works well if the method is called more than the `minNumberOfInvocation` times. However, it fails if the method is not called at least `minNumberOfInvocation` times.
+
 ```java
 verify(studentRepository, atLeast(1)).findById(anyString());
 ```
-5. `atMost(int maxNumberOfInvocation)` - This helps us to verify that a stubbed method is called at most `maxNumberOfInvocation` times.
+
+5. `atMost(int maxNumberOfInvocation)` - This helps us to verify that a stubbed method is called at the `maxNumberOfInvocation` times.
+
 ```java
 verify(studentRepository, atMost(1)).findById(anyString());
 ```
-6. `only()` - The `only` method helps us verify that only the stubbed method is invoked on the mock object. It fails if any other method is invoked on the mock object besides the specified method. Let us say that we want to return the names of all students in the student repository; we can verify that only the `findAll` method is called on `studentRepostory` as follows:
+
+6. `only()` - The `only` function helps us verify that the stubbed method is invoked on the mock object. 
+
+It fails if any other method is invoked on the mock object besides the specified function. Let's say that we want to return the names of all students in the student repository. 
+
+We can verify that only the `findAll` method is called on `studentRepository` as follows:
+
 ``` java
 verify(studentRepository, only()).findAll();
 ```
-7. `timeOut(int millis)` - This method verifies that a stubbed method is invoked on a mock object within a specified time range.
+7. `timeOut(int millis)` - This method verifies that a stubbed function is invoked on a mock object within a specified time range.
 
-#### Verifying zero and no more interactions using `Mockito.verifyNoInteractions`
+#### Verifying zero and no more interactions
 The `verifyNoInteractions(Object... mocks)` method is used to verify that no method was invoked on the specified mock objects.
 
 ```java
@@ -694,12 +782,12 @@ studentService.findStudentById("MAT100419");
 verifyNoInteractions(hostelRepository);
 ```
 #### Verifying the order of interactions
-Mockito provides an interface - [InOrder](https://www.javadoc.io/static/org.mockito/mockito-core/2.6.9/org/mockito/InOrder.html#verifyNoMoreInteractions) that allows us to verify the order of interactions with mock objects.
+Mockito provides the [InOrder](https://www.javadoc.io/static/org.mockito/mockito-core/2.6.9/org/mockito/InOrder.html#verifyNoMoreInteractions) interface that allows us to verify the order of interactions with mock objects.
 
 There are three versions of `Inorder`:
 
-- `verify (Syntax: <T> T verify(T mock))` - This verifies that an interaction with a mock object happened once in order.
-  The following snippet demonstrates how to use the `InOrder.verify` method:
+`verify (Syntax: <T> T verify(T mock))` - This verifies that an interaction with a mock object happened once in order. The following snippet demonstrates how to use the `InOrder.verify` method:
+
 ```java
 void testTheOrderOfInteractions() throws Exception {
     RegistrationRequest registrationRequest = new RegistrationRequest("John", "Doe", "securedPassword", "MAT100419", Gender.MALE);
@@ -710,34 +798,39 @@ void testTheOrderOfInteractions() throws Exception {
     inorder.verify(hostelRepository).returnAvailableMaleSpace();
 }
 ```
-Here we are verifying that when assigning a bed space to a student, the `studentRepository` object is interacted with once by invoking the `findById` method with any string passed in as a parameter.
-Next, we are verifying that the `hostelRepository` object is interacted with exactly once by invoking the `returnAvailableMaleSpace` method.
 
-- `Verify` with [verification mode](https://www.javadoc.io/static/org.mockito/mockito-core/2.6.9/org/mockito/verification/VerificationMode.html) passed in as an argument (`Syntax: T mock, VerificationMode mode`) - This verifies that interaction occurred with a mock object exactly once but with verification mode passed in as an argument
+In the above code, we are verifying that when bed space is assigned to a student, the `studentRepository` object is interacted with once by invoking the `findById` method with any string passed in as a parameter.
+
+Next, we are verifying that the `hostelRepository` object is interacted with once by invoking the `returnAvailableMaleSpace` method.
+
+`Verify` with [verification mode](https://www.javadoc.io/static/org.mockito/mockito-core/2.6.9/org/mockito/verification/VerificationMode.html) passed in as an argument (`Syntax: T mock, VerificationMode mode`). It verifies that interaction occurred with a mock object once but with verification mode passed in as an argument.
 
 ```java
 @Test
 void testTheOrderOfInteractionWithVerificationModePassedAsAnArgument() throws Exception {
-RegistrationRequest registrationRequest = new RegistrationRequest("John", "Doe", "securedPassword", "MAT100419", Gender.MALE);
-StudentDto studentDto = studentService.registerStudent(registrationRequest);
-studentService.assignBedSpace(studentDto);
-InOrder inorder = inOrder(studentRepository, hostelRepository);
-inorder.verify(studentRepository, times(1)).findById(anyString());
-inorder.verify(hostelRepository, times(1)).returnAvailableMaleSpace();
-inorder.verify(hostelRepository, never()).findHostelByName(“HALL 3”);
+    RegistrationRequest registrationRequest = new RegistrationRequest("John", "Doe", "securedPassword", "MAT100419", Gender.MALE);
+    StudentDto studentDto = studentService.registerStudent(registrationRequest);
+    studentService.assignBedSpace(studentDto);
+    InOrder inorder = inOrder(studentRepository, hostelRepository);
+    inorder.verify(studentRepository, times(1)).findById(anyString());
+    inorder.verify(hostelRepository, times(1)).returnAvailableMaleSpace();
+    inorder.verify(hostelRepository, never()).findHostelByName(“HALL 3”);
 }
 ```
 
 Here we are verifying that to assign a bed space to a student:
-- First, the `findById` method is invoked on the mock `studentRepository` object exactly once.
+- First, the `findById` method is invoked on the mock `studentRepository` object once.
 - Next, the `returnAvailableMaleSpace` method is invoked on the mock `hostelRepository` object exactly once.
 - Finally, we verify that the `findHostelByName` method is never called on the mock `hostelRepository` object.
 
 
-> It is possible to use `verify` with any argument as in the line - `inorder.verify(studentRepository, times(1)).findById(anyString());`. Using `verify` with an exact parameter passed in as an argument is also possible.
+> It is possible to use `verify` with any argument as in the line - `inorder.verify(studentRepository, times(1)).findById(anyString())`. 
 
-- verifyNoMoreInteractions(`Syntax: void verifyNoMoreInteractions()`) - This verifies that no more interactions happened in order. The order of verification matters. This makes it different from `Mockito.verifyNoMoreInteractions(Object )`. More specifically, the `verifyNoMoreInteractions` method ensures no interaction is left for verification.
-  To demonstrate this, let us borrow an example from the [java documentation](https://www.javadoc.io/static/org.mockito/mockito-core/2.6.9/org/mockito/InOrder.html#verifyNoMoreInteractions()) for `InOrder` interface
+verifyNoMoreInteractions(`Syntax: void verifyNoMoreInteractions()`) - This verifies that no more interactions happened in order. The order of verification matters which makes it different from `Mockito.verifyNoMoreInteractions(Object )`. 
+
+More specifically, the `verifyNoMoreInteractions` method ensures no interaction is left for verification.
+
+To demonstrate this, let's borrow an example from the [Java documentation](https://www.javadoc.io/static/org.mockito/mockito-core/2.6.9/org/mockito/InOrder.html#verifyNoMoreInteractions()) for `InOrder` interface
 
 ```java
 mock.foo(); //1st
@@ -752,14 +845,17 @@ inOrder.verify(mock).baz(); //3rd (last method)
 inOrder.verifyNoMoreInteractions();
 //however this fails becauhttps://site.mockito.org/javadoc/current/org/mockito/ArgumentCaptor.htmlse 1st method was not verified:
 Mockito.verifyNoMoreInteractions(mock);
-  ```
+```
 > The `Mockito.verifyNoMoreInteractions(mock)` line fails because not all the interactions have been verified.
 
-### Verifying Argument using `ArgumentCaptor`
-[`ArgumentCaptor`](https://site.mockito.org/javadoc/current/org/mockito/ArgumentCaptor.html) is useful in mock testing. With `ArgumentCaptor` we access arguments passed to the method under test.
+### Verifying an argument using `ArgumentCaptor`
+[`ArgumentCaptor`](https://site.mockito.org/javadoc/current/org/mockito/ArgumentCaptor.html) is useful in mock testing. It allows us to access arguments passed to the method under test.
 
-To use `ArgumentCaptor` first, you must import `import org.mockito.ArgumentCaptor`.
-With the aid of the Mockito- JUnit extension, we can simply create an argument captor for a class as follows:
+To use `ArgumentCaptor`, we first import `import org.mockito.ArgumentCaptor`.
+With the aid of the Mockito- JUnit extension.
+
+We can then simply create an argument captor for a class as follows:
+
 ```java
 @Captor
 ArgumentCaptor<Student> studentArgumentCaptor;
@@ -785,13 +881,16 @@ void capturingArgumentsUsingArgumentCaptor() throws Exception {
 }
 ```
 
-`verify(studentRepository).save(studentArgumentCaptor.capture())` verifies that the student repository mock object is called, `studentArgumentCaptor.capture()` captures the argument that we passed into the save method.
+`verify(studentRepository).save(studentArgumentCaptor.capture())` verifies that the student repository mock object is called.
 
-`Student student = studentArgumentCaptor.getValue();` gets the value that was captured by `studentArgumentCaptor` and gives it a student reference.
+`studentArgumentCaptor.capture()` captures the argument that we passed into the save method.
+
+`Student student = studentArgumentCaptor.getValue()` retrieves the value that was captured by `studentArgumentCaptor` and gives it a student reference.
 
 > ArgumentCaptor also has a method `getAllValues` that returns a list.
 
 We can rewrite the above test suite as:
+
 ```java
 @Test
 void capturingArgumentsUsingArgumentCaptor_DemonstratingGetAllValues() throws Exception {
@@ -809,9 +908,9 @@ void capturingArgumentsUsingArgumentCaptor_DemonstratingGetAllValues() throws Ex
 ```
 `studentArgumentCaptor.getAllValues` returns a list of students(in this case our list contains only one student)
 
-> Although, we can use the `ArgumentCaptor` with `Mockito.when` we should avoid doing so. When stubbing, we should use an `ArgumentMatcher` instead(`any()`, `anyString()`, `anyInt()`, `anyBoolean()` are all examples of argument matchers)
+> Although, we can use the `ArgumentCaptor` with `Mockito.when`, we should avoid doing so. When stubbing, we should use an `ArgumentMatcher` instead. `any()`, `anyString()`, `anyInt()`, and `anyBoolean()` are all examples of argument matchers.
 
-To demonstrate the reasons why we should avoid stubbing with `ArgumentCaptor`, let us consider a simple test case for the `registerStudent` method in the `StudentService` class:
+To demonstrate the reasons why we should avoid stubbing with `ArgumentCaptor`, let's consider a simple test case for the `registerStudent` method in the `StudentService` class:
 
 ```java
 @Test
@@ -825,7 +924,9 @@ void registerStudentTest() throws Exception {
   assertThat(studentDto, hasProperty("gender", equalTo(Gender.MALE)));
 }
 ```
-Next, consider the same test but using an ```ArgumentCaptor``` instead:
+
+Next, consider the same test but using an `ArgumentCaptor` instead:
+
 ```java
 @Test
 void registerStudentTest() throws Exception {
@@ -839,31 +940,35 @@ void registerStudentTest() throws Exception {
 }
 ```
 
-As demonstrated above, our tests are difficult to read when we use argument captors instead of argument matchers in stubbing methods.
+As demonstrated above, our tests are difficult to read when we use `argument captors` instead of `argument matchers` in stubbing methods.
 
 Also, if the `studentService.registerStudent(registrationRequest)` does not call `studentRepository.save(student)`, it will trigger an exception:
 
 > `org.mockito.exceptions.base.MockitoException`: No argument value was captured!
 
-We get this error because the stubbed method has not captured an argument. Using `ArgumentCaptor` instead of an Argument Matcher when stubbing methods misdirects to an exception in the test instead of the method we are testing.
+We get this error because the stubbed method has not captured an argument. Using `ArgumentCaptor` instead of an Argument Matcher when stubbing methods misdirects to an exception in the test instead of the specific method that we are testing.
 
 ### Conclusion
-In this tutorial, we have successfully learned how to write unit tests using Mockito, the different types of mocking frameworks, the different ways of creating mock objects using Mockito, and how to perform basic stubbing in Mockito using the `when- then` directive. Finally, we concluded with learning how to use argument captors.
+In this tutorial, we have successfully learned how to write unit tests using Mockito, as well as the different types of mocking frameworks.
 
-The code is accessible from this [repository](https://github.com/ehizman/bedspaces)
+We also discussed the different ways of creating mock objects using Mockito, and how to perform basic stubbing in Mockito using the `when- then` directive. 
+
+Finally, we concluded by highlighting how to use argument captors. The code is accessible from this [repository](https://github.com/ehizman/bedspaces)
 
 Happy Coding!
 
-### References
-1. [Using Mockito ArgumentCaptor](https://www.baeldung.com/mockito-argumentcaptor).
-2. [Testing with Hamcrest](https://www.baeldung.com/java-junit-hamcrest-guide).
-3. [Mockito ArgumentMatchers](https://www.baeldung.com/mockito-argument-matchers).
-4. [Mockito Verify Cookbook](https://www.baeldung.com/mockito-verify).
-5. [Stubbing and Mocking with Mockito and JUnit](https://semaphoreci.com/community/tutorials/stubbing-and-mocking-with-mockito-2-and-junit).
-6. [Interface InOrder](https://www.javadoc.io/doc/org.mockito/mockito-core/2.6.9/org/mockito/InOrder.html).
-7. [Mockito - verifyNoMoreInteractions() and verifyNoInteractions()](https://www.logicbig.com/tutorials/unit-testing/mockito/verify-no-more-interactions.html).
-8. [Interface VerificationMode](https://www.javadoc.io/doc/org.mockito/mockito-core/2.2.6/org/mockito/verification/VerificationMode.html).
-9. [Clean Unit Tests with Mockito - Reflectoring](https://reflectoring.io/clean-unit-tests-with-mockito/).
-10. [mockito/InOrder.java at main · mockito/mockito · GitHub](https://github.com/mockito/mockito/blob/main/src/main/java/org/mockito/InOrder.java)
-11. [When to mock](https://blog.cleancoder.com/uncle-bob/2014/05/10/WhenToMock.html).
-12. Mastering Unit Testing Using Mockito and JUnit- An advanced guide to mastering unit testing using Mockito and JUnit by Sujoy Acharya.
+### Further reading
+- [Using Mockito ArgumentCaptor](https://www.baeldung.com/mockito-argumentcaptor).
+- [Testing with Hamcrest](https://www.baeldung.com/java-junit-hamcrest-guide).
+- [Mockito ArgumentMatchers](https://www.baeldung.com/mockito-argument-matchers).
+- [Mockito Verify Cookbook](https://www.baeldung.com/mockito-verify).
+- [Stubbing and Mocking with Mockito and JUnit](https://semaphoreci.com/community/tutorials/stubbing-and-mocking-with-mockito-2-and-junit).
+- [Interface InOrder](https://www.javadoc.io/doc/org.mockito/mockito-core/2.6.9/org/mockito/InOrder.html).
+- [Mockito - verifyNoMoreInteractions() and verifyNoInteractions()](https://www.logicbig.com/tutorials/unit-testing/mockito/verify-no-more-interactions.html).
+- [Interface VerificationMode](https://www.javadoc.io/doc/org.mockito/mockito-core/2.2.6/org/mockito/verification/VerificationMode.html).
+- [Clean Unit Tests with Mockito](https://reflectoring.io/clean-unit-tests-with-mockito/).
+- [mockito/InOrder](https://github.com/mockito/mockito/blob/main/src/main/java/org/mockito/InOrder.java)
+- [When to mock](https://blog.cleancoder.com/uncle-bob/2014/05/10/WhenToMock.html).
+
+---
+Peer Review Contributions by: [Joel Kanyi](/engineering-education/authors/joel-kanyi/)
