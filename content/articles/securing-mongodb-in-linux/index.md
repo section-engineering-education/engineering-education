@@ -25,10 +25,10 @@ images:
 - [Wrapping it up](#wrapping-it-up)
 
 ### Prerequisites
-Before you start reading this tutorial you need to have the  following in your machine:
+Before you start reading this tutorial, you need to have the following in your machine:
 - [Ubuntu](https://ubuntu.com/download/server) 20.05 server installed.
 - UFW-configured proxy server.
-- Installed [MongoDB](https://www.mongodb.com/try/download/community)
+- [MongoDB](https://www.mongodb.com/try/download/community) installed
 
 ### Introduction
 MongoDB is one of the most used modern web applications for a database. MongoDB is not secure by default. Once installed, one will have a difficult time before configuring it for authentication, since people can browse, write, delete, or modify data on your server without ever needing to log in or authenticate. Securing the database is simple and may be completed in a few steps. In this article, I'll show you how to protect your MongoDB setup by using some activation command lines.
