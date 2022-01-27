@@ -18,9 +18,9 @@
 
 After reading this article the reader will be entitled to:
 
-- Setting up the React Dashboard
-- Creating the dashboard and table in react Dashboards
-- Testing the application
+- Installing and configuring React Dashboard
+- Setting up React Database table and dashboard
+- Connecting the database server to the application
 
 ### Prerequisites
 
@@ -44,7 +44,7 @@ To be safe from the error, set-up `sqlite3` and followed by `yarn install` befor
 
 To proceed, we need to configure our servers to execute both the frontend and backend on different port . To access our dashboard head on to: http://localhost:3000/
 
-![react-dashboard-interface](/engineering-education/tree/creating-dashboards-in-react-using-react-dashboards/react-dashboard-interface.jpg)
+![react-dashboard-interface](/engineering-education/tree/creating-dashboards-in-react-using-react-dashboards/react-dashboard-interface.png)
 
 The GraphQL package supplied in the project that we have just copied fron github, will allow us to execute our backend. Consult the GraphQL reference for further information and examples [here](https://graphql.org/)
 
@@ -52,11 +52,11 @@ The GraphQL package supplied in the project that we have just copied fron github
 
 The MAMP server and a MySQL database will be the backbone of our dashboard. Please visit [MAMP](https://mamp.info/en/downloads/) if you don't already have it. Webstart should be enabled if MAMP is installed.
 
-![mamp-interface](/engineering-education/tree/creating-dashboards-in-react-using-react-dashboards/mamp-interface.jpg)
+![mamp-interface](/engineering-education/tree/creating-dashboards-in-react-using-react-dashboards/mamp-interface.png)
 
 As soon as you enable webstart, you'll be sent to the MAMP index page. You'll be brought to a page with tools for setting up a MySQL database when you click phpMyAdmin. By choosing Database from the current menu, you may create a new database with a name. Five tuples in this example are connected to each other, as shown in the diagram below.
 
-![mysql-posts](/engineering-education/tree/creating-dashboards-in-react-using-react-dashboards/mysql-posts.jpg)
+![mysql-posts](/engineering-education/tree/creating-dashboards-in-react-using-react-dashboards/mysql-posts.png)
 
 We must save our data now that we have everything.
 
@@ -83,7 +83,7 @@ As a result, we can now add new posts to our relation by uncommenting the `schem
 
 The server must be restarted before we can run our software. Assuming everything goes according to plan, we should be able to add a new post to our dashboard without any issues assuming everything goes according to plan.
 
-![post-creation](/engineering-education/tree/creating-dashboards-in-react-using-react-dashboards/post-creation.jpg)
+![post-creation](/engineering-education/tree/creating-dashboards-in-react-using-react-dashboards/post-creation.png)
 
 ### Conclusion
 
