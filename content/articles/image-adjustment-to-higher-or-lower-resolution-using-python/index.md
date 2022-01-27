@@ -14,14 +14,14 @@ images:
   - url: /engineering-education/image-adjustment-to-higher-or-lower-resolution-using-python/hero.jpg
     alt: How to Adjust Image to Higher or Lower Resolution using Python Hero Image
 ---
-Low-resolution images can at times not bring out the desired information and accurate details. To overcome this challenge there is a need for the adjustment of resolutions in an image. 
+Low-resolution images can at times not bring out the desired information and accurate details. To overcome this challenge there is a need for the adjustment of resolutions in an image.
 <!--more-->
-In this tutorial, we will be requiring some basic tools to be used such as OpenCV, used in computer vision-based tasks and the main function as required in our tutorial is for image processing.
+In this tutorial, we will need to use some basic tools such as OpenCV, used in computer vision-based tasks, and the main function is required in our tutorial for image processing.
 
 ### Table of contents
 - [Introduction](#introduction)
 - [Prerequisites](#prerequisites)
-- [How to Install and use Pillow and Numpy](#introduction-in-how-to-instal-and-use-pillow-and-numpy)
+- [How to install and use Pillow and NumPy](#introduction-in-how-to-instal-and-use-pillow-and-numpy)
 - [Having the colors fixed](#having-the-colors-fixed)
 - [Implementing contrast enhancement](#implementing-contrast-enhancement)
 - [Laplacian Pyramid Super-Resolution Network](#Laplacian-pyramid-super-resolution-network)
@@ -31,33 +31,33 @@ In this tutorial, we will be requiring some basic tools to be used such as OpenC
 - [Conclusion](#conclusion)
 
 ### Prerequisites
-1.  You have to be familiar with Python basics and get started with it. Refer to this article to [a beginners guide to python](/engineering-education/a-beginners-guide-to-python/)
+The reader has to be familiar with the Python programming language basics to follow along with this tutorial. Refer to this [beginners guide to python](/engineering-education/a-beginners-guide-to-python/)
 
-### How to Install and use Pillow and Numpy
-Using any text editor of your choice, you will be required to run a few codes. To work with cv2 you will be required to install OpenCV. 
+### How to install and use Pillow and Numpy
+Using any text editor of your choice, you will be required to run a few codes. To work with cv2 you will be required to install OpenCV.
 
-To implement that, in your terminal, you will be required to run the command below if you don't have it pre-installed.
+To implement this, in your terminal, run the command below if you don't have it pre-installed.
 
 ```bash
  pip install OpenCV-Python
 ```
 
-After openCV has been successfully installed, it allows for importing modules such as cv2.
-The second installation to be done is for the `numpy`.
+After openCV has been installed, it allows for importing modules such as cv2.
+The second installation to be done is the `NumPy`.
 
 ```bash
  pip install numpy
 ```
 
-This allows for the usage of packages implementing multidimensional arrays.
-The third installation to be carried out is involves `pillow` installation.
+This allows for the usage of packages implementing multidimensional arrays. The third installation to be carried out involves `pillow` installation.
 
 ```bash
 pip install pillow
 ```
 
-Also known as `PIL` module, allows for manipulating and processing of images.
-Depending on the versions you may be required to update to the later version. For updating you will use the below command:
+Also known as the `PIL` module, it allows for manipulating and processing images. Depending on the versions, you may be required to update to the latest version.
+
+To update to the latest version, we will use the below command:
 
 ```bash
 C:\Users\lizpa\PycharmProjects\jupyter\venv\Scripts\python.exe -m pip install --upgrade pip
@@ -66,9 +66,11 @@ C:\Users\lizpa\PycharmProjects\jupyter\venv\Scripts\python.exe -m pip install --
 You will have to change the path according to your machine's directory.
 
 ### Having the colors fixed
-Images are made up of pixels in the form of X and Y coordinates. Having the colors fixed, we will have to use the RGB color format. This occurs when one color in the RGB format is omitted, let's say if blue is, the image will lack the blue pigment and any traces of it since every single pixel has blue taken away from it. Leaving only red and green components.
+Images are made up of pixels in the form of X and Y coordinates. Having the colors fixed, we will have to use the RGB color format.
 
-Below is a program for further illustrations:
+This occurs when one color in the RGB format is omitted, let's say if blue is, the image will lack the blue pigment and any traces of it since every single pixel has blue taken away from it leaving only red and green components.
+
+Below is a program for further illustration:
 
 ```py
 from PIL import Image
@@ -89,12 +91,17 @@ pict.show()
 ```
 
 Original image:
+
 ![original](/engineering-education/image-adjustment-to-higher-or-lower-resolution-using-python/original.png)
-Fixed image with Blue pixels omitted:
+
+Fixed image with blue pixels omitted:
+
 ![fixed](/engineering-education/image-adjustment-to-higher-or-lower-resolution-using-python/fixed.png)
 
 ### Implementing contrast enhancement
-Contrast deals with the intensity ,saturation and brightness level in an image. We will be adjusting the contrast with the help of `ImageFilter` function provided by the PIL module. With the above in place we are fit to dive into the coding section using an image of your choice:
+Contrast deals with the intensity, saturation, and brightness level in an image. We will be adjusting the contrast with the help of `ImageFilter` function provided by the `PIL` module.
+
+With the above in place we are fit to dive into the coding section using an image of your choice:
 
 ```py
 from PIL import Image, ImageFilter
@@ -104,7 +111,7 @@ assert isinstance(enc_img, object)
 enc_img.show()
 ```
 
-Now we will be running the code for image enhancement.
+Next, we will run the code for image enhancement as shown below.
 
 ```py
  from PIL import Image, ImageEnhancement
@@ -113,22 +120,25 @@ Now we will be running the code for image enhancement.
   img_con.enhace(1.7).show("70% INCREASEMENT OF CONTRAST ENHANCEMENT")
 ```
 
-For the above to work smoothly you will have to put the images to be used in the same directory as where the main python file is.
+For the above to work, you will have to put the images to be used in the same directory as where the main python file is.
 
 ### Laplacian Pyramid Super-Resolution Network
-In a coarse-to-define `Laplacian pyramid` structure, the LapSRN super-resolves low-resolution pictures. On a given out of five benchmark datasets for 4x and 8x Super-Resolution, our technique is quick and achieves state-of-the-art performance. LapSRN is a middle ground between the two upscaling procedures used at the beginning and conclusion of a project. 
+In a coarse-to-define `Laplacian pyramid` structure, the LapSRN super-resolves low-resolution pictures. On a given out of 5 benchmark datasets for `4x` and `8x` super-resolution, our technique is quick and achieves state-of-the-art performance.
 
-It suggests a gradual increase in size till the end. Its name is derived from Laplacian pyramids, and the construction is similar to a pyramid, with the lower quality image being upscaled till the finish. Parameter sharing is frequently used for speed.
+`LapSRN` is a middle ground between the two upscaling procedures used at the beginning and the end of a project. It suggests a gradual increase in size till the end. Its name is derived from Laplacian pyramids. 
 
-It mainly has got two parts, the extraction stage, and the reconstruction stage.
-To implement the Laplacian pyramid is formed by the difference between that level in the `Gaussian Pyramid` and the extended version of its upper level in the Gaussian Pyramid.
-Explaining in code snippets yields much understanding. Let's dive in:
+The construction is like a pyramid with the lower quality image being upscaled till the end. Parameter sharing is frequently used for speed. It has two parts, the extraction stage, and the reconstruction stage. 
 
-## Instance #1
+The Laplacian pyramid is formed by the difference between the level in the `Gaussian Pyramid` and the extended version of its upper level in the pyramid. 
+
+Let us get started!
+
+### Instance 1
 ### Scaling down the images to lower resolution
-Now we will be scaling down the images to lower resolutions in the Gaussian Pyramid model.
-To perform this task we will be using the image below:
+We will scale down the images to lower resolutions in the Gaussian Pyramid model. To perform this task we will be using the image below:
+
 ![sean](/engineering-education/image-adjustment-to-higher-or-lower-resolution-using-python/sean.jpg)
+
 
 ```py
 import cv2
@@ -145,12 +155,15 @@ cv2.waitKey(0)
 cv2.destroyAllWindows()
 ```
 
-Your output should match the bellow image.
+Your output should match the below image:
+
 ![low](/engineering-education/image-adjustment-to-higher-or-lower-resolution-using-python/low.jpg)
 
-## Instance #2
+### Instance 2
 ### Scaling up the images to higher resolutions.
-Once you increase the resolution of an already lowered resolution it will not go back to its original form since lowering the resolution losses some information about the image using the `pyrDown` method. Hence the reults looks alittle blurred. Note that this is different from scaling up an original image.
+Once you increase the resolution of an already lowered resolution image, it will not go back to its original form. This is because lowering the resolution loses some information about the image using the `pyrDown` method hence the results look a little blurred. 
+
+> This is different from scaling up an original image.
 
 ```py
 import cv2
@@ -175,11 +188,12 @@ cv2.waitKey(0)
 cv2.destroyAllWindows()
 ```
 
-The output should be similar to the bellow image:
+The output should be similar to the below image:
+
 ![high](/engineering-education/image-adjustment-to-higher-or-lower-resolution-using-python/high.jpg)
 
-## Instance #3
-To construct the Laplacian pyramid Super-Resolution Network, we will be taking the top-level layer of the Gaussian Pyramid which is the last image generated using the loop function then create a list for the Laplacian pyramid then create the extended version of the upper level of the Gaussian Pyramid.
+### Instance 3
+To construct the Laplacian Pyramid Super-Resolution Network, we will be taking the top-level layer of the Gaussian Pyramid which is the last image generated using the loop function then create a list for the Laplacian pyramid then create the extended version of the upper level of the Gaussian Pyramid.
 To understand it better a code snippet will do:
 
 ```py
