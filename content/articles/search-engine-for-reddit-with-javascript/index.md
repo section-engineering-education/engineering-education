@@ -7,7 +7,7 @@ title: How to Build a Search Engine for Reddit with JavaScript
 description: This article shows the reader how to build a Reddit Search application that uses the parcel-bundler and Reddit API.
 author: muhammed-ali
 date: 2022-01-27T00:00:00-12:30
-topics: []
+topics: [Languages]
 excerpt_separator: <!--more-->
 images:
 
