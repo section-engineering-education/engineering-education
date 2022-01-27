@@ -397,7 +397,7 @@ public class Cart {
 }
 ```
 #### Controller Package
-The last package to review is the controller, in the controller we have our end point or apis that connect to the internet all the basic functionalities of your service implementation.
+The last package we are reviewing is the controller, in the controller we have our end point or apis that connect to the internet all the basic functionalities of your service implementation.
 ```java
 @RestController
 @RequestMapping("cart")
@@ -590,4 +590,4 @@ Once again you can check [Github](https://github.com/kingsleynwafor54/shopping_c
 #### Referrence
 1. [Rapidapi](https://rapidapi.com/section.io/api/section-io/details)
 2. [Getting Started with Stripe-springboot](https://www.section.io/engineering-education/stripe-springboot/).
-Happy coding! 
+#### Happy coding! 
