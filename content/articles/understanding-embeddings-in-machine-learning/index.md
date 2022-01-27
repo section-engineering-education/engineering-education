@@ -76,3 +76,6 @@ This is the most valuable operation in embeddings. Its purpose is to look for th
 
 ### Conclusion
 Embeddings are gradually growing and impacting the machine learning and data science space. More research is drawn to make embeddings applicable in production systems. They have made significant improvements and impacts to NLP and recommender systems. Embeddings have all it takes to become the future of the machine learning infrastructure.
+
+---
+Peer Review Contributions by: [Wilkister Mumbi](/engineering-education/authors/wilkister-mumbi/)
