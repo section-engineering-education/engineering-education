@@ -74,7 +74,7 @@ To secure your MongoDB, we use the following steps:
 - Assign administrative users access to the database.
 
 ### Create a user with system access
-MongoDB version accepts connection from local Unix socket. As a result, it cannot connect a huge internet connection. Furthermore, authentication is disabled by default. Users having MongoDB installed can still have access to the database. To secure your database you need to add administrative user. To add an administrative user, we first connect to the Mongo  shell prompt using the command below: 
+MongoDB version accepts connection from local Unix socket. As a result, it cannot connect a huge internet connection. Furthermore, authentication is disabled by default. Users having MongoDB installed can still have access to the database. To secure your database, you need to add administrative user. To add an administrative user, we first connect to the Mongo shell prompt using the command below:
 
 ```bash
 $mongo
