@@ -178,11 +178,3 @@ I look forward to hearing from you. Always code with &#10084;&#65039;.
 3. [Forming Mockito grammar](https://stackoverflow.com/questions/11462697/forming-mockito-grammars)
 4. [Mockito ArgumentMatchers](https://www.baeldung.com/mockito-argument-matchers)
 5. [Mocktio Argument Matchers docs](https://javadoc.io/static/org.mockito/mockito-core/3.3.3/org/mockito/ArgumentMatchers.html)
-
-
-
-
-
-
-
-
