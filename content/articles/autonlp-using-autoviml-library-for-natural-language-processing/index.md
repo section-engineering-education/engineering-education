@@ -368,3 +368,5 @@ The Google Colab notebook used in this tutorial is found [here](https://colab.re
 - [Natural language processing](https://www.ibm.com/cloud/learn/natural-language-processing)
 - [AutoVIML documentation](https://github.com/AutoViML/Auto_ViML)
 
+---
+Peer Review Contributions by: [Wilkister Mumbi](/engineering-education/authors/wilkister-mumbi/)
