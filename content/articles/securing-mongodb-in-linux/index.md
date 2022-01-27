@@ -1,5 +1,19 @@
+---
+layout: engineering-education
+status: publish
+published: true
+url: /securing-mongodb-in-linux/
+title: How to secure MongoDB in Linux
+description: This tutorial aims to show our readers how to protect their MongoDB setup by using some activation command lines in Linux.
+author: ali-benard
+date: 2022-01-27T00:00:00-17:00
+topics: [Security]
+excerpt_separator: <!--more-->
+images:
 
-### Securing MongoDB in Linux
+  - url: /engineering-education/securing-mongodb-in-linux/hero.jpg 
+    alt: Securing MongoDB in Linux Hero Image
+---
 ### Content
 - [Prerequisites](#prerequisites)
 - [Introduction](#introduction)
