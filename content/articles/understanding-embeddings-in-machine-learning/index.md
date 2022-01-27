@@ -1,5 +1,22 @@
-﻿### Introduction
-Handling non-numerical data poses challenges to data scientists since most machine learning models tend to prefer working with numbers. Data that contains words or sentences, graphs, lists, and probability distributions tend to be more complex to deal with when it comes to machine learning. However, it is impossible to avoid such data in the real world and hence needs first to be transformed into [vector space](https://machinelearningmastery.com/a-gentle-introduction-to-vector-space-models/).
+---
+layout: engineering-education
+status: publish
+published: true
+url: /understanding-embeddings-in-machine-learning/
+title: Understanding embeddings in Machine Learning
+description: This article will look at embeddings in detail and solve real-world problems involving complex data.
+author: lilian-ogoti
+date: 2022-01-29T00:00:00-07:00
+topics: [Machine Learning]
+excerpt_separator: <!--more-->
+images:
+
+  - url: /engineering-education/understanding-embeddings-in-machine-learning/hero.jpeg
+    alt: Understanding embeddings in Machine Learning hero image
+---
+Handling non-numerical data poses challenges to data scientists since most machine learning models tend to prefer working with numbers. 
+<!--more-->
+Data that contains words or sentences, graphs, lists, and probability distributions tend to be more complex to deal with when it comes to machine learning. However, it is impossible to avoid such data in the real world and hence needs first to be transformed into [vector space](https://machinelearningmastery.com/a-gentle-introduction-to-vector-space-models/).
 
 Existing approaches are not helpful and applicable as they tend to have flaws when transforming the data. A better approach would be to use [embedding](https://towardsdatascience.com/neural-network-embeddings-explained), a low dimensional representation of high dimensional data. The article will look at embeddings in detail and solve real-world problems involving complex data.
 
