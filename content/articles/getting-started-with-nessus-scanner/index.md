@@ -7,11 +7,7 @@ description: Nessus scanner is the most popular and widely used vulnerability sc
 <!--more-->
 
 **Nessus** scanner is a professional tool that is widely used among hackers and penetration testers. The solution you get assists you to perform high-speed asset discovery, target profiling, malware detection, sensitive data discovery and so many more.
-
-
 **Tenable** delivers updated plug-ins that provide you with the latest information to customers within 24 hours after a vulnerability has been leaked.
-
-
 **Nessus Tenable** grant you the privileges to scan basic networks and servers for free, and also provide you with how **critical**,**medium** or how **low** a vulnerability is and helps provide descriptions and solutions for a fix.
 
 Most sites that talk about Nessus only point out how Nessus is being installed and how it is been used, But how to fix a real vulnerability is hardly in the scope of what they teach. I will show you how to fix a common vulnerability and also guide you through important Nessus keywords.
@@ -223,13 +219,12 @@ In this article we have learned how to:
 
 * Scan a targeted host and fix the vulnerability with the solution provided to us.
 
+### Conclusion
+From this article, we have learned how to find vulnerabilities and fix them with the solution provided in the scan. There is no way we touch all of this assessment and fix all the vulnerabilities, so let's focus on the low-hanging fruit. So please do go look at your Nessus scan results in the information that is provided to you because it is super important.
+
 ### References and Further Reading
-
 1.  [A complete guide to Nmap tutorial](https://www.edureka.co/blog/nmap-tutorial/).
-
 2. [Netcat Complete Guide](https://www.kalilinux.in/2021/01/netcat-linux-tutorial.html).
 
-
-### Conclusion
-From this article, we have learned how to find vulnerabilities and fix them with the solution provided in the scan.
-There is no way we touch all of this assessment and fix all the vulnerabilities, so let's focus on the low-hanging fruit. So please do go look at your Nessus scan results in the information that is provided to you because it is super important.
+---
+Peer Review Contributions by: [Willies Ogola](/engineering-education/authors/willies-ogola/)
