@@ -23,11 +23,11 @@ vue create firebase-vue-user-management
 ```
 On this screen, choose `Vue 3`:
 
-![preset](./preset.png)
+![preset](./section-engineering/firebase-vue-authentication/preset.png)
 
 And lastly on this screen choose `Use NPM`:
 
-![package manager](./packagemanager.png)
+![package manager](./section-engineering/firebase-vue-authentication/packagemanager.png)
 
 The above configurations will create a Vue 3 application with npm as the package manager.
 
@@ -44,16 +44,16 @@ npm install vuex@next --save
 To create a new firebase project, click [here](https://firebase.google.com/) and select `Go to console` on the top navigation bar.
 
 Here, click on `Add new project` and name the project `vue-firebase-auth`.
-![New Project](./addnewproject.png)
+![New Project](./section-engineering/firebase-vue-authentication/addnewproject.png)
 
 You will be redirected to the project dashboard. On the dashboard, click on the web icon to register your front-end app.
-![Dashboard](./dashboard.png) 
+![Dashboard](./section-engineering/firebase-vue-authentication/dashboard.png) 
 Name your app `vuex-firebase-authentication` and click on `Register app`.
 
 Copy the configuration provided by Firebase and click `Continue to console`.
 
 Back on the dashboard, click `Authentication` in the left sidebar.
-![Authentication](./authentication.png)
+![Authentication](./section-engineering/firebase-vue-authentication/authentication.png)
 
 Enable `Email/Password` and save.
 
@@ -428,7 +428,7 @@ Run the code below to start a local development server.
 npm run serve
 ```
 Go to `localhost:8080` on your browser and you will see the this screen:
-![Test Pic](./testpic.png)
+![Test Pic](./section-engineering/firebase-vue-authentication/testpic.png)
 From here you can be able to test the login and signup actions.
 
 ### Conclusion
