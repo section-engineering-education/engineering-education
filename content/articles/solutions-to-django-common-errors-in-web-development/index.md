@@ -15,8 +15,9 @@ By the end of this tutorial, the reader should be able to solve the following:
 ### Prerequisites
 To have a better understanding of this article, the reader should:
 - Know how to create websites using the Django framework
-- Have a good working machine with the preferred IDE set up
+- Have a well-functioning Computer
 - Be familiar with different Django errors
+- Have Python, and Django installed
 
 ### Table of Contents
 1. Handling 404 page not found error
