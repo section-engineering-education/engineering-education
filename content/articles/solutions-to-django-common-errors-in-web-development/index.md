@@ -11,7 +11,6 @@ By the end of this tutorial, the reader should be able to solve the following:
 - Django-admin is not recognized as an internal or external command
 - Django is not able to find static files
 - Name error
-Internal server error
 
 ### Prerequisites
 To have a better understanding of this article, the reader should:
