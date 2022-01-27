@@ -22,9 +22,13 @@ After the installation is complete, go ahead and create a Vue app with this comm
 vue create firebase-vue-user-management
 ```
 On this screen, choose `Vue 3`:
+
 ![preset](./preset.png)
+
 And lastly on this screen choose `Use NPM`:
+
 ![package manager](./packagemanager.png)
+
 The above configurations will create a Vue 3 application with npm as the package manager.
 
 Now, run these commands to install the dependencies that we will use in this project:
