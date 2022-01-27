@@ -38,9 +38,6 @@ This means that the particular page you are looking for, for example, home.html 
 ### Causes of 404 page not found error
 There are three possible causes of this error in the Django framework.
 - #### Page is not present in the template folder.
-
-This means that the particular folder you are looking for, for example, home.html is not present in the folder. Admittedly, the template folder stores all HTML files in Django.
-
 #### Solution
 
 Make sure your HTML file is well created with correct naming in the template directory.
