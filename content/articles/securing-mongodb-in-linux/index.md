@@ -43,14 +43,17 @@ mongod --dbpath = "C:\data\mongo"
 ps -e|grep 'Mongod'
 ```
 If MongoDB is installed, the output will be similar to this:
-`909070 ttys023 2:43.486 ./mongodb`
-To configure MongoDB we navigate to the default file location `/etc/mongodb.conf` where it runs on the default port. To change this file location, we use the command below:
+```bash
+909070 ttys023 2:43.486 ./mongodb
+```
+
+To configure MongoDB, we navigate to the default file location `/etc/mongodb.conf` where it runs on the default port. To change this file location, we use the command below:
 
 ```bash
 $sudo Andrew/local/etc/mongodb.conf
 ```
 
-If MongoDB is installed on the same machine where your web app is installed, there may be some communication between the database with the application to end this kind of linkage set the Ip address to 127.0.0.1 this automatically ends communication via the internet.
+If MongoDB is installed on the same machine where your web app is installed, there may be some communication between the database with the application. To end this kind of linkage set the Ip address to 127.0.0.1 this automatically ends communication via the internet.
 
 ```bash
 #network 
