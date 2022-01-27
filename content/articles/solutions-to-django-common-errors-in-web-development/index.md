@@ -2,11 +2,7 @@
 
 
 ### Introduction
-On several occasions, people get stuck on the way while undertaking different tasks or procedures. Programming is not left out in this. We sometimes get stuck in coding as a result of failure to follow instructions, installation error, and many other major or minor reasons. In this article, we shall major on Django errors during web development.
-
 It is almost impossible to reach your destinations in web development using any framework with Django included without getting stuck at some point on the way. This problem specifically in web development can result from the wrong path, installation, procedures, and sometimes just ignorance. In this article, I will make your coding easy by clearly pointing to some common errors associated with Django, explaining step by step how to solve them to make sure we arrive at our destination. Happy reading!
-By the end of this tutorial, the reader should be able to solve the following:
-
 
 By the end of this tutorial, the reader should be able to solve the following:
   
