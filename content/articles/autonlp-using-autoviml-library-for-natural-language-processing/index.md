@@ -1,5 +1,21 @@
-Natural language processing enables machines to understand the text and spoken words. This process is usually hectic and has many text preprocessing activities such as, [stemming](https://en.wikipedia.org/wiki/Stemming), [lemmatization](https://en.wikipedia.org/wiki/Lemmatisation), [removing stopwords](https://en.wikipedia.org/wiki/Stop_word), [tokenization](https://www.geeksforgeeks.org/nlp-how-tokenizing-text-sentence-words-works/) and [vectorization.](https://neptune.ai/blog/vectorization-techniques-in-nlp-guide)
+---
+layout: engineering-education
+status: publish
+published: true
+url: /autonlp-using-autoviml-library-for-natural-language-processing/
+title: AutoNLP using AutoVIML library for Natural Language Processing
+description: This tutorial will show a reader how to build an Amazon product review model using AutoVIML. The model will classify customers reviews as either positive or negative.
+author: james-omina
+date: 2022-01-30T00:00:00-09:37
+topics: [Machine Learning]
+excerpt_separator: <!--more-->
+images:
 
+  - url: /engineering-education/autonlp-using-autoviml-library-for-natural-language-processing/hero.jpg 
+    alt: AutoNLP using AutoVIML library for Natural Language Processing example image 
+---
+Natural language processing enables machines to understand the text and spoken words. This process is usually hectic and has many text preprocessing activities such as, [stemming](https://en.wikipedia.org/wiki/Stemming), [lemmatization](https://en.wikipedia.org/wiki/Lemmatisation), [removing stopwords](https://en.wikipedia.org/wiki/Stop_word), [tokenization](https://www.geeksforgeeks.org/nlp-how-tokenizing-text-sentence-words-works/) and [vectorization.](https://neptune.ai/blog/vectorization-techniques-in-nlp-guide)
+<!--more-->
 AutoVIML is used to simplify natural language processing. AutoVIML is an AutoNLP library used to automate the process of natural learning processing using a machine learning [pipeline](https://valohai.com/machine-learning-pipeline/). 
 
 The pipeline initializes all the steps involved in natural language processing. The pipeline then automates all the initialized steps in sequential order. The output of the pipeline is an optimized model.
