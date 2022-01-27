@@ -2,6 +2,7 @@
 
 #### Introduction
  A network is a interconnection of computers that share resources.The network is made up of client and server computers. These networks provide certain services that are vital to the normal everyday flow of information of the internet. The network services are operands in the network provided by a server having been requested by the client computers. The application runs at the network application layer and above and includes the following;
+ 
  - IP addressing.
  - Domain Name System (DNS).
  - Internet access.
