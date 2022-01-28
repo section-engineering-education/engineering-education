@@ -48,7 +48,7 @@ Every page must have a function in the views.py file without any denial. The abs
 
 #### Solution
 
-views.py in Django store functions that return page on the browser without a function in views.py because most of this function has a role of rendering HTML files to the browser. If there is an error that page is not found but we have the HTML existing in the template file, then we need to create a python function that will display an HTML file on the browser.
+views.py in Django store functions that return a page on the browser without a function in views.py because most of these functions have the role of rendering HTML files to the browser. If there is an error that the page is not found but we have the HTML existing in the template file, then we need to create a python function that will display an HTML file on the browser.
 
 - #### Absence in URL
 
