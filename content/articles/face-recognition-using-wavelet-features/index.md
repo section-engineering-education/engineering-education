@@ -14,7 +14,7 @@ images:
   - url: /engineering-education/face-recognition-using-wavelet-features/hero.jpg
     alt: Face recognition using wavelet features Hero Image
 ---
-Face recognition is a system that can match human faces from images or video frames against those in a database. Wavelets are oscillations having amplitudes beginning from zero, increases or decreases, then back to zero.
+Face recognition is a system that can match human faces from images to video frames against those in a database. Wavelets are oscillations having amplitudes beginning from zero, increases or decreases, then back to zero.
 <!--more-->
 Wavelet coefficients are used to extract features from hyperspectral data. These extracted features are called wavelet features.
 
@@ -23,10 +23,10 @@ In this tutorial, a face detection scheme is implemented using the wavelet featu
 The proposed scheme is very robust and capable of recognizing the faces even if some changes occur in the face, such as growing beards, mustache e.t.c
 
 ### Prerequisites
-To follow along with this tutorial, you will need:
+To follow along with this tutorial, you will need to have:
 - [MATLAB](https://www.mathworks.com/products/get-matlab.html?s_tid=gn_getml) installed.
 - A proper understanding of [MATLAB basics](/engineering-education/getting-started-with-Matlab/).
-- An understanding of the [principal component analysis(PCA)]()
+- An understanding of the [principal component analysis(PCA)](https://www.projectpro.io/data-science-in-python-tutorial/principal-component-analysis-tutorial)
 
 ### Face image database preparation for training and testing
 In this tutorial, we use [faces94](https://cmp.felk.cvut.cz/~spacelib/faces/faces94.html). This database consists of 153 individuals with 20 face images of each individual. This database has three folders: male stuff, female, and male.
@@ -42,7 +42,7 @@ These images must be named as `1.jpg, 2.jpg, ...`. They are of the dimension 200
 ### Finding the wavelet features
 The image shown below is the basic algorithm for finding these features:
 
-![finding wavelet features](/engineering-education/facrecognition-using-wavelet-features/wavelet-one.png)
+![finding wavelet features](/engineering-education/face-recognition-using-wavelet-features/wavelet-one.png)
 
 1. The input image is binarized to get the binary image.
 2. Perform DWT of 1-level to get the approximated coefficients(cA), Horizontal detailed coefficients(cH), Vertical detailed coefficients(cV), and detailed diagonal coefficients(cD). The dimensions of this matrix are half that of the input image (100x90).
@@ -56,7 +56,7 @@ Principal Component Analysis (PCA) is an unsupervised machine learning for dimen
 
 The general algorithm is shown below:
 
-![pca algorithm](/engineering-education/facrecognition-using-wavelet-features/wavelet-two.png)
+![pca algorithm](/engineering-education/face-recognition-using-wavelet-features/wavelet-two.png)
 
 Our large size feature vector is projected in the PCA space, giving a small size PCA representation. This PCA representation is the eigenvalues. The general PCA formula is:
 
@@ -72,9 +72,9 @@ Where;
 - `fvpca` - Is the reduced feature vector.
 
 ### Training
-It involves getting the wavelet feature and projecting them to the PCA space.
+It involves getting the wavelet features and projecting them to the PCA space.
 
-![training process](/engineering-education/facrecognition-using-wavelet-features/wavelet-three.png)
+![training process](/engineering-education/face-recognition-using-wavelet-features/wavelet-three.png)
 
 The first step is reading all the images and getting their corresponding wavelet features (fvstd) of the size 380. It gives a matrix of 380x800 since there are 800 images. This matrix is passed through the PCA space to get a matrix of 70x800.
 
@@ -273,7 +273,7 @@ subplot(236); imshow(resultimg5); title('Fifth Matched image')
 
 We need to use images that we did not use for training when we run this program. Therefore, the output is as follows:
 
-![Image without distortion](/engineering-education/facrecognition-using-wavelet-features/wavelet-four.png)
+![Image without distortion](/engineering-education/face-recognition-using-wavelet-features/wavelet-four.png)
 
 When we use a distorted image to test the robustness of our image. We realize that the program is capable of making the recognition. 
 
@@ -281,14 +281,14 @@ For example, a sample with a distorted image is shown below:
 
 eigenvalues
 
-![Distorted image](/engineering-education/facrecognition-using-wavelet-features/wavelet-five.png)
+![Distorted image](/engineering-education/face-recognition-using-wavelet-features/wavelet-five.png)
 
 Distorting some image parts
 
-![Distored image](/engineering-education/facrecognition-using-wavelet-features/wavelet-six.png)
+![Distored image](/engineering-education/face-recognition-using-wavelet-features/wavelet-six.png)
 
 ### Conclusion
-The wavelet feature can be used to make a face recognition system. Using this method, we find a very robust method. Even if the image is distorted, it is still possible to recognize the faces accurately using these features.
+In this tutorial, we have looked at how the wavelet feature is used to make a face recognition system. This method as we have seen is a very robust method. Even if the image is distorted, it is still possible to recognize the faces accurately using these features.
 
 Also, the algorithm that this method uses is very effective. The PCA algorithm also effectively reduces the dimensions of multiple images easily.
 
