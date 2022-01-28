@@ -1,4 +1,4 @@
-#### Introduction
+### Introduction
 Cookies are small pieces of data that can be stored, and also sent to the web browser in each request. They are used as a storage medium, session management that keeps client logged in, and user personalization like choosing a language, tracking information e.t.c
 <!--more-->
 They are stored in the web browser as `key-value` pairs. The `key` serves as the signature of the client data, or the name given to the specific cookie. While the `value` is said to be the particular data required, be it for the authentication stuff or more.
@@ -6,7 +6,7 @@ They are stored in the web browser as `key-value` pairs. The `key` serves as the
 In this article, we will experience building an interactive client-side authentication using express cookies parser.
 
 
-#### Table of Contents
+### Table of Contents
 - [Prerequisites](#prerequisites)
 - [Objectives](#objectives)
 - [Overview of web browser cookies](#overview-of-web-browser-cookies)
@@ -15,7 +15,7 @@ In this article, we will experience building an interactive client-side authenti
 - [Making browser cookies secured from attacks](#making-browser-cookies-secured-from-attacks)
 
 
-#### Prerequisites
+### Prerequisites
 To follow along with this tutorial, you should meet the following requirements.
 - An understanding of a JavaScript programming language.
 - A pre-installed IDE, preferably [Visual Studio Code](https://code.visualstudio.com/download).
@@ -23,7 +23,7 @@ To follow along with this tutorial, you should meet the following requirements.
 - An understanding of [Express](https://expressjs.com/).
 
 
-#### Objectives
+### Objectives
 In this tutorial, we will be learning the client-side authentication with web browser cookies using the express cookies parser library. In addition, you will learn the following and apply them to the project;
 - Overview of web browser cookies.
 - Browser Cookies Properties.
@@ -31,7 +31,7 @@ In this tutorial, we will be learning the client-side authentication with web br
 - Making browser cookies secured from attacks
 
 
-#### Overview of web browser cookies
+### Overview of web browser cookies
 The web browser cookies are found on the console page. Cookies are a medium of storage that is used for varieties of things like client authentication, setting of language, tracking information, and more.
 
 There are two main ways of setting the browser cookies. Both the client-side and server are useful when it comes to saving the cookies. Specifically, we want the browser to always remember a bit of information, and that is why cookies are mainly useful.
@@ -52,30 +52,30 @@ The `example` in the snippet above serves as the `key`, while the `domain` is th
 
 
 
-#### Browser cookies properties
+### Browser cookies properties
 You need to know that cookies are sent on every client request to the server. Every domain name serves as a bucket that any cookie created can be sent to. For instance, when we sent a request to the domain `example.com` earlier, no cookie came with it. But we later injected one through the console and that filled the `name`, and `value` properties. 
 
 Browser cookies have different properties that developers can make use. Every attribute can be filled either through client injection in the console or the server whenever there is a request to the backend. Let us go through the feature of cookies together.
 
-##### Name
+#### Name
 This is the name given to the particular cookie saved in the browser. This can be filed through the `key` in the cookie data.
 
-##### Value
+#### Value
 In the same instance, it stores the value of the cookie data. This is the main information that we want the browser to remember for our pieces of stuff. 
 
-##### Domain
+#### Domain
 This always stores whatever URL that the client request was sent to. That is the domain name that fetches the cookie data to the browser.
 
-##### Path
+#### Path
 One has the option to set the path also. This denotes the specific path that will generate the cookie to the browser if requested.
 
-##### Expires
+#### Expires
 This is the option required to set the maximum age that the cookie will use in the client browser. This can be set from the server which gets saved on request.
 
 We will experience how to store each of these features later in the tutorial. Stay put! 
 
 
-#### Demo of client-side authentication with cookies parser library 
+### Demo of client-side authentication with cookies parser library 
 Under this section, we will explore how to authenticate a client's login from the backend with the library. Having gone through the prerequisites section above, you should have installed the required framework locally. 
 
 Open your favorite editor terminal, type out the following command to make some useful files;
@@ -321,7 +321,7 @@ In addition, open to the incognito mode of the browser, and log in to another us
 ![Session Page](/engineering-education/client-side-auth-with-express-cookies-parser/session.png)
 
 
-#### Conclusion
+### Conclusion
 Authenticating clients from the web browser cookies can be a little bit tedious and tasking. In this tutorial, we have implemented one of the nice ways that you can make use. 
 
 We talked about the overview of browser cookies and their attributes. Also, we discussed the way to store client data with cookies, and finally made a demo on how secure to data from attacks by signing every cookie data with session identity.
