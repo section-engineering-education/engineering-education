@@ -102,7 +102,7 @@ We check if the entry is a file by calling the `is_file` method. If the file has
 
 Now I have a `Nirvana - Nevermind.M3U` in my `~/Music/Nirvana - Nevermind` directory.
 
-### Step 2: Dumping the playlist with ID3 tags
+### Step 3: Dumping the playlist with ID3 tags
 If your music files aren't named properly or you just need more data for exporting to a streaming service or whatever, a simple M3U file might not always work for you. That's where Mutagen comes in.
 
 Mutagen is a Python library that allows you to read and write metadata from audio files. It is a wrapper around the standard Python libraries `mutagen` and `mutagen.id3`.
