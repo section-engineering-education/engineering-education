@@ -4,9 +4,9 @@ status: publish
 published: true
 url: /face-recognition-using-wavelet-features/
 title: Face recognition using wavelet features
-description: This tutorial introduces reader to basic concepts of logistics maps design patterns using Matlab. A logistic map is a polynomial mapping of degree two. This equation is used to show the chaotic behaviour that can arise from a simple non-linear dynamical equation.
+description: In this tutorial, a face detection scheme is implemented using the wavelet features. We use wavelet features to extract facial features and use principal component analysis to reduce the wavelet feature vectors.
 author: simon-mwaniki
-date: 2022-01-25T00:00:00-11:10
+date: 2022-01-28T00:00:00-11:10
 topics: [Languages]
 excerpt_separator: <!--more-->
 images:
