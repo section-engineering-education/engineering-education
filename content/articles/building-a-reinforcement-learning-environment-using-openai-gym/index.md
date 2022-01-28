@@ -52,7 +52,10 @@ We will be installing four crucial dependencies:
 - `Keras-rl2` gives us several pre-defined agents to build RL models.
 
 ```bash
-!pip install tensorflow==2.3.0 gym keras keras-rl2
+!pip install tensorflow==2.3.0
+!pip install gym
+!pip install keras
+!pip install keras-rl2
 ```
 The next step involves importing them into our notebook.
 
@@ -156,28 +159,28 @@ for episode in range(1, episodes+1):
 Output:
 
 ```python
-Episode:1 Score:-16
-Episode:2 Score:12
-Episode:3 Score:-60
-Episode:4 Score:-28
-Episode:5 Score:0
-Episode:6 Score:-36
-Episode:7 Score:-60
-Episode:8 Score:-60
-Episode:9 Score:-26
-Episode:10 Score:-18
-Episode:11 Score:-12
-Episode:12 Score:-44
-Episode:13 Score:-50
-Episode:14 Score:-56
-Episode:15 Score:-26
-Episode:16 Score:-60
-Episode:17 Score:-58
-Episode:18 Score:-50
-Episode:19 Score:-58
-Episode:20 Score:-60
+Episode:1 Score:-44
+Episode:2 Score:-58
+Episode:3 Score:-26
+Episode:4 Score:-56
+Episode:5 Score:-28
+Episode:6 Score:-60
+Episode:7 Score:-38
+Episode:8 Score:2
+Episode:9 Score:-22
+Episode:10 Score:-34
+Episode:11 Score:-60
+Episode:12 Score:-10
+Episode:13 Score:-24
+Episode:14 Score:-18
+Episode:15 Score:22
+Episode:16 Score:-12
+Episode:17 Score:-28
+Episode:18 Score:-40
+Episode:19 Score:22
+Episode:20 Score:-30
 ```
-After running through `20` different showers, we get different reward values. Remember, if the shower is not within the optimal range of between `37` and `39` degrees, we get a reward of `-1`. Most of the rewards gotten indicate that we were way outside our optimal temperature range. The best reward we get is `12`, which indicates that some of the steps we took may have been within that optimal range. 
+After running through `20` different showers, we get different reward values. Remember, if the shower is not within the optimal range of between `37` and `39` degrees, we get a reward of `-1`. Most of the rewards gotten indicate that we were way outside our optimal temperature range. The best reward we get is `22`, which indicates that some of the steps we took may have been within that optimal range. 
 
 Let's go ahead and use Keras to build a Deep Learning model.
 
@@ -245,7 +248,7 @@ In the code above, we've taken our custom environment and can now train our `dqn
 
 >If you happen to encounter this attribute error, the `'Sequential' object has no attribute '_compile_time_distribution_strategy'`, make sure to include the `del model` after the `build_model` function, then you can rerun the cells.
 
-After the `60000` steps, we get a reward of `0.1794`. In the initial `10000` steps, we begin with a reward of `-0.6254`. This reduced to `0.1794` at the end. Thus, this positive reward would mean that the temperature is within its optimal temperature, and the model rewarded for it. You can try adding some random noise when creating the model and see how your agent will behave after training.  
+After the `60000` steps, we get a reward of `-0.3908`. In the initial `10000` steps, we begin with a reward of `-0.6412`. This increased to `-0.3908` at the end. The model is not perfect. But with increasing the number of training steps, you will get to the positive reward values. Positive reward values mean that the temperature is within its optimal temperature, and the model rewarded for it. You can try adding some random noise when creating the model and see how your agent will behave after training.  
 
 ### Testing our custom RL environment
 After training our model, we can go ahead and test it out. To test it, let's write the following code:
@@ -254,7 +257,7 @@ After training our model, we can go ahead and test it out. To test it, let's wri
 results = dqn.test(env, nb_episodes=150, visualize=False)
 print(np.mean(results.history['episode_reward']))
 ```
-Upon testing, our average reward value is `60`. It is a high reward. Our model is performing well. However, this might not be the case when you add some noise to your model. It is an ideal example and might not represent a real-case scenario, i.e., where your friend randomly adjusts the shower temperature. Try experimenting and see what you get.
+Upon testing, our average reward value is `59`. It is a high reward. Our model is performing well. However, this might not be the case when you add some noise to your model. It is an ideal example and might not represent a real-case scenario, i.e., where your friend randomly adjusts the shower temperature. Try experimenting and see what you get.
 
 Please find the complete code for this tutorial [here](https://colab.research.google.com/drive/1oBe07b28h9GCBy_bKtLJisC98mayDcwn?usp=sharing).
 
