@@ -12,7 +12,6 @@ Service classes assist us in learning how to encapsulate and segregate third-par
 ### Table of contents
 - [When to create service classes](#when-to-create-service-classes)
 - [Common scenarios for which you might develop a service](#common-scenarios-for-which-you-might-develop-a-service)
-- [Authentication with Firebase](#authentication-with-firebase)
 - [Authentication state](#authentication-state)
 - [Creating service classes](#creating-service-classes)
 - [Purpose of service classes](#purpose-of-service-classes)
@@ -32,16 +31,6 @@ You can contact this service class when you construct an API for it in your appl
 - When creating a user account.
 - When making some complex calculations.
 - When wrapping firebase or another third-party package with a wrapper.
-### Authentication with Firebase
-It's necessary to import the firebase auth plugin before using firebase authentication:
-```dart
-import 'package:firebase_auth/firebase_auth.dart';
-```
-The instance getter on FirebaseAuth can be used to create a new instance of the service:
-
-```dart
-FirebaseAuth auth = FirebaseAuth.instance;
-```
 ### Authentication state
 Whether you're building a new flutter app from scratch or integrating an already existing one, `FirebaseAuth` has a solution for you. You'll need to know whether or not your user is signed in due to this.
 
@@ -49,6 +38,8 @@ This state can be subscribed to via a stream using `FirebaseAuth`. This stream g
 
 There are no implementation details to be revealed to the end user or application by using a service class as an API wrapper.
 ```dart
+import 'package:firebase_auth/firebase_auth.dart';
+FirebaseAuth auth = FirebaseAuth.instance;
 class Login extends StatelessWidget {
  //sign in activity
   Future<void> _signInAnonymously() async {
@@ -78,7 +69,7 @@ Our program's authentication calls to Firebase will have to be revised or upgrad
 
 The ability to exchange preferences, grant access, compile data, and require local authentication are some of the most common security features.
 ### Creating service classes
-Service classes are nothing more than a clone of the underlying class. All of our problems have been resolved at long last. You can construct a generic authentication system using the Firebase API:
+You can construct a generic authentication system using the Firebase API. Service classes are nothing more than a clone of the underlying class:
 ```dart
 class TheUser {
   const TheUser({@required this.id});
@@ -119,8 +110,8 @@ class ThisApp extends StatelessWidget
   Widget build(BuildContext context)
   {
     return Provider<FirebaseAuthService>(
-    //final FirebaseAuth_firebaseAuth=FirebaseAuth.instance;
-      builder:(_)=> FirebaseAuthService(),
+    
+      builder:(_)=>FirebaseAuthService(),
 
       child: MaterialApp(
         theme: ThemeData(
@@ -132,7 +123,7 @@ class ThisApp extends StatelessWidget
   }
 }
 ```
-Our firebase authentication service class will be the only one affected by a breaking change in firebase authentication. Our software becomes easier to maintain as we continue to add new packages. It is not necessary to create a base class, but if you choose to do so, here are the steps:
+Our firebase authentication service class will be the only one affected by a breaking change in firebase authentication. It is not necessary to create a base class, but if you choose to do so, here are the steps:
 ```dart
 abstract class AuthService {
 //creation of a base class
@@ -162,7 +153,7 @@ class ThisApp extends StatelessWidget {
   }
 }
 ```
-The introduction of a base class is a step backward. To justify a high number of implementations, it is necessary to know that they will all be required at the same time. Writing one service class at a time is also an option. 
+The introduction of a base class is a step backward. Writing one service class at a time is also an option. 
 
 The renaming of classes and their usages is made simple in modern integrated development environments. For example, when it comes to the authentication service, I have two implementations of it. Firebase and a dummy authentication service can be swapped at runtime for testing and demo purposes.
 ### Purpose of service classes
