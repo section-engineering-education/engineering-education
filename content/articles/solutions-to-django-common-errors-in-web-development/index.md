@@ -127,6 +127,11 @@ from pathlib import Path
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 ```
+### Conclusion
+Creating a website in Python is relatively easy. Using the Django frame-work you can create a complex website. All you need is to follow proper procedures.
+
+Happy coding!
+
 ### Further learning
 For further learning, I recommend you go through the following:
 
