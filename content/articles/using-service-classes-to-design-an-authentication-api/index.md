@@ -57,7 +57,7 @@ class Login extends StatelessWidget {
       final firebaseAuth = Provider.of<FirebaseAuth>(context);
 
       await firebaseAuth.signInAnonymously();
-    } catch (e) {
+    } catch(e) {
       print(e);
     }
   }
@@ -119,8 +119,8 @@ class ThisApp extends StatelessWidget
   Widget build(BuildContext context)
   {
     return Provider<FirebaseAuthService>(
-    //final FirebaseAuth _firebaseAuth = FirebaseAuth.instance;
-      builder: (_) => FirebaseAuthService(),
+    //final FirebaseAuth_firebaseAuth=FirebaseAuth.instance;
+      builder:(_)=> FirebaseAuthService(),
 
       child: MaterialApp(
         theme: ThemeData(
@@ -136,9 +136,9 @@ Our firebase authentication service class will be the only one affected by a bre
 ```dart
 abstract class AuthService {
 //creation of a base class
-  Future<TheUser> loginAnonymously();
-  Future<void> logOut();
-  Stream<TheUser> get onAStateChanged;
+  Future<TheUser>loginAnonymously();
+  Future<void>logOut();
+  Stream<TheUserget onAStateChanged;
 }
 class FirebaseAuthService implements AuthService {
 }
@@ -150,8 +150,8 @@ class ThisApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return Provider<AuthService>(
     // base class
-      builder: (_) => FirebaseAuthService(),
-      // concrete subclass
+      builder:(_)=>FirebaseAuthService(),
+      // our concrete subclass
       child: MaterialApp(
         theme: ThemeData(
           primarySwatch: Colors.blue,
