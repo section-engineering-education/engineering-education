@@ -164,11 +164,8 @@ Essentially, having a code coupled to a single function makes it difficult and e
 In this case, you'll need assistance. Storage service, for example, is the name of a new class you've created. How it operates internally isn't known to the other classes. It's as simple as calling a service's functions to store and get the data.
 ### Conclusion
 Using service classes, you may hide the implementation details of third-party code in your app. However, this is especially true if you need to contact an API method multiple times in your codebase.
-In a nutshell:
 
-1. Use the API wrapper class to mask implementation details.
-2. All input and output arguments for API methods are included.
-3. A basic abstract service class can be built to make swapping out another version easier.
+Use the API wrapper class to conceal implementation details, including all input and output parameters for API methods, design a simple abstract service class to allow changing out another version easy.
 
 Happy coding!
 ### References
