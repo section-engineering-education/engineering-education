@@ -67,14 +67,18 @@ subplot(2,2,1)
 imshow(a)
 title('Image with 2 dots')
 ```
+
 `Close all` is used to close all the open figures, and `clc` clears the command window. We then make a matrix of zeros of the dimension 50x50 using `zero(50)`. `a(20, 20)` and `a(40, 10)` are the points at which the dots are placed. `Figure` creates a figure window. We then use the `imshow()` to view the output. Finally, using the `subplot()` function, we create a subplot for our output. `subplot(m,n,p)` creates an `MxN` axes, and the plot is placed at position `p`.
 We use the `hough()` function to compute the hough matrix. This function takes in binary images as the input. This function gives out three outputs, that is, Transform matrix(H), theta(T), and rho(R). After that, we visualize the output using the utility function `houghMatViz()` as shown below:
+
 ```Matlab
 [H, T, R] = hough(a);
 subplot(2, 2, 2)
 houghMatViz(H, T, R)
 ```
+
 >Let us look at the content of this utility function. Remember, this function should be in a different script, and then we call it.
+
 ```Matlab
 function houghMatViz(H,T,R)
 Hgray = mat2gray(H); % Converting hough matrix(H) into grayscale image.
@@ -90,6 +94,7 @@ colormap(hot);title('Hough Transform'); % Giving colormap to the image.
 xlabel('\theta')  % add x-y labels
 ylabel('\rho');
 ```
+
 This utility function converts the hough matrix into a grayscale image using the `mat2gray()` function. Then, the brightness of the grayscale image is adjusted using the imadjust()` function. Finally, this function takes the grayscale image as the argument. The `imshow()` function displays the output depending on the `XData` and the `YData`.
 		
 When we execute this code, we get two sinusoids that correspond to the two points in the image, as shown below:
@@ -97,17 +102,21 @@ When we execute this code, we get two sinusoids that correspond to the two point
 ![Two sinusoids corresponding to the two points](/engineering-education/line-detection-using-hough-transform-in-matlab/image-seven.png)
 
 We use the `houghpeaks()` function to find the peaks. Using this function, you can provide the number of peaks required to be returned as the output. The output will be the highest peak if you fail to provide this. 
+
 ```Matlab
 hPeaks = houghpeaks(H);
 ```
+
 The output is the largest peak since we did not specify the number of peaks. To see this, execute `hpeaks` in the command window.
 We can find where the peak occurs in the `H` matrix. It is done by indexing theta(T), Rho(R) array, and the pixel location and plotting the output as shown below:
+
 ```Matlab
 x = T(hPeaks(:,2));  %indexing the theta(T) array
 y = R(hPeaks(:,1));  %Indexing the rho(R) array
 
 plot(x,y,'gs')
 ```
+
 The output is:
 
 ![Peak](/engineering-education/line-detection-using-hough-transform-in-matlab/image-eight.png)
@@ -115,22 +124,27 @@ The output is:
 The green square is the peak location. Peak location is the line that goes through the two image dots.
 Now, we will apply the same logic to the second image. The only difference here is that we extract line segments to redraw the detected lines.
 Lets first plot the line.
+
 ```matlab
 b = eye(150);
 subplot(2,2,3)
 imshow(b)
 title('Image with a line')
 ```
+
 Here, we use the function `eye()` to give an MxN matrix wherewith the ones in the main diagonal and zeros in other parts. When we use this function, we get the plot as shown below:
 
 ![Plot of line](/engineering-education/line-detection-using-hough-transform-in-matlab/image-nine.png)
 
 In the image, there are many sinusoids. Each of these sinusoids corresponds to a point on a line.
 The last step is to map the peak back into the image plane and extract the line segments. It can be done using `houghlines()` function. This function takes in the original image as the input for the image reference, an array of T, R values, and the peaks, which must be marked back into the image plane as the arguments.
+
 ```Matlab
 hlines = houghlines(b, T, R, hPeaks);
 ```
+
 Using these `hline` values, we can redraw the detected lines on the original image. This help us to see if the detection worked. To do this we use the code below:
+
 ```matlab
 xy = [hlines.point1; hlines.point2];
 figure;
@@ -139,6 +153,7 @@ hold on
 plot(xy(:,1), xy(:,2), 'g--', 'Linewidth', 5)
 title('Detected line')
 ```
+
 Here, we use the `hlines` structure to create two points, i.e. `hlines.point1` and `hlines.point2`. On top of the original image, we plot the points with different linestyle(--), color (g), and linewidth(5). It gives the below plot.
 
 ![Reconstruction](/engineering-education/line-detection-using-hough-transform-in-matlab/image-ten.png)
