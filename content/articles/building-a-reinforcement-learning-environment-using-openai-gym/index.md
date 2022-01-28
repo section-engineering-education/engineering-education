@@ -22,7 +22,7 @@ This tutorial will show you how to build your custom RL environment using OpenAI
 
 ### Prerequisites
 To follow along with this tutorial, you need to be familiar with:
-- [Reinforcement Learning](/engineering-education/introduction-to-reinforcement-learning/).
+- [Reinforcement Learning](/engineering-education/introduction-to-reinforcement-learning/) and its algorithms.
 - Machine Learning modeling.
 - [Google Colab](https://colab.research.google.com/) or [Jupyter Notebook](https://jupyter.org).
 
@@ -69,7 +69,7 @@ We've imported:
 - `random` to allow us to test out our random environment.
 
 ### Building the custom RL environment with OpenAI Gym
-We begin by creating a `CustomEnv` class. By passing `Env` to the `CustomEnv` class, we inherit the methods and properties from the OpenAI Gym environment class.
+We begin by creating a `CustomEnv` class. When we pass `Env` to the `CustomEnv` class, we inherit the methods and properties from the OpenAI Gym environment class.
 
 ```python
 class CustomEnv(Env):
@@ -133,10 +133,12 @@ The `reset` function is used to reset our environment or update each episode. It
         self.shower_length = 60 
         return self.state
 ```
+Let's store our class inside a custom variable called `env`. We will work with `env` going forward.
 
 ```python
 env = CustomEnv()
 ```
+Let's play around with our environment.
  
 ```python
 episodes = 20 #20 shower episodes
@@ -175,7 +177,12 @@ Episode:18 Score:-50
 Episode:19 Score:-58
 Episode:20 Score:-60
 ```
+After running through `20` different showers, we've got different reward values. Remember, if our shower is not within the optimal range of between `37` and `39` degrees, we are going to get a reward of `-1`. Most of the rewards gotten indicate that we were way outside of our optimal temperature range. The best reward that we got was `12` indicating that some of the steps we took may have been within that optimal range. 
+
+Let's go ahead and use Keras to build a Deep Learning model.
+
 ### Creating a Deep Learning model using Keras
+We begin by importing all the necessary dependencies from TensorFlow.
 
 ```python
 import numpy as np
@@ -183,10 +190,14 @@ from tensorflow.keras.models import Sequential
 from tensorflow.keras.layers import Dense, Flatten
 from tensorflow.keras.optimizers import Adam
 ```
+This next step involves defining both our `states` and `actions`.
+
 ```python
 states = env.observation_space.shape
 actions = env.action_space.n
 ```
+When you run the code above, it gives you the shape of our states and the number of our actions. Let's now build our model.
+
 ```python
 def build_model(states, actions):
     model = Sequential()    
@@ -195,24 +206,28 @@ def build_model(states, actions):
     model.add(Dense(actions, activation='linear'))
     return model
 ```
-We are passing in our temperature to the input of our deep learning model and returning three different actions.
+In the model, we are passing in our temperature (`input_shape=states`) to the input of our deep learning model and returning three different actions.
 
 ```python
 model = build_model(states, actions)
 ```
+When you run the code below, it will give us a summary of our model.
+
 ```python
 model.summary()
 ```
 We can then pass this model to the Keras-RL model.
 
 ### Building the agent with Keras-RL
-We begin by importing the necessary dependencies from Keras-RL.
+We begin by importing the necessary dependencies from Keras-RL.  
 
 ```python
 from rl.agents import DQNAgent
 from rl.policy import BoltzmannQPolicy
 from rl.memory import SequentialMemory
 ```
+We then build a `DQNagent` using the model we created in the section above. We use the Boltzmann Q Policy as it builds a probability law on `q` values and returns an action selected randomly according to this law. Sequential memory is used by a DQN agent to store various states, actions, and rewards. 
+
 ```python
 def build_agent(model, actions):
     policy = BoltzmannQPolicy()
@@ -230,6 +245,8 @@ In the code above, we've taken our custom environment and can now train our `dqn
 
 >If you happen to encounter this attribute error, the `'Sequential' object has no attribute '_compile_time_distribution_strategy'`, make sure to include the `del model` after the `build_model` function, then you can rerun the cells.
 
+After the `60000` steps, we get a reward of `0.1794`. We can see that in the initial `10000` steps, we began with a reward of `-0.6254`, and this reduced to `0.1794` at the end. Thus, this positive reward would mean that the temperature is within its optimal temperature and the model is being rewarded for it. You can try adding some random noise when creating the model and see how your agent will behave after training.  
+
 ### Testing our custom RL environment
 After training our model, we can go ahead and test it out. To test it, let's write the following code:
 
@@ -237,6 +254,7 @@ After training our model, we can go ahead and test it out. To test it, let's wri
 results = dqn.test(env, nb_episodes=150, visualize=False)
 print(np.mean(results.history['episode_reward']))
 ```
+Upon testing, our average reward value is `60`. This is a high reward. Our model is performing quite well. However, this might not be the case when you add some noise to your model. This is an ideal example and might not represent a real-case scenario i.e., where your friend randomly adjusts the shower temperature. Try experimenting and see what you get.
 
 Please find the complete code for this tutorial [here](https://colab.research.google.com/drive/1oBe07b28h9GCBy_bKtLJisC98mayDcwn?usp=sharing).
 
