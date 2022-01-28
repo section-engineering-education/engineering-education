@@ -61,9 +61,9 @@ These are:
 3. $(A A^\dagger)^* = AA^\dagger$
 4. $(A^\dagger A)^* = A^\dagger A$
 
-We will not prove these conditions, but if you are interested in proofs, you can refer [here](https://www.youtube.com/watch?v=8dhnUcc_dLM&t=71s).
+We will not proof these conditions, but if you are interested in proofs, you can refer [here](https://www.youtube.com/watch?v=8dhnUcc_dLM&t=71s).
 
-Now, let's look at a numerical example to develop a deep understanding of how this technique works.
+Now, let's look at an example to understand how this technique works intuitively.
 
 Suppose we are given the following matrix,
 
@@ -120,10 +120,10 @@ $A^{\dagger}=V {Σ^\dagger}U^T
     1&0&-1&0\\
     0&-1&0&1
 \end{bmatrix}\begin{bmatrix}
-    \frac{1}{\sqrt6} & 0& 0&0\\
-    0&\frac{1}{2}&0&0\\
-    0&0&0&0\\
-    0&0&0&0\\
+    \frac{1}{\sqrt6} & 0& 0\\
+    0&\frac{1}{2}&0\\
+    0&0&0\\
+    0&0&0
 \end{bmatrix}\begin{bmatrix}
     \frac{1}{\sqrt 3} & \frac{1}{\sqrt 3} & \frac{1}{\sqrt 3}\\
 \\
@@ -140,7 +140,7 @@ $=\begin{bmatrix}
     0&-1&0&1
 \end{bmatrix}\begin{bmatrix}
     \frac{1}{6} & \frac{1}{6}& \frac{1}{6}\\
-    \frac{1}{4}&0&\frac{1}{4}\\
+    \frac{1}{4}&0&\frac{-1}{4}\\
     0&0&0\\
     0&0&0
 \end{bmatrix}=\frac{1}{12}\begin{bmatrix}
@@ -150,6 +150,7 @@ $=\begin{bmatrix}
     -3&0&3
 \end{bmatrix}$
 
+This solution is the Pseudo-inverse of $A$.
 
 Let's look at one more example.
 
