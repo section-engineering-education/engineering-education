@@ -33,11 +33,11 @@ You can contact this service class when you construct an API for it in your appl
 - When making some complex calculations.
 - When wrapping firebase or another third-party package with a wrapper.
 ### Authentication with Firebase
-Before utilizing firebase authentication, you must install and import the firebase auth plugin into your Dart code:
+It's necessary to import the firebase auth plugin before using firebase authentication:
 ```dart
 import 'package:firebase_auth/firebase_auth.dart';
 ```
-Create a new instance of `FirebaseAuth` by calling the instance getter on `FirebaseAuth`:
+The instance getter on FirebaseAuth can be used to create a new instance of the service:
 
 ```dart
 FirebaseAuth auth = FirebaseAuth.instance;
@@ -47,7 +47,7 @@ Whether you're building a new flutter app from scratch or integrating an already
 
 This state can be subscribed to via a stream using `FirebaseAuth`. This stream generates an event every each time the authentication status of a user changes, and it continues to do so indefinitely.
 
-The service class serves as an `API wrapper`, obscuring any implementation details from the end user or application.
+There are no implementation details to be revealed to the end user or application by using a service class as an API wrapper.
 ```dart
 class Login extends StatelessWidget {
  //sign in activity
@@ -74,11 +74,11 @@ Although we are using the firebase authentication API in our code, we are still 
 1. How will you deal with modifications in future versions of firebase authentication that cause problems?
 2. Consider the possibility that in the future we may opt to use an other auth service instead of firebase. What kind of adjustments are we going to make?
 
-Authentication calls to Firebase will need to be modified or updated across the board in our program. There is a good chance that as our project expands, we will add additional material to our application.
+Our program's authentication calls to Firebase will have to be revised or upgraded. We can expect to add more content to our application as the scope of our project grows.
 
-Some of the most typical security features include the ability to share preferences, give access, compile data, and require local authentication. As APIs evolve, we'll have a harder time maintaining our code.
+The ability to exchange preferences, grant access, compile data, and require local authentication are some of the most common security features.
 ### Creating service classes
-Service classes are nothing more than a clone of the underlying class. All of our problems have been resolved at long last. Using the Firebase API, you may build a generic authentication system:
+Service classes are nothing more than a clone of the underlying class. All of our problems have been resolved at long last. You can construct a generic authentication system using the Firebase API:
 ```dart
 class TheUser {
   const TheUser({@required this.id});
