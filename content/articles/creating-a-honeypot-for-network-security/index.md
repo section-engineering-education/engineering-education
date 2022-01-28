@@ -1,9 +1,24 @@
-### Introdution
-Many companies rely on publicly available data to make critical choices in today's data-driven world. Web scraping is a common technique for obtaining this information from the Internet.
+---
+layout: engineering-education
+status: publish
+published: true
+url: /creating-a-honeypot-for-network-security/
+title: Creating a honeypot for network security
+description: In this article, we will discuss honeypots and how to avoid them when scraping the web for data..
+author: ruth-ngonyo
+date: 2022-01-30T00:00:00-14:00
+topics: [Security]
+excerpt_separator: <!--more-->
+images:
 
+  - url: /engineering-education/creating-a-honeypot-for-network-security/hero.png
+    alt: Creating a honeypot for network security
+---
+Many companies rely on publicly available data to make critical choices in today's data-driven world. Web scraping is a common technique for obtaining this information from the Internet.
+<!--more-->
 However, web scraping has specific difficulties. The honeypot is an example of a trap. One of the most effective ways to deter hackers is to use honeypots. A honeypot system deters attackers from their objectives. Unwanted behaviour is often detected with the use of honeypots by security teams.
 
-We'll discuss honeypots and how to avoid them when scraping the web for data.
+This article will discuss honeypots and how to avoid them when scraping the web for data.
 
 ### Table of contents
 - [Types of honeypots](#types-of-honeypots)
