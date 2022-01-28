@@ -1,7 +1,21 @@
-## Digital Twins and IoT for Robotics
+---
+layout: engineering-education
+status: publish
+published: true
+url: /digital-twins-and-iot-for-robotics/
+title: Digital Twins and IoT for Robotics
+description: This article will look at how digital twin technology and internet of things (IoT) can enhance robotic operations. It will also discuss how these technologies can be applied in various industries to achieve cost reduction. 
+author: 
+date: 2022-01-29T00:00:00-10:22
+topics: [Internet of Things]
+excerpt_separator: <!--more-->
+images:
 
+  - url: /engineering-education/digital-twins-and-iot-for-robotics/hero.png
+    alt: Digital Twin image alt
+---
 Digital twins are virtual representations of physical products and processes. They help replicate the normal working of the physical environment, facilitative predictive analysis, and maintenance. They have several applications, including decision-making in firms, augmented reality, artificial intelligence, and teleoperation.
-
+<!--more-->
 The Internet of Things([IoT](/engineering-education/an-overview-of-iot-technology/)) is essential in the revival of digital twins. It connects devices and machines and shares data with their digital twins. IoT is crucial in the digitization process that digital twins require. The collaboration of digital twins and IoT is inevitable in the long-term success of companies as they venture into digital technologies like robotics.
 
 This article explains the use of digital twins in predictive analytics and teleoperation. In addition, it explores how a combination of digital twins and IoT technologies can enhance robotic operations and help in cost reductions.
@@ -74,3 +88,6 @@ A notable significance of digital twins and IoT is the reduction of the costs fo
 - [Introduction to Deep Learning](/engineering-education/introduction-to-deep-learning/)
 
 - [Introduction To Cloud Computing](/engineering-education/introduction-to-cloud-computing/)
+
+---
+Peer Review Contributions by: [Onesmus Mbaabu](/engineering-education/authors/onesmus-mbaabu/)
