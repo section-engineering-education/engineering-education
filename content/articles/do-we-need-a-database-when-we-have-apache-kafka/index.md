@@ -5,7 +5,7 @@ published: true
 url: /do-we-need-a-database-when-we-have-apache-kafka/
 title: Do We Need a Database When We Have Apache Kafka
 description: In this tutorial, we will get an overview of Apache Kafka and databases. We will compare the two in terms of handling transactions, data processing, and storage. 
-author: owino-wendy
+author: 
 date: 2022-01-29T00:00:00-10:22
 topics: [Databases]
 excerpt_separator: <!--more-->
