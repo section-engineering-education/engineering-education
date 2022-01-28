@@ -3,10 +3,10 @@ layout: engineering-education
 status: publish
 published: true
 url: /rsa-encryption-and-decryption-in-python/
-title: Implementing RSA Encryption And Decryption In Python
+title: Implementing RSA Encryption and Decryption in Python
 description: This tutorial will discuss the working of the RSA algorithm and how this algorithm can be implemented in Python.
 author: daniel-masika
-date: 2022-01-19T00:00:00-10:05
+date: 2022-01-28T00:00:00-06:25
 topics: [Languages]
 excerpt_separator: <!--more-->
 images:
@@ -15,42 +15,43 @@ images:
     alt: Implementing RSA Encryption And Decryption In Python Hero Image
 ---
 Data encryption is an important practice used to protect data transfer on the internet. This helps prevent data sent on the internet from unauthorized access.
-
+<!--more-->
 One of the major algorithms used for data protection on the internet is the _Rivest, Shamir, and Adleman_ (RSA algorithm), named after the inventors of this encryption and decryption algorithm.
 
-RSA is a public key algorithm widely used for secure data transmission. This is one of the major cyber security methods of data protection. 
+RSA is a public key algorithm widely used for secure data transmission. This is one of the major cyber security methods of data protection.
 
 In this tutorial, we will discuss the working of the RSA algorithm and how this algorithm can be implemented in Python.
 
 ### Table of contents
+- [Table of contents](#table-of-contents)
 - [Prerequisites](#prerequisites)
-- [How the RSA encryption and decryption work](#how-the-rsa-encryption-and-decryption-work)
+- [How the RSA encryption and decryption works](#how-the-rsa-encryption-and-decryption-works)
 - [Implementing the RSA algorithm in Python](#implementing-the-rsa-algorithm-in-python)
 - [Conclusion](#conclusion)
 
 ### Prerequisites
-To follow along with this tutorial, the reader will need to have:
+To follow along with this tutorial, you need to have:
 - Basic knowledge of the [RSA algorithm](https://www.tutorialspoint.com/cryptography_with_python/cryptography_with_python_understanding_rsa_algorithm.htm)
 - Basic knowledge of the [Python](https://www.javatpoint.com/python-tutorial) programming language.
-- A code editor installed and well set up. We can download either [Pycharm](https://www.filehorse.com/download-pycharm/) or [Visual Studio Code](https://code.visualstudio.com/download)
+- A code editor installed and well set up. You can download either [Pycharm](https://www.filehorse.com/download-pycharm/) or [Visual Studio Code](https://code.visualstudio.com/download)
 
 I will be using Visual Studio Code for this tutorial.
 
-### How the RSA encryption and decryption work
-Each pair of the RSA algorithm has two keys, i.e, a public key and a private key. One key is used for encrypting the message which can only be decrypted by the other key.
+### How the RSA encryption and decryption works
+Each pair of the RSA algorithm has two keys, i.e. a public key and a private key. One key is used for encrypting the message which can only be decrypted by the other key.
 
 For instance, let's say we have two peers communicating with each other in a channel secured by the RSA algorithm. The sender will encrypt the plain text with the recipient's public key. This is so that the receiver is the only one who can decrypt the message using their private key.
 
-The public key will be available in a public key repository. But, for the private key, as the name suggests, it is kept private at the recipient's side.
+The public key will be available in a public key repository. However, for the private key, as the name suggests, it is kept private at the recipient's side.
 
 ### Implementing the RSA algorithm in Python
-In this tutorial, we will be using `rsa python package`. Hence, we will open our terminal and use the command below to install it:
+In this tutorial, we will be using `rsa python package`. Open your terminal and use the command below to install it:
 
 ```bash
 pip install rsa
 ```
 
-Once our package is downloaded, then we are good to go. The first thing we need to do is to import `rsa` into our program.
+Once the package is downloaded, the first thing we need to do is to import `rsa` into our program:
 
 ```py
 import rsa
@@ -58,9 +59,9 @@ import rsa
 
 We will start by implementing two helper methods to generate the private and public keys. The keys will be a tuple of public and private keys, and then write the keys into files.
 
-To write the keys into the files, we will create a folder called `Keys` in our project folder. The `Keys` folder will have two files for holding private and public keys, one key in each file.
+To write the keys into the files, we will create a folder named `Keys` in our project folder. The `Keys` folder will have two files for holding private and public keys; one key in each file.
 
- We will implement this using the code below:
+We will implement this using the code below:
 
 ```py
 def generateKeys():
@@ -73,7 +74,7 @@ def generateKeys():
 
 Now that we have saved the keys in our files, the next thing we need to do is to load the keys.
 
-To load the keys, we will use the code snippet below that opens the files that we created above, and return both the private and public keys.
+To load the keys, we will use the code snippet below that opens the files that we created above, and return both the private and public keys:
 
 ```py
 def loadKeys():
@@ -84,11 +85,11 @@ def loadKeys():
     return privateKey, publicKey
 ```
 
-Next, we will create two other methods to encrypt and decrypt our message.
+Next, create two other methods to encrypt and decrypt our message.
 
-We will start by creating the encryption method using the code below. The encrypt method will take the message and the encryption key.
+Start by creating the encryption method using the code below. The encrypt method will take the message and the encryption key.
 
-After defining the encrypt method, we need to return the encrypted message. We will encode the message in `ASCII` and give it the key.
+After defining the encrypt method, we need to return the encrypted message. We will encode the message in `ASCII` and give it the key:
 
 ```py
 def encrypt(message, key):
@@ -134,29 +135,29 @@ def verify(message, signature, key):
         return False
 ```
 
-Now that we have the RSA algorithm, we will create our program. We will start by generating our keys. 
+Now that we have the RSA algorithm, we will create our program. We will start by generating our keys.
 
-We will call the generate keys method, load the public and private keys as implemented in the code below.
+We will call the generate keys method, load the public and private keys as implemented in the code below:
 
 ```py
 generateKeys()
 publicKey, privateKey =load_keys()
 ```
 
-We will then take the message input from the user, and encrypt the message using the public key. This represents the sender of the message.
+We will then take the message input from the user, and encrypt the message using the public key. This represents the sender of the message:
 
 ```py
 message = input('Write your message here:')
 ciphertext = encrypt(message, publicKey)
 ```
 
-Now that we have the ciphertext, we will generate the signatures using the code below to sign the message with our private key. This enables the sender to verify the message with the public key and determine if the message is authentic.
+Now that we have the ciphertext, we will generate the signatures using the code below to sign the message with our private key. This enables the sender to verify the message with the public key and determine if the message is authentic:
 
 ```py
 signature = sign(message, privateKey)
 ```
 
-Next, we will decrypt our encrypted message to have plain text. To implement this, we will create a decryption method and pass it in the ciphertext and the private key as shown below.
+Next, we will decrypt our encrypted message to have plain text. To implement this, we will create a decryption method and pass it in the ciphertext and the private key as shown below:
 
 ```py
 text = decrypt(ciphertext, privateKey)
@@ -169,7 +170,7 @@ print(f'Cipher text: {ciphertext}')
 print(f'Signature: {signature}')
 ```
 
-We will check the plain text in the next step. If it is plain text, then we indicate `message was successfully decrypted` otherwise, `unable to decrypt the message`.
+We will check the plain text in the next step. If it is plain text, then we indicate `message was successfully decrypted` otherwise, `unable to decrypt the message`:
 
 ```py
 if text:
@@ -192,7 +193,7 @@ With that, you can enter your message, encrypt, and then decrypt it.
 ### Conclusion
 In this tutorial, we have encrypted a message using a public key and signed it using our private key.
 
-If you have two peers; i.e, peer A talking to peer B, then peer A is sending a message to peer B. The message should be encrypted using the public key of peer B. But, this method is signed using the private key of peer A, which is the peer sending the message.
+If you have two peers; i.e, peer A talking to peer B. When peer A is sending a message to peer B, the message should be encrypted using the public key of peer B. However, this method is signed using the private key of peer A, which is the peer sending the message.
 
 On the recipient's side, which is peer B, it is going to decrypt the message using the private key and then verify the signature of the message using the public key of peer A which is the sender of the message.
 
