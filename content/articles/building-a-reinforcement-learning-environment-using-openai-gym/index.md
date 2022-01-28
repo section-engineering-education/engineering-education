@@ -88,9 +88,9 @@ We've gone ahead and implemented four different functions within the `CustomEnv`
         self.shower_length = 60
 ```
 The `step` function defines what we do after we take action. We've set our action value to `-1`. Ideally, this means that:
-- If we apply action (0), and apply `-1`, we get a `-1` value. This action will lower the temperature by `1`.
-- If we apply action (1), and apply `-1`, we get a `0` value. This action will make the temperature stay where it is.
-- If we apply action (2), and apply `-1`, we get a `1` value. This action will increase the temperature by `1`.
+- If we apply action (0) together with `-1`, we get a `-1` value. This action will lower the temperature by `1`.
+- If we apply action (1) together with `-1`, we get a `0` value. This action will make the temperature stay where it is.
+- If we apply action (2) together with `-1`, we get a `1` value. This action will increase the temperature by `1`.
 
 We are also reducing the shower length by `1`.
 
