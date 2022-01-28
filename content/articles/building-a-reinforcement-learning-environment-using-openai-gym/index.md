@@ -46,7 +46,7 @@ Let's begin by installing our dependencies.
 
 ### Installing and importing required dependencies
 We will be installing four key dependencies:
-- `TensorFlow` allows us to perform training and inferencing of deep learning models.
+- `TensorFlow` allows us to perform training and inference on deep learning models.
 - `OpenAI Gym` to allow us to build our environment.
 - `Keras` is a high-level API that allows us to build deep learning models.
 - `Keras-rl2` gives us several pre-defined agents to build RL models.
