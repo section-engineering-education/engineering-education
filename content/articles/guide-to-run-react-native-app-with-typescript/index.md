@@ -8,7 +8,9 @@ To follow along with this tutorial, you'll need the following:
 - [Expo Go](https://expo.dev/client) installed on your mobile device.
 - [Node.js](https://nodejs.org/en/) installed on  your computer.
 
-### Overview
+### Table of contents
+- [Pre-requisites](#pre-requisites)
+- [Table of contents](#table-of-contents)
 - [Initializing your first React Native project with Typescript](#initializing-your-first-react-native-project-with-typescript)
 - [Set up a Typescript Blog app using React Native](#set-up-a-typescript-blog-app-using-react-native)
 - [Creating application components](#creating-application-components)
