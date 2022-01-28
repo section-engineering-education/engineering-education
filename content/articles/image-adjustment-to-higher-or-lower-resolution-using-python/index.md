@@ -14,9 +14,9 @@ images:
   - url: /engineering-education/image-adjustment-to-higher-or-lower-resolution-using-python/hero.jpg
     alt: How to Adjust Image to Higher or Lower Resolution using Python Hero Image
 ---
-Low-resolution images can at times not bring out the desired information and accurate details. To overcome this challenge there is a need for the adjustment of resolutions in an image.
+Images with constant resolution can at times not bring out the desired information and accurate details. To overcome this challenge there is a need for the adjustment of resolutions in an image. We will be changing the images to a higher and lower resolution with the help of `LapSRN`.
 <!--more-->
-In this tutorial, we will need to use some basic tools such as OpenCV, used in computer vision-based tasks, and the main function is required in our tutorial for image processing.
+In this tutorial, we will need to use some basic tools such as OpenCV, used in computer vision-based tasks, which is the main function required in our tutorial for image processing.
 
 ### Table of contents
 - [Introduction](#introduction)
@@ -31,9 +31,9 @@ In this tutorial, we will need to use some basic tools such as OpenCV, used in c
 - [Conclusion](#conclusion)
 
 ### Prerequisites
-The reader has to be familiar with the Python programming language basics to follow along with this tutorial. Refer to this [beginners guide to python](/engineering-education/a-beginners-guide-to-python/)
+The reader has to be familiar with the Python programming language basics to follow along with this tutorial. Refer to this [beginners guide to Python](/engineering-education/a-beginners-guide-to-python/)
 
-### How to install and use Pillow and Numpy
+### How to install and use Pillow and NumPy
 Using any text editor of your choice, you will be required to run a few codes. To work with cv2 you will be required to install OpenCV.
 
 To implement this, in your terminal, run the command below if you don't have it pre-installed.
@@ -68,7 +68,7 @@ You will have to change the path according to your machine's directory.
 ### Having the colors fixed
 Images are made up of pixels in the form of X and Y coordinates. Having the colors fixed, we will have to use the RGB color format.
 
-This occurs when one color in the RGB format is omitted, let's say if blue is, the image will lack the blue pigment and any traces of it since every single pixel has blue taken away from it leaving only red and green components.
+This occurs when one color in the RGB format is omitted, let's say if blue is omitted, the image will lack the blue pigment and any traces of it since every single pixel has blue taken away from it leaving only red and green components.
 
 Below is a program for further illustration:
 
@@ -99,7 +99,7 @@ Fixed image with blue pixels omitted:
 ![fixed](/engineering-education/image-adjustment-to-higher-or-lower-resolution-using-python/fixed.png)
 
 ### Implementing contrast enhancement
-Contrast deals with the intensity, saturation, and brightness level in an image. We will be adjusting the contrast with the help of `ImageFilter` function provided by the `PIL` module.
+Contrast deals with the intensity, saturation, and brightness level in an image. We will be adjusting the contrast with the help of the `ImageFilter` function provided by the `PIL` module.
 
 With the above in place we are fit to dive into the coding section using an image of your choice:
 
@@ -155,7 +155,7 @@ cv2.waitKey(0)
 cv2.destroyAllWindows()
 ```
 
-Your output should match the below image:
+Your output should be like the image shown below.
 
 ![low](/engineering-education/image-adjustment-to-higher-or-lower-resolution-using-python/low.jpg)
 
@@ -188,13 +188,13 @@ cv2.waitKey(0)
 cv2.destroyAllWindows()
 ```
 
-The output should be similar to the below image:
+Your output should be like the image shown below.
 
 ![high](/engineering-education/image-adjustment-to-higher-or-lower-resolution-using-python/high.jpg)
 
 ### Instance 3
-To construct the Laplacian Pyramid Super-Resolution Network, we will be taking the top-level layer of the Gaussian Pyramid which is the last image generated using the loop function then create a list for the Laplacian pyramid then create the extended version of the upper level of the Gaussian Pyramid.
-To understand it better a code snippet will do:
+To construct the Laplacian Pyramid Super-Resolution Network. We will take the top-level layer of the Gaussian Pyramid, which is the last image generated using the loop function. We then create a list for the Laplacian pyramid. Lastly, we create the extended version of the upper level of the Gaussian Pyramid.
+To understand it better a code snippet will do.
 
 ```py
 import cv2
@@ -226,12 +226,19 @@ Confirm with the below displayed:
 The Laplacian pyramid and the Gaussian Pyramid are applied in the blending and reconstruction of the images.
 
 ### Application fields for adjusting image resolution
-- **Applied in the field of Astronomy**: This is achieved by focusing on tiny information of images to higher resolutions that bring out clearer vision.
-- **Closed Circuit Television**: Feeds received from the CCTV footage can be focused to get clearer images by resolving and fixing the colors where possible.
-- **Medicine**: Images received from scans such as the X-Rays require adjustment of resolutions to provide detailed and accurate information.
+- **Astronomy**- This is achieved by focusing on tiny information of images to higher resolutions that bring out clearer vision.
+- **Closed Circuit Television**- Feeds received from a CCTV footage can be focused to get clearer images by resolving and fixing the colors where possible.
+- **Medicine**- Images received from scans such as the X-Rays need adjustment of resolutions to provide detailed and accurate information.
 
 ### Conclusion
-Covering all the details required in this tutorial, you are now equipped to handle matters concerning this tutorial. Being able to accurately work with this area of discussion and produce maximum results now, wish you all the best.
+Covering all the details required in this tutorial, that is:
+  - Knowing how to fix colors.
+  - Implementation of the contrast enhancement.
+  - Scaling the images to lower or higher resolution.
+  - Derivation of the Laplacian pyramid.
+  - Application fields for adjusting image resolution.
+
+You are now equipped to handle matters concerning this tutorial. Being able to accurately work with image resolution adjustment and produce maximum results now, wish you all the best.
 
 ---
 
