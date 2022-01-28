@@ -16,9 +16,9 @@ images:
 ---
 If you've ever worked with Deep Learning (DL) or Machine Learning (ML), you know that supervised and unsupervised learning are the two crucial techniques used. Reinforcement Learning (RL) is slightly different from these two techniques as you tend to train models in a live environment. 
 <!--more-->
-Many standard OpenAI RL environments can enable you to build a project, i.e., the [CartPole-v0](https://gym.openai.com/envs/CartPole-v0/) and [SpaceInvaders-v0](https://gym.openai.com/envs/SpaceInvaders-v0/) environment. However, they can be limiting as some of these environments have been built to solve specific tasks. 
+Many standard OpenAI RL environments can enable you to build a project, i.e., the [CartPole-v0](https://gym.openai.com/envs/CartPole-v0/) and [SpaceInvaders-v0](https://gym.openai.com/envs/SpaceInvaders-v0/) environment. However, they can be limiting as some of these environments are built to solve specific tasks. 
 
-This tutorial will show you how to build your custom RL environment using OpenAI Gym. Specifically, we will build an RL model to automatically regulate temperature and get it to an optimal range in our shower. We will accomplish this task by using OpenAI Gym, a reinforcement learning toolkit that enables you to develop and compare RL algorithms. 
+This tutorial will show you how to build your custom RL environment using OpenAI Gym. Specifically, we will build an RL model to automatically regulate temperature and get it to an optimal range in our shower. We will accomplish this task using OpenAI Gym, a reinforcement learning toolkit that enables you to develop and compare RL algorithms. 
 
 ### Prerequisites
 To follow along with this tutorial, you need to be familiar with:
@@ -45,7 +45,7 @@ There are a couple of things we need to note before we begin:
 Let's begin by installing our dependencies.
 
 ### Installing and importing required dependencies
-We will be installing four key dependencies:
+We will be installing four crucial dependencies:
 - `TensorFlow` allows us to perform training and inference on deep learning models.
 - `OpenAI Gym` to allow us to build our environment.
 - `Keras` is a high-level API that allows us to build deep learning models.
@@ -94,7 +94,7 @@ The `step` function defines what we do after we take action. We've set our actio
 
 We are also reducing the shower length by `1`.
 
-When calculating the reward, if our temperature is in its optimal range of `37`, and `39`, we give a reward of `1`. If it isn't in this optimal range, give a reward of `-1`. Our model will always try to converge with this function so that the temperature is within the optimal range.
+When calculating the reward, if our temperature is in its optimal range of `37`, and `39`, we give a reward of `1`. If it isn't in this optimal range, we give a reward of `-1`. Our model will always try to converge with this function so that the temperature is within the optimal range.
 
 ```python
     def step(self, action):
@@ -119,13 +119,13 @@ When calculating the reward, if our temperature is in its optimal range of `37`,
         # Returning the step information
         return self.state, reward, done, info
 ```
-The `render` function is used to visualize your results. However, we won't be using it for this tutorial. But, this is where you'd write the visualization code.
+We use the `render` function to visualize your results. However, we will not use it for this tutorial. But, this is where you write the visualization code.
 
 ```python
     def render(self):
         # This is where you would write the visualization code
 ```
-The `reset` function is used to reset our environment or update each episode. It resets the shower temperature and resets the shower time.
+We use the `reset` function to reset our environment or update each episode. It resets the shower temperature and resets the shower time.
 
 ```python
     def reset(self):
@@ -133,7 +133,7 @@ The `reset` function is used to reset our environment or update each episode. It
         self.shower_length = 60 
         return self.state
 ```
-Let's store our class inside a custom variable called `env`. We will work with `env` going forward.
+Let's store our class inside a custom variable called `env`. We will now work with `env`.
 
 ```python
 env = CustomEnv()
@@ -177,7 +177,7 @@ Episode:18 Score:-50
 Episode:19 Score:-58
 Episode:20 Score:-60
 ```
-After running through `20` different showers, we've got different reward values. Remember, if our shower is not within the optimal range of between `37` and `39` degrees, we are going to get a reward of `-1`. Most of the rewards gotten indicate that we were way outside of our optimal temperature range. The best reward that we got was `12` indicating that some of the steps we took may have been within that optimal range. 
+After running through `20` different showers, we get different reward values. Remember, if the shower is not within the optimal range of between `37` and `39` degrees, we get a reward of `-1`. Most of the rewards gotten indicate that we were way outside our optimal temperature range. The best reward we get is `12`, which indicates that some of the steps we took may have been within that optimal range. 
 
 Let's go ahead and use Keras to build a Deep Learning model.
 
@@ -190,7 +190,7 @@ from tensorflow.keras.models import Sequential
 from tensorflow.keras.layers import Dense, Flatten
 from tensorflow.keras.optimizers import Adam
 ```
-This next step involves defining both our `states` and `actions`.
+This next step involves defining our `states` and `actions`.
 
 ```python
 states = env.observation_space.shape
@@ -226,7 +226,7 @@ from rl.agents import DQNAgent
 from rl.policy import BoltzmannQPolicy
 from rl.memory import SequentialMemory
 ```
-We then build a `DQNagent` using the model we created in the section above. We use the Boltzmann Q Policy as it builds a probability law on `q` values and returns an action selected randomly according to this law. Sequential memory is used by a DQN agent to store various states, actions, and rewards. 
+We then build a `DQNagent` using the model we created in the section above. We use the Boltzmann Q Policy. It builds a probability law on `q` values and returns an action selected randomly according to this law. The DQN agent uses the `Sequential memory` to store various states, actions, and rewards. 
 
 ```python
 def build_agent(model, actions):
@@ -241,11 +241,11 @@ dqn = build_agent(model, actions)
 dqn.compile(Adam(lr=1e-3), metrics=['mae'])
 dqn.fit(env, nb_steps=60000, visualize=False, verbose=1)
 ```
-In the code above, we've taken our custom environment and can now train our `dqn` model. At this point, we have built a custom RL environment, and we are now training our model to get it right at that optimal temperature. We are training it for 60000 steps, but you could train the agent for longer to produce better results. You can change it using the `nb_steps` parameter. 
+In the code above, we've taken our custom environment and can now train our `dqn` model. At this point, we have built a custom RL environment, and we can now train our model to get it right at that optimal temperature. We train the agent for 60000 steps, but you could train it for longer to produce better results. You can change it using the `nb_steps` parameter. 
 
 >If you happen to encounter this attribute error, the `'Sequential' object has no attribute '_compile_time_distribution_strategy'`, make sure to include the `del model` after the `build_model` function, then you can rerun the cells.
 
-After the `60000` steps, we get a reward of `0.1794`. We can see that in the initial `10000` steps, we began with a reward of `-0.6254`, and this reduced to `0.1794` at the end. Thus, this positive reward would mean that the temperature is within its optimal temperature and the model is being rewarded for it. You can try adding some random noise when creating the model and see how your agent will behave after training.  
+After the `60000` steps, we get a reward of `0.1794`. In the initial `10000` steps, we begin with a reward of `-0.6254`. This reduced to `0.1794` at the end. Thus, this positive reward would mean that the temperature is within its optimal temperature, and the model rewarded for it. You can try adding some random noise when creating the model and see how your agent will behave after training.  
 
 ### Testing our custom RL environment
 After training our model, we can go ahead and test it out. To test it, let's write the following code:
@@ -254,7 +254,7 @@ After training our model, we can go ahead and test it out. To test it, let's wri
 results = dqn.test(env, nb_episodes=150, visualize=False)
 print(np.mean(results.history['episode_reward']))
 ```
-Upon testing, our average reward value is `60`. This is a high reward. Our model is performing quite well. However, this might not be the case when you add some noise to your model. This is an ideal example and might not represent a real-case scenario i.e., where your friend randomly adjusts the shower temperature. Try experimenting and see what you get.
+Upon testing, our average reward value is `60`. It is a high reward. Our model is performing well. However, this might not be the case when you add some noise to your model. It is an ideal example and might not represent a real-case scenario, i.e., where your friend randomly adjusts the shower temperature. Try experimenting and see what you get.
 
 Please find the complete code for this tutorial [here](https://colab.research.google.com/drive/1oBe07b28h9GCBy_bKtLJisC98mayDcwn?usp=sharing).
 
