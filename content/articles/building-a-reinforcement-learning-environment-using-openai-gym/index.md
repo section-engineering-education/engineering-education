@@ -1,4 +1,22 @@
-If you've ever worked with Deep Learning (DL) or Machine Learning (ML), you know that supervised and unsupervised learning are the two crucial techniques used. Reinforcement Learning (RL) is slightly different from these two techniques as you tend to train models in a live environment. Many standard OpenAI RL environments can enable you to build a project, i.e., the [CartPole-v0](https://gym.openai.com/envs/CartPole-v0/) and [SpaceInvaders-v0](https://gym.openai.com/envs/SpaceInvaders-v0/) environment. However, they can be limiting as some of these environments have been built to solve specific tasks. 
+---
+layout: engineering-education
+status: publish
+published: true
+url: /building-a-reinforcement-learning-environment-using-openai-gym/
+title: Building a Reinforcement Learning Environment using OpenAI Gym
+description: This tutorial will show you how to build your custom RL environment using OpenAI Gym.
+author: lilian-tonia
+date: 2022-01-30T00:00:00-06:45
+topics: [Machine Learning]
+excerpt_separator: <!--more-->
+images:
+
+  - url: /engineering-education/building-a-reinforcement-learning-environment-using-openai-gym/hero.png 
+    alt: Building a Reinforcement Learning Environment using OpenAI Gym Hero Image
+---
+If you've ever worked with Deep Learning (DL) or Machine Learning (ML), you know that supervised and unsupervised learning are the two crucial techniques used. Reinforcement Learning (RL) is slightly different from these two techniques as you tend to train models in a live environment. 
+<!--more-->
+Many standard OpenAI RL environments can enable you to build a project, i.e., the [CartPole-v0](https://gym.openai.com/envs/CartPole-v0/) and [SpaceInvaders-v0](https://gym.openai.com/envs/SpaceInvaders-v0/) environment. However, they can be limiting as some of these environments have been built to solve specific tasks. 
 
 This tutorial will show you how to build your custom RL environment using OpenAI Gym. Specifically, we will build an RL model to automatically regulate temperature and get it to an optimal range in our shower. We will accomplish this task by using OpenAI Gym, a reinforcement learning toolkit that enables you to develop and compare RL algorithms. 
 
