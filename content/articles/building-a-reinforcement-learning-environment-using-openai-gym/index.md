@@ -52,17 +52,14 @@ We will be installing four key dependencies:
 - `Keras-rl2` gives us several pre-defined agents to build RL models.
 
 ```bash
-!pip install tensorflow==2.3.0
-!pip install gym
-!pip install keras
-!pip install keras-rl2
+!pip install tensorflow==2.3.0 gym keras keras-rl2
 ```
 The next step involves importing them into our notebook.
 
 ```python
-from gym import Env
-from gym.spaces import Discrete, Box
 import numpy as np
+from gym import Env
+from gym.spaces import Box, Discrete
 import random
 ```
 We've imported:
@@ -237,8 +234,8 @@ In the code above, we've taken our custom environment and can now train our `dqn
 After training our model, we can go ahead and test it out. To test it, let's write the following code:
 
 ```python
-scores = dqn.test(env, nb_episodes=100, visualize=False)
-print(np.mean(scores.history['episode_reward']))
+results = dqn.test(env, nb_episodes=150, visualize=False)
+print(np.mean(results.history['episode_reward']))
 ```
 
 Please find the complete code for this tutorial [here](https://colab.research.google.com/drive/1oBe07b28h9GCBy_bKtLJisC98mayDcwn?usp=sharing).
