@@ -248,3 +248,6 @@ That wraps it up on building a custom RL environment using OpenAI Gym. You could
 
 ### Further reading
 - [OpenAI Gym](https://openai.com)
+
+---
+Peer Review Contributions by: [Willies Ogola](/engineering-education/authors/willies-ogola/)
