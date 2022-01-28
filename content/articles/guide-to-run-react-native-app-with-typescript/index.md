@@ -1,4 +1,4 @@
-React Native runs of JavaScript by default. However, to leverage Typescript's advantages (a superset of JavaScript) offers, it is possible to set up your whole React Native apps to run entirely on Typescript. This guide aims to briefly introduce you to running React Native apps with Typescript. You will learn the advantages of running React Native apps with Typescript and how to set them up with React Native. In the end, you will create a very handy blog application that uses Typescript to run the React Native application.
+React Native runs on JavaScript by default. However, to leverage Typescript's advantages (a superset of JavaScript) offers, it is possible to set up your whole React Native apps to run entirely on Typescript. This guide aims to briefly introduce you to running React Native apps with Typescript. You will learn the advantages of running React Native apps with Typescript and how to set them up with React Native. In the end, you will create a very handy blog application that uses Typescript to run the React Native application.
 
 ### Pre-requisites
 To follow along with this tutorial, you'll need the following:
