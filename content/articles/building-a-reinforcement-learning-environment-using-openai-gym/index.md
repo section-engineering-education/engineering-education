@@ -74,7 +74,7 @@ We begin by creating a `CustomEnv` class. When we pass `Env` to the `CustomEnv` 
 ```python
 class CustomEnv(Env):
 ```
-We've gone ahead and implemented four different functions within the `CustomEnv` class. We are creating the `__init__` function to initialize the actions, observations, and episode length that we can take when creating your environment. 
+We've gone ahead and implemented four different functions within the `CustomEnv` class. We create the `__init__` function to initialize the actions, observations, and episode length we can take when creating your environment. 
 
 `Discrete` spaces take in a fixed range of non-negative values. For our case, it takes three actions; `down (0)`, `stay(1)`, `up (2)`. The `observation_space` will hold an array of our current temperature. Next, we set our start temperature to `38` degrees plus a random integer. Finally, we've set the shower length to `60` seconds.
 
