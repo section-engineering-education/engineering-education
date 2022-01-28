@@ -119,3 +119,6 @@ Let's look at some of the Honeypot software:
 
 ### Conclusion
 Honeypot traps have been used to catch cybercriminals for years. They may, however, hinder web scraping. Don't utilize honeypot traps to scrape publicly available data like price tracking or market research.
+
+---
+Peer Review Contributions by: [Wilkister Mumbi](/engineering-education/authors/wilkister-mumbi/)
