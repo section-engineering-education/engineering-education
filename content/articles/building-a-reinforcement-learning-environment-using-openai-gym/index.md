@@ -6,7 +6,7 @@ url: /building-a-reinforcement-learning-environment-using-openai-gym/
 title: Building a Reinforcement Learning Environment using OpenAI Gym
 description: This tutorial will show you how to build your custom RL environment using OpenAI Gym.
 author: lilian-tonia
-date: 2022-01-30T00:00:00-06:45
+date: 2022-01-28T00:00:00-21:00
 topics: [Machine Learning]
 excerpt_separator: <!--more-->
 images:
@@ -248,7 +248,7 @@ In the code above, we've taken our custom environment and can now train our `dqn
 
 >If you happen to encounter this attribute error, the `'Sequential' object has no attribute '_compile_time_distribution_strategy'`, make sure to include the `del model` after the `build_model` function, then you can rerun the cells.
 
-After the `60000` steps, we get a reward of `-0.3908`. In the initial `10000` steps, we begin with a reward of `-0.6412`. This increased to `-0.3908` at the end. The model is not perfect. But with increasing the number of training steps, you will get to the positive reward values. Positive reward values mean that the temperature is within its optimal temperature, and the model rewarded for it. You can try adding some random noise when creating the model and see how your agent will behave after training.  
+After the `60000` steps, we get a reward of `-0.3908`. In the initial `10000` steps, we begin with a reward of `-0.6412`. This increased to `-0.3908` at the end. The model is not perfect. But with increasing the number of training steps, you will get better results (positive rewards). Positive reward values mean that the temperature is within its optimal temperature, and the model is rewarded for it. You can try adding some random noise when creating the model and see how your agent will behave after training.  
 
 ### Testing our custom RL environment
 After training our model, we can go ahead and test it out. To test it, let's write the following code:
