@@ -1,7 +1,21 @@
-## Do We Need a Database When We Have Apache Kafka?
+---
+layout: engineering-education
+status: publish
+published: true
+url: /do-we-need-a-database-when-we-have-apache-kafka/
+title: Do We Need a Database When We Have Apache Kafka
+description: In this tutorial, we will get an overview of Apache Kafka and databases. We will compare the two in terms of handling transactions, data processing, and storage. 
+author: owino-wendy
+date: 2022-01-29T00:00:00-10:22
+topics: [Databases]
+excerpt_separator: <!--more-->
+images:
 
+  - url: /engineering-education/do-we-need-a-database-when-we-have-apache-kafka/hero.png
+    alt: Apache Kafka image alt
+---
 Apache Kafka is more than just a better message broker. The framework implementation wields features that give it database capabilities. It is now replacing the relational database as the definitive record for events in businesses. It gives the impression of turning the database inside out because you do not need to read and write a traditional database. Instead, you append events to Apache Kafka and read from downstream views.
-
+<!--more-->
 It is possible to implement the architecture that supports reading and writing in Apache Kafka. But doing so would mean dealing with the challenges experienced in database management systems. You are likely to undertake the process of writing a full-fledged database management system in your application code. You will deal with the challenges of write skew, dirty reads, and the symptoms of a hastily created database.
 
 This post gives an overview of Apache Kafka and a database, and compare how the two handle transactions, data querying and processing, and storage. It also explains ACID Guarantees in both Kafka and databases.
@@ -72,3 +86,6 @@ In addition, Apache Kafka can do the following:
 - [Visual Database Design with MySQL Workbench](/engineering-education/visual-database-design-with-mysql-workbench/)
 
 - [Transaction management in a database](/engineering-education/transaction-management-in-database/)
+
+---
+Peer Review Contributions by: [Onesmus Mbaabu](/engineering-education/authors/onesmus-mbaabu/)
