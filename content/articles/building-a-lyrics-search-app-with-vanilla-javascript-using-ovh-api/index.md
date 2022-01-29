@@ -11,7 +11,7 @@ topics: [Languages]
 excerpt_separator: <!--more-->
 images:
 
-  - url: /engineering-education/building-a-lyrics-search-app-using-vanilla-javascript/hero.png
+  - url: /engineering-education/building-a-lyrics-search-app-with-vanilla-javascript-using-ovh-api/hero.png
     alt: Building a Lyrics Search App Hero Image
 ---
 Not knowing the lyrics of a song is a problem most song-lovers encounter. In this article, we will create a platform where users can search for lyrics by entering the name of an artist or song title.
@@ -189,7 +189,7 @@ We have now successfully designed the web page by adding colors, font sizes, fon
 
 Here is what your web page should look like:
 
-![Screenshot for design](/engineering-education/building-lyrics-search-app-using-vanilla-javascript/design-screenshot.png)
+![Screenshot for design](/engineering-education/building-a-lyrics-search-app-with-vanilla-javascript-using-ovh-api/design-screenshot.png)
 
 ### A brief introduction to OVH API
 OVH API is a simple API that helps us retrieve the lyrics of a song. We use two parameters to fetch data (lyrics). These are:
@@ -277,7 +277,7 @@ Console log the result (To access the console, right-click inside the webpage, c
 
 Your screen should be like the screenshot below:
 
-![Screenshot for consoled data](/engineering-education/building-lyrics-search-app-using-vanilla-javascript/console-screenshot.png)
+![Screenshot for consoled data](/engineering-education/building-a-lyrics-search-app-with-vanilla-javascript-using-ovh-api/console-screenshot.png)
 
 In the screenshot above, I searched for a song with the title of `cast`.
 
