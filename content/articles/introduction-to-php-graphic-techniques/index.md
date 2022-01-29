@@ -5,7 +5,7 @@ published: true
 url: /introduction-to-php-graphic-techniques/
 title: Introduction To PHP Graphic Techniques
 description: This tutorial will provide a solid foundation on the steps and processes required to create and manipulate graphical elements in PHP. 
-author: 
+author: sarah-asuquo
 date: 2022-01-29T00:00:00-11:40
 topics: [Languages]
 excerpt_separator: <!--more-->
