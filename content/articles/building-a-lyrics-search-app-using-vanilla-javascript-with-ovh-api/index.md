@@ -6,7 +6,7 @@ url: /building-a-lyrics-search-app-using-vanilla-javascript-with-ovh-api/
 title: Building a Lyrics Search App using Vanilla JavaScript with OVH API
 description: This tutorial will help the reader understand how to build a search app using Vanilla JavaScript and OVH API.
 author: bobate-olusegun
-date: 2022-01-26 00:00:00 -0230
+date: 2021-01-29T00:00:00-01:00
 topics: [Languages]
 excerpt_separator: <!--more-->
 images:
