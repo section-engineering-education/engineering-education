@@ -2,15 +2,15 @@ Effectiveness of support vector machine (SVM) in health assessment
 
 ### Introduction
 
-Advanced global health is one of the critical priorities among world leaders, researchers, and organizations. In advancing it, the idea of using algorithms in extracting hidden information from medical data has attracted a lot of attention. One of the critical significance of data analysis is identifying a key pattern. The pattern is significant in determining factors that can be vital in diagnosing some medical issues.
+Advanced global health is one of the critical priorities among world leaders, researchers, and organizations. In advancing it, the idea of using algorithms in extracting hidden information from medical data has attracted a lot of attention. One of the critical significance of data analysis is identifying a key pattern. The patterns are significant in determining factors that can be vital in diagnosing some medical issues.
 
-[Support vector machine](https://www/engineering-education/supervised-learning-algorithms/) is one of the critical algorithms vital in regression, classification, and outlier detection. It has been very promising to address the health problem with minimal computational power accurately. Researchers have reported its ability to detect various health conditions such as cancer, blood pressure, and diabetes. SVM is likely to make a significant revolution with increased seriousness in global health problems.
+[Support vector machine](https://www/engineering-education/supervised-learning-algorithms/) is one of the critical algorithms vital in regression, classification, and outlier detection. It has been very promising to address the health problem with accurate computational power. Researchers have reported its ability to detect various health conditions such as cancer, blood pressure, and diabetes. SVM is likely to make a significant revolution with increased use in global health problems.
 
 The article focuses on assessing how SVM can diagnose and prognoses various health conditions using medical data. The article also highlights the reasons to why SVM is effective in handling medical data.
 
 ### How SVM is used in health assessment
 
-SVM is a critical [supervised machine learning](https://www.ibm.com/cloud/learn/machine-learning) model used in handling various sets of data to resolve multiple problems. SVM could be used in determining health problems using the different ways as discussed below;
+SVM is a critical [supervised machine learning](https://www.ibm.com/cloud/learn/machine-learning) model used in handling various sets of data to resolve multiple problems. SVM could be used in determining and addressing global health problems using the different ways as discussed below;
 
 #### SVM classification
 
@@ -18,15 +18,17 @@ Classification is the primary way through which SVM can do a health assessment. 
 
 ##### Binary classification of data using SVM
 
-The binary classification is the task that can be categorized into two classes. When the data has precisely two categories, SVM can be used sufficiently. SVM starts by classifying data by identifying hyperplanes, which can separate data points based on some parameters. There are various [hyperplanes](https://www/engineering-education/kernel-svm-in-python/), with the best being the most significant margins, common inseparable data. However, in non-separable data, SVM uses soft margin to separate some data, if not all.
+The binary classification is the task that can be categorized into two classes. When the data has precisely two categories, SVM can be used sufficiently. SVM starts by classifying data by identifying hyperplanes, separating data points based on some parameters. There are various [hyperplanes](https://www/engineering-education/kernel-svm-in-python/), with the best being the most significant margins, common inseparable data. However, in non-separable data, SVM uses soft/best margin to separate some data, if not all.The hyperplane is usually linear which classifies the values into two different sets.
 
 ##### Multiclass classification of data using SVM
 
 Natively, SVM does not support multiple-class classification. However, it can now be used in breaking data into multiple classification sets. The multiclass type can be done with either one-to-one or one-to-rest approach.
 
-The one-to-one approach breaks the multiclass problem into a wide range of multiple binary classifications. Thus, there is a binary classifier on each pair of classes achieved. There is a need for a hyperplane to separate two types ignoring the third class in this approach. Thus, the approach doesn't consider points that splint outside the two categories.
+The one-to-one approach breaks the multiclass problem into a wide range of multiple binary classifications. Thus, there is a binary classifier on each pair of classes achieved. There is a need for a hyperplane to separate two types ignoring the third class in this approach. Thus, the method doesn't consider points that splint outside the two categories. For example, in the dfor a set with red, blue and black colours, the colors are classified against the other in different classes. Blue vs. red, black vs. blue, and black vs. red
 
-One-to-rest approach breaks multiclass problems into a binary classifier per class. The hyperplane is used in separating the course from all other points. The approach takes into account all the medical data into consideration.
+One-to-rest approach breaks multiclass problems into a binary classifier per class. The hyperplane is used in separating the course from all other points. The approach takes into account all the medical data into consideration. For example,the data of three colors are classified into three different classes, with one against the rest. For instance, we a mult-class with red, blue and green colour, the classification lead to three sets that have green vs. blue-red, blue vs. red-green, and red vs. green-blue
+
+
 
 #### SVM in data regression
 
@@ -48,11 +50,11 @@ For example, SVM classifiers are used in the diagnosis of breast cancer. SVM mak
 
 #### SVM on diabetes asessment
 
-An SVM model is also vital in the diagnosis of diabetes. The critical parameters based on a diagnosis of diabetes through SVM is body mass index, age, and blood glucose concentration. There are three main classes of output that are partitioned through SVM. The classes include people with diabetes, with the predisposition of diabetes, and without diabetes. A regression analysis to reflect the relationship between the features shows how they affect the HGC level. SVM algorithms have a high accuracy level in predicting diabetes through classification and regression.
+An SVM model is also vital in the diagnosis of diabetes. The critical parameters based on a diagnosis of diabetes through SVM is body mass index, age, and blood glucose concentration. There are three main classes of output that are partitioned through SVM. The classes include people with diabetes, with the predisposition of diabetes, and without diabetes. A regression analysis to reflect the relationship between the features shows how they affect the HGC level. SVM algorithms have a high accuracy in predicting diabetes through classification and regression.
 
 #### SVM in Hypertension/blood pressure asessment
 
-Support vector machine is also vital in diagnosing hypertension through classification and regression analysis. The SVM first performs the classification of data using an N-dimensional hyperplane separating the dataset into two classes. Predictive analysis is done using support vector regression based on the classification to determine whether the parameters affect the health issue. SVM has been very accurate in prognosis and blood pressure diagnosis compared to other vital algorithms.
+Support vector machine is also vital in diagnosing hypertension through classification and regression analysis. The SVM first performs data classification using an N-dimensional hyperplane separating the dataset into two classes. Predictive analysis is done using support vector regression based on the category to determine whether the parameters affect the health issue. SVM has been very accurate in prognosis and blood pressure diagnosis compared to other vital algorithms.
 
 ### Why should you use SVM in health assessment?
 
@@ -74,17 +76,18 @@ Another critical shortcoming is affiliated with setting the parameter correctly.
 
 ### Conclusion
 
-Therefore, SVM is one of the critical machine learning models that effectively handle medical data. The algorithm can accurately help in diagnosing various health conditions such as cancer, hypertension, and diabetes. Three critical ways SVM operates medical data are through classification (both binary and multiclass). Other methods include regression and outlier detection,
+Therefore, SVM is one of the critical machine learning models that effectively handle medical data. The algorithm can accurately help diagnose various health conditions such as cancer, hypertension, and diabetes. Three critical ways SVM handles medical data are through classification (both binary and multiclass). Other methods include regression and outlier detection.
 
 One of the main reasons for choosing SVM in health assessment is its accuracy. Other reasons include its ease and straightforwardness and its memory efficiency. However, the use of SVM has some shortcomings, such as the inability to handle a large set of data and dependency on parameter accuracy.
 
-Therefore, SVM is an essential algorithm that can revolutionize health by enhancing accuracy in diagnosing and prognosis of illnesses.
+Therefore, SVM is an essential algorithm that can revolutionize health by enhancing diagnosing and prognosis of illnesses.
 
 Happy Learning!
 
 Further Reading
 
 - [Diagnosis of Diabetes using Support Vector Machines](https://www/engineering-education/diagnose-diabetes-with-svm/)
-- [Diagnosis of Diabetes using Support Vector Machines](https://towardsdatascience.com/breast-cancer-classification-using-support-vector-machine-svm-a510907d4878)
-- [A SVM Method for Continuous Blood Pressure Estimation from a PPG Signal](https://www.researchgate.net/publication/317596007_A_SVM_Method_for_Continuous_Blood_Pressure_Estimation_from_a_PPG_Signal)
 
+- [Diagnosis of Diabetes using Support Vector Machines](https://towardsdatascience.com/breast-cancer-classification-using-support-vector-machine-svm-a510907d4878)
+
+- [A SVM Method for Continuous Blood Pressure Estimation from a PPG Signal](https://www.researchgate.net/publication/317596007\_A\_SVM\_Method\_for\_Continuous\_Blood\_Pressure\_Estimation\_from\_a\_PPG\_Signal)
