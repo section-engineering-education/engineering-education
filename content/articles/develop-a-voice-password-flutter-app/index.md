@@ -22,8 +22,10 @@ One solution to this problem is a voice password. This technique requires the us
 
 A computer or mobile device can then compare the spoken passcode to the one stored in the server. Therefore, authorized users do not need to remember many passwords for different systems.
 
+### Goal
 In this tutorial, we will develop a Flutter app that uses one's voice as the password. This app will allow the user to input their password by speaking instead of typing. We will use the Google Voice API to convert the user's spoken password into text.
 
+### Step 1 - Getting started
 We first need to create a new Flutter project. To do this, we run the following command:
 
 ```bash
@@ -115,6 +117,7 @@ Let's have a look at the code above. Our `PasswordTextField` implements a `TextE
 
 The app then saves passwords in a file called `voice_password.txt`. This file is inside the app's local storage directory. This way, we can ensure that the password is only visible to us and not accessible to other apps on a user's device.
 
+### Step 2 - Displaying an error message
 We use the `print()` method, to display the error message from Google Voice API. For this to work, we should import the following package:
 
 ```dart
@@ -127,8 +130,9 @@ Once we enter a `password` and click on the `save` button, it will be stored in 
 
 Let's go ahead and try using this password to log into our app. When we enter the password, instead of seeing it been typed on the screen, it will be spoken out loud.
 
-This is how easy it is to use Google Voice API in Flutter applications. It provides an extra layer of security by hiding passwords from prying eyes. 
+This is how easy it is to use Google Voice API in Flutter applications. It provides an extra layer of security by hiding passwords from prying eyes.
 
+### Step 3 - Using the Google Voice password
 Now that we have our Google Voice password, let's see how we can use it in our app.
 
 We need to update our `print()` method to log the error message returned from Google Voice API. Add the following code at the bottom of the `main.dart` file.
@@ -220,6 +224,7 @@ Future<void> saveGoogleVoicePassword(String password) async {
 }
 ```
 
+### Step 4 - Testing the application
 We can now run our app and log in using our Google Voice password. After we have logged in, we can open the `voice_password.txt` file to see the contents.
 
 Note that the voice password is stored at `C:\Users\username\AppData\Local\Temp\flutter_test\voice_password.txt`.
