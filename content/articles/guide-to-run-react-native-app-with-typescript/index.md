@@ -1,4 +1,21 @@
-React Native runs on JavaScript by default. However, to leverage the advantages Typescript (a superset of JavaScript) offers, it's possible to set up your whole React Native app to run entirely on Typescript. This tutorial aims to briefly introduce you to running React Native apps with Typescript. You will learn the advantages of running React Native apps with Typescript and how to set it up with React Native. In the end, you will create a very handy blog application that uses Typescript to run the React Native application.
+---
+layout: engineering-education
+status: publish
+published: true
+url: /guide-to-run-react-native-app-with-typescript/
+title: A Guide to Run your React Native Apps with Typescript 
+description: This tutorial will guide you on how to run your React Native apps with Typescripts by building a blog app.
+author: kevin-kimani 
+date: 2022-01-21T00:00:00-02:3\53
+topics: [Languages]
+excerpt_separator: <!--more-->
+images:
+  - url: /engineering-education/guide-to-run-react-native-app-with-typescript/hero.jpg
+    alt: A Guide to Run your React Native Apps with Typescript Hero Image
+---
+React Native runs on JavaScript by default. However, to leverage the advantages Typescript (a superset of JavaScript) offers, it's possible to set up your whole React Native app to run entirely on Typescript. 
+<!--more-->
+This tutorial aims to briefly introduce you to running React Native apps with Typescript. You will learn the advantages of running React Native apps with Typescript and how to set it up with React Native. In the end, you will create a very handy blog application that uses Typescript to run the React Native application.
 
 ### Table of contents
 - [Pre-requisites](#prerequisites)
@@ -358,3 +375,6 @@ I hope you found this helpful. Happy coding!
 - [Getting Started with React-Query for Data Fetching and State Management](/engineering-education/react-query-data-fetching-and-server-state-management/)
 - [Creating a React App using Vite](/engineering-education/creating-a-react-app-using-vite/)
 - [Native vs Hybrid Applications](/engineering-education/choose-native-vs-hybrid/)
+
+---
+Peer Review Contributions by: [Jethro Magaji](/engineering-education/authors/jethro-magaji/)
