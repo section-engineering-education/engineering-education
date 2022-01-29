@@ -1,14 +1,14 @@
 ### Getting Started with Support Vector Regression in Python
-Support Vector Regression, denoted as SVR, is a regression function that generalizes the finite Support Vector Machines model on a continuous-valued output. Although less popular in real-valued function estimation, this algorithm has proven very effective.
+Support Vector Regression, abbreviated as SVR, is a regression function that generalizes [Support Vector Machines](https://en.wikipedia.org/wiki/Support-vector_machine), a machine learning model used for data classification, on continuous data. This algorithm has shown high accuracy with minor computations in highly complex data analysis tasks such as time series modelling. However, to equip yourself with the ability to approach analysis tasks with this robust algorithm, you need first to understand how it works. Therefore, this article will present you with all the core concepts of support vector regression you need to get started.
 
-### Prerequsites:
+### Pre-requsites:
 The learner is required to have a good understanding of:
-- Ordinary Least Squares method
+- [Ordinary Least Squares method](https://en.wikipedia.org/wiki/Ordinary_least_squares#:~:text=In%20statistics%2C%20ordinary%20least%20squares,in%20a%20linear%20regression%20model.&text=Under%20these%20conditions%2C%20the%20method,the%20errors%20have%20finite%20variances.)
 - [Lagrangian multiplier method](https://www.youtube.com/watch?v=5m32gu6qGIU&t=809s)
-- How to work with pandas, numpy, sk-learn, and matplotlib libraries in python.
+- How to work with pandas, numpy, sk-learn, and matplotlib; python libraries.
 
 ### Introduction to Support Vector Regression
-To understand how the SVR model works, let's first recap the simple linear regression. In linear regression, we represent the regression line as:
+To understand how the SVR model works, let's first recap the simple linear regression. In [linearregression](https://en.wikipedia.org/wiki/Linear_regression), the goal is usually to fit a regression line to the data such that the error due to deviation is minimal. Such regression line is represented as:
 
 $\hat y = W^Tx+b$
 
@@ -18,7 +18,7 @@ Where $\hat y, W^T, x,$ and b are defined as:
 - $x$: Explanatory variable
 - $b$: Bias term
 
-In this framework, we first formulate an optimization problem by summing up all the squared verticle differences between the datapoint and regression line. We then use a technique known as [Ordinary Least Squares](https://en.wikipedia.org/wiki/Ordinary_least_squares) to determine the vector $W$ and bias term $b$ such that the error function is minimized. In other words, the goal is simple linear regression is to minimize the deviation of the data points from the regression line.
+In order to minimize such deviation, first, we formulate an optimization problem by summing up all the squared verticle differences between the datapoint and regression line. We then use a technique known as [Ordinary Least Squares](https://en.wikipedia.org/wiki/Ordinary_least_squares) to determine the vector $W$ and bias term $b$ such that the error function is minimized. In other words, the goal is simple linear regression is to minimize the deviation of the data points from the regression line.
 
 The figure below shows how an optimization problem is formulated.
 
@@ -26,7 +26,7 @@ The figure below shows how an optimization problem is formulated.
 
 *Error Function:* $J=\sum_{n=1}^{m} (y-\hat y)^2$
 
-Unlike in the Ordinary Least Squares, the SVR model gives some error allowance $\epsilon$ distant around the regression line such that all the data points within $\epsilon$ are not penalized for their error. Therefore, the bound is error insensitive and is called $\epsilon$ - insensitive tube or simply $\epsilon$ - tube. The distance between the regression line and the upper or lower bound is usually $\epsilon$ units as we earlier stated. The $\epsilon$-tube is thus 2 $\epsilon$ units wide and symmetrical about the regression line.
+Unlike in the Ordinary Least Squares, the SVR model gives some error allowance $\epsilon$ distant around the regression line such that all the data points within $\epsilon$ are not penalized for their error. Therefore, the bound is error insensitive and is called $\epsilon$ - insensitive tube or simply $\epsilon$ - tube. As we stated earlier, the distance between the regression line and the upper or lower bound is usually $\epsilon$ units. The $\epsilon$-tube is thus 2 $\epsilon$ units wide and symmetrical about the regression line.
 
 Data points that fall outside the $\epsilon$-tube are penalized for their error. The error associated with the data point above $\epsilon$-tube is computed as the verticle distance between the datapoint and $\epsilon$-tube's margin. If the data is below the tube, an error is the verticle distance between the $\epsilon$-tube's lower bound and the datapoint.
 
@@ -84,7 +84,7 @@ import matplotlib.pyplot as plt
 import pandas as pd
 
 ```
-Once our libraries are imported, we need to read the data we will work on to our working space.
+Once our libraries are imported, we need to read the data we will work on in our workspace. The dataset used in this session can be downloaded [here](https://github.com/BejaminNaibei/dataset/blob/main/Position_Salaries.csv).
 
 ```python
 # get the dataset
@@ -94,8 +94,10 @@ print(dataset)
 
 ```
 ### Output:
+![dataset](/engineering-education/support-vector-regression-in-python/dataset.png)
 
-The above dataset contains ten instances. A significant feature in the dataset above is the `Level` column. The `Position` column is just a description of the `Level` column, and thus it adds no value in our analysis. With this said, we shall separate our data into the feature and a test set. As discussed above, we have only one feature in this dataset, and therefore, we shall carry out our feature-study variable separation as shown in the code below.
+
+The above dataset contains ten instances. The significant feature in this dataset is the `Level` column. The `Position` column is just a description of the `Level` column, and therefore, it adds no value to our analysis. Therefore, we will separate our data into a set of features and another for the study variable. As discussed above, we only have one feature in this dataset. We carry out our feature-study variable separation as shown in the code below.
 
 ```python
 # split the data into featutes and target variable seperately
@@ -129,7 +131,13 @@ print(y_p)
 Output:
 ![output](/engineering-education/support-vector-regression-in-python/y-vriable.png)
 
-It's seen from the output above that the y_p variable is a vector, i.e., a 1D array. Also, we need to note that the values of y_p are huge compared to x_l. Therefore, if we implement a model on this data, the study variable will dominate the feature variable, and therefore its contribution to the model will be neglected. Therefore, later we will need to scale it to the same range as the scaled features set so that no variable dominates the other. The challenge is that the StandardScaler class we use to scale our data expects a 2D array; otherwise, it throws an error. Due to this, we have to reshape our y_p variable to be in 2D. The code below reshapes our study variable.
+It's seen from the output above that the y_p variable is a vector, i.e., a 1D array. Also, we need
+to note that the values of y_p are huge compared to x_l. Therefore, if we implement a model on this
+data, the study variable will dominate the feature variable, such that its contribution to the
+model will be neglected. Due to this, we will have to scale this study variable to the same range as the scaled study variable.
+
+The challenge here is that the `StandardScaler`, the class we use to scale the data, takes in a 2D array; otherwise, it returns an error. Due to this, we
+have to reshape our y_p variable from 1D to 2D. The code below does this for us.
 
 ```python
 y_p = y_p.reshape(-1,1)
@@ -151,7 +159,7 @@ Ouput:
 ```
 From the above output, y_p was successfully reshaped into a 2D array.
 
-The next thing we will do is to import the `StandardScalar` class and get our X_l and y_p variables scaled separately to the same range.
+Now, import the `StandardScalar` class and scale up the X_l and y_p variables separately.
 
 ```python
 from sklearn.preprocessing import StandardScaler
@@ -195,7 +203,7 @@ Scaled y_p:
  [ 2.64250325]]
 
 ```
-As we can see from the obtained output, both variables were scaled within the range -3 and +3.
+As we can see from the obtained output, both variables were scaled within the range `-3` and `+3`.
 
 Our data is now ready to implement our SVR model. However, before we can do so, we will first visualize the data to know the nature of the SVR model that best fits it. So let us create a scatter plot of our two variables.
 
@@ -209,11 +217,13 @@ plt.show() # prints
 ```
 ![Scatter plot](/engineering-education/support-vector-regression-in-python/plot0.png)
 
-The plot shows a nonlinear relationship between the `Levels` and the `Salary`. Therefore, we will use a kernelized version of the SVR model.
+The plot shows a nonlinear relationship between the `Levels` and `Salary`. Due to this, we cannot
+use the linear SVR to model this data. Therefore, to capture this kind of relationship better, we will
+use the SVR with the [kernel functions](https://www.geeksforgeeks.org/major-kernel-functions-in-support-vector-machine-svm/#:~:text=%E2%80%9CKernel%E2%80%9D%20is%20used%20due%20to,higher%20number%20of%20dimension%20spaces.).
 
 ### Implementing the Support Vector Regression
 
-To implement our model, first, we need to import it from the sk-learn and create an object to itself. Since we declared our data to be nonlinear, we will pass a kernel as `rbf`, which stands for, *Radial Basis function kernel*. After we have declared the kernel function, we will fit our data on the object. The following program performs these rules.
+To implement our model, first, we need to import it from the sk-learn and create an object to itself. Since we declared our data to be nonlinear, we will pass our kernel as `rbf`, which stands for [Radial Basis function](https://medium.com/dataseries/radial-basis-functions-rbf-kernels-rbf-networks-explained-simply-35b246c4b76c#:~:text=RBF%20kernels%20place%20a%20radial,one%20layer%20of%20output%20neurons.)  kernel. After declaring the kernel function, we will fit our data on the object. The following program performs these rules.
 
 ```python
 # import the model
@@ -227,7 +237,7 @@ regressor.fit(X_l, y_p)
 Since the model is now ready, we can use it and make predictions. Let's see how we do so.
 ```python
 A=regressor.predict(StdS_X.transform([[6.5]]))
-A
+print(A)
 
 ```
 Output:
@@ -238,14 +248,17 @@ array([-0.27861589])
 ```
 As we can see, the model prediction values are for the scaled study variable. The required value in the business is the output of the unscaled data. So we need to get back to the real scale of the study variable.
 
-To go back to the real study variable, we will write a program whose objective is to take the predicted values on the scaled range and transform them to the actual scale. To do so, we will take an inverse of the transformation we did on the study variable on our prediction function.
+To go back to the real study variable, we will write a program whose objective is to take the predicted values on the scaled range and transform them to the actual scale. We do so by taking an inverse of the transformation we did on the study variable on our prediction function.
 
-We need to note that the predicted values are returned in 1D array. However, we had reshaped our study variable into 2D array. So, for any predicted value to correspond with such a new dimension, it must be transformed to 2D; otherwise, we get an error. So, let's implement these commands and get the required value.
+Note that the predicted values are returned in a 1D array. However, as we can recall, we
+had reshaped our study variable from 1-dimensional to the 2-dimensional array during the study variable scaling as the `StandarScaler` method can only take input in 2D.
+
+So, for any predicted value to fit somewhere within such a new dimension of the study variable, it must be transformed from 1D to 2D; otherwise, we will get an error. So, let's implement these commands and get the required value.
 
 ```python
 # Convert A to 2D
 A = A.reshape(-1,1)
-A
+print(A)
 
 ```
 Output:
@@ -257,7 +270,8 @@ It's clear from the output above is a 2D array. Using the inverse_transform() fu
 
 ```python
 # Taking the inverse of the scaled value
-StdS_y.inverse_transform(A)
+A_pred = StdS_y.inverse_transform(A)
+print(A_pred)
 
 ```
 Output:
@@ -271,8 +285,8 @@ Here is the result, and it falls within the expected range. However, if we were 
 We can optimize the above operation into a single line of code as below.
 
 ```python
-StdS_y.inverse_transform(regressor.predict(StdS_X.transform([[6.5]])).reshape(-1,1))
-
+B_pred = StdS_y.inverse_transform(regressor.predict(StdS_X.transform([[6.5]])).reshape(-1,1))
+print(B_pred)
 ```
 Output:
 ```bash
@@ -301,3 +315,8 @@ Running this code, we obtain the plot below.
 
 ### Recap
 In this session, we have learned how the Support Vector Regression work and later formulated its optimization problem. In the implementation section, first, we implemented our model and then learned how to make predictions with it. Finally, we visualized the model and terminated our learning session there. Thanks for reading to this end, and Happy learning!
+
+Reference:
+[Source Code](https://github.com/BejaminNaibei/Files/blob/main/SVR.ipynb)
+[Further reading on SVR](https://core.ac.uk/download/pdf/81523322.pdf)
+
