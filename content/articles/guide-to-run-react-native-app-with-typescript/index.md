@@ -1,16 +1,7 @@
-React Native runs on JavaScript by default. However, to leverage Typescript's advantages (a superset of JavaScript) offers, it is possible to set up your whole React Native apps to run entirely on Typescript. This guide aims to briefly introduce you to running React Native apps with Typescript. You will learn the advantages of running React Native apps with Typescript and how to set them up with React Native. In the end, you will create a very handy blog application that uses Typescript to run the React Native application.
-
-### Pre-requisites
-To follow along with this tutorial, you'll need the following:
-
-- Beginner knowledge working with React.js for the web or React Native.
-- Beginner knowledge working with TypeScript.
-- [Expo Go](https://expo.dev/client) installed on your mobile device.
-- [Node.js](https://nodejs.org/en/) installed on  your computer.
+React Native runs on JavaScript by default. However, to leverage the advantages Typescript (a superset of JavaScript) offers, it's possible to set up your whole React Native app to run entirely on Typescript. This tutorial aims to briefly introduce you to running React Native apps with Typescript. You will learn the advantages of running React Native apps with Typescript and how to set it up with React Native. In the end, you will create a very handy blog application that uses Typescript to run the React Native application.
 
 ### Table of contents
-- [Pre-requisites](#pre-requisites)
-- [Table of contents](#table-of-contents)
+- [Pre-requisites](#prerequisites)
 - [Initializing your first React Native project with Typescript](#initializing-your-first-react-native-project-with-typescript)
 - [Set up a Typescript Blog app using React Native](#set-up-a-typescript-blog-app-using-react-native)
 - [Creating application components](#creating-application-components)
@@ -20,8 +11,16 @@ To follow along with this tutorial, you'll need the following:
 - [Conclusion](#conclusion)
 - [Further reading](#further-reading)
 
+### Prerequisites
+To follow along with this tutorial, you'll need the following:
+
+- Beginner knowledge working with React.js for the web or React Native.
+- Beginner knowledge working with TypeScript.
+- [Expo Go](https://expo.dev/client) installed on your mobile device.
+- [Node.js](https://nodejs.org/en/) installed on  your computer.
+
 ### Initializing your first React Native project with Typescript
-To get the project up and running, use the [Expo CLI](https://docs.expo.dev/workflow/expo-cli/), a command-line tool with a variety of use-cases that include getting a React Native project up and running.
+To get the project up and running, use the [Expo CLI](https://docs.expo.dev/workflow/expo-cli/), a command-line tool with a variety of use-cases that includes getting a React Native project up and running.
 
 The first step is to download and install Expo CLI. Go ahead and run the following command:
 
@@ -347,7 +346,7 @@ When you click on a post, you will be redirected to the specific page of the pag
 ![post-screen-example](/engineering-education/guide-to-run-react-native-app-with-typescript/post-screen-example.jpg)
 
 ### Conclusion
-This guide walked you through a reflective introduction to Typescript and React Native. For better understanding, we have created a whole application that uses React Native to run the Typescript code. Check the code used in this guide on [GitHub](https://github.com/kimkimani/React-native-typescript-blog-app).
+This tutorial walked you through a reflective introduction to Typescript and React Native. For better understanding, we have created a whole application that uses React Native to run the Typescript code. Check the code used in this article on [GitHub](https://github.com/kimkimani/React-native-typescript-blog-app).
 
 I hope you found this helpful. Happy coding!
 
