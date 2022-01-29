@@ -48,28 +48,39 @@ The fetch method requires the URL of the resource requested and an optional para
 The HTML should look like this 👇
 
 ```HTML
-<body>
- <h2 class="header"><span>Find </span>State or City</h2>
- <main class="main">
- <section class="section search">
- <form>
- <div class="input-group">
- <label for="search"><i class="ri-search-line"></i> </label>
- <input
- type="search"
- name="search"
- id="search "
- placeholder="Type to search"
- />
- </div>
- </form>
-
- <ul class="card"></ul>
- </section>
- </main>
-
- <script src="./index.js"></script>
- </body>
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./style.css" />
+    <!-- Remix Icon CDN -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css"
+      rel="stylesheet"
+    />
+    <title>Auto Complete type ahead feature</title>
+  </head>
+  <body>
+    <div class="container">
+      <h2 class="header"><span>Find </span>State or City</h2>
+      <main class="main">
+        <form>
+          <label for="search"><i class="ri-search-line"></i> </label>
+          <input
+            type="search"
+            name="search"
+            id="search "
+            placeholder="Type to search"
+          />
+        </form>
+        <ul class="card"></ul>
+      </main>
+    </div>
+    <script src="./index.js"></script>
+  </body>
+</html>
 ```
 
 _You can create the Html how you want - what is important is, a search box and a container to display matching results._
@@ -90,54 +101,73 @@ The CSS should look somewhat like this 👇
 }
 
 body {
-  width: 80%;
-  margin: 3rem auto;
-  display: flex;
-  flex-direction: column;
-
-  justify-content: center;
-  gap: 2rem;
   font-family: "Poppins", sans-serif;
+  color: #f0ffff;
 }
 
-ul {
-  list-style: none;
-}
-
-.section {
+.container {
+  width: 100%;
+  min-height: 100vh;
+  padding: 10% 15%;
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
-  gap: 0.6rem;
-  padding: 2rem;
+  place-items: center;
+  gap: 2rem;
+  background-image: linear-gradient(rgba(0, 8, 51, 0.466), rgba(0, 8, 51, 0.9)),
+    url("./pexels-hasan-albari-1229861.jpg");
+  background-position: center top;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.header {
+  align-self: flex-start;
+  color: #00ffff;
+}
+
+.main {
+  width: 100%;
+  max-width: 600px;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
 }
 
 form {
-  width: 100%;
-}
-.input-group {
-  border: 1px solid rgb(46, 43, 43);
-  border-radius: 15px;
-  padding: 0.5rem;
+  padding: 0.3rem 0.8rem;
   display: flex;
-  flex-direction: row;
+  gap: 1rem;
   align-items: center;
-  justify-content: space-evenly;
-  gap: 0.5rem;
-  width: 90%;
-  max-width: 500px;
+  border: 1px solid #f0f8ff;
+  border-radius: 50px;
+}
+
+.ri-search-line {
+  font-size: 2rem;
 }
 
 input[type="search"] {
-  border: none;
-  outline: 0;
+  border: 0;
+  outline: none;
   width: 90%;
+  color: #f0f8ff;
   font-family: inherit;
-  font-size: 1rem;
+  font-size: 2rem;
+  background-color: transparent;
+}
+
+::placeholder {
+  color: #c2a00a;
 }
 
 .card {
-  width: 70%;
+  max-height: 80vh;
+  min-width: 350px;
+  list-style: none;
+  overflow-block: scroll;
+  background-color: #f0f8ff;
+  color: #000000;
+  border-radius: 10px;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
@@ -145,14 +175,23 @@ input[type="search"] {
 }
 
 .card-item {
-  width: clamp(200px, 50vw, 550px);
-  border: 2px solid rgb(3, 3, 3);
+  width: 100%;
+  position: relative;
+  padding: 1.5rem;
   border-radius: 15px;
-  padding: 1rem;
-  padding-inline: 2rem;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+}
+
+.card-item::after {
+  content: "";
+  width: 100%;
+  height: 1px;
+  background-color: saddlebrown;
+  position: absolute;
+  left: 0;
+  bottom: 0;
 }
 
 .hl {
@@ -412,6 +451,11 @@ function displayMatchedResults() {
   }
 }
 ```
+
+### Final Output
+
+![The final output](./output.png)
+_Final output using 'gon' as the search term_
 
 ### Conclusion
 
