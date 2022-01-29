@@ -4,7 +4,7 @@ status: publish
 published: true
 url: /leveraging-openai-gym-and-the-anytrading-environment-for-trading/
 title: Leveraging OpenAI Gym and the Anytrading Environment for Trading
-description: This tutorial will take you through how to leverage OpenAI Gym and the AnyTrading Environment for trading.
+description: This tutorial will show how to leverage OpenAI Gym and the AnyTrading Environment for trading.
 author: willies-ogola
 date: 2022-01-30T00:00:00-17:00
 topics: [Machine Learning]
@@ -14,7 +14,7 @@ images:
   - url: /engineering-education/leveraging-openai-gym-and-the-anytrading-environment-for-trading/hero.png
     alt: OpenAI Gym and the Anytrading Environment Hero Image
 ---
-This tutorial will show you how to leverage Reinforcement Learning for trading. 
+Open AI's Gym Anytrading environment is a custom trading environment that you can use to trade a bunch of stocks, forex, cryptocurrencies, equities, and securities.
 <!--more-->
 
 ### Prerequisites
@@ -73,7 +73,7 @@ from matplotlib import pyplot as plt
 - `matplotlib` helps us to visualize our trades.
 
 ### Loading historical data from MarketWatch
-We will work with the Ethereum data from [Market Watch](https://www.marketwatch.com/). This data contains Ethereum's `Open`, `High`, `Low`, and `Close` prices between the days `12/13/2021` and `01/12/2022`. If you want to use the same data for reproducibility, you download it [here](https://www.marketwatch.com/investing/cryptocurrency/ethusd/download-data?mod=mw_quote_tab). After downloading, you can upload it into your notebook.
+We will work with the Ethereum data from [Market Watch](https://www.marketwatch.com/). This data contains Ethereum's `Open`, `High`, `Low`, and `Close` prices between the days `12/13/2021` and `01/12/2022`. If you want to use the same data for reproducibility, download it [here](https://www.marketwatch.com/investing/cryptocurrency/ethusd/download-data?mod=mw_quote_tab). After downloading, you can upload it into your notebook.
 > Remember, the upload gets deleted after runtime is recycled.
 
 To load our historical data, we will be relying on the `Pandas` library.
