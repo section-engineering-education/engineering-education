@@ -1,244 +1,233 @@
+---
+layout: engineering-education
+status: publish
+published: true
+url: /develop-a-voice-password-flutter-app/
+title: How to Develop a Flutter App with Voice Password Authentication
+description: This tutorial will help the reader understand how to create a Flutter application that uses one's voice for authentication.
+author: john-kanoi
+date: 2022-01-29T00:00:00-01:18
+topics: [Languages]
+excerpt_separator: <!--more-->
+images:
 
-### Introduction
+  - url: /engineering-education/develop-a-voice-password-flutter-app/hero.png
+    alt: Flutter App with Voice Password Authentication Hero Image
+---
+Security is a major concern in the modern world. Many websites and applications need a password for authentication. Yet, traditional passwords can be guessed or stolen easily. 
+<!--more-->
+Users also need to remember many passwords for different applications and websites. This can be difficult, especially if a person has a poor memory.
 
-In today's world, security is a major concern. Many websites and applications need a password for authentication. Yet, traditional passwords  guessed or stolen . Users  need to remember many passwords for different applications and websites. This can be difficult, especially if the user has a poor memory.
+One solution to this problem is a voice password. This technique requires the user to speak a specific phrase to authenticate. 
 
-One solution to this problem is a voice password. With a voice password, the user must speak a specific phrase to authenticate. A computer or mobile device can compare the spoken passcode to one before stored. Authorized users do not need to remember many passwords for different systems.
+A computer or mobile device can then compare the spoken passcode to the one stored in the server. Therefore, authorized users do not need to remember many passwords for different systems.
 
-In this tutorial, we are going to develop a voice password flutter app. This app will allow the user to input their password by speaking it instead of typing it. We will use the Google Voice API to convert the user's spoken password into text.
+In this tutorial, we will develop a Flutter app that uses one's voice as the password. This app will allow the user to input their password by speaking instead of typing. We will use the Google Voice API to convert the user's spoken password into text.
 
-First, we need to create a new flutter project. To do this we need to run the following command:
+We first need to create a new Flutter project. To do this, we run the following command:
 
-```console
+```bash
  flutter create voice_password
 ```
 
-Now, let us change the default code in `main.dart` as shown below. This will display a simple text field on-screen with no text entered into it. We will use our own custom class called `PasswordTextField`. This instead of the TextField widget from the Flutter library. This class will take care of capturing the user's input and verifying it against the Google Voice API.
+Let's change the default code in the `main.dart` file, as shown below. The code will display an empty text field on-screen. 
+
+We will use a custom class called `PasswordTextField` instead of the `TextField` widget from the Flutter library. This class will allow us to capture the user's input and verify it with the Google Voice API.
 
 ```dart
+class App extends StatefulWidget {
+    @override
+    State createState() => new Main();
+}
+
 class Main extends StatefulWidget {
-@override
-State createState() => new Main();
-}
-class Main extends StatefulWidget {
-	static const String GOOGLE_VOICE = "GOOGLE_VOICE";
-@override
-		Widget build(BuildContext context) {
-      return new Scaffold(
-          body: new Center(
-          child: new PasswordTextField(
-                 onChanged: _updatePassword,
-                 onSaved: _handleSave,
-                                 textRules: [
-                             maxLength: 4,
-                             minLength: 1,
-                             pattern: r"\w*",
-                            ],
-                 errorTextIndicatorColor: Colors.red,
-                 ),
-            ),
+    static const String GOOGLE_VOICE = "GOOGLE_VOICE";
+    @override
+    Widget build(BuildContext context) {
+        return new Scaffold(
+            body: new Center(
+            child: new PasswordTextField(
+                    onChanged: _updatePassword,
+                    onSaved: _handleSave,
+                                    textRules: [
+                                maxLength: 4,
+                                minLength: 1,
+                                pattern: r"\w*",
+                                ],
+                    errorTextIndicatorColor: Colors.red,
+                    ),
+                ),
 
-}
-Future<Null> _updatePassword() async {
-	try {
-		return await getGoogleVoicePassword();
-	} catch (e) {
-		print("Cannot get Google Voice password: $e");
+    }
+    Future<Null> _updatePassword() async {
+        try {
+            return await getGoogleVoicePassword();
+        } catch (e) {
+            print("Cannot get Google Voice password: $e");
 
-	}
-}
-Future<bool> _handleSave() async {
-	bool success = false;
-	try {
-		success = await saveGoogleVoicePassword(toFile: "voice_password.txt");
-	} catch (e) {
-		print("Cannot save Google Voice password: $e");
-	}
-	return success;
-}
+        }
+    }
+    Future<bool> _handleSave() async {
+        bool success = false;
+        try {
+            success = await saveGoogleVoicePassword(toFile: "voice_password.txt");
+        } catch (e) {
+            print("Cannot save Google Voice password: $e");
+        }
+        return success;
+    }
 
-void _print(String msg) => print(msg);
+    void _print(String msg) => print(msg);
 
-Future<String> getGoogleVoicePassword() async {
+    Future<String> getGoogleVoicePassword() async {
+        final String rez = await GooglePlayServicesUtil.getErrorDialog(googleApiClient,
+        errorCode: GOOGLE_VOICE);
+        if (rez != null) return rez;
+    }
 
-	final String rez = await GooglePlayServicesUtil.getErrorDialog(googleApiClient,
+    Future<bool> saveGoogleVoicePassword(String file) async {
+        bool success = false;
 
-errorCode: GOOGLE_VOICE);
+        try {
+            File f = new File(file);
+        if (!f.exists()) {
+            f.create();
+        }
 
-if (rez != null) return rez;
+        byte[] bytes =Encoding.UTF8.encode(password).toBytes();
+        FileOutputStream fos = new FileOutputStream(f);
+        fos.write(bytes);
+        fos.close();
+        success = true;
 
-}
+    } catch (e) {
+            print("Cannot save Google Voice password: $e");
+        }
 
-Future<bool> saveGoogleVoicePassword(String file) async {
+    return success;
 
-	bool success = false;
-
-	try {
-
-		File f = new File(file);
-
-	if (!f.exists()) {
-
-		f.create();
-
-	}
-
-	byte[] bytes =Encoding.UTF8.encode(password).toBytes();
-
-	FileOutputStream fos = new FileOutputStream(f);
-
-	fos.write(bytes);
-
-	fos.close();
-
-	success = true;
-
-} catch (e) {
-
-		print("Cannot save Google Voice password: $e");
-
-	}
-
-return success;
-
-}
+    }
 
 }
 ```
 
-Let's have a look at the code above. Our `PasswordTextField` implements a `TextEditingController` interface from Flutter to capture user input. The app saves passwords in a file called voice_password.txt. This file is inside the app's local storage directory. This way, we can ensure that the password is only visible to us and not accessible to other apps on a user's device.
+Let's have a look at the code above. Our `PasswordTextField` implements a `TextEditingController` interface from Flutter to capture user input. 
 
-In the \_print() method, we print out the error message from Google Voice API. This is by the use of a handy dart method called `print()`. In order for this to work, we need to make the following import at the top of our main.dart file.
+The app then saves passwords in a file called `voice_password.txt`. This file is inside the app's local storage directory. This way, we can ensure that the password is only visible to us and not accessible to other apps on a user's device.
+
+We use the `print()` method, to display the error message from Google Voice API. For this to work, we should import the following package:
 
 ```dart
 import 'dart:io';
 ```
 
-Now, we can run the app on our device or emulator.
-Once we have entered our password, we can hit the save button to save it in a file called `voice_password.txt`. Let's go ahead and try using this password to log into our app. When we type the password, instead of seeing it typed on the screen, it will spoken out loud.
+We can now run the app on our device or emulator.
 
-This is how easy it is to use Google Voice API in Flutter applications. It provides an extra layer of security to prevent users from typing their passwords. With a little bit of coding, you can add voice authentication to your app.
+Once we enter a `password` and click on the `save` button, it will be stored in a file called `voice_password.txt`. 
 
-Now that we have our Google Voice password, let's see how we can use it in our app. First, we need to import the dart:io library at the top of our main.dart file.
+Let's go ahead and try using this password to log into our app. When we enter the password, instead of seeing it been typed on the screen, it will be spoken out loud.
 
-```dart
-import 'dart:io';
-```
+This is how easy it is to use Google Voice API in Flutter applications. It provides an extra layer of security by hiding passwords from prying eyes. 
 
-We will then update our \_print() method to log the error message returned from Google Voice API. Now let's insert the following code at the bottom of our main.dart file.
+Now that we have our Google Voice password, let's see how we can use it in our app.
+
+We need to update our `print()` method to log the error message returned from Google Voice API. Add the following code at the bottom of the `main.dart` file.
 
 ```dart
 void _print(String msg) => print(msg);
 ```
 
-Now, we can update our login action to use the Google Voice password. We will need to create a variable inside our LoginPage class called `googleVoicePassword`. this variable is of type String. Inside this method, we will need to do the following things:
+To update our login action to use the Google Voice password, we need to create a variable in the `LoginPage` class called `googleVoicePassword`. This variable is of type `String`. 
 
-- Create an instance of `GooglePlayServicesUtil` along with our `googleApiClient`. This way, we can read the error code from the Google Voice API and display a DialogBox if it exists.
+Inside this method, we will create an instance of `GooglePlayServicesUtil` along with our `googleApiClient`. This allows us to read the error code from the Google Voice API and display a `DialogBox `if it exists.
 
 ```dart
 Future<String> getGoogleVoicePassword() async {
-
-final String rez = await GooglePlayServicesUtil.getErrorDialog(googleApiClient,
-
-errorCode: GOOGLE_VOICE);
-
-if (rez != null) return rez;
-
+    final String rez = await GooglePlayServicesUtil.getErrorDialog(googleApiClient,errorCode: GOOGLE_VOICE);
+    if (rez != null) return rez;
 }
 ```
 
-- Convert our password to a byte array.
-  This is so that we can save it in a file later on.
+Next, convert the password to a byte array. We will then save these values to a file:
 
 ```dart
 byte[] bytes =Encoding.UTF8.encode(password).toBytes();
 ```
 
-- Create a new FileOutputStream with our file location.
+We should also create a new `FileOutputStream` with our file location, as demonstrated below:
 
 ```dart
 FileOutputStream fos = new FileOutputStream(file);
 ```
 
-- Write the byte array to the file.
+Write the byte array to the file, as follows:
 
 ```dart
 fos.write(bytes);
 if (!Directory.exists(storageDir)) Directory.create(storageDir);
 
 saveGoogleVoicePassword(file).then((_) => print("Saved voice password to $file"));
-
-}
 ```
 
-We create a new method called `getGoogleVoicePassword()` which is of type `Future<String>`. Inside this method, we use the `GooglePlayServicesUtil` class. This class gets the error dialog from the Google Voice API. We then check if this dialog exists and, if it does, we return the dialog box's text.
+We also created a new method called `getGoogleVoicePassword()` which is of type `Future<String>`. Inside this method, we use the `GooglePlayServicesUtil` class. 
 
-Next, we need to convert our password to a byte array. We can do this by using `Encoding.UTF8.encode()` method. We write this byte array to a file called voice_password.txt in our app's local storage directory.
+This class gets the error dialog from the Google Voice API. We then check if this dialog exists and, if it does, we return the dialog box's text.
 
-We also need to add the following line of code at the top of our main.dart file.
+Next, we need to convert our password to a byte array. We can do this using the `Encoding.UTF8.encode()` method. We write this byte array to a file called `voice_password.txt` in our app's local storage.
+
+Remember to add the following line of code at the top of our main.dart file.
 
 ```dart
 import 'dart:async';
 ```
 
-This allow us to use the `Future<String>` type inside our getGoogleVoicePassword() method.
+This allow us to use the `Future<String>` type inside our `getGoogleVoicePassword()` method.
 
-Then, we need to update our loginState method inside LoginPage to save this password. Inside the if statement of the 'if (googlePlayServices) {...}' statement. We add these code to call our getGoogleVoicePassword() method.  Then use the returned value as the second parameter for a new FileSavePicker().
+We then update the `loginState` method inside the `LoginPage` to save this password. Inside the `if (googlePlayServices) {...}` statement, we add the following code to call our `getGoogleVoicePassword()` method:
+
+> The returned value is used as the second parameter in the `FileSavePicker()` method.
 
 ```dart
 if (googlePlayServices) {
 
-String password = getGoogleVoicePassword();
-
-FileSavePicker savePicker = new FileSavePicker(file);
-
-savePicker.pickAsFile(password).then((Path file) {
-
-// TODO: Use the path returned from pickAsFile to create and save a file.
-
-});
+    String password = getGoogleVoicePassword();
+    FileSavePicker savePicker = new FileSavePicker(file);
+    savePicker.pickAsFile(password).then((Path file) {
+        // TODO: Use the path returned from pickAsFile to create and save a file.
+    });
 
 }
 ```
 
-Then, we need to update our \_print() method to print out the path of the file chosen by the user.
+We need to update our `print()` method to display the path of the file chosen by the user.
 
 ```dart
 void _print(String msg) => print(msg);
 ```
 
-Finally, update our saveGoogleVoicePassword() method to take in a path as a parameter.
+Finally, update our `saveGoogleVoicePassword()` method to take in the `path` as a parameter.
 
 ```dart
 Future<void> saveGoogleVoicePassword(String password) async {
-
-final String rez = await GooglePlayServicesUtil.getErrorDialog(googleApiClient,
-
-errorCode: GOOGLE_VOICE);
-
-if (rez != null) return rez;
-
-var storageDir = await getApplicationDocumentsDirectory();
-
-var voicePasswordFilePath = Path.join(storageDir, 'voice_password.txt');
-
-if (!Directory.exists(storageDir)) Directory.create(storageDir);
-
-var file = File('$voicePasswordFilePath');
-
-await file.writeAsBytesAsync(password);
-
-file.close();
-
+    final String rez = await GooglePlayServicesUtil.getErrorDialog(googleApiClient, errorCode: GOOGLE_VOICE);
+    if (rez != null) return rez;
+    var storageDir = await getApplicationDocumentsDirectory();
+    var voicePasswordFilePath = Path.join(storageDir, 'voice_password.txt');
+    if (!Directory.exists(storageDir)) Directory.create(storageDir);
+    var file = File('$voicePasswordFilePath');
+    await file.writeAsBytesAsync(password);
+    file.close();
 }
 ```
 
-We can now run our app and log in using our Google Voice password. After we have logged in, we can open the voice_password.txt file to see the contents.
+We can now run our app and log in using our Google Voice password. After we have logged in, we can open the `voice_password.txt` file to see the contents.
 
-### Example
+Note that the voice password is stored at `C:\Users\username\AppData\Local\Temp\flutter_test\voice_password.txt`.
 
-Saved voice password to C:\Users\username\AppData\Local\Temp\flutter_test\voice_password.txt
+### Conclusion
+Congratulations! You have developed an app that stores users` voice passwords and uses them to verify their identity. 
 
-Congratulations! You have now written an app that stores a user's voice password and uses it to verify the identity of the user. This app an example of how one can  allow the users to input their password by speaking it instead of typing it. By the use the Google Voice API to convert the user's spoken password into text. 
+You can, therefore, use the knowledge gained from this article to craft other beautiful and quality Flutter applications.
 
-HAPPY CODING GEEKS
+---
+Peer Review Contributions by: [Wanja Mike](/engineering-education/authors/michael-barasa/)
