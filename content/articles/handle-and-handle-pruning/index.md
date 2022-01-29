@@ -20,12 +20,11 @@ Each symbol is moved onto the stack until there is a matching right-hand side no
 The set of strings to be replaced at each reduction step is called a handle. 
 
 ### Table of contents
-1. [Introductory Background](#introductory-background)
-2. [Prerequisites](#prerequisites)
-3. [What is handle pruning?](#what-is-handle-pruning)
-4. [Implementation of handle pruning](#implementation-of-handle-pruning)
-5. [Program implementation of handles and handle pruning through bottom-up parsing using C language](#program-implementation-of-handles-and-handle-pruning-through-bottom-up-parsing-using-c-language)
-6. [Conclusion](#conclusion)
+- [Prerequisites](#prerequisites)
+- [What is handle pruning?](#what-is-handle-pruning)
+- [Implementation of handle pruning](#implementation-of-handle-pruning)
+- [Program implementation of handles and handle pruning through bottom-up parsing using C language](#program-implementation-of-handles-and-handle-pruning-through-bottom-up-parsing-using-c-language)
+- [Conclusion](#conclusion)
 
 ### Prerequisites
 To understand this article, you should have a prior understanding of the following concept:
