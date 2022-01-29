@@ -1,1 +1,0 @@
-Sarah is an undergraduate student pursuing Information Technology. She is a passionate and solution-oriented technology enthusiast proficient in PHP, Mysql and python. She loves travelings and making friends.
