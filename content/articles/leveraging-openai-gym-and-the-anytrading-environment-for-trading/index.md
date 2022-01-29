@@ -20,7 +20,7 @@ Open AI's Gym Anytrading environment is a custom trading environment that you ca
 ### Prerequisites
 To follow along with this tutorial, you need to be familiar with:
 - [Reinforcement Learning](engineering-education/introduction-to-reinforcement-learning/) and its algorithms.
-- Any kind of trading.
+- Trading with cryptocurrencies, stocks, forex, equities, and securities
 - Google Colab or Jupyter Notebook.
 > We will use Google Colab for this tutorial.
 
@@ -183,7 +183,7 @@ model_train.learn(total_timesteps=100000)
 ```
 With these two lines of code, our model will start training.
 
-`A2C` is the algorithm that we will use for this run. `A2C` is an acronym that stands for `Advantage Actor-Critic. It is an RL algorithm that combines Policy-Based and Value-Based RL techniques. You can read more about it [here](https://towardsdatascience.com/advantage-actor-critic-tutorial-mina2c-7a3249962fc8).
+`A2C` is the algorithm that we will use for this run. `A2C` is an acronym that stands for `Advantage Actor-Critic`. It is an RL algorithm that combines Policy-Based and Value-Based RL techniques. You can read more about it [here](https://towardsdatascience.com/advantage-actor-critic-tutorial-mina2c-7a3249962fc8).
 We are using the `MlpLstmPolicy` which is a deep neural network policy with an LSTM layer. It is an important policy as it allows a neural network to keep context and learn about the previous history within its neurons.
 The last line of code kicks off training with `100000` timesteps. Ideally, what you need to observe while training is the `explained_variance` value. You want it to be as high as possible. We are looking at values between `0` and `1`. A number close to `1` denotes a high value while that close to `0`, a low value. You should also make sure the `value_loss` is as low as possible.
 
