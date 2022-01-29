@@ -6,7 +6,7 @@ url: /leveraging-openai-gym-and-the-anytrading-environment-for-trading/
 title: Leveraging OpenAI Gym and the Anytrading Environment for Trading
 description: This tutorial will take you through how to leverage OpenAI Gym and the AnyTrading Environment for trading.
 author: willies-ogola
-date: 2022-01-25T00:00:00-17:00
+date: 2022-01-30T00:00:00-17:00
 topics: [Machine Learning]
 excerpt_separator: <!--more-->
 images:
@@ -19,7 +19,7 @@ This tutorial will show you how to leverage Reinforcement Learning for trading.
 
 ### Prerequisites
 To follow along with this tutorial, you need to be familiar with:
-- [Reinforcement Learning](engineering-education/introduction-to-reinforcement-learning/).
+- [Reinforcement Learning](engineering-education/introduction-to-reinforcement-learning/) and its algorithms.
 - Any kind of trading.
 - Google Colab or Jupyter Notebook.
 > We will use Google Colab for this tutorial.
@@ -35,7 +35,7 @@ To follow along with this tutorial, you need to be familiar with:
 - [Further-reading](#further-reading)
 
 ### Getting started with Gym Anytrading environment
-Open AI's Gym Anytrading environment is a custom trading environment that you can use to trade a bunch of stocks, forex, cryptocurrencies, equities, and securities. 
+Open AI's Gym Anytrading environment is a custom trading environment that you can use to trade a bunch of stocks, forex, cryptocurrencies, equities, and securities. We will leverage the environment to perform trading on Ethereum cryptocurrency data.
 
 ### Installing and importing the dependencies
 
@@ -55,7 +55,7 @@ Let's go ahead and import them into our notebook. We begin by importing the envi
 import gym_anytrading
 import gym
 ```
-Our next imports include RL algorithm and helpers imported from stable baselines. The algorithm that we will use is `A2C`. You could try out other RL algorithms, i.e., `DQN` and `PPO2`. To learn more about them, please refer to this [link](https://stable-baselines.readthedocs.io/en/master/guide/algos.html). 
+Our next imports include the RL algorithm and helpers imported from stable baselines. The algorithm that we will use is `A2C`. You could try out other RL algorithms, i.e., `DQN` and `PPO2`. To learn more about them, please refer to this [link](https://stable-baselines.readthedocs.io/en/master/guide/algos.html). 
 
 ```python
 from stable_baselines import A2C
@@ -111,25 +111,34 @@ To get our data to work with the Gym Anytrading environment, we need to convert 
 ```python
 df ['Date'] = pd.to_datetime(df ['Date'])
 ```
-The command above should enable that conversion. To confirm, you need to type in `df.dtypes`. In addition, we need to set this column to be the index. To do that, we write the following command:
+The command above should enable that conversion. To confirm, you need to type in `df.dtypes`. In addition, we need to set this column to be the index. This is a requirement when working with Gym Anytrading environment. To do that, we write the following command:
 
 ```python
 df.set_index('Date', inplace=True)
 ```
+Lastly, we need to convert the other columns from objects to floats. Failure to perform this conversion will give you a `TypeError`.
 
-That's all the preprocessing you need to do to pass this data to the Gym Anytrading environment. The environment is also expecting the `Open`, `High`, `Close`, and `Close` columns.
+```python
+df['Open'] = df['Open'].apply(lambda x: float(x.replace(",", "")))
+df['High'] = df['High'].apply(lambda x: float(x.replace(",", "")))
+df['Low'] = df['Low'].apply(lambda x: float(x.replace(",", "")))
+df['Close'] = df['Close'].apply(lambda x: float(x.replace(",", "")))
+```
+When you type the code `df ['Open'].unique()` on the terminal, you'll find that the values are in a string and have commas. The code above removes these commas by replacing them with empty spaces and converts the values into float types. By typing `df.head()`, you can confirm that the commas have been replaced. Besides, the `df.dtypes` command will help you confirm the conversion of all the columns to `float64`.
 
-> Ideally, the data that you use should mimic the frequency that you want to trade in. For example, if you want the RL agent to trade daily data, use the daily data to train the agent and not hourly data.
+That's all the preprocessing you need to do to pass this data to the Gym Anytrading environment. The environment also expects the `Open`, `High`, `Close`, and `Close` columns.
+
+> Ideally, the data that you use should mimic the frequency that you want to trade. For example, if you want the RL agent to trade daily data, use the daily data to train the agent and not hourly data.
 
 Let's create the environment and pass this data into the trading environment.
 
 ```python
 env = gym.make('stocks-v0', df=df, frame_bound=(5,30), window_size=5)
 ```
-The `window_size` specifies how many previous timesteps our trading bot is going to have as reference points when it goes to make its next trade. The `frame_bound` specifies the start and end of our `df`. The first parameter on the `frame_bound` should always be equal to the `window_size` so that it has the five sets of previous data. For the second parameter, you can adjust it to any value of your choice depending on your data.
+The `window_size` specifies how many previous timesteps our trading bot has as reference points when it makes its next trade. The `frame_bound` specifies the start and end of our `df`. The first parameter on the `frame_bound` should always be equal to the `window_size` so that it has the five sets of previous data. For the second parameter, you can adjust it to any value of your choice depending on your data.
 
 ### Building the test environment
-If we take a look at the actions we can take using `environment.action_space`, we'll notice that we only have 2 actions we can take. We can only `Short` or `Long`. In other algorithms, you can `Hold`. But, this algorithm is only limited to two actions. If you're not familiar with these important terminologies, read this [documentation](https://en.wikipedia.org/wiki/Position_(finance)).
+If we look at the actions we can take using `environment.action_space`, we'll notice that we only have two actions we can take. We can only `Short` or `Long`. In other algorithms, you can `Hold`. But, this algorithm is only limited to two actions. If you're not familiar with these crucial terminologies, read this [documentation](https://en.wikipedia.org/wiki/Position_(finance)).
 
 ```python
 state = env.reset()
@@ -155,7 +164,7 @@ plt.show()
 
 To summarize this section, we are taking a bunch of random steps in our environment and visualizing it.
 
-Now, let's start building our RL agent to try and trade profitably in this environment. 
+Now, we can start building our RL agent to try and trade profitably in this environment. 
 
 ### Training an RL agent to trade using the Gym environment
 We begin by wrapping our environment inside the dummy vectorized environment wrapper, `DummyVecEnv`.
@@ -164,7 +173,7 @@ We begin by wrapping our environment inside the dummy vectorized environment wra
 env_build = lambda: gym.make('stocks-v0', df=df, frame_bound=(5,30), window_size=5)
 env = DummyVecEnv([env_build])
 ```
-We are creating an `env_build` function. We are taking that function and putting it inside the `DummyVecEnv`. Finally, we save the result inside the `env` variable so that when we start building our training model, we'll be using the `env` variable.
+We are creating an `env_build` function. We are taking that function and putting it inside the `DummyVecEnv`. Finally, we save the result inside the `env` variable so that when we start building our training model.  We'll now use the `env` variable.
 
 Next, let's set up our algorithm and kick off our training.
 
@@ -176,9 +185,9 @@ With these two lines of code, our model will start training.
 
 `A2C` is the algorithm that we will use for this run. `A2C` is an acronym that stands for `Advantage Actor-Critic. It is an RL algorithm that combines Policy-Based and Value-Based RL techniques. You can read more about it [here](https://towardsdatascience.com/advantage-actor-critic-tutorial-mina2c-7a3249962fc8).
 We are using the `MlpLstmPolicy` which is a deep neural network policy with an LSTM layer. It is an important policy as it allows a neural network to keep context and learn about the previous history within its neurons.
-The last line of code kicks of training with `100000` timesteps. Ideally, what you need to observe while training is the `explained_variance` value. You want it to be as high as possible. We are looking at values between `0` and `1`. A number close to `1` denotes a high value while that close to `0`, a low value. You should also make sure the `value_loss` is as low as possible.
+The last line of code kicks off training with `100000` timesteps. Ideally, what you need to observe while training is the `explained_variance` value. You want it to be as high as possible. We are looking at values between `0` and `1`. A number close to `1` denotes a high value while that close to `0`, a low value. You should also make sure the `value_loss` is as low as possible.
 
-We managed to stop our model training with an `explained_variance` of `0.129` and a `value_loss` of `0.0669`. This should give us a model that performs reasonably well. However, finding a perfect solution is never a thing with algorithms. Keep experimenting until you find that sweet spot.
+You can stop the model training when the `explained_variance` is `0.966`. This should give us a model that performs reasonably well. However, finding a perfect solution is never a thing with algorithms. Keep experimenting until you find that sweet spot.
 
 Let's test it out and see how it performs.
 
@@ -197,7 +206,7 @@ while True:
 ```
 The code above is similar to the one we wrote above. The core difference is, instead of taking random actions, we are using our model to predict which action it should take, i.e., buy or sell.
 
-Let's visualize it.
+Let's visualize the results:
 
 ```python
 plt.figure(figsize=(15,6))
@@ -207,10 +216,14 @@ plt.show()
 ```
 ![Trade evaluation](/engineering-education/leveraging-openai-gym-and-the-anytrading-environment-for-trading/evaluation.png)
 
+These are the results from training our agent operating from day 25 to 35. Our model has predicted new actions. We can note that it has made a few good trades and bad ones too. The green dots represent buying while the red dots represent selling cryptocurrencies. For example, on its sixth trade, it was right to buy when the price was low. But, it should have sold on the eighth trade, but instead, it bought more, which was a mistake. Also, on the tenth trade, it sold Ethereum when it was at its lowest price making a loss. This is a wrong trade. 
+
+We made a profit of `0.9861862828347474`, which is about 8.6%. It is not much. But, at least you get the idea of how the model is working.
+
 The Google Colab link for this tutorial is available [here](https://colab.research.google.com/drive/1RQAvnSCXqsu3JIiZN4lKBNlgX9zU7cJ6?usp=sharing).
 
 ### Wrapping up
-The model isn't perfect. It has made some long and short trades. Some good and bad trades. You can play around with the code and see how it performs. With a few tweaks, this model could easily be trained to trade with stocks, forex, equities, and securities. All the code in this tutorial is meant for educational purposes only. If you are going to deploy such a model, please do your thorough research. In addition, this isn't financial advice. It is only meant to show you what is possible with the technology.
+The model isn't perfect. It has made some long and short trades. Some good and bad trades. You can play around with the code and see how it performs. With a few tweaks, this model can be trained to trade with stocks, forex, equities, and securities. All the code in this tutorial is for educational purposes only. If you are going to deploy such a model, please do your thorough research. In addition, this isn't financial advice. It is only meant to show you what is possible with the technology.
 
 ### Further reading
 - [Gym Anytrading](https://github.com/AminHP/gym-anytrading)
