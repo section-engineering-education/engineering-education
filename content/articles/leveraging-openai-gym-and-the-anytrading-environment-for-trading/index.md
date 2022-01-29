@@ -150,6 +150,9 @@ plt.cla()
 env.render_all()
 plt.show()
 ```
+
+![Random step visualization](/engineering-education//leveraging-openai-gym-and-the-anytrading-environment-for-trading/random-step-visualization.png)
+
 To summarize this section, we are taking a bunch of random steps in our environment and visualizing it.
 
 Now, let's start building our RL agent to try and trade profitably in this environment. 
@@ -186,7 +189,7 @@ env = gym.make('stocks-v0', df=df, frame_bound=(25,35), window_size=5)
 obs = env.reset()
 while True: 
     obs = obs[np.newaxis, ...]
-    action, _states = model.predict(obs)
+    action, _states = model_train.predict(obs)
     obs, rewards, done, info = env.step(action)
     if done:
         print("info", info)
@@ -197,11 +200,12 @@ The code above is similar to the one we wrote above. The core difference is, ins
 Let's visualize it.
 
 ```python
-plt.figure(figsize=(20,10))
+plt.figure(figsize=(15,6))
 plt.cla()
 env.render_all()
 plt.show()
 ```
+![Trade evaluation](/engineering-education/leveraging-openai-gym-and-the-anytrading-environment-for-trading/evaluation.png)
 
 The Google Colab link for this tutorial is available [here](https://colab.research.google.com/drive/1RQAvnSCXqsu3JIiZN4lKBNlgX9zU7cJ6?usp=sharing).
 
@@ -211,3 +215,6 @@ The model isn't perfect. It has made some long and short trades. Some good and b
 ### Further reading
 - [Gym Anytrading](https://github.com/AminHP/gym-anytrading)
 - [MarketWatch](https://www.marketwatch.com/)
+
+---
+Peer Review Contributions by: [Collins Ayuya](https://www.section.io/engineering-education/authors/collins-ayuya/)
