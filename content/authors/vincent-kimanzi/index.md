@@ -3,4 +3,4 @@ title: Vincent Kimanzi
 type: authors
 github: https://github.com/vincentkims49
 ---
-I’m interested in programming. I’m currently learning computer science. I’m looking to collaborate on software development. I  portray excellent skills and demonstrated the ability to improve knowledge advancement in technology.
+Vincent Kimanzi is a driven and innovative engineer undergraduate pursuing a Bachelor of Science in Computer Science at Meru University of Science and Technology. He is passionate about developing technology products that inspire and allow for the flourishing of human creativity. He is passionate about programming and is searching for opportunities to cooperate on software development. He demonstrates exceptional abilities and the capacity to expand knowledge in technology.
