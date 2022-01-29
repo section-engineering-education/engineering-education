@@ -5,8 +5,8 @@ published: true
 url: /speech-classifier/
 title: Speech Classifier Using MFCC Features
 description: This articles describes how to train a speech classifier using MFCC features.  
-author: 
-date: 2021-11-19T00:00:00-18:00
+author: francisca-jeruto
+date: 2022-01-29T00:00:00-18:00
 topics: [Machine Learning]
 excerpt_separator: <!--more-->
 images:
@@ -14,7 +14,6 @@ images:
  - url: /engineering-education/speech-classifier/hero.jpg
    alt: Implementing GANs example image
 ---
-
 
 A classifier is an algorithm that sorts data into categories or classes of information. Therefore, a speech classifier is a program that automatically classifies a set of input audio data.
 
@@ -32,22 +31,21 @@ A classifier is an algorithm that sorts data into categories or classes of infor
 
 ### Introduction
 
-Audio recognition is a supervised learning task where we have to input an audio signal and predict its text. Raw audio input cannot be used as an input because of the noise in the audio signal. By extracting features from the audio signal and then using them as input to the base model, we can produce a better performance than using raw audio directly as input.
+Audio recognition is a supervised learning task where we input an audio signal and predict the text. Raw audio input cannot be used as an input because of the noise in the audio signal. By extracting features from the audio signal and then using them as input to the base model, we can produce a better performance than using raw audio directly as input.
 
-MFCC is the widely used technique to extract the feature from the audio signal. Before we proceed further, we have to understand what an MFCC is. MFCC stands for Mel-frequency cepstral coefficients. These coefficients collectively make up an MFC (Mel-frequency cepstrum). The MFC is derived from a cepstral representation of the audio clip. It has frequency bands that approximate the human auditory system's response, allowing for a better representation of the sound.
+MFCC is a widely used technique to extract the features from the audio signal. Before we proceed further, we should understand MFCC. It stands for Mel-frequency Cepstral Coefficients. These coefficients collectively make up an MFC (Mel-frequency cepstrum). The MFC is derived from a cepstral representation of the audio clip. It has frequency bands that approximate the human auditory system's response, allowing for a better representation of the sound.
 
-Now that we know what an MFCC is and some of its features, let’s get to the how’s.
-The first thing you will have to do is collect audio data of different people or objects in WAV format. The MFCC function creates a feature matrix for an audio file in python. It converts the audio data in WAV format into a matrix.
+Now that we know what an MFCC is and some of its features, let’s get to the how’s. The first thing we will do is collect audio data of different people or objects in WAV format. The MFCC function creates a feature matrix for an audio file in Python. It converts the audio data in WAV format into a matrix.
 
-Other crucial packages that we are going to use are called librosa. This is because we get two channels whenever we read any audio signal, i.e. mono and stereo channels. The mono channel is one-dimensional, while the stereo channel is multi-dimensional. Some of the audio recorded is usually at a very high frequency. Librosa ensures that the audio recording frequency is kept a 21 kHz and normalizes the audio data so that we can see the data in a normalized form.
+Other crucial packages that we are going to use are called `librosa`. This is because we get two channels whenever we read any audio signal, i.e. mono and stereo channels. The mono channel is one-dimensional, while the stereo channel is multi-dimensional. Some of the audio recorded is usually at a very high frequency. Librosa ensures that the audio recording frequency is kept a 21 kHz and normalizes the audio data so that we can see the data in a normalized form.
 
-The data set that we will use has independent and dependent features. Independent features are extracted from the audio signal, and the dependent features are the class label names (i.e. which class it belongs to). An important thing to note is that librosa converts any audio data into only one channel (mono channel), a one dimension signal.
+The data set that we will use has independent and dependent features. Independent features are extracted from the audio signal, and the dependent features are the class label names (i.e. which class it belongs to). An important thing to note is that `librosa` converts any audio data into only one channel (mono channel), a one dimension signal.
 
-It is important to collect as many voice recordings as possible and append the feature matrix of each audio file in this matrix. This is going to act as your training data set.
+It is important to collect as many voice recordings as possible and append the feature matrix of each audio file in this matrix. This is going to act as our training data set.
 
 ### Let's code it
 
-Since we have an idea of what we are building, it's time to get to the real stuff. Copy or type the following codes
+Since we have an idea of what we are building, it's time to get to the real stuff. Copy or type the following code.
 
 ```py
 import os
@@ -58,7 +56,7 @@ We are going to list the files. Here you can write the name of your file in the 
 ```py
 filelist = os.listdir('30_speakers_train')
 ```
-Next we are going to read them into pandas.
+Next we are going to read them into `Pandas`.
 ```py
 train_df = pd.DataFrame(filelist) 
 ```
@@ -81,11 +79,11 @@ Write a function to extract audio properties for each audio file. For this, we w
 ```py
 def extract_features(files):  
 ```
-Set pathname to the location of the file on the computer.
+Set `pathname` to the location of the file on the computer.
 ```py
     file_name = os.path.join(os.path.abspath('30_speakers_train')+'/'+str(files.file))
 ```
-Load sound file to be a floating-point time series and assign the default sample rate. The sample rate is set at 22050 by default.
+Let sound file to be a floating-point time series and assign the default sample rate. The sample rate is set at 22050 by default.
 ```py
  x, sample_rate = librosa.load(file_name, res_type = 'kaiser_fast')
 ```
