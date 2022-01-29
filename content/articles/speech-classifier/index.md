@@ -15,9 +15,10 @@ images:
    alt: Implementing GANs example image
 ---
 
+Ever wondered how machines received commands and responded to them appropriately. Talking to your phone and it types what you are saying word by word. An app classifying the genre of the music you just listened to or even displaying the lyrics. Translating what you are saying into another language and vice versa. All this is made possible by audio classification. Through it an AI can be able to perform the above-mentioned tasks with ease, making life more comfortable. In this article, we are going to look deeply into audio classification. We need to understand what it is, how it works, some of the packages it uses, how those packages integrate to bring about the desired results, and so much more. Hope you will successfully follow through every step of the way.
+
 A classifier is an algorithm that sorts data into categories or classes of information. Therefore, a speech classifier is a program that automatically classifies a set of input audio data.
 
-<!-- more -->
 ### Packages to install
 * numpy
 * pandas
