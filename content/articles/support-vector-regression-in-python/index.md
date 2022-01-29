@@ -317,6 +317,6 @@ Running this code, we obtain the plot below.
 In this session, we have learned how the Support Vector Regression work and later formulated its optimization problem. In the implementation section, first, we implemented our model and then learned how to make predictions with it. Finally, we visualized the model and terminated our learning session there. Thanks for reading to this end, and Happy learning!
 
 Reference:
-[Source Code](https://github.com/BejaminNaibei/Files/blob/main/SVR.ipynb)
+[Link to the Source Code](https://github.com/BejaminNaibei/Files/blob/main/SVR.ipynb)
 [Further reading on SVR](https://core.ac.uk/download/pdf/81523322.pdf)
 
