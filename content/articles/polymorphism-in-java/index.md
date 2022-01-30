@@ -170,9 +170,7 @@ In the example above, we have two classes, the dog class, and the cat class whic
 This indicates that the method in the class animal was overridden by the child class. Normally, for easier understanding of the code, we use `@Override` keyword to indicate which method is overriding the parent method. This gives a good example of dynamic polymorphism.
 
 ### Advantages of Polymorphism
-We are now going to look at the advantages of each of the types of polymorphism.
-
-**Dynamic Polymorphism**
+We are now going to look at the advantages of polymorphism.
 
 1. `Support for Method Overriding` - This is the feature where a child method can modify the specifications of the parent method. This also enables the creation of one method and modification to serve more than one method.
 2. `Method specification` - This allows for child classes to make modifications or improvements to the parent class before implementation.
