@@ -233,7 +233,7 @@ In the above example, we have declared the legs globally as a string and then de
 ### Conclusion
 From this article, you can now acknowledge that polymorphism is indeed a pillar of not only java but also any OOP language. The different types of polymorphism show how polymorphism can be executed in different ways. Knowing compile-time and run-time polymorphism will greatly help since it applies in the major programming languages.
 
-### Further Reading
+### Further reading
 In this tutorial, you have learned one of the major pillars of OOP languages, you might want to know more about the other ones:
 - [Abstraction](https://www.w3schools.com/java/java_abstract.asp)
 - [Encapsulation](https://www.tutorialspoint.com/java/java_encapsulation.htm#:~:text=Encapsulation%20in%20Java%20is%20a,methods%20of%20their%20current%20class.)
