@@ -15,7 +15,7 @@ images:
 ---
 React Native runs on JavaScript by default. However, to leverage the advantages Typescript (a superset of JavaScript) offers, it's possible to set up your whole React Native app to run entirely on Typescript. 
 <!--more-->
-This tutorial aims to briefly introduce you to running React Native apps with Typescript. You will learn the advantages of running React Native apps with Typescript and how to set it up with React Native. In the end, you will create a very handy blog application that uses Typescript to run the React Native application.
+This tutorial aims to briefly introduce you to running React Native apps with Typescript. You will learn the advantages of running React Native apps with Typescript and how to set it up with React Native. In the end, you will create a very handy blog application that uses Typescript to run a React Native application.
 
 ### Table of contents
 - [Pre-requisites](#prerequisites)
@@ -47,7 +47,7 @@ npm install --global expo-cli
 
 The `--global` flag install Expo globally so that any project across your operating system can access it.
 
-You can check if `Expo CLI` was successfully installed by running the following command from your terminal:
+You can check if `Expo CLI` was successfully installed by running this command in your terminal:
 
 ```bash
 expo whoami
