@@ -6,7 +6,7 @@ url: /face-recognition-using-wavelet-features/
 title: Face recognition using wavelet features
 description: In this tutorial, a face detection scheme is implemented using the wavelet features. We use wavelet features to extract facial features and use principal component analysis to reduce the wavelet feature vectors.
 author: simon-mwaniki
-date: 2022-01-28T00:00:00-11:10
+date: 2022-01-30T00:00:00-11:10
 topics: [Languages]
 excerpt_separator: <!--more-->
 images:
@@ -33,32 +33,32 @@ In this tutorial, we use [faces94](https://cmp.felk.cvut.cz/~spacelib/faces/face
 
 For training, 16 images for the 50 selected individuals are used. This totals to 800 images that are used for training.
 
-The remaining 4 images per person of the 50 individuals are used for testing. All these images are kept in one folder.
-
-These images must be named as `1.jpg, 2.jpg, ...`. They are of the dimension 200x180.
+The remaining 4 images per person of the 50 individuals are used for testing. All these images are kept in one folder. These images must be named as `1.jpg, 2.jpg, ...`. They are of the dimension 200x180.
 
 > Note that all the MATLAB scripts for training and testing should be in the same folder.
 
 ### Finding the wavelet features
 The image shown below is the basic algorithm for finding these features:
 
-![finding wavelet features](/engineering-education/face-recognition-using-wavelet-features/wavelet-one.png)
+![Finding wavelet features](/engineering-education/face-recognition-using-wavelet-features/wavelet-one.png)
 
 1. The input image is binarized to get the binary image.
 2. Perform DWT of 1-level to get the approximated coefficients(cA), Horizontal detailed coefficients(cH), Vertical detailed coefficients(cV), and detailed diagonal coefficients(cD). The dimensions of this matrix are half that of the input image (100x90).
 3. We get the row-wise and the column-wise standard deviation to get these features.
 4. Combining the row-wise and column-wise standard deviation, we get the corresponding wavelet feature vector.
 
-The wavelet feature vector will be of the size 380. Because this dimension is too big, we need to reduce it to conserve the memory space. Therefore, we use the principal component analysis(PCA) to reduce this dimension.
+The wavelet feature vector will be of the size 380. Because this dimension is too big, we need to reduce it to conserve memory space. Therefore, we use the principal component analysis(PCA) to reduce this dimension.
 
 ### Principal component analysis for size reduction of the wavelet feature vector
-Principal Component Analysis (PCA) is an unsupervised machine learning for dimension reduction. Look at the [principal component analysis](https://medium.com/apprentice-journal/pca-application-in-machine-learning-4827c07a61db) journal for more information.
+Principal component analysis (PCA) is an unsupervised machine learning technique for dimension reduction. Look at the [principal component analysis](https://medium.com/apprentice-journal/pca-application-in-machine-learning-4827c07a61db) journal for more information.
 
 The general algorithm is shown below:
 
-![pca algorithm](/engineering-education/face-recognition-using-wavelet-features/wavelet-two.png)
+![PCA algorithm](/engineering-education/face-recognition-using-wavelet-features/wavelet-two.png)
 
-Our large size feature vector is projected in the PCA space, giving a small size PCA representation. This PCA representation is the eigenvalues. The general PCA formula is:
+Our large size feature vector is projected in the PCA space, giving a small size PCA representation. This PCA representation is the eigenvalues. 
+
+The general PCA formula is:
 
 ```matlab
 fvpca = [fvstd-m]*Ppca
@@ -74,7 +74,7 @@ Where;
 ### Training
 It involves getting the wavelet features and projecting them to the PCA space.
 
-![training process](/engineering-education/face-recognition-using-wavelet-features/wavelet-three.png)
+![Training process](/engineering-education/face-recognition-using-wavelet-features/wavelet-three.png)
 
 The first step is reading all the images and getting their corresponding wavelet features (fvstd) of the size 380. It gives a matrix of 380x800 since there are 800 images. This matrix is passed through the PCA space to get a matrix of 70x800.
 
@@ -121,15 +121,15 @@ Here, we find the standard deviation column-wise and row-wise. It is done using 
 
 The column vector is stored in the `stdcol` variable. Those stored in the `stdrow` variable are the row vector. 
 
-When combining these two matrices, `stdcol` and `stdrow`, we get the feature vector `fvstd`. Afterwards, we store these feature vectors in the `X` matrix we initialized before.
+When combining these two matrices, `stdcol` and `stdrow`, we get the feature vector `fvstd`. Afterwards, we store these feature vectors in the `X` matrix we initialized earlier.
 
 ```matlab
     %Finding standard deviation of wavelet coefficients
     stdcol = std(wc); %Column wise
     wcc = (wc');
     stdrow = std(wcc); %row wise
-    fvstd = [stdcol stdrow]; %feature vector using STD
-    X(count, :) = fvstd; %saving all feature vector
+    fvstd = [stdcol stdrow]; %Feature vector using STD
+    X(count, :) = fvstd; %Saving all feature vector
 end
 ```
 
@@ -138,9 +138,9 @@ This is done to reduce the size of our matrix. In projection in the PCA space, w
 
 ```matlab
 % Projecting all the feature vectors to PCA space
-m = mean(X); %mean of all feature vectors
+m = mean(X); %Mean of all feature vectors
 for i = 1:n
-    X(i, :) = X(i, :)-m; % subtracting mean from each feature vector.
+    X(i, :) = X(i, :)-m; % Subtracting mean from each feature vector.
 end
 ```
 
@@ -148,18 +148,17 @@ Following that, we find the covariance matrix. A covariance matrix defines the r
 
 Using the `eig()` function, we get the eigenvalues `Evalm` and the eigen matrix `Evecm`. Next, extract the eigenvalues using `diag(Evalm)` and the values stored in the `Eval` variable.
 
-Finally, sort these eigenvalues in a descending order using the `sort()` function.
-The `sort()` function gives the sorted eigenvalues `Evalsorted` and their `index`. 
+Finally, sort these eigenvalues in a descending order using the `sort()` function. The `sort()` function gives the sorted eigenvalues `Evalsorted` and their `index`. 
 
 Using these indexes, we find their corresponding eigenvectors. Taking these sorted eigenvalues, `Evalsorted`, and considering the number of dominant selected eigenvalues `L`, we get the transformed matrix `pca`. 
 
 Multiplying our matrix `X` and the `pca` matrix is the position of the feature vector projection to the PCA space.
 
 ```matlab
-Q = (X'*X)/(n-1); %finding covariance matrix
-[Evecm, Evalm] = eig(Q); %getting eigen values and eigen vectors of matrix Q
+Q = (X'*X)/(n-1); %Finding covariance matrix
+[Evecm, Evalm] = eig(Q); %Getting eigen values and eigen vectors of matrix Q
 Eval = diag(Evalm); %Getting eigen values
-[Evalsorted, Index] = sort(Eval, 'descend'); %sorting eigen values
+[Evalsorted, Index] = sort(Eval, 'descend'); %Sorting eigen values
 Evecsorted = Evecm(:, Index); %Getting corresponding eigen vectors
 Ppca = Evecsorted(:, 1: L); % Reduced transformation matrix Ppca
 T = X*Ppca; %Projecting each feature vector to a pca space
@@ -207,7 +206,7 @@ Ibin = imbinarize(img, level);
 ```
 
 #### Step 3 - Finding the discrete wavelet transform
-This dwt is found the same way we did when training the images.
+This discrete wavelet transform (dwt) is found the same way we did when training the images.
 
 ```matlab
 %Finding discrete wavelet transform
@@ -236,7 +235,7 @@ fvpca = (fvstd-m)*Ppca; % Projecting fv to PCA space
 disarray = zeros(n, 1); %Initialize difference array
 ```
 
-The difference array is the eigen distance with each stored feature vector. Use a `for` loop to find this distance between all the images. This helps to get the right image.
+The difference array is the eigen distance with each stored feature vector. Use a `for` loop to find this distance between all the images. This helps us to get the right image.
 
 ```matlab
 for i = 1:n
@@ -288,7 +287,7 @@ Distorting some image parts
 ![Distored image](/engineering-education/face-recognition-using-wavelet-features/wavelet-six.png)
 
 ### Conclusion
-In this tutorial, we have looked at how the wavelet feature is used to make a face recognition system. This method as we have seen is a very robust method. Even if the image is distorted, it is still possible to recognize the faces accurately using these features.
+In this tutorial, we have discussed how the wavelet feature is used to make a face recognition system. This method as we have seen is a very robust method. Even if the image is distorted, it is still possible to recognize the faces accurately using these features.
 
 Also, the algorithm that this method uses is very effective. The PCA algorithm also effectively reduces the dimensions of multiple images easily.
 
