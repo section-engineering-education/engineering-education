@@ -2,7 +2,7 @@
 
 A side consequence of service classes is that it produces a domain language specific to your app through the APIs of your services and so, your view models can be read. 
 
-Service classes will assist us in learning how to encapsulate and segregate third-party libraries and APIs from the rest of our program. An example of firebase authentication will be used.
+Service classes will assist in learning how to encapsulate and segregate third-party libraries and APIs. An example of firebase authentication will be used in this tutorial.
 ### Prerequisites
 1. Install [Flutter](https://flutter.dev/).
 2. Have some basic flutter programming concepts.
@@ -16,9 +16,7 @@ Service classes will assist us in learning how to encapsulate and segregate thir
 - [Conclusion](#conclusion)
 - [References](#references)
 ### When to create service classes
-Stacked architecture requires service to be established in some cases. If a service class doesn't make sense, it doesn't have to finish the service.
-
-You can contact this service class when you construct an API for it in your application. It will provide API capabilities to the rest of the app including:
+You can contact a service class when you construct an API for it in your application. It will provide API capabilities to the rest of the app including:
 
 - Removing third-party packages from the codebase.
 - Exchanging functionalities between different view models.
@@ -29,11 +27,13 @@ You can contact this service class when you construct an API for it in your appl
 - When making some complex calculations.
 - When wrapping firebase or another third-party package with a wrapper.
 ### Authentication state
-Whether you're building a new flutter app from scratch or integrating an already existing one, `FirebaseAuth` has a solution for you. You'll just need to know whether or not your user is signed in due to the firebase authentication service.
+Whether you're building a new flutter app from scratch or integrating an already existing one, you can use `FirebaseAuth`. You'll just need to know whether or not your user is signed in.
 
-This state can be subscribed to via a stream using `FirebaseAuth`. This stream generates an event every each time the authentication status of a user changes, and it continues to do so indefinitely.
+Authentication state can be subscribed via a stream using `FirebaseAuth`. This stream generates an event each time the authentication status of a user changes, and it continues to do so indefinitely.
 
 There are no implementation details to be revealed to the end user or application by using a service class as an API wrapper.
+
+Firebase authentication is set up with the code below. Retrieving a firebase authentication object is as simple as calling `ProviderFirebaseAuth>(context)`. 
 ```dart
 import 'package:firebase_auth/firebase_auth.dart';
 FirebaseAuth auth = FirebaseAuth.instance;
@@ -53,8 +53,6 @@ class Login extends StatelessWidget {
 ```
 > Even while many programs do not require users to sign in explicitly, it is critical to recognize them individually.
 
-Firebase authentication is set up with the above code. Retrieving a firebase authentication object is as simple as calling `ProviderFirebaseAuth>(context)`. 
-
 The ability to exchange preferences, grant access, compile data, and require local authentication are some of the most common security features.
 Security can be increased by:
 
@@ -66,10 +64,13 @@ Although we are using the firebase authentication API in our code, we are still 
 1. How will you deal with modifications in future versions of firebase authentication that cause problems?
 2. Consider the possibility that in the future we may opt to use an other auth service instead of firebase. What kind of adjustments are we going to make?
 
-Our program's authentication calls to Firebase will have to be revised or upgraded. We can expect to add more content to our application as the scope of our project grows.
+Our program's authentication calls to firebase will have to be upgraded to solve the above issues and in addition, we can expect to add more content to our application as the scope of our project grows.
 
 ### Creating service classes
-You can construct a generic authentication system using the Firebase API. Service classes are nothing more than a clone of the underlying class:
+You can construct a generic authentication system using the firebase API. Service classes are nothing more than a clone of underlying classes. 
+
+The firebase authentication API calls are demonstrated in our below sample code using the `Firebase Authentication Service` class. All operations of the firebase authentication service class should return a basic `TheUser class`.
+
 ```dart
 class TheUser {
   const TheUser({@required this.id});
@@ -100,8 +101,6 @@ class FirebaseAuthService {
 }
 
 ```
-The firebase authentication API calls are demonstrated in our above sample code using the `Firebase Authentication Service` class. All operations of the firebase authentication service class should return a basic `TheUser class`.
-
 Below we update our top-level widget to take advantage of the new service class.
 ```dart
 class ThisApp extends StatelessWidget
@@ -153,9 +152,9 @@ class ThisApp extends StatelessWidget {
   }
 }
 ```
-The introduction of a base class is a step backward and writing one service class at a time is also an option. 
-
-The renaming of classes and their usages is made simple in modern integrated development environments. For example, when it comes to the authentication service, I have two implementations of it. Firebase and a dummy authentication service can be swapped at runtime for testing and demo purposes.
+> **Note that:**
+>1. The introduction of a base class is a step backward and writing one service class at a time is also an option. 
+>2. The renaming of classes and their usages is made simple in modern integrated development environments. For example, when it comes to the authentication service, firebase and a dummy authentication service can be swapped at runtime for testing and demo purposes.
 ### Purpose of service classes
 Service classes are designed to separate a certain operation from the rest of the app and hide its implementation details.
 
