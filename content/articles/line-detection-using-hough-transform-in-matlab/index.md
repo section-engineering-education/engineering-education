@@ -1,6 +1,21 @@
-### Line detection using hough transform in Matlab
-### Introduction
+---
+layout: engineering-education
+status: publish
+published: true
+url: /line-detection-using-hough-transform-in-matlab/
+title: Line Detection Using Hough Transform in MATLAB
+description: This article will help you understand line detection using hough transform in matlab.
+author: atieno-dorine
+date: 2022-01-30T00:00:00-00:00
+topics: [Languages]
+excerpt_separator:
+images:
+
+  - url: /engineering-education/line-detection-using-hough-transform-in-matlab/hero.png
+    alt: Line Detection Using Hough Transform in MATLAB Hero Image
+---
 Hough transform is an algorithm that isolates specific shapes in an image. These desired features should be specified in a given parametric form. This algorithm is widely used in detecting regular curves. These curves are such as lines, curves, ellipses, etc. However, the general application of hough transform is impossible to attain the simple analytical feature description. For example, line detection is an important feature that helps analyze two objects. It can give a more important relationship between the two objects.
+<!--more-->
 This tutorial will look at how we can use the hough transform in Matlab. Furthermore, we will understand the importance of line detection and how to carry out line detection using Matlab code.
 
 ### Prerequisites
@@ -164,3 +179,6 @@ We see the original line in the figure, and the dashed line represents the detec
 Hough transform forms an algorithm that makes it easy to detect lines in images. Also, this same algorithm can be used to detect lines in videos. It is because a video is a combination of video frames. Video frames are the image part of a section. It means we can train the algorithm using images and then implement it in videos. It makes it widely applicable in the robotic field.
 
 Happy coding.
+
+---
+Peer Review Contributions by: [Kelvin Munene](/engineering-education/authors/kelvin-munene/)
