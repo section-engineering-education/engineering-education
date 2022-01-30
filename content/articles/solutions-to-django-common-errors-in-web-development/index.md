@@ -19,19 +19,20 @@ To have a better understanding of this article, the reader should:
 - Have Python, and Django installed
 
 ### Table of Contents
-1. Handling 404 page not found error
 
-      Causes of 404 page not found error and solution
+1. [Handling 404 page not found error](#handling-404-page-not-found-error)
 
-2. Handling no module named error
+      - [Causes of 404 page not found error and solution](#causes-of-404-page-not-found-error)
 
-3. Handling Django-admin is not recognized as an internal or external command
+2. [Handling no module named error](#handling-no-module-named-error)
 
-4. Handling Django is not able to find static files
+3. [Handling Django-admin is not recognized as an internal or external command](#handling-django-admin-is-not-recognized-as-an-internal-or-external-command)
 
-5. Handling name error
+4. [Handling Django is not able to find static files](#handling-django-is-not-able-to-find-static-files)
 
-6. Further learning
+5. [Handling name error](#handling-name-error)
+
+6. [Further learning](#further-learning)
 
 ### Handling 404 page not found error
 This means that the particular page you are looking for, for example, home.html is not present in the folder. Admittedly, the template folder stores all HTML files in Django.
@@ -113,7 +114,7 @@ STATIC_URL = 'static/'
 
 <html lang="en">
     <head>
-    ...
+    
 ```
 ### Handling name error
 Any name you would want to use or refer to later should be imported in settings.py. For example, an error like 
