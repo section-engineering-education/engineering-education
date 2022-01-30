@@ -1,9 +1,21 @@
-### Solutions to Common Django Errors in Web Development
-
-
-### Introduction
-It is almost impossible to reach your destinations in web development using any framework with Django included without getting stuck at some point on the way. This problem specifically in web development can result from the wrong path, installation, procedures, and sometimes just ignorance. In this article, You will learn how to make your coding easy by pointing out to some common errors associated with Django, and explaining step by step how to solve them to make sure you arrive at your destination. Happy reading!
-
+---
+layout: engineering-education
+status: publish
+published: true
+url: /solutions-to-django-common-errors-in-web-development/
+title: Solutions to Django Common Errors in Web Development
+description: This article will be learn how to solve common error in web development using a Python framework called Django.
+author: alvan-wazecky
+date: 2022-01-30T00:00:00-00:00
+topics: [Python]
+excerpt_separator: <!--more-->
+images:
+  - url: /engineering-education/solutions-to-django-common-errors-in-web-development/hero.jpg
+    alt: Solutions to Django Common Errors in Web Development Hero Image
+---
+It is almost impossible to reach your destination in web development using a framework such as Django without getting stuck at any point on the way.
+<!--more-->
+This problem specifically in web development can result from the wrong path, installation, procedures, and sometimes just ignorance. In this article, You will learn how to make your coding easy by pointing out to some common errors associated with Django, and also learning step by step how to solve these errors to make sure you arrive at your destination.
 By the end of this tutorial, the you should be able to solve the following errors:
   
 - 404 page not found error 
@@ -116,7 +128,7 @@ Any name you would want to use or refer to later should be imported in `settings
   ‘DIRS’:[‘os’ is not defined]
 ```
 
-you have to import "os" and the problem will be solved.
+You have to import "os" and the problem will be solved.
 
 ```python
 import os
@@ -126,7 +138,7 @@ from pathlib import Path
 BASE_DIR = Path(__file__).resolve().parent.parent
 ```
 ### Conclusion
-Creating a website in Python is relatively easy. With Django you can create a complex website. All you need is to follow proper procedures.
+Creating a website in Python is relatively easy. With Django you can create a complex website, all you need is to follow proper procedures.
 Happy coding!
 
 ### Further learning
@@ -136,3 +148,6 @@ Happy coding!
 - [Name error](https://www.youtube.com/watch?v=AFhpBvKilPA)
 - [Internal server error](https://www.youtube.com/watch?v=y8DN8LOm8WA&t=9s)
 - [Template does not exist error](https://www.youtube.com/watch?v=RWAKahsR1_g)
+
+---
+Peer Review Contributions by: [Jethro Magaji](/engineering-education/authors/jethro-magaji/)
