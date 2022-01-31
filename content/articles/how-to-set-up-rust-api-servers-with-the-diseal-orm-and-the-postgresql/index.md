@@ -501,3 +501,6 @@ Hit the play button, and the newly added todo should be printed on the right pan
 In this guide, we have learned how to set up a Diesel ORM and use it with an ideal Rust application. We focused on PostgreSQL as the ideal database. 
 
 You can try using different databases to model queries using the Diesel ORM.
+
+---
+Peer Review Contributions by: [Jerim Kaura](/engineering-education/authors/jerim-kaura/)
