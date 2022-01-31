@@ -1,24 +1,26 @@
 # How to build a Meme Generator with Vanilla JavaScript, Skeleton and the HTML 5 Canvas
-Memes are a stimulating and fun way to pass messages across to people. This tutorial will take you through a step-by-step guide on how you can build a simple meme generator with JavaScript(no frameworks involved) and style its components with CSS’s [Skeleton](http://getskeleton.com/). With the [HTML 5 Canvas](https://developer.mozilla.org/en-US/docs/Web/API/Canvas_API), users will be able to upload images and texts of their choice and or from an online source to create comical memes for a mass online audience. 
+Memes are a stimulating and fun way to pass messages across to people. This tutorial will take you through a step-by-step guide on how you can build a simple meme generator with JavaScript(no frameworks involved) and style its components with CSS and [Skeleton](http://getskeleton.com/). With the [HTML 5 Canvas](https://developer.mozilla.org/en-US/docs/Web/API/Canvas_API), users will be able to upload images and texts of their choice and or from an online source to create comical memes for a mass online audience. 
 
 ## Prerequisites for this tutorial
 A text editor.
 A sound understanding of HTML, CSS and JavaScript.
 
 ### Adding Skeleton to your project
-Skeleton is a unique CSS framework that helps in designing web apps. It consists of several simple and responsive boilerplate codes that help with certain CSS functionalities and make them easier. Skeleton also comes with utility classes that boost the UI appearance with its own styled elements e.g. `.button.button-primary`.
+Skeleton is a unique CSS framework that helps in designing web apps. It consists of several simple and responsive boilerplate codes that help with certain CSS functionalities that make styling easier. Skeleton also comes with utility classes that boost the UI appearance with its own styled elements (e.g. `.button.button-primary` which represents a perfectly styled button without using CSS.).
 There are two ways to install Skeleton into your application: You can either download the [zip file](https://github.com/dhg/Skeleton/releases/download/2.0.4/Skeleton-2.0.4.zip) and extract into your system or clone [this repo](https://github.com/dhg/Skeleton.git) with the following command:
 
 `git clone https://github.com/dhg/Skeleton.git`
 
-I advise you to download the zip file because the command above is still under active development. After downloading and extracting the zip file to your project folder, you will find the file structure below in your text editor:
+*I advise you to download the zip file because the command above is still under active development. After downloading and extracting the zip file to your project folder, you will find the file structure below in your text editor:*
+
+Below is the Skeleton folder structure:
 
 ![skeleton-file-structure](/engineering-education/how-to-build-a meme-generator-with-vanilla-javascript-skeleton-and-the-html5-canvas/skeleton-file-structure.png)
 
 It contains Skeleton’s CSS, [Normalize CSS](https://necolas.github.io/normalize.css/), and `index.html` file that you can use to get your app started.
 
 ## Designing the Meme generator
-This app will have three sections. The first will contain the `input` files element where you will choose whatever image you desire to use for your meme. The second section will contain the top and bottom text inputs where you insert the words and sentences you want in your meme. This section will also have a “Create New Meme” button that will complete a `click` event by displaying the finished meme on the last section of the app: ***The HTML 5 Canvas***. We will style this app with CSS and Skeleton. 
+This app will have three sections. The first will contain the `input` files element where you will choose whatever image you desire to use for your meme. The second section will contain the top and bottom text inputs where you insert the words and sentences you want in your meme. This section will also have a “Create New Meme” button that will complete a `click` event by displaying the finished meme on the last section of the app: ***The HTML 5 Canvas*** and like I mentioned earlier, we will style this app with CSS and Skeleton. 
 
 
 
@@ -74,7 +76,7 @@ Now the CSS:
 
 ```css
 
-@media (min-width: 410px) {
+@media (min-width: 400px) {
 * {
   box-sizing: border-box;
   font-family: "Nunito", sans-serif;
@@ -133,7 +135,8 @@ This is what the root page of this app looks like at this point:
 
 
 ## Adding JavaScript
-First, create a `script.js` file. In there, you have to call the HTML elements that you intend to work on into your Javascript file with the `document.querySelector('#elementId')` function. Here is the code below:
+First, create a `script.js` file. In there, call the HTML elements that you intend to work on into your Javascript file with the `document.querySelector(‘#elementId’)` method. 
+Here is the code below:
 
 ```js
 const chooseImage = document.querySelector('#choose-image');
@@ -143,8 +146,8 @@ const button = document.querySelector('#btn');
 
 ```
 
-## Importing images locally to the application
-To create the meme, you will need an image and texts whether words or sentences. To get a particular image from your system to the application, you first need to add an `eventListener` that will listen for a `change` event when the user chooses a new image. To get the exact image URL, we are going to grab the first file that exists within the file `input` field and convert it to a data URL(i.e. an image represented in a URL text form). After getting the image URL, you can then set the `image.src` to the `imageDataURL`. 
+## Importing locally-stored images to the application
+To create the meme, you will need an image and texts whether words or sentences. To get a particular image from your system to the application, you first need to add an `eventListener` that will listen for a `change` event when the user chooses a new image.
 Here is the code below:
 
 ```js
@@ -156,38 +159,40 @@ chooseImage.addEventListener('change', () => {
 })
 
 ```
-The `chooseImage.files` that is set to an index 0, represents the first file you pick in the file `input` which is the chosen image. Now, you can proceed to display the image on the Canvas.
+In the code above we got the image URL by targeting the first file that exists inside the file `input` field and then converted it to a data URL(i.e. an image represented in a URL text form). We then set the `image.src` to the `imageDataURL`. The `chooseImage.files` that is set to an index 0, represents the first file the user picks in the file `input` which is the chosen image. 
+Now, you can proceed to display the image on the Canvas.
 
 ## How to use the HTML 5 Canvas for this project
-You make use of the HTML5 `canvas` tag and give it an `id` when trying to create a canvas in the DOM. You also have the option of setting your desired width and height for it. For example: 
+You make use of the HTML5 `canvas` tag by giving it an `id` when trying to create a canvas in the DOM. You can also set whatever width and height you desire for it. For example: 
 
 ```html
 <div>
-      <canvas id="canvas" width="150" height="100"></canvas>
+      <canvas id="canvas" width=”150” height=”100”></canvas>
       </div>
 ```
 
-Then, you target the canvas with a `document.querySelector()` function so you can work with it in your JavaScript file. 
+Then, target the canvas with a `document.querySelector()` method so you can work with it in your JavaScript file. 
 
 ```js
 const canvas = document.querySelector('#canvas');
 ```
 
-Note that: Not all browsers support the HTML 5 Canvas. Some of the popular browsers that do include:
+Note that: Not all browsers support the HTML 5 Canvas. These are some of the most popular browsers that do:
 
 Chrome
 Edge
 Firefox
 Safari, e.t.c.
 
-Browsers like the Internet Explorer 7 and 8 are not compatible with the HTML 5 canvas but there is a way to work around it. You can use [Explorer Canvas](https://code.google.com/p/explorercanvas/) to facilitate canvas support on the Internet Explorer. Here’s how:
-
+Browsers like the Internet Explorer 7 and 8 are not compatible with the HTML 5 canvas but, you can write a script that will aid the browser-support for the canvas code. 
+Here’s the one for the Internet Explorer:
 ```html
  <!--[if IE]><script src = "excanvas.js"></script><![endif]-->
 ```  
 
 ### Getting the element’s context
-Initially, the `<canvas>` element is blank and it remains so until you write a script that will access its rendering context. The HTML 5 Canvas has a DOM rendering function called `getContext` that you can use to draw whatever you need on the canvas(not manually of course). This function will take a parameter `2d` to ensure that the rendered image appears in 2d form. Here is the code to create the required context along with a check if the user’s browser supports it.
+The canvas has nothing in it at first, it’s like a hollow void that you need to fill with images, texts, e.t.c. You can do that by accessing its rendering context with the DOM rendering function: `getContext`. This function will help you to draw whatever you need on the canvas(not manually of course). The `getContext` takes a parameter `2d` to ensure that the rendered image appears in 2d form. 
+Here is the code to create the required context along with a check if the user’s browser supports it.
 
 ```js
 
@@ -195,16 +200,17 @@ var canvas  = document.querySelector("#canvas");
 
 if (canvas.getContext) {   
    var ctx = canvas.getContext('2d');   
-   // drawing code here   
+   // supported canvas code here   
 } else {   
    
-   // canvas-unsupported code here 
+   // unsupported canvas code here 
 }
 
 ```
 
 ## The `loadImage` function
-We are going to create a `loadImage` function that will handle the display of the chosen image on the Canvas. Inside `loadImage`, you can append the image onto the canvas with the `drawImage(image, dx, dy)` function from the HTML 5 Canvas. **Here**, the `image` in the function represents an image object on the canvas. The `dx` and `dy` represent the coordinate on the target canvas where the image should be placed. Next, we will set the width property of the canvas to our image’s width so, when the user tries to load the image on the canvas, the image will take its width thereby boosting the app’s UI appearance. We will also do that for the `height` and `yOffSet`. Here is the code below:
+You need to create a function `loadImage` that will handle the display of the chosen image on the Canvas. Inside `loadImage`, you can append the image onto the canvas with the `drawImage(image, dx, dy)` method from the HTML 5 Canvas.
+Here is the code below:
 
 ```js
 
@@ -227,13 +233,17 @@ if (canvas.getContext('2d')) {
     alert('Your browser does not support this image format');
 ```
 
+In the code above, the `image` in the function represents an image object on the canvas. The `dx` and `dy` represent the coordinate points where the image will be fixed on the canvas. We then set the `width` property of the canvas to our image’s width so that when the user tries to load the image, it takes the canvas width which will make the app UI look better. We also did that for the `height` and `yOffSet`.
+
+
+
 ## Forming the text on the image
-Texts on the HTML 5 canvas, have special functions for text formation and styling. Some of them include:
+Texts on the HTML 5 canvas have special methods for text formatting and styling. Some of them include:
 
 `textBaseline [ = value ]`: This one helps you to set the baseline of the text whether top or bottom. 
 `fillText(text, x, y [, maxWidth ] )`: This property aids in filling the text in the particular position you indicate with the `x` and `y` coordinates. 
 `font [ = value ]`: This property helps you set the font and font size of the text you intend to use on the canvas. 
-`strokeStyle`/`fillStyle`: When you set these properties, the new value becomes the default for all the shapes you want to draw on the canvas. We will use the `fillStyle` to set the text body colour. The `strokeStyle` will help to set the text border colour. 
+`strokeStyle`/`fillStyle`: We will use the `fillStyle` to set the text body colour. The `strokeStyle` will help to set the text border colour. When you set these properties, the new value becomes the default for all the shapes you want to draw on the canvas 
 
 Here is the code for the text formation:
 
