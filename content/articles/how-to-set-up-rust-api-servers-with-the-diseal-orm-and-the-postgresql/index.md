@@ -1,5 +1,23 @@
-Object Relation Mapping(ORM) is a technique for storing, retrieving, updating, and deleting data from a database. Common frameworks such as Node.js have different ORM libraries that help developers connect their applications to databases.
+---
+layout: engineering-education
+status: publish
+published: true
+url: /how-to-set-up-rust-api-servers-with-the-diseal-orm-and-the-postgresql/
+title: Setting up Rust API with Diesel and PostgreSQL
+description: This tutorial will walk the reader through the concept of an ORM and how to use it in a Rust application together with  Diesel and PostgreSQL. 
+author: carol-wanjiru
+date: 2022-01-31T00:00:00-01:33
+topics: [Languages]
+excerpt_separator: <!--more-->
+images:
 
+  - url: /engineering-education/how-to-set-up-rust-api-servers-with-the-diseal-orm-and-the-postgresql/hero.jpg
+    alt: Setting up Rust API with Diesel and PostgreSQL Hero Image
+---
+
+### Introduction
+Object Relation Mapping(ORM) is a technique for storing, retrieving, updating, and deleting data from a database. Common frameworks such as Node.js have different ORM libraries that help developers connect their applications to databases.
+ <!--more-->
 An ORM helps us create data schemas and relationships within an application such that whenever we need to change a specific database field, we only do it in our application with just a few lines of code. 
 
 An ORM helps us avoid the hectic work of recreating our databases every time to match the new database structure. 
@@ -13,8 +31,8 @@ This article will help the reader understand how to use an ORM with the Rust Dis
 ### Tables of content
 - [Prerequisites](#prerequisites)
 - [Setting up a Rust application](#setting-up-a-rust-application)
-- [Set up the GraphQL schema](#set-up-the-graphql-schema)
-- [Set up the GraphQL server](#set-up-the-graphql-server)
+- [Setting up the GraphQL schema](#setting-up-the-graphql-schema)
+- [Setting up the GraphQL server](#setting-up-the-graphql-server)
 - [Setting up Diesel](#setting-up-diesel)
 - [Handling queries](#handling-queries)
 - [Handling mutation](#handling-mutation)
@@ -73,7 +91,7 @@ futures = "0.1"
 env_logger = "0.6"
 ```
 
-### Set up the GraphQL schema
+### Setting up the GraphQL schema
 A GraphQL schema is made up of a root query and mutation. A query specifies the data to be returned by the GraphQL API.
 
 Mutations are similar to queries and can return data from the GraphQL API. For example, mutations are used to run a query that writes data to a GraphQL server.
