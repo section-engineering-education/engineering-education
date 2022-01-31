@@ -36,9 +36,7 @@ With our setup done, let's head over to our `./src` folder to build our global s
 
 ###  Creating the Global State
 
-To create and manage a global state, add a folder in your `src` directory and name it `states`. Inside the states folder, we will create a `TaskState.js` file where we will 
-
-Creates a new state and returns it. This is mainly used to create a global state of an application. Unlike useState you can destroy this state by calling destroy() method to delete the state(only applicable for special scenarios).
+To create and manage a global state, add a folder in your `src` directory and name it `states`. Inside the `states` folder, we will create a `TaskState.js` file where we will have a custom hook. Our function will invoke Hookstate's method(`createState([])`) to create a new state and return it. This is how we create a global state of an application using the library. 
 
 To create a global state, import the `uuid`, and the `@hookstate/core` package. 
 
@@ -47,9 +45,9 @@ import { createState, useState } from "@hookstate/core";
 const { v4: uuidv4 } = require("uuid");
 ```
 
-Notice that the `useState` hook is similar to React's built-in hook. Where we are using both hooks in one file, we can use an alias to remove the conflicting cases.
+>>>Note: The `useState` hook is very similar to React's the built-in hook. When accessing hooks simultaneously in a single file, an alias is useful to eliminate ambiguity.
 
-Belo our imports, instantiate the `createState` to create a new state, it is an empty array.
+Below the library import, instantiate the `createState` to create a new state, our state is an empty array.
 
 ```js
 const taskState = createState([]);
@@ -82,18 +80,17 @@ export function useTaskState() {
 }
 ```
 
-With global state, Hookstate provides the `get` method on the newly created state and the `set` method to set a new state. In our case, we will manipulate a list of to-do tasks. The `uuid` module generates a random ID for each item on the to-do list. This simplifies the way we need to organize our application structure. 
+To manage a global state, Hookstate provides the `get` method and `set` methods on the newly created state to access and manipulate it. The `uuid` module generates a random ID for each item on the to-do list.
 
 ### Create `AddTodo` component
 
-First, let's import React and the `useTaskState` custom hook:
+Define the `AddTodo.jsx` file inside the `components` folder. Our component will reuse the previous custom `useTaskState` to access global state:
 
 ```js
-import React from "react";
 import { useTaskState } from "../states/TaskState";
 ```
 
-Our `AddTodo` component contains the form to add or delete a to-do item. Create a `components` folder for our component and add the `AddTodo.js` file.
+The `AddTodo` component returns JSX with a form to add a new to-do item. Create the `AddTodo` function:
 
 ```js
 const AddTodo = () => {
@@ -110,13 +107,17 @@ const AddTodo = () => {
           e.target["toDo"].value = "";
         }}
       >
+	{/*An input element and a button to add a to-do item.*/}
         <input name="toDo" />
         <button type="submit">Add Todo</button>
       </form>
     </div>
   );
 };
+```
 
+Finally, and export it on the same line:
+```js
 // Export component: AddTodo
 export default AddTodo;
 ```
@@ -152,7 +153,6 @@ export default ToDoList;
 ```
 
 ### The `App.js` Component
-
 Our main `App.js` file is quite minimal. All we need to add is the `ToDoList` component, `AddTodo` component, and `useTaskState`.
 
 ```js
@@ -160,9 +160,7 @@ import { useTaskState } from "./states/TaskState";
 import ToDoList from "./components/ToDoList";
 import AddTodo from "./components/AddTodo";
 ```
-
 Finally, export the `App` component with the components mapped to the JSX.
-
 ```js
 export default function App() {
   const taskState = useTaskState();
@@ -179,10 +177,10 @@ export default function App() {
 ```
 
 ### Demo
-
 ![todo demo](/engineering-education/getting-started-with-hookstate/demo1.png)
 
 For more, check the project source code on [GitHub](https://github.com/marienjus/hookstate/).
 
 ### Conclusion
-Choosing the right state management library for your project will be a huge factor in the development of your React applications. The Hookstate library provides a flexible, customizable, and easy to learn API that wraps the inbuilt React Hooks. It allows us to track the application's state in a more predictable manner making it easy to tackle the state management for React developers. Happy coding!
+
+In this tutorial, we have built a simple Todo app with Hookstate. The library provides a flexible, customizable, and easy to learn API that wraps the inbuilt React Hooks. We can create and track the application's state more predictably. The library simplifies how we organize our application structure when tackling state management in React development. Happy coding!
