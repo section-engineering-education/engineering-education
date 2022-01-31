@@ -492,7 +492,7 @@ async function getLyrics(artist, songTitle) {
     const lyrics = data.lyrics;
     if (lyrics === undefined){
         alert('lyrics doesnt exist in this api');
-        console.log('lyrics doesn't exist in this api');
+        console.log('lyrics does not exist in this api');
     }
   
     output.innerHTML = `<h2><strong>${artist}</strong> - ${songTitle}</h2>
