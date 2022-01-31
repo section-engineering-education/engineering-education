@@ -4,7 +4,7 @@ status: publish
 published: true
 url: /how-to-set-up-rust-api-servers-with-the-diseal-orm-and-the-postgresql/
 title: Setting up Rust API with Diesel and PostgreSQL
-description: This tutorial will walk the reader through the concept of an ORM and how to use it in a Rust application together with  Diesel and PostgreSQL. 
+description: This tutorial will walk the reader through the concept of an ORM and how to use it in a Rust-API together with Diesel and PostgreSQL. 
 author: carol-wanjiru
 date: 2022-01-31T00:00:00-01:33
 topics: [Languages]
@@ -73,7 +73,7 @@ Our application will use the following dependencies/libraries.
 - [Dotenv](https://docs.rs/dotenv/0.9.0/dotenv/): For loading database connection environmental variables.
 - [Env_logger](https://docs.rs/env_logger/0.6.0/env_logger/): For logging environmental variables.
 - [Features](https://docs.rs/futures/0.1/futures/): For handling Rust HTTP asynchronous calls.
-- [Serde](https://docs.serde.rs/serde/) and [Serde_derive](https://serde.rs/derive.html): For serializing and desirializing Rust data structures.
+- [Serde](https://docs.serde.rs/serde/) and [Serde_derive](https://serde.rs/derive.html): For serializing and deserializing Rust data structures.
 - [Serde_json](https://docs.serde.rs/serde_json/): For serializing JSON file format.
 
 To use these libraries, head over to the `cargo.toml` and update the dependencies as follows:
@@ -464,7 +464,7 @@ impl MutationRoot {
 }
 ```
 
-The `create_todo()` receives the new todo as a parameter, establishes database connection, inserts the todo, and returns the newly inserted todo.
+The `create_todo()` receives the new todo as a parameter, establishes a database connection, inserts the todo, and returns the newly inserted todo.
 
 Replace `EmptyMutation` from a schema with `MutationRoot`. This will help us execute the dynamic mutation instead of the empty mutation we set earlier.
 
