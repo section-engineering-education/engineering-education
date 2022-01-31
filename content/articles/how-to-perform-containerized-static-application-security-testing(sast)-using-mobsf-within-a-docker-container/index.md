@@ -56,7 +56,7 @@ The above-mentioned detect security vulnerabilities in applications except in a 
 - SAST supports all types of software while DAST can only scan applications such as web applications and web services.
 - SAST can't discover runtime and environment-related issues while DAST can discover runtime and environment-related issues.
 - It costs less to fix vulnerabilities using SAST while it is relatively expensive to fix the vulnerabilities using DAST.
-- SAST discovers vulnerabilities earlier into the SDLC while DAST discovers vulnerabilities towards the end of SDLC
+- SAST discovers vulnerabilities earlier into the SDLC while DAST discovers vulnerabilities towards the end of SDLC (Software Development Life Cycle).
 - SAST requires source code DAST requires a running application.
 
 ### Tools used to perform SAST
