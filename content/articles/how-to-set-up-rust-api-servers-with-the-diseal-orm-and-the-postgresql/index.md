@@ -2,9 +2,11 @@ Object Relation Mapping(ORM) is a technique for storing, retrieving, updating, a
 
 An ORM helps us create data schemas and relationships within an application such that whenever we need to change a specific database field, we only do it in our application with just a few lines of code. 
 
-An ORM helps us avoid the hectic work of recreating our databases every time to match the new database structure.The concept of ORM is widely supported by many languages such as Rust, JavaScript, and Python. Rust, for example, uses the [Diesel](https://docs.rs/diesel/1.0.0/diesel/) framework to help you write schema queries within your Rust application.
+An ORM helps us avoid the hectic work of recreating our databases every time to match the new database structure. 
 
-In his article, we will learn about ORM and how to use it in Rust together with  Diesel. Then, we will create a Rust API server that uses Diesel to connect to the PostgreSQL database. Finally, we will generate and retrieve the application's data stored in the database.
+The concept of ORM is widely supported by many languages such as Rust, JavaScript, and Python. Rust, for example, uses the [Diesel](https://docs.rs/diesel/1.0.0/diesel/) framework to help you write schema queries within your Rust application.
+
+In his article, we will learn about ORM and how to use it in Rust together with  Diesel. Then, we will create a Rust API server that uses Diesel to connect to a PostgreSQL database. Finally, we will generate and retrieve the application's data stored in the database.
 
 This article will help the reader understand how to use an ORM with the Rust Diseal framework in an application.
 
@@ -21,12 +23,14 @@ This article will help the reader understand how to use an ORM with the Rust Dis
 ### Prerequisites
 To follow along with this article, it is recommended to have the following tools:
 
-- Prior knowledge of writing the Rust APIs and setting up a primary Rust [GraphQL server](https://blog.logrocket.com/how-to-create-a-graphql-server-in-rust/).
+- Prior knowledge of writing the Rust API and setting up a primary Rust [GraphQL server](https://blog.logrocket.com/how-to-create-a-graphql-server-in-rust/).
 - [PostgreSQL](https://www.postgresql.org/download/) installed on your computer.
 - [Rust compiler](https://www.rust-lang.org/tools/install) installed and set up on your computer.
 
 ### Setting up a Rust application
-Rust uses [Cargo](https://doc.rust-lang.org/cargo/) to set up and run its applications. Cargo is a Rust package manager that allows us to access, install and use remote libraries in an application. It gets installed together with the Rust compiler.
+Rust uses [Cargo](https://doc.rust-lang.org/cargo/) to set up and run its applications. 
+
+Cargo is a Rust package manager that allows us to access, install and use remote libraries in an application. It gets installed together with the Rust compiler.
 
 To set up the Rust application, navigate to your desired location, and run the following command.
 
@@ -34,7 +38,7 @@ To set up the Rust application, navigate to your desired location, and run the f
 cargo new todos-graphql-api
 ```
 
-This command will create a new directory `todos-graphql-api` with a basic Rust application already set up for you. Next, navigate to this newly created directory using the following command.
+This command will create a new directory `todos-graphql-api` with a basic Rust application. Next, navigate to this newly created directory using the following command.
 
 ```bash
 cd todos-graphql-api
@@ -56,7 +60,7 @@ Our application will use the following dependencies/libraries.
 
 To use these libraries, head over to the `cargo.toml` and update the dependencies as follows:
 
-```rust
+```Rust
 [dependencies]
 serde_json = "1.0"
 dotenv = "0.9.0"
@@ -235,7 +239,7 @@ cargo run
 
 When the build is complete, navigate to `http://localhost:8080/graphiql` on a browser. You should receive a GraphQL playground interface. Then, on the left pane, write the following query to get todos:
 
-```rust
+```Rust
 query GetTodos{
     todos{
         id
@@ -397,13 +401,13 @@ You should now receive todos now being fetched directly from the database.
 ### Handling Mutation
 Import `Insertable` from Diesel:
 
-```rust
+```Rust
 use diesel::Insertable;
 ```
 
 Declare a `MutationRoot` below `QueryRoot`:
 
-```rust
+```Rust
 pub struct MutationRoot;
 ```
 
@@ -476,4 +480,6 @@ mutation CreateTodoMutation($data: NewTodo!) {
 Hit the play button, and the newly added todo should be printed on the right pane.
 
 ### Conclusion
-In this guide, we have learned how to set up a Diesel ORM and use it with an ideal Rust application. We focused on PostgreSQL as the ideal database. You can try using different databases to model queries using the Diesel ORM.
+In this guide, we have learned how to set up a Diesel ORM and use it with an ideal Rust application. We focused on PostgreSQL as the ideal database. 
+
+You can try using different databases to model queries using the Diesel ORM.
