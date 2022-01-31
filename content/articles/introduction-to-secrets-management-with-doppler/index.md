@@ -3,7 +3,7 @@ layout: engineering-education
 status: publish
 published: 
 url: /introduction-to-secrets-management-with-doppler/
-title: Introduction to Secrets Management with Doppler.
+title: Introduction to Secrets Management with Doppler
 description: In this tutorial, we will look at how to manage developer secrets the best way possible, using Doppler solution.
 author: lynette-mwende
 date: 2022-01-19T00:00:00-11:30
@@ -11,34 +11,32 @@ topics: [Security]
 excerpt_separator: <!--more-->
 images:
 
-  - url: /engineering-education/introduction-to-secrets-management-with-doppler/Hero.jpg
-    alt: Secrets example Image
+  - url: /engineering-education/introduction-to-secrets-management-with-doppler/hero.jpg
+    alt: Introduction to Secrets Management with Doppler Example Image
 ---
-
 Items like API keys, database configurations, SSH credentials, and many alike presents a need for management and security.Such database configurations like port numbers, user passwords, and API keys(unique code values used to authenticate API calls and access to APIs) are often vulnerable to security attacks.
 Without knowing the right tools or management methods, software developers often fail to keep their secrets safe, leading to a poor secret life cycle.
-
+<!--more-->
 In this tutorial, we'll learn about secrets and manage the secret keys. Later on, we'll look into the best tool/platform you can use as a developer to manage secrets – Doppler.
-
 
 ### Overview
 This article will cover:
-- [What are Secrets](#what-are-secrets)
-- [Why Manage Secrets](#why-manage-secrets)
-- [Unconventional ways of Managing Secrets](#unconventional-ways-of-managing-secrets)
-- [Doppler – Universal Secrets Manager](#doppler-universal-secrets-manager)
-- [Doppler CLI/Doppler Dashboard](#doppler-cli/doppler-dashboard)
+- [What are secrets?](#what-are-secrets)
+- [Why manage secrets?](#why-manage-secrets)
+- [Unconventional ways of managing secrets](#unconventional-ways-of-managing-secrets)
+- [Doppler](#doppler)
+  - [Doppler CLI](#doppler-cli)
+  - [Doppler dashboard](#doppler-dashboard)
 - [Conclusion](#conclusion)
+- [Further reading](#further-reading)
 
-
-### What are Secrets
-
+### What are secrets?
 As you develop *applications*, *[microservices]*(https://microservices.io/) or even *[containerized apps]*(https://www.citrix.com/solutions/app-delivery-and-security/what-is-containerization.html), it is my best bet that you often interact with stuff like 3rd party APIs, user credentials, port numbers, and many other keys.
+
 These privileged credentials are known as  *["secrets"]*(https://www.akeyless.io/secrets-management-glossary/secrets-management/) and are private pieces of information that unlock protected resources or sensitive information in tools, application servers, Infrastructure-as-Code (IaC)) environments, or even [CI/CD pipelines](https://harness.io/blog/secrets-management-ci-cd/).Secrets need to be handled specially to maintain the security of applications.
 
 
-### Why Manage Secrets
-
+### Why manage secrets?
 Secrets management approaches aim to mitigate the spread of secret keys to external systems. 
 Mainly, secrets management enables developers to be in charge of:
 
@@ -49,39 +47,33 @@ Mainly, secrets management enables developers to be in charge of:
 
 With proper secrets management in place, organizations can make it difficult for malicious activities to gain control of their systems.
 
-
-### Unconventional ways of Managing Secrets
-
+### Unconventional ways of managing secrets
 Building scalable and secure applications using any tool can be a difficult task. This is so because fine-grained control is required to check unauthorized access to sensitive information and avoid data leakages.
 
 There are, however, some traditional secret management methods developers get lured into while writing their applications. These methods are not appropriate an attempt to use them only leaves your functions or applications vulnerable to attack.
 
 Some of the unconventional ways include:
 
-1. *Environment variables. (ENV files)*
+#### Environment variables
 Some developers find it easier to reference secrets stored in the environment variables outside a source code or version control. Secret keys stored in environment variables are prone to accidental exposures through child processes -what we want to avoid. Therefore, it is recommended to replace environment variables with external secrets managers such as Doppler and AWS Secrets Manager.
 
-
-2. *Hard coding secrets*
-
+#### Hard coding secrets
 Hard coding involves embedding user IDs, passwords, and other credentials into projects. Hardcoded secrets in public projects can be viewed easily, exposing them to exploits. Attacking exploits can grab access keys, alter rights and privileges, and perform other malicious acts such as injecting ransomware and viruses into applications.
 
-3. *Storing secrets in public places – Github*
-
+#### Storing secrets in public places – Github
 Registries and public repositories like Github are places secrets should not be found. These repositories are shared across development teams, testing teams, or possibly with the entire world (as is the case for open-source software), making projects vulnerable. 
 
 The best secret management option for projects should avail a seamless secret lifecycle, role-based access control, and encryption for any secret at rest or in transit.
 You may now be wondering if there is any optimal and easier way to manage secrets. And yes! There is [Doppler](https://www.doppler.com/) available, a secrets manager for your secrets at any level of development.
 
 
-### Doppler – Universal Secrets Manager
+### Doppler
 This section will show a simple guide on storing secrets using Doppler. Doppler has a unified dashboard platform that eliminates the need for .env files, hard coding, or the use of public repositories. From Doppler's unified dashboard, it is possible to manage teams, projects, and secrets centrally.
 
-#### Why Doppler
+#### Why Doppler?
 Doppler is a fault-tolerant, managed, multi-infrastructure service that gives developers an unlimited project environment, unlike traditional secret management options such as storing secrets locally. Doppler integrates well with popular cloud providers.This platform also provides dashboard-based integration of projects with other secret managers such as [AWS Secrets Manager](https://aws.amazon.com/secrets-manager/), [Parameter Store](https://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-parameter-store.html) and [Hashicorp Vault](https://www.vaultproject.io/).
 
-### Doppler CLI/Doppler Dashboard
-
+#### Doppler CLI
 [Doppler CLI](https://docs.doppler.com/docs/cli) is a lightweight installable file that provides a consistent experience between developing locally and production. Whether working locally or in a production environment, you can initiate your application's secrets using the ```bash doppler run``` command. This will execute your application, with your latest secrets being injected into your working environment.
 Installing Doppler CLI requires package managers such as [scoop](https://scoop.sh/).To reach the Doppler's scoop repository for installation, run the script below in a command prompt. 
 
@@ -89,7 +81,6 @@ Installing Doppler CLI requires package managers such as [scoop](https://scoop.s
 scoop bucket add doppler https://github.com/DopplerHQ/scoop-doppler.git
 ```
 Example: ![Connecting to Doppler Repo](/engineering-education/introduction-to-secrets-management-with-doppler/scoop.png).
-
 
 After the Doppler bucket is successfully added, you'll install Doppler CLI through the script below:
 
@@ -104,13 +95,10 @@ You can initiate the authentication process when the installations are complete 
 #### Doppler Dashboard
 Doppler dashboard is a browser-based interactive platform where users can organize secrets into projects and environments. The Doppler Dashboard has access to secrets in your projects, keeping the local development and Doppler in sync.
 
-
-#### A New Project in Doppler.
-
+#### Working with Doppler
 Within Doppler, you can create as many projects as you need -considering the applications being developed. The secrets in every project can also exist in any environment – Dev, Test, Production for scalability.
 
 Example: ![img](/engineering-education/introduction-to-secrets-management-with-doppler/project.png).
-
 
 Now it's time to create a project that will handle secrets!
 
@@ -159,16 +147,12 @@ The secrets will be injected into your local working environment with the access
 In this article, we have learned what secrets are, why they are managed, and how to manage them efficiently for productivity. We've also looked into Doppler, a Universal Secrets manager, which has grown to be the preferred secrets store, handling secrets sprawl, secrets rotation, and traceability.
 It is now the perfect time for you to ship your project secrets into a single manageable dashboard as a developer.
 
-
-
-### Further readings
-1. [Official Docs](https://docs.doppler.com/docs/cli)
-
-2. [Thycotic](https://thycotic.com/company/blog/2021/03/04/secrets-management/)
-
-3. [CyberArk](https://www.cyberark.com/what-is/secrets-management/)
-
-
+### Further reading
+- [Official Docs](https://docs.doppler.com/docs/cli)
+- [Thycotic](https://thycotic.com/company/blog/2021/03/04/secrets-management/)
+- [CyberArk](https://www.cyberark.com/what-is/secrets-management/)
 
 Happy coding!
 
+---
+Peer Review Contributions by: [Srishilesh P S](/engineering-education/authors/srishilesh-p-s/)
