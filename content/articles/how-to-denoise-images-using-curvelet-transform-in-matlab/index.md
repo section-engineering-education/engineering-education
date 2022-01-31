@@ -63,7 +63,7 @@ Later, a fast and less redundant curvelet transform version was introduced. This
 Wrapping-based FDCT is faster than USFFT, making it widely used.
 In general, Discrete curvelet transform can be expressed by:
 
-![expression](/engineering-education/how-to-denoise-images-using-curvelet-transform-in-matlab/image1.jpeg)
+![expression](/engineering-education/how-to-denoise-images-using-curvelet-transform-in-matlab/image-one.jpeg)
 
 Where;
 `C`: is the curvelet coefficients which are the function of `j`, $\theta, k_1$, and $k_2$.
@@ -82,7 +82,7 @@ curvelet transform = IFFT{FFT(curvelet) x FFT(image)}
 ### Curvelet Toolbox
 Mathworks Matlab has no function to implement curvelet transform. However, Curvelet transforms in Matlab can be computed using a third-party toolbox created by curvelet.org. The software is available on their website. 
 
-![curvelab.org](/engineering-education/how-to-denoise-images-using-curvelet-transform-in-matlab/image2.png)
+![curvelab.org](/engineering-education/how-to-denoise-images-using-curvelet-transform-in-matlab/image-two.png)
 
 This software is free. All you need to do is to create an account, then download it.
 
