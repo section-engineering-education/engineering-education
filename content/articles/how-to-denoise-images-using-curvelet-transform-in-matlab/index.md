@@ -1,3 +1,19 @@
+---
+layout: engineering-education
+status: publish
+published: true
+url: /how-to-classify-ecg-signal-using-continuous-wavelet-transform-and-alexnet/
+title: How to Classify ECG Signals Using Continuous Wavelet Transform and AlexNet
+description: This tutorial will look at how one can use AlexNet to classify ECG signals via transfer learning in Matlab.
+author: paul-juma
+date: 2022-01-31T00:00:00-00:36
+topics: [Machine Learning]
+excerpt_separator: <!--more-->
+images:
+
+  - url: /engineering-education/how-to-classify-ecg-signal-using-continuous-wavelet-transform-and-alexnet/hero.jpg
+    alt: How to Classify ECG Signals Using Continuous Wavelet Transform and AlexNet Hero Image
+---
 Curvelet transform is a powerful tool that can capture details along the curvature in images. It is a useful tool for feature extraction in pattern recognition. In addition, it is efficient in image denoising. Denoising of images is the removal of the noise signals in an image.
 
 This tutorial will look into the Curvelet transform analysis and denoising of images using Matlab. Moreover, in curvelet analysis, there is a curvelet toolbox that we will also take a look at.
@@ -6,7 +22,7 @@ This tutorial will look into the Curvelet transform analysis and denoising of im
 
 [Prerequisites](#prerequisite)
 
-[Theoritical background of Curvelet transform](#theoritical-background-of-curvelet-transform)
+[Theoretical background of Curvelet transform](#theoretical-background-of-curvelet-transform)
 
 [Curvelet Toolbox](#curvelet-toolbox)
 
@@ -24,15 +40,17 @@ This tutorial will look into the Curvelet transform analysis and denoising of im
 - A clear understanding of [Matlab](/engineering-education/getting-started-with-matlab/) basics.
 
 ### Theoretical background of Curvelet transform
-Curvelet transform is a geometric scale transform, used in the representation of edges and curves efficiently than any traditional wavelet. However, wavelets have the disadvantage of poor directionality. They are good in capturing coefficients along the horizontal, vertical, and diagonal axis but poor in capturing coefficients along the curvature.
+Curvelet transform is a geometric scale transform, used in the representation of edges and curves efficiently than any traditional wavelet. However, wavelets have the disadvantage of poor directionality.
+
+They are good in capturing coefficients along the horizontal, vertical, and diagonal axis but poor in capturing coefficients along the curvature.
 
 The complex transform is one way to improve directional selectivity. However, it is difficult to design complex wavelets with perfect reconstruction properties and filter characteristics.
 
-In 1999 Ridgelet transform, which is an anisotropic geometric wavelet transform, was proposed by Candes and Donoho. In 2000, the same authors introduced 1st and 2nd generation curvelet transform, called Ridgelet transform-based Curvelet transform. 
+In 1999 Ridgelet transform, which is an anisotropic geometric wavelet transform, was proposed by Candes and Donoho. In 2000, they introduced 1st and 2nd generation curvelet transform, called Ridgelet transform-based Curvelet transform. 
 
-The 2nd generation curvelet transform is an efficient tool for many different applications. These applications include image processing, seismic data exploration, fluid mechanics, and solving partial differential equations. It is also efficient in representing curve-like edges.
+The 2nd generation curvelet transform is an efficient tool in many different applications. These applications include image processing, seismic data exploration, fluid mechanics, and solving partial differential equations. It is also efficient in representing curve-like edges.
 
-However, this generation suffered two main drawbacks, which are:
+However, this generation suffered two main drawbacks:
 
 - It is not optimal for sparse approximation of curve features beyond C-square singularity.
 - It is highly redundant, thus giving a highly redundant output.
@@ -42,7 +60,7 @@ Later, a fast and less redundant curvelet transform version was introduced. This
 1. When using [unequally spaced Fast Fourier transform(USFFT)](https://www.researchgate.net/publication/30765385_Fast_Discrete_Curvelet_Transforms).
 2. When using [wrapping function](https://www.researchgate.net/publication/30765385_Fast_Discrete_Curvelet_Transforms).
 
-Wrapping-based FDCT is faster than USFFT; therefore, wrapping-based FCDT is widely used.
+Wrapping-based FDCT is faster than USFFT, making it widely used.
 In general, Discrete curvelet transform can be expressed by:
 
 ![expression](/engineering-education/how-to-denoise-images-using-curvelet-transform-in-matlab/image1.jpeg)
@@ -77,8 +95,11 @@ x=ifdct_wrapping(c, is_real, M, N)
 
 In the function above;
 `x`: is the input image which is an MxN matrix.
+
 `is_real`: Is the type of transform. Here, 0 is the default, and is used for complex-valued curvelet. `1` is for real-valued curvelet.
+
 `Finest`: This can be Curvelet or wavelet. The value 1 is for curvelet, and `2` is for wavelets, and it is always the default value.
+
 `nbscales`: This shows the number of decomposition levels. If this value is not defined, the default value is given by:
 
 ```Matlab
@@ -86,6 +107,7 @@ ceil[log2(min(M, N))-3]
 ```
 
 `nbangles_coarse`: This is the orientation of the angles. The value for this must be a multiple of 4. The minimum value is eight, and the default is 16.
+
 `C`: This is the output cell array of the curvelet coefficients. It is in the form `C{j}{k1, k2}`.
 
 ### Curvelet transform of an image
