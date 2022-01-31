@@ -3,15 +3,12 @@ Many developers have been using frameworks to build their web applications. This
 
 [PHP](https://www.section.io/engineering-education/introduction-to-PHP/) comes with a number of frameworks that can be used to create applications.
 
-Due to the availability of several different frameworks, it may be difficult to choose the right one for your project.
+Due to the availability of several different frameworks, choosing the best can be sometime stressful.
 
 By the end of this tutorial, the developer will be in a position to choose the best framework for their web application.
 
-### Prerequisite
-Before starting this tutorial, you should have a basic knowledge of PHP.
-
 ### Factors to consider when choosing a framework
-Before you make a decision on which PHP framework to use, it is essential to consider the following factors:
+It is important to consider the following factors before choosing a framework.
 1. Popularity Is the framework known and used by many developers? If not, it is not the best choice.
 2. Features Is the framework well-suited for the task? If it is, then it is the best choice for your project.
 3. Cost. Is the framework affordable? Is it free? If it is, then it is the best choice.
