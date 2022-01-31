@@ -4,9 +4,9 @@ status: publish
 published: true
 url: /how-to-use-symbolic-maths-toolbox-in-matlab-to-analyze-the-fourier-series/
 title: How to use the symbolic maths toolbox in MATLAB to analyze the Fourier series
-description: In this article, we are going to use the Symbolic math toolbox in MATLAB to analyze the Fourier series
+description: In this article, we are going to use the Symbolic math toolbox in MATLAB to analyze the Fourier series.
 author: linet-achieng
-date: 2022-01-12T00:00:00-11:10
+date: 2022-01-31T00:00:00-11:10
 topics: [Languages]
 excerpt_separator: <!--more-->
 images:
@@ -14,31 +14,44 @@ images:
   - url: /engineering-education/how-to-use-symbolic-maths-toolbox-in-matlab-to-analyze-the-fourier-series/hero.jpg
     alt: How to use the symbolic math toolbox in MATLAB to analyze the Fourier series hero image
 ---
-
-### How to use the Symbolic math toolbox in MATLAB to analyze the Fourier series
-
-### Introduction
-Symbolic math toolbox provides an easy, intuitive and complete environment to interactively learn and apply math operations such as calculus, algebra, and differential equations. It can also perform common analytical computation such as differentiation and integration to get close form results, simplify and manipulate expression for great insights and solve algebraic and differential equations.
+Symbolic math toolbox provides an easy, intuitive and complete environment to interactively learn and apply math operations such as calculus, algebra, and differential equations. 
 <!--more-->
+It can perform common analytical computation such as differentiation and integration to get close form results.
 
-In this tutorial, the Fourier series is implemented and simulated using Symbolic Math's Toolbox of MATLAB. Both forms of the Fourier series, Trigonometric and Exponential, are implemented. The proposed programs are versatile and can receive any function of time(t). It means the function is dependent on time. Moreover, the program gives plots of harmonics, original and approximated functions, magnitude spectrum, and phase spectrum. The advantage is that this toolbox is already available in MATLAB, and you don't have to get it from an external source. To understand more about the Fourier series, you can check [here](https://www.mathsisfun.com/calculus/fourier-series.html) to understand more about the Fourier series.
+It also simplifies and manipulates expression for great insights and solves algebraic and differential equations.
+
+In this tutorial, the Fourier series (Trigonometric and Exponential) is implemented and simulated using MATLAB's Symbolic Math Toolbox. 
+
+The proposed programs are versatile and can receive any function of time(t). This means that the function is dependent on time. 
+
+Moreover, the program gives plots of harmonics, original and approximated functions, magnitude spectrum, and phase spectrum. 
+
+This toolbox is already available in MATLAB. Therefore, you do not need to retrieve it from an external source. To understand more about the Fourier series, you can read [here](https://www.mathsisfun.com/calculus/fourier-series.html).
 
 ### Prerequisites
 To follow along with this tutorial, you will need:
 1. [MATLAB](https://www.mathworks.com/products/get-matlab.html?s_tid=gn_getml) installed.
-2. Proper understanding of [MATLAB basics](/engineering-education/getting-started-with-Matlab/).
+2. A proper understanding of [MATLAB basics](/engineering-education/getting-started-with-Matlab/).
 
-### Symbolic math toolbox
+### Symbolic Math Toolbox
 This toolbox has a wide range of applications:
-1. You can use this toolbox to visualize analytical expressions in 2-D and 3-D and even animate plots to create videos from it.
-2. Symbolic math in the **live editor**(mode in MATLAB) lets you interactively update and display Symbolic math computations. Also, MATLAB code formatted text, equations, and images can be published as executable live scripts, PDFs, or HTML documents. While working with analytical problems, you can get suggestions for the next step. These suggestions help you insert and execute function calls or live editor tasks directly into live scripts.
-3. In addition to providing exact rational math, the Symbolic toolbox provides precision for higher or lower positions, allowing algorithms to run higher or lower than MATLAB's in-built double. It also includes units for working with physical quantities and performing dimensional analysis.
+
+To visualize analytical expressions in 2D and 3D, as well as animate plots to create videos.
+
+Symbolic Math in the *live editor* (mode in MATLAB) let's you interactively update and display Symbolic math computations. 
+
+Besides, MATLAB code, formatted text, equations, and images can be published as executable live scripts, PDFs, or HTML documents. 
+
+While working with analytical problems, you can receive suggestions and tips. These suggestions help one to insert and execute function calls or tasks directly into live scripts.
+
+The Symbolic Toolbox also provides precision for higher or lower positions, which allows algorithms to run better than MATLAB's in-built double. Furthermore, it has units for working with physical quantities and performing dimensional analysis.
 
 ![Units for working with physical quantities](/engineering-education/how-to-use-symbolic-maths-toolbox-in-matlab-to-analyze-the-fourier-series/symbolic-one.jpeg)
 
 *This is an example of how this toolbox adds units for physical quantities*
 
-4. This toolbox is widely applied in many engineering and scientific application such as optimization, where symbolic expressions of exact gradient and Hessians improves accuracy and speed of optimization.
+Symbolic Toolbox is widely applied in many engineering and scientific applications. Symbolic expressions of exact gradient and Hessians improve accuracy and optimization speed.
+
 5. In non-linear control design, the Symbolic toolbox improves recalculation speed at any operating point during execution. Furthermore, you can integrate symbolic results with MATLAB and Simulink applications by converting symbolic expressions into numeric MATLAB functions, Simulink, and Simscape blocks.
 
 ![converting functions to simulink](/engineering-education/how-to-use-symbolic-maths-toolbox-in-matlab-to-analyze-the-fourier-series/symbolic-two.jpeg.jpeg)
