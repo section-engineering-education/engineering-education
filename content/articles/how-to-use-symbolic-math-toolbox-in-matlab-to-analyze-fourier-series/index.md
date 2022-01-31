@@ -2,9 +2,9 @@
 layout: engineering-education
 status: publish
 published: true
-url: /how-to-use-symbolic-maths-toolbox-in-matlab-to-analyze-the-fourier-series/
-title: How to use the symbolic maths toolbox in MATLAB to analyze the Fourier series
-description: In this article, we are going to use the Symbolic math toolbox in MATLAB to analyze the Fourier series.
+url: /how-to-use-symbolic-math-toolbox-in-matlab-to-analyze-the-fourier-series/
+title: How to use the Symbolic Math Toolbox in MATLAB to analyze the Fourier series
+description: In this article, we are going to use the Symbolic Math Toolbox in MATLAB to analyze the Fourier series.
 author: linet-achieng
 date: 2022-01-31T00:00:00-11:10
 topics: [Languages]
@@ -12,9 +12,9 @@ excerpt_separator: <!--more-->
 images:
 
   - url: /engineering-education/how-to-use-symbolic-math-toolbox-in-matlab-to-analyze-the-fourier-series/hero.jpg
-    alt: How to use the symbolic math toolbox in MATLAB to analyze the Fourier series hero image
+    alt: How to use the Symbolic Math Toolbox in MATLAB to analyze the Fourier series hero image
 ---
-Symbolic math toolbox provides an easy, intuitive and complete environment to interactively learn and apply math operations such as calculus, algebra, and differential equations. 
+Symbolic Math Toolbox provides an easy, intuitive and complete environment to interactively learn and apply math operations such as calculus, algebra, and differential equations. 
 <!--more-->
 It can perform common analytical computation such as differentiation and integration to get close form results.
 
