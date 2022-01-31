@@ -35,17 +35,19 @@ The learner should be familiar with:
 ### What is SAST
 Static Application Security Testing, known as SAST for short, is a method of vulnerability testing that analyses the source code of an application to determine the security vulnerabilities that may cause the application to be compromised.
 
-> A vulnerability is any loophole within an application that can be exploited by a bad actor to gain access to the application or propagate malware through the application. A vulnerability that is not fixed could lead to dire consequences for the user and owners of an application. SAST is one of the ways used to assess application vulnerabilities.
+> A vulnerability is any loophole within an application that can be exploited by a bad actor to gain access to the application or propagate malware through the application. A vulnerability that is not fixed could lead to dire consequences for the user and owners of an application. SAST is one of the ways used to scan and assess applications for vulnerabilities.
 
-SAST scans applications before the compilation of the code, a scenario also known as the white box testing normally done at the beginning of the SDLC because it does not require an executing application.
+SAST scans applications before the compilation of the code right at the beginning of the SDLC because it does not require an executing application.
 
-SAST helps developers identify weaknesses of an application in the early stages of development and quickly resolve issues that may otherwise have effects on the final rolled out application.
+The above scenario is also known as the white box testing.
 
-SAST is done using different tools which provide visual representations of the problems identified, making it easy to navigate the code and can also provide suggestions on how to fix the vulnerabilities identified within the code.
+Developers can therefore identify shortcomings of an application in the early stages of development and quickly resolve issues that may otherwise have effects on the final rolled out application.
 
-SAST tools support the creation of customized reports; these reports can be downloaded offline and tracked through dashboards. 
+Developers can also systematically track the vulnerability trends within the application. This process promotes the creation of an SDLC (Software Development Life Cycle) that is secure and efficient.
 
-Tracking all security issues systematically reported by the tool can help fix these problems quickly and promote the rollout of applications with fewer problems. This process promotes the creation of an SDLC that is secure and efficient.
+The visual representations of the problems identified as provided by the different SAST tools makes it easy to navigate the code and can also provide suggestions on how to fix the vulnerabilities identified within the code. 
+
+Customized reports downloadable and visible offline are supported by most SAST tools and can also tracked through dashboards.
 
 ### Differences between SAST and DAST
 There are two different types of application Security Testing i.e., SAST and DAST (Dynamic Application Security Testing).
@@ -59,24 +61,24 @@ The above-mentioned detect security vulnerabilities in applications except in a 
 
 ### Tools used to perform SAST
 Some of the tools used in Performing SAST are as follows:
-1. GitLab
-2. Veracode
-3. Synopsys Coverity
-4. HCL AppScan
-5. SonarQube
-6. Snyk
-7. Appknox
-8. Klocwork
-9. Mobile Security Framework (MobSF)
-10. Checkmarx
+1. GitLab.
+2. Veracode.
+3. Synopsys Coverity.
+4. HCL AppScan.
+5. SonarQube.
+6. Snyk.
+7. Appknox.
+8. Klocwork.
+9. Mobile Security Framework (MobSF).
+10. Checkmarx.
 
 All the above tools perform SAST and other types of security testing in different ways; further details can be found [here](https://www.trustradius.com/static-application-security-testing-sast).
 
 ### Step by Step process of SAST
-SAST performs automatic scanning of applications using the following simple steps:
+SAST performs applications’ scanning automatically in the following simple steps:
 
 #### Step 1: Choosing of the tool
-Choose a specific static analysis tool that can carry out code reviews for applications written in the programming languages of your choice and can understand the application's underlying framework.
+Choose a particular static analysis tool that is able to carry out code reviews for your application according to the programming languages in which it is written, and can also understand your application's underlying framework.
 
 For this sample test, we will use MobSF (Mobile Security Framework), which is an open-source, automated mobile penetration testing tool, as the tool for this security testing.
 
@@ -131,7 +133,7 @@ docker run -it -p 8000:8000 opensecurity/mobile-security-framework-mobsf
 The framework will initialize and begin running then the terminal will indicate "listening at http://0.0.0.0:8000" when the tool is successfully run to completion.
 
 #### Step 4: Onboarding of an application
-When the tool is ready, the application is then onboarded onto the tool for analysis.
+Once the MobSF tool is ready, the application is thereafter onboarded onto it for analysis.
 
 We then access MobSF at the URL in the above step and upload the application to be tested.
 
@@ -143,10 +145,12 @@ The process will run to completion automatically then present the results after 
 
 ![results display](/how-to-perform-containerized-static-application-security-testing(sast)-using-mobsf-within-a-docker-container/results.png)
 
-#### Step 5: Downloading the report and analysis of scan results **
-This step involves triaging the results of the vulnerability scan to eliminate any false positives.
+#### Step 5: Downloading the report and analysis of scan results
+This step involves eliminating any false positives by triaging the results of the vulnerability scan.
 
-Once the problems have been completely put together, they can be tracked and assigned to the deployment teams for appropriate and timely correction.
+Once the vulnerabilities have been completely assembled, they can be assigned to the deployment teams for appropriate action and timely correction.
+
+Thereafter these vulnerabilities can be tracked on progress.
 
 Navigate on the task pane to view the pdf report or download an offline report as shown:
 
@@ -158,8 +162,7 @@ The above report can be studied offline.
 #### Advantages of SAST
 SAST has several advantages some of which are as listed below:
 - SAST tools can analyze the entire codebase.
-- SAST tools are much faster than human-triggered security
-code reviews, performing close to a million lines of code in a very short period.
+- SAST tools are much faster than human-triggered security code reviews, performing close to a million lines of code in a very short period.
 - SAST tools automatically spot critical vulnerabilities with high confidence.
 - SAST tools scale well given they can be run on multiple software and can be run multiple times.
 
