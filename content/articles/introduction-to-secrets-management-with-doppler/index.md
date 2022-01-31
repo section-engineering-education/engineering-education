@@ -158,6 +158,7 @@ doppler secrets
 ``` 
 
 All secrets stored will be as shown in the screenshot below:
+![Access](/engineering-education/introduction-to-secrets-management-with-doppler/access.png)
 
 The secrets will be injected into your local working environment with the access done.
 
