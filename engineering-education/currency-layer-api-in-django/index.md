@@ -6,7 +6,7 @@ url: /currency-layer-api-in-django/
 title: Consuming Currencylayer API in Django
 description: This article will illustrate how to use the Currenclylayer API in a Django application.
 author: mercy-meave
-date: 2022-01-25T00:00:00-05:00
+date: 2022-01-02T00:00:00-05:00
 topics: [API, Languages]
 excerpt_separator: <!--more-->
 images:
@@ -18,29 +18,29 @@ images:
 ### Introduction
 The Currencylayer API is one of the APIs that provide real-time currency exchange rates. It is easy and reliable to use due to its readable JSON responses. 
 <!--more-->
-The API is mainly prefered over other APIs because of its reliability in providing real-time Forex rates, ease of integration and affordability.
+The API is mainly preferred over other APIs because of its reliability in providing real-time Forex rates, ease of integration and affordability.
 
-In order to learn more about this API and how to work with it, we will build a Django application that uses the API to provide real-time currency exchange rates. 
+To learn more about this API and how to work with it, we will develop a Django application that uses the API to provide real-time currency exchange rates.
 
 A user will enter a currency and find the current conversion rate. Additionally, the application should allow the user to enter an amount in one currency and find the equivalence in another currency.
 
-Besides the above basic functionality, we should be able to retrieve the exchange rates of a given currency on a given date.
+Besides the above basic functionality, we should be able to retrieve the exchange rates of a particular currency on a given date.
 
 ### Prerequisites
 - Working with the [Django](https://www.djangoproject.com/) framework.
-- Code editor most preferably [Visual Studio Code.](https://code.visualstudio.com/)
+- Code editor, most preferably [Visual Studio Code.](https://code.visualstudio.com/)
 - Basics of consuming APIs in Django
-- undertanding of [CSS](https://www.w3schools.com/css/) and [HTML.](https://www.w3schools.com/html/default.asp)
+- understanding of [CSS](https://www.w3schools.com/css/) and [HTML.](https://www.w3schools.com/html/default.asp)
 - Currencylayer [API key.](https://currencylayer.com/product)
 
 ### Project setup
 
 #### The virtual environment
-Conventionally, good programming practice requires every project to be in its virtual environment. Furthermore, the virtual environment is required so that the development dependencies only exist in a specific project. 
+Conventionally, good programming practice requires every project to remain in its virtual environment. Furthermore, the virtual environment is required so that the development dependencies only exist in a specific project.
 
-This technique enables developers to use a specific version of a dependency instead of using the one installed globally.
+This technique enables developers to use a specific version of a dependency instead of the one installed globally.
 
-So let us create a folder name `converter` and create a virtual environment in the same folder.
+Therefore let us create a folder name `converter` and create a virtual environment in the same folder.
 
 ```bash
 mkdir currency
@@ -100,7 +100,7 @@ If you executed all the commands correctly, the folder structure should be as sh
 ```
 
 #### Creating the converter app
-An app in the Django project is a sub-component of the major application. Dividing a project into several applications ensures that the project groups related activities together, thus facilitating easy debugging and scalability.
+An app in the Django project is a subcomponent of the major application. Dividing a project into several applications ensures that the project groups related activities together, thus facilitating easy debugging and scalability.
 
 To start a new application, execute the command below:
 
@@ -138,12 +138,12 @@ INSTALLED_APPS = [
 ]
 ```
 
-### Configuration of global varibles
+### Global variables configuration
 We need to set up a file where we store the global variables we intend to use for the application. 
 
-With the help of `Python Decouple`, we can create a single file and refer to the file every time we need to fetch a single variable in that file.
+With the help of `Python Decouple`, we can create a single file and refer to the file every time we need to fetch a single particular in that file.
 
-In the same directory as the `settings.py` file, create a new file called `.env` the add the following code snippet.
+In the same directory as the `settings.py` file, create a new file called `.env` then add the following code snippet.
 
 ```env
 API_KEY=''
@@ -167,9 +167,9 @@ DEBUG = config('DEBUG')
 ```
 
 ### Getting the API-key
-Navigate to the [Currencylayer](https://currencylayer.com/product) website and create an account with them. Once the account is set up, you can log in and obtain an API key. However, there are advanced packages that you need to pay for.
+To obtain the API key, navigate to the [Currencylayer](https://currencylayer.com/product) website and create an account with them. Once the account is set up, you can log in and obtain an API key. However, you need to pay for the advanced packages.
 
-> There are endpoints that one cannot access when using the free package. For instance, you can only view the live rates and historical rates of the default currency USD in the basic plan.
+> There are endpoints that one cannot access when using the free package. For instance, you can only view the live and historical rates of the default currency,  USD,  in the basic plan.
 
 Copy the API key, then head over to the `.env` file and insert it as one of the global variables.
 
@@ -213,7 +213,7 @@ def show_live(request):
 ```
 
 #### Currency exchange view
-This view is responsible for handling currency exchange from one currency to another and showing the exchange rates.
+This view is responsible for handling currency exchange from one currency to another and showing the rate of exchange.
 
 ```py
 def index(request):
@@ -245,7 +245,7 @@ def index(request):
 ```
 
 #### Historical exchange rates view
-This view is responsible for finding the exchange rates of a given currency at a particular date. First, the user supplies the date then the API fetches the exchange rates on that date.
+This view is responsible for finding the exchange rates of a given currency at a particular date. First, the user supplies the date, then the API fetches the exchange rates for that date.
 
 > The exchange rates of other currencies can be found in the other API plan and not the basic plan.
 
@@ -273,7 +273,7 @@ def show_historical(request):
 ```
 
 ### Designing the templates
-Templates define how the application user interface will appear. It is composed of HTML and CSS.
+Templates define how the application's user interface will appear. It is composed of HTML and CSS.
 
 In the `templates` folder, create three files as follows:
 
@@ -286,7 +286,7 @@ In the `templates` folder, create three files as follows:
 ```
 
 #### The base HTML file
-The `base.html` file contains the overall structure of the web page that remains similar to other pages. This method levy the programmer from having to re-write similar code.
+The `base.html` file contains the overall structure of the web page that remains similar to other pages. This method spares the programmer from having to re-write similar code.
 
 In the `base.html` file, add the snippets below in the body section of the HTML file.
 
@@ -321,9 +321,9 @@ In the `base.html` file, add the snippets below in the body section of the HTML 
 </div>
 ```
 #### The entry point HTML file
-This file appears on the application's entry point. It is rendered on the default page once the application loads. It also contains the page where conversion of the currencies occurs.
+This file appears at the application's entry point. It is rendered on the default page once the application loads. It also contains the page where the conversion of the currencies occurs.
 
-In the `index.html` file, add the following  code snippets:
+In the `index.html` file, add the following code snippets:
 
 ```html
  {% extends 'base.html' %}
@@ -389,7 +389,7 @@ In the `index.html` file, add the following  code snippets:
 
 {% endblock %}
 ```
-> The select option for the currencies are available in the GitHub link provided at the end of the tutorial
+> The currency selection options are available in the GitHub link provided at the end of the tutorial.
 
 ![Live rates](/engineering-education/currency-layer-api-in-django/most-recent-rates.png)
 
@@ -447,7 +447,7 @@ In the file named `historical.html`, add the following snippets:
 ### Working on the URLs
 In Django, URLs are specified in the `urls.py` file. The URLs determine where to fetch a particular resource in the application. 
 
-The main `urls.py` file is found in the major application folder in the same directory as the `settings.py` file.
+The main `urls.py` file is found in the main application folder in the same directory as the `settings.py` file.
 
 Add the following code snippets to the file to facilitate the routing and rendering of the HTML templates.
 
@@ -474,9 +474,9 @@ urlpatterns = [
 ```
 
 ### Application clean-up
-In this section, we will do a clean-up on our application to ensure that the application conforms to the development best practices.
+In this section, we will do a clean-up on our application to ensure that it conforms to the development best practices.
 
-The first step is to add all the confidential and autogenerated files into a `.gitignore` file. The files remain in the local machine when the project is pushed to GitHub.
+The first step is to add all the confidential and autogenerated files into a `.gitignore` file. The files remain on the local machine when the project is pushed to GitHub.
 
 In the application's root directory, create a file called `.gitgnore`, then add the following code snippet.
 
@@ -489,7 +489,7 @@ settings.ini
 __pycache__/
 ```
 
-The next step is to save the list of our libraries and project dependencies such that when deploying the application, they are automatically installed by a single command.
+The next step is to save the list of our libraries and project dependencies such that when deploying the application, they are automatically installed with a single command.
 
 Run the following command in the terminal to copy all the installed dependencies into a file.
 
@@ -506,16 +506,16 @@ Start the virtual environment as illustrated before, then execute the following 
 python manage.py runserver
 ```
 
-Once all system checks are done, and the server is running, navigate to  http://127.0.0.1:8000/ to view the site.
+Once all system checks have been completed and the server is up and running, go to http://127.0.0.1:8000/ to view the site.
 
-The site should have all the pages are shown below. You can try exchanging currencies, viewing historical data of different currencies and the live rates.
+The site should have all the pages shown below. You can try exchanging currencies, viewing historical data of different currencies, and checking the live rates.
 
 ![Selecting a currency](/engineering-education/currency-layer-api-in-django/selecting-currency.png)
 ![Currency conversion](/engineering-education/currency-layer-api-in-django/conversion.png)
 
-You can find the files for this project in [this link](https://github.com/mercymeave/currency-xchange-guide)
+You can find the files for this project at [this link](https://github.com/mercymeave/currency-xchange-guide)
 
 ### Conclusion
-This tutorial guided the readers on how to build an application that converts currencies in real-time. In addition, it provided a roadmap of using APIs in Django and working with the Currencylayer API. 
+This tutorial showed readers how to create an app that converts currencies in real time.In addition, it provided a roadmap for using APIs in Django and working with the Currencylayer API.
 
 The article should be a starting point for working with financial APIs in Django applications.
