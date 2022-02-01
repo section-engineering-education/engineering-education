@@ -6,10 +6,17 @@ One limitation of the library is that it does not generalize well to complext tr
 We shall use the global cases dataset from [Johns Hopkins University Center for Systems Science and Engineering (JHU CSSE) Global Covid-19 Data repository](https://github.com/CSSEGISandData/COVID-19) to perform forecasting. This is a very useful dataset as it has a lot of seasonality and complex time series patterns.
 
 ### Table of contents
-- Preparing the environments.
-- Importing understanding and preparing the data.
-- Training a NeuralProphet Forecaster.
-- Forecasting using the trained model.
+- [Prerequisites](#prerequisites)
+- [Goals](#goals)
+- [Preparing the environments](#setting-up-environments)
+- [Importing understanding and preparing the data](#importing-and-preparing-the-data)
+- [The COVID-19 Dataset](#the-covid-19-dataset)
+- [Importing and preparing the data](#importing-and-preparing-the-data)
+- [Training a NeuralProphet Forecaster](#training-the-model)
+- [Monitoring the training process and evaluating the model](#monitoring-the-training-process-and-evaluating-the-model)
+- [Forecasting using the trained model](#forecasting)
+- [Conclusion](#conclusion)
+- [References](#references)
 
 ### Prerequisites
 - Basic knowledge of Python.
@@ -17,7 +24,7 @@ We shall use the global cases dataset from [Johns Hopkins University Center for 
 - Basic data manipulation skills with Pandas.
 - Python (with `pip`, `numpy` and `pandas`) installed on your computer or an online environment like Google Colab or Kaggle.
 
-### Goal
+### Goals
 At the end of this tutorial, you will be comfortable with;
 - Understanding Time-Series Forecasting.
 - Installation of NeuralProphet.
@@ -62,7 +69,7 @@ We also need to drop 'Lat' and 'Long' column since they're not useful for this t
 dataset=dataset.groupby('Country/Region').sum()
 dataset=dataset.drop(columns=['Lat','Long'])
 ```
-We will rotate the data so that Countries are column names and dates are just rows for easier fetching during model training.
+We will rotate the data so that country names are column names and dates are just rows for easier fetching during model training.
 
 We shall do this by saving the dates in a variable `dates`, transpose the rest of the dataset and concatenate it with `dates` as a `Date` column.
 
