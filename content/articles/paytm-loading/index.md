@@ -33,8 +33,6 @@ A preloader is a static picture, animation, or a Graphics Interchange Format(GIF
 According to research by [Google on the benefits of increasing the speed of a website](https://www.marketingdive.com/news/google-53-of-mobile-users-abandon-sites-that-take-over-3-seconds-to-load/426070/), they discovered that about 53% of website users would abandon a site if it takes more than 3 seconds to load. This problem worsens when the page is blank. Therefore, the use of preloaders can mitigate this problem.
 
 ### Benefits of a preloader
-
-
 While to most people, website preloaders are just fancy animations that make sites incredible and user-friendly, these tools are compelling in reducing the revenue caused by unreliable networks and developing a meaningful relationship with the content consumers of your website.
 
 Additionally, the user experience brought about by these preloaders increases the engagement of the users and the website and maintains the website's professional image. The good look and feel of the site in combination with the loader will most likely raise the customers' waiting threshold until the page content is fully loaded.
