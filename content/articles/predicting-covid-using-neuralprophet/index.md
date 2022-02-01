@@ -40,7 +40,7 @@ pip install neuralprophet
 > Note: Online editors like `repl.it` may fail to run our code due to insufficient memory allocations.
 
 ### Importing and preparing the data
-Let's start by importing `pandas` library and the dataset.
+We will start by importing `pandas` library and the dataset.
 
 ```python
 import pandas as pd
@@ -49,7 +49,7 @@ dataset=pd.read_csv(path,engine='python')
 print(dataset)
 ```
 
-#### The Dataset
+#### The COVID-19 Dataset
 We will be using the Covid-19 Global Cases Dataset from [COVID-19 Data Repository by the Center for Systems Science and Engineering (CSSE) at Johns Hopkins University](https://github.com/CSSEGISandData/COVID-19). To manually navigate to the CSV file within the repository, follow the path 'csse_covid_19_data/csse_covid_19_time_series/time_series_covid19_confirmed_global.csv'.
 
 This dataset is a collection of reporting from various countries health departments, agencies and universities that is updated daily by the CSSE at JHU.
@@ -64,7 +64,7 @@ dataset=dataset.drop(columns=['Lat','Long'])
 ```
 We will rotate the data so that Countries are column names and dates are just rows for easier fetching during model training.
 
-We shall do this by saving the dates in a variable ```dates```, transpose the rest of the dataset and concatenate it with ```dates``` as a ```'Date'``` column.
+We shall do this by saving the dates in a variable `dates`, transpose the rest of the dataset and concatenate it with `dates` as a `Date` column.
 
 ```python
 dates=dataset.columns
@@ -75,7 +75,7 @@ rotated_dataset=rotated_dataset.rename(columns={0:'Date'})
 rotated_dataset
 ```
 
-NeuralProphet only accepts two columns, dates and one y-column, fitting data. The columns must be named ```ds``` and ```y``` respectively.
+NeuralProphet only accepts two columns, dates and one y-column, fitting data. The columns must be named `ds` and `y` respectively.
 We shall drop all values NULL values from the data.
 
 For the moment, let's use the US data for demonstration.
@@ -87,33 +87,58 @@ data.dropna(inplace=True)
 print(data)
 ```
 **Output:**
-![DataFrame](/content/articles/predicting-covid-using-neuralprophet/df1.PNG)
+|index|ds|y|
+|---|---|---|
+|1|1/23/20|0\.0|
+|2|1/24/20|1\.0|
+|3|1/25/20|0\.0|
+|4|1/26/20|3\.0|
+|5|1/27/20|0\.0|
 
-*Screenshot of the dataset by author*
+*Table of the dataset's first five rows by author*
 
 
 ### Training the model
-Create an empty model from the NeuralProphet() class and assign it to the variable ```m```.
+We will create an empty model from the NeuralProphet() class and assign it to the variable `m`.
 
-Fit the model on our training dataset ```data``` from the previous step. Pass three arguments to the fit() method;
-- The dataset to train on, ```data```,
-- Frequency of the data, ```freq``` as 'D' since the occurence of the data is daily,
-- Training time, ```epochs```
+We will then fit the model on our training dataset `data` from the previous step. Thereafter, we will begin the training process by passing three arguments to the `fit()` method;
+- The dataset to train on, `data`,
+- Frequency of the data, `freq` as 'D' since the occurence of the data is daily,
+- Training time, `epochs`
 
 ```python
 m = NeuralProphet()
 m.fit(data,freq='D',epochs=1000)
 ```
 After the training process is complete, we can obtain the model's metrics such as Mean Absolute Error (MAE) from the output of the cell.
+We can note that the MAE reduces significantly (~ 90%) during the training process.
 
-You can note that the MAE reduces significantly (~ 90%) during the training process.
+### Monitoring the training process and evaluating the model
+Note that a NeuralProphet model self-validates and provides validation metrics as part of the training process outputs.
+If you installled the `[live]` version of NeurapProphet and want to monitor the metrics during the training process, split the data into training and testing sets using the model's `split_df()` method as shown below;
+
+```python
+df_train, df_test = m.split_df(data, freq='D')
+metrics = m.fit(df_train, freq='D', epochs=1000, validation_df=df_test, plot_live_loss=True)
+```
+A live plot of the SmoothL1Loss and MAE will be plotted live during training.
+
+The output of the code-cell below displays the metrics of the model at the end of training;
+
+```python
+metrics.tail(1)
+```
+**Output:**
+|index|SmoothL1Loss|MAE|RMSE|RegLoss|SmoothL1Loss\_val|MAE\_val|RMSE\_val|
+|---|---|---|---|---|---|---|---|
+|2198|0\.0028212489277074063|12472\.25266575169|19477\.93211570946|0\.0|NaN|NaN|NaN|
 
 ### Forecasting
 Forecast on future trends by calling the make_future_dataframe() method with the data and number of periods(days) to predict.
 Let us predict for the next 14 days.
 
-Call the predict() method on ```future``` to perform the forecast.
-The predictions are the ```yhat1``` column of the ```forecast``` dataframe.
+Call the `predict()` method on `future` to perform the forecast.
+The predictions are the `yhat1` column of the `forecast` dataframe.
 
 ```python
 future=m.make_future_dataframe(data,periods=14)
@@ -121,47 +146,76 @@ forecast=m.predict(future)
 print(forecast)
 ```
 
-We can plot the predictions on using the models in-built plotting method() from the matplotlib API.
+Let us plot the predictions on using the models in-built plotting method `plot()` from the matplotlib API.
 
 ```python
 fig1 = m.plot(forecast)
 ```
 **Output:**
 
-![Predicted cases](/content/articles/predicting-covid-using-neuralprophet/df2.png)
+![Predicted cases](/engineering-education/predicting-covid-using-neuralprophet/df2.png)
 
 *Image of plot by author*
 
-The predictions can be represented to the nearest integer.
+Since we are predicting cases, they cannot be floating point values. The predictions will be rounded off to the nearest integer by casting the series of floats to an `int` datatype.
 
 ```python
-round(forecast['yhat1'])
+forecast['yhat1'].astype(int)
 ```
 
-The ```yhat1``` values are:
+The `yhat1` values are:
 
+```bash
+0     582727
+1     585876
+2     579434
+3     588880
+4     534163
+5     521222
+6     564501
+7     552304
+8     555860
+9     550098
+10    560483
+11    506945
+12    495406
+13    540291
+Name: yhat1, dtype: int64
 ```
-0     655667.0
-1     661932.0
-2     660310.0
-3     672405.0
-4     624336.0
-5     612466.0
-6     654910.0
-7     645875.0
-8     650355.0
-9     647241.0
-10    658139.0
-11    609167.0
-12    596686.0
-13    638807.0
+This means that the model predicts 582,727 cases for tomorrow, 585,876 for the following day and so on.
+We will obtain the predictions with their dates as follows;
 
+```python
+results_df=forecast[['ds','yhat1']]
+results_df['yhat1']=forecast['yhat1'].astype(int)
+results_df.columns=['Date','Predicted Cases']
+print(results_df)
 ```
+**Output table:**
+|index|Date|Predicted Cases|
+|---|---|---|
+|0|2022-02-01 00:00:00|582727|
+|1|2022-02-02 00:00:00|585876|
+|2|2022-02-03 00:00:00|579434|
+|3|2022-02-04 00:00:00|588880|
+|4|2022-02-05 00:00:00|534163|
+|5|2022-02-06 00:00:00|521222|
+|6|2022-02-07 00:00:00|564501|
+|7|2022-02-08 00:00:00|552304|
+|8|2022-02-09 00:00:00|555860|
+|9|2022-02-10 00:00:00|550098|
+|10|2022-02-11 00:00:00|560483|
+|11|2022-02-12 00:00:00|506945|
+|12|2022-02-13 00:00:00|495406|
+|13|2022-02-14 00:00:00|540291|
 
+*Table of dataset by author*
+
+
+### Conclusion
 
 As you can see, we have built a NeuralProphet model and used it for predicting Covid-19 cases.
 
-### Conclusion
 In this tutorial, we learned how to install NeuralProphet, import and prepare data for time-series forecasting, train NeuralProphet forecaster and forecast using the trained model.
 
 This model can now be served via any web application framework like Streamlit or Dash using Django or Flask via an API. In case of any issues with NeuralProphet, you can raise an issue on [NeuralProphet's GitHub](https://github.com/ourownstory/neural_prophet).
