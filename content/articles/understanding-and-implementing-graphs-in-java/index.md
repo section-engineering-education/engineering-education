@@ -14,10 +14,9 @@ images:
   - url: /engineering-education/understanding-and-implementing-graphs-in-java/hero.jpg
     alt: Understanding and implementing graphs in Java Hero Image
 ---
-### Introduction
-There are possibilities of storing information as necessitated by outlined in the Java data structure graph. The idea of a graph depicts a network that links several different points in time. 
+There are possibilities of storing information in a java data structure graph. The idea of a graph depicts a network that links several different points in time. 
 <!--more-->
-While covering graph data structure, we will additionally learn about the various types of graphs, their implementation, and traversal over the graph. We will also cover the fundamental principles as a data structure, its implementation in java, and the numerous operations performed on a graph.
+While covering graph data structure, we will learn about the various types of graphs, their implementation, and traversal over the graph. We will also cover the fundamental principles as a data structure, its implementation in java, and the numerous operations performed on a graph.
 
 ### Table of contents
 - [Understanding graphs in java](#understanding-graphs-in-java)
@@ -31,19 +30,19 @@ While covering graph data structure, we will additionally learn about the variou
 - [Breadth-first traversal and its implementation](#breadth-first-traversal-and-its-implementation)
 
 ### Understanding graphs in java
-A graph data structure holds data related to a network of people or cities. It is made up of nodes that are vertices. The formation of the linkages is a connection of a vertex to another forming edge. 
+A graph data structure holds data related to a network of people or cities. It is made up of nodes known as vertices. The formation of the linkages is a connection of a vertex to another forming edge. 
 
 There are several types of graphs, but the most common one is the directed acyclic graph (directed graph). It contains a set of connected vertices (V) and edges (E).
 
 #### Types of graphs
-Graphs come in many shapes and sizes, which are described below:
+Graphs come in many shapes and sizes described below:
 - Line graph: It shows how a particular attribute evolves.
 - Bar graph: It compares quantitative variables, such as the population of different cities or the proportion of the literate population across the country.
 
 #### Key terms
 Some terms are used, such as:
-- Edge: This is a line responsible for connecting two vertices to which they are linked together. We usually represent it with a line.
-- Vertex or node is a point formed when edges meet at an intersection. It is a data representation. While designating a vertex, we usually employ a circle, and a name must be assigned. You need more than one node to create a graph.
+- Edge: This is a line responsible for connecting two vertices linked together. We usually represent it with a line.
+- Vertex or node: This is a point formed when edges meet at an intersection. It is a data representation. While designating a vertex, we usually employ a circle, and a name must be assigned. You need more than one node to create a graph.
 - Weight: According to a sticker somewhat on the side, it is an Edge.
 - Path: This method moves from one point in a series to the next.
 
@@ -53,18 +52,18 @@ Some terms are used, such as:
 
 ### Storing graphs in memory
 In either of the following three ways, there is a possibility of storing a graph in memory:
-1. Nodes and vertices may be stored as objects, whereas edges can be stored as pointers.
+1. Nodes and vertices may be stored as objects, whereas edges as pointers.
 2. Adjacency matrices can be used, and they should have equal rows and columns. A border appears when columns and rows overlap. A weighted edge is more essential than an unweighted edge, denoted by the number `1`.
-3. In addition to storing, an adjacency list between graph nodes and vertices may also be employed. A distinct set of adjacency list neighbors may be found for each node or vertex.
+3. In addition to storing, one can also use an adjacency list between graph nodes and vertices. A distinct set of adjacency list neighbors may be found for each node or vertex.
 
 ### Representing graphs in code
-Adjacency matrices and lists are approaches to generate graphs.
+Adjacency matrices and adjacency lists are approaches to generate graphs.
 
 #### Adjacency matrix
 As the number of graph vertices increases, the number of adjacency matrix dimensions increases. Matrix cells have a value between `0` and `1`. A value of `1` indicates that the row and column's vertices are continuous, whereas `0` suggests they are not.
 
 #### Adjacency list
-An adjacency list is nothing more than a collection of lists arranged in a particular order. The graph has precisely the same number of vertices as elements in the array to store them. The array index list contains all vertices nearest to the index's vertex.
+An adjacency list is nothing more than a collection of lists arranged in a particular order. The graph has the same number of vertices as elements in the array to store them. The array index list contains all vertices nearest to the index's vertex.
 
 ### Graph implementation in java
 Java collections, such as the Generic class, can be used in place of a graph data structure because java does not provide a default implementation of this data structure. Below is the syntax to use in the case of a generic object in java:
@@ -86,7 +85,7 @@ class Apex {
 }
 ```
 
-Coping with Java Collections implies overriding the `equals()` and `hashcode()` methods.
+Coding with java collections implies overriding the `equals()` and `hashcode()` methods.
 
 #### Defining vertex using an adjacency list
 
@@ -96,7 +95,7 @@ class Chart {
 }
 ```
 
-In this case, the adjacency list is defined by the class `Plot`, an instance of `Chart`. In the graph, we can generate, update, and search. These are some ways we can utilize the graph data structure in.
+In this case, the adjacency list is defined by the class `Plot`, and an instance of `Chart`. In the graph, we can generate, update, and search. These are some ways we can utilize the graph data structure in.
 
 ### Common operations to implement in java
 
@@ -113,7 +112,7 @@ void removeApex(String tag) {
 }
 ```
 
-Simple addition and deletion of items from the vertices set is accomplished by using these techniques.
+Simple addition and deletion of items from the vertices set is accomplished using these techniques.
 
 2. Adding an edge.
 
@@ -126,7 +125,7 @@ void addEdge(String tag1, String tag2) {
 }
 ```
 
-A new edge will be generated by this function, as well as updating the nearby vertices with the information from the new edge.
+A new edge will be generated by this function and update the nearby vertices with the information from the new edge.
 
 3. Using `removeEdge()` method.
 
@@ -142,6 +141,8 @@ void removeEdge(String tag1, String tag2) {
         eX2.remove(x1);
 }
 ```
+
+This method removes an edge.
 
 4. Creating a graph.
 
@@ -233,7 +234,7 @@ public class DepthFirstSearch {
 
 **Output**
 
-```java
+```bash
 This is the Depth-first traversal of the graph: 
 2 4 6 8 10 14 12
 ```
@@ -302,12 +303,14 @@ public class BreadthFirstSearch {
 
 **Output:**
 
-```java
+```bash
 This is the Breadth-first traversal sequence: 
 4 10 8 12 2 6 14
 ```
 
 ### Conclusion
-In this tutorial, we learned about the fundamental principles as a data structure, its implementation in java, and the numerous operations performed on a graph. We also learned the many kinds of graphs, their implementation, and traversal over the graph.
+In this tutorial, we learned about the fundamental principles of a data structure, its application in java, and the numerous operations performed on a graph. We also learned the many kinds of graphs, their implementation, and traversal over the graph.
 
-Happy learning!
+Happy coding!
+---
+Peer Review Contributions by: [Briana Nzivu](/engineering-education/authors/briana-nzivu/)
