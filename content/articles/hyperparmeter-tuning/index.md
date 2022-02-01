@@ -19,7 +19,7 @@ Now, let's get to the models in hand :)
 #### Decision Tree 
 Decision Trees are powerful machine learning algorithms that are capable of performing both regression and classification tasks. To understand a decision tree, let's look at an inverted tree-like structure (Like that of a family tree). We start at the root of the tree that contains our training data. At the root, we split our dataset into distinguished leaf nodes following certain conditions like using an if/else loop.
 
-![Image depicting a hierarchical series of decisions](/engineering-education/Hyperparameter-Tuning/tree_one.png)
+![Image depicting a hierarchical series of decisions](/engineering-education/hyperparameter-tuning/tree-one.png)
 
 These splitting criteria are carefully calculated using a splitting technique. We'll understand a few of them in the **_working of a decision tree_** further. 
 
@@ -63,7 +63,7 @@ _This is how information gain and entropy are used to improve the quality of spl
 - With the first split, all the data according to a specific condition falls towards either the left or the right of the root node.
 - Now, for each side of training data under the root node, all possible splits are calculated again and the split with the lowest Gini Index is chosen. The process repeats for both left and right sides till we reach the terminating nodes representing a class in the target column.
 
-![tree.gif](/engineering-education/Hyperparameter-Tuning/tree.gif)
+![tree.gif](/engineering-education/hyperparameter-tuning/tree.gif)
 
 🌳 **_This way , our decision tree grows iteratively, layer by layer._**
 
@@ -86,7 +86,7 @@ plt.figure(figsize =(80,20))
 plot_tree(model2, feature_names=train_inputs.columns, max_depth=2, filled=True);
 ```
 
-![visualize_output.png](/engineering-education/Hyperparameter-Tuning/visualize_output.png)
+![visualize_output.png](/engineering-education/hyperparameter-tuning/visualize-output.png)
 
 You can create the tree to whatsoever depth using the `max_depth` attribute, I've only shown two layers in the output above. Let's break the blocks in the above visualization:
 
@@ -104,7 +104,7 @@ from sklearn.metrics import accuracy_score, confusion_matrix
 
 
 Following are the results with basic implementation of Decision Trees:
-![Overfitting_1.png](/engineering-education/Hyperparameter-Tuning/Overfitting_1.png)
+![overfitting_1.png](/engineering-education/hyperparameter-tuning/overfitting-1.png)
 
 It is axiomatic in the results above that our model is not performing well on data it has not been trained upon, but giving incredulous results on training data. This simple phenomenon is called **Overfitting**. This is happening because our model has memorized all the training examples.
 
@@ -118,7 +118,7 @@ This process of calibrating our model by finding the right hyperparameters to ge
 ###### a. Max Depth: 
 This argument represents the maximum depth of a tree. If not specified, the tree is expanded until the last leaf nodes contain a single value. Hence by reducing this meter, we can preclude the tree from learning all training samples thereby, preventing over-fitting.
 
-![max_depth_1.png](/engineering-education/Hyperparameter-Tuning/max_depth_1.png)
+![max_depth_1.png](/engineering-education/hyperparameter-tuning/max-depth-1.png)
 
 - We can check the current maximum depth of our decision tree with `model2.tree_.max_depth`. 
 - It's axiomatic that even though the training accuracy has reduced, the validation accuracy has improved.
@@ -135,25 +135,25 @@ for max_d in range(1,21):
 
 
 By carefully looking at the results we can find out the max_depth value where the validation accuracy starts decreasing and the training accuracy starts mounting inordinately.
-![Max_depth_result1](/engineering-education/Hyperparameter-Tuning/max_depth_result1.png)
+![Max_depth_result1](/engineering-education/hyperparameter-tuning/max-depth-result1.png)
 
 As you can see above, in my case the pertinent max_depth=8.
 
 To get a better understanding I've even plotted the resulting accuracies. You can see the curve where the model incipients overfitting.
 
-![accuracy_graph.png](/engineering-education/Hyperparameter-Tuning/accuracy_graph.png)
+![accuracy_graph.png](/engineering-education/hyperparameter-tuning/accuracy-graph.png)
 
 ###### b. Max Leaf Nodes:  
 As the name suggests, this hyperparameter caps the number of leaf nodes in a decision tree. This will allow the branches of a tree to have varying depths, another way to control the model's complexity.
-![max_leaf_nodes.jpg](/engineering-education/Hyperparameter-Tuning/max_leaf_nodes.jpg)
+![max_leaf_nodes.jpg](/engineering-education/hyperparameter-tuning/max-leaf-nodes.jpg)
 
 - **How?:** In this case, the model will not find the best split layer by layer. Instead, it will look at all the possible splits (left and right) and only split the node with the lowest Gini Value, irrespective of the level. 
 - To change the number of maximum leaf nodes, we use: `max_leaf_nodes`
 
-![max_leaf_node_implementation1](/engineering-education/Hyperparameter-Tuning/max_leaf_node1.png)
+![max_leaf_node_implementation1](/engineering-education/hyperparameter-tuning/max-leaf-node1.png)
 
 Here is the result of my model's training and validation accuracy at different values of `max_leaf_node` hyperparameter.
-![max_leaf_node_result](/engineering-education/Hyperparameter-Tuning/max_leaf_node.png)
+![max_leaf_node_result](/engineering-education/hyperparameter-tuning/max-leaf-node.png)
 
 									--🌴--🌳--🌲--
 
@@ -164,7 +164,7 @@ While tuning the hyper-parameters of a single decision tree is giving us some im
 Random forests are supervised machine learning models that train multiple decision trees and integrate the results by averaging them. Each decision tree makes various kinds of errors and upon averaging their results, many of these errors will be counter balanced. _This general practice of combining the results of many models is called **"Emsembling technique"**._ Or very famously said **"Wisdom of the crowd"**. 
 
 
-![random_forest.png](/engineering-education/Hyperparameter-Tuning/random_forest.png)
+![random_forest.png](/engineering-education/hyperparameter-tuning/random-forest.png)
 
 ```
 from sklearn.ensemble import RandomForestClassifier
@@ -180,7 +180,7 @@ We can access individual decision trees using `model.estimators_`. And just like
 ##### Hyper-parameter Tuning in Random Forests
 To compare results, I've created a base model without any hyperparameters.
 
-![random_base_model.png](/engineering-education/Hyperparameter-Tuning/random_base_model.png)
+![random_base_model.png](/engineering-education/hyperparameter-tuning/random-base-model.png)
 
 Arguments like `max_leaf_nodes` and `max_depth` that we did above, are directly passed on to each decision tree. This controls the depth and maximum nodes of each tree respectively. Now let's explore some other hyperparameters:
 
@@ -195,7 +195,7 @@ model.fit(train_inputs, train_targets)
 🌟 Typically; n_estimators should be kept minimal. For example: In my model, the validation accuracy at 100 and 200 estimators is approximately the same. So in such cases, I shall stick to the lower number of estimators.
 
 
-![n_estimator.png](/engineering-education/Hyperparameter-Tuning/n_estimator.png)
+![n_estimator.png](/engineering-education/hyperparameter-tuning/n-estimator.png)
 
 ###### d. max_features:
 Instead of taking all the features into account for a spilt, we can circumscribe that only a few columns be selected. Meaning,
@@ -204,7 +204,7 @@ Each time a split is to occur, the model will only consider a fraction of column
 
 Hence, `max_features` will help to make each tree in the forest different. The default value for this is "auto" which is equivalent to the square root of the no. of features. Other values are: "log2", "sqrt" and None. I got approximately the same results for all cases in my model. 
 
-![max_features.png](/engineering-education/Hyperparameter-Tuning/max_features.png)
+![max_features.png](/engineering-education/hyperparameter-tuning/max-features.png)
 
 ###### e. min_samples_split: 
 Minimum samples split decides or holds the value for the minimum number of samples necessary to split a nonterminal node. By default, the decision tree tries to split every node that has two or more rows of data inside it. This can again cause memorization of training data, resulting in a lesser generalized model.
@@ -212,7 +212,7 @@ Minimum samples split decides or holds the value for the minimum number of sampl
 Larger values can restrict a model from learning relations that could be extremely specific to a particular row. But again, much-exceeded values for the same will lead to under-fitting the model. Therefore, depending upon the model requirements and chosen data, you can tune the values for `min_samples_split`.
 
 
-![min_samples_split.png](/engineering-education/Hyperparameter-Tuning/min_samples_split.png)
+![min_samples_split.png](/engineering-education/hyperparameter-tuning/min-samples-split.png)
 
 **Note:** The `test_params` function used above has the following code. It's used to test different hyper parameters and returns the training and validation accuracy. 
 ```
