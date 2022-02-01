@@ -3,11 +3,11 @@ layout: engineering-education
 status: publish
 published: true
 url: /do-we-need-a-database-when-we-have-apache-kafka/
-title: Do We Need a Database When We Have Apache Kafka
+title: Do We Need a Database When We Have Apache Kafka?
 description: In this tutorial, we will get an overview of Apache Kafka and databases. We will compare the two in terms of handling transactions, data processing, and storage. 
-author: 
+author: jayden-kiprotich
 date: 2022-01-29T00:00:00-10:22
-topics: [Databases]
+topics: [Data Science]
 excerpt_separator: <!--more-->
 images:
 
@@ -18,7 +18,7 @@ Apache Kafka is more than just a better message broker. The framework implementa
 <!--more-->
 It is possible to implement the architecture that supports reading and writing in Apache Kafka. But doing so would mean dealing with the challenges experienced in database management systems. You are likely to undertake the process of writing a full-fledged database management system in your application code. You will deal with the challenges of write skew, dirty reads, and the symptoms of a hastily created database.
 
-This post gives an overview of Apache Kafka and a database, and compare how the two handle transactions, data querying and processing, and storage. It also explains ACID Guarantees in both Kafka and databases.
+This article provides an overview of Apache Kafka and databases and compares how the two handle transactions, data querying, processing, and storage. It also explains the ACID guarantees in both Kafka and databases.
 
 ### An overview of Apache Kafka and databases
 [Apache Kafka](https://kafka.apache.org/) is not just a publisher/subscriber messaging system that sends data from one point to another. It is an event streaming platform. Associating databases with messaging solutions such as Kafka is a little bit skewed. But Kafka has database-like features that make it primed to replace databases.
@@ -41,7 +41,7 @@ Kafka and databases differ in querying and processing. Kafka has local and remot
 
 Kafka utilizes interactive queries to facilitate stream processing. It allows you to directly query the state of your stream processing app without having to wait for linkage between state and external databases. Thus, this feature guarantees the convergence of processing with storage, making app usage easy.
 
-The concept of interactive queries first began with the databases. But the implementation of the feature is unsuitable to modern apps. These queries require you to write an entire code in SQL and then deploy it into the server. The process is complex and has a high likelihood of errors. Kafka bypassed this challenge when designing stream processing. It simplified processing by keeping the overall architecture simple.
+The concept of interactive queries first began with the databases. However, the implementation of the feature is unsuitable for modern apps. These queries require you to write an entire code in SQL and then deploy it into the server. The process is complex and has a high likelihood of errors. Kafka bypassed this challenge when designing stream processing. It simplified processing by keeping the overall architecture simple.
 
 A database uses query processing to extract data. But unlike Apache Kafka, interactive querying here is minimal if not absent currently. That is one of the reasons that Kafka remains a more modernized version of databases. Query processing in a database takes four major steps. It begins with parsing and translation. When a user enters a query, it undergoes translation to a high-level database language such as Structured Query Language (SQL).
 
@@ -62,19 +62,19 @@ Kafka achieves isolation by building transaction logic into a stream processor t
 Even so, it is notable that Kafka faces the potential challenge of a failure that can break ACID compliance. For instance, in the case of an under-replicated partition accompanied by an unforeseen power shortage, data loss would be inevitable. Such a transaction will lose its integrity.
 
 ### Conclusion
-Databases imply an organized collection of data that is electronically accessible on a computer system. Data collection remains significant to businesses. Most databases rely on conventional approaches to grant data access, which does not befit current big data firms like social media platforms.
+A database is an organized collection of data that is electronically accessible on a computer system. Data collection remains significant to businesses. Most databases rely on conventional approaches to grant data access, which does not befit current big data firms like social media platforms.
 
-Kafka has been the solution to the challenges that came with using databases. It is a streaming service platform that offers database-like functions. Modern firms are now favoring this system because it is scalable and fault-tolerant. It is more of a hybrid database system.
+Kafka has been the solution to the challenges that came with using databases. It is a streaming service platform that offers database-like functions. Modern firms are now favoring this system because of its superior capabilities. It is more of a hybrid database system.
 
-In addition, Apache Kafka can do the following: 
-- Offer similar capabilities as a databases, such as:
+To summarize, Apache Kafka can do the following: 
+- Offers similar capabilities as databases, such as:
 	- Data storage and retrieval.
     - ACID guarantees.
     - Partitioning
-- store data for a long time in a durable manner.
+- Stores data for a long time in a durable manner.
 - It is more fault-tolerant than databases.
 - Unlike databases, it is possible to scale Kafka’s storage independent of memory and CPU. Thus, it is a long-term storage solution due to its higher flexibility than databases.
-- Facilitate interactive querying. Databases use conventional querying that requires writing an entire code in SQL before deploying it to the server. The process is hectic and increases the chances of errors.
+- Facilitates interactive querying. Databases use conventional querying that requires writing an entire code in SQL before deploying it to the server. This process is hectic and increases the chances of errors.
 
 ### Further reading 
 - [Introduction to Kafka](/engineering-education/introduction-to-kafka/)
