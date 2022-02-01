@@ -24,18 +24,21 @@ An ORM helps us avoid the hectic work of recreating our databases every time to 
 
 The concept of ORM is widely supported by many languages such as Rust, JavaScript, and Python. Rust, for example, uses the [Diesel](https://docs.rs/diesel/1.0.0/diesel/) framework to help you write schema queries within your Rust application.
 
-In his article, we will learn about ORM and how to use it in Rust together with  Diesel. Then, we will create a Rust API server that uses Diesel to connect to a PostgreSQL database. Finally, we will generate and retrieve the application's data stored in the database.
+In this article, we will learn about ORM and how to use it in Rust together with  Diesel. Then, we will create a Rust API server that uses Diesel to connect to a PostgreSQL database. Finally, we will generate and retrieve the application's data stored in the database.
 
 This article will help the reader understand how to use an ORM with the Rust Diseal framework in an application.
 
 ### Tables of content
+
+- [Introduction](#introduction)
+- [Tables of content](#tables-of-content)
 - [Prerequisites](#prerequisites)
 - [Setting up a Rust application](#setting-up-a-rust-application)
 - [Setting up the GraphQL schema](#setting-up-the-graphql-schema)
 - [Setting up the GraphQL server](#setting-up-the-graphql-server)
 - [Setting up Diesel](#setting-up-diesel)
-- [Handling queries](#handling-queries)
-- [Handling mutation](#handling-mutation)
+- [Handling Queries](#handling-queries)
+- [Handling Mutation](#handling-mutation)
 - [Conclusion](#conclusion)
 
 ### Prerequisites
