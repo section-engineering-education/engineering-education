@@ -48,7 +48,7 @@ The model's purpose is to use quantum computation to retrieve information concea
 
 ### Possible application of quantum computing in AI
 
-The workable goal for quantum AI developers is to build quantum algorithms that outperform.
+The workable goal for quantum AI developers is to build quantum algorithms that out perform classical computer algorithms.
 
 1. Learning quantum algorithms. Quantum algorithms for quantum extensions of classical learning models are being developed. It may speed up or enhance the deep learning training process somehow. By delivering the ideal solution set of weights for artificial neural networks, quantum technology can contribute to classical machine learning.
 
