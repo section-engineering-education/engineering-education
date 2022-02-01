@@ -120,15 +120,66 @@ Output:
 Using the command above, we have successfully renamed our columns. That's the last of the preprocessing step. We can now go ahead and create the time series model.
 
 ### Training the time series model
+We begin by creating an instance `p` of the Prophet class.
 
+```python
+p = Prophet(interval_width=0.92, daily_seasonality=True)
+```
+We use the `interval_width` argument to estimate the uncertainty interval from the number of samples used. We've set ours to `0.92`. The argument `daily_seasonality=True` will fit daily seasonality for a sub-daily time series. It will default to weely and yearly seasonalities if you don't set this parameter. You can play around with these values to check how it affects the results obtained after training.
 
+We can now train our model.
+
+```python
+model = p.fit(dataframe)
+```
+After running the command above, the model will be trained of the data.
 
 ### Making predictions and evaluating performance
+Let's go ahead and make predictions.
 
+```python
+future = p.make_future_dataframe(periods=200, freq='D')
+future.tail()
+```
+Output:
+```bash
+ 	ds
+1877 	2018-02-27
+1878 	2018-02-28
+1879 	2018-03-01
+1880 	2018-03-02
+1881 	2018-03-03
+```
+From the results, we can see that the model has made future predictions `200` days away from the last data value using a daily frequency. If you want to train for longer periods, you can change the value in the `periods=200` argument.
+
+To predict, we use the `predict()` method and pass in the future dataframe as shown:
+
+```python
+forecast_prediction = p.predict(future)
+forecast_prediction.tail()
+```
+From the results generated, the model has generated a lot of sales information in addition to the predicted `ds` and `yhat` column. The most important column is the `yhat` column as it is what represents your sales forecast. 
+
+We can visualize these predictions using plotly.
+
+```python
+plot1 = p.plot(forecast_prediction)
+```
+![Forecast](/engineering-education/sales-forecasting-with-prophet/forecast.png)
+
+If you take a keen look at the plot, you'll notice that the predicted sales trend mimics the actual data's trend. We could take this plotting even a step further and plot the individual components that make up the above plot.
+
+```python
+plot2 = p.plot_components(forecast_prediction)
+```
+![Plot components](/engineering-education/sales-forecasting-with-prophet/plot-components.png)
+
+This plot could give you a lot more information about the sales data. For example, more sales are made between Friday and Monday. Also, they seem to make a lot of sales between November and February. During the rest of the year, sales are average.
 
 Please find the complete code for this tutorial [here](https://colab.research.google.com/drive/1kmb4zguNvYZ4LqGQZAUhYgS_ZZNz-sMg?usp=sharing).
 
 ### Wrapping up
+That's sales forecasting using the Prophet model in a nutshell. This tutorial is meant to introduce you to time series forecasting using Prophet. This should only introduce you to how to use the model in a project and is in no way to be used for production purposes. To use the model for production, you'll need to do more research on it. You can also take a look at the [Neural Prophet](https://neuralprophet.com/html/index.html) library which is an extension of Prophet as it adds neural networks to the mix.
 
 ### Further reading
 - [Prophet](https://research.facebook.com/blog/2017/02/prophet-forecasting-at-scale/)
