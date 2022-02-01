@@ -225,7 +225,7 @@ while (true){
 
 The output will be:
 
-![The digital clock](/engineering-education/digital-clock-in-c++/digital-clock.png)
+![The digital clock](/engineering-education/digital-clock-in-cpp/digital-clock.png)
 
 > Note that the displayed time will differ depending on your location.
 

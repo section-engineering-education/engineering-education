@@ -7,7 +7,7 @@ title: Breaking Down the Production System in AI
 description: In this article, we will learn about the production system in artificial intelligence. We will look at the features, components, classification and the real-life applications of production systems. 
 author: grace-karimi
 date: 2021-11-18T00:00:00-02:01
-topics: [Artificial Intelligence]
+topics: [Machine Learning]
 excerpt_separator: <!--more-->
 images:
 
