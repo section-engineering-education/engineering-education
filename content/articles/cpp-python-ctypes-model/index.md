@@ -18,15 +18,15 @@ We will start by briefly looking at what Logistic regression entails. Secondly, 
 ### Logistic regression
 This is a classification algorithm used in supervised learning. Its main aim is to show the probability that an instance belongs to a certain class under target. It does so by calculating the sum of the features multiplied by their weights plus the bias term. To do the prediction, the sum is passed into a sigmoid function as shown in the equation below.
 
-![sigmoid image](sigmoid.png)
+![sigmoid image](engineering-education/cpp-python-ctypes-model/sigmoid.png)
 
 A cost function(**log loss**) is used such that the model outputs a very high probability for a positive instance and a very lower one for a negative instance. The cost for the whole training set is the average of all the instances' costs. The cost of an instance is done by getting the prediction error i.e the prediction value - the actual value.
 
-![log loss image](log-loss.png)
+![log loss image](engineering-education/cpp-python-ctypes-model/log-loss.png)
 
 We can optimize the cost function using any optimization algorithm such as gradient descent since it is convex. To do that, we have to get the derivative of the log loss. This is done using partial derivatives to achieve this:
 
-![derived log loss image](derived.png)
+![derived log loss image](engineering-education/cpp-python-ctypes-model/derived.png)
 
 If you want to look at how this function is derived, have a look at [this article](https://medium.com/analytics-vidhya/derivative-of-log-loss-function-for-logistic-regression-9b832f025c2d).
 
