@@ -6,7 +6,7 @@ url: /comparing-sql-delight-to-room-database-in-android/
 title: Comparing SQL Delight to Room Database in Android
 description: This tutorial explains how SQL Delight compares to Room Database in Android.
 author: joyce-wanjiru
-date: 2022-01-28T00:00:00-20:22
+date: 2022-02-01T00:00:00-01:20
 topics: [Languages]
 excerpt_separator: <!--more-->
 images:
@@ -14,15 +14,12 @@ images:
   - url: /engineering-education/comparing-sql-delight-to-room-database-in-android/hero.jpg
     alt: Comparing SQL Delight to Room Database in Android
 ---
-There are several options when it comes to choosing a mobile database framework. We have the Room persistence library which is an abstraction of the SQLite database, Realm database which works with MongoDB, and we also have SQL Delight.
+There are several options when it comes to choosing a mobile database framework. We have the Room persistence library, Realm database, and SQL Delight.
 <!--more-->
-
 ### Table of contents
 - [Prerequisites](#prerequisites)
 - [Goals](#goals)
 - [What is SQL delight database?](#what-is-sql-delight-database)
-- [Pros of using SQL delight](#pros-of-using-sql-delight)
-- [Cons of using SQL delight](#cons-of-using-sql-delight)
 - [Create an Android Project](#step-1---create-an-android-project)
 - [Setting Up the Project](#step-2---setting-up-the-project)
 - [Defining the database](#step-3---defining-the-database)
@@ -33,42 +30,44 @@ There are several options when it comes to choosing a mobile database framework.
 - [Working on the activities](#step-8---working-on-the-activities)
 - [Demo](#demo)
 - [Conclusion](#conclusion)
-- [References](#references)
+- [Further reading](#further-reading)
 
 ### Prerequisites
 To follow along, you should have:
 - [Android Studio](https://developer.android.com/studio/index.html) installed on your machine.
 - Good knowledge of creating and running Android applications.
 - Basic knowledge of the [Kotlin](https://kotlinlang.org/) programming language and View binding.
-- Basics of dependency injection with [Dagger Hilt](https://developer.android.com/training/dependency-injection/hilt-android)
-- Basic understanding of ViewModels and Coroutines
+- A basic understanding of dependency injection with [Dagger Hilt](https://developer.android.com/training/dependency-injection/hilt-android)
+- Some basic understanding of ViewModels and Coroutines
 
 ### Goals
 By the end of this tutorial, the reader will:
 - Get to know what SQL Delight is.
 - Understand the pros and cons of SQL Delight.
-- Be able to use SQL Delight in Android. 
+- Use SQL Delight in Android projects. 
 
 ### What is SQL delight database?
-SQL delight is a database framework just like the Room library. It is cross-platform in nature as it can work on different platforms. It generates type-safe classes from the given SQL statements. It checks on the database schema, migrations, and SQL statements at compile-time.
+SQL delight is a database framework just like the Room library. It is cross-platform in nature and generates type-safe classes from the given SQL statements. 
 
-### Pros of using SQL delight
-- It generates type-safe code and classes from the different SQL statements given.
+It checks on the database schema, migrations, and SQL statements at compile-time.
+
+#### Pros of using SQL delight
+- It generates type-safe code and classes from the different SQL statements.
 - It is compatible with Kotlin Multi-platform (KMM) meaning we can use it in both IOS and Android.
 - SQL Delight is better when dealing with multi-table databases.
 
-### Cons of using SQL delight
+#### Cons of using SQL delight
 - We have to write more SQL code compared to the Room database library.
 
 ### Getting started with SQL Delight
 In this tutorial, we will be creating a simple Android note app with the SQL Delight library.
 
 ### Step 1 - Create an Android project
-Launch Android Studio and create an empty Android project.
+Launch Android Studio and create an empty Android project, as shown below:
 
 ![project](/engineering-education/comparing-sql-delight-to-room-database-in-android/new_proj.png)
 
-### Step 2 - Setting Up the project
+### Step 2 - Setting up the project
 In this step, we will do all the necessary setup for our project.
 
 Add the following plugins in your app-level `build.gradle` file:
@@ -79,7 +78,7 @@ id 'kotlin-kapt'
 id 'dagger.hilt.android.plugin'
 ```
 
-In your app-level `build.gradle` file, add the following dependencies:
+Still in your app-level `build.gradle` file, add the following dependencies:
 
 ```gradle
 // SQL Delight
@@ -106,14 +105,16 @@ classpath 'com.squareup.sqldelight:gradle-plugin:1.5.2'
 classpath "com.google.dagger:hilt-android-gradle-plugin:2.38.1"
 ```
 
-We then need to install the SQLDelight plugin in our Android Studio - it generates typesafe Kotlin APIs from SQL, and provides language features for SQL inside the IDE.
+We then need to install the SQLDelight plugin in our Android Studio. It generates typesafe Kotlin APIs from SQL, and provides language features for SQL inside the IDE.
 
-Open your Android Studio >> Settings >> Plugins, then click on the marketplace and search for the plugin.
+Open your *Android Studio >> Settings >> Plugins*, then click on the *marketplace* and search for the plugin:
 
 ![plugin](/engineering-education/comparing-sql-delight-to-room-database-in-android/sql_delight_plugin.png)
 
 ### Step 3 - Defining the database
-Also in our app-level `build.gradle`, we need to add some settings that tells SQL Delight where it should generate our database and how it should be named. Inside the `sqldelight` block, we define the name of our database and pass the app's package name that specifies where the database belongs.
+In our app-level `build.gradle`, we need to add some settings that notify SQL Delight where it should generate our database and how it should be named. 
+
+Inside the `sqldelight` block, we define the name of our database and pass the app's package name that specifies where the database belongs:
 
 ```gradle
 dependencies {
@@ -128,11 +129,13 @@ sqldelight {
 ```
 
 ### Step 4 - Defining the SQL queries
-First, switch from Android view to Project view. Since the files that define our SQL queries need to be defined in the main source set, we will define the SQL delight file in the `main` package.
+First, switch from *Android* view to *Project* view. Since the files that define our SQL queries need to be defined in the main source set, we will add the SQL delight file in the `main` package.
 
-Right-click the `main` package and create a directory that starts with `sqldelight` and define two other directories i.e `sqldelight/demo/notesdb`.
+Right-click the `main` package and create a directory named `sqldelight` and then add two other directories i.e `sqldelight/demo/notesdb`.
 
-Right-click the `notesdb` directory and using the SQLDelight plugin, create an SQL Delight table. Enter the name of our table `notesEntity` and select `table` from the options.
+Right-click the `notesdb` directory and using the `SQLDelight` plugin, create an SQL Delight table. 
+
+Enter the name of our table `notesEntity` and select `table` from the options:
 
 ![new_table](/engineering-education/comparing-sql-delight-to-room-database-in-android/new_delight_file.png)
 
@@ -154,11 +157,11 @@ CREATE TABLE  notesEntity(
 );
 ```
 
-SQL Delight will use this code and generate a type-safe kotlin code for us. 
+SQL Delight will use this code to generate a type-safe kotlin code for us. 
 
-> For adding more queries or tables, you can define a new SQL file or just add them below this one that we have defined.
+> To include more queries or tables, you can define a new SQL file or just add them below the existing one.
 
-Below our table, we will define the CRUD operations that our app will use i.e insert, query/read, update and delete.
+Below our table, we will define the CRUD operations that our app will use i.e *insert, read, update and delete*.
 
 We first write the function name followed by the SQL statement that should be executed when the function is called.
 
@@ -172,10 +175,12 @@ insertNote: INSERT OR REPLACE INTO notesEntity VALUES (?,?,?);
 deletePersonById: DELETE FROM notesEntity WHERE id = :id;
 ```
 
-> After all this, rebuild the project so that SQL Delight can generate the corresponding classes.
+We should now rebuild the project so that SQL Delight can generate the corresponding classes.
 
 ### Step 5 - Defining the data source
-First of all, switch from project view to Android view. In your root package define a new package named `data`. In the new directory, define and `Interface` and name it `NoteDataSource`. This interface will contain functions that will help us interact with the database.
+First of all, switch from *project* view to *Android* view. In your root package define a new package named `data`. 
+
+In the new directory, define an `Interface` and name it `NoteDataSource`. This interface will contain functions that will help us interact with the database.
 
 ```kotlin
 interface NoteDataSource {
@@ -189,7 +194,7 @@ interface NoteDataSource {
 }
 ```
 
-> The first function, `getAllNotes`, returns a `NotesEntity` which is a class generated by the SQLDelight behind the scenes.
+The first function, `getAllNotes`, returns a `NotesEntity` which is a class generated by the *SQLDelight* behind the scenes.
 
 Still, inside the `data` package, we need to create an implementation of the `NoteDataSource`. Create a new Kotlin class `NoteDataSourceImpl` that extends the `NoteDataSource`. 
 
@@ -212,6 +217,7 @@ private val queries = db.notesEntityQueries
 We then add the implementations of the following functions inside the class:
 
 #### Inserting a note
+
 ```kotlin
 override suspend fun insertNote(title: String, description: String, id: Long?) {
     return withContext(Dispatchers.IO) {
@@ -221,6 +227,7 @@ override suspend fun insertNote(title: String, description: String, id: Long?) {
 ```
 
 #### Getting all notes
+
 ```kotlin
 override fun getAllNotes(): Flow<List<NotesEntity>> {
     return queries.getAllNotes().asFlow().mapToList()
@@ -230,6 +237,7 @@ override fun getAllNotes(): Flow<List<NotesEntity>> {
 Since we are returning a `Flow` of a list of notes, there is a function in SQLDelight called `asFlow()` that we can append at the end of our query. Still, there will be an error, we simply append `mapToList()` to fix it.
 
 #### Getting a note by id
+
 ```kotlin
 override suspend fun getNoteById(id: Long): NotesEntity? {
     return withContext(Dispatchers.IO) {
@@ -241,6 +249,7 @@ override suspend fun getNoteById(id: Long): NotesEntity? {
 At the end of the query we append the `executeAsOneOrNull()` because our query may return a null if the note is not found in the database.
 
 #### Deleting a note
+
 ```kotlin
 override suspend fun deleteNoteById(id: Long) {
     return withContext(Dispatchers.IO) {
@@ -249,7 +258,7 @@ override suspend fun deleteNoteById(id: Long) {
 }
 ```
 
-Here, we pass the `id` of the note that we want to delete.
+Here, we pass the `id` of the note that we wish to delete.
 
 ### Step 6 - Defining a viewmodel
 In this step, we define a `ViewModel` that will interact with the data source that we have just created.
@@ -288,7 +297,7 @@ class NotesViewModel @Inject constructor(private val noteDataSource: NoteDataSou
 ### Step 7 - Setting up dagger hilt
 Here we will set up dagger hilt so that we can inject our data source and the database.
 
-First, in your root package, create a class named `NotesApp` and add hilt as follows:
+First, in your `root` package, create a class named `NotesApp` and add `hilt` as follows:
 
 ```kotlin
 @HiltAndroidApp
@@ -308,8 +317,10 @@ object AppModule {
 ```
 
 We then provide the following dependencies:
+
 1. **Database Driver**
-SQLDelight needs the `AndroidSqliteDriver` so that it can create and use the database. Inside the `AndroidSqliteDriver`, we pass the schema (generated), context, and the name of our database.
+
+SQLDelight needs the `AndroidSqliteDriver` so that it can create and use the database. Inside the `AndroidSqliteDriver`, we pass the schema (generated), context, and the name of our database, as demonstrated below:
 
 ```kotlin
 @Provides
@@ -324,7 +335,8 @@ fun provideSqlDriver(app: Application): SqlDriver {
 ```
 
 2. **Data source**
-Using the driver above, we can construct the data source:
+
+Using the driver above, we can construct the data source, as follows:
 
 ```kotlin
 @Provides
@@ -337,14 +349,14 @@ fun providesNotesDataSource(driver: SqlDriver): NoteDataSource {
 ```
 
 ### Step 8 - Working on the activities
-Finally, we will define our user activities, one for adding the notes and another one for displaying a list of notes.
+Finally, we will define our user activities, one for adding notes and another one for displaying a list of notes.
 
 #### Adding notes
-You can create a similar layout that has two `EditText`: one for note title and another one for note description and button to save the note.
+You can create a similar layout that has two `EditText`: one for *note title* and another one for *note description* and *button* to save the note.
 
 ![add_note](/engineering-education/comparing-sql-delight-to-room-database-in-android/add_note.png)
 
-In the corresponding activity, add the following code to save a note when the save button is clicked:
+In the corresponding activity, add the following code to save a note when the *save* button is clicked:
 
 ```kotlin
 binding.buttonSave.setOnClickListener {
@@ -391,22 +403,22 @@ viewModel.deleteNote(note.id)
 ```
 
 #### Updating a note
-If you want to update a note, from the function `getNoteById(id: Long)` in the ViewModel, you can update a given note by passing its id.
+If you want to update a note from the function `getNoteById(id: Long)` in the ViewModel, you pass in its id.
 
 ### Demo
 
 ![demo](/engineering-education/comparing-sql-delight-to-room-database-in-android/demo.png)
 
 ### Conclusion
-In this tutorial, we have looked at what SQL Delight database is, how it compares to the Room database, and its pros and cons. We have then implemented the SQL Delight database in Android by creating a simple note app. Keep learning about databases in Android.
+In this tutorial, we have discussed what SQL Delight database is, how it compares to the Room database, and its pros and cons. 
+
+We have then implemented the SQL Delight database in Android by creating a simple note app. 
 
 To get the full code implementation, check out this repository [SQL Delight Demo](https://github.com/sheecodes/SQLDelightDemo).
 
-### References 
+### Further reading
 - [SQL Delight Documentation](https://cashapp.github.io/sqldelight/)
 - [Room Database Documentation](https://developer.android.com/training/data-storage/room)
-
-Happy learning!
 
 ---
 Peer Review Contributions by: [Eric Gacoki](/engineering-education/authors/eric-gacoki/)
