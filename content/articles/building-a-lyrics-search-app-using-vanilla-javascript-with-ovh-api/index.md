@@ -4,9 +4,9 @@ status: publish
 published: true
 url: /building-a-lyrics-search-app-using-vanilla-javascript-with-ovh-api/
 title: Building a Lyrics Search App using Vanilla JavaScript with OVH API
-description: This tutorial will help the reader understand how to build a search app using Vanilla JavaScript and OVH API.
+description: This tutorial will help the reader to understand how to build a search app using Vanilla JavaScript and OVH API.
 author: bobate-segun
-date: 2022-01-29T00:00:00-01:00
+date: 2022-02-01T00:00:00-02:00
 topics: [Languages]
 excerpt_separator: <!--more-->
 images:
@@ -30,10 +30,10 @@ We will create the lyrics web application using *HTML5, CSS3, Vanilla JavaScript
 - [Styling and centering the lyrics](#styling-and-centering-the-lyrics)
 - [Conclusion](#conclusion)
 
-### Pre-requisites
+### Prerequisites
 To follow along with this tutorial, you need:
 - A code editor such as Visual Studio Code.
-- Basic knowledge of* HTML5, CSS*, and *JavaScript*.
+- Basic knowledge of *HTML5, CSS, and JavaScript*.
 - A computer with an internet connection.
 
 ### Structuring the lyrics search app with HTML5
@@ -204,7 +204,7 @@ You can read more about the OVH API [here](https://api.lyrics.ovh/v1/artist/titl
 
 An example of the URL in action looks like this: `https://api.lyrics.ovh/v1/Drake/Toosie Slide`.
 
-In the example above, `Drake` stands as the artist's name, and `Toosie Slide` represents the title of the song.
+In the example above, `Drake` stands as the artist's name, and `Toosie Slide` is the song title.
 
 ### Adding functionality with JavaScript
 In your `lyrics.js` file, declare variables and use the DOM selectors to connect with elements in the `lyrics.html` file, using the code snippet below:
@@ -382,7 +382,7 @@ async function getLyrics(artist, songTitle) {
 
 If a particular lyric is not available, it will show `undefined` in the `div`. It also alerts you that the lyrics are not available on the API.
 
-Next, you can decide to implement Regular Expression (REGEX) syntax in the variable lyrics using the `replace` method by adding `.replace(/(\r\n|\r|\n)/g ,'<br>');` to the lyrics variable somewhat like this:
+Next, you can decide to implement Regular Expression (REGEX) syntax in the variable lyrics using the `replace` method by adding `.replace(/(\r\n|\r|\n)/g ,'<br>');` to the lyrics variable:
 
 ```js
 const lyrics = data.lyrics.replace(/(\r\n|\r|\n)/g ,'<br>');
@@ -394,11 +394,11 @@ REGEX usage helps to look through our data (lyrics) for:
 - Carriage returned alone.
 - Carriage returned with a new line. 
 
-If any of the instances defined above are found, REGEX `replace()` method replaces it with the `<br>` (break line). 
+If any of the instances defined above are found, the `replace()` method replaces it with the `<br>` (break line). 
 
 The `/g` is a regular expression flag, it means globally. The entire data (lyrics) should be searched through (for all matches).
 
-The lyrics are displayed in the paragraph tag when the span tag is clicked.
+The lyrics will be displayed in the paragraph tag when the span tag is clicked.
 
 ### Styling and centering the lyrics
 Navigate to your CSS file and add the code below to style and center the lyrics:
@@ -533,7 +533,7 @@ In this tutorial, we learned how to build a lyrics search app using *HTML5, CSS3
 
 You can, therefore, use this knowledge to craft other quality and productive applications.
 
-You can find the full source code on this [GitHub repository](https://github.com/shegz101/Lyrics-Web-App) on GitHub.
+You can find the full source code on this [GitHub repository](https://github.com/shegz101/Lyrics-Web-App).
 
 ---
 Peer Review Contributions by: [Srishilesh P S](/engineering-education/authors/srishilesh-p-s/)
