@@ -160,7 +160,7 @@ fig1 = m.plot(forecast)
 ```
 **Output:**
 
-![Predicted cases](/engineering-education/predicting-covid-using-neuralprophet/df2.png)
+![Predicted cases](/predicting-covid-using-neuralprophet/df2.png)
 
 *Image of plot by author*
 
