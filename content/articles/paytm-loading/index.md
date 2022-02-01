@@ -25,7 +25,7 @@ This article requires the reader to have an understanding of the following tools
 
 - Django web development framework
 - Good understanding of HTML and CSS
-- A code editor, most preferably visual studio code
+- A code editor, most preferably Visual Studio Code
 
 ### Website preloader
 A preloader is a static picture, animation, or a Graphics Interchange Format(GIF) usually displayed on the screen while the specific webpage content is loading. Usually, preloaders are essential in showing the user that the content is still loading instead of a blank screen. 
@@ -33,21 +33,23 @@ A preloader is a static picture, animation, or a Graphics Interchange Format(GIF
 According to research by [Google on the benefits of increasing the speed of a website](https://www.marketingdive.com/news/google-53-of-mobile-users-abandon-sites-that-take-over-3-seconds-to-load/426070/), they discovered that about 53% of website users would abandon a site if it takes more than 3 seconds to load. This problem worsens when the page is blank. Therefore, the use of preloaders can mitigate this problem.
 
 ### Benefits of a preloader
+
+
 While to most people, website preloaders are just fancy animations that make sites incredible and user-friendly, these tools are compelling in reducing the revenue caused by unreliable networks and developing a meaningful relationship with the content consumers of your website.
 
-Additionally, the user experience brought about by these preloaders increases the engagement of the users and the website and maintains the site's professional image. The good look and feel of the site in combination with the loader will most likely raise the customers' waiting threshold until the page content is fully loaded.
+Additionally, the user experience brought about by these preloaders increases the engagement of the users and the website and maintains the website's professional image. The good look and feel of the site in combination with the loader will most likely raise the customers' waiting threshold until the page content is fully loaded.
 
-Lastly, preloaders can be used to portray the image of the company. It can be used as a branding asset when designed to suit the company in color, shape, animation, and letters. It makes the company or organization be recognized instantly.
+Lastly, preloaders can be used to portray the image of the company. It can be used as a branding asset when designed to suit the company in color, shape, animation, and letters. It makes the company or organization instantly recognizable.
 
 ### Transition from the loading spinner 
-Most websites have used loading spinner as the base webpage preloader in the recent past. However, according to a post from [Suleiman Ali](https://uxdesign.cc/stop-using-a-loading-spinner-theres-something-better-d186194f771e?gi=4d79464ee5c3) in 2017, loading spinners have become dull and reduced the application's user interface experiences. In addition, Ali argues that spinners are stagnant and lack the creativity required to develop websites over time.
+Most websites have used loading spinners as the base webpage preloader in the recent past. However, according to a post by [Suleiman Ali](https://uxdesign.cc/stop-using-a-loading-spinner-theres-something-better-d186194f771e?gi=4d79464ee5c3) in 2017, loading spinners have become dull and have reduced the application's user interface experience. In addition, Ali argues that spinners are stagnant and lack the creativity required to develop websites over time.
 
-Due to the reasons mentioned above, most developers opt for custom-made loaders for their websites. These loaders are easy to customize to match the website's theme color and look. Paytm is an example of a company that uses a custom preloader. This article explores preloaders and builds one that emulates Paytm's from scratch.
+For the reasons mentioned above, most developers opt for custom-made loaders for their websites. These loaders are easy to customize to match the website's theme color and look. Paytm is an example of a company that uses a custom preloader. This article explores preloaders and builds one that emulates Paytm's from scratch.
 
 ### Article overview
 We will use the Django framework to create a single-page application that displays the loader when accessed. The loader will be purely built using CSS. The animation will depict Paytm's loading animation but may differ in color.
 
-In building the loader from scratch, we must understand the various CSS concepts and properties. Understanding and appreciating these are the foundation to creating modern and most intuitive CSS preloaders and animations. 
+In building the loader from scratch, we must understand the various CSS concepts and properties. Understanding and appreciating these are the foundations for creating modern and intuitive CSS preloaders and animations.
 
 ### Setting up the application
 Navigate to your desired folder, then create a virtual environment using the command below:
@@ -125,7 +127,7 @@ INSTALLED_APPS = [
 ]
 ```
 ### The templates folder
-Every Django application needs a `templates` folder in the application's root folder where all the view files for the application are stored. The views are the components displayed on the webpage for the website users. 
+Every Django application needs a `templates` folder in the application's root folder where all the view files for the application are stored. The views are the components displayed on the webpage for the website's users. 
 
 The next step is to set up the accessed URL to display a specific template in the template folder. In the `urls.py` file found in the `paytm-loading` folder, add the following snippets to allow the index page to be viewed as the application's entry point.
 
@@ -156,11 +158,11 @@ Static files in Django are the files that are primarily used to enhance the user
 
 Given Django's flexibility around working with these files, most developers prefer Django when working with static files.
 
-When working with static files in Django, it is crucial always to place the folder at the root of the application so that all the sub-applications of Django can access the folder. 
+When working with static files in Django, it is crucial to place the folder at the root of the application so that all the sub-applications of Django can access the folder. 
 
 For instance, we will create a new folder in the application's root folder and name it `static` in our application.
 
-Then in the `settings.py` file, add the snippets below:
+Then, in the `settings.py` file, add the snippets below:
 
 ```python
 # Static files (CSS, JavaScript, Images)
@@ -172,7 +174,7 @@ MEDIA_URL = '/images/'
 STATICFILES_DIRS = (os.path.join(BASE_DIR, 'static'),)
 ```
 
-The snippets above show that the static files are stored in the application's main URL but the root folder so that any sub-application can access its sub-folders and files.
+The snippets above show that the static files are stored in the application's main URL in the root folder so that any sub-application can access its sub-folders and files.
 
 At this point, we are almost done with the setup. However, there is one last thing we need to finalize. We need to load the static folder into our templates so that each HTML file can access the files in the `static` folder.
 
@@ -185,11 +187,12 @@ Since we are only working with a single template file, we will add it to the `in
 
 ### The main template file
 Now that we have set up every component, we can start building the loader in the following way:
-We need a container in the `index.html` file to contain all other components.
+We need a container in the `index.html` file to contain all the other components.
+
 We have another `div` element that wraps up the individual "bouncing balls," as shown in Paytm's loading animations.
 We have several `span` elements that form the "balls". The span elements will have the most styling as they form the base of the user interface concept discussed in this article.
 
-The final `index.html` file should look like below. You can create an entirely new file with your configurations or copy and paste the following code snippet into your `index.html` file.
+The final `index.html` file should look like below. You can either create an entirely new file with your configurations or copy and paste the following code snippet into your `index.html` file.
 
 ```html
 {% load static %}
@@ -229,7 +232,7 @@ When we specify a CSS style inside a keyframe rule, the animation will slowly ch
 
 
 #### CSS Transformations
-CSS transformation allows you to change the property of an element along a specified dimension. Generally, CSS transformation modifies the linear coordinate of an element in the website window.
+A CSS transformation allows you to change the property of an element along a specified dimension. Generally, CSS transformation modifies the linear coordinate of an element in the website window.
 
 The significant parameters for transformation are rotation, translation, skewing, and scaling. However, the implementation of this tutorial will only focus on translation.
 
@@ -237,7 +240,9 @@ The significant parameters for transformation are rotation, translation, skewing
 Consider a list of similar sub-elements in a given element for instance a `<li></li>` elements. We might need to style an individual list element differently. We use the `:nth-child()` property for such a case. It takes a single style and applies it to all elements in a given list that match the specified pattern.
 
 ### Working on the styles
-At this point, you should have understood how different components are applied in this tutorial. First, we need to create a css file and add out CSS snippets to style the webpage appropriately. Then, in the static folder created at the application's root folder, create a new folder called `CSS` then another file in the CSS folder called `main.css`. Here is where all the styling will be scripted.
+At this point, you should have understood how different components are applied in this tutorial. First, we need to create a CSS file and add our CSS snippets to style the webpage appropriately. 
+
+Then, in the static folder created at the application's root folder, create a new folder called `CSS` then another file in the CSS folder called `main.css`. Here is where all the styling will be scripted.
 
 First, we specify the color of the body element. I prefer using section.io theme color. So, in the `main.css` file, add the snippets below to add the color:
 
@@ -319,9 +324,10 @@ span:nth-child(5){
 }
 ```
 
-Your final loader should be up and running at the end of the styling and following the steps. Notice that this loading animation can be modified and used in the actual webpage before the main content is fetched from the database server. You can find the entire code snippet from [here](https://github.com/phinaomondi/loader) and try the application in [this](https://loader-app.herokuapp.com/) link.
+Your final loader should be up and running at the end of the styling and following the steps. Notice that this loading animation can be modified and used on the actual webpage before the main content is fetched from the database server. You can find the entire code snippet from [here](https://github.com/phinaomondi/loader) and try the application at [this](https://loader-app.herokuapp.com/) link.
+
 
 ### Conclusion
-This tutorial was a comprehensive headstart of working with CSS into an actual website. We begin by understanding the benefits of using loading animations and the level of risk s that comes when a website has no suitable animation. Then, we discussed how to build a loading animation effect from scratch with the Paytm one in mind. 
+This tutorial was a comprehensive headstart for working with CSS on an actual website. We begin by understanding the benefits of using loading animations and the level of risk that comes when a website has no suitable animation. Then, we discussed how to build a loading animation effect from scratch, keeping the Paytm one in mind.
 
-We looked at various aspects of CSS used to model animation and varied the different parameters required to work effectively. Finally, we worked out all these concepts by implementing the animation in a Django application, one of the most used web development frameworks.
+We looked at various aspects of CSS used to model animation and varied the different parameters required to work effectively. Finally, we worked out all these concepts by implementing the animation in a Django application, one of the most popular web development frameworks.
