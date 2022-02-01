@@ -3,10 +3,10 @@ layout: engineering-education
 status: publish
 published: true
 url: /android-kotlin-mpandroidcharts-sqlite/
-title: Creating a data visualization dashboard using MPAndroid Chart library
-description: This article, will cover creating an admin dashboard that allows the user to view his/her data using different kind of charts using Kotlin and an open-source chart library, MPAndroidChart.
+title: Creating a Data Visualization Dashboard using MPAndroid Chart Library
+description: This article will cover creating an admin dashboard that allows users to view their data using different kinds of charts using Kotlin and an open-source chart library, MPAndroidChart.
 author: sandra-moringa
-date: 2022-01-17T00:00:00-01:10
+date: 2022-01-31T00:00:00-11:10
 topics: [Languages]
 excerpt_separator: <!--more-->
 images:
@@ -37,7 +37,7 @@ At the end of this article, the reader should be well-versed in:
 - Populating the charts using data loaded from the SQLite database.
 
 #### Step one: Setting up the library
-After creating a new app, modify your gradle files as outlined below:
+After creating a new app, modify your Gradle files as outlined below:
 
 1. Add the following dependency in your app-level `build.gradle` file:
 
@@ -45,7 +45,7 @@ After creating a new app, modify your gradle files as outlined below:
 implementation 'com.github.PhilJay:MPAndroidChart:v3.1.0'
 ```
 
-2. Finally, in the project-level `build.gradle` file under the `repositories` section add this line of code:
+2. Finally, in the project-level `build.gradle` file under the `repositories` section, add this line of code:
 
 ```gradle
 maven { url 'https://jitpack.io' }
@@ -58,7 +58,7 @@ maven { url 'https://jitpack.io' }
 ```
 
 #### Step two: Creating a model class
-For organized and eased data manipulation, we will create a model class called `AnimalModel`. Create a new kotlin file and give it the same class name. Add the following lines of code:
+We will create a' AnimalModel' model class for organized and eased data manipulation. First, please create a new kotlin file and give it the same class name. Then, add the following lines of code:
 
 ```kotlin
 class AnimalModel (var animalId: Int, var animalName:String, var totNumber:Int, var avgAge: Int, var avgGrowth: Int)
@@ -67,7 +67,7 @@ class AnimalModel (var animalId: Int, var animalName:String, var totNumber:Int, 
 It models an animal's id, name, total number, average age, and average growth rate in the database.
 
 #### Step three: Creating a database handler class
-To handle the database logic, we will create a class called `DatabaseHandler` that extends the `SQLiteOpenHelper` class. The extended class provides us with methods that enable the manipulation of the SQLite database. The database will not be a full CRUD(Create, Read, Update, and Delete) but only CR(Create and read). We only need to create the records and then fetch them to populate the charts.
+To handle the database logic, we will create a' DatabaseHandler' class that extends the `SQLiteOpenHelper` class. The extended class provides us with methods that enable the manipulation of the SQLite database. The database will not be a full CRUD(Create, Read, Update, and Delete) but only CR(Create and read). We only need to create the records and then fetch them to populate the charts.
 
 This handler class will have a [companion object](https://blog.mindorks.com/companion-object-in-kotlin) with constant variables for storing the database, table, and field names.
 
@@ -102,7 +102,7 @@ The `onCreate()` method will create our table and its fields using the standard 
     }
 ```
 
-When you want to update the database safely, you will use the `onUpgrade()` method. We will not be using it in our article, however. The parameters passed in are the database name, old version number, and new version number.
+You will use the `onUpgrade()` method when you want to update the database safely. We will not be using it in our article, however. The parameters passed in are the database name, old version number, and new version number.
 
 ```kotlin
     //function to be invoked when upgrading your database
@@ -114,7 +114,7 @@ When you want to update the database safely, you will use the `onUpgrade()` meth
 
 ```
 
-To insert records, we will use a function called `addAnimalDetails()`. First, we pass in our animal model class as a parameter, open the database in a writable mode to make changes, and then insert the values gotten from the model class using a [ContentValues](https://developer.android.com/reference/android/content/ContentValues) object.
+We will use a function called `addAnimalDetails()` to insert records. First, we pass in our animal model class as a parameter, open the database in a writable mode to make changes, and then insert the values from the model class using a [ContentValues](https://developer.android.com/reference/android/content/ContentValues) object.
 
 After the insertion, we close the database and then return a status code to show if the operation was successful or not.
 
@@ -186,7 +186,7 @@ Next, we execute the query and iterate through the cursor while assigning the va
     }
 ```
 
-This is the full code for the class.
+This is the complete code for the class.
 
 ```kotlin
 import android.annotation.SuppressLint
@@ -289,7 +289,7 @@ class DatabaseHandler(context: Context): SQLiteOpenHelper(context,DB_NAME,null,D
 ```
 
 #### Step four: Adding data to the database and populating the charts
-In this step we will add records to our database and then populate the charts using fetched records. We will achieve this by calling the database handler class methods we just created.
+This step will add records to our database and then populate the charts using fetched records. We will achieve this by calling the database handler class methods we just created.
 
 ##### Saving the records
 We do this by using `saveAnimals()` method and passing in the appropriate fields using the model class.
@@ -307,7 +307,7 @@ We do this by using `saveAnimals()` method and passing in the appropriate fields
 ```
 
 ##### Retrieving the records
-We call the `retreiveAnimals()` method of `DatabaseHandler` class to read the records and store them in arrays. Lastly, we call the methods for populating the charts by passing in the arrays.
+We call the `retreiveAnimals()` method of the `DatabaseHandler` class to read the records and store them in arrays. Lastly, we call the methods for populating the charts by passing in the arrays.
 
 ```kotlin
     fun retrieveRecordsAndPopulateCharts() {
@@ -343,7 +343,7 @@ We call the `retreiveAnimals()` method of `DatabaseHandler` class to read the re
 ##### Populating the charts
 The MPAndroid chart library is so easy to use. Let us see how the charts are populated with data. Let us begin with the pie chart. 
 
-The values and labels of the pie chart are obtained from the arrays passed. The array will store the pie slices entries. `OurPieEntry` is created, after which it has added the values and labels using a loop which will be done in the `MainActivity` class.
+The values and labels of the pie chart are obtained from the arrays passed. The array will store the pie slices entries. First, `OurPieEntry` is created, after which it has added the values and labels using a loop which will be done in the `MainActivity` class.
 
 ```kotlin
         //an array to store the pie slices entry
@@ -390,7 +390,7 @@ We then set the slices' divider width, add colors to the data set, and set the o
         ourPieChart.data = data
 ```
 
-The next segment is about manipulating the chart's appearance. There are many methods and properties provided by the chart that you can explore. We cannot exhaust all of them here.
+The next segment is about manipulating the chart's appearance. Again, the chart provides many methods and properties that you can explore. Unfortunately, we cannot exhaust all of them here.
 
 > Note: I have added inline comments for a guide. The last line is crucial because it refreshes the chart.
 
@@ -456,7 +456,7 @@ Here is the complete code for the `populatePieChart()` method.
     }
 ```
 
-For the bar and line charts, the logic is the same. We pass in the values, set them using their entry arrays, set their properties, and then display them. The only difference is in what is passed in by the arrays. We passed the labels and values for the pie chart, but we only passed the values and the positions for the other two. 
+For the bar and line charts, the logic is the same. We pass in the values, set them using their entry arrays, set their properties, and then display them. The only difference is in what is passed in by the arrays. For example, we passed the labels and values for the pie chart, but we only passed the values and the positions for the other two. 
 
 Here is a snippet for the Bar Chart entry.
 
@@ -545,7 +545,7 @@ Here is the code for the two methods:
     }
 ```
 
-The full `MainActivity` code:
+The complete `MainActivity` code:
 
 ```kotlin
 import android.os.Bundle
@@ -739,7 +739,7 @@ class MainActivity : AppCompatActivity() {
 ```
 
 #### Step five: Creating the layout XML file
-I will not go deep into explaining this. We have a root vertical layout that has a horizontal linear layout. We have two linear layouts with equal weights in the root layout.
+I will not go deep into explaining this. We have a root vertical layout that has a horizontal linear layout. So we have two linear layouts with equal weights in the root layout.
 
 The first inner layout has a horizontal orientation with two linear layouts of equal weights, which enables us to split the screen into two equal parts where we will have the pie and bar charts placed(The pie and bar charts are rendered in cards). The line chart is placed in the second layout. 
 
@@ -836,5 +836,6 @@ The GitHub code for this project is found [here](https://github.com/munubi254/sq
 We looked at setting up the MPAndroid chart for our project, creating the model & database handler class, populating the charts, and creating the UI. I hope you got some insights to use for your next project.
 
 Happy coding!
+
 ---
 Peer Review Contributions by: [Briana Nzivu](/engineering-education/authors/briana-nzivu/)
