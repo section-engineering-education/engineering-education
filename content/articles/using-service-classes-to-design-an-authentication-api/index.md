@@ -1,39 +1,56 @@
-`Service classes` are an excellent method to keep third-party code implementation details out of your software when calling an API method from numerous locations in your code.
+---
+layout: engineering-education
+status: publish
+published: true
+url: /using-service-classes-to-design-an-authentication-api/
+title: Using service classes to design an authentication API in Flutter
+description: This tutorial will cover using service classes to design an authentication API in Flutter.
+author: vincent-kimanzi
+date: 2022-02-01T00:00:00-14:20
+topics: [Languages]
+excerpt_separator: <!--more-->
+images:
 
-A side consequence of service classes is that it produces a domain language specific to your app through the APIs of your services and so, your view models can be read. 
+  - url: /engineering-education/using-service-classes-to-design-an-authentication-api/hero.jpg
+    alt: Using service classes to design an authentication API in Flutter Hero Image
+---
+Service classes are an excellent method to keep third-party code implementation details out of your software when calling an API method from numerous locations in your code.
+<!--more-->
+A side consequence of service classes is that it produces a domain language specific to your app through your services' APIs, so your view models can be read. Service classes will assist in learning how to encapsulate and segregate third-party libraries and APIs. We will use firebase authentication for this tutorial.
 
-Service classes will assist in learning how to encapsulate and segregate third-party libraries and APIs. An example of firebase authentication will be used in this tutorial.
 ### Prerequisites
-1. Install [Flutter](https://flutter.dev/).
-2. Have some basic flutter programming concepts.
+Before we get started, the reader needs to have:
+- [Flutter](https://flutter.dev/) installed on your machine.
+- Have some basic knowledge and understanding of Flutter programming language.
 
 ### Table of contents
 - [When to create service classes](#when-to-create-service-classes)
-- [Common scenarios for which you might develop a service](#common-scenarios-for-which-you-might-develop-a-service)
+- [Typical scenarios for which you might develop a service](#common-scenarios-for-which-you-might-develop-a-service)
 - [Authentication state](#authentication-state)
 - [Creating service classes](#creating-service-classes)
 - [Purpose of service classes](#purpose-of-service-classes)
 - [Conclusion](#conclusion)
 - [References](#references)
-### When to create service classes
-You can contact a service class when you construct an API for it in your application. It will provide API capabilities to the rest of the app including:
 
+### When to create service classes
+You can create a service class when you construct an API for it in your application. It will provide API capabilities to the rest of the app, including:
 - Removing third-party packages from the codebase.
 - Exchanging functionalities between different view models.
-### Common scenarios for which you might develop a service
-- when the local storage can be read and written to.
+
+### Typical scenarios for which you might develop a service
+- When the local storage can be read and written on.
 - When making use of a web API.
 - When creating a user account.
 - When making some complex calculations.
 - When wrapping firebase or another third-party package with a wrapper.
+
 ### Authentication state
-Whether you're building a new flutter app from scratch or integrating an already existing one, you can use `FirebaseAuth`. You'll just need to know whether or not your user is signed in.
+Whether building a new flutter app from scratch or integrating an already existing one, you can use `FirebaseAuth`. You will first need to know whether or not your user is signed in.
 
-Authentication state can be subscribed via a stream using `FirebaseAuth`. This stream generates an event each time the authentication status of a user changes, and it continues to do so indefinitely.
+Authentication state can be subscribed via a stream using `FirebaseAuth`. This stream generates an event each time the authentication status of a user changes, and it continues to do so indefinitely. There are no implementation details to be revealed to the end-user or application using a service class as an API wrapper.
 
-There are no implementation details to be revealed to the end user or application by using a service class as an API wrapper.
+Firebase authentication is set up with the code below. Retrieving a firebase authentication object is as simple as calling `ProviderFirebaseAuth>(context)`.
 
-Firebase authentication is set up with the code below. Retrieving a firebase authentication object is as simple as calling `ProviderFirebaseAuth>(context)`. 
 ```dart
 import 'package:firebase_auth/firebase_auth.dart';
 FirebaseAuth auth = FirebaseAuth.instance;
@@ -51,20 +68,19 @@ class Login extends StatelessWidget {
   }
 }
 ```
-> Even while many programs do not require users to sign in explicitly, it is critical to recognize them individually.
 
-The ability to exchange preferences, grant access, compile data, and require local authentication are some of the most common security features.
-Security can be increased by:
+> Note: While many programs do not require users to sign in explicitly, it is critical to recognize them individually.
 
-1. Verifying whether a request comes from a user who has already signed in to your application.
-2. Verifying whether that user is using the firebase database, the realtime database, or an external API.
+The ability to exchange preferences, grant access, compile data and require local authentication are some of the most common security features. Security can be increased by:
+- Verifying whether a request comes from a user who has already signed in to your application.
+- Verifying whether that user uses the firebase database, the realtime database, or an external API.I.
 
 Although we are using the firebase authentication API in our code, we are still accessing it directly, and this can lead to several issues:
 
 1. How will you deal with modifications in future versions of firebase authentication that cause problems?
 2. Consider the possibility that in the future we may opt to use an other auth service instead of firebase. What kind of adjustments are we going to make?
 
-Our program's authentication calls to firebase will have to be upgraded to solve the above issues and in addition, we can expect to add more content to our application as the scope of our project grows.
+Our program's authentication calls to firebase will be upgraded to solve the above issues. In addition, we can expect to add more content to our application as the scope of our project grows.
 
 ### Creating service classes
 You can construct a generic authentication system using the firebase API. Service classes are nothing more than a clone of underlying classes. 
