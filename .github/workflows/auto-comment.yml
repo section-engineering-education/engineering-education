@@ -14,12 +14,7 @@ jobs:
             Your topic form has been entered into our queue and should be reviewed (for approval) as soon as a content moderator is finished reviewing the ones in the queue before it.
 
           pullRequestOpened: |
-            👋 @{{ author }},
-
-            Thanks for submitting this PR.
-
-            Your PR has entered our reviewing queue. Please wait until a peer-reviewer pings you to get started with the review.
-
-            Meanwhile, we suggest you to go through approved PRs/published articles to see if you have missed out anything. This would help us avoid any potential closure of the PR.
-
-            Thanks.
+            TGood afternoon @{{ author }} and thank you for submitting your pull request for review and publishing.
+            Your pull request has entered our queue and will be reviewed by our team of peer reviewers as soon as possible. 🚀
+            All articles are reviewed in the order in which they were received.
+            Thank you.
