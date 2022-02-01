@@ -2,21 +2,21 @@
 layout: engineering-education
 status: publish
 published: true
-url: /how-to-classify-ecg-signal-using-continuous-wavelet-transform-and-alexnet/
-title: How to Classify ECG Signals Using Continuous Wavelet Transform and AlexNet
-description: This tutorial will look at how one can use AlexNet to classify ECG signals via transfer learning in Matlab.
+url: /how-to-denoise-images-using-curvelet-transform-in-matlab/
+title: How to Denoise images using Curvelet Transform in Matlab
+description: This tutorial will explore Curvelet analysis and how one can use it to denoise images in Matlab
 author: paul-juma
-date: 2022-01-31T00:00:00-00:36
+date: 2022-01-31T00:00:00-11:26
 topics: [Machine Learning]
 excerpt_separator: <!--more-->
 images:
-
-  - url: /engineering-education/how-to-classify-ecg-signal-using-continuous-wavelet-transform-and-alexnet/hero.jpg
-    alt: How to Classify ECG Signals Using Continuous Wavelet Transform and AlexNet Hero Image
+  - url: /engineering-education/how-to-denoise-images-using-curvelet-transform-in-matlab/hero.jpg
+    alt: How to Denoise Images using Curvelet Transform in Matlab Hero Image
 ---
 Curvelet transform is a powerful tool that can capture details along the curvature in images. It is a useful tool for feature extraction in pattern recognition. In addition, it is efficient in image denoising. Denoising of images is the removal of the noise signals in an image.
+<!--more-->
 
-This tutorial will look into the Curvelet transform analysis and denoising of images using Matlab. Moreover, in curvelet analysis, there is a curvelet toolbox that we will also take a look at.
+This tutorial will look into the Curvelet transform analysis and denoising of images using Matlab. Moreover, in curvelet analysis, there is a curvelet toolbox that we will also discuss.
 
 ### Table of content
 
@@ -35,7 +35,6 @@ This tutorial will look into the Curvelet transform analysis and denoising of im
 [Conclusion](#conclusion)
 
 ### Prerequisite
-
 - Have [Matlab](https://www.mathworks.com/products/matlab.html) installed in your computer.
 - A clear understanding of [Matlab](/engineering-education/getting-started-with-matlab/) basics.
 
@@ -46,7 +45,7 @@ They are good in capturing coefficients along the horizontal, vertical, and diag
 
 The complex transform is one way to improve directional selectivity. However, it is difficult to design complex wavelets with perfect reconstruction properties and filter characteristics.
 
-In 1999 Ridgelet transform, which is an anisotropic geometric wavelet transform, was proposed by Candes and Donoho. In 2000, they introduced 1st and 2nd generation curvelet transform, called Ridgelet transform-based Curvelet transform. 
+In 1999 Ridgelet transform, which is an anisotropic geometric wavelet transform, was proposed by Candes and Donoho. In 2000, they introduced 1st and 2nd generation curvelet transform, called Ridgelet transform-based Curvelet transform.
 
 The 2nd generation curvelet transform is an efficient tool in many different applications. These applications include image processing, seismic data exploration, fluid mechanics, and solving partial differential equations. It is also efficient in representing curve-like edges.
 
@@ -80,7 +79,7 @@ curvelet transform = IFFT{FFT(curvelet) x FFT(image)}
 ```
 
 ### Curvelet Toolbox
-Mathworks Matlab has no function to implement curvelet transform. However, Curvelet transforms in Matlab can be computed using a third-party toolbox created by curvelet.org. The software is available on their website. 
+Mathworks Matlab has no function to implement curvelet transform. However, Curvelet transforms in Matlab can be computed using a third-party toolbox created by curvelet.org. The software is available on their website.
 
 ![curvelab.org](/engineering-education/how-to-denoise-images-using-curvelet-transform-in-matlab/image-two.png)
 
@@ -304,3 +303,5 @@ I hope you find this tutorial helpful.
 
 Happy coding!
 
+---
+Peer Review Contributions by: [Monica Masae](/engineering-education/authors/monica-masae/)
