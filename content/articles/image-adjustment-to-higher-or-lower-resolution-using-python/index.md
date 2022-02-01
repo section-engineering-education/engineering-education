@@ -4,9 +4,9 @@ status: publish
 published: true
 url: /image-adjustment-to-higher-or-lower-resolution-using-python/
 title: How to Adjust Image to Higher or Lower Resolution using Python
-description: In this tutorial, we will discuss how to adjust images to higher or lower resolutions using basic tools such as OpenCV.
+description: This tutorial will discuss how to adjust images to higher or lower resolutions using basic tools such as OpenCV.
 author: jacob-muganda
-date: 2022-01-25T00:00:00-10:30
+date: 2022-02-01T00:00:00-10:30
 topics: [Languages]
 excerpt_separator: <!--more-->
 images:
@@ -16,10 +16,9 @@ images:
 ---
 Images with constant resolution can at times not bring out the desired information and accurate details. To overcome this challenge there is a need for the adjustment of resolutions in an image. We will be changing the images to a higher and lower resolution with the help of `LapSRN`.
 <!--more-->
-In this tutorial, we will need to use some basic tools such as OpenCV, used in computer vision-based tasks, which is the main function required in our tutorial for image processing.
+In this tutorial, we will need to use some basic tools such as OpenCV, used in computer vision-based tasks, which is the main function required for image processing.
 
 ### Table of contents
-- [Introduction](#introduction)
 - [Prerequisites](#prerequisites)
 - [How to install and use Pillow and NumPy](#introduction-in-how-to-instal-and-use-pillow-and-numpy)
 - [Having the colors fixed](#having-the-colors-fixed)
@@ -42,8 +41,7 @@ To implement this, in your terminal, run the command below if you don't have it 
  pip install OpenCV-Python
 ```
 
-After openCV has been installed, it allows for importing modules such as cv2.
-The second installation to be done is the `NumPy`.
+After openCV has been installed, it allows for importing modules such as cv2. The second installation to be done is the `NumPy`.
 
 ```bash
  pip install numpy
@@ -92,16 +90,16 @@ pict.show()
 
 Original image:
 
-![original](/engineering-education/image-adjustment-to-higher-or-lower-resolution-using-python/original.png)
+![Original](/engineering-education/image-adjustment-to-higher-or-lower-resolution-using-python/original.png)
 
 Fixed image with blue pixels omitted:
 
-![fixed](/engineering-education/image-adjustment-to-higher-or-lower-resolution-using-python/fixed.png)
+![Fixed](/engineering-education/image-adjustment-to-higher-or-lower-resolution-using-python/fixed.png)
 
 ### Implementing contrast enhancement
 Contrast deals with the intensity, saturation, and brightness level in an image. We will be adjusting the contrast with the help of the `ImageFilter` function provided by the `PIL` module.
 
-With the above in place we are fit to dive into the coding section using an image of your choice:
+With the above in place, we are fit to dive into the coding section using an image of your choice:
 
 ```py
 from PIL import Image, ImageFilter
@@ -111,7 +109,7 @@ assert isinstance(enc_img, object)
 enc_img.show()
 ```
 
-Next, we will run the code for image enhancement as shown below.
+Next, we will run the code for image enhancement as shown below:
 
 ```py
  from PIL import Image, ImageEnhancement
@@ -137,7 +135,7 @@ Let us get started!
 ### Scaling down the images to lower resolution
 We will scale down the images to lower resolutions in the Gaussian Pyramid model. To perform this task we will be using the image below:
 
-![sean](/engineering-education/image-adjustment-to-higher-or-lower-resolution-using-python/sean.jpg)
+![Sean](/engineering-education/image-adjustment-to-higher-or-lower-resolution-using-python/sean.jpg)
 
 
 ```py
@@ -157,7 +155,7 @@ cv2.destroyAllWindows()
 
 Your output should be like the image shown below.
 
-![low](/engineering-education/image-adjustment-to-higher-or-lower-resolution-using-python/low.jpg)
+![Low](/engineering-education/image-adjustment-to-higher-or-lower-resolution-using-python/low.png)
 
 ### Instance 2
 ### Scaling up the images to higher resolutions.
@@ -190,11 +188,12 @@ cv2.destroyAllWindows()
 
 Your output should be like the image shown below.
 
-![high](/engineering-education/image-adjustment-to-higher-or-lower-resolution-using-python/high.jpg)
+![High](/engineering-education/image-adjustment-to-higher-or-lower-resolution-using-python/high.png)
 
 ### Instance 3
-To construct the Laplacian Pyramid Super-Resolution Network. We will take the top-level layer of the Gaussian Pyramid, which is the last image generated using the loop function. We then create a list for the Laplacian pyramid. Lastly, we create the extended version of the upper level of the Gaussian Pyramid.
-To understand it better a code snippet will do.
+To construct the Laplacian pyramid Super-Resolution Network. We will take the top-level layer of the Gaussian Pyramid, which is the last image generated using the loop function. We then create a list for the Laplacian pyramid. 
+
+Lastly, we create the extended version of the upper level of the Gaussian pyramid. To understand it better, we will use the code snippet below:
 
 ```py
 import cv2
@@ -207,10 +206,10 @@ for j in range(2):
 
 layer = gp[2]
 cv2.imshow("Gausian Upper level", layer)
-lp = [layer]#Introduce and create a list for the Laplacian Pyramid.
+lp = [layer]#Introduce and create a list for the Laplacian pyramid.
 
 for j in range(2, 0, -1):
-    Gausian_extended = cv2.pyrUp(gp[j])#Creating the Laplacian Pyramid.
+    Gausian_extended = cv2.pyrUp(gp[j])#Creating the Laplacian pyramid.
 laplacian = cv2.subtract(gp[j-1], Gausian_extended)
 cv2.imshow(str(j), laplacian)
 
@@ -221,9 +220,9 @@ cv2.destroyAllWindows()
 
 Confirm with the below displayed:
 
-![lapsn](/engineering-education/image-adjustment-to-higher-or-lower-resolution-using-python/lapsn.png)
+![Lapsn](/engineering-education/image-adjustment-to-higher-or-lower-resolution-using-python/lapsn.png)
 
-The Laplacian pyramid and the Gaussian Pyramid are applied in the blending and reconstruction of the images.
+The Laplacian pyramid and the Gaussian pyramid are applied in the blending and reconstruction of the images.
 
 ### Application fields for adjusting image resolution
 - **Astronomy**- This is achieved by focusing on tiny information of images to higher resolutions that bring out clearer vision.
@@ -232,11 +231,11 @@ The Laplacian pyramid and the Gaussian Pyramid are applied in the blending and r
 
 ### Conclusion
 Covering all the details required in this tutorial, that is:
-  - Knowing how to fix colors.
-  - Implementation of the contrast enhancement.
-  - Scaling the images to lower or higher resolution.
-  - Derivation of the Laplacian pyramid.
-  - Application fields for adjusting image resolution.
+1. Knowing how to fix colors.
+2. Implementation of the contrast enhancement.
+3. Scaling the images to lower or higher resolution.
+4. Derivation of the Laplacian pyramid.
+5. Application fields for adjusting image resolution.
 
 You are now equipped to handle matters concerning this tutorial. Being able to accurately work with image resolution adjustment and produce maximum results now, wish you all the best.
 
