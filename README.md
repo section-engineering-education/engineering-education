@@ -1,5 +1,6 @@
 # engineering-education
-A community-generated pool of educational content which is useful for engineers of every level. Published content can be found at [https://www.section.io/engineering-education/](https://www.section.io/engineering-education/).
+A community-generated pool of educational content which is useful for engineers of every level. Published content can be found at [https://www.section.io/engineering-education/](https://www.section.io/engineering-education/). 
+
 
 [ENROLL HERE](https://docs.google.com/forms/d/e/1FAIpQLSfTbj3kqvEJEb5RLjqJurfbHa8ckzQx0CjRzaizblue9ZOK5A/viewform?usp=sf_link)
 
