@@ -1,15 +1,26 @@
-### Angular 12 Material Autocomplete Example with Server Response
+---
+layout: engineering-education
+status: publish
+published: true
+url: /angular-12-autocomplete/
+title: Angular 12 Material Autocomplete With Remote Server Data.
+description: This tutorial will help you learn how to make Autocomplete using Angular Material 12 UI elements.
+author: ochieng-lydia
+date: 2022-02-2T00:00:00-11:40
+topics: [Languages]
+excerpt_separator: <!--more-->
+images:
 
-### Introduction
+  - url: /engineering-education/angular-12-autocomplete/hero.png
+    alt: Angular Autocomplete Hero
+---
 The autocomplete is a service that displays the recommended options to the end-user when the end-user(s) either feeds in some keywords on the input field or puts the cursor on the input field.
-
+<!--more-->
 Normally, implementing the autocomplete service is relatively straightforward. The only thing that needs to be done is implement the `getItems` method. Then, when we retrieve these items from a remote server, we use the select box to auto display items.
 
 This tutorial will help you learn how to make Autocomplete using Angular Material 12 UI elements. 
 
 ### Table of content
-- [Angular 12 Material Autocomplete Example with Server Response](#angular-12-material-autocomplete-example-with-server-response)
-- [Introduction](#introduction)
 - [Table of content](#table-of-content)
 - [Prerequisites](#prerequisites)
 - [Objectives](#objectives)
@@ -302,3 +313,6 @@ In this tutorial, we have discussed how we can manipulate the power of Angular m
 We have seen how we can use the mat-autocomplete feature to auto-suggest the articles from a remote server as the user types.
 
 Happy coding!
+
+---
+Peer Review Contributions by: [Miller Juma](/engineering-education/content/authors/miller-juma/)
