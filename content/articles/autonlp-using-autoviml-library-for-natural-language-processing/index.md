@@ -16,9 +16,9 @@ images:
 ---
 Natural language processing enables machines to understand the text and spoken words. This process is usually hectic and has many text preprocessing activities such as, [stemming](https://en.wikipedia.org/wiki/Stemming), [lemmatization](https://en.wikipedia.org/wiki/Lemmatisation), [removing stopwords](https://en.wikipedia.org/wiki/Stop_word), [tokenization](https://www.geeksforgeeks.org/nlp-how-tokenizing-text-sentence-words-works/) and [vectorization.](https://neptune.ai/blog/vectorization-techniques-in-nlp-guide)
 <!--more-->
-AutoVIML is used to simplify natural language processing. AutoVIML is an AutoNLP library used to automate the process of natural learning processing using a machine learning [pipeline](https://valohai.com/machine-learning-pipeline/). 
+AutoVIML is used to simplify natural language processing. AutoVIML is an AutoNLP library that automates the process of natural learning processing using a machine learning [pipeline](https://valohai.com/machine-learning-pipeline/). 
 
-The pipeline initializes all the steps involved in natural language processing. The pipeline then automates all the initialized steps in sequential order. The output of the pipeline is an optimized model.
+The pipeline initializes all the steps involved in natural language processing. The pipeline then automates all the initialized steps in a sequential order. The output of the pipeline is an optimized model.
 
 In this tutorial, we build an Amazon product review model using AutoVIML. The model classifies customers reviews as either positive or negative.
 
@@ -59,7 +59,7 @@ To install AutoVIML, run this command:
 !pip install autoviml
 ```
 #### AutoVIML key features
-The key features are as follows:
+The key AutoVIML features are as follows:
 
 - Automatic dataset preprocessing
 AutoVIML will automatically perform the dataset preprocessing. This ensures we have a clean dataset that is ready for us.
@@ -76,7 +76,7 @@ AutoVIML automatically adjusts the model's parameters to give an optimized solut
 - Automatic model deployment and predictions
 AutoVIML automatically deploys the model so that we can use it to make predictions.
 
-These features are very essential and help in producing an optimized model. As mentioned earlier, all the automation process is done using machine learning pipelines. An example of a pipeline workflow is shown below.
+These features are very essential and help in producing an optimized model. As mentioned earlier, all the automation process is done using machine learning pipelines. An example of a pipeline workflow is shown below:
 
 ![Pipeline steps](/engineering-education/autonlp-using-autoviml-library-for-natural-language-processing/pipeline-steps.jpg)
 
@@ -85,7 +85,7 @@ These features are very essential and help in producing an optimized model. As m
 We will follow this workflow and build our model.
 
 ### Dataset used
-We will use the dataset from Amazon. The dataset contains customers' reviews of personal care appliances. We will download the dataset from `tensorflow_datasets`. `tensorflow_datasets` is a TensorFlow repository that is made up of a collection of ready-to-use datasets.
+We will use the dataset from Amazon. The dataset contains customers' reviews of personal care appliances. We will download the dataset from `tensorflow_datasets`. `tensorflow_datasets` is a TensorFlow repository that contains a collection of ready-to-use datasets.
 
 Lets import the `tensorflow_datasets` TensorFlow package.
 
@@ -97,12 +97,12 @@ To download the dataset from `tensorflow_datasets`, use the following code:
 ```python
 dataset, info = tfds.load('amazon_us_reviews/Personal_Care_Appliances_v1_00', with_info=True, batch_size=-1)
 ```
-From the code above, the `tfds.load` method will be used to load the dataset from `tensorflow_datasets`. We will save our dataset into a new variable using the following code:
+From the code above, the `tfds.load` method will load the dataset from `tensorflow_datasets`. We save the Amazon dataset into a new variable using the following code:
 
 ```python
 train_dataset = dataset['train']
 ```
-To see the information available in our dataset run this command:
+To see the information available in our dataset, run this command:
 
 ```python
 info
@@ -111,21 +111,21 @@ The output is shown below:
 
 ![Dataset information](/engineering-education/autonlp-using-autoviml-library-for-natural-language-processing/dataset-information.jpg)
 
-From the image above, the dataset has over 130 million customer reviews that have been collected by researchers over the years. The dataset has different columns. We are interested in the following important columns: `helpful_votes`, `review_headline`, `review_body` and `star_rating`. 
+From the image above, the dataset has over 130 million customer reviews collected by researchers over the years. The dataset has different columns. We are interested in the following columns: `helpful_votes`, `review_headline`, `review_body` and `star_rating`. 
 
 - `star_rating`
-It is the 1-5 star rating of the product purchased.
+It shows the 1-5 star rating of the product purchased.
 
 - `helpful_votes`
-It is the number of votes of a purchased product.
+It shows the number of votes of a purchased product.
 
 - `review_headline`
-It is the title product review.
+It shows the title product review.
 
 - `review_body`
-It is a detailed description of the review.
+It shows the detailed description of the review.
 
-After loading the dataset, we need to convert the dataset into an array using NumPy. An array can be easily be used by the model.
+After loading the dataset, we need to convert the dataset into a NumPy array. We perform this process using the NumPy library. A NumPy array is stored at one continuous place in memory, so a model can access and manipulate it easily.
 
 #### Convert dataset to array
 We import the NumPy package using the following code:
@@ -158,10 +158,10 @@ review_headline=dataset['data']['review_headline']
 review_body=dataset['data']['review_body']
 rating=dataset['data']['star_rating']
 ```
-This will enable us to use these four columns as inputs for our model during training. Next, we will create a data frame for our dataset. A data frame will neatly organize our dataset into columns and rows.
+The code above will enable us to use these four columns as inputs for our model during training. Next, we will create a data frame for our dataset. A data frame neatly organizes a dataset into columns and rows.
 
 ### Creating a data frame
-To create a data frame, we need the Pandas library. Let's import the Pandas library.
+To create a data frame, we will use the Pandas library. Let's import the Pandas library.
 
 ```python
 import pandas as pd
@@ -171,10 +171,10 @@ The data frame is then created using the following code:
 ```python
 reviews_df=pd.DataFrame(np.hstack((helpful_votes[:,None],review_headline[:,None],review_body[:,None],rating[:,None])),columns=['votes','headline','reviews','rating'])
 ```
-The code above will create a data frame. It will also assign columns names as `votes`, `headline`, `reviews`, and `rating`. We need to specify the data types of these four columns.
+The code above will create a data frame. It also assigns columns names as `votes`, `headline`, `reviews`, and `rating`. We need to specify the data types of these four columns.
 
 #### Columns datatypes
-Our columns will have the following datatypes:
+Our columns will have the following data types:
 
 ```python
 convert_dict = {'votes': int, 
@@ -202,12 +202,12 @@ From the image above, our dataset is neatly organized into rows and columns. It 
 ### Adding the target column
 We need to add a target column. The target column represents the model output after making a prediction. The model classifies customers reviews as either positive or negative. Positive reviews are represented by `1`, while negative reviews are represented by `0`.
 
-For a review to be positive the `star_rating` should be greater than 4. If the `star_rating` is less than 4, the review is negative. To add the target column, we will use this logic as follows:
+For a review to be positive, the `star_rating` should be greater than 4. If the `star_rating` is less than 4, the review is negative. To add the target column, we will use this logic as follows:
 
 ```python
 reviews_df["target"] = reviews_df["rating"].apply(lambda x: 1 if x>= 4 else 0) 
 ```
-This code will add the target column. It will ensure that if the `rating` is greater than 4 the review will be labeled `1`. If the `rating` is less than 4, the review is labeled `0`.
+This code will add the target column. It will ensure that if the `rating` is greater than 4 the review is labeled `1`. If the `rating` is less than 4, the review is labeled `0`.
 
 To see our newly added target column, use this code:
 
@@ -240,7 +240,7 @@ From the code above, we have used `test_size=0.25`. It is the ratio used for dat
 After splitting the dataset, let's now use AutoVIML to automate natural language processing.
 
 ### Using AutoVIML
-AutoVIML has in-built functions that are used to automate natural language processing. We will use the `Auto_NLP` function which is imported from AutoVIML.
+AutoVIML has in-built functions that automates natural language processing. We will use the `Auto_NLP` function which is imported from AutoVIML.
 
 To import `Auto_NLP`, use this code:
 
@@ -256,7 +256,7 @@ The input column will feed the model with data during training. The output colum
 nlp_column = 'reviews'
 target = 'target'
 ```
-Our input column is the `reviews` column. The output column is the `target` column.
+The input column is the `reviews` column, while the output column is the `target` column.
 
 Let's now use `Auto_NLP` to automate natural language processing steps.
 
@@ -272,30 +272,30 @@ nlp_transformer= Auto_NLP(
 The `Auto_NLP` function has the following important parameters:
 
 - `nlp_column`
-It is the input column used by the model.
+The model uses this column as the input column. It feeds the model with data during training
 
 - `target`
-It is the output column of the model after making a prediction.
+It shows the model's output after making a prediction.
 
 - `train`
-It is the split dataset used for training.
+It is the split dataset that the model uses during training.
 
 - `test`
-It is the test dataset used for testing.
+It is the split dataset that the model uses during testing.
 
 - `score_type='balanced_accuracy'`
 It calculates the accuracy score for the model.
 
 - `modeltype='Classification'`
-It specifies the type of model we are building. We are building a model used for classification.
+It specifies the type of model we are building. We are building a classification model.
 
 - `top_num_features=50`
-It specifies the number of important features used during training. Features are the important attribute found in the dataset.
+It specifies the number of important features the model uses during training. Features are the important attributes found in the dataset.
 
 - `build_model=True`
-It is used to tell the `Auto_NLP` function to build the model. `Auto_NLP` function will use the key AutoVIML features and produce an optimized model.
+It tells the `Auto_NLP` function to build the model. `Auto_NLP` function will then use the key AutoVIML features to produce an optimized model.
 
-After running this code, the process will produce outputs. The outputs show the model-building progress. These outputs will also show us which parameters and algorithms have been used to build the model.
+After running this code, the process will produce outputs. The outputs show the model-building progress. These outputs will also show the best parameters and algorithms the model uses during training.
 
 #### First output
 The first output is shown below:
@@ -332,13 +332,13 @@ The vectorization process converts the text data into numeric data, which the mo
 
 ![Vectorization process](/engineering-education/autonlp-using-autoviml-library-for-natural-language-processing/vectorization-process.jpg)
 
-In the image above, the vectorization process is done using the [Count Vectorizer](https://www.geeksforgeeks.org/using-countvectorizer-to-extracting-features-from-text/) and the [TFIDF vectorizer](https://medium.com/@cmukesh8688/tf-idf-vectorizer-scikit-learn-dbc0244a911a) packages.  The `Auto_NLP` function then selects the algorithm with the best results.
+In the image above, the vectorization process is done using the [Count Vectorizer](https://www.geeksforgeeks.org/using-countvectorizer-to-extracting-features-from-text/) and the [TFIDF vectorizer](https://medium.com/@cmukesh8688/tf-idf-vectorizer-scikit-learn-dbc0244a911a) packages.  The `Auto_NLP` function then selects the algorithm that produces the best results.
 
 The image below shows the best-selected vectorizer.
 
 ![Best vectorizer](/engineering-education/autonlp-using-autoviml-library-for-natural-language-processing/best-vectorizer.png)
 
-From the image above, the best vectorizer selected is the TFIDF vectorizer. The `Auto_NLP` function also adds the best parameters for the TFIDF vectorizer.
+From the image above, the `Auto_NLP` function selects TFIDF vectorizer as the best vectorizer. The `Auto_NLP` function also adds the best parameters for the TFIDF vectorizer.
 
 The next output shows the best algorithm and the machine learning pipeline.
 
@@ -347,7 +347,7 @@ The `Auto_NLP` function searches through all of the available algorithms. It the
 
 ![Best algorithm](/engineering-education/autonlp-using-autoviml-library-for-natural-language-processing/best-algorithm.png)
 
-From the image above the best algorithm is the `Multinomial Naive Bayes algorithm`.
+From the image above, the best algorithm is the `Multinomial Naive Bayes algorithm`.
 
 The image also shows the created pipeline. The pipeline will automate the steps involved in building the NLP model. In our case, we have two steps. The first step is vectorization using `TFIDF vectorizer`. The second step is model training using the `Multinomial Naive Bayes algorithm`.
 
@@ -358,7 +358,7 @@ The pipeline will run the two steps and produce the following output.
 From the image above, the process has run successfully. The process produces an optimized model. This marks the end of the AutoNLP process. We can use this model to make predictions.
 
 ### Making predictions
-To make predictions use this code:
+In this stage, we will the model to classify some of the customer reviews found in the test dataset. To make predictions, use this code:
 
 ```python
 nlp_transformer.predict(test[nlp_column])
@@ -371,9 +371,9 @@ array([1,1,1,0,1, ..., 0, 1, 0])
 From the output above, our model can make predictions. It has classified some of the reviews as positive(1) and others as negative(0).
 
 ### Conclusion
-In this tutorial, we have learned how to automate natural language processing using the AutoVIML library. We started by discussing the processes involved in natural language processing.
+In this tutorial, we have learned how to automate natural language processing using the AutoVIML library. We started by discussing all the processes involved in natural language processing.
 
-After installing the AutoVIML library, we explored the key features it uses to produce an optimized model. We then used the AutoVIML library to build our model. Finally, we used the model to make predictions. The model was able to classify customer reviews as either positive or negative.
+After installing the AutoVIML library, we explored the key features it uses to produce an optimized model. We then used the AutoVIML library to build the natural language processing model. Finally, we used the model to make predictions. The model was able to classify customer reviews as either positive or negative.
 
 The Google Colab notebook used in this tutorial is found [here](https://colab.research.google.com/drive/1UlXBkOZj2iOmJjS0QKPnOdErXOfEgnux?usp=sharing)
 
