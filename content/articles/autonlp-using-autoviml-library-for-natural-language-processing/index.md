@@ -328,7 +328,7 @@ This output shows the number of punctuations and hashtags in our dataset.
 The next output shows the vectorization process.
 
 ### Vectorization process
-The vectorization process converts the text data into numeric data which the model can use. Machine learning models do not understand the raw text.
+The vectorization process converts the text data into numeric data, which the model can use. Machine learning models do not understand the raw text.
 
 ![Vectorization process](/engineering-education/autonlp-using-autoviml-library-for-natural-language-processing/vectorization-process.jpg)
 
