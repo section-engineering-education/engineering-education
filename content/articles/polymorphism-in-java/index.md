@@ -6,7 +6,7 @@ url: /polymorphism-in-java/
 title: Polymorphism in Java
 description: This article will help you understand Polymorphism in java.
 author: meshack-kimosop
-date: 2022-01-30T00:00:00-01:00
+date: 2022-02-02T00:00:00-00:50
 topics: [Languages]
 excerpt_separator: <!--more-->
 images:
