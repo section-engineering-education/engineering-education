@@ -6,6 +6,8 @@ We encourage all new contributors to go over our new contributor folder which ha
 ### How do I submit my 1st article?
 Visit our step-by-step guide on [how to upload your 1st EngEd article](https://github.com/section-io/engineering-education/blob/master/new_contributors/UPLOAD_INSTRUCTIONS.md#how-to-upload-an-article-for-sections-engineering-education-program) to the GitHub repo.
 
+### How do I submit a EngEd feature suggestion?
+
 ### How do I submit a Pull Request?
 Here is a link to a [short video](https://www.youtube.com/watch?v=nT8KGYVurIU&amp;t=47s) further explaining what a pull request is.
 
@@ -65,15 +67,8 @@ The position is a compensated position - 50 USD per successful article review.
 ### Are the positions voluntary or are Peer Reviewers compensated?
 We always encourage friendly reviews among the community to help each other out before article submission. Verified Peer Reviewers are paid $50.00 USD per successful article revision.
 
-### How often are article payouts?
-We typically send article payouts once a week (usually of Fridays) but that may vary depending on holidays, sick, or OOO (out-of-office) days.
-
-### Do we need a PayPal account to participate in the EngEd program?
-We ask all students to have an active, verified, fully set up PayPal account (that is registered under their name) to get any compensation for the articles published.
-
-Not having a PayPal account DOES NOT BAR anyone from participating, building up a resume, and published works to enhance one’s career. 
-
-You can contribute articles to publish to build up a portfolio without a PayPal account.
+### Are articles published compensated?
+The value that the EngEd program is providing to students it that of career building, skill enrichments, community building, and portfolio that can be referenced and leveraged upon entering the workforce.
 
 ### Does Section provide revision services?
 We will look over the all articles that come in to ensure they are publish worthy - but our peer reviewer team is only looking to improve the content by making suggestions. 

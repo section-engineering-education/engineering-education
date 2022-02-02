@@ -1,5 +1,8 @@
 ## Contribution Guidelines
-Welcome to Section’s Engineering Education program. This program is dedicated to providing a community-generated pool of educational content that is useful for engineers of every level. 
+Welcome to Section’s Engineering Education program. This program is dedicated to providing a community that provides students/contributors a friendly and inviting place to contribute to a real-world projects to help students better build up their professional protfolios and profiles (upon entering the DEV career space). We would like to allow our EngEd community the opportunity to increase and build upon the skills they have to build the features/enhancements the community wants to see in the EngEd program.
+
+
+-generated pool of educational content that is useful for engineers of every level. 
 
 To begin, we’d recommend reviewing our most recently published content [here](www.section.io/engineering-education/) to get a sense of:
 
