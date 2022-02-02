@@ -152,7 +152,7 @@ The diagram is shown below:
 
 ![Line chart](/engineering-education/anomaly-detection-model-on-time-series-data/line-chart.jpg)
 
-The image above shows the number of active taxis with a period of July 2014 to Jan 2015. 
+The image above shows the number of active taxis from July 2014 to Jan 2015. 
 
 Let's use this dataset to build the time series model.
 
