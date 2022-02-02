@@ -6,8 +6,6 @@ In this article, we will look at AES as a method of data encryption and decrypti
 In this article, we will be discussing how this algorithm can be implemented in Java programming language.
 
 ### Table of contents
-- [Introduction](#introduction)
-- [Table of contents](#table-of-contents)
 - [Prerequisites](#prerequisites)
 - [An overview of AES algorithm](#an-overview-of-aes-algorithm)
 - [Java imports](#java-imports)
