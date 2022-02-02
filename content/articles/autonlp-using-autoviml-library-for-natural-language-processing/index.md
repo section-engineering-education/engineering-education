@@ -220,7 +220,7 @@ The output is shown below:
 
 The image above shows the dataset with the added target column. The target column is either labeled `1` or `0`.
 
-Our dataset is now neatly and correctly formatted, we now need to split our dataset into two sets.
+Our dataset is neatly and correctly formatted. We now need to split our dataset into two sets.
 
 ### Dataset splitting
 We will split our dataset into two sets. One set will be used to train the model, the other set used to test the model. 
