@@ -1,20 +1,20 @@
 Building a dynamic web app, website, android for mobile or IOS requires the consumption of APIs(Application Programming Interface), most company provides API for carrying out some task, such as building an eCommerce web app, you will call consume an API from the central bank of your country or some established applications like PayPal, Paystack, etc.
-<!--More -->
+<!--more -->
 ### Introduction
 In this tutorial I will guide you through building a basic shopping cart API, this shopping cart shows how an actual shopping cart functions.
 In a real web app, you will be consuming APIs into this code that I have created but for now, we have to use actual value as the amount in the shopping cart.
 You can always visit this link [Github](https://github.com/kingsleynwafor54/shopping_cart_with_springboot) to review the code base and check the disparity between yours and the tutorial.
-#### Prerequisite
+### Prerequisites
 1. Intermediate knowledge of Java
 2. Full understanding of object-oriented programming in Java
 3. a Basic understanding of spring-boot
 4. a Basic understanding of postman
-#### Objectives
+### Objectives
 1. To enable beginners in spring-boot find fitting and will be able to do more       projects
 2. To serve as a road map for more similar and complex projects
 3. To enable beginners to code to interface
 4. To enable the reader always to write unit tests on every line of code
-#### Setting Your Spring boot
+### Setting Your Spring boot
 Firstly go to [Spring Boot Initializer](https://start.spring.io/), there you will download a full project with the basic dependencies. The Dependencies for this project are not much, below is a list of what you will fill.
 1. Project -> Maven Project
 2. Language -> Java
@@ -29,15 +29,15 @@ Firstly go to [Spring Boot Initializer](https://start.spring.io/), there you wil
 - devtool-> For automatic reloading
 9. Packaging -> Jar
 10.Java-> 11 or anyone you choose, better still choose the default.
-#### Creating Your Entities/Models
-Here you create the entities that will relate to the database or the data structure you are mapping your object to if you are not using a database. Before we view the code base of creating our entities let's view how the structure of the entire application will look like![Package Structure](shoppingapplication.JPG)
+### Creating Your Entities/Models
+Here you create the entities that will relate to the database or the data structure you are mapping your object to if you are not using a database. Before we view the code base of creating our entities let's view what the structure of the entire application will look like![Package Structure](shoppingapplication.JPG)
 Here you can see the various classes in the package
 ![Class Structure](shoppingcart2.JPG).
 In our models we have the following classes:
 - Admin
 - Customer
 - Product
-#### Admin
+### Admin
 ```java
 @Data
 public class Admin {
@@ -54,7 +54,7 @@ public class Admin {
 
 }
 ```
-#### Customer
+### Customer
 ```java 
 @Data
 public class Customer {
@@ -73,7 +73,7 @@ public class Customer {
     }
 }
 ```
-#### Product
+### Product
 ```java
 @Data
 public class Product {
@@ -103,13 +103,13 @@ public class Product {
 }
 ```
 In the model package, you should have these classes in it. These classes or entities provide the feature or attribute to what it represents.
-#### Creating Your Repository
+### Creating Your Repository
 The importance of creating a repository is to map your entity to the database, It's like a store and also maps your entities. In case you want to work on your service instead of going looking for how to get some element your repository helps you get it. Always make sure you use Autowire. 
 In the repository package we have the following:
-AdminDao
-CustomerDao
-ProductDao
-#### AdminDao
+- AdminDao
+- CustomerDao
+- ProductDao
+### AdminDao
 ```java
 @Repository
 public class AdminDao {
@@ -128,7 +128,7 @@ public class AdminDao {
     }
 }
 ```
-#### CustomerDao
+### CustomerDao
 ```java
 @Repository
 public class CustomerDao {
@@ -171,13 +171,13 @@ public class productDao {
 ```
 N/B At the top of the class, you must put the 
 @Repository to let spring but know that that particular class is a repository that maps the entities to the database.
-#### Creating Service Layer
+### Creating The Service Layer
 The service layer is where we create our interface and also implement it. This layer contains all our business logic and you must always but the @Service at either in the interface or the implementation.
 We will see the interface and later the implementation.
 The service layer contains the following interfaces:
 1. cart service
 2. data service
-#### cart service
+### Cart service
 ```java
 
 public interface cartService {
@@ -193,7 +193,7 @@ public interface cartService {
 }
 }
 ```
-#### dataService
+### DataService
 ```java
 public interface dataService {
     Customer registerCustomer(Customer customer);
@@ -209,7 +209,7 @@ Now You will see how we code to the interface, any method that is in the interfa
 We have the following implementation of the two classes in our interface and they are:
 1. CartService Implementation
 2. DataService Implementation
-#### CartService Implementation
+### CartService Implementation
 ```java
 @Service
 public class CartServiceImpl implements cartService{
@@ -288,7 +288,7 @@ if(customerRepo.getCustomer(id)!=null){
 }
 ```
 N/B In this code snippet I used descriptive terms to enable you to understand the function of the methods.
-#### DataService Implementation
+### DataService Implementation
 ```java
 @Service
 public class DataServiceImpl implements dataService{
@@ -361,7 +361,7 @@ public class DataServiceImpl implements dataService{
 }
 ```
 Next up in the agenda is to create a cart package and in the cart package we create a cart object(class) to carry out certain functions with it methods.
-#### Cart Package
+### Cart Package
 cart class
 ```java
 @Component
@@ -396,7 +396,7 @@ public class Cart {
     }
 }
 ```
-#### Controller Package
+### Controller Package
 The last package to review is the controller, in the controller we have our end point or apis that connect to the internet all the basic functionalities of your service implementation.
 ```java
 @RestController
@@ -447,7 +447,7 @@ public class controller {
 ```
 N/B POSTMapping is for creating new objects, GetMapping, PatchMapping and PutMapping are for updating, DeleteMapping is for deleting.
 We used field injection `@Autowire` annotation to inject the dependency injection to avoid writing initializing a new object but using the very object each time a call is made, throughout the whole code-base.
-#### Running the server
+### Running the server
 ```java
 @SpringBootApplication
 public class ShoppingApplication {
@@ -459,7 +459,7 @@ public class ShoppingApplication {
 }
 ```
 You have to click on the play button on the SpringBootApplication to run your server.
-#### Unit Testing
+### Unit Testing
 Create a class and call it customerTest, use `@Autowire` to insert the dependencies on the Services you want to test.
 ```java
 @SpringBootTest
@@ -580,15 +580,13 @@ public class customerTest {
     }
 }
 ```
-#### Using Postman to verify the output on the web
-![shopping_api](api.JPG)
-![shopping_api1](api2.JPG)
-![shopping_api2](payment.JPG)
-#### Conclusion
-In the end, we've seen how to code to an interface, how to write a unit test, how to create an endpoint, and also how to use postman to view our endpoint. You may go on and start creating different APIs.
-Once again you can check [Github](https://github.com/kingsleynwafor54/shopping_cart_with_springboot)
-#### Referrence
-[Rapidapi](https://rapidapi.com/section.io/api/section-io/details)
-[Getting Started with Stripe-springboot](https://www.section.io/engineering-education/stripe-springboot/).
-
-#### Happy coding!
+### Using Postman to verify the output on the web
+![shopping_api](/creating-a-shopping-cart-api/api.JPG)
+![shopping_api1](/creating-a-shopping-cart-api/api2.JPG)
+![shopping_api2](/creating-a-shopping-cart-api/payment.JPG)
+### Conclusion
+In the end, we've seen how to code to an interface, how to write a unit test, how to create an endpoint, and also how to use postman to view our endpoint. You may go on and start creating different APIs. Once again you can check [Github](https://github.com/kingsleynwafor54/shopping_cart_with_springboot)
+### Referrences
+- [Rapidapi](https://rapidapi.com/section.io/api/section-io/details)
+- [Getting Started with Stripe-springboot](https://www.section.io/engineering-education/stripe-springboot/).
+Happy coding!
