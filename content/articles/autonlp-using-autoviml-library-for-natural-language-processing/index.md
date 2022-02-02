@@ -295,7 +295,7 @@ It specifies the number of important features used during training. Features are
 - `build_model=True`
 It is used to tell the `Auto_NLP` function to build the model. `Auto_NLP` function will use the key AutoVIML features and produce an optimized model.
 
-After running this code, the process will run produce outputs. The outputs shows the model building progress. These outputs will also show us which parameters and algorithms have been used to build the model.
+After running this code, the process will produce outputs. The outputs show the model-building progress. These outputs will also show us which parameters and algorithms have been used to build the model.
 
 #### First output
 The first output is shown below:
