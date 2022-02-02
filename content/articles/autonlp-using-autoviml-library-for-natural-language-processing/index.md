@@ -242,7 +242,7 @@ After splitting the dataset, let's now use AutoVIML to automate natural language
 ### Using AutoVIML
 AutoVIML has in-built functions that are used to automate natural language processing. We will use the `Auto_NLP` function which is imported from AutoVIML.
 
-To import `Auto_NLP` use this code:
+To import `Auto_NLP`, use this code:
 
 ```python
 from autoviml.Auto_NLP import Auto_NLP
