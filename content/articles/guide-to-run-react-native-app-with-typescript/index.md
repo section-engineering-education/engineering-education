@@ -3,24 +3,26 @@ layout: engineering-education
 status: publish
 published: true
 url: /guide-to-run-react-native-app-with-typescript/
-title: A Guide to Run your React Native Apps with Typescript 
-description: This tutorial will guide you on how to run your React Native apps with Typescripts by building a blog app.
+title: How to Run React Native Apps with Typescript 
+description: This tutorial will guide the reader on how to set up and run React Native apps with TypeScript.
 author: kevin-kimani 
-date: 2022-01-21T00:00:00-02:3\53
+date: 2022-02-02T00:00:00-06:00
 topics: [Languages]
 excerpt_separator: <!--more-->
 images:
   - url: /engineering-education/guide-to-run-react-native-app-with-typescript/hero.jpg
     alt: A Guide to Run your React Native Apps with Typescript Hero Image
 ---
-React Native runs on JavaScript by default. However, to leverage the advantages Typescript (a superset of JavaScript) offers, it's possible to set up your whole React Native app to run entirely on Typescript. 
+React Native runs on JavaScript by default. However, it is possible to set up a React Native app to run entirely on TypeScript. 
 <!--more-->
-This tutorial aims to briefly introduce you to running React Native apps with Typescript. You will learn the advantages of running React Native apps with Typescript and how to set it up with React Native. In the end, you will create a very handy blog application that uses Typescript to run a React Native application.
+This tutorial will introduce the reader to running React Native apps with TypeScript. We will discuss the advantages of running React Native apps with TypeScript, as well as how to set it up. 
+
+In the end, we will create a simple blog application that uses TypeScript.
 
 ### Table of contents
-- [Pre-requisites](#prerequisites)
-- [Initializing your first React Native project with Typescript](#initializing-your-first-react-native-project-with-typescript)
-- [Set up a Typescript Blog app using React Native](#set-up-a-typescript-blog-app-using-react-native)
+- [Prerequisites](#prerequisites)
+- [Initializing your first React Native project with TypeScript](#initializing-your-first-react-native-project-with-typescript)
+- [Setting up a TypeScript blog app using React Native](#set-up-a-typescript-blog-app-using-react-native)
 - [Creating application components](#creating-application-components)
 - [Adding posts](#adding-posts)
 - [Fetching posts](#fetching-posts)
@@ -31,23 +33,21 @@ This tutorial aims to briefly introduce you to running React Native apps with Ty
 ### Prerequisites
 To follow along with this tutorial, you'll need the following:
 
-- Beginner knowledge working with React.js for the web or React Native.
-- Beginner knowledge working with TypeScript.
-- [Expo Go](https://expo.dev/client) installed on your mobile device.
-- [Node.js](https://nodejs.org/en/) installed on  your computer.
+- Some knowledge of TypeScript, React.js, and React Native
+- [Expo Go](https://expo.dev/client) and [Node.js](https://nodejs.org/en/) installed.
 
-### Initializing your first React Native project with Typescript
-To get the project up and running, use the [Expo CLI](https://docs.expo.dev/workflow/expo-cli/), a command-line tool with a variety of use-cases that includes getting a React Native project up and running.
+### Initializing your first React Native project with TypeScript
+To get the project running, use the [Expo CLI](https://docs.expo.dev/workflow/expo-cli/), a command-line tool that supports a variety of use-cases.
 
-The first step is to download and install Expo CLI. Go ahead and run the following command:
+The first step is to download and install *Expo CLI*. Go ahead and run the following command:
 
 ```bash
 npm install --global expo-cli
 ```
 
-The `--global` flag install Expo globally so that any project across your operating system can access it.
+The `--global` flag installs `Expo` globally so that any project across your operating system can access it.
 
-You can check if `Expo CLI` was successfully installed by running this command in your terminal:
+You can check if `Expo CLI` was successfully installed by running the below command in your terminal:
 
 ```bash
 expo whoami
@@ -55,43 +55,45 @@ expo whoami
 
 If `Expo CLI` was correctly installed, the installed version will be logged on to your terminal.
 
-To bootstrap our React Native project using TypeScript, navigate to the directory where you want your project to live and run the following command.
+To create our React Native project using TypeScript, navigate to the directory where you want your project to live and run the following command:
 
 ```bash
 expo init -t expo-template-blank-typescript react-native-blog-app
 ```
 
-Our application will be bootstrapped from a blank typescript application template. After this process is done, navigate to the project folder:
+Our application will be bootstrapped with a blank TypeScript application template. You can now navigate to the project folder, as shown below:
 
 ```bash
 cd react-native-blog-app
 ```
 
-Let's install the following packages to improve the navigation between different React Native screens.
+Let's install the following packages to improve the navigation between different React Native screens:
 
 ```bash
 npm install @react-navigation/native @react-navigation/native-stack
 ```
 
-Install the peer dependencies of the above packages using `Expo` as shown below:
+Install the peer dependencies of the above packages using `Expo`:
 
 ```bash
 expo install react-native-screens react-native-safe-area-context
 ```
 
-Then run your project by using:
+Then run your project by using the commands below:
 
 ```bash
 npm run android # for android
 npm run ios # for ios
 ```
 
-Scan the QR code logged on your terminal using the `Expo Go` application on your device. The application will automatically load from there.
+Scan the QR code logged on your terminal using the `Expo Go` application on your device. The application will automatically load.
 
 ![default-landing-screen](/engineering-education/guide-to-run-react-native-app-with-typescript/default-landing-screen.jpg)
 
-### Set up a Typescript Blog app using React Native
-Now that a basic Typescript React Native app is set, let's extend this and create a handly application. This guide will create a blog app that will show you how to run your apps with both Typescript and React Native.
+### Setting up a TypeScript blog app using React Native
+Now that a basic TypeScript React Native app is set, let's extend this and create a handly application. 
+
+In this guide, we will create a blog app using TypeScript and React Native.
 
 ### Creating application components
 Create a directory inside the project folder and name it `components`. Inside the `components` directory, create two files:
@@ -99,7 +101,7 @@ Create a directory inside the project folder and name it `components`. Inside th
 - `Posts.tsx`: For rendering multiple posts.
 - `Post.tsx`: For rendering a single post.
 
-Add the following dummy text to your `Posts.tsx`.
+Add the following code to your `Posts.tsx`:
 
 ```ts
 import {Text,View} from "react-native";
@@ -113,7 +115,7 @@ export default function Posts(){
 }
 ```
 
-Add the following dummy text to your `Post.tsx`.
+Add the following code to your `Post.tsx`:
 
 ```ts
 import {Text,View} from "react-native";
@@ -127,14 +129,14 @@ export default function Post(){
 }
 ```
 
-In your `App.tsx`, import the navigation packages:
+In your `App.tsx`, import the navigation packages as follows:
 
 ```ts
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 ```
 
-Import the two different screens:
+Next, import the two screens:
 
 ```ts
 import Posts from './components/Posts';
@@ -147,7 +149,7 @@ Create the stack navigator:
 const Stack = createNativeStackNavigator();
 ```
 
-Return a view containing the screens to be displayed:
+We need to return a view containing the screens to be displayed:
 
 ```ts
 export default function App() {
@@ -166,45 +168,45 @@ export default function App() {
 }
 ```
 
-The screens are inside the `NavigationContainer` and the `Stack.Navigator`, so while navigating from one screen to the other, the app will be using the name of that particular screen.
+The screens are inside the `NavigationContainer` and the `Stack.Navigator`. When we navigate from one screen to the other, the app will use the name of that particular screen.
 
-Your application should now change the text displayed since the app is now calling the `Posts` component.
+Your application should now change the text displayed since the app is calling the `Posts` component.
 
 ![skeleton-posts-screen](/engineering-education/guide-to-run-react-native-app-with-typescript/skeleton-posts-screen.jpg)
 
 ### Adding posts
-This article will use static posts stored inside the application. Create a `lib` directory inside the project folder. Inside `lib`, create a `posts.ts` file to host the posts. Edit `posts.ts` as follows:
+This article will use static posts stored in the application. Create a `lib` directory inside the project folder. Inside `lib`, create a `posts.ts` file to host the posts. Edit `posts.ts` as follows:
 
 ```ts
 export default [
     {
         id: 1,
-        title: 'Dummy title for first post.',
-        excerpt: "Dummy excerpt for first post.",
+        title: 'Dummy title for the first post.',
+        excerpt: "Dummy excerpt for the first post.",
         content: "Dummy content here for the first post."
     },
     {
         id: 2,
-        title: 'Dummy title for second post.',
+        title: 'Dummy title for the second post.',
         excerpt: 'Dummy excerpt for second post.',
         content: 'Dummy content here for the second post.'
     },
     {
         id: 3,
-        title: 'Dummy title for third post',
+        title: 'Dummy title for the third post',
         excerpt: 'Dummy excerpt for third post.',
         content: 'Dummy content here for the third post.'
     },
     {
         id: 4,
-        title: 'Dummy title for fourth post',
-        excerpt: 'Dummy excerpt for fourth post',
+        title: 'Dummy title for the fourth post',
+        excerpt: 'Dummy excerpt for the fourth post',
         content: 'Dummy content here for the fourth post.'
     },
     {
         id: 5,
-        title: 'Dummy title for fifth post',
-        excerpt: 'Dummy excerpt for fifth post',
+        title: 'Dummy title for the fifth post',
+        excerpt: 'Dummy excerpt for the fifth post',
         content: 'Dummy content here for the fifth post.'
     }
 ]
@@ -218,9 +220,9 @@ In this case, we're exporting a list of posts. Each post contains the following 
 - `content`: Dummy article content.
 
 ### Fetching posts
-To implement the functionality of fetching the posts, navigate to your `components/Posts.tsx` file. First;
+To fetch posts, navigate to your `components/Posts.tsx` file. First;
 
-- Import  `StyleSheet` and the dummy posts:
+Import  `StyleSheet` and the dummy posts:
 
 ```ts
 import {StyleSheet,Button} from 'react-native';
@@ -228,7 +230,7 @@ import {NavigationProp} from '@react-navigation/native';
 import posts from '../lib/posts';
 ```
 
-- Define a post's structure:
+Then define a post's structure:
 
 ```ts
 interface Post {
@@ -239,7 +241,7 @@ interface Post {
 }
 ```
 
-- Define the structure of the props:
+Define the structure of the props:
 
 ```ts
 interface Props{
@@ -247,7 +249,7 @@ interface Props{
 }
 ```
 
-- Map the posts to the view:
+Map the posts to the view:
 
 ```ts
 const Posts:React.FC<Props> = ({navigation}) => {
@@ -270,9 +272,7 @@ const Posts:React.FC<Props> = ({navigation}) => {
 export default Posts;
 ```
 
-Each post has `title`, `excerpt`, and a read more button handled by its `onPress` listener.
-
-- Append the CSS styles:
+Each post has `title`, `excerpt`, and a `read more` button handled by its `onPress` listener. Append the CSS styles as follows:
 
 ```ts
 const styles = StyleSheet.create({
@@ -291,7 +291,7 @@ const styles = StyleSheet.create({
 });
 ```
 
-In `App.tsx`, edit the styles as follows, removing the center alignment:
+In `App.tsx`, edit the styles and remove the center alignment:
 
 ```ts
 const styles = StyleSheet.create({
@@ -303,19 +303,19 @@ const styles = StyleSheet.create({
 });
 ```
 
-Your posts should now be shown on your screen.
+Your posts should now be shown on your screen:
 
 ![posts-screen](/engineering-education/guide-to-run-react-native-app-with-typescript/posts-screen.jpg)
 
 ### Fetching a single post
-To fetch a single post, navigate to the `components/Post.tsx` file and import navigation and view utilities:
+To fetch a single post, navigate to the `components/Post.tsx` file and import `navigation` and `view` utilities:
 
 ```ts
 import {Text,View} from "react-native";
 import {NativeStackScreenProps} from '@react-navigation/native-stack';
 ```
 
-- Implement the Interface for a `PostItem`:
+Implement the Interface for a `PostItem`:
 
 ```ts
 interface PostItem {
@@ -326,7 +326,7 @@ interface PostItem {
 }
 ```
 
-- Define the type of post:
+Define the type of post:
 
 ```ts
 type Post =  {
@@ -334,7 +334,7 @@ type Post =  {
 }
 ```
 
-- Define the `route` prop structure:
+Define the `route` prop structure:
 
 ```ts
 type Props  ={
@@ -342,7 +342,7 @@ type Props  ={
 }
 ```
 
-- Obtain the post item from the route and display it on the view:
+Obtain the post item from the route and display it on the view:
 
 ```ts
 const Post: React.FC<Props> = ({ route }) => {
@@ -358,12 +358,14 @@ const Post: React.FC<Props> = ({ route }) => {
 export default Post;
 ```
 
-When you click on a post, you will be redirected to the specific page of the page as shown below:
+When you click on a post, you will be redirected to a specific page showing the post's content:
 
 ![post-screen-example](/engineering-education/guide-to-run-react-native-app-with-typescript/post-screen-example.jpg)
 
 ### Conclusion
-This tutorial walked you through a reflective introduction to Typescript and React Native. For better understanding, we have created a whole application that uses React Native to run the Typescript code. Check the code used in this article on [GitHub](https://github.com/kimkimani/React-native-typescript-blog-app).
+This tutorial introduced you to TypeScript and React Native. We created an app that uses React Native to run the Typescript code. 
+
+You can find the code used in this article on this [GitHub repository](https://github.com/kimkimani/React-native-typescript-blog-app).
 
 I hope you found this helpful. Happy coding!
 
