@@ -326,9 +326,9 @@ From the code above, we have set `ds` as the x-axis and `y` as the y-axis. The t
 In the image above, the detected anomalies have a red color. The normal data points have a blue color. The scatter plot has helped us to detect the outliers available in our dataset.
 
 ### Conclusion
-In this tutorial, we have learned anomaly detection on time series data. We used the New York Taxi dataset to train our model. Using the Facebook Prophet library, we were able to build a time series model. The model was used to predict the number of active taxi drivers in New York.
+In this tutorial, we have learned anomaly detection on time series data. We used the New York Taxi dataset to train our model. Using the Facebook Prophet library, we built a time series model. The model was used to predict the number of active taxi drivers in New York.
 
-We then used a scatter plot to detect anomalies in our dataset. Using this tutorial, a reader should be able to detect anomalies on time series data.
+We then used a scatter plot to detect anomalies in our dataset. Using this tutorial, a reader should detect anomalies on time series data.
 
 To access the Google Colab notebook for this tutorial, use this [link](https://colab.research.google.com/drive/15amwA8CdN9AApOoZGnYS3roNMxr6mAcy?usp=sharing)
 
