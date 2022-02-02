@@ -200,7 +200,7 @@ The output is shown below:
 From the image above, our dataset is neatly organized into rows and columns. It has four columns and 85981 rows.
 
 ### Adding the target column
-We need to add a target column. The target column represents the model output after making a prediction. The model classifies customers reviews as either positive or negative. Positive reviews are represented by 1 while negative reviews are represented by 0.
+We need to add a target column. The target column represents the model output after making a prediction. The model classifies customers reviews as either positive or negative. Positive reviews are represented by `1`, while negative reviews are represented by `0`.
 
 For a review to be positive the `star_rating` should be greater than 4. If the `star_rating` is less than 4, the review is negative. To add the target column, we will use this logic as follows:
 
