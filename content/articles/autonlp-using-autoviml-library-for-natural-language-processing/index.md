@@ -161,7 +161,7 @@ rating=dataset['data']['star_rating']
 This will enable us to use these four columns as inputs for our model during training. Next, we will create a data frame for our dataset. A data frame will neatly organize our dataset into columns and rows.
 
 ### Creating a data frame
-To create a data frame we need the Pandas library. Let's import the Pandas library.
+To create a data frame, we need the Pandas library. Let's import the Pandas library.
 
 ```python
 import pandas as pd
