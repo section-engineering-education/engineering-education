@@ -6,7 +6,7 @@ url: /build-a-portfolio-website-with-vite-and-threejs/
 title: Build a Portfolio Website with Vite and Three.js
 description:  In this tutorial, we will be building a portfolio website with Three.js and Vite. 
 author: oyedele-temitope
-date: 2022-02-01T00:00:00-10:30
+date: 2022-02-01T00:00:00-10:25
 topics: [Languages]
 excerpt_separator: <!--more-->
 images:
