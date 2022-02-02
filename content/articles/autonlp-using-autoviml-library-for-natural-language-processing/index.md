@@ -147,7 +147,7 @@ The output is shown below:
 
 ![Dataset array](/engineering-education/autonlp-using-autoviml-library-for-natural-language-processing/dataset-array.jpg)
 
-From the image above our dataset is in array format. The next step is to extract the four important columns from our dataset.
+From the image above, our dataset is in array format. The next step is to extract the four important columns from our dataset.
 
 ### Extracting important columns
 To extract the important columns, use this code:
