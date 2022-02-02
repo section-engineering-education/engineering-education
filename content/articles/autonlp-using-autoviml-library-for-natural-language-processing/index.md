@@ -223,7 +223,7 @@ The image above shows the dataset with the added target column. The target colum
 Our dataset is neatly and correctly formatted. We now need to split our dataset into two sets.
 
 ### Dataset splitting
-We will split our dataset into two sets. One set will be used to train the model, the other set used to test the model. 
+We will split our dataset into two sets. We use one set to train the model, while the other set to test the model. 
 
 Let's import the package used for dataset splitting.
 
