@@ -222,7 +222,7 @@ The test dataset contains timestamp values past `2015-01-27`. The test dataset h
 future = model.make_future_dataframe(periods=120, freq='H')
 future.tail()
 ```
-From the code above `periods=120` shows the 120 hours recorded in the test dataset. `freq='H'` will give the prediction values in hourly-interval. `future.tail()` will show the five last rows of the `ds` column. This is the last five hours the model will predict.
+From the code above, `periods=120` shows the 120 hours recorded in the test dataset. `freq='H'` will give the prediction values in hourly-interval. `future.tail()` will show the five last rows of the `ds` column. It shows the last five hours the model will predict.
 
 The last five rows are shown below:
 
