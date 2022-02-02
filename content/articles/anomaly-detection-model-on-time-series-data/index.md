@@ -201,7 +201,7 @@ We will initialize our model using the following code:
 ```python
 model = Prophet(changepoint_range=0.95)
 ```
-We use a `changepoint_range=0.95` to increase the confidence interval of our output. The confidence interval determines if a prediction is right or wrong. The higher confidence interval increases the chances of the model making accurate predictions
+We use a `changepoint_range=0.95` to increase the confidence interval of our output. The confidence interval determines if a prediction is right or wrong. The higher confidence interval increases the chances of the model making accurate predictions.
 
 To understand the confidence interval in detail, read this [article](https://towardsdatascience.com/confidence-intervals-for-time-series-data-sharpestminds-slack-chats-4b05e211943a)
 
