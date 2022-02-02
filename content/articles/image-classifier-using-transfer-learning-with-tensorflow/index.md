@@ -1,6 +1,6 @@
-Transfer learning is a technique that trains a neural network on one problem. It then applies the trained neural network to a different but related problem. Transfer learning decreases the training time and produces a model that performs well.
+Transfer learning is a technique that trains a neural network on one problem and then applies the trained neural network to a different but related problem. It focuses on storing knowledge gained while solving one problem and applying it to a different but related problem. Transfer learning decreases the training time and produces a model that performs well.
 
-An example of transfer learning is when a model trained to classify lemons is applied to classify oranges. Lemons and oranges are different but related problems. The neural network is fine-tuned to meet the user's needs rather than being trained from scratch.
+For example, knowledge gained while learning to recognize lemons could apply when trying to recognize oranges. Lemons and oranges are different but related problems. The neural network is fine-tuned to meet the user's needs rather than being trained from scratch.
 
 In this tutorial, we will build a model that classifies images of hands playing rock, paper, scissor games. We will download a pre-trained [MobileNet-v2](https://tfhub.dev/google/tf2-preview/mobilenet_v2/feature_vector/4) convolutional neural network from the [TensorFlow hub](https://tfhub.dev/). We will then fine-tune it to classify images of hands playing rock, paper, scissor games.
 
@@ -42,28 +42,28 @@ import os
 import numpy as np
 import tensorflow_datasets as tfds
 ```
-Each imported library is important in building our transfer learning model. The functions of each of these libraries are as follows:
+The libraries are important in building our transfer learning model. The functions of each of these libraries are as follows:
 
 **matplotlib.pylab**
-It is used as a visualization library. We use Matplotlib to plot line graphs, figures, and diagrams.
+It is a visualization library. We use Matplotlib to plot line graphs, figures, and diagrams.
 
 **tensorflow**
-It is used to create neural networks. We use it to create the input, dropout, and dense layers for our image classification model.
+TensorFlow is an open-source library for for machine learning and artificial intelligence. We use it to create the input, dropout, and dense layers for our image classification model.
 
 **tensorflow_hub**
 It is a TensorFlow repository that contains a collection of pre-trained models. 
 
 **os**
-It enables us to interact with the operating system.
+It enables us to interact with the operating system. The OS module in Python provides functions for creating and removing a directory, fetching its contents, changing and identifying the current directory.
 
 **numpy**
-It is used to convert our image dataset into arrays. It also enables us to perform mathematical functions and operations on our dataset.
+It will convert the image dataset into arrays. It also enables us to perform mathematical operations on arrays.
 
 **tensorflow_datasets**
-This is a TensorFlow repository that is made up of a collection of ready-to-use datasets.
+It is a TensorFlow repository that is made up of a collection of ready-to-use datasets.
 
 ### Downloading the images dataset
-Download the rock, paper, scissors image dataset from `tensorflow_datasets` using the following code:
+We will download the rock, paper, scissors image dataset from `tensorflow_datasets` using the following code:
 
 ```python
 datasets, info = tfds.load(name='rock_paper_scissors', with_info=True, as_supervised=True, split=['train','test'])
@@ -79,10 +79,10 @@ The output is shown below:
 
 ![Dataset information](/engineering-education/image-classifier-using-transfer-learning-with-tensorflow/dataset-information.jpg)
 
-From the image above, we have a total of 2892 images. The image size is `300` by `300` pixels and we have 3 classes. Let's see some of the images.
+From the image above, we have a total of 2892 images. The image size is `300` by `300` pixels and we have 3 classes. Let's display some of the images.
 
 ### Displaying images
-To show the images, we will specify the image set to be displayed. View the `train` set using the following code:
+To show the images, we will specify the image set to be displayed. We will display the `train` set using the following code:
 
 ```python
 train, info_train = tfds.load(name='rock_paper_scissors', with_info=True, split='test')
@@ -124,7 +124,7 @@ rsp_train=rsp_test_temp.skip(400)
 From the code above, we have used `600` images as the validation set, `400` images as the test set, and `400` images as a train set.
 
 ### Image normalization and resizing
-Image normalization is the process of converting the range of an image's pixel intensity values to a predefined range. Often, the prefined range is usually 0, 1, or -1, 1. In this tutorial we want our pixel range to be o, 1.
+Image normalization is the process of changing the range of an image's pixel intensity values to a predefined range. Often, the prefined range is usually 0, 1, or -1, 1. In this tutorial we want our pixel range to be 0, 1.
 
 For a detailed understanding on image normalization, click [here](/engineering-education/image-preprocessing-in-python/). 
 
@@ -138,8 +138,7 @@ def scale(image, label):
   image /= 255.0
   return tf.image.resize(image,[224,224]), tf.one_hot(label, 3)
 ```
-
-From the code above, we performed image normalization by dividing the image by 255. This will change the pixel range to 0, 1. The code also resized our image to 224 by 224 using the `tf.image.resize` method. This is the same size as the images from the pre-trained [MobileNet-v2](https://tfhub.dev/google/tf2-preview/mobilenet_v2/feature_vector/4) convolutional neural network.
+From the code above, we performed image normalization by dividing the image by 255. It will change the pixel range to 0, 1. The code also resized our image to 224 by 224 using the `tf.image.resize` method. It is the same size as the images from the pre-trained [MobileNet-v2](https://tfhub.dev/google/tf2-preview/mobilenet_v2/feature_vector/4) convolutional neural network.
 
 Finally, the code performs one-hot encoding using the `tf.one_hot` method. One hot encoding converts the categorical variables (rock, paper, scissors), into integer values (0, 1, 2). The neural network understands integer values (numeric values). 
 
@@ -210,7 +209,6 @@ model = tf.keras.Sequential([
   tf.keras.layers.Dense(3,activation='softmax')
 ])
 ```
-
 From the code above, we are building a sequential model that allows layers to be built on top of each other. We have used the `feature_extractor_layer` as the input for the neural network. We then add a `Dropout` layer to prevent [model overfitting](/engineering-education/dropout-regularization-to-handle-overfitting-in-deep-learning-models/).
 
 Finally, add the `Dense` layer, which is the output layer for the neural network. It has 3 neurons because our model has three classes. We used a `softmax` because we have more than two classes.
@@ -287,7 +285,7 @@ for test_sample in rsp_test.take(10):
 After selecting the images, let's print the prediction results.
 
 #### Printing prediction results
-We will print the `actual label` and the `predicted label`. The `actual label` represents the actual image category in the test dataset. The `predicted label` is the category the model predicts.
+We will print the `actual label` and the `predicted label`. The `actual label` represents the actual image category/class in the test dataset. The `predicted label` is the category/class the model predicts.
 
 ```python
 img = tf.keras.preprocessing.image.img_to_array(image)                    
