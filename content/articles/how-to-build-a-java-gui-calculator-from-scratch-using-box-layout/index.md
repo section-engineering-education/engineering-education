@@ -1,5 +1,19 @@
+---
+layout: engineering-education
+status: publish
+published: true
+url: /how-to-build-a-java-gui-calculator-from-scratch-using-box-layout/
+title: How to build a Java GUI calculator from scratch using Box layout
+description: This tutorial will expose the readers to the power of box layout and use it in other programs to convert their console apps to a GUI app.
+author: suleiman-ibrahim
+date: 2022-02-02T00:00:00-17:10
+topics: []
+excerpt_separator: <!--more-->
+images:
 
-----
+  - url: /engineering-education/how-to-build-a-java-gui-calculator-from-scratch-using-box-layout/hero.png
+    alt: How to build a Java GUI calculator from scratch using Box layout in Java 
+---
 You’ve probably used a calculator at one point or the other to compute business transactions as an adult, solve high school math assignments as a teenager, or even toy with it as a kid. But have you ever asked yourself how these calculators function under the hood? If you are curious to know more about that, then you’ve come to the right place.
 
 ### Table of Contents
