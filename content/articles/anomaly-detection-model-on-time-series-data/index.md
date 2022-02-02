@@ -319,7 +319,7 @@ fig.update_xaxes(
 )
 fig.show()
 ```
-From the code above we have set `ds` as the x-axis and `y` as the y-axis. The title of the scatter plot is `NYC Taxi Demand`. Also, the anomalies detected will be given a different color. When the code is executed, it output the following diagram:
+From the code above, we have set `ds` as the x-axis and `y` as the y-axis. The title of the scatter plot is `NYC Taxi Demand`. Also, the anomalies detected will be given a different color. When the code is executed, it outputs the following diagram:
 
 ![Scatter plot](/engineering-education/anomaly-detection-model-on-time-series-data/scatter-plot.jpg)
 
