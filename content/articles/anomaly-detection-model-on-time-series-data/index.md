@@ -51,7 +51,7 @@ To follow along with this tutorial, a reader should:
 ### Time series dataset
 The dataset used in this tutorial is the New York Taxi dataset. The dataset was recorded on a half-hour basis for 6 months. The dataset shows the number of active taxi drivers in New York city every half-hour. 
 
-We will use this dataset to build a times series model using Facebook Prophet. The model will be used to predict the number of active taxi drivers in New York. 
+We will use this dataset to build a times series model using Facebook Prophet. We will use the model to predict the number of active taxi drivers in New York. 
 
 After the model has made the predictions, we will analyze the results of the predictions. This will enable us to detect the anomalies/outliers. These values can be high or low relative to the prediction values. By using a scatter plot, we will be able to visualize these outliers.
 
