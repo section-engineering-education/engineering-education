@@ -272,7 +272,7 @@ query GetTodos{
 
 Hit the play button on top and observe the results on the right pane. The results should be similar to the one below:
 
-![dummy-todos-query](/engineering-education/how-to-set-up-rust-api-servers-with-the-diseal-orm-and-the-postgresql/dummy-todos-query.png)
+![dummy-todos-query](/engineering-education/rust-api-with-diesel-orm-and-postgresql/dummy-todos-query.png)
 
 ### Setting up Diesel
 [Diesel](https://github.com/diesel-rs/diesel) is a safe and extensible query builder for Rust applications. Diesel generates client code and provides an interactive way to connect to a database server.
