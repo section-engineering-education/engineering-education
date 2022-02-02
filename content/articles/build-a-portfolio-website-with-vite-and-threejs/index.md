@@ -6,7 +6,7 @@ url: /build-a-portfolio-website-with-vite-and-threejs/
 title: Build a Portfolio Website with Vite and Three.js
 description:  In this tutorial, we will be building a portfolio website with Three.js and Vite. 
 author: oyedele-temitope
-date: 2022-01-31T00:00:00-18:00
+date: 2022-02-01T00:00:00-10:30
 topics: [Languages]
 excerpt_separator: <!--more-->
 images:
@@ -480,7 +480,7 @@ We have created a portfolio website using Three.js. You can go ahead and add mor
 
 ### Conclusion
 
-This article discussed what Three.js is and what it can be used for, its relationship with WebGL. We also talked briefly about some terms and concepts while building our portfolio project. I hope you enjoyed this article. Here’s a link to the[GitHub](https://github.com/oyedeletemitope/Build-a-portfolio-website-with-vite-and-threejs) repository for this project. Please share if you find this helpful. Happy coding!
+This article discussed what Three.js is and what it can be used for, its relationship with WebGL. We also talked briefly about some terms and concepts while building our portfolio project. I hope you enjoyed this article. Here’s a link to the [GitHub](https://github.com/oyedeletemitope/Build-a-portfolio-website-with-vite-and-threejs) repository for this project. Please share if you find this helpful. Happy coding!
 
 ---
-Peer Review Contributions by: [Lalithnarayan C](/engineering-education/authors/lalithnarayan-c/)
+Peer Review Contributions by: [Joseph Chege](/engineering-education/authors/joseph-chege/)
