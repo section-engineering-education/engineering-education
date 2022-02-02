@@ -19,7 +19,7 @@ In this article, I will assume that:
 An interface is a collection of methods that can be inherited by several classes.
 #### 1.1 How to create an interface.
 To create an interface, you need to use the keyword `interface` like this:
-```bash
+```java
 public interface MyInterface {
     void method1();
     void method2();
@@ -31,7 +31,7 @@ In the above example, we have an interface called `MyInterface` and in it, we de
 An interface is supposed to say what should be done by the class that implements it, while a class should give the idea of how it should be done.
 
 To understand this, let us look at the code snippets below:
-```bash
+```java
 public interface bird {
     void sound();
 }
@@ -39,7 +39,7 @@ public interface bird {
 In the above snippet, we have an interface named bird. This interface has one method named sound. 
 
 We have different types of birds that make different sounds. For instance, a Crow makes a sound like "Caw Caw".
-```bash
+```java
 public class Crow implements bird {
    @Override  #  override keyword is used to tell the compiler that the method sound is implementing an interface method
     public void sound() {
@@ -48,7 +48,7 @@ public class Crow implements bird {
 }
 ```
 Another bird parrot makes a sound like "Kwi Kwi Kwi".
-```bash
+```java
 public class parrot implements bird {
     @Override
     public void sound() {
@@ -121,7 +121,7 @@ public class dog implements sound{
 }
 ```
 To execute the snippet`(eg dog.class)`, open the terminal in the IntelliJ IDEA and type the following commands:
-```bash
+```java
 $ javac dog.java
 $ java dog
 ```
