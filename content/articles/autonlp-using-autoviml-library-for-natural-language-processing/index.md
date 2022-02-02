@@ -284,7 +284,7 @@ It is the split dataset used for training.
 It is the test dataset used for testing.
 
 - `score_type='balanced_accuracy'`
-It is used to calculate the accuracy score for the model.
+It calculates the accuracy score for the model.
 
 - `modeltype='Classification'`
 It specifies the type of model we are building. We are building a model used for classification.
