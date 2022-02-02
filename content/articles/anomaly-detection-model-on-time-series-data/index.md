@@ -213,7 +213,7 @@ We fit the model to the training dataset so that the model can learn from it.
 ```python
 model.fit(train_dataset)
 ```
-This will train the model and the model will be ready to make future predictions.
+This code will train the model. After training, the model will now be ready to make future predictions.
 
 ### Making predictions using the test dataset
 The test dataset contains timestamp values past `2015-01-27`. The test dataset has 120 hours. We are forecasting for the 120 hours in the test dataset.
