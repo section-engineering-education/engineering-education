@@ -2,16 +2,16 @@
 layout: engineering-education
 status: publish
 published: true
-url: /how-to-set-up-rust-api-servers-with-the-diseal-orm-and-the-postgresql/
+url: /rust-api-with-diesel-orm-and-postgresql/
 title: Setting up Rust API with Diesel and PostgreSQL
 description: This tutorial will walk the reader through the concept of an ORM and how to use it in a Rust-API together with Diesel and PostgreSQL. 
 author: carol-wanjiru
-date: 2022-01-31T00:00:00-01:33
+date: 2022-02-02T00:00:00-10:45
 topics: [Languages]
 excerpt_separator: <!--more-->
 images:
 
-  - url: /engineering-education/how-to-set-up-rust-api-servers-with-the-diseal-orm-and-the-postgresql/hero.jpg
+  - url: /engineering-education/rust-api-with-diesel-orm-and-postgresql/hero.jpg
     alt: Setting up Rust API with Diesel and PostgreSQL Hero Image
 ---
 
