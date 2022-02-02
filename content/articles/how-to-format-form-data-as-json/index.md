@@ -165,7 +165,6 @@ async function postFormFieldsAsJson({ url, formData }) {
     let error = await res.text();
     throw new Error(error);
   }
-
   //If the response was OK, return the response body.
   return res.json();
 }
@@ -252,7 +251,6 @@ async function postFormFieldsAsJson({ url, formData }) {
     let error = await res.text();
     throw new Error(error);
   }
-
   //If the response was OK, return the response body.
   return res.json();
 }
