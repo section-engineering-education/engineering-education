@@ -11,7 +11,7 @@ topics: [Languages]
 excerpt_separator: <!--more-->
 images:
 
-  - url: /polymorphism-in-java/hero.jpg
+  - url: /engineering-education/polymorphism-in-java/hero.jpg
     alt: Polymorphism in Java
 ---
 
