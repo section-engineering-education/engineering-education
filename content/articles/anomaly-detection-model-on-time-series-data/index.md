@@ -49,11 +49,11 @@ To follow along with this tutorial, a reader should:
 - Use [Google Colab notebook](https://research.google.com/)
 
 ### Time series dataset
-The dataset used in this tutorial is the New York Taxi dataset. The dataset was recorded on a half-hour basis for 6 months. The dataset shows the number of active taxi drivers in New York city every half-hour. 
+In this tutorial, we will use the New York Taxi dataset. The dataset was recorded on a half-hour basis for 6 months. The dataset shows the number of active taxi drivers in New York city every half-hour. 
 
-We will use this dataset to build a times series model using Facebook Prophet. We will use the model to predict the number of active taxi drivers in New York. 
+We will use this dataset to build a times series model using Facebook Prophet. We will then use the model to predict the number of active taxi drivers in New York. 
 
-After the model has made the predictions, we will analyze the results of the predictions. This will enable us to detect the anomalies/outliers. These values can be high or low relative to the prediction values. By using a scatter plot, we will be able to visualize these outliers.
+After the model has made the predictions, we will analyze the results of the predictions. This will enable us to detect the anomalies/outliers. By using a scatter plot, we will be able to visualize these outliers. Outliers are values that deviate from the expected prediction values (maybe extremely high or low). 
 
 To download the New York Taxi dataset, use this [link.](https://raw.githubusercontent.com/numenta/NAB/master/data/realKnownCause/nyc_taxi.csv)
 
@@ -69,25 +69,25 @@ import os
 from datetime import datetime
 import plotly.express as px
 ```
-Each imported package is important for anomaly detection. The functions of each of these packages are as follows:
+These packages are important for anomaly detection. The functions of each of these packages are as follows:
 
 **matplotlib**
-It is used as a visualization package. We use Matplotlib to plot line graphs, figures, and diagrams.
+Matplotlib is a visualization package. We use Matplotlib to plot line graphs, figures, and diagrams.
 
 **numpy**
-It is used to convert our image dataset into arrays. It also enables us to perform mathematical functions and operations on our dataset.
+Numpy will convert the time series dataset into arrays. It also enables us to perform mathematical operations on arrays.
 
 **pandas**
-It is used for data analysis and manipulation.
+Pandas perfoms data analysis and manipulation.
 
 **os**
 It enables us to interact with the operating system when in the Google Colab.
 
 **datetime**
-It is used to convert the timestamps in our dataset into DateTime data types. Time series models only work with the DateTime datatypes for the time columns.
+It converts the timestamps in our dataset into DateTime data types. Time series models only work with the DateTime datatypes for the time columns.
 
 **plotly.express**
-It is used to plot more interactive diagrams. Plotly allows us to zoom on our diagrams and this enables us to gain more insights.
+It plots more interactive diagrams. Plotly allows us to zoom on our diagrams and this enables us to gain more insights.
 
 ### Loading the dataset
 To load the dataset, use this code:
@@ -146,7 +146,7 @@ fig.update_xaxes(
 )
 fig.show()
 ```
-From the code above, We have initialized the x-axis as `timestamp`. The y-axis is the `value`. And the title of the line chart is `NYC Taxi Demand`. We have added labels that can show the data points within 1 year, 3 years, or 5 years. 
+From the code above, we initialize the x-axis as `timestamp`. The y-axis is the `value`. And the title of the line chart is `NYC Taxi Demand`. We then add labels that can show the data points within 1 year, 3 years, or 5 years. 
 
 The diagram is shown below:
 
@@ -185,13 +185,13 @@ The output is shown below:
 ![Renamed columns](/engineering-education/anomaly-detection-model-on-time-series-data/renamed-columns.jpg)
 
 ### Dataset splitting
-We need to split our dataset into two sets. One set will be used to train our time series model and the other one will test the model.
+We need to split our dataset into two sets. One set for training the time series model and the other set for testing the model.
 
 ```python
 train_dataset = taxi_df[(taxi_df['ds']>='2014-07-01')&(taxi_df['ds']<='2015-01-27')]
 test_dataset = taxi_df[(taxi_df['ds']>'2015-01-27')]
 ```
-From the code above, the dataset between `2014-07-01` and `2015-01-27` will be used for training. The test dataset contains timestamp values past `2015-01-27`. The model will use the test dataset to make predictions.
+From the code above, the dataset between `2014-07-01` and `2015-01-27` is the train set. The test set contains timestamp values past `2015-01-27`. The model will use the test dataset to make predictions.
 
 Let's initialize our model.
 
@@ -213,10 +213,10 @@ We fit the model to the training dataset so that the model can learn from it.
 ```python
 model.fit(train_dataset)
 ```
-This code will train the model. After training, the model will now be ready to make future predictions.
+This code will train the model. After training, the model will be ready to make future predictions.
 
 ### Making predictions using the test dataset
-The test dataset contains timestamp values past `2015-01-27`. The test dataset has 120 hours. We are forecasting for the 120 hours in the test dataset.
+The test dataset contains timestamp values past `2015-01-27`. The test set has 120 hours. We are forecasting for the 120 hours in the test dataset.
 
 ```python
 future = model.make_future_dataframe(periods=120, freq='H')
@@ -236,11 +236,11 @@ forecast[['ds', 'yhat', 'yhat_lower', 'yhat_upper']].tail()
 ```
 From the code above, we have initialized various methods and columns.
 
-- `model.predict`: It is the method used to make the actual predictions. 
-- `ds`: It is the column that holds the timestamps values of the next 120 hours. 
-- `yhat`: It is the column that holds the forecast values after the model makes predictions.
-- `yhat_lower`: It is the column that holds the bottom values of the confidence interval.
-- `yhat_upper`: It is the column that holds the upper values of the confidence interval.
+- `model.predict`: It is the method that makes the actual predictions. 
+- `ds`: It is the column that contains the timestamps values of the next 120 hours. 
+- `yhat`: It is the column that contains the forecast values after the model makes predictions.
+- `yhat_lower`: It is the column that contains the bottom values of the confidence interval.
+- `yhat_upper`: It is the column that contains the upper values of the confidence interval.
 
 If you run the code above, it will provide the following output:
 
@@ -264,7 +264,7 @@ From the image above, the black points are the predicted values. We now need to 
 To further understand these prediction results, we add two columns to the prediction data frame. So far the prediction data frame has four columns. We need to add an `error` column and the `uncertainty` column. These two columns will help detect anomalies/outliers.
 
 #### Error column
-It is used to find the difference between the actual number of taxis and the predicted number of taxis. The actual values are saved in `y` column and the predicted values are in the `yhat` column.
+We use this column to find the difference between the actual number of taxis and the predicted number of taxis. The actual values are saved in `y` column and the predicted values are in the `yhat` column.
 
 We add the error column using the following code:
 
@@ -272,7 +272,7 @@ We add the error column using the following code:
 outcome['error'] = outcome['y'] - outcome['yhat']
 ```
 #### Uncertainity column
-It is used to find the difference between the confidence intervals.
+We use this column to find the difference between the confidence intervals (`yhat_upper` and `yhat_lower`).
 
 We add the uncertainty column using the following code:
 
