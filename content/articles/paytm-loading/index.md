@@ -6,7 +6,7 @@ url: /paytm-loading/
 title: Building a Paytm loading effect from scratch
 description: This article takes the reader through the benefits of a custom preloader and how to use  various CSS properties to build a custom Paytm loading animation from scratch.
 author: phina-kersly
-date: 2022-13-01T00:00:00-02:00
+date: 2022-02-02T00:00:00-02:00
 topics: [Languages]
 excerpt_separator: <!--more-->
 images:
@@ -329,3 +329,6 @@ Your final loader should be up and running at the end of the styling and followi
 This tutorial was a comprehensive headstart for working with CSS on an actual website. We begin by understanding the benefits of using loading animations and the level of risk that comes when a website has no suitable animation. Then, we discussed how to build a loading animation effect from scratch, keeping the Paytm one in mind.
 
 We looked at various aspects of CSS used to model animation and varied the different parameters required to work effectively. Finally, we worked out all these concepts by implementing the animation in a Django application, one of the most popular web development frameworks.
+
+  ---
+Peer Review Contributions by: [Mercy Meave](/engineering-education/authors/mercy-meave/)
