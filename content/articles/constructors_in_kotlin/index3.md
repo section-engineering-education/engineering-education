@@ -32,18 +32,24 @@ The primary constructor must be defined with the same name as the class, followe
 The primary constructor is a section of the class header that comes after the class name, using the `constructor` keyword. The example below exemplifies the definition:
 
 ```kotlin
-class student Constructor(name:string,age:Int,Email:string)
+fun main(args: Array<String>) {
+class student constructor(name: String, age:Int, Email:String)
  { 
      ///code to be processed
+}
 }
 ```
 The constructor keyword can be ignored if the primary constructor has no annotations or accessibility modifiers:
 
 The example below explains:
 ```kotlin
-class AtmMachine(_moneyInMachine:Boolen,_location:string){
+ fun main(args: Array<String>) {
+    
+ 
+  class AtmMachine(_moneyInMachine:Boolean,_location:String){
     ///code to be exercuted
 }
+ }
 ```
 In the preceding example, we don't use the `constructor` keyword. By default, all constructors are public which means they are visible everywhere in the class. Therefore we don't have to include the `constructor` keyword, as shown below:
 
@@ -55,6 +61,8 @@ class student(name:string,age:Int,Email:string){ }
 In Kotlin, a secondary constructor is created using the `constructor` keyword. In addition, the secondary constructor can be used to call the primary constructor. The example below shows how you can declare two constructors with a student having two parameters (name and year). 
 
 ```kotlin
+fun main(args: Array<String>){
+
 class student{ 
     constructor(name: Int){ 
 
@@ -62,6 +70,7 @@ class student{
     constructor(year:Int, id: Int){ 
 
     } 
+}
 }
 ```
 
