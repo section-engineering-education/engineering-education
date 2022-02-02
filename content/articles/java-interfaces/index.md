@@ -19,7 +19,7 @@ In this article, I will assume that:
 An interface is a collection of methods that several classes can inherit.
 #### 1.1 How to create an interface.
 To create an interface, you need to use the keyword `interface` like this:
-```java
+```Java
 public interface MyInterface {
     void method1();
     void method2();
@@ -39,7 +39,7 @@ public interface bird {
 In the above snippet, we have an interface named bird. This interface has one method named sound. 
 
 We have different types of birds that make different sounds. For instance, a Crow makes a sound like "Caw Caw."
-```java
+```Java
 public class Crow implements bird {
    @Override  #  override keyword is used to tell the compiler that the method sound is implementing an interface method
     public void sound() {
@@ -48,7 +48,7 @@ public class Crow implements bird {
 }
 ```
 Another bird parrot makes a sound like "Kwi Kwi Kwi".
-```java
+```Java
 public class parrot implements bird {
     @Override
     public void sound() {
@@ -86,7 +86,7 @@ public interface sound {
 In the above interface snippet, we have two methods: ' noisy,` and the other is `soft.`
 
 Now, lets create  `Cat` and `dog` classes in the directory `/interface`,  add the snippets below respectively:
-```java
+```Java
 public class cat implements sound{
     public static void main(String args[]){
         cat ex = new cat();
@@ -103,7 +103,7 @@ public class cat implements sound{
     }
 }
 ```
-```java
+```Java
 public class dog implements sound{
     public static void main(String args[]){
     dog ex = new dog();
@@ -121,7 +121,7 @@ public class dog implements sound{
 }
 ```
 To execute the snippet`(e.g., dog. class)`, open the terminal in the IntelliJ IDEA and type the following commands:
-```java
+```Java
 $ javac dog.java
 $ java dog
 ```
@@ -142,7 +142,7 @@ This means that the other ports should be `segregated` and only `remain` with th
 Extensive interfaces should be divided into smaller ones where each performs a different task.
 #### 3.1 ISP Demonstration
 Let us Create a new directory `hotel` in IntelliJ IDEA. In `/hotel`  create an interface `/hotel/main.java` and add the snippet below:
-```java
+```Java
 public interface hotel1 {
     void room();
     void food();
@@ -153,7 +153,7 @@ In the above interface snippet, we have three methods: ' room,` and the other tw
 This means we can get a room, food, and drink in the hotel1.
 
 Let us create a class beverages in `/hotel1` and add the snippet below:
-```java
+```Java
 public class Beverages {
     public void drink(hotel1  drinking){
         drinking.drink();
@@ -173,13 +173,13 @@ Changing the capability `void room()` will affect the class `beverages`  and oth
 To avoid this, we use the `ISP` principle.
 
 Let us divide our interface into smaller interfaces,  where each interface will focus on a different capability.
-```java
+```Java
 public interface Drinking {
     void drink();
 }
 ```
 On generating a new interface, our old interface will be as shown below:
-```java
+```Java
 public interface hotel1 {
     void room(int size);
     void food();
