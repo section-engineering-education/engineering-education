@@ -235,7 +235,7 @@ To split the dataset, use this code:
 ```python
 train, test = train_test_split(reviews_df, test_size=0.25)
 ```
-From the code above we have used `test_size=0.25`. This is the ratio used for dataset splitting. 75% of the data is used for training and 25% is used for testing.
+From the code above, we have used `test_size=0.25`. It is the ratio used for dataset splitting. We use 75% of the data for training and 25% for testing.
 
 After splitting the dataset, let's now use AutoVIML to automate natural language processing.
 
