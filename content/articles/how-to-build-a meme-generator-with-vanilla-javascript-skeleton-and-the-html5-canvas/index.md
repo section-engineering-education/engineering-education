@@ -166,8 +166,8 @@ In the code above, we got the image URL by targeting the first file inside the `
 
 Now, we can proceed to display the image on the Canvas.
 
-## How to use the HTML 5 Canvas for this project
-You make use of the HTML5 `canvas` tag by giving it an `id` when trying to create a canvas in the DOM. You can also set whatever width and height you desire for it. For example: 
+### How to use the HTML 5 Canvas for this project
+You make use of the HTML5 `canvas` tag by giving it an `id` when trying to create a canvas in the DOM. You can also set a specific width and height that you desire. For example: 
 
 ```html
 <div>
