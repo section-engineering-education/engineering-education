@@ -191,8 +191,7 @@ Here’s the one for the Internet Explorer:
 
 ### Getting the element’s context
 The Canvas is initially blank. It is like a hollow void that you need to fill with images, texts, e.t.c. You can do that by accessing its rendering context using the DOM rendering `getContext()` function. This function will help you draw what you need on the canvas (not manually). The `getContext()` function takes one parameter `2d` to ensure that the rendered image appears in 2D form.  
-Here is the code to create the required context along with a check if the user’s browser supports it.
-
+Here is the code to create the required context and check if the user’s browser supports it:
 ```js
 
 var canvas  = document.querySelector("#canvas");
