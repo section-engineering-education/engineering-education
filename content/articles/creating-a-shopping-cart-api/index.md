@@ -24,13 +24,18 @@ Firstly go to [Spring Boot Initializer](https://start.spring.io/), there you wil
 6. Name-> cart
 7. Description-> it is for you to explain briefly what your project is all about but for now we will leave it like that.
 8. Dependencies-> Search for the following in the search bar and add them to your dependencies for this project.
-- Lombok-> for your annotations like @Data for your entities and prevent you from writing your setters and getters and allows you to Autowire.
+- Lombok->  
+Lombok is a java library that is utilized to limit/eliminate the boilerplate code and save the time of development simply by utilizing a few annotations. Notwithstanding it, it additionally builds the clarity of the source code and saves space.
+Lombok gives a bunch of annotations to make our coding life simpler. The following annotations are provided by Lombok: @ToString, @Getter, @Setter, @EqualsAndHashCode,  @NoArgsConstructor,
+@AllArgsConstructor,
+@RequiredArgsConstructor and @Data.
+For the sake of this tutorial, we will focus on @Data. This annotation comprises a couple of other annotations that help you save time, it's like a collection of all of the other annotations except @NoArgsConstructor and @AllArgsConstructor.
 - Spring web -> necessary when building a web app
 - devtool-> For automatic reloading
 9. Packaging -> Jar
 10.Java-> 11 or anyone you choose, better still choose the default.
 #### Creating Your Entities/Models
-Here you create the entities that will relate to the database or the data structure you are mapping your object to if you are not using a database. Before we view the code base of creating our entities let's view how the structure of the entire application will look like![Package Structure](shoppingapplication.JPG)
+Here you create the entities that will relate to the database or the data structure you are mapping your object to if you are not using a database. Before we view the code base of creating our entities let's view what the structure of the entire application will look like![Package Structure](shoppingapplication.JPG)
 Here you can see the various classes in the package
 ![Class Structure](shoppingcart2.JPG).
 In our models we have the following classes:
@@ -102,9 +107,9 @@ public class Product {
     }
 }
 ```
-In the model package, you should have these classes in it. These classes or entities provide the feature or attribute to what it represents.
+In the model package as stated early in the image provided above, you should have these classes in it. These classes provide the feature, attribute or field we will be needing for the creation of objects.
 #### Creating Your Repository
-The importance of creating a repository is to map your entity to the database, It's like a store and also maps your entities. In case you want to work on your service instead of going looking for how to get some element your repository helps you get it. Always make sure you use Autowire. 
+The importance of creating a repository is to map your entity to the database. Creating a repository helps you communicate with the database, it's like you having your database in you code for easy access. Spring-book provides the @Repository annotation that helps the compiler know that this is a gateway to the database.
 In the repository package we have the following:
 AdminDao
 CustomerDao
@@ -207,8 +212,8 @@ public interface dataService {
 ```
 Now You will see how we code to the interface, any method that is in the interface must correlate to the implementation. In this code, I used the `@Service` in the implementation.
 We have the following implementation of the two classes in our interface and they are:
-1. CartService Implementation
-2. DataService Implementation
+1. CartServiceImpl
+2. DataServiceImpl
 #### CartService Implementation
 ```java
 @Service
@@ -445,8 +450,8 @@ public class controller {
     }
 }
 ```
-N/B POSTMapping is for creating new objects, GetMapping, PatchMapping and PutMapping are for updating, DeleteMapping is for deleting.
-We used field injection `@Autowire` annotation to inject the dependency injection to avoid writing initializing a new object but using the very object each time a call is made, throughout the whole code-base.
+N/B @POSTMapping is for creating new objects, @GetMapping for retrieving data from the database, @PatchMapping, and PutMapping are for updating, DeleteMapping is for deleting.
+In this tutorial, we'll annotate the fields of the class with `@Autowire` annotation to inject the dependency of the object we want to use to avoid initializing a new object but using the very object each time a call is made, throughout the whole code-base.
 #### Running the server
 ```java
 @SpringBootApplication
@@ -585,10 +590,12 @@ public class customerTest {
 ![shopping_api1](api2.JPG)
 ![shopping_api2](payment.JPG)
 #### Conclusion
-In the end, we've seen how to code to an interface, how to write a unit test, how to create an endpoint, and also how to use postman to view our endpoint. You may go on and start creating different APIs.
-Once again you can check [Github](https://github.com/kingsleynwafor54/shopping_cart_with_springboot)
+In the end, we've seen how to code to an interface, how to write a unit test, how to create an endpoint, and also how we used postman to view our endpoint. 
+Also, we discussed how we used field dependency injection and not constructor dependency injection which will still suffice, we also took a deep dive into creating APIs that adds and also get customers, admins, then we also added products to our cart and the cart could calculate the cost of products in the cart since the products have an attribute of price.
+In this tutorial, we didn't integrate any other API for an actual business transaction that either works with your bank account or your credit card, hopefully, we'll work on that in the next tutorial and the use of an actual database that could be used in the real-life event.
+Once again you can check [Github](https://github.com/kingsleynwafor54/shopping_cart_with_springboot) for more on the entire code structure in case you want to save time from copying code or you have an error maybe you miss-spelled or you didn't add a certain dependency etc. Thanks for staying with me all the way, do have a nice time.
 #### Referrence
 [Rapidapi](https://rapidapi.com/section.io/api/section-io/details)
-[Getting Started with Stripe-springboot](https://www.section.io/engineering-education/stripe-springboot/).
 
+[Getting Started with Stripe-springboot](https://www.section.io/engineering-education/stripe-springboot/).
 #### Happy coding!
