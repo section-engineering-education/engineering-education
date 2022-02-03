@@ -7,7 +7,9 @@ Memes are a stimulating and fun way to pass messages to people. This tutorial wi
 
 ### Adding Skeleton to your project
 Skeleton is a unique CSS framework that helps in designing web apps. It consists of several responsive and straightforward boilerplate codes that help with certain CSS functionalities that make styling easier. Skeleton also has utility classes that boost the UI appearance with its styled elements (e.g., `.button.button-primary`, representing a perfectly styled button without using CSS).
-There are two ways to install Skeleton into your application: You can either download the [zip file](https://github.com/dhg/Skeleton/releases/download/2.0.4/Skeleton-2.0.4.zip) and extract into your system or clone [this repo](https://github.com/dhg/Skeleton.git) with the following command:
+There are two ways to install Skeleton into your application:
+- Download the [zip file](https://github.com/dhg/Skeleton/releases/download/2.0.4/Skeleton-2.0.4.zip) and extract it into your system.
+- clone [this repo](https://github.com/dhg/Skeleton.git) with the following command:
 
 `git clone https://github.com/dhg/Skeleton.git`
 
