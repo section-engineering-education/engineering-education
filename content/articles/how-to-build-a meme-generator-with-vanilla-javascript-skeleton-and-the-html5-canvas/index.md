@@ -73,7 +73,7 @@ Here is the code for the HTML layout of the application:
 
 ```
 
-The `row` classes you see on some of the elements, were gotten from Skeleton to help align the app’s UI in a grid system. We also got the “Create new Meme” button from Skeleton as well as the inputs.
+We got the `row` classes you see on some of the elements from Skeleton to help align the app’s UI in a grid system. We also got the `Create new Meme` button from Skeleton and the inputs.
 
 Now the CSS:
 
