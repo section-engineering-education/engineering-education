@@ -1,4 +1,4 @@
-In this tutorial, you learned the entire process of importing and using Skeleton for your application’s UI. You also learned how to use the HTML 5 Canvas to fix images and texts at spec### How to build a Meme Generator with Vanilla JavaScript, Skeleton and the HTML 5 Canvas
+### How to build a Meme Generator with Vanilla JavaScript, Skeleton and the HTML 5 Canvas
 Memes are a stimulating and fun way to pass messages to people. This tutorial will take you through a step-by-step guide on how you can build a simple meme generator with JavaScript (no frameworks involved) and style its components with CSS and [Skeleton](http://getskeleton.com/). With the [HTML 5 Canvas](https://developer.mozilla.org/en-US/docs/Web/API/Canvas_API), users will be able to upload images and texts of their choice and or from an online source to create comical memes for a mass online audience. 
 
 ### Table of Contents
@@ -300,7 +300,21 @@ Here is the app’s final appearance with a created meme.
 To get the source code, you can head to my [Github Repo](https://github.com/Nomzy-kush/Meme-Generator) to get the source code. [Here](https://pensive-kepler-281118.netlify.app/) is the link to the live application deployed on Netlify.
  
 ### Conclusion
-In this tutorial, you learned the entire process of importing and using Skeleton for your application’s UI. You also learned how to use the HTML 5 Canvas to fix images and texts at specific coordinate points in the DOM, thus creating a new meme. 
+In this tutorial, you learned the entire process of importing and using Skeleton for your application’s UI. You also learned how to use the HTML 5 Canvas to fix images and texts at specific coordinate points in the DOM, thus creating a new meme.
+   
+
+
+
+ 
+
+
+
+
+
+
+           
+ 
+
 
 
 
