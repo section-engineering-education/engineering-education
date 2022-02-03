@@ -1,3 +1,19 @@
+---
+layout: engineering-education
+status: publish
+published: true
+url: /java-interfaces/
+title: Getting started with Java Interfaces
+description: This article will cover java interfaces used to build loosely-coupled, extensible, testable, and reusable components.
+author: erastus-muriithi
+date: 2022-02-03T00:00:00-04:00
+topics: [Languages]
+excerpt_separator: <!--more-->
+images:
+
+  - url: /engineering-education/java-interfaces/hero.png
+    alt: Getting started with Java Interfaces cover image
+---
 ### Introduction
 Interfaces in Java allow the developer to build reusable, testable, extensible, and coupled components. Interfaces play a significant role when used in classes(for instance) that depend on each other. 
 
