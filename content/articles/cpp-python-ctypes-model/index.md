@@ -460,8 +460,8 @@ print("Predicted value:",pred)
 ```
 
 ### Conclusion
-That was it. We started by looking at the working of the Logistic regression and  Gradient Descent optimization algorithms. Thereafter, we wrote the C++ code. Lastly, we built the C++ file as a shared library and consumed it in Python. You can now start creating your C++ models.
+That was it. We started by looking at the working of the Logistic regression and  Gradient Descent optimization algorithms. Thereafter, we wrote the C++ code. To wrap things up, we built the C++ file as a shared library and consumed it in Python. You can now start creating your C++ models.
 
-Another point to note, there are other wrapper tools apart from ctypes e.g CFFI, PyBind11, etc. Have a look at [this article](https://realpython.com/python-bindings-overview/) for more about them.
+Another point to note, there are other wrapper tools apart from ctypes e.g CFFI, PyBind11, etc. Have a look at [this article](https://realpython.com/python-bindings-overview/) for more information about them. Feel free to suggest changes, improvements, and corrections in the comment section below.
 
 Have a good one!
