@@ -20,8 +20,15 @@ By the end of this tutorial, you will have a working HTML form that sends form d
 
 ### Prerequisites for this tutorial
 
-To follow along with this tutorial intermediate knowledge in HTML, CSS, JS, Nodejs and Express is required.
-A code editor and Nodejs should be installed on your machine also.
+To follow along with this tutorial intermediate knowledge in the following is required:
+
+- HTML
+- CSS
+- JS
+- Nodejs
+- Express.js
+
+A [code editor](https://code.visualstudio.com/download) and [Nodejs](https://nodejs.org/en/download/) should be installed on your machine also.
 
 ### The HTML form will be working with
 
@@ -65,7 +72,7 @@ A code editor and Nodejs should be installed on your machine also.
 </form>
 ```
 
-![The HTML form](sample-form.png)
+![The HTML form](/engineering-education/how-to-format-form-data-as-json/sample-form.png)
 
 A form with 2 radio buttons for selecting male or female gender and 2 input fields, for the full name and email address and a button to submit the form.
 
@@ -274,7 +281,7 @@ Implementing a simple API using Nodejs and Express.js, will expose an endpoint w
 
 Nodejs should be installed on your machine. To check if it is installed, run the following command:
 
-```sh
+```bash
 node -v
 ```
 
@@ -282,7 +289,7 @@ Otherwise, install it using the following [instructions](https://nodejs.org/en/d
 
 While within the project root folder, run the following `npm` command to initialize the Node.js project.
 
-```sh
+```bash
 npm init
 ```
 
@@ -302,13 +309,13 @@ Alternatively, you can opt to auto initialize the project with NPM default value
 
 This is are the steps to install the listed Node.js Packages:
 
-```sh
+```bash
 npm install cors express
 ```
 
 and
 
-```sh
+```bash
 npm install --save-dev nodemon
 ```
 
@@ -348,16 +355,16 @@ Configure the following start scripts in the package.json file.
 
 To start the server run
 
-```sh
+```bash
 npm run dev
 ```
 
 The console response on the terminal from the API
 
-![The console response on the terminal from the API](console-response-on-terminal-from-api.png)
+![The console response on the terminal from the API](/engineering-education/how-to-format-form-data-as-json/console-response-on-terminal-from-api.png)
 
 The console response on the browser
-![The console response on browser](console-response-on-browser.png)
+![The console response on browser](/engineering-education/how-to-format-form-data-as-json/console-response-on-browser.png)
 
 For code reference, here is the link to the full project on [GitHub](https://github.com/gisioraelvis/sending-formdata-as-json-using-fetch).
 
