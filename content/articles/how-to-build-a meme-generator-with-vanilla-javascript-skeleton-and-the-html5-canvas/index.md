@@ -13,7 +13,9 @@ There are two ways to install Skeleton into your application:
 
 `git clone https://github.com/dhg/Skeleton.git`
 
-*I advise you to download the zip file because the command above is still under active development. After downloading and extracting the zip file to your project folder, you will find the file structure below in your text editor:*
+*I advise you to download the zip file because the command above is still under active development.*
+
+After downloading and extracting the zip file to your project folder, you will find the file structure below in your text editor:
 
 Below is the Skeleton folder structure:
 
