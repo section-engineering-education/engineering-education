@@ -181,13 +181,7 @@ Then, target the canvas with a `document.querySelector()` method so you can work
 const canvas = document.querySelector('#canvas');
 ```
 
-Note that: Not all browsers support the HTML 5 Canvas. These are some of the most popular browsers that do:
-
-Chrome
-Edge
-Firefox
-Safari, e.t.c.
-
+> Note: Not all browsers support the HTML 5 Canvas. Some of the most popular browsers that support it are Chrome, Edge, Firefox and Safari.
 Browsers like the Internet Explorer 7 and 8 are not compatible with the HTML 5 canvas but, you can write a script that will aid the browser-support for the canvas code. 
 Here’s the one for the Internet Explorer:
 ```html
