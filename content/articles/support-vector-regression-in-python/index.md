@@ -11,7 +11,7 @@ topics: [Machine Learning]
 excerpt_separator: <!--more-->
 images:
 
-  - url: /engineering-education/support-vector-regression-in-python/hero.png
+  - url: /engineering-education/support-vector-regression-in-python/hero.jpg
     alt: Getting Started with Support Vector Regression in Python Image
 ---
 
