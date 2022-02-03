@@ -5,11 +5,11 @@ permissions:
 jobs:
   run:
     runs-on: ubuntu-latest
-    permissions:
-      pull-requests: write
     steps:
       - uses: wow-actions/auto-comment@v1
         with:
+          permissions:
+            pull-requests: write
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           issuesOpenedReactions: 'hooray, +1'
           issuesOpenedComment: |
