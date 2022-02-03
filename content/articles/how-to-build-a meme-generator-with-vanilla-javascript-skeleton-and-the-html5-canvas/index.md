@@ -2,8 +2,8 @@
 Memes are a stimulating and fun way to pass messages to people. This tutorial will take you through a step-by-step guide on how you can build a simple meme generator with JavaScript (no frameworks involved) and style its components with CSS and [Skeleton](http://getskeleton.com/). With the [HTML 5 Canvas](https://developer.mozilla.org/en-US/docs/Web/API/Canvas_API), users will be able to upload images and texts of their choice and or from an online source to create comical memes for a mass online audience. 
 
 ## Prerequisites for this tutorial
-A text editor.
-A sound understanding of HTML, CSS and JavaScript.
+- A text editor.
+- Basic understanding of HTML, CSS and JavaScript.
 
 ### Adding Skeleton to your project
 Skeleton is a unique CSS framework that helps in designing web apps. It consists of several simple and responsive boilerplate codes that help with certain CSS functionalities that make styling easier. Skeleton also comes with utility classes that boost the UI appearance with its own styled elements (e.g. `.button.button-primary` which represents a perfectly styled button without using CSS.).
