@@ -137,9 +137,9 @@ Our root page should look like this after adding the styles:
 
 
 ## Adding JavaScript
-First, create a `script.js` file. In there, call the HTML elements that you intend to work on into your Javascript file with the `document.querySelector(‘#elementId’)` method. 
-Here is the code below:
+First, create a `script.js` file. Call the HTML elements you intend to work on into your JavaScript file with the `document.querySelector(‘#elementId’)` method.
 
+Here is the code:
 ```js
 const chooseImage = document.querySelector('#choose-image');
 const textAbove = document.querySelector('#text-above');
