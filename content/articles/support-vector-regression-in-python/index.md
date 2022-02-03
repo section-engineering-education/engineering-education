@@ -81,7 +81,7 @@ From the above discussion, we can formulate our optimization problem as follows:
 - Since the slack variables denote the deviation of the data from the margin of the $\epsilon$-tube, they can only be zero or greater than zero.
 - Since the error $\zeta^*$ is above the tolerance zone, they can only be greater than or equal to zero.
 
-The will lead to the following constraints:
+They will lead to the following constraints:
 1. $\zeta^ \ \ge0$ for data points above the tolerance region.
 2. $\zeta^*\ge0$ for the data points below the tolerance zone.
 
@@ -170,7 +170,7 @@ print(X_l)
  [10]]
 ```
 
-From this output, it's clear that the `X_l` variable is a 2D-array. Similarly, we can have a look at the `y_p` variable:
+From this output, it's clear that the `X_l` variable is a 2D array. Similarly, we can have a look at the `y_p` variable:
 
 ```python
 print(y_p)
@@ -211,7 +211,7 @@ y_p = y_p.reshape(-1,1)
  [1000000]]
 ```
 
-From the above output, `y_p` was successfully reshaped into a 2D-array.
+From the above output, `y_p` was successfully reshaped into a 2D array.
 
 Now, import the `StandardScalar` class and scale up the `X_l` and `y_p` variables separately as shown:
 
@@ -282,7 +282,7 @@ Due to this, we cannot use the linear SVR to model this data. Therefore, to capt
 #### Implementing SVR
 To implement our model, first, we need to import it from the scikit-learn and create an object to itself.
 
-Since we declared our data to be non-linear, we will pass it to a kernel called [Radial Basis function](https://medium.com/dataseries/radial-basis-functions-rbf-kernels-rbf-networks-explained-simply-35b246c4b76c) (rbf) kernel.
+Since we declared our data to be non-linear, we will pass it to a kernel called the [Radial Basis function](https://medium.com/dataseries/radial-basis-functions-rbf-kernels-rbf-networks-explained-simply-35b246c4b76c) (RBF) kernel.
 
 After declaring the kernel function, we will fit our data on the object. The following program performs these rules:
 
