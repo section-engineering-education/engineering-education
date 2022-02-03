@@ -149,7 +149,8 @@ const button = document.querySelector('#btn');
 ```
 
 ## Importing locally-stored images to the application
-To create the meme, you will need an image and texts whether words or sentences. To get a particular image from your system to the application, you first need to add an `eventListener` that will listen for a `change` event when the user chooses a new image.
+To create the meme, you will need an image and texts whether words or sentences. To get a particular image from your system to the application, you first need to add an eventListener that will listen for a `change` event when the user chooses a new image.
+
 Here is the code below:
 
 ```js
