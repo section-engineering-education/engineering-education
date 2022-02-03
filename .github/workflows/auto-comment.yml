@@ -7,9 +7,9 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: wow-actions/auto-comment@v1
+        permissions:
+          pull-requests: write
         with:
-          permissions:
-            pull-requests: write
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           issuesOpenedReactions: 'hooray, +1'
           issuesOpenedComment: |
