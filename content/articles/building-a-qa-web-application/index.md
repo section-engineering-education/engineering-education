@@ -104,6 +104,8 @@ If you've ever used WordPress before with its drag and drop feature, building th
 
 Here's the design we came up with:
 
+![Design](/engineering-education/building-a-qa-web-application/design.jpg)
+
 Now that we have our design ready, we need to head back to our Google Colab and connect to Anvil from there.
 
 ### Connecting to Anvil
