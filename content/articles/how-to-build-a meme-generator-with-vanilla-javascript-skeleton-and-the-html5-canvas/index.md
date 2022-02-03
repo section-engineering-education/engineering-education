@@ -162,8 +162,9 @@ chooseImage.addEventListener('change', () => {
 })
 
 ```
-In the code above we got the image URL by targeting the first file that exists inside the file `input` field and then converted it to a data URL(i.e. an image represented in a URL text form). We then set the `image.src` to the `imageDataURL`. The `chooseImage.files` that is set to an index 0, represents the first file the user picks in the file `input` which is the chosen image. 
-Now, you can proceed to display the image on the Canvas.
+In the code above, we got the image URL by targeting the first file inside the `input` field and then converting it to a data URL (i.e., an image represented in a URL text form). We then set the `image.src` to the `imageDataURL`. The `chooseImage.files` is set to index 0, representing the first file the user picks in the file `input` which is the chosen image.
+
+Now, we can proceed to display the image on the Canvas.
 
 ## How to use the HTML 5 Canvas for this project
 You make use of the HTML5 `canvas` tag by giving it an `id` when trying to create a canvas in the DOM. You can also set whatever width and height you desire for it. For example: 
