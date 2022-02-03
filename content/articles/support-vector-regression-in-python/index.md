@@ -21,13 +21,13 @@ However, to equip yourself with the ability to approach analysis tasks with this
 
 In this article, you will learn all the core concepts of support vector regression that you need to get started.
 
-### Pre-requisites:
+### Pre-requisites
 The learner is required to have a good understanding of:
 - [Ordinary Least Squares method](https://en.wikipedia.org/wiki/Ordinary_least_squares)
 - [Lagrangian multiplier method](https://www.youtube.com/watch?v=5m32gu6qGIU&t=809s)
 - How to work with Python libraries like [pandas](https://pandas.pydata.org), [numpy](https://numpy.org), [scikit-learn](scikit-learn.org/stable/), and [matplotlib](https://matplotlib.org).
 
-### Introduction to Support Vector Regression
+### Introduction to support vector regression
 #### Understanding linear regression
 To understand how the SVR model works, let's first recap what a  simple linear regression is.
 
