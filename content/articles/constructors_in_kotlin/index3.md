@@ -41,7 +41,7 @@ The constructor keyword can be ignored if the primary constructor has no annotat
 The example below explains:
 ```kotlin
 class AtmMachine(_moneyInMachine:Boolean,_location:String){
-    //code to be exercuted
+    //code to be executed
 }
 ```
 In the preceding example, we don't use the `constructor` keyword. By default, all constructors are public which means they are visible everywhere in the class. Therefore we don't have to include the `constructor` keyword, as shown below:
@@ -118,7 +118,7 @@ class myStudent{
      constructor(name:String,id:Int): this(name,id,"Alex@gmail"){
         println("Name=${name}")
          println("Id=${id}")
-         //exercutes last
+         //executes last
     }
     constructor(name:String, id:Int, mail:String ) 
       { 
@@ -178,7 +178,7 @@ class person(name:String,id:Int){
 
 ```
 
-When a person object is created, the parameters name and id accept the values `Alex` and `200`. The properties name and id are not properties of the Person class because they are not preceded by `val` or `var`. After the constructor is called, the initializer block is executed which initializes `pname` and `pId`. When run this would be the output:
+When a person object is created, the parameters name and id accept the values `Alex` and `200`. The properties name and id are not properties of the Person class because they are not preceded by `val` or `var`. After the constructor is called, the initializer block is executed which initializes `pName` and `pId`. When run this would be the output:
 
 ```
 Name = Alex
