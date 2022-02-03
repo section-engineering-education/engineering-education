@@ -1,6 +1,6 @@
-Push notifications comes in handy when you want to give your app's users timely information based on the product that the app is dealing with. Take, for example, an app that deals with giving out and repaying loans. It will be a bad user experience when a user makes a payment and he/she is not notified of the amount paid, balance, and other relevant information.
+When you want to give your app's consumers relevant information about the product that your app is dealing with, push notifications come in helpful. Take, for example, an app that deals with giving out and repaying loans. It will be a bad user experience when a user makes a payment and he/she is not notified of the amount paid, balance, and other relevant information.
 
-In this tutorial, we will understand what Push notifications are and their importance. We will then dive deep into understanding how one can send Push notifications based on changes in the Firebase Realtime Database.
+In this tutorial we will dive deep into understanding how one can send Push notifications based on changes in the Firebase Realtime Database.
 
 ### Table of contents
 - [Prerequisites](#prerequisites)
@@ -25,7 +25,7 @@ To follow along, you should have:
 - Node.js and Firebase CLI installed on your machine.
 
 ### What are push notifications?
-Push notifications are messages that appear in a user's web browser, mobile phone, or desktop device. They are used by businesses to send messages, offers, and other information to their clients on time. A subscriber can be anywhere and still receive these messages as long as he/she is connected to the internet or have their phone or browser open. 
+Messages that show in a user's web browser, mobile phone, or desktop computer are known as push notifications. Businesses use them to communicate timely announcements, deals, and other information to their customers. A user can get these messages from anywhere as long as they are connected to the internet or have their phone or browser open. 
 
 ### When do we need them?
 They provide convenience by allowing a user to receive:
@@ -47,15 +47,15 @@ Open it in your terminal and key in the following commands:
 
 - `firebase-login` - Logs into Firebase using your Google account.
 
-![firebase-login](/engineering-education/implementing-database-driven-push-notifications-in-android-with-firebase/firebase-login.png)
+![firebase-login](/engineering-education/implementdatabase-driven-push-notifications-in-android-with-firebase/firebase-login.png)
 
 - `firebase-init` - Initializes a Firebase project.
 
-![firebase-inti](/engineering-education/implementing-database-driven-push-notifications-in-android-with-firebase/firebase-init.png)
+![firebase-inti](/engineering-education/implementdatabase-driven-push-notifications-in-android-with-firebase/firebase-init.png)
 
 - Choose the feature that you want to configure for this project - Firebase function.
 
-![firebase-feature](/engineering-education/implementing-database-driven-push-notifications-in-android-with-firebase/firebase-feature.png)
+![firebase-feature](/engineering-education/implementdatabase-driven-push-notifications-in-android-with-firebase/firebase-feature.png)
 
 - For the next step, choose an existing project and select the project that you created in the Firebase console.
 
@@ -109,11 +109,11 @@ Once you are done writing the function, it is time to deploy it.
 
 In your code editor terminal, write the following command to deploy the function - `firebase deploy --only functions`
 
-![deploy-function](/engineering-education/implementing-database-driven-push-notifications-in-android-with-firebase/deploy-function.png)
+![deploy-function](/engineering-education/implementdatabase-driven-push-notifications-in-android-with-firebase/deploy-function.png)
 
 If your function is deployed successfully, if you open your Firebase console and navigate to the Functions section, you should see the deployed function
 
-![function](/engineering-education/implementing-database-driven-push-notifications-in-android-with-firebase/function.png)
+![function](/engineering-education/implementdatabase-driven-push-notifications-in-android-with-firebase/function.png)
 
 ### Step 2 - Getting started with Android studio
 Open your Android Studio and create an empty Android project. 
@@ -138,7 +138,7 @@ implementation 'com.google.firebase:firebase-database'
 ### Step 4 - Designing a user interface
 Create a simple user interface that will have two `EditText`: one for entering a name and another one for an amount. Also, include a `Button` that will trigger the notification when the user saves the data in the database. You can design a layout similar to this:
 
-![layout](/engineering-education/implementing-database-driven-push-notifications-in-android-with-firebase/layout.png)
+![layout](/engineering-education/implementdatabase-driven-push-notifications-in-android-with-firebase/layout.png)
 
 ### Step 5 - Creating a notifications service
 Create a new class called `NotificationService` that extends the `FirebaseMessagingService`. This class will store the device token in the database once the app is launched for the first time. Also, it will display a notification when a message is received.
@@ -161,8 +161,6 @@ class NotificationService : FirebaseMessagingService() {
     override fun onMessageReceived(message: RemoteMessage) {
         super.onMessageReceived(message)
 
-        val intent = Intent(this, MainActivity::class.java)
-
         val title = message.notification?.title
         val body = message.notification?.body
 
@@ -174,16 +172,11 @@ class NotificationService : FirebaseMessagingService() {
             createNotificationChannel(notificationManager)
         }
 
-        intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP)
-
-        val pendingIntent = PendingIntent.getActivity(this, 0, intent, FLAG_ONE_SHOT)
-
         val notification = NotificationCompat.Builder(this, CHANNEL_ID)
             .setContentTitle(title)
             .setContentText(body)
             .setSmallIcon(R.drawable.ic_baseline_notifications_24)
             .setAutoCancel(true)
-            .setContentIntent(pendingIntent)
             .build()
 
         notificationManager.notify(notificationID, notification)
@@ -203,22 +196,9 @@ class NotificationService : FirebaseMessagingService() {
 }
 ```
 
-In your `AndroidManifest.xml`, make sure you include the `Service`.
+In your `AndroidManifest.xml`, make sure you include the `Service` and add the following action.
 
-```manifest
-<application
-    ...
-
-    <service
-        android:name=".NotificationService"
-        android:exported="false">
-        <intent-filter>
-            <action android:name="com.google.firebase.MESSAGING_EVENT" />
-        </intent-filter>
-    </service>
-
-</application>
-```
+`<action android:name="com.google.firebase.MESSAGING_EVENT" />`
 
 ### Step 6 - Triggering notifications
 In your `Mainactivity` class, inside the `onCreate` method, set an `onClickListener` to the `Button`. This will save the data entered in the `EditTexts` into the database.
@@ -245,11 +225,9 @@ binding.buttonPay.setOnClickListener {
 ### Demo
 When you run the app and save some data, you should receive a notification that it is triggered because some data has been saved in the "/payment" reference.
 
-![demo](/engineering-education/implementing-database-driven-push-notifications-in-android-with-firebase/demo.gif)
+![demo](/engineering-education/implementdatabase-driven-push-notifications-in-android-with-firebase/demo.gif)
 
 ### Conclusion
-In this tutorial, we have learned what push notifications are and where they can be applied. We also went ahead and wrote a cloud function that triggers the push notification. Finally, we create a simple android app that saves data in the real-time database and receives a notification when the data is saved. Keep exploring more about push notifications.
+With that, you now have a better understanding of database-driven push notifications, how to write a cloud function that triggers the push notification, creating a simple android app that saves data in the real-time database and receives a notification when the data is saved. Keep exploring more about push notifications. To get the full implementation of the code, check out this repository - [Database Driven Push Notifications](https://github.com/JoelKanyi/DatabaseDrivenPushNotifs).
 
-To get the full implementation of the code, check out this repository - [Database Driven Push Notifications](https://github.com/JoelKanyi/DatabaseDrivenPushNotifs).
-
-Happy coding!.
+Happy coding!
