@@ -22,8 +22,7 @@ Below is the Skeleton folder structure:
 ![skeleton-file-structure](/engineering-education/how-to-build-a meme-generator-with-vanilla-javascript-skeleton-and-the-html5-canvas/skeleton-file-structure.png)
 
 It contains Skeleton’s CSS, [Normalize CSS](https://necolas.github.io/normalize.css/), and `index.html` file that you can use to get your app started.
-
-## Designing the Meme generator
+### Designing the meme generator
 This app will have three sections. The first will contain the `input` files element where you will choose whatever image you desire to use for your meme. The second section will contain the top and bottom text inputs where you insert the words and sentences you want in your meme. This section will also have a “Create New Meme” button that will complete a `click` event by displaying the finished meme on the last section of the app: ***The HTML 5 Canvas*** and like I mentioned earlier, we will style this app with CSS and Skeleton. 
 
 
