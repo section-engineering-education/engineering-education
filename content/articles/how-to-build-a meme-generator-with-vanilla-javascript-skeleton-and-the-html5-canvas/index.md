@@ -131,8 +131,7 @@ body {
   }
 }
 ```
-
-This is what the root page of this app looks like at this point:
+Our root page should look like this after adding the styles:
 
 ![meme-generator](/engineering-education/how-to-build-a meme-generator-with-vanilla-javascript-skeleton-and-the-html5-canvas/meme-generator.png)
 
