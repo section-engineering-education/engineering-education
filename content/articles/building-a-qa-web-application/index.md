@@ -125,7 +125,13 @@ anvil.server.connect('<Add your Anvil code here>')
 ```
 The screenshot below shows you where you can get the anvil code on the app.
 
-![Anvil code](/engineering-education/building-a-qa-web-application/screenshot.png)
+![Anvil code](/engineering-education/building-a-qa-web-application/uplink.jpg)
+
+Click on the `Uplink` option. A pop-up will appear as shown below:
+
+![Anvil server uplink](/engineering-education/building-a-qa-web-application/anvil-server-uplink.jpg)
+
+Finally, you need to enable the `Enable the Anvil Server Uplink for this app` button to get the code.
 
 When you run that code, you should see the message below showing that you have successfully connected to the server.
 
@@ -179,7 +185,7 @@ On the Anvil app, click the `Run` button. Pick any passage and paste it onto the
 
 Here are our results:
 
-![Results](/engineering-education/building-a-qa-web-application/results.png)
+![Results](/engineering-education/building-a-qa-web-application/results.jpg)
 
 We have successfully built a Q&A web application.
 
