@@ -1,10 +1,10 @@
-In machine learning, we can use a single algorithm or combine multiple algorithms to build a model. When we use multiple algorithms to build the same model is known as ensemble learning. Ensemble learning models give better prediction results than using a single algorithm.
+In machine learning, we can use a single algorithm or combine multiple algorithms to build a model. When we use multiple algorithms to build the same model it is known as ensemble learning. Ensemble learning models give better prediction results than using a single algorithm.
 
 The most common types of ensemble learning techniques are bagging and boosting. In bagging, multiple homogenous algorithms are trained independently in parallel. After training, the algorithms are combined to determine the model average.
 
-Boosting is an ensemble technique where we train multiple homogenous algorithms sequentially. These individual algorithms create a final model with the best results. The performance of one algorithm is influenced by the performance of the previously built algorithm.
+Boosting is an ensemble technique where we train multiple homogenous algorithms sequentially. These individual algorithms create a final model which give the best results. The performance of one algorithm is influenced by the performance of the previously built algorithm.
 
-In this tutorial, we will use two approaches in building a machine learning model. In the first approach, we will use a single algorithm to build the model. Then we will get the accuracy of the model when using a single algorithm. The single algorithm used will be the Decision Tree Classifier.
+In this tutorial, we will use two approaches in building a machine learning model. In the first approach, we will use a single algorithm to build the model. Then, we will get the accuracy of the model when using a single algorithm. We will use the Decision Tree Classifier as the single algorithm.
 
 In the second approach, we will use the bagging algorithms to build the same model. The bagging algorithms used will be Bagging Classifier and the Random Forest Classifier. We will then get the accuracy score of the model when using the bagging algorithms.
 
@@ -52,9 +52,10 @@ In this tutorial, we will only be focusing on implementing bagging algorithms. T
 ### How Bagging works
 The bagging technique is also known as Bootstrap Aggregation. The bagging algorithms can be used to solve both classification and regression problems. Bagging algorithms are used to improve the model's accuracy score. 
 
-These algorithms are used to prevent model [overfitting](https://en.wikipedia.org/wiki/Overfitting) and reduce models variance. Overfitting is when the model performs well using the training dataset but poorly using the testing dataset. This means the model will not be able to make accurate predictions.
+These algorithms prevent model [overfitting](https://en.wikipedia.org/wiki/Overfitting) and reduce models variance. Overfitting is when the model performs well using the training dataset but poorly using the testing dataset. This means the model will not be able to make accurate predictions.
 
-Variance is used to describe the changes within a model. Occurs when you train the model it using different splits. Bagging algorithms are used to produce a model with low variance.
+Variance refers to the changes in the model when using different portions/splits of the training data set. Bagging algorithms produce a model with low variance.
+
 To understand variance in machine learning, read this [article](https://www.javatpoint.com/bias-and-variance-in-machine-learning)
 
 Bagging is made up of three processes: bootstrapping, parallel training, and aggregation.
@@ -115,7 +116,7 @@ The image below further shows the process of bagging. The image has a clear desc
 Now that we have discussed the theory part, let's implement the bagging algorithm using Python.
 
 ### Dataset used
-We will use the diabetes dataset to predict is a person is diabetic or not. The collected dataset has features such as `Age` and `blood pressure`. They help the model to determine if the person is diabetic or not.
+We will use the diabetes dataset to predict if a person is diabetic or not. The collected dataset has features such as `Age` and `blood pressure`. They help the model to determine if the person is diabetic or not.
 To download the diabetes dataset, click [here](https://drive.google.com/file/d/1d8j3lAmVFbwRpxyAYY2RmFMtFwTOoSAp/view?usp=sharing).
 
 #### Loading the dataset
@@ -155,7 +156,7 @@ The output is shown below:
 From the image above, there are no missing values. Therefore, our dataset is complete and ready for use.
 
 #### Adding X and y variables
-We need to specify the X and y variables. X variable will hold all the columns that are used as model inputs. The y variable will hold the output column.
+We need to specify the X and y variables. X variable holds all the columns that are used as model inputs. The y variable will hold the output column.
 
 In our case, our output column is the `Output` column. The remaining columns will be used as model inputs. We add the X and y variables using the following code:
 
@@ -167,7 +168,7 @@ y = df.Outcome
 The next step is to scale our dataset.
 
 ### Dataset scaling
-Dataset scaling is the process of transforming a dataset so that it fits within a specific range. For example, you can scale a dataset to fit within a range of 0-1, -1-1, or 0-100.  Dataset scaling ensures that no data point value is left out during model training. 
+Dataset scaling is the process of transforming a dataset so that it fits within a specific range/scale. For example, you can scale a dataset to fit within a range of 0-1, -1-1, or 0-100.  Dataset scaling ensures that no data point value is left out during model training. 
 
 To understand the concept of dataset scaling better, read this [article](https://towardsdatascience.com/what-is-feature-scaling-why-is-it-important-in-machine-learning-2854ae877048)
 
@@ -231,12 +232,12 @@ The output is shown below:
 The next step is to build the model. As mentioned, we will use two approaches in building a machine learning model. In the first approach, we will use a single algorithm which is the Decision Tree Classifier. In the second approach, we build the same model using the Bagging Classifier and the Random Forest Classifier. These are the common bagging algorithms.
 
 ### Model building using the Decision Tree Classifier
-The decision tree classifier is the Sckit-learn algorithm used for classification. To import this algorithm use this code:
+The decision tree classifier is the Sckit-learn algorithm best suited for classification. To import this algorithm, use this code:
 
 ```python
 from sklearn.tree import DecisionTreeClassifier
 ```
-We will use k-fold cross-validation to build our decision tree classifier. K-fold cross-validation allows us to split our dataset into various subsets or portions. The model is then trained using each subset. It then gets the accuracy scores after each iteration. Finally, the mean accuracy score is calculated. K refers to the number of subsets/portions we split the dataset.
+We will use k-fold cross-validation to build our decision tree classifier. K-fold cross-validation allows us to split our dataset into various subsets or portions. The model is then trained using each subset and then gets the accuracy scores after each iteration. Finally, the mean accuracy score is calculated. K refers to the number of subsets/portions we split the dataset.
 
 For a detailed understanding of K-fold cross-validation, read this [guide](https://scikit-learn.org/stable/modules/cross_validation.html)
 
@@ -299,16 +300,16 @@ bag_model = BaggingClassifier(
 ```
 In the code above we have used the following parameters:
 **base_estimator**
-This represents the algorithm that is used as the base/weak leaners. We will use the `DecisionTreeClassifier` algorithm as our weak/base learners.
+It represents the algorithm that is used as the base/weak leaners. We will use the `DecisionTreeClassifier` algorithm as our weak/base learners.
 
 **n_estimators**
-This represents the number of weak learners used. We will use 100 decision trees to build the bagging model.
+It represents the number of weak learners used. We will use 100 decision trees to build the bagging model.
 
 **max_samples**
-The maximum number of data that is sampled from the training set. We use 80% of the training dataset for resampling.
+It is the maximum number of data that is sampled from the training set. We use 80% of the training dataset for resampling.
 
 **bootstrap**
-Allows for resampling of the training dataset without replacement.
+It allows for resampling of the training dataset without replacement.
 
 **oob_score**
 It is used to compute the model's accuracy score after training.
@@ -341,7 +342,7 @@ The accuracy score is shown below:
 ```
 The model improves the accuracy score. The accuracy score improved from `0.7214497920380273` to `0.7534722222222222`.
 
-We can also check the accuracy score using the testing dataset. This helps determine if our model is overfitting. To get the accuracy score, use this code:
+We can also check the accuracy score using the testing dataset. This helps determine model overfitting. To get the accuracy score, use this code:
 
 ```python
 bag_model.score(X_test, y_test)
@@ -358,7 +359,7 @@ Let's now use the Random Forest Classifier.
 #### Building the model using Random Forest Classifier
 Random Forest Classifier has several decision trees that are trained on the various subsets. This algorithm is a typical example of a bagging algorithm.
 
-Random Forests uses bagging underneath to random sample the dataset with replacement. Random Forests not only samples data rows, but also the columns. It also follows the bagging steps to produce an aggregated final model.
+Random Forests uses the bagging techniques underneath to randomly sample the dataset with replacement. Random Forests not only samples data rows, but also the columns. It also follows the bagging steps to produce an aggregated final model.
 
 Let's now import the Random Forest Classifier.
 
@@ -370,7 +371,7 @@ To use the `RandomForestClassifier` algorithm, run this code:
 ```python
 scores = cross_val_score(RandomForestClassifier(n_estimators=50), X, y, cv=5)
 ```
-We have used also used the K-fold cross-validation to train the model. To get the mean accuracy score, use this code:
+We have also used the K-fold cross-validation to train the model. To get the mean accuracy score, use this code:
 
 ```python
 scores.mean()
@@ -380,7 +381,7 @@ The output is shown below:
 ```bash
 0.7618029029793736
 ```
-This is a higher accuracy score. This shows that the bagging algorithms increase the model accuracy score. It also prevent model overfitting.
+This is a higher accuracy score. It shows that the bagging algorithms increase the model accuracy score. It also prevent model overfitting.
 
 ### Conclusion
 This tutorial guides a reader on how to implement bagging algorithms in Python. We discussed the difference between bagging and boosting. We also went through all the steps involved in bagging with a clear illustration of how each step works.
