@@ -1,7 +1,22 @@
-### Getting Started with Support Vector Regression in Python
+---
+layout: engineering-education
+status: publish
+published: true
+url: /support-vector-regression-in-python/
+title: Getting Started with Support Vector Regression in Python
+description: In this article, we shall learn the intuition behind the support vector regression algorithm and later implement it in python.
+author: bejamin-naibei
+date: 2022-02-03T00:00:00-00:00
+topics: [Machine Learning]
+excerpt_separator: <!--more-->
+images:
+
+  - url: /engineering-education/support-vector-regression-in-python/hero.png
+    alt: Getting Started with Support Vector Regression in Python Image
+---
 
 Support Vector Regression (SVR) is a regression function that is generalized by [Support Vector Machines](https://en.wikipedia.org/wiki/Support-vector_machine) - a machine learning model used for data classification on continuous data.
-
+<!--more-->
 However, to equip yourself with the ability to approach analysis tasks with this robust algorithm, you need first to understand how it works.
 
 In this article, you will learn all the core concepts of support vector regression that you need to get started.
@@ -387,3 +402,5 @@ Happy learning!
 ### References
 - [Further reading on SVR](https://core.ac.uk/download/pdf/81523322.pdf)
 
+---
+Peer Review Contributions by: [Srishilesh P S](/engineering-education/authors/srishilesh-p-s/)
