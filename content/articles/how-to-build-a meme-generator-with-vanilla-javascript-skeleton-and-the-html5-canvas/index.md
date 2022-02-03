@@ -1,5 +1,5 @@
 # How to build a Meme Generator with Vanilla JavaScript, Skeleton and the HTML 5 Canvas
-Memes are a stimulating and fun way to pass messages across to people. This tutorial will take you through a step-by-step guide on how you can build a simple meme generator with JavaScript(no frameworks involved) and style its components with CSS and [Skeleton](http://getskeleton.com/). With the [HTML 5 Canvas](https://developer.mozilla.org/en-US/docs/Web/API/Canvas_API), users will be able to upload images and texts of their choice and or from an online source to create comical memes for a mass online audience. 
+Memes are a stimulating and fun way to pass messages to people. This tutorial will take you through a step-by-step guide on how you can build a simple meme generator with JavaScript (no frameworks involved) and style its components with CSS and [Skeleton](http://getskeleton.com/). With the [HTML 5 Canvas](https://developer.mozilla.org/en-US/docs/Web/API/Canvas_API), users will be able to upload images and texts of their choice and or from an online source to create comical memes for a mass online audience. 
 
 ## Prerequisites for this tutorial
 A text editor.
