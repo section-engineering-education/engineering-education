@@ -1,7 +1,7 @@
 ### Introduction
 Cookies are small pieces of data that can be stored, and also sent to the web browser in each request. They are used as a storage medium, session management that keeps client logged in, and user personalization like choosing a language, tracking information e.t.c.
 
-Cookies are stored in the web browser as key-value pairs. The key serves as the signature of the client data, or the name given to the specific cookie. The value is said to be the particular data required, be it for authentication or more.
+These are also stored in the web browser as key-value pairs. The key serves as the signature of the client data, or the name given to the specific cookie. The value is said to be the particular data required, be it for authentication or more.
 
 In this article, we will experience building an interactive client-side authentication using express cookies parser.
 
@@ -94,7 +94,40 @@ npm init
 npm install express cookie-parser body-parser crypto --save
 ```
 
-Open the `server.js` file in your code editor and add the code snippet below.
+Open the `index.html`, and `server.js` file in your code editor and add the codes snippet below.
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Page</title>
+</head>
+<body>
+    <div>
+        <h1>Welcome: Kindly login to your bank account</h1>
+        <form action="/login" method="POST">
+            <div>
+                <label for="username">Username</label>
+                <input type="text" name="username"/>
+
+            </div>
+            <br><br>
+            <div>
+                <label for="passsword">Password</label>
+                <input type="password" name="password" id=""/>
+            </div>
+            <br><br>
+            <button type="submit">Submit</button>
+        </form>
+    </div>
+</body>
+</html>
+```
+
+This `html` template shows the form page where the user enters both the `username`, and `password`. There is a `button` for data submission, and the welcoming message.
 
 ```javascript
 const express = require('express')
