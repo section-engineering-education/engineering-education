@@ -11,8 +11,11 @@ To follow along, you need to have:
 - [Installing and importing dependencies](#installing-and-importing-dependencies)
 - [Setup the deep learning NLP model](#setup-the-deep-learning-nlp-model)
 - [Integrating the model with Anvil app](#integrating-the-model-with-anvil-app)
+- [Connecting to Anvil](@connecting-to-anvil)
+- [Setting up a callable function](#setting-up-a-callable-function)
+- [Testing the app](#testing-the-app)
 - [Conclusion](#conclusion)
-- [Reference](#reference)
+- [References](#references)
 
 ### Installing and importing dependencies
 The first dependency that we will install is PyTorch.
@@ -48,13 +51,11 @@ When you run the code above, it will download the model to your notebook.
 
 > You don't have to use the same model we've used in this tutorial. We chose the `deepset/roberta-base-squad2` as it is the most popular. But, there are many Question Answering models on HuggingFace. Feel free to experiment with any other too.
 
-To use this model, we'll need to pass in a dictionary. To this dictionary, we need to pass in two things. A question and some context.
+To use this model, we'll need to pass in a dictionary. To this dictionary, we need to pass in two things. A question and some context. We've created a variable called `random_text` to hold some text randomly fetched from Wikipedia. We will pass this variable to the `context`.
 
 ```python
 random_text = """
-Machine learning (ML) is the study of computer algorithms that can improve automatically through experience and by the use of data. 
-It is seen as a part of artificial intelligence. Machine learning algorithms build a model based on sample data, known as training data, to make predictions or decisions without being explicitly programmed to do so. 
-Machine learning algorithms are used in a wide variety of applications, such as in medicine, email filtering, speech recognition, and computer vision, where it is difficult or unfeasible to develop conventional algorithms to perform the needed tasks.
+<To avoid plagiarism flags, please refer to the Google Colab to access the random text gotten from Wikipedia>
 """
 
 QA_set = {
@@ -103,9 +104,93 @@ If you've ever used WordPress before with its drag and drop feature, building th
 
 Here's the design we came up with:
 
-Please find the complete code for this tutorial [here](https://colab.research.google.com/drive/1pQ5laoIMBXXZcx2HIxHncXefEgtqJ4uo?usp=sharing).
+Now that we have our design ready, we need to head back to our Google Colab and connect to Anvil from there.
 
+### Connecting to Anvil
+We begin by installing the main dependency called `anvil-uplink`. It allows us to connect our Colab to the Anvil app.
+
+```bash
+!pip install anvil-uplink
+```
+As with the previous installs, we import it into our Colab.
+
+```python
+import anvil.server
+```
+
+The next step involves connecting to the Anvil server.
+
+```python
+anvil.server.connect('<Add your Anvil code here>')
+```
+The screenshot below shows you where you can get the anvil code on the app.
+
+![Anvil code](/engineering-education/building-a-qa-web-application/screenshot.png)
+
+When you run that code, you should see the message below showing that you have successfully connected to the server.
+
+```bash
+Connecting to wss://anvil.works/uplink
+Anvil websocket open
+Connected to "Default environment" as SERVER
+```
+Now, we need to set up a callable function that the Anvil app can call to talk to our Google Colab. Besides, our Colab will use the function to connect to the NLP model.
+
+### Setting up a callable function
+We begin by defining a decorator which tells the server that this is a callable function.
+
+```python
+@anvil.server.callable
+```
+Next, we'll define the function to connect to our NLP model.
+
+```python
+def question_answer(question_text, context_text):
+    QA_set = {
+            'question':question_text,
+            'context': context_text
+}
+```
+Let's run it through the NLP pipeline and store the results inside a variable called `results`.
+
+```python
+results = nlp(QA_set)
+```
+Finally, we return the `answer`. Keep in mind that the results are a dictionary with `answer`, `end`, `score`, and `start`. You can confirm that it returns a dictionary using `type(results)`.
+
+```python
+return results['answer']
+```
+On our Anvil app, on the code section, add the following function:
+
+```python
+ def primary_color_1_click(self, **event_args):
+    input_text = self.input_text.text
+    question_text = self.question_text.text
+    
+    result = anvil.server.call('question_answer', question_text, input_text)
+    
+    self.answer_text.text = result
+```
+This connects our model to the elements we created on the Anvil app.
+
+### Testing the app
+On the Anvil app, click the `Run` button. Pick any passage and paste it onto the input area. You can ask any question you would like the model to return an answer. Finally, click on the `ASK A QUESTION` button.
+
+Here are our results:
+
+![Results](/engineering-education/building-a-qa-web-application/results.png)
+
+We have successfully built a Q&A web application.
+
+Please find the complete code for this tutorial [here](https://colab.research.google.com/drive/1pQ5laoIMBXXZcx2HIxHncXefEgtqJ4uo?usp=sharing). Also, you can access the Anvil Q&A web application [here](https://CQFZO3BMKH73MVY3.anvil.app/MK7W2ABMSJKEQQR2AB3RP73C)
+
+### Conclusion
+That's our Q&A web application built from scratch. It is relatively straightforward. If you would like to deploy the web application to a wider audience, you can use the `Publish this app` option on the top-right corner of the Anvil app. It will generate a private link that you can show to your users or embed on your website. 
+
+Happy coding!
 
 ### References
 - [Anvil](https://anvil.works/)
 - [Model](https://huggingface.co/deepset/roberta-base-squad2)
+- [Anvil Q&A web application](https://CQFZO3BMKH73MVY3.anvil.app/MK7W2ABMSJKEQQR2AB3RP73C)
