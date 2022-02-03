@@ -1,13 +1,24 @@
-### How to build a Meme Generator with Vanilla JavaScript, Skeleton and the HTML 5 Canvas
+In this tutorial, you learned the entire process of importing and using Skeleton for your application’s UI. You also learned how to use the HTML 5 Canvas to fix images and texts at spec### How to build a Meme Generator with Vanilla JavaScript, Skeleton and the HTML 5 Canvas
 Memes are a stimulating and fun way to pass messages to people. This tutorial will take you through a step-by-step guide on how you can build a simple meme generator with JavaScript (no frameworks involved) and style its components with CSS and [Skeleton](http://getskeleton.com/). With the [HTML 5 Canvas](https://developer.mozilla.org/en-US/docs/Web/API/Canvas_API), users will be able to upload images and texts of their choice and or from an online source to create comical memes for a mass online audience. 
+
+### Table of Contents
+- [How to build a Meme Generator with Vanilla JavaScript, Skeleton and the HTML 5 Canvas](#how-to-build-a-meme-generator-with-vanilla-javascript-skeleton-and-the-html-5-canvas)
+- [Table of Contents](#table-of-contents)
+- [Prerequisites for this tutorial](#prerequisites-for-this-tutorial)
+- [Adding Skeleton to your project](#adding-skeleton-to-your-project)
+- [Designing the meme generator](#designing-the-meme-generator)
+- [Adding JavaScript](#adding-javascript)
+  - [Importing locally-stored images to the application](#importing-locally-stored-images-to-the-application)
+- [How to use the HTML 5 Canvas for this project](#how-to-use-the-html-5-canvas-for-this-project)
+  - [Getting the element’s context](#getting-the-elements-context)
+- [The `loadImage` function](#the-loadimage-function)
+  - [Forming the text on the image](#forming-the-text-on-the-image)
+  - [Displaying the Meme](#displaying-the-meme)
+- [Conclusion](#conclusion)
 
 ### Prerequisites for this tutorial
 A text editor.
 Basic understanding of HTML, CSS and JavaScript.
-
-
-### Table of Contents
-Adding Skeleton to your project
 
 ### Adding Skeleton to your project
 Skeleton is a unique CSS framework that helps in designing web apps. It consists of several responsive and straightforward boilerplate codes that help with certain CSS functionalities that make styling easier. Skeleton also has utility classes that boost the UI appearance with its styled elements (e.g., `.button.button-primary`, representing a perfectly styled button without using CSS).
@@ -289,8 +300,9 @@ Here is the app’s final appearance with a created meme.
 To get the source code, you can head to my [Github Repo](https://github.com/Nomzy-kush/Meme-Generator) to get the source code. [Here](https://pensive-kepler-281118.netlify.app/) is the link to the live application deployed on Netlify.
  
 ### Conclusion
-In this tutorial, you learned the entire process of importing and using Skeleton for your application’s UI. You also learned how to use the HTML 5 Canvas to fix images and texts at specific coordinate points in the DOM, thus creating a new meme.
-   
+In this tutorial, you learned the entire process of importing and using Skeleton for your application’s UI. You also learned how to use the HTML 5 Canvas to fix images and texts at specific coordinate points in the DOM, thus creating a new meme. 
+
+
 
 
 
