@@ -207,7 +207,8 @@ if (canvas.getContext) {
 ```
 
 ### The `loadImage` function
-You need to create a function `loadImage` that will handle the display of the chosen image on the Canvas. Inside `loadImage`, you can append the image onto the canvas with the `drawImage(image, dx, dy)` method from the HTML 5 Canvas.
+We will need to create a `loadImage` function that will handle the display of the chosen image on the Canvas. Inside  the `loadImage` function, you can append the image onto the canvas with the `drawImage(image, dx, dy)` method from the HTML 5 Canvas.
+
 Here is the code below:
 
 ```js
