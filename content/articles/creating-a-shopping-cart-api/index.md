@@ -450,7 +450,7 @@ public class controller {
     }
 }
 ```
-N/B @POSTMapping is for creating new objects, @GetMapping for retrieving data from the database, @PatchMapping, and PutMapping are for updating, DeleteMapping is for deleting.
+N/B @POSTMapping is for creating new objects, @GetMapping for retrieving data from the database, @PatchMapping, and @PutMapping are for updating, @DeleteMapping is for deleting.
 In this tutorial, we'll annotate the fields of the class with `@Autowire` annotation to inject the dependency of the object we want to use to avoid initializing a new object but using the very object each time a call is made, throughout the whole code-base.
 #### Running the server
 ```java
