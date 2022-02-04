@@ -6,7 +6,7 @@ url: /paytm-loading/
 title: Building a Paytm loading effect from scratch
 description: This article takes the reader through the benefits of a custom preloader and how to use  various CSS properties to build a custom Paytm loading animation from scratch.
 author: phina-kersly
-date: 2022-02-02T00:00:00-02:00
+date: 2022-02-04T00:00:00-02:00
 topics: [Languages]
 excerpt_separator: <!--more-->
 images:
