@@ -29,7 +29,7 @@ The learner is required to have a good understanding of:
 
 ### Introduction to support vector regression
 #### Understanding linear regression
-To understand how the SVR model works, let's first recap what a  simple linear regression is.
+To understand how the SVR model works, let's first recap simple linear regression.
 
 In [linear regression](https://en.wikipedia.org/wiki/Linear_regression), the goal is usually to fit a regression line to the data such that the error due to deviation is minimal.
 
@@ -110,7 +110,7 @@ Minimize \ w.r.t \ W \ , \ b: && Subjected \ to:\\
 \end{aligned}
 $
 
-Above is a linear optimization problem. Here, [Lagrangian multipliers](https://machinelearningmastery.com/a-gentle-introduction-to-method-of-lagrange-multipliers/) would be the appropriate technique for solving such a problem.
+Above is a linear optimization problem. Here, [Lagrangian multipliers](https://machinelearningmastery.com/a-gentle-introduction-to-method-of-lagrange-multipliers/) would be appropriate for solving such a problem.
 
 Since we clearly understood how the Support Vector Regression works and how to formulate its optimization problem, let's now implement this algorithm in python.
 
@@ -141,7 +141,7 @@ The above dataset contains ten instances. The significant feature in this datase
 
 Therefore, we will separate the dataset into a set of features and study variables.
 
-As discussed above, we only have one feature in this dataset. We carry out our feature-study variable separation as shown in the code below:
+As discussed above, we only have one feature in this dataset. Therefore, we carry out our feature-study variable separation as shown in the code below:
 
 ```python
 # split the data into featutes and target variable seperately
@@ -223,7 +223,7 @@ X_l = StdS_X.fit_transform(X_l)
 y_p = StdS_y.fit_transform(y_p)
 ```
 
-Let's simulteneously print and check if our two variiables were really scaled.
+Let's simultaneously print and check if our two variables were scaled.
 
 ```python
 print("Scaled X_l:")
@@ -275,9 +275,9 @@ plt.show() # prints
 
 ![Scatter plot](/engineering-education/support-vector-regression-in-python/plot0.png)
 
-The plot shows a nonlinear relationship between the `Levels` and `Salary`.
+The plot shows a non-linear relationship between the `Levels` and `Salary`.
 
-Due to this, we cannot use the linear SVR to model this data. Therefore, to capture this kind of relationship better, we will use the SVR with the [kernel functions](https://www.geeksforgeeks.org/major-kernel-functions-in-support-vector-machine-svm/).
+Due to this, we cannot use the linear SVR to model this data. Therefore, to capture this relationship better, we will use the SVR with the [kernel functions](https://www.geeksforgeeks.org/major-kernel-functions-in-support-vector-machine-svm/).
 
 #### Implementing SVR
 To implement our model, first, we need to import it from the scikit-learn and create an object to itself.
@@ -314,7 +314,7 @@ To go back to the real study variable, we will write a program whose objective i
 
 We do so by taking an inverse of the transformation on the study variable.
 
-> Note that, the predicted values are returned in a 1D array.
+> Note that the predicted values are returned in a 1D array.
 
 However, as we can recall, we had reshaped our study variable from 1D to 2D array since the `StandarScaler` method takes in only 2D arrays.
 
