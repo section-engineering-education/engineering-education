@@ -6,7 +6,7 @@ url: /support-vector-regression-in-python/
 title: Getting Started with Support Vector Regression in Python
 description: In this article, we shall learn the intuition behind the support vector regression algorithm and later implement it in python.
 author: bejamin-naibei
-date: 2022-02-04T00:00:00-11:00
+date: 2022-02-04T00:00:00-11:15
 topics: [Machine Learning]
 excerpt_separator: <!--more-->
 images:
@@ -101,9 +101,13 @@ $\frac{1}{2}||W||^2 \ + \ C\sum_{n=1}^{m} (\zeta+\zeta^*_i) \ \rightarrow$ minim
 Where $C$ is some constant that give weight on minimizing $\sum(\zeta+\zeta^*_i)$.
 
 $\begin{aligned}
-&\bold {Primal \ Problem}&\\
+&\textbf{Primal \ Problem}&\\
 \\
-Minimize \ w.r.t \ W \ , \ b: && Subjected \ to:\\
+Minimize \ w.r.t \ W \ , \ b: && Subjected \ to:
+\end{aligned}
+$
+
+$\begin{aligned}
     \frac{1}{2}||W||^2 \ + \ C\sum_{n=1}^{m} (\zeta+\zeta^*_i) \           &&  y_i-(W^Tx  + b) \ \le \ \epsilon + \zeta_i\\
     && (W^Tx  + b)-y_i \ \le \ \epsilon + \zeta^{*}_i\\
     &&\zeta^ \ \ge0, \ \zeta^*\ge0
@@ -334,7 +338,7 @@ print(A)
 array([[-0.27861589]])
 ```
 
-It's clear from the output above is a 2D array. Using the `inverse_transform()` function, we can convert it to an unscaled value in the original dataset as shown:
+It is clear from the output above is a 2D array. Using the `inverse_transform()` function, we can convert it to an unscaled value in the original dataset as shown:
 
 ```python
 # Taking the inverse of the scaled value
@@ -391,7 +395,7 @@ plt.show()
 ![SVR Model](/engineering-education/support-vector-regression-in-python/plot.png)
 
 ### Conclusion
-In this session, we have learned how Support Vector Regression works and formulated its optimization problem. Later, we learned to implement our model make predictions with it.
+In this article, we explored how Support Vector Regression works and formulated it's optimization problem. Later, we learned to implement our model make predictions with it.
 
 Finally, we learned to visualize the model. Thanks for reading to this end.
 
@@ -404,3 +408,33 @@ Happy learning!
 
 ---
 Peer Review Contributions by: [Srishilesh P S](/engineering-education/authors/srishilesh-p-s/)
+
+
+<!-- MathJax script -->
+<script type="text/javascript" async
+    src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+    MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [['$','$'], ['\\(','\\)']],
+      displayMath: [['$$','$$']],
+      processEscapes: true,
+      processEnvironments: true,
+      skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
+      TeX: { equationNumbers: { autoNumber: "AMS" },
+           extensions: ["AMSmath.js", "AMSsymbols.js"] }
+    }
+    });
+    MathJax.Hub.Queue(function() {
+      // Fix <code> tags after MathJax finishes running. This is a
+      // hack to overcome a shortcoming of Markdown. Discussion at
+      // https://github.com/mojombo/jekyll/issues/199
+      var all = MathJax.Hub.getAllJax(), i;
+      for(i = 0; i < all.length; i += 1) {
+          all[i].SourceElement().parentNode.className += ' has-jax';
+      }
+    });
+    MathJax.Hub.Config({
+    // Autonumbering by mathjax
+    TeX: { equationNumbers: { autoNumber: "AMS" } }
+    });
+  </script>
