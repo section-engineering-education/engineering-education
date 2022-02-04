@@ -11,7 +11,7 @@ topics: [Security]
 excerpt_separator: <!--more-->
 images:
 
-  - url: /engineering-education/how-to-perform-containerized-static-application-security-testing(sast)-using-mobsf-within-a-docker-container/hero.jpg
+  - url: /engineering-education/security-testing-using-mobsf-in-docker/hero.jpg
     alt: Static application security testing using MobSF within a Docker container cover image 
 ---
 <!--more-->
@@ -140,11 +140,11 @@ We then access MobSF at the URL in the above step and upload the application to 
 
 Click on http://0.0.0.0:8000 from the console in step 3, then click upload and analyze as shown:
 
-![upload and analyze](/how-to-perform-containerized-static-application-security-testing(sast)-using-mobsf-within-a-docker-container/upload.png)
+![upload and analyze](/security-testing-using-mobsf-in-docker/upload.png)
 
 The process will run to completion automatically then present the results after completion as shown below:
 
-![results display](/how-to-perform-containerized-static-application-security-testing(sast)-using-mobsf-within-a-docker-container/results.png)
+![results display](/security-testing-using-mobsf-in-docker/results.png)
 
 #### Step 5: Downloading the report and analysis of scan results
 This step involves eliminating any false positives by triaging the vulnerability scan results.
@@ -155,7 +155,7 @@ After that, these vulnerabilities can be tracked on progress.
 
 Navigate on the task pane to view the pdf report or download an offline report as shown:
 
-![report](/how-to-perform-containerized-static-application-security-testing(sast)-using-mobsf-within-a-docker-container/report.png)
+![report](/security-testing-using-mobsf-in-docker/report.png)
 
 The above report can be studied offline.
 
@@ -181,3 +181,5 @@ Developers, therefore, roll out a fine-tuned application with minimal security c
 - [Mobile Security Framework (MobSF) Static Analysis](https://medium.com/@kshitishirke/mobile-security-framework-mobsf-static-analysis-df22fcdae46e)
 - [10 Types of Application Security Testing Tools: When and How to Use Them](https://insights.sei.cmu.edu/blog/10-types-of-application-security-testing-tools-when-and-how-to-use-them/)
 - [SDLC - Overview](https://www.tutorialspoint.com/sdlc/sdlc_overview.htm)
+
+---
