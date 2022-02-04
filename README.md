@@ -1,12 +1,14 @@
 # engineering-education
-A community-generated pool of educational content which is useful for engineers of every level. Published content can be found at [https://www.section.io/engineering-education/](https://www.section.io/engineering-education/).
+“Section's Engineering Education (EngEd) Program is dedicated to offering a unique quality community experience for computer science university students." 
+
+ Our EngEd published content can be found at [https://www.section.io/engineering-education/](https://www.section.io/engineering-education/).
 
 [ENROLL HERE](https://docs.google.com/forms/d/e/1FAIpQLSfTbj3kqvEJEb5RLjqJurfbHa8ckzQx0CjRzaizblue9ZOK5A/viewform?usp=sf_link)
 
 ### Program Purpose
-Section partners with university computer science programs across the globe to create a community-generated pool of content which is useful for engineers of every (any) level.
+Our program was created to promote and cultivate relevant career building/skill enrichment resources, a community for students to share their knowledge with peers around the world, and to help catapult their careers.”
 
-Content can be found at [https://section.io/engineering-education](https://section.io/engineering-education).
+Our communitys content can be found at [https://section.io/engineering-education](https://section.io/engineering-education).
 
 The Section team will monitor and manage the overall Program.
 
