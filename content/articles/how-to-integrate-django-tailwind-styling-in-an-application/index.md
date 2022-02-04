@@ -3,7 +3,7 @@ layout: engineering-education
 status: publish
 published: true
 url: /how-to-integrate-django-tailwind-styling-in-an-application/
-title: How To Integrate Django-Tailwind Styling in an Application
+title: How to Integrate Django-Tailwind Styling in an Application
 description: This tutorial will discuss a better way to style Django applications using a framework called django-tailwind.
 author: umoh-mercy
 date: 2022-02-04T00:00:00-10:30
@@ -12,7 +12,7 @@ excerpt_separator: <!--more-->
 images:
 
   - url: /engineering-education/how-to-integrate-django-tailwind-styling-in-an-application/hero.jpg
-    alt: How To Integrate Django-Tailwind Styling in an Application Hero Image
+    alt: How to Integrate Django-Tailwind Styling in an Application Hero Image
 ---
 Every application requires good styling for better and more readable content. Over the years, the Cascading Style Sheets (CSS), has dominated before frameworks came into existence.
 <!--more-->
