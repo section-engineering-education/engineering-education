@@ -1,38 +1,56 @@
-﻿### Introduction
+﻿---
+layout: engineering-education
+status: publish
+published: true
+url: /understanding-hybrid-data-models/
+title: Understanding Hybrid Data Models
+description: This tutorial will explain in detail the hybrid data models and how to implement them using functions provided by the databases.
+author: george-wekesa
+date: 2022-02-03T00:00:00-11:33
+topics: [Languages]
+excerpt_separator: <!--more-->
+images:
+  - url: /engineering-education/understanding-hybrid-data-models/hero.jpg
+    alt: Understanding Hybrid Data Models Hero Image
+---
+A [relational database](https://www.ibm.com/cloud/learn/relational-databases) has been in existence for the longest time, making it the most popular data model used by developers worldwide. It abstracts the way it handles and stores data from the users.
 
-A [relational database](https://www.ibm.com/cloud/learn/relational-databases) has been in existence for the longest time, making it the most popular data model used by developers worldwide. It abstracts the way it handles and stores data from the users. Due to this reason, developers find it flexible and straightforward to use in their applications.
+Due to this reason, developers find it flexible and straightforward to use in their applications.
+<!--more-->
 
 However, applications are more data-intensive and not that simple in today's modern world. The applications have revolutionized in many fields such as data explosion, social networks, the internet, and artificial intelligence, among others.
 
-This has resulted in applications dealing with massive unstructured data, making it challenging to handle relational databases that only deal with fixed tabular structured data. For this reason, developers have opted for other options such as non-relational databases, commonly known as [NoSQL databases](https://www.ibm.com/cloud/learn/nosql-databases). 
+This has resulted in applications dealing with massive unstructured data, making it challenging to handle relational databases that only deal with fixed tabular structured data. For this reason, developers have opted for other options such as non-relational databases, commonly known as [NoSQL databases](https://www.ibm.com/cloud/learn/nosql-databases).
 
 Each NoSQL database has been designed to handle specific functions in the application where relational databases fail.
 
-It is hard to rely on one type of database with modern applications as it may not completely meet the application's needs. Therefore a hybrid database model is often adopted. A [hybrid database model](https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/bp-hybrid.html) comprises several databases contained in one application.
+It is difficult to rely on one type of database with modern applications as it may not completely meet the application's needs. Therefore a hybrid database model is often adopted. 
 
-The choice of the databases used in the hybrid model depends on the application’s needs and specifications. The selection of the databases is determined by the advantages and limitations offered by the given database. This means that the databases must complement each other.
+A [hybrid database model](https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/bp-hybrid.html) comprises several databases contained in one application.
+
+The choice of the databases used in the hybrid model depends on the application needs and specifications. The selection of the databases is determined by the advantages and limitations offered by the given database. This means that the databases must complement each other.
 
 In this guide, we will use some of the JSON functionalities offered by MariaDB to demonstrate the concept of hybrid data models.
 
 ### Prerequisites
 - [MariaDB](https://mariadb.com/downloads/) installed.
 - Knowledge of [MariaDB](https://www.mariadbtutorial.com/) and [JSON](https://www.json.org/json-en.html) commands.
-- Understanding of [relational databases](https://www.ibm.com/cloud/learn/relational-databases) and [SQL commands](https://www.dataquest.io/blog/sql-commands/).
+- A clear understanding of [relational databases](https://www.ibm.com/cloud/learn/relational-databases) and [SQL commands](https://www.dataquest.io/blog/sql-commands/).
 
 ### How to model structured and semi-structured data
 It is well known that MariaDB is RDMS at its core. However, it offers many capabilities besides that. It can handle JavaScript Object Notation (JSON) formatted data. Also, JSON is supported by the NoSQL databases.
 
-JSON is now working well with relational databases, making it easy to create structured and semi-structured data models. This has made it possible for applications to utilize the benefits offered by JSON even without comprising the advantages relational databases offer.
+JSON is now working well with relational databases, making it easy to create structured and semi-structured data models. It is now possible for applications to utilize the benefits offered by JSON even without comprising the advantages relational databases offer.
 
-Both MariaDB and JSON support features that can be used to achieve a common goal. We will cover some of them in this guide. To cover some of these capabilities, we will use a hypothetical application.
+Both MariaDB and JSON support features that can be used to achieve a common goal. We will cover some of them using a hypothetical application.
 
-We will assume that the application contains only one table named `computers`. We will use it to store the details of the computers. We will not focus on the frontend as we are interested in the database side.
+We will assume that the application contains only one table named `computers`, which we will use to store the details of the computers. We will not focus on the frontend as we are interested in the database side.
 
 `Computers` table can contain different fields such as the `type`, `brand`, `price`, and `stock`. At the same time, it can contain different properties that can be defined in JSON format, as demonstrated below:
 
 ![Structured and semi structured data](/engineering-education/understanding-hybrid-data-models/structured.png)
 
-#### Creating the Table
+#### Creating the table
 We start by creating a `computers` table using the following SQL commands:
 
 ```sql
@@ -47,7 +65,7 @@ CREATE TABLE IF NOT EXISTS computers
 );
 ```
 
-Note that the column `properties` in the `computers` table is defined as JSON datatype. The column has been assigned the datatype JSON, but there is no such datatype in the real sense. The datatype will then be transformed into an existing datatype that MariaDB supports.
+Note that the column `properties` in the `computers` table is defined as JSON datatype. The column has been assigned the datatype JSON, but there is no such datatype in the real sense. Therefore, it will be transformed into an existing datatype that MariaDB supports.
 
 We can inspect the details of what we have created using the above commands by running this command:
 
@@ -65,8 +83,8 @@ The `JSON_VALID()` function validates JSON data as shown below:
 
 ![JSON data valid](/engineering-education/understanding-hybrid-data-models/jsonvalid.png)
 
-#### Inserting Data
-Inserting JSON data is easy as it is contained within the quotes provided that the string is valid. We will execute the below statement to insert the data:
+#### Inserting data
+Inserting JSON data is easy as it is contained within the quotes provided that the string is valid. We will execute the statement below to insert the data:
 
 ```sql
 INSERT INTO computers (type, brand, price, stock, properties) VALUES
@@ -76,7 +94,7 @@ INSERT INTO computers (type, brand, price, stock, properties) VALUES
 {"location": "Mombasa", "Address": 152}]}');
 ```
 
-It is important to note that it is possible to use different JSON data with different structures in the same insert statement in the same table, as below:
+It is important to note that it is possible to use different JSON data with different structures in the same insert statement in the same table, as shown below:
 
 ```sql
 INSERT INTO computers (type, brand, price, stock, properties) VALUES
@@ -84,7 +102,7 @@ INSERT INTO computers (type, brand, price, stock, properties) VALUES
 '{"class": "PC", "PurchaseDate": "14/01/2022"}');
 ```
 
-The data will be inserted into the table, and a resultant table will appear as below:
+The data will be inserted into the table, and a resultant table will appear as seen here:
 
 ![Show Table](/engineering-education/understanding-hybrid-data-models/showtbl.png)
 
@@ -92,7 +110,7 @@ The data will be inserted into the table, and a resultant table will appear as b
 When dealing with JSON data in MariaDB, we use the predefined functions to perform most operations. We will use these functions to the end of this article.
 
 #### Querying scalar data
-To query for scalar data, we usually use the function `JSON_VALUE()`. The function outputs the JSON data from the path and data that have been specified in the select statement. In our case, the `properties` column becomes our specified data. The select statement would appear as follows:
+To query for scalar data, we use the function `JSON_VALUE()`. The function outputs the JSON data from the path and data that have been specified in the select statement. In our case, the `properties` column becomes our specified data. The select statement would appear as follows:
 
 ```sql
 SELECT brand, price, stock,
@@ -158,7 +176,7 @@ The results will as follows:
 ![Insert JSON data](/engineering-education/understanding-hybrid-data-models/insert-json.png)
 
 #### Inserting arrays in JSON
-We can insert arrays into the JSON data using the function `JSON_ARRAY()`. For instance in our case we can insert an array in the `properties` field as demonstrated:
+We can insert arrays into the JSON data using the function `JSON_ARRAY()`. For instance in our case we can insert an array in the `properties` field as demonstrated below:
 
 ```sql
 UPDATE computers
@@ -215,7 +233,7 @@ The output will be as follows:
 ![Hybrid Data query](/engineering-education/understanding-hybrid-data-models/json-object.png)
 
 #### Merging data
-It is possible to combine the existing JSON data with the data that is returned from the JSON object function. We use the function `JSON_MERGE()` for this purpose. We will use the statement below to achieve this:
+It is possible to combine the existing JSON data with the data that is returned from the JSON object function. We use the function `JSON_MERGE()` for this purpose. We will use the statement below to merge the data:
 
 ```sql
 SELECT
@@ -284,7 +302,7 @@ type = 'Laptop' and
 JSON_LENGTH(JSON_QUERY(properties, '$.store')) > 0);
 ```
 
-After we have enforced the above constraints on our JSON data we can try to run the `INSERT` command again:
+After we have enforced the constraints above on our JSON data, we can try to run the `INSERT` command again:
 
 ```sql
 INSERT INTO computers (type, brand, price, stock, properties) VALUES
@@ -297,11 +315,12 @@ The following error message will pop up, meaning that the data we are trying to 
 ![Data Integrity Error](/engineering-education/understanding-hybrid-data-models/dataintegrity-fail.png)
 
 ### Wrapping up
-From the activities above, we can conclude that, it is possible to use the MariaDB alongside JSON to take advantage of both databases offers. We have only covered a few of the functions as many of them exist. 
+From the activities above, we can conclude that, it is possible to use the MariaDB alongside JSON to take advantage of both databases offers. We have only covered a few of the functions as many of them exist.
 
 Feel free to explore more functions and try them out to realize the power and flexibility they can offer.
 
 ### Further reading
+
 - [Understanding structured and semi-structured data](https://k21academy.com/microsoft-azure/dp-900/structured-data-vs-unstructured-data-vs-semi-structured-data/).
 - [Learning the JSON functions](https://mariadb.com/kb/en/json-functions/).
 - [What is hybrid database?](https://www.softwaretestinghelp.com/hybrid-database/).
@@ -309,4 +328,5 @@ Feel free to explore more functions and try them out to realize the power and fl
 Happy coding!
 
 ---
+
 Peer Review Contributions by: [Monica Masae](/engineering-education/authors/monica-masae/)
