@@ -4,9 +4,6 @@
 - [Introduction](#introduction)
 - [Check the environment](#check-the-environment)
 - [Securing MongoDB](#securing-mongodb)
-- [Create a user with system access](#create-a-user-with-system-access)
-- [Turn on authentication](#turn-on-authentication)
-- [Authentication Testing](#authentication-testing)
 - [Wrapping it up](#wrapping-it-up)
 
 ### Prerequisites
