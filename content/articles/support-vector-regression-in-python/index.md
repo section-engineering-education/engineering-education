@@ -6,7 +6,7 @@ url: /support-vector-regression-in-python/
 title: Getting Started with Support Vector Regression in Python
 description: In this article, we shall learn the intuition behind the support vector regression algorithm and later implement it in python.
 author: bejamin-naibei
-date: 2022-02-03T00:00:00-00:00
+date: 2022-02-04T00:00:00-23:00
 topics: [Machine Learning]
 excerpt_separator: <!--more-->
 images:
