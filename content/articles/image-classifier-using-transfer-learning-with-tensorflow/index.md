@@ -143,13 +143,9 @@ rsp_train=rsp_test_temp.skip(400)
 From the code above, we have used `600` images as the validation set, `400` images as the test set, and `400` images as a train set.
 
 ### Image normalization and resizing
-Image normalization is the process of changing the range of an image's pixel intensity values to a predefined range. Often, the prefined range is usually 0, 1, or -1, 1. In this tutorial we want our pixel range to be 0, 1.
+Image normalization is the process of changing the range of an image's pixel intensity values to a predefined range. Often, the prefined range is usually 0, 1, or -1, 1. In this tutorial we want our pixel range to be 0, 1. For a detailed understanding on image normalization, click [here](/engineering-education/image-preprocessing-in-python/). 
 
-For a detailed understanding on image normalization, click [here](/engineering-education/image-preprocessing-in-python/). 
-
-Image resizing is the process of changing the image size. This enables the resized image to fit into the neural network you are building.
-
-To perform this process, use the following function.
+Image resizing is the process of changing the image size. This enables the resized image to fit into the neural network you are building. To perform this process, use the following function.
 
 ```python
 def scale(image, label):
@@ -159,9 +155,7 @@ def scale(image, label):
 ```
 From the code above, we performed image normalization by dividing the image by 255. It will change the pixel range to 0, 1. The code also resized our image to 224 by 224 using the `tf.image.resize` method. It is the same size as the images from the pre-trained [MobileNet-v2](https://tfhub.dev/google/tf2-preview/mobilenet_v2/feature_vector/4) convolutional neural network.
 
-Finally, the code performs one-hot encoding using the `tf.one_hot` method. One hot encoding converts the categorical variables (rock, paper, scissors), into integer values (0, 1, 2). The neural network understands integer values (numeric values). 
-
-After this process, we need to add a batch size for each set.
+Finally, the code performs one-hot encoding using the `tf.one_hot` method. One hot encoding converts the categorical variables (rock, paper, scissors), into integer values (0, 1, 2). The neural network understands integer values (numeric values). After this process, we need to add a batch size for each set.
 
 ### Adding batch size
 Batch size is the number of data samples used in each set during an iteration (epoch). We will set the batch size to `64`. This is done using the following function.
@@ -197,16 +191,12 @@ To download this neural network run this command:
 ```python
 feature_extractor = "https://tfhub.dev/google/tf2-preview/mobilenet_v2/feature_vector/4"
 ```
-This model is already pre-trained using different images. MobileNet-v2 follows the convolutional neural network architecture. It is made up of a feature extractor layer (collection of convolutional and pooling layers) and fully connected layers.
-
-For a further understanding of the convolutional neural network architecture, read this [article.](/engineering-education/basics-of-convolution-neural-networks/)
+This model is already pre-trained using different images. MobileNet-v2 follows the convolutional neural network architecture. It is made up of a feature extractor layer (collection of convolutional and pooling layers) and fully connected layers. For further understanding of the convolutional neural network architecture, read this [article.](/engineering-education/basics-of-convolution-neural-networks/)
 
 We will apply this model to classify images of hands playing rock, paper, scissor games. To use this model, we extract the feature extractor layer from the MobileNet-v2 model. We then use the feature extractor layer as the input layer when building the model.
 
 ### Extract the feature extractor layer from the MobileNet-v2 model
-The feature extractor layer of the MobileNet-v2 model is made up of a collection of stacked convolutional and pooling layers. This layer is very important and is used to extract the important features from the input image.
-
-For a further understanding of how the convolutional and pooling layers work, read this [article.](/engineering-education/basics-of-convolution-neural-networks/)
+The feature extractor layer of the MobileNet-v2 model is made up of a collection of stacked convolutional and pooling layers. This layer is very important and is used to extract the important features from the input image. For further understanding of how the convolutional and pooling layers work, read this [article.](/engineering-education/basics-of-convolution-neural-networks/)
 
 We extract the layer using the following code:
 
@@ -230,9 +220,7 @@ model = tf.keras.Sequential([
 ```
 From the code above, we are building a sequential model that allows layers to be built on top of each other. We have used the `feature_extractor_layer` as the input for the neural network. We then add a `Dropout` layer to prevent [model overfitting](/engineering-education/dropout-regularization-to-handle-overfitting-in-deep-learning-models/).
 
-Finally, add the `Dense` layer, which is the output layer for the neural network. It has 3 neurons because our model has three classes. We used a `softmax` because we have more than two classes.
-
-For a further understanding how the `softmax` activation function works, read this [article.](/engineering-education/activation-functions/)
+Finally, add the `Dense` layer, which is the output layer for the neural network. It has 3 neurons because our model has three classes. We used a `softmax` because we have more than two classes. For further understanding of how the `softmax` activation function works, read this [article.](/engineering-education/activation-functions/)
 
 To check the summary of this model, use this code:
 
@@ -241,9 +229,7 @@ model.summary()
 ```
 ![Model summary](/engineering-education/image-classifier-using-transfer-learning-with-tensorflow/displayed-images.jpg)
 
-The image shows the model type (Sequential) and the initialized layers. It also shows the total model parameters (2,261,827). Some parameters are trainable while others are non-trainable. 
-
-The trainable parameters(3,843) are the ones the neural network will train. The non-trainable parameters (2,257,984) are from the `feature_extractor_layer` and they are already trained. The number of non-trainable parameters is more as compared to the trainable parameters. This will save the training time.
+The image shows the model type (Sequential) and the initialized layers. It also shows the total model parameters (2,261,827). Some parameters are trainable while others are non-trainable. The trainable parameters(3,843) are the ones the neural network will train. The non-trainable parameters (2,257,984) are from the `feature_extractor_layer` and they are already trained. The number of non-trainable parameters is more as compared to the trainable parameters. This will save the training time.
 
 ### Model compling
 In model compiling, we determine the `metrics`, the `optimizer`, and the `loss function` to be used by the neural network.
@@ -255,9 +241,7 @@ It is used to calculate the accuracy score of the neural network. This determine
 It is used to enhance the model performance as it learns from the train set. The optimize troubleshoots the model during training and removes errors. The most common optimizer is the `Adam` optimizer which we will use for this neural network.
 
 #### Loss function
-It is used to determine the total model error. We will use the `CategoricalCrossentropy` because our dataset is made up of three categories (rock, paper, scissors).
-
-To compile this model, use this code:
+It is used to determine the total model error. We will use the `CategoricalCrossentropy` because our dataset is made up of three categories (rock, paper, scissors). To compile this model, use this code:
 
 ```python
 model.compile(
@@ -316,9 +300,7 @@ img = tf.keras.preprocessing.image.img_to_array(image)
  print("Actual Label: %s" % info.features["label"].names[label.numpy()])
  print("Predicted Label: %s" % info.features["label"].names[np.argmax(pred)])
 ```
-We have the `tf.keras.preprocessing.image.img_to_array` method to convert the images into an array. We use the `predict` method to make the predictions. 
-
-The predictions results are shown below:
+We have the `tf.keras.preprocessing.image.img_to_array` method to convert the images into an array. We use the `predict` method to make the predictions. The predictions results are shown below:
 
 ![Prediction results](/engineering-education/image-classifier-using-transfer-learning-with-tensorflow/prediction-outputs.jpg)
 
@@ -328,9 +310,7 @@ Let's look at another prediction result.
 
 ![Another prediction result](/engineering-education/image-classifier-using-transfer-learning-with-tensorflow/another-prediction.jpg)
 
-For this result, the model was able to make the right predictions. The `Actual Label` is the same as the `Predicted Label`. This shows our image classifier model was well trained.
-
-Let's save this trained model.
+For this result, the model was able to make the right predictions. The `Actual Label` is the same as the `Predicted Label`. This shows our image classifier model was well trained. Let's save this trained model.
 
 ### Saving the model
 To save the model, use this code:
@@ -347,9 +327,7 @@ The output above shows the directory that our model is saved. We can load this m
 ### Conclusion
 In this tutorial, we have learned how to build an image classifier using transfer learning. We downloaded the MobileNet-v2 convolutional neural network from the TensorFlow hub. The downloaded model was used to build the model that classifies images of hands playing rock, paper, scissor games.
 
-Finally, we tested the model and it can make accurate predictions. Using this tutorial, a reader should be able to come up with this model.
-
-The model we have built in this tutorial is found [here](https://colab.research.google.com/drive/1et3XrRG6_ntIlNusMZJMXvteieNJewzm?usp=sharing)
+Finally, we tested the model and it can make accurate predictions. Using this tutorial, a reader should be able to come up with this model. The model we have built in this tutorial is found [here](https://colab.research.google.com/drive/1et3XrRG6_ntIlNusMZJMXvteieNJewzm?usp=sharing)
 
 ### References
 - [Google Colab notebook](https://colab.research.google.com/drive/1et3XrRG6_ntIlNusMZJMXvteieNJewzm?usp=sharing)
