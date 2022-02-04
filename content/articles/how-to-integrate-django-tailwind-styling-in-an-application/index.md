@@ -71,7 +71,7 @@ The `myprojectapp` project was started and made the `comment` app as well. We al
 
 If you open your browser to `127.0.0.1:8000`, you should confirm what we have in the image below:
 
-![First page](/engineering-education/how-to-integrate-django-tailwind-styling-in-an-application/first-page.png)
+![First page](/engineering-education/how-to-integrate-django-tailwind-styling-in-an-application/firstpage.png)
 
 ### Integrating django-tailwind
 The `django-tailwind` framework requires a special app that contains all its dependencies. This framework allows us to style the application using `tailwind` classes in the templates. 
