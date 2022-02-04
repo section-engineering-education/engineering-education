@@ -14,7 +14,7 @@ React for frontend.
 3. Have `npm` installed for our frontend part.
 
 ### Getting Started
-Start by making a new directory. In your terminal, run `django-admin startapp backend` under this directory to create a new Django application called `backend`. '
+Start by making a new directory. In your terminal, run `django-admin startapp backend` under this directory to create a new Django application called `backend`. 
 
 `Djoser` works with a custom user model,  so let us create a new app inside our project. First, Cd into the backend folder, run `python3 manage.py startapp users`.
 
@@ -154,7 +154,7 @@ SIMPLE_JWT = {
 DJOSER = {
     'LOGIN_FIELD': 'email',
     'SOCIAL_AUTH_TOKEN_STRATEGY': 'djoser.social.token.jwt.TokenStrategy',
-    'SOCIAL_AUTH_ALLOWED_REDIRECT_URIS': ['http://127.0.0.1:8000', 'http://127.0.0.1:8000/home','http://127.0.0.1:8000/login'],
+    'SOCIAL_AUTH_ALLOWED_REDIRECT_URIS': ['http://127.0.0.1:3000', 'http://127.0.0.1:3000/home','http://127.0.0.1:3000/login'],
     'SERIALIZERS': {},
 }
 AUTHENTICATION_BACKENDS = (
@@ -173,9 +173,9 @@ SOCIAL_AUTH_GOOGLE_OAUTH2_EXTRA_DATA = ['first_name', 'last_name']
 
 We have listed all necessary apps, including the one we created, required by our application in `INSTALLED_APPS`.
 
-Next,  we specified the User model needed for the authentication, and we set up the middleware for CORS and `django_social`.
+Next, we specified the User model needed for the authentication, and we set up the middleware for CORS and `django_social`.
 
-Next,  we specified the allowed site origins to access our application. This case will be `localhost:3000` because we will work with React later.
+Next, we specified the allowed site origins to access our application. This case will be `localhost:3000` because we will work with React later.
 
 We then made the settings for Django REST Framework and Django REST simple jwt.
 
@@ -211,11 +211,11 @@ With the project selected, click `Credentials` and then click OAuth Client ID af
 
 ![Create OAuth Client ID](/engineering-education/content/articles/social-authentication-with-Djoser-in-react-applications/creating_oauth_client_id.png)
 
-You may need to set up OAuth consent. Select web application. For authorized javascript origins, enter `http://127.0.0.1:8000`, and for authorized redirect, URIs have these URLs: `http://127.0.0.1:8000`, `http://127.0.0.1:8000/home`, `http://127.0.0.1:8000/login`
+You may need to set up OAuth consent. Select web application. For authorized javascript origins, enter `http://127.0.0.1:3000`, and for authorized redirect, URIs have these URLs: `http://127.0.0.1:3000`, `http://127.0.0.1:3000/home`, `http://127.0.0.1:3000/login`
 
 ![Set up the uris](/engineering-education/content/articles/social-authentication-with-Djoser-in-react-applications/setting_up_the_uris.png)
 
-After you click create, you will get your client id and client secret which you will use in your `settins.py` file for this part:
+After you click create, you will get your client id and client secret which you will use in your `settings.py` file for this part:
 
 ```python
 SOCIAL_AUTH_GOOGLE_OAUTH2_KEY = 'your_client_id_key'
@@ -227,8 +227,7 @@ In a new terminal session, run `npx create-react-app frontend` to create a new R
 
 Cd into frontend and run the following `npm install axios redux react-redux redux-devtools-extension redux-thunk styled-components`. 
 
-This command installs all the dependencies we will need
-when building this application.
+This command installs all the dependencies we will need when building this application.
 
 You should have such a project structure:
 ```
@@ -993,7 +992,7 @@ export default connect(mapStateToProps, { logout })(Navbar)
 
 Once more, we pass the `isAuthenticated` state and logout function as props to the Navbar function.
 
-We check if a user is authenticated and, if so, log him out; otherwise, the user can either sign up or log in.
+We check if a user is authenticated and, if so, log the user out; otherwise, the user can either sign up or log in.
 
 The logout function is called when a user clicks the Logout link.
 
