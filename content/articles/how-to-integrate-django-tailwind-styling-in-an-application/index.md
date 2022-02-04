@@ -86,7 +86,7 @@ python manage.py tailwind init
 
 Now open to the project settings, navigate to the `INSTALLED_APPS`, and add the snippets below:
 
-```
+```python
 'tailwind'
 'theme'
 'comment'
@@ -94,7 +94,7 @@ Now open to the project settings, navigate to the `INSTALLED_APPS`, and add the 
 
 In addition, it is mandatory to register the app name in the `settings.py` right below the file, and also specify the internal IP address.
 
-```
+```python
 TAILWIND_APP_NAME = 'theme'
 INTERNAL_IPS = [
     "127.0.0.1",
@@ -103,7 +103,7 @@ INTERNAL_IPS = [
 
 Furthermore, the `tailwind` dependency has to be installed. However, installing this will need a `node` package manager called `npm` which would have come with the node package.
 
-```
+```bash
 python manage.py tailwind install
 ```
 
@@ -111,25 +111,25 @@ python manage.py tailwind install
 
 If your operating system is either `Linux` or `MacOs`, then add the snippet below:
 
-```
+```python
 NPM_BIN_PATH = '/usr/local/bin/npm'
 ```
 
 Otherwise, this works for `Windows` operating system:
 
-```
+```python
 NPM_BIN_PATH = r"C:\Program Files\nodejs\npm.cmd"
 ```
 
 In addition, we have to add a library that takes care of automatic page refreshing for the styling to take effect in the development phase. Add the line below to the `INSTALLED_APPS` inside the `settings.py` file.
 
-```
+```python
 'django_browser_reload'
 ```
 
 Also, add this into the middleware of the same settings file. This will help to insert the script tag on every HTML response in case `DEBUG` is turned `True`.
 
-```
+```python
 "django_browser_reload.middleware.BrowserReloadMiddleware",
 ```
 
@@ -140,13 +140,13 @@ Now copy the snippet below and attach it with the `urlpatterns` list inside the 
 
 > Add the `include` parameter to the `django.urls import path` command.
 
-```
+```python
 path("__reload__/", include("django_browser_reload.urls")),
 ```
 
 Let us configure the routing for the index page. Remember we have made an app called `comment` earlier, now go into the folder and create the `urls.py` file. Having made the file, copy the following code into it.
 
-```Python
+```python
 from django.urls import path
 from.  import views
 
@@ -157,7 +157,7 @@ urlpatterns = [
 
 Navigate into the `urls.py` for the root that is the `myprojectapp` folder, attach the file made above to the `URL patterns` list. This will allow the root to keep track of URLs matching the app.
 
-```Python
+```python
 path('', include('comment.urls')),
 ```
 
@@ -166,7 +166,7 @@ Furthermore, we will be making the first views for the `comment` app. This will 
 
 Open the `views.py` file inside the `comment` app and type the following:
 
-```Python
+```python
 from django.shortcuts import render
 
 # Create your views here.
