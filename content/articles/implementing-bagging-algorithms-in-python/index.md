@@ -33,8 +33,8 @@ In the second approach, we will use the Bagging Classifier and the Random Forest
 ### Prerequisites
 A reader should know the following:
 
-- [Python programming](/engineering-education/python-projects-for-beginners/)
-- [Machine learning workflows](/engineering-education/house-price-prediction/)
+- [Python programming](https://www.section.io/engineering-education/python-projects-for-beginners/)
+- [Machine learning workflows](https://www.section.io/engineering-education/house-price-prediction/)
 - [Machine learning in Python using Scikit-learn](https://scikit-learn.org/stable/)
 - Data analysis using [Pandas](https://pandas.pydata.org/)
 
@@ -47,7 +47,7 @@ As mentioned above,  in bagging, multiple homogenous algorithms are trained inde
 
 *Image Source: [Pluralsight](https://pluralsight2.imgix.net/guides/81232a78-2e99-4ccc-ba8e-8cd873625fdf_2.jpg)*
 
-In this tutorial, we will only be focusing on implementing bagging algorithms. To implement boosting algorithms, read this [article](/engineering-education/boosting-algorithms-python/)
+In this tutorial, we will only be focusing on implementing bagging algorithms. To implement boosting algorithms, read this [article](https://www.section.io/engineering-education/boosting-algorithms-python/)
 
 ### How bagging works
 The bagging technique is also known as Bootstrap Aggregation. The bagging algorithms can be used to solve both classification and regression problems. In addition, bagging algorithms improve a model's accuracy score. 
@@ -411,12 +411,12 @@ from sklearn.ensemble import RandomForestClassifier
 
 To use the `RandomForestClassifier` algorithm, run this code:
 
-```python
+```Python
 scores = cross_val_score(RandomForestClassifier(n_estimators=50), X, y, cv=5)
 ```
 We have used also used the K-fold cross-validation to train the model. To get the mean accuracy score, use this code snippet:
 
-```python
+```Python
 scores.mean()
 ```
 
@@ -441,6 +441,6 @@ To get the Python code, click this Google Colab [link.](https://colab.research.g
 - [Ensemble Learning: Bagging & Boosting.](https://dataaspirant.com/ensemble-methods-bagging-vs-boosting-difference/)
 - [Ensemble methods.](https://towardsdatascience.com/ensemble-methods-bagging-boosting-and-stacking-c9214a10a205)
 - [Cross-validation.](https://scikit-learn.org/stable/modules/cross_validation.html)
-- [Boosting Algorithms in Python](/engineering-education/boosting-algorithms-python/.)
+- [Boosting Algorithms in Python](https://www.section.io/engineering-education/boosting-algorithms-python/.)
 - [Scikit-learn documentation.](https://scikit-learn.org/stable/)
 
