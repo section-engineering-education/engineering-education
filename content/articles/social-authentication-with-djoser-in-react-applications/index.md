@@ -179,7 +179,7 @@ Next,  we specified the allowed site origins to access our application. This cas
 
 We then made the settings for Django REST Framework and Django REST simple jwt.
 
-Notice the allowed redirect URLs part. These URLs should be similar to those you set up for your app in the google console. 
+Notice the allowed redirect URLs part. These URLs should be similar to those you set up for your app in the Google cloud console. 
 
 For authentication, we will implement Google, so we also need the `ModelBackend` because we may need to log into the admin panel.
 
@@ -1005,7 +1005,7 @@ You will be redirected to the home page with the option of logging out.
 
 ![The home page after authentication](/engineering-education/content/articles/social-authentication-with-djoser-in-react-applications/home_page_after_authentication.png)
 
-> Notice that the user will be authenticated as long as they have signed out of their google account. This way, the user does not have to keep entering the email and password every time they want to log in.
+> Notice that the user will be authenticated as long as they have signed into their Google account. This way, the user does not have to keep entering the email and password every time they want to log in.
 
 > You may face issues when authenticating because the backend may not see the state because of the frontend running on localhost:3000. 
 For this reason, I recommend running `npm run build` and moving the build folder to the backend directory and setting up the necessary  URLs for viewing and settings for static files so that your project runs on localhost:8000.
