@@ -5,7 +5,7 @@ Djoser is a powerful library that helps a great deal in authenticating applicati
 
 It works with a custom user model. It also offers capabilities for social authentication, which will be the main focus of this article.
 
-We will create an application for handling social authentication using google. The application will have Django for the backend and
+We will create an application for handling social authentication using Google. The application will have Django for the backend and
 React for frontend.
 
 ### Prerequisites
@@ -14,7 +14,7 @@ React for frontend.
 3. Have `npm` installed for our frontend part.
 
 ### Getting Started
-Start by making a new directory. In your terminal, run `Django-admin startapp backend` under this directory to create a new Django application called `backend`. '
+Start by making a new directory. In your terminal, run `django-admin startapp backend` under this directory to create a new Django application called `backend`. '
 
 `Djoser` works with a custom user model,  so let us create a new app inside our project. First, Cd into the backend folder, run `python3 manage.py startapp users`.
 
@@ -181,7 +181,7 @@ We then made the settings for Django REST Framework and Django REST simple jwt.
 
 Notice the allowed redirect URLs part. These URLs should be similar to those you set up for your app in the google console. 
 
-For authentication, we will implement google, so we also need the `ModelBackend` because we may need to log into the admin panel.
+For authentication, we will implement Google, so we also need the `ModelBackend` because we may need to log into the admin panel.
 
 Then we set up settings for `SOCIAL_AUTH_GOOGLE_OAUTH2_KEY`, `SOCIAL_AUTH_GOOGLE_OAUTH2_SECRET`.You may set up the others for more information.
 
@@ -625,7 +625,7 @@ export const logout = () => dispatch => {
 
 ```
 
-When a user authenticates using google, a redirect URI containing a state and code will be sent by the application. This code and state will be used to obtain user information such as access and refresh token, email, and name.
+When a user authenticates using Google, a redirect URI containing a state and code will be sent by the application. This code and state will be used to obtain user information such as access and refresh token, email, and name.
 
 The `googleAuthenticate` function handles the post request with the code and state as data and returns the user data as the request's response. 
 
@@ -861,9 +861,9 @@ const mapStateToProps = state => ({
 export default connect(mapStateToProps, null)(Signup);
 ```
 
-When a user clicks to continue with google during sign up, the `signupWithGoogle` function is called. This function sends a post request to the backend with a specified redirect URI. 
+When a user clicks to continue with Google during sign up, the `signupWithGoogle` function is called. This function sends a post request to the backend with a specified redirect URI. 
 
-This URI must be one of the allowed redirect URIs in the Djoser settings. Additionally,  the allowed URIs must be the same as those added in your google cloud console. 
+This URI must be one of the allowed redirect URIs in the Djoser settings. Additionally,  the allowed URIs must be the same as those added in your Google cloud console. 
 
 The user gets directed to the authorization page and the specified redirect URI with the state and code included in the url.
 
@@ -997,7 +997,7 @@ We check if a user is authenticated and, if so, log him out; otherwise, the user
 
 The logout function is called when a user clicks the Logout link.
 
-You should now be able to authenticate using a google account fully:
+You should now be able to authenticate using a Google account fully:
 
 ![Authenticating using Google](/engineering-education/content/articles/social-authentication-with-Djoser-in-react-applications/authenticating_with_google.png)
 
@@ -1011,5 +1011,5 @@ You will be redirected to the home page with the option of logging out.
 For this reason, I recommend running `npm run build` and moving the build folder to the backend directory and setting up the necessary  URLs for viewing and settings for static files so that your project runs on localhost:8000.
 
 ### Conclusion
-You have now handled authentication for google using Djoser. You can do the same for other social accounts such as Facebook, Twitter, or others. Please refer to [Djoser Documentation](https://djoser.readthedocs.io/en/latest/) for more information.
+You have now handled authentication for Google using Djoser. You can do the same for other social accounts such as Facebook, Twitter, or others. Please refer to [Djoser Documentation](https://djoser.readthedocs.io/en/latest/) for more information.
 
