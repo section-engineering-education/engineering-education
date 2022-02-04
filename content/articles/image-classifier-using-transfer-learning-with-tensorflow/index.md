@@ -1,3 +1,22 @@
+---
+layout: engineering-education
+status: publish
+published: true
+url: /image-classifier-using-transfer-learning-with-tensorflow/
+title: Image Classifier using Transfer Learning with Tensorflow
+description: In this tutorial, we will build a model that classifies images of hands playing rock, paper, scissor games using TensorFlow.
+author: charles-kariuki
+date: 2022-02-04T00:00:00-15:00
+topics: [Machine Learning]
+excerpt_separator: <!--more-->
+images:
+
+ - url: /engineering-education/image-classifier-using-transfer-learning-with-tensorflow/hero.jpg
+   alt: Classification of GitHub Issues using Machine Learning example image
+---
+Transfer learning is a technique that trains a neural network on one problem and then applies the trained neural network to a different but related problem. It focuses on storing knowledge gained while solving one problem and applying it to a different but related problem.
+<!--more-->
+
 Transfer learning is a technique that trains a neural network on one problem and then applies the trained neural network to a different but related problem. It focuses on storing knowledge gained while solving one problem and applying it to a different but related problem. Transfer learning decreases the training time and produces a model that performs well.
 
 For example, knowledge gained while learning to recognize lemons could apply when trying to recognize oranges. Lemons and oranges are different but related problems. The neural network is fine-tuned to meet the user's needs rather than being trained from scratch.
