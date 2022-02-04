@@ -16,18 +16,18 @@ images:
 ---
 When it comes to coding, the best way of learning is by working on fun but challenging projects. The challenging part makes us research the concepts we are dealing with more in-depth.
 <!--more-->
-The fun part makes us keep working on the project even when the code is throwing errors. Every programmer has had a time during their coding experience when their code is throwing errors but can't identify what is causing this.
+The fun part makes us keep working on the project even when the code is throwing errors. Every programmer has had a time during their coding experience when their code throws errors but he/she can't identify what is causing this.
 
-Even so, they keep working on the code and research what is causing them. Most of the time this is because they would love to see the output of the projects they are working on.
+Even so, they keep working on the code and research on the cause of the error. Most of the time this is because they would love to see the output of the projects they are working on.
 
 In this tutorial, we will work on a fun but relatively challenging project. We will look at how to create a finger counter using computer vision, OpenCv, and Python.
 
 ### Introduction
-Python has libraries that will help us develop our project. We will need OpenCv and MediaPipe. We will later look at why and how we will use these two libraries.
+Python has libraries that will help us develop our project. We will need `OpenCv` and `MediaPipe`. We will later look at why and how we will use these two libraries.
 
-We will also need an IDE to work with Python. We will use **pycharm community edition** as it is freely available on the internet.
+We will also need a Python IDE. We will use **pycharm community edition** as it is freely available on the internet.
 
-This tutorial will discuss how to hand track using python with the help of a MediaPipe library. We will also learn to implement computer vision in our project using OpenCv.
+This tutorial will discuss how to hand track using python with the help of a MediaPipe library. We will also learn how to implement computer vision in our project using OpenCv.
 
 Lastly, we will learn how to combine MediaPipe, OpenCv, and Python to create a program that will count the number of fingers in an input image. A person using Windows or Linux can follow through.
 
@@ -41,14 +41,14 @@ Lastly, we will learn how to combine MediaPipe, OpenCv, and Python to create a p
 ### Prerequisites
 To understand this article, the reader needs to:
 - Be familiar with the Python programming language.
-- Have pycharm installed on their computer. If you don't have it installed, you can download it [here](https://www.jetbrains.com/pycharm/download/).
+- Have pycharm installed on their computer. If you don't have it installed, you can download it from [here](https://www.jetbrains.com/pycharm/download/).
 
 ### Understanding the hand landmark model
 ![Hand landmark model](/engineering-education/creating-a-finger-counter/model.png)
 
 _[Image Source: Mediapipe](https://google.github.io/mediapipe/images/mobile/hand_landmarks.png)_
 
-The diagram above shows a hand landmark model that shows how MediaPipe can track hands. This article is interested with the hand-knuckles.
+The diagram above shows a hand landmark model that shows how MediaPipe tracks hands. This article will focus on the hand-knuckles.
 
 The diagram shows numbers from 0 to 20 displayed over the knuckles. We will be using the position of these knuckles to determine whether a finger is open or closed.
 
@@ -57,7 +57,7 @@ Let us take a look at the logic we will be using:
 - This will apply to all fingers except the thumb. For the thumb, we will check whether knuckle number `4` is above knuckle number `2`. If this is the case then the thumb is open else, the thumb is closed.
 
 ### Creating a finger counter program using computer vision, OpenCv, and Python
-First, we need to prepare our working environment in _Pycharm_. Open the pycharm app and click `create a new project` on the window that appears.
+First, we need to prepare our working environment in _Pycharm_. To do so, open the pycharm app and click `create a new project` on the window that appears.
 
 This will be as shown in the screenshot below.
 
@@ -66,7 +66,7 @@ This will be as shown in the screenshot below.
 After clicking `create a new project`, a new window will appear. Click the `create` button. Now that we have Pycharm ready, we need to install the Python libraries we need for our project.
 
 ### Installing the Python libraries we need for our project
-Click the `terminal` as shown in the screenshot below then follow the steps below it.
+Click on the `terminal` as shown in the screenshot below then follow the steps below it.
 
 ![Terminal](/engineering-education/creating-a-finger-counter/terminal.png)
 
@@ -76,7 +76,7 @@ To install `MediaPipe`, use the command below:
 pip install mediapipe
 ```
 
-This library was developed by Google. We will be using it for hand tracking and finger tracking. In case you want to read more about it you can find its documentation [here](https://google.github.io/mediapipe/solutions/hands.html).
+This library was developed by Google. We will use it for hand tracking and finger tracking. In case you want to read more about it you can find its documentation [here](https://google.github.io/mediapipe/solutions/hands.html).
 
 To install `cv2` use the command below:
 
@@ -100,7 +100,7 @@ import mediapipe as mp
 ```
 
 #### Step 2 - Declaring the `MediaPipe` objects and the finger and thumb coordinates
-We will then capture an image using our webcam and declare the `MediaPipe` objects that we will need. Also, we will declare the finger and thumb coordinates that we use to determine whether a finger is open or closed.
+We will then capture an image using our webcam and declare the `MediaPipe` objects that we will need. We will also declare the finger and thumb coordinates that we will use to determine whether a finger is open or closed.
 
 The code below is used to achieve this:
 
@@ -131,7 +131,7 @@ while True:
 #### Step 4 - Drawing the landmarks present in the hand
 So far we have identified the landmarks present on the hands but we have not drawn the identified landmarks. The code below will help ensure that the hand landmarks do exist using the `if` statement.
 
-We will create a nested `for` loop to enable us to work on one hand at a time and draw the hand landmarks present on each hand. The empty list that is created will be used later in the code.
+We will create a nested `for` loop to enable us work on one hand at a time and draw the hand landmarks present on each hand. The empty list that is created will be used later in the code.
 
 ```python
 
