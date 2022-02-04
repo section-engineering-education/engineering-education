@@ -68,7 +68,7 @@ The position is a compensated position - 50 USD per successful article review.
 We always encourage friendly reviews among the community to help each other out before article submission. Verified Peer Reviewers are paid $50.00 USD per successful article revision.
 
 ### Are articles published compensated?
-The value that the EngEd program is providing to students it that of career building, skill enrichments, community building, and portfolio that can be referenced and leveraged upon entering the workforce.
+The value that the EngEd program is providing to students is that of career building, skill enrichments, community building, and portfolio that can be referenced and leveraged upon entering the workforce.
 
 ### Does Section provide revision services?
 We will look over the all articles that come in to ensure they are publish worthy - but our peer reviewer team is only looking to improve the content by making suggestions. 
