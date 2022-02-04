@@ -3,7 +3,7 @@ layout: engineering-education
 status: publish
 published: true
 url: /face-recognition-using-wavelet-features/
-title: Face recognition using wavelet features
+title: Face Recognition Using Wavelet Features
 description: In this tutorial, a face detection scheme is implemented using the wavelet features. We use wavelet features to extract facial features and use principal component analysis to reduce the wavelet feature vectors.
 author: simon-mwaniki
 date: 2022-01-30T00:00:00-11:10
@@ -12,7 +12,7 @@ excerpt_separator: <!--more-->
 images:
 
   - url: /engineering-education/face-recognition-using-wavelet-features/hero.jpg
-    alt: Face recognition using wavelet features Hero Image
+    alt: Face Recognition Using Wavelet Features Hero Image
 ---
 Face recognition is a system that can match human faces from images to video frames against those in a database. Wavelets are oscillations having amplitudes beginning from zero, increases or decreases, then back to zero.
 <!--more-->
