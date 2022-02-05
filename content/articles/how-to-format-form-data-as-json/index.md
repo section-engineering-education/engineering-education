@@ -1,6 +1,21 @@
-### How To Format Form Data As JSON
-
-The browser [Fetch API](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API) is used to make requests from a web page on the frontend to an API endpoint on the backend. On the other hand the browser [FormData API](https://developer.mozilla.org/en-US/docs/Web/API/FormData) provides a precise way of accessing HTML form fields. Both of these two natively supported browser APIs make it easy to send requests, but to send data as JSON to an API endpoint requires an extra work. In this tutorial, you explore a step by step procedure on how to capture form field data, format them as JSON data and send it to an API endpoint.
+---
+layout: engineering-education
+status: publish
+published: true
+url: /how-to-format-form-data-as-json/
+title: How To Format Form Data As JSON 
+description: This article will be learn how to capture form field data, format them as JSON data and send it to an API endpoint.
+author: gisiora-elvis
+date: 2022-02-05T00:00:00-00:00
+topics: [JavaScript]
+excerpt_separator: <!--more-->
+images:
+  - url: /engineering-education/how-to-format-form-data-as-json/hero.jpg
+    alt: How To Format Form Data As JSON Hero Image
+---
+The browser [Fetch API](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API) is used to make requests from a web page on the frontend to an API endpoint on the backend. 
+<!--more-->
+On the other hand the browser [FormData API](https://developer.mozilla.org/en-US/docs/Web/API/FormData) provides a precise way of accessing HTML form fields. These two natively support browser APIs making it easy to send requests, but to send data as JSON to an API endpoint this requires an extra work. In this tutorial, you explore a step by step procedure on how to capture form field data, format them as JSON data and send it to an API endpoint.
 
 ### Table of contents
 - [Goals of this tutorial](#goals-of-this-tutorial)
@@ -117,7 +132,7 @@ sampleForm.addEventListener("submit", async (e) => {
 ```
 
 ### Formating data to JSON and making a POST request
-Passing the `FormData` instance directly to `fetch` by default the request body is formatted as "multipart" and the `Content-Type` on the request header is set to `multipart/form-data`. Convert the FormData instance to a plain object and then into a JSON string.
+Passing the `FormData` instance directly to `fetch` by default, the request body is formatted as "multipart" and the `Content-Type` on the request header is set to `multipart/form-data`. Convert the FormData instance to a plain object and then into a JSON string.
 
 First create an object from the `formData` instance using the [Object.fromEntries()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/fromEntries) method.
 
@@ -127,7 +142,7 @@ Specify the HTTP request method as POST and using the header field of the Fetch 
 
 Then set the request body as JSON created from the form fields.
 
-Finally, send the request and listen for the response. If the response was OK return the response body, otherwise throw an error.
+Finally, send the request and listen for the response. If the response is OK return the response body, otherwise throw an error.
 
 ```js
 /**
@@ -262,11 +277,10 @@ The sample form data (`formDataToJsonString`) object sent as JSON;
 ```
 
 ### Handling JSON request body in a Nodejs and Express.js API
-
 Implementing a simple API using Nodejs and Express.js, will expose an endpoint where you will be sending the request containing the form data as JSON.
 
 ### Setting up the API
-Nodejs should be installed on your machine. To check if it is installed, run the following command:
+Nodejs should be installed on your computer. To check if it is installed, run the following command:
 
 ```bash
 node -v
@@ -353,3 +367,5 @@ For code reference, here is the link to the full project on [GitHub](https://git
 ### Conclusion
 There you have it! a step by step process on how to format form data as JSON using the browser FormData API and POST it using the browser Fetch API to an API endpoint. You can utilize this newly gained knowledge and skills to develop other applications that make use of these powerful native browser APIs.
 
+---
+Peer Review Contributions by: [Jethro Magaji](/engineering-education/authors/jethro-magaji/)
