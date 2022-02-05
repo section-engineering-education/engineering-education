@@ -7,13 +7,15 @@
 - [Wrapping it up](#wrapping-it-up)
 
 ### Prerequisites
-Before you begin reading this tutorial, you need to have the following installed on your machine:
+To follow along with this tutorial, you need to have the following installed on your machine:
 - [Ubuntu](https://ubuntu.com/download/server) 20.05 server 
 - UFW-configured proxy server.
 - [MongoDB](https://www.mongodb.com/try/download/community) 
 
 ### Introduction
-MongoDB is one of the most used modern web applications for a database. However, MongoDB is not secure by default. As a result, configuring it for authentication may be difficult. For this reason, people can browse, write, delete, or modify data on your server without ever needing to log in or authenticate. In this tutorial, you will learn how to secure and activate authentication on MongoDB in a few steps.
+MongoDB is one of the most used modern web applications for a database. However, MongoDB is not secure by default. As a result, configuring it for authentication may be difficult.
+
+For this reason, people can browse, write, delete, or modify data on your server without ever needing to log in or authenticate. In this tutorial, you will learn how to secure and activate authentication on MongoDB in a few steps.
 
 ### Check the environment
 To check if MongoDB is running on Linux kernel, we use the command below:
@@ -28,7 +30,7 @@ When already installed, the output will appear similar to this:
 ```bash
 909070 ttys023 2:43.486 ./mongodb
 ```
-When performing configuration, we navigate to the default location `/etc/mongodb.conf` from the default port and change file location using the command below:
+To perform configuration, we navigate to the default location `/etc/mongodb.conf` from the default port and change file location using the command below:
 
 
 ```bash
@@ -97,7 +99,7 @@ The method requires users to create a new user. Note that an error message appea
         pwd: "xandrew12@12",#enter roles, closing braces and parenthis.
         role: [{role:"userAdminAnyDatabase", dp:"admin"}]})
 ```
-When the above method executes, a user will be prompt to enter a password as shown below:
+The above code executes, users are prompt to enter there password as shown below:
 
 ```bash
 #enter password used when creating the database.
