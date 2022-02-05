@@ -12,7 +12,7 @@ excerpt_separator: <!--more-->
 images:
 
  - url: /engineering-education/image-classifier-using-transfer-learning-with-tensorflow/hero.jpg
-   alt: Classification of GitHub Issues using Machine Learning example image
+   alt: Image classifier example image
 ---
 Transfer learning is a technique that trains a neural network on one problem and then applies the trained neural network to a different but related problem. It focuses on storing knowledge gained while solving one problem and applying it to a different but related problem.
 <!--more-->
