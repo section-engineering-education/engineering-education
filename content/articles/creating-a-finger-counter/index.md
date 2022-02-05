@@ -4,7 +4,7 @@ status: publish
 published: true
 url: /creating-a-finger-counter/
 title: Creating a finger counter using computer vision, OpenCv and Python
-description: In this tutorial, we will discuss how to create a finger counter using computer vision, opencv and python.
+description: This tutorial will discuss how to create a finger counter using computer vision, opencv and python.
 author: denis-kuria
 date: 2022-01-17T00:00:00-10:05
 topics: [Languages]
@@ -18,7 +18,7 @@ When it comes to coding, the best way of learning is by working on fun but chall
 <!--more-->
 The fun part makes us keep working on the project even when the code is throwing errors. Every programmer has had a time during their coding experience when their code throws errors but he/she can't identify what is causing this.
 
-Even so, they keep working on the code and research on the cause of the error. Most of the time this is because they would love to see the output of the projects they are working on.
+Even so, they keep working on the code and research the cause of the error. Most of the time this is because they would love to see the output of the projects they are working on.
 
 In this tutorial, we will work on a fun but relatively challenging project. We will look at how to create a finger counter using computer vision, OpenCv, and Python.
 
@@ -32,6 +32,7 @@ This tutorial will discuss how to hand track using python with the help of a Med
 Lastly, we will learn how to combine MediaPipe, OpenCv, and Python to create a program that will count the number of fingers in an input image. A person using Windows or Linux can follow through.
 
 ### Table of contents
+- [Introduction](#introduction)
 - [Prerequisites](#prerequisites)
 - [Understanding the hand landmark model](#understanding-the-hand-landmark-model)
 - [Creating a finger counter program using computer vision, OpenCv, and Python](#creating-a-finger-counter-program-using-computer-vision-opencv-and-python)
@@ -59,14 +60,14 @@ Let us take a look at the logic we will be using:
 ### Creating a finger counter program using computer vision, OpenCv, and Python
 First, we need to prepare our working environment in _Pycharm_. To do so, open the pycharm app and click `create a new project` on the window that appears.
 
-This will be as shown in the screenshot below.
+This will be as shown in the screenshot below:
 
 ![Project](/engineering-education/creating-a-finger-counter/project.png)
 
 After clicking `create a new project`, a new window will appear. Click the `create` button. Now that we have Pycharm ready, we need to install the Python libraries we need for our project.
 
 ### Installing the Python libraries we need for our project
-Click on the `terminal` as shown in the screenshot below then follow the steps below it.
+Click on the `terminal` as shown in the screenshot below and follow the steps below it.
 
 ![Terminal](/engineering-education/creating-a-finger-counter/terminal.png)
 
@@ -78,7 +79,7 @@ pip install mediapipe
 
 This library was developed by Google. We will use it for hand tracking and finger tracking. In case you want to read more about it you can find its documentation [here](https://google.github.io/mediapipe/solutions/hands.html).
 
-To install `cv2` use the command below:
+To install `cv2`, we will use the command below:
 
 ```bash
  pip install opencv-python
@@ -131,7 +132,7 @@ while True:
 #### Step 4 - Drawing the landmarks present in the hand
 So far we have identified the landmarks present on the hands but we have not drawn the identified landmarks. The code below will help ensure that the hand landmarks do exist using the `if` statement.
 
-We will create a nested `for` loop to enable us work on one hand at a time and draw the hand landmarks present on each hand. The empty list that is created will be used later in the code.
+We will create a nested `for` loop to enable us to work on one hand at a time and draw the hand landmarks present on each hand. The empty list that is created will be used later in the code.
 
 ```python
 
@@ -145,7 +146,7 @@ We will create a nested `for` loop to enable us work on one hand at a time and d
 #### Step 5 - Changing the hand points coordinates into image pixels
 Working with the actual coordinates is challenging. Therefore, we need to change them into pixels.
 
-First of all, we use the `image.shape` function to get the height, width, and color channel of the image. We will then get the `x` and `y` coordinates of each hand point in form of pixels. We will then save these hand points in the list we previously created.
+First of all, we use the `image.shape` function to get the height, width, and color channel of the image. We will then get the `x` and `y` coordinates of each hand point in the form of pixels. We will then save these hand points in the list we previously created.
 
 The code below will implement this:
 
@@ -156,7 +157,9 @@ The code below will implement this:
 ```
 
 #### Step 6 - Circling the hand points
-We will now circle each hand point we have identified. This is to ensure that we are getting the correct hand points. We use the code below to achieve this.
+We will now circle each hand point we have identified. This is to ensure that we are getting the correct hand points. 
+
+We use the code below to achieve this:
 
 ```python
         for point in handList:
@@ -193,7 +196,7 @@ When we run the code above to completion, without any errors, the output will be
 ![Results](/engineering-education/creating-a-finger-counter/results.gif)
 
 ### Conclusion
-We have finally come to the end of this tutorial. You are now exposed to the concepts and skills needed to create a finger counting software. Now watch as the program recognizes and displays the number of fingers you show to it through the webcam.
+We have finally come to the end of this tutorial. You are now exposed to the concepts and skills needed to create finger counting software. Now watch as the program recognizes and displays the number of fingers you show to it through the webcam.
 
 Happy coding!
 
