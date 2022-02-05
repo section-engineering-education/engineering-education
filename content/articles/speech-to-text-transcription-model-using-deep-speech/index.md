@@ -269,3 +269,5 @@ To access this notebook, click [here](https://colab.research.google.com/drive/15
 - [Types of transcrption models](https://www.cogitotech.com/blog/what-is-transcription-and-its-types)
 - [Deep Speech Github](https://github.com/mozilla/DeepSpeech)
 
+---
+Peer Review Contributions by: [Collins Ayuya](https://www.section.io/engineering-education/authors/collins-ayuya/)
