@@ -336,3 +336,6 @@ Finally, we tested the model and it can make accurate predictions. Using this tu
 - [TensorFlow hub](https://www.tensorflow.org/hub)
 - [Basics of Convolution Neural Networks](/engineering-education/basics-of-convolution-neural-networks/)
 - [Introduction to Neural Networks](/engineering-education/introduction-to-neural-networks/)
+
+---
+Peer Review Contributions by: [Collins Ayuya](https://www.section.io/engineering-education/authors/collins-ayuya/)
