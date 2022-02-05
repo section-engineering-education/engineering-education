@@ -4,7 +4,7 @@ The term "system" refers to the computer components that work together to accomp
 
 In this article, we will go over how to check system information and the classes that can be used to do so, as well as write a C# program to demonstrate it. This article will be 70% practical, which will necessitate a lot of coding.
 
-In this post, we will look at how to use the Management Namespace and Environment in C# to get access to various system data. The Environment class is a static class that gives information on the current environment and methods for manipulating it, whereas the Management Namespace is a namespace that comprises numerous classes that provide access to management information, system events, devices, and so on.
+In this post, we will look at how to use the `Management` Namespace and `Environment` in C# to get access to various system data. The `Environment` class is a static class that gives information on the current environment and methods for manipulating it, whereas the `Management` Namespace is a namespace that comprises numerous classes that provide access to management information, system events, devices, and so on.
 
 
 ### Objective
@@ -40,12 +40,12 @@ In this scenario, we will make a basic Windows Form Application to demonstrate h
 ### Steps to be followed
 
 #### Step 1: Design a Windows Form page as shown below
-Use four TextBox controls for display, four labels, and two buttons, one for checking system information and the other for exiting, while making this Form page, as shown below.
+Use four `TextBox` controls for display, four `labels`, and two `buttons`, one for checking system information and the other for exiting, while making this Form page, as shown below.
 
 ![Environment class Design page](/engineering-education/working-with-system-information-in-a-windows-form-c-sharp-program/environment.png)
 
 #### Step 2: Naming TextBox Cotrols
-When naming text boxes in this Form, C# naming standards must be observed, and they should be named differently. The Textboxes were given the names `txtComputerName`, `txtUserName`, `txtOperatingSystem`, and `txtSytemBit` in my case.
+When naming text boxes in this Form, `C#` naming standards must be observed, and they should be named differently. The Textboxes were given the names `txtComputerName`, `txtUserName`, `txtOperatingSystem`, and `txtSytemBit` in my case.
 
 #### Step 3: Coding
 This is the final step, in which we should offer the code that will assist in getting system information, which will be coded within a function of the two buttons as follows:
@@ -55,6 +55,8 @@ This is the final step, in which we should offer the code that will assist in ge
   -  Copy the code below and paste it into the check system information button after double-clicking it.
 
    ```C#
+             private void button5_Click(object sender, EventArgs e)
+        {  
             txtComputerName.Enabled = true;
             txtOperstingSystem.Enabled = true;
             txtSytemBit.Enabled = true;
@@ -64,31 +66,29 @@ This is the final step, in which we should offer the code that will assist in ge
             // Checking name of the computer used
             String q1 = Environment.MachineName;
             txtComputerName.Text = q1;
-
             // Checking name of the user to this computer
             String q2 = Environment.UserName;
-            txtUserName.Text = q2;
-            
-            
+            txtUserName.Text = q2; 
            // Checking if the operating system installed is 64 bits or not
             bool q4 = Environment.Is64BitOperatingSystem;
 
             if (q4 == true)
             {
-                txtSytemBit.Text = " 64-bit operating system,  x64-based processor".ToString();
+                txtSytemBit.Text = " 64-bit operating system, x64-based processor".ToString();
             }
             else
-            {
+             {
                 txtSytemBit.Text = " 32-bit operating system, x32-based processor".ToString();
-            }
+             }
 
              String q5 =  (Environment.OSVersion.ToString());
-            txtOperstingSystem.Text = Convert.ToString(q5);
-            String q6 = Environment.OSVersion.Platform.ToString();
+             txtOperstingSystem.Text = Convert.ToString(q5);
+             String q6 = Environment.OSVersion.Platform.ToString();     
+        }
 
    ```
  **Explanation**
-We utilized the `Environment` class to access some of the system's information in the snippet code above. The Environment class is a static class, which means that its methods and attributes can only be accessed by using the class name and cannot be instantiated.
+We utilized the `Environment` class to access some of the system's information in the snippet code above. The `Environment` class is a static class, which means that its methods and attributes can only be accessed by using the class name and cannot be instantiated.
 
 The `Environment` class has several properties that help us perform various functions, and we simply call each property by its class name using the syntax below.
 
@@ -108,7 +108,9 @@ The properties used in the code snippet above are listed below.
    
 - Copy the code below and paste it into the Exit button after double-clicking it.
 
-```C#
+```C# 
+     private void button9_Click(object sender, EventArgs e)
+        {
             const string message = "Do you what to exit?";
             const string caption = "Closing the page";
             var results = MessageBox.Show(message, caption, MessageBoxButtons.YesNo, MessageBoxIcon.Question);
@@ -116,10 +118,11 @@ The properties used in the code snippet above are listed below.
             {
                 Application.Exit();
             }
+        }
 ```
 **Explanation**
 
-The Exit() method in the above code executes the exit action when a user clicks the Exit button. Because the Application class is a static class that cannot be instantiated, this method can only be accessed or called by the class name as shown:
+The `Exit()` method in the above code executes the exit action when a user clicks the Exit button. Because the `Application` class is a static class that cannot be instantiated, this method can only be accessed or called by the class name as shown:
 
 ```C#
 //ClassName.MethodeName
@@ -156,7 +159,10 @@ This is the final step, in which we should offer the code that will assist in ge
   -  Copy the code below and paste it into the check system information button after double-clicking it.
   
   ```C#
-       ManagementClass management = new ManagementClass("Win32_Processor");
+       
+        private void button5_Click(object sender, EventArgs e)
+        {
+            ManagementClass management = new ManagementClass("Win32_Processor");
             ManagementObjectCollection managementobject = management.GetInstances();
             
             foreach (ManagementObject mngObject in managementobject)
@@ -191,22 +197,26 @@ This is the final step, in which we should offer the code that will assist in ge
 
             foreach (ManagementObject mngObject4 in managementobject4)
             {
-                motherboard.Text = mngObject4.Properties["SerialNumber"].Value.ToString();
+                txtMother.Text = mngObject4.Properties["SerialNumber"].Value.ToString();
                 break;
             }
 
+        }
   ```
 
  **Explanation**
  
-ManagementClass is used to examine hardware information such as Processor id, BIOS Maker Serial Number, Physical Memory Serial Number, and Motherboard Serial Number in our case, as shown in the code sample above.
-To access the ManagementClass properties, we must first build the ManagementClass object as well as the ManagementObjectCollection class object.
+`ManagementClass` is used to examine hardware information such as Processor id, BIOS Maker Serial Number, Physical Memory Serial Number, and Motherboard Serial Number in our case, as shown in the code sample above.
+To access the `ManagementClass` properties, we must first build the `ManagementClass` class object as well as the `ManagementObjectCollection` class object.
 
 The value attributes provided by the above classes assist us in displaying the value of specific hardware installed.
 2. Exit button
   - Copy the code below and paste it into the Exit button after double-clicking it.
 
 ```C#
+           
+       private void button9_Click(object sender, EventArgs e)
+        {
             const string message = "Do you what to exit?";
             const string caption = "Closing the page";
             var results = MessageBox.Show(message, caption, MessageBoxButtons.YesNo, MessageBoxIcon.Question);
@@ -214,10 +224,11 @@ The value attributes provided by the above classes assist us in displaying the v
             {
                 Application.Exit();
             }
+        }
 ```
 **Explanation**
 
-The Exit() method in the above code executes the exit action when a user clicks the Exit button. Because the Application class is a static class that cannot be instantiated, this method can only be accessed or called by the class name as shown:
+The `Exit()` method in the above code executes the exit action when a user clicks the Exit button. Because the Application class is a static class that cannot be instantiated, this method can only be accessed or called by the class name as shown:
 
 ```C#
 //ClassName.MethodeName
@@ -227,5 +238,5 @@ The Exit() method in the above code executes the exit action when a user clicks 
 
 ### Conclusion
 
-In part 1 of this article, we used the Environment class to check the Machine name, User name, Operating System, Check the processor if it is an x64-based CPU or an x32-based processor, and the System type.
-We have also learned how to use the Management namespace to display various hardware data, such as the BIOS serial number, Motherboard serial number, Processor id, and physical RAM serial number in part 2.
+In part 1 of this article, we used the `Environment` class to check the Machine name, User name, Operating System, Check the processor if it is an x64-based CPU or an x32-based processor, and the System type.
+We have also learned how to use the `Management` namespace to display various hardware data, such as the BIOS serial number, Motherboard serial number, Processor id, and physical RAM serial number in part 2.
