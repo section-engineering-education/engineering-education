@@ -1,3 +1,22 @@
+---
+layout: engineering-education
+status: publish
+published: true
+url: /speech-to-text-transcription-model-using-deep-speech/
+title: Speech to Text Transcription Model Using Deep Speech
+description: This tutorial will build a speech to text transcription model using the Deep Speech library.
+author: francis-ndiritu
+date: 2022-02-05T00:00:00-18:00
+topics: [Machine Learning]
+excerpt_separator: <!--more-->
+images:
+
+  - url: /engineering-education/speech-to-text-transcription-model-using-deep-speech/hero.jpg
+    alt: Speech to text example image
+---
+Speech-to-text models have made users more comfortable when using online voice services. Businesses can now use speech recognition models in their operations.
+<!--more-->
+
 Speech-to-text transcription is a subset of natural language processing that is used to convert speech to text. Speech may be in form of video or audio files. The model analyses the speech and converts it to the corresponding text.
 
 A speech to text model is applied in various areas such as:
