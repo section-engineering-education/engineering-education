@@ -1,5 +1,21 @@
-Is NoSQL DBMS a Replacement for Relational Database Management System (RDMS)?
+---
+layout: engineering-education
+status: publish
+published: true
+url: /is-nosql-dbms-a-replacement-for-relational-database-management-system/
+title: Is NoSQL DBMS a Replacement for Relational Database Management System?
+description: This article will discuss the features of NoSQL DBMS and how they compare with the SQL-based relational databases.
+author: gregory-munene
+date: 2022-02-05T00:00:00-19:00
+topics: []
+excerpt_separator: <!--more-->
+images:
 
+  - url: /engineering-education/is-nosql-dbms-a-replacement-for-relational-database-management-system/hero.jpg
+    alt: DBMS Example Image
+---
+NoSQL is a non-relational database that has become a preferred option for modern applications. Its changing data sets fit into a flexible data model. Developers find its agile features enticing because they facilitate quicker application updates.
+<!--more-->
 Relational databases have been trusted DMS for a while now. Their maturity and long existence make them the go-to option for several organizations. But as technology advances and companies are now handling big data, SQL-based relational database limitations are becoming apparent. Organizations are considering [NoSQL databases](/engineering-education/sql-or-nosql-when-to-choose-what/) on use cases that RDBMS are inapplicable.
 
 NoSQL is a non-relational database that has become a preferred option for modern applications. Its changing data sets fit into a flexible data model. Developers find its agile features enticing because they facilitate quicker application updates.
