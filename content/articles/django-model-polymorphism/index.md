@@ -1,3 +1,20 @@
+---
+layout: engineering-education
+status: publish
+published: true
+url: /django-model-polymorphism/
+title: Getting started with Django polymorphic models
+description: This tutorial will go over the concept of Django model design from the default feature provided by Django to more advanced modelling features available in Django
+author: flavian-adhiambo
+date: 2022-02-05T00:00:00-05:41
+topics: [API]
+excerpt_separator: <!--more-->
+images:
+
+  - url: /engineering-education/django-model-polymorphism/hero.png
+    alt: Getting started with Django polymorphic models
+---
+
 ### Django polymorphic database modelling
 Polymorphism is a technique for modelling data in a database so that applications can use it to store different types of data in the same table. For example, in an online bookstore, a user can order an ebook version of a novel while another user orders a print version of the same book. In the database, it's the same book but with different properties. The ebook version will include a download link which the print version won't have. The print version can have a weight property that we can use to calculate the ebook version's delivery charges.
 
@@ -17,9 +34,9 @@ Polymorphism is a technique for modelling data in a database so that application
 2. Knowledge in [Django](https://docs.djangoproject.com/en/4.0/intro/overview/) and [Python](https://www.python.org/).
    
 ### Polymorphic Modelling
-Django ORM provides several ways to model polymorphic data. We can either use the standard Django features or the advanced Django ORM features, as we will study below. As we will see below, there are several ways to model polymorphic data. We will begin with the simplest method to the complex way of implementing polymorphic models.
+Django ORM provides several ways to model polymorphic data. As we will study below, we can either use the standard Django features or the advanced Django ORM features. As we will see below, there are several ways to model polymorphic data. We will begin with the simplest method to the complex way of implementing polymorphic models.
 
-This tutorial will model an online book store data dealing with print books and ebooks sales. We will begin by creating simple models, then add more fields to our models as we proceed.
+This tutorial will model an online book store data dealing with print books and ebooks sales. We will begin by creating simple models and adding more fields to our models as the online store expands and handles more products.
 
 We will start by creating a new Django project that we will use throughout this guide. 
 
@@ -41,6 +58,13 @@ We will start by creating a new Django project that we will use throughout this 
    ```bash
    python manage.py startapp modelling
    ```
+Django provides several modelling patterns that we will go through in this guide; they include:-
+1. Default modelling pattern
+2. Sparse modelling pattern
+3. Semi-structured modelling pattern
+4. Abstract modelling pattern
+
+
 #### Default modeling
 This section will model our online bookstore using the default Django modelling features. Add the code snippet below in the `models.py` file in the `modelling` application.
 
@@ -77,7 +101,7 @@ class UserCart(models.Model):
 | Easy to model and maintain  | Only suitable for products with same attributes  |
 
 #### Sparse Modelling
-Now that our online store has gained several customers, they are requesting ebooks instead of print books. Therefore, we need to modify the `Publication` model to accommodate print and ebooks.
+Now that our online store has gained several customers, they request ebooks instead of print books. Therefore, we need to modify the `Publication` model to accommodate print and ebooks.
 
 Replace the code snippet in the `models.py` file in the `modelling` application that we created earlier with the code snippet below.
 
@@ -196,4 +220,7 @@ class Journal(models.Model):
 | Easy to maintain, design and test  | Hard to scale since every new product requires an additional model  |
 
 ### Conclusion
-In this article, you have learned how to create polymorphic Django models.Try implementing polymorphic Django models in your application to reduce complexity in your models using the best polymorphic approach that fits best your use case.
+In this article, you have learned how to create polymorphic Django models. Next, try implementing polymorphic Django models in your application to reduce complexity in your models using the best polymorphic approach that fits best your use case.
+
+---
+Peer Review Contributions by: [Odhiambo Paul](/engineering-education/authors/odhiambo-paul/)
