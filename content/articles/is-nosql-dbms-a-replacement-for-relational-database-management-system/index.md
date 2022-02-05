@@ -45,7 +45,7 @@ The CAP theorem initiated the development of a classification for NoSQL database
 - AP database: this is a NoSQL that delivers availability and is partition tolerant. The system compromises on the three guarantees of a database to omit consistency.
 
 ### Can NoSQL replace RDMS?
-For a long time, companies mostly relied on RDBMS to handle data. But in today's era of big data, organizations are beginning to reconsider their continued use of SQL-based databases. NoSQL is now an enticing option. But should organizations dump RDBMS for NoSQL? Well, that might an appropriate option in some cases. However, while making this choice, it is significant to understand that NoSQL is not a replacement for RDBMS rather a complementary option. It helps 'fill' the gaps that relational databases leave when dealing with big data. Both relational and non-relational databases have critical functions that companies cannot ignore. So, they cannot entirely omit one database system by choosing another.
+For a long time, companies mostly relied on RDBMS to handle data. But in today's era of big data, organizations are beginning to reconsider their continued use of SQL-based databases. NoSQL is now an enticing option. But should organizations dump RDBMS for NoSQL? Well, that might be an appropriate option in some cases. However, while making this choice, it is significant to understand that NoSQL is not a replacement for RDBMS rather a complementary option. It helps 'fill' the gaps that relational databases leave when dealing with big data. Both relational and non-relational databases have critical functions that companies cannot ignore. So, they cannot entirely omit one database system by choosing another.
 
 ### When to choose NoSQL DBMS
 
@@ -81,3 +81,6 @@ Even so, relational databases remain crucial to some organizations. They offer t
 - [Aggregation in Database Management Systems (DBMS)](/engineering-education/aggregation-in-dbms/)
 
 - [An Overview of Teradata RDBMS (Relational Database Management System)](/engineering-education/an-overview-of-teradata-rdbms/)
+
+---
+Peer Review Contributions by: [Collins Ayuya](https://www.section.io/engineering-education/authors/collins-ayuya/)
