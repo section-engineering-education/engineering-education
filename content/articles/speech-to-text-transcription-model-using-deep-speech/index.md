@@ -261,7 +261,7 @@ From the output above we can see the model was able to do real-time transcriptio
 ### Conclusion
 In this tutorial, we have learned how to do a streaming transcription using Deep Speech. We discussed the types of transcription models. We explored the types of pre-trained Deep Speech models. We use the acoustic and language models to build a model that was able to do real-time transcription.
 
-To access this notebook, click [here](https://colab.research.google.com/drive/15amwA8CdN9AApOoZGnYS3roNMxr6mAcy?usp=sharing)
+To access this notebook, click [here](https://colab.research.google.com/drive/16snySXh3E4dFyc6FSqpQhJi4I140YnSN?usp=sharing)
 
 ### References
 - [Acoustic model](https://en.wikipedia.org/wiki/Acoustic_model#:~:text=An%20acoustic%20model%20is%20used,recordings%20and%20their%20corresponding%20transcripts.)
