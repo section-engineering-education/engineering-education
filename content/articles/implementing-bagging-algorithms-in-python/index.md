@@ -1,12 +1,14 @@
-We can either use a single algorithm or combine multiple algorithms in building a model in machine learning. Using multiple algorithms is known as ensemble learning. Ensemble learning models give better prediction results than using a single algorithm. The most common types of ensemble learning techniques are bagging and boosting. 
+We can either use a single algorithm or combine multiple algorithms in building a machine learning model. Using multiple algorithms is known as ensemble learning. Ensemble learning gives better prediction results than single algorithms. The most common types of ensemble learning techniques are bagging and boosting. 
 
-In bagging, multiple homogenous algorithms are trained independently in parallel. After training, the algorithms are combined to determine the model average.
+In Bagging, multiple homogenous algorithms are trained independently and combined afterwards to determine the model average.
 
-Boosting is an ensemble technique where we train multiple homogenous algorithms sequentially. These individual algorithms create a final model with the best results. The performance of one algorithm is influenced by the performance of the previously built algorithm.
+Boosting is an ensemble technique where we train multiple homogenous algorithms sequentially. 
+
+These individual algorithms create a final model with the best results. The performance of one algorithm is influenced by the performance of the previously built algorithm.
 
 This tutorial will use the two approaches in building a machine learning model. We will use a single algorithm known as the Decision Tree Classifier to build and find the model's accuracy in the first approach. 
 
-In the second approach, we will use the Bagging Classifier and the Random Forest Classifier to build the same model. We will then get the accuracy score of the model when using the bagging algorithms.
+We will use the Bagging Classifier and the Random Forest Classifier to build the same model in the second approach.
 
 ### Table of contents
 - [Prerequisites](#prerequisites)
@@ -41,16 +43,16 @@ A reader should know the following:
 > NOTE: In this tutorial, we will use [Google Colab notebook](https://research.google.com/)
 
 ### Bagging vs Boosting
-As mentioned above,  in bagging, multiple homogenous algorithms are trained independently in parallel, while in boosting, multiple homogenous algorithms are trained sequentially. The image below shows the difference between bagging and boosting.
+As mentioned above,  in Bagging, multiple homogenous algorithms are trained independently in parallel, while in boosting, multiple homogenous algorithms are trained sequentially. The image below shows the difference between Bagging and boosting.
 
 ![Bagging Vs Boosting](/engineering-education/implementing-bagging-algorithms-in-python/bagging-vs-boosting.jpg)
 
 *Image Source: [Pluralsight](https://pluralsight2.imgix.net/guides/81232a78-2e99-4ccc-ba8e-8cd873625fdf_2.jpg)*
 
-In this tutorial, we will only be focusing on implementing bagging algorithms. To implement boosting algorithms, read this [article](https://www.section.io/engineering-education/boosting-algorithms-python/)
+In this tutorial, we will only be focusing on implementing Bagging algorithms. To implement Boosting algorithms, read this [article](https://www.section.io/engineering-education/boosting-algorithms-python/)
 
-### How bagging works
-The bagging technique is also known as Bootstrap Aggregation. The bagging algorithms can be used to solve both classification and regression problems. In addition, bagging algorithms improve a model's accuracy score. 
+### How Bagging works
+The Bagging technique is also known as Bootstrap Aggregation and can be used to solve both classification and regression problems. In addition, Bagging algorithms improve a model's accuracy score. 
 
 These algorithms prevent model [overfitting](https://en.wikipedia.org/wiki/Overfitting) and reduce variance.
 
@@ -81,7 +83,7 @@ The process of bootstrapping generates multiple subsets. On each subset, a machi
 
 The fitting algorithm is trained using multiple subsets to produce various models. The various models produced are called weak learners or base models. 
 
-By the end of this stage, we will have multiple base models trained in parallel.
+We will have multiple base models trained in parallel by the end of this stage.
 
 The image below shows the parallel training process:
 
@@ -90,14 +92,14 @@ The image below shows the parallel training process:
 *Image Source: [Data Aspirant](https://i0.wp.com/dataaspirant.com/wp-content/uploads/2020/09/3-Weak-Learners-Exmple.png?resize=768%2C647&ssl=1)*
 
 #### Aggregation
-Aggregation is the last stage in bagging. The multiple predictions made by the base models are combined to produce a single final model. The final model will have low variance and a high accuracy score.
+Aggregation is the last stage in Bagging. The multiple predictions made by the base models are combined to produce a single final model. The final model will have low variance and a high accuracy score.
 
 The final model is produced depending on the voting technique used. We have two common voting techniques used, hard voting and soft voting.
 
 **Hard Voting**
 Hard voting is also known as majority voting. Hard voting is majorly used when dealing with a classification problem. 
 
-In classification problems, the prediction made by each base model is seen as a vote. The most common prediction made by the base models is the right prediction.
+In classification problems, the prediction made by each base model is seen as a vote. This is because the most common prediction made by the base models is the right prediction.
 
 The image below shows the hard voting process:
 
@@ -132,7 +134,7 @@ We will use the diabetes dataset to predict if a person has diabetes or not. The
 To download the diabetes dataset, click [here](https://drive.google.com/file/d/1d8j3lAmVFbwRpxyAYY2RmFMtFwTOoSAp/view?usp=sharing).
 
 #### Loading the dataset
-We will use the Pandas library to load the dataset that we have downloaded using the link above.
+We will use the Pandas library to load the dataset we downloaded using the link above.
 
 Let us import Pandas
 
@@ -178,7 +180,7 @@ The output is shown below:
 From the image above, there are no missing values. Therefore, our dataset is complete and ready for use.
 
 #### Adding x and y variables
-We need to specify the x and y variables.The x variable will hold all the input columns, while the y variable will hold the output column.
+We need to specify the x and y variables. The x variable will hold all the input columns, while the y variable will hold the output column.
 
 In our case, our output column is the `Output` column. The remaining columns will be used as model inputs.
 
@@ -192,7 +194,7 @@ y = df.Outcome
 The next step is to scale our dataset.
 
 ### Dataset scaling
-Dataset scaling is transforming a dataset so that it fits within a specific range. For example, you can scale a dataset to fit within a range of 0-1, -1-1, or 0-100. 
+Dataset scaling is transforming a dataset to fit within a specific range. For example, you can scale a dataset to fit within a range of 0-1, -1-1, or 0-100. 
 
 Dataset scaling ensures that no data point value is left out during model training. 
 
@@ -357,7 +359,7 @@ In the code snippet above, we have used the following parameters:
 The next step is to fit the initialized model into our training set.
 
 #### Fitting the model
-Fitting will enable the model to learn from the training dataset to understand the dataset and gain useful insight.
+Fitting will enable the model to learn from the training dataset to understand the dataset and gain helpful insight.
 
 To fit the model, use this code:
 
@@ -429,7 +431,7 @@ The output is shown below:
 The accuracy score is high, showing that the bagging algorithms increase the model accuracy score. It also prevents model overfitting.
 
 ### Conclusion
-This tutorial guided a reader on how to implement bagging algorithms in Python. We discussed the difference between bagging and boosting. We also went through all the steps involved in bagging, with a clear illustration of how each step works.
+This tutorial guided a reader on how to implement bagging algorithms in Python. We discussed the difference between Bagging and boosting. We also went through all the steps involved in Bagging, clearly illustrating how each step works.
 
 Furthermore, we built a diabetes classification model using both a single algorithm and bagging algorithms. The bagging algorithms produced a model with a higher accuracy score, indicating that bagging algorithms are best suited for building better models.
 
