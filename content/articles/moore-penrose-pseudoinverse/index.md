@@ -1,8 +1,22 @@
-### Understanding Moore Penrose Pseudoinverse with Python
-Moore-Penrose Pseudoinverse is a linear algebra technique used to approximate the inverse of non-invertible matrices.
+---
+layout: engineering-education
+status: publish
+published: true
+url: /engineering-education/moore-penrose-pseudoinverse/
+title: Understanding Moore Penrose Pseudoinverse with Python
+description: In this tutorial, we will explore Moore-Penrose Pseudoinverse and learn how to use it to perfom various matrix operations with Python.
+author: daniel-mwanthi
+date: 2022-02-06T00:00:00-15:00
+topics: [Machine Learning]
+excerpt_separator: <!--more-->
+images:
 
-This technique can approximate the inverse of any matrix, regardless of whether the matrix is square or not. In short, Pseudo-inverse exists for all matrices. If a matrix has an inverse, its pseudo-inverse equals its inverse.
+  - url: /engineering-education/moore-penrose-pseudoinverse/hero.jpg 
+    alt: Understanding Moore Penrose Pseudoinverse with Python Hero Image
+---
 
+Moore-Penrose Pseudoinverse is a linear algebra technique used to approximate the inverse of non-invertible matrices. This technique can approximate the inverse of any matrix, regardless of whether the matrix is square or not. In short, Pseudo-inverse exists for all matrices. If a matrix has an inverse, its pseudo-inverse equals its inverse.
+<!--more-->
 The idea behind the pseudo-inverse is very close to what we already know about the inverse of a matrix. When we create an inverse of a matrix, we usually find a matrix that undoes what the original matrix did. So it is good to think of the inverse of a matrix as the matrix that maps a transformed vector (s) back to its original space.
 
 The inverse of a matrix is applicable when solving a system of linear equations. However, when solving these systems, the challenge that often arises is that it is only possible to determine the solution of the system if the coefficient matrix is [non-singular] (https://www.sciencedirect.com/topics/engineering/nonsingular-matrix) and square. 
@@ -343,3 +357,6 @@ Now that you know how to perform the Pseudo-inverse, you can go on and challenge
 
 ### Further reading
 - [More on Pseudo-Inverse](https://www.math.ucla.edu/~laub/33a.2.12s/mppseudoinverse.pdf)
+
+---
+Peer Review Contributions by: [Mercy Meave](/engineering-education/authors/mercy-meave/)
