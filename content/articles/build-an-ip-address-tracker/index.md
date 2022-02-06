@@ -11,7 +11,7 @@ topics: [Languages]
 excerpt_separator: <!--more-->
 images:
 
-  - url: /engineering-education/build-an-ip-address-tracker/hero.jpg
+  - url: /engineering-education/building-an-ip-address-tracker/hero.jpg
     alt: How to Build an IP Address Tracker with Mapbox API and Vue hero image
 ---
 
