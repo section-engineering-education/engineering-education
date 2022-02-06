@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /building-an-ip-address-tracker/
+url: /build-an-ip-address-tracker/
 title: How to Build an IP Address Tracker using Mapbox API and Vue
 description: In this article, we are going to look at building an IP Address Tracker using Mapbox API and Vue
 author: abiola-farounbi
