@@ -23,7 +23,7 @@
 
 {{- block "additionalFooterScripts" . -}}{{- end -}}
 
-{{if eq .Type "articles" }}
+{{if eq .Params.layout "engineering-education" }}
   <!-- Go to www.addthis.com/dashboard to customize your tools -->
   <script defer type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-5c813f776d53bc87"></script>
 {{end}}

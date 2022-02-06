@@ -5,7 +5,7 @@ published: true
 url: /guide-to-run-react-native-app-with-typescript/
 title: How to Run React Native Apps with Typescript 
 description: This tutorial will guide the reader on how to set up and run React Native apps with TypeScript.
-author: kevin-kimani 
+author: joseph-chege
 date: 2022-02-02T00:00:00-06:00
 topics: [Languages]
 excerpt_separator: <!--more-->
