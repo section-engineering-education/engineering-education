@@ -1,5 +1,22 @@
-Getting Started with Eigendecomposition in Python
-Eigendecomposition is one decomposition technique used in Linear Algebra to decomposition a matrix into its characteristic components. From its title, we can note the word `Eigen`, which is the centre of computing the Eigendecomposition. It signals we will work with the eigenvalues and the eigenvectors of a matrix to derive Eigendecomposition. Further, it implies that we will be working with square matrices as it's the only square matrices for which we can compute the eigenvalues and eigenvectors.
+---
+layout: engineering-education
+status: publish
+published: true
+url: /eigendecomposition-in-python/
+title: Getting Started with Eigendecomposition in Python
+description: This article will help readers understand how to manage USB devices in C#. This feature is important when granting read/write permissions to removable drives.
+author:
+date: 2022-02-06T00:00:00-03:12
+topics: [Languages]
+excerpt_separator: <!--more-->
+images:
+
+  - url: /engineering-education/eigendecomposition-in-python/hero.png
+    alt: Getting Started with Eigendecomposition in Python Hero Image
+---
+Eigendecomposition is one decomposition technique used in Linear Algebra to decomposition a matrix into its characteristic components.
+<!--more-->
+From its title, we can note the word `Eigen`, which is the centre of computing the Eigendecomposition. It signals we will work with the eigenvalues and the eigenvectors of a matrix to derive Eigendecomposition. Further, it implies that we will be working with square matrices as it's the only square matrices for which we can compute the eigenvalues and eigenvectors.
 
 With the help of a simple matrix, let's see how the Eoigendecomposition is derived.
 
@@ -12,6 +29,7 @@ $A = \begin{bmatrix}
 \end{bmatrix}$
 
 Our first step is to determine its eigenvalues and eigenvectors. If you compute the eigenvalues, you should get:
+
 $\lambda_1=7$
 $\lambda_2=1$
 The corresponding eigenvectors to these eigenvalues are:
@@ -152,20 +170,20 @@ Let's create this matrix in python.
 ```python
 # create our matrix
 M = np.array([ [1,2,1], [0,1,0], [1, 0, 1] ])
-
 ```
 Let's print and have a look at this matrix.
+
 ```python
 print(M)
-
 ```
 Output:
+
 ```bash
 [[1 2 1]
  [0 1 0]
  [1 0 1]]
-
 ```
+
 To get the components of Eigendecomposition, we need first to compute eigenvalues and eigenvectors.
  
 ```python
@@ -244,3 +262,36 @@ We have successively recovered our original matrix from its Eigen components.
 
 ### Conclusion
 In this tutorial, we learnt how to derive the Eigendecomposition. Then, through a simple illustration, we saw how computationally efficient this form of decomposition is compared to the ordinary matrix multiplication. Finally, we looked at how to perform it in python. You can now practice it with any square matrix data since you have all needed to get started with Eigendecomposition.
+
+
+---
+Peer Review Contributions by: [Wanja Mike](/engineering-education/authors/michael-barasa/)
+
+<!-- MathJax script -->
+<script type="text/javascript" async
+    src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+    MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [['$','$'], ['\\(','\\)']],
+      displayMath: [['$$','$$']],
+      processEscapes: true,
+      processEnvironments: true,
+      skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
+      TeX: { equationNumbers: { autoNumber: "AMS" },
+           extensions: ["AMSmath.js", "AMSsymbols.js"] }
+    }
+    });
+    MathJax.Hub.Queue(function() {
+      // Fix <code> tags after MathJax finishes running. This is a
+      // hack to overcome a shortcoming of Markdown. Discussion at
+      // https://github.com/mojombo/jekyll/issues/199
+      var all = MathJax.Hub.getAllJax(), i;
+      for(i = 0; i < all.length; i += 1) {
+          all[i].SourceElement().parentNode.className += ' has-jax';
+      }
+    });
+    MathJax.Hub.Config({
+    // Autonumbering by mathjax
+    TeX: { equationNumbers: { autoNumber: "AMS" } }
+    });
+  </script>
