@@ -1,9 +1,9 @@
 ### Social authentication using Djoser in react applications
 
 ### Introduction
-Djoser is a powerful library that helps a great deal in authenticating applications. It offers basic features such as registration, account activation, login, password reset and logout.
+Djoser is a powerful library that helps in the authentication. It offers basic features such as registration, account activation, login, password reset and logout.
 
-It works with a custom user model. It also offers capabilities for social authentication, which will be the main focus of this article.
+It works with a custom user model and also offers capabilities for social authentication, which will be the main focus of this article.
 
 We will create an application for handling social authentication using Google. The application will have Django for the backend and
 React for frontend.
@@ -14,7 +14,7 @@ React for frontend.
 3. Have `npm` installed for our frontend part.
 
 ### Getting Started
-Start by making a new directory. In your terminal, run `django-admin startapp backend` under this directory to create a new Django application called `backend`. 
+Start by creating a new directory, then run `django-admin startapp backend` under this directory to create a new Django application called `backend`. 
 
 `Djoser` works with a custom user model,  so let us create a new app inside our project. First, Cd into the backend folder, run `python3 manage.py startapp users`.
 
@@ -71,10 +71,9 @@ class User(AbstractBaseUser, PermissionsMixin):
 
 ```
 
-We have created a new User model and specified the username field as an email. We have also created a UserManager model that handles 
-creation of users and superusers.
+We have created a new User model and specified the username field as an email address. We have also created a UserManager model that handles the creation of users and superusers.
 
-Then, we have to edit our `settings.py` to set up `djoser` and Google authentication.
+Next, we have to edit our `settings.py` to set up `djoser` and Google authentication.
 
 Add the following to the `backend/settings.py` file:
 
@@ -171,19 +170,19 @@ SOCIAL_AUTH_GOOGLE_OAUTH2_SCOPE = [
 SOCIAL_AUTH_GOOGLE_OAUTH2_EXTRA_DATA = ['first_name', 'last_name']
 ```
 
-We have listed all necessary apps, including the one we created, required by our application in `INSTALLED_APPS`.
+We have listed all the apps required by our application in `INSTALLED_APPS`.
 
 Next, we specified the User model needed for the authentication, and we set up the middleware for CORS and `django_social`.
 
 Next, we specified the allowed site origins to access our application. This case will be `localhost:3000` because we will work with React later.
 
-We then made the settings for Django REST Framework and Django REST simple jwt.
+Then, we made the settings for Django REST Framework and Django REST simple jwt.
 
 Notice the allowed redirect URLs part. These URLs should be similar to those you set up for your app in the Google cloud console. 
 
 For authentication, we will implement Google, so we also need the `ModelBackend` because we may need to log into the admin panel.
 
-Then we set up settings for `SOCIAL_AUTH_GOOGLE_OAUTH2_KEY`, `SOCIAL_AUTH_GOOGLE_OAUTH2_SECRET`.You may set up the others for more information.
+Then we set up settings for `SOCIAL_AUTH_GOOGLE_OAUTH2_KEY`, `SOCIAL_AUTH_GOOGLE_OAUTH2_SECRET`.
 
 We are all set in `settings.py`. Now we need to configure some URLs to make the backend application work.
 
@@ -207,7 +206,7 @@ Visit [Google Cloud Plaform](https://console.developers.google.com/) and create 
 
 ![Create Project](/engineering-education/content/articles/social-authentication-with-Djoser-in-react-applications/create_new_project_google_console.png)
 
-With the project selected, click `Credentials` and then click OAuth Client ID after navigating to create credentials.
+With the project selected, click `Credentials` and then click `OAuth Client ID` after navigating to create credentials.
 
 ![Create OAuth Client ID](/engineering-education/content/articles/social-authentication-with-Djoser-in-react-applications/creating_oauth_client_id.png)
 
@@ -215,7 +214,7 @@ You may need to set up OAuth consent. Select web application. For authorized jav
 
 ![Set up the uris](/engineering-education/content/articles/social-authentication-with-Djoser-in-react-applications/setting_up_the_uris.png)
 
-After you click create, you will get your client id and client secret which you will use in your `settings.py` file for this part:
+After you click create, you will get your `client id` and `client secret`, which you will use in your `settings.py` file for this part:
 
 ```python
 SOCIAL_AUTH_GOOGLE_OAUTH2_KEY = 'your_client_id_key'
@@ -230,8 +229,8 @@ Cd into frontend and run the following `npm install axios redux react-redux redu
 This command installs all the dependencies we will need when building this application.
 
 You should have such a project structure:
-```
-.
+
+```bash
 ├── node_modules
 ├── package.json
 ├── package-lock.json
@@ -259,7 +258,7 @@ You should have such a project structure:
 ```
 
 ### Creating the components
-Under the `src` folder, create a new directory called `components` that will hold all the components needed.
+Under the `src` folder, create a new directory called `components` to hold all the components needed.
 
 In that folder, create the following components:
 
@@ -496,6 +495,7 @@ function App() {
 export default App;
 
 ```
+
 You can now run `npm start` to see this welcome page:
 
 ![Home Page](/engineering-education/content/articles/social-authentication-with-Djoser-in-react-applications/home_page.png)
@@ -507,8 +507,7 @@ The frontend application will be using `redux` for our application. Redux is a s
 
 We will set up the actions reducers and store files for our application. First, create the following files and folders under `src` in the following folder structure.
 
-```python
-.
+```bash
 ├── node_modules
 ├── package.json
 ├── package-lock.json
@@ -624,15 +623,15 @@ export const logout = () => dispatch => {
 
 ```
 
-When a user authenticates using Google, a redirect URI containing a state and code will be sent by the application. This code and state will be used to obtain user information such as access and refresh token, email, and name.
+When a user authenticates using Google, a redirect URI containing a state and code will be sent by the application. This code and state will be used to obtain user information such as access and refresh tokens, email, and name.
 
-The `googleAuthenticate` function handles the post request with the code and state as data and returns the user data as the request's response. 
+The `googleAuthenticate` function handles the post request with the code and state as data and returns the user data as a response. 
 
 These results are dispatched to the reducer with the action type being `GOOGLE_AUTH_SUCCESS`.However, in case of any errors, then the action type dispatched is `GOOGLE_AUTH_FAIL`.
 
 We also have the `logout` action that dispatches the action type `LOGOUT`.
 
-Next, we need to handle the reducers. We create an `index.js` file with more than two reducers. It should be similar to this:
+Next, we need to handle the reducers. We have to create an `index.js` file with more than two reducers. It should be similar to this:
 
 `src/reducers/index.js`
 
@@ -696,12 +695,12 @@ export default function(state=initialState,action){
 
 ```
 
-We first set an initial state that sets default values for access and refresh tokens. We also set a default boolean value of false for
+First, we set an initial state that sets default values for access and refresh tokens. We also set a default boolean value of false for
 `isAuthenticated`. This value will later be used to handle routing for authenticated users.
 
-Then, we set access and refresh token values set in local storage to the one dispatched if the authentication was successful and `isAuthenticated` to true otherwise, the values are set to null for the token values and false for `isAuthenticated`. Finally, we return the current state if there is no other action.
+Then, we set access and refresh token values set in local storage to the one dispatched if the authentication was successful and `isAuthenticated` to true otherwise, the values are set to null for the token values and false for `isAuthenticated`. 
 
-We then create our store.  Edit `store.js` to resemble this:
+Finally, we return the current state if there is no other action. Then, we create our store.  Edit `store.js` to resemble this:
 
 `src/store.js`
 ```javascript
@@ -723,8 +722,9 @@ const store = createStore(
 export default store;
 ```
 
-All components will read the states from this file.
-We need to make our store available to our components. Let us add it to `App.js`. Edit the file to this:
+All components will read the states from this file. We need to make our store available to our components. 
+
+Let us add it to `App.js`. Edit the file to this:
 
 `src/App.js`
 ```javascript
@@ -748,7 +748,7 @@ export default App;
 
 The line `<Provider store={store}>` makes the states available to all components in our application.
 
-By now we have to connect our components to the store. Let us begin with the `Layout.js` file. Edit to the following:
+By now, we have to connect our components to the store. Let us begin with the `Layout.js` file.  
 
 `src/components/Layout.js`
 ```javascript
@@ -786,7 +786,7 @@ export default connect(null, { googleAuthenticate})(Layout)
 
 We use the `connect` function to connect to our store. Then, we dispatch the `googleAuthenticate` action and pass it as props to the `Layout` function.
 
-We will need to get the url of the current page and key-value pairs of the url. If code and state exist, we call the `googleAuthenticate` action 
+We will need to get the url of the current page and key-value pairs of the url. If the code and state exist, we call the `googleAuthenticate` action 
 that takes code and state as parameters. 
 
 When we get redirected, the url will have a state and code within it, which are acquired and passed to the `googleAuthenticate` function.
@@ -864,10 +864,9 @@ When a user clicks to continue with Google during sign up, the `signupWithGoogle
 
 This URI must be one of the allowed redirect URIs in the Djoser settings. Additionally,  the allowed URIs must be the same as those added in your Google cloud console. 
 
-The user gets directed to the authorization page and the specified redirect URI with the state and code included in the url.
+The user gets directed to the authorization page, and the specified redirect URI with the state and code included in the url.
 
-We also have passed the `isAuthenticated` state to redirect our users directly to the home page without having them authenticated
-again if they are already authenticated.
+We also have passed the `isAuthenticated` state to redirect our users to the home page without having them authenticate again if they are already authenticated.
 
 Now we do the same for the login page.  
 
@@ -938,7 +937,10 @@ export default connect(mapStateToProps, null)(Login);
 ```
 
 We have done the same procedure as the signup one, only that this time the redirect URI will be for the home page when a user logs in.
-We also have passed the state `isAuthenticated` to ensure an authenticated user is redirected to the home page. Finally, we handle the logout process. Edit `Navbar.js` as follows:
+
+We also have passed the state `isAuthenticated` to ensure an authenticated user is redirected to the home page. 
+
+Finally, we handle the logout process. Edit `Navbar.js` as follows:
 
 `src/components/Navbar.js`
 ```javascript
@@ -992,11 +994,9 @@ export default connect(mapStateToProps, { logout })(Navbar)
 
 Once more, we pass the `isAuthenticated` state and logout function as props to the Navbar function.
 
-We check if a user is authenticated and, if so, log the user out; otherwise, the user can either sign up or log in.
+Next, we check if a user is authenticated and, if so, log the user out; otherwise, the user can either sign up or log in.
 
-The logout function is called when a user clicks the Logout link.
-
-You should now be able to authenticate using a Google account fully:
+The logout function is called when a user clicks the Logout link. You should now be able to authenticate using a Google account.
 
 ![Authenticating using Google](/engineering-education/content/articles/social-authentication-with-Djoser-in-react-applications/authenticating_with_google.png)
 
