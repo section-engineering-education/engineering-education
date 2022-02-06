@@ -1,6 +1,6 @@
 #### Encapsulation in C++
 ### Introduction to Encapsulation
-Encapsulation is the method of grouping data and features into a single part. This part is known as a **class**. It is done to protect straightforward access to the data. Encapsulation is one of  **Object-Oriented Programming (OOPs)** features.
+Encapsulation is the method of grouping data and features into a single part. This part is known as a **class**. It is done to protect straightforward access to the data. Encapsulation is one of the **Object-Oriented Programming (OOPs)** features.
 Construction of user-limited classes in **C++** supports encapsulation and data hiding. 
 ### Table of Contents
 - [Introduction to Encapsulation](#introduction-to-encapsulation)
@@ -64,7 +64,7 @@ The `public getGoals()` method returns the value of the private goals attribute.
 Inside `main()`, we create an object of the `Player` class. Now we can use the `setGoals()` method to set the value of the private attribute to **10**. Then we call the `getGoals()` method on the object to return the value.
 ### Why Encapsulation
 Encapsulation is essential in holding the information about an item hidden from its users.
-This is the motive makes all of the member variables of a category personal and maximum of the member capabilities public. 
+This is the motive that makes all of the member variables of a category personal and maximum of the member capabilities public. 
 Member variables are made personal so that those can't be at once accessed from outside the class. So maximum member capabilities are made public to permit the users to enter the records of individuals via their own capabilities.
 For example, when you turn on an electric kettle, and the water reaches the boiling point, it turns off automatically. We don't know the mechanism behind the kettle turning off. What happens inside is encapsulation.
 ### Types of Encapsulation
@@ -81,13 +81,13 @@ As the title suggests, all data members are made private under member variable e
 ### Data Hiding in relation to Encapsulation
 The technique of merging data and operations into a unified piece is known as **data hiding**. 
 Data hiding is based on the idea of concealing data inside a class to restrict straight accessibility from beyond the class. 
-It aids programmers in creation of classes with distinct data sets and functionalities. It prevents unwanted infiltration from other program classes.
+It aids programmers in the creation of classes with distinct data sets and functionalities. It prevents unwanted infiltration from other program classes.
 Data hiding conceals class data set components, but encapsulation conceals class data sections as well as private functions.
 You must now be familiar with access specifiers to comprehend data hiding. 
 The class data is typically private, whereas the functions are open. 
 The data is buried to protect it from unintentional modification.
 ### Roles of Access Specifiers in Encapsulation
-Access modifiers, also referred to as **access specifiers**, are used in C++ to hide data. Class members can have varying levels of accessibility based on the type of accessspecifier used. The three types of Access Modifiers namely public Modifiers, Private Modifiers, and Protect Modifiers.
+Access specifiers are used to hide data in C++. Class members can have varying levels of accessibility based on the type of access specifier used. The three types of Access Modifiers are public Modifiers, Private Modifiers, and Protect Modifiers.
 ## Private Access Modifiers
 When a data component or member function is set private, it can be accessed and cannot be viewed by anybody outside the class. A fault is produced when accessed by an object that is not a member of the class.
 ## Public Access Modifiers 
@@ -121,8 +121,8 @@ int main()
 ```
 In the above example, we have encapsulated the var `num` using private access specifier. We have then used the `public` access specifier to make it available from the other classes, which is the `main` class.
 ### Real Life Examples of Encapsulation
-1. Automated vending machine: Let's say you visit a restuarant with an automatic vending machine and ordered a drink. The machine will process your request, and the drink will be served. In this case, the automated vending machine is the class. It comprises data (drinks) and operations (service mechanism) encased in the vending machine. This is referred to as encapsulation.
-2. Washing machine: What's the purpose of the power button? It turns the machine on in all cases. But have you ever considered what happens inside the washing machine after its turned on? That's what encapsulation is all about. The object is wrapped, and its inside features concealed.
+1. Automated vending machine: A vending machine automatically processes customer requests, and the device itself serves the drink. In this case, the automated vending machine is the class. It comprises data (drinks) and operations (service mechanism) encased in the vending machine. This is referred to as encapsulation.
+2. Washing machine: What's the purpose of the power button? It turns the machine on in all cases. But have you ever considered what happens inside the washing machine after it is turned on? That's what encapsulation is all about. The object is wrapped, and its inside features are concealed.
 ### Conclusion
 One of the most significant properties of OOP is encapsulation. It allows us to conceal information. As a result, data is more secure and protected from unwanted usage. Encapsulation supports abstraction by offering only the appropriate interface to the end-user while hiding all other features.
 ### Further Reading
