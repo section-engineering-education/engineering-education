@@ -1,10 +1,9 @@
----
 layout: engineering-education
 status: publish
 published: true
 url: /missing-values-in-time-series/
 title: A Complete guide on how to impute Time Series Missing Values in Python
-description: This tutorial will cover how to impute missing values in a time series in Python.
+description: This tutorial will cover how to impute missing values in a time series in python.
 author: dennis-kimutai-koech
 date: 2022-01-27T00:00:00-14:20
 topics: [Languages]
@@ -17,9 +16,20 @@ images:
 When working with real-world data, it is a common challenge to encounter missing values.
 <!--more-->
 This article will guide us in addressing such a problem in time series data.
+- [Prerequisites](#prerequisites)
+- [Introduction](#introduction)
+- [Python implementation](#python-implementation)
+- [Importing the dataset](#importing-the-dataset)
+  - [1. Mean imputation](#1-mean-imputation)
+  - [2. Median imputation](#2-median-imputation)
+  - [3. Last Observation Carried Forward(LOCF)](#3-last-observation-carried-forwardlocf)
+  - [4. Next Observation Carried Backward(NOCB)](#4-next-observation-carried-backwardnocb)
+  - [3. Linear interpolation](#3-linear-interpolation)
+  - [6. Spline interpolation](#6-spline-interpolation)
+- [Conclusion](#conclusion)
 
 ### Prerequisites
-- Have a good understanding of how to work with [time series data](https://ck7aj.medium.com/the-basics-of-time-series-data-analysis-with-numpy-9cc1723153bf) in NumPy.
+- Good understanding of how to work with [time series data](https://ck7aj.medium.com/the-basics-of-time-series-data-analysis-with-numpy-9cc1723153bf) in NumPy.
 - Have a prepared Dataset. I am using this [Dataset](https://github.com/DennisKimt/datasets/commit/28bc7c1804279d8401b4dd399fe264852d719655) for this project. 
 - Access to the [Jupyter Notebook](https://jupyter.org/) or [Google Colab](https://colab.research.google.com/?utm_source=scs-index).
 
@@ -27,8 +37,8 @@ This article will guide us in addressing such a problem in time series data.
 Time series data usually differ from the machine learning datasets. In time series, data is collected in different conditions over time, and various mechanisms may contribute to missing records in different periods. Those mechanisms are known as **Missingness Mechanisms.**
 
 There are three types of missing data:
-1. Missing Completely at Random(MCAR): In simple terms, `MCAR` means there is no relationship between the missing data and already observed data. The probability of the missing data is entirely random and is not dependent on already observed data, i.e., `$P(Missing \ | \ Complete \ data)=p(Missing)$`.
-2. Missing at Random(MAR): A variable is missing at random if the probability of missingness depends only on the available information, i.e., `$P(Missing \ | \ Complete \ data)=p(Missing \ | \ Observed \ data)$`.
+1. Missing Completely at Random(MCAR): In simple terms, `MCAR` means no relationship between the missing and already observed data. The probability of the missing data is entirely random and is not dependent on already observed data, i.e., $P(Missing \ | \ Complete \ data)=p(Missing)$.
+2. Missing at Random(MAR): A variable is missing at random if the probability of missingness depends only on the available information, i.e., $P(Missing \ | \ Complete \ data)=p(Missing \ | \ Observed \ data)$.
 3. Missing not at Random(MNAR): The probability of missingness, in this case, depends on the variable itself.
 
 Time series models work with complete data, and therefore they require the missing data to be replaced with meaningful values before actual analysis. At a high level, missing values in time series are handled in two ways, either dropping them or replacing them. However, dropping missing values can be an inappropriate solution due to the time order of the data and the correlation between observations in adjacent periods.
@@ -38,21 +48,26 @@ Estimating a reasonable value such that the components of the series are not dis
 Let us look at Python's various imputation techniques used in time series.
 
 ### Python implementation
-In this step, we will work with the following libraries.
+### Step 1: Importing the libraries
+In this project, we will be using the following libraries.
+1. Pandas for handling dataframes
+2. Numpy for numerical analysis
+3. Matplotlib for visualization
+4. Warnings to provide log statements
+
+Let's import these libraries.
 
 ```python
 import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
-
 import warnings
 warnings.filterwarnings('ignore')
-
 ```
 
 The data we will use in this implementation is about customers who visited a particular shop between the years 1949 to 1960. The link to download this data is provided in the prerequisites section. Make sure you have it downloaded and import it to your working space. Let us do so together.
 
-### Importing the dataset
+### Step 2: Importing the dataset
 On top of reading our data to our workspace, we will convert it into a time series format.
 
 ```python
@@ -114,8 +129,9 @@ plt.show()
 ![data values](/engineering-education/missing-values-in-time-series/data-plot.png)
 
 The broken points within the curve indicate missing values in our data. As we can see, the seasonality component in the data is not the same for different years. Now, let us apply techniques used to impute time series data and complete our data. These techniques are:
+### Step 3: Imputing the missing values
 
-#### Mean imputation
+#### 1. Mean imputation
 This technique imputes the missing values with the average value of all the data already given in the time series. In python, we implement this technique as follows:
 
 ```python
@@ -137,8 +153,8 @@ Output:
 
 The second technique we will consider is *Median*.
 
-#### Median imputation
-We replace the missing values in the data with the meadian value of the data. We implement this technique as fiollows:
+#### 2. Median imputation
+We replace the missing values in the data with the median value of the data. We implement this technique as follows:
 
 ```python
 # declare the size of the  plot
@@ -163,7 +179,7 @@ These techniques do not work appropriately if the time series has seasonality an
 
 If the time series has these components, the following methods work better to impute its missing values:
 
-1. Last Observation Carried Forward(LOCF)
+#### 3. Last Observation Carried Forward(LOCF)
 
 According to this technique, the missing value is imputed using the values before it in the time series. Let's learn how this method is implemented. The code below demonstrates how to implement the *LOCF*.
 
@@ -184,7 +200,7 @@ Output:
 
 ![locf-plot](/engineering-education/missing-values-in-time-series/locf.png)
 
-2. Next Observation Carried Backward(NOCB)
+#### 4. Next Observation Carried Backward(NOCB)
 
 According to this technique, the missing values are imputed using an immediate value ahead of them. We can implement this method as follows:
 
@@ -205,7 +221,7 @@ Output:
 
 ![nocb-plot](/engineering-education/missing-values-in-time-series/nocb.png)
 
-3. Linear interpolation
+#### 3. Linear interpolation
 
 Lastly, let us look at the linear interpolation. This technique originates from Numerical Analysis, which estimates unknown values by assuming linear relation within a range of data points, unlike linear extrapolation, which estimates data outside the range of the provided data points. To estimate the missing values using linear interpolation, we look at the past and the future data from the missing value.
 
@@ -228,7 +244,7 @@ plt.show()
 
 Lastly, let us look at our final method.
 
-#### Spline interpolation
+#### 6. Spline interpolation
 Using a mathematical function, the method estimates values that minimize overall curvature, thus obtaining a smooth surface passing through the input points. The code below implements this method:
 
 ```python
