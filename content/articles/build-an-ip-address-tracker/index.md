@@ -2,24 +2,26 @@
 layout: engineering-education
 status: publish
 published: true
-url: /ip-tracker/
+url: /building-an-ip-address-tracker/
 title: How to Build an IP Address Tracker using Mapbox API and Vue
 description: In this article, we are going to look at building an IP Address Tracker using Mapbox API and Vue
 author: abiola-farounbi
-date: 2022-01-05T00:00:00-11:10
-topics: []
+date: 2022-02-06T00:00:00-05:17
+topics: [Languages]
 excerpt_separator: <!--more-->
 images:
 
-  - url: /engineering-education/ip-tracker/hero.jpg
+  - url: /engineering-education/build-an-ip-address-tracker/hero.jpg
     alt: How to Build an IP Address Tracker with Mapbox API and Vue hero image
 ---
 
-An IP (Internet Protocol) address is a set of numbers that represents the location website or device. Each number in the set ranges from 0 to 255, that is from 0.0.0.0 to 255.255.255.255. They are of two types- IPv4 and IPv6.
+An IP (Internet Protocol) address is a set of numbers that represents the location website or device. Each number in the set ranges from 0 to 255, that is from 0.0.0.0 to 255.255.255.255. They are of two types - IPv4 and IPv6.
+
 IPv4 is old and limited to 32-bit addresses while IPv6 is the new standard and allows for 128-bit addresses. IPv6 was created because all possible IPv4 addresses are close to being exhausted as many new devices are being assigned to them, so IPv6 is the new standard. Find more about IP addresses [here](https://www.elegantthemes.com/blog/wordpress/what-is-an-ip-address).
 
 The IP Address of a user can be used for various dynamic purposes, one of which is **IP Geolocation**.
-IP Geolocation is the identification of a geographic location of a device by using an IP address. This involves tracking the device based on the IP address assigned to it. The IP address contains information pointing to where the device is located such as the latitude, longitude, country, region(city), timezone, etc.
+
+IP Geolocation is the identification of a geographic location of a device by using an IP address. This involves tracking the device based on the IP address assigned to it. The IP address contains information pointing to where the device is located such as the latitude, longitude, country, region (city), timezone, etc.
 
 Various types of IP Geolocation APIs are available through different services to make the tracking process easier. By making a GET request to the API, we can get the result as the geographic information of the device such as:
 
@@ -48,7 +50,7 @@ In this guide, we’ll build an IP Address Tracker from scratch using the Vue.js
 ### Prerequisites
 To follow along for this tutorial, one needs the following:
 
-1. Node installed in your machine. 
+1. Node installed in your machine.
 2. A basic knowledge of HTML, CSS, JavaScript.
 3. Fundamental knowledge of  Vue.js. We will be using the Vue CLI version. Its documentation is found [here](https://cli.vuejs.org/).
 4. Knowledge of Tailwind CSS. This one is not so necessary though since you can use your preferred styling method. Follow [this link](https://tailwindcss.com/) to find out more about it if you are interested in using it.
@@ -62,14 +64,14 @@ For our application, we will add the following features to it:
 ### Scaffolding The Front End With Vue.js
 
 To kickstart the process, we will start by setting up our project.
- 
+
 Create a new Vue app using Vue CLI.
 
 ```bash
 vue create ip-tracker
 ```
 
-#### Installing the required packages.
+#### Installing the required packages
 
 **Axios** - For making HTTP requests.
 
@@ -79,7 +81,7 @@ npm install axios
 
 **Tailwind CSS** -  To enable styling with ease, we will use Tailwind CSS in the project. Building UI components can be done in a faster and more efficient way using this library. In case you are not familiar with setting up Tailwind.css for your project, please check out [this comprehensive guide](https://javascript.plainenglish.io/how-to-setup-tailwind-css-in-vue-3-405c889842d9). Follow it step by step.
 
-### Modifying the styling and creating the Vue files.
+### Modifying the styling and creating the Vue files
 
 In this section, we will look at the modifications we will have to make to our files to fit our project.
 
@@ -134,6 +136,7 @@ module.exports = {
   plugins: [],
 }
 ```
+
 ii. **app.css**
 
 Replace the code with this:
@@ -156,7 +159,7 @@ Replace the code with this:
 ```
 
 #### Creating and modifying the Vue files
-A simple and efficient way to create an application is by dividing each part into reusable components. Our application would be divided into three components:
+A simple and efficient way to create an application is by dividing each part into reusable components. Our application will be divided into three components:
 1. Search Bar
 2. Dashboard
 3. Map Display
@@ -204,13 +207,14 @@ export default {
 }
 </script>
 ```
+
 > There's still more code to be added in this file which we will look at later. For now, let's proceed to create the layouts of the three components.
 
 Create three files called *SearchBar.vue*, *Dashboard.vue*, and *MapDisplay.vue* in the **components** folder.
 
 ii. **SearchBar.vue**
 
-This component would handle the IP Address capture typed in by the user. For this component, we can write its whole code since it does not directly interact with any of the APIs. It has a method called `takeIP()` which just 'takes' the IP address typed in the search box after a click of a button or the ENTER key press. The IP address is then stored in a property called `searchInput` which will be later used in the API integration. Here is the code:
+This component will handle the IP Address capture typed in by the user. We can code the entirety of this component since it does not directly interact with any of the APIs. It has a method called `takeIP()` which just 'takes' the IP address typed in the search box after a click of a button or the ENTER key press. The IP address is then stored in a property called `searchInput` which will be later used in the API integration. Here is the code:
 
 ```html
 <template>
@@ -300,12 +304,11 @@ Finally, for handling the map display for each request, we will use this compone
 ```
 
 ### Integrating the APIs
-> We will do a couple of edits in the Vue files, so don't start modifying the files yet. The full code for each Vue file will be provided at the end. Let's first look at the functions and the role they play in the tracking functionality using the APIs. 
+> We will do a couple of edits in the Vue files, so don't start modifying the files yet. The full code for each Vue file will be provided at the end. Let's first look at the functions and the role they play in the tracking functionality using the APIs.
 
-In the `App.vue` file, we will create a function called `getInfo()` to get the information obtained from the API request. In this function, we start by initializing the request through the API endpoint, getting the response, and then storing the values gotten from the response in the appropriate properties. Note how the `searchInput` property plays a vital role- feeding the IP address to the IPWHOIS API endpoint.
+In the `App.vue` file, we will create a function called `getInfo()` to get the information obtained from the API request. In this function, we start by initializing the request through the API endpoint, getting the response, and then storing the values returned from the response in the appropriate properties. Note how the `searchInput` property plays a vital role - feeding the IP address to the IPWHOIS API endpoint.
 
 ```javascript
-
   getInfo(){
     // URL request to the API
       const endpoint = `https://ipwhois.app/json/${this.searchInput}`
@@ -313,7 +316,7 @@ In the `App.vue` file, we will create a function called `getInfo()` to get the i
       axios.get(endpoint)
        .then((data) => data.data)
        .then((result) => {
-        // Storing the values gotten
+        // Storing the values retrieved
             this.ipAddress = result.ip
             this.isp = result.isp
             this.longitude = result.longitude
@@ -330,18 +333,15 @@ In the `App.vue` file, we will create a function called `getInfo()` to get the i
             console.log(error.message)
           })
     },
-
 ```
 
-Next, we will create another function called `trackIpCall()` to get the value gotten from the *SearchBar* component and then call the `getInfo()` function we just discussed.
+Next, we will create another function called `trackIpCall()` to get the value retrieved from the *SearchBar* component and then call the `getInfo()` function we just discussed.
 
 ```javascript
-
      trackIpCall(payload) {
       this.searchInput = payload;
       this.getInfo();
     },
-
 ```
 
 With the help of a `props` object, the data is passed down from the parent components into the *Dashboard.vue*. This object will be created in the Dashboard component.
@@ -396,10 +396,12 @@ With the help of a `props` object, the data is passed down from the parent compo
 
 #### Creating an Interactive Map Display with the Mapbox API
 Here, we will be using Mapbox API for the *MapDisplay* component.
+
 The API offers a library called **Mapbox GL JS** which is used to display maps in a web application. It also adds extra features to customize the map experience. **mapboxgl.Map** is a class that serves as the base framework for creating a map.
 
-The following properties are needed to display the map in our application: 
-1. **accessToken**: An [access token](https://docs.mapbox.com/help/glossary/access-token/) is required for you to use the Mapbox API. This can be stored as an environment variable in your **.env** file as I have done. The access token can be gotten immediately after you sign up on the [MapBox API platform](https://www.mapbox.com/)
+The following properties are needed to display the map in our application:
+
+1. **accessToken**: An [access token](https://docs.mapbox.com/help/glossary/access-token/) is required for you to use the Mapbox API. This can be stored as an environment variable in your **.env** file as I have done. The access token can be accessed immediately after you sign up on the [MapBox API platform](https://www.mapbox.com/)
 
 ```javascript
     mapboxgl.accessToken =  process.env.VUE_APP_MAP_TOKEN
@@ -407,7 +409,7 @@ The following properties are needed to display the map in our application:
 
 2. **container**: This is the HTML element in which the map will be rendered.
 
-3. **style**: The URL for determining the style for the [tilesets](https://docs.mapbox.com/studio-manual/reference/tilesets/) being used. 
+3. **style**: The URL for determining the style for the [tilesets](https://docs.mapbox.com/studio-manual/reference/tilesets/) being used.
 
 4. **center**: The coordinates for the map's center are set using the longitude and latitude.
 
@@ -553,7 +555,7 @@ export default {
       axios.get(endpoint)
        .then((data) => data.data)
        .then((result) => {
-        // Storing the values gotten
+        // Storing the values obtained
             this.ipAddress = result.ip
             this.isp = result.isp
             this.longitude = result.longitude
@@ -765,8 +767,9 @@ Read more about the two APIs using these links:
 ### Conclusion
 In this tutorial, we have been able to develop the user interface of the application, integrate the IPWHOIS API, and finally display the geographic information on the map using the Mapbox API. Furthermore, with the concept of IP geolocation, websites can be built to suit the user's preference based on their geographic location thereby making it accessible for all.
 
-You can reach out to me on [Twitter](https://twitter.com/abiolaesther_) for questions. 
+You can reach out to me on [Twitter](https://twitter.com/abiolaesther_) for questions.
 
 Thanks for reading!
+
 ---
 Peer Review Contributions by: [Vincent Ngunzulu](/engineering-education/authors/vincent-ngunzulu/)
