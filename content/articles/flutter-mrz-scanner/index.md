@@ -1,20 +1,22 @@
 ### Introduction
-Various processes keep on being digitized. For example, we can obtain the traveller's national identity card or passport in the airports. With a scan on the MRZ section of the passport or national identity card, we can obtain information such as traveller name, nationality, age, document number, and even an image.
+With the advancement in technology, various processes keep on being digitized; For example, we can obtain the traveller's information from national identity card or passport in the airports without having to key in every information. With a scan on the MRZ section of the passport or national identity card, we can obtain information such as traveller name, nationality, age, document number, and even an image. 
 
-This tutorial will build a simple flutter application with BlinkId SDK that will obtain user data from either the national Id or passport.
+This tutorial will build a simple flutter application with BlinkId SDK to obtain user data from either the national Id or passport. With one quick scan, we will be able to extract information from identity cards, passports, driver licenses and virtually any other government-issued ID.
 
 ### Table of contents
 - [Introduction](#introduction)
 - [Table of contents](#table-of-contents)
 - [Prerequisites](#prerequisites)
 - [Application setup](#application-setup)
-- [BlinkId account setup](#blinkid-account-setup)
+- [MRZ scanning](#mrz-scanning)
+- [Scan data user interface](#scan-data-user-interface)
+  - [BlinkId account setup](#blinkid-account-setup)
 - [Application testing](#application-testing)
 - [Conclusion](#conclusion)
 
 ### Prerequisites
 1. [Flutter](https://flutter.dev) SDK installed on your computer.
-2. Knowledge of Flutter SDK.
+2. Knowledge of [Flutter](https://flutter.dev).
 3. [BlinkId](https://developer.microblink.com/start) account.
 
 ### Application setup
@@ -27,15 +29,17 @@ This tutorial will build a simple flutter application with BlinkId SDK that will
     cd mrz
     flutter create --org com.mrzapp mrzapp
     ```
-3. Once the project is created, open the project in your favourite IDE.
-4. In the root project directory, locate the `pubspec.yaml` file, and add the following dependencies in the dependency section.
+3. Once the project is created, open the project in your favourite IDE.  In the root project directory, locate the `pubspec.yaml` file, and add the following dependencies in the dependency section.
+   
 ```yaml
   blinkid_flutter: ^5.13.0
   change_app_package_name: any
 ```
 - [blinkid_flutter](https://pub.dev/packages/blinkid_flutter) is the package that we will use to scan the MRZ section of the passport and national identity card to obtain the user data.
 - [change_app_package_name](https://pub.dev/packages/change_app_package_name) is a package that we will use to change the package name of the application.
-5. In the `lib` directory, in the `main.dart` file, add the following code snippet.
+  
+4. In the `lib` directory, in the `main.dart` file, add the following code snippet.
+   
 ```dart
 class MRZApp extends StatelessWidget {
   const MRZApp({Key? key}) : super(key: key);
@@ -53,9 +57,11 @@ class MRZApp extends StatelessWidget {
 
 ```
 
-6. In the `lib` directory, create a new file named `scan_screen.dart` and add the following code snippet.
+### MRZ scanning
+1. In the `lib` directory, create a new file named `scan_screen.dart` and add the following code snippet.
 
-7. In the class created above, create a stateful Flutter widget named `ScanID` and add the following code snippet.
+2. In the class created above, create a stateful Flutter widget named `ScanID` and add the following code snippet.
+
 ```dart
 class ScanID extends StatefulWidget {
   const ScanID({Key? key}) : super(key: key);
@@ -70,20 +76,21 @@ class _ScanIDState extends State<ScanID> {
 ```
 - In the code snippet above, we created a stateful widget, and in its state class, we have a string `_resultString` that will store the scanned data.
 
-8. In the `_ScanIDState` class, create a method named `scan()` that will scan the MRZ section of the passport and national identity card. Update the `scan()` method with the following code snippet.
+3. In the `_ScanIDState` class, create a method named `scan()` that will scan the MRZ section of the passport and national identity card. Update the `scan()` method with the following code snippet.
+   
 ```dart
   Future<void> scan() async {
     String license;
     // Set the license key depending on the target platform you are building for.
     if (Theme.of(context).platform == TargetPlatform.iOS) {
       license =
-          "sRwAAAAoaW8uZWdvdmVybmFuY2UuYmx1ZXpvbmVnYXRlLmJsdWV6b25lZ2F0ZUdim+uJDtg9ny/SYkgjs+Y95pLNInvqUSVzyIH1NDzwVf2eBeY9LWQMl5go9CWPsLnCvw+/QCRqbaAdlYxypmC0p/Rwdca/A23ynvlTtG0llg895X9N7RmkDAZHTgtZL3bLp5naLlt+7mb4yYapvnICnEkBU80JFdGtFYzIthcJdCno/r48DPgaDLFpvQEzVX/qYKWftyh0In3ihZPR/BrTgUYQTcoqdc67lcuJI8dQ";
+          "";
     } else if (Theme.of(context).platform == TargetPlatform.android) {
       license =
-          "sRwAAAARY29tLm1yemFwcC5tcnphcHAy0eiGAj1egksTfF6tuX+beau8l0Pc2v1oDAcCEELyMY1bsjZFw+RLMmbixpkG4UDO5kgJaY7Yow2KhQMgBWz7GSXWHH/gHPQXkl2+fkvURAPtK5XXPuHHXwkheXIbX94F1vz45P5fwt7u8GJU7qRTdMGoojET6nbturioaUbrhppCZxXkAOkRx5keGmSFFwgErnZGZOVkbTvNfsnuItSpJjLANvHMEKMPWh9kgivfKA==";
+          "";
     } else {
       license =
-          "sRwAAAARY29tLm1yemFwcC5tcnphcHAy0eiGAj1egksTfF6tuX+beau8l0Pc2v1oDAcCEELyMY1bsjZFw+RLMmbixpkG4UDO5kgJaY7Yow2KhQMgBWz7GSXWHH/gHPQXkl2+fkvURAPtK5XXPuHHXwkheXIbX94F1vz45P5fwt7u8GJU7qRTdMGoojET6nbturioaUbrhppCZxXkAOkRx5keGmSFFwgErnZGZOVkbTvNfsnuItSpJjLANvHMEKMPWh9kgivfKA==";
+          "";
     }
 
     var idRecognizer = BlinkIdCombinedRecognizer();
@@ -118,11 +125,14 @@ class _ScanIDState extends State<ScanID> {
     }
   }
 ```
+
 - In the code snippet above, we check the platform and provision the correct license key.
 - We then check if the camera is mounted, and if it is not, we return to the main screen. If the camera is mounted, we scan the document and obtain the result.
 
-9. Until this point, we can scan a passport and a national id using our application but cannot obtain the scan results
-Add the following functions to the _ScanIDState class to get the scan results.
+> Replace the empty string with your license key, that you have obtained from [BlinkId](https://developer.microblink.com/start).
+
+1. Until this point, we can scan a passport and a national ID using our application but cannot obtain the scan results. To obtain the scan results, we need to create methods named `buildDriverLicenceResult`, `getIdResultString` and `getPassportResultString` that will return the scan results in a string format. Then, add the following functions to the _ScanIDState class to get the scan results.
+    
 ```dart
 //This method is used to obtain the specific user details from the national id from the scan result object.
   String getIdResultString(BlinkIdCombinedRecognizerResult result) {
@@ -219,13 +229,15 @@ Add the following functions to the _ScanIDState class to get the scan results.
         "$dateOfBirth"
         "$dateOfExpiry";
   }
-  // This widget will display a complete image of the passport or national id that is scanned.
+  // This widget will display a complete image of the scanned passport or national id.
 ```
-- The `buildDriverLicenceResult` method is used to obtain the driver licence details from the scan result object in the case when a driver licence is scanned.
+- The `buildDriverLicenceResult` method is used to obtain the driver licence details from the scan result object when a driver licence is scanned.
 - The `getIdResultString` method is used to obtain the user details from the scanned national id.
-- The `buildResult` method is used to obtain the specific date from the scanned document i.e date of birth, date of issue, date of expiry, etc.
-  
-10. Finally, we need to display the data obtained from the scan in the user interface. For that,we need to add the following widgets to the _ScanIDState class.
+- The `buildResult` method is used to obtain the specific date from the scanned document, i.e. date of birth, date of issue, date of expiry, etc.
+
+### Scan data user interface  
+Finally, we need to display the data obtained from the scan in the user interface. Therefore, we need to add the following widgets to the `_ScanIDState` class.
+
 ```dart
   // This widget will display a complete image of the passport or national id that is scanned.
   @override
@@ -295,10 +307,15 @@ Add the following functions to the _ScanIDState class to get the scan results.
 - `scan()` method starts the camera application for scanning the passport or national id. When the scan is completed, the `getIdResultString()` method is invoked to decode the result from the `scan()` method and display it on the screen.
 - When the scan is completed, the `getPassportResultString()` method is invoked to decode the result from the `scan()` method and display it on the screen.
 
-### BlinkId account setup
+#### BlinkId account setup
 1. Navigate to [microblink.com](https://microblink.com) and create a new account.
 2. Copy the license key from the settings page of your BlinkID account and replace the `licenseKey` variable with the license key in the `scan()` method.
 
 ### Application testing
+We have completed developing our application. We need to test it to ensure everything works as expected. Therefore, we need to execute the following command in the project root directory to run the application on an Android phone:-
+
+```bash
+flutter run android --target-platform android-arm
+```
 ### Conclusion
 Now that you have learned how to set up and use the BlinkId SDK in a flutter application, you can start using the SDK in your applications. You can download the complete source code for the application [here]().
