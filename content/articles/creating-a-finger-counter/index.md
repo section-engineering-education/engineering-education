@@ -3,10 +3,10 @@ layout: engineering-education
 status: publish
 published: true
 url: /creating-a-finger-counter/
-title: Creating a finger counter using computer vision, OpenCv and Python
+title: Creating a Finger Counter using Computer Vision, OpenCv and Python
 description: This tutorial will discuss how to create a finger counter using computer vision, opencv and python.
 author: denis-kuria
-date: 2022-01-17T00:00:00-10:05
+date: 2022-02-06T00:00:00-12:30
 topics: [Languages]
 excerpt_separator: <!--more-->
 images:
@@ -16,11 +16,7 @@ images:
 ---
 When it comes to coding, the best way of learning is by working on fun but challenging projects. The challenging part makes us research the concepts we are dealing with more in-depth.
 <!--more-->
-The fun part makes us keep working on the project even when the code is throwing errors. Every programmer has had a time during their coding experience when their code throws errors but he/she can't identify what is causing this.
-
-Even so, they keep working on the code and research the cause of the error. Most of the time this is because they would love to see the output of the projects they are working on.
-
-In this tutorial, we will work on a fun but relatively challenging project. We will look at how to create a finger counter using computer vision, OpenCv, and Python.
+The fun part makes us keep working on the project even when the code is throwing errors. In this tutorial, we will work on a fun but relatively challenging project. We will look at how to create a finger counter using computer vision, OpenCv, and Python.
 
 ### Introduction
 Python has libraries that will help us develop our project. We will need `OpenCv` and `MediaPipe`. We will later look at why and how we will use these two libraries.
@@ -47,7 +43,7 @@ To understand this article, the reader needs to:
 ### Understanding the hand landmark model
 ![Hand landmark model](/engineering-education/creating-a-finger-counter/model.png)
 
-_[Image Source: Mediapipe](https://google.github.io/mediapipe/images/mobile/hand_landmarks.png)_
+*[Image Source: Mediapipe](https://google.github.io/mediapipe/images/mobile/hand_landmarks.png)*
 
 The diagram above shows a hand landmark model that shows how MediaPipe tracks hands. This article will focus on the hand-knuckles.
 
@@ -58,9 +54,9 @@ Let us take a look at the logic we will be using:
 - This will apply to all fingers except the thumb. For the thumb, we will check whether knuckle number `4` is above knuckle number `2`. If this is the case then the thumb is open else, the thumb is closed.
 
 ### Creating a finger counter program using computer vision, OpenCv, and Python
-First, we need to prepare our working environment in _Pycharm_. To do so, open the pycharm app and click `create a new project` on the window that appears.
+First, we need to prepare our working environment in *Pycharm*. To do so, open the pycharm app and click `create a new project` on the window that appears.
 
-This will be as shown in the screenshot below:
+This will look as shown in the screenshot below:
 
 ![Project](/engineering-education/creating-a-finger-counter/project.png)
 
@@ -82,7 +78,7 @@ This library was developed by Google. We will use it for hand tracking and finge
 To install `cv2`, we will use the command below:
 
 ```bash
- pip install opencv-python
+pip install opencv-python
 ```
 
 We will use the library above to take our input through the webcam. It will also help us process the captured image to `RGB` format.
@@ -100,7 +96,7 @@ import cv2
 import mediapipe as mp
 ```
 
-#### Step 2 - Declaring the `MediaPipe` objects and the finger and thumb coordinates
+#### Step 2 - Declaring the 'MediaPipe' objects and the finger and thumb coordinates
 We will then capture an image using our webcam and declare the `MediaPipe` objects that we will need. We will also declare the finger and thumb coordinates that we will use to determine whether a finger is open or closed.
 
 The code below is used to achieve this:
@@ -116,8 +112,8 @@ thumb_Coord = (4,2)
 
 > We will use `mp_Hands` to detect the hands in our input image, `hands` to process the detected hands, and `mpDraw` to draw the hand connections and landmarks present in the hands.
 
-#### Step 3 - Converting the input image to `RGB` image
-Next, we check whether there is an input image using the code below. If it is successful and the image does exist, we will first of all convert it to `RGB`.
+#### Step 3 - Converting the input image to 'RGB' image
+Next, we check whether there is an input image using the code below. If it is successful and the image does exist, we will first convert it to `RGB`.
 
 Afterwards, we process the `RGB` image using the `hands` module to locate the hands and identify all the landmarks present in them. This is shown below:
 
@@ -146,7 +142,7 @@ We will create a nested `for` loop to enable us to work on one hand at a time an
 #### Step 5 - Changing the hand points coordinates into image pixels
 Working with the actual coordinates is challenging. Therefore, we need to change them into pixels.
 
-First of all, we use the `image.shape` function to get the height, width, and color channel of the image. We will then get the `x` and `y` coordinates of each hand point in the form of pixels. We will then save these hand points in the list we previously created.
+We use the `image.shape` function to get the height, width, and color channel of the image. We will then get the `x` and `y` coordinates of each hand point in the form of pixels. We will then save these hand points in the list we previously created.
 
 The code below will implement this:
 
@@ -196,7 +192,7 @@ When we run the code above to completion, without any errors, the output will be
 ![Results](/engineering-education/creating-a-finger-counter/results.gif)
 
 ### Conclusion
-We have finally come to the end of this tutorial. You are now exposed to the concepts and skills needed to create finger counting software. Now watch as the program recognizes and displays the number of fingers you show to it through the webcam.
+We have finally come to the end of this tutorial. You now better understand the concepts and skills needed to create finger counting software. Now watch as the program recognizes and displays the number of fingers you show to it through the webcam.
 
 Happy coding!
 
