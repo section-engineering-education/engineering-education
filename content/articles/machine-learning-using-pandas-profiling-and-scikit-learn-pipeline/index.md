@@ -1,10 +1,10 @@
-Pandas profiling is a Python library that performs an automated Exploratory Data Analysis. It automatically generates a dataset profile report that gives useful insights. Using the profile report we can know which variables to use and which ones we can drop.
+Pandas profiling is a Python library that performs an automated Exploratory Data Analysis. It automatically generates a dataset profile report that gives useful insights. We can know which variables to use and which ones we can drop using the profile report.
 
-A machine learning pipeline is used to automate the machine learning development stages. These stages are dataset ingestion, dataset pre-processing, feature engineering, model training, model evaluation, making predictions, and model deployment.
+A machine learning pipeline is used to automate the machine learning development stages. These stages are dataset ingestion, dataset preprocessing, feature engineering, model training, model evaluation, making predictions, and model deployment.
 
-A machine learning pipeline is made of multiple initialized steps. It uses the steps to automate the machine learning development stages. The steps are initialized in sequential order so that the output of one step is used as an input for the next step. The pipeline steps need to be well-organized for faster model implementation.
+A machine learning pipeline is made of multiple initialized steps. It uses the steps to automate the machine learning development stages. The steps are initialized in sequential order so that one's output is used as an input for the next. Therefore, the pipeline steps need to be well-organized for faster model implementation.
 
-There are many libraries that support the implementation of a machine learning pipeline. We will focus on the Scikit-Learn library. The library provides a Pipeline class that automates machine learning. We will build a customer churn model using Pandas Profiling and Scikit-learn Pipeline 
+Many libraries support the implementation of a machine learning pipeline. We will focus on the Scikit-Learn library. The library provides a Pipeline class that automates machine learning. We will build a customer churn model using Pandas Profiling and Scikit-learn Pipeline. 
 
 ### Table of contents
 - [Prerequisites](#prerequisites)
@@ -43,20 +43,22 @@ To follow along with this article, a reader should:
 - Understand [steps in dataset preprocessing](https://towardsdatascience.com/introduction-to-data-preprocessing-in-machine-learning-a9fa83a5dc9d) 
 
 ### How the Scikit-learn Pipeline works
-Scikit-learn Pipeline is a powerful tool that automates the machine development stages. It has a sequence of transformation methods followed by a model estimator function. They are then assembled and executed as a single process to produce a final model. 
+Scikit-learn Pipeline is a powerful tool that automates the machine development stages. It has a sequence of transformation methods followed by a model estimator function assembled and executed as a single process to produce a final model. 
 
 The Scikit-learn Pipeline steps are in two categories: 
 1. Transformers.
 2. Estimators.
 
 #### Transformers
-This step contains all the Scikit-Learn methods and classes that perform data transformation. Data transformation is an essential stage in machine learning. It converts the raw dataset into a format that the model can understand and easily use. Data transformation performs feature engineering and dataset preprocessing. 
+This step contains all the Scikit-Learn methods and classes that perform data transformation. Data transformation is an important stage in machine learning. 
 
-Feature engineering gets relevant and unique attributes from the dataset called features. The model then uses the features as input during training. Dataset preprocessing involves dataset cleaning, dataset formatting, and removing noise from the dataset. 
+It converts the raw dataset into a format that the model can understand and easily use. In addition, data transformation performs feature engineering and dataset preprocessing. 
+
+Feature engineering gets relevant and unique attributes from the dataset called features. The model then uses the features as input during training. Dataset preprocessing involves dataset cleaning, formatting, and removing noise from the dataset. 
 
 Some of the most common activities involved in dataset preprocessing are as follows:
 - Removing outliers
-Outliers are data points that deviate from the other observations in the dataset.  It ensures we have data points that conform to the normal behavior of the dataset.
+Outliers are data points that deviate from the other observations in the dataset. It ensures we have data points that conform to the expected behaviour of the dataset.
 
 - Imputing missing values
 Dataset imputation replaces missing values in a dataset with some generated values. It ensures that we have a complete dataset before feeding it to the model.
@@ -67,10 +69,10 @@ Dataset standardization transforms a dataset to fit within a specific range/scal
 For a better understanding of the dataset standardization, read this [article](https://towardsdatascience.com/what-is-feature-scaling-why-is-it-important-in-machine-learning-2854ae877048)
 
 - Handling Categorical Variables
-In handling categorical values, we convert categorical data into integer values. One-Hot Encoding is one of the methods that perform this process.
+In handling categorical values, we convert categorical data into integer values. One-Hot encoding is one of the methods that perform this process.
 
 #### Estimators
-Estimators take the processed dataset as an input and fit the model into the dataset. Estimators then train the model which will be used to make predictions. 
+Estimators take the processed dataset as an input and fit the model into the dataset. Estimators then train the model, which will be used to make predictions. 
 
 Estimators are the Scikit-learn algorithms that perform classification, regression, and clustering. Common estimators are Logistic Regression, Decision Tree Classifier, K-NN clustering algorithm, Naive Bayes algorithm, and Random Forest Classifier.
 
@@ -81,7 +83,7 @@ Estimators are the Scikit-learn algorithms that perform classification, regressi
 - Produces a more robust and scalable model.
 
 ### Dataset used
-We will use the telecommunication dataset that contains information about their customers. This dataset will train a customer churn model. To download, the dataset, use this [link.](https://drive.google.com/file/d/1XXi7tng7NVF9rdFe7nMrDGV2ViPnceY5/view?usp=sharing)
+We will use the telecommunication dataset that contains information about their customers. This dataset will train a customer churn model. To download the dataset, use this [link.](https://drive.google.com/file/d/1XXi7tng7NVF9rdFe7nMrDGV2ViPnceY5/view?usp=sharing)
 
 After downloading the dataset, we load the dataset using Pandas. To import Pandas, use this code:
 
@@ -102,7 +104,7 @@ The output:
 
 ![Customer churn dataset](/engineering-education/machine-learning-using-pandas-profiling-and-scikit-learn-pipeline/customer-churn-dataset.jpg)
 
-Let's now start automated Exploratory Data Analysis using the Pandas Profiling.
+Let us now start automated Exploratory Data Analysis using the Pandas Profiling.
 
 ### Automated Exploratory Data Analysis using the Pandas Profiling 
 To install the Pandas Profiling library, use this code:
@@ -127,9 +129,10 @@ The overview section produces the following output:
 From the generated report, the dataset has 21 variables and 7043 observations/data points. The dataset has no missing values and duplication rows. The image also shows the variable types, which are categorical(13), boolean(6), and numerical(2).
 
 #### Variables
-This section shows all the dataset variables. It provides useful characteristics and information about the variables. 
+This section shows all the dataset variables. In addition, it provides useful characteristics and information about the variables. 
 
 The outputs below show some of the important variables:
+
 **customerID and gender**
 
 ![CustomerID and Gender](/engineering-education/machine-learning-using-pandas-profiling-and-scikit-learn-pipeline/customer-id-and-gender.jpg)
@@ -155,7 +158,7 @@ The interaction section has the following output:
 
 ![Interaction section](/engineering-education/machine-learning-using-pandas-profiling-and-scikit-learn-pipeline/interaction-section.jpg)
 
-The interaction section shows the relationship between two variables using a scatter plot. The image above shows the relationship between `tenure` and `monthly charges`.
+The interaction section shows the relationship between two variables using a scatter plot. For example, the image above shows the relationship between `tenure` and `monthly charges`.
 
 #### Correlations
 The correlation section shows the relationship between the dataset variables using [Seaborn’s](https://seaborn.pydata.org/) heatmap. Pandas Profiling allows toggling between the four main correlations plots.
@@ -169,7 +172,7 @@ This section shows if there are missing values in the dataset.
 
 ![Misssing values](/engineering-education/machine-learning-using-pandas-profiling-and-scikit-learn-pipeline/missing-values.jpg)
 
-The image shows the number of data points in each variable. All the variables have the same number of data points(7043) . It shows there are no missing values in the dataset.
+The image shows the number of data points in each variable. All the variables have the same number of data points(7043). It shows there are no missing values in the dataset.
 
 #### Sample
 This section displays the first 10 rows and the last 10 rows of our dataset.
@@ -182,10 +185,10 @@ This section displays the first 10 rows and the last 10 rows of our dataset.
 
 ![Last 10 rows](/engineering-education/machine-learning-using-pandas-profiling-and-scikit-learn-pipeline/last-10-rows.jpg)
 
-This marks the end of automated Exploratory Data Analysis using the Pandas Profiling. The library provides a descriptive analysis of our dataset. It gives a better understanding of the churn dataset. Let's now specify the X and y variables of our dataset.
+This marks the end of automated Exploratory Data Analysis using the Pandas Profiling. The library provides a descriptive analysis of our dataset and gives a better understanding of the churn dataset. Let us now specify the X and y variables of our dataset.
 
 ### X and y varables
-The X variables represent all the independent variables in a dataset which are the model inputs. The y variable is dependent which is the model output.
+The X variables represent all the independent variables in a dataset which are the model inputs. The y variable is dependent, which is the model output.
 
 To add the X and y variables, use this code:
 
@@ -193,10 +196,10 @@ To add the X and y variables, use this code:
 X = df.drop(columns=['Churn'])
 y = df['Churn']
 ```
-From the code above, the `Churn` variable is the `y` variable and the remaining variables are the `X` variable.
+From the code above, the `Churn` variable is the `y` variable, and the remaining variables are the `X` variable.
 
 ### Dataset splitting
-Let's import the method used for dataset splitting.
+Let us import the method used for dataset splitting.
 
 ```python
 from sklearn.model_selection import train_test_split
@@ -206,7 +209,7 @@ We will split the dataset into two sets using the following code:
 ```python
 X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.30, random_state=124)
 ```
-From the code above, we use `test_size=0.30` which is the splitting ratio. 70% of the dataset will be for model training and 30% for model testing. 
+We use `test_size=0.30` from the code above, which is the splitting ratio. 70% of the dataset will be for model training and 30% for model testing. 
 
 ### Variable types
 Using Pandas Profiling, we were able to see that the dataset has three variable types. The variable types are: categorical(13), boolean(6) and numerical(2).
@@ -226,12 +229,12 @@ We select all the unused columns using the following code:
 drop_feat= ['customerID','gender','PhoneService','MultipleLines', 'PaperlessBilling','PaymentMethod']
 ```
 We will drop the selected columns from our dataset. To drop this column, we will use one of the Scikit-learn Pipeline transformer methods. 
-Let's first import all the transformer methods and classes.
+Let us first import all the transformer methods and classes.
 
 ### Importing transformer methods and classes
 As mentioned earlier, the Scikit-learn Pipeline steps have two categories. Transformers and Estimators. The pipeline will have a sequence of transformers followed by a final estimator. 
 
-We create transformers using various Sckit-learn methods and classes which perform data transformation. Let's import all the transformer methods and classes we will use in this tutorial.
+We create transformers using various Sckit-learn methods and classes which perform data transformation. First, let us import all the transformer methods and classes we will use in this tutorial.
 
 ```python
 from sklearn.compose import ColumnTransformer 
@@ -254,7 +257,7 @@ It performs categorical encoding. The method converts categorical data into inte
 
 For a better understanding of OneHotEncoder, read this [article](https://towardsdatascience.com/categorical-encoding-using-label-encoding-and-one-hot-encoder-911ef77fb5bd)
 
-Let's now create our first transformer using these methods.
+Let us now create our first transformer using these methods.
 
 ### Drop columns transformer
 The first transformer will drop the unused columns.
@@ -264,7 +267,7 @@ drop_transformer = ColumnTransformer(transformers=[('drop_columns', 'drop', drop
 ```
 The unused columns are in the `drop_feat` variable. The `remainder='passthrough'` will enable the model to use the remaining columns in the dataset.
 
-We will then add the `drop_transformer` to the `Pipeline` class. Let's import the `Pipeline` class from Scikit-learn.
+We will then add the `drop_transformer` to the `Pipeline` class. However, first, let us import the `Pipeline` class from Scikit-learn.
 
 ### Import the `Pipeline` class
 We import the `Pipeline` class as follows:
@@ -316,7 +319,7 @@ numeric_transformer = Pipeline(steps=[
 From the code above, `SimpleImputer` will perform data imputation. `strategy='mean'` replaces the missing values using the generated mean in each column. The `StandardScaler()` method performs data standardization. 
 
 ### Categorical transformer
-It will handle the categorical values in the dataset. We will use the `OneHotEncoder` method to convert the categorical data into integer values.
+It will handle the categorical values in the dataset. Then, we will use the `OneHotEncoder` method to convert the categorical data into integer values.
 
 ```python
 categorical_transformer = Pipeline(steps=[
@@ -334,7 +337,9 @@ col_transformer = ColumnTransformer(transformers=[('drop_columns', 'drop', drop_
                                                     ('categorical_processing', categorical_transformer, categorical_features)
                                                   ], remainder='drop')
 ```
-We have used `ColumnTransformer` to combine all the initialized transformers. `numeric_processing` transforms the `numeric_features` , while `categorical_processing` transforms the `categorical_features`. We save the final transformer in the `col_transformer` variable. Let's add it to the `Pipeline` class.
+We have used `ColumnTransformer` to combine all the initialized transformers. `numeric_processing` transforms the `numeric_features` , while `categorical_processing` transforms the `categorical_features`. We save the final transformer in the `col_transformer` variable. 
+
+Let us add it to the `Pipeline` class.
 
 ### Adding the `col_transformer` transformer
 To add the `col_transformer`to `Pipeline` class, use this code:
@@ -389,10 +394,12 @@ pipeline = Pipeline([
                      ('logistics', LogisticRegression())
                     ])
 ```
-From the image above, the `Pipeline` class has all the transformers (col_transformer) and the final estimator (LogisticRegression). Let's fit the model into the dataset.
+From the image above, the `Pipeline` class has all the transformers (col_transformer) and the final estimator (LogisticRegression). 
+
+Let us fit the model into the dataset.
 
 ### Fitting the pipeline 
-To fit the pipeline use this code:
+To fit the pipeline, use this code:
 
 ```python
 pipeline.fit(X_train, y_train)
@@ -410,7 +417,9 @@ The output is shown below:
 ```bash
 0.7953346855983773
 ```
-It is a good accuracy score and shows the model has a 79.533% chance of making correct predictions. Let's evaluate the model using the testing set.
+It is a good accuracy score and shows the model has a 79.533% chance of making correct predictions. 
+
+Let us evaluate the model using the testing set.
 
 ### Getting accuracy score on the testing set
 We get the accuracy score using the following code:
@@ -423,13 +432,18 @@ The output is shown below:
 ```bash
 0.8078561287269286
 ```
-When we compare the two accuracy scores, the accuracy score on the testing set is better. It shows the model still performs well using the testing set which is new to the model. 
+When we compare the two accuracy scores, the accuracy score on the testing set is better. It shows that the model still performs well using the testing set, which is new to the model. 
 
 ### Conclusion
-In this tutorial, we have learned how to build a machine learning model using Pandas Profiling and Scikit-learn Pipeline. The tutorial explains how the Scikit-learn Pipeline works and the key pipeline steps.  Pandas Profiling generated a profile report that shows the dataset overview 
+In this tutorial, we have learned how to build a machine learning model using Pandas Profiling and Scikit-learn Pipeline.
 
-After this process, we implemented our transformers using Scikit-learn transformer methods and classes. We stacked these transformers together and the other added a final estimator. Finally, we trained the customer churn model using the Telecommunication dataset. The model gave a good accuracy score using both the training and the testing dataset.
-To access the complete Google Colab notebook for this tutorial, click [here](https://colab.research.google.com/drive/1gIUVxhtOyeh_JDb4PA7r0GsZMmRIer_Z?usp=sharing)
+The tutorial explains how the Scikit-learn Pipeline works and the key pipeline steps. Pandas Profiling generated a profile report that shows the dataset overview. 
+
+After this process, we implemented our transformers using Scikit-learn transformer methods and classes. Then, we stacked these transformers together, and the other added a final estimator. 
+
+Finally, we trained the customer churn model using the Telecommunication dataset. The model gave a good accuracy score using the training and the testing dataset.
+
+To access the complete Google Colab notebook for this tutorial, click [here.](https://colab.research.google.com/drive/1gIUVxhtOyeh_JDb4PA7r0GsZMmRIer_Z?usp=sharing)
 
 ### References
 - [Scikit-learn Pipeline documentation](https://scikit-learn.org/stable/modules/generated/sklearn.pipeline.Pipeline.html)
