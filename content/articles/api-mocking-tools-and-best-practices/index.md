@@ -1,0 +1,64 @@
+## API Mocking Tools and Best Practices
+
+Mock Application Program Interfaces (API) are crucial in developing and testing apps. They help stimulate imitations of real APIs. Often, live data delays or their unavailability hamper the process of development and testing. Hence, API mocking tools are necessary for simulating data as in the real world.
+
+Testing the code that you write can be a little challenging. It would entail testing the code that also performs HTTP requests. Notably, making actual requests during the testing process could yield unreliable results. Mocking solves this issue by facilitating testing at several levels, including the code, API, service, and infrastructure. This article looks into API mocking and compares mock APIs to real backends. It also discusses the most popular and lesser-known API tools and frameworks, including their strengths and weaknesses.
+
+### An overview of API mocking
+API mocking refers to [imitations](https://rapidapi.com/blog/mock-api/) of the services and processes of a real API server to yield realistic mock API results for requests. Mock APIs recreate similar data representations as those displayed on data applications for real data. The objective is to simulate reality for precise assessment of the real-world applications of the software or app. Developers are keen to use API mocking to virtually recreate and assess the functioning of the apps when deployed into the real world.
+
+So, how does API mocking work? Some modifications are necessary to recreate a simulation of the interactions of a created application or software with users. New software that behaves like an original API [replaces](https://www.soapui.org/learn/mocking/what-is-api-mocking/) the authentic version of the API. But this new software lacks several functional and non-functional components of the real API. Thus, it can only simulate the results based on the requests but not produce the actual data picture.
+
+### Real Backends vs. Mock APIs
+The primary difference between real backends and mock APIs is that the former relies on responses from a real API server while the latter imitates those responses. But there are other distinguishing factors between real backends and mock APIs as follows:
+
+- Mock APIs are more flexible than Real backends. Mocking API servers offer greater agility because they place the developer in control of their behavior. Real backends cannot guarantee similar flexibility because their development environment relies on external factors beyond the developer's control.
+- API frameworks can work without external dependencies, but this is impossible for real backends.
+- The lightweight nature of mock APIs reduces their redeployment time compared to actual real backends.
+- Mock APIs have higher maintenance costs to stay up-to-date. Real backends do not incur similar costs because there are no recurring costs.
+- Features for mock APIs tend to change over time as the developer adds new functionality. The process often entails restructuring the client code. These changes are uncommon when dealing with real backends.
+- API mocks are quick to write, while real backends take a while to get the endpoints working as expected.
+
+### Why API Mocking?
+It is the dream of every developer team to create an effective code. They want to [design](https://rapidapi.com/blog/mock-api/), test, and ship it most efficiently. That is why API mocking becomes critical for them because it guarantees those functions. Developers find it difficult to set up an efficient backend to do these tests and run their code. So, API mocking becomes their best alternative during the initial stages of application development. It can offer similar functionality as real backends yet is less complex to implement.
+
+Mock APIs are vital when live data is missing or [unreliable](https://stoplight.io/mock-api-guide/basics/#:~:text=A%20mock%20API%20server%20or,types%2C%20objects%2C%20and%20arrays) during application development. It uses simulations to recreate the real-world data for application programs. It lets the developers run tests to observe interactions between the users and the application to determine its eventual functionality upon deployment. Through mock APIs, developers can see the anticipated results for their requests and assess whether the application is functioning as expected. Thus, API mocking provides leeway for making changes to ensure that the application functions optimally.
+
+### API mocking best practices
+API mocking best practices include:
+
+- The mock API should support the same schemas and transport protocols as a real API to stimulate more authentic results.
+- A developer should use the mock API server to perform negative performance tests- these tests should stimulate unexpected errors to allow the API client to handle them early.
+- Utilize the mock APIs to facilitate continuous testing- you should mock the external dependencies and APIs to keep running tests regularly without the risk of tampering with those dependencies.
+- Modify your mock API to allow it to forward requests – doing so enables you to partially replace the mocked operations with the real counterpart as required at any given moment.
+
+### API mocking frameworks and tools
+
+#### WireMock
+[WireMock](http://wiremock.org/) is a Java-based API mock framework. It helps you stay productive when the API you rely on is incomplete or absent. It is fast, reducing the time you need to build an app significantly. Its downside is that it is difficult to determine the actual response that it should create when working in the Frontend.
+
+#### sMockin
+[sMockin](https://www.smockin.com/) is also a Java-based API mock framework. This development tool simulates API endpoints. It has a rich user interface that enables it to manage mocks quickly with or without code. Its limitation is that it does not facilitate HTTP live feed. It also lacks the multi-user mode's Block, Mock & Swap features. A user must manually add the proxy mappings during each installation, which is quite cumbersome.
+
+#### Mockbin
+[Mockbin](https://mockbin.org/) is an API response generator. It has a cloud-based user interface, and it is simple and extensible. It does not require much documentation to start except for some basic javascript code. Its limitation is high vulnerability, which exposes its functionality to tampering. It has affected versions showing high vulnerability to [Prototype](https://security.snyk.io/vuln/npm:qs:20170213) Override Protection Bypass.
+
+#### Mocky
+[Mocky](https://designer.mocky.io/) is a simple API response mocking tool. It allows you to generate custom HTTP responses. The tool is vital when testing your Websocket client or requesting a build-in progress Websocket. This tool has the merit of being free. Its primary con is that it does not encrypt data at rest. Administrators can access all your mocks and even delete them without prior warning.
+
+#### Mockoon
+[Mockoon](https://mockoon.com/) is an API mocking tool. It has an efficient user interface and is built with Javascript and Electron.js. Of all the mock APIS, it is the easiest and fastest to run locally. It does not need remote deployment. However, it lacks features to visualize the input and output data at each endpoint. Besides, it cannot also carry out proxy passes.
+
+#### Karate
+[Karate](https://github.com/intuit/karate/blob/master/karate-demo/src/test/java/mock/proxy/demo-mock.feature) is an open-source tool that [combines](https://tudip.com/blog-post/api-testing-using-karate-framework/) mocks and performance testing with API test automation into one framework. It supports native JavaScript Object Notation (JSON) and is easy to start. Notably, it requires little coding. But this tool suffers the limitations of lacking IntelliSense support in IDE. It is difficult to debug the code, and it uses its own scripting language, making it difficult for the developer teams.
+
+### Moq
+[Moq](https://github.com/moq/moq) is a mocking framework for [C#/. NET](https://quick-adviser.com/how-do-you-mock-a-method-in-moq/). It has a good design and a consistent interface. Its cons are that it does not perform ordered expectations and only mocks interfaces and abstract members.
+
+### SoapUI Mocks
+[SoapUI](https://www.soapui.org/docs/soap-mocking/working-with-mockservices/) is a popular mock tool when working with the start of authority (SOA) record services. Because it functions on open-source code methodology, a developer can edit the code freely. It also offers transparency, which enhances knowledge of the mechanics and technicalities of the tool among the developer community. It is also simple and allows for further configuration to become quicker. Its main cons are its lack of support for Java Messaging Service (JMS). It also has some stability issues. Besides, its documentation requires further improvement to simplify it for first-time users.
+
+### Conclusion
+If you are a developer, mock application program interfaces are one of your best best resources. They are a critical part of your success in making an effective and efficient app. They simulate real-world scenarios to determine the functionality of apps and software. Thus, they enable the developers to make crucial changes to the code before eventual deployment.
+
+There are several mock frameworks and tools developers can use to smoothen their development process. One must choose those that appear more straightforward and match their application needs. Mock APIs are now making testing code easier every other day. They have become critical for progress in software and application development.
