@@ -1,5 +1,21 @@
-When processing data for a custom on-device model or creating your spreadsheet app, you need to know how to manipulate spreadsheet format files. In this article, we will look at creating a spreadsheet file, opening it, and performing common statistical functions in it.
+---
+layout: engineering-education
+status: publish
+published: true
+url: /manipulating-excel-files-in-android-using-apachepoi-library/
+title: Manipulating Excel Files in Android using the Apache POI Library
+description: This tutorial takes the reader through the process of creating an Excel file, opening it, and performing common statistical functions in Android using the Apache POI Library.
+author: vincent-ngunzulu
+date: 2022-02-06T00:00:00-12:05
+topics: [Languages]
+excerpt_separator: <!--more-->
+images:
 
+  - url: /engineering-education/manipulating-excel-files-in-android-using-apachepoi-library/hero.jpg
+    alt: Manipulating Excel Files in Android using the Apache POI Library Hero Image
+---
+When processing data for a custom on-device model or creating your spreadsheet app, you need to know how to manipulate spreadsheet format files. In this article, we will look at creating a spreadsheet file, opening it, and performing common statistical functions in it.
+<!--more-->
 We will simulate student names and scores. The process would require a lot of code and research when done from scratch since Java does not have support for Excel file formats. Luckily, we have the **Apache POI** library. 
 
 Apache POI is an open-source library that provides a Java API for manipulating file formats based on the Office Open XML (OOXML) and OLE2 standards from Microsoft. Apache POI releases are available under the Apache License (V2.0).
@@ -325,15 +341,15 @@ var stdDeviation: Double = Math.sqrt(variance)
 ### Output
 After running the app, we should get the following output:
 
-![screen](/engineering-education/android-excel-apachepoi/shot-one.png)
+![screen](/engineering-education/manipulating-excel-files-in-android-using-apachepoi-library/shot-one.png)
 
 The Excel file will resemble this:
 
-![excel](/engineering-education/android-excel-apachepoi/excel-sheet.png)
+![excel](/engineering-education/manipulating-excel-files-in-android-using-apachepoi-library/excel-sheet.png)
 
 You can access the Excel file in your Device Explorer via the IDE by following these steps: *View -> Tool Windows -> Device File Explorer -> data > your-package-name -> files.*
 
-![device](/engineering-education/android-excel-apachepoi/device.png)
+![device](/engineering-education/manipulating-excel-files-in-android-using-apachepoi-library/device.png)
 
 The GitHub repository can be found [here](https://github.com/vinstex/androidExcelTest) and the APK file [here](https://drive.google.com/file/d/1ShuOV-lJ5mnDMYrUEpG7tz_QAneSrlly/view?usp=sharing).
 
@@ -341,3 +357,6 @@ The GitHub repository can be found [here](https://github.com/vinstex/androidExce
 In this tutorial, We have looked at creating an Excel file, reading the file, and performing common statistical functions on the data in the file. I hope you found this article insightful. You can customize the code and do more with it. For example, you can add dynamic input, create recycler adapters for data in the Excel files, etc.
 
 Happy coding!
+
+---
+Peer Review Contributions by: [Eric Gacoki](/engineering-education/authors/eric-gacoki/)
