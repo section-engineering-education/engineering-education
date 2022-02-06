@@ -90,7 +90,7 @@ Let’s open our `style.scss` file and input the necessary code to set up the mi
 
 The block of code above shows how mixins are mapped out and associated with names.
 
-### STEP 2: Facilitating Media queries using SCSS mixins
+### Step 2: Facilitating Media queries using SCSS mixins
 As you can see in the snippet below, the styling can be affected by simply calling up the mixins. From what has been defined, the color changes appropriately for tablet and mobile screen sizes.
 
 ```scss
