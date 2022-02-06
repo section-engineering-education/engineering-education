@@ -1,5 +1,6 @@
 React is a mature JavaScript library for declarative and dynamic UIs. React breaks the UI into components. The concept of state is critical in React programming. We need to know what a state is, how to maintain it efficiently, and how to deal with increasing complexity as the application expands.
 
+
 ### Table of Contents
 - [Pre-requisites](#pre-requisites)
 - [Goal](#goal)
@@ -14,76 +15,94 @@ React is a mature JavaScript library for declarative and dynamic UIs. React brea
 - [Conclusion](#conclusion)
 - [Further reading](#further-reading)
 
+
 ### Pre-requisites
 - A web browser such as [Google Chrome](https://www.google.com/chrome/browser-tools/).
 - A code editor such as [VS Code](https://code.visualstudio.com/) or an IDE.
 - Knowledge of the [JavaScript](https://developer.mozilla.org/en-US/docs/Web/JavaScript) programming language.
 - Basics of the [React library](https://reactjs.org/).
 - Have a Node.js LTS or later version on your development environment. You can download [here](https://nodejs.org/en/download/).
-  
+
+
 <!-- more -->
 ### Goal
 This article will cover the basics of state management in React using the [Hookstate](https://hookstate.js.org/) library.
 
-### Understanding State 
+
+### Understanding State
 In a nutshell, state management is a pattern in which we control the communication and sharing of data across the reusable components of the modern [frontend frameworks](https://www.sitepoint.com/most-popular-frontend-frameworks-compared/). Our application encapsulates data in a data structure that reflects the logical state of our application and which we can access and change to transition between various states. The status of the application ("state") changes as a result of the user's actions.
 
-A case study can be an e-commerce application. An e-commerce website can have components such as `Button`, `Cart`, `Checkout`, `Login`, and more. When a user adds an item to the `Cart` component or performs a successful login, these actions will alter the status of our component and hence the entire application. 
+
+A case study can be an e-commerce application. For example, an e-commerce website can have components such as `Button`, `Cart`, `Checkout`, `Login`, and more. When a user adds an item to the `Cart` component or performs a successful login, these actions will alter the status of our component and hence the entire application.
+
 
 ### Why use State management libraries?
-In modern frontend applications, we break the UI into logical reusable components. These components often need dynamic data to share and pass around. In a large application, keeping track of the global state while avoiding props drilling can be a difficult task. This is where state management libraries come in. Unlike redux which uses reducers, dispatch, and actions that can at times be confusing, the Hookstate library takes the concept of state in React to a new level. The library wraps the concept of the declarative React `useState` to a global version and extends it with useful features. Some of its core features include:
+In modern frontend applications, we break the UI into logical reusable components. These components often need dynamic data to share and pass around. In an extensive application, keeping track of the global state while avoiding prop drilling can be difficult. That is where state management libraries come in. Unlike redux, which uses reducers, dispatch, and actions that can sometimes be confusing, the Hookstate library takes the concept of state in React to a new level. The library wraps the idea of the declarative React `useState` to a global version and extends it with extra features. Some of its core features include:
+
 
 - A plugin system such as persistence and state validation plugin to extend the library features.
 - Hookstate's standard Typescript support for managed state
 - Support for asynchronous and partial state updates in deeply nested components and more
 
+
 ### Application setup
 To scaffold a new React application, we will use a new frontend build tool, [Vite](https://vitejs.dev/). Vite optimizes the build process for developers by bundling the pre-configured code using [Rollup](https://rollupjs.org/guide/en/) rather than Webpack.
 
+
 To start a Vite app with a basic React template, type the following command at your terminal.
+
 
 ```bash
 npm init vite@latest hookstate-demo -- --template react
 ```
 
+
 Next, navigate inside the `hookstate-demo` folder on your terminal and execute the `npm install` command.
+
 
 ```bash
 npm install
 ```
 
+
 Next, add the `hookstate` and `uuid` packages to the project:
+
 
 ```bash
 npm install --save @hookstate/core uuid
 ```
 
+
 Lastly, spin up a development server on your browser by running the command:
+
 
 ```bash
 npm run dev
 ```
 
+
 ![terminal output](/engineering-education/getting-started-with-hookstate/terminal.png)
+
 
 If we switch to our browser and access the URL `http://localhost:3000/`, we should see something similar to this:
 
 ![browser demo](/engineering-education/getting-started-with-hookstate/initial-browser-screen.png)
 
-###  Create the Global State
 
-To create and manage a global state, add a folder in your `src` directory and name it `states`. We'll create a `TaskState.js` file in the `states` folder containing a custom hook. Our function will invoke Hookstate's method(`createState([])`) to create a new state and return it. 
+### Create the Global State
+To create and manage a global state, add a folder in your `src` directory and name it `states`. We'll create a `TaskState.js` file in the `states` folder containing a custom hook. Our function will invoke Hookstate's method(`createState([])`) to create a new state and return it.
 
-To create a global state, import the `uuid`, and the `@hookstate/core` package. 
+Import the `uuid` and the `@hookstate/core` package to create a global state.
 
 ```js
 import { createState, useState } from "@hookstate/core";
 import {v4 as uuid} from "uuid";
 ```
 
-> Note: The `useState` hook is similar to React's the built-in hook. When accessing hooks simultaneously in a single file, an alias is useful to eliminate ambiguity.
+> Note: The `useState` hook resembles React's built-in hook. When accessing hooks simultaneously in a single file, an alias is helpful to eliminate ambiguity.
 
 Below the library import, instantiate the `createState` to create a new state.
+
 
 ```js
 // Initial state - empty array.
@@ -100,37 +119,40 @@ export function useTaskState() {
 Inside the function body, add the `state` variable to initiate the state from the `useState`:
 
 ```js
-  // assign state
-  const state = useState(taskState);
+// assign state
+const state = useState(taskState);
 ```
 
 Finally, return the following functions:
 
 ```js
-  return {
-    // addTask method takes the new state and returns a new state using the .set(method)
-    addTask(newTask) {
-      return state.set((tasks) => [...tasks, { newTask, id: uuid() }]);
-    },
-    // filter task lists to remove a list item
-    removeTask(id) {
-      return state.set((tasks) => tasks.filter((task) => task.id !== id));
-    },
-    // state.get() retieves the Todo list state 
-    get getTasks() {
-      return state.get();
-    }
-  };
+return {
+// addTask method takes the new state and returns a new state using the .set(method)
+addTask(newTask) {
+return state.set((tasks) => [...tasks, { newTask, id: uuid() }]);
+},
+// filter task lists to remove a list item
+removeTask(id) {
+return state.set((tasks) => tasks.filter((task) => task.id !== id));
+},
+// state.get() retieves the Todo list state
+get getTasks() {
+return state.get();
+}
+};
 ```
 
 Let's briefly dissect the above code snippet:
 
-- The `addTask` method takes accepts a `newTask` parameter that represents the user value in the input field. The function returns `state. get` from Hookstate to perform mutations and add a new task.
+
+- The `addTask` method accepts a `newTask` parameter that represents the user value in the input field. Finally, the function returns `state.get` from Hookstate to perform mutations and add a new task.
 - `getTasks` method will access the global store by returning the `state. get` method that works the same as React's in-built `setState` hook.
 - Finally, the `removeTask` method accesses the global state and filters out the task by ID.
 
+
 ### Create `AddTodo` component
 The `AddTodo` component handles the user input to render a new to-do item. Define the `AddTodo.jsx` file inside the `components` folder. Our component will reuse the previous custom `useTaskState` to access the global state:
+
 
 ```js
 import { useTaskState } from "../states/TaskState";
@@ -138,31 +160,33 @@ import { useTaskState } from "../states/TaskState";
 
 Inside our return statement, we add an input form that accepts a new to-do item. When a user submits the form, we invoke the `onSubmit` event handler to add the new item. Create the `AddTodo` function as below:
 
+
 ```js
 const AddTodo = () => {
-  const taskState = useTaskState();
-  return (
-    <div>
-      <form
-        onSubmit={(e) => {
-          e.preventDefault();
-          // trim white spaces
-          if (!e.target["toDo"].value.trim()) {
-            return;
-          }
-          // add new to-do item 
-          taskState.addTask(e.target["toDo"].value);
-          e.target["toDo"].value = "";
-        }}
-      >
-        {/*An input element and a button */}
-        <input name="toDo" />
-        <button type="submit">Add Todo</button>
-      </form>
-    </div>
-  );
+const taskState = useTaskState();
+return (
+<div>
+<form
+onSubmit={(e) => {
+e.preventDefault();
+// trim white spaces
+if (!e.target["toDo"].value.trim()) {
+return;
+}
+// add new to-do item
+taskState.addTask(e.target["toDo"].value);
+e.target["toDo"].value = "";
+}}
+>
+{/*An input element and a button */}
+<input name="toDo" />
+<button type="submit">Add Todo</button>
+</form>
+</div>
+);
 };
 ```
+
 
 Finally, export our function as default:
 ```js
@@ -175,34 +199,36 @@ The `TodoList` component contains our `todo` items. Inside your `components` fol
 ```js
 import { useTaskState } from "../states/TaskState";
 const ToDoList = () => {
-  const taskState = useTaskState();
-  const state = taskState.getTasks;
-  return (
-      <ul>
-        {state.length > 0 &&
-          state.map((todo) => (
-            <li key={todo.id}>
-              <span>{todo.text}</span>
-              {/*Add a delete button*/}
-              <button onClick={() => taskState.removeTask(todo.id)}>
-                Delete
-              </button>
-            </li>
-          ))}
-      </ul>
-  );
+const taskState = useTaskState();
+const state = taskState.getTasks;
+return (
+<ul>
+{state.length > 0 &&
+state.map((todo) => (
+<li key={todo.id}>
+<span>{todo.text}</span>
+{/*Add a delete button*/}
+<button onClick={() => taskState.removeTask(todo.id)}>
+Delete
+</button>
+</li>
+))}
+</ul>
+);
 };
 
 export default ToDoList;
 ```
 
+
 In the above code:
 - First, we import the `useState` custom hook from our `states` folder.
-- `const state = taskState.getTasks;` is the variable to access our state. 
+- `const state = taskState.getTasks;` is the variable to access our state.
 - Inside the JSX, we return a `<ul>` element with lists of available tasks by looping over them.
 
 ### The `App.js` Component
 Our main `App.js` file is quite minimal. All we need to add is the `ToDoList` component, `AddTodo` component, and `useTaskState`.
+
 
 ```js
 import { useTaskState } from "./states/TaskState";
@@ -212,28 +238,27 @@ import AddTodo from "./components/AddTodo";
 Finally, export the `App` component with the components mapped to the JSX.
 ```js
 export default function App() {
-  const taskState = useTaskState();
-  return (
-    <div className="App">
-      <h1>TODO APP</h1>
-      <AddTodo />
-      <ToDoList />
-    </div>
-  );
+const taskState = useTaskState();
+return (
+<div className="App">
+<h1>TODO APP</h1>
+<AddTodo />
+<ToDoList />
+</div>
+);
 }
 ```
 
-### Demo 
+### Demo
 To run the program, spin up a development server on your terminal with the command:
 ```bash
 npm run dev
 ```
-If we head back to our browser at `http://localhost:3000/`, our final app should look similar to this: 
+If we head back to our browser at `http://localhost:3000/`, our final app should look similar to this:
 ![todo demo](/engineering-education/getting-started-with-hookstate/demo1.png).
 
 ### Conclusion
 This tutorial introduced us to state management in React with Hookstate. To generate the global state and access the state store, we built a Todo app that uses the library's APIs. Find the project source code on [GitHub (https://github.com/marienjus/hookstate-demo).
-
 Happy coding!
 
 ### Further reading
