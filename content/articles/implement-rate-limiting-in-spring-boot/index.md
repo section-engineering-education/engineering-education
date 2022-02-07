@@ -1,5 +1,21 @@
-In this tutorial, we will learn about API security and availability. We will learn about the efficacy of the Bucket4j library and how it is used to rate-limit a Spring REST API.
+---
+layout: engineering-education
+status: publish
+published: true
+url: /implement-rate-limiting-in-spring-boot/
+title: Implementing Rate Limiter for Spring Boot Application
+description: In this article, we will look at what rate limiter is, where we use it, and how to use it restrict API calls. We will also learn to implement the same using Spring Boot application.
+author: ayemobola-tolulope
+date: 2022-02-07T00:00:00-00:00
+topics: [Languages]
+excerpt_separator: <!--more-->
+images:
 
+  - url: /engineering-education/implement-rate-limiting-in-spring-boot/hero.jpg
+    alt: Implementing Rate Limiter for Spring Boot Application Example Image
+---
+In this tutorial, we will learn about API security and availability. We will learn about the efficacy of the Bucket4j library and how it is used to rate-limit a Spring REST API.
+<!--more-->
 We will implement a simple calculator project to explore the inner workings of rate-limiting, gain an understanding of the Bucket4j library and apply it for rate-limiting an actual Spring boot application.
 
 Let us get started.
@@ -147,13 +163,13 @@ public ResponseEntity<Perimeter> square(@RequestBody Dimension dimensions) {
 }
 ```
 
-![pre-limit](/engineering-education/implementing-rate-limiting-in-spring-boot/pre.jpg)
+![pre-limit](/engineering-education/implement-rate-limiting-in-spring-boot/pre.jpg)
 
 From the image above, we see that our request was successful, with a corresponding right response.
 
 Now, for brevity, I will send in 50 more and show that on the 51st, the API call of that count is rejected with a correct rejection response as shown:
 
-![post-limit](/engineering-education/implementing-rate-limiting-in-spring-boot/post.jpg)
+![post-limit](/engineering-education/implement-rate-limiting-in-spring-boot/post.jpg)
 
 To use resources again, we would have to wait till the start of the next minute.
 
@@ -179,3 +195,6 @@ The code for this project is hosted on this [link](https://github.com/teevyne/bi
 I trust you enjoyed your time reading this short tutorial. Thank you.
 
 Happy coding!
+
+---
+Peer Review Contributions by: [Srishilesh P S](/engineering-education/authors/srishilesh-p-s/)
