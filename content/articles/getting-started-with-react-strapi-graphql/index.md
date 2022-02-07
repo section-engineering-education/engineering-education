@@ -7,7 +7,7 @@ In this article, we will take a look at how we can use the Strapi CMS and React 
 ### Table of Contents
 1. [Pre-requisites](#pre-requisites)
 2. [Goals](#goals)
-3. [reating a Strapi App](#create-strapi-app)
+3. [Creating a Strapi App](#create-strapi-app)
 4. [Creating Content Types](#create-content-types)
 5. [Creating New Blogs](#create-blogs)
 6. [Setting Permissions](#set-permissions)
@@ -50,7 +50,7 @@ Choose `Quickstart (recommended)` to install Strapi with the recommended setting
 
 Once the installation is done, Strapi will automatically fire up a local development server on `http://localhost:1337/admin/auth/register-admin` which serves the admin backend to us. On this URL, the page shown below will appear. Fill in the required credentials to create an admin user and click on `Let's Start`.
 
-![Register Admin](./register.png)
+![Register Admin](./section-engineering/getting-started-with-react-strapi-graphql/register.png)
 
 If this does not happen automatically, `cd` into the `backend` folder and run the command below:
 
