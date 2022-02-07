@@ -3,7 +3,7 @@ layout: engineering-education
 status: publish
 published: true
 url: /flutter-mrz-scanner/
-title: Getting started with Django and Celery
+title: Getting started with Flutter MRZ scanner 
 description:  In this article, we will build a simple flutter application with BlinkId SDK to obtain user data from either the national Id or passport by performing a simple camera scan of the identification document
 author: njeri-karen
 date: 2022-02-07T00:00:00-10:00
