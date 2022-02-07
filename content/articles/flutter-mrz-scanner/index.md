@@ -336,3 +336,6 @@ flutter run android --target-platform android-arm
 ```
 ### Conclusion
 Now that you have learned how to set up and use the BlinkId SDK in a flutter application, you can start using the SDK in your applications. You can download the complete source code for the application [here](https://replit.com/@njerikaren/MRZ-Scanner#).
+
+---
+Peer Review Contributions by: [Odhiambo Paul](/engineering-education/authors/odhiambo-paul/)
