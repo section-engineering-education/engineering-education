@@ -196,7 +196,7 @@ MetaGraphs.props(G, 1)
 
 This should return:
 
-```
+```bash
 Dict{Symbol,Any} with 2 entries:
   :color => "yellow"
   :state => "S"
