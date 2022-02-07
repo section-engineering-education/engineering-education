@@ -13,6 +13,8 @@ We expect all community memebers to go through provided examples, resources, and
 
 All revisions and edits should be *completed on your own forked repo (as to not take up room in the queue)*. **Any PR that is submitted incomplete (meaning not ready to be published as is) will be closed.** A PR being closed does NOT mean the article can not be published (or fixed) it simply means that the edits, revisions, and fixes will happen outside of the queue.
 
+**NOTE: Any topic suggestion copied/taken/modified from YouTube may Lead to a permanent ban from the community.**
+
 ### Topic Suggestion
 Enter topic suggestion here...
 
@@ -21,7 +23,7 @@ By following all our pre-submission advice and reviewing our Resources folder, y
 
 We ask that you please be patient as our team works through approving and publishing all articles/tutorials in a timely manner.
 
-Allow 1-3 days for a topic to be reviewed and/or approved - allow 3-7 days for an articles to be reviewed and/or published.
+Allow 1-3 days for a topic to be reviewed and/or approved - allow 3-7 days for an articles to be reviewed and/or published (subject to vary depending on _volume and/or backlog of articles_).
 
 Be sure to visit our [Resources Page](https://github.com/section-engineering-education/engineering-education/blob/master/new_contributors/resources-page.md) for tools, resources, and example articles that will help you propose and write a successful article.
 
