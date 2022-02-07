@@ -14,18 +14,19 @@ images:
   - url: /engineering-education/java-interfaces/hero.png
     alt: Getting started with Java Interfaces cover image
 ---
-Interfaces in java allow the developer to build reusable, testable, extensible, and coupled components. Interfaces play a significant role when used in classes(for instance) that depend on each other.
+Interfaces in java allow the developer to build reusable, testable, extensible, and coupled components. Interfaces play a significant role when used in classes, for instance, that depend on each other.
 <!--more-->
-For instance, let us assume we have two classes, X and Z, where class X depends on class Z. If we change class Z, X will be affected. To reduce this impact, we put interfaces between the classes such that when we change the code in class Z, it does not affect the code in class X.
+Let us assume we have two classes, X and Z, where class X depends on class Z. If we change class Z, X will be affected. To reduce this impact, we put interfaces between the classes such that when we change the code in class Z, it does not affect the code in class X.
 
 In a sizeable complex application with lots of classes depending on each other, we can use interfaces to decouple the classes, which will reduce the impact on other classes when we change a single line of code in one class.
 
 ### Prerequisites
 For this article, it is advisable to have:
+- Basic knowledge and understanding of Java programming language.
 - Basic knowledge of Java classes and inheritance.
 - Have [IntelliJ](https://www.jetbrains.com/idea/) IDEA installed.
 
-### Table of Content
+### Table of contents
 - [What is an interface in java?](#1-what-is-an-interface-in-java)
     - [How to create an interface.](#how-to-create-an-interface)
 - [ Benefits of Implementing Interfaces](#2-benefits-of-implementing-interfaces)
@@ -35,7 +36,7 @@ For this article, it is advisable to have:
 An interface is a collection of methods that several classes can inherit.
 
 #### 1.1 How to create an interface.
-To create an interface, you need to use the keyword `interface` like this:
+To create an interface, you need to use the keyword `interface` as illustrated below:
 
 ```java
 public interface MyInterface {
@@ -58,7 +59,7 @@ public interface bird {
 }
 ```
 
-In the above snippet, we have an interface named bird. This interface has one method named sound. 
+In the above snippet, we have an interface named `bird`. This interface has one method named `sound`. 
 
 We have different types of birds that make different sounds. For instance, a Crow makes a sound like "Caw Caw."
 
