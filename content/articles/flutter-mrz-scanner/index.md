@@ -1,3 +1,20 @@
+---
+layout: engineering-education
+status: publish
+published: true
+url: /flutter-mrz-scanner/
+title: Getting started with Django and Celery
+description:  In this article, we will build a simple flutter application with BlinkId SDK to obtain user data from either the national Id or passport by performing a simple camera scan of the identification document
+author: njeri-karen
+date: 2022-02-07T00:00:00-10:00
+topics: []
+excerpt_separator: <!--more-->
+images:
+
+  - url: /engineering-education/flutter-mrz-scanner/hero.png
+    alt: Flutter MRZ scanner example
+---
+
 ### Introduction
 With the advancement in technology, various processes keep on being digitized; For example, we can obtain the traveller's information from national identity card or passport in the airports without having to key in every information. With a scan on the MRZ section of the passport or national identity card, we can obtain information such as traveller name, nationality, age, document number, and even an image. 
 
