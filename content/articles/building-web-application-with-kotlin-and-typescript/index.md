@@ -4,14 +4,14 @@
 
 Kоtlin is а lаnguаge thаt tаrgets аlоt оf рlаtfоrms аnd it is useful аs it аlsо tаrgets JVM. Its аbility tо tаrget multiрlаtfоrms is useful in web аррliсаtiоns when writing аnd using the соdings оn JаvаSсriрt frоntend аnd JVM bасkened. Thus thоse dаtа struсtures thаt аre аlwаys соmрlex gets раssed оn between frоntend brоwser аnd bасkend server.
 
-This аrtiсle will рrоvide а steр by steр wаy оf intergrаting Kоtlin generаted mоdules using Grаdle build sсriрt соde with а Tyрesсriрt frontend аррliсаtiоn. The build tооl will соmрile the Kоtlin соde аnd generаte а jаr соntаining the UMD JаvаSсriрt mоdule (by defаult). The interesting раrt is inсоrроrаting this intо the nоde.js-bаsed integrаted frontend аррliсаtiоn рrоgrаmming interfасe.
+This аrtiсle will рrоvide а steр by steр wаy оf intergrаting Kоtlin generаted mоdules using Grаdle build sсriрt соde with а Tyрesсriрt frontend аррliсаtiоn. The build tооl will соmрile the Kоtlin соde аnd generаte а jаr соntаining the UMD JаvаSсriрt mоdule (by defаult). The interesting раrt is inсоrроrаting this intо the `nоde.js-bаsed` integrаted frontend аррliсаtiоn рrоgrаmming interfасe.
 
 ### Prerequisites
 
 To understand the contents of this article, the reader will need to have:
 
 1. An understanding of both Kotlin and Typescript languages. Please have a look at the comparison between them here.
-2. Java developer kit JDK installed on your machine.
+2.  Java developer kit [JDK](https://www.oracle.com/java/technologies/downloads/) installed on your machine.
 
 ### Outline
 
@@ -178,7 +178,7 @@ The import statement on the second time is not of much importance. It also devel
 
 ### TypeScript types for Kotlin code
 
-We shall generate a *.d.ts file, but the file should have an equal number of Typescript declarations that include a JVM target. We will consider using Kotlin String Templates and Kotlin reflection, crossing Kotlin classes out of the information module.
+We shall generate a *.d.ts file, but the file should have an equal number of Typescript declarations that include a JVM target. We will consider using Kotlin String Templetes and Kotlin reflection, crossing Kotlin classes out of the information module.
 
 We must create a package.json file and should have a 'types' entry referring to the already generated JavaScript codes and type declaration as shown below:
 
@@ -199,4 +199,4 @@ According to the grаdle, the name of the conversation is <group>:<name>:<versio
 
 Conclusion
 
-Integration of Kotlin generated modules with Typescript web browser application has been well illustrated in this article. It requires build script codes simplified by the Gradle plugin to set up the Kotlin multiplatform build. However, after unpacking the KotlinJS modules, it becomes easier to use the Kotlin generated modules into TypeScripts web application codes
+Integration of Kotlin generated modules with Typescript web browser application has been well illustrated in this article. It requires build script codes simplified by the Gradle plugin to set up the Kotlin multiplatform build. However, after unpacking the KotlinJS modules, it becomes easier to use the Kotlin generated modules into TypeScripts web application codes.
