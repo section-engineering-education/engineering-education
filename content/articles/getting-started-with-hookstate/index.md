@@ -18,7 +18,7 @@ React.js is a mature JavaScript library for declarative and dynamic user interfa
 <!--more-->
 We need to know what a state is, how to maintain it efficiently, and how to deal with increasing complexity as the application expands.
 
-In this article, we will learn basics of state management in React.js using the [Hookstate](https://hookstate.js.org/) library.
+In this article, we will learn the basics of state management in React.js using the [Hookstate](https://hookstate.js.org/) library.
 
 ### Table of contents
 - [Pre-requisites](#pre-requisites)
@@ -59,7 +59,7 @@ In modern frontend applications, we break the UI into logical reusable component
 
 In an extensive application, keeping track of the global state while avoiding `prop` drilling can be difficult. That is where state management libraries come in.
 
-Unlike [redux](https://react-redux.js.org) that uses reducers, dispatch, and actions which can sometimes be confusing, the Hookstate library takes the concept of state in React to a new level.
+Unlike [redux](https://react-redux.js.org) which uses reducers, dispatch, and actions which can sometimes be confusing, the Hookstate library takes the concept of state in React to a new level.
 
 The Hookstate library wraps the idea of the declarative React `useState` to a global version and extends it with extra features.
 
@@ -171,7 +171,7 @@ Our component will reuse the previous custom `useTaskState` to access the global
 import { useTaskState } from "../states/TaskState";
 ```
 
-Inside our return statement, we add an input form that accepts a new to-do item. When an user submits the form, we invoke the `onSubmit` event handler to add the new item.
+Inside our return statement, we add an input form that accepts a new to-do item. When a user submits the form, we invoke the `onSubmit` event handler to add the new item.
 
 Create the `AddTodo` function as shown below:
 
@@ -238,7 +238,7 @@ export default ToDoList;
 In the above code, we do the following:
 - First, we import the `useState` custom hook from our `states` folder.
 - `const state = taskState.getTasks;` is the variable to access our state.
-- Inside the JSX, we return a `<ul>` element with lists of available tasks by looping over them.
+- Inside the JSX, we return an `<ul>` element with lists of available tasks by looping over them.
 
 ### The `App.js` component
 Our main `App.js` file is quite minimal. All we need to add is the `ToDoList` component, `AddTodo` component, and `useTaskState`.
