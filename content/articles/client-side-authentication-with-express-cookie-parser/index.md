@@ -76,7 +76,7 @@ In the same instance, it stores the value of the cookie data. This is the main i
 This always stores whatever URL the client request was sent to. That is the domain name that fetches the cookie data to the browser.
 
 #### 4. Path
-One has the option to set the path also. This denotes the specific path that will generate the cookie to the browser if requested.
+One also has the option to set the path. This denotes the specific path that will generate the cookie to the browser if requested.
 
 #### 5. Expires
 This is the option required to set the maximum age that the cookie will last in the client browser. This can be set from the server which gets saved on request.
@@ -96,7 +96,7 @@ mkdir project && cd project
 touch server.js index.html
 ```
 
-You just changed to `~/Desktop`, then made a directory of `project` and changed to it. Inside the folder, you made 2 files, `server.js` and `index.html`. These are for the server-side code file and template HTML file respectively.
+You just changed to `~/Desktop`, then made a `project` directory and changed to it. Inside the folder, you made 2 files, `server.js` and `index.html`. These are for the server-side code file and template HTML file respectively.
 
 Now you have to install some dependencies required to set up the server. From the `node js` installed locally, you should have access to the `npm` library.
 
@@ -141,7 +141,7 @@ Open the `index.html`, and `server.js` file in your code editor and add the code
 </html>
 ```
 
-This `html` template shows the form page where the user enters both the `username`, and `password`. There is a `button` for data submission, and the welcoming message.
+This HTML template shows the form page where the user enters both the `username`, and `password`. There is a `button` for data submission, and the welcoming message.
 
 ```javascript
 const express = require('express')
