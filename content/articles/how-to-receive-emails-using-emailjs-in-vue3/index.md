@@ -3,8 +3,8 @@ layout: engineering-education
 status: publish
 published: true
 url: /how-to-receive-emails-using-emailjs-in-vue3/
-title: How to receive emails using EmailJS in Vue3
-description: In this tutorial, we will discuss how integrate EmailJS into a Vue3 application.
+title: How to Receive Emails using EmailJS in Vue3
+description: In this tutorial we will discuss how integrate Email.js into a Vue3 application. It is a library that supports different email services like Gmail, Fast mail, Outlook, Yahoo
 author: mercy-bassey
 date: 2022-01-22T00:00:00-11:40
 topics: [Languages]
@@ -14,13 +14,11 @@ images:
   - url: /engineering-education/how-to-receive-emails-using-emailjs-in-vue3/hero.jpg
     alt: Vue 3 EmailJS image for Vue 3
 ---
-One of the best and fast ways of connecting with your potential employer is through email. The ability to receive emails is an important feature, especially when putting yourself out in the labour market.
+One of the best and fastest ways of connecting with your potential employer is through email. The ability to receive emails is an important feature, especially when putting yourself out in the labor market.
 <!--more-->
-This article will teach you to receive emails with [EmailJS](https://www.emailjs.com) specifically for Vue3 framework. 
+This article will teach you to receive emails with [EmailJS](https://www.emailjs.com) specifically for the Vue3 framework. 
 
-EmailJS is a JavaScript library that is used to send and receive emails. These emails can be personal or transaction emails. 
-
-It is a library that supports different email services like Gmail, Fast mail, Outlook, Yahoo, and many others depending on which you prefer to use in your application.
+EmailJS is a JavaScript library that is used to send and receive emails. These emails can be personal or transaction emails. It is a library that supports different email services like Gmail, Fast mail, Outlook, Yahoo, and many others depending on which you prefer to use in your application.
 
 It is only used on client-side technologies (on the frontend) like [Vue](https://vuejs.org), [React](https://reactjs.org), and [Angular](https://angular.io). So no backend code is needed. 
 
@@ -42,7 +40,7 @@ To follow this article, you need to have the following:
 ### Signing up
 To integrate the EmailJS service in your application, it is required that you sign up for a free account. Head over to the [emailjs](https://www.emailjs.com/) official website to sign up for a free account.
 
-Once you have successfully created your account, you will have this screen below on your browser:
+Once you have successfully created your account, you will see this screen below on your browser:
 
 ![account](/engineering-education/how-to-receive-emails-using-emailjs-in-vue3/email1.png)
 
@@ -118,7 +116,7 @@ For your `TEMPLATE_ID`, click on the `Email Templates` tab on the sidebar.
 
 ![templates](/engineering-education/how-to-receive-emails-using-emailjs-in-vue3/email15.png)
 
-Finally, for your `USER_ID`, click on the `Integration` tab on the sidebar and scroll down to the end of the page.
+Then, for your `USER_ID`, click on the `Integration` tab on the sidebar and scroll down to the end of the page.
 
 ![user](/engineering-education/how-to-receive-emails-using-emailjs-in-vue3/email16.png)
 
@@ -134,7 +132,9 @@ vue create email-app
 
 Be sure to select the default settings for Vue 3, as we will be using the latest version of Vue.
 
-Open up the project on your text editor. We will only be needing one component in this project, which we will call `Email.vue`. The file structure for this project will look like this:
+Open up the project on your text editor. We will only be needing one component in this project, which we will call `Email.vue`. 
+
+The file structure for this project should look like this:
 ```bash
   |_ email-app
 
@@ -304,7 +304,7 @@ Since we are using the Vue 3 Composition API, we have to import `ref` right afte
 import {ref} from 'vue';
 ```
 
-Now, we are to write a function that fetches the EmailJS API. This API accepts four parameters: the `SERVICE_ID`, `TEMPLATE_ID`, the `DOM` element we want to access, and the `USER_ID`. 
+Now, we are going to write a function that fetches the EmailJS API. This API accepts four parameters: the `SERVICE_ID`, `TEMPLATE_ID`, the `DOM` element we want to access, and the `USER_ID`. 
 
 We will be using the browser Fetch API, which returns a promise that resolves into a response object.
 
@@ -312,7 +312,7 @@ So we declare two constant variables called `form` and `inputFieldReset` and set
 
 The `form` acts as the reference to the DOM element we want to access, which is our form element, and the `inputFieldReset` is to reset the form fields after our message has been sent successfully.
 
-So, we have our function to look like this:
+So, we have our function that look like this:
 ```jsx
 <script>
 import emailjs from 'emailjs-com';
@@ -344,19 +344,15 @@ export default {
 </script>
 ```
 
-The code above is completely Vue3 syntax. On Vue2, an older version of Vue, this will be a methods option.
+The code above is completely Vue3 syntax. On Vue2, an older version of Vue, this will be a methods option. Basically, the Vue 2 integrates the Options API, while the Vue 3 integrates the Compositions API, which works just fine for building Vue applications efficiently. 
 
-So basically, the Vue 2 integrates the Options API, while the Vue 3 integrates the Compositions API, which works just fine for building Vue applications efficiently. 
-
-Here, we have to return every function or variable we use, and all functions go into one particular option called the `setup()`.
-
-You'd notice we have `form.value` to access the constant variable's value and the `inputFieldReset` variable. That is how Vue 3 works.
+Here, we have to return every function or variable we use, and all functions go into one particular option called the `setup()`. You'll notice we have `form.value` to access the constant variable's value and the `inputFieldReset` variable. That is how Vue 3 works.
 
 So, our function fetches the `emailjs` API, giving it the four parameters it needs. Then if our form sends successfully, it says `Message Sent` and empties the form's input fields. 
 
 And if an error occurs, it says `Message not sent`; with the particular error message alongside it.
 
-Be sure to replace the parameters in the `sendMail` function with your credentials. And also, have the name of your input tags in the form correspond to the field names of your email template.
+Be sure to replace the parameters in the `sendMail` function with your credentials. Also have the name of your input tags in the form correspond to the field names of your email template.
 
 On the form element in our template, we do this:
 ```html
@@ -364,16 +360,14 @@ On the form element in our template, we do this:
 </form>
 ```
 
-When it comes to Vue 3, we use the `ref` attribute to reference a DOM element from the render context to manipulate it right from our JavaScript code. 
-
-Then, we prevent the default behaviour of our `form` element with the `@submit.prevent` method, passing in our function. So, when the form is submitted, it runs our `sendMail()` function.
+When it comes to Vue 3, we use the `ref` attribute to reference a DOM element from the render context to manipulate it right from our JavaScript code. Then, we prevent the default behaviour of our `form` element with the `@submit.prevent` method, passing in our function. So, when the form is submitted, it runs our `sendMail()` function.
 
 You have to send a sample message from the contact form. And with that done, you should see your sample mail right in your mailbox.
 
 That's it! It's that simple.
 
 ### Conclusion
-JavaScript libraries help make it easier to write complex code easily. For example, the email functionality we just added into our application will be very hectic setting it up from scratch.
+JavaScript libraries help make it easier to write complex code easier. For example, the email functionality we just added into our application will be very hectic setting it up from scratch.
 
 But with the help of this library, it is painless setting it up, and this will be a good piece for your portfolio. 
 
