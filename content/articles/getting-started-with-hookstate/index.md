@@ -1,5 +1,21 @@
-React.js is a mature JavaScript library for declarative and dynamic user interfaces. React.js breaks the UI into components. The concept of state is critical in React.js programming.
+---
+layout: engineering-education
+status: publish
+published: true
+url: /getting-started-with-hookstate/
+title: Getting Started with HookState library
+description: In this article, we will learn about HookState libary. We will also build a simple Todo application to understand its working.
+author: mary-njeri
+date: 2022-02-07T00:00:00-00:00
+topics: [Languages]
+excerpt_separator: <!--more-->
+images:
 
+  - url: /engineering-education/getting-started-with-hookstate/hero.png
+    alt: Getting Started with HookState library example image
+---
+React.js is a mature JavaScript library for declarative and dynamic user interfaces. React.js breaks the UI into components. The concept of state is critical in React.js programming.
+<!--more-->
 We need to know what a state is, how to maintain it efficiently, and how to deal with increasing complexity as the application expands.
 
 In this article, we will learn basics of state management in React.js using the [Hookstate](https://hookstate.js.org/) library.
@@ -269,3 +285,6 @@ Happy coding!
 ### Further reading
 - [Hookstate docs](https://hookstate.js.org/).
 - [Hookstate vs Redux](https://levelup.gitconnected.com/hookstate-the-simplest-state-management-tool-b02f7d3b01a4).
+
+---
+Peer Review Contributions by: [Srishilesh P S](/engineering-education/authors/srishilesh-p-s/)
