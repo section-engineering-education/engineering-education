@@ -55,7 +55,7 @@ This tutorial will build a simple flutter application with BlinkId SDK to obtain
 - [blinkid_flutter](https://pub.dev/packages/blinkid_flutter) is the package that we will use to scan the MRZ section of the passport and national identity card to obtain the user data.
 - [change_app_package_name](https://pub.dev/packages/change_app_package_name) is a package that we will use to change the package name of the application.
   
-4. In the `lib` directory, in the `main.dart` file, add the following code snippet.
+4. In the `lib` directory, add the following code snippet in the `main.dart` file.
    
 ```dart
 class MRZApp extends StatelessWidget {
@@ -93,7 +93,7 @@ class _ScanIDState extends State<ScanID> {
 ```
 - In the code snippet above, we created a stateful widget, and in its state class, we have a string `_resultString` that will store the scanned data.
 
-3. In the `_ScanIDState` class, create a method named `scan()` that will scan the MRZ section of the passport and national identity card. Update the `scan()` method with the following code snippet.
+3. In the `_ScanIDState` class, create a `scan()` method that will scan the MRZ section of the passport and national identity card. Update the `scan()` method with the following code snippet.
    
 ```dart
   Future<void> scan() async {
