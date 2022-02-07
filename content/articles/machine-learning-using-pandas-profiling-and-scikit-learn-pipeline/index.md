@@ -165,6 +165,10 @@ The correlation section shows the relationship between the dataset variables usi
 
 These plots are the [Phik (φk)](https://towardsdatascience.com/phik-k-get-familiar-with-the-latest-correlation-coefficient-9ba0032b37e7), [Kendall’s τ](https://en.wikipedia.org/wiki/Kendall_rank_correlation_coefficient), [Spearman’s ρ](https://en.wikipedia.org/wiki/Spearman%27s_rank_correlation_coefficient), and [Pearson’s r](https://en.wikipedia.org/wiki/Pearson_correlation_coefficient).
 
+The correlations section produces the following output:
+
+![Correlations section](/engineering-education/machine-learning-using-pandas-profiling-and-scikit-learn-pipeline/correlations-plots.jpg)
+
 The image above shows the `Phik (φk)` correlation plot. We can easily toggle between the four main correlations plots to view the plots. By clicking the `Toggle correlations descriptions` button, we will view a detailed description of each correlation plot.
 
 #### Missing values
