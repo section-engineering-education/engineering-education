@@ -6,7 +6,7 @@ url: /how-to-receive-emails-using-emailjs-in-vue3/
 title: How to Receive Emails using EmailJS in Vue3
 description: In this tutorial we will discuss how integrate Email.js into a Vue3 application. It is a library that supports different email services like Gmail, Fast mail, Outlook, Yahoo
 author: mercy-bassey
-date: 2022-01-22T00:00:00-11:40
+date: 2022-02-07T00:00:00-08:40
 topics: [Languages]
 excerpt_separator: <!--more-->
 images:
