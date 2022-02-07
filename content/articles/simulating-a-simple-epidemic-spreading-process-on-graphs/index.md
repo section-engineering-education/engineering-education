@@ -4,9 +4,9 @@ status: publish
 published: true
 url: /simulating-a-simple-epidemic-spreading-process-on-graphs/
 title: Simulating a Simple Epidemic Spreading Process on Graphs with Julia
-description: In this tutorial, the reader would learn how to create a simple epidemic spreading simulation using Julia and model the spreading using a Graph.
+description: In this tutorial the reader will learn how to create a simple epidemic spreading simulation using Julia and model the spreading using a Graph.
 author: samuel-santos
-date: 2022-01-23T01:00:00-2:00
+date: 2022-02-07T01:00:00-15:50
 topics: [Languages]
 excerpt_separator: <!--more-->
 images:
@@ -16,15 +16,18 @@ images:
 ---
 Graphs are structures that represent a set of objects and the relations between them. 
 <!--more-->
-Formally, we say the objects are the vertices or nodes and the relations are the edges or links. We can often see graphs *“appearing”* around us. For example:
+Formally, we say the objects are the vertices or nodes and the relations are the edges or links. We can often see graphs *appearing* around us. 
 
+For example:
 - vertices are cities and edges are roads that directly connect two cities;
 - vertices are pages on the Web and edges are links that connect two pages;
 - vertices are people and edges are the friendships between two individuals.
 
 Those are just some of the applications of graphs — the list is huge. 
 
-We usually represent graphs visually drawing the vertices as circles and the edges as lines connecting two circles. For example:
+We usually represent graphs visually drawing the vertices as circles and the edges as lines connecting two circles. 
+
+For example:
 
 ![graph-example](/engineering-education/simulating-a-simple-epidemic-spreading-process-on-graphs/graph0.png)
 Source: [Wikipedia](https://en.wikipedia.org/wiki/Graph_(discrete_mathematics)#/media/File:6n-graf.svg)
@@ -45,13 +48,13 @@ In this tutorial, we are going to use a Graph to model a epidemic spreading.
 - [References](#references)
 
 ### Prerequisites
-For this tutorial, you will need:
+For this tutorial, the reader will need:
 
-- [Julia](https://julialang.org/) installed
-- [Jupyter-lab](https://julialang.org/) installed
-- [FFmpeg](https://www.ffmpeg.org/) installed and added to Path (optional — only to generate the animations)
-- Basic programming knowledge
-- Notions of [Graphs](https://en.wikipedia.org/wiki/Graph_(discrete_mathematics))
+- To have [Julia](https://julialang.org/) installed.
+- Have [Jupyter-lab](https://julialang.org/) installed.
+- [FFmpeg](https://www.ffmpeg.org/) installed and added to Path (optional — only to generate the animations).
+- Basic programming knowledge.
+- Notions of [Graphs](https://en.wikipedia.org/wiki/Graph_(discrete_mathematics)).
 
 It’s good if you also have some background in Julia, but if you don’t that’s not a problem! If you have some programming knowledge, you won’t have major difficulties understanding what the code snippets are doing.
 
@@ -60,13 +63,13 @@ Thanks to the nature of graphs, that is, the representation of pairwise interact
 
 We are going to model the epidemic as follows:
 
-- every vertex will be in one of the following states:
+- Every vertex will be in one of the following states:
   - S — Susceptible
   - I — Infected
   - R — Recovered
-- at each time step:
-  - some exposed susceptible vertices (neighbors of the previously infected vertices) are going to be infected
-  - the previously infected vertices will recover and be no longer susceptible or infectious
+- At each time step:
+  - Some exposed susceptible vertices (neighbors of the previously infected vertices) are going to be infected.
+  - The previously infected vertices will recover and will no longer be susceptible or infectious.
 
 That’s a simple model and it’s actually meant to be! But at the end of the tutorial, you will be able to make your own modifications and add new features or dynamics as you want.
 
@@ -106,8 +109,8 @@ After installing the packages, then open up Jupyter-lab:
 
 Create a new Julia notebook for this tutorial and let’s go to the next step!
 
-### Step 2: Creating and Plotting a Simple Graph
-If we needed to manipulate just simple graphs, the Graphs.jl package would be enough. But, as we saw early, each vertex needs some meta-data: its state. So we also need the MetaGraphs.jl package. Let’s import them:
+### Step 2: Creating and plotting a simple graph
+If we needed to manipulate just simple graphs, the Graphs.jl package would be enough. But, as we saw earlier, each vertex needs some meta-data: its state. So we also need the MetaGraphs.jl package. Let’s import them:
 
 ```julia
 using Graphs, MetaGraphs
@@ -119,7 +122,7 @@ Create your first graph:
 G = MetaGraph()
 ```
 
-You’ll see that this graph is a `{0, 0} undirected Int64 metagraph` . That means `G` has `0` vertices and `0` edges and it’s undirected — its edges aren’t *“one-way”*. Now let’s add some vertices and some edges:
+You’ll see that this graph is a `{0, 0} undirected Int64 metagraph`. That means `G` has `0` vertices and `0` edges and it’s undirected — its edges aren’t *“one-way”*. Now let’s add some vertices and some edges:
 
 ```julia
 # adding 6 new vertices
@@ -136,7 +139,7 @@ add_edge!(G, 4, 5)
 add_edge!(G, 5, 6)
 ```
 
-Note the `!` in front of the functions’ names. That’s a convention. We say the functions with a `!` modify its arguments. In this case, `add_vertices!` and `add_edge!` are modifying the graph `G` by adding new vertices and new edges.
+>Note the `!` in front of the functions’ names. That’s a convention. We say the functions with a `!` modify its arguments. In this case, `add_vertices!` and `add_edge!` are modifying the graph `G` by adding new vertices and new edges.
 
 Let’s visualize our graph. Import `GraphPlot`:
 
@@ -144,7 +147,9 @@ Let’s visualize our graph. Import `GraphPlot`:
 using GraphPlot
 ```
 
-To plot a Graph is very simple. Just do:
+To plot a Graph is very simple. 
+
+Just run:
 
 ```julia
 # plotting the Graph
@@ -154,9 +159,10 @@ gplot(G)
 And you should see something *(maybe not exactly)* like that:
 
 ![Our first graph!](/engineering-education/simulating-a-simple-epidemic-spreading-process-on-graphs/graph1.png)
+
 Our first graph!
 
-### Step 3: Setting and Getting the Props
+### Step 3: Setting and getting the props
 Until now, we only have a simple graph with no additional information. We add meta-data to a vertex `v` by passing a dictionary with the desired information to `set_props!`. Let’s write a function to set the state of all vertices in `G` to `S` (Susceptible).
 
 ```julia
@@ -167,7 +173,9 @@ function init_nodes_states!(G)
 end
 ```
 
-With `init_nodes_states!` we set the state of all vertices of a graph `G` to `S` (susceptible). Note that we are also adding the information `color`. That’s for visualization purposes. Let’s convention this way:
+With `init_nodes_states!` we set the state of all vertices of a graph `G` to `S` (susceptible). 
+
+>Note that we are also adding the information `color`. That’s for visualization purposes. Let’s convention this way:
 
 - Yellow: susceptible
 - Red: infected
@@ -179,7 +187,7 @@ Let’s apply `init_nodes_states!` to `G`:
 init_nodes_states!(G)
 ```
 
-To check all the props for a given vertex, let’s say vertex 1, we can do:
+To check all the props for a given vertex, let’s say vertex 1, we can run:
 
 ```julia
 # checking a prop for a vertex
@@ -218,7 +226,7 @@ plot_graph(G)
 In `plot_graph` we are computing the `color` prop for each vertex in `G` and passing the colors to the `nodefillc` parameter of `gplot`. We are also using the `spectral_layout` now. According to [NetworkLayout.jl website](https://juliagraphs.org/NetworkLayout.jl/stable/#Spectral-Layout), this is *“an under-appreciated method of graph layouts; easier, simpler, and faster than the more common spring-based methods”*. Besides, the standard *(spring-based)* layout method generates different graphs each time, and that’s not good for our visualizations.
 
 ### Step 4: Programming the Dynamics
-Until now, we know how to create, manipulate, and plot graphs. Now we need to program the dynamics. Our dynamics will function in a steps manner. We already outlined what happens at each step (if you don’t remember, refer to The Spreading Dynamics section). So we know how our function would look like:
+We now know how to create, manipulate, and plot graphs. Now we need to program the dynamics. Our dynamics will function in a steps manner. We already outlined what happens at each step (if you don’t remember, refer to The Spreading Dynamics section). So we know how our function would look like:
 
 ```julia
 function update_nodes!()
@@ -287,7 +295,7 @@ function set_node_infectious!(G, node)
 end
 ```
 
-The function `set_nodes_recoreved!` will change the props of a vertex to recovered. In the same way, `set_node_infectious` will change the props of a vertex to infected.
+The function `set_nodes_recoreved!` will change the props of a vertex to be recovered. In the same way, `set_node_infectious` will change the props of a vertex to infected.
 
 As stated before, the infected nodes in the previous step recovers in the next. So, in `update_nodes!` we can already recover the infected nodes we have computed. Let’s add `set_node_recovered!(G, v)` in `update_nodes!`. This is how it should look like:
 
@@ -310,7 +318,7 @@ function update_nodes!(G, I)
 end
 ```
 
-Until now, we are computing the infected nodes, recovering them and getting their susceptible neighbors.
+We are computing the infected nodes, recovering them and getting their susceptible neighbors.
 
 Now we need to set a rule that will say how we should choose the neighbors that will be infected in the next step. Let’s keep it simple: each infected vertex will infect `r` random neighbors. If the vertex has less than `r` neighbors, it infects all its neighbors.
 
@@ -373,9 +381,9 @@ for v in next_infected_nodes
 end
 ```
 
-In this snippet, we are looping through `next_infected_nodes` that we just computed applying `set_node_infectious!` to each vertex in `next_infected_nodes`. Now we already have the revored vertices and the infected vertices of the next step.
+In this snippet, we are looping through `next_infected_nodes` that we just computed applying `set_node_infectious!` to each vertex in `next_infected_nodes`. Now we already have the vertices and the infected vertices of the next step.
 
-Finally, we have the following `update_nodes!`:
+Now, we have the following `update_nodes!`:
 
 ```julia
 function update_nodes!(G, I, r)
@@ -440,7 +448,7 @@ You should be seeing something like this:
 
 We infected the vertex 1 and ran the spreading process. It has two neighbors, but because `r = 1`, it infected only one of them: the vertex that is red in the figure. The vertex 1 also recovered because in the previous step it was infected. The rest of the vertices are still susceptible.
 
-### Step 5: Generating an Animation
+### Step 5: Generating an animation
 It would be nice if we could see the spreading process happening step by step and in a bigger graph, right? So, let’s make this now!
 
 Import these packages:
@@ -478,7 +486,7 @@ for i in 1:t
 end
 ```
 
-We run the code insinde the `for` loop `t` times. In this code, we run `spreading_plot` advancing 1 time step of the simulation at each iteration. With `compose` we are adding a white rectangle on the background of the plot. We create a temporary path for the plot file and save the plot to this path. Then we add it to the frames of our animation `anim` in the last line.
+We run the code inside the `for` loop `t` times. In this code, we run `spreading_plot` advancing 1 time step of the simulation at each iteration. With `compose` we are adding a white rectangle on the background of the plot. We create a temporary path for the plot file and save the plot to this path. Then we add it to the frames of our animation `anim` in the last line.
 
 To create a gif we do this:
 
@@ -517,7 +525,7 @@ init_nodes_states!(G)
 set_node_infectious!(G, 1)
 ```
 
-Set `t` and `r` as you want. For example:
+Set `t` and `r` as you would like. For example:
 
 ```julia
 t = 100
@@ -537,10 +545,13 @@ You should see something like this:
 Look at how fast the infections grow!
 
 ### Conclusion
-In this tutorial, you learned how to create graphs and manipulate them in Julia using the packages Graphs.jl and MetaGraphs.jl. You also viewed how graphs are a powerful tool for modelling, once it can be used to model relationships between objects or agents. Taking advantage of this property of graphs, you created a simple epidemic spreading model. You also learned how to create visualizations of graphs using GraphPlot.jl. Finally, you put all together creating an animation that shows the epidemic spreading step by step.
+In this tutorial, we learned how to create graphs and manipulate them in Julia using the packages Graphs.jl and MetaGraphs.jl. We also viewed how graphs are a powerful tool for modelling, once it can be used to model relationships between objects or agents. 
 
-That’s it! It’s a really simple model but please take your time to play around with it and make your own modifications. Here are some suggestions:
+Taking advantage of this property of graphs, we created a simple epidemic spreading model. We also learned how to create visualizations of graphs using GraphPlot.jl. Finally, we put it all together creating an animation that shows the epidemic spreading step by step.
 
+That’s it! It’s a really simple model but please take your time to play around with it and make your own modifications. 
+
+Here are some suggestions:
 - What if the vertices stayed infectious for more than one time step?
 - What happens if the `r` is bigger or smaller?
 - What if the contact network changes from time to time?
@@ -548,6 +559,8 @@ That’s it! It’s a really simple model but please take your time to play arou
 - What if some vertices are immune (for example vaccinated)?
 
 Make your own questions and create your own models!
+
+Happy coding!
 
 ### References
 - [The Julia Programming Language](https://julialang.org/)
