@@ -99,8 +99,8 @@ The `Dimension` class above is used as a data transfer object with the frontend.
 @AllArgsConstructor
 @NoArgsConstructor
 public class Perimeter {
-        private String shape;
-        private Double perimeter;
+    private String shape;
+    private Double perimeter;
 }
 ```
 
@@ -109,9 +109,9 @@ The `Perimeter` class is the actual object where we calculate the perimenter of 
 ```java
 @RestController
 public class Controller {
-    @PostMapping(value = "/api/v1/perimeter/square")
-    public ResponseEntity<Perimeter> square(@RequestBody Dimension dimensions) {
-        return ResponseEntity.ok(new Perimeter("square",
+    @PostMapping(value = "/api/v1/perimeter/rectangle")
+    public ResponseEntity<Perimeter> rectangle(@RequestBody Dimension dimensions) {
+        return ResponseEntity.ok(new Perimeter("rectangle",
                 (double) 2 * (dimensions.getLength() + dimensions.getBreadth())));
     }
 }
@@ -137,9 +137,9 @@ public class Controller {
                 .build();
     }
 
-    @PostMapping(value = "/api/v1/perimeter/square")
-    public ResponseEntity<Perimeter> square(@RequestBody Dimension dimensions) {
-        return ResponseEntity.ok(new Perimeter("square",
+    @PostMapping(value = "/api/v1/perimeter/rectangle")
+    public ResponseEntity<Perimeter> rectangle(@RequestBody Dimension dimensions) {
+        return ResponseEntity.ok(new Perimeter("rectangle",
                 (double) 2 * (dimensions.getLength() + dimensions.getBreadth())));
     }
 }
@@ -151,15 +151,15 @@ We can test the working by sending requests to the endpoint and see that it is u
 When we hit the limit, the calls are rejected with a status code and response of `429 – Too many requests` respectively.
 
 ```java
-@PostMapping(value = "/api/v1/perimeter/square")
-public ResponseEntity<Perimeter> square(@RequestBody Dimension dimensions) {
+@PostMapping(value = "/api/v1/perimeter/rectangle")
+public ResponseEntity<Perimeter> rectangle(@RequestBody Dimension dimensions) {
 
-        if (bucket.tryConsume(1)) {
-            return ResponseEntity.ok(new Perimeter("square",
-                    (double) 2 * (dimensions.getLength() + dimensions.getBreadth())));
-        }
+    if (bucket.tryConsume(1)) {
+        return ResponseEntity.ok(new Perimeter("rectangle",
+                (double) 2 * (dimensions.getLength() + dimensions.getBreadth())));
+    }
 
-        return ResponseEntity.status(HttpStatus.TOO_MANY_REQUESTS).build();
+    return ResponseEntity.status(HttpStatus.TOO_MANY_REQUESTS).build();
 }
 ```
 
