@@ -2,20 +2,23 @@
 layout: engineering-education
 status: publish
 published: true
-url: /handle-and-handle-pruning/
+url: /handle-and-handle-pruning-compiler-design/
 title: Introduction to Handles and Handle Pruning in Compiler Design
 description: This tutorial will help the reader understand what handles and handle pruning is in compiler design.
 author: mackrine-awino
-date: 2022-01-21T00:00:00-02:33
+date: 2022-02-07T00:00:00-14:33
 topics: [Languages]
 excerpt_separator: <!--more-->
 images:
-  - url: /engineering-education/handle-and-handle-pruning/hero.jpg
-    alt: Introduction to handles and handle pruning in compiler design Hero Image
+
+  - url: /engineering-education/handle-and-handle-pruning-compiler-design/hero.jpg
+    alt: handles and handle pruning in compiler design Hero Image
 ---
-A handle is a concept used in the bottom-up parsing of compiler design. Bottom-up parsing is the method of syntax analysis in which sentences belonging to certain [context-free grammars](https://www.tutorialspoint.com/automata_theory/context_free_grammar_introduction.htm) are analyzed. This analysis results in the construction of parse trees. This construction begins at the leaf nodes and proceeds to the root non-terminal hence the name bottom up which is sometimes called the shift-reduce parsing.
+A handle is a concept used in the bottom-up parsing of compiler design. Bottom-up parsing is the method of syntax analysis in which sentences belonging to certain [context-free grammars](https://www.tutorialspoint.com/automata_theory/context_free_grammar_introduction.htm) are analyzed. 
 <!--more-->
-Each symbol is moved onto the stack until there is a matching right-hand side nonterminal. This is followed by a reduction by the replacement of the production's right-hand side by its left-hand side. This process continues until eventually the string is reduced to the start non-terminal.
+This analysis results in the construction of parse trees. This construction begins at the leaf nodes and proceeds to the root non-terminal hence the name bottom up which is sometimes called the shift-reduce parsing.
+
+Each symbol is moved onto the stack until there is a matching right-hand side nonterminal. This is followed with a reduction by the replacement of the production's right-hand side by its left-hand side. This process continues until eventually the string is reduced to the start non-terminal.
 
 The set of strings to be replaced at each reduction step is called a handle. 
 
@@ -35,12 +38,13 @@ To understand this article, you should have a prior understanding of the followi
 Although a handle of a string can be described informally as a substring that equals the right side of a production rule, not every substring that is the same as the right side of a production rule is considered a handle.
 
 Example:
-```
+```bash
 Expression → Expression + Term | Term
 Term → Term * Factor | Factor
 Factor → (Expression) | id
 id → number
 ```
+
 Right-Most Derivation of 5+6*3 is
 
 Expression ⇒ Expression + Term ⇒ Expression + Term * Factor ⇒ Expression + Term * id ⇒ Expression + Factor * id ⇒ Expression + id * id ⇒ Term + id * id ⇒ Factor + id * id ⇒ id + id * id → number+number*number → 5+6*3. The handles here are "id", "Expression + Term" and "number".
@@ -52,7 +56,7 @@ This describes the process of identifying handles and reducing them to the appro
 
 For example, Using the grammar:
 
-```
+```bash
 A → kXYz
 
 X → Xwr | w
@@ -60,24 +64,23 @@ X → Xwr | w
 Y → g
 ```
 
-Use bottom-up parsing in reverse to parse the string "kwwrgz"
+Use bottom-up parsing in reverse to parse the string "kwwrgz".
 
 - Find the handle "w" at position 2 and replace it with the non-terminal in the second production as shown below.
 
 - Replace the first "w" with "X" to produce "kXwrgz".
 
-- "w" at position 3 is not a handle:
-"kXXrgz" hence cannot be replaced.
+- "w" at position 3 is not a handle: "kXXrgz" hence cannot be replaced.
 
 - Replace "Xwr" with left non-terminal on the second product which is an "X" to come up with "kXdz".
 
 - Replace "g" with a "Y" as per the last production to come up with "kXYz"
 
-- Finally, replace  "kXYz" with the start nonterminal "S" to fully parse the string "kwwrgz" successfully.
+- Then, replace "kXYz" with the start nonterminal "S" to fully parse the string "kwwrgz" successfully.
 
 To construct a rightmost derivation the following algorithm comes in handy:
 
-```
+```bash
 for j ← n to 1 by -1
 
 Determine handle Aj → βj in γj
@@ -85,13 +88,13 @@ Determine handle Aj → βj in γj
 Replace βj with Aj  in an attempt to generate γj-1
 ```
 
-### Implementation of handle pruning
+### Implementing handle pruning
 Below is an illustration using an example:
 
 #### Example 1
 For the grammar:
 
-```
+```bash
 1. A → Expression
 
 2. Expression → Expression + Term
@@ -128,9 +131,9 @@ The following are the handles for the derivation of the string `a – 2 * b`
 |<id,a> – <number,2> * <id,b>|9, 1|
 
 #### Example 2
-Consider the following [CFG](https://www.tutorialspoint.com/automata_theory/context_free_grammar_introduction.htm)
+Consider the following [CFG](https://www.tutorialspoint.com/automata_theory/context_free_grammar_introduction.htm).
 
-```
+```bash
 S → Term Length
 
 Term → integer
@@ -151,8 +154,6 @@ Length → id
 | Term length,id| Reduce Length→ Length,id| Length,id|
 | Term Length|Reduce S→Term Length| Term Length|
 | S|Accept|
-
-
 
 ### Program implementation of handles and handle pruning through bottom-up parsing using C language.
 ```c
@@ -264,10 +265,11 @@ int main()
 }
 ```
 
-This program checks for handles that are matching to what is on top of the stack and uses the production rules to reduce them. This is done until only the start non-terminal is left on top of the stack. If the start symbol is on top of the stack, It accepts and allows for the production of a parse tree. Otherwise, it rejects the input alphabet.
-The program parses the input alphabet `87678` through bottom-up parsing and prints the grammar and then outputs the parsing table as shown below:
+This program checks for handles that are matching to what is on top of the stack and uses the production rules to reduce them. This is done until only the start non-terminal is left on top of the stack. If the start symbol is on top of the stack, it accepts and allows for the production of a parse tree. 
 
-```
+Otherwise, it rejects the input alphabet. The program parses the input alphabet `87678` through bottom-up parsing and prints the grammar and then outputs the parsing table as shown below:
+
+```bash
 S → 7S7
 
 S → 8S8
@@ -288,7 +290,9 @@ S → 6
 |$S|$|Accept||
 
 ### Conclusion
-Determining handles in a grammar and pruning them is the first step in parsing an input string. It is therefore responsible for the construction of the parsing table and the parsing tree hence a key concept of bottom up parsing in compiler design. 
+Determining handles in grammar and pruning them is the first step in parsing an input string. It is responsible for the construction of the parsing table and the parsing tree hence a key concept of bottom up parsing in compiler design. 
+
+Happy coding!
 
 ---
 Peer Review Contributions by: [Jethro Magaji](/engineering-education/authors/jethro-magaji/)
