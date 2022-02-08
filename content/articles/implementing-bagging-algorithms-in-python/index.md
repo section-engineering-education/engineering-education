@@ -11,7 +11,7 @@ topics: [Machine Learning]
 excerpt_separator: <!--more-->
 images:
 
- - url: /engineering-education/implementing-bagging-algorithms-in-python/hero.png
+ - url: /engineering-education/implementing-bagging-algorithms-in-python/hero.jpg
    alt: Bagging algorithms in Python Hero Image
 ---
 
