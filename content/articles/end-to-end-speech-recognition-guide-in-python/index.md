@@ -4,17 +4,17 @@ status: publish
 published: true
 url: /end-to-end-speech-recognition-guide-in-python/
 title: End-to-End Speech Recognition Guide in Python
-description: This tutorial will help the reader understand what speech recognition is, where it is used, and different APIs that helps us with recognizing speeches. Also, we will be implementing a simple Python program to recognize sounds.
+description: This tutorial will help the reader understand what speech recognition is, the use cases, and different APIs that help us with recognizing speeches. Also, we will be implementing a simple Python program to recognize sounds.
 author: jose-yusuf
-date: 2022-01-15T00:00:00-12:30
-topics: []
+date: 2022-02-08T01:00:00-00:52
+topics: [API]
 excerpt_separator: <!--more-->
 images:
 
   - url: /engineering-education/end-to-end-speech-recognition-guide-in-python/hero.png
     alt: End-to-End Speech Recognition Guide in Python Hero Image
 ---
-Speech recognition is the process of enabling computers to identify and transcript appropriately from human voices or any other sounds. Speech is the best and widely used means of communication in the world. People rely on it to pass messages to one another for first-hand information.
+Speech recognition is the process of enabling computers to identify and transcript appropriately from human voices or any other sounds. Speech is the best and most widely used means of communication in the world. People rely on it to pass messages to one another for first-hand information.
 <!--more-->
 Companies like Google have made work easier by implementing [Cloud Speech-to-Text](https://cloud.google.com/speech-to-text) to convert speech to text. Through this, speech recognition has helped us save time from typing things. It has also given us an easy way to interact and communicate with our devices without having to write a line of code.
 
@@ -25,17 +25,17 @@ When building a Python application, one needs to incorporate speech recognition 
 Let's learn more about speech recognition - how it works, applications that use speech recognition, and simple implementation in Python to recognize speeches.
 
 ### Table of contents
-- [Pre-requisites](#pre-requisites)
+- [Prerequisites](#prerequisites)
 - [Working principle of speech recognition](#working-principle-of-speech-recognition)
 - [Packages in speech recognition](#packages-in-speech-recognition)
 - [Application of speech recognition](#application-of-speech-recognition)
 - [Open-source project for speech to text](#open-source-project-for-speech-to-text)
 - [Conclusion](#conclusion)
 
-### Pre-requisites
+### Prerequisites
 For one to understand this tutorial better, the reader needs to have the following:
-- A good understanding of [Machine learning](https://www.w3schools.com/python/python_ml_getting_started.asp)
-- Basic knowledge in [Python programming](https://www.w3schools.com/python/default.asp)
+- A good understanding of [Machine learning](https://www.w3schools.com/python/python_ml_getting_started.asp).
+- Basic knowledge in [Python programming](https://www.w3schools.com/python/default.asp).
 - Have [Jupyter notebook](https://jupyter.org/install) installed and know how to use it.
 - Have [Python](https://www.python.org/downloads/release/python-372/) installed on a machine.
 
@@ -49,7 +49,7 @@ The modern speech recognition relies on [Hidden Markov Model](https://the-learni
 As a programmer, let's not worry about the working principles of speech recognition, since numerous services working with speech recognition are available free online for developers than APIs. One just needs to install the package to start recognizing sounds.
 
 ### Packages in speech recognition
-Speech recognition since its implementation, there are several packages available that deal with the speech exists on Python manager [PyPI](https://pypi.org).
+Since the implementation of speech recognition, there are several packages available that deal with the speech exists on Python manager [PyPI](https://pypi.org).
 
 We will have a look at a few of them:
 - [Apiai](https://pypi.org/project/apiai/)
@@ -61,13 +61,17 @@ We will have a look at a few of them:
 - [pocket sphinx](https://pypi.org/project/pocketsphinx/)
 - [Assembyai](https://pypi.org/project/assemblyai/)
 
-- The speech recognition package works the best when dealing with or developing a speech recognition application.
-- Packages like `Apiais` offer additional functionalities for NLP (Natural Language Processing) that are used for identifying the intent of speakers.
-- `CMU sphinx` designed with low resource platforms does focus on some fieldwork application creation.
-- Google Cloud speech offers speech to text messaging.
-- In addition, speech recognition offers simple audio processing and easy microphone accessibility.
+The speech recognition package works the best when dealing with or developing a speech recognition application.
 
-For this matter, we will use the SpeechRecognition package for the following reasons:
+Packages like `Apiais` offer additional functionalities for NLP (Natural Language Processing) that are used for identifying the intent of speakers.
+
+`CMU sphinx` designed with low resource platforms does focus on some fieldwork application creation.
+
+Google Cloud speech offers speech to text messaging.
+
+In addition, speech recognition offers simple audio processing and easy microphone accessibility.
+
+We will use the SpeechRecognition package for the following reasons:
 - Saves audio data into an audio file.
 - Simple understandable results.
 - Speech can be recognized easily by a microphone.
@@ -123,10 +127,10 @@ recognizer.energy_threshold = 300
 #### Speech recognition methods
 The methods below are used for recognizing speech from the audio data using different APIs:
 
-- `recognize_houndify()` - Houndify by SoundHound
-- `recognize_ibm()` - [IBM speech-to-text](https://speech-to-text-demo.ng.bluemix.net/)
-- `recognize_sphinx()` - [CMU Sphinx](https://cmusphinx.github.io/) (works after installing PocketSphinx)
-- `recognize_google()` - Google web speech API
+- `recognize_houndify()` - Houndify by SoundHound.
+- `recognize_ibm()` - [IBM speech-to-text](https://speech-to-text-demo.ng.bluemix.net/).
+- `recognize_sphinx()` - [CMU Sphinx](https://cmusphinx.github.io/) (works after installing PocketSphinx).
+- `recognize_google()` - Google web speech API.
 - `recognize_google_cloud()` - Google Cloud Speech (need to install google-cloud-speech package).
 
 The `recognize_sphinx()` can work offline with the CMU Sphinx engine. But, other functions require a stable internet connection.
@@ -152,7 +156,7 @@ with open("microphone-results.wav", "wb") as f:
     f.write(audio.get_wav_data())
 ```
 
-Access code [here](https://replit.com/@Joseyusuf/audio-processing#main.py).
+You can find the code [here](https://replit.com/@Joseyusuf/audio-processing#main.py).
 
 #### Audio conversion
 
@@ -172,8 +176,6 @@ with audio_file as start:
 ```
 
 Parameters used in `record` include:
-- Duration
-- Offsets
 
 ##### Duration
 Duration is the time taken for an action to start or complete. It is used in speech recognition to specify the time taken when working with audio data.
@@ -246,7 +248,7 @@ Few other open-source projects include:
 ### Conclusion
 After going through this article, you will get to know what speech recognition is, where it is used in real life, and it's working principles as well.
 
-Furthermore, you will gain knowledge on various open-source projects where you can configure and make your speech recognition application. Also, we have covered the implementation of one such library in detail.
+Furthermore, you will gain knowledge on various open-source projects where you can configure and make your speech recognition application. Also, we have covered the implementation using one of the libraries in detail.
 
 Happy coding!
 
