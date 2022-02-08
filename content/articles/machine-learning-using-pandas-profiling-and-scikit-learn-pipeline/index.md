@@ -1,4 +1,4 @@
-Pandas profiling is a Python library that performs an automated Exploratory Data Analysis. It automatically generates a dataset profile report that gives useful insights. We can know which variables to use and which ones we can drop using the profile report.
+Pandas profiling is a Python library that performs an automated Exploratory Data Analysis. It automatically generates a dataset profile report that gives valuable insights. For example, we can know which variables to use and which ones we can drop using the profile report.
 
 A machine learning pipeline is used to automate the machine learning development stages. These stages are dataset ingestion, dataset preprocessing, feature engineering, model training, model evaluation, making predictions, and model deployment.
 
@@ -54,7 +54,7 @@ This step contains all the Scikit-Learn methods and classes that perform data tr
 
 It converts the raw dataset into a format that the model can understand and easily use. In addition, data transformation performs feature engineering and dataset preprocessing. 
 
-Feature engineering gets relevant and unique attributes from the dataset called features. The model then uses the features as input during training. Dataset preprocessing involves dataset cleaning, formatting, and removing noise from the dataset. 
+Feature engineering gets relevant and unique attributes from the dataset called features. The model then uses the features as input during training. Dataset preprocessing involves cleaning, formatting, and removing noise from the dataset. 
 
 Some of the most common activities involved in dataset preprocessing are as follows:
 - Removing outliers
@@ -189,7 +189,7 @@ This section displays the first 10 rows and the last 10 rows of our dataset.
 
 ![Last 10 rows](/engineering-education/machine-learning-using-pandas-profiling-and-scikit-learn-pipeline/last-10-rows.jpg)
 
-This marks the end of automated Exploratory Data Analysis using the Pandas Profiling. The library provides a descriptive analysis of our dataset and gives a better understanding of the churn dataset. Let us now specify the X and y variables of our dataset.
+This marks the end of automated Exploratory Data Analysis using the Pandas Profiling. The library provides a descriptive analysis of our dataset and better understands the churn dataset. Let us now specify the X and y variables of our dataset.
 
 ### X and y varables
 The X variables represent all the independent variables in a dataset which are the model inputs. The y variable is dependent, which is the model output.
