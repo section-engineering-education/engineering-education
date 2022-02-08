@@ -6,7 +6,7 @@ url: /autonlp-using-autoviml-library-for-natural-language-processing/
 title: AutoNLP using AutoVIML library for Natural Language Processing
 description: This tutorial will show a reader how to build an Amazon product review model using AutoVIML. The model will classify customers reviews as either positive or negative.
 author: james-omina
-date: 2022-01-30T00:00:00-09:37
+date: 2022-02-08T00:00:00-21:00
 topics: [Machine Learning]
 excerpt_separator: <!--more-->
 images:
@@ -14,11 +14,11 @@ images:
   - url: /engineering-education/autonlp-using-autoviml-library-for-natural-language-processing/hero.jpg 
     alt: AutoNLP using AutoVIML library for Natural Language Processing example image 
 ---
-Natural language processing enables machines to understand the text and spoken words. This process is usually hectic and has many text preprocessing activities such as, [stemming](https://en.wikipedia.org/wiki/Stemming), [lemmatization](https://en.wikipedia.org/wiki/Lemmatisation), [removing stopwords](https://en.wikipedia.org/wiki/Stop_word), [tokenization](https://www.geeksforgeeks.org/nlp-how-tokenizing-text-sentence-words-works/) and [vectorization.](https://neptune.ai/blog/vectorization-techniques-in-nlp-guide)
+Natural language processing enables machines to understand texts and spoken words. This process is usually hectic and has many text preprocessing activities such as, [stemming](https://en.wikipedia.org/wiki/Stemming), [lemmatization](https://en.wikipedia.org/wiki/Lemmatisation), [removing stopwords](https://en.wikipedia.org/wiki/Stop_word), [tokenization](https://www.geeksforgeeks.org/nlp-how-tokenizing-text-sentence-words-works/) and [vectorization](https://neptune.ai/blog/vectorization-techniques-in-nlp-guide).
 <!--more-->
 AutoVIML is used to simplify natural language processing. AutoVIML is an AutoNLP library that automates the process of natural learning processing using a machine learning [pipeline](https://valohai.com/machine-learning-pipeline/). 
 
-The pipeline initializes all the steps involved in natural language processing. The pipeline then automates all the initialized steps in a sequential order. The output of the pipeline is an optimized model.
+The pipeline initializes all the steps involved in natural language processing. The pipeline then automates all the initialized steps in sequential order. The output of the pipeline is an optimized model.
 
 In this tutorial, we build an Amazon product review model using AutoVIML. The model classifies customers reviews as either positive or negative.
 
@@ -29,7 +29,7 @@ In this tutorial, we build an Amazon product review model using AutoVIML. The mo
 - [Dataset used](#dataset-used)
 - [Convert dataset to array](#convert-dataset-to-array)
 - [Extracting important columns](#extracting-important-columns)
-- [Creating dataframe](#creating-dataframe)
+- [Creating a data frame](#creating-a-data-frame)
 - [Columns datatypes](#columns-datatypes)
 - [Adding the target column](#adding-the-target-column)
 - [Dataset splitting](#dataset-splitting)
@@ -37,7 +37,7 @@ In this tutorial, we build an Amazon product review model using AutoVIML. The mo
 - [Input and output columns](#input-and-output-columns)
 - [Using the imported function](#using-the-imported-function)
 - [Vectorization process](#vectorization-process)
-- [The best algorith and machine learning pipeline](#the-best-algorith-and-machine-learning-pipeline)
+- [The best algorithm and machine learning pipeline](#the-best-algorithm-and-machine-learning-pipeline)
 - [Making predictions](#making-predictions)
 - [Conclusion](#conclusion)
 - [References](#references)
@@ -74,9 +74,9 @@ AutoVIML will automatically fine-tune the model to meet the developer's needs an
 AutoVIML automatically adjusts the model's parameters to give an optimized solution.
 
 - Automatic model deployment and predictions
-AutoVIML automatically deploys the model so that we can use it to make predictions.
+AutoVIML automatically deploys the model to make predictions.
 
-These features are very essential and help in producing an optimized model. As mentioned earlier, all the automation process is done using machine learning pipelines. An example of a pipeline workflow is shown below:
+These features are essential and help in producing an optimized model. As mentioned earlier, all the automation process is done using machine learning pipelines. An example of a pipeline workflow is as shown below:
 
 ![Pipeline steps](/engineering-education/autonlp-using-autoviml-library-for-natural-language-processing/pipeline-steps.jpg)
 
@@ -117,15 +117,15 @@ From the image above, the dataset has over 130 million customer reviews collecte
 It shows the 1-5 star rating of the product purchased.
 
 - `helpful_votes`
-It shows the number of votes of a purchased product.
+It shows the number of votes for a purchased product.
 
 - `review_headline`
 It shows the title product review.
 
 - `review_body`
-It shows the detailed description of the review.
+It shows a detailed description of the review.
 
-After loading the dataset, we need to convert the dataset into a NumPy array. We perform this process using the NumPy library. A NumPy array is stored at one continuous place in memory, so a model can access and manipulate it easily.
+After loading the dataset, we need to convert the dataset into a NumPy array. We perform this process using the NumPy library. A NumPy array is stored at one continuous place in memory so that a model can access and manipulate it easily.
 
 #### Convert dataset to array
 We import the NumPy package using the following code:
@@ -207,7 +207,7 @@ For a review to be positive, the `star_rating` should be greater than 4. If the 
 ```python
 reviews_df["target"] = reviews_df["rating"].apply(lambda x: 1 if x>= 4 else 0) 
 ```
-This code will add the target column. It will ensure that if the `rating` is greater than 4 the review is labeled `1`. If the `rating` is less than 4, the review is labeled `0`.
+This code will add the target column. It will ensure that if the `rating` is greater than `4`, the review is labeled `1`. If the `rating` is less than `4`, the review is labeled `0`.
 
 To see our newly added target column, use this code:
 
@@ -240,7 +240,7 @@ From the code above, we have used `test_size=0.25`. It is the ratio used for dat
 After splitting the dataset, let's now use AutoVIML to automate natural language processing.
 
 ### Using AutoVIML
-AutoVIML has in-built functions that automates natural language processing. We will use the `Auto_NLP` function which is imported from AutoVIML.
+AutoVIML has in-built functions that automate natural language processing. We will use the `Auto_NLP` function, which is imported from AutoVIML.
 
 To import `Auto_NLP`, use this code:
 
@@ -272,7 +272,7 @@ nlp_transformer= Auto_NLP(
 The `Auto_NLP` function has the following important parameters:
 
 - `nlp_column`
-The model uses this column as the input column. It feeds the model with data during training
+The model uses this column as the input column. It feeds the model with data during training.
 
 - `target`
 It shows the model's output after making a prediction.
@@ -293,7 +293,7 @@ It specifies the type of model we are building. We are building a classification
 It specifies the number of important features the model uses during training. Features are the important attributes found in the dataset.
 
 - `build_model=True`
-It tells the `Auto_NLP` function to build the model. `Auto_NLP` function will then use the key AutoVIML features to produce an optimized model.
+It tells the `Auto_NLP` function to build the model. `Auto_NLP` function will then use the key, AutoVIML features, to produce an optimized model.
 
 After running this code, the process will produce outputs. The outputs show the model-building progress. These outputs will also show the best parameters and algorithms the model uses during training.
 
@@ -338,7 +338,7 @@ The image below shows the best-selected vectorizer.
 
 ![Best vectorizer](/engineering-education/autonlp-using-autoviml-library-for-natural-language-processing/best-vectorizer.png)
 
-From the image above, the `Auto_NLP` function selects TFIDF vectorizer as the best vectorizer. The `Auto_NLP` function also adds the best parameters for the TFIDF vectorizer.
+From the image above, the `Auto_NLP` function selects the TFIDF vectorizer as the best vectorizer. The `Auto_NLP` function also adds the best parameters for the TFIDF vectorizer.
 
 The next output shows the best algorithm and the machine learning pipeline.
 
@@ -358,7 +358,7 @@ The pipeline will run the two steps and produce the following output.
 From the image above, the process has run successfully. The process produces an optimized model. This marks the end of the AutoNLP process. We can use this model to make predictions.
 
 ### Making predictions
-In this stage, we will the model to classify some of the customer reviews found in the test dataset. To make predictions, use this code:
+In this stage, we will use the model to classify some of the customer reviews found in the test dataset. To make predictions, use this code:
 
 ```python
 nlp_transformer.predict(test[nlp_column])
@@ -371,11 +371,9 @@ array([1,1,1,0,1, ..., 0, 1, 0])
 From the output above, our model can make predictions. It has classified some of the reviews as positive(1) and others as negative(0).
 
 ### Conclusion
-In this tutorial, we have learned how to automate natural language processing using the AutoVIML library. We started by discussing all the processes involved in natural language processing.
+In this tutorial, we have learned how to automate natural language processing using the AutoVIML library. We started by discussing all the processes involved in natural language processing. After installing the AutoVIML library, we explored the key features it uses to produce an optimized model. We then used the AutoVIML library to build the natural language processing model. Finally, we used the model to make predictions. The model was able to classify customer reviews as either positive or negative.
 
-After installing the AutoVIML library, we explored the key features it uses to produce an optimized model. We then used the AutoVIML library to build the natural language processing model. Finally, we used the model to make predictions. The model was able to classify customer reviews as either positive or negative.
-
-The Google Colab notebook used in this tutorial is found [here](https://colab.research.google.com/drive/1UlXBkOZj2iOmJjS0QKPnOdErXOfEgnux?usp=sharing)
+You can find the Google Colab notebook used in this tutorial [here](https://colab.research.google.com/drive/1UlXBkOZj2iOmJjS0QKPnOdErXOfEgnux?usp=sharing)
 
 ### References
 - [Google Colab link](https://colab.research.google.com/drive/1UlXBkOZj2iOmJjS0QKPnOdErXOfEgnux?usp=sharing)
