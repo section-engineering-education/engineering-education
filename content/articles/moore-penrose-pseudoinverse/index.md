@@ -1,4 +1,3 @@
----
 layout: engineering-education
 status: publish
 published: true
@@ -19,7 +18,7 @@ Moore-Penrose Pseudoinverse is a linear algebra technique used to approximate th
 <!--more-->
 The idea behind the pseudo-inverse is very close to what we already know about the inverse of a matrix. When we create an inverse of a matrix, we usually find a matrix that undoes what the original matrix did. So it is good to think of the inverse of a matrix as the matrix that maps a transformed vector (s) back to its original space.
 
-The inverse of a matrix is applicable when solving a system of linear equations. However, when solving these systems, the challenge that often arises is that it is only possible to determine the solution of the system if the coefficient matrix is [non-singular] (https://www.sciencedirect.com/topics/engineering/nonsingular-matrix) and square. 
+The inverse of a matrix is applicable when solving a system of linear equations. However, when solving these systems, the challenge that often arises is that it is only possible to determine the solution of the system if the coefficient matrix is [non-singular](https://www.sciencedirect.com/topics/engineering/nonsingular-matrix) and square. 
 
 If the coefficient matrix meets these two conditions, then it is invertible, and therefore, there exists a unique solution to the system, i.e.
 
@@ -42,7 +41,7 @@ A system is said to be underdetermined if the number of variables in the system 
 
 The following case is the *Overdetermined* system (tall-skinny matrix). A system is termed *overdetermined* if it has a much higher number of equations than the number of variables. In this case, the system may have many solutions or no solutions.
 
-Now, to approximate the best solution for such systems with no unique solutions, we make use of [Singular Value Decomposition] (https://www.section.io/engineering-education/singular-value-decomposition-in-python/) (SVD). Let us see how the SVD facilitates this.
+Now, to approximate the best solution for such systems with no unique solutions, we make use of [Singular Value Decomposition](https://www.section.io/engineering-education/singular-value-decomposition-in-python/) (SVD). Let us see how the SVD facilitates this.
 
 Suppose we have a system of linear equations, $$Ax = b,$$ where the rectangular matrix A and vector b are known, and vector x is unknown.
 
@@ -77,7 +76,7 @@ These are:
 3. $(A A^\dagger)^* = AA^\dagger$
 4. $(A^\dagger A)^* = A^\dagger A$
 
-We will not prove these conditions, but you can find proofs [here] (https://www.youtube.com/watch?v=8dhnUcc_dLM & t=71s).
+We will not prove these conditions, but you can find proofs [here](https://www.youtube.com/watch?v=8dhnUcc_dLM).
 
 Now, let us look at an example to understand how this technique works intuitively.
 
@@ -186,14 +185,12 @@ Here, we only need the `numpy` library since it contains a package dedicated to 
 
 ```python
 import numpy as np
-
 ```
 The next thing is to create our matrix, $A$. We do this as shown below.
 
 ```python
 A = np.array([[-1,2],[3,-2],[5,7]])
 print(A)
-
 ```
 Output:
 
@@ -209,12 +206,10 @@ However, it has a pseudo-inverse. To determine its pseudo-inverse, let us first 
 
 ```python
 U,d,VT = np.linalg.svd(A)
-
 ```
 We can now print these three matrices explicitly as follows.
 ```python
 print(U)
-
 ```
 Output:
 
@@ -226,23 +221,19 @@ array([[ 0.12708324,  0.47409506,  0.87125411],
 
 ```Python
 print(d)
-
 ```
 Output:
 ```bash
 array([8.66918448, 4.10429538])
-
 ```
 
 ```Python
 print(VT)
-
 ```
 Output:
 ```bash
 array([[ 0.55798885,  0.82984845],
        [-0.82984845,  0.55798885]])
-
 ```
 Now, to compute $A^\dagger$, we require V and $D^\dagger$ from the above SVD outputs. 
 
@@ -253,14 +244,12 @@ To determine $D^\dagger$, we first create a diagonal matrix D using singular val
 ```python
 D  =  np.diag(d)
 print(D)
-
 ```
 This code creates the diagonal matrix we are looking for. Executing this code, we should get an output similar to the one provided below.
 
 ```bash
 array([[8.66918448, 0.        ],
        [0.        , 4.10429538]])
-
 ```
 
 The next thing is to take the reciprocal of all non-zero entries in this diagonal matrix. Note that we only take the reciprocal for non-zero entries.
@@ -270,7 +259,6 @@ From the `linalg` model, we use the `inv()` method to get the above matrix inver
 ```python
 D_inver = np.linalg.inv(D)
 print(D_inver)
-
 ```
 Executing the code we get:
 
@@ -289,13 +277,11 @@ Let us do this using the code below:
 ```python
 Dplus = np.concatenate((D_inver, np.array([[0,0]]).T),axis = 1)
 print(Dplus)
-
 ```
 Output:
 ```bash
 array([[0.1153511 , 0.        , 0.        ],
        [0.        , 0.24364718, 0.        ]])
-
 ```
 Here is our $D^\dagger$ matrix. Now, we have everything we need to calculate our $A^†$. 
 
@@ -304,7 +290,6 @@ We know, $A^†=VD^†U^T$ and from our singular value decomposition we got U an
 ```python
 Aplus = np.dot(VT.T, np.dot(Dplus,U.T))
 print(Aplus)
-
 ```
 
 Output:
@@ -320,7 +305,6 @@ Does it provide an identity matrix as we expect when we multiply a matrix with i
 
 ```python
 np.dot(Aplus, A)
-
 ```
 
 Output:
