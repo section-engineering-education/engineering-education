@@ -1,15 +1,36 @@
 # Django PostgreSQL Migration from SQLite
 
-- Table of Content
-  [ToC]
-
 In reference to the official documentation, PostgreSQL is a powerful, open-source object-relational database system that uses and extends the SQL language combined with many other features that safely store complicated data workloads.
 
 The database comes with many features that not only help developers build applications but also help administrators protect data no matter how big or small the dataset is.
 
+### Table of Contents
+
+<!-- TOC -->
+
+- [Django PostgreSQL Migration from SQLite](#django-postgresql-migration-from-sqlite) - [Table of Contents](#table-of-contents)
+  - [Introduction](#introduction)
+  - [Why use PostgreSQL](#why-use-postgresql)
+  - [Setting up Django project](#setting-up-django-project)
+    - [Step 1: Backup existing Database](#step-1-backup-existing-database)
+    - [Step 2: Installing PostgreSQL](#step-2-installing-postgresql)
+  - [1. Desktop Setup](#1-desktop-setup)
+    - [Step 3: Configure `settings.py` file.](#step-3-configure-settingspy-file)
+    - [Step 4: Install psycopg2 adapter](#step-4-install-psycopg2-adapter)
+    - [Step 5: Creating PostgreSQL Database](#step-5-creating-postgresql-database)
+    - [Step 6: Sync Database](#step-6-sync-database)
+    - [Step 7: Load Data](#step-7-load-data)
+  - [2. Use of Terminal](#2-use-of-terminal)
+    - [Step 1: Installing PostgreSQL](#step-1-installing-postgresql)
+    - [Step 2: Create Database and User](#step-2-create-database-and-user)
+    - [Step 3: Migrate Database](#step-3-migrate-database)
+  - [Conclusion](#conclusion)
+
+<!-- /TOC -->
+
 ## Introduction
 
-As developers, we often work on different projects depending on the level of expertise. As a beginner, you worked on an app like a 'to-do app' which didn't require a heavy mechanism of database to store records of tasks. But as you advance, the kind of projects you handle change with time. A point will reach where you will need to build a production-ready project which will need a database structure.
+As programmers, we do work on different projects depending on the level of expertise. As a beginner, you worked on an app like a 'to-do app' which didn't require a heavy mechanism of database to store records of tasks. But as you advance, the kind of projects you handle change with time. A point will reach where you will need to build a production-ready project which will need a database structure.
 
 Usually, a basic Django project will ship with an SQLite database as the default. Even though this is the default database, Django also supports other databases like:
 
@@ -26,7 +47,7 @@ PostgreSQL comes with many features that not only help developers build applicat
 So, why should you consider PostgreSQL over the others:
 
 - It is free to use and it’s also an open-source program which makes it easy to upgrade or extend.
-- It is highly extensible - for example, you can define your own data types, build your own functions and even write code from different programming languages without having to recompile your database.
+- It is extensible - you can define your own data types, build your own functions and even write code from different programming languages without having to recompile the database.
 - It also supports many SQL features.
 - It supports multiple programming languages like Python, Java, C/C++, Ruby, etc…
 - Works on most popular Operating Systems.
