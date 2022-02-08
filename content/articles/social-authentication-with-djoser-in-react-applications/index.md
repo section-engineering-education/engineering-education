@@ -1,15 +1,27 @@
-### Social authentication using Djoser in react applications
+Social authentication using Djoser in  a React Application
+---
+layout: engineering-education
+status: publish
+published: true
+url: /social-authentication-with-djoser-in-react-applications/
+title: React Social Authentication using Djoser and Django
+description: Djoser is a powerful authentication library. This article will walk the reader through creating an application that handles Google social authentication with Django and React.
+author: john-kiguru
+date: 2022-02-0800:00:00-12:00
+topics: [Languages]
+excerpt_separator: <!--more-->
+images:
 
+ - url: /engineering-education/social-authentication-with-djoser-in-react-applications/hero.png
+   alt: Social authentication using Djoser and Django Hero Image
+---
 ### Introduction
-Djoser is a powerful library that helps in the authentication of applications. It offers basic features such as registration, account activation, login, password reset and logout.
-
-In Django, Djoser works with a custom user model and offers capabilities for social authentication, which will be the main focus of this article.
-
-We will create an application for handling Google social authentication with a Django backend and a React frontend.
+Djoser is a powerful authentication library. It offers registration, account activation, login, password reset, and logout features.
+<!--more-->
+Djoser offers social authentication, which will be the main focus of this article. We will create an application that handles Google social authentication with a Django backend and a React frontend.
 
 ### Prerequisites
 The reader should have the following to follow along with this article:
-
 1. Python installed on your machine.
 2. Installed `django`, `djangorestframework`, `djangorestframework-simplejwt`, `djoser`, `social-auth-app-django`, `django-cors-headers`. You can install them using `pip`.
 3. Have `npm` installed for our frontend part.
@@ -17,7 +29,7 @@ The reader should have the following to follow along with this article:
 ### Getting Started
 Start by creating a new directory, then run `django-admin startapp backend` under this directory to create a new Django application called `backend`. 
 
-`Djoser` works with a custom user model,  so let us create a new app inside our project to contain the custom user model. First, navigate the backend folder and run `python3 manage.py startapp users`.
+`Djoser` works with a custom user model in a Django application,  so let us create a new app inside our project to contain the custom user model. First, navigate the backend folder and run `python3 manage.py startapp users`.
 
 We need to extend the default User model that comes with Django. In the `users` folder, edit the `models.py` as shown:
 
@@ -181,11 +193,11 @@ Then, we made the settings for Django REST Framework and Django REST simple jwt.
 
 Notice the allowed redirect URLs part. These URLs should be similar to those we will set up for the application in the Google cloud console. 
 
-For authentication, we will implement Google, so we also need the `ModelBackend` to log into the admin panel.
+We will implement Google for the authentication, so we also need the `ModelBackend` to log into the admin panel.
 
-Then we set up settings for `SOCIAL_AUTH_GOOGLE_OAUTH2_KEY`, `SOCIAL_AUTH_GOOGLE_OAUTH2_SECRET`.
+Then, we set up settings for `SOCIAL_AUTH_GOOGLE_OAUTH2_KEY`, `SOCIAL_AUTH_GOOGLE_OAUTH2_SECRET`.
 
-Now we need to configure some URLs to make the backend application work.
+Now we need to configure URLs to make the backend application work.
 
 Edit `backend/urls.py` file as follows:
 
@@ -217,7 +229,7 @@ Fo the authorized redirect, URIs have these URLs: `http://127.0.0.1:3000`, `http
 
 ![Set up the uris](/engineering-education/content/articles/social-authentication-with-Djoser-in-react-applications/setting_up_the_uris.png)
 
-After you click create, you will get your `client id` and `client secret`, which you will use in your `settings.py` file for this part:
+After you click create, you will get your `client id` and `client secret`, which you will use in your `settings.py`  as follows:
 
 ```python
 SOCIAL_AUTH_GOOGLE_OAUTH2_KEY = 'your_client_id_key'
@@ -626,7 +638,7 @@ export const logout = () => dispatch => {
 
 ```
 
-When a user authenticates using Google, a redirect URI containing the state and code will be sent by the application. This code and state will be used to obtain user information such as access and refresh tokens, email, and name.
+When a user authenticates using Google, a redirect URI containing the state and code will be sent by the application. We will use this code and state to obtain user information such as access and refresh tokens, email, and name.
 
 The `googleAuthenticate` function handles the post request with the code and state as data, then returns the user data as a response. 
 
@@ -698,7 +710,7 @@ export default function(state=initialState,action){
 First, we set an initial state that sets default values for access and refresh tokens. We also set a default boolean value of false for
 `isAuthenticated`. This value will later be used to handle routing for authenticated users.
 
-Then, we set access and refresh token values in local storage to the one dispatched if the authentication was successful. The `isAuthenticated` is set to true. Otherwise, the values are null for the token values and false for `isAuthenticated`. 
+We set access and refresh token values in local storage to the one dispatched if the authentication was successful. The `isAuthenticated` is true; otherwise, the token values are null, and `isAuthenticated` remains false. 
 
 Finally, if there is no other action, we return the current state and create our store. Edit the `src/store.js` to resemble this:
 
@@ -786,7 +798,7 @@ We use the `connect` function to connect to our store. Then, we dispatch the `go
 We need to get the url of the current page and key-value pairs of the url. If the code and state exist, we call the `googleAuthenticate` action 
 that takes code and state as parameters. 
 
-When we get redirected, the url has a state and code within it, acquired and passed to the `googleAuthenticate` function.
+When we get redirected, the url has a state and code, acquired and passed to the `googleAuthenticate` function.
 
 Next, we connect our `Signup` to the store. Edit `src/components/Signup.js` as follows:
 
@@ -858,7 +870,7 @@ export default connect(mapStateToProps, null)(Signup);
 
 When a user clicks to continue with Google during sign up, the `signupWithGoogle` function is called. This function sends a post request to the backend with a specified redirect URI. 
 
-This URI must be one of the allowed redirect URIs in the Djoser settings. Additionally,  the allowed URIs must be the same as those added in your Google cloud console. 
+This URI must be one of the allowed redirect URIs in the Djoser settings. Additionally,  the allowed URIs must be the same as those added in your google cloud console. 
 
 The user gets directed to the authorization page, and the specified redirect URI with the state and code included in the url.
 
@@ -1005,3 +1017,5 @@ Notice that the user will be authenticated as long as they have signed into thei
 ### Conclusion
 You have now handled authentication for Google using Djoser. You can do the same for other social accounts such as Facebook, Twitter, or others. Please refer to [Djoser Documentation](https://djoser.readthedocs.io/en/latest/) for more information.
 
+---
+Peer Review Contributions by: [Jerim Kaura](/engineering-education/authors/jerim-kaura/)
