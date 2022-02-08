@@ -6,18 +6,18 @@ url: /understanding-pascal-voc-dataset/
 title: Understanding PASCAL VOC Dataset
 description: This article will introduce the reader to PASCAL VOC dataset. We will also implement a simple dataset validator using Python.
 author: srishilesh-p-s
-date: 2022-01-26T00:00:00-01:00
+date: 2022-02-08T00:00:00-06:00
 topics: [Machine Learning]
 excerpt_separator: <!--more-->
 images:
   - url: /engineering-education/understanding-pascal-voc-dataset/hero.jpg
     alt: Understanding PASCAL VOC Dataset Hero Image
 ---
-Object detection refers to the ability of computer systems to locate desired types of objects from an image/scene. 
+Object detection refers to the ability of computer systems to locate desired types of objects from an image/scene.
 <!--more-->
-For object detection, the train data are either represented using XML files or JSON files. Each representation has its pros and cons.
+For object detection, the train data is either represented using XML files or JSON files. Each representation has its pros and cons.
 
-In this article, we will be understanding how one such dataset representation helps us with object detection. 
+In this article, we will be understanding how one such dataset representation helps us with object detection.
 
 We will discuss what the PASCAL VOC format is, the history behind it, and how we use it for object detection.
 
@@ -60,7 +60,7 @@ Each object-label mapping is represented with a rectangular box called "[Boundin
 Let's discuss more about bounding boxes in the upcoming sections.
 
 ### PASCAL VOC
-This dataset provides standardized images for object detection and segmentation problems. 
+This dataset provides standardized images for object detection and segmentation problems.
 
 These datasets are built using tools that follow standardized procedures for the evaluation and comparison of different methods.
 
