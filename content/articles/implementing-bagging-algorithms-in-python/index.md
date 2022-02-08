@@ -1,14 +1,16 @@
-We can either use a single algorithm or combine multiple algorithms in building a machine learning model. Using multiple algorithms is known as ensemble learning. Ensemble learning gives better prediction results than single algorithms. The most common types of ensemble learning techniques are bagging and boosting. 
+We can either use a single algorithm or combine multiple algorithms in building a machine learning model. Using multiple algorithms is known as ensemble learning. 
 
-In Bagging, multiple homogenous algorithms are trained independently and combined afterwards to determine the model average.
+Ensemble learning gives better prediction results than single algorithms. The most common types of ensemble learning techniques are bagging and boosting. 
 
-Boosting is an ensemble technique where we train multiple homogenous algorithms sequentially. 
+In Bagging, multiple homogenous algorithms are trained independently and combined afterwards to determine the model's average.
 
-These individual algorithms create a final model with the best results. The performance of one algorithm is influenced by the performance of the previously built algorithm.
+Boosting is an ensemble technique where we train multiple homogenous algorithms sequentially. These individual algorithms create a final model with the best results. The performance of one algorithm is influenced by the performance of the previously built algorithm.
 
-This tutorial will use the two approaches in building a machine learning model. We will use a single algorithm known as the Decision Tree Classifier to build and find the model's accuracy in the first approach. 
+This tutorial will use the two approaches in building a machine learning model. 
 
-We will use the Bagging Classifier and the Random Forest Classifier to build the same model in the second approach.
+In the first approachWe will use a single algorithm known as the Decision Tree Classifier to build and find the accuracy of a model. 
+
+In the second approach, we will use the Bagging Classifier and the Random Forest Classifier to build the same model and find it accuracy.
 
 ### Table of contents
 - [Prerequisites](#prerequisites)
@@ -22,7 +24,7 @@ We will use the Bagging Classifier and the Random Forest Classifier to build the
 - [Loading the dataset](#loading-the-dataset)
 - [Dataset scaling](#dataset-scaling)
 - [Splitting the dataset](#splitting-the-dataset)
-- [Model building using the Decision Tree Classifier](#model-building-using-the-decision-tree-classifier)
+- [Model building using Decision Tree Classifier](#model-building-using-decision-tree-classifier)
 - [Getting the mean accuracy score](#getting-the-mean-accuracy-score)
 - [Implementing the bagging algorithms](#implementing-the-bagging-algorithms)
 - [Building the model using Bagging Classifier](#building-the-model-using-bagging-classifier)
@@ -33,7 +35,7 @@ We will use the Bagging Classifier and the Random Forest Classifier to build the
 - [References](#references)
 
 ### Prerequisites
-A reader should know the following:
+To follow along with this tutorial, the reader should know the following:
 
 - [Python programming](https://www.section.io/engineering-education/python-projects-for-beginners/)
 - [Machine learning workflows](https://www.section.io/engineering-education/house-price-prediction/)
@@ -43,7 +45,7 @@ A reader should know the following:
 > NOTE: In this tutorial, we will use [Google Colab notebook](https://research.google.com/)
 
 ### Bagging vs Boosting
-As mentioned above,  in Bagging, multiple homogenous algorithms are trained independently in parallel, while in boosting, multiple homogenous algorithms are trained sequentially. The image below shows the difference between Bagging and boosting.
+As mentioned above, in Bagging, multiple homogenous algorithms are trained independently in parallel, while in Boosting, multiple homogenous algorithms are trained sequentially. The image below shows the difference between Bagging and Boosting.
 
 ![Bagging Vs Boosting](/engineering-education/implementing-bagging-algorithms-in-python/bagging-vs-boosting.jpg)
 
@@ -126,14 +128,14 @@ The image below further shows the process of Bagging. Again, the image clearly d
 - Bagging algorithms reduce bias and variance errors.
 - Bagging can easily be implemented and produce more robust models.
 
-Now that we have discussed the theory, let us implement the bagging algorithm using Python.
+Now that we have discussed the theory, let us implement the Bagging algorithm using Python.
 
 ### Dataset used
 We will use the diabetes dataset to predict if a person has diabetes or not. The collected dataset has `Age` and `blood pressure` features, which help the model determine if the person has diabetes.
 
 To download the diabetes dataset, click [here](https://drive.google.com/file/d/1d8j3lAmVFbwRpxyAYY2RmFMtFwTOoSAp/view?usp=sharing).
 
-#### Loading the dataset
+#### Loading the Dataset
 We will use the Pandas library to load the dataset we downloaded using the link above.
 
 Let us import Pandas
@@ -229,7 +231,7 @@ The output will show the 4th row of the scaled dataset:
 
 After scaling the dataset, we can split the scaled dataset.
 
-### Splitting the dataset
+### Splitting the Dataset
 We will split the scaled dataset into training and testing. To split the dataset, we will use the `train_test_split` method.
 
 ```python
@@ -268,7 +270,7 @@ The output is shown below:
 (192, 8)
 ```
 
-### Model building using the Decision Tree Classifier
+### Model building using Decision Tree Classifier
 The decision tree classifier is the Scikit-learn algorithm used for classification. To import this algorithm, use this code:
 
 ```Python
@@ -300,7 +302,7 @@ In the code above, we will split the dataset into five folds. It produces the mo
 array([0.69480519, 0.68181818, 0.71428571, 0.77777778, 0.73856209])
 ```
 
-#### Getting the mean accuracy score
+#### Getting the Mean Accuracy Score
 The mean score is obtained using the following code:
 
 ```python
@@ -315,7 +317,7 @@ The output is shown below:
 
 Using the cross-validation score, we get the accuracy score to be `0.7214497920380273`. We can build the same model using the bagging algorithms to compare the accuracy scores.
 
-### Implementing the bagging algorithms
+### Implementing the Bagging algorithms
 
 Let us first build the model using the `BaggingClassifier`.
 
@@ -358,7 +360,7 @@ In the code snippet above, we have used the following parameters:
 
 The next step is to fit the initialized model into our training set.
 
-#### Fitting the model
+#### Fitting the Model
 Fitting will enable the model to learn from the training dataset to understand the dataset and gain helpful insight.
 
 To fit the model, use this code:
@@ -369,7 +371,7 @@ bag_model.fit(X_train, y_train)
 
 Finally, let us calculate the model accuracy score.
 
-#### Accuracy score
+#### Accuracy Score
 To get the accuracy score, run this code:
 
 ```Python
