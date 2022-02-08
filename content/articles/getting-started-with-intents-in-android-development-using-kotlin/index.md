@@ -91,14 +91,14 @@ We will implement the two types of intent since we have to create an illuminatio
 - Open the android studio application on your computer.
 - In the introductory dialog box, *`select start a new project`*.
 - Select *` Empty activity`* as your project template. Click *` next`* to proceed to the next steps.
-![Creating a new empty activity](engineering-education/getting-started-with-intents-in-android-development-using-kotlin/create-a-new-empty-activity.jpg)
+![Creating a new empty activity](engineering-education/getting-started-with-intents-in-android-development-using-kotlin/newactity.jpg)
 
 - Edit the application name and enter your own, e.g., enter intent.
 - Select *` Kotlin`* as your default language in this project.
 - Select a minimum SDK depending on **how many devices will be able to run your application**. The Android Studio will help you know the percentage of existing devices with the SDK selected.
 - Click *` finish`* to complete setting up the android studio and wait a few seconds for it to build up your project.
 
-![Configuring your project](engineering-education/getting-started-with-intents-in-android-development-using-kotlin/changing-the-project-name-and-settings.jpg)
+![Configuring your project](engineering-education/getting-started-with-intents-in-android-development-using-kotlin/configure.jpg)
 
 
 ### Step 2: Working with main activity.xml file
@@ -222,7 +222,7 @@ We will implement the two types of intent since we have to create an illuminatio
 
 Your design should look similar to the one shown below.
 
-![Examples of intents](engineering-education/getting-started-with-intents-in-android-development-using-kotlin/examples-of-intents.jpg)
+![Examples of intents design](engineering-education/getting-started-with-intents-in-android-development-using-kotlin/applicationdesign.jpg)
 
 ### Step 3: Working with `Activity main.kt`.
 Before we work with the main_activity.kt, we will add additional code to our app files to ensure that it will meet our objective fully.
