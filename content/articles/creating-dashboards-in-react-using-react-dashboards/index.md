@@ -1,5 +1,4 @@
 ### Introduction
-
 [Flatologic](https://flatlogic.com/) Customizable React dashboards are available to download and use. As a result, the development time for react dashboards has been lowered. Flatologic's react dashboards are described in detail in this post.
 
 ### Table of contents
