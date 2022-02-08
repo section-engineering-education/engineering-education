@@ -91,7 +91,7 @@ We will implement the two types of intent since we have to create an illuminatio
 - Open the android studio application on your computer.
 - In the introductory dialog box, *`select start a new project`*.
 - Select *` Empty activity`* as your project template. Click *` next`* to proceed to the next steps.
-![Creating a new empty activity](engineering-education/getting-started-with-intents-in-android-development-using-kotlin/newactity.jpg)
+![Creating a new empty activity](engineering-education/getting-started-with-intents-in-android-development-using-kotlin/actity.jpg)
 
 - Edit the application name and enter your own, e.g., enter intent.
 - Select *` Kotlin`* as your default language in this project.
@@ -222,7 +222,7 @@ We will implement the two types of intent since we have to create an illuminatio
 
 Your design should look similar to the one shown below.
 
-![Examples of intents design](engineering-education/getting-started-with-intents-in-android-development-using-kotlin/applicationdesign.jpg)
+![Examples of intents design](engineering-education/getting-started-with-intents-in-android-development-using-kotlin/design.jpg)
 
 ### Step 3: Working with `Activity main.kt`.
 Before we work with the main_activity.kt, we will add additional code to our app files to ensure that it will meet our objective fully.
