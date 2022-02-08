@@ -1,14 +1,11 @@
 ### Welcome to the EngEd Program
 First of all we would like to welcome you to the EngEd Program!
 
-The Engineering Education Program at Section was created as a medium to provide students a friendly and inviting place to contribute to a real-world projects to help students better build up their professional portfolios and profiles (upon entering the DEV career space). 
-
-Our goal is to allow our EngEd community the opportunity to increase and build upon the skills they have by allowing them to help build the features/enhancements the community members want to see in the EngEd program. At the same time have a place where they can build us a career profile and portfolio that can be leveraged when entering the workforce.
-
+The Engineering Education Program at Section was created as a community to provide students a friendly and inviting place to enhance their skills, connect with like-minded students, and help build up their professional portfolios and profiles (upon entering the DEV career space). 
 
 We also offer students the opportunity to write content about related and approved topics about Information Technology Web-related services. (Could be something you are learning currently or a write-up on any EngEd Community Contribution they may have contributed).
 
-### Getting started
+### Getting started with writing up content
 To get started **we recommend you begin by going over the most recently published student** articles at the link provided to get ideas on [potential topics](https://www.section.io/engineering-education/) and get a better sense of style, quality, and tonality.
 
 #### Courses 

@@ -1,18 +1,20 @@
 # engineering-education
-The Engineering Education Program at Section was created as a medium to provide students a friendly and inviting place to contribute to real-world projects to help students better build up their professional portfolios and profiles (upon entering the DEV career space). 
+The Engineering Education Program at Section was created to be a friendly and inviting community to connect with like-minded peers who are preparing for careers in computer science-related fields. 
 
-Our goal is to allow our EngEd community the opportunity to increase and build upon the skills they have by allowing them to help build the features/enhancements the community members want to see in the EngEd program. At the same time have a place where they can build a career profile and portfolio that can be leveraged when entering the workforce.
+Our goal is to allow the EngEd community the opportunity to increase and build upon the skills they have by allowing them to collaborate with their peers and at the same time have a place where they can build (and showcase) a career profile and portfolio that can be leveraged when entering the workforce.
 
-We also offer students the opportunity to write content about related and approved topics (to build up their author profile and portfolio) about Information Technology Web-related services. (Could be something you are learning currently or a write-up on any EngEd Community Contribution they may have contributed). This will serve as a community-generated pool of educational content which is useful for engineers of every level. Published content can be found at [https://www.section.io/engineering-education/](https://www.section.io/engineering-education/).
+We also offer students the opportunity to create content about related and approved topics (to build up their author profile and portfolio) about Information Technology Web-related services. (Could be something you are learning currently or a write-up on any EngEd Community Contribution they may have contributed). This library will serve as a community-generated pool of educational content which is useful for engineers of every level. Published content can be found at [https://www.section.io/engineering-education/](https://www.section.io/engineering-education/).
 
 [ENROLL HERE](https://docs.google.com/forms/d/e/1FAIpQLSfTbj3kqvEJEb5RLjqJurfbHa8ckzQx0CjRzaizblue9ZOK5A/viewform?usp=sf_link)
 
-Our objective is to provide value to students via skill enrichment, portfolio building, and community building. This program helps students get real world experience that they can reference when entering the (DEV) work force. This program is intended to serve as a launchpad for students to jump-start their professional careers. 
+Our objective is to provide value to students around the world via community building (connecting like-minded individuals), skill enrichment/portfolio building (to have as a reference upon entering the work-force), and creating a community-generated pool of educational content which is useful for engineers. 
+
+This program helps students get real world experience that they can reference when entering the (DEV) work force. This program is intended to serve as a launchpad for students to jump-start their professional careers. 
 
 ### Program Purpose
 “Section's Engineering Education (EngEd) Program is dedicated to offering a unique quality community experience for computer science university students. With relevant career building/skill enrichment resources, EngEd is a community for students to share their knowledge with peers around the world, and to help catapult their careers.”
 
-Section partners with university computer science programs across the globe to create a community which is useful for engineers of every (any) level.
+Section partners with university computer science programs across the globe to create a community which is useful for engineers of every (any) level preparing to enter the DEV workforce.
 
 EngEd generated content can be found at [https://section.io/engineering-education](https://section.io/engineering-education).
 
@@ -26,7 +28,7 @@ We can only improve and add value by working together with our community. Please
 
 ### EngEd Community Contribution Initiative
 One of our main goals for the EngEd community is to provide students/contributors a friendly and inviting place to contribute to real-world projects to help students better build up their professional portfolios and profiles (upon entering the DEV career space). We would like to allow our EngEd community the opportunity to increase and build upon the skills they have by allowing them to help build the features/enhancements the community members want to see in the EngEd program. This Contribution Initiative is strictly restricted to the EngEd community.  
-+9-
+
 ### EngEd Community Contribution Submission Process
 1. To submit an EngEd feature contribution for consideration, be sure to first check [past feature suggestons](https://github.com/section-engineering-education/engineering-education/issues?q=is%3Aopen+is%3Aissue+label%3Aenhancement) to ensure relevance and prevent overlap. **Hint**: Use the this EngEd Content Suggestion form to propose article topic for approval and get feedback on topic ideas. [*View content form here*](https://github.com/section-engineering-education/engineering-education/issues/new?assignees=&labels=enhancement&template=enged-feature-suggestion.md&title=Feature+suggestion)
 2. When you're ready to submit a suggestion for review, submit your issue with details on what you would like to see added to the EngEd application/program. 

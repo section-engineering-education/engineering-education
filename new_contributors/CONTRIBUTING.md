@@ -1,19 +1,18 @@
 ## Contribution Guidelines
-Welcome to Section’s Engineering Education program. This program is dedicated to providing a community that provides students/contributors a friendly and inviting place to contribute to real-world projects to help students better build up their professional portfolios and profiles (upon entering the DEV career space). We would like to allow our EngEd community the opportunity to increase and build upon the skills they have by allowing them to help build the features/enhancements the community members want to see in the EngEd program.
+Welcome to Section’s Engineering Education program. This program is dedicated to providing a community that provides students/contributors a friendly and inviting place to contribute to, build up their skills, while growing their professional portfolios/profiles (upon entering the DEV career space). 
 
-
--generated pool of educational content that is useful for engineers of every level. 
+- Students can contribute to the EngEd community generated pool of educational content that is useful for engineers of every level. 
 
 To begin, we’d recommend reviewing our most recently published content [here](www.section.io/engineering-education/) to get a sense of:
 
 - Article structures
+- Quality of articles we are looking for
 - Type of content that has been contributed (to help avoid topic overlap)
 - Topics you can begin working on
-- Quality of articles we are looking for
 
 Articles do not need to be Section-specific or strongly Section-related. This is not necessarily about Section or Edge Compute directly, but rather an effort to provide educational value to software developers within the diverse ecosystem of web technologies. 
 
-We are looking to create a pool of content will be unique from what is already readily available through the official docs. We need to be sure that the content is providing unique value that addresses a specific use case or challenge that developers face. 
+We are looking to create a pool of content that is unique from what is already readily available through the official docs. We need to be sure that the content is providing unique value that addresses a specific use case or challenge that developers face. 
 
 **Articles should be a minimum of 750 words.**
 
@@ -25,7 +24,6 @@ In order to achieve a level of consistent style and increasingly elevated qualit
 - GitHub account (Please be sure to have a basic understanding of [GitHub and Gitflows.](https://www.youtube.com/watch?v=MnUd31TvBoU&t=510s) Eg: Pull requests, commits, merge, etc.
 - Text editor, such as [Visual Studio Code](https://code.visualstudio.com/), [Sublime Text](https://www.sublimetext.com/), [Atom](https://atom.io/)
 - Prepared Markdown (.md) file. (Note: All articles must be submitted in properly-formatted Markdown.)
-- Verified PayPal account. (At this time, we only service payments through PayPal. If you don’t have a PayPal account, please check whether [PayPal is available in your region](https://www.paypal.com/en/webapps/mpp/country-worldwide).) Otherwise, payouts may experience delays.
 - To ensure expedite reviews, publishing, and payouts for articles, we request that ***all first drafts submitted be error-free (pre-checked for English grammar, technically accurate, properly cited, formatted, etc.) and it be ready for publishing*** by meeting our suggested article guidelines as outlined below. 
 
 Here is a [free tool](https://writeandimprove.com/?lang=en-GB) to help improve your writing skills. Please be sure to go over our [resources page](https://github.com/section-engineering-education/engineering-education/blob/master/new_contributors/resources-page.md) to take a look at all the listed resources to help improve overall techinical writing abilities.)

@@ -7,6 +7,7 @@ We encourage all new contributors to go over our new contributor folder which ha
 Visit our step-by-step guide on [how to upload your 1st EngEd article](https://github.com/section-io/engineering-education/blob/master/new_contributors/UPLOAD_INSTRUCTIONS.md#how-to-upload-an-article-for-sections-engineering-education-program) to the GitHub repo.
 
 ### How do I submit a EngEd feature suggestion?
+To suggest a (potential) EngEd feature suggestion [fill this form out](https://github.com/section-engineering-education/engineering-education/issues/new?assignees=&labels=enhancement&template=enged-feature-suggestion.md&title=Feature+suggestion). 
 
 ### How do I submit a Pull Request?
 Here is a link to a [short video](https://www.youtube.com/watch?v=nT8KGYVurIU&amp;t=47s) further explaining what a pull request is.
