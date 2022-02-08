@@ -6,7 +6,7 @@ url: /leveraging-openai-gym-and-the-anytrading-environment-for-trading/
 title: Leveraging OpenAI Gym and the Anytrading Environment for Trading
 description: This tutorial will show how to leverage OpenAI Gym and the AnyTrading Environment for trading.
 author: willies-ogola
-date: 2022-01-30T00:00:00-17:00
+date: 2022-02-08T00:00:00-01:10
 topics: [Machine Learning]
 excerpt_separator: <!--more-->
 images:
@@ -14,13 +14,13 @@ images:
   - url: /engineering-education/leveraging-openai-gym-and-the-anytrading-environment-for-trading/hero.png
     alt: OpenAI Gym and the Anytrading Environment Hero Image
 ---
-Open AI's Gym Anytrading environment is a custom trading environment that you can use to trade a bunch of stocks, forex, cryptocurrencies, equities, and securities.
+The open AI Gym Anytrading environment is a custom trading environment that you can use to trade a bunch of stocks, forex, cryptocurrencies, equities, and securities.
 <!--more-->
 
 ### Prerequisites
 To follow along with this tutorial, you need to be familiar with:
 - [Reinforcement Learning](engineering-education/introduction-to-reinforcement-learning/) and its algorithms.
-- Trading with cryptocurrencies, stocks, forex, equities, and securities
+- Trading with cryptocurrencies, stocks, forex, equities, and securities.
 - Google Colab or Jupyter Notebook.
 > We will use Google Colab for this tutorial.
 
@@ -31,8 +31,8 @@ To follow along with this tutorial, you need to be familiar with:
 - [Building the test environment](#building-the-test-environment)
 - [Training an RL agent to trade using the Gym environment](#training-an-rl-agent-to-trade-using-the-gym-environment)
 - [Testing the RL agent](#testing-the-rl-agent)
-- [Wrapping-up](#wrapping-up)
-- [Further-reading](#further-reading)
+- [Wrapping up](#wrapping-up)
+- [Further reading](#further-reading)
 
 ### Getting started with Gym Anytrading environment
 Open AI's Gym Anytrading environment is a custom trading environment that you can use to trade a bunch of stocks, forex, cryptocurrencies, equities, and securities. We will leverage the environment to perform trading on Ethereum cryptocurrency data.
@@ -184,7 +184,9 @@ model_train.learn(total_timesteps=100000)
 With these two lines of code, our model will start training.
 
 `A2C` is the algorithm that we will use for this run. `A2C` is an acronym that stands for `Advantage Actor-Critic`. It is an RL algorithm that combines Policy-Based and Value-Based RL techniques. You can read more about it [here](https://towardsdatascience.com/advantage-actor-critic-tutorial-mina2c-7a3249962fc8).
+
 We are using the `MlpLstmPolicy` which is a deep neural network policy with an LSTM layer. It is an important policy as it allows a neural network to keep context and learn about the previous history within its neurons.
+
 The last line of code kicks off training with `100000` timesteps. Ideally, what you need to observe while training is the `explained_variance` value. You want it to be as high as possible. We are looking at values between `0` and `1`. A number close to `1` denotes a high value while that close to `0`, a low value. You should also make sure the `value_loss` is as low as possible.
 
 You can stop the model training when the `explained_variance` is `0.966`. This should give us a model that performs reasonably well. However, finding a perfect solution is never a thing with algorithms. Keep experimenting until you find that sweet spot.
@@ -216,7 +218,9 @@ plt.show()
 ```
 ![Trade evaluation](/engineering-education/leveraging-openai-gym-and-the-anytrading-environment-for-trading/evaluation.png)
 
-These are the results from training our agent operating from day 25 to 35. Our model has predicted new actions. We can note that it has made a few good trades and bad ones too. The green dots represent buying while the red dots represent selling cryptocurrencies. For example, on its sixth trade, it was right to buy when the price was low. But, it should have sold on the eighth trade, but instead, it bought more, which was a mistake. Also, on the tenth trade, it sold Ethereum when it was at its lowest price making a loss. This is a wrong trade. 
+These are the results from training our agent operating from day 25 to 35. Our model has predicted new actions. We can note that it has made a few good trades and bad ones too. The green dots represent buying while the red dots represent selling cryptocurrencies.
+
+For example, on its sixth trade, it was right to buy when the price was low. But, it should have sold on the eighth trade, but instead, it bought more, which was a mistake. Also, on the tenth trade, it sold Ethereum when it was at its lowest price making a loss. This is a wrong trade. 
 
 We made a profit of `0.9861862828347474`, which is about 8.6%. It is not much. But, at least you get the idea of how the model is working.
 
