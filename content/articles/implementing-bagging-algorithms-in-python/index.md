@@ -1,5 +1,22 @@
-We can either use a single algorithm or combine multiple algorithms in building a machine learning model. Using multiple algorithms is known as ensemble learning. 
+---
+layout: engineering-education
+status: publish
+published: true
+url: /implementing-bagging-algorithms-in-python/
+title: Bagging algorithms in Python
+description: Machine Learning models can either use a single algorithm or combine multiple algorithms. Using multiple algorithms is known as ensemble learning. The most common types of ensemble learning techniques are Bagging and Boosting. This tutorial will use the two approaches in building a machine learning model. 
+author: joseph-gatura
+date: 2022-02-08T00:00:00-12:00
+topics: [Machine Learning]
+excerpt_separator: <!--more-->
+images:
 
+ - url: /engineering-education/implementing-bagging-algorithms-in-python/hero.png
+   alt: Bagging algorithms in Python Hero Image
+---
+
+We can either use a single algorithm or combine multiple algorithms in building a machine learning model. Using multiple algorithms is known as ensemble learning. 
+<!--more-->
 Ensemble learning gives better prediction results than single algorithms. The most common types of ensemble learning techniques are bagging and boosting. 
 
 In Bagging, multiple homogenous algorithms are trained independently and combined afterwards to determine the model's average.
@@ -8,9 +25,9 @@ Boosting is an ensemble technique where we train multiple homogenous algorithms 
 
 This tutorial will use the two approaches in building a machine learning model. 
 
-In the first approachWe will use a single algorithm known as the Decision Tree Classifier to build and find the accuracy of a model. 
+In the first approach, we will use a single algorithm known as the Decision Tree Classifier to build and find the accuracy of a model. 
 
-In the second approach, we will use the Bagging Classifier and the Random Forest Classifier to build the same model and find it accuracy.
+In the second approach, we will use the Bagging Classifier and the Random Forest Classifier to build the same model and find its accuracy.
 
 ### Table of contents
 - [Prerequisites](#prerequisites)
@@ -85,7 +102,7 @@ The process of bootstrapping generates multiple subsets. On each subset, a machi
 
 The fitting algorithm is trained using multiple subsets to produce various models. The various models produced are called weak learners or base models. 
 
-We will have multiple base models trained in parallel by the end of this stage.
+We will have multiple base models trained in parallel by this stage.
 
 The image below shows the parallel training process:
 
@@ -138,7 +155,7 @@ To download the diabetes dataset, click [here](https://drive.google.com/file/d/1
 #### Loading the Dataset
 We will use the Pandas library to load the dataset we downloaded using the link above.
 
-Let us import Pandas
+Let us import Pandas.
 
 ```python
 import pandas as pd
@@ -448,3 +465,5 @@ To get the Python code, click this Google Colab [link.](https://colab.research.g
 - [Boosting Algorithms in Python](https://www.section.io/engineering-education/boosting-algorithms-python/.)
 - [Scikit-learn documentation.](https://scikit-learn.org/stable/)
 
+---
+Peer Review Contributions by: [Jerim Kaura](/engineering-education/authors/jerim-kaura/)
