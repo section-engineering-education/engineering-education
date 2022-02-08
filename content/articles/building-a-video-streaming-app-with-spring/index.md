@@ -1,12 +1,12 @@
 ---
 layout: engineering-education
 status: publish
-published:
+published: true
 url: /building-a-video-streaming-app-with-spring/
 title: How to Build a Video Streaming Application using Spring Boot
 description: This article will show the reader how to build a simple video streaming application using Spring Boot and JavaScript.
 author: john-amiscaray
-date: 2022-01-24T01:00:00-02:00
+date: 2022-02-08T01:00:00-10:30
 topics: [Languages]
 excerpt_separator: <!--more-->
 images:
@@ -14,9 +14,9 @@ images:
   - url: /engineering-education/building-a-video-streaming-app-with-spring/hero.jpg
     alt: Build a Video Streaming Application using Spring Boot Hero Image
 ---
-Many popular applications in the world use some form of video streaming functionality. Implementing this feature can give you and your users a lot of creative power. 
+Many popular applications in the world use some form of video streaming functionality. Implementing this feature can give you and your users a lot of creative power.
 <!--more-->
-In this guide, we will cover how we can build a video streaming functionality using a simple Spring Boot application and a Javascript frontend. 
+In this guide, we will cover how we can build a video streaming functionality using a simple Spring Boot application and a Javascript frontend.
 
 We will also discuss what our client and server are doing behind the scenes to make this possible. Finally, as a bonus, we will see how we can write automated tests for our backend.
 
@@ -49,38 +49,38 @@ First, we need to understand and plan how the entire application will function.
 In this section, we will discuss all the design specifications and inner workings of this application. This will include client-server interactions and functionality.
 
 #### Design specifications
-For this guide, our application will only implement video file uploads and video streaming capabilities. 
+For this guide, our application will only implement video file uploads and video streaming capabilities.
 
 From this foundation, you may add other essential features of a larger application such as authentication, authorization, a pretty UI, updating and deleting videos, etc.
 
 #### Client-side architecture
-For file upload, we'll utilize a form whose fields will be saved on our server. For the video file, we'll use an input field that accepts *mp4* files and a text input field as the video name. 
+For file upload, we'll utilize a form whose fields will be saved on our server. For the video file, we'll use an input field that accepts *mp4* files and a text input field as the video name.
 
 The data we send over will be regarded as multipart form data. You can read more about image file uploads [here](https://www.section.io/engineering-education/working-with-images-in-spring-boot/).
 
 For those unaware, each field in the form is separated by a specific delimiter that is selected by the browser. In the case of a video file, it will be sent over as bytes.
 
-To display saved videos, our frontend application will send a request to the server to retrieve all names of the videos on the database. 
+To display saved videos, our frontend application will send a request to the server to retrieve all names of the videos on the database.
 
-To play a specific video, we send another request to the server with the name of the video in the URL as a path variable. 
+To play a specific video, we send another request to the server with the name of the video in the URL as a path variable.
 
 In the UI, we'll have a list of the names of all of the videos we saved each being a link. Each of these links will direct us back to the current page but with a query, parameter added specifying the video to play.
 
-Finally, our frontend will then send a request to the backend to retrieve the desired video based on the query parameter. 
+Finally, our frontend will send a request to the backend to retrieve the desired video based on the query parameter.
 
-Note that we won't be downloading the video in its entirety. Instead, we will be retrieving specific ranges of bytes based on how far the user has watched the video. This is the standard for video streaming. Downloading a video in its entirety can be time-consuming, especially for longer ones. 
+Note that we won't be downloading the video in its entirety. Instead, we will be retrieving specific ranges of bytes based on how far the user has watched the video. This is the standard for video streaming. Downloading a video in its entirety can be time-consuming, especially for longer ones.
 
 To do this, the browser will use a *range* header to tell our server what parts of the video to retrieve. Luckily, with an HTML video element, our browser will handle this automatically.
 
 #### Server-side architecture
-For the backend, we will set up the following REST endpoints to talk to our frontend: 
+For the backend, we will set up the following REST endpoints to talk to our frontend:
 - `/video` endpoint for posting videos.
-- `/video/{name}` endpoint where *name* is the name of the video to retrieve. 
-- `/video/all` endpoint to get the names of all saved videos. 
+- `/video/{name}` endpoint where *name* is the name of the video to retrieve.
+- `/video/all` endpoint to get the names of all saved videos.
 
 To keep things simple, users will have access to all videos. Therefore, we don’t need to create security systems. However, for a fully fleshed-out application, you should implement some form of authentication.
 
-As for the lower-level details, we'll have to consider what database to use and how we’ll read the *range* header to send the requested parts of a video. 
+As for the lower-level details, we'll have to consider what database to use and how we’ll read the *range* header to send the requested parts of a video.
 
 For this simple application, it's more convenient to use an `H2` database that is easy to set up. Spring will thankfully do the heavy lifting for us.
 
@@ -121,7 +121,7 @@ public class Video{
 }
 ```
 
-Notice here that we have a `data` field of the type `byte` array, annotated with `@Lob`. This is how Hibernate will map the video byte data to a form readable using Java code. 
+Notice here that we have a `data` field of the type `byte` array, annotated with `@Lob`. This is how Hibernate will map the video byte data to a form readable using Java code.
 
 The `@Lob` annotation simply means that when saved to the database, it will take on a type of *BLOB* (binary large object) in the database table.
 
@@ -148,7 +148,7 @@ public interface VideoRepo extends JpaRepository<Video, Long> {
 }
 ```
 
-Here, we created a few custom abstract methods that suit the requirements of our application. Notably, the last method `getAllEntryNames` uses a native query (a query specific to the database we’re using) using the `@Query` annotation. 
+Here, we created a few custom abstract methods that suit the requirements of our application. Notably, the last method `getAllEntryNames` uses a native query (a query specific to the database we’re using) using the `@Query` annotation.
 
 From the `value` field, you can see that we use our own SQL query to get the name column of our video table. With the magic of Spring Data JPA, these three methods will be implemented for us.
 
@@ -172,7 +172,7 @@ public interface VideoService {
 }
 ```
 
-> Note that with Spring, it is best practice to base your services on interfaces and inject beans of that generic interface instead of its implementations. This way, you have the flexibility to create environment-specific types of that interface and easily inject them throughout the application where appropriate. 
+> Note that with Spring, it's best practice to base your services on interfaces and inject beans of that generic interface instead of its implementations. This way, you have the flexibility to create environment-specific types of that interface and easily inject them throughout the application where appropriate.
 
 Since you were injecting a bean as a generic interface you can quickly switch implementations based on the environment. This can also help if you need to deprecate a specific instance without breaking other code.
 
@@ -234,7 +234,7 @@ public class VideoAlreadyExistsException extends RuntimeException {
 }
 ```
 
-With the `@ResponseStatus` annotation, we specify the HTTP status code to send if this exception is thrown while handling a request. 
+With the `@ResponseStatus` annotation, we specify the HTTP status code to send if this exception is thrown while handling a request.
 
 We also specify with the `reason` parameter a message to send to the client in the end response. Note that for the client to see this message, we must set the following property in our `application.properties` file:
 
@@ -286,7 +286,7 @@ public class VideoController {
 ```
 
 ### Building the client application
-For our client application, we will have all of the functionality on a single HTML file to make things simple. 
+For our client application, we will have all the functionality on a single HTML file to make things simple.
 
 This will include the form to save new videos, the video player, and the list of videos. The resulting HTML would look like this:
 
@@ -332,9 +332,9 @@ This will include the form to save new videos, the video player, and the list of
 </body>
 </html>
 ```
-The unordered list with id `your-videos` is left blank since we will be populating it dynamically using JavaScript. 
+The unordered list with id `your-videos` is left blank since we will be populating it dynamically using JavaScript.
 
-Similarly, we keep the header with id `now-playing` blank so we can set its contents based on the video being played. 
+Similarly, we keep the header with id `now-playing` blank, so we can set its contents based on the video being played.
 
 Additionally, the video element will be left hidden unless the user specifies a video to watch via a query parameter. The CSS for this would look like so:
 
@@ -388,9 +388,9 @@ fetch('http://localhost:8080/video/all')
     });
 ```
 
-In the above code, we send a GET request to our server at `http://localhost:8080/video/all` using fetch. 
+In the above code, we send a GET request to our server at `http://localhost:8080/video/all` using fetch.
 
-The resulting JSON response is an array of strings of the names of the videos we saved. For each of these strings, we make `li` elements containing links to the current page. 
+The resulting JSON response is an array of strings of the names of the videos we saved. For each of these strings, we make `li` elements containing links to the current page.
 
 For each of these links, we append a `video` query parameter whose value is the corresponding string in the array. If the array is empty, we add a message in our list indicating that no videos were found.
 
@@ -407,7 +407,7 @@ if(queryParams.video){
 }
 ```
 
-First, we check if the video query parameter exists. If so, we set the `src` attribute of the video element to be the `URL `to retrieve it from the backend. 
+First, we check if the video query parameter exists. If so, we set the `src` attribute of the video element to be the `URL `to retrieve it from the backend.
 
 From there, we make the video player visible and add a title indicating what video is being played.
 
@@ -427,7 +427,7 @@ form.addEventListener('submit', ev => {
 });
 ```
 
-Here, we add an event listener that will be invoked when we submit our form. We first need to prevent the default submission behavior to ensure our planned activity works. 
+Here, we add an event listener that will be invoked when we submit our form. We first need to prevent the default submission behavior to ensure our planned activity works.
 
 Then, we create a new `FormData` object to send as our request body. Finally, once the response comes back, we refresh the page to allow our app to show a new list of videos.
 
@@ -435,27 +435,27 @@ Now that we have the application created, open the network tab in your dev tools
 
 ![network-info](/engineering-education/building-a-video-streaming-app-with-spring/network-info.png)
 
-Notice the *206* status code. A quick Google search will tell you this means our request is for partial content. 
+Notice the *206* status code. A quick Google search will tell you this means our request is for partial content.
 
 As discussed, the browser automatically sends a request for only parts of the video we are looking to play. Upon further inspection, you can also find the range header I talked about:
 
 ![header-info](/engineering-education/building-a-video-streaming-app-with-spring/header-info.png)
 
-The above line specifies that we are asking for the very beginning of the video when we sent this request. 
+The above line specifies that we are asking for the very beginning of the video when we sent this request.
 
-Thankfully for us, Spring handled sending the chunks of bytes over for us so we didn’t have to worry about those low-level details. 
+Thankfully for us, Spring handled sending the chunks of bytes over for us so we didn’t have to worry about those low-level details.
 
 If you want to observe this further, you can extract the range header in our backend using the [@RequestHeader annotation](https://www.baeldung.com/spring-rest-http-headers#1-individually).
 
 ### Writing unit tests for our backend
-As a bonus, let's write some unit tests for our application. It's nice to know how to write tests for your applications to identify and remove bugs. 
+As a bonus, let's write some unit tests for our application. It's nice to know how to write tests for your applications to identify and remove bugs.
 
 Writing tests makes it easier to quickly validate your code to ensure you don't accidentally break things in the future.
 
 With Spring, we will be using JUnit and Mockito to help us write our tests. In case you don’t know how to use these tools, I have a guide on how to use them [here](https://www.section.io/engineering-education/introduction-to-junit-and-mockito/).
 
 #### Unit testing our video service
-Note that we'll only write tests for our `VideoServiceImpl` class. 
+Note that we'll only write tests for our `VideoServiceImpl` class.
 
 In our `/src/test/java` folder, create a `VideoServiceImplTest` class and initialize it as follows:
 
@@ -479,7 +479,7 @@ class VideoServiceImplTest {
 }
 ```
 
-Since we are writing unit tests for this class, we should use mocks for any classes that it relies on. This allows us to know that if an error occurs it is because of the `VideoServiceImpl` class and not another class that it utilizes. 
+Since we are writing unit tests for this class, we should use mocks for any classes that it relies on. This allows us to know that if an error occurs it is because of the `VideoServiceImpl` class and not another class that it utilizes.
 
 We ensure this by hard coding the correct behavior in our mocks. In our case, we will have to create a mock for the `VideoRepo` interface that our class uses:
 
@@ -517,7 +517,7 @@ void getVideo() {
    // When our VideoService object calls repo.findByName(testName), return expected
    when(repo.findByName(testName))
            .thenReturn(expected);
-   // When our VideoService object calls repo.existsByName(testName), return true        
+   // When our VideoService object calls repo.existsByName(testName), return true
    when(repo.existsByName(testName))
            .thenReturn(true);
    Video actual = service.getVideo(testName);
@@ -527,9 +527,9 @@ void getVideo() {
 }
 ```
 
-Here, we hard-coded the behavior of our mock using Mockito's `when` method. So we know the `VideoRepo` class our `VideoService` is using is working appropriately. 
+Here, we hard-coded the behavior of our mock using Mockito's `when` method. So we know the `VideoRepo` class our `VideoService` is using is working appropriately.
 
-We then check that the `VideoService` object correctly returns the video retrieved from our repository. 
+We then check that the `VideoService` object correctly returns the video retrieved from our repository.
 
 Finally, we confirm using Mockito's `verify` method that the class calls the `existsByName` and `findByName` methods once.
 
@@ -556,16 +556,16 @@ void saveVideo() throws IOException {
 }
 ```
 ### Writing integration tests for our backend
-Now, let's see how we can write integration tests for that same service. Unlike unit tests, integration tests check the interaction between different components together. 
+Now, let's see how we can write integration tests for that same service. Unlike unit tests, integration tests check the interaction between different components together.
 
-As such, we won't be using mocks for our dependencies and instead will be bringing up the Spring context to inject the actual beans. 
+As such, we won't be using mocks for our dependencies and instead will be bringing up the Spring context to inject the actual beans.
 
 For this case, I will be mocking a `MultipartFile` so we may easily have an instance to pass to a method that we are testing.
 
 #### Integration testing our video service
-To Bring up the Spring context for our test class, we need to add the `@SpringBootTest` annotation on the class level. 
+To Bring up the Spring context for our test class, we need to add the `@SpringBootTest` annotation on the class level.
 
-Additionally, we will be adding the `@Transactional` annotation which will, in this context, roll back any database operations after a test is executed. 
+Additionally, we will be adding the `@Transactional` annotation which will, in this context, roll back any database operations after a test is executed.
 
 This way, database interactions that occur in one test won’t interfere with another since the database will be cleared before each test.
 
@@ -639,11 +639,11 @@ public class VideoServiceImplIT {
 ```
 
 ### Conclusion
-With that, we have discussed how you would develop a full-stack video streaming application with our chosen tech stack. 
+With that, we have discussed how you would develop a full-stack video streaming application with our chosen tech stack.
 
-We also talked about how to upload video files to a database, how to retrieve and play our saved videos, and as a helpful bonus, how we can write tests for our backend. 
+We also talked about how to upload video files to a database, how to retrieve and play our saved videos, and as a helpful bonus, how we can write tests for our backend.
 
-As a further exercise and a potential project, I encourage you to try to build onto the [code](https://github.com/john-amiscaray/video-streaming-demo) we wrote in this tutorial. 
+As a further exercise and a potential project, I encourage you to try to build onto the [code](https://github.com/john-amiscaray/video-streaming-demo) we wrote in this tutorial.
 
 Happy Coding!
 
