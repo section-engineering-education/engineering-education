@@ -2,34 +2,47 @@
 
 ### Introduction
 Angular Heatmap refers to the graphical portrayal of data that uses a system of color-coding to represent different values.
+
 Heatmaps are made use of in various forms of analytics yet are most frequently used to show user behavior particularly webpage templates or webpages.
+
 This tutorial will guide you through the steps needed to make a heatmap and exhibit the elementary usage of heatmap control.
 
 ### Table of content
--[Introduction](#Introduction)
--[Table of content](#Table-of-content)
--[Prerequisite](#Prerequisite)
--[Objective](#objective)
--[Setting up the project](#Setting-up-the-project)
+- [Getting started with Angular heatmap](#getting-started-with-angular-heatmap)
+- [Introduction](#introduction)
+- [Table of content](#table-of-content)
+- [Prerequisites](#prerequisites)
+- [Objectives](#objectives)
+- [Setting up Angular environment](#setting-up-angular-environment)
+- [Adding syncfusion Heatmap package](#adding-syncfusion-heatmap-package)
+- [Register the heatmap module](#register-the-heatmap-module)
+- [Module injection](#module-injection)
+- [Fill the heatmap with data](#fill-the-heatmap-with-data)
+- [Enabling the axis labels](#enabling-the-axis-labels)
+- [Heat map title](#heat-map-title)
+- [Enabling legend](#enabling-legend)
+- [Addition of the data label](#addition-of-the-data-label)
+- [Addition of custom palettes](#addition-of-custom-palettes)
+- [Enabling tooltip](#enabling-tooltip)
+- [Conclusion](#conclusion)
 
-### Prerequisite
+### Prerequisites
 To be guided by this tutorial, you'll need the following;
--basic knowledge in Node.js
--Basic knowledge in typescript and Angular
--Angular CLI locally installed
--Local development environment
+- Basic knowledge of Node.js.
+- Basic knowledge of Typescript and Angular. In this tutorial, we'll be using the Angular CLI 12.
+- Local development environment fully setup.
 
-### Objective
+### Objectives
 At the end of this tutorial, you will be capable of building a reactive web applications using heat maps concept.
 
-### Setting up Angular Environment
+### Setting up Angular environment
 Use Angular CLI to set up your Angular applications. Install the Angular CLI by running the following command.
 
 ```bash
 npm install -g @angular/cli
-
 ```
-create a new angular application by using the  Angular CLI command below.
+
+Create a new Angular application by using the  Angular CLI command below.
 
 ```bash
 ng new my-app
@@ -89,7 +102,7 @@ Now let's use the `npm run start` command to execute the application in the brow
 ```
 npm start
 ```
-### Module Injection
+### Module injection
 Heatmap elements are divided into single feature-wise modules. To use its characteristics, we will inject its feature module with the `HeatMap.Inject()`
 technique. We shall import the aforementioned modules out-of-the heatmap package and introduce them to the heatmap component as shown below.
 The tooltip and legend characteristic of the heat map is used to improve the basic heatmap which is used to envision sales revenue information for a week.
@@ -147,7 +160,7 @@ export class AppComponent{
 
 In the above code snippet, we export the HeatMapModule from the @syncfusion/ej2-angular-heatmap package and import it into the @NgModule.
 
-### enabling the axis labels
+### Enabling the axis labels
 
 we can proceed to add the axis labels to the heat map and set the labels using y and x-axis effects. Axis labels give extra information on the data filled in the heatmap.
 
@@ -237,6 +250,7 @@ yAxis: Object = {
 }
 ```
 In the above example, the heat map title is set to “Sales Revenue per Employee (in 1000 US$)”.
+
 ### Enabling legend
 Apply a legend for the heat map in the `legendSettings` item by setting the `visible` characteristic to true and injecting the `legend` module by use of the `HeatMap.Inject(Legend)` technique.
 
@@ -291,6 +305,7 @@ public legendSettings: Object = {
 };
 }
 ```
+
 ### Addition of the data label
 Include data labels on the heat map to improve its legibility. This can be accomplished by changing the `showLabel   ` property to` true` in the ` cellSettings ` object.
 
