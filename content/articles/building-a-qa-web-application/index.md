@@ -108,7 +108,7 @@ Results:
  'score': 0.27500787377357483,
  'start': 443}
 ```
-The model seems to be giving us the right answers by simply fetching context from the paragraph. This is so nice! We could take this a step further a build a web application that enables users to interact with the model easily. This is where Anvil comes in handy.
+The model seems to be giving us the answers by simply fetching context from the paragraph. This is so nice! We can take this a step further. We can build a web interface that enables users to interact with the model easily. This is where Anvil comes in handy.
 
 ### Integrating the model with Anvil app
 [Anvil](https://anvil.works/) is a platform for building full-stack web apps entirely in Python. It makes it easy to build and deploy full-stack machine learning apps. It is easy-to-use and open-source. We will use the framework for this build.
