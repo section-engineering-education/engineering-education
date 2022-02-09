@@ -1,4 +1,22 @@
-Prophet is a library developed by Facebook that is ideal for performing time series forecasting. It is used to forecast anything that has a time series trend such as the weather and sales. This tutorial will leverage this library to accurately estimate sales trends. We will use the Python programming language for this build.
+---
+layout: engineering-education
+status: publish
+published: true
+url: /sales-forecasting-with-prophet/
+title: Sales Forecasting with Prophet in Python
+description: This tutorial will leverage the Prophet library to accurately estimate sales trends.
+author: monica-dalmas
+date: 2022-02-14T00:00:00-10:00
+topics: [Machine Learning]
+excerpt_separator: <!--more-->
+images:
+
+  - url: /engineering-education/sales-forecasting-with-prophet/hero.png
+    alt: Sales Forecasting with Prophet in Python Hero image
+---
+Prophet is a library developed by Facebook that is ideal for performing time series forecasting. It is used to forecast anything that has a time series trend such as the weather and sales. 
+<!--more-->
+This tutorial will leverage this library to accurately estimate sales trends. We will use the Python programming language for this build.
 
 ### Prerequisite
 To follow along, a reader needs to be familiar with:
