@@ -56,8 +56,8 @@ We will use the `pandas` library to read in our `csv` file.
 ```python
 dataframe = pd.read_csv('transactions.csv')
 ```
-We load in our data and save it inside a variable called `dataframe`. We can check the first five rows of data using pandas `head()` method.
-> You can use `tail()` method to check the last five rows.
+We load in our data and save it inside a variable called, `dataframe`. We can check the first five rows of data using the pandas `head()` method.
+> You can use the `tail()` method to check the last five rows.
 
 ```python
 dataframe.head()
