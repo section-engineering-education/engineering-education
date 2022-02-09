@@ -7,7 +7,7 @@ title: How Big Data Is Helping Fight Sleep Disorders
 description: This article will discuss how Big Data is currently being used to help fight sleeping disorders.
 author: steve-nzovi
 date: 2022-02-09T00:00:00-10:00
-topics: [DevOps]
+topics: []
 excerpt_separator: <!--more-->
 images:
 
