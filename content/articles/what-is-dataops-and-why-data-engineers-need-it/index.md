@@ -14,7 +14,7 @@ images:
   - url: /engineering-education/what-is-dataops-and-why-data-engineers-need-it/hero.jpg
     alt: What is DataOps and why Data Engineers need it example image
 ---
-Data is the most valuable commodity globally, and it is growing at high speed because of the internet. The volume, velocity, and variety of data increases as more data is generated every day. Allowing for more advanced analytics is important. A way to monetize that data through building powerful analytics is highly desirable. 
+Data is the most valuable commodity globally, and it is growing at high speed because of the internet. The volume, velocity, and variety of data increases as more data is generated daily. Allowing for more advanced analytics is important. A way to monetize that data through building powerful analytics is highly desirable. 
 <!--more-->
 Companies are spending more effort on data analysis projects due to the complexity of data properties, advanced technology, changing business needs, and the interest of diverse stakeholders.
 
