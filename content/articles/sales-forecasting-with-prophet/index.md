@@ -27,7 +27,7 @@ To follow along, a reader needs to be familiar with:
 ### Outline
 - [Installing and importing required dependencies](#installing-and-importing-required-dependencies)
 - [Loading data into our notebook](#loading-data-into-our-notebook)
-- [Data preprocessing](#data-pre-processing)
+- [Data preprocessing](#data-preprocessing)
 - [Training the time series model](#training-the-time-series-model)
 - [Making predictions and evaluating performance](#making-predictions-and-evaluating-performance)
 - [Wrapping up](#wrapping-up)
@@ -48,7 +48,7 @@ from prophet import Prophet
 - `pandas` allows us to bring in tabular data.
 - `prophet` allows us to import the Prophet library into our Google Colab.
 
-The next thing that we are going to do is to bring our data into the notebook. We will use store sales [transaction data](https://www.kaggle.com/c/store-sales-time-series-forecasting/data?select=transactions.csv) from Kaggle. The dataset includes dates, store and product information, and sales numbers. It contains four years' worth of sales data sold at Favorita stores located in Ecuador. You'll need to download the data and upload it into your Colab. 
+Let's bring our data into the notebook. We will use store sales [transaction data](https://www.kaggle.com/c/store-sales-time-series-forecasting/data?select=transactions.csv) from Kaggle. The dataset includes dates, store and product information, and sales numbers. It contains four years' worth of sales data sold at Favorita stores located in Ecuador. You'll need to download the data and upload it into your Colab. 
 
 ### Loading data into our notebook
 We will use the `pandas` library to read in our `csv` file.
