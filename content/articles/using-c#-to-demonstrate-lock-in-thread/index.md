@@ -4,9 +4,9 @@ status: publish
 published: true
 url: /using-c#-to-demonstrate-lock-in-thread/
 title: Using C# to demonstrate Lock in Thread
-description: This article will explain how to use the lock keyword to obtain a lock for a thread. Lock makes it possible to block a code section while working with another thread.
+description: This article will discuss how to use the lock keyword to obtain a lock for a thread. Lock makes it possible to block a code section while working with another thread.
 author: stanley-nganga
-date: 2022-02-07T00:00:00-13:30
+date: 2022-02-10T00:00:00-19:30
 topics: [Languages]
 excerpt_separator: <!--more-->
 images:
@@ -14,7 +14,7 @@ images:
   - url: /engineering-education/using-c#-to-demonstrate-lock-in-thread/hero.jpg
     alt: Using C# to demonstrate Lock in Thread Hero Image
 ---
-A lock is a keyword shortcut for obtaining a lock for one thread. Lock makes it possible to block a code section while working with another thread.
+A lock is a keyword shortcut for obtaining a lock for one thread. The lock keyword makes it possible to block a section of code while working with another thread.
 <!--more-->
 To enter a section of code where an existing thread already exists, the other thread must wait until the previous thread's execution completes. As soon as the current thread in the function completes, the lock is released. 
 
@@ -22,7 +22,7 @@ Thread safety in C# is done via the monitor and lock approach. Execution of one 
 
 ### Table of contents
 - [C# lock in thread](#c-lock-in-thread)
-- [Working of lock in C#](#working-of-lock-in-c)
+- [Working of lock keyword in C#](#working-of-lock-keyword-in-c)
 - [C# lock implementation](#c-lock-implementation)
 - [Understanding monitor in C#](#understanding-monitor-in-c)
 - [Situations not to use the lock keyword](#situations-not-to-use-the-lock-keyword)
@@ -38,11 +38,11 @@ Common locking structures include:
 - Lock
 
 #### Mutex vs Lock
-It's important to note that lock is a compiler keyword rather than a class name. This is a convenient wrapper if you want to use `Monitor` but don't know how to. 
+It is important to note that lock is a compiler keyword rather than a class name. This is a convenient wrapper if you want to use `Monitor` but don't know how to. 
 
 The `Monitor` and `Lock` keywords are `AppDomain-only`. We manage the lock and keep the monitor's identification using an instantiated object (a memory location reference).
 
-The Mutex, however, is a `.Net` wrapper over an OS mechanism for system-wide synchronization. A mutex is a locking technique for synchronizing resource access. It's the same operating system mutex for two mutexes addressing the same data.
+The `Mutex`, however, is a `.Net` wrapper over an OS mechanism for system-wide synchronization. A mutex is a locking technique for synchronizing resource access. It's the same operating system mutex for two mutexes addressing the same data.
 
 Less time and effort are required to build the lock. The mutex lock, which encompasses numerous computer processes, has a function.
 
@@ -53,11 +53,10 @@ lock(object_name) statement_block
 ```
 
 We will explain the syntax in situations where:
-
 - `object_name` - This is an expression to which the object to be locked is specified. It must be a reference type expression.
 - `statement_block` - This specifies the code block to run after a thread lock is gained.
 
-### Working of lock in C#
+### Working of lock keyword in C#
 This section will look at the C# equivalent of a lock. This is to learn how locks operate in C#.
 - Using a lock restricts concurrent access to a code block. This is to prevent other threads from interfering.
 - To prevent other threads from interfering with the locked one, they must wait or be halted until it is done.
@@ -65,7 +64,7 @@ This section will look at the C# equivalent of a lock. This is to learn how lock
 - The lock is released once the current thread ends, enabling fresh threads to execute.
 
 ### C# lock implementation
-To understand lock implementation, Let's do a C# thread without the lock first. The code sample below shows multithreading in C# without a lock:
+To understand lock implementation, let us create a C# thread without the lock first. The code sample below shows multithreading in C# without a lock:
 
 ```c#
 using System;
@@ -152,7 +151,7 @@ namespace Threading_with_lock
 }
 ```
 
-The code above will output:
+Output:
 
 ```bash
 The output will be: 4
@@ -163,7 +162,7 @@ The output will be: 5
 The output will be: 6
 ```
 
-The preceding program declares a `Threading_with_lock` namespace. Afterwards, a `lookup` class is generated and a lock-defining object is built. 
+The preceding program declares a `Threading_with_lock` namespace. Afterward, a `lookup` class is generated and a lock-defining object is built. 
 
 A display method is created and executed with the lock to prevent other threads from interfering with the current thread's execution. After the object is created, the keyword `lock` encrypts it. Because we used the lock on display method, the results appear sequentially.
 
