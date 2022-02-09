@@ -197,7 +197,7 @@ This plot could give you a lot more information about the sales data. For exampl
 Please find the complete code for this tutorial [here](https://colab.research.google.com/drive/1kmb4zguNvYZ4LqGQZAUhYgS_ZZNz-sMg?usp=sharing).
 
 ### Wrapping up
-That's sales forecasting using the Prophet model in a nutshell. This tutorial is meant to introduce you to time series forecasting using Prophet. This should only introduce you to how to use the model in a project and is in no way to be used for production purposes. To use the model for production, you'll need to do more research on it. You can also take a look at the [Neural Prophet](https://neuralprophet.com/html/index.html) library which is an extension of Prophet as it adds neural networks to the mix.
+That's sales forecasting using the Prophet model in a nutshell. This tutorial introduces you to time series forecasting using Prophet. It should only introduce you to how to use the model in a project, and is in no way to be used for production purposes. To use the model for production, you'll need to do more research on it. You can also read about the [Neural Prophet](https://neuralprophet.com/html/index.html) library. It is an extension of Prophet as it adds neural networks to the mix.
 
 ### Further reading
 - [Prophet](https://research.facebook.com/blog/2017/02/prophet-forecasting-at-scale/)
