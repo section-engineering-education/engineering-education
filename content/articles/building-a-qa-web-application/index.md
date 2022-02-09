@@ -50,7 +50,7 @@ Those are the two main dependencies that we will use in this tutorial. Let's go 
 ```python
 from transformers import AutoModelForQuestionAnswering, AutoTokenizer, pipeline
 ```
-- The `AutoTokenizer` allows us to convert natural language into tokens which can then be used by the NLP model.
+- The NLP model uses the `AutoTokenizer` to convert natural language into tokens.
 - The `AutoModelForQuestionAnswering` allows us to load our model.
 - The `pipeline` allows us to use the model.
 
