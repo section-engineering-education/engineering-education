@@ -127,7 +127,7 @@ When combining these two matrices, `stdcol` and `stdrow`, we get the feature vec
 %Finding standard deviation of wavelet coefficients
 stdcol = std(wc); %Column wise
 wcc = (wc');
-tdrow = std(wcc); %row wise
+stdrow = std(wcc); %row wise
 fvstd = [stdcol stdrow]; %Feature vector using STD
 X(count, :) = fvstd; %Saving all feature vector
 end
