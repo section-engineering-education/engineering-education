@@ -5,36 +5,33 @@ With the `database first`, we start with the database. We design our tables usin
 With the `code first `, we start with the code. We create the domain classes.  The Entity-Framework generates the database table for us. 
 
 With the `model first`, we use a visual designer in visual studio. The visual designer will model classes and their associations. It creates some kind of a UML diagram. Based on this diagram, the entity framework will generate domain classes for us.
-
 In this article, we’ll learn how to build a domain model for our API using the `code first` workflow.
-
+### Prerequisites
+To be able to follow this article well, one needs:
+1. To have [Visual Studio](https://visualstudio.microsoft.com/) installed.
+2. A basic understanding of C# and .NET technology
 ### Key takeaways.
+Setting up the project.
 
-Setting up the domain Model.
+Setting up the domain model.
 
-Adding new Classes.
-
+Adding new classes.
 - The best way to name migrations.
-
 - How to use an existing migration to do another similar migration.
-
 - How to populate a database table with data using code-first.
 
 Modifying an existing class.
-
 - Ways one can override the conventions to change database tables in EF code first migration
-
 - Different Methods applied during modification
 
 Deleting an existing class.
-
 - How to use Entity framework code-first to preserve data before deleting a table.
 
 Recover from mistakes.
 
-### Setting up the domain Model.
+### Setting up the project.
 
-With code first, we start with the code. We won't go to the management studio to create a new database. Instead, we are going to create new classes also called the domain model. The domain model will have many classes and associations between them. We will then add these classes to our database.
+With code first, we start with the code. We won't go to the management studio to create a new database. Instead, we are going to create new classes also called the `domain model`. The domain model will have many classes and associations between them. We will then add these classes to our database.
 
 In visual studio 2019, let's create our new API application.
 
@@ -56,7 +53,7 @@ In visual studio 2019, let's create our new API application.
 
 With this, we now have our API project. We now need to configure a few things in our new project. The first thing is our models and then add them to our database. We will be building a simple domain where students can purchase a course or courses. 
 
-### Domain Model Setup
+### Domain model setup
 
 1. In visual studio, inside our API project, navigate to the solution explorer as shown.
 
@@ -162,7 +159,7 @@ Let us take a look at the `Tag` class. It has the following properties. `Id`, an
 
 ```
 
-#### Implement a Many-to-Many relationship in EntityFramework-Core
+#### Implement a many-to-many relationship in entityFramework-core
 
 In Entity Framework 6, it was okay to have a many-to-many relationship between classes. Implementing our domain models the way we have done for the tag and course would have worked. EF-6 would have created a mapping table. This is between the courses and the tags tables called `CoursesTags`table. EF-Core does not have many-to-many support. We have to create the mapping class in the middle of our relationship. 
 
@@ -214,7 +211,7 @@ Finally, we look at our CourseLevel enumeration. It has different course levels.
 
 Our model creation is done. Next we need to create a [#DB context](https://www.entityframeworktutorial.net/entityframework6/dbcontext.aspx). This will enable us to push our models to the database. To do that, open up the SQL server. 
 
-#### Setup Database Connection.
+#### Setup database connection.
 
 1. To do that, open up the SQL server. Click on the connect icon as shown below.
 
@@ -350,7 +347,7 @@ Here is the code.
 
 We are all set up. We now need to push the classes in our model to the database. 
 
-### Push Model to the database.
+### Push model to the database.
 
 1. Go to the `Tools` tab on the menu bar.
 
@@ -605,7 +602,7 @@ With this, let us run this migration on the database.
 
 ![CodeFirst Database Tables](/engineering-education/building-model-using-code-first/db.png) 
 
-### Adding new Classes.
+### Adding new classes.
 
 In visual studio, we are going to create a new class called `Category`. We will assign each course to a category. E.g. web development, mobile development, programming language, etc. 
 
