@@ -6,7 +6,7 @@ url: /anomaly-detection-model-on-time-series-data/
 title: Anomaly Detection Model on Time Series data
 description: This tutorial will guide a reader how to use Facebook Prophet to build an anomaly detection model..
 author: charles-ndirutu
-date: 2022-01-27T00:00:00-04:00
+date: 2022-02-09T00:00:00-12:00
 topics: [Machine Learning]
 excerpt_separator: <!--more-->
 images:
@@ -14,7 +14,8 @@ images:
   - url: /engineering-education/anomaly-detection-model-on-time-series-data/hero.jpg
     alt: Anomaly Detection Model on Time Series data Hero Image
 ---
-In machine learning, a time series is a series of data points that are in successive order over a given time. The time can be minutes, hours, days, weeks, or years.<!--more-->
+In machine learning, a time series is a series of data points that are in successive order over a given time. The time can be minutes, hours, days, weeks, or years.
+<!--more-->
 Time series models analyze datasets and extract meaningful data characteristics. This makes the model understand patterns from data and gain useful insights. The model uses the knowledge gained to make future predictions. In time series modeling, we use diagrams and plots to show the predicted values.  
 
 The application of time series is as follows:  Weather forecasting, stock price prediction, forex trading, the field of science and engineering.   
@@ -34,7 +35,7 @@ When building a time series model, the dataset may have anomalies or outliers. A
 - [Model fitting](#model-fitting)
 - [Making predictions using the test dataset](#making-predictions-using-the-test-dataset)
 - [Plotting diagram](#plotting-diagram)
-- [Understanding the predicted values](#understanding-the-predicted-values)
+- [Analyzing the predicted values](#analyzing-the-predicted-values)
 - [Detecting anomalies](#detecting-anomalies)
 - [Scatter plot](#scatter-plot)
 - [Conclusion](#conclusion)
@@ -78,7 +79,7 @@ Matplotlib is a visualization package. We use Matplotlib to plot line graphs, fi
 Numpy will convert the time series dataset into arrays. It also enables us to perform mathematical operations on arrays.
 
 **pandas**
-Pandas perfoms data analysis and manipulation.
+Pandas perform data analysis and manipulation.
 
 **os**
 It enables us to interact with the operating system when in the Google Colab.
@@ -104,7 +105,7 @@ The dataset output is shown below:
 
 ![Dataset structure](/engineering-education/anomaly-detection-model-on-time-series-data/dataset-structure.jpg)
 
-From the image, our dataset has two columns. The `timestamp` column and the `value` column. The `timestamp` column has half-hour intervals. The `value` column shows the number of active taxi drivers every half-hour. The dataset also has `10320` data samples.
+From the image, our dataset has two columns. The `timestamp` and the `value` column. The `timestamp` column has half-hour intervals. The `value` column shows the number of active taxi drivers every half-hour. The dataset also has `10320` data samples.
 
 We need to convert the `timestamp` column to the `datetime` datatype using the following code:
 
@@ -201,7 +202,7 @@ We will initialize our model using the following code:
 ```python
 model = Prophet(changepoint_range=0.95)
 ```
-We use a `changepoint_range=0.95` to increase the confidence interval of our output. The confidence interval determines if a prediction is right or wrong. The higher confidence interval increases the chances of the model making accurate predictions.
+We use a `changepoint_range=0.95` to increase the confidence interval of our output. The confidence interval determines if a prediction is right or wrong. The higher the confidence interval increases, the chances of the model making accurate predictions.
 
 To understand the confidence interval in detail, read this [article](https://towardsdatascience.com/confidence-intervals-for-time-series-data-sharpestminds-slack-chats-4b05e211943a)
 
@@ -256,7 +257,7 @@ digram1 = model.plot(forecast)
 ```
 This will output the following diagram:
 
-![Plot digram](/engineering-education/anomaly-detection-model-on-time-series-data/plot-digram.jpg)
+![Plot diagram](/engineering-education/anomaly-detection-model-on-time-series-data/plot-digram.jpg)
 
 From the image above, the black points are the predicted values. We now need to analyze these values to detect the anomalies in these values.
 
@@ -301,7 +302,7 @@ From the code above, a predicted value `yhat` is an anomaly if the absolute erro
 We can now create a scatter plot to show the detected anomalies.
 
 ### Scatter plot
-To create a scatter plot, use code snippet:
+To create a scatter plot, use this code snippet:
 
 ```python
 fig = px.scatter(outcome.reset_index(), x='ds', y='y', 
@@ -326,9 +327,7 @@ From the code above, we have set `ds` as the x-axis and `y` as the y-axis. The t
 In the image above, the detected anomalies have a red color. The normal data points have a blue color. The scatter plot has helped us to detect the outliers available in our dataset.
 
 ### Conclusion
-In this tutorial, we have learned anomaly detection on time series data. We used the New York Taxi dataset to train our model. Using the Facebook Prophet library, we built a time series model. The model was used to predict the number of active taxi drivers in New York.
-
-We then used a scatter plot to detect anomalies in our dataset. Using this tutorial, a reader should detect anomalies on time series data.
+In this tutorial, we have learned anomaly detection on time series data. We used the New York Taxi dataset to train our model. Using the Facebook Prophet library, we built a time series model. The model was used to predict the number of active taxi drivers in New York. We then used a scatter plot to detect anomalies in our dataset. Using this tutorial, a reader should detect anomalies on time series data.
 
 To access the Google Colab notebook for this tutorial, use this [link](https://colab.research.google.com/drive/15amwA8CdN9AApOoZGnYS3roNMxr6mAcy?usp=sharing)
 
