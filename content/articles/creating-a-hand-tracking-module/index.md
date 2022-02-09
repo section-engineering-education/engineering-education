@@ -3,16 +3,16 @@ layout: engineering-education
 status: publish
 published: true
 url: /creating-a-hand-tracking-module/
-title: Creating A Hand Tracking Module Using Python, openCV, And MediaPipe
-description: In this tutorial, we will discuss how to create a hand tracking module. Hand tracking is the process in which a computer uses computer vision to detect a hand from an input image and keeps focus on the hand's movement.
+title: Creating a Hand Tracking Module Using Python, Opencv, and Mediapipe
+description: This tutorial will discuss how to create a hand tracking module. Hand tracking is the process in which a computer uses computer vision to detect a hand from an input image and keeps focus on the hand's movement.
 author: simon-kiruri
-date: 2022-02-08T00:00:00-10:52
+date: 2022-02-09T00:00:00-11:52
 topics: [Machine Learning]
 excerpt_separator: <!--more-->
 images:
 
   - url: /engineering-education/creating-a-hand-tracking-module/hero.jpg
-    alt: Creating A Hand Tracking Module Using Python, openCV, And MediaPipe Hero Image
+    alt: Creating a Hand Tracking Module Using Python, Opencv, and Mediapipe Hero Image
 ---
 Hand tracking is the process in which a computer uses computer vision to detect a hand from an input image and keeps focus on the hand's movement and orientation. Hand tracking allows us to develop numerous programs that use hand movement and orientation as their input. 
 <!--more-->
@@ -48,17 +48,17 @@ Launch the `Pycharm` app and do the following:
 ![Project](/engineering-education/creating-a-hand-tracking-module/project.png)
 
 2. On the window that appears next, click on create.
-3. Install the two python libraries we discussed. To do so, open the terminal as shown in the screenshot below. Then follow the steps below it.
+3. Install the two python libraries we discussed. To do so, open the terminal as shown in the screenshot below then follow the steps below it.
 
 ![Installation](/engineering-education/creating-a-hand-tracking-module/installation.png)
 
-- Type the following command on the terminal to install `MediaPipe`:
+- Type the following command in the terminal to install `MediaPipe`:
 
 ```bash
 pip install mediapipe
 ```
 
-- To install `openCV` use the following command
+- To install `openCV` use the following command:
 
 ```bash
  pip install opencv-python
@@ -80,7 +80,7 @@ The `21` hand points that `MediaPipe` identifies are shown in the image below:
 The above image shows the hand landmarks that mediapipe uses to identify the hand. The numbered parts are the hand points.
 
 ### Coding
-Pycharm creates a `main.py` file for you automatically after you create a new project. This is where we will write the code below.
+Pycharm creates a `main.py` file for you automatically after you create a new project. This is where we will write our code.
 
 #### Step 1 - Importations and initializations
 
@@ -95,7 +95,7 @@ hands = mpHands.Hands()
 mpDraw = mp.solutions.drawing_utils
 ```
 
-We start by importing the two libraries we discussed. Importing the libraries enables us to use their dependencies. 
+We start by importing the two libraries we discussed. Importing the libraries enables us to use its dependencies. 
 
 We will then create an object `cap` for video capturing. We require the other three objects to manipulate our input using `MediaPipe`.
 
@@ -150,7 +150,7 @@ Feel free to use the number of the hand point you want to circle as they are lis
 
 ```
 
-We use the code above to display the output to the user. The output is a real-time video of the user. It has the user's hands tracked and hand landmarks and connections drawn on the hands. 
+We use the code above to display the output to the user. The output is a real-time video of the user. It has the user's hands tracked, hand landmarks, and connections drawn on the hands. 
 
 The output of this code is shown in the [results](#results) section.
 
@@ -164,7 +164,7 @@ import cv2
 import mediapipe as mp
 ```
 
-We first import the `Python` libraries that we need in our project. This will enable us to use their dependencies.
+We first import the `Python` libraries that we need in our project. This will enable us to use its dependencies.
 
 #### Step 2 - Creating a class that we will use for hand detection
 
@@ -203,9 +203,9 @@ We put `self` before every object to allow access to the methods and the attribu
         return image
 ```
 
-In the code above, we created a method that we will use to specifically track the hands in our input image. The code that goes in this method is the one that converts the image to `RGB`, processes the `RGB` image to locate the hands. 
+In the code above, we created a method that we will use to specifically track the hands in our input image. The code that goes in this method is the one that converts the image to `RGB` and processes the `RGB` image to locate the hands. 
 
-It also draws the hand landmarks on the image, and finally draws the hand connections.
+It also draws the hand landmarks on the image and finally draws the hand connections.
 
 #### Step 4 - Creating a method to find the `x` and `y` coordinates of each hand point
 
@@ -263,7 +263,7 @@ The output of the program and the module will be identical. When each of them ha
 ![Results](/engineering-education/creating-a-hand-tracking-module/results.gif)
 
 ### Conclusion
-You now possess all the skills needed to create a program that performs hand tracking. You also have the skills required to convert the code into a module. 
+With the above, you now possess all the skills needed to create a program that performs hand tracking. You also have the skills required to convert the code into a module. 
 
 Go on and import the module into any `Python` project that requires hand tracking and watch the module perform its magic.
 
