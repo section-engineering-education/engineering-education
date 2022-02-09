@@ -1,4 +1,4 @@
-### A Complete Guide to Bisection Algorithm for Non-Linear Optimization
+### A Beginner's Guide to Nonlinear Optimization with Bisection Algorithm 
 Roots of a function $f(x)$ refers to values of $x$ for which the function equals zero, i.e., $f(x)=0$. Determining the roots of a function is a routine activity in machine learning where we establish a polynomial cost function and then try to find the values, say $x$ such that the cost function is minimal. In practice, we deal with huge datasets, and the models fit on such datasets may involve thousands of parameters that we are required to estimate. It is impossible to find the roots of such function by hand. There exist well-defined algorithms that one can use to determine these parameters to the required accuracy iteratively. 
 
  Some of the most used algorithms in root determining or model optimization are; the Bisection method, [Newton Raphson method](https://brilliant.org/wiki/newton-raphson-method), [Steepset Descent method](https://www.math.usm.edu/lambers/mat419/lecture10.pdf), etc. These methods are used in different scenarios depending on the optimization problem's properties.
