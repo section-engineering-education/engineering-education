@@ -1,6 +1,22 @@
+---
+layout: engineering-education
+status: publish
+published: true
+url: /hyperparmeter-tuning/
+title: Hyperparameter Tuning In Decision Trees and Random Forests
+description: This article will show the reader how to solve a Binary Classification Problem, using a Decision Tree Classifier and Random Forests to solve the over-fitting problem by tuning their hyper-parameter and comparing results.
+author: himani-gulati
+date: 2022-02-08T00:00:00-12:00
+topics: [Machine Learning]
+excerpt_separator: <!--more-->
+images:
 
-
-After years of hard work, we've reached a stage where we are using computers to analyze millions of data points and provide insights that even the human eye couldn't catch. But our Machine Learning Model is only as good as its accuracy on unseen data, i.e "how well our model generalizes". In this article, I'll solve a Binary Classification Problem, using a Decision Tree Classifier and Random Forests to solve the over-fitting problem by tuning their hyper-parameter and comparing results.
+  - url: /engineering-education/hyperparmeter-tuning/hero.jpg
+    alt: Hyperparameter Tuning Example Image
+---
+After years of hard work, we've reached a stage where we are using computers to analyze millions of data points and provide insights that even the human eye couldn't catch. 
+<!--more-->
+But our Machine Learning Model is only as good as its accuracy on unseen data, i.e "how well our model generalizes". In this article, I'll solve a Binary Classification Problem, using a Decision Tree Classifier and Random Forests to solve the over-fitting problem by tuning their hyper-parameter and comparing results.
 
 Before we begin, I expect you to have some working knowledge of python and some basic understanding of what Machine Learning does. If you're new to Decision Trees entirely, you can still go ahead and begin reading. Irrespective, let me begin with a brief introduction to Machine Learning. 
 
