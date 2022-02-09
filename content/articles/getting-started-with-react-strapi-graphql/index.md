@@ -5,7 +5,7 @@ published: true
 url: /getting-started-with-react-strapi-graphql/
 title: Getting Started With React, Strapi, and GraphQL 
 description: In this tutorial will walk through how to get started with React, Strapi, and GraphQL.
-author: kevin-kim
+author: kevin-kimani
 date: 2022-02-10T00:00:00-12:17
 topics: [Languages]
 excerpt_separator: <!--more-->
