@@ -3,10 +3,10 @@ layout: engineering-education
 status: publish
 published: true
 url: /speech-to-text-transcription-model-using-deep-speech/
-title: Speech to Text Transcription Model Using Deep Speech
-description: This tutorial will build a speech to text transcription model using the Deep Speech library.
+title: Speech to Text Transcription Model using Deep Speech
+description: In this tutorial, we will build a speech to text transcription model using the Deep Speech library.
 author: francis-ndiritu
-date: 2022-02-05T00:00:00-18:00
+date: 2022-02-09T00:00:00-11:17
 topics: [Machine Learning]
 excerpt_separator: <!--more-->
 images:
@@ -20,7 +20,7 @@ Speech-to-text models have made users more comfortable when using online voice s
 Speech-to-text transcription is a subset of natural language processing that is used to convert speech to text. Speech may be in form of video or audio files. The model analyses the speech and converts it to the corresponding text.
 
 A speech to text model is applied in various areas such as:
-- Subtitle generation in audio and video files
+- Subtitle generation in audio and video files.
 - Medical sector to convert spoken words to text.
 - Online voice services. It is applied in businesses that use online customer support.
 - Automatic generation of word documents. Using audio and producing word documents instead of typing.
@@ -119,20 +119,15 @@ import os
 import wave
 from IPython.display import Audio
 ```
-**Model**
-It is the function used to initialize our downloaded pre-trained model. It will be used to initialize the downloaded acoustic model.
+**Model** - It is the function used to initialize our downloaded pre-trained model. It will be used to initialize the downloaded acoustic model.
 
-**numpy**
-It is used to convert audio files into an array. It also performs mathematical computation on our audio file.
+**numpy** - It is used to convert audio files into an array. It also performs mathematical computation on our audio file.
 
-**os**
-It enables us to interact with the operating systems. It will enable us to perform core operating functions while in the notebook
+**os** - It enables us to interact with the operating systems. It will enable us to perform core operating functions while in the notebook
 
-**wave**
-This library enables us to read the `WAV` audio format.
+**wave** - This library enables us to read the `WAV` audio format.
 
-**IPython.display**
-This will enable us to display and play the audio file in the Google Colab notebook.
+**IPython.display** - This will enable us to display and play the audio file in the Google Colab notebook.
 
 ### Adding model file paths
 We add the file path for the acoustic and language so that we can be able to use them.
@@ -211,9 +206,9 @@ def real_time_transcription(audio_file):
       offset=end_offset
  return True
 ```
-The function used in named `real_time_transcription`. We pass the `buffer` and `rate` as a parameter. We also add the `read_audio_file` function which is used to read the `WAV` audio file. We set the `batch_size=8196`, the batch size represents the size of the audio. One broken audio chunk will be 8196 bytes.
+The function used is named `real_time_transcription`. We pass the `buffer` and `rate` as a parameter. We also add the `read_audio_file` function which is used to read the `WAV` audio file. We set the `batch_size=8196`, the batch size represents the size of the audio. One broken audio chunk will be 8196 bytes.
 
-The function also has a `while` loop. The `while` loop is used to loop through the audio file. During each loop, it breaks the audio file into the required size (8196 bytes)
+The function also has a `while` loop. The `while` loop is used to loop through the audio file. During each loop, it breaks the audio file into the required size (8196 bytes).
 
 The `feedAudioContent` method feeds the audio chunks into the model for transcription. `intermediateDecode()` will decode the model output and produce the corresponding text. Finally, the function will return the results and print the transcribed text.
 
@@ -261,7 +256,7 @@ From the output above we can see the model was able to do real-time transcriptio
 ### Conclusion
 In this tutorial, we have learned how to do a streaming transcription using Deep Speech. We discussed the types of transcription models. We explored the types of pre-trained Deep Speech models. We use the acoustic and language models to build a model that was able to do real-time transcription.
 
-To access this notebook, click [here](https://colab.research.google.com/drive/16snySXh3E4dFyc6FSqpQhJi4I140YnSN?usp=sharing)
+To access this notebook, click [here](https://colab.research.google.com/drive/16snySXh3E4dFyc6FSqpQhJi4I140YnSN?usp=sharing).
 
 ### References
 - [Acoustic model](https://en.wikipedia.org/wiki/Acoustic_model#:~:text=An%20acoustic%20model%20is%20used,recordings%20and%20their%20corresponding%20transcripts.)
