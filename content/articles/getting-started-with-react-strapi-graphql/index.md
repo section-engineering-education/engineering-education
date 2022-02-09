@@ -1,39 +1,50 @@
-### Getting Started With React, Strapi, and GraphQL
-
-Strapi is a headless CMS(Content Management System) written in JavaScript that enables users to create APIs with ease through a user-friendly interface. In traditional Content Management Systems, the frontend and backend parts of a website are usually bundled together. With a headless CMS, the two parts are separated and we can customize our frontend the way we want and create it with the languages or frameworks that we prefer.
-
+---
+layout: engineering-education
+status: publish
+published: true
+url: /getting-started-with-react-strapi-graphql/
+title: Getting Started With React, Strapi, and GraphQL 
+description: In this tutorial will walk through how to get started with React, Strapi, and GraphQL.
+author: kevin-kim
+date: 2022-02-10T00:00:00-12:17
+topics: [Languages]
+excerpt_separator: <!--more-->
+images:
+  - url: /engineering-education/getting-started-with-react-strapi-graphql/hero.jpeg
+    alt: Getting Started With React, Strapi, and GraphQL Hero Image
+---
+Strapi is a headless CMS(Content Management System) written in JavaScript that enables users to create APIs with ease through a user-friendly interface. 
+<!--more-->
+In traditional Content Management Systems, the frontend and backend parts of a website are usually bundled together. With a headless CMS, the two parts are separated and we can customize our frontend the way we want and create it with the languages or frameworks that we prefer.
 In this article, we will take a look at how we can use the Strapi CMS and React to create a blog web application. You can read more about Strapi in the [official documentation](https://docs.strapi.io/developer-docs/latest/getting-started/quick-start.html).
 
-### Table of Contents
-- [Pre-requisites](#pre-requisites)
-- [Key takeaways](#goals)
-- [Goals](#goals)
+### Table of contents
+- [Prerequisites](#prerequisites)
+- [Key takeaway](#key-takeaway)
 - [Creating a Strapi App](#creating-a-strapi-app)
 - [Creating Content Types](#creating-content-types)
 - [Creating New Blogs](#creating-new-blogs)
-- [Setting Permissions](#setting-permissions)
+- [Setting Up Permissions](#setting-up-permissions)
 - [Installing the GraphQL Plugin](#installing-the-graphql-plugin)
-- [Creating the React Frontend](#creating-the-react-frontend)
+- [Creating a React app](#creating-a-react-app)
 - [Creating Pages](#creating-pages)
 - [Testing the Application](#testing-the-application)
 - [Conclusion](#conclusion)
 
-### Pre-requisites
+### Prerequisites
 To be able to follow along, you needs to have the following:
-
-- React and React hooks knowledge.
+- knowledge on React and React hooks.
 - Basic understanding of [GraphQL](https://graphql.org/learn/).
-- [Node.js](https://nodejs.org/en/download/) is installed on your local computer.
+- [Node.js](https://nodejs.org/en/download/) is installed on your computer.
 - Both yarn and npm enabled to work on the same project. To see how you can enable this, click [here](https://yarnpkg.com/getting-started/install).
 
-### Goals
+### Key takeaway
 This tutorial will help you to:
-
 - Work with a headless CMS.
 - Use GraphQL plugin with the Strapi CMS.
 - Work with Apollo and React.
 
-### Creating a Strapi App
+### Creating a Strapi app
 Open your terminal, navigate to the directory where you want to create the project, and create a folder for the project as shown below:
 
 ```bash
@@ -47,7 +58,7 @@ npx create-strapi-app backend
 You will be given these options:
 ![Installation Type](./section-engineering/getting-started-with-react-strapi-graphql/installation-type.png)
 
-Choose `Quickstart (recommended)` to install Strapi with the recommended settings.
+Choose `Quickstart` to install Strapi with the recommended settings.
 
 Once the installation is done, Strapi will automatically fire up a local development server on `http://localhost:1337/admin/auth/register-admin` which serves the admin backend to us. On this URL, the page shown below will appear. Fill in the required credentials to create an admin user and click on `Let's Start`.
 
@@ -58,10 +69,11 @@ If this does not happen automatically, `cd` into the `backend` folder and run th
 ```bash
 npm run develop
 ```
+
 You will then be redirected to `http://localhost:1337/admin/` which is the Strapi admin dashboard. The dashboard looks like this:
 ![Admin Dashboard](./section-engineering/getting-started-with-react-strapi-graphql/admin.png)
 
-### Creating Content Types
+### Creating content types
 A content type is basically a blueprint for a piece of content. It describes what fields the content should have and the data types. For example, a blog content type might have a title field, a body field, and an author field.
 
 To create a content type, click on the `Content-Type Builder` on the left sidebar. The following screen will appear:
@@ -69,7 +81,7 @@ To create a content type, click on the `Content-Type Builder` on the left sideba
 
 Under `COLLECTION TYPES`, click on `Create new collection type`.
 
-![New Collection TYpe](./section-engineering/getting-started-with-react-strapi-graphql/content-type-builder-screen.png)
+![New Collection Type](./section-engineering/getting-started-with-react-strapi-graphql/content-type-builder-screen.png)
 Under display name, input `blog` as shown above and the other fields will automatically generate their text. Click on `Continue`.
 
 You will then be presented with the following screen where you will choose a field for your content type. Choose `Text`.
@@ -85,9 +97,9 @@ Click on `Add another field` to add other fields. Follow the process and add the
 - Select the field `Rich Text` and give it the name `Body`. This will store the content/body of the blog.
 - Select the field `Text` and give it the name `Author`. This will store the name of the author who wrote the blog.
 
-After you add all the fields, click finish.
+After you've added all the fields, click finish.
 
-### Creating New Blogs
+### Creating new blogs
 To create new blogs which we will later fetch from the frontend, click on `Content Manager` on the sidebar of the admin dashboard and you will be presented with the screen shown below:
 
 ![Add Blogs](./section-engineering/getting-started-with-react-strapi-graphql/add-blogs.png)
@@ -96,7 +108,7 @@ Click on `Create new entry` to add a blog. Input the blog title, body, and autho
 
 To add new blogs, click on the `Back` button at the top and select `Add new entry`. Create as many blogs as you wish. For the purpose of this tutorial, I have created 3 blogs.
 
-### Setting permissions
+### Setting up permissions
 By default, Strapi protects content types so that they can't be accessed by the public. To be able to access the data in Strapi from the frontend, we will need to update permissions.
 
 To do this, on the admin dashboard, click `Settings`. Under `USERS & PERMISSIONS PLUGIN`, select `Roles` and you will be presented with the screen below:
@@ -115,8 +127,8 @@ Run the command below to install GraphQL
 yarn strapi install graphql
 ```
 
-### Creating the React frontend
-Now that the backend is all set up, we can create the frontend. To create the React frontend, run the code below in the appropriate folder.
+### Creating a React app
+Now that the backend is all set up, we can now create the frontend. To create the React app, run the code below in the appropriate folder.
 
 ```bash
 npx create-react-app frontend
@@ -156,7 +168,7 @@ export default function Header() {
 In the code above, we just create a simple header for our web application and link it to the homepage.
 
 ### Creating pages
-In the pages folder, create two new files namely `Homepage.js`(This will be used to display a list of all the blogs) and `BlogDetails.js`(This will be used to display the content of a single blog).
+In the pages folder, create two new files namely `Homepage.js` (This will be used to display a list of all the blogs) and `BlogDetails.js`(This will be used to display the content of a single blog).
 
 Open the `Homepage.js` file and paste in the code below:
 
@@ -221,6 +233,7 @@ console.log(data)
   );
 }
 ```
+
 **Code explanation**
 - `gql` is used by apollo to convert a query string into a format that apollo can understand.
 - In the code above, we write a query to fetch all the blogs from the backend, store it in a `const BLOGS`, and then use the `useQuery()` hook to execute the query.
@@ -285,7 +298,7 @@ export default function BlogDetails() {
 }
 ```
 
-**Code explanation*
+**Code explanation**
 - In the above code, we use the `useParams()` hook to get the parameters from the URL.
 - We then use the `useQuery()` hook to pass the `id` of the blog we want to fetch, execute the query and store the results in an object.
 - After the data has been successfully fetched, we display it on the webpage.
@@ -343,10 +356,12 @@ To test the application, start the React app by running:
 ```bash
 npm start
 ```
-Make sure the Strapi backend is also running. If it is not run it using:
+
+Make sure the Strapi backend is also running. If it is not, run it using:
 ```bash
 npm run develop
 ```
+
 Now open `localhost:3000` on the browser. You will see the following:
 ![All Blogs](./section-engineering/getting-started-with-react-strapi-graphql/allblogs.png)
 Note that the content will be different based on what you put in your backend.
@@ -359,3 +374,6 @@ This shows that the routing is working correctly.
 In this tutorial, we have covered how we can create a blog web app using Strapi and React. We have also covered how we can use GraphQL to fetch the exact data that we need from the backend and style our web app with TaiwindCSS.
 
 Feel free to build on the project and add as many features as you wish. You can also lookup more the more complicated Strapi concepts like relational data and implement it in the project. More information about Strapi can be found in the [offcial documentation](https://docs.strapi.io/developer-docs/latest/getting-started/introduction.html).
+
+---
+Peer Review Contributions by: [Jethro Magaji](/engineering-education/authors/jethro-magaji/)
