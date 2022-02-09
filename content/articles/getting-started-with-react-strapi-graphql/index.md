@@ -96,7 +96,7 @@ Click on `Create new entry` to add a blog. Input the blog title, body, and autho
 
 To add new blogs, click on the `Back` button at the top and select `Add new entry`. Create as many blogs as you wish. For the purpose of this tutorial, I have created 3 blogs.
 
-### Setting Permissions
+### Setting permissions
 By default, Strapi protects content types so that they can't be accessed by the public. To be able to access the data in Strapi from the frontend, we will need to update permissions.
 
 To do this, on the admin dashboard, click `Settings`. Under `USERS & PERMISSIONS PLUGIN`, select `Roles` and you will be presented with the screen below:
@@ -107,7 +107,7 @@ Click on `Public` and under permissions select `Blog` and tick the `find` and `f
 
 Click `Save`. The above configuration will enable the frontend to retrieve a single as well as many blogs.
 
-### Installing the GraphQL Plugin
+### Installing the GraphQL plugin
 To use GraphQL in our Strapi app, we need to install the plugin. Open the terminal where the Strapi app is running and press `Ctrl + C` to stop the server.
 
 Run the command below to install GraphQL
@@ -115,7 +115,7 @@ Run the command below to install GraphQL
 yarn strapi install graphql
 ```
 
-### Creating the React Frontend
+### Creating the React frontend
 Now that the backend is all set up, we can create the frontend. To create the React frontend, run the code below in the appropriate folder.
 
 ```bash
@@ -128,9 +128,11 @@ After the React application has been successfully created, we need to install th
 - react-router-dom - To set up routing in the web application.
 
 Run the code below to install them:
+
 ```bash
 npm install @apollo/client graphql react-router-dom
 ```
+
 We will be using TailwindCSS to style our React application. Click [here](https://tailwindcss.com/docs/guides/create-react-app) to learn how to setup React with TailwindCSS.
 
 After the installation is complete, create two new folders in the `src` directory with the names `components` and `pages`. 
@@ -153,10 +155,11 @@ export default function Header() {
 ```
 In the code above, we just create a simple header for our web application and link it to the homepage.
 
-### Creating Pages
+### Creating pages
 In the pages folder, create two new files namely `Homepage.js`(This will be used to display a list of all the blogs) and `BlogDetails.js`(This will be used to display the content of a single blog).
 
 Open the `Homepage.js` file and paste in the code below:
+
 ```js
 //Make the necessary imports
 import React from 'react';
@@ -217,9 +220,8 @@ console.log(data)
       </div>
   );
 }
-
 ```
-#### Code Explanation
+**Code explanation**
 - `gql` is used by apollo to convert a query string into a format that apollo can understand.
 - In the code above, we write a query to fetch all the blogs from the backend, store it in a `const BLOGS`, and then use the `useQuery()` hook to execute the query.
 - The `useQuery()` is a React hook. It shares the graphql data with our UI. 
@@ -282,13 +284,14 @@ export default function BlogDetails() {
   );
 }
 ```
-#### Code Explanation
 
+**Code explanation*
 - In the above code, we use the `useParams()` hook to get the parameters from the URL.
 - We then use the `useQuery()` hook to pass the `id` of the blog we want to fetch, execute the query and store the results in an object.
 - After the data has been successfully fetched, we display it on the webpage.
 
 Lastly, open the `App.js` file and paste in the code below:
+
 ```js
 //Make the necessary imports
 import Header from "./components/Header";
@@ -329,12 +332,13 @@ function App() {
 
 export default App;
 ```
-#### Code Explanation
+
+**Code explanation**
 - In the above code, we initialize Apollo Client and pass a configuration object with `uri` and `cache`.
 - `uri` is used to specify the URL of our GraphQL server. `cache` specifies where Apollo Client will cache query results after fetching them.
 - We then wrap everything in the correct order and set up routing.
 
-### Testing the Application
+### Testing the application
 To test the application, start the React app by running:
 ```bash
 npm start
