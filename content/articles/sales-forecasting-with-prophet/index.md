@@ -184,3 +184,6 @@ That's sales forecasting using the Prophet model in a nutshell. This tutorial is
 ### Further reading
 - [Prophet](https://research.facebook.com/blog/2017/02/prophet-forecasting-at-scale/)
 - [Forecasting at scale](https://facebook.github.io/prophet/)
+
+---
+Peer Review Contributions by: [Wilkister Mumbi](/engineering-education/authors/wilkister-mumbi/)
