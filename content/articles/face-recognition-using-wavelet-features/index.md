@@ -3,10 +3,10 @@ layout: engineering-education
 status: publish
 published: true
 url: /face-recognition-using-wavelet-features/
-title: Face Recognition Using Wavelet Features
+title: Face Recognition using Wavelet Features
 description: In this tutorial, a face detection scheme is implemented using the wavelet features. We use wavelet features to extract facial features and use principal component analysis to reduce the wavelet feature vectors.
 author: simon-mwaniki
-date: 2022-01-30T00:00:00-11:10
+date: 2022-02-09T00:00:00-06:27
 topics: [Languages]
 excerpt_separator: <!--more-->
 images:
@@ -14,19 +14,19 @@ images:
   - url: /engineering-education/face-recognition-using-wavelet-features/hero.jpg
     alt: Face Recognition Using Wavelet Features Hero Image
 ---
-Face recognition is a system that can match human faces from images to video frames against those in a database. Wavelets are oscillations having amplitudes beginning from zero, increases or decreases, then back to zero.
+Face recognition is a system that can match human faces from images to video frames against those in a database. Wavelets are oscillations, having amplitudes beginning from zero, increases or decreases, then back to zero.
 <!--more-->
 Wavelet coefficients are used to extract features from hyperspectral data. These extracted features are called wavelet features.
 
 In this tutorial, a face detection scheme is implemented using the wavelet features. We use wavelet features to extract facial features and use principal component analysis to reduce the wavelet feature vectors.
 
-The proposed scheme is very robust and capable of recognizing the faces even if some changes occur in the face, such as growing beards, mustache e.t.c
+The proposed scheme is very robust and capable of recognizing the faces even if some changes occur in the face, such as growing beards, mustache, etc ...
 
 ### Prerequisites
-To follow along with this tutorial, you will need to have:
+To follow along with this tutorial, you need to have:
 - [MATLAB](https://www.mathworks.com/products/get-matlab.html?s_tid=gn_getml) installed.
 - A proper understanding of [MATLAB basics](/engineering-education/getting-started-with-Matlab/).
-- An understanding of the [principal component analysis(PCA)](https://www.projectpro.io/data-science-in-python-tutorial/principal-component-analysis-tutorial)
+- An understanding of the [principal component analysis(PCA)](https://www.projectpro.io/data-science-in-python-tutorial/principal-component-analysis-tutorial).
 
 ### Face image database preparation for training and testing
 In this tutorial, we use [faces94](https://cmp.felk.cvut.cz/~spacelib/faces/faces94.html). This database consists of 153 individuals with 20 face images of each individual. This database has three folders: male stuff, female, and male.
@@ -66,7 +66,7 @@ fvpca = [fvstd-m]*Ppca
 
 Where;
 
-- `fvstd`- Is the input feature vector, which in our case is the vector of size 380.
+- `fvstd` - Is the input feature vector, which in our case is the vector of size 380.
 - `M` - Is the mean of all the feature vectors.
 - `Ppca` - Is the transformation matrix.
 - `fvpca` - Is the reduced feature vector.
@@ -110,10 +110,10 @@ We first set the image for the discrete wavelet transform mode `dwtmode` functio
 This function gives four outputs i.e approximated coefficients(cA), horizontal detailed coefficients(cH), vertical detailed coefficients(cV) and diagonal detailed coefficients(cD). These coefficients are then arranged into a single matrix `wc`.
 
 ```matlab
-    %Finding discrete wavelet transform
-    dwtmode('per', 'nodisp');
-    [cA, cH, cV, cD] = dwt2(double(Ibin), 'db10');
-    wc = [cA, cH; cV cD]; %wavelet coefficients arranged
+%Finding discrete wavelet transform
+dwtmode('per', 'nodisp');
+[cA, cH, cV, cD] = dwt2(double(Ibin), 'db10');
+wc = [cA, cH; cV cD]; %wavelet coefficients arranged
 ```
 
 #### Step 3 - Finding the standard deviation of the wavelet coefficient
@@ -124,12 +124,12 @@ The column vector is stored in the `stdcol` variable. Those stored in the `stdro
 When combining these two matrices, `stdcol` and `stdrow`, we get the feature vector `fvstd`. Afterwards, we store these feature vectors in the `X` matrix we initialized earlier.
 
 ```matlab
-    %Finding standard deviation of wavelet coefficients
-    stdcol = std(wc); %Column wise
-    wcc = (wc');
-    stdrow = std(wcc); %row wise
-    fvstd = [stdcol stdrow]; %Feature vector using STD
-    X(count, :) = fvstd; %Saving all feature vector
+%Finding standard deviation of wavelet coefficients
+stdcol = std(wc); %Column wise
+wcc = (wc');
+tdrow = std(wcc); %row wise
+fvstd = [stdcol stdrow]; %Feature vector using STD
+X(count, :) = fvstd; %Saving all feature vector
 end
 ```
 
@@ -278,11 +278,9 @@ When we use a distorted image to test the robustness of our image. We realize th
 
 For example, a sample with a distorted image is shown below:
 
-eigenvalues
-
 ![Distorted image](/engineering-education/face-recognition-using-wavelet-features/wavelet-five.png)
 
-Distorting some image parts
+Distorting some image parts:
 
 ![Distored image](/engineering-education/face-recognition-using-wavelet-features/wavelet-six.png)
 
