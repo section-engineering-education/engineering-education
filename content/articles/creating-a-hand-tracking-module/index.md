@@ -3,7 +3,7 @@ layout: engineering-education
 status: publish
 published: true
 url: /creating-a-hand-tracking-module/
-title: Creating a Hand Tracking Module Using Python, Opencv, and Mediapipe
+title: Creating a Hand Tracking Module using Python, OpenCv, and MediaPipe
 description: This tutorial will discuss how to create a hand tracking module. Hand tracking is the process in which a computer uses computer vision to detect a hand from an input image and keeps focus on the hand's movement.
 author: simon-kiruri
 date: 2022-02-09T00:00:00-11:52
@@ -12,18 +12,18 @@ excerpt_separator: <!--more-->
 images:
 
   - url: /engineering-education/creating-a-hand-tracking-module/hero.jpg
-    alt: Creating a Hand Tracking Module Using Python, Opencv, and Mediapipe Hero Image
+    alt: Creating a Hand Tracking Module using Python, OpenCv, and MediaPipe Hero Image
 ---
-Hand tracking is the process in which a computer uses computer vision to detect a hand from an input image and keeps focus on the hand's movement and orientation. Hand tracking allows us to develop numerous programs that use hand movement and orientation as their input. 
+Hand tracking is the process in which a computer uses computer vision to detect a hand from an input image and keeps focus on the hand's movement and orientation. Hand tracking allows us to develop numerous programs that use hand movement and orientation as their input.
 <!--more-->
-We tend to write the same code in different projects to perform hand tracking as part of our program. This repetition leads to both boredom and waste of time. 
+We tend to write the same code in different projects to perform hand tracking as part of our program. Creating a hand tracking module solves this problem as we write the code once.
 
-Creating a hand tracking module solves this problem as we write the code once. We then convert this piece of code into a module. We can import this module into any python project we are working on and it will perform hand tracking.
+We then convert this piece of code into a module. We can import this module into any python project we are working on and it will perform hand tracking.
 
 ### Introduction
-To create the program that will perform hand tracking, we will need two Python libraries. These are `openCV` and `MediaPipe`. 
+To create the program that will perform hand tracking, we will need two Python libraries. These are `openCV` and `MediaPipe`.
 
-We will use `openCV` to perform operations associated with computer vision. We will use `Mediapipe` to perform the actual hand detection and tracking on our input image. We will finally need an IDE. For this tutorial, we will use the `Pycharm` IDE.
+We will use `openCV` to perform operations associated with computer vision. We will use `MediaPipe` to perform the actual hand detection and tracking on our input image. We will finally need an IDE. For this tutorial, we will use the `Pycharm` IDE.
 
 This tutorial will be divided into two parts. The first part will focus on how to create a program that does hand tacking. The second part will focus on how to turn the program into a module. A person using Windows, Linux, or macOS can follow through.
 
@@ -61,7 +61,7 @@ pip install mediapipe
 - To install `openCV` use the following command:
 
 ```bash
- pip install opencv-python
+pip install opencv-python
 ```
 
 We now have our environment ready. We will begin by creating a program that does hand tracking.
@@ -75,9 +75,9 @@ The `21` hand points that `MediaPipe` identifies are shown in the image below:
 
 ![Hand landmark model](/engineering-education/creating-a-hand-tracking-module/model.png)
 
-*[Image Source: Mediapipe](https://google.github.io/mediapipe/images/mobile/hand_landmarks.png)*
+*[Image Source: MediaPipe](https://google.github.io/mediapipe/images/mobile/hand_landmarks.png)*
 
-The above image shows the hand landmarks that mediapipe uses to identify the hand. The numbered parts are the hand points.
+The above image shows the hand landmarks that MediaPipe uses to identify the hand. The numbered parts are the hand points.
 
 ### Coding
 Pycharm creates a `main.py` file for you automatically after you create a new project. This is where we will write our code.
@@ -95,7 +95,7 @@ hands = mpHands.Hands()
 mpDraw = mp.solutions.drawing_utils
 ```
 
-We start by importing the two libraries we discussed. Importing the libraries enables us to use its dependencies. 
+We start by importing the two libraries we discussed. Importing the libraries enables us to use its dependencies.
 
 We will then create an object `cap` for video capturing. We require the other three objects to manipulate our input using `MediaPipe`.
 
@@ -108,7 +108,7 @@ while True:
     results = hands.process(imageRGB)
 ```
 
-The code above takes the image input from the webcam. It then converts the image from `BGR` to `RGB`. This is because `MediaPipe` only works with `RGB` images, not `BGR`. 
+The code above takes the image input from the webcam. It then converts the image from `BGR` to `RGB`. This is because `MediaPipe` only works with `RGB` images, not `BGR`.
 
 It finally processes the `RGB` image to identify the hands in the image.
 
@@ -123,9 +123,9 @@ It finally processes the `RGB` image to identify the hands in the image.
                 cx, cy = int(lm.x * w), int(lm.y * h)
 ```
 
-In the code above, we use the `if` statement to check whether a hand is detected. We then use the first `for` loop to enable us to work with one hand at a time. 
+In the code above, we use the `if` statement to check whether a hand is detected. We then use the first `for` loop to enable us to work with one hand at a time.
 
-The second `for` loop helps us get the hand landmark information which will give us the `x` and `y` coordinates of each listed point in the hand landmark diagram. This loop will also give us the `id` of each point. 
+The second `for` loop helps us get the hand landmark information which will give us the `x` and `y` coordinates of each listed point in the hand landmark diagram. This loop will also give us the `id` of each point.
 
 We will then find the `height`, `width`, and `channel` of our image using the `image.shape` function. We finally get the central positions of the identified hand points.
 
@@ -150,7 +150,7 @@ Feel free to use the number of the hand point you want to circle as they are lis
 
 ```
 
-We use the code above to display the output to the user. The output is a real-time video of the user. It has the user's hands tracked, hand landmarks, and connections drawn on the hands. 
+We use the code above to display the output to the user. The output is a real-time video of the user. It has the user's hands tracked, hand landmarks, and connections drawn on the hands.
 
 The output of this code is shown in the [results](#results) section.
 
@@ -184,7 +184,7 @@ class handTracker():
 
 In the code above, we create a class that we will use for tracking. We then key in the basic parameters that we require for the `hands` function to work. MediaPipe provides these parameters in the hands function.
 
-Afterwards, we provide all the initializations that we need for our class. These are the above parameters and the `MediaPipe` initializations. 
+Afterwards, we provide all the initializations that we need for our class. These are the above parameters and the `MediaPipe` initializations.
 
 We put `self` before every object to allow access to the methods and the attributes of that object. This in turn allows each object to possess its own attributes and also its own methods.
 
@@ -203,11 +203,11 @@ We put `self` before every object to allow access to the methods and the attribu
         return image
 ```
 
-In the code above, we created a method that we will use to specifically track the hands in our input image. The code that goes in this method is the one that converts the image to `RGB` and processes the `RGB` image to locate the hands. 
+In the code above, we created a method that we will use to specifically track the hands in our input image. The code that goes in this method is the one that converts the image to `RGB` and processes the `RGB` image to locate the hands.
 
 It also draws the hand landmarks on the image and finally draws the hand connections.
 
-#### Step 4 - Creating a method to find the `x` and `y` coordinates of each hand point
+#### Step 4 - Creating a method to find the 'x' and 'y' coordinates of each hand point
 
 ```python
     def positionFinder(self,image, handNo=0, draw=True):
@@ -224,7 +224,7 @@ It also draws the hand landmarks on the image and finally draws the hand connect
         return lmlist
 ```
 
-In the code above, we created a method that we will use to find the `x` and `y` coordinates of each of the 21 hand points. We also created a list that we will use to store the values of these coordinates. 
+In the code above, we created a method that we will use to find the `x` and `y` coordinates of each of the 21 hand points. We also created a list that we will use to store the values of these coordinates.
 
 The code that goes in this method is the one we use to find the id and hand landmark information of each hand point. We also put in the code that we will use to circle the hand-point that we want to use.
 
@@ -263,9 +263,9 @@ The output of the program and the module will be identical. When each of them ha
 ![Results](/engineering-education/creating-a-hand-tracking-module/results.gif)
 
 ### Conclusion
-With the above, you now possess all the skills needed to create a program that performs hand tracking. You also have the skills required to convert the code into a module. 
+You now better understand and possess all the skills needed to create a program that performs hand tracking. You also have the skills required to convert the code into a module.
 
-Go on and import the module into any `Python` project that requires hand tracking and watch the module perform its magic.
+Go ahead and import the module into any `Python` project that requires hand tracking and watch the module perform its magic.
 
 Happy coding!
 
