@@ -1,5 +1,4 @@
 
-### Hyper-Parameter Tuning in Decision Trees and Random Forests
 
 After years of hard work, we've reached a stage where we are using computers to analyze millions of data points and provide insights that even the human eye couldn't catch. But our Machine Learning Model is only as good as its accuracy on unseen data, i.e "how well our model generalizes". In this article, I'll solve a Binary Classification Problem, using a Decision Tree Classifier and Random Forests to solve the over-fitting problem by tuning their hyper-parameter and comparing results.
 
@@ -8,7 +7,6 @@ Before we begin, I expect you to have some working knowledge of python and some 
 #### Machine Learning 
 Machine Learning is the practice of emulating a human being's learning and reasoning ability along with the continuous enhancement of results with every additional data input. This is also called continual learning. *Any new input entered, will contribute to the accuracy of the algorithm, hence they learn from experience like the human brain.*
  
-
 Based on these algorithms we create a model and train it over a set of data to recognize certain patterns.
 
 ###### Dataset used:
@@ -55,8 +53,6 @@ _This is how information gain and entropy are used to improve the quality of spl
 
 **NOTE:** If we use Information Gain as a criterion, we assume that our attributes are _categorical_, and as per Gini index, we assume that our attributes are _continuous_. For our dataset, we will work with Gini Index. 
 
-
-
 **Working:**
 
 - While training, our decision tree model evaluates all possible splits across all possible columns and picks the split with the lowest Gini Score.  
@@ -102,8 +98,8 @@ Now, that we've trained our model, let's calculate its accuracy on training and 
 from sklearn.metrics import accuracy_score, confusion_matrix
 ```
 
+The following are the results with basic implementation of Decision Trees:
 
-Following are the results with basic implementation of Decision Trees:
 ![overfitting_1.png](/engineering-education/hyperparameter-tuning/overfitting-1.png)
 
 It is axiomatic in the results above that our model is not performing well on data it has not been trained upon, but giving incredulous results on training data. This simple phenomenon is called **Overfitting**. This is happening because our model has memorized all the training examples.
@@ -124,6 +120,7 @@ This argument represents the maximum depth of a tree. If not specified, the tree
 - It's axiomatic that even though the training accuracy has reduced, the validation accuracy has improved.
 
 Since we are not sure what depth our ideal model would have, we can run a for loop from a range of numbers to find out. You can see below, I've used this basic for loop to print the training and validation accuracy of my model across the range 1–21.
+
 ```
 for max_d in range(1,21):
   model = DecisionTreeClassifier(max_depth=max_d, random_state=42) 
@@ -132,7 +129,6 @@ for max_d in range(1,21):
   print('The Validation Accuracy for max_depth {} is:'.format(max_d), model.score(val_inputs,val_targets))
   print('')
 ```
-
 
 By carefully looking at the results we can find out the max_depth value where the validation accuracy starts decreasing and the training accuracy starts mounting inordinately.
 ![Max_depth_result1](/engineering-education/hyperparameter-tuning/max-depth-result1.png)
@@ -163,7 +159,6 @@ While tuning the hyper-parameters of a single decision tree is giving us some im
 #### Random Forests: 
 Random forests are supervised machine learning models that train multiple decision trees and integrate the results by averaging them. Each decision tree makes various kinds of errors and upon averaging their results, many of these errors will be counter balanced. _This general practice of combining the results of many models is called **"Emsembling technique"**._ Or very famously said **"Wisdom of the crowd"**. 
 
-
 ![random_forest.png](/engineering-education/hyperparameter-tuning/random-forest.png)
 
 ```
@@ -172,8 +167,7 @@ model3 = RandomForestClassifier(random_state = 24, n_jobs = -1)
 model3.fit(train_inputs, train_targets)
 ```
 
-
-**Note:** In the above code the function of the argument `n_jobs = -1` is to train multiple decision trees parallelly.
+**Note:** In the code above, the function of the argument `n_jobs = -1` is to train multiple decision trees parallelly.
 
 We can access individual decision trees using `model.estimators_`. And just like how we visualized a decision tree prior in the article, we can visualize each decision tree inside a random forest separately.
 
@@ -193,7 +187,6 @@ model.fit(train_inputs, train_targets)
 ```
 
 🌟 Typically; n_estimators should be kept minimal. For example: In my model, the validation accuracy at 100 and 200 estimators is approximately the same. So in such cases, I shall stick to the lower number of estimators.
-
 
 ![n_estimator.png](/engineering-education/hyperparameter-tuning/n-estimator.png)
 
@@ -215,13 +208,12 @@ Larger values can restrict a model from learning relations that could be extreme
 ![min_samples_split.png](/engineering-education/hyperparameter-tuning/min-samples-split.png)
 
 **Note:** The `test_params` function used above has the following code. It's used to test different hyper parameters and returns the training and validation accuracy. 
+
 ```
 def test_params(**params):
     model = RandomForestClassifier(n_jobs=-1, random_state=24, **params).fit(X_train, train_targets)
     return model.score(X_train, train_targets), model.score(X_val, val_targets)
 ```
-
-
 
 ###### f. min_samples_leaf:
 Minimum sample leaf may sound like minimum sample split, and is somewhat similar too but in this case, we are talking about the minimum number of samples required to be left at the **leaf node**. A split will only be considered if there is atleast `min_samples_leaf` samples on the left and right branches.
@@ -238,14 +230,13 @@ By default, Random Forest does not use the whole dataset for fitting each decisi
 
 You can change `default=False` to disable it, and in that case, the entire dataset will be used to create decision trees.
 
----
-
 There are a list of **other hyperparameters** to explore when it comes to decision trees and random forests. Being powerful models, they can be very difficult to generalize and easy to memorize the training examples. Hence.. go ahead and explore all the arguments that the `DecisionTreeClassifier` and `RandomForestClassifier` functions permit. 
 That is it from me, I hope this article is useful or helps you find what you were looking for. Happy coding :))
-
-
 
 ##### Resources:
 - Jovian's free intro course on ML: https://jovian.ai/himani007/sklearn-decision-trees-random-forests#C73
 - https://www.numpyninja.com/post/what-is-entropy-and-information-gain-how-are-they-used-to-construct-decision-trees
 - https://www.kdnuggets.com/2020/01/decision-tree-algorithm-explained.html
+
+---
+Peer Review Contributions by: [Willies Ogola](/engineering-education/authors/willies-ogola/)
