@@ -7,48 +7,47 @@ title: How to build a Java GUI calculator from scratch using Box layout
 description: This tutorial will expose the readers to the power of box layout and use it in other programs to convert their console apps to a GUI app.
 author: suleiman-ibrahim
 date: 2022-02-02T00:00:00-17:10
-topics: []
+topics: [Languages]
 excerpt_separator: <!--more-->
 images:
 - url: /engineering-education/how-to-build-a-java-gui-calculator-from-scratch-using-box-layout/hero.png
 alt: How to build a Java GUI calculator from scratch using Box layout in Java
 ---
-You've probably used a calculator at one point or the other to compute business transactions as an adult, solve high school math assignments as a teenager, or even toy with it as a kid. But have you ever asked yourself how these calculators function under the hood? If you are curious to know more about that, then you've come to the right place.
+You have probably used a calculator at one point or the other to compute business transactions as an adult, solve high school math assignments as a teenager, or even toy with it as a kid. However, have you ever asked yourself how these calculators function under the hood? If you are curious to know more about that, you have come to the right place.
+<!--more-->
+In this tutorial, we will build a calculator from scratch using the `BoxLayout` to align the components of the calculator correctly. This calculator will consist of the GUI and the logic part, which performs computations. We will also learn how real-life calculators work under the hood by incorporating functionalities like addition, subtraction, division, multiplication, ets.
 
-### Table of Contents
-- [Table of Contents](#table-of-contents)
-- [Introduction](#introduction)
+The tutorial will also expose the readers to the power of Box layout and how they can use it in other programs to convert their console apps into GUI apps.
+
+### Table of contents
+- [Table of contents](#table-of-contents)
 - [Prerequisites](#prerequisites)
 - [Goal](#goal)
-- [Layout Managers](#layout-managers)
-- [The Box Layout](#the-box-layout)
-- [Step 1: Building The User Interface (UI)](#step-1-building-the-user-interface-ui)
-- [Step 2: Building The Calculator Logic](#step-2-building-the-calculator-logic)
+- [Layout managers](#layout-managers)
+- [The Box layout](#the-box-layout)
+- [Step 1: Building the User Interface (UI)](#step-1-building-the-user-interface-ui)
+- [Step 2: Building the calculator logic](#step-2-building-the-calculator-logic)
   - [a) Creating the structure](#a-creating-the-structure)
   - [b) Creating the Event Handlers](#b-creating-the-event-handlers)
   - [c) Adding ActionListeners to the buttons](#c-adding-actionlisteners-to-the-buttons)
-  - [d) Updating the Utility Methods](#d-updating-the-utility-methods)
+  - [d) Updating the utility methods](#d-updating-the-utility-methods)
 - [Step 3: Wrapping things up](#step-3-wrapping-things-up)
 - [Conclusion](#conclusion)
-  
-### Introduction
-In this tutorial, we will build a calculator from scratch using the Box layout to properly layout the components of the calculator. This calculator will be made of two parts, the GUI and the logic part - the part that performs computations. We will also get to learn how real-life calculators work under the hood by incorporating functionalities like addition, subtraction, division, multiplication, and others. The tutorial will also expose the readers to the power of Box layout and how they can use it in other programs to convert their console apps into GUI apps.
 
 ### Prerequisites
 To follow along, the reader will need to need to:
-- Have basic knowledge of programming with Java.
-- "Be comfortable" using OOP principles in Java.
-- Ensure Java is installed in your machine along with a suitable Integrated Development Environment (IDE). I recommend NetBeans because we will make use of it for this tutorial.
+- Have basic knowledge and understanding of Java programming language.
+- Basic knowledge of using OOP principles in Java.
+- A suitable Integrated Development Environment (IDE). I recommend [NetBeans](https://netbeans.apache.org/download/index.html).
 
 ### Goal
 By the end of this tutorial, the reader will:
-- Get comfortable using Box layout to build UIs in Java
-- Get to know about the logic that runs on simple calculators
-- Know how to build a simple calculator from scratch using Java
+- Get comfortable using BoxLayout to build UIs in Java.
+- Get to know about the logic that runs on simple calculators.
+- Know how to build a simple calculator from scratch using Java.
 
-### Layout Managers
-Layout managers allow us to align components in any desired position on the panel. They position each GUI component on their panel or frame.
-Some layout managers Java provides out of the Box are:
+### Layout managers
+Layout managers allow us to align components in any desired position on the panel. They position each GUI component on their panel or frame. Some layout managers Java provides out of the box are:
 - GridBag layout
 - Grid layout
 - Group layout
@@ -57,24 +56,28 @@ Some layout managers Java provides out of the Box are:
 - Box layout
 
 ### The Box Layout
-The Box layout is one of the simplest and easiest to implement next to the flow layout. It allows you to stack components on top of each other in a column as a vertical box or to 'lay out' components next to each other in a row as a horizontal box.
-The Box layout can be accessed using the `BoxLayout` class provided by the Java Swing package. A new instance of this class is then passed into the `setLayout()` method of the panel to be worked on.
+The Box layout is the simplest and easiest to implement next to the flow layout. It allows you to stack components on top of each other in a column as a vertical box. It also allows to 'lay out' components in a row as a horizontal box next to each other. 
+
+It can be accessed using the `BoxLayout` class provided by the Java `Swing` package. A new instance of this class is then passed into the `setLayout()` panel method to be worked on.
 
 Below is an example of setting a panel's layout to `BoxLayout`:
+
 ```java
 JPanel mainPanel = new JPanel();
 mainPanel.setLayout(new BoxLayout(mainPanel, BoxLayout.PAGE_AXIS));
 ```
 
-`BoxLayout` constructor takes in two arguments. The first is the container you wish to apply the Box layout to and the second argument is a constant provided by the `BoxLayout` class, which specifies the axis along which the components will be laid out.
+`BoxLayout` constructor takes in two arguments. The first is the container you wish to apply the layout to, and the second argument is a constant provided by the `BoxLayout` class, which specifies the axis along which the components will be laid out.
 
 Below is a list of the constants and their description:
+
 | Constant                            |                                                                                                                                                                                            Description |
 | :---------------------------------- | -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------: |
 | `public static final int X_AXIS`    |                                                                                                  Specifies that the components should be laid out from left to right. The value for this constant is 0 |
 | `public static final int Y_AXIS`    |                                                                                                             Specifies that components be laid out from top to button. The value for this constant is 1 |
 | `public static final int LINE_AXIS` |                                   Specifies that components should be laid out toward a line as determined by the target container's `ComponentOrientation` property. The value of this constant is 2. |
 | `public static final int PAGE_AXIS` | Specifies that components should be laid out in the direction that lines flow across a page as determined by the target container's `ComponentOrientation` property. The value for this constant is 3. |
+
 > Note that you can either use the constant variable or the value to set the components axis. For example, 0 instead of `BoxLayout.X_AXIS`, 1 instead of `BoxLayout.Y_AXIS`, and so on.
 
 It is advisable to always use the `PAGE_AXIS` and `LINE_AXIS` for internationalization. This will enable components to be laid out correctly from either left to right or right to left based on the device's language orientation.
@@ -602,19 +605,16 @@ Below is the code implementation for the `selectOperator()` method.
     }
 ```
 
-**`calculate()`**
+##### calculate()
+The last method we will work on is the `calculate()` method, which will perform all computations in the calculator. We will confirm that the value of both the previous and current operand is not empty. If either or both operands are empty, the computation will not hold because we need the two operands to perform any arithmetic computation.
 
-The last method we will work on is the `calculate()` method. This will perform all computations in the calculator.
-We will start by confirming that the value of both the previous and current operand is not empty. If either or both of the operands are empty, the computation will not hold because we need the two operands to perform any arithmetic computation.
+We will then create a named result floating-point variable and initialize it with 0.0. We need to initialize the result because when the compiler wants to parse the result back into a string, the value of the operator used inside a switch case statement to initialize the value of the result might not have been initialized which leaves the result still not initialized, which will throw an error when trying to parse it to a string.
 
-We will then create a floating-point variable named `result` and then initialize it with `0.0`. The reason we need to initialize `result` is that when the compiler wants to parse `result` back into a string, the value of `operator` used inside a switch case statement to initialize the value of `result` might not have been initialized as well, leaving result still not initialized. This will throw an error when we try to parse it to a `String`.
+The next step is to parse both the previous and current operand from string to double to be used for computations. Now that we have gotten the previous and current operand and the operator used on them. The next step is to use a switch statement to compute the result of the previous and current operand based on the operator and then store the result in the result.
 
-The next step is to parse both the previous and current operand from `String` to `double` so they can be used for computations.
-Now that we've gotten the previous and current operand, and also the operator that will be used on them. The next step is to use a switch statement to compute the result of the previous and current operand based on the operator and then store the result in `result`.
+The last step for the `calculate()` method is to convert the floating-point result to a string and pass its value to the current operand. Furthermore, set the value of the operator to null because the operator has been used to perform computation already. Last, we clear the previous operand so that its value will not be used to perform computations again since it has already been used.
 
-The last step for the `calculate()` method is to convert the floating-point `result` to a string and pass its value to the current operand. And also set the value of `operator` to `null` because the operator has been used to perform computation already. Last, we clear the previous operand so that its value will not be used to perform computations again since it has already been used.
-
-Below is the final code implementation for the `calculate()` method.
+Below is the final code implementation for the calculate() method.
 
 ```java
     public void calculate() {
@@ -646,26 +646,25 @@ Below is the final code implementation for the `calculate()` method.
     }
 ```
 
-You can now run the program and the calculator works as expected. You can also perform any computations of your choice and get the correct results.
+You can now run the program, and the calculator works as expected. You can also perform any computations of your choice and get the correct results.
 
->Check [here](https://github.com/princeibs/java-box-calculator/blob/f3cf0aebe02772d56b411744b655735a4fb23bb4/CalculatorBox.java) for the code at this point.
+>Check [here](https://github.com/princeibs/java-box-calculator/blob/f3cf0aebe02772d56b411744b655735a4fb23bb4/CalculatorBox.java) for the code up to this point.
 
-### Step 3: Wrapping things up
-By now, your calculator is fully functional and outputs the correct result. But there is just one more fact that you might not like about the calculator. That it doesn't properly display integer numbers just like the image below.
+### Step three: Wrapping things up
+By now, your calculator is fully functional and outputs the correct result. However, there is just one more fact that you might not like about the calculator, it does not correctly display integer numbers, just like the image below.
 
-![Test Output 1](/how-to-build-a-java-gui-calculator-from-scratch-using-box-layout/5-four-by-fiftysix.png)
+![Test Output 1](/engineering-education/how-to-build-a-java-gui-calculator-from-scratch-using-box-layout/5-four-by-fiftysix.png)
 
-The image above results from performing a random operation like `4 * 56`. Since the result is an integer, we don't need the extra trailing zero.
+The image above results from performing a random operation like `4 * 56`. Since the result is an integer, we do not need the extra trailing zero.
 
-**`processOutputNumber()`**
+**processOutputNumber()**: To fix this, we create a method called `processOutputNumber()` to process every number displayed on the output.
 
-To fix this, we create a method called `processOutputNumber()` to process every number that will be displayed on the output.
+To avoid processing an empty output, we will first check if the current output is not empty using an if statement. We will then split the output into two parts - the integer and the decimal parts. We can achieve this using the `split()` method of the `Strin`g class and then pass in a regular expression that searches for a dot in the output.
 
-To avoid processing an empty output, we will first check if the current output is not empty using an `if` statement. We will then split the output into two parts - the `integer` part and the `decimal` part. We can achieve this using the `split()` method of the `String` class and then pass in a regular expression that searches for a dot in the output.
-
-Recall that the `split()` method returns an array, so we will set the first element of the array to `integerPart` and the second element to `decimalPart`. We will then check if the decimal part is `0`. If true, we ignore it and set only the integer part to the current output.
+Recall that the `split()` method returns an array to set the first element of the array to `integerPart` and the second element to `decimalPart`. We will then check if the decimal part is `0`. We ignore it and set only the integer part to the current output if `true`.
 
 Below is the final code for the `processOutputNumber()` method:
+
 ```java
     public void processOutputNumber() {
         if (current.length() > 0) {
@@ -677,30 +676,32 @@ Below is the final code for the `processOutputNumber()` method:
         }
     }
 ```
-The last step is to call the `processOutputNumber()` method at the last line of `calculate()` method. This is because we want to process the number that will be displayed on the output anytime a calculation is performed before displaying it.
 
-![processOutputNumber() location](/how-to-build-a-java-gui-calculator-from-scratch-using-box-layout/6-processoutputnumber-location.png)
+The last step is to call the `processOutputNumber()` method at the last line of `calculate()` method because we want to process the number displayed on the output anytime a calculation is performed before displaying it.
 
-> Note that the `processOutputNumber()` is at the same level as other utility methods.
+![processOutputNumber() location](/engineering-education/how-to-build-a-java-gui-calculator-from-scratch-using-box-layout/6-processoutputnumber-location.png)
+
+>The `processOutputNumber()` is at the same level as other utility methods.
 
 You can now test the calculator with calculations involving integers and also decimal results.
 
-![Final output 1](/how-to-build-a-java-gui-calculator-from-scratch-using-box-layout/7-final-screenshot-a.png)
-![Final output 2](/how-to-build-a-java-gui-calculator-from-scratch-using-box-layout/8-final-screenshot-b.png)
+![Final output 1](/engineering-education/how-to-build-a-java-gui-calculator-from-scratch-using-box-layout/7-final-screenshot-a.png)
 
-The images above result from computing `4 * 56` and `24 ÷ 5` respectively.
+![Final output 2](/engineering-education/how-to-build-a-java-gui-calculator-from-scratch-using-box-layout/8-final-screenshot-b.png)
 
-And that's it, we're done!
+The images above result from computing `4 * 56` and `24 ÷ 5`, respectively.
+
+That is it!
 
 Congratulations on building a fully functional calculator using the Box layout in Java.
 
-> Check [here](https://github.com/princeibs/java-box-calculator) to get the final source code for the calculator.
+Check out this Github [repository](https://github.com/princeibs/java-box-calculator) to get the final source code for the calculator.
 
 ### Conclusion
-The major goal of this tutorial is to create a calculator that can perform basic arithmetic operations with some added functionalities, like delete and clear output using the Box layout. All these have been covered, and we also added a method that properly displays the output as well.
+The primary goal of this tutorial is to create a calculator that can perform basic arithmetic operations with some added functionalities, like delete and clear output using the Box layout. You can add more functionalities to the calculator, like scientific operations. 
 
-If you feel more ambitious, you can add more functionalities to the calculator, like scientific operations. You can as well explore more of the Box layout by converting our calculator UI to a more complex layout, similar to a scientific calculator UI. There are infinitely many things you can do with this knowledge. I hope to see the great things you will build out of it.
+You can also explore more of the Box layout by converting our calculator UI to a more complex layout, similar to a scientific calculator UI. There are infinitely many things you can do with this knowledge. I hope to see the great things you will build out of it.
 
 For further reference, check out the official Java documentation on [How to Use BoxLayout](https://docs.oracle.com/javase/tutorial/uiswing/layout/box.html)
 
-Happy Coding!
+Happy coding!
