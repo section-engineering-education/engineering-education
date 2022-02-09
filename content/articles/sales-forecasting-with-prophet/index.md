@@ -176,7 +176,7 @@ To predict, we use the `predict()` method and pass in the future dataframe as sh
 forecast_prediction = p.predict(future)
 forecast_prediction.tail()
 ```
-From the results generated, the model has generated a lot of sales information in addition to the predicted `ds` and `yhat` column. The most important column is the `yhat` column as it is what represents your sales forecast. 
+From the results generated, the model has generated a lot of sales information in addition to the predicted `ds` and `yhat` column. The most important column is the `yhat` column, as it is what represents your sales forecast. 
 
 We can visualize these predictions.
 
