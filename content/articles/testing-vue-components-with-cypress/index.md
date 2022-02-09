@@ -1,12 +1,11 @@
-### Introdution
+
 Cypress is a front-end testing tool that is fully based on JavaScript and is tailored to today's web. Its purpose is to make testing an application less complex for developers and quality assurance experts. Cypress is a more developer-friendly tool that uses a unique **DOM** manipulation method and operates directly in the browser, making it easier to use.
 
 Vue Test Utils, the official low-level component testing framework, allows users to access Vue-specific APIs. For individuals new to testing Vue apps, Vue Testing Library, an abstraction over Vue Test Utils, is suggested.
-In this tutorial, am going to talk more about how we can test Vue Components With Cypress.
+
+This tutorial will dive deeper into testing Vue components with Cypress.
 
 ### Table of content
-- [Introdution](#introdution)
-- [Table of content](#table-of-content)
 - [Overview of what is a component test file](#overview-of-what-is-a-component-test-file)
 - [Testing components](#testing-components)
 - [How vue components tests work with and without cypress](#how-vue-components-tests-work-with-and-without-cypress)
@@ -17,10 +16,10 @@ In this tutorial, am going to talk more about how we can test Vue Components Wit
 - [How to access the Vue Test Utils wrapper](#how-to-access-the-vue-test-utils-wrapper)
 - [Conclusion](#conclusion)
 
-### Overview of what is a component test file
- Component testing; as the name recommends, is a strategy of testing the most reduced or the littlest unit of any application. Part testing at times is likewise alluded to as Program or Module Testing. An application can be thought about a mix and combination of numerous little individual modules
+### Overview of component test file
+ Component testing is a strategy of testing the most reduced unit of any application. Part testing at times is likewise alluded to as Program or Module Testing. An application can be thought as a combination of small individual modules.
 
-Here's an illustration of a Cypress components test that includes some of the aspects we'll go through:
+The following is an illustration of a Cypress components test that includes some of the aspects we'll go through:
 For a simplified example you can view a `privacy-policy` page [here](https://github.com/Wanjiku25/vue-component-with-cypress)
 
 ```javascript
@@ -55,7 +54,8 @@ describe('PrivatePoliteNote', () => {
 ```
 
 Some of the comments concern the user interface, while others concern the developer interface.
-As a developer, we will verify what events are emitted whenever we wish to target particular elements with their appropriate text content for the `UI`. This also means that we'll be testing the component to make sure it's produced correctly by Vue.
+
+Developers can verify what events are emitted whenever they wish to target particular elements with their appropriate text content for the `UI`. This also means that we'll be testing the component to make sure it's produced correctly by Vue.
 
 Let's take a step back and look at how this fits into our broader testing strategy. These words have a variety of meanings. From our small codebase, these are outlined below.
 
