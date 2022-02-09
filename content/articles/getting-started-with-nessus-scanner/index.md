@@ -14,13 +14,13 @@ images:
   - url: /engineering-education/getting-started-with-nessus-scanner/hero.jpg
     alt: Getting Started with Nessus Scanner Hero Image
 ---
-**Nessus Tenable** is a kali-Linux open-source software common among penetration testers, used to provide a variety of security fixes. You are going to be using this tool quite frequently while you work as a pen-tester by scanning for potential vulnerability on a Server/Website.
+**Nessus Tenable** is a Kali-Linux open-source software common among penetration testers, used to provide a variety of security fixes. You will use this tool quite frequently while you work as a pen-tester by scanning for potential vulnerability on a server/website.
 <!--more-->
-**Nessus** scanner is a professional tool that is widely used among hackers and penetration testers. The solution you get assists you to perform high-speed asset discovery, target profiling, malware detection, sensitive data discovery and so many more.
+**Nessus** scanner is a professional tool widely used among hackers and penetration testers. The solution you get assists you to perform high-speed asset discovery, target profiling, malware detection, sensitive data discovery, and so many more.
 **Tenable** delivers updated plug-ins that provide you with the latest information to customers within 24 hours after a vulnerability has been leaked.
 **Nessus Tenable** grant you the privileges to scan basic networks and servers for free, and also provide you with how **critical**,**medium** or how **low** a vulnerability is and helps provide descriptions and solutions for a fix.
 
-Most sites that talk about Nessus only point out how Nessus is being installed and how it is been used, But how to fix a real vulnerability is hardly in the scope of what they teach. I will show you how to fix a common vulnerability and also guide you through important Nessus keywords.
+Most sites that talk about Nessus only point out how to install and use Nessus. But, how to fix a real vulnerability is hardly in the scope of what they teach. We will show you how to fix a common vulnerability and guide you through important Nessus keywords.
 
 ### Goal
 At the end of this tutorial, you should be able to:
@@ -42,7 +42,7 @@ At the end of this tutorial, you should be able to:
 
 - Capturing of data and showing results reporting impact on the network 
 
-If you don't have Kali-Linux installed on your pc, Don't worry I will show you how to quickly set this up.
+If you don't have Kali-Linux installed on your pc, don't worry, we will show you how to quickly set this up.
 
 ### Step 1:
 
@@ -58,10 +58,10 @@ After successfully downloading the Kali Linux iso, you can now download the VMwa
 
 - [Vmware virtual box](https://www.vmware.com/products/workstation-player/workstation-player-evaluation.html).
 
-Follow the [installing Vmware](https://forums.tomshardware.com/faq/how-to-install-vmware-workstation-in-windows-10.3273363/) tutorials to successfully install the VMware virtual box.
+Follow the [installing Vmware](https://forums.tomshardware.com/faq/how-to-install-vmware-workstation-in-windows-10.3273363/) tutorials to install the VMware virtual box.
 
-After Successfully installing Kali-Linux in a Virtual-Box, You can now Start Kali by
-Opening the virtual box, select the Kali Linux option, and click the play button to start your Kali Linux.
+After successfully installing Kali-Linux in a virtual-box, You can now start Kali-Linux by
+opening the virtual box, select the Kali-Linux option, and click the play button to start the application.
 
 Enter your username and password when prompted.
 
@@ -73,7 +73,7 @@ Enter your username and password when prompted.
 
 - [Nessus Tenable](https://www.tenable.com/downloads/api/v1/public/pages/nessus/downloads/14957/download?i_agree_to_tenable_license_agreement=true).
 
-After Successfully Downloading Nessus Tenable, Follow the steps below to install Nessus on Kali Linux:
+After successfully downloading Nessus Tenable, follow the steps below to install Nessus on Kali-Linux:
 
 - Start the **terminal** by:
 
@@ -85,12 +85,12 @@ Now run the command below on the terminal to update and upgrade your Kali Linux.
 ```bash
     $ sudo apt-get upgrade && update -y
 ```
-Now let's change our directory into where Nessus tenable is been installed.
+Now, let's change our directory to where Nessus tenable is installed.
 
 ```bash
     $ cd Downloads
 ```
-Use the command below to list  all files in `Downloads` then copy the downloaded file name
+Use the command below to list all files in `Downloads`, then copy the downloaded file name.
 
 ```bash
     $ ls
@@ -102,33 +102,34 @@ Use the command below to grab the package to download it and install it.
 ```
 ![dpkg](dpkg-nessus.png)
 
-You can now start Nessus scanner by typing the following into your terminal.
+You can now start the Nessus scanner by typing the following into your terminal.
 
 ```bash
     $ /bin/systemctl start nessusd.service
 ```
-Then Navigate to the following URL in your browser to start Nessus Scanner.
+Then navigate to the following URL in your browser to start Nessus scanner.
 
 - [Nessus localhost](https://kali:8843/) to configure your scanner
 
 - Default port to run Nessus is **`8834`**
 
-If you see connection not secured,  click *advance* Accept risk and continue.
+If you see connection not secured,  click *advance* accept risk and continue.
+
+
+Congratulations, you now have Nessus installed on Kali-Linux, wait for the plugins to complile, it going to take a little bit of time, so go ahead and let it finish. When it does click `Nessus Essentials` and the continue button.
 
 ### Step 3:
-- And here you have Nessus already on your screen, It going to compile plugins and it going to take a little bit of time so go ahead and let it finish. When it does go ahead and click `Nessus Essentials` and click continue.
-
-- Now provide Your name and a valid Email to receive an activation code.
+-Provide your name and a valid email to receive an activation code.
 
 - Once your activation code has arrived in your email, go ahead and copy it.
 
 - Paste the activation code into the activation box and click continue.
 
-- Then it going to ask you for a Username and a password, go ahead and type in your information.
+- Then it going to ask you for a username and a password, go ahead and type in your information.
 
 - Now Nessus is going to start the initializing process which is going to take a couple of minutes, Let it install while you go get a drink or coffee.
 
-- That took forever! Alright now we have loaded Nessus and it is installed.
+- That took forever! alright now we have loaded Nessus and it is installed.
 
 -  
 
@@ -138,14 +139,14 @@ If you see connection not secured,  click *advance* Accept risk and continue.
 We will be using Metersploitable 2 as our vulnerable machine which we will be scanning.
 - Metasploitable is an intentionally vulnerable virtual machine designed for training, exploit testing and general target practice. Unlike other vulnerable virtual machines, Metasploitable focuses on vulnerabilities at the operating system and network services layer instead of custom, vulnerable applications.
 
-**Note:** You can scan any Website/Server you have full permission to with Nessus, but I will be using Metersploitable as an example to find its vulnerability and fix them.
+**Note:** You can scan any website/server you have full permission to with Nessus, but we will be using Metersploitable as an example to find its vulnerability and fix them.
 
 ### Download Metersploitable
 Use the link  below to get to the download page:
 - [Metersploitable](https://sourceforge.net/projects/metasploitable/files/Metasploitable2/metasploitable-linux-2.0.0.zip/download)
 - Follow the [installing Metersploitable](http://techdjdey.blogspot.com/2017/10/how-to-install-metasploitable-2-in.html) tutorials to successfully install metersploitable into a virtual box.
 
-After Successfully installing Metersploitable in a Virtual-Box, you can confirm your installation by opening the terminal in Kali-Linux and typing the `IP address` of metersploitable into your browser.
+After successfully installing Metersploitable in a virtual-box, you can confirm your installation by opening the terminal in Kali-Linux and typing the `IP address` of metersploitable into your browser.
 
 **Note:** Whatever you learn in this tutorial is only for educational purposes, and scan sites that you have full permission to.
 
@@ -156,7 +157,7 @@ After Successfully installing Metersploitable in a Virtual-Box, you can confirm 
 
 - So let's go ahead and click new scan at the top right corner
 
-Here you are in the scan Template, you will find a lot of options to choose from but I will show the major scans which are **Basic Network Scan** and **Advanced Scan**, you will be using these major tools throughout your career as a Penetration-tester, lets start with the basic scan just as a beginner and then we move to Advanced scan in a more advance tutorial.
+Here you are in the scan Template, you will find a lot of options to choose from but we will show the major scans which are **Basic Network Scan** and **Advanced Scan**, you will be using these major tools throughout your career as a Penetration-tester, lets start with the basic scan just as a beginner and then we move to Advanced scan in a more advance tutorial.
 
   - Let's quickly talk about what we are capable of doing in Nessus, this is the free edition of Nessus which means we can scan against any private address and we can scan up to 16 of those at a time.
 
@@ -223,7 +224,7 @@ You will get a solution on how to fix it in the solution part, so follow the ste
 ### Summary
 
 In this article we have learned how to:
-* Install Kali-Linux in a Virtual Machine.
+* Install Kali-Linux in a virtual machine.
 
 * Download and Install Nessus tenable with the terminal
 
