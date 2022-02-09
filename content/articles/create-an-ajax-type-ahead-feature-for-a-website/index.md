@@ -14,11 +14,11 @@ images:
     alt: Create a Type Ahead Feature in JavaScript using Fetch and Regex Hero Image
 ---
 
-Part of the job of a front-end developer is to create intuitive user interfaces that deliver the best user experience to website users. Part of getting this job done is by creating search suggestions or what is known as the type-ahead feature for websites/webpages.
+Creating an intuitive user interface that provides the best user experience for website users is part of the job of front-end developers. Part of this job is to create a search suggestions or text completion for websites / web pages.
 
 <!--more-->
 
-This tutorial will explain how to create an **ajax type-ahead feature** for your website using the [cities.json file](). This file contains information about states and cities in America. What this feature does is, if a user types `name`, every state and city that matches the word name pops up.
+This tutorial will explain how to create an **ajax type-ahead feature** for your website using the [cities.json file](https://gist.githubusercontent.com/Miserlou/c5cd8364bf9b2420bb29/raw/2bf258763cdddd704f8ffd3ea9a3e81d25e2c6f6/cities.json). This file contains information about states and cities in America. What this feature does is, if a user types `name`, every state and city that matches the word name pops up.
 
 ### Prerequisites
 
@@ -26,7 +26,7 @@ To follow along with this tutorial, the reader should have:
 
 - Basic HTML and CSS knowledge.
 - ES6 JavaScript/Asynchronous JavaScript.
-- A Code editor.
+- A code editor.
 - An [understanding of Regular Expression (RegExp)](https://eloquentjavascript.net/09_regexp.html)
 
 ### Table of contents
@@ -47,7 +47,10 @@ To follow along with this tutorial, the reader should have:
 This method uses `Promise` to deliver more flexible features to make requests to servers from the web browsers.
 
 _Syntax_
-`Fetch(URL, options)`
+
+```js
+Fetch(URL, options);
+```
 
 The fetch method requires the URL of the resource requested and an optional parameter that allows you to control other settings. Find more about fetch [here](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API/Using_Fetch).
 
@@ -255,9 +258,9 @@ fetch(dataEndpoint)
   .then((data) => cities.push(...data));
 ```
 
-> The blobdata object, in turn, does not contain the actual JSON response body but is instead a representation of the entire HTTP response. To extract the JSON body content from the Response object, we use the `JSON()` method, which returns a second promise that resolves with the result of parsing the response body text as JSON. -[MDN](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API/Using_Fetch)
+> The blobdata object, in turn, does not contain the actual JSON response body but is instead a representation of the entire HTTP response. To extract the JSON body content from the Response object, we use the `JSON()` method. This method returns a second promise that resolves with the result of parsing the response body text as JSON. - [Using the Fetch API](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API/Using_Fetch)
 
-![Blobdata output](./returned-blobdata.png)
+![Blobdata output](/engineering-education/create-an-ajax-type-ahead-feature-for-a-website/returned-blobdata.png)
 _blobdata returns entire HTTP response_
 
 Here are a few things to note:
@@ -265,7 +268,7 @@ Here are a few things to note:
 - We defined the empty cities array using a `const` declaration, so we cannot reassign data into it. We can only declare the cities array with a `let` keyword.
 - Alternatively, you can push and [spread the data into the cities array](https://www.samanthaming.com/tidbits/92-6-use-cases-of-spread-with-array/).
 - Create a function called `getMatches` that takes two arguments, the `wordToMatch`and the `cities` array.
-- In the function, we return a filtered subset of the `cities` array and check to see if what the user typed is returned. To check if what the user typed is inside the array, we will [use Regex](https://www.w3schools.com/js/js_regexp.asp) to check if the searched word match any state or city in the `cities` array.
+- In the function above, we will return a filtered subset of the `cities` array to confirm that what the user typed is returned. To acheive this, we will use [Regex](https://www.w3schools.com/js/js_regexp.asp) to check if the searched word matches any state or city in the `cities` array.
 
 ```js
 function getMatches(wordToMatch, cities) {
@@ -276,7 +279,7 @@ function getMatches(wordToMatch, cities) {
 }
 ```
 
-![Arrays of objects returned getMatches function](./console-output.png)
+![Arrays of objects returned getMatches function](/engineering-education/create-an-ajax-type-ahead-feature-for-a-website/console-output.png)
 _Arrays of objects returned by the `getMatches` Function_
 
 ### Displaying data to the UI
@@ -463,7 +466,7 @@ function displayMatchedResults() {
 
 ### Final output
 
-![The final output](./output.png)
+![The final output](/engineering-education/create-an-ajax-type-ahead-feature-for-a-website/output.png)
 _Final output using 'gon' as the search term_
 
 ### Conclusion
