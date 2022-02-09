@@ -116,7 +116,7 @@ Then navigate to the following URL in your browser to start Nessus scanner.
 If you see connection not secured,  click *advance* accept risk and continue.
 
 
-Congratulations, you now have Nessus installed on Kali-Linux, wait for the plugins to complile, it going to take a little bit of time, so go ahead and let it finish. When it does click `Nessus Essentials` and the continue button.
+Congratulations, you now have Nessus installed on Kali-Linux, wait for the plugins to compile and it going to take a little bit of time, so go ahead and let it finish. When it does click `Nessus Essentials` and the continue button.
 
 ### Step 3:
 -Provide your name and a valid email to receive an activation code.
