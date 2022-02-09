@@ -48,10 +48,10 @@ from prophet import Prophet
 - `pandas` allows us to bring in tabular data.
 - `prophet` allows us to import the Prophet library into our Google Colab.
 
-The next thing that we are going to do is to bring in our data into the notebook. We will use store sales [transaction data](https://www.kaggle.com/c/store-sales-time-series-forecasting/data?select=transactions.csv) from Kaggle. The dataset includes dates, store and product information, and the sales numbers. It contains four years worth of sales data sold at Favorita stores located in Ecuador. You'll need to download the data and upload it into your colab. 
+The next thing that we are going to do is to bring our data into the notebook. We will use store sales [transaction data](https://www.kaggle.com/c/store-sales-time-series-forecasting/data?select=transactions.csv) from Kaggle. The dataset includes dates, store and product information, and sales numbers. It contains four years' worth of sales data sold at Favorita stores located in Ecuador. You'll need to download the data and upload it into your Colab. 
 
 ### Loading data into our notebook
-We will use the pandas library to read in our `csv` file.
+We will use the `pandas` library to read in our `csv` file.
 
 ```python
 dataframe = pd.read_csv('transactions.csv')
@@ -86,10 +86,10 @@ transactions     int64
 ```
 From these results, we can see that the date column is a string. The model cannot accept it as it is. It needs to be converted into a date-time format for it to work with the model. Let's perform some preprocessing.
 
-> It is important whenever you're working with time series data that you have a date or time stamp column. It is a requirement by the Prophet model to forecast trends. 
+> It is important whenever you're working with time-series data that you have a date or timestamp column. It is a requirement by the Prophet model to forecast trends. 
 
 ### Data preprocessing
-Using Pandas `to_datetime()` function, we will convert the date column from a string to date time format.
+Using Pandas `to_datetime()` function, we will convert the date column from a string to a date-time format.
 
 ```python
 dataframe ['date'] = pd.to_datetime(dataframe ['date'])
@@ -101,14 +101,14 @@ date            datetime64[ns]
 store_nbr                int64
 transactions             int64
 ```
-Our date column has been converted into date time format.
+Our date column has been converted into a date-time format.
 
 We need to drop the `store_nbr` column. Besides, for this data to work with the Prophet model, we only need two columns, a `ds` and `y` column. We need to rename our date column to `ds` and the transactions column to `y`.
 
 ```python
 dataframe.drop('store_nbr', axis=1, inplace=True)
 ```
-We are dropping only the `store_nbr` column. The `axis=1` arguments tells Pandas that we are dropping the column and not rows.
+We are dropping only the `store_nbr` column. The `axis=1` argument tells Pandas that we are dropping the column and not rows.
 
 Output:
 ```bash
@@ -143,14 +143,14 @@ We begin by creating an instance `p` of the Prophet class.
 ```python
 p = Prophet(interval_width=0.92, daily_seasonality=True)
 ```
-We use the `interval_width` argument to estimate the uncertainty interval from the number of samples used. We've set ours to `0.92`. The argument `daily_seasonality=True` will fit daily seasonality for a sub-daily time series. It will default to weely and yearly seasonalities if you don't set this parameter. You can play around with these values to check how it affects the results obtained after training.
+We use the `interval_width` argument to estimate the uncertainty interval from the number of samples used. We've set ours to `0.92`. The argument `daily_seasonality=True` will fit daily seasonality for a sub-daily time series. It will default to weekly and yearly seasonalities if you don't set this parameter. You can play around with these values to check how it affects the results obtained after training.
 
 We can now train our model.
 
 ```python
 model = p.fit(dataframe)
 ```
-After running the command above, the model will be trained of the data.
+After running the command above, the model will be trained on the data.
 
 ### Making predictions and evaluating performance
 Let's go ahead and make predictions.
@@ -178,7 +178,7 @@ forecast_prediction.tail()
 ```
 From the results generated, the model has generated a lot of sales information in addition to the predicted `ds` and `yhat` column. The most important column is the `yhat` column as it is what represents your sales forecast. 
 
-We can visualize these predictions using plotly.
+We can visualize these predictions.
 
 ```python
 plot1 = p.plot(forecast_prediction)
