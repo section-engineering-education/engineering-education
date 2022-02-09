@@ -1,5 +1,18 @@
-
- ###  INTRODUCTION:
+---
+layout: engineering-education
+status: publish
+published: true
+url: /Develop-a-sign-language-to-speech-flutter-app/
+title: Develop a sign language to speech flutter app
+description: This tutorial will guide the reader on how to build a flutter application that interprets sign language into speech.
+date: 2022-02-09T00:00:00-05:00
+topics: [Languages]
+excerpt_separator: <!--more-->
+images:
+  - url: /engineering-education/Develop-a-sign-language-to-speech-flutter-app/hero.jpg
+    alt: Develop a sign language to speech flutter app image
+--- 
+### Introduction
 Sign Language Interpreting is the act of converting sign language to speech. This helps deaf or hard of hearing people especially in public places. When two people are having a conversation, each persons features are highlighted . This is so that they can understand what they are trying to say. The interpreter uses their hands to highlight the facial gestures. He/ She then convert it into words that can be understandable. The conversion referred to as Interpreting. The first language being source language and the second language being output language.
 ### Table of  Content
 1. Introduction.
