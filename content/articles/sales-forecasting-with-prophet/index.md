@@ -108,7 +108,7 @@ We need to drop the `store_nbr` column. Besides, for this data to work with the 
 ```python
 dataframe.drop('store_nbr', axis=1, inplace=True)
 ```
-We are dropping only the `store_nbr` column. The `axis=1` argument tells Pandas that we are dropping the column and not rows.
+We are dropping only the `store_nbr` column. The `axis=1` argument tells Pandas library to drop the columns and not the rows.
 
 Output:
 ```bash
