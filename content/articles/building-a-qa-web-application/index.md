@@ -14,7 +14,7 @@ images:
   - url: /engineering-education/building-a-qa-web-application/hero.png
     alt: Q&A web application using Python and Anvil Hero image
 ---
-Question-Answering Web Apps have been around for a while now. A good example is the use of bots on websites where a user asks a question, and an answer is generated automatically. In this build, we will show our readers how to build a Q&A app using one of the pre-trained models on [HuggingFace](https://huggingface.co/).
+Question-Answering Web Apps have been around for a while now. A good example is the use of bots on websites where a user asks a question, and an answer is generated automatically. In this build, we will show our readers how to build a Q&A app using one of the pre-trained models on [HuggingFace](https://huggingface.co/) and Anvil.
 <!--more-->
 Anvil is an open-source web interface that allows a developer to spin up and deploy a web app using Python. It is quite similar to the popular [Gradio](https://gradio.app/) web application used by developers. We will leverage Anvil to build our front-end.
 
@@ -72,7 +72,7 @@ To use this model, we'll need to pass in a dictionary. To this dictionary, we ne
 
 ```python
 random_text = """
-<To avoid plagiarism flags, please refer to the Google Colab to access the random text gotten from Wikipedia>
+<To avoid plagiarism flags, please refer to the linked Google Colab URL to access the random text gotten from Wikipedia>
 """
 
 QA_set = {
