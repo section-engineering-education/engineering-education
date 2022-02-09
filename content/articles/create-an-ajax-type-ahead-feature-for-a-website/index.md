@@ -10,22 +10,27 @@ date: 2022-02-04T00:00:00-18:10
 topics: [Languages]
 excerpt_separator: <!--more-->
 images:
-
   - url: /engineering-education/create-an-ajax-type-ahead-feature-for-a-website/hero.jpg
     alt: Create a Type Ahead Feature in JavaScript using Fetch and Regex Hero Image
 ---
+
 Part of the job of a front-end developer is to create intuitive user interfaces that deliver the best user experience to website users. Part of getting this job done is creating search suggestions or what is known as type-ahead feature for websites/webpages.
+
 <!--more-->
+
 In this tutorial, I will explain how to create an **ajax type-ahead feature** for your website using the [cities.json file](). This file contains information about states and cities in America. What this feature does is, if a user types `name`, every state and city that matches the word name pops up.
 
 ### Prerequisites
+
 To follow along with this tutorial, the reader should have:
+
 - Basic HTML and CSS knowledge.
 - ES6 JavaScript/Asynchronous JavaScript.
 - A Code Editor.
 - An [understanding of Regular Expression (RegExp)](https://eloquentjavascript.net/09_regexp.html)
 
 ### Table of contents
+
 - [How FETCH works](#How-fetch-works)
 - [Getting Started](#getting-started)
 - [The JavaScript](#the-javascript)
@@ -36,6 +41,7 @@ To follow along with this tutorial, the reader should have:
 - [Conclusion](#conclusion)
 
 ### How `fetch` works
+
 `Fetch`, like `XMLHttpRequest`, provides a method to get resources asynchronously across networks. However, the `Fetch` method provides an easy, cleaner and, more efficient way to handle resources across networks.
 
 This method uses `Promise` to deliver more flexible features to make requests to servers from the web browsers.
@@ -46,7 +52,9 @@ _Syntax_
 The fetch method requires the URL of the resource requested and an optional parameter that allows you to control other settings. Find more about fetch [here](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API/Using_Fetch).
 
 ### Getting Started
+
 #### Create the Html and CSS page
+
 - Create an HTML page with a search `input` and a `ul`.
 - The input form allows the user to enter the word to search, and the `ul` (unordered list) will display the matching states and cities.
 
@@ -207,10 +215,13 @@ input[type="search"] {
 You can style the CSS file according to your preference.
 
 ### The Javascript
+
 ### Getting the data
+
 The data for this project is from the [cities.json](https://gist.githubusercontent.com/Miserlou/c5cd8364bf9b2420bb29/raw/2bf258763cdddd704f8ffd3ea9a3e81d25e2c6f6/cities.json) file, a file that has information of states cities in America.
 
 From the file, we get access to the following information of each state in America:
+
 1. State name
 2. City name
 3. Population
@@ -231,7 +242,7 @@ const card = document.querySelector(".card");
 
 ```js
 const dataEndpoint =
-"https://gist.githubusercontent.com/Miserlou/c5cd8364bf9b2420bb29/raw/2bf258763cdddd704f8ffd3ea9a3e81d25e2c6f6/cities.json";
+  "https://gist.githubusercontent.com/Miserlou/c5cd8364bf9b2420bb29/raw/2bf258763cdddd704f8ffd3ea9a3e81d25e2c6f6/cities.json";
 
 const cities = [];
 ```
@@ -250,6 +261,7 @@ fetch(dataEndpoint)
 _blobdata returns entire HTTP response_
 
 Here are a few things to note:
+
 - We defined the empty cities array using a `const` declaration, so we cannot reassign data into it. What we can do is declare the cities array with a `let` keyword.
 - Alternatively, you can push and [spread the data into the cities array](https://www.samanthaming.com/tidbits/92-6-use-cases-of-spread-with-array/).
 - Create a function called `getMatches` that takes two arguments, the `wordToMatch`and the `cities` array.
@@ -268,6 +280,7 @@ function getMatches(wordToMatch, cities) {
 _Arrays of objects returned by the `getMatches` Function_
 
 ### Displaying data to the UI
+
 Now that we can get the `getMatches` function display arrays of searched words to the 'console', let us find a way to hook them up to the `ul`.
 
 - First, listen to the UI element that will call trigger the display.
@@ -334,6 +347,7 @@ if (searchTerm === "") {
 ```
 
 ### Formating the output (Optional)
+
 Next, let us format the output to highlight the text on the result, which matches the text the user entered in the search box. Also, we will format the population to be comma-separated.
 
 This is achieved by replacing the following code:
@@ -383,6 +397,7 @@ const htmlToDisplay = outputted
 Read more about replacing string with `.replace` and **regex** [here.](https://www.freecodecamp.org/news/javascript-string-replace-example-with-regex/)
 
 ### The complete JavaScript code
+
 Below is the complete JS code for this tutorial. Save the javascript in the same folder as the HTML file and link them using the `script` tag.
 
 ```js
@@ -447,10 +462,12 @@ function displayMatchedResults() {
 ```
 
 ### Final output
+
 ![The final output](./output.png)
 _Final output using 'gon' as the search term_
 
 ### Conclusion
+
 In this tutorial, we have learned how to build a type-ahead feature for a website. It displays the search suggestion containing the words that match the user input. We also learned an optional way to format the output to highlight the matched words.
 
 You can use the lessons from this tutorial on any project, with a different data source, of course. I hope you find this tutorial helpful one way or another.
@@ -458,10 +475,12 @@ You can use the lessons from this tutorial on any project, with a different data
 Happy coding.
 
 ### References
+
 - [Using Fetch - MDN](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API/Using_Fetch)
 - [JavaScript String.Replace() Example with RegEx - Freecodecamp](https://www.freecodecamp.org/news/javascript-string-replace-example-with-regex/)
 - [Understanding Regex](https://www.computerhope.com/jargon/r/regex.htm)
 - [Eloquent JavaScript](https://eloquentjavascript.net/09_regexp.html)
 
 ---
+
 Peer Review Contributions by: [Dawe Daniel](/engineering-education/authors/dawe-daniel/)
