@@ -101,7 +101,7 @@ date            datetime64[ns]
 store_nbr                int64
 transactions             int64
 ```
-Our date column has been converted into a date-time format.
+We have converted our date column into a date-time format.
 
 We need to drop the `store_nbr` column. Besides, for this data to work with the Prophet model, we only need two columns, a `ds` and `y` column. We need to rename our date column to `ds` and the transactions column to `y`.
 
