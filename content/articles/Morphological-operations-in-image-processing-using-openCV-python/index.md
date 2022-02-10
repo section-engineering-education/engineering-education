@@ -4,7 +4,7 @@ In this tutorial, we can navigate through diverse OpenCV operations used for ima
 How to apply morphological operations to grow the size of items in images in addition to decreasing them.
 We shall additionally talk about the maximum critical morphological operations that you`ll use inner your applications: 
 
--we shall use this image throughout the tutorial [download-sunflower.png](/Morphological-operations-in-image-processing-using-openCV-python/Oroginalimage.jpg)
+- We shall use this image throughout the tutorial [download-sunflower.png](/Morphological-operations-in-image-processing-using-openCV-python/Oroginalimage.jpg)
 ### Prerequisites
 To follow along through this tutorial, these are the requirements:
 
