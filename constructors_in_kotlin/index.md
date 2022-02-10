@@ -31,7 +31,7 @@ The primary constructor is a section of the class header that comes after the cl
 
 ```kotlin
 class Student constructor(name: String, age:Int, Email:String){
-     //code to be processed
+    //code to be processed
 }
 ```
 
@@ -40,7 +40,7 @@ The constructor keyword can be ignored if the primary constructor has no annotat
 The example below explains:
 
 ```kotlin
-class AtmMachine(_moneyInMachine:Boolean,_location:String){
+class AtmMachine(moneyInMachine:Boolean,location:String){
     //code to be executed
 }
 ```
@@ -48,7 +48,7 @@ class AtmMachine(_moneyInMachine:Boolean,_location:String){
 In the preceding example, we don't use the `constructor` keyword. By default, all constructors are public which means they are visible everywhere in the class. Therefore we don't have to include the `constructor` keyword, as shown below:
 
 ```kotlin
-class Student(name:string,age:Int,Email:string){ }
+class Student(name:String,age:Int,email:String){ }
 ```
 
 #### Secondary constructor
@@ -57,11 +57,9 @@ In Kotlin, a secondary constructor is created using the `constructor` keyword. T
 ```kotlin
 class Student
 {
-    constructor(name: Int)
-    {
+    constructor(name: Int){
     }
-    constructor(year:Int, id: Int)
-    {
+    constructor(year:Int, id: Int){
     }
 }
 ```
@@ -69,66 +67,63 @@ class Student
 Kotlin also offers room for using a primary constructor with a secondary constructor in the same class. You need to use the `this` keyword for authorization to call the primary constructor:
 
 ```kotlin
-class myStudent(email:String)
+class MyStudent(email:String)
 {
-  constructor(name:String,id:Int,email:String):this(email)
-  {
-     println("Name = ${name}")
-     println("Email= ${email}")
-     println("Id=${id}")
-  }
+    constructor(name:String,id:Int,email:String):this(email)
+    {
+        println("Name=${name}")
+        println("Email=${email}")
+        println("Id=${id}")
+    }
 }
 fun main(args:Array<String>)
 {
-     val mystudent = myStudent("Alex",101,"alex@gmail")
+    val myStudent = MyStudent("Alex",101,"alex@gmail")
 }
-
-
 ```
 
 This outputs:
 
 ```
-Name = Alex
-Email = alex@gmail
-Id = 101
+Name=Alex
+Email=alex@gmail
+Id=101
 ```
 
 Secondary constructors can also be called by another secondary constructor of the same class:
 
 ```kotlin
-fun main(args:Array<String>)
+class MyStudent
 {
-val mystudent = myStudent("Alex",200)
-}
-class myStudent
-{
-   constructor(name:String,id:Int): this(name,id,"Alex@gmail")
+    constructor(name:String,id:Int): this(name,id,"Alex@gmail")
     {
         println("Name=${name}")
         println("Id=${id}")
         // executes last
     }
-    constructor(name:String, id:Int, mail:String )
+    constructor(name:String, id:Int, mail:String)
     {
-      println("Name = ${name}")
-      println("Id =${id}")
-      println("Email = ${mail}")
-      // executes first
+        println("Name=${name}")
+        println("Id=${id}")
+        println("Email=${mail}")
+        // executes first
     }
 }
 
-
+fun main(args:Array<String>)
+{
+    val myStudent = MyStudent("Alex",200)
+}
 ```
 
 The output of the above code is:
 
 ```
-Name = Alex
-Id = 200
-Email = Alex@gmail
-Name = Alex
-Id = 200
+Name=Alex
+Id=200
+Email=Alex@gmail
+Name=Alex
+Id=200
 ```
 
 ### Init blocks
@@ -144,31 +139,30 @@ init
 Here is an example of a primary constructor with an init block:
 
 ```kotlin
-fun main(args:Array<String>)
+class Person(name:String, id:Int)
 {
-    val Person=person("Alex",200)
-}
-class person(name:String,id:Int)
-{
-    val pName :String
-    val pId:Int
+    private val pName:String
+    private val pId:Int
     init
     {
-      pName= name
-      pId=id
-      println("Name = ${pName}")
-      println("Id=${pId}")
+        pName = name
+        pId = id
+        println("Name=${pName}")
+        println("Id=${pId}")
     }
 }
 
-
+fun main(args:Array<String>)
+{
+    val person=Person("Alex",200)
+}
 ```
 
 When a person object is created, the parameters name and id accept the values `Alex` and `200`. The properties name and id are not properties of the Person class because they are not preceded by `val` or `var`. After the constructor is called, the initializer block is executed which initializes `pName` and `pId`. When run this would be the output:
 
 ```
-Name = Alex
-Id = 200
+Name=Alex
+Id=200
 ```
 
 ### The difference between a primary constructor and a secondary constructor
