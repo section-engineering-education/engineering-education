@@ -1,43 +1,54 @@
-# Build a web scraper using ExpressJs, NodeJs, and Cheerio
-
-### Introduction
-As developers, we may be tasked with getting data from a website without an API. Some websites allow for the extraction of data through the process of "Web Scraping" without restrictions, while others have restrictions to data that can be scraped. In either case, the site's legal policy must be understood and adhered to.
+---
+layout: engineering-education
+status: publish
+published: true
+url: /build-a-web-scraper-using-cheerio/
+title: How to Build a Web Scraper using ExpressJs, NodeJs and Cheerio
+description: In this tutorial will walk through how to build a web scraper using ExpressJs, NodeJs and Cheerio.
+author: muhammed-umar 
+date: 2022-02-10T00:00:00-01:13
+topics: [Languages]
+excerpt_separator: <!--more-->
+images:
+  - url: /engineering-education/build-a-web-scraper-using-cheerio/hero.jpg
+    alt: How to Build a Web Scraper using ExpressJs, NodeJs and Cheerio Hero Image
+---
+As developers, we may be tasked with getting data from a website without an API. Some websites allow for the extraction of data through the process of "Web Scraping" without restrictions, while others have restrictions to data that can be scraped. In either case, the site's legal policy should be understood and adhered to.
+<!--more-->
 Web scraping helps in automation task, such as replacing a tedious process of manually listing products of a website, extracting the country code of all the countries in a drop-down list, and much more. This process is beneficial to Data scientists, making it easier to extract and organize the data in tables for proper analysis. Software developers can also convert these data to API.
 In this tutorial you will build a web scraper that extracts data from a cryptocurrency website, outputting the data as an API in the browser. You will use NodeJs, Express, and Cheerio for building the scraping tool.
 
 ### Prerequisites
 You would need the following to understand and build along:
-
 - An IDE installed
 - A good internet connection
 - Basic Knowledge of Javascript
 - NodeJs Installed
 
 ### Table of contents
-- [Introduction](#introduction)
 - [Prerequisites](#prerequisites)
 - [Table of contents](#table-of-contents)
-- [Check for web scraping permissions](#check-for-web-scraping-permissions)
+- [Checking for web scraping permissions](#checking-for-web-scraping-permissions)
 - [Creating the Project](#creating-the-project)
 - [Installing Packages](#installing-packages)
-- [Creating our script](#creating-our-script)
+- [Editing the JavaScript file](#editing-the-javascript-file)
 - [Understanding Cheerio](#understanding-cheerio)
 - [Parsing the HTML with Cheerio](#parsing-the-html-with-cheerio)
 - [Express routes](#express-routes)
 - [Conclusion](#conclusion)
 - [References](#references)
 
-### Check for web scraping permissions
+### Checking for web scraping permissions
 The first thing to consider when you want to scrape a website should be to check whether it grants permission for scraping, and what actions aren't permitted. Placing a `robots.txt` text in front of the website like so:
 `https://coinmarketcap.com/robots.txt` should give the result below:
 
 ![robots](/engineering-education/build-a-web-scraper-using-cheerio/robots.png)
 
-From the image above, you have the go-ahead to scrape from the homepage but it disallows you from scraping some tabs in the individual currencies page.
+From the image above, you have the permission to scrape data from the homepage but it disallows you from scraping some tabs in the individual currencies page.
 
 ### Creating the project
-For this project, you will create a new folder in your windows explorer. Name it Custom Web Scraper or whatever name you'd prefer. Open up the folder in vs code, it should be empty at this point. Before adding the necessary files to your project you need to ensure NodeJs is installed. NodeJs is a server environment that supports running Javascript code on the terminal. The server will be created with it.  
-Now that you have NodeJs installed you can use the Node Package Manager(NPM), open up the terminal in your vs code, and type:
+For this project, you will create a new folder in your windows explorer. Name it Custom Web Scraper or whatever name you'd prefer. Open up the folder in Vscode, it should be empty at this point, before adding the necessary files to your project you need to ensure that NodeJs is installed. NodeJs is a server environment that supports running Javascript code in the terminal, the server will be created with it.  
+Now that you have NodeJs installed you can use the Node Package Manager(NPM), open up the terminal in your Vscode, and run:
 
 ```bash
 cd Custom Web Scraper
@@ -49,7 +60,7 @@ This takes you to the current project directory, next enter:
 npm init
 ```
 
-The command above initializes a project and create a package.json file where the packages you install will be kept. Click enter and the package.json file will be created, You will get a few prompts on the information you want the file to contain, also take note of the entry point created - `index.js`. Your project now contains a package.json file, open it up and the fields should look like this:
+The command above initializes a project and create a package.json file where the packages you install will be kept. Click enter and the `package.json` file will be created, You will get a few prompts on the information you want the file to contain, also take note of the entry point created - `index.js`. Your project now contains a package.json file, open it up and the fields should look like this:
 
 ```json
 {
@@ -65,10 +76,10 @@ The command above initializes a project and create a package.json file where the
 }
 ```
 
-Now that you have your entry point as index.js in the package.json file, create a new file and call it `index.js`. This is where your code will be written.
+Now that you have your entry point as `index.js` in the `package.json` file, create a new file and name it `index.js`. This is where your code will be written.
 
 ### Installing packages
-- Installing ExpressJs: ExpressJs is a backend framework for NodeJs. You will be installing it to listen to PORTS i.e the port you set for your server. To check if everything works perfectly. Go ahead and run:
+- Installing ExpressJs: ExpressJs is a backend framework for NodeJs. You will be installing it to listen to PORTS i.e. the port you set for your server. To check if everything works perfectly. Go ahead and run:
 
 ```bash
 npm i express
@@ -96,7 +107,7 @@ npm i axios
 npm i nodemon
 ```
 
-Now open your package.json file to see the installed packages.
+Now open the `package.json` file to see the installed packages.
 
 ```json
 {
@@ -120,7 +131,7 @@ Now open your package.json file to see the installed packages.
 
 The Dependencies field contains the packages you have installed and their versions. Also, edit the scripts to listen to changes in the index.js file using nodemon.
 
-### Creating our script
+### Editing the JavaScript file
 To import your packages, use the `require()` function. Edit the `index.js` file to look like so:
 
 ```javascript
@@ -294,9 +305,12 @@ To view the scraped data go to your browser and type `http://localhost:5000/api/
 ![cryptodata](/engineering-education/build-a-web-scraper-using-cheerio/cryptodata.png)
 
 ### Conclusion
-In the just concluded project, you have learned how to scrape data from a Cryptocurrency website. Also, you have become familiar with parsing Html elements with Cheerio as well as manipulation. With this knowledge you can scrape through any website of your choice, but note that it is essential to first check for legal policies before scraping a site.
+In the just concluded project, you have learned how to scrape data from a Cryptocurrency website. Also, you have become familiar with parsing HTML elements with Cheerio as well as manipulation. With this knowledge you can scrape through any website of your choice, but note that it is essential to first check for legal policies before scraping a site.
 Have fun scraping!
 
 ### References
 - [Getting started with web scraping using python](https://www.section.io/engineering-education/getting-started-with-web-scraping-using-python/)
 - [Cheerio package documentation](https://www.npmjs.com/package/cheerio)
+
+---
+Peer Review Contributions by: [Jethro Magaji](/engineering-education/authors/jethro-magaji/)
