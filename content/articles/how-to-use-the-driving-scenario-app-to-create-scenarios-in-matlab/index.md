@@ -22,7 +22,7 @@ The first locate this App in the apps section. You can locate this App in two wa
 - Click on the dropdown arrow to locate the automotive section.
 - In the automotive section, select the `Driving Scenario App`.
 
-![driving scenario app](driving-two.png)
+![Driving scenario app](driving-two.png)
 
 - Double-click the App to open it.
 
@@ -51,7 +51,7 @@ To add a car into the scenario canvas, click on the `actors` and select your pre
 Since these are automated cars, you have to create a `way point`. A waypoint is a specific lane where the car will follow. When creating a scenario and an actor is involved, you cannot run this program without adding a waypoint. In adding a waypoint, every car has its waypoint. Select the car/ truck that you want to add a waypoint, then right-click on it and select `add way point`. It creates a cursor that enables you to create this waypoint.
 After this, you can now run your simulation to see how it works. Again, we see the program run as we want it to run when you run it.
 
-![running program](driving-seven.png)
+![Running program](driving-seven.png)
 
 This App allows you to add any property you need for your simulation. Alternatively, you can add these properties programmatically.
 
@@ -132,7 +132,7 @@ set(gcf,'Name','Chase Plot')
 ```
 The output is:
 
-![chase plot](driving-nine.png)
+![Chase plot](driving-nine.png)
 
 This output shows the perspective as it is seen some distance from the second car. The cars are 10m apart with 6m between them from the plot.
 
@@ -150,7 +150,7 @@ plot(driving);
 ```
 The `road()` function is used to plot the roads. This function takes your scenario, the bank angles and the road centres as the arguments. Running this program gives:
 
-![road plot](driving-ten.png)
+![Road plot](driving-ten.png)
 
 Let us now add our ego car using the `vehicle()` function and its position as the arguement.
 ```matlab
@@ -158,7 +158,7 @@ egoCar = vehicle(driving,'ClassID',1,'Position',[80 -40 0.45],'Yaw',30);
 ```
 The output plot with the ego vehicle is shown below:
 
-![ego vehicle added](driving-eleven.png)
+![Ego vehicle added](driving-eleven.png)
 
 ### Adding trajectories for our actors
 As we said before, we have to give it trajectories for our vehicle to move. We add the second actor car, and both of these vehicles are given a trajectory. To add our second car, 'fastCar`, you use the code below:
@@ -186,9 +186,9 @@ smoothTrajectory(fastCar,lWayPoints(:,:), 50);
 ```
 Here, we get:
 
-![figure 1](driving-twelve.png)
+![Figure 1](driving-twelve.png)
 
-![figure 2](driving-thirteen.png)
+![Figure 2](driving-thirteen.png)
 
 ### Conclusion
 Simulation of the automated driving system is made easier by the Driving Scenario App. You can create different scenarios using this App. These data from this toolbox can then be exported and used to improve various automated driving systems algorithms. It makes it a widely used toolbox.
