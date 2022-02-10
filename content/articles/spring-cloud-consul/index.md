@@ -214,4 +214,4 @@ public class ShopServiceController {
 ### Testing
 
 ### Conclusions
-In this tutorial, we have learned how to deploy consul service registry and discovery server as well as clients on our development machine effiently. You can try implementing a Spring Boot project using the microservice architecture and deploy with Spring Cloud consul. You can download the complete source code [here]().
+In this tutorial, we have learned how to deploy consul service registry and discovery server as well as clients on our development machine effiently. You can try implementing a Spring Boot project using the microservice architecture and deploy with Spring Cloud consul. You can download the complete source code [here](https://replit.com/@faithsiaji/spring-consul#).
