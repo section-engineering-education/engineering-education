@@ -87,7 +87,7 @@ release(videoFReader);
 ```
 If we run this code at this point, we get:
 
-![tracking](tracking-one.png)
+![Tracking](tracking-one.png)
 
 Plot for the confidence score.
 
@@ -95,7 +95,7 @@ Plot for the confidence score.
 
 As we can see, the tracking stops once the object is occluded. Also, the confidence scores diminish as soon as the tracking is stopped.
 
-![dimishing confidence scores](tracking-three.png)
+![Dimishing confidence scores](tracking-three.png)
 
 It is a characteristic of a histogram-based tracker. To improve this characteristic, we should create the program such that once the object is lost, the search window reinitializes when the image reappears. It can be done using the confidence score. It is because the confidence score shows the likeliness of the appearance of the object of interest. Let us add the code below in the while loop just below the `insertShape()` function.
 ```matlab
@@ -118,14 +118,14 @@ if score(idx) > 0.5
 This code uses `if` statements to check for the conditions. The first step is checking if the confidence score is more than 0.5 using `score(idx) > 0.5`. When it is greater than 0.5, the object of interest is visible and can be tracked. At this point, we add a bounding box to the object of interest. If the score is less than 0.5, we use the utility function `segmentBall()` to find the ball.
 The second `if` statement checks if the location of the ball/object of interest is found. If it is not empty(~empty), we reinitialize using `initializeSearchWindow()` function. This function takes the tracker and the location of the object of interest as the arguments. As explained earlier, the output is then read using the `step()` function. We then insert the bounding box `insertShape()` function to the read output.
 
-![tracking](tracking-four.png)
+![Tracking](tracking-four.png)
 Once the ball passes the occlusion, it reinitializes to get it again. Once the reinitialization is done and the ball identified, the tracking continues as shown below:
 
-![confidence score](tracking-five.png)
+![Confidence score](tracking-five.png)
 
 As we can see, the characteristics are improved. The tracking is working even after the object is occluded. The confidence plot is shown below:
 
-![confidence score](tracking-six.png)
+![Confidence score](tracking-six.png)
 
 You can find the files, video, and utility functions used here [here](https://github.com/peterAdongo/tracking)
 
