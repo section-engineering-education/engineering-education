@@ -6,7 +6,7 @@ url: /creating-a-honeypot-for-network-security/
 title: Creating a honeypot for network security
 description: In this article, we will discuss honeypots and how to avoid them when scraping the web for data..
 author: ruth-ngonyo
-date: 2022-01-30T00:00:00-14:00
+date: 2022-02-10T00:00:00-14:00
 topics: [Security]
 excerpt_separator: <!--more-->
 images:
@@ -16,7 +16,7 @@ images:
 ---
 Many companies rely on publicly available data to make critical choices in today's data-driven world. Web scraping is a common technique for obtaining this information from the Internet.
 <!--more-->
-However, web scraping has specific difficulties. The honeypot is an example of a trap. One of the most effective ways to deter hackers is to use honeypots. A honeypot system deters attackers from their objectives. Unwanted behaviour is often detected with the use of honeypots by security teams.
+However, web scraping has specific difficulties. The honeypot is an example of a trap. One of the most effective ways to deter hackers is to use honeypots. A honeypot system deters attackers from their objectives. Unwanted behavior is often detected with the use of honeypots by security teams.
 
 This article will discuss honeypots and how to avoid them when scraping the web for data.
 
@@ -57,7 +57,7 @@ High-interaction honeypots enable an attacker to waste time by mimicking product
 ### How honeypots operate
 Most honeypots are found in the DMZ. The DMZ has web and email servers connected to the Internet. A firewall divides the corporate network from the DMZ. It protects an internal network from the outer world. It permits traffic to flow in key network areas.
 
-The invaders think these fake servers are legitimate, but they are honeypots. So they follow well-established protocols and base their behaviours on real-world acts. Occasionally, fake data is employed to improve the reliability of a piece of data. A honeypot may contain fraudulent credit card information or files that seem to contain such data. The honeypot duplicates all routine access control procedures and protocols to protect the data.
+The invaders think these fake servers are legitimate, but they are honeypots. So they follow well-established protocols and base their behaviors on real-world acts. Occasionally, fake data is employed to improve the reliability of a piece of data. A honeypot may contain fraudulent credit card information or files that seem to contain such data. The honeypot duplicates all routine access control procedures and protocols to protect the data.
 
 Attackers see honeypots in the DMZ as a susceptible location. And the more convincing they must be. How long should a hacker stay in a honeypot? An attacker might want to remain in the honeypot and collect as much information about the target firm as possible to avoid detection.
 
@@ -86,7 +86,7 @@ Websites utilize honeypot traps to detect and discourage online scraping activit
 These traps are also known as spider honeypots. Online crawlers are often the only ones who have access to the links on an online page, and their efficiency is not always optimal. The site classifies data scraping from these URLs as web scraping.
 
 ### Avoiding honeypot traps
-Online scraping behaviour may be easily discovered and monitored using honeypot trap websites. Your access to public data may be restricted in the future. If you value your privacy, avoid collecting data from honeypot websites.
+Online scraping behavior may be easily discovered and monitored using honeypot trap websites. Your access to public data may be restricted in the future. If you value your privacy, avoid collecting data from honeypot websites.
 
 Some honeypot URLs use the CSS rule "display: none" to lure crawlers. Others are disguised by blending with the background. Crawlers can only follow links on the surface, keeping this in mind while creating connections. To prevent backlisting, adhere to web scraping best practices. Scraping data from a website involves following the site's administrators' standards.
 
@@ -106,7 +106,7 @@ In the case of a security compromise, virtual machines may be quickly turned dow
 
 **step 2** Set up the firewall and logs.
 
-Now it's time to pick what honeypot will monitor. File modifications, Login attempts, and other actions. The administration must provide more logging since hackers may modify log files. As a precaution, save the honeypot's log files someplace unlikely to be hacked, such as the Windows logging tool or a cloud service.
+Now it's time to pick what honeypot will monitor. File modifications, login attempts, and other actions. The administration must provide more logging since hackers may modify log files. As a precaution, save the honeypot's log files someplace unlikely to be hacked, such as the Windows logging tool or a cloud service.
 
 The honeypot is in the DMZ, outside the firewall. The external firewall should only allow vital ports and block all others. These devices are ideal for diverting traffic from internal networks to public networks.
 
