@@ -1,12 +1,12 @@
 ---
 layout: engineering-education
 status: publish
-published: 
+published: true
 url: /introduction-to-secrets-management-with-doppler/
 title: Introduction to Secrets Management with Doppler
 description: In this tutorial, we will look at how to manage developer secrets the best way possible, using Doppler solution.
 author: lynette-mwende
-date: 2022-01-19T00:00:00-11:30
+date: 2022-02-10T00:00:00-02:19
 topics: [Security]
 excerpt_separator: <!--more-->
 images:
@@ -14,7 +14,7 @@ images:
   - url: /engineering-education/introduction-to-secrets-management-with-doppler/hero.jpg
     alt: Introduction to Secrets Management with Doppler Example Image
 ---
-Items like API keys, database configurations, SSH credentials, and many alike present a need for management and security. Such database configurations like port numbers, user passwords, and API keys (unique code values used to authenticate API calls and access to APIs) are often vulnerable to security attacks.
+Items like API keys, database configurations, SSH credentials, and many alike present a need for management and security. Such database configurations, like port numbers, user passwords, and API keys (unique code values used to authenticate API calls and access to APIs) are often vulnerable to security attacks.
 <!--more-->
 Without knowing the right tools or management methods, software developers often fail to keep their secrets safe, leading to a poor secret life cycle.
 
@@ -37,7 +37,7 @@ As you develop applications, [microservices](https://microservices.io/), or [con
 These are private pieces of information that unlock protected resources or sensitive information in tools, application servers, Infrastructure-as-Code (IaC) environments, or even [CI/CD pipelines](https://harness.io/blog/secrets-management-ci-cd/). Secrets need to be handled specially to maintain the security of applications.
 
 ### Why manage secrets?
-Secrets management approaches aims to mitigate the spread of secret keys to external systems.
+Secrets management approaches aim to mitigate the spread of secret keys to external systems.
 
 Mainly, secrets management enables developers to be in charge of:
 - How secrets are stored and rotated?
@@ -57,7 +57,7 @@ Some of the unconventional ways include:
 #### Environment variables
 Some developers find it easier to reference secrets stored in the environment variables outside a source code or version control.
 
-Secret keys stored in environment variables are prone to accidental exposures through child processes -what we want to avoid.
+Secret keys stored in environment variables are prone to accidental exposures through child processes, that's what we want to avoid.
 
 Therefore, it is recommended to replace environment variables with external secrets managers such as [Doppler](https://www.doppler.com) and [AWS Secrets Manager](https://aws.amazon.com/secrets-manager/).
 
