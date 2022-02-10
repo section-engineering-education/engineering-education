@@ -57,11 +57,11 @@ In Kotlin, a secondary constructor is created using the `constructor` keyword. T
 ```kotlin
 class Student
 {
-    constructor(name: Int){
-
+    constructor(name: Int)
+    {
     }
-    constructor(year:Int, id: Int){
-
+    constructor(year:Int, id: Int)
+    {
     }
 }
 ```
@@ -71,17 +71,17 @@ Kotlin also offers room for using a primary constructor with a secondary constru
 ```kotlin
 class myStudent(email:String)
 {
-    constructor(name:String,id:Int,email:String):this(email)
-    {
-         println("Name = ${name}")
-         println("Email= ${email}")
-         println("Id=${id}")
-    }
+  constructor(name:String,id:Int,email:String):this(email)
+  {
+     println("Name = ${name}")
+     println("Email= ${email}")
+     println("Id=${id}")
+  }
 }
-    fun main(args:Array<String>)
-    {
-         val mystudent = myStudent("Alex",101,"alex@gmail")
-    }
+fun main(args:Array<String>)
+{
+     val mystudent = myStudent("Alex",101,"alex@gmail")
+}
 
 
 ```
@@ -98,24 +98,24 @@ Secondary constructors can also be called by another secondary constructor of th
 
 ```kotlin
 fun main(args:Array<String>)
-     {
-     val mystudent = myStudent("Alex",200)
-     }
+{
+val mystudent = myStudent("Alex",200)
+}
 class myStudent
 {
-     constructor(name:String,id:Int): this(name,id,"Alex@gmail")
+   constructor(name:String,id:Int): this(name,id,"Alex@gmail")
     {
         println("Name=${name}")
-         println("Id=${id}")
-         // executes last
+        println("Id=${id}")
+        // executes last
     }
     constructor(name:String, id:Int, mail:String )
-       {
-          println("Name = ${name}")
-          println("Id =${id}")
-           println("Email = ${mail}")
-           // executes first
-       }
+    {
+      println("Name = ${name}")
+      println("Id =${id}")
+      println("Email = ${mail}")
+      // executes first
+    }
 }
 
 
@@ -145,19 +145,19 @@ Here is an example of a primary constructor with an init block:
 
 ```kotlin
 fun main(args:Array<String>)
-    {
-        val Person=person("Alex",200)
-    }
+{
+    val Person=person("Alex",200)
+}
 class person(name:String,id:Int)
 {
     val pName :String
     val pId:Int
     init
     {
-        pName= name
-        pId=id
-        println("Name = ${pName}")
-        println("Id=${pId}")
+      pName= name
+      pId=id
+      println("Name = ${pName}")
+      println("Id=${pId}")
     }
 }
 
