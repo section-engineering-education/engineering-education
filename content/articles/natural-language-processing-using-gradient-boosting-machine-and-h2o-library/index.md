@@ -14,15 +14,17 @@ images:
   - url: /engineering-education/natural-language-processing-using-gradient-boosting-machine-and-h2o-library/hero.png
     alt: Natural Language Processing using Gradient Boosting Machine and H2O library Hero image
 ---
-H2O is an open-source platform used for machine learning. H2O supports the implementation of popular machine learning algorithms. H20 supports both supervised and unsupervised machine learning algorithms.
+[H2O](https://github.com/h2oai/h2o-3) is an open-source, in-memory platform for machine learning. [H2O](https://github.com/h2oai/h2o-3) provides implementations of many popular algorithms. It supports both supervised and unsupervised machine learning algorithms.
 <!--more-->
-H20 supports the following algorithms. [Naive Bayes algorithms](https://en.wikipedia.org/wiki/Naive_Bayes_classifier), [Random Forests](https://en.wikipedia.org/wiki/Random_forest), [Gradient Boosting Machine](https://en.wikipedia.org/wiki/Gradient_boosting), [Generalized Linear Models](https://en.wikipedia.org/wiki/Generalized_linear_model), [K-Means algorithms](https://en.wikipedia.org/wiki/K-means_clustering), [Principal component analysis](https://en.wikipedia.org/wiki/Principal_component_analysis) and [Deep Neural Networks](https://en.wikipedia.org/wiki/Deep_learning). The complete list of the algorithms that H2O supports is found [here](https://docs.h2o.ai/h2o/latest-stable/h2o-docs/data-science.html).
+H20 supports the following algorithms: [Naive Bayes algorithms](https://en.wikipedia.org/wiki/Naive_Bayes_classifier), [Random Forests](https://en.wikipedia.org/wiki/Random_forest), [Gradient Boosting Machine](https://en.wikipedia.org/wiki/Gradient_boosting), [Generalized Linear Models](https://en.wikipedia.org/wiki/Generalized_linear_model), [K-Means algorithms](https://en.wikipedia.org/wiki/K-means_clustering), [Principal component analysis](https://en.wikipedia.org/wiki/Principal_component_analysis) and [Deep Neural Networks](https://en.wikipedia.org/wiki/Deep_learning). 
 
-H2O is fast and scalable. This makes it the best platform for building powerful machine learning models. H2O is also automates machine learning using the [H2O AutoML.](https://github.com/h2oai/h2o-3) pipeline.
+The complete list of all the algorithms that H2O supports is found [here](https://docs.h2o.ai/h2o/latest-stable/h2o-docs/data-science.html).
 
-In this tutorial, we will be focusing on the Gradient Boosting Machine algorithm. The Gradient Boosting Machine builds both classification and regression models. In the Gradient Boosting Machine, we build multiple decision trees sequentially. We then combine them to create a final model with the best results. 
+[H2O](https://github.com/h2oai/h2o-3) is fast and scalable, making it the best platform for building powerful machine learning models. This platform also automates machine learning using the [H2O AutoML.](https://github.com/h2oai/h2o-3) pipeline.
 
-We will use the Gradient Boosting Machine to build a natural langauge processing model. The model will perform sentiment analysis. Sentiment analysis is a task in natural language processing that classify a customer review as either positive or negative.
+In this tutorial, we will focus on the Gradient Boosting Machine. This algorithm builds both classification and regression models. In Gradient Boosting Machine, we build multiple decision trees sequentially which are then combined to create a final model.
+
+We will use the Gradient Boosting Machine to build a natural langauge processing model that performs sentiment analysis. The model will classify a customer review as either positive or negative.
 
 ### Table of contents
 - [Prerequisites](#prerequisites)
@@ -63,16 +65,18 @@ To follow along with this tutorial, you need to be familiar with:
 > NOTE: You must use [Google Colab notebook](https://research.google.com/) when building the natural language processing model. Google Colab notebook has fast CPUs and GPUs. This makes it best suited to run the H2O library which needs a fast CPU or a GPU.
 
 ### Introduction to Gradient Boosting Machine
-As mentioned earlier, Gradient Boosting Machine creates multiple decision trees sequentially. It then combines them to create a final model with the best results. The initial decision tree model is known as the base model. Multiple decision trees are then built on top of the base model. The base model is also known as a weak learner.
+As mentioned earlier, Gradient Boosting Machine builds multiple decision trees sequentially which are then combined to create a final model. The initial decision tree model is known as the base model or a weak leaner.
 
-In Gradient Boosting Machine, weak learners work poorly when alone, but they are strong when they work together. When they work in unity they produce the best results.
+Boosting involves the use of a collection of algorithms to convert weak learners into strong learners and minimize training errors.. In boosting, a random sample of data is selected, fitted with a model and then trained sequentially.
+
+Weak learners may not perform well individually due to [high variance or high bias](https://www.javatpoint.com/bias-and-variance-in-machine-learning). However, when weak learners are aggregated, they can form a strong learner, as their combination reduces bias or variance, yielding better model performance. 
 
 For further reading on Gradient Boosting Machine, read this [article](/engineering-education/boosting-algorithms-python/).
 
 Let's get started with H2O.
 
 ### Getting started with H2O
-To use H2O the platform, we will install important dependencies. H2O depends on the [64-bit JDK](https://www.oracle.com/java/technologies/downloads/) to run. H2O is written using Java programming language. To install the 64-bit JDK, run this command:
+To use H2O the platform, we will install the important dependencies. H2O depends on the [64-bit JDK](https://www.oracle.com/java/technologies/downloads/) to run. It is written using Java programming language. To install the 64-bit JDK, run this command:
 
 ```bash
 !apt-get install default-jre
@@ -91,23 +95,23 @@ import h2o
 ```
 
 #### Initializing H2O
-We initialize H2O using this code:
+We initialize H2O using the following code:
 
 ```python
 h2o.init()
 ```
-Initializing H2O will enable us to connect to the H2O clusters. This enables us to use its memory for machine learning. When we run the code above, it produces the following output:
+Initializing H2O will enable us to connect to the H2O clusters. Thus, we will use its memory for machine learning. When we run the code above, it produces the following output:
 
 ![Initializing H2O](/engineering-education/natural-language-processing-using-gradient-boosting-machine-and-h2o-library/h2o-cluster.jpg)
 
-From the image above, we can see we have connected to the H2O cluster. It also shows the cluster version and the total free cluster memory.
+From the image above, we have successfully connected to the H2O cluster. It also shows the cluster version and the total free cluster memory.
 
-Let's now load the dataset we will use for sentiment analysis.
+The next step is to load the dataset.
 
 ### Dataset for sentiment analysis
-We will use the dataset collected from Amazon. The Amazon dataset is made up of customers' reviews of personal care appliances. 
+We will use the Amazon dataset. It is made up of customers' reviews of personal care appliances. 
 
-The dataset is downloaded from the `tensorflow_datasets`. `tensorflow_datasets` is a TensorFlow repository that has ready-to-use datasets. Import the `tensorflow_datasets` using this code:
+We download the dataset from the `tensorflow_datasets`. `tensorflow_datasets` is a TensorFlow repository that contains ready-to-use datasets. To import `tensorflow_datasets`, use this code:
 
 ```python
 import tensorflow_datasets as tfds
@@ -117,21 +121,21 @@ To download the dataset from `tensorflow_datasets`, use the following code:
 ```python
 dowloaded_dataset, dataset_info = tfds.load('amazon_us_reviews/Personal_Care_Appliances_v1_00', with_info=True, batch_size=-1)
 ```
-From the code above, we use the `tfds.load` method to load the dataset from the `tensorflow_datasets` repository. We will save the dataset into the `train` variable using the following code:
+From the code above, we use the `tfds.load` method to load the dataset from the `tensorflow_datasets` repository. We will then save the dataset into the `train` variable using the following code:
 
 ```python
 train_dataset = dowloaded_dataset['train']
 ```
-To see the dataset information run this command:
+To see the dataset information, run this command:
 
 ```python
 dataset_info
 ```
-The output of the sentiment analysis dataset is shown below:
+The output of the dataset is shown below:
 
 ![Sentiment analysis dataset](/engineering-education/natural-language-processing-using-gradient-boosting-machine-and-h2o-library/dataset-information.jpg)
 
-From the image above, the dataset has over 130 million customer reviews. The dataset has many columns. In this tutorial, we will use the following columns as inputs:`review_body`, `review_headline`, `star_rating`, and `helpful_votes`.
+From the image above, the dataset has over 130 million customer reviews. The dataset has many columns, but we will use the following columns as inputs:`review_body`, `review_headline`, `star_rating`, and `helpful_votes`.
 
 - `review_body`
 It shows a detailed description of the product review.
@@ -145,7 +149,7 @@ It shows the 1-5 star rating of the product purchased.
 - `helpful_votes`
 It shows the number of votes given to an Amazon product.
 
-After loading the dataset, we need to convert the Amazon dataset into an array using NumPy. An array is easy manipulate and use.
+After loading the dataset, we need to convert the Amazon dataset into a NumPy array using NumPy. A NumPy array is easy to manipulate and use.
 
 #### Converting the dataset into an array
 To import the NumPy package, use the following code:
@@ -167,7 +171,7 @@ The output is shown below:
 
 ![Converted dataset array](/engineering-education/natural-language-processing-using-gradient-boosting-machine-and-h2o-library/dataset-array.jpg)
 
-From the image above, the Amazon dataset is converted into an array format. Next, we need to select the columns that we will use to build the sentiment analysis model.
+From the image above, we have converted the Amazon dataset into a NumPy array. Next, we need to select the columns that we will use to build the sentiment analysis model.
 
 ### Selecting the columns
 To select these columns, use this code:
@@ -178,29 +182,29 @@ review_headline=dowloaded_dataset['data']['review_headline']
 helpful_votes=dowloaded_dataset['data']['helpful_votes']
 rating=dowloaded_dataset['data']['star_rating']
 ```
-The code above selects four columns from our dataset. The four columns are the input columns for the model during model training. We will then create a data frame using the H2O data frame function. A data frame organizes a dataset into labeled columns and rows.
+The code above selects four columns from our dataset. The four columns are the inputs for the model during the training phase. We will then create a DataFrame using the H2O DataFrame function. A DataFrame is a data structure that organizes data into a 2-dimensional table of rows and columns.
 
-### Creating the data frame
-We will create the data frame using the H2O data frame function. This is done using the following code:
+### Creating the DataFrame
+We will create the DataFrame using the H2O DataFrame function. This is done using the following code:
 
 ```python
 h2o_df=h2o.H2OFrame(np.hstack((helpful_votes[:,None],review_headline[:,None],review_body[:,None],rating[:,None])),column_names=['votes','headline','reviews','rating'],column_types=['numeric','string','string','numeric'])
 ```
-The code above will create a data frame using the `h2o.H2OFrame` function. The function is also assigns human-readable column names. The assigned column names are, `votes`, `headline`, `reviews`, and `rating`. 
+The code above will create a DataFrame using the `h2o.H2OFrame` function. The function is also assigns human-readable column names. The assigned column names are, `votes`, `headline`, `reviews`, and `rating`. 
 
-To see the created data frame, run this code:
+To see the created DataFrame, run this code:
 
 ```python
 h2o_df
 ```
 The code produces the following output:
 
-![Created dataframe](/engineering-education/natural-language-processing-using-gradient-boosting-machine-and-h2o-library/converted-dataframe.jpg)
+![Created DataFrame](/engineering-education/natural-language-processing-using-gradient-boosting-machine-and-h2o-library/converted-dataframe.jpg)
 
 From the image above, our dataset has four columns with the assigned column names. 
 
 ### Adding the output column
-We need to add an output column to our data frame. The output column will contain the output of the model after making a prediction. The model will classify the customer's reviews as either positive or negative. Positive reviews are represented by 1 while negative reviews are represented by 0. 
+We need to add an output column to our DataFrame. The output column contains the output of the model after making a prediction. The model will classify the customer's reviews as either positive or negative. Positive reviews are represented by 1 while negative reviews are represented by 0. 
 
 For a customer review to be positive the `star_rating` should be greater than 4. If the `star_rating` is less than 4, the review is negative. To add the output column, we will use this logic.
 
@@ -225,12 +229,17 @@ Text processing is an essential step in natural language processing. In-text pre
 
 Some of the text preprocessing steps we will perform in this tutorial are as follows:
 - Removing stop words
+Stop words are the most common words in any language like articles, prepositions, pronouns and conjunctions and they do not add much information to the text.
+
 - Converting text to lower case
+ Converting text to lower case ensures we have a uniform dataset.
+
 - Tokenization
+Tokenization is the process of splitting the text into smaller word units called tokens.
 
 For a detailed understanding of all the steps in text preprocessing, read this [article](https://towardsdatascience.com/nlp-text-preprocessing-a-practical-guide-and-template-d80874676e79).
 
-In this tutorial, we will only focus on three steps. To perform these steps, we will use the Natural Language Toolkit(NLTK).
+In this tutorial, we will only perform three steps. To perform these steps, we will use the Natural Language Toolkit(NLTK).
 
 ### Installing the Natural Language Toolkit
 To install the Natural Language Toolkit(NLTK), use this command:
@@ -246,9 +255,9 @@ import nltk
 Let's now use `nltk` for text preprocessing.
 
 ### Downloading stopwords
-Stopwords are the most commonly used words in a given language. Stopwords carry very little information and have a minor impact on the model during training. Removing stop words allows the model to focus on the unique words in the dataset. These words have a greater impact on the model during training.
+Stopwords are the most commonly used words in a given language. Stopwords carry very little information and have little impact on the model during training. Removing stop words will allow the model to focus on the unique words in the dataset which have a greater impact on the model during training.
 
-We will use `nltk` to download the stop word of the English language.
+We will use `nltk` to download the stop words of the English language.
 
 ```python
 from nltk.corpus import stopwords
@@ -260,8 +269,6 @@ These stopwords will then be filtered out from the dataset.
 We will create a single function that will remove the stopwords, perform tokenization, and convert text to lower case.
 
 ### Creating the function
-Tokenization is the process of splitting the text into smaller word units called tokens. The created tokens are the input for the model during training. Converting text to lower case ensures we have a uniform dataset.
-
 We create the function using the following code snippet:
 
 ```python
@@ -272,7 +279,7 @@ def tokenize(line):
   tokenized_filter = tokenized[(tokenized.isna()) | (~ tokenized.isin(stop_words)),:]
  return tokenized_filter
 ```
-The function is named `tokenize`. In this function, `line.tokenize` method is used for tokenization. The `tokenized.tolower` method is converts the text to lower case. `(~ tokenized.isin(stop_words))` method will only tokenize words that are not found in the stop words list. This will ensure that all of the stop words are filtered out of the dataset.
+The function is named `tokenize`. In this function, `line.tokenize` method is used for tokenization. The `tokenized.tolower` method converts the text to lower case. `(~ tokenized.isin(stop_words))` will tokenize words that are not found in the stop words list. This will ensure that all of the stop words are filtered out of the dataset.
 
 Finally, the function returns a clean text that has undergone all three steps. Let's now apply this function to our `reviews` and `headline` columns.
 
@@ -301,12 +308,12 @@ The output is shown below:
 
 ![Headline column](/engineering-education/natural-language-processing-using-gradient-boosting-machine-and-h2o-library/headline-column.jpg)
 
-The steps above show how to remove stop words, convert text into lower and perform tokenization. The next step is to perform vectorize the tokenized text.
+The steps above show how to remove stop words, convert text into lower and perform tokenization. The next step is to vectorize the tokenized text.
 
 ### Vectorization
-Vectorization is the process of converting the tokenized text to a list of numbers. The list of numbers are known as word vectors which the model then uses as input.
+Vectorization is the process of converting the tokenized text to a list of numbers. The list of numbers are known as word vectors which the model uses as input.
 
-Machines do not understand text, that's why we convert the text into numeric form/ list of numbers. In H2O, we use the `H2OWord2vecEstimator` algorithm to convert the tokenized text to word vectors.
+Machines do not understand text, that's why we need to convert the text into numeric form (list of numbers). In H2O, we use the `H2OWord2vecEstimator` algorithm to convert the tokenized text to word vectors.
 
 For further reading on how the `H2OWord2vecEstimator` algorithm converts the tokenized text to word vectors, read this [documentation](https://docs.h2o.ai/h2o/latest-stable/h2o-docs/data-science/word2vec.html)
 
@@ -315,7 +322,7 @@ We import the `H2OWord2vecEstimator` using the following code:
 ```python
 from h2o.estimators.word2vec import H2OWord2vecEstimator
 ```
-The `H2OWord2vecEstimator` algorithm trains a model that will perform vectorization. To use the trained model, we apply it to the `words_reviews` and the `words_headline` columns. It produces the corresponding word vectors.
+The `H2OWord2vecEstimator` algorithm trains a model that will perform vectorization. To use the trained model, we apply it to the `words_reviews` and the `words_headline` columns. The vectorization model produces the corresponding word vectors.
 
 Let's now train vectorization model.
 
@@ -354,13 +361,13 @@ We will apply the trained model to both the `words_reviews` and the `words_headl
 ```python
 review_vecs = vec_model.transform(words_reviews, aggregate_method = "AVERAGE")
 ```
-From the code above, the `vec_model.transform` function will convert/transform the tokenized text to word vectors. The function has the following parameter:
+From the code above, the `vec_model.transform` function convert/transform the tokenized text to word vectors. The function has the following parameter:
 
 - `words_reviews`
 It is the input column.
 
 - `aggregate_method = "AVERAGE"`
-It specify how the function will convert the tokenized text to word vectors. `"AVERAGE"` is the most commonly used type to ensure that no words lose meaning after the conversion.
+It specify how the function will aggregate the tokenized words. `"AVERAGE"` is the most commonly used type to ensure that no words lose meaning after the conversion.
 
 To see the size of converted word vectors, use this code:
 
@@ -372,7 +379,7 @@ The output is shown below:
 ```bash
 (85981, 100)
 ```
-From the output above, we have `85981` word vectors and they are organized into `100` columns.
+From the output above, we have `85981` word vectors and they have `100` columns.
 
 To see the output of converted word vectors, use this code:
 
@@ -383,7 +390,9 @@ The output is shown below:
 
 ![Converted word vectors](/engineering-education/natural-language-processing-using-gradient-boosting-machine-and-h2o-library/converted-word-vectors.jpg)
 
-From the image above, the `words_reviews` column has been converted to word vectors. Let's also vectorize the `words_headline` column using the same process.
+From the image above, the `words_reviews` column has been converted to word vectors. 
+
+We also vectorize the `words_headline` column using the same process.
 
 #### `words_headline` column
 We will use the following code:
@@ -392,7 +401,7 @@ We will use the following code:
 headline_vecs = vec_model.transform(words_headline, aggregate_method = "AVERAGE")
 headline_vecs.names = ["headline_" + s for s in headline_vecs.names]
 ```
-We use the same `vec_model.transform` function to vectorize the `words_headline` column. We also use the same `aggregate_method = "AVERAGE"` parameter when performing the vectorization.
+We use the same `vec_model.transform` function to vectorize the `words_headline` column. We also use the same `aggregate_method = "AVERAGE"` parameter to perform the vectorization.
 
 When the code is executed, it will vectorize our text. To see the vectorized text, use this code:
 
@@ -405,32 +414,33 @@ The output is shown below:
 
 From the image above, the `words_headline` column has been converted to word vectors
 
-We will use the `review_vecs` and the `headline_vecs` as inputs for our model. We need to add/attach them to our original data frame.
+We will use the `review_vecs` and the `headline_vecs` as inputs for our model. We need to add/attach them to the original DataFrame.
 
 ### Adding the vectorized columns to the data frame
-We will add the vectorized columns to the original `h2o_df` data frame using the `cbind` function.
+We will add/attach the vectorized columns to the original `h2o_df` DataFrame using the `cbind` function.
 
 ```python
 h2o_df_ext=h2o_df.cbind(review_vecs)
 h2o_df_ext = h2o_df_ext.cbind(headline_vecs)
 ```
-The `cbind` function will add the `review_vecs` dataframe to the `h2o_df`. The same function will also add the `headline_vecs` dataframe to the created `h2o_df_ext`.
+The `cbind` function will add the `review_vecs` dataframe to the `h2o_df`. The same function also adds the `headline_vecs` DataFrame to the created `h2o_df_ext`.
 
-After merging all the data frames, we split the final `h2o_df_ext` data frame into two sets. The first set for model training and the second set for model validation.
+After merging all the DataFrames, we split the final `h2o_df_ext` DataFrame into two sets. The first set for model training and the second set for model validation.
 
-### Splitting the data frame
+### Splitting the DataFrame
 We split the dataset into a training and validation set using this code:
 
 ```python
 h2o_train,h2o_valid = h2o_df_ext.split_frame(ratios=[.8])
 ```
-The model will learn from the training to understand sentiment analysis. The validation set will fine-tune the hyper-parameters during training. It ensures that we can have an optimized model that gives the best prediction results.
+The model will learn from the training set to understand sentiment analysis. The validation set will fine-tune the model's hyper-parameters during training.
 
-From the code above, we use splitting ratio of `.8`. 80% of the data frame will be the training set and 20% will be the validation set.
-We can use the Gradient Boosting Machine to train the model.
+From the code above, we use the splitting ratio of `.8`. 80% of the data frame will be the training set and 20% will be the validation set.
+
+Let's use the Gradient Boosting Machine to train the model.
 
 ### Model training using the Gradient Boosting Machine
-We will import the `H2OGradientBoostingEstimator` algorithm from the H2O library. `H2OGradientBoostingEstimator` is the Gradient Boosting Machine algorithm that trains the model.
+We will import the `H2OGradientBoostingEstimator` algorithm from the H2O library. It is the algorithm that trains the model.
 
 ```python
 from h2o.estimators import H2OGradientBoostingEstimator
@@ -445,15 +455,15 @@ Gradient_Boosting_Machine= H2OGradientBoostingEstimator(ntrees=100,
 The initialized `H2OGradientBoostingEstimator` algorithm has the following parameters:
 
 - `ntrees`
-It specifies the number of decision trees used to build the model. We have set the number of trees to be `100`. The `H2OGradientBoostingEstimator` algorithm will create the 100 decision trees sequentially. It then combines them to create a final model with the best results.
+It specifies the number of decision trees used to build the model. We have set the number of trees to be `100`. The `H2OGradientBoostingEstimator` algorithm will create 100 decision trees sequentially. It then combines them to create a final model with the best results.
 
 - `max_depth`
 It is the maximum depth of the decision trees used. We have set the value to `6`. Increasing the `max_depth` value may lead to model overfitting.
 
 - `learn_rate`
-It is used to specify the learning rate of the model during training.
+It specify the learning rate of the model during training.
 
-After, initializing the model, let's now feed the model with the prepared dataset.
+After, initializing the model, we feed the model with the prepared dataset.
 
 ### Feeding the model with the dataset
 To feed the model with the dataset, use this code:
@@ -470,10 +480,10 @@ It is the variable that contains all the input columns. The `headline_vecs` and 
 It is the variable that contains the output column. 
 
 - `training_frame`
-It specify which of the two spit data frames we will use for training. We use the `h2o_train` data frame for training.
+It specify the DataFrame we will use for training. We use the `h2o_train` DataFramefor training.
 
 - `validation_frame`
-It specify which of the two spit data frames we will use for validation. We use the `h2o_valid` data frame for validation.
+It specify the DataFrame we will use for validation. We use the `h2o_valid` data frame for validation.
 
 When you execute this code, the algorithm will train the model and produce the model with the best accuracy score.
 
@@ -488,12 +498,10 @@ The code above will print the accuracy score. The accuracy score is shown below:
 ```bash
 Hyperparameter AUC: 0.934
 ```
-The accuracy score is `0.934`, which is 93.4%. It is a high accuracy score and shows the model was well trained. The model understands sentiment analysis and can make accurate predictions. 
-
-Let's use this model to make a prediction.
+The accuracy score is `0.934`, which is 93.4%. It is a high accuracy score and shows the model was well trained. We can now use this model to make predictions.
 
 ### Making predictions
-We use the model to classify if a given customer review is negative or positive. We will use the following customer review:
+We use the model to classify a customer review as either negative or positive.
 
 ```python
 predictions = ["The shippers and loaders were great....willing to consider speedier shipping options, the good news is that at the end the shipping arrived quickly enough"]
@@ -503,7 +511,7 @@ Let's vectorize this text input.
 ```python
 predictions = vec_model.transform(predictions)
 ```
-After the vectorization, let's use the converted word vectors to make a prediction. To make the prediction, we will use the `predict` function.
+After vectorization, we use the vectorized text to make a prediction. The prediction is done using the `predict` function.
 
 ```python
 prediction_result = Gradient_Boosting_Machine.predict(predictions)
@@ -514,14 +522,14 @@ The prediction result is shown below:
 ```bash
 array([1])
 ```
-The prediction result is 1. It is a positive review and shows the model can make accurate predictions.
+The prediction result is 1. It is a positive review and the model can make accurate predictions.
 
 ### Conclusion
-In this tutorial, we went through the process of setting up our working environment and installing the H2O library. We also discussed the Gradient Boosting Machine in detail. This gave a reader a better understanding of the algorithm before implementing it. The tutorial also covers text preprocessing. In-text preprocessing, we clean and remove noise from the dataset.
+In this tutorial, we went through the process of setting up the working environment and installing the H2O library. We also discussed the Gradient Boosting Machine in detail. This gave a reader a better understanding of the algorithm before the implementation. The tutorial also covers text preprocessing. In-text preprocessing, we clean and remove noise from the dataset.
 
-Finally, the clean dataset was used to build a sentiment analysis model. The model was trained using `H2OGradientBoostingEstimator` algorithm and final model was able to make accurate predictions.
+Finally, we use the clean dataset to build a sentiment analysis model. The model was trained using `H2OGradientBoostingEstimator` algorithm and final model can make accurate predictions.
 
-The complete Google Colab code for this tutorial is found [here](https://colab.research.google.com/drive/1MS3ziVfG2UIgCbvJ8nRyciJcfDyZVDq1?usp=sharing).
+To access the Google Colab notebook for this tutorial, click [here](https://colab.research.google.com/drive/1MS3ziVfG2UIgCbvJ8nRyciJcfDyZVDq1?usp=sharing).
 
 ### References
 - [Gradient Boosting](https://en.wikipedia.org/wiki/Gradient_boosting)
