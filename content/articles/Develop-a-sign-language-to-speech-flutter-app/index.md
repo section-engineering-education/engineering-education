@@ -13,8 +13,9 @@ images:
     alt: Develop a sign language to speech flutter app image
 --- 
 ### Introduction
-Sign Language Interpreting is the act of converting sign language to speech. This helps deaf or hard of hearing people especially in public places. When two people are having a conversation, each persons features are highlighted . This is so that they can understand what they are trying to say. The interpreter uses their hands to highlight the facial gestures. He/ She then convert it into words that can be understandable. The conversion referred to as Interpreting. The first language being source language and the second language being output language.
-### Table of  Content
+Sign Language Interpreting is the act of converting sign language to speech. This app helps deaf or hard of hearing people especially in public places. This is so that one can understand what they are trying to say. Currently the interpreter uses their hands to highlight the facial gestures but with this app no need to hire one. Interpreter convert signs into words that can be understandable for this app it converts it to speech. The first language being source language and the second language being output language.
+
+### Table of contents
 1. Introduction.
 2. Key takeaways.
 3. Prerequisites.  
@@ -50,7 +51,7 @@ A user can select the required sign language from a list and then record their v
 
 ### Lets see code in flutter:
 
-### Step 1. Adding relevant dependecies.
+### Step one: Adding relevant dependecies.
 You will start by creating a new project. Then add necessary dependencies to the pubspec.yaml file.
 ```dart
 dependencies: flutter:
@@ -65,7 +66,7 @@ dependencies: flutter:
 	pathprovider: 0
 
 ```
-### Step 2. Creating main class
+### Step two: Creating main class
 After this, create a new class called 'DeafSignTranslator' in lib folder. This will be the main class for developing this app.
 
 ```dart
@@ -121,7 +122,7 @@ void getRecordingVideo(_int value){
 	 }
 
 ```
-### Step3. Create a class for storing records.
+### Step three: Create a class for storing records.
 For this class. First of all, we will create a class for storing the records of our users that are saved to Firestore database.
 ```dart
 class userRecords{
@@ -170,11 +171,11 @@ Future _decodeAsync(int progress) async {
 class DeafTranslator{
 }
 ```
-### Step4. Creating deaf translator class.
+### Step four: Creating deaf translator class.
 
 Now, You create a new class called 'DeafSignTranslator'. It deals with translating text to sign language.
 
-### Step5. Creating User Registrations and authentication.
+### Step five: Creating User Registrations and authentication.
 
 Next is for user registration and authentication. This is by using Firebase SDK from google cloud functions.
 
@@ -198,7 +199,7 @@ void _handleRecordingStatus(int value){ if (_tweetable == true) {
 	 else {setState(()=>this.recordButton().isEnabled = !value)} 
 }
 ```
-### Step6. Creating class to subscribes to Firestore changes.
+### Step six: Creating class to subscribes to Firestore changes.
 lets now finalize our application . We will create a new class that subsrcibes to Firestore changes.
 ```dart
 class signLanguageApp{
@@ -212,7 +213,7 @@ void _handleRecordingStatus(int value){
 void _handleImagePicked(){ setState(() => this.imageUrl = this._uri); 
 }
 ```
-### Step 7. Finalization of the main dart file.
+### Step seven: Finalization of the main dart file.
 Finally, we will initialize our app in main.dart file.
 ```dart
 
@@ -230,14 +231,22 @@ new DeafTranslator().getSignFromText(_string text);
 }
 ```
 
-### Step 8. Functions explanations.
+### Step eight: Functions explanations.
 Now, we will create two functions that can transform text to sign language and vice versa.
 ```dart
 
 _handleTextRecording(_int value){ setState(() => this.getAslButton().isEnabled = !value); }
 
-void _handleRecordingStatus(int value){ if (_tweetable == true) { setState(() => this.getAslButton().isEnabled = !value); } else {setState(()=>this.getAslButton().isEnabled = !value)} }
-void _handleImagePicked(){ setState(() => this.imageUrl = this._uri); }
+void _handleRecordingStatus(int value){
+  if (_tweetable == true) { 
+    setState(() => this.getAslButton().isEnabled = !value); } 
+    else 
+      {
+      setState(()=>this.getAslButton().isEnabled = !value)} 
+     }
+void _handleImagePicked(){
+  setState(() => this.imageUrl = this._uri); 
+  }
 ```
 conclusion:
 In this tutorial, we have learnt how to use the voice flutter plugin. We also saw some examples of using it in a real life application. Finally thanks for reading this article, if you find it helpful please share it with others and leave a clap or two.
