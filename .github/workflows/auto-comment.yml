@@ -1,0 +1,21 @@
+name: Auto Comment
+on: [issues, pull_request]
+permissions:
+  pull-requests: write
+jobs:
+  run:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: wow-actions/auto-comment@v1
+        with:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          issuesOpenedReactions: 'hooray, +1'
+          issuesOpenedComment: |
+            👋 @{{ author }}
+            Good afternoon and thank you for submitting your topic suggestion.
+            Your topic form has been entered into our queue and should be reviewed (for approval) as soon as a content moderator is finished reviewing the ones in the queue before it.
+          pullRequestOpened: |
+            Good afternoon @{{ author }} and thank you for submitting your pull request for review and publishing.
+            Your pull request has entered our queue and will be reviewed by our team of peer reviewers as soon as possible. 🚀
+            All articles are reviewed in the order in which they were received.
+            Thank you. 
