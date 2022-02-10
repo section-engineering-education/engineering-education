@@ -1,6 +1,21 @@
+---
+layout: engineering-education
+status: publish
+published: true
+url: /form-validation-using-data-binding-regex-and-material-in-android/
+title: Form Validation using Data Binding, Regex and Material in Android
+description: This tutorial provides a step-by-step guide on how to validate forms using data binding, regex and material in Android. 
+author: moses-chege
+date: 2022-02-10T00:00:00-09:56
+topics: [Languages]
+excerpt_separator: <!--more-->
+images:
+  - url: /engineering-education/form-validation-using-data-binding-regex-and-material-in-android/hero.jpg
+    alt: Form Validation using Data Binding, Regex and Material in Android
+---
 When building an application that requires users to submit information, you need to verify this data before sending it into your application. This is where the concept of form validations comes in.
-
-When a user fills in an email, the application must be able to check if the user has provided an email input. If not, inform the user accordingly to fill in the right email format. There are many values and specific data that an application requires from a user. This guide aims to help you understand how to achieve such concepts using the Android studio.
+<!--more-->
+When a user fills in an email, the application should be able to check if the user has provided an email input. If not, inform the user accordingly to fill in the right email format. There are many values and specific data that an application requires from a user. This guide aims to help you understand how to achieve such concepts using the Android studio.
 
 ### Prerequisites
 To get started with this tutorial, ensure you have the following essentials:
@@ -365,3 +380,6 @@ In this tutorial, we have covered and demonstrated the basics of form validation
 I hope you found these tools useful, simple to test, and easy to build applications with.
 
 Happy coding!
+
+---
+Peer Review Contributions by: [Eric Gacoki](/engineering-education/authors/eric-gacoki/)
