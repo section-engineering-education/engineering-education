@@ -1,30 +1,30 @@
-Building an application requiring a user to submit information requires you to verify this data before being sent into your application. This is where the concept of form validations comes in. When a user fills in an email, the application must be able to check if the user has provided an email input. If not, update the user accordingly to fill in the right email format. There are many values and specific data that an application requires from a user. This guide aims to help you understand how to achieve such concepts using the android studio.
+When building an application that requires users to submit information, you need to verify this data before sending it into your application. This is where the concept of form validations comes in.
+
+When a user fills in an email, the application must be able to check if the user has provided an email input. If not, inform the user accordingly to fill in the right email format. There are many values and specific data that an application requires from a user. This guide aims to help you understand how to achieve such concepts using the Android studio.
 
 ### Prerequisites
 To get started with this tutorial, ensure you have the following essentials:
-
-- Ensure you have android studio installed on your computer.
+- Ensure you have Android Studio installed on your computer.
 - Basic understanding of running Kotlin with android studio.
-- Basic understanding of using the [android material design library](https://codelabs.developers.google.com/codelabs/mdc-101-kotlin#0).
+- Basic understanding of using the [Android material design library](https://codelabs.developers.google.com/codelabs/mdc-101-kotlin#0).
 
-### Setting of an android project
-To get started, go ahead and create a new android studio project with an empty activity. Ensure you select Kotlin as the language you want to run your application with.
+### Setting up an Android project
+To get started, go ahead and create a new Android Studio project with an empty activity. Ensure you select Kotlin as the language you want to run your application with.
 
 ![new-android-project](/engineering-education/form-validation-in-android-using-data-binding-regex-and-material/new-android-project.png)
 
-We are going to use [android material design library](https://codelabs.developers.google.com/codelabs/mdc-101-kotlin#0) to set up basic android forms. Therefore, you need to make this library accessible for your project. Go to your `build.gradle` file and add the following library inside the `dependencies {}`.
+We are going to use [Android material design library](https://codelabs.developers.google.com/codelabs/mdc-101-kotlin#0) to set up basic Android forms. Therefore, you need to make this library accessible for your project. Go to your `build.gradle` file and add the following library inside the `dependencies {}`.
 
-```kotlin
+```gradle
 implementation 'com.google.android.material:material:1.5.0'
 ```
 
 Once you have added this library, `Sync` your project to download and make the library ready to be used within your project.
 
 ### Create and add basic validation to a material form
-
 Android material design helps you build an interactive and consistent set of principles designs. It has many components that allow you to realize your greatest design potential.
 
-Material has necessary components that allow you to create any android forms while ensuring consistency across your application. We will create a basic login material form that has some basic material form validations. Head over to your `activity_main.xml` file and set up XML components.
+Material has necessary components that allow you to create any Android forms while ensuring consistency across your application. We will create a basic login material form that has material form validations. Head over to your `activity_main.xml` file and set up XML components.
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
@@ -53,20 +53,20 @@ Material has necessary components that allow you to create any android forms whi
 </LinearLayout>
 ```
 
-We will create our login form inside the child `LinearLayout`. A basic login form has `InputText` fields such as email passwords and phone numbers. In this case, let's say you want to add an email field to your app. You would use an `EditText` component to do so. However, you need to ensure that the input text that a user enters in an email.
+We will create our login form inside the child `LinearLayout`. A basic login form has `InputText` fields such as email passwords and phone numbers. In this case, let's say we want to add an email field to our app. We'd use an `EditText` component to do so. However, we need to ensure that the input text that a user enters is an email.
 
-Below is how you would add an email `EditText` using the material design.
+Below is how you would add an email `EditText` using the material design:
 
 ```xml
 <com.google.android.material.textfield.TextInputLayout
-android:id="@+id/login_emailContainer"
-style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-android:layout_width="match_parent"
-android:layout_height="wrap_content"
-android:layout_margin="8dp"
-app:errorEnabled="true"
-app:helperText="Required"
-app:helperTextTextColor="@color/design_default_color_error">
+    android:id="@+id/login_emailContainer"
+    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="8dp"
+    app:errorEnabled="true"
+    app:helperText="Required"
+    app:helperTextTextColor="@color/design_default_color_error">
 
 <com.google.android.material.textfield.TextInputEditText
     android:hint="Email"
@@ -79,26 +79,26 @@ app:helperTextTextColor="@color/design_default_color_error">
 
 Here we have a `TextInputLayout` that holds a `TextInputEditText` of type Email. We can perform basic form validation to these fields with the material attributes. For example, since the `TextInput` should be of type `Email`, we can;
 
-- Add an `android:inputType="textEmailAddress"` attribute that will check if the text input resembles that of an email.
+- Add an `android:inputType="textEmailAddress"` attribute that will check if the text input format resembles that of an email.
 - An `android:hint="Email"` to show the user that this field requires an email input.
 - An `app:helperText="Required"` shows the user that this field is always required before submitting the form.
 - `app:errorEnabled="true"` shows the user an error hint whenever the specified field doesn't have the necessary valid input associated with the field.
 
-We can go ahead and add more fields to our application.
+We can go ahead and add more fields to our application:
 
 ```xml
 <com.google.android.material.textfield.TextInputLayout
-app:counterMaxLength="16"
-android:id="@+id/login_passwordContainer"
-android:layout_margin="8dp"
-style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-app:counterEnabled="true"
-android:layout_width="match_parent"
-app:helperText="Required"
-android:layout_height="wrap_content"
-app:helperTextTextColor="@color/design_default_color_error"
-app:errorEnabled="true"
-app:passwordToggleEnabled="true">
+    app:counterMaxLength="16"
+    android:id="@+id/login_passwordContainer"
+    android:layout_margin="8dp"
+    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+    app:counterEnabled="true"
+    android:layout_width="match_parent"
+    app:helperText="Required"
+    android:layout_height="wrap_content"
+    app:helperTextTextColor="@color/design_default_color_error"
+    app:errorEnabled="true"
+    app:passwordToggleEnabled="true">
 
 <com.google.android.material.textfield.TextInputEditText
     android:layout_height="wrap_content"
@@ -112,16 +112,16 @@ app:passwordToggleEnabled="true">
 </com.google.android.material.textfield.TextInputLayout>
 
 <com.google.android.material.textfield.TextInputLayout
-app:counterEnabled="true"
-android:id="@+id/login_phoneContainer"
-app:counterMaxLength="10"
-style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-android:layout_margin="8dp"
-android:layout_width="match_parent"
-app:errorEnabled="true"
-android:layout_height="wrap_content"
-app:helperText="Required"
-app:helperTextTextColor="@color/design_default_color_error">
+    app:counterEnabled="true"
+    android:id="@+id/login_phoneContainer"
+    app:counterMaxLength="10"
+    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+    android:layout_margin="8dp"
+    android:layout_width="match_parent"
+    app:errorEnabled="true"
+    android:layout_height="wrap_content"
+    app:helperText="Required"
+    app:helperTextTextColor="@color/design_default_color_error">
 
 <com.google.android.material.textfield.TextInputEditText
     
@@ -142,33 +142,33 @@ Here, we have added two more fields: password and phone number. We have added mo
 - `app:errorEnabled="true"` to catch input errors and text mismatch.
 - We have also added an `app:counterMaxLength`. This checks the maximum number of characters that a single `TextInput` should take. `app:counterEnabled="true"` will hold count and display this character so that the users can have an idea of the maximum characters they can add to a single field.
 
-Let's now a button that will help us handle the complex validation logic using the Kotlin code.
+Let's now add a button that will help us handle the complex validation logic using the Kotlin code.
 
 ```xml
 <com.google.android.material.button.MaterialButton
-android:layout_marginTop="60dp"
-android:layout_width="290dp"
-android:layout_margin="4dp"
-android:text="Login"
-android:layout_gravity="center"
-android:layout_height="62dp"
-android:id="@+id/login_button"/>
+    android:layout_marginTop="60dp"
+    android:layout_width="290dp"
+    android:layout_margin="4dp"
+    android:text="Login"
+    android:layout_gravity="center"
+    android:layout_height="62dp"
+    android:id="@+id/login_button"/>
 ```
 
 You can run your application to check if the above form is correctly set up.
 
 ![form](/engineering-education/form-validation-in-android-using-data-binding-regex-and-material/form.png)
 
-### Check form validations with data binding
+### Validation with data binding
 We have used material to create and perform basic form validations. Let's now use data binding to validate form inputs before the user submits these inputs.
 
-Data binding is the mechanism that allows you to connect values that are in different sources. Data binding allows you to bind user interface (UI) components in your XML layout to the data sources. This allows you to tie the UI components to the application logic. This allows the UI values to update automatically.
+Data binding is the mechanism that allows you to connect values that are in different sources. It allows you to bind user interface (UI) components in your XML layout to the data sources. This allows you to tie the UI components to the application logic.
 
 We can use the concept of data binding to check form validations. A form involves adding values to text fields. Thus, we can connect the form UI to the application domain objects to automatically update the UI based on the user inputs.
 
-To set up data binding in your Kotlin project, head over to the `build.gradle` file and ensure the following plugin is added;
+To set up data binding in your Kotlin project, head over to the `build.gradle` file and add the following plugin:
 
-```kotlin
+```gradle
 plugins {
     id 'kotlin-kapt'
 }
@@ -176,19 +176,19 @@ plugins {
 
 Then add the following data binding `buildFeatures` inside the `android {}`.
 
-```kotlin
+```gradle
 buildFeatures{
     viewBinding = true
 }
 ```
 
-Headover to `MainActivity.kt` and initlize the `dataBinding`. First `ActivityMainBinding` that referts to the XML layout context as specified by the `tools:context=".MainActivity"`. Add the following right below `AppCompatActivity()`.
+Head over to `MainActivity.kt` and initialize the `dataBinding`. First `ActivityMainBinding` that reflects to the XML layout context as specified by the `tools:context=".MainActivity"`. Add the following right below `AppCompatActivity()`.
 
 ```kotlin
 private lateinit var activityMainBinding: ActivityMainBinding
 ```
 
-Then intilize `ActivityMainBinding` inised the `onCreate()` method. Here we will replce the usual `setContentView(R.layout.activity_main)` with the following two lines of code;
+Then initialize `ActivityMainBinding` inside the `onCreate()` method. Here we will replace the usual `setContentView(R.layout.activity_main)` with the following two lines of code:
 
 ```kotlin
 activityMainBinding = ActivityMainBinding.inflate(layoutInflater)
@@ -220,9 +220,11 @@ private fun validPassword(): String? {
 }
 ```
 
-This is a pretty simple check. First, when the user enters a password, it must have at least eight characters. Otherwise, this will trigger an error, and the user will be required to enter a password that has eight at least characters. On the other end, the password character counter will only accept a password of a maximum of 16 characters as specified by the `app:counterMaxLength="16"`.
+This is a simple check. First, when the user enters a password, it must have at least eight characters. Otherwise, this will trigger an error, and the user will be required to enter a password that has at least eight characters.
 
-For a standard password, it's advisable to add special characters and mix lowercase and uppercase letters. In this case, we are using `Regex` to verify if the input password has such characters. If not, each password validation check will throw an error to the user end and tell them what to add based on the current password value.
+On the other end, the password character counter will only accept a password of a maximum of 16 characters as specified by the `app:counterMaxLength="16"`.
+
+For a standard password, it's advisable to add special characters and mix lowercase and uppercase letters. In this case, we are using `Regex` to verify if the input password has such characters. If not, each password validation check will throw an error to the user end and inform them what to add based on the current password value.
 
 #### Check if email is valid
 We will create a function `checkIfEmailIsValid()` and check if the password input is valid based on the email value we want the user to submit.
@@ -242,10 +244,10 @@ private fun checkIfEmailIsValid(): String? {
 }
 ```
 
-Here we will use the custom `EMAIL_ADDRESS` pattern. This will check the email input and ensure it matches a valid email. And if the user enters an incorrect email, this will return `"Invalid Email Address"`.
+Here we will use the custom `EMAIL_ADDRESS` pattern. This will check the email input and ensure it matches a valid email. If the user enters an incorrect email, this will return `"Invalid Email Address"`.
 
 #### Check if phone number is valid
-We will create a function `checkValidPhoneNumber()` and validate if the phone number input is valid.
+We will create a function `checkValidPhoneNumber()` and validate if the phone number input is valid:
 
 ```kotlin
 private fun checkValidPhoneNumber(): String? {
@@ -260,10 +262,10 @@ private fun checkValidPhoneNumber(): String? {
 }
 ```
 
-Here a phone number must be digits. We hand specified `android:inputType="number"` using material. This will only L=allow the user to enter input of type number. However, we can add a Regex to our data binding to update the UI based on the user input. We also specified `app:counterMaxLength="10"`. Thus, a phone number must be at least ten digits. However, if a user enters more than ten digits, we want to return that as an error and inform the user that the field phone number `"Must be 10 Digits"`.
+Here, a phone number must be digits. We hand specified `android:inputType="number"` using material. This will only allow the user to enter input of type number. However, we can add a Regex to our data binding to update the UI based on the user input. We also specified `app:counterMaxLength="10"`. Thus, a phone number must be at least ten digits. However, if a user enters more than ten digits, we want to return that as an error and inform the user that the field phone number `"Must be 10 Digits"`.
 
 #### Handle form submission
-This validation will be handled when the user clicks the login button. Let's now `setOnClickListener` to the `loginButton`. We will create a function `login()` that returns a valid form and an error for invalid form submission.
+This validation will be handled when the user clicks the login button. Let's now add `setOnClickListener` to the `loginButton`. We will create a function `login()` that returns a valid form and an error for invalid form submission.
 
 ```kotlin
 private fun login() {
@@ -286,7 +288,7 @@ private fun login() {
 }
 ```
 
-Here we will bind the already added input values to our application domain and check if every value is valid. This check will occur when the user clicks the login button. So go ahead and add the following `setOnClickListener` inside the `onCreate()` method.
+Here we will bind the already added input values to our application domain and check if every value is valid. This check will occur when the user clicks the login button. Go ahead and add the following `setOnClickListener` inside the `onCreate()` method.
 
 ```kotlin
 activityMainBinding.loginButton.setOnClickListener { login() }
@@ -294,7 +296,7 @@ activityMainBinding.loginButton.setOnClickListener { login() }
 
 When the user clicks `loginButton` while all the input values are valid, a toast message `Valid Form` will be shown. Otherwise, the `Invalid Form` message will be shown.
 
-When a user has successfully submitted valid values, we want to reset the form inputs. Go ahead and create a `resetForm()` function as shown below;
+When a user has successfully submitted valid values, we want to reset the form inputs. Go ahead and create a `resetForm()` function as shown below:
 
 ```kotlin
 private fun resetForm() {
@@ -313,7 +315,7 @@ This will clear out the inputs and reset them to default with a `"Required"` hel
 
 Every field will display a message to the user based on the incorrect inputs. For example, if the email is invalid, we want to update the UI and show the user that the email value is an `"Invalid Email Address"`.
 
-To do this, add a `setOnFocusChangeListener` to all the form domain functions. This way, each incorrect input will update UI with the right error message. Go ahead and add the following `setOnFocusChangeListener` functions and bind them to the XML UI based on the view ids.
+To do this, add a `setOnFocusChangeListener` to all the form domain functions. This way, each incorrect input will update UI with the right error message. Go ahead and add the following `setOnFocusChangeListener` functions and bind them to the XML UI based on the view ids:
 
 ```kotlin
 private fun passwordInputTextOnFocusListener() {
@@ -349,16 +351,17 @@ passwordInputTextOnFocusListener()
 phoneInputTextOnFocusListener()
 ```
 
-Our application validation checks are complete, and you can run them to test if everything works correctly.
+Our application validation checks are complete. You can run them to test if everything works correctly.
 
-Try adding values to the text fields and click the login button to verify them. Each value will be updated based on the inputs. If the input is not valid, the form UI will be updated with what is needed to correct the inputs.
+Try adding values to the text fields and click the login button to verify them.
 
 ![invalid-form](/engineering-education/form-validation-in-android-using-data-binding-regex-and-material/invalid-form.png)
 
 If you submit the correct inputs based on the form validation, this will reset the form and show you the values that you submitted are valid.
 
-Conclusion
-
-We have covered and demonstrated the basics of form validation in android studio. It's quite straightforward to set what you need from users. This ensures data consistency and reduces production errors.
+### Conclusion
+In this tutorial, we have covered and demonstrated the basics of form validation in Android studio. It's quite straightforward to set what you need from users. This ensures data consistency and reduces production errors.
 
 I hope you found these tools useful, simple to test, and easy to build applications with.
+
+Happy coding!
