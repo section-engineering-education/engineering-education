@@ -3,7 +3,6 @@ title: David Maina
 type: authors
 github: https://github.com/davidginmaina
 images:
-  - url: /engineering-education/authors/david-maina/avatar.jpeg 
+  - url: /engineering-education/authors/david-maina/avatar.jpg 
 ---
-David Maina is a student pursuing a bachelor's degree in Information Technology at Meru University of Science and Technology. He is passionate about database administration and is an Android developer. When he is not working on the computer, he enjoys reading novels and is very skilled at public relations.
-
+David Maina is a student pursuing a bachelor's degree in Information Technology at Meru University of Science and Technology. He is an Android developer passionate about database administration. When he is not coding, he enjoys reading novels.
