@@ -1,30 +1,28 @@
----
-layout: engineering-education
-status: publish
-published: true
-url: /introduction-to-kernel-methods-in-machine-learning/
-title: Introduction to Kernel Methods in Machine Learning 
-description: In this tutorial, we will learn about kernel methods in machine learning and how to use them to solve classification and regression problems.
-author: brian-kiplangat
-date: 2022-01-14T00:00:00-10:00
-topics: [Languages]
-excerpt_separator: <!--more-->
-images:
 
-  - url: /engineering-education/introduction-to-kernel-methods-in-machine-learning/hero.png
-    alt: Introduction to Kernel Methods in Machine Learning 
----
+### Tables of content
+- [Introduction](#introduction)
+- [Prerequisites](#prerequisites)
+- [What are kernels?](#what-are-kernels)
+	- [Unsupervised and supervised machine learning](#unsupervised-and-supervised-machine-learning)
+- [Kernel methods in machine learning](#kernel-methods-in-machine-learning)
+	- [1. Support Vector Machine (SVM)](#1-support-vector-machine-svm)
+	- [2. Adaptive Filter](#2-adaptive-filter)
+	- [3. Kernel perception](#3-kernel-perception)
+	- [4. Principle Component Analysis](#4-principle-component-analysis)
+	- [5. Spectral clustering](#5-spectral-clustering)
+- [Conclusion](#conclusion)
 
-### Prerequisites
-- The Reader should have basic knowledge of machine learning. [Click here](https://www.digitalocean.com/community/tutorials/an-introduction-to-machine-learning) to read more about machine learning basics.
-- The reader should understand basic terms like Support Vector Machine, classifications, unsupervised learning, and supervised learning.
-- It's necessary for the reader to understand SVMs since kernels are implemented in SVM models. 
 ### Introduction
 The concept of "data drawn from some probability distribution" underpins many statistics and machine learning techniques. A probability distribution is a function defining all possible values and probabilities for a random variable at a specified range. The parameters of the underlying distribution are used to define parametric methods (or algorithms).
 
 However, the assumed model for the likelihood may not be correct; the "actual" distribution may be skewed, multimodal, with different components, and so on. In general, the scientist analyzing the data is unaware of this. This article aims to demonstrate kernels' fundamental concepts and their applications in statistics and machine learning.
 
-### _What are kernels?_
+### Prerequisites
+- The Reader should have basic knowledge of machine learning. [Click here](https://www.digitalocean.com/community/tutorials/an-introduction-to-machine-learning) to read more about machine learning basics.
+- The reader should understand basic terms like Support Vector Machine, classifications, unsupervised learning, and supervised learning.
+- It's necessary for the reader to understand SVMs since kernels are implemented in SVM models. 
+
+### What are kernels?
 Kernels, also known as kernel techniques or kernel functions, are a collection of distinct forms of pattern analysis algorithms, using a linear classifier, they solve an existing non-linear problem. SVM (Support Vector Machines) uses Kernels Methods in ML to solve classification and regression issues. The SVM (Support Vector Machine) employs ["Kernel Trick"](https://towardsdatascience.com/the-kernel-trick-c98cdbcaeb3f) where data is processed, and an optimal boundary for the various outputs is determined.
 
 In other words, a kernel is a term used to describe applying linear classifiers to non-linear problems by mapping non-linear data onto a higher-dimensional space without having to visit or understand that higher-dimensional region.
@@ -96,5 +94,3 @@ where **np** is the number of points assigned to cluster p during the initiation
 This article is not exhaustive; rather, it is intended to provide the reader with a basic understanding of what a kernel method is and a brief overview of the different types of kernel methods. However, reading this article will inspire the reader to take their first steps into the world of ML.
 A few kernel method terms and concepts in ML have been summarized.
 
----
-Peer Review Contributions by: [Odhiambo Paul](/engineering-education/authors/odhiambo-paul/)
