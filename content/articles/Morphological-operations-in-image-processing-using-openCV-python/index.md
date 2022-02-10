@@ -1,109 +1,98 @@
-### Getting Started
-We'll go over various OpenCV operations for image processing in this lesson. **What are morphological operations?** -
-These are image transformations that can be applied to grayscale or binary images. These techniques involve the deployment of a structuring element, which is used to identify the pixels in an image's neighborhood. - How to perform morphological operations to enhance and decrease the size of objects in images.
+### Introduction
+In this tutorial, we can navigate through diverse OpenCV operations used for image processing.
+**What are morphological operations?** -These are image processing variations implemented to both grayscale or binary photographs. These operations require a structuring element, that's used to outline the neighborhood of pixels on a picture. 
+How to apply morphological operations to grow the size of items in images in addition to decreasing them.
+We shall additionally talk about the maximum critical morphological operations that you`ll use inner your applications: 
 
-We'll also go through some of the most important morphological processes you'll encounter in your applications:
-
-
-
-### prerequisites
-
-To undertake this tutorial, you'll require the following:
-
-#### step 1
+we shall use this image throughout the tutorial ![download-sunflower.png](/engineering-education/morphological-operations-in-image-processing-using-opencv/sunflower-horizon.jpg)
+### Prerequisites
+To follow along through this tutorial, these are the requirements:
 
 - An IDE which in our case use vs code. You can download VS Code [here](https://code.visualstudio.com/download)
-
-- Download and set the executable path for python [python-download](https://www.python.org/downloads).
-
-#### step 2
-
-- Type 'python' at the command prompt, then type the following:-
-
-- Run "pip install OpenCV" on your PC to install OpenCV.
-
-#### step 3 
-- checking whether OpenCV is installed correctly.
-- ``` print(cv2.__version__) ```
-## Table of contents
-- [Introduction](#introduction)
-  - [prerequisites](#prerequisites)
-    - [step 1](#step-1)
-    - [step 2](#step-2)
-    - [step 3](#step-3)
+- Download python [python-download](https://www.python.org/downloads) and set executable path.
+- At the command type `python` then Set up OpenCV to your machine using  ``` pip install cv2 ```.
+- Set up NumPy `pip install NumPy`. 
+- Checking whether or not OpenCV is installed correctly ``` print(cv2.__version__) ```.
+  
+### Table of contents
+- [Getting started](#Introduction) 
+- [Prerequisites](#Prerequisites) 
 - [Table of contents](#table-of-contents)
 - [What is structuring element](#what-is-structuring-element)
 - [Defining structuring element.](#defining-structuring-element)
 - [Grayscale and rbgcolor images](#grayscale-and-rbgcolor-images)
-- [Erosion and dilation morphological operations](#erosion-and-dilation-morphological-operations)
-  - [Edge detection using canny filter](#edge-detection-using-canny-filter)
-    - [Canny filter](#canny-filter)
-## What is structuring element
-- This is a **matrix** or a **shape mask** that is used to identify pixels in the image being processed this is essential in defining neighborhood used in each layer of a pixel. one chooses it with the same size and shape as the objects you desire to process in the input image.
-- There exists **flat** and **non-flat** structuring elements
-- **flat structuring element** is valued as binary neighborhood either 2-D or multi-dimensional here the true pixels are included in morphological computations.
-- **non-flat structuring element** its a matrix of type double that identifies pixel in the image being processed it contains finite values used as additive  offsets in morphological computation
+- [Plotting the image](#Plotting-the-image)
+- [Erosion and dilation morphological operations](#erosion-and-dilation-morphological-operations) 
+- [Edge detection using canny filter](#Edge-detection-using-opencv) 
+- [Canny filter](#Canny-filtering-operations)
+- [Conclusions](#Wrapping-up)
   
-  ## Defining structuring element.
-OpenCV uses the following function to define the structuring element.
-  ```python
-  #import necessary packages
-  import cv2
-  #create rectangular strucuring element of order 10
-  cv2.getStructuringElement(cv2.MORPH_RECT,(10,10))
-  ```
-  ##  Grayscale and rbgcolor images
-  - The converted grayscale image may lose contrasts, sharpness, shadow, and structure of the color image. 
-  - To preserve contrasts, sharpness, shadow, and structure of the color image implement the algorithm below. 
-  - To convert the color image into a grayscale image the algorithm performs RGB approximation, reduction, and addition of chrominance and luminance. 
-  - The grayscale images generated using the algorithm in the experiment confirm that the algorithm has preserved the salient features of the color image such as contrasts, sharpness, shadow, and image structure.
-  - we will reverse the process back to rgbcolor. 
-  ```python
-  import cv2
-  import numpy
-  import os
-  # generate an array of 60,000 random bytes.
-  randomByteArray = bytearray(os.urandom(60000))
-  flatNumpyArray = numpy.array(randomByteArray)
-  # Convert the array to make a 200x300 grayscale image.
-  grayImage = flatNumpyArray.reshape(300, 200)
-  cv2.imwrite('RandomGrayimage.png', grayImage)
-  print(grayImage,"\nEND of gray Image\n")
-  # Convert the array to make a 200x100 color image.
-  bgrImage = flatNumpyArray.reshape(100, 200, 3)
-  cv2.imwrite('RandomrgbColor.png', bgrImage)
-  #using cv2. imread() it interprets in BGR format
-  print(bgrImage,"\nEND of bgr Image")
+### What is structuring element
+  This is a **matrix** or a **form mask** this is used to identify pixels withinside the image being processed that is crucial in defining neighborhood utilized in every layer of a pixel. one chooses it with the identical length and form because the items you prefer to process within the input image.
+  There exists **flat** and **non-flat** structuring elements
+  **flat structuring detail** is valued as a binary neighborhood both 2-D or multi-dimensional right here the true pixels are used in morphological computations.
+  **non-flat structuring detail** is a matrix of kind double that identifies pixels withinside the image being processed it carries finite values used as additive offsets in morphological computation.
 
-  ```
-## Plotting the image
+### Defining structuring element.
+OpenCV makes use of the subsequent characteristic to outline the structuring element. 
+ ```python 
+ #import important applications 
+ import cv2 
+ #create square strucuring detail of order 10 
+ cv2.getStructuringElement(cv2.MORPH_RECT,(10,10)) 
+ ``` 
+ ###  Grayscale and rbgcolor images 
+  The transformed grayscale picture can also additionally lose contrasts, sharpness, shadow, and shape of the sedation picture. 
+  To keep contrasts, sharpness, shadow, and shape of the sedation picture enforce the set of rules below. 
+  To convert the color image right into a grayscale picture the set of rules plays RGB approximation, reduction, and addition of chrominance and luminance. 
+  The grayscale photographs generated the usage of the set of rules withinside the test verify that the set of rules has preserved the salient functions of the shadeation picture inclusive of contrasts, sharpness, shadow, and picture shape. 
+  we can reverse the technique lower back to RGB color. 
 
 ```python
-    # connects to GUI loop that turns inline plotting where plot graphics will appear
+  #import essential packages
+import os
+# generate an array of 60,000 random bytes.
+randomByteArray = bytearray(os.urandom(60000))
+flatNumpyArray = numpy.array(randomByteArray)
+# Convert the array to make a 200x300 grayscale image.
+grayImage = flatNumpyArray.reshape(300, 200)
+cv2.imwrite('RandomGrayimage.png', grayImage)
+print(grayImage,"\nEND of gray Image\n")
+# Convert the array to make a 200x100 color image.
+bgrImage = flatNumpyArray.reshape(100, 200, 3)
+cv2.imwrite('RandomrgbColor.png', bgrImage)
+#using cv2. imread() it interprets in BGR format
+print(bgrImage,"\nEND of bgr Image")
+  ```
+## Plotting the image
+ ```python 
+ # connects to GUI loop that turns inline plotting wherein plot photos will appear
 from matplotlib import pyplot as plt
-from matplotlib import image as Img
-# read the image
+from matplotlib import picture as Img
+# study the picture
 img = Img.imread('images/sunflower-horizon.jpg')
-# check if the image exists
-if (img is None):
-  print("Could not resolve the image url")
+# test if the picture exists
+if (img is None): 
+ print("Could now no longer clear up the picture url")
 else: print(img)
-#plot the binary image above
+#plot the binary picture above
 img1plot = plt.imshow(img)
 ```
 ## Erosion and dilation morphological operations
-**Erosion** is a subset of Euclidean space/integer grid for some dimension that uses a structuring element for probing and reducing shape contained in the input image it is used to shrink connected sets of 1s in a binary image.
-- The size of the structuring element used determines the number of pixels eroded on the image.
-- **Advantages of erosion**
-- This will help clean up small dots or black dots often called noise.
-- used for shrinking features also removing bridges, branches, and protrusions.
-- They are useful in processing steps before Optical Character Recognition(OCR) and if used appropriately it improve the quality of recognition.
-  
-**Dilation** -It expands connected sets of 1s in a binary image commonly used to grow features also filling holes and gaps 
-  - **Advantages of dilation**
-- Adds pixels to the boundaries of objects in the original image
-- The size and shape of the structuring element are used to determine the number of pixels dilated on the image.
+**Erosion** is a subset of Euclidean space/integer grid for a few measurements that makes use of a structuring detail for probing and decreasing form contained withinside the  picture its used to shrink linked pixels of 1s in a binary picture.
+The length of the structuring detail used determines the range of pixels eroded in the picture.
 
+ **Advantages of erosion**
+- This will assist get rid of small dots or black dots frequently referred to as noise.
+- Used for shrinking functions additionally removing of bridges, branches, and protrusions.
+- They are beneficial in processing steps earlier than Optical Character Recognition(OCR) and if used as they should be it enhance the pleasant of recognition. 
+  
+ **Dilation** -It expands linked pixels of 1s in a binary picture normally used to develop functions additionally filling holes and gaps 
+
+  **Advantages of dilation**
+- Adds pixels to the bounds of items withinside the unique picture
+- The length and form of the structuring detail are used to decide the range of pixels dilated at the picture. 
+ 
 ```python
 import numpy
 import cv2 as cv2
@@ -143,8 +132,18 @@ cv2.waitKey(1)
 cv2.destroyAllWindows()
 
 ```
-## Edge detection using opencv
-Finds edge points of the image that are shown clearly only strong points are detected.
+### Edge detection using opencv
+- Finds edge points of the image that are shown clearly only strong points are detected which are the points with high intensity of pixels neighboring each other.
+- Here we are only considering grayscale images since we don't need information on a color image.
+- Then we need to apply the `cv2.GaussianBlur()` function to smoothen the intensity distribution of the image pixels near its edge points.
+- We will obtain a blurred image by including a convolutional kernel of order 3*3 that indicates the blurring intensity.
+- Additionally, let us save the blurred image using the `imwrite()` function.
+- Noisy parts are eliminated using the `Cannyfilter` function to the earlier blurred image that would produce unwanted details to the edges.
+- The gradient threshold is determined by 2 different values lets discuss them:-
+ 1. Gradient magnitude value `threshold1` here the pixels are prevented and excluded to the resultant edge map
+ 2. Gradient magnitude value `threshold2`  only those pixels associated with strong edge points are added to the final edge map and also weak edge points are included.
+   Only identified predominant edges are used the advantage of this algorithm `minimizes suppression` and achives `hysterisis thresholding` .
+
 syntax:
   ```python
   import cv2 as cv2
@@ -164,23 +163,23 @@ cv2.imwrite('filteredImg.jpg', edges)
 # set waittime() to 2 ms
 cv2.waitKey(2)
   ```
-## Canny filtering operations
-  - It is a technique used to smoothen the surfaces of an image.
-  and involves 5 major steps discussed below
-  
-    **Step 1: read original image**:
-     ```python
+### Canny filtering operations
+- It is a technique used to smoothen the surfaces of an image and can be used to compute convolutions using a 2D separation as follows.
+- This involves 5 major steps discussed below.
+    
+  ### Step 1: read original image
+
+  ```python
       #set wait time to 2 milliseconds
       cv2.waitKey(2)
       #read text image
       img = cv2.imread('sunflower-horizon.jpg')
-     ```
-    **Step 2: declaring kernel**
-- Declaring a kernel with an echelon form filter matrix yields an image that is the same as the  original image but with no background-color
-- Declaring convolution kernel yields a square matrix where both matrices(M and N)
-  are odd integers
-- syntax   
-- ```python
+  ```
+  ### Step 2: declaring kernel
+ Declaring a kernel with an echelon form filter matrix yields an image that is the same as the original image but with no background color.
+ Declaring convolution kernel yields a square matrix where both matrices(M and N) are both odd integers.
+ `declare kernel syntax`
+  ```python
    #Obtain a 3×3 2D echelon matrix kernel
   kernel1 = numpy.array([[1, 0, 0],
                          [0, 1, 0],
@@ -191,9 +190,9 @@ cv2.waitKey(2)
                         [0, 2, 0],
                         [0, 0, 2])
    ```
+  ### Step 3: Filter 2D operation to perform a linear filtering operation
 
-    **Step 3: Filter 2D operation to perform linear filtering operation**
-    ```python
+   ```python
     kernel2 = numpy.ones((9, 9), numpy.float32) / 10
     image = cv2.filter2D(src=img, ddepth=-2, kernel=kernel1)
     #  The first argument is original image
@@ -202,17 +201,20 @@ cv2.waitKey(2)
     identity = cv2.filter2D(src=img, ddepth=-2, kernel=kernel1)
     # print identity image
     cv2.imwrite('identity.png', identity)
-    ```
-    **Step 4: Display original and filtered image using imshow()**
-    ```python
+  ```
+   ### Step 4: Display original and filtered image using imshow()
+
+   ```python
     #displaying original image
       cv2_imshow(img)
     # Displaying filteres image
       cv2_imshow(image)
-    ```
-    **Step 5: save filtered image to the disk using imwrite()**
-    Syntax:
-    ```python
+   ```
+   ### Step 5: save filtered image to the disk using imwrite()
+  This example will load an image and its size then convert it to .jpg format and save it as a blurred image using imwrite() function.
+   `save to disk Syntax`
+
+  ```python
     cv2.waitKey()
     print('\n image after filter operation ')
     cv2.imwrite('blurredimgkernel.jpg', image)
@@ -220,7 +222,16 @@ cv2.waitKey(2)
     cv2_imshow(image)
     # destroy all sessions
     cv2.destroyAllWindows()
-    ```
-    **To see the complete implementation click** [here](https://colab.research.google.com/drive/16J11NF96i5-0s-Cemx8YZGroWMaDa0Hk?usp=sharing)                                                                                                         
-*Happy coding!*
+  ```
+### Wrapping up
+ In this tutorial, we have familiarized ourselves with:-
+  - Declaring and defining a structuring element.
+  - Erosion and dilation operations were applied to images.
+  - Applying a linear filtering operation to the image also saves to disk
+  - Edge detection technique is used in OpenCV. 
+  
+
+  To see the complete implementation go to google colab link [here](https://colab.research.google.com/drive/1MuUQrg-kEcgSiVfsfMg4ZA0_f2Wnmm34?usp=sharing) 
+  
+ Happy coding!
 
