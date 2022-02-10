@@ -155,4 +155,4 @@ More about web scraping using gazpacho can be found from [here](https://pypi.org
 Happy coding!
 
 ---
-Peer Review Contributions by: 
+Peer Review Contributions by: [Willies Ogola](/engineering-education/authors/willies-ogola/)
