@@ -132,6 +132,8 @@ cv2.waitKey(1)
 cv2.destroyAllWindows()
 
 ```
+### Output
+![dilated-image](/Morphological-operations-in-image-processing-using-openCV-python/Dilatedimage.jpg)
 ### Edge detection using opencv
 - Finds edge points of the image that are shown clearly only strong points are detected which are the points with high intensity of pixels neighboring each other.
 - Here we are only considering grayscale images since we don't need information on a color image.
