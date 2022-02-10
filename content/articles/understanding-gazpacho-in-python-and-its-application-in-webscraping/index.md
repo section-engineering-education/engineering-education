@@ -1,12 +1,12 @@
 ---
 layout: engineering-education
-status: draft
-published: false
+status: publish
+published: true
 url: /understanding-gazpacho-in-python-and-its-application-in-webscraping/
 title: Understanding Gazpacho in Python and its Application in Web Scraping
 description: The objective of this tutorial is to help the reader understand the Gazpacho python library and how it is used in web scraping.
 author: antony-lia
-date: 
+date: 2022-02-15T00:00:00-21:40
 topics: [Languages]
 excerpt_separator: <!--more-->
 images:
