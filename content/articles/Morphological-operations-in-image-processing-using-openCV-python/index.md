@@ -64,7 +64,12 @@ cv2.imwrite('RandomrgbColor.png', bgrImage)
 #using cv2. imread() it interprets in BGR format
 print(bgrImage,"\nEND of bgr Image")
   ```
-## Plotting the image
+  ### Output: RandomgrayImage. 
+  ![RandomgrayImage](/Morphological-operations-in-image-processing-using-openCV-python/RandomGrayimage.png).
+  ### Output: RandomrbgImage.
+  ![RandomrbgImage](/Morphological-operations-in-image-processing-using-openCV-python/RandomrgbColor.png).
+  
+### Plotting the image
  ```python 
  # connects to GUI loop that turns inline plotting wherein plot photos will appear
 from matplotlib import pyplot as plt
@@ -78,7 +83,7 @@ else: print(img)
 #plot the binary picture above
 img1plot = plt.imshow(img)
 ```
-## Erosion and dilation morphological operations
+### Erosion and dilation morphological operations
 **Erosion** is a subset of Euclidean space/integer grid for a few measurements that makes use of a structuring detail for probing and decreasing form contained withinside the  picture its used to shrink linked pixels of 1s in a binary picture.
 The length of the structuring detail used determines the range of pixels eroded in the picture.
 
@@ -132,8 +137,10 @@ cv2.waitKey(1)
 cv2.destroyAllWindows()
 
 ```
-### Output
-![dilated-image](/Morphological-operations-in-image-processing-using-openCV-python/Dilatedimage.jpg)
+### Output: dilated image.
+![dilated-image](/Morphological-operations-in-image-processing-using-openCV-python/Dilatedimage.jpg).
+### Output: eroded image.
+![eroded-image](/Morphological-operations-in-image-processing-using-openCV-python/Erodedimage.jpg).
 ### Edge detection using opencv
 - Finds edge points of the image that are shown clearly only strong points are detected which are the points with high intensity of pixels neighboring each other.
 - Here we are only considering grayscale images since we don't need information on a color image.
@@ -165,6 +172,8 @@ cv2.imwrite('filteredImg.jpg', edges)
 # set waittime() to 2 ms
 cv2.waitKey(2)
   ```
+  ### Output: canny filter edge detection.
+  ![Canny-filter-edge-detection](/Morphological-operations-in-image-processing-using-openCV-python/filteredImg.jpg)
 ### Canny filtering operations
 - It is a technique used to smoothen the surfaces of an image and can be used to compute convolutions using a 2D separation as follows.
 - This involves 5 major steps discussed below.
