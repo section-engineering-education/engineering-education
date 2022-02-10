@@ -34,7 +34,7 @@ We will use the Gradient Boosting Machine to build a natural langauge processing
 - [Dataset for sentiment analysis](#dataset-for-sentiment-analysis)
 - [Converting the dataset into an array](#converting-the-dataset-into-an-array)
 - [Selecting the columns](#selecting-the-columns)
-- [Creating the data frame](#creating-the-data-frame)
+- [Creating the DataFrame](#creating-the-data-frame)
 - [Adding the output column](#adding-the-output-column)
 - [Text preprocessing](#text-preprocessing)
 - [Installing the Natural Language Toolkit](#installing-the-natural-language-toolkit)
@@ -388,7 +388,7 @@ review_vecs.head()
 ```
 The output is shown below:
 
-![Converted word vectors](/engineering-education/natural-language-processing-using-gradient-boosting-machine-and-h2o-library/converted-word-vectors.jpg)
+![Converted `words_reviews` column](/engineering-education/natural-language-processing-using-gradient-boosting-machine-and-h2o-library/converted-word-vectors.jpg)
 
 From the image above, the `words_reviews` column has been converted to word vectors. 
 
@@ -410,7 +410,7 @@ headline_vecs.head()
 ```
 The output is shown below:
 
-![Converted word vectors](/engineering-education/natural-language-processing-using-gradient-boosting-machine-and-h2o-library/converted-word-vectors.jpg)
+![Converted `words_headline` column](/engineering-education/natural-language-processing-using-gradient-boosting-machine-and-h2o-library/word-vectors.jpg)
 
 From the image above, the `words_headline` column has been converted to word vectors
 
