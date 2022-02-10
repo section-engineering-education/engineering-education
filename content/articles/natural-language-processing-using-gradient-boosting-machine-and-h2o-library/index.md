@@ -1,5 +1,21 @@
-H2O is an open-source platform used for machine learning. H2O supports the implementation of popular machine learning algorithms. H20 supports both supervised and unsupervised machine learning algorithms.
+---
+layout: engineering-education
+status: publish
+published: true
+url: /natural-language-processing-using-gradient-boosting-machine-and-h2o-library/
+title: Natural Language Processing using Gradient Boosting Machine and H2O library
+description: This tutorial aims to focus on the Gradient Boosting Machine algorithm to build multiple decision trees sequentially.
+author: willyngashu
+date: 2022-02-10T00:00:00-21:08
+topics: [Machine Learning]
+excerpt_separator: <!--more-->
+images:
 
+  - url: /engineering-education/natural-language-processing-using-gradient-boosting-machine-and-h2o-library/hero.png
+    alt: Natural Language Processing using Gradient Boosting Machine and H2O library Hero image
+---
+H2O is an open-source platform used for machine learning. H2O supports the implementation of popular machine learning algorithms. H20 supports both supervised and unsupervised machine learning algorithms.
+<!--more-->
 H20 supports the following algorithms. [Naive Bayes algorithms](https://en.wikipedia.org/wiki/Naive_Bayes_classifier), [Random Forests](https://en.wikipedia.org/wiki/Random_forest), [Gradient Boosting Machine](https://en.wikipedia.org/wiki/Gradient_boosting), [Generalized Linear Models](https://en.wikipedia.org/wiki/Generalized_linear_model), [K-Means algorithms](https://en.wikipedia.org/wiki/K-means_clustering), [Principal component analysis](https://en.wikipedia.org/wiki/Principal_component_analysis) and [Deep Neural Networks](https://en.wikipedia.org/wiki/Deep_learning). The complete list of the algorithms that H2O supports is found [here](https://docs.h2o.ai/h2o/latest-stable/h2o-docs/data-science.html).
 
 H2O is fast and scalable. This makes it the best platform for building powerful machine learning models. H2O is also automates machine learning using the [H2O AutoML.](https://github.com/h2oai/h2o-3) pipeline.
