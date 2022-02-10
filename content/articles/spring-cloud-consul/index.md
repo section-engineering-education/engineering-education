@@ -21,7 +21,7 @@ This tutorial will create an online shop application to manage shops. We will de
 - [Conclusions](#conclusions)
 
 ### Seting up consul
-We will need to install consul locally on our development machine for this tutorial. First, navigate to [consul website](https://www.consul.io/downloads.html) and download the latest version of consul for your operating system. Then, extract the downloaded file and run the consul command to start the consul agent, as shown below.
+We will need to install consul locally on our development machine for this tutorial. So, first, navigate to [consul website](https://www.consul.io/downloads.html) and download the latest version of consul for your operating system. Then, extract the downloaded file and run the consul command to start the consul agent, as shown below.
 
 ```bash
 consul agent -server -bootstrap-expect=1 -data-dir=consul-data -ui -bind=<your ip address>
@@ -47,9 +47,9 @@ test@DEV-34:/$ sudo /usr/local/bin/consul agent -server -bootstrap-expect=1 -dat
     2022-02-09T13:30:32.813+0300 [WARN]  agent: BootstrapExpect is set to 1; this is the same as Bootstrap mode.
 ```
 
-Now that we have the consul installed and running on our development machine, we need to verify if the consul agent is fully functional by navigating to [http://localhost:8500](http://localhost:8500) on our web browser. We can see the services running on our development machine from the browser dashboard, as shown below.
+Now that we have the consul installed and running on our development machine, we need to verify if the consul agent is fully functional by navigating to [http://localhost:8500](http://localhost:8500) on our web browser. As shown below, we can see the services running on our development machine from the browser dashboard.
 
-![Consul dashboard](https://raw.githubusercontent.com/spring-cloud/spring-cloud-static/master/images/consul-dashboard.png)
+![Consul dashboard](/engineering-education/spring-cloud-consul/consul_dashboard.png)
 
 
 ### Setting up Spring Boot application
@@ -142,15 +142,15 @@ public class ProductController {
 
 ```
 - `@RestController`: This annotation is used to create a controller class.
-- Since we did not implement the database layer, we are declearing a static map of products in the static block. This will act as our database layer.
+- Since we did not implement the database layer, we declare a static map of products in the static block. This will act as our database layer.
 - `getProductPerShop`: This method is used to get the products for a given shop. It filters the products based on the shop name and returns the list of products.
 
 #### Shop service
 1. Navigate to [spring initilzr](https://spring.io/guides/gs/initializr/) on your web browser.
 2. Input the application name as `shop-service` and package name as `com.example.productservice`.
 3. Add `Actuator`, `Lombok`, `Web`, `Rest repositories`and `Consul discoveries` as the project dependencies.
-4. Click on the generate button to download the project boiler plate code with the required dependency configurations.
-5. Unzip the downloaded compressed file and open in your favorite IDE.
+4. Click on the generate button to download the boilerplate project code with the required dependency configurations.
+5. Unzip the downloaded compressed file and open it in your favourite IDE.
 6. Navigate to the `src/main/java/com/example/shopservice/` directory and update the `ShopServiceApplication.java` file as shown below.
 ```java
 @SpringBootApplication
@@ -212,6 +212,23 @@ public class ShopServiceController {
 - `@AllArgsConstructor`: This annotation is used to create a constructor with all the fields. Through this annotation, we inject the ShopServiceDelegate bean through constructor injection.
 
 ### Testing
+Run the product service and verify that it's running and discoverable by the consul agent in the Consul dashboard, as shown below.
+
+![Product Service](/engineering-education/spring-cloud-consul/product_service.png)
+
+
+Now that the product service is running successfully, we can run the shop service. Once the shop service is started, we can verify from the consul dashboard that it is running without issues and is discoverable by the consul agent, as shown below.
+
+![Shop service](/engineering-education/spring-cloud-consul/shop_service.png)
+
+When we make a GET request to [http://localhost:8098/getshopdetails/ABC](http://localhost:8098/getshopdetails/ABC), we get the below response.
+
+```json
+[{"name":"Soap","price":30.0},{"name":"Cooking","price":70.0}] -  Thu Feb 10 09:15:17 EAT 2022
+```
+
+We can request the shop service to the product service without requiring the product service URL and port. With the name of the service and the endpoint, only can we get the response. Consul simplifies service discovery. When used with Docker, we do not need to keep track of the IP addresses that change, but the services can communicate with the service name.
+
 
 ### Conclusions
-In this tutorial, we have learned how to deploy consul service registry and discovery server as well as clients on our development machine effiently. You can try implementing a Spring Boot project using the microservice architecture and deploy with Spring Cloud consul. You can download the complete source code [here](https://replit.com/@faithsiaji/spring-consul#).
+In this tutorial, we have learned how to efficiently deploy the Consul service registry and discovery server and clients on our development machine. After that, you can try implementing a Spring Boot project using the microservice architecture and deploy with Spring Cloud consul. You can download the complete source code [here](https://replit.com/@faithsiaji/spring-consul#).
