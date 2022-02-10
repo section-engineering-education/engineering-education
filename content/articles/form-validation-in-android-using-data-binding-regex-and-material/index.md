@@ -26,7 +26,7 @@ To get started with this tutorial, ensure you have the following essentials:
 ### Setting up an Android project
 To get started, go ahead and create a new Android Studio project with an empty activity. Ensure you select Kotlin as the language you want to run your application with.
 
-![new-android-project](/engineering-education/form-validation-in-android-using-data-binding-regex-and-material/new-android-project.png)
+![new-android-project](/engineering-education/form-validation-using-data-binding-regex-and-material-in-android/new-android-project.png)
 
 We are going to use [Android material design library](https://codelabs.developers.google.com/codelabs/mdc-101-kotlin#0) to set up basic Android forms. Therefore, you need to make this library accessible for your project. Go to your `build.gradle` file and add the following library inside the `dependencies {}`.
 
@@ -172,7 +172,7 @@ Let's now add a button that will help us handle the complex validation logic usi
 
 You can run your application to check if the above form is correctly set up.
 
-![form](/engineering-education/form-validation-in-android-using-data-binding-regex-and-material/form.png)
+![form](/engineering-education/form-validation-using-data-binding-regex-and-material-in-android/form.png)
 
 ### Validation with data binding
 We have used material to create and perform basic form validations. Let's now use data binding to validate form inputs before the user submits these inputs.
@@ -370,7 +370,7 @@ Our application validation checks are complete. You can run them to test if ever
 
 Try adding values to the text fields and click the login button to verify them.
 
-![invalid-form](/engineering-education/form-validation-in-android-using-data-binding-regex-and-material/invalid-form.png)
+![invalid-form](/engineering-education/form-validation-using-data-binding-regex-and-material-in-android/invalid-form.png)
 
 If you submit the correct inputs based on the form validation, this will reset the form and show you the values that you submitted are valid.
 
