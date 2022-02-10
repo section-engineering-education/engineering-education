@@ -9,7 +9,7 @@ High performance is a standard consideration when developing a website. Develope
 #### URL Structuring
 URL structuring is the process of designing a URL to meet users' readability and memorization needs. Simply, it is the process of choosing a name for a website that users can easily remember.
 
-In this post, you will learn how to organize your URL to improve your site's performance on SEO rankings and make it easy to memorize by your users.
+In this article, you will learn how to organize your URL to improve your site's performance on SEO rankings and make it easy to memorize by your users.
 
 #### Reasons for Improving Your URL Structure
 
