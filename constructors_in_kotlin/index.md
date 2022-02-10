@@ -1,4 +1,23 @@
+---
+layout: engineering-education
+status: publish
+published: true
+url: /constructors-in-kotlin/
+title: Constructors in Kotlin
+description: In this article, we will discuss constructors and init blocks in Kotlin along with best practices in using them.
+author: simon-ngaruiya
+date: 2022-02-10T00:00:00-13:00
+topics: [Languages]
+excerpt_separator: <!--more-->
+images:
+
+  - url: /engineering-education/constructors-in-kotlin/hero.jpg
+    alt: constructors in kotlin
+---
+
 A constructor is a quick and easy technique to set up class properties. It's also known as a specific member function that's invoked when a new object is formed.
+
+<!--more-->
 
 This article explains the basic structure of a constructor, the two types of constructors, then the init block. Finally, we'll also discuss some best practices related to object-oriented programming.
 
@@ -179,3 +198,6 @@ The clean use of classes is required for effective Kotlin. We learned about cons
 
 ### Conclusion
 In this article, we have covered various ways of creating constructors using Kotlin as our language, and when to use the init block. We also learned when the init block is executed vs when the primary constructor is executed, along with how secondary constructors are invoked. Finally, we went through best practices in object-oriented programming as it relates to constructors.
+
+---
+Peer Review Contributions by: [John Amiscaray](/engineering-education/authors/john-amiscaray/)
