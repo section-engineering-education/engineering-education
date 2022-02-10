@@ -1,4 +1,3 @@
-Social authentication using Djoser in  a React Application
 ---
 layout: engineering-education
 status: publish
@@ -7,7 +6,7 @@ url: /social-authentication-with-djoser-in-react-applications/
 title: React Social Authentication using Djoser and Django
 description: Djoser is a powerful authentication library. This article will walk the reader through creating an application that handles Google social authentication with Django and React.
 author: john-kiguru
-date: 2022-02-0800:00:00-12:00
+date: 2022-02-10T00:00:00-12:00
 topics: [Languages]
 excerpt_separator: <!--more-->
 images:
@@ -26,7 +25,7 @@ The reader should have the following to follow along with this article:
 2. Installed `django`, `djangorestframework`, `djangorestframework-simplejwt`, `djoser`, `social-auth-app-django`, `django-cors-headers`. You can install them using `pip`.
 3. Have `npm` installed for our frontend part.
 
-### Getting Started
+### Getting started
 Start by creating a new directory, then run `django-admin startapp backend` under this directory to create a new Django application called `backend`. 
 
 `Djoser` works with a custom user model in a Django application,  so let us create a new app inside our project to contain the custom user model. First, navigate the backend folder and run `python3 manage.py startapp users`.
@@ -189,7 +188,7 @@ Next, we specified the `User` model needed for the authentication and set up the
 
 Next, we specified the allowed site origins to access our application. This case will be `localhost:3000` because we will work with React later.
 
-Then, we made the settings for Django REST Framework and Django REST simple jwt.
+Then, we made the settings for Django REST Framework and Django REST simple-jwt.
 
 Notice the allowed redirect URLs part. These URLs should be similar to those we will set up for the application in the Google cloud console. 
 
@@ -214,7 +213,7 @@ urlpatterns = [
 
 Run `python3 manage.py makemigrations` and `python3 manage.py migrate` to finish the backend setup.
 
-### Creating Google OAuth Credentials
+### Creating Google OAuth credentials
 Visit [Google Cloud Plaform](https://console.developers.google.com/) and create a new project as follows:
 
 ![Create Project](/engineering-education/content/articles/social-authentication-with-Djoser-in-react-applications/create_new_project_google_console.png)
@@ -223,7 +222,7 @@ With the project selected, click `Credentials` and then click `OAuth Client ID` 
 
 ![Create OAuth Client ID](/engineering-education/content/articles/social-authentication-with-Djoser-in-react-applications/creating_oauth_client_id.png)
 
-You may need to set up OAuth consent, so select web application then enter `http://127.0.0.1:3000` for authorized javascript origins.
+You may need to set up OAuth consent, so select web application then enter `http://127.0.0.1:3000` for authorized JavaScript origins.
 
 Fo the authorized redirect, URIs have these URLs: `http://127.0.0.1:3000`, `http://127.0.0.1:3000/home`, and `http://127.0.0.1:3000/login`
 
@@ -518,9 +517,9 @@ Use the command `npm start` to see this welcome page:
 You should also be able to navigate to login and signup pages.
 
 ### Setting up the authentication
-The frontend application will be using `redux` for our application. Redux is a state container for Javascript applications.
+The frontend application will be using `redux` for our application. Redux is a state container for JavaScript applications.
 
-We will set up the actions reducers and store files for our application but first, create the following files and folders under `src` in the following folder structure.
+We will set up the actions reducers and store files for our application but, first, create the following files and folders under `src` in the following folder structure.
 
 ```bash
 ├── node_modules
@@ -568,7 +567,7 @@ We will set up the actions reducers and store files for our application but firs
 1. actions - This folder handles how different actions are specified.
 2. reducers - Handles how states are manipulated in case of different actions.
 3. store.js - A file that we use to define our store.
-4. .env file - we use this file to define our default api url.
+4. .env file - we use this file to define our default API url.
 
 We begin by defining our API URL in the `.env` file. 
 
@@ -642,7 +641,7 @@ When a user authenticates using Google, a redirect URI containing the state and 
 
 The `googleAuthenticate` function handles the post request with the code and state as data, then returns the user data as a response. 
 
-These results are dispatched to the reducer with the action type being `GOOGLE_AUTH_SUCCESS`. However, in case of any errors, then the action type dispatched is `GOOGLE_AUTH_FAIL`.
+These results are dispatched to the reducer, with the action type being `GOOGLE_AUTH_SUCCESS`. However, in case of any errors, then the action type dispatched is `GOOGLE_AUTH_FAIL`.
 
 We also have the `logout` action that dispatches the action type `LOGOUT`.
 
@@ -870,7 +869,7 @@ export default connect(mapStateToProps, null)(Signup);
 
 When a user clicks to continue with Google during sign up, the `signupWithGoogle` function is called. This function sends a post request to the backend with a specified redirect URI. 
 
-This URI must be one of the allowed redirect URIs in the Djoser settings. Additionally,  the allowed URIs must be the same as those added in your google cloud console. 
+This URI must be one of the allowed redirect URIs in the Djoser settings. Additionally,  the allowed URIs must be the same as those added in your Google cloud console. 
 
 The user gets directed to the authorization page, and the specified redirect URI with the state and code included in the url.
 
@@ -1010,9 +1009,9 @@ You will be redirected to the home page with the option of logging out.
 
 ![The home page after authentication](/engineering-education/content/articles/social-authentication-with-djoser-in-react-applications/home_page_after_authentication.png)
 
-Notice that the user will be authenticated as long as they have signed into their Google account. This way, the user does not have to keep entering the email and password every time they want to log in. 
+Notice that the user remains authenticated as long as they have signed in to their Google account. This way, the user does not have to keep entering the email and password every time they want to log in. 
 
->You may face issues when authenticating because the backend may not see the state because of the frontend running on localhost:3000. For this reason, I recommend running `npm run build` and moving the build folder to the backend directory and setting up the necessary  URLs for viewing and settings for static files so that your project runs on localhost:8000.
+> I recommend running `npm run build`, moving the build folder to the backend directory, setting up the necessary  URLs for viewing and settings for static files so that your project runs on localhost:8000 to avoid authentication errors.
 
 ### Conclusion
 You have now handled authentication for Google using Djoser. You can do the same for other social accounts such as Facebook, Twitter, or others. Please refer to [Djoser Documentation](https://djoser.readthedocs.io/en/latest/) for more information.
