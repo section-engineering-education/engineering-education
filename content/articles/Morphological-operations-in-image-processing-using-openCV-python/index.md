@@ -17,12 +17,12 @@ To follow along through this tutorial, these are the requirements:
 ### Table of contents
 - [Getting started](#Introduction) 
 - [Prerequisites](#Prerequisites) 
-- [Table of contents](#table-of-contents)
-- [What is structuring element](#what-is-structuring-element)
-- [Defining structuring element.](#defining-structuring-element)
-- [Grayscale and rbgcolor images](#grayscale-and-rbgcolor-images)
+- [Table of contents](#Table-of-contents)
+- [What is structuring element](#What-is-structuring-element)
+- [Defining structuring element.](#Defining-structuring-element)
+- [Grayscale and rbgcolor images](#Grayscale-and-rbgcolor-images)
 - [Plotting the image](#Plotting-the-image)
-- [Erosion and dilation morphological operations](#erosion-and-dilation-morphological-operations) 
+- [Erosion and dilation morphological operations](#Erosion-and-dilation-morphological-operations) 
 - [Edge detection using canny filter](#Edge-detection-using-opencv) 
 - [Canny filter](#Canny-filtering-operations)
 - [Conclusions](#Wrapping-up)
@@ -64,9 +64,11 @@ cv2.imwrite('RandomrgbColor.png', bgrImage)
 #using cv2. imread() it interprets in BGR format
 print(bgrImage,"\nEND of bgr Image")
   ```
-  ### Output: RandomgrayImage. 
+  - Output: RandomgrayImage. 
+  
   ![RandomgrayImage](/Morphological-operations-in-image-processing-using-openCV-python/RandomGrayimage.png).
-  ### Output: RandomrbgImage.
+  - Output: RandomrbgImage.
+  
   ![RandomrbgImage](/Morphological-operations-in-image-processing-using-openCV-python/RandomrgbColor.png).
   
 ### Plotting the image
@@ -137,10 +139,13 @@ cv2.waitKey(1)
 cv2.destroyAllWindows()
 
 ```
-### Output: dilated image.
+- Output: dilated image.
+ 
 ![dilated-image](/Morphological-operations-in-image-processing-using-openCV-python/Dilatedimage.jpg).
-### Output: eroded image.
+- Output: eroded image.
+
 ![eroded-image](/Morphological-operations-in-image-processing-using-openCV-python/Erodedimage.jpg).
+
 ### Edge detection using opencv
 - Finds edge points of the image that are shown clearly only strong points are detected which are the points with high intensity of pixels neighboring each other.
 - Here we are only considering grayscale images since we don't need information on a color image.
@@ -172,13 +177,14 @@ cv2.imwrite('filteredImg.jpg', edges)
 # set waittime() to 2 ms
 cv2.waitKey(2)
   ```
-  ### Output: canny filter edge detection.
+- Output: canny filter edge detection.
+
   ![Canny-filter-edge-detection](/Morphological-operations-in-image-processing-using-openCV-python/filteredImg.jpg)
 ### Canny filtering operations
 - It is a technique used to smoothen the surfaces of an image and can be used to compute convolutions using a 2D separation as follows.
 - This involves 5 major steps discussed below.
     
-  ### Step 1: read original image
+  #### Step 1: read original image
 
   ```python
       #set wait time to 2 milliseconds
@@ -186,7 +192,7 @@ cv2.waitKey(2)
       #read text image
       img = cv2.imread('sunflower-horizon.jpg')
   ```
-  ### Step 2: declaring kernel
+  #### Step 2: declaring kernel
  Declaring a kernel with an echelon form filter matrix yields an image that is the same as the original image but with no background color.
  Declaring convolution kernel yields a square matrix where both matrices(M and N) are both odd integers.
  `declare kernel syntax`
@@ -201,7 +207,7 @@ cv2.waitKey(2)
                         [0, 2, 0],
                         [0, 0, 2])
    ```
-  ### Step 3: Filter 2D operation to perform a linear filtering operation
+  #### Step 3: Filter 2D operation to perform a linear filtering operation
 
    ```python
     kernel2 = numpy.ones((9, 9), numpy.float32) / 10
@@ -213,7 +219,7 @@ cv2.waitKey(2)
     # print identity image
     cv2.imwrite('identity.png', identity)
   ```
-   ### Step 4: Display original and filtered image using imshow()
+   #### Step 4: Display original and filtered image using imshow()
 
    ```python
     #displaying original image
@@ -221,7 +227,7 @@ cv2.waitKey(2)
     # Displaying filteres image
       cv2_imshow(image)
    ```
-   ### Step 5: save filtered image to the disk using imwrite()
+   #### Step 5: save filtered image to the disk using imwrite()
   This example will load an image and its size then convert it to .jpg format and save it as a blurred image using imwrite() function.
    `save to disk Syntax`
 
