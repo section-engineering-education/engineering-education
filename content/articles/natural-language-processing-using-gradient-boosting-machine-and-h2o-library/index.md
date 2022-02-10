@@ -515,3 +515,6 @@ The complete Google Colab code for this tutorial is found [here](https://colab.r
 - [Steps in text preprocessing](https://towardsdatascience.com/nlp-text-preprocessing-a-practical-guide-and-template-d80874676e79).
 - [Word2vec algorithm](https://docs.h2o.ai/h2o/latest-stable/h2o-docs/data-science/word2vec.html)
 - [H2O GitHub](https://github.com/h2oai)
+
+---
+Peer Review Contributions by: [Willies Ogola](/engineering-education/authors/willies-ogola/)
