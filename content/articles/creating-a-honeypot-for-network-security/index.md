@@ -48,14 +48,14 @@ Design-wise, honeypots are classed as follows:
 - Pure honeypots
 - High-interaction honeypots
 
-`Low-interaction honeypots`- replicate attacker-requested services. Multiple virtual machines may be readily hosted on one physical system, and less code is needed, decreasing the virtual system's security complexity. Honey
+`Low-interaction honeypots`- replicate attacker-requested services. Multiple virtual machines may be readily hosted on one physical system, and less code is needed, decreasing the virtual system's security complexity.
 
 `Pure honeypots`- are full-scale factories. The honeypot's network connection is bugged to monitor the attacker's activities. A separate piece of software isn't needed. Both pure honeypots and honeypot-like systems have benefits and downsides.
 
 `High-interaction honeypots` enable an attacker to waste time by mimicking production system activities. Using virtual PCs, a single server may host several honeypots. A quick honeypot penetration may restore it. While high-interaction honeypots are safer, they need more maintenance. It may be too pricey without virtual computers.
 
 ### How honeypots operate
-Most honeypots are found in the DMZ. The DMZ has web and email servers connected to the Internet. A firewall divides the corporate network from the DMZ. It protects an internal network from the outer world. It permits traffic to flow in key network areas.
+Most honeypots are found in the DMZ. A demilitarized zone (DMZ) is a logical or physical subnet that houses and exposes an organization's external-facing services to an untrusted, generally bigger network like the Internet. The DMZ has web and email servers connected to the Internet. A firewall divides the corporate network from the DMZ. It protects an internal network from the outer world. It permits traffic to flow in key network areas.
 
 The invaders think these fake servers are legitimate, but they are honeypots. So they follow well-established protocols and base their behaviors on real-world acts. Occasionally, fake data is employed to improve the reliability of a piece of data. A honeypot may contain fraudulent credit card information or files that seem to contain such data. The honeypot duplicates all routine access control procedures and protocols to protect the data.
 
@@ -67,7 +67,7 @@ Attackers see honeypots in the DMZ as a susceptible location. And the more convi
 Let's look at the merits and demerits of using honeypots.
 
 #### Advantages
-Experts say honeypots function when other IDS fail.
+Experts say honeypots function when other IDS fail. An intrusion detection system (IDS) examines network traffic for signals of unauthorized activity and alerts the user. A network snoop monitors a system or network for dangerous activity or policy breaches.
 
 - It's becoming harder for IDS to monitor network traffic as more hackers use encryption. Honeypots track every communication, including encrypted.
 - Most IDS warnings are false positives. Administrators may ignore the system if it produces too many false alerts. Companies and organizations may prevent false alarms by restricting honeypots to authorized personnel.
@@ -119,18 +119,18 @@ Unlike the internal firewall, the honeypot is a security concern. Offensive acto
 
 Nmap's port scanning capability can detect open and closed ports. Having a honeypot's ports open and closed increases authenticity.
 
-Finally, administrators should set up a honeypot and watch server logs. An IDS may refuse access to unprotected ports to advise an attacker to search elsewhere.
+Prior to reading the server logs, honeypot administrators should first do some honeypot activities. Any attempt to scan a port by an attacker will be promptly rejected by an IDS, which will show the port as unavailable and encourage them to go on.
 
-These issues must be addressed before honeypot manufacture. That the honeypot may attract attackers and capture data is critical. After the initial test, inspect and fine-tune the honeypot.
+Prior to launching a honeypot, these issues must be solved. Anything that can impede the honeypot from attracting attackers and collecting the maximum amount of data should be removed. After initial testing, put the honeypot into production, monitor it closely, and fine-tune the arrangement.
 
 ### Honeypot software
 Let's look at some of the Honeypot software:
 
-- The Honeynet Project's Ghost USB. This free honeypot looks like a USB gadget. This device attracts and identifies viruses. Ghost USB offers both a command-line and a GUI.
+- The Honeynet Project's Ghost USB. [Click here](https://code.google.com/archive/p/ghost-usb-honeypot/) to acquire the software and learn how it works. This free honeypot looks like a USB gadget. This device attracts and identifies viruses. Ghost USB offers both a command-line and a GUI.
 
-- Gianluca Brindisi's Wordpot. In this software, the users may detect files used by hackers to obtain data from WordPress sites. WordPress plugins may duplicate a WordPress issue. It's GUI (CLI).
+- Gianluca Brindisi's Wordpot. [Click here](https://github.com/gbrindisi/wordpot) to clone the software codes. In this software, the users may detect files used by hackers to obtain data from WordPress sites. WordPress plugins may duplicate a WordPress issue. It's GUI (CLI).
 
-- Attivo Inc. produces ThreatDefend. A self-learning honeypot/deception device. These artificial visible local area networks are profiled and modified (VLAN). Finding hacker tactics to breach the company's firewall is possible. This business specializes in APTs, which overcome standard security mechanisms.
+- Attivo Inc.'s ThreatDefend. [Click here](https://www.attivonetworks.com/product/ThreatDefend/) to access the software from the official website. It is a self-learning honeypot/deception device. These artificial visible local area networks are profiled and modified (VLAN). Finding hacker tactics to breach the company's firewall is possible. This business specializes in APTs, which overcome standard security mechanisms.
 
 ### Conclusion
 Honeypot traps have been used to catch cyber criminals for years. However, they may hinder web scraping. Don't utilize honeypot traps to scrape publicly available data like price tracking or market research.
