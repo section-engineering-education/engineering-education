@@ -6,7 +6,7 @@ url: /how-to-use-the-driving-scenario-app-to-create-scenarios-in-matlab/
 title: How to use the Driving Scenario App to Create Scenarios in Matlab
 description: This tutorial will guide the reader on how they can use the Driving Scenario designer App to create scenarios that can be used to test the automatic driving systems.
 author: collince-odhiambo
-date: 2022-02-11T00:00:00-04:33
+date: 2022-02-11T00:00:00-06:00
 topics: [Machine Learning]
 excerpt_separator: <!--more-->
 images:
@@ -14,11 +14,11 @@ images:
   - url: /engineering-education/how-to-use-the-driving-scenario-app-to-create-scenarios-in-matlab/hero.jpg
     alt: How to use the Driving Scenario App to Create Scenarios in Matlab Hero Image
 ---
-The Driving Scenario Designer app is used in designing synthetic driving scenarios. These scenarios are used in testing the automatic driving systems. The tool is primarily applied in developing automatic cars since one can create all the scenarios using this toolbox. 
+The Driving Scenario Designer app is used to design synthetic driving scenarios. These scenarios are used to test the automatic driving systems. The tool is primarily applied in developing automatic cars since one can create all the scenarios using this toolbox.
 <!--more-->
-These applications include the creation of roads and adding actors into them. The mobile parts of the road are the actors. You can add scenarios using a drag-drop interface. 
+These applications include the creation of roads and adding actors into them. The mobile parts of the road are the actors. You can add scenarios using a drag-drop interface.
 
-Furthermore, you can add radar and sensors to your ego car. An ego car is a car that you are trying to automate while considering the surrounding factors. These sensors can generate the line boundary and maintain your car within the boundary. 
+Furthermore, you can add radar and sensors to your ego car. An ego car is a car that you are trying to automate while considering the surrounding factors. These sensors can generate the line boundary and maintain your car within the boundary.
 
 In this tutorial, we'll see how to use this App to create scenarios. We will create scenarios directly from the toolbox and programmatically from the command window. All these two different scenario creation requires this toolbox.
 
@@ -28,22 +28,23 @@ To follow along with this tutorial, you will need:
 - Proper understanding of [MATLAB](https://www.section.io/engineering-education/getting-started-with-matlab/) basics.
 
 ### Driving scenario
- #### Why this app
-If you want to test the sensor algorithm, traditionally, you had to collect testing data by driving your car over different environments. Then, you would take this data into Matlab for analysis. 
+#### Why this app?
+If you want to test the sensor algorithm, traditionally, you had to collect testing data by driving your car over different environments. Then you would take this data into Matlab for analysis.
 
-The whole process of collecting the data is time-consuming and requires quite more energy. This designer app lets you test your algorithm faster. Instead of driving around to collect testing data, you can create scenarios to gather the data.
+The whole process of collecting the data is time-consuming and requires more energy. This designer app lets you test your algorithm faster. Instead of driving around to collect testing data, you can create scenarios to gather the data.
 
-The scenarios created in the designer app can contain all the possible constituents of the road. For example, it may include the road signs, pedestrians, lane boundary and vehicles. Also, you can virtually set up the scenario and simulate the sensor detection.
+The scenarios created in the designer app can contain all the possible constituents of the road. For example, it may include the road signs, pedestrians, lane boundary, and vehicles. Also, you can virtually set up the scenario and simulate the sensor detection.
 
-These variables are then exported in Matlab and test your sensor algorithm. 
+These variables are then exported to Matlab to test your sensor algorithm.
 
 Let us walk through the app to see how it works.
 
-First , this App in the apps section. You can locate it in two ways in Matlab. 
+First, this App in the apps section of Matlab. You can locate it in two ways.
 
 Method 1: Click on the app section at the top of Matlab's window.
 
 ![Apps](/engineering-education/how-to-use-the-driving-scenario-app-to-create-scenarios-in-matlab/driving-one.png)
+
 - Click on the dropdown arrow to locate the automotive section.
 - In the automotive section, select the `Driving Scenario App`.
 
@@ -59,7 +60,7 @@ You can add roads and movable objects known as actors in the driving scenario ap
 
 The app is divided into three parts. These three parts are:
 1. Actors/roads
-2. Scenario canvas, and 
+2. Scenario canvas, and
 3. Egocentric view.
 
 The actors/roads section shows the roads' properties or the actors you have added. We use the scenario canvas to add our scenarios. It acts as the working space for the app.
@@ -83,15 +84,15 @@ We can also add actors to our road. The actors that we want to add are vehicles/
 
 The first car you add into the scenario canvas is the ego car by default. You can change to any actor that you want afterwards.
 
-To add a car into the scenario canvas, click on the `actors`, then select your preferred actor. After that, you drive the cursor to the position you want on the road. 
+To add a car into the scenario canvas, click on the `actors`, then select your preferred actor. After that, you drive the cursor to the position you want on the road.
 
 ![Adding cars](/engineering-education/how-to-use-the-driving-scenario-app-to-create-scenarios-in-matlab/driving-six.png)
 
 Since these are automated cars, you have to create a `way point`. A waypoint is a specific lane which the car will follow. When creating a scenario and an actor is involved, you cannot run this program without adding a waypoint.
 
-In adding a waypoint, every car has its waypoint. Select the car/ truck that you want to add a waypoint to, then right-click on it and select `add way point`. It creates a cursor that enables you to create this waypoint.
+When adding a waypoint, every car has its waypoint. Right-click the car/truck that you want to add a waypoint to, and select `add way point`. It creates a cursor that enables you to create this waypoint.
 
-After this, you can run the simulation to see how it works. We can see the program run as we want it to.
+After this, you can run the simulation to see how it works. We can see the program run as we want it to:
 
 ![Running program](/engineering-education/how-to-use-the-driving-scenario-app-to-create-scenarios-in-matlab/driving-seven.png)
 
@@ -102,21 +103,21 @@ This app allows you to add any property you need for your simulation. Alternativ
 
 Suppose you want to add a scenario of two cars ten meters apart. You can specify the vehicle speed. These cars could be moving at constant or different speeds depending on how you want them to be.
 
-In this case, the first car will be moving at a speed of 4m/s and the other at 7m/s.
+In this case, the first car will be moving at a speed of 4m/s and the other at 7m/s:
 
 ```Matlab
 driving = drivingScenario;
 veh = vehicle(driving,'ClassID',1','Position',[3 0 0],'Velocity',[-4 0 0],'Yaw',90)
 ```
 
-This is the code that adds your first actor. The variable `driving` initializes this toolbox. Next, we use the `vehicle()` function to add a vehicle to your scenario. This function takes the initialization toolbox variables `scenario`, `position`, `velocity` and the `yaw`.
+The code above adds your first actor. The variable `driving` initializes this toolbox. Next, we use the `vehicle()` function to add a vehicle to your scenario. This function takes the initialization toolbox variables `scenario`, `position`, `velocity` and the `yaw`.
 
-`Yaw` is the oscillation about an axis. Now, if you look at the velocity, it is negative. It is because the movement is assumed to be along the y-axis. From the origin, the y-axis values are always negative.
+`Yaw` is the oscillation about an axis. Now, if you look at the velocity, it is negative. This is because the movement is assumed to be along the y-axis. From the origin, the y-axis values are always negative.
 
-When you execute the code above, we get the following:
+When you execute the code above, you should get the following:
 
 ```Matlab
-veh = 
+veh =
 
   Vehicle with properties:
 
@@ -148,7 +149,7 @@ veh2 = vehicle(scenario,'ClassID',1,'Position',[0 08 0],'Velocity',[0 -7 0],'Yaw
 The output will be:
 
 ```Matlab
-veh2 = 
+veh2 =
 
   Vehicle with properties:
 
@@ -186,12 +187,13 @@ The `set()` function sets properties to your scenario. The `gcf` returns the han
 
 We can use a `chasePlot` to place the vehicle relatively. You can create a relative vehicle placement using a `chasePlot`. This plot makes the egocentric view of your simulation.
 
-The chase plot shows the projective perspective view by default. For example, let us show the perspective view of the second car using the `chasePlot` function.
+The chase plot shows the projective perspective view by default. For example, let us show the perspective view of the second car using the `chasePlot` function:
 
 ```Matlab
 chasePlot(v2)
 set(gcf,'Name','Chase Plot')
 ```
+
 The output is as shown below:
 
 ![Chase plot](/engineering-education/how-to-use-the-driving-scenario-app-to-create-scenarios-in-matlab/driving-nine.png)
@@ -199,7 +201,7 @@ The output is as shown below:
 This output shows the perspective as it is seen some distance from the second car. The cars are `10m` apart with `6m` between them from the plot.
 
 ### Simulation containing both the ego car and the road
-When adding roads, you have to specify the road centres and the bank angles. Bank angles are the turning points of the vehicle, and it is inclined at this point. 
+When adding roads, you have to specify the road centres and the bank angles. Bank angles are the turning points of the vehicle; it is inclined at this point.
 
 You get the road boundaries when you plot these road centres and the bank angles. To do this, we execute the code below:
 
@@ -208,7 +210,7 @@ driving = drivingScenario;
 Centres = ...
     [  0  40  49  50 100  50  49 40 -40 -49 -50 -100  -50  -49  -40    0
      -50 -50 -50 -50   0  50  50 50  50  50  50    0  -50  -50  -50  -50]';
- 
+
 bankAngles = [3   7   6   9   3  3   8  0   0   4   4    9    6    9    0    0];
 road(driving, Centers, bankAngles, 'lanes', lanespec(2));
 plot(driving);
@@ -218,25 +220,25 @@ The `road()` function is used to plot the roads. This function takes your scenar
 
 ![Road plot](/engineering-education/how-to-use-the-driving-scenario-app-to-create-scenarios-in-matlab/driving-ten.png)
 
-Let us now add our ego car using the `vehicle()` function and its position as the argument.
+Let us add our ego car using the `vehicle()` function and its position as the argument:
 
 ```matlab
 egoCar = vehicle(driving,'ClassID',1,'Position',[80 -40 0.45],'Yaw',30);
 ```
 
-The output plot with the ego vehicle is shown below:
+The output plot with the ego vehicle is as shown below:
 
 ![Ego vehicle added](/engineering-education/how-to-use-the-driving-scenario-app-to-create-scenarios-in-matlab/driving-eleven.png)
 
 ### Adding trajectories for our actors
-As we said before, we have to give it trajectories for our vehicle to move. We add the second actor car, and both of these vehicles are given a trajectory. To add our second car, 'fastCar`, you use the code below:
+As we said before, we have to give trajectories for our vehicle to move. We add the second actor car; both of these vehicles are given a trajectory. To add our second car, `fastCar`, you use the code below:
 
 ```Matlab
 chasePlot(egoCar);
 fastCar = vehicle(scenario,'ClassID',1);
 ```
 
-In giving the trajectories, we specify the diameter of the car, the road offset and the right and left way points. An offset line is the short distance from the main survey line.
+In giving the trajectories, we specify the diameter of the car, the road offset and the right and left way points. An offset line is the short distance from the main survey line:
 
 ```matlab
 diameter = 2.9/2;
