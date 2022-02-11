@@ -3,10 +3,10 @@ layout: engineering-education
 status: publish
 published: true
 url: /hyperparmeter-tuning/
-title: Hyperparameter Tuning In Decision Trees and Random Forests
+title: Hyperparameter Tuning in Decision Trees and Random Forests
 description: This article will show the reader how to solve a Binary Classification problem, using a Decision Tree classifier and Random forest to solve the over-fitting problem by tuning their hyper-parameter and comparing results.
 author: himani-gulati
-date: 2022-02-10T00:00:00-22:00
+date: 2022-02-11T00:00:00-01:00
 topics: [Machine Learning]
 excerpt_separator: <!--more-->
 images:
@@ -14,11 +14,11 @@ images:
   - url: /engineering-education/hyperparmeter-tuning/hero.jpg
     alt: Hyperparameter Tuning Example Image
 ---
-After years of hard work, we've reached a stage where we use computers to analyze millions of data points and provide insights that even the human eye couldn't catch.
+After years of hard work, we have reached a stage where we use computers to analyze millions of data points and provide insights that even the human eye could not catch.
 <!--more-->
 But our Machine Learning model is only as good as its accuracy on unseen data, i.e., "how well our model generalizes". In this article, we'll solve a binary classification problem, using a Decision Tree classifier and Random Forest to solve the over-fitting problem by tuning their hyper-parameters and comparing results.
 
-Before we begin, you should have some working knowledge of Python and some basic understanding on Machine Learning. If you're new to Decision Trees entirely, you can still go ahead and begin reading. Irrespective, let's begin with a brief introduction to Machine Learning.
+Before we begin, you should have some working knowledge of Python and some basic understanding of Machine Learning. If you're new to Decision Trees entirely, you can still go ahead and begin reading. Irrespective, let's begin with a brief introduction to Machine Learning.
 
 ### Machine Learning
 Machine Learning is the practice of emulating a human being's learning and reasoning ability, along with the continuous enhancement of results with every additional data input. This is also called continual learning. *Any new input entered will contribute to the accuracy of the algorithm. Hence, they learn from experience like the human brain.*
@@ -33,7 +33,7 @@ Now, let's get to the models in hand.
 #### Decision Tree
 Decision Trees are powerful machine learning algorithms capable of performing regression and classification tasks. To understand a decision tree, let's look at an inverted tree-like structure (like that of a family tree). We start at the root of the tree that contains our training data. At the root, we split our dataset into distinguished leaf nodes, following certain conditions like using an if/else loop.
 
-![Image depicting a hierarchical series of decisions.](/engineering-education/hyperparameter-tuning/tree-one.png)
+![Image depicting a hierarchical series of decisions.](/engineering-education/hyperparmeter-tuning/tree-one.png)
 
 *[Image Source: Jeremy Jordan](https://www.jeremyjordan.me/decision-trees/)*
 
@@ -59,7 +59,7 @@ $$
 entropy = - \sum_{i = 1}^{k}{P(value_i).{log_2}(P(value_i))}
 $$
  
-##### Information Gain
+##### Information gain
 Information gain (IG) measures the amount of information provided by a given feature or attribute about a particular target class. While creating a decision tree, our goal is to find the attribute having the highest Information Gain, and conversely, the lowest entropy. Mathematically, it is calculated as the difference of the initial and final entropy. For example:
 
 $$
@@ -82,7 +82,7 @@ This is how information gain and entropy are used to improve the quality of spli
 
 This way, our decision tree grows iteratively, layer by layer.
 
-#### Training and Visualizing Decision Trees
+#### Training and visualizing Decision Trees
 
 ```python
 from sklearn.tree import DecisionTreeClassifier
@@ -159,7 +159,7 @@ To understand better, we can plot the resulting accuracies as shown below. You c
 
 ![The accuracy graph](/engineering-education/hyperparameter-tuning/accuracy-graph.png)
 
-##### b. Max Leaf Nodes 
+##### b. Max leaf nodes 
 As the name suggests, this hyperparameter caps the number of leaf nodes in a decision tree. It will allow the branches of a tree to have varying depths, another way to control the model's complexity.
 
 ![Max leaf nodes](/engineering-education/hyperparameter-tuning/max-leaf-nodes.jpg)
@@ -207,7 +207,7 @@ This argument limits the number of decision trees in random forests. By default,
 model = RandomForestClassifier(random_state=42, n_jobs=-1, n_estimators=10)
 model.fit(train_inputs, train_targets)
 ```
-Typically, `n_estimators` should be kept minimal. For example, in our model, the validation accuracy at 100 and 200 estimators is approximately the same. So in such cases, we will stick to the lower number of estimators.
+Typically, `n_estimators` should be kept minimal. For example, in our model, the validation accuracy of 100 and 200 estimators is approximately the same. So in such cases, we will stick to the lower number of estimators.
 
 ![n_estimator implementation](/engineering-education/hyperparameter-tuning/n-estimator.png)
 
