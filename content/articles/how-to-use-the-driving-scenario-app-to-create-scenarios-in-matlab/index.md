@@ -1,6 +1,21 @@
+---
+layout: engineering-education
+status: publish
+published: true
+url: /how-to-use-the-driving-scenario-app-to-create-scenarios-in-matlab/
+title: How to use the Driving Scenario App to Create Scenarios in Matlab
+description: This tutorial will guide the reader on how they can use the Driving Scenario designer App to create scenarios that can be used to test the automatic driving systems.
+author: collince-odhiambo
+date: 2022-02-11T00:00:00-04:33
+topics: [Machine Learning]
+excerpt_separator: <!--more-->
+images:
 
-The Driving Scenario Designer App is used in designing synthetic driving scenarios. These scenarios are used in testing the automatic driving systems. The tool is primarily applied in developing automatic cars since one can create all the scenarios using this toolbox. 
-
+  - url: /engineering-education/how-to-use-the-driving-scenario-app-to-create-scenarios-in-matlab/hero.jpg
+    alt: How to use the Driving Scenario App to Create Scenarios in Matlab Hero Image
+---
+The Driving Scenario Designer app is used in designing synthetic driving scenarios. These scenarios are used in testing the automatic driving systems. The tool is primarily applied in developing automatic cars since one can create all the scenarios using this toolbox. 
+<!--more-->
 These applications include the creation of roads and adding actors into them. The mobile parts of the road are the actors. You can add scenarios using a drag-drop interface. 
 
 Furthermore, you can add radar and sensors to your ego car. An ego car is a car that you are trying to automate while considering the surrounding factors. These sensors can generate the line boundary and maintain your car within the boundary. 
@@ -13,53 +28,54 @@ To follow along with this tutorial, you will need:
 - Proper understanding of [MATLAB](https://www.section.io/engineering-education/getting-started-with-matlab/) basics.
 
 ### Driving scenario
- #### Why this App
+ #### Why this app
 If you want to test the sensor algorithm, traditionally, you had to collect testing data by driving your car over different environments. Then, you would take this data into Matlab for analysis. 
 
-The whole process of collecting the data is time-consuming and requires quite more energy. This designer App lets you test your algorithm faster. Instead of driving around to collect testing data, you can create scenarios to gather the data.
+The whole process of collecting the data is time-consuming and requires quite more energy. This designer app lets you test your algorithm faster. Instead of driving around to collect testing data, you can create scenarios to gather the data.
 
-The scenarios created in the designer App can contain all the possible constituents of the road. For example, it may include the road signs, pedestrians, lane boundary and vehicles. Also, you can virtually set up the scenario and simulate the sensor detection.
+The scenarios created in the designer app can contain all the possible constituents of the road. For example, it may include the road signs, pedestrians, lane boundary and vehicles. Also, you can virtually set up the scenario and simulate the sensor detection.
 
 These variables are then exported in Matlab and test your sensor algorithm. 
 
-Let us walk through the App to see how it works.
+Let us walk through the app to see how it works.
 
 First , this App in the apps section. You can locate it in two ways in Matlab. 
 
-Method 1: Click on the App section at the top of Matlab's window.
+Method 1: Click on the app section at the top of Matlab's window.
 
-![Apps](driving-one.png)
-
+![Apps](/engineering-education/how-to-use-the-driving-scenario-app-to-create-scenarios-in-matlab/driving-one.png)
 - Click on the dropdown arrow to locate the automotive section.
 - In the automotive section, select the `Driving Scenario App`.
 
-![Driving scenario app](driving-two.png)
+![Driving scenario app](/engineering-education/how-to-use-the-driving-scenario-app-to-create-scenarios-in-matlab/driving-two.png)
 
-- Double-click the App to open it.
+- Double-click the app to open it.
 
-Method 2: Alternatively, you can execute the `drivingScenarioDesigner` command in the command window. This command automatically opens the App. When you open the App, the display will be as shown below:
+Method 2: Alternatively, you can execute the `drivingScenarioDesigner` command in the command window. This command automatically opens the app. When you open the App, the display will be as shown below:
 
-![App window](driving-three.png)
+![App window](/engineering-education/how-to-use-the-driving-scenario-app-to-create-scenarios-in-matlab/driving-three.png)
 
-You can add roads and movable objects known as actors in the driving scenario App. There are different types of actors, but an actor's choice depends on what you want to do. The actors are such as cars, trucks, bicycles and barriers.
+You can add roads and movable objects known as actors in the driving scenario app. There are different types of actors, but an actor's choice depends on what you want to do. The actors are such as cars, trucks, bicycles and barriers.
 
-The App is divided into three parts. These three parts are:
-1. actors/roads
-2. scenario canvas, and 
-3. egocentric view.
+The app is divided into three parts. These three parts are:
+1. Actors/roads
+2. Scenario canvas, and 
+3. Egocentric view.
 
-The actors/roads section shows the roads' properties or the actors you have added. We use the scenario canvas to add our scenarios. It acts as the working space for the App.
+The actors/roads section shows the roads' properties or the actors you have added. We use the scenario canvas to add our scenarios. It acts as the working space for the app.
 
 Egocentric section is where your scenarios appear as a reality. This section makes them appear in a more practical form.
 
 ### Adding scenarios to the scenario canvas
-We will start by adding a road to our scenario canvas. To add a road, click on the `add road` at the top bar of the App. Then, move the cursor to the scenario canvas. Click on the starting point, the second point, to make a shape you desire and then click `enter`. An example is shown in the image below:
+We will start by adding a road to our scenario canvas. To add a road, click on the `add road` at the top bar of the app. Then, move the cursor to the scenario canvas.
 
-![Adding roads](driving-four.png)
+Click on the starting point, the second point, to make a shape you desire and then click `enter`. An example is shown in the image below:
+
+![Adding roads](/engineering-education/how-to-use-the-driving-scenario-app-to-create-scenarios-in-matlab/driving-four.png)
 
 When you click enter, you have:
 
-![The road](driving-five.png)
+![The road](/engineering-education/how-to-use-the-driving-scenario-app-to-create-scenarios-in-matlab/driving-five.png)
 
 After adding the road, the road description is given in the road/actor section. For example, our road has four centres and a width of six metres. The centres are the number of endpoints when creating the road.
 
@@ -69,7 +85,7 @@ The first car you add into the scenario canvas is the ego car by default. You ca
 
 To add a car into the scenario canvas, click on the `actors`, then select your preferred actor. After that, you drive the cursor to the position you want on the road. 
 
-![Adding cars](driving-six.png)
+![Adding cars](/engineering-education/how-to-use-the-driving-scenario-app-to-create-scenarios-in-matlab/driving-six.png)
 
 Since these are automated cars, you have to create a `way point`. A waypoint is a specific lane which the car will follow. When creating a scenario and an actor is involved, you cannot run this program without adding a waypoint.
 
@@ -77,14 +93,16 @@ In adding a waypoint, every car has its waypoint. Select the car/ truck that you
 
 After this, you can run the simulation to see how it works. We can see the program run as we want it to.
 
-![Running program](driving-seven.png)
+![Running program](/engineering-education/how-to-use-the-driving-scenario-app-to-create-scenarios-in-matlab/driving-seven.png)
 
-This App allows you to add any property you need for your simulation. Alternatively, you can add these properties programmatically.
+This app allows you to add any property you need for your simulation. Alternatively, you can add these properties programmatically.
 
 ### Adding scenarios programmatically
 **Case scenario**
 
-Suppose you want to add a scenario of two cars ten meters apart. You can specify the vehicle speed. These cars could be moving at constant or different speeds depending on how you want them to be. In this case, the first car will be moving at a speed of 4m/s and the other at 7m/s.
+Suppose you want to add a scenario of two cars ten meters apart. You can specify the vehicle speed. These cars could be moving at constant or different speeds depending on how you want them to be.
+
+In this case, the first car will be moving at a speed of 4m/s and the other at 7m/s.
 
 ```Matlab
 driving = drivingScenario;
@@ -164,7 +182,7 @@ ylim([-15 15]);
 
 The `set()` function sets properties to your scenario. The `gcf` returns the handle to the current figure since this execution is done in the command window. The output here is:
 
-![Output of the program](driving-eight.png)
+![Output of the program](/engineering-education/how-to-use-the-driving-scenario-app-to-create-scenarios-in-matlab/driving-eight.png)
 
 We can use a `chasePlot` to place the vehicle relatively. You can create a relative vehicle placement using a `chasePlot`. This plot makes the egocentric view of your simulation.
 
@@ -176,12 +194,14 @@ set(gcf,'Name','Chase Plot')
 ```
 The output is as shown below:
 
-![Chase plot](driving-nine.png)
+![Chase plot](/engineering-education/how-to-use-the-driving-scenario-app-to-create-scenarios-in-matlab/driving-nine.png)
 
 This output shows the perspective as it is seen some distance from the second car. The cars are `10m` apart with `6m` between them from the plot.
 
 ### Simulation containing both the ego car and the road
-When adding roads, you have to specify the road centres and the bank angles. Bank angles are the turning points of the vehicle, and it is inclined at this point. You get the road boundaries when you plot these road centres and the bank angles. To do this, we execute the code below:
+When adding roads, you have to specify the road centres and the bank angles. Bank angles are the turning points of the vehicle, and it is inclined at this point. 
+
+You get the road boundaries when you plot these road centres and the bank angles. To do this, we execute the code below:
 
 ```Matlab
 driving = drivingScenario;
@@ -196,7 +216,7 @@ plot(driving);
 
 The `road()` function is used to plot the roads. This function takes your scenario, the bank angles and the road centres as the arguments. Running this program, we get the following output:
 
-![Road plot](driving-ten.png)
+![Road plot](/engineering-education/how-to-use-the-driving-scenario-app-to-create-scenarios-in-matlab/driving-ten.png)
 
 Let us now add our ego car using the `vehicle()` function and its position as the argument.
 
@@ -206,7 +226,7 @@ egoCar = vehicle(driving,'ClassID',1,'Position',[80 -40 0.45],'Yaw',30);
 
 The output plot with the ego vehicle is shown below:
 
-![Ego vehicle added](driving-eleven.png)
+![Ego vehicle added](/engineering-education/how-to-use-the-driving-scenario-app-to-create-scenarios-in-matlab/driving-eleven.png)
 
 ### Adding trajectories for our actors
 As we said before, we have to give it trajectories for our vehicle to move. We add the second actor car, and both of these vehicles are given a trajectory. To add our second car, 'fastCar`, you use the code below:
@@ -241,12 +261,15 @@ smoothTrajectory(fastCar,lWayPoints(:,:), 50);
 
 Here, we get:
 
-![Figure 1](driving-twelve.png)
+![Figure 1](/engineering-education/how-to-use-the-driving-scenario-app-to-create-scenarios-in-matlab/driving-twelve.png)
 
-![Figure 2](driving-thirteen.png)
+![Figure 2](/engineering-education/how-to-use-the-driving-scenario-app-to-create-scenarios-in-matlab/driving-thirteen.png)
 
 ### Conclusion
-Simulation of the automated driving system is made easier by the Driving Scenario App. You can create different scenarios using this App. The data from this toolbox can then be exported and used to improve various automated driving systems algorithms.
+Simulation of the automated driving system is made easier by the Driving Scenario App. You can create different scenarios using this app. The data from this toolbox can then be exported and used to improve various automated driving systems algorithms.
 It makes it a widely used toolbox.
 
 Happy coding!
+
+---
+Peer Review Contributions by: [Monica Masae](/engineering-education/authors/monica-masae/)
