@@ -10,11 +10,11 @@ To follow this tutorial all it requires is the following:
 ### Goals
 By the end of this tutorial, the reader should be acquainted with:
 
-- Utilizing pathlib and os modules to manipulating a file and a directory path.
+- Utilizing Pathlib and OS modules to manipulating a file and a directory path.
 - Implementing object-oriented programming and functional programming in file system operation.
 - Converting a file's metadata to basic readable information.
 - Manipulating relative path and absolute path.
-- Understanding the scenario where os and pathlib modules can be independently fit in.
+- Understanding the scenario where OS and Pathlib modules can be independently fit in.
 
 ### Contents
 - [Introduction](#introduction)
@@ -33,23 +33,26 @@ By the end of this tutorial, the reader should be acquainted with:
 - [Removing a file](#removing-a-file)
 - [Retrieving and converting a file information](#retrieving-and-converting-a-file-information)
 - [Querying a file extension and name](#querying-a-file-extension-and-name)
-- [Theoretical difference between pathlib and Os](#theoretical-difference-between-pathlib-and-os)
+- [Theoretical difference between pathlib and os](#theoretical-difference-between-pathlib-and-os)
 - [Wrapping Up](#wrapping-up)
 
 ### Introduction
 File System Operation can be characterized as the example or technique that can be used to control or construct files and directories and there are two different ways of working with file system operation, which are functional dependency and object-oriented concept. This tutorial practically highlights the different scenarios to differentiate between Pathlib and Os.
 
-#### Os module
+#### [Os module](https://docs.python.org/3/library/os.html)
 The OS (operating system) module is a different operating system interface that functionally renders a convenient way of working with files and directories with a simple function call, additionally, OS empowers us to deal with I/O tasks straightforwardly.
 
-#### Pathlib module
+#### [Pathlib module](https://docs.python.org/3/library/pathlib.html)
 The Pathlib module is an Object-Oriented file system activity that offers classes representing filesystem paths with semantics fitting for various operating systems.
 
-### Highlighting the practical difference between os and pathlib modules
-In this section we will practically illustrate the semantic differences between pathlib and os modules using comparable code snippets to help you determine where every module fit in. Additionally, note that every demonstration requires the importation of the two modules.
+### Highlighting the practical difference between OS and Pathlib modules
+In this section we will practically illustrate the semantic differences between Pathlib and OS modules using comparable code snippets to help you determine where every module fit in. Additionally, note that every demonstration requires the importation of the two modules.
 
-### Querying current path using os and pathlib
-Querying the current working directory is a basic task when you are dealing with a path.  There are two unique types of path which are relative path and absolute path.An absolute path gives a full description of the current location you are working while a relative path refers to a location that is relative to the current working directory. Note querying the current path using os and pathlib will return an absolute path.
+#### Querying current path using OS and Pathlib
+Querying the current working directory is a basic task when you are dealing with a path. There are two unique types of path which are relative path and absolute path. An absolute path gives a full description of the current location you are working while a relative path refers to a location that is relative to the current working directory. 
+
+> Note:
+> Querying the current path using OS and Pathlib will return an absolute path.
 
 #### Querying current path using os
 
@@ -63,7 +66,7 @@ Output:
 ```bash
 C:\Users\DELL\Desktop\practical_folder
 ```
-The output returns a string representation of the absolute current path you are working, note your output will be different and contains forward slash (/) if you are not using Windows os.
+The output returns a string representation of the absolute current path you are working, note your output will be different and contains forward slash (/) if you are not using Windows Os.
 
 #### Querying current path using pathlib.
 ```python
@@ -75,9 +78,9 @@ Output:
 ```bash
 WindowsPath('C:/Users/DELL/Desktop/practical_folder')
 ```
-In this example, the output returns one of the two respective path module subclasses' instances of the current location you are working. It returns a windows object if you are using windows object while it returns a posix path object if you are using any posix operating system e.g Linux os and Mac os, We can likewise convert this value to a string, let's attempt it below
+In this example, the output returns one of the two respective path module subclasses' instances of the current location you are working. It returns a windows object if you are using windows object while it returns a posix path object if you are using any posix operating system e.g Linux Os and Mac os, We can likewise convert this value to a string, let's attempt it below
 
-#### Converting the current path object to a string
+#### Converting the new windows' path object to a string
 Converting the object to a string value requires you to call the in-built string method.
 
 Consider the following example:
@@ -127,10 +130,10 @@ WindowsPath('C:/Users/DELL')
 ```
 The example illustrates that the `Path().home()` function returns an object representation of the path which can be converted to a string value.
 
-### Listing a directory path content
+#### Listing a directory path content
 In this section, we will outline the files/directories in the current directory, the parent directory, and a given directory.
 
-#### Using os module to list the current directory.
+#### Using os module to list the current directory
 
 ```python
 import os
@@ -256,6 +259,7 @@ However, pathlib alternatively provides `Path.glob()` to list files and director
 Consider the following example:
 
 #### Utilizing glob method to outline a relative directory path
+The glob method can be used to carry out relative pattern matching files in the directory represented by the given path.
 
 ```python
 from pathlib import Path
@@ -314,10 +318,10 @@ Output:
 ```
 It returns all the files that end with the given pattern pathlib module also provides `PurePath.suffix()`method for performing the same operation without having to necessarily convert it to a list.
 
-### Creating a directory and file
+#### Creating a directory and file
 Basically you can create a directory or file using the option provided by your operating system, However in some situations you may need to automatically create a directory or file whenever you are writing a python script, in that case, we will be utilizing this opportunity to semantically illustrate how we can create a file or directory in python.
 
-#### Creating a file using os module.
+#### Creating a file using os module
 
 ```python
 import os
@@ -325,7 +329,10 @@ import os
 os.mknod('script.py')
 print(os.listdir())
 ```
-The `os.mknod()` function returns a void and if the file already exists it will raise a `FileExistError` exception either you can use the python exception handler to avoid your program being broken down, perhaps we can confirm if the file was created or not either by iterating through the directory using the `os.listdir()` function or by utilizing the `os.path.exists()` function which returns TRUE or FALSE. Note that `os.mknod()` is only available on a Unix type operating system which illustrates that this function is not available on a Windows operating system.
+The `os.mknod()` function returns a void and if the file already exists it will raise a `FileExistError` exception either you can use the python exception handler to avoid your program being broken down, perhaps we can confirm if the file was created or not either by iterating through the directory using the `os.listdir()` function or by utilizing the `os.path.exists()` function which returns TRUE or FALSE. 
+
+> Note: 
+> The `os.mknod()` function is only available on a Unix type operating system which illustrates that this function is not available on a Windows operating system.
 
 Output:
 ```bash
@@ -369,10 +376,10 @@ print(Path('Movie').mkdir(exist_ok=True))
 ```
 The directory was created because there was never a movie directory in the current path and if the directory already exists a `FileExistError` will be raised, to avoid your application from terminating however, you can simply pass the `exist_ok=True` argument to handle `FileExistError` exception which could have been raised, and this flavor makes pathlib more preferable in this context.
 
-### Checking for an existing file or directory
-We can check if a file already exists by navigating to the path but for proper practice and good comfort, you may not like to leave the working environment to check if a file already exists or not. Os and pathlib modules allow us to perform this confirmation. Now let's confirm if the folder we created in the previous section is available.
+#### Checking for an existing file or directory
+We can check if a file already exists by navigating to the path but for proper practice and good comfort, you may not like to leave the working environment to check if a file already exists or not. OS and Pathlib modules allow us to perform this confirmation. Now let's confirm if the folder we created in the previous section is available.
 
-#### Checking if the movie directory exist using os module.
+#### Checking if the movie directory exist using os module
 
 ```python
 import os
@@ -412,8 +419,8 @@ False
 ```
 Of course, it will return false because the file doesn't exist in the current directory.
 
-### Renaming a directory and file
-We can rename a file or directory using both os and pathlib modules this operation is so yielding, let's take a look at the following examples.
+#### Renaming a directory and file
+We can rename a file or directory using both OS and Pathlib modules this operation is so yielding, let's take a look at the following examples.
 
 #### Renaming the movie directory using os module
 
@@ -456,8 +463,8 @@ WindowsPath('data_script.py')
 ```
 This method return a path object containing new name of the file.
 
-### Joining path components together
-Joining paths together is one of the interesting flavors both modules provide. Os and Pathlib modules provide methods/functions for joining two components together. Also joining the path together is a demonstration that helps you avoid the backslash and forward-slash challenge.
+#### Joining path components together
+Joining paths together is one of the interesting flavors both modules provide. OS and Pathlib modules provide methods/functions for joining two components together. Also joining the path together is a demonstration that helps you avoid the backslash and forward-slash challenge.
 
 #### Joining path together with os module
 
@@ -500,7 +507,7 @@ from pathlib import Path, PurePath
 print(PurePath.joinpath(Path().cwd(),'Data'))
 ```
 > Note:
-> The `PurePath.joinpath()` method expects a path object as the first argument, and a string as the second argument, the method doesn't check whether the path given as  second arguments exists or not.
+> The `PurePath.joinpath()` method expects a path object as the first argument, and a string as the second argument, the method doesn't check whether the path given as second arguments exists or not.
 
 Output:
 ```bash
@@ -521,7 +528,7 @@ Output:
 ```bash
 WindowsPath('hello/program')
 ```
-### Combining paths using a forward slash operator
+#### Combining paths using a forward slash operator
 Pathlib provides an alternative way of joining various components together using the forward-slash operator, when using the forward operator placing a PurePath object will be expected as the numerator, and a string will be expected as the subsequent denominator. Let's try practice this.
 
 ```python
@@ -553,7 +560,7 @@ Output:
 PureWindowsPath('old/new/script.py')
 ```
 
-### Querying path to retrieve a final file or directory name
+#### Querying path to retrieve a final file or directory name
 Either we use pathlib or os module to query a path for getting the final name of a file or the directory returns a string representation of the final file or directory name.
 
 #### Using os to get a directory file
@@ -582,8 +589,8 @@ Output:
 ```
 The result is the string representation of the final component and this component is always a file.
 
-### Removing a directory
-Os and pathlib modules provide a method or function that conditionally deletes a directory, the condition expresses that attempting to delete a directory that is not empty will lead to an error, and this basically implies you can't remove an occupied directory, meanwhile, there are alternative ways we can use to delete a directory that contains files or a file, possibly you can use the `os.remove()` function provided by os module or `Path.unlink()` method provided by pathlib to remove a file one after the other.
+#### Removing a directory
+OS and Pathlib modules provide a method or function that conditionally deletes a directory, the condition expresses that attempting to delete a directory that is not empty will lead to an error, and this basically implies you can't remove an occupied directory, meanwhile, there are alternative ways we can use to delete a directory that contains files or a file, possibly you can use the `os.remove()` function provided by os module or `Path.unlink()` method provided by pathlib to remove a file one after the other.
 
 #### Removing a directory with os module
 ```python
@@ -639,7 +646,7 @@ Does "NewMovie" exist?
 ```
 The above example is similar to the previous os module example, the only difference is just the syntax, we have got almost the same output.
 
-### Removing a file
+#### Removing a file
 Removing a file also requires a certainty because you have to be sure that you are removing a file, not a directory else an `IsADirectoryError` exception will be raised, and if the given file doesn't exist a ` FileNotFoundError` exception will be raised.
 
 #### Deleting a file using os module
@@ -702,8 +709,8 @@ Does "new_script.py" exist?
 ```
 The output stated that the file exits before deleting the file and confirmed that the file no longer exist after being deleted.
 
-### Retrieving and converting a file information
-Any type of operation related to working with file information can also be called Metadata, in this section, we will be using the time and datetime modules to convert/interpret a given file's information. Both os and pathlib modules provide function/method for performing this type operation. The function and method provided by os module and path perform exactly the same operation and both return a `os.stat_result` object.
+#### Retrieving and converting a file information
+Any type of operation related to working with file information can also be called Metadata, in this section, we will be using the time and datetime modules to convert/interpret a given file's information. Both OS and Pathlib modules provide function/method for performing this type operation. The function and method provided by os module and path perform exactly the same operation and both return a `os.stat_result` object.
 
 #### Using os module to retrieve information and about a file
 Os module provides three functions that can be used to query file information notwithstanding we will be using the most comprehensive one in this tutorial.
@@ -716,7 +723,7 @@ note_file = os.stat('Untitled.ipynb')
 print(f'Size = {note_file.st_size}\nlast time accessed = {note_file.st_atime}\nlast time modified = {note_file.st_mtime}\ncreation time = {note_file.st_ctime}')
 
 ```
-In the snippet above we assigned the returned value to the variable named `note_file`, note the function `os.stat()` returns an `os.stat_result` object which provides several public attributes that can be used to retrieve a given file's information. We are only utilizing the corresponding attributes in this section which are `st_size`, `st_atime`, `st_mtime`, `st_ctime`. The `st_size` contains the file size in bytes, the `st_atime` contains the date of the most recent access to the given file in seconds, the `st_mtime` attribute contains the file last modified date in seconds, the `st_ctime` attribute respond differently on Unix and Windows operating system, for windows it contains the creation date, as for Unix it contains the changed date, either you can use `st_birthtime` for querying creation time on Unix operating system.
+In the example above, we simply queried the corresponding attributes to get their distinguished state representing the file metadata. The `st_size` contains the file size in bytes, the `st_atime` contains the date of the most recent access to the given file in seconds, the `st_mtime` attribute contains the file last modified date in seconds, the `st_ctime` attribute respond differently on Unix and Windows operating system, for windows it contains the creation date, as for Unix it contains the changed date, either you can use `st_birthtime` for querying creation time on Unix operating system.
 
 Output:
 ```bash
@@ -726,7 +733,7 @@ last time modified = 1642186405.3119907
 creation time = 1641623379.0384889
 ```
 #### Converting the information using datetime module
-Converting the file's time and date with datetime module makes the output readable for us. Note that the file we use in this an example is my notebook script which is the current script I'm working with.
+Converting the file's time and date with datetime module makes the output readable for us. Note that the file we used in this example is a notebook script which is the current script used for this tutorial.
 
 ```python
 from datetime import datetime
@@ -770,7 +777,7 @@ Output:
 ```bash
 last time accessesd: Fri Jan 14 21:17:26 2022
 last time modified: Fri Jan 14 21:17:25 2022
-creation time: Sat Jan  8 07:29:39 2022
+creation time: Sat Jan 8 07:29:39 2022
 ```
 #### Using pathlib module to query information and about a file
 Pathlib module provides `Path.stat()` method to retrieve information about a given file which returns a `os.stat_result` object containing the information about a given file and this covered that the `Path.stat()` method behaves exactly the same way as the `os.stat()` function.
@@ -832,11 +839,11 @@ Output:
 ```bash
 last time accessesd: Fri Jan 14 21:17:26 2022
 last time modified: Fri Jan 14 21:17:25 2022
-creation time: Sat Jan  8 07:29:39 2022
+creation time: Sat Jan 8 07:29:39 2022
 ```
 
-### Querying a file extension and name
-Pathlib and os module provide a function or method that allows us to query a file extension.
+#### Querying a file extension and name
+Pathlib and OS module provide a function or method that allows us to query a file extension.
 
 #### Using os module to query file extension
 The os module provides the `os.path.splitext()` function for querying file extension and the `os.path.splitext()` function splits the path into pairs which returns both the file name and the file extension and if the given argument representing the file doesn't have an extension it returns the pair including the file name and an empty string representing the extension.
@@ -868,10 +875,14 @@ Output:
 File name: new_script
 File extension: .ipynb
 ```
-The output is a string representation of the name and the extension of the file, the extension format means that the file is a jupyter notebook file type. Note that `Path.suffix` will retrieve an empty string if a given file doesn't have an extension.
+The output is a string representation of the name and the extension of the file, the extension format means that the file is a jupyter notebook file type. 
 
-### Theoretical difference between pathlib and os
-Illustrating the theoretical difference between os and pathlib modules.
+>Note:
+> The `Path.suffix` attribute will retrieve an empty string if a given file doesn't have an extension.
+
+#### Theoretical difference between Pathlib and OS modules
+
+Illustrating the theoretical difference between OS and Pathlib modules.
 
 #### Os
 
@@ -897,8 +908,8 @@ Illustrating the theoretical difference between os and pathlib modules.
 - It doesn't make any arrangement for environment variables operation.
 - None of the available objects in pathlib makes a provision for making a duplicate file.
 
-### Wrapping Up
-At this point, you should have the edge difference between Os and Pathlib modules, also you would have learned these following:
+#### Wrapping Up
+At this point, you should have the edge difference between OS and Pathlib modules, also you would have learned these following:
 - Good decision-making when choosing the right module for file system operation.
 - How to work with file system operation.
 - Removing a file.
