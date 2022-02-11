@@ -133,7 +133,7 @@ Let's look at some of the Honeypot software:
 - Attivo Inc. produces ThreatDefend. A self-learning honeypot/deception device. These artificial visible local area networks are profiled and modified (VLAN). Finding hacker tactics to breach the company's firewall is possible. This business specializes in APTs, which overcome standard security mechanisms.
 
 ### Conclusion
-Honeypot traps have been used to catch cybercriminals for years. They may, however, hinder web scraping. Don't utilize honeypot traps to scrape publicly available data like price tracking or market research.
+Honeypot traps have been used to catch cyber criminals for years. However, they may hinder web scraping. Don't utilize honeypot traps to scrape publicly available data like price tracking or market research.
 
 ---
 Peer Review Contributions by: [Wilkister Mumbi](/engineering-education/authors/wilkister-mumbi/)
