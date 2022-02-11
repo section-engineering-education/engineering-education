@@ -6,7 +6,7 @@ url: /image-classifier-using-transfer-learning-with-tensorflow/
 title: Image Classifier using Transfer Learning with Tensorflow
 description: In this tutorial, we will build a model that classifies images of hands playing rock, paper, scissor games using TensorFlow.
 author: charles-kariuki
-date: 2022-02-04T00:00:00-15:00
+date: 2022-02-11T00:00:00-01:38
 topics: [Machine Learning]
 excerpt_separator: <!--more-->
 images:
@@ -14,10 +14,8 @@ images:
  - url: /engineering-education/image-classifier-using-transfer-learning-with-tensorflow/hero.jpg
    alt: Image classifier example image
 ---
-Transfer learning is a technique that trains a neural network on one problem and then applies the trained neural network to a different but related problem. It focuses on storing knowledge gained while solving one problem and applying it to a different but related problem.
-<!--more-->
-
 Transfer learning is a technique that trains a neural network on one problem and then applies the trained neural network to a different but related problem. It focuses on storing knowledge gained while solving one problem and applying it to a different but related problem. Transfer learning decreases the training time and produces a model that performs well.
+<!--more-->
 
 For example, knowledge gained while learning to recognize lemons could apply when trying to recognize oranges. Lemons and oranges are different but related problems. The neural network is fine-tuned to meet the user's needs rather than being trained from scratch.
 
@@ -48,7 +46,7 @@ To follow along with this tutorial, a reader should:
 
 - Know how to build [deep learning models](https://www.section.io/engineering-education/building-a-deep-learning-app-using-python/) using TensorFlow.
 - Know basics of [convolution neural networks](/engineering-education/basics-of-convolution-neural-networks/).
-- Use [Google Colab]((https://research.google.com/))
+- Use [Google Colab](https://research.google.com/).
 
 ### Importing important libraries
 For this tutorial, import the following libraries.
@@ -63,22 +61,22 @@ import tensorflow_datasets as tfds
 ```
 The libraries are important in building our transfer learning model. The functions of each of these libraries are as follows:
 
-**matplotlib.pylab**
+**matplotlib.pylab** - 
 It is a visualization library. We use Matplotlib to plot line graphs, figures, and diagrams.
 
-**tensorflow**
-TensorFlow is an open-source library for for machine learning and artificial intelligence. We use it to create the input, dropout, and dense layers for our image classification model.
+**tensorflow** - 
+It is an open-source library for machine learning and artificial intelligence. We use it to create the input, dropout, and dense layers for our image classification model.
 
-**tensorflow_hub**
+**tensorflow_hub** - 
 It is a TensorFlow repository that contains a collection of pre-trained models. 
 
-**os**
+**os** - 
 It enables us to interact with the operating system. The OS module in Python provides functions for creating and removing a directory, fetching its contents, changing and identifying the current directory.
 
-**numpy**
+**numpy** - 
 It will convert the image dataset into arrays. It also enables us to perform mathematical operations on arrays.
 
-**tensorflow_datasets**
+**tensorflow_datasets** - 
 It is a TensorFlow repository that is made up of a collection of ready-to-use datasets.
 
 ### Downloading the images dataset
@@ -123,14 +121,11 @@ In the code above, we first concatenate the two image sets(train and test). Then
 ### Splitting the dataset into three sets
 After shuffling the dataset, split the dataset into three sets. Train set, validation set, and test set.
 
-- Train set
-It is used to train the model. The model learns from this set.
+- Train set: it is used to train the model. The model learns from this set.
 
-- Validation set
-It is used to fine-tune the model hyper-parameters so that we can have an optimized model.
+- Validation set: it is used to fine-tune the model hyper-parameters so that we can have an optimized model.
 
-- Test set
-It is used to assess the final model after training. It checks if the model can make accurate predictions.
+- Test set: it is used to assess the final model after training. It checks if the model can make accurate predictions.
 
 We split the dataset using the following code:
 
@@ -143,7 +138,7 @@ rsp_train=rsp_test_temp.skip(400)
 From the code above, we have used `600` images as the validation set, `400` images as the test set, and `400` images as a train set.
 
 ### Image normalization and resizing
-Image normalization is the process of changing the range of an image's pixel intensity values to a predefined range. Often, the prefined range is usually 0, 1, or -1, 1. In this tutorial we want our pixel range to be 0, 1. For a detailed understanding on image normalization, click [here](/engineering-education/image-preprocessing-in-python/). 
+Image normalization is the process of changing the range of an image's pixel intensity values to a predefined range. Often, the predefined range is usually [0, 1], or [-1, 1]. In this tutorial we want our pixel range to be [0, 1]. For a detailed understanding on image normalization, click [here](/engineering-education/image-preprocessing-in-python/). 
 
 Image resizing is the process of changing the image size. This enables the resized image to fit into the neural network you are building. To perform this process, use the following function.
 
@@ -229,7 +224,7 @@ model.summary()
 ```
 ![Model summary](/engineering-education/image-classifier-using-transfer-learning-with-tensorflow/displayed-images.jpg)
 
-The image shows the model type (Sequential) and the initialized layers. It also shows the total model parameters (2,261,827). Some parameters are trainable while others are non-trainable. The trainable parameters(3,843) are the ones the neural network will train. The non-trainable parameters (2,257,984) are from the `feature_extractor_layer` and they are already trained. The number of non-trainable parameters is more as compared to the trainable parameters. This will save the training time.
+The image shows the model type (Sequential) and the initialized layers. It also shows the total model parameters (2,261,827). Some parameters are trainable while others are non-trainable. The trainable parameters (3,843) are the ones the neural network will train. The non-trainable parameters (2,257,984) are from the `feature_extractor_layer` and they are already trained. The number of non-trainable parameters is more as compared to the trainable parameters. This will save the training time.
 
 ### Model compling
 In model compiling, we determine the `metrics`, the `optimizer`, and the `loss function` to be used by the neural network.
@@ -327,7 +322,7 @@ The output above shows the directory that our model is saved. We can load this m
 ### Conclusion
 In this tutorial, we have learned how to build an image classifier using transfer learning. We downloaded the MobileNet-v2 convolutional neural network from the TensorFlow hub. The downloaded model was used to build the model that classifies images of hands playing rock, paper, scissor games.
 
-Finally, we tested the model and it can make accurate predictions. Using this tutorial, a reader should be able to come up with this model. The model we have built in this tutorial is found [here](https://colab.research.google.com/drive/1et3XrRG6_ntIlNusMZJMXvteieNJewzm?usp=sharing)
+Finally, we tested the model and it can make accurate predictions. Using this tutorial, a reader should be able to come up with this model. The model we have built in this tutorial is found [here](https://colab.research.google.com/drive/1et3XrRG6_ntIlNusMZJMXvteieNJewzm?usp=sharing).
 
 ### References
 - [Google Colab notebook](https://colab.research.google.com/drive/1et3XrRG6_ntIlNusMZJMXvteieNJewzm?usp=sharing)
