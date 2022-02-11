@@ -22,6 +22,7 @@ We shall start by setting up a development environment for our Django project. I
 ```bash
 mkdir Images
 ```
+
 Then enter the directory, create a virtual environment and activate it respectively using the commands below:
 ```bash
 cd Images
@@ -224,7 +225,7 @@ py manage.py runserver
 In your [Admin site](http://127.0.0.1:8000/admin/), add some images then check how they appear on the [display page](http://127.0.0.1:8000/).
 On adding four images on my end, here is what my `display.html` looks like:
 
-![display.html](display.jpg)
+![display.html](/engineering-education/an-extensive-guide-on-working-with-images-in-django/display.jpg)
 
 Now that we have looked at the basic concepts of dealing with images, we shall proceed to the advanced concepts next.
 
@@ -312,12 +313,12 @@ urlpatterns = [
 The new path [upload_image](http://127.0.0.1:8000/upload_image/) points to the `uploadView`, which in return, takes care of the upload process. 
  Here is what mine looks like :
 
-![upload.html](upload.jpg)
+![upload.html](/engineering-education/an-extensive-guide-on-working-with-images-in-django/upload.jpg)
 
 ### Listing the images in the Admin site
 As of now, our admin site images are listed using their names and paths:
 
-![before](before.jpg)
+![before](/engineering-education/an-extensive-guide-on-working-with-images-in-django/before.jpg)
 
 This makes it hard to identify the images without having to click on the links. We can easily improve this by listing the images themselves on the dashboard, alongside their names.
 
@@ -351,7 +352,7 @@ admin.site.register(Image, imageAdmin)
 ```
 As a result, our [Image dashboard](http://127.0.0.1:8000/admin/demo/image/) should resemble this:
 
-![after](after.jpg)
+![after](/engineering-education/an-extensive-guide-on-working-with-images-in-django/after.jpg)
 
 ### Creating Thumbnails
 If you click on images in our [display page](http://127.0.0.1:8000/), they tend to have different default sizes. The big images might even take longer to load due to their size. In case you want to change this behavior and give them a reasonable size, you would have to override the `save` method in our Image model. 
