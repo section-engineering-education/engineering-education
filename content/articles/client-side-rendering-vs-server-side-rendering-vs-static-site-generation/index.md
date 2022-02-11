@@ -5,7 +5,7 @@ published: true
 url: /client-side-rendering-vs-server-side-rendering-vs-static-site-generation/
 title: Client Side Rendering vs. Server Side Rendering vs. Static Site Generation
 description: This article will go through the three approaches of rendering websites, their technical terms, pros and cons and when to choose one. The three approaches include Client Side Rendering (CSR), Server Side Rendering (SSR) and Static Site Generation (Pre-rendering).
-author: moses-m
+author: moses-maina
 date: 2021-05-02T00:00:00-10:00
 topics: []
 excerpt_separator: <!--more-->

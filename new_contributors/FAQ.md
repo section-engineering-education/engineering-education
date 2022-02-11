@@ -12,7 +12,6 @@ Here is a link to a [short video](https://www.youtube.com/watch?v=nT8KGYVurIU&am
 ### How do GitHub forks work?
 Here is a link to a [short video](https://www.youtube.com/watch?v=nT8KGYVurIU&amp;t=47s) further explaining what a pull request is and how to fork a Github repository.
 
-
 ### How do I add my author page
 Include a short Author Biography (index.md file) and Headshot image (avatar file). Include these files in the [authors folder](https://github.com/section-engineering-education/engineering-education/tree/master/authors) within the GitHub repo via your forked repo similar to the article files. We want to credit you for your hard work.
 
@@ -64,10 +63,17 @@ Most importantly we look for authors who have demonstrated great technical acume
 The position is a compensated position - 50 USD per successful article review.
 
 ### Are the positions voluntary or are Peer Reviewers compensated?
-We always encourage friendly reviews among the community to help each other out before article submission. Verifired Peer Reviewers are paid $50.00 USD per successful article revision.
+We always encourage friendly reviews among the community to help each other out before article submission. Verified Peer Reviewers are paid $50.00 USD per successful article revision.
 
 ### How often are article payouts?
 We typically send article payouts once a week (usually of Fridays) but that may vary depending on holidays, sick, or OOO (out-of-office) days.
+
+### Do we need a PayPal account to participate in the EngEd program?
+We ask all students to have an active, verified, fully set up PayPal account (that is registered under their name) to get any compensation for the articles published.
+
+Not having a PayPal account DOES NOT BAR anyone from participating, building up a resume, and published works to enhance one’s career. 
+
+You can contribute articles to publish to build up a portfolio without a PayPal account.
 
 ### Does Section provide revision services?
 We will look over the all articles that come in to ensure they are publish worthy - but our peer reviewer team is only looking to improve the content by making suggestions. 
@@ -75,4 +81,7 @@ For revisions services we recommend using a few of the [services we have vetted]
 
 ### Can we re-post our work elsewhere?  
 We ask that if you would like to repost your Section work elsewhere, that new work reference the original Section (EngEd) article. Adding a rel=canonical tag is the preferred path forward. This does **not** mean that published work on EngEd can be previosly published elsewhere - we still ask for original and unique work.
+
+### How do I respond to comments on my article?
+After you have published your article with us - be sure to check on your content periodically to respond to any comments or questions that the audience may post. Please [sign up with HyvorTalk](https://auth.hyvor.com/signup/?redirect=https%3A%2F%2Ftalk.hyvor.com%2Fapi%2Fembed%2Flogin%3FwebsiteId%3D5716%26pageId%3D31662502%26isSignup%3D%255Bobject%2520PointerEvent%255D%26isLogout%3Dfalse) to reply to any comments or questions left on your articles.
 
