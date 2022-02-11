@@ -4,7 +4,7 @@ status: publish
 published: true
 url: /getting-started-with-nessus-scanner/
 title: Getting Started with Nessus Scanner
-description: Nessus scanner is the most popular and widely used vulnerability scanner common among penetration testers and hackers. It is open-source and it allows free scan for up to 16 Private Addresses at a time. 
+description: Nessus scanner is the most popular vulnerability scanner common among penetration testers and hackers. It is open-source and allows free scan for up to 16 Private Addresses at a time. 
 author: adeshina-peter
 date: 2022-01-27T00:00:00-17:00
 topics: [Security]
@@ -14,17 +14,17 @@ images:
   - url: /engineering-education/getting-started-with-nessus-scanner/hero.jpg
     alt: Getting Started with Nessus Scanner Hero Image
 ---
-**Nessus Tenable** is a Kali-Linux open-source software common among penetration testers, used to provide a variety of security fixes. You will use this tool quite frequently while you work as a pen-tester by scanning for potential vulnerability on a server/website.
+**Nessus Tenable** is a Kali-Linux open-source software common among penetration testers, used to provide a variety of security fixes. You will frequently use this tool while working as a pen-tester by scanning for potential vulnerability on a server/website.
 <!--more-->
-**Nessus** scanner is a professional tool widely used among hackers and penetration testers. The solution you get assists you to perform high-speed asset discovery, target profiling, malware detection, sensitive data discovery, and so many more.
-**Tenable** delivers updated plug-ins that provide you with the latest information to customers within 24 hours after a vulnerability has been leaked.
+**Nessus** scanner is a professional tool widely used among hackers and penetration testers. The solution you get assists you to perform high-speed asset discovery, target profiling, malware detection, sensitive data discovery.
+**Tenable** delivers updated plugins that provide you with the latest information to customers within 24 hours after a vulnerability has been leaked.
 
 ### Goal
 At the end of this tutorial, you should be able to:
 
 - Download and install Kali-Linux on your pc.
 
-- Understand the fundamentals and advantages of Nessus scanner.
+- Understand the fundamentals and advantages of the Nessus scanner.
 
 - Install and download Nessus Tenable.
 
@@ -33,11 +33,11 @@ At the end of this tutorial, you should be able to:
 ### Advantages of Nessus Scanner
 - It helps you identify vulnerabilities before attackers can take advantage of them.
 
-- It helps you find misconfigurations like missing patches, mail-relay etc.
+- It helps you find misconfigurations like missing patches and mail-relay.
 
 - Capturing of data and showing results reporting impact on the network.
 
-If you don't have Kali-Linux installed on your pc don't worry, we will show you how to quickly set this up.
+If you do not have Kali-Linux installed on your pc, do not worry, we will show you how to set this up quickly.
 
 ### Step 1:
 
@@ -70,14 +70,14 @@ After downloading Nessus Tenable, follow the steps below to install Nessus on Ka
 - Start the **terminal** by:
 
  - Holding the **cltr+alt+T** buttons simultaneously or
-   - Using the GUI (Graphical User Interface), go to the application section and double click on terminal.
+   - Using the GUI (Graphical User Interface), go to the application section and double click on the terminal.
 
 Run the command below on the terminal to update and upgrade your Kali Linux.
 
 ```bash
     $ sudo apt-get upgrade && update -y
 ```
-Now, let's change our directory to Downloads.
+Now, let us change our directory to Downloads.
 
 ```bash
     $ cd Downloads
@@ -94,7 +94,7 @@ Use the command below to grab the package to download and install it.
 ```
 ![dpkg](dpkg-nessus.png)
 
-Start nessus by typing the following into your terminal.
+Start Nessus by typing the following into your terminal.
 
 ```bash
     $ /bin/systemctl start nessusd.service
@@ -110,7 +110,7 @@ If you see a connection not secured page, click *advance* accept risk and contin
 
 Congratulations, you now have Nessus installed on Kali-Linux.
 
-Wait for the necessary Nessus plugins to compile, after the compilation click `Nessus Essentials` and the continue button.
+Wait for the necessary Nessus plugins to compile; click `Nessus Essentials` and the continue button after the compilation.
 
 ### Step 3:
 - Provide your name and a valid email to receive an activation code.
@@ -121,9 +121,9 @@ Wait for the necessary Nessus plugins to compile, after the compilation click `N
 
 - Provide your username and password for login
 
-- Nessus will start the initializing process which is going to take a couple of minutes, let it install while you go get a drink or coffee.
+- Nessus will start the initializing process, which will take a couple of minutes; let it install while you get a drink or coffee.
 
-- That took forever! alright we have loaded Nessus and it is installed.
+- That took forever! All right, we have loaded Nessus, and it is installed.
 
 ![Metersploitable](metersploitable.png)
 
@@ -136,37 +136,37 @@ Use the link  below to get to the download page:
 - [Metersploitable](https://sourceforge.net/projects/metasploitable/files/Metasploitable2/metasploitable-linux-2.0.0.zip/download)
 - Follow the [installing Metersploitable](http://techdjdey.blogspot.com/2017/10/how-to-install-metasploitable-2-in.html) tutorials to install metersploitable into a virtual box.
 
-After installing Metersploitable, you can confirm your installation by opening the terminal in Kali-Linux and type the `IP address` of metersploitable into your browser.
+After installing Metersploitable, you can confirm your installation by opening the terminal in Kali-Linux and typing the `IP address` of metersploitable into your browser.
 
 **Note:** Whatever you learn in this tutorial is only for educational purposes.
 
 ### Scanning
 - Navigate to Nessus in your browser tab.
 
-- You will be directed to a blank screen, well it is blank because we haven't made any scan yet.
+- The browser will direct you to a blank screen; it is blank because we have not made any scan yet.
 
-- Go ahead and click new scan at the top right corner.
+- Go ahead and click the new scan at the top right corner.
 
-In the scan template, you will find lot of options to choose from, but we will show you the major scans which are **Basic Network Scan** and **Advanced Scan**, lets start with the basic scan as beginners then we move to advanced scan in a more advance tutorial.
+In the scan template, you will find many options to choose from, but we will show you the significant scans, **Basic Network Scan** and **Advanced Scan**. Let us start with the basic scan as beginners, and then we move to advanced scan in a more advanced tutorial.
 
-  - Let's quickly talk about what we are capable of doing in Nessus, this is the free edition of Nessus which means we can scan against any private address and we can scan up to 16 of those at a time.
+  - Let us quickly talk about what we can do in Nessus. In the free edition of Nessus, we can scan against any private address and scan up to 16 of those at a time.
 
 ### Basic Network Scan
 
  Click the basic network scan to begin.
 
-Let's quickly talk about some tabs on the side, we have: 
--  **General**: This is were you provide informations of the target you want to scan.
+Let us quickly talk about some tabs on the side; we have: 
+-  **General**: This is where you provide information about the target you want to scan.
 
-- **Schedule**: Once enabled, Nessus will run a scheduled scan on a machine in a given time, you can do this periodically and get updated scan results.
+- **Schedule**: Once enabled, Nessus will run a scheduled scan on a machine in a given time; you can do this periodically and get updated scan results.
 
 - **Notification**: This is for `SMTP` if you have an SMTP server.
 
-- **Discovery**: This is going to run a port scanning on a the target machine.
+** **Discovery**: This will run a port scanning on the target machine.
 
  - Go ahead and type in the name of your target machine and description.
 
- - We're going to provide one `IP address and that is the IP of metersploitable.
+ We will provide one `IP address, which is the IP of metersploitable.
 
  - Then click the save button.
 
@@ -176,13 +176,13 @@ Go ahead and click the **save button** below and click the lunch (play) button o
 
 - You will notice a spinning icon, which means your scan has started.
 
-- Once your scan is complete, double click on it and you will see the scanned results with found vulnerabilities.
+- Once your scan is complete, double click on it, and you will see the scanned results with found vulnerabilities.
 
 ![scan](scan.png)
 
 ### Step 5
-Looking at the overview, we can see that the host has a lot of vulnerabilities.
- Open a vulnerability you will like to fix, click the **Bind Shell Backdoor Detection vulnerability** you will find the description and solution on how to fix this vulnerability.
+Looking at the overview, we can see that the host has many vulnerabilities.
+ Open a vulnerability you would like to fix. Click the **Bind Shell Backdoor Detection vulnerability**. You will find the description and solution on how to fix this vulnerability.
 
 ![Bind Shell Vuln](vuln.png)
 
@@ -192,16 +192,16 @@ Nessus displays the severity, score, family, and count of all the vulnerabilitie
 - Orange tab shows that the vulnerability is **Medium**.
 - Yellow tab shows that the vulnerability is **Low**.
 
-The severity outputs `Critical` and `Score` to be 9.8 which means we need to take quick measures in preventing attackers from exploiting this vulnerability.
+The severity outputs `Critical` and `Score` to be 9.8, which means we need to take quick measures in preventing attackers from exploiting this vulnerability.
 
 - Bind Shell Exploitaion.
-    Metasploitable comes with an open bind shell service running on port 1524, this open port can be connected easily with Netcat.
+    Metasploitable comes with an open bind shell service running on port 1524; an attacker can connect with this open port easily with Netcat.
 
-    **Note:** If you ever find a bind shell backdoor on any server, use [Nmap](https://www.nmap.org) to scan for an open port with the terminal, find the Bind shell Port and close it, this will block any incoming connection pinging to the open port, and that how you can fix the vulnerability easily.
+    **Note:** If you ever find a bind shell backdoor on any server, use [Nmap](https://www.nmap.org) to scan for an open port with the terminal, find the Bind shell Port and close it, this will block any incoming connection pinging to the open port, and that how you can fix the vulnerability quickly.
 
 ### Summary
 
-In this article we have learned how to:
+In this article, we have learned how to:
 * Install Kali-Linux in a virtual machine.
 
 * Download and install Nessus tenable with the terminal.
@@ -209,10 +209,10 @@ In this article we have learned how to:
 * Scan a targeted host and fix the vulnerability with the solution provided to us.
 
 ### Conclusion
-From this article, we have learnt how to find vulnerabilities and fix them with the solution provided in the scan. There is no way we touch all of this assessment and fix all the vulnerabilities, so let's focus on the low-hanging fruit.
+We have learned how to find vulnerabilities and fix them with the scan provided in this article's scan. There is no way we touch all of this assessment and fix all the vulnerabilities, so let us focus on the low-hanging fruit.
 
 ### References and Further Reading
-1.  [A complete guide to Nmap tutorial](https://www.edureka.co/blog/nmap-tutorial/).
+1. [A complete guide to Nmap tutorial](https://www.edureka.co/blog/nmap-tutorial/).
 2. [Netcat Complete Guide](https://www.kalilinux.in/2021/01/netcat-linux-tutorial.html).
 
 -Peer Review Contributions by: [Willies Ogola](/engineering-education/authors/willies-ogola/)
