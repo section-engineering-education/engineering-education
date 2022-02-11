@@ -45,8 +45,8 @@ They are described below.
 Design-wise, honeypots are classed as follows:
  
 - Low-interaction honeypots
-- pure honeypots
-- high-interaction honeypots
+- Pure honeypots
+- High-interaction honeypots
 
 `Low-interaction honeypots`- replicate attacker-requested services. Multiple virtual machines may be readily hosted on one physical system, and less code is needed, decreasing the virtual system's security complexity. Honey
 
