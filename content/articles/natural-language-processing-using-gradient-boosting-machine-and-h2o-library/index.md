@@ -12,7 +12,7 @@ excerpt_separator: <!--more-->
 images:
 
   - url: /engineering-education/natural-language-processing-using-gradient-boosting-machine-and-h2o-library/hero.png
- alt: Natural Language Processing using Gradient Boosting Machine and H2O library Hero image
+    alt: Natural Language Processing using Gradient Boosting Machine and H2O library Hero image
 ---
 [H2O](https://github.com/h2oai/h2o-3) is an open-source, in-memory platform for machine learning. [H2O](https://github.com/h2oai/h2o-3) provides implementations of many popular algorithms. It supports both supervised and unsupervised machine learning algorithms.
 <!--more-->
