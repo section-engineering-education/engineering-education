@@ -221,7 +221,7 @@ This is how you'd implement it in that class:
 
 Here is a video to show how mine worked:
 
-![Results](/using-service-classes-to-design-an-authentication-api/resuilts.gif)
+![Results](/engineering-education/using-service-classes-to-design-an-authentication-api/resuilts.gif)
 ### Purpose of service classes
 - Service classes are designed to separate a certain operation from the rest of the app and hide its implementation details.
 - Essentially, having a code coupled to a single function makes it difficult and error-prone to make changes. In this case, you'll need assistance. **Storage service**, for example, is the name of a new class you've created. How it operates internally isn't known to the other classes. It's as simple as calling a service's functions to store and get the data.
