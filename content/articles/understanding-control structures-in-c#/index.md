@@ -372,5 +372,62 @@ j value:9
  ```
  The above program will display 5 to 9 since 'j' we already initiated it and gave it 5 . Therefore the compiler will jump up to 10 since our goto statement directs to 10.
 
+ #### continue statement.
+ This kind of statements are mostly used in when a programmers wants the program to skip a certain part of execution like  for example in loop statements.Here  once the compiler meets the continue statement, it jumps to  begin the loop again as per condition statement.
+
+ **example**
+ ```C#
+using System;
+
+class demo{
+
+	
+	public static void Main()// Main Method
+	{
+		
+		
+		for (int j = 1; j <= 7; j++) 
+        {
+
+		
+			if (j == 3) // once the compiler reaches 3,it will skip it and continue with the next number after 3 which is 4
+				continue;
+
+			Console.WriteLine(j); // j is values from 1 to 7 , when 3 is excluded
+		}
+	}
+}
+```
+#### Return statement.
+Usually  this statement  will terminate method execution as the contion statement. for example
+```C#
+using System;
+
+class demo {
+
+
+	static int sub(int b)
+	{
+
+		int sub = b - b;
+		
+		// the return statement
+		return sub;
+	}
+
+	// Main Method
+	static public void Main()
+	{
+		int number = 4;
+
+		//  now calling subtraction function
+		int result = sub(number);
+		Console.WriteLine("The answer is {0}", result);
+	}
+}
+```
+The above program will return 0 since we have declared same number 4, threfore our answer will be 0.
+ 
+
 ### Conclusion
 In this article, we have learned the control structures in  C#. it has enabled us to know the selection statements, iteration statements(loops), and the jump statements where in each case we have given examples of how they are implemented.
