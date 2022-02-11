@@ -6,7 +6,7 @@ url: /getting-started-with-nessus-scanner/
 title: Getting Started with Nessus Scanner
 description: Nessus scanner is the most popular vulnerability scanner common among penetration testers and hackers. It is open-source and allows free scan for up to 16 Private Addresses at a time. 
 author: adeshina-peter
-date: 2022-01-27T00:00:00-17:00
+date: 2022-02-12T00:00:00-17:00
 topics: [Security]
 excerpt_separator: <!--more-->
 images:
@@ -129,7 +129,7 @@ Wait for the necessary Nessus plugins to compile; click `Nessus Essentials` and 
 
 ### Step 4:
 We will use Metersploitable 2 as our vulnerable machine for scanning.
-- Metasploitable is an intentionally vulnerable virtual machine designed for training, exploit testing and general target practice. Unlike other vulnerable virtual machines, metasploitable focuses on vulnerabilities at the operating system and network services layer instead of custom, vulnerable applications.
+- Metasploitable is an intentionally vulnerable virtual machine designed for training, exploit testing, and general target practice. Unlike other vulnerable virtual machines, metasploitable focuses on vulnerabilities at the operating system and network services layer instead of custom, vulnerable applications.
 
 ### Download Metersploitable
 Use the link  below to get to the download page:
@@ -152,8 +152,7 @@ In the scan template, you will find many options to choose from, but we will sho
   - Let us quickly talk about what we can do in Nessus. In the free edition of Nessus, we can scan against any private address and scan up to 16 of those at a time.
 
 ### Basic Network Scan
-
- Click the basic network scan to begin.
+Click the basic network scan to begin.
 
 Let us quickly talk about some tabs on the side; we have: 
 -  **General**: This is where you provide information about the target you want to scan.
@@ -166,7 +165,7 @@ Let us quickly talk about some tabs on the side; we have:
 
  - Go ahead and type in the name of your target machine and description.
 
- We will provide one `IP address, which is the IP of metersploitable.
+ We will provide one `IP address`, which is the IP of metersploitable.
 
  - Then click the save button.
 
@@ -195,9 +194,9 @@ Nessus displays the severity, score, family, and count of all the vulnerabilitie
 The severity outputs `Critical` and `Score` to be 9.8, which means we need to take quick measures in preventing attackers from exploiting this vulnerability.
 
 - Bind Shell Exploitaion.
-    Metasploitable comes with an open bind shell service running on port 1524; an attacker can connect with this open port easily with Netcat.
+Metasploitable comes with an open bind shell service running on port 1524; an attacker can connect with this open port easily with Netcat.
 
-    **Note:** If you ever find a bind shell backdoor on any server, use [Nmap](https://www.nmap.org) to scan for an open port with the terminal, find the Bind shell Port and close it, this will block any incoming connection pinging to the open port, and that how you can fix the vulnerability quickly.
+> If you ever find a bind shell backdoor on any server, use [Nmap](https://www.nmap.org) to scan for an open port with the terminal, find the Bind shell Port and close it, this will block any incoming connection pinging to the open port, and that how you can fix the vulnerability quickly.
 
 ### Summary
 
@@ -215,4 +214,5 @@ We have learned how to find vulnerabilities and fix them with the scan provided 
 1. [A complete guide to Nmap tutorial](https://www.edureka.co/blog/nmap-tutorial/).
 2. [Netcat Complete Guide](https://www.kalilinux.in/2021/01/netcat-linux-tutorial.html).
 
--Peer Review Contributions by: [Willies Ogola](/engineering-education/authors/willies-ogola/)
+---
+Peer Review Contributions by: [Willies Ogola](/engineering-education/authors/willies-ogola/)
