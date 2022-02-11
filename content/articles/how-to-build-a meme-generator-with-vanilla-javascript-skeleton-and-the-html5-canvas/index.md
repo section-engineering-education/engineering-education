@@ -27,7 +27,7 @@ With the [HTML 5 Canvas](https://developer.mozilla.org/en-US/docs/Web/API/Canvas
 - [Importing locally-stored images to the application](#importing-locally-stored-images-to-the-application)
 - [How to use the HTML 5 Canvas for this project](#how-to-use-the-html-5-canvas-for-this-project)
 - [Getting the element’s context](#getting-the-elements-context)
-- [The `loadImage` function](#the-loadimage-function)
+- [The loadImage function](#the-loadimage-function)
 - [Forming the text on the image](#forming-the-text-on-the-image)
 - [Displaying the meme](#displaying-the-meme)
 - [Conclusion](#conclusion)
@@ -315,7 +315,7 @@ Here is the app’s final appearance with a created meme:
 
 ![final-image](/engineering-education/how-to-build-a meme-generator-with-vanilla-javascript-skeleton-and-the-html5-canvas/final-image.png)
 
-To get the source code, you can head to my [Github Repo](https://github.com/Nomzy-kush/Meme-Generator) to get the source code. [Here](https://pensive-kepler-281118.netlify.app/) is the link to the live application deployed on Netlify.
+To get the source code, you can head to my [github repo](https://github.com/Nomzy-kush/Meme-Generator) to get the source code. [Here](https://pensive-kepler-281118.netlify.app/) is the link to the live application deployed on Netlify.
  
 ### Conclusion
 In this tutorial, you learned the entire process of importing and using Skeleton for your application’s UI. You also learned how to use the HTML 5 Canvas to fix images and texts at specific coordinate points in the DOM, thus creating a new meme.
@@ -323,46 +323,3 @@ In this tutorial, you learned the entire process of importing and using Skeleton
 Happy coding!
 ---
 Peer Review Contributions by: [Geoffrey Mwangi](/engineering-education/authors/geoffrey-mwangi/)
-   
-
-
-
- 
-
-
-
-
-
-
-           
- 
-
-
-
-
-
-
- 
-
-
-
-
-
-
-           
- 
-     
-
-   
-
-
-
- 
-
-
-
-
-
-
-           
- 
