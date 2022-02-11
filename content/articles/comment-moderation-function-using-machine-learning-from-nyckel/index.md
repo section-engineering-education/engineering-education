@@ -45,7 +45,7 @@ Once you are on the home page, click the `New function` button at the bottom of 
 
 This page gives you two types of data input i.e. text and image. In this case, you are classifying comments, so the text will be the preferable input.
 
-Select _text_ then add the labels in the forms that follow as `spam` and `Not spam`. Afterwards, hit the **create function** button which will create the function named **NewFunction**. You can rename this function name to give a name like `commentFunction` for easy identification in case you have
+Select _text_ then add the labels in the forms that follow as `spam` and `Not spam`. Afterwards, hit the **create function** button which will create the function named **NewFunction**. You can rename this function name to give a name like `commentFunction` for easy identification in case you have more than function in your account.
 
 ### Training the model
 You'll need a set of data in `CSV`, `TSV`, or `JSON` format to train your model. If you don't have one, you can download the dataset used in this example from [here](https://www.kaggle.com/saurabhshahane/twitter-sentiment-dataset).
