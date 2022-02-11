@@ -1,4 +1,4 @@
-There are three workflows to build a domain model using Entity Framework. These are, `database first`, `Code first`, and `model first`.
+There are three workflows used to build a domain model using Entity Framework. These are, `database first`, `Code first`, and `model first`.
 
 With the `database first`, we start with the database. We design our tables using visual designers. The EntityFramework generates the domain classes based on the database. 
 
@@ -9,7 +9,9 @@ In this article, we’ll learn how to build a domain model for our API using the
 ### Prerequisites
 To be able to follow this article well, one needs:
 1. To have [Visual Studio](https://visualstudio.microsoft.com/) installed.
-2. A basic understanding of C# and .NET technology
+2. Have [Sql Server Management Studio](https://docs.microsoft.com/en-us/sql/ssms/download-sql-server-management-studio-ssms?view=sql-server-ver15) installed.
+3. An understanding of database relationship. 
+4. A basic understanding of C# and .NET technology.
 ### Key takeaways.
 Setting up the project.
 
@@ -31,7 +33,7 @@ Recover from mistakes.
 
 ### Setting up the project.
 
-With code first, we start with the code. We won't go to the management studio to create a new database. Instead, we are going to create new classes also called the `domain model`. The domain model will have many classes and associations between them. We will then add these classes to our database.
+With `code first`, we start with the code. We won't go to the management studio to create a new database. Instead, we are going to create new classes also called the `domain model`. The domain model is actually classes and associations between them. After creating our domain model, we push it to the database. It is what forms the database tables.
 
 In visual studio 2019, let's create our new API application.
 
@@ -43,7 +45,7 @@ In visual studio 2019, let's create our new API application.
 
      ![Image of Asp.Net Core Web Application](/engineering-education/building-model-using-code-first/aspNetApplication.png)
 
-3. We name the project `CodeFirstDemo`. Click create. C:\Users\hp\Desktop\Maggie\sec\CodeirstDemo.png
+3. We name the project `CodeFirstDemo`. Click create. 
 
      ![Image of Asp.Net Core Web Application](/engineering-education/building-model-using-code-first/CodeirstDemo.png)
 
@@ -51,7 +53,7 @@ In visual studio 2019, let's create our new API application.
 
       ![Image of Asp.Net Core Web Application](/engineering-education/building-model-using-code-first/webApplication.png)
 
-With this, we now have our API project. We now need to configure a few things in our new project. The first thing is our models and then add them to our database. We will be building a simple domain where students can purchase a course or courses. 
+With this, we now have our API project. We now need to configure a few things in our new project. The first thing is our models and then push them to our database. We will be building a simple domain where students can purchase a course or courses. 
 
 ### Domain model setup
 
@@ -65,9 +67,9 @@ With this, we now have our API project. We now need to configure a few things in
 
 4. On the menu that appears, navigate to `New Folder` and click. Name the folder `Models`. 
 
-We will have four classes in our `Models` folder. These are, `Course`, `Author`, `Tag` and `CourseLevel`. The `CourseLevel` will be an enumeration. Let's have a closer look at each one. 
+We will have four classes in our `Models` folder. These are, `Course.cs`, `Author.cs`, `Tag.cs` and `CourseLevel.cs`. The `CourseLevel` will be an enumeration. Let's have a closer look at each one. 
 
-The course class has a few properties. These include the `Id`, `Title`, `Description`, `Level`, ` FullPrice`, `Author`(which is a navigation property), and a list of `Tags`. A course can have many tags. To create the class
+The `Course.cs` class has a few properties. These include the `Id`, `Title`, `Description`, `Level`, ` FullPrice`, `Author`(which is a navigation property), and a list of `Tags`. A course can have many tags. To create the class
 
 1. In the solution explorer, right-click on the `Models` folder.
 
@@ -75,7 +77,7 @@ The course class has a few properties. These include the `Id`, `Title`, `Descrip
 
 3. Name the class `Course. cs`. Click on `Add`. 
 
-We then add the properties to our Course class. Below is the code snippet of the course class. 
+We then add properties to our `Course.cs` class. Below is the code snippet of the `Course.cs` class. 
 
 ```c#
 
@@ -117,7 +119,7 @@ namespace CodeFirstDemo.Models
 
 ```
 
-The `Author` class has the following properties. `Id`, `Name`, and a list of `Courses`. There is a one-to-many relationship between `Authors` and `Courses`. An author can have many courses. Each course is created by only one author. We add the `Author's` class in our Model's folder. Below is the code for the author class. 
+The `Author.cs` class has the following properties. `Id`, `Name`, and a list of `Courses`. There is a one-to-many relationship between `Author` and `Course` classes. An author can have many courses. Each course is created by only one author. We add the `Author.cs` class in our `Models` folder. Below is the code for the author class. 
 
 ```c#
 
@@ -143,7 +145,7 @@ namespace CodeFirstDemo.Models
 
 ```
 
-Let us take a look at the `Tag` class. It has the following properties. `Id`, and `Name`. There is a many-to-many relationship between the `Tag` class and the `Course` class. This means that a course can have many tags. A tag can also have many courses. entity framework core has a way of implementing the many-to-many relationship.
+Let us take a look at the `Tag.cs` class. It has the following properties. `Id`, and `Name`. There is a many-to-many relationship between the `Tag` class and the `Course` class. This means that a course can have many tags. A tag can also have many courses. entity framework core has a way of implementing the many-to-many relationship.
 
 ```c#
 
@@ -161,9 +163,9 @@ Let us take a look at the `Tag` class. It has the following properties. `Id`, an
 
 #### Implement a many-to-many relationship in entityFramework-core
 
-In Entity Framework 6, it was okay to have a many-to-many relationship between classes. Implementing our domain models the way we have done for the tag and course would have worked. EF-6 would have created a mapping table. This is between the courses and the tags tables called `CoursesTags`table. EF-Core does not have many-to-many support. We have to create the mapping class in the middle of our relationship. 
+In Entity Framework 6, it was okay to have a many-to-many relationship between classes. Implementing our domain models the way we have done for the tag and course would have worked. EF-6 would have automatically created a mapping table for us. It sits between the courses and the tags tables called `CoursesTags`table. EF-Core on the other hand does not have many-to-many support. We have to create the mapping class manually. 
 
-Instead of associating the `Tag` class to the `Course` class, we will associate it with the `CoursesTags` class. This will exactly be like the mapping table in the database. Occurs when you have a many-to-many relationship between tables. We will have to create the class in our domain model. Inside our model folder, add a class called `CoursesTags`. 
+Instead of associating the `Tag` class to the `Course` class, we will associate it with the `CoursesTags` class. This will exactly be like the mapping table in the database. We have a mapping table when there is a many-to-many relationship between tables. We will have to create the class in our domain model. Inside our `Models` folder, add a class called `CoursesTags.cs`. 
 
 ```c#
 
@@ -189,9 +191,9 @@ namespace CodeFirstDemo.Models
 
 ```
 
-The `CoursesTags` class will have `CourseId` and `TagId` as [#composite keys](https://en.wikipedia.org/wiki/Composite_key#:~:text=In%20database%20design%2C%20a%20composite,key%20in%20its%20own%20right). The `Course` and the `Tag` properties are navigation properties. To implement composite key, we use fluent API. We will implement that later on, in this article. That will be during the creation of our dbContext class. 
+The `CoursesTags.cs` class will have `CourseId` and `TagId` properties as [composite keys](https://en.wikipedia.org/wiki/Composite_key#:~:text=In%20database%20design%2C%20a%20composite,key%20in%20its%20own%20right). The `Course` and the `Tag` properties are navigation properties. To implement composite key, we use fluent API. We will implement that later on, in this article. That will be during the creation of our dbContext class. 
 
-Finally, we look at our CourseLevel enumeration. It has different course levels. Below is the code snippet. 
+Finally, we look at our `CourseLevel.cs` enumeration. It has different course levels. Below is the code snippet. 
 
 ```c#
 
@@ -209,17 +211,17 @@ Finally, we look at our CourseLevel enumeration. It has different course levels.
 
 ```
 
-Our model creation is done. Next we need to create a [#DB context](https://www.entityframeworktutorial.net/entityframework6/dbcontext.aspx). This will enable us to push our models to the database. To do that, open up the SQL server. 
+Our model creation is done. Next we need to create a [DB context](https://www.entityframeworktutorial.net/entityframework6/dbcontext.aspx). This will enable us to push our models to the database.
 
 #### Setup database connection.
 
-1. To do that, open up the SQL server. Click on the connect icon as shown below.
+1. Open up the SQL server management studio. Click on the connect icon as shown below.
 
        ![Image of SQL server ](/engineering-education/building-model-using-code-first/sqlconnect.png)
 
-2. From the above diagram, we see we have a server name. Ensure your server name is the same as the one above. Click on Connect. We are now connected to the database. We will be using the `(LocalDB)\MSSQLLocalDB` server name.
+2. From the above diagram, we see we have a server name. Ensure your server name is the same as the one above. Click on Connect. We are now connected to the database. We will be using the `(LocalDB)\MSSQLLocalDB` as our server name.
 
-3. Switch back to Visual studio. Go to the solution explorer. We have the `appseting.json` file. Open it. We will add `"ConnectionStrings"` to the file as follows: 
+3. Switch back to Visual studio. Go to the solution explorer. We have the `appseting.json` file. It is in appsettings where we configure our application's external connections.In our case, this is where we will put our database credentials. Open it. We will add `"ConnectionStrings"`parameter to the file as follows: 
 
 ```json
 
@@ -251,7 +253,7 @@ Our model creation is done. Next we need to create a [#DB context](https://www.e
 
 ```
 
-Once you have the default connection set up, we will be using that to create the models in our database. To do that we need an application DB context class first. 
+With the above set up, the next thing we need is the `DBContext` class.  This class acts as an intermediary between our database and our application.
 
 1. In the `CodeFirstDemo` project, go to solution Explorer.
 
@@ -261,7 +263,7 @@ Once you have the default connection set up, we will be using that to create the
 
 4. Add a new folder called `Data`.
 
-5. Inside the `Data` folder, add a class called `ApplicationDbContext`. Below is the code snippet for the application DB context. 
+5. Inside the `Data` folder, add a class called `ApplicationDbContext.cs`. Below is the code snippet for the class. 
 
 ```c#
 
@@ -303,7 +305,7 @@ namespace CodeFirstDemo.Data
 
 ```
 
-The `ApplicationDbContext` class inherits from the DbContext class. The Dbcontext class belongs to the `EntityFrameworkCore`. Thus, we need to install the Entityramework core 3.1 NuGet package. 
+The `ApplicationDbContext.cs` class inherits from the DbContext class. The Dbcontext class belongs to the `EntityFrameworkCore` namespace. Thus, we need to install the Entityramework core 3.1 NuGet package. 
 
 1. Go to the `Tools` tab on the menu bar.
 
@@ -321,11 +323,12 @@ The `ApplicationDbContext` class inherits from the DbContext class. The Dbcontex
 
        ![image of  `Tools` tab](/engineering-education/building-model-using-code-first/nugetdetail.png)
 
-Let us look at the `OnModelCreating()` method. It specifies that the key for the CoursesTags entity has two properties. That is,  `ct.CourseId` and `ct.TagId`
+Back to the `ApplicationDbContext.cs`class. Let us look at the `OnModelCreating()` method. This is where we implement the many-to-many relationship. We link the course class with the tag class via the coursetags class. It specifies that the key for the CoursesTags entity has two properties. That is,  `ct.CourseId` and `ct.TagId`.
 
-A bunch of `dbsets` goes into our DbContext class. A `dbset` is a collection of objects that represents objects in the database.  
+A bunch of `dbsets` goes into our DbContext class as well. A `dbset` is a collection of objects that represents objects in the database.  
 
-The constructor has a parameter called options. We will pass it to our base class. The options will contain the connection string. We thus need to pass the connection string inside our `startup` class. The startup class has the configure services function. Inside the configure services, is where we do the connection string configuration.
+The constructor has a parameter called options. We will pass it to our base class. The options will contain the values of the connection string. The values are gotten from the `DefaultConnection` parameter in `appsettings.json` file.
+To get the values, we call it from the `startup.cs` class. We thus need to configure our `Startup.cs` class to pick the value in the `appsettings.json` file. The startup class has the `ConfigureServices()` function. Inside the `ConfigureServices()`, is where we do the connection string configuration.
 
 Here is the code. 
 
@@ -345,7 +348,7 @@ Here is the code.
 
 ```
 
-We are all set up. We now need to push the classes in our model to the database. 
+We are all set up. We now need to push our models to the database. 
 
 ### Push model to the database.
 
@@ -357,9 +360,9 @@ We are all set up. We now need to push the classes in our model to the database.
 
 3. Click on `Manage Nuget Package for Solution`. 
 
-4. On the browse tab, Search for `Microsoft.EntityFrameworkCore.Tools`. Install-Package Microsoft.EntityFrameworkCore.Tools -Version 3.1.2
+4. On the browse tab, Search for `Microsoft.EntityFrameworkCore.Tools`. Install-Package, Microsoft.EntityFrameworkCore.Tools -Version 3.1.2
 
-5. After installing the NuGet package, we go to the Tools tab again. Navigate to Nuget package manager. Click on Manager Console. This opens the package manager console window. 
+5. After installing the NuGet package, we go to the Tools tab again. Navigate to `Nuget package manager`. Click on `Package Manager Console`. This opens the package manager console window. 
 
 6. Type the command `add-migration`. Click enter.
 
@@ -604,11 +607,11 @@ With this, let us run this migration on the database.
 
 ### Adding new classes.
 
-In visual studio, we are going to create a new class called `Category`. We will assign each course to a category. E.g. web development, mobile development, programming language, etc. 
+In visual studio, we are going to create a new class called `Category.cs`. We will assign each course to a category. E.g. web development, mobile development, programming language, etc. 
 
-Inside our Model's folder, we create a new class called `Category`. This class will have the properties, `Id` and `Name`. The `Id` will be the primary key. 
+Inside our `Models` folder, we create a new class called `Category.cs`. This class will have the properties, `Id` and `Name`. The `Id` will be the primary key. 
 
-When naming the primary key, we have two choices. Use the `Id` or name of class plus Id e.g. `Category_Id`. These are the conventions that EF-Core understands. 
+When naming the primary key, we have two choices. Use the `Id` or name of class plus Id e.g. `Category_Id`. These are the conventions that `EF-Core` understands. 
 
 Sometimes, one may want to use a property as your primary key and not follow the above convention. In this case, we can always override the conventions. We will discuss this later on. For now, let us keep it simple. Below is the code for the category class.
 
@@ -632,16 +635,16 @@ namespace CodeFirstDemo.Models
 
 ```
 
-Now we have two options. One, create a migration that creates a category table. Or continue modifying our model by adding a property of type `Category` to the course class. 
+Now we have two options.These are:
+1. Create a migration that creates a category table. Or 
+2. Continue modifying our model by adding a property of type `Category` to the course class. This is to create a one-to-many relationship between the tables. We then run our migration. It will create both the category table and add the category column to the courses table. 
 
-Let us run the migration. It will create both the category table and add the category column to the course's table. 
-
-But, it is much safer to work with small changes. Thus, we will add a migration that creates a category table first. 
+We shall go with the first option. Note, on the first option. We have done a small change to our model and run our migration.It is much safer to work with small changes. Thus, we will add a migration that creates a category table first. 
 
 1. Open `Package manager console`.
 
-2. Add a migration. While adding a migration we do give it a name. There are two ways of doing this. The first is giving your migration a `model-centric` name like `AddCategory`. The other method is giving your migration   `database centric` name like `AddCategoriesTable`. The recommended one is the `database-centric` name. 
-
+2. Add a migration. While adding a migration we do give it a name. There are two ways of doing this. The first is giving your migration a `model-centric` name like `AddCategory`. The other method is giving your migration   `database centric` name like `AddCategoriesTable`. The recommended one is the `database-centric` name.
+ 
 This is because most migrations are for modifying database objects. These objects do not have a representation in your model. For example, you may want to create a trigger or modify a stored procedure or a view. These objects do not have a representation in your model. They are database objects. 
 
 We will give our migration a `database-centric` name. In Package manager console, type `add-migration AddCategoriesTable`. Press Enter. 
@@ -696,7 +699,7 @@ namespace CodeFirstDemo.Data
 
 ```
 
-3. Back to the package manager console, we re-do the migration. We already have a migration by the name `AddCategoriesTable`. We will first remove it. We type `Remove-Migration` to undo. Click on Enter.
+3. Back to the package manager console, we re-do the migration. We already have a migration by the name `AddCategoriesTable`. We will first remove it. We type `Remove-Migration` to undo. Click on Enter. The migration is removed.
 
 4. Type `add-migration AddCategoriesTable`. Press Enter.  The migration created the class below.
 
@@ -750,7 +753,9 @@ namespace CodeFirstDemo.Migrations
 
 ```
 
-The migration created a table called `Categories` with two columns. These are `Id` and `Name`. The `Id` is the primary key. At times we may want to populate a table with some data. We do this by using the `Sql() ` method. With this method, you can run any `  sql query ` in your database. In this case, we must use it to populate data in our categories table. Below is the code implementation. 
+The migration created a table called `Categories` with two columns. These are `Id` and `Name`. The `Id` is the primary key. Before we proceed to update our database,we look at a scenario. 
+
+At times we may want to populate a table with some data. We do this by using the `Sql() ` method. With this method, you can run any `  sql query ` in your database. In this case, we may want to use it to populate data in our categories table. Below is the code implementation. 
 
 ```c#
 
@@ -814,7 +819,7 @@ namespace CodeFirstDemo.Migrations
 
 ```
 
-5. Back to package manager console, type `update-database`. Click Enter. When the update is complete, go to the database. Taking a look at the database, the `Categories` table has been created. Right-click on it. Navigate to `Select Top 1000 rows`. We can see the two categories we created. Below is the result. 
+5. Back to package manager console, type `update-database`. Click Enter. When the update is complete, go to the database. Taking a look at the database, the `Categories` table has been created. Right-click on it. Navigate to `Select Top 1000 rows` and click. We can see the two categories we created. Below is the result. 
 
 ![CodeFirst Database Tables](/engineering-education/building-model-using-code-first/categoriesdb.png) 
 
@@ -866,7 +871,7 @@ namespace CodeFirstDemo.Models
 
 ```
 
-5. Remember to always de a small change and a small migration. We will use a database-centric name. Back to package manager console, type `add-migration AddCategoryColoumnToCoursesTable`. Click enter. Below is the migration that has been created. 
+5. Remember to always do a small change and a small migration. We will use a database-centric name. Back to package manager console, type `add-migration AddCategoryColoumnToCoursesTable`. Click enter. Below is the migration that has been created. 
 
 ```c#
 
@@ -946,7 +951,7 @@ namespace CodeFirstDemo.Migrations
 
 ```
 
-The migration has created a new column in the courses table with the name `CategoryId`. The type of the column is an integer. It has also created an index on the column. This is because we are most likely going to look up courses by given category.
+The migration has created a new column in the courses table with the name `CategoryId`. The type of the column is an integer. It has also created an index on the column. This is because we are most likely going to look up courses by given category. Thus, the look up will be fast.
 
 Finally, a foreign key has been created on the courses table. The `CategoryId` column points to the Categories table, `Id` column. 
 
@@ -1174,7 +1179,7 @@ namespace CodeFirstDemo.Migrations
 
 ```
 
-Let us take a look at the migration. This is an interesting one. The `Title` column is dropped first. The `Name` column which is of type string is then created. In SQL type terms, it is going to be of type varchar max. Note that in c# a string is nullable. This column in the database will also be nullable by default. It does not make sense to have a course without a name. We will look at a quick way to override this convention. 
+Let us take a look at the migration. This is an interesting one. The `Title` column is dropped first. The `Name` column which is of type string is then created. In SQL type terms, it is going to be of type `varchar max`. Note that in c# a string is nullable. This column in the database will also be nullable by default. It does not make sense to have a course without a name. We will look at a quick way to override this convention. 
 
 Take a look at`  migrationBuilder.AddColumn` section of our migration. We will change `nullable: true` to `nullable: false`. 
 
@@ -1236,7 +1241,7 @@ One other thing to note is that we are dropping the column first. This is a dang
 
 Whenever we make a change on the `Up()` method, it is important to double-check the `Down()` method. This is because the `Down()` method is used to downgrade the database. 
 
-Sometimes we bring the database to the latest version. There are times you need to downgrade it to a specific version for maintenance. When you modify the `Up()` method and don't modify the  `Down()` method, it is easy to run into problems. These problems will occur when you downgrade your database to a specific version. 
+Sometimes we want to bring the database to the latest version. There are times you need to downgrade it to a specific version for maintenance. When you modify the `Up()` method and don't modify the  `Down()` method, it is easy to run into problems. These problems will occur when you downgrade your database to a specific version. 
 
 To avoid these problems, Let us look at the `Down()` method before we run our migration. We are dropping the `Name` column and adding the `Title` column. We shall do the reverse of the changes we did on the `Up()` method. That is, before dropping the `Name` we shall update the `Title` column first.
 
