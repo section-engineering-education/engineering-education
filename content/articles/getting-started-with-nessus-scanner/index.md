@@ -92,7 +92,7 @@ Use the command below to grab the package to download and install it.
 ```bash
     $ dpkg -i Nessus-10.0.2-ubuntu910_amd64.deb
 ```
-![dpkg](dpkg-nessus.png)
+![dpkg](/engineering-education/getting-started-with-nessus-scanner/dpkg-nessus.png)
 
 Start Nessus by typing the following into your terminal.
 
@@ -125,7 +125,7 @@ Wait for the necessary Nessus plugins to compile; click `Nessus Essentials` and 
 
 - That took forever! All right, we have loaded Nessus, and it is installed.
 
-![Metersploitable](metersploitable.png)
+![Metersploitable](/engineering-education/getting-started-with-nessus-scanner/metersploitable.png)
 
 ### Step 4:
 We will use Metersploitable 2 as our vulnerable machine for scanning.
@@ -170,7 +170,7 @@ Let us quickly talk about some tabs on the side; we have:
 
  - Then click the save button.
 
-![New-Scan](basic-scan.png)
+![New-Scan](/engineering-education/getting-started-with-nessus-scanner/basic-scan.png)
 
 Go ahead and click the **save button** below and click the lunch (play) button on the next page to start the scanning process.
 
@@ -178,13 +178,13 @@ Go ahead and click the **save button** below and click the lunch (play) button o
 
 - Once your scan is complete, double click on it, and you will see the scanned results with found vulnerabilities.
 
-![scan](scan.png)
+![scan](/engineering-education/getting-started-with-nessus-scanner/scan.png)
 
 ### Step 5
 Looking at the overview, we can see that the host has many vulnerabilities.
  Open a vulnerability you would like to fix. Click the **Bind Shell Backdoor Detection vulnerability**. You will find the description and solution on how to fix this vulnerability.
 
-![Bind Shell Vuln](vuln.png)
+![Bind Shell Vuln](/engineering-education/getting-started-with-nessus-scanner/vuln.png)
 
 Nessus displays the severity, score, family, and count of all the vulnerabilities.
 - Dark Red tab shows that the vulnerability is **critical**.
