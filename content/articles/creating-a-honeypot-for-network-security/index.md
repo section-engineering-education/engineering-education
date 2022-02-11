@@ -52,7 +52,7 @@ Design-wise, honeypots are classed as follows:
 
 `Pure honeypots`- are full-scale factories. The honeypot's network connection is bugged to monitor the attacker's activities. A separate piece of software isn't needed. Both pure honeypots and honeypot-like systems have benefits and downsides.
 
-High-interaction honeypots enable an attacker to waste time by mimicking production system activities. Using virtual PCs, a single server may host several honeypots. A quick honeypot penetration may restore it. While high-interaction honeypots are safer, they need more maintenance. It may be too pricey without virtual computers.
+`High-interaction honeypots` enable an attacker to waste time by mimicking production system activities. Using virtual PCs, a single server may host several honeypots. A quick honeypot penetration may restore it. While high-interaction honeypots are safer, they need more maintenance. It may be too pricey without virtual computers.
 
 ### How honeypots operate
 Most honeypots are found in the DMZ. The DMZ has web and email servers connected to the Internet. A firewall divides the corporate network from the DMZ. It protects an internal network from the outer world. It permits traffic to flow in key network areas.
