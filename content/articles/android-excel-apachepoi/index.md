@@ -2,27 +2,27 @@
 layout: engineering-education
 status: publish
 published: true
-url: /manipulating-excel-files-in-android-using-apachepoi-library/
+url: /android-excel-apachepoi/
 title: Manipulating Excel Files in Android using the Apache POI Library
 description: This tutorial takes the reader through the process of creating an Excel file, opening it, and performing common statistical functions in Android using the Apache POI Library.
 author: vincent-ngunzulu
-date: 2022-02-06T00:00:00-12:05
+date: 2022-02-11T00:00:00-01:40
 topics: [Languages]
 excerpt_separator: <!--more-->
 images:
 
-  - url: /engineering-education/manipulating-excel-files-in-android-using-apachepoi-library/hero.jpg
+  - url: /engineering-education/android-excel-apachepoi/hero.jpg
     alt: Manipulating Excel Files in Android using the Apache POI Library Hero Image
 ---
 When processing data for a custom on-device model or creating your spreadsheet app, you need to know how to manipulate spreadsheet format files. In this article, we will look at creating a spreadsheet file, opening it, and performing common statistical functions in it.
 <!--more-->
-We will simulate student names and scores. The process would require a lot of code and research when done from scratch since Java does not have support for Excel file formats. Luckily, we have the **Apache POI** library. 
+We will simulate student names and scores. The process would require a lot of code and research when done from scratch since Java does not have support for Excel file formats. Luckily, we have the **Apache POI** library.
 
 Apache POI is an open-source library that provides a Java API for manipulating file formats based on the Office Open XML (OOXML) and OLE2 standards from Microsoft. Apache POI releases are available under the Apache License (V2.0).
 
-Based on the definition, we get a clue that this library can also be used to manipulate Word and PowerPoint(slide) file formats. 
+Based on the definition, we get a clue that this library can also be used to manipulate Word and PowerPoint (slide) file formats.
 
-For Excel(Spreadsheet) files, Apache POI has two formats for manipulating them:
+Apache POI has two formats for manipulating Excel (Spreadsheet) files:
 - Horrible Spreadsheet Format (HSSF)
 - XML Spreadsheet Format (XSSF)
 
@@ -52,8 +52,6 @@ dependencies {
 ```
 
 #### Project-level build.gradle
-> You can try adding this line to the `settings.gradle` file if you get an error.
-
 Add this to the `repositories` section:
 
 ```kotlin
@@ -74,14 +72,14 @@ Don't forget to add these permissions in your `AndroidManifest` file:
 ```
 
 ### Creating and adding data to the Spreadsheet
-To achieve this, we follow these steps:
-1. Create a Spreadsheet in the app's file directory.
+To achieve this, we follow the following steps:
+1. Create a Spreadsheet in the app's directory.
 2. Add a workbook to the Spreadsheet. At this step, we will also look at creating worksheets.
 3. Create cells for the worksheets.
 4. Add data to the cells.
 
 #### 1. Creating a Spreadsheet
-We will use a function called `createExcelFile(ourWorkbook: Workbook)`. It accepts a workbook object which we will discuss in the next step. First, we get to access our app's directory. Next, we check if it exists or not. If it does not exist, we create a directory.
+We will use a function called `createExcelFile(ourWorkbook: Workbook)`. It accepts a workbook object which we will discuss in the next step. First, we get to access our app's directory. Next, we check whether it exists. If it does not exist, we create a directory:
 
 ```kotlin
 //get our app file directory
@@ -92,7 +90,7 @@ if (ourAppFileDirectory != null && !ourAppFileDirectory.exists()) {
 }
 ```
 
-Thereafter, we create an Excel file called `test.xlsx` and write our workbook to the file using a file output stream. You can give it a name of your choice.
+Thereafter, we create an Excel file named `test.xlsx` and write our workbook to the file using a file output stream. You can give it a name of your choice:
 
 ```kotlin
 //Create an excel file called test.xlsx
@@ -110,7 +108,7 @@ try {
 }
 ```
 
-The full method code:
+The full method code is as follows:
 
 ```kotlin
 private fun createExcelFile(ourWorkbook: Workbook) {
@@ -139,9 +137,9 @@ private fun createExcelFile(ourWorkbook: Workbook) {
 ```
 
 #### 2. Adding a workbook
-In this method, we create a workbook object from the `XSSFWorkbook` class. A worksheet named *statSheet* is added to the workbook. The `addData()` method is then called to populate the sheet with data. We will look at this function later.
+In this method, we create a workbook object from the `XSSFWorkbook` class. A worksheet named _statSheet_ is added to the workbook. The `addData()` method is then called to populate the sheet with data. We will look at this function later.
 
-The newly created workbook is returned after the method `createWorkbook()` finishes executing. For the worksheet creation, Apache POI's method called `createSheet()` is used.
+The newly created workbook is returned after the method `createWorkbook()` finishes executing. For the worksheet creation, Apache POI's method called `createSheet()` is used:
 
 ```kotlin
 private fun createWorkbook(): Workbook {
@@ -175,7 +173,7 @@ private fun createCell(sheetRow: Row, columnIndex: Int, cellValue: String?) {
 ```
 
 #### 4. Adding data to the cells
-This method is quite simple. We create rows and add data to them in the worksheet passed in as a parameter.
+This method is quite simple. We create rows and add data to them in the worksheet passed in as a parameter:
 
 ```kotlin
 private fun addData(sheet: Sheet) {
@@ -214,7 +212,7 @@ private fun addData(sheet: Sheet) {
 }
 ```
 
-> Check out [this blog](https://faraztariq21.medium.com/a-simple-way-to-work-with-excel-in-android-app-94c727e9a138) which explains about adding headers and setting header styles.
+Check out [this blog](https://faraztariq21.medium.com/a-simple-way-to-work-with-excel-in-android-app-94c727e9a138) which explains about adding headers and setting header styles.
 
 ### Reading the Excel file and performing statistical computations
 Just like creating and populating data to the Spreadsheet, we will follow these steps:
@@ -224,7 +222,7 @@ Just like creating and populating data to the Spreadsheet, we will follow these 
 4. Perform statistical computations on the data.
 
 #### 1. Retrieving the Excel file
-We use a function called `getExcelFile()`. In the `let` scope, we check if the file exists and return it if it does. The function may return null since a file may not be present. That's why it is made nullable.
+We use a function called `getExcelFile()`. In the `let` scope, we check if the file exists and return it if it does. The function may return null since a file may not be present. That's why it is made nullable:
 
 ```kotlin
 private fun getExcelFile(): File? {
@@ -245,7 +243,7 @@ private fun getExcelFile(): File? {
 ```
 
 #### 2. Retrieving the workbook
-Here, we read the workbook from the loaded spreadsheet as an input stream and then return the workbook.
+Here, we read the workbook from the loaded spreadsheet as an input stream and then return the workbook:
 
 ```kotlin
 private fun retrieveWorkbook(): Workbook? {
@@ -269,7 +267,7 @@ private fun retrieveWorkbook(): Workbook? {
 ```
 
 #### 3. Selecting the worksheet
-We use the library's `getSheetAt(position)` method for this. After the selection, we return it. Since a worksheet may not be present, this method may return a null value.
+We use the library's `getSheetAt(position)` method for this. After the selection, we return it. Since a worksheet may not be present, this method may return a null value:
 
 ```kotlin
 private fun selectSheet(): Sheet? {
@@ -298,7 +296,7 @@ Three basic statistical functions are done:
 Let's have a look at them:
 
 #### 1. Mean
-We sum all the values then divide the total value by the number of students. An array from which we will get the values is passed in as a parameter.
+We sum all the values then divide the total value by the number of students. An array from which we will get the values is passed in as a parameter:
 
 ```kotlin
 private fun findMean(arrayArg: Array<Int>): Double {
@@ -314,7 +312,7 @@ private fun findMean(arrayArg: Array<Int>): Double {
 ```
 
 #### 2. Variance
-Squared difference from the mean. The logic will then be subtracting each value from the mean, squaring it, and then finding an average. Therefore, our function will have two parameters, the values array and the mean.
+Squared difference from the mean. The logic will then be subtracting each value from the mean, squaring it, and then finding an average. Therefore, our function will have two parameters, the values array and the mean:
 
 ```kotlin
 private fun findVariance(arrayArg: Array<Int>, mean: Double): Double {
@@ -330,26 +328,26 @@ private fun findVariance(arrayArg: Array<Int>, mean: Double): Double {
 ```
 
 #### 3. Standard variation
-This is the square root of the variance.
+This is the square root of the variance:
 
 ```kotlin
 var stdDeviation: Double = Math.sqrt(variance)
 ```
 
-> The Apache POI library also provides built-in Excel functions such as SUMIF, COUNTIF, etc. If interested, check them out [here](https://poi.apache.org/apidocs/dev/org/apache/poi/ss/formula/functions/package-summary.html).
+The Apache POI library also provides built-in Excel functions such as SUMIF, COUNTIF, etc. If interested, check them out [here](https://poi.apache.org/apidocs/dev/org/apache/poi/ss/formula/functions/package-summary.html).
 
 ### Output
 After running the app, we should get the following output:
 
-![screen](/engineering-education/manipulating-excel-files-in-android-using-apachepoi-library/shot-one.png)
+![screen](/engineering-education/android-excel-apachepoi/shot-one.png)
 
-The Excel file will resemble this:
+The Excel file will resemble the one below:
 
-![excel](/engineering-education/manipulating-excel-files-in-android-using-apachepoi-library/excel-sheet.png)
+![excel](/engineering-education/android-excel-apachepoi/excel-sheet.png)
 
-You can access the Excel file in your Device Explorer via the IDE by following these steps: *View -> Tool Windows -> Device File Explorer -> data > your-package-name -> files.*
+You can access the Excel file in your Device Explorer via the IDE by following these steps: _View -> Tool Windows -> Device File Explorer -> data > your-package-name -> files._
 
-![device](/engineering-education/manipulating-excel-files-in-android-using-apachepoi-library/device.png)
+![device](/engineering-education/android-excel-apachepoi/device.png)
 
 The GitHub repository can be found [here](https://github.com/vinstex/androidExcelTest) and the APK file [here](https://drive.google.com/file/d/1ShuOV-lJ5mnDMYrUEpG7tz_QAneSrlly/view?usp=sharing).
 
