@@ -6,7 +6,7 @@ url: /creating-a-hand-tracking-module/
 title: Creating a Hand Tracking Module using Python, OpenCv, and MediaPipe
 description: This tutorial will discuss how to create a hand tracking module. Hand tracking is the process in which a computer uses computer vision to detect a hand from an input image and keeps focus on the hand's movement.
 author: simon-kiruri
-date: 2022-02-09T00:00:00-11:52
+date: 2022-02-11T00:00:00-04:00
 topics: [Machine Learning]
 excerpt_separator: <!--more-->
 images:
@@ -16,9 +16,9 @@ images:
 ---
 Hand tracking is the process in which a computer uses computer vision to detect a hand from an input image and keeps focus on the hand's movement and orientation. Hand tracking allows us to develop numerous programs that use hand movement and orientation as their input.
 <!--more-->
-We tend to write the same code in different projects to perform hand tracking as part of our program. Creating a hand tracking module solves this problem as we write the code once.
+We tend to write the same code in different projects to perform hand tracking as part of our program. Creating a hand tracking module solves this problem since we write the code once.
 
-We then convert this piece of code into a module. We can import this module into any python project we are working on and it will perform hand tracking.
+We then convert this piece of code into a module. We can import this module into any python project that we are working on and it will perform hand tracking.
 
 ### Introduction
 To create the program that will perform hand tracking, we will need two Python libraries. These are `openCV` and `MediaPipe`.
@@ -37,7 +37,7 @@ This tutorial will be divided into two parts. The first part will focus on how t
 - [Conclusion](#conclusion)
 
 ### Prerequisites
-To follow along with this tutorial, the reader should:
+To follow along with this tutorial, you should:
 - Be familiar with the Python programming language.
 - Have `Pycharm` IDE installed on your computer. To download it, click [here](https://www.jetbrains.com/pycharm/download/).
 
@@ -58,7 +58,7 @@ Launch the `Pycharm` app and do the following:
 pip install mediapipe
 ```
 
-- To install `openCV` use the following command:
+- To install `openCV`, use the following command:
 
 ```bash
 pip install opencv-python
@@ -68,6 +68,7 @@ We now have our environment ready. We will begin by creating a program that does
 
 ### Creating a hand tracking program
 Before we jump into coding, let us discuss how `MediaPipe` performs hand tracking. Hand tracking using `MediaPipe` involves two stages:
+
 - **Palm detection** - `MediaPipe` works on the complete input image and provides a cropped image of the hand.
 - **Hand landmarks identification** - `MediaPipe` finds the `21` hand landmarks on the cropped image of the hand.
 
@@ -75,17 +76,19 @@ The `21` hand points that `MediaPipe` identifies are shown in the image below:
 
 ![Hand landmark model](/engineering-education/creating-a-hand-tracking-module/model.png)
 
-*[Image Source: MediaPipe](https://google.github.io/mediapipe/images/mobile/hand_landmarks.png)*
+_[Image Source: MediaPipe](https://google.github.io/mediapipe/images/mobile/hand_landmarks.png)_
 
-The above image shows the hand landmarks that MediaPipe uses to identify the hand. The numbered parts are the hand points.
+The image above shows the hand landmarks that MediaPipe uses to identify the hand. The numbered parts are the hand points.
 
 ### Coding
 Pycharm creates a `main.py` file for you automatically after you create a new project. This is where we will write our code.
 
 #### Step 1 - Importations and initializations
+We start by importing the two libraries we discussed. Importing the libraries enables us to use its dependencies.
+
+We will then create an object `cap` for video capturing. We require the other three objects to manipulate our input using `MediaPipe`:
 
 ```python
-
 import cv2
 import mediapipe as mp
 
@@ -95,11 +98,10 @@ hands = mpHands.Hands()
 mpDraw = mp.solutions.drawing_utils
 ```
 
-We start by importing the two libraries we discussed. Importing the libraries enables us to use its dependencies.
-
-We will then create an object `cap` for video capturing. We require the other three objects to manipulate our input using `MediaPipe`.
-
 #### Step 2 - Capturing an image input and processing it
+The code below takes the image input from the webcam. It then converts the image from `BGR` to `RGB`. This is because `MediaPipe` only works with `RGB` images, not `BGR`.
+
+It then processes the `RGB` image to identify the hands in the image:
 
 ```python
 while True:
@@ -107,10 +109,6 @@ while True:
     imageRGB = cv2.cvtColor(image, cv2.COLOR_BGR2RGB)
     results = hands.process(imageRGB)
 ```
-
-The code above takes the image input from the webcam. It then converts the image from `BGR` to `RGB`. This is because `MediaPipe` only works with `RGB` images, not `BGR`.
-
-It finally processes the `RGB` image to identify the hands in the image.
 
 #### Step 3 - Working with each hand
 
@@ -123,7 +121,7 @@ It finally processes the `RGB` image to identify the hands in the image.
                 cx, cy = int(lm.x * w), int(lm.y * h)
 ```
 
-In the code above, we use the `if` statement to check whether a hand is detected. We then use the first `for` loop to enable us to work with one hand at a time.
+In the code above, we use the `if` statement to check whether a hand is detected. We then use the first `for` loop to enable us work with one hand at a time.
 
 The second `for` loop helps us get the hand landmark information which will give us the `x` and `y` coordinates of each listed point in the hand landmark diagram. This loop will also give us the `id` of each point.
 
@@ -155,16 +153,15 @@ We use the code above to display the output to the user. The output is a real-ti
 The output of this code is shown in the [results](#results) section.
 
 ### Creating a module from our code
-Create a new file and name it `handTrackingModule`. Feel free to name it whatever name you want. Let us now create a module from the above code by following the steps below:
+Create a new file and name it `handTrackingModule`. Feel free to name it whatever name you want. Let us now create a module from the code above by following the steps below:
 
 #### Step 1 - Importing the required libraries
+We first import the `Python` libraries that we need in our project. This will enable us to use its dependencies:
 
 ```python
 import cv2
 import mediapipe as mp
 ```
-
-We first import the `Python` libraries that we need in our project. This will enable us to use its dependencies.
 
 #### Step 2 - Creating a class that we will use for hand detection
 
@@ -184,9 +181,9 @@ class handTracker():
 
 In the code above, we create a class that we will use for tracking. We then key in the basic parameters that we require for the `hands` function to work. MediaPipe provides these parameters in the hands function.
 
-Afterwards, we provide all the initializations that we need for our class. These are the above parameters and the `MediaPipe` initializations.
+Afterwards, we provide all the initializations that we need for our class. These are the parameters above and the `MediaPipe` initializations.
 
-We put `self` before every object to allow access to the methods and the attributes of that object. This in turn allows each object to possess its own attributes and also its own methods.
+We put `self` before every object to allow access to the methods and the attributes of that object. This in turn allows each object to possess its own attributes and methods.
 
 #### Step 3 - Creating a method that will track the hands in our input image
 
@@ -263,7 +260,7 @@ The output of the program and the module will be identical. When each of them ha
 ![Results](/engineering-education/creating-a-hand-tracking-module/results.gif)
 
 ### Conclusion
-You now better understand and possess all the skills needed to create a program that performs hand tracking. You also have the skills required to convert the code into a module.
+You now understand and possess all the skills needed to create a program that performs hand tracking. You also have the skills required to convert the code into a module.
 
 Go ahead and import the module into any `Python` project that requires hand tracking and watch the module perform its magic.
 
