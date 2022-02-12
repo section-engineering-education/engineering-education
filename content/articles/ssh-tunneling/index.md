@@ -59,11 +59,11 @@ The command below will be used to perform local port forwarding.
 ssh -L 8888:192.168.1.3:8080 44.11.22.33
 ```
 
-- -L is for local port forwarding
-- 8888 is for local port
-- 192.168.1.3 is for Remote IP address
-- 8080 is for Remote port
-- 44.11.22.33 is for Public ssh server ip address
+- -L &rarr; local port forwarding
+- 8888 &rarr; local port
+- 192.168.1.3 &rarr; Remote IP address
+- 8080 &rarr; Remote port
+- 44.11.22.33 &rarr; Public ssh server ip address
 
 Local port forwarding syntax
 
