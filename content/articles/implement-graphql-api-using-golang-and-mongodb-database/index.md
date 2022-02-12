@@ -1,15 +1,12 @@
 GraphQL is a query language for APIs that allow a client and a server to exchange data. This allows you to structure data-driven applications much more flexibly and efficiently than the REST AND SOAP approach. GraphQL gives a detailed and understandable representation of the data through an API. It enables clients to request only the data they require rather than the whole API data structure. This helps in making it easier and faster to modify APIs over time and gives developers access to robust development tools. It also gives developers more control over how they use data in their apps.
 
-GraphQL can be implemented with different languages and databases of choice, such as Golang and MongoDB. Go is a general-purpose language, meaning it can be used for many different things. You can use Go to build web apps, microservices, cloud services, APIs, DevOps tooling, and any application you can think of. This means you will probably use Go to build a server-side-based application. Just like Node.js, you will need the right tooling to be able to handle your server-side code.
-
+GraphQL can be implemented with different languages and databases of choice, such as Golang and MongoDB. Go is a general-purpose language, meaning it can be used for many different things. You can use Go to build web apps, microservices, cloud services, APIs, DevOps tooling, and any application you can think of. This means you will probably use Go to build a server-side-based application. Just like Node.js, you will need the right tools to be able to handle your server-side code.
 After developing your application with Go, you might need a database to store data, such as the NoSQL MongoDB database. MongoDB is a document-oriented database management system, classified as a NoSQL database. It stores data in JSON-like documents.
 
 While interacting with a web-based application, you might not be aware of the data format that users send, and a NoSQL database such as MongoDB would be a good solution for such data handling and storage.
-
-This guide runs a GraphQL server using Golang and a MongoDB database. his Go GraphQL server will use [gqlgen](https://gqlgen.com/) Framework to bootstrap a GraphQL boilerplate code.
+This guide runs a GraphQL server using Golang and a MongoDB database. This Go GraphQL server will use [gqlgen](https://gqlgen.com/) Framework to bootstrap a GraphQL boilerplate code.
 
 ### Table of contents
-
 - [Table of contents](#table-of-contents)
 - [Prerequisites](#prerequisites)
 - [What is gqlgen](#what-is-gqlgen)
@@ -21,31 +18,26 @@ This guide runs a GraphQL server using Golang and a MongoDB database. his Go Gra
 - [Conclusion](#conclusion)
 
 ### Prerequisites
-
 To fully understand this guide, it's essential to have:
 
 - Some basic knowledge of writing and running Golang code.
 - Fundamental knowledge of how GraphQL APIs work will also be important.
 
 ### What is gqlgen
-
-When creating GraphQL API with Go, you need first to decide which libraries to use to set it out. Go has diffrent libraries that help you set a minimal type-safe server. This include [gophers](https://github.com/graph-gophers/graphql-go), [gqlgen](https://github.com/99designs/gqlgen), [thunder](https://github.com/samsarahq/thunder) and [graphql-go](https://github.com/graphql-go/graphql). This guide will focus on using the gqlgen library. Check this [guide](https://gqlgen.com/feature-comparison/) to glance at the feature comparison between these Go GraphQL Implementation libraries.
+When creating GraphQL API with Go, you need first to decide which libraries to use to set it out. Go has diffrent libraries that help you set a minimal type-safe server. This include [gophers](https://github.com/graph-gophers/graphql-go), [gqlgen](https://github.com/99designs/gqlgen), [thunder](https://github.com/samsarahq/thunder) and [graphql-go](https://github.com/graphql-go/graphql). This guide will focus on using the gqlgen library. Checkout this [guide](https://gqlgen.com/feature-comparison/) to glance at the feature comparison between these Go GraphQL Implementation libraries.
 
 [Gqlgen](https://github.com/99designs/gqlgen) is a Go package that allows you to create and generate Type-safe GraphQL servers. Gqlgen makes the building of GraphQL server intuitive and straightforward. It adds features such as;
 
-- Scheme first
-
+**Scheme first**
 GraphQL API uses Schema Definition Language (SDL) to define types. This allows you to describe the shape of the result that you want your GraphQL endpoint to get. Thus you always get consistent API data that is short, concise, and easy to read. This creates scheme reusability that both the client and server can understand.
 
 And since the schema definition comes first, your backed team can use SDL mocks to spin up a server that queries specific data. Thus teams can begin writing client code while the server is simultaneously being developed.
 
-- Code generation
-
+**Code generation**
 Building a GraphQL from scratch can be tiresome and time-consuming. Gqlgen simplifies the hard task of developing GraphQL APIs, allowing you to focus on the logic of your Go applications. It generated a boilerplate code template that has ready to run GraphQL example. This works closely the same as some of the popular backend frameworks such as React.js, Angular and Svelte. Using gqlgen puts you a step ahead when building your application, allowing you to quickly set up and build your application.
 
 ### Setting up Go GraphQL server using gqlgen
-
-To set a Go application, you first need to initialize the Go modules file using `go mod init` as shown below;
+To set a Go application, you first need to initialize the Go modules file using `go mod init` as shown below:
 
 ```bash
 go mod init go-graphql-mongodb-api
@@ -53,7 +45,7 @@ go mod init go-graphql-mongodb-api
 
 This will set up a `go.mod` file with `go-graphql-mongodb-api` as the local module. Once that is done, go ahead and set up a GraphQL gqlgen project using the `gqlgen init` command.
 
-First, install gqlgen using `go get github.com/99designs/gqlgen`. Then initialize gqlgen using the following command;
+First, install gqlgen using `go get github.com/99designs/gqlgen`. Then initialize gqlgen by running this command:
 
 ```bash
 go run github.com/99designs/gqlgen init
@@ -64,11 +56,11 @@ This will generate files and folders and the root of your project with a todos b
 - `gqlgen.yml` - This is the default gqlgen configuration file, which allows the gqlgen dependencies to control the code that gqlgen creates for your application sample.
 - `graph/generated/generated.go` - Contains the heavy code that gqlgen generates. This abstracts you from writing your Go GraphQL API from scratch. It also controls the execution runtime for GraphQL.
 - `graph/model/models_gen.go` - Contains todos model that bootstrap the boilerplate graph, or the graph you intend to build.
-- `graph/schema.graphqls` - This is where you write your graph schemas and set them up.
+- `graph/schema.graphqls` - This is where you will write your graph schemas and set them up.
 - `graph/schema.resolvers.go` - Executes your application logic code and gets the data that a request wants to get from the application you build.
-- `server.go` - Defines your application's main function. This is a basic entry point that provides the HTTP handlers and routes required to start a Go server.
+- `server.go` - Defines your application main function. This is a basic entry point that provides the HTTP handlers and routes required to start a Go server.
 
-You can test if your generated is working by running `go run server.go` at your project's root. If you open `http://localhost:8080/` on the browser, you will be served with a GraphQL playground that you can start interacting with the generated GraphQL server.
+You can test if your generated files is working by running `go run server.go` in your project's root directory. If you open `http://localhost:8080/` on the browser, you will be served with a GraphQL playground where you can start interacting with the generated GraphQL server.
 
 Note: You may encounter a handler error while running the `go run server.go`. To solve this, run the following command and install the handler dependencies.
 
@@ -79,7 +71,6 @@ go get github.com/99designs/gqlgen/graphql/handler/extension
 ```
 
 ### Setting up a GraphQL API with MongoDB database
-
 Let's dive in and create a GraphQL Movie API that uses the MongoDB database. Start by defining the movie schema. A schema defines the data that the Movie API will hold. Navigate to `graph/schema.graphqls` file and make the following changes;
 
 ```go
@@ -104,7 +95,7 @@ type Query {
 
 This will create a `Movie` type with a `Query` that returns the movies. Each movie consists of the movie id and movie name. This schema also defines the input value that the API need when creating the movies and a mutation for creating that movie.
 
-Now you need to regenerate the rest of the code boilerplate based on the schema that you just defined. To do this run;
+Now you need to regenerate the rest of the code boilerplate based on the schema that you just defined. To do this run:
 
 ```bash
 go run github.com/99designs/gqlgen generate
@@ -123,18 +114,17 @@ go get github.com/99designs/gqlgen/cmd
 Once done, run the command `go run github.com/99designs/gqlgen generate` again, and your code template will be updated to reflect the new schema. And you can also run `go run server.go` to test if the regenerated template works.
 
 ### Setting up the MongoDB database
-
 You now have all the code that's related to GraphQL. Now you can implement the logic that does these operations on a database. Create a `database` directory at the root of your project and add a `database.go` file.
 
-First, install the MongoDB Go driver using the following command;
+First, install the MongoDB Go driver by running this command:
 
 ```bash
 go get go.mongodb.org/mongo-driver/mongo
 ```
 
-Follow the subsequent steps to implement the GraphQL MongoDB logic.
+Next, Follow these steps to implement the GraphQL MongoDB logic.
 
-- Create the database package and import the packages:
+**Create the database package and import the packages:**
 
 ```go
 package database
@@ -156,7 +146,7 @@ import (
 )
 ```
 
-- Create a database struct:
+**Create a database struct:**
 
 ```go
 type DB struct {
@@ -166,7 +156,7 @@ type DB struct {
 
 This takes a `client` of type `mongo.Client`.
 
-- Set the MongoDB connection client:
+**Set the MongoDB connection client:**
 
 ```go
 func Connect(dbUrl string) *DB {
@@ -204,7 +194,7 @@ While this monitoring is happening in the background, use the `client.Ping` meth
 
 Start implementing the necessary methods to perform any database operation, i.e., the CRUD operations. You need this to perform any action with the database, such as creating new movies or fetching a list of created movies.
 
-- Insert a movie to Mongo database:
+**Insert a movie to Mongo database:**
 
 ```go
 func (db *DB) InsertMovieById(movie model.NewMovie) *model.Movie {
@@ -228,7 +218,7 @@ This will basically add a new movie value to the database. MongoDB will first au
 
 The method `InsertMovieById()` will only `InsertOne()` document at a time. The `InsertOne()` function runs an insert command to add a single document to the collection. It takes document parameter `name` to be inserted based on the current `Value` of the insert command.
 
-- Fetch a single movie from the MongoDB database based on the MovieId:
+**Fetch a single movie from the MongoDB database based on the MovieId:**
 
 ```go
 func (db *DB) FindMovieById(id string) *model.Movie {
@@ -254,7 +244,7 @@ func (db *DB) FindMovieById(id string) *model.Movie {
 
 In this case, `ObjectID` acts as a filter parameter for the document containing query response. This is then used to select the document to be returned.
 
-- Fetch all added movies from the MongoDB database:
+**Fetch all added movies from the MongoDB database:**
 
 ```go
 func (db *DB) All() []*model.Movie {
@@ -286,7 +276,6 @@ func (db *DB) All() []*model.Movie {
 `All()` will get all the movie lists saved to the `movie` collection. This will basically execute a `Find()` and return all matching documents in the `movie` collection. These documents will be fetched based on how they are saved in the collection. `Next()` gets the next document for this operation. `Next()` is only returned until a document is available or if the `Next()` block returns false, making the subsequent calls return false.
 
 ### Setting up Queries and Mutations
-
 GraphQL uses queries to get the data from a server. A query will essentially specify the data you want the GraphQL to return back to you. Mutations, on the other hand, are similar to queries and can be used to return data from the GraphQL API. Mutations are typically used when you want to run a query that writes data to a GraphQL server.
 
 Set the GraphQL server queries based on the query defined in the `schema.graphqls` file. To do this, edit the `schema.resolvers.go` file `queryResolver` and the `mutationResolver`.
@@ -307,8 +296,7 @@ Then create the following `db` variable. It has the connection URL that connects
 var db = database.Connect("mongodb://localhost:27017/")
 ```
 
-- Edit the CreateMovie mutationResolver:
-
+**Edit the CreateMovie mutationResolver:**
 `CreateMovie()` adds a movie document to a MongoDB database. Thus it's supposed to return the `InsertMovieById()` input value. This executes a query that writes data. Thus you must refer to a `Mutation()` to return `generated.MutationResolver` implementation. Below is how your `CreateMovie()` should look once updated.
 
 ```go
@@ -317,8 +305,7 @@ func (r *mutationResolver) CreateMovie(ctx context.Context, input model.NewMovie
 }
 ```
 
-- Edit the Movie queryResolver:
-
+**Edit the Movie queryResolver:**
 `Movie()` gets a single movie document from a MongoDB database. Thus it's supposed to return the `FindMovieById(id)`. `Movie()` executes a query that reads data, thus you must refer to it using `Query()` to return the `generated.QueryResolver` implementation. Below is how your `Movie()` should look once updated.
 
 ```go
@@ -327,8 +314,7 @@ func (r *queryResolver) Movie(ctx context.Context, id string) (*model.Movie, err
 }
 ```
 
-- Edit the Movies queryResolver:
-
+**Edit the Movies queryResolver:**
 `Movies()` gets movie documents to a MongoDB database. Thus it's supposed to return the `All()` argument. Since this executes a query that reads data, you can refer it to a `Query()` to return the `generated.QueryResolver` implementation. Below is how your `Movies()` should look once updated.
 
 ```go
@@ -337,7 +323,7 @@ func (r *queryResolver) Movies(ctx context.Context) ([]*model.Movie, error) {
 }
 ```
 
-- Import the packages:
+**Import the packages:**
 
 ```go
 import (
@@ -356,16 +342,15 @@ import (
 ```
 
 ### Set the Go server
+To run this GraphQL API, you need to expose the methods you have created to localhost to access them using an endpoint. To implement this, follow the following steps;
 
-To run this GraphQL API, you need to expose the methods you have created to localhost to access them using an endpoint. To implement this, follow the following steps.
-
-- Install the `AllowedOrigins` CORS package:
+**Install the `AllowedOrigins` CORS package:**
 
 ```bash
 go get github.com/rs/cors
 ```
 
-- Import the packages:
+**Import the packages:**
 
 ```go
 import (
@@ -383,13 +368,13 @@ import (
 )
 ```
 
-- Create a default server port:
+**Create a default server port:**
 
 ```go
 const defaultPort = "8080"
 ```
 
-- Create the Go main function:
+**Create the Go main function:**
 
 ```go
 func main() {
@@ -416,7 +401,8 @@ func main() {
 
 This will execute the MongoDB connection URL and expose it to localhost that uses the Go core `"net/http"` module. You then expose `Resolvers` to the server using an HTTP `Handler`. The `NewExecutableSchema` will create an `ExecutableSchema` from the ResolverRoot interface.
 
-The server is ready, and you can now test it out. Navigate to your project root directory and run `go run server.go`. This will expose the GraphQL API `http://localhost:8080/`. And if you open `http://localhost:8080/` on a browser, you will be served with a GraphQL playground.
+The server is ready, and you can now test it out. Navigate to your project root directory and run `go run server.go`. 
+This will expose the GraphQL API `http://localhost:8080/`. And if you open `http://localhost:8080/` on a browser, you will be served with a GraphQL playground.
 
 Now you can start interacting with the GraphQL API to test if it connects to the MongoDB database. Start by creating new movie items. Add the following mutation to your GraphQL playground query panel and hit the play button.
 
@@ -440,7 +426,7 @@ This will execute this query and return the added movie. If you head over to you
 
 Go ahead and try adding more movie items using the above query. Also, try executing queries for;
 
-- Getting a single movie:
+**Getting a single movie:**
 
 ```go
 query Movie{
@@ -453,7 +439,7 @@ query Movie{
 
 Where `:id` is the `_id` value of the movie you want your GraphQL API to return.
 
-- Getting all movies:
+**Getting all movies:**
 
 ```go
 query Movies{
@@ -465,7 +451,6 @@ query Movies{
 ```
 
 ### Conclusion
-
 This guide has used gqlgen to set up a GraphQL API. Gqlgen allows you to bootstrap a GraphQL code with a sample GraphQL API. I hope you have found how simple it is to set up a basic GraphQL API without writing the whole code from scratch. You try out using gqlgen and connect your GraphQL API to other databases.
 
 Happy coding!
