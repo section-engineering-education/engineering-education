@@ -49,7 +49,7 @@ Suppose we have the following devices with IP addresses as shown respectively:
 - A local device of IP address 10.0.0.4
 - Local port 8888
 
-*NB* *Our SSH server and the internal resources are on the same network* This implies that our public SSH server has access to our internal resources.
+*NB:* *Our SSH server and the internal resources are on the same network.* This implies that our public SSH server has access to our internal resources.
 
 Now our local machine on IP address 10.0.0.4 is on a completely different network and cannot access resources on IP address 192.168.1.3. So, what do we do? We will create a tunnel between our local machine and our public SSH server because IP Address 44.11.22.33 is a public IP address and 22 is a public open SSH port.
 
@@ -59,11 +59,11 @@ The command below will be used to perform local port forwarding.
 ssh -L 8888:192.168.1.3:8080 44.11.22.33
 ```
 
-- -L &rarr local port forwarding
-- 8888 &rarr local port
-- 192.168.1.3 &rarr Remote IP address
-- 8080 &rarr Remote port
-- 44.11.22.33 &rarr Public ssh server ip address
+- -L &rarr; local port forwarding
+- 8888 &rarr; local port
+- 192.168.1.3 &rarr; Remote IP address
+- 8080 &rarr; Remote port
+- 44.11.22.33 &rarr; Public ssh server ip address
 
 Local port forwarding syntax
 
