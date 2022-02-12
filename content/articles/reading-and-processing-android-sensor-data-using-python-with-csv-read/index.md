@@ -70,7 +70,7 @@ For example, select the sensor if you want to record g-force data. You then clic
 
 ![saving data](/engineering-education/reading-and-processing-android-sensor-data-using-python-with-csv-read/image-nine.png)
 
-Once this is done, you get a prompt to share your data through any application you wish or save it in the local storage.
+Once this is done, you get a prompt to share your data through any application you wish or save it in the local storage. After saving, you can import it to your pc for processing.
 For our case, we use the accelerometer sensor.
 
 ### Python code for processing the data
