@@ -3,15 +3,15 @@ layout: engineering-education
 status: publish
 published: true
 url: /line-detection-using-hough-transform-in-matlab/
-title: Line Detection Using Hough Transform in MATLAB
+title: Line Detection using Hough Transform in MATLAB
 description: This article will help you understand line detection using hough transform in matlab.
 author: atieno-dorine
-date: 2022-01-30T00:00:00-00:00
+date: 2022-02-12T00:00:00-02:44
 topics: [Languages]
 excerpt_separator:
 images:
 
-  - url: /engineering-education/line-detection-using-hough-transform-in-matlab/hero.png
+  - url: /engineering-education/line-detection-using-hough-transform-in-matlab/hero.jpg
     alt: Line Detection Using Hough Transform in MATLAB Hero Image
 ---
 Hough transform is an algorithm that isolates specific shapes in an image. These desired features should be specified in a given parametric form. This algorithm is widely used in detecting regular curves. These curves are such as lines, curves, ellipses, etc. However, the general application of hough transform is impossible to attain the simple analytical feature description. For example, line detection is an important feature that helps analyze two objects. It can give a more important relationship between the two objects.
@@ -35,7 +35,7 @@ We can use this transform to measure the length of a line. For example, suppose 
 
 ![Straight line](/engineering-education/line-detection-using-hough-transform-in-matlab/image-one.png)
 
-The general expression of a line is y=mx+c. It means that you can map a line into a coordinate pair, `m, c`. However, vertical lines have a problem since the slope value is unbounded. In this case, the hough transform uses a different parametric representation. The parameters are $\theta$ and $\rho$. Here, $\theta$ is the angle between the axis and the origin line connecting that closest point. $\rho$ corresponds to the distance from the origin to the nearest point on the straight line.
+The general expression of a line is y=mx+c. It means that you can map a line into a coordinate pair, `m, c`. However, vertical lines have a problem, since the slope value is unbounded. In this case, the hough transform uses a different parametric representation. The parameters are $\theta$ and $\rho$. Here, $\theta$ is the angle between the axis and the origin line connecting that closest point. $\rho$ corresponds to the distance from the origin to the nearest point on the straight line.
 
 ![Expression using rho, and theta](/engineering-education/line-detection-using-hough-transform-in-matlab/image-two.png)
 
@@ -84,6 +84,7 @@ title('Image with 2 dots')
 ```
 
 `Close all` is used to close all the open figures, and `clc` clears the command window. We then make a matrix of zeros of the dimension 50x50 using `zero(50)`. `a(20, 20)` and `a(40, 10)` are the points at which the dots are placed. `Figure` creates a figure window. We then use the `imshow()` to view the output. Finally, using the `subplot()` function, we create a subplot for our output. `subplot(m,n,p)` creates an `MxN` axes, and the plot is placed at position `p`.
+
 We use the `hough()` function to compute the hough matrix. This function takes in binary images as the input. This function gives out three outputs, that is, Transform matrix(H), theta(T), and rho(R). After that, we visualize the output using the utility function `houghMatViz()` as shown below:
 
 ```Matlab
@@ -111,7 +112,7 @@ ylabel('\rho');
 ```
 
 This utility function converts the hough matrix into a grayscale image using the `mat2gray()` function. Then, the brightness of the grayscale image is adjusted using the imadjust()` function. Finally, this function takes the grayscale image as the argument. The `imshow()` function displays the output depending on the `XData` and the `YData`.
-		
+    
 When we execute this code, we get two sinusoids that correspond to the two points in the image, as shown below:
 
 ![Two sinusoids corresponding to the two points](/engineering-education/line-detection-using-hough-transform-in-matlab/image-seven.png)
@@ -158,7 +159,7 @@ The last step is to map the peak back into the image plane and extract the line 
 hlines = houghlines(b, T, R, hPeaks);
 ```
 
-Using these `hline` values, we can redraw the detected lines on the original image. This help us to see if the detection worked. To do this we use the code below:
+Using these `hline` values, we can redraw the detected lines on the original image. This helps us to see if the detection worked. To do this we use the code below:
 
 ```matlab
 xy = [hlines.point1; hlines.point2];
@@ -182,3 +183,33 @@ Happy coding.
 
 ---
 Peer Review Contributions by: [Kelvin Munene](/engineering-education/authors/kelvin-munene/)
+
+<!-- MathJax script -->
+<script type="text/javascript" async
+    src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+    MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [['$','$'], ['\\(','\\)']],
+      displayMath: [['$$','$$']],
+      processEscapes: true,
+      processEnvironments: true,
+      skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
+      TeX: { equationNumbers: { autoNumber: "AMS" },
+           extensions: ["AMSmath.js", "AMSsymbols.js"] }
+    }
+    });
+    MathJax.Hub.Queue(function() {
+      // Fix <code> tags after MathJax finishes running. This is a
+      // hack to overcome a shortcoming of Markdown. Discussion at
+      // https://github.com/mojombo/jekyll/issues/199
+      var all = MathJax.Hub.getAllJax(), i;
+      for(i = 0; i < all.length; i += 1) {
+          all[i].SourceElement().parentNode.className += ' has-jax';
+      }
+    });
+
+    MathJax.Hub.Config({
+    // Autonumbering by mathjax
+    TeX: { equationNumbers: { autoNumber: "AMS" } }
+    });
+  </script>
