@@ -35,6 +35,9 @@ In this article, we will look at two main subtopics in SSH tunneling. That is;
 ### Prerequisites
 To perform SSH tunneling, we need the following:
 - A publicly accessible SSH server.
+- The resources to be accessed.
+- A local device
+- A remote device for remote port forwarding.
 
 ### Local port forwarding
 Local port forwarding allows us to access remote content or resources that we don't have access to. For example, let's say we have a remote RDP server or a remote database that we do not have access to, and there is a firewall that blocks some ports but then it allows some of the ports.
