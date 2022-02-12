@@ -14,7 +14,7 @@ images:
   - url: /engineering-education/understanding-gazpacho-in-python-and-its-application-in-webscraping/hero.jpg
     alt: Web Scraping example image
 ---
-Getting a large amount of data online by searching  manually and copy-pasting can be tedious and time-consuming. To make it easier and quicker, we can automate this process by using the web scraping tool to load and extract the data from multiple websites and webpages according to our needs.
+It can be tedious and time-consuming to get large amounts of data online by searching and copy-pasting. To make it easier and quicker, we can automate this process by using the web scraping tool to load and extract the data from multiple websites and webpages according to our needs. 
 <!--more-->
 This article will cover much concerning the web scrapping tool, its real-life applications, and how we can use the Gazpacho Python library for scraping web data.
 
@@ -23,7 +23,7 @@ This article will cover much concerning the web scrapping tool, its real-life ap
 - [Prerequisites](#prerequisites)
 - [Web Scraping](#web-scraping)
   - [Components of the Web Scraper](#components-of-the-web-scraper)
-  - [Web Scraper's Operation](#web-scrapers-operation)
+  - [Operation of the Web Scraper](#operation-of-the-web-scraper)
   - [Applications for Web Scraping](#applications-for-web-scraping)
 - [Web Scraping in Python](#web-scraping-in-python)
 - [Gazpacho library](#gazpacho-library)
@@ -33,19 +33,19 @@ This article will cover much concerning the web scrapping tool, its real-life ap
 To follow along with this tutorial, the reader should:
 - Have a prior understanding of the basic Python concepts.
 - Ensure Python is installed on the machines.
-- Have Jupyter notebook installed or any other IDE/editor that can run Python.
+- Install Jupyter Notebook or another IDE/editor that can run Python.
 
 Go to this [page](https://jupyter.org/install) to install Jupyter on your PC.
 
 ### Web Scraping
-Web scraping, also known as web harvesting or web extraction, is commonly used when obtaining information from the internet. It is much quicker and easier than the manual methods since it is an automatic method of extracting data from a web page by querying a web server, requesting data (usually in the form of HTML and other files that comprise web pages), and then parsing it to extract the needed information. This is made possible using automated software called ***web scraper***, which is dedicated to performing data harvesting.
+Web scraping, also known as web harvesting or web extraction, is commonly used when obtaining information from the internet. It is much quicker and easier than the manual methods since it is an automatic method of extracting data from a web page by querying a web server, requesting data (usually in the form of HTML and other files that comprise web pages), and then parsing it to extract the needed information. This is made possible using automated software called ***web scrapers***, which is dedicated to performing data harvesting.
 #### Components of the Web Scraper
 The software is made up of various components, as described below.
 - Web Crawler Module: A vital component of a web scraper that allows it to navigate the target website/webpage by sending HTTP or HTTPS queries to the URLs. The HTML contents are then downloaded in an unstructured form and passed to the next component, the extractor.
 - Extractor: This component processes the fetched HTML content from the web crawler module and extracts the data into a semi-structured format. It's also known as a parser module because it works with many parsing approaches, such as regular expressions, HTML parsing, DOM parsing, and Artificial Intelligence.
-- Data transformation and Cleaning Module: The data collected by the extractor isn't ready to use right away; it needs to go through some sort of cleaning process before we can utilize it. For this, methods such as string manipulation and regular expressions can be employed. Extraction and transformation can be done in one process.
+- Data transformation and cleaning module: The data collected by the extractor isn't ready to use right away; it needs to go through some sort of cleaning process before we can utilize it. For this, methods such as string manipulation and regular expressions can be employed. Extraction and transformation can be done in one process.
 - Once we have extracted the needed data, it is stored in standard formats that can be stored in the database, in JSON or CSV format in the storage module.
-#### Web Scraper's Operation
+#### Operation of the Web Scraper
 For the web scraper to perform and accomplish the scraping process, it goes through various steps as stated below:
 - First, the web scraper downloads the requested content from multiple websites and web pages through the use of a web crawler.
 - Since most of the data from websites is HTML and unstructured, the web scraper will parse the downloaded content and extract structured data.
@@ -55,18 +55,17 @@ For the web scraper to perform and accomplish the scraping process, it goes thro
 Web scraping is utilized in a variety of real-world scenarios, including:
 - For comparison, web scrapers can collect data from numerous e-commerce websites, particularly data relating to the pricing of a given product.
 - Content aggregators, such as news aggregators and employment aggregators, frequently use web scraping to provide updated data to their subscribers.
-- Used in collecting data for sales and marketing such as emails and phone number
-- Used in SEO tools for website optimization for search engines
-- Data retrieval for machine learning projects
+- Collecting data for sales and marketing purposes, such as emails and phone numberS.
+- Used in SEO tools for website optimization for search engines.
+- Data retrieval for machine learning projects.
 ### Web Scraping in Python
 Web scraping involves a wide variety of programming technologies and techniques. In Python, web scraping is done with various libraries, that is:
-- Requests: It is the most basic and essential library for web scraping, used for making various types of HTTP requests like GET and POST. However, with requests, it does not parse the HTML data retrieved, hence libraries like Beautiful Soup are required.
+- Requests: It is the most basic and essential library for web scraping, used for making various types of HTTP requests like GET and POST. However, with requests, it does not parse the HTML data retrieved, so libraries like Beautiful Soup are required.
 - lxml: Since the request library cannot parse HTML retrieved from webpages, lxml is required. A fast, production-quality, and high-performance HTML and XML parsing library
 - BeautifulSoup is the most extensively used scraping library and produces parse trees for reading HTML and XML data and converts incoming and outgoing documents to Unicode and UTF-8 automatically.
 - Selenium is a collection of programs rather than a single tool. It's a free testing tool for web apps that works across several browsers and platforms.
 - Scrapy is a fast, open-source web crawling system that uses selectors based on XPath to extract data from online pages.
-- Gazpacho is a modern, simple, and fast web scraping library. On this [site](https://www.analyticsvidhya.com/blog/2020/04/5-popular-python-libraries-web-scraping/), you can get
-to know more about the same.
+- Gazpacho is a modern, simple, and fast web scraping library. On this [site](https://www.analyticsvidhya.com/blog/2020/04/5-popular-python-libraries-web-scraping/), you can get to know more about the same.
 ### Gazpacho library
 In this tutorial, we will focus on how we can use the Gazpacho library to automate data extraction from web pages and websites. This is a modern web scraping Python library, stable and installed with zero dependencies. It is able to combine the functionality of the requests and BeautifulSoup libraries by importing a few classes from each.
 
@@ -79,31 +78,31 @@ pip install gazpacho
 ```
 ![Output](/engineering-education/understanding-gazpacho-in-python-and-its-application-in-webscraping/gazpacho-installation.jpg)
 
-To demonstrate  how we can use the library in web scraping, we will be scraping the  webpage of [webscraper.io](https://webscraper.io/test-sites/e-commerce/static/computers/tablets) from a dummy computer and tablet site.
+To demonstrate  how we can use the library for web scraping, we will be scraping the  webpage of [webscraper.io](https://webscraper.io/test-sites/e-commerce/static/computers/tablets) from a dummy computer and tablet site.
 
-First, we will start by importing the get method from the requests library, which will be used for  retrieving the webpage HTML data after we have specified  the URL of the webpage/website. The get () method will take the URL and extract the HTML that is attached to it, as shown.
+First, we will start by importing the get method from the requests library, which will be used for  retrieving the webpage HTML data after we have specified  the URL of the webpage/website. As shown, the get () method will take the URL and extract the HTML that is attached to it.
 ```python
 from gazpacho import get
 url ='https://webscraper.io/test-sites/e-commerce/static/computers/tablets'
 html = get(url)
 html
 ```
-A soup of text will be displayed using the show  `html` as shown below;
+A soup of text will be displayed using the show  `html` as shown below.
 ![Output](/engineering-education/understanding-gazpacho-in-python-and-its-application-in-webscraping/html-soup.jpg)
 Since the extracted HTML data is in unstructured form, we will use the **Soup** class of Gazpacho to parse and get structured data from the downloaded content.
 ```python
 from gazpacho import Soup
 soup = Soup(html)
 ```
-Now, to find some data concerning webpage contents, we will use the .find() method of the Soup object. In our case, let's find Tablet titles.
+Now, to find some data concerning webpage contents, we will use the .find() method of the Soup object. In our case, let's find tablet titles.
 ```python
 soup.find('p', {'class':'description'})
 ```
-From the above statement, the first argument `p` in single quotes represents the HTML tag we want to retrieve. The second one, `class` contains the class name we want to extract, that is `description`. The output from the above statement will be  a list of  data of all the items belonging to the HTML class `description` as shown below:
+From the above statement, the first argument `p` in single quotes represents the HTML tag we want to retrieve. The second one, `class`, contains the class name we want to extract, that is, `description`. The output from the above statement will be  a list of  data for all the items belonging to the HTML class `description`, as shown below:
 Output
 ![Output](/engineering-education/understanding-gazpacho-in-python-and-its-application-in-webscraping/table-titles.jpg)
 
-From the above output, we can get text data from the structured HTML data, using the `.text` attribute. Let's get more details concerning the tablets, that is, Title, Description, and the prices by defining a function to display the structured and clear HTML data as shown below:
+From the above output, we can get text data from the structured HTML data, using the `.text` attribute. Let's get more details concerning the tablets, that is, titles, descriptions, and prices, by defining a function to display the structured and clear HTML data as shown below:
 
 ```python
 captions= soup.find("div", {'class':'caption'},partial=True)
@@ -122,7 +121,7 @@ From the above, we have used the partial name of the class in the tag and set th
 Output
 ![Output](/engineering-education/understanding-gazpacho-in-python-and-its-application-in-webscraping/final_output.jpg)
 
-Full combined code:
+Complete combined code:
 ```python
 from gazpacho import get , Soup
 import pandas as pd
