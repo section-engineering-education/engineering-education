@@ -32,7 +32,7 @@ Reading data and processing it offline is easy as compared to online. It is beca
 
 Similarly, the steps that are used to record and process data offline is shown below:
 
-![Offline processing](/engineering-education/reading-and-processing-android-sensor-data-using-python-with-csv-read/image-four)
+![Offline processing](/engineering-education/reading-and-processing-android-sensor-data-using-python-with-csv-read/image-four.png)
 
 In this tutorial, we will look at reading and processing data offline.
 
@@ -153,6 +153,8 @@ The subplot function takes the number of rows, columns and the plot position as 
 You can further analyze and get the approximated and detailed coefficients of the data.
 
 ![subplots of the data](/engineering-education/reading-and-processing-android-sensor-data-using-python-with-csv-read/image-eleven.png)
+
+The complete source code for this implementation can be found [here](https://github.com/josephodhis/python-project)
 
 ### Conclusion
 Collecting data using an android mobile sensor is widely applicable in the science and data analysis fields. The sensors are readily available on mobile phones. You can use them at any time. Also, data collection using these sensors and the third party application is very easy. You can apply the collected data in machine learning and deep learning.
