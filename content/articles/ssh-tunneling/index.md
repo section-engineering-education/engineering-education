@@ -63,7 +63,7 @@ ssh -L 8888:192.168.1.3:8080 44.11.22.33
 - 8888 is for local port
 - 192.168.1.3 is for Remote IP address
 - 8080 is for Remote port
-- 44.11.22.33 &rarr; Public ssh server ip address
+- 44.11.22.33 is for Public ssh server ip address
 
 Local port forwarding syntax
 
