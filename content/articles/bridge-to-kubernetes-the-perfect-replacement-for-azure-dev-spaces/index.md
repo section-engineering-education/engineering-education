@@ -1,7 +1,23 @@
-## Bridge to Kubernetes: The Perfect Replacement for Azure Dev Spaces
+---
+layout: engineering-education
+status: publish
+published: true
+url: /bridge-to-kubernetes-the-perfect-replacement-for-azure-dev-spaces/
+title: Bridge to Kubernetes against Dev Spaces
+description: 
+This article discusses Bridge to Kubernetes and Dev Spaces and gives an overview of how Bridge to Kubernetes works. It also explains why Bridge to Kubernetes is a perfect replacement for Dev Spaces.
+author: bridget-mwikali
+date: 2022-02-13T00:00:00-09:30
+topics: []
+excerpt_separator: <!--more-->
+images:
+
+  - url: /engineering-education/bridge-to-kubernetes-the-perfect-replacement-for-azure-dev-spaces/hero.jpg
+    alt: Bridge to Kubernetes against Dev Spaces Hero Image
+---
 
 The advancement of technology has simplified software development over time. The world is now shifting towards microservices as the basis for creating apps and software to bypass the shortcomings of large-scale web applications. 
-
+ <!--more-->
 Azure Dev Spaces helped make this transition possible, but its limitations meant that it would not be an ideal option for the future.
 
 Bridge to Kubernetes is becoming the perfect replacement for Azure Dev Spaces. They both share similar roles of making debugging and integration testing smooth in the Kubernetes setup. Nevertheless, they also have their differences.
@@ -77,7 +93,7 @@ It is notable how advantageous replacing Azure Dev Spaces with Bridge to Kuberne
 
 The developer enjoys more control and can write, debug, and test their application's code while still connected to the rest of the services. This workflow ensures that developers save on the costs and complexities of dealing with extras like Dockerfile. The Bridge to Kubernetes setup is favourable when dealing with extensive applications.
 
-### Final thoughts
+### Conclusions
 Azure Dev Spaces and Bridge to Kubernetes are essential application development tools. They are critical during the development and deployment stages because they help write and test the code. However, Azure Dev Spaces' limitations have made it a liability in microservice development, paving the way for Bridge to Kubernetes.
 
 Bridge to Kubernetes comes to solve the shortcomings noted in Azure Dev Spaces, making microservice app development more efficient. Notably, it eliminates the manual configurations seen in Dev Spaces by introducing an automated approach. 
@@ -85,3 +101,6 @@ Bridge to Kubernetes comes to solve the shortcomings noted in Azure Dev Spaces, 
 Additionally, it improves debugging speed, making code processing quicker during application and software development.
 
 Bridge to Kubernetes is also simpler to operate and offers greater flexibility than Azure Dev Spaces. Undoubtedly, Bridge to Kubernetes is the perfect replacement for Azure Dev Spaces.
+
+---
+Peer Review Contributions by: [Mercy Meave](/engineering-education/authors/mercy-meave/)
