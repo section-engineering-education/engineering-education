@@ -1,4 +1,21 @@
-GraphQL is a query language for APIs that allow a client and a server to exchange data. This allows you to structure data-driven applications much more flexibly and efficiently than the REST AND SOAP approach. GraphQL gives a detailed and understandable representation of the data through an API. It enables clients to request only the data they require rather than the whole API data structure. This helps in making it easier and faster to modify APIs over time and gives developers access to robust development tools. It also gives developers more control over how they use data in their apps.
+---
+layout: engineering-education
+status: publish
+published: true
+url: /implement-graphql-api-using-golang-and-mongodb-database/
+title: How to Implement a GraphQL API Server Using Go lang and MongoDB
+description: In this tutorial, the reader would learn how to Implement a GraphQL API server using Go lang and MongoDB
+author: joakim-gakure
+date: 2022-02-013T01:00:00-00:42
+topics: [Languages]
+excerpt_separator: <!--more-->
+images:
+  - url: /engineering-education/implement-graphql-api-using-golang-and-mongodb-database/hero.jpg
+    alt: How to Implement a GraphQL API server using Go lang and MongoDB Hero Image
+---
+GraphQL is a query language for APIs that allow a client and a server to exchange data. 
+<!--more-->
+This allows you to structure data-driven applications much more flexibly and efficiently than the REST AND SOAP approach. GraphQL gives a detailed and understandable representation of the data through an API. It enables clients to request only the data they require rather than the whole API data structure. This helps in making it easier and faster to modify APIs over time and gives developers access to robust development tools. It also gives developers more control over how they use data in their apps.
 
 GraphQL can be implemented with different languages and databases of choice, such as Golang and MongoDB. Go is a general-purpose language, meaning it can be used for many different things. You can use Go to build web apps, microservices, cloud services, APIs, DevOps tooling, and any application you can think of. This means you will probably use Go to build a server-side-based application. Just like Node.js, you will need the right tools to be able to handle your server-side code.
 After developing your application with Go, you might need a database to store data, such as the NoSQL MongoDB database. MongoDB is a document-oriented database management system, classified as a NoSQL database. It stores data in JSON-like documents.
@@ -7,9 +24,8 @@ While interacting with a web-based application, you might not be aware of the da
 This guide runs a GraphQL server using Golang and a MongoDB database. This Go GraphQL server will use [gqlgen](https://gqlgen.com/) Framework to bootstrap a GraphQL boilerplate code.
 
 ### Table of contents
-- [Table of contents](#table-of-contents)
 - [Prerequisites](#prerequisites)
-- [What is gqlgen](#what-is-gqlgen)
+- [What is gqlgen?](#what-is-gqlgen)
 - [Setting up Go GraphQL server using gqlgen](#setting-up-go-graphql-server-using-gqlgen)
 - [Setting up a GraphQL API with MongoDB database](#setting-up-a-graphql-api-with-mongodb-database)
 - [Setting up the MongoDB database](#setting-up-the-mongodb-database)
@@ -23,7 +39,7 @@ To fully understand this guide, it's essential to have:
 - Some basic knowledge of writing and running Golang code.
 - Fundamental knowledge of how GraphQL APIs work will also be important.
 
-### What is gqlgen
+### What is gqlgen?
 When creating GraphQL API with Go, you need first to decide which libraries to use to set it out. Go has diffrent libraries that help you set a minimal type-safe server. This include [gophers](https://github.com/graph-gophers/graphql-go), [gqlgen](https://github.com/99designs/gqlgen), [thunder](https://github.com/samsarahq/thunder) and [graphql-go](https://github.com/graphql-go/graphql). This guide will focus on using the gqlgen library. Checkout this [guide](https://gqlgen.com/feature-comparison/) to glance at the feature comparison between these Go GraphQL Implementation libraries.
 
 [Gqlgen](https://github.com/99designs/gqlgen) is a Go package that allows you to create and generate Type-safe GraphQL servers. Gqlgen makes the building of GraphQL server intuitive and straightforward. It adds features such as;
@@ -454,3 +470,6 @@ query Movies{
 This guide has used gqlgen to set up a GraphQL API. Gqlgen allows you to bootstrap a GraphQL code with a sample GraphQL API. I hope you have found how simple it is to set up a basic GraphQL API without writing the whole code from scratch. You try out using gqlgen and connect your GraphQL API to other databases.
 
 Happy coding!
+
+---
+Peer Review Contributions by: [Jethro Magaji](/engineering-education/authors/jethro-magaji/)
