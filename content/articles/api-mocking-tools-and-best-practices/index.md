@@ -9,8 +9,12 @@ This article looks into API mocking and compares mock APIs to real backends. It 
 ### An overview of API mocking
 API mocking refers to imitations of the services and processes of a real API server to yield realistic mock API results for requests. Mock APIs recreate similar data representations as those displayed on data applications for real data. The objective is to simulate reality for precise assessment of the real-world applications of the software. Developers are keen to use API mocking to virtually recreate and assess the functioning of apps when deployed into the real world.
 
+You can interact with mock APIs the same way you do with real APIs. However, it is significant to note that mocks do not provide authentic data interactions.
+
 ### How does API mocking work? 
 Some modifications are necessary to recreate a simulation of the interactions of a created application or software with users. New software that behaves like an original API replaces the authentic version of the API. But this new software lacks several functional and non-functional components of the real API. Thus, it can only simulate the results based on the requests but not produce the actual data picture.
+
+A mock API server imitates a real API server to produce realistic API responses to the arriving requests. The responses can be static or dynamic and help mimic the actual data that a real API would return. Thus, the mock API system can then match the simulated data to the schema with objects, data types, and arrays to create a predictive picture of what would happen in a real API scenario.
 
 ### Real backends vs. mock APIs
 The primary difference between real backends and mock APIs is that the former relies on responses from a real API server while the latter imitates those responses. But there are other differenciating features between real backends and mock APIs as discussed below.
@@ -55,10 +59,10 @@ There are several API mocking best practices that you can follow to leverage the
 #### Karate
 [Karate](https://github.com/intuit/karate/blob/master/karate-demo/src/test/java/mock/proxy/demo-mock.feature) is an open-source tool that combines mocks, performance testing, and API test automation into one framework. It supports native JavaScript Object Notation (JSON) and is easy to start. Also, it requires little coding. But this tool lacks IntelliSense support in IDE. It is difficult to debug the code, and it uses its own scripting language.
 
-### Moq
+#### Moq
 [Moq](https://github.com/moq/moq) is a mocking framework for C#/.NET. It has a good design and a consistent interface. But it does not perform ordered expectations and only mocks interfaces and abstract members.
 
-### SoapUI Mocks
+#### SoapUI Mocks
 [SoapUI](https://www.soapui.org/docs/soap-mocking/working-with-mockservices/) is a popular mock tool when working with the start of authority (SOA) record services. Because it functions on an open-source code methodology, a developer can edit the code freely. It also offers transparency, which enhances technicalities of the tool among the developer community. It is simple to use and allows for additional configuration to boost its speed. On its downside, SoapUI Mocks lacks support for Java Messaging Service (JMS). It also has some stability issues. Besides, its documentation requires further improvement to simplify it for first-time users.
 
 ### Conclusion
