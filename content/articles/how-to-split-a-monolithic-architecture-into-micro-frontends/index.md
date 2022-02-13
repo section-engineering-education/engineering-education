@@ -1,9 +1,16 @@
 ﻿### Introduction
-In developing applications, time, effort, and complexity are highly considered. A good application development strategy should ensure that the development time is greatly reduced and less effort is involved while keeping the complexity of the application minimal.
+Time, effort and complexity are highly considered in developing applications. Therefore, a good application development strategy should ensure that the development time is significantly reduced and less effort is involved while keeping the complexity of the application minimal.
 
-However, in the real world, applications tend to grow in size; hence more effort is required, and the complexity of the application increases. A well-developed application should be responsive and highly scalable. Unlike [monolithic architecture](https://www.mulesoft.com/resources/api/microservices-vs-monolithic), applications have huge components and complex logic. Maintaining or upgrading such huge applications is challenging, and also integrating a new team can be a difficult task.
+In the real world, applications tend to grow in size; hence more effort is required, and the complexity of these applications increases. Therefore, a well-developed application should be responsive and highly scalable. 
 
-A better solution would be breaking down a huge application into smaller independent applications known as [micro-frontends](https://single-spa.js.org/docs/microfrontends-concept/). They are easier to manage, scale, and be assigned to separate teams. This guide draws its attention to micro-frontends and the advantages they offer compared to monolithic applications. We will also use a demo application to illustrate how micro-frontends works.
+Unlike [monolithic architecture](https://www.mulesoft.com/resources/api/microservices-vs-monolithic), applications have huge components and complex logic. Maintaining or upgrading such huge applications is challenging, and also integrating a new team can be a difficult task.
+
+A better solution would be breaking down an application into smaller independent applications known as [micro-frontends](https://single-spa.js.org/docs/microfrontends-concept/). 
+
+Micro-frontends are easier to manage, scale, and assign to separate teams. This article introduces the reader to micro-frontends and their advantages compared to monolithic applications. 
+
+
+We will also use a demo application to illustrate how micro-frontends works.
 
 ### Prerequisites
 - [Npm](https://docs.npmjs.com/cli/v8/commands/npm-install) packages installed.
@@ -13,15 +20,25 @@ A better solution would be breaking down a huge application into smaller indepen
 - A good understanding of [Angular.js](https://docs.angularjs.org/tutorial) and [npm](https://docs.npmjs.com/cli/v6/commands/npm) commands.
 
 ### Understanding monolith architecture and micro-frontend architecture
-Monoliths refer to a huge block of codes containing several modules bundled into one huge application. The modules in a monolith application are tightly coupled with each other. This meant that the application logic and the business login were combined and deployed as a single unit. A monolith application is built on a unified code. They contain three tiers of software architectures: the user interface, the database, and the server-side application. The monolithic applications are challenging to develop as they pile pressure on the developers. The development time is huge enough since the architecture does not support independent development. In addition, it is challenging to use different programming languages on the same application as the monoliths do not support it. In the worst case, if the code breaks, the whole application crumbles.
+Monolith architecture refers to a vast code block containing several modules bundled into a single application. 
 
-Micro-frontend is a design approach where a given application is split into multiple frontend applications. The independent developers can work on each coding task, significantly reducing the development time and process. Multiple development teams can work on the same frontend code but independently. The code in micro-frontend applications is more maintainable, manageable, and independent. The application's code updates can be performed incrementally. Also, improvements can be made on given modules without breaking the entire application codebase.
+The modules in a monolith application are tightly coupled with each other, meaning that the application logic and the business login are combined and deployed as a single unit. 
+
+A monolith application is built on a unified code. It contains three tiers of software architectures; the user interface, the database, and the server-side application. 
+
+Developing a monolithic application is challenging as it piles pressure on the developers. It takes longer to develop since the architecture does not support independent development. In addition, it is challenging to use different programming languages on the same application.
+
+Micro-frontend is a design approach where an application is split into multiple frontend applications. Then, independent developers can work on each application. This approach significantly reduces the development time and process. 
+
+Multiple development teams can work on the same frontend code independently. As a result, the code in micro-frontend applications is more maintainable, manageable, and independent. 
+
+The application's code updates can be performed incrementally. Nevertheless, improvements can be made on specific modules without breaking the entire application codebase.
 
 ### Features of micro-frontends
 - Each frontend in the micro-frontend application is designed to solve a specific problem or provide a unique feature.
 - Independent team members are assigned to implement a frontend in an application.
 - The frontends cannot share the logic since they are independent of each other.
-- A given assigned team can manage a given frontend.
+- A given team can manage a given frontend.
 
 ### Advantages of micro-frontends
 - **Applications are small** - In micro-frontends, a large application is split into small sections, pages, or even features. This makes the entire application small hence it would not take more storage space and memory.
@@ -131,7 +148,7 @@ And the `css` file will be:
 }
 ```
 
-We will proceed to integrate our host application with the micro-frontends that we have created. To achieve this, we need the [module federation](https://webpack.js.org/concepts/module-federation/) plug-in installed.  The plug-in assists in loading micro-frontend applications into another application. To install the plug-in in both of our applications, we will execute the below commands in the terminal window:
+We will proceed to integrate our host application with the micro-frontends that we have created. To achieve this, we need the [module federation](https://webpack.js.org/concepts/module-federation/) plug-in installed. The plug-in assists in loading micro-frontend applications into another application. To install the plug-in in both of our applications, we will execute the below commands in the terminal window:
 
 ```bash
 $ ng add @angular-architects/module-federation --project administrator --port 3000
