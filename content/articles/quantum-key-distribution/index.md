@@ -49,10 +49,8 @@ DV-QKD protocols are the most practical and easiest to understand. Let's address
 #### BB84 protocol
 This was the first QKD protocol to be developed. Consider a scenario where *Alice* and *Bob* are attempting to establish a secret key. Eavesdropper *Eve* tries to gain knowledge of the key during this process.
 
-*Alice* generates a sequence of bits using classical means. She then randomly encodes each bit of the sequence in a polarization state. She does this by choosing Standard or Hadamard bases. She sends the encoded bits to *Bob* via a quantum channel. *Bob* measures each bit in the sequence by choosing a basis at random.
-<!--
-Provide external links to explain terms such as Standard bases, and Hadamard bases
--->
+*Alice* generates a sequence of bits using classical means. She then randomly encodes each bit of the sequence in a polarization state. She does this by choosing [Standard](https://www.statlect.com/matrix-algebra/standard-basis) or [Hadamard](https://en.wikipedia.org/wiki/Hadamard_transform) bases. She sends the encoded bits to *Bob* via a quantum channel. *Bob* measures each bit in the sequence by choosing a basis at random.
+
 Using a classical channel, *Alice* confirms that *Bob* has received every bit she sent. After an affirmative confirmation, they tell each other what bases they used for encoding and decoding. If the bases agree, they both have the same bit values. If they chose different bases, there is only a 50% chance the bits match. They discard the bits in which encoding and decoding bases differed. This leaves on average half of the number of bits transmitted. A subset of the remaining bits is used to confirm no eavesdropping occurred. That subset is discarded afterwards and the remaining bits now become the secret key.
 
 #### B92 protocol
@@ -86,9 +84,10 @@ QKD is also future-proof. This means that it is impossible to store information 
 *Eve* can always pose as *Bob* to *Alice* and as *Alice* to *Bob* during exchange of keys. This is especially possible when the two legitimate communicating parties are using a non-authenticated classical channel.
 
 It is also vital to note that QKD faces hardware issues. A substantial change of current hardware infrastructure is needed in order to realize a practical QKD network. A single change in a protocol may necessitate a change of hardware. This in the long run may end up being very costly.
-<!--
-Please add a conclusion section to your article.
--->
+
+### Conclusion
+In a world where technology seems to get only better, creative solutions are needed in order to secure our communications online. QKD promises to be such a solution. This approach will be a pivotal element of our online information security, especially when universal quantum computers get here. 
+
 ### Further reading
 - [Attacks on quantum key distribution protocols that employ non-ITS authentication](https://arxiv.org/pdf/1209.0365)
 
