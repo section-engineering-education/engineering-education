@@ -1,5 +1,21 @@
-Authentication is a mechanism put in place to determine if a user is who they say they are, either through a username and password-based system or any other form of authentication system.
+---
+layout: engineering-education
+status: publish
+published: true
+url: /integrtesting-for-broken-authentication-in-web-apps/
+title: Testing For Broken Authentication in Web Applications
+description: This article will be an introduction to understanding broken authentication in web applications. We will learn various methods to test broken authentication, understand its impact, and learn how to prevent it.
+author: shuaib-oseni
+date: 2022-02-14T00:00:00-00:00
+topics: [Security]
+excerpt_separator: <!--more-->
+images:
 
+  - url: /engineering-education/integrtesting-for-broken-authentication-in-web-apps/hero.png
+    alt: Testing For Broken Authentication in Web Applications Image
+---
+Authentication is a mechanism put in place to determine if a user is who they say they are, either through a username and password-based system or any other form of authentication system.
+<!--more-->
 In this article, we'll be going through how to test for broken authentication, their impact, and how to mitigate them.
 
 ### Pre-requisites
@@ -184,5 +200,5 @@ To summarize:
 - [Portswigger](https://portswigger.net/web-security/authentication)
 - [Owasp](https://owasp.org/Top10/A07_2021-Identification_and_Authentication_Failures/)
 
-
-
+---
+Peer Review Contributions by: [Srishilesh P S](/engineering-education/authors/srishilesh-p-s/)
