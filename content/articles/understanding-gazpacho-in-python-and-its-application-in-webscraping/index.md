@@ -53,21 +53,21 @@ For the web scraper to perform and accomplish the scraping process, it goes thro
 - When the structured data has been stored, the web scraper will analyze the data obtained.
 #### Applications for Web Scraping
 Web scraping is utilized in a variety of real-world scenarios, including:
-- For comparison, web scrapers can collect data from numerous e-commerce websites, particularly data relating to the pricing of a given product.
+- For comparison, web scrapers can collect data from numerous e-commerce websites, particularly data relating to the pricing of a product.
 - Content aggregators, such as news aggregators and employment aggregators, frequently use web scraping to provide updated data to their subscribers.
-- Collecting data for sales and marketing purposes, such as emails and phone numberS.
+- Collecting data for sales and marketing purposes, such as emails and phone numbers.
 - Used in SEO tools for website optimization for search engines.
 - Data retrieval for machine learning projects.
 ### Web Scraping in Python
 Web scraping involves a wide variety of programming technologies and techniques. In Python, web scraping is done with various libraries, that is:
 - Requests: It is the most basic and essential library for web scraping, used for making various types of HTTP requests like GET and POST. However, with requests, it does not parse the HTML data retrieved, so libraries like Beautiful Soup are required.
 - lxml: Since the request library cannot parse HTML retrieved from webpages, lxml is required. A fast, production-quality, and high-performance HTML and XML parsing library
-- BeautifulSoup is the most extensively used scraping library and produces parse trees for reading HTML and XML data and converts incoming and outgoing documents to Unicode and UTF-8 automatically.
+- Beautiful Soup is the most extensively used scraping library and produces parse trees for reading HTML and XML data and converts incoming and outgoing documents to Unicode and UTF-8 automatically.
 - Selenium is a collection of programs rather than a single tool. It's a free testing tool for web apps that works across several browsers and platforms.
 - Scrapy is a fast, open-source web crawling system that uses selectors based on XPath to extract data from online pages.
 - Gazpacho is a modern, simple, and fast web scraping library. On this [site](https://www.analyticsvidhya.com/blog/2020/04/5-popular-python-libraries-web-scraping/), you can get to know more about the same.
 ### Gazpacho library
-In this tutorial, we will focus on how we can use the Gazpacho library to automate data extraction from web pages and websites. This is a modern web scraping Python library, stable and installed with zero dependencies. It is able to combine the functionality of the requests and BeautifulSoup libraries by importing a few classes from each.
+In this tutorial, we will focus on how we can use the Gazpacho library to automate data extraction from web pages and websites. This is a modern web scraping Python library, stable and installed with zero dependencies. It can combine the functionality of the requests and Beautiful Soup libraries by importing a few classes from each.
 
 To use this library, check if Python is installed on your machine by typing the command `"python"` in the command prompt. If it is not installed, go to this [page](https://www.python.org/downloads/.) to download and install it.
 Once Python is installed and running, we can then install the library using the pip command below.
@@ -78,16 +78,16 @@ pip install gazpacho
 ```
 ![Output](/engineering-education/understanding-gazpacho-in-python-and-its-application-in-webscraping/gazpacho-installation.jpg)
 
-To demonstrate  how we can use the library for web scraping, we will be scraping the  webpage of [webscraper.io](https://webscraper.io/test-sites/e-commerce/static/computers/tablets) from a dummy computer and tablet site.
+To show how we can use the library for web scraping, we will scrape the webpage of [webscraper.io](https://webscraper.io/test-sites/e-commerce/static/computers/tablets) from a dummy computer and tablet site.
 
-First, we will start by importing the get method from the requests library, which will be used for  retrieving the webpage HTML data after we have specified  the URL of the webpage/website. As shown, the get () method will take the URL and extract the HTML that is attached to it.
+First, we will start by importing the get method from the requests library, which will be used for getting the webpage HTML data after the URL of the webpage has been specified. As shown, the get () method will take the URL and extract the HTML that is attached to it.
 ```python
 from gazpacho import get
 url ='https://webscraper.io/test-sites/e-commerce/static/computers/tablets'
 html = get(url)
 html
 ```
-A soup of text will be displayed using the show  `html` as shown below.
+It will display a soup of text using the show  `html` as shown below.
 ![Output](/engineering-education/understanding-gazpacho-in-python-and-its-application-in-webscraping/html-soup.jpg)
 Since the extracted HTML data is in unstructured form, we will use the **Soup** class of Gazpacho to parse and get structured data from the downloaded content.
 ```python
@@ -98,11 +98,11 @@ Now, to find some data concerning webpage contents, we will use the .find() meth
 ```python
 soup.find('p', {'class':'description'})
 ```
-From the above statement, the first argument `p` in single quotes represents the HTML tag we want to retrieve. The second one, `class`, contains the class name we want to extract, that is, `description`. The output from the above statement will be  a list of  data for all the items belonging to the HTML class `description`, as shown below:
+From the above statement, the first argument `p` in single quotes represents the HTML tag we want to retrieve. The second one, `class`, contains the class name we want to extract; `description`. The output from the above statement will be  a list of  data for all the items belonging to the HTML class `description`, as shown below:
 Output
 ![Output](/engineering-education/understanding-gazpacho-in-python-and-its-application-in-webscraping/table-titles.jpg)
 
-From the above output, we can get text data from the structured HTML data, using the `.text` attribute. Let's get more details concerning the tablets, that is, titles, descriptions, and prices, by defining a function to display the structured and clear HTML data as shown below:
+From the above output, we can get text data from the structured HTML data, using the `.text` attribute. Let's get more details concerning the tablets; titles, descriptions, and prices, by defining a function to display the structured and clear HTML data as shown below:
 
 ```python
 captions= soup.find("div", {'class':'caption'},partial=True)
