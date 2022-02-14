@@ -144,7 +144,7 @@ In this case, we will build the entire tree and stop branching out whenever we h
 
 **Call tree without Memoization**
 
-![fibo](https://user-images.githubusercontent.com/61587290/148641468-cf520425-9d4c-4742-80d9-f104e3343f60.jpeg)
+https://github.com/gatwirival/engineering-education/blob/understanding-fibonacci-memoization-time-complexity-in-javascript/content/articles/understanding-fibonacci-memoization-time-complexity-in-javascript/calltree.jpeg
 
 In our tree, we will have one and two as our base cases. They will return 1 to the parent. We then add the two values returned to the call/parent. 
 
@@ -152,7 +152,7 @@ In our tree, we will have one and two as our base cases. They will return 1 to t
 
 We will now add up our right and left children as we go up the tree. We will add the values until we reach the top of our tree, the final result is 13  as we indicated at the beginning that the `fib 7-> 13`.
 
-![fibb](https://user-images.githubusercontent.com/61587290/148641505-2038c776-4911-4c6f-a4c3-0eb26f2f6866.jpeg)
+https://github.com/gatwirival/engineering-education/blob/understanding-fibonacci-memoization-time-complexity-in-javascript/content/articles/understanding-fibonacci-memoization-time-complexity-in-javascript/returntree.jpeg
 
 #### Time complexity
 Classic recursive implementation usually has `0(2^n)` time complexity as shown above. For us to find the time complexity of our algorithm let's ask ourselves how many times will we be calling `fib()`?
@@ -212,7 +212,7 @@ return memo[n];
 - When we also check our test cases we see our runtime as improved greatly.
 
 #### Tree implementation
-![memo](https://user-images.githubusercontent.com/61587290/148676929-8c8a84f9-0fd0-4c0f-bde5-3562d7be6859.jpeg)
+https://github.com/gatwirival/engineering-education/blob/understanding-fibonacci-memoization-time-complexity-in-javascript/content/articles/understanding-fibonacci-memoization-time-complexity-in-javascript/memoized.jpeg
 
 The  nodes with the red color around them are  returning the memoized result. If you ignore them, as you can see the algorithm gets called once for each value from 0 to n.
 
