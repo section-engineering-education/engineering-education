@@ -1,7 +1,18 @@
 In android, permission handling can be done by the help of `permissions API`. With the help of Google's accompanist libraries, things are made more easy. 
 In this tutorial, we will learn on how we can handle permissions in Jetpack compose.
+### Table of Contents
+- [Prerequisites](#prerequisites)
+- [Goals](#goals)
+- [Terminologies](#terminologies) 
+- [What are permissions and when are they used?](#what-are-permissions-and-when-are-they-used)
+- [Creating a Compose project](#step-one-creating-a-new-compose-project)
+- [Setting up dependency](#step-two-setup-the-dependency)
+- [Enabling permissions on Mainifest](#step-three-enable-permissions-on-manifest)
+- [Implementing Single Permissions](#step-four-implementing-single-permissions)
+- [Working with multiple Permissions](#working-with-multiple-permissions)
+- [Conclusion](#conclusion)
 
-### Prerequisites
+### Prerequisites 
 To follow along with this tutorial, the reader should:
 - Have installed [Android Studio Arctic Fox](https://developer.android.com/studio#downloads) and know how to create Compose projects
 - Have an understanding of [Kotlin](https://developer.android.com/kotlin) Programming Language.
@@ -24,19 +35,20 @@ Let's get started :)
 In android, permissions define what an app can access in a user's phone. Due to security measures, an app cannot access some of the phone's data. This requires the app to request the user to allow or deny the app access. Accepting the permissions will allow the app to access some of the data like contacts, SMS etc.
 
 They are used whenever the app needs user authorization to access hardware or data that is not accessible by default.
-### Step 1: Creating a new compose project
+### Step One: Creating a new compose project
 To create a new Compose project, launch Android studio and select `New Project` then `Compose Activity`. Name it `PermissionsDemo` and click on finish to build the project. Wait till the building is finished.
 
 ![Create Project](/engineering-education/permission-handling-in-jetpack-compse/create-project.png)
 
-### Step 2: Setup the dependency
+### Step Two: Setup the dependency
+Here we are going to add the `accompanist-permissions` dependency.
 Add this dependency in the `build.gradle` file.
 ```gradle
 implementation 'com.google.accompanist:accompanist-permissions:0.21.1-beta'
 ```
 In this tutorial, we will use the [Google Accompanist]() library to handle permissions. There are some other ways you can use to handle but they are much more complicated. Using the `accompanist` library will make it simpler.
 
-### Step 3: Enable permissions on Manifest
+### Step Three: Enable permissions on Manifest
 We will start by implementing single permission. Later on, see how you can do this for multiple permissions.
 
 To enable permissions, add the following on the Manifest file:
@@ -52,7 +64,7 @@ To enable permissions, add the following on the Manifest file:
 </manifest>
 ```
 
-### Step 3: Implementing single permissions
+### Step Four: Implementing single permissions
 Create a function and name it `SinglePermission()`. In this function, we will only request permission to read the phone's external storage.
 
 In this function, define the permission you want to request the user to allow. 
@@ -159,7 +171,7 @@ fun SinglePermission() {
 ```
 >NOTE: Remember to annotate these functions with `@ExperimentalPermissionsApi` to remove the highlighted error. This indicates that the permissions API is at the experimental level and is subject to change.
 
-### Step 4: Working with multiple permissions
+### Working with multiple permissions
 Handling multiple permissions is almost similar to handling single permissions.
 
 We only declare the permissions in a list for this case. This is done as follows:
@@ -338,7 +350,7 @@ class MainActivity : ComponentActivity() {
     }
 }
 ```
-
+You can find this project on [Github](https://github.com/tanscy-cassie/PermissionsHandlineDemo.git). Also, you can download the sample APK from [here](https://docs.google.com/uc?export=download&id=1dfgBw25jBmqoALN4o8aylZKue1xU2pGQ)
 ### Conclusion
 Using the `accompanist` library to handle permission requests is way much easier. The `accompanist` is a collection of many libraries.  They are meant to provide `Jetpack Compose` with features that are required by developers.
 
@@ -346,3 +358,5 @@ Permission handling is effective if we check the permissions state when the app 
 This will help to avoid awkward situations where a user can minimize the app, disable the permissions in app settings and return back to the app. This will lead to the app not properly functioning. 
 
 Keep Composing :)
+
+
