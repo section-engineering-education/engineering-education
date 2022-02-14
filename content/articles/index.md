@@ -1,5 +1,21 @@
-### Introduction
-The concept of "data drawn from some probability distribution" underpins many statistics and machine learning techniques. A probability distribution is a function defining all possible values and probabilities for a random variable at a specified range. The parameters of the underlying distribution are used to define parametric methods (or algorithms).
+---
+layout: engineering-education
+status: publish
+published: true
+url: /km-in-ml/
+title: Introduction to Kernel Methods in Machine Learning 
+description: In this tutorial, we will learn about kernel methods in machine learning and how to use them to solve classification and regression problems.
+author: brian-kiplangat
+date: 2022-02-14T00:00:00-01:50
+topics: [Languages]
+excerpt_separator: <!--more-->
+images:
+  - url: /engineering-education/km-in-ml/hero.png
+    alt: Introduction to Kernel Methods in Machine Learning 
+---
+The concept of "data drawn from some probability distribution" underpins many statistics and machine learning techniques. 
+<!--more-->
+A probability distribution is a function defining all possible values and probabilities for a random variable at a specified range. The parameters of the underlying distribution are used to define parametric methods (or algorithms).
 
 However, the assumed model for the likelihood may not be correct; the "actual" distribution may be skewed, multimodal, with different components, and so on. In general, the scientist analyzing the data is unaware of this. This article aims to demonstrate kernels' fundamental concepts and it's application in statistics and machine learning.
 
@@ -14,7 +30,6 @@ However, the assumed model for the likelihood may not be correct; the "actual" d
 	- [4. Principle Component Analysis (PCA)](#4-principle-component-analysis-pca)
 	- [5. Spectral clustering](#5-spectral-clustering)
 - [Conclusion](#conclusion)
-
 
 ### Prerequisites
 - The Reader should have basic knowledge of machine learning. [Click here](https://www.digitalocean.com/community/tutorials/an-introduction-to-machine-learning) to read more about machine learning basics.
@@ -93,4 +108,5 @@ where `np` is the number of points assigned to cluster `p` during the initiation
 ### Conclusion
 This article is not exhaustive; rather, it is intends to provide the reader with a basic understanding of what a kernel method is and a brief overview of the different types of kernel methods. However, reading this article will inspire the reader to take their first step into the world of Machine Learning (ML).
 
-
+---
+Peer Review Contributions by: [Jethro Magaji](/engineering-education/authors/jethro-magaji/)
