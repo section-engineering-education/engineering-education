@@ -6,7 +6,7 @@ url: /client-side-auth-with-express-cookie-parser/
 title: Client-side Authentication with Express Cookie Parser
 description: This article will teach you how to create a cookie-based authentication system with Express. It will also show you how to secure your cookies using a session secret.
 author: arafat-olayiwola
-date: 2022-02-11T00:00:00-13:30
+date: 2022-02-14T00:00:00-01:20
 topics: [Languages]
 excerpt_separator: <!--more-->
 images:
@@ -80,7 +80,7 @@ Browser cookies have different properties that developers can exploit. Each attr
 The following are some properties of cookies:
 
 #### 1. Name
-This is the name given to the particular cookie saved in the browser. This can be filed through the `key` in the cookie data.
+This is the name given to the particular cookie saved in the browser. This can be filed using the `key` in the cookie data.
 
 #### 2. Value
 In the same instance, it stores the value of the cookie data. This is the main information that we want the browser to remember.
