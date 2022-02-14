@@ -79,7 +79,7 @@ After starting up the web application, we'll proceed to the login page for testi
 
 ![login page](/engineering-education/testing-for-broken-authentication-in-web-apps/login.png)
 
-We can go ahead to create an account or login with the admin credentials, which is:
+We can go ahead to create an account or log in with the admin credentials, which is:
 
 - Email: `admin@juice-sh.op`
 - Password: `admin123`
@@ -88,7 +88,7 @@ Now, let's check how the application reacts if we provide incorrect login creden
 
 ![login error](/engineering-education/testing-for-broken-authentication-in-web-apps/error.png)
 
-From the above screenshot, an error message is displayed. Some applications simply come out to tell you the particular field that contains the wrong credentials - something like `incorrect password` where the username provided is correct, or `invalid username` where the password is correct, but doesn't match the username provided.
+From the above screenshot, an error message is displayed. Some applications simply come out to tell you the particular field that contains the wrong credentials - something like an `incorrect password` where the username provided is correct, or an `invalid username` where the password is correct but doesn't match the username provided.
 
 This is a poor practice because it allows user enumeration.
 
@@ -103,7 +103,7 @@ Next, we click on the `Forgot Password?` option:
 
 ![password reset](/engineering-education/testing-for-broken-authentication-in-web-apps/password-reset.png)
 
-Again, we provided an incorrect email and noticed that we were unable to click or fill other parts of the form.
+Again, we provided an incorrect email and noticed that we were unable to click or fill out other parts of the form.
 
 Interesting!
 
@@ -115,7 +115,7 @@ After providing a valid email address, the form allows us to click and fill in o
 
 Now that the application just confirmed the validity of the email address we provided, the next field is to fill the security question `Mother's maiden name?`.
 
-With the use of [open source Intelligence](https://www.recordedfuture.com/open-source-intelligence-definition/), an attacker can easily figure out the answer to this question. In some cases, it just might be the user's last name. Then, the attacker moves on to change the password of that user.
+With the use of [open-source Intelligence](https://www.recordedfuture.com/open-source-intelligence-definition/), an attacker can easily figure out the answer to this question. In some cases, it just might be the user's last name. Then, the attacker moves on to change the password of that user.
 
 This is just one scenario that shows the impact of broken authentication on a login form. Another scenario is weak passwords and default credentials.
 
@@ -124,11 +124,11 @@ Some web applications still allow the use of weak and well-known or default cred
 
 To demonstrate this, we'll try to login into the admin account and intercept the request using the burp suite.
 
-Burp Suite is a proxy tool that allows us to intercept, analyze, and modify requests that comes from our browsers before they are sent to the remote server.
+Burp Suite is a proxy tool that allows us to intercept, analyze, and modify requests that come from our browsers before they are sent to the remote server.
 
 You can read more on it [here](/engineering-education/getting-started-with-burpsuite/).
 
-Here, burp suite allows us to intercept and modify the login request before it is sent to the server. 
+Here, the burp suite allows us to intercept and modify the login request before it is sent to the server. 
 
 ![burp suite](/engineering-education/testing-for-broken-authentication-in-web-apps/burp.png)
 
@@ -178,21 +178,21 @@ It works!
 
 ### Impact of broken authentication
 - Compromising an account allows the attacker access to unauthorized information.
-- It could lead to full application take over.
+- It could lead to full application takeover.
 - Loss of sensitive and confidential business information.
 
 ### Prevention of broken authentication
-- [Don't expose sessions IDs in URLs](https://julienprog.wordpress.com/2017/08/17/session-id-in-the-url-is-it-a-vulnerability/) - [Session fixation attacks](https://www.netsparker.com/blog/web-security/session-fixation-attacks/) is a vulnerability that allows an attacker to hijack a user session.
+- [Don't expose sessions IDs in URLs](https://julienprog.wordpress.com/2017/08/17/session-id-in-the-url-is-it-a-vulnerability/) - [Session fixation attack](https://www.netsparker.com/blog/web-security/session-fixation-attacks/) is a vulnerability that allows an attacker to hijack a user session.
 - [Don't give room for user enumeration](https://www.virtuesecurity.com/kb/username-enumeration/) - It's critical to utilize identical, generic error messages and to double-check that they're the same. With every login request, you should return the same HTTP status code.
 - [Implement a strong password policy](https://en.wikibooks.org/wiki/Web_Application_Security_Guide/Password_security) - Allowing the use of weak and well-known passwords is not a good idea. After a given number of login attempts, require users to pass a CAPTCHA test.
 - [brute-force protection](https://predatech.co.uk/protecting-your-web-app-brute-force-login-attacks/) - prevent brute-force login attempts.
-- [Multi-factor authentication](https://auth0.com/docs/secure/multi-factor-authentication/step-up-authentication/configure-step-up-authentication-for-web-apps) - provide an extra layer of security for users.
+- [Multi-factor authentication](https://auth0.com/docs/secure/multi-factor-authentication/step-up-authentication/configure-step-up-authentication-for-web-apps) - provides an extra layer of security for users.
 
 ### Conclusion
 Broken authentication is a vulnerability that must be prevented by all means. Ensuring you have a proper and secured authentication mechanism is very important. 
 
 To summarize:
-- The reader learned how to set up OWASP Juice shop.
+- The reader learned how to set up an OWASP Juice shop.
 - The reader learned how to test for broken authentication in web applications.
 - The reader learned the impact and prevention of broken authentication applications.
 
