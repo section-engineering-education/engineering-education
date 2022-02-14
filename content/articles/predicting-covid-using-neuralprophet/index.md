@@ -21,17 +21,15 @@ In 2017, Facebook (now Meta) came up with a library that extracts non-linear pat
 We will use the global cases dataset from the [Johns Hopkins University Center for Systems Science and Engineering (JHU CSSE) Global Covid-19 Data Repository](https://github.com/CSSEGISandData/COVID-19) to perform forecasting. This is a very useful dataset as it has a lot of seasonality and complex time series patterns.
 
 ### Table of contents
-- [Prerequisites](#prerequisites)
-- [Goals](#goals)
+- [About Time-Series Forecasting](#about-time-series-forecasting)
 - [Preparing the environment](#setting-up-environments)
-- [Importing understanding and preparing the data](#importing-and-preparing-the-data)
+- [Importing, understanding and preparing the data](#importing-and-preparing-the-data)
 - [The COVID-19 Dataset](#the-covid-19-dataset)
 - [Importing and preparing the data](#importing-and-preparing-the-data)
 - [Training a NeuralProphet Forecaster](#training-the-model)
 - [Monitoring the training process and evaluating the model](#monitoring-the-training-process-and-evaluating-the-model)
 - [Forecasting using the trained model](#forecasting)
 - [Conclusion](#conclusion)
-- [References](#references)
 
 ### Prerequisites
 - Basic knowledge of Python.
@@ -46,6 +44,11 @@ At the end of this tutorial, you will be comfortable with;
 - Formating the data for forecasting.
 - Performing Forecasts on a single series Using NeuralProphet.
 - Forecasting on multiple series.
+
+### About Time-Series Forecasting
+Time series is a series of data points that are organized in an order of time. For example, weather data for a certain location for a period of time will be listed as dates with their corresponding temperature, rainfall amount, atmospheric pressure and so on.
+
+Predicting on this kind of data using traditional statistical and Bayesian techniques. Time-series forecasting is a modelling strategy where these time series are used to predict future trends using past observations where the time-series are the independent variables. This technique is able to unravel time-domain relationships like seasonality.
 
 ### Setting up environments
 On Google Colab, install Prophet and NeuralProphet run the following commands:
@@ -68,15 +71,14 @@ We will start by importing `pandas` library and the dataset.
 import pandas as pd
 path='https://raw.githubusercontent.com/CSSEGISandData/COVID-19/master/csse_covid_19_data/csse_covid_19_time_series/time_series_covid19_confirmed_global.csv'
 dataset=pd.read_csv(path,engine='python')
-print(dataset)
 ```
 
-#### The COVID-19 Dataset
+### The COVID-19 Dataset
 We will be using the Covid-19 Global Cases Dataset from [COVID-19 Data Repository by the Center for Systems Science and Engineering (CSSE) at Johns Hopkins University](https://github.com/CSSEGISandData/COVID-19). To manually navigate to the CSV file within the repository, follow the path 'csse_covid_19_data/csse_covid_19_time_series/time_series_covid19_confirmed_global.csv'.
 
 This dataset is a collection of reports from various countries' health departments, agencies and universities that is updated daily by the CSSE at JHU.
 
-#### Preparation of the data
+### Preparation of the data
 The data has some countries' data presented by Province or State. The 'Province/State' column should be combined into one country's column.
 We also need to drop 'Lat' and 'Long' column since they're not useful for this task.
 
@@ -86,7 +88,7 @@ dataset=dataset.drop(columns=['Lat','Long'])
 ```
 For easier fetching during model training, we will rotate the data so that country names are column names and dates are just rows.
 
-We shall do this by saving the dates in a variable `dates`, transposing the rest of the dataset and concatenating it with `dates` as a `Date` column.
+We will do this by saving the dates in a variable `dates`, transposing the rest of the dataset and concatenating it with `dates` as a `Date` column.
 
 ```python
 dates=dataset.columns
@@ -94,11 +96,10 @@ dataset=dataset.transpose().reset_index(drop=True)
 dates=pd.DataFrame(dates)
 rotated_dataset= pd.concat([dates, dataset.diff()], axis=1, join='inner')
 rotated_dataset=rotated_dataset.rename(columns={0:'Date'})
-rotated_dataset
 ```
 
 NeuralProphet only accepts two columns, dates and one y-column, fitting data. The columns must be named `ds` and `y` respectively.
-We shall drop all NULL values from the data.
+We will drop all NULL values from the data.
 
 For the moment, let's use the US data for demonstration.
 
@@ -106,22 +107,20 @@ For the moment, let's use the US data for demonstration.
 data=cases[['Date','US']]
 data.columns=['ds','y']
 data.dropna(inplace=True)
-print(data)
+data[:1].head()
 ```
 **Output:**
-|index|ds|y|
-|---|---|---|
-|1|1/23/20|0\.0|
-|2|1/24/20|1\.0|
-|3|1/25/20|0\.0|
-|4|1/26/20|3\.0|
-|5|1/27/20|0\.0|
-
-*Table of the dataset's first five rows by author*
-
+```bash
+index,ds,y
+2,1/24/20,1.0
+3,1/25/20,0.0
+4,1/26/20,3.0
+5,1/27/20,0.0
+6,1/28/20,0.0
+```
 
 ### Training the model
-We will create an empty model from the NeuralProphet() class and assign it to the variable `m`.
+We will import the NeuralProphet() class from `neuralprophet`, create an empty model from it and assign it to the variable `m`.
 
 We will then fit the model on our training dataset `data` from the previous step. Thereafter, we will begin the training process by passing three arguments to the `fit()` method;
 - The dataset to train on, `data`,
@@ -129,6 +128,7 @@ We will then fit the model on our training dataset `data` from the previous step
 - Training time, `epochs`
 
 ```python
+from neuralprophet import NeuralProphet
 m = NeuralProphet()
 m.fit(data,freq='D',epochs=1000)
 ```
@@ -151,9 +151,10 @@ The output of the code-cell below displays the metrics of the model at the end o
 metrics.tail(1)
 ```
 **Output:**
-|index|SmoothL1Loss|MAE|RMSE|RegLoss|SmoothL1Loss\_val|MAE\_val|RMSE\_val|
-|---|---|---|---|---|---|---|---|
-|2198|0\.0028212489277074063|12472\.25266575169|19477\.93211570946|0\.0|NaN|NaN|NaN|
+```bash
+index,SmoothL1Loss,MAE,RMSE,RegLoss,SmoothL1Loss_val,MAE_val,RMSE_val
+1999,0.002908315161085282,14682.226630632267,21391.488547290282,0.0,NaN,NaN,NaN
+```
 
 ### Forecasting
 Forecast future trends by passing the data and the number of periods (days) to the make_future_dataframe () method. 
@@ -177,7 +178,7 @@ fig1 = m.plot(forecast)
 
 ![Predicted cases](/engineering-education/predicting-covid-using-neuralprophet/df2.png)
 
-*Image of plot by author*
+*Image of plot - by author*
 
 Since we are predicting cases, they cannot be floating point values. The predictions will be rounded off to the nearest integer by casting the series of floats to an `int` datatype.
 
@@ -213,26 +214,24 @@ results_df['yhat1']=forecast['yhat1'].astype(int)
 results_df.columns=['Date','Predicted Cases']
 print(results_df)
 ```
-**Output table:**
-|index|Date|Predicted Cases|
-|---|---|---|
-|0|2022-02-01 00:00:00|582727|
-|1|2022-02-02 00:00:00|585876|
-|2|2022-02-03 00:00:00|579434|
-|3|2022-02-04 00:00:00|588880|
-|4|2022-02-05 00:00:00|534163|
-|5|2022-02-06 00:00:00|521222|
-|6|2022-02-07 00:00:00|564501|
-|7|2022-02-08 00:00:00|552304|
-|8|2022-02-09 00:00:00|555860|
-|9|2022-02-10 00:00:00|550098|
-|10|2022-02-11 00:00:00|560483|
-|11|2022-02-12 00:00:00|506945|
-|12|2022-02-13 00:00:00|495406|
-|13|2022-02-14 00:00:00|540291|
-
-*Table of dataset by author*
-
+**Output:**
+```bash
+index,Date,Predicted Cases
+0,2022-02-14 00:00:00,359479
+1,2022-02-15 00:00:00,358777
+2,2022-02-16 00:00:00,359300
+3,2022-02-17 00:00:00,358915
+4,2022-02-18 00:00:00,365361
+5,2022-02-19 00:00:00,341321
+6,2022-02-20 00:00:00,323970
+7,2022-02-21 00:00:00,336663
+8,2022-02-22 00:00:00,336691
+9,2022-02-23 00:00:00,337981
+10,2022-02-24 00:00:00,338398
+11,2022-02-25 00:00:00,345675
+12,2022-02-26 00:00:00,322489
+13,2022-02-27 00:00:00,306011
+```
 
 ### Conclusion
 We have built a NeuralProphet model and used it to predict Covid-19 cases. In this tutorial, we learned how to install NeuralProphet, import and prepare data for time-series forecasting, train the NeuralProphet forecaster and forecast using the trained model. This model can now be served via any web application framework like Streamlit or Dash using Django or Flask via an API. In case of any issues with NeuralProphet, you can raise an issue on [NeuralProphet's GitHub](https://github.com/ourownstory/neural_prophet).
