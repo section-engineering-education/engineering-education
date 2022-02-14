@@ -49,9 +49,9 @@ The software is made up of various components, as described below:
 - 
 #### Operation of the Web Scraper
 For the web scraper to perform and accomplish the scraping process, it goes through various steps as stated below:
-- First, the web scraper downloads the requested content from multiple websites and web pages through the use of a web crawler.
+- First, the web scraper downloads the requested content from multiple websites and web pages through a web crawler.
 - Since most of the data from websites are HTML and unstructured, the web scraper will parse the downloaded content and extract structured data.
-- When data is extracted from an unstructured form into a structured form, the scraper saves it in one of several formats, such as CSV, JSON, or a database.
+- When we extract data from an unstructured into a structured form, the scraper saves it in one of several formats, such as CSV, JSON, or a database.
 - When the structured data has been stored, the web scraper will analyze the data obtained.
 
 #### Applications for Web Scraping
@@ -76,7 +76,7 @@ In this tutorial, we will focus on how we can use the Gazpacho library to automa
 
 To use this library, check if Python is installed on your machine by typing the command `"python"` in the command prompt. If it is not installed, go to this [page](https://www.python.org/downloads/.) to download and install it.
 
-Once Python is installed and running, we can then install the library using the pip command below.
+Once Python is installed and running, we can install the library using the `pip` command below:
 
 ```bash
 pip install gazpacho
@@ -162,7 +162,7 @@ To summarize, we have:
 - Explored different Python libraries used in web scraping.
 - Learned about the Gazpacho library and how it is used for scraping web data.
 
-More about web scraping using gazpacho can be found [here](https://pypi.org/project/gazpacho/).
+You can learn more about web scraping using Gazpacho [here](https://pypi.org/project/gazpacho/).
 
 Happy Coding!
 
