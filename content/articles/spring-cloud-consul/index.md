@@ -1,3 +1,20 @@
+---
+layout: engineering-education
+status: publish
+published: true
+url: /spring-cloud-consul/
+title: Spring Cloud service discovery using Spring Cloud Consul
+description: In this tutorial, we will build Spring Boot microservices that will communicate with each other through Spring Cloud Consul.
+author: faith-siaji
+date: 2022-02-14T00:00:00-13:00
+topics: []
+excerpt_separator: <!--more-->
+images:
+
+  - url: /engineering-education/spring-cloud-consul/hero.png
+    alt: Spring Cloud service discovery using Spring Cloud Consul
+---
+
 ### Introduction
 Spring Boot consul is a service discovery and configuration framework for Spring Boot applications. It is a lightweight, extensible, and easy to use service discovery and configuration framework designed with Spring Boot and Spring Cloud.
 
@@ -47,7 +64,7 @@ test@DEV-34:/$ sudo /usr/local/bin/consul agent -server -bootstrap-expect=1 -dat
     2022-02-09T13:30:32.813+0300 [WARN]  agent: BootstrapExpect is set to 1; this is the same as Bootstrap mode.
 ```
 
-Now that we have the consul installed and running on our development machine, we need to verify if the consul agent is fully functional by navigating to [http://localhost:8500](http://localhost:8500) on our web browser. As shown below, we can see the services running on our development machine from the browser dashboard.
+Now that we have the consul installed and running on our development machine, we need to verify if the consul agent is fully functional by navigating to [http://localhost:8500](http://localhost:8500) on our web browser. We can see the services running on our development machine from the browser dashboard, as shown below.
 
 ![Consul dashboard](/engineering-education/spring-cloud-consul/consul_dashboard.png)
 
@@ -232,3 +249,7 @@ We can request the shop service to the product service without requiring the pro
 
 ### Conclusions
 In this tutorial, we have learned how to efficiently deploy the Consul service registry and discovery server and clients on our development machine. After that, you can try implementing a Spring Boot project using the microservice architecture and deploy with Spring Cloud consul. You can download the complete source code [here](https://replit.com/@faithsiaji/spring-consul#).
+  
+---
+
+Peer Review Contributions by: [Odhiambo Paul](/engineering-education/authors/odhiambo-paul/) 
