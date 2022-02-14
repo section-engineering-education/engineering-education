@@ -17,7 +17,6 @@ generate:
 	docker run --rm --volume "$$(pwd)/public:/src/public" $(IMAGE_NAME) hugo --environment production
 
 generate-beta:
-	docker run --rm --volume "$$(pwd)/public:/src/public" $(IMAGE_NAME_BETA) npm run index
 	docker run --rm --volume "$$(pwd)/public:/src/public" $(IMAGE_NAME_BETA) hugo --environment staging
 
 run:
