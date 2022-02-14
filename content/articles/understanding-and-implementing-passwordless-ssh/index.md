@@ -7,7 +7,7 @@ Online privacy and security are vital considerations in our modern era. The high
 1. What is passwordless SSH?
 2. The working of passwordless SSH.
 3. Its use cases.
-4. Setting up passwordless SSH.
+4. Setting the passwordless SSH protocol.
 5. Advantages and disadvantages of passwordless SSH.
 
 #### What is Passwordless SSH?
