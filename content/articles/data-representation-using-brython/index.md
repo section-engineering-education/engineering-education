@@ -16,7 +16,7 @@ images:
 ---
 Apart from JavaScript, Python is another alternative language for web development. This is due to micro-frameworks such as Flask, Hug, and Cherrypy. 
 <!--more-->
-We can use *Brython* to run client-side web applications. Brython is a client-side scripting language with Python3 performance that adapts to the HTML5 environment. 
+Brython is a client-side scripting language with Python3 performance that adapts to the HTML5 environment. We can, therefore, use *Brython* to run client-side web applications.
 
 Brython is compatible with JavaScript and libraries such as *Vue, Bokeh, Highchart*, and *Phaser*.
 
@@ -97,7 +97,7 @@ We will retrieve the `brython.js` and `brython_stdlib.js` files from the web usi
 <script src="https://cdnjs.cloudflare.com/ajax/libs/brython/3.10.4/brython_stdlib.js" integrity="sha512-kMRN6F4Yq4sNLbPG2lH3EO9n776JHHZub+UWogDxVjh9uTnoVo3wtN/rnQD4C4/AZtqI2zQdvdouGAAxOGwNeA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 ```
 
-This is the easiest method of installing Brython. However, for this method to be successfully, you should be online.
+This is the easiest method of installing Brython. However, for this method to be successful, you should be online.
 
 Both methods are efficient in integrating `brython.js` and `brython_stdlib.js` into our project. 
 
@@ -256,7 +256,7 @@ The code above plots the pie chart using the following methods and attributes:
 
 When we execute this code, our pie chart will appear as follows:
 
-![Piechart](engineering-education/data-representation-using-brython/piechart1.png) 
+![Piechart](/engineering-education/data-representation-using-brython/piechart1.png) 
 
 #### Creating a scatterplot using Brython.
 A scatterplot tests the relationship between two factors or variables. To achieve this, we will use the HTML file that we previously used to create the pie chart. 
@@ -386,7 +386,7 @@ The `chart` object used in the scatterplot has the following methods:
 
 When we execute the above code, the scatterplot is as shown below:
 
-![Scatterplot](engineering-education/data-representation-using-brython/scatterplot.png)
+![Scatterplot](/engineering-education/data-representation-using-brython/scatterplot.png)
 
 ### Conclusion
 In this tutorial, we used a Content Delivery Network to import Brython and Highchart Javascript files. 
