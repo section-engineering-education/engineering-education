@@ -38,7 +38,7 @@ To follow along with this tutorial, the reader should:
 Go to this [page](https://jupyter.org/install) to install Jupyter on your PC.
 
 ### Web Scraping
-Web scraping, also known as web harvesting or web extraction, is commonly used when obtaining information from the internet. It is much quicker and easier than the manual methods since it is an automatic method of extracting data from a web page by querying a web server, requesting data (usually in the form of HTML and other files that comprise web pages), and then parsing it to extract the needed information. This is made possible using automated software called ***web scrapers***, which is dedicated to performing data harvesting.
+Web scraping, also known as web harvesting or web extraction, is commonly used when obtaining information from the internet. It is much quicker and easier than the manual methods. It is an automatic method of extracting data from a web page by querying a web server, requesting data (usually in the form of HTML and other files that comprise web pages), and then parsing it to extract the needed information. This is made possible using automated software called ***web scrapers***, which is dedicated to performing data harvesting.
 
 #### Components of the Web Scraper
 The software is made up of various components, as described below:
@@ -55,7 +55,7 @@ For the web scraper to perform and accomplish the scraping process, it goes thro
 - When the structured data has been stored, the web scraper will analyze the data obtained.
 
 #### Applications for Web Scraping
-Web scraping is utilized in a variety of real-world scenarios, including:
+We utilize web scraping in a variety of real-world scenarios, including:
 - For comparison, web scrapers can collect data from numerous e-commerce websites, particularly data relating to the pricing of a product.
 - Content aggregators, such as news aggregators and employment aggregators, frequently use web scraping to provide updated data to their subscribers.
 - Collecting data for sales and marketing purposes, such as emails and phone numbers.
@@ -64,12 +64,13 @@ Web scraping is utilized in a variety of real-world scenarios, including:
 
 ### Web Scraping in Python
 Web scraping involves a wide variety of programming technologies and techniques. In Python, web scraping is done with various libraries, that is:
-- Requests: It is the most basic and essential library for web scraping, used for making various types of HTTP requests like GET and POST. However, with requests, it does not parse the HTML data retrieved, so libraries like Beautiful Soup are required.
-- lxml: Since the request library cannot parse HTML retrieved from webpages, lxml is required. A fast, production-quality, and high-performance HTML and XML parsing library
-- Beautiful Soup is the most extensively used scraping library and produces parse trees for reading HTML and XML data and converts incoming and outgoing documents to Unicode and UTF-8 automatically.
-- Selenium is a collection of programs rather than a single tool. It's a free testing tool for web apps that works across several browsers and platforms.
-- Scrapy is a fast, open-source web crawling system that uses selectors based on XPath to extract data from online pages.
-- Gazpacho is a modern, simple, and fast web scraping library. On this [site](https://www.analyticsvidhya.com/blog/2020/04/5-popular-python-libraries-web-scraping/), you can get to know more about the same.
+- Requests- It is the most basic and essential library for web scraping, used for making various types of HTTP requests like GET and POST. With requests it does not parse the HTML data retrieved, so libraries like Beautiful Soup are required.
+- lxml - Is a fast, production-quality, and high-performance HTML and XML parsing library required since the request library cannot parse HTML retrieved from webpages.
+- Beautiful Soup - Is the most extensively used scraping library that produces parse trees for reading HTML and XML data. It automatically converts incoming and outgoing documents to Unicode and UTF-8.
+- Selenium - Is a collection of programs rather than a single tool. It's a free testing tool for web apps that works across several browsers and platforms.
+- Scrapy is a fast, open-source web crawling system. It uses selectors based on XPath to extract data from online pages.
+- Gazpacho is a modern, simple, and fast web scraping library.
+On this [site](https://www.analyticsvidhya.com/blog/2020/04/5-popular-python-libraries-web-scraping/), you can get to know more about the same.
 
 ### Gazpacho library
 In this tutorial, we will focus on how we can use the Gazpacho library to automate data extraction from web pages and websites. This is a modern web scraping Python library, stable and installed with zero dependencies. It can combine the functionality of the requests and Beautiful Soup libraries by importing a few classes from each.
