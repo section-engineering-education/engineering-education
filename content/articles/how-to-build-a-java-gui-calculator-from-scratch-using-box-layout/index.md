@@ -15,7 +15,7 @@ alt: How to build a Java GUI calculator from scratch using Box layout in Java
 ---
 You have probably used a calculator at one point or the other to compute business transactions as an adult, solve high school math assignments as a teenager, or even toy with it as a kid. However, have you ever asked yourself how these calculators function under the hood? If you are curious to know more about that, you have come to the right place.
 <!--more-->
-In this tutorial, we will build a calculator from scratch using the `BoxLayout` to align the components of the calculator correctly. This calculator will consist of the GUI and the logic part, which performs computations. We will also learn how real-life calculators work under the hood by incorporating functionalities like addition, subtraction, division, multiplication, ets.
+In this tutorial, we will build a calculator from scratch using the `BoxLayout` to align the components of the calculator correctly. This calculator will consist of the GUI and the logic part, which performs computations. We will also learn how real-life calculators work under the hood by incorporating functionalities like addition, subtraction, division, multiplication, etc.
 
 The tutorial will also expose the readers to the power of Box layout and how they can use it in other programs to convert their console apps into GUI apps.
 
@@ -78,13 +78,13 @@ Below is a list of the constants and their description:
 | `public static final int LINE_AXIS` |                                   Specifies that components should be laid out toward a line as determined by the target container's `ComponentOrientation` property. The value of this constant is 2. |
 | `public static final int PAGE_AXIS` | Specifies that components should be laid out in the direction that lines flow across a page as determined by the target container's `ComponentOrientation` property. The value for this constant is 3. |
 
-> Note that you can either use the constant variable or the value to set the components axis. For example, 0 instead of `BoxLayout.X_AXIS`, 1 instead of `BoxLayout.Y_AXIS`, and so on.
+>Note that you can either use the constant variable or the value to set the components axis. For example, 0 instead of `BoxLayout.X_AXIS`, 1 instead of `BoxLayout.Y_AXIS`, and many others.
 
-It is advisable to always use the `PAGE_AXIS` and `LINE_AXIS` for internationalization. This will enable components to be laid out correctly from either left to right or right to left based on the device's language orientation.
+It is advisable always to use the `PAGE_AXIS` and `LINE_AXIS` for internationalization, which will enable components to be laid out correctly from either left to right or right to left based on the device's language orientation.
 
-Though Box layout can be used alone, you can also take advantage of the `Box` class to add components to the panel. When the Box layout is used alone, the components stick to each other with no white space like padding. This is where the `Box` class comes to play.
+Though `Box layout` can be used alone, you can also take advantage of the `Box` class to add components to the panel. When the Box layout is used alone, the components stick together with no white space like padding; hence, the Box class comes to play.
 
-The `Box` class provides static methods that can add invisible components to the panel, which can serve as spacing between components.
+The `Box` class provides static methods that can add invisible components to the panel, serving as spacing between components. Some of the static method provided by the `Box` class are:
 Some of the static method provided by the `Box` class are:
 - `createHorizontalBox()`
 - `createVerticalBox()`
@@ -92,17 +92,17 @@ Some of the static method provided by the `Box` class are:
 - `createHorizontalGlue()`
 - `createVerticalGlue()`
 
-All the methods listed above are used to create invisible components which can then be used as white space between the components.
-Now that we've learned a bit about the Box layout, let's dive into building the calculator.
+All the methods listed above create invisible components, which can be white space between the components. Now that we have learned about the Box layout, let us dive into building the calculator.
 
-### Step 1: Building The User Interface (UI)
+#### Step one: Building the user interface (UI)
 
-![UI Overview](/how-to-build-a-java-gui-calculator-from-scratch-using-box-layout/1-ui-overview.png)
+![UI Overview](/engineering-education/how-to-build-a-java-gui-calculator-from-scratch-using-box-layout/1-ui-overview.png)
 
 The image above is the final view of the calculator we will build in this tutorial.
 
-To get started, we first have to create a calculator class that extends the `JFrame`class. By extending the `JFrame` class, we are making our calculator class inherit all the properties of the JFrame class.
-`JFrame` is a class made available by the swing package. So we need to import the swing package as well.
+We first have to create a calculator class that extends the `JFrame` class to get started. By extending the `JFrame` class, we are making our calculator class inherit all the properties of the JFrame class.
+
+>Note: `JFrame` is a class made available by the swing package. So we need to import the swing package as well.
 
 ```java
 import javax.swing.*;
@@ -111,10 +111,9 @@ public class CalculatorBox extends JFrame {
 }
 ```
 
-The next step is to create the components that will be included in the calculator. These components include the buttons that will send input to the calculator and the text field that will read the calculator output. We will use `JButton` and `JTextField` which are made available by the swing package which was imported earlier.
+The next step is to create the components included in the calculator. These components include the buttons that will send input to the calculator and the text field to read the calculator output. We will use `JButton` and `JTextField`, made available by the swing package imported earlier.
 
-Besides the components, we also need to create `String` variables that will hold the previous input, the current input, and the operator.
-Add the following code inside the class body as class variables.
+Besides the components, we also need to create `String` variables that will hold the previous input, the current input, and the operator. Add the following code inside the class body as class variables.
 
 ```java
 JButton btnAdd, btnSubtract, btnDivide, btnMultiply, btnClear, btnDelete, btnEquals, btnDot;
@@ -123,9 +122,9 @@ JTextField output;
 String previous, current, operator;
 ```
 
-Now let's move on to create the constructor that will initialize the components and variables. We will also create the `main` method inside the calculator class that will invoke the class once the program is executed.
+Now, let us create the constructor to initialize the components and variables. We will also create the `main` method inside the calculator class that will invoke the class once the program is executed.
 
-> Recall that a constructor is a method that has the same name as the class. We will therefore use the same name as our class to create the constructor.
+>Recall that a `constructor` is a method with the same name as the class. Therefore, we will use the same name as our class to create the constructor.
 
 ```java
 public CalculatorBox() {
@@ -136,7 +135,7 @@ public static void main(String[] args) {
 }
 ```
 
-By now, we have created the basic structure of the calculator and the program looks like this:
+By now, we have created the basic structure of the calculator, and the program looks like this:
 
 ```java
 import javax.swing.*;
@@ -156,7 +155,7 @@ public static void main(String[] args) {
 }
 ```
 
-Now, let's focus on the constructor of the calculator class. We first have to set the title of the calculator by passing the title into the superclass (`JFrame`) constructor. Here, we want to set the title to "Box Calculator". You can set it to any name of your choice.
+Now, let us focus on the constructor of the calculator class. We first have to set the calculator's title by passing the title into the superclass `(JFrame)` constructor. Here, we want to set the title to "Box Calculator". You can set it to any name of your choice. 
 Add the following code inside the constructor:
 
 ```java
@@ -169,13 +168,12 @@ The next step is to create a panel named `mainPanel` that will house all other c
 JPanel mainPanel = new JPanel();
 ```
 
-Since the calculator has a box layout, we can then create rows and then group all the components of the calculator into these rows. The rows comprise 5 sub-panels situated inside the main panel. The reason for the panel hierarchy is to make the calculator design more precise.
+Since the calculator has a box layout, we can then create rows and then group all the components of the calculator into these rows. The rows comprise five sub-panels situated inside the main panel. The panel hierarchy is to make the calculator design more precise.
 
-After creating the rows, we also need to initialize the components declared earlier. These components include the output and other buttons, like operation buttons and number buttons.
+After creating the rows, we also need to initialize the components declared earlier. These components include the output and other buttons, like operation and number buttons.
+The number buttons are already inside an array, so we append the dot button at the end of the array. We will have to loop through the array to initialize the buttons and add some styling, which is done to avoid repetition and achieve a cleaner code.
 
-The number buttons are all already inside an array, so we append the dot button at the end of the array. We will have to loop through the array to initialize the buttons and also add some styling to them. This is done to avoid repetition and achieve a cleaner code.
-
-We will use the `Font` class to style the buttons. The `Font` class is made available by Java's Abstract Windows ToolKit (AWT) package. This package contains other useful classes we will use later in the project. So we add an import statement at the top of our calculator program that imports all the classes in this package.
+We will use the `Font` class to style the buttons. The Font class is made available by Java's Abstract Windows ToolKit (AWT) package. This package contains other functional classes we will use later in the project. Add an import statement at the top of our calculator program that imports all the classes in this package.
 
 The code for the import statement is shown below. Add the code to the top of the program above the class declaration.
 
@@ -186,7 +184,7 @@ import java.awt.*;
 Recall that `JButton()` takes in `String` as an argument, and the count variable used for the iteration is an integer. We will use the `valueOf()` static method of the `String` class to convert each `int` value in the array to a `String` and then set the value of each button, respectively.
 Similar styling applies to the other buttons of the calculator as well.
 
-Below is the full code. Add the code inside the constructor immediately below the `mainPanel` variable.
+Below is the complete code. Add the code inside the constructor immediately below the `mainPanel` variable.
 
 ```java
         // Create sub panels inside main panel
@@ -237,10 +235,9 @@ Next, we will add some styling to the output display.
 	      output.setText("0");
 ```
 
-So far, we have been able to create and style components that will be displayed in the calculator. But these components are not visible yet unless added to their respective panels and then to the main panel.
+So far, we have been able to create and style components displayed in the calculator. However, these components are not visible unless added to their respective panels and then to the main panel.
 
-The next step is to set the layout of each row of the calculator. Each row is set to `BoxLayout` with a layout direction of `LINE_AXIS`.
-This will enable the buttons to flow from either left to right or right to left based on the language orientation of the device in use.
+The next step is to set the layout of each row of the calculator. Each row is set to `BoxLayout` with a layout direction of `LINE_AXIS` will enable the buttons to flow from either left to right or right to left based on the language orientation of the device in use.
 
 ```java
         // Set the layout of each row in the pane
@@ -252,6 +249,7 @@ This will enable the buttons to flow from either left to right or right to left 
 ```
 
 After setting the layout of each of the sub-panels, we now have to add the respective components to populate these sub-panels.
+
 >Note that this can be achieved using a loop as we did for the number buttons. But for the sake of simplicity, we just have to add the components sequentially.
 
 ```java
