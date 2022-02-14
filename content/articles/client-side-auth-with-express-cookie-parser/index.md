@@ -6,7 +6,7 @@ url: /client-side-auth-with-express-cookie-parser/
 title: Client-side Authentication with Express Cookie Parser
 description: This article will teach you how to create a cookie-based authentication system with Express. It will also show you how to secure your cookies using a session secret.
 author: arafat-olayiwola
-date: 2022-02-14T00:00:00-01:20
+date: 2022-02-14T00:00:00-05:20
 topics: [Languages]
 excerpt_separator: <!--more-->
 images:
@@ -15,7 +15,6 @@ images:
 ---
 Cookies are small pieces of data that can be stored, or sent to the web browser in a request. They are commonly used as a storage medium.
 <!--more-->
-
 For example, cookies can be used to keep clients logged in, store user preferences such as languages, location, and other tracking information.
 
 Cookies are stored in the web browser as key-value pairs. The key serves as the signature of the client data, or the name given to the specific cookie. The value represents the specific data that is required.
@@ -372,7 +371,7 @@ To test the implementation, clear out the stored cookies session, and then navig
 
 Enter client data that corresponds to that stored in the temporary database in the backend. When you open the browser cookie on the browser, you should see the session identity stored properly.
 
-Let's open the *incognito* mode of the browser and login to another user. You will receive different session identities that can not be changed. 
+Let's open the *incognito* mode of the browser and log in to another user. You will receive different session identities that can not be changed. 
 
 The following image displays an instance of what the session identity looks like:
 
