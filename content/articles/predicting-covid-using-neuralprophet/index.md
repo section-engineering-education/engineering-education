@@ -1,9 +1,24 @@
-## Predicting Covid-19 Cases using NeuralProphet
+---
+layout: engineering-education
+status: publish
+published: true
+url: /predicting-covid-using-neuralprophet/
+title: Predicting Covid-19 Cases using NeuralProphet
+description: In this tutorial, the reader will learn how to predict Covid-19 cases usingthe Neural Prophet library.
+author: ian-njari
+date: 2022-02-14T00:00:00-13:40
+topics: [Machine Learning]
+excerpt_separator: <!--more-->
+images:
 
-Performing predictions on datasets where a time series is an independent variable can prove challenging using traditional machine learning methods. In 2017, Facebook (now Meta) came up with a library that extracts non-linear patterns which may have daily, weekly, or other seasonality. This library is called Prophet (previously known as FbProphet).
-One limitation of the library is that it does not generalize well to complex trends, so it tends to under-fit. The Data Science Core Team at the company thus came up with NeuralProphet, a library based on AR-Net (a simple auto-regressive neural network for time-series) and Pytorch.
+  - url: /engineering-education/predicting-covid-using-neuralprophet/hero.png
+    alt: Predicting Covid-19 Cases using NeuralProphet Example Image
+---
+Performing predictions on datasets where a time series is an independent variable can prove challenging using traditional machine learning methods. 
+<!--more-->
+In 2017, Facebook (now Meta) came up with a library that extracts non-linear patterns which may have daily, weekly, or other seasonality. This library is called Prophet (previously known as FbProphet). One limitation of the library is that it does not generalize well to complex trends, so it tends to under-fit. The Data Science Core Team at the company thus came up with NeuralProphet, a library based on AR-Net (a simple auto-regressive neural network for time-series) and Pytorch.
 
-We shall use the global cases dataset from the [Johns Hopkins University Center for Systems Science and Engineering (JHU CSSE) Global Covid-19 Data Repository](https://github.com/CSSEGISandData/COVID-19) to perform forecasting. This is a very useful dataset as it has a lot of seasonality and complex time series patterns.
+We will use the global cases dataset from the [Johns Hopkins University Center for Systems Science and Engineering (JHU CSSE) Global Covid-19 Data Repository](https://github.com/CSSEGISandData/COVID-19) to perform forecasting. This is a very useful dataset as it has a lot of seasonality and complex time series patterns.
 
 ### Table of contents
 - [Prerequisites](#prerequisites)
