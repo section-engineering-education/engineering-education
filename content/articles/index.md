@@ -1,6 +1,9 @@
+### Introduction
+The concept of "data drawn from some probability distribution" underpins many statistics and machine learning techniques. A probability distribution is a function defining all possible values and probabilities for a random variable at a specified range. The parameters of the underlying distribution are used to define parametric methods (or algorithms).
+
+However, the assumed model for the likelihood may not be correct; the "actual" distribution may be skewed, multimodal, with different components, and so on. In general, the scientist analyzing the data is unaware of this. This article aims to demonstrate kernels' fundamental concepts and it's application in statistics and machine learning.
 
 ### Tables of content
-- [Introduction](#introduction)
 - [Prerequisites](#prerequisites)
 - [What are kernels?](#what-are-kernels)
 	- [Unsupervised and supervised machine learning](#unsupervised-and-supervised-machine-learning)
@@ -8,18 +11,14 @@
 	- [1. Support Vector Machine (SVM)](#1-support-vector-machine-svm)
 	- [2. Adaptive Filter](#2-adaptive-filter)
 	- [3. Kernel perception](#3-kernel-perception)
-	- [4. Principle Component Analysis](#4-principle-component-analysis)
+	- [4. Principle Component Analysis (PCA)](#4-principle-component-analysis-pca)
 	- [5. Spectral clustering](#5-spectral-clustering)
 - [Conclusion](#conclusion)
 
-### Introduction
-The concept of "data drawn from some probability distribution" underpins many statistics and machine learning techniques. A probability distribution is a function defining all possible values and probabilities for a random variable at a specified range. The parameters of the underlying distribution are used to define parametric methods (or algorithms).
-
-However, the assumed model for the likelihood may not be correct; the "actual" distribution may be skewed, multimodal, with different components, and so on. In general, the scientist analyzing the data is unaware of this. This article aims to demonstrate kernels' fundamental concepts and their applications in statistics and machine learning.
 
 ### Prerequisites
 - The Reader should have basic knowledge of machine learning. [Click here](https://www.digitalocean.com/community/tutorials/an-introduction-to-machine-learning) to read more about machine learning basics.
-- The reader should understand basic terms like Support Vector Machine, classifications, unsupervised learning, and supervised learning.
+- The reader should understand basic terms like Support Vector Machine, Classifications, Unsupervised Learning, and Supervised Learning.
 - It's necessary for the reader to understand SVMs since kernels are implemented in SVM models. 
 
 ### What are kernels?
@@ -39,10 +38,11 @@ These are some of the many techniques of the kernel ;
 - Kernel Perception
 - Principle Component Analysis
 - Spectral Clustering
+
 #### 1. Support Vector Machine (SVM)
 It can be defined as a classifier for separating hyperplanes, in which hyperplanes are subspaces with one dimension less than the ambient space. 
 
-Higher dimensions make support vector machines much more challenging to interpret. It's much more difficult to imagine how we can separate the data linearly and the decision boundary. In p-dimensions, a hyperplane is a p-1 dimensional "flat" subspace within the larger p-dimensional space. The hyperplane is simply a line in two dimensions.
+Higher dimensions make support vector machines much more challenging to interpret. It's more difficult to imagine how we can separate the data linearly and the decision boundary. In p-dimensions, a hyperplane is a p-1 dimensional "flat" subspace within the larger p-dimensional space. The hyperplane is simply a line in two dimensions.
 
 #### 2. Adaptive Filter
 It uses a linear filter that integrates the transfer function, controlled by several methods and parameters, which we will use to fine-tune these parameters per the development algorithm.
@@ -58,14 +58,14 @@ Most of the kernel algorithms discussed are statistically based on convex optimi
 Kernel methods have a wide range of applications i.e;
 
  - 3D reconstruction
- - bioinformatics
- - geostatistics
- - chemoinformatics
- - handwriting recognition
- - inverse distance weighting
- - information extraction
+ - Bioinformatics
+ - Geostatistics
+ - Chemoinformatics
+ - Handwriting recognition
+ - Inverse distance weighting
+ - Information extraction
 
-#### 4. Principle Component Analysis
+#### 4. Principle Component Analysis (PCA)
 Principle component analysis is a tool used to reduce data size. It allows us to reduce the size of the data without losing much of the information. PCA reduces the size by obtaining a combination of orthogonal lines (key components) for real flexibility with very large variations.
 
 The first major component captures most of the data variability. The second main part is orthogonal in the main part and captures the remaining variations, the rest of the first main part, and so on. Many principal components are uncorrelated and organized so that a few principal components define most of the actual data variations.
@@ -88,9 +88,9 @@ such as: sp =1np
 
 np∑i = 1 be (1.6)
 
-where **np** is the number of points assigned to cluster p during the initiation step by KSC.
+where `np` is the number of points assigned to cluster `p` during the initiation step by KSC.
 
 ### Conclusion
-This article is not exhaustive; rather, it is intended to provide the reader with a basic understanding of what a kernel method is and a brief overview of the different types of kernel methods. However, reading this article will inspire the reader to take their first steps into the world of ML.
-A few kernel method terms and concepts in ML have been summarized.
+This article is not exhaustive; rather, it is intends to provide the reader with a basic understanding of what a kernel method is and a brief overview of the different types of kernel methods. However, reading this article will inspire the reader to take their first step into the world of Machine Learning (ML).
+
 
