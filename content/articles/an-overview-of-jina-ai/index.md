@@ -1,4 +1,22 @@
-Searching for information on the web is not new. We use search every day on Twitter, LinkedIn, Stack Overflow, and Amazon. The most common way we've all been searching for a long time now is with the Google Search platform. But, that's now what we will be discussing today, we will be discussing neural search and how it is different from the standard search that we are used to. Besides, the tutorial will walk you through how to use the Jina AI framework to get your ML tasks done.
+---
+layout: engineering-education
+status: publish
+published: true
+url: /an-overview-of-jina-ai/
+title: An Overview of Jina AI
+description: This tutorial will walk our readers through how to use the Jina AI framework to get their ML tasks done.
+author: wilkister-mumbi
+date: 2022-02-14T00:00:00-21:40
+topics: [Machine Learning]
+excerpt_separator: <!--more-->
+images:
+
+  - url: /engineering-education/an-overview-of-jina-ai/hero.png 
+    alt: An Overview of Jina AI Example Image
+---
+Searching for information on the web is not new. We use search every day on Twitter, LinkedIn, Stack Overflow, and Amazon. 
+<!--more-->
+The most common way we've all been searching for a long time now is with the Google Search platform. But, that's now what we will be discussing today, we will be discussing neural search and how it is different from the standard search that we are used to. Besides, the tutorial will walk you through how to use the Jina AI framework to get your ML tasks done.
 
 ### Prerequisites
 To follow along with this tutorial, you need to be familiar with:
