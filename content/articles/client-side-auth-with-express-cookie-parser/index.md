@@ -3,8 +3,8 @@ layout: engineering-education
 status: publish
 published: true
 url: /client-side-auth-with-express-cookie-parser/
-title: Client-side Authentication with Express Cookie Parser
-description: This article will teach you how to create a cookie-based authentication system with Express. It will also show you how to secure your cookies using a session secret.
+title: Client Side Authentication with Express Cookie Parser
+description: This article will guide the reader on how to create a cookie-based authentication system with Express. It will also discuss how to secure cookies using a session secret.
 author: arafat-olayiwola
 date: 2022-02-14T00:00:00-05:20
 topics: [Languages]
