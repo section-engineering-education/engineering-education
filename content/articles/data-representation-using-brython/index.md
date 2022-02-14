@@ -4,9 +4,9 @@ status: publish
 published: true
 url: /data-representation-using-brython/
 title: Data Representation using Brython
-description: In this article, We aim to guide the reader on a step-by-step process of data representation using pie charts and scatterplots in Brython.
+description: This article will guide the reader on how to present data using pie charts and scatterplots in Brython.
 author: femi-ige-ayodele
-date: 2022-01-24T00:00:00-10:23
+date: 2022-02-14T00:00:00-03:30
 topics: [languages]
 excerpt_separator: <!--more-->
 images:
@@ -14,18 +14,20 @@ images:
   - url: /engineering-education/data-representation-using-brython/hero.jpg
     alt: Data Representation using Brython Hero Image.
 ---
-The cooperation between JavaScript and the web has been a standard for ages. Python is the closest alternative in web development, and it's made possible through its micro-frameworks such as Flask, Hug, Cherrypy, etc. These frameworks have enabled Python to cooperate with the web.
+Apart from JavaScript, Python is another alternative language for web development. This is due to micro-frameworks such as Flask, Hug, and Cherrypy. 
 <!--more-->
-Instead of using Python micro-frameworks to run the client-side web applications, we have `Brython`. Brython, which stands for "Browser Python" is a client-side scripting language with Python3 performance that adapts to the HTML5 environment. Brython interfaces with JavaScript and its libraries like Vue, Bokeh, Highchart, and Phaser to build high-level web projects.
+We can use *Brython* to run client-side web applications. Brython is a client-side scripting language with Python3 performance that adapts to the HTML5 environment. 
 
-We aim to guide you on a step-by-step process of data representation using pie charts and scatterplots in Brython. This is possible because of the cooperation among Brython and Highchart libraries. Let's get started!
+Brython is compatible with JavaScript and libraries such as *Vue, Bokeh, Highchart*, and *Phaser*.
+
+In this tutorial, we will discuss the process of data representation using pie charts and scatterplots in Brython. 
+
+Let's get started!
 
 ### Table of contents
-- [Table of contents](#table-of-contents)
 - [Prerequisites](#prerequisites)
-- [Aim of this tutorial ](#aim-of-this-tutorial)
+- [Goals](#goals)
 - [Getting started](#getting-started)
-- [Installing Brython to our local environment](#installing-brython-to-our-local-environment)
 - [Setting up the environment](#setting-up-the-environment)
 - [Installing the Highcharts module.](#installing-the-highcharts-module)
 - [Adding the `brython.js` and `brython_stdlib.js` file using our script tag.](#adding-the-brython.js-and-brython_stdlibjs-file-using-our-script-tag)
@@ -34,37 +36,47 @@ We aim to guide you on a step-by-step process of data representation using pie c
 - [Creating a scatterplot using Brython.](#creating-a-scatterplot-using-brython)
 - [Conclusion](#conclusion)
 - [Further Reading](#further-reading)
+
 ### Prerequisites
 To follow along, the reader should:
 
 - Install the [Python](https://www.python.org/downloads/) executable.
-- Have [Python programming](/engineering-education/python-projects-for-beginners/) skills.
-- Have [Javascript programming](https://www.w3schools.com/js/) skills.
-- Have [Visual Studio Code](https://code.visualstudio.com/) installed.
-### Aim of this tutorial
-The purpose of this tutorial is to guide the reader through how to:
+- Have some [Python](/engineering-education/python-projects-for-beginners/) and [Javascrip](https://www.w3schools.com/js/) programming skills.
+- Have an IDE such as [Visual Studio Code](https://code.visualstudio.com/) installed.
+
+### Goals
+The purpose of this tutorial is to guide the reader on how to:
 
 1. Install Brython in our local environment. We can achieve this using the following host methods:
+
 - PyPI. To use this method, make sure you have installed Python3.
 - Content Delivery Network (CDN).
 - Node Package Manager (npm).
 - GitHub.
+
 > NOTE: We will focus on the Content Delivery Network (CDN) and Node Package Manager (npm) in our project.
+
 2. Create a pie chart using Highchart and Brython.
+
 3. Create a scatterplot using Highchart and Brython.
+
 ### Getting started
 To get started, we will install Brython in our local environment.
 
-#### Installing Brython in our local environment
-There are two ways to install Brython, we will first install Brython using the Node Package Manager.
+There are two ways to install Brython, we will first use the Node Package Manager.
+
 ##### Using the Node Package Manager
-Node.js is a JavaScript runtime used to build scalable network applications. Node executes JavaScript code outside a web browser. To install Brython using the Node package manager (npm), we download and install [Node.js](https://nodejs.org/en/). After the installation, we will run the command below in our terminal:
+Node.js is a JavaScript runtime used to build scalable network applications. Node executes JavaScript code outside a web browser. 
+
+To install Brython using the Node package manager (npm), we download and install [Node.js](https://nodejs.org/en/). 
+
+After the installation, we will run the command below in our terminal:
 
 ```bash
 npm install brython
 ```
 
->NOTE: Ensure you run the above command while in your working directory. This will create a folder called node_modules which contains the Brython package.
+> NOTE: Ensure that you run the above command while in your working directory. This will create a folder called node_modules which contains the Brython package.
 
 To add the `brython.js` and `brython_stdlib.js` files  to our web project, we will use the script tag below:
 
@@ -76,34 +88,40 @@ To add the `brython.js` and `brython_stdlib.js` files  to our web project, we wi
 Using the code snippets above, we have successfully installed Brython using the Node Package Manager. 
 
 ##### Using the Content Delivery Network
- Brython can also be delivered from the web using a CDN link. A Content Delivery Network (CDN) in JavaScript delivers hosted stylesheets and JavaScript files using the `src` attribute in the script tag. Using a CDN, we will get the `brython.js` and `brython_stdlib.js` files from the web.
+Brython can also be fetched from the web using a CDN link. A Content Delivery Network (CDN) in JavaScript delivers hosted stylesheets and JavaScript files using the `src` attribute in the script tag.
 
-To get the `brython.js` and `brython_stdlib.js` files, use the following code snippet:
-```javascript
+We will retrieve the `brython.js` and `brython_stdlib.js` files from the web using a CDN, as follows:
+
+```html
 <script src="https://cdnjs.cloudflare.com/ajax/libs/brython/3.10.4/brython.js" integrity="sha512-Dr8IR/2fk/pBmngFLduWN5Ys/t7lcPxGgLCulHdTdgDrDRnGb+ANMxGXq+DKVN87jom+N3BrzzI476Pf98RReA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/brython/3.10.4/brython_stdlib.js" integrity="sha512-kMRN6F4Yq4sNLbPG2lH3EO9n776JHHZub+UWogDxVjh9uTnoVo3wtN/rnQD4C4/AZtqI2zQdvdouGAAxOGwNeA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 ```
 
-This is the easiest method of installing Brython. For this method to successfully work, you need to be online.
+This is the easiest method of installing Brython. However, for this method to be successfully, you should be online.
 
-Both methods are efficient in integrating `brython.js` and `brython_stdlib.js` into our project. After adding `brython.js` and `brython_stdlib.js` into our project, let's move to the next step.
+Both methods are efficient in integrating `brython.js` and `brython_stdlib.js` into our project. 
 
 #### Setting up the environment
-The following steps will show how to set up the HTML file that will be used to create the pie chart and scatterplot. In addition to the brython modules, a few packages are needed for our project. They include:
-- Highchart.js
-- JQuery
-- Exporting.js
+The following steps will show how to set up the HTML file that will be used to create the pie chart and scatterplot. 
+
+In addition to the Brython modules, a few packages are needed for our project. They include:
+
+- *Highcharts.js*
+- *JQuery*
+- *Exporting.js*
 
 ##### Installing the Highcharts module.
-To install the Highcharts module, use this code:
+To install the *Highcharts* module, use the following code:
 
 ```bash
 npm install highcharts
 ```
 
-Using the command above, we will download some important Highchart modules such as `highchart.js` and `exporting.js`. The `exporting.js` allows us to download the charts in different file formats like PDF, PNG, vector images(SVG), and JPG.
+Using the command above, we will download some important Highchart modules such as `highchart.js` and `exporting.js`. 
 
-In our HTML boilerplate, we will add the  `Jquery` script, the `exporting.js` file, and the `highchart.js` module. Use the following code snippet:
+The `exporting.js` library allows us to download charts in different file formats like *PDF, PNG, vector images(SVG)*, and *JPG*.
+
+In the HTML boilerplate code, we will add the  `Jquery` script, the `exporting.js` file, and the `highchart.js` module, as shown below:
 
 ```html
 <!-- jquery -->
@@ -114,8 +132,12 @@ In our HTML boilerplate, we will add the  `Jquery` script, the `exporting.js` fi
 <script src="./node_modules/highcharts/modules/exporting.js"></script>
 ```
 
-##### Adding the `brython.js and brython_stdlib.js` file using our script tag.
-To do this, We add the brython modules above into our boilerplate using a script tag. Next, we set the `onload` attribute in the body tag to `brython(1)`. This enables us to print error messages on the browser's console. Within the `body` tag, we add a `div` tag with id `container`, the div has the inline styling below:
+##### Adding brython.js and brython_stdlib.js files
+To add *brython.js* and *brython_stdlib.js* files, we first include the above Brython modules into our boilerplate using a script tag. 
+
+Next, we set the `onload` attribute in the body tag to `brython(1)`. This enables us to print error messages on the browser's console. 
+
+Within the `body` tag, we add a `div` tag with the id of `container`, the div has the following inline styling:
 
 ```css
 #container{
@@ -125,7 +147,7 @@ To do this, We add the brython modules above into our boilerplate using a script
 }
 ```
 
-The implementation of the aforementioned steps, our HTML file is as below:
+Here is how our HTML file now looks:
 
 ```html
 <html>
@@ -150,16 +172,23 @@ The implementation of the aforementioned steps, our HTML file is as below:
 ```
 
 #### Creating a pie chart using Brython.
-In statistics, a pie chart is a `circular` graph divided into pieces to show numerical proportions. In this section, we will guide the reader on how to create a pie chart using Brython. To build the pie chart, we will create a Python file called `chart.py.` As we progress, this file will contain some necessary code required in building our pie chart. Let's get started!🚀.
+In statistics, a pie chart is a `circular` graph divided into pieces to show numerical proportions. 
+
+To build the pie chart, we will create a Python file called `chart.py.` As we progress, this file will contain some necessary code required in building our pie chart. 
+
+Let's get started!
 
 ##### Chart.py file
-We will create the `chart.py` file. After creating the file, we import this file into our boilerplate using the script tag and set the type attribute to `"text/python3"`. This file is imported into our HTML boilerplate using the script tag below:
+We will create the `chart.py` file then import it into our HTML code using the script tag. We will also set the type attribute to `text/python3`. 
+
+This file is imported into the HTML boilerplate using the script tag below:
+
 ```html
 <!-- chart.py -->
 <script type="text/python3" src="chart.py"></script>
 ```
 
-The chart.py file we have created contains the following code:
+The `chart.py` file that we have created contains the following code:
 
 ```python
 from browser import window
@@ -206,26 +235,36 @@ b_highchart(
     }
 )
 ```
-The code above plots the pie chart using the following methods and attributes:
-- `from browser import window`: imports the window module from, thus allowing Brython access to Javascript object.
-- `plotBackgroundColor`: It plots the background color for the chart area.
-- `plotBorderWidth`: It plots the width of the chart area in pixels.
-- `plotShadow`: This method takes in boolean values and adds a drop shadow to the area. 
-- `renderTo`: This method is like `document.getElementBy` in javascript. It will take the `id` of the `div` tag in our HTML code.
-- `tooltip`: This object contains the details in the small box when we hover on our chart.
-- `allowPointSelect`: If set as `true`, it allows you to toggle or select any of the slices in the pie chart
-- `Series`: this is a set of data. In this case, it is the religious distribution of people in Nigeria.
 
-When we execute this code, our pie chart is as shown below:
+The code above plots the pie chart using the following methods and attributes:
+
+- `from browser import window`: It imports the window module which allows Brython access to the JavaScript object.
+
+- `plotBackgroundColor`: It plots the background color for the chart area.
+
+- `plotBorderWidth`: It plots the width of the chart area in pixels.
+
+- `plotShadow`: This method takes in boolean values and adds a drop shadow to the area. 
+
+- `renderTo`: This method is like `document.getElementById` in javascript. It will take the `id` of the `div` tag in our HTML code.
+
+- `tooltip`: This object shows certain details in a small box when we hover on our chart.
+
+- `allowPointSelect`: If set as `true`, it allows one to toggle or select any of the slices in the pie chart.
+
+- `Series`: This is a set of data. In our case, it is the religious distribution of people in Nigeria.
+
+When we execute this code, our pie chart will appear as follows:
 
 ![Piechart](engineering-education/data-representation-using-brython/piechart1.png) 
 
-
 #### Creating a scatterplot using Brython.
-A scatterplot tests the relationship between two factors. To achieve this, we will use the HTML file that we have previously used to create the pie chart. We only need to make some changes to the created chart.py file.
+A scatterplot tests the relationship between two factors or variables. To achieve this, we will use the HTML file that we previously used to create the pie chart. 
 
-##### Making changes to the Chart.py file
-The new `chart.py` file that we will use to plot the scatterplot is shown below:
+We only need to make some changes to the *chart.py* file.
+
+##### Making changes to the chart.py file
+We will use the following `chart.py` file to plot the scatterplot:
 
 ```python
 from browser import window
@@ -331,29 +370,35 @@ b_highchart(
 )
 ```
 
-The code snippet above shows the relation between weight and height using a sample of 53 individuals of different races.
+The code snippet above shows the relationship between *weight* and *height* using a sample of *53* individuals from different races.
 
-The code is used to plot the scatterplot using the `chart` object. The `chart` object has the following methods that specify the behavior of our scatterplot.
-- `type`: This method specifies the chart type. In this case, it is a scatterplot. Thus, it taking the value `scatter`
+The `chart` object used in the scatterplot has the following methods:
+
+- `type`: This method specifies the chart type. In this case, it is a scatterplot. Therefore, it takes the value `scatter`.
+
 - `zoomType`: This method specifies the zoom dimension when we move the mouse.
-- `radius`: This specifies the horizontal distance between the two closest points in a series.
-- `hover`: if enabled as true, hover takes effect when the mouse is placed over any of the series, thereby highlighting them.
-- `tooltip`: This is a small modal that pops up when we hover our mouse on the datasets in the plot. It displays all details added to the scatterplot.
 
-When we execute this code, the scatterplot is as shown below:
+- `radius`: It specifies the horizontal distance between the two closest points in a series.
+
+- `hover`: If enabled as *true*,  there is a hover effect when the mouse is placed over any of the series.
+
+- `tooltip`: This is a small modal that pops up when we hover our mouse on the plot. It displays all details added to the scatterplot.
+
+When we execute the above code, the scatterplot is as shown below:
 
 ![Scatterplot](engineering-education/data-representation-using-brython/scatterplot.png)
+
 ### Conclusion
-The process of data representation is a delightful journey. Like all journeys, it must come to an end. Through the use of a Content Delivery Network, we were able to import Brython and Highchart's Javascript files. This further enabled us to represent data in the form of a pie chart and scatterplot using Brython. 
+In this tutorial, we used a Content Delivery Network to import Brython and Highchart Javascript files. 
 
-To get the Python code used in this tutorial, click [here](https://github.com/ayodele96/brython).
+These libraries enabled us to represent data in the form of a pie chart and scatterplot. 
 
-### Further Reading
-For further reading on Brython, read this [documentation](https://brython.info/static_doc/en/intro.html).
-
-I hope you find this article helpful.
+You can find the full code used in this tutorial in this [GitHub repository](https://github.com/ayodele96/brython).
 
 Happy coding!
+
+### Further reading
+- [documentation](https://brython.info/static_doc/en/intro.html).
 
 ---
 Peer Review Contributions by: [Bravin Wasike](/engineering-education/authors/bravin-wasike/)
