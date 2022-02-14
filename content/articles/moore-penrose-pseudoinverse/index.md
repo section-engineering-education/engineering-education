@@ -96,9 +96,7 @@ The Singular Value Decomposition of this matrix should return an output similar 
 
 $U=\begin{bmatrix}
     \frac{1}{\sqrt 3} & \frac{1}{\sqrt 2} & \frac{1}{\sqrt 6}\\
-\\
     \frac{1}{\sqrt 3} & 0 &\frac{-2}{\sqrt 6}\\
-\\
 \frac{1}{\sqrt 3} & \frac{-1}{\sqrt 2} & \frac{1}{\sqrt 6}
 \end{bmatrix}$
 
@@ -141,9 +139,7 @@ $A^{\dagger}=V {Σ^\dagger}U^T
     0&0&0
 \end{bmatrix}\begin{bmatrix}
     \frac{1}{\sqrt 3} & \frac{1}{\sqrt 3} & \frac{1}{\sqrt 3}\\
-\\
     \frac{1}{\sqrt 2} & 0 &\frac{-1}{\sqrt 2}\\
-\\
 \frac{1}{\sqrt 6} & \frac{-2}{\sqrt 6} & \frac{1}{\sqrt 6}
 \end{bmatrix}$
 
