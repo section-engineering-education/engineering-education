@@ -57,14 +57,14 @@ Contrarily, Dynamic Typing. Static Typing checks types during compilation. Compi
 
 Consider a basic statically typed language example.
 
-"`py
+```py
 String b;
 b = "Programming is the best choice";
 ```
 
 The code above output an error message below:
 
-"`bash   File "main.py", line 8
+```bash   File "main.py", line 8
     String b;
            ^
 SyntaxError: invalid syntax
@@ -92,7 +92,7 @@ We construct three classes: duck, goose, and hippo. They all swim. The duck and 
 
 Let's look at an example of duck typing.
 
-"`Py
+```Py
 class Duck:  
    def swim_fry(self):  
          print("I am a duck, and I can swim and fry.")  
@@ -109,7 +109,7 @@ for obj in Duck(), Goose(), Hippo():
     obj.swim_fry()
 ``` 
 
-"`bash
+```bash
 I am a duck, and I can swim and fry.
 I am a Goose, and I can swim and fry.
 Traceback (most recent call last):
@@ -150,7 +150,7 @@ for k in Number_squred(2, 6):
   print(k)
 ```
 
-"`bash
+```bash
 4
 9
 16
@@ -173,8 +173,8 @@ def length(iterator):
 if __name__ == "__main__":
    iterator = input("Enter a string:- ")
    print(f"Length of {iterator} is {length(iterator)}")
-
 ```
+   
 The code above prompts the user to enter a string, calculates the length of the string entered by the user, and outputs the result. 
 
 The line of code `def length(iterator)` is used to declare the function to get the length of the iterator and sets the count to zero using the line `count =0`. The for loop increments the count by adding one after every count and returns the count to the function. The line `iterator = input("Enter a string:- ")` prompt user enter the string  and finally output the length of the string using `print(f"Length of {iterator} is {length(iterator)}")`.
