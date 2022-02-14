@@ -1,7 +1,21 @@
-## API Mocking Tools and Best Practices
+---
+layout: engineering-education
+status: publish
+published: true
+url: /api-mocking-tools-and-best-practices/
+title: API Mocking Tools and Best Practices
+description: In this article, we will look at the most popular API mocking tools and frameworks. We will also go through the best practices for API mocking. 
+author: 
+date: 2022-02-14T00:00:00-10:22
+topics: [API]
+excerpt_separator: <!--more-->
+images:
 
+  - url: /engineering-education/api-mocking-tools-and-best-practices/hero.png
+    alt: API image alt
+---
 Mock Application Program Interfaces (API) are crucial in developing and testing apps. They help stimulate imitations of real APIs. Often, live data delays or its unavailability hampers the process of application development and testing. Hence, API mocking tools are necessary for simulating data as in the real world.
-
+<!--more-->
 Besides, testing the code that you write can be a little challenging. It entails testing the code that also performs HTTP requests. Making actual requests during the testing process may yield unreliable results. Mocking solves this issue by facilitating testing at different levels, including the code, API, service, and infrastructure. 
 
 This article looks into API mocking and compares mock APIs to real backends. It also discusses the most popular and lesser-known API tools and frameworks, including their strengths and weaknesses.
@@ -69,3 +83,6 @@ There are several API mocking best practices that you can follow to leverage the
 If you are a developer, mock application program interfaces are one of your best best resources. They are a critical part of your success in making effective and efficient apps. They simulate real-world scenarios to determine the functionality of apps and software. Thus, they enable the developers to make crucial changes to the code before eventual deployment.
 
 Mock APIs are making testing code easier every other day. They have become critical for progress in software and application development. There are several mock frameworks and tools developers can use to improve the development process. The choice of an API mocking tool will depend on individual needs.
+
+---
+Peer Review Contributions by: [Onesmus Mbaabu](/engineering-education/authors/onesmus-mbaabu/)
