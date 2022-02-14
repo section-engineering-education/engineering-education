@@ -100,3 +100,6 @@ This tutorial has shown you how you can build your neural search application usi
 ### Further reading
 - [Jina AI](https://jina.ai/)
 - [Documentation](https://github.com/jina-ai/jina)
+
+---
+Peer Review Contributions by: [Willies Ogola](/engineering-education/authors/willies-ogola/)
