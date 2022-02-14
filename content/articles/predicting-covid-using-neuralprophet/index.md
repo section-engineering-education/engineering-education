@@ -48,7 +48,7 @@ At the end of this tutorial, you will be comfortable with;
 ### About Time-Series Forecasting
 Time series is a series of data points that are organized in an order of time. For example, weather data for a certain location for some time will be listed as dates with their corresponding temperature, rainfall amount, atmospheric pressure, and so on.
 
-Predicting this kind of data using traditional statistical such as Linear regression,Ridge regression, and Lasso regression as well as Bayesian techniques does not produce optimal results. Time-series forecasting is a modeling strategy where these time series are used to predict future trends using past observations where the time-series are the independent variables. This technique can unravel time-domain relationships like seasonality, weekly,monthly, and yearly trends.
+Predicting this kind of data using traditional statistical such as Linear regression, Ridge regression, and Lasso regression as well as Bayesian techniques, do not produce optimal results. Time-series forecasting is a modeling strategy where these time series are used to predict future trends using past observations where the time-series are the independent variables. This technique can unravel time-domain relationships like seasonality, weekly, monthly, and yearly trends.
 
 ### Setting up environments
 On Google Colab, install Prophet and NeuralProphet run the following commands:
@@ -79,7 +79,7 @@ We will be using the Covid-19 Global Cases Dataset from [COVID-19 Data Repositor
 This dataset is a collection of reports from various countries' health departments, agencies, and universities that is updated daily by the CSSE at JHU.
 
 ### Preparation of the data
-The data has some countries' data presented by Province or State. The 'Province/State' column should be combined into one country's column.
+The data has some countries' data presented by the `Province` or `State`. The 'Province/State' column should be combined into one country's column.
 We also need to drop the 'Lat' and 'Long' column since they're not useful for this task.
 
 ```python
@@ -99,9 +99,9 @@ rotated_dataset=rotated_dataset.rename(columns={0:'Date'})
 ```
 
 NeuralProphet only accepts two columns; the `dates` and `y-column` when fitting data. The columns must be named `ds` and `y` respectively.
-We will drop all NULL values from the data.
+We will drop all `NULL` values from the data.
 
-For the moment, let's use the US data for demonstration.
+For the moment, let's use the `US` data for demonstration.
 
 ```python
 data=cases[['Date','US']]
@@ -111,18 +111,17 @@ data[:1].head()
 ```
 **Output:**
 ```bash
-index,ds,y
-2,1/24/20,1.0
-3,1/25/20,0.0
-4,1/26/20,3.0
-5,1/27/20,0.0
-6,1/28/20,0.0
+ 	      ds 	   y
+2 	1/24/20 	1.0
+3 	1/25/20 	0.0
+4 	1/26/20 	3.0
+5 	1/27/20 	0.0
+6 	1/28/20 	0.0
 ```
 
 ### Training the model
-We will import the NeuralProphet() class from `neuralprophet`, create an empty model from it, and assign it to the variable `m`.
+We will import the `NeuralProphet()` class from `neuralprophet`, create an empty model from it, and assign it to the variable `m`. We will then fit the model on our training dataset `data` from the previous step. Thereafter, we will begin the training process by passing three arguments to the `fit()` method:
 
-We will then fit the model on our training dataset `data` from the previous step. Thereafter, we will begin the training process by passing three arguments to the `fit()` method;
 - The dataset to train on, `data`,
 - Frequency of the data, `freq` as 'D' since the occurrence of the data is daily,
 - Training time, `epochs`
@@ -132,18 +131,16 @@ from neuralprophet import NeuralProphet
 m = NeuralProphet()
 m.fit(data,freq='D',epochs=1000)
 ```
-After the training process is complete, we can obtain the model's metrics, such as Mean Absolute Error (MAE), from the output of the cell.
-We can note that the MAE is reduced significantly (~ 90%) during the training process.
+After the training process is complete, we can obtain the model's metrics, such as Mean Absolute Error (MAE), from the output of the cell. We can note that the MAE is reduced significantly (~ 90%) during the training process.
 
 ### Monitoring the training process and evaluating the model
-Note that a NeuralProphet model self-validates and provides validation metrics as part of the training process outputs.
-If you installed the `[live]` version of NeurapProphet and want to monitor the metrics during the training process, split the data into training and testing sets using the model's `split_df()` method as shown below;
+A NeuralProphet model self-validates and provides validation metrics as part of the training process outputs. If you installed the `[live]` version of NeuralProphet and want to monitor the metrics during the training process, split the data into training and testing sets using the model's `split_df()` method as shown below:
 
 ```python
 df_train, df_test = m.split_df(data, freq='D')
 metrics = m.fit(df_train, freq='D', epochs=1000, validation_df=df_test, plot_live_loss=True)
 ```
-A live plot of the SmoothL1Loss and MAE will be plotted live during training.
+A live plot of the `SmoothL1Loss` and `MAE` will be plotted live during training.
 
 The output of the code-cell below displays the metrics of the model at the end of training;
 
@@ -157,11 +154,8 @@ index,SmoothL1Loss,MAE,RMSE,RegLoss,SmoothL1Loss_val,MAE_val,RMSE_val
 ```
 
 ### Forecasting
-Forecast future trends by passing the data and the number of periods (days) to the make_future_dataframe () method. 
-Let us predict for the next 14 days.
-
-Call the `predict()` method on `future` to perform the forecast.
-The predictions are the `yhat1` column of the `forecast` dataframe.
+Forecast future trends by passing the data and the number of periods (days) to the `make_future_dataframe()` method. Let us predict for the next 14 days.
+Let's call the `predict()` method on `future` to perform the forecast. The predictions are the `yhat1` column of the `forecast` dataframe.
 
 ```python
 future=m.make_future_dataframe(data,periods=14)
@@ -203,8 +197,7 @@ The `yhat1` values are:
 13    540291
 Name: yhat1, dtype: int64
 ```
-This means that the model predicts 582,727 cases for tomorrow, 585,876 for the following day, and so on.
-We will obtain the predictions with their dates as follows;
+This means that the model predicts 582,727 cases for tomorrow, 585,876 for the following day, and so on. We will obtain the predictions with their dates as follows;
 
 ```python
 results_df=forecast[['ds','yhat1']]
