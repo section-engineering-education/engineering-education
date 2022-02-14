@@ -1,5 +1,8 @@
 {{ define "main" }}
 
+{{ $featureToggle := resources.Get "js/featureToggle.js" }}
+<script defer language="javascript" type="text/javascript" src="{{ $featureToggle.Permalink }}"></script>
+
 <article>
   <section class="hero-blocks xs-pt-50 xs-pb-50 sm-pt-100 sm-pb-100 -blue-blocks">
     <div class="hero-blocks-mobile">
@@ -89,6 +92,27 @@
         {{ $author := path.Base .Permalink}}
 
         {{ range (where (where .Site.Pages "Params.layout" "engineering-education") ".Params.author" $author) }}
+
+        <script defer type="text/javascript">
+          document.addEventListener("DOMContentLoaded", async function() {
+            if (await unleash.isEnabled('section.io.hyvorTalk', {}, false)) {
+              fetch('https://talk.hyvor.com/api/v1/page', {
+                'page_identifier': "https://www.section.io/engineering-education/php-io-streams/",
+                'website_id': '5716'
+              })
+                .then(response => response.json())
+                .then(data => {
+                  console.log(data);
+                  if (data.status === true) {
+                    document.getElementById('comments-count').innerHtml = data.data.comments_count;
+                    document.getElementById('likes-count').innerHtml = data.data.reactions[0];
+                  }
+                })
+            } else {
+              console.log('not enabled...')
+            }
+          });
+        </script>
         
         <li class="blog-listing-posts-item mix {{ with .Params.tags }}{{ range . }}{{ lower . }} {{ end }}{{ end }}">
           <a class="decoration-none xs-pb-40 xs-pt-40 prl-25 flex flex-wrap" href="{{.Permalink}}">
@@ -113,6 +137,11 @@
 
               <p class="text-18-regular text-color">{{ .Summary | plainify | truncate 210 "..." }}</p>
 
+            </div>
+
+            <div class="insights-data">
+              <div>Comments: <span id="comments-count"></span></div>
+              <div>Likes: <span id="likes-count"></span></div>
             </div>
 
           </a>
