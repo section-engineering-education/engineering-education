@@ -1,1 +1,0 @@
-Simon Ngaruiya is an undergraduate student undertaking his Bachelor of Science in Computer Science. He is interested in developing android applications using kotlin and Java. In his free time, he likes reading books and collaborating with teams to provide solutions
