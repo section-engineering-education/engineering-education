@@ -11,7 +11,7 @@ topics: [Languages]
 excerpt_separator: <!--more-->
 images:
   - url: /engineering-education/introduction-to-kernel-methods-in-machine-learning/hero.png
-    alt: Introduction to Kernel Methods in Machine Learning 
+    alt: Introduction to Kernel Methods in Machine Learning Hero Image
 ---
 The concept of "data drawn from some probability distribution" underpins many statistics and machine learning techniques. 
 <!--more-->
@@ -57,20 +57,17 @@ These are some of the many techniques of the kernel;
 
 #### 1. Support Vector Machine (SVM)
 It can be defined as a classifier for separating hyperplanes, in which hyperplanes are subspaces with one dimension less than the ambient space. 
-
 Higher dimensions make support vector machines much more challenging to interpret. It's more difficult to imagine how we can separate the data linearly and the decision boundary. In p-dimensions, a hyperplane is a p-1 dimensional "flat" subspace within the larger p-dimensional space. The hyperplane is simply a line in two dimensions.
 
 #### 2. Adaptive Filter
 It uses a linear filter that integrates the transfer function, controlled by several methods and parameters, which we will use to fine-tune these parameters per the development algorithm.
-
 Every adaptive filter is a digital filter due to the complexity of the optimization algorithm. An adaptive filter is required for applications with no prior knowledge of the desired performance or where the implementation changes. The cost function is applied to a flexible closed-loop filter as needed for optimal filter operation. It determines how to alter the filter transfer function to reduce the cost of subsequent duplication.
 
 #### 3. Kernel perception
 In machine learning, it's a variant of the popular perceptron learning algorithm used to train kernel machines. It includes non-linear classifiers that use a kernel function to calculate the similarity of unseen samples to training samples.
-
 Most of the kernel algorithms discussed are statistically based on convex optimization or eigenproblems. Therefore, the statistical learning theory is used to analyze their statistical properties.
 
-Kernel methods have a wide range of applications i.e;
+Kernel methods have a wide range of applications;
 
  - 3D reconstruction
  - Bioinformatics
@@ -82,9 +79,7 @@ Kernel methods have a wide range of applications i.e;
 
 #### 4. Principle Component Analysis (PCA)
 Principle component analysis is a tool used to reduce data size. It allows us to reduce the size of the data without losing much of the information. PCA reduces the size by obtaining a combination of orthogonal lines (key components) for real flexibility with very large variations.
-
 The first major component captures most of the data variability. The second main part is orthogonal in the main part and captures the remaining variations, the rest of the first main part, and so on. Many principal components are uncorrelated and organized so that a few principal components define most of the actual data variations.
-
 The kernel principal component analysis extends PCA that uses kernel methods. In contrast to the standard linear PCA, the kernel variant works for a large number of attributes but becomes slow for a large number of examples.
 
 #### 5. Spectral clustering
