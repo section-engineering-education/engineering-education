@@ -20,6 +20,13 @@ To enter a section of code where an existing thread already exists, the other th
 
 Thread safety in C# is done via the monitor and lock approach. Execution of one code at a time will ease coding difficulties.
 
+### Prerequisite
+To be able to follow along with this article, have the following:
+- Background information on Csharp programming language.
+- An understanding of multithreading in Csharp.
+- Have [Visual studio](https://visualstudio.microsoft.com/) installed.
+
+
 ### Table of contents
 - [C# lock in thread](#c-lock-in-thread)
 - [Working of lock keyword in C#](#working-of-lock-keyword-in-c)
