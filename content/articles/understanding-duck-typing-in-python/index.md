@@ -1,15 +1,33 @@
-### Introduction 
-Duck Typing is a dynamic language type system. The method an object specifies is more important than its type. We don't use Duck Typing. We seek a technique or property. If anything looks like a duck and quacks like a duck, it is a duck.
+---
+layout: engineering-education
+status: publish
+published: true
+url: /understanding-duck-typing-in-python/
+title: Understanding Duck Typing in Python
+description: Duck Typing is a dynamic language type system. In this article, we compare static and dynamic types by looking at typing and duck typing in several programming languages.
+author: samuel-irungu
+date: 2022-02-14T00:00:00-18:00
+topics: [Languages]
+excerpt_separator: <!--more-->
+images:
 
+ - url: /engineering-education/understanding-duck-typing-in-python/hero.jpg
+   alt: Understanding Duck Typing image
+---
+
+Duck Typing is a dynamic language type system. The method an object specifies is more important than its type. Therefore, we don't use Duck Typing. Instead, we seek a technique or property. If anything looks like a duck and quacks like a duck, it is a duck.
+
+<!--more-->
+
+### Introduction 
 This article compares static vs dynamic types by looking at typing and duck typing in several programming languages. So let's see how this great notion might be implemented in real-world projects.
 
-### Preliquisuite
-To understand the content of this article properly have the following:
-- Have prior knowledge of python programming
-- Have a python compiler installed or use the [online compile](https://www.onlinegdb.com/online_python_compiler) to run the code snippets.
+### Prerequisites
+To understand the content of this article properly, have the following:
+- Have prior knowledge of Python programming
+- Have a Python compiler installed or use the [online compiler](https://www.onlinegdb.com/online_python_compiler) to run the code snippets.
 
 ### Table of content
-- [Preliquisuite](#preliquisuite)
 - [Understanding the static and dynamic typing](#Understanding-the-static-and-dynamic-typing)
 - [Concept Of Duck Typing](#concept-of-duck-typing)
 - [How to apply iteration in duck typing ](#how-to-apply-iteration-in-duck-typing )
@@ -17,7 +35,7 @@ To understand the content of this article properly have the following:
 - [Conclusion](#conclusion)
 
 ### Understanding the static and dynamic typing
-Type checking is performed in real-time through Dynamic Typing. Python, for example, is dynamically typed. It implies a variable's type might vary over time. Perl, Ruby, PHP, Javascript, and others are dynamically typed.
+Type checking is performed in real-time through Dynamic Typing. Python, for example, is dynamically typed. It implies a variable's type might vary over time. Likewise, Perl, Ruby, PHP, Javascript, and others are dynamically typed.
 
 Let's examine whether a variable may change type in Python:
 
@@ -33,7 +51,7 @@ print(type(b))
 <class 'int'> 
 ```
 
-The code above assigns the variable `b`  to the string hurry and also to an integer value 4. This ensures that Python correctly infers the variable's type.
+The code above assigns the variable `b`  to the string hurry and an integer value of 4. This ensures that Python correctly infers the variable's type.
 
 Contrarily, Dynamic Typing. Static Typing checks types during compilation. Compile-time knows a variable's type. Some languages (e.g. C, C++, Java) specify a variable's type, whereas others enable type inference (e.g. Scala, Haskell). Static Typing avoids variable retyping.
 
@@ -54,9 +72,9 @@ SyntaxError: invalid syntax
 
 The first line declares b as a string. In line 2, b is not a string. It will warn about incompatible types if we say b = 4.
 
-**Now we compare static and dynamic typing in Python.**
+#### Static and dynamic typing in Python
 
-When it comes to computer languages, typing is a hot topic, although its basic meaning is frequently. So let's compare the basic type principles to better grasp the notion.
+When it comes to computer languages, typing is a hot topic, although its basic meaning is frequently. So let's compare the basic type principles to grasp the notion better.
 
 A computer program's objects and elements are stored in memory and have variable names. So, when you create an object of a certain class, you're just allocating memory for it and calling it by its variable name.
 
@@ -64,9 +82,9 @@ Consider this memory space as a box or container. In this situation, a box. So n
 
 A box must be built to hold the thing it holds (i.e., a box made for keeping pens will not be optimal for carrying textiles, and vice versa, even if it is technically possible). On consensus, object and box must be the same.
 
-This is called static typing. That is, both the object and the variable name (the box) must have the same "type." That's why in statically typed languages like Java/C++, you must declare a variable's type. Even if the variable is empty, you may designate it as a box. Python doesn't allow it.
+This is called static typing. That is, both the object and the variable name (the box) must have the same "type." That's why in statically typed languages like Java/C++, you must declare a variable's type. Even if the variable is empty, you may designate it as a box. Unfortunately, Python doesn't allow it.
 
-However, Python is a dynamically typed language. The variable name here is more like a store price tag than a box. So the label is blank. If you ask it its type, it will probably choose the tagged object. A clothing tag can be reused on another garment. As a result, Python does not explicitly type variables. A variable's type is the type of the object to which it is now bound. Typing is dynamic.
+However, Python is a dynamically typed language. Here, the variable name is more like a store price tag than a box. So the label is blank. If you ask its type, it will probably choose the tagged object. A clothing tag can be reused on another garment. As a result, Python does not explicitly type variables. A variable's type is the type of the object to which it is now bound. Typing is dynamic.
 
 
 ### concept of duck typing
@@ -100,16 +118,16 @@ Traceback (most recent call last):
 AttributeError: 'Hippo' object has no attribute 'swim_fry'
 ```
 
-Of the duck, the class can swim and fry. It's the same with the geese class, which includes the necessary swim fry function. However, the hippo class lacks the swim fry method, therefore its instance fails the test.
+Of the duck, the class can swim and fry. It's the same with the geese class, which includes the necessary swim fry function. However, the hippo class lacks the swim fry method; therefore, its instance fails the test.
 
-This gives us a basic notation for duck typing. Custom types are more about implementing features than data types. Even though a geese isn't a true duck, the smim_fry function turns it into one.
+This gives us a basic notation for duck typing. Custom types are more about implementing features than data types. Even though a goose isn't an actual duck, the smim_fry function turns it into one.
 
 
-**Practical examples**
+### Practical examples 
 
 Let us now consider some of the usages of duck typing that we can employ in our projects.
 
-### How to apply iteration in duck typing 
+#### How to apply iteration in duck typing 
 Iteration allows us to modify lists in Python. The `for` loops are a systematic approach to establishing an iteration.
 
 Duck typing is used here. Due to duck type, these objects are handled the same regardless of their application. Iteration requires __iter__() and __next__() methods. Python is becoming more versatile by not tightly typing these classes. We may even design our iterator for outputting square numbers, using methods like __iter__() and __next__().
@@ -142,8 +160,8 @@ for k in Number_squred(2, 6):
 In the above code sample, we utilized the iter() and next() methods to create iterators of the custom class Number squared. The square numbers to be computed are regulated between 2 and 6 using the for a loop.
 
 
-### Implementation of custom len() function
-Custom len() method that uses sort() to sort a list. It's a magic function since it utilizes the len() technique. Consider sorting a list of ducks by name length. Here's how duck typing works.
+#### Implementation of custom len() function
+Custom len() method uses sort() to sort a list. It's a magic function since it utilizes the len() technique. For example, consider sorting a list of ducks by name length. Here's how duck typing works.
 
 ```Py
 def length(iterator):
@@ -157,12 +175,14 @@ if __name__ == "__main__":
    print(f"Length of {iterator} is {length(iterator)}")
 
 ```
-The code above prompts the user to enter a string, the code then calculates the length of the string entered by the user and outputs the result. 
+The code above prompts the user to enter a string, calculates the length of the string entered by the user and outputs the result. 
 
-The line of code `def length(iterator)` is used to declare the function to get the length of the iterator and sets the count to zero using the line `count =0`. The for loop is used to increment the count by adding one after every count and then returning the count to the function. The line `iterator = input("Enter a string:- ")` prompt user enter the string  and finally output the length of the string using `print(f"Length of {iterator} is {length(iterator)}")`.
+The line of code `def length(iterator)` is used to declare the function to get the length of the iterator and sets the count to zero using the line `count =0`. The for loop increments the count by adding one after every count and returns the count to the function. The line `iterator = input("Enter a string:- ")` prompt user enter the string  and finally output the length of the string using `print(f"Length of {iterator} is {length(iterator)}")`.
 
 ### Conclusion
 Duck typing was brought up as an example of dynamic typing in Python. It taught you Python duck type. Remember that duck typing prioritizes related functionality over specific data types.
 
-Happy cording!
-ind
+Happy coding!
+
+---
+Peer Review Contributions by: [Lalithnarayan C](/engineering-education/authors/lalithnarayan-c/)
