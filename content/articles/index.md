@@ -42,10 +42,9 @@ Kernels, also known as kernel techniques or kernel functions, are a collection o
 In other words, a kernel is a term used to describe applying linear classifiers to non-linear problems by mapping non-linear data onto a higher-dimensional space without having to visit or understand that higher-dimensional region.
 
 ### Unsupervised and supervised machine learning
-___Supervised machine learning___ is also known as supervised learning. It is distinguished by using labelled datasets to train algorithms that accurately classify data or predict outcomes.
+___Supervised machine learning___ is also known as supervised learning. It is distinguished by using labelled datasets to train algorithms that accurately classify data or predict outcomes. A supervised learning algorithm examines training data and generates an inferred function that we can use to map new examples.
 
-A supervised learning algorithm examines training data and generates an inferred function that we can use to map new examples.
-
+___Unsupervised machine learning___ is also known as unsupervised learning. It examines unlabeled datasets using ML algorithms. Unsupervised learniong main subgroup known as clustering.  
 ### Kernel methods in machine learning
 These are some of the many techniques of the kernel ;
 - Support Vector Machine (SVM)
