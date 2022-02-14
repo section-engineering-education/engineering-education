@@ -59,7 +59,7 @@ Consider a basic statically typed language example.
 
 ```py
 String b;
-b = "programming is the best choice";
+b = "Programming is the best choice";
 ```
 
 The code above output an error message below:
@@ -88,7 +88,7 @@ However, Python is a dynamically typed language. Here, the variable name is more
 
 
 ### concept of duck typing
-We construct three classes: duck, goose, and hippo. They all swim. The Duck and Geese fry, but the hippo walks. Then we define the swim_fry() function, which accepts an animal and writes its description with a swim and fry. A creature missing swim fry() will fail the duck test due to a variable type issue.
+We construct three classes: duck, goose, and hippo. They all swim. The duck and goose fry, but the hippo walks. Then we define the swim_fry() function, which accepts an animal and writes its description with a swim and fry. A creature missing swim_fry() will fail the duck test due to a variable type issue.
 
 Let's look at an example of duck typing.
 
@@ -97,28 +97,28 @@ class Duck:
    def swim_fry(self):  
          print("I am a duck, and I can swim and fry.")  
    
-class Geese:  
+class Goose:  
      def swim_fry(self):  
-         print("I am a Geese, and I can swim and fry.")  
+         print("I am a Goose, and I can swim and fry.")  
    
 class Hippo:  
      def walk(self):  
          print("I am a Hippo, and I can swim but can`t fry.")  
    
-for obj in Duck(), Geese(), Hippo():
+for obj in Duck(), Goose(), Hippo():
     obj.swim_fry()
 ``` 
 
 ```bash
 I am a duck, and I can swim and fry.
-I am a Geese, and I can swim and fry.
+I am a Goose, and I can swim and fry.
 Traceback (most recent call last):
   File "main.py", line 21, in <module>
     obj.swim_fry()
 AttributeError: 'Hippo' object has no attribute 'swim_fry'
 ```
 
-Of the duck, the class can swim and fry. It's the same with the geese class, which includes the necessary swim fry function. However, the hippo class lacks the swim fry method; therefore, its instance fails the test.
+Of the duck, the class can swim and fry. It's the same with the goose class, which includes the necessary swim fry function. However, the hippo class lacks the swim fry method; therefore, its instance fails the test.
 
 This gives us a basic notation for duck typing. Custom types are more about implementing features than data types. Even though a goose isn't an actual duck, the smim_fry function turns it into one.
 
