@@ -94,7 +94,8 @@ The algorithm will visit only URLs that have not been previously visited to ensu
 4. When a new URL is found, verify that it has not been previously visited by checking the list of visited URLs.
 5. Add the newly found unvisited URL to the queue and the list of visited URLs.
 6. Repeat steps 4 and 5 for every new URL found within the HTML content.
-7. When all the URLs in the HTML have been found, repeat from step two until the program reaches your specified breakpoint.
+7. When all the URLs in the HTML have been found, repeat from step two until the program reaches your specified breakpoint.  For this demo, I’ll use a breakpoint of 100.
+
 
 ####  Implementation
 
