@@ -1,16 +1,13 @@
 ﻿### Introduction
-Time, effort and complexity are highly considered in developing applications. Therefore, a good application development strategy should ensure that the development time is significantly reduced and less effort is involved while keeping the complexity of the application minimal.
+A good application development strategy should ensure that the development time and effort are significantly reduced while keeping the application complexity minimal.
 
-In the real world, applications tend to grow in size; hence more effort is required, and the complexity of these applications increases. Therefore, a well-developed application should be responsive and highly scalable. 
+In real world, applications tend to grow in size, meaning that more effort is required, and the application coplexity increases. Therefore, a well-developed application should be responsive and highly scalable.
 
-Unlike [monolithic architecture](https://www.mulesoft.com/resources/api/microservices-vs-monolithic), applications have huge components and complex logic. Maintaining or upgrading such huge applications is challenging, and also integrating a new team can be a difficult task.
+In [monolithic architecture](https://www.mulesoft.com/resources/api/microservices-vs-monolithic), applications have huge components and complex logic. Maintaining or upgrading such applications is challenging, and also integrating a new team can be a difficult task.
 
-A better solution would be breaking down an application into smaller independent applications known as [micro-frontends](https://single-spa.js.org/docs/microfrontends-concept/). 
+A better solution would be breaking down a huge application into smaller independent applications known as [micro-frontends](https://single-spa.js.org/docs/microfrontends-concept/). 
 
-Micro-frontends are easier to manage, scale, and assign to separate teams. This article introduces the reader to micro-frontends and their advantages compared to monolithic applications. 
-
-
-We will also use a demo application to illustrate how micro-frontends works.
+Micro-frontends are easier to manage, scale, and can be assigned to a separate teams. This article introduces the reader to micro-frontends and their advantages compared to monolithic applications. We will also use a demo application to illustrate how micro-frontends works.
 
 ### Prerequisites
 - [Npm](https://docs.npmjs.com/cli/v8/commands/npm-install) packages installed.
@@ -20,19 +17,19 @@ We will also use a demo application to illustrate how micro-frontends works.
 - A good understanding of [Angular.js](https://docs.angularjs.org/tutorial) and [npm](https://docs.npmjs.com/cli/v6/commands/npm) commands.
 
 ### Understanding monolith architecture and micro-frontend architecture
-Monolith architecture refers to a vast code block containing several modules bundled into a single application. 
+Monolith architecture refers to a huge code block containing several modules bundled into a single application.
 
-The modules in a monolith application are tightly coupled with each other, meaning that the application logic and the business login are combined and deployed as a single unit. 
+The modules in a monolith application are tightly coupled with each other. This means that the application logic and the business logic are bundled and deployed as a single unit.
 
-A monolith application is built on a unified code. It contains three tiers of software architectures; the user interface, the database, and the server-side application. 
+A monolith application is built on a unified code. It contains three tiers of software architectures namely the user interface, the database, and the server-side application.
 
 Developing a monolithic application is challenging as it piles pressure on the developers. It takes longer to develop since the architecture does not support independent development. In addition, it is challenging to use different programming languages on the same application.
 
-Micro-frontend is a design approach where an application is split into multiple frontend applications. Then, independent developers can work on each application. This approach significantly reduces the development time and process. 
+Micro-frontend is a design approach where an application is split into multiple frontend applications. The independent developers can work on each application. This approach significantly reduces the development time and process. 
 
-Multiple development teams can work on the same frontend code independently. As a result, the code in micro-frontend applications is more maintainable, manageable, and independent. 
+In addition, multiple development teams can work on the same frontend code independently. As a result, the code in micro-frontend applications is more maintainable, manageable, and independent. 
 
-The application's code updates can be performed incrementally. Nevertheless, improvements can be made on specific modules without breaking the entire application codebase.
+It is important to note that the application's code updates can be performed incrementally. Nevertheless, improvements can be made on specific modules without breaking the entire application codebase.
 
 ### Features of micro-frontends
 - Each frontend in the micro-frontend application is designed to solve a specific problem or provide a unique feature.
@@ -42,29 +39,29 @@ The application's code updates can be performed incrementally. Nevertheless, imp
 
 ### Advantages of micro-frontends
 - **Applications are small** - In micro-frontends, a large application is split into small sections, pages, or even features. This makes the entire application small hence it would not take more storage space and memory.
-- **Independent** - The applications are split and developed by different teams; hence the teams' meanings are independent. Even if one part is not working, it does not affect the entire application.
-- **Easy to understand** – Applications developed by a single developer are hard to understand since they tend to be huge and more complicated than the micro frontends distributed over multiple teams. This is because they tend to be smaller units of large applications which are more readable hence easy to understand.
-- **Easy to develop and deploy** - The applications that have been distributed on a team are easy to develop as the independent team works on its team. They are also deployed independently with ease compared to a huge application.
-- **Easy to test** - Large application requires a lot of unit testing before deployment, thereby increasing deployment time. Unlike huge applications, unit testing is done independently in the micro-frontend since each application requires fewer unit tests, and therefore deployment is much faster.
-- **Less development time** - as mentioned earlier, micro-frontends require less development time than large applications as the separate teams work on their application independently compared to one team working on the application.
-- **Easy CI/CD** - The application can be integrated and deployed independently hence making the CI/CD easier. Suppose a part of the application develops a bug or an update is required. In that case, it is easy to fix and perform on the specific part of the application without interfering with the entire application.
-- **Independent stacks and versions** - An application can have different versions of the same stack. This could mean that some teams can develop and test newer versions of the same stack in an application.
-- **No shared code** - Large applications share the code to share the functionality of some of the features. However, this comes at a cost in case of a bug that can entirely bring the application down. Also, the interdependencies between the modules can bring more problems as the application grows big. This cannot happen in the micro-frontends as this architecture does not share code.
+- **Independent** - Since the applications are split and developed by different teams, therefore the teams can work independently. In addition, if one application module is not working, it does not affect the entire application.
+- **Easy to understand** – Applications developed by a single developer are hard to understand since they tend to be huge and more complicated than the micro frontends distributed over multiple teams. This is because they tend to be smaller units of large applications which are more readable and easy to understand.
+- **Easy to develop and deploy** - The applications that have been distributed over a team are easy to develop as the independent team members works on their part. They are also deployed independently with ease compared to a huge application.
+- **Easy to test** - Large application requires a lot of unit testing before deployment, thereby increasing deployment time. Unlike huge applications, unit testing is done independently in the micro-frontend since each application requires fewer unit tests making deployment much faster.
+- **Less development time** - As mentioned earlier, micro-frontends require less development time compared to large applications as the separate teams work on their application independently as opposed to one team working on the application.
+- **Easy CI/CD** - The application can be integrated and deployed independently hence making the CI/CD easier. Suppose a part of the application develops a bug or an update is required. In that case, it is easy to fix and perform repairs on the specific part of the application without interfering with the entire application.
+- **Independent stacks and versions** - An application can have different versions of the same stack. This means that some teams can develop and test newer versions of the same stack in an application.
+- **No shared code** - Large applications share the code to use same functionality of some of the features. However, this comes at a cost in case of a bug that can entirely bring the application down. Also, the interdependencies between the modules can bring more problems as the application grows huge. This cannot happen in the micro-frontends as this architecture does not share code.
 
 ### Overview of our demo application
 We will start with a monolith application in our demo application and break it down into smaller micro-frontends. The monolith application might not be huge as we only do this for demonstration purposes. We will design an administrator dashboard of an application and break it down into independent applications.
 
-Most administrator dashboard contains a lot of components with overly complex logic that have been built using monolithic architecture. It is not easy to scale and maintain such an application. Also, the integration of the new developers is challenging as they have to spend much time learning and understanding the application.
+Most administrator dashboard contains a lot of components with overly complex logic that have been built using monolithic architecture. It is not easy to scale and maintain such an application. Also, the integration of the new developers is challenging as they have to spend a lot of time learning and understanding the application.
 
 The solution would be to use the micro-frontends approach that splits the complex application logic into smaller micro-applications that are easy to maintain and analyze their codebases. In addition, the application components can be assigned to the independent development teams therefore making the development and deployment time reduce significantly.
 
 Our demo application development will follow the below stages:
 - Creating the workspace where all the application components will be contained.
-- Create a component wrapper that assists in navigating the independent pieces and hosting.
+- Creating a component wrapper that assists in navigating the independent pieces and hosting.
 - Creating the micro-frontends from the monolith application.
 
 ### Implementating our demo application
-We will start by creating the application workspace that contains all the components using Angular by executing the below command in the terminal window:
+We will start by creating the application workspace that will contain all the components using Angular by executing the below command in the terminal window:
 
 ```bash
 $ ng n administrator-page –-create-application="false"
@@ -82,13 +79,13 @@ Then, we will add a `landingpage` component to the `administrator` which is our 
 $ ng generate c landingpage --project=administrator
 ```
 
-Next, we can create the micro-frontend application and name it `forumpage` by executing the below command:
+Next, we will create a micro-frontend application and name it `forumpage` by executing the below command:
 
 ```bash
 $ ng generate application forumpage --routing
 ```
 
-We then add the module inside our application that will be lazy-loaded to the host component. Next, we will create a component for displaying the demo content and name it as `comments` using the below commands:
+We will then add a module inside our application that will be lazy-loaded to the host component. Next, we will create a component for displaying the demo content and name it as `comments` using the below commands:
 
 ```bash
 $ ng generate module comments --routing --project=forumpage
@@ -108,7 +105,7 @@ const routes: Routes = [
  ...
 ```
 
-Then edit the file `administrator-page/projects/forumpage/src/app/comments/comments-routing.module.ts` as below:
+Then, we will edit the file `administrator-page/projects/forumpage/src/app/comments/comments-routing.module.ts` as below:
 
 ```JavaScript
 ...
@@ -123,7 +120,7 @@ const routes: Routes = [
  ...
 ```
 
-We can proceed and edit the file `administrator-page/projects/forumpage/src/app/comments/comments.component.html` to create HTML component as below:
+Next, we will proceed and edit the file `administrator-page/projects/forumpage/src/app/comments/comments.component.html` to create HTML component as below:
 
 ```html
 <div class=”content”>
@@ -131,7 +128,7 @@ We can proceed and edit the file `administrator-page/projects/forumpage/src/app/
 </div>
 ```
 
-And the `css` file will be:
+Then, we will edit the `css` file as below:
 
 ```css
 .content {
@@ -184,7 +181,7 @@ Then, we will also need to update our `package.json` file by adding the below co
 },
 ```
 
-Next we can set up the routing inside the dashboard component in order to load our independent applications. In addition, we will also add more content to our HTML templates and add the css for styling the dashboard. We will edit the file `administrator-page/projects/administrator/src/app/app.component.html` as below:
+Next, we can set up the routing inside the dashboard component in order to load our independent applications. In addition, we will also add more content to our HTML templates and add the `css` for styling the dashboard. We will edit the file `administrator-page/projects/administrator/src/app/app.component.html` as below:
 
 ```html
 <div class="main-wrap">
@@ -198,7 +195,7 @@ Next we can set up the routing inside the dashboard component in order to load o
 </div>
 ```
 
-Then we will modify the file `administrator-page/projects/administrator/src/app/app-routing.module.ts` as below:
+Then, we will modify the file `administrator-page/projects/administrator/src/app/app-routing.module.ts` as below:
 
 ```JavaScript
  ...
@@ -227,7 +224,7 @@ An error will pop up upon running the application because the dashboard has no i
 declare module 'forumpage/CommentsModule';
 ```
 
-Inside the directory `administrator-page/projects/administrator/src/app/` we will edit the css file `app.component.scss` to style our components as below:
+Inside the directory `administrator-page/projects/administrator/src/app/` we will edit the `css` file `app.component.scss` to style our components as below:
 
 ```css
 .main-wrap {
@@ -280,7 +277,7 @@ Inside the directory `administrator-page/projects/administrator/src/app/` we wil
 }
 ```
 
-Then update the file `administrator/src/app/landingpage/landingpage.component.html` as below:
+Then, we will update the file `administrator/src/app/landingpage/landingpage.component.html` as below:
 
 ```html
 <div class="content">
@@ -288,7 +285,7 @@ Then update the file `administrator/src/app/landingpage/landingpage.component.ht
 </div>
 ```
 
-Next update the `css` file `administrator/src/app/landingPage/landingpage.component.scss` as below:
+Next, we will update the `css` file `administrator/src/app/landingPage/landingpage.component.scss` as below:
 
 ```css
 .content {
