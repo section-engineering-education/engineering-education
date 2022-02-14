@@ -235,19 +235,17 @@ print(results_df)
 
 
 ### Conclusion
-
-As you can see, we have built a NeuralProphet model and used it to predict Covid-19 cases.
-
-In this tutorial, we learned how to install NeuralProphet, import and prepare data for time-series forecasting, train the NeuralProphet forecaster and forecast using the trained model.
-
-This model can now be served via any web application framework like Streamlit or Dash using Django or Flask via an API. In case of any issues with NeuralProphet, you can raise an issue on [NeuralProphet's GitHub](https://github.com/ourownstory/neural_prophet).
+We have built a NeuralProphet model and used it to predict Covid-19 cases. In this tutorial, we learned how to install NeuralProphet, import and prepare data for time-series forecasting, train the NeuralProphet forecaster and forecast using the trained model. This model can now be served via any web application framework like Streamlit or Dash using Django or Flask via an API. In case of any issues with NeuralProphet, you can raise an issue on [NeuralProphet's GitHub](https://github.com/ourownstory/neural_prophet).
 
 You can find the full code [here](https://github.com/iannjari/neuralprophet/blob/main/NeuralProphet.ipynb).
 
-Happy ML-ing!
+Happy coding!
 
 ### References
 - [NeuralProphet's Contributors on Github](https://github.com/iannjari/neuralprophet/blob/main/NeuralProphet.ipynb)
 - [NeuralProphet documenation](https://neuralprophet.com/html/contents.html)
 - [NeuralProphet's Release Notes](https://ai.facebook.com/blog/neuralprophet-the-neural-evolution-of-facebooks-prophet/)
 - [Notebook with accompanying Source Code](https://github.com/iannjari/neuralprophet/blob/main/NeuralProphet.ipynb).
+
+---
+Peer Review Contributions by: [Wilkister Mumbi](/engineering-education/authors/wilkister-mumbi/)
