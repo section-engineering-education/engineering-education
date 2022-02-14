@@ -48,7 +48,7 @@ At the end of this tutorial, you will be comfortable with;
 ### About Time-Series Forecasting
 Time series is a series of data points that are organized in an order of time. For example, weather data for a certain location for some time will be listed as dates with their corresponding temperature, rainfall amount, atmospheric pressure, and so on.
 
-Predicting this kind of data using traditional statistical and Bayesian techniques. Time-series forecasting is a modeling strategy where these time series are used to predict future trends using past observations where the time-series are the independent variables. This technique can unravel time-domain relationships like seasonality.
+Predicting this kind of data using traditional statistical such as Linear regression,Ridge regression, and Lasso regression as well as Bayesian techniques does not produce optimal results. Time-series forecasting is a modeling strategy where these time series are used to predict future trends using past observations where the time-series are the independent variables. This technique can unravel time-domain relationships like seasonality, weekly,monthly, and yearly trends.
 
 ### Setting up environments
 On Google Colab, install Prophet and NeuralProphet run the following commands:
