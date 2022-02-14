@@ -46,7 +46,6 @@ The software is made up of various components, as described below:
 - Extractor: This component processes the fetched HTML content from the web crawler module and extracts the data into a semi-structured format. It's also known as a parser module because it works with many parsing approaches, such as regular expressions, HTML parsing, DOM parsing, and Artificial Intelligence.
 - Data transformation and cleaning module: The data collected by the extractor isn't ready to use right away; it needs to go through some sort of cleaning process before we can utilize it. For this, methods such as string manipulation and regular expressions can be employed. Extraction and transformation can be done in one process.
 - Once we have extracted the needed data, it is stored in standard formats that can be stored in the database, in JSON, or CSV format in the storage module.
-- 
 #### Operation of the Web Scraper
 For the web scraper to perform and accomplish the scraping process, it goes through various steps as stated below:
 - First, the web scraper downloads the requested content from multiple websites and web pages through a web crawler.
@@ -64,7 +63,7 @@ We utilize web scraping in a variety of real-world scenarios, including:
 
 ### Web Scraping in Python
 Web scraping involves a wide variety of programming technologies and techniques. In Python, web scraping is done with various libraries, that is:
-- Requests- It is the most basic and essential library for web scraping, used for making various types of HTTP requests like GET and POST. With requests it does not parse the HTML data retrieved, so libraries like Beautiful Soup are required.
+- Requests - It is the most basic and essential library for web scraping, used for making various types of HTTP requests like GET and POST. It does not parse the HTML data retrieved, so libraries like Beautiful Soup are required.
 - lxml - Is a fast, production-quality, and high-performance HTML and XML parsing library required since the request library cannot parse HTML retrieved from webpages.
 - Beautiful Soup - Is the most extensively used scraping library that produces parse trees for reading HTML and XML data. It automatically converts incoming and outgoing documents to Unicode and UTF-8.
 - Selenium - Is a collection of programs rather than a single tool. It's a free testing tool for web apps that works across several browsers and platforms.
