@@ -242,8 +242,8 @@ This is because `F(n-2)` is the one which is in the cache when we calculate `F(n
 
 `T(0) is 1` will be regarded as `T(n) = O(n + 1) = O(n)`.
 
-### conclusion
-The pattern of overlapping problems to reduce the time complexity of the Fibonacci series from *O(2n)* to *O(n)* is known as Dynamic programming. 
+### Conclusion
+The pattern of overlapping problems to reduce the time complexity of the Fibonacci series from *O(2n)* to *O(n)* is known as dynamic programming. 
 
 For us, the dynamic program is going to be any instance where we have some larger Fibonacci problem and we can divide it into smaller instances of the same issue and thus, achieve an overlapping structure.
 
