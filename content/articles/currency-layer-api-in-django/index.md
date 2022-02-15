@@ -4,10 +4,10 @@ status: publish
 published: true
 url: /currency-layer-api-in-django/
 title: Consuming Currencylayer API in Django
-description: This article will illustrate how to use the Currenclylayer API in a Django application.
+description: This article will illustrate how to use the Currencylayer API in a Django application.
 author: mercy-meave
-date: 2022-01-02T00:00:00-05:00
-topics: [API, Languages]
+date: 2022-02-15T00:00:00-16:15
+topics: [API]
 excerpt_separator: <!--more-->
 images:
 
@@ -15,9 +15,9 @@ images:
     alt: Consuming Currencylayer API in Django Image
 ---
 
-### Introduction
-The Currencylayer API is one of the APIs that provide real-time currency exchange rates. It is easy and reliable to use due to its readable JSON responses. 
+The Currencylayer API is one of the APIs that provide real-time currency exchange rates. It is easy and reliable to use due to its readable JSON responses.
 <!--more-->
+### Introduction
 The API is mainly preferred over other APIs because of its reliability in providing real-time Forex rates, ease of integration and affordability.
 
 To learn more about this API and how to work with it, we will develop a Django application that uses the API to provide real-time currency exchange rates.
@@ -65,7 +65,7 @@ source venv/bin/activate
 ```
 
 #### Installing the dependencies
-We have set up our development environment to install the required dependencies. 
+We have set up our development environment to install the required dependencies.
 
 - First, we begin by installing Django by executing the command below:
 
@@ -139,7 +139,7 @@ INSTALLED_APPS = [
 ```
 
 ### Global variables configuration
-We need to set up a file where we store the global variables we intend to use for the application. 
+We need to set up a file where we store the global variables we intend to use for the application.
 
 With the help of `Python Decouple`, we can create a single file and refer to the file every time we need to fetch a single particular in that file.
 
@@ -188,7 +188,7 @@ from decouple import config
 import requests
 
 # Create your views here.
-key =  config('API_KEY')
+key = config('API_KEY')
 url = config('BASE_URL')
 ```
 
@@ -266,7 +266,7 @@ def show_historical(request):
         quotes = data['quotes']
         context = {'quotes': quotes}
 
-        #Passing the data to the temlate
+        # Passing the data to the temlate
         return render(request, template, context)
     else:
         return render(request, template)
@@ -320,6 +320,7 @@ In the `base.html` file, add the snippets below in the body section of the HTML 
     </div>
 </div>
 ```
+
 #### The entry point HTML file
 This file appears at the application's entry point. It is rendered on the default page once the application loads. It also contains the page where the conversion of the currencies occurs.
 
@@ -389,6 +390,7 @@ In the `index.html` file, add the following code snippets:
 
 {% endblock %}
 ```
+
 > The currency selection options are available in the GitHub link provided at the end of the tutorial.
 
 ![Live rates](/engineering-education/currency-layer-api-in-django/most-recent-rates.png)
@@ -441,11 +443,13 @@ In the file named `historical.html`, add the following snippets:
 </div>
 {% endblock %}
 ```
+
 ![Date selection](/engineering-education/currency-layer-api-in-django/date-selection.png)
+
 ![Rate on a specific date](/engineering-education/currency-layer-api-in-django/rate-on-specific-date.png)
 
 ### Working on the URLs
-In Django, URLs are specified in the `urls.py` file. The URLs determine where to fetch a particular resource in the application. 
+In Django, URLs are specified in the `urls.py` file. The URLs determine where to fetch a particular resource in the application.
 
 The main `urls.py` file is found in the main application folder in the same directory as the `settings.py` file.
 
@@ -506,16 +510,17 @@ Start the virtual environment as illustrated before, then execute the following 
 python manage.py runserver
 ```
 
-Once all system checks have been completed and the server is up and running, go to http://127.0.0.1:8000/ to view the site.
+Once all system checks have been completed and the server is up and running, go to `http://127.0.0.1:8000/` to view the site.
 
 The site should have all the pages shown below. You can try exchanging currencies, viewing historical data of different currencies, and checking the live rates.
 
 ![Selecting a currency](/engineering-education/currency-layer-api-in-django/selecting-currency.png)
+
 ![Currency conversion](/engineering-education/currency-layer-api-in-django/conversion.png)
 
 You can find the files for this project at [this link](https://github.com/mercymeave/currency-xchange-guide)
 
 ### Conclusion
-This tutorial showed readers how to create an app that converts currencies in real time.In addition, it provided a roadmap for using APIs in Django and working with the Currencylayer API.
+This tutorial showed readers how to create an app that converts currencies in real time. In addition, it provided a roadmap for using APIs in Django and working with the Currencylayer API.
 
 The article should be a starting point for working with financial APIs in Django applications.
