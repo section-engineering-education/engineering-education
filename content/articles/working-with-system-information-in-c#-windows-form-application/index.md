@@ -48,7 +48,7 @@ When naming text boxes in this Form, `C#` naming standards must be observed, and
 This is the final step, in which we should offer the code that will assist in getting system information, which will be coded within a function of the two buttons as follows:
 
 ##### Button 1: Check system information
-Double-click the system information button and add the code below.
+Change the name of the system information button to `button5`, double-click it, and paste the code below into it.
 <!--
     You mentioned the system information button but you haven't named your buttons. (like you named your textboxes) Please provide names for all your buttons.
 -->
@@ -103,7 +103,7 @@ The properties used in the code snippet above are listed below.
 The `MachineName` property is used to access the NetBIOS name of the current computer in use. The `UserName` is used to get the name of the currently logged in user. `Is64BitOperatingSystem` is used to determine if the operating system is 64 bits or not, and `OSVersion` is used to determine the OS version platform.
 
 ##### Button 2: Exit
-Double-click the exit button and add the code below.
+Change the name of the exit button to `button9`, double-click it, and paste the code below into it.
 
 ```C#
 private void button9_Click(object sender, EventArgs e)
@@ -151,7 +151,7 @@ As I previously stated, naming conventions must be followed, and textBoxes shoul
 This is the final step, in which we should offer the code that will assist in getting hardware information, which will be coded within a function of the two buttons as follows:
 
 ##### Button 1: Check the system information
-Double-click the system information button and add the code below.
+Change the name of the system information button to `button5`, double-click it, and paste the code below into it.
 
 ```C#
 private void button5_Click(object sender, EventArgs e)
@@ -203,23 +203,6 @@ To access the `ManagementClass` properties, we must first build the `ManagementC
 
 The value attributes provided by the above classes assist us in displaying the value of specific installed hardware.
 
-##### Button 2: Exit button
-Double-click the exit button and add the code below.
-
-```C#
-private void button9_Click(object sender, EventArgs e)
-{
-    const string message = "Do you what to exit?";
-    const string caption = "Closing the page";
-    var results = MessageBox.Show(message, caption, MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-    if (results == DialogResult.Yes)
-    {
-        Application.Exit();
-    }
-}
-```
-
-The `Appplication.Exit()` method in the code above executes the exit action when a user clicks the `Exit` button. Because the `Application` class is a static class that cannot be instantiated, this method can only be accessed or called by the class name.
 
 ### Conclusion
 In part 1 of this article, we used the `Environment` class to check the Machine name, Username, Operating System, whether the processor is x64-based or x32-based, and the System type.
