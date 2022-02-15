@@ -63,7 +63,7 @@ In this section, we are adding our desired contents to Strapi. To get started, w
 
   ![fields](engineering-education/building-a-blog-using-react-hooks-strapi-v4.0-and-prism/fields.png)
 
-- After this, click on `content manager` on the sidebar and select your collection type. Next, click on `create new entry` in the top right corner and to be taken to a page that looks like this:
+- After this, click on `content manager` on the sidebar and select your collection type. Next, click on `create new entry` in the top right corner to be taken to a page that looks like this:
 
   ![new-entry](engineering-education/building-a-blog-using-react-hooks-strapi-v4.0-and-prism/new-entry.png)
 
