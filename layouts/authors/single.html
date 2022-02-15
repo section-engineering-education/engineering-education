@@ -94,24 +94,18 @@
         {{ range (where (where .Site.Pages "Params.layout" "engineering-education") ".Params.author" $author) }}
 
         <script defer type="text/javascript">
-          document.addEventListener("DOMContentLoaded", async function() {
-            if (await unleash.isEnabled('section.io.hyvorTalk', {}, false)) {
-              fetch('https://talk.hyvor.com/api/v1/page', {
-                'page_identifier': "https://www.section.io/engineering-education/php-io-streams/",
-                'website_id': '5716'
-              })
-                .then(response => response.json())
-                .then(data => {
-                  console.log(data);
-                  if (data.status === true) {
-                    document.getElementById('comments-count').innerHtml = data.data.comments_count;
-                    document.getElementById('likes-count').innerHtml = data.data.reactions[0];
-                  }
-                })
-            } else {
-              console.log('not enabled...')
-            }
-          });
+          fetch('https://talk.hyvor.com/api/v1/page', {
+            'page_identifier': "https://www.section.io/engineering-education/php-io-streams/",
+            'website_id': '5716'
+          })
+            .then(response => response.json())
+            .then(data => {
+              console.log(data);
+              if (data.status === true) {
+                document.getElementById('comments-count').innerHtml = data.data.comments_count;
+                document.getElementById('likes-count').innerHtml = data.data.reactions[0];
+              }
+            })
         </script>
         
         <li class="blog-listing-posts-item mix {{ with .Params.tags }}{{ range . }}{{ lower . }} {{ end }}{{ end }}">
