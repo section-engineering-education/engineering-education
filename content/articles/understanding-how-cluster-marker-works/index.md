@@ -2,7 +2,7 @@
   This isn't breaking news; we all know that big data is the buzzword of the twenty-first century, and it's surprising to learn that only a few individuals recognize that a major portion of the data is classified as geographical. Almost all of the devices we use nowadays are satellite-based systems like GPS. Today, even the most basic scenario of showing data and markers on a map with a satisfactory user experience can be a major issue, especially for the user, who may find it difficult to grasp and analyze data at a certain zoom level. For example, on a platform with hundreds of users, when you zoom out the map, these markings all overlap, making the map appear cluttered and crowded. The marker clustering method is recommended for improving this type of map.
 
 ### Requirements
-It is assumed that the reader is familiar with the following technologies in order to understand this tutorial:
+It is assumed that the reader is familiar with the following technologies to understand this tutorial:
 - HTML/CSS - JavaScript
 
 ### Objective
@@ -14,7 +14,7 @@ Have you ever attempted to use a map to visualize a big quantity of data? If you
 
 (engineering-education/understanding-how-cluster-marker-works/marker.png)![image info](engineering-education/understanding-how-cluster-marker-works/marker.png)
 
-Instead of utilizing the traditional approach to visualize a map, consider employing the clustering method, which is the most efficient way of mapping when it comes to viewing large amounts of data. The leaflet-marker-cluster plugin is required in order to achieve marker clustering. So let's get started because we need to set up our data visualization map. Create a 'index.html' file in a new project directory with any code editor, then copy and paste the snippets below.
+Instead of utilizing the traditional approach to visualize a map, consider employing the clustering method, which is the most efficient way of mapping when it comes to viewing large amounts of data. The leaflet-marker-cluster plugin is required to achieve marker clustering. So let's get started because we need to set up our data visualization map. Create an 'index.html' file in a new project directory with any code editor, then copy and paste the snippets below.
 
 ```html
 
@@ -22,11 +22,11 @@ Instead of utilizing the traditional approach to visualize a map, consider emplo
 
 <html>
 
-  <head> <title>Marker Cluster</title>
+  <head> <title>Marker Cluster</title>
 
-  </head>
+  </head>
 
-  <body> </body>
+  <body> </body>
 
 </html>
 
@@ -48,7 +48,7 @@ Create a style tag within the head tag with the snippet below to style the map c
 
 <style>
 
-  #my_map{ height: 100vh; width: 100% }
+  #my_map{ height: 100vh; width: 100% }
 
 </style>
 ```
@@ -59,7 +59,7 @@ At the bottom of the body tag, create a Leaflet JS JavaScript link.
 <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js" integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA==" crossorigin=""> </script>
 ```
 
-Because we haven't yet initialized our map, changes will have no effect on your browser. Set the map-view to Africa using Google Street Map to initialize the map. Make a script tag, then copy and paste the snippet below into it.
+Because we haven't yet initialized our map, changes will not affect your browser. Set the map-view to Africa using Google Street Map to initialize the map. Make a script tag, then copy and paste the snippet below into it.
 Because we haven't yet initialized our map, changes won't appear in your browser. Set the map-view to Africa using Google Street Map to get started. Make a script tag, then copy and paste the snippet below into it.
 
 ### Map initialization
@@ -67,7 +67,7 @@ Because we haven't yet initialized our map, changes won't appear in your browser
 var map = L.map('my_map').
 setView([9.1021, 18.2812], 3);
 ```
-The code snippet above loads the map variable into the map with the id'my app' and the values 'longitude - 9.1021', 'latitude - 18.2812', and zoom 'level - 3'. We'll utilize 'Google Street Map' to add an OpenStreetMap.
+The code snippet above loads the map variable into the map with the id 'my app' and the values 'longitude - 9.1021', 'latitude - 18.2812', and zoom 'level - 3'. We'll utilize 'Google Street Map' to add an OpenStreetMap.
 
 Make a new script tag and paste the code below into it.
 
@@ -85,11 +85,11 @@ After you've added the 'OSM,' you'll see an output that looks like the image bel
 (engineering-education/understanding-how-cluster-marker-works/map.png)![image info](engineering-education/understanding-how-cluster-marker-works/map.png)
 
 ### Adding Information To The Map
-The map can be filled with any type of information. However, for the purposes of this lesson, we'll use the [geojson] data (geojson.io). The data created by [geojson] is shown in the image below (geojson.io).
+The map can be filled with any type of information. However, for this lesson, we'll use the [geojson] data (geojson.io). The data created by [geojson] is shown in the image below (geojson.io).
 
 (engineering-education/understanding-how-cluster-marker-works/data.png)![image info](engineering-education/understanding-how-cluster-marker-works/data.png)
 
-Save and download the GeoJson file that was generated. Make a file called'mapdata.js' and save it. Create a variable'map data' in'mapdata.js' and assign the value to your downloaded created data. Copy and paste the code below to create the variable.
+Save and download the GeoJson file that was generated. Make a file called `mapdata. js` and save it. Create a variable `mapdata` in mapdata.js and assign the value to your downloaded created data. Copy and paste the code below to create the variable.
 
 ```js
 const map_data = {
@@ -99,7 +99,7 @@ const map_data = {
 Copy all of the data from the downloaded file into the `mapdata.js` variable that has been set up.
 
 ## Use your map to visualize geojson data
-You must link the generated data to the map in order to render it on the map.
+You must link the generated data to the map to render it on the map.
 
 ```html
 <script src="./mapdata.js" type="text/javascript"></script>
@@ -171,7 +171,7 @@ This is where the marker cluster comes in to help improve the map's legibility.
 ### Clustering Marker
 It is more economical to use the marker clustering method whenever you are working on a project that involves a map and the map will have several pointers.
 
-We'll utilize the Leaflet JS Marker Plugin to cluster your markers. This [link](https://github.com/Leaflet/Leaflet.markercluster) will take you to a page where you can download the plugin. However, we'll be using the CDN link to create our marker cluster; more information on marker cluster can be found on the [Leaflet.js](https://leafletjs.com/2012/08/20/guest-post-markerclusterer-0-1-released.html) website.
+We'll utilize the Leaflet JS Marker Plugin to cluster your markers. This [link](https://github.com/Leaflet/Leaflet.markercluster) will take you to a page where you can download the plugin. However, we'll be using the CDN link to create our marker cluster; more information on the marker cluster can be found on the [Leaflet.js](https://leafletjs.com/2012/08/20/guest-post-markerclusterer-0-1-released.html) website.
 
 ### Create a CSS & JS Link for the Marker Cluster
 
