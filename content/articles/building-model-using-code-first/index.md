@@ -1,10 +1,10 @@
-There are three workflows used to build a domain model using Entity Framework. These are, `database first`, `Code first`, and `model first`.
+In EntityFramework, building a model has three workflows that one can choose from. These are, `database first`, `Code first`, and `model first`.
 
-With the `database first`, we start with the database. We design our tables using visual designers. The EntityFramework generates the domain classes based on the database. 
+`Database first` starts with the database. We design our tables using visual designers. The EntityFramework will then create the domain classes based on the database. 
 
-With the `code first `, we start with the code. We create the domain classes.  The Entity-Framework generates the database table for us. 
+`Code first `, starts with the code. We create the domain classes. The Entity-Framework will then generate the database table for us. 
 
-With the `model first`, we use a visual designer in visual studio. The visual designer will model classes and their associations. It creates some kind of a UML diagram. Based on this diagram, the entity framework will generate domain classes for us.
+`Model first`, uses visual designer in visual studio. The visual designer will model classes and their associations. It creates some kind of a UML diagram. Based on this diagram, the entity framework will generate domain classes for us.
 In this article, we’ll learn how to build a domain model for our API using the `code first` workflow.
 ### Prerequisites
 To be able to follow this article well, one needs:
@@ -119,7 +119,7 @@ namespace CodeFirstDemo.Models
 
 ```
 
-The `Author.cs` class has the following properties. `Id`, `Name`, and a list of `Courses`. There is a one-to-many relationship between `Author` and `Course` classes. An author can have many courses. Each course is created by only one author. We add the `Author.cs` class in our `Models` folder. Below is the code for the author class. 
+The `Author.cs` class has the following properties. `Id`, `Name`, and a list of `Courses`. We have a one-to-many relationship. This is between `Author` and `Course` classes. An author can have many courses. Each course is created by only one author. We add the `Author.cs` class in our `Models` folder. Below is the code for the author class. 
 
 ```c#
 
@@ -165,7 +165,7 @@ Let us take a look at the `Tag.cs` class. It has the following properties. `Id`,
 
 In Entity Framework 6, it was okay to have a many-to-many relationship between classes. Implementing our domain models the way we have done for the tag and course would have worked. EF-6 would have automatically created a mapping table for us. It sits between the courses and the tags tables called `CoursesTags`table. EF-Core on the other hand does not have many-to-many support. We have to create the mapping class manually. 
 
-Instead of associating the `Tag` class to the `Course` class, we will associate it with the `CoursesTags` class. This will exactly be like the mapping table in the database. We have a mapping table when there is a many-to-many relationship between tables. We will have to create the class in our domain model. Inside our `Models` folder, add a class called `CoursesTags.cs`. 
+Instead of associating the `Tag` class to the `Course` class, we will associate it with the `CoursesTags` class. This will exactly be like the mapping table in the database. A good database design will have a mapping table when there is a many-to-many relationship between tables. We will have to create the class in our domain model. Inside our `Models` folder, add a class called `CoursesTags.cs`. 
 
 ```c#
 
@@ -191,7 +191,7 @@ namespace CodeFirstDemo.Models
 
 ```
 
-The `CoursesTags.cs` class will have `CourseId` and `TagId` properties as [composite keys](https://en.wikipedia.org/wiki/Composite_key#:~:text=In%20database%20design%2C%20a%20composite,key%20in%20its%20own%20right). The `Course` and the `Tag` properties are navigation properties. To implement composite key, we use fluent API. We will implement that later on, in this article. That will be during the creation of our dbContext class. 
+The `CoursesTags.cs` class will have `CourseId` and `TagId` properties as [composite keys](https://en.wikipedia.org/wiki/Composite_key#:~:text=In%20database%20design%2C%20a%20composite,key%20in%20its%20own%20right). The `Course` and the `Tag` properties are navigation properties. To implement composite key, we use fluent API. We will implement that later on. That will be during the creation of our dbContext class. 
 
 Finally, we look at our `CourseLevel.cs` enumeration. It has different course levels. Below is the code snippet. 
 
@@ -212,7 +212,7 @@ Finally, we look at our `CourseLevel.cs` enumeration. It has different course le
 ```
 
 Our model creation is done. Next we need to create a [DB context](https://www.entityframeworktutorial.net/entityframework6/dbcontext.aspx). This will enable us to push our models to the database.
-
+ 
 #### Setup database connection.
 
 1. Open up the SQL server management studio. Click on the connect icon as shown below.
