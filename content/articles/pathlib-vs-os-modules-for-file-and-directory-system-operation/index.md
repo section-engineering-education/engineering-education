@@ -1,7 +1,21 @@
-### Pathlib vs OS Modules for File and Directory System Operation
+---
+layout: engineering-education
+status: publish
+published: true
+url: /pathlib-vs-os-modules-for-file-and-directory-system-operation/
+title: Pathlib Vs OS Modules for File and Directory System Operations
+description: In this article, we will look at what OS and Pathlib modules are, where and how do use them for file system operations.
+author: akenz-michael
+date: 2022-02-15T00:00:00-00:00
+topics: [Languages]
+excerpt_separator: <!--more-->
+images:
 
+  - url: /engineering-education/pathlib-vs-os-modules-for-file-and-directory-system-operation/hero.jpg
+    alt: Pathlib Vs OS Modules for File and Directory System Operations Example Image
+---
 In this tutorial, we will run through different viable contexts to discover an agreeable decision to utilize Python's Pathlib and OS packages for file system operations.
-
+<!--more-->
 We will learn about various file system operations - not limited to writing and reading a file, describing a document information, renaming files, creating directories, and so on.
 
 ### Pre-requisites
@@ -730,3 +744,6 @@ At this point, you should have the edge difference between OS and Pathlib module
 - Retrieving a specific file information.
 
 Thanks for reading!
+
+---
+Peer Review Contributions by: [Srishilesh P S](/engineering-education/authors/srishilesh-p-s/)
