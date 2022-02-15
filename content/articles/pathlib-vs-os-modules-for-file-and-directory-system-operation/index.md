@@ -16,13 +16,13 @@ images:
 ---
 In this tutorial, we will run through different viable contexts to discover an agreeable decision to utilize Python's Pathlib and OS packages for file system operations.
 <!--more-->
-We will learn about various file system operations - not limited to writing and reading a file, describing a document information, renaming files, creating directories, and so on.
+We will learn about various file system operations - not limited to writing and reading a file, describing document information, renaming files, creating directories, and so on.
 
 ### Pre-requisites
-To follow along this tutorial, you will need to have some basic knowledge in Python programming language.
+To follow along with this tutorial, you will need to have some basic knowledge of the Python programming language.
 
 ### Goals
-By the end of this tutorial, the reader should be acquainted to:
+By the end of this tutorial, the reader must be able to:
 - Utilize Pathlib and OS modules to manipulate a file and a directory path.
 - Implement object-oriented programming and functional programming in file system operation.
 - Convert a file's metadata to basic readable information.
@@ -49,7 +49,7 @@ This tutorial practically highlights the different scenarios to differentiate be
 #### OS module
 The OS (operating system) module is a Python-based operating system interface that functionally renders a convenient way to work with files and directories with a simple function call.
 
-Additionally, OS module empowers us to deal with I/O tasks straight-forward.
+Additionally, the OS module empowers us to deal with I/O tasks straight-forward.
 
 #### Pathlib module
 The Pathlib module is an object-oriented file system that offers classes representing file system paths with semantics that fit various operating systems.
@@ -101,8 +101,8 @@ WindowsPath('C:/Users/DELL/Desktop/practical_folder')
 ```
 
 In this example, the output returns one of the two respective path module subclasses' instances of the current location you are working:
-- It returns a windows object, if you are using Windows.
-- It returns a POSIX path object, if you are using any POSIX operating system like Linux and MacOS.
+- It returns a windows object if you are using Windows.
+- It returns a POSIX path object if you are using any POSIX operating system like Linux and macOS.
 
 However, we can convert this object to a string as shown:
 ```python
@@ -120,7 +120,7 @@ The in-built string function will help you convert the path object to a string.
 
 > Notice the `\\` and `/` in the previous 2 outputs.
 
-#### Navigate to home directory
+#### Navigate to the home directory
 Helps navigate easily to the home directory from your current directory.
 
 ##### Using OS module to navigate to the home directory
@@ -168,11 +168,11 @@ print(os.listdir())
 ['.ipynb_checkpoints', 'Untitled.ipynb']
 ```
 
-This example returns of a list objects containing files and folders in the given or current directory.
+This example returns a list of objects containing files and folders in the given or current directory.
 
 You can also list a previous directory or current directory an example will be demonstrated in the next snippet.
 
-To outline the items in the previous directory requires you to pass two dots string as an argument which simple known as relative path pattern.
+To outline the items in the previous directory requires you to pass two dots string as an argument which is simply known as relative path pattern.
 
 ```python
 import os
@@ -194,7 +194,7 @@ print(os.listdir('..'))
 In this example, the function returns a list containing the files and directories' name in a string representation.
 
 ##### Using Pathlib module to list a directory content
-Using Pathlib module to outline items in a given directory is somehow not as straight forward compared to the previous example in the OS module.
+Using Pathlib module to outline items in a given directory is somehow not as straightforward compared to the previous example in the OS module.
 
 Let's consider the following example:
 
@@ -681,7 +681,7 @@ creation time = 1642193544.1562355
 > You can convert these date and time to readable format by following the above 2 topics on format conversion.
 
 ##### Query file extension
-Pathlib and OS module provide a function or method that allows us to query a file extension.
+Pathlib and OS module provides a function or method that allows us to query a file extension.
 
 ##### Using OS module to query file extension
 The OS module provides the `os.path.splitext()` function to query the file extension. It splits the path into pairs that returns both the file name and the file extension.
@@ -728,20 +728,20 @@ Illustrating the theoretical differences between OS and Pathlib modules.
 
 #### Pathlib module
 - It offers distinguished classes to perform explicit system operations on various operating systems which clearly expresses that the pathlib module isn't portable.
-- The methods usually returns system compatible objects like PurePathPosix, PosixPath, PurePathWindows, and WindowsPath.
-- Listing contents of a directory is a tedious task, since it returns a generator that needs to iterated to output readable strings.
+- The methods usually return system-compatible objects like PurePathPosix, PosixPath, PurePathWindows, and WindowsPath.
+- Listing the contents of a directory is a tedious task since it returns a generator that needs to be iterated to output readable strings.
 - The path class in pathlib provides a method to create a permanent empty file with a different extension which makes working with file system operation mind-boggling in python.
 - It doesn't make any arrangement for environment variables operation.
 
 ### Conclusion
-At this point, you should have the edge difference between OS and Pathlib modules. Also, you would have learned these following:
+At this point, you should have the edge difference between OS and Pathlib modules. Also, you would have learned the following:
 - Good decision-making when choosing the right module for file system operations.
 - How to work with file system operation.
 - Removing a file.
 - Identify the difference between relative path and absolute path.
 - Conversion of file date properties using time and datetime modules.
-- How to work with a path on distinguished operating system.
-- Retrieving a specific file information.
+- How to work with a path on a distinguished operating system.
+- Retrieving specific file information.
 
 Thanks for reading!
 
