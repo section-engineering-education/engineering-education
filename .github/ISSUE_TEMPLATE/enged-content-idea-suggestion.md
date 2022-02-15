@@ -13,6 +13,8 @@ We expect all community memebers to go through provided examples, resources, and
 
 All revisions and edits should be *completed on your own forked repo (as to not take up room in the queue)*. **Any PR that is submitted incomplete (meaning not ready to be published as is) will be closed.** A PR being closed does NOT mean the article can not be published (or fixed) it simply means that the edits, revisions, and fixes will happen outside of the queue.
 
+**NOTE: Any topic suggestion copied/taken/modified from YouTube may Lead to a permanent ban from the community.**
+
 ### Topic Suggestion
 Enter topic suggestion here...
 
