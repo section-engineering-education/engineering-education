@@ -48,14 +48,14 @@ Then converting the RGB image into grayscale  requires an image parameter for sc
 import cv2  
   
 # This is the distance from camera to face oject  
-KNOWN_DISTANCE = 30 # centimeter  
+DECLARED_LEN = 30 # cm  
 # width of the object face  
-KNOWN_WIDTH = 14.3 # centimeter  
-# Definition of the RGB Colors  
+DECLARED_WID = 14.3 # cm  
+# Definition of the RGB Colors formart 
 GREEN = (0, 255, 0)  
 RED = (255, 0, 0)  
 WHITE = (255, 255, 255)
-#Defining the fonts type 
+#Defining the fonts family, size, type  
 fonts = cv2.FONT_HERSHEY_COMPLEX  
 # calling the haarcascade_frontalface_default.xml module for face detection.  
 face_detector = cv2.CascadeClassifier("haarcascade_frontalface_default.xml")  
@@ -73,13 +73,13 @@ def face_data(image):
         face_width = w  
   
     return face_width  
-#We use 0 in the VideoCapture function since thats the default camera  
+#We use 0 in the VideoCapture function since that calls the default camera, the webcam.  
 cap = cv2.VideoCapture(0)  
 while True:  
     _, frame = cap.read()  
     face_width_in_frame = face_data(frame)  
     cv2.imshow("frame", frame)  
-    #The string 'q' is will be used for quiting  
+    #The string 'q' is will be used for stopping and quiting  
   if cv2.waitKey(1)==ord("q"):  
         break  
 cap.release()  
@@ -94,14 +94,14 @@ The first function to be created is the focal length finder.
  ### case 1:
  ### Finding the focal length.
   The function defined will be calculating the focal length thus by  getting the distance between lens to CMOS sensor.
-1st parameter to be used is  `Measured_Distance(int)`: It is distance measured from object to the Camera while Capturing Reference image  
-2nd parameter to be used is `Real_Width(int)`: It is Actual width of object, in real world (like My face width is = 14.3 centimeters)  
+1st parameter to be used is  `Determined_Distance(int)`: It is distance measured from object to the Camera while Capturing Reference image  
+2nd parameter to be used is `Actual_Width(int)`: This is the real width of object, in real world, for instance my face width is = 14.3 centimeters)  
 3rd parameter to be used is `Width_In_Image(int)`: It is object width in the frame /image in our case in the reference image(found by Face detector)  
 Returning as decimal values.  `focal_length(Float)`:
 Below is the function code.
 ```python
-def focal_length(measured_distance, real_width, width_in_rf_image):  
-    focal_length_value = (width_in_rf_image * measured_distance) / real_width  
+def focal_length(determined_distance, actual_width, width_in_rf_image):  
+    focal_length_value = (width_in_rf_image * determined_distance) / actual_width  
     return focal_length_value
 ```
 
@@ -109,8 +109,8 @@ def focal_length(measured_distance, real_width, width_in_rf_image):
 ### Finding the distance 
 This is the second function to be created, the distance finder function. This Function simply approximates the distance between the face object and camera using defined arguments.
 1st parameter to be used is `focal_length(float)`: return by the focal_length_Finder function  
-2nd parameter to be used is `Real_Width(int)`: It is Actual width of object, in real world (like My face width is = 5.7 Inches)  
-3rd parameter to be used is `object_Width_Frame(int)`: width of object in the image(frame in our case, using Video feed)  
+2nd parameter to be used is `Actual_Width(int)`: It is the real width of object, in real world for instance my face is approximately 14cm  
+3rd parameter to be used is `object_Width_Frame(int)`:broadness of object in the image(frame in our case, returning Video visual feed)  
 Returning Distance as decimal values `Distance(float)` : distance Estimated
 
 ```python
@@ -124,8 +124,9 @@ We will be opening our reference image then storing it at a variable. Further il
 ```python  
 ref_image = cv2.imread("Ref_image.png")  
   
-ref_image_face_width = face_data(ref_image)  
-focal_length_found = focal_length(KNOWN_DISTANCE, KNOWN_WIDTH, ref_image_face_width)  
+ref_image_face_width = face_data(ref_image) 
+#Processing our called reference image
+focal_length_found = focal_length(DECLARED_LEN, DECLARED_WID, ref_image_face_width)  
 print(focal_length_found)  
 cv2.imshow("ref_image", ref_image)  
   
@@ -136,8 +137,8 @@ while True:
   face_width_in_frame = face_data(frame)  
     # finding the distance by calling function Distance  
   if face_width_in_frame != 0:  
-        Distance = distance_finder(focal_length_found, KNOWN_WIDTH, face_width_in_frame)  
-        # Drwaing Text on the screen  
+        Distance = distance_finder(focal_length_found, DECLARED_WID, face_width_in_frame)  
+        # Writing Text on the displaying screen  
   cv2.putText(  
             frame, f"Distance = {round(Distance,2)} CM", (50, 50), fonts, 1, (WHITE), 2  
   )  
@@ -197,7 +198,7 @@ while True:
     # finding the distance by calling function Distance  
   if face_width_in_frame != 0:  
         Distance = Distance_finder(  
-            Focal_length_found, Known_width, face_width_in_frame)  
+            Focal_length_found, DECLARED_WID, face_width_in_frame)  
         listDistance.append(Distance)  
         averageDistance = averageFinder(listDistance, 2)  
   
@@ -205,7 +206,7 @@ while True:
   distanceInMeters = averageDistance/100  
   
   if initialDistance != 0:  
-            # getting the distance difference  
+            # getting the  difference of the distances  
   changeInDistance = initialDistance - distanceInMeters  
   changeInTime = time.time() - initialTime  
   
@@ -231,7 +232,7 @@ while True:
             # print(speed)    
         initialTime = time.time()  
   
-    # Drwaing Text on the screen  
+    # Writing Text on the displaying screen  
   cv2.line(frame, (45, 25), (255, 25), (255, 0, 255), 30)  
         cv2.line(frame, (45, 25), (255, 25), (0, 0, 0), 22)  
         cv2.putText(  
