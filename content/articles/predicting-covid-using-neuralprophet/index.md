@@ -6,7 +6,7 @@ url: /predicting-covid-using-neuralprophet/
 title: Predicting Covid-19 Cases using NeuralProphet
 description: In this tutorial, the reader will learn how to predict Covid-19 cases usingthe Neural Prophet library.
 author: ian-njari
-date: 2022-02-14T00:00:00-13:40
+date: 2022-02-16T00:00:00-13:40
 topics: [Machine Learning]
 excerpt_separator: <!--more-->
 images:
@@ -35,7 +35,7 @@ We will use the global cases dataset from the [Johns Hopkins University Center f
 - Basic knowledge of Python.
 - Machine learning basics.
 - Basic data manipulation skills with Pandas.
-- Python (with `pip`, `numpy` and `pandas`) installed on your computer or an online environment like Google Colab or Kaggle.
+- Python (with `pip`, `NumPy` and `Pandas`) installed on your computer or an online environment like Google Colab or Kaggle.
 
 ### Goals
 At the end of this tutorial, you will be comfortable with;
@@ -46,12 +46,12 @@ At the end of this tutorial, you will be comfortable with;
 - Forecasting on multiple series.
 
 ### About Time-Series Forecasting
-Time series is a series of data points that are organized in an order of time. For example, weather data for a certain location for some time will be listed as dates with their corresponding temperature, rainfall amount, atmospheric pressure, and so on.
+Time series is a series of data points that are organized in an order of time. For example, weather data for a location for some time will be listed as dates with their corresponding temperature, rainfall amount, atmospheric pressure, and so on.
 
 Predicting this kind of data using traditional statistical such as Linear regression, Ridge regression, and Lasso regression as well as Bayesian techniques, do not produce optimal results. Time-series forecasting is a modeling strategy where these time series are used to predict future trends using past observations where the time-series are the independent variables. This technique can unravel time-domain relationships like seasonality, weekly, monthly, and yearly trends.
 
 ### Setting up environments
-On Google Colab, install Prophet and NeuralProphet run the following commands:
+On Google Colab, to install NeuralProphet, run the following commands:
 
 ```bash
 pip install neuralprophet[live]
@@ -98,7 +98,7 @@ rotated_dataset= pd.concat([dates, dataset.diff()], axis=1, join='inner')
 rotated_dataset=rotated_dataset.rename(columns={0:'Date'})
 ```
 
-NeuralProphet only accepts two columns; the `dates` and `y-column` when fitting data. The columns must be named `ds` and `y` respectively.
+NeuralProphet only accepts two columns; the `dates` and `y-column` when fitting data. The columns must be named `ds` and `y`, respectively.
 We will drop all `NULL` values from the data.
 
 For the moment, let's use the `US` data for demonstration.
@@ -172,7 +172,7 @@ fig1 = m.plot(forecast)
 
 ![Predicted cases](/engineering-education/predicting-covid-using-neuralprophet/df2.png)
 
-Since we are predicting cases, they cannot be floating-point values. The predictions will be rounded off to the nearest integer by casting the series of floats to an `int` datatype.
+Since we are predicting cases, they cannot be floating-point values. We round of the predictions to the nearest integer by casting the series of floats to an `int` datatype.
 
 ```python
 forecast['yhat1'].astype(int)
@@ -225,9 +225,9 @@ index,Date,Predicted Cases
 ```
 
 ### Conclusion
-We have built a NeuralProphet model and used it to predict Covid-19 cases. In this tutorial, we learned how to install NeuralProphet, import and prepare data for time-series forecasting, train the NeuralProphet forecaster, and forecast using the trained model. This model can now be served via any web application framework like Streamlit or Dash using Django or Flask via an API. In case of any issues with NeuralProphet, you can raise an issue on [NeuralProphet's GitHub](https://github.com/ourownstory/neural_prophet).
+We have built a NeuralProphet model and used it to predict Covid-19 cases. In this tutorial, we learned how to install NeuralProphet, import and prepare data for time-series forecasting, train the NeuralProphet forecaster, and forecast using the trained model. We can serve this model via any web application framework like Streamlit or Dash using Django or Flask via an API. In case of any issues with NeuralProphet, you can raise an issue on [NeuralProphet's GitHub](https://github.com/ourownstory/neural_prophet).
 
-You can find the full code [here](https://github.com/iannjari/neuralprophet/blob/main/NeuralProphet.ipynb).
+You can find the complete code [here](https://github.com/iannjari/neuralprophet/blob/main/NeuralProphet.ipynb).
 
 Happy coding!
 
