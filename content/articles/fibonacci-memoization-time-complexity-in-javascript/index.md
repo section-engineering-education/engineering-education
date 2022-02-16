@@ -6,7 +6,7 @@ url: /fibonacci-memoization-time-complexity-in-javascript/
 title: Understanding Fibonacci Memoization Time Complexity in JavaScript
 description: This article will help the reader understand Fibonacci memoization and it's time complexity in JavaScript. 
 author: valentine-gatwiri
-date: 2022-02-16T01:00:00-17:40
+date: 2022-02-16T01:00:00-10:10
 topics: [Languages]
 excerpt_separator: <!--more-->
 images:
@@ -237,7 +237,7 @@ In the above image, the red nodes return the memoized result. The algorithm is c
 A call tree for a figure more prominent than `fib(7)` will look just like the tree in the above image.
 
 #### Time complexity calculation 
-Let's take time complexity  of `n` to be`T(n)` , hence` T(n) = T(n-1) + T(n-2)`. 
+Let's take time complexity  of `n` to be `T(n)`, hence` T(n) = T(n-1) + T(n-2)`. 
 
 This is because `F(n-2)` is the one which is in the cache when we calculate `F(n - 1)`. Therefore, the function of `F(n-2)` is 1 (reading from cached equation), hence `T(n) = T(n-1) + 1 = T(n-2) + 2 = ... = T(n-n) + n.` 
 
