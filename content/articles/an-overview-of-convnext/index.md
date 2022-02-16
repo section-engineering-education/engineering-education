@@ -12,9 +12,9 @@ In 2012, the deep learning renaissance was largely driven by ConvNets. The intro
 
 Transformers were introduced for text processing in 2017. This model only had some applications in image generation and image-text understanding. Due to this, Transformers went unnoticed in the computer vision world. But in the field of Natural Language processing, it was widely used and very successful. 
 
-It wasn't until early 2021 when the Google Research team released a [paper](https://arxiv.org/pdf/2010.11929.pdf) detailing how Transformers could outperform ConvNets in solving computer vision tasks. This Transformer model introduced an initial patch layer that splits an image into a sequence of patches of 16 by 16 pixels. This Transformer model is called the Vision Transformer (ViT). You can read more about it in this [article](/engineering-education/vision-transformer-using-transformers-for-image-recognition/). 
+It wasn't until early 2021 when the Google Research team released a [paper](https://arxiv.org/pdf/2010.11929.pdf) detailing how Transformers could outperform ConvNets in solving computer vision tasks. This Transformer model introduced a patch layer that splits an image into a sequence of patches of 16 by 16 pixels. This Transformer model is called the Vision Transformer (ViT). You can read more about it in this [article](/engineering-education/vision-transformer-using-transformers-for-image-recognition/). 
 
-Yet, the ViT had to rely heavily on a lot of training tricks such as data augmentation to make it reach the performances of state-of-the-art models like ConvNets. This model faced difficulties when it came to solving more general computer vision tasks such as object detection and semantic segmentation. This led to the release of a new vision transformer model.
+Yet, the ViT had to rely heavily on a lot of training tricks such as data augmentation to make it reach the performances of state-of-the-art models like ConvNets. This model faced difficulties when it came to solving more general computer vision tasks. This led to the release of a new vision transformer model.
 
 In mid-2021, a new transformer model called the Swin Transformer was released. It is discussed in this [paper](https://arxiv.org/abs/2103.14030). It introduced sliding winding windows (used in CNNs), which made them resemble ConvNets pretty much. This model made the vision transformer more general purpose and could be used for a wide variety of vision tasks.
 
@@ -32,9 +32,7 @@ For the stage ratio, they adjusted the number of blocks in each stage and improv
 #### The idea of inception
 It involves adopting the idea of inception that [ResNeXt](https://arxiv.org/pdf/1611.05431.pdf) had introduced before. It involves splitting, transforming, and merging information. The main idea here is on depthwise convolution, which is a special case of grouped convolutions. Here, the number of groups equals the number of channels.
 
-> Depthwise convolutions are similar to the weighted sum operation in self-attention, which operates on a per-channel basis. For example, only mixing information in the spatial dimension.
-
-The adoption of this idea substantially improves performance.
+> These convolutions are similar to the weighted sum operation in self-attention. They operate on a per-channel basis by only mixing information in the spatial dimension. The adoption of this idea substantially improves performance.
 
 #### The inverted bottleneck
 In Swin Transformers, every transformer block creates an inverted bottleneck. The output of four blocks that get concatenated increases the size of the hidden dimensions by four times. In ConvNeXts, they copy this idea by devising an inverted bottleneck with an expansion ratio of `4`. This is found to increase the performance of the model.
@@ -54,13 +52,6 @@ Swin transformers tend to limit the self-attention window. If the ResNets window
 All these micro redesign choices, combined with using separate downsampling layers have a tremendous impact on performance. This increases the performance of the model to 82.0% on the ImageNet Top1 Accuracy exceeding the Swin Transformer. 
 
 ### Wrapping up
-Techniques used in this research are not novel. These are techniques that have been used separately in previous research. This research combines these techniques and uses them collectively. Not only are ConvNeXts competitive with Transformers in solving image classification tasks, but also in solving image segmentation and object detection tasks.  
+Techniques used in this research are not novel. These are techniques that have been used separately in previous research. This research combines these techniques and uses them collectively. Not only are ConvNeXts competitive with Transformers in solving image classification tasks, but also in solving general-purpose computer vision tasks, i.e., image segmentation and object detection tasks.  
 
 This paper demonstrates that it is rather the many seemingly tiny architecture hyperparameters and not the architecture itself that can tweak the way to state-of-the-art.
-
-### Further reading
-- [A ConvNet for the 2020s](https://arxiv.org/abs/2201.03545)
-- [ConvNext](https://github.com/facebookresearch/ConvNeXt)
-- [AN IMAGE IS WORTH 16X16 WORDS: TRANSFORMERS FOR IMAGE RECOGNITION AT SCALE](https://arxiv.org/pdf/2010.11929.pdf)
-- [Swin Transformer: Hierarchical Vision Transformer using Shifted Windows](https://arxiv.org/abs/2103.14030).
-- [ResNeXt](https://arxiv.org/pdf/1611.05431.pdf).
