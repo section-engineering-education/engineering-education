@@ -7,7 +7,7 @@ title: Comparing AWS Shared Responsibility Models for Different Products
 description: This article will explain what the AWS shared responsibility model is and why it is important to businesses. 
 author: bashiir-isla
 date: 2022-02-16T00:00:00-20:30
-topics: []
+topics: [Cloud Computing]
 excerpt_separator: <!--more-->
 images:
 
