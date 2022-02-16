@@ -235,9 +235,10 @@ Next, we will add some styling to the output display.
 	      output.setText("0");
 ```
 
-So far, we have been able to create and style components displayed in the calculator. However, these components are not visible unless added to their respective panels and then to the main panel.
+So far, we have created and style components displayed in the calculator. However, these components are not visible unless added to their respective panels and the main panel.
+The next step is to set the layout of each row of the calculator. 
 
-The next step is to set the layout of each row of the calculator. Each row is set to `BoxLayout` with a layout direction of `LINE_AXIS` will enable the buttons to flow from either left to right or right to left based on the language orientation of the device in use.
+Each row is set to `BoxLayout` with a layout direction of `LINE_AXIS`. will enable the buttons to flow from either left to right or right to left based on the language orientation of the device in use.
 
 ```java
         // Set the layout of each row in the pane
@@ -277,16 +278,16 @@ After setting the layout of each of the sub-panels, we now have to add the respe
 
 Notice that we created a horizontal glue and added it as the first component in `row1`. This horizontal glue pushes the `C` and `D` buttons as far as possible to the horizontal edge of the pane.
 
-![Horizontal Glue Demo](/how-to-build-a-java-gui-calculator-from-scratch-using-box-layout/2-horizontalglue-demo.png)
+![Horizontal Glue Demo](/engineering-education/how-to-build-a-java-gui-calculator-from-scratch-using-box-layout/2-horizontalglue-demo.png)
 
 You can also use the `createVerticalGlue()` to achieve something similar. But instead of forcing its left and right components as far away from each other as possible, it forces the components above and below as far as possible from each other.
 
-The second to last step before completing the UI is to set the layout of the main panel and then add all the respective rows to the main panel in accordance.
-Here, we will set the layout direction of the main layout to `PAGE_AXIS`. This arranges the components in the panel from top to bottom.
+The second to last step before completing the UI is to set the layout of the main panel and then add all the respective rows to the main panel in accordance. Here, we will set the main layout direction to `PAGE_AXIS`, which arranges the components in the panel from top to bottom.
 
-We will also add a space between the output display and the buttons to allow for proper spacing in the UI. This space is added with the help of the `createRigidArea()` method of the `Box` class, which takes in an instance of a `Dimension`. The `Dimension` takes in two arguments where the first argument is the width and the second is the height (in pixels). Here, we are adding 5 pixels between the output display and other buttons.
+We will also add a space between the output display and the buttons to allow for proper spacing in the UI. This space is added using the `createRigidArea()` method of the Box class, which takes an instance of a `Dimension`. The `Dimension` takes in two arguments where the first argument is the width and the second is the height (in pixels). Here, we add 5 pixels between the output display and other buttons.
 
 Below is the code that does all the above:
+
 ```java
         // Add all rows to the main panel
         mainPanel.setLayout(new BoxLayout(mainPanel, BoxLayout.PAGE_AXIS));
@@ -299,11 +300,12 @@ Below is the code that does all the above:
         mainPanel.add(row5);
 ```
 
-The UI is now completed. But if you run the code, the frame will appear empty. This is because we have not added the main panel to the frame. We can achieve this by using the `add()` method inherited from `JFrame`. We also need to set what happens when the user clicks on the `close` button as well. Here, it will exit the app.
+The UI is complete. However, if you run the code, the frame will appear empty because we have not added the main panel. We can achieve this by using JFrame's `add()` method. We also need to set what happens when the user clicks on the `close` button. Here, it will exit the app.
 
-In addition, we need to set the visibility of the app to `true` otherwise it will be transparent and, therefore, invisible. To put the app in shape, we need to set the size as well using the `setSize()` method from `JFrame`. This method takes in two arguments: the first which is the width, and the second which is the height.
+In addition, we need to set the app's visibility to `true`; otherwise, it will be transparent and, therefore, invisible. To put the app in shape, we need to set the size using the `setSize()` method from `JFrame`. This method takes in two arguments: the first is the width, and the second is the height.
 
-Below is the code that concludes the UI design.
+Below is the code that concludes the UI design:
+
 ```java
         // final touch
         this.add(mainPanel);
@@ -315,18 +317,19 @@ Below is the code that concludes the UI design.
 The UI of our calculator is complete and is ready to launch.
 
 Below is an image of the final view of the calculator.
-![UI Final View](/how-to-build-a-java-gui-calculator-from-scratch-using-box-layout/3-ui-final-view.png)
 
-> Check [here](https://github.com/princeibs/java-box-calculator/blob/97283e994097ba74ee67827b829bbf124d05b1e6/CalculatorBox.java) for the calculator source code at this point.
+![UI Final View](/engineering-education/how-to-build-a-java-gui-calculator-from-scratch-using-box-layout/3-ui-final-view.png)
 
-### Step 2: Building The Calculator Logic
+>Check [here](https://github.com/princeibs/java-box-calculator/blob/97283e994097ba74ee67827b829bbf124d05b1e6/CalculatorBox.java) for the calculator source code at this point.
 
-Now that we've completely built the user interface of the calculator. The next steps are to add functionalities to the buttons and also to build the logic the calculator will run on.
+#### Step two: Developing the calculator's logic
+Now that we have entirely built the user interface of the calculator. The following steps are to add functionalities to the buttons and build the logic the calculator will run on.
 
-#### a) Creating the structure
-First, we will create some utility methods that will define the various functionalities of the calculator. These methods are all defined inside the class but outside the constructor. And then we will gradually build the functionalities of these methods as we proceed.
+##### 2.1 Creating the structure
+First, we will create some utility methods that will define the various functionalities of the calculator. These methods are all defined inside the class but outside the constructor. And then, we will gradually build the functionalities of these methods as we proceed.
 
 Below is the code for the utility methods:
+
 ```java
 public void delete() {
 }
@@ -347,25 +350,24 @@ public void calculate() {
 }
 ```
 
-The next step is to create action listeners for each of these buttons. These action listeners make the buttons listen to events such as when the user clicks on a button, and then update the output and other necessary fields.
+The next step is to create `ActionListeners` for each of these buttons. These action listeners make the buttons listen to events such as when the user clicks on a button and then update the output and other necessary fields.
 
-For the sake of this tutorial, we will use an inner class that implements the `ActionListener` interface. We will make all the classes private.
-The `ActionListener` interface is made available by Java's AWT event package. We will need other interfaces in the event package later in the tutorial aside from the `ActionListener`. 
+For the sake of this tutorial, we will use an inner class that implements the `ActionListener` interface. We will make all the classes private. The `ActionListener` interface is made available by Java's AWT event package. We will need other interfaces in the event package later in the tutorial, aside from the `ActionListener`.
 
-Let's add an import statement at the top of the file that imports all the classes and interfaces in the event package.
+Let us add an import statement at the top of the file that imports all the classes and interfaces in the event package.
 ```java
 import java.awt.event.*;
 ```
 
-The next step is to create these anonymous classes that will handle the events that will occur within the calculator. We will create three classes that will handle all the click events in the calculator.
+The next step is to create these anonymous classes that will handle the events within the calculator. We will create three classes that will handle all the click events in the calculator.
 
-#### b) Creating the Event Handlers
+##### 2.2 Creating the event handlers
 
-**`class NumberBtnHandler`**
-
-The first class is the `NumberBtnHandler` which will handle events from all the number buttons, including the dot button. This class will implement the `ActionListener` interface so that we can override the `actionPerformed()` abstract method in the `ActionListener` interface. This method takes in an `ActionEvent` parameter, which is made available by the event package imported earlier.
+1. **`class NumberBtnHandler`**
+The first class is the `NumberBtnHandler` which will handle events from all the number buttons, including the dot button. This class will implement the `ActionListener` interface to override the `actionPerformed()` abstract method in the `ActionListener` interface. This method takes in an `ActionEvent` parameter, which is made available by the event package imported earlier.
 
 Below is the code for the `NumberBtnHandler` class. Add the code immediately below the utility methods.
+
 ```java
     private class NumberBtnHandler implements ActionListener {
 
@@ -375,13 +377,14 @@ Below is the code for the `NumberBtnHandler` class. Add the code immediately bel
     }
 ```
 
-Next, we have to decide what will happen when any of the "number buttons" get clicked. This can be achieved inside the `actionPerformed()` method, which takes in a parameter we named `e`. The parameter `e` can then access the `Object`s `getSource()` method, which can get the object where an event initially occurred. This is useful when we want to check for the button that was clicked.
+Next, we must decide what will happen when any of the "number buttons" get clicked, which can be achieved inside the `actionPerformed()` method, which takes in a parameter we named `e`. The parameter `e` can then access the Objects `getSource()` method to get the object where an event initially occurred, which is useful when checking for the button that was clicked.
 
-Recall that the "number buttons" are inside an array. So we can easily loop through the array comparing each button with the button that was clicked. If a match occurs, we then get the text inside the button and append it to the output display. After which we will call the `updateDisplay()` method to display the new appended number.
+Recall that the "number buttons" are inside an array. So we can easily loop through the array, comparing each button with the clicked button. If a match occurs, we get the text inside the button and append it to the output display. After which, we will call the `updateDisplay()` method to display the new appended number.
 
->Note that we need to cast `e.getSource()` to a `JButton` so that we can store it in a button variable with a more meaningful name, which can later be used for comparison inside the loop.
+>Note that we need to cast `e.getSource()` to a `JButton` to store it in a button variable with a more meaningful name, which can later be used for comparison inside the loop.
 
 Below is the code for the implementation. Note that all the lines of code below are inside the `actionPerformed()` method of the `NumberBtnHandler` class.
+
 ```java
 	    JButton selectedBtn = (JButton) e.getSource();
         for (JButton btn : numBtn) {
@@ -392,15 +395,14 @@ Below is the code for the implementation. Note that all the lines of code below 
         }
 ```
 
-**`class OperatorBtnHandler`**
+2. **`class OperatorBtnHandler`**
+The second class to be created is the `OperatorBtnHandler` which also implements the `ActionListener` interface. This class is similar to the `NumberBtnHandler` created above, but the significant difference lies inside the `actionPerformed()` method.
 
-The second class to be created is the `OperatorBtnHandler` which also implements the `ActionListener` interface. This class is similar in structure to the `NumberBtnHandler` created above, but the major difference lies inside the `actionPerformed()` method.
+Inside the `actionPerformed()` method of this class, we will compare each operator button with the button clicked to know which operator was selected. We can achieve this using if statements since the operator buttons are not inside an array, unlike the "number buttons".
 
-Inside the `actionPerformed()` method of this class, we will compare each operator button with the button that was clicked to know which operator was selected. We can achieve this using `if` statements since the operator buttons are not inside an array, unlike the "number buttons".
-
-When an operator button is selected, we get the text of the button and pass it to the `selectOperator()` method and then update the output by calling the `updateOutput()` method.
-
+When an operator button is selected, we get the button's text, pass it to the `selectOperator()` method, and update the output by calling the `updateOutput()` method.
 Below is the code implementation for the `OperatorBtnHandler` class.
+
 ```java
     private class OperatorBtnHandler implements ActionListener {
 
@@ -421,9 +423,9 @@ Below is the code implementation for the `OperatorBtnHandler` class.
     }
 ```
 
-**`class OtherBtnHandler`**
+3. **`class OtherBtnHandler`**
 
-The last action listener class to be created is the `OtherBtnHandler` class. This class will implement the `ActionListener` interface and override the `actionPerformed()` method as well. Similar to the `OperatorBtnHandler`, `OtherBtnHandler` will compare the selected button to the other buttons in the calculator and execute their respective methods.
+The last action listener class to be created is the `OtherBtnHandler` class. This class will also implement the `ActionListener` interface and override the `actionPerformed()` method. Similar to the `OperatorBtnHandler`, `OtherBtnHandler` will compare the selected button to the other buttons in the calculator and execute their respective methods.
 
 After the execution, we will also call the `outputDisplay()` method to update the UI. Below is the code implementation for the `OtherBtnHandler` class.
 Below is the full implementation of the `OtherBtnHandler` class.
@@ -446,12 +448,11 @@ Below is the full implementation of the `OtherBtnHandler` class.
     }
 ```
 
-#### c) Adding ActionListeners to the buttons
-We have just created all the action listeners that will handle all the events from all the calculator's buttons. But if you click on any button by now, no event will occur because these action listeners have not been added to the respective buttons.
+##### 2.3 Adding ActionListeners to the buttons
+We have just created all the action listeners that will handle all the events from all the calculator's buttons. Nevertheless, if you click on any button by now, no event will occur because these action listeners have not been added to the respective buttons.
 
 Now back to our constructor. The first step is to create objects of all the button handler classes which can then be passed as action listeners to each of the buttons.
-
-Add the following code immediately below where we first initialize the components inside the constructor. Precisely immediately below where we initialized `btnDelete`.
+Add the following code immediately below, where we first initialize the components inside the constructor. Precisely immediately below where we initialized `btnDelete`.
 
 ```java
   	    // Instantiate action listeners
@@ -460,9 +461,10 @@ Add the following code immediately below where we first initialize the component
         OperatorBtnHandler opBtnHandler = new OperatorBtnHandler();
 ```
 
-The next step is to add these action listeners to their respective buttons. Recall from the loop we used to style the number buttons above, you can directly add action listeners to each button within the loop similar to how styling was added to them. You can achieve this by calling the `addActionListener()` method on each button and passing the respective action listener.
+The next step is to add these action listeners to their respective buttons. Recall from the loop we used to style the number buttons above. You can directly add action listeners to each button within the loop, similar to how styling was added. You can achieve this by calling the `addActionListener()` method on each button and passing the respective action listener.
 
 Update the entire body of the loop with the code below.
+
 ```java
     for (int count = 0; count < numBtn.length - 1; count++) {
         numBtn[count] = new JButton(String.valueOf(count));
@@ -472,7 +474,7 @@ Update the entire body of the loop with the code below.
 
 ```
 
-Similarly, you can add action listeners to the operation and other buttons by passing in the respective action listener to the `addActionListener()` method of each button, as shown below.
+Similarly, you can add action listeners to the operation and other buttons by passing in the respective action listener to each button's `addActionListener()` method, as shown below.
 
 ```java
         // Add action listeners to other buttons
@@ -493,21 +495,20 @@ Add the above code immediately below the line where the `output` was styled. Thi
 ```java
 output.setText("0");
 ```
-All the buttons in the calculator are now functional, but if you click on any of the buttons, you won't see output just yet. This is because the methods that we will use to aid these functionalities are empty for now. Let's dive in and update these methods.
 
-#### d) Updating the Utility Methods
+All the buttons in the calculator are now functional, but if you click on any of the buttons, you will not see output just yet, which is because the methods we will use to aid these functionalities are empty for now. Let us dive in and update these methods.
 
-**`updateOutput()`**
+##### 2.4 Updating the Utility Methods
 
-The first method we will update is the `updateOutput()` method. This method updates the output display with whatever the value of the current operand is. Add the line of code below inside the `updateOutput()` method.
+1. **`updateOutput()`**
+The first method we will update is the `updateOutput()` method. This method updates the output display with the current operand's value. Add the line of code below inside the `updateOutput()` method.
 
 ```java
 output.setText(current);
 ```
 
-**`appendToOutput()`**
-
-Next, we will update the `appendToOutput()` method. This method adds any number that the user clicked to the output variable. We will achieve this by concatenating the user input to the current value on the output and then updating the output afterward.
+2. **`appendToOutput()`**
+Next, we will update the `appendToOutput()` method. This method adds any number that the user clicks to the output variable. We will achieve this by concatenating the user input to the current value on the output and then updating the output afterward.
 
 Add the line of code below inside the `appendToOutput()` method and run the program to see the output.
 
@@ -517,9 +518,9 @@ current += num;
 
 The image below is the updated view of the calculator.
 
-![Output Display Inconsistencies](/how-to-build-a-java-gui-calculator-from-scratch-using-box-layout/4-null-n-multiple-dot-bug.png)
+![Output Display Inconsistencies](/engineering-education/how-to-build-a-java-gui-calculator-from-scratch-using-box-layout/4-null-n-multiple-dot-bug.png)
 
-If studied carefully, you will notice two problems with the calculator. First, a `null` appears on the output display with other numbers trailing it. The second problem is, you can add more than a dot. This does not apply to standard calculators. Let's fix this real quick.
+If studied carefully, you will notice two problems with the calculator. First, a `null` appears on the output display with other numbers trailing it. The second problem is adding more than a dot, which does not apply to standard calculators. Let us fix this real quick.
 
 To fix the multiple dots in the output display, replace the code inside the `appendToOutput()` method with the code below.
 
@@ -533,11 +534,11 @@ To fix the multiple dots in the output display, replace the code inside the `app
     }
 ```
 
-The code will first check for a dot on the current output. If one is already present, then it will return without executing the function. But if none is present, it will add the incoming dot to the current display.
+The code will first check for a dot on the current output. If one is already present, it will return without executing the function. Nevertheless, if none is present, it will add the incoming dot to the current display.
 
-Now to fix the `null` appearing on the output display, recall that the default value for a `String` is `null`. So when we declare the `current` variable at the top of the program, the default variable gets assigned to it.
+To fix the null appearing on the output display, recall that the default value for a `String` is `null`. So when we declare the current variable at the top of the program, the default variable gets assigned to it.
 
-To solve this, we need to initialize the value of both `current` and `previous` to an empty string inside the constructor. This will initialize the value of the variables immediately after the program is executed.
+To solve this, we initialize the value of both current and previous to an empty string inside the constructor. This will initialize the value of the variables immediately after the program is executed.
 
 Add the following code at the top of the program, immediately below where we created the `mainPanel` variable.
 
@@ -547,13 +548,12 @@ Add the following code at the top of the program, immediately below where we cre
     previous = "";
 ```
 
-Now that we have fixed the minor bug with the output display, we can now update other methods in the calculator.
+Now that we have fixed the minor bug with the output display, we can update other calculator methods.
 
-**`clear()`** and **`delete()`**
+3. **`clear()`** and **`delete()`**
+The next set of methods to update is the `clear()` and `delete()`. The `clear()` method clears all the content on the screen by setting both the previous and current operands to an empty string. It also sets the `operator` to null so that we cannot operate on an empty `String`.
 
-The next set of methods to update are the `clear()` and `delete()`. The `clear()` method clears all the content on the screen by setting both the previous and current operands to an empty string. It also sets the `operator` to null so that we cannot operate on an empty `String`.
-
-The `delete()` method removes the element at the last index from the output display. This is achieved by using the `substring()` method to get from the first, up till next to the last element in the string and then set it to the new current operand on the output display.
+The `delete()` method removes the element at the last index from the output display, which is achieved by using the `substring()` method to get from the first up till next to the last element in the string and then set it to the new current operand on the output display.
 
 With only this implementation of the `delete()` method, if you click the delete button when the output is empty, you will get a `StringIndexOutOfBoundsException`. This is because you are trying to chop off the last element from an empty string.
 
@@ -575,9 +575,8 @@ Below is the code for the `clear()` and the `delete()` method.
     }
 ```
 
-`selectOperator()`
-
-Next on let's consider the `selectOperator()` method which we will use to set the operator based on the user input. Before setting the operator, some checks need to be made. First, if the output is empty and an operator is selected, we will set the new operator to be the selected operator, writing off the previously entered operator and then exiting the method. This is useful where the user accidentally clicks a wrong operator, it can then be corrected by clicking on the correct operator next.
+4. **`selectOperator()`**
+Next on, let us consider the `selectOperator()` method, which we will use to set the operator based on the user input. Before setting the operator, some checks need to be made. First, suppose the output is empty, and an operator is selected. In that case, we will set the new operator to be the selected operator, writing off the previously entered operator and then exiting the method, which is useful where the user accidentally clicks a wrong operator. It can then be corrected by clicking on the correct operator next.
 
 Another check is to see if the previous operand is not empty. If true, we will evaluate the previous operand with the current operand before selecting the next operator. This reason for this so the user can perform calculations continuously without pressing the equals button. For example, when a user enters `1 + 2`, but instead of pressing the equals button, the user performs more operations, say `+ 3`. The method will first evaluate the value of the first two operands and set the result to the current operand before selecting the next operator.
 
