@@ -1,12 +1,12 @@
 ### Introduction
-In computer programming, a collection is a grouping of similar data types. These unit classes may assist organize and manage related items. Collections feature data structures that help manage vast volumes of data effectively.
+In computer programming, a collection is a grouping of similar data types. These unit classes may assist organize and managing related items. Collections feature data structures that help manage vast volumes of data effectively.
 
-Python's collection module offers a broad range of containers. A container may hold several elements and allow retrieval and iteration. Included containers include Tuple, List, Dictionary, and more.
+The collection module in Python provides a wide variety of containers. Containers can store a variety of items and maybe retrieve and re-created. Tuple, List, Dictionary, and more containers are included.
 
 Here we'll explore several of the collections module's containers.
 
 ### prerequisite
-To understand the content of this article properly have the following:
+To understand the content of this article properly, have the following:
 - Have prior knowledge of python programming
 - Have a python compiler installed or use the [online compile](https://www.onlinegdb.com/online_python_compiler) to run the code snippets.
 
@@ -19,15 +19,15 @@ To understand the content of this article properly have the following:
 - [Conclusion](#conclusion)
 
 ### Collections data types
-These data types may be used to store a collection of items: list, tuple, set, dictionary. Mutable, immutable, set and mapping datatypes are the only options.
+These data types may be used to store a collection of items: list, tuple, set, dictionary. Mutable, immutable, set, and mapping datatypes are the only options.
 
 1. `Lists`- Iteratively generated lists may be modified by adding or deleting elements. To create a list, use square brackets [].
 
 2. `Sets`- Duplicates are not permitted in unordered, immutable collections of unique items. Sets of data may be intersected, unioned, divided, and symmetrically. You may use curly brackets or the set() constructor.
 
-3. `Tuples`- Tuples are an ordered immutable sequence of multiple things held in one variable. A tuple is a variable name followed by two parenthesis and commas. Python requires a trailing comma to identify it as a string. Instead of parentheses, commas form tuples.
+3. `Tuples` are an ordered, immutable sequence of multiple things held in one variable. A tuple is a variable name followed by two parentheses and commas. Python requires a trailing comma to identify it as a string. Instead of parentheses, commas form tuples.
 
-4. `Dictionary`- A dictionary has unsorted key/value pairs. There may be any number of pairs of keys and values. Dictionaries, like sets, lack order. Any data is a dictionary entry. After creation, a dictionary may be modified. Values overflow and only the most recent is returned if it contains more than one item.
+4. `Dictionary`- A dictionary has unsorted key/value pairs. There may be any number of pairs of keys and values. Dictionaries, like sets, lack order. Any data is a dictionary entry. After creation, a dictionary may be modified. Values overflow, and only the most recent is returned if it contains more than one item.
 
 Now let's compare and contrast lists, tuples, and sets.
 
@@ -44,7 +44,7 @@ Now let's compare and contrast lists, tuples, and sets.
 
 
 ### Collection modules
-The Python collections module provides an alternative to the built-in container data types in Python. The collections module's specific data structures are listed below.
+The Python collections module provides an alternative to Python's built-in container data types. The collections module's specific data structures are listed below.
 
 - defaultdict
 - OrderedDict
@@ -57,7 +57,7 @@ The Python collections module provides an alternative to the built-in container 
 
 Let's look at them one by one:
 
-1. `defaultdict`- Dictionary subclass that runs factory function to fill in missing values in the dictionary When a dictionary's missing key value is used, no problems are typically thrown. The code below illustrates the `defaultdict module.`
+1. `defaultdict`- Dictionary subclass that runs factory function to fill in missing values in the dictionary When a dictionary's missing key worth is used, no problems are typically thrown. The code below illustrates the `defaultdict module.`
 
 ```py
 import collections    
@@ -70,7 +70,7 @@ print(integer['3'])
 The code above outputs integer `0` since it is the default integer.
 
 
-2. `OrderedDict`- Subclasses of dictionaries keep track of the sequence in which they were added. Logic dictates that even if you change a key's value, its placement will not change due to the sequence of entry. The code below illustrates the `OrderedDict module.`
+2. `OrderedDict`- Subclasses of dictionaries keep track of the sequence in which they were added. Logic dictates that even if you change a key's value, its placement will not change due to the series of entries. The code below illustrates the `OrderedDict module.`
 
 ```py
 import collections
@@ -124,7 +124,7 @@ The code output:
 deque(['a', 'b', 'c', 'd'])
 ```
 
-6. `counter`- It is a subclass of a dictionary that is used to count hashable items. The code below illustrates the `counter module.`
+6. `counter`- It is a subclass of a dictionary used to count hashable items. The code below illustrates the `counter module.`
 
 ```py
 import collections 
@@ -139,9 +139,9 @@ print(K[1])
 ```
 The code above outputs the value `3`. 
 
-7. `UserList`-This class wraps the list of things. Using this class as a basis enables other list-like classes to override existing methods or add new ones. This class was built to subclass from a list. The underlying list is now a property of this class, making it simpler to use. It's the class that creates a list-like object. When an event occurs, it is recorded in a standard list. No or one contention may be called on the constructor provided by the list's subclasses.
+7. `UserList`-This class wraps the list of things. Using this class as a basis enables other list-like classes to override existing methods or add new ones. This class was built to subclass from a list. The underlying list is now a class property, making it simpler to use. It's the class that creates a list-like object. When an event occurs, it is recorded in a standard list. No or one contention may be called on the constructor provided by the list's subclasses.
 
-8. `UserDict`- Dictionaries are wrapped up in this class. Subclassing from dict. required the creation of this class. To make it easier to use, the dictionary is now a class property. This class acts like a dictionary, and it's fun to play with. Users may get the instance's data using the UserDict class's data field, which is a standard dictionary. To be utilized for other reasons, the original data is not maintained.
+8. `UserDict`- Dictionaries are wrapped up in this class. Subclassing from dict() requires the creation of this class. The dictionary is now a class property to make it easier to use. This class acts like a dictionary, and it's fun to play with. Users may get the instance's data using the UserDict class's data field, a standard dictionary. To be utilized for other reasons, the original data is not maintained.
 
 ### Implementation of python collection modules
 The collection modules can be used to:
@@ -157,7 +157,7 @@ Let's look at one of the implementations!
 #### Handling missing keys using the defaultdict module
 Dictionaries in Python are containers that map a single key to a single value, with the access time complexity of O (1). However, the user may not be familiar with all of the dictionary keys in many apps. An error message is shown whenever a user attempts to access an unavailable key. The missing key can be handled using the defaultdict, get(), and setdefault() methods. But in this example, we will use the defaultdict method to handle missing keys.
 
-Defaultdict as a parameter expects a function (default factory). The default factory is int, i.e. 0. If the defaultdict has no keys, the factory value is returned. It beats get() and setdefaul().
+Defaultdict as a parameter expects a function (default factory). The default factory is int, i.e., 0. If the defaultdict has no keys, the factory value is returned. It beats get() and setdefaul().
 
 - A default value is declared. It is needless to call the function with the same arguments. This saves time.
 - Get() and setdefault take longer than defaultdict ().
@@ -182,12 +182,12 @@ Output
 
 ```bash
 The monetary value attached to 'x' is: 1
-The monetary value attached to 'k' is: Key is missing
+The monetary value attached to 'k' is: Key is missing.
 ```
 
-From the code above, we declared the defaultdict as value and its value as Key is missing using code `value = collections.defaultdict(lambda : 'Key is missing')`. The values of x and y were initiated respectively. Finally, we printed the value associated with x and y where x was available and k was a missing key.
+From the code above, we declared the defaultdict as value, and its value as the key is missing using code `value = collections.defaultdict(lambda : 'Key is missing')`. The values of x and y were initiated, respectively. Finally, we printed the value associated with x and y where x was available, and k was missing.
 
 ### Conclusion
 The collection is one of Python's many libraries, and it mostly serves as an upmarket menu in the collection datatype. We have learned in detail the collection data types and modules and also seen how to implement the collection modules to solve problems in python dictionaries.
 
-Happy Cording!
+Happy Codding!
