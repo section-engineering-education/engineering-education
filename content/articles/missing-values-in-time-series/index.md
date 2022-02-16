@@ -1,3 +1,4 @@
+---
 layout: engineering-education
 status: publish
 published: true
@@ -22,7 +23,7 @@ There are three types of missing data:
 
 Time series models work with complete data, and therefore they require the missing data to be replaced with meaningful values before actual analysis. At a high level, missing values in time series are handled in two ways, either dropping them or replacing them. However, dropping missing values can be an inappropriate solution due to the time order of the data and the correlation between observations in adjacent periods.
 
-Estimating a reasonable value such that the components of the series are not distorted is an excellent approach to dealing with missing values in time series. Imputation is replacing missing values with values estimated from the same data or observed from the environment with the same conditions underlying the missing data.
+Estimating a reasonable value such that the components of the series are not distorted is an excellent approach to dealing with missing values in time series. Imputation replaces missing values with values estimated from the same data or observed from the environment with the same conditions underlying the missing data.
 
 This article will guide us in addressing such a problem in time series data.
 
@@ -42,7 +43,7 @@ This article will guide us in addressing such a problem in time series data.
 ### Prerequisites
 In order to follow through with this tutorial, it is advisable to have:
 - Good understanding of how to work with [time series data](https://ck7aj.medium.com/the-basics-of-time-series-data-analysis-with-numpy-9cc1723153bf) in NumPy.
-- Have a prepared Dataset. I am using this [Dataset](https://github.com/DennisKimt/datasets/commit/28bc7c1804279d8401b4dd399fe264852d719655) for this project. 
+- Have a prepared Dataset. I am using this [dataset](https://github.com/DennisKimt/datasets/commit/28bc7c1804279d8401b4dd399fe264852d719655) for this project. 
 - Access to the [Jupyter Notebook](https://jupyter.org/) or [Google Colab](https://colab.research.google.com/?utm_source=scs-index).
 
 Let us look at Python's various imputation techniques used in time series.
@@ -68,7 +69,7 @@ warnings.filterwarnings('ignore')
 The data we will use in this implementation is about customers who visited a particular shop between the years 1949 to 1960. The link to download this data is provided in the prerequisites section. Make sure you have it downloaded and import it to your working space. Let us do so together.
 
 ### Step 2: Importing the dataset
-On top of reading our data to our workspace, we will convert it into a time series format.
+On top of reading our data to our workspace, we will convert it into a time-series format.
 
 ```python
 # import the data
@@ -133,7 +134,7 @@ The broken points within the curve indicate missing values in our data. As we ca
 
 #### Step 3: Imputing the missing values
 ##### 1. Mean imputation
-This technique imputes the missing values with the average value of all the data already given in the time series. In python, we implement this technique as follows:
+This technique imputes the missing values with the average value of all the data already given in the time series. For example, in python, we implement this technique as follows:
 
 ```python
 # declare the size of the  plot
@@ -172,12 +173,12 @@ Output:
 
 ![median imputation](/engineering-education/missing-values-in-time-series/median-imp.png)
 
-Upon plotting the data in both of the above two methods, it is clear that all missing values were successfully imputed. However, we can notice a problem with using these techniques. These techniques do not work appropriately if the time series has seasonality and trend components. The seasonality and trend components are not considered while imputing the missing data. Therefore, they can only work better if the observed time series has no seasonality or trend component. 
+Upon plotting the data in both of the above two methods, it is clear that all missing values were successfully imputed. However, we can notice a problem with using these techniques. These techniques do not work appropriately if the time series has seasonality and trend components. This is because the seasonality and trend components are not considered while imputing the missing data. Therefore, they can only work better if the observed time series has no seasonality or trend component. 
 
 If the time series has these components, the following methods work better to impute its missing values:
 
 ##### 3. Last Observation Carried Forward (LOCF)
-According to this technique, the missing value is imputed using the values before it in the time series. Let's learn how this method is implemented. The code below demonstrates how to implement the *LOCF*.
+According to this technique, the missing value is imputed using the values before it in the time series. First, let's learn how this method is implemented. The code below demonstrates how to implement the *LOCF*.
 
 ```python
 # figure size
