@@ -1,4 +1,21 @@
-## Comparing AWS Shared Responsibility Models for Different Products
+---
+layout: engineering-education
+status: publish
+published: true
+url: /comparing-aws-shared-responsibility-models-for-different-products/
+title: Comparing AWS Shared Responsibility Models for Different Products
+description: This article will explain what the AWS shared responsibility model is and why it is important to businesses. 
+author: bashiir-isla
+date: 2022-02-16T00:00:00-20:30
+topics: []
+excerpt_separator: <!--more-->
+images:
+
+  - url: /engineering-education/comparing-aws-shared-responsibility-models-for-different-products/hero.jpg
+    alt: Automation Example Image
+---
+Most cloud service providers operate under a shared responsibility model, and AWS is no exception. The cloud provider and customer share security and compliance responsibilities in this arrangement.  
+<!--more-->
 
 Organizations are moving their workloads from on-premise to the cloud. As a result, they benefit from enhanced user performance, increased business efficiency, and a shorter time-to-market. Amazon Web Services ([AWS](/engineering-education/what-is-aws-and-why-is-aws-so-popular/)) is a cloud platform where organizations can deploy their workloads.
 
@@ -68,7 +85,7 @@ Ensure you have a clear understanding of the part of the AWS shared responsibili
 ### Conclusion
 To sum up, the AWS shared responsibility model splits security responsibilities between AWS and the subscribers. The responsibilities are never shared jointly; each party has clearly defined tasks to execute. Organizations shift their share of responsibilities to their security team. Therefore, security professionals must understand the concept of the shared responsibility model.
 
-In the shared responsibility model, AWS protects its software stack and infrastructure in general. On your part, you need to secure everything built on this infrastructure. Understand the shared responsibility model first, and you've the key to enhancing the security of posture of your overall cloud environment.
+In the shared responsibility model, AWS protects its software stack and infrastructure in general. On your part, you need to secure everything built on this infrastructure. Understand the shared responsibility model first, and you have the key to enhancing the security of posture of your overall cloud environment.
 
 ### Further reading 
 
@@ -77,3 +94,6 @@ In the shared responsibility model, AWS protects its software stack and infrastr
 - [Understanding AWS and its Popularity](/engineering-education/what-is-aws-and-why-is-aws-so-popular/)
 
 - [Using Amazon Web Services for Django media file storage](engineering-education/using-amazon-web-service-for-django-media-files-storage/)
+
+---
+Peer Review Contributions by: [Collins Ayuya](https://www.section.io/engineering-education/authors/collins-ayuya/)
