@@ -5,8 +5,8 @@ Big Data is a term used to describe large amounts of data that are stored and tr
 In the field of security, big data analytics refers to the ability to collect large amounts of digital data to analyze, display, and draw conclusions that can help forecast and prevent cyber threats. It improves our cyber defense posture when combined with security technology. They enable businesses to spot behavior patterns that indicate network vulnerabilities. We look at how Big Data can help improve information security best practices in this article.
 
 Big Data, Cyber Security, Privacy, and Database are just a few of the terms that come to mind while thinking about this topic.
-### Goal
-You should be able to: by the end of this tutorial:
+### Objective
+By the end of this tutorial, you should be able to:
 - Appreciating the value of Big Data and Cybersecurity
 - Recognizing Mega Trends in Technology
 - Gain a better understanding of Big Data analytics - Recognize key areas where cybersecurity analytics can help - Use Big Data analytics to combat cyber-threats
@@ -14,9 +14,9 @@ You should be able to: by the end of this tutorial:
 
 ### Preliminary
 
-Big Data refers to data sets that are extremely massive or complicated, and for which typical data set processing application software is insufficient or unable to cope. In terms of volume, velocity, and variation, big data differs significantly from traditional data. Volume denotes the amount of data produced; velocity denotes the rate at which the data is produced, and variation denotes the different types of structured and unstructured data produced.
+Big Data refers to data sets that are extremely massive or complicated, and for which typical data set processing application software is insufficient or unable to cope. Big data is distinct from typical data in terms of volume, velocity, and variation. Volume denotes the amount of data produced; velocity denotes the rate at which the data is produced, and variation denotes the different types of structured and unstructured data produced.
 
-Big data is a hot topic in practically every industry these days, particularly cyber security. Social media sites and mobile devices are the primary sources of data generation. The rapid generation of data raises a variety of concerns about the data's security. It's critical to keep this data safe because it contains vital and sensitive information like bank account numbers, passwords, and credit card numbers, among other things. Furthermore, advances in Big Data analytics have made it easier to extract and use this data, making privacy violations easier. As a result, in addition to developing Big Data tools, safeguards to prevent abuse must also be created.
+Big data is a hot topic in practically every industry these days, particularly cyber security. Social media sites and mobile devices are the primary sources of data generation. The rapid generation of data raises a variety of concerns about the data's security. It's critical to keep this data safe because it contains vital and sensitive information like bank account numbers, passwords, and credit card numbers, among other things.Furthermore, improvements in Big Data analytics have made it easier to extract and use this data, making privacy infractions easier. As a result, in addition to building Big Data technologies, protections to avoid exploitation must also be developed.
 
 There are three ways in which Big Data differs from conventional technology:
 - Data volume (Volume) - Dataset size: how much data is generated is a crucial issue.
