@@ -16,7 +16,7 @@ images:
 ---
 
 ### Django polymorphic database modelling
-Polymorphism is a technique for modelling data in a database. Polymorphism allows applications to store different types of data in the same database table. 
+Polymorphism is a technique for modelling data in a database. Polymorphism allows applications to store different data types in the same database table.
 
 In an online bookstore, a user can order an ebook version of a novel while another user orders a print version of the same book. In the database, it's the same book but with different properties. The ebook version will include a download link which the print version won't have. The print version can have a weight property that we can use to calculate the ebook version's delivery charges.
 
