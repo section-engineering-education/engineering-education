@@ -1,6 +1,21 @@
-### Introduction
-When designing an Android application, it's important to think about how to send and manage network requests, as well as which frameworks to use. These actions are frequently used to get or change API data or media from a server. This is a typical task in Android development, especially for clients who use dynamic data.
+---
+layout: engineering-education
+status: publish
+published: true
+url: /okio-vs-retrofit/
+title: Okio vs Retrofit
+description: This article will compare Okio and Retrofit in making network requests in android applications.
+author: vivian-odhiambo
+date: 2022-01-06T00:00:00-10:30
+topics: [Languages]
+excerpt_separator: <!--more-->
+images:
 
+  - url: /engineering-education/okio-vs-retrofit/hero.png
+    alt: Okio vs Retrofit Hero Image
+---
+When designing an Android application, it's important to think about how to send and manage network requests, as well as which frameworks to use. These actions are frequently used to get or change API data or media from a server. This is a typical task in Android development, especially for clients who use dynamic data.
+<!--more-->
 ### what is Okio as compared to retrofit
 Okio is a library that works in conjunction with java.io and java. nio to make data access, storage, and processing considerably easier. It started as a component of OkHttp, Android's competent HTTP client. while Retrofit is a REST client for Java and Android application development that is type-safe. Retrofit is a library including interfaces, classes, and methods that provide the functionality required. The retrofit library can parse JSON or XML data and convert it to POJOs (Plain Old Java Objects).
 Okio is well-trained and eager to take on new challenges and it is also a fast and easy android networking library.
@@ -10,7 +25,7 @@ Okio is well-trained and eager to take on new challenges and it is also a fast a
 - Understand the basics of the Kotlin programming language
 
 ### Goals
-This article will lead the reader through the Okio library's concept and how it's used in Android apps,  its advantages, and disadvantages, as well as all of the characteristics that set it apart from the Retrofit library.
+This article will lead the reader through the Okio library's concept and how it's used in Android apps, its advantages, and disadvantages, as well as all of the characteristics that set it apart from the Retrofit library.
 
 ### Features of Okio
 - `BythString` - It's an immutable byte sequence for string data, making it simple to treat binary data as values.
@@ -27,19 +42,23 @@ This article will lead the reader through the Okio library's concept and how it'
 - It can't handle both synchronous and asynchronous network requests at the same time.
 
 Let's get Coding !!
- ### Step 1: Create a New Project
- To make a new project, go to File > New, then New Project, and select Empty activity from the drop-down menu. Then, as shown below, give the project a descriptive name and select 'kotlin' as the language to use.
 
- ![new project](/engineering-education/comparing-okio-and-retrofit-in-performing-network-calls/new_project.png)
+### Step 1: Create a New Project
+To make a new project, go to File > New, then New Project, and select Empty activity from the drop-down menu. Then, as shown below, give the project a descriptive name and select 'kotlin' as the language to use.
 
- ### Step 2: Setting up Okio Library
+![new project](/engineering-education/okio-vs-retrofit/new-project.png)
+
+### Step 2: Setting up Okio Library
 Since Okio is a component of OkHttp, we'll utilize OkHttp to download any file from the server in this situation. Add the following dependencies to your 'build. gradle' app-level to set up okio.
+
 ```gradle
  //okio library
     implementation 'com.squareup.okhttp3:okhttp:4.9.1'
 ```
+
 ### Step 3: Creating the User Interface
 It is critical to set up the area where network data is presented. In this example, we will just consider utilizing an imageView to contain the requested image and a button to download the image. The user interface is implemented as follows.
+
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
@@ -92,22 +111,27 @@ It is critical to set up the area where network data is presented. In this examp
 
 ### Step 4: Adding all the Needed Permissions
 As okio requires access to the internet as well as permissions to write to external storage, all permissions are always included in the 'Manifest.' The permissions listed below must be provided in the manifest.
+
 ```xml
 <uses-permission android:name="android.permission.INTERNET"/>
 <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
 ```
+
 ### Step 5: Declaring Required variables
 Declare the following variables in the 'MainActivity' to be used later in the implementation of Okio.
+
 ```kotlin
 //Declaring variables used in the implementation of okio
     var folder: File? = null
     var file: File? = null
-    
+
 // setting the image link
     var imageLink = //"https://venturesafrca.com/wp-content/uploads/2014/10/Android1.jpg"
 ```
+
 ### Step 6:Set an Inner class that downloads the image
 Create an innerclass that sets the required views' data.
+
 ```kotlin
  // innerclass to download image
     inner class DownloadImage internal constructor(file: File):AsyncTask<Void?,Any?,String>(){
@@ -133,8 +157,10 @@ Create an innerclass that sets the required views' data.
         }
     }
 ```
+
 ### Step 7: Function to Perform Network calls
-We'll write and read the requested data using 'bufferSource' as inputStream and 'bufferSink' as outputStream, set the 'URL', create the required files and folders  as well as delete the file when it's no longer needed.
+We'll write and read the requested data using 'bufferSource' as inputStream and 'bufferSink' as outputStream, set the 'URL', create the required files and folders as well as delete the file when it's no longer needed.
+
 ```kotlin
 fun downloading(view:View){
         binding.pbImage.isVisible = true
@@ -182,17 +208,22 @@ fun downloading(view:View){
         }
     }
 ```
+
 > call the created function within the `onCreate` method like this
+
 ```kotlin
 binding.button.setOnClickListener {
             downloading(imageView)
         }
 ```
+
 ### Factor to Consider When Choosing a network call library
 #### Speed
 Retrofit is faster than Okio when it comes to designing an android application that makes faster network calls.
+
 #### Storage
 Because Okio uses less CPU and memory, it is the best option to consider.
+
 #### Type of Network call
 When you need to make both synchronous and asynchronous network calls in one application, utilize the retrofit library since it supports both synchronous and asynchronous network calls at the same time.
 
@@ -201,3 +232,5 @@ We have discussed the differences between okio library and Retrofit network call
 
 Get the full code on this GitHub [Repository](https://github.com/nia-vee/okioDemo).
 
+---
+Peer Review Contributions by: [Peter Kayere](/engineering-education/authors/peter-kayere/)
