@@ -4,7 +4,7 @@ status: publish
 published: true
 url: /django-model-polymorphism/
 title: Getting started with Django polymorphic models
-description: This tutorial will go over the concept of Django model design from the default feature provided by Django to more advanced modelling features available in Django
+description: This tutorial will go over the concept of Django model design from the basic Django modelling to more advanced Django modelling
 author: flavian-adhiambo
 date: 2022-02-05T00:00:00-05:41
 topics: [API]
@@ -15,18 +15,18 @@ images:
     alt: Getting started with Django polymorphic models
 ---
 
-### Django polymorphic database modelling
-Polymorphism is a technique for modelling data in a database. Polymorphism allows applications to store different data types in the same database table.
+Polymorphism is a technique for modelling data in a database. Polymorphism allows applications to store different types of data in the same database table. 
+
+This tutorial will model an online book store data dealing with print books and ebooks sales. We will begin by creating simple models and adding more fields to our models as the online store expands and handles more products.
 
 In an online bookstore, a user can order an ebook version of a novel while another user orders a print version of the same book. In the database, it's the same book but with different properties. The ebook version will include a download link which the print version won't have. The print version can have a weight property that we can use to calculate the ebook version's delivery charges.
 
 ### Table of contents
-- [Django polymorphic database modelling](#django-polymorphic-database-modelling)
 - [Table of contents](#table-of-contents)
 - [Prerequisites](#prerequisites)
 - [Polymorphic modelling](#polymorphic-modelling)
   - [Default modeling](#default-modeling)
-  - [Sparse Modelling](#sparse-modelling)
+  - [Sparse modelling](#sparse-modelling)
   - [Semi-structured modelling](#semi-structured-modelling)
   - [Abstract base modelling](#abstract-base-modelling)
 - [Conclusion](#conclusion)
@@ -38,8 +38,6 @@ To be able to follow along with this article, you need to have:
    
 ### Polymorphic modelling
 Django ORM provides several ways to model polymorphic data. As we will study below, we can either use the standard Django features or the advanced Django ORM features. As we will see below, there are several ways to model polymorphic data. We will begin with the simplest method to the complex way of implementing polymorphic models.
-
-This tutorial will model an online book store data dealing with print books and ebooks sales. We will begin by creating simple models and adding more fields to our models as the online store expands and handles more products.
 
 We will start by creating a new Django project that we will use throughout this guide. 
 
@@ -102,7 +100,7 @@ class UserCart(models.Model):
 |---|---|
 | Easy to model and maintain  | Only suitable for products with same attributes  |
 
-#### Sparse Modelling
+#### Sparse modelling
 Now that our online store has gained several customers, they request ebooks instead of print books. Therefore, we need to modify the `Publication` model to accommodate print and ebooks.
 
 Replace the code snippet in the `models.py` file in the `modelling` application that we created earlier with the code snippet below.
@@ -192,7 +190,7 @@ class UserCart(models.Model):
 | **Advantages**  | **Disadvantages**  |
 |---|---|
 |  Reduces the number of nullable fields | Complex validation, we have to validate all the JSON data fields independently before saving |
-|  Easier to add new attributes.| Restricted database support since not all databases support JSON field|
+|  Easier to add new attributes.| Restricted database support since not all databases support JSON as a data type|
 
 #### Abstract base modelling
 So far, we have modelled our product using a single Django model. Our online book store has expanded, and we now want to sell other products i.e journals. Our previous model design will not be efficient enough to allow us to sell different types of products. We need to develop an optimal solution to design our database model.
