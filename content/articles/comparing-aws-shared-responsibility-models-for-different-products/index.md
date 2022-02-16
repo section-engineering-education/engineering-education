@@ -19,7 +19,7 @@ Most cloud service providers operate under a shared responsibility model, and AW
 
 Organizations are moving their workloads from on-premise to the cloud. As a result, they benefit from enhanced user performance, increased business efficiency, and a shorter time-to-market. Amazon Web Services ([AWS](/engineering-education/what-is-aws-and-why-is-aws-so-popular/)) is a cloud platform where organizations can deploy their workloads.
 
-However, one area of concern for these organizations as they capitalize on this strategy is the security of their AWS environment. As a chief information security officer or a security practitioner in that organization, you'll need to understand the security of the AWS environment. Ideally, understanding the AWS shared responsibility model is a significant starting point to improving the security of the organization's ASW environment.
+However, one area of concern for these organizations as they capitalize on this strategy is the security of their AWS environment. As a chief information security officer or a security practitioner in that organization, you'll need to understand the security of the AWS environment. Ideally, understanding the AWS shared responsibility model is a significant starting point to improving the security of the organization's AWS environment.
 
 This article will explain what AWS shared responsibility model is and why it is important to businesses. We'll also compare AWS shared responsibility models for different products and discuss the best practices for working with these models.
 
@@ -45,7 +45,7 @@ Your security responsibilities and those of AWS may differ depending on the AWS 
 - Amazon EKS
 
 ### Amazon EC2
-Amazon Elastic Compute Cloud ([Amazon EC2](https://www.amazonaws.cn/en/ec2/)) is a self-managed computing service. The management and configuration of ECS is the sole responsibility of the customer. That means it is your responsibility to execute patches, backup data, and configure dependencies. Security and network infrastructure management is also your responsibility.
+Amazon Elastic Compute Cloud ([Amazon EC2](https://aws.amazon.com/ec2/) is a self-managed computing service. The management and configuration of ECS is the sole responsibility of the customer. That means it is your responsibility to execute patches, backup data, and configure dependencies. Security and network infrastructure management is also your responsibility.
 
 With EC2, you've full control over your deployments and their management. In that case, you have the flexibility to customize any environment to fit your preferences. For example, you may want to install specific software versions in your environment.
 
@@ -76,7 +76,7 @@ It would be best to determine the Virtual private network (VPN) configuration an
 In that case, you're left to ensure the running of worker nodes by registering nodes to EKS and ensuring Kubernetes APIs can access the nodes.
 
 ### Best practices for working with AWS Shared Responsibility Models
-The choice of AWS shared responsibility model product determines the responsibilities that you handle as the security practitioner in an organization. You must ensure the security of data and applications in the AWS cloud. You can follow several best practices to help you better manage the AW shared responsibility model for whichever product your organization chooses.
+The choice of AWS shared responsibility model product determines the responsibilities that you handle as the security practitioner in an organization. You must ensure the security of data and applications in the AWS cloud. You can follow several best practices to help you better manage the AWS shared responsibility model for whichever product your organization chooses.
 
 Figure out cloud security requirements depending on what AWS shared responsibility model product the organization is using. In this way, you get ample time to plan for the security configurations, controls, and settings that apply to your side of the shared model.
 
