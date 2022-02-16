@@ -16,13 +16,15 @@ images:
 ---
 
 ### Django polymorphic database modelling
-Polymorphism is a technique for modelling data in a database so that applications can use it to store different types of data in the same table. For example, in an online bookstore, a user can order an ebook version of a novel while another user orders a print version of the same book. In the database, it's the same book but with different properties. The ebook version will include a download link which the print version won't have. The print version can have a weight property that we can use to calculate the ebook version's delivery charges.
+Polymorphism is a technique for modelling data in a database. Polymorphism allows applications to store different types of data in the same database table. 
+
+In an online bookstore, a user can order an ebook version of a novel while another user orders a print version of the same book. In the database, it's the same book but with different properties. The ebook version will include a download link which the print version won't have. The print version can have a weight property that we can use to calculate the ebook version's delivery charges.
 
 ### Table of contents
 - [Django polymorphic database modelling](#django-polymorphic-database-modelling)
 - [Table of contents](#table-of-contents)
 - [Prerequisites](#prerequisites)
-- [Polymorphic Modelling](#polymorphic-modelling)
+- [Polymorphic modelling](#polymorphic-modelling)
   - [Default modeling](#default-modeling)
   - [Sparse Modelling](#sparse-modelling)
   - [Semi-structured modelling](#semi-structured-modelling)
@@ -30,10 +32,11 @@ Polymorphism is a technique for modelling data in a database so that application
 - [Conclusion](#conclusion)
   
 ### Prerequisites
-1. [Python](https://www.python.org/) and [Virtualenv](https://virtualenv.pypa.io/en/latest/) installed in your computer.
+To be able to follow along with this article, you need to have:
+1. [Python](https://www.python.org/) and [virtualenv](https://virtualenv.pypa.io/en/latest/) installed on your computer.
 2. Knowledge in [Django](https://docs.djangoproject.com/en/4.0/intro/overview/) and [Python](https://www.python.org/).
    
-### Polymorphic Modelling
+### Polymorphic modelling
 Django ORM provides several ways to model polymorphic data. As we will study below, we can either use the standard Django features or the advanced Django ORM features. As we will see below, there are several ways to model polymorphic data. We will begin with the simplest method to the complex way of implementing polymorphic models.
 
 This tutorial will model an online book store data dealing with print books and ebooks sales. We will begin by creating simple models and adding more fields to our models as the online store expands and handles more products.
@@ -71,7 +74,6 @@ This section will model our online bookstore using the default Django modelling 
 ```python
 from django.contrib.auth import get_user_model
 from django.db import models
-
 
 # Publication is a journal that can be ordered from the bookstore a hard copy file
 class Publication(models.Model):
@@ -157,7 +159,6 @@ from django.db import models
 # Publication is a journal that buyers can order from the bookstore a hard copy file
 from django.db.models import JSONField
 
-
 class Publication(models.Model):
     PUBLICATION_CHOICES = (
         ("Print", 'Print'),
@@ -175,7 +176,6 @@ class Publication(models.Model):
 
     def __str__(self) -> str:
         return self.publication_title
-
 
 # UserCart manages the user publications add on the cart
 class UserCart(models.Model):
