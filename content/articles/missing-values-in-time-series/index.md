@@ -6,7 +6,7 @@ url: /missing-values-in-time-series/
 title: A Complete guide on how to impute Time Series Missing Values in Python
 description: This tutorial will cover how to impute missing values in a time series in Python.
 author: dennis-kimutai-koech
-date: 2022-01-27T00:00:00-14:20
+date: 2022-02-16T00:00:00-09:50
 topics: [Languages]
 excerpt_separator: <!--more-->
 images:
