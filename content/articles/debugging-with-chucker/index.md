@@ -14,9 +14,9 @@ You might be wondering what debugging is in Android development. Debugging can b
 
  ### Prerequisites
   To follow through this tutorial, you must have:
-- [Android Studio](https://developer.android.com/studio/index.html) installed on your computer.
-- The basics of using [Kotlin](https://kotlinlang.org/) programming language.
-- Basic knowledge of Kotlin [Coroutines](https://developer.android.com/kotlin/coroutines).
+- [Android Studio] IDE installed(https://developer.android.com/studio/index.html).
+- [Kotlin](https://kotlinlang.org/) programming language basics. 
+- Kotlin [Coroutines](https://developer.android.com/kotlin/coroutines) basics.
 
 ### What is Chucker
 Chucker is an open-source Android debugging library produced and is being maintained by the Chucker team. It is used to simplify the inspection of HTTP(S) requests that are fired by your Android application. It works as an OkHttp interceptor by providing a user interface for inspecting and sharing the OkHttp events inside your application.
@@ -25,11 +25,11 @@ When you integrate your app with Chucker, your app will display a push notificat
 
 [notification](/engineering-education/debugging-with-chucker/chucker-notification.jpg)
 
-When you tap on the notification, a complete UI of Chucker launches.
+Tapping on the push notification, launches a complete UI of Chucker.
  
 [chucker ui](/engineering-education/debugging-with-chucker/chucker-ui.png)
 
-You can suppress the notification from showing and launch the Chucker UI directly from within their interface. This is because when installing/building your app in Android studio, Chucker 'app' is installed alongside yours.
+You can prevent the notification from showing and launching the Chucker UI directly from within their interface. This is because when installing/building your app in Android studio, Chucker 'app' is installed alongside yours.
 
 ### What is OkHttp
 OkHttp is built on top of HTTP. We can define HTTP as the protocol that governs how modern applications communicate over a network. It can either be via a secured channel(HTTPS) or an unsecured channel(HTTP).
@@ -48,10 +48,10 @@ In your app-level `build.gradle` file, add the following dependencies;
     debugImplementation "com.github.chuckerteam.chucker:library:3.5.2"
     releaseImplementation "com.github.chuckerteam.chucker:library-no-op:3.5.2"
 
-    // define a BOM and its version
+    // OkHttp BOM
     implementation(platform("com.squareup.okhttp3:okhttp-bom:4.9.3"))
 
-    // define any required OkHttp artifacts without version
+    // OkHttp artifacts
     implementation 'com.squareup.okhttp3:okhttp'
     implementation 'com.squareup.okhttp3:logging-interceptor'
 
@@ -98,9 +98,7 @@ val myChuckerCollector = ChuckerCollector(
     retentionPeriod = RetentionManager.Period.ONE_WEEK  // Period taken to retain the collected data, can be an hour, day or week
 )
 ```
-After creating the collector, we can then create the `ChuckerInterceptor` which we will plug into the `OkHttpClient` Builder.
-
-In the final part, we will create our OkHttp request and make asynchronous network calls by creating a `Call` object using the `enqueue` method.
+After creating the collector, we can then create the `ChuckerInterceptor` which we will plug into the `OkHttpClient` Builder. In the final part, we will create our OkHttp request for making network calls. 
 
 > Note: Remember to make the network calls inside a Coroutine scope.
 
