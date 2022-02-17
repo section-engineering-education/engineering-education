@@ -30,10 +30,12 @@ To follow along with this tutorial:
 These are methods that the tell 'Room' database on how to convert custom types to and from recognized kinds that Room recognizes. 
 
 ### What are custom types in Room
-Typically, the data you enter into a database is of a primitive type, for example, int, String, float, double, and so on.  
-However, there are situations when a custom type, such as Date, Location, or your own class, is required. 
-To effectively implement such a value in the database, you must inform Room how to convert your custom type to the primitive type. 
-This is where `TypeConverter` comes in. 
+Room typically stores primitive types such as String, int, float, double and others. However, when it comes to storing custom types, such as :
+- Date
+- Location
+- Created classes
+
+A `@TypeConverter` will be very useful here in order to strore this types 
 
 We will be trying to store a word and its various meanings in `Room` database (The way a dictionary has a word that has several meanings).
 
@@ -57,17 +59,17 @@ Let's take a scenario where you have received such a response from an API. Which
 ```json
 "meanings": [
     {
-    "partOfSpeech": "noun",
+    "partOfSpeech": "",
     "definitions": [
         {
-        "definition": "(in science fiction) a robot with a human appearance.",
-        "example": "a space station inhabited only by androids",
+        "definition": "",
+        "example": "",
         "synonyms": [],
         "antonyms": []
         },
         {
-        "definition": "an open-source operating system used for smartphones and tablet computers.",
-        "example": "I have an Android phone and I like it a lot",
+        "definition": "",
+        "example": "",
         "synonyms": [],
         "antonyms": []
           }
@@ -120,8 +122,6 @@ suspend fun insertWord(wordEntity: WordEntity)
 
 ### Step 5 - Storing the custom type
 As you have seen from the Entity class, we need to store a list of `Meanings` in a column and the other data, this will be hard because `Meaning` is of a complex type that `Room` cannot understand.
-
-We will need to come up with a custom type converter that will help us in storing this type in `Room` database.
 
 First, let us create a custom JsonParser for parsing `String`. This is important because later in your project you may need to switch and use a different library to parse strings such as Moshi, Jackson, and Kotlin Serialization; this will help.
 
@@ -231,6 +231,6 @@ For a clear look at the code, check out this Github repository - [RoomTypeConver
 ### Further reading
 - [Room TypeConverters](https://developer.android.com/reference/androidx/room/TypeConverters)
 - [Using Room to refer to complex data](https://developer.android.com/training/data-storage/room/referencing-data)
-- [Android Architecture Components: Room — Custom Types](https://medium.com/android-news/android-architecture-components-room-custom-types-ad6a477004e0)
+- [Room Db Custom Types](https://medium.com/android-news/android-architecture-components-room-custom-types-ad6a477004e0)
 
 Happy coding.
