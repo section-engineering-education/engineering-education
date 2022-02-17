@@ -93,7 +93,7 @@ T(n)=2T(n-1)+c   [c=4]
  ```
  - O(2^n)=>fib(recursion)-Exponential time algorithm
  
-In the equation above we are looking for largestvalue that can round up to the estimated value
+In the equation above we are looking for largest value that can round up to the estimated value
  
 On finding the solution to the above recursive equation, we obtain the upper bound of Fibonacci as O(2^n). This is not the tight upper bound. The fact that Fibonacci can be mathematically represented as a linear recursive function can be used to find the tight upper bound.
 
@@ -286,9 +286,9 @@ This is because `F(n-2)` is the one which is in the cache when we calculate `F(n
 The Fibonacci sequence is notable, because the ratio of two successive Fibonacci numbers is very close to the Golden ratio value.The value of golden ratio is approximately equal to 1.618034…  For example, 
 
 The ratio of:
-- 5 and 3 is:5/3 = 1.6666 
-- 8 and 5 is:8/5 = 1.6
-- 13 and 8 is:13/8=1.625 and so on.
+- 5 and 3 is: 5/3 = 1.6666 
+- 8 and 5 is: 8/5 = 1.6
+- 13 and 8 is: 13/8=1.625 and so on.
 The Golden Ratio is denoted by the symbol “φ”
 
 The two different ways to find the Fibonacci sequence are Recursive Relation Method and Golden Ratio Method
