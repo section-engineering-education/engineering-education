@@ -94,16 +94,14 @@
         {{ range (where (where .Site.Pages "Params.layout" "engineering-education") ".Params.author" $author) }}
 
         <script defer type="text/javascript">
-          fetch('https://talk.hyvor.com/api/v1/page', {
-            'page_identifier': "https://www.section.io/engineering-education/php-io-streams/",
-            'website_id': 5716
-          })
+          fetch('https://talk.hyvor.com/api/v1/page/?page_identifier=http:{{ .Permalink }}&website_id=5716')
             .then(response => response.json())
             .then(data => {
               console.log(data);
               if (data.status === true) {
-                document.getElementById('comments-count').innerHtml = data.data.comments_count;
-                document.getElementById('likes-count').innerHtml = data.data.reactions[0];
+                const comments = document.getElementById('comments-count');
+                comments.innerText = data.data.comments_count;
+                document.getElementById('likes-count').innerText = data.data.reactions[0];
               }
             })
         </script>
