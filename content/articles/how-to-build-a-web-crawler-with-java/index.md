@@ -1,5 +1,21 @@
-This tutorial will introduce you to build a basic web crawler on your own and will help you understand the fundamental algorithm that makes web crawlers work. It will also covers some of the use cases and the challenges involved with building one.
+---
+layout: engineering-education
+status: publish
+published: true
+url: /how-to-build-a-web-crawler-with-java/
+title: How To Build Web Crawler With Java
+description: In this article, we will discuss what web crawlers are, where we use them, and how it works. We will also implement it using Java.
+author: damilare-jolayemi
+date: 2022-02-17T00:00:00-00:00
+topics: [Languages]
+excerpt_separator: <!--more-->
+images:
 
+ - url: /engineering-education/how-to-build-a-web-crawler-with-java/hero.jpg
+   alt: How To Build Web Crawler With Java Example Image
+---
+This tutorial will introduce you to build a basic web crawler on your own and will help you understand the fundamental algorithm that makes web crawlers work. It will also covers some of the use cases and the challenges involved with building one.
+<!--more-->
 [According to seedscientific.com](https://seedscientific.com/how-much-data-is-created-every-day), we generate 2.5 quintillion bytes of data every day. A significant part of this data is generated through our interactions with the internet.
 
 Big organizations world-wide extract and analyze these data for business and research purposes to further grow their businesses while maximizing profits.
@@ -246,3 +262,6 @@ Happy coding!
 - [Getting Started with Web Scraping using Python](https://www.section.io/engineering-education/getting-started-with-web-scraping-using-python/).
 - [Solving a maze with breadth-first search](https://www.section.io/engineering-education/breadth-first-search/).
 - [How A Web Crawler Works – Back To The Basics](https://www.woorank.com/en/blog/how-a-crawler-works-back-to-the-basics).
+
+---
+Peer Review Contributions by: [Srishilesh P S](/engineering-education/authors/srishilesh-p-s)
