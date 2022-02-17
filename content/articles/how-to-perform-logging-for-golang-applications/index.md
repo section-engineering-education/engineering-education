@@ -1,5 +1,21 @@
-Go is used to build backed-based applications. As a developer, you might need to know what is going on behind the scenes of the app you are running. You need to know when a certain activity is carried out to track what comes in and out of your application. Thus, you need to set up a logging wrapper that will help you get to know more of the task your server is doing.
+---
+layout: engineering-education
+status: publish
+published: true
+url: /how-to-perform-logging-for-golang-applications/
+title: Introduction on How to Perform logging for Go applications
+description: This tutorial aims to introduce the concept of logging, and how to perform logging using the Go programming language.
+author: antony-gitau
+date: 2022-17-02T00:00:00-21:00
+topics: [Languages]
+excerpt_separator: <!--more-->
+images:
 
+  - url: /engineering-education/how-to-perform-logging-for-golang-applications/hero.jpg
+    alt: How to Perform logging for Go applications Hero Image
+---
+Go is used to build backend-based applications. As a developer, you might need to know what is going on behind the scenes of the app you are running. You need to know when a certain activity is carried out to track what comes in and out of your application. Thus, you need to set up a logging wrapper that will help you get to know more of the task your server is doing.
+<!--more-->
 This guide aims to introduce the concept of logging using the Go programming language. We will explain this concept and how it works. Then build an application that has logging within a Golang application.
 
 ### What is logging
