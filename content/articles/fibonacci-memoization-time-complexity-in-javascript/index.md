@@ -78,6 +78,7 @@ T(n)=(1+c)*2^n/2=c
 T(n) φ 2^n/2 //(lower Bound)
 ```
  - O(n)=> fib(iteration)-linear time algorithm
+ 
 In the equqtion above we are looking for the smallest value that  that can round up to the estimated value.
 ```bash
 T(n-1)=T(n-2)
@@ -91,7 +92,9 @@ T(n)=2T(n-1)+c   [c=4]
  T(n) φ 2^n //(upper bound)
  ```
  - O(2^n)=>fib(recursion)-Exponential time algorithm
- In the equation above we are looking for largestvalue that can round up to the estimated value
+ 
+In the equation above we are looking for largestvalue that can round up to the estimated value
+ 
 On finding the solution to the above recursive equation, we obtain the upper bound of Fibonacci as O(2^n). This is not the tight upper bound. The fact that Fibonacci can be mathematically represented as a linear recursive function can be used to find the tight upper bound.
 
 **Recursive formula for writing Fibonacci numbers mathematically**
