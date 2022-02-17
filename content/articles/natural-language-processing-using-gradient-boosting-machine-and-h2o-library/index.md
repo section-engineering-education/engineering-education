@@ -6,7 +6,7 @@ url: /natural-language-processing-using-gradient-boosting-machine-and-h2o-librar
 title: Natural Language Processing using Gradient Boosting Machine and H2O library
 description: This tutorial aims to focus on the Gradient Boosting Machine algorithm to build multiple decision trees sequentially.
 author: willyngashu
-date: 2022-02-10T00:00:00-21:08
+date: 2022-02-17T00:00:00-21:08
 topics: [Machine Learning]
 excerpt_separator: <!--more-->
 images:
@@ -20,7 +20,7 @@ H20 supports the following algorithms: [Naive Bayes algorithms](https://en.wikip
 
 To get the complete list of all the algorithms that H2O supports, click [here](https://docs.h2o.ai/h2o/latest-stable/h2o-docs/data-science.html).
 
-[H2O](https://github.com/h2oai/h2o-3) is fast and scalable, making it the best platform for building machine learning models.  It also automates machine learning using the [H2O AutoML.](https://github.com/h2oai/h2o-3) pipeline.
+[H2O](https://github.com/h2oai/h2o-3) is fast and scalable, making it the best platform for building machine learning models.  It also automates machine learning using the [H2O AutoML](https://github.com/h2oai/h2o-3) pipeline.
 
 In this tutorial, we will focus on the Gradient Boosting Machine. This algorithm builds both classification and regression models. In Gradient Boosting Machine, we train multiple decision trees sequentially. They are then combined to create a final model.
 
@@ -57,9 +57,9 @@ We will use the Gradient Boosting Machine to train a natural language processing
 ### Prerequisites
 To follow along with this tutorial, you need to be familiar with:
 
-- [Natural language processing](https://www.ibm.com/cloud/learn/natural-language-processing)
-- [Steps in text preprocessing](https://towardsdatascience.com/nlp-text-preprocessing-a-practical-guide-and-template-d80874676e79)
-- [Popular machine learning algorithms](https://www.analyticsvidhya.com/blog/2017/09/common-machine-learning-algorithms/)
+- [Natural language processing](https://www.ibm.com/cloud/learn/natural-language-processing).
+- [Steps in text preprocessing](https://towardsdatascience.com/nlp-text-preprocessing-a-practical-guide-and-template-d80874676e79).
+- [Popular machine learning algorithms](https://www.analyticsvidhya.com/blog/2017/09/common-machine-learning-algorithms/).
 - [Ensemble learning techniques](/engineering-education/ensemble-learning/) in machine learning.
 
 > NOTE: You must use [Google Colab notebook](https://research.google.com/) to build the model. Google Colab notebook has fast CPUs and GPUs. 
@@ -68,14 +68,12 @@ To follow along with this tutorial, you need to be familiar with:
 As mentioned earlier, Gradient Boosting Machine trains multiple decision trees sequentially. The decision trees are then combined to create a final model. The initial decision tree model is the base model or a weak leaner.
 Boosting uses a collection of algorithms to convert weak learners into strong learners. It minimizes/reduces the training errors. A random sample of data is selected, fitted with a model, and then trained sequentially.
 
-Weak learners may not perform well individually due to [high variance or high bias](https://www.javatpoint.com/bias-and-variance-in-machine-learning). However, when we aggregate the weak learners, they form a strong learner. Their combination reduces bias or variance, yielding better model performance. 
-
-For further reading on Gradient Boosting Machine, read this [article](/engineering-education/boosting-algorithms-python/).
+Weak learners may not perform well individually due to [high variance or high bias](https://www.javatpoint.com/bias-and-variance-in-machine-learning). However, when we aggregate the weak learners, they form a strong learner. Their combination reduces bias or variance, yielding better model performance. For further reading on Gradient Boosting Machine, read this [article](/engineering-education/boosting-algorithms-python/).
 
 Let's get started with H2O.
 
 ### Getting started with H2O
-To use H2O the platform, we will install the dependencies. H2O depends on the [64-bit JDK](https://www.oracle.com/java/technologies/downloads/) to run. It uses the Java programming language. To install the 64-bit JDK, run this command:
+To use H2O, we will install the dependencies. H2O depends on the [64-bit JDK](https://www.oracle.com/java/technologies/downloads/) to run. It uses the Java programming language. To install the 64-bit JDK, run this command:
 
 ```bash
 !apt-get install default-jre
@@ -87,7 +85,7 @@ After installing the dependencies, install H2O using the following command:
 !pip install h2o
 ```
 
-This command will install the latest H2O version. To import the H2O, use this code:
+This command will install the latest H2O version. To import H2O, use this code:
 
 ```python
 import h2o
@@ -183,7 +181,7 @@ rating=dowloaded_dataset['data']['star_rating']
 ```
 The code above selects four columns from our dataset. The four columns are the inputs for the model during the training phase. We will then create a DataFrame using the H2O DataFrame function. A DataFrame is a data structure that organizes data into a 2-dimensional table of rows and columns.
 
-### Creating the DataFrame
+### Creating the Data Frame
 We will create the DataFrame using the H2O DataFrame function.
 
 ```python
@@ -201,9 +199,9 @@ The code produces the following output:
 ![Created DataFrame](/engineering-education/natural-language-processing-using-gradient-boosting-machine-and-h2o-library/converted-dataframe.jpg)
 
 ### Adding the output column
-We need to add an output column to our DataFrame. The output column contains the output of the model after making a prediction. The model will classify the customer's reviews as either positive or negative. We represent positive reviews using 1, while negative reviews using 0. 
+We need to add an output column to our DataFrame. The output column contains the output of the model after making a prediction. The model will classify the customer's reviews as either positive or negative. We represent positive reviews using `1`, while negative reviews using `0`. 
 
-For a customer review to be positive, the `star_rating` should be greater than 4. If the `star_rating` is less than 4, the review is negative. To add the output column, we will use this logic.
+For a customer review to be positive, the `star_rating` should be greater than `4`. If the `star_rating` is less than `4`, the review is negative. To add the output column, we will use this logic.
 
 We use the following code to represent this logic:
 
@@ -239,7 +237,7 @@ For a detailed understanding of all the steps in text preprocessing, read this [
 In this tutorial, we will only perform three steps. We will use the Natural Language Toolkit(NLTK).
 
 ### Installing the Natural Language Toolkit
-Install the Natural Language Toolkit(NLTK) using this command:
+We install the Natural Language Toolkit(NLTK) using this command:
 
 ```bash
 !pip install nltk
@@ -276,9 +274,8 @@ def tokenize(line):
   tokenized_filter = tokenized[(tokenized.isna()) | (~ tokenized.isin(stop_words)),:]
  return tokenized_filter
 ```
-The function name is `tokenize`. In this function, `line.tokenize` method performs tokenization. The `tokenized.tolower` method converts the text to lower case. `(~ tokenized.isin(stop_words))` will tokenize words not found in the stop words list. It will filter out the stop words from the dataset.
+The function name is `tokenize`. In this function, the `line.tokenize` method performs tokenization. The `tokenized.tolower` method converts the text to lower case. `(~ tokenized.isin(stop_words))` will tokenize words not found in the stop words list. It will filter out the stop words from the dataset. Finally, the function returns a clean text that has undergone all three steps. Let's apply this function to our `reviews` and `headline` columns.
 
-Finally, the function returns a clean text that has undergone all three steps. Let's apply this function to our `reviews` and `headline` columns.
 ### Applying the function
 The `reviews` and `headline` columns contain text. To apply the function into these two columns, use this code:
 
@@ -304,12 +301,10 @@ It produces the following output:
 
 ![Headline column](/engineering-education/natural-language-processing-using-gradient-boosting-machine-and-h2o-library/headline-column.jpg)
 
-The steps above show how to remove stop words, convert text into lower and perform tokenization. The next step is to vectorize the tokenized text.
+The steps above show how to remove stop words, convert text into lower case, and perform tokenization. The next step is to vectorize the tokenized text.
 
 ### Vectorization
-Vectorization converts the tokenized text to a list of numbers. The list of numbers is known as word vectors which the model uses as input.
-
-Machines do not understand the text. That's why we need to convert the text into numeric form (list of numbers). In H2O, we use the `H2OWord2vecEstimator` algorithm to convert the tokenized text to word vectors.
+Vectorization converts the tokenized text to a list of numbers. The list of numbers is known as word vectors which the model uses as input. Machines do not understand the text. That's why we need to convert the text into numeric form (list of numbers). In H2O, we use the `H2OWord2vecEstimator` algorithm to convert the tokenized text to word vectors.
 
 For further reading on how the `H2OWord2vecEstimator` algorithm converts the tokenized text to word vectors, read this [documentation](https://docs.h2o.ai/h2o/latest-stable/h2o-docs/data-science/word2vec.html)
 
@@ -331,6 +326,7 @@ vec_model.train(training_frame=words_reviews)
 vec_model.train(training_frame=words_headline)
 ```
 From the code above, we use the following methods and parameters:
+
 - `vec_size = 100`.
 It represents the number of columns that the word vectors will have.
 
@@ -404,7 +400,7 @@ headline_vecs.head()
 ```
 It produces the following output:
 
-![Converted word vectors](/engineering-education/natural-language-processing-using-gradient-boosting-machine-and-h2o-library/converted-word-vectors.jpg)
+![Converted word vectors](/engineering-education/natural-language-processing-using-gradient-boosting-machine-and-h2o-library/word-vectors.jpg)
 
 From the image above, we have converted the `words_headline` column.
 
@@ -421,7 +417,7 @@ The `cbind` function will add the `review_vecs` dataframe to the `h2o_df`. The s
 
 After merging all the DataFrames, we split the final `h2o_df_ext` DataFrame into two sets. The first set is for model training and the second set is for model validation.
 
-### Splitting the DataFrame
+### Splitting the Data Frame
 We split the dataset into two sets. One for training and the other for validation using this code:
 
 ```python
@@ -516,12 +512,10 @@ It produces the following prediction:
 ```bash
 array([1])
 ```
-The prediction result is 1 and is a positive review. From the prediction above, our model can make accurate predictions.
+The prediction result is `1`, and is a positive review. From the prediction above, our model can make accurate predictions.
 
 ### Conclusion
-In this tutorial, we built a sentiment analysis model. We create the model using Gradient Boosting Machine and the H2O library. The tutorial also covers text preprocessing. In-text preprocessing, we clean and remove noise from the dataset.
-
-Finally, we train the model using the `H2OGradientBoostingEstimator` algorithm. The final model was able to make accurate predictions.
+In this tutorial, we built a sentiment analysis model. We create the model using Gradient Boosting Machine and the H2O library. The tutorial also covers text preprocessing. In-text preprocessing, we clean and remove noise from the dataset. Finally, we train the model using the `H2OGradientBoostingEstimator` algorithm. The final model was able to make accurate predictions.
 
 To access the Google Colab notebook for this tutorial, click [here](https://colab.research.google.com/drive/1MS3ziVfG2UIgCbvJ8nRyciJcfDyZVDq1?usp=sharing).
 
@@ -536,4 +530,3 @@ To access the Google Colab notebook for this tutorial, click [here](https://cola
 
 ---
 Peer Review Contributions by: [Willies Ogola](/engineering-education/authors/willies-ogola/)
-
