@@ -48,7 +48,7 @@ else
 }
 ```
 
-In the above code, if *n* is less or equal to *1*, we return *n*, or else we make two recursive calls to calculate *fib of n-1* and *fib of n-2*. 
+In the above algorithm, if *n* is less or equal to *1*, we return *n*, or else we make two recursive calls to calculate *fib of n-1* and *fib of n-2*. 
 
 #### Time complexity calculation
 You can use different formulars to calculate the time complexity of fibonacci sequence.
@@ -79,7 +79,7 @@ T(n) φ 2^n/2 //(lower Bound)
 ```
  - O(n)=> fib(iteration)-linear time algorithm
  
-In the equqtion above we are looking for the smallest value that  that can round up to the estimated value.
+In the equation above we are looking for the smallest value that  that can round up to the estimated value.
 ```bash
 T(n-1)=T(n-2)
 T(n)=2T(n-1)+c   [c=4]
