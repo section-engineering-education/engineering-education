@@ -1,13 +1,13 @@
-﻿### Introduction
+### Introduction
 A good application development strategy should ensure that the development time and effort are significantly reduced while keeping the application complexity minimal.
 
-In real world, applications tend to grow in size, meaning that more effort is required, and the application coplexity increases. Therefore, a well-developed application should be responsive and highly scalable.
+In the real world, applications tend to grow in size, meaning more effort is required, and the application complexity increases. Therefore, a well-developed application should be responsive and highly scalable.
 
-In [monolithic architecture](https://www.mulesoft.com/resources/api/microservices-vs-monolithic), applications have huge components and complex logic. Maintaining or upgrading such applications is challenging, and also integrating a new team can be a difficult task.
+In [monolithic architecture](https://www.mulesoft.com/resources/api/microservices-vs-monolithic), applications have huge components and complex logic. Therefore, maintaining or upgrading such applications is challenging, and also integrating a new team can be a difficult task.
 
-A better solution would be breaking down a huge application into smaller independent applications known as [micro-frontends](https://single-spa.js.org/docs/microfrontends-concept/). 
+A better solution would be breaking down a vast application into smaller independent applications known as [micro-frontends](https://single-spa.js.org/docs/microfrontends-concept/). 
 
-Micro-frontends are easier to manage, scale, and can be assigned to a separate teams. This article introduces the reader to micro-frontends and their advantages compared to monolithic applications. We will also use a demo application to illustrate how micro-frontends works.
+Micro-frontends are easier to manage scale and can be assigned to separate teams. This article introduces the reader to micro-frontends and their advantages compared to monolithic applications. We will also use a demo application to illustrate how micro-frontends works.
 
 ### Prerequisites
 - [Npm](https://docs.npmjs.com/cli/v8/commands/npm-install) packages installed.
@@ -19,9 +19,9 @@ Micro-frontends are easier to manage, scale, and can be assigned to a separate t
 ### Understanding monolith architecture and micro-frontend architecture
 Monolith architecture refers to a huge code block containing several modules bundled into a single application.
 
-The modules in a monolith application are tightly coupled with each other. This means that the application logic and the business logic are bundled and deployed as a single unit.
+The modules in a monolith application are tightly coupled, meaning that the application logic and the business logic are bundled and deployed as a single unit.
 
-A monolith application is built on a unified code. It contains three tiers of software architectures namely the user interface, the database, and the server-side application.
+A monolith application is built on a unified code. It contains three tiers of software architectures: the user interface, the database, and the server-side application.
 
 Developing a monolithic application is challenging as it piles pressure on the developers. It takes longer to develop since the architecture does not support independent development. In addition, it is challenging to use different programming languages on the same application.
 
@@ -38,22 +38,22 @@ It is important to note that the application's code updates can be performed inc
 - A given team can manage a given frontend.
 
 ### Advantages of micro-frontends
-- **Applications are small** - In micro-frontends, a large application is split into small sections, pages, or even features. This makes the entire application small hence it would not take more storage space and memory.
+- **Applications are small** - In micro-frontends, an extensive application is split into small sections, pages, or even features. This makes the entire application small hence it would not take more storage space and memory.
 - **Independent** - Since the applications are split and developed by different teams, therefore the teams can work independently. In addition, if one application module is not working, it does not affect the entire application.
 - **Easy to understand** – Applications developed by a single developer are hard to understand since they tend to be huge and more complicated than the micro frontends distributed over multiple teams. This is because they tend to be smaller units of large applications which are more readable and easy to understand.
 - **Easy to develop and deploy** - The applications that have been distributed over a team are easy to develop as the independent team members works on their part. They are also deployed independently with ease compared to a huge application.
-- **Easy to test** - Large application requires a lot of unit testing before deployment, thereby increasing deployment time. Unlike huge applications, unit testing is done independently in the micro-frontend since each application requires fewer unit tests making deployment much faster.
-- **Less development time** - As mentioned earlier, micro-frontends require less development time compared to large applications as the separate teams work on their application independently as opposed to one team working on the application.
+- **Easy to test** - Large application requires a lot of unit testing before deployment, thereby increasing deployment time. However, unlike huge applications, unit testing is done independently in the micro-frontend since each application requires fewer unit tests making deployment much faster.
+**Less development time** - As mentioned earlier, micro-frontends require less development time than large applications as the separate teams work on their application independently instead of one team working on the application.
 - **Easy CI/CD** - The application can be integrated and deployed independently hence making the CI/CD easier. Suppose a part of the application develops a bug or an update is required. In that case, it is easy to fix and perform repairs on the specific part of the application without interfering with the entire application.
 - **Independent stacks and versions** - An application can have different versions of the same stack. This means that some teams can develop and test newer versions of the same stack in an application.
-- **No shared code** - Large applications share the code to use same functionality of some of the features. However, this comes at a cost in case of a bug that can entirely bring the application down. Also, the interdependencies between the modules can bring more problems as the application grows huge. This cannot happen in the micro-frontends as this architecture does not share code.
+- **No shared code** - Large applications share the code to use the same functionality of some features. However, this comes at a cost in case of a bug that can entirely bring the application down. Also, the interdependencies between the modules can bring more problems as the application grows huge. This cannot happen in the micro-frontends as this architecture does not share code.
 
 ### Overview of our demo application
-We will start with a monolith application in our demo application and break it down into smaller micro-frontends. The monolith application might not be huge as we only do this for demonstration purposes. We will design an administrator dashboard of an application and break it down into independent applications.
+We will start with a monolith application in our demo application and break it down into smaller micro-frontends. The monolith application might not be huge as we only do this for demonstration purposes. Next, we will design an administrator dashboard of an application and break it down into independent applications.
 
-Most administrator dashboard contains a lot of components with overly complex logic that have been built using monolithic architecture. It is not easy to scale and maintain such an application. Also, the integration of the new developers is challenging as they have to spend a lot of time learning and understanding the application.
+Most administrator dashboard contains many components with overly complex logic that has been built using monolithic architecture. Therefore, it is not easy to scale and maintain such an application. Also, the integration of the new developers is challenging as they have to spend much time learning and understanding the application.
 
-The solution would be to use the micro-frontends approach that splits the complex application logic into smaller micro-applications that are easy to maintain and analyze their codebases. In addition, the application components can be assigned to the independent development teams therefore making the development and deployment time reduce significantly.
+The solution would be to use the micro-frontends approach that splits the complex application logic into smaller micro-applications that are easy to maintain and analyze their codebases. In addition, the application components can be assigned to the independent development teams, therefore reducing the development and deployment time.
 
 Our demo application development will follow the below stages:
 - Creating the workspace where all the application components will be contained.
@@ -67,19 +67,19 @@ We will start by creating the application workspace that will contain all the co
 $ ng n administrator-page –-create-application="false"
 ```
 
-Next we will create the host application that will act as our `administrator-page` wrapper by executing the below commands in the terminal window:
+Next, we will create the host application that will act as our `administrator-page` wrapper by executing the below commands in the terminal window:
 
 ```bash
 $ cd administrator-page
 $ ng generate application administrator --routing 
 ```
-Then, we will add a `landingpage` component to the `administrator` which is our host application by executing the below command:
+Then, we will add a `landing page` component to the `administrator`, which is our host application, by executing the below command:
 
 ```bash
 $ ng generate c landingpage --project=administrator
 ```
 
-Next, we will create a micro-frontend application and name it `forumpage` by executing the below command:
+Next, we will create a micro-frontend application and name it `forum page` by executing the below command:
 
 ```bash
 $ ng generate application forumpage --routing
@@ -145,7 +145,7 @@ Then, we will edit the `css` file as below:
 }
 ```
 
-We will proceed to integrate our host application with the micro-frontends that we have created. To achieve this, we need the [module federation](https://webpack.js.org/concepts/module-federation/) plug-in installed. The plug-in assists in loading micro-frontend applications into another application. To install the plug-in in both of our applications, we will execute the below commands in the terminal window:
+We will integrate our host application with the micro-frontends that we have created. We need the [module federation](https://webpack.js.org/concepts/module-federation/) plug-in installed to achieve this. The plug-in assists in loading micro-frontend applications into another application. To install the plug-in in both of our applications, we will execute the below commands in the terminal window:
 
 ```bash
 $ ng add @angular-architects/module-federation --project administrator --port 3000
@@ -157,7 +157,7 @@ The two applications will be running on different ports as specified in the abov
 In the micro-frontend application, we will uncomment the below line and update the code as follows:
 
 ```JavaScript
-name: "forumpage",
+name: "forum page",
 filename: "forum.js",
 exposes: {
     './CommentsModule': './projects/forumpage/src/app/comments/comments.module.ts',
@@ -221,7 +221,7 @@ const routes: Routes = [
 An error will pop up upon running the application because the dashboard has no information about the `Comments Module`. We can solve the error by declaring the module. To achieve this, we will create a file in the root directory of the application and name it `type.d.ts`, where we will declare the module as below:
 
 ```JavaScript
-declare module 'forumpage/CommentsModule';
+declare module 'forum page/CommentsModule';
 ```
 
 Inside the directory `administrator-page/projects/administrator/src/app/` we will edit the `css` file `app.component.scss` to style our components as below:
@@ -302,21 +302,21 @@ Next, we will update the `css` file `administrator/src/app/landingPage/landingpa
 }
 ```
 
-We will finally run the application by executing the below commands in the terminal. Note that we have to run both `administrator` and `forumpage` components as below:
+We will finally run the application by executing the below commands in the terminal. Note that we have to run both `administrator` and `forum page` components as below:
 
 ```bash
 $ ng serve administrator
-$ ng serve forumpage
+$ ng serve forum page
 ```
 
-Upon running the two commands, we will have the `landingpage` component, which is the part of the `administrator` loaded. Then there will be the link to the `Forum Page`, which, when clicked, a micro-frontend `forumPage` will be loaded as shown below:
+Upon running the two commands, we will have the `landingpage` component, part of the `administrator` loaded. Then there will be the link to the `Forum Page`, which, when clicked, a micro-frontend `forumPage` will be loaded as shown below:
 
 ![The Landing Page](/engineering-education/how-to-split-a-monolithic-architecture-into-micro-frontends/landing-page.png)
 
 ![The Landing Page](/engineering-education/how-to-split-a-monolithic-architecture-into-micro-frontends/forum-page.png)
 
 ### Wrapping up
-In summary, we have created an application that hosts another separate independent application using Angular. The application is simple as most of its parts contain templates but has provided insightful information on developing large applications using micro-frontends.
+We have created an application that hosts another separate independent application using Angular. The application is simple as most of its parts contain templates but has provided insightful information on developing large applications using micro-frontends.
 The code used in this tutorial can be accessed at my [GitHub Repo](https://github.com/ephnjor2021/administrator-page).
 
 ### Further reading
