@@ -1,5 +1,21 @@
-An intent is an Android element that facilitates navigation from one screen to another.
+---
+layout: engineering-education
+status: publish
+published: true
+url: /intents-in-android-using-kotlin/
+title: Getting started with Intents in Android using Kotlin
+description: This tutorial will guide the reader on how to create and use intents in Android using Kotlin.
+author: david-maina
+date: 2022-02-17T00:00:00-21:00
+topics: [Languages]
+excerpt_separator: <!--more-->
+images:
 
+  - url: /engineering-education/intents-in-android-using-kotlin/hero.jpg
+    alt: Getting started with Intents in Android using Kotlin
+---
+An intent is an Android element that facilitates navigation from one screen to another. They are also used to pass data between activities or across applications.
+<!--more-->
 This tutorial will be a step-by-step guide on creating an application utilizing intents and understanding more concepts related to them.
 
 ### Objectives
@@ -19,10 +35,10 @@ By the end of this tutorial, you will be able to understand:
 > `Note:` Choose your best option for Android depending on the operating system running on your machine. Make sure your machine has at least 8GB of RAM otherwise while building a project, it strains the memory and slows down your PC. Hence, the greater the memory, the faster the project is completed.
 
 - Have basic knowledge of the [Kotlin](https://developer.android.com/courses/android-basics-kotlin/course) programming language.
-- Knowledge on how to start an Android project from scratch. [Click here](https://www.section.io/engineering-education/first-android-app/) to get started.
+- Knowledge of how to start an Android project from scratch. [Click here](https://www.section.io/engineering-education/first-android-app/) to get started.
 
 ### Table of contents
-- [A brief walk through to intents](#a-brief-walk-through-to-intents) 
+- [A brief walkthrough to intents](#a-brief-walkthrough-to-intents) 
 - [Types of Intents](#types-of-intents)
 - [Intent structure](#intent-structure)
 - [Examples of implicit and explicit intents](#examples-of-implicit-and-explicit-intents)
@@ -32,7 +48,7 @@ By the end of this tutorial, you will be able to understand:
 
 Let's get started!
 
-### A brief walk through to intents
+### A brief walkthrough to intents
 The intent is usually a command that helps in navigating through an application activity (screen) in either of the following ways:
 - Launching a new activity
 - Initiating services
@@ -53,7 +69,7 @@ Intents are broadly categorized into;
 
 For example, a button will take you to the intended application when you click it. Suppose your device has more than one sharing application. In that case, the options box will appear and display all applications with sharing capabilities. App choice is made depending on which mode the user is most comfortable with, among other personal considerations like the security of the data, e.t.c.
 
-**Explicit Intents** - These intents connects elements of the same application. I.e., all the components reside in the same application. Using explicit purpose, you can pass data from one activity to another. For example, a button will direct you to a device file manager when you click it, and you can view the media inside the device memory.
+**Explicit Intents** - These intents connect elements of the same application. I.e., all the components reside in the same application. Using explicit purpose, you can pass data from one activity to another. For example, a button will direct you to a device file manager when you click it, and you can view the media inside the device memory.
 
 ### Intent structure
 A complete intent object should have a bundle that stores data that helps the application determine which activity it should first start and information that an element in the same application uses to conduct an operation in the correct procedure.
@@ -61,7 +77,7 @@ A complete intent object should have a bundle that stores data that helps the ap
 #### Key terminologies used in intent structuring
 - `Element name` - This is an additional bit of information. Still, it's the most important because it helps make an intent explicit, indicating that the intent must only be delivered to the app element defined by the element name.
 
-If an intent doesn't have an element name, it would be implicit. In this case, the system decides which element should receive the intent first following the last available intent data.
+If intent doesn't have an element name, it would be implicit. In this case, the system decides which element should receive the intent first following the last available intent data.
 
 - `Action` - This is a string that indicates the general action that should be carried out by intent. Actions are like variables, which means you can declare your own to be used by the application's intents.
 
@@ -105,7 +121,9 @@ We will implement the two types of intent in a simple application.
 ### Step 1: Creating a new Android Studio project
 Launch the Android Studio IDE and create a new empty activity project.
 
-![Configuring your project](engineering-education/getting-started-with-intents-in-android-development-using-kotlin/configure.jpg)
+![Creating a project](/engineering-education/intents-in-android-using-kotlin/activity.jpg)
+
+![Configuring your project](/engineering-education/intents-in-android-using-kotlin/configure.jpg)
 
 ### Step 2: Working with the `main_activity.xml` file
 Add the following code to the `main_activity.xml` file:
@@ -229,7 +247,7 @@ Add the following code to the `main_activity.xml` file:
 
 Your design should look similar to the one shown below:
 
-![Examples of intents design](engineering-education/getting-started-with-intents-in-android-development-using-kotlin/design.jpg)
+![Examples of intents design](/engineering-education/intents-in-android-using-kotlin/design.jpg)
 
 ### Step 3: Working with ActivityMain.kt file
 Before we work with the `main_activity.kt`, we will add additional code to our app files to ensure that it fully meets our objective.
@@ -334,9 +352,12 @@ Intent resolutions are primarily used in implicit intent because they do not off
 
 The system performs the following steps to obtain the component name:
 
-- **Action Test**: Here, the system ascertains whether or not the intended action and the intents are in the intent filter match. The test is successful if they are identical. Otherwise the test fails.
+- **Action Test**: Here, the system ascertains whether or not the intended action and the intents are in the intent filter match. The test is successful if they are identical. Otherwise, the test fails.
 - **Category test**: Here, the system compares the category name to that specified in the intent filter. This test is passed if both are identical, else it fails.
 - **Data Test**: Here, the system compares the data in the Intent MIME with information in the intent filter. This check succeeds if the two are identical and vice versa.
 
 ### Conclusion
 In this tutorial, we have discussed intents, the existing types of intents, and their examples. We have also learned how and why intents are essential due to their numerous uses in navigating between activities and applications.
+
+---
+Peer Review Contributions by: [Eric Gacoki](/engineering-education/authors/eric-gacoki/)
