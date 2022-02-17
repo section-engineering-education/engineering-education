@@ -1,5 +1,21 @@
-[Unit testing](https://en.wikipedia.org/wiki/Unit_testing) is the most vital form of testing. Unit testing offers a means to test the individual code components as isolated units. The key in unit testing is the isolation of program units.
+---
+layout: engineering-education
+status: publish
+published: true
+url: /testing-java-projects-using-junit-and-mockito-doing-more-with-mockito/
+title: Testing Java Projects using JUnit and Mockito - Part 2
+description: This tutorial will help the reader understand JUnit and Mockito. We will also learn about argument matchers, dealing with exceptions, stubbing void methods, and querying mock objects.
+author: ehis-edemakhiota
+date: 2022-02-17T00:00:00-00:00
+topics: [Languages]
+excerpt_separator: <!--more-->
+images:
 
+  - url: /engineering-education/testing-java-projects-using-junit-and-mockito-doing-more-with-mockito/hero.jpg
+    alt: Testing Java Projects using JUnit and Mockito - Part 2 Example Image
+---
+[Unit testing](https://en.wikipedia.org/wiki/Unit_testing) is the most vital form of testing. Unit testing offers a means to test the individual code components as isolated units. The key in unit testing is the isolation of program units.
+<!--more-->
 [Mockito](https://site.mockito.org/) is one of the the most popular mocking framework for Java projects. It offers intuitive matchers that allow programmers to mock the behaviours of dependencies.
 
 The tutorial aims to guide readers on how to write effective unit tests using Mockito and JUnit.
@@ -445,3 +461,6 @@ I look forward to hearing from you. Always code with &#10084;&#65039;.
 - [Forming Mockito grammar](https://stackoverflow.com/questions/11462697/forming-mockito-grammars)
 - [Mockito ArgumentMatchers](https://www.baeldung.com/mockito-argument-matchers)
 - [Mocktio Argument Matchers docs](https://javadoc.io/static/org.mockito/mockito-core/3.3.3/org/mockito/ArgumentMatchers.html)
+
+---
+Peer Review Contributions by: [Srishilesh P S](/engineering-education/authors/srishilesh-p-s/)
