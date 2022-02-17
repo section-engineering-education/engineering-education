@@ -75,8 +75,11 @@ T(n)=2^k T(n-2k+2^k-1)c
 n-2k=>k=n/2
 T(n)=2^n/2 T(0)+(2^n/2-1)c
 T(n)=(1+c)*2^n/2=c
-T(n)`$\alpha$`2^n/2(lower Bound)
-
+T(n) φ 2^n/2 //(lower Bound)
+```
+ - O(n)=> fib(iteration)-linear time algorithm
+In the equqtion above we are looking for the smallest value that  that can round up to the estimated value.
+```bash
 T(n-1)=T(n-2)
 T(n)=2T(n-1)+c   [c=4]
   =4T(n-2)+3c
@@ -85,10 +88,10 @@ T(n)=2T(n-1)+c   [c=4]
   n-k=0=>k=n
  T(n)=2^n T(0)+(2^n-1)c
  T(n)=(1+c)*2^n-c
- T(n)`$\alpha$`2^n(upper bound)
- O(2^n)=>fib(recursion)-Exponential time algorithm
- O(n)=> fib(iteration)-linear time algorithm
+ T(n) φ 2^n //(upper bound)
  ```
+ - O(2^n)=>fib(recursion)-Exponential time algorithm
+ In the equation above we are looking for largestvalue that can round up to the estimated value
 On finding the solution to the above recursive equation, we obtain the upper bound of Fibonacci as O(2^n). This is not the tight upper bound. The fact that Fibonacci can be mathematically represented as a linear recursive function can be used to find the tight upper bound.
 
 **Recursive formula for writing Fibonacci numbers mathematically**
@@ -279,9 +282,10 @@ This is because `F(n-2)` is the one which is in the cache when we calculate `F(n
 ### Conclusion
 The Fibonacci sequence is notable, because the ratio of two successive Fibonacci numbers is very close to the Golden ratio value.The value of golden ratio is approximately equal to 1.618034…  For example, 
 
-- The ratio of 5 and 3 is:5/3 = 1.6666 
-              8 and 5 is:8/5 = 1.6
-              13 and 8 is:13/8=1.625 and so on.
+The ratio of  - 5 and 3 is:5/3 = 1.6666 
+              -  8 and 5 is:8/5 = 1.6
+              - 13 and 8 is:13/8=1.625 and so on.
+              
 The Golden Ratio is denoted by the symbol “φ”
 
 The two different ways to find the Fibonacci sequence are Recursive Relation Method and Golden Ratio Method
