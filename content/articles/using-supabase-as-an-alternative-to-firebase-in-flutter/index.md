@@ -1,5 +1,21 @@
-When it comes to choosing a remote database that offers real-time capabilities, authentication features, media storage services, serverless functions, and many more services, people usually go for Firebase.
+---
+layout: engineering-education
+status: publish
+published: true
+url: /using-supabase-as-an-alternative-to-firebase-in-flutter/
+title: Using Supabase as an Alternative to Firebase in Flutter
+description: This tutorial will guide the reader through the process of using Supabase as an alternative to Firebase in Flutter.
+author: feswal-salim
+date: 2022-02-17T00:00:00-21:00
+topics: [Languages]
+excerpt_separator: <!--more-->
+images:
 
+  - url: /engineering-education/using-supabase-as-an-alternative-to-firebase-in-flutter/hero.jpg
+    alt: Using Supabase as an Alternative to Firebase in Flutter
+---
+When it comes to choosing a remote database that offers real-time capabilities, authentication features, media storage services, serverless functions, and many more services, people usually go for Firebase.
+<!--more-->
 Firebase is offered to developers in terms of Software as a service (SAAS). Although Firebase is great, having a NoSQL database has some limitations to those developers from structured databases background. Supabase is a good choice if you want to use a remote database that is structured in nature.
 
 In this tutorial, we will explore how we can use Supabase as our backend service just like Firebase does.
@@ -22,7 +38,7 @@ In this tutorial, we will explore how we can use Supabase as our backend service
 
 ### Prerequisites
 To follow along with this tutorial, you need:
-- Android Studio or VsCode installed on your computer with the Flutter Plugin installed.
+- Android Studio or VsCode installed on your computer with the Flutter plugin installed.
 - Fundamentals of Dart programming language.
 - An understanding of how to create and run Flutter apps.
 
@@ -111,15 +127,15 @@ We will have three screens i.e. `RegisterScreen`, `LoginScreen`, and `HomeScreen
 
 Registration screen:
 
-![Registration screen](/engineering-education/using-supabase-as-an-alternative-to-firebase-in-flutter/demo1.png)
+![Registration screen](/engineering-education/using-supabase-as-an-alternative-to-firebase-in-flutter/demo1.jpg)
 
 Login screen:
 
-![Login screen](/engineering-education/using-supabase-as-an-alternative-to-firebase-in-flutter/demo2.png)
+![Login screen](/engineering-education/using-supabase-as-an-alternative-to-firebase-in-flutter/demo2.jpg)
 
 Home screen:
 
-![Home screen](/engineering-education/using-supabase-as-an-alternative-to-firebase-in-flutter/demo3.png)
+![Home screen](/engineering-education/using-supabase-as-an-alternative-to-firebase-in-flutter/demo3.jpg)
 
 ### Step 4 - Setting up Supabase client
 In your `main.dart` file, initialize the Supabase client as shown below:
@@ -260,3 +276,6 @@ In this tutorial, we have gone through what Supabase is and how it compares to F
 - [Supabase Documentations](https://supabase.com/docs)
 
 Happy coding!
+
+---
+Peer Review Contributions by: [Eric Gacoki](/engineering-education/authors/eric-gacoki/)
