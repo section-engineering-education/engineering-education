@@ -42,23 +42,23 @@ Django ORM provides several ways to model polymorphic data. As we will study bel
 We will start by creating a new Django project that we will use throughout this guide. 
 
 1. Create a new working directory name `models` by executing the command below on the command line.
-   ```bash
-    mkdir modelling
-   ```
+```bash
+mkdir modelling
+```
 2. Execute the command below to change the working directory to the one we have created above and create a new virtual environment. Django projects use virtual environments to manage the project's dependencies in isolations to avoid dependency conflict between different projects.
-   ```bash
-   virtualenv venv
-   source venv/bin/activate
-   pip install django
-   ```
+```bash
+virtualenv venv
+source venv/bin/activate
+pip install django
+```
 3. Execute the command below to create a new Django project named `polymorphic`.
-   ```bash
-   django-admin startproject polymorphic
-   ```
+```bash
+django-admin startproject polymorphic
+```
 4. Since the Django project is organised into applications, execute the command below to create a `modelling` application. This is where we will model our application database.
-   ```bash
-   python manage.py startapp modelling
-   ```
+```bash
+python manage.py startapp modelling
+```
 Django provides several modelling patterns that we will go through in this guide; they include:-
 1. Default modelling pattern
 2. Sparse modelling pattern
