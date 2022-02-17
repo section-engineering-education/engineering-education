@@ -268,5 +268,7 @@ Apart from these amazing native libraries, the Go ecosystem has diffrent third-p
 Chick this guide to [learn and compare](https://blog.logrocket.com/five-structured-logging-packages-for-go/) which of the package features best fits your log structures.
 
 ### Conclusion
-
 Logging is a great practice you can implement in your application. It gives you ideas of what is happening within your application. And in case of errors, it becomes easier to trace them and solve them in time. It is advisable only to log information that is meaningful to avoid unnecessary logs. Each log should have a level that describes the severity of the error being enclosed. This way, you can prioritize logs that can harm your application more and at the right time.
+
+---
+Peer Review Contributions by: [Wilkister Mumbi](/engineering-education/authors/wilkister-mumbi/)
