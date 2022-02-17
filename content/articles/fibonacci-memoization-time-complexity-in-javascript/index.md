@@ -60,7 +60,7 @@ Therefore, if we call the `fib()` function of *n*, *n* being greater than 1, we 
 Since *n* is greater than 1 it goes to the *else* condition control of the program. This is when we perform two recursive calls and pass arguments `n-1` and `n-2`.
 
 Let's say the time taken to calculate the *fib* of *n* is `T(n)`.
-```bash
+```
 series:0 1 1 2 3 5 8
 //4 is the number of units
 T(n)=T(n-1)+T(n-2)+4
@@ -80,7 +80,7 @@ T(n) φ 2^n/2 //(lower Bound)
  - O(n)=> fib(iteration)-linear time algorithm
  
 In the equation above we are looking for the smallest value that  that can round up to the estimated value.
-```bash
+```
 T(n-1)=T(n-2)
 T(n)=2T(n-1)+c   [c=4]
   =4T(n-2)+3c
@@ -285,10 +285,10 @@ This is because `F(n-2)` is the one which is in the cache when we calculate `F(n
 ### Conclusion
 The Fibonacci sequence is notable, because the ratio of two successive Fibonacci numbers is very close to the Golden ratio value.The value of golden ratio is approximately equal to 1.618034…  For example, 
 
-The ratio of  - 5 and 3 is:5/3 = 1.6666 
-              -  8 and 5 is:8/5 = 1.6
-              - 13 and 8 is:13/8=1.625 and so on.
-              
+The ratio of:
+- 5 and 3 is:5/3 = 1.6666 
+- 8 and 5 is:8/5 = 1.6
+- 13 and 8 is:13/8=1.625 and so on.
 The Golden Ratio is denoted by the symbol “φ”
 
 The two different ways to find the Fibonacci sequence are Recursive Relation Method and Golden Ratio Method
