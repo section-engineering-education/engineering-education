@@ -1,5 +1,21 @@
-A time series is a collection of data points that occur in successive order over time. A time series shows factors that influence variables in a dataset.  Examples of time series data are stock prices, weather records, product sales, forex exchange, and health records.
+---
+layout: engineering-education
+status: publish
+published: true
+url: /univariate-time-series-using-facebook-prophet/
+title: Univariate Time Series using Facebook Prophet
+description: This tutorial will be discussing the univariate time series model using Facebook Prophet. We will use the model to predict airline passengers.
+author: francis-ndiritu
+date: 2022-02-18T00:00:00-21:00
+topics: [Machine Learning]
+excerpt_separator: <!--more-->
+images:
 
+  - url: /engineering-education/univariate-time-series-using-facebook-prophet/hero.jpg
+    alt: Univariate Time Series using Facebook Prophet example image
+---
+A time series is a collection of data points that occur in successive order over time. A time series shows factors that influence variables in a dataset.  Examples of time series data are stock prices, weather records, product sales, forex exchange, and health records.
+<!--more-->
 In stock investment, a time series model tracks the movement of stock prices and identifies patterns over a specified time. The model then predicts future stock prices based on previously historical/observed prices.
 
 Time series datasets are in three groups: Univariate, Bivariate, and Multivariate. Univariate data consists of only one variable, bivariate data have two variables and multivariate data contains more than two variables
