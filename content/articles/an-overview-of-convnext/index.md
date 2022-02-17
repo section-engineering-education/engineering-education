@@ -71,3 +71,6 @@ All these micro redesign choices, combined with using separate downsampling laye
 Techniques used in this research are not novel. These are techniques that have been used separately in previous research. This research combines these techniques and uses them collectively. Not only are ConvNeXts competitive with Transformers in solving image classification tasks, but also in solving general-purpose computer vision tasks, i.e., image segmentation and object detection tasks.  
 
 This paper demonstrates that it is rather the many seemingly tiny architecture hyperparameters and not the architecture itself that can tweak the way to state-of-the-art.
+
+---
+Peer Review Contributions by: [Willies Ogola](/engineering-education/authors/willies-ogola/)
