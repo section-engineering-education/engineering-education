@@ -16,7 +16,7 @@ images:
 ---
 [Unit testing](https://en.wikipedia.org/wiki/Unit_testing) is the most vital form of testing. Unit testing offers a means to test the individual code components as isolated units. The key in unit testing is the isolation of program units.
 <!--more-->
-[Mockito](https://site.mockito.org/) is one of the the most popular mocking framework for Java projects. It offers intuitive matchers that allow programmers to mock the behaviours of dependencies.
+[Mockito](https://site.mockito.org/) is one of the most popular mocking frameworks for Java projects. It offers intuitive matchers that allow programmers to mock the behaviors of dependencies.
 
 The tutorial aims to guide readers on how to write effective unit tests using Mockito and JUnit.
 
@@ -38,11 +38,11 @@ On reading this tutorial, the reader should have a good understanding of the fol
 - How to test for exceptions with Mockito.
 - How to query mock objects for their details.
 
-Before you get started with learning the concepts, you must read about the example of Hostel management system that we used in our [previous tutorial](/engineering-education/mocking-with-junit-and-mockito-the-why-and-how/).
+Before you get started with learning the concepts, you must read about the example of the Hostel management system that we used in our [previous tutorial](/engineering-education/mocking-with-junit-and-mockito-the-why-and-how/).
 
 The system under test is for a hostel management system that supports the following actions:
 - Students can register on the system.
-- Students can request for a bed space.
+- Students can request a bed space.
 - Finding all students in a Hostel by providing the name of the Hostel.
 - Find all students in a room by providing the room id.
 
@@ -135,7 +135,7 @@ class StudentRepoTest {
 In the above code snippet:
 - First, we created a mock object of `StudentRepo`
 - Next, in our test case, we created a `Student` object- `student` using Lombok's `builder` pattern.
-- Using the `when-then` directive, we stubbed the `save` method on our mock object `studentRepo` to accept any argument of type  `Student` and of type `String`, to the return `student` whenever it is called.
+- Using the `when-then` directive, we stubbed the `save` method on our mock object `studentRepo` to accept any argument of type  `Student` and type `String`, to the returning `student` whenever it is called.
 - Finally, we made the call to the save method and performed assertions on the return value of the `save` method
 
 > You can use the `isA` argument matcher in the same way as you use the `any` argument matcher.
@@ -449,7 +449,7 @@ In this tutorial, we have demonstrated the following:
 - How to test void methods using Mockito.
 - How to determine the details of mock objects.
 
-I hope that you enjoyed the tutorials and learnt something too. Please leave feedback on the article. You can follow me on Twitter on [@ehizman](https://twitter.com/ehizman_tutorEd). This will help me write more valuable content.
+I hope that you enjoyed the tutorials and learned something. Please leave feedback on the article. You can follow me on Twitter on [@ehizman](https://twitter.com/ehizman_tutorEd). This will help me write more valuable content.
 
 You can find the code for this tutorial [here](https://github.com/ehizman/bedspaces).
 
@@ -460,7 +460,7 @@ I look forward to hearing from you. Always code with &#10084;&#65039;.
 - [Mocking Void Methods with Mockito](https://www.baeldung.com/mockito-void-methods)
 - [Forming Mockito grammar](https://stackoverflow.com/questions/11462697/forming-mockito-grammars)
 - [Mockito ArgumentMatchers](https://www.baeldung.com/mockito-argument-matchers)
-- [Mocktio Argument Matchers docs](https://javadoc.io/static/org.mockito/mockito-core/3.3.3/org/mockito/ArgumentMatchers.html)
+- [Mockito Argument Matchers docs](https://javadoc.io/static/org.mockito/mockito-core/3.3.3/org/mockito/ArgumentMatchers.html)
 
 ---
 Peer Review Contributions by: [Srishilesh P S](/engineering-education/authors/srishilesh-p-s/)
