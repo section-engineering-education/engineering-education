@@ -14,13 +14,13 @@ images:
  - url: /engineering-education/how-to-build-a-web-crawler-with-java/hero.jpg
    alt: How To Build Web Crawler With Java Example Image
 ---
-This tutorial will introduce you to build a basic web crawler on your own and will help you understand the fundamental algorithm that makes web crawlers work. It will also covers some of the use cases and the challenges involved with building one.
+This tutorial will introduce you to building a basic web crawler on your own and will help you understand the fundamental algorithm that makes web crawlers work. It will also cover some of the use cases and the challenges involved with building one.
 <!--more-->
 [According to seedscientific.com](https://seedscientific.com/how-much-data-is-created-every-day), we generate 2.5 quintillion bytes of data every day. A significant part of this data is generated through our interactions with the internet.
 
-Big organizations world-wide extract and analyze these data for business and research purposes to further grow their businesses while maximizing profits.
+Big organizations worldwide extract and analyze these data for business and research purposes to further grow their businesses while maximizing profits.
 
-How do these organizations traverse the web to explore these existing data for their desired purposes? That's where web crawlers comes in. 
+How do these organizations traverse the web to explore these existing data for their desired purposes? That's where web crawlers come in. 
 
 ### Pre-requisites
 As a pre-requisite, the reader must have the following:
@@ -29,7 +29,7 @@ As a pre-requisite, the reader must have the following:
 - Basic knowledge of regular expressions. If you're new to regex, you can read more about it [here](/engineering-education/regex-implementation-with-java/).
 
 ### What is a web crawler?
-A web crawler is [one of the web scraping tools](https://hevodata.com/learn/8-best-web-scraping-tools/) that is used to traverse the internet to gather data and index the web. It can be described as an automated tool that navigates through a series of web pages to gather required information. 
+A web crawler is [one of the web scraping tools](https://hevodata.com/learn/8-best-web-scraping-tools/) that is used to traverse the internet to gather data and index the web. It can be described as an automated tool that navigates through a series of web pages to gather the required information. 
 
 Web crawling is sometimes used interchangeably with web scraping - a tool that does the actual job of pulling the data from web pages.
 
@@ -37,16 +37,16 @@ A web scraper extracts data from the web, organizes them in a defined structure,
 
 A web scraper is inherently different from a web crawler such that the former is used as a data-mining tool that navigates web pages and extracts specified data across the pages, while the latter is to find or discover URLs or links on the web.
 
-You can learn more about a web scraping [here](/engineering-education/getting-started-with-web-scraping-using-python/).
+You can learn more about web scraping [here](/engineering-education/getting-started-with-web-scraping-using-python/).
 
 #### How does a web crawler work?
-You can relate a web crawler to an inventory clerk that creates a catalogue of items for a store. The catalogue will contain the names of the items, their respective descriptions, where they are located in the store (for the ease of search), the quantity of each item, and any other relevant information.
+You can relate a web crawler to an inventory clerk that creates a catalog of items for a store. The catalog will contain the names of the items, their respective descriptions, where they are located in the store (for the ease of search), the quantity of each item, and any other relevant information.
 
-Using this catalogue, anyone who walks into the store can easily find out their desired item.
+Using this catalog, anyone who walks into the store can easily find out their desired item.
 
-This experience is similar to naming an aisle in a shopping mall makes it easy for you to locate items of the same category. For instance, you can be sure to find tissues in an aisle named "Toileteries".
+This experience is similar to naming an aisle in a shopping mall makes it easy for you to locate items of the same category. For instance, you can be sure to find tissues in an aisle named "Toiletries".
 
-Using web crawlers, this process of cataloguing is referred to as [search indexing](https://www.deepcrawl.com/knowledge/technical-seo-library/search-engine-indexing/). In this case, the internet serves as the store and the URLs serves as the items in the store. 
+Using web crawlers, this process of cataloging is referred to as [search indexing](https://www.deepcrawl.com/knowledge/technical-seo-library/search-engine-indexing/). In this case, the internet serves as the store and the URLs serve as the items in the store. 
 
 A web crawler crawls the internet - starting from a root web page. It searches for hyperlinks or URLs within the content of the root web page, then saves each found URL into a list of web pages - which are subsequently going to be crawled into.
 
@@ -69,7 +69,7 @@ You can find some tools for SEO [here](https://backlinko.com/best-free-seo-tools
 #### Feedback monitoring
 You can also use web crawlers to traverse the web in search of where users may have mentioned the name of your company for reviews. You can find some examples of such tools [here](https://www.techradar.com/best/best-customer-feedback-tools).
 
-### Challenges to build a web crawler
+### Challenges to building a web crawler
 As much as web crawlers come with many benefits, they tend to pose some challenges when building them. Some of the issues faced include:
 
 #### Server overload
@@ -85,7 +85,7 @@ These tools can distinguish bots from humans and restrict access to the bots fro
 An example of such a tool is the [Google Captcha](https://support.google.com/a/answer/1217728?hl=en)
 
 #### Inconsistent webpage structures
-The structures of websites are different from one another. Due to this dynamism, a web crawler that performs well on one website, may fail on the another. 
+The structures of websites are different from one another. Due to this dynamism, a web crawler that performs well on one website may fail on another. 
 
 ### Java libraries to build web crawlers
 Although this tutorial will only cover the concept of web crawling at the fundamental level, without the use of any external libraries, here are some Java API's you can integrate with your application to perform web crawling:
