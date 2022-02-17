@@ -14,18 +14,17 @@ images:
   - url: /engineering-education/using-c#-to-demonstrate-lock-in-thread/hero.jpg
     alt: Using C# to demonstrate Lock in Thread Hero Image
 ---
-A lock is a keyword shortcut for obtaining a lock for one thread. The lock keyword makes it possible to block a section of code while working with another thread.
+A lock is a keyword shortcut for obtaining a lock for a thread. The lock keyword makes it possible to block a section of code while working with another thread.
 <!--more-->
 To enter a section of code where an existing thread already exists, the other thread must wait until the previous thread's execution completes. As soon as the current thread in the function completes, the lock is released. 
 
 Thread safety in C# is done via the monitor and lock approach. Execution of one code at a time will ease coding difficulties.
 
-### Prerequisite
-To be able to follow along with this article, have the following:
-- Background information on Csharp programming language.
-- An understanding of multithreading in Csharp.
-- Have [Visual studio](https://visualstudio.microsoft.com/) installed.
-
+### Prerequisites
+To follow along with this tutorial, you should have:
+- Background information on the C# programming language.
+- An understanding of multithreading in C#.
+- Have [Visual Studio](https://visualstudio.microsoft.com/) installed.
 
 ### Table of contents
 - [C# lock in thread](#c-lock-in-thread)
@@ -51,7 +50,7 @@ The `Monitor` and `Lock` keywords are `AppDomain-only`. We manage the lock and k
 
 The `Mutex`, however, is a `.Net` wrapper over an OS mechanism for system-wide synchronization. A mutex is a locking technique for synchronizing resource access. It's the same operating system mutex for two mutexes addressing the same data.
 
-Less time and effort are required to build the lock. The mutex lock, which encompasses numerous computer processes, has a function.
+Less time and effort are required to build the lock. The mutex lock has a function of encompassing numerous computer processes.
 
 #### Lock syntax
 
@@ -66,7 +65,7 @@ We will explain the syntax in situations where:
 ### Working of lock keyword in C#
 This section will look at the C# equivalent of a lock. This is to learn how locks operate in C#.
 - Using a lock restricts concurrent access to a code block. This is to prevent other threads from interfering.
-- To prevent other threads from interfering with the locked one, they must wait or be halted until it is done.
+- To prevent other threads from interfering with the locked one, they must wait or halt until it is done.
 - The use of a lock to manage threads is faster and more pleasant.
 - The lock is released once the current thread ends, enabling fresh threads to execute.
 
@@ -111,13 +110,14 @@ namespace Threading_without_lock
 ```
 
 Output:
+
 ```bash
 HHii  pprrooggrraammmmeerr
 ```
 
 This example utilizes two threads of `PrntChar` function. Due to the lack of a lock statement, many threads will be allowed to use the `PrntChar` function concurrently.
 
-**Lets now look where there is a lock in the thread**
+**Let us now look at where there is a lock in the thread:**
 To view the C# lock, execute the following code while another thread is running:
 
 ```C#
