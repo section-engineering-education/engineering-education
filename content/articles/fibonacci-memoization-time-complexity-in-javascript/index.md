@@ -41,21 +41,55 @@ To effectively understand the tutorial, the reader needs:
 
 ```js
 fib (n){
-if n<=1
+if n<=1//1 unit for comparison <=
     return n
 else
-    return fib(n-1)+fib(n-2)
+    return fib(n-1)+fib(n-2)//3 units(2 for subtraction and 1 for addition)
 }
 ```
 
 In the above code, if *n* is less or equal to *1*, we return *n*, or else we make two recursive calls to calculate *fib of n-1* and *fib of n-2*. 
 
 #### Time complexity calculation
+You can use different formulars to calculate the time complexity of fibonacci sequence.
+
 When we analyze the time complexity of programs, we assume that each simple operation takes one unit of time. 
 
 Therefore, if we call the `fib()` function of *n*, *n* being greater than 1, we will first perform a comparison with 1 in `n<=1`. 
 
 Since *n* is greater than 1 it goes to the *else* condition control of the program. This is when we perform two recursive calls and pass arguments `n-1` and `n-2`.
+
+Let's say the time taken to calculate the *fib* of *n* is `T(n)`.
+```bash
+series:0 1 1 2 3 5 8
+//4 is the number of units
+T(n)=T(n-1)+T(n-2)+4
+T(0)=T(1)=1
+T(n-1)=T(n-2)
+T(n)={2T(n-2)+c}+c   [c=4]
+  =2{2T(n-4)+c}+c
+  =4T(n-4)+3c
+  =8T(n-6)+7c
+  =16T(n-8)+15c
+T(n)=2^k T(n-2k+2^k-1)c
+n-2k=>k=n/2
+T(n)=2^n/2 T(0)+(2^n/2-1)c
+T(n)=(1+c)*2^n/2=c
+T(n)`$\alpha$`2^n/2(lower Bound)
+
+T(n-1)=T(n-2)
+T(n)=2T(n-1)+c   [c=4]
+  =4T(n-2)+3c
+  =8T(n-3)+7c
+  =2^k T(n-k)+(2^k-1)c
+  n-k=0=>k=n
+ T(n)=2^n T(0)+(2^n-1)c
+ T(n)=(1+c)*2^n-c
+ T(n)`$\alpha$`2^n(upper bound)
+ O(2^n)=>fib(recursion)-Exponential time algorithm
+ O(n)=> fib(iteration)-linear time algorithm
+ ```
+On finding the solution to the above recursive equation, we obtain the upper bound of Fibonacci as O(2^n). This is not the tight upper bound. The fact that Fibonacci can be mathematically represented as a linear recursive function can be used to find the tight upper bound.
 
 **Recursive formula for writing Fibonacci numbers mathematically**
 
@@ -64,9 +98,7 @@ For seed values F(0) = 0 and F(1) = 1
 F(n) = F(n-1) + F(n-2)
 ```
 
-Let's say the time taken to calculate the *fib* of *n* is `T(n)`. The recursive equation of a Fibonacci number is `T(n)=T(n-1)+T(n-2)+O(1)`. 
-
-This is because the time taken to compute `fib(n)` equals the quantity of time we will take to compute `fib(n-1)` and `fib(n-2)`. Therefore, we should also include constant time in the addition.
+The recursive equation of a Fibonacci number is `T(n)=T(n-1)+T(n-2)+O(1)`. This is because the time taken to compute `fib(n)` equals the quantity of time we will take to compute `fib(n-1)` and `fib(n-2)`. Therefore, we should also include constant time in the addition.
 
 Fibonacci is now defined as:
 
@@ -236,15 +268,25 @@ In the above image, the red nodes return the memoized result. The algorithm is c
 
 A call tree for a figure more prominent than `fib(7)` will look just like the tree in the above image.
 
-#### Time complexity calculation 
+#### Memoized time complexity calculation 
 Let's take time complexity  of `n` to be `T(n)`, hence` T(n) = T(n-1) + T(n-2)`. 
 
 This is because `F(n-2)` is the one which is in the cache when we calculate `F(n - 1)`. Therefore, the function of `F(n-2)` is 1 (reading from cached equation), hence `T(n) = T(n-1) + 1 = T(n-2) + 2 = ... = T(n-n) + n.` 
 
 `T(0) is 1` will be regarded as `T(n) = O(n + 1) = O(n)`.
 
+
 ### Conclusion
-The pattern of overlapping problems to reduce the time complexity of the Fibonacci series from *O(2n)* to *O(n)* is known as dynamic programming. The dynamic program will be any instance where we have some larger Fibonacci problem and can be divided into smaller instances of the same problem, thus achieving an overlapping structure.
+The Fibonacci sequence is notable, because the ratio of two successive Fibonacci numbers is very close to the Golden ratio value.The value of golden ratio is approximately equal to 1.618034…  For example, 
+
+- The ratio of 5 and 3 is:5/3 = 1.6666 
+              8 and 5 is:8/5 = 1.6
+              13 and 8 is:13/8=1.625 and so on.
+The Golden Ratio is denoted by the symbol “φ”
+
+The two different ways to find the Fibonacci sequence are Recursive Relation Method and Golden Ratio Method
+
+Happy learning!
 
 ---
 Peer Review Contributions by: [Wanja Mike](/engineering-education/authors/michael-barasa/)
