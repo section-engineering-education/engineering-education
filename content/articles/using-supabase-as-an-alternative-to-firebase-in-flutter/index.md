@@ -1,47 +1,51 @@
-When it comes to choosing a remote database that offers real-time capabilities, authentication features, media storage services, serverless functions, and many more services, people always go for Firebase. Firebase is offered to developers in terms of Software as a service (SAAS). Although Firebase is great, having a NoSQL database always has some limitations to those developers from structured databases background. To use a remote database that is structured in nature, that's where Supabase comes in. 
+When it comes to choosing a remote database that offers real-time capabilities, authentication features, media storage services, serverless functions, and many more services, people usually go for Firebase.
 
- In this tutorial, we will explore how we can use Supabase as our backend service just as Firebase does.
+Firebase is offered to developers in terms of Software as a service (SAAS). Although Firebase is great, having a NoSQL database has some limitations to those developers from structured databases background. Supabase is a good choice if you want to use a remote database that is structured in nature.
+
+In this tutorial, we will explore how we can use Supabase as our backend service just like Firebase does.
 
 ### Table of contents
 - [Prerequisites](#prerequisites)
-- [What is Supabase](#what-is-supabase)
+- [What is Supabase?](#what-is-supabase)
 - [Comparison between Supabase and Firebase](#comparison-between-supabase-and-firebase)
-- [Why use Supabase](#why-use-supabase)
-- [Creating a flutter project](#step-1---creating-a-flutter-project)
+- [Why use Supabase?](#why-supabase)
+- [Creating a Flutter project](#step-1---creating-a-flutter-project)
 - [Adding dependencies](#step-2---adding-dependencies)
-- [Designing UIs](#step-3---designing-uis)
+- [Designing user interfaces](#step-3---designing-the-user-interfaces)
 - [Setting up Supabase client](#step-4---setting-up-supabase-client)
-- [Registering a user](#step-5---registering-a-user)
-- [Logging in a user](#step-6---logging-in-a-user)
+- [Registering users](#step-5---registering-a-user)
+- [Logging in users](#step-6---logging-in-a-user)
 - [Reading user profile data](#step-7---reading-user-profile-data)
-- [Logging out a user](#step-8---logging-out-a-user)
+- [Logging out users](#step-8---logging-out-a-user)
 - [Conclusion](#conclusion)
-- [References](#references)
+- [Reference](#reference)
 
 ### Prerequisites
-To follow along with this tutorial:
-- Have Android Studio or VsCode installed on your computer with the Flutter Plugin installed.
+To follow along with this tutorial, you need:
+- Android Studio or VsCode installed on your computer with the Flutter Plugin installed.
 - Fundamentals of Dart programming language.
 - An understanding of how to create and run Flutter apps.
 
-### What is Supabase
-An open-source alternative to Firebase (Backend as a service) that provides an instant RESTful API. In addition to that, it provides real-time capabilities via WebSockets. And, with a SQL database, we can perform joins and write stored procedures.
+### What is Supabase?
+Supabase is an open-source alternative to Firebase (Backend as a service) that provides an instant RESTful API. In addition to that, it provides real-time capabilities via WebSockets with an SQL database where we can perform joins and write stored procedures.
 
 ### Comparison between Supabase and Firebase
-- Database: Firebase uses a non-structured database (NoSQL) while Supabase uses Postgres database which is a structured database (Uses SQL).
-- Compatibility: Supabase is just Postgres, which makes it compatible with a large number of tools and frameworks, when it comes to Firebase, while it is hard to export data from Firebase and use it in another platform.
-- Pricing: Firebase has the Spark plan and the Blaze plan while Supabase has a Free Tier which grants you 10,000 Users and 500MB of space. Also, we have the $25 Per Month - 100,000 users, 8GB of space, and unlimited API calls. To know more about Supabase pricing, check it out here - [Supabase pricing](https://supabase.com/pricing).
+- **Database**: Firebase uses a non-structured database (NoSQL) while Supabase uses Postgres database which is a structured database (SQL).
 
-### Why use Supabase
-If you have related data and want it to be real-time,  Supabase is a good alternative. 
+- **Compatibility**: Supabase is Postgres, which makes it compatible with a large number of tools and frameworks. When it comes to Firebase, it is hard to export data and use it in another platform.
+
+- **Pricing**: Firebase has the `Spark` plan and the `Blaze` plan while Supabase has a `Free Tier` which grants you 10,000 Users and 500MB of storage space. There's also a $25 per month plan for 100,000 users, 8GB of space, and unlimited API calls. You can check out [this site](https://supabase.com/pricing) to know more about Supabase pricing.
+
+### Why Supabase?
+If you have related data and want to make it real-time, Supabase is a good alternative for the following reasons:
 
 - It uses a PostgreSQL database with real-time capabilities - A very scalable relational database. You can manage your database from the Supabase interface.
 - Create tables and relationships e.t.c (Firebase does not offer this).
 - Write SQL Queries
 - Enable & disable extensions.
 - Real-time engine on top of Postgres.
-- PostgREST API - Take your database (Tables and columns) and automatically generate a REST API from that with Filtering, Sorting e.t.c. You can access your data through that API in either your Flutter App, React App, etc.
-- Authentication with multiple methods/services - Create and manage users from Supabase :
+- PostREST API - Take your database (Tables and columns) and automatically generate a REST API from that with Filtering, Sorting e.t.c. You can access your data through that API in either your Flutter App, React App, etc.
+- Authentication with multiple methods/services - Create and manage users from Supabase:
     - Email/Password
     - Magic Link
     - Google
@@ -54,42 +58,42 @@ Before jumping into our code editor, we need to create a Supabase project.
 
 Go to the official website for [Supabase](https://supabase.com/) and sign in with your Github account.
 
-![Start-Supabase](/engineering-education/using-supabase-as-an-alternative-to-firebase-in-flutter/start-supabase.png)
+![Start Supabase](/engineering-education/using-supabase-as-an-alternative-to-firebase-in-flutter/start-supabase.png)
 
-Once signed in, you will be navigated to [supabase.io](https://app.supabase.io/#), where now you can create a new project.
+Once signed in, you will be navigated to [supabase.io](https://app.supabase.io/#), where you can create a new project.
 
-![Supabase-Project](/engineering-education/using-supabase-as-an-alternative-to-firebase-in-flutter/new-supabase-project.png)
+![Supabase project](/engineering-education/using-supabase-as-an-alternative-to-firebase-in-flutter/new-supabase-project.png)
 
-Enter your project name and a strong database password and click "Create new project".
+Enter your project name and a strong database password and click `Create new project`.
 
-![Supabase-New-Project](/engineering-education/using-supabase-as-an-alternative-to-firebase-in-flutter/create-new-supabase-project.png)
+![Supabase new project](/engineering-education/using-supabase-as-an-alternative-to-firebase-in-flutter/create-new-supabase-project.png)
 
-> To create a new project, you need to have an organization, if you don't have one, you can create one.
+> To create a new project, you need to have an organization, if you don't have one yet, you can create one.
 
 After creating the project, it will take two to three minutes to build the database and the API.
 
-Once it is done, please take note of your "anon" key and the URL as we will be needing them in our app. The `anon` key is a public key that we can use in browsers while the URL is a RESTful endpoint for querying and managing your database.
+Once it's done, please take note of your `anon` key and the URL as we will be needing them in our app. The `anon` key is a public key that we can use in browsers while the URL is a RESTful endpoint for querying and managing the database.
 
 ![Secrets](/engineering-education/using-supabase-as-an-alternative-to-firebase-in-flutter/secrets.png)
 
-In this tutorial, we are going to create a Flutter App that has authentication features i.e. registering and logging in a user. Also, we will try and use the Supabase database to store user profile data. Because of this, before going to the app, let us create a table that will hold user data.
+In this tutorial, we are going to create a Flutter App that implements authentication features i.e. registering and logging in users. Also, we'll use the Supabase database to store user profile data. For this reason, we need to create a table that will hold user's data.
 
-To create the table, on the left-bar, click on Table editor, and at the center of the page, click on 'Create a new table'
+To create the table, click on `Table editor` on the left-bar and at the center of the page, click `Create a new table`.
 
-![Table-Editor](/engineering-education/using-supabase-as-an-alternative-to-firebase-in-flutter/table-editor.png)
+![Table Editor](/engineering-education/using-supabase-as-an-alternative-to-firebase-in-flutter/table-editor.png)
 
-Enter all the columns that you want your table to have, for me I have added `name`, `email`, `phone`, and `userId` columns.
+Enter all the columns for your table, in this case `name`, `email`, `phone`, and `userId` columns.
 
 ![Table](/engineering-education/using-supabase-as-an-alternative-to-firebase-in-flutter/new-table.png)
 
-> I have included `userId` as we will store it once a new user is registered and is given a unique Id, this will help us in retrieving the data of the logged-in user.
+> `userId` will be stored once a new user is registered and is given a unique Id. This will help in retrieving the data of the logged-in user.
 
-Getting started with the app
+Let's get started with the app.
 
 ### Step 1 - Creating a flutter project
 Launch your Android Studio or VsCode and create an empty flutter project.
 
-![New-Project](/engineering-education/using-supabase-as-an-alternative-to-firebase-in-flutter/supabase-project.png)
+![New project](/engineering-education/using-supabase-as-an-alternative-to-firebase-in-flutter/supabase-project.png)
 
 ### Step 2 - Adding dependencies
 Open your `pubspec.yaml` and add the following dependencies. `GetIt` is a service locator that we will use to access the `SupabaseClient` from the UI.
@@ -100,25 +104,25 @@ dependencies:
   get_it: ^7.2.0
 ```
 
-### Step 3 - Designing UIs
+### Step 3 - Designing the user interfaces
 We will have three screens i.e. `RegisterScreen`, `LoginScreen`, and `HomeScreen`.
 
-> Since this tutorial isn't focusing on designing Layouts, I have included screenshots on how the Uis should like. Otherwise, if you would like to access the full project, use this link - [FlutterSupabaseDemo](https://github.com/feswalsalim/FlutterSupabaseDemo)
+> Since this tutorial isn't focusing on designing layouts, the screenshots below shows how the UIs should like. You can access the full source code [here](https://github.com/feswalsalim/FlutterSupabaseDemo).
 
-Registration screen
+Registration screen:
 
-![Registration](/engineering-education/using-supabase-as-an-alternative-to-firebase-in-flutter/demo1.png)
+![Registration screen](/engineering-education/using-supabase-as-an-alternative-to-firebase-in-flutter/demo1.png)
 
-Login screen
+Login screen:
 
-![Login](/engineering-education/using-supabase-as-an-alternative-to-firebase-in-flutter/demo2.png)
+![Login screen](/engineering-education/using-supabase-as-an-alternative-to-firebase-in-flutter/demo2.png)
 
-Home screen
+Home screen:
 
-![Home](/engineering-education/using-supabase-as-an-alternative-to-firebase-in-flutter/demo3.png)
+![Home screen](/engineering-education/using-supabase-as-an-alternative-to-firebase-in-flutter/demo3.png)
 
 ### Step 4 - Setting up Supabase client
-In your `main.dart` file, inside the `main` method, this is how you can initialize the Supabase Client.
+In your `main.dart` file, initialize the Supabase client as shown below:
 
 ```dart
 void main() {
@@ -130,12 +134,12 @@ void main() {
 }
 ```
 
-We create an instance of the `GetIt` package and use it to register our `SupabaseClient` object as a singleton.
+Here, we've created an instance of the `GetIt` package and used it to register our `SupabaseClient` object as a singleton.
 
-> Make sure you pass your `ANON_KEY` and `YOUR_SUPABASE_URL` that was generated when you created your Supabase project.
+> Make sure you pass `YOUR_SUPABASE_URL` and the `ANON_KEY` that were generated when you created your Supabase project.
 
 ### Step 5 - Registering a user
-Inside the `RegisterScreen` create a method called `registerUser` that will do user registration and save the data to the database. This method will be called when the Register `Button` is pressed.
+Inside the `RegisterScreen`, create a method called `registerUser` that will be responsible for user registration and saving the data to the database. This method will be invoked when the `Register button` is clicked.
 
 ```dart
 void registerUser() async {
@@ -177,10 +181,10 @@ await client.from('users').insert({
         }).execute();
 ```
 
-> Inside `.from` method, make sure you pass the exact name of the table that you created in the Supabase console.
+> Inside `from()` method, make sure you pass the exact name of the table that you created in the Supabase console.
 
 ### Step 6 - Logging in a user
-To authenticate a user so that he/she can see the home screen, inside the `LoginScreen`, define a method called `loginUser` for authenticating in a user. This method will be called when the Login `Button` is pressed.
+To authenticate users so that they can see the home screen, define a method called `loginUser` inside the `LoginScreen`. This method will be called when the `Login button` is clicked.
 
 ```dart
 void loginUser() async {
@@ -202,10 +206,10 @@ void loginUser() async {
 }
 ```
 
-Using the instance of the `SupabaseClient`, we call the method `signIn` from `auth` passing email and password in order to login the user. If the request is successful, we will navigate to the `HomeScreen`.
+Using the instance of the `SupabaseClient`, we call the method `signIn` from `auth` passing email and password in order to login the user. If the request is successful, we navigate to the `HomeScreen`.
 
 ### Step 7 - Reading user profile data
-While in your `HomeScreen`, to get the data of the currently logged-in user, define a method called `getUserProfile` and call it inside your `HomeScreenState`.
+To get the data of the currently logged-in user, define a method called `getUserProfile` in the `HomeScreen` and invoke it inside your `HomeScreenState` as shown below:
 
 ```dart
 void getUserProfile() async {
@@ -232,27 +236,27 @@ void getUserProfile() async {
 }
 ```
 
-Using the instance of the `SupabaseClient`, we read the data `from` "users" table that we created, and we use the `.eq` method to get the row that has the 'userId' of the currently logged in user. If the response has data, you can set it to your `Text Widgets`.
+Using the `SupabaseClient` instance, we read the data from `users` table and use the `eq()` method to get the row that contains the `userId` of the currently logged in user. If the response has data, you can set it in your `Text Widgets`.
 
 ### Step 8 - Logging out a user
-To sign out the currently authenticated user, inside your `HomeScreen` define a method called `logout` that will be called when the Logout `Button` is pressed.
+To sign out the currently authenticated user, define a method called `logout` inside your `HomeScreen` that will be called when the `Logout button` is pressed.
 
 ```dart
-  void logout() async {
+void logout() async {
     final client = GetIt.instance<SupabaseClient>();
     await client.auth.signOut();
     Navigator.push(
         context, MaterialPageRoute(builder: (context) => LoginScreen()));
     Navigator.pop(context);
-  }
+}
 ```
 
-Using the instance of the `SupabaseClient`, we call the method `signOut` from `auth` in order to log out the user. You can then navigate the user to the `LoginScreen`.
+Using the `SupabaseClient` instance, we call the method `signOut` from `auth` in order to log out the user. You can then navigate the user to the `LoginScreen`.
 
 ### Conclusion
-In this tutorial, we have gone through what Supabase is and the comparisons between it and Firebase, we also went ahead and looked at the reasons as to why you should use Supabase. Finally, we implemented Supabase in a Flutter with Authentication and storing user data. Keep exploring more about Supabase as it is still in development and will have more superb features soon. 
+In this tutorial, we have gone through what Supabase is and how it compares to Firebase. We have also gone ahead and looked at the reasons why you should use Supabase. Finally, we've implemented Supabase in a Flutter app with authentication and data storage. Keep exploring more about Supabase as it is still in development and will have more features soon.
 
-Happy coding.
-
-### References
+### Reference
 - [Supabase Documentations](https://supabase.com/docs)
+
+Happy coding!
