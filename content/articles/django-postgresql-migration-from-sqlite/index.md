@@ -30,7 +30,7 @@ The database comes with many features that not only help developers build applic
 
 ## Introduction
 
-As programmers, we do work on different projects depending on the level of expertise. As a beginner, you worked on an app like a 'to-do app' which didn't require a heavy mechanism of database to store records of tasks. But as you advance, the kind of projects you handle change with time. A point will reach where you will need to build a production-ready project which will need a database structure.
+As programmers, we work on different projects depending on the level of expertise. As a beginner, you worked on an app like a 'to-do app' which didn't require a heavy mechanism of database to store records of tasks. But as you advance, the kind of projects you handle change with time. A point will reach where you will need to build a production-ready project which will need a database structure.
 
 Usually, a basic Django project will ship with an SQLite database as the default. Even though this is the default database, Django also supports other databases like:
 
@@ -38,7 +38,7 @@ Usually, a basic Django project will ship with an SQLite database as the default
 - MySQL
 - Oracle
 
-In this article, our focus is going to be on PostgreSQL and how it can be implemented on Django projects.
+In this article, our focus will be on PostgreSQL and how it can be implemented on Django projects.
 
 ## Why use PostgreSQL
 
@@ -47,8 +47,8 @@ PostgreSQL comes with many features that not only help developers build applicat
 So, why should you consider PostgreSQL over the others:
 
 - It is free to use and it’s also an open-source program which makes it easy to upgrade or extend.
-- It is extensible - you can define your own data types, build your own functions and even write code from different programming languages without having to recompile the database.
-- It also supports many SQL features.
+- It is extensible - you can define your data types, build your functions and even write code from different programming languages without having to recompile the database.
+- It supports many SQL features.
 - It supports multiple programming languages like Python, Java, C/C++, Ruby, etc…
 - Works on most popular Operating Systems.
 - It is not controlled by any cooperation meaning it is free.
@@ -57,7 +57,7 @@ Let's get started and see how to implement PostgreSQL.
 
 ## Setting up Django project
 
-Now, for us to be able to make a database migration it means we need a project to with. Let's go ahead and create a new Django project.
+Now, to be able to make a database migration it means we need a project to do it with. Let's go ahead and create a new Django project.
 
 As always the first step is to create a virtual environment, which is accomplished in two steps:
 
@@ -65,7 +65,7 @@ As always the first step is to create a virtual environment, which is accomplish
 pip install virtualenvwrapper-win
 ```
 
-this installs virtual a environment, the next step is to name the virtualenv:
+this installs a virtual environment, the next step is to name the virtualenv:
 
 ```python=
 mkvirtualenv [name]
@@ -73,35 +73,35 @@ mkvirtualenv [name]
 
 which automatically activates the virtual environment.
 
-Now, since we are working on a Django project, installing it is essential, it will be installed in the virtual environment
+Now, since we are working on a Django project, installing Django essential, this command will install Django library in the virtual environment.
 
 ```python=
 pip install django
 ```
 
-Create our Django project, in this case, it can be named `testproject`.
+Create a Django project, in this case, we can name it `testproject`.
 
 ```python=
 django-admin startproject testproject
 ```
 
-The next step, create an app within our project folder.
+The next step, is for us to create an app within the project folder.
 
 ```python=
 python manage.py startapp projectApp
 ```
 
-and finally, we can run the project so as to initialize the SQLite database with this command.
+and finally, run the project to initialize the SQLite database with the help of this command.
 
 ```python=
 python manage.py runserver
 ```
 
-We will be using this simple Django application to perform the migration in the following steps.
+To perform the migration, we will be using this simple Django application in the following steps.
 
 ### Step 1: Backup existing Database
 
-In the first step, we will need to create a backup of our current data which we are going to export into PostgreSQL later on.
+Yhe first step, is for us to create a backup of our current data which we are going to export into PostgreSQL later on.
 
 To perform a data backup, the following command is used
 
@@ -109,7 +109,7 @@ To perform a data backup, the following command is used
 python manage.py dumpdata > data.json
 ```
 
-this command will generate a data.json file in the root of your project, this means you generated the dump data from SQLite which is stored in JSON format.
+this command generates a `data.json` file in the root of the project folder, this means the generated data from SQLite is stored in JSON format.
 
 ### Step 2: Installing PostgreSQL
 
@@ -117,13 +117,13 @@ When working with PostgreSQL, the operations can be done in two ways, that is by
 
 ## 1. Desktop Setup
 
-In order to install PostgreSQL, you will need to download it from the official website [HERE](https://www.postgresql.org/). After downloading run the installation and then launch it by opening the pgAdmin which will redirect you to the dashboard.
+To install PostgreSQL, first step is to download it from the official website [HERE](https://www.postgresql.org/). After downloading run the installation and then launch it by opening the pgAdmin which redirects to the dashboard.
 
-By default, we will have the Postgres database created there under the Database tab. At this point what we want to d is create a new database for our Django app and then connect the app to the database.
+By default, we will have the Postgres database created there under the Database tab. At this point what we want to do is to create a new database for our Django app and then connect the app to the database.
 
 ### Step 3: Configure `settings.py` file.
 
-Back in our Django project, `settings.py` file, under the DATABASE section. By default this section will have the below configurations:
+Back in the Django project, `settings.py` file, under the DATABASE section. By default this section will have the below configurations:
 
 ```python=
 DATABASES = {
@@ -134,7 +134,7 @@ DATABASES = {
 }
 ```
 
-We are going to replace this with the configurations below:
+These settings will be replaced with the configurations below:
 
 ```python=
 DATABASES = {
@@ -149,7 +149,7 @@ DATABASES = {
 }
 ```
 
-An overview of what we have added into our Databases section:
+An overview of what has been added into the Databases section:
 
 - `Name` - Name of the database we will be using.
 - `User` - User with access to the data
@@ -173,9 +173,9 @@ pip install psycopg2
 
 ### Step 5: Creating PostgreSQL Database
 
-Back in the pgAdmin dashboard, under the Database tab right click and create a Database in our case we are going to name it `test` because that is what we specified in the settings file.
+Back in the pgAdmin dashboard, under the Database tab right click and create a Database in this case it can be named `test` because that is what is specified in the settings file.
 
-The next step we will are going to utilize the new database and connect it to the Django app.
+The next step is the utilizing of the new database and connecting it to the Django app.
 
 ### Step 6: Sync Database
 
@@ -183,7 +183,7 @@ The next step we will are going to utilize the new database and connect it to th
 python manage.py migrate --run-syncdb
 ```
 
-What this command does is, it’ll change the database backend to Postgresql.
+What this command does is, it changes the database backend to Postgresql.
 
 ### Step 7: Load Data
 
@@ -191,21 +191,21 @@ What this command does is, it’ll change the database backend to Postgresql.
 python manage.py loaddata data.json
 ```
 
-What this command does is, dump our previous data from SQlite into Postgres.
+What this command does is, dump the previous data from SQlite into Postgres.
 
-To confirm that head back to pgAdmin refresh the page and under the database, we created our tables should be updated.
+To confirm that, back in the pgAdmin dashboard refresh the page and under the database, the created tables should be updated.
 
 ## 2. Use of Terminal
 
 The use of the terminal comes in handy if you are running PostgreSQL on a server operating system.
 
-Just like we did in the desktop setup the same steps will be followed only this time we will be using the terminal.
+Just like in the desktop setup the same steps are followed only this time it;s the terminal that is in use.
 
 ### Step 1: Installing PostgreSQL
 
 To install Postgresql using the terminal the following steps are followed.
 
-- Add the PostgreSQL package repository on your server OS the command below.
+- Firts is to add the PostgreSQL package repository on the server OS with the command below.
 
 ```bash=
 echo "deb http://apt.postgresql.org/pub/repos/apt/ $(lsb_release -cs)-pgdg main" |
@@ -233,7 +233,7 @@ apt-get install -y postgresql
 ### Step 2: Create Database and User
 
 - Log in to Postgres.
-  By default after installation user `postgres` is created, we will use this user to perform administrative tasks
+  By default after installation user `postgres` is created, we will use this user to perform administrative tasks.
 
 ```bash=
 sudo -u postgres psql
@@ -246,7 +246,7 @@ CREATE DATABASE projectname;
 ```
 
 - Database User
-  This will be used to connect and interact with the database.
+  This is used to connect and interact with the database.
 
 ```bash=
 CREATE USER projectuser WITH PASSWORD 'password';
@@ -277,14 +277,14 @@ DATABASES = {
 
 ### Step 3: Migrate Database
 
-Now that the Django settings are configured we can go ahead and migrate our data.
+Now that the Django settings are configured, we can go ahead and migrate the data.
 
 ```python=
 python manage.py makemigrations
 python manage.py migrate
 ```
 
-By executing the commands successfully we have managed to successfully migrate our database from SQLite3 to PostgreSQL.
+By executing the commands successfully the migration of the database from SQLite3 to PostgreSQL is successfully ompleted.
 
 ## Conclusion
 
