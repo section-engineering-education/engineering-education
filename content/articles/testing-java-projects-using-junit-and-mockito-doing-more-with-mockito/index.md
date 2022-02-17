@@ -51,24 +51,6 @@ Mockito `ArgumentsMatchers` allow you to write generic directives that respond t
 
 Consider the following test case - `testSaveMethod` in which we hardcode a `Student` object - `student` that our `save` method is expected to receive as an argument.
 
-```java
-@Mock
-StudentRepo studentRepo;
-// some parts are skipped for the sake of brevity
-
-@Test
-void testSaveMethod(){
-    Student student = Student.builder()
-                .firstName("John")
-                .lastName("Doe")
-                .matricNo("MAT100419")
-                .password("securedPassword")
-                .registrationTime(LocalDateTime.now())
-                .gender(Gender.MALE).build();
-    when(studentRepo.save(student)).thenReturn(student);
-}
-```
-
 Using `ArgumentMatchers`, we can make our stubbing directives flexible enough to receive any argument that matches what is expected by our stubbed method:
 
 ```java
@@ -219,7 +201,7 @@ To explain this, let us say that our say our `save` method takes two arguments:
 
 ```java
 public Student save(Student student, String name) throws Exception {
-    if (student == null){
+    if (student == null) {
         throw new NullPointerException("student object cannot be null");
     }
     log.info("Student {} saved into the database", name);
@@ -278,7 +260,7 @@ Let us say that we want to stub our `save` method which is defined as follows:
 
 ```java
 public void save(Student student, String name) throws Exception {
-    if (student == null){
+    if (student == null) {
         throw new NullPointerException("student object cannot be null");
     }
     log.info("Student {} saved into the database", name);
@@ -365,7 +347,7 @@ The `save` method throws a `NullPointerException` if the `student` object is nul
 
 ``` java
 public void save(Student student, String name) throws Exception {
-  if (student == null){
+  if (student == null) {
     throw new NullEntityException("student object cannot be null");
   }
   log.info("Student {} saved into the database", name);
@@ -429,7 +411,7 @@ StudentRepoSpy studentRepoSpy
 //some parts are skipped for brevity sake
 
 @Test
-void demonstrateMockingDetails(){
+void demonstrateMockingDetails() {
   System.out.println("Is a mock object?- " + mockingDetails(studentRepository).isMock());
   System.out.println("Is a spy object?- " +mockingDetails(hostelRepository).isSpy());
 }
