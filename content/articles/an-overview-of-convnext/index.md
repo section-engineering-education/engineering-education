@@ -1,6 +1,22 @@
-Vision transformers, which were initially introduced to solve problems in Natural Language Processing (NLP) took over the state-of-the-art Convolutional Neural Network in solving image classification tasks. This research was discussed in this [paper](https://arxiv.org/pdf/2010.11929.pdf). For many years, CNNs have been the default model of use in image classification. 
+---
+layout: engineering-education
+status: publish
+published: true
+url: /an-overview-of-convnext/
+title: An Overview of ConvNeXt
+description: This article will discuss how ConvNets borrows ideas from modern training tricks that Transformers usually benefit from, to build the ultimate ConvNext architecture.
+author: sharon-kinyan
+date: 2022-02-17T00:00:00-21:30
+topics: [Machine Learning]
+excerpt_separator: <!--more-->
+images:
 
-A ConvNet takes a standard neural network, a ResNet, and morphs it such that the design approaches a vision transformer. Besides, it surpasses the Transformer in terms of performance. This article will discuss how ConvNets borrows ideas from modern training tricks that Transformers usually benefit from, to build the ultimate ConvNext architecture.
+  - url: /engineering-education/an-overview-of-convnext/hero.png
+    alt: An Overview of ConvNeXt Example Image
+---
+Vision transformers, which were initially introduced to solve problems in Natural Language Processing (NLP) took over the state-of-the-art Convolutional Neural Network in solving image classification tasks. This research was discussed in this [paper](https://arxiv.org/pdf/2010.11929.pdf). 
+<!--more-->
+For many years, ConvNets have been the default model of use in image classification. A ConvNet takes a standard neural network, a ResNet, and morphs it such that the design approaches a vision transformer. Besides, it surpasses the Transformer in terms of performance. This article will discuss how ConvNets borrows ideas from modern training tricks that Transformers usually benefit from, to build the ultimate ConvNext architecture.
 
 ### Prerequisites
 To follow along with this tutorial, you need to be familiar with:
