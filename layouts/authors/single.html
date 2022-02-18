@@ -95,20 +95,28 @@
         {{ range $elem_index, $elem_val := (where (where .Site.Pages "Params.layout" "engineering-education") ".Params.author" $author) }}
         
         <script defer type="text/javascript">
-          fetch('https://talk.hyvor.com/api/v1/page/?page_identifier={{ .Permalink }}&website_id={{ $hyvorId }}')
-            .then(response => response.json())
-            .then(data => {
-              console.log(data);
-              if (data.status === true) {
-                document.getElementById('comments-count-{{ $elem_index }}').innerText = data.data.comments_count;
-                document.getElementById('likes-count-{{ $elem_index }}').innerText = data.data.reactions[0];
-              }
-            })
-            .catch(err => console.log('Error: ', err))
+          document.addEventListener("DOMContentLoaded", async function() {
+
+            if (await unleash.isEnabled("section.io.hyvorTalk", {}, false)) {
+              console.log('fetching...')
+              document.getElementById('insightsData-{{ $elem_index }}').classList.add('enabled');
+
+              fetch('https://talk.hyvor.com/api/v1/page/?page_identifier={{ .Permalink }}&website_id={{ $hyvorId }}')
+                .then(response => response.json())
+                .then(data => {
+                  console.log(data);
+                  if (data.status === true) {
+                    document.getElementById('comments-count-{{ $elem_index }}').innerText = data.data.comments_count;
+                    document.getElementById('likes-count-{{ $elem_index }}').innerText = data.data.reactions[0];
+                  }
+                })
+                .catch(err => console.log('Error: ', err))
+            }
+          });
         </script>
         
         <li class="blog-listing-posts-item mix {{ with .Params.tags }}{{ range . }}{{ lower . }} {{ end }}{{ end }}">
-          <a class="decoration-none xs-pb-40 xs-pt-40 prl-25 flex flex-wrap" href="{{.Permalink}}">
+          <a class="decoration-none xs-pb-40 xs-pt-40 pl-25 flex flex-wrap" href="{{.Permalink}}">
 
             <div class="blog-listing-posts-item-image">
               {{ if isset .Params "images" }}
@@ -132,9 +140,9 @@
 
             </div>
 
-            <div class="insights-data">
-              <div>Comments: <span id="comments-count-{{ $elem_index }}">0</span></div>
-              <div>Likes: <span id="likes-count-{{ $elem_index }}">0</span></div>
+            <div id="insightsData-{{ $elem_index }}" class="blog-listing-posts-item-insights-data">
+              <div class="data-point"><p>Comments: </p><span id="comments-count-{{ $elem_index }}">0</span></div>
+              <div class="data-point"><p>Likes: </p><span id="likes-count-{{ $elem_index }}">0</span></div>
             </div>
 
           </a>
