@@ -94,12 +94,26 @@
         
         {{ range $elem_index, $elem_val := (where (where .Site.Pages "Params.layout" "engineering-education") ".Params.author" $author) }}
         
+        {{ $articlePermalink := "" }}
+        {{ if eq $.Site.Params.env "local" }}
+          {{ $articlePermalink = .Permalink }}
+        {{ else if eq $.Site.Params.env "staging" }}
+          {{ $articlePermalink = .Permalink }}
+        {{ else }}
+          {{ $articlePermalink = .Permalink }}
+        {{ end }}
+        {{ print $articlePermalink }}
+        {{ print $.Site.Params.env }}
+        {{ print $.Site.BaseURL }}
+
         <script defer type="text/javascript">
           document.addEventListener("DOMContentLoaded", async function() {
 
             if (await unleash.isEnabled("section.io.hyvorTalk", {}, false)) {
               console.log('fetching...')
               document.getElementById('insightsData-{{ $elem_index }}').classList.add('enabled');
+
+
 
               fetch('https://talk.hyvor.com/api/v1/page/?page_identifier={{ .Permalink }}&website_id={{ $hyvorId }}')
                 .then(response => response.json())
