@@ -11,8 +11,8 @@ topics: [Languages]
 excerpt_separator: <!--more-->
 images:
 
-- url: /engineering-education/testing-java-projects-using-junit-and-mockito-doing-more-with-mockito/hero.jpg
-  alt: Testing Java Projects using JUnit and Mockito - Part 2 Example Image
+ - url: /engineering-education/testing-java-projects-using-junit-and-mockito-doing-more-with-mockito/hero.jpg
+   alt: Testing Java Projects using JUnit and Mockito - Part 2 Example Image
 ---
 [Unit testing](https://en.wikipedia.org/wiki/Unit_testing) is the most vital form of testing. Unit testing offers a means to test the individual code components as isolated units. The key in unit testing is the isolation of program units.
 <!--more-->
