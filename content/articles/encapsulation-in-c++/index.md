@@ -1,6 +1,19 @@
-#### Encapsulation in C++
+---
+layout: engineering-education
+status: publish
+published: true
+url: /encapsulation-in-c-plus-plus/
+title: Encapsulation in C++
+description: This article will help you understand Encapsulation in C++.
+author: jacob-omukaga
+date: 2022-02-18T00:00:00-08:12
+topics: [Languages]
+excerpt_separator: <!--more-->
+images:
 
-### Introduction
+  - url: /encapsulation-in-c-plus/hero.jpeg
+    alt: Encapsulation in C++ Hero Image
+---
 Encapsulation is the method of grouping data and features into a single part. 
 This part is known as a **class**. It is done to protect straightforward access to the data. 
 
@@ -8,8 +21,6 @@ Encapsulation is one of the **Object-Oriented Programming (OOPs)** features.
 Construction of user-limited classes in **C++** supports encapsulation and data hiding. 
 
 ### Table of contents
-- [Introduction to Encapsulation](#introduction-to-encapsulation)
-- [Table of Contents](#table-of-contents)
 - [Encapsulation and Abstraction](#encapsulation-and-abstraction)
 - [Difference between Abstraction and Encapsulation](#difference-between-abstraction-and-encapsulation)
 - [Encapsulation vs Inheritance](#incapsulation-vs-inheritance)
@@ -29,7 +40,7 @@ You may argue that Encapsulation is the Abstraction's implementation.
 
 ### Difference between abstraction and encapsulation
 - Abstraction itself is a process that involves obtaining information, while Encapsulation, on the other side, involves methods of containing Information.
-- Abstraction is a technique for masking undesired data and revealing useful information. On the other hand, Encapsulation is the process of combining code and data into a unified unit to safeguard data from external view.
+- Abstraction is a technique for masking undesired data and revealing useful information. On the other hand, Encapsulation is the process of combining code and data into a unified unit to safeguard data from an external view.
 - Encapsulation involves masking the internal details or mechanics of how an object does something. In contrast, abstraction allows you to concentrate on what the item does rather than how it does it.
 - Abstraction is achieved by using abstract classes and interfaces, while Encapsulation, is implemented by using access modifiers (Public, Protected, and Private).
 
@@ -46,7 +57,8 @@ The public functions are defined and may be retrieved by using the class's objec
 However, we cannot openly access private members' data, which is referred to as "data hiding." Data is protected and can be viewed by functions of the class where it is defined when this is performed.
 Below is how it is performed.
 
-```#include <iostream>
+```c++
+#include <iostream>
 using namespace std;
 
 class Player {
@@ -87,9 +99,10 @@ For example, when you turn on an electric kettle, and the water reaches the boil
 
 ### Types of encapsulation
 In OOP, there are three forms of encapsulation, as shown below.
-- Class encapsulation
-- Function encapsulation
-- Member variable encapsulation
+- Class encapsulation.
+- Function encapsulation.
+- Member variable encapsulation. 
+
 As the title suggests, all data members are made private under member variable encapsulation. Set and Get functions are used by any object that wants to change or obtain the value of a data member. Contrarily, some of the functions and constructors in function encapsulation are declared private. The entire class is designated as private in Class Encapsulation.
 
 ### The roles of encapsulation
@@ -98,11 +111,11 @@ As the title suggests, all data members are made private under member variable e
 - The data packaging facilitates growth in general. These packages can be independently tested, debugged, and run without affecting the other elements.
 - Data concealing is an excellent approach to keep your data safe from unwanted reach. Therefore, the code's security is enhanced much further.
 
-### Data hiding in relation to encapsulation
+### Data hiding with encapsulation
 The technique of merging data and operations into a unified piece is known as **data hiding**. 
 Data hiding is based on the idea of concealing data inside a class to restrict straight accessibility from beyond the class. 
 
-Data hiding aids programmers in the creation of classes with distinct data sets and functionalities. It prevents unwanted infiltration from other program classes.
+Data hiding helps programmers in the creation of classes with distinct data sets and functionalities. It prevents unwanted infiltration from other program classes.
 Data hiding conceals class data set components, but encapsulation conceals class data sections as well as private functions.
 
 You must now be familiar with access specifiers to comprehend data hiding. 
@@ -112,16 +125,16 @@ The data is buried to protect it from unintentional modification.
 ### Roles of access specifiers in encapsulation
 Access specifiers are used to hide data in C++. Class members can have varying levels of accessibility based on the type of access specifier used. The three types of Access Modifiers are public Modifiers, Private Modifiers, and Protect Modifiers.
 
-### Private access modifiers
+#### Private access modifiers
 When a data component or member function is set private, it can be accessed and cannot be viewed by anybody outside the class. A fault is produced when accessed by an object that is not a member of the class.
 
-### Public access modifiers
+#### Public access modifiers
 Whereas a public access specifier is applied when creating a class, the base class's public data members change to public members of the derived class, and protected elements become protected in the derived class. Still, the base class's secret members remain hidden.
 
-### Protected access modifiers
+#### Protected access modifiers
 A Protected Access Specifier is a type of unique access specifier. When a data function is secured, it behaves similarly to private and may be accessed by class members. It may also be accessed through any of the class's sub-classes. 
 
-```
+```c++
 #include <iostream> 
 using namespace std; 
 class Example { 
@@ -161,3 +174,6 @@ One of the most significant properties of OOP is encapsulation. It allows us to 
 - [Real Life Examples of Encapsulation](https://www.sitesbay.com/cpp/cpp-encapsulation)
 - [Inheritance in C++](https://www.programiz.com/cpp-programming/inheritance#:~:text=Inheritance%20is%20one%20of%20the,additional%20features%20of%20its%20own.)
 - [Abstraction](https://www.section.io/engineering-education/understanding-abstraction-in-c++/)
+
+---
+Peer Review Contributions by: [Mohamed Alghadban](/engineering-education/authors/mohamed-alghadban/)
