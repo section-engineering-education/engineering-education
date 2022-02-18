@@ -3,10 +3,10 @@ layout: engineering-education
 status: publish
 published: true
 url: /paytm-loading/
-title: Building a Paytm loading effect from scratch
-description: This article takes the reader through the benefits of a custom preloader and how to use  various CSS properties to build a custom Paytm loading animation from scratch.
+title: Building a Paytm Loading Effect from Scratch
+description: This article takes the reader through the benefits of a custom preloader and how to use various CSS properties to build a custom Paytm loading animation from scratch.
 author: phina-kersly
-date: 2022-02-04T00:00:00-02:00
+date: 2022-02-17T00:00:00-17:00
 topics: [Languages]
 excerpt_separator: <!--more-->
 images:
@@ -14,30 +14,28 @@ images:
   - url: /engineering-education/paytm-loading/hero.png
     alt: Paytm Loading Image Example
 ---
-
-### Introduction
 A good user interface is composed of several parameters. One of the parameters is an appealing loading effect. Loading effects are crucial in both mobile and web applications. 
 <!--more-->
+### Introduction
 The benefit may not be seen when the internet speed is good and the web content is light; however, in a case where web pages are heavy in content the advantage may be apparent and brings the most benefit to the user interface. 
 
 ### Table of content
 This article requires the reader to have an understanding of the following tools and languages:
-
 - Django web development framework
 - Good understanding of HTML and CSS
 - A code editor, most preferably Visual Studio Code
 
 ### Website preloader
-A preloader is a static picture, animation, or a Graphics Interchange Format(GIF) usually displayed on the screen while the specific webpage content is loading. Usually, preloaders are essential in showing the user that the content is still loading instead of a blank screen. 
+A preloader is a static picture, animation, or a Graphics Interchange Format (GIF) usually displayed on the screen while the specific webpage content is loading. Usually, preloaders are essential in showing the user that the content is still loading instead of a blank screen. 
 
-According to research by [Google on the benefits of increasing the speed of a website](https://www.marketingdive.com/news/google-53-of-mobile-users-abandon-sites-that-take-over-3-seconds-to-load/426070/), they discovered that about 53% of website users would abandon a site if it takes more than 3 seconds to load. This problem worsens when the page is blank. Therefore, the use of preloaders can mitigate this problem.
+According to research by [Google on the benefits of increasing the speed of a website](https://www.marketingdive.com/news/google-53-of-mobile-users-abandon-sites-that-take-over-3-seconds-to-load/426070/), they discovered that about 53% of website users would abandon a site if it took more than 3 seconds to load. This problem worsens when the page is blank. Therefore, the use of preloaders can mitigate this problem.
 
 ### Benefits of a preloader
-While to most people, website preloaders are just fancy animations that make sites incredible and user-friendly, these tools are compelling in reducing the revenue caused by unreliable networks and developing a meaningful relationship with the content consumers of your website.
+While to most people, website preloaders are just fancy animations that make sites user-friendly, these tools are compelling in reducing the revenue caused by unreliable networks and developing a meaningful relationship with the content consumers of your website.
 
 Additionally, the user experience brought about by these preloaders increases the engagement of the users and the website and maintains the website's professional image. The good look and feel of the site in combination with the loader will most likely raise the customers' waiting threshold until the page content is fully loaded.
 
-Lastly, preloaders can be used to portray the image of the company. It can be used as a branding asset when designed to suit the company in color, shape, animation, and letters. It makes the company or organization instantly recognizable.
+Preloaders can be used to portray the image of the company. It can be used as a branding asset when designed to suit the company in color, shape, animation, and letters. It makes the company or organization instantly recognizable.
 
 ### Transition from the loading spinner 
 Most websites have used loading spinners as the base webpage preloader in the recent past. However, according to a post by [Suleiman Ali](https://uxdesign.cc/stop-using-a-loading-spinner-theres-something-better-d186194f771e?gi=4d79464ee5c3) in 2017, loading spinners have become dull and have reduced the application's user interface experience. In addition, Ali argues that spinners are stagnant and lack the creativity required to develop websites over time.
@@ -124,6 +122,7 @@ INSTALLED_APPS = [
     'loader'
 ]
 ```
+
 ### The templates folder
 Every Django application needs a `templates` folder in the application's root folder where all the view files for the application are stored. The views are the components displayed on the webpage for the website's users. 
 
@@ -174,10 +173,10 @@ STATICFILES_DIRS = (os.path.join(BASE_DIR, 'static'),)
 
 The snippets above show that the static files are stored in the application's main URL in the root folder so that any sub-application can access its sub-folders and files.
 
-At this point, we are almost done with the setup. However, there is one last thing we need to finalize. We need to load the static folder into our templates so that each HTML file can access the files in the `static` folder.
+At this point, we are almost done with the setup. We need to load the static folder into our templates so that each HTML file can access the files in the `static` folder.
 
 
-Since we are only working with a single template file, we will add it to the `index.html` file as below:
+Since we are only working with a single template file, we will add it to the `index.html` file as shown below:
 
 ```html
 {% load static %}
@@ -188,6 +187,7 @@ Now that we have set up every component, we can start building the loader in the
 We need a container in the `index.html` file to contain all the other components.
 
 We have another `div` element that wraps up the individual "bouncing balls," as shown in Paytm's loading animations.
+
 We have several `span` elements that form the "balls". The span elements will have the most styling as they form the base of the user interface concept discussed in this article.
 
 The final `index.html` file should look like below. You can either create an entirely new file with your configurations or copy and paste the following code snippet into your `index.html` file.
@@ -228,7 +228,6 @@ Keyframes are used in animating at advanced levels where specific attributes nee
 
 When we specify a CSS style inside a keyframe rule, the animation will slowly change from the current style and migrate to the following style defined.
 
-
 #### CSS Transformations
 A CSS transformation allows you to change the property of an element along a specified dimension. Generally, CSS transformation modifies the linear coordinate of an element in the website window.
 
@@ -238,7 +237,7 @@ The significant parameters for transformation are rotation, translation, skewing
 Consider a list of similar sub-elements in a given element for instance a `<li></li>` elements. We might need to style an individual list element differently. We use the `:nth-child()` property for such a case. It takes a single style and applies it to all elements in a given list that match the specified pattern.
 
 ### Working on the styles
-At this point, you should have understood how different components are applied in this tutorial. First, we need to create a CSS file and add our CSS snippets to style the webpage appropriately. 
+At this point, you should understand how different components are applied in this tutorial. First, we need to create a CSS file and add our CSS snippets to style the webpage appropriately. 
 
 Then, in the static folder created at the application's root folder, create a new folder called `CSS` then another file in the CSS folder called `main.css`. Here is where all the styling will be scripted.
 
@@ -250,7 +249,7 @@ body{
 }
 ```
 
-Next, style the container that holds every other element in the webpage and  style it according to the parameters specified in the snippet below:
+Next, style the container that holds every other element in the webpage and style it according to the parameters specified in the snippet below:
 
 ```css
 .container{
@@ -302,7 +301,7 @@ We use the `infinite` property to animate the dots after a page is reloaded cont
 }
 ```
 
-To ensure that each dot is scaled differently at every instance, we use the `nth child` property discussed above. Each dot is given a  short period before it is scaled gradually.
+To ensure that each dot is scaled differently at every instance, we use the `nth child` property discussed above. Each dot is given a short period before it is scaled gradually.
 
 ```css
 span:nth-child(1){
@@ -326,9 +325,9 @@ Your final loader should be up and running at the end of the styling and followi
 
 
 ### Conclusion
-This tutorial was a comprehensive headstart for working with CSS on an actual website. We begin by understanding the benefits of using loading animations and the level of risk that comes when a website has no suitable animation. Then, we discussed how to build a loading animation effect from scratch, keeping the Paytm one in mind.
+This tutorial was a comprehensive headstart for working with CSS on an actual website. We began by understanding the benefits of using loading animations and the level of risk that comes when a website has no suitable animation. Then, we discussed how to build a loading animation effect from scratch, keeping the Paytm one in mind.
 
 We looked at various aspects of CSS used to model animation and varied the different parameters required to work effectively. Finally, we worked out all these concepts by implementing the animation in a Django application, one of the most popular web development frameworks.
 
-  ---
+---
 Peer Review Contributions by: [Mercy Meave](/engineering-education/authors/mercy-meave/)
