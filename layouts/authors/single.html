@@ -98,7 +98,7 @@
         {{ if eq $.Site.Params.env "local" }}
           {{ $articlePermalink = .Permalink }}
         {{ else if eq $.Site.Params.env "staging" }}
-          {{ $articlePermalink = .Permalink }}
+          {{ $articlePermalink = replace .Permalink "beta" "www" }}
         {{ else }}
           {{ $articlePermalink = .Permalink }}
         {{ end }}
@@ -115,7 +115,7 @@
 
 
 
-              fetch('https://talk.hyvor.com/api/v1/page/?page_identifier={{ .Permalink }}&website_id={{ $hyvorId }}')
+              fetch('https://talk.hyvor.com/api/v1/page/?page_identifier={{ $articlePermalink }}&website_id={{ $hyvorId }}')
                 .then(response => response.json())
                 .then(data => {
                   console.log(data);
