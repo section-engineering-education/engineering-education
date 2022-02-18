@@ -23,23 +23,16 @@ The `StudentRepo` class shown below will be used as our system under test.
 public class StudentRepo {
     private Map<String, Student> database = new HashMap<>();
 
-    private void validate(String id) throws HostelManagementException {
-        if (id == null || id.trim().equals("")){
-            throw new Exception("invalid id provided");
-        }
-}
-
-    public Student save(Student student) throws Exception {
-        if (student == null){
-            throw new NullEntityException("student object cannot be null");
+    public void save(Student student) throws Exception {
+        if (student == null) {
+            throw new NullPointerException("student object cannot be null");
         }
         database.put(student.getId(), student);
         return student;
+    }
 }
 ```
-`StudentRepo` contains two void methods- `validate` and `save`.
-
-Method `validate` takes a string `id` as an argument. `validate` performs a check on `id`, if the `id` is `null` or is an empty string then an exception is raised with the message- “invalid id provided”.
+`StudentRepo` contains a void method- `save`.
 
 Method `save` takes a `student` object as an argument. If the `student` object is null, then a `NullPointerException` is raised with the message- “student object cannot be null”. If the `student` object is not null, the `student` object is saved into the database, which is represented as a `HashMap`.
 
@@ -239,7 +232,7 @@ Now we are specifying that the second argument passed into the stubbed `save` me
 
 ```java
 @Test
-void testSaveMethod() throws HostelManagementException {
+void testSaveMethod() throws Exception {
     Student student = Student.builder()
                 .firstName("John")
                 .lastName("Doe")
@@ -346,7 +339,7 @@ Mockito’s `verify` method is used to verify that the `save` method is invoked 
 ``` java
 public void save(Student student, String name) throws Exception {
   if (student == null){
-    throw new NullEntityException("student object cannot be null");
+    throw new NullPointerException("student object cannot be null");
   }
   log.info("Student {} saved into the database", name);
   database.put(student.getId(), student);
@@ -393,7 +386,7 @@ The following snippet demonstrates the usage of `thenThrow` with the `when` dire
 
 ```java
  @Test
-void testThenThrow() throws HostelManagementException {
+void testThenThrow() throws Exception {
     when(studentRepo.save(any(), anyString())).thenThrow(NullPointerException.class);
     assertThrows(NullPointerException.class, ()->studentRepo.save(null, "John Doe"));
 }
