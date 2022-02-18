@@ -372,7 +372,7 @@ python manage.py runserver
 
 - Note: Now open <http://127.0.0.1:8000/admin> in your browser and log in.
 
-Running the command showcased below will perform the API requests to the external enpoints from the cron class. This is to cycle through the endpoints given inside the `cron.py` class. By doing this, the latest `ids` generated wil be added to the application database.
+Running the command showcased below will perform the API requests to the external endpoints from the cron class. This is to cycle through the endpoints inside the `cron.py` class and execute the `do()` method. By doing this, the latest `ids` generated will be added to the application database.
 
 
 ```bash
