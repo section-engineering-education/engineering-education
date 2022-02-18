@@ -25,9 +25,7 @@ In this tutorial, we will be learning jobs scheduling automation with `django_cr
 - Jobs scheduling automation with the `django_cron` library.
 
 ### Overview of job scheduling
-Every repeated tasks that are carried out in the background are referred to as `jobs` in software development. Job scheduling deals with the process whereby the execution of various tasks is ensured by connecting system applications together.
-
-<!-- write the previous sentence in simpler terms. Don't use " ... process whereby the execution ..." -->
+Every repeated tasks that are carried out in the background are referred to as `jobs` in software development. Job scheduling deals with the execution of various tasks by ensuring the connection of system applications.
 
 There are many schedulers which are used in industries. This is based on the kind of company requirement. For instance, Oracle FLEXCUBE FCJ uses the two types of jobs schedulers named `Quartz` and `Flux`.
 
@@ -372,11 +370,10 @@ Furthermore, you can test to the admin page made by executing the following comm
 python manage.py runserver
 ```
 
-Now open <http://127.0.0.1:8000/admin> in your browser and log in.
+- Note: Now open <http://127.0.0.1:8000/admin> in your browser and log in.
 
-You can test the API by running the required command that was described above. This will perform API requests to the external API, and then add the latest `ids` to the database. All things have been equal, you should see something like the admin page below.
+Running the command showcased below will perform the API requests to the external enpoints from the cron class. This is to cycle through the endpoints given inside the `cron.py` class. By doing this, the latest `ids` generated wil be added to the application database.
 
-<!-- Please format the previous paragraph 👆 better -->
 
 ```bash
 python manage.py runcrons
