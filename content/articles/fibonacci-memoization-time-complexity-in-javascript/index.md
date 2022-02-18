@@ -231,7 +231,7 @@ T(n)=2^k T(n-2k+2^k-1)c
 n-2k=>k=n/2
 T(n)=2^n/2 T(0)+(2^n/2-1)c
 T(n)=(1+c)*2^n/2=c
-T(n) φ 2^n/2 //(lower Bound)
+T(n) α 2^n/2 //(lower Bound)
 ```
  - O(n)=> fib(iteration)-linear time algorithm
  
@@ -245,8 +245,8 @@ T(n)=2T(n-1)+c   [c=4]
   n-k=0=>k=n
  T(n)=2^n T(0)+(2^n-1)c
  T(n)=(1+c)*2^n-c
- T(n) φ 2^n //(upper bound)
- ```
+ T(n) α 2^n //(upper bound)
+ ``
  - O(2^n)=>fib(recursion)-Exponential time algorithm
  
 In the equation above we are looking for largest value that can round up to the estimated value
