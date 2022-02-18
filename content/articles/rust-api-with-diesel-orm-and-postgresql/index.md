@@ -14,10 +14,9 @@ images:
   - url: /engineering-education/rust-api-with-diesel-orm-and-postgresql/hero.jpg
     alt: Setting up Rust API with Diesel and PostgreSQL Hero Image
 ---
-
-### Introduction
 Object Relation Mapping(ORM) is a technique for storing, retrieving, updating, and deleting data from a database. Common frameworks such as Node.js have different ORM libraries that help developers connect their applications to databases.
- <!--more-->
+<!--more-->
+### Introduction 
 An ORM helps us create data schemas and relationships within an application such that whenever we need to change a specific database field, we only do it in our application with just a few lines of code. 
 
 An ORM helps us avoid the hectic work of recreating our databases every time to match the new database structure. 
