@@ -1,15 +1,12 @@
+### Introduction
 
-[Flatologic](https://flatlogic.com/) is a company that offers free and premium dashboard templates in various frameworks. Whether in Angular, Vue, or React, developers can find many user-friendly pre-built applications to suit their needs. 
+In this tutorial, you will learn how to build interactive web applications using React dashboard written in [React.js](https://reactjs.org/). At the end of this instructional exercise, you’ll know how to create a dashboard in three easy steps. Then, we will connect it to an SQL database with `MAMP` so you have some local data.
 
-Rather than starting a project from scratch, this drastically reduces the amount of coding involved and gets a project running quickly. In this tutorial, we will focus on their free template called React Dashboard. This template is built with React, Bootstrap, React Router, Redux, and GraphQL.
+### Table of content
 
-It comes with a React frontend and a Node.js backend. Authentication is included and the layout is responsive. This tutorial will cover how to create a dashboard in three easy steps. Then, we will connect it to an SQL database with MAMP so you have some local data.
-
-### Table of contents
-
-- [Table of contents](#table-of-contents)
-- [Objectives](#objectives)
-- [Prerequisites](#prerequisites)
+- [Introduction](#introduction)
+- [Table of content](#table-of-content)
+- [Flatologic React Templates](#flatologic-react-templates)
 - [Step 1: Setting up the React Dashboard project](#step-1-setting-up-the-react-dashboard-project)
 - [Step 2: Creating the dashboard and table](#step-2-creating-the-dashboard-and-table)
 - [Step 3: Linking the local database to your application](#step-3-linking-the-local-database-to-your-application)
@@ -17,23 +14,13 @@ It comes with a React frontend and a Node.js backend. Authentication is included
 - [Conclusion](#conclusion)
 - [Further Reading](#further-reading)
 
-### Objectives
+### Flatologic React Templates
 
-After reading this article the reader will be able to:
-- Install and configure React Dashboard.
-- Set up a React Database table and dashboard.
-- Connect the database server to the application.
-
-### Prerequisites
-To follow through this tutorial, you will need:
-- Knowledge of fundamentals of React.
-- Basic knowledge of the Mamp Server.
-
-Let's get to it!
+[Flatologic](https://flatlogic.com/) is a company that offers free and premium dashboard templates in various frameworks. Whether in Angular, Vue or React, developers can find many user-friendly pre-built applications to suit their needs. Rather than starting a project from scratch, this drastically reduces the amount of coding involved and gets a project running quickly. In this tutorial, we will focus on their free template called React Dashboard. This template is built with React, Bootstrap, React Router, Redux, and GraphQL. It comes with a React frontend and a Node.js backend. Authentication is included and the layout is responsive. This tutorial will cover how to create a dashboard in three easy steps. Then, we will connect it to an SQL database with MAMP so you have some local data.
 
 ### Step 1: Setting up the React Dashboard project
 
-To start, we need to clone the React Dashboard repository and choose a name for our new project. This will be executed using the following command:
+To start with, let’s clone the React Dashboard repository and choose a name for our new project.
 
 ```bash
 git clone -o React Dashboard -b master --single-branch https://github.com/flatlogic/React Dashboard.git <app-name>
@@ -46,48 +33,44 @@ cd <app-name>
 yarn install
 ```
 
-At the time of writing, React Dashboard runs into an issue when you run yarn install and there is a GitHub issue logged. The following is a snippet of the error:
+At the time of writing, React Dashboard runs into an issue when you run yarn install and there is a GitHub issue logged. Here is a snippet of the error:
 
-```bash
-    error /Users/..../node_modules/sqlite3: Command failed.
-    Exit code: 1
-    Command: node-pre-gyp install --fallback-to-build
-```
+    > error /Users/..../node_modules/sqlite3: Command failed.
+      Exit code: 1
+      Command: node-pre-gyp install --fallback-to-build
 
-If you run yarn add sqlite3 separately and then re-run yarn install, things should work fine.
+If you run `yarn` add `sqlite3` separately and then re-run `yarn install`, things should work fine.
 
-Afterwards, we can run `yarn dev`. This will launch the backend and frontend servers, which will be accessible on port `5000` and `3000`, respectively. If we navigate to `http://localhost:3000/`, we should see our dashboard:
+Now, we can run `yarn dev`. Once done, this will launch the backend and frontend servers, which will be accessible on ports `5000` and `3000`, respectively. If we navigate to `http://localhost:3000/`, we should see our dashboard:
 
-![react-dashboard-interface](/engineering-education/creating-dashboards-in-react-using-react-dashboards/react-dashboard-interface.png)
+![react-dashboard-interface](react-dashboard-interface.jpg)
 
-This project also comes with GraphQL. Once the app is launched, the playground is accessible at `http://localhost:5000/graphql`. If you are unfamiliar with this technology, do not hesitate to read the GraphQL [documentation](https://graphql.org/) and learn how to create queries and mutations.
+This project also comes with GraphQL. Once the app is launched, the playground is accessible at `http://localhost:5000/graphql`. If you are unfamiliar with this technology, do not hesitate to read the [GraphQL documentation](https://graphql.org/) and learn how to create queries and mutations.
 
 ### Step 2: Creating the dashboard and table
-We have a great dashboard, but at the moment, it is working with hard-coded values. To make it more valuable, let’s connect our new application to a local database. You can choose any database, but for the sake of this tutorial, I will connect a MySQL database.
 
-To create one, I am using MAMP, which allows you to get Apache, Nginx, PHP, and MySQL out of the box. If you do not have MAMP, you can download it [here](https://mamp.info/en/downloads/).
+We have a great dashboard, but at the moment, it is working with hard-coded values. To make it more valuable, let’s connect our new application to a local database. You can choose any database, but for the sake of this tutorial, we will connect a MySQL database. To create one, we will use `MAMP`, which allows you to get Apache, Nginx, PHP, and MySQL out of the box. If you do not have MAMP, you can download it [here](https://www.mamp.info/en/downloads/). Once it is installed, start the application and click `Webstart`.
 
-Once it is installed, start the application and click on `Webstart`.
+![mamp-interface](mamp-interface.jpg)
 
-![mamp-interface](/engineering-education/creating-dashboards-in-react-using-react-dashboards/mamp-interface.png)
+This opens the MAMP index page at `http://localhost:8888/MAMP`. On this page, you will see plenty of information, but what we care about is under MySQL. Once opened, click on phpMyAdmin. This will open another tab, this one to `http://localhost:8888/phpMyAdmin/index.php`, where you will see the interface of phpMyAdmin. Thanks to this, we will be able to see, create, and work with our future MySQL databases. We can create a database by clicking on Databases. Then, enter the name of our new database and click Create. We may then create our first table. For our tutorial, name it posts and select five columns, as we will have five fields. Once we click Go, we will be able to enter our new fields.
 
-This opens the MAMP index page at `http://localhost:8888/MAMP`. On this page, you will see plenty of information, but what we care about is under MySQL. Once opened, click on `phpMyAdmin`. This will open another tab to `http://localhost:8888/phpMyAdmin/index.php`, where you will see the interface of `phpMyAdmin`.
+**Our fields should be as such:**
 
-Thanks to this, we will be able to see, create, and work with our future MySQL databases. We can create a database by clicking on Databases. Then, enter the name of our new database and click `Create`.
-
-We may then create our first table. For our tutorial, name it posts and select five columns, as we will have five fields. Once we click Go, we will be able to enter our new fields. Our fields should be as such:
-
-- ID of type VARCHARl; length 255 is our primary key
+- ID of type varchar; length 255 is our primary key
 - title of type VARCHAR; length 255
 - content of type TEXT
 - createdAt of type DATE
 - updatedAt of type DATE
   Here is a screenshot of our table with our new fields:
 
-![mysql-posts](/engineering-education/creating-dashboards-in-react-using-react-dashboards/mysql-posts.png)
+  ![mysql-posts](mysql-posts.jpg)
+
+  once we have inputted all the required information, click Save.
 
 ### Step 3: Linking the local database to your application
-This project uses `Sequelize`, a Node.js ORM that allows you to connect to SQL databases. In our data folder inside `src`, we find a `sequelize.js` file where we can connect our database.
+
+This project uses [Sequelize](https://sequelize.org/), a `Node.js` ORM that allows you to connect to SQL databases. In our data folder inside `src`, we find a `sequelize.js` file where we can connect our database.
 
 ```javascript
 import Sequelize from "sequelize";
@@ -99,7 +82,6 @@ const sequelize = new Sequelize("test", "root", "root", {
   dialect: "mysql",
   operatorsAliases: false,
 });
-
 export default sequelize;
 ```
 
@@ -143,14 +125,15 @@ export default schema;
 ```
 
 ### Step 4: Testing the application
-Kill the server with `Cmd+C` and start it again. If everything worked, we should be able to create new posts. In our dashboard, we can click on `View all Posts`, then `Create New`. After adding a title and content, we can click Save. When we go back to the dashboard page, our new post will appear in the table.
-![post-creation](/engineering-education/creating-dashboards-in-react-using-react-dashboards/post-creation.png)
+
+Kill the server with `Cmd+C` and start it again. If everything worked, we should be able to create new posts. In our dashboard, we can click on `View all Posts`, then `Create New`. After inputting a title and content, we can click `Save`. When we go back to the dashboard page, our new post will appear in the table.
+
+![post-creation](post-creation.gif)
 
 ### Conclusion
-In this tutorial, we learned how to clone the React Dashboard template from Flatologic and launch it locally. This allowed us to have a user-friendly dashboard up and running quickly. Then, we created a MySQL database with a table and some fields and connected it to our new application.
 
-Thanks to this pre-built dashboard, developers around the world can quickly build a React application. Starting a project from scratch is always difficult, and these templates come with all the functionalities needed to get started.
+In this tutorial, we learned how to clone the React Dashboard template from [Flatologic](https://flatlogic.com/) and launch it locally. This allowed us to have a user-friendly dashboard up and running quickly. Then, we created a MySQL database with a table and some fields and connected it to our new application. Thanks to this pre-built dashboard, developers around the world can quickly build a React application. Starting a project from scratch is always difficult, and these templates come with all the functionalities needed to get started.
 
 ### Further Reading
 
-- [Introducing Hooks - React](https://reactjs.org/docs/hooks-intro.html)
+- [Fetching dynamically structured data in a CMS with GraphQL](https://blog.logrocket.com/fetching-dynamically-structured-data-cms-graphql/)
