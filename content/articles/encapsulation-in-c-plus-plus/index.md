@@ -11,7 +11,7 @@ topics: [Languages]
 excerpt_separator: <!--more-->
 images:
 
-  - url: /encapsulation-in-c-plus-plus/hero.jpeg
+  - url: /engineering-education/encapsulation-in-c-plus-plus/hero.jpeg
     alt: Encapsulation in C++ Hero Image
 ---
 Encapsulation is the method of grouping data and features into a single part. 
