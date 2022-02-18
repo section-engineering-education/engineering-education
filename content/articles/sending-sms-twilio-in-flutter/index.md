@@ -20,15 +20,19 @@ Flutter is an open source mobile UI framework to build native apps for iOS and A
    - Step5. Processing SMS received method.
    - Step6. Sending messages to user with Twilio:
  - Conclusion
+### Prerequisites 
+- Understand how to code flutter widgets.
+- Have a code editor installed.
+- Understand how to add dependencies and run flutter applications. 
 ### App description:
 
 We are going to develop a simple app that allows users to input mobile numbers then input shortcodes. After inputting the shortcodes , users can send SMS thru the flutter app. Also, all the SMS will be logged in listview so the user could read it later on. The downloaded source code comes with an Android and ios version.
 
 #### Key takeaways
 
--   What is Twilio?
+-   Definition of twillio.
 -   Application of Twillio in flutter.
--   How to Implement Twilio in flutter application
+-   Implementation of Twilio in flutter application
 -   Build a simple application to illustrate Twillio. 
 ### Project Breakdown
 In this post we are going to use flutter alpha.
@@ -42,25 +46,26 @@ I'll show you the main parts of this project:
 4- the build method
 
 ### Part1- The model class to hold the SMS data:
-
-Create a new dart file and copy this code:
-
+Create an empty Flutter project in your editor using the command pallete or type this command in your terminal.
 ```dart
-
+flutter create 'name of your project'
+```
+Create a new dart file and copy this code:
+```dart
 class Msg {
 	String from;
 	String text;
 	String date;
-}
+  }
 final List messages = <Msg>[];
-Map get messages => messages.toMap();
+  Map get messages => messages.toMap();
 ```
 The idea here is to store a list of msg objects and use a Map so we could get them by id.
 
 Finally, declare the model class at the beginning of the main.dart file:
 
 ```dart
-@visibleForTesting class Model { }
+  @visibleForTesting class Model { }
 ```
 ### Part2- The HomePage Widget:
 This part contains the widgets we need for our application and the design that our application will look like.
@@ -70,25 +75,29 @@ return new Scaffold(
 	body: 
 		new Center(
 		 child: 
-		 new Column( crossAxisAlignment: CrossAxisAlignment.start,
-		  children: <Widget>[
-		   new TextField( onChanged: (String text) {
-		    _controller.text = text; navigator.push(new MaterialPageRoute<dynamic>(
-		   child: new ListView.builder( itemCount: messages.length, itemBuilder: (context, index) { 
-			   var text = messages [index].text;
-			    return new ListTile( leading: new CircleAvatar(child: new Text(text)),
-			     title: new Text("$index")); });
+		  new Column( crossAxisAlignment: CrossAxisAlignment.start,
+		   children: <Widget>[
+		    new TextField( onChanged: (String text) {
+		      _controller.text = text; navigator.push(new MaterialPageRoute<dynamic>(
+		      child: new ListView.builder( itemCount: messages.length, itemBuilder: (context, index) { 
+			      var text = messages [index].text;
+			        return new ListTile( 
+                leading: new CircleAvatar(child: new Text(text)),
+			          title: new Text("$index")
+         ); 
+        }
+       );
 			}, // placeholder for the input field. Empty if no messages
-
+      
 			placeholder: "Enter a shortcode",
 			 ), 
 			 // Container for the listview.
 			  new ListView.builder( itemCount: messages.length, itemBuilder: (context, index) { 
-			  return new ListTile( leading: new CircleAvatar(child: new Text("$index")),
+			    return new ListTile( leading: new CircleAvatar(child: new Text("$index")),
 			  title: new Text("$index")); 
-			  }
-			  ), // The Flutter logo.
-			   new Image.network( "https://flutter.io/images/homepage/header-illustration-landscape.png"), ], );
+			 }
+		), // The Flutter logo.
+		 new Image.network( "https://flutter.io/images/homepage/header-illustration-landscape.png"), ], );
 
 ```
 
@@ -108,11 +117,10 @@ This is just a simple build method for our application.
 ```dart
 return new Material(
 	 child: new Container( height: MediaQuery.of(context).size.height,
-     child: new FlutterLogo(width: 150.0, height: 100.0), ), );
+        child: new FlutterLogo(width: 150.0, height: 100.0), ), );
 ```
 
 Finally, wire up the code with our model class and main() method of course.
-
 
 ### Business Logic and Twilio
 The final project is in the last section of this blog post.
@@ -130,12 +138,12 @@ The business logic in Flutter can be written in different ways, such as:
 Widget build(BuildContext context) {
  return new Scaffold(
   body: Material (
-   child: Center (
-    child: FlutterLogo ( width: 150.0, height: 100.0), ),
+    child: Center (
+      child: FlutterLogo ( width: 150.0, height: 100.0), ),
      )
      );
 return new Center(
- child: FlutterLogo ( width: 150.0, height: 100.0),
+  child: FlutterLogo ( width: 150.0, height: 100.0),
 );
 ```
 
@@ -160,18 +168,17 @@ We will need to add the required permissions before we can use the Twilio packag
 ```dart
 // Insert your Twilio SID and TOKEN here, check Twilio website for more information.
 auth = new AuthenticationProvider( environment, new ClientCredentialsProvider( environment, "ACXXXXXX", "kLQGJ3YBcvqHVjbDaO..."), );
-this.twilio = new Twilio(auth);
+  this.twilio = new Twilio(auth);
 ```
 Next, we will define the constructor that will receive the SMS received text, which is saved to a string.
-
 Then using that string we will send an update to all the current messages in our database.
 
 ### Step3 . Sending SMS with update list data:
 
 ```dart
-List<String> _messageList = new List(); // Add Twilio dependency for sending sms messages.
-List<String> messagesToSend = _messageList.map((x) => new
-String msg = x.replace(" ", "").toLowerCase(); // Add Twilio dependency for sending sms messages.
+  List<String> _messageList = new List(); // Add Twilio dependency for sending sms messages.  
+  List<String> messagesToSend = _messageList.map((x) => new
+  String msg = x.replace(" ", "").toLowerCase(); // Add Twilio dependency for sending sms messages.
 ```
 
 Up next, we will define a new method to send SMS with our Database's current list of messages.
@@ -180,9 +187,9 @@ Up next, we will define a new method to send SMS with our Database's current lis
 
 ```dart
 String message = ""; // Add Twilio dependency for sending sms messages.
-_messageList.forEach((x) =>
+  _messageList.forEach((x) =>
 { 
-welcomeMsg.post(message);
+  welcomeMsg.post(message);
  }
  );
 ```
@@ -190,7 +197,7 @@ welcomeMsg.post(message);
 In the previous step, we defined a message that will be sent from our SMS controller. I have called this method to send SMS. Now let's proceed with sending an update to all the list data from our database. This is after typing a new text and pressing submit button.
 ```dart
 String msg = x.replace(" ", "").toLowerCase(); // Add Twilio dependency for sending sms messages.
-message = msg + " : new update from database, now there are "+_messageList.length+" messages"; // Add Twilio dependency for sending sms messages.
+  message = msg + " : new update from database, now there are "+_messageList.length+" messages"; // Add Twilio dependency for sending sms messages.
 ```
 After typing a new SMS text and pressing the button. Our controller will receive the text and send an update to all messages in our database.
 The last step is to process the SMS received method. In this case, we will use that string message to save it in our database. Then send a reply back with a confirmation message. Confirmation message states if message was sent  successfully or a failure. It's also a notification if the data could not be saved.
@@ -199,10 +206,10 @@ The last step is to process the SMS received method. In this case, we will use t
 
 ```dart
 String msg = x.replace(" ", "").toLowerCase(); // Add Twilio dependency for sending sms messages.
-message = msg + " : new update from database, now there are "+_messageList.length+" messages"; // Add Twilio dependency for sending sms messages.
-_messageList.forEach((x) =>
+  message = msg + " : new update from database, now there are "+_messageList.length+" messages"; // Add Twilio dependency for sending sms messages.
+  _messageList.forEach((x) =>
 {
- welcomeMsg.post(message);
+  welcomeMsg.post(message);
   }
 );
 
@@ -216,9 +223,10 @@ Sending SMS with update list data
 
 ```dart
 
-sageList = new List(); // Add Twilio dependency for sending sms messages.
-List<String> messagesToSend =String msg = x.replace(" ", "").toLowerCase(); // Add Twilio dependency for sending sms messages.
+  sageList = new List(); // Add Twilio dependency for sending sms messages.
+  List<String> messagesToSend =String msg = x.replace(" ", "").toLowerCase(); // Add Twilio dependency for sending sms messages.
 ```
+Finally we come to the end of our article incase of any query feel free to reach out. 
 ### Conclusion
 
 Now we have a working app that will send SMS with current list data from the Database. Then sends to any number using the Twilio service.
