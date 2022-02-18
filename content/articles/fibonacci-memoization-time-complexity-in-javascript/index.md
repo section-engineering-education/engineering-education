@@ -246,7 +246,7 @@ T(n)=2T(n-1)+c   [c=4]
  T(n)=2^n T(0)+(2^n-1)c
  T(n)=(1+c)*2^n-c
  T(n) α 2^n //(upper bound)
- ``
+ ```
  - O(2^n)=>fib(recursion)-Exponential time algorithm
  
 In the equation above we are looking for largest value that can round up to the estimated value
