@@ -11,8 +11,8 @@ topics: [Languages]
 excerpt_separator: <!--more-->
 images:
 
-  - url: /engineering-education/testing-java-projects-using-junit-and-mockito-doing-more-with-mockito/hero.jpg
-    alt: Testing Java Projects using JUnit and Mockito - Part 2 Example Image
+- url: /engineering-education/testing-java-projects-using-junit-and-mockito-doing-more-with-mockito/hero.jpg
+  alt: Testing Java Projects using JUnit and Mockito - Part 2 Example Image
 ---
 [Unit testing](https://en.wikipedia.org/wiki/Unit_testing) is the most vital form of testing. Unit testing offers a means to test the individual code components as isolated units. The key in unit testing is the isolation of program units.
 <!--more-->
@@ -60,15 +60,15 @@ StudentRepo studentRepo;
 
 @Test
 void testSaveMethod(){
-    Student student = Student.builder()
-                .firstName("John")
-                .lastName("Doe")
-                .matricNo("MAT100419")
-                .password("securedPassword")
-                .registrationTime(LocalDateTime.now())
-                .gender(Gender.MALE).build();
-    when(studentRepo.save(any(Student.class))).thenReturn(student);
-}
+  Student student = Student.builder()
+  .firstName("John")
+  .lastName("Doe")
+  .matricNo("MAT100419")
+  .password("securedPassword")
+  .registrationTime(LocalDateTime.now())
+  .gender(Gender.MALE).build();
+  when(studentRepo.save(any(Student.class))).thenReturn(student);
+  }
 ```
 
 The argument matcher `any` directs our mock `studentRepo` object to return `student` when its `save` method is called with any argument that is of type `Student`.
@@ -90,27 +90,27 @@ Usage of the `any` argument matcher is demonstrated as follows:
 @ExtendWith(MockitoExtension.class)// add the Mockito Extension to JUnit
 @Slf4j //add Lombok's logger
 class StudentRepoTest {
-    @Mock
-    StudentRepo studentRepo;
+  @Mock
+  StudentRepo studentRepo;
 
-    @Test
-    void testSaveMethod() throws Exception {
+  @Test
+  void testSaveMethod() throws Exception {
     // create a student object using Lombok's builder
-        Student student = Student.builder()
-                .firstName("John")
-                .lastName("Doe")
-                .matricNo("MAT100419")
-                .password("securedPassword")
-                .registrationTime(LocalDateTime.now())
-                .gender(Gender.MALE).build();
-        when(studentRepo.save(any(Student.class), anyString())).thenReturn(student);
-        Student returnedStudent = studentRepo.save(student, student.getName());
-        log.info("Returned Student → {}", returnedStudent);
-        assertThat(returnedStudent, hasProperty("firstName", equalTo("John")));
-        assertThat(returnedStudent, hasProperty("lastName", equalTo("Doe")));
-        assertThat(returnedStudent, hasProperty("matricNo", equalTo("MAT100419")));
-        assertThat(returnedStudent, hasProperty("gender", equalTo(Gender.MALE)));
-    }
+    Student student = Student.builder()
+      .firstName("John")
+      .lastName("Doe")
+      .matricNo("MAT100419")
+      .password("securedPassword")
+      .registrationTime(LocalDateTime.now())
+      .gender(Gender.MALE).build();
+    when(studentRepo.save(any(Student.class), anyString())).thenReturn(student);
+    Student returnedStudent = studentRepo.save(student, student.getName());
+    log.info("Returned Student → {}", returnedStudent);
+    assertThat(returnedStudent, hasProperty("firstName", equalTo("John")));
+    assertThat(returnedStudent, hasProperty("lastName", equalTo("Doe")));
+    assertThat(returnedStudent, hasProperty("matricNo", equalTo("MAT100419")));
+    assertThat(returnedStudent, hasProperty("gender", equalTo(Gender.MALE)));
+  }
 }
 ```
 
@@ -129,25 +129,25 @@ Usage of the `isA` argument matcher is demonstrated below:
 ```java
 @ExtendWith(MockitoExtension.class)
 class StudentRepoTest {
-    @Mock
-    StudentRepo studentRepo;
-    @Test
-    void testSaveMethod() throws Exception {
-        Student student = Student.builder()
-                .firstName("John")
-                .lastName("Doe")
-                .matricNo("MAT100419")
-                .password("securedPassword")
-                .registrationTime(LocalDateTime.now())
-                .gender(Gender.MALE).build();
-        when(studentRepo.save(isA(Student.class))).thenReturn(student);
-        Student returnedStudent = studentRepo.save(student);
-        log.info("Returned Student → {}", returnedStudent);
-        assertThat(returnedStudent, hasProperty("firstName", equalTo("John")));
-        assertThat(returnedStudent, hasProperty("lastName", equalTo("Doe")));
-        assertThat(returnedStudent, hasProperty("matricNo", equalTo("MAT100419")));
-        assertThat(returnedStudent, hasProperty("gender", equalTo(Gender.MALE)));
-    }
+  @Mock
+  StudentRepo studentRepo;
+  @Test
+  void testSaveMethod() throws Exception {
+    Student student = Student.builder()
+      .firstName("John")
+      .lastName("Doe")
+      .matricNo("MAT100419")
+      .password("securedPassword")
+      .registrationTime(LocalDateTime.now())
+      .gender(Gender.MALE).build();
+    when(studentRepo.save(isA(Student.class))).thenReturn(student);
+    Student returnedStudent = studentRepo.save(student);
+    log.info("Returned Student → {}", returnedStudent);
+    assertThat(returnedStudent, hasProperty("firstName", equalTo("John")));
+    assertThat(returnedStudent, hasProperty("lastName", equalTo("Doe")));
+    assertThat(returnedStudent, hasProperty("matricNo", equalTo("MAT100419")));
+    assertThat(returnedStudent, hasProperty("gender", equalTo(Gender.MALE)));
+  }
 }
 ```
 
@@ -162,20 +162,20 @@ To demonstrate the usage of the `anyString` argument matcher, let us assume that
 //some parts are skipped for the sake of brevity
 @Test
 void testSaveMethod() throws Exception {
-    Student student = Student.builder()
-                .firstName("John")
-                .lastName("Doe")
-                .matricNo("MAT100419")
-                .password("securedPassword")
-                .registrationTime(LocalDateTime.now())
-                .gender(Gender.MALE).build();
-    when(studentRepo.save(anyString())).thenReturn(student);
-    Student returnedStudent = studentRepo.save("John Doe");
-    log.info("Returned Student → {}", returnedStudent);
-    assertThat(returnedStudent, hasProperty("firstName", equalTo("John")));
-    assertThat(returnedStudent, hasProperty("lastName", equalTo("Doe")));
-    assertThat(returnedStudent, hasProperty("matricNo", equalTo("MAT100419")));
-    assertThat(returnedStudent, hasProperty("gender", equalTo(Gender.MALE)));
+  Student student = Student.builder()
+  .firstName("John")
+  .lastName("Doe")
+  .matricNo("MAT100419")
+  .password("securedPassword")
+  .registrationTime(LocalDateTime.now())
+  .gender(Gender.MALE).build();
+  when(studentRepo.save(anyString())).thenReturn(student);
+  Student returnedStudent = studentRepo.save("John Doe");
+  log.info("Returned Student → {}", returnedStudent);
+  assertThat(returnedStudent, hasProperty("firstName", equalTo("John")));
+  assertThat(returnedStudent, hasProperty("lastName", equalTo("Doe")));
+  assertThat(returnedStudent, hasProperty("matricNo", equalTo("MAT100419")));
+  assertThat(returnedStudent, hasProperty("gender", equalTo(Gender.MALE)));
 ```
 
 Some other argument matchers that can be used in similar ways to `any`, `isA` and `anyString` argument matchers include:
@@ -201,13 +201,13 @@ To explain this, let us say that our say our `save` method takes two arguments:
 
 ```java
 public Student save(Student student, String name) throws Exception {
-    if (student == null) {
-        throw new NullPointerException("student object cannot be null");
-    }
-    log.info("Student {} saved into the database", name);
-    database.put(student.getId(), student);
-    return student;
-}
+  if (student == null) {
+  throw new NullPointerException("student object cannot be null");
+  }
+  log.info("Student {} saved into the database", name);
+  database.put(student.getId(), student);
+  return student;
+  }
 ```
 
 We cannot use an argument matcher to represent one of the arguments is the stubbing directive as follows:
@@ -226,18 +226,18 @@ Now, we are specifying that the second argument passed into the stubbed `save` m
 
 ```java
 @Test
-void testSaveMethod() throws Exception {
-    Student student = Student.builder()
-                .firstName("John")
-                .lastName("Doe")
-                .matricNo("MAT100419")
-                .password("securedPassword")
-                .registrationTime(LocalDateTime.now())
-                .gender(Gender.MALE).build();
-    when(studentRepo.save(any(Student.class), eq("John Doe"))).thenReturn(student);
-    Student returnedStudent = studentRepo.save(student, "John Mash");
-    System.out.println(returnedStudent);
-}
+void testSaveMethod() throws HostelManagementException {
+  Student student = Student.builder()
+  .firstName("John")
+  .lastName("Doe")
+  .matricNo("MAT100419")
+  .password("securedPassword")
+  .registrationTime(LocalDateTime.now())
+  .gender(Gender.MALE).build();
+  when(studentRepo.save(any(Student.class), eq("John Doe"))).thenReturn(student);
+  Student returnedStudent = studentRepo.save(student, "John Mash");
+  System.out.println(returnedStudent);
+  }
 ```
 
 **Output:**
@@ -260,12 +260,12 @@ Let us say that we want to stub our `save` method which is defined as follows:
 
 ```java
 public void save(Student student, String name) throws Exception {
-    if (student == null){
-        throw new NullPointerException("student object cannot be null");
-    }
-    log.info("Student {} saved into the database", name);
-    database.put(student.getId(), student);
-}
+  if (student == null) {
+  throw new NullPointerException("student object cannot be null");
+  }
+  log.info("Student {} saved into the database", name);
+  database.put(student.getId(), student);
+  }
 ```
 
 The `save` method takes accepts two parameters - a `Student` object and a `String`.
