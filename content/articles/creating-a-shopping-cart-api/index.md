@@ -1,8 +1,8 @@
 Building a dynamic web app, website, android for mobile or IOS requires the consumption of APIs(Application Programming Interface), most company provides API for carrying out some task, such as building an eCommerce web app, you will call consume an API from the central bank of your country or some established applications like PayPal, Paystack, etc.
 <!--More -->
 ### Introduction
-In this tutorial I will guide you through building a basic shopping cart API, this shopping cart shows how an actual shopping cart functions.
-In a real web app, you will be consuming APIs into this code that I have created but for now, we have to use actual value as the amount in the shopping cart.
+In this tutorial, I will guide you through building a basic shopping cart API. This shopping cart shows how an actual shopping cart functions.
+In a real web app, you will be consuming APIs into this code that I have created, but for now, we have to use actual value as the amount in the shopping cart.
 You can always visit this link [Github](https://github.com/kingsleynwafor54/shopping_cart_with_springboot) to review the code base and check the disparity between yours and the tutorial.
 #### Prerequisite
 1. Intermediate knowledge of Java
@@ -15,7 +15,7 @@ You can always visit this link [Github](https://github.com/kingsleynwafor54/shop
 3. To enable beginners to code to interface
 4. To enable the reader always to write unit tests on every line of code
 #### Setting Your Spring boot
-Firstly go to [Spring Boot Initializer](https://start.spring.io/), there you will download a full project with the basic dependencies. The Dependencies for this project are not much, below is a list of what you will fill.
+Firstly go to [Spring Boot Initializer](https://start.spring.io/), there you will download a full project with the basic dependencies. The Dependencies for this project is not much, below is a list of what you will fill.
 1. Project -> Maven Project
 2. Language -> Java
 3. Spring boot-> don't use the one with a snapshot, better still use the default 
@@ -35,7 +35,7 @@ For the sake of this tutorial, we will focus on @Data. This annotation comprises
 9. Packaging -> Jar
 10.Java-> 11 or anyone you choose, better still choose the default.
 #### Creating Your Entities/Models
-Here you create the entities that will relate to the database or the data structure you are mapping your object to if you are not using a database. Before we view the code base of creating our entities let's view what the structure of the entire application will look like![Package Structure](shoppingapplication.JPG)
+Here you create the entities that will relate to the database or the data structure you are mapping your object to if you are not using a database. Before we view the code base of creating our entities let's view what the structure of the entire application will look like![Package Structure](shopping_application.JPG)
 Here you can see the various classes in the package
 ![Class Structure](shoppingcart2.JPG).
 In our models we have the following classes:
@@ -107,9 +107,9 @@ public class Product {
     }
 }
 ```
-In the model package as stated early in the image provided above, you should have these classes in it. These classes provide the feature, attribute or field we will be needing for the creation of objects.
+In the model package as stated early in the image provided above, you should have these classes in it. These classes provide the feature, attribute, or field we will be needing for the creation of objects.
 #### Creating Your Repository
-The importance of creating a repository is to map your entity to the database. Creating a repository helps you communicate with the database, it's like you having your database in you code for easy access. Spring-book provides the @Repository annotation that helps the compiler know that this is a gateway to the database.
+The importance of creating a repository is to map your entity to the database. Creating a repository helps you communicate with the database, it's like you have your database in your code for easy access. Spring-book provides the @Repository annotation that helps the compiler know that this is a gateway to the database.
 In the repository package we have the following:
 AdminDao
 CustomerDao
@@ -592,7 +592,7 @@ public class customerTest {
 #### Conclusion
 In the end, we've seen how to code to an interface, how to write a unit test, how to create an endpoint, and also how we used postman to view our endpoint. 
 Also, we discussed how we used field dependency injection and not constructor dependency injection which will still suffice, we also took a deep dive into creating APIs that adds and also get customers, admins, then we also added products to our cart and the cart could calculate the cost of products in the cart since the products have an attribute of price.
-In this tutorial, we didn't integrate any other API for an actual business transaction that either works with your bank account or your credit card, hopefully, we'll work on that in the next tutorial and the use of an actual database that could be used in the real-life event.
+In this tutorial, we didn't integrate any other API for an actual business transaction that either work with your bank account or your credit card, hopefully, we'll work on that in the next tutorial and the use of an actual database that could be used in the real-life event.
 Once again you can check [Github](https://github.com/kingsleynwafor54/shopping_cart_with_springboot) for more on the entire code structure in case you want to save time from copying code or you have an error maybe you miss-spelled or you didn't add a certain dependency etc. Thanks for staying with me all the way, do have a nice time.
 #### Referrence
 [Rapidapi](https://rapidapi.com/section.io/api/section-io/details)
