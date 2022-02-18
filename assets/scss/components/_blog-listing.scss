@@ -25,10 +25,6 @@
         padding: 20px 45px;
         width: 100%;
 
-        // &.-active {
-        //   @include button-green;
-        // }
-
         @include mq($from: $breakpoint-small) {
           width: 20%;
         }
@@ -40,10 +36,6 @@
         padding: 20px 45px;
         width: 100%;
         text-decoration: none;
-
-        // &.-active {
-        //   @include button-blue;
-        // }
 
         @include mq($from: $breakpoint-small) {
           width: 20%;
@@ -117,7 +109,6 @@
 
   &-posts-item {
     border-top: 1px solid $border-color;
-    margin: 0 5%;
 
     @include mq($from: 1020px ) {
       margin: 0;
@@ -147,6 +138,10 @@
 
       @include mq($from: $breakpoint-medium) {
         max-width: calc(67% - 145px);
+      }
+
+      @include mq($to: $breakpoint-medium) {
+        max-width: 100%;
       }
     }
 
@@ -190,6 +185,7 @@
         border-left: 0;
         height: 100%;
         margin-top: 20px;
+        background-color: $fill-dark-80;
 
         .data-point {
           flex-direction: row;
@@ -203,6 +199,12 @@
             border-right: 1px #d8d8d8 solid;
           }
         }
+      }
+
+    }
+    @include mq($to: $breakpoint-medium) {
+      &:hover {
+        box-shadow: unset;          
       }
     }
   }
