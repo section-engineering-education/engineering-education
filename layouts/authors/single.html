@@ -90,20 +90,21 @@
       <ul class="list-unstyled xs-mb-80">
 
         {{ $author := path.Base .Permalink}}
-
-        {{ range (where (where .Site.Pages "Params.layout" "engineering-education") ".Params.author" $author) }}
-
+        {{ $hyvorId := $.Site.Params.hyvorId }}
+        
+        {{ range $elem_index, $elem_val := (where (where .Site.Pages "Params.layout" "engineering-education") ".Params.author" $author) }}
+        
         <script defer type="text/javascript">
-          fetch('https://talk.hyvor.com/api/v1/page/?page_identifier=http:{{ .Permalink }}&website_id=5716')
+          fetch('https://talk.hyvor.com/api/v1/page/?page_identifier={{ .Permalink }}&website_id={{ $hyvorId }}')
             .then(response => response.json())
             .then(data => {
               console.log(data);
               if (data.status === true) {
-                const comments = document.getElementById('comments-count');
-                comments.innerText = data.data.comments_count;
-                document.getElementById('likes-count').innerText = data.data.reactions[0];
+                document.getElementById('comments-count-{{ $elem_index }}').innerText = data.data.comments_count;
+                document.getElementById('likes-count-{{ $elem_index }}').innerText = data.data.reactions[0];
               }
             })
+            .catch(err => console.log('Error: ', err))
         </script>
         
         <li class="blog-listing-posts-item mix {{ with .Params.tags }}{{ range . }}{{ lower . }} {{ end }}{{ end }}">
@@ -132,8 +133,8 @@
             </div>
 
             <div class="insights-data">
-              <div>Comments: <span id="comments-count"></span></div>
-              <div>Likes: <span id="likes-count"></span></div>
+              <div>Comments: <span id="comments-count-{{ $elem_index }}">0</span></div>
+              <div>Likes: <span id="likes-count-{{ $elem_index }}">0</span></div>
             </div>
 
           </a>
