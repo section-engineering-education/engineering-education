@@ -11,12 +11,12 @@ topics: [Languages]
 excerpt_separator: <!--more-->
 images:
 
-  - url: /encapsulation-in-c-plus/hero.jpeg
+  - url: /encapsulation-in-c-plus-plus/hero.jpeg
     alt: Encapsulation in C++ Hero Image
 ---
 Encapsulation is the method of grouping data and features into a single part. 
 This part is known as a **class**. It is done to protect straightforward access to the data. 
-
+<!--more-->
 Encapsulation is one of the **Object-Oriented Programming (OOPs)** features.
 Construction of user-limited classes in **C++** supports encapsulation and data hiding. 
 
