@@ -181,15 +181,17 @@ class HackerNewsID(models.Model):
 #### Making cron jobs
 Here, we will make the cron job class. This class is required by the `django_cron` library to run every minute(s) as configured in the code below.
 
-The code snippet below describes the cron job class together with the method that will be called whenever the above command is executed.
+The code snippet below describes the cron job class together with the method that will be called whenever the command below is executed.
 
-<!-- which is the above command? mention it. -->
+```bash
+python manage.py runcrons
+```
+--- 
 
 ```python
 from django_cron import CronJobBase, Schedule
 import requests
 from .models import HackerNewsID
-
 
 class MyCronJob(CronJobBase):
     RUN_EVERY_MINS = 5 # every 5 minutes
@@ -259,7 +261,7 @@ from .models import HackerNewsID
 class NewsIdView(APIView):
   permission_classes = [AllowAny]
 
-# GET a list of all news ids from hackernews
+# get a list of all news ids from hackernews
   def get(self, request, format=None):
 
     NEWS_URL = 'https://hacker-news.firebaseio.com/v0/topstories.json?print=pretty'
@@ -309,7 +311,7 @@ class NewsItemView(ListAPIView):
     return result
 
 
-# GET the latest hackernews streamed
+# get the latest hackernews streamed
   def get(self, request, format=None):
     return Response(self.get_data_from_API(),status=status.HTTP_201_CREATED)
 ```
@@ -372,7 +374,7 @@ python manage.py runserver
 
 - Note: Now open <http://127.0.0.1:8000/admin> in your browser and log in.
 
-Running the command showcased below will perform the API requests to the external endpoints from the cron class. This is to cycle through the endpoints inside the `cron.py` class and execute the `do()` method. By doing this, the latest `ids` generated will be added to the application database.
+Running the command showcased below will perform the API requests to the external enpoints from the cron class. This is to cycle through the endpoints inside the `cron.py` job class. By doing this, the latest `ids` generated wil be added to the application database.
 
 
 ```bash
