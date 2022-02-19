@@ -16,11 +16,11 @@ images:
 ---
 Image classification categorizes input images into their respective labels or categories. Most image classifications usually have only two classes for example `cat` and `dog`. 
 <!--more-->
-In multi-class, we have three or more classes such as `lion`, `cheetah`, `leopard`, and `tiger`. Multi-class image classification categorizes an input image into one of the three or more classes.
+In a multi-class, we have three or more classes such as `lion`, `cheetah`, `leopard`, and `tiger`. Multi-class image classification categorizes an input image into one of the three or more classes.
 
-When doing multi-class classification, the predicted image belongs to only one class. An image can not belong to more than one class at the same time. 
+When doing a multi-class classification, the predicted image belongs to only one class. An image can not belong to more than one class at the same time. 
 
-We will use the `Deep AutoViML` library in building the model. Deep Autoviml is an Automated machine learning (AutoML) library that builds neural networks using [TensorFlow](https://www.tensorflow.org/) and [Keras](https://keras.io/).
+We will use the `Deep AutoViML` library in building the model. Deep AutoViML is an Automated Machine Learning (AutoML) library that builds neural networks using [TensorFlow](https://www.tensorflow.org/) and [Keras](https://keras.io/).
 
 In this tutorial, we will use Deep AutoViML to build a model that classifies images of hands playing the rock-paper-scissors game. The images have three classes: `rock`, `paper` and `scissors`.
 
@@ -57,13 +57,9 @@ Deep AutoViML can also automate NLP tasks. In this tutorial, we will be focusing
 1. Deep AutoViML uses Keras preprocessing layers to automate image preprocessing - Image preprocessing is an essential stage in image classification. It converts the images into a format the neural network can understand and use.
 
 The most common image preprocessing activities are as follows:
-
 - [Image normalization](<https://en.wikipedia.org/wiki/Normalization_(image_processing)>) - Image normalization converts the range of an image's pixel intensity values to a user-defined range.
-
 - [Image resizing](https://en.wikipedia.org/wiki/Image_scaling) - Image resizing is the process of changing the image size. This enables the resized image to fit into the neural network you are building.
-
 - [Image standardization](https://towardsdatascience.com/normalization-vs-standardization-which-one-is-better-f29e043a57eb) - Changing the image pixels to meet the required standards so that the image can have uniform heights and widths.
-
 - [Image scaling](https://en.wikipedia.org/wiki/Image_scaling) - This process converts the image to a user set scale.
 
 These processes are very important, to understand them in detail, read this [article](/engineering-education/image-preprocessing-in-python/). These processes provide an image that is ready for use.
@@ -86,7 +82,7 @@ To use this library, we install it using the following command:
 !pip install deep_autoviml --upgrade
 ```
 
-After the installation process, let's now import the `deep_autoviml` using the following code:
+After the installation process, let us now import the `deep_autoviml` using the following code:
 
 ```python
 from deep_autoviml import deep_autoviml as deepauto
@@ -95,7 +91,7 @@ from deep_autoviml import deep_autoviml as deepauto
 ### Using GPU
 GPUs are much faster than CPUs. Since we are dealing with an image classification problem, we initialize the GPU. We will also monitor its performance. 
 
-To use Google Colab's GPU, follow these steps:
+To use Google Colab's GPU, follow the steps below:
 
 1. Click the `Runtime` option.
 
@@ -115,7 +111,7 @@ To manage and monitor this GPU, we will use `Nvidia-smi`:
 !nvidia-smi
 ```
 
-Let's now use `deep_autoviml` and `Nvidia-smi` to build the multi-class image classification model. First, we download the images dataset.
+Let us now use `deep_autoviml` and `Nvidia-smi` to build the multi-class image classification model. First, we download the images dataset.
 
 ### Images dataset
 The image dataset has three classes: `rock`, `paper`, and `scissors`. To get the hand gestures dataset, click [here](https://www.kaggle.com/drgfreeman/rockpaperscissors/download).
@@ -250,7 +246,7 @@ The `MobileNet` model uses images that are 244 by 244 pixels. `img_channels = 3`
 Next, let us initialize the neural network.
 
 ### Initializing the neural network
-We initialize the neural networks using the following code:
+We initialize the neural networks using the code below:
 
 ```python
 keras_model_type =  "image"
@@ -304,7 +300,7 @@ This output is shown in the image below:
 
 ![Training process](/engineering-education/multi-class-image-classifier-using-deep-autoviml/training-process.jpg)
 
-From the image above, we are using 1 physical GPU and 1 logical GPU. During these, the models learn from the images under the given image directory. 
+From the image above, we are using 1 physical GPU and 1 logical GPU. The models learn from the images under the given image directory. 
 
 The neural network iterates through the training dataset 3 times. It prints the accuracy score after each iteration. The final accuracy score is `0.96875`.
 
@@ -348,9 +344,9 @@ We have also achieved multi-class image classification. The model was able to cl
 ### Conclusion
 In this article, we have learned a multi-class image classifier using Deep AutoViML. We discussed the Deep AutoViML features used to build powerful deep learning models. 
 
-Using these features we were able to build a multi-class image classification model. The tutorial explains how to install and use Deep AutoViML in image classification.
+Using these features we were able to build a multi-class image classification model. The final model was able to classify images of hands playing the rock-paper-scissors game. 
 
-The final model was able to classify images of hands playing the rock-paper-scissors game. I hope you find this tutorial insightful.
+I hope you find this tutorial insightful.
 
 To get the complete Python code in Google Colab, click [here](https://colab.research.google.com/drive/1nqLKPj93fha33IK-R32WOFCw5yHwO5zl?usp=sharing)
 
