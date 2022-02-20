@@ -1,5 +1,21 @@
-Pandas profiling is a Python library that performs an automated Exploratory Data Analysis. It automatically generates a dataset profile report that gives valuable insights. For example, we can know which variables to use and which ones we can drop using the profile report.
+---
+layout: engineering-education
+status: publish
+published: true
+url: /machine-learning-using-pandas-profiling-and-scikit-learn-pipeline/
+title: Machine Learning using Pandas Profiling and Scikit-learn Pipeline
+description: In this tutorial, we will learn how to build a customer churn model using Pandas Profiling and Scikit-learn Pipeline.
+author: bravin-wasike
+date: 2022-02-20T00:00:00-08:11
+topics: [Machine Learning]
+excerpt_separator: <!--more-->
+images:
+  - url: /machine-learning-using-pandas-profiling-and-scikit-learn-pipeline/hero.jpg
+    alt: Machine Learning using Pandas Profiling and Scikit-learn Pipeline Hero Image
+---
 
+Pandas profiling is a Python library that performs an automated Exploratory Data Analysis. It automatically generates a dataset profile report that gives valuable insights. For example, we can know which variables to use and which ones we can drop using the profile report.
+<!--more-->
 A machine learning pipeline is used to automate the machine learning development stages. These stages are dataset ingestion, dataset preprocessing, feature engineering, model training, model evaluation, making predictions, and model deployment.
 
 A machine learning pipeline is made of multiple initialized steps. It uses the steps to automate the machine learning development stages. The steps are initialized in sequential order so that one's output is used as an input for the next. Therefore, the pipeline steps need to be well-organized for faster model implementation.
@@ -474,3 +490,5 @@ To access the complete Google Colab notebook for this tutorial, click [here.](ht
 - [Dataset standardization](https://towardsdatascience.com/what-is-feature-scaling-why-is-it-important-in-machine-learning-2854ae877048)
 - [Introductioon to Pandas Profiling](https://medium.com/@sandeep.panchal545/pandas-profiling-to-boost-exploratory-data-analysis-8e718238bcd1)
 
+---
+Peer Review Contributions by: [Jerim Kaura](/engineering-education/authors/jerim-kaura/)
