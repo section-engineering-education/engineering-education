@@ -1,7 +1,9 @@
 ### Introduction
-In programming, some problems seem to be so difficult for one to solve, but you don't have to worry about it. The way one can solve a big challenge in life which seems to be more complicated is by just taking a simple move towards the solution of the problem which is the same way a computer works. The computer takes complex problems and then it breaks them into simpler pieces from which, functions that lead to answers take over(are implemented).
+Some issues in programming appear to be insurmountable, but you need not be concerned. The same way a computer works, one can overcome a large obstacle in life that appears to be more complicated by simply taking a simple step toward the solution. Complex problems are broken down into smaller pieces by the computer, which is then passed on to functions that provide answers (are implemented).
+To execute all of this work well, one must first comprehend the `building blocks`. These building blocks will assist one in making various decisions in the program, for example, one may like to obtain a positive result while disregarding the negative one, or one may wish for the program to re-run a certain section of the code, necessitating the use of `control structures`. They will assist the program in choosing a specific path or direction, as a decision will be required. As a result, control structures will assess the variable and select the appropriate direction based on the parameter. As previously stated, we will introduce you to control structures in this article. Furthermore, we will give various examples of each statement for a better understanding of these control structures.
 
-To do all this work effectively, one has to understand **building blocks**. These building blocks will help one to make different decisions in the program since for instance, one could want to get an output that is on the positive side and ignore the negative one or he/she could want the program to re-run a specific part of the code hence there comes the need of **control structures**. They will help the program to take a certain path or direction since a decision will have to be made. So control structures will analyze the variable and choose the correct direction as per what the parameter says. In this article, we will get to introduce you to control structures as done above. Moreover, we will talk about the control statement offered in c#. Furthermore, we will give various examples of each statement for a better understanding of these control structures.
+**Prerequisites**
+For better understanding, one should have the basics of building blocks from the C & C++ programming language.
 
 ### Table of content
 - [Selection statements](#Selection-statements)
@@ -11,7 +13,7 @@ To do all this work effectively, one has to understand **building blocks**. Thes
 - [Jump statements](#Jump-statements)
 
 ### Selection statements
-First, of all, we need a recall of the definition of a statement. In programming statements can be instructions which are initiated by user. For instance ,
+First, of all, we need a recall of the definition of a statement. In programming, statements can be instructions that are initiated by the user. For instance,
 ```C#
 console.writeline("this is my statement");
 
@@ -22,11 +24,12 @@ In this sub-topic, we are going to look at;- if, else, else if and switch statem
 it has a specification where it only executes a true statement.
 
 **syntax**
+```C#
  if(condition)
  {
      statement;// it must be true
  }
-
+```
  example in form of a program
 
  ```C#
@@ -88,7 +91,7 @@ namespace MyApplication
 In the above program since the first statement doesn't meet the condition, the compiler will proceed to the next, which is 'else statement', and execute it.
 
 #### Else if statement
-For this statement to execute, the other above conditions  in that program (if condition) should be false.
+For this statement to execute, the other above conditions in that program (if condition) should be false.
 
 **syntax**
 ```C#
@@ -263,9 +266,9 @@ namespace MyApplication
 }
 ```
 #### For loop.
- The good thing we for loop one can know easily how many times will the system iterate or at what point will it stop and give feedback.
+ The good thing about for loop one can easily know how many times will the system iterate or at what point will it stop and give feedback.
 
- **syntax**
+**syntax**
 ```C#
 for(initialization;condition; increment/decrement)
 {
@@ -295,7 +298,7 @@ namespace MyApplication
 **Explanation**
 We have first initialized our 'j' to be equal to 10, then the condition is that 'j' can be valued between 9 and 15 since 10 is already involved, so it will output values from 10 to 14.
 
-#### Jump statements
+### Jump statements
 As the name suggests jump statements will transfer control from one place to another as per the condition. In this sub, the topic will learn some of the jump statements.
 
 #### Break statement
@@ -373,7 +376,7 @@ j value:9
  The above program will display 5 to 9 since 'j' we already initiated it and gave it 5 . Therefore the compiler will jump up to 10 since our goto statement directs to 10.
 
  #### continue statement.
- This kind of statements are mostly used in when a programmers wants the program to skip a certain part of execution like  for example in loop statements.Here  once the compiler meets the continue statement, it jumps to  begin the loop again as per condition statement.
+ These kinds of statements are mostly used when a programmer wants the program to skip a certain part of execution like for example in loop statements. Here once the compiler meets the continue statement, it jumps to begin the loop again as per the condition statement.
 
  **example**
  ```C#
@@ -381,52 +384,52 @@ using System;
 
 class demo{
 
-	
-	public static void Main()// Main Method
-	{
-		
-		
-		for (int j = 1; j <= 7; j++) 
+  
+  public static void Main()// Main Method
+  {
+    
+    
+    for (int j = 1; j <= 7; j++) 
         {
 
-		
-			if (j == 3) // once the compiler reaches 3,it will skip it and continue with the next number after 3 which is 4
-				continue;
+    
+      if (j == 3) // once the compiler reaches 3,it will skip it and continue with the next number after 3 which is 4
+        continue;
 
-			Console.WriteLine(j); // j is values from 1 to 7 , when 3 is excluded
-		}
-	}
+      Console.WriteLine(j); // j is values from 1 to 7 , when 3 is excluded
+    }
+  }
 }
 ```
 #### Return statement.
-Usually  this statement  will terminate method execution as the contion statement. for example
+Usually, the return statement in C# is used to stop the execution of the method where it appears and return control to the calling function. for example
 ```C#
 using System;
 
 class demo {
 
 
-	static int sub(int b)
-	{
+  static int sub(int b)
+  {
 
-		int sub = b - b;
-		
-		// the return statement
-		return sub;
-	}
+    int sub = b - b;
+    
+    // the return statement
+    return sub;
+  }
 
-	// Main Method
-	static public void Main()
-	{
-		int number = 4;
+  // Main Method
+  static public void Main()
+  {
+    int number = 4;
 
-		//  now calling subtraction function
-		int result = sub(number);
-		Console.WriteLine("The answer is {0}", result);
-	}
+    //  now calling subtraction function
+    int result = sub(number);
+    Console.WriteLine("The answer is {0}", result);
+  }
 }
 ```
-The above program will return 0 since we have declared same number 4, threfore our answer will be 0.
+The above program will return 0 since we have declared the same number 4, therefore our answer will be 0.
  
 
 ### Conclusion
