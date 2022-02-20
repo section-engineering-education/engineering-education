@@ -1,29 +1,28 @@
-GraphQL is an open-source query language. It is intuitive and well-designed for building APIs. GraphQL is built around HTTP to set how you get and receive resources from a server. It gives you a single endpoint that allows you to determine what data you get back based on the query that you send to that endpoint. This gives you a more flexible way to interact with your server as compared with a REST API.
+GraphQL is an open-source query language. It is intuitive and well-designed for building APIs. It is built around HTTP to receive resources from a server. 
 
-A REST API is based on executing different endpoints to get specific data. This will also return extra information that you don't want at the moment. However, with GraphQL API, you only get data that is specified in a GraphQL query. This way, you only make a single request to the server that queries different resources and return the data you need. Unlike the REST API that sends different endpoints to different resources to return the same data.
+GraphQL gives you a single endpoint that allows you to determine what data you get back based on the query that you send to that endpoint. Therefore, it is a more flexible way to interact with your server than a REST API.
 
-This guide aims to introduce Rust developers to the concept of GraphQL. You will build a fully-functional application using GraphQL, Rust programming language, and MongoDB database.
+A REST API is based on executing different endpoints to get specific data, returning extra information that is not required. However, with GraphQL API, you only get data specified in a GraphQL query. This way, you only make a single request to the server that queries different resources and return the data you need. 
+
+This article aims to introduce Rust developers to the concept of GraphQL by building a fully-functional application using GraphQL, Rust programming language, and MongoDB database.
 
 ### Pre-requisites
-
 To follow along with this article, it is helpful to have the following:
-
 - [MongoDB](https://www.mongodb.com/try/download/community) installed on your computer.
 - How to use MongoDB database.
 - [Rust compiler](https://www.rust-lang.org/tools/install) installed on your computer.
 - Basic knowledge working with GraphQL, Rust, Juniper, and Actix framework.
 
 ### Setting up the application
-
-First, you need to set up a Rust application. Rust helps you create a basic Rust application template. To do this, run the following command to confirm that you have Rust installed:
+Run the following command to confirm that you have Rust installed:
 
 ```bash
 cargo -v
 ```
 
-If you don't get the current version of Rust you have installed, consider installing Rust before proceeding with this tutorial.
+If you do not get the current version of Rust, consider installing Rust before proceeding with this tutorial.
 
-Go ahead and create a project directory. Then launch a terminal that points to the created project directory. Finally, run the following command to initialize the Rust template project:
+Next, create a project directory, then launch a terminal that points to the created project directory. Finally, run the following command to initialize the Rust template project:
 
 ```bash
 cargo init
@@ -35,21 +34,21 @@ Test the default template project created by running the following command:
 cargo run
 ```
 
-The project will build and then log the `Hello, world!` text. This implies your Rust application is well set, and you can build the GraphQL server.
+The project will build and then log the `Hello, world!` text, implying that your Rust application is well set.
 
-To set this application stack, you will need a couple of dependencies that will help you set up a Rust server and communicate with the MongoDB database. These dependencies include:
+You will need a couple of dependencies to set up a Rust server and communicate with the MongoDB database. These dependencies include:
 
-- [Actix-Web framework](https://crates.io/crates/actix-web): This is a Rust framework that helps you set up and manage a Rust HTTP server.
-- [Dotenv](https://crates.io/crates/dotenv): To connect to a MongoDB database, you will need to set up environment variables that host the MongoDB connection parameters, such as MongoDB connection URL. Dotenv is used to load the environmental variables to project files.
-- [Features](https://doc.rust-lang.org/cargo/reference/features.html): For handling asynchronous calls to MongoDB.
-- [MongoDB](https://crates.io/crates/mongodb): This guide uses the MongoDB database. Thus, you need a MongoDB driver to communicate between the GraphQL server and the MongoDB database.
-- [serde_json](https://crates.io/crates/serde_json): When sending data to MongoDB, you need to serialize it to JSON format. In this case, use serde_json to get the GraphQL API requests and convert the data being sent into JSON format.
-- [Juniper framework](https://docs.rs/juniper/latest/juniper/): This is a GraphQL server framework for the Rust programming language. Juniper will help you write a GraphQL server in Rust. It provides type-safe GraphQL APIs and convenient schemas definitions for Rust.
-- [Tokio](https://crates.io/crates/tokio): For handling asynchronous calls.
+- [Actix-Web framework](https://crates.io/crates/actix-web) to set up and manage a Rust HTTP server.
+- [Dotenv](https://crates.io/crates/dotenv) to connect to a MongoDB database, you will need to set up environment variables that host the MongoDB connection parameters, such as MongoDB connection URL. Dotenv is used to load the environmental variables to project files.
+- [Features](https://doc.rust-lang.org/cargo/reference/features.html) for handling asynchronous calls to MongoDB.
+- [MongoDB](https://crates.io/crates/mongodb). You need a MongoDB driver to communicate between the GraphQL server and the MongoDB database.
+- [serde_json](https://crates.io/crates/serde_json). When sending data to MongoDB, you need to serialize it to JSON format. In this case, use serde_json to get the GraphQL API requests and convert the data being sent into JSON format.
+- [Juniper framework](https://docs.rs/juniper/latest/juniper/). This is a GraphQL server framework for the Rust programming language. Juniper will help you write a GraphQL server in Rust. It provides type-safe GraphQL APIs and convenient schemas definitions for Rust.
+- [Tokio](https://crates.io/crates/tokio) for handling asynchronous calls.
 
 To use the above dependencies, make sure they are available in your project. Navigate to the `Cargo.toml` file in the project root directory and update is as follows:
 
-```rust
+```Rust
 [dependencies]
 juniper = "0.13.1"
 dotenv = "0.9.0"
@@ -64,21 +63,22 @@ features = ["sync"]
 default-features = false
 ```
 
-Then install them by running:
+Then install the dependencies by running the following command:
 
 ```bash
 cargo run
 ```
 
-The dependencies will be installed. This will still give you the output `Hello, world!` Since you have not added the code logic yet. This implies you are good to go to the next step.
-
 ### Setting up the schema
+A schema is a collection of fields specific to a data object. It defines the GraphQL API blueprint. A schema also defines types such as query and mutation. 
 
-Schema is a collection of fields that you want to interact with. They define the GraphQL API blueprint. A schema also defines types such as query and mutation. Query and mutation are requests a client makes to access the API data. A query type sets the API read operation. Its commonly known as the GET request, especially using the REST approach. A mutations type sets the API write operations, such as POST and PUT requests.
+Query and mutation are requests a client makes to access the API data. A query type sets the API read operation. 
 
-To set up these types and fields, head over to your project `src` directory and create a `schema.rs` file. This file will define the Todo fields, query, mutation, and handle the connection to the database. This is how you will do it:
+It is commonly known as the GET request, especially using the REST approach. A mutations type sets the API-write operations, such as POST and PUT requests.
 
-First, import `RootNode` from `juniper`. This will help you use juniper to write the GraphQL schema.
+To set up these types and fields, head over to your project `src` directory and create a `schema.rs` file. This file will define the Todo fields, query, mutation, and handle the connection to the database. 
+
+First, import `RootNode` from `juniper`. This module will help you use juniper to write the GraphQL schema.
 
 ```rust
 use juniper::{RootNode};
@@ -86,7 +86,7 @@ use juniper::{RootNode};
 
 Define the schema of the Todo fields:
 
-```rust
+```Rust
 struct Todo {
     id: i32,
     title: String,
@@ -124,7 +124,7 @@ The objects defined by the `Todo()` function set the fields that a client can re
 
 Define the root query and a `juniper` object for the root query. For now, use a query with dummy data and set up the MongoDB dynamic data later in this guide.
 
-```rust
+```Rust
 pub struct QueryRoot;
 
 #[juniper::object]
@@ -150,7 +150,7 @@ impl QueryRoot{
 
 Define the root mutation and the structure for adding new todo, using the `GraphQLInputObject`.
 
-```rust
+```Rust
 pub struct MutationRoot;
 
 #[derive(juniper::GraphQLInputObject)]
@@ -161,7 +161,7 @@ pub struct NewTodo{
 }
 ```
 
-The `GraphQLInputObject` sets the objects a client needs to use when creating a new todo. Each new todo will have a `title`, `description`, and `completed`. This sets the structure that mutation requires to write data to a GraphQL server.
+The `GraphQLInputObject` sets the objects a client needs to use when creating a new todo. For example, each new todo will have a `title`, `description`, and `completed`. In addition, this object sets the structure that mutation requires to write data to a GraphQL server.
 
 Define the juniper object for the mutation:
 
@@ -183,7 +183,7 @@ This object returns the records set by the mock query set earlier.
 
 The scheme is now set and ready to be executed. Go ahead and define a function to create the schema:
 
-```rust
+```Rust
 pub type Schema = RootNode<'static, QueryRoot, MutationRoot>;
 
 pub fn create_schema() -> Schema {
@@ -191,18 +191,17 @@ pub fn create_schema() -> Schema {
 }
 ```
 
-At this point, your schema is now set up. The next step is to set up the routes.
-
 ### Setting up the routes
+To access any web-based API, you need to set up routes that will help you send and receive requests and responses, respectively. 
 
-To access any web-based API, you need to set up routes that will help you send and receive requests and responses, respectively. This GraphQL API will have the following two routes:
+This GraphQL API will have the following two routes:
 
 - `/graphql`: For executing the queries and mutation.
 - `/graphiql`: For loading the GraphQL playground to execute queries and mutations.
 
 To set up these routes, navigate to your `main.rs` and start by updating your modules and dependencies imports as follows:
 
-```rust
+```Rust
 #[macro_use]
 extern crate juniper;
 
@@ -301,7 +300,7 @@ fn graphiql() -> HttpResponse {
 }
 ```
 
-The `graphiql()` function simply gets the HTML content that executes the GraphQL playground and renders it to the browser. This creates an interactive interface that allows you to execute your API queries and mutations.
+The `graphiql()` function gets the HTML content that executes the GraphQL playground and renders it to the browser. This process creates an interactive interface that allows you to execute your API queries and mutations.
 
 You can now test out the development server using the following Cargo command:
 
@@ -309,13 +308,11 @@ You can now test out the development server using the following Cargo command:
 cargo run
 ```
 
-The project should run and expose port `8080` on your localhost.
-
-You can now access the GraphQL playground using the `http://localhost:8080/graphiql` route from your browser.
+The project should run and expose port `8080` on your localhost. You can now access the GraphQL playground using the `http://localhost:8080/graphiql` route from your browser.
 
 Write a query on the GraphQL playground to get the todos:
 
-```rust
+```Rust
 query GetTodos {
   todos{
     id
@@ -326,7 +323,7 @@ query GetTodos {
 }
 ```
 
-Hit the play button at the center, and you should be able to visualize the results as below:
+Hit the play button at the centre, and you should be able to visualize the results as below:
 
 ![mock-mutation](/engineering-education/write-a-rust-graphql-server-with-mongodb-juniper-and-actix-web/mock-query.png)
 
@@ -348,17 +345,16 @@ mutation CreateTodo{
 }
 ```
 
-Feel free to change the title and the description. Hit the play button at the center and observe the results.
+Feel free to change the title and the description. Then, hit the play button at the centre and observe the results.
 
 ![mock-mutation](/engineering-education/write-a-rust-graphql-server-with-mongodb-juniper-and-actix-web/mock-mutation.png)
 
 The next step will now involve setting up a database.
 
-### Setting up the MongoDB database
+### Setting up the MongoDB Database
+The above example uses dummy data to run the queries and mutations. First, let us set a MongoDB database and execute the API with dynamic data.
 
-The above example uses dummy data to run the queries and mutations. Let's now set a MongoDB database and execute the API with dynamic data.
-
-Create a `.env` at the root of the project. In this file, specify the MongoDB database URL. This specifies the URL that allows your application to connect to MongoDB and create your database on the fly.
+Create a `.env` at the root of the project. In this file, specify the MongoDB database URL. This specifies the URL that allows your application to connect to MongoDB and create your database.
 
 ```rust
 MONGODB_URL="mongodb://localhost:27017/test"
@@ -393,7 +389,9 @@ struct Todo {
 }
 ```
 
-This defines the `Debug`, `Serialize`, and `Deserialize` properties on a todo. Since you will be working with `MongoDB`, you will also remove the `id` property. MongoDB will auto-create it whenever you add a new todo.
+This code snippet defines the `Debug`, `Serialize`, and `Deserialize` properties on a todo. 
+
+Since you will be working with `MongoDB`, you will also remove the `id` property. MongoDB will auto-create it whenever you add a new todo.
 
 Define a function that establishes database connection:
 
@@ -409,9 +407,8 @@ fn connect_to_db()-> FieldResult<Client> {
 }
 ```
 
-### Running queries
-
-Now replace the mock todos You were fetching locally with todos to be fetched from the database. Therefore, you will make the following changes to the `schema.rs` file and replace the dummy todos data. Navigate to `QueryRoot` and edit `todos()` function as follows:
+### Running the Queries
+Replace the mock todos you were fetching locally with todos to be fetched from the database. Therefore, you will make the following changes to the `schema.rs` file and replace the dummy todos data. Navigate to `QueryRoot` and edit `todos()` function as follows:
 
 ```rust
 fn todos() -> FieldResult<Vec<Todo>> {
@@ -434,11 +431,8 @@ fn todos() -> FieldResult<Vec<Todo>> {
  }
 ```
 
-### Running mutation
-
-Use dynamic mutation and write data to MongoDB using this GraphQL API. As we said, a mutation offers write operation to a GraphQL server. This application will involve adding new todos.
-
-The API was returning mock todos, and now you can send new todos values and save them in the database. Therefore, in your `schema.rs` file, navigate to the `MutationRoot` and edit `create_todo()` as follows:
+### Running the Mutation
+ As we said, a mutation offers write-operation to a GraphQL server. Previously, the API was returning mock todos, but now you can send new todos values and save them in the database. Therefore, in your `schema.rs` file, navigate to the `MutationRoot` and edit `create_todo()` as follows:
 
 ```rust
 fn create_todo(new_todo: NewTodo) -> FieldResult<Todo> {
@@ -467,7 +461,7 @@ fn create_todo(new_todo: NewTodo) -> FieldResult<Todo> {
 }
 ```
 
-At this stage, whenever a new todo is sent, it will be saved on the database. To test this, stop your running development server using `CTRL + C`, and restart using the cargo command:
+At this stage, whenever a new todo is sent, it will be saved to the database. To test this, stop your running development server using `CTRL + C` and restart using the cargo command:
 
 ```bash
 cargo run
@@ -488,7 +482,8 @@ Once the server is up and running, open GraphQL playground `http://localhost:808
 ![getting_todos_mongodb_response](getting-todos-mongodb-response.png)
 
 ### Conclusion
+APIs power many world applications. These APIs must have the capacity to deliver data of all shapes, capabilities, and sizes. 
 
-APIs power many world applications. These APIs must have the capacity to deliver data of all shapes, capabilities, and sizes. Exposing APIs with GraphQL enables clients to access this data in different formats and only request the data they data. This allows them to access the API data fast and flexibly.
+Exposing APIs with GraphQL enables clients to access this data in different formats and only request the information they need, allowing them to access the API data fast and flexibly.
 
-I hope you found this Rust MongoDB GraphQL API helpful! Check the code used in this tutorial on [GitHub](https://github.com/Catemacharia/Rust-GraphQL-Server-With-MongoDB-Juniper-and-Actix-Web).
+Check the code used in this tutorial on [GitHub](https://github.com/Catemacharia/Rust-GraphQL-Server-With-MongoDB-Juniper-and-Actix-Web).
