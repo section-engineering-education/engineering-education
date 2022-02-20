@@ -6,7 +6,7 @@ url: /social-authentication-with-djoser-in-react-applications/
 title: React Social Authentication using Djoser and Django
 description: Djoser is a powerful authentication library. This article will walk the reader through creating an application that handles Google social authentication with Django and React.
 author: john-kiguru
-date: 2022-02-10T00:00:00-12:00
+date: 2022-02-20T00:00:00-10:00
 topics: [Languages]
 excerpt_separator: <!--more-->
 images:
@@ -14,13 +14,13 @@ images:
  - url: /engineering-education/social-authentication-with-djoser-in-react-applications/hero.png
    alt: Social authentication using Djoser and Django Hero Image
 ---
-### Introduction
 Djoser is a powerful authentication library. It offers registration, account activation, login, password reset, and logout features.
 <!--more-->
+### Introduction
 Djoser offers social authentication, which will be the main focus of this article. We will create an application that handles Google social authentication with a Django backend and a React frontend.
 
 ### Prerequisites
-The reader should have the following to follow along with this article:
+The reader should have these prerequisites to follow along with this article:
 1. Python installed on your machine.
 2. Installed `django`, `djangorestframework`, `djangorestframework-simplejwt`, `djoser`, `social-auth-app-django`, `django-cors-headers`. You can install them using `pip`.
 3. Have `npm` installed for our frontend part.
@@ -28,7 +28,7 @@ The reader should have the following to follow along with this article:
 ### Getting started
 Start by creating a new directory, then run `django-admin startapp backend` under this directory to create a new Django application called `backend`. 
 
-`Djoser` works with a custom user model in a Django application,  so let us create a new app inside our project to contain the custom user model. First, navigate the backend folder and run `python3 manage.py startapp users`.
+`Djoser` works with a custom user model in a Django application, so let us create a new app inside our project to contain the custom user model. Navigate the backend folder and run `python3 manage.py startapp users`.
 
 We need to extend the default User model that comes with Django. In the `users` folder, edit the `models.py` as shown:
 
@@ -182,19 +182,13 @@ SOCIAL_AUTH_GOOGLE_OAUTH2_SCOPE = [
 SOCIAL_AUTH_GOOGLE_OAUTH2_EXTRA_DATA = ['first_name', 'last_name']
 ```
 
-We have listed all the apps required by our application in `INSTALLED_APPS`.
+We have listed all the apps required by our application in `INSTALLED_APPS`. Next, we specified the `User` model needed for the authentication and set up the middleware for `CORS` and `django_social`.
 
-Next, we specified the `User` model needed for the authentication and set up the middleware for `CORS` and `django_social`.
+Then we specified the allowed site origins to access our application. This case will be `localhost:3000` because we will work with React later.
 
-Next, we specified the allowed site origins to access our application. This case will be `localhost:3000` because we will work with React later.
+Then, we made the settings for Django REST Framework and Django REST simple-jwt. Notice the allowed redirect URLs part. These URLs should be similar to those we will set up for the application in the Google cloud console. 
 
-Then, we made the settings for Django REST Framework and Django REST simple-jwt.
-
-Notice the allowed redirect URLs part. These URLs should be similar to those we will set up for the application in the Google cloud console. 
-
-We will implement Google for the authentication, so we also need the `ModelBackend` to log into the admin panel.
-
-Then, we set up settings for `SOCIAL_AUTH_GOOGLE_OAUTH2_KEY`, `SOCIAL_AUTH_GOOGLE_OAUTH2_SECRET`.
+We will implement Google for the authentication, so we also need the `ModelBackend` to log into the admin panel. Then, we set up settings for `SOCIAL_AUTH_GOOGLE_OAUTH2_KEY`, `SOCIAL_AUTH_GOOGLE_OAUTH2_SECRET`.
 
 Now we need to configure URLs to make the backend application work.
 
@@ -216,17 +210,17 @@ Run `python3 manage.py makemigrations` and `python3 manage.py migrate` to finish
 ### Creating Google OAuth credentials
 Visit [Google Cloud Plaform](https://console.developers.google.com/) and create a new project as follows:
 
-![Create Project](/engineering-education/content/articles/social-authentication-with-Djoser-in-react-applications/create_new_project_google_console.png)
+![Create Project](/engineering-education/social-authentication-with-djoser-in-react-applications/create-new-project-google-console.png)
 
 With the project selected, click `Credentials` and then click `OAuth Client ID` after navigating to create credentials.
 
-![Create OAuth Client ID](/engineering-education/content/articles/social-authentication-with-Djoser-in-react-applications/creating_oauth_client_id.png)
+![Create OAuth Client ID](/engineering-education/social-authentication-with-djoser-in-react-applications/creating-oauth-client-id.png)
 
 You may need to set up OAuth consent, so select web application then enter `http://127.0.0.1:3000` for authorized JavaScript origins.
 
 Fo the authorized redirect, URIs have these URLs: `http://127.0.0.1:3000`, `http://127.0.0.1:3000/home`, and `http://127.0.0.1:3000/login`
 
-![Set up the uris](/engineering-education/content/articles/social-authentication-with-Djoser-in-react-applications/setting_up_the_uris.png)
+![Set up the uris](/engineering-education/social-authentication-with-djoser-in-react-applications/setting_up_the_uris.png)
 
 After you click create, you will get your `client id` and `client secret`, which you will use in your `settings.py`  as follows:
 
@@ -512,7 +506,7 @@ export default App;
 
 Use the command `npm start` to see this welcome page:
 
-![Home Page](/engineering-education/content/articles/social-authentication-with-Djoser-in-react-applications/home_page.png)
+![Home Page](/engineering-education/social-authentication-with-djoser-in-react-applications/home_page.png)
 
 You should also be able to navigate to login and signup pages.
 
@@ -1003,11 +997,11 @@ Next, we check if a user is authenticated and, if so, log the user out; otherwis
 
 The logout function is called when a user clicks the Logout link. You should now be able to authenticate using a Google account.
 
-![Authenticating using Google](/engineering-education/content/articles/social-authentication-with-Djoser-in-react-applications/authenticating_with_google.png)
+![Authenticating using Google](/engineering-education/social-authentication-with-djoser-in-react-applications/authenticating_with_google.png)
 
 You will be redirected to the home page with the option of logging out.
 
-![The home page after authentication](/engineering-education/content/articles/social-authentication-with-djoser-in-react-applications/home_page_after_authentication.png)
+![The home page after authentication](/engineering-education/social-authentication-with-djoser-in-react-applications/home_page_after_authentication.png)
 
 Notice that the user remains authenticated as long as they have signed in to their Google account. This way, the user does not have to keep entering the email and password every time they want to log in. 
 
