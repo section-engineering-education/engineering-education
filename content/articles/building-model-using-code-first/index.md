@@ -10,13 +10,13 @@ In this article, we’ll learn how to build a domain model for our API using the
 ### Table of contents.
 - [Prerequisites](#prerequisites)
 - [Setting up the project](#setting-up-the-project)
-- [Setting up the domain model](#setting-up-the-domain-model)
+- [Setting up the domain model](#domain-model-setup)
 
-- [Adding new classes](#Adding-new-classes)
-    - [The best way to name migrations](#The-best-way-to-name-migrations)
+- [Adding new classes](#adding-new-classes)
+    - [The best way to name migrations](#the-best-way-to-name-migrations)
     - [How to populate a database table with data using code-first](#how-to-populate-a-database-table-with-data-using-code-first)
 
-- [Modifying an existing class](#modifying-an-existing-class.)
+- [Modifying an existing class](#modifying-an-existing-class)
     - [Adding a new property](#adding-a-new-property)
     - [Modifying an existing property](#modifying-an-existing-property)
     - [Deleting an existing property](#deleting-an-existing-property)  
@@ -609,11 +609,9 @@ With this, let us run this migration on the database.
 ![CodeFirst Database Tables](/engineering-education/building-model-using-code-first/db.png) 
 
 ### Adding new classes.
-
 In visual studio, we are going to create a new class called `Category.cs`. We will assign each course to a category. E.g. web development, mobile development, programming language, etc. 
 
 Inside our `Models` folder, we create a new class called `Category.cs`. This class will have the properties, `Id` and `Name`. The `Id` will be the primary key. 
-
 When naming the primary key, we have two choices. The first option is to use the `Id` property. The second option is use the name of class plus Id. e.g. `Category_Id`. These two are the conventions that `EF-Core` understands. 
 
 Sometimes, one may want to use another property as your primary key and not follow the above convention. In this case, we can always override the conventions. We will discuss this later on. For now, let us keep it simple. Below is the code for the category class.
@@ -647,7 +645,7 @@ We shall go with the first option. Note, on the first option. We have done a sma
 1. Open `Package manager console`.
 
 2. Add a migration. While adding a migration we do give it a name. There are two ways of doing this. The first is giving your migration a `model-centric` name like `AddCategory`. The other method is giving your migration a `database centric` name like `AddCategoriesTable`. The recommended one is the `database-centric` name.
- 
+#### The best way to name migrations
 Why `database-centric` name? This is because most migrations are for modifying database objects. These objects do not have a representation in your model. For example, you may want to create a trigger or modify a stored procedure or a view. These objects do not have a representation in your model. They are database objects. 
 
 We will give our migration a `database-centric` name. In Package manager console, type `add-migration AddCategoriesTable`. Press Enter. 
