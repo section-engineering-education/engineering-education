@@ -9,7 +9,7 @@ To follow along with this tutorial, you need:
 - To have **Pycharm** installed on your computer. You can download it from [here](https://www.jetbrains.com/pycharm/download/).
 
 ### Noise model
-When a signal is transmitted over some distance, it is frequently contaminated by noise. The simplest model for the acquisition of noise is additive noise. The additive noise has the form:
+A signal is frequently contaminated by noise when transmitted over some distance. Additive noise is the simplest model for noise acquisition. The additive noise has the form:
 f'k = f(k) + n(k)
 Where: f'(k): Is the contaminated signal.
         f(k): Is the original signal.
@@ -22,10 +22,10 @@ The objective here is to remove noise(n(k)) from noisy audio signal(f'(k)) using
 
 ![Denoising Scheme](/engineering-education/wavelet-transform-analysis-of-1d-signals-using-python/wavelet-one.png)
 
-Here, the signal is first decomposed to detailed and approximated coefficients. Then, these coefficients are thresholded, and inverse wavelet transform is performed to the thresholded coefficients. Thresholding is a very simple non-linear technique that operates on one wavelet coefficient at a time. Finally, the inverse wavelet transform is done to give the original signal. In setting the threshold, we use some methods. These methods are such as universal threshold, Bayes, Sure minimax e.t.c.
+Here, the signal is first decomposed to detailed and approximated coefficients. Then, these coefficients are thresholded, and inverse wavelet transform is performed to the thresholded coefficients. Thresholding is a non-linear technique operating on each wavelet coefficient dependently. Finally, the inverse wavelet transform is done to give the original signal. In setting the threshold, we use some methods. These methods are such as universal threshold, Bayes, Sure minimax e.t.c.
 
 ### Scikit-image python package
-The scikit-image or scikit extends `scipy.ndimage` to provide a versatile set of image processing routines. It is written in the python language. It has a function library for wavelet-based denoising under restoration. Although it is mainly applicable for 2-D images, it can use it for 1-D signals. The good news is that the `scikit` image package is already available in anaconda. It means you do not need to install it separately.
+The scikit-image or scikit extends `scipy.ndimage`. It is for providing flexible routines of image processing. It is written in the python language. It has a function library for wavelet-based denoising under restoration. Although it is mainly applicable for 2-D images, it can use it for 1-D signals. The good news is that the `scikit` image package is already available in anaconda; thus no need of installing it.
 `Scikit` wavelet denoising includes two main functions. These functions are `estimate_sigma()` and `denoise_wavelet()`. For thresholding estimation, there are only two supported methods. They are:
 - Universal threshold(VishuShrink).
 - Bayes Shrink(this is the default method).
