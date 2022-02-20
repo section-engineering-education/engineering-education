@@ -6,14 +6,14 @@ A machine learning pipeline is made of multiple initialized steps. It uses the s
 
 Many libraries support the implementation of a machine learning pipeline. We will focus on the Scikit-Learn library. The library provides a Pipeline class that automates machine learning. We will build a customer churn model using Pandas Profiling and Scikit-learn Pipeline. 
 
-### Table of contents
+### Table of content
 - [Prerequisites](#prerequisites)
 - [How the Scikit-learn Pipeline works](#how-the-scikit-learn-pipeline-works)
 - [Transformers](#transformers)
 - [Estimators](#estimators)
 - [Benefits of using Scikit-learn Pipeline](#benefits-of-using-scikit-learn-pipeline)
 - [Dataset used](#dataset-used)
-- [Automated Exploratory Data Analysis using the Pandas Profiling](#automated-exploratory-data-analysis-using-the-pandas-profiling)
+- [Automated Exploratory Data Analysis with Pandas Profiling](#automated-exploratory-data-analysis-with-pandas-profiling)
 - [Overview](#overview)
 - [Variables](#variables)
 - [Interactions](#interactions)
@@ -90,28 +90,32 @@ After downloading the dataset, we load the dataset using Pandas. To import Panda
 ```python
 import pandas as pd
 ```
+
 We can use Pandas to load the dataset.
 
 ```python
 df=pd.read_csv("customer-churn-dataset")
 ```
+
 We will view the loaded dataset using this command:
 
 ```python
 df
 ```
+
 The output:
 
 ![Customer churn dataset](/engineering-education/machine-learning-using-pandas-profiling-and-scikit-learn-pipeline/customer-churn-dataset.jpg)
 
-Let us now start automated Exploratory Data Analysis using the Pandas Profiling.
+Let us now start automated exploratory data analysis using the Pandas Profiling.
 
-### Automated Exploratory Data Analysis using the Pandas Profiling 
-To install the Pandas Profiling library, use this code:
+### Automated Exploratory Data analysis with Pandas profiling 
+To install the Pandas Profiling library, use this command:
 
 ```bash
 !pip install -U pandas-profiling
 ```
+
 We will use Pandas Profiling to generate a profile report. The report will give the dataset overview and dataset variables.
 
 We generate the profile report using this code:
@@ -120,7 +124,9 @@ We generate the profile report using this code:
 profile = ProfileReport(df, title='Churn Data Report', explorative=True)
 profile.to_notebook_iframe()
 ```
+
 The title of the generated report will be `Churn Data Report`. The profile report will have the following sections:
+
 #### Overview
 The overview section produces the following output:
 
@@ -200,6 +206,7 @@ To add the X and y variables, use this code:
 X = df.drop(columns=['Churn'])
 y = df['Churn']
 ```
+
 From the code above, the `Churn` variable is the `y` variable, and the remaining variables are the `X` variable.
 
 ### Dataset splitting
@@ -208,11 +215,13 @@ Let us import the method used for dataset splitting.
 ```python
 from sklearn.model_selection import train_test_split
 ```
+
 We will split the dataset into two sets using the following code:
 
 ```python
 X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.30, random_state=124)
 ```
+
 We use `test_size=0.30` from the code above, which is the splitting ratio. 70% of the dataset will be for model training and 30% for model testing. 
 
 ### Variable types
@@ -224,6 +233,7 @@ We need to specify the columns that belong to these variable types. We use the c
 numeric_features = ['tenure', 'TotalCharges']
 categorical_features = ['SeniorCitizen', 'Partner', 'Dependents', 'PhoneService', 'InternetService','OnlineSecurity','OnlineBackup','DeviceProtection','TechSupport','StreamingTV','StreamingMovies','Contract']
 ```
+
 The code selects the columns that have categorical and numerical values.
 
 ### Selecting the unused columns
@@ -245,7 +255,9 @@ from sklearn.compose import ColumnTransformer
 from sklearn.impute import SimpleImputer
 from sklearn.preprocessing import StandardScaler, OneHotEncoder
 ```
+
 From the code above, we have imported the following transformer methods:
+
 **ColumnTransformer**
 It is a Scikit-learn class that applies the transformers to our columns. It also combines various transformers into a single transformer.
 **SimpleImputer**
@@ -269,6 +281,7 @@ The first transformer will drop the unused columns.
 ```python
 drop_transformer = ColumnTransformer(transformers=[('drop_columns', 'drop', drop_feat)], remainder='passthrough')
 ```
+
 The unused columns are in the `drop_feat` variable. The `remainder='passthrough'` will enable the model to use the remaining columns in the dataset.
 
 We will then add the `drop_transformer` to the `Pipeline` class. However, first, let us import the `Pipeline` class from Scikit-learn.
@@ -279,6 +292,7 @@ We import the `Pipeline` class as follows:
 ```python
 from sklearn.pipeline import Pipeline
 ```
+
 The `Pipeline` assembles all the initialized transformers and the final estimator. It then executes them as a single process to produce a final model. 
 
 To add the `drop_transformer`, use this code:
@@ -286,11 +300,13 @@ To add the `drop_transformer`, use this code:
 ```python
 pipeline = Pipeline([('drop_column', drop_transformer)])
 ```
+
 Next, we fit the pipeline.
 
 ```python
 pipeline.fit(X_train)
 ```
+
 It fits the model to the training set. It produces the following output:
 
 ![ColumnTransformer](/engineering-education/machine-learning-using-pandas-profiling-and-scikit-learn-pipeline/column-transformer.jpg)
