@@ -14,7 +14,7 @@ images:
   - url: /engineering-education/univariate-time-series-using-facebook-prophet/hero.jpg
     alt: Univariate Time Series using Facebook Prophet example image
 ---
-A time series is a collection of data points that occur in successive order over time. A time series shows factors that influence variables in a dataset.  Examples of time series data are stock prices, weather records, product sales, forex exchange, and health records.
+A time series is a sequence of data points that occur in successive order over time. A time series shows factors that influence variables in a dataset from period to period. Examples of time series data are stock prices, weather records, product sales, forex exchange, and health records.
 <!--more-->
 In stock investment, a time series model tracks the movement of stock prices and identifies patterns over a specified time. The model then predicts future stock prices based on previously historical/observed prices.
 
@@ -70,7 +70,7 @@ The image below shows an example of bivariate data:
 *Image Source: [GeeksforGeeks](https://www.geeksforgeeks.org/univariate-bivariate-and-multivariate-data-and-its-analysis/)*
 
 #### Multivariate data
-This data set contains more than two variables. Time series analysis of bivariate data is more complicated because we have to find the relationships among all the variables.
+This data set contains more than two variables. Time series analysis of multivariate data is more complicated because we have to find the relationships among all the variables.
 
 The image below shows an example of multivariate data:
 
@@ -81,12 +81,12 @@ The image below shows an example of multivariate data:
 ### Getting started with Facebook Prophet
 Facebook Prophet is an open-source library for forecasting time series data. It helps individuals and businesses analyze the market values and make future predictions.
 
-Facebook Prophet is performs forecasting using a decomposable additive model. The model has a non-linear trend that is fit with yearly, weekly, and daily seasonality and holiday effects.
+Facebook Prophet is performs forecasting based on decomposable additive model, where non-linear trends are fit with yearly, weekly, and daily seasonality, plus holiday effects.
 
 It decomposes time series data into the following components:
 
 #### Trend
-It is visible a pattern in data. A trend shows the long-term movement in the dataset. A trend can be upward (uptrend), downward(downtrend), or constant(horizontal). The trends in a dataset occur within a given time and then disappear.
+It is visible a pattern in data. A trend shows the long-term movement in the dataset. A trend can be upward (uptrend), downward(downtrend), or constant(horizontal). Trends usually happens for sometime and then disappears..
 
 The image below shows the three types of trends.
 
@@ -95,7 +95,7 @@ The image below shows the three types of trends.
 *Image Source: [Medium](https://miro.medium.com/max/1400/1*lmK4zwDN3AwyD8190xIdng.png)*
 
 #### Seasonality 
-It is the periodic changes in time series that occur within a given time. Seasonality can be daily, weekly, or yearly. For example, during winter, more winter clothes are sold. It keeps on repeating during this time.
+It is the periodic changes in time series that occur within a fixed time. Seasonality can be daily, weekly, or yearly. For example, during winter, more winter clothes are sold. Seasonality keeps happening within a fixed time period.
 
 The image below shows a seasonality pattern.
 
@@ -106,7 +106,7 @@ The image below shows a seasonality pattern.
 #### Holiday effect
 It is the recurring days and events in a time series dataset. It includes the occurrence of popular holidays such as Christmas and Valentine's day.
 
-For example,  during Valentine's day, more chocolates and flowers are sold. It keeps recurring every year.
+For example, during Valentine's day, more chocolates and flowers are sold. It keeps recurring every year.
 
 ### Benefits of using Facebook Prophet
 The following are the benefits of using Facebook Prophet in time series modeling.
@@ -190,7 +190,7 @@ The line graph:
 From the image above our dataset is on an uptrend. The number of airline passengers has been increasing over time.
 
 ### Changing the column names
-Facebook Prophets expects an input DataFrame with two columns named `ds` and `y`. `ds` column contains the dates of the time series and `y` has the times series values (data points).
+Facebook Prophets expects an input DataFrame with two columns named `ds` and `y`. `ds` column contains the dates/timestamp of the time series and `y` has the times series values (data points).
 
 ```python
 df.columns = ['ds','y']
@@ -275,22 +275,22 @@ model=Prophet()
 The `Prophet` class has initialized the model.
 
 #### Calling the fit method
-We call the `fit` method and pass the DataFrame as an input. The `fit` enables the model to find meaningful patterns in the data. This will aid the model in the forecasting of future values.
+We call the `fit` method and pass the Data Frame as an input. The `fit` enables the model to find meaningful patterns in the data. This will aid the model in the forecasting of future values.
 
 ```python
 model.fit(df)
 ```
 ### Making future predictions
-The process above has trained the model and is ready to make predictions. We use the model to forecast the airline passengers for the next 1000 days (1961-01-01 to 1963-08-28).
+The process above trains the model and it is ready to make predictions. We use the model to forecast the airline passengers for the next 1000 days (1961-01-01 to 1963-08-28).
 
-We need to provide the model with a new future DataFrame. It contains the number of days the model forecasts/predicts.
+We need to provide the model with a new future Data Frame. It contains the number of days the model forecasts/predicts.
 
 We use this code:
 
 ```python
 future_dates=model.make_future_dataframe(periods=1000, freq='M')
 ```
-To check the last five rows of the future DataFrame, use this code:
+To check the last five rows of the future Data Frame, use this code:
 
 ```python
 future_dates.tail()
@@ -300,28 +300,28 @@ The output is below:
 ![Prediction values](/engineering-education/univariate-time-series-using-facebook-prophet/prediction-values.jpg)
 
 ### Calling the predict method
-We call the `predict` method and pass the future DataFrame as an input. It performs the actual predictions.
+We call the `predict` method and pass the future Data Frame as an input. It performs the actual predictions.
 
 ```python
 prediction=model.predict(future_dates)
 ```
 To see the last five rows of the predicted values, use this code:
 
-#### Last five rows of the prediction DataFrame
+#### Last five rows of the prediction Data Frame
 ```python
 prediction[['ds', 'yhat', 'yhat_lower', 'yhat_upper']].tail()
 ```
-The prediction DataFrame has the following columns:
-- `ds`: It contains the Datetime of the predicted values. It holds the Datetime of the 1000 days.
-- `yhat`: It contains the prediction values of the time series model.
-- `yhat_lower`: It contains the bottom bound of the prediction values.
-- `yhat_upper`: It contains the top bound of the prediction values.
+The prediction Data Frame has the following columns:
+- `ds`: It contains the contains the timestamp entry of the forecast. It holds the Datetime of the 1000 days.
+- `yhat`: It contains the prediction/forecast values of the time series model.
+- `yhat_lower`: It contains the lower bound of the prediction/forecast values.
+- `yhat_upper`: It contains the upper bound of the prediction/forecast values.
 
 The prediction values:
 
 ![Predicted values](/engineering-education/univariate-time-series-using-facebook-prophet/predicted-values-tail.jpg)
 
-#### First five rows of the prediction DataFrame
+#### First five rows of the prediction Data Frame
 Use this code:
 
 ```python
@@ -357,9 +357,9 @@ The output is shown below:
 
 ![Plot diagram](/engineering-education/univariate-time-series-using-facebook-prophet/plot-diagram.jpg)
 
-The shaded light blue region shows the uncertainty intervals. This region contains the `yhat_upper` and `yhat_lower` values. 
+The shaded light blue region shows the lower and upper bound of our forecasts. This region contains the `yhat_upper` and `yhat_lower` values. 
 
-The black dots show the actual data points(y). The blue line shows the predicted values(yhat). The graph also shows the forecast values for the next 1000 days from `1961-01-01 to 1963-08-28`.
+The black dots show the actual/original data points(y). The blue line shows the predicted values(yhat). The graph also shows the forecast values for the next 1000 days from `1961-01-01 to 1963-08-28`.
 
 We can also use Facebook Prophet to plot the components of our time-series forecasts.
 
