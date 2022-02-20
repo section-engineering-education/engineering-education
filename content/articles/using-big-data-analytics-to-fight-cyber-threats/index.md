@@ -2,9 +2,7 @@ Title: Using Big Data analytics to fight cybersecurity threats
 
 Big Data is a term used to describe large amounts of data stored and transmitted in a computer system. Cybersecurity dangers can be combated with the use of big data analytics.
 
-In cybersecurity, big data analytics refers to collecting large amounts of digital data to analyze, display, and draw conclusions that can help forecast and prevent cyber threats. 
-
-Big data improves our cybersecurity when combined with security technology. For example, it enable businesses to spot behaviour patterns that indicate network vulnerabilities. We look at how Big Data can help improve information security best practices in this article.
+In cybersecurity, big data analytics refers to collecting large amounts of digital data to analyze, display, and draw conclusions that can help forecast and prevent cyber threats.Big data improves our cybersecurity when combined with security technology. For example, it enable businesses to spot behaviour patterns that indicate network vulnerabilities. We look at how Big Data can help improve information security best practices in this article.
 
 Big Data, Cyber Security, Privacy, and Database are just a few terms that come to mind while thinking about this topic.
 
@@ -67,10 +65,10 @@ Three major enablers are present:
 - The ability to review big and complicated data sets has become accessible to the ordinary business user because of visual/interactive technologies.
 - Human resources There is a new breed of team members that can handle the complexity of big data and reduce the output for everyday use.
 
-### Cyber security and Big Data analytics
-1. In Fraud Detection, Big Data Analytics is Used. Statistical approaches and artificial intelligence techniques are the two main fraud detection tools.
-2. Data pre-processing techniques for detecting, validating, correcting errors, and filling in missing or erroneous data are just a few examples of statistical data analysis approaches.
-
+### Big Data analytics in Cybersecurity
+The fundamental purpose of using big data in cybersecurity is to use a more sophisticated technique to better identify potential cyber threats. Any system's detection must be swift in order to discover significant and little changes in the system. Analyzing current and historical data from a variety of sources necessitates the use of advanced analytical techniques such as:
+1. Fraud detection using Big Data analytics statistical approaches and artificial intelligence are the two main types of fraud detection tools.
+The following are some examples of statistical data analysis techniques: 1. Data pre-processing techniques for detecting, validating, correcting errors, and filling in gaps in data.
 2. Calculation of numerous statistical parameters such as averages, quintiles, performance metrics, and probability distributions.
 3. Business models and probability distributions, either multiple parameters or probability distributions.
 4. User profiles are created.
@@ -85,13 +83,10 @@ The main AI techniques used for fraud management include [AI]:
 4. Automated fraud detection using machine learning approaches.
 5. Neural networks can learn suspicious patterns from samples and then utilize them to detect them in the future.
 
-### Anamoly-Based Intrusion Detected Using Big Data Analytics
-Anomaly detection algorithms are relatively easy to set up and operate independently. Some key performance indicators are selected for each event, and thresholds are established. The occurrence is flagged for further examination when a certain threshold is reached. The choice of indicators to be monitored, the analysis time, and the threshold value choices all impact the success of this strategy.
+### Anomaly Detection with Big Data
+Intrusion detection systems are a collection of techniques for monitoring and analyzing events in a computer or network for evidence of malicious activity. Illegitimate monitoring, unauthorized access to remote or local resources, and denial of service are examples of unwelcome actions.
 
-Anomaly detection algorithms are easy to set up and operate without any human interaction. However, the parameters monitored, the analysis time, and the threshold value settings all impact the success of this strategy.
-
-### Assist in the gathering of security information
-They can speed up the process of forensic data correlation and create proactive security responses.
+Anomaly detection algorithms are relatively easy to set up and operate independently. Some key performance indicators are selected for each event, and thresholds established. The occurrence is flagged for further examination when a certain threshold is reached. The choice of indicators to be monitored, the analysis time, and the threshold value choices all impact the success of this strategy.
 
 ### Increasing Big Data Security to prevent cyber threats
 When cyberthieves target Big Data sets, the payoff is frequently well worth the effort required to breach security layers, which is why big data is a fantastic potential for businesses and cybercriminals. When they go after such a massive data set, they have more to gain. As a result, businesses stand to lose a lot more if they are subjected to a cyber attack without adequate security measures.
@@ -104,14 +99,12 @@ When cyberthieves target Big Data sets, the payoff is frequently well worth the 
 Overall, big data has significant opportunities for enterprises that extend far beyond improved business intelligence.
  Big data has the potential to improve cyber security. However, to capitalize on the numerous opportunities presented by big data, businesses must accept the duty and risk of data protection.
  
-### Challenges
+### Challenges of Big Data analytics
 1. Not all businesses are data-driven. They are unsure about big data analytics and may not grasp the benefits of analytics.
 2. Big data analytics may be viewed as a means of extracting value from data by organizations. However, it is more about identifying the most appropriate use case for the targeted business goal.
 3. From scope design to data extraction and delivery, the analytics team and users collaborate during all steps of the analytics process.
 4. Because it is difficult to grasp how data might yield such outcomes, management may be unable to trust the analytics results.
 5. There is a scarcity of data scientists that are well-educated and experienced.
-Big data security concerns.
-
 ### Conclusion
 Big Data analytics for security aims to provide real-time intelligence. In three ways, Big Data can significantly impact your present business. First, it may be helpful in the following situations:
 1. Look for undiscovered information When evaluating a high service cancellation rate, for example, customer survey data may reveal a trend or previously undetectable core reason, which may be eliminated to increase retention.
