@@ -3,19 +3,20 @@ layout: engineering-education
 status: publish
 published: true
 url: /form-validation-using-data-binding-regex-and-material-in-android/
-title: Form Validation using Data Binding, Regex and Material in Android
-description: This tutorial provides a step-by-step guide on how to validate forms using data binding, regex and material in Android. 
+title: Form Validation using Data Binding, Regex, and Material in Android
+description: This tutorial provides a step-by-step guide on how to validate forms using data binding, regex, and material in Android. 
 author: moses-chege
-date: 2022-02-10T00:00:00-09:56
+date: 2022-02-20T00:00:00-13:56
 topics: [Languages]
 excerpt_separator: <!--more-->
 images:
+
   - url: /engineering-education/form-validation-using-data-binding-regex-and-material-in-android/hero.jpg
-    alt: Form Validation using Data Binding, Regex and Material in Android
+    alt: Form Validation Data Binding, Regex, Material in Android
 ---
 When building an application that requires users to submit information, you need to verify this data before sending it into your application. This is where the concept of form validations comes in.
 <!--more-->
-When a user fills in an email, the application should be able to check if the user has provided an email input. If not, inform the user accordingly to fill in the right email format. There are many values and specific data that an application requires from a user. This guide aims to help you understand how to achieve such concepts using the Android studio.
+When a user fills in an email, the application should be able to check if the user has provided an email input. If not, inform the user accordingly to fill in the right email format. There are many values and specific data that an application requires from a user. This guide aims to help you understand how to achieve such concepts using Android studio.
 
 ### Prerequisites
 To get started with this tutorial, ensure you have the following essentials:
@@ -30,7 +31,7 @@ To get started, go ahead and create a new Android Studio project with an empty a
 
 We are going to use [Android material design library](https://codelabs.developers.google.com/codelabs/mdc-101-kotlin#0) to set up basic Android forms. Therefore, you need to make this library accessible for your project. Go to your `build.gradle` file and add the following library inside the `dependencies {}`.
 
-```gradle
+```bash
 implementation 'com.google.android.material:material:1.5.0'
 ```
 
@@ -149,10 +150,11 @@ We can go ahead and add more fields to our application:
 </com.google.android.material.textfield.TextInputLayout>
 ```
 
-Here, we have added two more fields: password and phone number. We have added more `TextInput` validation checks that ensure your application input has input data consistency. For example;
+Here, we have added two more fields: password and phone number. We have added more `TextInput` validation checks that ensure your application input has input data consistency. 
 
-- `android:inputType="textPassword"` and `android:inputType="number"` thats shown that each input field takes in a password and a number respectively.
-- The attribute `android:maxLength="16"` only allows users to enter the exact number f characters. When the counter check and the maximum character have been achieved, the user will be able to add more characters to that field.
+For example:
+- `android:inputType="textPassword"` and `android:inputType="number"` thats shows that each input field takes in a password and a number respectively.
+- The attribute `android:maxLength="16"` only allows users to enter the exact number of characters. When the counter check and the maximum character have been achieved, the user will be able to add more characters to that field.
 - `app:helperText="Required"` to show the user they need to fill out this field before submitting the form.
 - `app:errorEnabled="true"` to catch input errors and text mismatch.
 - We have also added an `app:counterMaxLength`. This checks the maximum number of characters that a single `TextInput` should take. `app:counterEnabled="true"` will hold count and display this character so that the users can have an idea of the maximum characters they can add to a single field.
@@ -183,7 +185,7 @@ We can use the concept of data binding to check form validations. A form involve
 
 To set up data binding in your Kotlin project, head over to the `build.gradle` file and add the following plugin:
 
-```gradle
+```bash
 plugins {
     id 'kotlin-kapt'
 }
@@ -191,7 +193,7 @@ plugins {
 
 Then add the following data binding `buildFeatures` inside the `android {}`.
 
-```gradle
+```bash
 buildFeatures{
     viewBinding = true
 }
@@ -235,7 +237,7 @@ private fun validPassword(): String? {
 }
 ```
 
-This is a simple check. First, when the user enters a password, it must have at least eight characters. Otherwise, this will trigger an error, and the user will be required to enter a password that has at least eight characters.
+This is a simple check. When the user enters a password, it must have at least eight characters. Otherwise, this will trigger an error, and the user will be required to enter a password that has at least eight characters.
 
 On the other end, the password character counter will only accept a password of a maximum of 16 characters as specified by the `app:counterMaxLength="16"`.
 
