@@ -471,15 +471,15 @@ Once the server is up and running, open GraphQL playground `http://localhost:808
 
 - Creating a todo mutation with MongoDB:
 
-![creating_todo_mutation_with_mongodb](creating-todo-mutation-with-mongodb.png)
+![creating_todo_mutation_with_mongodb](/engineering-education/write-a-rust-graphql-server-with-mongodb-juniper-and-actix-web/creating-todo-mutation-with-mongodb.png)
 
 - Getting todos query with MongoDB:
 
-![getting_todos_query_with_mongodb](getting-todos-query-with-mongodb.png)
+![getting_todos_query_with_mongodb](/engineering-education/write-a-rust-graphql-server-with-mongodb-juniper-and-actix-web/getting-todos-query-with-mongodb.png)
 
 - Getting todos MongoDB response:
 
-![getting_todos_mongodb_response](getting-todos-mongodb-response.png)
+![getting_todos_mongodb_response](/engineering-education/write-a-rust-graphql-server-with-mongodb-juniper-and-actix-web/getting-todos-mongodb-response.png)
 
 ### Conclusion
 APIs power many world applications. These APIs must have the capacity to deliver data of all shapes, capabilities, and sizes. 
