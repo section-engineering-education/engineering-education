@@ -1,57 +1,79 @@
-In android, permission handling can be done by the help of `permissions API`. With the help of Google's accompanist libraries, things are made more easy. 
-In this tutorial, we will learn on how we can handle permissions in Jetpack compose.
-### Table of Contents
+---
+layout: engineering-education
+status: publish
+published: true
+url: /permission-handling-in-jetpack-compose/
+title: Handling Permission Appropriately in Jetpack Compose
+description: This article will focus on handling permissions correctly and with ease in Jetpack Compose. 
+author: samantha-namenya
+date: 2022-02-21T00:00:00-09:00
+topics: [Languages]
+excerpt_separator: <!--more-->
+images:
+
+  - url: /engineering-education/permission-handling-in-jetpack-compose/hero.png
+    alt: Handling Permission Appropriately in Jetpack Compose Hero Image
+---
+In android, permission handling can be done with the help of `permissionsAPI`. With the help of Google's accompanist libraries, things are made easier.
+<!--more-->
+This tutorial will cover how we can handle permissions in Jetpack compose.
+
+### Table of contents
 - [Prerequisites](#prerequisites)
 - [Goals](#goals)
 - [Terminologies](#terminologies) 
-- [What are permissions and when are they used?](#what-are-permissions-and-when-are-they-used)
+- [What are permissions, and when are they used?](#what-are-permissions-and-when-are-they-used)
 - [Creating a Compose project](#step-one-creating-a-new-compose-project)
 - [Setting up dependency](#step-two-setup-the-dependency)
-- [Enabling permissions on Mainifest](#step-three-enable-permissions-on-manifest)
+- [Enabling permissions on Manifest](#step-three-enable-permissions-on-manifest)
 - [Implementing Single Permissions](#step-four-implementing-single-permissions)
 - [Working with multiple Permissions](#working-with-multiple-permissions)
 - [Conclusion](#conclusion)
 
 ### Prerequisites 
-To follow along with this tutorial, the reader should:
-- Have installed [Android Studio Arctic Fox](https://developer.android.com/studio#downloads) and know how to create Compose projects
-- Have an understanding of [Kotlin](https://developer.android.com/kotlin) Programming Language.
-- Have an understanding and experience of building apps with [Jetpack Compose](https://developer.android.com/jetpack/compose).
+To follow along this tutorial, the reader should:
+- Have installed [Android Studio Arctic Fox](https://developer.android.com/studio#downloads) and know how to create Compose projects.
+- Have an understanding of [Kotlin](https://developer.android.com/kotlin) programming language.
+- Have an understanding and experience of building apps with [Jetpack compose](https://developer.android.com/jetpack/compose).
 
 ### Goals
 By the end of this tutorial, the reader will be able to:
-- Have an understanding of what permissions are and when they are used
-- Use the most effective way to handle permissions in Jetpack compose
-- Implement single and multiple permissions in Jetpack compose
+- Have an understanding of what permissions are and when they are used.
+- Use the most effective way to handle permissions in Jetpack compose.
+- Implement single and multiple permissions in Jetpack compose.
 
 ### Terminologies
 - `DisposableEffect` - A side-effect handler for side-effects which when keys change or when a composable leaves composition.
-- `Lifecycle` - This is an abstract class associated with the android lifespan which allows an object to detect states and respond accordingly.
+- `Lifecycle` - This is an abstract class associated with the android lifespan, allowing an object to detect states and respond accordingly.
 - `Rationale` - 
-- `States` - in an application, a state is a value or an element that changes with time. For example, a snack bar can show whenever the internet connection is interrupted. 
+- `States` - A state is a value or an element that changes with time. For example, a snack bar can show whenever the internet connection is interrupted.
 
-Let's get started :)
-### What are permissions and when are they used?
-In android, permissions define what an app can access in a user's phone. Due to security measures, an app cannot access some of the phone's data. This requires the app to request the user to allow or deny the app access. Accepting the permissions will allow the app to access some of the data like contacts, SMS etc.
+Let us get started :)
 
-They are used whenever the app needs user authorization to access hardware or data that is not accessible by default.
-### Step One: Creating a new compose project
-To create a new Compose project, launch Android studio and select `New Project` then `Compose Activity`. Name it `PermissionsDemo` and click on finish to build the project. Wait till the building is finished.
+### What are permissions, and when are they used?
+In android, permissions define what an app can access in a user's phone. Due to security measures, an app cannot access some of the phone's data, which requires the app to request the user to allow or deny the app access. Accepting the permissions will allow the app to access some data like contacts, SMS etc. They are used whenever the app needs user authorization to access hardware or data that is not accessible by default.
+
+#### Step one: Creating a new compose project
+To create a new Compose project:
+- Launch Android Studio and select `New Project` then `Compose Activity`
+- Name the project `PermissionsDemo` and click on finish to build the project.
 
 ![Create Project](/engineering-education/permission-handling-in-jetpack-compse/create-project.png)
 
-### Step Two: Setup the dependency
-Here we are going to add the `accompanist-permissions` dependency.
-Add this dependency in the `build.gradle` file.
+#### Step two: Setup the dependency
+Here we are going to add the `accompanist-permissions` dependency. Add this dependency in the `build.gradle` file.
+
 ```gradle
 implementation 'com.google.accompanist:accompanist-permissions:0.21.1-beta'
 ```
-In this tutorial, we will use the [Google Accompanist]() library to handle permissions. There are some other ways you can use to handle but they are much more complicated. Using the `accompanist` library will make it simpler.
 
-### Step Three: Enable permissions on Manifest
+This tutorial will use the [Google Accompanist]() library to handle permissions. There are some other ways you can handle them, but they are much more complicated. Using the accompanist library will make it simpler.
+
+#### Step three: Enable permissions on Manifest file
 We will start by implementing single permission. Later on, see how you can do this for multiple permissions.
 
 To enable permissions, add the following on the Manifest file:
+
 ```xml
 <manifest ...>
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
@@ -64,12 +86,8 @@ To enable permissions, add the following on the Manifest file:
 </manifest>
 ```
 
-### Step Four: Implementing single permissions
-Create a function and name it `SinglePermission()`. In this function, we will only request permission to read the phone's external storage.
-
-In this function, define the permission you want to request the user to allow. 
-
-Creating a permission state will be as follows:
+### Step four: Implementing single permissions
+Create a function and name it `SinglePermission()`. We will only request permission to read the phone's external storage in this function. This function defines the permission you want to request the user to allow. Creating a permission state will be as follows:
 
 ```kotlin
 val permissionState =
@@ -77,11 +95,10 @@ val permissionState =
 ```
 
 #### What do we mean by proper permission handling?
-Proper permission handling means requesting app permission(S) in the right way.
-
-This means, unlike most developers, we will put our logic on `onStart`. Compose however does not have the `onStart()` method. This is done by using `LocalLifecycleOwner` and attaching `LifeCycleObserver` to observe all activities and fragments lifecycle. 
+Proper permission handling means requesting app permission(S) correctly. This means, unlike most developers, we will put our logic on `onStart`. Compose, however, does not have the `onStart()` method, which is done by using `LocalLifecycleOwner` and attaching `LifeCycleObserver` to observe all activities and fragments lifecycle.
 
 The code will be as follows:
+
 ```kotlin
 val lifecycleOwner = LocalLifecycleOwner.current
 DisposableEffect(key1 = lifecycleOwner, effect = {
@@ -99,14 +116,13 @@ DisposableEffect(key1 = lifecycleOwner, effect = {
     }
 })
 ```
-`DisposableEffect` handler is used to remedy side effects that need to be fixed when the keys change.  Also when the composable leaves the composition. 
-
-In this case, we register a call back that is cleaned after use. Whenever the key, i.e `lifecycleOwner` changes, the disposable effect will start again.
+`DisposableEffect` handler remedies side effects that need to be fixed when the keys change. Also, when the composable leaves the composition. In this case, we register a call back that is cleaned after use. Whenever the key, i.e `lifecycleOwner`, changes, the disposable effect will start again.
 
 #### Checking for permissions
-Let's now check for `permissionState`, whether it was accepted or denied by the user. We will then apply the logic.
+Let us now check for `permissionState`, whether it was accepted or denied by the user. We will then apply the logic.
 
 The code is as follows:
+
 ```kotlin
 when {
     permissionState.hasPermission -> {
@@ -122,14 +138,10 @@ when {
     }
 }
 ```
-What happens here is that we are checking the state of the permission. The `hasPermission` indicates that permission is allowed.
-
-The statement `permissionState.shouldShowRatonale` checks when permission is denied twice. When denied for the second time, permission is considered fully denied.
-
-This triggers the last part of checking the permission state. 
-If the permission is not granted or is denied more than twice, the app tells the user to open settings and enable the denied permissions.
+What happens here is that we are checking the state of the permission. The `hasPermission` indicates that permission is allowed. The statement `permissionState.shouldShowRatonale`  checks when permission is denied twice. When denied for the second time, permission is considered entirely denied, triggering the last part of checking the permission state. If the permission is not granted or is denied more than twice, the app tells the user to open settings and enable the denied permissions.
 
 Now the `SinglePermission()` body will be as follows:
+
 ```kotlin
 @SuppressLint("PermissionLaunchedDuringComposition")
 @OptIn(ExperimentalPermissionsApi::class)
@@ -169,12 +181,11 @@ fun SinglePermission() {
     }
 }
 ```
->NOTE: Remember to annotate these functions with `@ExperimentalPermissionsApi` to remove the highlighted error. This indicates that the permissions API is at the experimental level and is subject to change.
+
+>Note: Remember to annotate these functions with `@ExperimentalPermissionsApi` to remove the highlighted error, which indicates that the permissions API is at the practical level and is subject to change.
 
 ### Working with multiple permissions
-Handling multiple permissions is almost similar to handling single permissions.
-
-We only declare the permissions in a list for this case. This is done as follows:
+Handling multiple permissions is almost similar to handling single permissions. We only declare the permissions in a list for this case. This is done as follows:
 
 ```kotlin
 val permissionStates = rememberMultiplePermissionsState(
@@ -184,11 +195,11 @@ val permissionStates = rememberMultiplePermissionsState(
     )
 )
 ```
-Note the difference! We used `rememberMultiplePermissionsState()` instead of `rememberPermissionState()`.
 
-Also, we check each permission state at a time by looping through each one of them. 
+>Note the difference. We used `rememberMultiplePermissionsState()` instead of `rememberPermissionState()`.
 
-This can be done as follows:
+Also, we check each permission state at a time by looping through each one of them. This can be done as follows:
+
 ```kotlin
 permissionStates.permissions.forEach { it ->
     when (it.permission) {
@@ -244,9 +255,9 @@ permissionStates.permissions.forEach { it ->
     }
 }
 ```
-This is all wrapped in a function which is called in the `MainActivity`. 
 
-The whole function body will be as follows:
+This is all wrapped in a function which is called in the `MainActivity`. The whole function body will be as follows:
+
 ```kotlin
 @ExperimentalPermissionsApi
 @Composable
@@ -335,7 +346,8 @@ fun MultiplePermissions() {
     }
 }
 ```
->NOTE: Make sure you annotate these functions with `@Composable`. Also, be sure you call each one of them in the main activity.
+
+>Note: Make sure you annotate these functions with `@Composable`. Also, be sure you call each one of them in the main activity.
 
 ```kotlin
 class MainActivity : ComponentActivity() {
@@ -350,13 +362,11 @@ class MainActivity : ComponentActivity() {
     }
 }
 ```
-You can find this project on [Github](https://github.com/tanscy-cassie/PermissionsHandlineDemo.git). Also, you can download the sample APK from [here](https://docs.google.com/uc?export=download&id=1dfgBw25jBmqoALN4o8aylZKue1xU2pGQ)
-### Conclusion
-Using the `accompanist` library to handle permission requests is way much easier. The `accompanist` is a collection of many libraries.  They are meant to provide `Jetpack Compose` with features that are required by developers.
+You can find this project on [Github](https://github.com/tanscy-cassie/PermissionsHandlineDemo.git). Also, you can download the sample APK from [here].(https://docs.google.com/uc?export=download&id=1dfgBw25jBmqoALN4o8aylZKue1xU2pGQ)
 
-Permission handling is effective if we check the permissions state when the app starts. 
-This will help to avoid awkward situations where a user can minimize the app, disable the permissions in app settings and return back to the app. This will lead to the app not properly functioning. 
+### Conclusion
+Using the `accompanist` library to handle permission requests is way much more effortless. The `accompanist` is a collection of many libraries. They are meant to provide Jetpack Compose with features that developers require.
+
+Permission handling is effective if we check the permissions state when the app starts. This will help avoid awkward situations where a user can minimize the app, disable the in-app permissions settings, and return to the app, which will lead to the app not correctly functioning.
 
 Keep Composing :)
-
-
