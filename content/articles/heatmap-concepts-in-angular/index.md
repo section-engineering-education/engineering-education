@@ -1,11 +1,9 @@
 ### Getting started with Angular heatmap
 
 ### Introduction
-Angular Heatmap refers to the graphical portrayal of data that uses a system of color-coding to represent different values.
+You may have heard of 2D or 2-dimensional shapes in a geometry class. For example, rectangles, squares and circles are all 2D shapes. In addition to these, charts such as bar and line charts also have 2 Dimensions.
 
-Heatmaps are made use of in various forms of analytics yet are most frequently used to show user behavior particularly webpage templates or webpages.
-
-This tutorial will guide you through the steps needed to make a heatmap and exhibit the elementary usage of heatmap control.
+In this tutorial, we will learn about Heat maps. Heat maps are a type of chart that easily displays data to understand.
 
 ### Table of content
 - [Getting started with Angular heatmap](#getting-started-with-angular-heatmap)
@@ -14,449 +12,232 @@ This tutorial will guide you through the steps needed to make a heatmap and exhi
 - [Prerequisites](#prerequisites)
 - [Objectives](#objectives)
 - [Setting up Angular environment](#setting-up-angular-environment)
-- [Adding syncfusion Heatmap package](#adding-syncfusion-heatmap-package)
-- [Register the heatmap module](#register-the-heatmap-module)
-- [Module injection](#module-injection)
-- [Fill the heatmap with data](#fill-the-heatmap-with-data)
-- [Enabling the axis labels](#enabling-the-axis-labels)
-- [Heat map title](#heat-map-title)
-- [Enabling legend](#enabling-legend)
-- [Addition of the data label](#addition-of-the-data-label)
-- [Addition of custom palettes](#addition-of-custom-palettes)
-- [Enabling tooltip](#enabling-tooltip)
+- [Adding Heatmap package](#adding-heatmap-package)
+- [Heatmap component](#heatmap-component)
+- [Configuring the heatMap package component](#configuring-the-heatmap-package-component)
+- [Testing the heatmap with actual data](#testing-the-heatmap-with-actual-data)
 - [Conclusion](#conclusion)
 
 ### Prerequisites
-To be guided by this tutorial, you'll need the following;
-- Basic knowledge of Node.js.
-- Basic knowledge of Typescript and Angular. In this tutorial, we'll be using the Angular CLI 12.
-- Local development environment fully setup.
+To follow along with this tutorial, you will need the following:
+- Basic knowledge of Typescript or JavaScript.
+- Basic knowledge of Angular. In this tutorial, we will be using Angular version 12.
+- Local development environment is fully set up.
 
 ### Objectives
-At the end of this tutorial, you will be capable of building a reactive web applications using heat maps concept.
+This tutorial introduces you to the concepts of 2 Dimensional charts. By the end, you should be able to build a reactive web application integrated with heatmap.
 
 ### Setting up Angular environment
-Use Angular CLI to set up your Angular applications. Install the Angular CLI by running the following command.
+in this tutorial, we will use the Angular CLI; however, you're free to set up the application structure from scratch.
 
+Now, let's begin by installing the Angular CLI by running the following command:
 ```bash
 npm install -g @angular/cli
 ```
 
-Create a new Angular application by using the  Angular CLI command below.
+The above command will install the latest version ( v12 at the time of this writing) of the Angular CLI globally.
 
+Next, proceed and create a new Angular application by using the CLI command as shown below:
 ```bash
-ng new my-app
-cd my-app
+ng new angular-heatmap-tutorial
+cd angular-heatmap-tutorial
+
+# start the server
+ng serve
 
 ```
-### Adding syncfusion Heatmap package
-Using the following command install the heatmap package.
+In the above command, we created a new Angular application called angular-heatmap-tutorial. Next, we `cd` into the project root and start the server, which runs on port `4200`.
 
+> It's important to note that the default Angular port is 4200. This may be different in your environment if another application is already running there.
+
+### Adding Heatmap package
+Heatmap, unlike other packages, have different libraries which you can choose from depending on your needs. This includes:
+- [Ngx-heatmap](https://www.npmjs.com/package/ngx-heatmap)
+- [Angular-calendar-heatmap](https://www.npmjs.com/package/angular-calendar-heatmap)
+- [Angular2-calendar-heatmap](https://www.npmjs.com/package/angular2-calendar-heatmap)
+- [Syncfusion-heatmap](https://www.npmjs.com/package/syncfusion-heatmap)
+
+The above list is not exhaustive. You can find more information about the package by visiting the package's website.
+
+In this tutorial, we will be using the [Angular Calendar Heatmap](https://openbase.com/js/angular-calendar-heatmap) package.
+
+
+Proceed and install the package by running the following command:
 ```bash
-
 npm install @syncfusion/ej2-angular-heatmap --save
-
 ```
 
-### Register the heatmap module
-from the syncfusion  Heatmap package ,import the heatmap module into the angular application(app.module.ts).
-@syncfusion/ej2-ng-heatmap [src/app/app.module.ts].
+The above command will install the latest version of the package as shown below:
+```json
+ "private": true,
+  "dependencies": {
 
-```typescript
-import { NgModule }      from '@angular/core';
-import { BrowserModule } from '@angular/platform-browser';
-// import the HeatMapModule for the heatmap component
+    //...
+    "@syncfusion/ej2-angular-heatmap": "^19.4.52",
+    //....
+  },
+```
+
+Let's proceed and configure our application to use this package as shown below:
+```TypeScript
+//...
 import { HeatMapModule } from '@syncfusion/ej2-angular-heatmap';
-import { AppComponent }  from './app.component';
-
 @NgModule({
-  //declaration of ej2-ng-heatmap module into NgModule
-  imports:      [ BrowserModule, HeatMapModule ],
-  declarations: [ AppComponent ],
-  bootstrap:    [ AppComponent ]
+  declarations: [
+    //...
+  ],
+  imports: [
+    //...
+    HeatMapModule,
+    //...
+  ],
+  //...
 })
 export class AppModule { }
 ```
- Make adjustments to the template in `app.component.ts` to give the `ej2-ng-heatmap  ` element `[src/app/app.component.ts]`.
 
- ``` typescript
+We imported the HeatMapModule from the `@syncfusion/ej2-angular-heatmap` package in the above script. We then configured our application to use this package by adding it to the `imports` array.
 
-import { Component, ViewEncapsulation } from '@angular/core';
+In the next section, we will create an Angular component to display the heatmap.
+
+### Heatmap component
+To create a component in Angular, first `cd` into the project root and run the following commands:
+```bash
+cd angular-heatmap-tutorial
+
+ng g c heatmap
+```
+
+The above command will create a new `heatmap` component in the `src/app/heatmap` directory.
+
+Next, proceed and modify the `heatmap.component.html` file as shown below:
+```html
+<ejs-heatmap id='heatmap-container'></ejs-heatmap>
+
+```
+
+In the above template, we have created a heatmap component. Next, we will use the `ejs-heatmap` component to display the heatmap.
+
+To render our page with Heatmap, let's modify the `heatmap.component.ts` file as shown below:
+```typescript
+import {Component, OnInit, ViewEncapsulation} from '@angular/core';
 
 @Component({
-  selector: 'my-app',
-  // specifies the template string for the Heatmap component
-  template: `<ejs-heatmap id='heatmap-container'></ejs-heatmap>`,
+  selector: 'app-heatmap',
+  templateUrl: './heatmap.component.html',
+  styleUrls: ['./heatmap.component.css'],
   encapsulation: ViewEncapsulation.None
 })
-export class AppComponent  { }
+export class HeatmapComponent implements OnInit {
 
- ```
+  constructor() { //...}
 
- we will use the my-app in the index.html
- ```html
-<my-app></my-app>
+  ngOnInit() {
+    //...
+  }
 
- ```
-Now let's use the `npm run start` command to execute the application in the browser
+}
+
 ```
-npm start
+
+We import the encapsulation property from the `@angular/core` package in the above script. We will use this property to disable the default style of the component.
+
+Next, edit the `app.component.html` template as shown below to display the content of the `heatmap.component.html` file:
+```html
+<app-heatmap></app-heatmap>
 ```
-### Module injection
-Heatmap elements are divided into single feature-wise modules. To use its characteristics, we will inject its feature module with the `HeatMap.Inject()`
-technique. We shall import the aforementioned modules out-of-the heatmap package and introduce them to the heatmap component as shown below.
-The tooltip and legend characteristic of the heat map is used to improve the basic heatmap which is used to envision sales revenue information for a week.
+
+Now visit your browser and navigate to `http://localhost:4200`. You should see a page like the one shown below:
+![Angular Heatmap](heatmap-default-page.png)
+
+### Configuring the heatMap package component
+In this section, let's modify our main module to use the default heatmap component from the `@syncfusion/ej2-angular-heatmap` package as shown below:
 ```typescript
-
-import { NgModule } from '@angular/core';
-import { BrowserModule } from '@angular/platform-browser';
-import { AppComponent } from './app.component';
-import { HeatmapComponent, Legend, Tooltip } from '@syncfusion/ej2-ng-heatmap';
-
+//...
+import {HeatMapModule, LegendService} from '@syncfusion/ej2-angular-heatmap';
+import { HeatmapComponent as CustomHeatMapComponent } from './heatmap/heatmap.component';
+import {HeatMapComponent, Legend, Tooltip } from '@syncfusion/ej2-angular-heatmap';
 @NgModule({
-   imports: [
-       BrowserModule,
-   ],
-   declarations: [AppComponent, HeatMapComponent],
-   bootstrap: [AppComponent],
-   providers: [ HeatmapComponent, LegendService, TooltipService ]
+  declarations: [
+    AppComponent,
+    CustomHeatMapComponent,// Renaming the custom component we created earlier to prevent conflict with shipped package component.
+    HeatMapComponent// this component is imported from @syncfusion/ej2-ng-heatmap
+  ],
+  imports: [
+    BrowserModule,
+    HeatMapModule,
+    AppRoutingModule
+  ],
+  providers: [HeatMapComponent, LegendService, LegendService],
+  bootstrap: [AppComponent]
 })
+export class AppModule { }
+
 ```
 
-### Fill the heatmap with data
-This segment illustrates how to populate a two-dimensional array of data to the heatmap as follows;
+In the above module, we have imported the HeatMapModule from the `@syncfusion/ej2-angular-heatmap` , `HeatMapComponent` from the `@syncfusion/ej2-angular-heatmap` and the `CustomHeatMapComponent` from the `./heatmap/heatmap.component` file.
 
+We then inject the `HeatMapComponent` into the `providers` array. This is required to use the HeatMapComponent in the application.
+
+### Testing the heatmap with actual data
+Now that we have completed the application's full configuration let's test the heatmap with actual data.
+
+In the `heatmap.component.ts` file, we will modify the `ngOnInit()` method as shown below:
 ```typescript
+//...
+export class HeatmapComponent implements OnInit {
 
-import { Component, ViewEncapsulation } from '@angular/core';
-import { HeatMap } from '@syncfusion/ej2-heatmap';
+  import {Component, OnInit, ViewEncapsulation} from '@angular/core';
 
 @Component({
-selector: 'my-app',
-template:
-   `<ejs-heatmap id='container' style="display:block;" [dataSource]='dataSource'>
-    </ejs-heatmap>`,
-encapsulation: ViewEncapsulation.None
+  selector: 'app-heatmap',
+  templateUrl: './heatmap.component.html',
+  styleUrls: ['./heatmap.component.css'],
+  // encapsulation: ViewEncapsulation.None
 })
-export class AppComponent{
-    // Data for heatmap
-     dataSource: Object[] = [
-       [73, 39, 26, 39, 94, 0],
-       [93, 58, 53, 38, 26, 68],
-       [99, 28, 22, 4, 66, 90],
-       [14, 26, 97, 69, 69, 3],
-       [7, 46, 47, 47, 88, 6],
-       [41, 55, 73, 23, 3, 79],
-       [56, 69, 21, 86, 3, 33],
-       [45, 7, 53, 81, 95, 79],
-       [60, 77, 74, 68, 88, 51],
-       [25, 25, 10, 12, 78, 14],
-       [25, 56, 55, 58, 12, 82],
-       [74, 33, 88, 23, 86, 59]
+export class HeatmapComponent implements OnInit {
+  constructor() { }
+
+  dataSource: Object[];
+  xAxis: any = {
+    labels: ['Kim', 'John', 'Doe', 'Frank', 'Derrick', 'Michael', 'Essy',
+      'Geofrey', 'Oscar', 'Raul', 'Ben', 'Balo'],
+  };
+  yAxis: any = {
+    labels: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'],
+  };
+
+  ngOnInit() {
+    this.dataSource = [
+      [63, 19, 16, 29, 44, 0],
+      [83, 48, 43, 28, 26, 58],
+      [89, 18, 12, 3, 66, 80],
+      [3, 16, 87, 59, 69, 2],
+      [6, 36, 37, 37, 88, 5],
+      [31, 45, 63, 13, 3, 69],
+      [46, 59, 11, 16, 3, 23],
+      [35, 6, 43, 71, 95, 69],
+      [50, 67, 64, 58, 88, 41],
+      [15, 15, 9, 11, 78, 14],
+      [15, 46, 45, 48, 12, 82],
+      [64, 23, 78, 13, 86, 79]
     ];
+  }
+
 }
-
-```
-
-In the above code snippet, we export the HeatMapModule from the @syncfusion/ej2-angular-heatmap package and import it into the @NgModule.
-
-### Enabling the axis labels
-
-we can proceed to add the axis labels to the heat map and set the labels using y and x-axis effects. Axis labels give extra information on the data filled in the heatmap.
-
-```typescript
-import { Component, ViewEncapsulation } from '@angular/core';
-import { HeatMap } from '@syncfusion/ej2-heatmap';
-
-@Component({
-selector: 'my-app',
-template:
-   `<ejs-heatmap id='container' style="display:block;" [dataSource]='dataSource' [xAxis]='xAxis' [yAxis]='yAxis'>
-    </ejs-heatmap>`,
-encapsulation: ViewEncapsulation.None
-})
-export class AppComponent{
-    // Data for heatmap
-    dataSource: Object[] = [
-       [73, 39, 26, 39, 94, 0],
-       [93, 58, 53, 38, 26, 68],
-       [99, 28, 22, 4, 66, 90],
-       [14, 26, 97, 69, 69, 3],
-       [7, 46, 47, 47, 88, 6],
-       [41, 55, 73, 23, 3, 79],
-       [56, 69, 21, 86, 3, 33],
-       [45, 7, 53, 81, 95, 79],
-       [60, 77, 74, 68, 88, 51],
-       [25, 25, 10, 12, 78, 14],
-       [25, 56, 55, 58, 12, 82],
-       [74, 33, 88, 23, 86, 59]
-    ];
-    xAxis: Object = {
-    labels:['Nancy', 'Jane', 'Janet', 'Margaret', 'Stephanie', 'Mitchel', 'Roberto',
-        'Laureen', 'Anne', 'Paula', 'Karim', 'Marion'],
-};
-yAxis: Object = {
-    labels: ['Mon', 'Tues', 'Wed', 'Thurs', 'Fri', 'Sat'],
-};
-}
-
-
-```
-### Heat map title
-Include the title  by use of the `titleSettings  ` property to the heat map to give fast information to the user on the data filled in the heat map.
-
-``` typescript
-import { Component, ViewEncapsulation } from '@angular/core';
-import { HeatMap } from '@syncfusion/ej2-heatmap';
-
-@Component({
-selector: 'my-app',
-template:
-   `<ejs-heatmap id='container' style="display:block;"  [titleSettings]='titleSettings' [dataSource]='dataSource' [xAxis]='xAxis' [yAxis]='yAxis'>
-    </ejs-heatmap>`,
-encapsulation: ViewEncapsulation.None
-})
-export class AppComponent{
- titleSettings: Object = {
-    text: 'Sales Revenue per Employee (in 1000 US$)',
-    textStyle: {
-        size: '15px',
-        fontWeight: '500',
-        fontStyle: 'Normal'
-    }
-};
-    // Data for heatmap
-     dataSource: Object[] = [
-       [73, 39, 26, 39, 94, 0],
-       [93, 58, 53, 38, 26, 68],
-       [99, 28, 22, 4, 66, 90],
-       [14, 26, 97, 69, 69, 3],
-       [7, 46, 47, 47, 88, 6],
-       [41, 55, 73, 23, 3, 79],
-       [56, 69, 21, 86, 3, 33],
-       [45, 7, 53, 81, 95, 79],
-       [60, 77, 74, 68, 88, 51],
-       [25, 25, 10, 12, 78, 14],
-       [25, 56, 55, 58, 12, 82],
-       [74, 33, 88, 23, 86, 59]
-    ];
-    xAxis: Object = {
-    labels: ['mandy', 'Jane', 'Janet', 'Margy', 'Stephanie', 'Mitchel', 'Roberto',
-        'Laureen', 'marrie', 'Paula', 'Karim', 'Marion'],
-};
-yAxis: Object = {
-    labels: ['Mon', 'Tues', 'Wed', 'Thurs', 'Fri', 'Sat'],
-};
-}
-```
-In the above example, the heat map title is set to “Sales Revenue per Employee (in 1000 US$)”.
-
-### Enabling legend
-Apply a legend for the heat map in the `legendSettings` item by setting the `visible` characteristic to true and injecting the `legend` module by use of the `HeatMap.Inject(Legend)` technique.
-
-```typescript
-import { Component, ViewEncapsulation } from '@angular/core';
-import { HeatMap } from '@syncfusion/ej2-heatmap';
-
-@Component({
-selector: 'my-app',
-template:
-   `<ejs-heatmap id='container' style="display:block;"  [titleSettings]='titleSettings' [dataSource]='dataSource'
-   [xAxis]='xAxis' [yAxis]='yAxis' [legendSettings]='legendSettings'>
-    </ejs-heatmap>`,
-encapsulation: ViewEncapsulation.None
-})
-export class AppComponent{
- titleSettings: Object = {
-    text: 'Sales Revenue per Employee (in 1000 US$)',
-    textStyle: {
-        size: '15px',
-        fontWeight: '500',
-        fontStyle: 'Normal'
-    }
-};
-    // Data for heatmap
-     dataSource: Object[] = [
-       [73, 39, 26, 39, 94, 0],
-       [93, 58, 53, 38, 26, 68],
-       [99, 28, 22, 4, 66, 90],
-       [14, 26, 97, 69, 69, 3],
-       [7, 46, 47, 47, 88, 6],
-       [41, 55, 73, 23, 3, 79],
-       [56, 69, 21, 86, 3, 33],
-       [45, 7, 53, 81, 95, 79],
-       [60, 77, 74, 68, 88, 51],
-       [25, 25, 10, 12, 78, 14],
-       [25, 56, 55, 58, 12, 82],
-       [74, 33, 88, 23, 86, 59]
-    ];
-    xAxis: Object = {
-    labels: ['Nancy', 'Jane', 'Janet', 'Margaret', 'Stephanie', 'Mitchel', 'Roberto',
-        'Laureen', 'Anne', 'Paula', 'Karim', 'Marion'],
-};
-yAxis: Object = {
-    labels: ['Mon', 'Tues', 'Wed', 'Thurs', 'Fri', 'Sat'],
-};
-public legendSettings: Object = {
-    visible:true,
-    position: 'Right',
-    showLabel:true,
-    height:'150px'
-};
 }
 ```
 
-### Addition of the data label
-Include data labels on the heat map to improve its legibility. This can be accomplished by changing the `showLabel   ` property to` true` in the ` cellSettings ` object.
+In the above script, we have modified the `ngOnInit()` method to load the data for the heatmap. We have two properties to configure the heatmap. The `xAxis` property is used to configure the x-axis labels. The `yAxis` property is used to configure the y-axis labels.
 
+We then set the `dataSource` property to the actual data. This data should then load in the heatmap on page load as shown below:
 
-```typescript
-import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
-import { enableProdMode } from '@angular/core';
-import { AppModule } from './app.module';
+![HeatMap Output](heatmpa-output.png)
 
-enableProdMode();
-platformBrowserDynamic().bootstrapModule(AppModule);
+Next, re-configure the `app.module.ts` to remove the heatmap module we had passed since the HeatMap component has its module configured.
 
-
-```
-
-### Addition of custom palettes
-```typecript
-import { Component, ViewEncapsulation } from '@angular/core';
-import { HeatMap } from '@syncfusion/ej2-heatmap';
-
-@Component({
-selector: 'my-app',
-template:
-   `<ejs-heatmap id='container' style="display:block;" [paletteSettings]='paletteSettings'
-   [cellSettings]='cellSettings' [titleSettings]='titleSettings' [dataSource]='dataSource'
-   [xAxis]='xAxis' [yAxis]='yAxis' [legendSettings]='legendSettings'>
-    </ejs-heatmap>`,
-encapsulation: ViewEncapsulation.None
-})
-export class AppComponent{
- titleSettings: Object = {
-    text: 'Sales Revenue per Employee (in 1000 US$)',
-    textStyle: {
-        size: '15px',
-        fontWeight: '500',
-        fontStyle: 'Normal'
-    }
-};
-    // Data for heatmap
-     dataSource: Object[] = [
-       [73, 39, 26, 39, 94, 0],
-       [93, 58, 53, 38, 26, 68],
-       [99, 28, 22, 4, 66, 90],
-       [14, 26, 97, 69, 69, 3],
-       [7, 46, 47, 47, 88, 6],
-       [41, 55, 73, 23, 3, 79],
-       [56, 69, 21, 86, 3, 33],
-       [45, 7, 53, 81, 95, 79],
-       [60, 77, 74, 68, 88, 51],
-       [25, 25, 10, 12, 78, 14],
-       [25, 56, 55, 58, 12, 82],
-       [74, 33, 88, 23, 86, 59]
-    ];
-    xAxis: Object = {
-    labels: ['Nancy', 'Andrew', 'Janet', 'Margaret', 'Steven', 'Michael', 'Robert',
-        'Laura', 'Anne', 'Paul', 'Karin', 'Mario'],
-};
-yAxis: Object = {
-    labels: ['Mon', 'Tues', 'Wed', 'Thurs', 'Fri', 'Sat'],
-};
-public legendSettings: Object = {
-    visible:true,
-    position: 'Right',
-    showLabel:true,
-    height:'150px'
-};
-public cellSettings: Object = {
-    showLabel: true,
-    format: '{value} 
-};
- public paletteSettings: Object = {
-    palette: [{ value: 0, color: '#C06C84' },
-    { value: 50, color: '#6C5B7B' },
-    { value: 100, color: '#355C7D' },
-    ]
-};
-}
-```
-In the above code snippet, the heat map is assigned a custom palette to the `paletteSettings` property.
-
-### Enabling tooltip
-The tooltip is put to use when you cannot show information due to space limitations. We will enable the tooltip by
-setting the `showtooltip` characterestic to true and inserting the tooltip module by use of `HeatMap.Inject(Tooltip) `  method.
-
-```typescript
-import { Component, ViewEncapsulation } from '@angular/core';
-import { HeatMap } from '@syncfusion/ej2-heatmap';
-
-@Component({
-selector: 'my-app',
-template:
-   `<ejs-heatmap id='container' style="display:block;" showTooltip='true' [paletteSettings]='paletteSettings'
-   [cellSettings]='cellSettings' [titleSettings]='titleSettings' [dataSource]='dataSource'
-   [xAxis]='xAxis' [yAxis]='yAxis' [legendSettings]='legendSettings'>
-    </ejs-heatmap>`,
-encapsulation: ViewEncapsulation.None
-})
-export class AppComponent{
- titleSettings: Object = {
-    text: 'Sales Revenue per Employee (in 1000 US$)',
-    textStyle: {
-        size: '15px',
-        fontWeight: '500',
-        fontStyle: 'Normal'
-    }
-};
-    // Data for heatmap
-     dataSource: Object[] = [
-       [73, 39, 26, 39, 94, 0],
-       [93, 58, 53, 38, 26, 68],
-       [99, 28, 22, 4, 66, 90],
-       [14, 26, 97, 69, 69, 3],
-       [7, 46, 47, 47, 88, 6],
-       [41, 55, 73, 23, 3, 79],
-       [56, 69, 21, 86, 3, 33],
-       [45, 7, 53, 81, 95, 79],
-       [60, 77, 74, 68, 88, 51],
-       [25, 25, 10, 12, 78, 14],
-       [25, 56, 55, 58, 12, 82],
-       [74, 33, 88, 23, 86, 59]
-    ];
-    xAxis: Object = {
-    labels: ['Nancy', 'Andrew', 'Janet', 'Margaret', 'Steven', 'Michael', 'Robert',
-        'Laura', 'Anne', 'Paul', 'Karin', 'Mario'],
-};
-yAxis: Object = {
-    labels: ['Mon', 'Tues', 'Wed', 'Thurs', 'Fri', 'Sat'],
-};
-public legendSettings: Object = {
-    visible:true,
-    position: 'Right',
-    showLabel:true,
-    height:'150px'
-};
-public cellSettings: Object = {
-    showLabel: true,
-    format: '{value} 
-};
- public paletteSettings: Object = {
-    palette: [{ value: 0, color: '#C06C84' },
-    { value: 50, color: '#6C5B7B' },
-    { value: 100, color: '#355C7D' },
-    ]
-};
-}
-
-In the above example, the `showTooltip` property is set to true.
-
-```
 ### Conclusion
-In this tutorial, you have learned how to render a heat map chart in Angular 2.
-Additionally, we have seen how we can manipulate it's powerful features to build a very reactive application.
+This tutorial has given a foundation for creating a heatmap in Angular. 
+We have seen how we can configure the heatmap with the `HeatMapComponent` and use the `HeatMapComponent` in our application.
 
 Happy coding!
