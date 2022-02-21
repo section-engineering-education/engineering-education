@@ -4,9 +4,9 @@ status: publish
 published: true
 url: /building-a-qa-web-application/
 title: How to build a Q&A web application using Python and Anvil
-description: This tutorial will help the reader understand how to build a Q&A app using one of the pre-trained models on HuggingFace. 
+description: This tutorial will help the reader understand how to build a Q&A app using one of the pre-trained models on HuggingFace.
 author: lilian-cheptoo
-date: 2022-02-08T00:00:00-21:11
+date: 2022-02-21T00:00:00-11:30
 topics: [Machine Learning]
 excerpt_separator: <!--more-->
 images:
@@ -14,8 +14,10 @@ images:
   - url: /engineering-education/building-a-qa-web-application/hero.png
     alt: Q&A web application using Python and Anvil Hero image
 ---
-Question-Answering Web Apps have been around for a while now. A good example is the use of bots on websites where a user asks a question, and an answer is generated automatically. In this build, we will show our readers how to build a Q&A app using one of the pre-trained models on [HuggingFace](https://huggingface.co/) and Anvil.
+Question-Answering web apps have been around for a while now. A good example is the use of bots on websites where a user asks a question, and an answer is generated automatically.
 <!--more-->
+In this build, we will show our readers how to build a Q&A app using one of the pre-trained models on [HuggingFace](https://huggingface.co/) and Anvil.
+
 Anvil is an open-source web interface that allows a developer to spin up and deploy a web app using Python. It is quite similar to the popular [Gradio](https://gradio.app/) web application used by developers. We will leverage Anvil to build our front-end.
 
 ### Prerequisites
@@ -28,7 +30,7 @@ To follow along, you need to have:
 - [Installing and importing dependencies](#installing-and-importing-dependencies)
 - [Setup the deep learning NLP model](#setup-the-deep-learning-nlp-model)
 - [Integrating the model with Anvil app](#integrating-the-model-with-anvil-app)
-- [Connecting to Anvil](@connecting-to-anvil)
+- [Connecting to Anvil](#connecting-to-anvil)
 - [Setting up a callable function](#setting-up-a-callable-function)
 - [Testing the app](#testing-the-app)
 - [Conclusion](#conclusion)
@@ -40,7 +42,7 @@ The first dependency that we will install is PyTorch.
 ```bash
 !pip3 install torch==1.10.2+cu113 torchvision==0.11.3+cu113 torchaudio==0.10.2+cu113 -f https://download.pytorch.org/whl/cu113/torch_stable.html
 ```
-The next dependency that we will install is Transformers. Transformers is the NLP library that will allow us to use the model from HuggingFace.
+The next dependency that we will install is Transformers. It's the NLP library that will allow us to use the model from HuggingFace.
 
 ```bash
 !pip install transformers
@@ -68,7 +70,9 @@ When you run the code above, it will download the model to your notebook.
 
 > You don't have to use the same model we've used in this tutorial. We chose the `deepset/roberta-base-squad2` as it is the most popular. But, there are many Question Answering models on HuggingFace. Feel free to experiment with any other too.
 
-To use this model, we'll need to pass in a dictionary. To this dictionary, we need to pass in two things. A question and some context. We've created a variable called `random_text` to hold some text randomly fetched from Wikipedia. We will pass this variable to the `context`.
+To use this model, we'll need to pass in a dictionary. To this dictionary, we need to pass in two things. A question and some context.
+
+We create a variable called `random_text` to hold some text randomly fetched from Wikipedia. We will pass this variable to the `context`.
 
 ```python
 random_text = """
@@ -108,7 +112,7 @@ Results:
  'score': 0.27500787377357483,
  'start': 443}
 ```
-The model seems to be giving us the answers by simply fetching context from the paragraph. This is so nice! We can take this a step further. We can build a web interface that enables users to interact with the model easily. This is where Anvil comes in handy.
+The model seems to be giving us the answers by simply fetching context from the paragraph. This is good. We can take this a step further. We can build a web interface that enables users to interact with the model easily. This is where Anvil comes in handy.
 
 ### Integrating the model with Anvil app
 [Anvil](https://anvil.works/) is a platform for building full-stack web apps entirely in Python. It makes it easy to build and deploy full-stack machine learning apps. It is easy-to-use and open-source. We will use the framework for this build.
@@ -117,9 +121,9 @@ To use it, head on to their website and click on the `start building` button on 
 
 On successful login, create a new blank app. You'll be prompted to choose the theme of your choice. We selected the `Material Design theme` for this build.
 
-If you've ever used WordPress before with its drag and drop feature, building the front-end is quite similar. 
+If you've ever used WordPress before with its drag and drop feature, building the front-end is quite similar.
 
-Here's the design we came up with:
+Here's the design we come up with:
 
 ![Design](/engineering-education/building-a-qa-web-application/design.jpg)
 
@@ -152,7 +156,7 @@ Click on the `Uplink` option. A pop-up will appear as shown below:
 
 Finally, you need to enable the `Enable the Anvil Server Uplink for this app` button to get the code.
 
-When you run that code, you should see the message below showing that you have successfully connected to the server.
+When you run the code, you should see the message below showing that you have successfully connected to the server.
 
 ```bash
 Connecting to wss://anvil.works/uplink
@@ -192,9 +196,9 @@ On our Anvil app, on the code section, add the following function:
  def primary_color_1_click(self, **event_args):
     input_text = self.input_text.text
     question_text = self.question_text.text
-    
+
     result = anvil.server.call('question_answer', question_text, input_text)
-    
+
     self.answer_text.text = result
 ```
 This connects our model to the elements we created on the Anvil app.
@@ -208,10 +212,12 @@ Here are our results:
 
 We have successfully built a Q&A web application.
 
-Please find the complete code for this tutorial [here](https://colab.research.google.com/drive/1pQ5laoIMBXXZcx2HIxHncXefEgtqJ4uo?usp=sharing). Also, you can access the Anvil Q&A web application [here](https://CQFZO3BMKH73MVY3.anvil.app/MK7W2ABMSJKEQQR2AB3RP73C)
+Please find the complete code for this tutorial [here](https://colab.research.google.com/drive/1pQ5laoIMBXXZcx2HIxHncXefEgtqJ4uo?usp=sharing). You can also access the Anvil Q&A web application [here](https://CQFZO3BMKH73MVY3.anvil.app/MK7W2ABMSJKEQQR2AB3RP73C)
 
 ### Conclusion
-That's our Q&A web application built from scratch. It is relatively straightforward. If you would like to deploy the web application to a wider audience, you can use the `Publish this app` option on the top-right corner of the Anvil app. It will generate a private link that you can show to your users or embed on your website. 
+That's our Q&A web application built from scratch. It is relatively straightforward.
+
+If you would like to deploy the web application to a wider audience, you can use the `Publish this app` option on the top-right corner of the Anvil app. It will generate a private link that you can show to your users or embed on your website.
 
 Happy coding!
 
