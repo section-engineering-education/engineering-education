@@ -46,9 +46,7 @@ You can create a service class when you construct an API for it in your applicat
 - When wrapping firebase or another third-party package with a wrapper.
 
 ### Authentication state
-Authentication state can be subscribed via a stream using `FirebaseAuth`. This stream generates an event each time the authentication status of a user changes, and it continues to do so indefinitely. There are no implementation details to be revealed to the end-user or application using a service class as an API wrapper.
-
-Firebase authentication is set up with the code below. Retrieving a firebase authentication object is as simple as calling `ProviderFirebaseAuth>(context)`.
+Authentication state can be subscribed via a stream using `FirebaseAuth`. This stream generates an event each time the authentication status of a user changes, and it continues to do so indefinitely. There are no implementation details to be revealed to the end-user or application using a service class as an API wrapper. Firebase authentication is set up with the code below. Retrieving a firebase authentication object is as simple as calling `ProviderFirebaseAuth>(context)` function.
 
 ```dart
 import 'package:firebase_auth/firebase_auth.dart';
@@ -67,22 +65,20 @@ class Login extends StatelessWidget {
 }
 ```
 
-> Note: While many programs do not require users to sign in explicitly, it is critical to recognize them individually.
+>Note: While many programs do not require users to sign in explicitly, it is critical to recognize them individually.
+
 The ability to exchange preferences, grant access, compile data and require local authentication are some of the most common security features. Security can be increased by:
 - Verifying whether a request comes from a user who has already signed in to your application.
-- Verifying whether that user uses the firebase database, the realtime database, or an external API.I.
+- Verifying whether that user uses the firebase database, the realtime database, or an external API.
 
 Although we are using the firebase authentication API in our code, we are still accessing it directly, and this can lead to several issues:
-
-1. First, how will you deal with changes to firebase authentication that make things worse in the future.
-2. Suppose we decide to use another authentication service instead of firebase in the future. We'll have to make some changes to our plans.
+- First, how will you deal with changes to firebase authentication that make things worse in the future.
+- Suppose we decide to use another authentication service instead of firebase in the future. We will have to make some changes to our plans.
 
 Our program's authentication calls to firebase will be upgraded to solve the above issues. In addition, we can expect to add more content to our application as the scope of our project grows.
 
 ### Creating service classes
-You can construct a generic authentication system using the firebase API. Service classes are nothing more than a clone of underlying classes. 
-
-The firebase authentication API calls are demonstrated in our below sample code using the `Firebase Authentication Service` class.
+You can construct a generic authentication system using the firebase API. Service classes are nothing more than a clone of underlying classes. The firebase authentication API calls are demonstrated in our below sample code using the `Firebase Authentication Service` class.
 
 ```dart
 class TheUser {
@@ -133,7 +129,6 @@ class ThisApp extends StatelessWidget
 }
 ```
 
-
 Our firebase authentication service class will be the only one affected by a breaking change in firebase authentication. It is not necessary to create a base class, but if you choose to do so, below is an example of a code:
 
 ```dart
@@ -169,11 +164,11 @@ class ThisApp extends StatelessWidget {
 ```
 
 >Note:
->1. The introduction of a base class is a step backward, and writing one service class at a time is also an option.
->2. The renaming of classes and their usages is made simple in modern integrated development environments. For example, when it comes to the authentication service, firebase and a dummy authentication service can be swapped at runtime for testing and demo purposes.
+>- The introduction of a base class is a step backward, and writing one service class at a time is also an option.
+>- The renaming of classes and their usages is made simple in modern integrated development environments. For example, when it comes to the authentication service, firebase and a dummy authentication service can be swapped at runtime for testing and demo purposes.
 
 ### Creating a service that holds a state of an app
-#### 1. Creating a service class
+#### Step one: Creating a service class
 `NewAbstract.dart` is the name of the file you should create. Create an abstract class that defines your service's capabilities in it.
 
 ```dart
@@ -183,8 +178,9 @@ abstract class newServiceClass {
 }
 ```
 
-#### 2. Service implementation
-A new file called `newImplService.dart` needs to be created to use it. Extend your `newServiceClass` class and add the methods that are needed.
+#### Step two: Service implementation
+Create a new file named `newImplService.dart`. Extend your `newServiceClass` class and add the following methods:
+
 ```dart
 import 'NewAbstract.dart';
 
@@ -200,8 +196,10 @@ class newImplService extends newServiceClass {
   }
 }
 ```
-#### 3. Service locator and initialization
+
+#### Step three: Service locator and initialization
 Create a file called `locatingService.dart` and add the [GetIt](https://pub.dev/packages/get_it) service locator package to `pubspec.yaml`. Register the implementation of your service.
+
 ```dart
 import 'package:get_it/get_it.dart';
 import 'newImplService.dart';
@@ -211,36 +209,41 @@ setupServiceLocator() {
   ourGetIt.registerLazySingleton<newServiceClass>(() => newImplService());
 }
 ```
+
 Before running the app in `main.dart`, initialize the service location. 
+
 ```dart
 void main() {
   setupServiceLocator();
   runApp(MyApp());
 }
 ```
-#### 4. Using the service
-Get a reference to your service from anywhere in your code with the service locator.
+
+#### Step four: Using the service
+In this step, we will get a reference to our service from anywhere in our code using the service locator.
+
 ```dart
 class MyClass {
   newServiceClass _newServiceClass = locator<newServiceClass>();
 }
 ```
+
 This is how you'd implement it in that class:
 - `_newServiceClass.getSomeValue()`
 - `_newServiceClass.doSomething(someValue)`
 
-Here is a video to show how mine worked:
+Here is a Gif to illustrate how it will work:
 
 ![Results](/engineering-education/using-service-classes-to-design-an-authentication-api/resuilts.gif)
 
 ### Purpose of service classes
-- Service classes are designed to separate a certain operation from the rest of the app and hide its implementation details.
-- Essentially, having a code coupled to a single function makes it difficult and error-prone to make changes. In this case, you'll need assistance. **Storage service**, for example, is the name of a new class you've created. How it operates internally isn't known to the other classes. It's as simple as calling a service's functions to store and get the data.
+- Service classes are designed to separate a particular operation from the rest of the app and hide its implementation details.
+- Essentially, having a code coupled to a single function makes it difficult and error-prone to make changes. In this case, you will need assistance. **Storage service**, for example, is the name of a new class you have created. How it operates internally is not known to the other classes. It is as simple as calling a service's functions to store and get the data.
 
 ### Conclusion
 Using service classes, you may hide the implementation details of third-party code in your app. However, this is especially true if you need to contact an API method multiple times in your codebase.
 
-In a nutshell, use the API wrapper class to conceal implementation details, including all input and output parameters for the API method, and design a simple abstract service class to easily change another version.
+In a nutshell, use the API wrapper class to conceal implementation details, including all input and output parameters for the API method, and design a simple abstract service class to change another version easily.
 
 ### References
 - [Services in Code and how to use them in Flutter](https://www.filledstacks.com/post/services-in-code-and-how-to-use-them-in-flutter/)
