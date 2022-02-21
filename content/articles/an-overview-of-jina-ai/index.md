@@ -33,14 +33,14 @@ To follow along with this tutorial, you need to be familiar with:
 - [Further reading](#further-reading)
 
 ### What is neural search 
-- Cross modality.
-- Multi-modality.
-- GIF search.
+Before neural search, developers had to write every single instruction to help an application retrieve information. This process was time-consuming and would give developers headaches as they tried to develop these applications. But this isn't the case with neural search. With the advent of neural networks, the way developers write rules changed. One could easily train a neural network to perform a task and the network gets better with the more data it sees. This is the same case with neural search. In simple words, it is bringing neural networks to search.
+
+Pre-trained neural networks are deployed to retrieve information. These networks are trained to retrieve information and get better at information retrieval when fed with a lot of data. Jina AI is one type of neural search framework that uses deep neural networks to perform the search.
 
 ### What is Jina AI
-Jina AI is an open-source, cloud-native neural search framework for building state-of-the-art and scalable deep learning search applications in minutes for any kind of modality. For example, videos, images, source code, long text, etc. The framework allows you to import a "lightweight" version of the Google search engine into your project.     
+Jina AI is an open-source, cloud-native neural search framework. It is used for building state-of-the-art and scalable deep learning search applications for any kind of modality. For example, videos, images, source code, long text, etc. The framework allows you to import a "lightweight" version of the Google search engine into your project.     
 
-Jina AI was first introduced in May 2020 by [Dr. Han Xiao](https://hanxiao.io/about/). He is also the creator of well-known open-source projects such as [bert-as-a-service](https://github.com/hanxiao/bert-as-service) and the popular [fashion-MNIST](https://github.com/zalandoresearch/fashion-mnist) dataset. Currently, the framework is maintained by [Jina AI](https://jina.ai/), an open-source tech startup based in Berlin, Germany. .
+It was first introduced in May 2020 by [Dr. Han Xiao](https://hanxiao.io/about/). He is also the creator of well-known open-source projects such as [bert-as-a-service](https://github.com/hanxiao/bert-as-service) and the popular [fashion-MNIST](https://github.com/zalandoresearch/fashion-mnist) dataset. Currently, the framework is maintained by [Jina AI](https://jina.ai/), an open-source tech startup based in Berlin, Germany.
 
 ### How to install Jina AI
 The Jina AI framework is easy to set up using a quick `pip` install as shown below:
@@ -48,16 +48,26 @@ The Jina AI framework is easy to set up using a quick `pip` install as shown bel
 ```bash
 !pip install -U jina
 ```
+> Make sure to include `-U` if you want to download the latest version of Jina.
+
 ### Fundamental concepts
 The framework has three fundamental concepts:
 - Document
-- Extractor
+- Executor
 - Flow
 
+#### Document
+It is the basic data type in Jina. A document can be a text, image, video, or whatever data type that you have.
+
+#### Executor
+It processes the data. In this case, our data comes from the `Document`.
+
 #### Flow
+The Flow streamlines and distributes the `Executors`.
+
 1. It consists of pods. They are the "brains" of Jina. These pods help us achieve specific tasks such as segmenting, encoding, and ranking.
-2. Context manager
-3. Abstraction of high-level tasks i.e., index or query
+2. Context manager.
+3. Abstraction of high-level tasks i.e., index or query.
 
 Let's create a sample flow.
 
@@ -86,13 +96,20 @@ with f:
 Here, we are saying that with the flow we created, `f`, let's index some documents (docs).
 
 ### Implementing an example to demonstrate how one can use the framework
-Let's implement a simple `Hello World` example to demonstrate how we can use the framework. We will leverage the [Fashion-MNIST](https://github.com/zalandoresearch/fashion-mnist) dataset. We will make some random queries of items in the dataset (shoes, dresses, or shirts), and the framework should give us some results in return. Also, we will use `QueryLang` to help us achieve this task. `QueryLang` is a basic data type in Jina. It provides a Python interface that allows users to manage and access Jina and represent query language structure.
+Let's implement a simple `Multimodal Search` example to demonstrate how we can use the framework. We will leverage the [People Image Dataset](https://www.kaggle.com/ahmadahmadzada/images2000) on Kaggle. It contains 2,000 image-caption pairs `MobileNet` and `MPNet`. We will use Jina to index those 2,000 documents. Given a multimodality query, the framework should give us some results in return. Also, we will use `QueryLang` to help us achieve this task. `QueryLang` is a basic data type in Jina. It provides a Python interface that allows users to manage and access Jina and represent query language structure.
 
-To get started, we will perform the following tasks:
-- Download data and labels.
-- Create our flow-index yml file. 
-- Query the data updating the label.
-- Get the results.
+The code below downloads the dataset and indexes the image-caption pairs.
+
+```bash
+!pip install "jina[demo]" && jina hello multimodal
+```
+> Make sure to include the exclamation `!` before the `pip`. Otherwise, you'll get an error. 
+ 
+After it has finished downloading, it will open up a web page where you can query multimodal documents.
+
+From the left panel, you can perform a multimodality query. You can drag the slider to change which modality the results will focus on. You can also change the search text to see how the results change accordingly. 
+ 
+To access the full code, please refer to this [link](https://colab.research.google.com/drive/1GRChs4OuMtl580nW-SjXaupfYOikkJfq?usp=sharing).
 
 ### Wrapping up
 This tutorial has shown you how you can build your neural search application using a simple example. Of course, this is a basic example, but it contains all the necessary concepts that'll get you started using the framework. For more information about the framework, please read their [documentation](https://github.com/jina-ai/jina).
