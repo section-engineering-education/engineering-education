@@ -40,10 +40,10 @@ To follow along with this tutorial, you need to be familiar with:
 ### What is Jina AI
 Jina AI is an open-source, cloud-native neural search framework for building state-of-the-art and scalable deep learning search applications in minutes for any kind of modality. For example, videos, images, source code, long text, etc. The framework allows you to import a "lightweight" version of the Google search engine into your project.     
 
-The framework was first introduced to the public in May 2020 and is currently maintained by [Jina AI](https://jina.ai/), an open-source tech startup based in Berlin, Germany. The company was founded in early 2020 by [Dr. Han Xiao](https://hanxiao.io/about/), who is also the creator of well-known open-source projects such as [bert-as-a-service](https://github.com/hanxiao/bert-as-service) and the popular [fashion-MNIST](https://github.com/zalandoresearch/fashion-mnist) dataset that have inspired hundreds of tutorials, tools, papers, and software. Before founding Jina AI, Han Xiao was the Engineering Lead at [Tencent AI Lab](https://ai.tencent.com/ailab/en/index).
+Jina AI was first introduced in May 2020 by [Dr. Han Xiao](https://hanxiao.io/about/). He is also the creator of well-known open-source projects such as [bert-as-a-service](https://github.com/hanxiao/bert-as-service) and the popular [fashion-MNIST](https://github.com/zalandoresearch/fashion-mnist) dataset. Currently, the framework is maintained by [Jina AI](https://jina.ai/), an open-source tech startup based in Berlin, Germany. .
 
 ### How to install Jina AI
-Installing the framework is quite easy using a quick `pip` install as shown below:
+The Jina AI framework is easy to set up using a quick `pip` install as shown below:
 
 ```bash
 !pip install -U jina
@@ -62,21 +62,21 @@ The framework has three fundamental concepts:
 Let's create a sample flow.
 
 ```python
-from jina.flow import Flow
+from jina import Flow
 
 f = Flow()
 ```
 We've imported `Flow` and made an instance of it. With those two lines of code, you have your flow ready. However, we know that flow is a manager. As it is, the flow is useless as it is not managing anything. So, we need to add some parts to it using `.add()`.
 
 ```python
-from jina.flow import Flow
+from jina import Flow
 
 f = Flow().add(uses = 'cnn-encoding').add(uses = 'simple-indexer')
 ```
 The code above tells flow to use the `cnn-encoder`. You can use any encoder you want. It also tells the flow to use the `simple-indexer`. Here, we have a flow for encoding and indexing. Finally, we tell the flow what to do with these as shown:
 
 ```python
-from jina.flow import Flow
+from jina import Flow
 
 f = Flow().add(uses = 'cnn-encoding').add(uses = 'simple-indexer')
 
