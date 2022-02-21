@@ -1,13 +1,27 @@
-### Getting started with Angular heatmap
+---
+layout: engineering-education
+status: publish
+published: true
+url: /heatmap-concepts-in-angular/
+title: How To Integrate the Heatmap Charts with Angular 12 or Later
+description: In this tutorial, we will learn about Heat maps. Heat maps are a type of chart that easily displays data to understand.
+author: naomi-seint
+date: 2022-02-21T00:00:00-10:30
+topics: []
+excerpt_separator: <!--more-->
+images:
 
-### Introduction
-You may have heard of 2D or 2-dimensional shapes in a geometry class. For example, rectangles, squares and circles are all 2D shapes. In addition to these, charts such as bar and line charts also have 2 Dimensions.
+  - url: /engineering-education/heatmap-concepts-in-angular/hero.png
+    alt: Heatmap Concepts in Angular
+---
 
-In this tutorial, we will learn about Heat maps. Heat maps are a type of chart that easily displays data to understand.
+You may have heard of 2D or 2-dimensional shapes in a geometry class. For example, rectangles, squares and circles are all 2D shapes
+<!--more-->
+In addition to these, charts such as bar and line charts also have 2 Dimensions. These concepts play an important role while dealing with charts or graphs in programming.
+
+This tutorial, will teach you everything you need to know about Heat maps. Heat maps are a type of chart that easily displays data to understand.
 
 ### Table of content
-- [Getting started with Angular heatmap](#getting-started-with-angular-heatmap)
-- [Introduction](#introduction)
 - [Table of content](#table-of-content)
 - [Prerequisites](#prerequisites)
 - [Objectives](#objectives)
@@ -148,7 +162,8 @@ Next, edit the `app.component.html` template as shown below to display the conte
 ```
 
 Now visit your browser and navigate to `http://localhost:4200`. You should see a page like the one shown below:
-![Angular Heatmap](heatmap-default-page.png)
+
+![Angular Heatmap](/engineering-education/heatmap-concepts-in-angular/heatmap-default-page.png)
 
 ### Configuring the heatMap package component
 In this section, let's modify our main module to use the default heatmap component from the `@syncfusion/ej2-angular-heatmap` package as shown below:
@@ -232,7 +247,7 @@ In the above script, we have modified the `ngOnInit()` method to load the data f
 
 We then set the `dataSource` property to the actual data. This data should then load in the heatmap on page load as shown below:
 
-![HeatMap Output](heatmpa-output.png)
+![HeatMap Output](/engineering-education/heatmap-concepts-in-angular/heatmap-output.png)
 
 Next, re-configure the `app.module.ts` to remove the heatmap module we had passed since the HeatMap component has its module configured.
 
@@ -241,3 +256,6 @@ This tutorial has given a foundation for creating a heatmap in Angular.
 We have seen how we can configure the heatmap with the `HeatMapComponent` and use the `HeatMapComponent` in our application.
 
 Happy coding!
+
+---
+Peer Review Contributions by: [Miller Juma](/engineering-education/authors/miller-juma/)
