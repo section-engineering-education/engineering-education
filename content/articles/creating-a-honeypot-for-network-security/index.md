@@ -3,10 +3,10 @@ layout: engineering-education
 status: publish
 published: true
 url: /creating-a-honeypot-for-network-security/
-title: Creating a honeypot for network security
-description: In this article, we will discuss honeypots and how to avoid them when scraping the web for data..
+title: Creating a Honeypot for Network Security
+description: In this article we will discuss honeypots and how to avoid them when scraping the web for data.
 author: ruth-ngonyo
-date: 2022-02-14T00:00:00-14:00
+date: 2022-02-21T00:00:00-12:00
 topics: [Security]
 excerpt_separator: <!--more-->
 images:
@@ -14,7 +14,7 @@ images:
   - url: /engineering-education/creating-a-honeypot-for-network-security/hero.png
     alt: Creating a honeypot for network security
 ---
-Many companies rely on publicly available data to make critical choices in today's data-driven world. Web scraping is a common technique for obtaining this information from the internet.
+Many companies rely on publicly available data to make critical choices in todays data-driven world. Web scraping is a common technique for obtaining this information from the internet.
 <!--more-->
 However, web scraping has specific difficulties. The honeypot is an example of a trap. One of the most effective ways to deter hackers is to use honeypots. A honeypot system prevents attackers from their objectives. Unwanted behavior is often detected with the use of honeypots by security teams.
 
@@ -32,7 +32,6 @@ This article will discuss honeypots and avoid them when scraping the web for dat
 
 ### Types of honeypots
 Honeypots are classified into the following:
-
 1. Research honeypots
 2. Production honeypots
 
@@ -43,7 +42,6 @@ They are described below.
 - `Production honeypots:` Production honeypots are famous for their low data collection and ease of usage. Adding production honeypots improves network security. Due to their little participation, production honeypots are easy to set up. Research honeypots provide more about the assaults and attackers.
 
 Design-wise, honeypots are classed as follows:
- 
 - Low-interaction honeypots
 - Pure honeypots
 - High-interaction honeypots
@@ -55,7 +53,9 @@ Design-wise, honeypots are classed as follows:
 `High-interaction honeypots` enable attackers to waste time by mimicking production system activities. By using virtual PCs, a single server may host several honeypots. A quick honeypot penetration may restore it. While high-interaction honeypots are safer, they need more maintenance. It may be too pricey without virtual computers.
 
 ### How honeypots operate
-Most honeypots are found in a demilitarized zone (DMZ). A DMZ is a logical or physical subnet that houses and exposes an organization's external-facing services to an untrusted, generally bigger network like the internet. Web and email servers are accessible from the DMZ. A firewall separates the DMZ from the corporate network. An internal network is shielded from the outside world. It permits traffic to flow in key network areas.
+Most honeypots are found in a demilitarized zone (DMZ). A DMZ is a logical or physical subnet that houses and exposes an organization's external-facing services to an untrusted, generally bigger network like the internet. 
+
+Web and email servers are accessible from the DMZ. A firewall separates the DMZ from the corporate network. An internal network is shielded from the outside world. It permits traffic to flow in key network areas.
 
 The invaders think these fake servers are legitimate, but they are honeypots. So they follow well-established protocols and base their behaviors on real-world acts. Occasionally, simulated data is employed to improve the reliability of a piece of data. A honeypot may contain fraudulent credit card information or files that seem to have such data. The honeypot duplicates all routine access control procedures and protocols to protect the data.
 
@@ -106,7 +106,7 @@ In the case of a security compromise, virtual machines may be quickly turned dow
 
 **Step 2:** Set up the firewall and logs.
 
-Now, it's time to pick what honeypot will monitor: file modifications, login attempts, and other actions. The administration must provide more logging since hackers may modify log files. As a precaution, save the honeypot's log files someplace unlikely to be hacked, such as the `Windows logging tool` or a cloud service.
+Now, it's time to pick what the honeypot will monitor: file modifications, login attempts, and other actions. The administration must provide more logging since hackers may modify log files. As a precaution, save the honeypot's log files someplace unlikely to be hacked, such as the `Windows logging tool` or a cloud service.
 
 The honeypot is in the DMZ, outside the firewall. The external firewall should only allow vital ports and block all others. These devices are ideal for diverting traffic from internal networks to public networks.
 
@@ -135,6 +135,8 @@ Let's look at some of the Honeypot software:
 
 ### Conclusion
 Honeypot traps have been used to catch cybercriminals for years. However, they may hinder web scraping. Don't utilize honeypot traps to scrape publicly available data like price tracking or market research.
+
+Happy learning!
 
 ---
 Peer Review Contributions by: [Wilkister Mumbi](/engineering-education/authors/wilkister-mumbi/)
