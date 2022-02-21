@@ -1,22 +1,36 @@
-### Introduction
-Some issues in programming appear to be insurmountable, but you need not be concerned. The same way a computer works, one can overcome a large obstacle in life that appears to be more complicated by simply taking a simple step toward the solution. Complex problems are broken down into smaller pieces by the computer, which is then passed on to functions that provide answers (are implemented).
-To execute all of this work well, one must first comprehend the `building blocks`. These building blocks will assist one in making various decisions in the program, for example, one may like to obtain a positive result while disregarding the negative one, or one may wish for the program to re-run a certain section of the code, necessitating the use of `control structures`. They will assist the program in choosing a specific path or direction, as a decision will be required. As a result, control structures will assess the variable and select the appropriate direction based on the parameter. As previously stated, we will introduce you to control structures in this article. Furthermore, we will give various examples of each statement for a better understanding of these control structures.
+<!--Header with a heading H3-->
 
-**Prerequisites**
-For better understanding, one should have the basics of building blocks from the C & C++ programming language.
+### Introduction
+Some issues in programming appear to be insurmountable,<!--Use simpler terms--> but you need not be concerned. The same way a computer works, one can overcome a large obstacle in life that appears to be more complicated by simply taking a simple step toward the solution. Complex problems are broken down into smaller pieces by the computer, which is then passed on to functions that provide answers (are implemented).
+To execute all of this work well, one must first comprehend the **building blocks**. These building blocks will assist one in making various decisions in the program, for example, one may like to obtain a positive result while disregarding the negative one, or one may wish for the program to re-run a certain section of the code, necessitating the use of **control structures**. They will assist the program in choosing a specific path or direction, as a decision will be required. As a result, control structures will assess the variable and select the appropriate direction based on the parameter. As previously stated, we will introduce you to control structures in this article. Furthermore, we will give various examples of each statement for a better understanding of these control structures.
 
 ### Table of content
-- [Selection statements](#Selection-statements)
+- [Introduction](#introduction)
+- [Prerequisites](#prerequisites)
+- [Selection statements](#selection-statements)
+   * [If statements](#if-statements)
+   * [Else statement](#else-statement)
+   * [Switch statements](#switch-statements)
+- [Iteration statements](#iteration-statements)
+   * [While statements](#while-statements)
+   * [Do While](#do-while)
+   * [For loop](#for-loop)
+- [Jump statements](#jump-statements)
+   * [Break statement](#break-statement)
+   * [Goto statement](#goto-statement)
+   * [Continue statement](#continue-statement)
+   * [Return statement](#return-statement)
+- [Conclusion](#conclusion)
 
-- [Iteration statements](#Iteration-statements)
 
-- [Jump statements](#Jump-statements)
+#### Prerequisites
+For better understanding, one should have the basics of building blocks from the C & C++ programming language.
+
 
 ### Selection statements
 First, of all, we need a recall of the definition of a statement. In programming, statements can be instructions that are initiated by the user. For instance,
 ```C#
 console.writeline("this is my statement");
-
 ``` 
 In this sub-topic, we are going to look at;- if, else, else if and switch statements.
 
@@ -30,10 +44,10 @@ it has a specification where it only executes a true statement.
      statement;// it must be true
  }
 ```
- example in form of a program
+ Example in form of a program.
 
  ```C#
- using System;
+using System;
 
 namespace MyApplication
 {
@@ -51,7 +65,7 @@ namespace MyApplication
  ``` 
  The above program has been executed since the condition given is true (90>9) otherwise it won't execute.
 
- #### Else statement
+#### Else statement
  This statement is opposite to that of 'if' above. It executes if the condition is false. The compiler has to go through the if first to check whether it meets the condition if not then come to **else statement**(the compiler evaluate line by line).
 
  **syntax**
@@ -75,13 +89,16 @@ namespace MyApplication
   {
     static void Main(string[] args)
     {
-      if (9>90) // note that it should be in lowercase otherwise  it will bring an error
+      if (9>90)
+      // note that it should be in lowercase otherwise  it will bring an error
       {
-        Console.WriteLine("yes i agree 90 is greater");// this will not be excuted
+        Console.WriteLine("yes i agree 90 is greater");
+        // this will not be excuted
       }   
       else 
       {        
-          Console.WriteLine("yes 9 is not greater 90");//this is what will be displayed.
+          Console.WriteLine("yes 9 is not greater 90");
+          //this is what will be displayed.
       }
     }
   }
@@ -103,7 +120,8 @@ else if(condition2)
 {
     statement;
 }
-else(condition3)// this is executed when condition 1 and 2 are both false
+else(condition3)
+// this is executed when condition 1 and 2 are both false
 {
     statement;
 }
@@ -121,22 +139,25 @@ namespace MyApplication
       int age = 18;
       if (age < 10) 
       {
-        Console.WriteLine("still child.");// do not meet condition
+        Console.WriteLine("still child.");
+        // do not meet condition
       } 
       else if (age < 15) 
       {
-        Console.WriteLine("adolescence stage.");//do not meet condition
+        Console.WriteLine("adolescence stage.");
+        //do not meet condition
       } 
       else 
       {
-        Console.WriteLine("you are a man.");// meets condition
+        Console.WriteLine("you are a man.");
+        // meets condition
       }
     }
   }
 }
 ```
 **Output**
-```Bash
+```bash
 you are man
 ```
 In the above program, the compiler will not execute the first and the second statement since they don't meet conditions. therefore the third statement will be executed.
@@ -151,7 +172,7 @@ switch(expression)
     case: 1  
               statement;
                break;
-    case: 1
+    case: 2
              statement;
               break;
     .
@@ -179,7 +200,8 @@ namespace MyApplication
                 Console.WriteLine("2021");
                 break;
         case 2:
-                 Console.WriteLine("2022"); //it will output this we have switched it.
+                 Console.WriteLine("2022");
+                 //it will output this we have switched it.
                   break;
         case 3:
                  Console.WriteLine("2023");
@@ -194,7 +216,7 @@ namespace MyApplication
   }
 ```
 Output
-```Bash
+```bash
 2022
 ```
 ### Iteration statements
@@ -220,18 +242,21 @@ namespace MyApplication
   {
     static void Main(string[] args)
     {
-      int j = 10;// we assign a value
-      while (j <20 ) // then the condition
+      int j = 10;
+      // we assign a value
+      while (j <20 )
+      // then the condition
       {
           Console.WriteLine(j);
-        j++;//incrementing
+        j++;
+        //incrementing
       }
     }
   }
 }
 ``` 
 **explanation**
-The program will execute numbers from 10 to 19 since the condition says to output 'j' when 'j<20' and already we know our 'j' is equal to 10.
+The program will execute numbers from 10 to 19 since the condition says to output `j` when `j<20` and already we know our `j` is equal to 10.
 
 #### Do while. 
 Do while is unlike while loop where we first look at the condition. Do while will first do/execute the statement before it looks whether the statement is true and thereafter it checks if it is true to repeat the loop.
@@ -258,7 +283,8 @@ namespace MyApplication
       int j = 10;
       do 
       {
-          Console.WriteLine(j);//we output before checking the condition
+          Console.WriteLine(j);
+          //we output before checking the condition
         j++;
       } while(j<20);
     }
@@ -266,9 +292,9 @@ namespace MyApplication
 }
 ```
 #### For loop.
- The good thing about for loop one can easily know how many times will the system iterate or at what point will it stop and give feedback.
+ The good thing we for loop one can know easily how many times will the system iterate or at what point will it stop and give feedback.
 
-**syntax**
+ **syntax**
 ```C#
 for(initialization;condition; increment/decrement)
 {
@@ -295,16 +321,17 @@ namespace MyApplication
   }
 }
 ```
+
 **Explanation**
 We have first initialized our 'j' to be equal to 10, then the condition is that 'j' can be valued between 9 and 15 since 10 is already involved, so it will output values from 10 to 14.
 
-### Jump statements
+#### Jump statements
 As the name suggests jump statements will transfer control from one place to another as per the condition. In this sub, the topic will learn some of the jump statements.
 
 #### Break statement
 The break statement is used when one needs the code to terminate some statement and perhaps go to the next. Like in switch statements it is used to terminate one statement and go to the next one or terminate the whole program.
 
-**example**
+**Example**
 ```C#
 using System;
   
@@ -318,7 +345,8 @@ class demo
 
         for (int j = 0; j < 5; j++) 
         {
-            if (j == 4)// it will break when it reaches here
+            if (j == 4)
+                // it will break when it reaches here
                 break;
   
             Console.WriteLine("hello");
@@ -327,7 +355,7 @@ class demo
 }
 ```
 Output
-```Bash
+```bash
 hello
 hello
 hello
@@ -375,7 +403,7 @@ j value:9
  ```
  The above program will display 5 to 9 since 'j' we already initiated it and gave it 5 . Therefore the compiler will jump up to 10 since our goto statement directs to 10.
 
- #### continue statement.
+#### Continue statement.
  These kinds of statements are mostly used when a programmer wants the program to skip a certain part of execution like for example in loop statements. Here once the compiler meets the continue statement, it jumps to begin the loop again as per the condition statement.
 
  **example**
