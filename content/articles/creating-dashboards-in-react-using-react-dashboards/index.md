@@ -2,19 +2,20 @@
 layout: engineering-education
 status: publish
 published: true
-url: /building-a-checkout-form-with-stripe-elements/
-title: Building a Checkout Form With Stripe Elements 
-description: This tutorial will take the reader through Stripe elements and how we can use it to create a payment checkout form. It discusses the payment collection flow process and how taxation can be handled.
-author: pato
-date: 2022-01-21T00:00:00-13:30
+url: /creating-dashboards-in-react-using-react-dashboards/
+title: Creating Dashboards in React using React Dashboards
+description: This tutorial discusses about the free React dashboard templates. It provides a step by step guide of how to use the dashboards and also how to link a local database to the application
+author: patrick-munyaka
+date: 2022-02-21T00:00:00-00:25
 topics: [Languages]
 excerpt_separator: <!--more-->
 images:
 
-  - url: /engineering-education/building-a-checkout-form-with-stripe-elements/hero.png
-    alt: Building a Checkout Form With Stripe Elements Hero Image
+  - url: /engineering-education/creating-dashboards-in-react-using-react-dashboards/hero.jpg
+    alt: Creating Dashboards in React using React Dashboards Hero Image
 ---
 [Flatologic](https://flatlogic.com/) is a company that offers free and premium dashboard templates in various frameworks. Whether in Angular, Vue or React, developers can find many user-friendly pre-built applications to suit their needs.
+<!--more-->
 
 Rather than starting a project from scratch, this drastically reduces the amount of coding involved and gets a project running quickly. 
 
