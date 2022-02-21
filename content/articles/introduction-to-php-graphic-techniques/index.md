@@ -6,7 +6,7 @@ url: /introduction-to-php-graphic-techniques/
 title: Introduction To PHP Graphic Techniques
 description: This tutorial will provide a solid foundation on the steps and processes required to create and manipulate graphical elements in PHP. 
 author: sarah-asuquo
-date: 2022-01-29T00:00:00-11:40
+date: 2022-02-21T00:00:00-10:40
 topics: [Languages]
 excerpt_separator: <!--more-->
 images:
@@ -21,19 +21,19 @@ It does this with the aid of the `GD` library, which currently supports image fo
 This tutorial will provide a solid foundation on the steps and processes required to create and manipulate graphical elements in PHP. 
 
 ### Prerequisites
-To follow along with this tutorial, you need to have the following:
+To follow along with this tutorial, you'll need to have the following:
 - Basic knowledge of PHP.
 - An editor such as [Visual Studio Code](https://code.visualstudio.com/).
-- A Web server such as Apache and Nginx is locally installed.
+- A Web server such as Apache and Nginx locally installed.
 - `GD` library/extension. You can confirm if you have it installed by searching for `gd` in your `php.ini` file. You should find `extension=php_gd2.dll` else download it for free on the internet.
 
-### How to create a canvas, ink and paintbrush
+### How to create a canvas, ink, and paintbrush
 Assuming you are a conventional artist and want to draw a picture, you will require a canvas to draw on, a paintbrush to draw with, and ink for the paintbrush to use. 
 
 That is the same convention we employ while working with PHP graphics, and thankfully, the `GD` extension offers us functions that can serve as the canvas, paintbrush, and ink.
 
-#### step 1: Creating a blank canvas
-There are two options to use in creating a blank canvas. We can use any of the functions below:
+#### Step 1: Creating a blank canvas
+There are two options to use in creating a blank canvas. We can use either of the functions below:
 ```php
 <?php
 imagecreate($width,$height);
@@ -75,12 +75,12 @@ Var_dump($image);
 ?>
 ```
 
-If the function returns a resource in the terminal, everything goes well.
+If the function returns a resource in the terminal, everything is going well.
 
-#### step 2: Creating the ink
-The `imagecolorallocate()` function can be used to create the link, and it requires four arguments. This is a default PHP function used to assign colours to an image. 
+#### Step 2: Creating the ink
+The `imagecolorallocate()` function can be used to create the link, and it requires four arguments. This is a default PHP function used to assign colors to an image. 
 
-The function returns an RGB colour value determined by the supplied argument or returns `false` if the operation fails.
+The function returns an RGB color value determined by the supplied argument or returns `false` if the operation fails.
 ```php
 <?php
  
@@ -111,14 +111,14 @@ $blue = imagecolorallocate($image,0,0,255);
 ?>
 ```
 
-In the code snippet above, we created three primary colours to be used when required.
+In the code snippet above, we created three primary colors to be used when required.
 
-Firstly, a blank canvas with dimensions `500x250` was created using the `imagecreatetruecolor()` function and stored in the `$image` variable.
+First, a blank canvas with dimensions `500x250` was created using the `imagecreatetruecolor()` function and stored in the `$image` variable.
 
-Then, three different colours are created using the `imagecolorallocate()` function. The first argument represents the already created blank canvas, while the last three arguments are the RGB values of the desired colours.
+Then, three different colors were created using the `imagecolorallocate()` function. The first argument represents the already created blank canvas, while the last three arguments are the RGB values of the desired colors.
 
 #### How to create the paintbrush
-The PHP `imagefill()` function enables us to apply the ink to the canvas. But, first, it fills up the canvas with the chosen colour, starting from a point corresponding to the `$x` and `$y` coordinates.
+The PHP `imagefill()` function enables us to apply the ink to the canvas. But, first, it fills up the canvas with the chosen color, starting from a point corresponding to the `$x` and `$y` coordinates.
 
 The function returns a Boolean value, true or false, on failure.
 
@@ -130,15 +130,15 @@ imagefill($image,$x,$y,$color);
 ```
 
 Here are the parameters from the snippet:
-- `$image` = A variable resource returned by any image creation functions, e.g.  `imagecreatetruecolor()`.
+- `$image` = A variable resource returned by any image creation functions, for example `imagecreatetruecolor()`.
 - `$x` = This variable stores a value for the x-coordinate.
 - `$y` = This variable stores a value for the y-coordinate.
-- `$ colour` = Represents a colour generated using the `imagecolorallocate()` function.
+- `$ color` = Represents a color generated using the `imagecolorallocate()` function.
 
 #### Output your image
 What is art without visualization? To output your image on the browser, you need two functions, which are:
-1 The `header()` function.
-2 The `image(format)` function requires one argument each.
+1. The `header()` function.
+2. The `image(format)` function requires one argument each.
 
 The argument of the `header()` function accepts a string used to indicate the media type of the resource. The media type is a string sent along with the file showing the file format.
 
@@ -163,7 +163,7 @@ Consider the example below where we try to put things together and output our im
  
 $image = imagecreatetruecolor(500,250);
  
-//Allocate colours to the image
+//Allocate colors to the image
  
 $red = imagecolorallocate($image,255,0,0);
  
@@ -185,14 +185,14 @@ imagedestroy($image);
 
 From the code snippet above, we:
 - Created a blank canvas of dimension 500x250 using the `imagecreatetruecolor()` function.
-- We assigned colors to variables `$red`, `$green` and `$blue` using the `imagecolorallocate()` function.
+- We assigned colors to variables `$red`, `$green`, and `$blue` using the `imagecolorallocate()` function.
 - After that, we performed a flood fill of the blank canvas we had already created, using the `imagefill()` function.
 - We then displayed our image on the browser in `jpeg` format using a combination of the `header` and the `imagejpeg` functions.
-- Lastly, we destroy the resource stored as $image.
+- Lastly, we destroy the resource stored as `$image`.
   
 Output:
 
-![Demo-output](\engineering-education\introduction-to-php-graphic-techniques\image1.jpg)
+![Demo-output](/engineering-education/introduction-to-php-graphic-techniques/image1.jpg)
 
 ### Drawing geometric shapes
 Let's take our skills to the next level by drawing a few geometric shapes. The `GD` library can accommodate all of these. 
@@ -206,9 +206,9 @@ Imagerectangle($image, $x1, $y1, $x2, $y2, $color);
 ```
 
 The parameters required are:
-- `$image` = A variable resource returned by one of the image creation functions, e.g. `imagecreatetruecolor()`. This is where we will draw the rectangle on.
-- `$x1`, `$y1` = X and Y coordinates for point 1
-- `$x2`, `$y2` = X and Y coordinates for point 2
+- `$image` = A variable resource returned by one of the image creation functions, for example, `imagecreatetruecolor()`. This is where we will draw the rectangle on.
+- `$x1`, `$y1` = X and Y coordinates for point 1.
+- `$x2`, `$y2` = X and Y coordinates for point 2.
 - `$color` = A variable representing a color created using the `imagecolorallocate()` function.
   
 Let's consider the example below:
@@ -218,7 +218,7 @@ Let's consider the example below:
  
 $image = imagecreatetruecolor(500,250);
  
-//Allocate colours to the image
+//Allocate colors to the image
  
 $red = imagecolorallocate($image,255,0,0);
  
@@ -246,16 +246,16 @@ The code above should look familiar to you because we have already explained som
 
 To draw a rectangle:
 - We first create a blank canvas on which the rectangle will be drawn using the `imagecreatetruecolor()` function. Then we store the returned resource in the `$image` variable.
-- Next, we create three different colours using the `imagecolorallocate()` function and assign them to variables `$red`, `$green`,  and `$blue`.
-- Then, we perform a flood fill to give the canvas a blue background colour, which is done using the `imagefill()` function.
+- Next, we create three different colors using the `imagecolorallocate()` function and assign them to variables `$red`, `$green`,  and `$blue`.
+- Then, we perform a flood fill to give the canvas a blue background color, which is done using the `imagefill()` function.
 - We then draw the rectangle using the `imagerectangle` function.
-- Finally, The image is viewed on the browser using the `header()` and `imagejpeg()` functions, after which it is destroyed using the `imagedestroy()` function.
+- Then the image is viewed on the browser using the `header()` and `imagejpeg()` functions, after which it is destroyed using the `imagedestroy()` function.
 
 Output:
 
-![image-rectangle](\engineering-education\introduction-to-php-graphic-techniques\image2.jpg)
+![image-rectangle](/engineering-education/introduction-to-php-graphic-techniques/image2.jpg)
 
-In the example above, we drew a rectangle with red borders on an image we created having a blue background colour.
+In the example above, we drew a rectangle with red borders on an image we created having a blue background color.
 
 #### How to draw a polygon
 We use the `imagepolygon()` function to draw a polygon. The function accepts four arguments, as shown below:
@@ -267,7 +267,7 @@ imagepolygon($image, $points, $totalpoints, $color);
 ```
 
 Let's go over the Parameters:
-- `$image` = A variable resource returned by one of the image creation functions, e.g. `imagecreatetruecolor()`. This is where we will draw the rectangle on.
+- `$image` = A variable resource returned by one of the image creation functions, for example, `imagecreatetruecolor()`. This is where we will draw the rectangle on.
 - `$points` = An array contains vertices of the polygon.
 - `$totalpoints` = total number of points.
 - `$color` = A variable representing a color created using the `imagecolorallocate` function.
@@ -309,12 +309,12 @@ Considering that some parts of the code snippet are repetitive, let's bother wit
 We use the `imagepolygon()` function to draw the polygon. The function accepts four arguments, as shown below:
 - The first argument represents the canvas we want to draw on.
 - The second argument is an array that comes in pairs as per X1, Y1, X2, Y2, and so on, representing the polygon's vertices. You can add more vertices by adding more X and Y pairs to the array.
-- The third argument confirms the total number of points, which is `4`, while the last argument $white would make the polygon drawn with white colour.
+- The third argument confirms the total number of points, which is `4`, while the last argument $white would make the polygon drawn with white color.
 - We then display the output, as usual, using the `header()` and `imagejpeg()` functions and finally destroy the resource.
 
 After running the codes above, you're expected to get an output similar to this:
 
-![image-polygon](\engineering-education\introduction-to-php-graphic-techniques\image3.jpg)
+![image-polygon](/engineering-education/introduction-to-php-graphic-techniques/image3.JPG)
 
 ### How to write words on the canvas
 They are several functions provided by the `GD` library that can be used to write text on the canvas. 
@@ -329,12 +329,13 @@ imagestring($image, $size, $x, $y, $string, $color);
 ```
 
 Here are the required parameters:
-- `$image` : A variable resource returned by one of the image creation functions, e.g. `imagecreatetruecolor()`. This is where we would write the text on.
+- `$image`: A variable resource returned by one of the image creation functions, for example, `imagecreatetruecolor()`. This is where we would write the text on.
 - `$size`: A variable represents the size of the words written on the canvas (available size is 1 to 5).
 - `$x`: is the distance from the left canvas border to the left bottom corner of the first word.
 - `$y`: is the distance from the top canvas border to the left bottom corner of the first word.
   
 > Note: `$y` should not be zero (0), or you won't be able to view the words on the canvas.
+
 - `$color` : A variable representing a color created using the `imagecolorallocate()`function.
 - `$string`: Represents the text that would be written on the canvas.
 
@@ -346,7 +347,7 @@ A working example of how to write words on the canvas is shown below:
  
 $image = imagecreatetruecolor(500,250);
  
-//Allocate colours to the image
+//Allocate colors to the image
  
 $red = imagecolorallocate($image,255,0,0);
  
@@ -372,34 +373,33 @@ imagedestroy($image);
 ?>
 ```
 
-After creating a blank canvas, we allocate different colours to variables `$red`, `$green`, `$blue`, `$white`, and carry out a flood fill to give the canvas background blue colour. 
+After creating a blank canvas, we allocate different colors to variables `$red`, `$green`, `$blue`, `$white`, and carry out a flood fill to give the canvas background blue color. 
 
 We then call the `imagestring()` function to help us write a text on the canvas.
 - The first argument is our blank canvas which is where we'll write.
 - The following argument is an integer representing the font size of the text (available values are from 1 to 5).
 - The subsequent two arguments represent X and Y coordinates of the first letter of the string.
 - The fifth argument is the string we want to write in this case. It is `I love PHP`.
-- The last argument represents the text colour.
+- The last argument represents the text color.
 
 The image is then displayed on the browser using the `header()` and `imagejpeg()` functions, and lastly, the image resource is destroyed with the `imagedestroy()` function.
 
 The output of the code snippet above is shown below:
 
-![image-text](\engineering-education\introduction-to-php-graphic-techniques\image4.jpg)
+![image-text](/engineering-education/introduction-to-php-graphic-techniques/image4.jpg)
 
 ### Conclusion
-Congratulations! you have now completed the introductory lessons necessary to facilitate your progress with PHP graphics. 
+Congratulations! You have now completed the introductory lessons necessary to facilitate your progress with PHP graphics. 
 
 However, there are still other exciting things to learn about the application of PHP graphics, such as making captchas, picture watermarks, etc. Therefore, I encourage you to do more study in this regard.
 
-In this article, we have learned; how to create a canvas, ink and paintbrush,
-draw some basic geometric shapes, and write words on the canvas.
+In this article, we have learned how to create a canvas, ink and paintbrush, draw some basic geometric shapes, and write words on the canvas.
 
 Happy coding!
 
 ### References
-https://www.techrepublic.com/article/create-graphics-on-the-fly-using-php/
-https://www.php.net/manual/en/book.image.php/
+- [techrepublic](https://www.techrepublic.com/article/create-graphics-on-the-fly-using-php/)
+- [PHP Net](https://www.php.net/manual/en/book.image.php/)
 
 ---
 Peer Review Contributions by: [Miller Juma](/engineering-education/content/authors/miller-juma/)
