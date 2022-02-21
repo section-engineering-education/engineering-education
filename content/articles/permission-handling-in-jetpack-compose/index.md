@@ -45,7 +45,7 @@ By the end of this tutorial, the reader will be able to:
 ### Terminologies
 - `DisposableEffect` - A side-effect handler for side-effects which when keys change or when a composable leaves composition.
 - `Lifecycle` - This is an abstract class associated with the android lifespan, allowing an object to detect states and respond accordingly.
-- `Rationale` - 
+- `Rationale` - This refers to set logical basis for a course as a result of an action. For this case, the action taken by user by either granting or revoking the permissions.
 - `States` - A state is a value or an element that changes with time. For example, a snack bar can show whenever the internet connection is interrupted.
 
 Let us get started :)
@@ -61,13 +61,13 @@ To create a new Compose project:
 ![Create Project](/engineering-education/permission-handling-in-jetpack-compse/create-project.png)
 
 #### Step two: Setup the dependency
-Here we are going to add the `accompanist-permissions` dependency. Add this dependency in the `build.gradle` file.
+Here we are going to add the `accompanist-permissions` dependency. Add this dependency in the app level `build.gradle` file.
 
 ```gradle
 implementation 'com.google.accompanist:accompanist-permissions:0.21.1-beta'
 ```
 
-This tutorial will use the [Google Accompanist]() library to handle permissions. There are some other ways you can handle them, but they are much more complicated. Using the accompanist library will make it simpler.
+This tutorial will use the [Google Accompanist](https://google.github.io/accompanist/api/permissions/) library to handle permissions. There are some other ways you can handle them, but they are much more complicated. Using the accompanist library will make it simpler.
 
 #### Step three: Enable permissions on Manifest file
 We will start by implementing single permission. Later on, see how you can do this for multiple permissions.
