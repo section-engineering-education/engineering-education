@@ -4,9 +4,9 @@ status: publish
 published: true
 url: /getting-started-with-nessus-scanner/
 title: Getting Started with Nessus Scanner
-description: Nessus scanner is the most popular vulnerability scanner common among penetration testers and hackers. It is open-source and allows one to scan up to 16 private addresses at a time. 
+description: Nessus scanner is the most popular vulnerability scanner among penetration testers and hackers. It is open-source and allows one to scan up to 16 private addresses at a time. 
 author: adeshina-peter
-date: 2022-02-21T00:00:00-17:00
+date: 2022-02-21T00:00:00-11:30
 topics: [Security]
 excerpt_separator: <!--more-->
 images:
@@ -14,7 +14,6 @@ images:
   - url: /engineering-education/getting-started-with-nessus-scanner/hero.jpg
     alt: Getting Started with Nessus Scanner Hero Image
 ---
-Nessus Tenable is a Kali-Linux open-source software common among penetration testers. It is used to provide a variety of security fixes. 
 <!--more-->
 You will frequently use this tool while working as a pen-tester to scan for potential vulnerabilities on a server/website.
 
@@ -97,10 +96,10 @@ Once your activation code has arrived in your email, go ahead and copy it. Paste
 
 Nessus will start the initialization process, which will take a couple of minutes.
 
-![Metersploitable](/engineering-education/getting-started-with-nessus-scanner/metersploitable.png)
+![Metasploitable](/engineering-education/getting-started-with-nessus-scanner/metasploitable.png)
 
 ### Step 4 - Using Metasploitable
-We will use `Metersploitable 2` as our vulnerable machine for scanning. 
+We will use `Metasploitable 2` as our vulnerable machine for scanning. 
 
 Metasploitable is an intentionally vulnerable virtual machine designed for training, exploit testing and general target practice. 
 
