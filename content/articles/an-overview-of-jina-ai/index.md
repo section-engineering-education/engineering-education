@@ -65,9 +65,9 @@ It processes the data. In this case, our data comes from the `Document`.
 #### Flow
 The Flow streamlines and distributes the `Executors`.
 
-1. It consists of pods. They are the "brains" of Jina. These pods help us achieve specific tasks such as segmenting, encoding, and ranking.
+1. It consists of pods. They are the "brains" of Jina. These pods help us achieve specific tasks, such as segmenting, encoding, and ranking.
 2. Context manager.
-3. Abstraction of high-level tasks i.e., index or query.
+3. Abstraction of high-level tasks, i.e., index or query.
 
 Let's create a sample flow.
 
