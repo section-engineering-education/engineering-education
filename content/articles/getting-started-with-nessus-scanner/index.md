@@ -6,7 +6,7 @@ url: /getting-started-with-nessus-scanner/
 title: Getting Started with Nessus Scanner
 description: Nessus scanner is the most popular vulnerability scanner among penetration testers and hackers. It is open-source and allows one to scan up to 16 private addresses at a time. 
 author: adeshina-peter
-date: 2022-02-21T00:00:00-11:30
+date: 2022-02-22T00:00:00-07:10
 topics: [Security]
 excerpt_separator: <!--more-->
 images:
@@ -20,12 +20,12 @@ You will frequently use this tool while working as a pen-tester to scan for pote
 
 *Nessus* scanner is a professional tool widely used by hackers and penetration testers. It assists one to perform high-speed asset discovery, target profiling, malware detection, and sensitive data discovery.
 
-**Tenable** delivers updated plugins that provide the latest information to customers within 24 hours after a vulnerability has been leaked.
+**Tenable** delivers updated plugins that provide the latest information to customers within 24 hours after a vulnerability has leaked.
 
 ### Goal
 At the end of this tutorial, you should be able to:
 
-- Download and install Kali-Linux on your pc.
+- Download and install Kali Linux on your pc.
 - Understand the fundamentals and advantages of the Nessus scanner.
 - Install and download Nessus Tenable.
 - Understand the procedures for identifying and fixing vulnerabilities.
@@ -148,7 +148,7 @@ Once your scan is complete, double click on it, and you will see the scanned res
 ### Step 5
 From the above results, the host has many vulnerabilities. 
 
-For instance, click the *Bind Shell Backdoor Detection vulnerability*. You will find the description and solution on how to fix this vulnerability.
+When you click the *Bind Shell Backdoor Detection vulnerability*, you will find the description and solution on how to fix this vulnerability.
 
 ![Bind Shell Vuln](/engineering-education/getting-started-with-nessus-scanner/vuln.png)
 
