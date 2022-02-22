@@ -24,9 +24,7 @@ High performance is a standard consideration when developing a website. Develope
 3.  Points on improving your next URL structure.
 
 #### URL Structuring
-URL structuring is the process of designing a URL to meet users' readability and memorization needs. Simply, it is the process of choosing a name for a website that users can easily remember.
-
-In this article, you will learn how to organize your URL to improve your site's performance on SEO rankings and make it easy to memorize by your users.
+URL structuring is the process of designing a URL to meet users' readability and memorization needs. Simply, it is the process of choosing a name for a website that users can easily remember. In this article, you will learn how to organize your URL to improve your site's performance in SEO rankings and make it easy to memorize by your users.
 
 #### Reasons for Improving Your URL Structure
 
@@ -53,11 +51,11 @@ Each page on your website should have a primary keyword. The keywords should als
 
 For example, you may include a page with details about your company on your website. Hence, you may want to structure the company’s URL to look a bit like `www.yourcompanywebsite.com/about-us.` This will help search engines and users quickly pre-determine what is on the page before they dive into it.
 
-#### 4. Remove Stop Sords and Special Characters
+#### 4. Remove Stop Words and Special Characters
 Remember we said we want our URLs to be short and straightforward for easy readability. This means you will have to avoid words like pronouns and articles. When designing a URL structure, you should avoid using common stop words such as `a, the, and, or, but.` 
 It is also best to avoid special characters like `#, %, !` in your URL since they are not common, and users might fail to notice them.
 
-> A stop word is a phrase used in Natural language processing when categorizing words common in a language but carries little information. 
+> A stop word is a phrase used in natural language processing when categorizing words common in a language but carries little information. 
 
 #### 5. Use Hyphens to Separate Words
 In the URL `ww.yourwebsite.com/about-us` after the forward-slash, the `about-us` phrase tells users the page is about your website or company. 
