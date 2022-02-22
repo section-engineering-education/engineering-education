@@ -6,7 +6,7 @@ url: /multi-class-image-classifier-using-deep-autoviml/
 title: Multi-Class Image Classifier using Deep AutoViML
 description: In this tutorial, we will use Deep AutoViML to build a model that classifies images of hands playing the rock-paper-scissors game.
 author: simon-ndiritu
-date: 2022-02-08T00:00:00-10:30
+date: 2022-02-22T00:00:00-10:30
 topics: [Machine Learning]
 excerpt_separator: <!--more-->
 images:
@@ -18,7 +18,7 @@ Image classification categorizes input images into their respective labels or ca
 <!--more-->
 In a multi-class, we have three or more classes such as `lion`, `cheetah`, `leopard`, and `tiger`. Multi-class image classification categorizes an input image into one of the three or more classes.
 
-When doing a multi-class classification, the predicted image belongs to only one class. An image can not belong to more than one class at the same time. 
+When doing a multi-class classification, the predicted image belongs to only one class. An image cannot belong to more than one class at the same time. 
 
 We will use the `Deep AutoViML` library in building the model. Deep AutoViML is an Automated Machine Learning (AutoML) library that builds neural networks using [TensorFlow](https://www.tensorflow.org/) and [Keras](https://keras.io/).
 
@@ -69,14 +69,11 @@ These processes are very important, to understand them in detail, read this [art
 In this tutorial, we will use the pre-trained [MobileNet](https://tfhub.dev/google/tf2-preview/mobilenet_v2/feature_vector/4) convolutional neural network which is used for image classification. The MobileNet is trained using a large image dataset. This model is already imported into Deep AutoViML.
 
 3. Deep AutoViML performs hyper-parameter tuning - Hyper-parameter tuning is the process of fine-tuning the parameters of a neural network. Finding the best parameters produces an optimized model. Deep AutoViML uses the [Optuna](https://optuna.org/) to automatically search for the best neural network parameters.
-
 4. Deep AutoViML allows you to add more custom layers - Using Deep AutoViML, we can add more layers to the pre-trained model. This enables us to have more user-centric models that can meet the user's needs.
-
-5. Deep AutoViML automatically selects the best model - Deep AutoViML automatically selects the model with the best results.
-
+5. Deep AutoViML automatically selects the best model.
 6. Deep AutoViML automatically saves the trained model.
 
-To use this library, we install it using the following command:
+To use this library, we install it using the command below:
 
 ```bash
 !pip install deep_autoviml --upgrade
