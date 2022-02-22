@@ -6,7 +6,7 @@ url: /sales-forecasting-with-prophet/
 title: Sales Forecasting with Prophet in Python
 description: This tutorial will leverage the Prophet library to accurately estimate sales trends.
 author: monica-dalmas
-date: 2022-02-22T00:00:00-9:30
+date: 2022-02-22T00:00:00-09:30
 topics: [Machine Learning]
 excerpt_separator: <!--more-->
 images:
