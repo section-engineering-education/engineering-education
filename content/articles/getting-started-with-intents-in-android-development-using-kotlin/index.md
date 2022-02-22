@@ -3,20 +3,20 @@ layout: engineering-education
 status: publish
 published: true
 url: /intents-in-android-using-kotlin/
-title: Getting started with Intents in Android using Kotlin
+title: Getting Started With Intents in Android Using Kotlin
 description: This tutorial will guide the reader on how to create and use intents in Android using Kotlin.
 author: david-maina
-date: 2022-02-17T00:00:00-21:00
+date: 2022-02-22T00:00:00-03:40
 topics: [Languages]
 excerpt_separator: <!--more-->
 images:
 
   - url: /engineering-education/intents-in-android-using-kotlin/hero.jpg
-    alt: Getting started with Intents in Android using Kotlin
+    alt: Getting Started With Intents in Android Using Kotlin
 ---
 An intent is an Android element that facilitates navigation from one screen to another. They are also used to pass data between activities or across applications.
 <!--more-->
-This tutorial will be a step-by-step guide on creating an application utilizing intents and understanding more concepts related to them.
+This tutorial will be a step-by-step guide on creating an application that uses intents and understanding more concepts related to them.
 
 ### Objectives
 By the end of this tutorial, you will be able to understand:
@@ -27,21 +27,28 @@ By the end of this tutorial, you will be able to understand:
 - What malicious intent is, and how to cuff it.
 - What intent resolution means in Android.
 
-> This tutorial is recommended for beginners and intermediate developers looking forward to building their knowledge of Android intents.
+> This tutorial is recommended for beginners and intermediate developers looking to build their knowledge of Android intents.
 
 ### Prerequisites
 - Install the latest Android Studio on your machine. [Download here](https://developer.android.com/studio#downloads).
 
-> `Note:` Choose your best option for Android depending on the operating system running on your machine. Make sure your machine has at least 8GB of RAM otherwise while building a project, it strains the memory and slows down your PC. Hence, the greater the memory, the faster the project is completed.
+> `Note:` Choose your best option for Android depending on the operating system running on your machine. Make sure your machine has at least 8GB of RAM otherwise, while building a project, it will strain the memory and slow down your PC. Hence, the greater the memory, the faster the project is completed.
 
 - Have basic knowledge of the [Kotlin](https://developer.android.com/courses/android-basics-kotlin/course) programming language.
 - Knowledge of how to start an Android project from scratch. [Click here](https://www.section.io/engineering-education/first-android-app/) to get started.
 
 ### Table of contents
-- [A brief walkthrough to intents](#a-brief-walkthrough-to-intents) 
+- [Objectives](#objectives)
+- [Prerequisites](#prerequisites)
+- [Table of contents](#table-of-contents)
+- [A brief walkthrough to intents](#a-brief-walkthrough-to-intents)
 - [Types of Intents](#types-of-intents)
 - [Intent structure](#intent-structure)
+  - [Key terminologies used in intent structuring](#key-terminologies-used-in-intent-structuring)
 - [Examples of implicit and explicit intents](#examples-of-implicit-and-explicit-intents)
+- [Step 1: Creating a new Android Studio project](#step-1-creating-a-new-android-studio-project)
+- [Step 2: Working with the main_activity.xml file](#step-2-working-with-the-main_activityxml-file)
+- [Step 3: Working with ActivityMain.kt file](#step-3-working-with-activitymainkt-file)
 - [How to identify malicious intents](#how-to-identify-malicious-intents)
 - [Intent resolution](#intent-resolution)
 - [Conclusion](#conclusion)
@@ -49,7 +56,7 @@ By the end of this tutorial, you will be able to understand:
 Let's get started!
 
 ### A brief walkthrough to intents
-The intent is usually a command that helps in navigating through an application activity (screen) in either of the following ways:
+An intent is usually a command that helps in navigating through an application's activity (screen) in either of the following ways:
 - Launching a new activity
 - Initiating services
 - Transmitting a broadcast receiver
@@ -62,17 +69,19 @@ The intent is usually a command that helps in navigating through an application 
 
 Intents can also be defined as sequential messages that allow application components to ask other Android features for support. Similarly, two applications on the same device maximally utilize intent to share information. An action, for example, can initiate an external activity such as capturing an image using a camera or getting data from memory.
 
-### Types of Intents.
+### Types of Intents
 Intents are broadly categorized into;
 
 **Implicit Intents** - The element in the application is not specified via implicit intent. In this situation, intent offers information on the components accessible from the system that ought to be executed.
 
-For example, a button will take you to the intended application when you click it. Suppose your device has more than one sharing application. In that case, the options box will appear and display all applications with sharing capabilities. App choice is made depending on which mode the user is most comfortable with, among other personal considerations like the security of the data, e.t.c.
+For example, a button will take you to the intended application when you click it. Suppose your device has more than one sharing application. In that case, the options box will appear and display all applications with sharing capabilities.
+
+App choice is made depending on which mode the user is most comfortable with, among other personal considerations like the security of the data, e.t.c.
 
 **Explicit Intents** - These intents connect elements of the same application. I.e., all the components reside in the same application. Using explicit purpose, you can pass data from one activity to another. For example, a button will direct you to a device file manager when you click it, and you can view the media inside the device memory.
 
 ### Intent structure
-A complete intent object should have a bundle that stores data that helps the application determine which activity it should first start and information that an element in the same application uses to conduct an operation in the correct procedure.
+A complete intent object should have a bundle that stores data that helps the application determine which activity to start first, and information that an element in the same application uses to conduct an operation in the correct procedure.
 
 #### Key terminologies used in intent structuring
 - `Element name` - This is an additional bit of information. Still, it's the most important because it helps make an intent explicit, indicating that the intent must only be delivered to the app element defined by the element name.
@@ -89,7 +98,7 @@ private const Val ACTION_EDIT = "com.davis.action.EDIT"
 
 The code edits information only when the identifiers to be edited are declared.
 
-> Be sure to include the package name of your application before any custom actions you write, e.g., ***`com.davis`*** is a package name.
+> Be sure to include the package name of your application before any custom actions you write, e.g., **_`com.davis`_** is a package name.
 
 - `Data` - It indicates the intent data's explicit type. In most cases, the type is deduced from the data itself.
 
@@ -103,10 +112,10 @@ Example of categories in intents:
 
 - `Extras` - It refers to collecting any extra data. It is used to supply the component with more information.
 
-For instance, if we have an action to send e-mail messages, we can enter additional data to provide a subject, body, and other information relating to the message being sent.
+For instance, if we have an action to send e-mail messages, we can enter additional data to provide a subject, body, and other information relating to the message being sent:
 
 ```Kotlin
-private const Val EXTRA_EMAIL = "com.davis.EXTRA_EMAIL" 
+private const Val EXTRA_EMAIL = "com.davis.EXTRA_EMAIL"
 ```
 
 The code above is a `String` containing the different e-mail addresses to which the message should be sent.
@@ -125,7 +134,7 @@ Launch the Android Studio IDE and create a new empty activity project.
 
 ![Configuring your project](/engineering-education/intents-in-android-using-kotlin/configure.jpg)
 
-### Step 2: Working with the `main_activity.xml` file
+### Step 2: Working with the main_activity.xml file
 Add the following code to the `main_activity.xml` file:
 
 ```xml
@@ -251,7 +260,8 @@ Your design should look similar to the one shown below:
 
 ### Step 3: Working with ActivityMain.kt file
 Before we work with the `main_activity.kt`, we will add additional code to our app files to ensure that it fully meets our objective.
-- In the *`Grandle Scripts`* -> *`build.grandle`*  add the following code:
+
+In the _`Grandle Scripts`_ -> _`build.grandle`_ add the following code:
 
 ```Kotlin
  buildFeatures{ding
@@ -262,7 +272,7 @@ Before we work with the `main_activity.kt`, we will add additional code to our a
 
 > Remember to sync the project.
 
-- In the Android `manifests folder*` -> double click `AndroidManifest.xml` and add the following permissions to be able to access the device media and the camera application.
+In the Android `manifests folder*` -> double click `AndroidManifest.xml` and add the following permissions to be able to access the device media and the camera application:
 
 ```xml
 <uses-permission android:name=
@@ -270,7 +280,7 @@ Before we work with the `main_activity.kt`, we will add additional code to our a
 <uses-permission android:name="android.permission.CAMERA"/>
 ```
 
-- To make your application functional on click events, add the following code to the `MainActivity.kt`
+To make your application functional on click events, add the following code to the `MainActivity.kt`:
 
 ```kotlin
 class MainActivity : AppCompatActivity() {
@@ -323,7 +333,7 @@ class MainActivity : AppCompatActivity() {
 }
 ```
 
-- Click [here](https://github.com/davidginmaina/getting-started-with-intents) to access the full code.
+Click [here](https://github.com/davidginmaina/getting-started-with-intents) to access the full code.
 
 ### How to identify malicious intents
 Your app can use intents to traverse components or conduct an action on behalf of another app.
@@ -343,7 +353,7 @@ fun onCreate() {
 }
 ```
 
-> **Note:** In newer versions of Android i.e., version 12, when using the `detectAll()` method in declaring `VmPolicy`,  `detectUnsafeIntentLaunch` is involuntary invoked.
+> **Note:** In newer versions of Android i.e., version 12, when using the `detectAll()` method in declaring `VmPolicy`, `detectUnsafeIntentLaunch` is involuntary invoked.
 
 ### Intent resolution
 The act of searching for relevant application components for your intents is known as intent resolution.
