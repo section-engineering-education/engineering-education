@@ -8,8 +8,8 @@ A good application should be able to handle all CRUD operations. Owing to that, 
 
 The requirements of both tutorials are the same, which are:
 
-1. An understanding of Kotlin
-2. A basic understanding of Excel/Spreadsheets
+1. An understanding of Kotlin.
+2. A basic understanding of Excel/Spreadsheets.
 3. An understanding of Android development environments.
 
 ### An overview of what we will be doing
