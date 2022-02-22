@@ -33,9 +33,9 @@ To follow along with this tutorial, you need to be familiar with:
 - [Further reading](#further-reading)
 
 ### What is neural search 
-Before neural search, developers had to write every single instruction to help an application retrieve information. This process was time-consuming and would give developers headaches as they tried to develop these applications. But this isn't the case with neural search. With the advent of neural networks, the way developers write rules changed. One could easily train a neural network to perform a task and the network gets better with the more data it sees. This is the same case with neural search. In simple words, it is bringing neural networks to search.
+Before neural search, developers had to write every instruction to help an application retrieve information. This process is time-consuming and would give developers headaches as they try to develop these applications. But this isn't the case with neural search. With the advent of neural networks, the way developers write rules changed. One could train a neural network to perform a task, and the network gets better with the more data it sees. It is the same case with neural search. In simple words, it is bringing neural networks to search.
 
-Pre-trained neural networks are deployed to retrieve information. These networks are trained to retrieve information and get better at information retrieval when fed with a lot of data. Jina AI is one type of neural search framework that uses deep neural networks to perform the search.
+Pre-trained neural networks are deployed to retrieve information. These networks are trained to retrieve information and get better at information retrieval when fed with a lot of data. Jina AI is a neural search framework that uses deep neural networks to perform the search.
 
 ### What is Jina AI
 Jina AI is an open-source, cloud-native neural search framework. It is used for building state-of-the-art and scalable deep learning search applications for any kind of modality. For example, videos, images, source code, long text, etc. The framework allows you to import a "lightweight" version of the Google search engine into your project.     
