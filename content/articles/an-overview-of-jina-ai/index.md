@@ -16,7 +16,7 @@ images:
 ---
 Searching for information on the web is not new. We use search every day on Twitter, LinkedIn, Stack Overflow, and Amazon. 
 <!--more-->
-The most common way we've all been searching for a long time now is with the Google Search platform. But, that's now what we will be discussing today, we will be discussing neural search and how it is different from the standard search that we are used to. Besides, the tutorial will walk you through how to use the Jina AI framework to get your ML tasks done.
+The most common way we've all been searching for a long time now is with the Google Search platform. But, that's not what we will be discussing today. We will be discussing neural search and how it is different from the standard search that we are accustomed to. Besides, the tutorial will walk you through how to use the Jina AI framework to get your ML tasks done.
 
 ### Prerequisites
 To follow along with this tutorial, you need to be familiar with:
