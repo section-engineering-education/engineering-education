@@ -442,7 +442,7 @@ That is it.
 
 ### Further Practice
 
-Apache POI provides a countless number of methods that are to be explored. For this tutorial, we could add table borders, footers, rename a workbook, delete a workbook, rename a sheet, italicize, set different font families, etc. I encourage you to have a look at the [official documentation](https://poi.apache.org/components/spreadsheet/index.html) and this [JavaTPoint blog](https://www.javatpoint.com/apache-poi-tutorial) for more insights. The updated GitHub code is found [here]().
+Apache POI provides a countless number of methods that are to be explored. For this tutorial, we could add table borders, footers, rename a workbook, delete a workbook, rename a sheet, italicize, set different font families, etc. I encourage you to have a look at the [official documentation](https://poi.apache.org/components/spreadsheet/index.html) and this [JavaTPoint blog](https://www.javatpoint.com/apache-poi-tutorial) for more insights. The updated GitHub code is found [here](https://github.com/vinstex/androidExcelTest).
 
 ### Conclusion
 
