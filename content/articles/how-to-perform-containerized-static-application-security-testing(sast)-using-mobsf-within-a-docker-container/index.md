@@ -4,17 +4,17 @@ status: publish
 published: 
 url: /security-testing-using-mobsf-in-docker/
 title: Static Application Security Testing using MobSF and Docker
-description: This article will introduce the reader to Static Application Security Testing and how it works.
+description: This article will introduce the reader to Static Application Security Testing using MobSF and Docker.
 author: ruth-mare
-date: 2022-26-01T16:10:00-18:00
+date: 2022-02-22T00:00:00-17:30
 topics: [Security]
 excerpt_separator: <!--more-->
 images:
 
-  - url: /performing-static-application-testing-in-docker/hero.jpg
+  - url: /engineering-education/performing-static-application-testing-in-docker/hero.jpg
     alt: SAST using MobSF and Docker Hero Image
 ---
-
+A vulnerability that is not fixed could lead to dire consequences for the user and owners of an application. SAST is one of the ways used to scan and assess applications for vulnerabilities.
 <!--more-->
 
 ### Table of content
@@ -22,7 +22,7 @@ images:
 - [What is SAST](#what-is-sast)
 - [Differences between SAST and DAST](#differences-between-sast-and-dast)
 - [Tools used to perform SAST](#tools-used-to-perform-sast)
-- [Step by Step process of SAST](#step-by-ste-process-of-sast)
+- [Step by Step process of SAST](#step-by-step-process-of-sast)
 - [Advantages and Disadvantages of SAST](#advantages-and-disadvantages-of-sast)
 - [Conclusion](#conclusion)
 - [Relevant Material](#relevant-material)
@@ -179,3 +179,4 @@ Developers, therefore, roll out a fine-tuned application with minimal security c
 - [SDLC - Overview](https://www.tutorialspoint.com/sdlc/sdlc_overview.htm)
 
 ---
+Peer Review Contributions by: [Collins Ayuya](https://www.section.io/engineering-education/authors/collins-ayuya/)
