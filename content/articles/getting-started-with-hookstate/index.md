@@ -3,10 +3,10 @@ layout: engineering-education
 status: publish
 published: true
 url: /getting-started-with-hookstate/
-title: Getting Started with HookState library
-description: In this article, we will learn about HookState libary. We will also build a simple Todo application to understand its working.
+title: Getting Started with HookState Library
+description: In this article, we will learn about HookState library. We will also build a simple Todo application to understand how it is working.
 author: mary-njeri
-date: 2022-02-07T00:00:00-00:00
+date: 2022-02-22T00:00:00-01:24
 topics: [Languages]
 excerpt_separator: <!--more-->
 images:
@@ -39,9 +39,7 @@ As a pre-requisite, the reader must have the following:
 - A code editor such as [VS Code](https://code.visualstudio.com/) or any preferred IDE.
 - Knowledge of the [JavaScript](https://developer.mozilla.org/en-US/docs/Web/JavaScript) programming language.
 - Basics of the [React library](https://reactjs.org/).
-- Have a Node.js LTS or later version on your development environment.
-
-You can download Node.js [here](https://nodejs.org/en/download/).
+- Have a [Node.js]((https://nodejs.org/en/download/)) LTS or later version on your development environment.
 
 ### Understanding state management
 In a nutshell, state management is a pattern in which we control the communication and sharing of data across the reusable components of the modern [frontend frameworks](https://www.sitepoint.com/most-popular-frontend-frameworks-compared/).
@@ -59,7 +57,7 @@ In modern frontend applications, we break the UI into logical reusable component
 
 In an extensive application, keeping track of the global state while avoiding `prop` drilling can be difficult. That is where state management libraries come in.
 
-Unlike [redux](https://react-redux.js.org) which uses reducers, dispatch, and actions which can sometimes be confusing, the Hookstate library takes the concept of state in React to a new level.
+Unlike [redux](https://react-redux.js.org) which uses reducers, dispatch, and actions that can sometimes be confusing, the Hookstate library takes the concept of state in React to a new level.
 
 The Hookstate library wraps the idea of the declarative React `useState` to a global version and extends it with extra features.
 
@@ -162,7 +160,7 @@ Let's briefly dissect the above code snippet:
 - `getTasks` method will access the global store by returning the `state. get` method that works the same as React's in-built `setState` hook.
 - Finally, the `removeTask` method accesses the global state and filters out the task by ID.
 
-### Create `AddTodo` component
+### Create AddTodo component
 The `AddTodo` component handles the user input to render a new to-do item. Define the `AddTodo.jsx` file inside the `components` folder.
 
 Our component will reuse the previous custom `useTaskState` to access the global state:
@@ -207,7 +205,7 @@ Finally, export our function by default:
 export default AddTodo;
 ```
 
-### The `TodoList` component
+### The TodoList component
 The `TodoList` component contains our `todo` items. Inside your `components` folder, add the `TodoList.jsx` file with the code below:
 
 ```js
@@ -240,7 +238,7 @@ In the above code, we do the following:
 - `const state = taskState.getTasks;` is the variable to access our state.
 - Inside the JSX, we return an `<ul>` element with lists of available tasks by looping over them.
 
-### The `App.js` component
+### The App.js component
 Our main `App.js` file is quite minimal. All we need to add is the `ToDoList` component, `AddTodo` component, and `useTaskState`.
 
 ```js
@@ -273,10 +271,10 @@ npm run dev
 
 If we head back to our browser at `http://localhost:3000/`, our final app should look similar to this:
 
-![todo demo](/engineering-education/getting-started-with-hookstate/demo1.png).
+![todo demo](/engineering-education/getting-started-with-hookstate/demo1.png)
 
 ### Conclusion
-This tutorial introduced us to state management in React with Hookstate. To generate the global state and access the state store, we built a Todo app that uses the library's APIs.
+This tutorial introduced you to state management in React with Hookstate. To generate the global state and access the state store, we built a Todo app that uses the library's APIs.
 
 You can find the project source code on [GitHub](https://github.com/marienjus/hookstate-demo).
 
