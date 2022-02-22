@@ -6,7 +6,7 @@ url: /an-overview-of-jina-ai/
 title: An Overview of Jina AI
 description: This tutorial will walk our readers through how to use the Jina AI framework to get their ML tasks done.
 author: wilkister-mumbi
-date: 2022-02-14T00:00:00-21:40
+date: 2022-02-21T00:00:00-21:40
 topics: [Machine Learning]
 excerpt_separator: <!--more-->
 images:
@@ -96,7 +96,7 @@ with f:
 Here, we are saying that with the flow we created, `f`, let's index some documents (docs).
 
 ### Implementing an example to demonstrate how one can use the framework
-Let's implement a simple `Multimodal Search` example to demonstrate how we can use the framework. We will leverage the [People Image Dataset](https://www.kaggle.com/ahmadahmadzada/images2000) on Kaggle. It contains 2,000 image-caption pairs `MobileNet` and `MPNet`. We will use Jina to index those 2,000 documents. Given a multimodality query, the framework should give us some results in return. Also, we will use `QueryLang` to help us achieve this task. `QueryLang` is a basic data type in Jina. It provides a Python interface that allows users to manage and access Jina and represent query language structure.
+Let's implement a simple `Multimodal Search` example to demonstrate how to use the framework. We will leverage the [People Image Dataset](https://www.kaggle.com/ahmadahmadzada/images2000) on Kaggle. It contains 2,000 image-caption pairs `MobileNet` and `MPNet`. We will use Jina to index those 2,000 documents. Given a multimodality query, the framework should give us some results in return. Also, we will use `QueryLang` to help us achieve this task. `QueryLang` is a basic data type in Jina. It provides a Python interface that allows users to manage and access Jina and represent query language structure.
 
 The code below downloads the dataset and indexes the image-caption pairs.
 
@@ -112,7 +112,7 @@ From the left panel, you can perform a multimodality query. You can drag the sli
 To access the full code, please refer to this [link](https://colab.research.google.com/drive/1GRChs4OuMtl580nW-SjXaupfYOikkJfq?usp=sharing).
 
 ### Wrapping up
-This tutorial has shown you how you can build your neural search application using a simple example. Of course, this is a basic example, but it contains all the necessary concepts that'll get you started using the framework. For more information about the framework, please read their [documentation](https://github.com/jina-ai/jina).
+This tutorial has shown you how to build a neural search application using a simple example. Of course, this is a basic example, but it contains all the necessary concepts that'll get you started using the framework. For more information about the framework, please read their [documentation](https://github.com/jina-ai/jina).
 
 ### Further reading
 - [Jina AI](https://jina.ai/)
