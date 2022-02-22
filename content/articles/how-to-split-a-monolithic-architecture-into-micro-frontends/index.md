@@ -4,7 +4,7 @@ status: publish
 published: true
 url: /how-to-split-a-monolithic-architecture-into-micro-frontends/
 title: Splitting a Monolithic Architecture into Micro-frontends.
-description: This article introduces the reader to micro-frontends and their advantages compared to monolithic applications. IT also demonstrates illustrate how micro-frontends works.
+description: This article introduces the reader to micro-frontend applications and their advantages compared to monolithic ones. It also demonstrates how micro-frontends works.
 author: ephraim-njoroge
 date: 2022-02-22T00:00:00-17:30
 topics: []
@@ -355,3 +355,6 @@ The code used in this tutorial can be accessed at my [GitHub Repo](https://githu
 ### Further reading
 - [Comparing Monolithic Architecture with Micro-Frontends](https://www.luxoft.com/blog/lcameroon/answering-single-page-application-challenges-with-micro-front-end-architecture).
 - [Overview of Module Federation in Micro-Frontends](https://medium.com/tenable-techblog/introducing-module-federation-c95e2551a5b9).
+
+---
+Peer Review Contributions by: [Mercy Meave](/engineering-education/authors/mercy-meave/)
