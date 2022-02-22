@@ -57,13 +57,13 @@ The framework has three fundamental concepts:
 - Flow
 
 #### Document
-It is the basic data type in Jina. A document can be a text, image, video, or whatever data type that you have.
+It is the basic data type in Jina. A document can be a text, image, video, or whatever data type that you have. You can learn more about it [here](https://docarray.jina.ai/).
 
 #### Executor
-It processes the data. In this case, our data comes from the `Document`.
+It processes the data. In this case, our data comes from the `Document`. You can read more about it [here](https://docs.jina.ai/fundamentals/executor/).
 
 #### Flow
-The Flow streamlines and distributes the `Executors`.
+The Flow streamlines and distributes the `Executors`. It allows you to chain together the `DocumentArray` and `Executor`, to bring real value and to build and serve an application out of it.
 
 1. It consists of pods. They are the "brains" of Jina. These pods help us achieve specific tasks, such as segmenting, encoding, and ranking.
 2. Context manager.
@@ -76,7 +76,7 @@ from jina import Flow
 
 f = Flow()
 ```
-We've imported `Flow` and made an instance of it. With those two lines of code, you have your flow ready. However, we know that flow is a manager. As it is, the flow is useless as it is not managing anything. So, we need to add some parts to it using `.add()`.
+We've imported `Flow` and made an instance of it. With those two lines of code, you have your flow ready. However, we know that flow is a manager. As it is, the flow is useless as it is not managing anything. So, we need to add some parts to it using the `.add()` method. 
 
 ```python
 from jina import Flow
@@ -94,6 +94,8 @@ with f:
     f.index(docs)
 ```
 Here, we are saying that with the flow we created, `f`, let's index some documents (docs).
+
+Other methods included in Flow are: `.start()`, `.stop()`, and `with context manager`. You can read more about Flow [here](https://docs.jina.ai/fundamentals/flow/).
 
 ### Implementing an example to demonstrate how one can use the framework
 Let's implement a simple `Multimodal Search` example to demonstrate how to use the framework. We will leverage the [People Image Dataset](https://www.kaggle.com/ahmadahmadzada/images2000) on Kaggle. It contains 2,000 image-caption pairs `MobileNet` and `MPNet`. We will use Jina to index those 2,000 documents. Given a multimodality query, the framework should give us some results in return. Also, we will use `QueryLang` to help us achieve this task. `QueryLang` is a basic data type in Jina. It provides a Python interface that allows users to manage and access Jina and represent query language structure.
@@ -117,6 +119,7 @@ This tutorial has shown you how to build a neural search application using a sim
 ### Further reading
 - [Jina AI](https://jina.ai/)
 - [Documentation](https://github.com/jina-ai/jina)
+- [Jina Hub](https://hub.jina.ai/)
 
 ---
 Peer Review Contributions by: [Willies Ogola](/engineering-education/authors/willies-ogola/)
