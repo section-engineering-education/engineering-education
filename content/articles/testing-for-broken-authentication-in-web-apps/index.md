@@ -2,24 +2,24 @@
 layout: engineering-education
 status: publish
 published: true
-url: /integrtesting-for-broken-authentication-in-web-apps/
+url: /testing-for-broken-authentication-in-web-apps/
 title: Testing For Broken Authentication in Web Applications
-description: This article will be an introduction to understanding broken authentication in web applications. We will learn various methods to test broken authentication, understand its impact, and learn how to prevent it.
+description: This article will be an introduction to understanding broken authentication in web applications.
 author: shuaib-oseni
-date: 2022-02-14T00:00:00-00:00
+date: 2022-02-22T00:00:00-10:45
 topics: [Security]
 excerpt_separator: <!--more-->
 images:
 
-  - url: /engineering-education/integrtesting-for-broken-authentication-in-web-apps/hero.png
+  - url: /engineering-education/testing-for-broken-authentication-in-web-apps/hero.png
     alt: Testing For Broken Authentication in Web Applications Image
 ---
-Authentication is a mechanism put in place to determine if a user is who they say they are, either through a username and password-based system or any other form of authentication system.
+Authentication is a mechanism put in place to determine if a user is who they say they are, either through a password-based system or any other form of authentication system.
 <!--more-->
 In this article, we'll be going through how to test for broken authentication, their impact, and how to mitigate them.
 
 ### Pre-requisites
-To follow along, it is required to have some basic knowledge of Burp Suite.
+To follow along, you are required to have some basic knowledge of the Burp Suite.
 
 ### Table of contents
 - [What is broken authentication?](#what-is-broken-authentication)
@@ -39,7 +39,7 @@ According to the [OWASP Top 10 2021 report](https://owasp.org/Top10/A07_2021-Ide
 
 This category slipped down from second place and now contains Common Weakness Enumerations (CWEs) relating to identification issues. It was previously known as broken authentication.
 
-The severity of this vulnerability can be so high. Say, an attacker was able to brute-force his way into the administrator account of a web application, this means he gets full control over the web application. 
+The severity of this vulnerability can be so high. Say, an attacker was able to brute-force his way into the administrator account of a web application, this means he gets full control over the web application.
 
 This article seeks to demonstrate how an attacker tests for broken authentication in a web application and how to prevent them.
 
@@ -55,12 +55,11 @@ Let's set up juice shop.
 
 We'll be installing OWASP juice shop using Docker. You can find other ways to set it up [here](https://github.com/jamesemmott/owasp-juice-shop).
 
-To begin, we need to install docker first by running the following commands:
-
+To begin, we need to install docker by running the following commands:
 ```bash
 curl -fsSL https://download.docker.com/linux/debian/gpg | apt-key add -
 echo 'deb [arch=amd64] https://download.docker.com/linux/debian buster stable' > /etc/apt/sources.list.d/docker.list
-apt update 
+apt update
 apt install docker-ce
 ```
 
@@ -79,8 +78,7 @@ After starting up the web application, we'll proceed to the login page for testi
 
 ![login page](/engineering-education/testing-for-broken-authentication-in-web-apps/login.png)
 
-We can go ahead to create an account or log in with the admin credentials, which is:
-
+We can go ahead to create an account or log in with the admin credentials, which are:
 - Email: `admin@juice-sh.op`
 - Password: `admin123`
 
@@ -88,7 +86,9 @@ Now, let's check how the application reacts if we provide incorrect login creden
 
 ![login error](/engineering-education/testing-for-broken-authentication-in-web-apps/error.png)
 
-From the above screenshot, an error message is displayed. Some applications simply come out to tell you the particular field that contains the wrong credentials - something like an `incorrect password` where the username provided is correct, or an `invalid username` where the password is correct but doesn't match the username provided.
+From the above screenshot, an error message is displayed.
+
+Some applications simply come out to tell you the particular field that contains the wrong credentials - something like an `incorrect password` where the username provided is correct, or an `invalid username` where the password is correct but doesn't match the username provided.
 
 This is a poor practice because it allows user enumeration.
 
@@ -128,7 +128,7 @@ Burp Suite is a proxy tool that allows us to intercept, analyze, and modify requ
 
 You can read more on it [here](/engineering-education/getting-started-with-burpsuite/).
 
-Here, the burp suite allows us to intercept and modify the login request before it is sent to the server. 
+Here, the burp suite allows us to intercept and modify the login request before it is sent to the server.
 
 ![burp suite](/engineering-education/testing-for-broken-authentication-in-web-apps/burp.png)
 
@@ -189,12 +189,9 @@ It works!
 - [Multi-factor authentication](https://auth0.com/docs/secure/multi-factor-authentication/step-up-authentication/configure-step-up-authentication-for-web-apps) - provides an extra layer of security for users.
 
 ### Conclusion
-Broken authentication is a vulnerability that must be prevented by all means. Ensuring you have a proper and secured authentication mechanism is very important. 
+To summarize, we have gone through how to set up an OWASP Juice shop. We have also earned how to test for broken authentication in web applications, the impact and prevention of broken authentication applications.
 
-To summarize:
-- The reader learned how to set up an OWASP Juice shop.
-- The reader learned how to test for broken authentication in web applications.
-- The reader learned the impact and prevention of broken authentication applications.
+Broken authentication is a vulnerability that must be prevented by all means. Ensuring you have a proper and secured authentication mechanism is very important.
 
 ### Further reading
 - [Portswigger](https://portswigger.net/web-security/authentication)
