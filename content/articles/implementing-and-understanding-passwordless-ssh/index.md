@@ -1,5 +1,22 @@
-#### Introduction
-Online privacy and security are vital considerations in our modern era. The high value of information has caused a need to implement better security practices and strategies. The secure shell host protocol (SSH) is one of the important security protocols used to protect data in an insecure network. The cryptographic-based protocol has evolved to a passwordless alternative to increase its resilience.
+---
+layout: engineering-education
+status: publish
+published: true
+url: /implementing-and-understanding-passwordless-ssh/
+title: Understanding and Implementing Passwordless SSH
+description: In this article, we will discuss the basic functioning of the passwordless SSH protocol and how to implement it.
+author: linchez-maina
+date: 2022-02-22T00:00:00-22:30
+topics: [Security]
+excerpt_separator: <!--more-->
+images:
+
+  - url: /engineering-education/implementing-and-understanding-passwordless-ssh/hero.png
+    alt: Understanding and Implementing Passwordless SSH Example Image
+---
+Online privacy and security are vital considerations in our modern era. The high value of information has caused a need to implement better security practices and strategies. 
+<!--more-->
+The secure shell host protocol (SSH) is one of the important security protocols used to protect data in an insecure network. The cryptographic-based protocol has evolved to a passwordless alternative to increase its resilience.
 
 #### What You will learn
 
@@ -101,6 +118,7 @@ Some systems that use passwordless SSH authentication require OTPs. Malware such
 In this article, we understood the basic functioning of the passwordless SSH protocol. We looked at its pros and cons and the reasons why it is better than a password-based authentication system. additionally, we gained insights on setting up the passwordless SSH protocol on your local device. It should be noted that the passwordless SSH protocol holds an upper advantage over its password based alternative thus its adoption in the techworld will be swift and inevitable. 
 
 I hope you enjoyed reading the article. All the best!
+
 #### References
 1. [A Look at SSH Passwordless Authentication in cyber security by Megha Thakkar](https://sectigostore.com/blog/what-is-passwordless-ssh-a-look-at-ssh-passwordless-authentication/)
 
