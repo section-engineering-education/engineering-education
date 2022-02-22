@@ -6,7 +6,7 @@ url: /an-overview-of-jina-ai/
 title: An Overview of Jina AI
 description: This tutorial will walk our readers through how to use the Jina AI framework to get their ML tasks done.
 author: wilkister-mumbi
-date: 2022-02-21T00:00:00-21:40
+date: 2022-02-22T00:00:00-21:40
 topics: [Machine Learning]
 excerpt_separator: <!--more-->
 images:
@@ -121,7 +121,7 @@ class PreprocImg(Executor):
                 )  # switch color axis for the PyTorch model later
             )
 ```
-The code below performs embedding and wraps it via an `Executor`
+The class below performs embedding and wraps it via an `Executor`
 
 ```python
 class EmbedImg(Executor):
@@ -134,7 +134,7 @@ class EmbedImg(Executor):
     async def foo(self, docs: DocumentArray, **kwargs):
         docs.embed(self.model)
 ```
-The code below performs matching and wraps it via an `Executor`.
+The class below performs matching and wraps it via an `Executor`.
 
 ```python
 class MatchImg(Executor):
@@ -165,9 +165,6 @@ We can use the `.plot()` method to visualize this `Flow`. We save the image as `
 ```python
 f.plot('flow.svg')
 ```
-Output:
-
-![Flow](/engineering-education/an-overview-of-jina-ai/flow.svg)
 
 The next step involves downloading the image dataset. We save this result inside the variable, `index_data`.
 
