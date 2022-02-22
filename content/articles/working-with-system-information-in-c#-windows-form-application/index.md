@@ -4,15 +4,17 @@ The term "system" refers to the computer components that work together to accomp
 
 In this article, we will go over how to check the system information and the classes that can be used to do so, as well as write a C# program to demonstrate it.
 
-In this tutorial, we will look at how to use the `Management` Namespace and `Environment` in C# to get access to various system data.
+In this tutorial, we will look at how to use the `Management` namespace and `Environment` in C# to get access to various system data.
 
-The `Environment` class is a static class that gives information on the current environment and methods for manipulating it. The `Management` Namespace is a namespace that comprises numerous classes that provide access to management information, system events, devices, and so on.
+The `Environment` class is a static class that gives information on the current environment and methods for manipulating it. The `Management` namespace is a namespace that comprises numerous classes that provide access to management information, system events, devices, and so on.
 
 ### Objectives
 By the end of this tutorial, you should be able to use the `Environment` class and the `Management` namespace to check system information.
 
 ### Prerequisites
-In this tutorial, we will assume you are familiar with the fundamentals of developing Windows Forms applications in `C#` and have some understanding of `C#` programming. You also need also to have Visual Studio installed on your computer.
+In this tutorial, we will assume you are familiar with the fundamentals of developing Windows Forms applications in `C#`. We will assume you have some understanding of `C#` programming. 
+
+You also need also to have Visual Studio installed on your computer.
 
 ### Table of contents
 - [Part 1: Using Environment class](#part-1-using-environment-class)
@@ -48,12 +50,9 @@ When naming text boxes in this Form, `C#` naming standards must be observed, and
 This is the final step, in which we should offer the code that will assist in getting system information, which will be coded within a function of the two buttons as follows:
 
 ##### Button 1: Check system information
-Change the name of the system information button to `button5`, double-click it, and paste the code below into it.
-<!--
-    You mentioned the system information button but you haven't named your buttons. (like you named your textboxes) Please provide names for all your buttons.
--->
+Change the name of the system information button to `button5`, double-click it, and add the code below.
 
-```C#
+```c#
 private void button5_Click(object sender, EventArgs e)
 {
     txtComputerName.Enabled = true;
@@ -85,12 +84,14 @@ private void button5_Click(object sender, EventArgs e)
     String q6 = Environment.OSVersion.Platform.ToString();
 }
 ```
+
 We utilized the `Environment` class to access some of the system's information in the snippet code above. The `Environment` class is a static class, which means that its methods and attributes can only be accessed by using the class name and cannot be instantiated.
 
 The `Environment` class has several properties that help us perform various functions. We simply call each property by its class name using the syntax below.
 
 ```c#
 ClassName.propert_name
+
 // eg. Environment.UserName
 ```
 
@@ -103,14 +104,15 @@ The properties used in the code snippet above are listed below.
 The `MachineName` property is used to access the NetBIOS name of the current computer in use. The `UserName` is used to get the name of the currently logged in user. `Is64BitOperatingSystem` is used to determine if the operating system is 64 bits or not, and `OSVersion` is used to determine the OS version platform.
 
 ##### Button 2: Exit
-Change the name of the exit button to `button9`, double-click it, and paste the code below into it.
+Change the name of the exit button to `button9`, double-click it, and add the code below.
 
-```C#
+```c#
 private void button9_Click(object sender, EventArgs e)
 {
     const string message = "Do you what to exit?";
     const string caption = "Closing the page";
     var results = MessageBox.Show(message, caption, MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
     if (results == DialogResult.Yes)
     {
         Application.Exit();
@@ -120,21 +122,23 @@ private void button9_Click(object sender, EventArgs e)
 
 The `Application.Exit()` method in the above code executes the exit action when a user clicks the `Exit` button. Because the `Application` class is a static class that cannot be instantiated, this method will also only be accessed or called by the class name as shown:
 
-```C#
+```c#
 Application.Exit();
 ```
 
-### Part 2: Using Management Namespace
+### Part 2: Using Management namespace
 `System.Management` comprises various classes that cover the fundamentals of system management objects and management events about the system. Examples of this classes includes:
+
 - `ManagementBaseObject`
 - `ManagementClass`
 - `ManagementObjectSearcher`
-- `ManagementScope`, and so on. 
+- `ManagementScope`, and so on.
 
 Visit the [Microsoft](https://docs.microsoft.com/en-us/dotnet/api/system.management?view=dotnet-plat-ext-6.0) official website to learn more about the `Management` namespace, classes, and Methods.
 
 We will use the `ManagementClass` class and `ManagementObjectCollection` class in this section to check the following hardware information:
-. Processor id 
+
+. Processor id
 . BIOS Maker Serial number
 . Physical Memory Serial number
 . Motherboard Serial number
@@ -153,7 +157,7 @@ This is the final step, in which we should offer the code that will assist in ge
 ##### Button 1: Check the system information
 Change the name of the system information button to `button5`, double-click it, and paste the code below into it.
 
-```C#
+```c#
 private void button5_Click(object sender, EventArgs e)
 {
     ManagementClass management = new ManagementClass("Win32_Processor");
@@ -202,7 +206,6 @@ The `ManagementClass` is used to examine hardware information such as Processor 
 To access the `ManagementClass` properties, we must first build the `ManagementClass` class object as well as the `ManagementObjectCollection` class object.
 
 The value attributes provided by the above classes assist us in displaying the value of specific installed hardware.
-
 
 ### Conclusion
 In part 1 of this article, we used the `Environment` class to check the Machine name, Username, Operating System, whether the processor is x64-based or x32-based, and the System type.
