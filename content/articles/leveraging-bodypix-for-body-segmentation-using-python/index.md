@@ -59,7 +59,7 @@ We pass this path to the `download_model` class to download it into our notebook
 ### Uploading static image using OpenCV
 Let's download an image we can work within this tutorial from [Unsplash](https://unsplash.com/). 
 
-![Boy](/engineering-education//leveraging-bodypix-for-body-segmentation-using-python/boy.jpg)
+![Boy](/engineering-education/leveraging-bodypix-for-body-segmentation-using-python/boy.jpg)
 
 *[Image Source: Unsplash](https://unsplash.com/photos/6PITqYKSoGE)*
 
@@ -94,14 +94,14 @@ cv2.waitKey(0)
 
 When you run the code above, it results in the following output:
 
-![Masked boy](/engineering-education//leveraging-bodypix-for-body-segmentation-using-python/masked-boy.png)
+![Masked boy](/engineering-education/leveraging-bodypix-for-body-segmentation-using-python/masked-boy.png)
 
 It is not perfect, but it masks the boy from the background. The next thing that we will do is to apply a virtual background.
 
 ### Applying a virtual background
 We need to apply an inverse mask to our virtual background. We can then add the two images together. Again, we can get an image from [Unsplash](https://unsplash.com/) that we can use for our background.
 
-![Background](/engineering-education//leveraging-bodypix-for-body-segmentation-using-python/nature.jpg)
+![Background](/engineering-education/leveraging-bodypix-for-body-segmentation-using-python/nature.jpg)
 
 *[Image Source: Unsplash](https://unsplash.com/photos/OJ02cQHePds)*
 
@@ -140,7 +140,7 @@ cv2_imshow(final_image)
 ```
 Output:
 
-![Final image](/engineering-education//leveraging-bodypix-for-body-segmentation-using-python/final.jpg)
+![Final image](/engineering-education/leveraging-bodypix-for-body-segmentation-using-python/final.jpg)
 
 Please find the complete code for this tutorial [here](https://colab.research.google.com/drive/1j4ZwlZtXpaZUrJXCgG2q4wExc7mJcEkT?usp=sharing).
 
