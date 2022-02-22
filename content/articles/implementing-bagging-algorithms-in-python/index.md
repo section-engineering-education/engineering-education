@@ -6,7 +6,7 @@ url: /implementing-bagging-algorithms-in-python/
 title: Bagging algorithms in Python
 description: Machine Learning models can either use a single algorithm or combine multiple algorithms. Using multiple algorithms is known as ensemble learning. The most common types of ensemble learning techniques are Bagging and Boosting. This tutorial will use the two approaches in building a machine learning model. 
 author: joseph-gatura
-date: 2022-02-08T00:00:00-12:00
+date: 2022-02-22T00:00:00-02:20
 topics: [Machine Learning]
 excerpt_separator: <!--more-->
 images:
@@ -19,9 +19,9 @@ We can either use a single algorithm or combine multiple algorithms in building 
 <!--more-->
 Ensemble learning gives better prediction results than single algorithms. The most common types of ensemble learning techniques are bagging and boosting. 
 
-In Bagging, multiple homogenous algorithms are trained independently and combined afterwards to determine the model's average.
+In Bagging, multiple homogenous algorithms are trained independently and combined afterward to determine the model's average.
 
-Boosting is an ensemble technique where we train multiple homogenous algorithms sequentially. These individual algorithms create a final model with the best results. The performance of one algorithm is influenced by the performance of the previously built algorithm.
+Boosting is an ensemble technique, where we train multiple homogenous algorithms sequentially. These individual algorithms create a final model with the best results. The performance of one algorithm is influenced by the performance of the previously built algorithm.
 
 This tutorial will use the two approaches in building a machine learning model. 
 
@@ -54,12 +54,12 @@ In the second approach, we will use the Bagging Classifier and the Random Forest
 ### Prerequisites
 To follow along with this tutorial, the reader should know the following:
 
-- [Python programming](https://www.section.io/engineering-education/python-projects-for-beginners/)
-- [Machine learning workflows](https://www.section.io/engineering-education/house-price-prediction/)
-- [Machine learning in Python using Scikit-learn](https://scikit-learn.org/stable/)
-- Data analysis using [Pandas](https://pandas.pydata.org/)
+- [Python programming.](https://www.section.io/engineering-education/python-projects-for-beginners/)
+- [Machine learning workflows.](https://www.section.io/engineering-education/house-price-prediction/)
+- [Machine learning in Python using Scikit-learn.](https://scikit-learn.org/stable/)
+- Data analysis using [Pandas.](https://pandas.pydata.org/)
 
-> NOTE: In this tutorial, we will use [Google Colab notebook](https://research.google.com/)
+> NOTE: In this tutorial, we will use [Google Colab notebook.](https://research.google.com/)
 
 ### Bagging vs Boosting
 As mentioned above, in Bagging, multiple homogenous algorithms are trained independently in parallel, while in Boosting, multiple homogenous algorithms are trained sequentially. The image below shows the difference between Bagging and Boosting.
@@ -68,7 +68,7 @@ As mentioned above, in Bagging, multiple homogenous algorithms are trained indep
 
 *Image Source: [Pluralsight](https://pluralsight2.imgix.net/guides/81232a78-2e99-4ccc-ba8e-8cd873625fdf_2.jpg)*
 
-In this tutorial, we will only be focusing on implementing Bagging algorithms. To implement Boosting algorithms, read this [article](https://www.section.io/engineering-education/boosting-algorithms-python/)
+In this tutorial, we will only be focusing on implementing Bagging algorithms. To implement Boosting algorithms, read this [article.](https://www.section.io/engineering-education/boosting-algorithms-python/)
 
 ### How Bagging works
 The Bagging technique is also known as Bootstrap Aggregation and can be used to solve both classification and regression problems. In addition, Bagging algorithms improve a model's accuracy score. 
@@ -80,7 +80,7 @@ Overfitting is when the model performs well using the training dataset but poorl
 Variance is used to describe the changes within a model. For example, a variance occurs when you train the model using different splits. 
 
 Bagging algorithms are used to produce a model with low variance.
-To understand variance in machine learning, read this [article](https://www.javatpoint.com/bias-and-variance-in-machine-learning)
+To understand variance in machine learning, read this [article.](https://www.javatpoint.com/bias-and-variance-in-machine-learning)
 
 Bagging comprises three processes: bootstrapping, parallel training, and aggregation.
 
@@ -116,6 +116,7 @@ Aggregation is the last stage in Bagging. The multiple predictions made by the b
 The final model is produced depending on the voting technique used. We have two common voting techniques used, hard voting and soft voting.
 
 **Hard Voting**
+
 Hard voting is also known as majority voting. Hard voting is majorly used when dealing with a classification problem. 
 
 In classification problems, the prediction made by each base model is seen as a vote. This is because the most common prediction made by the base models is the right prediction.
@@ -127,6 +128,7 @@ The image below shows the hard voting process:
 *Image Source: [Data Aspirant](https://i1.wp.com/dataaspirant.com/wp-content/uploads/2020/09/6-Bagging-majority-voting.png?w=750&ssl=1)*
 
 **Soft Voting**
+
 Soft voting is majorly used when dealing with a regression problem. In soft voting, we find the average of the predictions made by the base models. The average value is what is taken as the prediction result.
 
 The image below shows the hard vs soft voting side-by-side:
@@ -179,7 +181,7 @@ The dataset structure is shown in the image below:
 
 Our dataset has columns such as `Age` and `blood pressure` from the image above. 
 
-The features will be used as input for the model. The last column labelled `Outcome` will be an output column. The `Outcome` column is either labeled 0(non-diabetic) or 1(diabetic).
+The features will be used as input for the model. The last column labeled `Outcome` will be an output column. The `Outcome` column is either labeled 0(non-diabetic) or 1(diabetic).
 
 Let us check for missing values in this dataset.
 
@@ -298,7 +300,7 @@ We will use k-fold cross-validation to build our decision tree classifier. In ad
 
 The model is then trained using each subset and gets the accuracy scores after each iteration. Finally, the mean accuracy score is calculated. K refers to the number of subsets/portions we split the dataset.
 
-For a detailed understanding of K-fold cross-validation, read this [guide](https://scikit-learn.org/stable/modules/cross_validation.html)
+For a detailed understanding of K-fold cross-validation, read this [guide.](https://scikit-learn.org/stable/modules/cross_validation.html)
 
 Let us import the method that will help to perform K-fold cross-validation.
 
@@ -363,17 +365,17 @@ random_state=0
 ```
 
 In the code snippet above, we have used the following parameters:
-**base_estimator**.  This represents the algorithm used as the base/weak learners. We will use the `DecisionTreeClassifier` algorithm as our weak/base learners.
+**base_estimator** - This represents the algorithm used as the base/weak learners. We will use the `DecisionTreeClassifier` algorithm as our weak/base learners.
 
-**n_estimators**. This represents the number of weak learners used. We will use 100 decision trees to build the bagging model.
+**n_estimators** - This represents the number of weak learners used. We will use 100 decision trees to build the bagging model.
 
-**max_samples**. The maximum number of data that is sampled from the training set. We use 80% of the training dataset for resampling.
+**max_samples** - The maximum number of data that is sampled from the training set. We use 80% of the training dataset for resampling.
 
-**bootstrap**. Allows for resampling of the training dataset without replacement.
+**bootstrap** - Allows for resampling of the training dataset without replacement.
 
-**oob_score**. Used to compute the model's accuracy score after training.
+**oob_score** - Used to compute the model's accuracy score after training.
 
-**random_state**. Allows us to reproduce the same dataset samples. Furthermore, it ensures that the same ratio is used when producing the multiple subsets.
+**random_state** - Allows us to reproduce the same dataset samples. Furthermore, it ensures that the same ratio is used when producing the multiple subsets.
 
 The next step is to fit the initialized model into our training set.
 
@@ -435,7 +437,7 @@ To use the `RandomForestClassifier` algorithm, run this code:
 ```Python
 scores = cross_val_score(RandomForestClassifier(n_estimators=50), X, y, cv=5)
 ```
-We have used also used the K-fold cross-validation to train the model. To get the mean accuracy score, use this code snippet:
+We have also used the K-fold cross-validation to train the model. To get the mean accuracy score, use this code snippet:
 
 ```Python
 scores.mean()
@@ -454,7 +456,7 @@ This tutorial guided a reader on how to implement bagging algorithms in Python. 
 
 Furthermore, we built a diabetes classification model using both a single algorithm and bagging algorithms. The bagging algorithms produced a model with a higher accuracy score, indicating that bagging algorithms are best suited for building better models.
 
-To get the Python code, click this Google Colab [link.](https://colab.research.google.com/drive/1SjL5eZN-ziMJ4oEvtSlCKVpa7vwCzUsR?usp=sharing)
+To get the Python code, click [here.](https://colab.research.google.com/drive/1SjL5eZN-ziMJ4oEvtSlCKVpa7vwCzUsR?usp=sharing)
 
 ### References
 - [Bootstrap aggregating.](https://medium.com/nerd-for-tech/bootstrap-aggregating-and-random-forest-model-9460e235537)
