@@ -17,16 +17,16 @@ images:
 URL structuring is the process of designing a URL to meet users' readability and memorization needs. Simply, it is the process of choosing a name for a website that users can easily remember.
 <!--more-->
 High performance is a standard consideration when developing a website. Developers consider numerous undertakings to ensure their creation performs in an optimized manner. Good SEO practices can increase the popularity of a website, let alone its monetization ability. Additionally, better SEO tactics ensure that a site ranks on the top list of popular search engines such as Google and Bing. Among the methods of conforming to the most practiced SEO techniques is URL structure optimization.
-#### What You Will Learn
+### What You Will Learn
 
 1.  What is URL structuring?
 2.  Importance of improving your URL structure.
 3.  Points on improving your next URL structure.
 
-#### URL Structuring
+### URL Structuring
 URL structuring is the process of designing a URL to meet users' readability and memorization needs. Simply, it is the process of choosing a name for a website that users can easily remember. In this article, you will learn how to organize your URL to improve your site's performance in SEO rankings and make it easy to memorize by your users.
 
-#### Reasons for Improving Your URL Structure
+### Reasons for Improving Your URL Structure
 
 - Search Engine Optimization Engineers and Web developers believe in improving their URL structure for easy readability for users. 
 - Optimized URL structure positively impacts SEO performance and rankings in Search Engine Results Pages (SERPs) even as a site scales.
@@ -34,7 +34,7 @@ URL structuring is the process of designing a URL to meet users' readability and
 - It will assist you in obtaining extra backlinks and click-thru-rate from authoritative sites, gradually influencing your SEO position. Backlinks are an important ranking factor to consider when ensuring that you are not deterring people from sharing your site's content.
 - It makes it easier for users to navigate through your website. For instance, the URL `www.myarticles.com/best-URL-structures` has a good structure since it allows users to know they are on the page `best-URL-structures.`
 
-#### Tips for Structuring your Next URL
+### Tips for Structuring your Next URL
 Now that you have basic knowledge of URL structuring and why a good URL structure is important, it is time for the tips on structuring your next URL. Below are a few of the standard practices for structuring a URL.
 
 #### 1. Make The URL Relevant to What Is On The Page
@@ -67,7 +67,7 @@ It is standard practice to stick to lowercase letters when structuring your URLs
 #### 7. Use HTTPS
 Your website's credibility and trustworthiness are crucial factors in influencing user experience. Thus,  including the HTTPS protocol into your URL and confirming that your domain name is a Top-Level Domain (TLD) will instill trust in your site's visitors, consequently boosting SEO rankings.
 
-#### Conclusion
+### Conclusion
 Creating a proper URL structure to improve Search Engine Results Pages (SERPs) and SEO rankings demands a thorough preparation. Thus understanding good URL structuring guides consequently betters your site's visibility to search engines and users. 
 I hope this post has helped you realize the necessity of a good URL structure and how to improve it to better your site's visibility. 
 
