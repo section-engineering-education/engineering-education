@@ -221,9 +221,9 @@ class ElephantsAdapter : ListAdapter<Elephants.ElephantsItem, ElephantsAdapter.M
         override fun areItemsTheSame(
             oldItem: Elephants.ElephantsItem,
             newItem: Elephants.ElephantsItem
-       /* ): Boolean {
+        ): Boolean {
             return oldItem == newItem
-        }*/
+        }
 
         override fun areContentsTheSame(
             oldItem: Elephants.ElephantsItem,
@@ -246,7 +246,7 @@ class ElephantsAdapter : ListAdapter<Elephants.ElephantsItem, ElephantsAdapter.M
             binding.textViewStatus.text = ("Sex: ${elephants?.sex}")
         }
     }
-    /*override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MyViewHolder {
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MyViewHolder {
         return MyViewHolder(ElephantsRowBinding.inflate(LayoutInflater.from(parent.context),
             parent,
             false))
@@ -254,7 +254,7 @@ class ElephantsAdapter : ListAdapter<Elephants.ElephantsItem, ElephantsAdapter.M
     override fun onBindViewHolder(holder: MyViewHolder, position: Int) {
         val elephants = getItem(position)
         holder.bind(elephants)
-    }*/
+    }
 }
 ```
 
@@ -292,14 +292,14 @@ class MainViewModel @Inject constructor(private val elephantsRepository: Elephan
 ```kotlin
 
 class ElephantsViewModel (
-   /* private val elephantsApi: MainViewModel
+    private val elephantsApi: MainViewModel
     ) : ViewModel() {
 
     private val elephants = MutableLiveData<Resource<List<Elephant>>>()
 
     init {
         fetchElephants()
-    }*/
+    }
 
     private fun fetchElephants() {
         viewModelScope.launch {
