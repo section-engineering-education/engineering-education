@@ -48,7 +48,7 @@ The Jina AI framework is easy to set up using a quick `pip` install, as shown be
 ```bash
 !pip install -U jina
 ```
-> Make sure to include `-U` if you want to download the latest version of Jina.
+> Make sure to include `-U` if you want to download the latest version of Jina. Also, don't forget to include the exclamation `!` before the `pip`. Otherwise, you'll get an error. 
 
 ### Fundamental concepts
 The framework has three fundamental concepts:
@@ -76,7 +76,7 @@ from jina import Flow
 
 f = Flow()
 ```
-We've imported `Flow` and made an instance of it. With those two lines of code, you have your flow ready. However, we know that flow is a manager. As it is, the flow is useless as it is not managing anything. So, we need to add some parts to it using the `.add()` method. 
+We've imported `Flow` and made an instance of it. With those two lines of code, you have your flow ready. But, we know that flow is a manager. As it is, the flow is useless as it is not managing anything. Thus, we need to add some parts to it using the `.add()` method. 
 
 ```python
 from jina import Flow
@@ -95,23 +95,118 @@ with f:
 ```
 Here, we are saying that with the flow we created, `f`, let's index some documents (docs).
 
-Other methods included in Flow are: `.start()`, `.stop()`, and `with context manager`. You can read more about Flow [here](https://docs.jina.ai/fundamentals/flow/).
+Other methods included in Flow are: `.start()`, `.stop()`, `.block()`, `.plot()`, and `with context manager`. You can read more about Flow [here](https://docs.jina.ai/fundamentals/flow/).
 
 ### Implementing an example to demonstrate how one can use the framework
-Let's implement a simple `Multimodal Search` example to demonstrate how to use the framework. We will leverage the [People Image Dataset](https://www.kaggle.com/ahmadahmadzada/images2000) on Kaggle. It contains 2,000 image-caption pairs `MobileNet` and `MPNet`. We will use Jina to index those 2,000 documents. Given a multimodality query, the framework should give us some results in return. Also, we will use `QueryLang` to help us achieve this task. `QueryLang` is a basic data type in Jina. It provides a Python interface that allows users to manage and access Jina and represent query language structure.
+Leveraging the three fundamental concepts, let's implement a simple `Neural Search` service to demonstrate how to use the framework. We will leverage the [Totally-Looks-Like Dataset](https://sites.google.com/view/totally-looks-like-dataset) on Google.  The dataset contains 6016 image pairs from the wild, shedding light upon a rich and diverse set of criteria employed by human beings. Given a query, the framework should give us some results in return. Also, we will use `QueryLang` to help us achieve this task. `QueryLang` is a basic data type in Jina. It provides a Python interface that allows users to manage and access Jina and represent query language structure.
 
-The code below downloads the dataset and indexes the image-caption pairs.
+Let's import the necessary dependencies into our code.
 
-```bash
-!pip install "jina[demo]" && jina hello multimodal
+```python
+from docarray import Document, DocumentArray
+from jina import Executor, Flow, requests
 ```
-> Make sure to include the exclamation `!` before the `pip`. Otherwise, you'll get an error. 
- 
-After it has finished downloading, it will open up a web page where you can query multimodal documents.
+The class below performs some preprocessing and wraps it via an `Executor`.
 
-From the left panel, you can perform a multimodality query. You can drag the slider to change which modality the results will focus on. You can also change the search text to see how the results change accordingly. 
+```python
+class PreprocImg(Executor):
+    @requests
+    async def foo(self, docs: DocumentArray, **kwargs):
+        for d in docs:
+            (
+                d.load_uri_to_image_tensor(200, 200)  # load
+                .set_image_tensor_normalization()  # normalize color
+                .set_image_tensor_channel_axis(
+                    -1, 0
+                )  # switch color axis for the PyTorch model later
+            )
+```
+The code below performs embedding and wraps it via an `Executor`
+
+```python
+class EmbedImg(Executor):
+    def __init__(self, **kwargs):
+        super().__init__(**kwargs)
+        import torchvision
+        self.model = torchvision.models.resnet50(pretrained=True)        
+
+    @requests
+    async def foo(self, docs: DocumentArray, **kwargs):
+        docs.embed(self.model)
+```
+The code below performs matching and wraps it via an `Executor`.
+
+```python
+class MatchImg(Executor):
+    _da = DocumentArray()
+
+    @requests(on='/index')
+    async def index(self, docs: DocumentArray, **kwargs):
+        self._da.extend(docs)
+        docs.clear()  # clear content to save bandwidth
+
+    @requests(on='/search')
+    async def foo(self, docs: DocumentArray, **kwargs):
+        docs.match(self._da, limit=9)
+        del docs[...][:, ('embedding', 'tensor')]  # save bandwidth as it is not needed
+```
+Let's use the `Flow` to connect all the `Executors`. We use the `.add()` method to add each `Executor` to the `Flow`.
+
+```python
+f = (
+    Flow(port_expose=12345)
+    .add(uses=PreprocImg)
+    .add(uses=EmbedImg, replicas=3)
+    .add(uses=MatchImg)
+)
+```
+We can use the `.plot()` method to visualize this `Flow`. We save the image as `flow.svg`. You can name yours as you wish.
+
+```python
+f.plot('flow.svg')
+```
+Output:
+
+![Flow](/engineering-education/an-overview-of-jina-ai/flow.svg)
+
+The next step involves downloading the image dataset. We save this result inside the variable, `index_data`.
+
+```python
+index_data = DocumentArray.pull('demo-leftda', show_progress=True)
+```
+We then index these image data using the code below:
+
+```python
+with f:
+    f.post(
+        '/index',
+        index_data,
+        show_progress=True,
+        request_size=8,
+    )
+    f.block()
+```
+> This process might take a while. Please be patient as it performs the indexing.
+
+After successful indexing, we can use a Python client to access the service.
+
+```python
+from jina import Client
+
+c = Client(port=12345)  # connect to localhost:12345
+print(c.post('/search', index_data[0])['@m'])  # '@m' is the matches-selector
+```
+Finally, we switch from the GRPC interface to a REST API by writing the following code:
+
+```python
+with f:
+    ...
+    f.protocol = 'http'
+    f.block()
+```
+> `.block()` is a method in `Flow`. It blocks execution until the program is terminated. It is useful to keep the `Flow` alive so that it can be used from other places (clients, etc).
  
-To access the full code, please refer to this [link](https://colab.research.google.com/drive/1GRChs4OuMtl580nW-SjXaupfYOikkJfq?usp=sharing).
+To access the service on a web browser, we can use this URL: http://0.0.0.0:12345/docs. To access the full code, please refer to this [link](https://colab.research.google.com/drive/1GRChs4OuMtl580nW-SjXaupfYOikkJfq?usp=sharing).
 
 ### Wrapping up
 This tutorial has shown you how to build a neural search application using a simple example. Of course, this is a basic example, but it contains all the necessary concepts that'll get you started using the framework. For more information about the framework, please read their [documentation](https://github.com/jina-ai/jina).
@@ -120,6 +215,7 @@ This tutorial has shown you how to build a neural search application using a sim
 - [Jina AI](https://jina.ai/)
 - [Documentation](https://github.com/jina-ai/jina)
 - [Jina Hub](https://hub.jina.ai/)
+- [Totally Looks Like - How Humans Compare, Compared to Machines](https://arxiv.org/abs/1803.01485v3)
 
 ---
 Peer Review Contributions by: [Willies Ogola](/engineering-education/authors/willies-ogola/)
