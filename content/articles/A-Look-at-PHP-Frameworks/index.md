@@ -1,157 +1,144 @@
 ### Introduction
-Developers have been using frameworks to build their web applications. This is because frameworks speed up the development process and are easy to use.
+Nowadays, PHP developers have been using PHP web frameworks to build their web applications. This is because frameworks speed up the development process and are easy to use.
 
-[PHP](https://www.php.net) has several frameworks to create applications.
+PHP has several frameworks for building web applications. Due to the availability of too many frameworks, choosing the best can be  stressful.
 
-Due to the availability of too many frameworks, choosing the best can be sometimes stressful.
+By the end of this article,a developer will be able to choose the best PHP framework for their web application.
 
-By the end of this tutorial, the developer will choose the best framework for their web application.
-
-### Factors to consider when choosing a framework
+### Factors to consider when choosing a PHP framework 🤔
 It is essential to consider the following factors when choosing a framework.
-1. Popularity. Is the framework known and used by many developers? If not, it is not the best choice.
-2. Features. Is the framework well-suited for the task? If it is, then it is the best choice for your project.
-3. Cost. Is the framework affordable? Is it free? If it is, then it is the best choice.
-4. MVC. All PHP frameworks have MVC structures. Therefore, every developer must have a good understanding of the MVC before choosing a framework. 
 
-### Should I use a framework to develop an application?😕
-To answer this question, look at some of the advantages of using a framework listed below:
-1. Developers prefer to write less code. The functions and methods of the framework are more accessible than writing the same code from scratch. This means that developers have to write fewer lines of code.
-2. Rapid project development framework is like a skeleton; it is already connected. The developer, therefore, needs to add a little bit of code to the framework to make it work.
-3. The framework is easy to use. The developer can use the framework without any knowledge of the underlying code.
-4. The framework encourages good coding practice. Code is divided into directories and files depending on the functions.
-5. Promote teamwork.
-### Some Popular PHP frameworks: 
-### 1. [Laravel](https://github.com/laravel/laravel)  
+1. **Popularity** - Is the framework known and used by many developers? If not, it is may not the best choice.
+2. **Features** - Is the framework well-suited for the task? If it is, then it may be a good choice for your project.
+3. **Sustainability** - Is the framework well-maintained, will it continue to support your technology stack in the future?
+4. **Learning curve** - How long does it take to learn a framework? With good documentation the learning curve flattens and time taken reduces.
+
+### Should I use a framework to develop an application? 🤷
+To answer this question, look at some of the advantages of using a framework.
+
+1. **Rapid project development** -A framework is like a "skeleton"; it is already connected. The developer, therefore, just needs to add a little bit of code to the framework to make it work for their needs.
+2. **A framework is easier to use** - The developer can use the framework without any knowledge of the underlying code.
+3. **A framework encourages good coding practices** - Code is divided into files annd directories depending on the functionality.
+4. **Lesser lines of code** - When using a framework, there is less code to write due to the presence of built-in functions.
+
+### Some Popular PHP frameworks
+The following are some of the most popular PHP frameworks.
+
+#### 1. Laravel 🚀
 [Laravel](https://laravel.com/) is one of developers' most popular PHP frameworks.
-It is the widely used PHP framework.
-Taylor Otwell created it in the year 2011 in an attempt to provide more features like authentication to the [CodeIgniter](https://codeigniter.com/) framework.
+It is the most widely used PHP framework. Taylor Otwell created it back in 2011 in an attempt to provide more features like authentication to the [CodeIgniter](https://codeigniter.com/) framework.
 
-#### Overviews at the time of writing this tutorial
-Latest version: Version 8.
+#### Overviews at the time of writing this article
+```
+Latest version : 9.0.0
+GitHub stars ⭐: 68.2k stars
+GitHub forks 🍴: 22.1k forks
+```
 
-Git Star: 68.2k stars
+##### Laravel features
+Some of the notable features of the Laravel framework include:
 
-Forks: 22.1k forks
+1. Authentication and authorization support.
+2. URL-based routing.
+3. Database management system.
+4. High speed and good security features.
+5. Template engine.
 
-Examples of Companies Using: [Cuttlesoft](https://cuttlesoft.com)
-
-Launched in the year 2011
-
-#### Why use Laravel?
+##### Why use Laravel?
 1. It is easy to get started with Laravel.
-2. It has high speed and good security fixtures.
-3. It has features like MVC structural database migrations and routing. 
+2. It has high speed and good security features.
+3. It is good in build complex applications.
+4. A lot of features are built-in.
 
-#### Its Features
-Some of the Laravel fixtures include:
-1. Authentication
-2. Authorization
-3. URL-based routing
-4. Database
-5. It has high speed and good security fixtures.
-6. Support for MVC architecture 
+Some companies that use Laravel include [Cuttlesoft](https://cuttlesoft.com).
 
-### 2. [CodeIgniter](https://github.com/codeigniter4/CodeIgniter4)
-Despite [CodeIgniter](https://codeigniter.com/) being referred to as a small framework, it has some compelling features, like being first and flexible. It is beneficial when creating both front-end and back-end parts.   
+### 2. CodeIgniter 🪔
+CodeIgniter was first released in 2006 and is one of the most popular PHP frameworks. Despite [CodeIgniter](https://codeigniter.com/) being referred to as a small framework, it has some compelling features, like being fast and flexible. It can be beneficial when creating both the frontend and backend parts.
 
-#### Overviews at the time of writing this tutorial
-Latest version: Version 4
+#### Overviews at the time of writing this article
+```
+Latest release : 4.1.8
+GitHub stars ⭐: 3.9k stars
+GitHub forks 🍴: 1.5k forks
+```
 
-Git Star: 3.9k stars
-
-Forks: 1.5 folks
-
-Examples of Companies Using: [Wappalyzer](https://www.wappalyzer.com/lookup/www3.yggtorrent.nz)
-
-Invented in 2014 by [EllisLab](https://ellislab.com/)
+#### CodeIgniter features:
+1. Email handling.
+2. Flexible URL routing
+3. Quality error handling.
+4. Friendly URLs.
+5. Validation of data and forms.
 
 #### Why use CodeIgniter?
-1. Migration Aspect. This aspect is very useful in database management. It saves time and effort from having to create a database manually.
-2. User-Friendly interface. It has a UI that is easy to use and understand, giving developers an easy time.
+1. Compared to other frameworks, codeIgniter is considerably faster. 
 3. Simple customization and expansion. The original files of the framework are straightforward to modify and extend.
-4. It is simple to debug. It has a debug mode that is very useful when debugging.
+4. It is easy to debug. It has a debug mode that is very useful when debugging.
 
-#### Its features :
-1. Email sending and receiving
-2. Flexible URL routing. 
-3. Error logging. 
-4. Friendly URLs.
-5. Validation of Forms and Data
+Some companies that use CodeIgniter include [Wappalyzer](https://www.wappalyzer.com/).
 
-### 3. [YII2](https://github.com/yiisoft/yii2)
-The acronym [YII2](https://www.yiiframework.com) stands for "Yes It Is." It can develop any web application. It has very high performance.
+### 3. Yii 2 🔥
+[Yii2](https://www.yiiframework.com) was first stable version was released in December 2008. It has a strong set of functionality and supports a variety of extensions to help developers construct web applications faster. For instance, it has a [Gii](https://www.yiiframework.com/doc/guide/2.0/en/start-gii) code generator that support CRUD operations.
 
-#### Overviews at the time of writing this tutorial
-Current Version 2.0
+#### Overviews at the time of writing this article
+```
+Latest version : 1.1.25
+GitHub stars ⭐: 4.8k stars
+GitHub forks 🍴: 2.3k forks
+```
 
-Git Star: 13.9k stars
-
-Forks: 7k forks
-
-Examples of Companies Using:[Pissedconsumer](https://www.pissedconsumer.com) 
-
-Release date: October 2006
-
-Created by: Samdark
-
-#### Why use Yii2
-1. Development of a web application using Yii is fast.
-2. It has very high performance.
-3. It has helpful documentation.
-4. It has a good support forum, e.g., live chats and discussion groups.
-
-#### Its features: 
-1. Support for caching mechanisms, such as page caching
+#### Yii2 features:
+1. Support for caching mechanisms, such as page caching.
 2. Capability to obtain data from multiple models
-3. well-organized Structure
+3. A well-organized structure.
 4. Provide support for database migration features.
 5. Offers robust security features to make Yii applications more secure.
 
-### 4.[CakePHP](https://github.com/cakephp/cakephp)
-[CakePHP](https://cakephp.org/) is a simple PHP framework that makes the development of web applications easy. Its minimal configuration procedure makes it easy to get started.
+#### Why use Yii 2?
+1. Development of a web applications using Yii is fast.
+2. It has very high performance.
+3. It has a rich documentation.
+4. It has a good support forum. This includes live chats platforms and discussion groups.
 
-#### Overviews at the time of writing this tutorial
-Released: 2000
+Some companies that use YII2 include [Pissedconsumer](https://www.pissedconsumer.com).
 
-Git Star: 8.5k stars
+### 4.CakePHP 🍰
+[CakePHP](https://cakephp.org/) started in April 2005. It a simple PHP framework that makes the development of web applications easy. Its minimal configuration procedure makes it easy to get started.
 
-Forks:  3.5 forks
+#### Overviews at the time of writing this article
+```
+Latest version: 4.3.5
+GitHub Star ⭐: 8.5k stars
+GitHub Forks 🍴:  3.5 forks
+```
 
-Examples of Companies Using: [Netsapiens](https://enlyft.com/tech/company/netsapiens.com)
+#### CakePHP features
+1. Error logging system.
+2. It requires PHP version 7.2 to function.
+3. It has a CRUD structure.
+4. It is a universal framework. It is suitable for all web apps.
 
-Latest version: 4.0
-
-#### Why use CakePHP? 
+#### Why use CakePHP?
 1. It has an easy set-up. Therefore it is a good choice for beginners.
-2. Has good documentation that helps a beginner when he gets stuck.
-3. Easy database migration system
+2. It has a good documentation that helps beginners when they gets stuck.
+3. It offers an easy database migration system.
 4. It is easy to extend.
 
-#### Its features
-1. Error messages have been improved throughout the framework.
-2. It requires PHP version 7.2 to function.
-3. It has a CRUD (create, read, update, and delete) structure.
-4. FormHelper helps in error handling.
+Some companies that use CakePHP include [Netsapiens](https://enlyft.com/tech/company/netsapiens.com).
 
-### Additional PHP frameworks
-1. [Zend Framework](github.com/zendframework/zendframework)
-2. [FuelPHP](https://github.com/fuelphp/fuelphp)
-3. [PHPixie](https://github.com/PHPixie/Framework)
-4. [Slim](https://github.com/slimphp/Slim)
-5. [Symfony](https://github.com/symfony/symfony)
-
-### Which PHP framework do I use?😕
-The development procedure is simple for any developer who employs a framework. This, in turn, reduces the workload. We have seen that each framework has its merits, demerits, and documentation from the above discussion. Therefore, it is the responsibility of a developer to choose the type of PHP to use.
-This will depend on various factors like security, documentation, and ease of use.
+### Other PHP frameworks worth mentioning
+1. [Zend Framework](github.com/zendframework/zendframework) 🥨
+2. [FuelPHP](https://github.com/fuelphp/fuelphp) ⛽️
+3. [PHPixie](https://github.com/PHPixie/Framework) 🧚
+4. [Slim](https://github.com/slimphp/Slim) 📏
+5. [Symfony](https://github.com/symfony/symfony) 🎵
 
 ### Conclusion
-It is important to note that the developer should not just choose a framework for his project. He should go for the project that most closely matches his needs.
+The development procedure is simpler for any developer who employs a framework. This, in turn, reduces the workload. From the above discussion, we have seen that each framework has a set of features. Therefore, it is the responsibility of a developer to choose the type of PHP framework to use. This will depend on various factors like the work at hand, security, documentation, and ease of use.
 
-Happy coding.
+Happy coding!
 
-### Further Reading
-1. [PHP frameworks](https://en.wikipedia.org/wiki/Category:PHP_frameworks)
-2. [Stackoverflow](https://stackoverflow.com/questions/794946/what-is-the-best-class-structure-for-simple-php-framework/794992#794992)
-3. [Getting Started with PHP](https://www.section.io/engineering-education/introduction-to-php/)
+### Further reading
+1. [Category: PHP frameworks - Wikipedia](https://en.wikipedia.org/wiki/Category:PHP_frameworks)
+2. [What is the best class structure for simple php framework? - StackOverflow](https://stackoverflow.com/questions/794946/what-is-the-best-class-structure-for-simple-php-framework/794992#794992)
+3. [Getting Started with PHP - Section.io](https://www.section.io/engineering-education/introduction-to-php/)
 
