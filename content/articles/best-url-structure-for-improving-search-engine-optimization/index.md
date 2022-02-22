@@ -1,4 +1,21 @@
-#### Introduction
+---
+layout: engineering-education
+status: publish
+published: true
+url: /best-url-structure-for-improving-search-engine-optimization/
+title: Best URL Structure To Improve Search Engine Optimization
+description: In this article we will learn how to organize URLs to improve website performance.
+author: selina-maina
+date: 2022-02-22T00:00:00-18:00
+topics: []
+excerpt_separator: <!--more-->
+images:
+
+  - url: /engineering-education/best-url-structure-for-improving-search-engine-optimization/hero.jpg
+    alt: SEO example hero image 
+---
+URL structuring is the process of designing a URL to meet users' readability and memorization needs. Simply, it is the process of choosing a name for a website that users can easily remember.
+<!--more-->
 High performance is a standard consideration when developing a website. Developers consider numerous undertakings to ensure their creation performs in an optimized manner. Good SEO practices can increase the popularity of a website, let alone its monetization ability. Additionally, better SEO tactics ensure that a site ranks on the top list of popular search engines such as Google and Bing. Among the methods of conforming to the most practiced SEO techniques is URL structure optimization.
 #### What You Will Learn
 
@@ -59,3 +76,6 @@ I hope this post has helped you realize the necessity of a good URL structure an
 References
 1.  [Why URL structure matters in SEO by Paul Morris.](https://amasty.com/blog/why-url-structure-matters-in-seo/) 
 2.  [The Best URL Structure for SEO by Kristen Hicks.](https://www.hostgator.com/blog/best-url-structure-seo/)
+
+---
+Peer Review Contributions by: [Collins Ayuya](https://www.section.io/engineering-education/authors/collins-ayuya/)
