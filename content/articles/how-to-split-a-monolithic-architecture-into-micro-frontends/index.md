@@ -1,6 +1,22 @@
+---
+layout: engineering-education
+status: publish
+published: true
+url: /how-to-split-a-monolithic-architecture-into-micro-frontends/
+title: Splitting a Monolithic Architecture into Micro-frontends.
+description: This article introduces the reader to micro-frontends and their advantages compared to monolithic applications. IT also demonstrates illustrate how micro-frontends works.
+author: ephraim-njoroge
+date: 2022-02-22T00:00:00-17:30
+topics: []
+excerpt_separator: <!--more-->
+images:
+  - url: /how-to-split-a-monolithic-architecture-into-micro-frontends/hero.jpeg
+    alt: Splitting a Monolithic Architecture into Micro-frontends example Image
+---
+
 ### Introduction
 A good application development strategy should ensure that the development time and effort are significantly reduced while keeping the application's complexity minimal.
-
+<!--more-->
 In the real world, applications tend to grow in size, meaning more effort is required as the application complexity increases. Therefore, a well-developed application should be responsive and highly scalable.
 
 In [monolithic architecture](https://www.mulesoft.com/resources/api/microservices-vs-monolithic), applications have huge components and complex logic. Therefore, maintaining or upgrading such applications is challenging. Moreover, integrating a new team can be a difficult task.
