@@ -26,7 +26,7 @@ In this article, you will learn about TinyDB, which is built entirely in Python 
 TinyDB is a compact, document-oriented database designed in Python, it's ideal for simple personal projects. It has a nice and clean API that is simple to use.
 
 ### Why should you use TinyDB?
-TinyDB is perfect for personal projects where you need to install some data. It is `Tiny` with less documentation. As highlighted above, it is `document oriented` meaning you can store any file with `.json` extension. TinyDB is written in pure Python and it doesn't need any external server for execution. It is the best choice for small projects.
+TinyDB is perfect for personal projects where you need to install some data. It is `Tiny` with less documentation. As highlighted above, it is `document oriented` meaning you can store any file with `.json` extension. TinyDB is written entirely in Python and does not require the use of an external server to run. It is the best choice for small projects.
 
 ### Why not use TinyDB?
 TinyDB is not the right choice for building advanced features for your application, such as creating indexes for tables.
@@ -53,7 +53,7 @@ from tinydb import TinyDB, Query
 db = TinyDB("students_db.json")
 ```
 
-From the code above you've just imported TinyDB and Query. Next, construct a TinyDB instance and provide the filename to it. This will produce a "students db.json" JSON file in which our data will be stored.
+From the code above you've just imported TinyDB and Query. Next, construct a TinyDB instance and provide the name of the file to it. This will generate a "students db.json" JSON file where our data will be stored.
 
 ### Inserting data in TinyDB
 Since we are working with `JSON`, the data that we will be adding is a `python Dictionary`. Let's look at how we go about inserting data into the database.
@@ -118,7 +118,7 @@ First, we'll use the `get()` function, which will return only one piece of match
 
 Here, it does not find any names matching `Ian` in the database, therefore it returns none.
 
-We can also retrieve data from TinyDB by using `db.search()` function. If no data matches the search, it returns an empty list. Below is a demonstration of how to search for data in TinyDB. 
+We can use the `db.search()` function to retrieve data. If no data matches the search, it gives you an empty list as a result. Below is a demonstration of how to search for data in TinyDB. 
 
 ```python
 # searching data using search() function
@@ -200,6 +200,6 @@ Every CRUD operation shown above is demonstrated with its corresponding example,
 The complete code is available [here] (https://github.com/cathy-254/getting-started-with-tinydb-in-python).
 
 ### Conclusion
-We learned about TinyDB and how to conduct CRUD operations on the database in this article. More information about TinyDB can be found [here] (https://tinydb.readthedocs.io/en/latest/).
+In this article, we learned about TinyDB and how to perform CRUD operations on the database. [Here](https://tinydb.readthedocs.io/en/latest/) is where you can learn more about TinyDB.
 
 Happy Coding!
