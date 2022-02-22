@@ -40,7 +40,7 @@ Pre-trained neural networks are deployed to retrieve information. These networks
 ### What is Jina AI
 Jina AI is an open-source, cloud-native neural search framework. It is used for building state-of-the-art and scalable deep learning search applications for any kind of modality. For example, videos, images, source code, long text, etc. The framework allows you to import a "lightweight" version of the Google search engine into your project.     
 
-It was first introduced in May 2020 by [Dr. Han Xiao](https://hanxiao.io/about/). He is also the creator of well-known open-source projects such as [bert-as-a-service](https://github.com/hanxiao/bert-as-service) and the popular [fashion-MNIST](https://github.com/zalandoresearch/fashion-mnist) dataset. Currently, the framework is maintained by [Jina AI](https://jina.ai/), an open-source tech startup based in Berlin, Germany.
+It was first introduced in May 2020 by [Dr. Han Xiao](https://hanxiao.io/about/). He is also the creator of well-known open-source projects such as [bert-as-a-service](https://github.com/hanxiao/bert-as-service) and the popular [fashion-MNIST](https://github.com/zalandoresearch/fashion-mnist) dataset. Currently, [Jina AI](https://jina.ai/), an open-source tech startup based in Berlin, Germany, maintains the framework.
 
 ### How to install Jina AI
 The Jina AI framework is easy to set up using a quick `pip` install as shown below:
