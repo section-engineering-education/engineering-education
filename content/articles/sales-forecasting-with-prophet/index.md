@@ -6,7 +6,7 @@ url: /sales-forecasting-with-prophet/
 title: Sales Forecasting with Prophet in Python
 description: This tutorial will leverage the Prophet library to accurately estimate sales trends.
 author: monica-dalmas
-date: 2022-02-14T00:00:00-10:00
+date: 2022-02-22T00:00:00-9:30
 topics: [Machine Learning]
 excerpt_separator: <!--more-->
 images:
@@ -14,12 +14,12 @@ images:
   - url: /engineering-education/sales-forecasting-with-prophet/hero.png
     alt: Sales Forecasting with Prophet in Python Hero image
 ---
-Prophet is a library developed by Facebook that is ideal for performing time series forecasting. It is used to forecast anything that has a time series trend, such as the weather and sales. 
+Prophet is a library developed by Facebook that is ideal for performing time series forecasting. It is used to forecast anything that has a time series trend, such as the weather and sales.
 <!--more-->
 This tutorial will leverage this library to estimate sales trends accurately. We will use the Python programming language for this build.
 
 ### Prerequisite
-To follow along, a reader needs to be familiar with:
+To follow along, you need to be familiar with:
 - [Time series](/engineering-education/introduction-to-time-series/)
 - [Time series modeling](/engineering-education/building-a-time-series-weather-forecasting-application-in-python/)
 - [Google Colab](https://colab.research.google.com/)
@@ -48,7 +48,9 @@ from prophet import Prophet
 - `pandas` allows us to bring in tabular data.
 - `prophet` allows us to import the Prophet library into our Google Colab.
 
-Let's bring our data into the notebook. We will use store sales [transaction data](https://www.kaggle.com/c/store-sales-time-series-forecasting/data?select=transactions.csv) from Kaggle. The dataset includes dates, store and product information, and sales numbers. It contains four years' worth of sales data sold at Favorita stores located in Ecuador. You'll need to download the data and upload it into your Colab. 
+Let's bring our data into the notebook. We will use store sales [transaction data](https://www.kaggle.com/c/store-sales-time-series-forecasting/data?select=transactions.csv) from Kaggle.
+
+The dataset includes dates, store and product information, and sales numbers. It contains four years' worth of sales data sold at Favorita stores located in Ecuador. You'll need to download the data and upload it into your Colab.
 
 ### Loading data into our notebook
 We will use the `pandas` library to read in our `csv` file.
@@ -56,8 +58,9 @@ We will use the `pandas` library to read in our `csv` file.
 ```python
 dataframe = pd.read_csv('transactions.csv')
 ```
-We load in our data and save it inside a variable called, `dataframe`. We can check the first five rows of data using the pandas `head()` method.
-> You can use the `tail()` method to check the last five rows.
+We load in our data and save it inside a variable called `dataframe`. We can check the first five rows of data using the pandas `head()` method.
+
+You can use the `tail()` method to check the last five rows.
 
 ```python
 dataframe.head()
@@ -84,12 +87,14 @@ date            object
 store_nbr        int64
 transactions     int64
 ```
-From these results, we can see that the date column is a string. The model cannot accept it as it is. It needs to be converted into a date-time format for it to work with the model. Let's perform some preprocessing.
+From these results, we can see that the date column is a string. The model cannot accept it as it is. It needs to be converted into a date-time format for it to work with the model.
 
-> It is important whenever you're working with time-series data that you have a date or timestamp column. It is a requirement by the Prophet model to forecast trends. 
+Let's perform some preprocessing.
+
+> It's important whenever you're working with time-series data that you have a date or timestamp column. It is a requirement by the Prophet model to forecast trends.
 
 ### Data preprocessing
-Using Pandas `to_datetime()` function, we will convert the date column from a string to a date-time format.
+Using the Pandas `to_datetime()` function, we will convert the date column from a string to a date-time format.
 
 ```python
 dataframe ['date'] = pd.to_datetime(dataframe ['date'])
@@ -103,7 +108,7 @@ transactions             int64
 ```
 We have converted our date column into a date-time format.
 
-We need to drop the `store_nbr` column. Besides, for this data to work with the Prophet model, we only need two columns, a `ds` and `y` column. We need to rename our date column to `ds` and the transactions column to `y`.
+We need to drop the `store_nbr` column. Besides, for this data to work with the Prophet model, we only need two columns, i.e,  a `ds` and `y` column. We need to rename our date column to `ds` and the transactions column to `y`.
 
 ```python
 dataframe.drop('store_nbr', axis=1, inplace=True)
@@ -143,7 +148,11 @@ We begin by creating an instance `p` of the Prophet class.
 ```python
 p = Prophet(interval_width=0.92, daily_seasonality=True)
 ```
-We use the `interval_width` argument to estimate the uncertainty interval from the number of samples used. We've set ours to `0.92`. The argument `daily_seasonality=True` will fit daily seasonality for a sub-daily time series. It will default to weekly and yearly seasonalities if you don't set this parameter. You can play around with these values to check how it affects the results obtained after training.
+We use the `interval_width` argument to estimate the uncertainty interval from the number of samples used. We've set ours to `0.92`.
+
+The argument `daily_seasonality=True` will fit daily seasonality for a sub-daily time series. It will default to weekly and yearly seasonalities if you don't set this parameter.
+
+You can play around with these values to check how it affects the results obtained after training.
 
 We can now train our model.
 
@@ -168,7 +177,7 @@ Output:
 1880 	2018-03-02
 1881 	2018-03-03
 ```
-From the results, we can see that the model has made future predictions `200` days away from the last data value using a daily frequency. If you want to train for longer periods, you can change the value in the `periods=200` argument.
+From the results, we can see that the model has made future predictions, `200` days away from the last data value using a daily frequency. If you want to train for longer periods, you can change the value in the `periods=200` argument.
 
 To predict, we use the `predict()` method and pass in the future dataframe as shown:
 
@@ -176,7 +185,7 @@ To predict, we use the `predict()` method and pass in the future dataframe as sh
 forecast_prediction = p.predict(future)
 forecast_prediction.tail()
 ```
-From the results generated, the model has generated a lot of sales information in addition to the predicted `ds` and `yhat` column. The most important column is the `yhat` column, as it is what represents your sales forecast. 
+From the results generated, the model has generated a lot of sales information in addition to the predicted `ds` and `yhat` column. The most important column is the `yhat` column, as it is what represents your sales forecast.
 
 We can visualize these predictions.
 
@@ -192,12 +201,16 @@ plot2 = p.plot_components(forecast_prediction)
 ```
 ![Plot components](/engineering-education/sales-forecasting-with-prophet/plot-components.png)
 
-This plot could give you a lot more information about the sales data. For example, more sales are made between Friday and Monday. Also, they seem to make a lot of sales between November and February. During the rest of the year, sales are average.
+This plot could give you a lot more information about the sales data. For instance, more sales are made between Friday and Monday. Also, they seem to make a lot of sales between November and February. During the rest of the year, sales are average.
 
-Please find the complete code for this tutorial [here](https://colab.research.google.com/drive/1kmb4zguNvYZ4LqGQZAUhYgS_ZZNz-sMg?usp=sharing).
+Ypu can find the complete code for this tutorial [here](https://colab.research.google.com/drive/1kmb4zguNvYZ4LqGQZAUhYgS_ZZNz-sMg?usp=sharing).
 
 ### Wrapping up
-That's sales forecasting using the Prophet model in a nutshell. This tutorial introduces you to time series forecasting using Prophet. It should only introduce you to how to use the model in a project, and is in no way to be used for production purposes. To use the model for production, you'll need to do more research on it. You can also read about the [Neural Prophet](https://neuralprophet.com/html/index.html) library. It is an extension of Prophet as it adds neural networks to the mix.
+That's sales forecasting using the Prophet model in a nutshell.
+
+This tutorial introduces you to time series forecasting using Prophet. It should only introduce you to how to use the model in a project, and is in no way to be used for production purposes.
+
+To use the model for production, you'll need to do more research on it. You can also read about the [Neural Prophet](https://neuralprophet.com/html/index.html) library. It is an extension of Prophet that adds neural networks to the mix.
 
 ### Further reading
 - [Prophet](https://research.facebook.com/blog/2017/02/prophet-forecasting-at-scale/)
