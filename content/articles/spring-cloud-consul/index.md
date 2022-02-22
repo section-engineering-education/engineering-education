@@ -6,8 +6,8 @@ url: /spring-cloud-consul/
 title: Spring Cloud service discovery using Spring Cloud Consul
 description: In this tutorial, we will build Spring Boot microservices that will communicate with each other through Spring Cloud Consul.
 author: faith-siaji
-date: 2022-02-14T00:00:00-13:00
-topics: []
+date: 2022-02-22T00:00:00-10:30
+topics: [Languages]
 excerpt_separator: <!--more-->
 images:
 
@@ -15,12 +15,13 @@ images:
     alt: Spring Cloud service discovery using Spring Cloud Consul
 ---
 
-### Introduction
 Spring Boot consul is a service discovery and configuration framework for Spring Boot applications. It is a lightweight, extensible, and easy to use service discovery and configuration framework designed with Spring Boot and Spring Cloud.
+<!--more-->
+This tutorial will create an online application to manage shops. We will develop the application using the microservice architecture.
 
-This tutorial will create an online shop application to manage shops. We will develop the application using the microservice architecture. We will have two services:
-1. Product service - this service will manage all the products sold within all the shops in the system.
-2. Shops service = this service manages the information regarding the shops present in the system.
+We will have two services:
+1. Product service - this will manage all the products sold within all the shops in the system.
+2. Shops service = this manages the information regarding the shops present in the system.
 
 ### Prerequisites
 1. [Consul](https://www.consul.io/) and [JDK](https://www.oracle.com/java/technologies/downloads/) installed on your machine.
@@ -30,15 +31,17 @@ This tutorial will create an online shop application to manage shops. We will de
 - [Introduction](#introduction)
 - [Prerequisites](#prerequisites)
 - [Table of contents](#table-of-contents)
-- [Seting up consul](#seting-up-consul)
+- [Setting up consul](#setting-up-consul)
 - [Setting up Spring Boot application](#setting-up-spring-boot-application)
   - [Product service](#product-service)
   - [Shop service](#shop-service)
 - [Testing](#testing)
 - [Conclusions](#conclusions)
 
-### Seting up consul
-We will need to install consul locally on our development machine for this tutorial. So, first, navigate to [consul website](https://www.consul.io/downloads.html) and download the latest version of consul for your operating system. Then, extract the downloaded file and run the consul command to start the consul agent, as shown below.
+### Setting up consul
+We will need to install consul locally on our development machine for this tutorial.
+
+Navigate to [consul website](https://www.consul.io/downloads.html) and download the latest version of consul for your operating system. Then, extract the downloaded file and run the consul command to start the consul agent, as shown below.
 
 ```bash
 consul agent -server -bootstrap-expect=1 -data-dir=consul-data -ui -bind=<your ip address>
@@ -66,18 +69,19 @@ test@DEV-34:/$ sudo /usr/local/bin/consul agent -server -bootstrap-expect=1 -dat
 
 Now that we have the consul installed and running on our development machine, we need to verify if the consul agent is fully functional by navigating to [http://localhost:8500](http://localhost:8500) on our web browser. We can see the services running on our development machine from the browser dashboard, as shown below.
 
-![Consul dashboard](/engineering-education/spring-cloud-consul/consul_dashboard.png)
+![Consul dashboard](/engineering-education/spring-cloud-consul/consul-dashboard.png)
 
 
 ### Setting up Spring Boot application
 #### Product service
-1. Navigate to [spring initilzr](https://spring.io/guides/gs/initializr/) on your web browser.
-2. Input the application name as `product-service` and package name as `com.example.productservice`.
-3. Add `Actuator`, `Lombok`, `Web`, `Rest repositories`and `Consul discoveries` as the project dependencies.
-4. Click on the generate button to download the boilerplate project code with the required dependency configurations.
-5. Unzip the downloaded compressed file and open it in your favourite IDE.
-6. Navigate to the `src/main/java/com/example/productservice/` directory and update the `ProductServiceApplication.java` file as shown below.
-   
+Navigate to [spring initilzr](https://spring.io/guides/gs/initializr/) on your web browser. Input the application name as `product-service` and package name as `com.example.productservice`.
+
+Add `Actuator`, `Lombok`, `Web`, `Rest repositories`and `Consul discoveries` as the project dependencies.
+
+Click the generate button to download the boilerplate project code with the required dependency configurations.
+
+Unzip the downloaded compressed file and open it in your favourite IDE. Navigate to the `src/main/java/com/example/productservice/` directory and update the `ProductServiceApplication.java` file as shown below.
+
 ```java
 @SpringBootApplication
 @EnableDiscoveryClient
@@ -89,9 +93,9 @@ public class ProductServiceApplication {
 
 }
 ```
-- `@EnableDiscoveryClient` is used to enable the service discovery and configuration framework. This annotation allows the services to register themselves to the consul agent.
+`@EnableDiscoveryClient` is used to enable the service discovery and configuration framework. This annotation allows the services to register themselves to the consul agent.
 
-1. In the `application.properties` file, add the following configurations.
+In the `application.properties` file, add the following configurations.
 ```yaml
 server.port=9090
 spring.application.name:product-service
@@ -99,10 +103,11 @@ management.security.enabled=false
 
 ```
 - `server.port`: The port number of the service. The application will start and run on this port.
-- `spring.application.name`: The name of the service. This name is used to register the service in consul. Other services can also discover this service through its name.
+- `spring.application.name`: The name of the service. This name is used to register the service in consul. Other services can also discover this service through this name.
 - `management.security.enabled`: Disable security in the management endpoints that the Actuator exposes.
-  
-8. In the root project package, create a new Java class named `Product` and update it with the code snippet as shown below.
+
+In the root project package, create a new Java class named `Product` and update it with the code snippet as shown below.
+
 ```java
 @AllArgsConstructor
 @NoArgsConstructor
@@ -120,7 +125,7 @@ public class Product {
 - `@Getter`: This annotation is used to create getters for all the fields.
 - `@ToString`: This annotation is used to create a toString method for the class.
 
-9. To expose our service to the world, we need to create a new Java class named `ProductController` that will accept HTTP requests and update it with the code snippet as shown below.
+To expose our service to the world, we need to create a new Java class named `ProductController` that will accept HTTP requests. Update it with the code snippet as shown below.
 ```java
 @RestController
 public class ProductController {
@@ -163,12 +168,13 @@ public class ProductController {
 - `getProductPerShop`: This method is used to get the products for a given shop. It filters the products based on the shop name and returns the list of products.
 
 #### Shop service
-1. Navigate to [spring initilzr](https://spring.io/guides/gs/initializr/) on your web browser.
-2. Input the application name as `shop-service` and package name as `com.example.productservice`.
-3. Add `Actuator`, `Lombok`, `Web`, `Rest repositories`and `Consul discoveries` as the project dependencies.
-4. Click on the generate button to download the boilerplate project code with the required dependency configurations.
-5. Unzip the downloaded compressed file and open it in your favourite IDE.
-6. Navigate to the `src/main/java/com/example/shopservice/` directory and update the `ShopServiceApplication.java` file as shown below.
+Navigate to [spring initilzr](https://spring.io/guides/gs/initializr/) on your web browser. Input the application name as `shop-service` and package name as `com.example.productservice`.
+
+Add `Actuator`, `Lombok`, `Web`, `Rest repositories`and `Consul discoveries` as the project dependencies.
+
+Click the generate button to download the boilerplate project code with the required dependency configurations.
+
+Unzip the downloaded compressed file and open it in your favourite IDE. Navigate to the `src/main/java/com/example/shopservice/` directory and update the `ShopServiceApplication.java` file as shown below.
 ```java
 @SpringBootApplication
 @EnableDiscoveryClient
@@ -181,9 +187,9 @@ public class ShopServiceApplication {
 }
 
 ```
-- `@EnableDiscoveryClient` is used to enable the service discovery and configuration framework. This annotation allows the service to register itself to the consul agent.
+`@EnableDiscoveryClient` is used to enable the service discovery and configuration framework. This annotation allows the service to register itself to the consul agent.
 
-7. In the root application directory, create a new Java class named `ShopServiceDelegate` and update it with the code snippet.
+In the root application directory, create a new Java class named `ShopServiceDelegate` and update it with the code snippet below.
 ```java
 @Service
 public class ShopServiceDelegate {
@@ -212,7 +218,7 @@ public class ShopServiceDelegate {
 - `getDataFromProductService`: This method is used to get the products for a given shop. It filters the products based on the shop name and returns the list of products.
 - `template()`: This method is used to create a RestTemplate bean. We have marked this bean as `@LoadBalanced` to create a load-balanced RestTemplate. When many instances of this service are run, a load-balanced RestTemplate will be created.
 
-8. To make it possible for other services to communicate with the shop service, we need to create a new Java class named `ShopServiceRestController` that will accept HTTP requests and update it with the code snippet shown below.
+To make it possible for other services to communicate with the shop service, we need to create a new Java class named `ShopServiceRestController` that will accept HTTP requests. Update it with the code snippet shown below.
 ```java
 @RestController
 @AllArgsConstructor
@@ -231,25 +237,26 @@ public class ShopServiceController {
 ### Testing
 Run the product service and verify that it's running and discoverable by the consul agent in the Consul dashboard, as shown below.
 
-![Product Service](/engineering-education/spring-cloud-consul/product_service.png)
-
+![Product Service](/engineering-education/spring-cloud-consul/product-service.png)
 
 Now that the product service is running successfully, we can run the shop service. Once the shop service is started, we can verify from the consul dashboard that it is running without issues and is discoverable by the consul agent, as shown below.
 
-![Shop service](/engineering-education/spring-cloud-consul/shop_service.png)
+![Shop service](/engineering-education/spring-cloud-consul/shop-service.png)
 
-When we make a GET request to [http://localhost:8098/getshopdetails/ABC](http://localhost:8098/getshopdetails/ABC), we get the below response.
+When we make a GET request to [http://localhost:8098/getshopdetails/ABC](http://localhost:8098/getshopdetails/ABC), we get a response like the one below.
 
 ```json
 [{"name":"Soap","price":30.0},{"name":"Cooking","price":70.0}] -  Thu Feb 10 09:15:17 EAT 2022
 ```
 
-We can request the shop service to the product service without requiring the product service URL and port. With the name of the service and the endpoint, only can we get the response. Consul simplifies service discovery. When used with Docker, we do not need to keep track of the IP addresses that change, but the services can communicate with the service name.
+We can request the shop service to the product service without requiring the product service URL and port. We can only get the response with the name of the service and the endpoint. Consul simplifies service discovery.
 
+When used with Docker, we do not need to keep track of the IP addresses that change, but the services can communicate with the service name.
 
-### Conclusions
-In this tutorial, we have learned how to efficiently deploy the Consul service registry and discovery server and clients on our development machine. After that, you can try implementing a Spring Boot project using the microservice architecture and deploy with Spring Cloud consul. You can download the complete source code [here](https://replit.com/@faithsiaji/spring-consul#).
-  
+### Conclusion
+In this tutorial, we have learned how to efficiently deploy the Consul service registry and discovery server and clients on our development machine.
+
+You can now try implementing a Spring Boot project using the microservice architecture and deploy with Spring Cloud consul. The complete source code for the tutorial can be found [here](https://replit.com/@faithsiaji/spring-consul#).
+
 ---
-
-Peer Review Contributions by: [Odhiambo Paul](/engineering-education/authors/odhiambo-paul/) 
+Peer Review Contributions by: [Odhiambo Paul](/engineering-education/authors/odhiambo-paul/)
