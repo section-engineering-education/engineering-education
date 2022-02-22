@@ -12,7 +12,7 @@ In this tutorial, you are going to learn how to make a registration form using R
 
 ![Final form](/engineering-education/create-a-registration-form-using-react.js-and-connecting-it-with-firebase/finalRegistrationForm.png)
 
-You will begin with setting up your coding environment. For that, you must require a code editor and node.js installed on your device.
+You will begin with setting up your coding environment but it would be helpful if you have some basic knowledge of HTML and CSS. For setting up coding environment, you must require a code editor and node.js installed on your device.
 
 *Note-* you can use any code editor you prefer. In this tutorial Visual Studio is used.
 
