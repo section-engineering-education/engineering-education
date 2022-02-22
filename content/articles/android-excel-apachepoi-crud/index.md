@@ -120,7 +120,7 @@ nameHeaderCell.cellStyle = headerCellStyle
 scoreHeaderCell.cellStyle = headerCellStyle
 ```
 
-![Screenshot after the formatting](shot-one.png)
+![Screenshot after the formatting](/engineering-education/android-excel-apachepoi-crud/shot-one.png)
 
 _Screenshot after the formatting_
 
@@ -164,7 +164,7 @@ fileOut.close()
 
 We will achieve this in the end.
 
-![Screenshot](shot-two.png)
+![Screenshot](/engineering-education/android-excel-apachepoi-crud/shot-two.png)
 
 This is the full code for the method:
 
@@ -248,7 +248,7 @@ We will create a new sheet for the test deletion. In the `createWorkbook()` meth
     }
 ```
 
-![Screenshot](shot-three.png)
+![Screenshot](/engineering-education/android-excel-apachepoi-crud/shot-three.png)
 
 _The created sheet_
 
@@ -288,7 +288,7 @@ A method called `deleteSheet()` is used for the deletion task, where we will cal
 
 When we run the code and access the file, we wont see the sheet:
 
-![Screenshot](shot-four.png)
+![Screenshot](/engineering-education/android-excel-apachepoi-crud/shot-four.png)
 
 ### Deleting a row
 
@@ -311,7 +311,7 @@ if (rowNo >= 0 && rowNo < totalNoOfRows) {
 }
 ```
 
-![Screenshot](shot-five.png)
+![Screenshot](/engineering-education/android-excel-apachepoi-crud/shot-five.png)
 
 _Screenshot after deletion_
 
@@ -436,7 +436,7 @@ This is the full code:
 
 We will achieve this:
 
-![Screenshot](shot-six.png)
+![Screenshot](/engineering-education/android-excel-apachepoi-crud/shot-six.png)
 
 That is it.
 
