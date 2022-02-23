@@ -94,6 +94,10 @@ studyObject1 = optuna.create_study(
     # Bayesian Sampling Technique
 studyObject1.optimize(objective, n_trials= 500)
 ```
+After running i found that my best trial was 459.
+
+Output:
+
 ![Best trial](/engineering-education/optimizing-ml-models-with-optuna/trial.png)
 #### Visualizing search history
 Our model can readily be shown to be affected by hyper-parameters by looking at the search history. It is possible to further decrease the scope of our search by cutting down the search parameters.
