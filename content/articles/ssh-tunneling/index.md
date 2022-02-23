@@ -111,10 +111,10 @@ ssh -R <remote port>:<local ip address>:<local port> <remote ip address>
 ```
 Let's have an explanation of the above syntax:
 - -R &rarr; This shows that we are performing a remote port forwading.
-- <remote port> &rarr; This is where we input our remote port of the remote device.
-- <local ip address> &rarr; This is where the ip address of local device is put.
-- <local port> &rarr; The local port of the local device is put here.
-- <remote ip address> &rarr; The is the ip address of our public SSH server.
+- remote port &rarr; This is where we input our remote port of the remote device.
+- local ip address &rarr; This is where the ip address of local device is put.
+- local port &rarr; The local port of the local device is put here.
+- remote ip address &rarr; The is the ip address of our public SSH server.
 
 ```bash
 ssh -R 8888:10.0.0.3:8080 44.11.22.33
