@@ -46,7 +46,7 @@ Developers can therefore identify shortcomings of an application in the early st
 SAST provides visual representations of the problems identified making it easy to navigate the code. In addition, it provides suggestions on how to fix the vulnerabilities identified within the code. Customized reports downloadable and visible offline are supported by most SAST tools and can also be tracked through dashboards.
 
 ### Differences between SAST and DAST
-There are two different types of Application Security Testing, i.e., SAST and DAST (Dynamic Application Security Testing).The two methods detect security vulnerabilities in applications except in a unique way for each. Below are some of the critical comparisons of SAST between DAST:
+There are two different types of Application Security Testing, i.e., SAST and DAST (Dynamic Application Security Testing). The two methods detect security vulnerabilities in applications except in a unique way for each. Below are some of the critical comparisons of SAST between DAST:
 
 - SAST supports all types of software, while DAST can only scan applications such as web applications and web services.
 - SAST cannot discover runtime and environment-related issues, while DAST can discover runtime and environment-related issues.
@@ -82,7 +82,7 @@ For this tutorial, we will leverage the advantage of container technology and us
 We will go ahead and create a docker container and deploy our framework in the next step.
 
 #### Step 2: Creation of the docker container
-We will setup the docker container as using the following steps:
+We will setup the docker container using the following steps:
 
 - Set up the docker PGP key.
 
