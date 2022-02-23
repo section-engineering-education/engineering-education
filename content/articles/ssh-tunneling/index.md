@@ -35,7 +35,7 @@ In this article, we will look at two main subtopics in SSH tunneling, that is:
 ### Prerequisites
 To perform SSH tunneling, you need the following:
 - A publicly accessible SSH server.
-- A basic understanding of networking concept.You can read it from this [Cisco site](https://www.cisco.com/c/en/us/solutions/small-business/resource-center/networking/networking-basics.html).
+- A basic understanding of networking. You can read it from this [Cisco site](https://www.cisco.com/c/en/us/solutions/small-business/resource-center/networking/networking-basics.html).
 - The resources to be accessed.
 - A local device.
 - A remote device for remote port forwarding.
@@ -111,22 +111,22 @@ ssh -R <remote port>:<local ip address>:<local port> <remote ip address>
 ```
 
 Let us have an explanation of the above syntax:
-- -R - This shows that we are performing a remote port forwading.
-- remote port - This is where we input our remote port of the remote device.
-- local ip address - This is where the ip address of local device is put.
-- local port - The local port of the local device is put here.
-- remote ip address - This is the ip address of our public SSH server.
+- `-R` - This shows that we are performing a remote port forwading.
+- `remote port` - This is where we input our remote port of the remote device.
+- `local ip address` - This is where the ip address of local device is put.
+- `local port` - The local port of the local device is put here.
+- `remote ip address` - This is the ip address of our public SSH server.
 
 ```bash
 ssh -R 8888:10.0.0.3:8080 44.11.22.33
 ```
 
 Let's have an explanation of the above syntax:
-- -R &rarr; This letter shows that we are performing a remote port forwarding.
-- 8888 &rarr; This is the remote port of the remote device.
-- 10.0.0.3 &rarr; This is the local IP address of the local device.
-- 8080 &rarr; It is the local port that we are using.
-- 44.11.22.33 &rarr; It is the public SSH server ip address.
+- `-R` - This letter shows that we are performing a remote port forwarding.
+- `8888` - This is the remote port of the remote device.
+- `10.0.0.3` - This is the local IP address of the local device.
+- `8080` - This is the local port that we are using.
+- `44.11.22.33` - This is the public SSH server ip address.
 
 The command above is executed on our local machine, that is, `10.0.0.4`. 8888 is our remote port. So, the public server that we are accessing will listen on port 8888. Gateway configurations needs to be enabled on our local machine to enable remote port forwarding.
 
