@@ -46,14 +46,12 @@ Developers can therefore identify shortcomings of an application in the early st
 SAST provides visual representations of the problems identified making it easy to navigate the code. In addition, it provides suggestions on how to fix the vulnerabilities identified within the code. Customized reports downloadable and visible offline are supported by most SAST tools and can also be tracked through dashboards.
 
 ### Differences between SAST and DAST
-There are two different types of Application Security Testing, i.e., SAST and DAST (Dynamic Application Security Testing).
+There are two different types of Application Security Testing, i.e., SAST and DAST (Dynamic Application Security Testing).The two methods detect security vulnerabilities in applications except in a unique way for each. Below are some of the critical comparisons of SAST between DAST:
 
-The above-mentioned detect security vulnerabilities in applications except in a unique way for each. Below are some of the critical comparisons of SAST between DAST:
-
-- SAST supports all types of software while DAST can only scan applications such as web applications and web services.
+- SAST supports all types of software, while DAST can only scan applications such as web applications and web services.
 - SAST cannot discover runtime and environment-related issues, while DAST can discover runtime and environment-related issues.
 - It costs less to fix vulnerabilities using SAST, while it is relatively expensive to fix them using DAST.
-- SAST discovers vulnerabilities earlier into the SDLC, while DAST discovers vulnerabilities towards the end of SDLC
+- SAST discovers vulnerabilities earlier into the SDLC, while DAST discovers vulnerabilities towards the end of SDLC.
 - SAST requires source code DAST requires a running application.
 
 ### Tools used to perform SAST
