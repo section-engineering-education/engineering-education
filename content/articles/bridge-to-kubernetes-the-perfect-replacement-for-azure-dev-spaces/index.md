@@ -6,7 +6,7 @@ url: /bridge-to-kubernetes-the-perfect-replacement-for-azure-dev-spaces/
 title: Bridge to Kubernetes Against Dev Spaces
 description: This article discusses Bridge to Kubernetes and Dev Spaces and why Bridge to Kubernetes is a perfect replacement for Dev Spaces.
 author: bridget-mwikali
-date: 2022-02-22T00:00:00-01:34
+date: 2022-02-23T00:00:00-01:34
 topics: []
 excerpt_separator: <!--more-->
 images:
