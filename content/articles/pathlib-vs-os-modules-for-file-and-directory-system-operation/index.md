@@ -4,9 +4,9 @@ status: publish
 published: true
 url: /pathlib-vs-os-modules-for-file-and-directory-system-operation/
 title: Pathlib Vs OS Modules for File and Directory System Operations
-description: In this article, we will look at what OS and Pathlib modules are, where and how do use them for file system operations.
+description: In this article, we will look at what OS and Pathlib modules are, where and how to use them for file system operations.
 author: akenz-michael
-date: 2022-02-15T00:00:00-00:00
+date: 2022-02-22T00:00:00-03:11
 topics: [Languages]
 excerpt_separator: <!--more-->
 images:
@@ -41,8 +41,8 @@ By the end of this tutorial, the reader must be able to:
 File system operation can be characterized as a technique that can be used to control or construct files and directories.
 
 There are two different ways to work with file systems, using:
-1. Functional dependencies
-2. Object-oriented concepts
+1. Functional dependencies.
+2. Object-oriented concepts.
 
 This tutorial practically highlights the different scenarios to differentiate between [Pathlib](https://docs.python.org/3/library/pathlib.html) and [OS](https://docs.python.org/3/library/os.html) modules.
 
@@ -191,7 +191,7 @@ print(os.listdir('..'))
  'WPS PDF.lnk']
 ```
 
-In this example, the function returns a list containing the files and directories' name in a string representation.
+In this example, the function returns a list containing the files and directories' names in a string representation.
 
 ##### Using Pathlib module to list a directory content
 Using Pathlib module to outline items in a given directory is somehow not as straightforward compared to the previous example in the OS module.
@@ -323,7 +323,7 @@ Pathlib provides the `Path.touch()` method for both POSIX and Windows operating 
 
 This method creates a file while returning nothing, which means we need to iterate through the current directory to confirm whether the file has been created or not.
 
-Confirming the file creation with `Path.touch()` is much easier and efficient method.
+Confirming the file creation with `Path.touch()` is a much easier and more efficient method.
 
 **Output:**
 
@@ -376,7 +376,7 @@ print(Path('Document').exists())
 True
 ```
 
-It returns `True` since the directory exists. It not, it would return `False`.
+It returns `True` since the directory exists. If not, it would return `False`.
 
 #### Rename a directory and file
 We can rename a file or directory using both OS and Pathlib modules.
@@ -425,7 +425,7 @@ print(current.rename(target))
 WindowsPath('data_script.py')
 ```
 
-This method return a path object containing the new name of the file.
+This method returns a path object containing the new name of the file.
 
 #### Join path components together
 OS and Pathlib modules provide methods/functions to join two directory paths together.
@@ -462,7 +462,7 @@ print(PurePath.joinpath(Path().cwd(),'Data'))
 WindowsPath('C:/Users/DELL/Desktop/practical_folder/Data')
 ```
 
-> Note: The `PurePath.joinpath()` method expects a path object as the first argument, and a string as the second argument. The method doesn't check whether the path given as second arguments exists or not.
+> Note: The `PurePath.joinpath()` method expects a path object as the first argument, and a string as the second argument. The method doesn't check whether the path given as the second argument exists or not.
 
 Pathlib provides an alternative way to join various components together using a forward-slash `/` operator.
 
@@ -610,9 +610,9 @@ creation time = 1641623379.0384889
 
 In the example above, we queried the corresponding attributes to get their distinguished state representing the file's metadata.
 
-- `st_size` contains the file size in bytes
-- `st_atime` contains the date of the most recent access to the given file in seconds
-- `st_mtime` attribute contains the file last modified date in seconds
+- `st_size` contains the file size in bytes.
+- `st_atime` contains the date of the most recent access to the given file in seconds.
+- `st_mtime` attribute contains the file last modified date in seconds.
 - `st_ctime` attribute respond differently on UNIX and Windows operating system. In Windows, it outputs the creation date, while for UNIX it outputs the updated date.
 - `st_birthtime` to query the creation time on UNIX operating system.
 
@@ -678,13 +678,13 @@ last time modified = 1642193544.1581955
 creation time = 1642193544.1562355
 ```
 
-> You can convert these date and time to readable format by following the above 2 topics on format conversion.
+> You can convert the date and time to readable format by following the above 2 topics on format conversion.
 
 ##### Query file extension
 Pathlib and OS module provides a function or method that allows us to query a file extension.
 
 ##### Using OS module to query file extension
-The OS module provides the `os.path.splitext()` function to query the file extension. It splits the path into pairs that returns both the file name and the file extension.
+The OS module provides the `os.path.splitext()` function to query the file extension. It splits the path into pairs that return both the file name and the file extension.
 
 ```python
 import os
@@ -716,7 +716,7 @@ File name: new_script
 File extension: .ipynb
 ```
 
-> Note: The `Path.suffix` attribute will retrieve an empty string, if a given file doesn't have an extension.
+> Note: The `Path.suffix` attribute will retrieve an empty string if a given file doesn't have an extension.
 
 ### Theoretical differences between Pathlib and OS modules
 Illustrating the theoretical differences between OS and Pathlib modules.
