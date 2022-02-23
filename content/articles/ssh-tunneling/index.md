@@ -65,12 +65,12 @@ Local port forwarding syntax:
 ssh -L <local port>:<remote ip address>:<remote port> <public ssh server ip address>
 ```
 
-Let us explain the above syntax:
-- -L &rarr; - It is the local port forwarding.
-- 8888 &rarr; - This is the local port.
-- 192.168.1.3 &rarr; - This is a remote IP address.
-- 8080 &rarr; - It is a remote port.
-- 44.11.22.33 &rarr; - It is the public SSH server ip address.
+Let us explain the syntax above:
+- -L - It is the local port forwarding.
+- 8888  - This is the local port.
+- 192.168.1.3 - This is a remote IP address.
+- 8080 - It is a remote port.
+- 44.11.22.33 - It is the public SSH server ip address.
 
 The command below will be used to perform local port forwarding:
 
@@ -89,7 +89,7 @@ When our public SSH server receives this, it acknowledges that our local machine
 In some instances,  let's say our remote IP address is forbidden from our local network i.e, our ISP is blocking access to specific domains, we can tunnel it through our secure SSH and then make our public SSH server request on our behalf.
 
 ### Remote port forwarding
-Remote port forwarding is significant when we want other people to access our local resources. For instance, if we have a web server on our machines and there is a need to send a URL for testing our application to someone.
+Remote port forwarding is significant when we want other people to access our local resources. For instance, when we have a web server on our machines and there is a need to send a URL for testing our application to someone.
 
 Remote port forwarding allows us to use our public SSH server as a centralized location and request the public server to listen to its ports. Through this, any traffic that goes through its ports is forwarded to our server.
 
@@ -109,12 +109,13 @@ Remote port forwarding syntax:
 ```bash
 ssh -R <remote port>:<local ip address>:<local port> <remote ip address>
 ```
-Let's have an explanation of the above syntax:
-- -R &rarr; This shows that we are performing a remote port forwading.
-- remote port &rarr; This is where we input our remote port of the remote device.
-- local ip address &rarr; This is where the ip address of local device is put.
-- local port &rarr; The local port of the local device is put here.
-- remote ip address &rarr; The is the ip address of our public SSH server.
+
+Let us have an explanation of the above syntax:
+- -R - This shows that we are performing a remote port forwading.
+- remote port - This is where we input our remote port of the remote device.
+- local ip address - This is where the ip address of local device is put.
+- local port - The local port of the local device is put here.
+- remote ip address - This is the ip address of our public SSH server.
 
 ```bash
 ssh -R 8888:10.0.0.3:8080 44.11.22.33
