@@ -11,12 +11,12 @@ topics: [Languages]
 excerpt_separator: <!--more-->
 images:
 
-  - url: /engineering-education/how-to-integrate-django-tailwind-styling-in-an-application/hero.jpg
+  - url: /engineering-education/how-to-integrate-django-tailwind-styling-in-an-application/hero.png
     alt: How to Integrate Django-Tailwind Styling in an Application Hero Image
 ---
-Every application requires good styling for more readable content. Over the years, the Cascading Style Sheets (CSS), has dominated before frameworks came into existence.
+Every application requires good styling for more readable content. Over the years, CSS (cascading style sheets) dominated before frameworks came into existence.
 <!--more-->
-In this tutorial, we will discuss a better way to style Django applications using a framework called `django-tailwind`. This was made to make use of the `tailwind` styling classes in Django projects.
+In this tutorial, we will discuss a better way to style Django applications using a framework called `django-tailwind`. This makes use of the `tailwind` styling classes in Django projects.
 
 ### Table of contents
 - [Prerequisites](#prerequisites)
@@ -45,8 +45,7 @@ cd Desktop
 mkdir project
 cd project
 ```
-
-We checked the working directory and ensure you are on the `Desktop` directory. You also made a directory called `project`, change to it.
+Check the working directory and ensure you are on the `Desktop` directory. You also made a directory called `project`, change to it.
 
 Now let us make a virtual environment for the project and install the required dependencies as shown below:
 
