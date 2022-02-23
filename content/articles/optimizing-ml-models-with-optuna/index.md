@@ -5,11 +5,11 @@ If you use machine learning methods, a `hyperparameter` is a parameter that may 
 - Installation is quick and easy, and there are only a few prerequisites to meet.
 - Python's conditionals and loops may be used to define search areas.
 - Sample hyperparameters using the most up-to-date algorithms and quickly weed out those that aren't.
-To conduct large-scale investigations, minimal or no code modifications are required.
+- To conduct large-scale investigations, minimal or no code modifications are required.
 - Analyze optimization results using a wide range of graphing tools.
 ### Optimization process
 #### Importing necessary modules
-We will incorporate essential modules and data into an array. 
+We will incorporate essential modules and data into an array here. 
 ```python
 import sklearn
 import pandas as pan
