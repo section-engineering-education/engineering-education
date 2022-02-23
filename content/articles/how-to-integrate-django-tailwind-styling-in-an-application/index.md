@@ -30,7 +30,7 @@ In this tutorial, we will discuss a better way to style Django applications usin
 To follow along with this tutorial, you should have:
 - An understanding of the Python programming language.
 - A pre-installed IDE, preferably [Visual Studio Code](https://code.visualstudio.com/download).
-- The [Python](https://python.org) programming language installed.
+- [Python](https://python.org) programming language installed.
 - [Node.js](https://nodejs.org/en//) installed.
 - An understanding of the [Django](https://docs.djangoproject.com/en/4.0/) framework.
 
@@ -45,9 +45,9 @@ cd Desktop
 mkdir project
 cd project
 ```
-Check the working directory and ensure you are on the `Desktop` directory. You also made a directory called `project`, change to it.
+Check the working directory and ensure you are on the `Desktop` directory. Create a directory called `project` and navigate to it.
 
-Now let us make a virtual environment for the project and install the required dependencies as shown below:
+Now, let us make a virtual environment for the project and install the required dependencies as shown below:
 
 ```bash
 python -m venv env
@@ -68,7 +68,7 @@ python manage.py runserver
 
 The `myprojectapp` project was started and made the `comment` app as well. We also started the Django server with the command `python manage.py runserver`.
 
-If you open your browser to `127.0.0.1:8000`, you should confirm what we have in the image below:
+If you open your browser to `127.0.0.1:8000`, you should confirm with what we have in the image shown below:
 
 ![First page](/engineering-education/how-to-integrate-django-tailwind-styling-in-an-application/first-page.png)
 
@@ -81,7 +81,7 @@ But before that, we have to initialize it using the code snippet below:
 python manage.py tailwind init
 ```
 
-> The default name to the tailwind app is `theme`. You can change it if you like but ensure you change the name in the `settings.py` file.
+> The default name to the tailwind app is `theme`, change it if you like but ensure the name in the `settings.py` file is changed as well.
 
 Now open the project settings, navigate to the `INSTALLED_APPS`, and add the snippets below:
 
@@ -91,7 +91,7 @@ Now open the project settings, navigate to the `INSTALLED_APPS`, and add the sni
 'comment'
 ```
 
-In addition, it is mandatory to register the app name in the `settings.py` right below the file, and also specify the internal IP address.
+In addition, it is mandatory to register the app name in the `settings.py` right below the file and also specify the internal IP address.
 
 ```py
 TAILWIND_APP_NAME = 'theme'
@@ -143,7 +143,7 @@ Now copy the snippet below and attach it with the `urlpatterns` list inside the 
 path("__reload__/", include("django_browser_reload.urls")),
 ```
 
-Let us configure the routing for the index page. Remember that we had made an app called `comment` earlier. Go into the folder and create the `urls.py` file. Having made the file, copy the following code into it:
+Let us configure the routing for the index page. Remember that we had made an app called `comment` earlier, open the folder and create the `urls.py` file. Having made the file, copy the following code into it:
 
 ```py
 from django.urls import path
@@ -154,7 +154,7 @@ urlpatterns = [
 ]
 ```
 
-Navigate to the `urls.py` for the root that is the `myprojectapp` folder and attach the file made above to the `URL patterns` list. This will allow the root to keep track of URLs matching the app.
+Next, navigate to the `urls.py` for the root that is the `myprojectapp` folder and attach the file made above to the `URL patterns` list. This will allow the root to keep track of URLs matching the app.
 
 ```py
 path('', include('comment.urls')),
