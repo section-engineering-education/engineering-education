@@ -6,7 +6,7 @@ url: /ssh-tunneling/
 title: SSH Tunneling
 description: This article will discuss the concept of SSH tunneling. SSH tunneling is a technique that allows us to access remote resources that we do not have access to because they are internal to that network.
 author: joseph-ongoma
-date: 2022-02-22T00:00:00-12:20
+date: 2022-02-23T00:00:00-15:50
 topics: [Networking]
 excerpt_separator: <!--more-->
 images:
@@ -41,7 +41,7 @@ To perform SSH tunneling, you need the following:
 - A remote device for remote port forwarding.
 
 ### Local port forwarding
-Local port forwarding allows us access to remote content or resources which we don't have access to. For example, let's say we have a remote Remote Desktop Protocol (RDP) server or a remote database has a firewall that blocks some ports but allows access to some of the ports.
+Local port forwarding allows us access to remote content or resources to which we don't have access. For example, let's say we have a remote Remote Desktop Protocol (RDP) server or a remote database has a firewall that blocks some ports but allows access to some of the ports.
 
 To access the internal network to tunnel through the access ports and smuggle content that we want. Local port forwarding creates a local server and listens on our local machines for a local port and accesses that port that acts as a proxy. 
 
@@ -65,25 +65,18 @@ Local port forwarding syntax:
 ssh -L <local port>:<remote ip address>:<remote port> <public ssh server ip address>
 ```
 
-Let us explain the above syntax:
-- -L &rarr;  This letter in our command implies that we are performing a local port forwarding. 
-- local port &rarr;  This is the port the port of our local device.
-- `Remote ip address` &rarr;  This is the ip address of our remote resources that we need to access.
-- Remote port &rarr;  This is the port of our remote device.
-- Public ssh server ip address &rarr;  This is the  ip address of our public SSH server ip address.
+Let us explain the syntax above:
+- `-L` - This shows that we are performing local port forwarding. 
+- `local port` - This is the port of our local device.
+- `remote ip address` - This is the IP address of our remote resource that we need to access.
+- `remote port` - This is the port of our remote device.
+- `public ssh server ip address` - This is the IP address of our public SSH server.
 
-The command below will be used to perform local port forwarding in our case.
+The command below will be used to perform local port forwarding:
 
 ```bash
 ssh -L 8888:192.168.1.3:8080 44.11.22.33
 ```
-
-Let us explain the above syntax:
-- -L &rarr; This indicates that we are performing a local port forwarding
-- 8888 &rarr; This is the local port for our local device
-- 192.168.1.3 &rarr; This is a remote IP address of the resources that we need to access.
-- 8080 &rarr;  This is the remote port.
-- 44.11.22.33 &rarr; This is the public SSH server ip address.
 
 We are going to access our public SSH server using SSH. To do this, since our local machine is dumb and is not enough to access the remote resources, we will create a local port, that is, port 8888. 
 
@@ -117,31 +110,26 @@ Remote port forwarding syntax:
 ssh -R <remote port>:<local ip address>:<local port> <remote ip address>
 ```
 
-Let us have an explanation of the above syntax:
-- `-R` - This shows that we are performing a remote port forwading.
+Let us have an explanation of the syntax above:
+- `-R` - This shows that we are performing remote port forwarding.
 - `remote port` - This is where we input our remote port of the remote device.
-- `local ip address` - This is where the ip address of local device is put.
+- `local ip address` - This is where the IP address of our local device is entered.
 - `local port` - The local port of the local device is put here.
-- `remote ip address` - This is the ip address of our public SSH server.
+- `remote ip address` - This is the IP address of our public SSH server.
+
+The command below will be used to perform remote port forwarding:
 
 ```bash
 ssh -R 8888:10.0.0.3:8080 44.11.22.33
 ```
 
-Let's have an explanation of the above syntax:
-- `-R` - This letter shows that we are performing a remote port forwarding.
-- `8888` - This is the remote port of the remote device.
-- `10.0.0.3` - This is the local IP address of the local device.
-- `8080` - This is the local port that we are using.
-- `44.11.22.33` - This is the public SSH server ip address.
+The command above is executed on our local machine, that is, `10.0.0.4`. 8888 is our remote port so the public server that we are accessing will listen on this port. Gateway configurations need to be enabled on our local machine to enable remote port forwarding.
 
-The command above is executed on our local machine, that is, `10.0.0.4`. 8888 is our remote port. So, the public server that we are accessing will listen on port 8888. Gateway configurations needs to be enabled on our local machine to enable remote port forwarding.
+The main idea here is that we need anything that goes through port 8888 to be forwarded to the local machine that we have on `10.0.0.3` on port 8080. What we will do is establish a TCP connection with the public SSH server and our local machine. 
 
-The main idea here is that we need anything that goes to port 8888 to be forwarded to the local machine that we have on `10.0.0.3` on port 8080. What we will do is to establish a TCP connection with the public SSH server and our local machine. 
-
-The SSH server will listen to port 8888 for a TCP request on `44.11.22.33` on the same port. The SSH server will take that packet and encapsulate it as a legitimate SSH request. It will then send it over through port 22 since it is encrypted and no one on the network can access it.
+The SSH server will listen to port 8888 for a TCP request on `44.11.22.33` on the same port. The SSH server will take that packet and encapsulate it as a legitimate SSH request. It will then send it through port 22 since it is encrypted and is inaccessible on the network.
   
-We will receive the request on our local device as the SSH client at `10.0.0.4` will have the ability to know that it is a tunnel. It will request the internal resource on `10.0.0.`3 on behalf of our public SSH server and access the internal resource. Afterwards, it will send it back to our public ssh server.
+We will receive the request on our local device as the SSH client at `10.0.0.4` will have the ability to know that it is a tunnel. It will request the internal resource on `10.0.0.`3 on behalf of our public SSH server and access the internal resource. Afterward, it will send it back to our public ssh server.
 
 With that, we can access our local resources remotely.
 
