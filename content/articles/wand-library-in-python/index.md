@@ -1,0 +1,151 @@
+
+### Introduction
+Wand library in Python contains a module known as [ImageMagick](https://imagemagick.org/index.php). It is an attribute developed to change the format of an image. ImageMagick is extensively used due to its capability to work with image formats in the broader scope and its precision and ease of use. The reason for studying this module in Python is to understand how you can manipulate a single image into various forms.
+
+Therefore, we will take a deep look at the wand Python binding, which Imagemagick developed in this article. Furthermore, with the help of several examples, which will well explain, we will learn about the features and applications of the Wand library in the Python programming language.
+### Prerequisite
+For a learner to have a complete understanding of this topic, they should have some knowledge of Python and should also have Python installed in their machine for easier running of code.
+### Table of contents
+- Defining Wand library
+- Installation Verification
+- How can we read an image in Python Wand?
+- Use Wand package in Python to blur an image
+- Image transform using Python wand
+- Use Python wand to draw an image
+- Conclusion
+### Defining Wand library
+Using Python programming language, which created a library known as Imagemagick, and this is what we term as the Wand. Using Wand library, images are manipulated in several ways which will be discussed later in the article. We can use the Wand to edit and open images, but in collaboration with NumPy, it offers significant functions for machine learning codes. Below are some of its uses.
+- We can use it to change the appearance of photographs.
+- This package additionally enhances the photos with various effects.
+- Image scaling and cropping are also supported.
+- The wand library can read and write images in various formats.
+
+We shall now take a look at how to install wand library.
+
+Let us check the following syntax, and in this case, we will use Ubuntu.
+```bash
+pip install Wand
+```
+The python module wand will be installed in the machine as a version of pip and Python.
+
+Again, we must include the ImageMagick dependencies because the wand library is an Imagick API. 
+```Python
+$ sudo apt-get install libmagickwand-dev  
+```
+### Installation Verification
+After successfully installing the wand python module and Imagemagick dependencies in the machine, we will test by importing Wand. By using an editing environment of your choice, create a Python file and save it with a `.py` extension, e.g., test.py, and then type `import wand` in the created file, and if wand was successfully installed, it would automatically pop up otherwise, wand was not installed.
+```Python
+import wand
+```
+### How can we read an image in Python Wand?
+By utilizing the Wand's picture library's Image module, one will import image files. After that, We will use numerous properties such as height, width, and so to interpret the image. 
+
+Now let us look at a complete example of checking the width and height of an image by following the above three steps.
+```Python
+    # We will start by importing the image library from the Wand.
+from Wand.image import image as wandImage
+   # The second step is to import the image using its correct pathname.
+with wandImage(filename='/wand-library-in-python/python.png') as img:
+       # The third step is to print the image's height and width.
+    print('The Height of the image is:', img.height)
+    print('The width of the image is:', img.width)
+```
+- The first step is to import the image library from the Wand.
+-  The second step in this process is to import an image that you want to get its details.
+- However, to ensure that the image details will be output successfully, the correct pathname should be input and in the correct format. Furthermore, this mainly applies to an image located within several folders. The following format should be used when encountering such an image.
+-  The third step is now to print the details of the image, i.e., the width and the height.
+
+The input image is:
+
+![python](/engineering-education/wand-library-in-python/python.png)
+
+The output is as follows.
+```bash
+The height of the image is: 203
+The width of the image is: 601
+```
+### Use Wand package in Python to blur an image
+We can use several ways in Python to blur an image. For example, one can decide to blur an image using the pillow package, another one can abandon the pillow package and use the OpenCV library, and all will perform the same job. However, in our case, we will use the Wand library to blur the same image, and the following are the steps that we shall use.
+
+Let us take a look at an example.
+```Python
+  # Importing the image library from Wand
+from Wand.image import Image as wandImage
+# Importing the image using the correct image location.
+with wandImage(filename='/wand-library-in-python/python.png') as img:
+       # Blur function and its dimensions    
+    img.blur(radius=1, sigma=3)
+      # Saving the blurred image using in a certain location.    
+    img.save(='/wand-library-in-python/python1.png)
+```
+- We shall import the image library from Wand as we had done in our previous example.
+- We shall then import our image using the correct pathname.
+- We shall then call the blur function by specifying the radius and sigma of the image. The radius parameter is used to determine the radius of the gaussian aperture, which is the size of the gap, and it is always an integer number, e.g., 3. The sigma parameter is used to specify the value of sigma, which is the Gaussian filter's standard deviation, and it is also an integer input, e.g., 5.
+- The last step is to save the image from differentiating it from the original image.
+
+The input image is:
+
+![python](/engineering-education/wand-library-in-python/python.png)
+
+The output image is:
+
+![python](/engineering-education/wand-library-in-python/python1.png)
+### Image transform using Python wand
+Another essential and robust feature of the Python wand is the image transform feature. It is used to transform an image to be displayed differently from the display of the original image. Image transformation, in this case, means that the output of the image will be upsidedown and reversed as compared to the input image. The image transformation is achieved through the collaboration of several functions. 
+
+Let us consider a complete example.
+```Python
+ # Let us import image library
+from wand.image import Image 
+ # Get image
+with Image(filename='/wand-library-in-python/python1.png') as img:
+# Clone image
+    with image.clone() as flip:
+# flip function. The flip function is used to reverse the order of elements.
+        flip.flip()
+# Save image
+        flip.save(filename='/wand-library-in-python/python2.png')
+```
+The following steps are used to transform an image.
+- The first and second steps shall be referred to in the above examples, i.e., importing the image library from Wand and importing the image.
+- The clone() function is called for making the image.
+- The cloned image is then saved in a specific location.
+
+The input image is:
+
+![python](/engineering-education/wand-library-in-python/python.png)
+
+The output image is :
+
+![python2](/engineering-education/wand-library-in-python/python2.png)
+
+ 
+### Use Python wand to draw an image
+Apart from all those features that we have looked at, drawing an image and displaying it is possible. We will achieve this by using a combination of various functions.
+
+Let us look at the example below:
+```Python
+from wand.image import Image  
+from wand.drawing import Drawing  
+from wand.color import Color  
+with Drawing() as img_draw:  
+    img_draw.stroke_color=Color('red')
+    img_draw.stroke_width=4
+    
+    img_draw.fill_color=Color('white')
+    img_draw.circle((300, 300), (200, 200)) 
+    with Image(  
+        width = 480,  
+        height =600,  
+        background = Color('blue')  
+        ) as img:  
+        img_draw(img)  
+        img.save(filename = '/wand-library-in-python/python5.png') 
+```
+To draw an image using a python wand, a color is specified(any color can do). The size of what the image will cover is also determined. Then the overall dimensions of the image coverage are also determined.
+
+The output image is :
+
+![python5](/engineering-education/wand-library-in-python/python5.png)
+### Conclusion
+In conclusion, we had outlined what one can do using the image library in Wand—blurring an image, drawing, and transforming the same idea. This has proved that it can use a single image but have several displays, which is achieved by calling several functions.         
