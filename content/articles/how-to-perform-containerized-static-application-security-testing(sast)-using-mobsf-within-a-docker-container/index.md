@@ -23,10 +23,15 @@ A vulnerability that is not fixed could lead to dire consequences for the user a
 - [Differences between SAST and DAST](#differences-between-sast-and-dast)
 - [Tools used to perform SAST](#tools-used-to-perform-sast)
 - [Step by Step process of SAST](#step-by-step-process-of-sast)
-- [Advantages and Disadvantages of SAST](#advantages-and-disadvantages-of-sast)
+- [Advantages of SAST](#advantages-of-sast)
+- [Disadvantages of SAST](#disadvantages-of-sast)
 - [Conclusion](#conclusion)
 - [Relevant Material](#relevant-material)
 
+### Prerequisites
+The learner should be familiar with:
+1.	Git commands and commands in a Linux operating system.
+2.	A basic understanding of containerized storage.
 
 ### What is SAST
 Static Application Security Testing(SAST) is a method of vulnerability testing that analyses the source code of an application to determine the security vulnerabilities that may cause the application to be compromised.
@@ -34,17 +39,11 @@ Static Application Security Testing(SAST) is a method of vulnerability testing t
 > A vulnerability is any loophole within an application that can be exploited to gain unauthorized access to the application or propagate malware through the application. 
 A vulnerability that is not fixed could lead to dire consequences for the user and owners of an application. SAST is one of the ways used to scan and assess applications for vulnerabilities.
 
-SAST scans applications before the compilation of the code right at the beginning of the SDLC because it does not require an executing application.
+SAST scans applications before the compilation of the code right at the beginning of the SDLC because it does not require an executing application. This scenario is also known as white-box testing.
 
-The above scenario is also known as white-box testing.
+Developers can therefore identify shortcomings of an application in the early stages of development and quickly resolve issues that may otherwise affect the final rolled out application. Developers can also systematically track the vulnerability trends within the application, thereby promoting the creation of a secure and efficient Software Development Life Cycle(SDLC).
 
-Developers can therefore identify shortcomings of an application in the early stages of development and quickly resolve issues that may otherwise affect the final rolled out application.
-
-Developers can systematically track the vulnerability trends within the application thereby promoting the creation of a secure and effecint Software Development Life Cycle(SDLC).
-
-SAST provides visual representations of the problems identified making it easy to navigate the code. In addition, it provides suggestions on how to fix the vulnerabilities identified within the code. 
-
-Customized reports downloadable and visible offline are supported by most SAST tools and can also be tracked through dashboards.
+SAST provides visual representations of the problems identified making it easy to navigate the code. In addition, it provides suggestions on how to fix the vulnerabilities identified within the code. Customized reports downloadable and visible offline are supported by most SAST tools and can also be tracked through dashboards.
 
 ### Differences between SAST and DAST
 There are two different types of Application Security Testing, i.e., SAST and DAST (Dynamic Application Security Testing).
@@ -56,12 +55,6 @@ The above-mentioned detect security vulnerabilities in applications except in a 
 - It costs less to fix vulnerabilities using SAST, while it is relatively expensive to fix them using DAST.
 - SAST discovers vulnerabilities earlier into the SDLC, while DAST discovers vulnerabilities towards the end of SDLC
 - SAST requires source code DAST requires a running application.
-
-### Prerequisites
-The learner should be familiar with:
-1.	Git commands and commands in a Linux operating system.
-2.	A basic understanding of containerized storage.
-
 
 ### Tools used to perform SAST
 Some of the tools used in Performing SAST are as follows:
