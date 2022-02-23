@@ -35,7 +35,7 @@ In this article, we will look at two main subtopics in SSH tunneling, that is:
 ### Prerequisites
 To perform SSH tunneling, you need the following:
 - A publicly accessible SSH server.
-- A basic understanding of networking concept(#https://www.cisco.com/c/en/us/solutions/small-business/resource-center/networking/networking-basics.html)
+- A basic understanding of networking concept(https://www.cisco.com/c/en/us/solutions/small-business/resource-center/networking/networking-basics.html)
 - The resources to be accessed.
 - A local device.
 - A remote device for remote port forwarding.
