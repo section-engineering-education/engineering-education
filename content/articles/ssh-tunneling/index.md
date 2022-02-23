@@ -65,18 +65,25 @@ Local port forwarding syntax:
 ssh -L <local port>:<remote ip address>:<remote port> <public ssh server ip address>
 ```
 
-Let us explain the syntax above:
-- -L - It is the local port forwarding.
-- 8888  - This is the local port.
-- 192.168.1.3 - This is a remote IP address.
-- 8080 - It is a remote port.
-- 44.11.22.33 - It is the public SSH server ip address.
+Let us explain the above syntax:
+- -L &rarr;  This letter in our command implies that we are performing a local port forwarding. 
+- local port &rarr;  This is the port the port of our local device.
+- `Remote ip address` &rarr;  This is the ip address of our remote resources that we need to access.
+- Remote port &rarr;  This is the port of our remote device.
+- Public ssh server ip address &rarr;  This is the  ip address of our public SSH server ip address.
 
-The command below will be used to perform local port forwarding:
+The command below will be used to perform local port forwarding in our case.
 
 ```bash
 ssh -L 8888:192.168.1.3:8080 44.11.22.33
 ```
+
+Let us explain the above syntax:
+- -L &rarr; This indicates that we are performing a local port forwarding
+- 8888 &rarr; This is the local port for our local device
+- 192.168.1.3 &rarr; This is a remote IP address of the resources that we need to access.
+- 8080 &rarr;  This is the remote port.
+- 44.11.22.33 &rarr; This is the public SSH server ip address.
 
 We are going to access our public SSH server using SSH. To do this, since our local machine is dumb and is not enough to access the remote resources, we will create a local port, that is, port 8888. 
 
