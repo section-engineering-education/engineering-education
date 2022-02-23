@@ -6,7 +6,7 @@ url: /pathlib-vs-os-modules-for-file-and-directory-system-operation/
 title: Pathlib Vs OS Modules for File and Directory System Operations
 description: In this article, we will look at what OS and Pathlib modules are, where and how to use them for file system operations.
 author: akenz-michael
-date: 2022-02-22T00:00:00-03:11
+date: 2022-02-23T00:00:00-03:11
 topics: [Languages]
 excerpt_separator: <!--more-->
 images:
