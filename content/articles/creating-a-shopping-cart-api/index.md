@@ -1,9 +1,6 @@
-Building a dynamic web app, website, android for mobile or IOS requires the consumption of APIs(Application Programming Interface), most company provides API for carrying out some task, such as building an eCommerce web app, you will call consume an API from the central bank of your country or some established applications like PayPal, Paystack, etc.
-<!--More -->
 ### Introduction
-In this tutorial, I will guide you through building a basic shopping cart API. This shopping cart shows how an actual shopping cart functions.
-In a real web app, you will be consuming APIs into this code that I have created, but for now, we have to use actual value as the amount in the shopping cart.
-You can always visit this link [Github](https://github.com/kingsleynwafor54/shopping_cart_with_springboot) to review the code base and check the disparity between yours and the tutorial.
+Building a dynamic web app, website, and android for mobile or IOS requires the consumption of APIs(Application Programming Interface), these APIs could be both hardcoded values in your backend and also other external APIs that your backend can reference to and your frontend will make calls to.
+Most companies provide API for carrying out some task, such as building an eCommerce web app, you will call/consume an API from the central bank of your country or some established applications like PayPal, Paystack, etc.
 #### Prerequisite
 1. Intermediate knowledge of Java
 2. Full understanding of object-oriented programming in Java
@@ -292,7 +289,7 @@ if(customerRepo.getCustomer(id)!=null){
     }
 }
 ```
-N/B In this code snippet I used descriptive terms to enable you to understand the function of the methods.
+
 #### DataService Implementation
 ```java
 @Service
@@ -591,7 +588,8 @@ public class customerTest {
 ![shopping_api2](payment.JPG)
 #### Conclusion
 In the end, we've seen how to code to an interface, how to write a unit test, how to create an endpoint, and also how we used postman to view our endpoint. 
-Also, we discussed how we used field dependency injection and not constructor dependency injection which will still suffice, we also took a deep dive into creating APIs that adds and also get customers, admins, then we also added products to our cart and the cart could calculate the cost of products in the cart since the products have an attribute of price.
+Also, we discussed how we used field dependency injection and not constructor dependency injection which will still suffice.  we also took a deep dive into creating APIs that adds and also get customers and admins.
+Further more we also added products to our cart and the cart could calculate the cost of products in the cart since the products have an attribute of price.
 In this tutorial, we didn't integrate any other API for an actual business transaction that either work with your bank account or your credit card, hopefully, we'll work on that in the next tutorial and the use of an actual database that could be used in the real-life event.
 Once again you can check [Github](https://github.com/kingsleynwafor54/shopping_cart_with_springboot) for more on the entire code structure in case you want to save time from copying code or you have an error maybe you miss-spelled or you didn't add a certain dependency etc. Thanks for staying with me all the way, do have a nice time.
 #### Referrence
