@@ -4,7 +4,7 @@ status: publish
 published: true
 url: /constructors-in-kotlin/
 title: Constructors in Kotlin
-description: In this article, we will discuss constructors and init blocks in Kotlin along with best practices in using them.
+description: In this article we will discuss constructors and init blocks in Kotlin along with best practices in using them.
 author: simon-ngaruiya
 date: 2022-02-10T00:00:00-13:00
 topics: [Languages]
