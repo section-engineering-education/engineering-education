@@ -78,9 +78,10 @@ The following are some of the building blocks and services of Decentralized Fina
 - Decentralized Exchanges 
 
 ### Asset Tokenization
-Tokenization is the process of adding a new asset to a blockchain whereas a token is the blockchain representation of an asset. The process of asset tokenization makes assets more accessible, easy to transfer and programmable. 
-
+Tokenization is the process of securitizing an asset into the blockchain network. Upon tokenization of such security, the representation of the asset on the blockchain is what we call “Tokens”. 
+ 
 Asset tokenization can be in the form of a Governance Token whereby the future dimensioned pathway of the token is decided by a vote on the blockchain. A security token is also another form of asset tokenization whereby the token is used to represent the state of a real-life asset.
+
 
 ### Stablecoin
 These are tokens whose price is tagged to the type of assets such as fiat and precious metal. Stable coins can be created via Off-chain Collateral(Fiat), OnChain Collateral(Crypto Asset), Non-Collateralized(Algorithmic)
