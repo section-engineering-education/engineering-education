@@ -1,6 +1,6 @@
 ### Wavelet-based denoising of the 1-D signal using Python
 ### Introduction
-Wavelet is a function widely applied for processing digital signals and compression. Wavelet transform is transforming a high-resolution signal into approximated and detailed coefficients. The approximated coefficients are always referred to as low-resolution approximations. It is because it does not show what has changed. The detailed coefficients give detail to what has changed in a signal. The detailed coefficient shows the changes and makes it possible to recover the original image from the approximated coefficients.
+Wavelet is a function widely applied for processing digital signals and compression. Wavelet transform is transforming a high-resolution signal into approximated and detailed coefficient. The approximated coefficients are always referred to as low-resolution approximations because it does not show what has changed. The detailed coefficient shows the changes and makes it possible to recover the original image from the approximated coefficients.
 In this tutorial, we will see how to perform the wavelet transform of the 1-D signal. Also, we will look at the various packages used for this analysis. The commands and a sample of how to use such commands in an application.
 
 ### Prerequisites
@@ -77,7 +77,7 @@ Let us now perform wavelet denoising using the `denoise_wavelet()` function usin
 x_denoise = denoise_wavelet(x_noisy, method='BayesShrink', mode='soft', wavelet_levels=3, wavelet='sym8', rescale_sigma='True')
 ```
 
-For visualization, we plot the noisy signal `x_noisy` and the denoised signal `x-denoise`.
+We plot the noisy signal `x_noisy` and the denoised signal `x-denoise` for visualisation.
 
 ```python
 plt.figure(figsize=(20, 10), dpi=100)
