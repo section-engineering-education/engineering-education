@@ -1,4 +1,4 @@
-Object tracking is a deep learning application that takes a set of detected objects and creates a unique identification for all of them. After that, it performs tracking to the detected objects as they move in a video frame.
+Object tracking is a deep learning application that takes a set of detected objects and creates a unique identification for all of them. After that, it tracks the detected objects as they move in a video frame.
 
 `HistogramBasedTracker` returns a tracker that tracks an object. It uses the histogram of pixel values to identify the tracked object.
 
@@ -11,11 +11,11 @@ To follow through this tutorial, you will need:
 
 Tracking an object constitutes estimating the trajectory, change in location, and state of the object over time, including change in size or colour. In this guide, we will track a moving ball.
 
-We will search for the object in all the frames of the video. In some situations, such as high frames rate applications or where the object is computationally an expensive algorithm, this method is insufficient.
+We will search for the object in all the frames of the video. However, this method is insufficient in some situations, such as high frames rate applications or where the object is computationally an expensive algorithm.
 
-As an alternative approach, we detect the object in the first image and then search for the corresponding location in the subsequent images. Thereby, the assumption is that the object does not move substantially between frames of a video. We will use a histogram-based tracker for our ball example. 
+As an alternative approach, we detect the object in the first image and then search for the corresponding location in the subsequent images. Thereby, the assumption is that the object does not move substantially between frames of a video. Therefore, we will use a histogram-based tracker for our ball example. 
 
-### Histogram based tracking
+### histogram based tracking
 Histogram based tracker uses a continuously adaptive mean shift algorithm for object tracking. The tracked object is identified by the histogram of object pixel values based on colour or intensity. There are three steps to doing this:
 
 1. Create a tracker object.
@@ -57,7 +57,7 @@ boxLoc = getLoc(h);
 imgYcbcr = rgb2ycbcr(img);
 ```
 
-In the code avove, we first retrieve the first video frame of our video using the `step()` function. This function takes the video variable `videoFReader` as the argument. This retrieved frame is then displayed using the `imshow()` function.
+In the code above, we first retrieve the first video frame of our video using the `step()` function. This function takes the video variable `videoFReader` as the argument. This retrieved frame is then displayed using the `imshow()` function.
 
 Then, the `imrect()` function is used to get the region of interest. Finally, the utility function `getLoc()` with the region of interest as the argument gives the bounding box position in the required format. The required format is x, y, width and height.
 
@@ -77,8 +77,8 @@ Therefore, selecting an appropriate representation of the input image is importa
 
 The computer recognizes three colour channels. They are red, green and blue. If you use an integer of 1, it represents the red colour channel. The integer 2 represents green colour channels, and finally, 3 represents blue. The colour channel you choose to use depends on the object being tracked and the surrounding environment.
 
-In our case, we use a green channel since the ball color is close to the green channel than the red or blue.
-To apply tracking on our subsequent video frames, we use a `while` loop.
+We use a green channel since the ball colour is close to the green channel than the red or blue.
+We use a' while' loop to apply tracking on our subsequent video frames.
 
 ```matlab
 %% Track object
@@ -113,7 +113,7 @@ xlabel('Frame #')
 ylabel('Confidence Score (0,1)')
 ```
 
-From the code above, we created a `figure` in which the plotting should occur. We then used the `plot()` function to plot these scores. The `xlabel` is given as `frame` and the `ylabel` as the confidence score. The y-axis should move up to a maximum of 1.
+We created a `figure` from the code above in which the plotting should occur. We then used the `plot()` function to plot these scores. The `xlabel` is given as `frame` and the `ylabel` as the confidence score. The y-axis should move up to a maximum of 1.
 
 Once all the tracking process is done, clean the video player `vidPlayer` and the video frame reader `videoFReader`. It is done using the `release()` function as shown below:
 
@@ -125,15 +125,15 @@ release(videoFReader);
 
 If we run this code at this point, we get the following output:
 
-![Tracking](tracking-one.png)
+![Tracking](/engineering-education/tracking-of-objects-using-the-histogram-based-tracker-in-matlab/tracking-one.png)
 
 The plot for the confidence score is as follows:
 
-![Confidence score](tracking-two.png)
+![Confidence score](/engineering-education/tracking-of-objects-using-the-histogram-based-tracker-in-matlab/tracking-two.png)
 
-As we can see, the tracking stops once the object is occluded. Also, the confidence scores diminishes as soon as the tracking is stopped.
+As we can see, the tracking stops once the object is occluded. Also, the confidence scores diminish as soon as the tracking is stopped.
 
-![Dimishing confidence scores](tracking-three.png)
+![Dimishing confidence scores](/engineering-education/tracking-of-objects-using-the-histogram-based-tracker-in-matlab/tracking-three.png)
 
 It is a characteristic of a histogram-based tracker. To improve this characteristic, we should create the program such that once the object is lost, the search window reinitializes when the image reappears.
 
@@ -163,22 +163,22 @@ At this point, we add a bounding box to the object of interest. If the score is 
 
 The second `if` statement checks if the location of the ball/object of interest is found. If it is not empty(~empty), we reinitialize using `initializeSearchWindow()` function. This function takes the tracker and the location of the object of interest as the arguments.
 
-As explained earlier, the output is read using the `step()` function. We insert the bounding box `insertShape()` function to the read output.
+As explained earlier, the output is read using the `step()` function. Next, we insert the bounding box `insertShape()` function to the read output.
 
-![Tracking](tracking-four.png)
+![Tracking](/engineering-education/tracking-of-objects-using-the-histogram-based-tracker-in-matlab/tracking-four.png)
 
 Once the ball passes the occlusion, it reinitializes to get it again. Once the reinitialization is done and the ball identified, the tracking continues as shown below:
 
-![Confidence score](tracking-five.png)
+![Confidence score](/engineering-education/tracking-of-objects-using-the-histogram-based-tracker-in-matlab/tracking-five.png)
 
 As demonstrated, the characteristics are improved. The tracking is working even after the object is occluded. The confidence plot is shown below:
 
-![Confidence score](tracking-six.png)
+![Confidence score](/engineering-education/tracking-of-objects-using-the-histogram-based-tracker-in-matlab/tracking-six.png)
 
 You can find the files, video, and utility functions used here [here](https://github.com/peterAdongo/tracking)
 
 ### Conclusion
 Histogram-based tracker bases the tracking on the histogram features of the object of interest. The tracking is good until an occlusion occurs. This tracker cannot estimate the position of an object in an occlusion.
-It makes it an inefficient way of tracking the object. This method of tracking is only applicable in the absence of an occlusion.
+It makes it an inefficient way of tracking the object. Furthermore, this tracking method is only applicable in the absence of an occlusion.
 
 Happy coding!
