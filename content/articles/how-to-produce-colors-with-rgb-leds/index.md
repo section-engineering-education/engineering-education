@@ -43,7 +43,7 @@ Arduino board is an open-source microcontroller board based on the microchip `AT
 
 > In the digital input/output, pins 11, 10, 9, 6, 5, 3 have `~` symbols. This is because they are supported by pulse width modulation(PMW). They can give any voltage in the range `0-5v` with the help of PMW. The pins can generate a dc voltage in 256 variations since it is an 8-bit controller(2^8). Arduino produces this voltage variation by varying the duty cycle of a square wave. It is known as PMW.
 
-In IDE of Arduino. Cc, the voltages of these PMW pins can be written by `analogwrite(pin, value)`. In Matlab, we use the command `writePMWVoltage(board, pin, value)`.
+In IDE of an Arduino, the voltages of these PMW pins can be written by `analogwrite(pin, value)`. In Matlab, we use the command `writePMWVoltage(board, pin, value)`.
 
 ### Hardware implementation
 The circuit diagram to implement the color production is as shown below:
@@ -72,9 +72,7 @@ You have to mix the RGB colors to produce custom colors. A simple combination to
 
 ![Producing custom colors](/engineering-education/how-to-produce-colors-with-rgb-leds/rgb-four.png)
 
-The image above shows that producing custom colors involves combining the RGB colors. For example, you want to produce a yellow color. 
-
-However, yellow is formed by a combination of red and green colors. So, we need to switch the red and the green colors simultaneously. It can be represented as `RGB=[1 1 0]`.
+The image above shows that producing custom colors involves combining the RGB colors. For example, if we want to produce a yellow color, we combine red and green colors. So, we need to switch the red and the green colors simultaneously. It can be represented as `RGB=[1 1 0]` in the program.
 
 At some point, you do not need to provide the full voltage. For example, if you want to produce an orange color, we need the red led to be brighter and green to be less bright. This can be represented as `RGB=[1 0.4 0]`. 
 
@@ -129,7 +127,7 @@ We also create a handle for the `ON` condition such that when the handle is 1, t
 
 Now, let us use an `if` statement to check for the validity of the conditions. First, we check if the board is created using `~isempty(handles.a)`. If it is created(equal to 1), we set the button's background color to green[0 1 0]. We finally update the handles using `guidata(hObject, handles)`.
 
-Now, let us write the callback function for the radio buttons, i.e. red, green, blue etc. These buttons allow you to select a color you want your LED to produce. For example, the led should produce a red color if you select red. 
+Now, let us use an `if` statement to check for the validity of the conditions. First, we check if the board is created using `~isempty(handles.a)`. If it is created (equal to 1), we set the button's background color to green [0 1 0]. We finally update the handles using `guidata(hObject, handles)`.
 
 Let us begin with the red buttons:
 
