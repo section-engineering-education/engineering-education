@@ -1,7 +1,7 @@
 ---
 layout: engineering-education
 status: publish
-published: 
+published: true
 url: /security-testing-using-mobsf-in-docker/
 title: Static Application Security Testing using MobSF and Docker
 description: This article will introduce the reader to Static Application Security Testing using MobSF and Docker.
