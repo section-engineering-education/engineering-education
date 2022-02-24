@@ -15,7 +15,7 @@ We will search for the object in all the frames of the video. However, this meth
 
 As an alternative approach, we detect the object in the first image and then search for the corresponding location in the subsequent images. Thereby, the assumption is that the object does not move substantially between frames of a video. Therefore, we will use a histogram-based tracker for our ball example. 
 
-### histogram based tracking
+### histogram-based tracking
 Histogram based tracker uses a continuously adaptive mean shift algorithm for object tracking. The tracked object is identified by the histogram of object pixel values based on colour or intensity. There are three steps to doing this:
 
 1. Create a tracker object.
@@ -78,7 +78,7 @@ Therefore, selecting an appropriate representation of the input image is importa
 The computer recognizes three colour channels. They are red, green and blue. If you use an integer of 1, it represents the red colour channel. The integer 2 represents green colour channels, and finally, 3 represents blue. The colour channel you choose to use depends on the object being tracked and the surrounding environment.
 
 We use a green channel since the ball colour is close to the green channel than the red or blue.
-We use a' while' loop to apply tracking on our subsequent video frames.
+We use a ' while' loop to apply tracking on our subsequent video frames.
 
 ```matlab
 %% Track object
@@ -113,7 +113,7 @@ xlabel('Frame #')
 ylabel('Confidence Score (0,1)')
 ```
 
-We created a `figure` from the code above in which the plotting should occur. We then used the `plot()` function to plot these scores. The `xlabel` is given as `frame` and the `ylabel` as the confidence score. The y-axis should move up to a maximum of 1.
+We created a `figure` from the code above where the plotting should occur. We then used the `plot()` function to plot these scores. The `xlabel` is given as `frame` and the `ylabel` as the confidence score. The y-axis should move up to a maximum of 1.
 
 Once all the tracking process is done, clean the video player `vidPlayer` and the video frame reader `videoFReader`. It is done using the `release()` function as shown below:
 
@@ -135,7 +135,7 @@ As we can see, the tracking stops once the object is occluded. Also, the confide
 
 ![Dimishing confidence scores](/engineering-education/tracking-of-objects-using-the-histogram-based-tracker-in-matlab/tracking-three.png)
 
-It is a characteristic of a histogram-based tracker. To improve this characteristic, we should create the program such that once the object is lost, the search window reinitializes when the image reappears.
+It is a characteristic of a histogram-based tracker to stop when the object of interest is occluded. To improve this characteristic, we should create the program such that once the object is lost, the search window reinitializes when the image reappears.
 
 It can be done using the confidence score. It is because the confidence score shows the likeliness of the appearance of the object of interest. Let us add the code below in the while loop just below the `insertShape()` function:
 
