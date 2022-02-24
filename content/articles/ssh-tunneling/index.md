@@ -48,6 +48,7 @@ To access the internal network to tunnel through the access ports and smuggle co
 The image below is a demonstration of local port forwarding:
 
 ![Local port forwarding](/engineering-education/ssh-tunneling/local.jpg)
+[Image source](https://sites.google.com/view/ssh-tunneling/home)
 
 Using the image above, let us have an explanation of SSH tunneling from it. Suppose we have the following devices with IP addresses as shown respectively:
 - An internal resource that we need access to on port 8080 and IP address `192.168.1.3`.
@@ -96,6 +97,7 @@ Remote port forwarding allows us to use our public SSH server as a centralized l
 Let us have a look at the image below:
 
 ![Remote port forwarding](/engineering-education/ssh-tunneling/remote.jpg)
+[Image source](https://sites.google.com/view/ssh-tunneling/home)
 
 From the image above, we have our:
 - Internal resources on IP address `10.0.0.3` on port 8080 that we want people to have access to.
@@ -138,6 +140,5 @@ From this article, we have seen how local port and remote port forwarding works.
 
 Happy coding!
 
-[Image source](https://sites.google.com/view/ssh-tunneling/home]
 ---
 Peer Review Contributions by: [Dawe Daniel](/engineering-education/authors/dawe-daniel/)
