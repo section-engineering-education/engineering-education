@@ -6,7 +6,7 @@ url: /fibonacci-memoization-time-complexity-in-javascript/
 title: Understanding Fibonacci Memoization Time Complexity in JavaScript
 description: This article will help the reader understand Fibonacci memoization and it's time complexity in JavaScript. 
 author: valentine-gatwiri
-date: 2022-02-16T01:00:00-10:10
+date: 2022-02-28T01:00:00-10:10
 topics: [Languages]
 excerpt_separator: <!--more-->
 images:
@@ -14,7 +14,6 @@ images:
   - url: /engineering-education/fibonacci-memoization-time-complexity-in-javascript/hero.jpg
     alt: Fibonacci memoization time complexity in Javascript Hero Image
 ---
-
 Memoization is an enhancement procedure used to speed up computer programs by keeping the values of distinct function calls and returning the stored input when the same function is invoked again. 
 <!--more-->
 In software development, time complexity describes the amount of time the computer takes to run an algorithm.
@@ -86,14 +85,14 @@ The above code displays the expected results. Now, let's allocate a bigger numbe
 console.log(fib(70));
 ```
 
-Looks like the first three calls of Fibonacci work fine. However, the fourth call takes a lot of time. We, therefore, need to modify the Fibonacci function for faster results.
+Looks like the first three calls of Fibonacci worked fine. However, the fourth call takes a lot of time. We, therefore, need to modify the Fibonacci function for faster results.
 
 ### Visualizing the fib function
 We will use a recursive tree to visualize our problem. But, first, let's trace through what happens when we call the `fib` method with 7. 
 
-We will branch out our tree, starting at number 7. The first step is to subtract 1 `(n-1)` at the left branch and 2 `(n-2)` at the right branch. 
+We will branch out our tree, starting at number 7. The first step is to subtract 1 `(n-1)` at the left branch and 2 `(n-2)` at the right node. 
 
-Use the same logic on other nodes of the structure. Our base cases are 2 and 1 because we cannot branch out any further.
+Use the same logic on other nodes in the structure. Our base cases are 2 and 1 because we cannot branch out any further.
 
 In this case, we will build the entire tree and stop branching out whenever we have a base case scenario. 
 
@@ -103,7 +102,7 @@ In this case, we will build the entire tree and stop branching out whenever we h
 
 We will have one and two as our base cases in our tree. Therefore, they will return 1 to the parent. We then add these two values to find the following number in the sequence. 
 
->Note that all base cases return 1 to their parents.
+> Note that all base cases return 1 to their parents.
 
 We will now add the values of the left and right children until we reach the top of our tree; the final result is 13.
 
@@ -114,7 +113,7 @@ As shown above, classic recursive implementation usually has `0(2^n)` time compl
 
 In the first level of the tree, we have one call: fib 7. There are two calls in the next level (fib 6 and fib 5) and four calls in the preceding level. 
 
-Each time our node branches off, we have two additional nodes each time our node branches off, so it's `2*2*2... = 2^n.` making it `O(2^n)`. Note that it's not usually `2^n`. 
+Each time our node branches off, we have two additional nodes, so it's `2*2*2... = 2^n.` making it `O(2^n)`. Note that it's not usually `2^n`. 
 
 You can see that in level 5, a node is missing, and in level 6, there is only one node. This means that our tree is *asymmetric*.
 
@@ -134,7 +133,7 @@ const fib=(n,memo={})=>{
 }
 ```
 
-This means if we call the `fib()` function without passing in an argument, a `memo` will be created by default in the code above.  
+This means if we call the `fib()` function without passing in an argument, a `memo` will be created by default.  
 
 The `memo` will contain an empty JavaScript object. We will assume that the `memo` stores `n` as the key. The values will be returned from the `fib()` function.
 
@@ -149,7 +148,7 @@ We used the original argument `n` as a key in our `memo` to return the value tha
 
 > `(n in the memo)` condition is just some classic JavaScript syntax. So we are checking if some key is inside the JavaScript object.
 
-Let's store our entire result inside our memo; our key is `n`. We will complete our initial OPERATION and return what we have put in that memo. Therefore, we will not change any return values. 
+Let's store our entire result inside our memo; our key is `n`. We will complete our initial operation and return the results in the memo. Therefore, we will not change any return values. 
 
 > Note that the access key should always be your argument.
 
@@ -158,13 +157,13 @@ memo [n]= fib(n-1)-fib(n-2);
 return memo[n];
 ```
 
-The next step is to ensure that all recursive function calls to access the same memo. We should pass a memo object to all of the recursive calls.
+The next step is to pass a memo object to all of the recursive calls:
 
 ```js
 memo[n]=fib(n-1,memo)+fib(n-2,memo);
 ```
 
-We only receive a top-level `memo` object whenever we make a top-level call at a `fib` function. This is because we are not passing in a second argument as shown in the `return memo[n];`.
+We only receive a top-level `memo` object whenever we make a top-level call at a `fib` function. This is because we are not passing in a second argument as shown in the `return memo[n]`.
 
 Since we are not passing explicit second arguments in our recursive calls, they will receive the same `memo` object, and it will look like it's been passed by the reference.
 
@@ -172,7 +171,7 @@ Since we are not passing explicit second arguments in our recursive calls, they 
 
 ```js
 const fib=(n, memo ={})=>{
-if(n in memo)return memo[n];
+if(n in memo)return memo[ n];
 ```
 
 We added a new argument and a base case in the above code changes.
@@ -186,11 +185,11 @@ return memo[n];
 We also added a memo storing logic as `memo[n]=fib(n-1, memo) + fib(n-2, memo)`. Note that we did not substitute any of the functional logic. These changes, therefore, allow our program runtime to improve greatly.
 
 #### Tree implementation
-![memoized tree](/engineering-education/fibonacci-memoization-time-complexity-in-javascript/memoized.jpeg)
+![Memoized tree](/engineering-education/fibonacci-memoization-time-complexity-in-javascript/memoized.jpeg)
 
-In the above image, the red nodes return the memoized result. The algorithm is called once for each value from *0 to n*if they are ignored.
+In the above image, the red nodes return the memoized result. The algorithm is called once for each value from *0 to n* if they are ignored.
 
-A call tree for a figure more prominent than `fib(7)` will look just like the tree in the above image.
+A call tree for a figure more prominent than `fib(7)` will be the same as that in the above image.
 
 #### Fibonacci sequence - Time complexity analysis
 
@@ -206,7 +205,7 @@ else
 In the above algorithm, if *n* is less or equal to *1*, we return *n*, or else we make two recursive calls to calculate *fib of n-1* and *fib of n-2*. 
 
 #### Time complexity calculation
-You can use different formulars to calculate the time complexity of fibonacci sequence.
+You can use different formulas to calculate the time complexity of Fibonacci sequence.
 
 When we analyze the time complexity of programs, we assume that each simple operation takes one unit of time. 
 
@@ -216,7 +215,7 @@ Since *n* is greater than 1 it goes to the *else* condition control of the progr
 
 Let's say the time taken to calculate the *fib* of *n* is `T(n)`.
 
-```
+```bash
 series:0 1 1 2 3 5 8
 //4 is the number of units
 T(n)=T(n-1)+T(n-2)+4
@@ -233,10 +232,12 @@ T(n)=2^n/2 T(0)+(2^n/2-1)c
 T(n)=(1+c)*2^n/2=c
 T(n) α 2^n/2 //(lower Bound)
 ```
- - O(n)=> fib(iteration)-linear time algorithm
+
+- O(n)=> fib(iteration)-linear time algorithm
  
-In the equation above we are looking for the smallest value that  that can round up to the estimated value.
-```
+In the equation above, we are looking for the smallest value that can be rounded up to the estimated value.
+
+```bash
 T(n-1)=T(n-2)
 T(n)=2T(n-1)+c   [c=4]
   =4T(n-2)+3c
@@ -246,12 +247,15 @@ T(n)=2T(n-1)+c   [c=4]
  T(n)=2^n T(0)+(2^n-1)c
  T(n)=(1+c)*2^n-c
  T(n) α 2^n //(upper bound)
- ```
- - O(2^n)=>fib(recursion)-Exponential time algorithm
+```
+
+- O(2^n)=>fib(recursion)-Exponential time algorithm
  
-In the equation above we are looking for largest value that can round up to the estimated value
+In the equation above, we are looking for the largest value that can be rounded up to the estimated value.
  
-On finding the solution to the above recursive equation, we obtain the upper bound of Fibonacci as O(2^n). This is not the tight upper bound. The fact that Fibonacci can be mathematically represented as a linear recursive function can be used to find the tight upper bound.
+On finding the solution to the above equation, we obtain the upper bound of Fibonacci as O(2^n). 
+
+This is not the tight upper bound. The fact that Fibonacci can be mathematically represented as a linear recursive function can be used to find the tight upper bound.
 
 **Recursive formula for writing Fibonacci numbers mathematically**
 
@@ -260,30 +264,27 @@ For seed values F(0) = 0 and F(1) = 1
 F(n) = F(n-1) + F(n-2)
 ```
 
-The recursive equation of a Fibonacci number is `T(n)=T(n-1)+T(n-2)+O(1)`. This is because the time taken to compute `fib(n)` equals the quantity of time we will take to compute `fib(n-1)` and `fib(n-2)`. Therefore, we should also include constant time in the addition.
+The recursive equation of a Fibonacci number is `T(n)=T(n-1)+T(n-2)+O(1)`. This is because the time taken to compute `fib(n)` equals the quantity of time we will take to compute `fib(n-1)` and `fib(n-2)`. 
 
-Fibonacci is now defined as:
+Therefore, we should also include constant time in the addition. Fibonacci is now defined as:
 
 ```bash
 F(n) = F(n-1)+F(n-2)
 ```
+
 #### Memoized time complexity calculation 
 Let's take time complexity  of `n` to be `T(n)`, hence` T(n) = T(n-1) + T(n-2)`. 
 
-This is because `F(n-2)` is the one which is in the cache when we calculate `F(n - 1)`. Therefore, the function of `F(n-2)` is 1 (reading from cached equation), hence `T(n) = T(n-1) + 1 = T(n-2) + 2 = ... = T(n-n) + n.` 
+This is because `F(n-2)` is in the cache when we calculate `F(n - 1)`. Therefore, the function of `F(n-2)` is 1 (reading from cached equation), hence `T(n) = T(n-1) + 1 = T(n-2) + 2 = ... = T(n-n) + n.` 
 
 `T(0) is 1` will be regarded as `T(n) = O(n + 1) = O(n)`.
 
 ### Conclusion
-The Fibonacci sequence is notable, because the ratio of two successive Fibonacci numbers is very close to the Golden ratio value.The value of golden ratio is approximately equal to 1.618034…  For example, 
+In a Fibonacci sequence, the ratio of two successive Fibonacci numbers is close to the Golden ratio value of 1.618034.
 
-The ratio of:
-- 5 and 3 is: 5/3 = 1.6666 
-- 8 and 5 is: 8/5 = 1.6
-- 13 and 8 is: 13/8=1.625 and so on.
-The Golden Ratio is denoted by the symbol “φ”
+The two different ways to find the Fibonacci sequences are recursive relation and the Golden ratio method.
 
-The two different ways to find the Fibonacci sequence are Recursive Relation Method and Golden Ratio Method
+You can use the knowledge gained from this article to structure your program better and thus, reduce time complexity.
 
 Happy learning!
 
