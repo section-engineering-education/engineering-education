@@ -99,7 +99,7 @@ const firebaseConfig = {
   };
 
 //initialize the firebase app
-inititializeApp(firebaseConfig)
+initializeApp(firebaseConfig)
 
 //initialize firebase auth
 const auth = getAuth()
