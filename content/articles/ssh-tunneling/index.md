@@ -6,7 +6,7 @@ url: /ssh-tunneling/
 title: SSH Tunneling
 description: This article will discuss the concept of SSH tunneling. SSH tunneling is a technique that allows us to access remote resources that we do not have access to because they are internal to that network.
 author: joseph-ongoma
-date: 2022-02-23T00:00:00-15:50
+date: 2022-02-24T00:00:00-15:50
 topics: [Networking]
 excerpt_separator: <!--more-->
 images:
@@ -48,7 +48,8 @@ To access the internal network to tunnel through the access ports and smuggle co
 The image below is a demonstration of local port forwarding:
 
 ![Local port forwarding](/engineering-education/ssh-tunneling/local.jpg)
-[Image source](https://sites.google.com/view/ssh-tunneling/home)
+
+*[Image source](https://sites.google.com/view/ssh-tunneling/home)*
 
 Using the image above, let us have an explanation of SSH tunneling from it. Suppose we have the following devices with IP addresses as shown respectively:
 - An internal resource that we need access to on port 8080 and IP address `192.168.1.3`.
@@ -90,14 +91,15 @@ When our public SSH server receives this, it acknowledges that our local machine
 In some instances,  let's say our remote IP address is forbidden from our local network i.e, our ISP is blocking access to specific domains, we can tunnel it through our secure SSH and then make our public SSH server request on our behalf.
 
 ### Remote port forwarding
-Remote port forwarding is significant when we want other people to access our local resources. For instance, when we have a web server on our machines and there is a need to send a URL for testing our application to someone.
+Remote port forwarding is significant when we want other people to access our local resources. For instance, when we have a web server on our machines and there is a need to send a URL for testing our application to other collaborators.
 
 Remote port forwarding allows us to use our public SSH server as a centralized location and request the public server to listen to its ports. Through this, any traffic that goes through its ports is forwarded to our server.
 
 Let us have a look at the image below:
 
 ![Remote port forwarding](/engineering-education/ssh-tunneling/remote.jpg)
-[Image source](https://sites.google.com/view/ssh-tunneling/home)
+
+*[Image source](https://sites.google.com/view/ssh-tunneling/home)*
 
 From the image above, we have our:
 - Internal resources on IP address `10.0.0.3` on port 8080 that we want people to have access to.
@@ -114,7 +116,7 @@ ssh -R <remote port>:<local ip address>:<local port> <remote ip address>
 
 Let us have an explanation of the syntax above:
 - `-R` - This shows that we are performing remote port forwarding.
-- `remote port` - This is where we input our remote port of the remote device.
+- `remote port` - This is the input port of our device's remote port.
 - `local ip address` - This is where the IP address of our local device is entered.
 - `local port` - The local port of the local device is put here.
 - `remote ip address` - This is the IP address of our public SSH server.
