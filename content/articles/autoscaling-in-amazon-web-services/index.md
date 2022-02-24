@@ -82,7 +82,7 @@ For example, it can be used if there is heavy traffic during the weekends and re
 In dynamic scaling, the number of EC2 instances is changed automatically based on signals that are provided by a CloudWatch alarm. Dynamic scaling is mostly employed when there is unpredictable traffic.
 
 #### Predictive scaling
-Predictive scaling involves using [machine learning](/differences-between-artificial-intelligence-machine-learning-and-deep-learning/) algorithms to program the desired number of instances. Future traffic can be predicted to provide the appropriate number of instances. This type of scaling is ideal when the traffic is predictable.
+Predictive scaling involves using [machine learning](/engineering-education/differences-between-artificial-intelligence-machine-learning-and-deep-learning/) algorithms to program the desired number of instances. Future traffic can be predicted to provide the appropriate number of instances. This type of scaling is ideal when the traffic is predictable.
 
 ### How AWS scaling works
 AWS uses the aforementioned components to complete the process of autoscaling. First, an AMI of a user’s server should be created. The AMI will provide all the information that is needed for launching instances. The template of configuration should contain all the systems.

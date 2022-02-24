@@ -60,37 +60,37 @@ There are drag-and-drop tools like [MakeStories](https://makestories.io/), [Web 
 
 For the sake of this article, the `MakeStories editor` is going to be used.
 
-![MakeStories website](engineering-education/creating-your-first-google-web-story/makestories.png)
+![MakeStories website](/engineering-education/creating-your-first-google-web-story/makestories.png)
 
 Login or Sign-up on MakeStories [here](https://makestories.io/).
 
 After logging or signing up, create a story by clicking on `CREATE NEW STORY`.
 
-![MakeStories dashboard](engineering-education/creating-your-first-google-web-story/makestories2.png)
+![MakeStories dashboard](/engineering-education/creating-your-first-google-web-story/makestories2.png)
 
 Fill in the details for the story that would be created.
 
-![MakeStories dashboard](engineering-education/creating-your-first-google-web-story/makestories1.png)
+![MakeStories dashboard](/engineering-education/creating-your-first-google-web-story/makestories1.png)
 
 The studio should look like this:
 
-![MakeStories dashboard](engineering-education/creating-your-first-google-web-story/makestories3.png)
+![MakeStories dashboard](/engineering-education/creating-your-first-google-web-story/makestories3.png)
 
 Pick any of these: Color, Gradient, Texture, Image, Video, GIFs, Overlay, Animation, and add it to the slide.
 
-![MakeStories dashboard](engineering-education/creating-your-first-google-web-story/makestories5.png)
+![MakeStories dashboard](/engineering-education/creating-your-first-google-web-story/makestories5.png)
 
 Add text to the slide by clicking on the “T” icon and dragging any typography or font combination.
 
-![MakeStories dashboard](engineering-education/creating-your-first-google-web-story/makestories8.png)
+![MakeStories dashboard](/engineering-education/creating-your-first-google-web-story/makestories8.png)
 
 Next, add a new slide by clicking on the plus `+` icon below the slide. Then add a `background image` to fill the slide.
 
-![MakeStories dashboard](engineering-education/creating-your-first-google-web-story/makestories6.png)
+![MakeStories dashboard](/engineering-education/creating-your-first-google-web-story/makestories6.png)
 
 After editing the story, then publish it by clicking the `PUBLISH` button and `publish it as a Web Story`.
 
-![MakeStories dashboard](engineering-education/creating-your-first-google-web-story/makestories7.png)
+![MakeStories dashboard](/engineering-education/creating-your-first-google-web-story/makestories7.png)
 
 #### Using code
 Developers can create customized Web Stories to suit their needs. Creating Web Stories with code requires one to use the AMP HTML library. 
@@ -146,7 +146,7 @@ The `amp-story` tag contains the `amp-story-page` tags, which display stories. T
   poster-landscape-src="https://amp.dev/static/samples/img/story_dog2_landscape.jpg">
 ```
 
-![Web Story](engineering-education/creating-your-first-google-web-story/webstories1.png)
+![Web Story](/engineering-education/creating-your-first-google-web-story/webstories1.png)
 
 ```html
 <!-- story first page with an image and text --> 
@@ -166,7 +166,7 @@ The `amp-story` tag contains the `amp-story-page` tags, which display stories. T
 
 This code contains the first page of the story with 2 grid layers of an image and text.
 
-![Web Story](engineering-education/creating-your-first-google-web-story/webstories2.png)
+![Web Story](/engineering-education/creating-your-first-google-web-story/webstories2.png)
 
 ```html
 <!-- story second page with a video --> 
@@ -185,7 +185,7 @@ This code contains the first page of the story with 2 grid layers of an image an
 
 This code contains the second page of the story with a grid layer of a video.
 
-![Web Story](engineering-education/creating-your-first-google-web-story/webstories3.png)
+![Web Story](/engineering-education/creating-your-first-google-web-story/webstories3.png)
 
 ```html
 <!-- story third page with an animation --> 
@@ -209,7 +209,7 @@ This code contains the second page of the story with a grid layer of a video.
 
 This is the third page of the story with 2 grid layers of a video and animating text.
 
-![Web Story](engineering-education/creating-your-first-google-web-story/webstories4.png)
+![Web Story](/engineering-education/creating-your-first-google-web-story/webstories4.png)
 
 ```html
 <!-- story fourth page with an image grid --> 

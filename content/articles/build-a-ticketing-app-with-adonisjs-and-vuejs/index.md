@@ -51,7 +51,7 @@ We will also cover best practices in structuring and building your frontend with
 ### Step 1 — Setting up Adonis.js 5
 Setting up Adonis.js 5 is very easy, as it requires a simple `npm` command below.
 
-If you want to learn more about installing and setting up Adonis.js 5, check out [Building a RESTful API with Adonis.js](/build-a-restful-api-with-adonisjs/)
+If you want to learn more about installing and setting up Adonis.js 5, check out [Building a RESTful API with Adonis.js](/engineering-education/build-a-restful-api-with-adonisjs/)
 
 ```bash
 npm init adonis-ts-app adonisjs-ticketing-system-api
@@ -97,7 +97,7 @@ If you encounter this error `Client does not support the authentication protocol
 npm install mysql2
 ```
 
-Authentication in Adonis.js is done by installing a package and setting it up, you can read through how to set up authentication [here](/build-a-restful-api-with-adonisjs/).
+Authentication in Adonis.js is done by installing a package and setting it up, you can read through how to set up authentication [here](/engineering-education/build-a-restful-api-with-adonisjs/).
 
 Install the Auth package with this command:
 
@@ -991,7 +991,7 @@ Happy coding!
 
 ### Further reading
 - [AdonisJS Tutorial: The Ultimate Guide (2021)](https://masteringbackend.com/posts/adonisjs-tutorial-the-ultimate-guide)
-- [Building a RESTful API with Adonis.js](/build-a-restful-api-with-adonisjs/)
+- [Building a RESTful API with Adonis.js](/engineering-education/build-a-restful-api-with-adonisjs/)
 - [Adonis.js 5 Official Documentation](https://preview.adonisjs.com/)
 - [Vue 3 Official Documentation](https://v3.vuejs.org/)
 

@@ -7,7 +7,7 @@ title: Mathematics for Machine Learning
 description: This article is intended to go over the mathematics for machine learning, by providing a general overview on the topics behind ML and how they are used. 
 author: willies-ogola
 date: 2021-01-12T00:00:00-12:00
-topics: []
+topics: [Machine Learning]
 excerpt_separator: <!--more-->
 images:
   - url: /engineering-education/mathematics-for-machine-learning/hero.jpg

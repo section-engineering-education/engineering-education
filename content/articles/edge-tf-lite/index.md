@@ -7,8 +7,7 @@ title: Machine Learning on Edge Devices Using TensorFlow Lite
 description: This article details machine learning on edge computing devices which use TensorFlow Lite and RaspberryPi. Talking about the advantages of on-device machine learning inference such as Latency, Bandwidth, privacy, and security.
 author: rohan-reddy
 date: 2020-07-30T00:00:00-10:00
-topics:
-- Edge Computing
+topics: [Machine Learning]
 excerpt_separator: <!--more-->
 images:
 

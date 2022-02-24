@@ -21,7 +21,6 @@ However, because of spam and fraudulent email protection, if you want your email
 <!--more-->
 
 ### Office365 vs GSuite Email
-
 The two main email providers that offer custom domains (`yourname@yourbusiness.com`) are Office365 and GSuite. These are the business email plans of Microsoft and Google.
 
 The choice tends to revolve around which ecosystem you use – Do you prefer Google's suite of collaborative software or the desktop apps of Microsoft Office? Each has its own benefits.
@@ -35,7 +34,6 @@ Both of these email platforms charge per user (email address), though shared ema
 This guide will use GSuite as an example, for demonstration purposes.
 
 ### Creating your GSuite Account
-
 The first step is to create your GSuite account. Go to the [account creation](https://gsuite.google.com/signup/basic/welcome?hl=en-GB) page and enter your personal information to set up your account.
 
 If you already have a domain such as `yourdomain.com` then you should click yes, "I have one I should use" otherwise no, "I need one". If you need one then you can buy one through Google who will connect the new domain automatically.
@@ -43,13 +41,12 @@ If you already have a domain such as `yourdomain.com` then you should click yes,
 Whatever route you take, you’ll have to provide your recovery email and create your account credentials. Remember your username will form part of your email address, `user@yourdomain.com` so name it accordingly. Click agree and create an account to finish setting up your account.
 
 ### Adding Multiple Users
-
 Once you’ve created your account, you’ll start the setup process. The first step of which is to add users. Users are classed as `name@yourdomain.com` and are for individuals. Shared mailboxes like `info@yourdomain.com` are free and how to set them up will be covered later in this guide.
 
 When you’ve finished setting up users, click the checkbox saying I added all user email addresses currently using `@yourdomain.com` and click next.
 
 ### Connecting your Domain
-Now that you’ve set up all your GSuite users, you’ll have to connect your domain name. There are two steps to this. The first is to add a TXT record (similar to [adding a site (property) to Google Search Console](/google-search-console-introduction/)) to verify you own the domain, and the second step is to add MX records which will configure emails.
+Now that you’ve set up all your GSuite users, you’ll have to connect your domain name. There are two steps to this. The first is to add a TXT record (similar to [adding a site (property) to Google Search Console](/engineering-education/google-search-console-introduction/)) to verify you own the domain, and the second step is to add MX records which will configure emails.
 
 Google will try to detect the domain registrar you bought your domain from and provide detailed instructions on how to add the records. Follow the step-by-step instructions and click the checkboxes when you’ve accomplished each step.
 
@@ -72,7 +69,6 @@ The first step is to log in to the GSuite admin [page](https://support.google.co
 Next, click on the group you've just created and then on Aliases. Click the Edit button and then add the name you want, for example: `info` in Group Alias Email and then click Add Alias. Any emails sent to `info@yourdomain.com` will appear in the mailbox of the GSuite users in the group, though it can take up to 24 hours for it to start working.
 
 ### Configuring Spam Protection (SPF, DKIM, and DMARC)
-
 Email providers now use spam protection features such as SPF (Sender Policy Framework), DKIM (DomainKeys Identified Mail), and DMARC (Domain-based Message Authentication, Reporting & Conformance) to authenticate emails and try to prevent fraudulent emails. If you try and use your GSuite account without setting them up, then it's highly likely some of your emails will get rejected.
 
 If you bought your domain from Google, then they can automatically setup SPF and partially DKIM for you, but let's go through the configuration process to better understand what each does.
@@ -127,4 +123,4 @@ This can be much easier than using another email provider that requires you to c
 
 Congratulations! You've set up a professional email address, made it secure, and learned how to set up user, group, and domain aliases.
 
-Struggling to setup other Google services? Check out my [guide to setting up Google Search Console](/google-search-console).
+Struggling to setup other Google services? Check out my [guide to setting up Google Search Console](/engineering-education/google-search-console).

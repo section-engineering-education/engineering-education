@@ -22,7 +22,7 @@ However, some frameworks are written completely in Kotlin for Kotlin. These fram
 To follow through with this tutorial, you will need to:
 1. Have [Android Studio](https://developer.android.com/studio) installed.
 2. Have a basic knowledge of building Android applications.
-3. Have a basic understanding of [Kotlin](/kotlin-collections/) programming language.
+3. Have a basic understanding of [Kotlin](/engineering-education/kotlin-collections/) programming language.
 
 Let's get started!
 

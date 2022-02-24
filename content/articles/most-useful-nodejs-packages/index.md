@@ -13,14 +13,14 @@ images:
   - url: /engineering-education/most-useful-nodejs-packages/hero.jpg
     alt: Useful Node.js packages
 ---
-The power of [Node.js](/history-of-nodejs/) is backed by open-source frameworks that form the ecosystem of JavaScript. As a Node.js developer, it is practically impossible to constantly avoid their advantage. With the help of Node.js packages, as a developer, you will conclusively save a lot of time and develop applications that are light, scalable, and high speed with tremendous productivity. [Check beginner's guide on getting started with NPM](https://nodesource.com/blog/an-absolute-beginners-guide-to-using-npm/).
+The power of [Node.js](/engineering-education/history-of-nodejs/) is backed by open-source frameworks that form the ecosystem of JavaScript. As a Node.js developer, it is practically impossible to constantly avoid their advantage. With the help of Node.js packages, as a developer, you will conclusively save a lot of time and develop applications that are light, scalable, and high speed with tremendous productivity. [Check beginner's guide on getting started with NPM](https://nodesource.com/blog/an-absolute-beginners-guide-to-using-npm/).
 <!--more-->
 Let's have a look at packages that will assist you in extending your Node.js development skills.
 
 ### 1. Express
 [Express.js](https://expressjs.com/) is the fastest, unopinionated, and simplest web framework for Node.js. It was flexibly created to build simple pages, multi-pages, and hybrid apps with robust features for web and mobile development. The framework is small with undisputed performances benefits. It is the leading Node.js framework designed to help you build web apps and APIs with powerful tooling for HTTP servers.
 
-Node.js frameworks such as [`Sails`](https://www.npmjs.com/package/sails), [`Hapi`](/introduction-to-hapi/) and [`NestJS`](https://nestjs.com/) are built on Express. Express is available on the NPM registry.
+Node.js frameworks such as [`Sails`](https://www.npmjs.com/package/sails), [`Hapi`](/engineering-education/introduction-to-hapi/) and [`NestJS`](https://nestjs.com/) are built on Express. Express is available on the NPM registry.
 
 #### Features of Express
 -   Robust routing.
@@ -166,7 +166,7 @@ Axios is gaining a lot of popularity among many developers. This is due to its s
 
 JSHint scans your Node.js program and reports commonly made mistakes and potential bugs such as syntax errors, leaking variables, implicit type, and conventions etc.
 
-[`ESLint`](/node-eslint/) is similar to JShint package, used for linting (enhancing code quality).
+[`ESLint`](/engineering-education/node-eslint/) is similar to JShint package, used for linting (enhancing code quality).
 
 ### 8. Morgan
 [Morgan](https://www.npmjs.com/package/morgan) is an HTTP request logger middleware for Node.js applications, named after [Dexter](https://en.wikipedia.org/wiki/Dexter_Morgan). Morgan gives you insights on how your app is being used and alerts you on potential errors and issues that could be threats to your application. Morgan is considered the most reliable HTTP logger by Node.js developers.
@@ -282,7 +282,7 @@ Defines your routes using Router interfaces and apply them to a Restify server i
 -   [`Loopback`](https://loopback.io/doc/en/lb4/Getting-started.html) - is a Node.js and Typescript framework for creating APIs and microservices.
 
 ### 13. Nodemailer
-[Nodemailer](/node-mailer/) is a Node.js application module that allows easy as pie email sending.
+[Nodemailer](/engineering-education/node-mailer/) is a Node.js application module that allows easy as pie email sending.
 
 #### Example of how Nodemailer works
 

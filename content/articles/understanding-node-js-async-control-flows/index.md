@@ -16,7 +16,7 @@ images:
 ---
 Asynchronous control flows permit other processing to continue even before the first transmission has finished. JavaScript has embraced asynchronous programming with single thread processing. Every task executes in the order the code has been written. Embracing asynchronous [promises](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise) and callbacks ensure [non-blocking operations flow](https://stackoverflow.com/questions/10570246/what-is-non-blocking-or-asynchronous-i-o-in-node-js).
 <!--more-->
-This makes it a more versatile and robust solution for [event looping](/event-loop-explained/) on long-running code. Utility modules like [Async.js](https://github.com/caolan/async) provide functions for working with asynchronous flow control.
+This makes it a more versatile and robust solution for [event looping](/engineering-education/event-loop-explained/) on long-running code. Utility modules like [Async.js](https://github.com/caolan/async) provide functions for working with asynchronous flow control.
 
 To understand how asynchronous programming works, we can use the following example. Suppose you are making scrambled eggs for breakfast. There are several actions/steps to follow.
 

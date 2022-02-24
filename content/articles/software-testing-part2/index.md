@@ -16,7 +16,7 @@ images:
 ---
 In the first article of our software testing series, we talked about unit testing, how to run unit tests, their benefits, and limitations. 
 
-If you have not read the article and you would like to learn more about unit testing, check the article out the previous article called [Introduction to Unit Testing](/software-testing-part1).
+If you have not read the article and you would like to learn more about unit testing, check the article out the previous article called [Introduction to Unit Testing](/engineering-education/software-testing-part1).
 <!--more-->
 In this article, we are going to discuss Test-driven development (TDD), how to write in TDD, the benefits of TDD, and the limitations of TDD. All the code samples in this tutorial are written in Python and the tests are done with the pytest framework. Basic knowledge of Python or pytest will be nice to have but is not required to understand this article. 
 

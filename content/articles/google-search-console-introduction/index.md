@@ -18,6 +18,7 @@ Google Search Console is a powerful tool provided by Google which lets you under
 <!--more-->
 ### Setting up Google Search Console
 ![google search console](/engineering-education/google-search-console-introduction/google-search-console.jpg)<br>
+
 Go to [Google Search Console](https://search.google.com/search-console/welcome) and log in using a Google account. The first step is to add your site; Google calls this a property. There are two methods: adding your site domain or URL prefix. In this example, we'll use the domain method. Note that this method counts both the insecure (http) and secure (https) version of your website and any subdomains such as blog.yourdomain.com.
 
 Next, enter your domain name (i.e. yourdomain.com) and click Continue. A popup will appear with details of how to verify that you own this domain so Google will let you access it. Click the Copy button and log into your domain registrar (the company you bought your domain from) and access the advanced DNS settings. Add a TXT record and paste the text you copied into the value field.
@@ -26,6 +27,7 @@ It can take up to 24-48hrs for the record you added to be processed (though is u
 
 ### Submitting a Sitemap
 ![sitemap preview](/engineering-education/google-search-console-introduction/sitemap-preview.png)<br>
+
 A sitemap is an XML file that details the structure of your website (how the different pages relate to each other) in a way that search engines can understand. Creating and submitting one can help Google discover pages that its crawlers have missed.
 
 Depending on your website setup, you may have built-in tools available for dynamically generating a sitemap. As an alternative, you can generate one using the free tool, [XML Sitemaps](https://www.xml-sitemaps.com). Just submit your website URL and download the XML file it provides. Then upload the file to your website.
@@ -38,6 +40,7 @@ Remember to update your sitemap when you add or remove any pages on your website
 
 ### Fixing Mobile Usability Errors
 ![mobile friendly pages](/engineering-education/google-search-console-introduction/mobile-friendly-pages.png)<br>
+
 The mobile usability tool underneath Enhancements assists in creating a more usable mobile-friendly website. Any errors will impact your site’s search rankings.
 
 Common errors are text too small to read, clickable elements too close together, and content wider than screen.
@@ -50,6 +53,7 @@ To fix content wider than the screen, add  `* {max-width: 100%}`  which prevents
 
 ### Monitoring Search Traffic to Improve SEO
 ![search traffic](/engineering-education/google-search-console-introduction/search-traffic.png)<br>
+
 In the Performance tab, you can monitor how people have searched for your website. You can select different date ranges to look at and Google Image and Video searches. Click the signal wave icon to see more parameters.
 
 - **Clicks** are when users have visited the page.
@@ -61,6 +65,7 @@ These metrics can help in a variety of ways to boost your site’s SEO. Discover
 
 ### How to Redirect Your Site the Right Way (Without Losing Your Search Rankings)
 ![change of address tool](/engineering-education/google-search-console-introduction/change-of-address-tool.png)<br>
+
 If you’ve changed domains, such as from yourdomain.com to newdomain.com or yourdomain.co.uk then you’ll want to redirect users that may still navigate to your old domain. You’ll want to point Google to your new domain so it’ll stop showing your old domain in searches and transfer your search ranking to the new domain. That’s where the Change of Address tool comes in.
 
 The [Change of Address Tool](https://search.google.com/search-console/settings/change-address) informs Google that you’ve changed domain names. You need to add both domains to the Search Console and set up a permanent redirect (301) for it to work.
@@ -77,4 +82,4 @@ You should keep the redirect in place for a minimum of six months and you can st
 
 Congratulations, you’ve set up Google Search Console and learned how to fix errors, add a sitemap, monitor search traffic, and set up a proper redirect.
 
-Struggling to setup other Google services? Check out my [guide to setting up a professional business email using GSuite](/creating-professional-email).
+Struggling to setup other Google services? Check out my [guide to setting up a professional business email using GSuite](/engineering-education/creating-professional-email).

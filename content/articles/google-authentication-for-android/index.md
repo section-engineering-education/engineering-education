@@ -27,7 +27,7 @@ In 2019, one of the top ten user experience (UX) trends was using third-party au
 
 #### Terminologies
 - Authentication - The process or action of verifying the identity of a user or process.
-- [Firebase](https://firebase.google.com/) - A platform developed by Google used to create mobile and web applications. For more information on [Firebase check this](/node-firebase/) article out.
+- [Firebase](https://firebase.google.com/) - A platform developed by Google used to create mobile and web applications. For more information on [Firebase check this](/engineering-education/node-firebase/) article out.
 - [Dependency](https://developer.android.com/studio/build/dependencies) - A platform developed by Google used to create mobile and web applications.
 - [Json](https://www.json.org/json-en.html) - (JavaScript Object Notation) is a lightweight data-interchange format.
 - [FirebaseAuth](https://firebase.google.com/docs/auth#:~:text=Firebase%20Authentication%20provides%20backend%20services,Facebook%20and%20Twitter%2C%20and%20more.) - Provides backend services, SDKs, and UI libraries to authenticate users to your application.

@@ -14,8 +14,9 @@ images:
   - url: /engineering-education/how-to-build-chrome-extension/hero.jpg
     alt: chrome extension image example
 ---
-I’ve been using Chrome extensions religiously for years. Yet, I never had a clue how to make one. I recently tried for the first time and it took 6 hours of frustration to build something that, at its core, was just grabbing all the text from a webpage. Part of that was because most of the tutorials I tried to follow were geared for things either too simple or too complex. However, after understanding what parts go into it, I have taken a deep sigh of relief because really… it is way less intimidating than it looks.
+I’ve been using Chrome extensions religiously for years. Yet, I never had a clue how to make one. I recently tried for the first time and it took 6 hours of frustration to build something that, at its core, was just grabbing all the text from a webpage. 
 <!--more-->
+Part of that was because most of the tutorials I tried to follow were geared for things either too simple or too complex. However, after understanding what parts go into it, I have taken a deep sigh of relief because really… it is way less intimidating than it looks.
 
 Extensions have the power to let you use code that you've developed for your own use locally and expand that to virtually any application on the web. You can access all the information about a website and use that to make your code do some really cool things. Chrome extensions are a great solution to the problem of having great code but nowhere to use it easily.
 
@@ -26,10 +27,10 @@ This might sounds really strange, but the core concepts will allow you to build 
 ### Getting Started
 First you’re going to make a directory to hold all these files. Later on you will drag this folder into the extensions interface to make it usable to you. Make sure all your files are in this folder!
 
-```
+```bash
 mkdir my-chrome-extension
 ```
-```
+```bash
 cd my-chrome-extension
 ```
 
@@ -37,7 +38,7 @@ These commands will (first) make a directory called `my-chrome-extension` and th
 
 Next we will create our `manifest.json` file:
 
-```
+```bash
 touch manifest.json
 ```
 
@@ -157,7 +158,7 @@ Hit the **Change Text** button and if you did everything correctly, an alert sho
 ### Grabbing Text off the Webpage
 Next we are going to grab all the text off the webpage in every html tag.This is actually really simple code that took me forever to find. You can test it out for yourself on this site by right clicking on your screen, hitting inspect and finding the console, then type:
 
-```
+```bash
 document.all[0].innerText
 ```
 
@@ -202,7 +203,7 @@ The **`content_scripts`** attribute takes in two items here:
 
 Since we have referenced a `content.js`, it’s time to make it:
 
-```
+```bash
 touch content.js
 ```
 

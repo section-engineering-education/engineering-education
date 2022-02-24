@@ -26,7 +26,7 @@ Therefore, it is essential for anyone working in the tech industry to know how t
 - [Conclusion](#conclusion)
 
 ### Prerequisites
-- Basic understanding of [Linux](/what-is-linux/) and [shell scripting](/introduction-to-shell-scripting/).
+- Basic understanding of [Linux](/engineering-education/what-is-linux/) and [shell scripting](/engineering-education/introduction-to-shell-scripting/).
 - Basic programming skills in [Python](https://www.python.org/about/gettingstarted/).
 
 ### Introduction
