@@ -2,19 +2,18 @@
 layout: engineering-education
 status: publish
 published: true
-url: /how-to-build-a meme-generator-with-vanilla-javascript-skeleton-and-the-html5-canvas/
+url: /meme-generator-vanilla-javascript-skeleton-html5-canvas/
 title: Building a meme generator with Vanilla JavaScript, Skeleton and the HTML 5 Canvas
 description: This tutorial will show you how to build a meme generator with Vanilla JavaScript, Skeleton and the HTML 5 Canvas
 author: doro-onome
-date: 2022-02-09T00:00:00-22:15
+date: 2022-02-24T00:00:00-14:55
 topics: [Languages]
 excerpt_separator: <!--more-->
 images:
 
-  - url: /engineering-education/how-to-build-a meme-generator-with-vanilla-javascript-skeleton-and-the-html5-canvas/hero.jpg
+  - url: /engineering-education/meme-generator-vanilla-javascript-skeleton-html5-canvas/hero.jpg
     alt: Building a meme generator with Vanilla JavaScript, Skeleton and the HTML 5 Canvas
 ---
-
 Memes are a stimulating and fun way to pass messages to people. This tutorial will take you through a step-by-step guide on how you can build a simple meme generator with JavaScript (no frameworks involved) and style its components with CSS and [Skeleton](http://getskeleton.com/).
 <!--more-->
 With the [HTML 5 Canvas](https://developer.mozilla.org/en-US/docs/Web/API/Canvas_API), users will be able to upload images and texts of their choice and or from an online source to create comical memes for a mass online audience. 
@@ -50,7 +49,7 @@ git clone https://github.com/dhg/Skeleton.git
 
 After downloading and extracting the zip file to your project folder, you will find the file structure below in your text editor:
 
-![skeleton-file-structure](/engineering-education/how-to-build-a meme-generator-with-vanilla-javascript-skeleton-and-the-html5-canvas/skeleton-file-structure.png)
+![skeleton-file-structure](/engineering-education/meme-generator-vanilla-javascript-skeleton-html5-canvas/skeleton-file-structure.png)
 
 It contains Skeleton’s CSS, [Normalize CSS](https://necolas.github.io/normalize.css/), and `index.html` file that you can use to get your app started.
 
@@ -173,7 +172,7 @@ To make our application a little less bare, add the following style to your `sty
 
 Our root page should look like this after adding the style:
 
-![meme-generator](/engineering-education/how-to-build-a meme-generator-with-vanilla-javascript-skeleton-and-the-html5-canvas/meme-generator.png)
+![meme-generator](/engineering-education/meme-generator-vanilla-javascript-skeleton-html5-canvas/meme-generator.png)
 
 
 ### Adding JavaScript
@@ -313,7 +312,7 @@ To use the application, the user first needs to choose an image locally, input t
 
 Here is the app’s final appearance with a created meme:
 
-![final-image](/engineering-education/how-to-build-a meme-generator-with-vanilla-javascript-skeleton-and-the-html5-canvas/final-image.png)
+![final-image](/engineering-education/meme-generator-vanilla-javascript-skeleton-html5-canvas/final-image.png)
 
 To get the source code, you can head to my [github repo](https://github.com/Nomzy-kush/Meme-Generator) to get the source code. [Here](https://pensive-kepler-281118.netlify.app/) is the link to the live application deployed on Netlify.
  
