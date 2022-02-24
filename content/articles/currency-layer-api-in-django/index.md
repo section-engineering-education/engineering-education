@@ -524,3 +524,6 @@ You can find the files for this project at [this link](https://github.com/mercym
 This tutorial showed readers how to create an app that converts currencies in real time. In addition, it provided a roadmap for using APIs in Django and working with the Currencylayer API.
 
 The article should be a starting point for working with financial APIs in Django applications.
+
+---
+Peer Review Contributions by: [Jerim Kaura](/engineering-education/authors/jerim-kaura/)
