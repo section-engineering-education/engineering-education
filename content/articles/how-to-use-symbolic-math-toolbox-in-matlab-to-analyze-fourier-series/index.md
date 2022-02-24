@@ -4,7 +4,7 @@ status: publish
 published: true
 url: /how-to-use-symbolic-math-toolbox-in-matlab-to-analyze-the-fourier-series/
 title: How to use the Symbolic Math Toolbox in MATLAB to analyze the Fourier series
-description: In this article, we are going to use the Symbolic Math Toolbox in MATLAB to analyze the Fourier series.
+description: In this article, we will use the Symbolic Math Toolbox in MATLAB to analyze the Fourier series.
 author: linet-achieng
 date: 2022-01-31T00:00:00-11:10
 topics: [Languages]
@@ -16,17 +16,17 @@ images:
 ---
 Symbolic Math Toolbox provides an easy, intuitive and complete environment to interactively learn and apply math operations such as calculus, algebra, and differential equations. 
 <!--more-->
-It can perform common analytical computation such as differentiation and integration to get close form results.
+It can perform common analytical computations such as differentiation and integration to get close form results.
 
-It also simplifies and manipulates expression for great insights and solves algebraic and differential equations.
+It simplifies and manipulates expression for great insights and solves algebraic and differential equations.
 
 In this tutorial, the Fourier series (Trigonometric and Exponential) is implemented and simulated using MATLAB's Symbolic Math Toolbox. 
 
-The proposed programs are versatile and can receive any function of time(t). This means that the function is dependent on time. 
+The proposed programs are versatile and can receive any function of time(t). It means that the function is dependent on time. 
 
 Moreover, the program gives plots of harmonics, original and approximated functions, magnitude spectrum, and phase spectrum. 
 
-This toolbox is already available in MATLAB. Therefore, you do not need to retrieve it from an external source. To understand more about the Fourier series, you can read [here](https://www.mathsisfun.com/calculus/fourier-series.html).
+This toolbox is already available in MATLAB. Therefore, you do not need to retrieve it from an external source. For example, to understand more about the Fourier series, you can read [here](https://www.mathsisfun.com/calculus/fourier-series.html).
 
 ### Prerequisites
 To follow along with this tutorial, you will need:
@@ -44,7 +44,7 @@ Besides, MATLAB code, formatted text, equations, and images can be published as 
 
 While working with analytical problems, you can receive suggestions and tips. These suggestions help one insert and execute function calls or tasks directly into live scripts.
 
-The Symbolic Math Toolbox also provides precision for higher or lower positions. This allows algorithms to run better than MATLAB's in-built double. Furthermore, it has units for working with physical quantities and performing dimensional analysis.
+The Symbolic Math Toolbox also provides precision for higher or lower positions. It allows algorithms to run better than MATLAB's in-built double. Furthermore, it has units for working with physical quantities and performing dimensional analysis.
 
 ![Units for working with physical quantities](/engineering-education/how-to-use-symbolic-math-toolbox-in-matlab-to-analyze-the-fourier-series/symbolic-one.jpeg)
 
@@ -52,16 +52,16 @@ The Symbolic Math Toolbox also provides precision for higher or lower positions.
 
 Symbolic Math Toolbox is widely applied in many engineering and scientific applications. Symbolic expressions of exact gradient and Hessians improve accuracy and optimization speed.
 
-5. In non-linear control design, the Symbolic Math Toolbox improves recalculation speed at any operating point during execution. Furthermore, you can integrate symbolic results with MATLAB and Simulink applications. This is done by converting symbolic expressions into numeric MATLAB functions, Simulink, and Simscape blocks.
+5. In non-linear control design, the Symbolic Math Toolbox improves recalculation speed at any operating point during execution. Furthermore, you can integrate symbolic results with MATLAB and Simulink applications. It is done by converting symbolic expressions into numeric MATLAB functions, Simulink, and Simscape blocks.
 
-![converting functions to simulink](/engineering-education/how-to-use-symbolic-math-toolbox-in-matlab-to-analyze-the-fourier-series/symbolic-two.jpeg.jpeg)
+![converting functions to Simulink](/engineering-education/how-to-use-symbolic-math-toolbox-in-matlab-to-analyze-the-fourier-series/symbolic-two.jpeg.jpeg)
 
 *Sample of function converted to Simulink*
 
 Now, all these applications discussed above were to give you an insight into the wide application of this toolbox. However, not all of them are discussed here. Here, we will only major in using the toolbox to solve Fourier series problems.
 
 ### How to use the Symbolic Math Toolbox
-This toolbox is enabled in MATLAB using the function `syms`. If you have the expression `x=2*a+b` and try to execute it in Matlab, you get an error message. The error message is *undefined function or variable 'a'* as shown below:
+This toolbox is enabled in MATLAB using the function `syms`. You get an error message if you have the expression `x=2*a+b` and try to execute it in Matlab. The error message is *undefined function or variable 'a'* as shown below:
 
 ```MATLAB
 x = 2*a + b
@@ -100,16 +100,14 @@ The symbolic variables are `t`, `w`, `T`, and `W`, which we define by executing 
 ```MATLAB
 syms t w T W
 ```
-`w` is the angle theta.
-`T` is the time function.
-`W` is used to express the angular radians in the Fourier transform.
+`w` is the angle theta, `T` is the time function, and `W` is used to express the angular radians in the Fourier transform.
 
 After the declaration of the symbolic variables, you can write the Fourier transform as shown below:
 
 ```MATLAB
 f = int(exp(-t/2)*exp(-j*w*t), t, [0, inf])
 ```
-In MATLAB, `int` is used to mean integration. In the MATLAB expression above:
+In MATLAB, `int` means integration. In the MATLAB expression above:
 `exp(-t/2)` is our equation which we are finding its Fourier transform. 
 `exp(-j*w*t)` is the basic function of the Fourier transform.
 `t` shows that we are differentiating with respect to time.
@@ -124,7 +122,7 @@ f =
  
 2/(1 + w*2i) - (2*limit(exp(-t/2)*exp(-t*w*1i), t, Inf))/(1 + w*2i)
 ```
-For formatting this output to a user-friendly manner, we use the function `pretty()`. `pretty(f)` prints the symbolic expression `f` in a format that resembles type-set mathematical equations. When you execute this function in the command window, we have:
+To format this output in a user-friendly manner, we use the function `pretty()`. `pretty(f)` prints the symbolic expression `f` in a format that resembles type-set mathematical equations. When you execute this function in the command window, we have:
 
 ```MATLAB
  pretty(f)
@@ -138,13 +136,13 @@ For formatting this output to a user-friendly manner, we use the function `prett
 1 + w 2i                  1 + w 2i
 ```
 
-Now, we need to get the values of `w` since we use them to plot the Fourier transform. To get the values, we execute the code below:
+Now, we need to get the values of `w` since we use them to plot the Fourier transform. To do that, execute the code below:
 
 ```MATLAB
 f_sub = subs(f, w, [-pi: pi])
 ```
 
-`subs` mean symbolic substitution. It means all the symbolic variables are substituted. This function replaces the symbolic variable in `f` with the values of `w`. The values range from `-pi` to `pi`. When we do this, we get the values below:
+`subs` mean symbolic substitution. This function replaces the symbolic variable in `f` with the values of `w`. The values range from `-pi` to `pi`. When we do this, we get the values below:
 
 ```MATLAB
 f_sub =
@@ -159,7 +157,7 @@ subplot(2, 1, 2);
 plot(angle(double(f_sub)));   %angle are the w values.
 title('phase spectrum')   % title
 ```
-`plot(angle(double(data_value)))` gives the phase spectrum plot. The function `subplot()` is for making a subplot. `title()` gives the plot a title.  
+`plot(angle(double(data_value)))` gives the phase spectrum plot. The function `subplot()` is used to create a subplot. `title()` gives the plot a title.  
 
 ![phase spectrum](/engineering-education/how-to-use-symbolic-math-toolbox-in-matlab-to-analyze-the-fourier-series/symbolic-three.png)
 
@@ -257,7 +255,7 @@ ezplot(abs(f_sub), [-8*pi: 8*pi])
 *Plot for the range -8pi to 8pi*
 
 While making the plots, we used the `ezplot` function. `ezplot(FUN)` is used to plot a function `x` over the default domain, `-2*pi<x<2*pi`.
-As we have seen, the Symbolic Math Toolbox makes it easy to analyze the Fourier series. It is because the toolbox has an algorithm for working out these problems. Moreover, it makes it easy since you do not have to write long codes. Also, using this toolbox is very easy such that anyone can use it.
+As we have seen, the Symbolic Math Toolbox makes it easy to analyze the Fourier series. Moreover, it makes it easy since you do not have to write long codes.
 
 ### Conclusion
 Symbolic Math Toolbox is an important toolbox for solving differential and integration operations. As we have seen in solving the Fourier series above, it is easy to use. This toolbox also helps find the Laplace transform of various equations. Generally, this toolbox has a wide application in science and engineering.
