@@ -3,21 +3,22 @@ layout: engineering-education
 status: publish
 published: true
 url: /how-to-build-a-java-gui-calculator-from-scratch-using-box-layout/
-title: How to build a Java GUI calculator from scratch using Box layout
-description: This tutorial will expose the readers to the power of box layout and use it in other programs to convert their console apps to a GUI app.
+title: How to Build a Java GUI Calculator from Scratch using Box Layout
+description: This tutorial will show readers to the power of box layout and use it in other programs to convert their console apps to a GUI app.
 author: suleiman-ibrahim
-date: 2022-02-02T00:00:00-17:10
+date: 2022-02-24T00:00:00-15:20
 topics: [Languages]
 excerpt_separator: <!--more-->
 images:
-- url: /engineering-education/how-to-build-a-java-gui-calculator-from-scratch-using-box-layout/hero.png
-alt: How to build a Java GUI calculator from scratch using Box layout in Java
----
-You have probably used a calculator at one point or the other to compute business transactions as an adult, solve high school math assignments as a teenager, or even toy with it as a kid. However, have you ever asked yourself how these calculators function under the hood? If you are curious to know more about that, you have come to the right place.
-<!--more-->
-In this tutorial, we will build a calculator from scratch using the `BoxLayout` to align the components of the calculator correctly. This calculator will consist of the GUI and the logic part, which performs computations. We will also learn how real-life calculators work under the hood by incorporating functionalities like addition, subtraction, division, multiplication, etc.
 
-The tutorial will also expose the readers to the power of `BoxLayout` and how they can use it in other programs to convert their console apps into GUI apps.
+  - url: /engineering-education/how-to-build-a-java-gui-calculator-from-scratch-using-box-layout/hero.jpg
+    alt: Java GUI calculator using Box layout in Java hero image
+---
+In this tutorial, we will build a calculator from scratch using the `BoxLayout` to align the components of the calculator correctly. This calculator will consist of the GUI and the logic part, which performs computations. We will also learn how real-life calculators work under the hood by incorporating functionalities like addition, subtraction, division, multiplication, etc.
+<!--more-->
+You have probably used a calculator at one point or the other to compute business transactions as an adult, solve high school math assignments as a teenager, or even toy with it as a kid. However, have you ever asked yourself how these calculators function under the hood? If you are curious to know more about that, you have come to the right place.
+
+The tutorial will also show to the readers to the power of `BoxLayout` and how they can use it in other programs to convert their console apps into GUI apps.
 
 ### Table of contents
 - [Table of contents](#table-of-contents)
@@ -47,7 +48,7 @@ By the end of this tutorial, the reader will:
 - Know how to build a simple calculator from scratch using Java.
 
 ### Layout managers
-Layout managers allow us to align components in any desired position on the panel. They position each GUI component on their panel or frame. Some layout managers java provides out of the box are:
+Layout managers allow us to align components in any desired position on the panel. They position each GUI component on their panel or frame. Some layout managers Java provides out of the box are:
 - GridBag layout
 - Grid layout
 - Group layout
@@ -80,7 +81,7 @@ Below is a list of the constants and their description:
 
 >Note that you can either use the constant variable or the value to set the components axis. For example, 0 instead of `BoxLayout.X_AXIS`, 1 instead of `BoxLayout.Y_AXIS`, and many others.
 
-It is advisable always to use the `PAGE_AXIS` and `LINE_AXIS` for internationalization, which will enable components to be laid out correctly from either left to right or right to left based on the device's language orientation.
+It is always advisable to use the `PAGE_AXIS` and `LINE_AXIS` for internationalization, which will enable components to be laid out correctly from either left to right or right to left based on the device's language orientation.
 
 Though `BoxLayout` can be used alone, you can also take advantage of the `Box` class to add components to the panel. When the `BoxLayout` is used alone, the components stick together with no white space like padding; hence, the `Box` class plays.
 
@@ -93,7 +94,7 @@ The `Box` class provides static methods that can add invisible components to the
 
 All the methods listed above create invisible components, which can be white space between the components. Now that we have learned about the `BoxLayout`, let us dive into building the calculator.
 
-#### Step one: Building the user interface (UI)
+#### Step One: Building the user interface (UI)
 
 ![UI Overview](/engineering-education/how-to-build-a-java-gui-calculator-from-scratch-using-box-layout/1-ui-overview.png)
 
@@ -109,6 +110,7 @@ public class CalculatorBox extends JFrame {
 
 }
 ```
+
 The next step is to create the components included in the calculator. These components include the buttons that will send input to the calculator and the text field to read the calculator output. We will use `JButton` and `JTextField`, made available by the swing package imported earlier.
 
 Besides the components, we also need to create `String` variables that will hold the previous input, the current input, and the operator. Add the following code inside the class body as class variables.
@@ -133,7 +135,7 @@ public static void main(String[] args) {
 }
 ```
 
-By now, we have created the basic structure of the calculator, and the program looks like this:
+By now, we have created the basic structure of the calculator, and the program should look like this:
 
 ```java
 import javax.swing.*;
@@ -167,7 +169,7 @@ The next step is to create a panel named `mainPanel` that will house all other c
 JPanel mainPanel = new JPanel();
 ```
 
-Since the calculator has a `BoxLayout`, we can then create rows and then group all the components of the calculator into these rows. The rows comprise five sub-panels situated inside the main panel. The panel hierarchy is to make the calculator design more precise.
+Since the calculator has a `BoxLayout`, we can create rows and then group all the components of the calculator into these rows. The rows comprise five sub-panels situated inside the main panel. The panel hierarchy is to make the calculator design more precise.
 
 After creating the rows, we also need to initialize the components declared earlier. These components include the output and other buttons, like operation and number buttons. The number buttons are already inside an array, so we append the dot button at the end of the array. We will have to loop through the array to initialize the buttons and add some styling, which is done to avoid repetition and achieve a cleaner code.
 
@@ -178,7 +180,8 @@ The code for the import statement is shown below. Add the code to the top of the
 ```java
 import java.awt.*;
 ```
-Recall that `JButton()` takes in `String` as an argument, and the count variable used for the iteration is an integer. We will use the `valueOf()` static method of the `String` class to convert each `int` value in the array to a `String` and then set the value of each button, respectively. Similar styling applies to the other buttons of the calculator as well.
+
+Recall that `JButton()` takes in `String` as an argument, and the count variable used for the iteration is an integer. We will use the `valueOf()` static method of the `String` class to convert each `int` value in the array to a `String`. Then we will set the value of each button, respectively. Similar styling applies to the other buttons of the calculator as well.
 
 Below is the complete code. Add the code inside the constructor immediately below the `mainPanel` variable.
 
@@ -230,9 +233,10 @@ Next, we will add some styling to the output display.
         output.setMargin(new Insets(0, 5, 0, 0));
 	      output.setText("0");
 ```
-So far, we have created and style components displayed in the calculator. However, these components are not visible unless added to their respective panels and the main panel. The next step is to set the layout of each row of the calculator.
 
-Each row is set to `BoxLayout` with a layout direction of `LINE_AXIS`. will enable the buttons to flow from either left to right or right to left based on the language orientation of the device in use.
+So far, we have created and styled components displayed in the calculator. However, these components are not visible unless added to their respective panels and the main panel. The next step is to set the layout of each row of the calculator.
+
+Each row is set to `BoxLayout` with a layout direction of `LINE_AXIS`. We will enable the buttons to flow from either left to right or right to left based on the language orientation of the device in use.
 
 ```java
         // Set the layout of each row in the pane
@@ -313,7 +317,7 @@ The UI of our calculator is complete and is ready to launch. Below is an image o
 
 >Check [here](https://github.com/princeibs/java-box-calculator/blob/97283e994097ba74ee67827b829bbf124d05b1e6/CalculatorBox.java) for the calculator source code at this point.
 
-#### Step two: Developing the calculator's logic
+#### Step Two: Developing the calculator's logic
 Now that we have entirely built the user interface of the calculator. The following steps are to add functionalities to the buttons and build the calculator's logic.
 
 ##### 2.1 Creating the structure
@@ -353,9 +357,8 @@ import java.awt.event.*;
 
 The next step is to create these anonymous classes that will handle the events within the calculator. We will create three classes that will handle all the click events in the calculator.
 
-##### 2.2 Creating the event handlers
-
-1. **`class NumberBtnHandler`**
+#### 2.2 Creating the event handlers
+1. **'class NumberBtnHandler'**
 The first class is the `NumberBtnHandler` which will handle events from all the number buttons, including the dot button. This class will implement the `ActionListener` interface to override the `actionPerformed()` abstract method in the ActionListener interface. This method takes in an `ActionEvent` parameter, which is made available by the event package imported earlier.
 
 Below is the code for the `NumberBtnHandler` class. Add the code immediately below the utility methods.
@@ -369,7 +372,7 @@ Below is the code for the `NumberBtnHandler` class. Add the code immediately bel
     }
 ```
 
-Next, we must decide what will happen when any of the "number buttons" get clicked, which can be achieved inside the `actionPerformed()` method, which takes in a parameter we named `e`. The parameter e can then access the Objects `getSource()` method to get the object where an event initially occurred, which is useful when checking for the clicked button.
+Next, we must decide what will happen when any of the "number buttons" get clicked, which can be achieved inside the `actionPerformed()` method, which takes in a parameter we named `e`. The parameter `e` can then access the Objects `getSource()` method to get the object where an event initially occurred, which is useful when checking for the clicked button.
 
 Recall that the "number buttons" are inside an array. So we can easily loop through the array, comparing each button with the clicked button. If a match occurs, we get the text inside the button and append it to the output display. After which, we will call the `updateDisplay()` method to display the new appended number.
 
@@ -387,7 +390,7 @@ Below is the code for the implementation. Note that all the lines of code below 
         }
 ```
 
-2. **`class OperatorBtnHandler`**
+2. **'class OperatorBtnHandler'**
 The second class to be created is the `OperatorBtnHandler` which also implements the `ActionListener` interface. This class is similar to the `NumberBtnHandler` created above, but the significant difference lies inside the `actionPerformed()` method.
 
 Inside this class's `actionPerformed()` method, we will compare each operator button with the button clicked to know which operator was selected. We can achieve this using if statements since the operator buttons are not inside an array, unlike the "number buttons".
@@ -415,7 +418,7 @@ Below is the code implementation for the `OperatorBtnHandler` class.
     }
 ```
 
-3. **`class OtherBtnHandler`**
+3. **'class OtherBtnHandler'**
 The last action listener class to be created is the `OtherBtnHandler` class. This class will also implement the `ActionListener` interface and override the `actionPerformed()` method. Similar to the `OperatorBtnHandler`, `OtherBtnHandler` will compare the selected button to the other buttons in the calculator and execute their respective methods.
 
 After the execution, we will also call the `outputDisplay()` method to update the UI. Below is the code implementation for the OtherBtnHandler class. Below is the full implementation of the `OtherBtnHandler` class.
@@ -438,8 +441,8 @@ After the execution, we will also call the `outputDisplay()` method to update th
     }
 ```
 
-##### 2.3 Adding ActionListeners to the buttons
-We have just created all the action listeners that will handle all the events from all the calculator's buttons. Nevertheless, if you click on any button by now, no event will occur because these action listeners have not been added to the respective buttons.
+#### 2.3 Adding ActionListeners to the buttons
+We have just created all the action listeners that will handle all the events from all the calculator's buttons. Nevertheless, if you click on any button now, no event will occur because these action listeners have not been added to the respective buttons.
 
 Now back to our constructor. The first step is to create objects of all the button handler classes which can then be passed as action listeners to each of the buttons. Add the following code immediately below, where we first initialize the components inside the constructor. Precisely immediately below where we initialized `btnDelete`.
 
@@ -452,7 +455,7 @@ Now back to our constructor. The first step is to create objects of all the butt
 
 The next step is to add these action listeners to their respective buttons. Recall from the loop we used to style the number buttons above. You can directly add action listeners to each button within the loop, similar to how styling was added. You can achieve this by calling the `addActionListener()` method on each button and passing the respective action listener.
 
-Update the entire body of the loop with the code bel
+Update the entire body of the loop with the code below:
 
 ```java
     for (int count = 0; count < numBtn.length - 1; count++) {
@@ -479,24 +482,25 @@ Similarly, as shown below, you can add action listeners to the operation and oth
         btnDivide.addActionListener(opBtnHandler);
 ```
 
-Add the above code immediately below the line where the output was styled. This line precisely:
+Add the above code immediately below the line where the output was styled. 
+
+This line precisely:
 
 ```java
 output.setText("0");
 ```
 
-All the buttons in the calculator are now functional, but if you click on any of the buttons, you will not see output just yet, which is because the methods we will use to aid these functionalities are empty for now. Let us dive in and update these methods.
+All the buttons in the calculator are now functional, but if you click on any of the buttons, you will not see output just yet. This is because the methods we will use to aid these functionalities are empty for now. Let us dive in and update these methods.
 
-##### 2.4 Updating the Utility Methods
-
-1. **`updateOutput()`**
+#### 2.4 Updating the Utility Methods
+1. **'updateOutput()'**
 The first method we will update is the `updateOutput()` method. This method updates the output display with the current operand's value. Add the line of code below inside the `updateOutput()` method.
 
 ```java
 output.setText(current);
 ```
 
-2. **`appendToOutput()`**
+2. **'appendToOutput()'**
 Next, we will update the `appendToOutput()` method. This method adds any number that the user clicks to the output variable. We will achieve this by concatenating the user input to the current value on the output and then updating the output afterward.
 
 Add the line of code below inside the `appendToOutput()` method and run the program to see the output.
@@ -524,7 +528,9 @@ To fix the multiple dots in the output display, replace the code inside the `app
 ```
 The code will first check for a dot on the current output. If one is already present, it will return without executing the function. Nevertheless, if none is present, it will add the incoming dot to the current display.
 
-To fix the null appearing on the output display, recall that the default value for a `String` is `null`. So when we declare the current variable at the top of the program, the default variable gets assigned to it. To solve this, we initialize the value of both current and previous to an empty string inside the constructor. This will initialize the value of the variables immediately after the program is executed.
+To fix the null appearing on the output display, recall that the default value for a `String` is `null`. So when we declare the current variable at the top of the program, the default variable gets assigned to it. 
+
+To solve this, we initialize the value of both current and previous to an empty string inside the constructor. This will initialize the value of the variables immediately after the program is executed.
 
 Add the following code at the top of the program, immediately below where we created the `mainPanel` variable.
 
@@ -536,10 +542,8 @@ Add the following code at the top of the program, immediately below where we cre
 
 Now that we have fixed the minor bug with the output display, we can update other calculator methods.
 
-3. **`clear()`** and **`delete()`**
+3. **'clear()'** and **'delete()'**
 The next set of methods to update is the `clear()` and `delete()`. The `clear()` method clears all the content on the screen by setting both the previous and current operands to an empty string. It also sets the `operator` to null so that we cannot operate on an empty `String`.
-
-The next set of methods to update is the  method clears all the content on the screen by setting both the previous and current operands to an empty string. It also sets the .
 
 The `delete()` method removes the element at the last index from the output display, which is achieved by using the `substring()` method to get from the first up till next to the last element in the string and then set it to the new current operand on the output display.
 
@@ -561,10 +565,14 @@ To solve this, we will set an `if` condition to let the delete method body run o
     }
 ```
 
-4. **`selectOperator()`**
-Next, let us consider the `selectOperator()` method, which we will use to set the operator based on the user input. Before setting the operator, some checks need to be made. First, suppose the output is empty, and an operator is selected. In that case, we will set the new operator to be the selected operator, writing off the previously entered operator and then exiting the method, which is useful where the user accidentally clicks a wrong operator. It can then be corrected by clicking on the correct operator next.
+4. **'selectOperator()'**
+Next, let us consider the `selectOperator()` method, which we will use to set the operator based on the user input. Before setting the operator, some checks need to be made. First, suppose the output is empty, and an operator is selected. 
 
-Another check is to see if the previous operand is not empty. If true, we will evaluate the previous operand with the current operand before selecting the next operator, which is why the user can perform calculations continuously without pressing the equals button. For example, when a user enters `1 + 2`, instead of pressing the equals button, the user performs more operations, say `+ 3`. The method will first evaluate the value of the first two operands and set the result to the current operand before selecting the next operator.
+In that case, we will set the new operator to be the selected operator, writing off the previously entered operator and then exiting the method, which is useful when the user accidentally clicks a wrong operator. It can then be corrected by clicking on the correct operator next.
+
+Another check is to see if the previous operand is not empty. If true, we will evaluate the previous operand with the current operand before selecting the next operator. Which is why the user can perform calculations continuously without pressing the equals button. 
+
+For example, when a user enters `1 + 2`, instead of pressing the equals button, the user performs more operations, say `+ 3`. The method will first evaluate the value of the first two operands and set the result to the current operand before selecting the next operator.
 
 After all the checks are done, we will now set the new operator as the selected operator and pass the value of the current operand display on the output to the previous operand. We will also clear the screen by setting the current operand to an empty string to give new input.
 
@@ -588,14 +596,14 @@ Below is the code implementation for the `selectOperator()` method.
     }
 ```
 
-##### calculate()
+#### calculate()
 The last method we will work on is the `calculate()` method, which will perform all computations in the calculator. We will confirm that both the previous and current operand value is not empty. If either or both operands are empty, the computation will not hold because we need the two operands to perform any arithmetic computation.
 
-We will then create a named result floating-point variable and initialize it with 0.0. We need to initialize the result because when the compiler wants to parse the result back into a string, the value of the operator used inside a switch case statement to initialize the value of the result might not have been initialized, which leaves the result still not initialized, which will throw an error when trying to parse it to a string.
+We will then create a named result floating-point variable and initialize it with 0.0. We need to initialize the result in case the compiler wants to parse the result back into a string. The value of the operator used inside a switch case statement to initialize the value of the result might not have been initialized. This leaves the result not initialized, which will throw an error when trying to parse it to a string.
 
-The next step is to parse both the previous and current operand from string to double for computations. Now that we have gotten the previous and current operand and the operator used on them. The next step is to use a switch statement to compute the result of the previous and current operand based on the operator and then store the result in the result.
+The next step is to parse both the previous and current operand from string to double for computations. Now that we have gotten the previous and current operand and the operator used on them. The next step is to use a switch statement to compute the result of the previous and current operand based on the operator and then store the result.
 
-The last step for the `calculate()` method is to convert the floating-point result to a string and pass its value to the current operand. Furthermore, set the value of the operator to null because the operator has been used to perform computation already. Last, we clear the previous operand so that its value will not be used to perform computations again since it has already been used.
+The last step for the `calculate()` method is to convert the floating-point result to a string and pass its value to the current operand. Then set the value of the operator to null because the operator has been used to perform computation already. Then we can clear the previous operand so that its value will not be used to perform computations again since it has already been used.
 
 Below is the final code implementation for the `calculate()` method.
 
@@ -633,7 +641,7 @@ You can now run the program, and the calculator works as expected. You can also 
 
 >Check [here](https://github.com/princeibs/java-box-calculator/blob/f3cf0aebe02772d56b411744b655735a4fb23bb4/CalculatorBox.java) for the code up to this point.
 
-### Step three: Wrapping things up
+### Step Three
 By now, your calculator is fully functional and outputs the correct result. However, there is just one more fact that you might not like about the calculator, it does not correctly display integer numbers, just like the image below.
 
 ![Test Output 1](/engineering-education/how-to-build-a-java-gui-calculator-from-scratch-using-box-layout/5-four-by-fiftysix.png)
@@ -642,7 +650,7 @@ The image above results from performing a random operation like `4 * 56`. Since 
 
 **processOutputNumber()**: To fix this, we create a method called `processOutputNumber()` to process every number displayed on the output.
 
-To avoid processing an empty output, we will first check if the current output is not empty using an if statement. We will then split the output into two parts - the integer and the decimal parts. We can achieve this using the `split()` method of the `String` class and then pass in a regular expression that searches for a dot in the output.
+To avoid processing an empty output, we will first check if the current output is empty or not using an if statement. We will then split the output into two parts - the integer and the decimal parts. We can achieve this using the `split()` method of the `String` class and then pass in a regular expression that searches for a dot in the output.
 
 Recall that the `split()` method returns an array to set the first element of the array to `integerPart` and the second element to `decimalPart`. We will then check if the decimal part is `0`. We ignore it and set only the integer part to the current output if `true`.
 
@@ -678,15 +686,16 @@ That is it!
 
 Congratulations on building a fully functional calculator using the `BoxLayout` in Java.
 
-Check out this Github [repository](https://github.com/princeibs/java-box-calculator) to get the final source code for the calculator.
+Check out this GitHub [repository](https://github.com/princeibs/java-box-calculator) to get the final source code for the calculator.
 
 ### Conclusion
-The primary goal of this tutorial is to create a calculator that can perform basic arithmetic operations with some added functionalities, like delete and clear output using the `BoxLayout`. You can add more functionalities to the calculator, like scientific operations.
+The primary goal of this tutorial was to create a calculator that can perform basic arithmetic operations with some added functionalities, like delete and clear output using the `BoxLayout`. You can add more functionalities to the calculator, like scientific operations.
 
-You can also explore the `BoxLayout` by converting our calculator UI to a more complex layout, similar to a scientific calculator UI. There are infinitely many things you can do with this knowledge. I hope to see the great things you will build out of it.
+You can also explore the `BoxLayout` by converting our calculator UI to a more complex layout, similar to a scientific calculator UI. There are many things you can do with this knowledge. I hope to see the great things you will build out of it.
 
 For further reference, check out the official Java documentation  [How to Use BoxLayout](https://docs.oracle.com/javase/tutorial/uiswing/layout/box.html)
 
 Happy coding!
+
 ---
 Peer Review Contributions by: [Briana Nzivu](/engineering-education/authors/briana-nzivu/)
