@@ -85,7 +85,7 @@ This will install firebase.
 After the installation is complete, create a new folder in the `src` folder and name it `firebase`. Inside this folder, create a file `config.js`. Modify the file with the following code:
 ```js
 //Import the required methods
-import { inititializeApp } from 'firebase/app'
+import { initializeApp } from 'firebase/app'
 import { getAuth } from 'firebase/auth'
 
 //The config we copied from firebase(Replace with your config)
