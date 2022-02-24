@@ -6,12 +6,12 @@ url: /security-testing-using-mobsf-in-docker/
 title: Static Application Security Testing using MobSF and Docker
 description: This article will introduce the reader to Static Application Security Testing using MobSF and Docker.
 author: ruth-mare
-date: 2022-02-22T00:00:00-17:30
+date: 2022-02-24T00:00:00-01:51
 topics: [Security]
 excerpt_separator: <!--more-->
 images:
 
-  - url: /engineering-education/performing-static-application-testing-in-docker/hero.jpg
+  - url: /engineering-education/security-testing-using-mobsf-in-docker/hero.jpg
     alt: SAST using MobSF and Docker Hero Image
 ---
 A vulnerability that is not fixed could lead to dire consequences for the user and owners of an application. SAST is one of the ways used to scan and assess applications for vulnerabilities.
@@ -30,29 +30,29 @@ A vulnerability that is not fixed could lead to dire consequences for the user a
 
 ### Prerequisites
 The learner should be familiar with:
-1.	Git commands and commands in a Linux operating system.
-2.	A basic understanding of containerized storage.
+1.  Git commands and commands in a Linux operating system.
+2.  A basic understanding of containerized storage.
 
 ### What is SAST
-Static Application Security Testing(SAST) is a method of vulnerability testing that analyses the source code of an application to determine the security vulnerabilities that may cause the application to be compromised.
+Static Application Security Testing (SAST) is a method of vulnerability testing that analyses the source code of an application to determine the security vulnerabilities that may cause the application to be compromised.
 
 > A vulnerability is any loophole within an application that can be exploited to gain unauthorized access to the application or propagate malware through the application. 
 A vulnerability that is not fixed could lead to dire consequences for the user and owners of an application. SAST is one of the ways used to scan and assess applications for vulnerabilities.
 
 SAST scans applications before the compilation of the code right at the beginning of the SDLC because it does not require an executing application. This scenario is also known as white-box testing.
 
-Developers can therefore identify shortcomings of an application in the early stages of development and quickly resolve issues that may otherwise affect the final rolled out application. Developers can also systematically track the vulnerability trends within the application, thereby promoting the creation of a secure and efficient Software Development Life Cycle(SDLC).
+Developers can therefore identify shortcomings of an application in the early stages of development and quickly resolve issues that may otherwise affect the final rolled out application. Developers can also systematically track the vulnerability trends within the application, thereby promoting the creation of a secure and efficient Software Development Life Cycle (SDLC).
 
-SAST provides visual representations of the problems identified making it easy to navigate the code. In addition, it provides suggestions on how to fix the vulnerabilities identified within the code. Customized reports downloadable and visible offline are supported by most SAST tools and can also be tracked through dashboards.
+SAST provides visual representations of the problems identified, making it easy to navigate the code. In addition, it provides suggestions on how to fix the vulnerabilities identified within the code. Customized reports downloadable and visible offline are supported by most SAST tools and can also be tracked through dashboards.
 
 ### Differences between SAST and DAST
-There are two different types of Application Security Testing, i.e., SAST and DAST (Dynamic Application Security Testing). The two methods detect security vulnerabilities in applications except in a unique way for each. Below are some of the critical comparisons of SAST between DAST:
+There are two different types of Application Security Testing, i.e., SAST and DAST (Dynamic Application Security Testing). The two methods detect security vulnerabilities in applications, except in a unique way for each. Below are some of the critical comparisons between SAST and DAST:
 
 - SAST supports all types of software, while DAST can only scan applications such as web applications and web services.
 - SAST cannot discover runtime and environment-related issues, while DAST can discover runtime and environment-related issues.
 - It costs less to fix vulnerabilities using SAST, while it is relatively expensive to fix them using DAST.
 - SAST discovers vulnerabilities earlier into the SDLC, while DAST discovers vulnerabilities towards the end of SDLC.
-- SAST requires source code DAST requires a running application.
+- SAST requires source code. DAST requires a running application.
 
 ### Tools used to perform SAST
 Some of the tools used in Performing SAST are as follows:
@@ -72,10 +72,10 @@ All the above tools perform SAST and other types of security testing in differen
 ### Step by Step process of SAST
 SAST performs applications’ scanning automatically in the following steps:
 
-#### Step 1: Choosing of the tool
+#### Step 1: Choosing the tool
 Choose a static analysis tool that can review the code for the application according to the programming languages and understand the application's underlying framework.
 
-For this sample test, we will use Mobile Security Framework(MobSF), an open-source, automated mobile penetration testing tool, for security testing.
+For this sample test, we will use Mobile Security Framework (MobSF), an open-source, automated mobile penetration testing tool, for security testing.
 
 For this tutorial, we will leverage the advantage of container technology and use docker to hold the framework and perform the analysis from a docker container running in a Linux environment.
 
@@ -128,11 +128,11 @@ We can access MobSF at the URL in the above step and upload the application to b
 
 Click on http://0.0.0.0:8000 from the console in step 3, then click upload and analyze as shown:
 
-![upload and analyze](/performing-static-application-testing-in-docker/upload.png)
+![upload and analyze](/security-testing-using-mobsf-in-docker/upload.png)
 
-The process will automatically run to completion then present the results after completion as shown below:
+The process will automatically run, then present the results after completion as shown below:
 
-![results display](/performing-static-application-testing-in-docker/results.png)
+![results display](/security-testing-using-mobsf-in-docker/results.png)
 
 #### Step 5: Downloading the report and analysis of scan results
 This step involves eliminating any false positives by triaging the vulnerability scan results.
@@ -143,7 +143,7 @@ After that, these vulnerabilities can be tracked on progress.
 
 Navigate on the task pane to view the pdf report or download an offline report as shown:
 
-![report](/performing-static-application-testing-in-docker/report.png)
+![report](/security-testing-using-mobsf-in-docker/report.png)
 
 The above report can be studied offline.
 
@@ -152,7 +152,7 @@ SAST has several advantages, some of which are as listed below:
 - SAST tools can analyze the entire codebase.
 - SAST tools are much faster than human-triggered security code reviews, performing close to a million lines of code in a very short period.
 - SAST tools automatically spot critical vulnerabilities with high confidence.
-- SAST tools scale well given they can be run on multiple software and run multiple times.
+- SAST tools scale well given that they can be run on multiple software and run multiple times.
 
 ### Disadvantages of SAST
 SAST has some drawbacks as outlined below:
