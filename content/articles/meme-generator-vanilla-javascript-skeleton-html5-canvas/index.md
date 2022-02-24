@@ -3,8 +3,8 @@ layout: engineering-education
 status: publish
 published: true
 url: /meme-generator-vanilla-javascript-skeleton-html5-canvas/
-title: Building a meme generator with Vanilla JavaScript, Skeleton and the HTML 5 Canvas
-description: This tutorial will show you how to build a meme generator with Vanilla JavaScript, Skeleton and the HTML 5 Canvas
+title: Building a Meme Generator with Vanilla JavaScript, Skeleton and HTML 5 Canvas
+description: This tutorial will show the reader how to build a meme generator with Vanilla JavaScript, Skeleton, and HTML 5 Canvas.
 author: doro-onome
 date: 2022-02-24T00:00:00-14:55
 topics: [Languages]
@@ -45,6 +45,7 @@ There are two ways to install Skeleton into your application:
 ```bash
 git clone https://github.com/dhg/Skeleton.git
 ```
+
 *I advise you to download the zip file because the command above is still under active development.*
 
 After downloading and extracting the zip file to your project folder, you will find the file structure below in your text editor:
@@ -54,8 +55,9 @@ After downloading and extracting the zip file to your project folder, you will f
 It contains Skeleton’s CSS, [Normalize CSS](https://necolas.github.io/normalize.css/), and `index.html` file that you can use to get your app started.
 
 ### Designing the meme generator
-This app will have three sections. The first will contain the `input` files element, where you will choose a specific image you desire to use for your meme. The second section will include the top and bottom text inputs to insert the words and sentences you want in your meme. This section will also have a `create new meme` button that will complete a click event by displaying the finished meme on the last section of the app.
-Here is the code for the HTML layout of the application:
+This app will have three sections. The first will contain the `input` files element, where you will choose a specific image you desire to use for your meme. The second section will include the top and bottom text inputs to insert the words and sentences you want in your meme. 
+
+This section will also have a `create new meme` button that will complete a click event by displaying the finished meme on the last section of the app. Here is the code for the HTML layout of the application:
 
 ```html
 <!DOCTYPE html>
@@ -177,10 +179,11 @@ Our root page should look like this after adding the style:
 
 ### Adding JavaScript
 First, create a `script.js` file. Call the HTML elements you intend to work on into your JavaScript file with the `document.querySelector(‘#elementId’)` method.
+
 Here is the code:
 
 
-```javascript
+```JavaScript
 const chooseImage = document.querySelector('#choose-image');
 const textAbove = document.querySelector('#text-above');
 const textBelow = document.querySelector('#text-below');
@@ -189,21 +192,25 @@ const button = document.querySelector('#btn');
 
 ### Importing locally-stored images to the application
 To create the meme, you will need a picture and texts, whether words or sentences. To get a particular image from your system to the application, you first need to add an event listener that will listen for a `change` event when the user chooses a new image.
+
 Here is the code below:
 
-```javascript
+```JavaScript
 chooseImage.addEventListener("change", () => {
   const imageDataURL = URL.createObjectURL(chooseImage.files[0]);
   image = new Image();
   image.src = imageDataURL;
 });
 ```
+
 In the code above, we got the image URL by targeting the first file inside the `input` field and then converting it to a data URL (i.e., an image represented in a URL text form). We then set the `image.src` to the `imageDataURL`. The `chooseImage.files` is set to index 0, representing the first file the user picks in the file `input` which is the chosen image.
 
 Now, we can proceed to display the image on the Canvas.
 
 ### How to use the HTML 5 Canvas for this project
-You make use of the HTML5 `canvas` tag by giving it an `id` when trying to create a canvas in the DOM. You can also set a specific width and height that you desire. For example:  
+You make use of the HTML5 `canvas` tag by giving it an `id` when trying to create a canvas in the DOM. You can also set a specific width and height that you desire. 
+
+For example:  
 
 ```html
 <div class="">
@@ -213,23 +220,26 @@ You make use of the HTML5 `canvas` tag by giving it an `id` when trying to creat
 
 Then, target the canvas with a `document.querySelector()` method so you can work with it in your JavaScript file. 
 
-```javascript
+```JavaScript
 const canvas = document.querySelector('#canvas');
 ```
+
 > Note: Not all browsers support the HTML 5 Canvas. Chrome, Edge, Firefox, and Safari are the most popular browsers that support it.
 
 Browsers like Internet Explorer 7 and 8 are not compatible with the HTML 5 canvas but, you can write a script that will aid the browser support for the canvas code.
-Here’s the one for Internet Explorer:
 
-```javascript
+Here is one for Internet Explorer:
+
+```JavaScript
 <script src = "excanvas.js"></script>
 ```  
 
 ### Getting the element’s context
-The Canvas is initially blank. It is like a hollow void that you need to fill with images, texts, e.t.c. You can do that by accessing its rendering context using the DOM rendering `getContext()` function. This function will help you draw what you need on the canvas (not manually). The `getContext()` function takes one parameter, `2d`, to ensure that the rendered image appears in 2D form. 
+The Canvas is initially blank. It is like a hollow void that you need to fill with images, texts, etc. You can do that by accessing its rendering context using the DOM rendering `getContext()` function. This function will help you draw what you need on the canvas (not manually). The `getContext()` function takes one parameter, `2d`, to ensure that the rendered image appears in 2D form. 
+
 Here is the code to create the required context and check if the user’s browser supports it:
 
-```javascript
+```JavaScript
 var canvas = document.querySelector("#canvas");
 if (canvas.getContext) {
   var ctx = canvas.getContext("2d");
@@ -239,11 +249,12 @@ if (canvas.getContext) {
 }
 ```
 
-### The `loadImage` function
+### The 'loadImage' function
 We will need to create a `loadImage` function that will handle the display of the chosen image on the Canvas. Inside the `loadImage` function, you can append the image onto the canvas with the `drawImage(image, dx, dy)` method from the HTML 5 Canvas.
+
 Here is the code below:
 
-```javascript
+```JavaScript
 if (canvas.getContext("2d")) {
   const loadImage = () => {
     const ctx = canvas.getContext("2d");
@@ -261,7 +272,7 @@ if (canvas.getContext("2d")) {
 }
 ```
 
-In the code above, the `image` in the function represents an image object on the canvas. The `dx` and `dy` represent the Canvas’s coordinate points to fix the image. We then set the `width` property of the Canvas to our image’s width so that when the user tries to load the picture, it takes the canvas width, which will make the app UI look better. We also do that for the `height` and `yOffSet`.
+In the code above, the `image` in the function represents an image object on the canvas. The `dx` and `dy` represent the Canvas’s coordinate points to fix the image. We then set the `width` property of the Canvas to our image’s width. That way when the user tries to load the picture, it takes the canvas width, which will make the app UI look better. We also do that for the `height` and `yOffSet`.
 
 ### Forming the text on the image
 Texts on the HTML 5 canvas have unique text formatting and styling methods. Some of them include:
@@ -272,7 +283,7 @@ Texts on the HTML 5 canvas have unique text formatting and styling methods. Some
 
 Here is the code for the text formation:
 
-```javascript
+```JavaScript
 if (canvas.getContext("2d")) {
   const loadImage = () => {
     // styling the meme text
@@ -298,7 +309,7 @@ Now that we have everything in place, the last thing we need to do is to create 
 
 Below is the code:
 
-```javascript
+```JavaScript
 if (canvas.getContext("2d")) {
   const loadImage = () => {
     button.addEventListener("click", loadImage);
@@ -314,11 +325,12 @@ Here is the app’s final appearance with a created meme:
 
 ![final-image](/engineering-education/meme-generator-vanilla-javascript-skeleton-html5-canvas/final-image.png)
 
-To get the source code, you can head to my [github repo](https://github.com/Nomzy-kush/Meme-Generator) to get the source code. [Here](https://pensive-kepler-281118.netlify.app/) is the link to the live application deployed on Netlify.
+To get the source code, you can head to my [GitHub repo](https://github.com/Nomzy-kush/Meme-Generator) to get the source code. [Here](https://pensive-kepler-281118.netlify.app/) is the link to the live application deployed on Netlify.
  
 ### Conclusion
-In this tutorial, you learned the entire process of importing and using Skeleton for your application’s UI. You also learned how to use the HTML 5 Canvas to fix images and texts at specific coordinate points in the DOM, thus creating a new meme.
+In this tutorial, we learned the entire process of importing and using Skeleton for your application’s UI. We also learned how to use the HTML 5 Canvas to fix images and texts at specific coordinate points in the DOM, thus creating a new meme.
 
 Happy coding!
+
 ---
 Peer Review Contributions by: [Geoffrey Mwangi](/engineering-education/authors/geoffrey-mwangi/)
