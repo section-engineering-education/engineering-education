@@ -1,5 +1,23 @@
-### Managing User State in Vue.js and Firebase Applications
+---
+layout: engineering-education
+status: publish
+published: true
+url: /firebase-vue-authentication/
+title: Managing User State in Vue.js and Firebase Applications
+description: In this article, we will take a look at how we can use Vuex 4 together with the Composition API in Vue 3.0 to set up a state management system for authenticating users with Firebase Auth.
+author: anne-mwangi
+date:
+topics: []
+excerpt_separator: <!--more-->
+images:
+
+  - url: /engineering-education/firebase-vue-authentication/hero.jpg
+    alt: Vuex 4 Composition API Vue 3.0 Firebase Auth.
+---
+
 In this article, we will take a look at how we can use Vuex 4 together with the Composition API in Vue 3.0 to set up a state management system for authenticating users with Firebase Auth. This will help us to have a global state that we can access from any component in the entire Vue application.
+
+<!--more-->
 
 ### Pre-requisites
 - Basic understanding of Vue.js and the Composition API.
@@ -23,11 +41,11 @@ vue create firebase-vue-user-management
 ```
 On this screen, choose `Vue 3`:
 
-![preset](./section-engineering/firebase-vue-authentication/preset.png)
+![preset](/engineering-education/firebase-vue-authentication/preset.png)
 
 And lastly on this screen choose `Use NPM`:
 
-![package manager](./section-engineering/firebase-vue-authentication/packagemanager.png)
+![package manager](/engineering-education/firebase-vue-authentication/packagemanager.png)
 
 The above configurations will create a Vue 3 application with npm as the package manager.
 
@@ -44,16 +62,16 @@ npm install vuex@next --save
 To create a new firebase project, click [here](https://firebase.google.com/) and select `Go to console` on the top navigation bar.
 
 Here, click on `Add new project` and name the project `vue-firebase-auth`.
-![New Project](./section-engineering/firebase-vue-authentication/addnewproject.png)
+![New Project](/engineering-education/firebase-vue-authentication/addnewproject.png)
 
 You will be redirected to the project dashboard. On the dashboard, click on the web icon to register your front-end app.
-![Dashboard](./section-engineering/firebase-vue-authentication/dashboard.png) 
+![Dashboard](/engineering-education/firebase-vue-authentication/dashboard.png) 
 Name your app `vuex-firebase-authentication` and click on `Register app`.
 
 Copy the configuration provided by Firebase and click `Continue to console`.
 
 Back on the dashboard, click `Authentication` in the left sidebar.
-![Authentication](./section-engineering/firebase-vue-authentication/authentication.png)
+![Authentication](/engineering-education/firebase-vue-authentication/authentication.png)
 
 Enable `Email/Password` and save.
 
@@ -428,10 +446,13 @@ Run the code below to start a local development server.
 npm run serve
 ```
 Go to `localhost:8080` on your browser and you will see the this screen:
-![Test Pic](./section-engineering/firebase-vue-authentication/testpic.png)
+![Test Pic](/engineering-education/firebase-vue-authentication/testpic.png)
 From here you can be able to test the login and signup actions.
 
 ### Conclusion
 In this article we have taken a look at how to implement authentication in Firebase, Vue.js Application using the latest features of Vue.js. This project can however be improved and more features can be added. For example, you can add more login options and add custom error messages.
 
 Happy coding!!!
+
+---
+Peer Review Contributions by: [Adrian Murage](/engineering-education/authors/adrian-murage/)
