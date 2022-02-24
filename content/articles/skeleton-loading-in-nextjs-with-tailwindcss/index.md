@@ -31,7 +31,7 @@ To follow along in this tutorial, you will need to have an understanding of the 
 
 ### What is a skeleton loader?
 
-A skeleton loader is a static and usually animated placeholder for the information that is still loading on an application. It is used to mimic the structure and look of the content that is still loading and will eventually be displayed. It is used to give the user a sense of how long the page will take to load. This creates a perception of reduced wait time. Once the data is fully loaded the skeleton loader is immediately replaced with the actual content.
+A skeleton loader is a static and usually animated placeholder for the information that is still loading on an application. It is used to imitate the structure and appearance of the content that is still loading and will eventually be displayed. It is used to give the user a sense of how long the page will take to load. This creates a perception of reduced wait time. Once the data is fully loaded the skeleton loader is immediately replaced with the actual content.
 
 ### Why use a skeleton loader?
 
@@ -82,7 +82,7 @@ Make sure your development environment is set up and ready with [Node.js](https:
 
 #### Bootstrapping a Next.js Application with Tailwind CSS
 
-The quickest way to start using Tailwind CSS in a Next.js project is to make use of the [Next.js + Tailwind CSS Example](https://github.com/vercel/next.js/tree/4d4f3093019179b1928ec07c16f38882241c0375/examples/with-tailwindcss). Within the directory you want to start your project, run the following command:
+The simplest way to get started using Tailwind CSS in a Next.js project is to make use of the [Next.js + Tailwind CSS Example](https://github.com/vercel/next.js/tree/4d4f3093019179b1928ec07c16f38882241c0375/examples/with-tailwindcss). Within the directory you want to start your project, run the following command:
 
 ```bash
 npx create-next-app --example with-tailwindcss with-tailwindcss-app
