@@ -128,7 +128,7 @@ We can access MobSF at the URL in the above step and upload the application to b
 
 Click on http://0.0.0.0:8000 from the console in step 3, then click upload and analyze as shown:
 
-![upload and analyze](/engineering-education/security-testing-using-mobsf-in-docker//security-testing-using-mobsf-in-docker/upload.png)
+![upload and analyze](/engineering-education/security-testing-using-mobsf-in-docker/security-testing-using-mobsf-in-docker/upload.png)
 
 The process will automatically run, then present the results after completion as shown below:
 
@@ -143,7 +143,7 @@ After that, these vulnerabilities can be tracked on progress.
 
 Navigate on the task pane to view the pdf report or download an offline report as shown:
 
-![report](/engineering-education/security-testing-using-mobsf-in-docker//security-testing-using-mobsf-in-docker/report.png)
+![report](/engineering-education/security-testing-using-mobsf-in-docker/security-testing-using-mobsf-in-docker/report.png)
 
 The above report can be studied offline.
 
@@ -170,4 +170,4 @@ Developers, therefore, roll out a fine-tuned application with minimal security c
 - [SDLC - Overview](https://www.tutorialspoint.com/sdlc/sdlc_overview.htm)
 
 ---
-Peer Review Contributions by: [Collins Ayuya](https://www.section.io/engineering-education/authors/collins-ayuya/)
+Peer Review Contributions by: [Collins Ayuya](/engineering-education/authors/collins-ayuya/)
