@@ -6,7 +6,7 @@ url: /how-to-produce-colors-with-rgb-leds/
 title: How to Produce Colors With RGB LEDs Using Arduino and Matlab Graphical User Interface
 description: This tutorial presents a scheme to produce any color using RGB LEDs controlled by the Arduino Uno board. The Arduino Uno board is interfaced with MATLAB.
 author: queenter-bruce
-date: 2022-02-20T00:00:00-12:05
+date: 2022-02-25T00:00:00-12:05
 topics: [Languages]
 excerpt_separator: <!--more-->
 images:
@@ -29,7 +29,7 @@ To follow along with this tutorial, you will need to have:
 - An understanding of the [MATLAB graphical user interface](https://www.section.io/engineering-education/matlab-graphical-user-interface/).
 
 ### Arduino board
-Arduino board is an open-source microcontroller board based on the microchip `ATmega328P ` microcontroller developed by Arduino. Cc. The different components of this microcontroller are shown in the image below:
+Arduino board is an open-source microcontroller board based on the microchip `ATmega328P ` microcontroller developed by the Arduino company. The different components of this microcontroller are shown in the image below:
 
 ![Components](/engineering-education/how-to-produce-colors-with-rgb-leds/rgb-one.png)
 
@@ -41,9 +41,9 @@ Arduino board is an open-source microcontroller board based on the microchip `AT
 - Serial out(Tx)/in(Rx)- It is used to communicate between Arduino and the computer or other connected devices.
 - Analog in- Used for reading the analog sensors.
 
-> In the digital input/output, pins 11, 10, 9, 6, 5, 3 have `~` symbols. This is because they are supported by pulse width modulation(PMW). They can give any voltage in the range `0-5v` with the help of PMW. The pins can generate a dc voltage in 256 variations since it is an 8-bit controller(2^8). Arduino produces this voltage variation by varying the duty cycle of a square wave. It is known as PMW.
+> In the digital input/output, pins 11, 10, 9, 6, 5, 3 have `~` symbols. This is because they are supported by pulse width modulation(PMW). They can give any voltage in the range `0-5V` with the help of PMW. The pins can generate a dc voltage in 256 variations since it is an 8-bit controller `(2^8)`. Arduino produces this voltage variation by varying the duty cycle of a square wave. This is known as PMW.
 
-In IDE of an Arduino, the voltages of these PMW pins can be written by `analogwrite(pin, value)`. In Matlab, we use the command `writePMWVoltage(board, pin, value)`.
+In an Arduino IDE, the voltages of these PMW pins can be written by `analogwrite(pin, value)`. In Matlab, we use the command `writePMWVoltage(board, pin, value)`.
 
 ### Hardware implementation
 The circuit diagram to implement the color production is as shown below:
@@ -63,23 +63,23 @@ Likewise, the cathode terminal is common for all the color channels for the comm
 
 LEDs are diodes. Since diodes have two parts, P-side and the N-side, separated by a p-n junction, P-side is the anode, and the N-side is the cathode.
 
-For our case, we have used the common cathode. If you want to switch on the red LED, you apply 5 volts to its terminal/channel. It applies to both green and blue. 
+For our case, we have used the common cathode. If we want to switch on the red LED, we apply 5 volts to its terminal/channel. It applies to both green and blue. 
 
 When using the common anode type, we ground the terminal of the color that we want to switch on.
-When you want to produce a red color, you provide 5v to the red terminal. It can be represented as `RGB=[1 0 0]` where 1 represents the maximum voltage, and 0 represents no voltage. It applies to all the colors. 
+When we want to produce a red color, we provide 5 volts to the red terminal. It can be represented as `RGB=[1 0 0]` where 1 represents the maximum voltage, and 0 represents no voltage. It applies to all the colors. 
 
-You have to mix the RGB colors to produce custom colors. A simple combination to produce custom colors is shown below:
+We have to mix the RGB colors to produce custom colors. A simple combination to produce custom colors is shown below:
 
 ![Producing custom colors](/engineering-education/how-to-produce-colors-with-rgb-leds/rgb-four.png)
 
 The image above shows that producing custom colors involves combining the RGB colors. For example, if we want to produce a yellow color, we combine red and green colors. So, we need to switch the red and the green colors simultaneously. It can be represented as `RGB=[1 1 0]` in the program.
 
-At some point, you do not need to provide the full voltage. For example, if you want to produce an orange color, we need the red led to be brighter and green to be less bright. This can be represented as `RGB=[1 0.4 0]`. 
+At some point, we do not need to provide the full voltage. For example, if we want to produce an orange color, we need the red LED to be brighter and green to be less bright. This can be represented as `RGB=[1 0.4 0]`. 
 
-The red led receives 5V, and the green receives 40% of the total voltage. With this variation, you can get any color.
+The red LED receives 5 volts and the green receives 40% of the total voltage. With this variation, we can get any color.
 
 ### Arduino interface with Matlab
-To interface Arduino with Matlab, you must install the hardware support package for Arduino. We do this in the add-on, but it requires that you first log in to your MathWorks Account. 
+To interface Arduino with Matlab, you must install the hardware support package for Arduino. We do this in the add-on, but it requires that us to first log in to our MathWorks Account. 
 
 To do this:
 - Click on the add-on and select `get hardware support package`.
@@ -94,15 +94,15 @@ The GUI will be as shown below:
 ![The GUI](/engineering-education/how-to-produce-colors-with-rgb-leds/rgb-five.png)
 
 The function of the various components of the GUI are as follows:
-- Board ON- When you press this button, your board is connected to Matlab.
+- Board ON- When we press this button, our board is connected to Matlab.
 - Choose color- In this button group, select the type of color you want the LED to be producing. You can also produce other colors by entering the values of RGB, as explained earlier.
-- Exit- You exit the Arduino board.
+- Exit- Exits the Arduino board.
 
 To open the GUI in Matlab, execute the `guide` command in the command window. Then, open a blank GUI and add the components to form the interface shown below:
 
 ![The designed GUI](/engineering-education/how-to-produce-colors-with-rgb-leds/rgb-six.png)
 
-The property inspector modifies the component's background color, string, and tag. All you need to do is double click the component you want to modify and the property inspector window opens up.
+The property inspector modifies the component's background color, string, and tag. All we need to do is double click the component we want to modify and the property inspector window opens up.
 
 Once the modification of all the components is done, we can save the GUI. It generates the GUI program and the callback functions. 
 
@@ -207,7 +207,7 @@ closereq();
 
 `clear handles.a` clears the board variable. When this variable is cleared, Arduino disconnects from Matlab. We then exit the GUI using the `closereq()` function.
 
-At some point, you may need to create custom colors. As we have seen before, custom colors are formed from a combination of RGB colors. 
+At some point, we may need to create custom colors. As we have seen before, custom colors are formed from a combination of RGB colors. 
 
 The callback function for the `enter RGB for any color` text field is shown below:
 
@@ -259,7 +259,7 @@ Let us use our program to produce a custom color by entering `[1 0.5 0.25]`.
 
 ![Custom color](/engineering-education/how-to-produce-colors-with-rgb-leds/rgb-ten.png)
 
-The color produced by the RGB led is the same as the background for the text field `color produced` as shown in the image.
+The color produced by the RGB LED is the same as the background for the text field `color produced` as shown in the image.
 
 ### Conclusion
 Arduino hardware is a microcontroller. This hardware can be programmed using Matlab or any other software. 
