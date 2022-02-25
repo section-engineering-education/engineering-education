@@ -1,6 +1,21 @@
-### An Introduction to DeFi
-The origin of blockchain technology has resulted in a dynamic shift in the financial and technological systems as to how applications are built and their fundamental structure in their operation.
+---
+layout: engineering-education
+status: publish
+published: true
+url: /an-introduction-to-defi/
+title: An Introduction to DeFi
+description: This article will introduce the reader on all aspects of DeFi. 
+author: adetu-ridwan
+date: 2022-02-25T00:00:00-21:00
+topics: [Blockchain]
+excerpt_separator: <!--more-->
+images:
 
+  - url: /engineering-education/an-introduction-to-defi/hero.jpeg
+    alt: An Introduction to DeFi Example Image
+---
+The origin of blockchain technology has resulted in a dynamic shift in the financial and technological systems as to how applications are built and their fundamental structure in their operation.
+<!--more-->
 DeFi referred to as Decentralized Finance,  is a dynamic technological evolution of the traditional financial space. Hence, to adequately define DeFi, we need to have a basic understanding of traditional finance.
 
 Finance (Traditional Finance) is the process that involves the creation, management and investment of money and financial assets. In traditional finance, all these activities are controlled and/or regulated by a central authority. 
