@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /implementing-AES-encryption-and-decryption-in-java/
+url: /implementing-aes-encryption-and-decryption-in-java/
 title: Implementing AES Encryption And Decryption In Java
 description: This tutorial will take the reader through the process of encrypting and decrypting data using the Advanced Encryption Standard method. We will also implement the algorithm in Java.
 author: geoffrey-omukuba
@@ -11,7 +11,7 @@ topics: [Languages]
 excerpt_separator: <!--more-->
 images:
 
-  - url: /engineering-education/implementing-AES-encryption-and-decryption-in-java/hero.png
+  - url: /engineering-education/implementing-aes-encryption-and-decryption-in-java/hero.png
     alt: Implementing AES Encryption And Decryption In Java Hero Image
 ---
 Data encryption is an important feature in data protection. There are various methods used to encrypt and decrypt data to enhance the safety of data transmitted.
