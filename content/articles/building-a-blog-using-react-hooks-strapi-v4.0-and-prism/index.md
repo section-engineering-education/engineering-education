@@ -7,11 +7,11 @@ title: Building a blog using react hooks strapi v4.0 and prism
 description: This tutorial teaches you how to build a web application using React Hooks, Strapi v4.0 and Prism.
 author: femi-ige-muyiwa-oladele
 date: 2022-02-25T00:00:00-10:30
-topics: []
+topics: [Languages]
 excerpt_separator: <!--more-->
 images:
 
-  - url: /engineering-education/building-a-blog-using-react-hooks-strapi-v4.0-and-prism/hero.png
+  - url: /engineering-education/building-a-blog-using-react-hooks-strapi-v4.0-and-prism/hero.jpg
     alt: Strapi React Markdown Blog
 ---
 
