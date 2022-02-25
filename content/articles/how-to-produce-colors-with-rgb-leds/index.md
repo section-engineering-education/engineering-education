@@ -125,7 +125,7 @@ First, we declare the board variable `a = Arduino()`. After this, we create a ha
 
 We also create a handle for the `ON` condition such that when the handle is 1, the board is on. When the handle is 0, the board is off. It's like a linking handle. This handle is `handles.ON`.
 
-Now, let us use an `if` statement to check for the validity of the conditions. First, we check if the board is created using `~isempty(handles.a)`. If it is created(equal to 1), we set the button's background color to green[0 1 0]. We finally update the handles using `guidata(hObject, handles)`.
+Now, let us use an `if` statement to check for the validity of the conditions. First, we check if the board is created using `~isempty(handles.a)`. If it is created (equal to 1), we set the button's background color to green [0 1 0]. We finally update the handles using `guidata(hObject, handles)`.
 
 Now, let us use an `if` statement to check for the validity of the conditions. First, we check if the board is created using `~isempty(handles.a)`. If it is created (equal to 1), we set the button's background color to green [0 1 0]. We finally update the handles using `guidata(hObject, handles)`.
 
