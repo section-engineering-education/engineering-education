@@ -128,11 +128,11 @@ We can access MobSF at the URL in the above step and upload the application to b
 
 Click on http://0.0.0.0:8000 from the console in step 3, then click upload and analyze as shown:
 
-![upload and analyze](/security-testing-using-mobsf-in-docker/upload.png)
+![upload and analyze](/engineering-education/security-testing-using-mobsf-in-docker//security-testing-using-mobsf-in-docker/upload.png)
 
 The process will automatically run, then present the results after completion as shown below:
 
-![results display](/security-testing-using-mobsf-in-docker/results.png)
+![results display](/engineering-education/security-testing-using-mobsf-in-docker/results.png)
 
 #### Step 5: Downloading the report and analysis of scan results
 This step involves eliminating any false positives by triaging the vulnerability scan results.
@@ -143,7 +143,7 @@ After that, these vulnerabilities can be tracked on progress.
 
 Navigate on the task pane to view the pdf report or download an offline report as shown:
 
-![report](/security-testing-using-mobsf-in-docker/report.png)
+![report](/engineering-education/security-testing-using-mobsf-in-docker//security-testing-using-mobsf-in-docker/report.png)
 
 The above report can be studied offline.
 
