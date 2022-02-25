@@ -52,7 +52,7 @@ The Symbolic Math Toolbox also provides precision for higher or lower positions.
 
 Symbolic Math Toolbox is widely applied in many engineering and scientific applications. Symbolic expressions of exact gradient and Hessians improve accuracy and optimization speed.
 
-5. In non-linear control design, the Symbolic Math Toolbox improves recalculation speed at any operating point during execution. Furthermore, you can integrate symbolic results with MATLAB and Simulink applications. It is done by converting symbolic expressions into numeric MATLAB functions, Simulink, and Simscape blocks.
+In non-linear control design, the Symbolic Math Toolbox improves recalculation speed at any operating point during execution. Furthermore, you can integrate symbolic results with MATLAB and Simulink applications. It is done by converting symbolic expressions into numeric MATLAB functions, Simulink, and Simscape blocks.
 
 ![converting functions to Simulink](/engineering-education/how-to-use-symbolic-math-toolbox-in-matlab-to-analyze-the-fourier-series/symbolic-two.jpeg.jpeg)
 
