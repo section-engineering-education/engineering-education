@@ -6,7 +6,7 @@ url: /using-geopy-to-calculate-the-distance-between-two-points/
 title: How to Calculate Distance between Two Points using Geopy in Python
 description: This tutorial will help readers understand how to calculate distance between two locations using the Geopy library in Python.
 author: joshua-wainaina
-date: 2022-02-25T00:00:00-17:33
+date: 2022-02-25T00:00:00-02:35
 topics: [Languages]
 excerpt_separator: <!--more-->
 images:
@@ -43,14 +43,14 @@ Geodesic measure is used to determine the shortest path between any two points o
 
 However, it's not exactly the same as *the shortest curves* between any two given locations, despite their likeness. 
 
-We'll illustrate how to calcuate the Geodesic distance using latitude and longitude data in the following example.
+We'll illustrate how to calculate the Geodesic distance using latitude and longitude data in the following example.
 
 Example 1:
 
 ```python
 # Import the geodesic module from geopy library 
 from geopy.distance import geodesic as GD
- # For the specified locations,load their latitude and longitude data.
+ # For the specified locations, load their latitude and longitude data.
 Abuja =(9.072264 , 7.491302)
 Dakar =(14.716677 , -17.467686)
 #Finally, print the distance between the two sites in kilometers.
@@ -78,15 +78,15 @@ print("The distance between Nairobi and Cairo is :",GD(Nairobi,Cairo).km)
 Output:
 
 ```bash
-The distance between Nairobi and Cairo is : 2944.261368793268
+The distance between Nairobi and Cairo is: 2944.261368793268
 ```
 
 ### The great circle distance formula
-The great circle is regarded as the shortest path between any two places or points on the sphere or on the earth's surface. In this example, it is assumed that the globe is a perfect sphere. 
+The great circle is regarded as the shortest path between any two places or points on the sphere or the earth's surface. In this example, it is assumed that the globe is a perfect sphere. 
 
 The following example shows how to compute great circle distance using longitude and latitude data from two locations.
 
-Some of the problems with great-circle navigation include the computation of *azimuths* at end points and intermediate waypoints.
+Some of the problems with great-circle navigation include the computation of *azimuths* at endpoints and intermediate waypoints.
 
 A great circle is formed by any two points on a sphere that are not directly opposite to each other. 
 
@@ -115,9 +115,9 @@ The Haversine formula calculates the great-circle distance between any two locat
 
 The Haversine method gives an accurate way of determining the distance between any specified longitude and latitude.
 
-It also serves as a realignment of the spherical law of cosines. However, its more useful for tiny angles and distances. 
+It also serves as a realignment of the spherical law of cosines. However, it's more useful for tiny angles and distances. 
 
-User must have the coordinates of two points (X and Y) to utilize this method.
+The user must have the coordinates of two points (X and Y) to utilize this method.
 
 They must convert degrees of latitude and longitude to radians using the `180/π` formula.
 
@@ -126,29 +126,21 @@ To convert longitudes and latitudes to radians, we use the following formula:
 
 In radians, the latitude's value is:
 
-Latitude (LaA) = LaA / (180/π )
-
-OR
-
-Latitude (LaA) = LaA / 57.29577
+Latitude (LaA) = LaA / (180/π ) or Latitude (LaA) = LaA / 57.29577.
 
 The longitude's value will be:
 
-Longitude (LoA) = LoA / (180/π )
-
-OR
-
-Longitude (LoA) = LoA / 57.29577 
+Longitude (LoA) = LoA / (180/π ) or Longitude (LoA) = LoA / 57.29577.
 
 We use the formula below to calculate the distance in miles:
 
 Distance (D) = 3963.0 * arccos[(sin(LaA) * sin(LaB)) + cos(LaA) * cos(LaB) * cos(LoB - LoA)]  
 
-To calculate the distance in kilometres:
+To calculate the distance in kilometers:
 
-Distance (D) = 3963.0 * arccos[(sin(LaA) * sin(LaB)) + cos(LaA) * cos(LaB) * cos(LoB - LoA)]  
+Distance (D) = 3963.0 * arccos[(sin(LaA) * sin(LaB)) + cos(LaA) * cos(LaB) * cos(LoB - LoA)]
 
-Example 4
+Example 4:
 
 ```python
 from math import radians, cos, sin, asin, sqrt
@@ -186,7 +178,7 @@ The distance between Abuja and Dakar is:  2785.183036572855 K.M
 ### Conclusion
 In this tutorial, we have discussed how to use the geopy package to determine the distance between two points on the earth's surface. 
 
-You can, therefore, use this knowledge to craft other high quality applications.
+You can, therefore, use this knowledge to craft other high-quality applications.
 
 ---
 Peer Review Contributions by: [Wanja Mike](/engineering-education/authors/michael-barasa/)
