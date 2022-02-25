@@ -127,3 +127,5 @@ The security risk in this structure exists to exploit the incentive structure of
 ### Conclusion
 This article has covered all the foundational sections of decentralized finance. It is now easy for you to understand DeFi, its origin as a spin-off of traditional finance, its layers and services offered, and most importantly the risks that exist on the network and how they are structural.
 
+---
+Peer Review Contributions by: [Wilkister Mumbi](/engineering-education/authors/wilkister-mumbi/)
