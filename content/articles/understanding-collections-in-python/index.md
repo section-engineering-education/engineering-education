@@ -22,11 +22,11 @@ These data types may be used to store a collection of items: list, tuple, set, a
 
 1. `Lists`- Iteratively generated lists may be modified by adding or deleting elements. To create a list, use square brackets [].
 
-2. `Sets`- Duplicates are not permitted in unordered, immutable collections of unique items. Sets of data may be intersected, unioned, divided, and symmetrically. Sets can be created using curly brackets following the variable names or the `set()` constructor.
+2. `Sets`- Duplicates are not permitted in unordered, immutable collections of unique items. A collection of data types may be used to perform mathematical operations such as the intersection, union and symmetric difference. Sets can be created using curly brackets following the variable names or the `set()` constructor.
 
-3. `Tuples` - are an ordered, immutable sequence of multiple things held in one variable. A tuple is a variable name followed by two parentheses and commas. Python requires a trailing comma to identify it as a string. Instead of parentheses, commas form tuples.
+3. `Tuples` - are an ordered, immutable sequence of multiple things held in one variable. A tuple is a variable name followed by two parentheses and commas. Python requires a trailing comma to identify it as a string. Following the variable name, a tuple may be constructed using a pair of parentheses and comma-separated objects.
 
-4. `Dictionary`- A dictionary has unsorted key/value pairs. There may be any number of pairs of keys and values. Dictionaries, like sets, lack order. Any data is a dictionary entry. After creation, a dictionary may be modified. Values overflow, and only the most recent is returned if it contains more than one item.
+4. `Dictionary`- A dictionary has unsorted key/value pairs. There may be any number of pairs of keys and values. Dictionaries, like sets, lack order. After creation, a dictionary may be modified. Values overflow, and only the most recent is returned if it contains more than one item.
 
 Now let's compare and contrast lists, tuples, and sets.
 
@@ -146,7 +146,7 @@ print(K[1])
 
 The code above outputs the value `3`. 
 
-7. `UserList`-This class wraps the list of things. Using this class as a basis enables other list-like classes to override existing methods or add new ones. This class was built to subclass from a list. The underlying list is now a class property, making it simpler to use. It's the class that creates a list-like object. When an event occurs, it is recorded in a standard list. One or no contention may be called on the constructor provided by the list's subclasses.
+7. `UserList`-This class wraps the list of things. Using this class as a basis enables other list-like classes to override existing methods or add new ones. This class was built to subclass from a list. The underlying list is now a class property, making it simpler to use. It's the class that creates a list-like object. When an event occurs, it is recorded in a standard list. One or no dispute may be called on the constructor provided by the list's subclasses.
 
 8. `UserDict`- Dictionaries are wrapped up in this class. Subclassing from `dict` requires the creation of this class. The dictionary is now a class property to make it easier to use. This class acts like a dictionary, and it's fun to play with. Users may get the instance's data using a standard dictionary, using the `UserDict` class's data field. To be utilized for other reasons, the original data is not maintained.
 
