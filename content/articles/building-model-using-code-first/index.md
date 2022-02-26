@@ -4,7 +4,7 @@ status: publish
 published: true
 url: /building-model-using-code-first/
 title: How to Build A Model using Code First Migration 
-description: In this tutorial will walk through how to build a model using code first migration.
+description: This tutorial will walk you through how to build a model using code first migration.
 author: margaret-sitati 
 date: 2022-02-26T00:00:00-02:45
 topics: [Languages, C#]
