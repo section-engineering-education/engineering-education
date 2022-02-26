@@ -54,7 +54,7 @@ To better understand the concept of a paper database, we'll make a note app that
 ### Step 1 - Creating a new project
 To begin a new project, go to File > New >New project, pick Empty activity from the menu, and then hit Next. Give your project a descriptive name. Select Kotlin as the language and click Finish.
 
-![new project](/engineering-education/getting-started-with-paper-database/new-project.png)
+![new project](/engineering-education/getting-started-with-paper-database-in-android/new-project.png)
 
 ### Step 2 - Adding Dependencies
 Go to `build. Gradle app level and add `paper database` and kotlin coroutine dependencies below
@@ -70,12 +70,12 @@ Since we need to insert data into a database and display the data, there are two
 
 #### Inserting data User Interface
 
-![insert](/engineering-education/getting-started-with-paper-database/insert-ui.png)
+![insert](/engineering-education/getting-started-with-paper-database-in-android/insert-ui.png)
 
 #### Displaying data User Interface
 > Note that you must build the row that is mapped to the recycler view for it to be displayed.
 
-![display](/engineering-education/getting-started-with-paper-database/display-ui.png)
+![display](/engineering-education/getting-started-with-paper-database-in-android/display-ui.png)
 
 ### Step 4 - Initializing Paper in an Application Class
 Create an NoteApp that inherits the `Application` class, override the `onCreate` method and within the method initialize `Paper`, this should be done in a UI thread like this.
@@ -148,13 +148,13 @@ Paper.book().delete("notes")
 ```
 ### Demo
 
-![demo1](/engineering-education/getting-started-with-paper-database/demo1.png)
+![demo1](/engineering-education/getting-started-with-paper-database-in-android/demo1.png)
 
-![demo2](/engineering-education/getting-started-with-paper-database/demo2.png)
+![demo2](/engineering-education/getting-started-with-paper-database-in-android/demo2.png)
 
-![demo3](/engineering-education/getting-started-with-paper-database/demo3.png)
+![demo3](/engineering-education/getting-started-with-paper-database-in-android/demo3.png)
 
-![demo4](/engineering-education/getting-started-with-paper-database/demo4.png)
+![demo4](/engineering-education/getting-started-with-paper-database-in-android/demo4.png)
 
 ### Conclusion
 In this tutorial, we have discussed what is database and paper databases as used in android, the advantages, and disadvantages of the paper database, where to use the paper database, and how to implement paper databases in android.
