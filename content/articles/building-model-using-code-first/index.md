@@ -1,5 +1,21 @@
-There are 3 workflows when building a model in an EntityFramework. These includes; `database first`, `Code first`, and `model first`.
+---
+layout: engineering-education
+status: publish
+published: true
+url: /building-model-using-code-first/
+title: How to Build A Model using Code First Migration 
+description: In this tutorial will walk through how to build a model using code first migration.
+author: margaret-sitati 
+date: 2022-02-26T00:00:00-02:45
+topics: [Languages, C#]
+excerpt_separator: <!--more-->
+images:
 
+  - url: /engineering-education/building-model-using-code-first/hero.PNG
+    alt: How to Build A Model using Code First Migration Hero Image
+---
+There are 3 workflows when building a model in an EntityFramework. These include `database first`, `Code first`, and `model first`.
+<!--more-->
 **Database first workflow:** starts with the database. We design our tables using visual designers. The EntityFramework will then create the domain classes based on the database. 
 
 **Code first workflow:** starts with the code. We create the domain classes. The Entity-Framework will then generate the database table for us. 
@@ -1624,7 +1640,6 @@ namespace CodeFirstDemo.Migrations
                principalColumn: "Id",
 
                onDelete: ReferentialAction.Restrict);
-
        }
 
    }
@@ -1643,3 +1658,6 @@ From the above diagram, let us assume `DeleteDatePublishedColoumnFromCoursesTabl
 In this article, you learned about code-first migrations in detail. Think of your migrations as a commit to a repository. Always aim for small migrations and when you run them on a database, do not change them. If you make a mistake, create another migration to recover from your mistake.
 
 Happy coding!
+
+---
+Peer Review Contributions by: [Jethro Magaji](/engineering-education/authors/jethro-magaji/)
