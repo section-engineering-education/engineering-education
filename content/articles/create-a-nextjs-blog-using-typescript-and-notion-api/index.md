@@ -59,6 +59,8 @@ Click outside the modal when done. Your post should now be listed as shown below
 
 ![database_posts](database-posts.png)
 
+Make sure you reapest the same process for `page 2` and `page 3`.
+
 Feel free to add as many posts as you can while following the same steps described above.
 
 ### Setting up an integration on Notion
@@ -118,9 +120,9 @@ Paste the integration key you copied earlier and add it to the `NOTION_KEY`. If 
 
 To get the `NOTION_DATABASE` ID, check your workspace page URL. Copy the first path parameter before the query parameter as shown in the illustration below:
 
-```bash
-https://www.notion.so/your_database_id?v=some_long_hash
-```
+![notion-api](notion-id.png)
+
+In this case the id would be `53905ad838f04731b48fb1e40c25766a`. Let's your workspace URL is `https://www.notion.so/your_database_id?v=some_long_hash`. The parameter `your_database_id` should be the `NOTION_DATABASE` you are looking for.
 
 Start the development server to test if the set app is working as expected. To do so, run the following command:
 
@@ -239,9 +241,33 @@ const Home: NextPage<Props> = (props ) => {
 }
 ```
 
+For the Next.js application to load images, you need to configure the image hostname/domain under images in your `next.config.js`. In this exaple, you loaded images from `unsplash.com`. To add this domain, navigate to the `next.config.js` and configure `unsplash.com` image source as shown below:
+
+```js
+const nextConfig = {
+  reactStrictMode: true,
+  images: {
+    domains: ['images.unsplash.com']
+  }
+}
+```
+
 Add the following styles to `styles/Home.module.css`. This will style the listed of the fetched posts:
 
 ```css
+.container {
+  padding: 0 2rem;
+}
+
+.main {
+  min-height: 100vh;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
 .cardHolder {
    display: flex;
    width: 40%;
@@ -256,6 +282,22 @@ Add the following styles to `styles/Home.module.css`. This will style the listed
    display: flex;
    align-items: center;
    justify-content: center;
+}
+
+.footer {
+  display: flex;
+  flex: 1;
+  padding: 2rem 0;
+  border-top: 1px solid #eaeaea;
+  justify-content: center;
+  align-items: center;
+}
+
+.footer a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-grow: 1;
 }
 ```
 
@@ -375,19 +417,19 @@ const renderBlock = (block: any) => {
    switch (block.type) {
      case 'heading_1': 
      // For a heading
-       return <h1>{ block['heading_1'].text[0].plain_text } < /h1> 
+       return <h1>{ block['heading_1'].text[0].plain_text } </h1> 
      case 'image': 
      // For an image
        return <Image src={ block['image'].external.url } width = { 650} height = { 400} />
        case 'bulleted_list_item': 
        // For an unordered list
-       return <ul><li>{ block['bulleted_list_item'].text[0].plain_text } < /li></ul >
+       return <ul><li>{ block['bulleted_list_item'].text[0].plain_text } </li></ul >
        case 'paragraph': 
        // For a paragraph
-       return <p>{ block['paragraph'].text[0]?.text?.content } < /p>
+       return <p>{ block['paragraph'].text[0]?.text?.content } </p>
      default: 
      // For an extra type
-       return <p>Undefined type < /p>
+       return <p>Undefined type </p>
    }
 }
 ```
@@ -440,6 +482,13 @@ Add some style to the `blogPageHolder` class to format the rendered post:
    justify-content: left;
    width: 50%;
    margin: 10px auto;
+}
+
+@media (max-width: 600px) {
+  .grid {
+    width: 100%;
+    flex-direction: column;
+  }
 }
 ```
 
