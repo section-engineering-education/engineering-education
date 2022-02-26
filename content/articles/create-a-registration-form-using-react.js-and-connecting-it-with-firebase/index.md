@@ -1,22 +1,25 @@
 ### Create a registration form using React.js and connecting it with Firebase 
-
 In this tutorial, you are going to learn how to make a registration form using React.js and connect it with firebase from scratch using react hooks, bootstrap, and firebase.
 
+Here an image of what you will build at the end of this tutorial.
+![Final form](/engineering-education/create-a-registration-form-using-react.js-and-connecting-it-with-firebase/finalRegistrationForm.PNG)
+
 ### Table of contents
-- [Create a registration form using React.js and connecting it with Firebase](#create-a-registration-form-using-reactjs-and-connecting-it-with-firebase)
 - [Table of contents](#table-of-contents)
 - [Creating a Registration Form](#creating-a-registration-form)
 - [Implementing  hooks in Registration Form](#implementing--hooks-in-registration-form)
 - [Connecting Registration Form with Firebase](#connecting-registration-form-with-firebase)
 - [Conclusion](#conclusion)
 
-![Final form](/engineering-education/create-a-registration-form-using-react.js-and-connecting-it-with-firebase/finalRegistrationForm.png)
+### Prerequisites
+You will need the following to understand and build along:
+- An IDE installed preferably Vscode.
+- A basic knowledge of HTML and CSS.
+- A Firebase account.
+- Basic Knowledge of JavaScript.
+- Have Node.js installed.
 
-You will begin with setting up your coding environment but it would be helpful if you have some basic knowledge of HTML and CSS. For setting up coding environment, you must require a code editor and node.js installed on your device.
-
-*Note-* you can use any code editor you prefer. In this tutorial Visual Studio is used.
-
-Now the environment is ready next, you have to open your terminal or PowerShell and run the below commands to create your react app.
+Now that your coding environment is ready. Next, open up your terminal or PowerShell and run the below commands to create your react app.
 
 ```bash
 npx create-react-app loginforms
@@ -24,18 +27,13 @@ cd loginforms
 npm start
 ```
 
+After running the commands you will get to see the below screen:
 
-After running the commands you will get to see the below screen:-
+![starting](/engineering-education/create-a-registration-form-using-react.js-and-connecting-it-with-firebase/start.PNG)
 
-![starting](/engineering-education/create-a-registration-form-using-react.js-and-connecting-it-with-firebase/start.png)
+Open the `index.html` which is in the `public` folder and add the CDN links there at the end of this file or just replace the below code in your file.
 
-Now you will add the CDN links of bootstrap in your react app. 
-
-Open `index.html` which is in the `public` folder.
-Add the CDN links there at the end of this file or just replace the below code in your file.
-
-
-``` html
+```html
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -69,21 +67,17 @@ Add the CDN links there at the end of this file or just replace the below code i
 </html>
 ```
 
-
-Now the basic requirements are completed. You may change the meta tags as per your preference.
-
+You can change the meta tags as per your preference.
 
 ### Creating a Registration Form
+The Registration form is divided into two components in this tutorial i.e. Header and registrationForm, which will be rendered in `App.js`.
 
-The Registration form is divided into two components in this tutorial i.e. Header and registrationForm, and they will get rendered in `App.js`.
-
-Create a new folder named "components" inside the src folder.
-In the components folder following files will be created:
+Create a new folder named `components` inside the src folder. In the components folder following files will be created:
 1. `header.js`
 2. `registrationForm.js`
 3. `style.css`
 
-*Note-* In react, JSX is used instead of HTML code. JSX is a language that is a mixture of HTML & JavaScript.
+*Note -* In react, JSX is used instead of HTML code. JSX is a markup language that contains HTML & JavaScript.
 
 In the `header.js` write the following code. You can copy-paste as well from here.
 
@@ -101,7 +95,7 @@ function Header() {
 export default Header;
 ```
 
-Your header is ready. Now to display it on the website you have to import the `header.js` in `App.js`. Write the following code in the `App.js`.
+Your header is ready. To display it on the website you have to import the `header.js` in `App.js`. Write the following code in the `App.js`.
 
 ```javascript
 import logo from './logo.svg';
@@ -121,10 +115,9 @@ export default App;
 
 If you have written the above code correctly the webpage will look like this:
 
-![header](/engineering-education/create-a-registration-form-using-react.js-and-connecting-it-with-firebase/registration.png);
+![header](/engineering-education/create-a-registration-form-using-react.js-and-connecting-it-with-firebase/registration.PNG);
 
-
-Moving forward to the next component i.e. registrationForm. The form consist of the following fields:
+Moving forward to the next component i.e. registrationForm. It contains the following fields:
 1. First Name
 2. Last Name
 3. Email id 
@@ -132,7 +125,7 @@ Moving forward to the next component i.e. registrationForm. The form consist of 
 5. Confirm Password 
 6. Submit Button 
    
-Write the following code in the `registrationForm.js` to create the form body.
+Next, write the following code in the `registrationForm.js` to create the form body.
 
 ``` javascript
 import React, {useState} from 'react';
@@ -170,11 +163,11 @@ function RegistrationForm() {
 }
 export default RegistrationForm;
 ```
-Your basic structure is ready but needs some styling right? 
+Your basic form structure is ready but needs some styling. 
 
-For that write the following code in `style.css`.
+To style your form, write the following code in `style.css`.
 
-*Note:* Don't forget to import `style.css` in `registrationForm.js`. In this tutorial, it is already added.
+*Note:* Don't forget to import `style.css` in `registrationForm.js`. In this tutorial, it has already added.
 
 ```css
 body{
@@ -212,13 +205,11 @@ body{
 .footer{
     text-align: center;
 }
-
-
 ```
 
-Make sure to include this component in  `App.js` 
+Add this component in  `App.js` 
 
-``` javascript
+```javascript
 import logo from './logo.svg';
 import './App.css';
 import Header from './components/header';
@@ -237,17 +228,17 @@ export default App;
 ```
 
 ### Implementing  hooks in Registration Form
-You will have an overview of hooks in react.js For more details I will recommend you to first go through react official documentation.
+In this section, Yyou will have an overview of hooks in react.js. For more details I will recommend you to first go through react official documentation.
 
 `useState` hook is used to maintain a state of a variable which you can update dynamically using `setState` 
 
 Now get to your form where you need to maintain the state of every input in the form. So that when users hit submit button you can send the data to the backend API. 
 
-If you remember in vanilla javascript you used to update this using `document.getElementById("demo").value` but in react you have a state for every input and you will update it on every onChange event. 
+In vanilla javascript it is done using `document.getElementById("demo").value` while in react you will have a state for every input and update it on every onChange event. 
 
-import `useState` and `setState` hooks from react on top of your code. Now you make a state for all input elements. 
+import `useState` and `setState` hooks from react at top of your code. Now you make a state for all input elements. 
 
-```jsx
+```javascript
     const [firstName, setFirstName] = useState(null);
     const [lastName, setLastName] = useState(null);
     const [email, setEmail] = useState(null);
@@ -255,19 +246,19 @@ import `useState` and `setState` hooks from react on top of your code. Now you m
     const [confirmPassword,setConfirmPassword] = useState(null);
 ```
 
-For being functional we will add two attributes in the `input` tag  to maintain the state variable i.e.
+We will add two attributes in the `input` tag  to maintain the state variable i.e.
 1. value 
 2. onChange
 
 *Value*
-
-Value attribute will contain the name of the fields, that we used while declaring states. 
+The value attribute will contain the name of the fields, that we used while declaring states. 
 
 *onChange*
-
 Write the following code for onChange attribute.
 
-`onChange = {(e) => handleInputChange(e)}`
+```javascript
+onChange = {(e) => handleInputChange(e)}
+```
 
 ```javascript
 <input className="form__input" type="text" value={firstName} onChange = {(e) => handleInputChange(e)} id="firstName" placeholder="First Name"/> 
@@ -277,7 +268,7 @@ Write the following code for onChange attribute.
 <input className="form__input" type="password" id="confirmPassword" value={confirmPassword} onChange = {(e) => handleInputChange(e)} placeholder="Confirm Password"/>
 ```
 
-Inside the onChange event, you have called a function `handleInputChange` that will handle state updates of all the input changes. Write the following function:-
+In the code below, inside the onChange event call the function `handleInputChange` that will handle state updates of all the input changes. 
 
 ```javascript
  const handleInputChange = (e) => {
@@ -305,7 +296,7 @@ In this function, you get the id and the value entered inside the input box, as 
 
 In this tutorial `handleSubmit` function is used in which you will get all the values that are filled in the form. This function will be used to connect the app with the firebase.
 
-The following code is the final code for the registration form which includes all the details you have learned above in the tutorial so far.
+This is the final code for the registration form which includes all the details you have learned above in the tutorial so far.
 
 ```javascript
 import React, {useState,setState} from 'react';
@@ -381,34 +372,30 @@ You can refer to this link to find the full code of this registration form
 [link](https://replit.com/@AnubhavBansal1/Registration-Form-1#README.md)
 
 ### Connecting Registration Form with Firebase 
-
 Hurray!! Your Registration form is completed but you need to store the information registered by the user, which will be done by using firebase.
 
-![Logo](/engineering-education/create-a-registration-form-using-react.js-and-connecting-it-with-firebase/logo.png)
+![Logo](/engineering-education/create-a-registration-form-using-react.js-and-connecting-it-with-firebase/logo.PNG)
 
-Good news guys, for using firebase you don't need to install any app just need Google/Gmail mail id. You all do have that id right?
-Now you will start learning how to connect firebase to your Registration form. For that, you need to do the following.
+Good news guys, to use Firebase you don't need to install any app just need Google/Gmail mail id. You all do have that id right?
+Here, you will learn how to connect your Registration form to Firebase. For that you need to do the following.
 
-- *At first what do you require?* You require a space where you can record your data. For that, you will go to the firebase homepage [Click here.](https://firebase.google.com/) Or Type firebase.google.com
- The homepage will appear 
+You need Firebase to store all data. For that, [Click here.](https://firebase.google.com/) to Get Started.
 
-![Home Page](/engineering-education/create-a-registration-form-using-react.js-and-connecting-it-with-firebase/homepage.png)
+![Home Page](/engineering-education/create-a-registration-form-using-react.js-and-connecting-it-with-firebase/homepage.PNG)
 
-Then, Click on the Get Started button 
-
-- You will begin your project. Click on Add project. 
+- To start your project, click on add project. 
  
- ![New Project](/engineering-education/create-a-registration-form-using-react.js-and-connecting-it-with-firebase/newproject.png)
+ ![New Project](/engineering-education/create-a-registration-form-using-react.js-and-connecting-it-with-firebase/newproject.PNG)
  
- - Give the preferable name to the project. In this tutorial, Registration-Form is taken. 
+- Give the preferable name to the project. In this tutorial, Registration-Form is taken. 
   
-![Name of Project](/engineering-education/create-a-registration-form-using-react.js-and-connecting-it-with-firebase/Nameofproject.png)
+![Name of Project](/engineering-education/create-a-registration-form-using-react.js-and-connecting-it-with-firebase/Nameofproject.PNG)
 
 Then click on continue. 
 
--  Next step will appear to click on continue then after that you need to choose Default Account for Firebase. 
+- Next step will appear to click on continue then after that you need to choose Default Account for Firebase. 
   
-![Default Setting](/engineering-education/create-a-registration-form-using-react.js-and-connecting-it-with-firebase/Deaultsetting.png)
+![Default Setting](/engineering-education/create-a-registration-form-using-react.js-and-connecting-it-with-firebase/Deaultsetting.PNG)
 
 Then click on "Create project"
 
@@ -416,42 +403,50 @@ Now your project file is ready. You will use it to build the real-time database.
 
 - To make a setup for real-time data you will select "Realtime Database" from the left panel. 
 
-![Real Time Database](/engineering-education/create-a-registration-form-using-react.js-and-connecting-it-with-firebase/realtimedatabase.png)
+![Real Time Database](/engineering-education/create-a-registration-form-using-react.js-and-connecting-it-with-firebase/realtimedatabase.PNG)
 
 Then click on the "Create Database" button. The Setup database dialog box will appear 
 
-![Settings](/engineering-education/create-a-registration-form-using-react.js-and-connecting-it-with-firebase/Settings.png)
+![Settings](/engineering-education/create-a-registration-form-using-react.js-and-connecting-it-with-firebase/Settings.PNG)
 
 You will go to the next step by leaving the default location. Since you are in developing mode, you will select "Start in test mode" and enable it.
 
-Now your place is ready where the real-time data is stored.
-image of real-time data 
+Now your database is ready where the real-time data is stored.
 
-You need to create a linkage between your react project and the ![realtime_data](/engineering-education/create-a-registration-form-using-react.js-and-connecting-it-with-firebase/realtime_data.png) 
+You need to create a linkage between your react project and the 
+![realtime_data](/engineering-education/create-a-registration-form-using-react.js-and-connecting-it-with-firebase/realtime_data.PNG) 
  
 - For that, you will go to project overview from the left panel and then click on the Web button.
 
-![Button](/engineering-education/create-a-registration-form-using-react.js-and-connecting-it-with-firebase/Button.png)
+![Button](/engineering-education/create-a-registration-form-using-react.js-and-connecting-it-with-firebase/Button.PNG)
 
-- You have to register your app and give a nickname to it. In this tutorial "Registration Form" is taken or you can choose any name of your choice. Since you are not hosting you will not select the option "set up Firebase hosting for this app" and then click on Register App. 
+- You have to register your app and give it nickname. In this tutorial "Registration Form" is taken or you can choose any name of your choice. 
+Since you are not hosting you will not select the option "set up Firebase hosting for this app", then click on Register App. 
 
-![Register App](/engineering-education/create-a-registration-form-using-react.js-and-connecting-it-with-firebase/Registerapp.png)
+![Register App](/engineering-education/create-a-registration-form-using-react.js-and-connecting-it-with-firebase/Registerapp.PNG)
 
 - Now you need to add the package into your react app you have to install the firebase package over there. Now using terminal or command prompt go to the directory where your project is and run this command. 
  
-`npm install firebase`
+```bash
+npm install firebase
+```
 
-![package](/engineering-education/create-a-registration-form-using-react.js-and-connecting-it-with-firebase/package.png)
+![package](/engineering-education/create-a-registration-form-using-react.js-and-connecting-it-with-firebase/package.PNG)
 
 Create a new file with the name "firebase.js" in the Src folder where you will copy the code. 
 
 You have to initialize the firebase. Now you will import the database into your code. 
 - For importing the data write the following statement
 
-`import { getDatabase } from "firebase/database"`
+```javascript
+import { getDatabase } from "firebase/database"
+```
 
-- To use this database in your registration form component you will use an export statement. Add the following statements in the code.
-`export const database = getDatabase(app);`
+- To use this database in your registration form component you will need to export. Add the code below.
+- 
+```javascript
+export const database = getDatabase(app);
+```
 
 In the registration, form component import the following files
 
@@ -482,27 +477,15 @@ Now you have completed your steps successfully.
 
 **Now you will see how it work**
 
-You will fill in the details in the form then click on register.
+Fill in your details in the form then click on register.
 
-![Details](/engineering-education/create-a-registration-form-using-react.js-and-connecting-it-with-firebase/Details.png)
+![Details](/engineering-education/create-a-registration-form-using-react.js-and-connecting-it-with-firebase/Details.PNG)
 
 For checking the input you can see that from your firebase account. It will appear as shown below.
 
-![Datainfirebase](/engineering-education/create-a-registration-form-using-react.js-and-connecting-it-with-firebase/Datainfirebase.png)
+![Datainfirebase](/engineering-education/create-a-registration-form-using-react.js-and-connecting-it-with-firebase/Datainfirebase.PNG)
 
 ###  Conclusion
+Congratulation you have successfully learned how to use React.js to create and structure a registration form, and add styling to it. You also used React Hooks to maintain the state so that you can store the data in Firebase real-time database.
 
-In this tutorial you have learned how to make Registration Form with react and hooks. You learned how to store the data base in firebase.
-
-Tutorial have used react for creating a structure of the registration form, and to add styling to it. Hooks of react is used to maintain the state so that you can store the data in the database.
-
-Firebase real-time database is used as the database for storing the submissions of registration form.
-
-Congratulation you have successfully learned how to make a registration form and connect it to firebase to store real-time data.
-
-
-
-
-
-
-
+Happy coding!
