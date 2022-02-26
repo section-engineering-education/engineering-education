@@ -4,7 +4,7 @@ status: publish
 published: true
 url: /create-a-registration-form-using-react.js-and-connecting-it-with-firebase/
 title: How to Create a Registration Form using React.js and Connect it to Firebase
-description: This tutorial will walk through how to create a registration form using React.js and connect it to Firebase
+description: This tutorial will walk you through how to create a registration form using React.js and connect it to Firebase
 author: anubhav-bansal
 date: 2022-02-26T00:00:00-05:45
 topics: [Languages, React.js]
@@ -47,7 +47,7 @@ After running the commands you will get to see the below screen:
 
 ![starting](/engineering-education/create-a-registration-form-using-react.js-and-connecting-it-with-firebase/start.PNG)
 
-Open the `index.html` which is in the `public` folder and add the CDN links there at the end of this file or just replace the below code in your file.
+Open up the `index.html` which is in the `public` folder and add the CDN links there at the end of the file.
 
 ```html
 <!DOCTYPE html>
@@ -111,7 +111,7 @@ function Header() {
 export default Header;
 ```
 
-Your header is ready. To display it on the website you have to import the `header.js` in `App.js`. Write the following code in the `App.js`.
+Now, your header is ready. To display it on the website you have to import the `header.js` in `App.js`. Write the following code in the `App.js`.
 
 ```javascript
 import logo from './logo.svg';
