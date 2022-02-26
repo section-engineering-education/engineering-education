@@ -1,5 +1,21 @@
-Flow is a fundamental feature in Kotlin programming language. Understanding it will help you to perform some network calls with ease. Since it is built on top of coroutines, it is helpful in managing the main thread. 
+---
+layout: engineering-education
+status: publish
+published: true
+url: /kotlin-flow-zip-operator/
+title: How to Get Started with Kotlin Flows API Zip Operator 
+description: This tutorial will walk you through how to get started with Kotlin Flows API Zip Operator for parallel multiple network calls in Android 
+author: emmah-lashly
+date: 2022-02-26T00:00:00-05:45
+topics: [Languages, Kotlin]
+excerpt_separator: <!--more-->
+images:
 
+  - url: /engineering-education/kotlin-flow-zip-operator/hero.jpg
+    alt: How to Get Started with Kotlin Flows API Zip Operator Hero Image
+---
+Flow is a fundamental feature in Kotlin programming language. Understanding it will help you to perform some network calls with ease. Since it is built on top of coroutines, it is helpful in managing the main thread. 
+<!--more-->
 When doing some network calls, Kotlin Flows will allow for asynchronous emission of data hence preventing the blocking of threads. This will as well increase the speed at which the app performs network calls. 
 
 Coroutines can be suspended and resumed at some specified points thereby preventing blocking of threads and that is where flows come in to prevent a task from being suspended because the suspended task might be very crucial. 
@@ -23,7 +39,7 @@ This tutorial will cover how to use `zip` flow operator to perform a parallel ne
  - [Conclusion](#conclusion)
 
  ### Prerequisites
- To read and understand this tutorial, you need the following:
+ To follow along with this tutorial, you need the following:
 - [Android Studio](https://developer.android.com/studio/index.html) installed on your computer.
 - Understand how to use [`ViewBinding`](https://developer.android.com/topic/libraries/view-binding).
 - [Kotlin](https://kotlinlang.org/) programming language fundamentals.
@@ -31,10 +47,13 @@ This tutorial will cover how to use `zip` flow operator to perform a parallel ne
 - A basic knowledge in Android Jetpack Components i.e `Livedata`, `ViewModel` and `Repository` patterns.
 
 ### What is Kotlin flow
-Flow is therefore a coroutine that can emit multiple values over some time. It can also be defined as a Kotlin language feature that serves as a reactive programming framework. To learn more about how to create a flow, visit [here](https://www.section.io/engineering-education/introduction-to-kotlin-flows/).
+Flow is therefore a coroutine that can emit multiple values over some time. It can also be defined as a Kotlin language feature that serves as a reactive programming framework. 
+
+To learn more about how to create a flow, visit [here](https://www.section.io/engineering-education/introduction-to-kotlin-flows/).
 
 ###  Kotlin flow operators
 These are the operators that decide what happens with the emission of a flow. They include, `filter`, `map` and `onEach`.
+
 - filter -> Filters the values produced by a flow.
 - map -> Maps the value of a certain flow to a new value.
 - onEach -> It does not return any formal value but returns the previous flow.
@@ -168,7 +187,9 @@ Add the code below to create a `RecyclerView`. You can use `ConstraintLayout` as
  app:layout_constraintTop_toTopOf="parent" />
 ```
 
-After we have set up our layout, we now want to fetch the data from elephants API using the Zip operator. If you are new to using Retrofit and RecyclerView, you can refer [here](https://www.section.io/engineering-education/handling-recyclerview-clicks-the-right-way/).
+After we have set up our layout, we now want to fetch the data from elephants API using the Zip operator. 
+
+If you are new to using Retrofit and RecyclerView, you can refer [here](https://www.section.io/engineering-education/handling-recyclerview-clicks-the-right-way/).
 
 ### Step 4 - Model class
 In this step, we will create a model class having the name of the elephants, species, sex, and an image(url). We will ignore the rest of the attributes for now.
@@ -264,7 +285,9 @@ class ElephantsAdapter : ListAdapter<Elephants.ElephantsItem, ElephantsAdapter.M
 In the next step, we will work on the ViewModels class that will hold the Zip operator logic for asynchronous parallel network calls.
 
 ### Step 7 - ViewModel class
-We will create two ViewModel classes, one of the classes will implement the Zip operator logic to allow fetching of data asynchronously from the API. One ViewModel class will contain two methods ie, `getAnElephant()` and `getMoreElephants()`. The other ViewModel class will have a `zip` operator to allow parallel network calls using the two methods. 
+We will create two ViewModel classes, one of the classes will implement the Zip operator logic to allow fetching of data asynchronously from the API. One ViewModel class will contain two methods ie, `getAnElephant()` and `getMoreElephants()`. 
+
+The other ViewModel class will have a `zip` operator to allow parallel network calls using the two methods. 
 
 ```kotlin
 @HiltViewModel
@@ -290,6 +313,7 @@ class MainViewModel @Inject constructor(private val elephantsRepository: Elephan
     }
 }
 ```
+
 > Note how we have used the `zip` operator in the `ElephantsViewModel` class to combine the two method(`getAnElephant()`,`getMoreElephants()`) for parallel network call.
 
 ```kotlin
@@ -332,3 +356,6 @@ Finally, when two flow collections are zipped by the Zip operator, both the netw
 In this tutorial, you learned how to use the Kotlin flow Zip operator to perform parallel network calls from an API. We have also learned how to use the Retrofit library to fetch the elephants from the API. You also used the Zip operator to fetch data from an API and returned the result in a single callback thereby improving the speed of remote access. 
 
 Happy Coding with Kotlin Flows!
+
+---
+Peer Review Contributions by: [Jethro Magaji](/engineering-education/authors/jethro-magaji/)
