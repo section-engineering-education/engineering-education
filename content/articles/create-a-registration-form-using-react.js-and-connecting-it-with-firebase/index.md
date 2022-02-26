@@ -1,14 +1,30 @@
-### Create a registration form using React.js and connecting it with Firebase 
-In this tutorial, you are going to learn how to make a registration form using React.js and connect it with firebase from scratch using react hooks, bootstrap, and firebase.
+---
+layout: engineering-education
+status: publish
+published: true
+url: /create-a-registration-form-using-react.js-and-connecting-it-with-firebase/
+title: How to Create a Registration Form using React.js and Connect it to Firebase
+description: In this tutorial will walk through how to create a registration form using React.js and connect it to Firebase
+author: anubhav-bansal
+date: 2022-02-26T00:00:00-05:45
+topics: [Languages, React.js]
+excerpt_separator: <!--more-->
+images:
 
+  - url: /engineering-education/create-a-registration-form-using-react.js-and-connecting-it-with-firebase/hero.jpg
+    alt: How to Create a Registration Form using React.js and Connect it to Firebase Hero Image
+---
+In this tutorial, you are going to learn how to make a registration form using React.js and connect it with firebase from scratch using react hooks, bootstrap, and firebase.
+<!--more-->
 Here an image of what you will build at the end of this tutorial.
+
 ![Final form](/engineering-education/create-a-registration-form-using-react.js-and-connecting-it-with-firebase/finalRegistrationForm.PNG)
 
 ### Table of contents
 - [Table of contents](#table-of-contents)
-- [Creating a Registration Form](#creating-a-registration-form)
-- [Implementing  hooks in Registration Form](#implementing--hooks-in-registration-form)
-- [Connecting Registration Form with Firebase](#connecting-registration-form-with-firebase)
+- [Creating a registration form](#creating-a-registration-form)
+- [Implementing hooks in registration form](#implementing-hooks-in-registration-form)
+- [Connecting registration form with Firebase](#connecting-registration-form-with-firebase)
 - [Conclusion](#conclusion)
 
 ### Prerequisites
@@ -69,7 +85,7 @@ Open the `index.html` which is in the `public` folder and add the CDN links ther
 
 You can change the meta tags as per your preference.
 
-### Creating a Registration Form
+### Creating a registration form
 The Registration form is divided into two components in this tutorial i.e. Header and registrationForm, which will be rendered in `App.js`.
 
 Create a new folder named `components` inside the src folder. In the components folder following files will be created:
@@ -227,7 +243,7 @@ function App() {
 export default App;
 ```
 
-### Implementing  hooks in Registration Form
+### Implementing hooks in registration form
 In this section, Yyou will have an overview of hooks in react.js. For more details I will recommend you to first go through react official documentation.
 
 `useState` hook is used to maintain a state of a variable which you can update dynamically using `setState` 
@@ -435,7 +451,8 @@ npm install firebase
 
 Create a new file with the name "firebase.js" in the Src folder where you will copy the code. 
 
-You have to initialize the firebase. Now you will import the database into your code. 
+You have to first initialize Firebase in your project. Then import the database into your code.
+
 - For importing the data write the following statement
 
 ```javascript
@@ -443,7 +460,7 @@ import { getDatabase } from "firebase/database"
 ```
 
 - To use this database in your registration form component you will need to export. Add the code below.
-- 
+
 ```javascript
 export const database = getDatabase(app);
 ```
@@ -475,17 +492,20 @@ const handleSubmit = () =>{
 
 Now you have completed your steps successfully. 
 
-**Now you will see how it work**
+**Finally, let's see how it works**
 
-Fill in your details in the form then click on register.
+Fill in your details in the form and then click on register.
 
 ![Details](/engineering-education/create-a-registration-form-using-react.js-and-connecting-it-with-firebase/Details.PNG)
 
-For checking the input you can see that from your firebase account. It will appear as shown below.
+To check the input, you can see that from your Firebase account. It appears as shown below.
 
 ![Datainfirebase](/engineering-education/create-a-registration-form-using-react.js-and-connecting-it-with-firebase/Datainfirebase.PNG)
 
-###  Conclusion
+### Conclusion
 Congratulation you have successfully learned how to use React.js to create and structure a registration form, and add styling to it. You also used React Hooks to maintain the state so that you can store the data in Firebase real-time database.
 
 Happy coding!
+
+---
+Peer Review Contributions by: [Jethro Magaji](/engineering-education/authors/jethro-magaji/)
