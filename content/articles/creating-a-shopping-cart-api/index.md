@@ -13,7 +13,7 @@ Most companies provide APIs for carrying out some tasks such as building an eCom
 3. To enable beginners to code to interface
 4. To encourage the reader always to write unit tests on every line of code
 ### Setting your spring boot project
-Firstly, go to [Spring Boot Initializer](https://start.spring.io/). There you will download a full template with the basic dependencies. The dependencies for this project are few. Below is a list of what you will select:
+Firstly, go to [Spring Boot Initializer](https://start.spring.io/). There you will download a full template with the basic dependencies. The dependencies for this project are few; below is a list of what you will select:
 1. Project -> Maven Project
 2. Language -> Java
 3. Spring boot -> Use the default version rather than the snapshot
@@ -22,13 +22,14 @@ Firstly, go to [Spring Boot Initializer](https://start.spring.io/). There you wi
 6. Name -> cart
 7. Description -> it is for you to explain briefly what your project is about but for this guide, we will leave it blank.
 8. Dependencies -> Search for the following in the search bar and add them to your dependencies for this project:
-  - Lombok ->  Lombok is a Java library that is used to limit/eliminate the boilerplate code and save development time. It does so by utilizing a few annotations. Notwithstanding it, Lombok additionally builds the clarity of the source code and saves space. Lombok gives a bunch of annotations to make our coding life simpler. The following annotations are provided by Lombok: `@ToString`, `@Getter`, `@Setter`, `@EqualsAndHashCode`, `@NoArgsConstructor`, `@AllArgsConstructor`, `@RequiredArgsConstructor`, and `@Data`. For the sake of this tutorial, we will focus on `@Data`. This annotation comprises a couple of other annotations that help you save time. It's like a collection of all of the other annotations except @NoArgsConstructor and @AllArgsConstructor.
+- Lombok -> Lombok is a Java library that is used to eliminate boilerplate code and save development time. It does so by utilizing a few annotations. Notwithstanding it, Lombok additionally builds the clarity of the source code and saves space. Lombok gives a bunch of annotations to make our coding life simpler. The following annotations are provided by Lombok: `@ToString`, `@Getter`, `@Setter`, `@EqualsAndHashCode`, `@NoArgsConstructor`, `@AllArgsConstructor`, `@RequiredArgsConstructor`, and `@Data`. For the sake of this tutorial, we will focus on `@Data`. This annotation comprises a couple of other annotations that help you save time. It's like a collection of all of the other annotations except `@NoArgsConstructor` and `@AllArgsConstructor`.
 - Spring web -> A necessity when building a web app
 - Devtools-> For automatic reloading
 - Packaging -> Jar
 - Java -> the Java version of your choice but preferably the default version of 11
 ### Creating your entities/models
 Here you create the entities that will map to the database or the data structure of your choice. Before we view the code for creating our entities let's view what the structure of the entire application will look like:
+
 ![Package Structure](shopping_application.JPG)
 
 Here you can see the various classes in the package:
@@ -101,10 +102,9 @@ public class Product {
     }
 }
 ```
-These classes provide the feature, attribute, or field we will be needing for the creation of objects.
+These classes provide the features, attributes, or fields we will be needing for the creation of objects.
 ### Creating your repositories
-The importance of creating a repository is to map your entity to the database. Creating a repository helps you communicate with the database. It's like you have your database in your code for easy access. Spring Boot provides the @Repository annotation that helps the compiler know that this is a gateway to the database.
-In the repository package we have the following:
+The importance of creating a repository is to communicate to the database to manipulate your entities. It's like you have your database in your code for easy access. Spring Boot provides the `@Repository` annotation that helps the compiler know that this is a gateway to the database. In the repository package we have the following:
 #### AdminDao
 ```java
 @Repository
@@ -168,8 +168,7 @@ public class ProductDao {
 ```
 N/B At the top of the class, you must put the `@Repository` annotation to let spring know that that particular class is a repository that maps to entities to the database.
 ### Creating the service layer
-The service layer is where we create our interface and also implement it. This layer contains all our business logic and you must always but the @Service at either in the interface or the implementation.
-We will see the interface and later the implementation.
+The service layer is where we create our interface and also implement it. This layer contains all our business logic and you must always but the `@Service` at either in the interface or the implementation. Now, we will have a look at our interfaces and later their implementations.
 The service layer contains the following interfaces:
 #### CartService
 ```java
@@ -199,7 +198,7 @@ public interface DataService {
 }
 }
 ```
-Now you will see how we code to the interface. Any method that is in the interface must be implemented in the implementation. In this code, I used the `@Service` annotation in the implementation. We have the following implementation of the two classes in our interface and they are:
+From here, you will see how we code to the interface. Any method that is in the interface must be implemented in the implementation. In this code, I used the `@Service` annotation in the implementation. We have the following implementations of the two classes in our interface and they are:
 #### CartServiceImpl
 ```java
 @Service
@@ -434,7 +433,7 @@ public class controller {
     }
 }
 ```
-N/B `@PostMapping` is for saving objects, `@GetMapping` is for retrieving data from the database, `@PatchMapping` and `@PutMapping` is for updating data, and `@DeleteMapping` is for deleting. Also, note that we annotate the fields of this class with `@Autowire` to inject its dependencies to avoid initializing new objects. This is done by using these same objects each time they're needed throughout the whole code-base.
+N/B `@PostMapping` is for saving objects, `@GetMapping` is for retrieving data from the database, `@PatchMapping` and `@PutMapping` is for updating data, and `@DeleteMapping` is for deleting. Also, note that we annotate the fields of this class with `@Autowire` to inject its dependencies to avoid initializing new objects. This is done by using these same objects each time they're needed throughout the whole codebase.
 ### Running the server
 ```java
 @SpringBootApplication
@@ -575,8 +574,7 @@ public class CustomerTest {
 #### Conclusion
 In the end, we've seen how to code to an interface, how to write a unit test, how to create an endpoint, and how to use postman to view our endpoint. Also, we discussed how we used field dependency injection and not constructor dependency injection which will still suffice. Furthermore, we also added products to our cart and the cart could calculate the cost of products in the cart since the products have an attribute of price. 
 
-In this tutorial, we didn't integrate any other API for an actual business transaction that either works with your bank account or your credit card. Hopefully, we'll work on that in the next tutorial and use an actual database that could be used in real-life events. Be sure to check [Github](https://github.com/kingsleynwafor54/shopping_cart_with_springboot) for more on the entire code structure in case you want to save time from copying code or have an error. Thanks for staying with me all the way. Do have a nice time!
+In this tutorial, we didn't integrate any other API for an actual business transaction that works with your bank account or credit card. Hopefully, we'll work on that in the next tutorial and use an actual database that could be used in real-life events. Be sure to check [Github](https://github.com/kingsleynwafor54/shopping_cart_with_springboot) for more on the entire code structure in case you want to save time from copying code or have an error. Thanks for staying with me all the way. Happy coding!
 ### Referrences
 - [Rapidapi](https://rapidapi.com/section.io/api/section-io/details)
 - [Getting Started with Stripe-springboot](https://www.section.io/engineering-education/stripe-springboot/)
-Happy coding!
