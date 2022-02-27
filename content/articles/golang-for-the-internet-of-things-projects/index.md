@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /is-golang-a-good-fit-for-the-internet-of-things-projects/
+url: /golang-for-the-internet-of-things-projects/
 title: Is Golang A Good Fit for the Internet of Things Projects?
 description: This article will look at Golang, its perks, and drawbacks for IoT solutions. It will also dig deeper into how Go and JavaScript compare when writing IoT projects.
 author: nelly-atieno
@@ -11,7 +11,7 @@ topics: [Containers]
 excerpt_separator: <!--more-->
 images:
 
-  - url: /engineering-education/is-golang-a-good-fit-for-the-internet-of-things-projects/hero.jpg
+  - url: /engineering-education/golang-for-the-internet-of-things-projects/hero.jpg
     alt: Is Golang A Good Fit for the Internet of Things Projects Hero Image
 ---
 [Golang](https://go.dev/) is an open-source programming language that emerged following developers' dissatisfaction with the available solutions at that time. 
