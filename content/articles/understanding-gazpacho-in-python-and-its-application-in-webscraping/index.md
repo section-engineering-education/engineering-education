@@ -4,9 +4,9 @@ status: publish
 published: true
 url: /understanding-gazpacho-in-python-and-its-application-in-webscraping/
 title: Understanding Gazpacho in Python and its Application in Web Scraping
-description: The objective of this tutorial is to help the reader understand the Gazpacho python library and how it is used in web scraping.
+description: The objective of this tutorial is to help the reader understand the Gazpacho Python library and how it is used in web scraping.
 author: antony-lia
-date: 2022-02-18T00:00:00-21:40
+date: 2022-02-27T00:00:00-01:22
 topics: [Languages]
 excerpt_separator: <!--more-->
 images:
@@ -19,7 +19,6 @@ It can be tedious and time-consuming to get large amounts of data online by sear
 This article will cover much concerning the web scrapping tool, its real-life applications, and how we can use the Gazpacho Python library for scraping web data.
 
 ### Table of contents
-- [Table of contents](#table-of-contents)
 - [Prerequisites](#prerequisites)
 - [Web Scraping](#web-scraping)
   - [Components of the Web Scraper](#components-of-the-web-scraper)
@@ -32,7 +31,7 @@ This article will cover much concerning the web scrapping tool, its real-life ap
 ### Prerequisites
 To follow along with this tutorial, the reader should:
 - Have a prior understanding of the basic Python concepts.
-- Ensure Python is installed on the machines.
+- Python is installed you machine.
 - Install Jupyter Notebook or another IDE/editor that can run Python.
 
 > Go to this [page](https://jupyter.org/install) to install Jupyter on your PC.
@@ -68,8 +67,8 @@ Web scraping involves a wide variety of programming technologies and techniques.
 - lxml - It is a fast, production-quality, and high-performance HTML and XML parsing library required since the request library cannot parse HTML retrieved from webpages.
 - Beautiful Soup - It is the most extensively used scraping library that produces parse trees for reading HTML and XML data. It automatically converts incoming and outgoing documents to Unicode and UTF-8.
 - Selenium - Is a collection of programs rather than a single tool. It's a free testing tool for web apps that works across several browsers and platforms.
-- Scrapy is a fast, open-source web crawling system. It uses selectors based on XPath to extract data from online pages.
-- Gazpacho is a modern, simple, and fast web scraping library.
+- Scrapy - Is a fast, open-source web crawling system. It uses selectors based on XPath to extract data from online pages.
+- Gazpacho - Is a modern, simple, and fast web scraping library.
 On this [site](https://www.analyticsvidhya.com/blog/2020/04/5-popular-python-libraries-web-scraping/), you can get to know more about the same.
 
 ### Gazpacho library
@@ -81,7 +80,6 @@ Once Python is installed and running, we can install the library using the `pip`
 
 ```bash
 pip install gazpacho
-
 ```
 ![Output](/engineering-education/understanding-gazpacho-in-python-and-its-application-in-webscraping/gazpacho-installation.jpg)
 
@@ -114,7 +112,7 @@ From the above statement, the first argument `p` in single quotes represents the
 
 Output:
 
-![Output](/engineering-education/understanding-gazpacho-in-python-and-its-application-in-webscraping/table-titles.jpg)
+![Output](/engineering-education/understanding-gazpacho-in-python-and-its-application-in-webscraping/tablet-titles.jpg)
 
 From the above output, we can get text data from the structured HTML data, using the `.text` attribute. Let's get more details concerning the tablets; titles, descriptions, and prices, by defining a function to display the structured and clear HTML data as shown below:
 
@@ -135,9 +133,9 @@ From the code above, we have used the partial name of the class in the tag and s
 
 Output:
 
-![Output](/engineering-education/understanding-gazpacho-in-python-and-its-application-in-webscraping/final_output.jpg)
+![Output](/engineering-education/understanding-gazpacho-in-python-and-its-application-in-webscraping/final-output.jpg)
 
-Complete combined code:
+The complete code:
 
 ```python
 from gazpacho import get , Soup
