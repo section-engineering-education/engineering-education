@@ -3,11 +3,11 @@ layout: engineering-education
 status: publish
 published: true
 url: /golang-for-the-internet-of-things-projects/
-title: Is Golang A Good Fit for the Internet of Things Projects?
-description: This article will look at Golang, its perks, and drawbacks for IoT solutions. It will also dig deeper into how Go and JavaScript compare when writing IoT projects.
+title: Is Golang a Good Fit for the Internet of Things Projects?
+description: This article will look at Golang its perks, and drawbacks for IoT solutions. It will also dig deeper into how Go and JavaScript compare when writing IoT projects.
 author: nelly-atieno
-date: 2022-02-18T00:00:00-10:00
-topics: [Containers]
+date: 2022-02-27T00:00:00-13:00
+topics: []
 excerpt_separator: <!--more-->
 images:
 
@@ -31,16 +31,18 @@ There are several programming languages that developers can use to integrate IoT
 Besides, Golang's backward compatibility is a feature that makes it a popular option for use with IoT. The promise to implement this feature would make Golang's newer versions compatible with the old versions. As Golang undergoes updates to new software versions, say, `v1.2.3`, it should remain compatible with older ones like `v1.2.1` and `v1.1.5`.
 
 #### Utility
-Golang's built-in concurrency is significant in enhancing its ability to fully utilize the advantages of hardware in ways that many other programming languages cannot. Concurrency allows Golang to support a large number of connections simultaneously. This ability makes developers prefer this programming language when building the communication layer of an IoT system. Golang can utilize 100% of the control processing unit (CPU), enhancing the rate of providing the required outcomes.
+Golang's built-in concurrency is significant in enhancing its ability to fully utilize the advantages of hardware in ways that many other programming languages cannot. Concurrency allows Golang to support a large number of connections simultaneously. 
 
-With Golang, you can build highly scalable systems that serve several users smoothly and continually. This programming language ships clean code quickly, considering its neat built-in programming features. So, code runs fast without experiencing interruptions. In that way, you can build robust software and manage them with ease.
+This ability makes developers prefer this programming language when building the communication layer of an IoT system. Golang can utilize 100% of the control processing unit (CPU), enhancing the rate of providing the required outcomes.
 
-Golang makes it straightforward to access development tools as an open-source programming language. You can access several editors, integrated development environments (IDEs), and plugins downloadable from [Github](https://github.com/golang/go/wiki/IDEsAndTextEditorPlugins). Also, there are several available cloud-based IDEs compatible with Golang.
+With Golang, you can build highly scalable systems that serve several users smoothly and continuously. This programming language ships clean code quickly, considering its neat built-in programming features. So, code runs faster without experiencing interruptions. In that way, you can build robust software and manage them with ease.
+
+Golang makes it straightforward to access development tools as an open-source programming language. You can access several editors, integrated development environments (IDEs), and plugins downloadable from [GitHub](https://github.com/golang/go/wiki/IDEsAndTextEditorPlugins). Also, there are several available cloud-based IDEs compatible with Golang.
 
 Some of Golang's utilities and tools include:
 - Delve: a debugger for Golang language.
 - Excelize: a Golang library for reading and writing MS excel files.
-- Go releaser, which delivers Golang binaries efficiently.
+- Go releaser: this delivers Golang binaries efficiently.
 - Resty: a simple Golang HTTP library.
 - Godropbox: a library for writing Golang services.
 - Sling: a Golang HTTP client library for sending API requests.
@@ -48,7 +50,7 @@ Some of Golang's utilities and tools include:
 These utilities, among others, enhance the functionality of Golang.
 
 #### Ease of Use
-Golang's built-in concurrency makes it easy to write programs. In comparison to other programming languages, Golang is easier to learn and understand. Its syntax is a little bit smaller and simpler to learn. An individual with a background in C-language syntax can study and comprehend Golang independently. Most of the language's semantics are also simple to use.
+Golang's built-in concurrency makes it easier to write programs. In comparison to other programming languages, Golang is easier to learn and understand. Its syntax is a little bit smaller and simpler to learn. An individual with a background in C-language syntax can study and comprehend Golang independently. Most of the language's semantics are also simple to use.
 
 It is a language that is relatively comfortable for a beginning programmer. One does not have to spend much time paging through reference documentation.
 
@@ -80,7 +82,7 @@ Golang has existed for almost ten years since Google released the first open-sou
 Golang's lack of generics makes it difficult for developers familiar with other languages like JavaScript to adapt. This limitation bars them from reusing their code. Despite its top-class functions, if developers write functions like `filter` or `reduce` in a specific collection type, they may not reuse those functions. The only way out is to keep writing more and more code, and developers may not find this ideal.
 
 #### Poor library support
-Golang's library support needs improvements. Its API integrates with Contentful. Moreover, since Contentful lacks an officially supported Golang software development kit, a developer must write complex code to parse data from Contentful. The developer may have to rely on third-party libraries, which may cause inconvenience.
+Golang's library support needs improvements. Its API integrates with Contentful. Moreover, since Contentful lacks an officially supported Golang software development kit, a developer must write complex code to parse data from Contentful. The developer may have to rely on third-party libraries, which may cause inconveniences.
 
 #### Virtual machine (VM) dependencies
 Golang's standalone binaries are pretty large, and this is because they include the VM power. So, a single word can take as much space as 2 megabytes. Despite employing several methods to compress the binaries, its RAM cannot sustain a server running several code versions. Besides, Golang allows the expression of dependencies in the same file containing the dependent code. That might appear as a merit, but programmers do not usually indicate the specific versions of dependencies.
@@ -93,10 +95,12 @@ Google's Golang is increasingly popular among beginner developers who find it si
 
 Experienced developers are unwilling to migrate to Golang because of its limitations, including an immature community and failure to support generics. Even so, Golang's facilitation of Internet of Things projects could phase out JavaScript from IoT. A favorable Golang popularity trend is showing, and soon, many developers may adopt it.
 
+Happy learning!
+
 ### Further reading
 - [Golang - Programming Basics](/engineering-education/golang-part-2-programming-basics/)
 - [How to build a REST-API using Golang and PostreSQL](/engineering-education/build-a-rest-api-application-using-golang-and-postgresql-database/)
 
-Happy learning!
+
 ---
 Peer Review Contributions by: [Briana Nzivu](/engineering-education/authors/briana-nzivu/)
