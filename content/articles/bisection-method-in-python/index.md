@@ -1,5 +1,20 @@
-### A Beginner's Guide to Nonlinear Optimization with Bisection Algorithm 
+---
+layout: engineering-education
+status: publish
+published: true
+url: /bisection-method-in-python/
+title: A Beginner's Guide to Nonlinear Optimization with Bisection Algorithm 
+description: This tutorial will guide you on nonlinear optimization with Bisection algorithm. 
+author: stanley-juma 
+date: 2022-02-27T00:00:00-11:56
+topics: [Languages, Python]
+excerpt_separator: <!--more-->
+images:
+  - url: /engineering-education/bisection-method-in-python/hero.jpg
+    alt: A Beginner's Guide to Nonlinear Optimization with Bisection Algorithm Hero Image
+---
 Function optimization involves finding the best solution for an objective function from all feasible solutions. The optimal solution is achieved through the minimization of the error function. 
+<!--more-->
 In polynomial error function optimization, input values for which the error function is minimized are called zeros or simply roots of such function. We usually establish the cost function from the hypothesis, which we then minimize i.e. find the unknown values of the parameters that minimize the cost function.
 
 In practice, where we deal with massive datasets, models tend to have many parameters that need to be estimated. This parameter makes the cost function have many parameters that need to be evaluated and thus impossible to do manually. However, well-defined algorithms can be utilized and approximate these parameters to the required accuracy iteratively. 
@@ -210,3 +225,6 @@ From the above plot, it's clear that a root exists around $x=1.7$. From the iter
 In this article, we have looked at the Bisection method. First, we defined what this algorithm is and how it works. Then we looked at its major limitation, and finally, we were able to see how this algorithm is implemented in python. I hope you understood and enjoyed reading this tutorial.
 
 Happy coding!
+
+---
+Peer Review Contributions by: [Jethro Magaji](/engineering-education/authors/jethro-magaji/)
