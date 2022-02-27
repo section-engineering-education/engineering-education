@@ -20,13 +20,13 @@ This guide aims to introduce the concept of logging using the Go programming lan
 
 ### What is logging
 
-When you have created an application for production, a wide range of problems can happen that are out of your control and unexpected. The hardest part of fixing such problems is identifying where the problem is. The same application may also require reports showing how your users are interacting with diffrent modules and services of your application. And whenever things go wrong, you want to know what's actually happened to your application codebase. In this case, you would want the same application to give you feedback behind the scenes of your code execution.
+When you have created an application for production, a wide range of problems can happen that are out of your control and unexpected. The hardest part of fixing such problems is identifying where the problem is. The same application may also require reports showing how your users are interacting with different modules and services of your application. And whenever things go wrong, you want to know what's happened to your application codebase. In this case, you would want the same application to give you feedback behind the scenes of your code execution.
 
 The concept of logging tries to solve this for you. It leaves a trail of breadcrumbs. So whenever something goes wrong, you can determine the cause at the right time and solve it before it messes up your application. Logging allows you to write your application status messages to files, databases, or other output streams. These messages contain information on which parts of your code have been executed and what problems may have arisen.
 
 ### Why logging
 
-As a developer, logging plays a critical role in fixing an error in your application. It helps you figure out which section of your code is actually causing an issue. This essentially helps you debug your application by letting you track step by step execution of your application. There are several tools that we can use for debugging. However, logging messages is arguably one of the most efficient ways to debug your code.
+As a developer, logging plays a critical role in fixing an error in your application. It helps you figure out which section of your code is causing an issue. This essentially helps you debug your application by letting you track step by step execution of your application. There are several tools that we can use for debugging. However, logging messages is arguably one of the most efficient ways to debug your code.
 
 To help you prioritize which code issues need more attention, logging classified logging messages to different logging levels. A logging level acts as a message filter. These logging include Trace < Debug < Info < Warn < Error < Fatal, based on the priority order.
 
@@ -34,9 +34,9 @@ Logging can be applied to almost any programming language. Let's dive in and see
 
 ### Set up logging for Go apps
 
-First, you need to initialize a Go application on your computer. Thus you need to Go install. Check Golang installation in case you haven't installed it yet. Once installed, run `go version` to check if Go has been actually installed. Then create and navigate to a project folder and initialize Go using `go mod init go-logging-app`. This will set up ready to write some Go code.
+First, you need to initialize a Go application on your computer. Thus you need to Go install. Check Golang installation in case you haven't installed it yet. Once installed, run `go version` to check if Go has been installed. Then create and navigate to a project folder and initialize Go using `go mod init go-logging-app`. This will set up ready to write some Go code.
 
-Go has a number of standard packages that allow you to set loggers in your application. However, Go has a logging package built for native Golang.
+Go has several standard packages that allow you to set loggers in your application. However, Go has a logging package built for native Golang.
 
 To set up a basic log with Go, create a `main.go` at the root of your project folder. To get started doing simple logging, you can use a [log](https://pkg.go.dev/log) package to create a simple base logger. Go ahead and add the following to your `main.go` file.
 
@@ -112,7 +112,7 @@ func SetLogFile() *os.File {
 
 This will create a directory `logs`. Here we are setting a file name to be generated based time the log is a message created. In this case, we will create a file and name it to the current date of the saved log. For example, `29-January-2022.log`.
 
-Let's now the function that will execute diffrent log levels.
+Let's now the function that will execute different log levels.
 
 ```go
 func (l *LogDir) Info() *log.Logger {
@@ -274,12 +274,12 @@ You can choose to use the following native logging libraries:
 - fmt - [fmt](https://pkg.go.dev/fmt) can be used to print code executions such as variables, errors, and functions. It uses the `fmt.Printf` to print logs in your application, just like the log module.
 - Context -  [context](https://docs.newrelic.com/docs/logs/logs-context/configure-logs-context-go/) is a native log management module for Go. Check this [guide and get started using context](<https://www.cockroachlabs.com/blog/enriching-log-messages-using-go-contexts/>) to control log messages for your application.
 
-Apart from these amazing native libraries, the Go ecosystem has diffrent third-party and open-source libraries that you can still choose to use for log management. They include:
+Apart from these amazing native libraries, the Go ecosystem has different third-party and open-source libraries that you can still choose to use for log management. They include:
 
-- Zap - [Zap](https://pkg.go.dev/go.uber.org/zap#section-readme) is a structured and leveled logging package for Go applications. Its main core is to produce fast logging middleware by avoiding serialization overheads.
-- Zerolog - [Zerolog](https://github.com/rs/zerolog) provides loggers that have JSON output.
-- Logrus - [Logrus](https://github.com/sirupsen/logrus) provides structured loggers that are compatible with native/standard libraries such as a log to help you scale logging processes.
-- Apex/log - [apex/log](https://github.com/sirupsen/logrus) is inspired by Logrus. It adds more [handlers](https://pkg.go.dev/github.com/apex/log?utm_source=godoc#Handler) to Logrus to handle log events. This [handlers includes](https://github.com/apex/log#handlers) text colored output, JSON handler output, CLI output, level filter handler, etc
+- [Zap](https://pkg.go.dev/go.uber.org/zap#section-readme) is a structured and leveled logging package for Go applications. Its main core is to produce fast logging middleware by avoiding serialization overheads.
+- [Zerolog](https://github.com/rs/zerolog) provides loggers that have JSON output.
+- [Logrus](https://github.com/sirupsen/logrus) provides structured loggers that are compatible with native/standard libraries such as a log to help you scale logging processes.
+- [Apex/log](https://github.com/sirupsen/logrus) is inspired by Logrus. It adds more [handlers](https://pkg.go.dev/github.com/apex/log?utm_source=godoc#Handler) to Logrus to handle log events. This [handlers includes](https://github.com/apex/log#handlers) text colored output, JSON handler output, CLI output, level filter handler, etc
 
 Chick this guide to [learn and compare](https://blog.logrocket.com/five-structured-logging-packages-for-go/) which of the package features best fits your log structures.
 
