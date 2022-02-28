@@ -102,18 +102,12 @@
         {{ else }}
           {{ $articlePermalink = .Permalink }}
         {{ end }}
-        {{ print $articlePermalink }}
-        {{ print $.Site.Params.env }}
-        {{ print $.Site.BaseURL }}
 
         <script defer type="text/javascript">
           document.addEventListener("DOMContentLoaded", async function() {
 
             if (await unleash.isEnabled("section.io.hyvorTalk", {}, false)) {
-              console.log('fetching...')
               document.getElementById('insightsData-{{ $elem_index }}').classList.add('enabled');
-
-
 
               fetch('https://talk.hyvor.com/api/v1/page/?page_identifier={{ $articlePermalink }}&website_id={{ $hyvorId }}')
                 .then(response => response.json())
