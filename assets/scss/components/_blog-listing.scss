@@ -134,10 +134,10 @@
 
     &-content {
       flex: 0 1 auto;
-      max-width: calc(100% - 145px);
+      max-width:100%;
 
       @include mq($from: $breakpoint-medium) {
-        max-width: calc(67% - 145px);
+        max-width: 67%;
       }
 
       @include mq($to: $breakpoint-medium) {
