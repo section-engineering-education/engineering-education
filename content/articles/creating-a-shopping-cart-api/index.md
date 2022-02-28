@@ -171,13 +171,12 @@ public class ProductDao {
 ```
 N/B At the top of the class, you must put the `@Repository` annotation to let spring know that that particular class is a repository that maps to entities to the database.
 ### Creating the service layer
-The service layer is where we create our interface and also implement it. This layer contains all our business logic and you must always but the `@Service` at either in the interface or the implementation. Now, we will have a look at our interfaces and later their implementations.
+The service layer is where we create our interface and also implement it. This layer contains all our business logic and you must always put the `@Service` at either in the interface or the implementation. Now, we will have a look at our interfaces and later their implementations.
 The service layer contains the following interfaces:
-#### CartServiceInterface
+#### CartService
 ```java
-public interface cartService {
+public interface CartService {
     void addProductToCartByCustomer(Long id, Product product);
-
     void addProductToCartByAdmin(Long id, Product product);
     void removeProductsFromCartByCustomer(Long id, Product product);
     void removeProductsFromCartByAdmin(Long id, Product product);
@@ -189,9 +188,9 @@ public interface cartService {
     void refresh();
 }
 ```
-#### DataServiceInterface
+#### DataService
 ```java
-public interface dataService {
+public interface DataService {
     Customer registerCustomer(Customer customer);
     Admin registerAdmin(Admin admin);
     List<Customer> gettingAllCustomers();
@@ -253,7 +252,7 @@ From here, you will see how we code to the interface. Any method that is in the 
 ```java
 package com.cart.shopping.service;
 @Service
-public class DataServiceImpl implements dataService {
+public class DataServiceImpl implements DataService {
     @Autowired
     private CustomerDao customerRepo;
     @Autowired
@@ -324,7 +323,7 @@ public class DataServiceImpl implements dataService {
 }
 
 ```
-#### Cart Package
+### Cart Package
 Next up in the agenda is to create a cart package and in the cart package we create a cart object (class) to carry out certain functions with it methods:
 ```java
 @Component
@@ -366,7 +365,7 @@ The last package to review is the controller package. In the controller package 
 ```java
 @RestController
 @RequestMapping("cart")
-public class controller {
+public class Controller {
     @Autowired
     DataServiceImpl dataService;
     @Autowired
@@ -434,23 +433,22 @@ Create a class and call it `CustomerTest`. Use `@Autowire` to insert the depende
 ```java
 @SpringBootTest
 @Slf4j
-public class customerTest {
+public class CustomerTest {
 
-        @Autowired
-        private DataServiceImpl dataService;
-        @Autowired
-        private CartServiceImpl cart;
+    @Autowired
+    private DataServiceImpl dataService;
+    @Autowired
+    private CartServiceImpl cart;
 
-        @Autowired
-        private CustomerDao customerDao;
-
+    @Autowired
+    private CustomerDao customerDao;
 
 
     @Test
     void createCustomer() {
         customerDao.refresh();
-       Customer customer=new Customer(1L, "Kingsley", "Chukwudi", new BigDecimal("2000"));
-       dataService.registerCustomer(customer);
+        Customer customer=new Customer(1L, "Kingsley", "Chukwudi", new BigDecimal("2000"));
+        dataService.registerCustomer(customer);
         assertEquals(1, customerDao.totalNumberOfCustomers());
 
     }
@@ -550,17 +548,14 @@ public class customerTest {
 }
 ```
 ### Using Postman to verify the output on the web
-First things first go to learning.postman.com and download the version of postman that suits your operating system. 
-You will have to do the necessary sign-in if it's your first time.
-You will have to create a new environment by clicking under the `Scratch Pad`.
-On the three(3) dots in front of the environment, click on it to rename the environment and start operation.
-You click on the plus or add button in front of your environment and then a new interface will appear on your screen.
-Postman provides those HTTP methods that we already have in our controller that help us perform operations on request, Examples are the POST, PUT, PATCH, GET, DELETE, etc.
-Now you are making these operations from your local machine, so you start with localhost: port-number, followed by the string on your controller, and the string in the individual method, eg localhost:8090/cart/create_customer
+First things first go to learning.postman.com and download the version of postman that suits your operating system. You will have to do the necessary sign-in if it's your first time. You will have to create a new environment by clicking under the `Scratch Pad`. On the three (3) dots in front of the environment, click on it to rename the environment and start operation. You click on the plus or add button in front of your environment and then a new interface will appear on your screen. Postman provides those HTTP methods that we already have in our controller that help us perform operations on request, Examples are the POST, PUT, PATCH, GET, DELETE, etc. Now you are making these operations from your local machine, so you start with localhost: port-number, followed by the string on your controller, and the string in the individual method, eg localhost:8090/cart/create_customer
+
 ![shopping_api](api.JPG)
+
 ![shopping_api1](api2.JPG)
+
 ![shopping_api2](payment.JPG)
-#### Conclusion
+### Conclusion
 In the end, we've seen how to code to an interface, how to write a unit test, how to create an endpoint, and how to use postman to view our endpoint. Also, we discussed how we used field dependency injection and not constructor dependency injection which will still suffice. Furthermore, we also added products to our cart and the cart could calculate the cost of products in the cart since the products have an attribute of price. 
 
 In this tutorial, we didn't integrate any other API for an actual business transaction that works with your bank account or credit card. Hopefully, we'll work on that in the next tutorial and use an actual database that could be used in real-life events. Be sure to check [Github](https://github.com/kingsleynwafor54/shopping_cart_with_springboot) for more on the entire code structure in case you want to save time from copying code or have an error. Thanks for staying with me all the way. Happy coding!
