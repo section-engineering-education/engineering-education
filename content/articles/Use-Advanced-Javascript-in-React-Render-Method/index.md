@@ -4,6 +4,8 @@ date:2/19/2022
 
 #### Topics:Reactjs
 
+![Reactjs](/engineering-education/content/articles/Use-Advanced-Javascript-in-React-Render-Method/hero.png "by the end, you will be able to do this")
+
 ### Introduction to React Render Method
 ---
 
