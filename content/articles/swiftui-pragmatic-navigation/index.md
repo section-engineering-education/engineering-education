@@ -1,14 +1,15 @@
 ### Introduction
-[SwiftUI](https://developer.apple.com/swiftui/) is a new way to build user interfaces in Swift. SwiftUI is a declarative framework that allows you to build your UI declaratively, using a declarative syntax. SwiftUI is data-driven, as opposed to the UIKIt framework that is imperative. In this article, we will look at different methods of navigation flow and view construction ins SwiftUI. Later in this article, we will look at the MVVM pattern that will allow us to abstract the navigation logic from the view.
+[SwiftUI](https://developer.apple.com/swiftui/) is a new way to build user interfaces in Swift. SwiftUI is a declarative framework that allows you to build your UI declaratively, using a declarative syntax. SwiftUI is data-driven, as opposed to the UIKIt framework that is imperative. In this article, we will look at different methods of navigation flow and view construction ins SwiftUI. Later in this article, we will look at the MVC pattern that will allow us to abstract the navigation logic from the view.
 
 ### Table of Contents
 - [Introduction](#introduction)
 - [Table of Contents](#table-of-contents)
 - [Prerequisites](#prerequisites)
+- [MVC pattern](#mvc-pattern)
 - [Application setup](#application-setup)
-- [View Group](#view-group)
-  - [View Router distribution](#view-router-distribution)
-- [MVVM pattern](#mvvm-pattern)
+  - [Controller](#controller)
+  - [Model](#model)
+  - [View](#view)
 - [Conclusion](#conclusion)
 ### Prerequisites
 To follow along with this article, you need the following:
@@ -16,120 +17,177 @@ To follow along with this article, you need the following:
 - [Apple developer tools](https://developer.apple.com/download/more/) installed on your computer.
 - [Xcode](https://developer.apple.com/xcode/) and [Swift](https://swift.org/) installed on your computer.
 
+### MVC pattern
+Model View Controller [MVC](https://en.wikipedia.org/wiki/Model%E2%80%93view%E2%80%93controller) is a design pattern allows us to modularize our application and abstract the business logic from the view. We will implement the MVC pattern in our application to abstract the navigation logic from the view and achieve the pragmatic SwiftUI navigation.
+
 ### Application setup
 1. On Xcode, create a new application named "SwiftUI_Navigation". Make sure you have selected `SwiftUI` as the project type.
 2. In the project directory, create a new group named `views` and a new SwiftUI view file named `HomeView.swift` in the `views` group.
 3. Update the `HomeView.swift` file with the following code:
-```swift
-import Foundation
-import SwiftUI
 
-struct Home: View {
-    // @State is a property wrapper that allows you to store a value in a variable. Properties of a struct are always immutable, to make them mutable, we use the `@State` property wrapper.
-    @State var DetailPage: Bool = false
+```swift
+struct HomeView: View {
+    @State private var activeIndex = 0
+
+    var body: some View {
+        TabView(selection: $activeIndex) {
+            Button("Tab B") {
+                activeIndex = 1
+            }
+                    .tag(0)
+                    .tabItem {
+                        Label("A", systemImage: "a.circle")
+                    }
+
+            Button("Tab A") {
+                activeIndex = 0
+            }
+                    .tag(1)
+                    .tabItem {
+                        Label("B", systemImage: "b.circle")
+                    }
+        }
+    }
+}
+```
+- `@State` is a SwiftUI property that allows you to store a value in a view. It is not possible to hold a variable whose value changes in a SwiftUI view by default. To overcome this problem, we use the `@State` property wrapper.
+- The above code creates a `TabView` that allows you to switch between two tabs. However, this kind of navigation leads to a lot of boilerplate code in the SwiftUI view. Whenever the number of navigation destinations increases, let's say having 10 screens to navigate. To solve this problem, we can abstract the routes to a controller that will handle navigation.
+
+#### Controller
+1. On xcode, create a new Swift file name `Navigation.swift` and add the code snippet below.
+```swift
+enum Tab {
+    case Tab_a
+    case Tab_b
+    case Tab_c
+}
+
+class HomeController: ObservableObject {
+    @Published var active = Tab.Tab_a
+
+    func navigate(tab: Tab) {
+        active = tab //sets the current active tab from the View file
+    }
+}
+```
+In the code snippet above:-
+- The enum `Tab` will store all the navigation destinations' names. Storing the destinations as enums makes it possible to keep the tabs' current state and navigate from any screen.
+- The `HomeController` class extends the `ObservableObject` since we have to keep track of the currently active tab on the SwiftUI view.
+- `@Published` annotation sets the variable `active` to be observable, making it possible for our SwiftUI views to observe the change and navigate to the select screen.
+
+#### Model
+1. Create a new Swift file named `News.swift` and add the code snippet below.
+```swift
+struct News: Identifiable {
+    let id = UUID() //Autogenerated Value
+    let title: String
+    let description:String
+}
+
+```
+In the code snippet above, we have the news model that holds the news item. The `News` class extends `Identifiable` to make it possible to have a unique `id` that we can use to identify a news item.
+
+#### View
+1. Create a new Swift file named `NewsView.swift` and add the code snippet below.
+```swift
+struct NewsView: View {
+    var news: News //Single news item
+    var body: some View {
+        VStack {
+            Text(news.title)
+                    .font(.headline)
+            Text(news.description)
+                    .font(.body)
+        }
+    }
+}
+```
+- In the code snippet above, we create a view that will hold a single news item in the news list home screen.
+
+2. Create a SwiftUI file named `TabAView.Swift` and add the code snippets below.
+```swift
+struct TabAView: View {
+    @EnvironmentObject private var controller: HomeController
+    //We create a dummy list of news items. In a real application, this would come from an API
+    let news = [
+        News(title: "News A", description: "DescriptionA"),
+        News(title: "News A", description: "DescriptionA"),
+        News(title: "News A", description: "DescriptionA"),
+        News(title: "News A", description: "DescriptionA")
+    ]
 
     var body: some View {
         NavigationView {
             VStack {
-                Button("Navigate to Details") {
-                    func doSomethingAsync() {
-                        self.DetailPage = true
-                    }
+                Text("Home")
+                        .font(.body)
+                Spacer()
+                Button("Search Items") {
+                    controller.navigate(tab: .Tab_b)//navigating to the next view
                 }
-                NavigationLink(
-                        destination: DetailPage(
-                                viewModel: .init(
-                                        userRepo: .init()
-                                )
-                        ),
-                        isActive: $DetailPage,
-                        label: {
-                            EmptyView()
-                        }
-                )
+                //List of news Items
+                List(news) { newsItems in
+                    NewsView(news: newsItems)
+                }
             }
+
         }
     }
 }
+
 ```
-From the design above, we can easily spot the following issues:
-- `Home` view manages the state of the `DetailPage` view.
-- `DetailPage` view cannot be tested independently when performing a mock test.
-- `Home` view constructs the `DetailPage` view along with the dependencies it requires to run.
-
-In as much as there are frameworks like [SwiftUIRouter](https://github.com/frzi/SwiftUIRouter)
-that already works on top of the SwiftUI navigation system to provide the navigation similar to UIKit. We will maintain the default SwiftUI navigation system to achieve the type and null safety feature of SwiftUI.
-
-We are going to use the [MVVM](https://en.wikipedia.org/wiki/Model%E2%80%93view%E2%80%93view_model) pattern to abstract the navigation logic from the view, and this will also allow us to achieve the following:
-- Enable dynamic view construction, where the business logic determines the view to be constructed.
-- Enable loose coupling between `Home` view and `DetailPage` view; this makes it easy to perform a mock test.
-- Scopes down the route object from the app domain to the local domain to enable application modularity.
-
-### View Group
-First, we will abstract the navigation logic from the view files. In the view group, create a new Swift file named `AppRoute.swift` and add the following code:
+- `@EnvironmentObject` annotation is a Swift wrapper used on variables accessed by several views in the application. Whenever the observable variable in the `HomeController` changes, the view files should be able to update the value of the `@EnvironmentObject` variable.
+We can also navigate to the next view through the `NavigationLink` provided by SwiftUI and a button click, as we can see in the above code snippet.
+3. Create a new SwiftUI file named `TabBView.swift` and add the code snippet below.
 ```swift
-protocol AppRoute {
-    associatedtype Route
-    associatedtype View: SwiftUI.View
+struct TabBView: View {
+    @EnvironmentObject private var controller: HomeController
+    @State private var search = ""
 
-    @ViewBuilder func view(for route: Route) -> Self.View
-}
-```
-- The `@ViewBuilder` attribute is used to indicate that the view builder function is a view builder function.
-- The `AppRoute` protocol defines a `view` method that takes a `Route` object as an argument. The `view` method returns a `View` object.
-
-With this implementation, `Route` will be a Swift enum with the `Home` and `DetailPage` views as the cases.
-
-Create a new Swift file named `Route.swift` and add the following code:
-```swift
-enum AppRoute {
-    case Home
-    case DetailPage
-}
-```
-- `AppRoute` is a Swift enum that contains all the Screens/Views in our project.
-
-```swift
-import Foundation
-import SwiftUI
-
-struct ViewRouter: AppRoute {
-    let environment: Environment<Any>
-
-    func view(for route: ViewRoute) -> some View {
-        switch route {
-        case .Home:
-            Home(router: self)
-
-        case .DetailPage:
-            DetailPage(
-                    router: self,
-                    viewModel: .init(
-                            userRepo: environment.userRepo
-                    )
-            )
-        }
-    }
-}
-```
-- `ViewRouter` is an `AppRoute` responsible for the navigation flow. From the `ViewRouter`, the dynamic navigation is performed depending on the route passed to the `ViewRouter`.'
-
-Create a new Swift file named `DetailPage.swift` and add the following code:
-```swift
-struct DetailPage: View {
     var body: some View {
         NavigationView {
-
+            Text("Searching \(search)")
+                    .searchable(text: $search)
+                    .navigationTitle("Search")
         }
     }
 }
 ```
-- `DetailPage` is a `View` that is responsible for the `DetailPage` view.
+- In the code snippet above, we create a SwiftUi view with a search field that can be used to search the news items.
+- `@State` annotation is a Swift wrapper that keeps the current state of variables whose values change. For example, whenever we input a character to the search text field, we store the current search text in the search variable.
 
-#### View Router distribution
+3. Finally, we need to update the `HomeView.swift` with the code snippet below.
 
-### MVVM pattern
-Model View ViewModel [MVVM]((https://en.wikipedia.org/wiki/Model%E2%80%93view%E2%80%93view_model)) is a design pattern that allows us to modularize our application and abstract the business logic from the view. We are going to implement the MVVM pattern in our application to abstract the navigation logic from the view and achieve the pragmatic SwiftUI navigation.
+```swift
+struct HomeView: View {
+    @StateObject private var homeController = HomeController()
+
+    var body: some View {
+        TabView(selection: $homeController.active) {
+            TabAView()
+                    .tag(Tab.Tab_a)
+                    .tabItem {
+                        Label("Tab A", systemImage: "house")
+                    }
+
+            TabBView()
+                    .tag(Tab.Tab_b)
+                    .tabItem {
+                        Label("Tab B", systemImage: "magnifyingglass")
+                    }
+
+            TabCView()
+                    .tag(Tab.Tab_c)
+                    .tabItem {
+                        Label("Tab C", systemImage: "gearshape")
+                    }
+        }
+                .environmentObject(homeController)
+    }
+}
+
+```
+- In the code snippet above, we are setting up the application tabs to enable us to navigate from one tab to another using SwiftUI tabs.
 
 ### Conclusion
-In this article, you have learned about the different ways of navigation flow and view construction in SwiftUI. You have also known the MVVM pattern that allows us to abstract away the navigation logic from the view. In addition, the MVVM pattern makes it easier to modularize the application, thus making it easier to maintain it.
+In this article, you have learned about the different ways of navigation flow and view construction in SwiftUI. You have also known the MVC pattern that allows us to abstract away the navigation logic from the view. In addition, the MVC pattern makes it easier to modularize the application, thus making it easier to maintain it. You can now complete the application's search functionality and implement the detail page. You can download the complete source code [here](https://replit.com/@okeloviolet/navigation).
