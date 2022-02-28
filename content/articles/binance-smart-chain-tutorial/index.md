@@ -2,7 +2,6 @@
 Blockchain networks that support smart contracts functionality are on the rise. Smart contracts are programs that live in a blockchain and are executed on demand. In a platform like Binance, we can use the Smart chain protocol to build decentralized apps in a cross-chain network. 
 
 ### Table of Contents
-- [Table of Contents](#table-of-contents)
 - [Goal](#goal)
 - [Pre-requisites](#pre-requisites)
 - [Why Binance Smart Chain?](#why-binance-smart-chain)
