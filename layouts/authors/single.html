@@ -105,21 +105,16 @@
 
         <script defer type="text/javascript">
           document.addEventListener("DOMContentLoaded", async function() {
-
-            if (await unleash.isEnabled("section.io.hyvorTalk", {}, false)) {
-              document.getElementById('insightsData-{{ $elem_index }}').classList.add('enabled');
-
-              fetch('https://talk.hyvor.com/api/v1/page/?page_identifier={{ $articlePermalink }}&website_id={{ $hyvorId }}')
-                .then(response => response.json())
-                .then(data => {
-                  console.log(data);
-                  if (data.status === true) {
-                    document.getElementById('comments-count-{{ $elem_index }}').innerText = data.data.comments_count;
-                    document.getElementById('likes-count-{{ $elem_index }}').innerText = data.data.reactions[0];
-                  }
-                })
-                .catch(err => console.log('Error: ', err))
-            }
+            fetch('https://talk.hyvor.com/api/v1/page/?page_identifier={{ $articlePermalink }}&website_id={{ $hyvorId }}')
+              .then(response => response.json())
+              .then(data => {
+                console.log(data);
+                if (data.status === true) {
+                  document.getElementById('comments-count-{{ $elem_index }}').innerText = data.data.comments_count;
+                  document.getElementById('likes-count-{{ $elem_index }}').innerText = data.data.reactions[0];
+                }
+              })
+              .catch(err => console.log('Error: ', err))
           });
         </script>
         

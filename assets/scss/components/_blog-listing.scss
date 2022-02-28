@@ -146,13 +146,9 @@
     }
 
     &-insights-data {
-      display: none;
+      display: flex;
       flex-direction: row;
       margin-top: 20px;
-
-      &.enabled {
-        display: flex;
-      }
 
       .data-point {
         height: 50%;
