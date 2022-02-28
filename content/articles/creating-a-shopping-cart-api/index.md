@@ -11,7 +11,6 @@ Most companies provide APIs for carrying out some tasks such as building an eCom
 1. To enable beginners in Spring Boot to find footing to be able to build projects
 2. To serve as a road map for more similar and complex projects
 3. To enable beginners to code to interface
-4. To encourage the reader always to write unit tests on every line of code
 ### Setting your spring boot project
 Firstly, go to [Spring Boot Initializer](https://start.spring.io/). There you will download a full template with the basic dependencies. The dependencies for this project are few; below is a list of what you will select:
 1. Project -> Maven Project
@@ -51,19 +50,16 @@ public class Admin {
         this.lastName = lastName;
     }
 }
-
-}
 ```
+
 #### Customer
 ```java 
 @Data
 public class Customer {
-
     private Long id;
-   private String firstName;
-   private String lastName;
-   private BigDecimal Balance;
-
+    private String firstName;
+    private String lastName;
+    private BigDecimal Balance;
 
     public Customer(Long id, String firstName, String lastName, BigDecimal balance) {
         this.id = id;
@@ -84,12 +80,9 @@ public class Product {
     public Product(String id, String productName, BigDecimal cost) {
         Id = id;
         this.productName = productName;
-
         this.cost = cost;
     }
-
     public Product() {
-
     }
 
     @Override
@@ -101,6 +94,7 @@ public class Product {
                 '}';
     }
 }
+
 ```
 These classes provide the features, attributes, or fields we will be needing for the creation of objects.
 ### Creating your repositories
@@ -109,17 +103,21 @@ The importance of creating a repository is to communicate to the database to man
 ```java
 @Repository
 public class AdminDao {
-    Map<Long, Admin> adminDao=new HashMap<>();
-    public Admin registerAdmin(Long id,Admin admin){
-      return   adminDao.put(id,admin);
+    Map<Long, Admin> adminDao = new HashMap<>();
+
+    public Admin registerAdmin(Long id, Admin admin) {
+        return adminDao.put(id, admin);
     }
-    public void removeAdmin(Long id){
+
+    public void removeAdmin(Long id) {
         adminDao.remove(id);
     }
-    public Admin getAdmin(Long id){
+
+    public Admin getAdmin(Long id) {
         return adminDao.get(id);
     }
-    public Map<Long,Admin> getAllAdmin(){
+
+    public Map<Long, Admin> getAllAdmin() {
         return adminDao;
     }
 }
@@ -129,25 +127,30 @@ public class AdminDao {
 @Repository
 public class CustomerDao {
 
-    Map<Long, Customer> customerDao=new HashMap<>();
-    public Customer registerCustomer(Long id,Customer customer){
-       return customerDao.put(id,customer);
+    Map<Long, Customer> customerDao = new HashMap<>();
+
+    public Customer registerCustomer(Long id, Customer customer) {
+        return customerDao.put(id, customer);
     }
-    public void removeCustomer(Long id){
+
+    public void removeCustomer(Long id) {
         customerDao.remove(id);
     }
-    public Customer getCustomer(Long id){
+
+    public Customer getCustomer(Long id) {
         return customerDao.get(id);
     }
 
-public int totalNumberOfCustomers(){
+    public int totalNumberOfCustomers() {
         return customerDao.size();
-}
-public Map<Long,Customer> gettingAllTheCustomers(){
+    }
+
+    public Map<Long, Customer> gettingAllTheCustomers() {
         return customerDao;
-}
+    }
 
 }
+
 ```
 #### ProductDao
 ```java
@@ -170,11 +173,11 @@ N/B At the top of the class, you must put the `@Repository` annotation to let sp
 ### Creating the service layer
 The service layer is where we create our interface and also implement it. This layer contains all our business logic and you must always but the `@Service` at either in the interface or the implementation. Now, we will have a look at our interfaces and later their implementations.
 The service layer contains the following interfaces:
-#### CartService
+#### CartServiceInterface
 ```java
-
-public interface CartService {
+public interface cartService {
     void addProductToCartByCustomer(Long id, Product product);
+
     void addProductToCartByAdmin(Long id, Product product);
     void removeProductsFromCartByCustomer(Long id, Product product);
     void removeProductsFromCartByAdmin(Long id, Product product);
@@ -183,12 +186,12 @@ public interface CartService {
     BigDecimal calculatePrice();
     int totalNumberOfItems();
     BigDecimal calculatingPurchase(Long id);
-}
+    void refresh();
 }
 ```
-#### DataService
+#### DataServiceInterface
 ```java
-public interface DataService {
+public interface dataService {
     Customer registerCustomer(Customer customer);
     Admin registerAdmin(Admin admin);
     List<Customer> gettingAllCustomers();
@@ -196,120 +199,11 @@ public interface DataService {
     void removeAdmin(Long id);
     List<Admin> getAllAdmin();
 }
-}
 ```
 From here, you will see how we code to the interface. Any method that is in the interface must be implemented in the implementation. In this code, I used the `@Service` annotation in the implementation. We have the following implementations of the two classes in our interface and they are:
 #### CartServiceImpl
 ```java
 @Service
-public class CartServiceImpl implements cartService{
-    @Autowired
-    private CustomerDao customerRepo;
-    @Autowired
-    private productDao productRepo;
-    @Autowired
-    private Cart cart;
-    @Autowired
-    private AdminDao adminDao;
-
-    @Override
-    public void addProductToCartByCustomer(Long id, Product product) {
-if(customerRepo.getCustomer(id)!=null){
-
-    cart.addToTheCart(product);
-}
-    }
-
-    @Override
-    public void addProductToCartByAdmin(Long id, Product product) {
-        if(adminDao.getAdmin(id)!=null){
-            cart.addToTheCart(product);
-        }
-    }
-
-    @Override
-    public void removeProductsFromCartByCustomer(Long id, Product product) {
-if(customerRepo.getCustomer(id)!=null){
-    cart.removeFromCart(product);
-}
-    }
-
-    @Override
-    public void removeProductsFromCartByAdmin(Long id, Product product) {
-        if(adminDao.getAdmin(id)!=null){
-            cart.removeFromCart(product);
-        }
-    }
-
-    @Override
-    public List<Product> checkAllTheProductsInTheCartByCustomer(Long id) {
-        List<Product> productList=new ArrayList<>();
-        if (customerRepo.getCustomer(id) != null) {
-            productList=cart.displayAllItems();
-        }
-            return productList;
-        }
-
-    @Override
-    public List<Product> checkAllTheProductsInTheCartByAdmin(Long id) {
-        List<Product> productList=new ArrayList<>();
-        if (adminDao.getAdmin(id) != null) {
-            productList=cart.displayAllItems();
-        }
-        return productList;
-    }
-
-
-    @Override
-    public BigDecimal calculatePrice() {
-        return cart.calculatePriceInCart();
-    }
-
-
-    @Override
-    public int totalNumberOfItems() {
-        return cart.totalNumberOfProducts();
-    }
-
-    @Override
-    public BigDecimal calculatingPurchase(Long id) {
-        return customerRepo.getCustomer(id).getBalance().subtract(calculatePrice());
-    }
-}
-```
-#### DataServiceImpl
-```java
-@Service
-public class DataServiceImpl implements dataService{
-    @Autowired
-    private CustomerDao customerRepo;
-    @Autowired
-    private AdminDao adminRepo;
-    @Override
-    public Customer registerCustomer(Customer customer) {
-
-        if(customerRepo.getCustomer(customer.getId())==null){
-           customer= customerRepo.registerCustomer(customer.getId(),customer);
-        }
-        else
-            System.out.println("Customer Already Exist");
-        return customer;
-    }
-
-
-    @Override
-    public Admin registerAdmin(Admin admin) {
-
-    if(adminRepo.getAdmin(admin.getId())==null) {
-
-        admin = adminRepo.registerAdmin(admin.getId(), admin);
-    }
-       else
-        System.out.println("Admin Already Exist");
-        return admin;
-
-    }
-
     @Override
     public List<Customer> gettingAllCustomers() {
         List<Customer> customerList=new ArrayList<>();
@@ -325,8 +219,9 @@ public class DataServiceImpl implements dataService{
         if(customerRepo.getCustomer(id)==null){
             System.out.println("Customer does not exist");
         }
-        else
+        else{
             customerRepo.removeCustomer(id);
+        }
     }
 
     @Override
@@ -334,8 +229,9 @@ public class DataServiceImpl implements dataService{
         if(adminRepo.getAdmin(id)==null){
             System.out.println("Customer does not exist");
         }
-        else
+        else{
             adminRepo.removeAdmin(id);
+        }
     }
 
     @Override
@@ -347,9 +243,88 @@ public class DataServiceImpl implements dataService{
         }
         return adminList;
     }
+     @Override
+    public void refresh(){
+        cart.setCartToNull();
+    }
 }
 ```
-### Cart Package
+#### DataServiceImpl
+```java
+package com.cart.shopping.service;
+@Service
+public class DataServiceImpl implements dataService {
+    @Autowired
+    private CustomerDao customerRepo;
+    @Autowired
+    private AdminDao adminRepo;
+
+    @Override
+    public Customer registerCustomer(Customer customer) {
+
+        if (customerRepo.getCustomer(customer.getId()) == null) {
+            customer = customerRepo.registerCustomer(customer.getId(), customer);
+        } else {
+            System.out.println("Customer Already Exist");
+        }
+        return customer;
+    }
+
+
+    @Override
+    public Admin registerAdmin(Admin admin) {
+
+        if (adminRepo.getAdmin(admin.getId()) == null) {
+
+            admin = adminRepo.registerAdmin(admin.getId(), admin);
+        } else {
+            System.out.println("Admin Already Exist");
+
+        }
+        return admin;
+    }
+
+    @Override
+    public List<Customer> gettingAllCustomers() {
+        List<Customer> customerList = new ArrayList<>();
+        for (int counter = 1; counter <= customerRepo.gettingAllTheCustomers().size(); counter++) {
+            Long l2 = (long) counter;
+            customerList.add(customerRepo.getCustomer(l2));
+        }
+        return customerList;
+    }
+
+    @Override
+    public void removeCustomer(Long id) {
+        if (customerRepo.getCustomer(id) == null) {
+            System.out.println("Customer does not exist");
+        } else {
+            customerRepo.removeCustomer(id);
+        }
+    }
+
+    @Override
+    public void removeAdmin(Long id) {
+        if (adminRepo.getAdmin(id) == null) {
+            System.out.println("Customer does not exist");
+        } else {
+            adminRepo.removeAdmin(id);
+        }
+    }
+
+    @Override
+    public List<Admin> getAllAdmin() {
+        List<Admin> adminList = new ArrayList<>();
+        for (int counter = 1; counter <= adminRepo.getAllAdmin().size(); counter++) {
+            Long l2 = (long) counter;
+            adminList.add(adminRepo.getAdmin(l2));
+        }
+        return adminList;
+    }
+}
+
+```
+#### Cart Package
 Next up in the agenda is to create a cart package and in the cart package we create a cart object (class) to carry out certain functions with it methods:
 ```java
 @Component
@@ -364,7 +339,6 @@ public class Cart {
             if (pro.getProductName().equalsIgnoreCase(productName)) ;
             productCart.remove(pro);
         }
-
     }
     public int totalNumberOfProducts(){
         return productCart.size();
@@ -382,6 +356,9 @@ public class Cart {
     public List<Product> displayAllItems(){
        return productCart;
     }
+    public void setCartToNull(){
+        productCart.clear();
+    }
 }
 ```
 ### Controller Package
@@ -394,64 +371,70 @@ public class controller {
     DataServiceImpl dataService;
     @Autowired
     CartServiceImpl cartService;
-   @PostMapping("/create_customer")
-   public Customer registerCustomer(@RequestBody Customer customer){
- return  dataService.registerCustomer(customer);
+
+    @PostMapping("/create_customer")
+    public Customer registerCustomer(@RequestBody Customer customer) {
+        return dataService.registerCustomer(customer);
     }
+
     @GetMapping("/get_all_customers")
-    public List<Customer> gettingAllList(){
-       return dataService.gettingAllCustomers();
+    public List<Customer> gettingAllList() {
+        return dataService.gettingAllCustomers();
     }
 
     @PostMapping("/create_admin")
-    public Admin registerAdmin(@RequestBody Admin admin){
-        return  dataService.registerAdmin(admin);
+    public Admin registerAdmin(@RequestBody Admin admin) {
+        return dataService.registerAdmin(admin);
     }
+
     @GetMapping("/get_all_admins")
-    public List<Admin> getAllAdmin(){
+    public List<Admin> getAllAdmin() {
         return dataService.getAllAdmin();
     }
+
     @PostMapping("/{id}/add_product")
-    public void addProducts(@PathVariable Long id ,@RequestBody Product product){
-         cartService.addProductToCartByCustomer(id,product);
+    public void addProducts(@PathVariable Long id, @RequestBody Product product) {
+        cartService.addProductToCartByCustomer(id, product);
     }
-@GetMapping("/cal_price")
-    public BigDecimal calculatingPrice(){
-       return cartService.calculatePrice();
-}
-@GetMapping("/{id}/payment")
-    public BigDecimal payment(@PathVariable Long id){
-       return cartService.calculatingPurchase(id);
-}
-@GetMapping("/{id}/view_all_product")
-    public List<Product> viewAllProducts(@PathVariable Long id){
-       return cartService.checkAllTheProductsInTheCartByCustomer(id);
-}
-@GetMapping("/{id}/view_all_productAdmin")
-    public List<Product> viewAllProduct(@PathVariable Long id){
-    return cartService.checkAllTheProductsInTheCartByAdmin(id);
+
+    @PutMapping("/{id}/add_product")
+    public void addProduct(@PathVariable Long id, @RequestBody Product product) {
+        cartService.addProductToCartByCustomer(id, product);
+    }
+
+    @GetMapping("/cal_price")
+    public BigDecimal calculatingPrice() {
+        return cartService.calculatePrice();
+    }
+
+    @GetMapping("/{id}/payment")
+    public BigDecimal payment(@PathVariable Long id) {
+        return cartService.calculatingPurchase(id);
+    }
+
+    @GetMapping("/{id}/view_all_product")
+    public List<Product> viewAllProducts(@PathVariable Long id) {
+        return cartService.checkAllTheProductsInTheCartByCustomer(id);
+    }
+
+    @GetMapping("/{id}/view_all_productAdmin")
+    public List<Product> viewAllProduct(@PathVariable Long id) {
+        return cartService.checkAllTheProductsInTheCartByAdmin(id);
+    }
+
+    @DeleteMapping("/{id}/delete_product")
+    public void delete(@PathVariable Long id, Product product) {
+        cartService.removeProductsFromCartByCustomer(id, product);
     }
 }
 ```
 N/B `@PostMapping` is for saving objects, `@GetMapping` is for retrieving data from the database, `@PatchMapping` and `@PutMapping` is for updating data, and `@DeleteMapping` is for deleting. Also, note that we annotate the fields of this class with `@Autowire` to inject its dependencies to avoid initializing new objects. This is done by using these same objects each time they're needed throughout the whole codebase.
-### Running the server
-```java
-@SpringBootApplication
-public class ShoppingApplication {
-
-    public static void main(String[] args) {
-        SpringApplication.run(ShoppingApplication.class, args);
-    }
-
-}
-```
-You have to click on the play button on the SpringBootApplication to run your server.
-### Unit testing
+### Integration testing
 Create a class and call it `CustomerTest`. Use `@Autowire` to insert the dependencies in the services you want to test.
 ```java
 @SpringBootTest
 @Slf4j
-public class CustomerTest {
+public class customerTest {
 
         @Autowired
         private DataServiceImpl dataService;
@@ -461,35 +444,32 @@ public class CustomerTest {
         @Autowired
         private CustomerDao customerDao;
 
-    @Test
-    void testThatCustomerIsNotNull() {
-        Customer customer = new Customer(1L, "Kingsley", "Chukwudi", new BigDecimal("2000"));
-        assertNotNull(customer);
-    }
+
 
     @Test
     void createCustomer() {
+        customerDao.refresh();
        Customer customer=new Customer(1L, "Kingsley", "Chukwudi", new BigDecimal("2000"));
        dataService.registerCustomer(customer);
         assertEquals(1, customerDao.totalNumberOfCustomers());
-        customerDao=null;
-        cart=null;
+
     }
 
     @Test
     void customerCanAddProductToCart() {
+        cart.refresh();
         Product product = new Product("1", "Sandine", new BigDecimal(1000));
-        Customer customer=new Customer( 1L, "Kingsley", "Chukwudi", new BigDecimal("2000"));
+        Customer customer=new Customer( 2L, "King", "Chukwudi", new BigDecimal("2000"));
         dataService.registerCustomer(customer);
-        cart.addProductToCartByCustomer(1L, product);
+        cart.addProductToCartByCustomer(2L, product);
         System.out.println(dataService.gettingAllCustomers());
         assertEquals(1, cart.totalNumberOfItems());
-        customerDao=null;
-        cart=null;
+
     }
 
     @Test
     void customerCanRemoveProduct() {
+        cart.refresh();
         Product product = new Product("1", "Sandine", new BigDecimal(1000));
         Product product2 = new Product("2", "SandineBread", new BigDecimal(1100));
         Customer customer=new Customer(1L, "Kingsley", "Chukwudi", new BigDecimal("2000"));
@@ -500,12 +480,13 @@ public class CustomerTest {
         assertEquals(3, cart.totalNumberOfItems());
         cart.removeProductsFromCartByCustomer(1L, product);
         assertEquals(2, cart.totalNumberOfItems());
-        cart=null;
+
 
     }
 
     @Test
     void calculatingAllTheProductsInTheCart() {
+        cart.refresh();
         Product product = new Product("1", "Sandine", new BigDecimal(1000));
         Product product2 = new Product("2", "SandineBread", new BigDecimal(1100));
         Customer customer=new Customer(1L, "Kingsley", "Chukwudi", new BigDecimal("2000"));
@@ -516,10 +497,10 @@ public class CustomerTest {
         assertEquals(3,cart.totalNumberOfItems());
 
         assertEquals(new BigDecimal( 3100), cart.calculatePrice());
-        customerDao=null;
     }
     @Test
     void addProductToCartByAdmin(){
+        cart.refresh();
         Product product = new Product("1", "Sandine", new BigDecimal(1000));
         Product product2 = new Product("2", "SandineBread", new BigDecimal(1100));
         Admin admin=new Admin(1L, "Kingsley","Nwafor");
@@ -528,10 +509,10 @@ public class CustomerTest {
         cart.addProductToCartByAdmin(1L, product2);
         cart.addProductToCartByAdmin(1L, product);
         assertEquals(3,cart.totalNumberOfItems());
-        cart=null;
     }
     @Test
     void removeProductsFromCartByAdmin(){
+        cart.refresh();
         Product product = new Product("1", "Sandine", new BigDecimal(1000));
         Product product2 = new Product("2", "SandineBread", new BigDecimal(1100));
         Admin admin=new Admin(1L, "Kingsley","Nwafor");
@@ -545,9 +526,11 @@ public class CustomerTest {
         System.out.println(cart);
         assertEquals(2,cart.totalNumberOfItems());
 
+
     }
     @Test
     void checkAllTheProductsInTheCartByCustomer(){
+        cart.refresh();
         Product product = new Product("1", "Sandine", new BigDecimal(1000));
         Product product2 = new Product("2", "SandineBread", new BigDecimal(1100));
         Product product3 = new Product("3", "SandineBread", new BigDecimal(1100));
@@ -557,7 +540,6 @@ public class CustomerTest {
         cart.addProductToCartByAdmin(1L, product2);
         cart.addProductToCartByAdmin(1L, product3);
         System.out.println(  cart.checkAllTheProductsInTheCartByCustomer(1L));
-        cart=null;
     }
     @Test
     void checkAllRegisteredAdmin(){
@@ -568,6 +550,13 @@ public class CustomerTest {
 }
 ```
 ### Using Postman to verify the output on the web
+First things first go to learning.postman.com and download the version of postman that suits your operating system. 
+You will have to do the necessary sign-in if it's your first time.
+You will have to create a new environment by clicking under the `Scratch Pad`.
+On the three(3) dots in front of the environment, click on it to rename the environment and start operation.
+You click on the plus or add button in front of your environment and then a new interface will appear on your screen.
+Postman provides those HTTP methods that we already have in our controller that help us perform operations on request, Examples are the POST, PUT, PATCH, GET, DELETE, etc.
+Now you are making these operations from your local machine, so you start with localhost: port-number, followed by the string on your controller, and the string in the individual method, eg localhost:8090/cart/create_customer
 ![shopping_api](api.JPG)
 ![shopping_api1](api2.JPG)
 ![shopping_api2](payment.JPG)
