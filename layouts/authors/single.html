@@ -147,8 +147,10 @@
               <p class="text-18-regular text-color">{{ .Summary | plainify | truncate 210 "..." }}</p>
 
               <div id="insightsData-{{ $elem_index }}" class="blog-listing-posts-item-insights-data">
-                <div class="data-point"><p><img class="icon" src="/images/comment-icon.png" alt="Article Comments" /></p><span id="comments-count-{{ $elem_index }}">0</span></div>
-                <div class="data-point"><p><img class="icon" src="/images/clapping-icon.png" alt="Article Likes" /></p><span id="likes-count-{{ $elem_index }}">0</span></div>
+                <div class="data-point">
+                  <p><img class="icon" src="{{ if eq $.Site.Params.env "local" }}/{{ else }}/engineering-education/{{ end }}images/comment-icon.png" alt="Article Comments" /></p><span id="comments-count-{{ $elem_index }}">0</span></div>
+                <div class="data-point">
+                  <p><img class="icon" src="{{ if eq $.Site.Params.env "local" }}/{{ else }}/engineering-education/{{ end }}images/clapping-icon.png" alt="Article Likes" /></p><span id="likes-count-{{ $elem_index }}">0</span></div>
               </div>
             </div>
 
