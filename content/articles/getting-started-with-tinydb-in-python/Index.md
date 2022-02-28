@@ -1,5 +1,21 @@
-### Introduction
-As a developer most of the projects you would work on, will require you to store data. TinyDB does not accept SQL-style queries, instead it retrieves the database files using a Python API. There's no need to set up a database server since everything is accessible directly through files saved on a storage device without the need for a server connection.
+---
+layout: engineering-education
+status: publish
+published: true
+url: /getting-started-with-tinydb-in-python/
+title: How to Get Started with TinyDB in Python
+description: This tutorial will walk you through how to get started with TinyDB in Python.
+author: catherine-karimi
+date: 2022-02-28T00:00:00-01:55
+topics: [Languages, Python]
+excerpt_separator: <!--more-->
+images:
+  - url: /engineering-education/getting-started-with-tinydb-in-python/hero.jpg
+    alt: How to Get Started with TinyDB in Python Hero Image
+---
+As a developer most of the projects you would work on, will require you to store data. TinyDB does not accept SQL-style queries, instead it retrieves the database files using a Python API. 
+<!--more-->
+There's no need to set up a database server since everything is accessible directly through files saved on a storage device without the need for a server connection.
 In this article, you will learn about TinyDB, which is built entirely in Python and has a plethora of essential utilities for querying and editing database files.
 
 ### Prerequisites
@@ -84,7 +100,11 @@ The 'id 1' of the newly generated object is returned by the 'insert()' function.
 After running the above code, a new "JSON" file called `students_db.json` will be created. The data is entered in the way described below.
 
 ```json
-{"_default": {"1": {"name": "Kennedy", "Course": "Nursing", "year": 3}}}
+{ 
+  "_default": {
+   "1": {"name": "Kennedy", "Course": "Nursing", "year": 3}
+   }
+ }
 ```
 
 `_default` is the name of the set table, and `1` is the `id` of the newly created object.
@@ -220,3 +240,6 @@ The complete code is available [here](https://github.com/cathy-254/getting-start
 In this article, we learned about TinyDB and how to perform CRUD operations on the database. [Here](https://tinydb.readthedocs.io/en/latest/) is where you can learn more about TinyDB.
 
 Happy Coding!
+
+---
+Peer Review Contributions by: [Jethro Magaji](/engineering-education/authors/jethro-magaji/)
