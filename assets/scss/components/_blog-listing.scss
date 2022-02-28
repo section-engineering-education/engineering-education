@@ -146,7 +146,7 @@
     }
 
     &-insights-data {
-      display: flex;
+      display: none;
       flex-direction: row;
       margin-top: 20px;
 
@@ -185,9 +185,7 @@
         margin-left: 0;
         flex-direction: row;
         border-left: 0;
-        // height: 100%;
         margin-top: 20px;
-        // background-color: $fill-dark-80;
 
         .data-point {
           flex-direction: row;
@@ -197,9 +195,6 @@
             margin-top: 0;
             margin-left: 10px;
           }
-          // &:first-of-type {
-          //   border-right: 1px #d8d8d8 solid;
-          // }
         }
       }
 
