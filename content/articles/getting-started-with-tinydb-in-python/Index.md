@@ -1,8 +1,9 @@
 ### Introduction
 As a developer most of the projects you would work on, will require you to store data. TinyDB does not accept SQL-style queries, instead it retrieves the database files using a Python API. There's no need to set up a database server since everything is accessible directly through files saved on a storage device without the need for a server connection.
-In this article, you will learn about TinyDB, which is built entirely in Python and has a plethora of essential utilities for querying and editing database files
+In this article, you will learn about TinyDB, which is built entirely in Python and has a plethora of essential utilities for querying and editing database files.
 
 ### Prerequisites
+To follow along with this tutorial, you need the following:
 - A basic Knowledge of Python.
 - A basic Knowledge of JSON.
 - Have an understanding of databases.
@@ -11,9 +12,9 @@ In this article, you will learn about TinyDB, which is built entirely in Python 
 - [Prerequisites](#prerequisites)
 - [Table of contents](#table-of-contents)
 - [What is TinyDB?](#what-is-tinydb)
-- [Why should you use TinyDB?](#why-should-you-use-tinydb)
-- [Why not use TinyDB?](#why-not-use-tinydb)
-- [Installation](#installation)
+- [Advantages of TinyDB](#advantages-of-tinydb)
+- [Disadvantage of TinyDB](#disadvantage-of-tinydb)
+- [Installation of TinyDB](#installation-of-tinydb)
 - [How to use TinyDB](#how-to-use-tinydb)
 - [Inserting data in TinyDB](#inserting-data-in-tinydb)
 - [Getting data from TinyDB](#getting-data-from-tinydb)
@@ -23,15 +24,19 @@ In this article, you will learn about TinyDB, which is built entirely in Python 
 - [Conclusion](#conclusion)
 
 ### What is TinyDB?
-TinyDB is a compact, document-oriented database designed in Python, it's ideal for simple personal projects. It has a nice and clean API that is simple to use.
+TinyDB is a compact, document-oriented database designed in Python. It has a nice and clean API that is simple to use, it is also good for building simple personal projects. 
 
-### Why should you use TinyDB?
-TinyDB is perfect for personal projects where you need to install some data. It is `Tiny` with less documentation. As highlighted above, it is `document oriented` meaning you can store any file with `.json` extension. TinyDB is written entirely in Python and does not require the use of an external server to run. It is the best choice for small projects.
+### Advantages of TinyDB?
+- It is perfect for personal projects where you need to install some data. 
+- It is `Tiny` with less documentation. 
+- It is `document oriented` meaning you can store any file with `.json` extension. 
+- TinyDB is written entirely in Python and does not require the use of an external server to run. 
+- It is the best choice for small projects.
 
-### Why not use TinyDB?
+### Disadvantage of TinyDB?
 TinyDB is not the right choice for building advanced features for your application, such as creating indexes for tables.
 
-### Installation
+### Installation of TinyDB
 TinyDB is easy to set up on your computer. Open your the command prompt and run:
 
 ```bash
@@ -41,11 +46,16 @@ pip install tinydb
 After you have completed the installation, you're ready to start coding.
 
 ### How to use TinyDB
-TinyDB is mostly used for database CRUD operations, such as
-'Create': inserting data into the database,
-'Read': this refers to the process of reading or obtaining data from a database,
-'Update': making changes to the database's data,
-'Delete': This command deletes data from a database.
+TinyDB is mostly used for database CRUD operations, such as;
+
+**Create:** inserting data into the database.
+
+**Read:** this refers to the process of reading or obtaining data from a database.
+
+**Update:** to make changes to the database's data.
+
+**Delete:** to delete data from a database.
+
 Now that everything is in place, we must import the TinyDB library's essential classes.We will utilize the Python Terminal to help us in our coding.
 
 ```python
@@ -53,10 +63,12 @@ from tinydb import TinyDB, Query
 db = TinyDB("students_db.json")
 ```
 
-From the code above you've just imported TinyDB and Query. Next, construct a TinyDB instance and provide the name of the file to it. This will generate a "students db.json" JSON file where our data will be stored.
+From the code above you've just imported TinyDB and Query. 
+
+Next, construct a TinyDB instance and provide the name of the file to it. This will generate a `students db.json` file where our data will be stored.
 
 ### Inserting data in TinyDB
-Since we are working with `JSON`, the data that we will be adding is a `python Dictionary`. Let's look at how we go about inserting data into the database.
+Since we are working with "JSON", the data that we will be adding is a "python Dictionary". Let's look at how we go about inserting data into the database.
 
 ```python
 # inserting only one data in the database
@@ -66,14 +78,17 @@ Since we are working with `JSON`, the data that we will be adding is a `python D
 1
 ```
 
-To begin, we generated a new dictionary named 'items' and set the variables of 'name,' 'Course,' and 'year' to 'Kennedy,' 'Nursing,' and '3', respectively. The data was then inserted into the database using the 'insert()' function. The 'id 1' of the newly generated object is returned by the 'insert()' function.
-After running the above code, a new `JSON` file called `students_db.json` will be created. The data is entered in the way described below.
+To begin, we generated a new dictionary named 'items' and set the variables of 'name,' 'Course,' and 'year' to 'Kennedy,' 'Nursing,' and '3', respectively. The data was then inserted into the database using the `insert()` function. 
+
+The 'id 1' of the newly generated object is returned by the 'insert()' function.
+After running the above code, a new "JSON" file called `students_db.json` will be created. The data is entered in the way described below.
 
 ```json
 {"_default": {"1": {"name": "Kennedy", "Course": "Nursing", "year": 3}}}
 ```
 
 `_default` is the name of the set table, and `1` is the `id` of the newly created object.
+
 We'll use the `db.insert_multiple (items)` function to insert multiple items. Here's an illustration of how that is done.
 
 ```python
@@ -89,7 +104,8 @@ We'll use the `db.insert_multiple (items)` function to insert multiple items. He
 ```
 
 In the above code, we built a collection of dictionaries named `items` and added items using the `insert multiple()` function.
-The output in our `JSON` file will appear as shown below.
+
+The output in our "JSON" file will appear as shown below.
 
 ```json
 {
@@ -105,6 +121,7 @@ The output in our `JSON` file will appear as shown below.
 
 ### Getting data from TinyDB
 TinyDB data can be recovered in various ways.
+
 First, we'll use the `get()` function, which will return only one piece of matching data. Here's how it works.
 
 ```python
@@ -167,7 +184,7 @@ We can be required to update all the data in a given database, `db.all` method i
 ```
 
 #### Deleting data from TinyDB
-To delete data, we use `remove()` function. The data is removed if it matches the optional condition and an optional list of data'id's.
+To delete data, we use `remove()` function. The data is removed if it matches the optional condition and an optional list of the data's id.
 
 ```python
 # deleting data in the database using remove() function
@@ -197,7 +214,7 @@ To delete everything from the database, use the `truncate()` function as shown b
 
 Every CRUD operation shown above is demonstrated with its corresponding example, which is simple and clear to understand.
 
-The complete code is available [here] (https://github.com/cathy-254/getting-started-with-tinydb-in-python).
+The complete code is available [here](https://github.com/cathy-254/getting-started-with-tinydb-in-python).
 
 ### Conclusion
 In this article, we learned about TinyDB and how to perform CRUD operations on the database. [Here](https://tinydb.readthedocs.io/en/latest/) is where you can learn more about TinyDB.
