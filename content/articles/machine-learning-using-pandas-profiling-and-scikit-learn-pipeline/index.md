@@ -11,7 +11,7 @@ topics: [Machine Learning]
 excerpt_separator: <!--more-->
 images:
 
-  - url: /machine-learning-using-pandas-profiling-and-scikit-learn-pipeline/hero.jpg
+  - url: /engineering-education/machine-learning-using-pandas-profiling-and-scikit-learn-pipeline/hero.jpg
     alt: Machine Learning using Pandas Profiling and Scikit-learn Pipeline Hero Image
 ---
 Pandas profiling is a Python library that performs an automated Exploratory Data Analysis. It automatically generates a dataset profile report that gives valuable insights. For example, we can know which variables to use and which ones we can drop using the profile report.
