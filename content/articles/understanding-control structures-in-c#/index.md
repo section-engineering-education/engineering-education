@@ -1,6 +1,18 @@
-
-
-### Introduction
+---
+layout: engineering-education
+status: publish
+published: true
+url: /understanding-control structures-in-c#/
+title: Understanding Control Structures in C# 
+description: This tutorial will walk you through understanding control structures in C# 
+author: haron-mutati
+date: 2022-02-28T00:00:00-03:25
+topics: [Languages, C#]
+excerpt_separator: <!--more-->
+images:
+  - url: /engineering-education/understanding-control structures-in-c#/hero.jpg
+    alt: Understanding Control Structures in C# Hero Image
+---
 Some issues in programming appear to be insurmountable, but you need not be concerned. The same way a computer works, one can overcome a large obstacle in life that appears to be more complicated by simply taking a simple step toward the solution. Complex problems are broken down into smaller pieces by the computer, which is then passed on to functions that provide answers (are implemented).
 
 To execute all of this work well, one must first comprehend the **building blocks**. These building blocks will assist one in making various decisions in the program, for example, one may like to obtain a positive result while disregarding the negative one, or one may wish for the program to re-run a certain section of the code, necessitating the use of **control structures**. They will assist the program in choosing a specific path or direction, as a decision will be required. As a result, control structures will assess the variable and select the appropriate direction based on the parameter. As previously stated, we will introduce you to control structures in this article. Furthermore, we will give various examples of each statement for a better understanding of these control structures.
@@ -23,12 +35,10 @@ To execute all of this work well, one must first comprehend the **building block
    - [Return statement](#return-statement)
 - [Conclusion](#conclusion)
 
-
 ### Prerequisites
 To follow along with this tutorial, you need the following: 
 - A basic knowledge of C & C++ programming language.
 - A code editor installed on your computer
-
 
 ### Selection statements
 First, of all, we need a recall of the definition of a statement. In programming, statements can be instructions that are initiated by the user. For instance,
@@ -497,3 +507,6 @@ The above program will return 0 since we have declared the same number 4, theref
 In this article, you learned about the control structures in C# and how to work with selection statements, iteration statements (loops), and the jump statements where in each case you were given examples on how they are implemented.
 
 Happy coding!
+
+---
+Peer Review Contributions by: [Jethro Magaji](/engineering-education/authors/jethro-magaji/)
