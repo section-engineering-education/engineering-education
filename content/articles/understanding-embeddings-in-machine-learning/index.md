@@ -4,21 +4,21 @@ status: publish
 published: true
 url: /understanding-embeddings-in-machine-learning/
 title: Understanding Embeddings in Machine Learning
-description: This article will look at embeddings in detail and solve real-world problems involving complex data.
+description: This article will look at embeddings in detail and solve real-world problems involving complex data using machine learning.
 author: lilian-ogoti
-date: 2022-02-21T00:00:00-21:00
+date: 2022-02-28T00:00:00-12:00
 topics: [Machine Learning]
 excerpt_separator: <!--more-->
 images:
 
   - url: /engineering-education/understanding-embeddings-in-machine-learning/hero.jpeg
-    alt: Understanding Embeddings in Machine Learning hero image
+    alt: Embeddings in Machine Learning hero image
 ---
-Handling non-numerical data poses challenges to data scientists. The reason is that most machine learning models tend to prefer working with numbers. 
+Handling non-numerical data poses challenges to data scientists. The reason is that most machine learning models tend to prefer working with numbers. Data that contains words, sentences, graphs, lists, and probability distributions are complex. A machine learning model cannot handle such data.
 <!--more-->
-Data that contains words, sentences, graphs, lists, and probability distributions are complex. A machine learning model cannot handle such data. Yet, it is impossible to avoid complex data in the real world. Thus, complex data needs first to be transformed into [vector spaces](https://machinelearningmastery.com/a-gentle-introduction-to-vector-space-models/).
+Yet, it is impossible to avoid complex data in the real world. Thus, complex data needs to first be transformed into [vector spaces](https://machinelearningmastery.com/a-gentle-introduction-to-vector-space-models/).
 
-Existing approaches are not helpful and applicable. They tend to have flaws when transforming the data. A better approach would be to use [embeddings](https://towardsdatascience.com/neural-network-embeddings-explained). These are a low-dimensional representation of high-dimensional data. The article will look at embeddings in detail and how they solve problems with complex data.
+Existing approaches are not helpful and/or applicable. They tend to have flaws when transforming the data. A better approach would be to use [embeddings](https://towardsdatascience.com/neural-network-embeddings-explained). These are a low-dimensional representation of high-dimensional data. This article will look at embeddings in detail and how they solve problems with complex data.
 
 ### The concept of embedding in data transformation
 The concept of embeddings is dependent on machine learning models. This means the requirements of the machine learning models have to be known first. Machine learning algorithms only accept low-dimensional data as the inputs. Each input feature in a neural network is a number. This means every non-numeric variable must be converted into numbers and vectors.  
@@ -28,13 +28,13 @@ For instance, variables such as users and items in [recommender systems](https:/
 The same applies to similar numbers, where the same numbers represent the same items. The analogy makes sense for variables like age. However, it is impossible to represent [categorical variables](https://www.sciencedirect.com/topics/mathematics/categorical-variable). Before embeddings, the method used to represent categorical variables was [one-hot encoding](https://machinelearningmastery.com/how-to-one-hot-encode-sequence-data-in-python/). We will discuss it in the following section.
 
 ### Understanding One-Hot encoding
-It is an unsupervised technique that represents categorical variables.  This is through mapping them to a vector to generate a binary. One will need to create a vector of the same size as the number of categories while all the values have been set to 0. Then the rows could be set to 1. 
+It is an unsupervised technique that represents categorical variables. This is through mapping them to a vector to generate a binary. One will need to create a vector of the same size as the number of categories while all the values have been set to 0. Then the rows could be set to 1. 
 
 This technique transforms categorical variables into continuous variables. As a result, many zeros and ones are produced. Due to this, an issue arises with the unmanageable number of dimensions. This is especially the case where the variables have a variety of unique characters. The main reason is that each item in the vector space is equally distanced and impossible to compare. 
 
 Besides, we cannot compare the categories with differences in variance in vector space. This, in turn, means it is not possible to determine whether the entities are related to each other. The illogical extensive manual labeling has to be done. This is to generate one-to-one mappings and grouping to look for similarities.
 
-When solving this issue, the categorical variables must be well represented. Also, the relationship information between the items must be maintained. Furthermore, the number of categorical variables has to be reduced. This helps to keep the items of the categories compact. The following section explains how to use embeddings to solve the encoding problem.
+When solving this issue, the categorical variables must be well represented. Also, the information relationship between the items must be maintained. Furthermore, the number of categorical variables has to be reduced. This helps to keep the items of the categories compact. The following section explains how to use embeddings to solve the encoding problem.
 
 ### Use of embeddings in solving an encoding problem
 Embeddings represent data from the object as numbers. The vector space measures the similarities in the categories. The vectors are said to be similar if they neighbor one another. 
@@ -44,8 +44,9 @@ Embeddings can be combined to work alongside other models in an online store. Th
 On the downside, embeddings are complex to understand. They also consume much computing resources compared to one-hot encodings.
 
 ### Creating embeddings
-Before creating embeddings, it is important to have a supervised ML model well-defined. The model must be trained to transform the categories into vectors. 
-For instance, we can assume a model that tells the type of meal the person will take based on their preferred meals. We can then create a model that will take our data as the input and transform it into a vector. Then the vector will predict the meal the person will take next. This implies that similar vectors refer to the meal taken frequently. The representation can be used for customization. 
+Before creating embeddings, it is important to have a supervised ML model well-defined. The model must be trained to transform the categories into vectors. For instance, we can assume a model that tells the type of meal the person will take based on their preferred meals. 
+
+We can then create a model that will take our data as the input and transform it into a vector. Then the vector will predict the meal the person will take next. This implies that similar vectors refer to the meal taken frequently. The representation can be used for customization. 
 
 In this case, we use embeddings to solve a supervised problem. However, it is better to note that creating an embedding can be an unsupervised problem.
 
@@ -60,7 +61,7 @@ This method makes the variables complex to understand, which may cause data loss
 #### Singular Value Decomposition (SVD)
 This technique uses matrix factorization to minimize the data set size. For instance, we can take an example of a user's video ratings that can be represented as a matrix. We can calculate the size of the matrix by using the formula: [the number of items] multiplied by the [number of users]. Here, each cell value represents each video rating the user gave. 
 
-We can then let the letter `K` be our vector size, and we will be able to divide our matrix into two with [SVD](https://towardsdatascience.com/understanding-singular-value-decomposition-and-its-application-in-data-science-388a54be95d). The first matrix equals [the number of items] multiplied by `K`. The second is `K` multiplied by the [number of users].
+We can then let the letter `K` be our vector size, and we will be able to divide our matrix into two with [SVD](https://towardsdatascience.com/understanding-singular-value-decomposition-and-its-application-in-data-science-388a54be95d). The first matrix equals (the number of items) multiplied by `K`. The second is `K` multiplied by the (number of users).
 
 Multiplying the user vector with the item vector produces the predicted user rating. Then, if we multiply the user vector matrix with the item vector matrix, the result will be the initial matrix. However, it will be combined with the predicted ratings. So, we can deduce that many items with the same vectors will give the same ratings from similar users. Finally, we can develop both item and user embeddings.
 
@@ -110,7 +111,7 @@ For instance, it is possible to average the differences between an expensive car
 #### Nearest Neighbor (NN)
 NN is the most valuable operation in embeddings. Its purpose is to look for the same items as the current item embedding. For instance, we can have a user embedding to predict items that the users prefer in a recommender system. Also, in search bars, we can have document embedding that gives search results close to the query text.
 
-[NN](https://www.sciencedirect.com/topics/mathematics/nearest-neighbor-method) technique is a much complex operation in computations. We can compute NN as `O(N*K)`, where `N` represents the number of items and `K` represents the size of each embedding.  We only need the approximation when computing the nearest neighbor in most cases. So, we can use the [Approximate Nearest Neighbor](https://neo4j.com/docs/graph-data-science/current/alpha-algorithms/approximate-nearest-neighbors/) (ANN) to reduce the NN algorithm complexity. 
+[NN](https://www.sciencedirect.com/topics/mathematics/nearest-neighbor-method) technique is a very complex operation in computations. We can compute NN as `O(N*K)`, where `N` represents the number of items and `K` represents the size of each embedding. We only need the approximation when computing the nearest neighbor in most cases. So, we can use the [Approximate Nearest Neighbor](https://neo4j.com/docs/graph-data-science/current/alpha-algorithms/approximate-nearest-neighbors/) (ANN) to reduce the NN algorithm complexity. 
 
 ### Conclusion
 Embeddings are growing and impacting the machine learning and data science space. More research is drawn to make embeddings applicable in production systems. They have made significant improvements and impacts to NLP and recommender systems. Embeddings have all it takes to be the future of the machine learning infrastructure.
