@@ -62,7 +62,7 @@ pip install Tkinter
 If you get errors while installing, please ensure that your Python package is installed correctly using the correct [defaults](https://www.python.org/about/gettingstarted/). Once it is successfully installed, you can start coding your API as instructed in the development section below.
 
 ### Building the API/GUI
-In this section, you will design the interface for the application. Since the article is about downloading functionality, the interface will be simple with few features. 
+In this section, you will design the interface for the application. Since the article is about building the downloading functionality, the interface will be minimalistic. 
 
 If you want to add more features to your API and make it more appealing, you can refer to this [article](https://www.section.io/engineering-education/introduction-to-gui-in-python-using-tkinter/) to get more understanding of Tkinter GUI development. The following are the main steps to be followed.
 
