@@ -20,10 +20,10 @@ In this tutorial, we will be learning how to use OpenCV  to detect the frontal f
 ### Referral face object image
 
 ![Ref_image](/engineering-education/approximating-the-speed-of-an-object-and-its-distance/Ref_image.png)
-This image shows how a frame of the frontal face is detected and we will be using it as our referrence image later in the program.
-We also will be using the `haarcascade_frontalface_default.xml` module to have our face object detected. To get this module from Github using the link below. [haarcascade_frontalface_default.xml (github.com)](https://gist.github.com/Learko/8f51e58ac0813cb695f3733926c77f52).
+This image shows how a frame of the frontal face is detected and we will be using it as our reference image later in the program.
+We also will be using the `haarcascade_frontalface_default.xml` module to have our face object detected. To get this module from Github use the link below. [haarcascade_frontalface_default.xml (github.com)](https://gist.github.com/Learko/8f51e58ac0813cb695f3733926c77f52).
 
-#### Distance and speed approximation using the frontal face object
+### Distance and speed approximation using the frontal face object
 ### Getting started 
 Fire up your *Pycharm IDE* to create a new project.
 *As shown in the image below.*
@@ -31,9 +31,9 @@ Fire up your *Pycharm IDE* to create a new project.
 On the open menu, as shown above, we will be naming our project `DistanceVelocity`. We then select our base interpreter to be python3.10 latest as to the composing of this tutorial. As well you can use any version of the python base interpreter.
 After making all the selections right, we click on the create button to launch our project.
 
-## Installations of external libraries.
+### Installations of external libraries.
 The external library we will be using in this section is OpenCV.
-In your working environment, there are different bottoms in this window. On the button identified as terminal, click  to open the terminal interface. We will be downloading and installing our OpenCV here. Copy the below commad to the terminal.
+In your working environment, there are different bottoms in this window. On the button identified as terminal, click  to open the terminal interface. We will be downloading and installing our OpenCV here. Copy the below command to the terminal.
 ````bash
   pip install OpenCV-Python
 ````
@@ -41,7 +41,7 @@ In your working environment, there are different bottoms in this window. On the 
 Having **OpenCV** installed, we are now fully equipped to proceed to the next part.
 
 
-## Detection of the frontal face
+### Detection of the frontal face
 To be able to detect the frontal face, we will have to save the ~haarcascade_frontalface_default.xml~  file in the same location as the main program. We will be working with our laptop's web camera, which by default is  `0` during the calling function. Likewise, `1` can be used when dealing with an external camera, but for our case, we will be using the default one. We will be creating a function for returning the detected face object coordinates of the rectangular frame.
 Then converting the RGB image into grayscale  requires an image parameter for scaling up or down the image for better output, but this is also very dependent on the processing power of one's machine. So we opt to use the standard values. Let's dive into the fun coding part.  
 ```python
@@ -88,7 +88,7 @@ cv2.destroyAllWindows()
 Below is the image of the expected output.
 ![frontalFace](/engineering-education/approximating-the-speed-of-an-object-and-its-distance/frontalFace.png)
 
-## Determining the distance 
+### Determining the distance 
 To get the distance, we will have to create more functions.
 The first function to be created is the focal length finder.
  ### case 1:
@@ -119,7 +119,7 @@ def distance_finder(focal_length, real_face_width, face_width_in_frame):
     return distance
 ```
 ### case 3:
-### Reading reference image from the directory
+### Reading reference images from the directory
 We will be opening our reference image then storing it at a variable. Further illustrations are implemented in the code below.
 ```python  
 ref_image = cv2.imread("Ref_image.png")  
@@ -151,7 +151,7 @@ cv2.destroyAllWindows()
 Your output should be as shown as in the image below.
 ![distance](/engineering-education/approximating-the-speed-of-an-object-and-its-distance/distance.png)
 
-## Determining the speed.
+### Determining the speed.
 To find the speed we will first have to import the time module since speed is distance in relation to time taken. Then we will be initialising time related variables. Below is the code snippet for illustrations.
 ```python
 import time  
