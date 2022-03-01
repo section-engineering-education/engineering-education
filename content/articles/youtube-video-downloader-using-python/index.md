@@ -111,7 +111,7 @@ Button(root, text='Download', font='san-serif 16 bold', bg='red', padx=2,command
 The command `download` is the attribute that initiates the download process when the button is pressed. It is called from the download function created below for getting the video from YouTube.
 
 ### Creating the download function
-Up to this point, you have made an API where you can paste your link from youtube, but the download button is not yet functional. To fetch the video using the URL, you will have to create a download function called the download button. 
+Up to this point, you have made a GUI where you can paste your link from youtube, but the download button is not yet functional. To fetch the video using the URL, you will have to create a download function called the download button. 
 
 The code below is a python function titled `download`, which reads the URL entered, connects to youtube, and downloads the video. The comments help you know the importance of every line of code and what it does. 
 
