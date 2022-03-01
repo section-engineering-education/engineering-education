@@ -1,7 +1,7 @@
 #!groovy
 
 pipeline {
-  agent { label 'docker' }
+  agent none // Required to avoid blocking a Jenkins executor while waiting for user input
 
   options {
     ansiColor('xterm')
@@ -14,6 +14,8 @@ pipeline {
   stages {
 
     stage('Deploy') {
+      agent { label 'docker' }
+      
       steps {
         withCredentials([[
           $class: 'AmazonWebServicesCredentialsBinding',
