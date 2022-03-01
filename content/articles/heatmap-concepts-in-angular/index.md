@@ -4,9 +4,9 @@ status: publish
 published: true
 url: /heatmap-concepts-in-angular/
 title: How To Integrate the Heatmap Charts with Angular 12 or Later
-description: In this tutorial, we will learn about Heat maps. Heat maps are a type of chart that easily displays data to understand.
+description: In this tutorial we will learn about Heat maps. Heat maps are a type of chart that easily displays data to understand.
 author: naomi-seint
-date: 2022-02-21T00:00:00-10:30
+date: 2022-03-01T00:00:00-09:30
 topics: []
 excerpt_separator: <!--more-->
 images:
@@ -14,12 +14,11 @@ images:
   - url: /engineering-education/heatmap-concepts-in-angular/hero.png
     alt: Heatmap Concepts in Angular
 ---
-
-You may have heard of 2D or 2-dimensional shapes in a geometry class. For example, rectangles, squares and circles are all 2D shapes
+You may have heard of 2D or 2-dimensional shapes in a geometry class. For example, rectangles, squares and circles are all 2D shapes.
 <!--more-->
-In addition to these, charts such as bar and line charts also have 2 Dimensions. These concepts play an important role while dealing with charts or graphs in programming.
+In addition to these, charts such as bar and line charts also have 2 dimensions. These concepts play an important role while dealing with charts or graphs in programming.
 
-This tutorial, will teach you everything you need to know about Heat maps. Heat maps are a type of chart that easily displays data to understand.
+This tutorial will teach you everything you need to know about Heat maps. Heat maps are a type of chart that easily displays data to understand.
 
 ### Table of content
 - [Table of content](#table-of-content)
@@ -42,14 +41,14 @@ To follow along with this tutorial, you will need the following:
 This tutorial introduces you to the concepts of 2 Dimensional charts. By the end, you should be able to build a reactive web application integrated with heatmap.
 
 ### Setting up Angular environment
-in this tutorial, we will use the Angular CLI; however, you're free to set up the application structure from scratch.
+In this tutorial, we will use the Angular CLI; however, you're free to set up the application structure from scratch.
 
 Now, let's begin by installing the Angular CLI by running the following command:
 ```bash
 npm install -g @angular/cli
 ```
 
-The above command will install the latest version ( v12 at the time of this writing) of the Angular CLI globally.
+The above command will install the latest version (v12 at the time of this writing) of the Angular CLI globally.
 
 Next, proceed and create a new Angular application by using the CLI command as shown below:
 ```bash
@@ -60,12 +59,15 @@ cd angular-heatmap-tutorial
 ng serve
 
 ```
+
 In the above command, we created a new Angular application called angular-heatmap-tutorial. Next, we `cd` into the project root and start the server, which runs on port `4200`.
 
 > It's important to note that the default Angular port is 4200. This may be different in your environment if another application is already running there.
 
 ### Adding Heatmap package
-Heatmap, unlike other packages, have different libraries which you can choose from depending on your needs. This includes:
+Heatmap, unlike other packages, have different libraries which you can choose from depending on your needs. 
+
+This includes:
 - [Ngx-heatmap](https://www.npmjs.com/package/ngx-heatmap)
 - [Angular-calendar-heatmap](https://www.npmjs.com/package/angular-calendar-heatmap)
 - [Angular2-calendar-heatmap](https://www.npmjs.com/package/angular2-calendar-heatmap)
@@ -93,6 +95,7 @@ The above command will install the latest version of the package as shown below:
 ```
 
 Let's proceed and configure our application to use this package as shown below:
+
 ```TypeScript
 //...
 import { HeatMapModule } from '@syncfusion/ej2-angular-heatmap';
@@ -243,7 +246,7 @@ export class HeatmapComponent implements OnInit {
 }
 ```
 
-In the above script, we have modified the `ngOnInit()` method to load the data for the heatmap. We have two properties to configure the heatmap. The `xAxis` property is used to configure the x-axis labels. The `yAxis` property is used to configure the y-axis labels.
+In the script above, we have modified the `ngOnInit()` method to load the data for the heatmap. We have two properties to configure the heatmap. The `xAxis` property is used to configure the x-axis labels. The `yAxis` property is used to configure the y-axis labels.
 
 We then set the `dataSource` property to the actual data. This data should then load in the heatmap on page load as shown below:
 
@@ -252,8 +255,7 @@ We then set the `dataSource` property to the actual data. This data should then 
 Next, re-configure the `app.module.ts` to remove the heatmap module we had passed since the HeatMap component has its module configured.
 
 ### Conclusion
-This tutorial has given a foundation for creating a heatmap in Angular. 
-We have seen how we can configure the heatmap with the `HeatMapComponent` and use the `HeatMapComponent` in our application.
+This tutorial has given a foundation for creating a heatmap in Angular. We have seen how we can configure the heatmap with the `HeatMapComponent` and use the `HeatMapComponent` in our application.
 
 Happy coding!
 
