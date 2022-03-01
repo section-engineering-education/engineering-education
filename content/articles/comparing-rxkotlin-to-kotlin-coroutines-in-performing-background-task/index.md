@@ -1,5 +1,22 @@
-### Introduction
-RxKotlin is a kotlin library built on top of RxJava that adds a basic lightweight extension function to RxJava, making it easier to work with in Kotlin. Kotlin Coroutines, on the other hand, are little threads that make asynchronous code execution easier.
+---
+layout: engineering-education
+status: publish
+published: true
+url: /comparing-rxkotlin-to-kotlin-coroutines/
+title: Comparing RxKotlin to Kotlin Coroutines
+description: This tutorial will elaborate on the differences between RxKotlin and Kotlin Coroutines in performing background tasks.
+author: benta-odek
+date: 2022-03-01T00:00:00-21:53
+topics: [Languages]
+excerpt_separator: <!--more-->
+images:
+
+  - url: /engineering-education/comparing-rxkotlin-to-kotlin-coroutines/hero.jpg
+    alt: Comparing RxKotlin to Kotlin Coroutines Hero Image
+---
+RxKotlin is a kotlin library built on top of RxJava that adds a basic lightweight extension function to RxJava, making it easier to work with in Kotlin.
+<!--more-->
+Kotlin Coroutines, on the other hand, are little threads that make asynchronous code execution easier.
 
 RxKotlin's main feature is its ability to prevent memory leaks up to 90% by replacing normal Android techniques, which is similar to garbage collection in C.
 
@@ -35,7 +52,7 @@ To understand the concept and implementation of RxKotlin we'll be using a room d
 ### Step 1: Start a new project
 Launch the Android Studio IDE and create an empty activity project as shown below:
 
-![new project](/engineering-education/comparing-rxkotlin-to-kotlin-coroutines-in-performing-background-task/new_project.png)
+![new project](/engineering-education/comparing-rxkotlin-to-kotlin-coroutines/new_project.png)
 
 ### Step 2: Adding RxKotlin and Room database dependencies 
 Navigate to the project and select the package `Gradle scripts`. Next, select `build.gradle` app-level and add the following dependencies and sync the project.
@@ -50,6 +67,7 @@ def room_version = "2.4.1"
 implementation "androidx.room:room-runtime:$room_version"
 kapt "androidx.room:room-compiler:$room_version"
 ```
+
 > Ensure you add the `Kotlin-Kapt` within the plugins.
 
 ### Step 3: Creating the User Interface
@@ -59,11 +77,11 @@ once you design the user interface it should appear as shown below:
 
 - Displaying data:
 
-![display data](/engineering-education/comparing-rxkotlin-to-kotlin-coroutines-in-performing-background-task/display_ui.png)
+![display data](/engineering-education/comparing-rxkotlin-to-kotlin-coroutines/display_ui.png)
 
 - Adding Data:
 
-![add data](/engineering-education/comparing-rxkotlin-to-kotlin-coroutines-in-performing-background-task/add_ui.png)
+![add data](/engineering-education/comparing-rxkotlin-to-kotlin-coroutines/add_ui.png)
 
 ### Step 4: Setting Up Room Database
 To work with room, we must first set up all of the required properties, which include Entity, Dao, and Database.
@@ -258,9 +276,12 @@ private fun dataDisplay(context: Context): Flowable<List<Long>> {
 
 Upon running the app, you should expect the following output:
 
-![demo](/engineering-education/comparing-rxkotlin-to-kotlin-coroutines-in-performing-background-task/demo.gif)
+![demo](/engineering-education/comparing-rxkotlin-to-kotlin-coroutines/demo.gif)
 
 ### Conclusion
 In this tutorial, we have discussed the differences between RxKotlin and Kotlin Coroutines, RxKotlin's advantages and downsides, terms used in the RxKotlin implementation as well as how to use RxKotlin.
 
 You can get the full code on this [GitHub repository](https://github.com/benta-odek/RxKotlin).
+
+---
+Peer Review Contributions by: [Eric Gacoki](/engineering-education/authors/eric-gacoki/)
