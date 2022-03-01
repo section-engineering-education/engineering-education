@@ -194,7 +194,7 @@ var clearBtn = document.querySelector("[data-action=action-clear]");
 var createPDFBtn = document.querySelector("[data-action=action-pdf]");
 ```
 
-Next, we initialize our SignaturePad class while passing in a white background color styling in the constructor. We will also be using the 2D context for the canvas.
+Next, we initialize our `SignaturePad` class while passing in a white background color styling in the constructor. We will also be using the 2D context for the canvas.
 
 ```javascript
 var ourPad = new SignaturePad(canvas, {
