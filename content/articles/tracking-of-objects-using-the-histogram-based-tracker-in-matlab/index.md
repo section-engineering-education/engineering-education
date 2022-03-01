@@ -6,7 +6,7 @@ url: /tracking-of-objects-using-the-histogram-based-tracker-in-matlab/
 title: Tracking of objects using the histogram-based tracker in Matlab 
 description: This article will look at how to track objects using the histogram-based tracker and also how to track occluded objects in Matlab.
 author: peter-adongo
-date: 2021-09-14T00:00:00-00:00
+date: 2022-03-01T00:00:00-06:32
 topics: []
 excerpt_separator: <!--more-->
 images:
@@ -34,7 +34,9 @@ As an alternative approach, we detect the object in the first image and then sea
 Thereby, the assumption is that the object does not move substantially between frames of a video. Therefore, we will use a histogram-based tracker for our ball example. 
 
 ### Histogram-based tracking
-Histogram based tracker uses a continuously adaptive mean shift algorithm for object tracking. The tracked object is identified by the histogram of object pixel values based on colour or intensity. There are three steps to doing this:
+Histogram based tracker uses a continuously adaptive mean shift algorithm for object tracking. The tracked object is identified by the histogram of object pixel values based on colour or intensity.
+
+There are three steps to doing this:
 
 1. Create a tracker object.
 2. Initialize the tracker with the initial region of interest.
@@ -93,7 +95,9 @@ The initialization function takes the tracker object, the input image, and the i
 
 Therefore, selecting an appropriate representation of the input image is important for good tracking results. In our example, we have used a simple 2-Dimensional representation of the image `imgYcbcr(:,:,2)`. The integer `2` represents the colour channel.
 
-The computer recognizes three colour channels. They are red, green and blue. If you use an integer of 1, it represents the red colour channel. The integer 2 represents green colour channels, and finally, 3 represents blue. The colour channel you choose to use depends on the object being tracked and the surrounding environment.
+The computer recognizes three colour channels. They are red, green and blue. If you use an integer of 1, it represents the red colour channel. The integer 2 represents green colour channels, and finally, 3 represents blue.
+
+The colour channel you choose to use depends on the object being tracked and the surrounding environment.
 
 We use a green channel since the ball colour is close to the green channel than the red or blue.
 We use a ' while' loop to apply tracking on our subsequent video frames.
@@ -114,7 +118,9 @@ end
 
 The loop first checks if there is a video frame using the `~isDone()` function. It then reads the video frame using the `step()` function. This video frame is then converted from RGB colour space to ycbcr colour space in the loop. This conversion is done using `rgb2ycbcr()` function. 
 
-We use `step` on the histogram-based tracker object with the green channel of the current video frame to track the object. We need to have a bounding box around the object of interest. We use the `insertShape()` function to insert a bounding box. This function takes in the image and the shape of the required shape of the bounding box.
+We use `step` on the histogram-based tracker object with the green channel of the current video frame to track the object. We need to have a bounding box around the object of interest.
+
+We use the `insertShape()` function to insert a bounding box. This function takes in the image and the shape of the required shape of the bounding box.
 
 Finally, we display the output using the `step()` function. This function takes the video player `vidPlayer` and the image `out`. This image is a video frame, but the object of interest is bounded using a `rectangular` bounding box.
 
@@ -197,6 +203,7 @@ You can find the files, video, and utility functions used here [here](https://gi
 
 ### Conclusion
 Histogram-based tracker bases the tracking on the histogram features of the object of interest. The tracking is good until an occlusion occurs. This tracker cannot estimate the position of an object in an occlusion.
+
 It makes it an inefficient way of tracking the object. Furthermore, this tracking method is only applicable in the absence of an occlusion.
 
 Happy coding!
