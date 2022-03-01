@@ -11,7 +11,7 @@ Telehealth covers a wider scope of health services compared to telemedicine. Ide
 
 Telemedicine technology is often used during follow-up visits and the management of chronic health conditions. A host of other clinical services like medication management and specialist consultations are also part of telemedicine. In contrast, telehealth includes non-clinical services like provider training and medical education.
 
-While telemedicine is a branch of telehealth, telehealth is a branch of E-health. E-health is a broader reference to healthcare services and online medical information for health professionals and patients. It also entails training programs for health workers and health systems management. From a hierarchical point of view, telehealth ranks higher than telemedicine. Notably, at the level of telemedicine, the services become more complex and specialized.
+While telemedicine is a branch of telehealth, telehealth is a branch of E-health. E-health is a broader reference to healthcare services and online medical information for health professionals and patients. It also entails training programs for health systems management. From a hierarchical point of view, telehealth ranks higher than telemedicine. At the level of telemedicine, the services become more complex and specialized.
 
 ### Why telemedicine apps are significant to providing urgent care
 
