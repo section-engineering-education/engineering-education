@@ -15,7 +15,7 @@ images:
 ---
 Computer vision has opened up a lot of possibilities, and one of the most widely used day-to-day applications in inventory management, identification, and authentication methods is the use of QR Code Scanners and Bar Code Scanners. The rapid production of smartphones capable of decoding and accessing encoded messages has made QR Codes a useful tool for any sector looking to engage mobile users through printed materials.
 <!--more-->
-To help the reader understand this concept, this article will cover many things concerning QR Codes. Their application in real life, how to scan and decode the codes, and how we can use QR Codes in building a user authentication system.
+To help the reader understand this concept, this article will cover many things concerning QR Codes. Their practical application, how to scan and decode the codes, and how to use QR Codes in the development of a user authentication system are all described.
 
 ### Table of contents
 - [Table of contents](#table-of-contents)
@@ -31,11 +31,11 @@ To help the reader understand this concept, this article will cover many things 
 ### Prerequisites
 To follow along with this tutorial:
 - You should have a basic understanding of [Python](https://www.python.org/) and its related concepts.
-- You should know about [Computer Vision](https://en.wikipedia.org/wiki/Computer_vision) and the [OpenCV](https://en.wikipedia.org/wiki/OpenCV) library.
+- You should know about [computer vision](https://en.wikipedia.org/wiki/Computer_vision) and the [OpenCV](https://en.wikipedia.org/wiki/OpenCV) library.
 - You should know how to use [PyCharm](https://www.jetbrains.com/pycharm/download/#section=windows), or any other IDE for working with Python.
 
 ### Introduction
-The **Quick Response Code** (QR Code) is a type of two-dimensional barcode mainly used for keeping track of items and storing data as pixels that correspond to binary codes that can be interpreted to reveal actual data. It carries a large amount of data like numbers, letters, and characters encoded efficiently and can be read significantly much quicker both in horizontal and vertical positions than existing methods. This makes them more widely used than the conventional bar codes, since the barcodes store limited data and can only be scanned horizontally.
+The **Quick Response Code** (QR Code) is a type of two-dimensional barcode mainly used for keeping track of items and storing data inform of pixels, which correspond to binary codes that can be decoded to expose actual data. It efficiently encodes a large amount of data such as numbers, letters, and characters and can be read much faster in both horizontal and vertical positions than existing methods.This makes them more widely used than the conventional bar codes, since the barcodes store limited data and can only be scanned horizontally.
 ### The Structure of QR Codes
 Quick Response codes consist of various regions that have specific importance.
 - Finder Pattern: This pattern is found in the symbol's upper left, upper right, and lower left corners. They are easily detected in all directions and ease the location and identification of the QR Code size, position, and inclination.
@@ -48,35 +48,35 @@ Quick Response codes consist of various regions that have specific importance.
 With the popularity of QR Codes, they have found their applications in various real-world fields, such as
 - Inventory management by tracking individual items.
 - User identification and authentication by the use of ID cards
-- retail and manufacturing industries by sharing payment information.
+- By sharing payment information, payment information can be shared across the retail and manufacturing industries.
 - Sharing photos, links, media, phone numbers
 
 ### Scanning QR Codes
 To scan the QR codes, we will use the OpenCV library to read the input images and video streams and display the outputs. For decoding the encrypted QR codes, we will use the `pyzbar` and `zbar` libraries. We will also need the `NumPy` library for working with multi-dimensional arrays and matrices.
-To use the libraries we will import them using the commands below.
+To use the libraries, we will import them using the commands below.
 
 ```python
 import numpy as np
 from pyzbar.pyzbar import decode
 import cv2
 ```
-Using the cv2 library, we will read the QR Code image. Then decode it with the help of pyzbar library and analyze the results as shown below.
+Using the cv2 library, we will read the QR Code image. Then decode it with the help of the pyzbar library and analyze the results as shown below.
 
 ```python
 image = cv2.imread("qrcodes/qr_code_txt.png")
 coded_infor = decode(image)
 print(coded_infor)
 ```
-Output.
+output
 ```bash
 [Decoded(data=b'just a lot of plain text', type='QRCODE', rect=Rect(left=22, top=22, width=74, height=74), 
 polygon=[Point(x=22, y=22), Point(x=22, y=96), Point(x=96, y=96), Point(x=96, y=22)])]
 ```
 From the output, a lot of information is displayed. The information is in various parts discussed below.
-- Data: This part shows the information encoded in the QR Code.
+- Data: This section displays the data encoded in the QR Code.
 - Type: This part gives more information about the type of the code, either a barcode or a QR code.
-- Rect - It gives the rectangular dimensions, enclosing the QR image.
-- Polygon: It specifies the exact corner points of the polygon that encircles the QR picture. These points are used to draw the bounding boxes around the QR image even if the image is tilted.
+- Rect - It specifies the rectangular dimensions of the QR image.
+- Polygon: It specifies the corner points of the polygon that encircles the QR picture. These points are used to draw the bounding boxes around the QR image even if the image is tilted.
 
 Since we are interested in the information from the QR codes, we will use a loop to detect all the barcodes in the image and display only the encoded text.
 ```python
@@ -177,7 +177,7 @@ From this tutorial, QR Codes play a significant role in real life through data e
 ### Further reading
 - [How to generate and read QR Codes in Python](https://www.thepythoncode.com/article/generate-read-qr-code-python)
 - [QR Codes](https://en.wikipedia.org/wiki/QR_code).
-- [Building QR Code in Python](https://towardsdatascience.com/building-a-barcode-qr-code-reader-using-python-360e22dfb6e5).
+- [Building QR Codes in Python](https://towardsdatascience.com/building-a-barcode-qr-code-reader-using-python-360e22dfb6e5)
   
 
 Happy Coding!
