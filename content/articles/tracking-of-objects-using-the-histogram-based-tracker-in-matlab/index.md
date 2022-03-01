@@ -1,5 +1,21 @@
-Object tracking is a deep learning application that takes a set of detected objects and creates a unique identification for all of them. After that, it tracks the detected objects as they move in a video frame.
+---
+layout: engineering-education
+status: publish
+published: true
+url: /tracking-of-objects-using-the-histogram-based-tracker-in-matlab/
+title: Tracking of objects using the histogram-based tracker in Matlab 
+description: This article will look at how to track objects using the histogram-based tracker and also how to track occluded objects in Matlab.
+author: peter-adongo
+date: 2021-09-14T00:00:00-00:00
+topics: []
+excerpt_separator: <!--more-->
+images:
 
+  - url: /engineering-education/tracking-of-objects-using-the-histogram-based-tracker-in-matlab/hero.jpg
+    alt: Tracking of objects using the histogram-based tracker in Matlab Hero Image
+---
+Object tracking is a deep learning application that takes a set of detected objects and creates a unique identification for all the objects. After that, it tracks the detected objects as they move in a video frame.
+<!--more-->
 `HistogramBasedTracker` returns a tracker that tracks an object. It uses the histogram of pixel values to identify the tracked object.
 
 This article will look at how to perform object tracking using the object-based tracker. Since a histogram-based tracker does not support tracking of the occluded objects, we will see how to handle occluded objects. Occluded objects are objects blocked by other objects.
@@ -13,9 +29,11 @@ Tracking an object constitutes estimating the trajectory, change in location, an
 
 We will search for the object in all the frames of the video. However, this method is insufficient in some situations, such as high frames rate applications or where the object is computationally an expensive algorithm.
 
-As an alternative approach, we detect the object in the first image and then search for the corresponding location in the subsequent images. Thereby, the assumption is that the object does not move substantially between frames of a video. Therefore, we will use a histogram-based tracker for our ball example. 
+As an alternative approach, we detect the object in the first image and then search for the corresponding location in the subsequent images.
 
-### histogram-based tracking
+Thereby, the assumption is that the object does not move substantially between frames of a video. Therefore, we will use a histogram-based tracker for our ball example. 
+
+### Histogram-based tracking
 Histogram based tracker uses a continuously adaptive mean shift algorithm for object tracking. The tracked object is identified by the histogram of object pixel values based on colour or intensity. There are three steps to doing this:
 
 1. Create a tracker object.
@@ -182,3 +200,6 @@ Histogram-based tracker bases the tracking on the histogram features of the obje
 It makes it an inefficient way of tracking the object. Furthermore, this tracking method is only applicable in the absence of an occlusion.
 
 Happy coding!
+
+---
+Peer Review Contributions by: [Monica Masae](/engineering-education/authors/monica-masae/)
