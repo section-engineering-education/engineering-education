@@ -1,8 +1,23 @@
-### Introduction
+---
+layout: engineering-education
+status: publish
+published: true
+url: /swiftui-pragmatic-navigation/
+title: Getting started with pragmatic navigation in SwiftUI
+description: This article will explain different methods of navigation flow and view construction in SwiftUI
+author: okelo-violet
+date: 2022-03-01T00:00:00-14:30
+topics: []
+excerpt_separator: <!--more-->
+images:
+
+  - url: /engineering-education/swiftui-pragmatic-navigation/hero.png
+    alt: Getting started with pragmatic navigation in SwiftUI
+---
+
 [SwiftUI](https://developer.apple.com/swiftui/) is a new UI library used to build user interfaces in Swift. SwiftUI is a declarative framework that allows you to build your UI declaratively, using a declarative syntax. SwiftUI is data-driven, as opposed to the UIKIt framework that is imperative. In this article, we will look at different methods of navigation flow and view construction in SwiftUI. We will also look at the MVC pattern that will allow us to abstract the navigation logic from the view.
 
 ### Table of Contents
-- [Introduction](#introduction)
 - [Table of Contents](#table-of-contents)
 - [Prerequisites](#prerequisites)
 - [MVC pattern](#mvc-pattern)
@@ -191,3 +206,7 @@ struct HomeView: View {
 
 ### Conclusion
 In this article, you have learned about the different ways of navigation flow and view construction in SwiftUI. You have also known the MVC pattern that allows us to abstract away the navigation logic from the view. In addition, the MVC pattern makes it easier to modularize the application, thus making it easier to maintain it. You can now complete the application's search functionality and implement the detail page. You can download the complete source code [here](https://replit.com/@okeloviolet/navigation).
+
+---
+
+Peer Review Contributions by: [Odhiambo Paul](/engineering-education/authors/odhiambo-paul/)
