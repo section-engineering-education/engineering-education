@@ -134,10 +134,10 @@
 
     &-content {
       flex: 0 1 auto;
-      max-width: calc(100% - 145px);
+      max-width:100%;
 
       @include mq($from: $breakpoint-medium) {
-        max-width: calc(67% - 145px);
+        max-width: 67%;
       }
 
       @include mq($to: $breakpoint-medium) {
@@ -146,35 +146,33 @@
     }
 
     &-insights-data {
-      width: 125px;
-      border-left: 1px #d8d8d8 solid;
-      margin-left: 20px;
       display: flex;
-      flex-direction: column;
-      display: none;
-
-      &.enabled {
-        display: flex;
-      }
+      flex-direction: row;
+      margin-top: 20px;
 
       .data-point {
-        width: 100%;
         height: 50%;
         text-align: center;
         display: flex;
-        flex-direction: column;
-        justify-content: center;
+        flex-direction: row;
+        justify-content: flex-start;
         align-items: center;
         color: $text-dark-40;
+        margin-right: 50px;
 
         p {
           font-size: 14px;
+          margin-right: 10px;
+        }
+
+        .icon {
+          width: 30px;
+          height: 30px;
         }
         
         span {
           display: block;
           font-size: 18px;
-          margin-top: 10px;
         }
       }
 
@@ -183,9 +181,7 @@
         margin-left: 0;
         flex-direction: row;
         border-left: 0;
-        height: 100%;
         margin-top: 20px;
-        background-color: $fill-dark-80;
 
         .data-point {
           flex-direction: row;
@@ -194,9 +190,6 @@
           span {
             margin-top: 0;
             margin-left: 10px;
-          }
-          &:first-of-type {
-            border-right: 1px #d8d8d8 solid;
           }
         }
       }

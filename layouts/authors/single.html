@@ -105,21 +105,16 @@
 
         <script defer type="text/javascript">
           document.addEventListener("DOMContentLoaded", async function() {
-
-            if (await unleash.isEnabled("section.io.hyvorTalk", {}, false)) {
-              document.getElementById('insightsData-{{ $elem_index }}').classList.add('enabled');
-
-              fetch('https://talk.hyvor.com/api/v1/page/?page_identifier={{ $articlePermalink }}&website_id={{ $hyvorId }}')
-                .then(response => response.json())
-                .then(data => {
-                  console.log(data);
-                  if (data.status === true) {
-                    document.getElementById('comments-count-{{ $elem_index }}').innerText = data.data.comments_count;
-                    document.getElementById('likes-count-{{ $elem_index }}').innerText = data.data.reactions[0];
-                  }
-                })
-                .catch(err => console.log('Error: ', err))
-            }
+            fetch('https://talk.hyvor.com/api/v1/page/?page_identifier={{ $articlePermalink }}&website_id={{ $hyvorId }}')
+              .then(response => response.json())
+              .then(data => {
+                console.log(data);
+                if (data.status === true) {
+                  document.getElementById('comments-count-{{ $elem_index }}').innerText = data.data.comments_count;
+                  document.getElementById('likes-count-{{ $elem_index }}').innerText = data.data.reactions[0];
+                }
+              })
+              .catch(err => console.log('Error: ', err))
           });
         </script>
         
@@ -146,11 +141,14 @@
 
               <p class="text-18-regular text-color">{{ .Summary | plainify | truncate 210 "..." }}</p>
 
-            </div>
-
-            <div id="insightsData-{{ $elem_index }}" class="blog-listing-posts-item-insights-data">
-              <div class="data-point"><p>Comments: </p><span id="comments-count-{{ $elem_index }}">0</span></div>
-              <div class="data-point"><p>Likes: </p><span id="likes-count-{{ $elem_index }}">0</span></div>
+              <div id="insightsData-{{ $elem_index }}" class="blog-listing-posts-item-insights-data">
+                <div class="data-point">
+                  <p><img class="icon" src="{{ if eq $.Site.Params.env "local" }}/{{ else }}/engineering-education/{{ end }}images/clapping-icon.png" alt="Article Likes" /></p><span id="likes-count-{{ $elem_index }}">0</span>
+                </div>
+                <div class="data-point">
+                  <p><img class="icon" src="{{ if eq $.Site.Params.env "local" }}/{{ else }}/engineering-education/{{ end }}images/comment-icon.png" alt="Article Comments" /></p><span id="comments-count-{{ $elem_index }}">0</span>
+                </div>
+              </div>
             </div>
 
           </a>
