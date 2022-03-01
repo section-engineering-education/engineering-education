@@ -1,10 +1,10 @@
 ### Introduction
 
-The best way to deal with getting familiar with any programming language is through active ventures. The Snake Game is a straightforward game that can be made utilizing fundamental JavaScript and HTML abilities.
+Hands-on projects are the best way to learn any programming language. The Snake Game is a simple game that can be created using the fundamentals of JavaScript and HTML.
 
-Snake is a retro computer game delivered in the last part of the 1970s. The principal objective is to explore a snake while eating however many apples as could reasonably be expected while staying away from contact with the snake's body or the dividers.
+Snake is an old-school video game from the late 1970s. The primary goal is to navigate a snake while eating as many apples as possible while avoiding contact with the walls or the snake's body.
 
-In this instructional exercise, I'll tell you the best way to make a Snake Game utilizing JavaScript and HTML bit by bit.
+In this article, I’ll show you step-by-step how to create this Snake Game using JavaScript and HTML.
 
 ### Prerequisites
 
@@ -28,15 +28,16 @@ In this instructional exercise, I'll tell you the best way to make a Snake Game 
 
 ### Display the Canvas
 
-First, we need to create an `index.html` file where our HTML code will be stored, and then open it with your favorite browser.
-To draw our canvas we will use the `<canvas>` tag which is used to render graphics with javaScript.
+First, we need to create an `index.html` file where our HTML code will be stored and open with your favourite browser.
+
+We will use the `<canvas>` tag to draw our canvas, which is used to render graphics with javaScript.
 
 ```HTML
  <canvas id="game" width="400" height="400"/>
 ```
 
-The `id` is used to identify our canvas which has both height and properties of 400px.
-Until now our canvas is not visible in the browser. To make it visible, we have to style it using CSS.
+The `id` is used to identify our canvas with both height and properties of 400px.
+Until now, our canvas is not visible in the browser. To make it visible, we have to style it using CSS.
 To style, insert `<style>` and `</style>` tag inside the `<head>` and `</head>` tag. Copy and paste the following code.
 
 ```css
@@ -56,13 +57,15 @@ To style, insert `<style>` and `</style>` tag inside the `<head>` and `</head>` 
    </style>
 ```
 
-Now, we will create an index.js file that will contain the logic. For the file to be effective on our HTML main file, we need to link the js file to the HTML file. This is done by adding the following line of code below after the `</canvas>` tag.
+Now, we will create an index.js file that will contain the logic. For the file to be effective on our HTML main file, we need to link the js file to the HTML file. 
+
+This is done by adding the following line of code below after the `</canvas>` tag.
 
 ```javaScript
 <script src="index.js"></script>
 ```
 
-Let's add a black background color using javaScript.To do so, we first select our canvas by referring to it by its Id:
+Let's add a black background colour using javaScript.To do so, we first select our canvas by referring to it by its Id:
 <br>Next, we will get canvas '2d' context to draw it in 2D space.
 
 ```javaScript
@@ -72,8 +75,8 @@ const ctx=canvas.getContext('2d');
 
 Let's create a game loop that will continuously update the screen.
 But first, we will create a variable named **speed** which will hold the number of times to update the screen.
-<br>Now let's update our screen, and this is done by the use of the `setTimeout` function. In this case, we will refresh our screen 7 times a second.
-<br> We will create **drawGame** function which will incorporate all other functions which will be included in our code, i.e When this function is called all the other functions in the code also get called.
+<br>Now, let's update our screen, which is done by using the `setTimeout` function. In this case, we will refresh our screen seven times a second.
+<br> We will create the **drawGame** function that will incorporate all other functions included in our code, i.e. When this function is called, all the other functions in the code also get called.
 
 ```javaScript
 let speed=7;
@@ -83,7 +86,7 @@ function drawGame(){
 }
 ```
 
-Since we have our canvas selected we can do whatever we want with it, with that Let's add black background color to it by creating a new function called **clearScreen** and calling it in our main function **drawGame**.
+Since we have our canvas selected, we can do whatever we want with it; with that, Let's add black background colour to it by creating a new function called **clearScreen** and calling it in our primary function **drawGame**.
 
 ```javaScript
 function drawGame(){
@@ -100,16 +103,18 @@ ctx.fillRect(0,0,canvas.clientWidth,canvas.clientHeight)// black color start fro
  drawGame();
 ```
 
-The **fillStyle** method is a kind of brush, which we are telling it to paint our screen with black color and it's used together with the **fillRect** method which tells the brush to paint the full rectangle from position 0 left and 0 top, to the actual height and width of our canvas.
+The **fillStyle** method is a kind of brush, which we are telling to paint our screen with black colour, and it's used together with the **fillRect** method, which means the brush to paint the entire rectangle from position 0 left and 0 top, to the actual height and width of our canvas.
 <br>The following screen should appear.
 
 ![black screen](/education-engineering/how-to-build-a-snake-game-with-javascript/canvasblank.png)
 
 ### Display the snake
 
-First, we will establish a variable called **tileCount** which will divide our screen into 20 small squares vertically and horizontally. Then we will define the horizontal position of our snake which is **headX** and initialize it with 10, Also we will define the vertical position of our snake as **headY** and initialize it with 10. This will center our snake.
-<br>So far have the position of the snake but we don't have its size. To define the size of our snake we will use a variable called **tileSize** and assign a value of 18 which will be the initial size of the snake.
-<br>Let's now display our snake, To do so we will define a function called **drawSnake** and then call it in our main function **drawGame** as shown in the following code.
+First, we will establish a variable called **tileCount** which will divide our screen into 20 small squares vertically and horizontally. Then we will define the horizontal position of our snake, which is **heads** and initialize it with 10. 
+
+Also, we will define the vertical position of our snake as **headY** and initialize it with 10. This will centre our snake.
+<br>So far have the snake's position, but we don't have its size. To define the size of our snake, we will use a variable called **tileSize** and assign a value of 18, which will be the initial size of the snake.
+<br>Let's now display our snake. First, we will define a function called **drawSnake** and then call it our primary function **drawGame** as shown in the following code.
 
 ```javaScript
 
@@ -130,13 +135,13 @@ function drawGame(){
 
 ```
 
-In the above code, we are telling the blush to paint orange color to our rectangle starting from the left corner to the total height and width of our rectangle which is 18.
+In the above code, we tell the blush to paint orange colour to our rectangle starting from the left corner to our rectangle's total height and width, which is 18.
 <br>The following should appear.
 ![snake]((/education-engineering/how-to-build-a-snake-game-with-javascript/orangesnake.png)
 
 ### Use arrow keys to move and change the snake’s direction
 
-First, we are going to set two variables, I will name mine **xvelocity** and **yvelocity**, then initialize them with zero.
+First, we will set two variables; I will name mine xvelocity and yvelocity, then initialize them with zero.
 
 ```javaScript
 //initialize the speed of snake
@@ -151,8 +156,8 @@ Now let's implement event listener to our body to use arrow keys to move our sna
  document.body.addEventListener('keydown', keyDown);
 ```
 
-The `keydown` event listens to any press of keys on the keyboard. When a key is pressed **keyDown** function gets called as shown in the above code.
-<br>To implement the arrow keys we will use the `keyCode` value, for example, the left arrow has the number 37 as its keyCode.
+The `keydown` event listens to any press of keys on the keyboard. When a key is pressed **keyDown** function gets called, as shown in the above code.
+<br>To implement the arrow keys, we will use the `keyCode` value; for example, the left arrow is assigned number 37 as its keyCode.
 
 ```javaScript
 function keyDown()
@@ -182,8 +187,13 @@ function keyDown()
 }
 ```
 
-As you can recall our **headY** which is the vertical position of our snake was set to 10, Now when the up arrow key is pressed it subtracts one tile from the ten tiles, and the snake vertical position changes to nine and so on. For the down arrow key **headY** is increased by one in each keypress. The same applies to **headX**.
-<br>As you have realized when you have implemented the above code snake's position didn't change that because we have implemented logic but we have not applied it to our main snake position. Let's do that by defining a new function name `changeSnakePosition` and calling it to our main function **drawGame**.
+As you can recall, our **headY**, which is the vertical position of our snake, was set to 10; when the up arrow key is pressed, it subtracts one tile from the ten tiles, and the vertical snake position changes nine and so on.
+
+ The down arrow key **headY** is increased by one in each keypress. The same applies to **headX**.
+
+<br>As you had realized when you implemented the above code snake's position, we didn't change that because we have implemented logic but have not applied it to our main snake position. 
+
+Let's do that by defining a new function name `changeSnakePosition` and calling it to our main function `drawGame`.
 
 ```javaScript
  function changeSnakePosition(){
@@ -249,7 +259,7 @@ let appleX=5;
 let appleY=5;
 ```
 
-Then we will add a function called **drawApple** then call it on the main function **drawGame**.Inside **drawApple** functions that's where we will define the look of our apple.
+Then we will add a function called `drawApple` then call it on the primary function `drawGame` inside the drawApple function; that's where we will define the look of our apple.
 
 ```javaScript
  function drawGame(){
@@ -270,9 +280,11 @@ The following should appear.
 
 ### Collition detection
 
-You do realize when you move the snake across the apple nothing happens. let's implement collision detection by defining a function called ** checkCollision** and calling it on our main function **drawGame** before the **drawApple** function.
-<br>Collision happens only when the **headX** or **headY** of the snake share the same position with **appleX** and **appleY**, when that happens we will move apple to a random position using **math.random** function in javaScript.Let's implement it in the code.
+You realise that nothing happens when you move the snake across the apple. So let's implement collision detection by defining a function called ` checkCollision` and calling it on our main function **drawGame** before the **drawApple** function.
 
+<br>Collision happens only when the **headX** or **headY** of the snake share the same position with **appleX** and **appleY**. We will move apple to a random position using **math when that happens.random** function in javaScript.
+
+Let's implement it in the code.
 ```javaScript
  function drawGame(){
     clearScreen();
@@ -291,8 +303,7 @@ You do realize when you move the snake across the apple nothing happens. let's i
 
 ### Increase length of the snake
 
-First, we will create a class called `snakePart` which will track the length of the snake. The constructor of our class will have x and y positions.
-
+First, we will create a class called `snakePart` which will track the snake's length. The constructor of our class will have x and y positions.
 ```javaScript
 class snakePart{
 constructor(x, y){
@@ -303,7 +314,7 @@ constructor(x, y){
 }
 ```
 
-Then we will define an empty array that will hold the parts of the snake. In my case I will call it **snakeparts**, we define another variable that will initialize the size of the snake, I will name it **tailLength**. Then we will check if there is a collision, if there is we will increase the length of the snake by incrementing it by one.
+Then we will define an empty array that will hold the parts of the snake. In my case, I will call it **snakeparts**, and we define another variable that will initialize the snake's size. I will name it **tailLength**. Then we will check if there is a collision; if there is, we will increase the snake's length by incrementing it by one.
 
 ```javaScript
 // array for snake parts
@@ -311,16 +322,16 @@ const snakeParts=[];
 let tailLength=2; //initial length of snake
 
 function checkCollision(){
-     if(appleX==headX && appleY==headY){ //collision happens when left, right ,top, and bottom sides of apple is in contact with any part of snake
-         appleX=Math.floor(Math.random()*tileCount); //Move apple to a random horizontal position
-         appleY=Math.floor(Math.random()*tileCount);//Move apple to a random vertical position
+     if(appleX==headX && appleY==headY){
+         appleX=Math.floor(Math.random()*tileCount);
+         appleY=Math.floor(Math.random()*tileCount);
          tailLength++;
 
      }
 
 ```
 
-Now, let's add the parts to our snake in case of collision. We will do it on the **drawSnake** function, We will style the added parts to color green. Then we will add the parts to the **snakeParts** array.
+Now, let's draw the parts of our snake. We will do it on the **drawSnake** function; The added features will be colour green. Then we will add items to the snakeParts array.
 
 ```javaScript
  function drawSnake(){
@@ -338,7 +349,7 @@ Now, let's add the parts to our snake in case of collision. We will do it on the
 
 ### Incorporate score
 
-First, we will initialize the score variable and set it to zero, then we will create a function called **drawScore** and call it in our main function **drawGame**.On our drawScore function, we will set score text using `ctx.fillText` then we will set its color to white using `ctx.fillStyle`, after that we will position it to the right-hand corner as shown in the following code.
+First, we will initialize the score variable and set it to zero, then we will create a function called **drawScore** and call it in our main function **drawGame**.On our drawScore function, we will set score text using `ctx.fillText` then we will set its color to white using `ctx.fillStyle`; after that we will position it to right-hand corner as shown in the following code.
 
 ```javaScript
 //scores
@@ -368,10 +379,9 @@ Now let's increment the score value whenever there is a collision.
 
 ```javaScript
  function checkCollision(){
-     if(appleX==headX && appleY==headY){ //if left, right, top, and bottom side of apple is in contact with any part of snake
-         appleX=Math.floor(Math.random()*tileCount); //move apple to a random horizontal position
-         appleY=Math.floor(Math.random()*tileCount);//move apple to a random vertical position
-
+     if(appleX==headX && appleY==headY){
+         appleX=Math.floor(Math.random()*tileCount);
+         appleY=Math.floor(Math.random()*tileCount);
          tailLength++;
          score++; //increase our score value
 
@@ -384,7 +394,7 @@ This is how it should look.
 
 ### Implement game over logic
 
-The game is over whenever the snake hits the wall or crushes to its own body. Let's implement that logic in a function called it `isGameOver`.Inside this function, we will initialize a boolean called **gameOver** and set it to false. When a snake hits any wall or crushes to its own body the boolean will be set to true.
+The game is over whenever the snake hits the wall or crushes to its own body. Let's implement that logic in a function call it `isGameOver`.Inside this function, we will initialize a boolean called **gameOver** and set it to false. When a snake hits any wall or crushes to its own body the boolean will be set to true.
 
 ```javaScript
 //Game Over function
@@ -407,7 +417,7 @@ function isGameOver(){
         gameOver=true;
     }
 
-    //stop the game when snake crushes to its own body
+    //stop game when snake crush to its own body
 
      for(let i=0; i<snakeParts.length;i++){
          let part=snakeParts[i];
@@ -416,7 +426,7 @@ function isGameOver(){
              break; // to break out of for loop
          }
 
-            return gameOver;// this will stop the execution of draw game method
+            return gameOver;// this will stop execution of drawgame method
      }
 
 ```
@@ -448,7 +458,7 @@ function drawGame(){
 
 ### Add game over text
 
-The game over text will appear whenever a game is over, So we will implement it on **isGameOver** function, where will check whether the snake has crushed its own body or wall. Then the game over text will be displayed.
+The game over text will appear whenever a game is over, So we will implement it on **isGameOver** function, where will check if any of the events occur then the game over text will be displayed.
 
 ```javaScript
 function isGameOver(){
@@ -470,7 +480,7 @@ function isGameOver(){
         gameOver=true;
     }
 
-    //stop the game when snake crushes to its own body
+    //stop game when snake crush to its own body
 
      for(let i=0; i<snakeParts.length;i++){
          let part=snakeParts[i];
@@ -488,7 +498,7 @@ function isGameOver(){
      ctx.fillText("Game Over! ", canvas.clientWidth/6.5, canvas.clientHeight/2);//position our text in center
     }
 
-    return gameOver;// this will stop the execution of draw game method
+    return gameOver;// this will stop execution of drawgame method
 }
 ```
 
