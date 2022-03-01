@@ -6,7 +6,7 @@ url: /creating-dashboards-in-react-using-react-dashboards/
 title: Creating Dashboards in React using React Dashboards
 description: This tutorial discusses about the free React dashboard templates. It provides a step by step guide of how to use the dashboards and also how to link a local database to the application
 author: patrick-munyaka
-date: 2022-02-21T00:00:00-00:25
+date: 2022-03-01T00:00:00-09:24
 topics: [Languages]
 excerpt_separator: <!--more-->
 images:
@@ -17,7 +17,7 @@ images:
 [Flatologic](https://flatlogic.com/) is a company that offers free and premium dashboard templates in various frameworks. Whether in Angular, Vue or React, developers can find many user-friendly pre-built applications to suit their needs.
 <!--more-->
 
-Rather than starting a project from scratch, this drastically reduces the amount of coding involved and gets a project running quickly. 
+Rather than starting a project from scratch, this drastically reduces the amount of coding involved and gets a project running quickly.
 
 In this tutorial, we will focus on their free template called React Dashboard. This template is built with React, Bootstrap, React Router, Redux, and GraphQL. It comes with a React frontend and a Node.js backend.
 
@@ -44,7 +44,7 @@ After reading this article the reader will be able to:
 ### Prerequisites
 To follow through this tutorial, you will need:
 - Knowledge of fundamentals of React.
-- Basic knowledge of the Mamp Server.
+- Basic knowledge of the MAMP Server.
 
 Let's get to it!
 
@@ -83,7 +83,7 @@ We have a great dashboard, but at the moment, it is working with hard-coded valu
 
 You can choose any database, but for the sake of this tutorial, we will connect a MySQL database.
 
-To create one, we will use `MAMP`, which allows us to get Apache, Nginx, PHP, and MySQL out of the box. 
+To create one, we will use `MAMP`, which allows us to get Apache, Nginx, PHP, and MySQL out of the box.
 
 If you do not have MAMP, you can download it [here](https://www.mamp.info/en/downloads/). After installing, start the application and click `Webstart`.
 
@@ -178,9 +178,9 @@ In our dashboard, we can click on `View all Posts`, then `Create New`. After we 
 ### Conclusion
 In this tutorial, we learned how to clone the React Dashboard template from [Flatologic](https://flatlogic.com/) and launch it locally. This allowed us to have a user-friendly dashboard up and running quickly.
 
-Then, we created a MySQL database with a table and some fields and connected it to our new application. Thanks to this pre-built dashboard, developers around the world can quickly build a React application. 
+Then, we created a MySQL database with a table and some fields and connected it to our new application. Thanks to this pre-built dashboard, developers around the world can quickly build a React application.
 
-Starting a project from scratch can be time consuming. These templates come with all the functionalities needed to get started.
+Starting a project from scratch can be time consuming but these templates come with all the functionalities needed to get started and will have you save time and effort.
 
 Happy coding!
 
