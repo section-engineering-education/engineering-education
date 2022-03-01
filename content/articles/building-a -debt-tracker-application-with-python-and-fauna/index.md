@@ -1,23 +1,21 @@
 ### Building a Debt Tracker Application with Python and Fauna
-
 [Fauna](https://fauna.com) is a cloud-based database at its core, with two interfaces: GraphQL and Fauna Query Language (FQL). Databases can hold collections, indexes, and even other databases (multi-tenancy). Documents are located within collections and do not have special schema requirements by default. Fauna can handle a wide range of data types (including temporal), but it's most known for its relational data handling.
 
-In this tutorial, we will build a debt tracker application using Fauna. We will use Fauna to store our data and use GraphQL to query it. We will also use FQL to query the data.
+In this tutorial, we will build a debt tracker application using Fauna. We will use Fauna to store our data and use GraphQL to query it.
 
 Let's get started!
 
 ### Prerequisite
 To follow along with this tutorial, you are required to have the following:
 - A text editor.
+- Some knowledge of Python, Fauna, and Flask.
 - Python installed.
-- Prior knowledge of Python and Flask.
 
 ### Table of content
-- [Prerequisite](#prerequisite)
 - [Getting started with Fauna](#getting-started-with-fauna)
 - [Creating a database in Fauna](#creating-a-database-in-fauna)
 - [Creating a collection in Fauna](#creating-a-collection-in-fauna)
-- [Creating a secret key for the Fauna database](#creating-a-secret-key-for-the-fauna-database)
+- [Creating an API key for the Fauna database](#creating-an-api-key-for-the-fauna-database)
 - [Creating a Flask app](#creating-a-flask-app)
 - [Connecting Python with Fauna](#connecting-python-with-fauna)
 - [Saving data with Fauna](#saving-data-with-fauna)
@@ -35,7 +33,7 @@ After creating an account, you will be able to create a database. Our database w
 Enter the desired name for your database and click `CREATE`.
 
 ### Creating a collection in Fauna
-Fauna is a relational database that organizes its data into collections and uses indexes to search them, so we must create a collection to store our data. The user's collection, for example, comprises database user information and is similar to SQL tables in that it contains data with similar qualities.
+Fauna organizes its data into collections and uses indexes to search them. The user's collection, for example, comprises database user information and is similar to SQL tables in that it contains data with similar qualities.
 
 Far from being a database, a collection is a container for documents. We will create a collection to store our data.
 Now that you have a database, you can create a collection. To do so, go to the Fauna dashboard and click on the `create collection` button:
@@ -46,7 +44,7 @@ The `History Days` are the numbers of days that you will wish Fauna to retain th
 
 Enter a name for your collection and click `SAVE.`
 
-### Creating a Fauna index
+### Creating a Fauna Index
 The Fauna index is a way to search for specific data. For example, if you wanted to find all the users in the database, you could search for all the users by entering `users` in the search bar.
 
 To create indexes, click on the `Indexes` tab and click on the `New Index` button:
@@ -55,10 +53,10 @@ To create indexes, click on the `Indexes` tab and click on the `New Index` butto
 
 Here, you are supposed to choose the collection name you want and enter the name you wish to call the index under the `Index Name` area. Terms are the fields that you want to search for from the collection. You can enter multiple terms by adding another field. In our case, we want to search for the `data.pending`. Once you are done, click `SAVE.`
 
-### Creating a secret key for the Fauna database
-Fauna is a cloud-based database. It is a service that allows you to store data securely. It is also a service that will enable you to query data. 
+### Creating an API key for the Fauna database
+Fauna is a cloud-based database. It is a service that allows you to store data securely. It is also a service that allows you to query data. 
 
-To access the database, we'll need to generate an API key. To do so, go to your Fauna dashboard and select the 'Security' tab, then the 'NEW KEY' button:
+To access the database, we'll need to generate an API key. To do so, go to your Fauna dashboard and select the 'Security' tab, then the `NEW KEY` button:
 
 ![create api key](/engineering-education/building-a -debt-tracker-application-with-python-and-fauna/create-api-key.png)
 
@@ -66,7 +64,7 @@ The key name is the name of the key that you want to give to the key. The key is
 
 After filling in the form, click `SAVE`. Fauna will provide you with the secret key that you can use to access the database.
 
-### Installing Fauna client
+### Installing Fauna Client
 Fauna Client is a Python library that allows you to access the database. To install Fauna Client, you need to install the following packages under your terminal:
 
 ```bash
@@ -83,12 +81,12 @@ $ pip install Flask
 $ pip install Flask_Bootstrap4
 ```
 
-### Project Structure
-Let's create a working directory for our project. We will create a working directory called `fauna-python-tutorial` and then create a ' static' directory inside it to store our static files. We will also create a directory called `templates` inside the working directory to store our templates. Finally, we will create our `app.py` file in the `fauna-python-tutorial` directory.
+### Project structure
+Let's create a working directory for our project. We will create a working directory called `fauna-python-tutorial` and then create a ' static' directory inside it to store our static files. We will also create a' templates' directory inside the working directory to store our templates. Finally, we will create our `app.py` file in the `fauna-python-tutorial` directory.
 
 Let's look at what our new project structure will look like from inside our app project directory:
 
-```bash
+```
 .
 ├── static
 │   ├── script.js
@@ -119,9 +117,17 @@ We should see a default page that looks like this:
 The default page is the home page of our app. We can add debt by clicking on the `Add Loan` button.
 
 ### Connecting Python with Fauna
+In our `app.py` file, we need to import the Fauna Client libraries. We will import the Fauna Client libraries by using the following code:
+
+```python
+from faunadb import query as q
+from faunadb.objects import Ref
+from faunadb.client import FaunaClient
+```
+
 Let's now set up our Fauna Client. We will use the `secret_key` that we created earlier to connect to the database. We will also set up the `client` variable to be used in our app:
 
-```py
+```python
 app = Flask(__name__)
 Bootstrap(app)
 app.config["SECRET_KEY"] = "SECRET_KEY"
@@ -130,12 +136,12 @@ client = FaunaClient(secret="YOUR_KEY'S_SECRET_HERE")
 
 We shall replace `YOUR_KEY'S_SECRET_HERE` with the secret key that we created earlier.
 
-From here, we shall now explore the four main CRUD operations of a database system.
+From here, we shall now explore the four primary operations of a database system, i.e., Create (C), Read (R), Update (U), and Delete (D) (CRUD) operations that we can perform on our Fauna database.
 
 ### Saving data with Fauna
 Now, let's start integrating our debt tracker application with Fauna. We will first create an `add` route to our `app.py` file:
 
-```py
+```python
 @app.route("/add/", methods=["POST"])
 def add_loan():
     name = request.form.get("name")
@@ -163,7 +169,7 @@ We have utilized Fauna create operation from the code above to register the data
 ### Fetching data from Fauna
 In this section, we shall fetch our added data from the database. We will create a  default `/` route to our `app.py` file:
 
-```py
+```python
 @app.route("/")
 def debt():
     debt = client.query(
@@ -180,21 +186,69 @@ def debt():
     return render_template("index.html", debt_data=client.query(debt_data))
 ```
 
-We have created a `debt()` function from the code above to fetch all the data from the `debt` collection. We have used the `paginate` function to fetch the data from the database. We have used the `match` function to match the data with the `pending` field. We have used the `index` function to create an index on the `pending` field. We have used the `size` function to set the size of the data that we want to fetch. We have used the `get` function to get the data from the database. 
+We have created a `debt()` function from the code above to fetch all the data from the `debt` collection. We have used the `paginate` function to fetch the data from the database.
+
+We have used the `match` function to match the data with the `pending` field. We have used the `index` function to create an index on the `pending` field. We have used the `size` function to set the size of the data that we want to fetch. We have used the `get` function to get the data from the database. 
 
 We have used the `ref` function to get the data reference. We have used the `id()` function to get the id of the data. We have used the `query` function to query the data from the database. Finally, we have used the `render_template` function to render the template. We have passed the `debt_data` variable to the template.
 
 ### Updating data in Fauna
-In this section, we shall be using the `update` operation to update the data in the database. We will create an `update` route to our `app.py` file.
+In this section, we shall be using the `update` operation to update the data in the database. We will create an `update` route to our `app.py` file:
 
-We shall utilize the `update` function to update the data in the database.
+```python
+@app.route("/update/", methods=["POST"])
+def update_loan():
+    action = request.form.get("action")
+    amount = request.form.get("amount")
+    loan_id = request.form.get("loanID")
+
+    loan_data = client.query(
+        q.get(
+            q.ref(q.collection("debt"), int(loan_id))
+        )
+    )
+
+    old_amount = loan_data["data"]["amount"]
+    if action == "Borrow More":
+        new_amount = old_amount + float(amount)
+    elif action == "Repay Loan":
+        new_amount = old_amount - float(amount)
+
+    client.query(
+        q.update(
+            q.ref(q.collection("debt"), int(loan_id)), {
+                "data": {
+                    "amount": new_amount
+                }
+            }
+        )
+    )
+
+    flash("You have successfully updated your debt")
+    return redirect(url_for("debt"))
+```
+
+From the code above, we have utilized the `update` function to update the data in the database.
 
 We have used the `get` function to get the data from the database. We have used the `update` function to update the data in the database. We have used the `flash` function to display a message to the user. We have used the `redirect` function to redirect the user to the `debt` route.
 
-### Cleaning up data in Fauna
+### Deleting data in Fauna
 Here, we shall use the delete operation to delete the data from the database. We will create a `delete` route to our `app.py` file:
 
-We shall utilize the `delete` function from the code above to delete the data from the database. We have used the `int` function to convert the `loan_id` to an integer. We have used the `query` function to query the data from the database.
+```python
+@app.route("/clear/<int:loan_id>/")
+def clear_loan(loan_id):
+    client.query(
+        q.delete(
+            q.ref(q.collection("debt"), loan_id)
+        )
+    )
+
+    flash("You have successfully cleared loan information!", "success")
+    return redirect(url_for("debt"))
+```
+
+We have utilized the `delete` function from the code above to delete the data from the database. We have used the `int` function to convert the `loan_id` to an integer. We have used the `query` function to query the data from the database.
 
 We have used the `delete` function to delete the data from the database. We have used the `flash` function to display a message to the user. We have used the `redirect` function to redirect the user to the `debt` route.
 
