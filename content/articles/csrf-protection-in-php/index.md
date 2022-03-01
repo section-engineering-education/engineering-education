@@ -4,7 +4,7 @@ status: publish
 published: true
 url: /csrf-protection-in-php/
 title: CSRF Protection in PHP
-description: In this instructional exercise, you will learn how to make a fruit-themed version of the classic arcade game Fruit Ninja. The main objective is to see how creative you can be with your degree of javaScript expertise.
+description: This article will discuss CSRF protection. We will implement CSRF protection into a contact form to understand the process. 
 author: esther-maina
 date: 2022-03-01T00:00:00-05:19
 topics: [Languages]
