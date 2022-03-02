@@ -6,7 +6,7 @@ url: /how-to-use-symbolic-math-toolbox-in-matlab-to-analyze-the-fourier-series/
 title: How to use the Symbolic Math Toolbox in MATLAB to analyze the Fourier series
 description: In this article, we will use the Symbolic Math Toolbox in MATLAB to analyze the Fourier series.
 author: linet-achieng
-date: 2022-01-31T00:00:00-11:10
+date: 2022-03-02T00:00:00-11:30
 topics: [Languages]
 excerpt_separator: <!--more-->
 images:
@@ -14,8 +14,10 @@ images:
   - url: /engineering-education/how-to-use-symbolic-math-toolbox-in-matlab-to-analyze-the-fourier-series/hero.jpg
     alt: How to use the Symbolic Math Toolbox in MATLAB to analyze the Fourier series hero image
 ---
-Symbolic Math Toolbox provides an easy, intuitive and complete environment to interactively learn and apply math operations such as calculus, algebra, and differential equations. 
+Symbolic Math Toolbox provides an easy, intuitive and complete environment to interactively learn and apply math operations such as calculus, algebra, and differential equations.
+
 <!--more-->
+
 It can perform common analytical computations such as differentiation and integration to get close form results.
 
 It simplifies and manipulates expression for great insights and solves algebraic and differential equations.
@@ -61,7 +63,7 @@ In non-linear control design, the Symbolic Math Toolbox improves recalculation s
 Now, all these applications discussed above were to give you an insight into the wide application of this toolbox. However, not all of them are discussed here. Here, we will only major in using the toolbox to solve Fourier series problems.
 
 ### How to use the Symbolic Math Toolbox
-This toolbox is enabled in MATLAB using the function `syms`. You get an error message if you have the expression `x=2*a+b` and try to execute it in Matlab. The error message is *undefined function or variable 'a'* as shown below:
+This toolbox is enabled in MATLAB using the function `syms`. However, you get an error message if you have the expression `x=2*a+b` and try to execute it in Matlab. The error message is *undefined function or variable 'a'* as shown below:
 
 ```MATLAB
 x = 2*a + b
