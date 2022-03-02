@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /a-look-at-php-frameworks/
+url: /look-at-php-frameworks/
 title: A Look at PHP Frameworks
 description: This article will help you understand the various PHP frameworks and their features. It will also help you choose the right framework for your project.
 author: moses-wachiuri
@@ -11,7 +11,7 @@ topics: [Languages]
 excerpt_separator: <!--more-->
 images:
 
-  - url: /engineering-education/a-look-at-php-frameworks/hero.png
+  - url: /engineering-education/look-at-php-frameworks/hero.png
     alt: PHP frameworks
 ---
 Nowadays, PHP developers have been using PHP web frameworks to build their web applications. This is because frameworks speed up the development process and are easy to use.
