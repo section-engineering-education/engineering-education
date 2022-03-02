@@ -1,3 +1,19 @@
+---
+layout: engineering-education
+status: publish
+published: true
+url: /dockerized-prisma-postgres-api/
+title: Introduction to Prisma
+description: In this article, we will be introduced to Primsa. We will learn what Prisma is, how to work with it, and deploy it on a docker container.
+author: faith-musyoka
+date: 2022-03-03T00:00:00-05:30
+topics: [API]
+excerpt_separator: <!--more-->
+images:
+
+ - url: /engineering-education/dockerized-prisma-postgres-api/hero.jpg
+   alt: Introduction to Prisma
+---
 In this tutorial, you will learn more about the Prisma ecosystem to build a simple server that accesses Prisma to read its database schema and run it on a Docker container.
 <!--more-->
 At some point, you will need a database for your back-end application, be it with Python, Java, or Node.js. For the backend to communicate with the database, you need a way to connect your server to that database.
@@ -557,3 +573,6 @@ Happy coding!
 - [Understanding Docker Concepts](/engineering-education/docker-concepts/)
 - [Managing and Running Docker Containers](/engineering-education/running-and-managing-docker/)
 - [Why is Docker so Popular](/engineering-education/why-is-docker-so-popular/)
+
+---
+Peer Review Contributions by: [Srishilesh P S](/engineering-education/authors/srishilesh-p-s)
