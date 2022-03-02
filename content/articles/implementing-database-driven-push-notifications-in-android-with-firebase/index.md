@@ -4,15 +4,15 @@ In this tutorial we will dive deep into understanding how to send Push notificat
 
 ### Table of contents
 - [Prerequisites](#prerequisites)
-- [What are push notifications?](#what-are-push-notifications?)
-- [When do we need them?](#when-do-we-need-them?)
+- [What are push notifications?](#what-are-push-notifications)
+- [When do we need them?](#when-do-we-need-them)
 - [Creating a cloud function](#step-1---creating-a-cloud-function)
-- [Getting started with Android studio](#step-2---getting-started-with-android-studio)
-- [Adding necessary dependencies](#step-3---adding-necessary-dependencies)
-- [Designing a user interface](#step-4---designing-a-user-interface)
+- [Getting started with Android studio](#step-1---creating-a-cloud-function)
+- [Adding necessary dependencies](#step-3---adding-the-necessary-dependencies)
+- [Designing the user interface](#step-4---designing-the-user-interface)
 - [Creating a notifications service](#step-5---creating-a-notifications-service)
 - [Triggering notifications](#step-6---triggering-notifications)
-- [Demo](demo)
+- [Demo](#demo)
 - [Conclusion](#conclusion)
 
 ### Prerequisites
