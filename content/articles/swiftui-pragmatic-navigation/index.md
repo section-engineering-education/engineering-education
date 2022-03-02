@@ -6,19 +6,23 @@ url: /swiftui-pragmatic-navigation/
 title: Getting started with pragmatic navigation in SwiftUI
 description: This article will explain different methods of navigation flow and view construction in SwiftUI
 author: okelo-violet
-date: 2022-03-01T00:00:00-14:30
-topics: []
+date: 2022-03-02T00:00:00-06:20
+topics: [Languages]
 excerpt_separator: <!--more-->
 images:
 
   - url: /engineering-education/swiftui-pragmatic-navigation/hero.png
     alt: Getting started with pragmatic navigation in SwiftUI
 ---
+SwiftUI is a new UI library used to build user interfaces in Swift. This declarative framework allows developers to build your UI declaratively. 
+<!--more-->
+[SwiftUI](https://developer.apple.com/swiftui/) is data-driven, as opposed to the UIKIt framework that is imperative. 
 
-[SwiftUI](https://developer.apple.com/swiftui/) is a new UI library used to build user interfaces in Swift. SwiftUI is a declarative framework that allows you to build your UI declaratively, using a declarative syntax. SwiftUI is data-driven, as opposed to the UIKIt framework that is imperative. In this article, we will look at different methods of navigation flow and view construction in SwiftUI. We will also look at the MVC pattern that will allow us to abstract the navigation logic from the view.
+In this article, we will look at different methods of navigation flow and view construction in SwiftUI. 
 
-### Table of Contents
-- [Table of Contents](#table-of-contents)
+We will also look at the MVC pattern that will allow us to abstract the navigation logic from the view.
+
+### Table of contents
 - [Prerequisites](#prerequisites)
 - [MVC pattern](#mvc-pattern)
 - [Application setup](#application-setup)
@@ -26,19 +30,26 @@ images:
   - [Model](#model)
   - [View](#view)
 - [Conclusion](#conclusion)
+
 ### Prerequisites
-To follow along with this article, you need the following:
+To follow along with this article, you need:
 - Knowledge in [SwiftUI](https://developer.apple.com/swiftui/).
+
 - [Apple developer tools](https://developer.apple.com/download/more/) installed on your computer.
+
 - [Xcode](https://developer.apple.com/xcode/) and [Swift](https://swift.org/) installed on your computer.
 
 ### MVC pattern
-Model View Controller [MVC](https://en.wikipedia.org/wiki/Model%E2%80%93view%E2%80%93controller) is a design pattern allows us to modularize our application and abstract the business logic from the view. We will implement the MVC pattern in our application to abstract the navigation logic from the view and achieve the pragmatic SwiftUI navigation.
+Model View Controller [MVC](https://en.wikipedia.org/wiki/Model%E2%80%93view%E2%80%93controller) is a design pattern that allows us to modularize our application and abstract the business logic from the view. 
+
+We will implement the MVC pattern in our application to abstract the navigation logic from the view and achieve the pragmatic SwiftUI navigation.
 
 ### Application setup
-1. On Xcode, create a new application named "SwiftUI_Navigation". Make sure you have selected `SwiftUI` as the project type.
-2. In the project directory, create a new group named `Views` and a new SwiftUI view file named `HomeView.swift` in the `views` group.
-3. Update the `HomeView.swift` file with the following code:
+On Xcode, create a new application named `SwiftUI_Navigation`. Make sure you have selected `SwiftUI` as the project type.
+
+In the project directory, create a new group named `Views` and a new SwiftUI view file named `HomeView.swift` in the `views` group.
+
+Update the `HomeView.swift` file with the following code:
 
 ```swift
 struct HomeView: View {
@@ -65,11 +76,20 @@ struct HomeView: View {
     }
 }
 ```
-- `@State` is a SwiftUI property that allows you to store a value in a view. It is not possible to hold a variable whose value changes in a SwiftUI view by default. To overcome this problem, we use the `@State` property wrapper.
-- The above code creates a `TabView` that allows you to switch between two tabs. However, this kind of navigation leads to a lot of boilerplate code in the SwiftUI view when the number of navigation destinations increases, let's say having 10 screens to navigate. To solve this problem, we can abstract the routes to a controller that will handle navigation.
+
+`@State` is a SwiftUI property that allows you to store a value in a view. It is not possible to hold a variable whose value changes in a SwiftUI view by default. 
+
+To overcome this problem, we use the `@State` property wrapper.
+
+The above code creates a `TabView` that allows you to switch between two tabs. However, this kind of navigation leads to a lot of boilerplate code in the SwiftUI view. 
+
+This is evident when the number of navigation destinations increases. Let's say having ten screens to navigate. 
+
+To solve this problem, we can abstract the *routes* to a *controller* that will handle navigation.
 
 #### Controller
-1. In the project directory, create a new group named `Controllers` and a new Swift file name `Navigation.swift` and add the code snippet below.
+In the project directory, create a new group named `Controllers` and a new Swift file name `Navigation.swift` and add the code snippet below:
+
 ```swift
 enum Tab {
     case Tab_a
@@ -85,25 +105,30 @@ class HomeController: ObservableObject {
     }
 }
 ```
-In the code snippet above:-
+
+In the code snippet above:
 - The enum `Tab` will store all the navigation destinations' names. Storing the destinations as enums makes it possible to keep the tabs' current state and navigate from any screen.
+
 - The `HomeController` class extends the `ObservableObject` since we have to keep track of the currently active tab on the SwiftUI view.
+
 - `@Published` annotation sets the variable `active` to be observable, making it possible for our SwiftUI views to observe the change and navigate to the select screen.
 
 #### Model
-1. In the project directory, create a new group named `Models` and create a new Swift file named `News.swift` and add the code snippet below.
+In the project directory, create a new group named `Models` and create a new Swift file named `News.swift` and add the following code:
+
 ```swift
 struct News: Identifiable {
     let id = UUID() //Autogenerated Value
     let title: String
     let description:String
 }
-
 ```
-In the code snippet above, we have the news model that holds the news item. The `News` class extends `Identifiable` to make it possible to have a unique `id` that we can use to identify a news item.
+
+In the above code, we have the *news* model that holds the *news item*. The `News` class extends `Identifiable` to make it possible to have a unique `id` that we can use to identify a *news item*.
 
 #### View
-1. Create a new Swift file named `NewsView.swift` in the `Views` group and add the code snippet below.
+Create a new Swift file named `NewsView.swift` in the `Views` group and add the code snippet below:
+
 ```swift
 struct NewsView: View {
     var news: News //Single news item
@@ -117,9 +142,11 @@ struct NewsView: View {
     }
 }
 ```
-- In the code snippet above, we create a view that will hold a single news item in the news list home screen.
 
-2. Create a SwiftUI file named `TabAView.Swift` in the `Views` group and add the code snippets below.
+In the code snippet above, we create a view that will hold a single *news item* on the home screen.
+
+We need to create a SwiftUI file named `TabAView.Swift` in the `Views` group and add the code below:
+
 ```swift
 struct TabAView: View {
     @EnvironmentObject private var controller: HomeController
@@ -149,11 +176,14 @@ struct TabAView: View {
         }
     }
 }
-
 ```
+
 - `@EnvironmentObject` annotation is a Swift wrapper used on variables accessed by several views in the application. Whenever the observable variable in the `HomeController` changes, the view files should be able to update the value of the `@EnvironmentObject` variable.
-We can also navigate to the next view through the `NavigationLink` provided by SwiftUI and a button click, as we can see in the above code snippet.
-3. Create a new SwiftUI file named `TabBView.swift` in the `Views` group and add the code snippet below.
+
+We can also navigate to the next view through the `NavigationLink` provided by SwiftUI and a button click.
+
+Next, create a new SwiftUI file named `TabBView.swift` in the `Views` group and add the following code:
+
 ```swift
 struct TabBView: View {
     @EnvironmentObject private var controller: HomeController
@@ -168,10 +198,11 @@ struct TabBView: View {
     }
 }
 ```
-- In the code snippet above, we create a SwiftUi view with a search field that can be used to search the news items.
-- `@State` annotation is a Swift wrapper that keeps the current state of variables whose values change. For example, whenever we input a character to the search text field, we store the current search text in the search variable.
+- In the above code, we created a SwiftUI view with a search field that can be used to search the news items.
 
-3. Finally, we need to update the `HomeView.swift` with the code snippet below.
+- `@State` annotation is a Swift wrapper that keeps the current state of variables whose values change. For example, whenever we input a character to the *search text* field, we store the current *search text* in the *search* variable.
+
+Finally, we need to update the `HomeView.swift` with the code snippet below:
 
 ```swift
 struct HomeView: View {
@@ -202,11 +233,19 @@ struct HomeView: View {
 }
 
 ```
-- In the code snippet above, we are setting up the application tabs to enable us to navigate from one tab to another using SwiftUI tabs.
+
+In the above code, we are setting up the application tabs to enable us to navigate from one tab to another using SwiftUI tabs.
 
 ### Conclusion
-In this article, you have learned about the different ways of navigation flow and view construction in SwiftUI. You have also known the MVC pattern that allows us to abstract away the navigation logic from the view. In addition, the MVC pattern makes it easier to modularize the application, thus making it easier to maintain it. You can now complete the application's search functionality and implement the detail page. You can download the complete source code [here](https://replit.com/@okeloviolet/navigation).
+In this article, you have learned about the different techniques of navigation flow and view construction in SwiftUI. 
+
+We also discussed the MVC pattern that allows us to abstract the navigation logic from the view. 
+
+In addition, the MVC pattern makes it easier to modularize the application, thus making it easier to maintain it. 
+
+You can now complete the application's search functionality and implement the detail page. 
+
+You can download the complete source code [here](https://replit.com/@okeloviolet/navigation).
 
 ---
-
 Peer Review Contributions by: [Odhiambo Paul](/engineering-education/authors/odhiambo-paul/)
