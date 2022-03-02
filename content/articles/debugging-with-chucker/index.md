@@ -2,7 +2,7 @@ Working with OkHttp to perform network calls is always easy but the problem come
 
 You might be wondering what debugging is in Android development. Debugging can be defined as the process of analyzing a code of a program to detect and remove potential errors that might cause your app to crash. 
 
- ### Table of contents
+ ### Table of contents/*
  - [Prerequisites](#prerequisites)
  - [What is Chucker](#what-is-chucker)
  - [What is OkHttp](#what-is-okhttp)
@@ -19,22 +19,22 @@ You might be wondering what debugging is in Android development. Debugging can b
 - Kotlin [Coroutines](https://developer.android.com/kotlin/coroutines) basics.
 
 ### What is Chucker
-Chucker is an open-source Android debugging library produced and is being maintained by the Chucker team. It is used to simplify the inspection of HTTP(S) requests that are fired by your Android application. It works as an OkHttp interceptor by providing a user interface for inspecting and sharing the OkHttp events inside your application.
+Chucker is an open-source Android debugging library produced and is being maintained by the Chucker team. The library is used to handle HTTP(S) inspections fired from an Android device. It works as an OkHttp interceptor by providing a user interface for inspecting and sharing the OkHttp events inside your application.
 
 When you integrate your app with Chucker, your app will display a push notification displaying a summary of HTTP activities that are in progress. 
 
 [notification](/engineering-education/debugging-with-chucker/chucker-notification.jpg)
 
-Tapping on the push notification, launches a complete UI of Chucker.
+When you click on the push notification, a complete Chucker UI is launched from where you can inspect the network response.
  
 [chucker ui](/engineering-education/debugging-with-chucker/chucker-ui.png)
 
-You can prevent the notification from showing and launching the Chucker UI directly from within their interface. This is because when installing/building your app in Android studio, Chucker 'app' is installed alongside yours.
+The push notification can still be prevented from showing and allowing Chucker UI to be launched directly from its interface. This is because when installing/building your app in Android Studio, Chucker 'app' is installed alongside yours.
 
 ### What is OkHttp
 OkHttp is built on top of HTTP. We can define HTTP as the protocol that governs how modern applications communicate over a network. It can either be via a secured channel(HTTPS) or an unsecured channel(HTTP).
 
-Therefore, OkHttp can be defined as an open-source library used to send and receive HTTP-based network requests efficiently. For further reading on OkHttp, please refer [here](https://square.github.io/okhttp/)
+OkHttp can be defined as an open-source library used to send and receive HTTP-based network requests efficiently. For further reading on OkHttp, please refer [here](https://square.github.io/okhttp/)
 
 ### Getting Started
 
@@ -60,11 +60,11 @@ In your app-level `build.gradle` file, add the following dependencies;
 ```
 Chucker has two libraries i.e `com.github.chuckerteam.chucker:library` and `com.github.chuckerteam.chucker:library-no-op`. The latter is used to isolate Chucker from the release build. This means if you fail to add the second library, Chucker will still work but it will be present in your release build which is not encouraged due to some reasons that we shall discuss below.
 
-Also, ensure Java 8 support is enabled by ensuring that the code below is present in your app-level `build.dradle` file inside the `android` block.
+Also, ensure Java 8 support is enabled by ensuring that the code below is present in your app-level `build.gradle` file inside the `android` block.
 
 In the dependencies, we have added the OkHttp library because Chucker works with its interceptor. The Coroutines library is added because OkHttp involves network calls. Network calls should be done in the background thread since they take some time before the response is returned. This might block the main thread if done in the main thread.
 
-Using Chucker is very simple because once you have added the library to your gradle file you will be ready to use it. We can then plug the `ChuckerInterceptor` into our OkHttp client.
+Using Chucker is very simple because once you have added the library to your gradle file, you only have to plug the `ChuckerInterceptor` into the OkHttp client.
 
 ```kotlin
 // OkHttp client
@@ -98,7 +98,7 @@ val myChuckerCollector = ChuckerCollector(
     retentionPeriod = RetentionManager.Period.ONE_WEEK  // Period taken to retain the collected data, can be an hour, day or week
 )
 ```
-After creating the collector, we can then create the `ChuckerInterceptor` which we will plug into the `OkHttpClient` Builder. In the final part, we will create our OkHttp request for making network calls. 
+In the final part, we will create our OkHttp request for making network calls. 
 
 > Note: Remember to make the network calls inside a Coroutine scope.
 
@@ -174,7 +174,7 @@ Here is the full implementation of our `MainActivity.kt` class.
 ```
 [demo project](/engineering-education/debugging-with-chucker/chucker-demo.gif)
 
-### Conclussion
+### Conclusion
 In this tutorial, we learned how to use Chucker when debugging. You can read further on mapping the JSON response to Kotlin objects using [Gson](https://github.com/google/gson) library. Chucker is very simple to use and very efficient in debugging when performing network calls with OkHttp Client just as we have seen above. Don't forget to look at the other debugging libraries like Timber and Stetho because they are also very useful in certain scenarios.
 
-Happy Coding!
+Happy Coding!*/
