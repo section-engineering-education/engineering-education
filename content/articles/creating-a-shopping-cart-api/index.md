@@ -51,7 +51,6 @@ public class Admin {
     }
 }
 ```
-
 #### Customer
 ```java 
 @Data
@@ -171,8 +170,7 @@ public class ProductDao {
 ```
 N/B At the top of the class, you must put the `@Repository` annotation to let spring know that that particular class is a repository that maps to entities to the database.
 ### Creating the service layer
-The service layer is where we create our interface and also implement it. This layer contains all our business logic and you must always put the `@Service` at either in the interface or the implementation. Now, we will have a look at our interfaces and later their implementations.
-The service layer contains the following interfaces:
+The service layer is where we create our interfaces pertaining to our business logic and also implement them. You must always put the `@Service` annotation at either in the interface or the implementation. This annotation is so that Spring knows that the class or interface acts as a service. Now, we will have a look at our interfaces and later their implementations. The service layer contains the following interfaces:
 #### CartService
 ```java
 public interface CartService {
@@ -199,7 +197,7 @@ public interface DataService {
     List<Admin> getAllAdmin();
 }
 ```
-From here, you will see how we code to the interface. Any method that is in the interface must be implemented in the implementation. In this code, I used the `@Service` annotation in the implementation. We have the following implementations of the two classes in our interface and they are:
+From here, you will see how we code to the interface. Any method that is in the interface must be implemented in the implementation. In this code, I used the `@Service` annotation in the implementation. We have the following implementations of the two interfaces and they are:
 #### CartServiceImpl
 ```java
 @Service
@@ -324,7 +322,7 @@ public class DataServiceImpl implements DataService {
 
 ```
 ### Cart Package
-Next up in the agenda is to create a cart package and in the cart package we create a cart object (class) to carry out certain functions with it methods:
+Next up in the agenda is to create a cart package and in the cart package we create a cart class to carry out certain functionality with its methods:
 ```java
 @Component
 public class Cart {
