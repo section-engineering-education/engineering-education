@@ -6,7 +6,7 @@ url: /ssh-tunneling/
 title: SSH Tunneling
 description: This article will discuss the concept of SSH tunneling. SSH tunneling is a technique that allows us to access remote resources that we do not have access to because they are internal to that network.
 author: joseph-ongoma
-date: 2022-02-24T00:00:00-15:50
+date: 2022-03-02T00:00:00-12:50
 topics: [Networking]
 excerpt_separator: <!--more-->
 images:
@@ -22,7 +22,7 @@ To perform SSH tunneling, we will need to perform port forwarding to allow port 
 
 To ensure the security of our network services, not all ports are directly accessible from outside the Enterprise Network Compute System (ENCS) network. If you are offsite and need to access a protected resource, you can use SSH to tunnel through an accessible resource to reach the protected resource.
 
-In this article, we will look at two main subtopics in SSH tunneling, that is:
+In this article, we will look at two main subtopics in SSH tunneling, which are:
 - Remote port forwarding
 - Local port forwarding
 
@@ -33,7 +33,7 @@ In this article, we will look at two main subtopics in SSH tunneling, that is:
 - [Conclusion](#conclusion)
 
 ### Prerequisites
-To perform SSH tunneling, you need the following:
+To perform SSH tunneling, you'll need the following:
 - A publicly accessible SSH server.
 - A basic understanding of networking. You can read it from this [Cisco site](https://www.cisco.com/c/en/us/solutions/small-business/resource-center/networking/networking-basics.html).
 - The resources to be accessed.
@@ -51,7 +51,7 @@ The image below is a demonstration of local port forwarding:
 
 *[Image source](https://sites.google.com/view/ssh-tunneling/home)*
 
-Using the image above, let us have an explanation of SSH tunneling from it. Suppose we have the following devices with IP addresses as shown respectively:
+Using the image above, let us go through an explanation of SSH tunneling from it. Suppose we have the following devices with IP addresses as shown respectively:
 - An internal resource that we need access to on port 8080 and IP address `192.168.1.3`.
 - A public SSH server of IP address `192.168.1.2` and a public IP address of `44.11.22.33` on port 22.
 - A local device of IP address `10.0.0.4`.
@@ -80,7 +80,7 @@ The command below will be used to perform local port forwarding:
 ssh -L 8888:192.168.1.3:8080 44.11.22.33
 ```
 
-We are going to access our public SSH server using SSH. To do this, since our local machine is dumb and is not enough to access the remote resources, we will create a local port, that is, port 8888. 
+We are going to access our public SSH server using SSH. To do this, since our local machine can not access the remote resources, we will create a local port, that is, port 8888. 
 
 What happens is that the SSH server will listen on port 8888 from our local machine. Any traffic that goes to port 8888 from our local machine is forwarded to the IP address `192.168.1.3` on port 8080 through the public SSH server. As a result, a TCP connection is established with our SSH server to our machine because it is open
 
@@ -88,7 +88,7 @@ If we visit our local machine on IP address `10.0.0.4` on port 8888, our local m
 
 When our public SSH server receives this, it acknowledges that our local machine wants to access resources at IP address `192.168.1.3` that it has access to. So it will forward the request internally because they are on the same network. The server will receive the request, get the response, and then forward it back to our local machine. With that, we have accessed our remote resources.
 
-In some instances,  let's say our remote IP address is forbidden from our local network i.e, our ISP is blocking access to specific domains, we can tunnel it through our secure SSH and then make our public SSH server request on our behalf.
+In some instances, let's say our remote IP address is forbidden from our local network. It could be that our ISP is blocking access to specific domains, we can tunnel it through our secure SSH and then make our public SSH server request on our behalf.
 
 ### Remote port forwarding
 Remote port forwarding is significant when we want other people to access our local resources. For instance, when we have a web server on our machines and there is a need to send a URL for testing our application to other collaborators.
@@ -133,12 +133,12 @@ The main idea here is that we need anything that goes through port 8888 to be fo
 
 The SSH server will listen to port 8888 for a TCP request on `44.11.22.33` on the same port. The SSH server will take that packet and encapsulate it as a legitimate SSH request. It will then send it through port 22 since it is encrypted and is inaccessible on the network.
   
-We will receive the request on our local device as the SSH client at `10.0.0.4` will have the ability to know that it is a tunnel. It will request the internal resource on `10.0.0.`3 on behalf of our public SSH server and access the internal resource. Afterward, it will send it back to our public ssh server.
+We will receive the request on our local device as the SSH client at `10.0.0.4` will have the ability to know that it is a tunnel. It will request the internal resource on `10.0.0.3` on behalf of our public SSH server and access the internal resource. Afterward, it will send it back to our public SSH server.
 
 With that, we can access our local resources remotely.
 
 ### Conclusion
-From this article, we have seen how local port and remote port forwarding works. This implies that we can access any resources on our devices either remotely or locally provided we do it correctly.
+In this article, we sawn how local port and remote port forwarding works. This implies that we can access any resources on our devices either remotely or locally provided we do it correctly.
 
 Happy coding!
 
