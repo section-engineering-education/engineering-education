@@ -1,6 +1,21 @@
-### Introduction
-In computer programming, a collection is a grouping of similar data types. These unit classes may assist in organizing and managing related items. Collections feature data structures that help manage vast volumes of data effectively.
+---
+layout: engineering-education
+status: publish
+published: true
+url: /understanding-collections-in-python/
+title: Understanding Collections in Python
+description: This article will help the reader understand specialized data structures that comes with collections module in Python.
+author: leah-wangari
+date: 2022-03-02T00:00:00-21:30
+topics: [Languages]
+excerpt_separator: <!--more-->
+images:
 
+  - url: /engineering-education/understanding-collections-in-python/hero.png
+    alt: Collections in Python
+---
+In computer programming, a collection is a grouping of similar data types. These unit classes may assist in organizing and managing related items. Collections feature data structures that help manage vast volumes of data effectively.
+<!--more-->
 The `collection` module in Python provides a wide variety of containers. Containers can store a variety of items and can be retrieved and re-created. These containers include tuple, list, dictionary, and much more.
 
 Here we'll explore several of the collections module's containers.
@@ -226,3 +241,6 @@ The values of `x` and y were initiated, respectively. Finally, we printed the va
 The `collection` library is one of Python's many libraries that primarily serves as an upmarket menu in the collection datatype. We have learned in detail the collection data types and modules and seen how to implement the collection modules to solve problems in Python dictionaries.
 
 Happy coding!
+
+---
+Peer Review Contributions by: [Geoffrey Mungai](/engineering-education/authors/geoffrey-mungai/)
