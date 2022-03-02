@@ -3,7 +3,7 @@ layout: engineering-education
 status: publish
 published: true
 url: /swiftui-pragmatic-navigation/
-title: Getting started with pragmatic navigation in SwiftUI
+title: Getting Started with Pragmatic Navigation in SwiftUI
 description: This article will explain different methods of navigation flow and view construction in SwiftUI
 author: okelo-violet
 date: 2022-03-02T00:00:00-06:20
