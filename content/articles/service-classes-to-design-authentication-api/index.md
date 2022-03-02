@@ -6,7 +6,7 @@ url: /service-classes-to-design-authentication-api/
 title: Using Service Classes to Design an Authentication API in Flutter
 description: This tutorial will go over how to use service classes to design an authentication API in Flutter.
 author: vincent-kimanzi
-date: 2022-03-01T00:00:00-08:50
+date: 2022-03-02T00:00:00-08:50
 topics: [Languages, API]
 excerpt_separator: <!--more-->
 images:
