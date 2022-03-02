@@ -36,7 +36,9 @@ We will use Bootstrap for styling which doesn’t matter since you can use your 
 1. `col-md-*` grid partitioning for a page- This system breaks a page into 12 columns. For example, if you want a certain element to cover a third of the page width, you use the `col-md-4` class.
 2. `d-flex`- This allows us to make an element conform to the CSS’s flexbox properties where we will use `justify-content-*` positioning to arrange items on a page. If we want the elements of a `div` to be in the center, we will use the `d-flex justify-content-center` class.
 
-Here is the snippet:
+Let's briefly look at the components.
+
+The `<head>` sets the cjharacter code to UTF-8, the title of the page, and the link to Bootstrap's styling.
 
 ```html
 <!DOCTYPE html>
@@ -51,13 +53,15 @@ Here is the snippet:
       crossorigin="anonymous"
     />
   </head>
-  <body onselectstart="return false">
-    <div class="d-flex justify-content-center">
-      <div class="col-md-8" style="margin-top: 2%">
-        <div class="col-md-12 d-flex justify-content-center ">
-          <span class="col-md-3 mb-4">YOUR INVOICE</span>
-        </div>
-        <div class="col-md-12">
+  ```
+
+We head on to the `<body>` section where we have several `<div>` elementsin which we will only look at the important ones.
+
+> We have the `onselectstart` attribute set to return false to allow us to only make selections on our `canvas`, which we are going to talk about.
+
+The second `<div>` contains the table and the image where the signature will appear.
+
+```html
           <div id="toPrint" class="col-md-12">
             <table class="table">
               <thead class="thead-dark">
@@ -116,6 +120,11 @@ Here is the snippet:
               </div>
             </div>
           </div>
+```
+
+The next one is the one containing the canvas element where we will write our signature.
+
+```html
           <div class="col-md-12 d-flex justify-content-center ">
             <span class="col-md-3 mb-4">Sign here</span>
           </div>
@@ -127,6 +136,10 @@ Here is the snippet:
               style="border: 1px solid black"
             ></canvas>
           </div>
+```
+The last one contains the four action buttons. The buttons will perform the signature processing(**Save**), clearing the signature(**Clear**), undoing(**Undo**), and generating the PDF document(**Get PDF**) when clicked.
+
+```html
           <div class="col-md-12 d-flex justify-content-around ">
             <button
               type="button"
@@ -161,26 +174,11 @@ Here is the snippet:
               Get PDF
             </button>
           </div>
-        </div>
-      </div>
-    </div>
-    <script src="js/signature_pad.umd.js"></script>
-    <script src="js/sign-handler.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
-    <script src="https://html2canvas.hertzen.com/dist/html2canvas.min.js"></script>
-  </body>
-</html>
 ```
 
-The three important `div` elements of concern are:
 
-1. The one with `id="toPrint"`. It contains the table and the image where the signature will appear.
 
-```html
-<div id="toPrint" class="col-md-12"></div>
-```
-
-2. The last two containing the canvas and the four action buttons. The canvas is where the signature will be drawn. The buttons will perform the signature processing(**Save**), clearing the signature(**Clear**), undoing(**Undo**), and generating the PDF document(**Get PDF**) when clicked.
+[Here](https://github.com/munubi254/js-signature-pad/blob/main/signature.html) is the link to the complete snippet.
 
 > Note the script and styling tags where we reference the JavaScript and Bootstrap styling files.
 
@@ -210,7 +208,7 @@ var ourPad = new SignaturePad(canvas, {
 canvas.getContext("2d");
 ```
 
-After that, we create a function for creating a blob, a URL, and setting the `img` element’s `src` attribute path to the URL generated for display.
+After that, we create a function for creating a blob. We use the blob to get an image path, which will be set to the image's `src`path. More about the canvas' `toBlob()` function is found in the [official MDN docs](https://developer.mozilla.org/en-US/docs/Web/API/HTMLCanvasElement/toBlob).
 
 ```javascript
 function processImage() {
