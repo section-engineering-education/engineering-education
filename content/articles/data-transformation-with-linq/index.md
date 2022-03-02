@@ -32,6 +32,8 @@ class Employee
     
 }
 ```
+The above two classes seems to be each class is in their own which is correct but still, it is posible to combine the two classes into a single class and get the required output as described below.
+
 The query is described below.
 ```C#
 class DataTransformations
@@ -91,6 +93,7 @@ class DataTransformations
           }
 }
 ```
+In the above example description, it can be noted that when combining the two classes i.e. class employer and class employee in our example, data source are first created for each class and data input in those data sources. In the class employee, details are provided concerning the employee e.g. Name, JobNo and City. And this is done to several employees. In the same manner,another data source for the class employer is also created where details about an employer are also provided. After the creation of the data sources, a query of selecting a specified employer or employee from a certain residential area is then created and the retrival of data becomes more easier.
 ### Subsets of each Source Element are chosen
  To understand what subset is supposed to be chosen and from what source sequence, various factors are considered.
 1. An initializer of an object can be employed, and that may appear in two forms.
@@ -142,7 +145,7 @@ A point of concern regarding performing operations on source elements is that if
 
 If one wants to translate the function to LINQ, it will not be done directly because the modules in C# are not guaranteed in LINQ, and in the same manner, LINQ functions may not be directly translated to SQL due to the same reason.
 ### In-memory objects - XML transformation
- When it comes to data transference from one module to another, it is achieved in simpler ways when transforming data between SQL databases, in-memory data structures, XML documents, .NET datasets, and many more. And LINQ queries account and cater for this simplicity. The conversion is of an XML element derived from an in-memory data structure from the example described below.
+When it comes to data transference from one module to another, it is achieved in simpler ways when transforming data between SQL databases, in-memory data structures, XML documents, .NET datasets, and many more. And LINQ queries account and cater for this simplicity. The conversion is of an XML element derived from an in-memory data structure from the example described below.
 ```c#
 class XMLTransformation
 {
@@ -177,6 +180,7 @@ class XMLTransformation
     }
 }
 ```
+In the above code, employers data are first input so that in need to select a certain employer, it shall be easy. After that, a query of converting the data of an employer or an employee to XML is created and finally the data is displayed in form of XML.
 ### Conclusion
 In conclusion, we have seen and looked at how LINQ aids in data transformation using C# as a programming language using several examples in the description. How to create a single output sequence using multiple inputs, choose a subset of each source element, perform operations on source elements, and transform XML into in-memory objects.
 ### What next
