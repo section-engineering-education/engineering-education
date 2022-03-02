@@ -1,8 +1,26 @@
-Building a Video cataloging app with React, firebase, and React-styled-components
+---
+layout: engineering-education
+status: publish
+published: true
+url: /building-a-video-cataloging-app-with-react-firebase-and-styled-components/
+title: Building a Video Cataloging App with React, Firebase, and React-styled-components.
+description: This tutorial will guide the reader through building a video cataloging app with React.js and React-styled components.
+author: kingsley-jack
+date: 2022-01-08T00:00:00-02:30
+topics: []
+excerpt_separator: <!--more-->
+images:
 
-### Introduction
-Video-based social media websites and applications have experienced widespread adoption over the decade. From platforms such as YouTube, Instagram, and most recently TikTok which has been at the forefront having an average monthly user exceeding a billion. You might want to build your video-based social media and I will show you how.
-Building a video cataloging app capable of displaying content in categories ranging from sports, entertainment, educational, etc. can be done with React.js and React-styled components.
+  - url: /engineering-education/building-a-video-cataloging-app-with-react-firebase-and-styled-components/hero.jpg
+    alt: Video Cataloging React Firebase Styled Components
+---
+
+Video-based social media websites and applications have experienced widespread adoption over the decade. From platforms such as YouTube, Instagram, and most recently TikTok which has been at the forefront having an average monthly user exceeding a billion.
+
+<!--more-->
+
+You might want to build your video-based social media and I will show you how to build a video cataloging app capable of displaying content in categories ranging from sports, entertainment, educational, etc. can be done with React.js and React-styled components.
+
 Creating and styling the user interface will be handled with React.js and styled components while firebase will handle storage and catalog (categories) management.
 
 ### Prerequisite
@@ -576,3 +594,6 @@ Happy Coding!
 ### References
 - https://firebase.google.com/
 - https://www.styled-components.com
+
+---
+Peer Review Contributions by: [Adrian Murage](/engineering-education/authors/adrian-murage/)
