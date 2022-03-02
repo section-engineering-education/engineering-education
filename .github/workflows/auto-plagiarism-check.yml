@@ -1,0 +1,14 @@
+name: Auto Plagiarism Check
+on:
+  pull_request:
+    types: [opened]
+jobs:
+  webtrigger:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Webhook
+        uses: distributhor/workflow-webhook@v1.0.2
+        with:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          url: "http://enged-plagiarism-checker.louisefindlay.com/retrieve-pr"
+          json: '{ "pr": "${{github.event.pull_request.number}}" }'
