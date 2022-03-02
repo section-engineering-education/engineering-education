@@ -3,20 +3,20 @@ layout: engineering-education
 status: publish
 published: true
 url: /how-to-split-a-monolithic-architecture-into-micro-frontends/
-title: Splitting a Monolithic Architecture into Micro-frontends.
+title: Splitting a Monolithic Architecture into Micro-Frontends
 description: This article introduces the reader to micro-frontend applications and their advantages compared to monolithic ones. It also demonstrates how micro-frontends works.
 author: ephraim-njoroge
-date: 2022-02-22T00:00:00-17:30
+date: 2022-03-02T00:00:00-04:21
 topics: []
 excerpt_separator: <!--more-->
 images:
-  - url: /how-to-split-a-monolithic-architecture-into-micro-frontends/hero.jpeg
+  - url: /how-to-split-a-monolithic-architecture-into-micro-frontends/hero.jpg
     alt: Splitting a Monolithic Architecture into Micro-frontends example Image
 ---
 
-### Introduction
-A good application development strategy should ensure that the development time and effort are significantly reduced while keeping the application's complexity minimal.
+A good application development strategy should ensure that the development time and effort are significantly reduced while keeping the complexity of the application minimal.
 <!--more-->
+### Introduction
 In the real world, applications tend to grow in size, meaning more effort is required as the application complexity increases. Therefore, a well-developed application should be responsive and highly scalable.
 
 In [monolithic architecture](https://www.mulesoft.com/resources/api/microservices-vs-monolithic), applications have huge components and complex logic. Therefore, maintaining or upgrading such applications is challenging. Moreover, integrating a new team can be a difficult task.
@@ -26,11 +26,11 @@ A better solution would be breaking down a vast application into smaller indepen
 Micro-frontends are easier to manage, scale and assign to separate teams. This article introduces the reader to micro-frontends and their advantages compared to monolithic applications. We will use a demo application to illustrate how micro-frontends works.
 
 ### Prerequisites
-- [Npm](https://docs.npmjs.com/cli/v8/commands/npm-install) packages installed.
+- [NPM](https://docs.npmjs.com/cli/v8/commands/npm-install) packages installed.
 - [Angular CLI](https://angular.io/cli/) installed.
 - A code editor installed, preferably [VS Code](https://code.visualstudio.com/download).
 - A web browser installed, preferably [Google Chrome](https://www.google.com/chrome/).
-- A good understanding of [Angular.js](https://docs.angularjs.org/tutorial) and [npm](https://docs.npmjs.com/cli/v6/commands/npm) commands.
+- A good understanding of [Angular.js](https://docs.angularjs.org/tutorial) and [NPM](https://docs.npmjs.com/cli/v6/commands/npm) commands.
 
 ### Understanding Monolith architecture and Micro-frontend architecture
 Monolith architecture refers to a huge code block containing several modules bundled into a single application.
@@ -41,9 +41,9 @@ A monolith application is built on a unified code. It contains three tiers of so
 
 Developing a monolithic application is challenging as it piles pressure on the developers. It takes longer to develop since the architecture does not support independent development. In addition, it is challenging to use different programming languages on the same application.
 
-Micro-frontend is a design approach where an application is split into multiple frontend applications. As a result, independent developers can work on each application. This approach significantly reduces the development time and process. 
+Micro-frontend is a design approach where an application is split into multiple frontend applications. As a result, independent developers can work on each application. This approach significantly reduces the development time and process.
 
-In addition, multiple development teams can work on the same frontend code independently. As a result, the code in micro-frontend applications is more maintainable, manageable, and independent. 
+In addition, multiple development teams can work on the same frontend code independently. As a result, the code in micro-frontend applications is more maintainable, manageable, and independent.
 
 It is important to note that code updates can be performed incrementally in the micro-frontend design. Nevertheless, improvements can be made on specific modules without breaking the entire application codebase.
 
@@ -71,11 +71,11 @@ It is important to note that code updates can be performed incrementally in the 
 - **No shared code** - Large applications share the code to use the same functionality of some features. However, this comes at a cost in case of a bug that can entirely bring the application down. Also, the interdependencies between the modules can bring more problems as the application grows huge. This cannot happen in the micro-frontends as this architecture does not share code.
 
 ### Application overview
-We will start with a monolith application in our demo application and break it down into smaller micro-frontends. The monolith application might not be huge as we only do this for demonstration purposes. 
+We will start with a monolith application in our demo application and break it down into smaller micro-frontends. The monolith application might not be huge as we only do this for demonstration purposes.
 
 Next, we will design an administrator dashboard of an application and break it down into independent applications.
 
-Most administrator dashboard contains many components with overly complex logic that has been built using monolithic architecture. Therefore, it is not easy to scale and maintain such an application. 
+Most administrator dashboard contains many components with overly complex logic that has been built using monolithic architecture. Therefore, it is not easy to scale and maintain such an application.
 
 Our demo application development will follow the below stages:
 - Creating the workspace where all the application components will be contained.
@@ -86,51 +86,49 @@ Our demo application development will follow the below stages:
 We will start by creating an application workspace that will contain all the components using `Angular.js`.
 
 ```bash
-$ ng n administrator-page –-create-application="false"
+ng n administrator-page –-create-application="false"
 ```
 
 Next, we will create the host application that will act as our `administrator-page` wrapper by executing the commands  below in the terminal window:
 
 ```bash
-$ cd administrator-page
-$ ng generate application administrator --routing 
+cd administrator-page
+ng generate application administrator --routing 
 ```
+
 Then, we will add a `landing page` component to the `administrator`, which is our host application.
 
 ```bash
-$ ng generate c landingpage --project=administrator
+ng generate c landingpage --project=administrator
 ```
 
 Next, we will create a micro-frontend application and name it `forum page`.
 
 ```bash
-$ ng generate application forumpage --routing
+ng generate application forumpage --routing
 ```
 
 Then, we will add a module inside our application that will be lazy-loaded to the host component and create a component for displaying the demo content and name it as `comments`.
 
 ```bash
-$ ng generate module comments --routing --project=forumpage
-$ ng generate c comments --project=forumpage
+ng generate module comments --routing --project=forumpage
+ng generate c comments --project=forumpage
 ```
 
 Next, we will create the routing in our new application by editing the file `administrator-page/projects/forumpage/src/app/app-routing.module.ts`.
 
 ```JavaScript
-...
 const routes: Routes = [
   {
     path: 'forumpage',
     loadChildren: () => import('./comments/comments.module').then((c) => c.CommentsModule)
   }
 ];
- ...
 ```
 
 Then, we will edit the file `administrator-page/projects/forumpage/src/app/comments/comments-routing.module.ts` as below:
 
 ```JavaScript
-...
 import {CommentsComponent} from "./comments.component";
 
 const routes: Routes = [
@@ -139,7 +137,6 @@ const routes: Routes = [
     component: CommentsComponent
   }
 ];
- ...
 ```
 
 Next, we will proceed and edit the file `administrator-page/projects/forumpage/src/app/comments/comments.component.html` to create an HTML component as below:
@@ -167,18 +164,18 @@ Then, we will edit the `css` file as below:
 }
 ```
 
-We will integrate our host application with the micro-frontends that we have created. We need the [module federation](https://webpack.js.org/concepts/module-federation/) plug-in installed to achieve this. 
+We will integrate our host application with the micro-frontends that we have created. We need the [module federation](https://webpack.js.org/concepts/module-federation/) plug-in installed to achieve this.
 
 The plug-in assists in loading micro-frontend applications into another application. To install the plug-in in both of our applications, we will execute the commands below:
 
 ```bash
-$ ng add @angular-architects/module-federation --project administrator --port 3000
-$ ng add @angular-architects/module-federation --project forumpage --port 4000
+ng add @angular-architects/module-federation --project administrator --port 3000
+ng add @angular-architects/module-federation --project forumpage --port 4000
 ```
 
-After the plug-in has been installed successfully, The two applications will be running on different ports as specified in the above commands 
+After the plug-in has been installed successfully, The two applications will be running on different ports as specified in the above commands.
 
-We can note that the `administrator` and `forumpage` configuration file called `webpack.config.js` has been added to the two components. 
+We can note that the `administrator` and `forumpage` configuration file called `webpack.config.js` has been added to the two components.
 
 We need to modify that file for our application to work as expected. In the micro-frontend application, uncomment the  line  below and update the code as follows:
 
@@ -207,9 +204,9 @@ Then, we will need to update our `package.json` file by adding the content:
 },
 ```
 
-Next, we can set up the routing inside the dashboard component to load our independent applications. 
+Next, we can set up the routing inside the dashboard component to load our independent applications.
 
-In addition, we will also add more content to our HTML templates and add the `css` for styling the dashboard. 
+In addition, we will also add more content to our HTML templates and add the `css` for styling the dashboard.
 
 Finally, we will edit the file `administrator-page/projects/administrator/src/app/app.component.html` as below:
 
@@ -228,7 +225,6 @@ Finally, we will edit the file `administrator-page/projects/administrator/src/ap
 Then, we will modify the file `administrator-page/projects/administrator/src/app/app-routing.module.ts` as below:
 
 ```JavaScript
- ...
 import {LandingpageComponent} from "./landingpage/landingpage.component";
 
 const routes: Routes = [
@@ -245,10 +241,9 @@ const routes: Routes = [
       })
   },
 ];
- ...
 ```
 
-An error will pop up upon running the application because the dashboard has no information about the `Comments Module`. However, we can solve the error by declaring the module. 
+An error will pop up upon running the application because the dashboard has no information about the `Comments Module`. However, we can solve the error by declaring the module.
 
 To achieve this, we will create a file in the root directory of the application and name it `type.ts`, where we will declare the module as below:
 
@@ -337,8 +332,8 @@ Next, we will update the `css` file `administrator/src/app/landingPage/landingpa
 We will finally run the application by executing the commands below in the terminal. Note that we have to run both `administrator` and `forum page` components as below:
 
 ```bash
-$ ng serve administrator
-$ ng serve forum page
+ng serve administrator
+ng serve forum page
 ```
 
 We will have the `landingpage` component, part of the `administrator` loaded upon running the two commands. Then there will be the link to the `Forum Page`, which, when clicked, a micro-frontend `forumPage` will be loaded as shown below:
@@ -353,7 +348,7 @@ We have created an application that hosts another separate independent applicati
 The code used in this tutorial can be accessed at my [GitHub Repo](https://github.com/ephnjor2021/administrator-page).
 
 ### Further reading
-- [Comparing Monolithic Architecture with Micro-Frontends](https://www.luxoft.com/blog/lcameroon/answering-single-page-application-challenges-with-micro-front-end-architecture).
+- [Comparing Monolithic Architecture with Micro-Frontends](https://www.luxoft.com/blog/lcameroon/answering-single-page-application-challenges-with-micro-front-end-architecture)
 - [Overview of Module Federation in Micro-Frontends](https://medium.com/tenable-techblog/introducing-module-federation-c95e2551a5b9).
 
 ---
