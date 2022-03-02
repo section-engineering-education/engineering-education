@@ -88,20 +88,24 @@ To set up and use the firebase suite in our application, there are some basic st
 
 Click on the button highlighted in the image to create a new firebase project
 
-![how to create a new firebase project](engineering-education\building-a-video-cataloging-app-with-react-firebase-and-styled-components\image1.jpg)
+![how to create a new firebase project](/engineering-education/building-a-video-cataloging-app-with-react-firebase-and-styled-components/image1.jpg)
+
 
 follow the simple steps shown on the console. Feel free to give the new project a name of your choice. Once that is completed, create a new `cloud firestore` by clicking on the cloud firestore button on the sidebar as shown below:
 
-![creating a cloud firestore](engineering-education\building-a-video-cataloging-app-with-react-firebase-and-styled-components\image2.jpg)
+![creating a cloud firestore](/engineering-education/building-a-video-cataloging-app-with-react-firebase-and-styled-components/image2.jpg)
+
 
 you may choose any of the options (test mode or production mode), afterward, you select your location. That should create a `cloud firestore` for our project.
  Additionally, click on the project overview button at the top left corner and follow the steps to register the app and add Firebase SDK so we can make use of the database functionalities in our project as shown below:
 
- ![registering the new application](engineering-education\building-a-video-cataloging-app-with-react-firebase-and-styled-components\image3.jpg)
+ ![registering the new application](/engineering-education/building-a-video-cataloging-app-with-react-firebase-and-styled-components/image3.jpg)
+
 
  once that is completed, the config keys will be revealed. the config information should be copied as shown below:
 
-![the config information](engineering-education\building-a-video-cataloging-app-with-react-firebase-and-styled-components\image4.jpg)
+![the config information](/engineering-education/building-a-video-cataloging-app-with-react-firebase-and-styled-components/image4.jpg)
+
 
 Finally, in the `src` folder of your React app, create a new `firebase.js` file, thereafter you go ahead and paste the config keys copied into the `firebase.js` file. it should look similar to this below:
 
