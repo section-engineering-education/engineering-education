@@ -9,6 +9,12 @@ Hand signatures are a good way to authenticate official documents. But what abou
 1. An understanding of HTML and CSS.
 2. Knowledge of JavaScript and Document Object Manipulation(DOM) Manipulation.
 
+### Goals 
+We will learn about:
+- Creating a signature feature for a web app.
+- Generating PDFs using the jsPDF library.
+- Converting the signature generated to an image.
+
 ### An overview of the two libraries
 
 Let’s have a quick walk-through of the Signature Pad and jsPDF libraries(Links to these libraries are provided at the [Further reading](#further-reading) section).
@@ -271,80 +277,7 @@ createPDFBtn.addEventListener("click", function (event) {
 
 We initialize the html2canvas and jsPDF library. In case you are wondering why we are initializing the html2canvas, the jsPDF library uses it for capturing the page screenshots. The jsPDF constructor is passed in the orientation(`l` for landscape), units of measurement(`pt` for points), and A4 sizing. We chose the landscape portrait for our page to fit in the PDF document. The `html()` function is called where we pass in the element to be printed and an `options` object. The object contains a `save()` callback function for saving the PDF and the X and Y positioning of the document. There are a bunch of other options which you can add to this object.
 
-This is the full code:
-
-```javascript
-var canvas = document.getElementById("canvas");
-var saveSignBtn = document.querySelector("[data-action=action-save]");
-var undoBtn = document.querySelector("[data-action=action-undo]");
-var clearBtn = document.querySelector("[data-action=action-clear]");
-var createPDFBtn = document.querySelector("[data-action=action-pdf]");
-
-var ourPad = new SignaturePad(canvas, {
-  backgroundColor: "rgb(255, 255, 255)",
-});
-
-canvas.getContext("2d");
-
-function processImage() {
-  //creating a blob and displaying the image in the image element
-  canvas.toBlob(function (blob) {
-    var targetImg = document.querySelector("img"),
-      url = URL.createObjectURL(blob);
-    targetImg.src = url;
-  });
-}
-
-saveSignBtn.addEventListener("click", function (event) {
-  if (ourPad.isEmpty()) {
-    alert("Please sign first.");
-  } else {
-    processImage();
-  }
-});
-
-//clearing the signature drawing
-clearBtn.addEventListener("click", function (event) {
-  if (ourPad.isEmpty()) {
-    alert("Please sign first.");
-  } else {
-    ourPad.clear();
-  }
-});
-
-undoBtn.addEventListener("click", function (event) {
-  var signMark = ourPad.toData();
-  if (ourPad.isEmpty()) {
-    alert("Please sign first.");
-  } else {
-    if (signMark) {
-      signMark.pop(); // deletinging the last marked dot or drawn line
-      ourPad.fromData(signMark);
-    }
-  }
-});
-
-//creating a pdf using the jsPDF library
-createPDFBtn.addEventListener("click", function (event) {
-  window.html2canvas = html2canvas;
-  window.jsPDF = window.jspdf.jsPDF;
-  var doc = new jsPDF("l", "pt", "a4");
-
-  doc.html(document.getElementById("toPrint"), {
-    callback: function (doc) {
-      doc.save();
-    },
-    x: 10,
-    y: 10,
-  });
-});
-```
-
-### What you can do more with the Signature feature
-
-In the new age of biometrics, much more has been achieved. We have facial recognition, fingerprint recognition, etc. On the downside, what if someone replicates your fingerprint? Remember you cant change it. This means that the person will have lifetime access to your bank details. Also, machines(I group electronics in this category) are never 100% efficient. Let’s say it achieves 99% accuracy but one day something slips and the remaining 1% makes your savings 0? What if, one day, your face deforms(God forbid)? This discussion needs a seperate article anyway.
-
-All these hypotheses lead us to one idea- how about additional authentication(let’s not call it 2-Factor or 3-Factor authentication) when some suspicious activity is detected in your account’s biometric login. A signature can be a good option. I say so because you can alter it at some point, in contrast to a fingerprint that cannot be altered, right? What about utilizing the Signature Pad library and build some form of Machine Learning model(with more inclination to computer vision) to match the signatures for authentication? It can materialize if utilized properly.
+You can find the link to the full code [here](https://github.com/munubi254/js-signature-pad/blob/main/js/sign-handler.js).
 
 ### Further reading
 
