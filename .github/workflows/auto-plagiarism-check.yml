@@ -7,7 +7,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Webhook
-      - uses: distributhor/workflow-webhook
+        uses: distributhor/workflow-webhook
         with:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           url: "http://enged-plagiarism-checker.louisefindlay.com/retrieve-pr"
