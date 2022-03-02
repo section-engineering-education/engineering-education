@@ -6,7 +6,7 @@ url: /nosql-dbms-vs-relational-database-management-system/
 title: Is NoSQL DBMS a Replacement for Relational Database Management System?
 description: This article will discuss the features of NoSQL DBMS and how they compare with the SQL-based relational databases.
 author: gregory-munene
-date: 2022-03-01T00:00:00-10:00
+date: 2022-03-02T00:00:00-10:00
 topics: []
 excerpt_separator: <!--more-->
 images:
