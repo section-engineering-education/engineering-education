@@ -1,30 +1,38 @@
-At some point, you will need a database for your back-end application, be it with Python, Java, Node.js, etc. This is where a connection to the database is needed. For the backed to communicate with the database of your choice, you need a way to connect your server to that database. So when someone sends a request to the server, the server modifies that data and writes it to the database. When someone writes a query requesting data, the server reads that query, sends it to the database, and then sends a response to the user. This is opposed to just reading from one of our static arrays.
+In this tutorial, you will learn more about the Prisma ecosystem to build a simple server that accesses Prisma to read its database schema and run it on a Docker container.
+<!--more-->
+At some point, you will need a database for your back-end application, be it with Python, Java, or Node.js. For the backend to communicate with the database, you need a way to connect your server to that database.
 
-Now to connect to that database, you can use native drivers. Native divers are mainly libraries that allow you to connect to a database. For example, when working with Node.js and a MySQL database, you can choose to use a MySQL native drive provided by the Node.js NPM.
+When a user sends a request to the write into the database, the server modifies that data and writes it to the database. When someone writes a query requesting for the data, the server reads it, sends it to the database, and then returns a response with the requested data. This is opposed to just reading from one of our static arrays.
 
-However, they do not provide a way to modify or validate the data structures or a way to model the relationships between the databases. This means you can't model your data relations, seed, or migrate it. With native drivers, the database connection is natively implemented using the barebones of the programming language being used.
+Now, to connect to that database, you can use native drivers. Native divers are libraries that allow you to connect to a database. For example, when working with Node.js as the backend and a MySQL as the database, you can choose to use a [MySQL native driver](https://www.npmjs.com/package/mysql-native) provided by the Node.js NPM.
 
-Other options would be to use ORM (object-relational mapping). For example, when working with Node.js, MongoDB provide a mongoose (an NPM library) database driver. This makes it easy for a developer to connect a Node.js back-end to a MongoDB database.
+However, they do not provide a way to modify or validate the data structures or a way to model the relationships between the databases. This means that you can't model your data relations, seed, or migrate it.
 
-ORM will introduce you to some new features. This includes modelling, validating, migrating data, describing the relationships between different data fields, etc. For example, if you are using an SQL database, you can model your schema and the fields you want to use.
+With native drivers, the database connection is natively implemented using the barebones of the programming language.
 
-You can validate your data model, for example, by saying a password field needs to have at least six characters, a certain field needs to be integers, etc. Manipulating this data model becomes easier as you can add and remove fields as the data structure changes over time.
+Other options would be to use an [ORM](https://en.wikipedia.org/wiki/Object–relational_mapping) (object-relational mapper). For example, when working with Node.js, MongoDB provide a mongoose (an NPM library) database driver. This makes it easy for a developer to connect a Node.js back-end to a MongoDB database.
 
-Prisma falls under the category of an ORM, and it has all features of a typical ORM, such as mongoose and sequelize. Unlike the other ORM, Prisma comes with a tone of other added features. Prisma is database agnostic. Mongoose only works on a MongoDB database, and sequelize only works on SQL-based databases. If you decide to switch from MongoDB to PostgreSQL, you have to rewrite most of your applications since the two libraries are so different. You don't have to do that with Prisma.
+ORM will introduce you to some new features like:
+- Modelling
+- Validating
+- Migrating data
+- Describing the relationships between different data fields, and so on.
 
-Prisma has [supports for major database](https://www.prisma.io/docs/reference/database-reference/supported-databases) such as PostgreSQL, MySQL, MongoDB, MariaDB and etc. Thus you can choose a database that fits your application structure. You can also migrate databases using Prisma without modifying your application's code structure.
+If you are using an SQL database, you can model your schema and choose the fields you want to use. You can validate your data model, say, a password field needs to have at least six characters, a certain field needs to be integers, and so on.
 
-This tutorial will learn more about the Prisma ecosystem and build a simple server that accesses Prisma to read its database schema and then run it on a Docker container.
+[Prisma](https://www.prisma.io) falls under the category of an ORM, and it has all features of a typical ORM, such as [mongoose](https://mongoosejs.com) and [sequelize](https://sequelize.org). Unlike the other ORMs, Prisma comes with a tone of other added features.
+
+Prisma is database agnostic. `Mongoose` only works on a MongoDB database, and `sequelize` only works on SQL-based databases. Let's say if you decide to switch from MongoDB to PostgreSQL, then you would have to rewrite most of your codes, since the two libraries works differently. But, with Prisma, rewriting codes is not necessary.
+
+Prisma has [supports a majority of the  databases](https://www.prisma.io/docs/reference/database-reference/supported-databases) like PostgreSQL, MySQL, MongoDB, MariaDB, and so on. Thus, you can choose a database that fits your application structure. You can also migrate databases using Prisma without having to modify the application's code structure.
 
 ### Table of contents
-
-- [Table of contents](#table-of-contents)
 - [Pre-requisities](#pre-requisities)
-- [The main components of Prisma](#the-main-components-of-prisma)
+- [Major components of Prisma](#major-components-of-prisma)
   - [Prisma migrate](#prisma-migrate)
   - [Prisma client](#prisma-client)
   - [Prisma studio](#prisma-studio)
-- [Setting up your first Prisma project](#setting-up-your-first-prisma-project)
+- [Setting up](#setting-up)
 - [Setting and understanding the Prisma client data models](#setting-and-understanding-the-prisma-client-data-models)
 - [Modeling Schemas](#modeling-schemas)
 - [Create and Run a Prisma server with Docker](#create-and-run-a-prisma-server-with-docker)
@@ -35,69 +43,64 @@ This tutorial will learn more about the Prisma ecosystem and build a simple serv
   - [Testing the Docker API](#testing-the-docker-api)
 - [Conclusion](#conclusion)
 - [Further reading](#further-reading)
+
 ### Pre-requisities
+Prisma facilitates the generation of type-safe database schemas. When creating a database, every detail must be carefully considered to determine the database's structure.
 
-Prisma facilitates the generation of type-safe database schemas. When creating a database, every detail must be carefully considered in order to determine the database's structure. In this case, Prisma abstracts you from writing SQL queries. As a result, you must ensure that your database schemas are safe.
+In this case, Prisma abstracts you from writing SQL queries. As a result, you must ensure that your database schemas are safe.
 
-To have these safe schemas, ensure you have Prisma installed in your text editor to help you write type-safe Prisma codes.
+- To have these safe schemas, ensure you have Prisma installed in your text editor to help you write type-safe Prisma codes.
+- In this tutorial, we will use [Visual Studio Code](https://code.visualstudio.com/). Once you have it installed, ensure you have the [Prisma extension](https://marketplace.visualstudio.com/items?itemName=Prisma.prisma) installed. This extension adds syntax highlighting for `.prisma` files. It helps prevent errors by establishing a robust and type-safe code that are specifically designed for Prisma programs.
+- Prisma provides [Prisma studio](https://www.prisma.io/studio) that allows you to interact with `.prisma` files. Ensure you have it installed on your computer. Also, ensure Node.js (at least 64 bits) is installed.
+- This guide also runs Prisma using Docker. Ensure that you have [Docker](https://www.docker.com/products/docker-desktop) installed on your computer and have some basic knowledge of running and using Docker. This [guide](/engineering-education/docker-concepts/) will help you get started with Docker.
 
-This tutorial will use [Visual Studio Code](https://code.visualstudio.com/). Once you have it installed, ensure you have the [Prisma extention](https://marketplace.visualstudio.com/items?itemName=Prisma.prisma) installed. This extension adds syntax highlighting for `.prisma` files. This prevents errors by establishing a robust and type-safe Code specifically designed for Prisma programs.
-
-Prisma provides [Prisma studio](https://www.prisma.io/studio), allowing you to interact with `.prisma files`. Ensure you have it installed on your computer. Also, ensure Node.js is (at least 64 bits) installed. This guide will use Node.js JavaScript runtime to set up the Prisma schemas.
-
-This guide also runs Prisma using Docker. Ensure you have [Docker](https://www.docker.com/products/docker-desktop) installed on your computer and have some basic knowledge of running and using Docker. This [guide](/engineering-education/docker-concepts/) will help you get started with Docker.
-
-### The main components of Prisma
+### Major components of Prisma
 
 The Prisma ecosystem is made up of three major components. These are;
 
 #### Prisma migrate
+Prisma migrate acts as the database version control. Migration is a way to control the previous versions of the database schema. This works similar to Git, where you always have a history of the code versions.
 
-Prisma migrate acts as the database version control. Migration is a way of controlling the previous versions of your database schema. This is closely similar to Git, where you always have the previous version of your code.
-
-Whenever you change your database schema, Prisma migrate create a new version of the newly added schema. This way, whenever you have an issue with your current running schema, you can always check and roll back to your previous stable database schema.
-
-Your database will have some attributes that you initially created. Still, you will always add additional columns or attributes in your database schema models in the future or in the long run. Any change will create a new migration. This way, you can always roll back to the stable migration whenever the current migration is not working as expected.
+Whenever you change the database schema, Prisma's migrate creates a new version of the newly added schema. This way, whenever you have an issue with your current running schema, you can always check and roll back to the previous stable database schema.
 
 #### Prisma client
+Provide a way to write/type-safe the query builder. Prisma abstracts you from writing the SQL queries. Prisma client will help to set up and write your database, model the data validation, describe the relationships between different data fields, and so on.
 
-Provide a way to write/type-safe query builder. Prisma abstracts you from writing SQL queries. It allows Prisma client to set up and write your database, modelling data validation, describing the relationships between different data fields, etc.
+Prisma client provides very simple and intuitive method to set this up without having to write a single SQL query. Prisma client enables you to generate SQL queries and helps connect to the database of your choice.
 
-Prisma client provide very simple and intuitive steps to set up all this without writing a single SQL query. Prisma client then enables you to generate SQL queries and connect to the database of your choice.
-
-Prisma client also generates and provides functions or methods depending on the database model you want to create. You can then use those functions to create a stateful connection to a database. That will then be used to create, delete, update, or do an operation related to the database.
+Prisma client also generates and provides functions or methods d which can be used to create a stateful connection to a database. We can then use it to create, delete, update, or do an operation related to the database.
 
 #### Prisma studio
+This is a modern database GUI to interact with your data. It gives you a visual representation of how the schema represented in a `.prisma` file.
 
-This is a modern database GUI for interacting with your data. It gives you a visual representation of how the schema represented in a `.prisma` file would look like is a real database.
+Usually, you always tend to have trouble connecting or checking your tables or databases. If you have difficulties to verify the tables via the CLI commands, you tend to use something like [PHPMyAdmin](https://www.phpmyadmin.net) to see visualize the data in your database.
 
-Usually, you always tend to have trouble connecting or checking your tables or databases. If you have difficulties understanding how to check the tables through the CLI commands, you tend to use something like PHPMyAdmin to see any data in your database.
+Prisma studio provides the same feature with a minimal UI that lets you see all the tables in your database. Here, you can check the models and the type of data set in your database. You can delete records, add records, and perform any operation - only with the UI.
 
-Prisma studio provides the same. It gives you an out-of-the-box minimal UI that lets you see all the tables in your database. Here you can check the models and the type of data set in your database. Like PHPMyAdmin, you can delete records, add records, particularly anything operation you can that a database UI provides.
+### Setting up
+Let's jump in and see what Prisma can achieve.
 
-### Setting up your first Prisma project
-
-Let's jump in and see what Prisma can achieve. Create a project folder, call it `prisma-client-app` and open it using the Visual Studio code. Initialize Node.js using `npm init -y`. The start by installing the Prisma CLI and the Prisma client using the following command:
+Create a project folder `prisma-client-app` and open it using the VSCode editor. Initialize Node.js using `npm init -y`. Then, start by installing the Prisma CLI and the Prisma client using the following command:
 
 ```bash
 npm install prisma @prisma/client
 ```
 
-The next step is to initialize your Prisma project using the following command.
+The next step is to initialize your Prisma project using the following command:
 
 ```bash
 prisma init
 ```
 
-The Prisma engines for Node-API will be downloaded, and a Prisma folder with a `schema.prisma` file will be created instantly. And this is where you begin configuring your Prisma client, the database you wish to utilize, the database data modelling (schema development), and the data relationship. Let's break this file down.
+The Prisma engines for Node-API will be downloaded, and a Prisma folder with a `schema.prisma` file will be created. This is where you begin configuring the Prisma client, the database you wish to utilize, model the database (schema development), and decide the data relationship.
+
+Let's break this file down.
 
 ### Setting and understanding the Prisma client data models
+In general, the schema language is very intuitive with easy-to-understand syntax. When you start your Prisma project, two primary blocks will be created:
 
-The schema language is, in general, very intuitive, with easy-to-understand syntax. When you start your Prisma project, two primary blocks will be created:
-
-- `generator`
-
-This determines the assets to be created when generating data database types that generate the actual database queries. By default, it is set as;
+#### `generator`
+This determines the assets to be created when building the data types that generate the actual database queries. By default, it is set as:
 
 ```js
 generator client {
@@ -105,9 +108,16 @@ generator client {
 }
 ```
 
-- `datasource`
+#### `datasource`
+This defines how Prisma connects to your database. This takes two main parameters:
+- `provider`
+- `url`
 
-This defines how Prisma connects to your database. This takes two main parameters, the `provider` and the `url`. The `provider` sets the database you want to use. This can the `sqlite`, `mysql`, `mongodb`, `postgresql` and `sqlserver`. `url` sets a connection string of your database server. If the database is running locally, you add the localhost server that provides the connection to the database you want to use. By default, Prisma bootstrap the PostgreSQL database. It adds an `env` file that lets you add your `DATABASE_URL` based on the server running the database of your choice. It has PostgreSQL set as the default database.
+The `provider` sets the database you want to use. This can the `sqlite`, `mysql`, `mongodb`, `postgresql` and `sqlserver`.
+
+`url` sets a connection string used to connect with the database server. If the database is running locally, you add the localhost server that provides the connection to the database you want to use.
+
+By default, Prisma bootstraps the PostgreSQL database. It creates an `env` file that lets you add your `DATABASE_URL` based on the server running the database:
 
 ```js
 datasource db {
@@ -116,7 +126,7 @@ datasource db {
 }
 ```
 
-If, for example, you are using the SQLite (file-based SQL database), this is how you would set up your `datasource`.
+For example, if you are using the SQLite (file-based SQL database), this is how you would set up your `datasource`:
 
 ```js
 datasource sqliteDb {
@@ -127,13 +137,12 @@ datasource sqliteDb {
 
 `provider` indicates the database you are using, and the `url` sets the file path for the local SQLite database. The connection URL of an SQLite connector points to a file on your file system.
 
->Note: You can only have one data source block in a single `prisma.schema`. Also, the `datasource sqliteDb` is convention. You can give your datasource any name - for example, `data source = "myDb"`.
+> Note: You can only have one data source block in a single `prisma.schema`. Also, the `datasource sqliteDb` is convention. You can give your datasource any name like `data source = "myDb"`.
 
-Check this [guide and see the connectors](https://www.prisma.io/docs/concepts/database-connectors) that you can use for any of the Prisma supported database
+Check out this [database connectors guide](https://www.prisma.io/docs/concepts/database-connectors) to see all the Prisma supported databases.
 
-### Modeling Schemas
-
-Models are used to represent the entities of your application domains. A model maps to a table on your database. You can have different models that define the relationship between different tables you have in the application domain. Each database varies from another database Model. Although there might look almost the same, the differences can be seen when setting up data types associated with different entities.
+### Modeling schemas
+Models represent the entities of your application domains. A model maps to a table on your database. You can have different models that define the relationship between different tables you have in the application domain. Each database varies from another database Model. Although there might look almost the same, the differences can be seen when setting up data types associated with different entities.
 
 Let's jump in and see how to model and represent entities in a Postgres (SQL) database. This will be implemented in the `schema.prisma` file. Add the below model to your `schema.prisma` file.
 
