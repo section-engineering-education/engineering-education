@@ -1,4 +1,22 @@
-When you want to give users relevant information about the product that your app is dealing with, push notifications come in helpful. Take, for example, an app that deals with giving out and repaying loans. It will be a bad user experience when a user makes a payment and he/she is not notified of the amount paid, balance, and other relevant information.
+---
+layout: engineering-education
+status: publish
+published: true
+url: /database-driven-push-notifications-in-android-with-firebase/
+title: Implementing Database Driven Push Notifications in Android with Firebase
+description: This tutorial will take the reader through the process of implementing database driven push notifications in Android with Firebase.
+author: joel-kanyi
+date: 2022-03-02T00:00:00-08:00
+topics: [Languages]
+excerpt_separator: <!--more-->
+images:
+
+  - url: /engineering-education/database-driven-push-notifications-in-android-with-firebase/hero.jpg
+    alt: Database Driven Push Notifications in Android with Firebase Hero Image
+---
+When you want to give users relevant information about the product that your app is dealing with, push notifications come in helpful.
+<!--more-->
+Take, for example, an app that deals with giving out and repaying loans. It will be a bad user experience when a user makes a payment and he/she is not notified of the amount paid, balance, and other relevant information.
 
 In this tutorial we will dive deep into understanding how to send Push notifications based on changes in the Firebase realtime database.
 
@@ -45,15 +63,15 @@ Open it in your terminal and key in the following commands:
 
 - `firebase-login` - Logs into Firebase using your Google account.
 
-![firebase-login](/engineering-education/implementdatabase-driven-push-notifications-in-android-with-firebase/firebase-login.png)
+![firebase login](/engineering-education/database-driven-push-notifications-in-android-with-firebase/firebase-login.png)
 
 - `firebase-init` - Initializes a Firebase project.
 
-![firebase-inti](/engineering-education/implementdatabase-driven-push-notifications-in-android-with-firebase/firebase-init.png)
+![firebase init](/engineering-education/database-driven-push-notifications-in-android-with-firebase/firebase-init.png)
 
 - Choose the feature that you want to configure for this project - Firebase function.
 
-![firebase-feature](/engineering-education/implementdatabase-driven-push-notifications-in-android-with-firebase/firebase-feature.png)
+![firebase feature](/engineering-education/database-driven-push-notifications-in-android-with-firebase/firebase-feature.png)
 
 - For the next step, choose an existing project and select the project that you created in the Firebase console.
 - Then choose `Javascript` as the language that you will use.
@@ -104,11 +122,11 @@ Once you are done writing the function, it is time to deploy it.
 
 In your code editor terminal, key in the following command to deploy the function - `firebase deploy --only functions`
 
-![deploy-function](/engineering-education/implementdatabase-driven-push-notifications-in-android-with-firebase/deploy-function.png)
+![deploy function](/engineering-education/database-driven-push-notifications-in-android-with-firebase/deploy-function.png)
 
 If your function was deployed successfully, open your Firebase console and navigate to the Functions section, you should see the deployed function.
 
-![function](/engineering-education/implementdatabase-driven-push-notifications-in-android-with-firebase/function.png)
+![function](/engineering-education/database-driven-push-notifications-in-android-with-firebase/function.png)
 
 ### Step 2 - Getting started with Android studio
 Open your Android Studio and create an empty Android project. 
@@ -133,7 +151,7 @@ implementation 'com.google.firebase:firebase-database'
 ### Step 4 - Designing the user interface
 Create a simple user interface that contains two `EditText` - one for entering a name and another one for the amount. Also, include a `Button` that will trigger the notification when the user saves the data in the database. You can design a layout similar to this:
 
-![layout](/engineering-education/implementdatabase-driven-push-notifications-in-android-with-firebase/layout.png)
+![layout](/engineering-education/database-driven-push-notifications-in-android-with-firebase/layout.png)
 
 ### Step 5 - Creating a notifications service
 Create a new class called `NotificationService` that extends the `FirebaseMessagingService`. This class will store the device token in the database once the app is launched for the first time. Also, it will display a notification when a message is received.
@@ -222,7 +240,7 @@ binding.buttonPay.setOnClickListener {
 ### Demo
 When you run the app and save some data, you should receive a notification that is triggered because some data has been saved in the `/payment` reference.
 
-![demo](/engineering-education/implementdatabase-driven-push-notifications-in-android-with-firebase/demo.gif)
+![demo](/engineering-education/database-driven-push-notifications-in-android-with-firebase/demo.gif)
 
 ### Conclusion
 With that, you now have a better understanding of database-driven push notifications, how to write a cloud function that triggers the push notification, creating a simple Android app that saves data in the real-time database and receives a notification when the data is saved.
@@ -232,3 +250,6 @@ Keep exploring more about push notifications.
 To get the full implementation of the code, check out this repository - [Database driven push notifications](https://github.com/JoelKanyi/DatabaseDrivenPushNotifs).
 
 Happy coding!
+
+---
+Peer Review Contributions by: [Eric Gacoki](/engineering-education/authors/eric-gacoki/)
