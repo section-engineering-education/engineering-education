@@ -3,10 +3,10 @@ layout: engineering-education
 status: publish
 published: true
 url: /a-look-at-php-frameworks/
-title: A look at PHP Frameworks
+title: A Look at PHP Frameworks
 description: This article will help you understand the various PHP frameworks and their features. It will also help you choose the right framework for your project.
 author: moses-wachiuri
-date: 2022-02-23T00:00:00-13:30
+date: 2022-03-01T00:00:00-17:30
 topics: [Languages]
 excerpt_separator: <!--more-->
 images:
