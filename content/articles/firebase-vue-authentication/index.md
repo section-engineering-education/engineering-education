@@ -6,7 +6,7 @@ url: /firebase-vue-authentication/
 title: Managing User State in Vue.js and Firebase Applications
 description: This article will help the reader understand how to use Vuex 4, Firebase, and the Composition API in Vue 3.0 to set up a state management system.
 author: anne-mwangi
-date: 2022-02-03T00:00:00-06:30
+date: 2022-03-02T00:00:00-05:30
 topics: [Languages]
 excerpt_separator: <!--more-->
 images:
