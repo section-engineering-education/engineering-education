@@ -38,7 +38,7 @@ We will use Bootstrap for styling which doesn’t matter since you can use your 
 
 Let's briefly look at the components.
 
-The `<head>` sets the cjharacter code to UTF-8, the title of the page, and the link to Bootstrap's styling.
+The `<head>` sets the character code to UTF-8, the title of the page, and the link to Bootstrap's styling.
 
 ```html
 <!DOCTYPE html>
@@ -55,11 +55,11 @@ The `<head>` sets the cjharacter code to UTF-8, the title of the page, and the l
   </head>
   ```
 
-We head on to the `<body>` section where we have several `<div>` elementsin which we will only look at the important ones.
+We head on to the `<body>` section where we have several `<div>` elements in which we will only look at the important ones.
 
 > We have the `onselectstart` attribute set to return false to allow us to only make selections on our `canvas`, which we are going to talk about.
 
-The second `<div>` contains the table and the image where the signature will appear.
+- The second `<div>` contains the table and the image where the signature will appear.
 
 ```html
           <div id="toPrint" class="col-md-12">
@@ -122,7 +122,7 @@ The second `<div>` contains the table and the image where the signature will app
           </div>
 ```
 
-The next one is the one containing the canvas element where we will write our signature.
+- The next one is the one containing the canvas element where we will write our signature.
 
 ```html
           <div class="col-md-12 d-flex justify-content-center ">
@@ -137,7 +137,7 @@ The next one is the one containing the canvas element where we will write our si
             ></canvas>
           </div>
 ```
-The last one contains the four action buttons. The buttons will perform the signature processing(**Save**), clearing the signature(**Clear**), undoing(**Undo**), and generating the PDF document(**Get PDF**) when clicked.
+- The last one contains four action buttons. The buttons will perform the signature processing(**Save**), clearing the signature(**Clear**), undoing(**Undo**), and generating the PDF document(**Get PDF**) when clicked.
 
 ```html
           <div class="col-md-12 d-flex justify-content-around ">
@@ -198,7 +198,7 @@ var clearBtn = document.querySelector("[data-action=action-clear]");
 var createPDFBtn = document.querySelector("[data-action=action-pdf]");
 ```
 
-Next, we initialize our `SignaturePad` class while passing in a white background color styling in the constructor. We will also be using the 2D context for the canvas.
+- Next, we initialize our `SignaturePad` class while passing in a white background color styling in the constructor. We will also be using the 2D context for the canvas.
 
 ```javascript
 var ourPad = new SignaturePad(canvas, {
@@ -208,7 +208,7 @@ var ourPad = new SignaturePad(canvas, {
 canvas.getContext("2d");
 ```
 
-After that, we create a function for creating a blob. We use the blob to get an image path, which will be set to the image's `src`path. More about the canvas' `toBlob()` function is found in the [official MDN docs](https://developer.mozilla.org/en-US/docs/Web/API/HTMLCanvasElement/toBlob).
+- After that, we create a function for creating a blob. We use the blob to get an image path, which will be set to the image's `src`path. More about the canvas' `toBlob()` function is found in the [official MDN docs](https://developer.mozilla.org/en-US/docs/Web/API/HTMLCanvasElement/toBlob).
 
 ```javascript
 function processImage() {
@@ -221,7 +221,7 @@ function processImage() {
 }
 ```
 
-The next three functions are straightforward. They are for adding click event listeners to the three buttons- `saveSignBtn`, `clearBtn`, and `undoBtn`. For the `undo` button, we delete the last dot or curve drawn to the canvas using the `pop()` function and then update the canvas using the `fromData()` method.
+- The next three functions are straightforward. They are for adding click event listeners to the three buttons- `saveSignBtn`, `clearBtn`, and `undoBtn`. For the `undo` button, we delete the last dot or curve drawn to the canvas using the `pop()` function and then update the canvas using the `fromData()` method.
 
 ```javascript
 saveSignBtn.addEventListener("click", function (event) {
@@ -254,7 +254,7 @@ undoBtn.addEventListener("click", function (event) {
 });
 ```
 
-Finally, we have the button click listener function for generating a PDF document.
+- Finally, we have the button click listener function for generating a PDF document.
 
 ```javascript
 //creating a pdf using the jsPDF library
@@ -273,13 +273,15 @@ createPDFBtn.addEventListener("click", function (event) {
 });
 ```
 
-We initialize the html2canvas and jsPDF library. In case you are wondering why we are initializing the html2canvas, the jsPDF library uses it for capturing the page screenshots. The jsPDF constructor is passed in the orientation(`l` for landscape), units of measurement(`pt` for points), and A4 sizing. We chose the landscape portrait for our page to fit in the PDF document. The `html()` function is called where we pass in the element to be printed and an `options` object. The object contains a `save()` callback function for saving the PDF and the X and Y positioning of the document. There are a bunch of other options which you can add to this object.
+- We initialize the html2canvas and jsPDF library. In case you are wondering why we are initializing the html2canvas, the jsPDF library uses it for capturing the page screenshots. 
+- The jsPDF constructor is passed in the orientation(`l` for landscape), units of measurement(`pt` for points), and A4 sizing. We chose the landscape portrait for our page to fit in the PDF document. 
+- The `html()` function is called where we pass in the element to be printed and an `options` object. The object contains a `save()` callback function for saving the PDF and the X and Y positioning of the document. There are a bunch of other options which you can add to this object.
 
 You can find the link to the full code [here](https://github.com/munubi254/js-signature-pad/blob/main/js/sign-handler.js).
 
 ### Conclusion
 
-We had an overview of the two libraries, created a HTML layout, and looked at the JavaScript code. You can further enhance this signature feature and use it for biometric authentication. The Signature pad library is very protable in that you can use it in your React-Native apps, web frameworks such as Express, and even desktop apps.
+We had an overview of the two libraries, created a HTML layout, and looked at the JavaScript code. You can further enhance this signature feature and use it for biometric authentication. The Signature pad library is very portable in that you can use it in your React-Native apps, web frameworks such as Express, and even desktop apps.
 
 ### Further reading
 There are other PDF generator libraries which you can have a look at. They include:
