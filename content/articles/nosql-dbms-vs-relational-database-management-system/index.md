@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /is-nosql-dbms-a-replacement-for-relational-database-management-system/
+url: /nosql-dbms-vs-relational-database-management-system/
 title: Is NoSQL DBMS a Replacement for Relational Database Management System?
 description: This article will discuss the features of NoSQL DBMS and how they compare with the SQL-based relational databases.
 author: gregory-munene
@@ -11,7 +11,7 @@ topics: []
 excerpt_separator: <!--more-->
 images:
 
-  - url: /engineering-education/is-nosql-dbms-a-replacement-for-relational-database-management-system/hero.jpg
+  - url: /engineering-education/nosql-dbms-vs-relational-database-management-system/hero.jpg
     alt: DBMS Example Image
 ---
 NoSQL is a non-relational database that has become a preferred option for modern applications. Its changing data sets fit into a flexible data model. Developers find its agile features enticing because they facilitate quick application updates.
