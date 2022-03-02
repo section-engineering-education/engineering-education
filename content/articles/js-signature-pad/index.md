@@ -17,7 +17,7 @@ We will learn about:
 
 ### An overview of the two libraries
 
-Let’s have a quick walk-through of the Signature Pad and jsPDF libraries(Links to these libraries are provided at the [Further reading](#further-reading) section).
+Let’s have a quick walk-through of the [Signature Pad](https://github.com/szimek/signature_pad) and [jsPDF](http://raw.githack.com/MrRio/jsPDF/master/docs/index.html) libraries.
 
 #### Signature Pad
 
@@ -277,21 +277,16 @@ We initialize the html2canvas and jsPDF library. In case you are wondering why w
 
 You can find the link to the full code [here](https://github.com/munubi254/js-signature-pad/blob/main/js/sign-handler.js).
 
+### Conclusion
+
+We had an overview of the two libraries, created a HTML layout, and looked at the JavaScript code. You can further enhance this signature feature and use it for biometric authentication. The Signature pad library is very protable in that you can use it in your React-Native apps, web frameworks such as Express, and even desktop apps.
+
 ### Further reading
-
-Here are the links to the two libraries:
-[jsPDF documentation](http://raw.githack.com/MrRio/jsPDF/master/docs/index.html)
-[Signature Pad repository](https://github.com/szimek/signature_pad)
-
-There are other PDF generator libraries:
+There are other PDF generator libraries which you can have a look at. They include:
 [Puppeteer](https://github.com/puppeteer/puppeteer)
 [Electron-PDF](https://github.com/fraserxu/electron-pdf)
 [ATHENA PDF](https://github.com/arachnys/athenapdf)
 [TCPDF](https://tcpdf.org/)
 [pdfKit](https://pdfkit.org/)
-
-### Conclusion
-
-We had an overview of the two libraries, created a layout, and looked at the JavaScript code.
 
 Have a good one!
