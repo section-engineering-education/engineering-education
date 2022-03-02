@@ -1,7 +1,7 @@
 name: Auto Plagiarism Check
 on:
   pull_request:
-    types: [opened]
+    types: [opened, reopened]
 jobs:
   webtrigger:
     runs-on: ubuntu-latest
