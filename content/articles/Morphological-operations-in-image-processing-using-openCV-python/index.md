@@ -4,7 +4,7 @@ In this tutorial, we can navigate through diverse OpenCV operations used for ima
 How to apply morphological operations to grow the size of items in images in addition to decreasing them.
 We shall additionally talk about the maximum critical morphological operations that you`ll use inner your applications: 
 
-- We shall use this image throughout the tutorial [download-sunflower.png](/Morphological-operations-in-image-processing-using-openCV-python/Oroginalimage.jpg)
+- We shall use this image throughout the tutorial [download-sunflower.png](content/articles/Morphological-operations-in-image-processing-using-openCV-python/Oroginalimage.jpg)
 ### Prerequisites
 To follow along through this tutorial, these are the requirements:
 
@@ -66,10 +66,10 @@ print(bgrImage,"\nEND of bgr Image")
   ```
   - Output: RandomgrayImage. 
   
-  ![RandomgrayImage](/Morphological-operations-in-image-processing-using-openCV-python/RandomGrayimage.png).
+  ![RandomgrayImage](content/articles/Morphological-operations-in-image-processing-using-openCV-python/RandomGrayimage.png).
   - Output: RandomrbgImage.
   
-  ![RandomrbgImage](/Morphological-operations-in-image-processing-using-openCV-python/RandomrgbColor.png).
+  ![RandomrbgImage](content/articles/Morphological-operations-in-image-processing-using-openCV-python/RandomrgbColor.png).
   
 ### Plotting the image
  ```python 
@@ -141,10 +141,10 @@ cv2.destroyAllWindows()
 ```
 - Output: dilated image.
  
-![dilated-image](/Morphological-operations-in-image-processing-using-openCV-python/Dilatedimage.jpg).
+![dilated-image](content/articles/Morphological-operations-in-image-processing-using-openCV-python/Dilatedimage.jpg).
 - Output: eroded image.
 
-![eroded-image](/Morphological-operations-in-image-processing-using-openCV-python/Erodedimage.jpg).
+![eroded-image](content/articles/Morphological-operations-in-image-processing-using-openCV-python/Erodedimage.jpg).
 
 ### Edge detection using opencv
 - Finds edge points of the image that are shown clearly only strong points are detected which are the points with high intensity of pixels neighboring each other.
@@ -179,7 +179,7 @@ cv2.waitKey(2)
   ```
 - Output: canny filter edge detection.
 
-  ![Canny-filter-edge-detection](/Morphological-operations-in-image-processing-using-openCV-python/filteredImg.jpg)
+  ![Canny-filter-edge-detection](content/articles/Morphological-operations-in-image-processing-using-openCV-python/filteredImg.jpg)
 ### Canny filtering operations
 - It is a technique used to smoothen the surfaces of an image and can be used to compute convolutions using a 2D separation as follows.
 - This involves 5 major steps discussed below.
