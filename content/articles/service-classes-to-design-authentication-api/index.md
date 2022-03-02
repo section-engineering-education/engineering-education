@@ -3,24 +3,24 @@ layout: engineering-education
 status: publish
 published: true
 url: /service-classes-to-design-authentication-api/
-title: Using service classes to design an authentication API in Flutter
-description: This tutorial will cover using service classes to design an authentication API in Flutter.
+title: Using Service Classes to Design an Authentication API in Flutter
+description: This tutorial will go over how to use service classes to design an authentication API in Flutter.
 author: vincent-kimanzi
-date: 2022-02-01T00:00:00-14:20
-topics: [Languages]
+date: 2022-03-01T00:00:00-08:50
+topics: [Languages, API]
 excerpt_separator: <!--more-->
 images:
 
   - url: /engineering-education/service-classes-to-design-authentication-api/hero.jpg
     alt: Using service classes to design an authentication API in Flutter Hero Image
 ---
-Service classes are an excellent method to keep third-party code implementation details out of your software when calling an API method from numerous locations in your code.
+Service classes are an excellent method to keep third-party code implementation details out of your software when calling an API method from numerous locations in your code. A side consequence of service classes is that it produces a domain language specific to your app through your services' APIs, so your view models can be read.
 <!--more-->
-A side consequence of service classes is that it produces a domain language specific to your app through your services' APIs, so your view models can be read. Service classes will assist in learning how to encapsulate and segregate third-party libraries and APIs. We will use firebase authentication for this tutorial.
+Service classes will assist in learning how to encapsulate and segregate third-party libraries and APIs. We will use firebase authentication for this tutorial.
 
 ### Prerequisites
 Before we get started, the reader needs to have:
-- [Flutter](https://flutter.dev/) installed on your machine.
+- [Flutter](https://flutter.dev/) installed on their machine.
 - Have some basic knowledge and understanding of Flutter.
 
 ### Table of contents
@@ -46,7 +46,9 @@ You can create a service class when you construct an API for it in your applicat
 - When wrapping firebase or another third-party package with a wrapper.
 
 ### Authentication state
-Authentication state can be subscribed via a stream using `FirebaseAuth`. This stream generates an event each time the authentication status of a user changes, and it continues to do so indefinitely. There are no implementation details to be revealed to the end-user or application using a service class as an API wrapper. Firebase authentication is set up with the code below. Retrieving a firebase authentication object is as simple as calling `ProviderFirebaseAuth>(context)` function.
+Authentication state can be subscribed via a stream using `FirebaseAuth`. This stream generates an event each time the authentication status of a user changes, and it continues to do so indefinitely. 
+
+There are no implementation details to be revealed to the end-user or application using a service class as an API wrapper. Firebase authentication is set up with the code below. Retrieving a firebase authentication object is as simple as calling `ProviderFirebaseAuth>(context)` function.
 
 ```dart
 import 'package:firebase_auth/firebase_auth.dart';
@@ -75,7 +77,7 @@ Although we are using the firebase authentication API in our code, we are still 
 - First, how will you deal with changes to firebase authentication that make things worse in the future.
 - Suppose we decide to use another authentication service instead of firebase in the future. We will have to make some changes to our plans.
 
-Our program's authentication calls to firebase will be upgraded to solve the above issues. In addition, we can expect to add more content to our application as the scope of our project grows.
+Our program's authentication calls to firebase will be upgraded to solve the issues above. In addition, we can expect to add more content to our application as the scope of our project grows.
 
 ### Creating service classes
 You can construct a generic authentication system using the firebase API. Service classes are nothing more than a clone of underlying classes. The firebase authentication API calls are demonstrated in our below sample code using the `Firebase Authentication Service` class.
@@ -129,7 +131,7 @@ class ThisApp extends StatelessWidget
 }
 ```
 
-Our firebase authentication service class will be the only one affected by a breaking change in firebase authentication. It is not necessary to create a base class, but if you choose to do so, below is an example of a code:
+Our firebase authentication service class will be the only one affected by a breaking change in firebase authentication. It is not necessary to create a base class, but if you choose to do so, below is an example of the code:
 
 ```dart
 abstract class AuthService {
@@ -163,12 +165,12 @@ class ThisApp extends StatelessWidget {
 }
 ```
 
->Note:
+> **Note:**
 >- The introduction of a base class is a step backward, and writing one service class at a time is also an option.
 >- The renaming of classes and their usages is made simple in modern integrated development environments. For example, when it comes to the authentication service, firebase and a dummy authentication service can be swapped at runtime for testing and demo purposes.
 
 ### Creating a service that holds a state of an app
-#### Step one: Creating a service class
+#### Step One: Creating a service class
 `NewAbstract.dart` is the name of the file you should create. Create an abstract class that defines your service's capabilities in it.
 
 ```dart
@@ -178,7 +180,7 @@ abstract class newServiceClass {
 }
 ```
 
-#### Step two: Service implementation
+#### Step Two: Service implementation
 Create a new file named `newImplService.dart`. Extend your `newServiceClass` class and add the following methods:
 
 ```dart
@@ -197,7 +199,7 @@ class newImplService extends newServiceClass {
 }
 ```
 
-#### Step three: Service locator and initialization
+#### Step Three: Service locator and initialization
 Create a file called `locatingService.dart` and add the [GetIt](https://pub.dev/packages/get_it) service locator package to `pubspec.yaml`. Register the implementation of your service.
 
 ```dart
@@ -219,7 +221,7 @@ void main() {
 }
 ```
 
-#### Step four: Using the service
+#### Step Four: Using the service
 In this step, we will get a reference to our service from anywhere in our code using the service locator.
 
 ```dart
@@ -232,7 +234,7 @@ This is how you'd implement it in that class:
 - `_newServiceClass.getSomeValue()`
 - `_newServiceClass.doSomething(someValue)`
 
-Here is a Gif to illustrate how it will work:
+Here is a GIF to illustrate how it should work:
 
 ![Results](/engineering-education/service-classes-to-design-authentication-api/resuilts.gif)
 
@@ -241,15 +243,16 @@ Here is a Gif to illustrate how it will work:
 - Essentially, having a code coupled to a single function makes it difficult and error-prone to make changes. In this case, you will need assistance. **Storage service**, for example, is the name of a new class you have created. How it operates internally is not known to the other classes. It is as simple as calling a service's functions to store and get the data.
 
 ### Conclusion
-Using service classes, you may hide the implementation details of third-party code in your app. However, this is especially true if you need to contact an API method multiple times in your codebase.
+Using service classes, you are able to hide the implementation details of third-party code in your app. However, this is especially true if you need to contact an API method multiple times in your codebase.
 
 In a nutshell, use the API wrapper class to conceal implementation details, including all input and output parameters for the API method, and design a simple abstract service class to change another version easily.
+
+Happy coding!
 
 ### References
 - [Services in Code and how to use them in Flutter](https://www.filledstacks.com/post/services-in-code-and-how-to-use-them-in-flutter/)
 - [Authentication API in flutter](https://codewithandrea.com/articles/designing-an-authentication-service-api/)
 - [Flutter Service Architecture](https://gist.github.com/boformer/29d488534ff312a7cc0238b16f1cd0cc)
 
-Happy coding!
 ---
 Peer Review Contributions by: [Briana Nzivu](/engineering-education/authors/briana-nzivu/)
