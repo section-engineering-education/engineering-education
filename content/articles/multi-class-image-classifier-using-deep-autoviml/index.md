@@ -4,9 +4,9 @@ status: publish
 published: true
 url: /multi-class-image-classifier-using-deep-autoviml/
 title: Multi-Class Image Classifier using Deep AutoViML
-description: In this tutorial, we will use Deep AutoViML to build a model that classifies images of hands playing the rock-paper-scissors game.
+description: In this tutorial we will use Deep AutoViML to build a model that classifies images of hands playing the rock-paper-scissors game.
 author: simon-ndiritu
-date: 2022-02-22T00:00:00-10:30
+date: 2022-03-03T00:00:00-15:30
 topics: [Machine Learning]
 excerpt_separator: <!--more-->
 images:
@@ -14,11 +14,9 @@ images:
   - url: /engineering-education/multi-class-image-classifier-using-deep-autoviml/hero.jpg
     alt: Multi-Class Image Classifier using Deep AutoViML Hero Image
 ---
-Image classification categorizes input images into their respective labels or categories. Most image classifications usually have only two classes for example `cat` and `dog`. 
+Image classification categorizes input images into their respective labels or categories. Most image classifications usually have only two classes for example `cat` and `dog`. In a multi-class, we have three or more classes such as `lion`, `cheetah`, `leopard`, and `tiger`.
 <!--more-->
-In a multi-class, we have three or more classes such as `lion`, `cheetah`, `leopard`, and `tiger`. Multi-class image classification categorizes an input image into one of the three or more classes.
-
-When doing a multi-class classification, the predicted image belongs to only one class. An image cannot belong to more than one class at the same time. 
+Multi-class image classification categorizes an input image into one of the three or more classes. When doing a multi-class classification, the predicted image belongs to only one class. An image cannot belong to more than one class at the same time. 
 
 We will use the `Deep AutoViML` library in building the model. Deep AutoViML is an Automated Machine Learning (AutoML) library that builds neural networks using [TensorFlow](https://www.tensorflow.org/) and [Keras](https://keras.io/).
 
@@ -43,10 +41,10 @@ In this tutorial, we will use Deep AutoViML to build a model that classifies ima
 
 ### Prerequisites
 To follow along with this tutorial, the reader should:
-- Understand [image preprocessing in Python](/engineering-education/image-preprocessing-in-python/)
-- Understand [convolution neural networks](/engineering-education/basics-of-convolution-neural-networks/)
-- Know how to build an image classifier using [Keras](/engineering-education/image-classifier-keras/) and [TensorFlow](https://www.tensorflow.org/tutorials/images/classification)
-- Run the model in [Google Colab notebook](https://colab.research.google.com/)
+- Understand [image preprocessing in Python](/engineering-education/image-preprocessing-in-python/).
+- Understand [convolution neural networks](/engineering-education/basics-of-convolution-neural-networks/).
+- Know how to build an image classifier using [Keras](/engineering-education/image-classifier-keras/) and [TensorFlow](https://www.tensorflow.org/tutorials/images/classification).
+- Run the model in [Google Colab notebook](https://colab.research.google.com/).
 
 ### Getting started with Deep AutoViML
 Deep AutoViML automates the process of building an image classification model. Deep AutoViml uses Keras and Tensorflow libraries to build a deep learning model. The models are fast and more accurate. 
@@ -62,7 +60,7 @@ The most common image preprocessing activities are as follows:
 - [Image standardization](https://towardsdatascience.com/normalization-vs-standardization-which-one-is-better-f29e043a57eb) - Changing the image pixels to meet the required standards so that the image can have uniform heights and widths.
 - [Image scaling](https://en.wikipedia.org/wiki/Image_scaling) - This process converts the image to a user set scale.
 
-These processes are very important, to understand them in detail, read this [article](/engineering-education/image-preprocessing-in-python/). These processes provide an image that is ready for use.
+These processes are very important, to understand them in detail, read this [article](/engineering-education/image-preprocessing-in-python/) for more information. These processes provide an image that is ready for use.
 
 2. Deep AutoViML uses pre-trained models - Pre-trained models are neural networks models that undergo training using large datasets. The models are then imported to solve similar problems.
 
@@ -79,7 +77,7 @@ To use this library, we install it using the command below:
 !pip install deep_autoviml --upgrade
 ```
 
-After the installation process, let us now import the `deep_autoviml` using the following code:
+After the installation process, we can now import the `deep_autoviml` using the following code:
 
 ```python
 from deep_autoviml import deep_autoviml as deepauto
@@ -96,9 +94,9 @@ To use Google Colab's GPU, follow the steps below:
 
 2. Click `Change runtime type`.
 
-![alt text](/engineering-education/multi-class-image-classifier-using-deep-autovimll/change-runtime-type.png)
+![alt text](/engineering-education/multi-class-image-classifier-using-deep-autoviml/change-runtime-type.png)
 
-3. Finally, select the `GPU` option and save.
+3. Then select the `GPU` option and save.
 
 ![alt text](/engineering-education/multi-class-image-classifier-using-deep-autoviml/gpu.png)
 
@@ -153,7 +151,7 @@ To add the test set images to the `test` folder, we use the command below:
 !mv rockpaperscissors/rps-cv-images rockpaperscissors/test
 ```
 
-Finally, we clean the directory by removing unnecessary files:
+Now we clean the directory by removing unnecessary files:
 
 ### Cleaning the directory
 To clean the directory, we use the command below:
@@ -188,7 +186,7 @@ The image above shows a `scissors` gesture.
 display(Image('rockpaperscissors/test/paper/9zuFLFklb0ibEelE.png'))
 ```
 
-![Second image](/engineering-education/multi-class-image-classifier-using-deep-autovimll/paper-gesture.jpg)
+![Second image](/engineering-education/multi-class-image-classifier-using-deep-autoviml/paper-gesture.jpg)
 
 The image above shows a `paper` gesture.
 
@@ -196,7 +194,7 @@ The image above shows a `paper` gesture.
 display(Image('rockpaperscissors/test/rock/JOaPrPIINVvoI9l4.png'))
 ```
 
-![Third image](/engineering-education/multi-class-image-classifier-using-deep-autovimll/rock-gesture.jpg)
+![Third image](/engineering-education/multi-class-image-classifier-using-deep-autoviml/rock-gesture.jpg)
 
 The image above shows a `rock` gesture.
 
@@ -271,7 +269,7 @@ These techniques are:
 - `image_height` - It specifies the image height.
 - `image_channels` - It specifies the number of image classes.
 
-After initializing the neural network, let us fit the neural network onto our dataset.
+After initializing the neural network, let's fit the neural network onto our dataset.
 
 ### Fitting the neural network
 Fitting the neural network allows the model to learn from the training images. This will enable the model to gain useful insight which it will use to make predictions.
@@ -285,13 +283,9 @@ model = deepauto.fit("", "", keras_model_type=keras_model_type,
  keras_options=keras_options, use_my_model='', verbose=0)
 ```
 
-We fit the neural network using the `deepauto.fit` function. In the function we add the `project_name` as `rock_paper_scissors_classifier`. 
+We fit the neural network using the `deepauto.fit` function. In the function we add the `project_name` as `rock_paper_scissors_classifier`. The other function values are the parameters set during the initialization process. We also use the `save_model_flag` to specify if we want to save our model or not.
 
-The other function values are the parameters set during the initialization process. We also use the `save_model_flag` to specify if we want to save our model or not.
-
-When the code is executed, it automates the model-building process. It then produces different outputs to show the progress.
-
-The first output shows the model training using the `rock-paper-scissors` dataset. The output also shows the number of GPUs used to speed up the process. 
+When the code is executed, it automates the model-building process. It then produces different outputs to show the progress.The first output shows the model training using the `rock-paper-scissors` dataset. The output also shows the number of GPUs used to speed up the process. 
 
 This output is shown in the image below:
 
@@ -303,7 +297,7 @@ The neural network iterates through the training dataset 3 times. It prints the 
 
 The next output displays some of the images:
 
-![Displayed images](/engineering-education/multi-class-image-classifier-using-deep-autovimll/displayed-images.jpg)
+![Displayed images](/engineering-education/multi-class-image-classifier-using-deep-autoviml/displayed-images.jpg)
 
 Deep AutoViML also automatically plots the `Model Training vs Validation loss` and `Model Training vs Validation Accuracy` diagrams. These diagrams are shown below:
 
@@ -322,7 +316,7 @@ This output represents the structure of the neural network:
 
 From the image above, the model type is sequential. Sequential models allow layers to be built on top of each other. It also shows the total model parameters (2,261,827).
 
-The trainable parameters(3,843) are the ones the neural network will train. The non-trainable parameters (2,257,984) are already trained. 
+The trainable parameters (3,843) are the ones the neural network will train. The non-trainable parameters (2,257,984) are already trained. 
 
 We import the non-trainable parameters from the pre-trained MobileNet. The number of non-trainable parameters is more than the trainable parameters. This saves training time.
 
@@ -339,13 +333,13 @@ From the image above, the model has classified 6 images. For all the images, the
 We have also achieved multi-class image classification. The model was able to classify an image into one of the three classes.
 
 ### Conclusion
-In this article, we have learned a multi-class image classifier using Deep AutoViML. We discussed the Deep AutoViML features used to build powerful deep learning models. 
+In this tutorial, we have gone over a multi-class image classifier using Deep AutoViML. We discussed the Deep AutoViML features used to build powerful deep learning models. 
 
 Using these features we were able to build a multi-class image classification model. The final model was able to classify images of hands playing the rock-paper-scissors game. 
 
 I hope you find this tutorial insightful.
 
-To get the complete Python code in Google Colab, click [here](https://colab.research.google.com/drive/1nqLKPj93fha33IK-R32WOFCw5yHwO5zl?usp=sharing)
+To get the complete Python code in Google Colab, click [here](https://colab.research.google.com/drive/1nqLKPj93fha33IK-R32WOFCw5yHwO5zl?usp=sharing).
 
 ### References
 - [Getting started with image preprocessing in Python](/engineering-education/image-preprocessing-in-python/)
