@@ -100,52 +100,58 @@ The submit action processes jQuery form validation before posting the parameters
 
 The client-side validation script handles the basic validation on submit. It applies the not-empty check on each field.
 
-```php
-index.php (HTML Template)
+- index.php (HTML Template)
 
+```php
 <html>
+
 <head>
-<title>CSRF Protection using PHP</title>
-<link rel="stylesheet" type="text/css"
-    href="assets/css/style.css" />
-<script src="vendor/jquery/jquery-3.2.1.min.js"></script>
+    <title>CSRF Protection using PHP</title>
+    <link rel="stylesheet" type="text/css" href="assets/css/style.css" />
+    <script src="vendor/jquery/jquery-3.2.1.min.js"></script>
 </head>
+
 <body>
     <div class="container">
         <h1>CSRF Protection using PHP</h1>
-        <form name="frmContact" id="cnt-frm" class="form"
-            frmContact"" method="post" action="" enctype="multipart/form-data"
-            onsubmit="return validateContactForm()">
+        <form name="frmContact" id="cnt-frm" class="form" frmContact"" method="post" action=""
+            enctype="multipart/form-data" onsubmit="return validateContactForm()">
 
             <div class="-row">
                 <div class="label">
                     Name <span id="userName-info" class="validation-message"></span>
                 </div>
-                <input type="text" class="input" name="userName"
-                    id="userName"
-                    value="<?php if(!empty($_POST['userName'])&& $type == 'error'){ echo $_POST['userName'];}?>" />
+                <input type="text" class="input" name="userName" id="userName"
+                    value="<?php if (!empty($_POST['userName'])&& $type == 'error') {
+    echo $_POST['userName'];
+}?>" />
             </div>
             <div class="-row">
                 <div class="label">
                     Email <span id="userEmail-info" class="validation-message"></span>
                 </div>
-                <input type="text" class="input" name="userEmail"
-                    id="userEmail"
-                    value="<?php if(!empty($_POST['userEmail'])&& $type == 'error'){ echo $_POST['userEmail'];}?>" />
+                <input type="text" class="input" name="userEmail" id="userEmail"
+                    value="<?php if (!empty($_POST['userEmail'])&& $type == 'error') {
+    echo $_POST['userEmail'];
+}?>" />
             </div>
             <div class="-row">
                 <div class="label">
                     Subject <span id="subject-info" class="validation-message"></span>
                 </div>
                 <input type="text" class="input" name="subject" id="subject"
-                    value="<?php if(!empty($_POST['subject'])&& $type == 'error'){ echo $_POST['subject'];}?>" />
+                    value="<?php if (!empty($_POST['subject'])&& $type == 'error') {
+    echo $_POST['subject'];
+}?>" />
             </div>
             <div class="-row">
                 <div class="label">
                     Message <span id="userMessage-info" class="validation-message"></span>
                 </div>
                 <textarea name="content" id="content" class="-input" cols="60"
-                    rows="6"><?php if(!empty($_POST['content'])&& $type == 'error'){ echo $_POST['content'];}?></textarea>
+                    rows="6"><?php if (!empty($_POST['content'])&& $type == 'error') {
+    echo $_POST['content'];
+}?></textarea>
             </div>
             <div class="-row">
                 <input type="submit" name="send" class="send-button" value="Send" />
@@ -153,13 +159,14 @@ index.php (HTML Template)
 
             <?php require_once __DIR__ . '/view/framework/form-footer.php';?>
         </form>
-        <?php if(!empty($message)) { ?>
-        <div id="message" class="<?php  echo $type; ?>"><?php if(isset($message)){ ?>
-                    <?php echo $message; }}?>
-                   </div>
+        <?php if (!empty($message)) { ?>
+        <div id="message" class="<?php  echo $type; ?>"><?php if (isset($message)) { ?>
+            <?php echo $message; }}?>
+        </div>
     </div>
     <script src="assets/js/validate.js"></script>
 </body>
+
 </html>
 ```
 
@@ -426,7 +433,7 @@ Thus we have implemented the anti-CSRF protection in a PHP contact form. Hope th
 
 We have created a SecurityService class in PHP to handle the CSRF protection. It is reusable for several applications wherever you need to enable CSRF protection. The PHP code that returns response messages acknowledges the user properly.
 
-For practice sake, you can get the example [here](https://github.com/EssyG10/csrf-protection/tree/main/csrf-protection-using-php).
+For practice's sake, you can get the example [here](https://github.com/EssyG10/csrf-protection/tree/main/csrf-protection-using-php).
 
 ### Further Reading
 
