@@ -301,7 +301,7 @@ The next output displays some of the images:
 
 Deep AutoViML also automatically plots the `Model Training vs Validation loss` and `Model Training vs Validation Accuracy` diagrams. These diagrams are shown below:
 
-![Diagrams](/engineering-education/multi-class-image-classifier-using-deep-autoviml/diagrams.jpg)
+![Diagrams](/engineering-education/multi-class-image-classifier-using-deep-autoviml/digrams.jpg)
 
 The diagram on the left shows the `Model Training vs Validation loss`. From the image, we can see the `train_loss` and the `val_loss` reduces over time. This shows that our model improved as the training process continued.
 
