@@ -378,7 +378,7 @@ Let's also edit `base.html` to access the view. Edit it as follows:
 
 When you visit `http://127.0.0.1:8000` you should get the following page:
 
-![Sales Page](/engineering-education/representing-data-in-django-using-matplotlib/salespage.png)
+![Sales Page](/engineering-education/representing-data-in-django-using-matplotlib/SalesPage.png)
 
 ### Creating the graphical representations.
 Now, we are going to start building the graphical representations part of our web page.
