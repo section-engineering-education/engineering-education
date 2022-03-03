@@ -4,7 +4,7 @@ status: publish
 published: true
 url: /understanding-collections-in-python/
 title: Understanding Collections in Python
-description: This article will help the reader understand specialized data structures that comes with collections module in Python.
+description: This article will help the reader understand specialized data structures that come with the collections module in Python.
 author: leah-wangari
 date: 2022-03-02T00:00:00-21:30
 topics: [Languages]
@@ -12,13 +12,13 @@ excerpt_separator: <!--more-->
 images:
 
   - url: /engineering-education/understanding-collections-in-python/hero.png
-    alt: Collections in Python
+    alt: Understanding Collections in Python
 ---
 In computer programming, a collection is a grouping of similar data types. These unit classes may assist in organizing and managing related items. Collections feature data structures that help manage vast volumes of data effectively.
 <!--more-->
-The `collection` module in Python provides a wide variety of containers. Containers can store a variety of items and can be retrieved and re-created. These containers include tuple, list, dictionary, and much more.
+The `collection` module in Python provides a wide variety of containers. Containers can store a variety of items and can be re-created. These containers include tuples, lists, dictionaries, and much more.
 
-Here we'll explore several of the collections module's containers.
+In this article, we'll explore some of the containers found in the `collections` module.
 
 ### Prerequisites
 To understand the content of this article, you should have the following:
@@ -31,23 +31,23 @@ To understand the content of this article, you should have the following:
 - [Implementation of Python collection modules](#implementation-of-python-collection-modules)
 - [Conclusion](#conclusion)
 
-### Collections data types
-Collection data types may be used to store a collection of items. They are:
+### Collection data types
+As mentioned earlier, collection data types may be used to store a collection of items. These are:
 
-1. **List** - Iteratively generated lists may be modified by adding or deleting elements. To create a list, use square brackets [].
+1. **Lists** - Iteratively generated lists may be modified by adding or deleting elements. To create a list, use square brackets `[]`.
 
-2. **Set** - Duplicates are not permitted in unordered, immutable collections of unique items. A collection of data types may be used to perform mathematical operations such as the intersection, union and symmetric difference. Sets can be created using curly brackets following the variable names or the `set()` constructor.
+2. **Sets** - Duplicates are not permitted in unordered, immutable collections of unique items. A collection of data types may be used to perform mathematical operations such as the intersection, union and symmetric difference. Sets can be created using curly brackets following the variable names or the `set()` constructor.
 
-3. **Tuple** - This is an ordered, immutable sequence of multiple things held in one variable. A tuple is a variable name followed by two parentheses and commas. Python requires a trailing comma to identify it as a string. Following the variable name, a tuple may be constructed using a pair of parentheses and comma-separated objects.
+3. **Tuples** - They are an ordered, immutable sequence of multiple things held in one variable. A tuple is a variable name followed by two parentheses and commas. Python requires a trailing comma to identify it as a string. Following the variable name, a tuple may be constructed using a pair of parentheses and comma-separated objects.
 
-4. **Dictionary** - A dictionary has unsorted key/value pairs. There may be any number of pairs of keys and values. Dictionaries, like sets, lack order. After creation, a dictionary may be modified. Values overflow, and only the most recent is returned if it contains more than one item.
+4. **Dictionaries** - A dictionary consists of unsorted key/value pairs. There may be any number of pairs of keys and values. Dictionaries, like sets, lack order and after creation, a dictionary may be modified. Values overflow, and only the most recent added is returned if the dictionary contains more than one item.
 
 The above data types can be distinguished into mutable, immutable, set type, and mappings.
 
 Now let's compare and contrast lists, tuples, and sets.
 
 #### Similarities
-1. First, they can handle any data type.
+1. They can handle any data type.
 2. Due to their flexibility, lists and sets may be modified after creation.
 3. Lists and tuples are both ordered sets.
 4. Lists and tuples may share items.
@@ -57,7 +57,7 @@ Now let's compare and contrast lists, tuples, and sets.
 2. Unlike lists and tuples, sets accept just one of two identical items.
 3. Tuples are immutable, which means they cannot be modified after being formed in Python.
 
-### Collection modules
+### The collections modules
 The Python `collections` module provides an alternative to Python's built-in container data types. The `collection` modules specific data structures are listed below:
 
 - `defaultdict`
@@ -109,7 +109,7 @@ for x,y in K.items():
 
 The code output will be:
 
-```bash
+```
 Value1 29
 Value2 30
 Value3 33
@@ -136,7 +136,7 @@ The output of the code will be:
 ```
 
 #### 4. ChainMap
-It's a vocabulary for a collection of mappings, and it returns numerous dictionaries. ChainMap will create a single list if both dictionaries have many key-value pairs.
+It's a vocabulary for a collection of mappings that returns numerous dictionaries. A ChainMap will create a single list if both dictionaries have many key-value pairs.
 
 #### 5. deque
 A `deque`, pronounced "deck", is a list designed to make it simple to add and remove items.
@@ -207,7 +207,7 @@ Dictionaries in Python are containers that map a single key to a single value, w
 `defaultdict` as a parameter that expects a function (default factory) as its argument. The default factory is set to `int`, that is: 0. The default factory value is returned if the `defaultdict` has no keys. It has the following advantages over `get()` and `setdefault()`:
 
 1. A default value is set at the declaration. There is no need to call the function with the same arguments, saving time.
-2. `Get()` and `setdefault` implementation takes longer than `defaultdict()`.
+2. `get()` and `setdefault` implementation takes longer than `defaultdict()`.
 
 ```python
 import collections
