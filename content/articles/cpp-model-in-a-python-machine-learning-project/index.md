@@ -4,36 +4,27 @@ status: publish
 published: true
 url: /cpp-model-in-a-python-machine-learning-project/
 title: How to Build a C++ Model in a Python Machine Learning Project
-description: This article will help the reader understand how to build a custom ML model using C++ and incorporate into a Python project.
+description: This article will help the reader understand how to build a custom machine learning model using C++ and incorporate into a Python project.
 author: terrence-aluda
-date: 2022-02-26T00:00:00-05:20
+date: 2022-03-03T00:00:00-10:20
 topics: [Machine Learning]
 excerpt_separator: <!--more-->
 images:
+
   - url: /engineering-education/cpp-model-in-a-python-machine-learning-project/hero.png
     alt: C++ Model in a Python Machine Learning Project Hero Image
 ---
-Python is quite versatile when building Machine Learning models. This is due to the large community, many libraries, as well as short and easy-to-understand code.
+Python is quite versatile when building Machine Learning models. This is due to the large community, many libraries, as well as short and easy-to-understand code. However, it has a disadvantage when it comes to execution speed. This is where a high-speed language like C++ comes in. 
 <!--more-->
-However, it has a disadvantage when it comes to execution speed. This is where a high-speed language like C++ comes in. 
+Though we can build a fast ML model using C++, it's no match to Python when it comes to the number of Machine Learning libraries. Nevertheless, we can utilize Python libraries such as *Numpy* and *Pandas* for data preprocessing and then build a model running on C++.
 
-Though we can build a fast ML model using C++, it's no match to Python when it comes to the number of Machine Learning libraries. 
-
-Nevertheless, we can utilize Python libraries such as *Numpy* and *Pandas* for data preprocessing and then building a model running on C++.
-
-Python has the *ctypes* module that allows us to call C++ code and use it in our program. 
-
-In this article, we are going to harness ctypes' capabilities and create an ML model. We will build a *Logistic Regression model* and then optimize it using *Gradient Descent*.
-
-The main aim of this article is to guide you on how you can build your custom model using C++. 
+Python has the *ctypes* module that allows us to call C++ code and use it in our program. In this article, we are going to harness ctypes' capabilities and create an ML model. We will build a *Logistic Regression model* and then optimize it using *Gradient Descent*. The main aim of this article is to guide you on how you can build your custom model using C++. 
 
 ### Prerequisites
 This is a bit of advanced-level content. Therefore, a solid understanding of the following languages is required:
 
 1. *C++* - You should have some knowledge of pointers, data structures like vectors, and object-oriented programming semantics.
-
 2. *Python* - You should be familiar with its tooling and ecosystem.
-
 3. Machine Learning concepts.
 
 You also need to approach this tutorial with a research-oriented mindset. This is a required skill for a data scientist.
@@ -46,31 +37,27 @@ Thereafter, we will write the C++ code. Finally, we will build the C++ file as a
 Let's get started!
 
 ### Logistic regression
-This is a classification algorithm used in supervised learning. Its main aim is to show the probability that an instance belongs to a certain class under target. 
-
-It does so by calculating the sum of the features multiplied by their weights plus the bias term. 
+This is a classification algorithm used in supervised learning. Its main aim is to show the probability that an instance belongs to a certain class under target. It does so by calculating the sum of the features multiplied by their weights plus the bias term. 
 
 To perform the prediction, the sum is passed into a sigmoid function, as shown in the equation below:
 
 ![Sigmoid image](/engineering-education/cpp-model-in-a-python-machine-learning-project/sigmoid.png)
 
-A cost function(*log loss*) is used when the model outputs a very high probability for a positive instance and a very lower one for a negative instance. 
+A cost function (*log loss*) is used when the model outputs a very high probability for a positive instance and a very lower one for a negative instance. 
 
 The cost for the whole training set is the average of all the instances' costs. The cost of an instance is done by calculating the prediction error i.e the prediction value - the actual value.
 
 ![Log loss image](/engineering-education/cpp-model-in-a-python-machine-learning-project/log-loss.png)
 
-We can optimize the cost function using any optimization algorithm such as gradient descent since it is convex. 
-
-To do that, we have to get the derivative of the *log loss*. This is done using partial derivatives:
+We can optimize the cost function using any optimization algorithm such as gradient descent since it is convex. To do that, we have to get the derivative of the *log loss*. This is done using partial derivatives:
 
 ![Derived log loss image](/engineering-education/cpp-model-in-a-python-machine-learning-project/derived.png)
 
 If you want to look at how this function is derived, have a look at [this article](https://medium.com/analytics-vidhya/derivative-of-log-loss-function-for-logistic-regression-9b832f025c2d).
 
-We will look at this function in detail later in the C++ code. Find more about Logistic Regression [here](https://christophm.github.io/interpretable-ml-book/logistic.html).
+We will look at this function in detail later in the C++ code. Find out more about Logistic Regression [here](https://christophm.github.io/interpretable-ml-book/logistic.html).
 
-### Gradient descent(GD) algorithm
+### Gradient descent (GD) algorithm
 It minimizes a cost function by repeatedly updating its parameters (weight and bias) until convergence is reached. 
 
 GD calculates the gradient of the error function and moves along a descending gradient until a minimum is reached. Have a look at the pseudocode below:
@@ -182,9 +169,9 @@ vector<double> CPPLogisticRegression::updateWeightsAndBias(int noOfIterations, i
 }
 ```
 
-First, we appropriately initialize the *arrays*. Next, we create a *for-loop* with two inner loops.
+We need to appropriately initialize the *arrays*. Next, we create a *for-loop* with two inner loops.
 
-In the first inner loop, we have two inner for-loops for computing the weighted *sum(W.x)* and another one for computing a summation of each *feature weight*. 
+In the first inner loop, we have two inner for-loops used to compute the weighted *sum(W.x)* and another one to compute a summation of each *feature weight*. 
 
 In the end, we calculate the *summation(Σ)* of *predictions(costs)* of each instance.
 
@@ -239,7 +226,7 @@ The function returns the *vector* containing the *weights* and the *bias* term.
 #### Prediction
 The vector we returned from the previous function is passed into this function together with an *array* of test features. 
 
-We calculate the weighted sum as we did in the previous function then calculate the *sigmoid* for getting a probability. 
+We calculate the weighted sum as we did in the previous function then calculate the *sigmoid* to get a probability. 
 
 The accuracy is quite low since we only have a few test features.
 
@@ -294,7 +281,7 @@ You can read more about *ctypes* from this [official documentation](https://docs
     }
 ```
 
-In the above code, the `LogisticRegression()` function instantiates the class we created and returns it. 
+In the code above, the `LogisticRegression()` function instantiates the class we created and returns it. 
 
 The `fit()` function calls the method for updating the *weights* and the *bias* term. It returns a vector which is later passed to the class' `predict()` function inside the `predict()` function.
 
@@ -417,7 +404,7 @@ extern "C"{
 }
 ```
 
-Before we look at the Python code, let's created a shared library.
+Before we look at the Python code, let's create a shared library.
 
 ### Creating a shared library
 Create a Python file called *setup.py* and add the following code:
@@ -436,7 +423,7 @@ setup (name = 'Logistic Regression Model',
 
 The above code creates a shared library called *logistic* from the *logistic.cpp* file. The file will be created in the *build* directory. 
 
-Note that this is platform-independent. For Linux, it will create a *.so* file while Windows will produce a *.pyd* file. 
+>Note that this is platform-independent. For Linux, it will create a *.so* file while Windows will produce a *.pyd* file. 
 
 I ran mine on Linux and it produced a file named *logistic.cpython-310-x86_64-linux-gnu.so*. Be sure to check yours.
 
@@ -522,15 +509,15 @@ print("Predicted value:",pred)
 ```
 
 ### Conclusion
-In this tutorial, we discussed the Logistic regression and Gradient Descent optimization algorithms. \
-
-Thereafter, we wrote the C++ code and built a shared library that will be consumed in Python. 
+In this tutorial, we discussed the Logistic regression and Gradient Descent optimization algorithms. Then we wrote the C++ code and built a shared library that will be consumed in Python. 
 
 You can, therefore, use this knowledge to create your C++ models.
 
 Apart from ctypes, there are other wrapper tools such as CFFI, PyBind11, etc. Have a look at [this article](https://realpython.com/python-bindings-overview/) for more information about them. 
 
 Feel free to suggest changes, improvements, and corrections in the comment section below.
+
+Happy coding!
 
 ---
 Peer Review Contributions by: [Wanja Mike](/engineering-education/authors/michael-barasa/)
