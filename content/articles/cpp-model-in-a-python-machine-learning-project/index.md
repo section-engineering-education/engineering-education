@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /building-a-cpp-model-in-a-python-machine-learning-project/
+url: /cpp-model-in-a-python-machine-learning-project/
 title: How to Build a C++ Model in a Python Machine Learning Project
 description: This article will help the reader understand how to build a custom ML model using C++ and incorporate into a Python project.
 author: terrence-aluda
@@ -10,7 +10,7 @@ date: 2022-02-26T00:00:00-05:20
 topics: [Machine Learning]
 excerpt_separator: <!--more-->
 images:
-  - url: /engineering-education/building-a-cpp-model-in-a-python-machine-learning-project/hero.png
+  - url: /engineering-education/cpp-model-in-a-python-machine-learning-project/hero.png
     alt: C++ Model in a Python Machine Learning Project Hero Image
 ---
 Python is quite versatile when building Machine Learning models. This is due to the large community, many libraries, as well as short and easy-to-understand code.
@@ -52,19 +52,19 @@ It does so by calculating the sum of the features multiplied by their weights pl
 
 To perform the prediction, the sum is passed into a sigmoid function, as shown in the equation below:
 
-![Sigmoid image](/engineering-education/building-a-cpp-model-in-a-python-machine-learning-project/sigmoid.png)
+![Sigmoid image](/engineering-education/cpp-model-in-a-python-machine-learning-project/sigmoid.png)
 
 A cost function(*log loss*) is used when the model outputs a very high probability for a positive instance and a very lower one for a negative instance. 
 
 The cost for the whole training set is the average of all the instances' costs. The cost of an instance is done by calculating the prediction error i.e the prediction value - the actual value.
 
-![Log loss image](/engineering-education/building-a-cpp-model-in-a-python-machine-learning-project/log-loss.png)
+![Log loss image](/engineering-education/cpp-model-in-a-python-machine-learning-project/log-loss.png)
 
 We can optimize the cost function using any optimization algorithm such as gradient descent since it is convex. 
 
 To do that, we have to get the derivative of the *log loss*. This is done using partial derivatives:
 
-![Derived log loss image](/engineering-education/building-a-cpp-model-in-a-python-machine-learning-project/derived.png)
+![Derived log loss image](/engineering-education/cpp-model-in-a-python-machine-learning-project/derived.png)
 
 If you want to look at how this function is derived, have a look at [this article](https://medium.com/analytics-vidhya/derivative-of-log-loss-function-for-logistic-regression-9b832f025c2d).
 
