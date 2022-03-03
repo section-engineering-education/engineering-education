@@ -6,7 +6,7 @@ url: /fibonacci-memoization-time-complexity-in-javascript/
 title: Understanding Fibonacci Memoization Time Complexity in JavaScript
 description: This article will help the reader understand Fibonacci memoization and it's time complexity in JavaScript. 
 author: valentine-gatwiri
-date: 2022-02-28T01:00:00-10:10
+date: 2022-03-03T01:00:00-06:45
 topics: [Languages]
 excerpt_separator: <!--more-->
 images:
@@ -16,7 +16,7 @@ images:
 ---
 Memoization is an enhancement procedure used to speed up computer programs by keeping the values of distinct function calls and returning the stored input when the same function is invoked again. 
 <!--more-->
-In software development, time complexity describes the amount of time the computer takes to run an algorithm.
+In software development, time complexity describes the time the computer takes to run an algorithm.
 
 In this tutorial, we will use dynamic programming to solve the Fibonacci sequence and learn about the time complexity of our solutions. 
 
@@ -111,7 +111,7 @@ We will now add the values of the left and right children until we reach the top
 #### Time complexity
 As shown above, classic recursive implementation usually has `0(2^n)` time complexity. Therefore, to find the time complexity of our algorithm, we should consider how many times we will be calling `fib()`.
 
-In the first level of the tree, we have one call: fib 7. There are two calls in the next level (fib 6 and fib 5) and four calls in the preceding level. 
+In the first level of the tree, we have one call: fib 7. There are two calls in the next level (fib 6 and fib 5) and four in the preceding level. 
 
 Each time our node branches off, we have two additional nodes, so it's `2*2*2... = 2^n.` making it `O(2^n)`. Note that it's not usually `2^n`. 
 
@@ -187,9 +187,9 @@ We also added a memo storing logic as `memo[n]=fib(n-1, memo) + fib(n-2, memo)`.
 #### Tree implementation
 ![Memoized tree](/engineering-education/fibonacci-memoization-time-complexity-in-javascript/memoized.jpeg)
 
-In the above image, the red nodes return the memoized result. The algorithm is called once for each value from *0 to n* if they are ignored.
+In the above image, the red nodes return the memoized result. The algorithm is called once for each value from *0 to n* if ignored.
 
-A call tree for a figure more prominent than `fib(7)` will be the same as that in the above image.
+A call tree for a figure more prominent than `fib(7)` will be the same as in the above image.
 
 #### Fibonacci sequence - Time complexity analysis
 
@@ -202,7 +202,7 @@ else
 }
 ```
 
-In the above algorithm, if *n* is less or equal to *1*, we return *n*, or else we make two recursive calls to calculate *fib of n-1* and *fib of n-2*. 
+In the above algorithm, if *n* is less or equal to *1*, we return *n*or make two recursive calls to calculate *fib of n-1* and *fib of n-2*. 
 
 #### Time complexity calculation
 You can use different formulas to calculate the time complexity of Fibonacci sequence.
@@ -235,7 +235,7 @@ T(n) α 2^n/2 //(lower Bound)
 
 - O(n)=> fib(iteration)-linear time algorithm
  
-In the equation above, we are looking for the smallest value that can be rounded up to the estimated value.
+In the equation above, we are looking for the smallest value rounded up to the estimated value.
 
 ```bash
 T(n-1)=T(n-2)
@@ -251,11 +251,11 @@ T(n)=2T(n-1)+c   [c=4]
 
 - O(2^n)=>fib(recursion)-Exponential time algorithm
  
-In the equation above, we are looking for the largest value that can be rounded up to the estimated value.
+In the equation above, we are looking for the largest value rounded up to the estimated value.
  
 On finding the solution to the above equation, we obtain the upper bound of Fibonacci as O(2^n). 
 
-This is not the tight upper bound. The fact that Fibonacci can be mathematically represented as a linear recursive function can be used to find the tight upper bound.
+This is not the tight upper bound. However, Fibonacci can be mathematically represented as a linear recursive function to find the tight upper bound.
 
 **Recursive formula for writing Fibonacci numbers mathematically**
 
