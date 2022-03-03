@@ -6,39 +6,38 @@ url: /generating-randomness-with-chainlink-vrf-using-brownie/
 title: Generating Randomness using Chainlink VRF and Brownie 
 description: This article will help the reader understand how to generate random numbers using Chainlink VRF. These numbers are secure due to the use of decentralized oracles.
 author: raphael-ndonga
-date: 2022-02-28T00:00:00-06:00
+date: 2022-03-03T00:00:00-10:30
 topics: [Blockchain]
 excerpt_separator: <!--more-->
 images:
+
   - url: /engineering-education/generating-randomness-with-chainlink-vrf-using-brownie/hero.jpg
     alt: Generating Randomness using Chainlink VRF and Brownie Hero Image
 ---
-The Ethereum blockchain is a deterministic system. This means that given the same inputs, the outputs will always be the same. 
+The Ethereum blockchain is a deterministic system. This means that given the same inputs, the outputs will always be the same. This system poses some challenges when it comes to generating random numbers. You don't want to generate random numbers in a deterministic way. 
 <!--more-->
-This system poses some challenges when it comes to generating random numbers. You don't want to generate random numbers in a deterministic way. 
-
 Hackers could manipulate inputs to generate their desired outputs. Chainlink VRF solves this problem by using *decentralized oracles*. 
 
-Oracles link off-chain data (in our case, the random numbers) and connect it to the blockchain. Randomness has a variety of use cases. They include:
+Oracles link off-chain data (in our case, the random numbers) and connect it to the blockchain. Randomness has a variety of use cases. 
 
+They may include:
 - Creating and distributing NFTs.
 - Decentralized finance.
 - Marketing campaigns and loyalty rewards.
 - Ordering processes.
-- Blockchain Gaming.
+- Blockchain gaming.
 - Security and authentication.
 
 ### Goal
-In this article, you will understand how the Chainlink VRF functions and how it can be deployed in smart contracts using brownie.
+In this article, we will understand how the Chainlink VRF functions and how it can be deployed in smart contracts using brownie.
 
 ### Prerequisites
-To follow along, you need:
+To follow along, the reader will need:
 - A basic understanding of Python and Solidity programming languages.
 - A basic understanding of Brownie API.
 - Brownie Python Virtual Environment installed.
 - Preferably Python3 installed.
 - An IDE such as [Visual Studio Code](https://code.visualstudio.com/) editor.
-
 
 ### Getting started
 The first step is to initialize a `brownie` project in the terminal using the command below:
@@ -64,7 +63,7 @@ import "@chainlink/contracts/src/v0.8/VRFConsumerBase.sol";
 
 > Note that the above import may show some errors. We will ignore these IDE errors for now.
 
-`Brownie` cannot automatically understand where this import is coming from. Therefore, you should provide information on Chainlink's github. `Brownie` will pull the Chainlink code from Github.
+`Brownie` cannot automatically understand where this import is coming from. Therefore, you should provide information on Chainlink's GitHub. `Brownie` will pull the Chainlink code from Github.
 
 Create `brownie-config.yaml` file in the *main* folder and add the following dependency:
 
@@ -101,7 +100,6 @@ contract RandomNumberGen is VRFConsumerBase{
 }
 ```
 
-
 There are three key attributes you need to declare:
 
 ```java
@@ -111,9 +109,7 @@ uint256 public randomNumber;
 ```
 
 - `keyHash` is the unique key that identifies what tasks are to be performed.
-
 - `randomNumber` will hold the random number you intend to generate.
-
 - `fee` is the amount of money (LINK) that is required to perform this transaction.
 
 Chainlink charges `LINK` for one to use their oracles. However, for *test* environments, you can obtain `LINK` for free using [Chainlink Faucets](https://faucets.chain.link/).
@@ -123,7 +119,6 @@ You can also use this *faucet* to obtain free *ETH* for your *test* networks. In
 The constructor of your contract will be a *VRFConsumerBase* constructor and it takes two arguments:
 
 - `_vrfCoordinator` - This is the address of the smart contract that checks whether the random number generated is truly random.
-
 - `_link` - This is the address of the *link token*. It varies depending on your network.
 
 `RandomNumberGen` also requires the following constructor:
@@ -159,7 +154,6 @@ Obtain the *private key*, and store it in a `.env` file. You also need to obtain
 Refer to the following links:
 
 - [How to get an Infura Id](https://blog.infura.io/getting-started-with-infura-28e41844cc89/)
-
 - [How to export a Metamask Private Key](https://metamask.zendesk.com/hc/en-us/articles/360015289632-How-to-Export-an-Account-Private-Key)
 
 Create a `.env` file and place it in the *main* folder:
@@ -287,7 +281,7 @@ wallets:
 ### Deploying using Brownie
 The first step is to ensure that your brownie virtual environment is running properly.
 
-Next, you need to deploy the smart contract to the blockchain using brownie. Under the scripts folder, create a python file called `helpful_scripts.py`.
+Next, you need to deploy the smart contract to the blockchain using brownie. Under the scripts folder, create a Python file called `helpful_scripts.py`.
 
 In this file, create a helper function and name it `get_account()`. This function will help us obtain an account that deploys the smart contract:
 
@@ -299,7 +293,6 @@ def get_account():
 ```
 
 - `accounts` is the brownie library that provides accounts. It can create fake virtual accounts using `ganache`. It can also access your real account using your private key.
-
 - `config` is the brownie library that accesses the `brownie-config.yaml` file you created earlier.
 
 Create another `deploy_contract.py` file in the *scripts* folder. This file will deploy your smart contract to the blockchain:
@@ -324,6 +317,7 @@ def main():
 ```
 
 *10**18* converts the fee from *Eth* to *Wei*. Wei is the smallest denomination of Ethereum transactions.
+
 `RandomNumberGen` is the smart contract that you created in Solidity.
 
 The function `network.show_active()` will return `rinkeby` when it's invoked:
@@ -449,6 +443,8 @@ Creating random numbers that are unpredictable poses a challenge to computer sci
 Chainlink however solves this problem using chainlink vrfs. Their random numbers are yet to be hacked or exploited by malicious individuals.
 
 This tutorial hopefully shed a light on how to utilize chainlink oracles to obtain truly verifiable random numbers.
+
+Happy coding!
 
 ---
 Peer Review Contributions by: [Wanja Mike](/engineering-education/authors/michael-barasa/)
