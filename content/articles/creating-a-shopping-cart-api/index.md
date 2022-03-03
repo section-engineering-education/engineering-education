@@ -51,7 +51,6 @@ public class Admin {
     }
 }
 ```
-
 #### Customer
 ```java 
 @Data
@@ -174,13 +173,11 @@ public class ProductDao {
 ```
 N/B At the top of the class, you must put the `@Repository` annotation to let spring know that that particular class is a repository that maps to entities to the database.
 ### Creating the service layer
-The service layer is where we create our interface and also implement it. This layer contains all our business logic and you must always but the `@Service` at either in the interface or the implementation. Now, we will have a look at our interfaces and later their implementations.
-The service layer contains the following interfaces:
-#### CartServiceInterface
+The service layer is where we create our interfaces pertaining to our business logic and also implement them. You must always put the `@Service` annotation at either in the interface or the implementation. This annotation is so that Spring knows that the class or interface acts as a service. Now, we will have a look at our interfaces and later their implementations. The service layer contains the following interfaces:
+#### CartService
 ```java
-public interface cartService {
+public interface CartService {
     void addProductToCartByCustomer(Long id, Product product);
-
     void addProductToCartByAdmin(Long id, Product product);
     void removeProductsFromCartByCustomer(Long id, Product product);
     void removeProductsFromCartByAdmin(Long id, Product product);
@@ -192,9 +189,9 @@ public interface cartService {
     void refresh();
 }
 ```
-#### DataServiceInterface
+#### DataService
 ```java
-public interface dataService {
+public interface DataService {
     Customer registerCustomer(Customer customer);
     Admin registerAdmin(Admin admin);
     List<Customer> gettingAllCustomers();
@@ -203,7 +200,7 @@ public interface dataService {
     List<Admin> getAllAdmin();
 }
 ```
-From here, you will see how we code to the interface. Any method that is in the interface must be implemented in the implementation. In this code, I used the `@Service` annotation in the implementation. We have the following implementations of the two classes in our interface and they are:
+From here, you will see how we code to the interface. Any method that is in the interface must be implemented in the implementation. In this code, I used the `@Service` annotation in the implementation. We have the following implementations of the two interfaces and they are:
 #### CartServiceImpl
 ```java
 @Service
@@ -291,7 +288,7 @@ public class CartServiceImpl implements cartService {
 ```java
 package com.cart.shopping.service;
 @Service
-public class DataServiceImpl implements dataService {
+public class DataServiceImpl implements DataService {
     @Autowired
     private CustomerDao customerRepo;
     @Autowired
@@ -362,8 +359,8 @@ public class DataServiceImpl implements dataService {
 }
 
 ```
-#### Cart Package
-Next up in the agenda is to create a cart package and in the cart package we create a cart object (class) to carry out certain functions with it methods:
+### Cart Package
+Next up in the agenda is to create a cart package and in the cart package we create a cart class to carry out certain functionality with its methods:
 ```java
 @Component
 public class Cart {
@@ -405,7 +402,7 @@ The last package to review is the controller package. In the controller package 
 
 @RestController
 @RequestMapping("cart")
-public class controller {
+public class Controller {
     @Autowired
     DataServiceImpl dataService;
     @Autowired
@@ -473,15 +470,12 @@ Create a class and call it `CustomerTest`. Use `@Autowire` to insert the depende
 ```java
 @SpringBootTest
 @Slf4j
-public class customerTest {
+public class CustomerTest {
 
-        @Autowired
-        private DataServiceImpl dataService;
-        @Autowired
-        private CartServiceImpl cart;
-
-        @Autowired
-        private CustomerDao customerDao;
+    @Autowired
+    private DataServiceImpl dataService;
+    @Autowired
+    private CartServiceImpl cart;
 
     @BeforeEach
     void beforeEach(){
@@ -491,8 +485,8 @@ public class customerTest {
     @Test
     void createCustomer() {
         customerDao.refresh();
-       Customer customer=new Customer(1L, "Kingsley", "Chukwudi", new BigDecimal("2000"));
-       dataService.registerCustomer(customer);
+        Customer customer=new Customer(1L, "Kingsley", "Chukwudi", new BigDecimal("2000"));
+        dataService.registerCustomer(customer);
         assertEquals(1, customerDao.totalNumberOfCustomers());
 
     }
@@ -592,7 +586,9 @@ Postman provides those HTTP methods that we already have in our controller that 
 Now you are making these operations from your local machine, so you start with localhost: port-number, followed by the string on your controller, and the string on the individual method, eg localhost:8090/cart/create_customer.
 For more on this please make sure you use the postman documentation [Postman Documentation](https://learning.postman.com/docs/publishing-your-api/documenting-your-api/).
 ![shopping_api](api.JPG)
+
 ![shopping_api1](api2.JPG)
+
 ![shopping_api2](payment.JPG)
 #### Conclusion
 In the end, we've seen how to code to an interface, how to write a unit test, how to create an endpoint, and how to use postman to view our endpoint. Furthermore, we also added products to our cart and the cart could calculate the cost of products in the cart since the products have an attribute of price. 
