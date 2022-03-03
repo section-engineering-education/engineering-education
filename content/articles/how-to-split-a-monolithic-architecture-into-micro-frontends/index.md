@@ -10,10 +10,10 @@ date: 2022-03-02T00:00:00-04:21
 topics: []
 excerpt_separator: <!--more-->
 images:
-  - url: /how-to-split-a-monolithic-architecture-into-micro-frontends/hero.jpg
-    alt: Splitting a Monolithic Architecture into Micro-frontends example Image
----
 
+  - url: /engineering-education/how-to-split-a-monolithic-architecture-into-micro-frontends/hero.jpg
+    alt: Splitting a Monolithic Architecture Micro-frontends example Image
+---
 A good application development strategy should ensure that the development time and effort are significantly reduced while keeping the complexity of the application minimal.
 <!--more-->
 ### Introduction
