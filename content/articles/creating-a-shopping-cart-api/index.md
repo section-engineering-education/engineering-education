@@ -73,7 +73,7 @@ public class Customer {
 ```java
 @Data
 public class Product {
-    private String Id;
+    private String id;
     private String productName;
     private BigDecimal cost;
 
@@ -98,7 +98,7 @@ public class Product {
 ```
 These classes provide the features, attributes, or fields we will be needing for the creation of objects.
 ### Creating your repositories
-The importance of creating a repository is to communicate to the database to manipulate your entities. It's like you have your database in your code for easy access. Spring Boot provides the `@Repository` annotation that helps the compiler know that this is a gateway to the database. In the repository package we have the following:
+The importance of creating a repository is to communicate to the database to manipulate your entities. It's like you have your database in your code for easy access. Spring Boot provides the `@Repository` annotation that helps the springboot know that this is for the database. In the repository package we have the following:
 #### AdminDao
 ```java
 @Repository
@@ -147,6 +147,9 @@ public class CustomerDao {
 
     public Map<Long, Customer> gettingAllTheCustomers() {
         return customerDao;
+    }
+    public  void refresh(){
+        customerDao.clear();
     }
 
 }
@@ -204,46 +207,81 @@ From here, you will see how we code to the interface. Any method that is in the 
 #### CartServiceImpl
 ```java
 @Service
-    @Override
-    public List<Customer> gettingAllCustomers() {
-        List<Customer> customerList=new ArrayList<>();
-        for(int counter=1;counter<=customerRepo.gettingAllTheCustomers().size();counter++){
-            Long l2= (long) counter;
-            customerList.add(customerRepo.getCustomer(l2));
-        }
-        return customerList;
-    }
+public class CartServiceImpl implements cartService {
+    @Autowired
+    private CustomerDao customerRepo;
+    @Autowired
+    private productDao productRepo;
+    @Autowired
+    private Cart cart;
+    @Autowired
+    private AdminDao adminDao;
 
     @Override
-    public void removeCustomer(Long id) {
-        if(customerRepo.getCustomer(id)==null){
-            System.out.println("Customer does not exist");
-        }
-        else{
-            customerRepo.removeCustomer(id);
+    public void addProductToCartByCustomer(Long id, Product product) {
+        if (customerRepo.getCustomer(id) != null) {
+
+            cart.addToTheCart(product);
         }
     }
 
+
     @Override
-    public void removeAdmin(Long id) {
-        if(adminRepo.getAdmin(id)==null){
-            System.out.println("Customer does not exist");
-        }
-        else{
-            adminRepo.removeAdmin(id);
+    public void addProductToCartByAdmin(Long id, Product product) {
+        if (adminDao.getAdmin(id) != null) {
+            cart.addToTheCart(product);
         }
     }
 
     @Override
-    public List<Admin> getAllAdmin() {
-        List<Admin> adminList=new ArrayList<>();
-        for(int counter=1;counter<=adminRepo.getAllAdmin().size();counter++){
-            Long l2= (long) counter;
-            adminList.add(adminRepo.getAdmin(l2));
+    public void removeProductsFromCartByCustomer(Long id, Product product) {
+        if (customerRepo.getCustomer(id) != null) {
+            cart.removeFromCart(product);
         }
-        return adminList;
     }
-     @Override
+
+    @Override
+    public void removeProductsFromCartByAdmin(Long id, Product product) {
+        if (adminDao.getAdmin(id) != null) {
+            cart.removeFromCart(product);
+        }
+    }
+
+    @Override
+    public List<Product> checkAllTheProductsInTheCartByCustomer(Long id) {
+        List<Product> productList = new ArrayList<>();
+        if (customerRepo.getCustomer(id) != null) {
+            productList = cart.displayAllItems();
+        }
+        return productList;
+    }
+
+    @Override
+    public List<Product> checkAllTheProductsInTheCartByAdmin(Long id) {
+        List<Product> productList = new ArrayList<>();
+        if (adminDao.getAdmin(id) != null) {
+            productList = cart.displayAllItems();
+        }
+        return productList;
+    }
+
+
+    @Override
+    public BigDecimal calculatePrice() {
+        return cart.calculatePriceInCart();
+    }
+
+
+    @Override
+    public int totalNumberOfItems() {
+        return cart.totalNumberOfProducts();
+    }
+
+    @Override
+    public BigDecimal calculatingPurchase(Long id) {
+        return customerRepo.getCustomer(id).getBalance().subtract(calculatePrice());
+    }
+    @Override
     public void refresh(){
         cart.setCartToNull();
     }
@@ -364,6 +402,7 @@ public class Cart {
 ### Controller Package
 The last package to review is the controller package. In the controller package we have our endpoints or APIs that connect to the internet all the basic functionalities of our services:
 ```java
+
 @RestController
 @RequestMapping("cart")
 public class controller {
@@ -371,57 +410,57 @@ public class controller {
     DataServiceImpl dataService;
     @Autowired
     CartServiceImpl cartService;
-
+    //This method creates a new customer
     @PostMapping("/create_customer")
     public Customer registerCustomer(@RequestBody Customer customer) {
         return dataService.registerCustomer(customer);
     }
-
+    //This method gets all the customer
     @GetMapping("/get_all_customers")
     public List<Customer> gettingAllList() {
         return dataService.gettingAllCustomers();
     }
-
+    //This method creates a new admin
     @PostMapping("/create_admin")
     public Admin registerAdmin(@RequestBody Admin admin) {
         return dataService.registerAdmin(admin);
     }
-
+    //This method get all the registered admin
     @GetMapping("/get_all_admins")
     public List<Admin> getAllAdmin() {
         return dataService.getAllAdmin();
     }
-
+    //This method get product by id
     @PostMapping("/{id}/add_product")
     public void addProducts(@PathVariable Long id, @RequestBody Product product) {
         cartService.addProductToCartByCustomer(id, product);
     }
-
+    //This updates the product in the cart
     @PutMapping("/{id}/add_product")
     public void addProduct(@PathVariable Long id, @RequestBody Product product) {
         cartService.addProductToCartByCustomer(id, product);
     }
-
+    //This method calculates the price of all the products in the cart
     @GetMapping("/cal_price")
     public BigDecimal calculatingPrice() {
         return cartService.calculatePrice();
     }
-
+    //This method performs the payment(though use manually inserted numbers as the customer money but for advance concept we can use payment gateway)
     @GetMapping("/{id}/payment")
     public BigDecimal payment(@PathVariable Long id) {
         return cartService.calculatingPurchase(id);
     }
-
+    //This method gets all the product by a customer
     @GetMapping("/{id}/view_all_product")
     public List<Product> viewAllProducts(@PathVariable Long id) {
         return cartService.checkAllTheProductsInTheCartByCustomer(id);
     }
-
+    //This method gets all the products by an admin
     @GetMapping("/{id}/view_all_productAdmin")
     public List<Product> viewAllProduct(@PathVariable Long id) {
         return cartService.checkAllTheProductsInTheCartByAdmin(id);
     }
-
+    //This method deletes a product by a customer
     @DeleteMapping("/{id}/delete_product")
     public void delete(@PathVariable Long id, Product product) {
         cartService.removeProductsFromCartByCustomer(id, product);
@@ -444,7 +483,10 @@ public class customerTest {
         @Autowired
         private CustomerDao customerDao;
 
-
+    @BeforeEach
+    void beforeEach(){
+        cart.refresh();   
+    }
 
     @Test
     void createCustomer() {
@@ -457,7 +499,6 @@ public class customerTest {
 
     @Test
     void customerCanAddProductToCart() {
-        cart.refresh();
         Product product = new Product("1", "Sandine", new BigDecimal(1000));
         Customer customer=new Customer( 2L, "King", "Chukwudi", new BigDecimal("2000"));
         dataService.registerCustomer(customer);
@@ -469,7 +510,6 @@ public class customerTest {
 
     @Test
     void customerCanRemoveProduct() {
-        cart.refresh();
         Product product = new Product("1", "Sandine", new BigDecimal(1000));
         Product product2 = new Product("2", "SandineBread", new BigDecimal(1100));
         Customer customer=new Customer(1L, "Kingsley", "Chukwudi", new BigDecimal("2000"));
@@ -486,8 +526,7 @@ public class customerTest {
 
     @Test
     void calculatingAllTheProductsInTheCart() {
-        cart.refresh();
-        Product product = new Product("1", "Sandine", new BigDecimal(1000));
+        Product product = new Product("1", "Sandine", new BigDecimal(1000);
         Product product2 = new Product("2", "SandineBread", new BigDecimal(1100));
         Customer customer=new Customer(1L, "Kingsley", "Chukwudi", new BigDecimal("2000"));
         dataService.registerCustomer(customer);
@@ -500,7 +539,6 @@ public class customerTest {
     }
     @Test
     void addProductToCartByAdmin(){
-        cart.refresh();
         Product product = new Product("1", "Sandine", new BigDecimal(1000));
         Product product2 = new Product("2", "SandineBread", new BigDecimal(1100));
         Admin admin=new Admin(1L, "Kingsley","Nwafor");
@@ -512,7 +550,6 @@ public class customerTest {
     }
     @Test
     void removeProductsFromCartByAdmin(){
-        cart.refresh();
         Product product = new Product("1", "Sandine", new BigDecimal(1000));
         Product product2 = new Product("2", "SandineBread", new BigDecimal(1100));
         Admin admin=new Admin(1L, "Kingsley","Nwafor");
@@ -530,7 +567,6 @@ public class customerTest {
     }
     @Test
     void checkAllTheProductsInTheCartByCustomer(){
-        cart.refresh();
         Product product = new Product("1", "Sandine", new BigDecimal(1000));
         Product product2 = new Product("2", "SandineBread", new BigDecimal(1100));
         Product product3 = new Product("3", "SandineBread", new BigDecimal(1100));
@@ -552,16 +588,14 @@ public class customerTest {
 ### Using Postman to verify the output on the web
 First things first go to learning.postman.com and download the version of postman that suits your operating system. 
 You will have to do the necessary sign-in if it's your first time.
-You will have to create a new environment by clicking under the `Scratch Pad`.
-On the three(3) dots in front of the environment, click on it to rename the environment and start operation.
-You click on the plus or add button in front of your environment and then a new interface will appear on your screen.
 Postman provides those HTTP methods that we already have in our controller that help us perform operations on request, Examples are the POST, PUT, PATCH, GET, DELETE, etc.
-Now you are making these operations from your local machine, so you start with localhost: port-number, followed by the string on your controller, and the string in the individual method, eg localhost:8090/cart/create_customer
+Now you are making these operations from your local machine, so you start with localhost: port-number, followed by the string on your controller, and the string on the individual method, eg localhost:8090/cart/create_customer.
+For more on this please make sure you use the postman documentation [Postman Documentation](https://learning.postman.com/docs/publishing-your-api/documenting-your-api/).
 ![shopping_api](api.JPG)
 ![shopping_api1](api2.JPG)
 ![shopping_api2](payment.JPG)
 #### Conclusion
-In the end, we've seen how to code to an interface, how to write a unit test, how to create an endpoint, and how to use postman to view our endpoint. Also, we discussed how we used field dependency injection and not constructor dependency injection which will still suffice. Furthermore, we also added products to our cart and the cart could calculate the cost of products in the cart since the products have an attribute of price. 
+In the end, we've seen how to code to an interface, how to write a unit test, how to create an endpoint, and how to use postman to view our endpoint. Furthermore, we also added products to our cart and the cart could calculate the cost of products in the cart since the products have an attribute of price. 
 
 In this tutorial, we didn't integrate any other API for an actual business transaction that works with your bank account or credit card. Hopefully, we'll work on that in the next tutorial and use an actual database that could be used in real-life events. Be sure to check [Github](https://github.com/kingsleynwafor54/shopping_cart_with_springboot) for more on the entire code structure in case you want to save time from copying code or have an error. Thanks for staying with me all the way. Happy coding!
 ### Referrences
