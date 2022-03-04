@@ -1,16 +1,16 @@
-Next.js has been used to create Server-side Rendering" (SSR) and "Static Site Generation" (SSG) apps using JavaScript. This means the app fetches extra data from the server after the browser loads the website's HTML page. Technologies such as SSG often have to rebuild the app when data from the source is updated and render it to the user at build time—making the site load even faster. Hence good user experiences.
+Next.js has been used to create Server-side Rendering(SSR) and Static Site Generation(SSG) apps using JavaScript. The app fetches extra data from the server after the browser loads the website's HTML page. 
 
-This guide will help you learn how to use Next.js with Notion API and create a blog app powered by Typescript code.
+Technologies such as SSG often have to rebuild the app when data from the source is updated and render it to the user at build time—making the site load even faster hence a good user experience.
+
+This guide will help the reader learn how to use Next.js with Notion API and create a blog app powered by Typescript code.
 
 ### Prerequisites
-
-To continue with this article, it is helpful to have the following:
+To follow along with this article, it is helpful to have the following:
 
 - [Node.js](https://nodejs.org/en/) installed on your computer.
 - Basic knowledge working with Typescript and Next.js.
 
 ### Overview
-
 - [Prerequisites](#prerequisites)
 - [Overview](#overview)
 - [Setting up the database on Notion](#setting-up-the-database-on-notion)
@@ -20,52 +20,54 @@ To continue with this article, it is helpful to have the following:
 - [Querying single post](#querying-single-post)
 
 ### Setting up the database on Notion
-
 First, create a notion account. If you already have an account, just [login](https://www.notion.so/login) or [register](https://www.notion.so/login) a new account.
 
-Once you have created an account, Hover over the `Getting Started` section of the dashboard page and click on the plus icon to add a new notion page. On the resulting popup, under `Database`, click on `list`. A sample skeleton will be loaded. Go ahead and enter a project title.
+Once you have created the account, hover over the `Getting Started` section of the dashboard page and click on the plus icon to add a new notion page. 
+
+Under `Database`, click on `list` on the resulting popup. A sample skeleton will be loaded. Go ahead and enter a project title.
 
 ![list-database-skeleton](/engineering-education/create-a-nextjs-blog-using-typescript-and-notion-api/list-database-skeleton.png)
 
-Navigate to the first default page, `page 1`, and click on it. Change the title to fit your page preferences. For example:
+Navigate to the first default page, `page 1`, and click on it. Change the title as you prefer preferences. 
 
 ![page-title-change](/engineering-education/create-a-nextjs-blog-using-typescript-and-notion-api/page-title-change.png)
   
-Change the icon and cover image too. You can choose to use free images from [Unsplash](https://unsplash.com/). To add this cover image, hover over just above the page title and click the `Add cover` button.
+Change the icon and cover image too. You can choose to use free images from [Unsplash](https://unsplash.com/). Hover over just above the page title and click the `Add cover` button to add this cover image.
 
 ![cover_image_change](/engineering-education/create-a-nextjs-blog-using-typescript-and-notion-api/cover-image-change.png)
 
 ![cover_image_changed](/engineering-education/create-a-nextjs-blog-using-typescript-and-notion-api/cover-image-changed.png)
 
-Every new page you create is a blank canvas where you can add whatever content you like, such as plain text, lists, images, etc. To add content to this page, scroll down to the content section and add some `prerequisites` to your blog page as shown below:
+Every new page you create is a blank canvas where you can add content you like, such as plain text, lists, images, etc. 
+
+To add content to this page, scroll down to the content section and add some `prerequisites` to your blog page as shown below:
 
 ![page-content-section](/engineering-education/create-a-nextjs-blog-using-typescript-and-notion-api/page-content-section.png)
 
 ![prerequisites_section](/engineering-education/create-a-nextjs-blog-using-typescript-and-notion-api/prerequisites-section.png)
 
-Add dummy body to the post body:
+Add dummy body to the post body.
 
 ![body_section](/engineering-education/create-a-nextjs-blog-using-typescript-and-notion-api/body-section.png)
 
-Add an image. Select an image of your choice from [Unsplash](https://unsplash.com/):
+Add an image. Select an image of your choice from [Unsplash](https://unsplash.com/).
 
 ![image_section](/engineering-education/create-a-nextjs-blog-using-typescript-and-notion-api/image-section.png)
 
-Append some conclusions:
+Append some conclusions.
 
 ![conclusion_section](/engineering-education/create-a-nextjs-blog-using-typescript-and-notion-api/conclusion-section.png)
 
-Click outside the modal when done. Your post should now be listed as shown below:
+Click outside the modal when done. The post should now be listed as shown below:
 
 ![database_posts](/engineering-education/create-a-nextjs-blog-using-typescript-and-notion-api/database-posts.png)
 
-Make sure you repeat the same process for `page 2` and `page 3`.
+Repeat the same process for `page 2` and `page 3`.
 
-Feel free to add as many posts as you can while following the same steps described above.
+Feel free to add as many posts as you can while following the steps described above.
 
 ### Setting up an integration on Notion
-
-Navigate to the `Settings & Members` section of your notion dashboard page. On the resulting modal, click `Integrations` under the `Workspace` section. Then set the notion integration as shown in the following steps:
+Navigate to the `Settings & Members` section of your notion dashboard page. Click `Integrations` under the `Workspace` section on the resulting modal. Then set the notion integration as shown in the following steps:
 
 ![notion_integrations](/engineering-education/create-a-nextjs-blog-using-typescript-and-notion-api/notion-integration.png)
 
@@ -73,17 +75,17 @@ First, create a new integration. To do so, click on `Develop your Integration`. 
 
 ![create_new_integrations](/engineering-education/create-a-nextjs-blog-using-typescript-and-notion-api/notion-create-new-integration.png)
 
-Name your integration `blog_app_integration`, then click `Submit` to set it up. Once done, you should now be able to view your notion integrations settings, i.e., the integration token:
+Name your integration `blog_app_integration`, then click `Submit` to set it up. Once done, you should now be able to view the notion integrations settings, i.e., the integration token:
 
-To save this integration, scroll down and click Save changes. This will reveal your notion integration key. Copy this key so that you can use it later to connect to Next.js
+To save this integration, scroll down and click Save changes. This will reveal your notion-integration key. Copy this key so that you can use it later to connect to Next.js
 
 ![notion_secrets](/engineering-education/create-a-nextjs-blog-using-typescript-and-notion-api/notion-secrets.png)
 
-Go back to the workspace you created in the previous step, where you created your pages, i.e., `Latest posts`, and click on `Share`:
+Go back to the workspace created in the previous step, where you created the pages, i.e., `Latest posts`, and click on `Share`:
 
 ![notion_share](/engineering-education/create-a-nextjs-blog-using-typescript-and-notion-api/notion-share.png)
 
-Click on Invite. On the resulting modal, you should be able to see the integration you just created:
+Click on Invite. On the resulting modal, you should be able to see the integration just created:
 
 ![notion_integrations](/engineering-education/create-a-nextjs-blog-using-typescript-and-notion-api/notion-integrations.png)
 
@@ -94,8 +96,7 @@ Click on the `blog_app_integration` integration, and then `Invite` to add your p
 With that, you will be able to access your workspace using the integration-generated token.
 
 ### Setting up the Next.js application
-
-To set up a Next.js project, create a project folder where you want your app to live. Then run the following command to bootstrap the application inside the created directory:
+To set up a Next.js project, create a project folder, then run the following command to bootstrap the application inside the created directory:
 
 ```bash
 npx create-next-app blog_app --ts
@@ -103,20 +104,20 @@ npx create-next-app blog_app --ts
 
 The `--ts` flag allows your app to run using Typescript.
 
-This will create a basic Next.js app inside the folder `blog_app`. Once the process is done, navigate to the `blog_app` folder using the command `cd blog_app` and install the notion client package:
+This command will create a basic Next.js app inside the folder `blog_app`. Once the process is done, navigate to the `blog_app` folder using the command `cd blog_app` and install the notion client package:
 
 ```bash
 npm install @notionhq/client
 ```
 
-On the project root folder, create a `.env` file. This file will host the notion integration key that Next.js needs to access and connect with the notion API. Go ahead and add the host two notion variables, the integration token key, and the database id:
+On the project root folder, create a `.env` file. This file will host the notion integration key that Next.js needs to access and connect with the notion API. Go ahead and add the host two notion variables, the integration token key and the database id:
 
 ```bash
 NOTION_KEY=""
 NOTION_DATABASE=""
 ```
 
-Paste the integration key you copied earlier and add it to the `NOTION_KEY`. If you didn't copy this key, navigate to the integration page, under `Secrets`, Click on `Show` and then `Copy` and paste it in the `NOTION_KEY` entry.
+Paste the integration key copied earlier and add it to the `NOTION_KEY`. If you did not copy this key, navigate to the integration page, under `Secrets`, Click on `Show` and then `Copy` and paste it in the `NOTION_KEY` entry.
 
 To get the `NOTION_DATABASE` ID, check your workspace page URL. Copy the first path parameter before the query parameter as shown in the illustration below:
 
@@ -124,16 +125,15 @@ To get the `NOTION_DATABASE` ID, check your workspace page URL. Copy the first p
 
 In this case the id would be `53905ad838f04731b48fb1e40c25766a`. Let's your workspace URL is `https://www.notion.so/your_database_id?v=some_long_hash`. The parameter `your_database_id` should be the `NOTION_DATABASE` you are looking for.
 
-Start the development server to test if the set app is working as expected. To do so, run the following command:
+Start the development server to test the app.
 
 ```bash
 npm run dev
 ```
 
-On your browser, open `http://localhost:3000`, you should be able to view the default Next.js page.
+Navigate `http://localhost:3000`; you should be able to view the default Next.js page.
 
 ### Querying multiple posts
-
 On the project root folder, create a folder `lib`. Inside `lib`, create a file `notion.ts`. Then add the following code to querying multiple posts from the notion API.
 
 Start by importing the notion client package:
@@ -161,7 +161,7 @@ async function posts() {
 }
 ```
 
-Export an object with the function. This export will make the function accessible by other files inside your project:
+Export an object with the function. This export will make the function accessible by other files inside the project:
 
 ```ts
 export {
@@ -191,7 +191,7 @@ export async function getServerSideProps() {
 }
 ```
 
-Define an interface for the props. This creates the structure of `posts` ad holds the array of posts:
+Define an interface for the props. This interface creates the structure of `posts` ad holds the array of posts:
 
 ```ts
 interface Props {
@@ -241,7 +241,9 @@ const Home: NextPage<Props> = (props ) => {
 }
 ```
 
-For the Next.js application to load images, you must configure the image hostname/domain under images in your `next.config.js`. In this example, you loaded images from `unsplash.com`. To add this domain, navigate to the `next.config.js` and configure the `unsplash.com` image source as shown below:
+For the Next.js application to load images, you must configure the image hostname/domain under images in your `next.config.js`. 
+
+In this example, you loaded images from `unsplash.com`. To add this domain, navigate to the `next.config.js` and configure the `unsplash.com` image source as shown below:
 
 ```js
 const nextConfig = {
@@ -301,13 +303,14 @@ Add the following styles to `styles/Home.module.css`. This will style the listed
 }
 ```
 
-To test this, ensure your development server is up and running. You should now be able to view your posts on the home page.
+To test this code, ensure the development server is up and running. You should now be able to view the posts on the home page.
 
 ![posts_page](/engineering-education/create-a-nextjs-blog-using-typescript-and-notion-api/posts-page.png)
 
 ### Querying single post
+Let us create a function that will fetch a single post from the notion database. 
 
-Let’s create a function that will help you fetch a single post from the notion database. Navigate to the `lib/notion.ts` file and add a function to get a single post based on the post id as shown below:
+Navigate to the `lib/notion.ts` file and add a function to get a single post based on the post id as shown below:
 
 ```ts
 async function post(id: string) {
@@ -318,7 +321,9 @@ async function post(id: string) {
 }
 ```
 
-Add another function inside the `lib/notion.ts` file. A post has other properties such as prerequisites and conclusion, which can be referred to as the children's properties of a particular post. Create a function `blocks()` to get the children (blocks) of a particular post:
+Add another function inside the `lib/notion.ts` file. A post has other properties such as prerequisites and conclusion, which can be referred to as the children's properties of a particular post. 
+
+Create a function `blocks()` to get the children (blocks) of a particular post:
 
 ```ts
 async function blocks(id: string) {
@@ -410,7 +415,7 @@ interface Props {
 }
 ```
 
-Implement a function to render each child. A single post has a heading, a hero image, the post content, and an unordered list of items. This function will help render them to from the server.
+Implement a function to render each child. For example, a single post has a heading, a hero image, the post content, and an unordered list of items. This function will help render them to from the server.
 
 ```ts
 const renderBlock = (block: any) => {
@@ -496,8 +501,6 @@ Ensure that the development server is running, and then click on any title of th
 
 ![single_post_page](/engineering-education/create-a-nextjs-blog-using-typescript-and-notion-api/single-post-page.png)
 
-You have now implemented a blog application utilizing Notion as your CMS/Database API.
+This guide helped the reader set up a notion database. We then used the set-up and ran it with Next.js. 
 
-This guide helped you set up a notion database. We then used that setup and run it with Next.js. I hope you found this stack helpful.
-
-For any code reference, check this project on this [GitHub](https://github.com/kimkimani/nextjs-blog-app-using-typescript-and-notion) repository.
+Check this project on this [GitHub](https://github.com/kimkimani/nextjs-blog-app-using-typescript-and-notion) repository.
