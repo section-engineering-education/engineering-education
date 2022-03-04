@@ -31,7 +31,7 @@ In this tutorial, we are going to build a Django application that handles images
 ### Pre-requisites
 To follow through this tutorial, you need to have:
 - Fundamental knowledge in both Python and Django.
-- A code editor like Visual Studio code.
+- A code editor like Visual Studio Code.
 
 ### Set up the environment
 We shall start by setting up the development environment for our Django project.
@@ -52,7 +52,7 @@ py -m venv .venv
 
 Now, we will need to install the following libraries:
 - [Django](https://www.djangoproject.com/) helps build our website using the Django web development framework.
-- [Pillow](https://pypi.org/project/Pillow/) is a image library that we shall use to manipulate our images.
+- [Pillow](https://pypi.org/project/Pillow/) is an image library that we shall use to manipulate our images.
 
 ```bash
 pip install django
@@ -143,7 +143,7 @@ In this case, we want it to display the `title` and `photo` fields of every imag
 ### Display the images
 So far, we made it possible to upload the images using the Django admin, but we also need to display the images on our site.
 
-So, we let's add the display template, display view, and also configure the URLs.
+So, let's add the display template, display view, and also configure the URLs.
 
 #### Display view
 Views in Django are used to send requests to and from the server. The requests can be to return a page, query the database, make calculations, and so on.
@@ -269,7 +269,7 @@ On adding four images from my PC, here is what my web page looks like:
 Now that we have looked at the basic concepts to deal with images, we shall proceed to the advanced concepts next.
 
 ### User image upload
-In this case, we are going to look at how to enable an user to upload an image using forms.
+In this case, we are going to look at how to enable a user to upload an image using forms.
 
 In our app-level directory `demo`, create a file and call it `forms.py`. In the file, we shall create the class to handle the upload form and link it to our `Image` model as shown:
 
