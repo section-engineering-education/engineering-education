@@ -268,7 +268,7 @@ Matlab makes it easy to interface with this hardware. This is because of the sup
 
 Arduino is widely applicable in the science engineering field. It is applicable in robotics fields and even security improvement.
 
-Happy coding!
+Happy coding.
 
 ---
 Peer Review Contributions by: [Dawe Daniel](/engineering-education/authors/dawe-daniel/)
