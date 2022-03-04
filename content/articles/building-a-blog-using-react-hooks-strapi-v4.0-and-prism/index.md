@@ -67,7 +67,7 @@ Running the above command opens a registration area in our browser. This registr
 
 By completing the form, you become the first admin user of the Strapi application.
 
-![strapi-admin](engineering-education/building-a-blog-using-react-hooks-strapi-v4.0-and-prism/strapi-admin.png)
+![strapi-admin](/engineering-education/building-a-blog-using-react-hooks-strapi-v4.0-and-prism/strapi-admin.png)
 
 #### Adding content
 In this section, we are adding our desired contents to Strapi. To get started, we follow the steps below:
@@ -75,25 +75,25 @@ In this section, we are adding our desired contents to Strapi. To get started, w
 - Next, select `create new collection type` under the collection type dropdown.
 - A modal as below should popup. Use any display name of your choice, and Strapi will pluralize it.
 
-![collection-type](engineering-education/building-a-blog-using-react-hooks-strapi-v4.0-and-prism/collection-type.png)
+![collection-type](/engineering-education/building-a-blog-using-react-hooks-strapi-v4.0-and-prism/collection-type.png)
 
 - In our newly created collection type, we added five new fields (Title, Rating, Body, Hero, URL).
 
-![fields](engineering-education/building-a-blog-using-react-hooks-strapi-v4.0-and-prism/fields.png)
+![fields](/engineering-education/building-a-blog-using-react-hooks-strapi-v4.0-and-prism/fields.png)
 
 - After this, click on `content manager` on the sidebar and select your collection type. Next, click on `create new entry` in the top right corner to be taken to a page that looks like this:
 
-![new-entry](engineering-education/building-a-blog-using-react-hooks-strapi-v4.0-and-prism/new-entry.png)
+![new-entry](/engineering-education/building-a-blog-using-react-hooks-strapi-v4.0-and-prism/new-entry.png)
 
 Each new entry contains entries for the fields created earlier. Next, we add the desired article title, rating, the article's content (body), hero, and URL (hero image link) and click on save and publish. 
 
 - To read the content from Strapi, we head to the settings section, and under the `users and permissions plugin` section, we select roles.
 
-![roles](engineering-education/building-a-blog-using-react-hooks-strapi-v4.0-and-prism/roles.png)
+![roles](/engineering-education/building-a-blog-using-react-hooks-strapi-v4.0-and-prism/roles.png)
 
 - Next, click on `public` and scroll to permissions. Next, click on review and select `find` and `findone` in the permissions area. Next, scroll down to upload and do the same thing with the addition of selecting upload.
 
-![review](engineering-education/building-a-blog-using-react-hooks-strapi-v4.0-and-prism/review.png)
+![review](/engineering-education/building-a-blog-using-react-hooks-strapi-v4.0-and-prism/review.png)
 
 Now we are good to go on the front end.
 
@@ -272,7 +272,7 @@ We mapped through the data received from Strapi using the `data.data.map` functi
 
 Below is what the homepage looks like at the moment.
 
-![homepage](engineering-education/building-a-blog-using-react-hooks-strapi-v4.0-and-prism/homepage.png)
+![homepage](/engineering-education/building-a-blog-using-react-hooks-strapi-v4.0-and-prism/homepage.png)
 
 For the `Content.js` file, we start by:
 - Importing `useFetch` from `useFetch.js` and `useParams` from `react-router-dom`.
@@ -316,7 +316,7 @@ return (
 )
 ```
 
-![content](engineering-education/building-a-blog-using-react-hooks-strapi-v4.0-and-prism/content.png)
+![content](/engineering-education/building-a-blog-using-react-hooks-strapi-v4.0-and-prism/content.png)
 
 We have to go back to the previously created components folder to make it markdown enabled. 
 
@@ -382,9 +382,9 @@ import CodeBlock from '../components/CodeBlock'
 
 Proper implementation of the code above gives us the result below:
 
-![content-body](engineering-education/building-a-blog-using-react-hooks-strapi-v4.0-and-prism/content-body1.png) 
+![content-body](/engineering-education/building-a-blog-using-react-hooks-strapi-v4.0-and-prism/content-body1.png) 
 
-![content-body](engineering-education/building-a-blog-using-react-hooks-strapi-v4.0-and-prism/content-body2.png)
+![content-body](/engineering-education/building-a-blog-using-react-hooks-strapi-v4.0-and-prism/content-body2.png)
 
 Our blog looks great, and it's good to go.
 
