@@ -3,27 +3,22 @@ layout: engineering-education
 status: publish
 published: true
 url: /building-a-blog-using-react-hooks-strapi-v4.0-and-prism/
-title: Building a blog using react hooks strapi v4.0 and prism
+title: Building a Blog using React Hooks Strapi V4.0 and Prism
 description: This tutorial teaches you how to build a web application using React Hooks, Strapi v4.0 and Prism.
 author: femi-ige-muyiwa-oladele
-date: 2022-02-25T00:00:00-10:30
+date: 2022-03-04T00:00:00-09:30
 topics: [Languages]
 excerpt_separator: <!--more-->
 images:
 
   - url: /engineering-education/building-a-blog-using-react-hooks-strapi-v4.0-and-prism/hero.jpg
-    alt: Strapi React Markdown Blog
+    alt: Strapi React Markdown Blog hero image
 ---
-
-A few world fantasies include leprechauns, fairies, dragons, [Strapi](https://strapi.io), etc. But, oh! Are you shocked to see Strapi on that list? Let us tell you why Strapi feels like a fantasy for developers. 
+[Strapi](https://strapi.io) saves significant development time while giving developers freedom in using their preferred tools and frameworks. Strapi, is a Headless Content Management System, it is a back-end only manager that allows access to contents through APIs to be displayed on any device.
 <!--more-->
-Strapi saves significant development time while giving developers freedom in using their preferred tools and frameworks.
+In addition, integrating Strapi with several frameworks like Angular, React, Nuxt or Vue eases the building of projects like blogs.
 
-Strapi, a Headless Content Management System, is a back-end only manager that allows access to contents through APIs for display on any device. 
-
-In addition, the integration of Strapi with several frameworks like Angular, React, Nuxt or Vue eases the building of projects like blogs. 
-
-In the case of blogs, we will show you how to build one using state hooks, Strapi, and Prism. We deliver each content from Strapi, and the blog will be markdown enabled. It is a beautiful journey, and we will like you to follow us every step of the way.
+With our example blog, we will show you how to build one using state hooks, Strapi, and Prism. We deliver each content from Strapi, and the blog will be markdown enabled. It is a beautiful journey, and we will like you to follow us every step of the way.
 
 ### Table of contents
 - [Table of contents](#table-of-contents)
@@ -39,20 +34,22 @@ In the case of blogs, we will show you how to build one using state hooks, Strap
 
 ### Prerequisites
 To follow along with this tutorial, the reader should meet the following requirements:
-- Have intermediate to professional knowledge about[ React.js](https://reactjs.org/).
+- Have intermediate to professional knowledge about [React.js](https://reactjs.org/).
 - Must be proficient with CSS.
 - Built projects using Node.js.
 - Understanding of state hooks.
 
 ### Aim
-We are not building a whole blog but rather a shell that will contain a preview area of a few articles and a page containing our markdown-enabled content. We want to show you how to:
+We are not building a whole blog but rather a shell that will contain a preview area of a few articles and a page containing our markdown-enabled content. 
+
+We want to show you how to:
 - Store content in Strapi.
 - Use state hooks to fetch data from Strapi.
 - Create a markdown enabled blog using the content on Strapi and Prism.
 
 ### Getting started
 #### Initializing strapi
-On your editor (VsCode in our case), we create a root folder within our computer called `base-project` and use the command `cd base-project` within your terminal. 
+On your editor (VsCode in our case), create a root folder within our computer called `base-project` and use the command `cd base-project` within your terminal. 
 
 Next, we type in the following command in the terminal:
 ```bash
@@ -80,7 +77,7 @@ In this section, we are adding our desired contents to Strapi. To get started, w
 
 ![collection-type](engineering-education/building-a-blog-using-react-hooks-strapi-v4.0-and-prism/collection-type.png)
 
-- In our newly created collection type, we added five new fields (Title, Rating, Body, Hero, Url).
+- In our newly created collection type, we added five new fields (Title, Rating, Body, Hero, URL).
 
 ![fields](engineering-education/building-a-blog-using-react-hooks-strapi-v4.0-and-prism/fields.png)
 
@@ -107,12 +104,12 @@ We start by creating a React project within our initial root folder using the co
 npx create-react-app frontend
 ```
 
-The above will create a folder called frontend, and within contains the React package within the node_module folder. 
+The code snippet above will create a folder called frontend, and it contains the React package within the node_module folder. 
 
 To start the development server, use the command `npm start`. The above command runs the React project on a local server and displays it on a browser.
 
 #### Creating the front end
-To get started, within the front end folder, create three folders within the `src` folder. Name them `components`, `hooks`, and `pages`. We begin with the pages folder; create two new JavaScript files called `Homepage.js` and `Contents.js`.
+To get started, within the front end folder, create three folders within the `src` folder. Name them `components`, `hooks`, and `pages`. We will begin with the pages folder; create two new JavaScript files called `Homepage.js` and `Contents.js`.
 
 > Quick tip: On Vscode, install the ES7 plugin. It allows you to create a React functional component by quickly typing `rfc + Enter`. 
 
@@ -171,7 +168,7 @@ const useFetch = (url) => {
 export default useFetch
 ```
 
-> Note: The hook takes in the endpoint(wherever we are getting the data from)
+> Note: The hook takes in the endpoint (wherever we are getting the data from).
 
 - Within the function, add the code below:
 ```javascript
@@ -179,14 +176,14 @@ const [data, setData] = useState([])
 const [error, setError] = useState(null)
 const [loading, setLoading] = useState(true)
 ```
-- The first variable is for the data eventually gotten from the fetch request and is usually set as null. At the same time, the `setData` updates the data received from Strapi.
-- The second variable is for the error gotten from the fetch request and is usually set as null. The `setError` updates the error received from Strapi.
+- The first variable is for the data eventually recieved from the fetch request and is usually set as null. At the same time, the `setData` updates the data received from Strapi.
+- The second variable is for the error we got from the fetch request and is usually set as null. The `setError` updates the error received from Strapi.
 - The third variable initializes the loading state as `true` when we utilize the hook use fetch. Once we finish fetching the data, it makes it false.
 - Next, we will create a `useEffect` hook function which works when the component renders whatever component we are using this hook. 
 
 Within `useEffect`, we create another function called `fetchData` and make it `async.`
 - We make `setLoading=true`  in case it becomes false above when we try to set data.
-- We use the `try and catch` statement. Finally, we `fetch API` to get data from the endpoint. Below is an implementation of the explanation above.
+- We use the `try and catch` statement. Then, we `fetch API` to get data from the endpoint. Below is an implementation of the explanation above.
 
 ```javascript
 useEffect(() => {
@@ -210,7 +207,7 @@ useEffect(() => {
 }, [url])
 ```
 
-- We need to return the values at the end of the hook. Thus, we use the code:
+- We need to return the values at the end of the hook. We can use this code:
 ```javascript
 return { loading, error, data }
 ```
@@ -219,7 +216,7 @@ Our `useFetch` is ready to be used in our `Homepage.js` file and `Content.js` fi
 
 Back to the `Homepage.js` file. This part of the blog is responsible for the header and preview of the article (some article content, title, and hero).
 
-To achieve this, we followed the steps below:
+To achieve this, we follow the steps below:
 - Import `Link` from `react-router-dom` and `useFetch` from our `useFetch.js` file.
 ```javascript
   import useFetch from '../hooks/useFetch'
@@ -241,7 +238,7 @@ The above code destructures loading, error, and data from `useFetch`, while the 
 
 > Note: This is possible if loading is `true` or error is `true`. In this case, loading is `true`, and until we have done the fetching, it remains `true.`
 
-- Next, once the above is done, we will need to return the template containing some of our articles content. Thus, we used the code below to achieve that:
+- Next, once the above is done, we will need to return the template containing some of our articles content. We will use the code below to achieve that:
 ```javascript
   return (
   <div>
@@ -267,9 +264,9 @@ The above code destructures loading, error, and data from `useFetch`, while the 
 We mapped through the data received from Strapi using the `data.data.map` function, and we got access to each item in the array by using a function called `review.`
 
 - We then return a `div` template with the `key` property having a dynamic value `review.attributes.id`. It is so because React needs the parent element inside the map to have a `key` property to keep track of all the `elements` in Strapi.
-- we give the `div` a class name `review-card` to style it later.
+- We give the `div` a class name `review-card` to style it later.
   
-> Note: Regarding the CSS, we aren't going to explain it because we believe the reader already has a good ground before getting to this stage.
+> Note: Regarding the CSS, we will not be explaining it, because we believe the reader has a good background on the subject before getting to this stage.
 
 - Using the previously imported `{Link}` from `react-router-dom`, we create a link tag to the content page. We then add the image and title to the link.
 
@@ -291,7 +288,7 @@ The `useParams` is a hook used to grab single records, and in this case, we are 
 const { id } = useParams()
 ```
 
-> Note: we call it id because it was named id in the routes in our App.js file.
+> Note: We call it id because it was named id in the routes in our App.js file.
 
 - Insert the `useFetch` component by adding the code below:
 ```javascript
@@ -300,13 +297,13 @@ const{loading, error, data} = useFetch('http://localhost:1337/api/reviews' + id)
 
 The above code destructures loading, error, and data from `useFetch`, while the `url` is the Strapi endpoint and the `id` is our destructured parameter.
 
-- Create two `if statements` to return a loading message and an error message if there's one.
+- Create two `if statements` to return a loading message and an error message if there is one.
 ```javascript
   if (loading) return <p>Loading...</p>
   if (error) return <p>Error :(</p>
 ```
 
-- Next, once the above is done, we will need to return the template containing the selected articles content. Thus, we used the code below to do that:
+- Next, once the above is done, we will need to return the template containing the selected articles content. We use the code below to do that:
 ```javascript
 return (
   <div className="review-card">
@@ -351,16 +348,14 @@ const CodeBlock = {
 export default CodeBlock
 ```
 
-- There are a few prerequisites to using the code above.
-- First, we need to install `react-syntax-highlighter.` We do this using the code below:
+- There are a few prerequisites when using the code above.
+- We need to install `react-syntax-highlighter.` We do this using the code below:
 ```bash
 npm install react-syntax-highlighter
 ```
 
 - Next, we import `Prism` and `Dracula` from the `react-syntax-highlighter` module.
   
->Note: this is not our syntax, so we can not give a full explanation of its usage.
-
 - To use this for our content's body, we will head back to the `Content.js` file. 
 - Within the `content.js` file, we will need to import `markdown` from `react-markdown.` 
 - To install react-markdown, use the code below:
@@ -368,7 +363,7 @@ npm install react-syntax-highlighter
 npm install react-markdown
 ```
 
-- Next, we will need to import `Codeblock.js` (file containing our syntax highlighter) from the components folder.
+- Next, we need to import `Codeblock.js` (file containing our syntax highlighter) from the components folder.
 
 **Example**
 ```javascript
@@ -385,7 +380,7 @@ import CodeBlock from '../components/CodeBlock'
 
 [Here](https://github.com/muyiwexy/blog/blob/main/frontend/src/index.css) is the link to the entire CSS used for the blog.
 
-Proper implementation of the above gives us the result below:
+Proper implementation of the code above gives us the result below:
 
 ![content-body](engineering-education/building-a-blog-using-react-hooks-strapi-v4.0-and-prism/content-body1.png) 
 
@@ -394,9 +389,7 @@ Proper implementation of the above gives us the result below:
 Our blog looks great, and it's good to go.
 
 ### Conclusion
-It has been great every step of the way, and we hope you enjoyed the journey with us. 
-
-We have shown you how to use state hooks, Strapi, and Prism to create a masterpiece. However, we believe you can take it a step higher and expand your scope with this project. 
+In this article we demonstrated how to use state hooks, Strapi, and Prism to create a masterpiece. However, we believe you can take it a step furhter and expand your scope with this project. 
 
 Strapi enables developers' a wide range of possibilities and how they use the content. [Here](https://github.com/muyiwexy/blog) is the link to the entire code. So happy coding🚀, and as in node.js, happy hacking💻!
 
