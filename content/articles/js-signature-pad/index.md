@@ -1,3 +1,19 @@
+---
+layout: engineering-education
+status: publish
+published: true
+url: /generate-pdfs-using-jspdf-signature-pad/
+title: Building A Webscript To Generate Hand-Signed PDFs Using JavaScript Libraries
+description: This article will introduce you to generate PDF documents from a webpage using open-source JavaScript libraries - jsPDF and Signature Pad.
+author: sandra-moringa
+date: 2022-03-04T00:00:00-11:10
+topics: [Languages]
+excerpt_separator: <!--more-->
+images:
+
+  - url: /engineering-education/generate-pdfs-using-jspdf-signature-pad/hero.jpg
+    alt: Building A Webscript To Generate Hand-Signed PDFs Using JavaScript Libraries Hero Image
+---
 In this tutorial, we will learn how to convert a webpage into a PDF document using open-source JavaScript libraries.
 <!--more-->
 Hand signatures are a good way to authenticate official documents. But, what if the parties involved are far from each other? We have to think of a way to enable them to sign the documents online.
@@ -8,7 +24,7 @@ We will build a simple invoice with an embedded section where one's signature wi
 
 Our final output should look like this:
 
-![Generated pdf](/engineering-education/js-signature-pad/generated.png)
+![Generated pdf](/engineering-education/generate-pdfs-using-jspdf-signature-pad/generated.png)
 
 ### Pre-requisites
 As a pre-requisite, the reader must have the following:
@@ -308,3 +324,5 @@ There are a few other PDF generator libraries which you can have a look at. They
 - [TCPDF](https://tcpdf.org/)
 - [pdfKit](https://pdfkit.org/)
 
+---
+Peer Review Contributions by: [Srishilesh P S](/engineering-education/authors/srishilesh-p-s/)
