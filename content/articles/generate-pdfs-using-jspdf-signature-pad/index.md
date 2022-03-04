@@ -6,7 +6,7 @@ url: /generate-pdfs-using-jspdf-signature-pad/
 title: Building A Webscript To Generate Hand-Signed PDFs Using JavaScript Libraries
 description: This article will introduce you to generate PDF documents from a webpage using open-source JavaScript libraries - jsPDF and Signature Pad.
 author: sandra-moringa
-date: 2022-03-04T00:00:00-11:10
+date: 2022-03-04T00:00:00-16:10
 topics: [Languages]
 excerpt_separator: <!--more-->
 images:
