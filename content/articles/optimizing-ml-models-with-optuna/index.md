@@ -1,6 +1,14 @@
 Software framework Optuna is used to automate optimization processes. It uses a variety of samplers, including grid search, random, bayesian, and evolutionary algorithms, to find the best values for hyperparameters. If you use machine learning methods, a `hyperparameter` is a parameter that may be changed to influence the learning process. Using our data, we'll tweak the model's learning parameters.
 
 It is possible to use various resources to improve our model. Ensure that the ML model is acceptable for our data and required. The following section will discuss enhancements and new applications for `Xgboost` regressors which is an open-source library that implements the gradient boosting algorithm in an effective manner.
+### Prerequisites
+- Have a basic knowledge of [Flutter](https://flutter.dev/).
+- Have flutter installed in your IDE.
+### Table of contents
+- [Reasons for using Optuna](#reasons-for-using-optuna)
+- [Optuna functionalities](#optuna-functionalities)
+- [Optimization process](#optimization-process)
+- [Conclusion](#conclusion)
 ### Reasons for using Optuna
 - The length of the optimization procedure may be specified.
 - Pandas DataFrame integration.
