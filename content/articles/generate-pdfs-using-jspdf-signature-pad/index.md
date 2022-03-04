@@ -45,7 +45,7 @@ Signature Pad allows us to draw smooth curves on a canvas element. This capabili
 
 Signature Pad provides features to undo, clear, change the curve colors, convert the signatures to different image formats like `.png`, `.jpeg`, `.svg`, and so on.
 
-In our article, we will convert the signatures into a `.png` images.
+In our article, we will convert the signatures into `.png` images.
 
 #### jsPDF
 jsPDF is used to generate a PDF document from a web page. It provides options to set the font type, font size, line width, text color, etc.
@@ -56,7 +56,7 @@ With that, let's first design a layout of our page.
 
 ### Implementation
 #### Page layout
-In this tutorial, we will use [Bootstrap](https://getbootstrap.com) library to style the webpages. The main bootstrap styling classes that we will use are:
+In this tutorial, we will use the [Bootstrap](https://getbootstrap.com) library to style the web pages. The main bootstrap styling classes that we will use are:
 
 - `col-md-*` grid partitioning for a page. This styling breaks a page into 12 columns. For example, if you want a certain element to cover a third of the page width, you use the `col-md-4` class.
 - `d-flex`- This allows us to make an element conform to the CSS's flexbox properties where we will use `justify-content-*` positioning to arrange items on a page. If we want the elements of a `div` to be in the center, we will use the `d-flex justify-content-center` class.
@@ -80,9 +80,9 @@ The `<head>` sets the character code to `UTF-8`, the title of the page, and the 
 
 We head on to the `<body>` section where we have several `<div>` elements in which we will only look at the important ones.
 
-> We have the `onselectstart` attribute set to return false, which allow us to only make selections on our `canvas`.
+> We have the `onselectstart` attribute set to return false, which allows us to only make selections on our `canvas`.
 
-- The second `<div>` contains the area where the table and the signature appears.
+- The second `<div>` contains the area where the table and the signature appear.
 
 ```html
 <div id="toPrint" class="col-md-12">
@@ -305,22 +305,22 @@ The above code does the following:
 - In case you are wondering why we are initializing the `html2canvas`, the jsPDF library uses it to capture the page screenshots. 
 - The `jsPDF` constructor is passed in the orientation (`l` for landscape), units of measurement (`pt` for points), and A4 sizing. We chose the landscape portrait for our page to fit in the PDF document. 
 - The `html()` function is called where we pass in the element to be printed and an `options` object.
-- The object contains a `save()` callback function to save the PDF with `X` and `Y` positioning of the document. There are a bunch of other options which you can add to this object.
+- The object contains a `save()` callback function to save the PDF with the `X` and `Y` positioning of the document. There are a bunch of other options which you can add to this object.
 
 You can view the full source code [here](https://github.com/munubi254/js-signature-pad/blob/main/js/sign-handler.js).
 
 ### Conclusion
-To conclude, we looked at an overview of the two libraries, created a HTML layout, and looked at the JavaScript code.
+To conclude, we looked at an overview of the two libraries, created an HTML layout, and looked at the JavaScript code.
 
 You can further enhance this signature feature and use it for biometric authentication. The signature pad library is very portable to use it in your React-Native apps, web frameworks such as Express, and even desktop apps.
 
 Happy coding!
 
 ### Further reading
-There are a few other PDF generator libraries which you can have a look at. They include:
+There are a few other PDF generator libraries that you can have a look at. They include:
 - [Puppeteer](https://github.com/puppeteer/puppeteer)
 - [Electron-PDF](https://github.com/fraserxu/electron-pdf)
-- [ATHENA PDF](https://github.com/arachnys/athenapdf)
+- [AthenaPDF](https://github.com/arachnys/athenapdf)
 - [TCPDF](https://tcpdf.org/)
 - [pdfKit](https://pdfkit.org/)
 
