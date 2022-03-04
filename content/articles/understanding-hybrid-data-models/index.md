@@ -7,7 +7,7 @@ title: Understanding Hybrid Data Models
 description: This tutorial will explain the hybrid data models and how to implement them using functions provided by the databases.
 author: george-wekesa
 date: 2022-02-09T00:00:00-10:30
-topics: [Databases]
+topics: []
 excerpt_separator: <!--more-->
 images:
 
