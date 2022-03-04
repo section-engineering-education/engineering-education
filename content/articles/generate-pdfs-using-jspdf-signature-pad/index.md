@@ -12,7 +12,7 @@ excerpt_separator: <!--more-->
 images:
 
   - url: /engineering-education/generate-pdfs-using-jspdf-signature-pad/hero.jpg
-    alt: Building A Webscript To Generate Hand-Signed PDFs Using JavaScript Libraries Hero Image
+    alt: Webscript Hand-Signed PDFs JavaScript Libraries Hero Image
 ---
 In this tutorial, we will learn how to convert a webpage into a PDF document using open-source JavaScript libraries.
 <!--more-->
