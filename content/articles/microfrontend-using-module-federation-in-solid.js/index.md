@@ -1,13 +1,13 @@
 There’s a lot of buzz going on around micro frontends right now. You may be asking yourself this question, how do I try it out? Not to worry. In this tutorial, we’ll be discussing micro frontends. We'll also set up micro frontends using module federation in Solid.js. Also, we take a look at how to share a micro frontend between Solid.js and React using module federation. So, let’s jump right in!
 
-### What are Micro Frontends?
+### What are Micro-frontends?
 Micro frontend originated from the concept of microservice. When we’re talking about micro frontends, think of it as a website composed of different web pages. These pages consist of features created by independent teams. Let’s look at Netflix for example. Imagine the header section of Netflix, the header video, and the carousel built by a separate team. Also, built by a different team is the video section.
 
 These teams have their different ways of working and they build up the main Netflix website. Another way to think of micro frontend could be separate pages on the main site. These pages combined together build the website.
 
-Micro-frontends are one popular approach to increasing flexibility. It allows teams to combine components built in different frameworks or libraries. There are several ways to put in place micro frontends. We’ll be focusing on module federation in this tutorial but first, let’s look at the benefits of micro frontend and how we split our apps.
+Micro frontends are one popular approach to increasing flexibility. It allows teams to combine components built in different frameworks or libraries. There are several ways to put in place micro frontends. We’ll be focusing on module federation in this tutorial but first, let’s look at the benefits of micro frontend and how we split our apps.
 
-### Benefits of Micro Frontends
+### Benefits of Micro-frontends
 There are many benefits. Some of them include:
 - Independent deployments.
 - Independent updates and bug fixes.
@@ -27,13 +27,13 @@ If you have a single page with many features. You can divide those large feature
 You can also divide your apps into sections. This enables different apps to share the same section or components.
 
 ### What is Module Federation?
-Zack Jackson created the module federation JavaScript architecture. The goal of Module Federation is to make code sharing easier and more independent. Module Federation allows a JavaScript application to import code from another application. We can archive this by configuring Webpack. The module will generate a unique JavaScript entry file. Other applications can access this file. It gives you the freedom and flexibility to build your project the way you want.
+Zack Jackson created the module federation JavaScript architecture. The goal of module federation is to make code sharing easier and more independent. Module federation allows a JavaScript application to import code from another application. We can archive this by configuring Webpack. The module will generate a unique JavaScript entry file. Other applications can access this file. It gives you the freedom and flexibility to build your project the way you want.
 
-Now that we have an understanding of what module federation is, let’s move on to create a micro frontend in Solid.js
+Now that we have an understanding of what module federation is, let’s move on to create a micro frontend in Solid.js.
 
 ### Prerequisites 
 To follow through this article, we need to have have yarn installed. We also need to have basic knowledge of JavaScript.
-### Creating a Micro Frontend in Solid.js
+### Creating a Micro-frontend in Solid.js
 First, navigate to the folder where you want your project to live and run the following command:
 
 ```bash
@@ -50,7 +50,7 @@ This will be our host app.What we want the host app to do is consume a micro fro
  Css:tailwind
 ```
 
-Now that we’ve done that let’s `cd` into our folder
+Now that we’ve done that let’s `cd` into our folder:
 
 ```bash
  cd host
@@ -68,7 +68,7 @@ yarn
  Set-ExecutionPolicy RemoteSigned
 ```
 
-We also want to create our remote app. So, let’s open up a new terminal and rerun the command
+We also want to create our remote app. So, let’s open up a new terminal and rerun the command:
 
 ```bash
  npx create-mf-app
@@ -90,7 +90,7 @@ Css:tailwind
 yarn
 ```
 
-Let’s go back to our host app and start it up
+Let’s go back to our host app and start it up:
 
 ```bash
 yarn start
@@ -112,7 +112,7 @@ We should also see something like the host app.
 
 Now we have our two apps running.
 
-### Consuming the Micro Frontend
+### Consuming the Micro-frontend
 We want to look at how the host app will consume the application of the remote app. To do this, we’ll first have to build something. Let’s create a counter app in the remote app and then configure the host app to consume it.
 
 In our editor, let’s go to our remote directory. Inside the `src` folder, create a new file called `counter.jsx` and input this:
@@ -153,7 +153,7 @@ Save it and check out the result in our browser.
 
 ![remote_result](/engineering-education/microfrontend-using-module-federation-in-solid.js/counter.PNG)
 
-Now our counter is running but we want it in our host so how are we going to turn this into a micro-frontend? That’s where Module Federation comes in. If we were to use npx, we’d have to go through a lot of processes that we do not have time for.
+Now our counter is running but we want it in our host so how are we going to turn this into a micro frontend? That’s where Module Federation comes in. If we were to use npx, we’d have to go through a lot of processes that we do not have time for.
 
 Back to our app. In our `webpack.config.js` of our remote app. Scroll down to `plugins` and locate `ModuleFederationPlugin`. In the exposes section add this:
 
@@ -183,10 +183,10 @@ Save and refresh the host app in our browser. We should see this:
 
 ![microfontend](/engineering-education/microfrontend-using-module-federation-in-solid.js/microfrontend.PNG)
 
-Module Federation allows us to share code between these two applications at runtime. This is cool.
+Module federation allows us to share code between these two applications at runtime. This is cool.
 
 ### Can we use another framework to consume our remote app?
-The answer is yes! Let’s see how we can do it. Let’s open another separate terminal and create a new mf-app
+The answer is yes! Let’s see how we can do it. Let’s open another separate terminal and create a `new mf-app`
 
 ```bash
  npx create-mf-app
@@ -202,7 +202,7 @@ Language:javascript
 Css:tailwind
 ```
 
-`Cd` into the `react-host` folder and run the yarn command
+`Cd` into the `react-host` folder and run the yarn command:
 
 ```bash
 yarn
@@ -235,7 +235,7 @@ The last thing we want to do here is go into our `webpack.config.js` and expose 
  "./counterWrapper":"./src/counterWrapper.jsx",
 ```
 
-So, let’s stop and restart our app. No visible changes. Go back to the `react-host`. Navigate to the `app.jsx`. Delete and paste this
+So, let’s stop and restart our app. No visible changes. Go back to the `react-host`. Navigate to the `app.jsx`. Delete and paste this:
 
 ```javascript
 import React, { useRef, useEffect } from "react";
@@ -277,4 +277,4 @@ yarn start
 As you can see, we have a functional Solid.js micro frontend embedded into our `react-host`. Here’s a link to the [GitHub](https://github.com/oyedeletemitope/micro-frontend-with-module-federation-in-solid.js) repository for this project.
 
 ### Conclusion
-In this article, we discussed micro frontend and its benefits. We also talked about module federation. We then used it to build a micro frontend in Solid.js, embedded a Solid.js remote application into a React host app. When working on a large project with many teams, a micro-frontend approach is a great option. Would you please share if this was helpful?
+In this article, we discussed micro frontend and its benefits. We also talked about module federation. We then used it to build a micro frontend in Solid.js, embedded a Solid.js remote application into a React host app. When working on a large project with many teams, a micro frontend approach is a great option. Would you please share if this was helpful?
