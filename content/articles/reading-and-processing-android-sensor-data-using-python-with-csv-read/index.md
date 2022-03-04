@@ -2,7 +2,7 @@
 ### Introduction
 Reading is how computers get data from a given source and store it in their memory for processing. This data processing could be online or offline, depending on the user's preferences. The sources of data could be the internet, sensors, audio or even video. Data processing is the conversion of raw data to give meaningful information. The aim is to break the data to bring meaning to the end-user.
 
-This tutorial explains how one records data of various smartphone sensors and processes that data offline using Python. First, you extract the sensor's data. Then, the CSV file is read by Python, and the extracted data is processed for display. Also, it is processed for taking wavelet transform.
+This tutorial explains how one records data of various smartphone sensors and processes that data offline using Python. First, you extract the sensor's data to a CSV file. Then, the CSV file is read by Python, and the extracted data is processed for display. Also, it is processed for taking wavelet transform.
 
 ### Prerequisites
 To follow along with this tutorial, you need:
@@ -154,7 +154,7 @@ You can further analyze and get the approximated and detailed coefficients of th
 
 ![subplots of the data](/engineering-education/reading-and-processing-android-sensor-data-using-python-with-csv-read/image-eleven.png)
 
-The complete source code for this implementation can be found [here](https://github.com/josephodhis/python-project)
+You can find the complete source code for this implementation [here](https://github.com/josephodhis/python-project)
 
 ### Conclusion
 Collecting data using an android mobile sensor is widely applicable in the science and data analysis fields. The sensors are readily available on mobile phones. You can use them at any time. Also, data collection using these sensors and the third party application is very easy. You can apply the collected data in machine learning and deep learning.
