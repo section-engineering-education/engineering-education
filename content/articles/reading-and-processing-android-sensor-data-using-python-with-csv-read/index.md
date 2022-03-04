@@ -1,6 +1,22 @@
-### Reading and processing android sensor data using Python with CSV read
+---
+layout: engineering-education
+status: publish
+published: true
+url: /reading-and-processing-android-sensor-data-using-python-with-csv-read/
+title: Reading and processing android sensor data using python with CSV read() 
+description: This tutorial explains how one records data of various smartphone sensors and processes that data offline using Python
+author: joseph-odhiambo
+date: 2022-03-05T00:00:00-07:10
+topics: [Languages]
+excerpt_separator: <!--more-->
+images:
+
+  - url: /engineering-education/reading-and-processing-android-sensor-data-using-python-with-csv-read/hero.jpg
+    alt: Reading and processing android sensor data using python with CSV read()  Hero Image
+---
+
 ### Introduction
-Reading data is how computers get data from a given source and store it in their memory for processing. Data processing is the conversion of raw data to provide meaningful information. The aim is to break the data to bring meaning to the end-user. This data processing could be online or offline, depending on the user's preferences. Online data processing is the process of analyzing the data in real-time. Offline data processing is storing the data and analyzing it later. The sources of data could be the internet, sensors, audio or even video.
+Computers obtain data by reading from the standard input, files and sensors, then store it in the memory for processing. This data processing could be online or offline, depending on the user's preferences. Data processing is the conversion of raw data to give meaningful information. The aim is to break down the data and represent it to end user graphically.
 
 This tutorial explains how one records data of various smartphone sensors and processes that data offline using Python. First, you extract the sensor's data to a CSV file. Then, the CSV file is read by Python, and the extracted data is processed for display. Also, it is processed for taking wavelet transform.
 
@@ -160,3 +176,6 @@ You can find the complete source code for this implementation [here](https://git
 Collecting data using an android mobile sensor is widely applicable in the data analytics fields. For example, you can use the sensors' collected data to determine the recommended settings for a specific user based on data analytics results from the machine learning models on the phone.
 
 Happy coding!
+
+---
+Peer Review Contributions by: [Odhiambo Paul](/engineering-education/authors/odhiambo-paul/)
