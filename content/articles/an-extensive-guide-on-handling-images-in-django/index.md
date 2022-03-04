@@ -1,3 +1,19 @@
+---
+layout: engineering-education
+status: publish
+published: true
+url: /an-extensive-guide-on-handling-images-in-django/
+title: An Extense Guide On Handling Images In Django
+description: This article will help readers understand how to work with images in Django. We will build a simple application to demonstrate it.
+author: donel-mwangi
+date: 2022-03-04T00:00:00-00:00
+topics: [Languages]
+excerpt_separator: <!--more-->
+images:
+
+  - url: /engineering-education/an-extensive-guide-on-handling-images-in-django/hero.jpg
+    alt: An Extense Guide On Handling Images  Hero ImageIn Django
+---
 As a web developer, working with images is an important skill to have. Django is one of the most popular web development frameworks, it provides ways to deal with images conveniently.
 <!--more-->
 In this tutorial, we are going to build a Django application that handles images. By building this, you shall learn how to set up your Django project environment to handle images and also how to perform other operations on the images.
@@ -464,3 +480,6 @@ I hope you have learned how to implement these solutions into your Django projec
 You can find the full source code [here](https://github.com/Donel254/Images).
 
 Happy coding!
+
+---
+Peer Review Contributions by: [Srishilesh P S](/engineering-education/authors/srishilesh-p-s/)
