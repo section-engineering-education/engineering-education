@@ -166,7 +166,7 @@ impl QueryRoot{
 
 We need to define the root mutation and the structure for adding new todo using the `GraphQLInputObject`.
 
-```Rust
+```rust
 pub struct MutationRoot;
 
 #[derive(juniper::GraphQLInputObject)]
@@ -217,7 +217,7 @@ This GraphQL API will have the following two routes:
 
 To set up these routes, navigate to the `main.rs` and start by updating your modules and dependencies imports as follows:
 
-```Rust
+```rust
 #[macro_use]
 extern crate juniper;
 
@@ -369,7 +369,7 @@ Feel free to change the title and the description. Then, hit the play button at 
 
 The next step will now involve setting up a database.
 
-### Setting up the MongoDB Database
+### Setting up the MongoDB database
 The above example uses dummy data to run the queries and mutations. First, let us set a MongoDB database and execute the API with dynamic data.
 
 Create a `.env` at the root of the project. In this file, specify the MongoDB database URL. This file specifies the URL that allows the application to connect to MongoDB.
@@ -425,7 +425,7 @@ fn connect_to_db()-> FieldResult<Client> {
 }
 ```
 
-### Running the Queries
+### Running the queries
 We need to replace the mock todos we were fetching locally with todos to be fetched from the database, therefore, we will make the following changes to the `schema.rs` file and replace the dummy todos data. Navigate to `QueryRoot` and edit `todos()` function as follows:
 
 ```rust
@@ -505,3 +505,6 @@ APIs power many world applications. These APIs must have the capacity to deliver
 Exposing APIs with GraphQL enables clients to access this data in different formats and only request the information they need, allowing them to access the API data fast and flexibly.
 
 Check the code used in this tutorial on [GitHub](https://github.com/Catemacharia/Rust-GraphQL-Server-With-MongoDB-Juniper-and-Actix-Web).
+
+---
+Peer Review Contributions by: [Jerim Kaura](/engineering-education/authors/jerim-kaura/)
