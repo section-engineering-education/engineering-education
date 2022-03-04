@@ -15,7 +15,9 @@ The Optuna software framework automates the hyperparameter optimization process.
 ### Optimization process
 #### Importing necessary modules
 We will build a base model by first incorporating essential modules and data into a dataframe. 
-**Loading the dataset**
+
+1. **Loading the dataset**
+
 ```python
 import sklearn
 #pandas data frame will be used to segregate features and targets 
@@ -23,7 +25,8 @@ import pandas as pan
 import numpy as num
 from sklearn.datasets import load_boston
 ```
-**Standard scaling the dataset**
+2. **Standard scaling the dataset**
+
  A pandas data frame will be used to segregate features and targets when the data is returned as a matrices by `load boston()`.
 ```python
 Our_loadboston = load_boston()
@@ -35,7 +38,8 @@ from sklearn.preprocessing import StandardScaler
 standardSc = StandardScaler()
 X = standardSc.fit_transform(X)
 ```
-**Dataset splitting**
+3. **Dataset splitting**
+
 By dividing the dataset into train and test, the model is better able to reach a convergent state.
 ```python
 from sklearn.model_selection import train_test_split
@@ -160,14 +164,6 @@ with optimization 2.9923284820263603
 ```
 Following fine-tuning, as you can see, we've achieved a lower reading.
 > By restricting the ranges of hyperparameters, we can fine-tune even more.
-### Reasons for using Optuna
-- The length of the optimization procedure may be specified.
-- Pandas DataFrame integration.
-- Pruning is a technique that the algorithm uses to eliminate poor-quality samples quickly.
-
-The Optuna software framework automates the hyperparameter optimization process. **Tree-structured Parzen Estimator** is the name of the `Bayesian` optimization algorithm it uses. According to Bayesian fine-tuning, once it stops improving our score anymore, it stops looking for new ones.
-
-Optuna can be used with any Python framework, including Chainer, Scikit-learn, Pytorch, and others, because it is framework agnostic. In PFN projects, Optuna is used successfully.
 ### Conclusion
 ML models may be improved, and improved parameters can be discovered in this post. It's possible to make it even better by reducing the ranges of the learning parameters.
 
