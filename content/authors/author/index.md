@@ -1,7 +1,7 @@
 ---
 title: David Maina
 type: authors
-github: https://github.com/dvoredave-writer
+github: https://github.com/dvoredave
 images:
   - url: /engineering-education/authors/author/avatar.jpg
 ---
