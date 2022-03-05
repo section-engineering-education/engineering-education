@@ -4,6 +4,9 @@ Collapsing Toolbar Layout widget is used in conjunction with the basic toolbar w
 This tutorial will build an application that utilizes the Collapsing Toolbar layout widget. We shall also include Android's new design support library to create scrolling effects that are eye-catching animations(palette API). There will be precise step-by-step procedures that will be easy to follow and understand for beginners and intermediate.
 
 ### Table of contents
+- [Introduction](#introduction)
+- [Table of contents](#table-of-contents)
+- [Prerequisites](#prerequisites)
 - [Setting up the project environment](#setting-up-the-project-environment)
 - [Adding the appropriate dependencies](#adding-the-appropriate-dependencies)
 - [Designing the XML layout](#designing-the-xml-layout)
@@ -11,7 +14,9 @@ This tutorial will build an application that utilizes the Collapsing Toolbar lay
 - [Testing the application](#testing-the-application)
 - [Conclusion](#conclusion)
 
-Ready!!
+### Prerequisites
+1. Basic knowledge in [Kotlin](https://developer.android.com/courses/android-basics-kotlin/course) language.
+2. Download a virtual device(emulator) in your IDE to run the application built. It is optional.
 
 ### Setting up the project environment
 - Open android studio.
@@ -77,7 +82,7 @@ The two dependencies ensure that Android apps are developed safely and securely 
 
 The actual layout of the title background should look like the one shown below.
 
-![Title background](engineering-education/collapsing-action-tool-bar-with-android-material-design-in-kotlin/title-bg.png)
+![Title background](/engineering-education/collapsing-action-tool-bar-with-android-material-design-in-kotlin/title-bg.png)
 
 Ensure you change from `selector` to `shape` as shown above. The above code will modify the title background how it will appear in the collapsing toolbar.
 It will be rectangle in shape. It will also contain multiple colors, i.e., a gradient with the upper-most color of the rectangle being `transparent` and the half bottom-wise of the rectangle being `colorDarkTransparent`, which we have to include in the Res -> Values -> Color as a color resource, i.e.,
@@ -211,7 +216,7 @@ Add the image by pasting it in the drawable folder initially copied from the ima
 
 You should have a similar design like the one shown below.
 
-![Design layout preview](engineering-education/collapsing-action-toolbar-with-android-material-design-in-kotlin/design.png)
+![Design layout preview](/engineering-education/collapsing-action-toolbar-with-android-material-design-in-kotlin/design.png)
 
 
 ### Writing Kotlin code
@@ -247,11 +252,11 @@ We need an emulator(virtual device) installed in the computer or an actual physi
 
 Your output should be similar to the one below.
 
-![Actual design in a device or Emulator](engineering-education/collapsing-action-toolbar-with-android-material-design-in-kotlin/actual.png)
+![Actual design in a device or Emulator](/engineering-education/collapsing-action-toolbar-with-android-material-design-in-kotlin/actual.png)
 
-![Collapsed action bar](engineering-education/collapsing-action-tool-bar-with-android-material-design-in-kotlin/collapsed.png)
+![Collapsed action bar](/engineering-education/collapsing-action-tool-bar-with-android-material-design-in-kotlin/collapsed.png)
 
-![Scrollable Nested layout](engineering-education/collapsing-action-toolbar-with-android-material-design-in-kotlin/nested.png)
+![Scrollable Nested layout](/engineering-education/collapsing-action-toolbar-with-android-material-design-in-kotlin/nested.png)
 
 ### Conclusion
 In conclusion, we have created a collapsing toolbar and used the design libraries and the Palette API to design catchy coloring animations.
