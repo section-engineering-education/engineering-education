@@ -6,7 +6,7 @@ url: /building-a-video-cataloging-app-with-react-firebase-and-styled-components/
 title: Building a Video Cataloging App with React, Firebase, and React-styled-components.
 description: This tutorial will guide the reader through building a video cataloging app with React.js and React-styled components.
 author: kingsley-jack
-date: 2022-01-08T00:00:00-02:30
+date: 2022-03-04T00:00:00-02:30
 topics: []
 excerpt_separator: <!--more-->
 images:
