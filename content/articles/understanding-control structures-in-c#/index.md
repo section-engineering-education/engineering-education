@@ -6,16 +6,16 @@ url: /understanding-control structures-in-c#/
 title: Understanding Control Structures in C# 
 description: This tutorial will walk you through understanding control structures in C# 
 author: haron-mutati
-date: 2022-02-28T00:00:00-03:25
+date: 2022-03-5T00:00:00-03:25
 topics: [Languages, C#]
 excerpt_separator: <!--more-->
 images:
   - url: /engineering-education/understanding-control structures-in-c#/hero.jpg
     alt: Understanding Control Structures in C# Hero Image
 ---
-Some issues in programming appear to be insurmountable, but you need not be concerned. The same way a computer works, one can overcome a large obstacle in life that appears to be more complicated by simply taking a simple step toward the solution. Complex problems are broken down into smaller pieces by the computer, which is then passed on to functions that provide answers (are implemented).
-
-To execute all of this work well, one must first comprehend the **building blocks**. These building blocks will assist one in making various decisions in the program, for example, one may like to obtain a positive result while disregarding the negative one, or one may wish for the program to re-run a certain section of the code, necessitating the use of **control structures**. They will assist the program in choosing a specific path or direction, as a decision will be required. As a result, control structures will assess the variable and select the appropriate direction based on the parameter. As previously stated, we will introduce you to control structures in this article. Furthermore, we will give various examples of each statement for a better understanding of these control structures.
+Programming requires solving complex problems using code, to be able to solve these problems you need to learn the basic buiding blocks for writing a good program. 
+<!--more-->
+These building blocks will assist one in making various decisions in the program, for example, one may like to obtain a positive result while disregarding the negative one, or one may wish for the program to re-run a certain section of the code, necessitating the use of **control structures**. This knowledge will assist you as a programmer in choosing a specific path or direction. In this article you will understand how to work with control structures in C# using various examples. 
 
 ### Table of content
 - [Introduction](#introduction)
@@ -340,6 +340,7 @@ for(initialization;condition; increment/decrement)
   statement;
 }
 ```
+
 **An Example**
 
 ```C#
@@ -371,6 +372,7 @@ As the name suggests jump statements will transfer control from one place to ano
 The break statement is used when one needs the code to terminate some statement and perhaps go to the next. Like in switch statements it is used to terminate one statement and go to the next one or terminate the whole program.
 
 **An example**
+
 ```C#
 using System;
   
