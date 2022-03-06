@@ -1,283 +1,181 @@
-In this tutorial, we'll be discussing micro frontends. We'll also set up micro frontends using module federation in Solid.js. Also, we take a look at how to share a micro frontend between Solid.js and React using module federation. 
 
-### What are micro-frontends?
-Micro frontend originated from the concept of microservice. When talking about micro frontends, think of it as a website composed of different web pages. 
+### Introduction
+LINQ (Language-Integrated Query) is used for more than just data retrieval. It's also a useful tool for data transformation. New output may be gotten using LINQ by capturing source sequences and converting them in various ways.
 
-These pages consist of features created by independent teams. Let's look at Netflix, for example. Imagine the header section of Netflix, the header video, and the carousel built by a separate team.
+Grouping and sorting are techniques that usually change the sequence of a query, but the same change can be achieved without using those techniques. This is achievable when a learner or a programmer uses the `select` clause. For example, a programmer may perform or carry out some of the following tasks.
+1. In creating one output query consisting of another type, a programmer can combine several input queries.
+2. A programmer may still opt to take a few elements from each element in the source sequence to create an output sequence.
+3. By putting into consideration the results of operations on source data and several other things, an output sequence can still be obtained.
 
-These teams have their different ways of working, and they build up the main Netflix website. Another way to think of micro frontend could be separate pages on the leading site. These pages combined build the website.
-
-Micro frontends are one popular approach to increasing flexibility. It allows teams to combine components built in different frameworks or libraries. 
-
-There are several ways to put in place micro frontends. We'll be focusing on module federation in this tutorial but first, let's look at the benefits of micro frontend and how we split our apps.
-
-### Benefits of micro-frontends
-There are many benefits. Some of them include:
-- Independent deployments.
-- Independent updates and bug fixes.
-- Tech stack freedom.
-- Independent decoupled units.
-- Application split up by business domain.
-
-### How do we split apps?
-Here are some examples of how developers split large apps:
-
-#### By page
-Sometimes, having many pages opened simultaneously can crash older devices. In such cases, splitting by page is the safest option. You can run separate, specific micro-apps for each page if you have good routing. 
-
-#### By functionality
-Suppose you have a single page with many features. Then, you can divide those prominent features into more minor apps. This will make each one an independent application that runs that specific feature.
-
-#### By section
-You can also divide your apps into sections. This enables different apps to share the same section or components.
-
-### What is Module Federation?
-Zack Jackson created the module federation JavaScript architecture. The goal of the module federation is to make code sharing more manageable and more independent. 
-
-Module federation allows a JavaScript application to import code from another application. We can archive this by configuring Webpack. 
-
-The module will generate a unique JavaScript entry file. Other applications can access this file. It gives you the freedom and flexibility to build your project the way you want.
-
-Now that we understand what module federation is, let’s create a micro frontend in Solid.js.
-
-### Prerequisites 
-To follow through with this article, we need to have yarn installed. We also need to have basic knowledge of JavaScript.
-
-### Creating a Micro-frontend in Solid.js
-First, navigate to the folder where you want your project to live and run the following command:
-```bash
- npx create-mf-app
+### Table of contents
+ - Creating a Single Output Sequence with Multiple Inputs 
+- Subsets of each Source Element are chosen
+- Operations that are performed on source elements
+- In-memory objects - XML transformation
+- Conclusion
+-  What next
+### Creating a Single Output Sequence with Multiple Inputs
+When working with LINQ in the implementation of various concepts, one of the capabilities of LINQ in the field of data transformation is that it can accept more than one input and produce a single output sequence. The description in the example below explains how we can bring together more than one in-memory data structure. Consider the two sorts of classes listed below.
+ 
+```c#
+class Employer
+{
+    public string FirstName{(set; get;)}
+    public string LastName{(set; get;)}
+    public int JobNo{(set; get;)}
+    public string city{(set; get;)}
+}
+class Employee
+{
+     public string FirstName{(set; get;)}
+    public string LastName{(set; get;)}
+    public int JobNo{(set; get;)}
+    public string city{(set; get;)}
+    
+}
 ```
-
-This will be our host app. We want the host app to consume a micro frontend from a remote app. Let’s give it the name of `host`. We’ll be setting up our app with the following configurations:
-```bash
- Project-type: Application
- port:8080
- Framework:solid.js
- Language:javascript
- Css:tailwind
+The query is described below.
+```C#
+class DataTransformations
+{
+    static void Main()
+    {
+        // data source 1
+        List<Employer> employerList=new List<Employer>()
+        {
+            new Employer{
+                FirstName="Henry",
+                LastName="Melisa";
+                JobNo="1815",
+                city="The red city",
+            
+            },
+            new Employer{
+                FirstName="Mary",
+                LastName="Kakai";
+                JobNo="1919",
+                city="The Black city",
+            },
+        };
+        // Lets create the second data Source
+        List<Employee> employeeList= new List<Employee>()
+        {
+           
+            new Employee{
+                FirstName="Jacob",
+                LastName="Kilman";
+                JobNo="1304",
+                city="The RedBull city",
+            
+            },
+            new Employee{
+                FirstName="Mercy",
+                LastName="Cate";
+                JobNo="!401",
+                city="The Blackpool city",
+            }, 
+        };
+        //Lets now create the query
+        var peopleInBlackCity=(employerList in Employer
+        where employerList.City=="The Black city"
+        select employerList.FirstName)
+        .Concat(from employeeList in Employee
+                where employeeList.City="The Black city"
+                select employeeList.FirstName
+        );
+        Console.WriteLine("The following are the residents of the city");
+         foreach (var person in peopleInTheBlackCity)
+         {
+             Console.WriteLine(Individual);
+         }
+         Console.WriteLine("You can press any key and exit!");
+         Console.ReadKey();
+          }
+}
 ```
+### Subsets of each Source Element are chosen
+ To understand what subset is supposed to be chosen and from what source sequence, various factors are considered.
+1. An initializer of an object can be employed, and that may appear in two forms.
+- Named type
+- Anonymous type
 
-Now that we’ve done that, let’s `cd` into our folder:
-```bash
- cd host
+And by doing so, it shall produce the elements with multiple properties from the source element. The description in the example below employs an anonymous type to encapsulate features of each element of the Employer
+```c#
+var query = from empl in Employer  
+            select new {Name = empl.Name, City = empl.City};
 ```
+2. The other way is to implement the dot functionality, which will only select one member from a source element. 
 
-Run the yarn command:
-```bash
-yarn
+By taking an assumption of an object Employer which constitutes several public attributes and one of the public attributes is string city. When the query is executed, a string sequence will be displayed as the output.
+```c#
+var query = from empl in Employer 
+            select empl.City;
 ```
+### Activities carried out in the source elements
+There is a probability that there may lack the elements features or the elements themselves contained in the source sequence in the final output sequence. However, the input features of the source components might be the ones that are contained in the output sequence.
 
-**Note: If you get an error while running the yarn command, all you have to do is open your terminal and input this:**
-```bash
- Set-ExecutionPolicy RemoteSigned
+Using each radius to display area as the output, the selection of a query must be done. The perfect query to be used will be that query that will have the capability of taking a number series to represent the semi-circle radii. Then, a computed area will be returned as a string. 
+
+Interpolation will hence be employed in the query to format every string presenting the outcome. All the actions that will have to be performed will be done in-between the curly braces of the text that will be interpolated. Then before the first quotation, a dollar sign is inputted in the interpolated string. The outcomes of those surgeries will be merged after they are completed. FormatQuery class.
+```c#
+class FormatQuery1
+{
+    static void Main()
+    {
+        // below is the data source
+        double[] radii = {  3, 4 ,5};
+        // The query is then demonstraed as below
+        IEnumerable<string> output = 
+            radii.Select(R => $"Area for a semi-circle with a radius of '{R}' = { 0.5* R * R * Math.PI}");
+        foreach (string s in output)
+        {
+            Console.WriteLine(s);
+        }
+            
+        
+        Console.WriteLine("exit when a random key is pressed.");
+        Console.ReadKey();
+    }
+}
 ```
+A point of concern regarding performing operations on source elements is that if a query is translated to some other domain, then methods that will be called in such query operations shall not be accepted. In describing this, we shall take a function that is possessed by C#. 
 
-We also want to create our remote app. So, let’s open up a new terminal and rerun the command:
-```bash
- npx create-mf-app
+If one wants to translate the function to LINQ, it will not be done directly because the modules in C# are not guaranteed in LINQ, and in the same manner, LINQ functions may not be directly translated to SQL due to the same reason.
+### In-memory objects - XML transformation
+ When it comes to data transference from one module to another, it is achieved in simpler ways when transforming data between SQL databases, in-memory data structures, XML documents, .NET datasets, and many more. And LINQ queries account and cater for this simplicity. The conversion is of an XML element derived from an in-memory data structure from the example described below.
+```c#
+class XMLTransformation
+{
+    static void Main()
+    {
+        
+        List<Employer> empl = new List<Employer>()
+        {
+            new Employer {FirstName="Jacob", LastName="Harvey", JobNo=1912, 
+            new Employer {FirstName="Claire", Last="Donnell", JobNo=1312, 
+            
+        };
+        // Query creation
+        var emplToXML = new XElement("Root",
+            from empl in Employers
+            let JobNo = string.Join(",", empl.JobNo)
+            select new XElement("empl",
+                       new XElement("FirstName", empl.FirstName),
+                       new XElement("LastName", empl.LastName),
+                       new XElement("JobNo", JobNo)
+                    ) 
+                ); 
+        
+        Console.WriteLine(emplToXML);
+        
+        Console.WriteLine("Press any key to exit.");
+        Console.ReadKey();
+    }
+}
 ```
-
-This time we’ll be giving it the name of `remote`. Other values would be:
-```bash
-Project-type: application
-Port:3000
-Framework:solid.js
-Language:javascript
-Css:tailwind
-```
-
-Next, `cd` into the remote directory and run yarn to get it started:
-```bash
-yarn
-```
-
-Let’s go back to our host app and start it up:
-```bash
-yarn start
-```
-
-Output:
-
-![host_app](/engineering-education/microfrontend-using-module-federation-in-solid.js/host.PNG)
-
-Let’s also start up our remote app:
-```bash
-yarn start
-```
-
-We should also see something like the host app.
-
-![remote_app](/engineering-education/microfrontend-using-module-federation-in-solid.js/remote.PNG)
-
-Now we have our two apps running.
-
-### Consuming the micro-frontend
-We want to look at how the host app will consume the application of the remote app. To do this, we’ll first have to build something. 
-
-Let’s create a counter app in the remote app and then configure the host app to consume it.
-
-In our editor, let’s go to our remote directory. Inside the `src` folder, create a new file called `counter.jsx` and input this:
-```javascript
-import { createSignal } from "solid-js";
-
-export default () => {
-  const [count, setCount] = createSignal(0);
-
-  return (
-    <div className="h-auto w-auto p-6 mt-8 rounded-lg bg-green-200 border border-green-300">
-      <div>No Of Clicks ={count()}</div>
-      <button
-        className="bg-indigo-800 text-white font-bold py-2 px-4 rounded"
-        onClick={() => setCount(count() + 1)}
-      >
-        Add One
-      </button>
-    </div>
-  );
-};
-```
-
-What we did here is to create a counter that adds one whenever we click the add button. Go to the `app.jsx` and import the `counter.jsx` we created:
-```javascript
-import Counter from "./Counter";
-```
-
-We'll also have to call it out. Inside our `const App()`, below our remote name, add this:
-```javascript
-<Counter />
-```
-
-Save it and check out the result in our browser.
-
-![remote_result](/engineering-education/microfrontend-using-module-federation-in-solid.js/counter.PNG)
-
-Now our counter is running, but we want it in our host, so how will we turn this into a micro frontend? That’s where Module Federation comes in. If we were to use npx, we’d have to go through many processes that we do not have time for.
-
-Back to our app. In our `webpack.config.js` of our remote app. Scroll down to `plugins` and locate `ModuleFederationPlugin`. In the exposes section, add this:
-```bash
-"./Counter":"./src/Counter.jsx",
-```
-
-Let’s restart our app. First enter  `ctrl + c`  to stop and `yarn start`.
-
-You might not notice this, but a new file is generated by webpack. We call this file `remoteEntry.js`. You can see it by adding  `/remoteEntry.js` in the `localhost:3000` URL. It is a manifest of all the modules exposed from `remote`.
-
-![remote_entry](/engineering-education/microfrontend-using-module-federation-in-solid.js/remote_entry.PNG)
-
-Let’s copy the URL of our remote, which is `localhost:3000/remoteEntry.js`. Then, go to our host directory. Inside the `src/webpack.config.js`, scroll down to `plugins: ModuleFederationPlugin`. 
-
-Instead of posting this inside our exposes, we’ll be pasting it inside the `remotes` section. So, inside our remote, paste this:
-```bash
-remote: "remote@http://localhost:3000/remoteEntry.js"
-```
-
-This remote links to our federation plugin in our remote app. The next thing we’ll do is go to our `app.jsx` in our `host/src` folder and import our counter:
-```bash
-import Counter from "remote/Counter";
-```
-
-Save and refresh the host app in our browser. We should see this:
-
-![microfontend](/engineering-education/microfrontend-using-module-federation-in-solid.js/microfrontend.PNG)
-
-Module federation allows us to share code between these two applications at runtime. 
-
-### Can we use another framework to consume our remote app?
-The answer is yes! Let’s see how we can do it. 
-
-Let’s open another separate terminal and create a `new mf-app`
-```bash
- npx create-mf-app
-```
-
-We’ll be using React this time. So, let’s give it the name of `react-host`. Other values would be:
-```bash
-Project-type: application
- Port:3001
- Framework:react
-Language:javascript
-Css:tailwind
-```
-
-`Cd` into the `react-host` folder and run the yarn command:
-```bash
-yarn
-```
-
-Navigate to the `webpack.config.js`. Scroll down to `plugins` and locate `ModuleFederationPlugin`. Inside the `remote{}` add this:
-```bash
-remote: "remote@http://localhost:3000/remoteEntry.js"
-```
-
-Our React host does not know anything about Solid.js. What we are going to do is wrap the `Solid.js` component. So, let’s go back to our remote app folder. 
-
-Inside our `src` folder create a file called `counterWrapper.jsx`. Paste this in:
-```javascript
-import { render } from "solid-js/web";
-
-import Counter from "./Counter";
-
-import "./index.scss";
-
-export default (el) => {
-  render(Counter, el);
-};
-```
-We imported our counter into the `counterWrapper` and exported a default function that renders our `Counter` into the `el`.
-
-We want to do the last thing here: go into our `webpack.config.js` and expose this module. Again, scroll down to `plugins` and locate `ModuleFederationPlugin`.
-
-Inside the `expose {}` we’ll add this too:
-```bash
- "./counterWrapper":"./src/counterWrapper.jsx",
-```
-
-So, let’s stop and restart our app. No visible changes. Go back to the `react-host`. Navigate to the `app.jsx`. Delete and paste this:
-```javascript
-import React, { useRef, useEffect } from "react";
-
-import ReactDOM from "react-dom";
-
-import counterWrapper from "remote/counterWrapper";
-
-import "./index.scss";
-
-const App = () => {
-  const divRef = useRef(null);
-
-  useEffect(() => {
-    counterWrapper(divRef.current);
-  }, []);
-
-  return (
-    <div className="mt-10 text-3xl mx-auto max-w-6xl">
-      <div>Name: react-host</div>
-
-      <div ref={divRef}>Framework: react</div>
-    </div>
-  );
-};
-
-ReactDOM.render(<App />, document.getElementById("app"));
-```
-
-We imported the `counterwrapper` brought in `useRef` and `useEffect` from React. We also created a variable for our `divRef`, which we set to `null`. 
-
-Next, we created a function for our `useEffect`, calling out the `counterWrapper` inside it and assigning the current value of `divRef` to it. This will allow our `react-host` to adapt and link up with our remote app.
-
-Let’s start our `react-host` app:
-```bash
-yarn start
-```
-
-![react_host](/engineering-education/microfrontend-using-module-federation-in-solid.js/react_host.PNG)
-
-As you can see, we have a functional `Solid.js` micro frontend embedded into our `react-host`. Here’s a link to the [GitHub](https://github.com/oyedeletemitope/micro-frontend-with-module-federation-in-solid.js) repository for this project.
-
 ### Conclusion
-In this article, we discussed micro frontend and its benefits. We also talked about module federation. 
+In conclusion, we have seen and looked at how LINQ aids in data transformation using C# as a programming language using several examples in the description. How to create a single output sequence using multiple inputs, choose a subset of each source element, perform operations on source elements, and transform XML into in-memory objects.
+### What next
+After a careful study on this topic, do not stop here; continue digging deep into other C# programming and SQL areas to have a vast knowledge of programming with C# and other programming languages in general.
 
-We then used it to build a micro frontend in Solid.js, embedded a Solid.js remote application into a React host app. 
-
-A micro front-end approach is a great option when working on a large project with many teams. Would you please share if this was helpful?
+**Be proud to be a programmer**
