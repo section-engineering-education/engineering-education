@@ -384,8 +384,6 @@ You can refer to this [link](https://replit.com/@AnubhavBansal1/Registration-For
 ### Connecting registration form with Firebase 
 Hurray!! Your Registration form is completed but you need to store the information registered by the user, which will be done by using Firebase.
 
-![Logo](/engineering-education/registration-form-react.js-firebase/logo.PNG)
-
 Good news guys, to use Firebase you don't need to install any app just need Google/Gmail mail id. 
 
 Here, you will learn how to connect your Registration form to Firebase. For that you need to do the following. [Click here](https://firebase.google.com/) to Get Started.
@@ -442,7 +440,7 @@ Since you are not hosting you will NOT select the option "set up Firebase hostin
 npm install firebase
 ```
 
-![package](/engineering-education/registration-form-react.js-firebase/package.PNG)
+![package](/engineering-education/registration-form-react.js-firebase/package.png)
 
 Create a new file with the name "firebase.js" in the Src folder where you will copy the code. 
 
@@ -460,7 +458,7 @@ import { getDatabase } from "firebase/database"
 export const database = getDatabase(app);
 ```
 
-In the registration, form component import the following files.
+In the registration form component import the following files.
 
 ```javascript
 import {database} from '../firebase'
@@ -487,7 +485,7 @@ const handleSubmit = () =>{
 
 Now you have completed the steps successfully. 
 
-**Finally, let's see how it works**
+**Finally, let's see how it works.**
 
 Fill in your details in the form and then click on register.
 
