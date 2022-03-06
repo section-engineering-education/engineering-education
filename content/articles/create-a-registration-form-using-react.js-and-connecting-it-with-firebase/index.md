@@ -6,8 +6,8 @@ url: /create-a-registration-form-using-react.js-and-connecting-it-with-firebase/
 title: How to Create a Registration Form using React.js and Connect it to Firebase
 description: This tutorial will walk you through how to create a registration form using React.js and connect it to Firebase
 author: anubhav-bansal
-date: 2022-02-26T00:00:00-05:45
-topics: [Languages, React.js]
+date: 2022-03-06T00:00:00-12:45
+topics: [Languages]
 excerpt_separator: <!--more-->
 images:
 
