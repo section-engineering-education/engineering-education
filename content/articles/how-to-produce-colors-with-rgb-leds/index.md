@@ -3,7 +3,7 @@ layout: engineering-education
 status: publish
 published: true
 url: /how-to-produce-colors-with-rgb-leds/
-title: How to Produce Colors With RGB LEDs Using Arduino and Matlab Graphical User Interface
+title: How to Produce Colors With RGB LEDs using Arduino and Matlab Graphical User Interface
 description: This tutorial presents a scheme to produce any color using RGB LEDs controlled by the Arduino Uno board. The Arduino Uno board is interfaced with MATLAB.
 author: queenter-bruce
 date: 2022-03-06T00:00:00-12:05
@@ -12,41 +12,39 @@ excerpt_separator: <!--more-->
 images:
 
   - url: /engineering-education/how-to-produce-colors-with-rgb-leds/hero.jpg
-    alt: How to Produce Colors With RGB LEDs Using Arduino and Matlab Graphical User Interface Hero Image.
+    alt: RGB LEDs Using Arduino and Matlab Graphical User Interface Hero Image.
 ---
 Arduino is an initiative and user community that designs and manufactures single-board microcontrollers and microcontroller kits. These kits are used for making digital devices using open-source hardware and software.
 <!--more-->
 A wide range of microprocessors and controllers are used in Arduino board designs. The boards have digital, and analog input/output (I/O) pins connected to breadboards and other circuits.
 
-This tutorial presents a scheme to produce any color using RGB LEDs controlled by the Arduino Uno board. The Arduino Uno board is interfaced with MATLAB.
-
-One can learn how to interface Arduino Uno with Matlab and get an idea of how different colors are produced from three primary colors Red, Green, and Blue.
+This tutorial will present a scheme to produce any color using RGB LEDs controlled by the Arduino Uno board. The Arduino Uno board is interfaced with MATLAB. One can learn how to interface Arduino Uno with Matlab and get an idea of how different colors are produced from three primary colors Red, Green, and Blue.
 
 ### Prerequisites
-To follow along with this tutorial, you will need to have:
+To follow along with this tutorial, the reader will need to have:
 - [MATLAB](https://www.mathworks.com/products/get-matlab.html?s_tid=gn_getml) installed.
 - A proper understanding of [MATLAB basics](/engineering-education/getting-started-with-Matlab/).
-- An understanding of the [MATLAB graphical user interface](https://www.section.io/engineering-education/matlab-graphical-user-interface/).
+- An understanding of the [MATLAB graphical user interface](/engineering-education/matlab-graphical-user-interface/).
 
 ### Arduino board
-Arduino board is an open-source microcontroller board based on the microchip `ATmega328P ` microcontroller developed by the Arduino company. The different components of this microcontroller are shown in the image below:
+The Arduino board is an open-source microcontroller board based on the microchip `ATmega328P ` microcontroller developed by the Arduino company. The different components of this microcontroller are shown in the image below:
 
 ![Components](/engineering-education/how-to-produce-colors-with-rgb-leds/rgb-one.png)
 
-- USB connector- It helps the user to connect the board to a computer or laptop for programming the controller.
-- Power supply- It is used to provide external power to the Arduino board.
-- Reset- This button is used to reset the Arduino after use.
-- Microcontroller Atmega328- It is the microcontroller. It governs the functionality of the Arduino.
-- Digital I/O- They collect data from the Arduino sensors and write them to other components(actuators)
-- Serial out(Tx)/in(Rx)- It is used to communicate between Arduino and the computer or other connected devices.
-- Analog in- Used for reading the analog sensors.
+- USB connector: It helps the user connect the board to a computer or laptop when programming the controller.
+- Power supply: It is used to provide external power to the Arduino board.
+- Reset: This button is used to reset the Arduino after use.
+- Microcontroller Atmega328: It is the microcontroller. It governs the functionality of the Arduino.
+- Digital I/O: They collect data from the Arduino sensors and write them to other components(actuators).
+- Serial out(Tx)/in(Rx): It is used to communicate between Arduino and the computer or other connected devices.
+- Analog in: Used when reading the analog sensors.
 
-> In the digital input/output, pins 11, 10, 9, 6, 5, 3 have `~` symbols. This is because they are supported by pulse width modulation(PMW). They can give any voltage in the range `0-5V` with the help of PMW. The pins can generate a dc voltage in 256 variations since it is an 8-bit controller `(2^8)`. Arduino produces this voltage variation by varying the duty cycle of a square wave. This is known as PMW.
+> In the digital input/output, pins 11, 10, 9, 6, 5, 3 have `~` symbols. This is because they are supported by pulse width modulation (PMW). They can give any voltage in the range `0-5V` with the help of PMW. The pins can generate a dc voltage in 256 variations since it is an 8-bit controller `(2^8)`. Arduino produces this voltage variation by varying the duty cycle of a square wave. This is known as PMW.
 
 In an Arduino IDE, the voltages of these PMW pins can be written by `analogwrite(pin, value)`. In Matlab, we use the command `writePMWVoltage(board, pin, value)`.
 
 ### Hardware implementation
-The circuit diagram to implement the color production is as shown below:
+The circuit diagram to implement the color production is shown below:
 
 ![Hardware implementation](/engineering-education/how-to-produce-colors-with-rgb-leds/rgb-two.png)
 
@@ -79,7 +77,7 @@ At some point, we do not need to provide the full voltage. For example, if we wa
 The red LED receives 5 volts and the green receives 40% of the total voltage. With this variation, we can get any color.
 
 ### Arduino interface with Matlab
-To interface Arduino with Matlab, you must install the hardware support package for Arduino. We do this in the add-on, but it requires that us to first log in to our MathWorks Account. 
+To interface Arduino with Matlab, you must install the hardware support package for Arduino. We do this in the add-on, but it requires us to first log in to our MathWorks Account. 
 
 To do this:
 - Click on the add-on and select `get hardware support package`.
@@ -87,16 +85,16 @@ To do this:
 - Filter for `Matlab support package for Arduino software` and install it.
 
 ### Matlab implementation
-We create a Graphical User Interface(GUI) to help control the colors for this implementation. For a proper understanding, you must go through the article ["Getting started with graphical user interface"](https://www.section.io/engineering-education/matlab-graphical-user-interface/). 
+We will create a Graphical User Interface (GUI) to help control the colors of this implementation. For a better understanding, you can go through the article ["Getting started with graphical user interface"](/engineering-education/matlab-graphical-user-interface/). 
 
 The GUI will be as shown below:
 
 ![The GUI](/engineering-education/how-to-produce-colors-with-rgb-leds/rgb-five.png)
 
 The function of the various components of the GUI are as follows:
-- Board ON- When we press this button, our board is connected to Matlab.
-- Choose color- In this button group, select the type of color you want the LED to be producing. You can also produce other colors by entering the values of RGB, as explained earlier.
-- Exit- Exits the Arduino board.
+- Board ON: When we press this button, our board is connected to Matlab.
+- Choose color: In this button group, select the type of color you want the LED to be producing. You can also produce other colors by entering the values of RGB, as explained earlier.
+- Exit: Exits the Arduino board.
 
 To open the GUI in Matlab, execute the `guide` command in the command window. Then, open a blank GUI and add the components to form the interface shown below:
 
@@ -108,7 +106,7 @@ Once the modification of all the components is done, we can save the GUI. It gen
 
 The callback functions are functions that render the functionality of our GUI. We then write the control command for the callback to achieve color production.
 
-Let us look at the callback functions for each button. Let's begin with the `Board-ON`:
+Let's look at the callback functions for each button. Let's begin with the `Board-ON`:
 
 ```matlab
 a = arduino();
@@ -121,13 +119,13 @@ end
 guidata(hObject, handles)
 ```
 
-First, we declare the board variable `a = Arduino()`. After this, we create a handle `handle.a` for the board variable. 
+We need to declare the board variable `a = Arduino()`. After this, we create a handle `handle.a` for the board variable. 
 
 We also create a handle for the `ON` condition such that when the handle is 1, the board is on. When the handle is 0, the board is off. It's like a linking handle. This handle is `handles.ON`.
 
-Now, let us use an `if` statement to check for the validity of the conditions. First, we check if the board is created using `~isempty(handles.a)`. If it is created (equal to 1), we set the button's background color to green [0 1 0]. We finally update the handles using `guidata(hObject, handles)`.
+Now, let us use an `if` statement to check for the validity of the conditions. We can check if the board is created using `~isempty(handles.a)`. If it is created (equal to 1), we set the button's background color to green [0 1 0]. We then update the handles using `guidata(hObject, handles)`.
 
-Now, let us use an `if` statement to check for the validity of the conditions. First, we check if the board is created using `~isempty(handles.a)`. If it is created (equal to 1), we set the button's background color to green [0 1 0]. We finally update the handles using `guidata(hObject, handles)`.
+Now, let us use an `if` statement to check for the validity of the conditions. Let's check if the board is created using `~isempty(handles.a)`. If it is created (equal to 1), we set the button's background color to green [0 1 0]. We then update the handles using `guidata(hObject, handles)`.
 
 Let us begin with the red buttons:
 
@@ -139,9 +137,7 @@ if handles.ON==1
 end
 ```
 
-This code first checks if the board is enabled. We use the `writePMWVoltage()` function to determine the color to be produced. 
-
-This function takes the board variable `handle.a`, PIN `D6`, and the voltage to be passed to the pin, i.e. 5v. It is done for all the colors defined by the radio buttons. 
+This code first checks if the board is enabled. We use the `writePMWVoltage()` function to determine the color to be produced. This function takes the board variable `handle.a`, PIN `D6`, and the voltage to be passed to the pin, i.e. 5v. It is done for all the colors defined by the radio buttons. 
 
 The code for the callback functions and the radio buttons is the same. We only need to change the voltage passing through each color channel to form the defined color. 
 
@@ -205,9 +201,7 @@ clear handles.a;
 closereq();
 ```
 
-`clear handles.a` clears the board variable. When this variable is cleared, Arduino disconnects from Matlab. We then exit the GUI using the `closereq()` function.
-
-At some point, we may need to create custom colors. As we have seen before, custom colors are formed from a combination of RGB colors. 
+`clear handles.a` clears the board variable. When this variable is cleared, Arduino disconnects from Matlab. We then exit the GUI using the `closereq()` function. At some point, we may need to create custom colors. As we have seen before, custom colors are formed from a combination of RGB colors. 
 
 The callback function for the `enter RGB for any color` text field is shown below:
 
@@ -219,13 +213,9 @@ handles.B = rgb(3);
 guidata(hObject, handles)
 ```
 
-Here, we get the input using the `get()` function. When you enter this value, it is of the string type. 
+Here, we get the input using the `get()` function. When you enter this value, it is of the string type. Next, we convert this input to a number using the `str2num` function. After this conversion, we extract the RGB values. 
 
-Next, we convert this input to a number using the `str2num` function. After this conversion, we extract the RGB values. 
-
-The first value, `RGB(1)`, is assigned to the red channel. The second value is assigned to green, and the third value is for blue. 
-
-Finally, we updated the handle. To display our custom colors, we need to enter the RGB values and then click `OK`. 
+The first value, `RGB(1)`, is assigned to the red channel. The second value is assigned to green, and the third value is for blue. Finally, we updated the handle. To display our custom colors, we need to enter the RGB values and then click `OK`. 
 
 The callback function for the `OK` push button is:
 
@@ -262,9 +252,7 @@ Let us use our program to produce a custom color by entering `[1 0.5 0.25]`.
 The color produced by the RGB LED is the same as the background for the text field `color produced` as shown in the image.
 
 ### Conclusion
-Arduino hardware is a microcontroller. This hardware can be programmed using Matlab or any other software. 
-
-Matlab makes it easy to interface with this hardware. This is because of the support package that makes this work. 
+Arduino hardware is a microcontroller. This hardware can be programmed using Matlab or any other software. Matlab makes it easy to interface with this hardware. This is because of the support package that makes this work. 
 
 Arduino is widely applicable in the science engineering field. It is applicable in robotics fields and even security improvement.
 
