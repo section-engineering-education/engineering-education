@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /create-a-registration-form-using-react.js-and-connecting-it-with-firebase/
+url: /registration-form-react.js-firebase/
 title: How to Create a Registration Form using React.js and Connect it to Firebase
 description: This tutorial will walk you through how to create a registration form using React.js and connect it to Firebase
 author: anubhav-bansal
@@ -11,14 +11,14 @@ topics: [Languages]
 excerpt_separator: <!--more-->
 images:
 
-  - url: /engineering-education/create-a-registration-form-using-react.js-and-connecting-it-with-firebase/hero.jpg
+  - url: /engineering-education/registration-form-react.js-firebase/hero.jpeg
     alt: How to Create a Registration Form using React.js and Connect it to Firebase Hero Image
 ---
 In this tutorial, you are going to learn how to make a registration form using React.js and connect it with firebase from scratch using react hooks, bootstrap, and firebase.
 <!--more-->
 Here an image of what you will build at the end of this tutorial.
 
-![Final form](/engineering-education/create-a-registration-form-using-react.js-and-connecting-it-with-firebase/finalRegistrationForm.PNG)
+![Final form](/engineering-education/registration-form-react.js-firebase/finalregistrationform.png)
 
 ### Table of contents
 - [Table of contents](#table-of-contents)
@@ -45,7 +45,7 @@ npm start
 
 After running the commands you will get to see the below screen:
 
-![starting](/engineering-education/create-a-registration-form-using-react.js-and-connecting-it-with-firebase/start.PNG)
+![starting](/engineering-education/registration-form-react.js-firebase/start.png)
 
 Open up the `index.html` which is in the `public` folder and add the CDN links there at the end of the file.
 
@@ -131,7 +131,7 @@ export default App;
 
 If you have written the above code correctly the webpage will look like this:
 
-![header](/engineering-education/create-a-registration-form-using-react.js-and-connecting-it-with-firebase/registration.PNG);
+![header](/engineering-education/registration-form-react.js-firebase/registration.png);
 
 Moving forward to the next component i.e. registrationForm. It contains the following fields:
 1. First Name
@@ -390,28 +390,28 @@ You can refer to this link to find the full code of this registration form
 ### Connecting Registration Form with Firebase 
 Hurray!! Your Registration form is completed but you need to store the information registered by the user, which will be done by using firebase.
 
-![Logo](/engineering-education/create-a-registration-form-using-react.js-and-connecting-it-with-firebase/logo.PNG)
+![Logo](/engineering-education/registration-form-react.js-firebase/logo.PNG)
 
 Good news guys, to use Firebase you don't need to install any app just need Google/Gmail mail id. You all do have that id right?
 Here, you will learn how to connect your Registration form to Firebase. For that you need to do the following.
 
 You need Firebase to store all data. For that, [Click here.](https://firebase.google.com/) to Get Started.
 
-![Home Page](/engineering-education/create-a-registration-form-using-react.js-and-connecting-it-with-firebase/homepage.PNG)
+![Home Page](/engineering-education/registration-form-react.js-firebase/homepage.PNG)
 
 - To start your project, click on add project. 
  
- ![New Project](/engineering-education/create-a-registration-form-using-react.js-and-connecting-it-with-firebase/newproject.PNG)
+ ![New Project](/engineering-education/registration-form-react.js-firebase/newproject.PNG)
  
 - Give the preferable name to the project. In this tutorial, Registration-Form is taken. 
   
-![Name of Project](/engineering-education/create-a-registration-form-using-react.js-and-connecting-it-with-firebase/Nameofproject.PNG)
+![Name of Project](/engineering-education/registration-form-react.js-firebase/Nameofproject.PNG)
 
 Then click on continue. 
 
 - Next step will appear to click on continue then after that you need to choose Default Account for Firebase. 
   
-![Default Setting](/engineering-education/create-a-registration-form-using-react.js-and-connecting-it-with-firebase/Deaultsetting.PNG)
+![Default Setting](/engineering-education/registration-form-react.js-firebase/Deaultsetting.PNG)
 
 Then click on "Create project"
 
@@ -419,27 +419,27 @@ Now your project file is ready. You will use it to build the real-time database.
 
 - To make a setup for real-time data you will select "Realtime Database" from the left panel. 
 
-![Real Time Database](/engineering-education/create-a-registration-form-using-react.js-and-connecting-it-with-firebase/realtimedatabase.PNG)
+![Real Time Database](/engineering-education/registration-form-react.js-firebase/realtimedatabase.PNG)
 
 Then click on the "Create Database" button. The Setup database dialog box will appear 
 
-![Settings](/engineering-education/create-a-registration-form-using-react.js-and-connecting-it-with-firebase/Settings.PNG)
+![Settings](/engineering-education/registration-form-react.js-firebase/Settings.PNG)
 
 You will go to the next step by leaving the default location. Since you are in developing mode, you will select "Start in test mode" and enable it.
 
 Now your database is ready where the real-time data is stored.
 
 You need to create a linkage between your react project and the 
-![realtime_data](/engineering-education/create-a-registration-form-using-react.js-and-connecting-it-with-firebase/realtime_data.PNG) 
+![realtime_data](/engineering-education/registration-form-react.js-firebase/realtime_data.PNG) 
  
 - For that, you will go to project overview from the left panel and then click on the Web button.
 
-![Button](/engineering-education/create-a-registration-form-using-react.js-and-connecting-it-with-firebase/Button.PNG)
+![Button](/engineering-education/registration-form-react.js-firebase/Button.PNG)
 
 - You have to register your app and give it nickname. In this tutorial "Registration Form" is taken or you can choose any name of your choice. 
 Since you are not hosting you will not select the option "set up Firebase hosting for this app", then click on Register App. 
 
-![Register App](/engineering-education/create-a-registration-form-using-react.js-and-connecting-it-with-firebase/Registerapp.PNG)
+![Register App](/engineering-education/registration-form-react.js-firebase/Registerapp.PNG)
 
 - Now you need to add the package into your react app you have to install the firebase package over there. Now using terminal or command prompt go to the directory where your project is and run this command. 
  
@@ -447,7 +447,7 @@ Since you are not hosting you will not select the option "set up Firebase hostin
 npm install firebase
 ```
 
-![package](/engineering-education/create-a-registration-form-using-react.js-and-connecting-it-with-firebase/package.PNG)
+![package](/engineering-education/registration-form-react.js-firebase/package.PNG)
 
 Create a new file with the name "firebase.js" in the Src folder where you will copy the code. 
 
@@ -496,11 +496,11 @@ Now you have completed your steps successfully.
 
 Fill in your details in the form and then click on register.
 
-![Details](/engineering-education/create-a-registration-form-using-react.js-and-connecting-it-with-firebase/Details.PNG)
+![Details](/engineering-education/registration-form-react.js-firebase/details.jpg)
 
 To check the input, you can see that from your Firebase account. It appears as shown below.
 
-![Datainfirebase](/engineering-education/create-a-registration-form-using-react.js-and-connecting-it-with-firebase/Datainfirebase.PNG)
+![Datainfirebase](/engineering-education/registration-form-react.js-firebase/datainfirebase.png)
 
 ### Conclusion
 Congratulation you have successfully learned how to use React.js to create and structure a registration form, and add styling to it. You also used React Hooks to maintain the state so that you can store the data in Firebase real-time database.
