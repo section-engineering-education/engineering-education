@@ -6,7 +6,7 @@ url: /how-to-produce-colors-with-rgb-leds/
 title: How to Produce Colors With RGB LEDs Using Arduino and Matlab Graphical User Interface
 description: This tutorial presents a scheme to produce any color using RGB LEDs controlled by the Arduino Uno board. The Arduino Uno board is interfaced with MATLAB.
 author: queenter-bruce
-date: 2022-02-25T00:00:00-12:05
+date: 2022-03-06T00:00:00-12:05
 topics: [Languages]
 excerpt_separator: <!--more-->
 images:
