@@ -22,39 +22,19 @@ With the help of a simple matrix, let's see how the Eoigendecomposition is deriv
 
 Suppose we have a 2 x 2 square matrix A, i.e.,
 
-
-$A = \begin{bmatrix}
-    1&4\\
-    9&1
-\end{bmatrix}$
+![matrix](/engineering-education/eigendecomposition-in-python/matrix-1.png)
 
 Our first step is to determine its eigenvalues and eigenvectors. If you compute the eigenvalues, you should get:
 
-$\lambda_1=7$
-$\lambda_2=1$
+![eigenvalues](/engineering-education/eigendecomposition-in-python/eigenvalues.png)
+
 The corresponding eigenvectors to these eigenvalues are:
 
-$u_1=\begin{bmatrix}
-2\\
-3
-\end{bmatrix}$, and
-
-$u_2=\begin{bmatrix}
-2\\
-3
-\end{bmatrix}$
+![eigenvectors](/engineering-education/eigendecomposition-in-python/eigenvectors.png)
 
 Normalizing our eigenvectors, we get:
 
-$u_1=\begin{bmatrix}
-2/\sqrt 13\\
-3/\sqrt 13
-\end{bmatrix}$, and
-
-$u_2=\begin{bmatrix}
-2/\sqrt 13\\
-3/\sqrt 13
-\end{bmatrix}$
+![normalized-eigenvectors](/engineering-education/eigendecomposition-in-python/nor-eigenvectors.png)
 
 We can develop the following equations using these components, as they explain eigenvalues and eigenvectors are.
 
@@ -64,30 +44,11 @@ $Au_2=\lambda_2u_2$
 
 If we compress these two systems into a matrix of eigenvectors and a matrix of eigenvalues, we get.
 
-$A\begin{bmatrix}
-|&|\\
-u_1&u_1\\
-|&|
-\end{bmatrix}=\begin{bmatrix}
-|&|\\
-u_1&u_1\\
-|&|
-\end{bmatrix}\begin{bmatrix}
-\lambda_1&0\\
-0&\lambda_2
-\end{bmatrix}...(i)$
+![matrix-equation](/engineering-education/eigendecomposition-in-python/equation.png)
 
 We can let,
-$U=\begin{bmatrix}
-|&|\\
-u_1&u_1\\
-|&|
-\end{bmatrix}$ and,
 
-$\Lambda=\begin{bmatrix}
-\lambda_1&0\\
-0&\lambda_2
-\end{bmatrix}$
+![matrices](/engineering-education/eigendecomposition-in-python/matrices.png)
 
 Using $U$ and $\lambda$ in equation $(i)$ we get the following equation.
 $AU=U\Lambda$
@@ -133,7 +94,7 @@ $A=U\Lambda U^{-1}$
 
 Writing A explicitly we get.
 
-$A^{16}=U\Lambda U^{-1}*U\Lambda U^{-1}*U\Lambda U^{-1} \ . \ . \ .*U\Lambda U^{-1}_{(16 \ times)}$
+![image](/engineering-education/eigendecomposition-in-python/matrix-m.png)
 
 It's easy to compute this long chain on the right-hand side of the above equation. By matrix multiplication rules, the product of a matrix and its inverse equals an identity matrix. With this in mind, we do not even need to compute such a quantity as any matrix multiplied with an identity matrix equals the matrix itself. Applying this knowledge on the above equation, it condenses to,
 
@@ -159,6 +120,7 @@ import
 ```
 In this python demo, we will use the following square matrix.
 
+![matrix](/engineering-education/eigendecomposition-in-python/matrix-m.png)
 $M=\begin{bmatrix}
   1&2&1\\
   0&1&0\\
