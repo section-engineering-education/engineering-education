@@ -32,6 +32,22 @@ You might be wondering what debugging is in Android development. Debugging is de
 
 ### Prerequisites
 To follow through this tutorial, you need to have:
+Working with OkHttp to perform network calls is always easy but the problem comes when you want to debug and see if the task is successful or not. Chucker becomes very helpful when you want to debug when using the OkHttp library. [Chucker](https://github.com/ChuckerTeam/chucker) is a very simple to integrate android debugging library unlike [Timber](https://www.section.io/engineering-education/planting-timber-logs-the-right-way/) and [Stetho](http://facebook.github.io/stetho/).
+
+You might be wondering what debugging is in Android development. Debugging can be defined as the process of analyzing a code of a program to detect and remove potential errors that might cause your app to crash. 
+
+ ### Table of contents
+ - [Prerequisites](#prerequisites)
+ - [What is Chucker](#what-is-chucker)
+ - [What is OkHttp](#what-is-okhttp)
+ - [Getting Started](#getting-started)
+ - [Adding Dependencies](#adding-dependencies)
+ - [Features of Chucker Library](#features-of-chucker-library)
+ - [Configuring Chucker](#configuring-chucker)
+ - [Conclusion](#conclusion)
+
+ ### Prerequisites
+  To follow through this tutorial, you must have:
 - [Android Studio] IDE installed(https://developer.android.com/studio/index.html).
 - [Kotlin](https://kotlinlang.org/) programming language basics.
 - Kotlin [coroutines](https://developer.android.com/kotlin/coroutines) basics.
@@ -119,6 +135,31 @@ val myChuckerCollector = ChuckerCollector(
     retentionPeriod = RetentionManager.Period.ONE_WEEK  // Period taken to retain the collected data, can be an hour, day or week
 )
 ```
+After creating the collector, we can then create the `ChuckerInterceptor` which we will plug into the `OkHttpClient` Builder.
+
+```kotlin
+// Chucker Interceptor
+val myChuckerInterceptor = ChuckerInterceptor.Builder(this) // `this` is the context
+    // The previously created ChuckerCollector
+    .collector(myChuckerCollector)
+    // The maximum body content length in bytes, after this responses will be truncated.
+    .maxContentLength(250_000L)
+    // List of headers to replace with ** in the Chucker UI
+    .redactHeaders("Auth-Token", "Bearer")
+    // Read the whole response body even when the client does not consume the response completely.
+    // This is useful in case of parsing errors or when the response body
+    // is closed before being read like in Retrofit with Void and Unit types.
+    .alwaysReadResponseBody(true)
+    .build()
+```
+We can then plug the interceptor into the OkHttp Client Builder as shown in the code snippet below.
+```kotlin
+// OkHttp Client
+val client = OkHttpClient.Builder()
+    .addInterceptor(myChuckerInterceptor)  
+    .build()
+
+In the final part, we will create our OkHttp request for making network calls. 
 
 In the final part, we will create our OkHttp request for making network calls.
 
@@ -131,6 +172,15 @@ val request = Request.Builder()
 
         // OkHttp request should run in the Background thread hence Coroutines
         CoroutineScope(Dispatchers.IO).launch {
+
+            client.newCall(request).enqueue(object : Callback {
+                override fun onFailure(call: Call, e: IOException) {
+                    e.printStackTrace()
+                }
+
+                override fun onResponse(call: Call, response: Response) {
+                    if (response.isSuccessful) {
+                        val myResponse: String? = response.body?.string()
 
                         // To access the TextView, switch to the Main thread
                         CoroutineScope(Dispatchers.Main).launch {
@@ -149,10 +199,10 @@ Here is the full implementation of our `MainActivity.kt` class.
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
-
-       /* val okHttpClient = OkHttpClient.Builder()
+        
+        val okHttpClient = OkHttpClient.Builder()
             .addInterceptor(ChuckerInterceptor(this))
-            .build()*/
+            .build()
 
         // Chucker Collector
         val myChuckerCollector = ChuckerCollector(
