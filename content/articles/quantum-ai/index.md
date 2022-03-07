@@ -1,7 +1,22 @@
-### Overview of Quantum AI
+---
+layout: engineering-education
+status: publish
+published: true
+url: /quantum-ai/
+title: Overview of Quantum AI
+description: This article will discuss quantum computing and how quantum AI works to make human work more manageable.
+author: Carlos-Kahuru
+date: 2022-03-07T00:00:00-14:20
+topics: [Languages]
+excerpt_separator: <!--more-->
+images:
 
-### Introduction
-Quantum Artificial intelligence (AI), as the name suggests, is the application of quantum technology to machine learning procedures. Quantum technology and machine learning are game-changing innovations that will make problem solving easier. In this article we will discuss what quantum computing is, how quantum computers operate, and its relation to machine learning. we will also have a look at Quantum AI, its applications and real life examples.
+  - url: /engineering-education/quantum-ai/hero.jpg
+    alt: Overview of Quantum AI Hero Image
+---
+As the name suggests, Quantum Artificial intelligence (AI) is the application of quantum technology to machine learning procedures. Quantum technology and machine learning are game-changing innovations that will make problem-solving easier. 
+<!--more-->
+This article will discuss what quantum computing is, how quantum computers operate, and its relation to machine learning. We will also look at Quantum AI, its applications, and real-life examples.
 
 ### Table of contents
 - [Introduction](#introduction)
@@ -18,24 +33,24 @@ Quantum Artificial intelligence (AI), as the name suggests, is the application o
 
 ### Key Takeaways
 By the end of this article, the reader should be able to understand:
-- Quantum computing and its relation to machine learning
-- Applications of quantum computing
-- Quantum AI, its milestones, application and examples
+- Quantum computing and its relation to machine learning.
+- Applications of quantum computing.
+- Quantum AI, its milestones, application, and examples.
 
 ### Quantum Computing
 To fully understand the meaning of Quantum computing, we must first define the terms below.
-- **Quantum** The term "quantum" refers to  quantum mechanics used by quantum computers to compute outputs. A quantum is the tiniest single component of any physical attribute in physics. Generally, it refers to electrons and photons, which are atomic or microscopic particles.
-- **Qubit** In quantum computing, a qubit refers to the fundamental unit of data. Qubits serve the same purpose as bits in normal computers. However, they act quite differently in this case. Qubits may retain a superposition of all states, unlike standard bits, which are binary in nature, hence maintaining a state of 0 or 1.
-- **Quantum data** These are packets of data found in qubits used for processing.
-- **Quantum algorithms** An algorithm is a set of procedures that results in a solution to a problem.  To carry out these procedures on a device, you'll need to employ certain instruction sets that the device was built to support.  Quantum computing provides sets of instructions based on a fundamentally different concept of execution. Quantum algorithms seek to speed up the solution by utilizing quantum concepts such as superposition and entanglement.
+- **Quantum**: The term "quantum" refers to quantum mechanics used by quantum computers to compute outputs. A quantum is the tiniest single component of any physical attribute in physics. Generally, it refers to electrons and photons, atomic or microscopic particles.
+- **Qubit**: In quantum computing, a qubit refers to the fundamental data unit. Qubits serve the same purpose as bits in standard computers. However, they act quite differently in this case. Qubits may retain a superposition of all states, unlike standard bits, which are binary, maintaining a 0 or 1.
+- **Quantum data**: These are packets of data found in qubits used for processing.
+- **Quantum algorithms**: An algorithm is a set of procedures that results in a solution to a problem. To carry out these procedures on a device, you will need to employ certain instruction sets that the device was built to support. Quantum computing provides instructions based on a fundamentally different concept of execution. Quantum algorithms seek to speed up the solution by utilizing quantum concepts such as superposition and entanglement.
 
 Quantum computers make use of quantum physics properties by applying them in computing. The properties are quantum interference, superposition, and entanglement.
-1. **Superposition**
-Quantum particles in superposition are mixed in all conceivable states. They vary unless they are monitored and computed. Consider a coin to see the differences between binary placement and superposition. Standard bits are counted by tossing the coin and it probably lands on heads or tails. The coin is in superposition if you can see heads, tails, and every state in between at the same time.
-2. **Entanglement**
+#### 1. Superposition
+Quantum particles in superposition are mixed in all conceivable states. They vary unless they are monitored and computed. Consider a coin to see the differences between binary placement and superposition. Standard bits are counted by tossing the coin, and it probably lands on heads or tails. The coin is in superposition if you can see heads, tails, and every state in between at the same time.
+#### 2. Entanglement
 Quantum particles in entanglement can link their test findings together. When qubits entangle, they create a unified system that interacts with one another. Judgments on other qubits can easily be made based on  data from one qubit.
-3. **Quantum interference**
-Quantum interference involves the inherent activity of a qubit. It influences the chance of it falling in one direction because of superposition.
+#### 3. Quantum interference
+It involves the inherent activity of a qubit. It influences the chance of it falling in one direction because of superposition.
 
 ### Quantum Machine Learning
 Quantum machine learning (QML) involves using quantum algorithms to solve machine learning challenges. Its objective is to identify the most suitable solution to a given quantum algorithm for a given issue. Furthermore, use it in real-life applications such as optical recognition, language translation, or any other work that can be handled with machine learning.
@@ -69,26 +84,24 @@ The workable goal for quantum AI developers is to build quantum algorithms that 
 - Classical decision issues are stated in decision trees, and quantum methods for decision problems are based on them. Forming branches from particular places is one way to get at the solutions. The effectiveness of this strategy declines when each problem is too complicated to be handled by splitting it into two. Quantum algorithms centered on Hamiltonian time evolution are quicker than random marches in solving issues represented by a set of decision trees.
 
 ### Milestones for quantum AI
-Even though quantum AI is still a young field of study, advances in quantum computing increase quantum AI's potential, yet the AI sector must reach certain milestones to develop the technology.
-The milestones can be summed up as follows:
-1. Quantum computing devices that are less error-prone and very powerful
-2. Open-source analysis and training frameworks are widely used.
-3. A large and well-trained developer ecosystem
-4. Quantum computing surpasses classical computing in intriguing AI applications.
+Even though quantum AI is still a young field of study, advances in quantum computing increase quantum AI's potential, yet the AI sector must reach certain milestones to develop the technology. The milestones are as follows:
+- Quantum computing devices that are less error-prone and very powerful.
+- Open-source analysis and training frameworks are widely used.
+- A large and well-trained developer ecosystem.
+- Quantum computing surpasses classical computing in intriguing AI applications.
+
 These crucial stages will pave the way for future quantum AI advancements.
 
-### Examples of Quantum AI Applications
-#### Quantum AI crypto Bot
-Quantum AI Crypto Bot is a technology developed using quantum methods that enables you to earn money online by betting on foreign exchange, market indices, and cryptocurrencies.
-This trading method is well known as cryptocurrency trading. The crypto bot is effective as it has all its activities automated. It uses Artificial Intelligence to facilitate more accurate trading.
-The site uses blockchain's version of Smart Contracts to enhance its user's security and also provides a streamlined dispute resolution mechanism.
+### Examples of quantum AI applications
+#### Quantum AI crypto bot
+Quantum AI Crypto Bot is a technology developed using quantum methods that enables you to earn money online by betting on foreign exchange, market indices, and cryptocurrencies. This trading method is well known as cryptocurrency trading. The crypto bot is effective as it has all its activities automated. It uses Artificial Intelligence to facilitate more accurate trading. The site uses blockchain's version of Smart Contracts to enhance its user's security and provides a streamlined dispute resolution mechanism.
 
-#### How Quantum AI Checks Crypto Markets
-As the name suggests, Quantum AI merges artificial intelligence with trade to provide exact results. It uses quantum computing to analyze many information streams at the same time. It allows quicker and more accurate decisions. This trading technique is built on volatility rather than price appreciation. Hence profits may be achieved even when prices decline.
-The Quantum-based robot performs all the work for you since it is automated. To get started, create a free Quantum AI account. After you sign up, you'll have access to Quantum AI's pro services, which will enhance your trading process and raise your profits.
+#### How quantum AI Checks crypto markets
+As the name suggests, Quantum AI merges artificial intelligence with trade to provide exact results. It uses quantum computing to analyze many information streams at the same time. It allows quicker and more accurate decisions. This trading technique is built on volatility rather than price appreciation. Hence profits may be achieved even when prices decline. The Quantum-based robot performs all the work for you since it is automated. To get started, create a free Quantum AI account. After you sign up, you will have access to Quantum AI's pro services, which will enhance your trading process and raise your profits.
 
 ### Conclusion
 At the moment, a typical home computer is incapable of processing enormous volumes of data at once. Quantum computers may be capable of reaching into an extensive database and delivering an evaluation in seconds; with this, we can discover patterns within a short period using quantum technology.
+
 ### Further Reading
 - [Google's Quantum AI](https://quantumai.google/)
 - [Quantum Trading bot](https://quantum-ai.io/)
