@@ -6,16 +6,17 @@ url: /getting-started-with-tinydb-in-python/
 title: How to Get Started with TinyDB in Python
 description: This tutorial will walk you through how to get started with TinyDB in Python.
 author: catherine-karimi
-date: 2022-03-07T00:00:00-01:55
+date: 2022-03-07T00:00:00-16:55
 topics: [Languages]
 excerpt_separator: <!--more-->
 images:
+
   - url: /engineering-education/getting-started-with-tinydb-in-python/hero.jpg
     alt: TinyDB in Python Hero Image
 ---
 In this article, we will learn about TinyDB, which is built entirely in Python and has a plethora of essential utilities for querying and editing database files.
 <!--more-->
-As a developer most of the projects you may work on will require you to store data. TinyDB does not accept SQL-style queries, instead it retrieves the database files using a Python API. 
+As a developer, most of the projects you may work on will require you to store data. TinyDB does not accept SQL-style queries, instead it retrieves the database files using a Python API. 
 
 There's no need to set up a database server since everything is accessible directly through files saved on a storage device without the need for a server connection.
 
