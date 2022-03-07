@@ -3,21 +3,22 @@ layout: engineering-education
 status: publish
 published: true
 url: /bisection-method-in-python/
-title: A Beginner's Guide to Nonlinear Optimization with Bisection Algorithm 
-description: This tutorial will guide you on nonlinear optimization with Bisection algorithm. 
+title: Beginner's Guide to Nonlinear Optimization with Bisection Algorithm 
+description: This tutorial will guide the reader on nonlinear optimization with Bisection algorithm. 
 author: stanley-juma 
-date: 2022-02-27T00:00:00-11:56
-topics: [Languages, Python]
+date: 2022-03-07T00:00:00-14:00
+topics: [Languages]
 excerpt_separator: <!--more-->
 images:
+
   - url: /engineering-education/bisection-method-in-python/hero.jpg
-    alt: A Beginner's Guide to Nonlinear Optimization with Bisection Algorithm Hero Image
+    alt: Guide to Nonlinear Optimization with Bisection Algorithm Hero Image
 ---
 Function optimization involves finding the best solution for an objective function from all feasible solutions. The optimal solution is achieved through the minimization of the error function. 
 <!--more-->
 In polynomial error function optimization, input values for which the error function is minimized are called zeros or simply roots of such function. We usually establish the cost function from the hypothesis, which we then minimize i.e. find the unknown values of the parameters that minimize the cost function.
 
-In practice, where we deal with massive datasets, models tend to have many parameters that need to be estimated. This parameter makes the cost function have many parameters that need to be evaluated and thus impossible to do manually. However, well-defined algorithms can be utilized and approximate these parameters to the required accuracy iteratively. 
+Where we deal with massive datasets, models tend to have many parameters that need to be estimated. This parameter makes the cost function have many parameters that need to be evaluated and thus impossible to do manually. However, well-defined algorithms can be utilized and approximate these parameters to the required accuracy iteratively. 
 
 Some commonly used algorithms in this task include:
 - Bisection method
@@ -26,62 +27,64 @@ Some commonly used algorithms in this task include:
   
 These methods are used in different optimization scenarios depending on the properties of the problem at hand.
 
-In this article, you will learn how the bisection method work and how we can use it to determine unknown parameters of a model.
+In this article, we will learn how the bisection method works and how we can use it to determine unknown parameters of a model.
 
 ### Table of Content
 - [A Beginner's Guide to Nonlinear Optimization with Bisection Algorithm](#a-beginners-guide-to-nonlinear-optimization-with-bisection-algorithm)
 - [Table of content](#table-of-content)
 - [Prerequsites](#prerequsites)
 - [Introduction to Bisection method](#introduction-to-bisection-method)
-- [How bisection algorithm work](#how-bisection-algorithm-work)
+- [How bisection algorithms work](#how-bisection-algorithms-work)
 - [Python implementation of bisection method](#python-implementation-of-bisection-method)
 - [Output](#output)
 - [Conclusion](#conclusion)
 
 ### Prerequsites
-To get the most out of this tutorial, you will need the following:
-- Python installed on your computer.
-- A good understanding of python control flows and how to work with python functions.
+To get the most out of this tutorial, the reader will need the following:
+- Have Python installed on your computer.
+- A good understanding of Python control flows and how to work with python functions.
 - A basic knownledge on differential calculus.
 
 ### Introduction to Bisection method
 Before diving into the Bisection method, let's look at the criteria we consider when guessing our initial interval.
 
-If a function $f(X)$ is continous in the interval $[a,b]$ and $f(a)$ and $f(b)$ have opposite signs, then there exist at least one root for $f(x)$ within $[a,b]$. As we earlier said, the function $f(x)$ is usually non-linear and has a geometrical view similar to the one below.
+If a function $f(X)$ is continous in the interval $[a,b]$ and $f(a)$ and $f(b)$ have opposite signs, then there exists at least one root for $f(x)$ within $[a,b]$. As we said earlier, the function $f(x)$ is usually non-linear and has a geometrical view similar to the one below.
 
-![plot](/engineering-education/bisection-method-in-python/polynomial-curve.PNG)
+![plot](/engineering-education/bisection-method-in-python/polynomial-curve.png)
 
 Given that the initial interval $[a,b]$ meets the above conditions, we can now proceed with the bisection method and get the optimal root values.
 
-### How Bisection algorithm work
+### How Bisection algorithms work
 Suppose an interval $[a,b]$ cointains at least one root, i.e, $f(a)$ and $f(b)$ have opposite signs, then using the bisection method, we determine the roots as follows:
 
-- $\underline{Bisect}$ the initial inteval and set the new values to $x_0$, i.e.
+- $\underline{Bisect}$ the initial interval and set the new values to $x_0$, i.e.
  $x_0=\frac{b+a}{2}$.
  
-Note: $x_0$ is midpoint of the interval $[a,b]$. 
+>Note: $x_0$ is the midpoint of the interval $[a,b]$. 
 
-Using $x_0$, we consider three cases to determine if $x_0$ is the root or if not so, we determine the new interval containing the root. These cases are:
+Using $x_0$, we consider three cases to determine if $x_0$ is the root or if not so, we determine the new interval containing the root. 
+
+These cases are:
 1. If $f(x_0)=0$, then $x_0$ is the required root.
-2. If $f(x_0)\le0$, that is, $f(x_0)$ is negative, the required root lies between $x_0$ and $b$. In this case our new interval become, $[x_0,b]$.
-3. If $f(x_0)\ge0$, that is, $f(X_0)$ is postive, then the new interval cointaing the root is $[a,x_0]$. This is because, $[a,x_0]$ are closest values so further for which $f(a)$ and $f(x_0)$ have opposite signs.
+2. If $f(x_0)\le0$, that is, $f(x_0)$ is negative, the required root lies between $x_0$ and $b$. In this case our new interval becomes, $[x_0,b]$.
+3. If $f(x_0)\ge0$, that is, $f(X_0)$ is postive, then the new interval cointaing the root is $[a,x_0]$. This is because, $[a,x_0]$ are the closest values. For which $f(a)$ and $f(x_0)$ have opposite signs.
 
 - If case one occurs, we terminate the bisection process since we have found the root.
 - If either case $(2)$ or $(3)$ occurs, the process is repeated until the root is obtained to the desired tolerance.
 
 The below diagram illustrates how the bisection method works, as we just highlighted.
 
-![Bisection method plot](/engineering-education/bisection-method-in-python/bisection.PNG)
+![Bisection method plot](/engineering-education/bisection-method-in-python/bisection.png)
 
-Source:[Oionquest](https://orionquest.github.io/Numacom/bisection.html)
+*Source:[Oionquest](https://orionquest.github.io/Numacom/bisection.html)*
 
 Since we now understand how the Bisection method works, let's use this algorithm and solve an optimization problem by hand.
 
-**Problem:**
-1. *a.* Show that the equation  $x^3 + x^2 - 3x-3=0$ has a root between $1$ and $2$.
-$b.$ Use the bisection method and estimate the root correct to $2$ decimal places.
+#### Problem:
+1. *a.* Show that the equation $x^3 + x^2 - 3x-3=0$ has a root between $1$ and $2$.
+*b.* Use the bisection method and estimate the root correct to $2$ decimal places.
 
-**Solution:**
+#### Solution:
 To show that there exists a root for the above function within the interval provided, we evaluate its values using the given points and focus on the signs of the outputs. If signs of the output are opposite, then the root is enclosed within the interval; otherwise, it's not.
 
 Let's do this.
@@ -98,11 +101,14 @@ Now, let's apply the bisection method and get the root to the required accuracy.
 
 $$f(1.5)=-1.88$$
 
-Since $f(x_0)$ has a negative sign, then our new interval cointaing the root is between the current $x_0$ and the value $x=2$ . Now,let's proceed and determin $x_1$.
+Since $f(x_0)$ has a negative sign, then our new interval containing the root is between the current $x_0$ and the value $x=2$. Now, let's proceed and determine $x_1$.
 
 $$x_1=\frac{1.5+2}{2}=1.75$$
+
 Again, let's evaluate our function at $x_1$.
+
 $$f(1.75)=0.75(+ve)$$
+
 Now, our updated interval falls within the previous negative values and $x_1$. Therefore, we bisect this new interval again and check whether the obtain $x$ is such that $f(x)=0$.
 
 $$x_2=\frac{1.5+1.75}{2}=1.625$$
@@ -113,9 +119,11 @@ $$f(1.625)=-0.943,$$ $f(x_2)\neq 0$
 
 The new interval cointaing the root becomes:
 $$[x_2,x_1].$$
+
 Again, we bisect this interval to get our $x_3$, i.e.,
 
 $$x_3=\frac{1.625+1.75}{2}=1.6878$$
+
 Evaluating $f(x_3)$ gives:
 
 $$f(1.6878)=-0.943$$
@@ -133,20 +141,22 @@ From our previous example, the initial interval that contained the needed root w
 $a=1$
 $b=2$
 
-![image](/engineering-education/bisection-method-in-python/no-iter.PNG)
+![image](/engineering-education/bisection-method-in-python/no-iter.png)
 
 This output means we have to perform at least eight iterations if we need our root to $2$ decimal places.
 
-This is all you need to know about the *Bisection algorithm*. Let's now proceed and learn how this algorithm is implemented in python.
+This is all you need to know about the *Bisection algorithm*. Let's now proceed and learn how this algorithm is implemented in Python.
 
 ### Python implementation of Bisection method.
-When implementing the bisection method, we probably provide wrong values for the initial interval. Whenever we run the program, and this turns out to be the case, it can be very tedious to update those values from the program body. We can automate the determination of the validity of our initial guess inputs and take them from the user instead. In this section, we will take inputs from the user. Now, let's consider the function we previously looked at and try to determine its zeros in python.
+When implementing the bisection method, we'll probably provide wrong values for the initial interval. Whenever we run the program, and this turns out to be the case, it can be very tedious to update those values from the program body. 
+
+We can automate the determination of the validity of our initial guess inputs and take them from the user instead. In this section, we will take inputs from the user. Now, let's consider the function we previously looked at and try to determine its zeros in Python.
 
 Our function is:
 
 $f(x) = x^3 + x^2 - 3x - 3$
 
-Below is the implementation of how we do this in python.
+Below is the implementation of how we do this in Python.
 
 ```python
 # get the necessary libraries
@@ -155,7 +165,7 @@ import matplotlib.pyplot as plt
 from scipy. optimize import fsolve
 ```
 
-Now let's implement our algorithm and get this done.
+Now let's implement our algorithm.
 
 ```python
 # define a the bisection function
@@ -215,16 +225,46 @@ iteration =  7 x =  1.7265625 f(x) =  -0.051755428314208984
 iteration =  8 x =  1.73046875 f(x) =  -0.014957249164581299
 The required root is:  1.73046875
 ```
+
 To estimate our root, it took 8 iterations. Below is the curve of the function we are determining its root within the chosen interval.
 
-![plot](/engineering-education/bisection-method-in-python/plot.PNG)
+![plot](/engineering-education/bisection-method-in-python/plot.png)
 
 From the above plot, it's clear that a root exists around $x=1.7$. From the iterative outcome, our algorithm determined a root that exists at that point. 
 
 ### Conclusion
-In this article, we have looked at the Bisection method. First, we defined what this algorithm is and how it works. Then we looked at its major limitation, and finally, we were able to see how this algorithm is implemented in python. I hope you understood and enjoyed reading this tutorial.
+In this article, we have looked at the Bisection method. We defined what this algorithm is and how it works. Then we looked at its major limitations, and finally, we were able to see how this algorithm is implemented in Python. I hope you enjoyed reading this tutorial.
 
 Happy coding!
 
 ---
 Peer Review Contributions by: [Jethro Magaji](/engineering-education/authors/jethro-magaji/)
+
+<!-- MathJax script -->
+<script type="text/javascript" async
+    src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+    MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [['$','$'], ['\\(','\\)']],
+      displayMath: [['$$','$$']],
+      processEscapes: true,
+      processEnvironments: true,
+      skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
+      TeX: { equationNumbers: { autoNumber: "AMS" },
+           extensions: ["AMSmath.js", "AMSsymbols.js"] }
+    }
+    });
+    MathJax.Hub.Queue(function() {
+      // Fix <code> tags after MathJax finishes running. This is a
+      // hack to overcome a shortcoming of Markdown. Discussion at
+      // https://github.com/mojombo/jekyll/issues/199
+      var all = MathJax.Hub.getAllJax(), i;
+      for(i = 0; i < all.length; i += 1) {
+          all[i].SourceElement().parentNode.className += ' has-jax';
+      }
+    });
+    MathJax.Hub.Config({
+    // Autonumbering by mathjax
+    TeX: { equationNumbers: { autoNumber: "AMS" } }
+    });
+  </script>
