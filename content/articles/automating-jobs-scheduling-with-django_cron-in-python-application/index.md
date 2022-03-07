@@ -138,7 +138,7 @@ Now open to the project `settings.py` file, navigate to the `INSTALLED_APPS`, an
 'news'
 ```
 
-In addition, it is mandatory to register the `CRON_CLASSES` list in the `settings.py` right below the file. The list contains all the cron classes that the application has. Also, we need to add the permission classes for the API. 
+In addition, it is mandatory to register the `CRON_CLASSES` list in the `settings.py` right below the file. The list contains all the cron classes that the application has. Also, we need to add the permission classes for the API inside `settings.py`. 
 
 ```python
 CRON_CLASSES = [
@@ -181,12 +181,7 @@ class HackerNewsID(models.Model):
 #### Making cron jobs
 Here, we will make the cron job class. This class is required by the `django_cron` library to run every minute(s) as configured in the code below.
 
-The code snippet below describes the cron job class together with the method that will be called whenever the command below is executed.
-
-```bash
-python manage.py runcrons
-```
---- 
+The code snippet below describes the cron job class. This goes inside the `cron.py` file in the `news` app directory.
 
 ```python
 from django_cron import CronJobBase, Schedule
@@ -216,8 +211,12 @@ class MyCronJob(CronJobBase):
         for id in res:
             news_id = HackerNewsID(hackernews=id)
             news_id.save()
+```
+- Note:  Run the command below to add the latest hackernews id to database. This will execute the cron job class(es) by looping through the response from API data, and then call `save()` method on each.
 
-# run the command to add the latest hackernews id to your DB -  "python manage.py runcrons"
+
+```bash
+python manage.py runcrons
 ```
 
 This `MyCronJob` class extends the `CRONJOBBase`class imported from the library. Among the properties of the class is `code` which serves as a signature for a particular cron job. This identification will be referenced in `settings.py`.
