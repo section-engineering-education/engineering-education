@@ -6,7 +6,7 @@ url: /debugging-with-chucker/
 title: Getting Started With Debugging In Android Using Chucker
 description: In this tutorial, we will discuss how to debug android applications using chucker. Debugging is the process of analyzing the code in a software to detect and remove potential errors that might cause your app to crash.
 author: hepatrique-okeyo
-date: 2022-03-04T00:00:00-11:45
+date: 2022-03-07T00:00:00-18:25
 topics: [Android]
 excerpt_separator: <!--more-->
 images:
@@ -31,23 +31,7 @@ You might be wondering what debugging is in Android development. Debugging is de
 - [Conclusion](#conclusion)
 
 ### Prerequisites
-To follow through this tutorial, you need to have:
-Working with OkHttp to perform network calls is always easy but the problem comes when you want to debug and see if the task is successful or not. Chucker becomes very helpful when you want to debug when using the OkHttp library. [Chucker](https://github.com/ChuckerTeam/chucker) is a very simple to integrate android debugging library unlike [Timber](https://www.section.io/engineering-education/planting-timber-logs-the-right-way/) and [Stetho](http://facebook.github.io/stetho/).
-
-You might be wondering what debugging is in Android development. Debugging can be defined as the process of analyzing a code of a program to detect and remove potential errors that might cause your app to crash. 
-
- ### Table of contents
- - [Prerequisites](#prerequisites)
- - [What is Chucker](#what-is-chucker)
- - [What is OkHttp](#what-is-okhttp)
- - [Getting Started](#getting-started)
- - [Adding Dependencies](#adding-dependencies)
- - [Features of Chucker Library](#features-of-chucker-library)
- - [Configuring Chucker](#configuring-chucker)
- - [Conclusion](#conclusion)
-
- ### Prerequisites
-  To follow through this tutorial, you must have:
+To follow through this tutorial, you must have:
 - [Android Studio] IDE installed(https://developer.android.com/studio/index.html).
 - [Kotlin](https://kotlinlang.org/) programming language basics.
 - Kotlin [coroutines](https://developer.android.com/kotlin/coroutines) basics.
@@ -135,7 +119,8 @@ val myChuckerCollector = ChuckerCollector(
     retentionPeriod = RetentionManager.Period.ONE_WEEK  // Period taken to retain the collected data, can be an hour, day or week
 )
 ```
-After creating the collector, we can then create the `ChuckerInterceptor` which we will plug into the `OkHttpClient` Builder.
+
+After creating the collector, we can then create the `ChuckerInterceptor` which we will plug into the `OkHttpClient` builder.
 
 ```kotlin
 // Chucker Interceptor
@@ -152,14 +137,15 @@ val myChuckerInterceptor = ChuckerInterceptor.Builder(this) // `this` is the con
     .alwaysReadResponseBody(true)
     .build()
 ```
-We can then plug the interceptor into the OkHttp Client Builder as shown in the code snippet below.
+
+We can then plug the interceptor into the OkHttp Client builder as shown in the code snippet below:
+
 ```kotlin
 // OkHttp Client
 val client = OkHttpClient.Builder()
     .addInterceptor(myChuckerInterceptor)  
     .build()
-
-In the final part, we will create our OkHttp request for making network calls. 
+```
 
 In the final part, we will create our OkHttp request for making network calls.
 
@@ -192,7 +178,7 @@ val request = Request.Builder()
         }
 ```
 
-Here is the full implementation of our `MainActivity.kt` class.
+Here is the full implementation of our `MainActivity.kt` class:
 
 ```kotlin
 
@@ -245,7 +231,7 @@ Here is the full implementation of our `MainActivity.kt` class.
 }
 ```
 
-[demo project](/engineering-education/debugging-with-chucker/chucker-demo.gif)
+![demo project](/engineering-education/debugging-with-chucker/chucker-demo.gif)
 
 ### Conclusion
 In this tutorial, we learned how to use Chucker when debugging. You can read further on mapping the JSON response to Kotlin objects using the [Gson](https://github.com/google/gson) library.
