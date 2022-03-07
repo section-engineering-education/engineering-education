@@ -584,9 +584,7 @@ Postman provides those HTTP methods that we already have in our controller that 
 Now you are making these operations from your local machine, so you start with localhost: port-number, followed by the string on your controller, and the string on the individual method, eg localhost:8090/cart/create_customer.
 For more on this please make sure you use the postman documentation [Postman Documentation](https://learning.postman.com/docs/publishing-your-api/documenting-your-api/).
 ![shopping_api](api.JPG)
-
 ![shopping_api1](api2.JPG)
-
 ![shopping_api2](payment.JPG)
 #### Conclusion
 In the end, we've seen how to code to an interface, how to write a unit test, how to create an endpoint, and how to use postman to view our endpoint. Furthermore, we also added products to our cart and the cart could calculate the cost of products in the cart since the products have an attribute of price. 
