@@ -399,7 +399,6 @@ public class Cart {
 ### Controller Package
 The last package to review is the controller package. In the controller package we have our endpoints or APIs that connect to the internet all the basic functionalities of our services:
 ```java
-
 @RestController
 @RequestMapping("cart")
 public class Controller {
@@ -490,7 +489,6 @@ public class CustomerTest {
         assertEquals(1, customerDao.totalNumberOfCustomers());
 
     }
-
     @Test
     void customerCanAddProductToCart() {
         Product product = new Product("1", "Sandine", new BigDecimal(1000));
