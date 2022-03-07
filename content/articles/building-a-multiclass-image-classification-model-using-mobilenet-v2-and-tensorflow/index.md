@@ -104,7 +104,7 @@ From the code snippet above, the `load` function will load the `beans` dataset. 
 
 To check the beans dataset, use this code:
 
-```bash
+```python
 beans_info
 ```
 The code produces this output:
@@ -336,7 +336,7 @@ Some of the printed output:
 
 ![Printed output](/engineering-education/building-a-multiclass-image-classification-model-using-mobilenet-v2-and-tensorflow/printed-output.png)
 
-From this output, the actual label` and the `predicted label` for both predictions are the same. This shows the deep neural network has made accurate predictions.
+From this output, the `actual label` and the `predicted label` for both predictions are the same. This shows the deep neural network has made accurate predictions.
 
 **Another Output**
 
