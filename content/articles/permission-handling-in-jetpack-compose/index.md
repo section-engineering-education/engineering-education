@@ -4,9 +4,9 @@ status: publish
 published: true
 url: /permission-handling-in-jetpack-compose/
 title: Handling Permission Appropriately in Jetpack Compose
-description: This article will focus on handling permissions correctly and with ease in Jetpack Compose. 
+description: This article will focus on handling permissions correctly and with ease in Jetpack Compose.
 author: samantha-namenya
-date: 2022-02-21T00:00:00-09:00
+date: 2022-03-07T00:00:00-11:45
 topics: [Languages]
 excerpt_separator: <!--more-->
 images:
@@ -14,14 +14,14 @@ images:
   - url: /engineering-education/permission-handling-in-jetpack-compose/hero.png
     alt: Handling Permission Appropriately in Jetpack Compose Hero Image
 ---
-In android, permission handling can be done with the help of `permissionsAPI`. With the help of Google's accompanist libraries, things are made easier.
+In android, permission handling can be done with the help of `permissionsAPI`. With the help of the accompanist libraries by Google, things are made easier.
 <!--more-->
 This tutorial will cover how we can handle permissions in Jetpack compose.
 
 ### Table of contents
 - [Prerequisites](#prerequisites)
 - [Goals](#goals)
-- [Terminologies](#terminologies) 
+- [Terminologies](#terminologies)
 - [What are permissions, and when are they used?](#what-are-permissions-and-when-are-they-used)
 - [Creating a Compose project](#step-one-creating-a-new-compose-project)
 - [Setting up dependency](#step-two-setup-the-dependency)
@@ -30,11 +30,11 @@ This tutorial will cover how we can handle permissions in Jetpack compose.
 - [Working with multiple Permissions](#working-with-multiple-permissions)
 - [Conclusion](#conclusion)
 
-### Prerequisites 
-To follow along with this tutorial, the reader should:
-- Have installed [Android Studio Arctic Fox](https://developer.android.com/studio#downloads) and know how to create Compose projects.
-- Have an understanding of [Kotlin](https://developer.android.com/kotlin) programming language.
-- Have an understanding and experience of building apps with [Jetpack compose](https://developer.android.com/jetpack/compose).
+### Prerequisites
+To follow along with this tutorial, the reader should have:
+- [Android Studio Arctic Fox](https://developer.android.com/studio#downloads) installed and know how to create Compose projects.
+- An understanding of [Kotlin](https://developer.android.com/kotlin) programming language.
+- An understanding and experience of building apps with [Jetpack compose](https://developer.android.com/jetpack/compose).
 
 ### Goals
 By the end of this tutorial, the reader will be able to:
@@ -51,14 +51,16 @@ By the end of this tutorial, the reader will be able to:
 Let us get started :)
 
 ### What are permissions, and when are they used?
-In android, permissions define what an app can access in a user's phone. Due to security measures, an app cannot access some of the phone's data, which requires the app to request the user to allow or deny the app access. Accepting the permissions will allow the app to access data like contacts, SMS, etc. They are used whenever the app needs user authorization to access hardware or data that is not accessible by default.
+In android, permissions define what an app can access in a user's phone. Due to security measures, an app cannot access some of the phone's data, which requires the app to request the user to allow or deny the app access.
+
+Accepting the permissions will allow the app to access data like contacts, SMS, etc. They are used whenever the app needs user authorization to access hardware or data that is not accessible by default.
 
 #### Step one: Creating a new compose project
 To create a new compose project:
 - Launch Android Studio and select New project -> Compose Activity.
 - Name the project `PermissionsDemo` and click on finish to build the project.
 
-![Create Project](/engineering-education/permission-handling-in-jetpack-compse/create-project.png)
+![Create Project](/engineering-education/permission-handling-in-jetpack-compose/create-project.png)
 
 #### Step two: Setup the dependency
 In this step, we are going to add the accompanist-permissions dependency. Add this dependency in the app-level `build.gradle` file.
@@ -86,8 +88,12 @@ To enable permissions, add the following on the Manifest file:
 </manifest>
 ```
 
-### Step four: Implementing single permissions
-Create a function and name it `SinglePermission()`. We will only request permission to read the phone's external storage in this function. This function defines the permission you want to request the user to allow. Creating a permission state will be as follows:
+#### Step four: Implementing single permissions
+Create a function and name it `SinglePermission()`.
+
+We will only request permission to read the phone's external storage in this function. This function defines the permission you want to request the user to allow.
+
+Creating a permission state will be as follows:
 
 ```kotlin
 val permissionState =
@@ -95,7 +101,9 @@ val permissionState =
 ```
 
 #### What do we mean by proper permission handling?
-Proper permission handling means requesting app permission(S) correctly, which means, unlike most developers, we will put our logic on `onStart`. Compose, however, does not have the `onStart()` method; instead, we use a `LocalLifecycleOwner` and attach `LifeCycleObserver` to observe all activities and fragments lifecycle.
+Proper permission handling means requesting app permission(s) correctly, which means, unlike most developers, we will put our logic on `onStart`.
+
+Compose, however, does not have the `onStart()` method. Instead, we use a `LocalLifecycleOwner` and attach `LifeCycleObserver` to observe all activities and fragments lifecycle.
 
 The code will be as follows:
 
@@ -117,7 +125,7 @@ DisposableEffect(key1 = lifecycleOwner, effect = {
 })
 ```
 
-`DisposableEffect` handler remedies side effects that needs fixing when the keys change. Also, when the composable leaves the composition. In this case, we register a call back that is cleaned after use. Whenever the key `lifecycleOwner` changes, the disposable effect will start again.
+`DisposableEffect` handler remedies side effects that needs fixing when the keys change and also when the composable leaves the composition. In this case, we register a call back that is cleaned after use. Whenever the key `lifecycleOwner` changes, the disposable effect will start again.
 
 #### Checking for permissions
 Let us now check for `permissionState`, whether it was accepted or denied by the user. We will then apply the logic.
@@ -140,7 +148,11 @@ when {
 }
 ```
 
-What happens here is that we are checking the state of the permission. The `hasPermission` indicates that permission is allowed. The statement `permissionState.shouldShowRatonale`  checks when permission is denied twice. When denied for the second time, permission is considered entirely denied, triggering the last part of checking the permission state. If the permission is not granted or is denied more than twice, the app tells the user to open settings and enable the denied permissions.
+What happens here is that we are checking the state of the permission. The `hasPermission` indicates that permission is allowed.
+
+The statement `permissionState.shouldShowRatonale`  checks when permission is denied twice. When denied for the second time, permission is considered entirely denied, triggering the last part of checking the permission state.
+
+If the permission is not granted or is denied more than twice, the app tells the user to open settings and enable the denied permissions.
 
 Now the `SinglePermission()` body will be as follows:
 
@@ -373,5 +385,6 @@ Using the accompanist library to handle permission requests is way much more eff
 Permission handling is effective if we check the permissions state when the app starts. This will help avoid awkward situations where a user can minimize the app, disable the in-app permissions settings, and return to the app, which will lead to the app not correctly functioning.
 
 Keep Composing :)
+
 ---
 Peer Review Contributions by: [Briana Nzivu](/engineering-education/authors/briana-nzivu/)
