@@ -1,21 +1,23 @@
 
 ### Introduction
-LINQ (Language-Integrated Query) is used for more than just data retrieval. It's also a useful tool for data transformation. New output may be gotten using LINQ by capturing source sequences and converting them in various ways.
+ LINQ is a C# module that mainly deals with data. In this article, we will learn several things concerning Language Integrated Query. It is a module that performs various functionalities, some of which will be covered in this article.
+### LINQ overview
+LINQ (Language-Integrated Query) is used for more than just data retrieval. It's also a valuable tool for data transformation. New output may be gotten using LINQ by capturing source sequences and converting them in various ways.
 
-Grouping and sorting are techniques that usually change the sequence of a query, but the same change can be achieved without using those techniques. This is achievable when a learner or a programmer uses the `select` clause. For example, a programmer may perform or carry out some of the following tasks.
+Grouping and sorting are techniques that usually change the sequence of a query, but the exact change can be achieved without using those techniques. It is achievable when a learner or a programmer uses the `select` clause. For example, a programmer may perform or carry out some of the following tasks.
 1. In creating one output query consisting of another type, a programmer can combine several input queries.
 2. A programmer may still opt to take a few elements from each element in the source sequence to create an output sequence.
-3. By putting into consideration the results of operations on source data and several other things, an output sequence can still be obtained.
+3. By considering the results of operations on source data and several other things, an output sequence can still be obtained.
 
 ### Table of contents
- - Creating a Single Output Sequence with Multiple Inputs 
-- Subsets of each Source Element are chosen
-- Operations that are performed on source elements
-- In-memory objects - XML transformation
-- Conclusion
--  What next
+- [Creating a Single Output Sequence with Multiple Inputs](#creating-a-single-output-sequence-with-multiple-inputs)
+- [Subsets of each Source Element are chosen](#subsets-of-each-source-element-are-chosen)
+- [Operations that are performed on source elements](#operations-that-are-performed-on-source-elements)
+- [In-memory objects-XML transformation](#in-memory-objects-xml-transformation)
+- [Conclusion](#conclusion)
+- [What next](#what-next)
 ### Creating a Single Output Sequence with Multiple Inputs
-When working with LINQ in the implementation of various concepts, one of the capabilities of LINQ in the field of data transformation is that it can accept more than one input and produce a single output sequence. The description in the example below explains how we can bring together more than one in-memory data structure. Consider the two sorts of classes listed below.
+The description in the example below explains how we can bring together more than one in-memory data structure. Consider the two sorts of classes listed below.
  
 ```c#
 class Employer
@@ -93,8 +95,9 @@ class DataTransformations
           }
 }
 ```
+The main aim of the above code description is to generate a single output from more than one input. The classes involved are defined, and in our case, class Employer and class Employee are used together with the details that appertain to both employers and employees. Data sources are then created of both the classes, but their precise details are specified, e.g., FirstName="Mark." Then a query to generate, e.g., an employee's name with the city they reside is created.
 ### Subsets of each Source Element are chosen
- To understand what subset is supposed to be chosen and from what source sequence, various factors are considered.
+ Various factors are considered to understand what subset is supposed to be chosen and from what source sequence.
 1. An initializer of an object can be employed, and that may appear in two forms.
 - Named type
 - Anonymous type
@@ -106,17 +109,17 @@ var query = from empl in Employer
 ```
 2. The other way is to implement the dot functionality, which will only select one member from a source element. 
 
-By taking an assumption of an object Employer which constitutes several public attributes and one of the public attributes is string city. When the query is executed, a string sequence will be displayed as the output.
+By taking an assumption of an object Employer which constitutes several public attributes and one of the public attributes is string city. A string sequence will be displayed as the output when the query is executed.
 ```c#
 var query = from empl in Employer 
             select empl.City;
 ```
 ### Activities carried out in the source elements
-There is a probability that there may lack the elements features or the elements themselves contained in the source sequence in the final output sequence. However, the input features of the source components might be the ones that are contained in the output sequence.
+There is a probability that there may be a lack of the elements or the elements themselves contained in the source sequence in the final output sequence. However, the input features of the source components might be the ones that are included in the output sequence.
 
-Using each radius to display area as the output, the selection of a query must be done. The perfect query to be used will be that query that will have the capability of taking a number series to represent the semi-circle radii. Then, a computed area will be returned as a string. 
+Using each radius to display area as the output, a query must be selected. The perfect query to be used will be that query that will have the capability of taking a number series to represent the semi-circle radii. Then, a computed area will be returned as a string. 
 
-Interpolation will hence be employed in the query to format every string presenting the outcome. All the actions that will have to be performed will be done in-between the curly braces of the text that will be interpolated. Then before the first quotation, a dollar sign is inputted in the interpolated string. The outcomes of those surgeries will be merged after they are completed. FormatQuery class.
+Interpolation will hence be employed in the query to format every string presenting the outcome. All the actions that will have to be performed will be done in-between the curly braces of the text that will be interpolated. Then before the first quotation, a dollar sign is inputted in the interpolated string. The outcomes of those surgeries will be merged after they are completed.
 ```c#
 class FormatQuery1
 {
@@ -140,9 +143,9 @@ class FormatQuery1
 ```
 A point of concern regarding performing operations on source elements is that if a query is translated to some other domain, then methods that will be called in such query operations shall not be accepted. In describing this, we shall take a function that is possessed by C#. 
 
-If one wants to translate the function to LINQ, it will not be done directly because the modules in C# are not guaranteed in LINQ, and in the same manner, LINQ functions may not be directly translated to SQL due to the same reason.
+If one wants to translate the function to LINQ, it will not be done directly because the modules in C# are not guaranteed in LINQ, and in the same manner, LINQ functions may not be now translated to SQL due to the same reason.
 ### In-memory objects - XML transformation
- When it comes to data transference from one module to another, it is achieved in simpler ways when transforming data between SQL databases, in-memory data structures, XML documents, .NET datasets, and many more. And LINQ queries account and cater for this simplicity. The conversion is of an XML element derived from an in-memory data structure from the example described below.
+ When it comes to data transference from one module to another, it is achieved in more superficial ways when transforming data between SQL databases, in-memory data structures, XML documents, .NET datasets, and many more. And LINQ queries account and cater for this simplicity. The conversion is of an XML element derived from an in-memory data structure from the example described below.
 ```c#
 class XMLTransformation
 {
