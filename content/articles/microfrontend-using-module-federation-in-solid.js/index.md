@@ -1,11 +1,13 @@
-There’s a lot of buzz going on around micro frontends right now. You may be asking yourself this question, how do I try it out? Not to worry. In this tutorial, we’ll be discussing micro frontends. We'll also set up micro frontends using module federation in Solid.js. Also, we take a look at how to share a micro frontend between Solid.js and React using module federation. So, let’s jump right in!
+ In this tutorial, we’ll be discussing micro frontends. We'll also set up micro frontends using module federation in Solid.js. Also, we take a look at how to share a micro frontend between Solid.js and React using module federation.
 
 ### What are Micro-frontends?
 Micro frontend originated from the concept of microservice. When we’re talking about micro frontends, think of it as a website composed of different web pages. These pages consist of features created by independent teams. Let’s look at Netflix for example. Imagine the header section of Netflix, the header video, and the carousel built by a separate team. Also, built by a different team is the video section.
 
-These teams have their different ways of working and they build up the main Netflix website. Another way to think of micro frontend could be separate pages on the main site. These pages combined together build the website.
+These teams have their different ways of working and they build up the main Netflix website. Another way to think of micro frontend could be separate pages on the leading site. These pages combined build the website.
 
-Micro frontends are one popular approach to increasing flexibility. It allows teams to combine components built in different frameworks or libraries. There are several ways to put in place micro frontends. We’ll be focusing on module federation in this tutorial but first, let’s look at the benefits of micro frontend and how we split our apps.
+Micro frontends are one popular approach to increasing flexibility. It allows teams to combine components built in different frameworks or libraries.
+
+There are several ways to put in place micro frontends. We'll be focusing on module federation in this tutorial but first, let's look at the benefits of micro frontend and how we split our apps.
 
 ### Benefits of Micro-frontends
 There are many benefits. Some of them include:
@@ -18,10 +20,10 @@ There are many benefits. Some of them include:
 ### How do we split apps?
 Here are some examples of how developers split large apps:
 #### By page
-Sometimes, having many pages opened at the same time can crash older devices. In such cases, splitting by page is the safest option. If you have good routing, you can run separate, specific micro-apps for each page. This is also beneficial to your team's developers.
+Sometimes, having many pages opened at the simultaneously  can crash older devices. In such cases, splitting by page is the safest option. You can run separate, specific micro-apps for each page if you have good routing.
 
 #### By functionality
-If you have a single page with many features. You can divide those large features into smaller apps. This will make each one an independent application that runs that specific feature.
+If you have a single page with many features. You can divide those prominent features into more minor apps. This will make each one an independent application that runs that specific feature.
 
 #### By section
 You can also divide your apps into sections. This enables different apps to share the same section or components.
@@ -29,10 +31,10 @@ You can also divide your apps into sections. This enables different apps to shar
 ### What is Module Federation?
 Zack Jackson created the module federation JavaScript architecture. The goal of module federation is to make code sharing easier and more independent. Module federation allows a JavaScript application to import code from another application. We can archive this by configuring Webpack. The module will generate a unique JavaScript entry file. Other applications can access this file. It gives you the freedom and flexibility to build your project the way you want.
 
-Now that we have an understanding of what module federation is, let’s move on to create a micro frontend in Solid.js.
+Now that we understand what module federation is, let’s create a micro frontend in Solid.js.
 
 ### Prerequisites 
-To follow through this article, we need to have have yarn installed. We also need to have basic knowledge of JavaScript.
+To follow through with this article, we need to have have yarn installed. NPM users can also follow through using the `npm install` and `npm start` in replace of the yarn commands. We also need to have basic knowledge of JavaScript.
 ### Creating a Micro-frontend in Solid.js
 First, navigate to the folder where you want your project to live and run the following command:
 
@@ -40,7 +42,7 @@ First, navigate to the folder where you want your project to live and run the fo
  npx create-mf-app
 ```
 
-This will be our host app.What we want the host app to do is consume a micro frontend from a remote app. Let’s give it the name of `host`. We’ll be setting up our app with the following configurations:
+This will be our host app. We want the host app to  consume a micro frontend from a remote app. Let’s give it the name of `host`. We’ll be setting up our app with the following configurations:
 
 ```bash
  Project-type: Application
@@ -67,6 +69,12 @@ yarn
 ```bash
  Set-ExecutionPolicy RemoteSigned
 ```
+The npm users can run this command:
+
+```bash
+npm install
+```
+
 
 We also want to create our remote app. So, let’s open up a new terminal and rerun the command:
 
@@ -95,6 +103,11 @@ Let’s go back to our host app and start it up:
 ```bash
 yarn start
 ```
+for the npm users, run:
+
+```bash
+npm start
+```
 
 We should see something like this:
 
@@ -104,6 +117,11 @@ Let’s also start up our remote app:
 
 ```bash
 yarn start
+```
+for npm users:
+
+```bash
+npm start
 ```
 
 We should also see something like the host app.
