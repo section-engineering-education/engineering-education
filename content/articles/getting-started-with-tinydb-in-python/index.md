@@ -4,7 +4,7 @@ status: publish
 published: true
 url: /getting-started-with-tinydb-in-python/
 title: How to Get Started with TinyDB in Python
-description: This tutorial will walk you through how to get started with TinyDB in Python.
+description: This tutorial will walk you through how to get started with TinyDB in Python. With TinyDB there is no need to set up a database server since everything is accessible directly through files saved on a storage device.
 author: catherine-karimi
 date: 2022-03-07T00:00:00-16:55
 topics: [Languages]
