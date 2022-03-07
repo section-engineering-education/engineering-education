@@ -4,7 +4,7 @@ status: publish
 published: true
 url: /working-with-sys-info-c-sharp/
 title: Working With System Information in C# Windows Form Application
-description: This article will explain how to use the System.Management and System.Management.ManagementObject classes to retrieve information about the computer and the operating system.
+description: This article will explain how to use the Management namespace and the Environment class to retrieve information about the computer and the operating system.
 author: kipkopus-samuel
 date: 2022-03-06T00:00:00-13:30
 topics: [Languages]
