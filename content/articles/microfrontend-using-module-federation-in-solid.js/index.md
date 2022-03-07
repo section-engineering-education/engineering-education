@@ -1,13 +1,17 @@
-There’s a lot of buzz going on around micro frontends right now. You may be asking yourself this question, how do I try it out? Not to worry. In this tutorial, we’ll be discussing micro frontends. We'll also set up micro frontends using module federation in Solid.js. Also, we take a look at how to share a micro frontend between Solid.js and React using module federation. So, let’s jump right in!
+In this tutorial, we'll be discussing micro frontends. We'll also set up micro frontends using module federation in Solid.js. Also, we'll take a look at how to share a micro frontend between Solid.js and React using module federation.
 
-### What are Micro-frontends?
-Micro frontend originated from the concept of microservice. When we’re talking about micro frontends, think of it as a website composed of different web pages. These pages consist of features created by independent teams. Let’s look at Netflix for example. Imagine the header section of Netflix, the header video, and the carousel built by a separate team. Also, built by a different team is the video section.
+### What are micro-frontends?
+Micro frontend originated from the concept of microservice. When talking about micro frontends, think of it as a website composed of different web pages.
 
-These teams have their different ways of working and they build up the main Netflix website. Another way to think of micro frontend could be separate pages on the main site. These pages combined together build the website.
+These pages consist of features created by independent teams. Let's look at Netflix, for example. Imagine the header section of Netflix, the header video, and the carousel built by a separate team.
 
-Micro frontends are one popular approach to increasing flexibility. It allows teams to combine components built in different frameworks or libraries. There are several ways to put in place micro frontends. We’ll be focusing on module federation in this tutorial but first, let’s look at the benefits of micro frontend and how we split our apps.
+These teams have their different ways of working, and they build up the main Netflix website. Another way to think of micro frontend could be separate pages on the leading site. These pages combined build the website.
 
-### Benefits of Micro-frontends
+Micro frontends are one popular approach to increasing flexibility. It allows teams to combine components built in different frameworks or libraries.
+
+There are several ways to put in place micro frontends. We'll be focusing on module federation in this tutorial but first, let's look at the benefits of micro frontend and how we split our apps.
+
+### Benefits of micro-frontends
 There are many benefits. Some of them include:
 - Independent deployments.
 - Independent updates and bug fixes.
@@ -18,21 +22,24 @@ There are many benefits. Some of them include:
 ### How do we split apps?
 Here are some examples of how developers split large apps:
 #### By page
-Sometimes, having many pages opened at the same time can crash older devices. In such cases, splitting by page is the safest option. If you have good routing, you can run separate, specific micro-apps for each page. This is also beneficial to your team's developers.
+Sometimes, having many pages opened simultaneously can crash older devices. In such cases, splitting by page is the safest option. You can run separate, specific micro-apps for each page if you have good routing.
 
 #### By functionality
-If you have a single page with many features. You can divide those large features into smaller apps. This will make each one an independent application that runs that specific feature.
-
+Suppose you have a single page with many features. Then, you can divide those prominent features into more minor apps. This will make each one an independent application that runs that specific feature.
 #### By section
 You can also divide your apps into sections. This enables different apps to share the same section or components.
 
 ### What is Module Federation?
-Zack Jackson created the module federation JavaScript architecture. The goal of module federation is to make code sharing easier and more independent. Module federation allows a JavaScript application to import code from another application. We can archive this by configuring Webpack. The module will generate a unique JavaScript entry file. Other applications can access this file. It gives you the freedom and flexibility to build your project the way you want.
+Zack Jackson created the module federation JavaScript architecture. The goal of the module federation is to make code sharing more manageable and more independent.
 
-Now that we have an understanding of what module federation is, let’s move on to create a micro frontend in Solid.js.
+Module federation allows a JavaScript application to import code from another application. We can archive this by configuring Webpack.
+
+The module will generate a unique JavaScript entry file. Other applications can access this file. It gives you the freedom and flexibility to build your project the way you want.
+
+Now that we understand what module federation is, let’s create a micro frontend in Solid.js.
 
 ### Prerequisites 
-To follow through this article, we need to have have yarn installed. NPM users can also follow through by using the `npm install` and `npm start` in place of the yarn commands. We also need to have basic knowledge of JavaScript.
+To follow through with this article, we need to have have yarn installed. NPM users can also follow through by using the `npm install` and `npm start` in place of the yarn commands. We also need to have basic knowledge of JavaScript.
 ### Creating a Micro-frontend in Solid.js
 First, navigate to the folder where you want your project to live and run the following command:
 
@@ -40,7 +47,7 @@ First, navigate to the folder where you want your project to live and run the fo
  npx create-mf-app
 ```
 
-This will be our host app.What we want the host app to do is consume a micro frontend from a remote app. Let’s give it the name of `host`. We’ll be setting up our app with the following configurations:
+This will be our host app. We want the host app to consume a micro frontend from a remote app. Let’s give it the name of `host`. We’ll be setting up our app with the following configurations:
 
 ```bash
  Project-type: Application
@@ -133,9 +140,11 @@ We should also see something like the host app.
 Now we have our two apps running.
 
 ### Consuming the Micro-frontend
-We want to look at how the host app will consume the application of the remote app. To do this, we’ll first have to build something. Let’s create a counter app in the remote app and then configure the host app to consume it.
+We want to look at how the host app will consume the application of the remote app. To do this, we’ll first have to build something.
 
-In our editor, let’s go to our remote directory. Inside the `src` folder, create a new file called `counter.jsx` and input this:
+Let’s create a counter app in the remote app and then configure the host app to consume it.
+
+In our editor, let’s go to our remote directory. Inside the src folder, create a new file called `counter.jsx` and input this:
 
 ```javascript
 import { createSignal } from "solid-js";
@@ -157,7 +166,7 @@ export default () => {
 };
 ```
 
-What we did here is create a counter that adds one whenever we click the add button. Go to the `app.jsx` and import the counter.jsx we created:
+What we did here is to create a counter that adds one whenever we click the add button. Go to the `app.jsx` and import the `counter.jsx` we created:
 
 ```javascript
 import Counter from "./Counter";
@@ -173,7 +182,7 @@ Save it and check out the result in our browser.
 
 ![remote_result](/engineering-education/microfrontend-using-module-federation-in-solid.js/counter.PNG)
 
-Now our counter is running but we want it in our host so how are we going to turn this into a micro frontend? That’s where Module Federation comes in. If we were to use npx, we’d have to go through a lot of processes that we do not have time for.
+Now our counter is running, but we want it in our host, so how are we going to turn this into a micro frontend? That’s where Module Federation comes in. If we were to use `npx`, we’d have to go through many processes that we do not have time for.
 
 Back to our app. In our `webpack.config.js` of our remote app. Scroll down to `plugins` and locate `ModuleFederationPlugin`. In the exposes section add this:
 
@@ -181,19 +190,21 @@ Back to our app. In our `webpack.config.js` of our remote app. Scroll down to `p
 "./Counter":"./src/Counter.jsx",
 ```
 
-Let’s restart our app. `ctrl + c` to stop and `yarn start` to start
+Let’s restart our app.  First enter `ctrl + c` to stop and `yarn start` to start
 
-You might not notice this but there is a new file generated by webpack. We call this file `remoteEntry.js`. You can see it by adding /remoteEntry.js in the `localhost:3000` URL. It is a manifest of all the modules exposed from `remote`.
+You might not notice this, but there is a new file generated by webpack. We call this file `remoteEntry.js`. You can see it by adding `/remoteEntry.js` in the `localhost:3000` URL. It is a manifest of all the modules exposed from `remote`.
 
 ![remote_entry](/engineering-education/microfrontend-using-module-federation-in-solid.js/remote_entry.PNG)
 
-Let’s copy the URL of our remote which is `localhost:3000/remoteEntry.js`. Go to our host directory. Inside of the `src/webpack.config.js`, scroll down to `plugins: ModuleFederationPlugin`. Instead of posting this inside our exposes, we’ll be pasting it inside the `remotes` section. So, inside our remote, paste this:
+Let’s copy the URL of our remote which is `localhost:3000/remoteEntry.js`. Then, go to our host directory. Inside of the `src/webpack.config.js`, scroll down to `plugins: ModuleFederationPlugin`. 
+
+Instead of posting this inside our exposes, we’ll be pasting it inside the `remotes` section. So, inside our remote, paste this:
 
 ```bash
 remote: "remote@http://localhost:3000/remoteEntry.js"
 ```
 
-This remote serves as a link to our federation plugin in our remote app. The next thing we’ll do is go to our `app.jsx` in our `host/src` folder and import our counter:
+This remote links to our federation plugin in our remote app. The next thing we’ll do is go to our `app.jsx` in our `host/src` folder and import our counter:
 
 ```bash
 import Counter from "remote/Counter";
@@ -203,10 +214,12 @@ Save and refresh the host app in our browser. We should see this:
 
 ![microfontend](/engineering-education/microfrontend-using-module-federation-in-solid.js/microfrontend.PNG)
 
-Module federation allows us to share code between these two applications at runtime. This is cool.
+Module federation allows us to share code between these two applications at runtime.
 
 ### Can we use another framework to consume our remote app?
-The answer is yes! Let’s see how we can do it. Let’s open another separate terminal and create a `new mf-app`
+The answer is yes! Let’s see how we can do it. 
+
+Let’s open another separate terminal and create a `new mf-app`
 
 ```bash
  npx create-mf-app
@@ -234,7 +247,9 @@ Navigate to the `webpack.config.js`. Scroll down to `plugins` and locate `Module
 remote: "remote@http://localhost:3000/remoteEntry.js"
 ```
 
-That’s not all. Our React host does not know anything about Solid.js. What we are going to do is wrap Solid.js component. So, let’s go back to our remote app folder. Inside our `src` folder create a file called `counterWrapper.jsx`. Paste this in:
+Our React host does not know anything about Solid.js. What we are going to do is wrap the Solid.js component. So, let’s go back to our remote app folder.
+
+Inside our `src` folder create a file called `counterWrapper.jsx`. Paste this in:
 
 ```javascript
 import { render } from "solid-js/web";
@@ -247,9 +262,11 @@ export default (el) => {
   render(Counter, el);
 };
 ```
-What we did here is import our counter into the `counterWrapper`, export a default function that renders our `Counter` into the `el`.
+WWe imported our counter into the `counterWrapper`, and exported a default function that renders our `Counter` into the `el`.
 
-The last thing we want to do here is go into our `webpack.config.js` and expose this module. Again, scroll down to `plugins` and locate `ModuleFederationPlugin`. Inside the `expose {}` we’ll add this too:
+We want to do the last thing here: go into our `webpack.config.js` and expose this module. Again, scroll down to `plugins` and locate `ModuleFederationPlugin`.
+
+Inside the `expose {}` we’ll add this too:
 
 ```bash
  "./counterWrapper":"./src/counterWrapper.jsx",
@@ -284,7 +301,9 @@ const App = () => {
 
 ReactDOM.render(<App />, document.getElementById("app"));
 ```
-Here, we imported the `counterwrapper`, brought in `useRef` and `useEffect` from React. We also created a variable for our `divRef` which we set to `null`. We then created a function for our `useEffect` calling out the `counterWrapper` inside it and assigning the current value of `divRef` to it. This will allow our `react-host` adapt and also link up with our remote app.
+We imported the `counterwrapper`, brought in `useRef` and `useEffect` from React. We also created a variable for our `divRef` which we set to `null`. 
+
+Next, We created a function for our `useEffect` calling out the `counterWrapper` inside it and assigning the current value of `divRef` to it. This will allow our `react-host` adapt and link up with our remote app.
 
 Let’s start our `react-host` app:
 
@@ -297,4 +316,8 @@ yarn start
 As you can see, we have a functional Solid.js micro frontend embedded into our `react-host`. Here’s a link to the [GitHub](https://github.com/oyedeletemitope/micro-frontend-with-module-federation-in-solid.js) repository for this project.
 
 ### Conclusion
-In this article, we discussed micro frontend and its benefits. We also talked about module federation. We then used it to build a micro frontend in Solid.js, embedded a Solid.js remote application into a React host app. When working on a large project with many teams, a micro frontend approach is a great option. Would you please share if this was helpful?
+In this article, we discussed micro frontend and its benefits. We also talked about module federation.
+
+We then used it to build a micro frontend in Solid.js, embedded a Solid.js remote application into a React host app.
+
+A micro front-end approach is a great option when working on a large project with many teams. Would you please share if this was helpful?
