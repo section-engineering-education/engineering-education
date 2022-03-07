@@ -33,16 +33,20 @@ In this tutorial, we will assume you are familiar with the fundamentals of devel
 You are required to have Visual Studio installed on your computer.
 
 ### Table of contents
+- [Objectives](#objectives)
+- [Prerequisites](#prerequisites)
+- [Table of contents](#table-of-contents)
 - [Part 1: Using Environment class](#part-1-using-environment-class)
-- [Steps to be followed](#steps-to-be-followed)
-  - [Step 1: Design a Windows Form page as shown below](#step-1-design-a-windows-form-page-as-shown-below)
-  - [Step 2: Naming TextBox Cotrols](#step-2-naming-textbox-cotrols)
-  - [Step 3: Coding](#step-3-coding)
-- [Part 2: Using Management Namespace](#part-2-using-management-namespace)
-- [Steps to be followed](#steps-to-be-followed-1)
-  - [Step 1: Design a Windows Form page as shown below](#step-1-design-a-windows-form-page-as-shown-below-1)
-  - [Step 2: Naming TextBox Cotrols](#step-2-naming-textbox-cotrols-1)
-  - [Step 3: Coding](#step-3-coding-1)
+  - [Step 1: Designing a Windows Form page](#step-1-designing-a-windows-form-page)
+  - [Step 2: Naming TextBox controls](#step-2-naming-textbox-controls)
+  - [Step 3: Adding code](#step-3-adding-code)
+    - [Button 1: Check system information](#button-1-check-system-information)
+    - [Button 2: Exit](#button-2-exit)
+- [Part 2: Using Management namespace](#part-2-using-management-namespace)
+  - [Step 1: Designing a Windows Form page](#step-1-designing-a-windows-form-page-1)
+  - [Step 2: Naming TextBox controls](#step-2-naming-textbox-controls-1)
+  - [Step 3: Adding the code](#step-3-adding-the-code)
+    - [Button 1: Check the system information](#button-1-check-the-system-information)
 - [Conclusion](#conclusion)
 
 ### Part 1: Using Environment class
