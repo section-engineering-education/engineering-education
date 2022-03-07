@@ -349,7 +349,7 @@ We have learned how to build a multi-class image classification model. We develo
 
 We also performed image preprocessing of the beans images dataset. After downloading the pre-trained MobileNetV2, we added custom layers using TensorFlow. Using the clean images dataset, we trained the deep neural network that classifies images into three classes.
 
-To get the multi-class image classification model we have trained in this tutorial, click [here](/engineering-education/image-classifier-keras/)
+To get the multi-class image classification model we have trained in this tutorial, click [here](https://colab.research.google.com/drive/1OruRUUTp5-MB-rHnxKQRkMvsnwhnMT1B?usp=sharing)
 
 ### References
 - [Convolution Neural Networks](/engineering-education/basics-of-convolution-neural-networks/)
