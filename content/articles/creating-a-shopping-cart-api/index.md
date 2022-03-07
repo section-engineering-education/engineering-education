@@ -97,7 +97,7 @@ public class Product {
 ```
 These classes provide the features, attributes, or fields we will be needing for the creation of objects.
 ### Creating your repositories
-The importance of creating a repository is to communicate to the database to manipulate your entities. It's like you have your database in your code for easy access. Spring Boot provides the `@Repository` annotation that helps the springboot know that this is for the database. In the repository package we have the following:
+The importance of creating a repository is to communicate to the database to manipulate your entities. It's like you have your database in your code for easy access. Spring Boot provides the `@Repository` annotation that helps the spring-boot know that this is for the database. In the repository package we have the following:
 #### AdminDao
 ```java
 @Repository
