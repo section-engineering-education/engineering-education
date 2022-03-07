@@ -79,10 +79,10 @@ Output:
 From this output, this dataset has two labeled columns: `timestamp` and `value`. The `timestamp` column shows the time the number of taxi rides was recorded. The `value` shows the number of taxi rides.
 
 #### Converting the `timestamp` column
-We need to convert the `timestamp` column to the DateTime format. It will enable us to perform time-series analysis and operations on this column. 
+We will convert the `timestamp` column to the DateTime format. DateTime will allow us to perform time-series analysis and oparations on the column. 
 
-We will use the Python Datetime module.
-
+We will use the `datetime` Python module.
+ 
 ```python
 from datetime import datetime
 ```
@@ -92,7 +92,7 @@ Run this code to convert the `timestamp` column:
 df['timestamp']=pd.to_datetime(df['timestamp'])
 ```
 ### Dataset resampling
-These are many data points in our time series dataset. It may be difficult to plot and visualize all the values. 
+These are many data points in our time series dataset. It may be difficult to plot and visualize all the data points. 
 
 We will resample the time-series dataset and aggregate it to hourly intervals. We use Pandas `resample` method to aggregate it to hourly intervals. 
 
