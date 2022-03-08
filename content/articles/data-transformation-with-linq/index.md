@@ -11,7 +11,7 @@ topics: [Languages]
 excerpt_separator: <!--more-->
 images:
 
-  - url: /engineering-education/using-linq-in-the-transformation-of-data/hero.jpg
+  - url: /engineering-education/using-linq-in-the-transformation-of-data/hero.png
     alt: C# image LINQ alt
 ---
 LINQ is a C# module that mainly deals with data. In this article, we will learn several things concerning Language Integrated Query. 
