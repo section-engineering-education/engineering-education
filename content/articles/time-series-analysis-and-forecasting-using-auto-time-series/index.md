@@ -370,3 +370,5 @@ To get the Python code in Google Colab., use this [link](https://colab.research.
 - [Time series decomposition in Python/](/engineering-education/time-series-decomposition-in-python/)
 - [Auto Time Series GitHub](https://github.com/AutoViML/Auto_TS)
 
+---
+Peer Review Contributions by: [Wilkister Mumbi](/engineering-education/authors/wilkister-mumbi/)
