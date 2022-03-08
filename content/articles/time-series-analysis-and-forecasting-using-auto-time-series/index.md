@@ -1,5 +1,21 @@
-A time series is a collection of data points organized in successive order over time. A time series shows all the data set variables that change over time.
+---
+layout: engineering-education
+status: publish
+published: true
+url: /time-series-analysis-and-forecasting-using-auto-time-series/
+title: Time Series Analysis and Forecasting using Auto Time Series
+description: This tutorial will be discussing how to build an electricity consumption prediction model using Auto Time Series library(Auto-TS).
+author: elisha-njeche
+date: 2022-03-08T00:00:00-21:00
+topics: [Machine Learning]
+excerpt_separator: <!--more-->
+images:
 
+  - url: /engineering-education/time-series-analysis-and-forecasting-using-auto-time-series/hero.jpg
+    alt: Time Series Analysis and Forecasting using Auto Time Series example image
+---
+A time series is a collection of data points organized in successive order over time. A time series shows all the data set variables that change over time.
+<!--more-->
 Time series analysis involves extracting meaningful patterns and other attributes of the historical data. This enables the model to gain knowledge about the trends in the dataset. Time series forecasting builds a model that predicts future values based on historical data. Times series models can be used to forecast forex exchange, business sales, stock prices, weather forecasts, and Covid-19 spread. 
 
 In stock prediction, a time series model tracks the movement of stock prices, such as Apple stock, it then identifies patterns and trends. This helps the model to forecast future Apple stock prices. Accurate prediction of the stock price will yield profit to the investors. In this tutorial, we will build an electricity consumption prediction model using Auto Time Series library(Auto-TS).
@@ -10,7 +26,7 @@ In stock prediction, a time series model tracks the movement of stock prices, su
 - [Benefits of using Auto Time Series library](#benefits-of-using-auto-time-series-library)
 - [Installing Auto Time Series library](#installing-auto-time-series-library)
 - [Working with the dataset](#working-with-the-dataset)
-- [Loading the dataset](#loadinng-the-dataset)
+- [Loading the dataset](#loading-the-dataset)
 - [Plotting the line graph](#plotting-the-line-graph)
 - [Splitting the dataset](#splitting-the-dataset)
 - [Selecting the timestamp and the target columns](#selecting-the-timestamp-and-the-target-columns)
