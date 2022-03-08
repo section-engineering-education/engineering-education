@@ -5,19 +5,19 @@
 ### Introduction
 Oftentimes, you want to manage and manipulate dates in your web app. These may include adding events or setting reminders. Having a calendar in your web application is a way to implement this. 
 
-In this tutorial, you will learn how to manage and manipulate dates in React using React-Calendar.
+In this article, you'll learn how to utilize React-Calendar to handle and modify dates in React.
 
-### What is React-Calendar
-React-calendar is an easy-to-use react calendar library. It provides functionality that helps you to manipulate and manage date and time. 
+### What is React-Calendar?
+React-calendar is an easy-to-use calendar library for React. It provides functionality that helps you to manipulate and manage date and time. 
 
-React-Calendar gives end-users the ability to pick day, month, or even year.
+React-Calendar gives end-users the ability to pick a day, month, or even a year.
 ### Goals
 
-In this tutorial, you will learn:
+In this article, you will learn:
 * How to add React-Calendar to your React app.
 * How to style React-Calendar.
 * How to customize React-Calendar.
-* How to select date range in React-Calendar.
+* How to enable users select a date range in React-Calendar.
 * How to create date picker.
 
 ### Prerequisite
@@ -28,9 +28,9 @@ In this tutorial, you will learn:
 * Google Chrome.
 
 ### Installation
-You need to install Nodejs 14.5.1 or higher. Visit Nodejs' official website to download and install Nodejs. It comes with a pre-installed Node Package Manager(NPM).
+Install Nodejs 14.5.1 or higher. Visit Nodejs' official website to download and install Nodejs. It comes with a pre-installed Node Package Manager(NPM).
 
-Check Nodejs version installed. Open your terminal and copy and paste the command below
+Check Nodejs version installed. Open your terminal and copy and paste the command below.
 
 ```bash
 
@@ -47,7 +47,7 @@ npm --version
 ```
 
 ### Creating a New React Project
-To get started you need to set up a react development environment.
+To begin, you must first create a react development environment.
 
 Type the command below in the built-in terminal of your code editor.
 
@@ -62,7 +62,7 @@ Your development environment will set up an application structure that looks lik
 
 ![react-application-structure](engineering-education/build-react-calendar-library/react-application-structure.png)
 
-You can run or test your application using the command below
+You can run or test your application using the command below.
 
 ```bash
 
@@ -122,7 +122,7 @@ export default App;
 
 In the code above, we used `useState` to store a date and we set the present date as its initial value using `Javascript Date object`. We then pass the date as a value to our Calendar component. 
 
-When a user selects a date the value of date will be set to the user's selected date. The selected date is then printed below your calendar.
+When a user selects a date, the value of date will be set to the user's selected date. The selected date is then printed below your calendar.
 
 Your application should look like the one below.
 
@@ -141,7 +141,7 @@ import 'react-calendar/dist/Calendar.css'
 ```
 
 ### Add Custom Styling to your Calendar
-You may want your calendar to be consistent with a particular design. You can achieve this by following the step below.
+You may want your calendar to be consistent with a particular design. This can be accomplished by following the steps below.
 
 1. Navigate to `node_modules/react-calendar/dist`.
 
@@ -158,9 +158,9 @@ My customized calendar now look like this.
 ![react-application-structure](engineering-education/build-react-calendar-library/customized-react-calendar.png)
 
 ### Select Date Range
-React-calendar has the date range feature. This enables users to select a custom date range. You can then provide some data between the user's desired date range.
+React-calendar has the date range feature. This gives users the ability to select a custom date range. After that, you can give some data that falls within the user's preferred date range.
 
-Copy the code below into your `App.js`
+Paste the following code into your `App.js`
 
 **src/App.js**
 ```javascript
@@ -197,17 +197,17 @@ export default App;
 
 ```
 
-We passed a `selectRange` prop into our Calendar component. `selectRange` has a default value of `false`. We changed this value to `true`, this enables the user to select a date range. 
+We passed a `selectRange` prop into our Calendar component. `selectRange` has a default value of `false`. We changed this value to `true`. This enables the user to select a date range. 
 
-When a user selects a date range. It highlights the range. React-calendar returns an array containing two elements as our state. The two elements indicate the start date and the end date. We can then print the start date and end date in our array.
+When a user chooses a date range to work with, React-calendar highlights the range. React-calendar returns an array containing two elements as our state. The two elements indicate the start date and the end date. We can then print the start date and end date in the array.
 
 
 ### Build Booking App with React-Calendar
 You can integrate other features with react-calendar to build an application with a complex feature.
 
-We will demonstrate this by building a booking app. In the booking app, users can click on a date of their choice. After clicking on the desired date, the application will display the available time slot. Users can then select a time slot. After selecting a time slot, the date and time of appointment will be displayed on the screen.
+We will demonstrate this by building a booking app. In the booking app, users can click on a date of their choice. After clicking on the desired date, the application will display the available time slot. Users can then select a time slot. After selecting a time slot, the date and time of the appointment will be displayed on the screen.
 
-Copy the code below in your `app.js` file.
+Copy the code below into your `app.js` file.
 **src/App.js**
 
 ```javascript
@@ -258,7 +258,7 @@ export default App;
 
 In the code above, we used `useState` to store the initial value of `showTime` as false.
 
-`Calendar` component have a default `onClickDay` prop, this listen to user click event. We passed in `setShowTime` into `onClickDay` prop, this sets `showTime` new value to true when any day in the calendar is clicked. 
+`Calendar` component has a default `onClickDay` prop. This listens to user click event. We passed in `setShowTime` into `onClickDay` prop. This sets `showTime` new value to true when any day in the calendar is clicked. 
 
 The `Time` component displays the time slot when the value of `showTime` changes to true. We passed `showTime` and `date` as props in `Time` component.
 
@@ -340,9 +340,9 @@ return (
 export default Times;
 
 ```
-The code above has an array of time slots called `time`. We map through the array to display each time slot in a button element. Also, the button element has an `onClick` event handler. It contains a `dislayInfo` function that triggers when a user clicks any of the buttons.
+The code above has an array of time slots called `time`. We map through the array to display each time slot as a button element. Also, the button element has an `onClick` event handler. It contains a `dislayInfo` function that triggers when a user clicks any of the buttons.
 
-The `displayInfo` function contains two `useState`. When `displayInfo` triggers, the value of info and event changes to true and innerText of button element respectively.
+The `displayInfo` function contains two `useState`. When `displayInfo` triggers, the value of info changes to true and the value of event changes to the innerText of button element.
 
 We passed in date as a prop from  `App.js` to `Time.js` finally to `Times.js`.
 
@@ -353,7 +353,7 @@ Our final application will look like the image below.
 ![react-application-structure](engineering-education/build-react-calendar-library/booking-app-demo.png)
 
 ### Conclusion
-We covered how to integrate react-calendar app, customize, set a date range and add a booking feature into our react app.
+We went over how to integrate the react-calendar app into our react app, customize it, set a date range, and add a booking feature.
 
 You can now use this knowledge to build more dynamic and powerful calendar in react.
 
