@@ -14,11 +14,11 @@ images:
   - url: /engineering-education/an-introduction-to-defi/hero.jpeg
     alt: An Introduction to DeFi Example Image
 ---
-The origin of blockchain technology has resulted in a dynamic shift in the financial and technological systems as to how applications are built and their fundamental structure in their operation.
+The origin of blockchain technology has resulted in a dynamic shift in financial and technological systems. This shift has resulted in how applications are developed and their fundamental structure in their operation.
 <!--more-->
 DeFi referred to as Decentralized Finance,  is a dynamic technological evolution of the traditional financial space. Hence, to adequately define DeFi, we need to have a basic understanding of traditional finance.
 
-Finance (Traditional Finance) is the process that involves the creation, management and investment of money and financial assets. In traditional finance, all these activities are controlled and/or regulated by a central authority. 
+Finance (Traditional Finance) is the process that involves the creation, management, and investment of money and financial assets. In traditional finance, all these activities are controlled or regulated by a central authority. 
 
 In traditional finance, the following are the core properties:
 - They hold custody of customers' funds.
@@ -27,16 +27,16 @@ In traditional finance, the following are the core properties:
 - Customers have no privacy to the service provider
 - User data are stored in opaque databases and applications
 
-Decentralized Finance on the other hand utilize blockchain technology to solve the centralized authority problem in traditional finance towards decentralizing control and operation.
+Decentralized Finance subsequently utilize blockchain technology to solve the centralized authority problem in traditional finance towards decentralizing control and operation.
 
 We can define DeFi by examining the following factors:
 - Custody & Settlement 
 - Censor of Transaction execution
 - Protocol Governance
 
-Decentralized Finance is achieved when there is a non-custody settlement, non-censor of transaction execution and no single protocol governance. 
+Decentralized Finance is a system characterized by non-custody settlement, non-censor of transaction execution, and no single protocol governance. 
 
-The other dimension of DeFi is Centralized Decentralized Finance where there is single protocol governance, while there is a non-custody settlement and non-censor of transactions.
+The other dimension of DeFi is Centralized Decentralized Finance with single protocol governance, while there is a non-custody settlement and non-censor of transactions.
 
 Central Intermediary and Decentralized Finance where there is non-custody of settlement and protocol governance, but there exists the censor of transaction execution is another dimension of Decentralized Finance.
 
@@ -72,13 +72,13 @@ There are five layers in the DeFi Stack, and they are as follows:
 - The Aggregation Layer
 
 ### The Settlement Layer
-This is the first layer of the DeFi Stack upon which other DeFi transactions are logged on the blockchain. On this layer, transactions occurring on DeFIi applications are settled using a currency which could be a stablecoin or a cryptocurrency such as USDT and ETH respectively.
+This is the first layer of the DeFi Stack upon which other DeFi transactions are logged on the blockchain. On this layer, transactions occurring on DeFi applications are settled through the use of a currency which could be a stablecoin or a cryptocurrency such as USDT and ETH.
 
 ### The Asset Layer
-The asset layer implements the different financial assets such as the native protocol asset (Ethereum). In this layer, there are standard protocols on how to interact with the token contract, ERC20 is one of the standards which is used on this layer to maintain a different balance for the asset. 
+The asset layer implements the different financial assets, such as the native protocol asset (Ethereum). In this layer, there are standard protocols on how to interact with the token contract, ERC20 is one of the standards used on this layer to maintain a different balance for the asset. 
 
 ### The Protocol Layer
-The protocols are created as smart contracts with rules defined to govern tasks and activities on the asset. The protocol layer is where different types of financial services are implemented such as Lending, Derivatives, Asset Management and more, and as such,  it provides liquidity to the DeFi ecosystem.
+The protocols are created as smart contracts with rules defined to govern tasks and activities on the asset. The protocol layer is where different types of financial services are implemented such as Lending, Derivatives, Asset Management, and more, and as such,  it provides liquidity to the DeFi ecosystem.
 
 ### The Application Layer
 The application layer is user-facing. It is an intermediary between the user and the cloud servers that interpolate with the entire stacks of the blockchain and particularly the underlying protocol layer.
@@ -125,7 +125,7 @@ The security risks that arise as a result of technical structure is through the 
 The security risk in this structure exists to exploit the incentive structure of the protocol to realize an unintended profit at the expense of the protocol or its users.
 
 ### Conclusion
-This article has covered all the foundational sections of decentralized finance. It is now easy for you to understand DeFi, its origin as a spin-off of traditional finance, its layers and services offered, and most importantly the risks that exist on the network and how they are structural.
+This article has covered all the foundational sections of decentralized finance, explaining the origin of DeFi as a spin-off of traditional finance, its layers and services, and the type of risks on the network.
 
 ---
 Peer Review Contributions by: [Wilkister Mumbi](/engineering-education/authors/wilkister-mumbi/)
