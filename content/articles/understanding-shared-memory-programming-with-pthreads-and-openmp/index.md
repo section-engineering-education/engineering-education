@@ -1,5 +1,5 @@
 ### Introduction
-Shared memory is used to speed up data flow between programs. Depending on the circumstances, programs may operate on one or more processors. This is a word used to define inter-thread communication.
+Shared memory is used to speed up data flow between programs. Depending on the circumstance, programs may operate on one or more processors. 
 
 The process may have several threads. Threads are `lightweight processes.` Parallelism is achieved by threading a process. Browser tabs, for example, are threads. MS Word uses threads to format text, handle input, and many other things. 
 
@@ -23,26 +23,33 @@ To better understand shared-memory programming, first look at the system archite
 
 ![System architecture](/engineering-education/understanding-shared-memory-programming-with-pthreads-and-openmp/system-architecture.png)
 
-Single-core or multi-core processors are used in the system architecture. A single-core processor operates one thread, while a multi-core processor runs several threads. There must be a shared memory location for several threads to execute. The threads generate this memory location by allocating a free-access memory space. The threads are separate yet share memory. In the shared memory paradigm, data is not assigned. Changes made to one thread in the shared memory paradigm affect all threads.
+Single-core or multi-core processors are used in a system architecture. A single-core processor operates one thread, while a multi-core processor runs several threads. 
+
+There must be a shared memory location for several threads to execute. The threads generate this memory location by allocating a free-access memory space. 
+
+The threads are separate yet share memory. In the shared memory paradigm, data is not assigned. Changes made to one thread in the shared memory paradigm affect all threads.
 
 ### An overview of shared memory process and threads
-Shared memory is a memory that many programs at the same time may access. This allows processes to communicate. Shared memory is present in all POSIX and Windows systems.
+Shared memory is a memory that many programs access at the same time. This allows processes to communicate. Shared memory is present in all POSIX and Windows systems.
 
-It is necessary to communicate amongst processes to exchange memory. It's usually situated in the process's address space. The shared memory segment must be added to the address space of other applications before usage.
+It is necessary to communicate amongst processes to exchange memory. It is usually situated in the process's address space. The shared memory segment must be added to the address space of other applications before usage.
 
-> It's normal for the operating system not to allow a process to access the memory of another process. When using shared memory, two processes must agree to lift this constraint.
+> It is typical for the operating system not to allow a process to access the memory of another process. When using shared memory, two processes must agree to lift this constraint.
 
 A process is a unit of work in a system. Text files are used to develop computer programs, which run as processes to do tasks. After loading, the program may be divided into stack, heap, text, and data portions.
 
 A thread is a single instance of a sequential computer program. Threads may be implemented at the user or kernel level.
 
-The thread management kernel is unaware of user-level threads. Threads may be generated, killed, and their contexts saved and restored using the thread library. The kernel controls threads. The software lacks thread management code. The OS natively supports threads in the kernel. Any application may be multithreaded. A single process may manage an app's threads.
+The thread management kernel is unaware of user-level threads. Threads may be generated, killed, and their contexts saved and restored using the thread library. 
+
+The kernel controls threads. The software lacks thread management code. The OS natively supports threads in the kernel. Any application may be multithreaded. A single process may manage an app's threads.
 
 ### Pthreads and their use
 Hardware manufacturers have long used threads in different ways. The variety of implementations makes porting threaded apps challenging.
+
 Threads needed a defined programming interface. This interface is defined by IEEE POSIX 1003.1c (1995). Pthreads are POSIX conforming implementations. Most hardware now supports Pthreads as well as proprietary threads.
 
-To understand threads let's first know how to create threads.
+To understand threads let us first know how to create threads.
 
 #### Developing Threads
 In developing threads, the following functions are used.
@@ -51,11 +58,13 @@ In developing threads, the following functions are used.
 pthread_create (thread, attr, start_routine, arg) 
 ```
 
-pthread create creates a new thread here. Use this method anywhere in your software. It specifies the C++ code to execute after creating a thread. The attr argument sets thread attributes. Use NULL to show default values. Start routine only accepts one. It must be a void pointer. If none is given, use NULL.
+Pthread create creates a new thread here. Use this method anywhere in your software. It specifies the C++ code to execute after creating a thread. 
+
+The attr argument sets thread attributes. Use NULL to show default values. Start routine only accepts one. It must be a void pointer. If none is given, use NULL.
 
 A process's thread count is implementation-dependent. Restarting threads may be peers. The active threads are not supposed to be hierarchical or interconnected.
 
-Let's learn how to kill a thread now that we know how to start one.
+Let is learn how to kill a thread now that we know how to start one.
 
 #### Closing Threads
 In closing threads, the following functions are used.
@@ -64,9 +73,9 @@ In closing threads, the following functions are used.
 pthread_exit (status) 
 ```
 
-pthread_exit terminates a thread. In most cases, a thread's duty is completed by using pthread_exit().
+Pthread_exit terminates a thread. In most cases, a thread's duty is completed by using pthread_exit().
 
-Using pthread_exit allows threads to continue running after main() (). If not, they'll be stopped after main().
+Using pthread_exit allows threads to continue running after main() (). If not, they will be stopped after main().
 
 Here is a C++ application to illustrate the two actions:
 
@@ -105,7 +114,7 @@ int main()
 ```
 The output of the code will be:
 
-"`bash
+```bash
 New thread developed (3179116288)... 
 
 Hi and welcome to Section Engineering education - got 11 !
@@ -113,11 +122,11 @@ Hi and welcome to Section Engineering education - got 11 !
 
 To run the above code in the UNIX system, run the below command:
 
-"`bash
+```bash
 gcc first.c -lpthread -o output1
 ```  
 
-Gcc is the software used to run the c++ codes in Linux systems. The `-lpthred` in the command tells the command that the file being compiled is a pthread program. The `-o' specifies the output of the compiled program.
+GCC is the software used to run the C++ code in Linux systems. The `-lpthred` in the command tells the command that the file being compiled is a pthread program. The `-o' specifies the output of the compiled program.
 
 After the code is compiled, an output file is created and saved in the terminal's same directory folder. For our case, the output file will be saved as `output1` as we specified in the command. To view the output, run the below code:
 
@@ -132,7 +141,7 @@ The below screenshot shows all the processes involved.
 #### Uses of pthreads
 Pthreads are useful in the following ways:
 
-1. `Build an adaptive user interface` - Threads are useful in user interfaces. Input from the user is processed and displayed in a loop. Processing might take longer in some instances, causing the user to wait. Using a separate thread for long-running tasks may improve software responsiveness. An operation may be halted.
+1. `Build an adaptive user interface` - Threads are useful in user interfaces. Input from the user is processed and displayed in a loop. Processing might take longer in some instances, causing the user to wait. Using a separate thread for long-running tasks may improve software responsiveness. 
 
 2. `Build a web server` - A web server must be able to download large files rapidly. Opening a new thread for each request saves time. Multiple threads can run on many processors at once.
 
