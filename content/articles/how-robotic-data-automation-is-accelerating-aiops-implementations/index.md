@@ -1,4 +1,21 @@
-## How Robotic Data Automation is Accelerating AIOps Implementations
+---
+layout: engineering-education
+status: publish
+published: true
+url: /how-robotic-data-automation-is-accelerating-aiops-implementations/
+title: How Robotic Data Automation is Accelerating AIOps Implementations
+description: This article will discuss the role of robotic data automation in accelerating the implementation of artificial intelligence for IT operations.
+author: jeska-mweni
+date: 2022-03-07T00:00:00-20:00
+topics: []
+excerpt_separator: <!--more-->
+images:
+
+  - url: /engineering-education/how-robotic-data-automation-is-accelerating-aiops-implementations/hero.png
+    alt: AIOps Example Image
+---
+Robotic Data Automation (RDA) is a key enabler of artificial intelligence for IT operations (AIOps). It functions similarly to robotic processing automation by automating the DataOps.
+<!--more-->
 
 Robotic Data Automation (RDA) is a platform that leverages the advantages of artificial intelligence and automation to create intelligent IT workflows using low-code databots. Automation facilitates data integration when handling machine data for analytics. RDA is a framework and toolkit with the capabilities for implementing data automation.
 
