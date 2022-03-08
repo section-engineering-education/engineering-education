@@ -6,7 +6,7 @@ url: /understanding-collections-in-python/
 title: Understanding Collections in Python
 description: This article will help the reader understand specialized data structures that come with the collections module in Python.
 author: leah-wangari
-date: 2022-03-02T00:00:00-21:30
+date: 2022-03-08T00:00:00-11:30
 topics: [Languages]
 excerpt_separator: <!--more-->
 images:
@@ -14,9 +14,11 @@ images:
   - url: /engineering-education/understanding-collections-in-python/hero.png
     alt: Understanding Collections in Python
 ---
-In computer programming, a collection is a grouping of similar data types. These unit classes may assist in organizing and managing related items. Collections feature data structures that help manage vast volumes of data effectively.
+In computer programming, a collection is a group of similar data types. These unit classes may assist in organizing and managing related items.
 <!--more-->
-The `collection` module in Python provides a wide variety of containers. Containers can store a variety of items and can be re-created. These containers include tuples, lists, dictionaries, and much more.
+Collections feature data structures that help manage vast volumes of data effectively. The `collection` module in Python provides a wide variety of containers.
+
+Containers can store a variety of items and can be re-created. These containers include tuples, lists, dictionaries, and much more.
 
 In this article, we'll explore some of the containers found in the `collections` module.
 
@@ -40,7 +42,7 @@ As mentioned earlier, collection data types may be used to store a collection of
 
 3. **Tuples** - They are an ordered, immutable sequence of multiple things held in one variable. A tuple is a variable name followed by two parentheses and commas. Python requires a trailing comma to identify it as a string. Following the variable name, a tuple may be constructed using a pair of parentheses and comma-separated objects.
 
-4. **Dictionaries** - A dictionary consists of unsorted key/value pairs. There may be any number of pairs of keys and values. Dictionaries, like sets, lack order and after creation, a dictionary may be modified. Values overflow, and only the most recent added is returned if the dictionary contains more than one item.
+4. **Dictionaries** - A dictionary consists of unsorted key/value pairs. There may be any number of pairs of keys and values. Dictionaries, like sets, lack order and after creation they may be modified. Values overflow, and only the most recent added is returned if the dictionary contains more than one item.
 
 The above data types can be distinguished into mutable, immutable, set type, and mappings.
 
@@ -116,8 +118,8 @@ Value3 33
 Value4 44
 ```
 
-#### 3. namedtuple()
-This function will give each value in the tuple a unique name. It removes the requirement for index values. It's much easier to retrieve these values using `namedtuple()` since you don't have to remember the index values.
+#### 3. namedtuple
+This function will give each value in the tuple a unique name. It removes the requirement for index values. It's much easier to retrieve these values using `namedtuple` since you don't have to remember the index values.
 
 The code below illustrates the `namedtuple()` function:
 
@@ -183,7 +185,9 @@ The code's output will be the value: `3`.
 #### 7. UserList
 This class wraps a list of things. Using this class as a basis enables other list-like classes to override existing methods or add new ones.
 
-This class was built to subclass from a list. The underlying list is now a class property, making it simpler to use. It's the class that creates a list-like object. When an event occurs, it is recorded in a standard list. One or no dispute may be called on the constructor provided by the list's subclasses.
+This class was built to subclass from a list. The underlying list is now a class property, making it simpler to use. It's the class that creates a list-like object.
+
+When an event occurs, it is recorded in a standard list. One or no dispute may be called on the constructor provided by the list's subclasses.
 
 #### 8. UserDict
 Dictionaries are wrapped up in this class. Subclassing from `dict` requires the creation of this class. The dictionary is now a class property to make it easier to use.
@@ -202,7 +206,11 @@ The collection modules can be used to:
 Let's look at one of the implementations!
 
 #### Handling missing keys using the defaultdict module
-Dictionaries in Python are containers that map a single key to a single value, with the access time complexity of 0(1). However, the user may not be familiar with all of the dictionary keys in many applications. An error message is shown whenever a user attempts to access an unavailable key. The missing key can be handled using the `defaultdict`, `get()`, and `setdefault()` methods. But in this example, we will use the `defaultdict` method to handle missing keys.
+Dictionaries in Python are containers that map a single key to a single value, with the access time complexity of 0(1).
+
+However, the user may not be familiar with all the dictionary keys in many applications. An error message is shown whenever a user attempts to access an unavailable key.
+
+The missing key can be handled using the `defaultdict`, `get()`, and `setdefault()` methods. But in this example, we will use the `defaultdict` method to handle missing keys.
 
 `defaultdict` as a parameter that expects a function (default factory) as its argument. The default factory is set to `int`, that is: 0. The default factory value is returned if the `defaultdict` has no keys. It has the following advantages over `get()` and `setdefault()`:
 
