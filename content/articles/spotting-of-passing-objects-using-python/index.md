@@ -1,6 +1,21 @@
-### Spotting of Passing Objects Using Python
-Tracking and spotting the moving objects has become crucial in our lives today. Talking of security, cameras help us a great deal to detect and track moving objects.
+---
+layout: engineering-education
+status: publish
+published: true
+url: /spotting-of-passing-objects-using-python/
+title: Spotting Of Passing Objects Using OpenCV In Python 
+description: This tutorial will discuss how to detect moving objects in real-time video streams using OpenCV.
+author: jacob-muganda
+date: 2022-03-08T00:00:00-00:00
+topics: []
+excerpt_separator: <!--more-->
+images:
 
+  - url: /engineering-education/spotting-of-passing-objects-using-python/hero.png
+    alt: Spotting Of Passing Objects Using OpenCV In Python Hero Image
+---
+Tracking and spotting the moving objects has become crucial in our lives today. Talking of security, cameras help us a great deal to detect and track moving objects.
+<!--more-->
 In this tutorial, we will learn how to spot a passing object and return the spotted object real-time using computer vision.
 
 ### Table of contents
@@ -220,3 +235,6 @@ You can find the full source [here](https://github.com/lizpart/codes).
 For further reading, we suggest you to read [this](https://pyimagesearch.com/2015/05/25/basic-motion-detection-and-tracking-with-python-and-opencv/) article.
 
 Happy coding!
+
+---
+Peer Review Contributions by: [Srishilesh P S](/engineering-education/authors/srishilesh-p-s/)
