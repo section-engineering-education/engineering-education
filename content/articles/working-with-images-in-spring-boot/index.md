@@ -202,7 +202,7 @@ Note that we add a [query parameter](https://branch.io/glossary/query-parameters
 
 If you were to run this example with the code so far, you should have seen an error that looks like this:
 
-![sample cors error](/working-with-images-in-spring-boot/sample-cors-error.png)
+![sample cors error](/engineering-education/working-with-images-in-spring-boot/sample-cors-error.png)
 
 This is a common problem that many, including myself, have faced as a new developer. This is because we haven’t configured the proper CORS (cross-origin resource sharing) settings. By default, our browser doesn’t allow us to take resources (i.e. images) from another origin (webserver). This is what is meant by the _Same Origin Policy_ above. Thankfully, Spring makes it fairly straightforward to configure CORS. We only need to configure a bean of type `WebMvcConfigurer`. This bean will contain a method that configures the CORS settings:
 

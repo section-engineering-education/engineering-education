@@ -40,7 +40,7 @@ The prerequisites for this article includes understanding of the following conce
 - [Further reading](#further-reading)
 
 ### Setting up the work environment
-Before we can work with the SQLAlchemy library, we need to have a Flask application running. To make the process easier, we will clone an existing Flask web application used in our [previous tutorial](/implementing-flask-wtform/) which contains a registration form with all the routes setup.
+Before we can work with the SQLAlchemy library, we need to have a Flask application running. To make the process easier, we will clone an existing Flask web application used in our [previous tutorial](/engineering-education/implementing-flask-wtform/) which contains a registration form with all the routes setup.
 
 We proceed to clone the starter pack file from [this](https://github.com/corpsgeek/flask-form-handling.git) Github repository.
 

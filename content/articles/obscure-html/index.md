@@ -15,9 +15,9 @@ images:
     alt: computer image asm example
 ---
 If you're not familiar with [HTML](https://www.w3schools.com/html/default.asp), this article isn't going to be of much use to you. Sorry.
-
-There are [a lot of HTML tags](https://www.w3schools.com/tags/default.asp). Sometimes I learn about one, get really excited to use it in my next project. Then I remember that I hardly ever do web projects at all. Today is the day that I finally get to use my obscure knowledge! I'll show you some of the tags which are the most interesting to me. All these will work with HTML5, and are listed in no particular order.
 <!--more-->
+There are [a lot of HTML tags](https://www.w3schools.com/tags/default.asp). Sometimes I learn about one, get really excited to use it in my next project. Then I remember that I hardly ever do web projects at all. Today is the day that I finally get to use my obscure knowledge! I'll show you some of the tags which are the most interesting to me. All these will work with HTML5, and are listed in no particular order.
+
 ### 1. template
 
 The `<template>` tag contains content that the user can't see. You need to use JavaScript to render it later. A template can be rendered many times, at any time, and be placed anywhere on the page.

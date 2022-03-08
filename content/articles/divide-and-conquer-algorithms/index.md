@@ -167,7 +167,7 @@ In this case, the output remains at 0 and does not output negative numbers. Ther
 
 Compared to the greedy approach, this method gives the optimal solution to the problem. We observed that the maximum profit in the greedy method was 655. 
 
-In this case, the total profit is 865. We solved the above problem using the greedy method in the earlier article. You may go through the solution at this [link](/greedy-algorithms/). 
+In this case, the total profit is 865. We solved the above problem using the greedy method in the earlier article. You may go through the solution at this [link](/engineering-education/greedy-algorithms/). 
 
 ### Advantages 
 - The program can work with many buy and sell operations due to its recurring property. Multiple buy and sell operations take place, and the best profits are returned. 

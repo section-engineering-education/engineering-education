@@ -3,11 +3,11 @@ layout: engineering-education
 status: publish
 published: true
 url: /assertion-and-design-by-contract-in-java/
-title: Assertion and design by contract in Java
+title: Assertion and Design by Contract in Java
 description: In this article, we will look at assertions which are the assumptions you make as a programer. This assumption should be correct to avoid errors in the functionality of the program. 
 author: paul-mwangi
 date: 2021-08-14T00:00:00-06:00
-topics: [Language]
+topics: [Languages]
 excerpt_separator: <!--more-->
 images:
 
@@ -79,7 +79,7 @@ public void division()
 If the expression of the assert statement is false, an error is thrown specifying that the program has errors. This is referred to as `assertion failure`.
 
 ### Enabling and disabling assertions
-Java provides command line parameters to allow enabling and disabling assertions. Assertions enabling is done using the following parameters:
+Java provides command line parameters that allow us to enable and disable assertions. Assertions enabling is done using the following parameters:
 
 ```Java
 -ea

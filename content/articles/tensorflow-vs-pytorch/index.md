@@ -13,7 +13,7 @@ images:
   - url: /engineering-education/tensorflow-vs-pytorch/hero.png
     alt: TensorFlow vs PyTorch example image
 ---
-Deep Learning (DL) frameworks are gradient computing engines widely used in deep learning and neural networks. If you haven't studied neural networks and how they function, please feel free to read this [article](/differences-between-artificial-intelligence-machine-learning-and-deep-learning/) before diving into reading this article.  
+Deep Learning (DL) frameworks are gradient computing engines widely used in deep learning and neural networks. If you haven't studied neural networks and how they function, please feel free to read this [article](/engineering-education/differences-between-artificial-intelligence-machine-learning-and-deep-learning/) before diving into reading this article.  
 <!--more-->
 ### Introduction
 Given how powerful and transformative Deep Learning (DL) is, several libraries have sprung up in recent years to make designing, testing, and deploying DL models easy. Some of these libraries include Microsoft's [Cognitive Toolkit](https://docs.microsoft.com/en-us/cognitive-toolkit/) (CNTK), Apache's [MXNET](https://mxnet.apache.org/versions/1.7.0/), Facebook's [PyTorch](https://pytorch.org/), and Google's [TensorFlow](https://www.tensorflow.org/).

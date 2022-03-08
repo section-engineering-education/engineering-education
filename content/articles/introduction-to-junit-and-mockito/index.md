@@ -15,11 +15,11 @@ images:
     alt: JUnit and Mockito example image
 
 ---
-If you’ve ever written any software in your life, you would know that bugs are an inevitable problem. One useful tool to help you resolve bugs faster is writing unit tests. A [unit test](/software-testing-part1/) is a piece of code used to test the smallest components of your program. Usually, this would refer to individual methods/functions. 
+If you’ve ever written any software in your life, you would know that bugs are an inevitable problem. One useful tool to help you resolve bugs faster is writing unit tests. A [unit test](/engineering-education/software-testing-part1/) is a piece of code used to test the smallest components of your program. Usually, this would refer to individual methods/functions. 
 <!--more-->
 In this tutorial, we will learn to use two popular Java frameworks for unit testing, i.e. [JUnit](https://en.wikipedia.org/wiki/JUnit) and [Mockito](https://site.mockito.org/).
 ### Prerequisites
-Before beginning this tutorial, some basic knowledge of Maven will be needed. We will use it to get our dependencies for these frameworks. Additionally, some knowledge of the theory behind unit testing would be great but is not required. To get a more detailed article on unit testing click [here](/software-testing-part1/). 
+Before beginning this tutorial, some basic knowledge of Maven will be needed. We will use it to get our dependencies for these frameworks. Additionally, some knowledge of the theory behind unit testing would be great but is not required. To get a more detailed article on unit testing click [here](/engineering-education/software-testing-part1/). 
 
 Lastly, to make things easier make sure to use an IDE with JUnit integration. A couple popular Java IDEs like Eclipse and Intellij would allow you to easily run your tests. We will not go over the specifics of running tests in particular IDEs or with Maven.
 
@@ -209,7 +209,7 @@ class DivisionTests{
 }
 ```
 
-Note, the second parameter we gave to the `assertThrows` method was in the form of a **lambda expression**. In case you are not familiar with these, you can learn about it from my article on [functional programming](/functional-programming-in-java/).
+Note, the second parameter we gave to the `assertThrows` method was in the form of a **lambda expression**. In case you are not familiar with these, you can learn about it from my article on [functional programming](/engineering-education/functional-programming-in-java/).
 
 ### Introduction to Mockito
 Now that we got the basics of JUnit covered, let’s see where Mockito comes into the picture. Often there are cases where we create classes that rely on the service of others. As an example, suppose we wanted a `power` method for our `Calculator` class. This method uses the help of a `multiply` method of a `MultiplicationService` class. 

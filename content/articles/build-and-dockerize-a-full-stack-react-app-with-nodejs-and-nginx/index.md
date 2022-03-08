@@ -5,7 +5,7 @@ published: true
 url: /build-and-dockerize-a-full-stack-react-app-with-nodejs-and-nginx/
 title: Build and Dockerize a Full-stack React app with Node.js, MySQL and Nginx
 description: In this article, we will build a full-stack web application using React, Node.js, MySQL, and Nginx. We will also dockerize each application, and deploy them. 
-author: moses-m
+author: moses-maina
 date: 2021-08-09T00:00:00-13:30
 topics: [Containers, Node.js]
 excerpt_separator: <!--more-->

@@ -32,9 +32,9 @@ This tutorial is for applications that use [Agora](https://www.agora.io/) and wa
 
 If you'd like to learn how to build some applications with React Native and Agora, refer to the articles below.
 
-- [Livestreaming](/react-native-agora-livestreaming-app/).
+- [Livestreaming](/engineering-education/react-native-agora-livestreaming-app/).
 
-- [Video Conferencing](/react-native-agora-video-conference-app/).
+- [Video Conferencing](/engineering-education/react-native-agora-video-conference-app/).
 
 The fundamentals of Node.js and Express will not be covered in this tutorial. If you are not comfortable with the fundamentals, this is a [helpful tutorial](https://medium.com/@jaeger.rob/introduction-to-nodes-express-js-db5617047150) that you can go through before beginning with this project.
 
@@ -177,7 +177,7 @@ We need to use the RESTful APIs in the following sequence.
 2. Start capturing screenshots.
 3. Stop capturing screenshots.
 
-Capturing screenshots is part of Agora's cloud recording. Hence why the process for capturing screenshots is very similar to recording streams. If you'd like to learn how to record streams, refer to [this article](/agora-cloud-recording/).
+Capturing screenshots is part of Agora's cloud recording. Hence why the process for capturing screenshots is very similar to recording streams. If you'd like to learn how to record streams, refer to [this article](/engineering-education/agora-cloud-recording/).
 
 > You can't record and take screenshots simultaneously in one session. To do both, acquire two resource IDs, one for recording and the other for capturing screenshots. Agora will charge you for both the sessions.
 

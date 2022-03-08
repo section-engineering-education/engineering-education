@@ -39,9 +39,9 @@ Julia's math-friendly syntax makes it ideal for users of [Matlab](https://www.ma
 An example of such a library is [Flux](https://fluxml.ai/), and it's composed of several model patterns ideal for standard use cases. It offers strong support for interoperability with other Julia packages. Flux is entirely written in Julia, meaning that users can implement modifications.
 
 ### Python Language Advantages
-Unlike Julia, Python is a general-purpose language. Despite not being built specifically for data science, Python offers many advantages to machine-learning and data scientists. For a more in depth look at how Python is used in data manipulation, check out [this article](/matplotlib-visualization-python/).
+Unlike Julia, Python is a general-purpose language. Despite not being built specifically for data science, Python offers many advantages to machine-learning and data scientists. For a more in depth look at how Python is used in data manipulation, check out [this article](/engineering-education/matplotlib-visualization-python/).
 
-Machine learning scientists and data scientists use Python in [sentiment analysis](https://en.wikipedia.org/wiki/Sentiment_analysis) and [natural language processing (NLP)](/five-real-life-use-cases-of-natural-language-processing-nlp/). This is because Python libraries offer a convenient way to write highly performing algorithms.
+Machine learning scientists and data scientists use Python in [sentiment analysis](https://en.wikipedia.org/wiki/Sentiment_analysis) and [natural language processing (NLP)](/engineering-education/five-real-life-use-cases-of-natural-language-processing-nlp/). This is because Python libraries offer a convenient way to write highly performing algorithms.
 
 Python has existed for [around 30 years](https://en.wikipedia.org/wiki/Python_(programming_language)) in which it has established strong relationships with many third-party packages. This has attracted many users. One of the drawbacks associated with Python is speed.
 

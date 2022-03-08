@@ -139,7 +139,7 @@ We can now add and delete items from the admin page. Great!
 ![admin panel](/engineering-education/react-and-django-rest-framework/adminpanel.jpg)
 
 ### Step 2: Putting in the APIs
-You can learn more about APIs in this amazing [article](/rest-api/).
+You can learn more about APIs in this amazing [article](/engineering-education/rest-api/).
 
 Install the `djangorestframework` and `django-cors-headers`:
 

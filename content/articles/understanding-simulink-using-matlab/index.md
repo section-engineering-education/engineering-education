@@ -33,7 +33,7 @@ To follow this article along - the reader will need the following:
 
 You can also get a free Simulink trial from [here](https://www.mathworks.com/campaigns/products/trials.html?prodcode=SL&s_tid=SL_B_pers_exclgetters_trial_2).
 
-If you are new to Matlab, you can check [this tutorial](/getting-started-with-matlab/) which will help you understand the basic concepts of it.
+If you are new to Matlab, you can check [this tutorial](/engineering-education/getting-started-with-matlab/) which will help you understand the basic concepts of it.
 
 ### Simulink library browser
 The Simulink *library browser* will provide blocks, waves, functions, models, and other useful tools that would help you with your simulation.
