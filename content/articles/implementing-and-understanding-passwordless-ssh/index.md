@@ -26,7 +26,7 @@ The Secure Shell Host protocol (SSH) is one of the important security protocols 
 5. Advantages and disadvantages of passwordless SSH.
 
 #### What is Passwordless SSH
-The Secure Shell or Secure Socket Shell protocol(SSH) is a cryptographic-based network protocol that Yatu Ylonen wrote in 1995. The protocol is applied when establishing secure connections between two devices, i.e., a client and a server. SSH can be implemented using several authentication techniques. The two widely used techniques are public/private-key (cryptographic) based authentication and password-based authentication.
+The Secure Shell or Secure Socket Shell protocol (SSH) is a cryptographic-based network protocol that Yatu Ylonen wrote in 1995. The protocol is applied when establishing secure connections between two devices, i.e., a client and a server. SSH can be implemented using several authentication techniques. The two widely used techniques are public/private-key (cryptographic) based authentication and password-based authentication.
 
 The passwordless SSH protocol uses a process where your device establishes a connection with a remote computer without the need of you keying in a password. The improved alternative eliminates the need to use complex passwords that are hard to recall. Thus, the passwordless SSH protocol protects its users from common password-based attacks.
 
