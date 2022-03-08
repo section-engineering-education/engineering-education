@@ -167,3 +167,6 @@ In this tutorial, we discussed body segmentation using the BodyPix model. We ins
 
 ### Further reading
 - [BodyPix](https://github.com/tensorflow/tfjs-models/tree/master/body-pix)
+
+---
+Peer Review Contributions by: [Willies Ogola](/engineering-education/authors/willies-ogola/)
