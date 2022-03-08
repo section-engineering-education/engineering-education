@@ -1,6 +1,16 @@
 ### Introduction
 These are just a few options our app needs. A customizable app setting is also a superb strategy to enhance the Android app user experience. The Android Preference Library manages user preferences. Using the Android Preference Library, let us create a simple setup screen!
 
+### Table of contents
+- [Prerequisites](#prerequisites)
+- [Step 1 Creating the project](#step-1-creating-the-project)
+- [Step 2 Adding a menu to the main activity](#step-2-adding-a-menu-to-the-main-activity)
+- [Step 3 Adding the second activity](#step-3-adding-the-second-activity)
+- [Step 4 Working with MainActivitydotkt](#step-4-working-with-mainactivitydotkt)
+- [Step 5 Working with SettingActivitydotkt](#step-5-working-with-settingactivitydotkt)
+- [Step 6 Running the application](#step-6-running-the-application)
+- [Conclusion](#conclusion)
+
 ### Prerequisites
 To follow along with this tutorial, have the following:
 
@@ -9,32 +19,16 @@ To follow along with this tutorial, have the following:
 3. Have basic knowledge on [preferences](https://developer.android.com/reference/android/preference/Preference)
 4. Have android studio installed.
 
+### Step 1 Creating the project
+To create an android project, open the android studio application on your computer. Select the `start a new project` option to create a new android project. After starting a new project, select `Empty activity` as your project template and then click `next` to proceed to the next steps. Configure the application name and enter your own. In this case, we will call it `Android Preferences.` For this project we will use Kotlin so Select `Kotlin`* as your default language. Leave everything else as default and  click `finish` to complete setting up the android studio and wait a few seconds for it to build up your project.
 
-### Table of contents
-- [Creating the project](#creating-the-project)
-- [Working on the project](#working-on-the-project)
-- [Adding a menu to the main activity](#adding-a-menu-to-the-main-activity)
-- [Adding the second activity](#adding-the-second-activity)
-- [Working with MainActivitydotkt](#working-with-mainactivitydotkt)
-- [Working with SettingActivitydotkt](#working-with-settingactivitydotkt)
-- [Running the application](#running-the-application)
-- [Conclusion](#conclusion)
+Let us now work on our project:
 
-### Creating the project
-- Open the android studio application on your computer.
-- In the project dialog box, *`select start a new project`*.
-- Select *` Empty activity`* as your project template. Click *` next`* to proceed to the next steps.
-- Configure the application name and enter your own. In this case, we will call it `Android Preferences.`
-- Select *` Kotlin`* as your default language in this project.
-- Leave everything else as default.
-- Click *` finish`* to complete setting up the android studio and wait a few seconds for it to build up your project.
-
-### Working on the project
 We shall have two activities in our application. That is;
 1. The main activity (root activity)
 2. Settings activity - will hold our android preferences.
    
-#### Adding a menu to the main activity
+### step 2 Adding a menu to the main activity
 The menu will be significant because we can add a menu item(s) into it that will help us navigate to the Setting Activity. We will achieve that by adding a click listener to each item(s).
 
 - To add a menu resource, click the project folder on the left side of the `IDE` or simply `alt+1` -> app -> res folder.
@@ -54,6 +48,7 @@ Add the following code snippet to the setting_menu.XML to add an item to the men
        app:showAsAction="ifRoom"
        android:title="@string/settings"/>
 ```
+
 To ensure the menu bar is visible to the user's application, add the following code to the `MainActivity.kt` file.
 
 ```Kotlin
@@ -62,9 +57,10 @@ To ensure the menu bar is visible to the user's application, add the following c
         return true
     }
 ```
+
 It will just inflate the setting_menu that we created earlier.
 
-#### Adding the second activity
+### Step 3 Adding the second activity
 Add another activity to our main project by:
 - Double-click app file -> java file ->  application package name(com._.androidprefernces).
 - Right-click the file -> new -> `activity` -> `Settings activity`.
@@ -77,7 +73,8 @@ Add another activity to our main project by:
    >3. A new value resource file called arrays. This contains entries and values that will be visible to the user for selection. Mainly common for preferences such as list preferences, multi-select list preferences, and checkbox preferences.
 
 - We need to include our new arrays for our settings preferences. Hence we need to delete the default arrays and edits our new array values as follows.
-```Kotlin
+
+```xml
 <resources>
     <string-array name="theme_entries">
         <item>Light</item>
@@ -110,6 +107,7 @@ Add another activity to our main project by:
     </string-array>
 </resources>
 ```
+
 We will have theme values and entries for our list preferences in the general preference category. Entries will be displayed to the users to choose which theme and download size of the file they need to set for the application.
 We will use the theme and download entries to set the default value displayed before making changes. The entries will also help us in writing the Kotlin code.
 
@@ -118,7 +116,7 @@ This will contain all the preferences we will use in our application, i.e., list
 
 >Note; using drawables is optional, and you need to ignore the icon(s) code snippet in the code below. If you have to use drawable, you can add your own best from the vector assets.
 
-```Kotlin
+```xml
  <PreferenceCategory app:title="Personal details"
         app:icon="@drawable/ic_person_pin">// It is the holder of a particular group of settings
 
@@ -208,7 +206,7 @@ Below are the critical attributes in the root preferences. They will help you un
 6. `Summary: off` - a string is set when a switch is set off.
 7. `app: dependency` indicates that a particular setting preference depends on another preference for its functionality. The depended must be set to true for the dependent to function; otherwise will be inactive.
 
-#### Working with MainActivitydotkt
+### Step 4 Working with MainActivitydotkt
 We need to ensure we have capabilities to navigate within the two activities. We need to set an intention for the main activity to do so.
 Add the following code to the MainActivity.kt file.
 
@@ -233,7 +231,7 @@ android:parentActivityName=".MainActivity"
 ```
 The code above is just notifying the current activity(child) that once the back button is clicked, it should go to the main activity, which is its parent.
 
-#### Working with SettingActivitydotkt
+### Step 5 Working with SettingActivitydotkt
 We need to make our settings abit functional. We shall be using [shared preferences](https://developer.android.com/reference/android/content/SharedPreferences). We will design so that a user selects a theme; a new theme will be loaded, i.e., light, dark, and system theme.
 
 Ensure the activity class have the extra code snippet separated with a comma as shown below;
@@ -286,7 +284,7 @@ Add the below code to unregister the shared preferences;
             .unregisterOnSharedPreferenceChangeListener(this)
     }
 ```
-### Running the application
+### Step 6 Running the application
 You can run the application to a virtual device(emulator) or a physical device with an `SDK` version upper than the set one during app configuration.
 
 ### Conclusion
