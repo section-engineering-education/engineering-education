@@ -45,7 +45,7 @@ The process of establishing a secure connection using the passwordless SSH proto
 > The lack of passwords is among the main reasons for preferring the passwordless SSH over its password-based alternative.
 
 #### Use Cases of SSH
-The SSH protocol is the remote standard method fo accessing and managing Linux-based servers. Many corporate organizations utilize the protocol to administer and manage their web servers.
+The SSH protocol is the remote standard method for accessing and managing Linux-based servers. Many corporate organizations utilize the protocol to administer and manage their web servers.
 
 Some of the administration functions performed on servers using the SSH protocol include:
 
