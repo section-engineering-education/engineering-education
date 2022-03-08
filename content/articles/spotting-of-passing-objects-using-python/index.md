@@ -14,9 +14,9 @@ images:
   - url: /engineering-education/spotting-of-passing-objects-using-python/hero.png
     alt: Spotting Of Passing Objects Using OpenCV In Python Hero Image
 ---
-Tracking and spotting the moving objects has become crucial in our lives today. Talking of security, cameras help us a great deal to detect and track moving objects.
+Tracking and spotting moving objects has become crucial in our lives today. Talking of security, cameras help us a great deal to detect and track moving objects.
 <!--more-->
-In this tutorial, we will learn how to spot a passing object and return the spotted object real-time using computer vision.
+In this tutorial, we will learn how to spot a passing object and return the spotted object in real-time using computer vision.
 
 ### Table of contents
 - [Introduction](#introduction)
@@ -27,15 +27,15 @@ In this tutorial, we will learn how to spot a passing object and return the spot
 - [Conclusion](#conclusion) 
 
 ### Pre-requisites
-- You should have basic understanding of Python.
-- A brief overview and prior knowledge in computer vision would help. You can learn a little about computer vision [here](/engineering-education/how-to-adjust-image-to-higher-or-lower-resolution-using-python/).
-- You should have a webcam in your laptop.
+- You should have a basic understanding of Python.
+- A brief overview and prior knowledge of computer vision would help. You can learn a little about computer vision [here](/engineering-education/how-to-adjust-image-to-higher-or-lower-resolution-using-python/).
+- You should have a webcam on your laptop.
 
 With those at hand, we will be able to tackle our project. Let's dive in.
 
 ### Installation
 #### Install OpenCV
-Firstly, we have to install `OpenCV` to manipulate and work with the webcam images or videos. It also helps with computer vision related solutions to process images and live videos.
+Firstly, we have to install `OpenCV` to manipulate and work with the webcam images or videos. It also helps with computer-vision related solutions to process images and live videos.
 
 To learn more about OpenCV, it is recommended to go through [this documentation](https://docs.opencv.org/4.x/d9/df8/tutorial_root.html).
 
@@ -48,7 +48,7 @@ pip install OpenCV-Python
 This library allows for modules such as `cv2` to be installed. Since it is a cross-platform library, it contains a variety of functions to read and manipulate images.
 
 #### Install NumPy
-NumPy is used to express data as multi-dimensional arrays. In our case, we representation the image pixel values as arrays.
+NumPy is used to express data as multi-dimensional arrays. In our case, we represent the image pixel values as arrays.
 
 You can read more about NumPy in [this documentation](https://numpy.org/doc/).
 
@@ -69,7 +69,7 @@ After successful installations, we will now jump into the code area.
 
 ### Implementation
 #### Import external libraries
-As we had discussed earlier, we will import all the above mentioned libraries to our Python code as shown:
+As we had discussed earlier, we will import all the above-mentioned libraries to our Python code as shown:
 
 ```python
 import cv2  
@@ -150,8 +150,8 @@ thresh = cv2.threshold(frameDelta, 25, 255, cv2.THRESH_BINARY)[1]
 ```
 
 In the above code:
-- The absolute differences between the pixel matrices in `mapping1` and `mapping2` fetches the absolute value of the pixel intensity `frameDelta`.
-- The `THRESH_BINARY` function helps turn color of passing object to white, while sets the color of the background to black.
+- The absolute differences between the pixel matrices in `mapping1` and `mapping2` fetch the absolute value of the pixel intensity `frameDelta`.
+- The `THRESH_BINARY` function helps turn the color of the passing object to white while setting the color of the background to black.
 
 #### Find the contours
 To enlarge the images, we call a `dilate` function from `cv2` as shown:
@@ -164,9 +164,9 @@ count = imutils.grab_contours(count)
 
 In the above code:
 - We use the `findContours` function to get the contours.
-- Two arguments are passed to it to retrieve and approximate, thus saving on memory by removing repeated points and compressing it.
-- The `dilate` function accepts two inputs, one of which is our input image and the other is known as the structuring element or kernel, which determines the nature of the operation.
-- Dilation of the image helps increases the size of the object.
+- Two arguments are passed to it to retrieve and approximate, thus saving on memory by removing repeated points and compressing them.
+- The `dilate` function accepts two inputs, one of which is our input image, and the other is known as the structuring element or kernel, which determines the nature of the operation.
+- Dilation of the image helps increase the size of the object.
 
 #### Format the displayable text and time layout
 To be able to write text on the footage, you will have to call a `cv2` function `putText`.
@@ -196,7 +196,7 @@ sto, mapping2=rec.read()
 ```
 
 #### Wrapping it up
-We will need to assign a key to record the key press and terminate our program. On terminating the program, we clean the webcam and release any resources in use.
+We will need to assign a key to record the keypress and terminate our program. On terminating the program, we clean the webcam and release any resources in use.
 
 Lastly, we destroy all the windows constructed by `OpenCV`.
 
@@ -220,7 +220,7 @@ Output for `FOOTAGE`:
 ![footage](/engineering-education/spotting-of-passing-objects-using-python/footage.gif)
 
 ### Conclusion
-In this tutorial, we have learned several concepts that helps with spotting passing objects using OpenCV and other important related tools.
+In this tutorial, we have learned several concepts that help with spotting passing objects using OpenCV and other important related tools.
 
 Key areas covered in our discussion are:
 - Installation of external libraries
@@ -232,7 +232,7 @@ Key areas covered in our discussion are:
 
 You can find the full source [here](https://github.com/lizpart/codes).
 
-For further reading, we suggest you to read [this](https://pyimagesearch.com/2015/05/25/basic-motion-detection-and-tracking-with-python-and-opencv/) article.
+For further reading, we suggest you read [this](https://pyimagesearch.com/2015/05/25/basic-motion-detection-and-tracking-with-python-and-opencv/) article.
 
 Happy coding!
 
