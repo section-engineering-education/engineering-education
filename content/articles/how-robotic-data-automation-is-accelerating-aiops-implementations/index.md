@@ -11,7 +11,7 @@ topics: []
 excerpt_separator: <!--more-->
 images:
 
-  - url: /engineering-education/how-robotic-data-automation-is-accelerating-aiops-implementations/hero.png
+  - url: /engineering-education/how-robotic-data-automation-is-accelerating-aiops-implementations/hero.jpg
     alt: AIOps Example Image
 ---
 Robotic Data Automation (RDA) is a key enabler of artificial intelligence for IT operations (AIOps). It functions similarly to robotic processing automation by automating the DataOps.
@@ -36,11 +36,11 @@ To demonstrate how RDA creates values, we need to assess its functions in a log 
 - Summarizing alert log pattern: RDA summarizes the alert log patterns to reduce the costs and time of retaining historical knowledge.
 - Providing alternative or additional data sources: where data is complex or non-existent, RDA provides other data sources to the log management system.
 
-- Anomaly detection- RAD collects data and compares it to the historical CPU usage data for a specific node to identify the likelihood of any anomalies.
+- Anomaly detection- RDA collects data and compares it to the historical CPU usage data for a specific node to identify the likelihood of any anomalies.
 - Change detection- RDA examines virtual machines and compares them to the current states to determine any changes.
 - Ticket clustering- it compiles tickets in a firm's [ticket management system](https://www.itbusinessedge.com/data-center/finding-value-in-robotic-data-automation/), clusters them together, and sends the output to a dashboard for visualization.
 
-### Robotic process automation (RPA) vs. Robotic Data Automation (RDA)
+### Robotic process automation (RPA) vs. robotic data automation (RDA)
 While both RDA and RPA are critical automation systems and show many similarities, they also differ in various ways. Robotic data automation is a data-driven platform that utilizes software bots and low-code pipelines to automate IT workflows. It enables organizations to automate data integration, preparation, and transformational tasks. The primary goal of RDA is to enhance automation using no-code data workflows. This makes the implementation of AIOps viable by eliminating manual data integrations.
 
 [Robotic Process Automation](/engineering-education/what-is-robotic-process-automation/) also presents the concept of automation. But its automation does not focus on AIOps but rather on reducing the manual handling of otherwise repetitive processes. After installation on a server, virtual machine, or cloud, RPA can control how an entire company's applications run. It mimics human actions on computer systems to enhance productivity. RPA runs on an organization's servers without any human intervention. It acts as virtual workers that operate on a pre-defined schedule. This automation system handles aggregation, sorting, distributing big data, and segregation activities.
@@ -58,7 +58,7 @@ RDAF uses low-code databots to create instantaneous pipelines. Each databot is l
 ### Conclusion
 Robotic data automation is a new technology that helps organizations solve AIOps challenges. It simplifies and accelerates AIOps implementations while automating data integration processes. RDA's intervention ensures cost-effective data analysis. Its replacement of manual interventions with automated services makes organizations operate more efficiently.
 
-RDA also automates IT workflows and facilitates anomaly detection and change detection in computer systems. It has a close association with Robotic Process Automation. RDA concentrates on how data moves through the low-code pipelines during integration and distribution, while RPA focuses more on enhancing automation at the operations processes level. of the process. Essentially, RDA is data-driven while RPA is process-driven.
+RDA also automates IT workflows and facilitates anomaly detection and change detection in computer systems. It has a close association with Robotic Process Automation. RDA concentrates on how data moves through the low-code pipelines during integration and distribution, while RPA focuses more on enhancing automation at the operations processes level of the process. Essentially, RDA is data-driven while RPA is process-driven.
 
 ### Further reading
 - [Differences between Artificial Intelligence, Machine Learning, and Deep Learning](/engineering-education/differences-between-artificial-intelligence-machine-learning-and-deep-learning/)
@@ -68,3 +68,6 @@ RDA also automates IT workflows and facilitates anomaly detection and change det
 - [Introduction to UiPath in Robotic Process Automation (RPA)](/engineering-education/introduction-to-uipath-in-rpa/)
 
 - [How AIOps is Transforming IT Operations](/engineering-education/how-aiops-is-transforming-it-operations/)
+
+---
+Peer Review Contributions by: [Collins Ayuya](https://www.section.io/engineering-education/authors/collins-ayuya/)
