@@ -1,12 +1,11 @@
-Next.js has been used to create Server-side Rendering(SSR) and Static Site Generation(SSG) apps using JavaScript. The app fetches extra data from the server after the browser loads the website's HTML page. 
+Next.js is used to create Server-side Rendering(SSR) and Static Site Generation(SSG) using JavaScript. The app fetches extra data from the server after the browser loads the website's HTML page. 
 
-Technologies such as SSG often have to rebuild the app when data from the source is updated and render it to the user at build time—making the site load even faster hence a good user experience.
+Technologies such as SSG often have to rebuild the app when data from the source is updated and render it to the user at build-time, making the site load even faster hence a good user experience.
 
 This guide will help the reader learn how to use Next.js with Notion API and create a blog app powered by Typescript code.
 
 ### Prerequisites
 To follow along with this article, it is helpful to have the following:
-
 - [Node.js](https://nodejs.org/en/) installed on your computer.
 - Basic knowledge working with Typescript and Next.js.
 
@@ -32,15 +31,13 @@ Navigate to the first default page, `page 1`, and click on it. Change the title 
 
 ![page-title-change](/engineering-education/create-a-nextjs-blog-using-typescript-and-notion-api/page-title-change.png)
   
-Change the icon and cover image too. You can choose to use free images from [Unsplash](https://unsplash.com/). Hover over just above the page title and click the `Add cover` button to add this cover image.
+Change the icon and cover image too. You can choose to use free images from [Unsplash](https://unsplash.com/). Hover over the page title and click the `Add cover` button to add this cover image.
 
 ![cover_image_change](/engineering-education/create-a-nextjs-blog-using-typescript-and-notion-api/cover-image-change.png)
 
 ![cover_image_changed](/engineering-education/create-a-nextjs-blog-using-typescript-and-notion-api/cover-image-changed.png)
 
-Every new page you create is a blank canvas where you can add content you like, such as plain text, lists, images, etc. 
-
-To add content to this page, scroll down to the content section and add some `prerequisites` to your blog page as shown below:
+Every new page you create is a blank canvas where you can add content you like, such as plain text, lists, images, etc. To add content to this page, scroll down to the content section and add some `prerequisites` to your blog page as shown below:
 
 ![page-content-section](/engineering-education/create-a-nextjs-blog-using-typescript-and-notion-api/page-content-section.png)
 
@@ -62,9 +59,7 @@ Click outside the modal when done. The post should now be listed as shown below:
 
 ![database_posts](/engineering-education/create-a-nextjs-blog-using-typescript-and-notion-api/database-posts.png)
 
-Repeat the same process for `page 2` and `page 3`.
-
-Feel free to add as many posts as you can while following the steps described above.
+Repeat the same process for `page 2` and `page 3`. Feel free to add as many posts as you can while following the steps described above.
 
 ### Setting up an integration on Notion
 Navigate to the `Settings & Members` section of your notion dashboard page. Click `Integrations` under the `Workspace` section on the resulting modal. Then set the notion integration as shown in the following steps:
@@ -110,7 +105,7 @@ This command will create a basic Next.js app inside the folder `blog_app`. Once 
 npm install @notionhq/client
 ```
 
-On the project root folder, create a `.env` file. This file will host the notion integration key that Next.js needs to access and connect with the notion API. Go ahead and add the host two notion variables, the integration token key and the database id:
+On the project root folder, create a `.env` file. This file will host the notion integration key that Next.js needs to access and connect with the notion API. Go ahead and add the two notion variables, the integration token key and the database id:
 
 ```bash
 NOTION_KEY=""
@@ -123,7 +118,7 @@ To get the `NOTION_DATABASE` ID, check your workspace page URL. Copy the first p
 
 ![notion-api](/engineering-education/create-a-nextjs-blog-using-typescript-and-notion-api/notion-id.png)
 
-In this case the id would be `53905ad838f04731b48fb1e40c25766a`. Let's your workspace URL is `https://www.notion.so/your_database_id?v=some_long_hash`. The parameter `your_database_id` should be the `NOTION_DATABASE` you are looking for.
+In this case the id would be `53905ad838f04731b48fb1e40c25766a`. Let us say that your workspace URL is `https://www.notion.so/your_database_id?v=some_long_hash`. The parameter `your_database_id` should be the `NOTION_DATABASE` you are looking for.
 
 Start the development server to test the app.
 
@@ -176,7 +171,7 @@ import Link from 'next/link';
 import {posts} from '../lib/notion'
 ```
 
-Then fetch the posts from the server-side using the Next.js `getServerSideProps()` function;
+Then, fetch the posts from the server-side using the Next.js `getServerSideProps()` function;
 
 ```ts
 export async function getServerSideProps() {
@@ -199,7 +194,7 @@ interface Props {
 }
 ```
 
-To show the list of posts, render the posts to the view that lists down the fetch the posts from the server-side:
+To show the list of posts, render the posts to the view that lists down the fetched posts from the server-side:
 
 ```html
 const Home: NextPage<Props> = (props ) => {
@@ -254,7 +249,7 @@ const nextConfig = {
 }
 ```
 
-Add the following styles to `styles/Home.module.css`. This will style the listed of the fetched posts:
+Add the following styles to `styles/Home.module.css`. This will style the fetched posts:
 
 ```css
 .container {
@@ -501,6 +496,7 @@ Ensure that the development server is running, and then click on any title of th
 
 ![single_post_page](/engineering-education/create-a-nextjs-blog-using-typescript-and-notion-api/single-post-page.png)
 
-This guide helped the reader set up a notion database. We then used the set-up and ran it with Next.js. 
+### Conclusion
+This guide helped the reader set up a notion database. We then used the database with Next.js. 
 
 Check this project on this [GitHub](https://github.com/kimkimani/nextjs-blog-app-using-typescript-and-notion) repository.
