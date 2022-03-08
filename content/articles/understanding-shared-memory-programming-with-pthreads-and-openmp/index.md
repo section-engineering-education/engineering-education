@@ -23,33 +23,23 @@ To better understand shared-memory programming, first look at the system archite
 
 ![System architecture](/engineering-education/understanding-shared-memory-programming-with-pthreads-and-openmp/system-architecture.png)
 
-Single-core or multi-core processors are used in a system architecture. A single-core processor operates one thread, while a multi-core processor runs several threads. 
-
-There must be a shared memory location for several threads to execute. The threads generate this memory location by allocating a free-access memory space. 
-
-The threads are separate yet share memory. In the shared memory paradigm, data is not assigned. Changes made to one thread in the shared memory paradigm affect all threads.
+Single-core or multi-core processors are used in system architecture. A single-core processor operates one thread, while a multi-core processor runs several threads. There must be a shared memory location for several threads to execute. The threads generate this memory location by allocating a free-access memory space. The threads are separate yet share memory. In the shared memory paradigm, data is not assigned. Changes made to one thread in the shared memory paradigm affect all threads.
 
 ### An overview of shared memory process and threads
-Shared memory is a memory that many programs access at the same time. This allows processes to communicate. Shared memory is present in all POSIX and Windows systems.
-
-It is necessary to communicate amongst processes to exchange memory. It is usually situated in the process's address space. The shared memory segment must be added to the address space of other applications before usage.
+Shared memory is a memory that many programs access at the same time. This allows processes to communicate. Shared memory is present in all POSIX and Windows systems. It is necessary to communicate amongst processes to exchange resources. It is usually situated in the process's address space. The shared memory segment must be added to the address space of other applications before usage.
 
 > It is typical for the operating system not to allow a process to access the memory of another process. When using shared memory, two processes must agree to lift this constraint.
 
-A process is a unit of work in a system. Text files are used to develop computer programs, which run as processes to do tasks. After loading, the program may be divided into stack, heap, text, and data portions.
+A process is a unit of work in a system. The text files are used to develop computer programs, which run as processes. After loading, the program may be divided into stack, heap, text, and data portions.
 
-A thread is a single instance of a sequential computer program. Threads may be implemented at the user or kernel level.
+A thread is a single instance of a sequential computer program. Threads may be implemented at the user or kernel level. The thread management kernel is unaware of user-level threads. Threads may be generated, killed, and their contexts saved and restored using the thread library. 
 
-The thread management kernel is unaware of user-level threads. Threads may be generated, killed, and their contexts saved and restored using the thread library. 
-
-The kernel controls threads. The software lacks thread management code. The OS natively supports threads in the kernel. Any application may be multithreaded. A single process may manage an app's threads.
+Threads are controlled and supported natively by the operating system in the kernel. There is no thread management code in the program.  Any application has the potential to be multithreaded. A single process may be responsible for managing the threads of an application.
 
 ### Pthreads and their use
-Hardware manufacturers have long used threads in different ways. The variety of implementations makes porting threaded apps challenging.
+Any programming language may utilize Pthreads, which stands for POSIX Threads. It enables a computer to do several tasks at once. Threads are created and managed using the POSIX Threads API.
 
-Threads needed a defined programming interface. This interface is defined by IEEE POSIX 1003.1c (1995). Pthreads are POSIX conforming implementations. Most hardware now supports Pthreads as well as proprietary threads.
-
-To understand threads let us first know how to create threads.
+To understand pthreads let us first know how to create threads.
 
 #### Developing Threads
 In developing threads, the following functions are used.
@@ -58,13 +48,9 @@ In developing threads, the following functions are used.
 pthread_create (thread, attr, start_routine, arg) 
 ```
 
-Pthread create creates a new thread here. Use this method anywhere in your software. It specifies the C++ code to execute after creating a thread. 
+The `pthread create()` method creates a new thread that is invoking it. The new thread begins execution by calling `start routine()`; arg is passed as the sole argument of `start_routine()`.
 
-The attr argument sets thread attributes. Use NULL to show default values. Start routine only accepts one. It must be a void pointer. If none is given, use NULL.
-
-A process's thread count is implementation-dependent. Restarting threads may be peers. The active threads are not supposed to be hierarchical or interconnected.
-
-Let is learn how to kill a thread now that we know how to start one.
+Let us learn how to kill a thread now that we know how to start one.
 
 #### Closing Threads
 In closing threads, the following functions are used.
@@ -73,9 +59,7 @@ In closing threads, the following functions are used.
 pthread_exit (status) 
 ```
 
-Pthread_exit terminates a thread. In most cases, a thread's duty is completed by using pthread_exit().
-
-Using pthread_exit allows threads to continue running after main() (). If not, they will be stopped after main().
+`Pthread_exit` terminates a thread. In most cases, a thread's duty is completed by using `pthread_exit().` Using pthread_exit allows threads to continue running after main(). If not, they will be stopped after main().
 
 Here is a C++ application to illustrate the two actions:
 
@@ -126,7 +110,7 @@ To run the above code in the UNIX system, run the below command:
 gcc first.c -lpthread -o output1
 ```  
 
-GCC is the software used to run the C++ code in Linux systems. The `-lpthred` in the command tells the command that the file being compiled is a pthread program. The `-o' specifies the output of the compiled program.
+GCC is the software used to run the C++ code in Linux systems. The `-lpthred` command tells the command that the file being compiled is a pthread program. The `-o' specifies the output of the compiled program.
 
 After the code is compiled, an output file is created and saved in the terminal's same directory folder. For our case, the output file will be saved as `output1` as we specified in the command. To view the output, run the below code:
 
@@ -148,11 +132,15 @@ Pthreads are useful in the following ways:
 3. `Building a graphical user interface` - In graphical apps, a windowing system notification asking an app to redo a window portion is expected. Its window will be blank if it is preoccupied. In this scenario, having one thread handle windowing system messages and requests is prudent (as well as user input). If an operation takes more than 0.2 seconds, it is sent to another thread.
 
 ### OpenMP and its use
-OpenMP is an SMP programming package (symmetric multi-processors). Threads in OpenMP exchange memory and data. This includes C++ and Fortran. OpenMP functions are in omp.h. There are sequential and parallel elements to an OpenMP program. It generally entails initializing variables and the environment.
+OpenMP is a library for SMP (symmetric multi-processors, or shared-memory processors) parallel programming. All threads in an OpenMP software share memory and data. C, C++, and Fortran are all supported by OpenMP. A header file named omp.h contains the OpenMP functionalities. Sections of an OpenMP application are sequential, while others are parallel. An OpenMP program often begins with a sequential selection that sets up the environment, initializes the variables, etc.
 
-While an OpenMP application may use several threads simultaneously, only one is used sequentially (in the parallel sections). Only the controller thread goes end to end. When software is dismantled, more threads arise. 
+When an OpenMP application is launched, it will utilize one thread (in the sequential portions) and numerous threads (in the parallel sections).
 
-This specifies a parallel chunk of code (omp pragma). Whenever a parallel segment is reached, slave threads are established. The parallel code may run on another thread. Threads finish and join the master. Continue until all parallel threads are finished. An omp get thread num() method may get each thread's ID. The controller thread has ID 0. However, OpenMP masks the low-level issues and permits high-level parallel code definition.
+The primary thread is the one that goes all the way from the beginning to the conclusion. Other threads will fork due to the parallel parts of the program. Secondary threads are what they're called.
+
+A particular directive marks a block of code that will be performed in parallel (omp pragma). This directive will induce secondary threads to arise when the execution reaches a parallel portion (indicated by omp pragma). The similar component of the code is executed separately by each thread. When a thread is completed, it is joined to the master. When all threads have been terminated, the master resumes programming in the parallel part.
+
+Each thread has an ID found using the `omp get thread num()` function in the runtime library. The primary thread has the number 0 as its ID.
 
 Use OpenMP directives to:
 
@@ -172,7 +160,7 @@ Here's what you should do to create a thread using OpenMP:
 }
 ```
 
-It forks other threads to do the job in the block following the #pragma construct. Several threads join together to form a coalition. The "master" thread will be identified by thread-id 0. 
+After this line, the main thread forks multiple instances to do the #pragma construct's task. All threads process the block in parallel. The primary thread will have a thread id of zero.
 
 Let's look at the example code. Save it as `second.c`.
 
@@ -191,7 +179,7 @@ int main(void)
 }
 ```
 
-To compile the code above, run the command `gcc -fopenmp second.c  -o  second` and view the output using `./second`.
+To compile the code above, run the command `gcc -fopenmp second.c  -o  second` and view the output using `./second.`
 
 The output is:
 
@@ -243,7 +231,7 @@ int main() {
 }
 ```
 
-Run the command `cc -fopenmp third.c  -o  third` to compile the program and view the output using `./third`.
+Run the command `cc -fopenmp third.c  -o  third` to compile the program and view the output using `./third.`
 
 The output is:
 
@@ -252,4 +240,6 @@ The addition is =37714 should be 4950
 ```
 
 ### Conclusion
-From the article above, we have learned multithreading and how it is implemented using the OpenMP and pthreads. Also, we have known how to use the Linux terminal to run Cand C++ programs. Use the knowledge learned to understand more Linux systems.
+From the article above, we have learned multithreading and its implementation using the OpenMP and pthreads. Also, we know how to use the Linux terminal to run Cand C++ programs. Use the knowledge learned to understand more Linux systems.
+ 
+ Happy coding!
