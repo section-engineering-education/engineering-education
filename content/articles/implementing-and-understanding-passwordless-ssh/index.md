@@ -16,7 +16,7 @@ images:
 ---
 Online privacy and security are vital considerations in our modern era. The high value of information has caused a need to implement better security practices and strategies. 
 <!--more-->
-The secure shell host protocol (SSH) is one of the important security protocols used to protect data in an insecure network. The cryptographic-based protocol has evolved to a passwordless alternative to increase its resilience.
+The Secure Shell Host protocol (SSH) is one of the important security protocols used to protect data in an insecure network. The cryptographic-based protocol has evolved to a passwordless alternative to increase its resilience.
 
 #### What You will learn
 1. What is passwordless SSH?
