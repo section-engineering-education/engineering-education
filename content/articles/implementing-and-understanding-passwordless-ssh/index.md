@@ -35,6 +35,7 @@ The passwordless SSH protocol utilizes an SSH client to send a cryptographic key
 
 > A public key is a long string of random characters generated from a private key. As its name suggests, the public key can be shared by anyone.
 The process of establishing a secure connection using the passwordless SSH protocol follows the following steps:
+
 1. A user sends their username and public key to a server. 
 2. The server responds with a message encrypted using the received public key from the user. 
 3. The user decrypts the server’s message with its private key. 
@@ -58,15 +59,18 @@ Some of the administration functions performed on servers using the SSH protocol
 
 #### Setting up passwordless SSH
 It is now time to dive into setting up the passwordless protocol on Linux. Let us get started!
+
 > If you are on a Unix-based OS, like Windows, you can use SSH client software like Putty. 
 
 #### Step 1: Generating your SSH key pairs
 We earlier mentioned that you must have a password to establish your first connection during the setup process. However, you will not need a password after this first process since your authentication key is kept in a directory named `~/.ssh.`.
 
-After the key is created, it is stored in a file called `/id_rsa.pub.` Creating your key pair will require you to use the following command.
+After the key is created, it is stored in a file called `/id_rsa.pub.` Creating your key pair will require you to use the following command:
+
 `ssh-keygen -t [algorithm] -b [keysize]`
 
 The above command allows you to specify the keygen algorithm and key size to use. If you choose to use the RSA algorithm, it should follow the below syntax:
+
 `ssh-keygen -t RSA -b 4096.`
 
 You may choose to add your email address to increase security.
@@ -77,7 +81,8 @@ This process provides a server with what it needs to recognize your device. Thus
 When you wish to send your authorized ID and public key to the host, use this command:
 
 `ssh-copy-id [your_username]@[remote_server_ip_address]`
-#### STEP 3: Testing to ensure everything works properly
+
+#### Step 3: Testing to ensure everything works properly
 
 After the authorization and establishing a connection phase, you should check whether the connection works. If the connection functions as expected, you can log in to your server without the need for a password. 
 To establish a connection using SSH, use the following command:
