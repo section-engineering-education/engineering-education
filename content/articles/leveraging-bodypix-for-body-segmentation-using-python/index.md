@@ -1,4 +1,22 @@
-BodyPix is a body segmentation model built on TensorFlow. The model uses a pre-trained neural network to segment a human body from a frame. There is a wide range of use cases you can use this model for. One use case is on background body removal. This tutorial will leverage this model to change the background from a frame using OpenCV. 
+---
+layout: engineering-education
+status: publish
+published: true
+url: /leveraging-bodypix-for-body-segmentation-using-python/
+title: Leveraging BodyPix for Body Segmentation using Python
+description: This tutorial will show the reader how to leverage the BodyPix model to change the background from a frame using OpenCV.
+author: lilian-tonia
+date: 2022-03-08T00:00:00-21:20
+topics: [Machine Learning]
+excerpt_separator: <!--more-->
+images:
+
+  - url: /engineering-education/leveraging-bodypix-for-body-segmentation-using-python/hero.png 
+    alt: Leveraging BodyPix for Body Segmentation using Python Hero Image
+---
+BodyPix is a body segmentation model built on TensorFlow. The model uses a pre-trained neural network to segment a human body from a frame. There is a wide range of use cases you can use this model for. One use case is on background body removal. 
+<!--more-->
+This tutorial will leverage this model to change the background from a frame using OpenCV. 
 
 ### Prerequisites
 To follow along with this tutorial, you need to be familiar with:
