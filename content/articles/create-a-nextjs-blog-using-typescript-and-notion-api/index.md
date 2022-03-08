@@ -1,8 +1,24 @@
+---
+layout: engineering-education
+status: publish
+published: true
+url: /create-a-nextjs-blog-using-typescript-and-notion-api/
+title: Next.js Blog using Typescript and Notion API 
+description: This guide will help the reader learn how to use the Next.js with Notion API to create a blog app powered by Typescript code.
+author: kevin-kimani 
+date: 2022-03-08T00:00:00-06:00
+topics: [Languages]
+excerpt_separator: <!--more-->
+images:
+  - url: /engineering-education/create-a-nextjs-blog-using-typescript-and-notion-api/hero.jpg
+    alt: Next.js Blog using Typescript and Notion API  Hero Image
+---
+
 Next.js is used to create Server-side Rendering(SSR) and Static Site Generation(SSG) using JavaScript. The app fetches extra data from the server after the browser loads the website's HTML page. 
 
 Technologies such as SSG often have to rebuild the app when data from the source is updated and render it to the user at build-time, making the site load even faster hence a good user experience.
 
-This guide will help the reader learn how to use Next.js with Notion API and create a blog app powered by Typescript code.
+This guide will help the reader learn how to use the Next.js with Notion API to create a blog app powered by Typescript code.
 
 ### Prerequisites
 To follow along with this article, it is helpful to have the following:
@@ -500,3 +516,6 @@ Ensure that the development server is running, and then click on any title of th
 This guide helped the reader set up a notion database. We then used the database with Next.js. 
 
 Check this project on this [GitHub](https://github.com/kimkimani/nextjs-blog-app-using-typescript-and-notion) repository.
+
+---
+Peer Review Contributions by: [Jerim Kaura](/engineering-education/authors/jerim-kaura/)
