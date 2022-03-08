@@ -1,7 +1,5 @@
 ### Introduction
-Shared memory is used to speed up data flow between programs. Depending on the circumstance, programs may operate on one or more processors. 
-
-The process may have several threads. Threads are `lightweight processes.` Parallelism is achieved by threading a process. Browser tabs, for example, are threads. MS Word uses threads to format text, handle input, and many other things. 
+Shared memory is used to speed up data flow between programs. Depending on the circumstance, programs may operate on one or more processors. The process may have several threads. Threads are are referred to as `lightweight processes.` Parallelism is achieved by threading a process. Browser tabs, for example, are threads. MS Word uses threads to format text, handle input, and many other things. 
 
 This article will demonstrate parallel programming using the Pthreads and OpenMP programming paradigms.
 
@@ -19,14 +17,14 @@ To follow along with this tutorial, have the following:
 - [Conclusion](#conclusion)
 
 ### The system architecture
-To better understand shared-memory programming, first look at the system architecture.
+To better understand shared-memory programming, let us first look at the system architecture.
 
 ![System architecture](/engineering-education/understanding-shared-memory-programming-with-pthreads-and-openmp/system-architecture.png)
 
-Single-core or multi-core processors are used in system architecture. A single-core processor operates one thread, while a multi-core processor runs several threads. There must be a shared memory location for several threads to execute. The threads generate this memory location by allocating a free-access memory space. The threads are separate yet share memory. In the shared memory paradigm, data is not assigned. Changes made to one thread in the shared memory paradigm affect all threads.
+Single-core or multi-core processors are used in system architecture. A single-core processor operates one thread, while a multi-core processor runs several threads at a time. There must be a shared memory location for several threads to execute. The threads generate this memory location by allocating a free-access memory space. The threads are separate yet share memory. In the shared memory paradigm, data is not assigned. Changes made to one thread in the shared memory paradigm affect all threads.
 
 ### An overview of shared memory process and threads
-Shared memory is a memory that many programs access at the same time. This allows processes to communicate. Shared memory is present in all POSIX and Windows systems. It is necessary to communicate amongst processes to exchange resources. It is usually situated in the process's address space. The shared memory segment must be added to the address space of other applications before usage.
+Shared memory is a memory that many programs access at the same time. This allows processes to communicate with each other without sending requests to the kernel. Shared memory is present in all POSIX and Windows systems. It is necessary to communicate amongst processes to exchange resources. It is usually situated in the process's address space. The shared memory segment must be added to the address space of other applications before usage.
 
 > It is typical for the operating system not to allow a process to access the memory of another process. When using shared memory, two processes must agree to lift this constraint.
 
@@ -37,7 +35,7 @@ A thread is a single instance of a sequential computer program. Threads may be i
 Threads are controlled and supported natively by the operating system in the kernel. There is no thread management code in the program.  Any application has the potential to be multithreaded. A single process may be responsible for managing the threads of an application.
 
 ### Pthreads and their use
-Any programming language may utilize Pthreads, which stands for POSIX Threads. It enables a computer to do several tasks at once. Threads are created and managed using the POSIX Threads API.
+Any programming language may utilize Pthreads, which stands for POSIX Threads. It enables a computer to do several tasks at once. Threads are created and managed using the POSIX Threads API. The POSIX Thread API allows for a new concurrent process flow. With many processors or cores, the process flow may be scheduled to run on another processor, enhancing speed.
 
 To understand pthreads let us first know how to create threads.
 
@@ -48,7 +46,7 @@ In developing threads, the following functions are used.
 pthread_create (thread, attr, start_routine, arg) 
 ```
 
-The `pthread create()` method creates a new thread that is invoking it. The new thread begins execution by calling `start routine()`; arg is passed as the sole argument of `start_routine()`.
+The `pthread create()` method creates a new thread that is invoking it. The new thread begins execution by calling `start routine()`; arg is passed as the sole argument of `start_routine().`
 
 Let us learn how to kill a thread now that we know how to start one.
 
@@ -59,7 +57,7 @@ In closing threads, the following functions are used.
 pthread_exit (status) 
 ```
 
-`Pthread_exit` terminates a thread. In most cases, a thread's duty is completed by using `pthread_exit().` Using pthread_exit allows threads to continue running after main(). If not, they will be stopped after main().
+`Pthread_exit` terminates a thread. In most cases, a thread's duty is completed by using `pthread_exit().` Using pthread_exit allows threads to continue running after main(). If not, they will be stopped after the main() method.
 
 Here is a C++ application to illustrate the two actions:
 
@@ -127,7 +125,7 @@ Pthreads are useful in the following ways:
 
 1. `Build an adaptive user interface` - Threads are useful in user interfaces. Input from the user is processed and displayed in a loop. Processing might take longer in some instances, causing the user to wait. Using a separate thread for long-running tasks may improve software responsiveness. 
 
-2. `Build a web server` - A web server must be able to download large files rapidly. Opening a new thread for each request saves time. Multiple threads can run on many processors at once.
+2. `Build a web server` - A web server must be capable of downloading huge files in a short period of time. It saves time to start a new thread for each new request. Multiple threads may execute on a large number of processors at the same time.
 
 3. `Building a graphical user interface` - In graphical apps, a windowing system notification asking an app to redo a window portion is expected. Its window will be blank if it is preoccupied. In this scenario, having one thread handle windowing system messages and requests is prudent (as well as user input). If an operation takes more than 0.2 seconds, it is sent to another thread.
 
@@ -138,7 +136,7 @@ When an OpenMP application is launched, it will utilize one thread (in the seque
 
 The primary thread is the one that goes all the way from the beginning to the conclusion. Other threads will fork due to the parallel parts of the program. Secondary threads are what they're called.
 
-A particular directive marks a block of code that will be performed in parallel (omp pragma). This directive will induce secondary threads to arise when the execution reaches a parallel portion (indicated by omp pragma). The similar component of the code is executed separately by each thread. When a thread is completed, it is joined to the master. When all threads have been terminated, the master resumes programming in the parallel part.
+A particular directive marks a block of code that will be performed in parallel (omp pragma). This directive will induce secondary threads to arise when the execution reaches a parallel portion (indicated by omp pragma). A similar component of the code is executed separately by each thread. When a thread is completed, it is joined to the master. When all threads have been terminated, the master resumes programming in the parallel part.
 
 Each thread has an ID found using the `omp get thread num()` function in the runtime library. The primary thread has the number 0 as its ID.
 
