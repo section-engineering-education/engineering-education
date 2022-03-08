@@ -236,3 +236,6 @@ Blockchain technology has given rise to a new disruptive wave of technological s
 ### Further reading
 - [Binance smart Chain docs](https://www.binance.org/en/smartChain).
 - [How to set up Metamask wallet](https://www.geeksforgeeks.org/how-to-use-metamask-to-deploy-a-smart-contract-in-solidity-blockchain/).
+
+---
+Peer Review Contributions by: [Willies Ogola](/engineering-education/authors/willies-ogola/)
