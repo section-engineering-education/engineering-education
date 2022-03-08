@@ -1,6 +1,23 @@
-Blockchain networks that support smart contracts functionality are on the rise. Smart contracts are programs that live in a blockchain and are executed on demand. In a platform like Binance, we can use the Smart chain protocol to build decentralized apps in a cross-chain network. 
+---
+layout: engineering-education
+status: publish
+published: true
+url: /binance-smart-chain-tutorial/
+title: Getting Started With Solidity and Binance Smart Chain
+description: This tutorial will show the readers how they can get started with developing a binance smart chain token using Ethereum compatible tools such as Remix and Metamask.
+author: esther-wanjira
+date: 2022-03-08T00:00:00-21:20
+topics: [Blockchain]
+excerpt_separator: <!--more-->
+images:
 
-### Table of Contents
+  - url: /engineering-education/binance-smart-chain-tutorial/hero.png 
+    alt: Getting Started With Solidity and Binance Smart Chain Hero Image
+---
+Blockchain networks that support smart contracts functionality are on the rise. Smart contracts are programs that live in a blockchain and are executed on demand. In a platform like Binance, we can use the Smart chain protocol to build decentralized apps in a cross-chain network. 
+<!--more-->
+
+### Table of contents
 - [Goal](#goal)
 - [Pre-requisites](#pre-requisites)
 - [Why Binance Smart Chain?](#why-binance-smart-chain)
@@ -17,7 +34,7 @@ Blockchain networks that support smart contracts functionality are on the rise. 
 - [Further reading](#further-reading)
 
 ### Goal
-Tokens are the building blocks of any smart contract-based blockchain. We rely on the to build exchange platforms, Dapps, and Defi platforms. This tutorial provides a context of how we can get started with developing a binance smart chain token using Ethereum compatible tools such as Remix and Metamask. In the process, we will learn the basics of smart contracts, solidity programming, tokens supply, management, and allocation.
+Tokens are the building blocks of any smart contract-based blockchain. We rely on them to build exchange platforms, Dapps, and Defi platforms. This tutorial provides a context of how we can get started with developing a binance smart chain token using Ethereum compatible tools such as Remix and Metamask. In the process, we will learn the basics of smart contracts, solidity programming, tokens supply, management, and allocation.
 
 ### Pre-requisites
 - Basics of [Blockchain]() technology.
@@ -217,5 +234,5 @@ Interacting with transfer and balance functions.
 Blockchain technology has given rise to a new disruptive wave of technological solutions in nearly every industry. It takes things to the next level by rethinking how untrusting parties agree upon them without relying on third parties to lower risks and manipulations. Ultimately, Web3 and blockchain are still in the early stages of adoption. Time will tell if this technology can become a solid industry standard.
 
 ### Further reading
-- Binance smart Chain [docs](https://www.binance.org/en/smartChain).
-- How to set up [Metamask wallet](https://www.geeksforgeeks.org/how-to-use-metamask-to-deploy-a-smart-contract-in-solidity-blockchain/).
+- [Binance smart Chain docs](https://www.binance.org/en/smartChain).
+- [How to set up Metamask wallet](https://www.geeksforgeeks.org/how-to-use-metamask-to-deploy-a-smart-contract-in-solidity-blockchain/).
