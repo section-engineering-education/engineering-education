@@ -18,6 +18,16 @@ LINQ is a C# module that mainly deals with data. In this article, we will learn 
 <!--more-->
 It is a module that performs various functionalities, some of which will be covered in this article.
 
+### Table of contents
+- [LINQ overview](#linq-overview)
+- [Table of contents](#table-of-contents)
+- [Creating a single output sequence with multiple inputs](#creating-a-single-output-sequence-with-multiple-inputs)
+- [Subsets of each source element are chosen](#subsets-of-each-source-element-are-chosen)
+- [Activities carried out in the source elements](#activities-carried-out-in-the-source-elements)
+- [In-memory objects - XML transformation](#in-memory-objects---xml-transformation)
+- [Conclusion](#conclusion)
+- [What next](#what-next)
+
 ### LINQ overview
 LINQ (Language-Integrated Query) is used for more than just data retrieval. It's also a valuable tool for data transformation. 
 
@@ -29,16 +39,6 @@ It is achievable when a learner or a programmer uses the `select` clause. For ex
 1. In creating one output query consisting of another type, a programmer can combine several input queries.
 2. A programmer may still opt to take a few elements from each element in the source sequence to create an output sequence.
 3. An output sequence can still be obtained by considering the results of operations on source data and several other things.
-
-### Table of contents
-- [LINQ overview](#linq-overview)
-- [Table of contents](#table-of-contents)
-- [Creating a single output sequence with multiple inputs](#creating-a-single-output-sequence-with-multiple-inputs)
-- [Subsets of each source element are chosen](#subsets-of-each-source-element-are-chosen)
-- [Activities carried out in the source elements](#activities-carried-out-in-the-source-elements)
-- [In-memory objects - XML transformation](#in-memory-objects---xml-transformation)
-- [Conclusion](#conclusion)
-- [What next](#what-next)
 
 ### Creating a single output sequence with multiple inputs
 The description in the example below explains how we can bring together more than one in-memory data structure. 
