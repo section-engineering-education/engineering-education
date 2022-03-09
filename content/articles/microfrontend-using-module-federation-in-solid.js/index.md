@@ -311,7 +311,7 @@ Let’s start our `react-host` app:
 yarn start
 ```
 
-![react_host](/engineering-education/microfrontend-using-module-federation-in-solid.js/react_host.png)
+![react_host](./react_host.png)
 
 As you can see, we have a functional Solid.js micro frontend embedded into our `react-host`. Here’s a link to the [GitHub](https://github.com/oyedeletemitope/micro-frontend-with-module-federation-in-solid.js) repository for this project.
 
