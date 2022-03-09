@@ -3,7 +3,7 @@ layout: engineering-education
 status: publish
 published: true
 url: /reading-and-processing-android-sensor-data-using-python-with-csv-read/
-title: Reading and processing android sensor data using python with CSV read() 
+title: Reading and processing android sensor data using python with CSV read()
 description: This tutorial explains how one records data of various smartphone sensors and processes that data offline using Python
 author: joseph-odhiambo
 date: 2022-03-05T00:00:00-07:10
@@ -14,19 +14,16 @@ images:
   - url: /engineering-education/reading-and-processing-android-sensor-data-using-python-with-csv-read/hero.jpg
     alt: Reading and processing android sensor data using python with CSV read()  Hero Image
 ---
-
-### Introduction
 Computers obtain data by reading from the standard input, files and sensors, then store it in the memory for processing. This data processing could be online or offline, depending on the user's preferences. Data processing is the conversion of raw data to give meaningful information. The aim is to break down the data and represent it to end user graphically.
-
+<!--more-->
 This tutorial explains how one records data of various smartphone sensors and processes that data offline using Python. First, you extract the sensor's data to a CSV file. Then, the CSV file is read by Python, and the extracted data is processed for display. Also, it is processed for taking wavelet transform.
 
 ### Prerequisites
 To follow along with this tutorial, you need:
 - To be familiar with the [Python](https://www.programiz.com/python-programming/first-program) programming language.
-- To have *Pycharm* installed on your computer. You can download it from [here](https://www.jetbrains.com/pycharm/download/).
+- To have _Pycharm_ installed on your computer. You can download it from [here](https://www.jetbrains.com/pycharm/download/).
 
 ### Various mobile sensor
-
 ![image sensors](/engineering-education/reading-and-processing-android-sensor-data-using-python-with-csv-read/image-one.png)
 
 The image above shows the sensors that are available to android mobile phones. These sensors could detect the position, motion and even the environment or on request. This assist while using many applications such as cameras, games, e.t.c. The user can also record them to use the recorded output in the implementation of various applications such as:
@@ -38,7 +35,6 @@ The image above shows the sensors that are available to android mobile phones. T
 - To control some activities based on mobile orientation e.t.c
 
 ### How to record mobile sensor's data
-
 ![recording mobile data](/engineering-education/reading-and-processing-android-sensor-data-using-python-with-csv-read/image-two.png)
 
 We have two schemes in which you can capture and process data. These schemes are to record sensor data offline and record sensor data online. At the same time, you can access the data and process it on the local PC using Python or Matlab.
@@ -65,7 +61,7 @@ Let us look at the third party android App that can run to collect sensor data. 
 - Click on the play store on your mobile phone.
 - Search for `sensors data collector` in the search tab.
 - The result here is more than one. Note that all these applications are good. We recommend `data collector` or `physics toolbox` for this article. It is because their interfaces are easy to use.
-> There are two categories of applications. The first category collects data and saves them as a .csv file for offline processing, e.g. data collector. The second category collects data and sends them to a given web for online processing.
+  > There are two categories of applications. The first category collects data and saves them as a .csv file for offline processing, e.g. data collector. The second category collects data and sends them to a given web for online processing.
 - Since we are to process our data offline, we will install the `physics toolbox`.
 - Once this is done, open the App.
 
@@ -93,51 +89,47 @@ For our case, we use the accelerometer sensor.
 For you to process these data, you need to import some libraries. These libraries are `numpy`, `matplotlib` and `csv` to read and plot your .csv file.
 
 python
+
 # python program to read .csv file
+
 import numpy as np
 import matplotlib.pyplot as plt
 import csv
-
 
 After importing the libraries, we now read the .csv file.
 
 python
 with open('accl1.csv', 'r') as f:
-    data = list(csv.reader(f, delimiter=',')) #reading csv file
-
+data = list(csv.reader(f, delimiter=',')) #reading csv file
 
 We first execute the file `open()` function. This function takes the filename `accl1.csv` and the reading attribute `r`. We then use the `csv.reader()` function. The output here is in the form of a `list`. Since the output is in a list form, it is unusable. It means that we have to convert this list into a float array. To convert it to float array, we use the code below:
 
 python
-    data1 = np.array(data[1:], dtype=np.float64)  #converting list into float array
-
+data1 = np.array(data[1:], dtype=np.float64) #converting list into float array
 
 We use the `np.array()` function to convert the data into an array. Then, we pass the data from the second row `data[1:]` and the data type, float using `np.float64`.
 Now, let us extract the data.
 
-python
-    # Extracting data
-    time = data1[:, 0]
-    ax = data1[:, 1]
-    ay = data1[:, 2]
-    az = data1[:, 3]
-    aT = data1[:, 4]
-
+python # Extracting data
+time = data1[:, 0]
+ax = data1[:, 1]
+ay = data1[:, 2]
+az = data1[:, 3]
+aT = data1[:, 4]
 
 We are extracting this data one by one. In the converted data, iteration begins from 0. For example, to extract the time data in the first column, we give 0 as the column position `data1[:, 0]`. It continues until the fifth column.
+
 > Note that the acceleration data has five columns. The fifth column, `aT`, is the total signal data.
 
 Let us now plot the data. You can do this in two ways. The first way is by plotting all the data on the same axis. The second way is making separate plots using the `subplot()` function. Let us begin by plotting the data on the same axis.
 
-python
-    # Plotting all the data in the same axis
-    plt.figure(figsize=(20, 10))
-    plt.plot(time, ax, time, ay, time, az, time, aT)
-    plt.title('Accelerometer data', fontsize=20)
-    plt.xlabel('Time', fontsize=20)
-    plt.ylabel('Acc.values', fontsize=20)
-    plt.show()
-
+python # Plotting all the data in the same axis
+plt.figure(figsize=(20, 10))
+plt.plot(time, ax, time, ay, time, az, time, aT)
+plt.title('Accelerometer data', fontsize=20)
+plt.xlabel('Time', fontsize=20)
+plt.ylabel('Acc.values', fontsize=20)
+plt.show()
 
 ![output in the same axis](/engineering-education/reading-and-processing-android-sensor-data-using-python-with-csv-read/image-ten.png)
 
@@ -145,13 +137,13 @@ When plotting in the same axis, we initiate a figure of the size 20x10 pixels us
 Alternatively, we can separate the plots into subplots using the code below:
 
 python
-    #separate plots using subplots
-    plt.figure(figsize=(20, 20))
+#separate plots using subplots
+plt.figure(figsize=(20, 20))
 
     plt.subplot(2, 2, 1)
     plt.plot(ax, color='r')
     plt.title('a[x]', fontsize=30)
-    
+
     plt.subplot(2, 2, 2)
     plt.plot(ax, color='g')
     plt.title('a[y]', fontsize=30)
