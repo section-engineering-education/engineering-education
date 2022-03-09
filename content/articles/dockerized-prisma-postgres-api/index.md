@@ -3,10 +3,10 @@ layout: engineering-education
 status: publish
 published: true
 url: /dockerized-prisma-postgres-api/
-title: Introduction to Prisma
-description: In this article, we will be introduced to Primsa. We will learn what Prisma is, how to work with it, and deploy it on a docker container.
+title: Introduction to Prisma with Docker
+description: In this article we will introduce Primsa. We will learn what Prisma is, how to work with it, and deploy it on a docker container.
 author: faith-musyoka
-date: 2022-03-03T00:00:00-05:30
+date: 2022-03-09T00:00:00-10:50
 topics: [API]
 excerpt_separator: <!--more-->
 images:
@@ -14,9 +14,9 @@ images:
  - url: /engineering-education/dockerized-prisma-postgres-api/hero.jpg
    alt: Introduction to Prisma
 ---
-In this tutorial, you will learn more about the Prisma ecosystem to build a simple server that accesses Prisma to read its database schema and run it on a Docker container.
+In this tutorial, we will learn more about the Prisma ecosystem. We will build a simple server that accesses Prisma to read its database schema and run it on a Docker container.
 <!--more-->
-At some point, you will need a database for your back-end application, be it with Python, Java, or Node.js. For the backend to communicate with the database, you need a way to connect your server to that database.
+At some point, you may need a database for your back-end application, be it with Python, Java, or Node.js. For the backend to communicate with the database, you need a way to connect your server to that database.
 
 When a user sends a request to the write into the database, the server modifies that data and writes it to the database. When someone writes a query requesting the data, the server reads it, sends it to the database, and then returns a response with the requested data. This is opposed to just reading from one of our static arrays.
 
@@ -26,7 +26,7 @@ However, they do not provide a way to modify or validate the data structures or 
 
 With native drivers, the database connection is natively implemented using the barebones of the programming language.
 
-Other options would be to use an [ORM](https://en.wikipedia.org/wiki/Object–relational_mapping) (object-relational mapper). For example, when working with Node.js, MongoDB provide a mongoose (an NPM library) database driver. This makes it easy for a developer to connect a Node.js backend to a MongoDB database.
+Other options would be to use an [ORM](https://en.wikipedia.org/wiki/Object–relational_mapping) (object-relational mapper). For example, when working with Node.js, MongoDB provide a mongoose (an NPM library) database driver. This makes it easier for a developer to connect a Node.js backend to a MongoDB database.
 
 ORM will introduce you to some new features like:
 - Modeling
@@ -34,16 +34,16 @@ ORM will introduce you to some new features like:
 - Migrating data
 - Describing the relationships between different data fields, and so on.
 
-If you are using an SQL database, you can model your schema and choose the fields you want to use. You can validate your data model, say, a password field needs to have at least six characters, a certain field needs to be integers, and so on.
+If you are using a SQL database, you can model your schema and choose the fields you want to use. You can validate your data model, say, a password field needs to have at least six characters, a certain field needs to be integers, and so on.
 
 [Prisma](https://www.prisma.io) falls under the category of an ORM, and it has all features of a typical ORM, such as [mongoose](https://mongoosejs.com) and [sequelize](https://sequelize.org). Unlike the other ORMs, Prisma comes with a tone of other added features.
 
-Prisma is database agnostic. `Mongoose` only works on a MongoDB database, and `sequelize` only works on SQL-based databases. Let's say if you decide to switch from MongoDB to PostgreSQL, then you would have to rewrite most of your codes since the two libraries work differently. But, with Prisma, rewriting codes is not necessary.
+Prisma is database agnostic. `Mongoose` only works on a MongoDB database, and `sequelize` only works on SQL-based databases. Let's say if you decide to switch from MongoDB to PostgreSQL, then you would have to rewrite most of your code since the two libraries work differently. But, with Prisma, rewriting code is not necessary.
 
-Prisma has [supports a majority of the  databases](https://www.prisma.io/docs/reference/database-reference/supported-databases) like PostgreSQL, MySQL, MongoDB, MariaDB, and so on. Thus, you can choose a database that fits your application structure. You can also migrate databases using Prisma without having to modify the application's code structure.
+Prisma has [supports for a majority of databases](https://www.prisma.io/docs/reference/database-reference/supported-databases) like PostgreSQL, MySQL, MongoDB, MariaDB, and so on. Thus, you can choose a database that fits your application structure. You can also migrate databases using Prisma without having to modify the application's code structure.
 
 ### Table of contents
-- [Pre-requisites](#pre-requisites)
+- [Prerequisites](#prerequisites)
 - [Major components of Prisma](#major-components-of-prisma)
   - [Prisma migrate](#prisma-migrate)
   - [Prisma client](#prisma-client)
@@ -60,7 +60,7 @@ Prisma has [supports a majority of the  databases](https://www.prisma.io/docs/re
 - [Conclusion](#conclusion)
 - [Further reading](#further-reading)
 
-### Pre-requisites
+### Prerequisites
 Prisma facilitates the generation of type-safe database schemas. When creating a database, every detail must be carefully considered to determine the database's structure.
 
 In this case, Prisma abstracts you from writing SQL queries. As a result, you must ensure that your database schemas are safe.
@@ -68,10 +68,10 @@ In this case, Prisma abstracts you from writing SQL queries. As a result, you mu
 - To have these safe schemas, ensure you have Prisma installed in your text editor to help you write type-safe Prisma codes.
 - In this tutorial, we will use [Visual Studio Code](https://code.visualstudio.com/). Once you have it installed, ensure you have the [Prisma extension](https://marketplace.visualstudio.com/items?itemName=Prisma.prisma) installed. This extension adds syntax highlighting for `.prisma` files. It helps prevent errors by establishing a robust and type-safe code that is specifically designed for Prisma programs.
 - Prisma provides a [Prisma studio](https://www.prisma.io/studio) that allows you to interact with `.prisma` files. Ensure you have it installed on your computer. Also, ensure Node.js (at least 64 bits) is installed.
-- This guide also runs Prisma using Docker. Ensure that you have [Docker](https://www.docker.com/products/docker-desktop) installed on your computer and have some basic knowledge of running and using Docker. This [guide](/engineering-education/docker-concepts/) will help you get started with Docker.
+- This guide also runs Prisma using Docker. Make sure that you have [Docker](https://www.docker.com/products/docker-desktop) installed on your computer and have some basic knowledge of running and using Docker. This [guide](/engineering-education/docker-concepts/) will help you get started with Docker.
 
 ### Major components of Prisma
-The Prisma ecosystem is made up of three major components. These are;
+The Prisma ecosystem is made up of three major components. These are:
 
 #### Prisma migrate
 Prisma `migrate` acts as the database version control. Migration is a way to control the previous versions of the database schema. This works similar to Git, where you always have a history of the code versions.
@@ -79,16 +79,16 @@ Prisma `migrate` acts as the database version control. Migration is a way to con
 Whenever you change the database schema, Prisma's migrate creates a new version of the newly added schema. This way, whenever you have an issue with your current running schema, you can always check and roll back to the previous stable database schema.
 
 #### Prisma client
-Provide a way to write/type-safe the query builder. Prisma abstracts you from writing the SQL queries. Prisma client will help to set up and write your database, model the data validation, describe the relationships between different data fields, and so on.
+Provide a way to write/type-safe the query builder. Prisma abstracts you from writing the SQL queries. Prisma client will help set up and write your database, model the data validation, describe the relationships between different data fields, and so on.
 
 Prisma client provides a very simple and intuitive method to set this up without having to write a single SQL query. Prisma client enables you to generate SQL queries and helps connect to the database of your choice.
 
-Prisma client also generates and provides functions or methods d which can be used to create a stateful connection to a database. We can then use it to create, delete, update, or do an operation related to the database.
+Prisma client also generates and provides functions or methods which can be used to create a stateful connection to a database. We can then use it to create, delete, update, or do an operation related to the database.
 
 #### Prisma studio
-This is a modern database GUI to interact with your data. It gives you a visual representation of how the schema is represented in a `.prisma` file.
+This is a modern database GUI to interact with your data. It gives you a visual representation of how the schema is represented in a `.prisma` file. Usually, you always tend to have trouble connecting or checking your tables or databases.
 
-Usually, you always tend to have trouble connecting or checking your tables or databases. If you have difficulties verifying the tables via the CLI commands, you tend to use something like [PHPMyAdmin](https://www.phpmyadmin.net) to see visualize the data in your database.
+If you have difficulties verifying the tables via the CLI commands, you tend to use something like [PHPMyAdmin](https://www.phpmyadmin.net) to visualize the data in your database.
 
 Prisma studio provides the same feature with a minimal UI that lets you see all the tables in your database. Here, you can check the models and the type of data set in your database. You can delete records, add records, and perform any operation - only with the UI.
 
@@ -114,7 +114,7 @@ Let's break this file down.
 ### Setting and understanding the Prisma client data models
 In general, the schema language is very intuitive with easy-to-understand syntax. When you start your Prisma project, two primary blocks will be created:
 
-#### `generator`
+#### 'generator'
 This determines the assets to be created when building the data types that generate the actual database queries. By default, it is set as:
 
 ```js
@@ -123,12 +123,12 @@ generator client {
 }
 ```
 
-#### `datasource`
+#### 'datasource'
 This defines how Prisma connects to your database. This takes two main parameters:
 - `provider`
 - `url`
 
-The `provider` sets the database you want to use. This can the `sqlite`, `mysql`, `mongodb`, `postgresql` and `sqlserver`.
+The `provider` sets the database you want to use. This can be the `sqlite`, `mysql`, `mongodb`, `postgresql` and `sqlserver`.
 
 `url` sets a connection string used to connect with the database server. If the database is running locally, you add the localhost server that provides the connection to the database you want to use.
 
@@ -184,11 +184,11 @@ Each field in a table is associated with its own properties. In a typical table,
 - The primary key can be created by default by adding the parameter `@default()` to `id`. By doing this, the count will automatically be incremented whenever a new record is created.
 - `createdAt` and `updatedAt` hold the current time.
 - `completed` takes a `Boolean` data type with `false` as the default value.
-- The field `description` has a `?` towards the end of type `String`. It signifies that the parameter `?` is added to a field is set as `NULL` by default, when creating a new record.
+- The field `description` has a `?` towards the end of type `String`. It signifies that the parameter `?` is added to a field and is set as `NULL` by default, when creating a new record.
 
 > Note: You can add schemas relations to your data models. When dealing with SQL-based databases. There are chances of having multiple tables. You can relate multiple tables with models in Prisma.
 
-Check this guide and learn [how to create data models with schema relations](https://www.prisma.io/docs/concepts/components/prisma-schema/relations).
+Check this guide and learn how to create [data models with schema relations](https://www.prisma.io/docs/concepts/components/prisma-schema/relations).
 
 ### Create and run a prisma server with docker
 Once you create your data models, you will create a server that lets you interact with your database. Prisma will connect your data models to your preferred database schemas. Then, an API will consume the data that you save to the database. 
@@ -197,14 +197,14 @@ Let's create a basic TypeScript API that uses Prisma to connect to a PostgreSQL.
 
 In this case, you will wrap the whole application and run it using the [Docker containers](/engineering-education/getting-started-with-docker/).
 
-If you're new to Docker, it is highly recommended to go through them before proceeding further:
+If you're new to Docker, it is highly recommended to go through these articles before proceeding further:
 - [Docker concepts](/engineering-education/docker-concepts/)
 - [How Docker containers work](/engineering-education/running-and-managing-docker/).
 
 To create Prisma servers, check out [this guide](/engineering-education/api-with-prisma-and-nodejs/) to learn how to create one from scratch.
 
 #### Set the schema
-First, create a project folder named `dockerized-prisma-postgres-api` and run `prisma init`.
+Now we can create a project folder named `dockerized-prisma-postgres-api` and run `prisma init`.
 
 As explained earlier, the main building block of a Prisma API is to configure the `schema.prisma` file. Here, you will use the PostgreSQL database as the data source provider.
 
@@ -253,7 +253,7 @@ model Todo {
 #### Set up a Node.js TypeScript environment
 Let's now dive in and configure a basic Prisma and PostgreSQL API.
 
-First, you need to install the necessary packages that will allow you to run TypeScript code and create a web server. Go ahead and install the following packages:
+You will need to install the necessary packages that will allow you to run TypeScript code and create a web server. Go ahead and install the following packages:
 
 - `typescript` - This package allows you to write [TypeScript](https://www.npmjs.com/package/typescript) code in a Node.js application. It adds static typing, type checking, and other features that help you scale-up large-scale JavaScript applications.
 
@@ -297,7 +297,7 @@ To install these dependencies, run:
 npm install express @types/express @prisma/client
 ```
 
-Since you are using TypeScript, run `tsc --init` to automatically create a `tsconfig.json` file that holds the default parameters for running TypeScript code.
+Since you are using TypeScript, run `tsc --init` to automatically create a `tsconfig.json` file that holds the default parameters when running TypeScript code.
 
 #### Set up a TypeScript Prisma server
 Create an `index.ts` file at the root directory and start creating your Prisma API, as shown below:
@@ -321,7 +321,7 @@ app.use(express.urlencoded({ extended: true }));
 const port: number = 3000;
 ```
 
-- Add a basic `GET` route for testing the server.
+- Add a basic `GET` route to test the server.
 
 ```ts
 // testing route
@@ -330,7 +330,7 @@ app.get("/", (_req, res: Response) => {
 });
 ```
 
-- Add a route for a `GET` route for fetching todos.
+- Add a route for a `GET` route when fetching todos.
 
 ```ts
 // Getting todos route
@@ -396,7 +396,7 @@ To run the server, use the `ts-node`, add a `ts-node` command to the `package.js
 Your basic server is ready. Let's now wrap the whole API within Docker.
 
 ### Run the Prisma server with Docker and Docker-compose
-First, create Docker file environments. This allows you to set the command necessary to run your code on a Docker container.
+Create Docker file environments. This allows you to set the command necessary to run your code on a Docker container.
 
 Go ahead and create a `Dockerfile` at your project's root. This file will have the following commands:
 
@@ -455,7 +455,7 @@ CMD npm start
 
 While running the `COPY` command, there are some files and folders that you don't want to copy over to Docker's working directory. Thus, you need to create a `.dockerignore` file that contains the list of these files and folder that are to be excluded as shown:
 
-```.dockeringore
+```bash
 node_modules
 ```
 
@@ -516,7 +516,7 @@ This will run three services:
 
 Everything is set. Now, let's run the app and let Docker containerize the application instance so that you don't need to configure anything on your local computer.
 
-To run this on Docker, ensure you Docker is running and execute this command:
+To run this on Docker, ensure your Docker is running and execute this command:
 
 ```bash
 docker-compose up
@@ -533,7 +533,7 @@ If you make some changes to the project files, run `docker-compose build` then r
 #### Testing the Docker API
 The app is running on Docker containers. Let's test if it works as expected.
 
-First, navigate to your Docker and check your running `dockerized-prisma-postgres-api` container:
+Navigate to your Docker and check your running `dockerized-prisma-postgres-api` container:
 
 ![prisma-postgres-api](/engineering-education/dockerized-prisma-postgres-api/prisma-postgres-api.png)
 
@@ -543,7 +543,7 @@ Then, hover over the `prisma-postgres-api` and open the integrated Docker API.
 
 This will launch an interactive CLI to run your API commands. In this case, you want to run the `prisma migrate` command. This will allow your database to sync with the schema you have created.
 
-Go ahead and run `npx prisma migrate dev` inside his interactive Docker CLI as shown:
+Go ahead and run `npx prisma migrate dev` inside the interactive Docker CLI as shown:
 
 ![docker-api](/engineering-education/dockerized-prisma-postgres-api/docker-cli.png)
 
@@ -553,7 +553,7 @@ To do this, first, access the Postgres database using the `pgadmin` interface. T
 
 Open `http://localhost:5555/` on your browser. Then, log in using the username `pgadmin4@pgadmin.org` and password `pgadmin`, as we set them in the `dockercompose.yml` file.
 
-Finally, open Postman and start testing the API endpoints. Start by running the test `GET` route `http://localhost:3000`.
+Open Postman and start testing the API endpoints. Start by running the test `GET` route `http://localhost:3000`.
 
 ![test-route](/engineering-education/dockerized-prisma-postgres-api/test-route.png)
 
@@ -579,10 +579,10 @@ Finally, you can check this new todo using the GET `http://localhost:3000/api/to
 
 ![post-api](/engineering-education/dockerized-prisma-postgres-api/post-api.png)
 
-If you get stuck, check the whole source code on [GitHub](https://github.com/Faithdroid/create-and-run-a-prisma-server-with-docker-containers)
+If you get stuck, check the whole source code on [GitHub](https://github.com/Faithdroid/create-and-run-a-prisma-server-with-docker-containers).
 
 ### Conclusion
-This guide helped you learn about Prisma. In this tutorial, you created a basic API using the PostgreSQL database and run it via Docker containers.
+This guide helped you learn about Prisma. In this tutorial, you created a basic API using the PostgreSQL database and ran it via Docker containers.
 
 Docker has enabled us to create the whole API without configuring PostgreSQL and Node.js on the local computer.
 
