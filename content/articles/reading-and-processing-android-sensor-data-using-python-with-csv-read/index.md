@@ -88,9 +88,8 @@ For our case, we use the accelerometer sensor.
 ### Python code for processing the data
 For you to process these data, you need to import some libraries. These libraries are `numpy`, `matplotlib` and `csv` to read and plot your .csv file.
 
-python
-
-# python program to read .csv file
+```python
+# Python program to read .csv file
 
 import numpy as np
 import matplotlib.pyplot as plt
@@ -101,42 +100,44 @@ After importing the libraries, we now read the .csv file.
 python
 with open('accl1.csv', 'r') as f:
 data = list(csv.reader(f, delimiter=',')) #reading csv file
-
+```
 We first execute the file `open()` function. This function takes the filename `accl1.csv` and the reading attribute `r`. We then use the `csv.reader()` function. The output here is in the form of a `list`. Since the output is in a list form, it is unusable. It means that we have to convert this list into a float array. To convert it to float array, we use the code below:
 
-python
+```python
 data1 = np.array(data[1:], dtype=np.float64) #converting list into float array
-
+```
 We use the `np.array()` function to convert the data into an array. Then, we pass the data from the second row `data[1:]` and the data type, float using `np.float64`.
 Now, let us extract the data.
 
-python # Extracting data
+```python
+# Extracting data
 time = data1[:, 0]
 ax = data1[:, 1]
 ay = data1[:, 2]
 az = data1[:, 3]
 aT = data1[:, 4]
-
+```
 We are extracting this data one by one. In the converted data, iteration begins from 0. For example, to extract the time data in the first column, we give 0 as the column position `data1[:, 0]`. It continues until the fifth column.
 
 > Note that the acceleration data has five columns. The fifth column, `aT`, is the total signal data.
 
 Let us now plot the data. You can do this in two ways. The first way is by plotting all the data on the same axis. The second way is making separate plots using the `subplot()` function. Let us begin by plotting the data on the same axis.
 
-python # Plotting all the data in the same axis
+```python
+# Plotting all the data in the same axis
 plt.figure(figsize=(20, 10))
 plt.plot(time, ax, time, ay, time, az, time, aT)
 plt.title('Accelerometer data', fontsize=20)
 plt.xlabel('Time', fontsize=20)
 plt.ylabel('Acc.values', fontsize=20)
 plt.show()
-
+```
 ![output in the same axis](/engineering-education/reading-and-processing-android-sensor-data-using-python-with-csv-read/image-ten.png)
 
 When plotting in the same axis, we initiate a figure of the size 20x10 pixels using the `figsize()` function. We then plot all the extracted data on the same axis. We give the plot the `accelerometer data` as the title with the `fontsize 20`. We also have the y-label and the x-label. To show you plot, we use `plt.show()` function.
 Alternatively, we can separate the plots into subplots using the code below:
 
-python
+```python
 #separate plots using subplots
 plt.figure(figsize=(20, 20))
 
@@ -156,7 +157,7 @@ plt.figure(figsize=(20, 20))
     plt.plot(ax, color='k')
     plt.title('a[Total]', fontsize=30)
     plt.show()
-
+```
 The subplot function takes the number of rows, columns and the plot position as the input. For example, `plt.subplot(2, 2, 1)` means we have four plots. These plots are arranged in the form of a table of two rows and two columns. Our plot is in the first position. `plt.plot()` function takes the data to be plotted and the plot colour as the arguments. And to display the plot, we use the `plt.show()` function.
 You can further analyze and get the approximated and detailed coefficients of the data.
 
