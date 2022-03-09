@@ -71,7 +71,7 @@ The app we are going to build will have many classes, to avoid confusion and mai
 
 The project will build will have a single screen that has a `RecyclerView` for displaying the data fetched from the real-time database a `Progressbar` and a `SearchView`. See the project design below:
 
-![screenlayout]())
+![screenlayout](/engineering-education/firebase-offline-caching/screen-layout.jpeg)
 
 Now that we have set the project structure, we can dive into implementation.
 
@@ -258,6 +258,7 @@ class MainActivity : AppCompatActivity() {
     }
 }
 ```
+![demo](/engineering-education/firebase-offline-caching/demo.jpeg)
 
 ### Conclussion
 In this article, we looked at how to offline cache data from Firebase's real-time database with Room. Room persistence library can also be used with Retrofit to cache data fetched from the internet. 
