@@ -4,9 +4,9 @@ status: publish
 published: true
 url: /eigendecomposition-in-python/
 title: Getting Started with Eigendecomposition in Python
-description: This article will help readers understand how to manage USB devices in C#. This feature is important when granting read/write permissions to removable drives.
-author:
-date: 2022-02-06T00:00:00-03:12
+description: This article will help readers understand Eigendecomposition in Python. This approach is used in Linear Algebra to decomposition a matrix into smaller components.
+author: jackson-munyai
+date: 2022-03-09T00:00:00-05:12
 topics: [Languages]
 excerpt_separator: <!--more-->
 images:
@@ -14,11 +14,13 @@ images:
   - url: /engineering-education/eigendecomposition-in-python/hero.png
     alt: Getting Started with Eigendecomposition in Python Hero Image
 ---
-Eigendecomposition is one decomposition technique used in Linear Algebra to decomposition a matrix into its characteristic components.
+Eigendecomposition is a decomposition technique used in Linear Algebra to break down a matrix into its constituent parts.
 <!--more-->
-From its title, we can note the word `Eigen`, which is the centre of computing the Eigendecomposition. It signals we will work with the eigenvalues and the eigenvectors of a matrix to derive Eigendecomposition. Further, it implies that we will be working with square matrices as it's the only square matrices for which we can compute the eigenvalues and eigenvectors.
+In this tutorial, we will focus on *eigenvalues* and the *eigenvectors* of a matrix to derive Eigendecomposition. 
 
-With the help of a simple matrix, let's see how the Eoigendecomposition is derived.
+Further, we will also work with square matrices because they support the computation of *eigenvalues* and *eigenvectors*.
+
+Let's use a simple matrix to understand how the Eigendecomposition is derived.
 
 Suppose we have a 2 x 2 square matrix A, i.e.,
 
