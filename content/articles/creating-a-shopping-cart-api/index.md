@@ -77,7 +77,7 @@ public class Product {
     private BigDecimal cost;
 
     public Product(String id, String productName, BigDecimal cost) {
-        Id = id;
+        this.id = id;
         this.productName = productName;
         this.cost = cost;
     }
@@ -475,6 +475,9 @@ public class CustomerTest {
     private DataServiceImpl dataService;
     @Autowired
     private CartServiceImpl cart;
+
+    @Autowired
+    private CustomerDao customerDao;
 
     @BeforeEach
     void beforeEach(){
