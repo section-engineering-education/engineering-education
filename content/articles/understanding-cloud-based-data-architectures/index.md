@@ -6,19 +6,23 @@ Nowadays, cloud computing is generating huge income for businesses. This means t
 The article covers [cloud-based data architectures](https://www.snowflake.com/trending/cloud-data-architectures) and how businesses can use them to maximize their returns.
 
 ### The concept of cloud data architectures
-Most applications use the traditional database architecture to integrate similar [structured](https://www.tibco.com/reference-center/what-is-structured-data) data types. However, the complexity of the data involved may not favour the local parameters. Besides, the on-premises storage architecture is usually expensive to build and maintain. It is impractical to maintain the speed and flexibility of modern datasets in this era of big data.
+Most applications use the traditional database architecture to integrate similar [structured](https://www.tibco.com/reference-center/what-is-structured-data) data types. However, the complexity of the data involved may not favor the local parameters. Besides, the on-premises storage architecture is usually expensive to build and maintain. It is impractical to maintain the speed and flexibility of modern datasets in this era of big data.
 
-Thus, cloud-based data warehouse architecture is favourable to curb the above challenges. It makes efficient use of the data warehouse resources. Cloud data architecture contains the rules, models, and policies that handle data. It dictates how data is gathered and stored in the cloud platforms in an organization.
+Thus, cloud-based data warehouse architecture is favorable to curb the above challenges. It makes efficient use of the data warehouse resources. Cloud data architecture contains the rules, models, and policies that handle data. It dictates how data is gathered and stored in the cloud platforms in an organization.
 
+### Benefits of cloud data architectures
 Below are the benefits of cloud data architectures over the classic architectures:
-- Fast data access rates.
-- Low computing costs.
-- Supports future technological improvements.
-- Access to real-time analytics and data processing.
+- **Fast data access rates:** Cloud computing enhances the processing speeds compared to the on-premises architecture. Complex workloads take much time to process and complete. With higher processing speeds, data can be easily accessed. This also improves the processing of tasks.
+- **Low computing costs:** An organization that maintains on-premises infrastructure incurs additional costs. These include investment in the server hardware and software. Maintenance of the same requires skilled personnel to handle, which is costly. Cloud architectures greatly minimize these costs as most of the activities are handled by cloud vendors.
+- **Supports future technological improvements:** Testing new technological advancements on the on-premises architecture is not financially viable and tends to be impractical. However, it is possible to roll out new technology and deploy it quickly with cloud technologies. It is also possible to update the existing technology without upgrading the server infrastructure.
+- **Access to real-time analytics and data processing:** Nowadays, real-time data analytics are vital to any organization. The data provide information about the clients' transactions, business processes, technology adoption, and utilization. Cloud technology integrates machine learning and AI tools that perform big data analysis. They analyze unstructured data to give valuable insights. This is impossible with the on-premises architecture as it tends to be expensive and impacts the system’s performance.
 
 ### The core components of cloud computing
-Most cloud computing architecture consists of two main components: frontend and backend. The [frontend architecture](https://www.oreilly.com/library/view/frontend-architecture-for/9781491926772/ch01.html) contains every component that the end-user can access. This ranges from user interface components to the client infrastructure. The [backend](https://www.codecademy.com/article/back-end-architecture) handles data storage, server, operating system, security, and other backend procedures. It also handles security protocols that help to keep the cloud services secure.
+Most cloud computing architecture consists of two main components, as explained below:
+- **Frontend architecture:** This contains every component that the end-user can access. This ranges from user interface components to the client infrastructure. The infrastructure contains hardware and software components such as servers, data storage, and virtualization software. The frontend has a GUI where the user interacts with the system to perform tasks.
+- **Backend architecture:** This handles data storage, server, operating system, security, and other backend procedures. It also handles security protocols that help to keep the cloud services secure. The backend is responsible for monitoring the background services of the applications executing on the frontend.
 
+### Migrating data to the cloud
 For an organization to migrate to a cloud computing solution, it must be connected to the network. There are different ways an organization can migrate its data to the cloud, as stated below:
 
 - **Migration of new data and applications to the cloud:** is best when an organization needs a quick option. It is also known as the [cloud-first strategy](https://www.loggly.com/blog/cloud-first-strategy-and-its-benefits-for-business/).
@@ -30,22 +34,22 @@ Reliable data architecture takes time to build. All necessary components must be
 
 Furthermore, there is no all-in-one solution for developing secure and efficient data architecture. The time required can vary depending on the organization's business needs. Below are some factors to consider when developing a cloud data infrastructure:
 
-#### Understanding the cloud architecture
+#### The cloud models
 Organizations should understand various cloud services that different vendors in the market offer. Cloud architectures belong into four different categories as below:
-- **Private cloud:** In this category, the cloud services are used by one organization. This includes the employees, customers or stakeholders.
+- **Private cloud:** In this category, the cloud services are used by one organization. This includes the employees, customers, or stakeholders.
 - **Public cloud:** The cloud services here are open to the public. The provider owns the cloud infrastructure here.
 - **Hybrid cloud:** Here, the public and private cloud services are combined to meet the organizations' specific needs.
 - **Multi-cloud:** The above three cloud services are patched and combined to offer optimal computing capabilities at a minimal cost.
 
 Organizations should choose the cloud model that fits their unique needs and preferences.
 
-#### Understand different cloud storage options
+#### Cloud storage options
 Cloud data storage matters a lot when it comes to different databases. Most cloud providers offer a wide variety of storage options. For instance, [AWS](https://aws.amazon.com/) provides [Elastic File System](https://aws.amazon.com/efs/), [Simple Storage](https://aws.amazon.com/s3/) (S3), [Elastic Block Storage](https://www.amazonaws.cn/en/ebs/), and [Glacier](https://aws.amazon.com/s3/storage-classes/glacier/) archive backup and [storage gateway](https://aws.amazon.com/storagegateway/). 
 
 Combining the alternatives for data storage provides better prices and advantages each provider offers to the organizations' databases.
 
 #### Security issues
-A cloud platform should provide a secure way of accessing the data. The organization should ensure there are reliable ways of accessing data. Antivirus programs, encryption controls and more security features should be installed to keep the data safe.
+A cloud platform should provide a secure way of accessing the data. The organization should ensure there are reliable ways of accessing data. Antivirus programs, encryption controls, and more security features should be installed to keep the data safe.
 
 Advanced security measures must be ensured for the cloud architecture and servers. This guarantees that data transfer between the different devices is secure. Cloud data architecture should ensure a firewall is installed in the cloud servers. This assists in safeguarding the system from malicious and unauthorized access.
 
@@ -55,15 +59,15 @@ The cloud data architectural design should be scalable. This means they can be a
 System performance can be enhanced by adding more RAM using faster storage such as SSD disks and powerful CPUs. This will enable the cloud infrastructure to handle more load and improve performance.
 
 #### Robust user interface and data processing
-The cloud infrastructure should be easy to use and more user friendly. A more robust UX design should be embraced with an easy-to-use user interface. The backend of the cloud infrastructure should handle data processing and storage appropriately, boosting the entire system's performance. Pairing a well-designed frontend with a higher performance backend assures a high-quality cloud computing solution organization.
+The cloud infrastructure should be easy to use and more user-friendly. A more robust UX design should be embraced with an easy-to-use user interface. The backend of the cloud infrastructure should handle data processing and storage appropriately, boosting the entire system's performance. Pairing a well-designed frontend with a higher performance backend assures a high-quality cloud computing solution organization.
 
 #### Well-defined business use case
 Organizations should not rush cloud computing solutions with no clear business use case. They should consider their needs before signing the cloud solution agreements. 
 
-Different cloud data architecture solves a specific business problem. The cloud solution should align with the organizations' business needs. This will assist the organization to realize real business value.
+Different cloud data architecture solves a specific business problem. The cloud solution should align with the organizations' business needs in realizing real business value.
 
 #### Experimentation and testing
-The list of [data architecture patterns](https://livebook.manning.com/book/making-sense-of-nosql/chapter-3/) are usually huge and contain massive data. They involve [sharding](https://medium.com/@jeeyoungk/how-sharding-works-b4dec46b3f6), [event sourcing](https://docs.microsoft.com/en-us/azure/architecture/patterns/event-sourcing), [asynchronous request and reply](https://docs.oracle.com/cd/E17904_01/doc.1111/e17363/chapter05.htm#FPCON244) activities. These activities define how data is structured, indexed, and accessible for searching. Organizations should experiment with their data patterns and test which one works better.
+The list of [data architecture patterns](https://livebook.manning.com/book/making-sense-of-nosql/chapter-3/) is usually huge and contains massive data. They involve [sharding](https://medium.com/@jeeyoungk/how-sharding-works-b4dec46b3f6), [event sourcing](https://docs.microsoft.com/en-us/azure/architecture/patterns/event-sourcing), [asynchronous request, and reply](https://docs.oracle.com/cd/E17904_01/doc.1111/e17363/chapter05.htm#FPCON244) activities. These activities define how data is structured, indexed, and accessible for searching. Organizations should experiment with their data patterns and test which one works better.
 
 #### Dealing with unstructured data
 Some of the cloud services are separate between [structured and unstructured data](https://www.integrate.io/blog/structured-vs-unstructured-data-key-differences/). This leads to organizations having separate data storage. These are the on-premises and cloud data storage. However, both data storages offer different advantages, especially when dealing with unstructured data. 
