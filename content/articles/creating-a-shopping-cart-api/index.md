@@ -58,13 +58,13 @@ public class Customer {
     private Long id;
     private String firstName;
     private String lastName;
-    private BigDecimal Balance;
+    private BigDecimal balance;
 
     public Customer(Long id, String firstName, String lastName, BigDecimal balance) {
         this.id = id;
         this.firstName = firstName;
         this.lastName = lastName;
-        Balance = balance;
+        this.balance = balance;
     }
 }
 ```
@@ -97,7 +97,7 @@ public class Product {
 ```
 These classes provide the features, attributes, or fields we will be needing for the creation of objects.
 ### Creating your repositories
-The importance of creating a repository is to communicate to the database to manipulate your entities. It's like you have your database in your code for easy access. Spring Boot provides the `@Repository` annotation that helps the spring-boot know that this is for the database. In the repository package we have the following:
+The importance of creating a repository is to communicate to the database to manipulate your entities. It's like you have your database in your code for easy access. Spring Boot provides the `@Repository` annotation that helps Spring Boot know that this is for the database. In the repository package we have the following:
 #### AdminDao
 ```java
 @Repository
@@ -204,11 +204,11 @@ From here, you will see how we code to the interface. Any method that is in the 
 #### CartServiceImpl
 ```java
 @Service
-public class CartServiceImpl implements cartService {
+public class CartServiceImpl implements CartService {
     @Autowired
     private CustomerDao customerRepo;
     @Autowired
-    private productDao productRepo;
+    private ProductDao productRepo;
     @Autowired
     private Cart cart;
     @Autowired
@@ -360,7 +360,7 @@ public class DataServiceImpl implements DataService {
 
 ```
 ### Cart Package
-Next up in the agenda is to create a cart package and in the cart package we create a cart class to carry out certain functionality with its methods:
+Next up in the agenda is to create a cart package and in the cart package we create a cart class to carry out the functionality of a cart with its methods:
 ```java
 @Component
 public class Cart {
@@ -406,57 +406,60 @@ public class Controller {
     DataServiceImpl dataService;
     @Autowired
     CartServiceImpl cartService;
-    //This method creates a new customer
+    // This method creates a new customer. Using the @PostMapping annotation, it maps to the endpoint localhost:8090/cart/create_customer with the HTTP POST method.
     @PostMapping("/create_customer")
     public Customer registerCustomer(@RequestBody Customer customer) {
         return dataService.registerCustomer(customer);
     }
-    //This method gets all the customer
+    // This method gets all the customers. Using the @GetMapping annotation, it maps to the endpoint localhost:8090/cart/get_all_customers with the HTTP GET method.
     @GetMapping("/get_all_customers")
     public List<Customer> gettingAllList() {
         return dataService.gettingAllCustomers();
     }
-    //This method creates a new admin
+    // This method creates a new admin. Using the @PostMapping annotation, it maps to the endpoint localhost:8090/cart/create_admin with the HTTP POST method.
     @PostMapping("/create_admin")
     public Admin registerAdmin(@RequestBody Admin admin) {
         return dataService.registerAdmin(admin);
     }
-    //This method get all the registered admin
+    // This method gets all the registered admins. Using the @GetMapping annotation, it maps to the endpoint localhost:8090/cart/get_all_admins with the HTTP GET method.
     @GetMapping("/get_all_admins")
     public List<Admin> getAllAdmin() {
         return dataService.getAllAdmin();
     }
-    //This method get product by id
+    /*
+    This method gets a product by id. Using the @PostMapping annotation, it maps to the endpoint localhost:8090/cart/{id}/add_product with the HTTP POST method. Here {id} is
+    the product id passed as an argument to the method with the @PathVariable annotation.
+    */
     @PostMapping("/{id}/add_product")
     public void addProducts(@PathVariable Long id, @RequestBody Product product) {
         cartService.addProductToCartByCustomer(id, product);
     }
-    //This updates the product in the cart
+    // This updates the product in the cart
     @PutMapping("/{id}/add_product")
     public void addProduct(@PathVariable Long id, @RequestBody Product product) {
         cartService.addProductToCartByCustomer(id, product);
     }
-    //This method calculates the price of all the products in the cart
+    // This method calculates the price of all the products in the cart
     @GetMapping("/cal_price")
     public BigDecimal calculatingPrice() {
         return cartService.calculatePrice();
     }
-    //This method performs the payment(though use manually inserted numbers as the customer money but for advance concept we can use payment gateway)
+    // This method performs the payment (though we use hardcoded numbers as the customer's payment but for a more advanced app we can use a payment gateway)
     @GetMapping("/{id}/payment")
     public BigDecimal payment(@PathVariable Long id) {
         return cartService.calculatingPurchase(id);
     }
-    //This method gets all the product by a customer
+    // This method gets all the products in a customer's cart
     @GetMapping("/{id}/view_all_product")
     public List<Product> viewAllProducts(@PathVariable Long id) {
         return cartService.checkAllTheProductsInTheCartByCustomer(id);
     }
-    //This method gets all the products by an admin
+    // This method gets all the products by an admin
     @GetMapping("/{id}/view_all_productAdmin")
     public List<Product> viewAllProduct(@PathVariable Long id) {
         return cartService.checkAllTheProductsInTheCartByAdmin(id);
     }
-    //This method deletes a product by a customer
+    // This method deletes a product by a customer
     @DeleteMapping("/{id}/delete_product")
     public void delete(@PathVariable Long id, Product product) {
         cartService.removeProductsFromCartByCustomer(id, product);
@@ -581,16 +584,13 @@ public class CustomerTest {
 }
 ```
 ### Using Postman to verify the output on the web
-First things first go to learning.postman.com and download the version of postman that suits your operating system. 
-You will have to do the necessary sign-in if it's your first time.
-Postman provides those HTTP methods that we already have in our controller that help us perform operations on request, Examples are the POST, PUT, PATCH, GET, DELETE, etc.
-Now you are making these operations from your local machine, so you start with localhost: port-number, followed by the string on your controller, and the string on the individual method, eg localhost:8090/cart/create_customer.
-For more on this please make sure you use the postman documentation [Postman Documentation](https://learning.postman.com/docs/publishing-your-api/documenting-your-api/).
+First things first go to learning.postman.com and download the version of postman that suits your operating system. You will have to do the necessary sign-in if it's your first time.
+Postman allows us to send requests to our controller using the various HTTP methods. These include the POST, PUT, PATCH, GET, and DELETE methods. Now you will be performing these operations from your local machine. For the url, you start with `localhost:port-number`, followed by the endpoint on your `@Controller` annotation, and the endpoint on the individual method. For example, `localhost:8090/cart/create_customer` would map to the `registerCustomer` method of the `Controller` class. For more on this please make sure you use the postman documentation [Postman Documentation](https://learning.postman.com/docs/publishing-your-api/documenting-your-api/).
 ![shopping_api](api.JPG)
 ![shopping_api1](api2.JPG)
 ![shopping_api2](payment.JPG)
 #### Conclusion
-In the end, we've seen how to code to an interface, how to write a unit test, how to create an endpoint, and how to use postman to view our endpoint. Furthermore, we also added products to our cart and the cart could calculate the cost of products in the cart since the products have an attribute of price. 
+In the end, we've seen how to code to an interface, how to write tests, how to create an endpoint, and how to use postman to view our endpoint. Furthermore, we also added products to our cart and the cart could calculate the cost of products in the cart since the products have an attribute of price. 
 
 In this tutorial, we didn't integrate any other API for an actual business transaction that works with your bank account or credit card. Hopefully, we'll work on that in the next tutorial and use an actual database that could be used in real-life events. Be sure to check [Github](https://github.com/kingsleynwafor54/shopping_cart_with_springboot) for more on the entire code structure in case you want to save time from copying code or have an error. Thanks for staying with me all the way. Happy coding!
 ### Referrences
