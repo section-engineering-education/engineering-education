@@ -16,7 +16,7 @@ images:
 ---
 A time series is a sequence of data points that occur in successive order over time. It shows all the data set variables that change over time.
 <!--more-->
-Time series analysis extracts meaningful patterns and attributes of the historical data. It enables the model to gain knowledge and identify trends in the dataset.
+Time series analysis extracts meaningful patterns and attributes from the historical data. It enables the model to gain knowledge and identify trends in the dataset.
 
  Time series builds a model that predicts future values based on historical data. The model can forecast forex exchange rates,  stock prices, weather, and Covid-19 caseload. 
 
