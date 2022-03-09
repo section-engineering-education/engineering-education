@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /understanding-control structures-in-csharp/
+url: /understanding-control-structures-in-csharp/
 title: Understanding Control Structures in C# 
 description: This tutorial will walk the reader through understanding control structures in C#.
 author: haron-mutati
@@ -11,7 +11,7 @@ topics: [Languages]
 excerpt_separator: <!--more-->
 images:
 
-  - url: /engineering-education/understanding-control structures-in-csharp/hero.jpg
+  - url: /engineering-education/understanding-control-structures-in-csharp/hero.jpg
     alt: Understanding Control Structures in C# Hero Image
 ---
 Programming requires solving complex problems using code, to be able to solve these problems you need to learn the basic building blocks for writing a good program. These building blocks will assist one in making various decisions in the program.
