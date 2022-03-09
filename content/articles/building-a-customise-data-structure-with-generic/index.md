@@ -813,7 +813,7 @@ Postorder Traversal- walking through a tree in a post-order manner
 
 Inorder Traversal- walking through a tree in an orderly manner
 
-![generic Tree](generic_tree.png)
+![generic Tree](./generic_tree.png)
 
 ### Implementing a Generic Tree
 
