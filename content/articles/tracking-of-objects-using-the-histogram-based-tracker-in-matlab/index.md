@@ -3,16 +3,16 @@ layout: engineering-education
 status: publish
 published: true
 url: /tracking-of-objects-using-the-histogram-based-tracker-in-matlab/
-title: Tracking of objects using the histogram-based tracker in Matlab 
-description: This article will look at how to track objects using the histogram-based tracker and also how to track occluded objects in Matlab.
+title: Tracking objects using the histogram-based tracker in Matlab
+description: This article will look at how to track objects using the histogram-based tracker and how to track occluded objects in Matlab.
 author: peter-adongo
-date: 2022-03-01T00:00:00-06:32
-topics: []
+date: 2022-03-09T00:00:00-01:50
+topics: [Languages]
 excerpt_separator: <!--more-->
 images:
 
   - url: /engineering-education/tracking-of-objects-using-the-histogram-based-tracker-in-matlab/hero.jpg
-    alt: Tracking of objects using the histogram-based tracker in Matlab Hero Image
+    alt: Tracking objects using the histogram-based tracker in Matlab Hero Image
 ---
 Object tracking is a deep learning application that takes a set of detected objects and creates a unique identification for all the objects. After that, it tracks the detected objects as they move in a video frame.
 <!--more-->
@@ -21,7 +21,7 @@ Object tracking is a deep learning application that takes a set of detected obje
 This article will look at how to perform object tracking using the object-based tracker. Since a histogram-based tracker does not support tracking of the occluded objects, we will see how to handle occluded objects. Occluded objects are objects blocked by other objects.
 
 ### Prerequisites
-To follow through this tutorial, you will need:
+To follow through this tutorial, you will need to have:
 - [MATLAB](https://www.mathworks.com/products/get-matlab.html?s_tid=gn_getml) installed.
 - Proper understanding of [MATLAB basics](/engineering-education/getting-started-with-Matlab/).
 
@@ -31,19 +31,18 @@ We will search for the object in all the frames of the video. However, this meth
 
 As an alternative approach, we detect the object in the first image and then search for the corresponding location in the subsequent images.
 
-Thereby, the assumption is that the object does not move substantially between frames of a video. Therefore, we will use a histogram-based tracker for our ball example. 
+The assumption is that the object does not move substantially between frames of a video. Therefore, we will use a histogram-based tracker for our ball example.
 
 ### Histogram-based tracking
 Histogram based tracker uses a continuously adaptive mean shift algorithm for object tracking. The tracked object is identified by the histogram of object pixel values based on colour or intensity.
 
 There are three steps to doing this:
-
 1. Create a tracker object.
 2. Initialize the tracker with the initial region of interest.
 3. Loop the tracking algorithm over the frames in a video to track the object of interest.
 
 ### Matlab code for histogram-based tracker
-We first read our video using `VideoFileReader()` function. This fuction takes in the video file and the `VideoOutputDataType`.
+We first read our video using `VideoFileReader()` function. This function takes in the video file and the `VideoOutputDataType`:
 
 ```matlab
 close all
@@ -55,7 +54,8 @@ vidPlayer = vision.DeployableVideoPlayer;
 ```
 
 After reading, we display the output using `DeployableVideoPlayer`.
-Now, let us set up the histogram-based tracking using the system `HistogramBasedTracker`.
+
+Now let's set up the histogram-based tracking using the system `HistogramBasedTracker`:
 
 ```Matlab
 %% Create tracker object
@@ -95,12 +95,13 @@ The initialization function takes the tracker object, the input image, and the i
 
 Therefore, selecting an appropriate representation of the input image is important for good tracking results. In our example, we have used a simple 2-Dimensional representation of the image `imgYcbcr(:,:,2)`. The integer `2` represents the colour channel.
 
-The computer recognizes three colour channels. They are red, green and blue. If you use an integer of 1, it represents the red colour channel. The integer 2 represents green colour channels, and finally, 3 represents blue.
+The computer recognizes three colour channels. These are red, green and blue. If you use an integer of 1, it represents the red colour channel. The integer 2 represents green colour channels, and finally, 3 represents blue.
 
 The colour channel you choose to use depends on the object being tracked and the surrounding environment.
 
-We use a green channel since the ball colour is close to the green channel than the red or blue.
-We use a ' while' loop to apply tracking on our subsequent video frames.
+We use a green channel since the ball colour is closer to the green channel than the red or blue.
+
+We use a 'while' loop to apply tracking on our subsequent video frames:
 
 ```matlab
 %% Track object
@@ -116,7 +117,7 @@ while ~isDone(videoFReader)
 end
 ```
 
-The loop first checks if there is a video frame using the `~isDone()` function. It then reads the video frame using the `step()` function. This video frame is then converted from RGB colour space to ycbcr colour space in the loop. This conversion is done using `rgb2ycbcr()` function. 
+The loop first checks if there is a video frame using the `~isDone()` function. It then reads the video frame using the `step()` function. This video frame is then converted from RGB colour space to ycbcr colour space in the loop. This conversion is done using `rgb2ycbcr()` function.
 
 We use `step` on the histogram-based tracker object with the green channel of the current video frame to track the object. We need to have a bounding box around the object of interest.
 
@@ -124,13 +125,13 @@ We use the `insertShape()` function to insert a bounding box. This function take
 
 Finally, we display the output using the `step()` function. This function takes the video player `vidPlayer` and the image `out`. This image is a video frame, but the object of interest is bounded using a `rectangular` bounding box.
 
-A video is a combination of frames that keep changing. Since this is a combination, the while loop ensures that all the video frames are operated. It also ensures the object of interest is bounded. To visualize the output, add a pause of `0.1` seconds. 
+A video is a combination of frames that keep changing. Since this is a combination, the while loop ensures that all the video frames are operated. It also ensures the object of interest is bounded. To visualize the output, add a pause of `0.1` seconds.
 
 The index `idx` is used to plot the confidence score. The confidence score is used to see the accuracy of the tracking process. When the confidence score is high, the accuracy of the tracking process is likely to be high. When it is low, then the opposite applies.
 
-Now, let us plot the confidence score:
+Let us plot the confidence score:
 
-```matlab 
+```matlab
 figure;
 plot(score)
 xlabel('Frame #')
@@ -167,7 +168,7 @@ It can be done using the confidence score. It is because the confidence score sh
 if score(idx) > 0.5
         out = insertShape(img,'Rectangle',bbox);
     else
-        % Find the ball  
+        % Find the ball
         boxLoc = segmentBall(img,5000);
         if (~isempty(boxLoc))
             % If ball is found, reinitialize and track again
@@ -199,7 +200,7 @@ As demonstrated, the characteristics are improved. The tracking is working even 
 
 ![Confidence score](/engineering-education/tracking-of-objects-using-the-histogram-based-tracker-in-matlab/tracking-six.png)
 
-You can find the files, video, and utility functions used here [here](https://github.com/peterAdongo/tracking)
+You can find the files, video, and utility functions used [here](https://github.com/peterAdongo/tracking)
 
 ### Conclusion
 Histogram-based tracker bases the tracking on the histogram features of the object of interest. The tracking is good until an occlusion occurs. This tracker cannot estimate the position of an object in an occlusion.
