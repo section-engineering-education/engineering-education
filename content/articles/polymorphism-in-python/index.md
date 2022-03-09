@@ -1,19 +1,15 @@
 ### Introduction
-In object-oriented programming functions with similar names can perform different functionalities together. This feature is called Polymorphism. It permits the production of structures that utilizes many types of objects. That is a single object referring to a particular class can be used the same way as if it was another object referring to another class. 
-
+In object-oriented programming functions with similar names can perform different functionalities altogether. This feature is called Polymorphism. It permits the production of structures that utilizes many types of objects. A single object referring to a particular class can be used the same way as if it was another object referring to another class.  
 In this tutorial, we are going to cover more and equip the reader with knowledge about polymorphism and its implementation in python. 
 
-### Objectives
 **By reading this article, learners are expected to:**
-1. To understand Inbuilt and User-defined polymorphic function examples.
+1. Understand Inbuilt and User-defined polymorphic function examples.
 2. Learn more about Polymorphism with the inheritance of traits.
 3. Have a clear understanding of Polymorphism with the methods of a class.
-4. To understand Polymorphism in the context of a Function and its objects
+4. Understand Polymorphism in the context of a Function and its objects
 
 ### Table of content
 - [Introduction](#introduction)
-- [Objectives](#objectives)
-- [Table of content](#table-of-content)
 - [Python Polymorphism](#python-polymorphism)
 - [Built-in Polymorphic Function.](#built-in-polymorphic-function)
 - [User-defined Polymorphic Function.](#user-defined-polymorphic-function)
@@ -68,6 +64,7 @@ ob_introvert.social()
 ob_extrovert.intro()
 ob_extrovert.social()
 ```
+
 **Output:** 
 ```bash
 There are many kinds of people.
@@ -78,8 +75,10 @@ There are many kinds of people.
 Extroverts are social.
 ```
 When it comes to functions, there are two kinds of polymorphism that are used: **inbuilt** and **user-defined** polymorphic functions.
+
 - Inbuilt functions are the standard library functions that provide an easy way of using them by only importing them.
 - User-defined functions are where the user can create any number of customized functions with different types of operations and methods.
+
 The examples are shown below;
 ### Built-in Polymorphic Function.
 ```python
@@ -106,27 +105,32 @@ print(len("what is your name?"))
 # len() being used for a list
 print(len([2, 60]))
 ```
+
 **Output:**
 ```
 18
 2
 ```
-### Polymorphism with the inheritance of traits.
-Polymorphism in Python allows us to declare styles in the class that has the same name as styles in the base classes. The sub class inherits the system from the base class through heritage. 
-Changing a system in a class that has been inherited from the base class is possible anyhow. This is especially useful when the base class's inherited function doesn't fit the class. In similar cases, were-execute the system in the class to ensure that it's still working.
 
- **Method Overriding** is the process ofre-implementing a system in a child class. 
+### Polymorphism with the inheritance of traits.
+Polymorphism in Python allows us to declare styles in the class that has the same name as styles in the base classes. The sub-class inherits the system from the base class through heritage. 
+Changing a system in a class that has been inherited from the base class is possible anyhow. This is especially useful when the base class's inherited function doesn't fit the class. In similar cases, we re-execute the system in the class to ensure that it's still working.
+
+  **Method Overriding** this is the process of implementing a system in a child class. 
 
 ### Overloading an operator
 Is one more sort of polymorphism upheld by python where administrators act contrastingly based on the operands.
+
 For example, the + operator can sum two numbers, merge lists and also concatenate strings.
+
 ```python
 print(20+20)
 print("manipulator"+"load")
 print(3*3)
 print("load"*2)
 ``` 
-The above statements will produce different results based on the functionality of the operands
+The above statements will produce different results based on the functionality of the operands.
+
 ```bash
 40
 manipulator load
@@ -212,12 +216,8 @@ Polymorphism has a lot of significance:
 - Helps users to make customized functions.
 
 ### Conclusion
-As seen from the above tutorial, polymorphism in python plays a crucial role in object-oriented programming by allowing code reusability and the creation of user-defined functions with customized methods and properties.
-The reader has been able to;
-- Learn about polymorphism and its execution in python.
-- How polymorphism is used in both built-in and user-defined functions.
-- How polymorphism is used in classes and objects.
+In this tutorial, we have learned various concepts used in the Python language. We have looked into details the concept of polymorphism in python which plays a crucial role in object-oriented programming by allowing code reusability and the creation of user-defined functions with customized methods and properties. We have also discussed more on polymorphism and its execution in the Python language, how polymorphism is used in both built-in and user-defined functions and how polymorphism is used in classes and objects.
+
+For further reading, the reader can go through [Polymorphism in Python](https://www.programiz.com/python-programming/polymorphism) to enhance themselves with more skills and information.
 
 Happy coding!
-
- 
