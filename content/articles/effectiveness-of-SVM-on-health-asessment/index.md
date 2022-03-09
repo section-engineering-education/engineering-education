@@ -15,8 +15,8 @@ images:
     alt: Effectiveness of support vector machine in analyzing medical data hero image 
 ---
 Analyzing health care data has been filled with many problems and challenges. Most of the key challenges in medical data analytics are capturing relevant data and the lack of algorithms to analyze, which efficiently has affected the ability to extract hidden information from medical data making it hard to achieve data-driven clinical goals. This has affected the ability to address the critical world health issues sufficiently.
-
-[Support vector machine](https://www/engineering-education/supervised-learning-algorithms/) is one of the critical algorithms promising to address the health problem with accurate computational power. SVM works through regression, classification, and outlier detection of data. Various researchers have reported SVM's ability to detect various health conditions such as cancer, blood pressure, and diabetes through medical data analytics. SVM is likely to make a significant revolution with increased use in global health problems.
+<!--more-->
+[Support vector machine](https://www/engineering-education/supervised-learning-algorithms/) is one of the critical algorithms promising to address the health problem with an accurate computational power. SVM works through regression, classification, and outlier detection of data. Various researchers have reported SVM's ability to detect various health conditions such as cancer, blood pressure, and diabetes through medical data analytics. SVM is likely to make a significant revolution with increased use in global health problems.
 
 This article focuses on assessing how SVM can diagnose and prognoses various health conditions using medical data. The article also highlights why SVM is effective in handling medical data.
 
@@ -24,7 +24,7 @@ This article focuses on assessing how SVM can diagnose and prognoses various hea
 SVM is a critical [supervised machine learning](https://www.ibm.com/cloud/learn/machine-learning) model used to handle various data sets to resolve multiple problems. SVM can be used in determining and addressing global health problems using the different ways discussed below:
 
 #### SVM classification
-Classification is the primary way SVM can do medical data analytics. SVM works as a separator of various data sets in a multidimensional environment. SVM is capable of performing both multiclass and binary classification of data. Classification of medical data is vital for clinical coding transforming it into standardized statistical code. For example, classification subdivides the data in diagnosis or procedure code to analyze critical information. The classification is based on various parameters related to health assessment issues.
+Classification is the primary way SVM can do medical data analytics. SVM works as a separator of various data sets in a multidimensional environment. It is capable of performing both multiclass and binary classification of data. Classification of medical data is vital for clinical coding transforming it into standardized statistical code. For example, classification subdivides the data in diagnosis or procedure code to analyze critical information. The classification is based on various parameters related to health assessment issues.
 
 ##### 1. Binary classification of data using SVM
 The binary classification is a task that is categorized into two classes. When the data has precisely two categories, SVM can be used sufficiently. SVM starts by classifying data by identifying hyperplanes separating data points based on some parameters. There are various [hyperplanes](https://www/engineering-education/kernel-svm-in-python/), with the best being the most significant margins, common inseparable data. However, in non-separable data, SVM uses soft/best margin to separate some data, if not all. The hyperplane is usually linear, classifying the values into two different sets. To prevent any overfitting of the medical data, the VM algorithms usually use many non-linear features that are non-task-dependent.
@@ -73,7 +73,7 @@ Support vector machine is also vital in diagnosing hypertension through classifi
 ### Shortcomings affiliated with SVM in medical data analytics?
 Despite the wide range of reasons for choosing SVM in health data analytics, there are various shortcomings while using the model. The following are some key reasons:
 - SVM is not efficient in handling large sets of datasets. In large datasets, the training time is very high, with classification being difficult due to slow training. The target classes in a large dataset usually overlap, affecting the classification and predictability. As a result, the use of SVM in extensive medical data may be misleading and affect the results generated.
-- Another critical shortcoming is with setting the parameter correctly. For accurate classification, parameters need accurate identification, which may mislead the analysis. The parameters for one classification may not work for the second problem; thus, accuracy is vital. Hence, if the parameters in medical data analytics are wrongly set, the result is inaccurate.
+- Another critical shortcoming is with setting the parameter correctly. For accurate classification, parameters need accurate identification, which may mislead the analysis. The parameters for one classification may not work for the second problem; thus, accuracy is vital. Hence, if the parameters in medical data analytics  are set wrongly, the result is inaccurate.
 
 ### Conclusion
 Therefore, SVM is one of the critical machine learning models that effectively handle medical data. The algorithm can accurately help diagnose various health conditions such as cancer, hypertension, and diabetes. Three critical ways SVM handles medical data are through classification (both binary and multiclass). Other methods include regression and outlier detection.
@@ -86,3 +86,6 @@ One of the main reasons for choosing SVM in health assessment is its accuracy. O
 - [An SVM Method for Continuous Blood Pressure Estimation from a PPG Signal](https://www.researchgate.net/publication/317596007\_A\_SVM\_Method\_for\_Continuous\_Blood\_Pressure\_Estimation\_from\_a\_PPG\_Signal)
 
 Happy Learning!
+
+---
+Peer Review Contributions by: [Briana Nzivu](/engineering-education/authors/briana-nzivu/)
