@@ -7,20 +7,24 @@ In this tutorial, we will explain the interface of the engine and understand how
 
 ### Table of contents
 - [Prerequisities](#prerequisities)
+- [Unity version and updates](#unity-version-and-updates)
 - [Create a new project](#create-a-new-project)
-- [Understand the engine interface](#understand-the-engine-interface)
-- [Create edit and compose objects](#create-edit-and-compose-objects)
-- [Understand the reusability of prefabs](#understand-the-reusability-of-prefabs)
+- [Unity interface](#unity-interface)
+- [Hierarchy](#hierarchy)
+- [Scene](#scene)
+- [Inspector](#inspector)
+- [Assets](#assets)
+- [Unity objects](#unity-objects)
+- [Prefabs](#prefabs)
 
 ### Prerequisites
 To follow along with this tutorial, you’ll need the following:
 - A basic understanding of the C# programming language.
 - A basic understanding of classes and objects in the C# programming language.
 - Have a unity engine installed on your system.
+- If you don't have the unity engine installed on your system, you can click [here](https://unity.com/download) to download and install it.
 
 **Note:** we will not use the C# language directly in this tutorial, but understanding it will be helpful with unity objects and later on when coding is needed.
-
-If you don't have the unity engine installed on your system, you can click [here](https://unity.com/download) to download and install it.
 
 ### Unity version and updates
 In order to make a new project, first you open the unity hub, then you need to pick a unity version (the latest version is recommended), after that, you need to pick your modules. In this tutorial, we will only need the *WebGL Build Support* module, click on done and it will be downloaded and installed.
