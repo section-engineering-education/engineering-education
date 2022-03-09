@@ -24,7 +24,6 @@ The Socket class upholds two essential modes, simultaneous and nonconcurrent. In
 In this tutorial, we will be looking at socket programming on an asynchronous server to better understand this article in the .NET Framework. By doing this, we will build an simple server side console application.
 
 ### Table of contents
-- [Table of contents](#table-of-contents)
 - [Prerequisites](#prerequisites)
 - [Getting started](#getting-started)
 - [C# namespaces](#c-namespaces)
