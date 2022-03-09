@@ -962,5 +962,8 @@ The code for this project is available on the Github repo.
 
 ### References
 - [Java version 16 documentation on stream](http://https://docs.oracle.com/en/java/javase/16/docs/api/java.base/java/util/stream/package-summary.html)
+-[Tutorialspoint](https://www.tutorialspoint.com/java/java_generics.htm)
+-[Geeksforgeeks](https://www.geeksforgeeks.org/generics-in-java/)
+-[Section.io](https://www.section.io/engineering-education/getting-started-with-generics-in-java/)
 - Java - How to Program 10th Ed - Early Objects Version by Pual Deitel and Harvey Deitel
 - Introduction to Java Programming, Comprehensive Version by Y. Daniel Liang of Armstrong Atlantic State University
