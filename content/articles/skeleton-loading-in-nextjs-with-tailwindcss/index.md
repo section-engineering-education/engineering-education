@@ -3,25 +3,25 @@ layout: engineering-education
 status: publish
 published: true
 url: /skeleton-loading-in-nextjs-with-tailwindcss/
-title: Getting Started With Debugging In Android Using Chucker
+title: Implementing Skeleton Loading In Next.js With Tailwind CSS
 description: This article will walk the reader through Skeleton loaders, where they are used and key points to take note of when designing and developing one. 
 author: gisiora-elvis
-date: 2022-03-07T00:00:00-11:10
-topics: [Android]
+date: 2022-03-09T00:00:00-11:10
+topics: []
 excerpt_separator: <!--more-->
 images:
 
   - url: /engineering-education/skeleton-loading-in-nextjs-with-tailwindcss/hero.png
-    alt: Getting Started With Debugging In Android Using Chucker Hero Image
+    alt: Implementing Skeleton Loading In Next.js With Tailwind CSS Hero Image
 ---
-Skeleton loaders are aimed at giving users the best experience during wait time before the actual web content is fetched and displayed.  In this tutorial, you will learn about Skeleton loaders, where they are used and key points to take note of when designing and developing one. 
+Skeleton loaders are aimed at giving users the best experience during wait time before the actual web content is fetched and displayed.  In this tutorial, we will discuss about skeleton loaders, where they are used and key points to take note of when designing and developing one. 
 <!--more-->
 All this will culminate with a practical implementation of a skeleton loader in Next.js with Tailwind CSS.
 
 ### Prerequisites
-To follow through this tutorial, you will need to:
-- Have [VS Code](https://code.visualstudio.com/) and [Node.js](https://nodejs.dev/download) installed on your machine.
-- Have worked with Next.js using TypeScript.
+To follow through this tutorial, you will need to have:
+- [VS Code](https://code.visualstudio.com/) and [Node.js](https://nodejs.dev/download) installed on your machine.
+- Worked with Next.js using TypeScript.
 - Worked with Tailwind CSS.
 - Used the browser Fetch API.
 
@@ -32,7 +32,7 @@ To follow through this tutorial, you will need to:
 - [Points to take note of when designing and developing a skeleton loader](#points-to-take-note-of-when-designing-and-developing-a-skeleton-loader)
 - [Implementation](#implementation)
   - [Setup](#setup)
-  - [Bootstraping a Next.js Application with Tailwind CSS](#bootstraping-a-nextjs-application-with-tailwind-css)
+  - [Bootstraping a Next.js application with Tailwind CSS](#bootstraping-a-nextjs-application-with-tailwind-css)
   - [Installing packages and dependencies](#installing-packages-and-dependencies)
   - [Creating the UI components and TypeScript types](#creating-the-ui-components-and-typescript-types)
   - [Fetching data from an API and displaying it on the home page](#fetching-data-from-an-api-and-displaying-it-on-the-home-page)
@@ -45,23 +45,25 @@ To follow through this tutorial, you will need to:
 ### What is a skeleton loader?
 A skeleton loader is a static and usually animated placeholder for the information that is still loading on an application. It is used to imitate the structure and appearance of the content that is still loading and will eventually be displayed.
 
-It is used to give the user a sense of how long the page will take to load. This creates a perception of reduced wait time. Once the data is fully loaded the skeleton loader is immediately replaced with the actual content.
+It is used to give the user a sense of how long the page will take to load. This creates a perception of reduced wait time. 
+
+Once the data is fully loaded the skeleton loader is immediately replaced with the actual content.
 
 ### Why use a skeleton loader?
 The following are some of the reasons why you should use a skeleton loader:
 - To give the user a sense of how long the page will take to load.
 - They give a sense of reduced wait time.
 - To give a perception of progress.
-- Create uncertainty since the actual loaded time is unknown.
+- Create uncertainty since the actual loading time is unknown.
 
 ### Appropriate use cases
 Skeleton loaders are most appropriate for the following use cases:
 - On high and heavy content pages when the user is waiting for the content to load e.g dashboard content etc.
-- On components with a lot of content that is still loading e.g. blog post articles, etc.
+- On components with a lot of content that is still loading e.g. blog post articles etc.
 - To indicate loading more than one component e.g products on an eCommerce site.
 - In place of a loading spinner for a better user experience.
 
-### When not to use Skeleton Loader?
+### When not to use skeleton loader?
 The following scenarios are not ideal for using a skeleton loader:
 - On very small content pages.
 - On very fast processes.
@@ -85,7 +87,7 @@ The following are the general steps to implement a skeleton loader in Next.js wi
 #### Setup
 Make sure your development environment is set up and ready with [Node.js](https://nodejs.dev/download) and [VS Code](https://code.visualstudio.com/).
 
-#### Bootstrapping a Next.js Application with Tailwind CSS
+#### Bootstrapping a Next.js application with Tailwind CSS
 The simplest way to get started using Tailwind CSS in a Next.js project is to make use of the [Next.js + Tailwind CSS Example](https://github.com/vercel/next.js/tree/4d4f3093019179b1928ec07c16f38882241c0375/examples/with-tailwindcss). Within the directory you want to start your project, run the following command:
 
 ```bash
@@ -97,7 +99,7 @@ This makes use of `npx` and the `create-next-app` to bootstrap a basic Next.js a
 Equally to manually configure Tailwind CSS checkout this guide [Tailwind CSS Configuration](https://tailwindcss.com/docs/guides/nextjs) for a step by step procedure.
 
 #### Installing packages and dependencies
-Open the resulting directory `with-tailwindcss` in VS code and run the following command on the integrated terminal to install the packages and dependencies:
+Open the resulting directory `with-tailwindcss` in VS Code and run the following command on the integrated terminal to install the packages and dependencies:
 
 ```bash
 npm install
@@ -128,7 +130,7 @@ export interface IArticle {
 }
 ```
 
-Each article will be of type `IArticle` and will have a userId, id, title and body property. The userId and id will be of type number and the title and body will be of type string. This will be used to validate each article.
+Each article will be of type `IArticle` and will have a userId, id, title and body property. The userId and id will be of type `number` and the title and body will be of type `string`. This will be used to validate each article.
 
 ```js
 import { IArticle } from "./IArticle";
@@ -143,7 +145,7 @@ The articles will be an array of articles (arrays of type `IArticle`). This is t
 #### Components
 Within the components directory, create the following files:
 
-The `Meta` component.
+1. The `Meta` component:
 
 ```js
 import Head from 'next/head'
@@ -178,7 +180,7 @@ This makes use of the ` Head` component from Next.js to display the title, keywo
 
 If props are not provided, the default props will be used, provided by `Meta.defaultProps`.
 
-The `Footer` component.
+2. The `Footer` component:
 
 ```js
 export const Footer = () => {
@@ -195,7 +197,7 @@ export const Footer = () => {
 
 To display copyright symbol and current year on the footer. This will be used on every page of the application.
 
-The `Layout` component.
+3. The `Layout` component:
 
 ```js
 import { Meta } from "./Meta";
@@ -218,7 +220,7 @@ This will take in the Meta component, Footer component and all other pages as ch
 
 The component is imported into the `pages/_app.js` file and wrapped around the `<Component />` in the \_app.js file. This is the component that is used to wrap all other components.
 
-The `_app.js` file.
+4. The `_app.js` file:
 
 ```js
 import "../styles/globals.css";
@@ -238,7 +240,7 @@ function MyApp({ Component, pageProps }: AppProps) {
 export default MyApp;
 ```
 
-The `ArticleItem` component.
+5. The `ArticleItem` component:
 
 ```js
 import Link from "next/link";
@@ -261,7 +263,7 @@ export const ArticleItem = ({ article }: { article: IArticle }) => {
 
 This will define the layout for each article on the home page, the article title and body. The whole article will be wrapped in a link to the article page. The article body will be truncated to 100 characters and displayed as an excerpt.
 
-The `ArticleList` component.
+6. The `ArticleList` component:
 
 ```js
 import { IArticles } from "../types/IArticles";
@@ -283,7 +285,7 @@ export const ArticlesList = ({ articles }: IArticles) => {
 
 This will define how the articles will be displayed on the home page. It will take in the articles to display as a prop of type `IArticles`(an array of articles). Using the ArticleItem component, it will display each article in the articles array on the home page.
 
-The `SkeletonCard` component.
+7. The `SkeletonCard` component:
 
 ```js
 export const SkeletonCard = () => {
@@ -353,7 +355,7 @@ The home page takes in the articles as a prop of type `IArticles`(an array of ar
 ![Home page](/engineering-education/skeleton-loading-in-nextjs-with-tailwindcss/home-page.png)
 
 #### Adding the skeleton loader to the home page
-Now refactor the ArticleList component to use the `SkeletonCard` component to display the loading effect before the articles are fetched from the API and displayed on the home page.
+Now refactor the `ArticleList` component to use the `SkeletonCard` component to display the loading effect before the articles are fetched from the API and displayed on the home page.
 
 ```js
 import React, { useEffect, useState } from "react";
@@ -394,11 +396,13 @@ export const ArticlesList = ({ articles }: IArticles) => {
 
 Create a local state using the `useState` hook and set the loading state to `true` initially. This will be used to display the loading effect while the articles are being fetched from the API. 
 
-The `useEffect` hook will be used to set the loading state to `false` after the articles are fetched from the API. To simulate a longer loading time e.g in cases of fetching a huge number of heavy content, the `setTimeout` function is used to delay setting the loading state to `false` for 3 seconds, this makes the skeleton loading effect appear for a long enough time to be observed in this case.
+The `useEffect` hook will be used to set the loading state to `false` after the articles are fetched from the API. To simulate a longer loading time e.g in cases of fetching a huge number of heavy content, the `setTimeout` function is used to delay setting the loading state to `false` for 3 seconds. This makes the skeleton loading effect appear for a long enough time to be observed in this case.
 
 Create a variable named `skeletonCards` and initialize it to an array of length 3 and filled with 0's. This will be used to display 3 skeleton cards on the home page, an estimate of the actual number of possible articles that might occupy the viewport. This is just an estimate and can be varied by changing the number of items in the array to suit your needs.
 
-Then making use of a ternary operator check the loading state if it is `true` then make use of the `skeletonCards` variable to display the skeleton cards depending on the number of items in the array. If the loading state is `false` then make use of the `articles` passed as a prop to display the articles.
+Then making use of a ternary operator, check the loading state. If it is `true` make use of the `skeletonCards` variable to display the skeleton cards depending on the number of items in the array. 
+
+If the loading state is `false` then make use of the `articles` passed as a prop to display the articles.
 
 ![skeleton loading](/engineering-education/skeleton-loading-in-nextjs-with-tailwindcss/skeleton-loading.gif)
 
@@ -406,7 +410,9 @@ Then making use of a ternary operator check the loading state if it is `true` th
 #### Fetching article data and displaying it on the article page
 Each article on the home page will be linked to the article page. The article page will display the article title, body and a button to go back to the home page.
 
-Within the pages directory, create a new directory called `article`. Inside the article directory, create a new file called `[id].js`. The square brackets will be replaced with the article id.
+Within the pages directory, create a new directory called `article`. Inside the article directory, create a new file called `[id].js`. 
+
+The square brackets will be replaced with the article id.
 
 ```js
 import { Meta } from "../../components/Meta";
@@ -463,12 +469,11 @@ const article = ({ article }: { article: IArticle }) => {
 export default article;
 ```
 
-This is a [dynamic route](https://nextjs.org/docs/api-routes/dynamic-api-routes) that will be used to display each of the articles on an individual page.
-The `getStaticPaths` function will be used to fetch all the articles from the API and return all the possible values of the `id` parameter.
+This is a [dynamic route](https://nextjs.org/docs/api-routes/dynamic-api-routes) that will be used to display each of the articles on an individual page. The `getStaticPaths` function will be used to fetch all the articles from the API and return all the possible values of the `id` parameter.
 
 The `getStaticProps` function will be used to fetch the article with the id that matches the `id` parameter and return it as a prop.
 
-The article page takes in the article as a prop of type `IArticle`(an article) and makes use of the `Meta` component to display the article title, description(the article body truncated to 20 characters). The article title and body will be displayed on the page. The article page will also display a button to go back to the home page.
+The article page takes in the article as a prop of type `IArticle`(an article) and makes use of the `Meta` component to display the article title, description (the article body truncated to 20 characters). The article title and body will be displayed on the page. The article page will also display a button to go back to the home page.
 
 ![Article page](/engineering-education/skeleton-loading-in-nextjs-with-tailwindcss/article-page.png)
 
