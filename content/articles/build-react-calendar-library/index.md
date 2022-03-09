@@ -79,7 +79,7 @@ This may take a few minutes; wait for the installation of the development enviro
 
 Your development environment will set up an application structure that looks like the one below.
 
-![react-application-structure](engineering-education/build-react-calendar-library/react-application-structure.png)
+![react-application-structure](/engineering-education/build-react-calendar-library/react-application-structure.png)
 
 Next, start your application by running the command below.
 ```bash
@@ -135,7 +135,7 @@ When a user selects a date, the value of the date will be set to the user's sele
 
 Your application should look like the one below.
 
-![react-application-structure](engineering-education/build-react-calendar-library/react-calendar-default.png)
+![react-application-structure](/engineering-education/build-react-calendar-library/react-calendar-default.png)
 
 ### Add style to your calendar
 You can improve the calendar appearance by importing the react-calendar default stylesheet.
@@ -160,7 +160,7 @@ In this tutorial, we have changed the default styling by implementing the custom
 
 The final customized calendar now looks as shown below:
 
-![react-application-structure](engineering-education/build-react-calendar-library/customized-react-calendar.png)
+![react-application-structure](/engineering-education/build-react-calendar-library/customized-react-calendar.png)
 
 ### Select date range
 React-calendar has the date range feature. This gives users the ability to select a custom date range. 
@@ -347,7 +347,7 @@ When the value of `info` changes to true, the app displays the time slot and dat
 
 Our final application will look like the image below.
 
-![react-application-structure](engineering-education/build-react-calendar-library/booking-app-demo.png)
+![react-application-structure](/engineering-education/build-react-calendar-library/booking-app-demo.png)
 
 ### Conclusion
 We went over how to integrate the `react-calendar` package into our react app, customize it, set a date range, and add a booking feature.
