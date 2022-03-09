@@ -23,7 +23,7 @@ Blockchain networks that support smart contracts functionality are on the rise. 
 - [Why Binance Smart Chain?](#why-binance-smart-chain)
 - [Set Up Remix](#set-up-remix)
 - [Tokens in Binance Smart Chain](#tokens-in-binance-smart-chain)
-- [Defining Contracts and Constructor](#defining-contracts-and-constructor)
+- [Defining Contracts](#defining-contracts)
 - [Add mapping and events](#add-mapping-and-events)
 - [Create a smart contract constructor](#create-a-smart-contract-constructor)
 - [Retrieve Balances in Smart Contracts](#retrieve-balances-in-smart-contracts)
@@ -37,9 +37,9 @@ Blockchain networks that support smart contracts functionality are on the rise. 
 Tokens are the building blocks of any smart contract-based blockchain. We rely on them to build exchange platforms, Dapps, and Defi platforms. This tutorial provides a context of how we can get started with developing a binance smart chain token using Ethereum compatible tools such as Remix and Metamask. In the process, we will learn the basics of smart contracts, solidity programming, tokens supply, management, and allocation.
 
 ### Pre-requisites
-- Basics of [Blockchain]() technology.
-- An IDE for smart contracts. I recommend the in-browser [Remix IDE]().
-- A Metamask wallet extension. [Install here]() on your Chrome browser.
+- Basics of [Blockchain](https://www.oracle.com/ke/blockchain/what-is-blockchain/) technology.
+- An IDE for smart contracts such as the in-browser [Remix IDE](https://remix.ethereum.org/).
+- A Metamask wallet extension. [Install here](https://chrome.google.com/webstore/detail/metamask/nkbihfbeogaeaoehlefnkodbefgpgknn?hl=en) on your Chrome browser.
 
 ### Why Binance Smart Chain?
 Over time the Ethereum platform has expanded causing network congestion to its infrastructure. This impacted gas fees and slow transactions. As the plan to migrate to Proof-of-Stake has taken time, Ethereum currently uses Proof-of-Work consensus. On the other hand, Binance uses the Proof-of-Authority mechanism.
@@ -72,9 +72,9 @@ In blockchains that support smart contracts, developers need to create crypto to
 - BUX Token was created as a utility token for the [BUX exchange](https://bux-c.com/) ecosystem.
 - SAFEMOON Token: a Defi token for [safemoon](https://safemoon.net/) on the Binance Smart Chain.
 
-### Defining Contracts and Constructor
+### Defining Contracts
 
-By convention, each solidity file contains one smart contract. A contract is Solidity is similar to classes in OOP languages in that it wraps a collection of our variables, functions, events, state of a blockchain, and modifiers. Start by defining a contract named `Token` with the following state variables.
+By convention, each solidity file contains one smart contract. A contract in Solidity is similar to classes in OOP languages in that it wraps a collection of our variables, functions, events, state of a blockchain, and modifiers. Start by defining a contract named `Token` with the following state variables:
 
 ```js
 contract Token{
@@ -126,7 +126,7 @@ The Ethereum Virtual Machine supports events as a way to allow loggings and exte
 ```
 
 ### Create a smart contract constructor
-Next, add a constructor that runs when the contract is executed. Unlike the object-oriented where the constructor gets initialized every time, Solidity invokes only once when the contract is deployed to init the smart contract state. 
+Next, add a constructor that runs when the contract is executed. Unlike in object-oriented programming where the constructor gets initialized every time, Solidity invokes it only once when the contract is deployed to `init` the smart contract state. 
 
 ```js
 contract Token{
@@ -190,10 +190,9 @@ function approve(address spender, uint value) public returns(bool){
 
 To transfer tokens from an account, we need to call `Approve` on the address of the `spender` within the smart contract itself.
 
-- The line `allowance[msg.sender][spender] = value;`: 
+- The line `allowance[msg.sender][spender] = value;` is a mapping that we can translate as `allowance[owner][recipient] = value`. This triggers an exchange (as `value` in tokens) on behalf of the owner.
 
-- `emit Approval(msg.sender, spender, value);` will emit an event from `msg.sender` to approve the `spender` to spend 
-  `value` amount of tokens to its address within the smart contract.
+- `emit Approval(msg.sender, spender, value);` will emit an event from `msg.sender` to approve the `spender` to spend `value` amount of tokens to its address within the smart contract.
 
 Lastly, add a function to automate transfers of approved delegates. The `transferFrom` function will perform a deduction from an account wallet of the owner and emit a `Transfer` event. Check the code below: 
 
@@ -225,7 +224,7 @@ Using a metamask plugin, we can inject the web3.js namespace within our browser.
 
 The executable functions that we deploy to the smart contract to run transactions.
 
-![executable functions](/engineering-education/binance-smart-chain-tutorial/execFuncs.png).
+![executable functions](/engineering-education/binance-smart-chain-tutorial/execfuncs.png).
 
 Interacting with transfer and balance functions.
 ![check-balance-of](/engineering-education/binance-smart-chain-tutorial/check-balance-of.png).
