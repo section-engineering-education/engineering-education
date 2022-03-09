@@ -4,9 +4,9 @@ status: publish
 published: true
 url: /youtube-video-downloader-using-python/
 title: Creating a YouTube Video Downloader using Python
-description: 
+description: In this article we will build a YouTube downloader using Python.
 author: victor-kamau
-date: 2021-11-19T00:00:00-18:00
+date: 2022-03-10T00:00:00-18:00
 topics: [Languages]
 excerpt_separator: <!--more-->
 images:
@@ -20,7 +20,7 @@ YouTube is an internationally known website for sharing videos. Unfortunately, w
 <!-- more -->
 
 ### Introduction
-The task of downloading videos is incredibly straightforward, efficient, and safe while using the Python Tkinter module. It gets the video directly from YouTube for you.
+The task of downloading videos is incredibly straightforward, efficient, and safe while using the Python Tkinter module. Moreover, it gets the video directly from YouTube for you.
 
 ### Table of Contents
 - [Introduction](#introduction)
@@ -56,7 +56,7 @@ To install Pytube using `pip`, open your command prompt CLI on your machine and 
 pip install PyTube
 ```
 #### Install **Tkinter**
-Similar to PyTube, the `pip` command is used to install any other Python module. For example, install `Tkinter` as shown below since it is required to develop the user interface.
+Like PyTube, the `pip` command is used to install any other Python module. For example, install `Tkinter` as shown below since it is required to develop the user interface.
 
 ```bash
 pip install Tkinter
@@ -65,11 +65,11 @@ pip install Tkinter
 If you get errors while installing, please ensure that your Python package is installed correctly using the correct [defaults](https://www.python.org/about/gettingstarted/). Once it is successfully installed, you can start coding your API as instructed in the development section below.
 
 ### Building the API/GUI
-In this section, you will design the interface for the application. Since the article is about building the downloading functionality, the interface will be minimalistic. 
+In this section, you will design the interface for the application. Since the article builds the downloading functionality, the interface will be minimalistic. 
 
-If you want to add more features to your API and make it more appealing, you can refer to this [article](https://www.section.io/engineering-education/introduction-to-gui-in-python-using-tkinter/) to get more understanding of Tkinter GUI development. The following are the main steps to be followed.
+If you want to add more features to your API and make it more appealing, you can refer to this [article](https://www.section.io/engineering-education/introduction-to-gui-in-python-using-tkinter/) to get more understanding of Tkinter GUI development. First, however, the following steps need to be followed.
 
-#### 1.Import Libraries needed in the project
+#### 1. Import Libraries needed in the project
 After installing the modules, you need to import the libraries required in your application. Importing them allows them to act as a part of your project. Here is the right way to import them.
 
 ```python
@@ -114,7 +114,7 @@ Button(root, text='Download', font='san-serif 16 bold', bg='red', padx=2,command
 The command `download` is the attribute that initiates the download process when the button is pressed. It is called from the download function created below for getting the video from YouTube.
 
 ### Creating the download function
-Up to this point, you have made a GUI where you can paste your link from youtube, but the download button is not yet functional. To fetch the video using the URL, you will have to create a download function called the download button. 
+Up to this point, you have made a GUI where you can paste your link from youtube, but the download button is not yet functional. So, to fetch the video using the URL, you will have to create a download function called the download button. 
 
 The code below is a python function titled `download`, which reads the URL entered, connects to youtube, and downloads the video. The comments help you know the importance of every line of code and what it does. 
 
@@ -126,12 +126,12 @@ def download():
     Label(root, text="Downloaded", font="arial 15").place(x=100, y=120) #Once the video is downloaded, this label `downloaded` is displayed to show dowload completion.
 
 ```
-Copy and paste a link from a YouTube video to test your API, then click the download button. The video is saved in your project folder when logged into a network. The completed GUI is seen in the image below. 
+Copy and paste a link from a YouTube video to test your API, click the download button. The video is saved in your project folder when logged into a network. The completed GUI is seen in the image below. 
 
 ![final image](engineering-education/youtube-video-downloader-using-python/final.png)
 
 ### Conclusion
-To this point, we have successfully constructed a youtube video downloader application in Python in this tutorial. For rendering graphics, we have used the well-known Tkinter package. Next, we used the Pytube library to create a fully functional GUI to fetch videos from Youtube.
+To this point, we have successfully constructed a youtube video downloader application in Python in this tutorial. First, for rendering graphics, we have used the well-known Tkinter package. Next, we used the Pytube library to create a fully functional GUI to fetch videos from Youtube.
 
 I hope you find this tutorial helpful.
 
