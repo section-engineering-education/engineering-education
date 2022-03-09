@@ -17,11 +17,11 @@ Any Java IDE of their choice.
 An understanding of collections and their methods.
 [Basic understanding of generic](https://www.section.io/engineering-education/getting-started-with-generics-in-java/)
 
-The motivation of generic methods and classes
+### The motivation of generic methods and classes
 
-Method overloading is a concept often used to perform operations that has similar syntax but work on different data types. With the generic concept. The implementation of the algorithm that works with different collection types can be customized. The implementation is type-safe and easy to understand. This means that generic help in implementing a single method that can function with any data type.
+Method overloading is a concept often used to perform operations that has similar syntax but work on different data types. With the generic concept. The implementation of the algorithm that works with different collection types can be customized. This implementation is type-safe and easy to understand. This means that generic help in implementing a single method that can function with any data type.
 
-Method overloading
+#### Method overloading
 
 ```java
 
@@ -195,7 +195,7 @@ return nextNode;
 }
 ```
 
-In the above code, we declare a class called `ListNode`. The class has two variables which are data with type generic and nextNode of generic list. We declare a first constructor which takes the ‘object` parameter of type generic. We also declare another constructor of a two-parameter. Which are `object` and node list, both of type generic. The code has two getter methods which are `getData` and `getNextNode` which both respectively return data and nextNode(List).
+In the above code, we declare a class called `ListNode`. The class has two variables which are data with type generic and nextNode of generic list. We declare a first constructor which takes the object as parameter of type generic. We also declare another constructor of a two-parameter. Which are `object` and node list, both of type generic. The code has two getter methods which are `getData` and `getNextNode` which both respectively return data and nextNode(List).
 
 #### Implementing list
 ```java
