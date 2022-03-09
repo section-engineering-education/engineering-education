@@ -7,7 +7,7 @@ title: Overview of Quantum AI
 description: This article will discuss quantum computing and how quantum AI works to make human work more manageable.
 author: Carlos-Kahuru
 date: 2022-03-07T00:00:00-14:20
-topics: [Languages]
+topics: [Artificial Intelligence]
 excerpt_separator: <!--more-->
 images:
 
