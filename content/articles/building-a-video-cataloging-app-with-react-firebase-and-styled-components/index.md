@@ -15,12 +15,11 @@ images:
     alt: Video Cataloging React Firebase Styled Components
 ---
 
-
-Video-based social media websites and applications have experienced widespread adoption over the decade. From platforms such as YouTube, Instagram, and most recently TikTok which has been at the forefront having an average monthly user exceeding a billion.
+Video-based social media websites and applications have experienced widespread adoption over the decade. From platforms such as YouTube, Instagram, and most recently TikTok which has been at the forefront, having an average monthly user exceeding a billion.
 
 <!--more-->
 
-You might want to build your video-based social media and I will show you how to build a video cataloging app capable of displaying content in categories ranging from sports, entertainment, educational, etc. This can be done with React.js, React-styled components and Firebase.
+You might want to build your own video-based social media. In this article, I will show you how to build a video cataloging app capable of displaying content in categories ranging from sports, entertainment, educational, etc. This can be done with React.js, React-styled components and Firebase.
 
 Creating and styling the user interface will be handled with React.js and styled components while Firebase will handle storage and catalog (categories) management.
 
@@ -29,7 +28,6 @@ To follow along with this tutorial, you need basic knowledge of React.js and any
 
 ### Key takeaways
 At the completion of this tutorial, the reader will have the understanding and knowledge to implement the following:
-
 - Getting started with React.js
 - Getting started with Firebase
 - Building a video cataloging app with React.js
