@@ -14,11 +14,15 @@ images:
   - url: /engineering-education/time-series-analysis-and-forecasting-using-auto-time-series/hero.jpg
     alt: Time Series Analysis and Forecasting using Auto Time Series example image
 ---
-A time series is a collection of data points organized in successive order over time. A time series shows all the data set variables that change over time.
+A time series is a sequence of data points that occur in successive order over time. It shows all the data set variables that change over time.
 <!--more-->
-Time series analysis involves extracting meaningful patterns and other attributes of the historical data. This enables the model to gain knowledge about the trends in the dataset. Time series forecasting builds a model that predicts future values based on historical data. Times series models can be used to forecast forex exchange, business sales, stock prices, weather forecasts, and Covid-19 spread. 
+Time series analysis extracts meaningful patterns and attributes of the historical data. It enables the model to gain knowledge and identify trends in the dataset.
 
-In stock prediction, a time series model tracks the movement of stock prices, such as Apple stock, it then identifies patterns and trends. This helps the model to forecast future Apple stock prices. Accurate prediction of the stock price will yield profit to the investors. In this tutorial, we will build an electricity consumption prediction model using Auto Time Series library(Auto-TS).
+ Time series builds a model that predicts future values based on historical data. The model can forecast forex exchange rates,  stock prices, weather, and Covid-19 caseload. 
+
+In stock prediction, a time series model tracks the movement of stock prices, such as Apple stock. Accurate predictions of the model will yield profit to the investors. 
+
+In this tutorial, we will build an electricity consumption prediction model. We will use [Auto Time Series library(Auto-TS)](https://pypi.org/project/auto-ts/) to train the model.
 
 ### Table of contents
 - [Prerequisites](#prerequisites)
@@ -44,37 +48,41 @@ To easily understand this article, a reader should:
 - Know how to build a [time series model](/engineering-education/sales-forecasting-with-prophet/)
 - Understand [time series decomposition in Python](/engineering-education/time-series-decomposition-in-python/)
 - Know some of the different [types of time series models](https://codeit.us/blog/machine-learning-time-series-forecasting)
-- Know [Google Colab notebook](https://colab.research.google.com/)
+- Use [Google Colab notebook](https://colab.research.google.com/)
 
 ### Getting started with Auto Time Series library
-Auto Time-series (Auto-TS) is an open-source Python library for automating time series analysis and forecasting. It is designed to rapidly train high-accuracy models within a short time. Auto-Ts automatically runs multiple time series models on the training dataset. It then automatically selects the best model from all the models.
+[Auto Time Series (Auto-TS)](https://pypi.org/project/auto-ts/) is an open-source Python library for automating time series analysis and forecasting. It trains high-accuracy models within a short time. Auto-TS automatically runs multiple time series models on the training dataset. It then automatically selects the best model from all the models.
 
-There are different types of time series models. The most common models that Auto-time runs are as follows:
-- [PyFlux Models.](https://pyflux.readthedocs.io/en/latest/)
-- [Non-Seasonal ARIMA Models.](https://otexts.com/fpp2/non-seasonal-arima.html)
+There are different types of time series models. The most common models that Auto Time Series runs are as follows:
+- [PyFlux Model.](https://pyflux.readthedocs.io/en/latest/)
+- [Non-Seasonal ARIMA Model.](https://otexts.com/fpp2/non-seasonal-arima.html)
 - [Seasonal SARIMAX Model.](https://towardsdatascience.com/understanding-the-seasonal-order-of-the-sarima-model-ebef613e40fa)
 - [Basic Machine Learning Model.](https://towardsdatascience.com/ml-approaches-for-time-series-4d44722e48fe)
-- [vector autoregressive model.](https://medium.com/geekculture/vector-auto-regressive-var-models-for-multivariate-time-series-forecasting-106bb6f74add)
-- [Facebook Prophet model.](https://www.kaggle.com/prashant111/tutorial-time-series-forecasting-with-prophet)
+- [Vector Autoregressive Model.](https://medium.com/geekculture/vector-auto-regressive-var-models-for-multivariate-time-series-forecasting-106bb6f74add)
+- [Facebook Prophet Model.](https://www.kaggle.com/prashant111/tutorial-time-series-forecasting-with-prophet)
 
-All the listed models above support time series analysis and forecasting. Auto-Ts chooses the best model based on its accuracy score and future predictions. Auto-TS then plots a line graph to show the forecast values.
+All the listed models above support time series analysis and forecasting. Auto-TS chooses the best model based on its accuracy score and predictions made. We will then plot a line graph to show the forecast values.
 
 ### Benefits of using Auto Time Series library
 
 - It performs automated dataset preprocessing
-Auto-Ts will automatically transform the raw input dataset into a format the model can use. It removes noise and unnecessary features in the model. This saves time doing the whole process manually.
+It will automatically transform the input dataset into a format the model can use.  
+It removes noise and unnecessary information in the dataset. 
 
 - It can handle missing values and outliers
-Auto-Ts handles the missing values to ensure we have a complete dataset. It also removes outliers that are not within the dataset range.
+Auto-TS handles the missing values to ensure we have a complete dataset. 
+It also removes outliers that are not within the dataset range.
 
 - It trains high-accuracy models.
-Auto-ts produces reliable and accurate models.
+Auto-TS produces reliable and accurate models.
 
 - It selects the optimal time series model 
-Auto-Ts automatically runs multiple time series models listed above. It then automatically selects the optimal model. The model that gives the best forecast values.
+Auto-TS automatically runs multiple time series models listed above. It then automatically selects the optimal model. 
+The model will give accurate results.
 
 - Automatic hyperparameter tuning and configurations.
-Auto-Ts automatically fine-tunes the model parameters. This ensures the model gives the best accuracy score.
+Auto-TS automatically fine-tunes the model parameters.
+It ensures the model gives the best accuracy score.
 
 ### Installing Auto Time Series library
 To install the Auto Time Series library, run this command:
@@ -90,46 +98,49 @@ import auto_ts as AT
 Let's now start working with our dataset.
 
 ### Working with the dataset
-We will use the electricity consumption dataset to train the model. The dataset shows the monthly electricity consumption of an individual household from `2016-01-01` to `2020-05-01`. To get the electricity consumption dataset, use this [link](https://drive.google.com/file/d/15VvheglnHwqZeGygiGI-Prq6pxs2uel9/view?usp=sharing)
+We will use the electricity consumption dataset to train the model. 
+The dataset shows the monthly electricity consumption of an individual household from `2016-01-01` to `2020-05-01`. 
 
-The dataset is shown below:
+Download the electricity consumption dataset [here](https://drive.google.com/file/d/15VvheglnHwqZeGygiGI-Prq6pxs2uel9/view?usp=sharing)
 
-![Electricity consuption dataset](/engineering-education/time-series-analysis-and-forecasting-using-auto-time-series/electricity-consuption-dataset.png)
+The dataset output:
 
-From the image above, the dataset has 6 columns:
+![Electricity consumption dataset](/engineering-education/time-series-analysis-and-forecasting-using-auto-time-series/electricity-consuption-dataset.png)
+
+From the image above, the dataset has six columns:
 
 - `Bill_Date`
 It shows the date on which the billing period ends.
 
-- `On_peak`.
-The electricity consumption during the peak period.
+- `On_peak`
+It is the electricity consumption during the peak season.
 
 - `Off_peak`
-The electricity consumption during the off-peak period.
+It is the electricity consumption during the off-peak season.
 
 - `Usage_charge`
-The total cost of electricity consumption without the tax.
+It is the total cost of electricity consumption without the tax.
 
 - `Billed_amount`
-The total cost of electricity consumption including the tax.
+It is the total cost of electricity consumption and the tax.
 
 - `Billing_days`
-It shows the number of days the electricity was consumed within the billing period. 
+It shows the number of days within the billing period. 
 
-We need to convert the `Bill_Date` column to the DateTime format. The DateTime format is the format the time-series model understands. It also enables us to perform time-series operations on this column.
+We need to convert the `Bill_Date` column to the DateTime format. The DateTime format is the format Auto Time Series understands. It also enables us to perform time-series operations on this column.
 
 We will use the Python Datetime module.
 
 ```python
 from datetime import datetime
 ```
-Let's create a Python function that will use `DateTime` to convert the `Bill_Date` column to the DateTime format.
+Let's create a Python function to convert the `Bill_Date` column to the DateTime format.
 
 ```python
 def parse(x):
     return datetime.strptime(x, '%m/%d/%Y')
 ```
-We will call this function when loading the dataset. 
+We will call the function when loading the dataset. 
 
 ### Loading the dataset
 We will load the dataset using Pandas.
@@ -147,11 +158,11 @@ To see the loaded dataset, use this code:
 ```python
 df
 ```
-The output of the dataset is shown below:
+The output of the dataset:
 
 ![Dataset output](/engineering-education/time-series-analysis-and-forecasting-using-auto-time-series/dataset-output.png)
 
-To check if the `Bill_Date` column is converted into a DateTime format, use this code:
+To check the dataset information, use this code:
 
 ```python
 df.info()
@@ -160,9 +171,9 @@ The output:
 
 ![Dataset information](/engineering-education/time-series-analysis-and-forecasting-using-auto-time-series/dataset-info.png)
 
-From the image above, we have converted the `Bill_Date` column into a DateTime format. The dataset has 53 entries and there are no missing values.
+From the output, the dataset has 53 entries. Also, there are no missing values.
 
-Let's make the `Bill_Date`, our index column. 
+Let's make the `Bill_Date` the index column. 
 
 ```python
 ec_df = df.set_index('Bill_Date')
@@ -177,8 +188,9 @@ The dataset output:
 ![Dataset](/engineering-education/time-series-analysis-and-forecasting-using-auto-time-series/index-column.png)
 
 ### Selecting the dependent variable
-The dependent variable is the variable that the model will predict. Out dependent variable is the `Billed_amount` which keeps on changing over time.
+The dependent variable is the variable that the model will predict. This variable changes with time.
 
+The dependent variable is the `Billed_amount`.
 ```python
 ec_data = ec_df['Billed_amount']
 ```
@@ -193,11 +205,13 @@ To plot the line graph, use this code:
 ```python
 ec_data.plot(grid=True)
 ```
-The line graph is shown below:
+The line graph output:
 
 ![Dataset](/engineering-education/time-series-analysis-and-forecasting-using-auto-time-series/line-graph.png)
 
-The image above shows the `Billed_amount` vs `Bill_Date` from 2016 to 2020. Let's plot a line graph to show electricity consumption for 2019.
+The image shows the `Billed_amount` and the `Bill_Date` from 2016 to 2020. 
+
+Let's plot a line graph to show electricity consumption for 2019.
 
 #### Line graph for 2019
 To plot the line graph, use this code:
@@ -207,7 +221,7 @@ ec_df_2019=ec_df.loc['2019']
 ec_data_2019=ec_df_2019['Billed_amount']
 ec_data_2019.plot(grid=True)
 ```
-The output is shown below:
+The output:
 
 ![Line graph for 2019](/engineering-education/time-series-analysis-and-forecasting-using-auto-time-series/line-graph-2019.png)
 
@@ -221,14 +235,14 @@ ec_df_2019=ec_df.loc['2019']
 ec_data_2019=ec_df_2019['Billed_amount']
 ec_data_2019.plot.bar()
 ```
-The output is shown below:
+The output:
 
 ![Bar graph for 2019](/engineering-education/time-series-analysis-and-forecasting-using-auto-time-series/bar-graph-2019.png)
 
-From the image above, the bar graph also shows the highest energy consumption was for September.
+The bar graph shows the highest energy consumption was in September.
 
 ### Creating a copy of the dataset
-We will create a copy of the dataset. We will use this copy to train the model.
+We will use this copy of the dataset to train the model.
 
 ```python
 final_df = df.copy()
@@ -241,7 +255,7 @@ We will split the dataset into two sets. One set for model training and the othe
 train = final_df[:50]
 test = final_df[50:]
 ```
-From the code above, the first 50 entries/data points will train the model and the remaining will test the model.
+The first 50 entries/data points will train the model. The remaining entries will test the model.
 
 Let's print the shape of the train and test datasets.
 
@@ -254,14 +268,16 @@ The output:
 (50, 5) (3, 5)
 ```
 ### Selecting the timestamp and the target columns
-The Auto Time Series model expects an input dataset with timestamp and target columns. The timestamp column contains the DateTime of the time series and the target has the times series values (data points). The target column is also the model output after prediction.
+The Auto Time Series model expects an input dataset with timestamp and target columns. The `timestamp` column contains the DateTime of the time series. 
+
+The` target` column has the times series values (data points). The model will learn from this column.
 
 ```python
 ts_column = 'Bill_Date'
 sep = ','
 target = 'Billed_amount'
 ```
-The `Bill_Date` is the timestamp column and the `Billed_amount` is the target column. Also, our dataset is comma-separated.
+The `Bill_Date` is the timestamp column, and the `Billed_amount` is the target column. Also, our dataset is comma-separated.
 
 ### Initializing the Auto Time Series model
 We initialize the Auto Time Series model using the following code:
@@ -282,16 +298,19 @@ It contains the training set. These are the first 50 entries/data points that tr
 It contains the DateTime of the time series.
 
 - `sep`
-It specifies the dataset format. Our dataset is in CSV format (Comma-separated values).
+It specifies the dataset format. Our dataset is comma-separated values (CSV).
 
 -  `score_type`
-It is the scoring metrics for models during training. We use the Root Mean Square Error (RMSE). RMSE calculates the error of a model when making predictions. It calculates how far the model predictions will fall from actual values using Euclidean distance. 
+It is the scoring metrics for the model. 
+We use the Root Mean Square Error (RMSE). RMSE calculates the error of a model when making predictions. 
+
+It indicates the absolute fit of the model to the data– how close the observed data points are to the predicted values.
 
 - `forecast_period`
-It shows the number of months the model will predict. The model will predict for the next 6 months.
+It shows the number of months the model will predict. The model will make predictions for the next six months.
 
 - `time_interval`
-It shows the time intervals at which the dataset is recorded. It can be in minutes, hourly, daily, monthly, or yearly. Our dataset is recorded monthly.
+It shows the time interval of the time series. It can be in minutes, hourly, daily, monthly, or yearly. Our dataset has monthly intervals.
 
 - `non_seasonal_pdq`
 It contains the parameters that train the Non-Seasonal ARIMA model.
@@ -299,7 +318,7 @@ It contains the parameters that train the Non-Seasonal ARIMA model.
 - `seasonality`
 It handles the periodic changes in time series that occur within a given time. Seasonality shows a regular pattern within the dataset. 
 
-Seasonality can be daily, weekly, or yearly. Our dataset has monthly seasonality. In our dataset, the highest energy consumption occurs during September. It keeps on repeating during this month for all the years. This is because of the seasonality effect.
+Seasonality can be daily, weekly, or yearly. Our dataset has monthly seasonality. In our dataset, the highest energy consumption occurs during September. It keeps on repeating during this month for all the years. It is because of the seasonality effect.
 
 - `seasonal_period=12`
 It shows the monthly seasonality.
@@ -314,7 +333,7 @@ When you execute the code above, Auto Time Series will run multiple time series 
 
 ### Outputs
 **Running Facebook Prophet Model**
-It will start by running the Facebook Prophet Model
+It will start by running the Facebook Prophet Model.
 
 ![Running Facebook Prophet Model](/engineering-education/time-series-analysis-and-forecasting-using-auto-time-series/running-facebook-prophet.png)
 
@@ -355,27 +374,27 @@ It shows the overall trend of the time series data and the seasonality in the da
 After the Auto Time-series automatically runs, it selects the best model. 
 
 ### Selecting the best model
-Auto Time series will select the best model with the lowest RMSE score. It shows the model with the least error when making predictions.
+Auto Time Series will select the best model with the lowest RMSE score. It shows the model with the lowest error when making predictions.
 
 The best model is:
 
 ![Best model](/engineering-education/time-series-analysis-and-forecasting-using-auto-time-series/best-model.png)
 
-From the image above, the best model is Facebook Prophet. It also shows an array of actual and forecast values. The model has an RMSE score of `39.91`. It is a good RMSE score and this model can make accurate predictions.
+From the image above, the best model is Facebook Prophet. It also shows an array of actual and forecast values. The model has an RMSE score of `39.91`. It indicates the model can make accurate predictions.
 
-Finally, Auto-Ts will plot a line graph to show the actual and the forecast values.
+Finally, Auto-TS will plot a line graph to show the actual and the forecast values.
 
-### Actuals vs Forecast values
-The line graph is shown below:
+### Actual vs Forecast values
+The line graph output:
 
 ![Actuals vs Forecast Values](/engineering-education/time-series-analysis-and-forecasting-using-auto-time-series/actual-vs-forecast.png)
 
-From the image above, the red line shows the actual values, while the green line shows the forecast values. This shows that our model made predictions for the next 6 months.
+From the image above, the red line shows the actual values. The green line shows the forecast values. The model has made predictions for the next six months.
 
 ### Conclusion
-We have learned how to perform time series analysis and forecasting using the Auto Time series. The tutorial shows the common models that Auto-time runs. We also discussed the benefits of the Auto-time series and how to install it.
+We have learned how to perform time series analysis and forecasting using the Auto Time series. The tutorial shows the models that Auto Time Series runs. We also discussed the benefits of the Auto Time Series and how to install it.
 
-We used the Auto-time series to build an electricity consumption model. It selected Facebook Prophet as the model. This model had the lowest RMSE score and made predictions for the next 6 months.
+We used the Auto Time Series library to build an electricity consumption model. It selected Facebook Prophet as the best model. It had the lowest RMSE score and made predictions for six months.
 
 To get the Python code in Google Colab., use this [link](https://colab.research.google.com/drive/1-VZ8YNIbs7GosvtTFyjaYK1HaZhqwqm-?usp=sharing). 
 
