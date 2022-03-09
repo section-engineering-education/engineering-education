@@ -40,7 +40,7 @@ The image above shows the sensors that are available to android mobile phones. T
 We have two schemes in which you can capture and process data. These schemes are to record sensor data offline and record sensor data online. At the same time, you can access the data and process it on the local PC using Python or Matlab.
 Reading data and processing it offline is easy as compared to online. It is because it needs to establish a real-time communication link. The step of reading mobile sensor and online processing as shown below:
 
-![Online processing](/engineering-education/reading-and-processing-android-sensor-data-using-python-with-csv-read/image-three. png)
+![Online processing](/engineering-education/reading-and-processing-android-sensor-data-using-python-with-csv-read/image-three.png)
 
 Similarly, the steps that are used to record and process data offline is shown below:
 
