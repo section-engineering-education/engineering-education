@@ -2,17 +2,11 @@ JavaScript has numerous framework that helps you implement your application out 
 
 Aurelia is a JavaScript client framework for web, mobile, and desktop that leverages simple conventions to empower your UI creativity. Aurelia is the only framework that lets you build applications components using vanilla JavaScript/TypeScript. It uses modern JavaScript and HTML to let you get started quickly and build complex apps.
 
-On the other hand, Typescript is a superset of JavaScript. Typescript is gaining a lot of popularity among JavaScript developers. It is one of the fast-developing programming languages for building extensive applications.
-
 This guide will help you set up and run Applications using TypeScript while still using the Aurelia.js framework.
 
 ### Why use TypeScript
 
-This guide will help you set up and run Applications using TypeScript while still using the Aurelia.js framework.
-
-### Common features of Aurelia
-
-This guide will help you set up and run Applications using TypeScript while still using the Aurelia.js framework.
+On the other hand, Typescript is a superset of JavaScript. Typescript is gaining a lot of popularity among JavaScript developers. It is one of the fast-developing programming languages for building extensive applications.
 
 ### How to set up a basic TypeScript Aurelia project
 
@@ -163,10 +157,24 @@ export { App }
 
 ### Set up the Aurelia template
 
+Aurelia uses the templating system to create the application UI components. This creates intuitive interfaces.
+
+To create these UIs, add the `template` tags, then wrap every component inside these tags. To do this, navigate to the `app.html` page and add these tags.
+
 ```html
 <template>
 </template>
 ```
+
+Any subsequent components will be added inside these `template` tags.
+
+Aurelia templates then use binding to connect to the view model you have created. In this case, you have created a todo model. Thus templates will access it to manipulate the todos data using data binding.
+
+Below is how to connect to the todos model:
+
+- Add a filter component
+
+First, add a filter component. This will be sued to filter any todo from ye list of the added todos.
 
 ```html
 <nav class="navbar navbar-daNrk bg-dark">
@@ -180,9 +188,15 @@ export { App }
 </nav>
 ```
 
+- Get the application header
+
 ```html
 <h1 class="text-center">${heading}</h1>
 ```
+
+This header is defined inside the `app.ts` inside the class `App`. `heading` is a property of the model. The above line of code will bind it to the template using the string interpolation. The `${}` operator helps you extract the `heading` string value.
+
+- Add a form to add todos
 
 ```html
 <form submit.trigger="addTodo()">
@@ -190,26 +204,42 @@ export { App }
 </form>
 ```
 
+This form will trigger the constructor `addTodo()` to manipulate the data.
+
+- Add todo title form input
+
 ```html
 <input type="text" value.bind="todoTitle" id="addTodoInput" class="form-control" placeholder="Enter Title">
 ```
+
+Like the model states, each todos has three properties: a title, description, and completed value. In this case, the completed value is added to false by default. The above code block will provide a form to enter the todo title.
+
+- Add todo description form input
 
 ```html
 <input type="text" value.bind="todoDescription" id="addTodoInput" class="form-control" placeholder="Enter Description">
 ```
 
-```html
-<button class="btn btn-primary" type="submit" disabled.bind="!todoTitle">Submit</button>
-```
+- Add a button to submit the form input
 
 ```html
+<button class="btn btn-primary" type="submit" disabled.bind="!todoTitle">Submit</button>
+
 <div class="form-check" repeat.for="todo of todos">
 </div>
 ```
 
+To link the view model's `todoTitle` and `todoDescription`, use the `value.bind`. This will then map the value to the template.
+
+- Add a checkbox
+
 ```html
 <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" checked.bind="todo.completed">
 ```
+
+This will be used to update the todos using the set `completed` value.
+
+- Update a todo
 
 ```html
 <label class="form-check-label" for="flexCheckDefault"
@@ -219,10 +249,22 @@ export { App }
 </label>
 ```
 
+This will access the todos description and title. When the checkbox is clicked, Aurelia will check the `todo.completed` value and add line-through to make the todo as completed.
+
+- Delete a todo
+
 ```html
 <button class="btn btn-danger" click.trigger="removeTodo(todo)">Delete</button>
 ```
 
+- Clone a todo
+
 ```html
 <button click.trigger="cloneTodo(todo)">Clone</button>
 ```
+
+Finally, run `npm start` and open `http://localhost:8080/` on the browser to start interacting with your Aurelia application.
+
+### Conclusion
+
+Aurelia.js Framework allows to write modern JavaScript. This way, you can implement two-way binding. Meaning your views and JavaScript/Typescript are always in agreement. It just lets you write pure JavaScript or Typescript. I hope you found running these Aurelia Typescript applications useful.
