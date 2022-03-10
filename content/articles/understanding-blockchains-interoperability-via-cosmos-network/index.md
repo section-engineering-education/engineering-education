@@ -1,5 +1,22 @@
-﻿### Introduction
-The adoption of crypto is still facing challenges. Its adoption is slow compared to the global users of the internet. The [blockchains](https://www.ibm.com/topics/what-is-blockchain) will still face the challenge of slow adoption because they lack [interoperability](https://www.gemini.com/cryptopedia/why-is-interoperability-important-for-blockchain). Different methods have been devised to achieve interoperability between the blockchains. However, most exchanges only operate between two blockchains.
+---
+layout: engineering-education
+status: publish
+published: true
+url: /understanding-blockchains-interoperability-via-cosmos-network/
+title: Understanding Blockchains Interoperability via Cosmos Network
+description: This guide will discuss how to examine the cosmos network in achieving interoperability between blockchains.
+author: lewel-murithi
+date: 2021-03-10T00:00:00-12:00
+topics: [Blockchain]
+excerpt_separator: <!--more-->
+images:
+
+  - url: /engineering-education/understanding-blockchains-interoperability-via-cosmos-network/hero.jpg
+    alt: Understanding Blockchains Interoperability via Cosmos Network Hero Image
+---
+The adoption of crypto is still facing challenges. Its adoption is slow compared to the global users of the internet. 
+<!--more-->
+The [blockchains](https://www.ibm.com/topics/what-is-blockchain) will still face the challenge of slow adoption because they lack [interoperability](https://www.gemini.com/cryptopedia/why-is-interoperability-important-for-blockchain). Different methods have been devised to achieve interoperability between the blockchains. However, most exchanges only operate between two blockchains.
 
 Most interoperability approaches do not impact network efficiency, upgradeability, and sustainability. In an attempt to address these issues, [cosmos networks](https://forkast.news/what-is-cosmos-the-internet-of-blockchains/) provide a way to achieve interoperability. This article will examine the cosmos network in achieving interoperability between blockchains.
 
