@@ -1,6 +1,23 @@
+---
+layout: engineering-education
+status: publish
+published: true
+url: /how-to-use-edge-histogram-descriptor-to-retrieve-images-in-matlab/
+title: How to use Edge Histogram Descriptor to Retrieve Images in Matlab
+description: This tutorial will discuss edge histogram descriptor (EHD), how to implement it in matlab and its usefulness in image retrieval.
+author: florence-atieno
+date: 2022-03-09T00:00:00-18:16
+topics: [Languages]
+excerpt_separator: <!--more-->
+images:
 
+  - url: /engineering-education/how-to-use-edge-histogram-descriptor-to-retrieve-images-in-matlab/hero.jpg
+    alt: How to use Edge Histogram Descriptor to Retrieve Images in Matlab Hero image
+---
 
-Edge Histogram descriptor is a method describing the texture. It is mostly used for image retrieval. This method classifies images on local edge distribution with the histogram-based descriptor. Image retrieval is a computer system used in a large database of digital images to browse and retrieve images. It could be done using Edge Histogram in Matlab.
+Edge Histogram descriptor is a method describing the texture. It is mostly used for image retrieval. This method classifies images on local edge distribution with the histogram-based descriptor.
+<!--more-->
+Image retrieval is a computer system used in a large database of digital images to browse and retrieve images. It could be done using Edge Histogram in Matlab.
 
 This tutorial will look at the visual descriptor, the edge histogram descriptor. It is an effective visual descriptor that focuses on the spatial edge distribution in an image.
 
@@ -14,7 +31,7 @@ To follow along with this tutorial, you will need:
 ### MPEG-7 visual descriptor
 MPEG-7 is a standard for describing the future of multimedia content. It provides the world's richest set of audio-visual descriptions. With the help of these descriptors, users can search, browse, and retrieve that content more effectively. It is more effective than using text-based search engines.
 
-Many descriptors are members of the MPEG-7 family. They are categorized as:
+Many descriptors are members of the MPEG-7 family. They are categorized as follows:
 
 _Color descriptors_: These include dominant colour, scalable colour, colour layout, colour structure, and colour temperature.</br>
 _Texture descriptor_: They are homogenous texture, texture browsing, edge histogram.</br>
@@ -36,13 +53,13 @@ EHD captures the spatial distribution of edges. It captures edges grouped into f
 - Isotropic(non-orientation specific)
 
 ### Steps for computing EHD
-1. Image partitioning: The input image is divided into 4x4(16) non-overlapping blocks. Each extracted block is further divided into 2x2 blocks for capturing local edge orientation. If the image dimension is not completely divisible by 4, it is resized so that M/4 and N/4 become an integer.
+1. **Image partitioning**: The input image is divided into 4x4(16) non-overlapping blocks. Each extracted block is further divided into 2x2 blocks for capturing local edge orientation. If the image dimension is not completely divisible by 4, it is resized so that M/4 and N/4 become an integer.
 
 ![Partitioning](/engineering-education/how-to-use-edge-histogram-descriptor-to-retrieve-images-in-matlab/edge-one.png)
 
 Depending on the image size, the 2x2 blocks can be as many as possible.
 
-2. Capturing local edge orientation: For each block(M/4xN/4), a five point bin is initialized as: 
+2. **Capturing local edge orientation**: For each block(M/4xN/4), a five point bin is initialized as: 
  `Bin=[V, H, D45, D135, NOE]=[0, 0, 0, 0, 0]`
 Where:
 
@@ -125,7 +142,7 @@ filewithpath2=strcat(pathname2, filename2);
 img2=imread(filewithpath2);
 ```
 
-Here, the `uigetfile()` function allows you to select the input image from any directory on your pc. This input image is then read using the `imread()` function.
+In the code above, the `uigetfile()` function allows you to select the input image from any directory on your pc. This input image is then read using the `imread()` function.
 
 Let's now compute the corresponding EHD for the input images.
 
@@ -200,6 +217,9 @@ Edge histogram descriptor(EHD) is a tool that makes it easy to retrieve images i
 It considers the five types of edges that we have described above. This method captures the edge of the input image and compares it to the various edges of other images in the database. It makes it a more efficient and time-saving image retrieval method.
 
 Happy coding!
+
+---
+Peer Review Contributions by: [Monica Masae](/engineering-education/authors/monica-masae/)
 
 <!-- MathJax script -->
 <script type="text/javascript" async
