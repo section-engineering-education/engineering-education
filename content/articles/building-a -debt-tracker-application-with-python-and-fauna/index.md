@@ -1,4 +1,19 @@
-### Building a Debt Tracker Application with Python and Fauna
+---
+layout: engineering-education
+status: publish
+published: true
+url: /building-a -debt-tracker-application-with-python-and-fauna/
+title: Building a Debt Tracker Application with Python and Fauna
+description: This tutorial will guide the reader through building a debt tracker application using Fauna. It will use Fauna to store data and use GraphQL to query database.
+author: geoffrey-mwangi
+date: 2022-03-10T00:00:00-11:00
+topics: [Languages]
+excerpt_separator: <!--more-->
+images:
+
+ - url: /engineering-education/Building a Debt Tracker Application with Python and Fauna/hero.jpg
+   alt: Building a Debt Tracker Application with Python and Fauna Hero Image
+---
 
 [Fauna](https://fauna.com) is a cloud-based database with two interfaces; GraphQL and Fauna Query Language (FQL). Databases can hold collections, indexes, and even other databases (multi-tenancy). 
 
@@ -249,3 +264,6 @@ You can find the source code from this  [Github Repo](https://github.com/Jeff-mw
 In this tutorial, we have learned the basics of the Fauna database while working with Flask and the CRUD operations that comes with it.
 
 Happy coding!
+
+---
+Peer Review Contributions by: [Mercy Meave](/engineering-education/authors/mercy-meave/)
