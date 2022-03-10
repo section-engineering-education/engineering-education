@@ -89,3 +89,6 @@ Cosmos network creates a space where blockchains would not compete but rather wo
 - [Understanding Cosmos Network](https://medium.com/onomy-protocol/understanding-cosmos-the-internet-of-blockchains-fc3aa25689a0).
 - [Overview of Blockchain Scalability Challenges](https://101blockchains.com/blockchain-scalability-challenges/).
 - [Overview of Blockchain Interoperability](https://www.analyticssteps.com/blogs/all-about-blockchain-interoperability-2022).
+
+---
+Peer Review Contributions by: [Wilkister Mumbi](/engineering-education/authors/wilkister-mumbi/)
