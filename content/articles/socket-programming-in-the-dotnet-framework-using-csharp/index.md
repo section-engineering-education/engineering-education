@@ -15,20 +15,20 @@ images:
     alt: Socket Programming in The .NET Framework Using C# Hero Image
 ---
 
-Socket programming is an approach to associating two nodes on a network to speak with one another. One socket (node) tunes in on a specific port at an IP, while the other socket contacts the other to create an association. The server creates the listener socket while the client connects with the server.
+Let's say there are two computer devices on a network that needs to communicate with each other. To enhance communication between these devices, we set one device on a socket of a specific port and an IP address. The other device wil be able to communicate with the first device through the same port and IP address if they on the same socket or network.
 <!--more-->
-The .NET Framework Socket class is an overseen code form of the attachment administrations given by the Winsock32 API. By and large, the Socket class techniques essentially marshal information into their local Win32 partners and handle any fundamental security checks.
+In the .NET framework, we have the `Socket` class that enables network programming. This class handles both synchronous and asynchronous modes of network programming.
 
-The Socket class upholds two essential modes, simultaneous and nonconcurrent. In simultaneous mode, calls to capacities that perform network activities (like Send and Receive) delay until the activity finishes before returning control to the calling program. In offbeat mode, these calls get back right away.
+In asynchronous programming, our program can continue doing other tasks and receiving data while it waits for other tasks to be executed. In synchronous programming, tasks are only done one at time and follow the order in which they come in. In this state, our program can only handle one task until it completes, then it accepts another task.
 
-In this tutorial, we will be looking at socket programming on an asynchronous server to better understand this article in the .NET Framework. By doing this, we will build a simple server-side console application.
+Thus, this calls us to look at how asynchronous socket programming is handled and how we can develop one in C#. By doing this, we will build a simple server-side console application.
 
 ### Table of contents
 - [Table of contents](#table-of-contents)
 - [Prerequisites](#prerequisites)
 - [Getting started](#getting-started)
 - [C# namespaces](#c-namespaces)
-- [Server side socket programming](#server-side-socket-programming)
+- [Server-side socket programming](#server-side-socket-programming)
 - [Conclusion](#conclusion)
 
 ### Prerequisites
@@ -98,19 +98,19 @@ In our try method, we will bind our listener to the local endpoint and set the l
      public static void StartListener()
      {
          byte[] dataSize = new byte[1024];
-         IPHostEntry host = Dns.GetHostEntry(Dns.GetHostName());
-         IPAddress ip = host.AddressList[0];
+         IPHostEntry hostEntry = Dns.GetHostEntry(Dns.GetHostName());
+         IPAddress ip = hostEntry.AddressList[0];
          IPEndPoint localEnd = new IPEndPoint(ip, 4444);
-         Socket listener = new Socket(ip.AddressFamily, SocketType.Stream,ProtocolType.Tcp);
+         Socket eventListener = new Socket(ip.AddressFamily, SocketType.Stream,ProtocolType.Tcp);
          try
          {
-             listener.Bind(localEnd);
-             listener.Listen(111);
+             eventListener.Bind(localEnd);
+             eventListener.Listen(111);
              while (true)
              {
                  completed.Reset();
                  Console.WriteLine($"Waiting for new connections...");
-                 listener.BeginAccept(new AsyncCallback(AcceptCallBack), listener);
+                 eventListener.BeginAccept(new AsyncCallback(AcceptCallBack), eventListener);
                  completed.WaitOne();
              }
          }
@@ -130,8 +130,8 @@ We will set the state of our handler and use it to start receiving data. With th
  private static void AcceptCallBack(IAsyncResult ar)
             {
                 completed.Set();
-                Socket listener = (Socket)ar.AsyncState;
-                Socket handler = listener.EndAccept(ar);
+                Socket eventListener = (Socket)ar.AsyncState;
+                Socket handler = eventListener.EndAccept(ar);
                 ProgramState state = new ProgramState();
                 state.socket = handler;
                 handler.BeginReceive(state.data, 0, ProgramState.dataSize, 0, new AsyncCallback(ReadCallBack), state);
