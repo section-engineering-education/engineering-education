@@ -121,7 +121,7 @@ Add these files to the same PR (pull request).
 
 (See *screenshot* below for file structure.)
 
-![Author file structure example](/static/images/meta-image-frontmatter.PNG)
+
 
 ## File Structure - explained
 - title (Name of student - **Required**)
