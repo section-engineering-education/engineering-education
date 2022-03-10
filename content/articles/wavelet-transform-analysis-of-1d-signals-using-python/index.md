@@ -15,9 +15,9 @@ images:
     alt: Wavelet-based denoising of the 1-D signal using Python Hero Image
 ---
 ### Introduction
-Wavelet is a function applied for processing digital signals and compression. Wavelet transform transforms a high-resolution signal into approximated and detailed coefficient. 
+Wavelet is a function applied for processing digital signals and compression. Wavelet transforms a high-resolution signal into an approximated and detailed coefficient. 
 
-The approximated coefficients are always referred to as low-resolution approximations because it does not show what has changed. On the other hand, the detailed coefficient shows the changes and makes it possible to recover the original image from the approximated coefficients.
+The approximated coefficients are referred to as low-resolution approximations because it does not show what has changed. On the other hand, the detailed coefficient shows the changes and makes it possible to recover the original image from the approximated coefficients.
 
 In this tutorial, we will see how to perform the wavelet transform of the 1-D signal. Additionally, we will look at the various packages used for this analysis, the commands and a sample of how to use such commands in an application.
 
@@ -43,7 +43,7 @@ The objective here is to remove noise(n(k)) from noisy audio signal(f'(k)) using
 
 ![Denoising Scheme](/engineering-education/wavelet-transform-analysis-of-1d-signals-using-python/wavelet-one.png)
 
-Here, the signal is first decomposed to detailed and approximated coefficients. Then, these coefficients are thresholded, and inverse wavelet transform is performed to the thresholded coefficients. 
+Here, the signal is first decomposed into detailed and approximated coefficients. Then, these coefficients are thresholded, and inverse wavelet transform is performed to the thresholded coefficients. 
 
 Thresholding is a non-linear technique operating on each wavelet coefficient dependently. Finally, the inverse wavelet transform is done to give the original signal. 
 
@@ -86,11 +86,10 @@ from skimage.restoration import denoise_wavelet
 import matplotlib.pyplot as plt
 ```
 
-The `numpy` package handles mathematical and logical operations on arrays. 
+- The `numpy` package handles mathematical and logical operations on arrays. 
+- The `pywt` package performs wavelet transform for the input signal. We then import the `denoise_wavelet()` function from the `skimage` package. 
+- Finally, for any plot in Python, the `matplotlib` package is used.
 
-The `pywt` package performs wavelet transform for the input signal. We then import the `denoise_wavelet()` function from the `skimage` package. 
-
-Finally, for any plot in Python, the `matplotlib` package is used.
 Read the data from the in-built database. Python has an in-built ecg database. It makes it more efficient since we do not need to look for the data from an external source. To read this data, we use the code below:
 
 ```Python
@@ -121,7 +120,7 @@ plt.plot(x_noisy)
 plt.plot(x_denoise)
 ```
 
-When plotting, we first create a figure using the `plt.figure()` function. This figure is of the size 20x10pixel as described by the function property `figsize`. Next, the noisy and the denoised signals are plotted in the exact figure using the `plt.plot()` function. The output of this plot is as shown below:
+When plotting, we first create a figure using the `plt.figure()` function. This figure is of the size 20x10 pixel as described by the function property `figsize`. Next, the noisy and the denoised signals are plotted in the exact figure using the `plt.plot()` function. The output of this plot is as shown below:
 
 ![Plot of the signals](/engineering-education/wavelet-transform-analysis-of-1d-signals-using-python/wavelet-two.png)
 
@@ -172,10 +171,7 @@ plt.show()
 
 ![Output for the denoised audio signal](/engineering-education/wavelet-transform-analysis-of-1d-signals-using-python/wavelet-three.png)
 
-The blue signal is the noisy signal, and the orange is the denoised output.
-Now, in this audio signal, it is hard to know whether the denoising is done or not. 
-
-It can be done by either calculating the peak signal to noise ratio(PSNR) or physically listening to the music. 
+The blue signal is the noisy signal, and the orange is the denoised output. Now, it is hard to know whether the denoising is done or not. It can be done by either calculating the peak signal to noise ratio(PSNR) or physically listening to the music. 
 
 We add the `sounddevice` python package to anaconda to listen to the audios. All these can be done in the terminal. For example, to import `sounddevice`, we execute the command below in the terminal.
 
