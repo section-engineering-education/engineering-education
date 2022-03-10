@@ -11,7 +11,7 @@ topics: []
 excerpt_separator: <!--more-->
 images:
 
-  - url: /exponential-regression-in-python/hero.png
+  - url: /exponential-regression-in-python/hero.jpg
     alt: A Gentle Introduction to Exponential Regression in Machine Learning Hero Image
 ---
 
