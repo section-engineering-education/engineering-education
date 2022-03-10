@@ -15,8 +15,9 @@ Sometimes, developers need to automate the writing of data into database at ever
 To follow along with this tutorial, you should meet the following requirements.
 - An understanding of the Python programming language.
 - A pre-installed IDE, preferably [Visual Studio Code](https://code.visualstudio.com/download).
+- A pre-installed API tester, preferably [Postman](https://www.postman.com/downloads/).
 - [Python 3.x](https://python.org) installed.
-- An understanding of [Django](https://docs.djangoproject.com/en/4.0/).
+- An understanding of [Django==3.2](https://docs.djangoproject.com/en/3.2/).
 
 ### Objectives
 In this tutorial, we will be learning jobs scheduling automation with `django_cron` in a Python application. In addition, you will learn and apply the following to your project.
@@ -110,7 +111,7 @@ Now create a virtual environment for the project and install the required depend
 python -m venv env
 source env/Scripts/activate
 
-pip install django django_cron djangorestframework
+pip install Django==3.2 django_cron djangorestframework
 pip freeze > requirements.txt
 ```
 
@@ -277,42 +278,42 @@ class NewsIdView(APIView):
     return Response(res, status=status.HTTP_200_OK)
 
 
-class NewsItemView(ListAPIView):
-  permission_classes = [AllowAny]
+class NewsItemView(APIView):
+    permission_classes = [AllowAny]
 
-  def get_data_from_API(self):
-    """
-        This helps to return 
-        formatted data fetched from endpoint provided
-        using request.
-    """
-    result = []
-    half = 0
-    total = len(HackerNewsID.objects.all()) # getting the total ids from the db
+    def get_data_from_API(self):
+        """
+            This helps to return 
+            formatted data fetched from endpoint provided
+            using request.
+        """
+        # latest = HackerNewsID.objects.all()[len(HackerNewsID.objects.all())-1].hackernews # getting latest id from db
+        result = []
+        half = 0
+        total = len(HackerNewsID.objects.all()) # getting the total ids from the db
 
-    #slicing into half based on even or odd total
-    if total % 2 == 0:
-        half = len(HackerNewsID.objects.all()) / 2
-    else:
-        half = (len(HackerNewsID.objects.all()) / 2) + 1
+        #slicing into half based on even or odd total
+        if total % 2 == 0:
+            half = len(HackerNewsID.objects.all()) / 2
+        else:
+            half = (len(HackerNewsID.objects.all()) / 2) + 1
 
-    ids = HackerNewsID.objects.all()[:half] #slicing the queryset to get last half
+        ids = HackerNewsID.objects.all()[:half] #slicing the queryset to get last half
 
-    # looping through the ids queryset
-    for id in ids:
-      # external endpoint for each id
-        NEWS_URL = f'https://hacker-news.firebaseio.com/v0/item/{str(id)}.json?print=pretty'
-        headers = {'user-agent': 'quickcheck/0.0.1'} 
-        response = requests.get(NEWS_URL, headers=headers)
-        data = json.loads(response.text)
-        result.append(data)
+        for id in ids:
+            NEWS_URL = f'https://hacker-news.firebaseio.com/v0/item/{str(id)}.json?print=pretty'
+            headers = {'user-agent': 'quickcheck/0.0.1'} 
+            response = requests.get(NEWS_URL, headers=headers)
+            data = json.loads(response.text)
+            result.append(data)
 
-    return result
+        return result
 
+    
+#GET the latest hackernews streamed
+    def get(self, request, format=None):
+        return Response(self.get_data_from_API(),status=status.HTTP_201_CREATED)
 
-# get the latest hackernews streamed
-  def get(self, request, format=None):
-    return Response(self.get_data_from_API(),status=status.HTTP_201_CREATED)
 ```
 
 
@@ -355,7 +356,7 @@ Having created a superuser admin account, you will have to register the `news` a
 
 ```python
 from django.contrib import admin
-from .models import HackerNewsID, QuickCheckItem, QuickCheckNews
+from .models import HackerNewsID
 
 
 class HackerNewsIDAdmin(admin.ModelAdmin):
@@ -385,6 +386,8 @@ python manage.py runcrons
 In addition, you can make an API request to the endpoint <http://127.0.0.1:8000/api/v0/items/hackernews> to fetch the data that each of the saved ids return. You should get something like shown in the image below.
 
 ![Response page](/engineering-education/automating-jobs-scheduling-with-django_cron-in-python-application/response.png)
+--- 
+![Response page 2](/engineering-education/automating-jobs-scheduling-with-django_cron-in-python-application/response2.png)
 
 ### Conclusion
 In this tutorial, we have walked through how to make a cron job in a Python application. You learned about the `django_cron` library, and how it is used to make cron jobs.
