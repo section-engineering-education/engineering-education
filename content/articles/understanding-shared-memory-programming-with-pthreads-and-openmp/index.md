@@ -1,7 +1,7 @@
 ### Introduction
-Shared memory is used to speed up data flow between programs. Depending on the circumstance, programs may operate on one or more processors. As a result, a process may have several threads. Threads are referred to as `lightweight processes.` 
+Shared memory is used to speed up data flow between programs. Depending on the circumstance, programs may operate on one or more processors. As a result, a process may have several threads. Threads are referred to as `lightweight processes.` They are referred to as shared lightweight processes since they share the same address space and other resources, unlike processes that do share addresses.
 
-Parallelism is achieved by threading a process. Browser tabs, for example, are threads. Likewise, MS Word uses threads to format text, handle input, and many other things. 
+Parallelism is achieved by threading a process. Parallelism is a state where many processes are carried out simultaneously. Browser tabs, for example, are threads. Likewise, MS Word uses threads to format text, handle input, and many other things. 
 
 This article will demonstrate parallel programming using the Pthreads and OpenMP programming paradigms.
 
@@ -14,6 +14,7 @@ To follow along with this tutorial, have the following:
 ### Table of content
 - [The system architecture](#The-system-architecture)
 - [An overview of shared memory process and threads](#an-overview-of-shared-memory-process-and-threads)
+- [Managing and redistributing shared memory](#managing-and-redistributing-shared-memory)
 - [Pthreads and their use](#pthreads-and-their-use)
 - [OpenMP and its use](#openmp-and-its-use)
 - [Conclusion](#conclusion)
@@ -27,10 +28,10 @@ System architecture may use single-core or multicore processors. A single-core p
 
 There must be a shared memory location for numerous threads to execute. The threads generate this memory location by allocating a free-access memory space. As much as the threads are separate, they share a memory space. 
 
-In the shared memory paradigm, data is not assigned. Changes made to one thread in the shared memory paradigm affect all the other threads.
+In the shared memory paradigm, data is not assigned. Changes made to one thread in the shared memory paradigm affect all the other threads. As an alternative, jobs in a memory passing paradigm share a single address space, which they read and write in separate threads. 
 
 ### An overview of shared memory process and threads
-Shared memory is a memory that is accessed by multiple programs at the same time. It allows processes to communicate with each other without sending requests to the kernel. 
+Shared memory is a memory that is accessed by multiple programs at the same time. It allows processes to communicate without sending requests to the kernel. 
 
 Shared memory is present in all POSIX and Windows systems. Shared memory is necessary for processes to communicate and exchange resources amongst themselves. It is usually situated in the process's address space. Therefore, the shared memory segment must be added to the address space of other applications before usage.
 
@@ -38,9 +39,15 @@ Shared memory is present in all POSIX and Windows systems. Shared memory is nece
 
 A process is a unit of work in a system. For example, text files are used to develop computer programs, which run as processes. After loading, the program may be divided into stack, heap, text, and data portions.
 
-A thread is a single instance of a sequential computer program that may be implemented at the user or kernel level. However, the thread management kernel is unaware of user-level threads. The thread library is responsible for generating threads, saving the thread contexts and restoring threads.
+A thread is a single instance of a sequential computer program that may be implemented at the user or kernel level. However, the thread management kernel is unaware of user-level threads. The thread library is responsible for generating threads, saving the thread contexts, and restoring threads.
 
 Threads are controlled and supported natively by the operating system in the kernel. There is no thread management code in the program. Any application has the potential to be multithreaded. A single process may be responsible for managing the threads of an application.
+
+### Managing and redistributing shared memory
+The `Shmctl` command is used in shared memory management and distribution. The command returns and modifies information about a shared memory area. To begin, we need to know the identity of the shared memory section.
+
+A struct `shmid_ds` and the second parameter, `IPC_STAT,` are required to acquire information about a shared memory segment. '
+To delete a segment, supply `IPC RMID` as the second parameter and NULL as the third argument. Segment removal occurs after all processes that were previously connected have been deleted. To prevent exceeding the system-wide limit on the number of shared memory segments, you must manually deallocate each shared memory segment using `shmctl` after you're done with it. Exit and exec detach memory chunks but do not deallocate them once called.
 
 ### Pthreads and their use
 Any programming language may utilize Pthreads, which stands for POSIX Threads. It enables a computer to do several tasks at once. Threads are created and managed using the POSIX Threads API. The POSIX Thread API allows for a new concurrent process flow. With many processors or cores, the process flow may be scheduled to run on another processor, enhancing speed.
@@ -50,7 +57,7 @@ To understand pthreads, let us first know how to create threads.
 #### Developing Threads
 In developing threads, the following functions are used.
 
-```c++
+```C++
 pthread_create (thread, attr, start_routine, arg) 
 ```
 
@@ -59,7 +66,7 @@ The `pthread create()` method invokes a new thread. The new thread begins execut
 #### Closing Threads
 In closing threads, the following functions are used.
 
-```c++
+```C++
 pthread_exit (status) 
 ```
 
@@ -67,7 +74,7 @@ pthread_exit (status)
 
 Here is a C++ application to illustrate the two actions.
 
-```c++
+```C++
 #include <pthread.h>
 #include <stdio.h>
 #include <stdlib.h>
@@ -98,6 +105,7 @@ int main()
    pthread_exit(NULL);
 }
 ```
+
 The output of the code will be:
 
 ```bash
@@ -125,6 +133,53 @@ After the code is compiled, an output file is created and saved in the terminal'
 The below screenshot shows all the processes involved.
 
 ![Process illustration](/engineering-education/understanding-shared-memory-programming-with-pthreads-and-openmp/process.png)
+
+#### Cancelling a thread
+Assuming everything goes well, a thread will end by executing `pthread_exit` or returning from its thread function. A thread may, however, request that another thread be terminated. This is referred to as canceling a thread. Use `pthread_cancel` with the thread ID to cancel a thread. Unless a thread is detached, a canceled thread may be rejoined to free up resources. A thread may be generated as a joinable (default) or detached (optional). A joinable thread is not automatically cleaned away by GNU/Linux as a process. Instead, the thread's exit state is stored until another thread performs pthread join to retrieve it. Then its resources are freed. A detached thread, on the other hand, cleans up automatically. Because a detached thread is quickly cleaned up, another thread cannot synchronize or acquire its return value via pthread join.
+
+A thread must be run in all or nothing fashion in certain programs. For example, the thread may allocate resources, consume them, and deallocate them. If the thread is terminated amid this function, the resources may leak. This might be resolved by allowing a thread to decide when and if a task is canceled.
+
+A thread may be in one of three situations regarding thread cancellation.
+- The thread may be canceled asynchronously. Cancellation of the thread is possible at any time during its execution.
+- An uncancelable thread may exist in the system at any one time. To cancel the thread, one must make a discreet request.
+- The thread may be canceled synchronously. Although the thread may be terminated, it cannot be done at random. Cancellation requests queued for execution may only be canceled at specified stages.
+
+An asynchronously cancelable thread may be stopped at any time. On the other hand, asynchronously cancelable threads may be canceled only at certain points. These are cancellation spots where the thread will queue cancellation requests until the next cancellation point.
+Use `pthread_setcanceltype` to make a thread asynchronous. Problem with thread that calls the function. The first parameter should be `PTHREAD CANCEL ASYNCHRONOUS` or `PTHREAD_CANCEL DEFERRED` to make the thread asynchronously cancelable. The second input refers to a variable that will hold the thread's previous cancellation type. For example, this call makes the caller thread cancellable.
+
+```bash
+pthread_setcanceltype (PTHREAD_CANCEL_ASYNCHRONOUS, NULL); 
+```
+
+##### Uncancelable Critical Sections
+The `pthread_setcancelstate` method allows a thread to prevent itself from canceling.
+This also affects the thread that calls it, much as `pthread_setcanceltype.` To deactivate cancellation, use `PTHREAD_CANCEL_DISABLE` or `PTHREAD_CANCEL _ENABLE` as the first option. Assuming it's not null, the second parameter corresponds to a variable that will hold the prior cancellation status of this operation. Thread cancellation is disabled in the caller thread due to this call.
+
+NULL is the value of `pthread_setcancelstate.` Critical portions may be implemented using `pthread_setcancelstate.` Alternatively, a critical section is a sequence of code that must be performed entirely or not at all; in other words, once the critical part has been started and the thread has started executing it, it cannot be stopped until the end of the critical section has been completed.
+ 
+let us look at an example program that protects an ATM transaction with a critical section
+
+```C++
+#include <pthread.h> 
+#include <stdio.h> 
+#include <string.h> 
+float* atm_bal; 
+int process_transaction (int off_account, int in_account, float shillings) 
+{ 
+ int initial_balance;  
+ if (atm_bal[off_account] << dollars) 
+ return 1; 
+ pthread_setcancelstate (PTHREAD_CANCEL_DISABLE, &initial_balance); 
+ atm_bal[in_account] += shillings; 
+ atm_bal[off_account] -= shillings;  
+ pthread_setcancelstate (initial_balance, NULL); 
+ return 0; 
+} 
+```
+
+The program above restricts the ATM payment if the initial balance is less than `off_account` to be used.
+
+> It is vital that the previous cancel status be restored after the critical section rather than being unconditionally set to `PTHREAD_CANCEL_ENABLE.` Using this method, you may safely call the process transaction function from inside another important section—in that instance, your function will return to a canceled state.
 
 #### Uses of pthreads
 Pthreads are useful in the following ways:
@@ -246,7 +301,8 @@ The output is:
 The addition is =37714 should be 4950
 ```
 
+
 ### Conclusion
 From the article above, we have learned multithreading and its implementation using the OpenMP and pthreads. Also, we learned how to use the Linux terminal to run C and C++ programs. Use the knowledge learned to understand more Linux systems.
  
- Happy coding!
+Happy coding!
