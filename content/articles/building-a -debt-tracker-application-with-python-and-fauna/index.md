@@ -16,7 +16,7 @@ To follow along with this tutorial, you are required to have the following:
 
 ### Table of content
 - [Getting started with Fauna](#getting-started-with-fauna)
-- [Creating a database in Fauna](#from faunadb. obcreating-a-database-in-fauna)
+- [Creating a database in Fauna](#creating-a-database-in-fauna)
 - [Creating a collection in Fauna](#creating-a-collection-in-fauna)
 - [Creating an API key for the Fauna database](#creating-an-api-key-for-the-fauna-database)
 - [Creating a Flask app](#creating-a-flask-app)
