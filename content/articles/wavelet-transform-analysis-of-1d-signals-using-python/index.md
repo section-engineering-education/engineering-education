@@ -1,13 +1,25 @@
-### Wavelet-based denoising of the 1-D signal using Python
+---
+layout: engineering-education
+status: publish
+published: true
+url: /wavelet-transform-analysis-of-1d-signals-using-python/
+title: Wavelet-based denoising of the 1-D signal using Python
+description: This tutorial will walk the reader through performing the wavelet transform of the 1-D signal.
+author: collince-odhiambo
+date: 2022-03-10T00:00:00-06:00
+topics: []
+excerpt_separator: <!--more-->
+images:
 
+  - url: /engineering-education/wavelet-transform-analysis-of-1d-signals-using-python//hero.jpg
+    alt: Wavelet-based denoising of the 1-D signal using Python Hero Image
+---
 ### Introduction
 Wavelet is a function applied for processing digital signals and compression. Wavelet transform transforms a high-resolution signal into approximated and detailed coefficient. 
 
 The approximated coefficients are always referred to as low-resolution approximations because it does not show what has changed. On the other hand, the detailed coefficient shows the changes and makes it possible to recover the original image from the approximated coefficients.
 
-In this tutorial, we will see how to perform the wavelet transform of the 1-D signal. Also, we will look at the various packages used for this analysis. 
-
-The commands and a sample of how to use such commands in an application.
+In this tutorial, we will see how to perform the wavelet transform of the 1-D signal. Additionally, we will look at the various packages used for this analysis, the commands and a sample of how to use such commands in an application.
 
 ### Prerequisites
 To follow along with this tutorial, the reader should have the following:
@@ -191,3 +203,6 @@ Denoisng 1-D signal python is easy. Python has libraries for the operations; hen
 Denoising a signal is essential in science and technology. It is also applicable in the security sector and for signal enhancement and modification.
 
 Happy coding!
+
+---
+Peer Review Contributions by: [Mercy Meave](/engineering-education/authors/mercy-meave/)
