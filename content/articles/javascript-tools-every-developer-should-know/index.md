@@ -5,7 +5,7 @@ published: true
 url: /javascript-tools-every-developer-should-know/
 title: JavaScript Tools Every Developer Should Know
 description: This article will introduce the reader to some of the best JavaScript development tools, frameworks, and libraries.
-author: leah-wangui
+author: wangui-leah
 date: 2022-03-09T00:00:00-16:25
 topics: [Languages]
 excerpt_separator: <!--more-->
