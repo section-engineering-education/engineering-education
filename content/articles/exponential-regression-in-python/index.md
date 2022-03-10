@@ -1,4 +1,19 @@
-### A Gentle Introduction to Exponential Regression in Machine Learning
+---
+layout: engineering-education
+status: publish
+published: true
+url: /exponential-regression-in-python/
+title: A Gentle Introduction to Exponential Regression in Machine Learning
+description: This article will discus how the exponential hypothesis is represented, how to approximate its parameters, fit the curve using python and finally state down our model using the parameters returned in python. 
+author: sumba-elvis
+date: 2022-03-10T00:00:00-01:10
+topics: []
+excerpt_separator: <!--more-->
+images:
+
+  - url: /exponential-regression-in-python/hero.png
+    alt: A Gentle Introduction to Exponential Regression in Machine Learning Hero Image
+---
 
 In real-world applications, the goal of modelling is usually to represent the behaviours of natural phenomena that change over time in mathematical models with the best [generalization](https://en.wikipedia.org/wiki/Regularization_(mathematics)). Various models have been developed and proven to capture those behaviours very well. There are various models for modelling different problems. 
 
@@ -241,3 +256,5 @@ To approximate the unknown constants of the model, we solve the loose function b
 
 After covering these, we then looked at a case study, and we were able to bring our theoretical understanding of the model into practice. Finally, we implemented our model in python and made predictions using it.
 
+---
+Peer Review Contributions by: [Mercy Meave](/engineering-education/authors/mercy-meave/)
