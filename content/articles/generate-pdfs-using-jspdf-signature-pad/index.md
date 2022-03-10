@@ -3,10 +3,10 @@ layout: engineering-education
 status: publish
 published: true
 url: /generate-pdfs-using-jspdf-signature-pad/
-title: Building A Webscript To Generate Hand-Signed PDFs Using JavaScript Libraries
-description: This article will introduce you to generate PDF documents from a webpage using open-source JavaScript libraries - jsPDF and Signature Pad.
+title: Building a Webscript to Generate Hand-Signed PDFs using JavaScript Libraries
+description: This article will introduce the reader to generate PDF documents from a webpage using open-source JavaScript libraries - jsPDF and Signature Pad.
 author: sandra-moringa
-date: 2022-03-04T00:00:00-16:10
+date: 2022-03-10T00:00:00-13:10
 topics: [Languages]
 excerpt_separator: <!--more-->
 images:
@@ -14,9 +14,9 @@ images:
   - url: /engineering-education/generate-pdfs-using-jspdf-signature-pad/hero.jpg
     alt: Webscript Hand-Signed PDFs JavaScript Libraries Hero Image
 ---
-In this tutorial, we will learn how to convert a webpage into a PDF document using open-source JavaScript libraries.
+In this tutorial, we will learn how to convert a webpage into a PDF document using open-source JavaScript libraries. Hand signatures are a good way to authenticate official documents.
 <!--more-->
-Hand signatures are a good way to authenticate official documents. But, what if the parties involved are far from each other? We have to think of a way to enable them to sign the documents online.
+What if the parties involved are far from each other? We have to think of a way to enable them to sign the documents online.
 
 Good for us, we can do that in our web applications without much effort using an open-source JavaScript library called Signature Pad.
 
@@ -26,8 +26,8 @@ Our final output should look like this:
 
 ![Generated pdf](/engineering-education/generate-pdfs-using-jspdf-signature-pad/generated.png)
 
-### Pre-requisites
-As a pre-requisite, the reader must have the following:
+### Prerequisites
+As a prerequisite, the reader must have the following:
 - An understanding of HTML and CSS.
 - Knowledge of JavaScript and Document Object Manipulation (DOM) manipulation.
 
@@ -56,8 +56,9 @@ With that, let's first design a layout of our page.
 
 ### Implementation
 #### Page layout
-In this tutorial, we will use the [Bootstrap](https://getbootstrap.com) library to style the web pages. The main bootstrap styling classes that we will use are:
+In this tutorial, we will use the [Bootstrap](https://getbootstrap.com) library to style the web pages. 
 
+The main bootstrap styling classes that we will use are:
 - `col-md-*` grid partitioning for a page. This styling breaks a page into 12 columns. For example, if you want a certain element to cover a third of the page width, you use the `col-md-4` class.
 - `d-flex`- This allows us to make an element conform to the CSS's flexbox properties where we will use `justify-content-*` positioning to arrange items on a page. If we want the elements of a `div` to be in the center, we will use the `d-flex justify-content-center` class.
 
@@ -145,7 +146,7 @@ We head on to the `<body>` section where we have several `<div>` elements in whi
 </div>
 ```
 
-- The next one `div` contains the canvas element where we allow to draw the signature.
+- The next one `div` contains the canvas element where we allow the user to draw the signature.
 
 ```html
 <div class="col-md-12 d-flex justify-content-center ">
@@ -244,7 +245,7 @@ function processImage() {
 }
 ```
 
-- The next three functions are straightforward. They are to add click event listeners to the three buttons
+- The next three functions are straightforward. They are to add click event listeners to the three buttons.
   - `saveSignBtn`
   - `clearBtn`
   - `undoBtn`
@@ -312,7 +313,7 @@ You can view the full source code [here](https://github.com/munubi254/js-signatu
 ### Conclusion
 To conclude, we looked at an overview of the two libraries, created an HTML layout, and looked at the JavaScript code.
 
-You can further enhance this signature feature and use it for biometric authentication. The signature pad library is very portable to use it in your React-Native apps, web frameworks such as Express, and even desktop apps.
+You can further enhance this signature feature and use it for biometric authentication. The signature pad library is can be very useful in your React-Native apps, web frameworks such as Express, and even desktop apps.
 
 Happy coding!
 
