@@ -4,9 +4,9 @@ status: publish
 published: true
 url: /debugging-with-chucker/
 title: Getting Started With Debugging In Android Using Chucker
-description: In this tutorial, we will discuss how to debug android applications using chucker. Debugging is the process of analyzing the code in a software to detect and remove potential errors that might cause your app to crash.
+description: In this tutorial, we will discuss how to debug android applications using chucker. Debugging is the process of analyzing the code in software to detect and remove potential errors that might cause your app to crash.
 author: hepatrique-okeyo
-date: 2022-03-07T00:00:00-18:25
+date: 2022-03-11T00:00:00-18:25
 topics: [Android]
 excerpt_separator: <!--more-->
 images:
@@ -14,11 +14,11 @@ images:
   - url: /engineering-education/debugging-with-chucker/hero.jpg
     alt: Getting Started With Debugging In Android Using Chucker
 ---
-Working with `OkHttp` to perform network calls is always easy. Problems arise when you want to debug and see if the task is successful or not. 
+Working with `OkHttp` to perform network calls is always easy. The problem arises when you want to debug and see if the task is successful or not. 
 <!--more-->
-Chucker comes in handy when you want to debug using the `OkHttp` library. [Chucker](https://github.com/ChuckerTeam/chucker) is a simple to integrate android debugging library unlike [Timber](https://www.section.io/engineering-education/planting-timber-logs-the-right-way/) and [Stetho](http://facebook.github.io/stetho/).
+Chucker comes in handy when debugging using using the `OkHttp` library. [Chucker](https://github.com/ChuckerTeam/chucker) is a simple to integrate android debugging library unlike [Timber](https://www.section.io/engineering-education/planting-timber-logs-the-right-way/) and [Stetho](http://facebook.github.io/stetho/).
 
-You might be wondering what debugging is in Android development. Debugging is defined as the process of analyzing the code in a software to detect and remove potential errors that might cause your app to crash.
+You might be wondering what debugging is in Android development. Debugging is defined as the process of analyzing the code in software to detect and remove potential errors that might cause your app to crash.
 
 ### Table of contents
 - [Prerequisites](#prerequisites)
@@ -32,7 +32,7 @@ You might be wondering what debugging is in Android development. Debugging is de
 
 ### Prerequisites
 To follow through this tutorial, you must have:
-- [Android Studio] IDE installed(https://developer.android.com/studio/index.html).
+- [Android Studio](https://developer.android.com/studio/index.html) IDE installed.
 - [Kotlin](https://kotlinlang.org/) programming language basics.
 - Kotlin [coroutines](https://developer.android.com/kotlin/coroutines) basics.
 
@@ -47,7 +47,7 @@ When you click on the push notification, a complete Chucker UI is launched from 
 
 ![Chucker ui](/engineering-education/debugging-with-chucker/chucker-ui.png)
 
-The push notification can still be prevented from showing and allowing Chucker UI to be launched directly from its interface. This is because when installing/building your app in Android Studio, Chucker 'app' is installed alongside yours.
+The push notification can still be prevented from showing allowing Chucker UI to be launched directly from its interface. This is because when installing/building your app in Android Studio, Chucker 'app' is installed alongside yours.
 
 ### What is OkHttp
 OkHttp is built on top of HTTP. We can define HTTP as the protocol that governs how modern applications communicate over a network. It can either be via a secured channel (HTTPS) or an unsecured channel (HTTP).
@@ -58,7 +58,7 @@ OkHttp can be defined as an open-source library used to send and receive HTTP-ba
 To get started with Chucker, open your Android Studio and create a new project. In this case, we will use a project with a simple UI having a `TextView` for displaying display the response from the internet.
 
 ### Adding dependencies
-In your app-level `build.gradle` file, add the following dependencies;
+In your app-level `build.gradle` file, add the following dependencies:
 
 ```gradle
     // Chucker
@@ -95,7 +95,7 @@ val okHttpClient = OkHttpClient.Builder()
             .build()
 ```
 
-This is enough to allow Chucker record all the HTTP tasks that are being done by your OkHttp client in your app.
+This is enough to allow Chucker to record all the HTTP tasks that are being done by your OkHttp client in your app.
 
 ### Features of Chucker library
 The following are the features of Chucker that makes it the best choice for debugging applications that use the Okhttp client:
@@ -103,9 +103,9 @@ The following are the features of Chucker that makes it the best choice for debu
 - There is no customization needed when using Chucker.
 - It is compatible with OkHTTP 4.
 - It is compatible with API level 21 and higher hence can support a wide range of Android devices.
-- It ensures empty release artifact due to `library-no-op` library.
+- It ensures empty release artifacts due to `library-no-op` library.
 - It has support for the showing of images in the HTTP responses.
-- It has support custom decode of HTTP bodies.
+- It has support for custom decode of HTTP bodies.
 
 ### Configuring Chucker
 With the instance of `ChuckerCollector`, you can customize Chucker according to your needs.
