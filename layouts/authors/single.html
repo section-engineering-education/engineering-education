@@ -47,6 +47,13 @@
           {{ end }}
 
           {{ .Content }}
+
+          {{ with .Params.skills }} 
+            <div class="author-skills">
+              <h4>Skills/Languages</h4>
+              <p class="skills">{{ delimit . " | " }}</p>
+            </div>
+          {{ end }}  
         </div>
 
         <div class="section-rich-text-leading bio">
@@ -85,7 +92,7 @@
 <section class="blog-listing-posts">
   <div class="section-container blog-listing-posts-container">
     <div class="blog-listing-posts-content">
-      <h1 class="title-3 text-blue xs-pb-20">Contributed articles</h1>
+      <h2 class="title-3 text-blue xs-pb-20">Contributed articles</h2>
    
       <ul class="list-unstyled xs-mb-80">
 
