@@ -100,15 +100,15 @@ The model correctly classified the paragraph as an excerpt for technology with a
 The model can as well output results with multiple classifications. An article, sentence, or paragraph can be of several categories simultaneously. For example, it can be of travel and entertainment category. Let's see how we can achieve this process.
 
 #### Performing multi-class classification
-We need to introduce an argument known as `multi_class`, and set it to `True` as shown below.
-
-> Please note that the `multi_class` argument has been used extensively in other tutorials. This argument is deprecated and renamed to `multi_label`. It still works, and you can use it interchangeably. But, `multi_class` will be removed in a future version of Transformers.
+We need to introduce an argument known as `multi_class`, and set it to `True` as shown below:
 
 ```python
 input_sequence = "To avoid plagiarism issues, please refer to the code on the Google Colab"
 candidate_labels = ['travel', 'technology', 'algorithms' 'cooking', 'dancing', 'exploration']
 classifier_pipeline(input_sequence, label_candidate, multi_label=True)
 ```
+> Please note that the `multi_class` argument has been used extensively in other tutorials. This argument is deprecated and renamed to `multi_label`. It still works, and you can use it interchangeably. But, `multi_class` will be removed in a future version of Transformers.
+
 Results:
 
 ```bash
@@ -117,8 +117,8 @@ Results:
   0.8731157183647156,
   0.11541531980037689,
   0.00350499851629138,
-  0.0004167791921645403],
- '}
+  0.0004167791921645403]
+  }
 ```
 The model has successfully performed a multi-class classification. It has classified the sentence to be of the category of `dancing (98%)`, and `entertainment (87%)` as well. Please refer to this [link](https://colab.research.google.com/drive/1L4IyAEQLeZR5D9nG_nD_klhNMst1_wHN?usp=sharing) to get the complete code for this tutorial.
 
