@@ -6,7 +6,7 @@ url: /eigendecomposition-in-python/
 title: Getting Started with Eigendecomposition in Python
 description: This article will help readers understand Eigendecomposition in Python. This approach is used in Linear Algebra to decompose a matrix into smaller components.
 author: jackson-munyai
-date: 2022-03-11T00:00:00-02:00
+date: 2022-03-11T00:00:00-05:30
 topics: [Languages]
 excerpt_separator: <!--more-->
 images:
@@ -16,13 +16,11 @@ images:
 ---
 Eigendecomposition is a technique used in Linear Algebra to break down a matrix into its constituent parts.
 <!--more-->
-In this tutorial, we will focus on *eigenvalues* and the *eigenvectors* of a matrix to derive Eigendecomposition. 
-
-We will also work with square matrices because they support the computation of *eigenvalues* and *eigenvectors*.
+In this tutorial, we will focus on _eigenvalues_ and the _eigenvectors_ of a matrix to derive Eigendecomposition. We will also work with square matrices because they support the computation of _eigenvalues_ and _eigenvectors_.
 
 Let's use a simple matrix to understand how Eigendecomposition is derived.
 
-Suppose we have a *2 x 2* square matrix A:
+Suppose we have a _2 x 2_ square matrix A:
 
 ![Matrix](/engineering-education/eigendecomposition-in-python/matrix-1.png)
 
@@ -56,7 +54,7 @@ When we use $U$ and $\lambda$ in equation $(i)$, we get the following equation:
 
 $AU=U\Lambda$
 
-To get our matrix $A$ from this relationship, we take $U$ inverse, i.e., $U^{-1}$, on both sides of the above matrix equation. We end up with the below equation:
+To get our matrix $A$ from this relationship, we take $U$ inverse, i.e., $U^{-1}$, on both sides of the matrix equation above. We end up with the equation below:
 
 $A=U\Lambda U^{-1}$
 
@@ -64,21 +62,21 @@ This component is what we call Eigendecomposition. Matrix $U$ contains eigenvect
 
 **Why is this matrix decomposition important?**
 
-As stated, a matrix is a transformation that maps a vector from one point to another in the vector space. 
+As stated, a matrix is a transformation that maps a vector from one point to another in the vector space.
 
-In machine learning algorithms, we often apply such transformations several times until the final output is obtained at each phase of the algorithm. 
+In machine learning algorithms, we often apply such transformations several times until the final output is obtained at each phase of the algorithm.
 
-However, the application also depends on the complexity of the problem. This means at the end, we will have taken our matrix raised to a power of a certain number. 
+However, the application also depends on the complexity of the problem. This means at the end, we will have taken our matrix raised to a power of a certain number.
 
-To understand this, let's suppose we have the following square matrix:
+To understand this, suppose we have the following square matrix:
 
 $A^{P}$, where $p=16$
 
-A simple approach to computing this matrix normally is to take the product of all possible pairs at each iteration. 
+A simple approach to computing this matrix is to take the product of all possible pairs at each iteration.
 
 Let's determine the number of iterations needed to compute this matrix until we get our final output as $A^p$.
 
-We can explicitly write *A* as:
+We can explicitly write _A_ as:
 
 ```bash
 A*A*A*A*A*A*A*A*A*A*A*A*A*A*A*A
@@ -88,7 +86,7 @@ When we take the product of each pair of the A matrix in the first iteration, we
 
 $A^{2}*A^{2}*A^{2}*A^{2}*A^{2}*A^{2}*A^{2}*A^{2}$
 
-In the next iteration, we check the product of the above pairs of a matrix. The result is:
+In the next iteration, we check the product of the pairs of the matrix above. The result is:
 
 $A^{4}*A^{4}*A^{4}*A^{4}$
 
@@ -102,35 +100,35 @@ $A^{8}$
 
 To determine the final output, we performed the multiplication in four different iterations.
 
-When the value of *p* is huge, we can use the formula $log_2(p)$. This will enable us to know the number of iterations we need for the final output. 
+When the value of _p_ is huge, we can use the formula $log_2(p)$. This will enable us to know the number of iterations we need for the final output.
 
-It's clear that the number of iterations changes with the size of *p*. This makes the approach inefficient when a large number is applied.
+It's clear that the number of iterations changes with the size of _p_. This makes the approach inefficient when a large number is applied.
 
 Let's apply Eigendecomposition to this problem:
 
 $A=U\Lambda U^{-1}$
 
-When we write *A* explicitly, we should have the following output:
+When we write _A_ explicitly, we should have the following output:
 
 ![Matrix-m](/engineering-education/eigendecomposition-in-python/matrix-m.png)
 
-It's easy to compute this long chain on the right-hand side of the above equation. The product of a matrix and its inverse equals an identity matrix. 
+It's easy to compute this long chain on the right-hand side of the equation above. The product of a matrix and its inverse equals an identity matrix.
 
-This means that any matrix multiplied with an identity matrix equals the matrix itself. Applying this knowledge to the above equation, it condenses to:
+This means that any matrix multiplied with an identity matrix equals the matrix itself. Applying this knowledge to the equation above, it condenses to:
 
 $A=U\Lambda^{16} U^{-1}$
 
 The only matrix we need to compute is $\Lambda^{16}$.
 
-$\Lambda$ is a diagonal matrix. We calculate it using the power of its diagonal components. 
+$\Lambda$ is a diagonal matrix. We calculate it using the power of its diagonal components.
 
 To determine the number of iterations required for the output, we first carry out the following multiplication in the first iteration:
 
-$\Lambda^{16} U^{-1}$. 
+$\Lambda^{16} U^{-1}$.
 
 We then take $U*$o (output from the first iteration) and transfer it to the second iteration.
 
-Therefore, regardless of the size of *p*, in Eigendecomposition, the number of times we carry out our computations remains constant.
+Therefore, regardless of the size of _p_, in Eigendecomposition, the number of times we carry out our computations remains constant.
 
 Let's now perform eigendecomposition in python.
 
@@ -141,7 +139,7 @@ We only need the `Numpy` Python library for this tutorial. Let's import it as fo
 import numpy as np
 ```
 
-We will use the following square matrix in this Python demo.
+We will use the following square matrix in this Python demo:
 
 ![Matrix](/engineering-education/eigendecomposition-in-python/matrix-m.png)
 
@@ -151,7 +149,7 @@ $M=\begin{bmatrix}
   1&0&1
 \end{bmatrix}$
 
-Let's create this matrix in Python.
+Let's create this matrix in Python:
 
 ```py
 # create our matrix
@@ -172,14 +170,14 @@ Output:
  [1 0 1]]
 ```
 
-To get the components of eigendecomposition, we first need to compute *eigenvalues* and *eigenvectors*:
- 
+To get the components of eigendecomposition, we first need to compute _eigenvalues_ and _eigenvectors_:
+
 ```py
 #getting the eigenvalues and eigenvvector of M
 Lambda, U = np.linalg.eig(M)
 ```
 
-Let's print the *eigenvectors* and *eigenvalues*:
+Let's print the _eigenvectors_ and _eigenvalues_:
 
 ```py
 ## eigenvectors
@@ -195,13 +193,14 @@ print(U)
 ```py
 print(Lambda)
 ```
+
 Output:
 
 ```bash
 [2. 0. 1.]
 ```
 
-We need $\Lambda$ and $U^-{1}$ to calculate all components of our Eigendecomposition. 
+We need $\Lambda$ and $U^-{1}$ to calculate all components of our Eigendecomposition.
 
 We will first utilize the Numpy `inv()` function to determine $U^{-1}$ using the inverse of $U$, as demonstrated below:
 
@@ -219,7 +218,7 @@ array([[ 0.70710678,  1.41421356,  0.70710678],
        [ 0.        ,  2.23606798,  0.        ]])
 ```
 
-Let's compute $\Lambda$ on the diagonal matrix. We will use the `diag()` function with the `Lambda` vector to obtain this matrix.
+Let's compute $\Lambda$ on the diagonal matrix. We will use the `diag()` function with the `Lambda` vector to obtain this matrix:
 
 ```py
 Λ = np.diag(Lambda)
@@ -244,7 +243,7 @@ vec = np.dot(U,np.dot(Λ, inv_U)) # taking the product of our three matrices
 round(vec, decs=0)
 ```
 
-When we execute the above code, we should have the following output:
+When we execute the code above, we should have the following output:
 
 ```bash
 array([[ 1.,  2.,  1.],
@@ -252,10 +251,10 @@ array([[ 1.,  2.,  1.],
        [ 1., -0.,  1.]])
 ```
 
-In the above code, we have successively recovered our original matrix from its *Eigen* components.
+In the code above, we have successively recovered our original matrix from its _Eigen_ components.
 
 ### Conclusion
-In this tutorial, we learned how to derive eigendecomposition. We also used a simple illustration to determine how efficient this form of decomposition is compared to ordinary matrix multiplication. 
+In this tutorial, we learned how to derive eigendecomposition. We also used a simple illustration to determine how efficient this form of decomposition is compared to ordinary matrix multiplication.
 
 Finally, we looked at how to perform eigendecomposition using Python. You can now use this knowledge to craft other quality applications.
 
