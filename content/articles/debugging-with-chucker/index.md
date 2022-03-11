@@ -82,7 +82,7 @@ This means if you fail to add the second library, Chucker will still work but it
 
 Also, ensure Java 8 support is enabled by ensuring that the code below is present in your app-level `build.gradle` file inside the `android` block.
 
-In the dependencies, we have added the OkHttp library because Chucker works with its interceptor. The coroutines library is added because OkHttp involves network calls. 
+In the dependencies, we have added the OkHttp library because Chucker works with its interceptor. The coroutines library is added because OkHttp invokes network calls. 
 
 Network calls should be done in the background thread since they take some time before the response is returned. This might block the main thread if done in the main thread.
 
