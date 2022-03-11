@@ -1,10 +1,17 @@
 ### Introduction
-In this tutorial, we can navigate through diverse OpenCV operations used for image processing.
-**What are morphological operations?** -These are image processing variations implemented to both grayscale or binary photographs. These operations require a structuring element, that's used to outline the neighborhood of pixels on a picture. 
-How to apply morphological operations to grow the size of items in images in addition to decreasing them.
-We shall additionally talk about the maximum critical morphological operations that you`ll use inner your applications: 
+In this tutorial, we will discuss numerous OpenCV operations used for image processing.
 
-- We shall use this image throughout the tutorial [download-sunflower.png](content/articles/Morphological-operations-in-image-processing-using-openCV-python/Oroginalimage.jpg)
+Morphological operations are image processing variations implemented on both grayscale or binary photographs. 
+
+These operations require a structuring element, that's used to outline the pixels on a picture. 
+
+From this tutorial, users will understand how to apply morphological operations on images.
+
+Note that we will use the following image throughout the tutorial:
+
+![Download-sunflower.png](content/articles/Morphological-operations-in-image-processing-using-openCV-python/Oroginalimage.jpg)
+
+
 ### Prerequisites
 To follow along through this tutorial, these are the requirements:
 
@@ -251,4 +258,3 @@ cv2.waitKey(2)
   To see the complete implementation go to google colab link [here](https://colab.research.google.com/drive/1MuUQrg-kEcgSiVfsfMg4ZA0_f2Wnmm34?usp=sharing) 
   
  Happy coding!
-
