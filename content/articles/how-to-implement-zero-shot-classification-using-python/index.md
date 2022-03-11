@@ -46,7 +46,7 @@ We need to import `pipeline` into our code.
 ```python
 from transformers import pipeline
 ```
-This next step involves initializing our pipeline. We save the result inside a variable called `classifier_pipeline`. We are also using the `facebook/bart-large-mnli` model. There are other zero-shot models available. We are using this model because it is the most popular with over one million downloads. Please refer to this [link](https://huggingface.co/models?pipeline_tag=zero-shot-classification&sort=downloads) to access the other models.
+This next step involves initializing our pipeline. We save the result inside a variable called `classifier_pipeline`. We are also using the `facebook/bart-large-mnli` model. There are other zero-shot models available. We use this model because it is the most popular, with over one million downloads. Please refer to this [link](https://huggingface.co/models?pipeline_tag=zero-shot-classification&sort=downloads) to access the other models.
 
 ```python
 classifier_pipeline = pipeline ("zero-shot-classification", model = "facebook/bart-large-mnli")
