@@ -33,7 +33,7 @@ To follow along with this tutorial, you need to be familiar with:
 ### Zero-shot classification
 Zero-shot classification is a technique that allows us to associate an appropriate label with a piece of text. This association is irrespective of the text domain and the aspect. For example, it can be a  topic, emotion, or event described by the label. To perform zero-shot classification, we need a zero-shot model.
 
-A zero-shot model allows us to classify data that had not been previously used to build the model. In simple terms, it is the use of a model built by other people, against your data. Hugging Face allows us to leverage this pre-trained model to perform classification using a few lines of code.
+A zero-shot model allows us to classify data that has not been previously used to build the model. In simple terms, it uses a model built by other people, against your data. Hugging Face allows us to leverage this pre-trained model to perform classification using a few lines of code.
 
 ### How to leverage the Hugging Face API to perform classification
 Let's begin by installing the main dependency, Transformers.
