@@ -231,7 +231,7 @@ Here is the full implementation of our `MainActivity.kt` class:
 }
 ```
 
-![demo project](/engineering-education/debugging-with-chucker/chucker-demo.gif)
+![Demo project](/engineering-education/debugging-with-chucker/chucker-demo.gif)
 
 ### Conclusion
 In this tutorial, we learned how to use Chucker when debugging. You can read further on mapping the JSON response to Kotlin objects using the [Gson](https://github.com/google/gson) library.
