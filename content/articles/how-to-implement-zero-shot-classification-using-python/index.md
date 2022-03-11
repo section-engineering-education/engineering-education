@@ -1,4 +1,22 @@
-Machine learning is an ever-evolving field. One area of machine learning that has greatly evolved over a few years is Natural Language Processing (NLP). The [HuggingFace](https://huggingface.co/) organization has been at the forefront in making contributions in this field. This tutorial will leverage the zero-shot classification model from Hugging Face to extract model predictions and perform multi-class classification. 
+---
+layout: engineering-education
+status: publish
+published: true
+url: /how-to-implement-zero-shot-classification-using-python/
+title: How to Implement Zero-Shot Classification using Python
+description: This tutorial will leverage the zero-shot classification model from Hugging Face to extract model predictions and perform multi-class classification. 
+author: esther-awuor
+date: 2022-03-11T00:00:00-12:00
+topics: [Machine Learning]
+excerpt_separator: <!--more-->
+images:
+
+  - url: /engineering-education/how-to-implement-zero-shot-classification-using-python/hero.png
+    alt: How to Implement Zero-Shot Classification using Python Example Image
+---
+Machine learning is an ever-evolving field. One area of machine learning that has greatly evolved over a few years is Natural Language Processing (NLP). 
+<!--more-->
+The [HuggingFace](https://huggingface.co/) organization has been at the forefront in making contributions in this field. This tutorial will leverage the zero-shot classification model from Hugging Face to extract model predictions and perform multi-class classification. 
 
 ### Prerequisites
 To follow along with this tutorial, you need o be familar with:
