@@ -51,11 +51,11 @@ This next step involves initializing our pipeline. We save the result inside a v
 ```python
 classifier_pipeline = pipeline ("zero-shot-classification", model = "facebook/bart-large-mnli")
 ```
-BERT is an acronym that stands for Bidirectional Encoder Representations from Transformers. It is a popular natural language processing model by Google. It is based on the Transformer architecture used by many NLP models today. They are popularly used because they tend to generate contextualized embeddings. This is unlike previous NLP models such as word2vec which tends to have a fixed embedding vector for sentences that appear somewhat similar. 
+BERT is an acronym that stands for Bidirectional Encoder Representations from Transformers. It is a popular natural language processing model by Google. It is based on the Transformer architecture used by many NLP models today. It is used because it tends to generate contextualized embeddings. This model is different from previous NLP models such as word2vec, which tends to have a fixed embedding vector for sentences that appear somewhat similar. 
 
-For example, a sentence like, "She didn't receive fair treatment", and "There is a fun fair in NYC this summer". These two sentences have the same words but different contexts. Previous models such as word2vec tend to give them similar vector embedding regardless. That is incorrect. But, a BERT model will generate different embedding for the two sentences. 
+For example, a sentence like, "She didn't receive fair treatment", and "There is a fun fair in NYC this summer". These two sentences have similar words but different contexts. Previous models such as word2vec tend to give them similar vector embedding regardless. That is incorrect. But, a BERT model will generate different embedding for the two sentences. 
 
-BERT is very powerful. It looks at the context of the statement and generates a meaningful vector representation for a given word. It consists of two model versions. BERT Base and BERT LARGE. BERT Base is comparable in size to the Open AI's Transformer and uses 12 encoder layers while BERT LARGE is a huge model using 24 encoder layers. It is the model version used to achieve the state-of-the-art results recorded by the model. It is the version of the model that we will use in this tutorial.
+BERT is very powerful. It looks at the statement's context and generates a meaningful vector representation for a given word. It consists of two model versions, BERT Base and BERT Large. BERT Base is comparable in size to the Open AI's Transformer and uses 12 encoder layers, while BERT Large is a huge model using 24 encoder layers. It is the model version used to achieve the state-of-the-art results recorded by the model. The BERT Large is the model's version that we will use in this tutorial.
 
 Next, we need a list of input text and candidate labels. We will store these results inside the `input_sequence` and `label_candidate` variables.
 
@@ -75,9 +75,9 @@ Result:
   0.0015806530136615038],
  'sequence': 'I love traveling'}
 ```
-It is clear from the results that the model has correctly classified the sentence as being a `travel` category with an accuracy score of `0.9624875783920288`. This represents a 96% accuracy.
+It is clear from the results that the model has correctly classified the sentence as being a `travel` category with an accuracy score of `0.9624875783920288`. This value represents a 96% accuracy.
 
-But, this is a simple example. Let's pick a paragraph text from Wikipedia and the model will tell us the category the paragraph is based on. We get the paragraph from this [link](https://en.wikipedia.org/wiki/Quantum_machine_learning).
+But, this is a simple example. Let's pick a paragraph text from Wikipedia, and the model will tell us the category the paragraph is based on. We get the paragraph from this Wikipedia [link](https://en.wikipedia.org/wiki/Quantum_machine_learning).
 
 ```python
 input_sequence = "To avoid plagiarism issues, please refer to the code on the Google Colab"
@@ -95,14 +95,14 @@ Result:
   0.01479694340378046]
   '}
 ```
-The model correctly classified the paragraph as an excerpt for technology with an accuracy score of `0.9226115942001343`. This represents a 92% accuracy. Interesting, right?
+The model correctly classified the paragraph as an excerpt for technology with an accuracy score of `0.9226115942001343`. This value represents a 92% accuracy. Interesting, right?
 
-The model can as well output results with multiple classifications. An article, sentence, or paragraph can be of several classifications simultaneously. For example, it can be of travel and entertainment category. Let's see how we can achieve this process.
+The model can as well output results with multiple classifications. An article, sentence, or paragraph can be of several categories simultaneously. For example, it can be of travel and entertainment category. Let's see how we can achieve this process.
 
 #### Performing multi-class classification
-We need to introduce an argument known as `multi_class` and set it to `True` as shown below.
+We need to introduce an argument known as `multi_class`, and set it to `True` as shown below.
 
-> Please note that the `multi_class` argument has been used extensively in other tutorials. This argument has been deprecated and renamed to `multi_label`. It still works and you can use it interchangeably. But, `multi_class` will be removed in a future version of Transformers.
+> Please note that the `multi_class` argument has been used extensively in other tutorials. This argument is deprecated and renamed to `multi_label`. It still works, and you can use it interchangeably. But, `multi_class` will be removed in a future version of Transformers.
 
 ```python
 input_sequence = "To avoid plagiarism issues, please refer to the code on the Google Colab"
@@ -120,10 +120,10 @@ Results:
   0.0004167791921645403],
  '}
 ```
-The model has successfully performed a multi-class classification. It has classified the sentence to be of the category of `dancing (98%)` and `entertainment (87%)` as well. Please refer to this [link](https://colab.research.google.com/drive/1L4IyAEQLeZR5D9nG_nD_klhNMst1_wHN?usp=sharing) to get the full code for this tutorial.
+The model has successfully performed a multi-class classification. It has classified the sentence to be of the category of `dancing (98%)`, and `entertainment (87%)` as well. Please refer to this [link](https://colab.research.google.com/drive/1L4IyAEQLeZR5D9nG_nD_klhNMst1_wHN?usp=sharing) to get the complete code for this tutorial.
 
 ### Wrapping up
-This tutorial has shown us how we can leverage a pre-trained BERT model to implement zero-shot classification on text using Python. You can take this experiment even a step further and integrate this model inside a user-friendly web application such as Gradio if you want to build a production-ready application. The Hugging Face team has built a user-friendly [demo](https://huggingface.co/zero-shot/) that you can experiment with your text or sentences. Also, they include a sample notebook that you can use to build up your knowledge on the subject.
+This tutorial has shown us how to leverage a pre-trained BERT model to implement zero-shot classification on text using Python. You can take this experiment a step further and integrate this model inside a user-friendly web application such as Gradio if you want to build a production-ready application. The Hugging Face team has built a user-friendly [demo](https://huggingface.co/zero-shot/) that you can experiment with your text or sentences. Also, they include a sample notebook that you can use to build up your knowledge on the subject.
 
 Have fun coding!
 
