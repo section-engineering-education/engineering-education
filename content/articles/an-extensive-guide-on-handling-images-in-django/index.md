@@ -6,7 +6,7 @@ url: /an-extensive-guide-on-handling-images-in-django/
 title: An Extense Guide On Handling Images In Django
 description: This article will help readers understand how to work with images in Django. We will build a simple application to demonstrate it.
 author: donel-mwangi
-date: 2022-03-04T00:00:00-00:00
+date: 2022-03-11T00:00:00-03:34
 topics: [Languages]
 excerpt_separator: <!--more-->
 images:
@@ -30,7 +30,7 @@ In this tutorial, we are going to build a Django application that handles images
 
 ### Pre-requisites
 To follow through this tutorial, you need to have:
-- Fundamental knowledge in both Python and Django.
+- Fundamental knowledge of both Python and Django.
 - A code editor like Visual Studio Code.
 
 ### Set up the environment
@@ -61,7 +61,7 @@ pip install pillow
 
 After the installation, we now proceed to create the Django project named `myGallery`:
 
-```cd 
+```py
 django-admin startproject myGallery
 cd myGallery
 py manage.py startapp demo
@@ -77,7 +77,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'demo',                        # new
+    'demo', # new
 ]
 ```
 
@@ -94,7 +94,7 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 To enable a user to upload images during development, we need to add the following settings in our project-level `urls.py` for testing purposes. It should look like this:
 
-```py 
+```py
 from django.contrib import admin
 from django.urls import path
 from django.conf import settings
@@ -310,7 +310,7 @@ In the above HTML form:
 - `method="POST"` requests the server to accept the submission of a form.
 - `enctype="multipart/form-data"` encodes files in a certain way that allows them to be submitted through `POST` method.
 - `{% csrf_token %}` enables us to protect out site from [Cross Site Request Forgeries](www.synopsys.com/glossary/what-is-csrf.html).
-- `{{ form.as_p }}` displays the form fields wrapped around with the paragraph's HTML tags 
+- `{{ form.as_p }}` displays the form fields wrapped around with the paragraph's HTML tags
 
 Next, we will create a function-based view that handles the image upload. In `views.py`, update your code as shown:
 
@@ -377,7 +377,7 @@ class Image(models.Model):
     title = models.CharField(max_length=20)
     photo = models.ImageField(upload_to='pics')
 
-    def image_tag(self):                     # new
+    def image_tag(self): # new
         return mark_safe('<img src="/../../media/%s" width="150" height="150" />' % (self.photo))
 ```
 
@@ -402,7 +402,7 @@ As a result, our [Image dashboard](http://127.0.0.1:8000/admin/demo/image/) shou
 ### Create thumbnails
 If you click on images in the [display page](http://127.0.0.1:8000/), they tend to have different default sizes. The big images might even take longer to load due to their size.
 
-In case you want to change this behavior and give them a reasonable size, you would have to override the `save` method in our Image model. 
+In case you want to change this behavior and give them a reasonable size, you would have to override the `save` method in our Image model.
 
 We will create thumbnails for the images by editing their size during the uploading process, and set the maximum value of width and height to `300`.
 
@@ -411,7 +411,7 @@ Let's update our `models.py` as shown:
 ```py
 from django.db import models
 from django.utils.safestring import mark_safe 
-from PIL import Image as Im                  # new
+from PIL import Image as Im # new
 
 # Create your models here.
 class Image(models.Model):
@@ -421,7 +421,7 @@ class Image(models.Model):
     def image_tag(self):                     
         return mark_safe('<img src="/../../media/%s" width="150" height="150" />' % (self.photo))
 
-    def save(self):                        # new
+    def save(self): # new
         super().save()
         img = Im.open(self.photo.path)
         # resize it
@@ -432,7 +432,7 @@ class Image(models.Model):
 ```
 
 ### Add a background image in a Django template
-We shall go on and add a background image to our upload template. To do so, we shall create a directory named `static` in our app-level directory `demo`, and add the background image that you intend to use inside it. 
+We shall go on and add a background image to our upload template. To do so, we shall create a directory named `static` in our app-level directory `demo`, and add the background image that you intend to use inside it.
 
 > The background image that we use is `bj.jpg`.
 
@@ -458,13 +458,11 @@ In `upload.html`, we shall load the statics at the top, then add the background 
 </html>
 ```
 
-After that, we shall change the `STATIC_URL` in `settings.py` from 
+After that, we shall change the `STATIC_URL` in `settings.py` from the first code block below to the second code block.
 
-```py 
+```py
 STATIC_URL = 'static/'
 ```
-
-to
 
 ```py
 STATIC_URL = '/static/'
