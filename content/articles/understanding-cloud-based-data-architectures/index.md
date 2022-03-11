@@ -1,6 +1,21 @@
-﻿### Introduction
-Most global enterprises rely on big data, which uncovers hidden patterns. For this reason, organizations are switching to new data technologies to remain competitive in the market. Businesses operating with legacy infrastructure find it challenging to use these new technologies. This is the main reason that is making businesses migrate to cloud-based technologies.
+---
+layout: engineering-education
+status: publish
+published: true
+url: /understanding-cloud-based-data-architectures/
+title: Understanding Cloud-Based Data Architecture
+description: In this article, we will look at the basics of cloud-based data architectures. We will also go through the factors considered when building a stable cloud data architecture. 
+author: verah-ombui
+date: 2022-03-11T00:00:00-14:00
+topics: [Cloud Computing]
+excerpt_separator: <!--more-->
+images:
 
+  - url: /engineering-education/understanding-cloud-based-data-architectures/hero.jpg
+    alt: Cloud-Based Data Architecture Hero Image
+---
+Most global enterprises rely on big data, which uncovers hidden patterns. For this reason, organizations are switching to new data technologies to remain competitive in the market. Businesses operating with legacy infrastructure find it challenging to use these new technologies. This is the main reason that is making businesses migrate to cloud-based technologies.
+<!--more-->
 Nowadays, cloud computing is generating huge income for businesses. This means that cloud data architecture is significant to the digital economy. The reason is that it provides speed and agility and quick access to data and data unification.
 
 The article covers [cloud-based data architectures](https://www.snowflake.com/trending/cloud-data-architectures) and how businesses can use them to maximize their returns.
@@ -83,3 +98,6 @@ Cloud data architectures are essential to organizations that deal with massive d
 - [The Different Types of Cloud Computing Explained](https://www.jellyfish.com/en-gb/training/guides/types-of-cloud-computing).
 - [Exploring Different Cloud Storage Options](https://www.techadvisor.com/test-centre/internet/best-cloud-storage-3614269/).
 - [Understanding Cloud Scaling](https://www.cloudzero.com/blog/horizontal-vs-vertical-scaling).
+
+---
+Peer Review Contributions by: [Onesmus Mbaabu](/engineering-education/authors/onesmus-mbaabu/)
