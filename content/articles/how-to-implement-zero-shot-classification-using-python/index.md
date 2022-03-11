@@ -93,7 +93,7 @@ Result:
   0.021649882197380066,
   0.01717376336455345,
   0.01479694340378046]
-  '}
+}
 ```
 The model correctly classified the paragraph as an excerpt for technology with an accuracy score of `0.9226115942001343`. This value represents a 92% accuracy. Interesting, right?
 
