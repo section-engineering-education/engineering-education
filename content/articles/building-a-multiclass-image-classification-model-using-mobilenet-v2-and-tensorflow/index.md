@@ -10,7 +10,7 @@ In this tutorial, we will build an image-based plant disease classification mode
 
 ### Table of contents
 - [Prerequisites](#prerequisites)
-- [Getting started with MobileNetV2](#getting-started-with-mobilenetv2)
+- [MobilenetV1 vs MobileNetV2](#mobilenetv1-vs-mobilenetv2)
 - [Why use MobileNetV2?](#why-use-mobilenetv2)
 - [Beans images dataset](#beans-images-dataset)
 - [Showing the beans images](#showing-the-beans-images)
@@ -35,18 +35,22 @@ A reader should:
 - Know how to build a simple [image classification model](/engineering-education/image-classifier-keras/)
 - Train the deep neural network in [Google Colab](https://research.google.com/colaboratory/)
 
-### Getting started with MobileNetV2
-MobilenetV2 is the second version of the Mobilenet models. MobilenetV2 is a pre-trained TensorFlow model for image classification.  
+### MobilenetV1 vs MobileNetV2
+[MobileNet](https://medium.com/analytics-vidhya/image-classification-with-mobilenet-cc6fbb2cd470) uses a convolutional neural network (CNN) architecture model for image classification and computer vision. It was open-sourced by Google. It has two stable versions (MobilenetV1 vs MobileNetV2). 
 
-Pre-trained models for image classification are deep neural networks that are trained using a large images dataset. We then use the pre-trained models to solve specific image classification tasks. We just need to make small adjustments to the pre-trained model and fine-tune it to perform our task.  
+MobileNet architecture is special because it uses very less computation power to run. This makes it a perfect fit for mobile devices, embedded systems, and computers without GPU. 
+
+[MobilenetV1](https://ai.googleblog.com/2017/06/mobilenets-open-source-models-for.html) is the first version of the Mobilenet models. It has more complex convolution layers and parameters as compared to MobilenetV2.
+
+[MobilenetV2](https://ai.googleblog.com/2018/04/mobilenetv2-next-generation-of-on.html) is the second version of the Mobilenet models. When compared to MobilenetV1, it significantly reduces the number of parameters in the deep neural network. This results in more lightweight deep neural networks. Being lightweight, it is best suited for embedded systems and mobile devices.  
+
+MobilenetV2 is mostly a refinement of MobilenetV1. This makes it even more efficient and powerful. The MobileNetV2 models are much faster in comparison to MobileNetV1 due to the reduced model size and complexity.
+
+MobilenetV2 is a pre-trained model for image classification and computer vision. Pre-trained models are deep neural networks that are trained using a large images dataset. We then apply the pre-trained models to solve specific image classification tasks. We just need to make small adjustments to the pre-trained model and fine-tune it to perform our task.  
 
 Using the pre-trained model, developers don't need to build the whole neural network from scratch. It saves time since we can use the pre-trained model as a starting point. 
 
-Some of the common pre-trained models for image classification are [Inceptionv3](https://keras.io/api/applications/inceptionv3/), [ResNet50](https://keras.io/api/applications/resnet/), [VGG-16](https://github.com/1297rohit/VGG16-In-Keras), [EfficientNet](https://keras.io/api/applications/efficientnet/), [AlexNet](https://towardsdatascience.com/alexnet-the-architecture-that-challenged-cnns-e406d5297951), [LeNet](https://towardsdatascience.com/understanding-and-implementing-lenet-5-cnn-architecture-deep-learning-a2d531ebc342) and [MobileNet](https://keras.io/api/applications/mobilenet/). In this tutorial, we will focus on the second version of Mobilenet.
-
-MobileNetV2 is a pre-trained convolutional neural network architecture-based model. It can perform computer vision and image classification.
-
-MobileNetV2 follows an architecture that combines many convolutions to build a lightweight neural network. Being lightweight, it is best suited for embedded systems and mobile devices. 
+Some of the common pre-trained models for image classification and computer vision are [Inceptionv3](https://keras.io/api/applications/inceptionv3/), [ResNet50](https://keras.io/api/applications/resnet/), [VGG-16](https://github.com/1297rohit/VGG16-In-Keras), [EfficientNet](https://keras.io/api/applications/efficientnet/), [AlexNet](https://towardsdatascience.com/alexnet-the-architecture-that-challenged-cnns-e406d5297951), [LeNet](https://towardsdatascience.com/understanding-and-implementing-lenet-5-cnn-architecture-deep-learning-a2d531ebc342) and [MobileNet](https://keras.io/api/applications/mobilenet/). In this tutorial, we will focus on the second version of Mobilenet discussed above.
 
 The image shows the architecture and the number of layers of a pre-trained MobileNetV2 model.
 
@@ -66,7 +70,7 @@ To understand the convolutional neural network architecture and how it works, re
 
 ### Why use MobileNetV2?
 - It saves time building a neural network from scratch.
-MobileNetV2 acts as a starting point when buidling a deep neural network.
+MobileNetV2 acts as a starting point when building a deep neural network.
 
 - MobileNetV2 is trained using a large images dataset. 
 It enables the model to effectively learn, therefore, it will be able to give accurate results.
@@ -80,15 +84,27 @@ MobileNetV2 makes the whole process simpler and easier. It ensures we have a cle
 
 - MobileNetV2 is lightweight making it have high execution speed.
 
-- They are small in size.
+- MobileNetV2 is smaller in size as compared to MobileNetV1.
 It makes it best suited for embedded systems and mobile devices
 
+- MobileNetV2 significantly reduces the number of parameters making it less complex.
+When compared to MobileNetV1 it is less complex. This makes it better to use and apply in image classification.
+
+- MobilenetV2 can also run on web browsers.
+It is best suited for web browsers since is more lightweight as compared to MobilenetV1. Also, browsers have lower computation power, graphic processing, and storage.
+
+- MobileNetV2 models are much faster in comparison to MobileNetV1 due to the reduced model size and complexity.
+
 ### Beans images dataset
-We will use the beans images dataset to train the model. The dataset contains images of infected and healthy bean leaves. The dataset is collected from farmers taking photos of different infected and healthy bean leaves. 
+We will use the beans images dataset to train the model. The dataset contains images of infected and healthy bean leaves. The dataset is collected from farmers taking photos of different infected and healthy bean leaves. The data was annotated by experts from the National Crops Resources Research Institute (NaCRRI) in Uganda and collected by the Makerere AI research lab. To access the GitHub repository for the beans images dataset, [click here](https://github.com/AI-Lab-Makerere/ibean/)
+
+The image below shows a snip of the beans images dataset.
+
+![Dataset snip](/engineering-education/building-a-multiclass-image-classification-model-using-mobilenet-v2-and-tensorflow/train-images.png)
 
 The multi-class image classification model will classify each bean image into two disease classes/labels. The model will also classify a bean image into a third class that indicates a healthy leaf. This model will help farmers to quickly identify infected leaves and reduce significant loss. 
 
-We will download the dataset from `tensorflow_datasets` `tensorflow_datasets` is an open-source repository of datasets for object detection, object segmentation, image tasks, video tasks, and natural language processing.
+We will download the dataset from [`tensorflow_datasets`](https://www.tensorflow.org/datasets). `tensorflow_datasets` is an open-source repository of datasets for object detection, object segmentation, image tasks, video tasks, and natural language processing.
 
 Let's import `tensorflow_datasets`. 
 
@@ -100,11 +116,15 @@ We download the beans dataset as follows:
 ```python
 beans_dataset, beans_info = tfds.load(name='beans', with_info=True, as_supervised=True, split=['train','test','validation'])
 ```
-From the code snippet above, the `load` function will load the `beans` dataset. `with_info=True` will show the beans dataset information and metadata. `as_supervised=True` specifies the type of machine learning. We are dealing with supervised machine learning because the beans dataset is labeled. `split` splits the dataset into three sets. The sets are for model training, testing, and validation.
+From the code snippet above:
+- The `load` function will load the `beans` dataset. 
+- `with_info=True` will show the beans dataset information and metadata. 
+- `as_supervised=True` specifies the type of machine learning. We are dealing with supervised machine learning because the beans dataset is labeled.
+- `split` will split the dataset into three sets. The sets are for model training, testing, and validation.
 
 To check the beans dataset, use this code:
 
-```python
+```bash
 beans_info
 ```
 The code produces this output:
@@ -142,7 +162,9 @@ def preprocessing(image, label):
 ```
 Image normalization converts the output pixel value between 0 by 1. The `preprocessing` function performs `normalization` by dividing the `image` by 255. The function uses ` tf.image.resize` to resize the image to `224,224`. It is the image size that MobileNetV2 expects.
 
-The function also encodes the classes using `tf.one_hot(label, 3)`. It converts the classes (`Angular Leaf Spot`, `Bean Rust`, `healthy`), into numerical values (0, 1, 2)
+The function also one hot encodes the classes using `tf.one_hot(label, 3)`. One hot encoding is the process of converting categories/classes in a dataset into integer/numeric values which the model understands. It will convert the classes (`Angular Leaf Spot`, `Bean Rust`, `healthy`), into numerical values (0, 1, 2)
+
+To understand how one hot encoding works, read this [article](https://towardsdatascience.com/categorical-encoding-using-label-encoding-and-one-hot-encoder-911ef77fb5bd)
 
 Let's now import libraries that we will use in image classification.
 
@@ -156,16 +178,16 @@ import matplotlib.pylab as plt
 import numpy as np
 ```
 
-**tensorflow**
+- TensorFlow
 It is an open-source library for developing machine learning and deep learning models. It trains deep neural networks with input, hidden, and output layers. We will use TensorFlow to add custom layers to the pre-trained MobilenetV2. This will fine-tune the plant disease classification model and improve its performance.
 
-**tensorflow_hub**
+- tensorflow_hub
 It is an open-source repository that contains pre-trained models for natural language processing tasks and image classification. We will download the pre-trained MobilenetV2 model from here.
 
-**matplotlib.pylab**
+- matplotlib.pylab
 We will the library to plot diagrams and visualization of our image dataset. It will show the model prediction results.
 
-**numpy**
+- NumPy
 It will convert the image dataset into an array.
 
 Let's now download the pre-trained MobilenetV2 model which we will fine-tune later.
@@ -188,7 +210,11 @@ The code above will extract the pre-trained MobilenetV2 layers. It also specifie
 
 `mobile_net_layers` will extract the unique characteristics and features from the beans images. We will then add our custom layers to the pre-trained MobilenetV2 using TensorFlow. It will produce a fine-tuned model that will classify the images into three classes.
 
-These layers are already trained. To ensure that TensorFlow does not retrain them, use this code:
+`mobile_net_layers` layers are already trained. We will simply add these layers to our deep neural network without training them. The only layers that we will train are the custom layers we will add on top of the `mobile_net_layers`. 
+
+We add the custom layers to fine-tune the deep neural network so that it can understand and perform our task (plant disease classification). The final deep neural network will be made up of the `mobile_net_layers` and the created custom layers. 
+
+To ensure that TensorFlow does not retrain the `mobile_net_layers`, use this code:
 
 ```python
 mobile_net_layers.trainable = False
@@ -210,13 +236,13 @@ We are creating a Keras Sequential model. The sequential model allows building t
 
 From the code above, we have added the following layers to the deep neural network.
 
-**mobile_net_layers**
+- mobile_net_layers
 It contains the pre-trained MobilenetV2 layers.
 
-**Dropout**
+- Dropout
 This layer will handle [model overfitting](/engineering-education/dropout-regularization-to-handle-overfitting-in-deep-learning-models/). It ensures the model performs well using both the train and test images. 0.3% of the neurons will be dropped randomly in training to handle overfitting.
 
-**Dense**
+- Dense
 It is the output layer. The `Dense` layer has 3 neurons because the dataset has three predefined classes. We have also set `softmax` as the activation function because the dataset has three pre-defined classes.
 
 Let's check the deep neural network architecture.
@@ -255,13 +281,13 @@ neural_net.compile(
 ```
 We compile the model using the `compile` function. It has the following parameters:
 
-**model_optimizer**
+- model_optimizer
 It ensures the model performs well and reduces errors that `model_loss` generates in training. We set the `model_optimizer` to `Adam`.
 
-**model_loss**
+- model_loss
 It gets the errors in the model in training. We set the `model_loss` to `CategoricalCrossentropy` because the beans dataset has three pre-defined classes.
 
-**model_metrics**
+- model_metrics
 It checks the deep neural network's performance. It also calculates the accuracy score. `acc` will get the accuracy score using the train and the test set.
 
 Let's fit the deep neural network to the `train` and `validation` images.
@@ -336,7 +362,7 @@ Some of the printed output:
 
 ![Printed output](/engineering-education/building-a-multiclass-image-classification-model-using-mobilenet-v2-and-tensorflow/printed-output.png)
 
-From this output, the `actual label` and the `predicted label` for both predictions are the same. This shows the deep neural network has made accurate predictions.
+From this output, the actual label` and the `predicted label` for both predictions are the same. This shows the deep neural network has made accurate predictions.
 
 **Another Output**
 
@@ -358,6 +384,3 @@ To get the multi-class image classification model we have trained in this tutori
 - [Deep neural networks](/engineering-education/introduction-to-neural-networks/)
 - [TensorFlow](https://www.tensorflow.org/)
 - [Image Classifier with Keras](/engineering-education/image-classifier-keras/)
-
-
-
