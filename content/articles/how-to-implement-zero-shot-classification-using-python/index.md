@@ -131,3 +131,6 @@ Have fun coding!
 - [HuggingFace](https://huggingface.co/models?pipeline_tag=zero-shot-classification&sort=downloads)
 - [Zero shot learning](https://en.wikipedia.org/wiki/Zero-shot_learning)
 - [Benchmarking Zero-shot Text Classification: Datasets, Evaluation and Entailment Approach](https://arxiv.org/pdf/1909.00161.pdf)
+
+---
+Peer Review Contributions by: [Wilkister Mumbi](/engineering-education/authors/wilkister-mumbi/)
