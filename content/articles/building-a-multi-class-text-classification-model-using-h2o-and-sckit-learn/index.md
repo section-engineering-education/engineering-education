@@ -1,10 +1,12 @@
-Text classification is an important task in natural language processing that categorizes text into predefined classes. We train the text classification model using a text dataset. The model learns from the text dataset and finally it will make predictions. Text classification models perform tasks such as [intent detection](https://sentione.com/blog/new-state-of-the-art-intent-detection-model-from-sentione), [topic labeling](https://medium.com/@gab.choojj/airline-topic-labeling-and-classification-using-latent-dirichlet-allocation-lda-d88d91b2c6ef), [sentiment analysis](/engineering-education/sentiment-analysis-with-spacy-and-scikit-learn/) and [spam detection](/engineering-education/spam-detection-model-using-scikit-learn).
+Text classification is an important task in natural language processing that categorizes text into classes. We train the text classification model using a text dataset. The model learns from the text dataset and finally it will make predictions. Text classification models perform tasks such as [intent detection](https://sentione.com/blog/new-state-of-the-art-intent-detection-model-from-sentione), [topic labeling](https://medium.com/@gab.choojj/airline-topic-labeling-and-classification-using-latent-dirichlet-allocation-lda-d88d91b2c6ef), [sentiment analysis](/engineering-education/sentiment-analysis-with-spacy-and-scikit-learn/) and [spam detection](/engineering-education/spam-detection-model-using-scikit-learn).
 
-Multiclass text classification is a text classification task with more than two predefined classes. We have more than two classes but each data sample can only be classified into one class.
+Multi-class text classification is a text classification task with more than two classes/categories. Each data sample can be classified into one class. A data sample cannot belong to more than one class at the same time.
 
-For example, classifying news headlines into predefined news categories. The predefined news categories can be business, sports, tech, entertainment, and politics. 
+For example, a model that classifies news headlines into news categories. The categories can be business, sports, tech, entertainment, and politics. 
 
-In this tutorial, we will build a model that classifies customer complaints into 5 pre-defined classes. We will use [Scikit-learn](https://scikit-learn.org/stable/) for text preprocessing and vectorization. [H2O](https://github.com/h2oai/h2o-3) will automate the model building process using [H2O AutoML](https://github.com/h2oai/h2o-3) algorithm.
+In this tutorial, we will build a model that classifies customer complaints. We will use a dataset that has five classes.
+
+We will use [Scikit-learn](https://scikit-learn.org/stable/) for text preprocessing and vectorization. [H2O](https://github.com/h2oai/h2o-3) will automate the model building process using [H2O AutoML](https://github.com/h2oai/h2o-3) algorithm.
 
 ### Table of contents
 - [Prerequisites](#prerequisites)
@@ -39,36 +41,36 @@ A reader should:
 ### H2O library
 H2O is an open-source library for machine learning. It allows the use of most supervised and unsupervised machine learning algorithms. It is robust and easily scalable.
 
-[H2O](https://github.com/h2oai/h2o-3) also automates the model building process using [H2O AutoML](https://github.com/h2oai/h2o-3). During the automation process, it selects the best algorithm and performs the model evaluation.
+[H2O](https://github.com/h2oai/h2o-3) also automates the model building process using [H2O AutoML](https://github.com/h2oai/h2o-3). It selects the best algorithm and performs the model evaluation.
 
 #### Benefits of H2O
 
 - It saves developers time.
-H2O AutoML algorithm automates most tasks in the machine learning tasks, saving the developers time. This increases productivity 
+H2O AutoML algorithm automates most machine learning tasks, saving the developers time and increasing productivity 
 
 - H20 builds simple and interactive interfaces during the automation process. 
-This enables users to easily gain insights from the H2O interfaces.
 
 - It simplifies the machine learning process.
 H2O automates complex machine learning tasks. 
 
 - It helps to avoid model errors that might occur due to human error.
-Since most processes are automated, model errors are reduced. H2O is also a debugging tool that detects and removes underlying model errors. The final model will make accurate predictions.
+Since most processes are automated, it reduces model errors. H2O is also a debugging tool that detects and removes underlying model errors. The final model will make accurate predictions.
 
 - It enables automatic training and tuning of multiple models.
-H2O runs multiple models during training. It then selects the best model and performs the model evaluation. This produces an optimized model that will make accurate predictions.
+H2O runs multiple models during training. It then selects the best model and performs the model evaluation. It produces an optimized model that will make accurate predictions.
 
-- It produces an easily deployable model
-The final model can be easily deployed to production.
+- It produces an easily deployable model for production.
 
 ### H2O dependencies
-H2O requires [64-bit JDK](https://www.oracle.com/java/technologies/downloads/). It is written using Java. Let's install 64-bit JDK.
+H2O requires [64-bit JDK](https://www.oracle.com/java/technologies/downloads/). 
+
+It runs on Java. Run this command to install 64-bit JDK:
 
 ```bash
 !apt-get install default-jre
 !java -version
 ```
-After installing the dependencies, let's install H2O.
+After installing the dependencies, we can install H2O.
 
 #### Installing H2O
 Use the code:
@@ -82,7 +84,7 @@ To import H2O, use this code:
 import h2o
 from h2o.automl import H2OAutoML
 ```
-We `H2OAutoML` to run multiple machine learning algorithms during training and then selects the best algorithm.
+We `H2OAutoML` to run multiple machine learning algorithms during training. It then selects the best algorithm.
 
 ### Initializing H2O
 Let's use this code:
@@ -90,14 +92,14 @@ Let's use this code:
 ```python
 h2o.init()
 ```
-It will make the H2O clusters start running. We will use the H2O clusters to train the model.
+It will run H2O clusters. We will use its memory for text classification.
 
 The image below shows the H2O clusters.
 
 ![H2O clusters](/engineering-education/building-a-multi-class-text-classification-model-using-h2o-and-sckit-learn/h2o-clusters.png)
 
 ### Customer complaints dataset
-We will use the customer complaints dataset to train the classification model. When we have a new customer complaint, the model will classify it into one of the 5 pre-defined classes. The text classification model classifies a complaint into one and only one class. You can download the customer complaints dataset [here](https://drive.google.com/file/d/1tC7KWKJzWYdLtrYdwlXHRti4nFCdHHip/view?usp=sharing)
+We will use the customer complaints dataset to train the classification model. When we have a new customer complaint, the model will classify it into one of the classes. The text classification model classifies a complaint into one and only one class. You can download the customer complaints dataset [here](https://drive.google.com/file/d/1tC7KWKJzWYdLtrYdwlXHRti4nFCdHHip/view?usp=sharing)
 
 We will use `Pandas` to read the dataset. 
 
@@ -120,18 +122,20 @@ The dataset output:
 
 From the image above, the dataset has 18 columns. We are interested in the `Product`, `Company` and `Consumer complaint narrative` columns.
 
-The `company` columns show the company from which the customer complaint originated. The `Consumer complaint narrative` column contains the actual customer complaints. The `Product` columns contain the pre-defined complaints classes.
+The `company` columns show the customer complaint company. 
+The `Consumer complaint narrative` column contains the actual customer complaints. 
+The `Product` columns contain the complaints classes.
 
-To see the pre-defined complaints classes, run this code:
+To see the complaints classes, run this code:
 
 ```python
 df['Product'].value_counts()
 ```
-The pre-defined complaints classes output:
+The complaints classes output:
 
-![Pre-defined complaints classes](/engineering-education/building-a-multi-class-text-classification-model-using-h2o-and-sckit-learn/pre-defined-complaints-classes.png)
+![Complaints classes](/engineering-education/building-a-multi-class-text-classification-model-using-h2o-and-sckit-learn/pre-defined-complaints-classes.png)
 
-From the image above we have 5 pre-defined complaints classes. The model will classify a customer complaint into one of the complaints classes.
+From the image above, we have five complaints classes. The model will classify a customer complaint into one of the complaints classes.
 
 #### Company column
 To check the company column, use this code:
@@ -146,7 +150,7 @@ The company output:
 The image shows the companies with customer complaints.
 
 #### Renaming `Consumer complaint narrative` column
-We rename the column into complaints, using this code: 
+We rename the column into `complaints` using this code: 
 
 ```python
 complaints_df=df[['Consumer complaint narrative','Product','Company']].rename(columns={'Consumer complaint narrative':'complaints'})
@@ -161,7 +165,8 @@ The dataset output:
 ![Renamed column](/engineering-education/building-a-multi-class-text-classification-model-using-h2o-and-sckit-learn/renamed-column.png)
 
 ### Creating a dictionary object
-The dictionary object will encode the pre-defined complaints classes as integer/numeric values. The integer values will be 1-5 and will represent the categorical complaints classes. They will be saved in the `target` variable.
+The dictionary object will encode the complaints classes as integer/numeric values. The integer values will be 1-5.
+They will represent the categorical complaints classes. We save them in the `target` variable.
 
 ```python
 target={'Debt collection':0, 'Credit card or prepaid card':1, 'Mortgage':2, 'Checking or savings account':3, 'Student loan':4, 'Vehicle loan or lease':5}
@@ -194,26 +199,26 @@ To split the dataset, use this code:
 X_train, X_test = train_test_split(complaints_df, test_size=0.2, random_state=111)
 ```
 ### Text Preprocessing for natural language processing
-Text preprocessing is very important in natural language processing. It transforms the raw text into a format that the machine learning model can understand. At this stage, we clean the text dataset making it ready for use.
+Text preprocessing is a crucial step in natural language processing. It transforms the raw text into a format that the machine learning model can understand. 
 
 There are many text preprocessing steps. In this tutorial, we will focus on the following:
 
 - Stemming
 Stemming reduces a word into its stem word or root. It removes the word affixes so that only the root remains.
 
-For example, the words “climbing”, “climbed” and “climbers” are all stemmed from the root form “climb”.
+For example, the words “connecting”, “connect”, “connection”, “connects” are all reduced to the root form “connect”.
 
 - Removing stop words
-Stop words are very frequently occurring words in any language. Stop words do not add any value to the model in training. Examples of stop words are conjunctions, pronouns, and articles. Removing stop words will enable the model to focus on words that add value in training. 
+Stop words are the most common words in any language. They do not add much information to the text. Examples of stop words are conjunctions, pronouns, and articles. Removing stop words will enable the model to focus on words that add value in training. 
 
 - Lower Casing: 
 It converts the text dataset to lower case. 
 
 - Tokenization
-It breaks up the sentences into smaller units such as phrases and words. This process enables the model to understand the sentences through analyzing the word tokens.
+It breaks up the sentences into smaller word units called tokens. This process enables the model to understand the sentences through analyzing the word tokens.
 
 - Removing unnecessary characters
-The text dataset may have unnecessary characters that do not add any value to the model in training. We can remove these characters to ensure the model focus on important words.
+The text dataset may have unnecessary characters that do not add any value to the model in training. We remove these characters to ensure the model focus on important information.
 
 Natural Language Toolkit (NLTK) will perform these steps. Let's install NLTK.
 
@@ -252,7 +257,7 @@ We download the English stop words using this code:
 nltk.download('stopwords')
 stop_words = set(nltk.corpus.stopwords.words('english'))
 ```
-Let's now create a function that will apply all the initialized methods and functions.
+Let's create a function to perform all text preprocessing steps.
 
 ### Function
 To create the function, we will use Python regular expression RegEx module.
@@ -260,7 +265,7 @@ To create the function, we will use Python regular expression RegEx module.
 ```python
 import re
 ```
-From the code above we have imported `re`. It will help us with the regular expression operations(RegEx).
+From the code above, we have imported `re`. It will help us with the regular expression operations(RegEx).
 
 To create the function, use this code:
 
@@ -271,12 +276,16 @@ def preprocessing(text):
    stems = [stemmer.stem(item) for item in tokens if (item not in stop_words)]
    return stems
 ```
-The function is named `preprocessing`. The `nltk.word_tokenize` method will tokenize the text. `word.strip` will remove the unnecessary characters. `str.lower` will perform lower casing and `stemmer.stem` will perform stemming. The function returns the stemmed words.
+The function is named `preprocessing`. It has the following text preprocessing methods:
+The `nltk.word_tokenize` method will tokenize the text. `
+`word.strip` will remove the unnecessary characters. 
+`str.lower` will perform lower casing , and `stemmer.stem` will perform stemming. The function returns the stemmed words.
 
-The function will perform text preprocessing, the next step is to perform vectorization.
+The function will perform text preprocessing. The next step is to perform vectorization.
 
 ### Text vectorization
-Text vectorization converts the stemmed words to numerical values. The numerical values are called word vectors. We feed the model with the word vectors in training.
+Text vectorization converts the stemmed words to numerical values called word vectors.
+We feed the model the word vectors in training.
 
 We will use `TfidfVectorizer` for text vectorization.
 
@@ -297,7 +306,7 @@ train_vectors = vectorizer_tf.transform(X_train.complaints)
 test_vectors = vectorizer_tf.transform(X_test.complaints)
 ```
 ### Converting the train and test sets into an array
-We convert the train and test sets into an array using the `toarray` method, Run this code:
+We convert the train and test sets into an array using the `toarray` method.
 
 ```python
 train_df=pd.DataFrame(train_vectors.toarray())
@@ -313,7 +322,7 @@ h2o_test_df = h2o.H2OFrame(test_df)
 The next step is to add the `target` column to the created H2O Data Frame.
 
 ### Adding the target column
-The target column contains the model output after making a prediction. The model will classify the customer complaints into the 5 complaints classes.
+The target column contains the model output after making a prediction. The model will classify the customer complaints into one of the five complaints classes.
 
 ```python
 h2o_train_df['target'] = h2o_train_df['target'].asfactor()
@@ -327,19 +336,19 @@ Let's initialize the H2O AutoML algorithm and its parameters.
 ```python
 aml = H2OAutoML(max_models = 10, seed = 10, exclude_algos = ["StackedEnsemble"], balance_classes=True)
 ```
-From the code above we have initialized the `H2OAutoML` algorithm. It has the following parameters:
+From the code above, we have initialized the `H2OAutoML` algorithm. It has the following parameters:
 
 - `max_models`
-It specifies the maximum number of models that `H2OAutoML` will run. It will run 10 models.
+It specifies the maximum number of models that `H2OAutoML` will run. It will run ten models.
 
 - `seed`
-It is set to ensure model reproducibility.
+We use it to ensure model reproducibility.
 
 - `exclude_algos`
 It specifies the algorithms `H2OAutoML` should not use during model training. `H2OAutoML` will skip the `StackedEnsemble` algorithms.
 
 - `balance_classes`
-It will handle the imbalanced dataset. We set it to `true` to balances the 5 classes.
+It will handle the imbalanced dataset. We set it to `true` to balance the five classes.
 
 ### Specifying the y and x variables
 The `x` variable contains all the input features during training. The `y` variable contains the output/target column.
@@ -366,7 +375,7 @@ It contains the training dataset.
 - `validation_frame`
 It contains the testing dataset.
 
-When the code is executed, it will run ten models and produce the following output that shows the AutoML progress:
+H2OAutoML will run ten models and produce the following output that shows the AutoML progress:
 
 ![Model training](/engineering-education/building-a-multi-class-text-classification-model-using-h2o-and-sckit-learn/model-training.png)
 
@@ -377,7 +386,7 @@ We can check the performance of the ten models using this code:
 ```python
 aml.leaderboard
 ```
-`leaderboard` will show the performance of the ten models. It lists the models from the best performing to the least performing. The listed models are shown below:
+`leaderboard` will show the performance of the ten models. It lists the models from the best performing to the least performing. The image shows the listed models:
 
 ![Listed models](/engineering-education/building-a-multi-class-text-classification-model-using-h2o-and-sckit-learn/listed-models.png)
 
@@ -387,7 +396,7 @@ From the image above, the best model has a `model_id` of `XGBoost_1_AutoML_1_202
 We will use the model to classify an input customer complaint. We use the following input:
 
 ```python
-input_text = ['I was trying to make a payment toward my university loans on the HELB portal. I was unable login into my HELB portal, the site kept on loading without displaying my student loan balance. I want to know my balance before I can make the payments']
+input_text = ['I was trying to make a payment toward my university loans on the HELB portal. I was unable login into my HELB portal, the site kept on loading without displaying my student loan balance. I want to know my balance before I can make the payment']
 ```
 Let's apply our `vectorizer_tf` method to this text.
 
@@ -411,12 +420,12 @@ The prediction output:
 ```bash
 array([4])
 ```
-Using our created dictionary object, 4 represents the `Student loan` class. The input text is related to the `Student loan` class, thus our model has made an accurate prediction.
+Using our created dictionary object, 4 represents the `Student loan` class. The input text is related to the `Student loan` class. The model has made an accurate prediction.
 
 ### Conclusion
 We have learned how to build a multi-class text classification model. We developed the model using Scikit-learn and the H2O library. The tutorial also explains the benefits of H2O and how to install it.
 
-We also performed text preprocessing using Natural Language Toolkit. Using the clean dataset, we trained a model that classifies customer complaints. H2O runs multiple models and we used the best model to make predictions.
+We also performed text preprocessing using Natural Language Toolkit. Using the clean dataset, we trained a model that classifies customer complaints. H2O runs multiple models, and we used the best model to make predictions.
 
 To get the multi-class text classification model we have trained in this tutorial, click [here](https://colab.research.google.com/drive/1R2lUqZlaXOTHJSlY65ykxoKEw47JyHMx?usp=sharing)
 
