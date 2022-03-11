@@ -100,7 +100,7 @@ We will use the beans images dataset to train the model. The dataset contains im
 
 The image below shows a snip of the beans images dataset.
 
-![Dataset snip](/engineering-education/building-a-multiclass-image-classification-model-using-mobilenet-v2-and-tensorflow/train-images.png)
+![Dataset snip](/engineering-education/building-a-multiclass-image-classification-model-using-mobilenet-v2-and-tensorflow/dataset-snip.png)
 
 The multi-class image classification model will classify each bean image into two disease classes/labels. The model will also classify a bean image into a third class that indicates a healthy leaf. This model will help farmers to quickly identify infected leaves and reduce significant loss. 
 
