@@ -13,7 +13,7 @@ The same can be done for all responses coming from the endpoints. We can interce
 
 ####	Table of Contents
 - Introduction
-- Interceptor Methods: preHandle(), postHandle() and afterCompletion()
+- Introducing the Methods for (Request/Response) Interception
 - Registering a Custom Interceptor
 - Key Takeaways
 - Conclusion
@@ -33,10 +33,9 @@ For us to use Interceptors in Spring Boot, we need to add the `web` and `lombok`
     <groupId>org.projectlombok</groupId>
     <artifactId>lombok</artifactId>
 </dependency>
-
 ```
 ###	Interceptor Methods
-To demonstrate the operations of a Spring Interceptor, we will simulate a small request-response project. Basically, there are three methods employed in successfully building a Spring Interceptor. To begin, create a Spring Boot project. There are several articles on how to set up a Spring Boot project on section. Do well to check for one or all of them.
+To demonstrate the operations of a Spring Interceptor, we will simulate a small request-response project. Spring Interceptors thrive on three methods of opertaion. To begin, create a Spring Boot project. There are several articles on how to set up a Spring Boot project on section. Do well to check for one or all of them.
 Now it is time to introduce the methods:
 - preHandle(): To carry out some actions on a request before sending to the controller
 - postHandle(): To carry out actions on a response coming from the controller, before sending to requesting client
@@ -53,46 +52,47 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 @Slf4j
-public class LoggingInterceptor implements HandlerInterceptor {
+public class CustomInterceptor implements HandlerInterceptor {
 
     @Override
     public boolean preHandle(
-            HttpServletRequest request,
-            HttpServletResponse response,
-            Object handler) throws Exception {
+            HttpServletRequest req,
+            HttpServletResponse res) throws Exception {
 
-        log.info("[Pre method called][" + request + "]");
+        log.info("[preHandle() method called during request handling {}", req);
 
         return true;
     }
+}
 
 ```
-#### posthandle()
+
+Now, let us look at the next method after `preHandle()`
+#### postHandle()
 This method is invoked by the `interceptor` after the request has been handled but just before the `DispatcherServlet` passes the response to the client. If we like, at this point, we could add more attributes to the response. We can also get to record the time of processing the request. Just like with the preHandle(), we will be logging a message in the method execution.
 ```java
 // in the LoogingInterceptor class...
 @Override
 public void postHandle(
-  HttpServletRequest request,
-  HttpServletResponse response,
-  Object handler,
+  HttpServletRequest req,
+  HttpServletResponse res,
   ModelAndView modelAndView) throws Exception {
 
-    log.info("[Post called][" + response + "]");
+    log.info("postHandle() method called during response return {}", res);
 }
 ```
 #### afterCompletion()
 Finally, we can use the `afterCompletion()` to obtain the response and request after response has been passed to the client.
 ```java
-// in the LoogingInterceptor class...
+// in the CustomInterceptor class...
 @Override
 public void afterCompletion(
-  HttpServletRequest request, HttpServletResponse response, Object handler, Exception ex)
+  HttpServletRequest req, HttpServletResponse res)
   throws Exception {
     if (ex != null){
         ex.printStackTrace();
     }
-    log.info("[after completion called][" + request + "][response: " + response + "]");
+    log.info("afterCompletion() called on both request {} and response {}", req, res);
 }
 ```
 ###	Registering a Custom Interceptor
@@ -109,7 +109,7 @@ public class MvcConfiguration implements WebMvcConfigurer {
 
     @Override
     public void addInterceptors(InterceptorRegistry registry) {
-        registry.addInterceptor(new LoggingInterceptor());
+        registry.addInterceptor(new CustomInterceptor());
     }
 }
 
