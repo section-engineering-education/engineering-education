@@ -19,7 +19,7 @@ Machine learning is an ever-evolving field. One area of machine learning that ha
 The [HuggingFace](https://huggingface.co/) organization has been at the forefront in making contributions in this field. This tutorial will leverage the zero-shot classification model from Hugging Face to extract model predictions and perform multi-class classification. 
 
 ### Prerequisites
-To follow along with this tutorial, you need o be familar with:
+To follow along with this tutorial, you need to be familiar with:
 - Machine Learning modeling.
 - Natural Language processing.
 
