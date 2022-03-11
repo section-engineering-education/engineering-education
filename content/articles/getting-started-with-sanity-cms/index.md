@@ -1,11 +1,11 @@
 ### Getting Started with Sanity CMS
 It is inefficient to build applications while also worrying about the content or database.
 
-Sanity is a React open-source content management system. In case you are unfamiliar with the term, a content management system (CMS) is a software application that allows users to create, manage, publish, and store digital content. CMS helps to create apps without having to start from scratch, and it is mostly utilized in web and business content management systems.
+Sanity is a React open-source content management system. In case you're not familiar with the concept. A content management system (CMS) is a software application that enables users to design, edit, publish, and preserve digital information. A CMS enables you to build apps without having to start from scratch, and it is typically utilized in web and business content management systems.
 
 Sanity lets us focus on app designs rather than worrying about content file storage and databases. This tool provides efficient methods to create scalable and user-friendly applications. 
 ### Sanity as a Headless CMS
-A headless CMS is a backend-only content management system that makes content available via an API to any client device without the need for a built-in display layer. Headless CMS relies on JAMstack, which stands for (JavaScript, APIs, and Markup) to turn your web application content into a cloud-based API where it can be accessed from any application. In JAMstack, sanity is the A or (API) as it is decoupled from your app, giving you a single source of truth for your database to model and custom tail the content. Sanity provides an open-source studio to manage content where the data is stored in a content lake. It supports queries from a CDN using GraphQL, webhooks, and real-time updates.
+A headless CMS is a backend-only content management system that makes content accessible to any user device through an API, eliminating the requirement for a built-in display layer. Headless CMS relies on JAMstack, which stands for (JavaScript, APIs, and Markup) to turn your web application content into a cloud-based API where it can be accessed from any application. In JAMstack, sanity is the A or (API) as it is decoupled from your app, giving you a single source of truth for your database to model and custom tail the content. Sanity provides an open-source studio to manage content where the data is stored in a content lake. It supports queries from a CDN using GraphQL, webhooks, and real-time updates.
 #### Prerequisites
 - Install Node.js 
 - Code Editor (Visual Studio Code is recommended)
@@ -21,7 +21,7 @@ We have arrived at the Sanity command-line interface, and we will need to answer
 ##### Steps:
 - Sign in with Google, GitHub, or an email address and password.
 - Fill in the name of your project.
-- Use the dataset's default settings.
+- Use the default option for the dataset.
 - Select a project route.
 - Choose a blank project with no predefined schema to start sanity.
 #### Starting sanity content studio
@@ -45,25 +45,7 @@ Our sanity default schema.js should look exactly like this.
 By default, we only have one schema.js file. We will need to define our schemas and types as a result.
 Create a `new.js` file to create a custom schema file. For example `nameofSchema.js` file in the schema folder, inside the file, you will write plain Javascript code.
 ###### See the example below
-```js
-export default{
-    name: 'user',
-    title: 'User',
-    type: 'document',
-    fields: [
-        {
-            name: 'userName',
-            title: 'Username',
-            type: 'string'
-        },
-        {
-            name: 'image',
-            title: 'Image',
-            type: 'string'
-        }
-    ]
-}
-```
+![import custom schema](/engineering-education/getting-started-with-sanity-cms/userSchema.png)
 #### Importing custom schema 
  To make use of our custom schema, we need to import it into the default schema.js file and also declare the type. We can make as many schema files as we need; all we have to do is import them all.
  ###### See the example below
@@ -78,13 +60,14 @@ It appears to be different from the initial layout because now we have the conte
 #### Deploy Sanity project
 Go ahead and run `sanity deploy` to deploy a sanity project. Sanity deployed applications are real-time, meaning that any changes you make locally after deployment will be reflected in the deployed version.
 ### Conclusion
-Finally, we understood what Sanity CMS is and its concepts, installing and setting up the sanity CLI, schemas, and deployment.
+Finally, we learnt about Headless CMS, JamStack, Sanity CMS and its ideas, as well as how to install and set up the Sanity CLI, schemas, and deployment.
 
 We can construct sophisticated apps quickly using Sanity since we don't have to worry about the content file or database query.
 ### Additional Reading
 [The Official Sanity Documentation](https://www.sanity.io)
 [Sanity slack channel](https://slack.sanity.io/)
 [Read more on CMS](https://www.sitecore.com/knowledge-center/digital-marketing-resources/what-is-a-cms)
+[Find out more about the headless CMS.](https://www.youtube.com/watch?v=-Uor3I0n_vQ)
 
 
 
