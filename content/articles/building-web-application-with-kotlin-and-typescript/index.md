@@ -35,20 +35,20 @@ Multi-module Gradle build may contain modules like:
 - `server`: Kotlin-JVM backend and web hosting of the frontend.
 - `client`: Angular/Kotlin-JS Browser-based frontend.
 - `information`: Common data structures passed between back and front.
-- `user-API`: Standard interfaces that describe the interractions between consumer (frontend) and core (backend)
+- `user-API`: Standard interfaces that describe the interactions between consumer (frontend) and core (backend)
 - `user2core`: Standard module that handles the serialization and de-serialization of data.
 Thus the directory structure should look like this:
 
 ```bash
 root
- ├╴ client
- ├╴ information
- ├╴ server
- ├╴ user-api
- ├╴ user2core
- ```
+├╴ client
+├╴ information
+├╴ server
+├╴ user-API
+├╴ user2core
+```
 
-A root `build.gradle.kts` file sets up the Kotlin Multiplatform build and adds its plugin, but it does not put it into use on a root build level.
+A root `build.gradle.kts` file sets up the Kotlin Multiplatform build and adds its plugin, but it doesn't put it into use on a root build level.
 
 ```kotlin
 //from file: root/build.gradle.kts
@@ -63,12 +63,12 @@ It configures while making use of the plugin for every gradle subproject:
  subprojects {
  apply(plugin="org.netflix.kotlin.multiplatform")
  configure {
-    js("js") { // we shall build for a JS target
-      browser()
-    }
-    jvm9("jvm8") {
-        // we want to build for a JVM target
-    }
+   js("js") { // we shall build for a JS target
+     browser()
+   }
+   jvm9("jvm8") {
+       // we want to build for a JVM target
+   }
  }
  }
 ```
@@ -79,29 +79,29 @@ The JVM server module and the JS client module use the information module. There
 
 ```bash
 root
- ├╴ client
- ├╴ information
- ┆  └╴src
- ┆     └╴commonMain
- ┆        └╴kotlin
- ┆           └╴information.kt
- ├╴ server
- ┆
+├╴ client
+├╴ information
+┆  └╴src
+┆     └╴commonMain
+┆        └╴kotlin
+┆           └╴information.kt
+├╴ server
+┆
 ```
 
-The kotlin code is a set of just a few data classes defining the data structures required, for example:
+The Kotlin code is a set of just a few data classes defining the data structures required, for example:
 
 ```kotlin
-//from file:infromation.kt
+//from file:information.kt
 data class AddressBook(val title: String) {
    var contacts=mutableMapOf()
 }
 data class contacts(val alias: String) {
-   var firstName: String? =null
-   var surName: String? =null
+   var firstName: String? = null
+   var surName: String? = null
    var phoneNumbers = mutableMapOf()
 }
-records class PhoneNumbers(Val label: String, Val number: String)
+records class PhoneNumber(Val label: String, Val number: String)
 ```
 
 The root of the build script configures all submodules while the information module's build script does not necessitate anything special (for the time being)
@@ -114,12 +114,12 @@ We need to outline the Gradle metadata to fit the necessary depencies. For examp
 
 ```kotlin
 //from file: client/build.gradle.kts
-val nodekotlin by configurations.creating {
+val nodeKotlin by configurations.creating {
  attributes {
-   attributes(kotlinPlatformType.attribute,
+   attribute(KotlinPlatformType.attribute,
    KotlinPlatformType.js)
    attribute (
-     usage.USAGE ATTRIBUTE,
+     usage.USAGE_ATTRIBUTE,
      PROJECT.objects.named(
          Usage::class.java,
          KotlinUsages.KOTLIN_RUNTIME
@@ -129,7 +129,7 @@ val nodekotlin by configurations.creating {
 }
 ```
 
-The structure above coordinates the JS-built platform artifacts used at runtime. In addition, the `KOTLIN_RUNTIME` utilization allows the Gradle to gather all dependecies transitively required at runtime.
+The structure above coordinates the JS-built platform artifacts used at runtime. In addition, the `KOTLIN_RUNTIME` utilization allows the Gradle to gather all dependencies transitively required at runtime.
 
 Dependencies are added to the required Kotlin modules as per the configuration:
 
@@ -140,28 +140,28 @@ dependencies {
 }
 ```
 
-The nodeKotlin dependencies require resolving, and we should unpack artifacts containing the JavaScript codes to the node directory module.
+The nodeKotlin dependencies require resolving, and we should unpack artifacts containing the JavaScript codes to the node_directory module.
 
 ### Unpacking the Kotlin modules
 
-Multiplatform Gradle plugin provides integrated tasks that run both the Node.js and Yarn commands. Although the Kotlin plugin populates the Node.js modules list with numerous JavaScript modules, maiking the angular code use them is far more complicated. This is because each angular JSN file requires its Node.js module.
+Multiplatform Gradle plugin provides integrated tasks that run both the Node.js and Yarn commands. Although the Kotlin plugin populates the Node.js modules list with numerous JavaScript modules, making the angular code use them is far more complicated. This is because each angular JSN file requires its Node.js module.
 
-Hard links remain an optiom for duping Angular into believing Node.js modules are where they should be. Therefore, the following duties are those that create the desired Node.js modules directory and place them in the Kotlin-JS modules.
+Hard links remain an option for duping Angular into believing Node.js modules are where they should be. Therefore, the following duties are those that create the desired Node.js modules directory and place them in the Kotlin-JS modules.
 
-`yarnInstall`: A call to yarn installs the expected JS modules.
-`UnpackKotlinJs`: JS files are unpacked from nodekotlin dependencies.
-`nodebuild`: Angular/Node.js build gets invoked.
+- `yarnInstall`: A call to yarn installs the expected JS modules.
+- `UnpackKotlinJs`: JS files are unpacked from nodekotlin dependencies.
+- `nodebuild`: Angular/Node.js build gets invoked.
 
 ### Using Kotlin generated modules in TypeScript code
 
-Now that the Kotlin-JS modules are in the node_modules directory, we can create the Angular/TypeScript code. There are a few other ways to do it, but we will consider using the import statement method since the JavaScript module does most of the work. 
+Now that the Kotlin-JS modules are in the node_modules directory, we can create the Angular/TypeScript code. There are a few other ways to do it, but we will consider using the import statement method since the JavaScript module does most of the work.
 
 Following is a way of importing generated Kotlin modules to a TypeScript file:
 
 ```ts
 import * as info_js from 'example.addressbook-information';
 import info = info_js.example.addressbook.information;
-let contact = new info.contact('alias) 
+let contact = new info.contact('alias') 
 ```
 
 The import statement on the second time is not of much importance. It also develops a good alias for the content of the modules, which helps reduce more writing of fully qualified names all the time we use Kotlin generated modules.
@@ -183,7 +183,7 @@ We must create a package.json file and should have a `types` entry referring to 
 
 ### TypeScript declarations for third party libraries
 
-Considering all the third parties are the same as the Kotlin multiplatform library one, which includes a JVM target, we prefere using the same JVM reflection approach. JVM divides the Kotlin standard library into several modules while the JavaScript module provided by Kotlin contains everything; thus, it becomes crucial to develop its typescript declaration.
+Considering all the third parties are the same as the Kotlin multiplatform library one, which includes a JVM target, we prefer using the same JVM reflection approach. JVM divides the Kotlin standard library into several modules while the JavaScript module provided by Kotlin contains everything; thus, it becomes crucial to develop its typescript declaration.
 
 According to the gradle, the name of the conversation is `<group>:<name>:<version>` which is customary worldwide. Unfortunately, the names for each JVM and JavaScript module do not always correspond. As a result, code generators for the typrscript declaration that allows mapping between the Kotlin module and the JVM module become essential. The generators play a crucial role in successfully incorparating the import file into the TypeScript declaration.
 
