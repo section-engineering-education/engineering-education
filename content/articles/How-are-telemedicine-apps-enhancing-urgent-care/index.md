@@ -2,16 +2,16 @@
 layout: engineering-education
 status: publish
 published: true
-url: /How-are-telemedicine-apps-enhancing-urgent-care/
+url: /how-are-telemedicine-apps-enhancing-urgent-care/
 title: How are Telemedicine Apps Enhancing Urgent Care?
 description: This article provides a solid argument on why telemedicine apps are significant to enhancing urgent care.
 author: ann-purity
-date: 2022-03-01T00:00:00-14:20
+date: 2022-03-12T00:00:00-10:03
 topics: [Languages]
 excerpt_separator: <!--more-->
 images:
 
-  - url: /engineering-education/using-service-classes-to-design-an-authentication-api/hero.jpg
+  - url: /engineering-education/how-are-telemedicine-apps-enhancing-urgent-care/hero.jpg
     alt: How are Telemedicine Apps Enhancing Urgent Care Hero Image
 ---
 The coronavirus pandemic in 2020 triggered many technological changes. In particular, the health industry embraced remote care. It was a necessary adjustment to protect people from exposure to the virus. Some of the developments included the adoption of telemedicine and telehealth.
@@ -21,7 +21,9 @@ Telemedicine and telehealth facilitate the provision of remote medical services 
 This article provides a solid argument on why telemedicine apps are significant to enhancing urgent care. It also compares the top telemedicine apps to help patients choose the one that fits their needs.
 
 ### Telemedicine vs. telehealth
-From a hierarchical point of view, telehealth ranks higher than telemedicine. Telehealth covers a broader scope of health services compared to telemedicine. Ideally, telehealth refers to both remote clinical and non-clinical healthcare services. On the other hand, telemedicine is specific to remote clinical healthcare services. Telemedicine technology is used often during follow-up visits and the management of chronic health conditions. A host of other clinical services like medication management and specialist consultations are also part of telemedicine. In contrast, telehealth includes non-clinical services like provider training and medical education.
+From a hierarchical point of view, telehealth ranks higher than telemedicine. Telehealth covers a broader scope of health services compared to telemedicine. Ideally, telehealth refers to both remote clinical and non-clinical healthcare services.
+
+On the other hand, telemedicine is specific to remote clinical healthcare services. Telemedicine technology is used often during follow-up visits and the management of chronic health conditions. A host of other clinical services like medication management and specialist consultations are also part of telemedicine. In contrast, telehealth includes non-clinical services like provider training and medical education.
 
 While telemedicine is a branch of telehealth, telehealth is a branch of E-health. E-health is a broader reference to healthcare services and online medical information for health professionals and patients. It also entails training programs for health systems management. At the level of telemedicine, the services become more complex and specialized.
 
@@ -44,14 +46,20 @@ Incidents of urgent care may find patients economically unprepared to shoulder t
 ### The usage of telemedicine apps in the wake of COVID-19
 Telemedicine apps have become a common platform for delivering healthcare services since WHO declared the coronavirus [pandemic in January 2020](https://www.afro.who.int/health-topics/coronavirus-covid-19). Healthcare centers found telemedicine apps a sustainable solution that guarantees the virus spread. Telemedicine apps bridge the gap between the patient, the physician, and the healthcare system as a whole while minimizing in-person interactions amongst people.
 
-During the ongoing pandemic, telemedicine apps have facilitated communication between physicians and patients virtually, ensuring containment of the spread of the virus. Using telemedicine apps reduces the chances of healthcare practitioners and patients contracting COVID-19. Besides, this technology allows people suffering from chronic conditions to obtain treatment and consultancy virtually. They also reduce the number of patients that doctors interact with, thus minimizing the risk of contracting COVID-19.
+During the ongoing pandemic, telemedicine apps have facilitated communication between physicians and patients virtually, ensuring containment of the spread of the virus. Using telemedicine apps reduces the chances of healthcare practitioners and patients contracting COVID-19.
+
+Besides, this technology allows people suffering from chronic conditions to obtain treatment and consultancy virtually. They also reduce the number of patients that doctors interact with, thus minimizing the risk of contracting COVID-19.
 
 ### Challenges in telemedicine software development
 #### 1. Data security
-The issue of data security is always a concern because everyone wants their data to be safe, especially medical information. Patients have reservations about telemedicine technology because of the security risks associated with software development for these systems. The amount of data that telemedicine apps and software collect are intense, and many patients may question how hospitals can assure its safety. The Health Insurance Portability and Accountability Act ([HIPAA](https://www.cdc.gov/phlp/publications/topic/hipaa.html)) policies impose stringent healthcare data security measures. Becoming HIPAA compliant is challenging for telemedicine app developers. Even with such standards, the risk of unauthorized data access exists, raising concerns about using these apps.
+The issue of data security is always a concern because everyone wants their data to be safe, especially medical information. Patients have reservations about telemedicine technology because of the security risks associated with software development for these systems. The amount of data that telemedicine apps and software collect are intense, and many patients may question how hospitals can assure its safety.
+
+The Health Insurance Portability and Accountability Act ([HIPAA](https://www.cdc.gov/phlp/publications/topic/hipaa.html)) policies impose stringent healthcare data security measures. Becoming HIPAA compliant is challenging for telemedicine app developers. Even with such standards, the risk of unauthorized data access exists, raising concerns about using these apps.
 
 #### 2. User experience
-Developers aim to build software that offers a great user experience. Nevertheless, one of the biggest challenges when developing software, including telehealth apps, is incorporating a user-friendly interface. Telemedicine faces a more significant challenge because developers need to build software targeting two different user groups- the physicians and patients. This situation presents challenges of functionality and technical feasibility.
+Developers aim to build software that offers a great user experience. Nevertheless, one of the biggest challenges when developing software, including telehealth apps, is incorporating a user-friendly interface.
+
+Telemedicine faces a more significant challenge because developers need to build software targeting two different user groups- the physicians and patients. This situation presents challenges of functionality and technical feasibility.
 
 Implementing the UI/UX while preserving consistency between the physician's app and the patient's app is challenging. It entails creating apps that potentially rely on two different graphic user interfaces and offer an easy-to-navigate layout for both groups. So, it takes high innovativeness to achieve a unified solution for the two groups, and not all software developers can do that.
 
@@ -82,11 +90,11 @@ Technology is changing tremendously, and the healthcare industry is gradually ad
 
 Many telemedicine apps facilitate the administration of remote healthcare services available today. In this article, we have discussed LiveHealth, Plushcare, Talkspace, and Amwell, Lemonaid.
 
-### Further reading 
+### Further reading
 - [Why Healthcare Organizations should Adopt Cloud Computing](/engineering-education/healthcare-and-cloud-computing/)
 - [Ten UI/UX Mistakes to Avoid](/engineering-education/ten-uiux-mistakes-to-avoid/)
 - [Robotic Process Automation (RPA) in the Healthcare Industry](/engineering-education/robotic-process-automation-use-cases-in-the-healthcare-industry/)
 
-Happy learning!
+Happy learning
 ---
 Peer Review Contributions by: [Briana Nzivu](/engineering-education/authors/briana-nzivu/)
