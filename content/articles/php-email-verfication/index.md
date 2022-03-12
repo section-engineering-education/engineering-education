@@ -38,6 +38,8 @@ In this lesson, I'll create a simple user registration form, fill it up with inf
 
 - Instead of using the PHP mailer API  we shall use mail function provided in php in order for us to send  email to a user who has registered but there verification is still pending.
 
+- Copy the following code and paste in your file that you created above `index.php`.
+
 
 ```php 
 <?php
@@ -151,7 +153,7 @@ Your final output should be something similar to this
 
 ![Demo1](/engineering-education/How-to-Send-an-email-to verify-the-registration-of-a-new-user-in-PHP/demo1.png)
 
-After entering the details and clicking the register button the output should look like this
+- After entering the details and clicking the register button the output should look like this
 ![Demo2](/engineering-education/How-to-Send-an-email-to verify-the-registration-of-a-new-user-in-PHP/demo2.png)
 
 
@@ -174,7 +176,10 @@ After opening the browser click on the database to create a new database then gi
 
 ### step 7-Designing a confirmation interface for email
 We now create another PHP file name it as `confirm.php`
-This file will contain a code that will verify the email stored in the database so that the user is allowed to log in not unless even if the user has registered without his/her email verified will not be allowed to log in.
+This file will contain a code that will verify the email stored in the database so that the user is allowed to log in.
+- If and  if the user has registered without his/her email been verified he/she will not be allowed to log in.
+
+- Copy the following code and paste in your file that you created above `confirm.php`.
 
 ```PHP
 
@@ -203,14 +208,15 @@ else{
 -  But after clicking the confirmation link send to your email the output should look like the one below:
 
 ![Demo6](/engineering-education/How-to-Send-an-email-to verify-the-registration-of-a-new-user-in-PHP/demo6.png) 
+
 ### Step 8- Configuring the xampp setting to allow sending of email from our local machine.
 
-- Open the xampp in local disk C, then migrate to PHP folder open it and find the PHP file with and extension of. , right-click on it and open it with your editor for me I used notepad.
+- Open the xampp in local disk C, then migrate to PHP folder open it and find the PHP file with an extension of .ini , right-click on it and open it with your editor for me I used notepad.
 
 - When you open it find [mail function] and comment on everything by inserting a semicolon at the beginning of each line like the one I have done below
 
 
--  Then write the following statement after successfully inserting comments at the beginning of every statement copy the following statements and paste them inside:
+-  Then after successfully inserting comments at the beginning of every statement copy the following statements and paste it inside it:
 
 ```php
 
@@ -218,7 +224,6 @@ SMTP=smtp.gmail.com
 smtp_port=587
 sendmail_from = kipronohillary240@gmail.com
 sendmail_path = "\"C:\xampp\sendmail\sendmail.exe\" -t"
-; For Win32 only.
 
 ```
 
@@ -253,6 +258,8 @@ force_sender=myemail@gmail.com
 - Give a name of your own choice for example  i name it as `login.php`.
 
 - Also we shall verify the user who wants to login to confirm whether his/her details exist in database
+
+- Copy the following code and paste in your file that you created above `login.php`.
 
 ```php
 
