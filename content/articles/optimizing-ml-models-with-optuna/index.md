@@ -26,27 +26,28 @@ We'll start by creating a data frame that includes all the relevant modules and 
 
 ```python
 import sklearn
-#pandas data frame will be used to segregate features and targets 
-import pandas as pan
-import numpy as num
-from sklearn.datasets import load_boston
+#'pandas' data frame will be used to segregate features and targets 
+import pandas as pan# provides a wide range of utilities, from parsing different file formats to converting an entire data table to a NumPy matrix array
+import numpy as num #to manipulate data as arrays
+from sklearn.datasets import load_boston# contains prices that we shall be using as our data
 ```
 
 ##### **Standard scaling the dataset**
-A pandas data frame will be used to segregate features and targets when the dataset is returned as a matrix by `load boston().`
+A pandas data frame will be used to segregate features and targets when the dataset is returned as a matrix by `load_boston().`
 
 ```python
 # The load_boston imported contains prices that we shall be using as our data and has no null or missing values 
 Our_loadboston = load_boston()
+# Subset rows or columns of dataframe 
 dataframe = pan.DataFrame(Our_loadboston.data , columns = Our_loadboston.feature_names)
 dataframe['target'] = Our_loadboston.target
-#Here we seperated the targets and features after framing our dataset into pandas dataframe
-X = dataframe.iloc[:,dataframe.columns != 'target']
-y = dataframe.target
+# Here we seperated the targets and features after framing our dataset into pandas dataframe
+X = dataframe.iloc[:,dataframe.columns != 'target']# extracting features
+y = dataframe.target #extracting target
 from sklearn.preprocessing import StandardScaler
-#Scaling the dataset into a single scale will help the model converge more quickly and divide the dataset into train and test sets more easily
+# Scaling the dataset into a single scale will help the model converge more quickly and divide the dataset into train and test sets more easily
 standardSc = StandardScaler()
-X = standardSc.fit_transform(X)
+X = standardSc.fit_transform(X)# Computes the mean and std to be used for later scaling, fit to data, then transform it.
 ```
 
 ##### **Dataset splitting**
@@ -54,7 +55,7 @@ The model is able to reach a more convergent state more quickly since the datase
 ```python
 from sklearn.model_selection import train_test_split
 # We'll randomly divide up the dataset matrices into train and test subsets.
-X_train, X_test, y_train,y_test = train_test_split(X, y, test_size = 0.2, random_state = 12)
+X_train, X_test, y_train,y_test = train_test_split(X, y, test_size = 0.2, random_state = 12)#x_train: The first sequence's training phase ( x ) x_test: The initial sequence's test segment ( x ) y_train: The second sequence's training phase ( y ) y_test: The second sequence's test section ( y )
 ```
 #### Testing the model
 We can see how much better our model is after fine-tuning the parameters by testing the model. 
@@ -63,16 +64,15 @@ We can see how much better our model is after fine-tuning the parameters by test
 We will first start by importing Xgboost, training it, and using the `cross_val_score()` method to evaluate a score for the model. 
 
 ```python
+# import xgboost that we will find it's best hyperparameters 
 import xgboost as gbst
 from sklearn.model_selection import cross_val_score
 xgboo_reg = gbst.XGBRegressor()
-# Cross-validation is used to score our model
-ourScores = cross_val_score(xgboo_reg, X_train,y_train , scoring = 'neg_root_mean_squared_error',
-                            #using all available CPUs
-                            n_jobs = -1,cv = 10)
+# Cross-validation will be used to score our model
+ourScores = cross_val_score(xgboo_reg, X_train,y_train , scoring = 'neg_root_mean_squared_error', n_jobs = -1,cv = 10)
                             #cross_val_score has a neg_root_mean_squared_error can be turned into a positive value by multiplying it by -1 
-print(num.mean(ourScores), num.std(ourScores))
-print(ourScores)
+print(num.mean(ourScores), num.std(ourScores))# Compute the standard deviation and mean of score 
+print(ourScores)# output: score of our model
 ```
 Output:
 ```bash
@@ -88,8 +88,8 @@ This section will define the functions that take hyperparameters and return scor
 def return_score(param):
   ourNewModel = gbst.XGBRegressor(**param)  
   # A value that has been cross-validated for -(neg_root_mean_squared_error) is returned when parameters are used as a keyword argument by return_score() method.
-  rootMeanSquareError = -num.mean(cross_val_score( ouNewModel, X_train[:1000],y_train[:1000], cv = 4, n_jobs =-1, scoring='neg_root_mean_squared_error'))
-  return rootMeanSquareError
+  rootMeanSquareError = -num.mean(cross_val_score( ouNewModel, X_train[:1000],y_train[:1000], cv = 4, n_jobs =-1, scoring='neg_root_mean_squared_error'))# raining 1000 samples in both first part 'X_train' an second part 'y_train'
+  return rootMeanSquareError 
 ```
 #### Importing optuna
 This is where we import Optuna. You can use the pip command to install.
@@ -137,9 +137,8 @@ In the code below, optimization's parameters and history are stored in an object
 ```python
 #direction='minimize' is used since we want to minimize rootMeanSquareError
 studyObject1 = optuna.create_study(
-    direction='minimize',sampler=TPESampler())
-# Bayesian Sampling Technique
-studyObject1.optimize(objective, n_trials= 500)
+    direction='minimize',sampler=TPESampler())# Bayesian Sampling Technique
+studyObject1.optimize(objective, n_trials= 500)# set a limit of 500 trials but you can change to whichever trials you may want 
 ```
 
 Output:
@@ -153,7 +152,7 @@ We had a rootMeanSquareError of 3.07 at the start, which reduces to 2.86 after 5
 It is possible to further decrease the scope of our search by narrowing down the ranges of parameters. Visualization will help in narrowing down the ranges.
 
 ```python
-optuna.visualization.plot_slice(studyObject1)
+optuna.visualization.plot_slice(studyObject1)# plot the parameter relationship as slice plot 
 ```
 
 ![Output](/engineering-education/optimizing-ml-models-with-optuna/visualization.png)
@@ -161,7 +160,7 @@ optuna.visualization.plot_slice(studyObject1)
 The object of study stores all of the information about a particular search history or study. We obtain optimized hyper-parameters using `study.best_params`, which produces a dictionary containing the optimized parameters.
 
 ```python
-studyObject1.best_params
+studyObject1.best_params# return parameters of the best trial 
 ```
 
 Output:
