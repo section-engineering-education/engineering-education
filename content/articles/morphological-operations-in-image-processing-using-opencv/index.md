@@ -1,37 +1,44 @@
 ### Introduction
-In this tutorial, we can navigate through diverse OpenCV operations used for image processing.
-**What are morphological operations?** -These are image processing variations implemented to both grayscale or binary photographs. These operations require a structuring element, that's used to outline the neighborhood of pixels on a picture. 
-How to apply morphological operations to grow the size of items in images in addition to decreasing them.
-We shall additionally talk about the maximum critical morphological operations that you`ll use inner your applications: 
+In this tutorial, we will discuss numerous OpenCV operations used for image processing.
 
-we shall use this image throughout the tutorial ![download-sunflower.png](/engineering-education/morphological-operations-in-image-processing-using-opencv/sunflower-horizon.jpg)
+Morphological operations are image processing variations implemented on both grayscale or binary photographs. 
+
+These operations require a structuring element, that's used to outline the pixels on a picture. 
+
+From this tutorial, users will understand how to apply morphological operations on images.
+
+Note that we will use the following image throughout the tutorial:
+[Download-sunflower.png](content/articles/morphological-operations-in-image-processing-using-opencv/sunflower-horizon.jpg)
+
 ### Prerequisites
-To follow along through this tutorial, these are the requirements:
-
-- An IDE which in our case use vs code. You can download VS Code [here](https://code.visualstudio.com/download)
-- Download python [python-download](https://www.python.org/downloads) and set executable path.
+You will require the following to follow along with this tutorial:
+- An IDE which in our case use vs code. You can download vs code[here](https://code.visualstudio.com/download)
+- Download python [Python-download](https://www.python.org/downloads) and set executable path.
 - At the command type `python` then Set up OpenCV to your machine using  ``` pip install cv2 ```.
 - Set up NumPy `pip install NumPy`. 
-- Checking whether or not OpenCV is installed correctly ``` print(cv2.__version__) ```.
-  
+- Checking whether or not OpenCV is installed correctly ``` print(cv2.__version__) 
+
 ### Table of contents
 - [Getting started](#Introduction) 
 - [Prerequisites](#Prerequisites) 
-- [Table of contents](#table-of-contents)
-- [What is structuring element](#what-is-structuring-element)
-- [Defining structuring element.](#defining-structuring-element)
-- [Grayscale and rbgcolor images](#grayscale-and-rbgcolor-images)
+- [Table of contents](#Table-of-contents)
+- [What is structuring element](#What-is-structuring-element)
+- [Defining structuring element.](#Defining-structuring-element)
+- [Grayscale and rbgcolor images](#Grayscale-and-rbgcolor-images)
 - [Plotting the image](#Plotting-the-image)
-- [Erosion and dilation morphological operations](#erosion-and-dilation-morphological-operations) 
+- [Erosion and dilation morphological operations](#Erosion-and-dilation-morphological-operations) 
 - [Edge detection using canny filter](#Edge-detection-using-opencv) 
 - [Canny filter](#Canny-filtering-operations)
-- [Conclusions](#Wrapping-up)
-  
+- [Conclusion](#Wrapping-up)
+
 ### What is structuring element
-  This is a **matrix** or a **form mask** this is used to identify pixels withinside the image being processed that is crucial in defining neighborhood utilized in every layer of a pixel. one chooses it with the identical length and form because the items you prefer to process within the input image.
-  There exists **flat** and **non-flat** structuring elements
-  **flat structuring detail** is valued as a binary neighborhood both 2-D or multi-dimensional right here the true pixels are used in morphological computations.
-  **non-flat structuring detail** is a matrix of kind double that identifies pixels withinside the image being processed it carries finite values used as additive offsets in morphological computation.
+  This is a **matrix** or a **form mask** this is used to identify pixels withinside the image being processed that is crucial in defining neighborhood utilized in every layer of a pixel. 
+  One chooses it with the identical length and form because the items you prefer to process within the input image.
+  There exists **flat** and **non-flat** structuring elements.
+
+  **Flat structuring detail** is valued as a binary neighborhood both 2-D or multi-dimensional right here the true pixels are used in morphological computations.
+
+   **Non-flat structuring detail** is a matrix of kind double that identifies pixels withinside the image being processed it carries finite values used as additive offsets in morphological computation.
 
 ### Defining structuring element.
 OpenCV makes use of the subsequent characteristic to outline the structuring element. 
@@ -49,11 +56,12 @@ OpenCV makes use of the subsequent characteristic to outline the structuring ele
   we can reverse the technique lower back to RGB color. 
 
 ```python
-  #import essential packages
 import os
+import numpy as np
+import cv2
 # generate an array of 60,000 random bytes.
 randomByteArray = bytearray(os.urandom(60000))
-flatNumpyArray = numpy.array(randomByteArray)
+flatNumpyArray = np.array(randomByteArray)
 # Convert the array to make a 200x300 grayscale image.
 grayImage = flatNumpyArray.reshape(300, 200)
 cv2.imwrite('RandomGrayimage.png', grayImage)
@@ -64,13 +72,21 @@ cv2.imwrite('RandomrgbColor.png', bgrImage)
 #using cv2. imread() it interprets in BGR format
 print(bgrImage,"\nEND of bgr Image")
   ```
-## Plotting the image
+  - Output: RandomgrayImage. 
+
+  ![RandomgrayImage]('content/articles/morphological-operations-in-image-processing-using-opencv/RandomGrayimage.png').
+
+  - Output: RandomrbgImage.
+
+  ![RandomrbgImage]('content/articles/morphological-operations-in-image-processing-using-opencv/RandomrgbColor.png').
+
+  ### Plotting the image
  ```python 
- # connects to GUI loop that turns inline plotting wherein plot photos will appear
+  # connects to GUI loop that turns inline plotting wherein plot photos will appear
 from matplotlib import pyplot as plt
-from matplotlib import picture as Img
+from matplotlib import image as Img
 # study the picture
-img = Img.imread('images/sunflower-horizon.jpg')
+img = Img.imread('content/articles/morphological-operations-in-image-processing-using-opencv/sunflower-horizon.jpg')
 # test if the picture exists
 if (img is None): 
  print("Could now no longer clear up the picture url")
@@ -78,7 +94,7 @@ else: print(img)
 #plot the binary picture above
 img1plot = plt.imshow(img)
 ```
-## Erosion and dilation morphological operations
+### Erosion and dilation morphological operations
 **Erosion** is a subset of Euclidean space/integer grid for a few measurements that makes use of a structuring detail for probing and decreasing form contained withinside the  picture its used to shrink linked pixels of 1s in a binary picture.
 The length of the structuring detail used determines the range of pixels eroded in the picture.
 
@@ -86,13 +102,13 @@ The length of the structuring detail used determines the range of pixels eroded 
 - This will assist get rid of small dots or black dots frequently referred to as noise.
 - Used for shrinking functions additionally removing of bridges, branches, and protrusions.
 - They are beneficial in processing steps earlier than Optical Character Recognition(OCR) and if used as they should be it enhance the pleasant of recognition. 
-  
+
  **Dilation** -It expands linked pixels of 1s in a binary picture normally used to develop functions additionally filling holes and gaps 
 
   **Advantages of dilation**
 - Adds pixels to the bounds of items withinside the unique picture
 - The length and form of the structuring detail are used to decide the range of pixels dilated at the picture. 
- 
+
 ```python
 import numpy
 import cv2 as cv2
@@ -102,11 +118,10 @@ os.environ['OPENCV_IO_MAX_IMAGE_PIXELS']=str(2**64)
 # use multiple threads
 cv2.startWindowThread()
 # Reading from the input image
-img = cv2.imread('images/sunflower-horizon.jpg',cv2.IMREAD_UNCHANGED)
+img = cv2.imread('content/articles/morphological-operations-in-image-processing-using-opencv/sunflower-horizon.jpg',cv2.IMREAD_UNCHANGED)
 window1 = 'img'
 # use matrix of order 9 to the kernel
 kernel = numpy.ones((9,9), numpy.uint8)
-
 erodedImg = cv2.erode(img, kernel, iterations=1)
 window2 = 'erodedImg'
 #img=original image, kernel=matrix in which image is convolved,
@@ -114,7 +129,6 @@ window2 = 'erodedImg'
 # dilate the  original stinkbug image note that removes white spaces=noise 
 dilatedImg = cv2.dilate(img, kernel, iterations=1)
 window3 = 'dilatedImg'
-
 print("\n Original image:\n")
 cv2.imshow(window1, img)
 cv2.imwrite('Oroginalimage.jpg', img)
@@ -132,6 +146,14 @@ cv2.waitKey(1)
 cv2.destroyAllWindows()
 
 ```
+- Output: dilated image.
+
+![dilated-image]('content/articles/morphological-operations-in-image-processing-using-opencv/Dilatedimage.jpg')
+
+- Output: eroded image.
+
+![eroded-image](content/articles/Morphological-operations-in-image-processing-using-openCV-python/Erodedimage.jpg).
+
 ### Edge detection using opencv
 - Finds edge points of the image that are shown clearly only strong points are detected which are the points with high intensity of pixels neighboring each other.
 - Here we are only considering grayscale images since we don't need information on a color image.
@@ -150,7 +172,7 @@ syntax:
 # use multiple threads
 cv2.startWindowThread()
 # Reading from the input image
-img = cv2.imread('images/sunflower-horizon.jpg',cv2.IMREAD_UNCHANGED)
+img = cv2.imread('content/articles/morphological-operations-in-image-processing-using-opencv/sunflower-horizon.jpg',cv2.IMREAD_UNCHANGED)
 # Blur the original image for edge detection
 blurredImg = cv2.GaussianBlur(img, (3,3), 0) 
 #  Canny Edge Detection by calculating threshold of the 3x3 dimension
@@ -163,19 +185,22 @@ cv2.imwrite('filteredImg.jpg', edges)
 # set waittime() to 2 ms
 cv2.waitKey(2)
   ```
+- Output: canny filter edge detection.
+
+  ![Canny-filter-edge-detection](content/articles/morphological-operations-in-image-processing-using-opencv/filteredImg.jpg)
 ### Canny filtering operations
 - It is a technique used to smoothen the surfaces of an image and can be used to compute convolutions using a 2D separation as follows.
 - This involves 5 major steps discussed below.
-    
-  ### Step 1: read original image
+
+  #### Step 1: read original image
 
   ```python
       #set wait time to 2 milliseconds
       cv2.waitKey(2)
       #read text image
-      img = cv2.imread('sunflower-horizon.jpg')
+      img = cv2.imread('content/articles/morphological-operations-in-image-processing-using-opencv/sunflower-horizon.jpg')
   ```
-  ### Step 2: declaring kernel
+  #### Step 2: declaring kernel
  Declaring a kernel with an echelon form filter matrix yields an image that is the same as the original image but with no background color.
  Declaring convolution kernel yields a square matrix where both matrices(M and N) are both odd integers.
  `declare kernel syntax`
@@ -190,7 +215,7 @@ cv2.waitKey(2)
                         [0, 2, 0],
                         [0, 0, 2])
    ```
-  ### Step 3: Filter 2D operation to perform a linear filtering operation
+  #### Step 3: Filter 2D operation to perform a linear filtering operation
 
    ```python
     kernel2 = numpy.ones((9, 9), numpy.float32) / 10
@@ -202,7 +227,7 @@ cv2.waitKey(2)
     # print identity image
     cv2.imwrite('identity.png', identity)
   ```
-   ### Step 4: Display original and filtered image using imshow()
+   #### Step 4: Display original and filtered image using imshow()
 
    ```python
     #displaying original image
@@ -210,7 +235,7 @@ cv2.waitKey(2)
     # Displaying filteres image
       cv2_imshow(image)
    ```
-   ### Step 5: save filtered image to the disk using imwrite()
+   #### Step 5: save filtered image to the disk using imwrite()
   This example will load an image and its size then convert it to .jpg format and save it as a blurred image using imwrite() function.
    `save to disk Syntax`
 
@@ -229,9 +254,8 @@ cv2.waitKey(2)
   - Erosion and dilation operations were applied to images.
   - Applying a linear filtering operation to the image also saves to disk
   - Edge detection technique is used in OpenCV. 
-  
+
 
   To see the complete implementation go to google colab link [here](https://colab.research.google.com/drive/1MuUQrg-kEcgSiVfsfMg4ZA0_f2Wnmm34?usp=sharing) 
-  
- Happy coding!
 
+ Happy coding!
