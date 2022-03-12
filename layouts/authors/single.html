@@ -3,6 +3,11 @@
 {{ $featureToggle := resources.Get "js/featureToggle.js" }}
 <script defer language="javascript" type="text/javascript" src="{{ $featureToggle.Permalink }}"></script>
 
+{{ with .Params.skills }}
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.14.0/devicon.min.css"
+/>
+{{ end }}
+
 <article>
   <section class="hero-blocks xs-pt-50 xs-pb-50 sm-pt-100 sm-pb-100 -blue-blocks">
     <div class="hero-blocks-mobile">
@@ -48,12 +53,16 @@
 
           {{ .Content }}
 
-          {{ with .Params.skills }} 
-            <div class="author-skills">
-              <h4>Skills/Languages</h4>
-              <p class="skills">{{ delimit . " | " }}</p>
+          {{ with .Params.skills }}
+          <div class="author-skills">
+            <h4>Skills/Languages</h4>
+            <div class="skills" style="font-size: 5rem">
+              {{ range . }}
+              <i class="devicon-{{ . }}-plain colored" aria-label="{{ . }}"></i>
+              {{ end }}
             </div>
-          {{ end }}  
+            {{ end }}
+          </div>
         </div>
 
         <div class="section-rich-text-leading bio">
