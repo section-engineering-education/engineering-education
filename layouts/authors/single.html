@@ -1,10 +1,22 @@
-{{ define "main" }}
+{{ define "main" }} {{ $featureToggle := resources.Get "js/featureToggle.js" }}
+<script
+  defer
+  language="javascript"
+  type="text/javascript"
+  src="{{ $featureToggle.Permalink }}"
+></script>
 
-{{ $featureToggle := resources.Get "js/featureToggle.js" }}
-<script defer language="javascript" type="text/javascript" src="{{ $featureToggle.Permalink }}"></script>
+{{ with .Params.skills }}
+<link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.14.0/devicon.min.css"
+/>
+{{ end }}
 
 <article>
-  <section class="hero-blocks xs-pt-50 xs-pb-50 sm-pt-100 sm-pb-100 -blue-blocks">
+  <section
+    class="hero-blocks xs-pt-50 xs-pb-50 sm-pt-100 sm-pb-100 -blue-blocks"
+  >
     <div class="hero-blocks-mobile">
       <div class="hero-blocks-mobile-left">
         <div class="hero-blocks-mobile-left-large"></div>
@@ -25,7 +37,7 @@
 
       <div class="hero-blocks-inner relative prl-5">
         <div class="hero-blocks-middle">
-          <span class="text-14 text-blue">ENGED PROGRAM CONTRIBUTOR</span><br>
+          <span class="text-14 text-blue">ENGED PROGRAM CONTRIBUTOR</span><br />
           <h1 class="title-2">{{ .Title }}</h1>
         </div>
       </div>
@@ -42,18 +54,18 @@
     <div class="section-container">
       <div class="section-rich-text-inner prl-5">
         <div class="section-rich-text-leading">
-          {{ range .Resources }}
-          <img class="avatar" src="{{ (.Resize "400x").Permalink }}" alt="{{ $.Params.title }}" />
-          {{ end }}
-
-          {{ .Content }}
-
-          {{ with .Params.skills }} 
-            <div class="author-skills">
-              <h4>Skills/Languages</h4>
-              <p class="skills">{{ delimit . " | " }}</p>
+          {{ range .Resources }} <img class="avatar" src="{{ (.Resize
+          "400x").Permalink }}" alt="{{ $.Params.title }}" /> {{ end }} {{
+          .Content }} {{ with .Params.skills }}
+          <div class="author-skills">
+            <h4>Skills/Languages</h4>
+            <div class="skills" style="font-size: 5rem">
+              {{ range . }}
+              <i class="devicon-{{ . }}-plain colored" aria-label="{{ . }}"></i>
+              {{ end }}
             </div>
-          {{ end }}  
+            {{ end }}
+          </div>
         </div>
 
         <div class="section-rich-text-leading bio">
@@ -61,22 +73,23 @@
             {{ with .Params.twitter }}
             <li>
               <i class="twitter"></i>
-              <a href="{{ . }}" target="_blank">Follow @{{ index (last 1 (split . "/")) 0 }}</a>
+              <a href="{{ . }}" target="_blank"
+                >Follow @{{ index (last 1 (split . "/")) 0 }}</a
+              >
             </li>
-            {{ end }}
-            {{ with .Params.linkedin }}
+            {{ end }} {{ with .Params.linkedin }}
             <li>
               <i class="linkedin"></i>
               <a href="{{ . }}" target="_blank">Connect on LinkedIn</a>
             </li>
-            {{ end }}
-            {{ with .Params.github }}
+            {{ end }} {{ with .Params.github }}
             <li>
               <i class="github"></i>
-              <a href="{{ . }}" target="_blank">Follow @{{ index (last 1 (split . "/")) 0 }} on GitHub</a>
+              <a href="{{ . }}" target="_blank"
+                >Follow @{{ index (last 1 (split . "/")) 0 }} on GitHub</a
+              >
             </li>
-            {{ end }}
-            {{ with .Params.website }}
+            {{ end }} {{ with .Params.website }}
             <li>
               <i class="website"></i>
               <a href="{{ . }}" target="_blank">Visit website</a>
@@ -93,76 +106,103 @@
   <div class="section-container blog-listing-posts-container">
     <div class="blog-listing-posts-content">
       <h2 class="title-3 text-blue xs-pb-20">Contributed articles</h2>
-   
-      <ul class="list-unstyled xs-mb-80">
 
-        {{ $author := path.Base .Permalink}}
-        {{ $hyvorId := $.Site.Params.hyvorId }}
-        
-        {{ range $elem_index, $elem_val := (where (where .Site.Pages "Params.layout" "engineering-education") ".Params.author" $author) }}
-        
-        {{ $articlePermalink := "" }}
-        {{ if eq $.Site.Params.env "local" }}
-          {{ $articlePermalink = .Permalink }}
-        {{ else if eq $.Site.Params.env "staging" }}
-          {{ $articlePermalink = replace .Permalink "beta" "www" }}
-        {{ else }}
-          {{ $articlePermalink = .Permalink }}
-        {{ end }}
+      <ul class="list-unstyled xs-mb-80">
+        {{ $author := path.Base .Permalink}} {{ $hyvorId :=
+        $.Site.Params.hyvorId }} {{ range $elem_index, $elem_val := (where
+        (where .Site.Pages "Params.layout" "engineering-education")
+        ".Params.author" $author) }} {{ $articlePermalink := "" }} {{ if eq
+        $.Site.Params.env "local" }} {{ $articlePermalink = .Permalink }} {{
+        else if eq $.Site.Params.env "staging" }} {{ $articlePermalink = replace
+        .Permalink "beta" "www" }} {{ else }} {{ $articlePermalink = .Permalink
+        }} {{ end }}
 
         <script defer type="text/javascript">
-          document.addEventListener("DOMContentLoaded", async function() {
-            fetch('https://talk.hyvor.com/api/v1/page/?page_identifier={{ $articlePermalink }}&website_id={{ $hyvorId }}')
-              .then(response => response.json())
-              .then(data => {
+          document.addEventListener("DOMContentLoaded", async function () {
+            fetch(
+              "https://talk.hyvor.com/api/v1/page/?page_identifier={{ $articlePermalink }}&website_id={{ $hyvorId }}"
+            )
+              .then((response) => response.json())
+              .then((data) => {
                 console.log(data);
                 if (data.status === true) {
-                  document.getElementById('comments-count-{{ $elem_index }}').innerText = data.data.comments_count;
-                  document.getElementById('likes-count-{{ $elem_index }}').innerText = data.data.reactions[0];
+                  document.getElementById(
+                    "comments-count-{{ $elem_index }}"
+                  ).innerText = data.data.comments_count;
+                  document.getElementById(
+                    "likes-count-{{ $elem_index }}"
+                  ).innerText = data.data.reactions[0];
                 }
               })
-              .catch(err => console.log('Error: ', err))
+              .catch((err) => console.log("Error: ", err));
           });
         </script>
-        
-        <li class="blog-listing-posts-item mix {{ with .Params.tags }}{{ range . }}{{ lower . }} {{ end }}{{ end }}">
-          <a class="decoration-none xs-pb-40 xs-pt-40 pl-25 flex flex-wrap" href="{{.Permalink}}">
 
+        <li
+          class="blog-listing-posts-item mix {{ with .Params.tags }}{{ range . }}{{ lower . }} {{ end }}{{ end }}"
+        >
+          <a
+            class="decoration-none xs-pb-40 xs-pt-40 pl-25 flex flex-wrap"
+            href="{{.Permalink}}"
+          >
             <div class="blog-listing-posts-item-image">
-              {{ if isset .Params "images" }}
-                {{ if (gt (len .Params.images) 0) }}
-                  {{ if (index .Params.images 0).url }}
-                  {{ if hugo.Environment | eq "development" }}
-                    <img src="{{ replace (index .Params.images 0).url "/engineering-education/" "/" }}" {{ if (index .Params.images 0).alt}} alt="{{ (index .Params.images 0).alt }}"{{ end }}>
-                    {{ else }}
-                    <img src="{{ (index .Params.images 0).url }}" {{ if (index .Params.images 0).alt}} alt="{{ (index .Params.images 0).alt }}"{{ end }}>
-                  {{ end }}
-                  {{ end }}
-                {{ end }}
-              {{ end }}
+              {{ if isset .Params "images" }} {{ if (gt (len .Params.images) 0)
+              }} {{ if (index .Params.images 0).url }} {{ if hugo.Environment |
+              eq "development" }} <img src="{{ replace (index .Params.images
+              0).url "/engineering-education/" "/" }}" {{ if (index
+              .Params.images 0).alt}} alt="{{ (index .Params.images 0).alt }}"{{
+              end }}> {{ else }}
+              <img
+                src="{{ (index .Params.images 0).url }}"
+                {{
+                if
+                (index
+                .Params.images
+                0).alt}}
+                alt="{{ (index .Params.images 0).alt }}"
+                {{
+                end
+                }}
+              />
+              {{ end }} {{ end }} {{ end }} {{ end }}
             </div>
 
             <div class="blog-listing-posts-item-content">
               <h3 class="title-3 text-link xs-mb-10">{{.Title}}</h3>
-              <p class="text-blockquote xs-mb-20">{{ .Date.Format "Jan 2, 2006" }}</p>
+              <p class="text-blockquote xs-mb-20">
+                {{ .Date.Format "Jan 2, 2006" }}
+              </p>
 
-              <p class="text-18-regular text-color">{{ .Summary | plainify | truncate 210 "..." }}</p>
+              <p class="text-18-regular text-color">
+                {{ .Summary | plainify | truncate 210 "..." }}
+              </p>
 
-              <div id="insightsData-{{ $elem_index }}" class="blog-listing-posts-item-insights-data">
+              <div
+                id="insightsData-{{ $elem_index }}"
+                class="blog-listing-posts-item-insights-data"
+              >
                 <div class="data-point">
-                  <p><img class="icon" src="{{ if eq $.Site.Params.env "local" }}/{{ else }}/engineering-education/{{ end }}images/clapping-icon.png" alt="Article Likes" /></p><span id="likes-count-{{ $elem_index }}">0</span>
+                  <p>
+                    <img class="icon" src="{{ if eq $.Site.Params.env "local"
+                    }}/{{ else }}/engineering-education/{{ end
+                    }}images/clapping-icon.png" alt="Article Likes" />
+                  </p>
+                  <span id="likes-count-{{ $elem_index }}">0</span>
                 </div>
                 <div class="data-point">
-                  <p><img class="icon" src="{{ if eq $.Site.Params.env "local" }}/{{ else }}/engineering-education/{{ end }}images/comment-icon.png" alt="Article Comments" /></p><span id="comments-count-{{ $elem_index }}">0</span>
+                  <p>
+                    <img class="icon" src="{{ if eq $.Site.Params.env "local"
+                    }}/{{ else }}/engineering-education/{{ end
+                    }}images/comment-icon.png" alt="Article Comments" />
+                  </p>
+                  <span id="comments-count-{{ $elem_index }}">0</span>
                 </div>
               </div>
             </div>
-
           </a>
         </li>
 
-
-       {{ end }}
+        {{ end }}
       </ul>
     </div>
   </div>
@@ -176,9 +216,13 @@
           <div class="cta-block-box-left-block absolute"></div>
           <div class="cta-block-box-left-stripes absolute"></div>
           <div class="cta-block-box-inner pa-5 cta-shadow">
-            <h3 class="title-3 xs-mb-20">{{ .Site.Data.globals.enged_cta.title }}</h3>
+            <h3 class="title-3 xs-mb-20">
+              {{ .Site.Data.globals.enged_cta.title }}
+            </h3>
             <p class="xs-mb-20">{{ .Site.Data.globals.enged_cta.copy }}</p>
-            <span class="link-with-arrow-green text-green text-18-medium">{{ .Site.Data.globals.enged_cta.text }}</span>
+            <span class="link-with-arrow-green text-green text-18-medium"
+              >{{ .Site.Data.globals.enged_cta.text }}</span
+            >
           </div>
           <div class="cta-block-box-right-block absolute"></div>
           <div class="cta-block-box-right-stripes absolute"></div>
