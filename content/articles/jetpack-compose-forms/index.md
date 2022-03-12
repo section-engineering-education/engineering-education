@@ -18,7 +18,7 @@ When developing an application, it is always a good idea to write code that is n
 <!--more-->
 These two ensure that code is easily scalable, as a change in one part of the application does not affect other unrelated areas. A modification is done uniformly across the components/modules.
 
-In this article, we will look at a DRY approach to working with text fields in Jetpack compose. 
+In this article, we will look at a DRY approach to working with text fields in Jetpack compose.
 
 By the end of the article, you should:
 - Know how to work with text fields in Jetpack compose. This involves state management and validation.
@@ -33,7 +33,7 @@ In order to follow up with this tutorial comfortably, you will need:
 - Physical device or emulator to run the application.
 
 ### Step 1: Setup
-Open up Android Studio and create a new project using the "Empty Compose activity" template to get started. Give it any name you would like. You can go ahead to customize the theme to your liking.
+To get started, open up Android Studio and create a new project using the "Empty Compose activity" template. Give it any name you would like. You can go ahead to customize the theme to your liking.
 
 ### Step 2: Form operations
 When developing mobile applications, we are likely to come across `Forms` or some form of input to collect data from users. With Jetpack compose, we have the `TextField` composable from Material.
@@ -63,7 +63,7 @@ fun Screen(){
 }
 ```
 
-As you can see, you are managing the state of the field by defining a `State<String>` then updating it as the value changes. Let us go ahead and add another field to get the email address and button to submit our details. 
+As you can see, you are managing the state of the field by defining a `State<String>` then updating it as the value changes. Let us go ahead and add another field to get the email address and button to submit our details.
 
 ```kotlin
 @Composable
@@ -149,14 +149,14 @@ when {
 }
 ```
 
-That is a simple validation process for our fields. However, we have much code for only two input fields. Imagine if we had ten fields each, with different validation processes. It would be worse if we had forms on different screens, as is common in most applications.
+That is a simple validation process for our fields. However, we have a lot of code for only two input fields. Imagine if we had ten fields, each with different validation processes. It would be worse if we had forms on different screens, as is common in most applications.
 
-A workaround would be to create a form composable that handles form validation. We can create a state for the `Form` composable, and it handles all the fields we pass into it. 
+A workaround would be to create a form composable that handles form validation. We can create a state for the `Form` composable that handles all the fields we pass into it.
 
 Let us go ahead and implement that.
 
 ### Step 3: Validators
-We can start with validators. They all have similar ways of working. They return boolean based on whether the value passed meets specific criteria. Go ahead and create a sealed interface called `Validator`. All of our validators will be of this type.
+We can start with validators. They are all similar in terms of how they work. They return booleans based on whether the value passed meets specific criteria. Go ahead and create a sealed interface called `Validator`. All of our validators will be of this type.
 
 ```kotlin
 private const val EMAIL_MESSAGE = "invalid email address"
@@ -169,7 +169,7 @@ open class Required(var message: String = REQUIRED_MESSAGE): Validator
 open class Regex(var message: String, var regex: String = REGEX_MESSAGE): Validator
 ```
 
-Each of these will receive an optional message. This will allow us to pass in custom messages if we would like. Otherwise, we will show the default message. 
+Each of these will receive an optional message. This will allow us to pass in custom messages if we would like. Otherwise, we will show the default message.
 
 We have a `regex` validator that receives the regex that we will use to compare with the form field value.
 
@@ -224,7 +224,7 @@ class Field(val name: String, val label: String = "", val validators: List<Valid
 
 We have created a class that receives three arguments. The `name` will be used to associate the field to the value later. The `label` will be used to set the field's label and error message. `validators` will list all the validators specified for that field.
 
-The composable function `Content` will draw the field in the `Form`. The function `validate` will return a boolean to denote whether the field's value is valid or not. It will loop through the validators, checking if the value is correct based on the validator and returning true or false. 
+The composable function `Content` will draw the field in the `Form`. The function `validate` will return a boolean to denote whether the field's value is valid or not. It will loop through the validators, checking if the value is correct based on the validator and returning true or false.
 
 > Once the user starts editing the form field, we clear the errors, so the field goes back to an invalidated state. Add the following implementations for the validators.
 
@@ -281,11 +281,10 @@ class FormState {
 }
 ```
 
-The `validate` function here also returns a boolean if any of the fields' validation does not pass. We break the loop at that point to save on resources. The `getData` function maps the form field names to the corresponding values for easy management on the receiving end. 
+The `validate` function here also returns a boolean if any of the fields' validation does not pass. We break the loop at that point to save on resources. The `getData` function maps the form field names to the corresponding values for easy management on the receiving end.
 
 ### Step 6: Putting it all together
 Create a `Form` composable that receives two arguments.
-
 - **state:** This will be an instance of the `FormState` class we just created above.
 - **fields:** This will be a list of the form fields with their respective validators.
 
@@ -327,9 +326,9 @@ fun Screen(){
 Once you run your application, everything should work as expected. To get the data, call the `state.getData` method, and you will receive a map of your form.
 
 ### Conclusion
-As you have seen, working with forms individually can lead to much repetitive code. But with this approach, you encapsulate your form functions into different classes and compostables, making your work easier and your code cleaner.
+As you have seen, working with forms individually can lead to a lot of repetitive code. But with this approach, you encapsulate your form functions into different classes and composables, making your work easier and your code cleaner.
 
-However, this approach has some drawbacks. For instance, it does not take care of the custom arrangement of the fields. You are restricted to a column, while you might want some fields on a row. It also does not allow modification of the fields' properties. 
+However, this approach has some drawbacks. For instance, it does not take care of the custom arrangement of the fields. You are restricted to a column, while you might want some fields on a row. It also does not allow modification of the fields' properties.
 
 You can find the complete source code of the application on [GitHub](https://github.com/LinusMuema/Formzy). If you have a solution to the issues facing this approach or a suggestion, feel free to open an issue.
 

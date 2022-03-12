@@ -7,7 +7,7 @@ title: Turing Test in AI
 description: In this article, we will discuss the history, performance, requirements, and limitations of the Turing test in AI. This is a technique for testing the intelligence of machines. 
 author: emily-rotich
 date: 2022-01-07T00:00:00-02:30
-topics: [Artificial Intelligence]
+topics: [Machine Learning]
 excerpt_separator: <!--more-->
 images:
 
