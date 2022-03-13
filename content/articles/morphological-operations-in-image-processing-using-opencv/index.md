@@ -74,11 +74,11 @@ print(bgrImage,"\nEND of bgr Image")
   ```
   - Output: RandomgrayImage. 
 
-  ![RandomgrayImage](/morphological-operations-in-image-processing-using-opencv/RandomGrayimage.png).
+  ![RandomgrayImage](/engineering-education/morphological-operations-in-image-processing-using-opencv/RandomGrayimage.png).
 
   - Output: RandomrbgImage.
 
-  ![RandomrbgImage](/morphological-operations-in-image-processing-using-opencv/RandomrgbColor.png).
+  ![RandomrbgImage](/engineering-education/morphological-operations-in-image-processing-using-opencv/RandomrgbColor.png).
 
   ### Plotting the image
  ```python 
@@ -148,11 +148,11 @@ cv2.destroyAllWindows()
 ```
 - Output: dilated image.
 
-![dilated-image](/morphological-operations-in-image-processing-using-opencv/Dilatedimage.jpg)
+![dilated-image](/engineering-education/morphological-operations-in-image-processing-using-opencv/Dilatedimage.jpg)
 
 - Output: eroded image.
 
-![eroded-image](/morphological-operations-in-image-processing-using-opencv/Erodedimage.jpg).
+![eroded-image](/engineering-education/morphological-operations-in-image-processing-using-opencv/Erodedimage.jpg).
 
 ### Edge detection using opencv
 - Finds edge points of the image that are shown clearly only strong points are detected which are the points with high intensity of pixels neighboring each other.
@@ -187,7 +187,7 @@ cv2.waitKey(2)
   ```
 - Output: canny filter edge detection.
 
-  ![Canny-filter-edge-detection](/morphological-operations-in-image-processing-using-opencv/filteredImg.jpg)
+  ![Canny-filter-edge-detection](/engineering-education/morphological-operations-in-image-processing-using-opencv/filteredImg.jpg)
 ### Canny filtering operations
 - It is a technique used to smoothen the surfaces of an image and can be used to compute convolutions using a 2D separation as follows.
 - This involves 5 major steps discussed below.
