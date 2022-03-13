@@ -309,8 +309,7 @@ The prediction values:
 
 ![Predicted values](/engineering-education/univariate-time-series-using-facebook-prophet/predicted-values-tail.jpg)
 
-#### First five rows of the prediction results
-Use this code:
+Use this code to see the first five rows of the prediction results:
 
 ```python
 prediction.head()
