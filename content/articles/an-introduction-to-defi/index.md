@@ -18,7 +18,7 @@ The origin of blockchain technology has resulted in a dynamic shift in financial
 <!--more-->
 DeFi referred to as Decentralized Finance,  is a dynamic technological evolution of the traditional financial space. Hence, to adequately define DeFi, we need to have a basic understanding of traditional finance.
 
-Finance (Traditional Finance) is the process that involves the creation, management, and investment of money and financial assets. In traditional finance, all these activities are controlled or regulated by a central authority. 
+Traditional Finance is the process that involves the creation, management, investment of money, and financial assets. All these activities are controlled or regulated by a central authority.
 
 In traditional finance, the following are the core properties:
 - They hold custody of customers' funds.
