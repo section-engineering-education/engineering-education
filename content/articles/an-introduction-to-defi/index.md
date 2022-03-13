@@ -27,7 +27,7 @@ In traditional finance, the following are the core properties:
 - Customers have no privacy to the service provider
 - User data are stored in opaque databases and applications
 
-Decentralized Finance subsequently utilize blockchain technology to solve the centralized authority problem in traditional finance towards decentralizing control and operation.
+Decentralized Finance, subsequently, utilizes blockchain technology to solve the centralized authority problem in traditional finance, towards decentralizing control and operation.
 
 We can define DeFi by examining the following factors:
 - Custody & Settlement 
