@@ -189,13 +189,13 @@ which shows the deleted data as shown below:
  ```
  ### Eclipse versus Intellij Idea in MongoDB integration with java
 The CRUD operations are performed the same way in IntelliJ and Eclipse, but connecting MongoDB with Java in Eclipse is different. The IntelliJ idea makes use of dependencies, which are Jason files in Javascript. Here, the Java driver is included in the dependencies.
-Dependencies used should be added to the XML file. The following dependencies should be added:
+Dependencies used should be added to the XML file. Mongodb-driver requires the following dependencies: bson and mongodb-driver-core as shown below. 
 ```java      
 <dependencies>
     <dependency>
         <groupId>org.mongodb</groupId>
         <artifactId>mongo-java-driver</artifactId>
-        <version>3.12.10</version>
+        <version>3.12.10</version>//the latestmongo java driver version
     </dependency>
 </dependencies>
 ```
