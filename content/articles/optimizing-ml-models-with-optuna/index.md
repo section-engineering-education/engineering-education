@@ -130,17 +130,14 @@ Using the examples of methods described above for defining hyper-parameters, the
 ```python
 def objective(trial):
   parameter = {
-                "n_estimators" : trial.suggest_int('estimators', 0, 500),
-                'max_depth':trial.suggest_int('depth', 3, 5),
-                'reg_alpha':trial.suggest_uniform('alpha',0,6),
-               #set a uniformly distributed numbers between 0 and 2 for lambda
-                'reg_lambda':trial.suggest_uniform('lambda',0,2),
-                'min_child_weight':trial.suggest_int('childweight',0,5),
-                'gamma':trial.suggest_uniform('ourgamma', 0, 4),
-               #set a log distribution between 0.05 and 0.5 for learning rate
-                'learning_rate':trial.suggest_loguniform('ourlearning_rate',0.05,0.5),
-               #set a uniformly distributed numbers between 0.4 and 0.9 for colsample_bytree
-                'colsample_bytree':trial.suggest_uniform('colsample_bytree',0.4,0.9),
+                "n_estimators" : trial.suggest_int('estimators', 0, 500),# show integer parameters between 0 and 500 for estimators
+                'max_depth':trial.suggest_int('depth', 3, 5),# show integer parameters between 3 and 5 for depth
+                'reg_alpha':trial.suggest_uniform('alpha',0,6),# set a uniformly distributed numbers between 0 and 6 for alpha
+                'reg_lambda':trial.suggest_uniform('lambda',0,2),# set a uniformly distributed numbers between 0 and 2 for lambda
+                'min_child_weight':trial.suggest_int('childweight',0,5),# show integer parameters between 0 and 5 for childweight
+                'gamma':trial.suggest_uniform('ourgamma', 0, 4),# set a uniformly distributed numbers between 0 and 4 for gamma
+                'learning_rate':trial.suggest_loguniform('ourlearning_rate',0.05,0.5),# set a log distribution between 0.05 and 0.5 for learning rate
+                'colsample_bytree':trial.suggest_uniform('colsample_bytree',0.4,0.9),# set a uniformly distributed numbers between 0.4 and 0.9 for colsample_bytree
                 'subsample':trial.suggest_uniform('sample',0.4,0.9),
                 'nthread' : -1
             }
