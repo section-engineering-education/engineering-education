@@ -1,6 +1,7 @@
+{{ $a := path.Base .Permalink }}
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>New Authors Feed</title>
+    <title>{{ $a }}'s Author Feed</title>
     <link>{{ .Permalink }}</link>
     <description>Recent posts by {{ if ne  .Title  .Site.Title }}{{ with .Title }}{{.}} {{ end }}{{ end }}</description>
     <generator>Hugo -- gohugo.io</generator>{{ with .Site.LanguageCode }}
@@ -13,7 +14,9 @@
       {{ printf "<atom:link href=%q rel=\"self\" type=%q />" .Permalink .MediaType | safeHTML }}
     {{ end }}
 
-    {{ range where .Site.Pages "Params.author" "path.Base .Permalink" }}
+    {{ range where .Site.Pages "Params.layout" "engineering-education" }}
+
+    {{ if eq  .Params.author $a  }}
 
     <item>
       <title>{{ .Title }}</title>
@@ -26,6 +29,7 @@
       <guid>{{ .Permalink }}</guid>
       <description>{{ .Params.description | html }}</description>
     </item>
+    {{ end }}
     {{ end }}
   </channel>
 </rss>
