@@ -1,5 +1,8 @@
 {{ define "main" }}
 
+{{ $featureToggle := resources.Get "js/featureToggle.js" }}
+<script defer language="javascript" type="text/javascript" src="{{ $featureToggle.Permalink }}"></script>
+
 <article>
   <section class="hero-blocks xs-pt-50 xs-pb-50 sm-pt-100 sm-pb-100 -blue-blocks">
     <div class="hero-blocks-mobile">
@@ -40,10 +43,17 @@
       <div class="section-rich-text-inner prl-5">
         <div class="section-rich-text-leading">
           {{ range .Resources }}
-          <img class="avatar" src="{{ (.Resize "400x").Permalink }}" />
+          <img class="avatar" src="{{ (.Resize "400x").Permalink }}" alt="{{ $.Params.title }}" />
           {{ end }}
 
           {{ .Content }}
+
+          {{ with .Params.skills }} 
+            <div class="author-skills">
+              <h4>Skills/Languages</h4>
+              <p class="skills">{{ delimit . " | " }}</p>
+            </div>
+          {{ end }}  
         </div>
 
         <div class="section-rich-text-leading bio">
@@ -82,16 +92,41 @@
 <section class="blog-listing-posts">
   <div class="section-container blog-listing-posts-container">
     <div class="blog-listing-posts-content">
-      <h1 class="title-3 text-blue xs-pb-20">Contributed articles</h1>
+      <h2 class="title-3 text-blue xs-pb-20">Contributed articles</h2>
    
       <ul class="list-unstyled xs-mb-80">
 
         {{ $author := path.Base .Permalink}}
+        {{ $hyvorId := $.Site.Params.hyvorId }}
+        
+        {{ range $elem_index, $elem_val := (where (where .Site.Pages "Params.layout" "engineering-education") ".Params.author" $author) }}
+        
+        {{ $articlePermalink := "" }}
+        {{ if eq $.Site.Params.env "local" }}
+          {{ $articlePermalink = .Permalink }}
+        {{ else if eq $.Site.Params.env "staging" }}
+          {{ $articlePermalink = replace .Permalink "beta" "www" }}
+        {{ else }}
+          {{ $articlePermalink = .Permalink }}
+        {{ end }}
 
-        {{ range (where (where .Site.Pages "Params.layout" "engineering-education") ".Params.author" $author) }}
+        <script defer type="text/javascript">
+          document.addEventListener("DOMContentLoaded", async function() {
+            fetch('https://talk.hyvor.com/api/v1/page/?page_identifier={{ $articlePermalink }}&website_id={{ $hyvorId }}')
+              .then(response => response.json())
+              .then(data => {
+                console.log(data);
+                if (data.status === true) {
+                  document.getElementById('comments-count-{{ $elem_index }}').innerText = data.data.comments_count;
+                  document.getElementById('likes-count-{{ $elem_index }}').innerText = data.data.reactions[0];
+                }
+              })
+              .catch(err => console.log('Error: ', err))
+          });
+        </script>
         
         <li class="blog-listing-posts-item mix {{ with .Params.tags }}{{ range . }}{{ lower . }} {{ end }}{{ end }}">
-          <a class="decoration-none xs-pb-40 xs-pt-40 prl-25 flex flex-wrap" href="{{.Permalink}}">
+          <a class="decoration-none xs-pb-40 xs-pt-40 pl-25 flex flex-wrap" href="{{.Permalink}}">
 
             <div class="blog-listing-posts-item-image">
               {{ if isset .Params "images" }}
@@ -113,6 +148,14 @@
 
               <p class="text-18-regular text-color">{{ .Summary | plainify | truncate 210 "..." }}</p>
 
+              <div id="insightsData-{{ $elem_index }}" class="blog-listing-posts-item-insights-data">
+                <div class="data-point">
+                  <p><img class="icon" src="{{ if eq $.Site.Params.env "local" }}/{{ else }}/engineering-education/{{ end }}images/clapping-icon.png" alt="Article Likes" /></p><span id="likes-count-{{ $elem_index }}">0</span>
+                </div>
+                <div class="data-point">
+                  <p><img class="icon" src="{{ if eq $.Site.Params.env "local" }}/{{ else }}/engineering-education/{{ end }}images/comment-icon.png" alt="Article Comments" /></p><span id="comments-count-{{ $elem_index }}">0</span>
+                </div>
+              </div>
             </div>
 
           </a>

@@ -89,7 +89,7 @@ Since we are using Node.js, you will need it installed on your computer.
 
 Download it [here](https://nodejs.org/en/).
 
-Once installed, create a project folder and initialize the project with `npm init -y`. Here’s a [guide](/beginner-guide-to-npm) that will help you to understand NPM in more detail.
+Once installed, create a project folder and initialize the project with `npm init -y`. Here’s a [guide](/engineering-education/beginner-guide-to-npm) that will help you to understand NPM in more detail.
 
 To connect Node.js with an SQL database, you need the MySQL package installed.
 
@@ -403,7 +403,7 @@ Now let's learn how to write SQL queries using Node.js. I want to introduce Expr
 
 ***[Express](http://expressjs.com/en/starter/installing.html) is a fast, unopinionated, minimalist web framework for Node.js with various HTTP utility methods and middleware at your disposal.***
 
-Check this [guide](/express/) to get started with Express.
+Check this [guide](/engineering-education/express/) to get started with Express.
 
 Web services are based on HTTP requests and responses. When building a web application, you want to capture responses based on a server request. Usually, you want to get server responses and initiate an interaction between the server and a database. With a few examples, we will demonstrate how to create an Express server to communicate with the MySQL server to manage and manipulate our database information.
 
@@ -607,15 +607,15 @@ This creates multiple connections to execute the queries in parallel. A new conn
 I hope this guide helps get you started writing SQL queries and executing them within the Node.js application.
 
 ### Related Topics and Additional Resources
-- [Introduction to Express.js](/express/)
+- [Introduction to Express.js](/engineering-education/express/)
 
-- [Understanding HTTP Requests in Node.js](/http-requests-nodejs/)
+- [Understanding HTTP Requests in Node.js](/engineering-education/http-requests-nodejs/)
 
-- [An Absolute Beginner Guide to Node Package Manager](/beginner-guide-to-npm/)
+- [An Absolute Beginner Guide to Node Package Manager](/engineering-education/beginner-guide-to-npm/)
 
-- [Getting to Grip with MongoDB Database](/working-with-databases-part1/)
+- [Getting to Grip with MongoDB Database](/engineering-education/working-with-databases-part1/)
 
-- [Develop Your First Data-Driven Web App Using MongoDB database and Node.js](/working-with-databases-part2/)
+- [Develop Your First Data-Driven Web App Using MongoDB database and Node.js](/engineering-education/working-with-databases-part2/)
 
 ---
 Peer Review Contributions by: [Mohan Raj](/engineering-education/authors/mohan-raj/)

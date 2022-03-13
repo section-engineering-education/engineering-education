@@ -184,7 +184,7 @@ def draw_grid(box_size, rows, columns):
 If we didn't do this, we'd have to make separate functions for each size. Imagine having to make a `draw_grid8x5` function. It would be a great pain.
 
 ### 3. Generics
-If you use a [statically-typed language](/typescript-static-typing/), you may need many types that are very similar. For example, you may need a list of integers, and a list of strings. [Some languages](https://golang.org/) will force you to actually make new types. But most statically-typed languages let you use generics.
+If you use a [statically-typed language](/engineering-education/typescript-static-typing/), you may need many types that are very similar. For example, you may need a list of integers, and a list of strings. [Some languages](https://golang.org/) will force you to actually make new types. But most statically-typed languages let you use generics.
 
 A generic type takes a type parameter. Once the code is compiled, there are essentially multiple versions of the structure. This can [increase compile times](https://pingcap.com/blog/generics-and-compile-time-in-rust), but it can be worth it in order to save time writing code.
 

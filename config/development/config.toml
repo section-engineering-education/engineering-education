@@ -1,0 +1,4 @@
+baseURL = "http://localhost:1313"
+[params]
+  env = "local"
+  hyvorId = "5728"

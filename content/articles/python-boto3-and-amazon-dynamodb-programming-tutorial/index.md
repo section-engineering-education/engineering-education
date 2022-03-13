@@ -17,7 +17,7 @@ images:
 DynamoDB is a speedy and flexible NoSQL database service offered by AWS (Amazon Web Service). DynamoDB is perfect for mobile apps, web apps, IoT devices, and gaming. Python has good support for DynamoDB. In this tutorial, we will use AWS Python [SDK](https://en.wikipedia.org/wiki/Software_development_kit) (Boto3) to perform CRUD (create, read, update, delete) operations on DynamoDB.
 <!--more-->
 ### Prerequisites
-Before going through this tutorial you must have prior knowledge of DynamoDB. To get started with DynamoDB, I recommend going over this article [Getting Started with AWS DynamoDB](/getting-started-with-aws-dynamodb/). 
+Before going through this tutorial you must have prior knowledge of DynamoDB. To get started with DynamoDB, I recommend going over this article [Getting Started with AWS DynamoDB](/engineering-education/getting-started-with-aws-dynamodb/). 
 
 To get started with this tutorial, you need the following:
 - **DynamoDB local:** Download and configure DynamoDB. Check [AWS documentation](https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/DynamoDBLocal.DownloadingAndRunning.html) for guidelines. This version of DynamoDB is used for development purposes only. For production purposes, you should use [Amazon DynamoDB Web Services](https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/SettingUp.DynamoWebService.html).

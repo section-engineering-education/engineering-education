@@ -22,7 +22,7 @@ In this article, I have tried to put together the general trends in the field of
 ### Goal of Question Answering Systems
 What are the question answering systems trying to achieve? Given a question, should the system return the nearest answer? What if the answer is a mixture of multiple answers that it has been trained on? We are trying to build intelligent systems that don't just return documents related to the question, but extract relevant information within the documents and puts forth the detailed answer, like one that a human would have come up with. This task comes under the fields of [Information Retrieval ](https://nlp.stanford.edu/IR-book/pdf/01bool.pdf)(IR), [Information Extraction](https://www.ontotext.com/knowledgehub/fundamentals/information-extraction/) (IE), and Natural Language Processing (NLP).
 
-Google is a search engine. But, some questions are generated automatically while we search. This is due to the [knowledge graphs](/web-developers-guide-seo/#pagerank) that Google uses to represent vast amounts of data.
+Google is a search engine. But, some questions are generated automatically while we search. This is due to the [knowledge graphs](/engineering-education/web-developers-guide-seo/#pagerank) that Google uses to represent vast amounts of data.
 
 ![google python_example](/engineering-education/question-answering/python_example.png)
 
@@ -64,7 +64,7 @@ The final module gets the list of concise documents filtered and ordered by the 
 
 
 ### Evaluating the answers obtained
-The criteria can vary from paper to paper. But more generally, we want the question answering system to produce relevant, correct, and complete answers to the point. Hence many evaluation metrics were developed to measure such ambiguous terminologies. A few of those metrics are F1-scores, precision, recall, etc. For a detailed insight into evaluation metrics, refer to this [article](/evaluating-ml-model-performance/).
+The criteria can vary from paper to paper. But more generally, we want the question answering system to produce relevant, correct, and complete answers to the point. Hence many evaluation metrics were developed to measure such ambiguous terminologies. A few of those metrics are F1-scores, precision, recall, etc. For a detailed insight into evaluation metrics, refer to this [article](/engineering-education/evaluating-ml-model-performance/).
 
 ### Applications
 The applications of such systems are varied and exciting. Currently used in commercial applications, these have a broad scope in almost every aspect. Humans are question-driven organisms, and therefore these systems are the easiest way for humans to interact with machines.

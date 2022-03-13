@@ -45,9 +45,9 @@ As a developer, you need to choose which package manager suits you. Let's briefl
 NPM stands for the Node Package Manager. 
 
 NPM does two things:
-1. It serves as an [online platform](/npm-packages/). An NPM registry where people, including you, can create, upload, publish, and share tools (Node.js packages). These packages are open source. Everyone can search and use the tools published on this online platform (NPM registry).
+1. It serves as an [online platform](/engineering-education/npm-packages/). An NPM registry where people, including you, can create, upload, publish, and share tools (Node.js packages). These packages are open source. Everyone can search and use the tools published on this online platform (NPM registry).
 
-2. It is the [command-line tool](/beginner-guide-to-npm/). It helps you interact with the online platform I just mentioned. A few things you can do with the command-line tool include installing and uninstalling packages.
+2. It is the [command-line tool](/engineering-education/beginner-guide-to-npm/). It helps you interact with the online platform I just mentioned. A few things you can do with the command-line tool include installing and uninstalling packages.
 
 ### What is Yarn?
 Yarn is a JavaScript package manager created by Facebook. Yarn stands for Yet Another Resource Negotiator. It provides similar functionalities as NPM. It is an alternative to NPM when installing, uninstalling, and managing package dependencies from the NPM registry or GitHub repositories.
@@ -67,7 +67,7 @@ Some more distinct NPM package installation include:
 
 - `npm install <package name> -dev`. The flag `-dev` allows you to install any package not required by your work to run. They are mainly used for development purposes such as testing, size bundling, transpiring code, etc.
 
-Check this [beginner guide to NPM](/beginner-guide-to-npm/) to learn more about NPM and how to use it to manage your project NPM registries.
+Check this [beginner guide to NPM](/engineering-education/beginner-guide-to-npm/) to learn more about NPM and how to use it to manage your project NPM registries.
 
 On the other hand, to use Yarn, you have to [install it separately](https://yarnpkg.com/getting-started/install) by yourself. You should install [Node.js](https://nodejs.org/en/download/) to use Yarn. 
 
@@ -196,11 +196,11 @@ Hope you have found this article helpful when making a choice between Yarn and N
 Happy coding!
 
 ### Additional resources
-- [An Absolute Beginner Guide to Node Package Manager](/beginner-guide-to-npm/)
-- [Create and Deploy NPM Packages](/npm-packages/)
-- [Comparing NPM (Node Package Manager) and NPX (Node Package Executor)](/npm-vs-npx/)
-- [Open-source packages & Code Security using NPM](/npm-registry-opensource-code-security-with-npm6/)
-- [Why is Node.js wildly popular among developers?](/why-node-js-is-popular)
+- [An Absolute Beginner Guide to Node Package Manager](/engineering-education/beginner-guide-to-npm/)
+- [Create and Deploy NPM Packages](/engineering-education/npm-packages/)
+- [Comparing NPM (Node Package Manager) and NPX (Node Package Executor)](/engineering-education/npm-vs-npx/)
+- [Open-source packages & Code Security using NPM](/engineering-education/npm-registry-opensource-code-security-with-npm6/)
+- [Why is Node.js wildly popular among developers?](/engineering-education/why-node-js-is-popular)
 
 ---
 Peer Review Contributions by [Wanja Mike](/engineering-education/authors/michael-barasa/)

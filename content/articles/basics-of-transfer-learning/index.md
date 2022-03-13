@@ -28,7 +28,7 @@ In the quest to achieve artificial general intelligence (AGI), transfer learning
 4. Applications of transfer learning.
 
 ### Prerequisites
-Before we jump right in, it is recommended that the reader have a basic understanding of machine learning and deep learning. For an introduction or refresher on some basic machine learning concepts check out this [article](/supervised-learning-algorithms/). Some machine learning and deep learning concepts are also covered [here](/automated-fake-news-detection/).
+Before we jump right in, it is recommended that the reader have a basic understanding of machine learning and deep learning. For an introduction or refresher on some basic machine learning concepts check out this [article](/engineering-education/supervised-learning-algorithms/). Some machine learning and deep learning concepts are also covered [here](/engineering-education/automated-fake-news-detection/).
 
 ### Useful Terms
 **Pre-trained models** – models trained on a sizeable benchmark dataset to solve a problem similar to an already solved problem. We will discuss the [applications](#applications-of-transfer-learning) of such models in transfer learning later on.
@@ -160,7 +160,7 @@ We could also draw from our example on image segmentation with the instance tran
 Another method involves the use of adversarial domain adaptation. Adversarial domain adaptation is a method used to transform the features of many target domains to be the same as the source domain features. This method is used to classify whole-slide images to be used when diagnosing prostate cancer. Similar approaches and uses of the CNNs architectures can be used for the detection of various cancers, health supervision, as well as detection of heart disease.
 
 #### Computer Vision
-Deep learning has been a driver of [computer vision](/computer-vision-straight-lines/). Different neural network architectures are used to carry out computer vision tasks. A great example of such a task is object recognition.
+Deep learning has been a driver of [computer vision](/engineering-education/computer-vision-straight-lines/). Different neural network architectures are used to carry out computer vision tasks. A great example of such a task is object recognition.
 
 Transfer learning for computer vision may occur through transferring of features in neural networks to improve the performance of the target network. The layers of a neural network may act as feature extractors.
 

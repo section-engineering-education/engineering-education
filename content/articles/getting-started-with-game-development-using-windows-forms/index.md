@@ -26,7 +26,7 @@ Before we begin, it would help you as the reader to have the following:
 - Visual Studio installed on your system.
 
 If you don’t have Visual Studio installed on your computer, you can check this article on how to set up the C# environment in Visual Studio [here](https://www.geeksforgeeks.org/setting-environment-c-sharp/), and if you are new to 
-Windows forms you can check this tutorial that would help you understand the basics of it [here](/getting-started-with-windows-forms-using-c-sharp/).
+Windows forms you can check this tutorial that would help you understand the basics of it [here](/engineering-education/getting-started-with-windows-forms-using-c-sharp/).
 
 ### How to play
 The system of Mastermind will randomly produce 4 colors between 6 colors (allowing duplicate colors). The colors will remain invisible to the player until he wins or losses the game.
