@@ -330,9 +330,9 @@ The code produces the following line chart:
 ![y vs yhat line chart](/engineering-education/univariate-time-series-using-facebook-prophet/y-vs-yhat.jpg)
 
 From the output above:
-The blue line shows the actual values (y).
- The orange line shows the predicted values (yhat). 
-The chart also shows the forecast values for the next 1000 days. 
+- The blue line shows the actual values (y).
+- The orange line shows the predicted values (yhat). 
+- The chart also shows the forecast values for the next 1000 days. 
 
 We can also plot a diagram to show the `y`, `yhat`, `yhat_lower`, and the `yhat_upper` values.
 
