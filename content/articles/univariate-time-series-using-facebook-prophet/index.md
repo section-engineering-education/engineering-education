@@ -6,7 +6,7 @@ url: /univariate-time-series-using-facebook-prophet/
 title: Univariate Time Series using Facebook Prophet
 description: This tutorial will be discussing the univariate time series model using Facebook Prophet. We will use the model to predict airline passengers.
 author: francis-ndiritu
-date: 2022-02-18T00:00:00-21:00
+date: 2022-03-13T00:00:00-21:00
 topics: [Machine Learning]
 excerpt_separator: <!--more-->
 images:
@@ -79,16 +79,12 @@ The image below shows an example of multivariate data:
 ### Getting started with Facebook Prophet
 Facebook Prophet is an open-source library for forecasting time series data. It helps individuals and businesses analyze the market values and make future predictions.
 
-It implements a procedure for forecasting time series data based on an additive model where non-linear trends are fit with yearly, weekly, and daily seasonality, plus holiday effects.
-
-It works best with time series with seasonal effects and several seasons of historical data.
+It implements a procedure for forecasting time series data based on an additive model where non-linear trends are fit with yearly, weekly, and daily seasonality, plus holiday effects. It works best with time series with seasonal effects and several seasons of historical data.
 
 It decomposes time series data into the following components:
 
 #### Trend
-It is visible a pattern in data. It models non-periodic changes in the time series data. 
-
-A trend shows the long-term movement in the dataset. A trend can be upward (uptrend), downward(downtrend), or constant(horizontal). Trends usually happen for some time and then disappear.
+It is visible a pattern in data. It models non-periodic changes in the time series data. A trend shows the long-term movement in the dataset. A trend can be upward (uptrend), downward(downtrend), or constant(horizontal). Trends usually happen for some time and then disappear.
 
 The image below shows the three types of trends.
 
@@ -97,7 +93,7 @@ The image below shows the three types of trends.
 *Image Source: [Medium](https://miro.medium.com/max/1400/1*lmK4zwDN3AwyD8190xIdng.png)*
 
 #### Seasonality 
- It is due to periodic changes like daily, weekly, or yearly seasonality. 
+It is due to periodic changes like daily, weekly, or yearly seasonality. 
 
 The image below shows a seasonality component.
 
@@ -111,26 +107,21 @@ It is the recurring days and events in a time series dataset. It involves the oc
 ### Benefits of using Facebook Prophet
 The following are the benefits of using Facebook Prophet in time series modeling.
 
-- It is automatic and fast
-It saves time for manual time series analysis and decomposition.
+- It is automatic and fast. It saves time for manual time series analysis and decomposition.
 
-- It produces accurate models.
-It produces reliable and accurate models.
+- It produces reliable and accurate models.
 
-- It can handle missing values and outliers
-It imputes the missing values to ensure we have a complete dataset. It also removes data points that deviate from the general dataset observations.
+- It can handle missing values and outliers. It imputes the missing values to ensure we have a complete dataset. It also removes data points that deviate from the general dataset observations.
 
-- It can handle seasonality and holiday effects.
-It can handle the spikes in the dataset and include them in model training.
+- It can handle seasonality and holiday effects. It handles the spikes in the dataset and include them in model training.
 
-- It produces a tunable model
-It produces models that we fine-tune to improve accuracy when forecasting.
+- It produces a tunable model. It produces models that we fine-tune to improve accuracy when forecasting.
 
 ### Installing Facebook Prophet
 To install Facebook Prophet, use this command:
 
 ```bash
-! pip install fbprophet
+!pip install fbprophet
 ```
 ### Airline passengers dataset
 We will use the airline passengers dataset to train the model. The dataset shows the airline passengers recorded monthly from `1949-01-01` to `1960-12-01`. It has only a one-time dependant variable. To download the dataset, use this [link](https://drive.google.com/file/d/10OJHq3jT6YcRCj3gYfEOCUj2fz6Fjq8Q/view?usp=sharing)
@@ -140,7 +131,7 @@ We will read the dataset using Pandas.
 ```python
 import pandas as pd
 ```
-Read the dataset using this code:
+We read the dataset using this code:
 
 ```python
 df=pd.read_csv('/content/airline_passengers.csv')
@@ -281,9 +272,7 @@ We call the `fit` method and pass the Data Frame as an input. The `fit` enables 
 model.fit(df)
 ```
 ### Making future predictions
-The process above trains the model. We will use the model to forecast the airline passengers for the next 1000 days (1961-01-01 to 1963-08-28)
-
-We will provide the model with a new future Data Frame. It contains the number of days the model forecasts/predicts.
+The process above trains the model. We will use the model to forecast the airline passengers for the next 1000 days (1961-01-01 to 1963-08-28). We will provide the model with a new future Data Frame. It contains the number of days the model forecasts/predicts.
 
 We use this code:
 
@@ -295,7 +284,7 @@ Use this code to check the last five rows:
 ```python
 future_dates.tail()
 ```
-The output is below:
+The output is shown below:
 
 ![Prediction values](/engineering-education/univariate-time-series-using-facebook-prophet/prediction-values.jpg)
 
@@ -307,7 +296,6 @@ prediction=model.predict(future_dates)
 ```
 Use this code to see the last five rows of the prediction results:
 
-#### Last five rows of the prediction results
 ```python
 prediction[['ds', 'yhat', 'yhat_lower', 'yhat_upper']].tail()
 ```
@@ -332,7 +320,7 @@ The output:
 ![Predicted values](/engineering-education/univariate-time-series-using-facebook-prophet/predicted-values-head.jpg)
 
 ### `y` vs `yhat` line chart
- Use this code to plot the line chart:
+Use this code to plot the line chart:
 
 ```python
 pd.concat([df.set_index('ds')['y'],prediction.set_index('ds')['yhat']],axis=1).plot()
@@ -357,6 +345,7 @@ model.plot(prediction)
 The output:
 
 ![Plot diagram](/engineering-education/univariate-time-series-using-facebook-prophet/plot-diagram.jpg)
+
 From the output above:
 The shaded light blue region shows the lower and upper bound values. This region contains the `yhat_upper` and `yhat_lower` values. 
 The black dots are the actual time series values(y). 
@@ -375,9 +364,7 @@ The output:
 
 ![Plot components](/engineering-education/univariate-time-series-using-facebook-prophet/plot-components.jpg)
 
-The output above shows the trend and yearly seasonality components. The above plots provide insights. The first plot shows a linear increase in passengers from 1949 to 1964. 
-
-The second plot shows that the most traffic occurs during the holiday months of July and August.
+The output above shows the trend and yearly seasonality components. The above plots provide insights. The first plot shows a linear increase in passengers from 1949 to 1964. The second plot shows that the most traffic occurs during the holiday months of July and August.
 
 ### Conclusion
 In this tutorial, we have learned how to build a univariate time series model using Facebook Prophet. We discussed the different types of time-series datasets. We were able to differentiate univariate, bivariate, and multivariate datasets. We explored Facebook Prophet and how it decomposes time-series datasets.
