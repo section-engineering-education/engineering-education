@@ -33,9 +33,8 @@ In this tutorial, we will build an electricity consumption prediction model. We 
 - [Splitting the dataset](#splitting-the-dataset)
 - [Selecting the timestamp and the target columns](#selecting-the-timestamp-and-the-target-columns)
 - [Initializing the Auto Time Series model](#initializing-the-auto-time-series-model)
-- [Outputs](#outputs)
 - [Selecting the best model](#selecting-the-best-model)
-- [Actuals vs Forecast values](#actuals-vs-forecast-values)
+- [Actual vs Forecast values](#actual-vs-forecast-values)
 - [Conclusion](#conclusion)
 - [References](#references)
 
@@ -62,7 +61,6 @@ There are different types of time series models. The most common models that Aut
 All the listed models above support time series analysis and forecasting. Auto-TS chooses the best model based on its accuracy score and predictions made. We will then plot a line graph to show the forecast values.
 
 ### Benefits of using Auto Time Series library
-
 - It performs automated dataset preprocessing. It will automatically transform the input dataset into a format the model can use. It removes noise and unnecessary information in the dataset. 
 
 - It can handle missing values and outliers. Auto-TS handles the missing values to ensure we have a complete dataset. It also removes outliers that are not within the dataset range.
@@ -88,10 +86,7 @@ import auto_ts as AT
 Let's now start working with our dataset.
 
 ### Working with the dataset
-We will use the electricity consumption dataset to train the model. 
-The dataset shows the monthly electricity consumption of an individual household from `2016-01-01` to `2020-05-01`. 
-
-Download the electricity consumption dataset [here](https://drive.google.com/file/d/15VvheglnHwqZeGygiGI-Prq6pxs2uel9/view?usp=sharing)
+We will use the electricity consumption dataset to train the model. The dataset shows the monthly electricity consumption of an individual household from `2016-01-01` to `2020-05-01`. You can download the electricity consumption dataset [here](https://drive.google.com/file/d/15VvheglnHwqZeGygiGI-Prq6pxs2uel9/view?usp=sharing).
 
 The dataset output:
 
@@ -178,9 +173,8 @@ The dataset output:
 ![Dataset](/engineering-education/time-series-analysis-and-forecasting-using-auto-time-series/index-column.png)
 
 ### Selecting the dependent variable
-The dependent variable is the variable that the model will predict. This variable changes with time.
+The dependent variable is the variable that the model will predict. This variable changes with time. The dependent variable is the `Billed_amount`.
 
-The dependent variable is the `Billed_amount`.
 ```python
 ec_data = ec_df['Billed_amount']
 ```
@@ -258,9 +252,7 @@ The output:
 (50, 5) (3, 5)
 ```
 ### Selecting the timestamp and the target columns
-The Auto Time Series model expects an input dataset with timestamp and target columns. The `timestamp` column contains the DateTime of the time series. 
-
-The` target` column has the times series values (data points). The model will learn from this column.
+The Auto Time Series model expects an input dataset with timestamp and target columns. The `timestamp` column contains the DateTime of the time series. The` target` column has the time series values (data points). The model will learn from these columns.
 
 ```python
 ts_column = 'Bill_Date'
@@ -279,7 +271,7 @@ ml_dict = AT.Auto_Timeseries(train, ts_column,
                             seasonal_period=12,seasonal_PDQ=None, model_type='best',
                             verbose=2)
 ```
-The Auto Time Series model has the following parameter.
+The Auto Time Series model has the following parameters:
 
 - `train`
 It contains the training set. These are the first 50 entries/data points that trains the model. 
@@ -291,10 +283,7 @@ It contains the DateTime of the time series.
 It specifies the dataset format. Our dataset is comma-separated values (CSV).
 
 -  `score_type`
-It is the scoring metrics for the model. 
-We use the Root Mean Square Error (RMSE). RMSE calculates the error of a model when making predictions. 
-
-It indicates the absolute fit of the model to the data– how close the observed data points are to the predicted values.
+It is the scoring metrics for the model. We use the Root Mean Square Error (RMSE). RMSE calculates the error of a model when making predictions. It indicates the absolute fit of the model to the data– how close the observed data points are to the predicted values.
 
 - `forecast_period`
 It shows the number of months the model will predict. The model will make predictions for the next six months.
@@ -321,14 +310,11 @@ It shows the types of models that Auto Time Series will use for training. We set
 
 When you execute the code above, Auto Time Series will run multiple time series models and produce the following outputs:
 
-### Outputs
 **Running Facebook Prophet Model**
-It will start by running the Facebook Prophet Model.
 
 ![Running Facebook Prophet Model](/engineering-education/time-series-analysis-and-forecasting-using-auto-time-series/running-facebook-prophet.png)
 
 **Running PyFlux Model**
-It then runs PyFlux Model:
 
 ![Running PyFlux Model](/engineering-education/time-series-analysis-and-forecasting-using-auto-time-series/runningp-pyflux-model.png)
 
@@ -349,11 +335,12 @@ It then runs PyFlux Model:
 ![Running Machine Learning Models](/engineering-education/time-series-analysis-and-forecasting-using-auto-time-series/running-machine-learning-models.png)
 
 **Showing time series components**
+
 ![Running Machine Learning Models](/engineering-education/time-series-analysis-and-forecasting-using-auto-time-series/time-series-components.png)
 
 It shows the overall trend of the time series data and the seasonality in the dataset.
 
-**original time series** 
+**Original time series** 
 
 ![Original time series](/engineering-education/time-series-analysis-and-forecasting-using-auto-time-series/original-time-series.png)
 
@@ -382,11 +369,9 @@ The line graph output:
 From the image above, the red line shows the actual values. The green line shows the forecast values. The model has made predictions for the next six months.
 
 ### Conclusion
-We have learned how to perform time series analysis and forecasting using the Auto Time series. The tutorial shows the models that Auto Time Series runs. We also discussed the benefits of the Auto Time Series and how to install it.
+We have learned how to perform time series analysis and forecasting using the Auto Time Series library. The tutorial shows the models that Auto Time Series runs. We also discussed the benefits of the Auto Time Series and how to install it. We used the Auto Time Series library to build an electricity consumption model. It selected Facebook Prophet as the best model. It had the lowest RMSE score and made predictions for six months.
 
-We used the Auto Time Series library to build an electricity consumption model. It selected Facebook Prophet as the best model. It had the lowest RMSE score and made predictions for six months.
-
-To get the Python code in Google Colab., use this [link](https://colab.research.google.com/drive/1-VZ8YNIbs7GosvtTFyjaYK1HaZhqwqm-?usp=sharing). 
+To get the Python code in Google Colab, use this [link](https://colab.research.google.com/drive/1-VZ8YNIbs7GosvtTFyjaYK1HaZhqwqm-?usp=sharing). 
 
 ### References
 - [Sales Forecasting with Prophet](/engineering-education/sales-forecasting-with-prophet/)
