@@ -121,11 +121,10 @@ Let's have a look at when you can use `ComposePanel` or `SwingPanel` in your app
 - Whenever you need to incorporate a complex display region, Compose is the way to go.
 - Whenever you need to make a complex component of a Swing-based app easier to understand, go for Compose.
 
-The second example is when the component you wish to utilize is only accessible in Swing and not in Compose. Choose *SwingPanel* in this case.
-
 #### SwingPanel use cases
 - When your app does not have complexity in layouts, menus, or other features like tooltips. 
 - When adjusting the position of the Swing component, `SwingPanel` decreases the possibility of problems. This is because the position of a `SwingPanel` does not shift. 
+- When the component you wish to utilize is only accessible in Swing and not in Compose 
 
 ### Using a ComposePanel in a Swing application
 Let's have an example of how our code should look like when using `ComposePanel`.
