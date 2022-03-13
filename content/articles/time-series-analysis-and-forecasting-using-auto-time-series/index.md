@@ -6,7 +6,7 @@ url: /time-series-analysis-and-forecasting-using-auto-time-series/
 title: Time Series Analysis and Forecasting using Auto Time Series
 description: This tutorial will be discussing how to build an electricity consumption prediction model using Auto Time Series library(Auto-TS).
 author: elisha-njeche
-date: 2022-03-08T00:00:00-21:00
+date: 2022-03-13T00:00:00-21:00
 topics: [Machine Learning]
 excerpt_separator: <!--more-->
 images:
@@ -18,9 +18,7 @@ A time series is a sequence of data points that occur in successive order over t
 <!--more-->
 Time series analysis extracts meaningful patterns and attributes from the historical data. It enables the model to gain knowledge and identify trends in the dataset.
 
- Time series builds a model that predicts future values based on historical data. The model can forecast forex exchange rates,  stock prices, weather, and Covid-19 caseload. 
-
-In stock prediction, a time series model tracks the movement of stock prices, such as Apple stock. Accurate predictions of the model will yield profit to the investors. 
+Time series builds a model that predicts future values based on historical data. The model can forecast forex exchange rates,  stock prices, weather, and Covid-19 caseload. In stock prediction, a time series model tracks the movement of stock prices, such as Apple stock. Accurate predictions of the model will yield profit to the investors. 
 
 In this tutorial, we will build an electricity consumption prediction model. We will use [Auto Time Series library(Auto-TS)](https://pypi.org/project/auto-ts/) to train the model.
 
@@ -65,24 +63,16 @@ All the listed models above support time series analysis and forecasting. Auto-T
 
 ### Benefits of using Auto Time Series library
 
-- It performs automated dataset preprocessing
-It will automatically transform the input dataset into a format the model can use.  
-It removes noise and unnecessary information in the dataset. 
+- It performs automated dataset preprocessing. It will automatically transform the input dataset into a format the model can use. It removes noise and unnecessary information in the dataset. 
 
-- It can handle missing values and outliers
-Auto-TS handles the missing values to ensure we have a complete dataset. 
-It also removes outliers that are not within the dataset range.
+- It can handle missing values and outliers. Auto-TS handles the missing values to ensure we have a complete dataset. It also removes outliers that are not within the dataset range.
 
-- It trains high-accuracy models.
-Auto-TS produces reliable and accurate models.
+- It trains high-accuracy models. Auto-TS produces reliable and accurate models.
 
-- It selects the optimal time series model 
-Auto-TS automatically runs multiple time series models listed above. It then automatically selects the optimal model. 
+- It selects the optimal time series model. Auto-TS automatically runs multiple time series models listed above. It then automatically selects the optimal model. 
 The model will give accurate results.
 
-- Automatic hyperparameter tuning and configurations.
-Auto-TS automatically fine-tunes the model parameters.
-It ensures the model gives the best accuracy score.
+- Automatic hyperparameter tuning and configurations. Auto-TS automatically fine-tunes the model parameters. It ensures the model gives the best accuracy score.
 
 ### Installing Auto Time Series library
 To install the Auto Time Series library, run this command:
