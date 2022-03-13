@@ -1,6 +1,6 @@
-YouTube offers an API that allows developers to play different videos in an app.
+YouTube offers an Android API that allows developers to add Youtube capability of playing videos in their app.
 
-In this tutorial, we will create a simple android app that plays a YouTube video with the help of the YouTube API.
+In this tutorial, we will create a simple android app that allows users to search for YouTube videos and then play them with the help of the YouTube API.
 
 ### Table of contents
 - [Prerequisites](#prerequisites)
@@ -8,8 +8,10 @@ In this tutorial, we will create a simple android app that plays a YouTube video
 - [Obtaining your KEY](#obtaining-your-key)
 - [Creating a project](#creating-a-project)
 - [Setting up the project](#setting-up-the-project)
-- [Creating a youtube playerview](#creating-a-youtube-playerview)
-- [Playing video](#playing-video)
+- [Defining a model class](#defining-a-model-class)
+- [Designing user interfaces](#designing-user-interfaces)
+- [Making the search network call](#making-the-search-network-call)
+- [Playing videos](#playing-videos)
 - [Demo](#demo)
 - [Conclusion](#conclusion)
 - [Reference](#reference)
@@ -19,9 +21,10 @@ To follow along and learn more from this tutorial, make sure you have:
 - Android Studio installed on your computer.
 - Basic skills in creating Android apps.
 - Some knowledge in using Kotlin.
+- Knows how to use ViewBinding.
 
 ### Introduction
-YouTube Android Player API  helps developers add the capability of playing Youtube videos in Android apps. However, the API does not have a direct dependency that one can be added to the `Gradle` files. Instead, one must download the API as a zip file and add it manually to the app.
+YouTube offers an Android API that allows developers to add Youtube capability of playing videos in their app. However, the API does not have a direct dependency that one can be added to the `Gradle` files. Instead, one must download the API as a zip file and add it manually to the app.
 
 The API also requires an API key and registration in the Google cloud console. The API is simple to use and has different features that we can leverage to make our apps attractive.
 
@@ -46,7 +49,6 @@ The API also requires an API key and registration in the Google cloud console. T
 Copy the API-Key, and keep it somewhere as we will be using it in our app.
 
 ![api-key](/engineering-education/getting-started-with-youtube-android-player-api-to-play-youtube-videos/api-key.png)
-
 
 ### Hiding the API-Key
 Before we begin the implementation, we need to keep our Youtube API key safe so that when you push the code to Github, the key is not published.
@@ -89,10 +91,53 @@ If you switch back to Android view, navigate to the `Gradle` section, and open t
 
 `implementation files('libs/YouTubeAndroidPlayerApi.jar')`
 
+Add these other dependencies to the app-level `build.gradle` :
+
+```gradle
+    implementation 'com.squareup.retrofit2:retrofit:2.9.0'
+    implementation 'com.squareup.retrofit2:converter-gson:2.9.0'
+```
+
 Go to your `Manifest` file and add the internet permission as our app requires an internet connection to play the video.
 
-### Creating a youtube player view
-Open your `activity_main.xml` file and add the `YouTubePlayerView` view.
+### Defining a model class
+As we will be searching for videos from the YouTube API, a model class is needed to model the JSON response. This will come in handy as the 'ids' of the videos are what we need.
+
+```kotlin
+data class SearchResponse(
+    @SerializedName("items")
+    val items: List<Item>,
+){
+    data class Item(
+        @SerializedName("etag")
+        val etag: String,
+        @SerializedName("id")
+        val id: Id,
+        @SerializedName("kind")
+        val kind: String
+    ){
+        data class Id(
+            @SerializedName("kind")
+            val kind: String,
+            @SerializedName("videoId")
+            val videoId: String
+        )
+    }
+}
+```
+
+### Designing user interfaces
+Let us define a UI that will have a search `EditText`, that lets the user search for a given video, and a `RecyclerView` to display the result of the search.
+
+Go ahead and design the layout for your `activity_main.xml` to be similar to this : 
+
+![layout-main](/engineering-education/getting-started-with-youtube-android-player-api-to-play-youtube-videos/layout.png)
+
+> Don't forget to create a corresponding `RecyclerView` row items and its and the Recycler adapter based on the model class that was created ([You can take a look at how my recycler adapter looks like in this Github gist](https://gist.github.com/mosestakai/e21a114822b7d7c6b53b6920b8190f98)).
+
+> In other cases, you can include the thumbnails of the videos that have been searched, but we will not do that here as that is out of the scope of this tutorial. We will just display the 'ids' of the search results.
+
+For playing the videos, we will do that in another `Activity`. Create a new 'PlayerActivity' and in the `activity_player.xml` add the `YouTubePlayerView` view.
 
 ```Xml
 <com.google.android.youtube.player.YouTubePlayerView
@@ -108,28 +153,91 @@ It would be best if you had something similar to this:
 
 ![layout](/engineering-education/getting-started-with-youtube-android-player-api-to-play-youtube-videos/layout.png)
 
-### Using the API to play the videos
-The youtube API requires that you have the YOUTUBE_ID of the video that you want to play. 
+### Making a search network call
+To query for videos from the YouTube API, use the following API URL - "https://www.googleapis.com/youtube/v3/search/"
 
-If you are integrating the API into your app, you can declare a function that takes in the whole URL for a Youtube video, and then it extracts the ID from the URL.
+Create an API service and in it define the following function :
 
-For us, we will be playing this video - "https://www.youtube.com/watch?v=yunF2PgJlHU". From the URL, the string "v=yunF2PgJlHU" at the end is the YOUTUBE_ID of the video that we will be playing.
+```kotlin
+@GET("search/")
+fun search(
+    @Query("q") searchString: String,
+    @Query("key") apiKey: String = YOUTUBE_API_KEY
+) : Call<SearchResponse>
+```
+The function takes in a search query and the Youtube API key then returns a response of the searched word. 
 
-Declare a variable to hold the ID - `private val YOUTUBE_ID = "yunF2PgJlHU"`
+Creating an instance of the API service :
+
+```kotlin
+object YoutubeApi {
+    fun apiInstance(): ApiService {
+        return Retrofit.Builder()
+            .baseUrl("https://www.googleapis.com/youtube/v3/")
+            .addConverterFactory(GsonConverterFactory.create())
+            .build()
+            .create(ApiService::class.java)
+    }
+}
+```
+
+In your `MainActivity`, inside the `onCreate` method, when the user clicks on the search icon, using the instance of your API service, call the search function, and pass the content that is inside the search `EditText`. `onResponse`, pass the response data to your recycler adapter and then bind the adapter to your `RecyclerView`. 
+
+```kotlin
+binding.searchButton.setOnClickListener {
+    binding.progressBar.isVisible = true
+    val searchTerm = binding.edtSearch.text.toString().trim()
+
+    YoutubeApi.apiInstance.search(searchTerm).enqueue(object : Callback<SearchResponse>{
+        override fun onResponse(
+            call: Call<SearchResponse>,
+            response: Response<SearchResponse>
+        ) {
+            Log.d(TAG, "onResponse: ${response.isSuccessful}")
+            binding.progressBar.isVisible = false
+            val result = response.body()?.items
+            adapter.submitList(result)
+            binding.videosRecycler.adapter = adapter
+        }
+
+        override fun onFailure(call: Call<SearchResponse>, t: Throwable) {
+            binding.progressBar.isVisible = false
+            Toast.makeText(applicationContext, "An error occurred", Toast.LENGTH_SHORT).show()
+        }
+    })
+}
+```
+
+### Playing videos
+When a given search from the `RecyclerView` is clicked, we navigate the user to another the `PlayerActivity` where the video is now played.
+
+The youtube API requires that you have the YOUTUBE_ID of the video that you want to play. We will be passing this 'id' to the `PlayerActivity`.
+
+```kotlin
+adapter = VideosAdapter(VideosAdapter.OnClickListener{ item ->
+    val intent = Intent(this, PlayerActivity::class.java)
+    intent.putExtra("YOUTUBE_VIDEO_ID", item.id.videoId)
+    startActivity(intent)
+})
+```
 
 To use the Youtube API, our `Activity` need to stop extending the `AppCompatActivity` and extend the `YouTubeBaseActivity` : 
 
 ```kotlin
-class MainActivity : YouTubeBaseActivity() {
+class PlayerActivity : YouTubeBaseActivity() {
     ...
 }
 ```
 
-Inside the `onCreate` function, reference our `YoutubePlayerView` :
+Inside the `onCreate` function receive the 'YOUTUBE_VIDEO_ID' that we passed :
+
+`val videoId = intent.getStringExtra("YOUTUBE_VIDEO_ID")`
+
+then reference our `YoutubePlayerView` :
 
 `val youTubePlayerView : YouTubePlayerView = findViewById(R.id.youtubePlayerView)`
 
-Then we need to initialize it :
+Also, we need to initialize :
 
 ```kotlin
 youTubePlayerView.initialize(YOUTUBE_API_KEY, object : YouTubePlayer.OnInitializedListener {
@@ -138,7 +246,7 @@ youTubePlayerView.initialize(YOUTUBE_API_KEY, object : YouTubePlayer.OnInitializ
         player: YouTubePlayer?,
         bln: Boolean
     ) {
-        player?.loadVideo(VIDEO_ID)
+        player?.loadVideo(videoId)
         player?.play()
     }
 
