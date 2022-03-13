@@ -245,7 +245,7 @@ The output:
 To see the last five rows of our dataset, use this code:
 
 ```python
-df.head()
+df.tail()
 ```
 The output:
 
@@ -346,10 +346,10 @@ The output:
 ![Plot diagram](/engineering-education/univariate-time-series-using-facebook-prophet/plot-diagram.jpg)
 
 From the output above:
-The shaded light blue region shows the lower and upper bound values. This region contains the `yhat_upper` and `yhat_lower` values. 
-The black dots are the actual time series values(y). 
-The blue line shows the predicted values(yhat). 
-The chart also shows the forecast values for the next 1000 days. 
+- The shaded light blue region shows the lower and upper bound values. This region contains the `yhat_upper` and `yhat_lower` values. 
+- The black dots are the actual time series values(y). 
+- The blue line shows the predicted values(yhat). 
+- The chart also shows the forecast values for the next 1000 days. 
 
 We can also use Facebook Prophet to plot the components of our forecasts.
 
