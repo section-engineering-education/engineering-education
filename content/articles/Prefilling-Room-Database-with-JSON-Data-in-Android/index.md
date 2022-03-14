@@ -12,7 +12,7 @@ Most of the time, when designing an app, developers strive to come up with a way
 - [Creating Room Database](#step-4---creating-room-database)
 - [Adding JSON Data](#step-5---adding-json-data)
 - [Creating a Prefilling Class](#step-6---creating-a-prefilling-class)
-- [Adding the Class to the Database](#step-7---adding-the-class-to-the-database)
+- [Attaching the callback to the Database](#step-7---attaching-the-callback-to-the-database)
 - [Define Viewmodel](#step-8---define-viewmodel)
 - [Displaying Data](#step-9---displaying-data)
 - [When is it Necessary to Pre-populate a Room Database](#when-is-it-necessary-to-pre-populate-a-room-database)
@@ -28,7 +28,7 @@ To read along with this tutorial you should:-
 This tutorial aims to explain what is pre-populating room database with initial data as used in android. what is a room Callback is and how is it added to the database? How to implement prefilling room database with data and when it is necessary to pre-populate a room database.
 
 ### What is Pre-populating Room Database with Initial Data
-It is a technique in which an application is launched with existing data in its database, which might be a prepared database(.db) files stored on the device's file system or even JSON data.
+It is a technique in which an application is launched with existing data in its database, which might be prepared database(.db) files stored on the device's file system or even JSON data.
 
 ### Getting Started with Pre-populating Room Database.
 In this scenario, let's make an app that functions similarly to a note app, with the exception that we'll just evaluate the note title and description.
@@ -39,7 +39,7 @@ To create a new project with the Android Studio IDE, go to File > New > New Proj
 ![new project](/engineering-education/Prefilling-Room-Database-with-JSON-Data-in-Android/new-project.png)
 
 ### Step 2 - Adding the Necessary dependencies
-Since we shall be working with the room database, we'll need room database dependencies. coroutine dependencies and Kotlin Extensions and Coroutines support for Room Dependencies therefore include the following in your build. Gradle app-level file.
+Since we shall be working with the room database, we'll need the room database, coroutine, and Kotlin extension dependencies. Therefore, include the following in your `build.gradle` app-level file.
 ```Gradle
  // Coroutines
     implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-core:1.6.0'
@@ -58,7 +58,8 @@ Since we shall be working with the room database, we'll need room database depen
     implementation "androidx.room:room-ktx:2.4.2"
 ```
 ### Step 3 - Defining the User Interface
-The user interface under consideration makes use of'recyclerView' to display data and is defined as follows.
+Let us define a user interface that makes use of `RecyclerView` to display the list of data stored in the database.
+
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
@@ -95,12 +96,14 @@ The user interface under consideration makes use of'recyclerView' to display dat
 
 </androidx.constraintlayout.widget.ConstraintLayout>
 ```
-> Make sure to define your row that would define how the data is shown in the recycler view.
+> Make sure to define your recyclerView row that would define how the data is shown in the `RecyclerView`.
 
 ### Step 4 - Creating Room Database
-Room databases are made up of three instances: entity, dao, and database. Let's define all three of these instances to make our room database.
+Room database is made up of three components: Entity, DAO, and Database. Let's define all three components:
+
 #### Entity
-Entity is a data type that functions similarly to a table, and it is often defined as illustrated below.
+Entity is a data class that functions similarly to a table. We will define an `Entity` that holds a note title and its description.
+
 ```kotlin
 @Entity(tableName = "Notes_table")
 data class NoteEntity(
@@ -111,7 +114,8 @@ data class NoteEntity(
 )
 ```
 #### DAO
-DAO is a Data Access Object that is used to access database-stored data. It functions by using methods like insert, get, delete, and update.it is an interface which is defined as shown below
+DAO is a Data Access Object that is used to access the database. It functions by using methods like insert, query, delete, and update.
+
 ```kotlin
 @Dao
 interface NoteDao {
@@ -129,7 +133,8 @@ interface NoteDao {
 }
 ```
 ### Database
-Database is an abstract class which makes use of the data access object instance to perform its functionality and for that case DAO instance should be included. Database is defined as shown below.
+The database is an abstract class that makes use of the data access object instance to perform its functions and for that case, DAO instance should be included.
+
 ```kotlin
 @Database(entities = [NoteEntity::class], version = 1)
 abstract class NoteDatabase : RoomDatabase() {
@@ -157,7 +162,8 @@ abstract class NoteDatabase : RoomDatabase() {
 }
 ```
 ### Step 5 - Adding JSON Data
-Here is the JSON data which will be prepopulated to Room database:
+Here is the JSON data which will be prepopulated into our Room database:
+
 ```Json
 [
   {
@@ -203,12 +209,17 @@ Here is the JSON data which will be prepopulated to Room database:
 ]
 ```
 
-To make use of JSON data to perform pre-population to a room database, the JSON data should be included within the project. This is done by creating a subdirectory raw within the res folder then within the subdirectory add your JSON File.
+JSON data should be included within the project. This is done by creating a sub-directory called `raw` within the `res` directory then within the created sub-directory, add your JSON File.
 
 ![Json](/engineering-education/Prefilling-Room-Database-with-JSON-Data-in-Android/json.png)
 
 ### Step 6 - Creating a Prefilling Class
-Let's make a prefilling class that takes contexts in its constructor and extends `RoomDatabase.Callback()`. which is invoked after all of the tables are built. When the database is created, that is. Within the class, the `onCreate` method. which accepts a database of type `SupportSQLiteDatabase` as a parameter is overridden, and this is where all of the class's functions are called.
+Let's create a prefilling class that will contain the database prefilling logic. 
+
+The class takes contexts in the constructor and extends `RoomDatabase.Callback()`. The `Callback` is invoked after all of the tables are built, that is when the database is created.
+
+Inside the class's `onCreate` method, which accepts a database of type `SupportSQLiteDatabase` as a parameter is overridden, and this is where all of the class's functions are called.
+
 ```kotlin
 class StartingNotes(private val context: Context) :RoomDatabase.Callback() {
     override fun onCreate(db: SupportSQLiteDatabase) {
@@ -219,75 +230,75 @@ class StartingNotes(private val context: Context) :RoomDatabase.Callback() {
     }
 } 
 ```
-A method which is used to load JSON data is defined as shown below, inside the `.openRawResource`, we pass the name of the file that contains the JSON data.
+
+First, let's create a function to load the JSON file. Inside the `.openRawResource`, we pass the name of the file that contains the JSON data.
+
 ```kotlin
- // load JSON data
-    private fun loadJSONArray(context: Context):JSONArray?{
-        //obtain input byte
-        val inputStream = context.resources.openRawResource(R.raw.notes) 
-        //using Buffered reader to read the inputstream byte
-        BufferedReader(inputStream.reader()).use {
-            return JSONArray(it.readText())
-        }
+private fun loadJSONArray(context: Context):JSONArray?{
+
+    val inputStream = context.resources.openRawResource(R.raw.notes) 
+
+    BufferedReader(inputStream.reader()).use {
+        return JSONArray(it.readText())
     }
+}
 ```
-Then, as seen below, a suspend function is defined to conduct the database filling. We get the instance of the database dao so that we can call the insert function. 
+
+Then, let us create a `suspend` function to do the database filling. 
+
+We get the instance of the database's `DAO` so that we can call the insert function. We loop through the JSON result while adding the read data into the database.
 
 ```kotlin
-    //Filling database with data from JSON
-    private suspend fun fillWithStartingNotes(context: Context){
-        //obtaining instances of data access object
-        val dao = NoteDatabase.getInstance(context)?.dao
+private suspend fun fillWithStartingNotes(context: Context){
+    
+    val dao = NoteDatabase.getInstance(context)?.dao
 
-        // use try catch to load the necessary data
-        try {
-            //create a variable that holds the loaded data
-            val notes = loadJSONArray(context)
-            if (notes != null){
-                //looping through the variable as specified fields are loaded with data
-                for (i in 0 until notes.length()){
-                    //variable to obtain the JSON object
-                    val item = notes.getJSONObject(i)
-                    //Using the JSON object to assign data
-                    val noteTitle = item.getString("note-title")
-                    val notesDescription = item.getString("note-description")
+    try {
+        val notes = loadJSONArray(context)
+        if (notes != null){
+            for (i in 0 until notes.length()){
+                 val item = notes.getJSONObject(i)
+                val noteTitle = item.getString("note-title")
+                val notesDescription = item.getString("note-description")
 
-                    //data loaded to the entity
-                    val noteEntity = NoteEntity(
-                        noteTitle,notesDescription
-                    )
+                val noteEntity = NoteEntity(
+                    noteTitle,notesDescription
+                )
 
-                    //use dao to insert data into the database
-                    dao?.insertNote(noteEntity)
-                }
+                dao?.insertNote(noteEntity)
             }
         }
-        //error when exception occurs
-        catch (e:JSONException) {
-            Timber.d("fillWithStartingNotes: $e")
-        }
     }
+
+    catch (e:JSONException) {
+        Timber.d("fillWithStartingNotes: $e")
+    }
+}
 ```
-### Step 7 - Adding the Class to the Database
-Where is the class used now that it's been created?. To complete the prefilling functionality, the prefilling class defined above must be added to the database. This is done with the aid of the `.addCallback()` function when the database instance is created.
+
+### Step 7 - Attaching the callback to the Database
+The prefilling class defined above must be added to the database. This is done with the aid of the `.addCallback()` function when the database instance is created.
+
 ```kotlin
 fun getInstance(context: Context):NoteDatabase?{
-            if (instance == null){
-                synchronized(NoteDatabase::class.java){
-                    instance = Room.databaseBuilder(
-                        context.applicationContext,
-                        NoteDatabase::class.java,
-                        "notes"
-                    )
-                        .addCallback(StartingNotes(context))
-                        .build()
-                }
-            }
-            return instance
+    if (instance == null){
+        synchronized(NoteDatabase::class.java){
+            instance = Room.databaseBuilder(
+                context.applicationContext,
+                NoteDatabase::class.java,
+                "notes"
+            )
+            .addCallback(StartingNotes(context))
+            .build()
         }
+    }
+
+    return instance
+}
 ```
 ### Step 8 - Define Viewmodel
-The View model is a class that allows data to withstand changes in system settings such as screen rotation and keyboard visibility. The ViewModel factory is used to produce and return ViewModel objects that have survived system configurations. The ViewModel class extends `ViewModel()`. Include the database instance in its constructor. It is implemented as shown below:
+Let's define a `ViewModel` for our app, the class should have the implementation of the `DAO` methods.
+
 ```kotlin
 class MainViewModel(private val noteDatabase: NoteDatabase) : ViewModel() {
 
@@ -301,11 +312,14 @@ class MainViewModel(private val noteDatabase: NoteDatabase) : ViewModel() {
 }
 ```
 
+> In this tutorial, I have not implemented other methods as that is not the main focus of this tutorial.
+
 ### Step 9 - Displaying Data
-Since the JSON data has already been loaded to the database it should be displayed to the user interface. The data are displayed onto the `recyclerView` initially defined. The below implementation explains how data is displayed.
+Since the JSON data has already been loaded to the database it should be displayed to the user interface. The data is displayed onto the `recyclerView` that we defined.
+
 ```kotlin
 class MainActivity : AppCompatActivity() {
-    //declaring adapter, ViewModel, and binding
+
     private lateinit var binding: ActivityMainBinding
     private var adapter by lazy { NotesAdapter() }
     private lateinit var viewModel: MainViewModel
@@ -315,13 +329,11 @@ class MainActivity : AppCompatActivity() {
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        //instance of database
         val noteDatabase = NoteDatabase.getInstance(this)
         val myViewModelFactory = MyViewModelFactory(noteDatabase!!)
 
         viewModel = ViewModelProvider(this, myViewModelFactory).get(MainViewModel::class.java)
 
-        //submitting data to the adapter where it is mapped to recyclerview 
         viewModel.notes.observe(this, Observer { result ->
             adapter.submitList(result)
             binding.recyclerView.adapter = adapter
@@ -330,12 +342,12 @@ class MainActivity : AppCompatActivity() {
 }
 ```
 
->Create an adapter that acts as a bridge between the user interface and data sources also, creates a ViewModel Factory which is used to create 
+> Make sure you have created an adapter class that acts as a bridge between the user interface and the Room data source. Also, create a ViewModel Factory, which is used to pass arguments to our `ViewModel`. 
 
 ### When is it Necessary to Pre-populate a Room Database
 - If the program should be launched with a certain set of data.
 - If any explanations need to be completed and are stored in a JSON file.
-- If the program is complicated and the UI components require a literal explanation
+- If the program is complicated and the UI components require a literal explanation.
 
 ### Demo
 ![Demo](/engineering-education/Prefilling-Room-Database-with-JSON-Data-in-Android/demo.png)
