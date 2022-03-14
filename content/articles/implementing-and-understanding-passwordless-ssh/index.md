@@ -6,7 +6,7 @@ url: /implementing-and-understanding-passwordless-ssh/
 title: Understanding and Implementing Passwordless SSH
 description: In this article, we will discuss the basic functioning of the passwordless SSH protocol and how to implement it.
 author: linchez-maina
-date: 2022-03-14T00:00:00-22:30
+date: 2022-03-14T00:00:00-08:00
 topics: [Security]
 excerpt_separator: <!--more-->
 images:
