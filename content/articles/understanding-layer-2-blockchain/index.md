@@ -16,7 +16,7 @@ images:
 ---
 No single blockchain can provide decentralization, security, and scalability in achieving optimal functionality. Most tend to sacrifice some of the elements.
 <!--more-->
-Since the release of Bitcoin, [blockchains](https://www.ibm.com/topics/what-is-blockchain) have gained popularity over recent years. People have started to use the technology in broad areas apart from payments systems. The reason is that blockchain technology promotes decentralization and also secure.
+Since the release of Bitcoin, [blockchains](https://www.ibm.com/topics/what-is-blockchain) have gained popularity over recent years. Excluding payments, blockchain has broader application areas. The reason is that blockchain technology is highly decentralized and secure.
 
 No single blockchain can provide decentralization, security, and scalability in achieving optimal functionality. Most tend to sacrifice some of the elements. A good example is [Bitcoin](https://bitcoin.org/en/) and [Ethereum](https://ethereum.org/en/) platforms. These platforms are competing to offer a secure, scalable and decentralized system. This has led to the discovery of solutions such as [layer-2 protocols](https://academy.binance.com/en/glossary/layer-2).
 
@@ -64,7 +64,7 @@ These are layer-2 protocols that perform computations off the primary chain. In 
 Optimistic rollups regard that every transaction performed on the blockchain is valid. However, in most cases, optimistic rollups take a considerate amount of time to confirm the transactions. This waiting period gives rollups ample time to resolve a dispute if a challenge arises.
 
 #### Zero-knowledge rollups
-They perform computations off the chain before submitting the primary chain's validity proof. They at times use the [smart contract](https://www.ibm.com/topics/smart-contracts) to hold the funds on the base layer. Funds are then released once the proof of validity has been submitted. The primary chain has also validated and confirmed the transaction.
+They perform computations off the chain before submitting the primary chain's validity proof. They at times use the [smart contract](https://www.ibm.com/topics/smart-contracts) to hold the funds on the base layer. Funds are then released once the proof of validity has been submitted and the primary chain has validated and confirmed the transaction.
 
 ### Importance of layer-2 blockchains
 Below are some of the benefits layer-2 protocols offer in the blockchain ecosystem:
