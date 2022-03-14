@@ -98,7 +98,7 @@ Tokenization is the process of securitizing an asset into the blockchain network
 Asset tokenization can be in the form of a Governance Token whereby the future dimensioned pathway of the token is decided by a vote on the blockchain. A security token is also another form of asset tokenization whereby the token is used to represent the state of a real-life asset.
 
 #### Stablecoin
-These are tokens whose price is tagged to the type of assets such as fiat and precious metal. Stable coins can be created via Off-chain Collateral(Fiat), OnChain Collateral (Crypto Asset), Non-Collateralized (Algorithmic).
+These are tokens whose price is tagged to the type of assets such as fiat and precious metal. Stable coins can be created via [Off-chain Collateral(Fiat)](https://www.ecb.europa.eu/paym/intro/publications/pdf/ecb.mipinfocus191128.en.pdf), [OnChain Collateral (Crypto Asset)](https://coinmarketcap.com/alexandria/glossary/collateralized-stablecoin), [Non-Collateralized (Algorithmic)](https://www.coininsider.com/what-is-a-non-collateralized-stablecoin/).
 
 #### Decentralized Exchanges
 Decentralized exchange is also another service of DeFi. It is a marketplace that allows users to trade different assets in the financial market. They are dimensioned across custodial and non-transparent principality which are essentially Centralized Exchanges and non-custodial and transparency for decentralized exchanges.
@@ -106,11 +106,9 @@ Decentralized exchange is also another service of DeFi. It is a marketplace that
 ### Risk and Security Structures in DeFi
 The entire blockchain network is susceptible to security breaches of all types. This article is beyond the scope of examining all the types of security risks in DeFi but as a pointer on the risks that exist on all layers of DeFi, they include:
 
-- Network Attacks such as Eclipse/DOS Attack
-- Consensus Attacks
-- Smart Contract Code Bugs
-- DeFi Protocol Composability attack
-- Bridge Attacks and Governance Attacks
+- [Network Attacks such as Eclipse/DOS Attack](https://www.gemini.com/cryptopedia/eclipse-attacks-defense-bitcoin)
+- [Consensus Attacks](https://help.onekey.so/hc/en-us/articles/360001992856-What-is-consensus-attack-)
+- [DeFi Protocol Composability attack](https://quantstamp.com/blog/defis-composability-more-possibility-more-risk)
 
 While we can’t examine all of these in detail, to some extent all security risk is an extension of the following security structures:
 - Technical Structure
