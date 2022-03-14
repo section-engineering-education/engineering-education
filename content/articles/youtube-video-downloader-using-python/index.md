@@ -6,7 +6,7 @@ url: /youtube-video-downloader-using-python/
 title: Creating a YouTube Video Downloader using Python
 description: In this article we will build a YouTube downloader using Python.
 author: victor-kamau
-date: 2022-03-10T00:00:00-18:00
+date: 2022-03-14T00:00:00-18:00
 topics: [Languages]
 excerpt_separator: <!--more-->
 images:
@@ -14,8 +14,7 @@ images:
  - url: /engineering-education/youtube-video-downloader-using-python/hero.png
    alt: Python Video Downloader example image
 ---
-
-YouTube is an internationally known website for sharing videos. Unfortunately, when you use an online downloader to download a video or try to get it from a random website, you run the danger of your personal information being stolen. 
+YouTube is an internationally known website for sharing videos. Unfortunately, when you use an online downloader to download a video or try to get it from a random website, you face the danger of your personal information being stolen. 
 
 <!-- more -->
 
@@ -39,15 +38,14 @@ The task of downloading videos is incredibly straightforward, efficient, and saf
 
 ### Requirements
 To develop a video downloader, you should have;
-- Prior and a better understanding of Python language
-- Python package installed on your PC
-- An editor of choice
-- Internet connection for API testing
-- **Tkinter** is a Python module for creating GUIs.
-- **Pytube** downloads the video from YouTube.
+- An understanding of Python programming language.
+- Python package installed on your PC.
+- An editor of your choice.
+- **Tkinter** - A Python module for creating GUIs.
+- **Pytube** - Downloads the video from YouTube.
 
 ### Installations
-Requirements need to be ready before you start your development process. A Python environment is a foremost requirement for this project. You can follow [these directives](https://www.section.io/engineering-education/a-beginners-guide-to-python/) to make set-up a Python environment on your PC. A crucial module needs to be installed, which is the beginning of the development process.
+Requirements need to be ready before you start your development process. A Python environment is a foremost requirement for this project. You can follow [these directives](https://www.section.io/engineering-education/a-beginners-guide-to-python/) to set-up a Python environment on your PC. A crucial module needs to be installed, which is the beginning of the development process.
 
 #### Installing PyTube module
 To install Pytube using `pip`, open your command prompt CLI on your machine and type in the following command.
