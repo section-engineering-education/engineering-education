@@ -11,7 +11,7 @@ topics: [Languages]
 excerpt_separator: <!--more-->
 images:
 
-  - url: /engineering-education/spring-cloud-zuul/hero.png
+  - url: /engineering-education/spring-cloud-zuul/hero.jpg
     alt: Spring Cloud routing and filtering using Zuul gateway service
 ---
 
