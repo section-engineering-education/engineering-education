@@ -1,13 +1,27 @@
-### Getting Started with Ray Tracing Algorithm in ML
+---
+layout: engineering-education
+status: publish
+published: true
+url: /getting-started-with-ray-tracing-algorithm-in-machine-learning/
+title: Getting Started with Ray Tracing Algorithm in Machine Learning
+description: This article will take you through the basics of ray tracing alolgorithm and how you can get started with it. 
+author: verah-ombui
+date: 2022-03-14T00:00:00-14:00
+topics: [Machine Learning]
+excerpt_separator: <!--more-->
+images:
+
+  - url: /engineering-education/getting-started-with-ray-tracing-algorithm-in-machine-learning/hero.jpg
+    alt: Ray Tracing Algorithm Hero Image
+---
+### Introduction
+When playing video games, have you ever wondered how or rather what makes the light in the game look similar to the one in real life? This is because of the *ray-tracing technique*, with this process, the game designers can make visible light beams jump into objects, produce real shadows, and create life-like reflections.
+<!--more-->
+Ray tracing has been of great impact in the world today, modifying and innovating various sectors of the tech world. In this article, we'll get to know about the ray tracing algorithm in machine learning.
 
 ### Prerequisites
 - The reader should know what's an algorithm and how it's used in programming.
 - The reader should be familiar with data structures and neural networks.
-
-### Introduction
-When playing video games, have you ever wondered how or rather what makes the light in the game look similar to the one in real life? This is because of the *ray-tracing technique*, with this process, the game designers can make visible light beams jump into objects, produce real shadows, and create life-like reflections.
-
-Ray tracing has been of great impact in the world today, modifying and innovating various sectors of the tech world. In this article, we'll get to know about the ray tracing algorithm in machine learning.
 
 ### Table of contents
 - [What is Ray Tracing Algorithm](#what-is-ray-tracing-algorithm)
@@ -79,3 +93,6 @@ This article intends to give you a basic introduction to guide you through the r
 - [KNN algorithm](https://www.javatpoint.com/k-nearest-neighbor-algorithm-for-machine-learning)
 - [Naive Bayes algorithm](https://www.analyticssteps.com/blogs/what-naive-bayes-algorithm-machine-learning)
 - [Understanding machine learning algorithms and how to implement them](https://www.section.io/engineering-education/understanding-machine-learning-algorithms-and-how-to-implement-them/)
+
+---
+Peer Review Contributions by: [Onesmus Mbaabu](/engineering-education/authors/onesmus-mbaabu/)
