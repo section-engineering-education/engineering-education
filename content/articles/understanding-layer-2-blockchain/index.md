@@ -29,9 +29,7 @@ The purpose of layer-2 protocols is to assist in validating transactions. Thus, 
 
 Blockchain transactions are generally slow compared to the usual payment methods. The reason for this kind of performance usually depends on the blockchain structure. Generally, blockchain transactions go through various phases before they are approved and completed. Some of these phases include acceptance, mining distribution, and validation.
 
-The layer-1 blockchain handles the activities that deal with transactions validation. However, this impacts the processing speed, which affects the blockchain's scalability and experience.
-
-Layer-2 blockchain supports the layer-1 blockchain by relieving it from specific tasks. This enables layer-1 blockchain to deal with specific functions such as security and control.
+The layer-1 blockchain handles the activities that deal with transactions validation. However, this impacts the processing speed, which affects the blockchain's scalability and experience. Layer-2 blockchain supports the layer-1 blockchain by relieving it from specific tasks. This enables layer-1 blockchain to deal with specific functions such as security and control.
 
 The layer-2 blockchain reports to the layer-1 blockchain because layer-1 confirms every transaction to ensure the security of a network.
 
@@ -60,9 +58,7 @@ A sidechain assists the primary chain with validating various transactions in th
 Sidechains are not the same as state channels. The reason is that they store the transactions records on a ledger that can be publicly accessed. It means that if the sidechain is attacked, it cannot affect the primary chain's operations. However, sidechains involve much time and a significant amount of effort to design and build.
 
 #### Rollups
-These are layer-2 protocols that perform computations off the primary chain. In this blockchain, transaction details transfer occurs after a given time interval. This assists in maintaining records.
-
-Also, rollups handle transactions without interfering with the primary layer. This leads to higher throughput at minimal transaction costs. Since transaction details of the rollups are stored on the primary layer, the rollup's security can be guaranteed.
+These are layer-2 protocols that perform computations off the primary chain. In this blockchain, transaction details transfer occurs after a given time interval. This assists in maintaining records. Also, rollups handle transactions without interfering with the primary layer. This leads to higher throughput at minimal transaction costs. Since transaction details of the rollups are stored on the primary layer, the rollup's security can be guaranteed.
 
 #### Optimistic rollups
 Optimistic rollups regard that every transaction performed on the blockchain is valid. However, in most cases, optimistic rollups take a considerate amount of time to confirm the transactions. This waiting period gives rollups ample time to resolve a dispute if a challenge arises.
@@ -79,7 +75,7 @@ The layer-1 blockchain solutions rewrite the base layer protocol for more scalab
 The layer-2 blockchain solutions solve the security challenge. Since the layer-2 solution has been made to compliment the base layer, no change is made to the base layer. Therefore no change is made to the underlying protocol.
 
 #### Increased transaction speed
-In layer-2 protocols, a transaction is handled off-chain. It thus minimizes the chain's workload, increasing the blockchain speed and scalability. Also, as mentioned earlier layer-2 solutions relieve the main chain from performing tasks. So, the main chain can focus on the blockchain's security and decentralization. Furthermore, the layer-2 protocols can be enhanced to handle computations faster. This leads to increased throughputs.
+In layer-2 protocols, a transaction is handled off-chain. It thus minimizes the chain's workload, increasing the blockchain speed and scalability. Also, as mentioned earlier layer-2 solutions relieve the main chain from performing tasks. So, the main chain can focus on the blockchain's security and decentralization. Furthermore, the layer-2 protocols can be enhanced to handle computations faster. This leads to increased throughput.
 
 #### Increased scalability
 The layer-2 blockchain was designed to provide scalability to the blockchain’s applications. The off-chain protocols ensure a higher throughput of the blockchain network. This ensures that the blockchain's applications can be scaled with ease. So, the users can enjoy a great experience regardless of the blockchain’s network load.
@@ -90,11 +86,12 @@ In a blockchain network, miners are responsible for transactions validation. It 
 The layer-2 blockchain minimizes the processing resources needed to handle the validations. This reduces the transaction costs since the miners can process more transactions.
 
 ### Conclusion
-The layer-2 solution is the main gateway towards decentralizing the blockchain network. The protocols provide miners with adequate computing resources and reduced transaction fees.
-
-Also, with layer-2 protocols, blockchain can be integrated into global commerce. This can assist in building networks useful in different industries. 
+The layer-2 solution is the main gateway towards decentralizing the blockchain network. The protocols provide miners with adequate computing resources and reduced transaction fees. Also, with layer-2 protocols, blockchain can be integrated into global commerce. This can assist in building networks useful in different industries. 
 
 ### Further reading
 - [Bitcoin vs Ethereum](https://www.simplilearn.com/tutorials/blockchain-tutorial/ethereum-vs-bitcoin).
 - [Understanding Layer-2 Rollups Blockchain](https://ethereum.org/en/developers/docs/scaling/layer-2-rollups/).
 - [Overview of Smart Contracts](https://ethereum.org/en/developers/docs/smart-contracts/).
+
+---
+Peer Review Contributions by: [Collins Ayuya](https://www.section.io/engineering-education/authors/collins-ayuya/)
