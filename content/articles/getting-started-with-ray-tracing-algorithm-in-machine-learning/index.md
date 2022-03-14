@@ -5,7 +5,7 @@ published: true
 url: /getting-started-with-ray-tracing-algorithm-in-machine-learning/
 title: Getting Started with Ray Tracing Algorithm in Machine Learning
 description: This article will take you through the basics of ray tracing alolgorithm and how you can get started with it. 
-author: verah-ombui
+author: lenox-majiwa
 date: 2022-03-14T00:00:00-14:00
 topics: [Machine Learning]
 excerpt_separator: <!--more-->
@@ -14,7 +14,6 @@ images:
   - url: /engineering-education/getting-started-with-ray-tracing-algorithm-in-machine-learning/hero.jpg
     alt: Ray Tracing Algorithm Hero Image
 ---
-### Introduction
 When playing video games, have you ever wondered how or rather what makes the light in the game look similar to the one in real life? This is because of the *ray-tracing technique*, with this process, the game designers can make visible light beams jump into objects, produce real shadows, and create life-like reflections.
 <!--more-->
 Ray tracing has been of great impact in the world today, modifying and innovating various sectors of the tech world. In this article, we'll get to know about the ray tracing algorithm in machine learning.
@@ -87,7 +86,7 @@ Ray Tracing is becoming more popular day in day out, it's an interesting field t
 This article intends to give you a basic introduction to guide you through the ray tracing algorithm in machine learning, from its history and how it works to its applications. The reader should have known where to start from in the ray-tracing "world" since he/she will have a clear understanding of it.
 
 ### Resources
- Here are some articles about machine learning algorithms;
+ Here are some articles about machine learning algorithms:
 
 - [SVM algorithm](https://www.javatpoint.com/machine-learning-support-vector-machine-algorithm)
 - [KNN algorithm](https://www.javatpoint.com/k-nearest-neighbor-algorithm-for-machine-learning)
