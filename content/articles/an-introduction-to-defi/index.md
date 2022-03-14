@@ -6,7 +6,7 @@ url: /an-introduction-to-defi/
 title: An Introduction to DeFi
 description: This article will introduce the reader on all aspects of DeFi. 
 author: adetu-ridwan
-date: 2022-02-25T00:00:00-21:00
+date: 2022-03-14T00:00:00-21:00
 topics: [Blockchain]
 excerpt_separator: <!--more-->
 images:
@@ -16,23 +16,23 @@ images:
 ---
 The origin of blockchain technology has resulted in a dynamic shift in financial and technological systems. This shift has resulted in how applications are developed and their fundamental structure in their operation.
 <!--more-->
-DeFi referred to as Decentralized Finance,  is a dynamic technological evolution of the traditional financial space. Hence, to adequately define DeFi, we need to have a basic understanding of traditional finance.
+DeFi referred to as Decentralized Finance, is a dynamic technological evolution of the traditional financial space. Hence, to adequately define DeFi, we need to have a basic understanding of traditional finance.
 
 Traditional Finance is the process that involves the creation, management, investment of money, and financial assets. All these activities are controlled or regulated by a central authority.
 
 In traditional finance, the following are the core properties:
 - They hold custody of customers' funds.
-- They serve as an intermediary for transactions
-- They are highly regulated
-- Customers have no privacy to the service provider
-- User data are stored in opaque databases and applications
+- They serve as an intermediary for transactions.
+- They are highly regulated.
+- Customers have no privacy to the service provider.
+- User data are stored in opaque databases and applications.
 
 Decentralized Finance, subsequently, utilizes blockchain technology to solve the centralized authority problem in traditional finance, towards decentralizing control and operation.
 
 We can define DeFi by examining the following factors:
-- Custody & Settlement 
-- Censor of Transaction execution
-- Protocol Governance
+- Custody & Settlement. 
+- Censor of Transaction execution.
+- Protocol Governance.
 
 Decentralized Finance is a system characterized by non-custody settlement, non-censor of transaction execution, and no single protocol governance. 
 
@@ -41,7 +41,7 @@ The other dimension of DeFi is Centralized Decentralized Finance with single pro
 Central Intermediary and Decentralized Finance where there is non-custody of settlement and protocol governance, but there exists the censor of transaction execution is another dimension of Decentralized Finance.
 
 ### How DeFi is built and the roles in DeFi
-DeFi is built on top of a decentralized Smart contract platform, and within the DeFi Ecosystem we have the following roles:
+DeFi is built on top of a decentralized Smart Contract platform. Within the DeFi Ecosystem, we have the following roles:
 - The Users 
 - The Protocol
 - The Keeper
@@ -52,19 +52,19 @@ DeFi is built on top of a decentralized Smart contract platform, and within the 
 The users are the entities that operate with the application and services built on layers of the DeFi stack. The users require the application layer to interact with the protocol layer.
 
 #### The Protocol 
-The protocol is the smart contract where the code is written on and executed to create the underlying financial services required by the users.
+The protocol is the smart contract where the code is written and executed to create the underlying financial services required by the users.
 
 #### The Keeper
 The keeper is an intermediary between the users and the protocol. The role of the Keeper is to send trigger events from the user layer to the blockchain.
 
 #### Oracle
-DeFi applications in the blockchain may need information from the outside world, and this is executed with the Oracle database management system to store data from outside the blockchain network and supply the data into the blockchain network.
+DeFi applications in the blockchain may need information from the outside world. This process is executed with the Oracle database management system to store data from outside the blockchain network and supply the data into the blockchain network.
 
 #### Bridge
 A blockchain is a distributed database with Atomic settlement. As a result, the blockchain may need to interact with another blockchain that may have another type of financial asset. To ensure the successful interaction between the two blockchains, a bridge enables the transfer of such information.
 
 ### The Layers in The DeFi Stack
-There are five layers in the DeFi Stack, and they are as follows:
+There are five layers in the DeFi Stack. They are as follows:
 - The Settlement Layer
 - The Asset Layer
 - The Protocol Layer
@@ -75,41 +75,37 @@ There are five layers in the DeFi Stack, and they are as follows:
 This is the first layer of the DeFi Stack upon which other DeFi transactions are logged on the blockchain. On this layer, transactions occurring on DeFi applications are settled through the use of a currency which could be a stablecoin or a cryptocurrency such as USDT and ETH.
 
 #### The Asset Layer
-The asset layer implements the different financial assets, such as the native protocol asset (Ethereum). In this layer, there are standard protocols on how to interact with the token contract, ERC20 is one of the standards used on this layer to maintain a different balance for the asset. 
+The asset layer implements the different financial assets, such as the native protocol asset (Ethereum). In this layer, there are standard protocols on how to interact with the token contract. ERC20 is one of the standards used on this layer to maintain a different balance for the asset. 
 
 #### The Protocol Layer
-The protocols are created as smart contracts with rules defined to govern tasks and activities on the asset. The protocol layer is where different types of financial services are implemented such as Lending, Derivatives, Asset Management, and more, and as such,  it provides liquidity to the DeFi ecosystem.
+The protocols are created as smart contracts with rules defined to govern tasks and activities on the asset. The protocol layer is where different types of financial services are implemented such as Lending, Derivatives, Asset Management, and more. As such, it provides liquidity to the DeFi ecosystem.
 
 #### The Application Layer
-The application layer is user-facing. It is an intermediary between the user and the cloud servers that interpolate with the entire stacks of the blockchain and particularly the underlying protocol layer.
+The application layer is user-facing. It is an intermediary between the user and the cloud servers that interpolate with the entire stacks of the blockchain and particularly, the underlying protocol layer.
 
 #### The Aggregation Layer
-This layer consists of different applications from the application layer all stacked up into our application to provide user access to other DeFi services. An example is a cryptocurrency wallet with multiple services such as staking, lending and exchange.
+This layer consists of different applications from the application layer all stacked up into one application to provide user access to other DeFi services. An example is a cryptocurrency wallet with multiple services such as staking, lending and exchange.
 
 ### DeFI Building Block and Services
-The following are some of the building blocks and services of Decentralized Finance
-- Asset Tokenization
-- Stablecoin
-- Decentralized Exchanges 
+The following are some of the building blocks and services of Decentralized Finance:
+- Asset Tokenization.
+- Stablecoin.
+- Decentralized Exchanges. 
 
-### Asset Tokenization
+#### Asset Tokenization
 Tokenization is the process of securitizing an asset into the blockchain network. Upon tokenization of such security, the representation of the asset on the blockchain is what we call “Tokens”. 
  
 Asset tokenization can be in the form of a Governance Token whereby the future dimensioned pathway of the token is decided by a vote on the blockchain. A security token is also another form of asset tokenization whereby the token is used to represent the state of a real-life asset.
 
+#### Stablecoin
+These are tokens whose price is tagged to the type of assets such as fiat and precious metal. Stable coins can be created via Off-chain Collateral(Fiat), OnChain Collateral (Crypto Asset), Non-Collateralized (Algorithmic).
 
-### Stablecoin
-These are tokens whose price is tagged to the type of assets such as fiat and precious metal. Stable coins can be created via Off-chain Collateral(Fiat), OnChain Collateral(Crypto Asset), Non-Collateralized(Algorithmic)
-
-### Decentralized Exchanges
-Decentralized exchange is also another service of DeFi. It is a marketplace that allows users to trade different assets in the financial market. 
-
-Decentralized exchanges are dimensioned across custodial and non-transparent principality which are essentially Centralized Exchanges and non-custodial and transparency for decentralized exchanges.
+#### Decentralized Exchanges
+Decentralized exchange is also another service of DeFi. It is a marketplace that allows users to trade different assets in the financial market. They are dimensioned across custodial and non-transparent principality which are essentially Centralized Exchanges and non-custodial and transparency for decentralized exchanges.
 
 ### Risk and Security Structures in DeFi
-The entire blockchain network is susceptible to security breaches of all types.
+The entire blockchain network is susceptible to security breaches of all types. This article is beyond the scope of examining all the types of security risks in DeFi but as a pointer on the risks that exist on all layers of DeFi, they include:
 
-This article is beyond the scope of examining all the types of security risks in DeFi but as a pointer on the risks that exist on all layers of DeFi, they include:
 - Network Attacks such as Eclipse/DOS Attack
 - Consensus Attacks
 - Smart Contract Code Bugs
