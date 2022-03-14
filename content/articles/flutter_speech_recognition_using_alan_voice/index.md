@@ -1,7 +1,21 @@
-![hero](/engineering-education/flutter_speech_recognition_using_alan_voice/hero.png)
+---
+layout: engineering-education
+status: publish
+published: true
+url: /flutter_speech_recognition_using_alan_voice/
+title: How to Build a Speech Recognition App in Flutter using Alan Voice
+description: This tutorial will walk the reader through how to build speech recognition app with Flutter using Alan voice.
+author: emmanuel-ezenagu
+date: 2022-03-14T00:00:00-05:42
+topics: [Languages]
+excerpt_separator: <!--more-->
+images:
 
+  - url: /engineering-education/flutter_speech_recognition_using_alan_voice/hero.png
+    alt: How to Build a Speech Recognition App with Flutter using Alan Voice Hero Image
+---
 Speech recognition is not a new technology, it has been around for a couple of years and has led to the development of amazing features in modern applications. Some of these features include voice assistance and speech to text. 
-
+<!--more-->
 Alan voice is an artificial intelligent-powered platform that uses conversational voice to create powerful voice assistant applications. With the Alan voice plugin, we can set up basic functionality in our application that communicates with users using speech recognition.
 
 In this tutorial, you will learn how to create an application that performs actions based on user commands using speech recognition.
@@ -235,10 +249,13 @@ Run the app, click the speech recognition button and say open YouTube once more,
 ### Conclusion
 In this tutorial, we learned how to integrate speech recognition into our app using Alan voice, we can easily set up voice help or perform complex and/or automated actions in our application. The hassle of deploying builds regularly for little updates has been taken care of and more commands can be added to your application.
 
+Happy coding!
+
 ### Further reading
 - [Flutter docs](https://docs.flutter.dev/)
 - [Flutter pub package alan_voice](https://pub.dev/packages/alan_voice)
 - [Flutter pub package external_app_launcher](https://pub.dev/packages/external_app_launcher)
 - [Github link to code](https://github.com/Eze4Manuel/flutter_speech_recognition_using-_alan_voice)
 
-
+---
+Peer Review Contributions by: [Jethro Magaji](/engineering-education/authors/jethro-magaji/)
