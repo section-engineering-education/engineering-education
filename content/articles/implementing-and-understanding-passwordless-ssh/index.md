@@ -6,31 +6,30 @@ url: /implementing-and-understanding-passwordless-ssh/
 title: Understanding and Implementing Passwordless SSH
 description: In this article, we will discuss the basic functioning of the passwordless SSH protocol and how to implement it.
 author: linchez-maina
-date: 2022-03-08T00:00:00-22:30
+date: 2022-03-14T00:00:00-22:30
 topics: [Security]
 excerpt_separator: <!--more-->
 images:
-
  - url: /engineering-education/implementing-and-understanding-passwordless-ssh/hero.png
-  alt: Understanding and Implementing Passwordless SSH Example Image
+   alt: Understanding and Implementing Passwordless SSH Example Image
 ---
 Online privacy and security are vital considerations in our modern era. The high value of information has caused a need to implement better security practices and strategies. 
 <!--more-->
 The Secure Shell Host protocol (SSH) is one of the important security protocols used to protect data in an insecure network. The cryptographic-based protocol has evolved to a passwordless alternative to increase its resilience.
 
-#### What you will learn
+### What you will learn
 1. What is passwordless SSH?
 2. The working of passwordless SSH.
 3. Its use cases.
 4. Setting up passwordless SSH.
 5. Advantages and disadvantages of passwordless SSH.
 
-#### What is passwordless SSH
+### What is passwordless SSH
 The Secure Shell or Secure Socket Shell protocol (SSH) is a cryptographic-based network protocol that Yatu Ylonen wrote in 1995. The protocol is applied when establishing secure connections between two devices, i.e., a client and a server. SSH can be implemented using several authentication techniques. The two widely used techniques are public/private-key (cryptographic) based authentication and password-based authentication.
 
 The passwordless SSH protocol uses a process where your device establishes a connection with a remote computer without the need of you keying in a password. The improved alternative eliminates the need to use complex passwords that are hard to recall. Thus, the passwordless SSH protocol protects its users from common password-based attacks.
 
-#### The working of the passwordless SSH protocol
+### The working of the passwordless SSH protocol
 The passwordless SSH protocol utilizes an SSH client to send a cryptographic key to and from the client device. The key exchange procedure does not use a password as it uses public-key cryptography principles.
 
 > A public key is a long string of random characters generated from a private key. As its name suggests, the public key can be shared by anyone.
@@ -45,7 +44,7 @@ The process of establishing a secure connection using the passwordless SSH proto
 
 > The lack of passwords is among the main reasons for preferring the passwordless SSH over its password-based alternative.
 
-#### Use cases of SSH
+### Use cases of SSH
 The SSH protocol is the remote standard method for accessing and managing Linux-based servers. Many corporate organizations utilize the protocol to administer and manage their web servers.
 
 Some of the administration functions performed on servers using the SSH protocol include:
@@ -57,7 +56,7 @@ Some of the administration functions performed on servers using the SSH protocol
 - Running remote CLI commands.
 - Troubleshooting the servers in case of any technical failures.
 
-#### Setting up passwordless SSH
+### Setting up passwordless SSH
 It is now time to dive into setting up the passwordless protocol on Linux. Let us get started!
 
 > If you are on a Unix-based OS, like Windows, you can use SSH client software like Putty. 
@@ -74,6 +73,7 @@ The above command allows you to specify the keygen algorithm and key size to use
 `ssh-keygen -t RSA -b 4096.`
 
 You may choose to add your email address to increase security.
+
 `ssh-keygen -t RSA -b 4096 -C "email-address@somepage.com"`
 
 #### Step 2: Uploading the public key to a host server
@@ -89,7 +89,7 @@ To establish a connection using SSH, use the following command:
 
 `ssh [your_username]@[remote_server_ip_address]`
 
-#### Advantages of passwordless SSH
+### Advantages of passwordless SSH
 #### 1. Improves user experience 
 Passwordless SSH enhances the user experience as it removes the need for users to memorize complex or lengthy passwords. According to NordPass statistics, the average internet user has at least 10 passwords. Having many passwords makes it easy for people to forget them when logging into a system. Passwordless SSH saves users time by eliminating the need to memorize passwords.
 
@@ -103,7 +103,7 @@ A brute-force attack involves an attacker guessing characters to form a password
 Passwordless authentication solutions reduce overall security costs. An organization does not need to incur costs from storing passwords on authenticating servers that require maintenance and management. 
 The protocol also frees up the IT department as they will no longer be required to redefine password policies. The IT department will also not need to monitor user activity or detect and prevent password leakages.
 
-#### Disadvantages of passwordless SSH
+### Disadvantages of passwordless SSH
 #### 1. Hard to protect users after device theft
 The authentication keys used to implement passwordless SSH are retained in a device. After a device theft, a person can access and use your connection since they have access to your device. Some systems that implement passwordless SSH authentication use OTPs mostly sent via SMS. Thus, users have to protect their SIM cards and phones. When someone steals your device, they can intercept the OTPs and magic links that authenticate a login session, thus compromising your security.
 
@@ -116,12 +116,12 @@ There are free software companies that offer free implementation of passwordless
 #### 4. It does not protect against malware
 Some systems that use passwordless SSH authentication require OTPs. Malware such as screen readers and keyloggers can intercept OTPs and magic links, thus compromising the security of a system.
 
-#### Conclusion
+### Conclusion
 In this article, we understood the basic functioning of the passwordless SSH protocol. We looked at its pros and cons and the reasons why it is better than a password-based authentication system. Additionally, we gained insights on setting up the passwordless SSH protocol on your local device. You should note that the passwordless SSH protocol holds an upper advantage over its password-based alternative. Thus, its adoption in the tech world will be swift and inevitable. 
 
 I hope you enjoyed reading the article. All the best!
 
-#### References
+### References
 - [A Look at SSH Passwordless Authentication in cyber security by Megha Thakkar](https://sectigostore.com/blog/what-is-passwordless-ssh-a-look-at-ssh-passwordless-authentication/)
 - [The Pros and Cons of Passwordless Authentication in web security by Medha Mehta.](https://sectigostore.com/blog/the-pros-and-cons-of-passwordless-authentication/)
 - [How to Setup Passwordless SSH Login](https://linuxize.com/post/how-to-setup-passwordless-ssh-login/)
