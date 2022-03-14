@@ -1,9 +1,26 @@
-﻿### Introduction
+---
+layout: engineering-education
+status: publish
+published: true
+url: /understanding-layer-2-blockchain/
+title: Understanding Layer-2 Blockchain
+description: This article will discuss layer-2 blockchain solutions and explain the working and uses of layer-2 protocols in a blockchain network.
+author: martha-ngugi
+date: 2022-03-14T00:00:00-16:30
+topics: []
+excerpt_separator: <!--more-->
+images:
+
+  - url:  /engineering-education/understanding-layer-2-blockchain/hero.jpg
+    alt: Blockchain Image
+---
+No single blockchain can provide decentralization, security, and scalability in achieving optimal functionality. Most tend to sacrifice some of the elements.
+<!--more-->
 Since the release of Bitcoin, [blockchains](https://www.ibm.com/topics/what-is-blockchain) have gained popularity over recent years. People have started to use the technology in broad areas apart from payments systems. The reason is that blockchain technology promotes decentralization and also secure.
 
 No single blockchain can provide decentralization, security, and scalability in achieving optimal functionality. Most tend to sacrifice some of the elements. A good example is [Bitcoin](https://bitcoin.org/en/) and [Ethereum](https://ethereum.org/en/) platforms. These platforms are competing to offer a secure, scalable and decentralized system. This has led to the discovery of solutions such as [layer-2 protocols](https://academy.binance.com/en/glossary/layer-2).
 
-In this article, we will cover layer-2 blockchain solutions. Explain how the layer-2 protocols work and why they are used in the blockchain network.
+In this article, we will cover layer-2 blockchain solutions and explain how the layer-2 protocols work and why they are used in the blockchain network.
 
 ### The concept of layer-2 blockchain
 Layer-2 blockchain network operates on top of another network forming a secondary protocol. The layer-2 blockchain is different from the [layer-1 blockchain](https://www.binance.com/en/blog/fiat/layer-1-blockchain-tokens-everything-you-need-to-know-421499824684903155). The reason is that layer-2 protocols do not depend on the layer-1 protocols (base layer).
