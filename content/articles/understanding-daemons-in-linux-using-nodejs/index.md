@@ -49,7 +49,7 @@ By the end of this article the learner should be able to;
 
 We'll consider a simple node HTTP module:
 
-``` 
+```Javascript 
     const http = require('http');
 
     const server = http.createServer(function(req, res) {
@@ -72,7 +72,7 @@ We'll consider a simple node HTTP module:
 
 You run the code in a new terminal window using:
 
-``` 
+```Bash 
 $ node testserver.js
 ```
 Everything works fine and everyone is happy as they can access port 5000, but what happens when you close the session, the server becomes inaccessible and you're probably out of a job.
@@ -87,13 +87,13 @@ Running a script in the same way shown above makes it a **foreground task**, thi
 
 The first step in converting this process to a daemon, is converting it to a background task, we don't want the said program to monopolize the command line window, we want to do other things while the server is running, to do this we write:
 
-``` 
+```Bash 
 $ node testserver.js &
 ```
 
 When we add the ampersand at the end of the script it automatically becomes a background task. To view all the background tasks you can write:
 
-``` 
+```Bash 
  $ ps
 ```
 
@@ -122,7 +122,7 @@ On most Linux systems this parameter is 'off' by default so the background tasks
 
 To check a bash shell's huponexit parameter we type:
 
-``` 
+```Bash 
 $ shopt | grep huponexit
 ```
 The huponexit parameter can still be set to 'on' by the administrator or some other running daemon, so using the ampersand is not always full proof.
@@ -137,7 +137,7 @@ This is a safer approach compared to running it as a background task.
 
 Execute the command below and check the jobs list, you won't find the process there, It is now a daemon.
 
-``` 
+```Bash 
 $ node testserver.js &
 $ disown
 ```
@@ -146,25 +146,25 @@ The usage of disown is as follows;
 
 1. To remove the most recent background task that was running:
 
-``` 
+```Bash 
 $ disown
 ```
 
 2. To remove all background tasks:
 
-``` 
+```Bash 
 $ disown -a
 ```
 
 3. To only keep background tasks from receiving the SIGHUP signal:
 
-``` 
+```Bash 
 $ disown -h
 ```
 
 4. To remove a specific background task with job-ID reference:
 
-``` 
+```Bash 
 $ disown %2
 $ disown -h %2
 ```
@@ -175,7 +175,7 @@ The main problem of the disown command is that after exiting the session and the
 
 As an example, after running the command using the disown command, navigate to the **testserver.js** module and add a line of code.
 
-``` 
+```Javascript 
 console.log('Please access the port');
 ```
 
@@ -185,7 +185,7 @@ We try running the module using the disown command as shown above and it display
 
 Instead of using the disown command as shown above it is better to direct the error somewhere else as shown below:
 
-```
+```Bash
 $ node testserver.js > stdout.txt 2> stderr.txt < /dev/null &
 $ disown
 ```
@@ -196,7 +196,7 @@ The nohup command is a better alternative to the disown command, this is because
 
 We run it using:
 
-```
+```Bash
 $ nohup node testserver.js &
 ```
 
@@ -211,7 +211,7 @@ A screen command will allow us to have many terminal sessions running concurrent
 
 It comes pre-installed but if you don't have it use:
 
-```
+```Bash
 $ sudo apt-get install screen
 ```
 
@@ -221,7 +221,7 @@ $ sudo apt-get install screen
 
 2. To start the server:
 
-```
+```Bash
 $ screen -S mytestserverscreen
 
 $ node testserver.js
@@ -230,19 +230,19 @@ $ node testserver.js
 3. Press Ctrl + A then Ctrl + D to exit/detach from that particular screen to the 'parent' screen. You can log out from there.
 4. To access it the next time you log in to a terminal window **and only if you created one screen** press:
 
-```
+```Bash
 $ screen -r
 ```
 
 5. If you created multiple screens check their names using:
 
-```
+```Bash
 $ screen -ls
 ```
 
 6. To attach/connect to a specific screen use:
 
-```
+```Bash
 $ screen -r mytestserverscreen
 ```
 
@@ -254,7 +254,7 @@ A tmux command will also allow you to perform the same task
  
 2. To run the server type:
 
-```
+```Bash
 $ tmux
 $ node testserver.js
 ```
@@ -263,7 +263,7 @@ If "tmux detach" doesn't work press Ctrl + B and D to go back to the original se
 
 3. The next time you log in return to where the running service of the app session is in the background by:
 
-```
+```Bash
 $ tmux attach
  ```
 
@@ -271,25 +271,25 @@ $ tmux attach
 
 - To create a new session:
 
-```
+```Bash
 $ tmux new -s mytestservertmuxscreen
 ```
 
 - Switching to the specific session:
 
-```
+```Bash
 $ tmux attach -t mytestservertmuxscreen
 ```
 
 - Listing all available sessions:
 
-```
+```Bash
 $ tmux list-sessions
 ```
 
 - Killing a specific session:
 
-```
+```Bash
 $ tmux kill-session -t mytestserverscreen
 ```
 
@@ -301,7 +301,7 @@ We use NPM to manage all these tools.
 
 - NPM installation:
 
-```
+```Bash
 $ sudo apt-get install npm
 ```
 
@@ -311,38 +311,38 @@ Forever's distinguishing feature is that it ensures the application will restart
 
 - Installation:
 
-```
+```Bash
 $ sudo npm install forever -g
 ```
 - How to use Forever
 
 1. Starting forever as a foreground task:
 
-```
+```Bash
 $ forever testserver.js
 ```
 
 2. Starting forever as a service process:
 
-```
+```Bash
 forever start app.js
 ```
 
 3. Stopping a specific service process:
 
-```
+```Bash
 $ forever stop ID_number
 ```
 
 4. Restarting a specific service process:
 
-```
+```Bash
 $ forever restart ID_number
 ```
 
 5. Listing all processes:
 
-```
+```Bash
 $ forever list
 ```
 
@@ -354,7 +354,7 @@ Its biggest strength is that it has a watch function, which automatically restar
 
 - Installation
 
-```
+```Bash
 $ sudo npm install -g nodemon
 ```
 
@@ -362,7 +362,7 @@ $ sudo npm install -g nodemon
 
 To use the watch function to monitor changes to a specified file:
 
-```
+```Bash
 $ nodemon --watch app --watch libs testserver.js
 ```
 
@@ -374,7 +374,7 @@ While it can restart and monitor applications, it also collects log report chang
 
 - Installation
 
-```
+```Bash
 $ sudo npm install pm2 -g
 ```
 
@@ -382,43 +382,43 @@ $ sudo npm install pm2 -g
 
 1. starting the application:
 
-```
+```Bash
 $ pm2 start app.js
 ```
 
 2. To specify the maximum number of processes to start at a given time:
 
-```
+```Bash
 $ pm2 start app.js -i max
 ```
 
 3. To list all available tasks:
 
-```
+```Bash
 $ pm2 list
 ```
 
 4. To stop a specified task:
 
-```
+```Bash
 $ pm2 stop 0
 ```
 
 5. To restart a specified task:
 
-```
+```Bash
 $ pm2 restart 0
 ```
 
 6. To export data:
 
-```
+```Bash
 $ pm2 dump
 ```
 
 7. To start a web interface http://localhost:9615:
 
-```
+```Bash
 $ pm2 web
 ```
 
