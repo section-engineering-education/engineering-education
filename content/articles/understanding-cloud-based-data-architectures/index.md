@@ -16,9 +16,9 @@ images:
 ---
 Most global enterprises rely on big data, which uncovers hidden patterns. For this reason, organizations are switching to new data technologies to remain competitive in the market. Businesses operating with legacy infrastructure find it challenging to use these new technologies. This is the main reason that is making businesses migrate to cloud-based technologies.
 <!--more-->
-Nowadays, cloud computing is generating huge income for businesses. This means that cloud data architecture is significant to the digital economy. The reason is that it provides speed and agility and quick access to data and data unification.
+Nowadays, cloud computing is generating huge income for businesses. This means that cloud data architecture is significant to the digital economy. This is because it provides agility and quick access to data and data unification.
 
-The article covers [cloud-based data architectures](https://www.snowflake.com/trending/cloud-data-architectures) and how businesses can use them to maximize their returns.
+This article covers [cloud-based data architectures](https://www.snowflake.com/trending/cloud-data-architectures) and how businesses can use them to maximize their returns.
 
 ### The concept of cloud data architectures
 Most applications use the traditional database architecture to integrate similar [structured](https://www.tibco.com/reference-center/what-is-structured-data) data types. However, the complexity of the data involved may not favor the local parameters. Besides, the on-premises storage architecture is usually expensive to build and maintain. It is impractical to maintain the speed and flexibility of modern datasets in this era of big data.
@@ -27,10 +27,10 @@ Thus, cloud-based data warehouse architecture is favorable to curb the above cha
 
 ### Benefits of cloud data architectures
 Below are the benefits of cloud data architectures over the classic architectures:
-- **Fast data access rates:** Cloud computing enhances the processing speeds compared to the on-premises architecture. Complex workloads take much time to process and complete. With higher processing speeds, data can be easily accessed. This also improves the processing of tasks.
+- **Fast data access rates:** Cloud computing enhances the processing speed compared to the on-premises architecture. Complex workloads take much time to process and complete. With higher processing speeds, data can be easily accessed. This also improves the processing of tasks.
 - **Low computing costs:** An organization that maintains on-premises infrastructure incurs additional costs. These include investment in the server hardware and software. Maintenance of the same requires skilled personnel to handle, which is costly. Cloud architectures greatly minimize these costs as most of the activities are handled by cloud vendors.
 - **Supports future technological improvements:** Testing new technological advancements on the on-premises architecture is not financially viable and tends to be impractical. However, it is possible to roll out new technology and deploy it quickly with cloud technologies. It is also possible to update the existing technology without upgrading the server infrastructure.
-- **Access to real-time analytics and data processing:** Nowadays, real-time data analytics are vital to any organization. The data provide information about the clients' transactions, business processes, technology adoption, and utilization. Cloud technology integrates machine learning and AI tools that perform big data analysis. They analyze unstructured data to give valuable insights. This is impossible with the on-premises architecture as it tends to be expensive and impacts the system’s performance.
+- **Access to real-time analytics and data processing:** Nowadays, real-time data analytics are vital to any organization. The data provides information about the clients' transactions, business processes, technology adoption, and utilization. Cloud technology integrates machine learning and AI tools that perform big data analysis. They analyze unstructured data to give valuable insights. This is impossible with the on-premises architecture as it tends to be expensive and impacts the system’s performance.
 
 ### The core components of cloud computing
 Most cloud computing architecture consists of two main components, as explained below:
@@ -40,9 +40,9 @@ Most cloud computing architecture consists of two main components, as explained 
 ### Migrating data to the cloud
 For an organization to migrate to a cloud computing solution, it must be connected to the network. There are different ways an organization can migrate its data to the cloud, as stated below:
 
-- **Migration of new data and applications to the cloud:** is best when an organization needs a quick option. It is also known as the [cloud-first strategy](https://www.loggly.com/blog/cloud-first-strategy-and-its-benefits-for-business/).
-- **Migration of existing data and applications:** It requires programming effort, which is costly. The method is also known as the [lift and shift strategy](https://www.ibm.com/cloud/learn/lift-and-shift).
-- **Implementing hybrid data infrastructure:** It is the most popular option organizations consider. It involves expanding the on-premises data infrastructure into a hybrid infrastructure. It offers better security and allows users to enjoy the two data infrastructures.
+- **Migration of new data and applications to the cloud:** This is suitable when an organization needs a quick option. It is also known as the [cloud-first strategy](https://www.loggly.com/blog/cloud-first-strategy-and-its-benefits-for-business/).
+- **Migration of existing data and applications:** This requires programming effort, which is costly. The method is also known as the [lift and shift strategy](https://www.ibm.com/cloud/learn/lift-and-shift).
+- **Implementing hybrid data infrastructure:** This is the most popular option used by organizations. It involves expanding the on-premises data infrastructure into a hybrid infrastructure. It offers better security and allows users to enjoy the two data infrastructures.
 
 ### Factors considered when building a stable cloud data architecture
 Reliable data architecture takes time to build. All necessary components must be well integrated to form a seamless system. Data architects have to consider some practices when designing cloud data architecture.
@@ -50,26 +50,26 @@ Reliable data architecture takes time to build. All necessary components must be
 Furthermore, there is no all-in-one solution for developing secure and efficient data architecture. The time required can vary depending on the organization's business needs. Below are some factors to consider when developing a cloud data infrastructure:
 
 #### The cloud models
-Organizations should understand various cloud services that different vendors in the market offer. Cloud architectures belong into four different categories as below:
+Organizations should understand various cloud services that different vendors in the market offer. Cloud architectures belong to four different categories:
 - **Private cloud:** In this category, the cloud services are used by one organization. This includes the employees, customers, or stakeholders.
-- **Public cloud:** The cloud services here are open to the public. The provider owns the cloud infrastructure here.
-- **Hybrid cloud:** Here, the public and private cloud services are combined to meet the organizations' specific needs.
+- **Public cloud:** Here, the cloud services are open to the public. The provider owns the cloud infrastructure.
+- **Hybrid cloud:** In this model, the public and private cloud services are combined to meet the organizations' specific needs.
 - **Multi-cloud:** The above three cloud services are patched and combined to offer optimal computing capabilities at a minimal cost.
 
 Organizations should choose the cloud model that fits their unique needs and preferences.
 
 #### Cloud storage options
-Cloud data storage matters a lot when it comes to different databases. Most cloud providers offer a wide variety of storage options. For instance, [AWS](https://aws.amazon.com/) provides [Elastic File System](https://aws.amazon.com/efs/), [Simple Storage](https://aws.amazon.com/s3/) (S3), [Elastic Block Storage](https://www.amazonaws.cn/en/ebs/), and [Glacier](https://aws.amazon.com/s3/storage-classes/glacier/) archive backup and [storage gateway](https://aws.amazon.com/storagegateway/). 
+Cloud data storage matters a lot when it comes to different databases. Most cloud providers offer a wide variety of storage options. For instance, [AWS](https://aws.amazon.com/) provides [Elastic File System](https://aws.amazon.com/efs/), [Simple Storage](https://aws.amazon.com/s3/) (S3), [Elastic Block Storage](https://www.amazonaws.cn/en/ebs/), [Glacier](https://aws.amazon.com/s3/storage-classes/glacier/) archive backup and [storage gateway](https://aws.amazon.com/storagegateway/). 
 
 Combining the alternatives for data storage provides better prices and advantages each provider offers to the organizations' databases.
 
 #### Security issues
-A cloud platform should provide a secure way of accessing the data. The organization should ensure there are reliable ways of accessing data. Antivirus programs, encryption controls, and more security features should be installed to keep the data safe.
+A cloud platform should provide a secure way of accessing data. The organization should ensure there are reliable ways of accessing data. Antivirus programs, encryption controls, and superior security features should be installed to keep the data safe.
 
 Advanced security measures must be ensured for the cloud architecture and servers. This guarantees that data transfer between the different devices is secure. Cloud data architecture should ensure a firewall is installed in the cloud servers. This assists in safeguarding the system from malicious and unauthorized access.
 
 #### Performance and scalability
-The cloud data architectural design should be scalable. This means they can be adjusted whenever the workload increases or diminishes. So, all cloud infrastructures can be expanded with ease in case of a high workload. [Vertical and horizontal scaling](https://www.section.io/blog/scaling-horizontally-vs-vertically/) is essential when it comes to cloud computing. 
+The cloud data architectural design should be scalable. This means it can be adjusted whenever the workload increases or diminishes. This ensures that all cloud infrastructures can be expanded with ease in case of a high workload. [Vertical and horizontal scaling](https://www.section.io/blog/scaling-horizontally-vs-vertically/) is essential when it comes to cloud computing. 
 
 System performance can be enhanced by adding more RAM using faster storage such as SSD disks and powerful CPUs. This will enable the cloud infrastructure to handle more load and improve performance.
 
