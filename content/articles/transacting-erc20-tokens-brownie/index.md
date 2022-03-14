@@ -1,7 +1,9 @@
 ### Introduction
 ERC20 tokens are a representation of something on the Ethereum Blockchain. They can reference a representation of Gold, in which case those tokens are very valuable. They can also reference a representation of someone's toenails, in which case those tokens are somewhat less valuable.
 
-In this tutorial, you are going to do the following:
+### Objectives
+In this article, you will obtain all the knowledge you need to deploy and transact your own ERC20 token, by doing the following: 
+
 - Create your own ERC20 token
 - Deploy your token to a local blockchain.
 - Make transactions using your token
@@ -13,15 +15,11 @@ In this tutorial, you are going to do the following:
 - Basic knowledge in Python Programming Language.
 - Basic knowledge in Solidity Programming Language.
 
-
-### Goal
-In this article, you will obtain all the knowledge you need to deploy and transact your own ERC20 token.
-
 ### Table of contents
-1. Initialization.
-2. Deploy the Token.
-3. Transacting with the token.
-4. Creating a Smart Contract that transacts the Token
+1. [Initialization](#initialization).
+2. [Deploy the Token](#deploy-the-token).
+3. [Transacting with the token](#transacting-with-the-token).
+4. [Creating a Smart Contract that transacts the Token](#creating-a-smart-contract-that-transacts-the-token)
 
 
 ### Initialization
@@ -78,7 +76,7 @@ Upon initialization, this contract grants the `_initialSupply` tokens to the `_f
 
 By default, this ERC20 token uses 18 decimals.
 
-Create a python file *transact_token.py* under the *scripts* folder
+Create a python file *transact_token.py* under the *scripts* folder.
 
 
 ```python
@@ -115,7 +113,7 @@ brownie run transact_token
 ```
 
 ### Transacting with the Token
-You have your token deployed on the blockchain, now you need check the balance.
+You have your token deployed on the blockchain, now you need to check the balance.
 In *transact_token.py* create a new function:
 ```python
 def get_token_balance(account_address):
@@ -336,7 +334,7 @@ Terminating local RPC client...
 
 Clearly, the smart contract was able to transfer 1000000 tokens to the account as requested. It can also be observed that the smart contract has no tokens it possesses. It is only allowed to use the tokens in the founder's account. 
 
-### Conclusion
+### Further Readings
 To view all the ERC20 functions inherited from the OpenZeppelin library, follow this link:[OpenZeppelin ERC20](https://docs.openzeppelin.com/contracts/2.x/api/token/erc20)
 
 There are a few functions which have not been covered here. For example:
@@ -347,5 +345,10 @@ There are a few functions which have not been covered here. For example:
 
 With the basics in place, you can easily adapt these functions into your code without a hassle.
 
+### Conclusion
 ERC20 tokens are very useful and have found applications in a variety of areas.
-Hopefully this article shed some light on how to deploy them and how to use them in transactions.
+
+In this tutorial, you have learned how to create  these ERC20 tokens. You have deployed them to a local blockchain using ganache, but you can challenge yourself by deploying it to a testnet such as `Rinkeby` or even the `Mainnet`! 
+You have also learned all the various ways you can transact using your token, and also making a smart contract transact your token.
+
+Congratulations on making it this far! Go forth and deploy your tokens!
