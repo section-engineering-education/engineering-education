@@ -4,25 +4,25 @@ status: publish
 published: true
 url: /understanding-coco-dataset/
 title: Understanding COCO Dataset
-description: This article will introduce the reader to COCO dataset. We will also implement a simple dataset validator using Python.
+description: This article will introduce the reader to the COCO dataset. We will also implement a simple dataset validator using Python.
 author: srishilesh-p-s
-date: 2022-03-07T00:00:00-06:00
+date: 2022-03-14T00:00:00-04:00
 topics: [Machine Learning]
 excerpt_separator: <!--more-->
 images:
   - url: /engineering-education/understanding-coco-dataset/hero.jpg
     alt: Understanding COCO Dataset Hero Image
 ---
-In our [previous tutorial](/engineering-education/understanding-pascal-voc-dataset/), we learned what object detection is, how the datasets are structured to detect objects, and understood the history behind PASCAL VOC dataset representation.
-<!--more-->
 In this tutorial, we will learn how to represent the dataset in COCO format. We will understand how the COCO format is structured and how it became a standardized dataset format to detect objects.
+<!--more-->
+In our [previous tutorial](/engineering-education/understanding-pascal-voc-dataset/), we learned what object detection is, how the datasets are structured to detect objects. We also discussed the history behind *PASCAL VOC* dataset representation.
 
-We will build a dataset format validator using Python to verify if the dataset structure is a COCO format.
+In this article, we will build a dataset format validator using Python to verify if the dataset structure is a COCO format.
 
 > It is highly recommended to read [this](/engineering-education/understanding-pascal-voc-dataset/) tutorial before proceeding further.
 
 ### Table of contents
-- [Pre-requisites](#pre-requisites)
+- [Prerequisites](#prerequisites)
 - [Introduction](#introduction)
 - [COCO](#coco)
   - [History](#history-behind-coco)
@@ -31,42 +31,45 @@ We will build a dataset format validator using Python to verify if the dataset s
 - [Conclusion](#conclusion)
 - [Further reading](#further-reading)
 
-### Pre-requisites
+### Prerequisites
 To follow along, the reader must have the following:
-- A decent understanding of what machine learning datasets are and how they are used to detect objects.
-- The reader should have read [this](/engineering-education/understanding-pascal-voc-dataset/) tutorial on PASCAL VOC.
-- Basic understanding of [Python](https://www.python.org).
+- A decent understanding of machine learning datasets and how they are used to detect objects.
+- A basic understanding of [Python](https://www.python.org) and [PASCAL VOC](/engineering-education/understanding-pascal-voc-dataset/)
 
 ### Introduction
 As we learned in our [previous tutorial](/engineering-education/understanding-pascal-voc-dataset/), for any [supervised](https://en.wikipedia.org/wiki/Supervised_learning) or [semi-supervised](https://www.geeksforgeeks.org/ml-semi-supervised-learning/) machine learning model to detect objects, it must be trained with a [labeled](https://www.cloudfactory.com/data-annotation-tool-guide) (or annotated) [dataset](https://en.wikipedia.org/wiki/Data_set) that holds all information about the objects present in an image.
 
-The objects in the dataset are labeled with rectangular box coordinates called ["Bounding boxes"](https://medium.com/analytics-vidhya/basics-of-bounding-boxes-94e583b5e16c).
+The objects in the dataset are labeled with rectangular box coordinates called [`Bounding boxes`](https://medium.com/analytics-vidhya/basics-of-bounding-boxes-94e583b5e16c).
 
 ### COCO
-COCO dataset provides large-scale datasets for object detection, segmentation, keypoint detection, and captioning images.
+COCO dataset provides large-scale datasets for object detection, segmentation, keypoint detection, and image captioning.
 
 > We will explore the above terminologies in the upcoming sections.
 
 It contains over [80 object categories](https://cocodataset.org/#home) with over 1.5 million object instances for context recognition, object detection, and segmentation.
 
-#### History behind COCO
-[ImageNet and MS COCO visual recognition workshop](https://image-net.org/challenges/ilsvrc+mscoco2015) at [ICCV 2015](https://iccv2021.thecvf.com) organized [challenges for object detection from 2015 to 2020](https://cocodataset.org/#detection-2015) following a standardized dataset structure called Microsoft's [Common Objects in Context (COCO) dataset](https://arxiv.org/pdf/1405.0312.pdf).
+#### History of COCO
+[ImageNet and MS COCO](https://image-net.org/challenges/ilsvrc+mscoco2015) at [ICCV 2015](https://iccv2021.thecvf.com) organized a workshop on the [challenges of object detection](https://cocodataset.org/#detection-2015). 
 
-The challenge was to improve object detection methods with a focus on speed and accuracy. They provided datasets containing more than 200,000 images with over 80 object categories.
+This was due to Microsoft's standardized dataset structure called [Common Objects in Context (COCO) dataset](https://arxiv.org/pdf/1405.0312.pdf).
+
+The challenge was to improve object detection methods with a focus on speed and accuracy. They provided datasets containing more than `200,000` images with over `80` object categories.
 
 The main objectives were to detect objects using:
-- `Bounding box` - Detect the objects with coordinates.
+
+- `Bounding box` - Detect objects with coordinates.
 - `Object segmentation` - Detect and differentiate the desired object from other objects.
 
-The series of challenges continued every year focusing on different types of problems like:
-- [Object detection in 2015](https://cocodataset.org/#detection-2015) - to detect objects of an image.
-- [Captioning in 2015](https://cocodataset.org/#captions-2015) - to understand the context of the image and output the same textually.
-- [Keypoint detection in 2018](https://cocodataset.org/#keypoints-2018) - to detect the location and structure of the object using minimal key points.
-- [Stuff segmentation in 2019](https://cocodataset.org/#stuff-2019) - to differentiate objects of a certain type such that an object of a similar category contains the same color.
-- [Panotopic segmentation in 2019](https://cocodataset.org/#panoptic-2019) - to uniquely differentiate each object with a separate color.
-- [Densepose detection in 2020](https://cocodataset.org/#densepose-2020) - to estimate human poses by detecting and segmenting pixels.
+The series of challenges continued each year and focused on different types of problems such as:
 
-To learn more about the COCO format and its working, you can read [this](https://arxiv.org/pdf/1405.0312.pdf) research paper.
+- [Object detection in 2015](https://cocodataset.org/#detection-2015) - To detect objects in an image.
+- [Captioning in 2015](https://cocodataset.org/#captions-2015) - To understand an image context and output the same textually.
+- [Keypoint detection in 2018](https://cocodataset.org/#keypoints-2018) - To detect an object's location and structure using minimal key points.
+- [Stuff segmentation in 2019](https://cocodataset.org/#stuff-2019) - To differentiate objects of a certain type such that the object of a similar category contains the same color.
+- [Panotopic segmentation in 2019](https://cocodataset.org/#panoptic-2019) - To uniquely differentiate each object with a separate color.
+- [Densepose detection in 2020](https://cocodataset.org/#densepose-2020) - To estimate human poses by detecting and segmenting pixels.
+
+To learn more about the COCO format, you can read this [research paper](https://arxiv.org/pdf/1405.0312.pdf).
 
 #### COCO taxonomy
 Here is a sample of what the structure of the COCO dataset looks like:
@@ -80,71 +83,83 @@ Here is a sample of what the structure of the COCO dataset looks like:
 The object annotations in the above image are represented using the following fields:
 
 ##### images
-This `images` is a list of objects that contains the meta-data information about the images like the location of the file, size of the annotation, and a unique identifier for each annotation.
+`images` is a list of objects that contains the meta-data information about images. This includes the file location, size of the annotation, and a unique identifier for each annotation.
 
-We have a few required keys for each object like:
-- `file_name` - that specifies the name of the file. Here, it is `10.1.1.1.2006_3.bmp`.
-- `height` - specifies the image height. Here, the image is `1123` pixels tall.
-- `width` - specifies the image width. Here, the image is `793` pixels wide.
-- `id` - is a unique identifier that differentiates each image within a list. Here, it is the same as the file name.
+An object must have the following keys:
+- `file_name` - It specifies the name of the file. In this case, it is `10.1.1.1.2006_3.bmp`.
+- `height` - It shows the image height such as `1123` pixels.
+- `width` - It specifies the image width like `793` pixels.
+- `id` - This is a unique identifier that differentiates each image within a list. Here, it is the same as the file name.
 
-Apart from these, we have a few optional keys like:
-- `license` - specifies the copyright to use the image.
-- `flickr_url` and `coco_url` - specify the URLs for the online hosted images.
-- `date_captured` - specifies the date when the image was created.
+We also have a few optional keys such as:
+- `license` - It specifies the copyright to use the image.
+- `flickr_url` and `coco_url` - They specify the URLs for the online hosted images.
+- `date_captured` - It specifies the date when the image was created.
 
 ##### categories
 `categories` are classes (or labels) of objects that are present in an image.
 
-In the COCO dataset, we have `supercategory` that tells about the generalized category of an object, whereas the `name` tells about a specific object.
+In the COCO dataset, we have a `supercategory` that stands for the generalized object category. On the other hand, the `name` key only points to a specific object.
 
-For example, we can categorize `bicycle`, `car`, and `truck` under `name`. And, we can super categorize them as `vehicle` under `supercategory`.
+For example, we can categorize `bicycle`, `car`, and `truck` under `name`. We can then super categorize them as `vehicles` under `supercategory`.
 
-> The field `supercategory` is optional and it is set as `None` by default.
+> The field `supercategory` is optional. It's set as `None` by default.
 
 In our case, we have classes `column` and `row` with each having its unique `id` (we refer to it as `category_id`).
 
 ##### annotations
-`annotations` contain all meta-data about the labels related to an object. We have keys that specify the location, size, and category of the object.
+`annotations` contain all meta-data about the labels related to an object. We have keys that specify the location, size, and object category.
 
-Let's take a look at the child keys that we have under `annotations`:
+Below are the child keys that are under `annotations`:
 
-- `iscrowd` - specifies if the annotation is for a single object or multiple objects that are close to it. It can be either `0` or `1`.
-- `category_id` - is the mapping with the category that the object is related to.
-- `image_id` - is the mapping with the image that the object is related to. Here, we have only 1 image, so the `image_id` would be `10.1.1.1.2006_3`.
-- `id` - is a unique identifier that identifies each annotation.
-- `area` - is a product of the width and height of the bounding box. It helps us determine the size of the bounding box.
-- `bbox` - is a list of coordinates that determine the location of the object. Let's understand this in detail [here](#bbox).
-- `segmentation` - is a flattened list of coordinates that helps us differentiate the object from the background. Let's understand this in detail [here](#segmentation).
+- `iscrowd` - It specifies if the annotation is for a single object or multiple objects that are close to it. It can be either `0` or `1`.
+
+- `category_id` - This maps the category that an object belongs to.
+
+- `image_id` - This is the mapping with the image that the object is related to. Here, we have only 1 image, so the `image_id` would be `10.1.1.1.2006_3`.
+
+- `id` - This is a unique identifier that identifies each annotation.
+
+- `area` - This is a product of the width and height of the bounding box. It helps us determine the size of the bounding box.
+
+- `bbox` - It's a list of coordinates that determine an object's location. Let's understand this in detail [here](#bbox).
+
+- `segmentation` - This is a flattened list of coordinates that helps us differentiate the object from the background. Let's understand this in detail [here](#segmentation).
 
 ##### bbox
-These are coordinates that determine the location of the object.
+These are coordinates that determine an object's location.
 
 These coordinates are represented as `[xmin, ymin, width, height]` where the `(xmin, ymin)` coordinates correspond to the top-left position of an object.
 
 The `width` and `height` are `xmax - xmin` and `ymax - ymin` respectively.
 
-> Whereas in the PASCAL VOC dataset, the format of the bounding box is different. It is represented as `[xmin, ymin, xmax, ymax]` which are the top-left and bottom-right coordinates respectively.
+> The format of the bounding box is different in the PASCAL VOC dataset. It is represented as `[xmin, ymin, xmax, ymax]` which are the `top-left` and `bottom-right` coordinates respectively.
 
-Here, in the above dataset, the bounding boxes are `[457, 709, 60, 76]`. It signifies that the top-left coordinates are `(457, 709)`, and the image is `60` pixels wide with a height of `76` pixels. Therefore, the `area` would be `4560`.
+In the above dataset, the bounding boxes are `[457, 709, 60, 76]`. This signifies that the `top-left` coordinates are `(457, 709)`, and the image is `60` pixels wide with a height of `76` pixels. Therefore, the `area` would be `4560`.
 
 ##### segmentation
-This field signifies if the images contain annotations that are maskable. If the objective is to solve the problem of segmentation, then we specify the [Run-length encoded (RLE)](https://en.wikipedia.org/wiki/Run-length_encoding) values of the masks.
+This field determines if images contain annotations that are maskable. 
 
-By default, the `segmentation` value is an empty list. Usually, we update the key with the value `[xmin, ymin, xmin, ymin + ymax, xmin + xmax, ymin + ymax, xmin + xmax, ymax]`. These values represents all the coordinates as shown:
+If the objective is to solve the segmentation problem, then we specify the [Run-length encoded (RLE)](https://en.wikipedia.org/wiki/Run-length_encoding) values of the masks.
 
-- `(xmin, ymin)` - top-left coordinate
-- `(xmin, ymin + ymax)` - top-right coordinate
-- `(xmin + xmax, ymin + ymax)` - bottom-right coordinate
-- `(xmin + xmax, ymax)` - bottom-left coordinate
+By default, the `segmentation` value is an empty list. We normally update the key with the value `[xmin, ymin, xmin, ymin + ymax, xmin + xmax, ymin + ymax, xmin + xmax, ymax]`. 
+
+These values represents all the coordinates as shown below:
+
+- `(xmin, ymin)` - Top-left coordinate
+- `(xmin, ymin + ymax)` - Top-right coordinate
+- `(xmin + xmax, ymin + ymax)` - Bottom-right coordinate
+- `(xmin + xmax, ymax)` - Bottom-left coordinate
 
 #### COCO validator
-We have understood how the COCO format is structured and what important parameters help us detect objects. Now, let's implement a simple dataset validator using Python.
+We have now understood how the COCO format is structured and the important parameters that help us detect objects. 
+
+Let's implement a simple dataset validator using Python.
 
 ##### Import libraries
-We will use the `json` library to work with JSON files:
+We will use the `json` library to work with `JSON` files:
 
-Import them as shown below:
+Import them, as shown below:
 
 ```python
 import json
@@ -161,18 +176,18 @@ with open(coco_file) as json_file:
 ```
 
 ##### Assertions
-To verify the correctness of any conditional statement, we will be using `assert()` assertion statements in Python.
+To verify the correctness of any conditional statement, we will be using the `assert()` statement in Python.
 
 In simple words, `assert()` helps debug the code by expecting the correctness of the statement that matches certain criteria. If it does not meet the criteria, it throws a default error.
 
-> You can learn about `assert()` [here](https://www.geeksforgeeks.org/python-assert-keyword).
+> You can learn more about `assert()` [here](https://www.geeksforgeeks.org/python-assert-keyword).
 
 ##### Validation
 > It is highly recommended to keep the sample of the COCO dataset and this tutorial side-by-side.
 
 You can find the sample dataset [here](https://gist.github.com/srishilesh/b3b5028ba9e1f3ec409806e93a407db4).
 
-To start with, let's implement the `main()` method first:
+Let's first implement the `main()` method:
 
 ```python
 def main():
@@ -192,7 +207,7 @@ if __name__ == '__main__':
 
 > NOTE: `assertions()` method will be explained in the subsequent code snippets.
 
-The code above does the following:
+In the code above:
 - We specify all the mandatory keys as a list in `required_keys`.
 - Then, we loop through each required key to check for the presence of values.
 - `assertions(key, values, required_keys, unique_key)` method returns a dictionary that contains a mapping between `id` and the `unique_key`. We will explore more about this method in the next code snippet.
@@ -201,7 +216,7 @@ The code above does the following:
 
 Now, let's take a step back and look into the `assertions()` method. This reusable method can be used for asserting `images` and `categories` keys.
 
-> Note that we have modularized the code so that the method can be reused to validate different objects based the arguments that we pass.
+> Note that we have modularized the code so that the method can be reused to validate different objects based on the arguments that we pass.
 
 ```python
 def assertions(key, values, required_keys, unique_key=None):
@@ -214,14 +229,14 @@ def assertions(key, values, required_keys, unique_key=None):
   return unique_key_id_mapper # Return the mapping
 ```
 
-The code above does the following:
+In the code above:
 - We accept the name of the key to validate (`key`), the contents mapped with the key (`values`), the required keys under the parent key (`required_keys`), and an `unique_key` that can map with an `id`.
 - We initialize `unique_key_id_mapper` to be an empty dictionary.
 - Then, we loop through each `values` item and update the mappings in `unique_key_id_mapper`.
 - Also, we check for the presence of the required key under the respective parent key.
 - If no error is thrown, we return the mapping, which can later be used to validate the annotations.
 
-Having validated all the meta-data about all the images and categories, let's now validate each object annotation.
+Having validated all the meta-data about the images and categories, let's now validate each object annotation.
 
 > Under the `annotations` key, there may be more than one object. Therefore, we loop through all the objects in `annotations`.
 
@@ -247,19 +262,19 @@ The above code does the following:
 - We check if `area` is a product of `width` and `height`.
 - We check for the validity of the `segmentation` and `iscrowd` keys.
 
-If no error is thrown, then we may say that the dataset is a COCO format.
+If no error is thrown, we may declare that the dataset is a COCO format.
 
-The above code snippets help us validate and point out errors if we miss any required key.
+The above code snippets help us validate and point out errors if we miss any required keys.
 
 ### Conclusion
-COCO dataset is not only used for object detection and segmentation but also keypoint detection, captioning, and so on. The problems that can be solved with the COCO dataset have improved over the years.
+COCO dataset is not only used for object detection and segmentation but also keypoint detection, and captioning. This means that the COCO dataset can help solve numerous problems.
 
-The dataset's representation as a JSON file helps us customize or modify datasets easily while using a standardized format for representing them.
+The dataset's representation as a JSON file helps us customize or modify datasets easily while using a standardized format.
 
 To summarize, the reader learned:
 
 - How ML models are trained with object annotations.
-- How is COCO structured and understand the history behind it.
+- How COCO is structured, as well as its history.
 - The different meta-data parameters required for representation.
 - Finally, the reader implemented a simple dataset validator to verify and check if the dataset is in COCO format.
 
@@ -268,3 +283,6 @@ You can find the source code [here](https://gist.github.com/srishilesh/6c953ff1d
 ### Further reading
 - [COCO dataset format](https://cocodataset.org/#format-data)
 - [COCO research paper](https://paperswithcode.com/dataset/coco)
+
+---
+Peer Review Contributions by: [Wanja Mike](/engineering-education/authors/michael-barasa/)
