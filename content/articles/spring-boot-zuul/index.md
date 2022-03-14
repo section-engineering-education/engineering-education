@@ -1,3 +1,20 @@
+---
+layout: engineering-education
+status: publish
+published: true
+url: /spring-cloud-zuul/
+title: Spring Cloud routing and filtering using Zuul gateway service
+description: In this tutorial, we will build Spring Boot microservices, integrate zuul API gateway to filter and route requests to various services 
+author: nicholas-odhiambo
+date: 2022-03-14T00:00:00-10:30
+topics: [Languages]
+excerpt_separator: <!--more-->
+images:
+
+  - url: /engineering-education/spring-cloud-zuul/hero.png
+    alt: Spring Cloud routing and filtering using Zuul gateway service
+---
+
 ### Introducion
 Zuul server is an application server that handles routing in a microservices architecture in Spring Boot applications. Zuul handles the dynamic routing of requests to specific microservices. Zuul is built to make it easier to route requests dynamically, monitor various services, and provide a single entry point for all requests, ensuring that all the requests are secure since it handles request filtering before routing to the specific service.
 
@@ -233,5 +250,9 @@ eureka.client.fetchRegistry=false # Disable fetching of registry from eureka ser
 eureka.server.waitTimeInMsWhenSyncEmpty=0 # Disable waiting for eureka server
 
 ```
+
 ### Conclusion
 Up to this point, we have covered the basics of deploying microservices using Spring Boot. Try challenging yourself by converting the monolith applications you have to a microservice architecture with Zuul as the API gateway. You will realise how applications built with microservices are much easier to maintain and scale.
+
+---
+Peer Review Contributions by: [Odhiambo Paul](/engineering-education/authors/odhiambo-paul/)
