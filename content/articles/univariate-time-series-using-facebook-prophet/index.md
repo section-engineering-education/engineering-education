@@ -6,7 +6,7 @@ url: /univariate-time-series-using-facebook-prophet/
 title: Univariate Time Series using Facebook Prophet
 description: This tutorial will be discussing the univariate time series model using Facebook Prophet. We will use the model to predict airline passengers.
 author: francis-ndiritu
-date: 2022-03-13T00:00:00-21:00
+date: 2022-03-14T00:00:00-21:00
 topics: [Machine Learning]
 excerpt_separator: <!--more-->
 images:
@@ -151,7 +151,7 @@ It has two columns, `Month` and `Thousands of Passengers`. The model will use th
 To see the last five rows of our dataset, use this code:
 
 ```python
-df.head()
+df.tail()
 ```
 The output:
 
