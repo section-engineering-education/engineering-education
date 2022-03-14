@@ -24,13 +24,12 @@ For us to use Interceptors in Spring Boot, we need to add the web and Lombok dep
 
 ```xml
 <dependency>
-    <groupId>org.springframework</groupId>
-    <artifactId>spring-web</artifactId>
-    <version>5.3.13</version>
+  <groupId>org.springframework.boot</groupId>
+  <artifactId>spring-boot-starter-web</artifactId>
 </dependency>
 <dependency>
-    <groupId>org.projectlombok</groupId>
-    <artifactId>lombok</artifactId>
+  <groupId>org.projectlombok</groupId>
+  <artifactId>lombok</artifactId>
 </dependency>
 ```
 ### Interceptor methods
