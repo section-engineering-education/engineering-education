@@ -1,6 +1,7 @@
 ---
 title: Ghali Muga
 type: authors
+github: https://github.com/osepoo
 images:
   -url: /engineering-education/content/authors/ghali-muga/avatar.jpg
 ---
