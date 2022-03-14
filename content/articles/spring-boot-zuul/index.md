@@ -4,7 +4,7 @@ status: publish
 published: true
 url: /spring-cloud-zuul/
 title: Spring Cloud routing and filtering using Zuul gateway service
-description: In this tutorial, we will build Spring Boot microservices, integrate zuul API gateway to filter and route requests to various services 
+description: In this tutorial, we will build Spring Boot microservices integrate Zuul API gateway to filter and route requests to various services 
 author: nicholas-odhiambo
 date: 2022-03-14T00:00:00-10:30
 topics: [Languages]
@@ -191,7 +191,7 @@ public class ZuulServerApplication {
 ```
 - `@EnableZuulProxy` is used to enable the Zuul proxy. This makes it possible for the service to handle all the incoming requests and route them to the specific services discovered by the eureka server.
 
-The zuul server needs to communicate with the Eureka server to make it possible to route requests to the registered services. To configure the zuul server, add the following configurations in the `application.properties` file.
+The Zuul server needs to communicate with the Eureka server to make it possible to route requests to the registered services. To configure the Zuul server, add the following configurations in the `application.properties` file.
 
 ```yml
 server.port=8050 # The port for the service
@@ -200,7 +200,7 @@ eureka.client.serviceUrl.defaultZone=http://localhost:8761/eureka/ # The URL of 
 
 ```
 
-Sometimes the requests might fail to reach the Eureka server, this is because the Eureka server might not be running. To ensure the requests are routed to the correct services, we need to configure the zuul server to retry the requests if the eureka server is unavailable. Add the following configurations in the `application.properties` file.
+Sometimes the requests might fail to reach the Eureka server, this is because the Eureka server might not be running. To ensure the requests are routed to the correct services, we need to configure the Zuul server to retry the requests if the eureka server is unavailable. Add the following configurations in the `application.properties` file.
 ```yml
 spring:
   servlet:
@@ -250,7 +250,20 @@ eureka.client.fetchRegistry=false # Disable fetching of registry from eureka ser
 eureka.server.waitTimeInMsWhenSyncEmpty=0 # Disable waiting for eureka server
 
 ```
+When we run the services and make an API call through the Zuul gateway to course service through  [http://localhost:8050/api/course/](http://localhost:8050/api/course), we get the response below:
 
+```json
+[
+    {
+        "name":"Computer Science",
+        "id":1
+    },
+    {
+        "name":"Information Technology",
+        "id":2
+    }
+]
+```
 ### Conclusion
 Up to this point, we have covered the basics of deploying microservices using Spring Boot. Try challenging yourself by converting the monolith applications you have to a microservice architecture with Zuul as the API gateway. You will realise how applications built with microservices are much easier to maintain and scale.
 
