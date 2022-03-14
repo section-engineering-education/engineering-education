@@ -97,7 +97,7 @@ The user interface under consideration makes use of'recyclerView' to display dat
 ```
 > Make sure to define your row that would define how the data is shown in the recycler view.
 
-### Step 4 - Creating a Room Database
+### Step 4 - Creating Room Database
 Room databases are made up of three instances: entity, dao, and database. Let's define all three of these instances to make our room database.
 #### Entity
 Entity is a data type that functions similarly to a table, and it is often defined as illustrated below.
@@ -157,6 +157,52 @@ abstract class NoteDatabase : RoomDatabase() {
 }
 ```
 ### Step 5 - Adding JSON Data
+Here is the JSON data which will be prepopulated to Room database:
+```Json
+[
+  {
+    "note-title":"Title one",
+    "note-description":"Description one"
+  },
+  {
+    "note-title":"Title two",
+    "note-description":"Description two"
+  },
+  {
+    "note-title":"Title three",
+    "note-description":"Description three"
+  },
+  {
+    "note-title":"Title four",
+    "note-description":"Description four"
+  },
+  {
+    "note-title":"Title five",
+    "note-description":"Description five"
+  },
+  {
+    "note-title":"Title six",
+    "note-description":"Description six"
+  },
+  {
+    "note-title":"Title seven",
+    "note-description":"Description seven"
+  },
+  {
+    "note-title":"Title eight",
+    "note-description":"Description eight"
+  },
+  {
+    "note-title":"Title nine",
+    "note-description":"Description nine"
+  },
+  {
+    "note-title":"Title ten",
+    "note-description":"Description ten"
+  }
+]
+```
+
 To make use of JSON data to perform pre-population to a room database, the JSON data should be included within the project. This is done by creating a subdirectory raw within the res folder then within the subdirectory add your JSON File.
 
 ![Json](/engineering-education/Prefilling-Room-Database-with-JSON-Data-in-Android/json.png)
@@ -168,10 +214,12 @@ class StartingNotes(private val context: Context) :RoomDatabase.Callback() {
     override fun onCreate(db: SupportSQLiteDatabase) {
         super.onCreate(db)
         
+        ...
+        
     }
 } 
 ```
-A method which is used to load JSON data is defined as shown below
+A method which is used to load JSON data is defined as shown below, inside the `.openRawResource`, we pass the name of the file that contains the JSON data.
 ```kotlin
  // load JSON data
     private fun loadJSONArray(context: Context):JSONArray?{
@@ -183,7 +231,8 @@ A method which is used to load JSON data is defined as shown below
         }
     }
 ```
-Then, as seen below, a suspend function is defined to conduct the database filling.
+Then, as seen below, a suspend function is defined to conduct the database filling. We get the instance of the database dao so that we can call the insert function. 
+
 ```kotlin
     //Filling database with data from JSON
     private suspend fun fillWithStartingNotes(context: Context){
@@ -220,7 +269,7 @@ Then, as seen below, a suspend function is defined to conduct the database filli
     }
 ```
 ### Step 7 - Adding the Class to the Database
-Where does the class have to be used now that it's been created? To complete the prefilling feature, the prefilling class defined above must be added to the database. This is done with the aid of the `.addCallback()` function when the database instance is created.
+Where is the class used now that it's been created?. To complete the prefilling functionality, the prefilling class defined above must be added to the database. This is done with the aid of the `.addCallback()` function when the database instance is created.
 ```kotlin
 fun getInstance(context: Context):NoteDatabase?{
             if (instance == null){
@@ -238,7 +287,7 @@ fun getInstance(context: Context):NoteDatabase?{
         }
 ```
 ### Step 8 - Define Viewmodel
-The View model is a class that allows data to withstand changes in system settings such as screen rotation and keyboard visibility. The ViewModel factory is used to produce and return  ViewModel objects that have survived system configurations. The ViewModel class extends `ViewModel()` and should include database instance in its constructor. it is implemented shown below
+The View model is a class that allows data to withstand changes in system settings such as screen rotation and keyboard visibility. The ViewModel factory is used to produce and return ViewModel objects that have survived system configurations. The ViewModel class extends `ViewModel()`. Include the database instance in its constructor. It is implemented as shown below:
 ```kotlin
 class MainViewModel(private val noteDatabase: NoteDatabase) : ViewModel() {
 
@@ -251,6 +300,7 @@ class MainViewModel(private val noteDatabase: NoteDatabase) : ViewModel() {
     }
 }
 ```
+
 ### Step 9 - Displaying Data
 Since the JSON data has already been loaded to the database it should be displayed to the user interface. The data are displayed onto the `recyclerView` initially defined. The below implementation explains how data is displayed.
 ```kotlin
@@ -294,4 +344,3 @@ class MainActivity : AppCompatActivity() {
 In this tutorial, we have gone through what is pre-populating room database with initial data as used in android. what is a room Callback is and how is it added to the database? How to implement prefilling room database with data and when it is necessary to pre-populate a room database.
 
 This GitHub [Repository](https://github.com/benta-odek/PrefillingRoomDbDemo) contains the complete code. 
-
