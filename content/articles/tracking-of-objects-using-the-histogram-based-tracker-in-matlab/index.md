@@ -3,7 +3,7 @@ layout: engineering-education
 status: publish
 published: true
 url: /tracking-of-objects-using-the-histogram-based-tracker-in-matlab/
-title: Tracking objects using the histogram-based tracker in Matlab
+title: Tracking Objects Using the Histogram-based Tracker in Matlab
 description: This article will look at how to track objects using the histogram-based tracker and how to track occluded objects in Matlab.
 author: peter-adongo
 date: 2022-03-09T00:00:00-01:50
@@ -12,7 +12,7 @@ excerpt_separator: <!--more-->
 images:
 
   - url: /engineering-education/tracking-of-objects-using-the-histogram-based-tracker-in-matlab/hero.jpg
-    alt: Tracking objects using the histogram-based tracker in Matlab Hero Image
+    alt: Tracking Objects Using the Histogram-based Tracker in Matlab Hero Image
 ---
 Object tracking is a deep learning application that takes a set of detected objects and creates a unique identification for all the objects. After that, it tracks the detected objects as they move in a video frame.
 <!--more-->
