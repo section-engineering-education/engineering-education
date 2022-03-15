@@ -11,7 +11,7 @@ topics: [Languages]
 excerpt_separator: <!--more-->
 images:
 
-  - url: /engineering-education/rust-graphql-server-with-mongodb-juniper-and-actix-web/hero.png
+  - url: /engineering-education/rust-graphql-server-with-mongodb-juniper-and-actix-web/hero.jpg
     alt: GraphQL with MongoDB and Juniper Hero Image
 ---
 GraphQL is an open-source query language. It is intuitive and well-designed for building APIs. It is built around HTTP to receive resources from a server. 
