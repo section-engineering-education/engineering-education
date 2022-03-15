@@ -18,6 +18,7 @@ Computer vision has led to the growth and usage of Quick Response codes in today
 To help the reader understand this concept, this article will cover many things concerning QR Codes. Their practical application, how to scan and decode the codes, and how to use QR Codes in the development of a user authentication system are all described.
 
 ### Table of contents
+- [Table of contents](#table-of-contents)
 - [Prerequisites](#prerequisites)
 - [Introduction](#introduction)
 - [Scanning QR Codes](#scanning-qr-codes)
@@ -30,10 +31,10 @@ To help the reader understand this concept, this article will cover many things 
 To follow along with this tutorial:
 - You should have a basic understanding of [Python](https://www.python.org/) and its related concepts.
 - You should know about [computer vision](https://en.wikipedia.org/wiki/Computer_vision) and the [OpenCV](https://en.wikipedia.org/wiki/OpenCV) library.
-- You should know how to use [PyCharm](https://www.jetbrains.com/pycharm/download/#section=windows), or any other IDE for working with Python.
+- You should know how to use [PyCharm](https://www.jetbrains.com/pycharm/download/#section=windows) or any other IDE for working with Python.
 
 ### Introduction
-The **Quick Response Code** (QR Code) is a type of two-dimensional barcode mainly used for keeping track of items and stores data in pixel form. This data can be decoded to expose the encoded information. It efficiently encodes a large amount of data such as numbers, letters, and characters and can be read much faster in both horizontal and vertical positions than existing methods.This makes them more widely used than the conventional bar codes, since the barcodes store limited data and can only be scanned horizontally.
+The **Quick Response Code** (QR Code) is a type of two-dimensional barcode mainly used for keeping track of items and storing data in pixel form. This data can be decoded to expose the encoded information. It efficiently encodes a large amount of data such as numbers, letters, and characters and can be read much faster in both horizontal and vertical positions than existing methods. This makes them more widely used than the conventional bar codes since the barcodes store limited data and can only be scanned horizontally.
 Quick Response codes consist of various regions that have specific importance.
 - Finder Pattern: This pattern is found in the symbol's upper left, upper right, and lower left corners. They are easily detected in all directions and ease the location and identification of the QR Code size, position, and inclination.
 - Alignment Pattern: It comprises a single central module, light (3x3), and dark (5x5) modules, and acts as a correction pattern that corrects the distorted QR Code.
@@ -44,8 +45,8 @@ Quick Response codes consist of various regions that have specific importance.
 
 With the popularity of QR Codes, they have found their applications in various real-world fields, such as
 - Inventory tracking and management systems.
-- Aunthentification systems for user identification.
-- By sharing payment information, payment information can be shared across the retail and manufacturing industries.
+- Authentication systems for user identification.
+- Payment information can be shared across the retail and manufacturing industries by sharing payment information.
 - Sharing photos, links, media, phone numbers
 
 ### Scanning QR Codes
@@ -57,7 +58,7 @@ import numpy as np
 from pyzbar.pyzbar import decode
 import cv2
 ```
-To read the QR Code image we will the cv2 library as shown below.
+To read the QR Code image we will use the cv2 library as shown below.
 
 ```python
 image = cv2.imread("qrcodes/qr_code_txt.png")
@@ -90,9 +91,9 @@ just a lot of plain text
 ```
 Great! Now that we have successfully decoded the QR code message from an input image, let us try to decode it in real-time using webcam feed input.
 ### Real-Time QR Code Decoding
-In real-life, QR code  scanners require users to decode the codes in real-time. To do this, we will start by importing all the libraries as described above. Then we will enable the webcam camera for the input and create a secondary output window using the code below.
+In real life, QR code  scanners require users to decode the codes in real-time. To do this, we will start by importing all the libraries as described above. Then we will enable the webcam camera for the input and create a secondary output window using the code below.
 ```python
-#decoding in real time
+#decoding in real-time
 #scanning QR code from camera feed
 video = cv2.VideoCapture(0)
 video.set(3,640) #creating  output window
