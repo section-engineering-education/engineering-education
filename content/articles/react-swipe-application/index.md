@@ -213,8 +213,66 @@ Finally, we add the `render()` method to our component.
 Now that we have set up our frontend, let's set up our backend.
 
 #### Setup the backend
-We need to create a new folder named `backend` in our current directory to set up the backed.
+We need to create a new folder named `backend` in our current directory to set up the backend.
 
+Let's begin by setting up the routes as follows:
+```javascript
+// create routes.js file in the backend folder
+// start by importing the express main app
+const express = require('express');
+// import the router
+const appRoute = express.Router();
+// import the db connection
+const dbConnection = require('dbConnection');
+// create the app route for photos
+appRoute.route('/photos').get(async function (_req, res) {
+    // get the photos from the db
+    const dbConnect = dbConnection.getDatabaseConnection();
+    dbConnect
+        .collection('photosAndReviews')
+        .limit(10)
+        .toArray((err, result) => {
+            if (err) {
+                // if there is an error, return the error
+                res.status(400).send('Error fetching photos!');
+            } else {
+                // if there is no error, return the photos
+                res.json(result);
+            }
+        });
+});
+// create the app route for photos swipe
+appRoute.route('/photos/photoSwipe')
+    .post((req, res) => {
+        // get the photos from the db
+        const dbConnect = dbConnection.getDatabaseConnection();
+        // create an object to hold the data
+        const tryMatchingDocument = {
+            listing_id: req.body.id,
+            last_modified: new Date(),
+            session_id: req.body.session_id,
+            direction: req.body.direction,
+        };
+        // insert the data into the db
+        dbConnect
+            .collection('matchingDocument')
+            .insertOne(tryMatchingDocument, (err, result) => {
+                if (err) {
+                    res.status(400).send('Error saving matching document!');
+                } else {
+                    res.json(result);
+                }
+            });
+    });
+// export the app route
+module.exports = appRoute;
+
+
+```
+
+In the above script we add the `appRoute` variable and define the `/photos` route. We also add the `/photos/photoSwipe` route.
+
+Next, we export the `appRoute` to make it available to other files.
 
 ### Conclusion
 This tutorial shows how we can set up a frontend and backend for our application using React and Express.js. We have seen how we can use the `TinderCard` component to display images and use `Axios` to make API calls.
