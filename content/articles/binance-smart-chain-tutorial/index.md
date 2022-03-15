@@ -6,7 +6,7 @@ url: /binance-smart-chain-tutorial/
 title: Getting Started With Solidity and Binance Smart Chain
 description: This tutorial will show the readers how they can get started with developing a binance smart chain token using Ethereum compatible tools such as Remix and Metamask.
 author: esther-wanjira
-date: 2022-03-08T00:00:00-21:20
+date: 2022-03-15T00:00:00-21:20
 topics: [Blockchain]
 excerpt_separator: <!--more-->
 images:
@@ -20,7 +20,7 @@ Blockchain networks that support smart contracts functionality are on the rise. 
 ### Table of contents
 - [Goal](#goal)
 - [Pre-requisites](#pre-requisites)
-- [Why Binance Smart Chain?](#why-binance-smart-chain)
+- [Why Binance Smart Chain](#why-binance-smart-chain)
 - [Set Up Remix](#set-up-remix)
 - [Tokens in Binance Smart Chain](#tokens-in-binance-smart-chain)
 - [Defining Contracts](#defining-contracts)
@@ -39,15 +39,15 @@ Tokens are the building blocks of any smart contract-based blockchain. We rely o
 ### Pre-requisites
 - Basics of [Blockchain](https://www.oracle.com/ke/blockchain/what-is-blockchain/) technology.
 - An IDE for smart contracts such as the in-browser [Remix IDE](https://remix.ethereum.org/).
-- A Metamask wallet extension. [Install here](https://chrome.google.com/webstore/detail/metamask/nkbihfbeogaeaoehlefnkodbefgpgknn?hl=en) on your Chrome browser.
+- A Metamask wallet extension. Use this [link](https://chrome.google.com/webstore/detail/metamask/nkbihfbeogaeaoehlefnkodbefgpgknn?hl=en) to install on your Chrome browser.
 
-### Why Binance Smart Chain?
+### Why Binance Smart Chain
 Over time the Ethereum platform has expanded causing network congestion to its infrastructure. This impacted gas fees and slow transactions. As the plan to migrate to Proof-of-Stake has taken time, Ethereum currently uses Proof-of-Work consensus. On the other hand, Binance uses the Proof-of-Authority mechanism.
 
-Block producers are known as validators in the Proof-of-Authority consensus in Binance Smart Chain. These validators are limited to 21 and need the approval of identities from Binance. Since we need pre-approval from Binance to become a validator, Binance gains complete control making it more of a private blockchain. The Binance Smart Chain is fully compatible with the Ethereum Virtual Machine.
+Block producers are known as validators in the Proof-of-Authority consensus in the Binance Smart Chain. These validators are limited to 21 and need the approval of identities from Binance. Since we need pre-approval from Binance to become a validator, Binance gains complete control making it more of a private blockchain. The Binance Smart Chain is fully compatible with the Ethereum Virtual Machine.
 
 ### Set Up Remix
-Remix is an online tool for Ethereum and solidity development. It comes bundled with plugins for testing, debugging, and deploying smart contracts. Launch Remix IDE on your browser by navigating to https://remix.ethereum.org/. The editor looks like:
+Remix is an online tool for Ethereum and solidity development. It comes bundled with plugins for testing, debugging, and deploying smart contracts. Launch Remix IDE on your browser by navigating to https://remix.ethereum.org/. The editor looks like this:
 
 ![Remix IDE](/engineering-education/binance-smart-chain-tutorial/remix.png)
 
@@ -65,15 +65,14 @@ The above code is very straightforward:
 > Note: A pragma directive remains local to a source file ensuring that any modules we import on a file do not cause ambiguity.
 
 ### Tokens in Binance Smart Chain
-In blockchains that support smart contracts, developers need to create crypto tokens that are based on a set of standards. This includes building DApps, exchanges, wallets, etc. While Ethereum's popular standard is the ERC-20 token, BSC uses the BEP-20 standard and in many ways, it is similar to the ERC-20 in Ethereum. Examples of popular BEP-20 tokens include:
+In blockchains that support smart contracts, developers need to create crypto tokens based on a set of standards. These standards include building DApps, exchanges, wallets, etc. While Ethereum's popular standard is the ERC-20 token, BSC uses the BEP-20 standard and in many ways, it is similar to the ERC-20 in Ethereum. Examples of popular BEP-20 tokens include:
 
 - BUSD Token: BUSD stands for [Binance USD](https://paxos.com/busd/). It is a stable coin created by [Paxos](https://paxos.com/), a tether to USD.  
 - CAKE Token: This is a BEP-20 token that controls the [PancakeSwap](https://pancakeswap.finance/) platform.
 - BUX Token was created as a utility token for the [BUX exchange](https://bux-c.com/) ecosystem.
-- SAFEMOON Token: a Defi token for [safemoon](https://safemoon.net/) on the Binance Smart Chain.
+- SAFEMOON Token: A Defi token for [safemoon](https://safemoon.net/) on the Binance Smart Chain.
 
 ### Defining Contracts
-
 By convention, each solidity file contains one smart contract. A contract in Solidity is similar to classes in OOP languages in that it wraps a collection of our variables, functions, events, state of a blockchain, and modifiers. Start by defining a contract named `Token` with the following state variables:
 
 ```js
@@ -101,9 +100,10 @@ contract Token{
 
 ### Add mapping and events
 A mapping is a `key-value` store in Solidity. The syntax looks like this:
+
 `mapping(key => value) mappingName`
 
-Mapping is a Solidity keyword. Our key is mostly an address that references each record map to the balance (in integers). Our arrow simply points to the direction of the mapping. E.g `0x0000 => 500` is a mapping that shows the address `0x000` has a balance of 500 tokens. Define a mapping for the balances:
+Mapping is a Solidity keyword. Our key is mostly an address that references each record map to the balance (in integers). Our arrow simply points to the direction of the mapping. E.g., `0x0000 => 500` is a mapping that shows the address `0x000` has a balance of 500 tokens. Define a mapping for the balances:
 
 ```js
     // mapping
@@ -126,7 +126,7 @@ The Ethereum Virtual Machine supports events as a way to allow loggings and exte
 ```
 
 ### Create a smart contract constructor
-Next, add a constructor that runs when the contract is executed. Unlike in object-oriented programming where the constructor gets initialized every time, Solidity invokes it only once when the contract is deployed to `init` the smart contract state. 
+Next, add a constructor that runs when the contract is executed. Unlike in object-oriented programming, where the constructor gets initialized every time, Solidity invokes it only once when the contract is deployed to `init` the smart contract state. 
 
 ```js
 contract Token{
@@ -156,7 +156,7 @@ function balanceOf(address owner) public view returns(uint) {
 Using the `view` keyword in a function indicates that it is read-only and will not change the state of any variable. All functions we mark as `view` do not utilize gas fees when executing.
 
 ### Transfering Tokens Ownership
-Our BSC smart contract needs a function to support `transfer` transactions. Within our function, need to ensure that the calling party to perform the transfer is the owner of the token.
+Our BSC smart contract needs a function to support `transfer` transactions. Within our function, we need to ensure that the calling party performing the transfer is the owner of the token.
 
 ```js
 function transfer(address to, uint value) public returns(bool){
@@ -170,7 +170,7 @@ function transfer(address to, uint value) public returns(bool){
 }
 ```   
 
-- The `require()` function checks for the role of actions in a smart contract. Our require functions receive the balance of the `msg.sender` address and check if the caller has enough value to transfer the requested tokens. If the balance is too low, we abort the transaction and throw an error.
+- The `require()` function checks for the role of actions in a smart contract. Our `require` functions receive the balance of the `msg.sender` address and check if the caller has enough value to transfer the requested tokens. If the balance is too low, we abort the transaction and throw an error.
 
 - `balances[msg.sender]` references our mapping to perform a deduct `value` of tokens from the sender and instead increment the `balances[to] += value;` for the recipient. These actions will trigger an update to the mappings during transactions.
 
@@ -219,7 +219,6 @@ function transferFrom(address from, address to, uint value) public returns(bool)
 - Finally, we update our mappings and emit the `Transfer` event to complete the transaction.
 
 ### A final demo in MetaMask
-
 Using a metamask plugin, we can inject the web3.js namespace within our browser. If we configure and deploy our smart contract in a sandbox test environment, the final app should look like this:
 
 The executable functions that we deploy to the smart contract to run transactions.
@@ -227,6 +226,7 @@ The executable functions that we deploy to the smart contract to run transaction
 ![executable functions](/engineering-education/binance-smart-chain-tutorial/execfuncs.png).
 
 Interacting with transfer and balance functions.
+
 ![check-balance-of](/engineering-education/binance-smart-chain-tutorial/check-balance-of.png).
 
 ### Conclusion
