@@ -44,6 +44,7 @@ Let's call a dataset found in the VIM package called `nhanes`.
 head(nhanes)
 ```
 ![nhanes-dataset](/engineering-education/predictive-mean-matching/nhanes-dataset.PNG)
+
 Our model will assume `chl` as the response variable and `bmi` and `hyp` as predictor variables.
 To find out the percentage of missing values we will use the`mean()` and `is.na()` functions as follows:
 ```r
@@ -77,6 +78,7 @@ geom_point()
 heart.plot
 ```
 ![r-box-plotting](/engineering-education/predictive-mean-matching/r- pbox- plotting.png)
+
 ### Fitting a linear regression for a predictive model
 Writing the following code in R creates a predictive model with our interest modeled as:`chl` as the response variable and ` bmi`,`hyp2` as the predicting variables.
 ```r
@@ -85,6 +87,7 @@ summary(fitmodel)
 #we get the following below
 ```
 ![summary](/engineering-education/predictive-mean-matching/summary.PNG)
+
 The estimated effect of bmi on cholesterol level is 2.45, while the estimated effect of hyp on cholesterol is 16.845.
 Implying that for every 1% increase on bmi, there is a correlated 2.45% increase in the incidence of cholesterol levels.Also for every 1% increase in hyp, there is a 1% increase in the rate of cholesterol levels.
 ### Multiple imputation by MICE
@@ -140,6 +143,7 @@ We use the `VIM` package to get `pbox()` function to visualize the missing data 
 pbox(nhanes,pos=1,int=GFALSE,cex=0.7)
 ```
 ![r-plot2](/engineering-education/predictive-mean-matching/r-plot2.png)
+
 ### Let us begin our imputation process
 To begin our imputation all we need is the name of our array in our case `nhanes` dataset.
 ```r
