@@ -1,4 +1,23 @@
+---
+layout: engineering-education
+status: publish
+published: true
+url: /building-and-integrating-spring-interceptor-in-java/
+title: Building and Integrating Spring Interceptors In Java
+description: In this article, we will look at what Interceptors are in Spring Boot and use them to intercept incoming requests and responses
+author: ayemobola-tolulope
+date: 2022-03-15T00:00:00-10:00
+topics: [API]
+excerpt_separator: <!--more-->
+images:
+
+  - url: /engineering-education/building-and-integrating-spring-interceptor-in-java/hero.jpg
+    alt: Spring Boot Interceptor diagram
+---
+
 In my personal project, I have had reasons to add an `Interceptor`. As the name suggests, an `Interceptor` is a class that comes in between a request reaching the intended endpoint and a response returning to the requesting client - user or application.
+
+<!--more-->
 
 With this, an interceptor can check a request before sending it to its destination. At this point, we might want to perform some authentication of headers, validations of the request body or simply modify the request object by adding some more fields or data to the request body.
 
@@ -61,7 +80,7 @@ public class CustomInterceptor implements HandlerInterceptor {
             Object handler) throws Exception {
 
 
-        log.info("[preHandle() method called during request handling {}", req);
+        log.info("preHandle() method called during request handling {}", request);
 
         return true;
     }
@@ -80,7 +99,7 @@ public void postHandle(
         Object handler,
         ModelAndView modelAndView) throws Exception {
 
-    log.info("postHandle() method called during response return {}", res);
+    log.info("postHandle() method called during response return {}", response);
 }
 ```
 #### afterCompletion()
@@ -97,7 +116,7 @@ public void afterCompletion(
     if (ex != null){
         ex.printStackTrace();
     }
-    log.info("afterCompletion() called on both request {} and response {}", req, res);
+    log.info("afterCompletion() called after both request {} and response {}", request, response);
 }
 ```
 ### Registering a custom interceptor
@@ -127,3 +146,6 @@ Interceptors can be versatile and have a wide range of use. In a perfect securit
 Furthermore, some particular fields may be included in the response header or body. These can be achieved in the interceptor to control what passes to and from controllers in the system.
 ### Conclusion
 In this article, we learned about Spring Interceptors, how they are implemented and what they do. The link to the repository can be found [here](https://github.com/teevyne/interceptor-repo.git). I hope you learned something and you can apply it to your projects. Cheers!
+
+---
+Peer Review Contributions by: [John Amiscaray](/engineering-education/authors/john-amiscaray/)
