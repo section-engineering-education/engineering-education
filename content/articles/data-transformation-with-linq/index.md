@@ -6,7 +6,7 @@ url: /using-linq-in-the-transformation-of-data/
 title: Using LINQ in the transformation of data
 description: In this tutorial, we will look at the C# LINQ extension methods and how they can be used to transform data.
 author: amos-njoroge
-date: 2022-03-08T00:00:00-09:14
+date: 2022-03-15T00:00:00-10:14
 topics: [Languages]
 excerpt_separator: <!--more-->
 images:
@@ -234,8 +234,8 @@ In conclusion, we have seen and looked at how LINQ aids in data transformation u
 
 For example, creating a single output sequence using multiple inputs, choosing a subset of each source element, performing operations on source elements, and transforming XML into in-memory objects.
 
-### What next
-After a careful study on this topic, do not stop here; continue digging deep into other C# programming and SQL areas to have a vast knowledge of programming with C# and other programming languages.
+### What's next
+After a careful study on this topic, do not stop here; continue digging deep into other C# programming and SQL areas to have a vast knowledge of programming.
 
 ---
 Peer Review Contributions by: [Miller Juma](/engineering-education/authors/miller-juma/)
