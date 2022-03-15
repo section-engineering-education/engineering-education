@@ -1,4 +1,4 @@
-In my personal project, I have had reasons to add an `Interceptor`. As the name suggests, an `Interceptor` is a class that comes in between a request reaching the intended endpoint and a response returning to the requesting client - user or application. 
+In my personal project, I have had reasons to add an `Interceptor`. As the name suggests, an `Interceptor` is a class that comes in between a request reaching the intended endpoint and a response returning to the requesting client - user or application.
 
 With this, an interceptor can check a request before sending it to its destination. At this point, we might want to perform some authentication of headers, validations of the request body or simply modify the request object by adding some more fields or data to the request body.
 
@@ -57,8 +57,10 @@ public class CustomInterceptor implements HandlerInterceptor {
 
     @Override
     public boolean preHandle(
-            HttpServletRequest req,
-            HttpServletResponse res) throws Exception {
+            HttpServletRequest request,
+            HttpServletResponse response,
+            Object handler) throws Exception {
+
 
         log.info("[preHandle() method called during request handling {}", req);
 
@@ -71,12 +73,13 @@ Now, let us look at the next method after `preHandle()`
 #### postHandle()
 This method is invoked by the `interceptor` after the request has been handled but just before the `DispatcherServlet` passes the response to the client. If we like, at this point, we could add more attributes to the response. We can also get to record the time of processing the request. Just like with the preHandle(), we will be logging a message in the method execution.
 ```java
-// in the LoogingInterceptor class...
+// in the CustomInterceptor class...
 @Override
 public void postHandle(
-  HttpServletRequest req,
-  HttpServletResponse res,
-  ModelAndView modelAndView) throws Exception {
+        HttpServletRequest request,
+        HttpServletResponse response,
+        Object handler,
+        ModelAndView modelAndView) throws Exception {
 
     log.info("postHandle() method called during response return {}", res);
 }
@@ -87,8 +90,11 @@ Finally, we can use `afterCompletion()` to obtain the response and request after
 // in the CustomInterceptor class...
 @Override
 public void afterCompletion(
-  HttpServletRequest req, HttpServletResponse res)
-  throws Exception {
+        HttpServletRequest request,
+        HttpServletResponse response,
+        Object handler,
+        @Nullable Exception ex) throws Exception {
+
     if (ex != null){
         ex.printStackTrace();
     }
