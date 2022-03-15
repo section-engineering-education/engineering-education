@@ -45,7 +45,7 @@ To develop a video downloader, you should have;
 - **Pytube** - Downloads the video from YouTube.
 
 ### Installations
-Requirements need to be ready before you start your development process. A Python environment is a foremost requirement for this project. You can follow [these directives](https://www.section.io/engineering-education/a-beginners-guide-to-python/) to set-up a Python environment on your PC. A crucial module needs to be installed, which is the beginning of the development process.
+Requirements need to be ready before you start your development process. A Python environment is a foremost requirement for this project. You can follow [these directives](https://www.section.io/engineering-education/introduction-to-virtual-environments-and-dependency-managers/) to set-up a Python environment on your PC. A crucial module needs to be installed, which is the beginning of the development process.
 
 #### Installing PyTube module
 To install Pytube using `pip`, open your command prompt CLI on your machine and type in the following command.
