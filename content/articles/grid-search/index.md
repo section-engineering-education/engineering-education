@@ -32,7 +32,7 @@ In this post, we will dive into a key technique to optimize hyperparameters know
 
 ### Prerequisites
 Before we begin it may be helpful to go over and install the following:
-• A section of this [article](/meta-learning/) will give a brief introduction to hyperparameters and the grid search method.
+• A section of this [article](/engineering-education/meta-learning/) will give a brief introduction to hyperparameters and the grid search method.
 
 • [VSCode](https://code.visualstudio.com/) will be my code editor, and we will be using Python as the language.
 

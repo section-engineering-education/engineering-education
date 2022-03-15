@@ -7,7 +7,7 @@ title: Building a Cryptocurrency Tracking Telegram Bot with Python
 description: Telegram bots are accounts operated by software that serve as handy tools for many tasks. In this article, we will build a cryptocurrency tracking telegram bot using Python.
 author: solomon-esenyi
 date: 2021-02-17T00:00:00-13:00
-topics: []
+topics: [Blockchain]
 excerpt_separator: <!--more-->
 images:
 
@@ -43,7 +43,7 @@ They can do many things, including:
 
 ![telegram group butler](/engineering-education/cryptocurrency-tracking-telegram-bot/ngcq6rvjxrpoibsspq9g.png)
 
-Cryptocurrencies are digital forms of currencies that exist in the cyber world. They are peer-to-peer and built upon [blockchain technology](/history-of-blockchain/), a distributed and decentralized ledger with no central authority. Popular cryptocurrencies include Bitcoin, Ethereum, Litecoin, Doge, and Ripple.
+Cryptocurrencies are digital forms of currencies that exist in the cyber world. They are peer-to-peer and built upon [blockchain technology](/engineering-education/history-of-blockchain/), a distributed and decentralized ledger with no central authority. Popular cryptocurrencies include Bitcoin, Ethereum, Litecoin, Doge, and Ripple.
 
 ### Building a cryptocurrency tracker
 Cryptocurrencies are volatile, so their prices change every second. There are also many cryptocurrencies in existence, and it can be troublesome to keep track of every one. A cryptocurrency tracker aggregates multiple coins' prices in a single place and updates itself as their prices change.

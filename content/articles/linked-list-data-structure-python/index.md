@@ -26,10 +26,10 @@ Well, the Linked List is not as sophisticated as you think. It's extremely power
 
 *For more background on the different types of data structures in Python, check out the following articles:*
 
-- [Introduction](/data-structures-python-part-1/)
-- [List](/list-data-structure-python/)
-- [Stack](/stack-data-structure-python)
-- [Queue](/queue-data-structure-python/)
+- [Introduction](/engineering-education/data-structures-python-part-1/)
+- [List](/engineering-education/list-data-structure-python/)
+- [Stack](/engineering-education/stack-data-structure-python)
+- [Queue](/engineering-education/queue-data-structure-python/)
 
 ## Table of Contents
 

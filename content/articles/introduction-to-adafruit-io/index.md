@@ -72,9 +72,9 @@ IoT developers prefer Adafruit IO over other IoT cloud providers for the followi
 - **Documentation & Community** - Many blogs with amazing community support allows continuous developments of the products.
 
 ### Step by step guide
-In our previous article on ["Getting started with NodeMCU"](/getting-started-with-nodemcu/), we learned about what NodeMCU is, and we also built a simple project for the blinking of LEDs. In continuation of the previous article, let's learn about its deployment on the cloud.
+In our previous article on ["Getting started with NodeMCU"](/engineering-education/getting-started-with-nodemcu/), we learned about what NodeMCU is, and we also built a simple project for the blinking of LEDs. In continuation of the previous article, let's learn about its deployment on the cloud.
 
-It is highly recommended to go through the [previous article](/getting-started-with-nodemcu/), before continuing.
+It is highly recommended to go through the [previous article](/engineering-education/getting-started-with-nodemcu/), before continuing.
 
 #### Objective
 In our previous article, we worked with NodeMCU on blinking lights of built-in LEDs. In this article, to demonstrate Adafruit IO works, we will send (publish) the LED brightness readings to the Adafruit IO cloud via Arduino IDE (written in C), and receive (subscribe) them via a Python server.

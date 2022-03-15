@@ -7,7 +7,7 @@ title: How to Build Your Own Private Blockchain
 description: Private blockchains work based on access controls which restrict the people who can participate in the network. Instead of waiting for a network consensus, information can be recorded immediately.
 author: jethro-magaji
 date: 2020-06-28T00:00:00-08:00
-topics: []
+topics: [Blockchain]
 excerpt_separator: <!--more-->
 images:
 

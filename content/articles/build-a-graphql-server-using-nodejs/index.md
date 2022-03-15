@@ -57,9 +57,9 @@ For the data, the setup uses JavaScript, built-in arrays, and objects for the in
 For reference, the entire GitHub repository, along with a deployed version of the project is linked at the bottom so you can take a deeper dive.
 
 #### Reference to get started with Node.js and MongoDB
-- [Setup a server on Node.js using Express](/express/)
-- [Getting started with databases](/working-with-databases-part1/)
-- [Other Node.js references](/topic/node.js/)
+- [Setup a server on Node.js using Express](/engineering-education/express/)
+- [Getting started with databases](/engineering-education/working-with-databases-part1/)
+- [Other Node.js references](/engineering-education/topic/node.js/)
 
 #### Initialize project with Express
 The first step is to initialize your project:
@@ -241,7 +241,7 @@ The first step is to initialize your project:
 #### Adding basic queries
 This section will use static data stored in arrays to be fetched via the GraphQL server. In a later section, we will replace it with MongoDB.
 
-1. Install the `lodash` library for JavaScript via your terminal. This library makes working with arrays and objects easy. (To get a brief idea about Lodash, read this [EngEd article](/most-useful-nodejs-packages/). Lodash is the fourth section of the article.)
+1. Install the `lodash` library for JavaScript via your terminal. This library makes working with arrays and objects easy. (To get a brief idea about Lodash, read this [EngEd article](/engineering-education/most-useful-nodejs-packages/). Lodash is the fourth section of the article.)
 
     For more details, visit the [Lodash website](https://lodash.com/).
 

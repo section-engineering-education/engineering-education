@@ -44,7 +44,7 @@ We will build our application based on the Github API. Therefore, we need to obt
 #### Organizing the folders
 Instead of writing our code on a single file, we need to organize the folders within our Flutter project to locate our application's files and components with ease. This practice allows us to find bugs easier. 
 
-Besides, we need to separate the view files from files that facilitate fetching data from the API to avoid confusion between the two application's components. You can check [this](/flutter-folder-organization/) article for the preferable folder organization. 
+Besides, we need to separate the view files from files that facilitate fetching data from the API to avoid confusion between the two application's components. You can check [this](/engineering-education/flutter-folder-organization/) article for the preferable folder organization. 
 
 The final folder organization should appear as below:
 ```bash

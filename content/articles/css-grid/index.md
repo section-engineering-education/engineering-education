@@ -15,7 +15,7 @@ images:
 ---
 CSS Grid is a two-dimensional positioning layout system in CSS, that can be used to create responsive interfaces for the web. Similar to Flexbox, CSS rules are applied to the parent container and the children.
 
-CSS Flexbox is a one dimensional positioning system. Check out [this](/css-flexbox) article to learn more about CSS Flexbox.
+CSS Flexbox is a one dimensional positioning system. Check out [this](/engineering-education/css-flexbox) article to learn more about CSS Flexbox.
 
 ### Table of Contents
 - [Introduction & History](#introduction-&-history)

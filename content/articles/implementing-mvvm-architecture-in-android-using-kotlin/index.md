@@ -14,7 +14,7 @@ images:
   - url: /engineering-education/implementing-mvvm-architecture-in-android-using-kotlin/hero.jpg
     alt: MVVM (model–view–viewmodel) Android Kotlin image
 ---
-This tutorial is suitable for beginners. Especially those who have just started learning [Android programming in Kotlin](/kotlin-extensions/). Every application needs to follow certain architectural principles.
+This tutorial is suitable for beginners. Especially those who have just started learning [Android programming in Kotlin](/engineering-education/kotlin-extensions/). Every application needs to follow certain architectural principles.
 <!--more-->
 
 Failure to adhere to this requirement results in applications difficult to scale and maintain. As a result, more time and resources will be needed to push even simple updates. Therefore, the developer may end up missing crucial opportunities.

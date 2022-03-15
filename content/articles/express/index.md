@@ -14,7 +14,7 @@ images:
   - url: /engineering-education/express/hero.jpg
     alt: expressjs example text image
 ---
-[Node.js](https://www.section.io/engineering-education/history-of-nodejs/) is a JavaScript run time environment which is used to create server-side applications and tools. Node.js is fast, portable, and written in JavaScript but it does not directly support common tasks such as handling requests, serving files, and handling HTTP methods such as `GET` and `POST`. This is where Node.js's [rich ecosystem](/most-useful-nodejs-packages/) comes to our aid.
+[Node.js](https://www.section.io/engineering-education/history-of-nodejs/) is a JavaScript run time environment which is used to create server-side applications and tools. Node.js is fast, portable, and written in JavaScript but it does not directly support common tasks such as handling requests, serving files, and handling HTTP methods such as `GET` and `POST`. This is where Node.js's [rich ecosystem](/engineering-education/most-useful-nodejs-packages/) comes to our aid.
 <!--more-->
 
 **Express.js (Express) is a light web framework which sits on top of Node.js and it adds functionality like ([middleware](https://expressjs.com/en/guide/writing-middleware.html), [routing](https://en.wikipedia.org/wiki/Routing), etc.) and simplicity to Node.js.**
@@ -342,7 +342,7 @@ If you go to the webpage you can see `Hello and Welcome !!!`. You can write Java
 
 **Testing Express Applications**.
 
-Testing is an important part of developing software. Read [this article](/node-testing/) where I discuss testing Node.js applications using Mocha and Chai.
+Testing is an important part of developing software. Read [this article](/engineering-education/node-testing/) where I discuss testing Node.js applications using Mocha and Chai.
 
 ### Conclusion
 The minimalistic philosophy of Express may not be suited for everyone's needs, because you can make mistakes while you are making those decisions about your applications infrastructure.

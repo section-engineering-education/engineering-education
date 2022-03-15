@@ -25,7 +25,7 @@ First, make sure you’ve installed Node.js on your local machine or VPS hosting
 
 The Node.js installer comes bundled with the package manager NPM. NPM is a repository for Node Modules, reusable pieces of code that can extend the functionality of your server. It’s similar to a plugin repository, and Node Modules can be thought of as code snippets or libraries (depending on how large they are).
 
-*Windows Users:* Need to add Node and NPM to their PATH so they can call them easily on the command line. For more in-depth instructions, see my [guide](/working-with-databases-part1/#mongodb-installation) on How to Install MongoDB.
+*Windows Users:* Need to add Node and NPM to their PATH so they can call them easily on the command line. For more in-depth instructions, see my [guide](/engineering-education/working-with-databases-part1/#mongodb-installation) on How to Install MongoDB.
 
 
 ### Testing the Install
@@ -62,7 +62,7 @@ The first step to use EJS is to install it. A simple `npm install ejs --save` wi
 ### Converting Static Pages to EJS Files
 Next, you need to convert your static HTML files into dynamic EJS ones and set up your folder structure in the way EJS expects. In the root directory of your website, create a folder called views and inside that folder create two sub-folders called pages and partials. Move all your HTML files into the pages sub-folder and rename the .html file extensions to .ejs. Your folder structure should look similar to the picture below.
 
-![NodeJS File Structure](/engineering-education/static-site-dynamic-nodejs-web-app/nodejs-file-structure.png)
+![Node.js File Structure](/engineering-education/static-site-dynamic-nodejs-web-app/nodejs-file-structure.png)
 
 ### Reusing Code - Creating Your First EJS Partial
 When creating static sites, there's often code that you repeat on every page such as the head (where the meta tags are located), header, and footer sections. It's inconvenient to change them on every page (especially on larger sites) if alterations are needed, but if you use EJS partials then you won't have to. Editing one template (partial) file will update the code on every page that the file is included in.
@@ -162,8 +162,8 @@ app.get('/', function (req, res) {
 ### Passing Server-Side Data
 Congratulations! You've successfully converted your static website to a Node.js web app. You've also created your first Express web server and learned the basics of EJS templating.
 
-Eager to deploy your first Node.js web app so you can show it off? Follow my [Node.js deployment tutorial for DigitalOcean](/deploying-nodejs-web-app).
+Eager to deploy your first Node.js web app so you can show it off? Follow my [Node.js deployment tutorial for DigitalOcean](/engineering-education/deploying-nodejs-web-app).
 
 If you want to build on the skills you've learned in this tutorial, I suggest using EJS templating to work with APIs and databases.
 
-If you need a helping hand on either of those areas, check out my [Getting to Grips with Databases](/working-with-databases-part1/) and [Getting to Grips with APIs](/simple-guide-to-using-apis-nodejs) guides which will get you started.
+If you need a helping hand on either of those areas, check out my [Getting to Grips with Databases](/engineering-education/working-with-databases-part1/) and [Getting to Grips with APIs](/engineering-education/simple-guide-to-using-apis-nodejs) guides which will get you started.
