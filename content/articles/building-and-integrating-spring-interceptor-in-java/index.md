@@ -61,7 +61,7 @@ public class CustomInterceptor implements HandlerInterceptor {
             Object handler) throws Exception {
 
 
-        log.info("[preHandle() method called during request handling {}", req);
+        log.info("preHandle() method called during request handling {}", request);
 
         return true;
     }
@@ -80,7 +80,7 @@ public void postHandle(
         Object handler,
         ModelAndView modelAndView) throws Exception {
 
-    log.info("postHandle() method called during response return {}", res);
+    log.info("postHandle() method called during response return {}", response);
 }
 ```
 #### afterCompletion()
@@ -97,7 +97,7 @@ public void afterCompletion(
     if (ex != null){
         ex.printStackTrace();
     }
-    log.info("afterCompletion() called on both request {} and response {}", req, res);
+    log.info("afterCompletion() called after both request {} and response {}", request, response);
 }
 ```
 ### Registering a custom interceptor
