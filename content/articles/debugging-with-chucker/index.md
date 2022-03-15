@@ -6,7 +6,7 @@ url: /debugging-with-chucker/
 title: Getting Started With Debugging In Android Using Chucker
 description: In this tutorial, we will discuss how to debug android applications using chucker. Debugging is the process of analyzing the code in software to detect and remove potential errors that might cause your app to crash.
 author: hepatrique-okeyo
-date: 2022-03-11T00:00:00-18:25
+date: 2022-03-15T00:00:00-11:25
 topics: [Android]
 excerpt_separator: <!--more-->
 images:
@@ -16,7 +16,7 @@ images:
 ---
 Working with `OkHttp` to perform network calls is always easy. The problem arises when you want to debug and see if the task is successful or not. 
 <!--more-->
-Chucker comes in handy when debugging using using the `OkHttp` library. [Chucker](https://github.com/ChuckerTeam/chucker) is a simple to integrate android debugging library unlike [Timber](https://www.section.io/engineering-education/planting-timber-logs-the-right-way/) and [Stetho](http://facebook.github.io/stetho/).
+Chucker comes in handy when debugging using the `OkHttp` library. [Chucker](https://github.com/ChuckerTeam/chucker) is a simple to integrate android debugging library unlike [Timber](https://www.section.io/engineering-education/planting-timber-logs-the-right-way/) and [Stetho](http://facebook.github.io/stetho/).
 
 You might be wondering what debugging is in Android development. Debugging is defined as the process of analyzing the code in software to detect and remove potential errors that might cause your app to crash.
 
