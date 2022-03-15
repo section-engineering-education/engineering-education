@@ -195,3 +195,5 @@ The above example displays some of the functionalities performed by Pillow packa
 In conclusion, we had outlined what one can do using the image library in Wand—blurring an image, drawing, and transforming the same idea. This has proved that it can use a single image but have several displays, which is achieved by calling several functions.
 
 For further studies about this topic, click [this](https://www.programcreek.com/python/example/82689/wand.image.Image) link.
+
+For further clarifications, you can still check the github source code [here](https://github.com/mukono10/Wand-library-in-python#wand-library-in-python)
