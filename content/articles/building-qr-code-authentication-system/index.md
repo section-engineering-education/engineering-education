@@ -169,16 +169,16 @@ while True:
 ![Output](/engineering-education/building-qr-code-authentication-system/authorised-access.jpg)
 
 From the above output, our model has worked perfectly, scanning all the QR Codes and granting access to the authorized users. The complete code can be found on [GitHub](https://github.com/dentonya/QR_Code-Authentication-System).
+
 ### Conclusion
 From this tutorial, QR Codes play a significant role in real life through data encoding, high data storage capacity, and their ability to provide secured access to information. 
+
+Happy Coding!
 
 ### Further reading
 - [How to generate and read QR Codes in Python](https://www.thepythoncode.com/article/generate-read-qr-code-python)
 - [QR Codes](https://en.wikipedia.org/wiki/QR_code).
 - [Building QR Codes in Python](https://towardsdatascience.com/building-a-barcode-qr-code-reader-using-python-360e22dfb6e5)
   
-
-Happy Coding!
-
 ---
-Peer Review Contributions by
+Peer Review Contributions by: [Willies Ogola](/engineering-education/authors/willies-ogola/)
