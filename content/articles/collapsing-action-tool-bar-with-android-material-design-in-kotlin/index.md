@@ -5,7 +5,7 @@ published: true
 url: /collapsing-action-tool-bar-with-android-material-design-in-kotlin/
 title: How to Implement Collapsing Toolbar with Material Design in Kotlin
 description: This tutorial will walk the reader through how to implement collapsing action toolbar with Material Design in Kotlin.
-author: david-maina
+author: david-maish
 date: 2022-03-15T00:00:00-03:05
 topics: [Languages, Android]
 excerpt_separator: <!--more-->
@@ -18,7 +18,7 @@ The collapsing toolbar layout widget is used along with the basic toolbar widget
 <!--more-->
 Expanding and collapsing toolbar on-screen scrolling is a fantastic toolbar motion made possible by this widget, it automatically increases the toolbar size set in the app bar layout widget.
 
-In this tutorial, we will build an application that utilizes the collapsing toolbar layout widget, our app will also include the new Android's design support library to create scrolling effects that are eye-catching animations (palette API). 
+In this tutorial, we will build an application that utilizes the collapsing toolbar layout widget, our app will also include the new Android's design support library to create scrolling effects that are eye-catching animations using the palette API. 
 
 ### Table of contents
 - [Prerequisites](#prerequisites)
@@ -33,10 +33,10 @@ In this tutorial, we will build an application that utilizes the collapsing tool
 To follow along with this tutorial, the reader will need the following:
 - A basic knowledge in [Kotlin](https://developer.android.com/courses/android-basics-kotlin/course).
 - [Android Studio](https://developer.android.com/studio/index.html) installed on your computer.
-- A virtual device (emulator) downloaded in your IDE. (optional)
+- A virtual device (emulator) downloaded in your IDE. (Optional)
 
 ### Setting up the project environment
-- Open android studio.
+- Open Android studio.
 - Click create a `new project`.
 - Select `Empty Activity` -> Next in the project template dialogue box.
 - Choose a suitable name for the project. In this tutorial, we name ours “Collapsing Toolbar”.
@@ -66,7 +66,6 @@ implementation 'androidx.palette:palette-ktx:1.0.0'
 The two dependencies ensure that Android apps are developed safely and securely and work with color palette API.
 
 ### Designing the XML layout
-
 #### Key attributes for our XML
 > Note: please read the following terminologies to understand how the application design layout works.
 
