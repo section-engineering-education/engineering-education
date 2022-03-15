@@ -1,6 +1,21 @@
-### Introduction
-The collapsing toolbar layout widget is used along with the basic toolbar widget to create a more sophisticated version of the regular toolbar. 
+---
+layout: engineering-education
+status: publish
+published: true
+url: /collapsing-action-tool-bar-with-android-material-design-in-kotlin/
+title: How to Implement Collapsing Toolbar with Material Design in Kotlin
+description: This tutorial will walk the reader through how to implement collapsing action toolbar with Material Design in Kotlin.
+author: david-maina
+date: 2022-03-15T00:00:00-03:05
+topics: [Languages, Android]
+excerpt_separator: <!--more-->
+images:
 
+  - url: /engineering-education/collapsing-action-tool-bar-with-android-material-design-in-kotlin/hero.jpg
+    alt: How to Implement Collapsing Toolbar with Material Design in Kotlin Hero Image
+---
+The collapsing toolbar layout widget is used along with the basic toolbar widget to create a more sophisticated version of the regular toolbar. 
+<!--more-->
 Expanding and collapsing toolbar on-screen scrolling is a fantastic toolbar motion made possible by this widget, it automatically increases the toolbar size set in the app bar layout widget.
 
 In this tutorial, we will build an application that utilizes the collapsing toolbar layout widget, our app will also include the new Android's design support library to create scrolling effects that are eye-catching animations (palette API). 
@@ -269,3 +284,6 @@ Your final app should look like the images below.
 In conclusion, we have created a collapsing toolbar and used the design libraries and the Palette API to design catchy color animations. For a scrolling effect on the content, you can also try other elements such as recycler view. In the toolbar, you can add elements too, such as a back icon a menu to enhance your coding skills.
 
 Happy coding!
+
+---
+Peer Review Contributions by: [Jethro Magaji](/engineering-education/authors/jethro-magaji/)
