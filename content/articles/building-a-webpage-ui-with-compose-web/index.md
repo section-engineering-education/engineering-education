@@ -17,7 +17,7 @@ By the end of this tutorial, you will have an understanding of :
 - Building Web UI
 - Handling Events
 - Controlled and uncontrolled inputs
-- Style DSL in compose
+- Using Domain Specific Language(DSL) style in compose
 
 ### Getting started with Compose web
 Compose web is part of the Compose Multiplatform which was recently released. The Compose multiplatform has simplified development since it allows code exchange between Web, Desktop, and Android applications. 
@@ -33,7 +33,7 @@ To create a project, open the IntelliJ IDEA and click on `New` the `Project`. Fr
 Also, if you don't want to create a new project, you can use the template [here](https://github.com/JetBrains/compose-jb/tree/master/templates/web-template).
 
 ### Step 2: Update `settings.gradle.kts` file
-Open `settings.gradle.kts` and paste the following code: 
+Paste the following in `settings.gradle.kts` 
 ```gradle
 pluginManagement {
     repositories {
@@ -85,11 +85,11 @@ This appears as follows:
 First, create `Main.kt` inside the kotlin folder. The `Main.kt` file will be used to deploy our logic and handle events.
 Let's understand what we place in `Main.kt`.
 
-**Entry Point**
-An HTML node is needed when managing Compose web. This node serves as the composition's root, and it is from right here that Compose will handle its very own DOM tree.
+**Starting point**
+Before working with Compose web, you'll have to have an HTML base station. And that is, a node. This node serves as the composition's root, and it is from right here that Compose will handle its very own DOM tree.
 ```kotlin
 renderComposable(rootElementId = "root"){
-    //the rest of the code falls in here
+    ...
 }
 ```
 
@@ -97,40 +97,48 @@ renderComposable(rootElementId = "root"){
 Compose's DOM DSL Composable isn't yet supported for all HTML tags on the web. However, we can directly access the most often used HTML tags.
 Let's use a `Div` for an illustration.
 ```kotlin
-Div(
-    attrs = {
-        // put your attributes 
-        style {
-            // outline  styling
+fun main() {
+    renderComposable(rootElementId = "root") {
+        Div(attrs = { style { backgroundColor(blue) } }) {
+            Span(attrs = { style { backgroundColor(blue) } }
+            ) {
+                //this is where the body of the `Div` container falls in
+                Text("This is my first text in compose for web")
+            }
         }
     }
-) {
-    // place content  
 }
 ```
 > NOTE: Most HTML tags of this nature will use this signature.
 
-Tags like `A`, `Input`, `Form` etc, clearly depict certain additional signature attributes which are precise to the HTML tag. 
+Lets look at another example. We will use `Input` to show some additional signature of such elemts.
 Example:
 ```kotlin
-Input(
-    type = InputType.number
-    attrs = {
-        ...
+fun main() {
+    renderComposable(rootElementId = "root") {
+        Div(attrs = { style { backgroundColor(blue) } }) {
+            Input(type = InputType.Submit)
+            {
+                //do something
+            }
+        }
     }
-)
+}
 ```
 You can use elements like `Span` as containers to wrap `Text` in order to apply styling. 
 ```kotlin
-Span(
-    attrs = { style { color(Color.blue) } } 
-) {
-    Text("Hello")
+fun main() {
+    renderComposable(rootElementId = "root") {
+        Span(attrs = {style { backgroundColor(blue) }}
+        ) {
+            Text("This is my first text in compose for web")
+        }
+    }
 }
 ```
 This in HTML corresponds to:
 ```html
-<span style="color: blue;">Hello</span>
+<span style="background-color: blue;">This is my first text in compose for web</span>
 ```
 **Compose common attributes**
 Lets have a look on some attributes that can be used with compose.
@@ -173,14 +181,12 @@ An event is a signal received by a program as a result of user actions. Event ha
 If a user clicks a mouse, a certain action is triggered and the operating system or program responds. 
 Handling `Button` clicks can be done as follows:
 ```kotlin
-Button(
-    attrs = {
-        onClick {
-            println("You clicked me!")
+fun main() {
+    renderComposable(rootElementId = "root") {
+        Button(attrs = { onClick { print("You clicked the button") } }) {
+            Text("Click me")
         }
     }
-) {
-    Text("Click me!")
 }
 ```
 > Note: We use `onClick` to handle events on a button
@@ -228,53 +234,65 @@ Also, for Controlled inputs, if you type anything it won't show a thing. Only th
 We can conclude that Controlled input content can only be modified by the external state while Uncontrolled inputs values can change on their own.
 
 ### Style DSL
-Let's look at how to use the Style DSL to style the components. It's a typesafe DSL for style sheets that you can use in Kotlin code to describe CSS rules and even tweak styling depending on the nature of your Compose application.
+In this section, we'll look at how to style UI components. For styling these components, we'll use Style Domain-Specific Language.
+Style sheets, which you can use in Kotlin code to specify CSS rules, are unaffected by DSL. Depending on the nature of your application, it can also be used to alter styling. 
 
 We can style the components using `inline` styling or `external stylesheets` as done in HTML. 
 In HTML, `inline` styling is done as follows:
 ```html
-<div> <h2 style = "color:red;">This is a heading</h2> </div>
+<div> <h1 style = "color:red;">This is a heading</h2> </div>
 ```
 In Compose web, we can do it as follows:
 ```kotlin
-Div({
-    style {
-        padding(10px)
-        property(color(Color.red)
-        )
+fun main() {
+    renderComposable(rootElementId = "root") {
+        Div (attrs = {
+            style {
+                display(DisplayStyle.Block)
+                fontStyle("bold")
+                fontSize(3.em)
+                fontFamily("Arial, Helvetica, sans-serif" )
+                border(3.em)
+            }}){
+                Text("This is an example of a Heading ")
+        }
+
     }
 }
-){}
 ```
 Alternatively, you can use `stylesheets`. The stylesheet that we define will contain the styling rules. Here is a simple example
 ```kotlin
 object AppStylesheet : StyleSheet() {
-    val container by style { 
-        display(DisplayStyle.Flex)
-        padding(20.px)
+    val box by style { 
+        display(DisplayStyle.Block)
+        margin(20.px, 10.px, 20.px, 10.px)
+        padding(10.px, 10.px, 10.px, 10.px)
+        boxSizing("border-box")
         property("font-family", "Arial, Helvetica, sans-serif")
     }
 }
 
-// Stylesheet needs to be mounted:
-renderComposable("root") {
-    Style(AppStylesheet)
-    
-    Container {
-        Text("Content")
-    }
-}
-
 @Composable
-fun Container(content: @Composable () -> Unit) {
+fun holder(content: @Composable () -> Unit) {
     Div(
-        attrs = { classes(AppStylesheet.container) }
+        attrs = { classes(AppStylesheet.box) }
     ) {
         content()
     }
 }
 ```
-You can read more about selectors from [here](https://github.com/JetBrains/compose-jb/tree/master/tutorials/Web/Style_Dsl#selectors-examples). 
+Make sure you reference your `stylesheet`. This is done in the `Main.kt` as follows:
+```kotlin
+fun main() {
+    renderComposable(rootElementId = "root") {
+        Style(AppStylesheet)
+        holder {
+            //The rest of code here
+        }
+    }
+}
+```
+You can read more about selectors from [here](https://github.com/JetBrains/compose-jb/tree/master/tutorials/Web/Style_Dsl#selectors-examples). Also, for more understanding about styling in Compose Web, you can get samples from [here](https://github.com/JetBrains/compose-jb/tree/master/examples/web-landing/src/jsMain/kotlin/com/sample)
 
 ### Running the web on the browser.
 You can run the project using commands on the terminal or launch it from the IDE. To use the commands, open the terminal and type the following commands:
