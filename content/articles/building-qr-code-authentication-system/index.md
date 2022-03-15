@@ -45,6 +45,7 @@ QR codes consist of various regions that have specific importance:
 - Encoding Region (Cell): Data, parity modules, and decoding information are all stored in this area.
 
 ![QR Code Structure](/engineering-education/building-qr-code-authentication-system/qr-structure.jpg)
+_[Image source: ResearchGate](https://www.researchgate.net/profile/Sunday-Dugga/publication/268575546/figure/fig4/AS:668575274639371@1536412175189/Structure-of-a-QR-Code-3.png)_
 
 With the popularity of QR Codes, they have found their applications in various real-world fields, such as:
 
@@ -63,7 +64,7 @@ import numpy as np
 from pyzbar.pyzbar import decode
 import cv2
 ```
-To read the QR Code image, we will use the cv2 library as shown below:
+To read the [QR Code image](https://github.com/dentonya/QR_Code-Authentication-System/blob/master/qrcodes/qr_code_txt.png), we will use the cv2 library as shown below:
 
 ```python
 image = cv2.imread("qrcodes/qr_code_txt.png")
@@ -159,7 +160,7 @@ To be sure, we can run the code for encoding QR Codes in real-time to display ea
 
 ![Output](/engineering-education/building-qr-code-authentication-system/auth-output.jpg)
 
-To find out if they can be granted access or not, we will check if the decoded text is present in the text file. If there is a match, a green-colored bounding box will be displayed with the text "Access Granted". If there is no match, a red-colored bounding box will be displayed with the message "Denied Access".
+To find out if they can be granted access or not, we will use the code below to check if the decoded text is present in the text file. If there is a match, a green-colored bounding box will be displayed with the text "Access Granted". If there is no match, a red-colored bounding box will be displayed with the message "Denied Access".
 
 ```python
 while True:
@@ -186,7 +187,12 @@ while True:
 From the output above, our model has worked perfectly, scanning all the QR Codes and granting access to the authorized users. The complete code can be found on [GitHub](https://github.com/dentonya/QR_Code-Authentication-System).
 
 ### Conclusion
-From this tutorial, QR Codes play a significant role in real life through data encoding, high data storage capacity, and their ability to provide secured access to information. 
+Computer vision has opened up alot of posibilities with the use  QR Codes. From this tutorial it is clear that they play a significant role in real life through data encoding, high data storage capacity, their ability to provide secured access to information. They are  increasingly noticed on products, advertisements, retail industries as well as in authentication and identification systems. 
+
+To summarize, we have:
+- Explored what QR Codes are and their real life applications.
+- Looked at how to scan and decode the codes using the OpenCV library.
+- Build an Authentication System using the concept of QR Codes.
 
 Happy Coding!
 
