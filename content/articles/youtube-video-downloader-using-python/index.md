@@ -3,10 +3,10 @@ layout: engineering-education
 status: publish
 published: true
 url: /youtube-video-downloader-using-python/
-title: Creating a YouTube Video Downloader using Python
+title: Creating a simple YouTube Video Downloader using Python
 description: In this article we will build a YouTube downloader using Python.
 author: victor-kamau
-date: 2022-03-14T00:00:00-18:00
+date: 2022-03-15T00:00:00-09:53
 topics: [Languages]
 excerpt_separator: <!--more-->
 images:
@@ -86,7 +86,7 @@ root.title('youtube downloader')
 
 root.mainloop()
 ```
-When you run the code so far, an empty window is displayed with the title in the code above. The rest of the code will fall in between the `Tk()` and the `mainloop()`
+When you run the code so far, an empty window is displayed with the title in the code above. The rest of the code will fall in between the `Tk()` and the `mainloop()`.
 
 #### 3. Create the link entry
 Here you will create an entry where you can paste your link. The code is as follows;
@@ -97,9 +97,9 @@ link = StringVar() # Specifying the variable type
 Label(root, text="Paste your link here", font='san-serif 15 bold').place(x=150, y=55)
 link_enter = Entry(root, width=70, textvariable=link).place(x=30, y=85)
 ```
-After running the code, the window will appear as shown in the photo below, not the final appearance.
+After running the code, the window will appear as shown in the photo below.
 
-![result](engineering-education/youtube-video-downloader-using-python/result.png)
+![result](/engineering-education/youtube-video-downloader-using-python/result.png)
 
 #### 4. Create the download button
 
@@ -124,14 +124,14 @@ def download():
     Label(root, text="Downloaded", font="arial 15").place(x=100, y=120) #Once the video is downloaded, this label `downloaded` is displayed to show dowload completion.
 
 ```
-Copy and paste a link from a YouTube video to test your API, click the download button. The video is saved in your project folder when logged into a network. The completed GUI is seen in the image below. 
+Copy and paste a link from a YouTube video to test your API, click the download button. The video is saved in your project folder when logged into a network. The completed GUI is now: 
 
-![final image](engineering-education/youtube-video-downloader-using-python/final.png)
+![final image](/engineering-education/youtube-video-downloader-using-python/final.png)
 
 ### Conclusion
-To this point, we have successfully constructed a youtube video downloader application in Python in this tutorial. First, for rendering graphics, we have used the well-known Tkinter package. Next, we used the Pytube library to create a fully functional GUI to fetch videos from Youtube.
+To this point, we have successfully constructed a youtube video downloader application in Python. First, for rendering graphics, we have used the well-known Tkinter package. Next, we used the Pytube library to create a fully functional GUI to fetch videos from Youtube.
 
-I hope you find this tutorial helpful.
+I hope you found this tutorial helpful.
 
 ---
 Peer Review Contributions by: [Lalithnarayan C](/engineering-education/authors/lalithnarayan-c/)
