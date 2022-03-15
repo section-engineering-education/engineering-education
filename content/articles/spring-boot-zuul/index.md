@@ -250,7 +250,7 @@ eureka.client.fetchRegistry=false # Disable fetching of registry from eureka ser
 eureka.server.waitTimeInMsWhenSyncEmpty=0 # Disable waiting for eureka server
 
 ```
-When we run the services and make an API call through the Zuul gateway to course service through  [http://localhost:8050/api/course/](http://localhost:8050/api/course), we get the response below:
+Run the services and make an API call through the Zuul gateway to course service through [http://localhost:8050/api/course/](http://localhost:8050/api/course). We get the response shown below. We can make API requests to the course and student services through the Zuul service. This makes it easier to implement a filter and authorizations on the Zuul service to restrict data access based on user roles or authentication state.
 
 ```json
 [
