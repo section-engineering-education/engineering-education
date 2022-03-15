@@ -43,7 +43,7 @@ Let's call a dataset found in the VIM package called `nhanes`.
 ```r
 head(nhanes)
 ```
-![nhanes-dataset](/engineering-education/predictive-mean-matching/nhanes-dataset.png)
+![nhanes-dataset](/engineering-education/predictive-mean-matching/nhanes-dataset.PNG)
 Our model will assume `chl` as the response variable and `bmi` and `hyp` as predictor variables.
 To find out the percentage of missing values we will use the`mean()` and `is.na()` functions as follows:
 ```r
@@ -84,7 +84,7 @@ fitmodel <- with(imp, lm(chl  ~  bmi + hyp))
 summary(fitmodel)
 #we get the following below
 ```
-![summary](/engineering-education/predictive-mean-matching/summary.png)
+![summary](/engineering-education/predictive-mean-matching/summary.PNG)
 The estimated effect of bmi on cholesterol level is 2.45, while the estimated effect of hyp on cholesterol is 16.845.
 Implying that for every 1% increase on bmi, there is a correlated 2.45% increase in the incidence of cholesterol levels.Also for every 1% increase in hyp, there is a 1% increase in the rate of cholesterol levels.
 ### Multiple imputation by MICE
