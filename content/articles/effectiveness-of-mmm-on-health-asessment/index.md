@@ -2,11 +2,11 @@
 layout: engineering-education
 status: publish
 published: true
-url: /effectiveness-of-SVM-on-health-asessment/
+url: /effectiveness-of-svm-on-health-asessment/
 title: Effectiveness of support vector machine in analyzing medical data
 description: The article focuses on understanding how SVM diagnoses and prognoses various health conditions using medical data and why SVM is more effective in handling medical data than other algorithms.
 author: lynn-njoki
-date: 2022-03-03T00:00:00-12:00
+date: 2022-03-14T00:00:00-12:00
 topics: []
 excerpt_separator: <!--more-->
 images:
