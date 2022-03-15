@@ -24,9 +24,16 @@ Using Dalex, the end-users (individuals and companies) will gain insightful info
 
 ### Prerequisites
 It would be best if you had the following to follow along with this tutorial:
-- Python programming.](/engineering-education/python-projects-for-beginners/)
+- [Python programming.](/engineering-education/python-projects-for-beginners/)
 - [Machine learning algorithms.](/engineering-education/understanding-machine-learning-algorithms-and-how-to-implement-them/)
 - Be able to build a simple [machine learning model.](/engineering-education/house-price-prediction/)
+- Download the dataset from [here.](https://drive.google.com/file/d/1nQ3Zwb1qUki1sFrSbptEjNnPSTDHrzro/view?usp=sharing)
+
+For this tutorial, implement the Python code in [Gooogle Colab notebook.](https://research.google.com/colaboratory/) to get the same results. Ensure you sign in using your email. 
+
+Google Colab will enable you to build and run the model easily. It also fast CPUs and GPUs that are ideal for machine learning.
+
+Let's start preparing the dataset.
 
 ### Dataset preparation
 In this section, we will prepare the bank marketing dataset. The dataset will build a model that solves a classification problem. The model will predict if a customer will join a monthly saving plan or not. You can get the dataset from [here.](https://drive.google.com/file/d/1nQ3Zwb1qUki1sFrSbptEjNnPSTDHrzro/view?usp=sharing)
@@ -43,7 +50,7 @@ import pandas as pd
 Use this code to load the dataset:
 
 ```python
-df = pd.read_csv("bank_marketing_dataset.csv")
+df = pd.read_csv("/content/bank_marketing_dataset.csv")
 ```
 To see the Data Frame, run this code:
 
@@ -73,7 +80,10 @@ The input variables are all the columns that train the model. The model will lea
 The target variable is the model's output. It is what the model wants to predict. For example, our model will determine if a customer will join a monthly saving plan or not.
 
 ```python
-Xfeatures = df[[]]
+Xfeatures = df[['age', 'job', 'marital', 'education', 'default', 'housing', 'loan',
+       'contact', 'month', 'day_of_week', 'duration', 'campaign', 'pdays',
+       'previous', 'poutcome', 'emp.var.rate', 'cons.price.idx',
+       'cons.conf.idx', 'euribor3m', 'nr.employed',]]
 ylabels = df['y']
 ```
 
@@ -185,7 +195,7 @@ In this way, it explains the whole structure of the trained model. It will show 
 The user will know the dataset that trains the model and how each variable in the dataset contributed to the general model performance.
 
 #### Single prediction explanation
-In this way,it focuses on the single prediction of the model. It shows the variables that have contributed to that specific prediction. The user will know if a prediction is correct or not.
+In this way, it focuses on the single prediction of the model. It shows the variables that have contributed to that specific prediction. The user will know if a prediction is correct or not.
 
 Let us start with the overall model explanation.
 
@@ -241,7 +251,7 @@ We will use `plotly` to plot the variable contribution diagram.
 ```bash
 ! pip install plotly
 ```
-'
+
 To plot, use this code:
 
 ```python
@@ -345,7 +355,7 @@ explanation.plot()
 ```
 ![Plot](/engineering-education/model-explanation-with-dalex/detailed-plot.png)
 
-The plot breaks down all the variables in the dataset. The variables with the light-green colour have positive contributions to the prediction. Conversely, the variables with the red colour have negative contributions. 
+The plot breaks down all the variables in the dataset. The variables with the light-green color have positive contributions to the prediction. Conversely, the variables with the red color have negative contributions. 
 
 Using this plot, we can see how each variable contributed to the prediction- both positively and negatively. We have built a machine learning model and explained its results to make it transparent.
 
@@ -354,7 +364,7 @@ We have learned model explanation with Dalex. We discussed the importance of mod
 
 After training the model, we implemented Dalex for the model explanation. Using Dalex, we did an overall model explanation and a single prediction explanation.
 
-To get the Python code for in this tutorial, click [here](https://colab.research.google.com/drive/1nLzokmqe-_KWmv7u6q63mSmoX-ohOXUv?usp=sharing)
+To get the Google Colab notebook for this tutorial, click [here](https://colab.research.google.com/drive/1nLzokmqe-_KWmv7u6q63mSmoX-ohOXUv?usp=sharing)
 
 ### References
 - [Explainable AI](/engineering-education/explainable-ai/)
