@@ -1,12 +1,12 @@
 ---
 layout: engineering-education
-status: draft
-published: false
+status: publish
+published: true
 url: /building-qr-code-authentication-system/
 title: Building QR Code Scanner User Authentication System in Computer Vision 
 description: This tutorial aims to guide the reader on how to build a Quick Response Code scanner system in Computer Vision used for user identification and authentication.
 author: atonya-dennis
-date: 
+date: 2022-03-15T00:00:00-21:20
 topics: [Languages]
 excerpt_separator: <!--more-->
 images:
@@ -18,7 +18,6 @@ Computer vision has led to the growth and usage of Quick Response codes in today
 To help the reader understand this concept, this article will cover many things concerning QR Codes. Their practical application, how to scan and decode the codes, and how to use QR Codes in the development of a user authentication system are all described.
 
 ### Table of contents
-- [Table of contents](#table-of-contents)
 - [Prerequisites](#prerequisites)
 - [Introduction](#introduction)
 - [Scanning QR Codes](#scanning-qr-codes)
