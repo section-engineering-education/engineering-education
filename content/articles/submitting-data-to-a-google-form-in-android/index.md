@@ -1,6 +1,6 @@
 Surveys and questionnaires have been conducted manually for a long time. However, this tends to be tiresome and sometimes does not reach out to many people. 
 
-Therefore, Google forms come in handy for conducting surveys as people from different regions can fill them simultaneously. However, these forms can only be accessed via browsers limiting Android and IOS users unless they use mobile browsers. 
+Google forms come in handy for conducting surveys as people from different regions can fill them simultaneously. However, these forms can only be accessed via browsers limiting Android and IOS users unless they use mobile browsers. 
 
 This article takes care of this by designing a form from the official website and then coming up with an Android application that uses Retrofit to make POST requests to the form to submit data.
 
@@ -25,7 +25,7 @@ To follow along with this tutorial, you should have:
 -  Making network requests with Retrofit in Android.
 
 ### What is a Google form
-Google Forms is a Google product that assists in conducting online surveys easily and in a faster way. Different people can fill out the forms, and the responses sent to one person for analysis.
+Google Forms is a Google product that assists in conducting online surveys efficiently and faster. Different people can fill out the forms, and the responses are sent to one person for analysis.
 
 ### Creating Google Forms
 Follow [this link](https://docs.google.com/forms/u/0/) to the official google form website, then select blank form.
@@ -51,7 +51,7 @@ Copy and paste the generated link somewhere to extract the entry IDs of the diff
 
 "https://docs.google.com/forms/d/e/1FAIpQLSfY8nzs8rqyBBv4slBUxu8RLKNTe6yYu4lCgmRPY_mrnee0vw/viewform?usp=pp_url&entry.1487586230=Calvin+Omati&entry.167627252=calvombati@gmail.com&entry.2059565087=Male&entry.1673881430=https://github.com/calvinombati&entry.124829766=Kotlin&entry.124829766=Java&entry.124829766=Dart"
 
-The parts that start with `entry`  followed by a given number are our IDs. So, for example, if I break mine down, I will have the following as my final content:
+Our IDs are the parts that start with `entry`  followed by a given number. So, for example, if I break mine down, I will have the following as my final content:
 
 - entry.1487586230=Calvin+Omati
 - entry.167627252=calvombati@gmail.com
@@ -80,7 +80,7 @@ implementation 'com.squareup.retrofit2:converter-gson:2.9.0'
 ### Creating the User Interface
 We will create a user interface containing several `TextViews, `Radio Button` and `Checkboxes` because we want to test sending answers to several types of questions, i.e. Short text questions, multi-choice questions, and checkboxes.
 
-If you have difficulties coming up with the UI, please feel free to check it out in this Github repository [Retrofit-GoogleFormDemo](https://github.com/calvinombati/Retrofit-GoogleFormDemo).
+If you have difficulties coming up with the UI, please check it out in this Github repository [Retrofit-GoogleFormDemo](https://github.com/calvinombati/Retrofit-GoogleFormDemo).
 
 ![ui](/engineering-education/submitting-data-to-a-google-form-in-android/ui.png)
 
@@ -112,7 +112,7 @@ The function takes the Retrofit's POST annotation and the endpoint to the form. 
 
 The first part to the "e/" is our `BASE_URL`. So, for instance, mine is  "https://docs.google.com/forms/d/e/".
 
-From that part to the part that ends with "/viewform" is our endpoint. Make sure you append it with a "/formResponse" and remove "viewform"). For instance, the endpoint will be "1FAIpQLSfY8nzs8rqyBBv4slBUxu8RLKNTe6yYu4lCgmRPY_mrnee0vw/formResponse" from my link.
+Our endpoint is from that part to the part that ends with "/viewform". Make sure you append it with a "/formResponse" and remove "viewform"). For instance, the endpoint will be "1FAIpQLSfY8nzs8rqyBBv4slBUxu8RLKNTe6yYu4lCgmRPY_mrnee0vw/formResponse" from my link.
 
 We need to pass the IDs extracted from the form using the `@Field` annotation to the `submitResponse` function.
 
@@ -191,8 +191,8 @@ When you access your form in edit mode, you should see the response that you jus
 ![form-response](/engineering-education/submitting-data-to-a-google-form-in-android/form-response.png)
 
 ### Conclusion
-In this tutorial, we have learned what a Google form is, how to create one, and how to extract our form questions' entry IDs. 
+In this tutorial, we have learned what a Google form is, how to create one, and extract our form questions' entry IDs. 
 
-We then created a simple Android application that sends a POST request to the form with the help of Retrofit. For a full demo implementation, check out [this Github repository](https://github.com/calvinombati/Retrofit-GoogleFormDemo).
+We then created a simple Android application that sends a POST request to the form with the help of Retrofit. Check out [this Github repository](https://github.com/calvinombati/Retrofit-GoogleFormDemo).
 
 Happy learning!
