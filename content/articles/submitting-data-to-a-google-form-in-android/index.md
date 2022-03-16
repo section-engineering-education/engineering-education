@@ -4,7 +4,7 @@ status: publish
 published: true
 url: /submitting-data-to-a-google-form-in-android/
 title: Sibmitting data to a Google form in Android
-description: This article aims to demenstrate how to submit data to a Google form from an android application using retrofit.
+description: This article aims to demenstrate how to submit data to a Google form from an android application using Retrofit.
 author: calvin-ombati
 date: 2022-03-16T00:00:00-03:30
 topics: [Languages]
