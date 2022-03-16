@@ -6,20 +6,19 @@ url: /wavelet-transform-analysis-of-1d-signals-using-python/
 title: Wavelet-based denoising of the 1-D signal using Python
 description: This tutorial will walk the reader through performing the wavelet transform of the 1-D signal.
 author: collince-odhiambo
-date: 2022-03-10T00:00:00-06:00
-topics: []
+date: 2022-03-16T00:00:00-03:00
+topics: [Languages]
 excerpt_separator: <!--more-->
 images:
 
-  - url: /engineering-education/wavelet-transform-analysis-of-1d-signals-using-python//hero.jpg
+  - url: /engineering-education/wavelet-transform-analysis-of-1d-signals-using-python/hero.jpg
     alt: Wavelet-based denoising of the 1-D signal using Python Hero Image
 ---
-### Introduction
 Wavelet is a function applied for processing digital signals and compression. Wavelet transforms a high-resolution signal into an approximated and detailed coefficient. 
 
 The approximated coefficients are referred to as low-resolution approximations because it does not show what has changed. On the other hand, the detailed coefficient shows the changes and makes it possible to recover the original image from the approximated coefficients.
 
-In this tutorial, we will see how to perform the wavelet transform of the 1-D signal. Additionally, we will look at the various packages used for this analysis, the commands and a sample of how to use such commands in an application.
+In this tutorial, we will see how to perform the wavelet transform of the 1-D signal. Additionally, we will look at the various packages used for this analysis, the commands, and a sample of how to use such commands in an application.
 
 ### Prerequisites
 To follow along with this tutorial, the reader should have the following:
@@ -30,13 +29,15 @@ To follow along with this tutorial, the reader should have the following:
 A signal is frequently contaminated by noise when transmitted over some distance. Additive noise is the simplest model for noise acquisition. The additive noise has the form:
 
 f'k = f(k) + n(k)
-Where: f'(k): Is the contaminated signal.
-        f(k): Is the original signal.
-        n(k): Is the noise signal.
+
+Where: 
+- f'(k): Is the contaminated signal.
+- f(k): Is the original signal.
+- n(k): Is the noise signal.
 
 The basic assumption of noise signals are:
 - Noise is additive.
-- Noise is a random signal(White Gaussian noise with 'zero' mean value).
+- Noise is a random signal (White Gaussian noise with 'zero' mean value).
 - Noise is a high-frequency signal.
 
 The objective here is to remove noise(n(k)) from noisy audio signal(f'(k)) using wavelet transform technique. The scheme used here is shown below:
@@ -68,13 +69,13 @@ y = denoise_wavelet(x, wavelet='db1', mode='soft', wavelet_levels=n, method='Bay
 ```
 
 Where:
-`X`: Is the input noise signal.
-`Y`: Is the denoised output.
-`Wavelet`: This is the name of wavelet used.
-`Mode`: It is the thresholding mode used. There is two thresholding mode, i.e. soft and hard threshold.
-`Wave_levels`: This is the decomposition levels. Note that this must be an integer.
-`Method`: It is the thresholding method used. Here we use any of the two supported methods, ie. VishuShrink and BayesShrink.
-`Rescale-sigma`: There are only two options. These options are `True` or `false`. For 1-D signals, it should be set to `true`. It is to rescale the noise variance signal if it is internally rescaled.
+- `X`: Is the input noise signal.
+- `Y`: Is the denoised output.
+- `Wavelet`: This is the name of wavelet used.
+- `Mode`: It is the thresholding mode used. There is two thresholding mode, i.e. soft and hard threshold.
+- `Wave_levels`: This is the decomposition levels. Note that this must be an integer.
+- `Method`: It is the thresholding method used. Here we use any of the two supported methods, ie. VishuShrink and BayesShrink.
+- `Rescale-sigma`: There are only two options. These options are `True` or `false`. For 1-D signals, it should be set to `true`. It is to rescale the noise variance signal if it is internally rescaled.
 
 ### Python code for denoising ecg signal
 First, we need to import some packages as shown below:
@@ -103,7 +104,9 @@ sigma = 0.05  # Noise variance
 x_noisy = x + sigma * np.random.randn(x.size)   # Adding noise to signal
 ```
 
-To add the noise to our signal(x), we use the formula `x + sigma * np.random.randn(x.size)`. The `randn()` is used to add a random noise in consideration to the noise variance `sigma`.
+To add the noise to our signal(x), we use the formula `x + sigma * np.random.randn(x.size)`. 
+
+The `randn()` is used to add a random noise in consideration to the noise variance `sigma`.
 
 Let us now perform wavelet denoising using the `denoise_wavelet()` function using the syntax described earlier, as shown below:
 
