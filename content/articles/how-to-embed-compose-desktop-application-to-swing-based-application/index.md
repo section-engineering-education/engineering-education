@@ -16,9 +16,7 @@ To follow along with this tutorial, you will have to:
 - Composing a CFD using a Swing component
 
 ### Introduction
-With Compose for Desktop, you can create UIs with Kotlin and handle events responsively.
-Using Compose for Desktop increases the performance of the web applications, reduces memory usage, and has made it easier for developers to iterate on features. Also, it requires no more XML or templating language. 
-In this way, you can still use the Swing and AWT components together with the Composable functions to build a desktop UI. 
+With Compose for Desktop, you can create UIs with Kotlin and handle events responsively. It increases the performance of web applications, reduces memory usage, and has made it easier for developers to iterate on features. Also, it requires no more XML or templating language. In this way, you can still use the Swing and AWT components together with the Composable functions to build a desktop UI. 
 
 Now let's get started :)
 
@@ -68,7 +66,7 @@ The above class will produce this output.
 ![output](/how-to-embed-compose-desktop-application-to-swing-based-application/swing-app-output.png)
 
 ### Building a Compose for Desktop application
-Compose for Desktop applications is built upon Composable functions to create the UI. This is purely done in the `Kotlin` programming language.
+Compose for Desktop applications are built upon Composable functions to create the UI. This is purely done in the Kotlin programming language.
 
 Let's also have a look at how a Compose for Desktop application is built like.
 ```kotlin
@@ -77,7 +75,7 @@ Let's also have a look at how a Compose for Desktop application is built like.
 fun App() {
     MaterialTheme {
         Column (Modifier.fillMaxSize(), Arrangement.spacedBy(3.dp), Alignment.CenterHorizontally) {
-            Button(onClick = {} ) {
+            Button(onClick = {}) {
                 Text("Click me")
             }
             Text("Click the button")
@@ -101,23 +99,21 @@ This will provide the following output:
 ![output](/how-to-embed-compose-desktop-application-to-swing-based-application/compose-for-desktop-output.png)
 
 ### Swing and Compose for Desktop interoperability
-`Swing/Compose` interoperate well together though there are few use cases and limitations. We will look at each one of them later in this article.
-First, let's have a look at the advantages of interoperability. 
+Swing and Compose interoperate well together though there are few use cases and limitations. We will look at each one of them later in this article.
+First, let's have a look at the advantages of interoperability:
 1. Its easier to migrate a Swing-based application to Compose application
 2. Allows you to extend Compose's functionality with Swing components that are not Compose equivalent.
 
 ### Interoperability uses cases
 Keep in mind that before integration, Compose and Swing employ distinct techniques of showing content on the screen. Compose uses one Swing component to display its contents and has several component rendering levels. Swing on the other hand works with both robust and lightweight components.
 
-One use case is when you want to include a Compose component in a Swing application.
-Swing will automatically view this component as one of its own.
-Compose uses a container called 'ComposePanel' to keep and show all of its components. On the other hand, Swing uses the `SwingPanel` to keep and show its components. As a result, it's probably advisable to use a Swing-based approach instead of Compose components.
+One use case is when you want to include a Compose component in a Swing application. Swing will automatically view this component as one of its own. Compose uses a container called 'ComposePanel' to keep and show all of its components. On the other hand, Swing uses the `SwingPanel` to keep and show its components. As a result, it's probably advisable to use a Swing-based approach instead of Compose components.
 
 Let's have a look at when you can use `ComposePanel` or `SwingPanel` in your application.
 
 #### ComposePanel use cases
 - Whenever you would like to add an engaging rendering section to your app. This will be more simple and efficient to do with Compose.
-- Whenever you wish to include animated objects, or a grid of dynamic objects, in your app. For instance, consider a toolbar with an animated emoticon reaction to events.
+- Whenever you wish to include animated objects or a grid of dynamic objects in your app. For instance, consider a toolbar with an animated emoticon reaction to events.
 - Whenever you need to incorporate a complex display region, Compose is the way to go.
 - Whenever you need to make a complex component of a Swing-based app easier to understand, go for Compose.
 
