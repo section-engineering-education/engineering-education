@@ -1,11 +1,9 @@
-In 2021, Transformers were introduced to replace the popular ConvNets in solving computer vision tasks. This Transformer model introduced a patch layer that splits an image into a sequence of patches of 16 by 16 pixels. This Transformer model is called the Vision Transformer (ViT). Yet, the ViT had to rely heavily on a lot of training tricks such as data augmentation to make it reach the performances of state-of-the-art models like ConvNets. This model faced difficulties when it came to solving more general computer vision tasks. This led to the release of a new vision transformer model called the Swin Transformer.
+In 2021, Transformers were introduced to replace the popular Convolutional Neural Networks (CNNs) in solving computer vision tasks. They referred to this model as the Vision Transformer (ViT). It produced state-of-the-art performance overtaking CNNs. But, the model could only solve simple classification tasks well and couldn't generalize well in complex vision tasks such as semantic segmentation and object detection. 
 
-It introduced sliding windows (used in CNNs) into Transformers, which made them resemble ConvNets pretty much. This model made the vision transformer more general-purpose and could be used for a wide variety of vision tasks.
-
-This article will give an overview of this model.
+Researchers introduced the Swin Transformer model to solve this problem. It introduced sliding windows (used in CNNs) into Transformers, which made them resemble ConvNets pretty much. This article will give an overview of this model.
 
 ### Problems with the Vision Transformer (ViT)
-In early 2020, the Vision Transformer model was released by the Google research team. It was discussed in this research [paper](https://arxiv.org/abs/2010.11929). This research was hype in the research community as the model introduced the popular Transformers used in Natural Language Processing (NLP) to solve computer vision tasks. Given an input image, i.e., 1920px by 1080px, the model broke down the image into 16 by 16px patches before sending them into the input layer. 
+In early 2020, the Vision Transformer model was released by the Google research team. It is discussed in this research [paper](https://arxiv.org/abs/2010.11929). This research was hype in the research community as the model introduced the popular Transformers used in Natural Language Processing (NLP) to solve computer vision tasks. Given an input image, i.e., 1920px by 1080px, the model breaks down an image into 16 by 16px patches before sending them into the input layer. 
 
 These patches are transformed into patch vectors by a linear transformation. A positional embedding (to keep positional information) is added onto the generated linear projections and then fed into a standard Transformer Encoder. This process is the same as how Transformers process word vectors in NLP. Thereafter, classification is done on the images.
 
