@@ -34,7 +34,7 @@ Logging can be applied to almost any programming language. Let's dive in and see
 
 ### Set up logging for Go apps
 
-First, you need to initialize a Go application on your computer. Thus you need to Go install. Check Golang installation in case you haven't installed it yet. Once installed, run `go version` to check if Go has been installed. Then create and navigate to a project folder and initialize Go using `go mod init go-logging-app`. This will set up ready to write some Go code.
+First, you need to initialize a Go application on your computer. Thus, you need to install Go. Check Golang installation in case you haven't installed it yet. Once installed, run `go version` to check if Go has been installed. Then create and navigate to a project folder and initialize Go using `go mod init go-logging-app`. This will set up some ready to write Go code.
 
 Go has several standard packages that allow you to set loggers in your application. However, Go has a logging package built for native Golang.
 
@@ -52,9 +52,9 @@ func main() {
 }
 ```
 
-Then run your application using `go run main.go`. This will log a basic massage to your console, i.e., `2022/01/29 16:51:08 This is my first basic Golang`. By default, it shows the date and time this log was created and the message that this log generated. This is where logging comes in handy. It gives you a timestamp to reach the exact time this log was recorded.
+Then run your application using `go run main.go`. This will log a basic message to your console, i.e., `2022/01/29 16:51:08 This is my first basic Golang`. By default, it shows the date and time this log was created and the message that this log generated. This is where logging comes in handy. It gives you a timestamp to reach the exact time this log was recorded.
 
-Let's see how we can create a log with some logging levels attached to the log messages. Here is an example
+Let's see how to create a log with some logging levels attached to the log messages. Here is an example
 
 ```go
 func main() {
@@ -112,7 +112,7 @@ func SetLogFile() *os.File {
 
 This will create a directory `logs`. Here we are setting a file name to be generated based time the log is a message created. In this case, we will create a file and name it to the current date of the saved log. For example, `29-January-2022.log`.
 
-Let's now the function that will execute different log levels.
+Let's now write the function that will execute different log levels.
 
 ```go
 func (l *LogDir) Info() *log.Logger {
@@ -138,9 +138,9 @@ func (l *LogDir) Fatal() *log.Logger {
 
 Each function will execute a level and save a message to the file path. In this case, we added parameters to format the log output. These include:
 
-- `log.Ldate`: This will log the exact date the log message gets generated
-- `log.Ltime`: This will log the exact time the log message gets generated
-- `log.Lshortfile`: This will be the file that generated the log. It will also add the exact line of the code that is generating the message
+- `log.Ldate`: This will log the exact date the log message gets generated.
+- `log.Ltime`: This will log the exact time the log message gets generated.
+- `log.Lshortfile`: This will be the file that generated the log. It will also add the exact line of the code that is generating the message.
 
 Now add a `main()` that wraps and executes the above function.
 
@@ -156,7 +156,7 @@ func main() {
 }
 ```
 
-Head over to the project directory and run `go run main.go`. This will automatically create a `logs` directory and a file named the date these messages we generated. And if you open that file, it will contain the following log messages:
+Head over to the project directory and run `go run main.go`. This will automatically create a `logs` directory and a new file named with the current date these messages were generated. And if you open that file, it will contain the following log messages:
 
 ```go
 INFO: 2022/01/29 19:22:03 main.go:59: This is Info and logs message
@@ -173,7 +173,7 @@ The above processes involve simple logs. Let's now see how you can add logs gene
 
 Let's say you have an application that involves a divide operation. In this case, a user cannot divide any value with zero. And if this happens, you might want to catch that error and save it for error tracking. Let's see how we can handle this operation and catch such an error.
 
-First, add `the "errors"` package to your `main.go` imports. The create a function that executes a dive operation as shown below;
+First, add the `errors` package to your `main.go` imports. Then create a function that executes a dive operation as shown below:
 
 ```go
 //Divide return number from a value divided by b value and error if any
@@ -207,10 +207,10 @@ log.Println("error : ", err)
 }
 ```
 
-Run your application using `go run main.go`. This execution will not record a log message. In this example, we have two values, `Divide(10, 5)`, i.e., we are dividing 10 by 5, which is is a true operation. Thus no error was generated. Now go ahead and replace this with `Divide(10, 0)`. Note here, we are dividing 10 with 0, which is an invalid operation. This operation will generate an error, and we want to get that error and save it in our log file. So go ahead and re-run your application with `go run main.go`. This time we expect an error, and if you navigate to your log file, a message with the above invalid operation was recorded, as shown below.
+Run your application using `go run main.go`. This execution will not record a log message. In this example, we have two values, `Divide(10, 5)`, i.e., we are dividing 10 by 5, which is a true operation. Thus, no error was generated. Now go ahead and replace this with `Divide(10, 0)`. Note here we are dividing 10 with 0, which is an invalid operation. This operation will generate an error, and we want to get that error and save it in our log file. So, go ahead and re-run your application with `go run main.go`. This time we expect an error, and if you navigate to your log file, a message with the above invalid operation will be recorded, as shown below:
 
 ```go
-Error: 2022/01/29 20:26:38 main.go:56: error :  cannot divide any value with zero
+Error: 2022/01/29 20:26:38 main.go:56: error : cannot divide any value with zero
 ```
 
 And that's how you can use logs to record any possible error based on the logic you want to execute.
@@ -219,7 +219,7 @@ And that's how you can use logs to record any possible error based on the logic 
 
 Go is also used to create web servers and APIs. In this case, they are expected to send responses and receive requests from a client. You might want to implement logging to such a server to record when given methods such as GET and POST get executed and the data these methods return.
 
-Logging can be added to a server to monitor such occurrences and get what the clients are accessing from your server. Let's set up a very basic sever that has Go logging features.
+Logging can be added to a server to monitor such occurrences and get what clients access from your server. Let's set up a very basic sever that has Go logging features.
 
 Go ahead and create a fresh import in your `main.go` file, as shown below:
 
@@ -247,7 +247,7 @@ func HelloHandler(w http.ResponseWriter, r *http.Request) {
 }
 ```
 
-This middleware function will access the server request using the `httputil.DumpRequest`. This will access the HTTP request and write its details and fields of the request are included in the `DumpRequest`.
+This middleware function will access the server request using the `httputil.DumpRequest`. This will access the HTTP request and write its details, and fields of the request are included in the `DumpRequest`.
 
 Now we will call this middleware to the route/ endpoint that we will use to access the server. We will do using the Go `main()` function as shown in the code block below:
 
@@ -267,23 +267,24 @@ As you can see, the `HandleFunc()` executed a Get request and everything associa
 
 ### Go logging tools diversification
 
-Go is a pupilar and a very trendy language. It has a great ecosystem with many libraries that you can use to build your Go-based applications. In this tutorial, we have used the Go log native module. However, there are many libraries that you can use to log your application. These can be native or third-party libraries.
+Go is a popular and very trendy language. It has a great ecosystem with many libraries that you can use to build your Go-based applications. In this tutorial, we have used the Go log native module. However, there are many libraries that you can use to log your application. These can be native or third-party libraries.
 
 You can choose to use the following native logging libraries:
 
 - fmt - [fmt](https://pkg.go.dev/fmt) can be used to print code executions such as variables, errors, and functions. It uses the `fmt.Printf` to print logs in your application, just like the log module.
-- Context -  [context](https://docs.newrelic.com/docs/logs/logs-context/configure-logs-context-go/) is a native log management module for Go. Check this [guide and get started using context](<https://www.cockroachlabs.com/blog/enriching-log-messages-using-go-contexts/>) to control log messages for your application.
+- Context - [context](https://docs.newrelic.com/docs/logs/logs-context/configure-logs-context-go/) is a native log management module for Go. Check this [guide and get started using context](<https://www.cockroachlabs.com/blog/enriching-log-messages-using-go-contexts/>) to control log messages for your application.
 
 Apart from these amazing native libraries, the Go ecosystem has different third-party and open-source libraries that you can still choose to use for log management. They include:
 
 - [Zap](https://pkg.go.dev/go.uber.org/zap#section-readme) is a structured and leveled logging package for Go applications. Its main core is to produce fast logging middleware by avoiding serialization overheads.
 - [Zerolog](https://github.com/rs/zerolog) provides loggers that have JSON output.
 - [Logrus](https://github.com/sirupsen/logrus) provides structured loggers that are compatible with native/standard libraries such as a log to help you scale logging processes.
-- [Apex/log](https://github.com/sirupsen/logrus) is inspired by Logrus. It adds more [handlers](https://pkg.go.dev/github.com/apex/log?utm_source=godoc#Handler) to Logrus to handle log events. This [handlers includes](https://github.com/apex/log#handlers) text colored output, JSON handler output, CLI output, level filter handler, etc
+- [Apex/log](https://github.com/sirupsen/logrus) is inspired by Logrus. It adds more [handlers](https://pkg.go.dev/github.com/apex/log?utm_source=godoc#Handler) to Logrus to handle log events. These [handlers includes](https://github.com/apex/log#handlers) colored-text output, JSON handler output, CLI output, level filter handler, etc.
 
-Chick this guide to [learn and compare](https://blog.logrocket.com/five-structured-logging-packages-for-go/) which of the package features best fits your log structures.
+Check this guide to [learn and compare](https://blog.logrocket.com/five-structured-logging-packages-for-go/) which package features best fit your log structures.
 
 ### Conclusion
+
 Logging is a great practice you can implement in your application. It gives you ideas of what is happening within your application. And in case of errors, it becomes easier to trace them and solve them in time. It is advisable only to log information that is meaningful to avoid unnecessary logs. Each log should have a level that describes the severity of the error being enclosed. This way, you can prioritize logs that can harm your application more and at the right time.
 
 ---
