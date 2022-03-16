@@ -1,21 +1,35 @@
 ### Getting Started with Sanity CMS
-It is inefficient to build applications while also worrying about the content or database.
+Sanity lets us focus on app designs rather than worrying about content file storage and databases. This tool provides efficient methods to create scalable and user-friendly applications.
 
 Sanity is a React open-source content management system. In case you're not familiar with the concept. A content management system (CMS) is a software application that enables users to design, edit, publish, and preserve digital information. A CMS enables you to build apps without having to start from scratch, and it is typically utilized in web and business content management systems.
-
-Sanity lets us focus on app designs rather than worrying about content file storage and databases. This tool provides efficient methods to create scalable and user-friendly applications. 
+### Table of contents
+- [Prerequisites](#prerequisites)
+- [Introduction](#introduction)
+- [Sanity as a Headless CMS](#sanity-as-a-headless-cms)
+- [Getting Started](#getting-started)
+- [Starting sanity content studio](#starting-sanity-content-studio)
+- [Creating Schema](#creating-schema)
+- [Importing custom schema](#importing-custom-schema)
+- [Deploy Sanity project](#deploy-sanity-project)
+- [Conclusion](#conclusion)
+- [Further Reading](#further-reading)
+#### Prerequisites
+- [Install Node.js](https://nodejs.org/en/download/)
+- Code Editor (Visual Studio Code is recommended)
+### Introduction
 ### Sanity as a Headless CMS
 A headless CMS is a backend-only content management system that makes content accessible to any user device through an API, eliminating the requirement for a built-in display layer. Headless CMS relies on JAMstack, which stands for (JavaScript, APIs, and Markup) to turn your web application content into a cloud-based API where it can be accessed from any application. In JAMstack, sanity is the A or (API) as it is decoupled from your app, giving you a single source of truth for your database to model and custom tail the content. Sanity provides an open-source studio to manage content where the data is stored in a content lake. It supports queries from a CDN using GraphQL, webhooks, and real-time updates.
-#### Prerequisites
-- Install Node.js 
-- Code Editor (Visual Studio Code is recommended)
 ### Getting Started
 #### Setting up our Sanity application - Sanity CLI Installation
 To get started with Sanity, install the Sanity CLI.
 
 Run the command below in your terminal.
-- `npm install -g @sanity/cli` 
-- `npx sanity init` (project initialization)
+```bash
+npm install -g @sanity/cli
+```
+```bash
+npx sanity init
+``` 
 #### Sanity Command Line Interface
 We have arrived at the Sanity command-line interface, and we will need to answer a few questions so that we can create the ideal project structure.
 ##### Steps:
@@ -25,7 +39,10 @@ We have arrived at the Sanity command-line interface, and we will need to answer
 - Select a project route.
 - Choose a blank project with no predefined schema to start sanity.
 #### Starting sanity content studio
-- Run `sanity start` in your terminal.
+- Run the command below in your terminal.
+```bash 
+sanity start
+```
 - In your browser tab, go to `http://localhost:3333` (Launching sanity)
 
 ![sanity-studio](/engineering-education/getting-started-with-sanity-cms/terminal.png)
@@ -59,11 +76,15 @@ It appears to be different from the initial layout because now we have the conte
  Go ahead and fill in the username and the image link to publish a new user. We just implemented a database by establishing a schema that provides the ability for users to add new content.
 #### Deploy Sanity project
 Go ahead and run `sanity deploy` to deploy a sanity project. Sanity deployed applications are real-time, meaning that any changes you make locally after deployment will be reflected in the deployed version.
+
+You can find the source code [here](https://github.com/abimbolataofeek/getting-started-with-sanity-cms).
 ### Conclusion
+We have just finished setting up a database, creating a schema, and allowing users to simply upload new material to the database. Consider how long it would take us to reach this position if we were working on a MERN application (MongoDB Express React and Nodejs).
+
 Finally, we learnt about Headless CMS, JamStack, Sanity CMS and its ideas, as well as how to install and set up the Sanity CLI, schemas, and deployment.
 
 We can construct sophisticated apps quickly using Sanity since we don't have to worry about the content file or database query.
-### Additional Reading
+### Further Reading
 [The Official Sanity Documentation](https://www.sanity.io)
 [Sanity slack channel](https://slack.sanity.io/)
 [Read more on CMS](https://www.sitecore.com/knowledge-center/digital-marketing-resources/what-is-a-cms)
