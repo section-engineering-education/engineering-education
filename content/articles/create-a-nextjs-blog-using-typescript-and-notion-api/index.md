@@ -4,9 +4,9 @@ status: publish
 published: true
 url: /create-a-nextjs-blog-using-typescript-and-notion-api/
 title: Next.js Blog using Typescript and Notion API 
-description: This guide will help the reader learn how to use the Next.js with Notion API to create a blog app powered by Typescript code.
+description: This guide will help the reader learn how to use the Next.js with Notion API to create a blog app powered by Typescript.
 author: kevin-kimani 
-date: 2022-03-08T00:00:00-06:00
+date: 2022-03-17T00:00:00-06:00
 topics: [Languages]
 excerpt_separator: <!--more-->
 images:
@@ -15,10 +15,10 @@ images:
 ---
 
 Next.js is used to create Server-side Rendering(SSR) and Static Site Generation(SSG) using JavaScript. The app fetches extra data from the server after the browser loads the website's HTML page. 
-
+<!--more-->
 Technologies such as SSG often have to rebuild the app when data from the source is updated and render it to the user at build-time, making the site load even faster hence a good user experience.
 
-This guide will help the reader learn how to use the Next.js with Notion API to create a blog app powered by Typescript code.
+This guide will help the reader learn how to use Next.js with Notion API to create a blog app powered by Typescript code.
 
 ### Prerequisites
 To follow along with this article, it is helpful to have the following:
@@ -43,17 +43,17 @@ Under `Database`, click on `list` on the resulting popup. A sample skeleton will
 
 ![list-database-skeleton](/engineering-education/create-a-nextjs-blog-using-typescript-and-notion-api/list-database-skeleton.png)
 
-Navigate to the first default page, `page 1`, and click on it. Change the title as you prefer preferences. 
+Navigate to the first default page, `page 1`, and click on it. Change the title as you prefer. 
 
 ![page-title-change](/engineering-education/create-a-nextjs-blog-using-typescript-and-notion-api/page-title-change.png)
   
-Change the icon and cover image too. You can choose to use free images from [Unsplash](https://unsplash.com/). Hover over the page title and click the `Add cover` button to add this cover image.
+You can choose to change the icon and cover image using the free images from [Unsplash](https://unsplash.com/). Hover over the page title and click the `Add cover` button to add the cover image.
 
 ![cover_image_change](/engineering-education/create-a-nextjs-blog-using-typescript-and-notion-api/cover-image-change.png)
 
 ![cover_image_changed](/engineering-education/create-a-nextjs-blog-using-typescript-and-notion-api/cover-image-changed.png)
 
-Every new page you create is a blank canvas where you can add content you like, such as plain text, lists, images, etc. To add content to this page, scroll down to the content section and add some `prerequisites` to your blog page as shown below:
+Every new page created is a blank canvas where you can add content such as plain text, lists, and images. To add content to a page, scroll down to the content section and add some `prerequisites` to your blog page as shown below:
 
 ![page-content-section](/engineering-education/create-a-nextjs-blog-using-typescript-and-notion-api/page-content-section.png)
 
@@ -63,7 +63,7 @@ Add dummy body to the post body.
 
 ![body_section](/engineering-education/create-a-nextjs-blog-using-typescript-and-notion-api/body-section.png)
 
-Add an image. Select an image of your choice from [Unsplash](https://unsplash.com/).
+Add an image. Select an image from [Unsplash](https://unsplash.com/).
 
 ![image_section](/engineering-education/create-a-nextjs-blog-using-typescript-and-notion-api/image-section.png)
 
@@ -75,20 +75,20 @@ Click outside the modal when done. The post should now be listed as shown below:
 
 ![database_posts](/engineering-education/create-a-nextjs-blog-using-typescript-and-notion-api/database-posts.png)
 
-Repeat the same process for `page 2` and `page 3`. Feel free to add as many posts as you can while following the steps described above.
+Repeat the same process for `page 2` and `page 3`. You can add other posts the same way.
 
 ### Setting up an integration on Notion
 Navigate to the `Settings & Members` section of your notion dashboard page. Click `Integrations` under the `Workspace` section on the resulting modal. Then set the notion integration as shown in the following steps:
 
 ![notion_integrations](/engineering-education/create-a-nextjs-blog-using-typescript-and-notion-api/notion-integration.png)
 
-First, create a new integration. To do so, click on `Develop your Integration`. Then Click the plus bur=toon to set up a new integration:
+First, create a new integration. To do so, click on `Develop your Integration`. Then click the plus button to set up a new integration:
 
 ![create_new_integrations](/engineering-education/create-a-nextjs-blog-using-typescript-and-notion-api/notion-create-new-integration.png)
 
-Name your integration `blog_app_integration`, then click `Submit` to set it up. Once done, you should now be able to view the notion integrations settings, i.e., the integration token:
+Name the integration `blog_app_integration`, then click `Submit` to set it up. Once done, you should now be able to view the notion integrations settings, i.e., the integration token.
 
-To save this integration, scroll down and click Save changes. This will reveal your notion-integration key. Copy this key so that you can use it later to connect to Next.js
+Scroll down and click save changes to reveal the notion-integration key to save this integration. Copy this key for use in connecting to Next.js
 
 ![notion_secrets](/engineering-education/create-a-nextjs-blog-using-typescript-and-notion-api/notion-secrets.png)
 
@@ -128,13 +128,13 @@ NOTION_KEY=""
 NOTION_DATABASE=""
 ```
 
-Paste the integration key copied earlier and add it to the `NOTION_KEY`. If you did not copy this key, navigate to the integration page, under `Secrets`, Click on `Show` and then `Copy` and paste it in the `NOTION_KEY` entry.
+Paste the integration key copied earlier and add it to the `NOTION_KEY` value. If you did not copy this key, navigate to the integration page, under `Secrets`, Click on `Show` and then `Copy` and paste it in the `NOTION_KEY` entry.
 
 To get the `NOTION_DATABASE` ID, check your workspace page URL. Copy the first path parameter before the query parameter as shown in the illustration below:
 
 ![notion-api](/engineering-education/create-a-nextjs-blog-using-typescript-and-notion-api/notion-id.png)
 
-In this case the id would be `53905ad838f04731b48fb1e40c25766a`. Let us say that your workspace URL is `https://www.notion.so/your_database_id?v=some_long_hash`. The parameter `your_database_id` should be the `NOTION_DATABASE` you are looking for.
+In this case the id would be `53905ad838f04731b48fb1e40c25766a`. Let us say that your workspace URL is `https://www.notion.so/your_database_id?v=some_long_hash`. The parameter `your_database_id` should be the `NOTION_DATABASE`.
 
 Start the development server to test the app.
 
@@ -345,7 +345,7 @@ async function blocks(id: string) {
 }
 ```
 
-Export the functions `post()` and `blocks()`. This exports them and makes the functions accessible by other files inside your project:
+Export the functions `post()` and `blocks()` to make them accessible by other files inside your project:
 
 ```ts
 export {
@@ -355,7 +355,7 @@ export {
 } 
 ```
 
-On the root folder, create a `posts` folder. Inside it, create an `[id].tsx` file. This file will serve the dynamic post based on the parameter id. In `[id].tsx`, add the following imports:
+On the root folder, create a `posts` folder. Inside the folder, create an `[id].tsx` file. This file will serve the dynamic post based on the parameter id. In `[id].tsx`, add the following imports:
 
 ```ts
 import { GetStaticProps, NextPage, GetStaticPaths } from 'next';
@@ -367,7 +367,7 @@ import { post, posts, blocks } from '../../lib/notion';
 import styles from '../../styles/Home.module.css';
 ```
 
-Implement an interface for this context. This will be applied when getting the dynamic id:
+Next, implement an interface for this context. This  interface will be applied when getting the dynamic id:
 
 ```ts
 interface IParams extends ParsedUrlQuery {
@@ -450,7 +450,7 @@ const renderBlock = (block: any) => {
 }
 ```
 
-Implement the view to render the post. Once the post has been rendered, create a view that will display the post to the user as shown below:
+Once the post has been rendered, create a view that will display the post to the user as shown below:
 
 ```js
 const Post:NextPage<Props> = ({id,post,blocks}) => {
@@ -489,7 +489,7 @@ Add the view export:
 export default Post;
 ```
 
-Add some style to the `blogPageHolder` class to format the rendered post:
+Next, add some style to the `blogPageHolder` class to format the rendered post:
 
 ```css
 .blogPageHolder {
