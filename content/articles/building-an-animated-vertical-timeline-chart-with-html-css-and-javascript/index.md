@@ -404,7 +404,7 @@ Here is the code to produce the event card:
 
 ```
 
-With the code above, we now have our events in card-like structures.
+Following the implementation of  the code above, you should have your events in card-like structures.
 
 Here is the difference the code block above has added to our timeline:
 
@@ -412,7 +412,7 @@ Here is the difference the code block above has added to our timeline:
 
 Looking closely at the snapshot above, you would notice the glassmorphism effect on the *event-card* where the card overlaps the vertical blue line.
 
-The next step is to divide the *event-cards*, keeping the ones with odd number positions at the right-hand side of the vertical line and the ones with even number positions at the left-hand side of the vertical line, using the following code:
+The next step is to alternate the positions of the event-cards; keeping the ones with odd number positions at the right-hand side of the vertical line and the ones with even number positions at the left-hand side of the vertical line.
 
 ```css
 /* This code starts the production of the triangle at the bottom of each event-card*/
@@ -449,9 +449,9 @@ The next step is to divide the *event-cards*, keeping the ones with odd number p
 }
 ```
 
-Lets’s style the content of the *time* tag so we can make our *events* more organized. 
+Lets’s add more styles to the content of the `time` tag.
 
-Style the content of the *time* tag‌:
+Style the content of the *time* tag:
 
 ```css
 /*style the time tag*/
@@ -463,7 +463,9 @@ time {
 }
 ```
 
-Here is how the timeline chart should be:
+
+Here is the expected view of the timeline so far:
+
 
 ![The timeline design](/engineering-education/building-an-animated-vertical-timeline-chart-with-html-css-and-javascript/timeline-design.png)
 
@@ -475,7 +477,7 @@ The first thing to do is understand how the animation will work. The scenarios t
 - Hiding an event card when it is scrolled out of the viewport.
 - Displaying an event card when it is in the viewport.
 
-To carry out the tasks above, we would first create a function that is called automatically like this:
+To achieve these, start by creating a function that is called automatically like this:
 
 ```js
 (function () {
@@ -483,17 +485,17 @@ To carry out the tasks above, we would first create a function that is called au
   })();
 ```
 
-Inside the function in the code snippet above, define a *constant variable* which will represent the event cards. We will then perform a query using *document.querySelectorAll( )*. This variable will select all the event cards.
+Inside the function in the code snippet above, define a `const` variable that will represent the event cards. Then perform a query using `document.querySelectorAll( )`. This variable will select all the event cards.
 
-Here is the code to do that:
+Here is the code to achieve that:
 
 ```js
 const items = document.querySelectorAll(".timeline-section li");
 ```
 
-Next, we have to create a function that would determine when our event cards are in the viewport and when they are out of the viewport.
+Next, create a function that would determine when your event cards are in the viewport and when they are out of the viewport.
 
-To fully grasp how you can create a function that will detect the target elements (the event cards) are in the viewport, [check out this StackOverflow solution](https://stackoverflow.com/questions/123999/how-can-i-tell-if-a-dom-element-is-visible-in-the-current-viewport). You should also read about *Element.getBoundingClientRect()* [here](https://developer.mozilla.org/en-US/docs/Web/API/Element/getBoundingClientRect).
+To fully grasp how you can create a function that will detect the target elements (the event cards) are in the viewport, [check out this StackOverflow solution](https://stackoverflow.com/questions/123999/how-can-i-tell-if-a-dom-element-is-visible-in-the-current-viewport). You can also read about *Element.getBoundingClientRect()* [here](https://developer.mozilla.org/en-US/docs/Web/API/Element/getBoundingClientRect).
 
 Here is the function to detect if an event card is in the viewport:
 
@@ -510,14 +512,10 @@ function isElementInViewport(el) {
     }
 ```
 
-In the code above a variable *rect* is defined which takes a value that returns the information about
-the size of an element (the event cards) and the position relative to the viewport.
+In the code above a variable `rect` is defined which takes a value that returns the information about the size of an element (the event cards) and the position relative to the viewport.
 
-To understand the function above, read extensively about detecting the viewport using the links recommended above.
+Next, create a function where a class named `slide-in` will be added to an event card when it is in the viewport and the function also removes the class named `slide-in` from an event card when it is out of the viewport.
 
-Next, we create a function where a class named *slide-in* will be added to an event card when it is in the viewport and the function also removes the class named *slide-in* from an event card when it is out of the viewport.
-
-Here is the function to add the class named *slide-in*:
 
 ```js
 function slideIn() {
@@ -531,17 +529,17 @@ function slideIn() {
   }
 ```
 
-Lastly, we would call the *slideIn* function using the window object. To call the *slideIn* function, three cases should be considered. They are:
+The final step is to invoke the `slidein` function through the window object for each of the following scenarios:
 - When the page loads.
 - As we scroll down.
 - When the browser is resized.
 
-The three events that will be used to ‌access the cases listed above are:
+The three events that will be used to access the cases listed above are:
 - The load event.
 - The scroll event.
 - The resize event.
 
-Simply add the code below to use these events:
+Add the code snippet below to use these events:
 
 ```js
 window.addEventListener("load", slideIn);
@@ -584,9 +582,9 @@ The entire JavaScript code:
 
 ### Adding animation using the *slide-in* class
 
-By default, we want the event cards to be visible when they are in the viewport and they should be hidden when they are out of the viewport. To get this done, we would make use of the *visibility* and *opacity* properties.
+By default, we want the event cards to be visible when they are in the viewport and they should be hidden when they are out of the viewport. To get this done, we would make use of the `visibility` and `opacity` properties.
 
-In addition, the *translateX ()* will be used‌ to move the event cards 20rem (which is 200px) from their original position. This is will make the cards hidden when they are out of the viewport. 
+In addition, the `translateX()` will be used to move the event cards 20rem (which is 200px) from their original position. This is will make the cards hidden when they are out of the viewport. 
 
 The code below represents the explanation above:
 
@@ -629,7 +627,9 @@ With the addition of the code above, there should be an animation effect on the 
 
 ### Making the timeline chart responsive
 
-The next step is to make the timeline mobile-friendly. To do so, we'll use *media queries* with two screen sizes in mind - greater than 600px but less than 900px, which will be used for tablet screens, and greater than 600px, which will be used for mobile screens.
+The next step is to make the timeline mobile-friendly. This tutorial considers two screen sizes:
+- 600 < X < 900px be for mobile screens.
+- > 600px be for the tablet screens.
 
 First, we consider the *tablet screen* where the only modification is reducing the *width* of the event cards.
 
@@ -903,9 +903,11 @@ Note, in case you lost about what the event cards mean; event cards are the *div
 
 ### Conclusion
 
-While building the timeline chart, we used *HTML* to code out the structure of the timeline chart. We also made use of the *CSS pseudo-elements* to style up the timeline. 
+This tutorial showed you how to build a timeline chart using HTML to build its structure, CSS to style it as desired and Javascript to animate the chart.
 
-Finally, we used information from a *StackOverflow* solution to create a method that detects if an element is in the viewport, after which we used the *CSS Visibility and Opacity properties* as well as the *translateX()* function to add animation effects.
+You also learned how to create a method that detects if an element is in the viewport, after which we used the CSS `visibility` and `opacity` properties as well as the `translateX()` function to add animation effects.
+
+With that, you have an animated vertical timeline chart. The source code of this application is available on [GitHub](https://github.com/shegz101/Vertical-timeline/tree/main).
 
 
 
