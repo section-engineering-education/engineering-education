@@ -39,7 +39,7 @@ Let's get started!!
 - Click `Visual C#` and select `Windows Desktop` from its rows data.
 - On the right side of the window, select `Windows Forms App (.Net Framework)` as the default template for this project.
 - On the bottom of the window, rename the project solution to `File manager`.
-- You can change the project location by clicking the browse button and choosing where the project will be saved. Otherwise, let it remain in its default.
+- You can change the project location by clicking the browse button and choosing where the project is saved. Otherwise, let it remain in its default.
 - Click `OK` to finish setting up the project solution.
 
 ![Configuring the project settings](/engineering-education/creating-file-management-application-using-winforms/configuring-the-project.jpg)
@@ -64,7 +64,7 @@ To access the properties window, click ` View -> Properties` or right-click on t
 We will design the user interface into two parts to avoid complexity.
 
 #### 1. File browsing controls
-First, we will design the UI where the user can navigate and access his internal storage files. To get started, follow the below steps;
+First, we will design the UI to navigate and access his internal storage files. To get started, follow the below steps;
 - Open the Toolbox and search for a `PictureBox.` Drag and drop it to the form layout. Right-click the PictureBox and click properties to modify the control. Under its properties, let the name remain default as `pictureBox1` and change the size mode to `stretchMode` to enable the picture you will load to fit the size of the pictureBox1. To load a picture in the PictureBox, click the `bold forward label` in the picture box control, and a dialogue box will appear. Under PictureBox Tasks click `choose image -> local resources -> import -> choose image -> open -> OK`. Now a picture is loaded in control PictureBox.
 - Drag and drop two buttons from the toolbox to the form. Name it as `btnPrevious` and change its `text` to `<-` in the first button properties. The second button, change its name to `btnNext` and its `text` to `->.` These buttons will help us to navigate back and forth the web browser path.
 - Drag and drop a label to the form. Change its `text` property to `Path.`
@@ -79,7 +79,7 @@ See the image below and compare it to your output design.
 #### 2. Create, write, read, and delete controls
 Below the file browsing controls, we will design a UI that will help us create a new file, write to the file, read the files initially recorded, and delete the files created. Follow the below steps to achieve the above-objected UI.
 - Open the toolbox, drag, and drop a menu strip into the form. In the menu strip properties set the name as -> `menustrip1`, backColor as -> `ActiveCaption`, Dock to -> `Bottom`, TextDirection as -> `Horizontal`.
-- To add the menu items, click the menu control and edit the item's row from left to right as `File exploitation`; the rest rows can be added according to the manipulation of the file management. For this case, we will only work with the first row. Add the following items in the column of the file exploitation row; `create the file,` `read a file,` `delete the file.`
+- To add the menu items, click the menu control and edit the item's row from left to right as `File exploitation`; you can add the rest of the rows according to the manipulation of the file management. For this case, we will only work with the first row. Add the following items in the column of the file exploitation row; `create the file,` `read a file,` `delete the file.`
 - Drag and drop a panel to the form from the toolBox. Under the panel properties, change the back color to ActiveCaption and set the size property of the panel to (300,130)`.
 - Inside the panel control, Drag and drop four labels and change their text property to; `Name,` `Email,` `Gender,` and `Phone,` respectively. Drag and drop three text boxes and arrange them vertically and horizontally to the name, email, and phone labels. Name the text boxes as `NameTb`, `EmailTb`, `PhoneTb` respectively under their name properties. Drag and drop a Combobox and align it horizontally to the gender label. Under the items property of the Combobox, we double click to add collections of items as Male and Female, where the user can choose the gender of the student when recording his details. Set the DropDownStyle of the Combobox -> `DropDownList`. Drag and drop two buttons. Change its name to `AddStudentbtn` in the first button name property and set the text to `Write/Add Student.` Change its Name property  to `Clearbtn` in the second button and set its text to `Clear.`
 
@@ -92,7 +92,7 @@ Now you should have a similar form design to the one below.
 ![Complete file manager](/engineering-education/creating-file-management-application-using-winforms/complete-file-manager.jpg)
 
 ### Step 3. Writing the C# code
-To write the `C#` code, we double click on the form design, and the file manager.cs will be loaded.
+To write the `C#` code, we double click on the form design, and the file manager.cs is loaded.
 
 #### Including the necessary namespace
 
@@ -102,14 +102,14 @@ using System.IO;//File and data stream types are included, as are those that fac
 Using System.Windows.Forms;//Programs built using these classes can take advantage of the Version of Windows's rich UI.
 ```
 #### Setting up the file path
-It is crucial in this project solution since it will create a folder where the written data will reside in the memory in a precise manner. We can also specialize in the format that it will be written with; in this project, all our data will be stored in `.txt files`.
+It is crucial in this project solution since it will create a folder where the written data will reside in the memory in a precise manner. We can also specialize in the format that it will be written with; in this project, all our data is stored in `.txt files`.
 
 Write the following code snippet.
 ```C#
  string path = Environment.CurrentDirectory + "/" + "Students.txt";// The path where files will be written and recorded as a txt file
 ```
 #### Coding the controls
-> Note: To begin coding within a method, we need first double-click on the appropriate control for the filemanger.cs to load.
+> Note: To begin coding within a method, we need first double-click on the appropriate control for the filemanager.cs to load.
 
 In the `<-` (button previous) button, we add the following code that will be able to undo a file browsing in the web browser.
 
@@ -129,9 +129,9 @@ In the `->` (button next) button, we add the following code below. The code will
         }
 ```
 In the button ` Open`, we add the following code that will help to navigate the files in the memory disk.
-The code below, openFile dialog box will be displayed once the open button is clicked.
+The code below, the open file dialog box, is displayed once the open button clicks.
 The description will give more information on what we are supposed to do, i.e., select the folder we want to see its content.
-If the exact file path was selected, the contents are displayed to the web browser.
+If the exact file path is selected, the web browser displays the contents.
 
 ```C#
   private void btnOpen_Click(object sender, EventArgs e)
@@ -246,4 +246,4 @@ In this tutorial, we have created a precise file manager using WinForms. We have
 
 You can go ahead and add more controls involving file management and publishing your application.
 
-That's it!! You have leveled your skills!!
+That's it!! You have levelled your skills!!
