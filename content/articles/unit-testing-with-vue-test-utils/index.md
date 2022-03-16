@@ -139,7 +139,7 @@ Run the following command below to run our test:
 npm run test:unit
 ```
 
-With the below test report our test passed. Which means the `details.vue` component renders the `This is the details Page` text.
+With the below test report our test passed. This means the `details.vue` component renders the `This is the details Page` text.
 
 ```bash
 PASS  tests/unit/details.spec.js (7.326 s)
@@ -160,7 +160,7 @@ The next component we will be testing is the `components/GithubUser.vue` compone
 
 We are going to write a test to confirm if the `GithubUser.vue` component is rending the `userInfo` data. To achieve this, we’ll use what is called mock data. In the `unit/tests` directory, create a file called `githubuser.spec.js`.
 
-Import the `shallowMount` function from the `vue-test-utils` library, and then import the component we want to test, which is in our case  the `GithubUser.vue` component. 
+Import the `shallowMount` function from the `vue-test-utils` library, and then import the component we want to test, which is in our case the `GithubUser.vue` component. 
 
 Add the code snippets below:
 
@@ -347,7 +347,7 @@ The `wrapper` API comes with a function for selecting elements in a component ca
 
 The first thing we’ll do is, create a variable called `githubUser` with the value `wrapper.find()` that takes in a `css` query selector to find the element.
 
-In our case, the `github user` name is found in a `p` tag with a class of `user-name` . So the `css` query selector will be `.user-name` .
+In our case, the `github user` name is found in a `p` tag with a class of `user-name`. So the `css` query selector will be `.user-name`.
 
 With that, let’s modify our code to use the  `find()` function.
 
@@ -413,7 +413,7 @@ Ran all test suites.
 
 #### Test if our `views/HomeView.vue` is rendering lists of users
 
-Our next test is to check if our `HomeView` component is rending the list of all `github Users`. In the `tests/unit` directory, create a new test file called `homeview.spec.js` .
+Our next test is to check if our `HomeView` component is rending the list of all `github Users`. In the `tests/unit` directory, create a new test file called `homeview.spec.js`.
 
 In this test file, we’ll import the `HomeView` component and the `shallowMount` function. Then, call the `descibe` function with an identifier of `HomeView.vue` and also, the  `test` function with a description of `renders lists of users`. Just like the code below:
 
@@ -463,7 +463,7 @@ At the top of the `homeview.spec.js` file, import the `GithubUser.vue` component
 import GithubUsers from '@/components/GithubUsers.vue'
 ```
 
-Then, below the `shallowMount` function; we’ll create a variable called `listsOfUsers` and set it to the value returned by the `wrapper.findAllComponents()` function passing in the `GithubUsers` component. Also, we’ll  write an assertion to test if the number of the `GithubUsers` component is equal to the number of objects in our `users` array. 
+Then, below the `shallowMount` function; we’ll create a variable called `listsOfUsers` and set it to the value returned by the `wrapper.findAllComponents()` function passing in the `GithubUsers` component. Also, we’ll write an assertion to test if the number of the `GithubUsers` component is equal to the number of objects in our `users` array. 
 
 Add the code snippets below:
 
@@ -713,7 +713,7 @@ Ran all test suites.
 
 ### Conclusion
 
-In this article, you’ve learned how to test different bits and pieces of our project with the `vue-test-utils` library. This is a head start to get up and running with `vue-test-utils` library. There’s a lot more you can achieve with this library, its usefulness is wonderful as far as the Vue framework is concerned.
+In this article, you’ve learned how to test different bits and pieces of our project with the `vue-test-utils` library. This is a head start to get up and running with the `vue-test-utils` library. There’s a lot more you can achieve with this library, its usefulness is wonderful as far as the Vue framework is concerned.
 
 I recommend that you make references to the `[Jest](https://jestjs.io/docs/)`  and `[vue-test-utils](https://v1.test-utils.vuejs.org/)` libraries documentation respectively if you’d like to dive in deeper on how to utilize them in your Vue projects.
 
