@@ -1,5 +1,22 @@
-Surveys and questionnaires have been conducted manually for a long time. However, this tends to be tiresome and sometimes does not reach out to many people. 
+---
+layout: engineering-education
+status: publish
+published: true
+url: /submitting-data-to-a-google-form-in-android/
+title: Sibmitting data to a Google form in Android
+description: This article aims to demenstrate how to submit data to a Google form from an android application using retrofit.
+author: calvin-ombati
+date: 2022-03-16T00:00:00-03:30
+topics: [Languages]
+excerpt_separator: <!--more-->
+images:
 
+  - url: /engineering-education/submitting-data-to-a-google-form-in-android/hero.png
+    alt: Submitting data to Google form android Hero Image
+---
+
+Surveys and questionnaires have been conducted manually for a long time. However, this tends to be tiresome and sometimes does not reach out to many people. 
+<!--more-->
 Google forms come in handy for conducting surveys as people from different regions can fill them simultaneously. However, these forms can only be accessed via browsers limiting Android and IOS users unless they use mobile browsers. 
 
 This article takes care of this by designing a form from the official website and then coming up with an Android application that uses Retrofit to make POST requests to the form to submit data.
@@ -196,3 +213,6 @@ In this tutorial, we have learned what a Google form is, how to create one, and 
 We then created a simple Android application that sends a POST request to the form with the help of Retrofit. Check out [this Github repository](https://github.com/calvinombati/Retrofit-GoogleFormDemo).
 
 Happy learning!
+
+---
+Peer Review Contributions by: [Jerim Kaura](/engineering-education/authors/jerim-kaura/)
