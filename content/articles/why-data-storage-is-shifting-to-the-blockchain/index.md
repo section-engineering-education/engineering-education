@@ -1,6 +1,6 @@
 ## Why Data Storage is shifting to the blockchain
 
-Some years ago, the most embraced form of data storage was the traditional in-house data centers. But it was not too long before cloud storage started to replaced them. Cloud storage came with the promise of greater efficiency and more data storage capacity that attracted many businesses.
+Some years ago, the most embraced form of data storage was the traditional in-house data centers. But it was not too long before cloud storage started to replace them. Cloud storage came with the promise of greater efficiency and more data storage capacity that attracted many businesses.
 
 In the same way, cloud storage is now facing competition from blockchain technology. Blockchain comes with the promise to solve data security challenges - an issue that cloud storage has found challenging to deal with exhaustively. With blockchain data storage, companies and individuals would enjoy the kind of data transparency not seen before. Thus, many companies are opting for this new technology with the hope that it could revolutionize data storage for the better.
 
@@ -13,14 +13,14 @@ Blockchain storage is a little dissimilar because it is an encrypted system that
 
 This storage method is different from the cloud, where data remains in one location and is easily accessible to an individual as a whole. The way blockchain stores its data in small chunks distributed throughout the network adds a security layer. It ensures that if an individual or entity breaks into the system, they can only access a fraction of the data rather than the entire file.
 
-In cloud storage, data is mutable, while in blockchain, data is immutable. The cloud storage system is set up to let you change the already stored data. These modifications affect how another user perceives the data after the changes. In the blockchain, users cannot adjust the already existing data because the system bars them. You cannot delete or modify entries already made, which helps secure data from tampering.
+In cloud storage, data is mutable, while in blockchain, data is immutable. The cloud storage system is set up to let you change the already stored data. These modifications affect how another user perceives the data after the changes. Users cannot adjust the already existing data in the blockchain because the system bars them. You cannot delete or modify entries already made, which helps secure data from tampering.
 
-Cloud storage relies on third parties to ensure data security. It provides services using the Software as a Service, Platform as a Service, and Infrastructure as a Service models. Blockchain chooses to guarantee data protection and safeguard its integrity without involving third-parties.
+Cloud storage relies on third parties to ensure data security. It provides services using the Software as a Service, Platform as a Service, and Infrastructure as a Service models. Blockchain chooses to guarantee data protection and safeguard its integrity without involving third parties.
 
 Besides, data in the cloud can exist as either public or private. However, in blockchain, data is always public. Blockchain embraces transparency, meaning that an entity cannot hide data from other users. It enables individuals on the blockchain to track how data moves from one point to another.
 
 ### Costs implications of storing data on the blockchain
-Unsurprising, such a storage technology that threatens to 'overthrow' cloud storage and offer a highly secure system comes with its share of financial challenges. In the last few years, the costs for implementing and running a blockchain system have [risen](https://content-blockchain.org/newsarchive/2017/07/20/exploding-costs-of-storing-data-on-a-blockchain/) tremendously. One reason for this is the increasing acceptance of blockchain technology has also led to a rise in data transmission and storage. Besides, the high demand for blockchain services has also driven up cryptocurrency prices.
+Unsurprising, such a storage technology that threatens to 'overthrow' cloud storage and offer a highly secure system has its share of financial challenges. In the last few years, the costs for implementing and running a blockchain system have [risen](https://content-blockchain.org/newsarchive/2017/07/20/exploding-costs-of-storing-data-on-a-blockchain/) tremendously. One reason for this is the increasing acceptance of blockchain technology has also led to a rise in data transmission and storage. Besides, the high demand for blockchain services has also driven up cryptocurrency prices.
 
 There are specific factors that keep the blockchain functioning normally. In the case of bitcoin, the nodes and miners are responsible. For Ethereum, Gas is the fuel that maintains its routine running. Miners receive payment for their services, and in the case of Ethereum, one must pay for Gas.
 
@@ -41,7 +41,7 @@ One of the recurrent issues that cloud storage experiences is the likelihood tha
 Blockchain offers a confided approach that tracks and affirms that an existing database has not experienced any changes. The approach ensures that data retains its original format, which is critical for security purposes.
 
 #### Ensuring transparency
-Another transformation comes with adopting blockchain into existing cloud storage solutions is increased transparency. With blockchain, transparency is not an option that an entity has to make. The model allows any user to observe all data transactions made on the network. This makes it possible to track how data moves from one point to another in the network. This aspect is also essential in validating the transactions in the network.
+Another transformation that comes with adopting blockchain into existing cloud storage solutions is increased transparency. With blockchain, transparency is not an option that an entity has to make. The model allows any user to observe all data transactions made on the network. This makes it possible to track how data moves from one point to another in the network. This aspect is also essential in validating the transactions in the network.
 
 Cloud storage embraced a model that allowed privacy to thrive for a long time. Transparency was an option for an entity then. Companies could hide some or all of their data from user access. The transparency issue can discourage companies from implementing blockchain. However, even with this reduced privacy, data security remains uncompromised. Besides, the high transparency comes with increased trust between clients transacting data amongst themselves in the network.
 
