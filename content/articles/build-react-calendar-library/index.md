@@ -4,9 +4,9 @@ status: publish
 published: true
 url: /build-react-calendar-library/
 title:  Build a Calendar in React Using React-Calendar Library
-description: In this article, you'll learn how to utilize [react-calendar](https://www.npmjs.com/package/react-calendar) to handle and modify dates in [React](https://reactjs.org/tutorial/tutorial.html) 
+description: In this article, you'll learn how to utilize [react-calendar](https://www.npmjs.com/package/react-calendar) to handle and modify dates in [React](https://reactjs.org/tutorial/tutorial.html). 
 author: emmanuel-alege
-date: 2022-03-09T00:00:00-06:30
+date: 2022-03-16T00:00:00-02:11
 topics: [Languages]
 excerpt_separator: <!--more-->
 images:
@@ -339,7 +339,7 @@ The code above has an array of time slots called `time`. We map through the arra
 
 Also, the button element has an `onClick` event handler. Finally, it contains a `dislayInfo` function that triggers when a user clicks any buttons.
 
-The `displayInfo()` function contains two `useState`. When `displayInfo` triggers, the value of info changes to true and the value of event changes to the innerText of the button element.
+The `displayInfo()` function contains two `useState`. When `displayInfo` triggers, the value of info changes to true, and the value of event changes to the innerText of the button element.
 
 We passed in date as a prop from  `App.js` to `Time.js` finally to `Times.js`.
 
