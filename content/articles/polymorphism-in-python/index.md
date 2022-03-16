@@ -24,14 +24,13 @@ Polymorphism implementation in python has its specific syntax as compared to oth
 
 ```python
 # function definition
-def polymorphic_function()
-    {
-        Return output;
-    }
+def polymorphic_function():
+
+        return sum()
+
     # code
-    {
+
         print (sum(4,6));
-    }
 ```
 When it comes to classes and objects this concept of taking many forms is possible in python through the use of **inheritance**, where child classes inherit all the parent class properties and methods.
 
@@ -86,10 +85,10 @@ i=2
 j=3
 k=3
 m=5
- sum1(i, j):
+sum1 =(j+i)
 print(sum1)
-sum2(k+m):
-print(sum2)  
+sum2 =(k+m)
+print(sum2) 
 ```
 **Output**
 ```bash
@@ -107,7 +106,7 @@ print(len([2, 60]))
 ```
 
 **Output:**
-```
+```bash
 18
 2
 ```
@@ -140,17 +139,15 @@ load load
 In python to overload operators, one needs to provide an implementation to that special method in that class. For instance, when using  `+` a special method `_add_` is invoked. This is as shown below:
 
 ```python
-class Gross Pay
-    def_init_(self,value):
-        self.value = value
-    def_sum_(self,otherPay):
-        return self.value + otherPay.value
+def getGrossPay(Basic_salary, Allowance_pay):
+    return float(Basic_salary + Allowance_pay)
 
-BasicSalary=GrossPay(10,000)
-Allowance=GrossPay(5,000)
+# salary in KSH
+Basic_salary = 10000
+Allowance_pay = 5000
+pay = getGrossPay(Basic_salary, Allowance_pay)
 
-Total = BasicSalary + Allowance
-print(Total)
+print(f"Total gross pay: Ksh.{pay:.2f}  ")
 ```
 Output
 ```bash
@@ -192,14 +189,14 @@ def func(obj):
     obj.type()
   
 obj_SA = SouthAfrica()
-obj_Ca = Canada
+obj_Ca = Canada()
   
-func(obj_Sa)
+func(obj_SA)
 func(obj_Ca)
 ```
 
 **The Output:**
-```
+```bash
 Pretorial is the capital city of South Africa.
 Afrikaans, English is the most commonly spoken language.
 South Africa is a third-world developing country.
