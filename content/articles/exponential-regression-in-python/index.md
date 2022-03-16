@@ -6,8 +6,8 @@ url: /exponential-regression-in-python/
 title: A Gentle Introduction to Exponential Regression in Machine Learning
 description: This article will discus how the exponential hypothesis is represented, how to approximate its parameters, fit the curve using python and finally state down our model using the parameters returned in python. 
 author: sumba-elvis
-date: 2022-03-10T00:00:00-01:10
-topics: []
+date: 2022-03-16T00:00:00-12:14
+topics: [Languages]
 excerpt_separator: <!--more-->
 images:
 
@@ -15,21 +15,23 @@ images:
     alt: A Gentle Introduction to Exponential Regression in Machine Learning Hero Image
 ---
 
-In real-world applications, the goal of modelling is usually to represent the behaviours of natural phenomena that change over time in mathematical models with the best [generalization](https://en.wikipedia.org/wiki/Regularization_(mathematics)). Various models have been developed and proven to capture those behaviours very well. There are various models for modelling different problems. 
+In real-world applications, the goal of modelling is usually to represent the behaviours of natural phenomena that change over time in mathematical models with the best [generalization](https://en.wikipedia.org/wiki/Regularization_(mathematics)). Various models have been developed and proven to capture those behaviours very well. There are various models for modelling different problems.
 
 Linear regression is the widely known model in modelling due to its simplicity and ability to be used at elementary levels. However, almost all real-world problems are nonlinear. Due to this, the linear regression remains to have limited application in significant problems.
 
 Nevertheless, the implication is not that the linear regression is insignificant. On the contrary, due to its cheap computation cost compared to nonlinear models, most nonlinear models are usually transformed to linear space where we approximate their unknown parameters, which we then mapped to the original space.
 
-One possible scenario where a different model other than the linear regression might be required is in the situation of rapid growth or rapid decay. 
+One possible scenario where a different model other than the linear regression might be required is in the situation of rapid growth or rapid decay.
 
-In such cases, processes tend to experience doubling time, i.e., the time it takes for a quantity to double. In real life, doubling time can be witnessed in the fields such as; financial investments, wildlife populations, natural resources and biological samples. Therefore, the exponential function can be the appropriate model for modelling these processes.
+In such cases, processes tend to experience doubling time, i.e., the time it takes for a quantity to double. In real life, doubling time can be witnessed in the fields such as; financial investments, wildlife populations, natural resources and biological samples.
 
-In this article, we will learn how the exponential hypothesis is represented, how to approximate its parameters, fit the curve using python and finally state down our model using the parameters returned in python. 
+Therefore, the exponential function can be the appropriate model for modelling these processes.
+
+In this article, we will learn how the exponential hypothesis is represented, how to approximate its parameters, fit the curve using Python and finally state down our model using the parameters returned in Python.
 
 Finally, using our stated model, we will predict some future values.
 
-### Prerequisites:
+### Prerequisites
 - Good knowledge of the optimizations methods such especially the [Bisection Method](https://byjus.com/maths/bisection-method/) will be required in this section.
 - Good understanding of Python functions.
 
@@ -41,11 +43,11 @@ $1.\,\,\,y = A_0e^{bt}$,
 or;
 
 $2.\,\,\,y = A_0e^{-bt}$
-​​ 
+​​
 where:
 - t is any point in time,
 - y is the value of the function at any time t,
-- $A_0$ is the value of the model at $t=0$,goal of 
+- $A_0$ is the value of the model at $t=0$,goal of
 - $e$ is Euler's constant, which is usually 2.71828..., and,
 - b is the constant that determines the rate of change
 
@@ -53,7 +55,7 @@ The first model, i.e., $(1)$, models processes that multiply over time. Thus it 
 
 Now, suppose we are give $(x_1,y_1),\,(x_2,y_2),\, .\,.\,.\,,(x_n,y_n)$, and we are expected to fit, $y=e^{bx},$ to the data.
 
-The constant $a$ and $b$ are unknown parameters of the model. Thus, they have to be estimated. But, first, we need to define a loss function to estimate these parameters. 
+The constant $a$ and $b$ are unknown parameters of the model. Thus, they have to be estimated. But, first, we need to define a loss function to estimate these parameters.
 
 The loss function is simply the deviance of the predicted values from the observed values. So, we first obtain the residual for each data point as below.
 
@@ -100,6 +102,7 @@ As we can see, this equation is still is nonlinear in $b$. However, using the bi
 For a clear understanding, let us consider an example and see how we can put the above formulas into practice.
 
 Problem:
+
 Many patients get concerned when a test involves an injection of radioactive material.
 For example, a few drops of Technetium-99m isotope are used for scanning a gallbladder. Half of the technetium-99m would be gone in about 6 hours. It, however, takes
 about 24 hours for the radiation levels to reach what we are exposed to in day-to-day
@@ -119,7 +122,6 @@ $\Large\gamma=Ae^{\lambda t}$
 The value of $\lambda$ is given by solving the nonlinear equation of:
 
 ${\Large {f(\lambda) = \sum_{n=1}^{n} \gamma_i t_ie^{\lambda t_i} - \frac{\sum_{i=1}^{n} \gamma_i e^{\lambda t_i}}{\sum_{i=1}^{n} e^{2 \lambda t_i}} \sum_{i=1}^{n} t_ie^{2 \lambda t_i}=0}}$ $. \ . \ . (8)$
- 
 We then evaluate A as:
 
 $\Large A= \frac{\sum_{i=1}^{n} \gamma_ie^{\lambda t_i}}{\sum_{i=1}{n} e^{2 \lambda t_i}}$
@@ -158,7 +160,7 @@ Since we have values of both unknown parameters, we can state down our model as 
 
 $\gamma = 0.99983e^{−0.11508t}$.
 
-Now, let us look at how we implement this model in python.
+Now, let us look at how we implement this model in Python.
 
 ### Python implementation of Exponential Model
 To implement the model, first, we need to import the required libraries. In this session, we need the following libraries.
@@ -171,14 +173,15 @@ Let us import these libraries.
 import numpy as np
 import matplotlib.pyplot as plt
 ```
+
 Next, let us create our dataset.
 
 ```python
 # create the dataset
 t = np.array([0,1,3,5,7,9])
 y = np.array([1.000,0.891,0.708,0.562,0.447,0.355])
-
 ```
+
 We can see the underlined relationship between our variables by plotting a scatter plot of our data.
 
 ```python
@@ -186,28 +189,27 @@ We can see the underlined relationship between our variables by plotting a scatt
 plt.scatter(t, y, color="green")
 plt.title("Scatter Plot")
 plt.show()
-
 ```
+
 ![scatter plot](/engineering-education/exponential-regression-in-python/data-scatterplot.png)
 
 As we can see from the above scatter plot, the data depicts a gradually decaying relationship. Thus, an exponential model is the best model for fitting the curve to this dataset. Now, let us fit our model:
 
 ```python
 #fit the model
-'''
 the model for our data is:
 y = A*exp{λt};
 Taking the log on both sides of y, we get
 log(y) = log(A) + λt
 
 So to fit our model, we first take the natural log on only the y variable and not t.
-'''
+
 model = np.polyfit(t, np.log(y), 1) # the argument 1 idicates the degree of the polynomial
 # view the model's output
 print(model)
-
 ```
-Output 
+
+Output
 
 ```bash
 [-0.11504963 -0.0002615 ]
@@ -227,7 +229,7 @@ Simplifying this, we get our final model as.
 
 $y = 0.99974e^{-0.11504963t}$
 
-Now, suppose we want to compute the relative intensity of the radiation after 24 hours. To do this, we plug in $t=24$ in our model and get the results back, i.e., 
+Now, suppose we want to compute the relative intensity of the radiation after 24 hours. To do this, we plug in $t=24$ in our model and get the results back, i.e.
 
 $y = 0.99974e^{-0.11504963(24)}=6.320 \times 10^{-2}$
 
@@ -244,7 +246,8 @@ Finally, we can visualize our model.
 myplot = plt.plot(t,y)
 myplot
 ```
-#### Output:
+
+#### Output
 ![exponential model](/engineering-education/exponential-regression-in-python/expo-model.png)
 
 As we can see, our model is shown a curvature-like declining relationship between the two variables.
@@ -252,7 +255,7 @@ As we can see, our model is shown a curvature-like declining relationship betwee
 ### Summary
 In this article, we introduced the exponential model. We first defined the exponential model and outlined its two types. We then looked at its hypothesis representation from which we derived the loss function.
 
-To approximate the unknown constants of the model, we solve the loose function by finding the values of the unknown that minimize the error function. 
+To approximate the unknown constants of the model, we solve the loose function by finding the values of the unknown that minimize the error function.
 
 After covering these, we then looked at a case study, and we were able to bring our theoretical understanding of the model into practice. Finally, we implemented our model in python and made predictions using it.
 
