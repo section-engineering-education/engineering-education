@@ -5,7 +5,7 @@ App layout consists of several components that contain the user interface(UI) el
 
 Matlab provides an interactive environment for developing uifigure based application layouts programmatically using Matlab functions. Uifigure based apps are designed using user interface figures meant for app building.
 
-The user interface elements perform different functions in the app operations. The behaviour and appearance of a user interface element are added as the element's properties and functions.
+The user interface elements perform different functions in the application. The behaviour and appearance of a user interface element are added as the element's properties and functions.
 
 #### Prerequisites
 To follow along with this tutorial, you need:
@@ -22,7 +22,7 @@ In this article, we will discuss the design of the following layout structures o
 #### Containers
 Containers are structures that hold the app components together. A default user interface container in Matlab is made using the function `uifigure`.
 
-The title of the container is added by using the syntax `fig=uifigure('Name','figure title');` while the position is added using the function `fig.position=[];`.
+The title of the container is added using the syntax `fig=uifigure('Name','figure title');` while the position is added using the function `fig.position=[];`.
 
 The below code snippet demonstrate creation of a default container. 
 
@@ -31,7 +31,7 @@ fig = uifigure('Name','Broadsheet 1);  % container title
 fig.position = [580 550 360 280]; %figure position
 ```
 
-![Container](/engineering-education/app-layout-design-prorammatically-using-matlab/applayout_a.jpg)
+![Container](/engineering-education/app-layout-design-programmatically-using-matlab/applayout_a.jpg)
 
 #### Types of UIfigure container
 Types of containers include:
@@ -66,7 +66,7 @@ c = uicontrol('Parent',sub_panel,'String','Start',...
               'Position',[18 18 72 36]);
 ```
 
-![Panel container](/engineering-education/app-layout-design-prorammatically-using-matlab/applayout_b.jpg)
+![Panel container](/engineering-education/app-layout-design-programmatically-using-matlab/applayout_b.jpg)
 
 #### Tab group containers
 A tab group container is created using the function `uitabgroup()`. It allows identification and navigation through different tabs.
@@ -84,7 +84,7 @@ tab2=uitab(tab_group,'Title','View'); %second tab properties
 
 ![Tab group containing two tabs](/engineering-education/app-layout-design-programmatically-using-matlab/applayout_c.jpg)
 
-Tab group can also contain other components for option selection and control inputs. Components like dropdown buttons are added using the function `uidropdown();` while a checkbox is added using the function `uicheckbox();`.
+Tab group can also contain other components for option selection and input controls. Components like dropdown buttons are added using the function `uidropdown();` while a checkbox is added using the function `uicheckbox();`.
 
 The below code snippet shows how to design tab group containers holding components with specified properties. For example, the main tab will have the title 'Member gender', the dropdown button will contain two options;  'male' and 'female',  while the button will be labelled 'Enter'.
 
@@ -97,10 +97,10 @@ cb = uicheckbox(t,'Position',[11 65 140 22],'Text','Member'); %check box propert
 b = uibutton(t,'Position',[11 40 140 22],'Text','Enter'); % button properties
 ```
 
-![Tab containing components](/engineering-education/app-layout-design-prorammatically-using-matlab/applayout_d.jpg)
+![Tab containing components](/engineering-education/app-layout-design-programmatically-using-matlab/applayout_d.jpg)
 
 #### Components
-Components in apps enable the user to perform the following operations.
+Components in an application enable a user to perform the following operations.
 
 - Navigate through the app.
 - Feed the app with information.
@@ -122,7 +122,7 @@ f = uifigure % main figure
 b = uibutton(f); 
 ```
 
-![Simple button](/engineering-education/app-layout-design-prorammatically-using-matlab/applayout_e.jpg)
+![Simple button](/engineering-education/app-layout-design-programmatically-using-matlab/applayout_e.jpg)
 
 Button properties are added using the syntax `uibutton(fig,'properties');`. Such properties include position and the message content of the button.
 
@@ -133,7 +133,7 @@ f=uifigure % Main container
 btn = uibutton(f,'state','Text','Reset','Value',true,'Position',[60,110,110,25]); % button properties
 ```
 
-![State button](/engineering-education/app-layout-design-prorammatically-using-matlab/applayout_f.jpg)
+![State button](/engineering-education/app-layout-design-programmatically-using-matlab/applayout_f.jpg)
 
 The main types of buttons are radio and toggle. Radio buttons are created using the function `uiradiobutton()` while toggle buttons are created using the function `uitogglebutton();`.
 
@@ -161,7 +161,7 @@ f = uifigure;% main container
 drop_down = uidropdown(f,'Items',{'Road','Air','Water','Pipeline','Railway'},'Value','Road'); % drop down properties
 ```
 
-![Drop down items](/engineering-education/app-layout-design-prorammatically-using-matlab/applayout_i.jpg)
+![Drop down items](/engineering-education/app-layout-design-programmatically-using-matlab/applayout_i.jpg)
 
 #### Dialog and notifications
 Dialog and notifications elements enable the app to communicate warnings, alerts, the progress of particular activity, or instructions to the user.
@@ -179,7 +179,7 @@ f = uifigure; % main container
 uialert(f,'Unsupported format','invalid file'); % alert box  messages
 ```
 
-![Alert dialog box](/engineering-education/app-layout-design-prorammatically-using-matlab/applayout_j.jpg)
+![Alert dialog box](/engineering-education/app-layout-design-programmatically-using-matlab/applayout_j.jpg)
 
 
 The below code snippet shows how to use the alert dialog box for a warning.
@@ -194,7 +194,7 @@ uialert(fig,message,'Warning',...
 ![Warning dialog box](/engineering-education/app-layout-design-programmatically-using-matlab/applayout_k.jpg)
 
 #### Confirmation dialog box
-Confirmation dialog boxes are created using the function `uiconfirm`. It enables the user to instruct the app on handling certain activities. The instruction is chosen from options provided by the application.
+A confirmation dialog box is created using the function `uiconfirm`. It enables the user to instruct the app on handling certain activities. The instruction is chosen from options provided by the application.
 
 A confirmation dialog box can have one or more options available for selection.
 
@@ -208,8 +208,8 @@ selections= uiconfirm(fig,msg,title, ...
            'Options',{'save','do not save','Cancel'}, ...
            'DefaultOption',2,'CancelOption',3); % options available for selection
 ```
-![Confirmation dialog box](/engineering-education/app-layout-design-prorammatically-using-matlab/applayout_l.jpg)
+![Confirmation dialog box](/engineering-education/app-layout-design-programmatically-using-matlab/applayout_l.jpg)
 
 
 #### Conclusion
-App layout design is used in designing mobile applications or websites. In addition, apps are helpful in communication, data storage, and entertainment. The article demonstrates that Matlab provides an interactive environment for designing app layouts using Matlab functions.
+App layout design is used in designing mobile applications or websites. In addition, apps are helpful in communication, data storage, and entertainment. This article demonstrated how Matlab provides an interactive environment for designing app layouts using Matlab functions.
