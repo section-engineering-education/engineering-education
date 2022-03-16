@@ -176,7 +176,21 @@ plt.show()
 
 The blue signal is the noisy signal, and the orange is the denoised output. Now, it is hard to know whether the denoising is done or not. It can be done by either calculating the peak signal to noise ratio(PSNR) or physically listening to the music. 
 
-We add the `sounddevice` python package to anaconda to listen to the audios. All these can be done in the terminal. For example, to import `sounddevice`, we execute the command below in the terminal.
+We need to add the `sounddevice` python package to anaconda to listen to the audios. This can be done on the terminal using `conda` or `pip`  package managers as shown below:
+
+- Using pip
+
+```bash
+python3 -m pip install sounddevice
+```
+
+- Using Conda
+- 
+```bash
+conda install -c conda-forge python-sounddevice
+```
+
+To import `sounddevice` package,  we use the code snipepet below.
 
 ```Python
 import sounddevice as sd
