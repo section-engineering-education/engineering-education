@@ -1,5 +1,21 @@
-Machine learning engineers build models but hide the implementation from the end-users. The end-users apply the model blindly without knowing the model implementation. They do not know the functions, methods, and algorithms that train the model.
+---
+layout: engineering-education
+status: publish
+published: true
+url: /model-explanation-with-dalex/
+title: Machine Learning Model Explanation with Dalex
+description: This article aims to demenstrate how to perfom a Machine Learning Model explanation using Dalex.
+author: calvin-ombati
+date: 2022-03-16T00:00:00-03:30
+topics: [Languages]
+excerpt_separator: <!--more-->
+images:
 
+  - url: /engineering-education/model-explanation-with-dalex/hero.png
+    alt: Machine Learning Model Explanation with Dalex Hero Image
+---
+Machine learning engineers build models but hide the implementation from the end-users. The end-users apply the model blindly without knowing the model implementation. They do not know the functions, methods, and algorithms that train the model.
+<!--more-->
 End-users need an open and transparent model to understand how it makes the predictions, the workings of the model, the functions, and the algorithms. Together, these help users understand the contributing factors to the model's decision.
 
 [Dalex](https://dalex.drwhy.ai/) is an open-sources library that explains and analyzes machine learning models. It makes the model transparent and open to the end-users. It builds trust in individuals and companies when using the models in production.
@@ -29,11 +45,9 @@ It would be best if you had the following to follow along with this tutorial:
 - Be able to build a simple [machine learning model.](/engineering-education/house-price-prediction/)
 - Download the dataset from [here.](https://drive.google.com/file/d/1nQ3Zwb1qUki1sFrSbptEjNnPSTDHrzro/view?usp=sharing)
 
-For this tutorial, implement the Python code in [Gooogle Colab notebook.](https://research.google.com/colaboratory/) to get the same results. Ensure you sign in using your email. 
+To get the best out of this tutorial, implement the Python code in [Gooogle Colab notebook.](https://research.google.com/colaboratory/) to get the same results. Ensure you sign in using your email. 
 
-Google Colab will enable you to build and run the model easily. It also fast CPUs and GPUs that are ideal for machine learning.
-
-Let's start preparing the dataset.
+Google Colab will enable you to easily build and run the model due to the fast CPU and GPU  ideal for machine learning.
 
 ### Dataset preparation
 In this section, we will prepare the bank marketing dataset. The dataset will build a model that solves a classification problem. The model will predict if a customer will join a monthly saving plan or not. You can get the dataset from [here.](https://drive.google.com/file/d/1nQ3Zwb1qUki1sFrSbptEjNnPSTDHrzro/view?usp=sharing)
@@ -190,7 +204,7 @@ import dalex as dx
 Dalex explains the model in two ways: Overall model explanation and single prediction explanation.
 
 #### Overall model explanation
-In this way, it explains the whole structure of the trained model. It will show the methods, functions, and algorithms that build the model. 
+In this way, it explains the whole structure of the trained model. In addition, it will show the methods, functions, and algorithms that build the model. 
 
 The user will know the dataset that trains the model and how each variable in the dataset contributed to the general model performance.
 
@@ -371,3 +385,6 @@ To get the Google Colab notebook for this tutorial, click [here](https://colab.r
 - [Dalex documentation](https://dalex.drwhy.ai/)
 - [Sckit-learn Pipeline](/engineering-education/machine-learning-using-pandas-profiling-and-scikit-learn-pipeline/)
 - [Machine learning algorithms](/engineering-education/understanding-machine-learning-algorithms-and-how-to-implement-them/)
+
+---
+Peer Review Contributions by: [Jerim Kaura](/engineering-education/authors/jerim-kaura/
