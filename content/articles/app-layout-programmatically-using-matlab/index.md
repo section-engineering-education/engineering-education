@@ -1,5 +1,3 @@
-#### App Layout Design using Matlab
-
 ---
 layout: engineering-education
 status: publish
@@ -230,3 +228,6 @@ selections= uiconfirm(fig,msg,title, ...
 
 #### Conclusion
 App layout design is used in designing mobile applications or websites. In addition, apps are helpful in communication, data storage, and entertainment. This article demonstrated how Matlab provides an interactive environment for designing app layouts using Matlab functions.
+
+---
+Peer Review Contributions by: [Jerim Kaura](/engineering-education/authors/jerim-kaura/)
