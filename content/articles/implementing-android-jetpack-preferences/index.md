@@ -1,36 +1,43 @@
-### Introduction
+---
+layout: engineering-education
+status: publish
+published: true
+url: /implementing-android-jetpack-preferences/
+title: Implementing Android Jetpack Preferences
+description: This article will cover the use of the Android Preference Library (JetPack) in our project by developing a simple setting screen.
+author: mercy-nyakio
+date: 2022-03-16T00:00:00-09:30
+topics: [Languages]
+excerpt_separator: <!--more-->
+images:
+
+  - url: /engineering-education/implementing-android-jetpack-preferences/hero.png
+    alt: Implementing Android Jetpack Preferences Hero Image
+---
 These are just a few options our app needs. A customizable app setting is also a superb strategy to enhance the Android app user experience. The Android Preference Library manages user preferences. Using the Android Preference Library, let us create a simple setup screen!
 
 ### Table of contents
 - [Prerequisites](#prerequisites)
 - [Step 1 Creating the project](#step-1-creating-the-project)
-- [Step 2 Adding a menu to the main activity](#step-2-adding-a-menu-to-the-main-activity)
+- [Step 2 Adding a menu to the MainActivity](#step-2-adding-a-menu-to-the-main-activity)
 - [Step 3 Adding the second activity](#step-3-adding-the-second-activity)
-- [Step 4 Working with MainActivitydotkt](#step-4-working-with-mainactivitydotkt)
-- [Step 5 Working with SettingActivitydotkt](#step-5-working-with-settingactivitydotkt)
+- [Step 4 Working with MainActivity.kt](#step-4-working-with-mainactivitydotkt)
+- [Step 5 Working with SettingActivity.kt](#step-5-working-with-settingactivitydotkt)
 - [Step 6 Running the application](#step-6-running-the-application)
 - [Conclusion](#conclusion)
 
 ### Prerequisites
-To follow along with this tutorial, have the following:
+The reader is advised to have the following to follow along with this tutorial;
+- Basic knowledge in Android development.
+- Basic knowledge in Kotlin programming language.
+- Have basic knowledge of [preferences](https://developer.android.com/reference/android/preference/Preference)
+- Have [Android Studio](https://developer.android.com/studio?gclid=CjwKCAjwlcaRBhBYEiwAK341jU5iIV3l1WRlsYriVsAVDhHovlGtHMmWJJAL2MwlC015p-KO-cUWIRoCy0IQAvD_BwE&gclsrc=aw.ds) installed.
 
-1. Basic android knowledge.
-2. Basic Kotlin language.
-3. Have basic knowledge on [preferences](https://developer.android.com/reference/android/preference/Preference)
-4. Have android studio installed.
-
-### Step 1 Creating the project
-To create an android project, open the android studio application on your computer. Select the `start a new project` option to create a new android project. After starting a new project, select `Empty activity` as your project template and then click `next` to proceed to the next steps. Configure the application name and enter your own. In this case, we will call it `Android Preferences.` For this project we will use Kotlin so Select `Kotlin`* as your default language. Leave everything else as default and  click `finish` to complete setting up the android studio and wait a few seconds for it to build up your project.
-
-Let us now work on our project:
-
-We shall have two activities in our application. That is;
-1. The main activity (root activity)
-2. Settings activity - will hold our android preferences.
+#### Step one: Creating the project
+Open Android Studio and select New Project -> Empty activity as your project template and then click next to proceed to the next steps. Configure the application name and enter your own. In this case, we will call it **Android Preferences**. For this project, we will use `Kotlin` as our programming language, so select `Kotlin` as your default language. Leave everything else as default and click Finish and wait a few seconds for it to build up your project.
    
-### step 2 Adding a menu to the main activity
-The menu will be significant because we can add a menu item(s) into it that will help us navigate to the Setting Activity. We will achieve that by adding a click listener to each item(s).
-
+#### Step two: Adding a menu to the MainActivity
+The menu enables us to add a menu item(s) into it that will help us navigate to the `SettingActivity`. We will achieve that by adding a click listener to each item(s):
 - To add a menu resource, click the project folder on the left side of the `IDE` or simply `alt+1` -> app -> res folder.
 - Right-click the res to add a new resource file -> new -> Android resource file.
 - Enter the file name as menu and the resource type select Menu.
@@ -39,7 +46,7 @@ The menu will be significant because we can add a menu item(s) into it that will
 - Enter the file name as `setting_menu` and finish.
 Add the following code snippet to the setting_menu.XML to add an item to the menu.
 
-```Kotlin
+```kotlin
 <item
        android:id="@+id/setting"
        android:icon="@drawable/ic_settings"
@@ -60,7 +67,7 @@ To ensure the menu bar is visible to the user's application, add the following c
 
 It will just inflate the setting_menu that we created earlier.
 
-### Step 3 Adding the second activity
+#### Step three: Adding the second activity
 Add another activity to our main project by:
 - Double-click app file -> java file ->  application package name(com._.androidprefernces).
 - Right-click the file -> new -> `activity` -> `Settings activity`.
