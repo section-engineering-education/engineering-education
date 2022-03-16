@@ -32,7 +32,7 @@ Using Dalex, the end-users (individuals and companies) will gain insightful info
 - [Accuracy score](#accuracy-score)
 - [Getting started with Dalex](#getting-started-with-dalex)
 - [Implementing overall model explanation](#implementing-overall-model-explanation)
-- [Variable contribution to the model performance](#variable-contribution-to-the-model-perfomance)
+- [Variable contribution to the model performance](#variable-contribution-to-the-model-performance)
 - [Implementing single prediction explanation](#implementing-single-prediction-explanation)
 - [Variable contribution to the single prediction](#variable-contribution-to-the-single-prediction)
 - [Conclusion](#conclusion)
