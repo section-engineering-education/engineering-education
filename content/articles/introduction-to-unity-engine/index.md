@@ -1,8 +1,21 @@
-# Introduction-to-unity-engine
+---
+layout: engineering-education
+status: publish
+published: true
+url: /introduction-to-unity-engine/
+title: Introduction to Unity Engine
+description: This tutorial will introduction the reader to the Unity engine, explain the interface of the engine and understand how to create different objects.
+author: mohamed-alghadban
+date: 2022-03-16T00:00:00-03:30
+topics: [Languages]
+excerpt_separator: <!--more-->
+images:
 
-### Introduction
+  - url: /engineering-education/introduction-to-unity-engine/hero.png
+    alt: Introduction to Unity Engine Hero Image
+---
 The Unity engine is one of the strongest engines in game development, and also one of the easiest engines to learn as a beginner in game development. 
-
+<!--more-->
 In this tutorial, we will explain the interface of the engine and understand how to create different objects, manipulate and compose them together, we will also use prefabs to enhance the ability to reuse and edit different objects.
 
 ### Table of contents
@@ -114,4 +127,5 @@ In this tutorial, we learned about all the functionalities of the Unity engine i
 - [New career in unity](https://blog.unity.com/technology/new-career-pathways-help-you-break-into-the-gaming-and-tech-industries).
 - [Learn 3D arts in unity](https://blog.unity.com/technology/learn-3d-art-optimization-for-mobile-with-arm).
 
-
+---
+Peer Review Contributions by: [Jethro Magaji](/engineering-education/authors/jethro-magaji/)
