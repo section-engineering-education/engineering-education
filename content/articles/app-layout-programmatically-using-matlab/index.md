@@ -1,8 +1,25 @@
-#### App layout design programmatically using Matlab
+#### App Layout Design using Matlab
+
+---
+layout: engineering-education
+status: publish
+published: true
+url: /app-layout-programmatically-using-matlab/
+title: App Layout Design using Matlab
+description: This article will discuss the design an app layout using Matlab funtions.
+author: vitalis-odhiambo
+date: 2022-03-17T00:00:00-10:05
+topics: [Languages]
+excerpt_separator: <!--more-->
+images:
+
+ - url: /engineering-education/app-layout-programmatically-using-matlab/hero.jpg
+   alt: App Layout Design using Matlab example image
+---
 
 #### Introduction
-App layout consists of several components that contain the user interface(UI) elements. User interface elements fall into four main categories; input control elements, informational elements, navigation components, and containers.
-
+An app layout consists of several components that contain the user interface(UI) elements. User interface elements fall into four main categories; input control elements, informational elements, navigation components, and containers.
+<!--more-->
 Matlab provides an interactive environment for developing uifigure based application layouts programmatically using Matlab functions. Uifigure based apps are designed using user interface figures meant for app building.
 
 The user interface elements perform different functions in the application. The behaviour and appearance of a user interface element are added as the element's properties and functions.
