@@ -1,7 +1,6 @@
 ---
 title: Abel Mathew
 type: authors
-authors: abel-mathew
 linkedin: https://www.linkedin.com/in/designrknight/
 github: https://github.com/DesignrKnight
 images:

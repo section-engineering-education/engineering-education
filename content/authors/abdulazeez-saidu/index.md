@@ -1,7 +1,6 @@
 ---
 title: Abdulazeez Saidu
 type: authors
-authors: abdulazeez-saidu
 linkedin: https://www.linkedin.com/in/saeed-abdulazeez/
 twitter: https://www.twitter.com/mr_abdul09/
 github: https://www.github.com/danmasanii

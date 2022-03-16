@@ -1,7 +1,6 @@
 ---
 title: Arafat Olayiwola
 type: authors
-authors: arafat-olayiwola
 github: https://github.com/Horlawhumy-dev
 images:
   - url: /engineering-education/authors/arafat-olayiwola/avatar.jpg 

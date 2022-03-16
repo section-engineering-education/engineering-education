@@ -1,7 +1,6 @@
 ---
 title: Apondi Ashley
 type: authors
-authors: apondi-ashley
 github: https://github.com/apondi-911
 images:
   - url: /engineering-education/authors/apondi-ashley/avatar.jpeg 

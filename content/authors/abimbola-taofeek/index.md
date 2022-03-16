@@ -1,7 +1,6 @@
 ---
 title: Abibmola Taofeek
 type: authors
-authors: abimbola-taofeek
 linkedin: https://www.linkedin.com/in/abimbola-taofeek-4b8698207/
 github: https://www.github.com/abimbolataofeek
 images:

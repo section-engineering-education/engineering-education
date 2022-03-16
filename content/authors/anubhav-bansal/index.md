@@ -1,7 +1,6 @@
 ---
 title: Anubhav Bansal
 type: authors
-authors: anubhav-bansal
 images:
   - url: /engineering-education/authors/anubhav-bansal/avatar.jpg 
 ---

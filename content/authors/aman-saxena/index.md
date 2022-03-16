@@ -1,7 +1,6 @@
 ---
 title: Aman Saxena
 type: authors
-authors: aman-saxena
 linkedin: https://www.linkedin.com/in/amansaxena333
 images:
   - url: /engineering-education/authors/aman-saxena/avatar.jpg 

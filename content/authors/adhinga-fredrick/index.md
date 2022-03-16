@@ -1,7 +1,6 @@
 ---
 title: Adhinga Fredrick
 type: authors
-authors: adhinga-fredrick
 images:
   - url: /engineering-education/authors/adhinga-fredrick/avatar.jpg 
 ---

@@ -1,7 +1,6 @@
 ---
 title: Adetu Ridwan
 type: authors
-authors: adetu-ridwan
 images:
   - url: /engineering-education/authors/adetu-ridwan/avatar.jpg 
 ---

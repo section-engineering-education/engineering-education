@@ -1,7 +1,6 @@
 ---
 title: Ann Purity
 type: authors
-authors: ann-purity
 images:
   - url: /engineering-education/authors/ann-purity/avatar.jpg 
 ---

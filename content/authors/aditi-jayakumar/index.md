@@ -1,7 +1,6 @@
 ---
 title: Aditi Jayakumar
 type: authors
-authors: aditi-jayakumar
 images:
   - url: /engineering-education/authors/aditi-jayakumar/avatar.jpg 
 ---

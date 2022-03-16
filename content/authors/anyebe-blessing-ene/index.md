@@ -1,7 +1,6 @@
 ---
 title: Anyebe Blessing Ene
 type: authors
-authors: anyebe-blessing-ene
 images:
   - url: /engineering-education/authors/anyebe-blessing-ene/avatar.jpg 
 ---

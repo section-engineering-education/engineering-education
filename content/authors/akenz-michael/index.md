@@ -1,7 +1,6 @@
 ---
 title: Akinsanya Michael
 type: authors
-authors: akenz-michael
 linkedin: https://www.linkedin.com/in/akinsanya-m-0585661ab/
 email: akenz1901@gmail.com
 github: https://www.github.com/akenz1901

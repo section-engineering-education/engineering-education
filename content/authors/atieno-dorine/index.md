@@ -1,7 +1,6 @@
 ---
 title: Atieno Dorine
 type: authors
-authors: atieno-dorine
 github: https://github.com/atienodorine3
 images:
   - url: /engineering-education/authors/atieno-dorine/avatar.jpg 

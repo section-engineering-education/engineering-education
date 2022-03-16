@@ -1,7 +1,6 @@
 ---
 title: Antony Gitau
 type: authors
-authors: antony-gitau
 images:
   - url: /engineering-education/authors/antony-gitau/avatar.PNG 
 ---

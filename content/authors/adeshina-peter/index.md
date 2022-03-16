@@ -1,7 +1,6 @@
 ---
 title: Adeshina Peter
 type: authors
-authors: adeshina-peter
 linkedin: https://www.linkedin.com/in/peter-adeshiina-4692b91bb/
 github: https://github.com/Adespscientist/Adespscientist.github.io
 images:

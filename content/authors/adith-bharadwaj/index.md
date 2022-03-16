@@ -1,7 +1,6 @@
 ---
 title: Adith Bharadwaj
 type: authors
-authors: adith-bharadwaj
 linkedin: https://www.linkedin.com/in/adith-bharadwaj-07a586160/
 images:
   - url: /engineering-education/authors/adith-bharadwaj/avatar.jpg 

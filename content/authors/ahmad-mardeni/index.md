@@ -1,7 +1,6 @@
 ---
 title: Ahmad Mardeni
 type: authors
-authors: ahmad-mardeni
 linkedin: https://www.linkedin.com/in/ahmad-mardeni-369b3019b/
 github: https://github.com/ahmadmardeni1
 images:

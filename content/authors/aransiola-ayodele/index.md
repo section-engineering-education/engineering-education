@@ -1,7 +1,6 @@
 ---
 title: Aransiola Ayodele
 type: authors
-authors: aransiola-ayodele
 images:
   - url: /engineering-education/authors/aransiola-ayodele/avatar.jpeg 
 ---

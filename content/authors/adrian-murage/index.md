@@ -1,7 +1,6 @@
 ---
 title: Adrian Murage
 type: authors
-authors: adrian-murage
 images:
   - url: /engineering-education/authors/adrian-murage/avatar.jpeg 
 ---

@@ -1,7 +1,6 @@
 ---
 title: Anita Achu
 type: authors
-authors: anita-achu
 images:
   - url: /engineering-education/authors/anita-achu/avatar.png 
 ---
