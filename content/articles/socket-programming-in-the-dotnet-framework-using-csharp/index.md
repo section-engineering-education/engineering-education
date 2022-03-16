@@ -68,7 +68,7 @@ using System.Net;
 ```
 
 ### Server-side socket programming
-We will start by creating the server-side of our application. We will start by writing our code in the program.cs`. The first thing we will do is to create a public class and call it `AppState`. Inside this class, we will define a socket and call it `socket` and set it to null. We will also define an integer and give it a data size of 1024 bytes.
+We will start by creating the server-side of our application. We will start by writing our code in the `program.cs`. The first thing we will do is to create a public class and call it `AppState`. Inside this class, we will define a socket and call it `socket` and set it to null. We will also define an integer and give it a data size of 1024 bytes.
 
 We will define a byte array that will be able to hold the new data and pass in the data size we initialized above. The last thing we need in this class is a string builder and we will initialize it new.
 
