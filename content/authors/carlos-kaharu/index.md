@@ -1,5 +1,5 @@
 ---
-title: Carlos Kahuru
+title: Carlos Kaharu
 type: authors
 github: https://github.com/Romans70
 images:

@@ -5,7 +5,7 @@ published: true
 url: /quantum-ai/
 title: Overview of Quantum AI
 description: This article will discuss quantum computing and how quantum AI works to make human work more manageable.
-author: carlos-kahuru
+author: carlos-kaharu
 date: 2022-03-16T00:00:00-09:30
 topics: [Artificial Intelligence]
 excerpt_separator: <!--more-->
@@ -22,7 +22,7 @@ This article will discuss quantum computing, how quantum computers operate, and 
 - [Key Takeaways](#key-takeaways)
 - [Quantum Computing](#quantum-computing)
 - [Quantum Machine Learning](#quantum-machine-learning)
-- [How Quantum AI works](#how-quatum-ai-works)
+- [How Quantum AI works](#how-quantum-ai-works)
 - [Possible application of quantum computing in AI](#possible-application-of-quantum-computing-in-ai)
 - [Milestones for quantum AI](#milestone-for-quantum-ai)
 - [Examples of Quantum AI Applications](#examples-of-quantum-ai-applications)
