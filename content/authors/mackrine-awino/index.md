@@ -1,10 +1,11 @@
 ---
 title: Mackrine Awino
 type: authors
-linkedin: https://www.linkedin.com/in/awino/
-github: https://github.com/awinomackrine
+linkedin: 'https://www.linkedin.com/in/awino/'
+github: 'https://github.com/awinomackrine'
 images:
-  - url: /engineering-education/authors/mackrine-awino/avatar.jpeg 
+  - url: /engineering-education/authors/mackrine-awino/avatar.jpeg
+authors: mackrine-awino
 ---
 
 Mackrine is a final year student at JKUAT. She is a mobile application developer who has been actively leading the tech-based community at the University.

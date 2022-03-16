@@ -2,7 +2,8 @@
 title: Mohamed Alghadban
 type: authors
 images:
-  - url: /engineering-education/authors/mohamed-alghadban/avatar.jpg 
+  - url: /engineering-education/authors/mohamed-alghadban/avatar.jpg
+authors: mohamed-alghadban
 ---
 Mohamed alghadban is an undergraduate student in Software engineering.
 He is experienced in C#, C# forms, and C++, and he always has the passion to learn new things.

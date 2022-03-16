@@ -2,6 +2,7 @@
 title: Wanjiru Alice
 type: authors
 images:
-  - url: /engineering-education/authors/wanjiru-alice/avatar.jpeg 
+  - url: /engineering-education/authors/wanjiru-alice/avatar.jpeg
+authors: wanjiru-alice
 ---
 Wanjiru is a Computer Science and Mathematics undergraduate. She loves building with Vue.js as a hobby.
