@@ -1,6 +1,7 @@
 ---
 title: Alphonce Arogo
 type: authors
+authors: alphonce-arogo
 github: https://github.com/alpho361
 images:
   - url: /engineering-education/authors/alphonce-arogo/avatar.jpg 

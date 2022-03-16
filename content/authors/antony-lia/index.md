@@ -1,6 +1,7 @@
 ---
 title: Antony Lia
 type: authors
+authors: antony-lia
 images:
   - url: /engineering-education/authors/antony-lia/avatar.jpeg 
 ---

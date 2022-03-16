@@ -1,6 +1,7 @@
 ---
 title: Amos Njoroge
-type: engineering-education/author
+type: authors
+authors: amos-njoroge
 images:
   - url: /engineering-education/authors/amos-njoroge/avatar.jpg 
 ---

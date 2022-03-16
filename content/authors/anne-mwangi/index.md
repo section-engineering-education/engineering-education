@@ -1,6 +1,7 @@
 ---
 title: Anne Mwangi
 type: authors
+authors: anne-mwangi
 github: https://github.com/annemwangi
 images:
   - url: /engineering-education/authors/anne-mwangi/avatar.jpg

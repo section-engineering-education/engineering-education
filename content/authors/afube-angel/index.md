@@ -1,6 +1,7 @@
 ---
 title:  Afube Angel
 type: authors
+authors: afube-angel
 linkedin: https://www.linkedin.com/in/angel-afube-7045b9176
 images:
   - url: /engineering-education/authors/afube-angel/avatar.jpg 

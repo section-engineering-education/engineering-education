@@ -1,6 +1,7 @@
 ---
 title: Ayoma Joseph
 type: authors
+authors: ayoma-joseph
 twitter: https://twitter.com/JosephAyoma
 images:
   - url: /engineering-education/authors/ayoma-joseph/avatar.jpg 

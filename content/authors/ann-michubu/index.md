@@ -1,6 +1,7 @@
 ---
 title: Ann Michubu
 type: authors
+authors: ann-michubu
 images:
   - url: /engineering-education/authors/ann-michubu/avatar.jpg 
 ---

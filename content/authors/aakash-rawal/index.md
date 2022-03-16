@@ -1,6 +1,7 @@
 ---
 title: Aakash Rawal
 type: authors
+authors: aakash-rawal
 images:
   - url: /engineering-education/authors/aakash-rawal/avatar.jpeg 
 ---

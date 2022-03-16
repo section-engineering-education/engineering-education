@@ -1,6 +1,7 @@
 ---
 title: Alice Wangari
 type: authors
+authors: alice-wangari
 images:
   - url: /engineering-education/authors/alice-wangari/avatar.jpeg 
 ---

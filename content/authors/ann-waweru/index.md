@@ -1,6 +1,7 @@
 ---
 title: Ann Waweru
 type: authors
+authors: ann-waweru
 images:
   - url: /engineering-education/authors/ann-waweru/avatar.jpg 
 ---

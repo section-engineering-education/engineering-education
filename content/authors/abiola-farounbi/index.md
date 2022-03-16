@@ -1,6 +1,7 @@
 ---
 title: Abiola Farounbi
 type: authors
+authors: abiola-farounbi
 linkedin: https://www.linkedin.com/in/abiola-farounbi-94ba571a0/
 website: https://abiolaesther.me/
 images: 

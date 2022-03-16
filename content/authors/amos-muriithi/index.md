@@ -1,6 +1,7 @@
 ---
 title: Amos Muriithi
 type: authors
+authors: amos-muriithi
 images:
   - url: /engineering-education/authors/amos-muriithi/avatar.jpg 
 ---

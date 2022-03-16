@@ -1,6 +1,7 @@
 ---
 title: Amos Magu
 type: authors
+authors: amos-magu
 github: https://github.com/Amoh-writer
 images:
   - url: /engineering-education/authors/amos-magu/avatar.jpeg 

@@ -1,6 +1,7 @@
 ---
-Title: Andrew Odera
-Type: authors
+title: Andrew Odera
+type: authors
+authors: andrew-odera
 github: https://github.com/AndrewOdera 
 image:
     url: /engineering-education/authors/andrew-odera/avatar.jpg

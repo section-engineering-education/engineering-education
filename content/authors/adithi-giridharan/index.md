@@ -1,6 +1,7 @@
 ---
 title: Adithi Giridharan
 type: authors
+authors: adithi-giridharan
 images:
   - url: /engineering-education/authors/adithi-giridharan/avatar.jpeg 
 ---

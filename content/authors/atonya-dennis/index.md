@@ -1,6 +1,7 @@
 ---
 title: Atonya Dennis
 type: authors
+authors: atonya-dennis
 twitter: https://twitter.com/AtonyaDenis
 images:
   - url: /engineering-education/authors/atonya-dennis/avatar.jpeg 

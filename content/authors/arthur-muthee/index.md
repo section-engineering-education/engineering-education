@@ -1,6 +1,7 @@
 ---
 title: Arthur Muthee
 type: authors
+authors: arthur-muthee
 images:
   - url: /engineering-education/authors/arthur-muthee/avatar.jpg 
 ---

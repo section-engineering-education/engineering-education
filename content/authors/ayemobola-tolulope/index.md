@@ -1,6 +1,7 @@
 ---
 title: Ayemobola Tolulope
 type: authors
+authors: ayemobola-tolulope
 images:
   - url: /engineering-education/authors/ayemobola-tolulope/avatar.jpg 
 ---

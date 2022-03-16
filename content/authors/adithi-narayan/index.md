@@ -1,6 +1,7 @@
 ---
 title: Adithi Narayan
 type: authors
+authors: adithi-narayan
 github: https://github.com/Tvashta
 images:
   - url: /engineering-education/authors/adithi-narayan/avatar.jpg 

@@ -1,6 +1,7 @@
 ---
 title: Antony Muriuki
 type: authors
+authors: antony-muriuki
 github: https://github.com/Antonymuriuki
 images:
   - url: /engineering-education/authors/antony-muriuki/avatar.jpg 

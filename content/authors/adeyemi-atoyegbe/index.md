@@ -1,6 +1,7 @@
 ---
 title: Adeyemi Atoyegbe
 type: authors
+authors: adeyemi-atoyegbe
 images:
   - url: /engineering-education/authors/adeyemi-atoyegbe/avatar.jpeg 
 ---
