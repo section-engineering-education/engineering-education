@@ -6,8 +6,8 @@ url: /understanding-daemons-in-linux-using-nodejs/
 title: Understanding Daemons in Linux Using Node Js
 description: In this article, we'll describe the various ways of starting a web server as a daemon process, leaving the reader to pick the one best suited to them.
 author: ghali-muga
-date: 2022-02-03T00:00:00-06:30
-topics: [Languages]
+date: 
+topics: []
 excerpt_separator: <!--more-->
 images:
 
