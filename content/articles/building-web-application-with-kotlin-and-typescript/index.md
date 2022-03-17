@@ -1,13 +1,25 @@
-### Building Web Application with Kotlin and TypeScript
+---
+layout: engineering-education
+status: publish
+published: true
+url: /building-web-application-with-kotlin-and-typescript/
+title: Building Web Applications with Kotlin and Typescript
+description: This tutorial will walk the reader through how to integrate the Kоtlin generаted mоdules using Grаdle build sсriрt соde with а Tyрesсriрt frontend аррliсаtiоn.
+author: james-nyamwaro
+date: 2022-03-17T00:00:00-12:00
+topics: [API]
+excerpt_separator: <!--more-->
+images:
 
-### Introduction
+  - url: /engineering-education/building-web-application-with-kotlin-and-typescript/hero.jpg
+    alt: web application kotlin typescript Hero image
+---
 
-Kotlin is a language that targets alot of platforms and it is useful as it also targets JVM. Its ability to target multiplatforms is useful in web applicqations when writing and using the codings on JavaScript frontend and JVM backend. Thus those data structures that are always complex gets passed on between frontend browser and backend server.
+Kotlin is a language that targets many platforms, and it is helpful as it also targets JVM. Its ability to target multiplatforms is useful in web applications when writing and using the JavaScript frontend and JVM backend codings. Thus those data structures that are always complex gets passed on between the frontend browser and backend server.
 
 This article will provide a step by step way of intergrating Kotlin generated modules using Gradle build script code with a TypeScript frontend application. The build tool will compile the Kotlin code and generate a jar containing the UMD JavaScript module (by default). The interesting part is incorporating this into the `node.js-based` integrated frontend application programming interface.
 
 ### Prerequisites
-
 To understand the contents of this article, the reader will need to have:
 
 1. An understanding of both Kotlin and TypeScript languages.
@@ -28,7 +40,7 @@ To understand the contents of this article, the reader will need to have:
 
 ### The build scripts
 
-Gradle is a collection of build scripts that we can use to automate the processes. The gradle build scripts, for example, can do the simple action of copying files from one directory to another before the actual building process begins.
+Gradle is a collection of build scripts that we can use to automate the processes. The Gradle build scripts, for example, can do the simple action of copying files from one directory to another before the actual building process begins.
 
 Multi-module Gradle build may contain modules like:
 
@@ -75,7 +87,7 @@ It configures while making use of the plugin for every gradle subproject:
 
 ### The information module
 
-The JVM server module and the JS client module use the information module. Therefore, ensuring that the information module is constructed for both targets. This becomes necessary to ensure that the kotlin code is kotlin-common code that enters the commonMain directory shown below:
+The JVM server module and the JS client module use the information module. Therefore, ensuring that the information module is constructed for both targets. This becomes necessary to ensure that the kotlin code is kotlin-common code that enters the `commonMain` directory shown below:
 
 ```bash
 root
@@ -104,13 +116,13 @@ data class contacts(val alias: String) {
 records class PhoneNumber(Val label: String, Val number: String)
 ```
 
-The root of the build script configures all submodules while the information module's build script does not necessitate anything special (for the time being)
+The root of the build script configures all submodules, while the information module's build script does not necessitate anything special (for the time being).
 
 ### The client module
 
-Angular codes belong in here, and the Angular build expects the JavaScript modules created by Kotlin to be placed in the node modules directory. We can include a gradle dependency configuration used in handling the Kotlin modules dependecies that we integrate into the Angular build.
+Angular codes belong here, and the Angular build expects the JavaScript modules created by Kotlin to be placed in the node modules directory. We can include a Gradle dependency configuration used in handling the Kotlin modules dependencies that we integrate into the Angular build.
 
-We need to outline the Gradle metadata to fit the necessary depencies. For example, Gradle metadata is commonly used in Kotlin Multiplatform builds to treat Gradle dependants with the correct object.
+We need to outline the Gradle metadata to fit the necessary dependencies. For example, Gradle metadata is commonly used in Kotlin Multiplatform builds to treat Gradle dependants with the correct object.
 
 ```kotlin
 //from file: client/build.gradle.kts
@@ -185,8 +197,11 @@ We must create a package.json file and should have a `types` entry referring to 
 
 Considering all the third parties are the same as the Kotlin multiplatform library one, which includes a JVM target, we prefer using the same JVM reflection approach. JVM divides the Kotlin standard library into several modules while the JavaScript module provided by Kotlin contains everything; thus, it becomes crucial to develop its typescript declaration.
 
-According to the gradle, the name of the conversation is `<group>:<name>:<version>` which is customary worldwide. Unfortunately, the names for each JVM and JavaScript module do not always correspond. As a result, code generators for the typrscript declaration that allows mapping between the Kotlin module and the JVM module become essential. The generators play a crucial role in successfully incorparating the import file into the TypeScript declaration.
+According to Gradle, the name of the conversation is `<group>:<name>:<version>`, which is customary worldwide. Unfortunately, the names for each JVM and JavaScript module do not always correspond. As a result, code generators for the TypeScript declaration that allows mapping between the Kotlin module and the JVM module become essential. In addition, the generators play a crucial role in successfully incorporating the import file into the TypeScript declaration.
 
 ### Conclusion
 
-Integration of Kotlin generated modules with TypeScript web browser application has been well illustrated in this article. It requires build script codes simplified by the Gradle plugin to set up the Kotlin multiplatform build. However, after unpacking the Kotlin.JS modules, it becomes easier to use the Kotlin generated modules into TypeScript web application codes.
+Integration of Kotlin generated modules with the TypeScript web browser application has been well illustrated. It requires build script codes simplified by the Gradle plugin to set up the Kotlin multiplatform build. However, after unpacking the Kotlin.JS modules, it becomes easier to use the Kotlin generated modules into TypeScript web application codes.
+
+---
+Peer Review Contributions by: [Odhiambo Paul](/engineering-education/authors/odhiambo-paul/)
