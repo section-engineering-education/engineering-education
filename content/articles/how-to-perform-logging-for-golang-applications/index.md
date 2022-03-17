@@ -4,7 +4,7 @@ status: publish
 published: true
 url: /how-to-perform-logging-for-golang-applications/
 title: Introduction on How to Perform logging for Go applications
-description: This tutorial aims to introduce the concept of logging, and how to perform logging using the Go programming language.
+description: This tutorial introduces the concept of logging, and how to perform logging using the Go programming language.
 author: antony-gitau
 date: 2022-03-17T00:00:00-21:00
 topics: [Languages]
@@ -14,28 +14,28 @@ images:
   - url: /engineering-education/how-to-perform-logging-for-golang-applications/hero.jpg
     alt: How to Perform logging for Go applications Hero Image
 ---
-Go is used to build backend-based applications. As a developer, you might need to know what is going on behind the scenes of the app you are running. You need to know when a certain activity is carried out to track what comes in and out of your application. Thus, you need to set up a logging wrapper that will help you get to know more of the task your server is doing.
+Go is used to build backend-based applications. As a developer, you might need to know what is going on behind the scenes of your running app. For example, you need to know when a certain activity is carried out to track what comes in and out of your application. Thus, you need to set up a logging wrapper that will help you get to know more of the task your server is doing.
 <!--more-->
-This guide aims to introduce the concept of logging using the Go programming language. We will explain this concept and how it works. Then build an application that has logging within a Golang application.
+This guide introduces the concept of logging using the Go programming language. First, we will explain this concept and how it works. Then build an application that has logging within a Golang application.
 
 ### What is logging
-When you have created an application for production, a wide range of problems can happen that are out of your control and unexpected. The hardest part of fixing such problems is identifying where the problem is. The same application may also require reports showing how your users are interacting with different modules and services of your application. And whenever things go wrong, you want to know what's happened to your application codebase. In this case, you would want the same application to give you feedback behind the scenes of your code execution.
+When you have created an application for production, many problems can happen that are out of your control and unexpected. The hardest part of fixing such problems is identifying where the problem is. The same application may also require reports showing how your users are interacting with different modules and services of your application. And whenever things go wrong, you want to know what's happened to your application codebase. In this case, you would want the same application to give you feedback behind the scenes of your code execution.
 
-The concept of logging tries to solve this for you. It leaves a trail of breadcrumbs. So whenever something goes wrong, you can determine the cause at the right time and solve it before it messes up your application. Logging allows you to write your application status messages to files, databases, or other output streams. These messages contain information on which parts of your code have been executed and what problems may have arisen.
+The concept of logging tries to solve this for you. But, unfortunately, it leaves a trail of breadcrumbs. So whenever something goes wrong, you can determine the cause at the right time and solve it before it messes up your application. Logging allows you to write your application status messages to files, databases, or other output streams. These messages contain information on which parts of your code have been executed and what problems may have arisen.
 
 ### Why logging
-As a developer, logging plays a critical role in fixing an error in your application. It helps you figure out which section of your code is causing an issue. This essentially helps you debug your application by letting you track step by step execution of your application. There are several tools that we can use for debugging. However, logging messages is arguably one of the most efficient ways to debug your code.
+As a developer, logging plays a critical role in fixing an error in your application. First, it helps you determine which section of your code is causing an issue. This essentially helps you debug your application by letting you track step by step execution of your application. There are several tools that we can use for debugging. However, logging messages is arguably one of the most efficient ways to debug your code.
 
 To help you prioritize which code issues need more attention, logging classified logging messages to different logging levels. A logging level acts as a message filter. These logging include Trace < Debug < Info < Warn < Error < Fatal, based on the priority order.
 
-Logging can be applied to almost any programming language. Let's dive in and see how we can set up some basic logging for the Go application.
+Logging can be applied to almost any programming language. So let's dive in and see how we can set up some basic logging for the Go application.
 
 ### Set up logging for Go apps
 First, you need to initialize a Go application on your computer. Thus, you need to install Go. Check Golang installation in case you haven't installed it yet. Once installed, run `go version` to check if Go has been installed. Then create and navigate to a project folder and initialize Go using `go mod init go-logging-app`. This will set up some ready to write Go code.
 
 Go has several standard packages that allow you to set loggers in your application. However, Go has a logging package built for native Golang.
 
-To set up a basic log with Go, create a `main.go` at the root of your project folder. To get started doing simple logging, you can use a [log](https://pkg.go.dev/log) package to create a simple base logger. Go ahead and add the following to your `main.go` file.
+To set up a basic log with Go, create a `main.go` at the root of your project folder. To start simple logging, you can use a [log](https://pkg.go.dev/log) package to create a simple base logger. Go ahead and add the following to your `main.go` file.
 
 ```go
 package main
@@ -66,7 +66,7 @@ func main() {
 
 This will log some basic messages to your console. What if you want to save these log messages to a file. Here is how we can do this.
 
-First, import the following packages that will help you access your computer system. We need to create a directory and a file to save the log. These packages will help us do so.
+First, import the following packages to help you access your computer system. Next, we need to create a directory and a file to save the log. These packages will help us do so.
 
 ```go
 import (
@@ -107,7 +107,7 @@ func SetLogFile() *os.File {
 }
 ```
 
-This will create a directory `logs`. Here we are setting a file name to be generated based time the log is a message created. In this case, we will create a file and name it to the current date of the saved log. For example, `29-January-2022.log`.
+This will create a directory `logs`. Here, we set a file name to be generated based on time the log is a message created. In this case, we will create a file and name it to the current date of the saved log. For example, `29-January-2022.log`.
 
 Let's now write the function that will execute different log levels.
 
@@ -167,7 +167,7 @@ As you see, it is easier to track when and where the message was generated.
 ### Create custom logs
 The above processes involve simple logs. Let's now see how you can add logs generated by the logic execution of your application.
 
-Let's say you have an application that involves a divide operation. In this case, a user cannot divide any value with zero. And if this happens, you might want to catch that error and save it for error tracking. Let's see how we can handle this operation and catch such an error.
+Let's say you have an application that involves a divide operation. In this case, a user cannot divide any value with zero. And if this happens, you might want to catch that error and save it for error tracking. So let's see how we can handle this operation and catch such an error.
 
 First, add the `errors` package to your `main.go` imports. Then create a function that executes a dive operation as shown below:
 
@@ -210,9 +210,9 @@ Error: 2022/01/29 20:26:38 main.go:56: error : cannot divide any value with zero
 And that's how you can use logs to record any possible error based on the logic you want to execute.
 
 ### Set up logging on a Go server
-Go is also used to create web servers and APIs. In this case, they are expected to send responses and receive requests from a client. You might want to implement logging to such a server to record when given methods such as GET and POST get executed and the data these methods return.
+Go is also used to create web servers and APIs. They are expected to send responses and receive requests from a client in this case. You might want to implement logging to such a server to record when given methods such as GET and POST get executed and the data these methods return.
 
-Logging can be added to a server to monitor such occurrences and get what clients access from your server. Let's set up a very basic sever that has Go logging features.
+Logging can be added to a server to monitor such occurrences and get clients' access from your server. Let's set up a very basic sever that has Go logging features.
 
 Go ahead and create a fresh import in your `main.go` file, as shown below:
 
@@ -225,7 +225,7 @@ import (
 )
 ```
 
-We will create a simple server using the native HTTP module. First, we want to create a middleware logger that we will use to log in to the server request.
+We will create a simple server using the native HTTP module. But, first, we want to create a middleware logger that we will use to log in to the server request.
 
 ```go
 func HelloHandler(w http.ResponseWriter, r *http.Request) {
@@ -242,7 +242,7 @@ func HelloHandler(w http.ResponseWriter, r *http.Request) {
 
 This middleware function will access the server request using the `httputil.DumpRequest`. This will access the HTTP request and write its details, and fields of the request are included in the `DumpRequest`.
 
-Now we will call this middleware to the route/ endpoint that we will use to access the server. We will do using the Go `main()` function as shown in the code block below:
+We will call this middleware to the route/ endpoint that we will use to access the server. But, first, we will do using the Go `main()` function as shown in the code block below:
 
 ```go
 func main() {
@@ -259,7 +259,7 @@ Run the server using `go run main.go`. This will run the server on the local hos
 As you can see, the `HandleFunc()` executed a `Get` request and everything associated with the executed endpoint.
 
 ### Go logging tools diversification
-Go is a popular and very trendy language. It has a great ecosystem with many libraries that you can use to build your Go-based applications. In this tutorial, we have used the Go log native module. However, there are many libraries that you can use to log your application. These can be native or third-party libraries.
+Go is a trendy language. It has a great ecosystem with many libraries that you can use to build your Go-based applications. In this tutorial, we have used the Go log native module. However, there are many libraries that you can use to log your application. These can be native or third-party libraries.
 
 You can choose to use the following native logging libraries:
 
@@ -270,13 +270,13 @@ Apart from these amazing native libraries, the Go ecosystem has different third-
 
 - [Zap](https://pkg.go.dev/go.uber.org/zap#section-readme) is a structured and leveled logging package for Go applications. Its main core is to produce fast logging middleware by avoiding serialization overheads.
 - [Zerolog](https://github.com/rs/zerolog) provides loggers that have JSON output.
-- [Logrus](https://github.com/sirupsen/logrus) provides structured loggers that are compatible with native/standard libraries such as a log to help you scale logging processes.
+- [Logrus](https://github.com/sirupsen/logrus) provides structured loggers compatible with native/standard libraries such as a log to help you scale logging processes.
 - [Apex/log](https://github.com/sirupsen/logrus) is inspired by Logrus. It adds more [handlers](https://pkg.go.dev/github.com/apex/log?utm_source=godoc#Handler) to Logrus to handle log events. These [handlers includes](https://github.com/apex/log#handlers) colored-text output, JSON handler output, CLI output, level filter handler, etc.
 
 Check this guide to [learn and compare](https://blog.logrocket.com/five-structured-logging-packages-for-go/) which package features best fit your log structures.
 
 ### Conclusion
-Logging is a great practice you can implement in your application. It gives you ideas of what is happening within your application. And in case of errors, it becomes easier to trace them and solve them in time. It is advisable only to log information that is meaningful to avoid unnecessary logs. Each log should have a level that describes the severity of the error being enclosed. This way, you can prioritize logs that can harm your application more and at the right time.
+Logging is a great practice you can implement in your application. It gives you ideas of what is happening within your application. And in case of errors, it becomes easier to trace them and solve them in time. It is advisable only to log meaningful information to avoid unnecessary logs. Each log should have a level that describes the severity of the error being enclosed. This way, you can prioritize logs that can harm your application more and at the right time.
 
 ---
 Peer Review Contributions by: [Wilkister Mumbi](/engineering-education/authors/wilkister-mumbi/)
