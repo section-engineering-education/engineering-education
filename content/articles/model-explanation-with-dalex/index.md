@@ -387,4 +387,4 @@ To get the Google Colab notebook for this tutorial, click [here](https://colab.r
 - [Machine learning algorithms](/engineering-education/understanding-machine-learning-algorithms-and-how-to-implement-them/)
 
 ---
-Peer Review Contributions by: [Jerim Kaura](/engineering-education/authors/jerim-kaura/
+Peer Review Contributions by: [Jerim Kaura](/engineering-education/authors/jerim-kaura/)
