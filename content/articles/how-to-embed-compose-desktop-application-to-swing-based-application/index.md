@@ -10,6 +10,7 @@ To follow along with this tutorial, you will have to:
 - Have installed [JDK 11](https://www.oracle.com/java/technologies/downloads/) or higher
 
 ### Goals
+- Learn to setup Compose for Desktop project
 - Learn to use Compose for Desktop's features
 - Provide a quick recap of building Swing and desktop Compose applications
 - Using a ComposePanel to create UIs
@@ -19,6 +20,14 @@ To follow along with this tutorial, you will have to:
 With Compose for Desktop, you can create UIs with Kotlin and handle events responsively. It increases the performance of web applications, reduces memory usage, and has made it easier for developers to iterate on features. Also, it requires no more XML or templating language. In this way, you can still use the Swing and AWT components together with the Composable functions to build a desktop UI. 
 
 Now let's get started :)
+### Creating a Compose for Desktop project
+To create a Compose for Desktop project, launch Intellij IDEA and click on `File`. Inside this menu, select `New` and select `Project`.
+
+![create-project](/how-to-embed-compose-desktop-application-to-swing-based-application/create-compose-desktop-project-step1.png)
+
+A new project window will open. Select `Kotlin`, name your project, specify the location. On the Project Template section, select `Compose Desktop Application`. 
+
+![create-project](/how-to-embed-compose-desktop-application-to-swing-based-application/create-compose-desktop-project-step2.png)
 
 ### Compose for Desktop features
 Some of the great features of Compose for Desktop are: 
@@ -31,35 +40,36 @@ Swing is a minimal GUI toolkit written in Java that includes a large number of w
 
 Let's have a look at how to create a Swing application. 
 ```kotlin
-import javax.swing.*;
-import java.awt.*;
+import java.awt.BorderLayout
+import javax.swing.*
 
-class ExampleClass {
-    
-    private fun main(args: Array<String>) {
-        val frame = JFrame()
-        frame.setSize(400, 600)
-        frame.setTitle("Swing Application");
-        frame.defaultCloseOperation = JFrame.EXIT_ON_CLOSE
-        
-        val menuBar = JMenuBar()
-        val menu1 = JMenu("File")
-        val menu2 = JMenu("Edit")
-        val menu3 = JMenu("Selection")
-        menuBar.add(menu1)
-        menuBar.add(menu2)
-        menuBar.add(menu3)
-        
-        val pane = JPanel()
-        val button = JButton("Click me")
-        val label = JLabel("Click the Button")
-        pane.add(button)
-        pane.add(label)
-        
-        frame.contentPane.add(BorderLayout.NORTH, menuBar)
-        frame.contentPane.add(BorderLayout.CENTER, pane)
-        frame.isVisible = true
-    }
+private fun main() {
+    //Creates an empty window and set its size and defaultCloseOperation
+    val frame = JFrame()
+    frame.setSize(400, 600)
+    frame.title = "Swing Application"
+    frame.defaultCloseOperation = JFrame.EXIT_ON_CLOSE
+
+    //Creates a Menu bar and adding menu items in the menu bar
+    val menuBar = JMenuBar()
+    val menu1 = JMenu("File")
+    val menu2 = JMenu("Edit")
+    val menu3 = JMenu("Selection")
+    menuBar.add(menu1)
+    menuBar.add(menu2)
+    menuBar.add(menu3)
+
+    //creates a JPanel and adding the label and button in it
+    val pane = JPanel()
+    val button = JButton("Click me")
+    val label = JLabel("Click the Button")
+    pane.add(button)
+    pane.add(label)
+
+    //setting up the menu bar and  JPanel in the window using border layout
+    frame.contentPane.add(BorderLayout.NORTH, menuBar)
+    frame.contentPane.add(BorderLayout.CENTER, pane)
+    frame.isVisible = true
 }
 ```
 The above class will produce this output.
@@ -70,12 +80,29 @@ Compose for Desktop applications are built upon Composable functions to create t
 
 Let's also have a look at how a Compose for Desktop application is built like.
 ```kotlin
+import androidx.compose.material.MaterialTheme
+import androidx.compose.desktop.ui.tooling.preview.Preview
+import androidx.compose.foundation.layout.Arrangement
+import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.material.Button
+import androidx.compose.material.Text
+import androidx.compose.runtime.*
+import androidx.compose.ui.Alignment
+import androidx.compose.ui.Modifier
+import androidx.compose.ui.unit.dp
+import androidx.compose.ui.window.Window
+import androidx.compose.ui.window.application
+import androidx.compose.ui.window.rememberWindowState
+
 @Composable
 @Preview
 fun App() {
     MaterialTheme {
         Column (Modifier.fillMaxSize(), Arrangement.spacedBy(3.dp), Alignment.CenterHorizontally) {
-            Button(onClick = {}) {
+            Button(onClick = {
+                //Do something
+            } ) {
                 Text("Click me")
             }
             Text("Click the button")
@@ -85,8 +112,8 @@ fun App() {
 
 fun main() = application {
     Window(onCloseRequest = ::exitApplication,
-        state = rememberWindowState(width = 300.dp , height = 300.dp),
-        title = "Compose for Desktop "
+        title = "Compose for Desktop ",
+        state = rememberWindowState(width = 300.dp , height = 300.dp)
     ) {
         App()
     }
@@ -125,31 +152,57 @@ Let's have a look at when you can use `ComposePanel` or `SwingPanel` in your app
 ### Using a ComposePanel in a Swing application
 Let's have an example of how our code should look like when using `ComposePanel`.
 ```kotlin
+import androidx.compose.foundation.layout.*
+import androidx.compose.foundation.shape.RoundedCornerShape
+import androidx.compose.material.Button
+import androidx.compose.material.Surface
+import androidx.compose.material.Text
+import androidx.compose.runtime.Composable
+import androidx.compose.ui.Alignment
+import androidx.compose.ui.Modifier
+import androidx.compose.ui.awt.ComposePanel
+import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.unit.dp
+import java.awt.BorderLayout
+import javax.swing.JButton
+import javax.swing.JFrame
+import javax.swing.JFrame.setDefaultLookAndFeelDecorated
+import javax.swing.SwingUtilities
+import javax.swing.WindowConstants
+
 fun main() = SwingUtilities.invokeLater {
+    //Creates an empty window and set its size and defaultCloseOperation
     val jFrame = JFrame()
     setDefaultLookAndFeelDecorated(true)
-    val panel = ComposePanel()
     jFrame.defaultCloseOperation = WindowConstants.EXIT_ON_CLOSE
     jFrame.title = "Swings App"
     jFrame.isVisible = true
     jFrame.setSize(600, 600)
 
+    /*creates a ComposePanel and JButtons then
+     adding them to the JFrame using border layout*/
+
+    val panel = ComposePanel()
     jFrame.contentPane.add(panel, BorderLayout.CENTER)
     jFrame.contentPane.add(JButton("Swing Button 1"), BorderLayout.NORTH)
     jFrame.contentPane.add(JButton("Swing Button 2"), BorderLayout.EAST)
     jFrame.contentPane.add(JButton("Swing Button 3"), BorderLayout.WEST)
 
+    //Set the content of the ComposePanel to Compose elements defined in ComposeUI()
     panel.setContent { ComposeUI() }
 }
 @Composable
 fun ComposeUI (){
+    //Column defines how the components inside it will be arranged
     Column (
         modifier = Modifier.fillMaxSize(),
         horizontalAlignment = Alignment.CenterHorizontally
     ) {
+        //Spacer creates an empty space of height 50.dp
         Spacer(modifier = Modifier.height(50.dp))
         Row {
             Surface(
+                //Surface gives the components inside it a material background
                 color = Color(200, 200, 200),
                 modifier = Modifier.size(130.dp, 130.dp)
             ){
@@ -188,13 +241,31 @@ It is worth noting the difference in the appearance of the Compose and Swing but
 ### Using a SwingPanel for CFD Composition
 You can also use `SwingPanel` to hold Swing components inside a Compose application. Without further ado, let's see how this happens.
 ```kotlin
+import androidx.compose.foundation.layout.*
+import androidx.compose.material.Button
+import androidx.compose.material.Text
+import androidx.compose.ui.Alignment
+import androidx.compose.ui.Modifier
+import androidx.compose.ui.awt.SwingPanel
+import androidx.compose.ui.graphics.Color.Companion.White
+import androidx.compose.ui.unit.dp
+import androidx.compose.ui.window.singleWindowApplication
+import java.awt.Dimension
+import javax.swing.BoxLayout
+import javax.swing.JButton
+import javax.swing.JPanel
+
 fun main() = singleWindowApplication(title = "Compose Simple Application") {
+    //inside the Window Scope
     Column {
+
+        //Align modifiers inside the box to specify where to place composable
         Box(modifier = Modifier.fillMaxWidth().height(60.dp).padding(top = 20.dp),
             contentAlignment = Alignment.TopCenter){
                 Button( modifier = Modifier.size(200.dp, 40.dp), onClick = {}){
                     Text("Compose Button")
                 }
+
         }
         Box(modifier = Modifier.fillMaxWidth().height(60.dp).padding(top = 20.dp),
              contentAlignment = Alignment.TopCenter ){
@@ -204,10 +275,12 @@ fun main() = singleWindowApplication(title = "Compose Simple Application") {
         }
         Box(modifier = Modifier.fillMaxWidth().height(60.dp).padding(20.dp),
             contentAlignment = Alignment.Center){
+            //Swing panel inside a composable
             SwingPanel(
                 modifier = Modifier.size(200.dp, 40.dp),
                 background = White,
                 factory = {
+                    //The block creating the Component to be composed.
                     val button = JButton("Swing Button")
                     button.preferredSize = Dimension(40,40)
                     val panel = JPanel()
