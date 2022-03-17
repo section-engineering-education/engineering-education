@@ -2,19 +2,18 @@
 layout: engineering-education
 status: publish
 published: true
-url: /building-a -debt-tracker-application-with-python-and-fauna/
+url: /building-a--debt-tracker-application-with-python-and-fauna/
 title: Building a Debt Tracker Application with Python and Fauna
-description: This tutorial will guide the reader through building a debt tracker application using Fauna. It will use Fauna to store data and use GraphQL to query database.
+description: This tutorial will guide the reader through building a debt tracker application using Fauna. It will use Fauna to store data and use GraphQL to query the database.
 author: geoffrey-mwangi
-date: 2022-03-10T00:00:00-11:00
+date: 2022-03-17T00:00:00-02:52
 topics: [Languages]
 excerpt_separator: <!--more-->
 images:
 
- - url: /engineering-education/Building a Debt Tracker Application with Python and Fauna/hero.jpg
+ - url: /engineering-education/building-a--debt-tracker-application-with-python-and-fauna/hero.jpg
    alt: Building a Debt Tracker Application with Python and Fauna Hero Image
 ---
-
 [Fauna](https://fauna.com) is a cloud-based database with two interfaces; GraphQL and Fauna Query Language (FQL). Databases can hold collections, indexes, and even other databases (multi-tenancy). 
 
 Documents are located within collections and do not have special schema requirements. Fauna can handle a wide range of data types (including temporal), but it is most known for its relational data handling.
@@ -29,7 +28,7 @@ To follow along with this tutorial, you are required to have the following:
 - Some knowledge of Python, Fauna, and Flask.
 - Python installed.
 
-### Table of content
+### Table of Contents
 - [Getting started with Fauna](#getting-started-with-fauna)
 - [Creating a database in Fauna](#creating-a-database-in-fauna)
 - [Creating a collection in Fauna](#creating-a-collection-in-fauna)
@@ -46,7 +45,7 @@ To begin using Fauna,  first, create an account on their [official website](http
 ### Creating a database in Fauna
 After creating an account, we will create a database to store our data by going to the Fauna dashboard and clicking on the `CREATE DATABASE` button:
 
-![create database](/engineering-education/building-a -debt-tracker-application-with-python-and-fauna/create-database.png)
+![create database](/engineering-education/building-a--debt-tracker-application-with-python-and-fauna/create-database.png)
 
 Enter the desired name for the database and click `CREATE`.
 
@@ -55,7 +54,7 @@ Fauna organizes its data into collections and uses indexes to search them. The u
 
 Far from being a database, a collection is a container for documents. We will create a collection to store our data by going to the Fauna dashboard and clicking on the `create collection` button:
 
-![create collection](/engineering-education/building-a -debt-tracker-application-with-python-and-fauna/create-collection.png)
+![create collection](/engineering-education/building-a--debt-tracker-application-with-python-and-fauna/create-collection.png)
 
 The `History Days` are the numbers of days that you will wish Fauna to retain the history of your data. The default is 30 days, and you can change this number by entering a new number. The `TTL` is the expiration time of the data in the collection.
 
@@ -66,7 +65,7 @@ The Fauna index is a way to search for specific data. For example, if you wanted
 
 To create indexes, click on the `Indexes` tab and click on the `New Index` button:
 
-![create indexes](/engineering-education/building-a -debt-tracker-application-with-python-and-fauna/create-indexes.png)
+![create indexes](/engineering-education/building-a--debt-tracker-application-with-python-and-fauna/create-indexes.png)
 
 Here, you are supposed to choose the name of the collections to be searched and the index. 
 
@@ -75,7 +74,7 @@ Here, you are supposed to choose the name of the collections to be searched and 
 ### Creating an API key for the Fauna database
 To access the database, we will need to generate an API key. Go to the Fauna dashboard and select the 'Security' tab, then the `NEW KEY` button:
 
-![create api key](/engineering-education/building-a -debt-tracker-application-with-python-and-fauna/create-api-key.png)
+![create api key](/engineering-education/building-a--debt-tracker-application-with-python-and-fauna/create-api-key.png)
 
 After filling in the form, click `SAVE`. Fauna will provide the secret key to access the database.
 
@@ -97,11 +96,11 @@ $ pip install Flask_Bootstrap4
 ```
 
 ### Project structure
-We will create a working directory called `fauna-python-tutorial` and then create a ' static' directory inside it to store our static files. We will also create a' templates' directory inside the working directory to store our templates. Finally, we will create our `app.py` file in the `fauna-python-tutorial` directory. 
+We will create a working directory called `fauna-python-tutorial` and then create a `static` directory inside it to store our static files. We will also create a `templates` directory inside the working directory to store our templates. Finally, we will create our `app.py` file in the `fauna-python-tutorial` directory. 
 
 The file structure should look as below:
 
-```
+```bash
 .
 ├── static
 │   ├── script.js
@@ -125,7 +124,7 @@ $ python3 app.py
 
 We should see a default page that looks like this:
 
-![dept-tracker](/engineering-education/building-a -debt-tracker-application-with-python-and-fauna/dept-tracker.png)
+![dept-tracker](/engineering-education/building-a--debt-tracker-application-with-python-and-fauna/dept-tracker.png)
 
 The default page is the home page of our app. We can add debt by clicking on the `Add Loan` button.
 
@@ -258,10 +257,10 @@ def clear_loan(loan_id):
 
 We have utilized the `delete` function from the code above to delete the data from the database. Next, we have used the `int` function to convert the `loan_id` to an integer. Finally, we have used the `query` function to query the data from the database.
 
-You can find the source code from this  [Github Repo](https://github.com/Jeff-mwangi/Debt-Tracker-Application-with-Python-and-Fauna) for the source code of this tutorial. 
+You can find the source code [here](https://github.com/Jeff-mwangi/Debt-Tracker-Application-with-Python-and-Fauna). 
 
 ### Conclusion
-In this tutorial, we have learned the basics of the Fauna database while working with Flask and the CRUD operations that comes with it.
+In this tutorial, we have learned the basics of the Fauna database while working with Flask and the CRUD operations that come with it.
 
 Happy coding!
 
