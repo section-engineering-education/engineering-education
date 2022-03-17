@@ -6,7 +6,7 @@ url: /approximating-the-speed-of-an-object-and-its-distance/
 title: Approximating the speed of an object and its distance using OpenCV in Python
 description: In this article, we consider the problem of approximating the speed of an object and its distance using OpenCV in Python. 
 author: bonface-ndolo
-date: 2022-03-10T00:00:00-18:00
+date: 2022-03-17T00:00:00-18:00
 topics: [Languages]
 excerpt_separator: <!--more-->
 images:
@@ -29,19 +29,13 @@ In this tutorial, we will learn how to use OpenCV to detect the frontal face as 
 - [Installations of external libraries.](#installations-of-external-libraries)
 - [Detection of the frontal face](#detection-of-the-frontal-face)
 - [Determining the distance](#determining-the-distance)
-- [case 1:](#case-1)
-- [Finding the focal length.](#finding-the-focal-length)
-- [case 2:](#case-2)
-- [Finding the distance](#finding-the-distance)
-- [case 3:](#case-3)
-- [Reading reference images from the directory](#reading-reference-images-from-the-directory)
-- [Determining the speed.](#determining-the-speed)
-- [case 1:](#case-1-1)
-- [Finding the speed](#finding-the-speed)
-- [case 2:](#case-2-1)
-- [Finding average speed](#finding-average-speed)
-- [case 3:](#case-3-1)
-- [Calling of the pre-defined functions](#calling-of-the-pre-defined-functions)
+  - [Case 1: Finding the focal length](#case-1-finding-the-focal-length)
+  - [Case 2: Finding the distance](#case-2-finding-the-distance)
+  - [Case 3: Reading reference images from the directory](#case-3-reading-reference-images-from-the-directory)
+- [Determining the speed](#determining-the-speed)
+  - [Case 1: Finding the speed](#case-1-finding-the-speed)
+  - [Case 2: Finding average speed](#case-2-finding-average-speed)
+  - [Case 3: Calling of the pre-defined functions](#case-3-calling-of-the-pre-defined-functions)
 - [Conclusion](#conclusion)
 
 
@@ -60,7 +54,7 @@ We will also use the `haarcascade_frontalface_default.xml` module to detect our 
 Fire up your *Pycharm IDE* to create a new project.
 *As shown in the image below.*
 ![startup](/engineering-education/approximating-the-speed-of-an-object-and-its-distance/startup.png)
-As shown above, we will name our project `DistanceVelocity` on the open menu. We then select our base interpreter to be python3.10 latest as to the composing of this tutorial. As well, you can use any version of the python base interpreter.
+We will name our project `DistanceVelocity` on the open menu as shown above. We then select our base interpreter to be python3.10 latest as to the composing of this tutorial. As well, you can use any version of the python base interpreter.
 After making suitable selections, we click on the create button to launch our project.
 
 ### Installations of external libraries.
@@ -123,9 +117,9 @@ Below is the image of the expected output.
 ### Determining the distance 
 To get the distance, we will have to create more functions.
 The first function to be created is the focal length finder.
- ### case 1:
- ### Finding the focal length.
-  The function defined will calculate the focal length thus by getting the distance between lens to CMOS sensor.
+ 
+#### Case 1: Finding the focal length
+The defined function will calculate the focal length thus by getting the distance between lens and CMOS sensor.
 1st parameter to be used is  `Determined_Distance(int)`: It is distance measured from object to the Camera while Capturing Reference image  
 2nd parameter to be used is `Actual_Width(int)`: This is the real width of object, in real world, for instance my face width is = 14.3 centimeters)  
 3rd parameter to be used is `Width_In_Image(int)`: It is object width in the frame /image in our case in the reference image(found by Face detector)  
@@ -137,8 +131,8 @@ def focal_length(determined_distance, actual_width, width_in_rf_image):
     return focal_length_value
 ```
 
-### case 2:
-### Finding the distance 
+#### Case 2: Finding the distance 
+
 This is the second function to be created, the distance finder function. This function approximates the distance between the face object and camera using defined arguments.
 1st parameter to be used is `focal_length(float)`: return by the focal_length_Finder function  
 2nd parameter to be used is `Actual_Width(int)`: It is the real width of the object. For example, my face is approximately 14cm in the real world. 
@@ -150,8 +144,7 @@ def distance_finder(focal_length, real_face_width, face_width_in_frame):
     distance = (real_face_width * focal_length) / face_width_in_frame  
     return distance
 ```
-### case 3:
-### Reading reference images from the directory
+#### Case 3: Reading reference images from the directory
 We will open our reference image then store it in a variable. Further illustrations are implemented in the code below.
 ```python  
 ref_image = cv2.imread("Ref_image.png")  
@@ -183,7 +176,7 @@ cv2.destroyAllWindows()
 Your output should be as shown in the image below.
 ![distance](/engineering-education/approximating-the-speed-of-an-object-and-its-distance/distance.png)
 
-### Determining the speed.
+### Determining the speed
 To find the speed, we will first have to import the time module since speed is distance in relation to time taken. Then we will initialise time related variables. Below is the code snippet for illustrations.
 ```python
 import time  
@@ -196,8 +189,7 @@ changeInDistance = 0
 listDistance = []  
 listSpeed = []
 ```
-### case 1:
-### Finding the speed
+#### Case 1: Finding the speed
 This function takes the covered distance and time taken as parameters and returns the speed.
 ```python 
 def speedFinder(covered distance, timeTaken):  
@@ -206,8 +198,7 @@ def speedFinder(covered distance, timeTaken):
   
     return speed
 ```
-### case 2:
-### Finding average speed
+#### Case 2: Finding average speed
 We will start by finding the length of the list. Followed by calculating the number of items to find its average. Get the list of most recent items of the list to find the average of the selected items in the list. Lastly, we return the average.
 ```python
 def averageFinder(completeList, averageOfItems):  
@@ -218,8 +209,7 @@ def averageFinder(completeList, averageOfItems):
   
     return average
 ```
-### case 3:
-### Calling of the pre-defined functions
+#### Case 3: Calling of the pre-defined functions
 Following closely, below is the code illustrating the function calls.
 ```python
 while True:  
