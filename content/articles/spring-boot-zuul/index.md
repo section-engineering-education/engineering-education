@@ -6,7 +6,7 @@ url: /spring-cloud-zuul/
 title: Spring Cloud Routing and Filtering using Zuul Gateway Service
 description: In this tutorial, we will build Spring Boot microservices integrate Zuul API gateway to filter and route requests to various services 
 author: nicholas-odhiambo
-date: 2022-03-17T00:00:00-09:00
+date: 2022-03-17T00:00:00-09:58
 topics: [Languages]
 excerpt_separator: <!--more-->
 images:
