@@ -3,10 +3,10 @@ layout: engineering-education
 status: publish
 published: true
 url: /spring-cloud-zuul/
-title: Spring Cloud routing and filtering using Zuul gateway service
+title: Spring Cloud Routing and Filtering using Zuul Gateway Service
 description: In this tutorial, we will build Spring Boot microservices integrate Zuul API gateway to filter and route requests to various services 
 author: nicholas-odhiambo
-date: 2022-03-14T00:00:00-10:30
+date: 2022-03-17T00:00:00-09:00
 topics: [Languages]
 excerpt_separator: <!--more-->
 images:
@@ -20,7 +20,7 @@ Zuul server is an application server that handles routing in a microservices arc
 
 In this tutorial, we will build two services:-
 1. **Student service** - This service will handle student-related requests and reports.
-2. **Course service** -  This service will handle course-related requests i.e creating courses, enrolling students, etc.
+2. **Course service** -  This service will handle course-related requests, i.e. creating courses, enrolling students, etc.
 
 In addition to the above services, we will also have the following services:-
 1. **Zuul server service** - This service will handle all the requests and routing to other services.
@@ -33,16 +33,16 @@ For a better understanding of the concepts, we will be using the following resou
 3. IDE of your choice installed on your computer. For this guide, I use [IntelliJ IDEA](https://www.jetbrains.com/idea/).
   
 ### Table of contents
-- [Introducion](#introducion)
-- [Prerequisites](#prerequisites)
-- [Table of contents](#table-of-contents)
+
 - [Project Setup](#project-setup)
   - [Student Service](#student-service)
   - [Course Service](#course-service)
   - [Zuul Service](#zuul-service)
   - [Eureka Service](#eureka-service)
 - [Conclusion](#conclusion)
+  
 ### Project Setup
+
 #### Student Service
 1. Navigate to [spring initliazr](https://start.spring.io/) on your web browser.
 2. Input the project name as "StudentService".
@@ -51,6 +51,7 @@ For a better understanding of the concepts, we will be using the following resou
 5. Unarchive the downloaded and open it in your favourite IDE.
 6. Sync the project to download the dependencies from the central maven repository.
 7. Update the `StudentServiceApplication` class with the code snippet below. 
+
 ```java
 @SpringBootApplication
 @EnableDiscoveryClient
@@ -62,9 +63,11 @@ public class StudentServiceApplication {
 
 }
 ```
+
 - `@EnableDiscoveryClient` is used to enable the discovery client. This makes it possible for other services to discover and communicate with this service through the Eureka service.
 
 Since this service will handle student information, we will create a `Student` class to represent the student. So, in the root project directory, create a new Java class called `Student` and add the code snippet below.
+
 ```java
 
 @Data
@@ -101,7 +104,7 @@ public class StudentController {
     }
 }
 ```
-- `@RestController` annotation is used to generate a REST controller class, making it possible to handle HTTP requests.
+- `@RestController` annotation generates a REST controller class, making it possible to handle HTTP requests.
 - `@RequestMapping("/api")` annotation is used to map the requests to the controller class.
 - `test()` method is used to handle the HTTP request to `/api/students`, it returns a list of students from the `returnStudentList()` method in the response body.
 
