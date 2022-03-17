@@ -3,10 +3,10 @@ layout: engineering-education
 status: publish
 published: true
 url: /how-to-perform-logging-for-golang-applications/
-title: Introduction on How to Perform logging for Go applications
+title: Introduction on Performing Logging in Go applications
 description: This tutorial introduces the concept of logging, and how to perform logging using the Go programming language.
 author: antony-gitau
-date: 2022-03-17T00:00:00-21:00
+date: 2022-03-17T00:00:00-12:40
 topics: [Languages]
 excerpt_separator: <!--more-->
 images:
