@@ -1,7 +1,7 @@
 ### Getting Started with Sanity CMS
-Sanity lets us focus on app designs rather than worrying about content file storage and databases. This tool provides efficient methods to create scalable and user-friendly applications.
-
 Sanity is a React open-source content management system. In case you're not familiar with the concept. A content management system (CMS) is a software application that enables users to design, edit, publish, and preserve digital information. A CMS enables you to build apps without having to start from scratch, and it is typically utilized in web and business content management systems.
+
+Sanity lets us focus on app designs rather than worrying about content file storage and databases. This tool provides efficient methods to create scalable and user-friendly applications.
 ### Table of contents
 - [Prerequisites](#prerequisites)
 - [Introduction](#introduction)
