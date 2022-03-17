@@ -240,7 +240,7 @@ exp.model_performance()
 ```
 This code will display all the performance scores:
 
-![Overall model explanation](/engineering-education/model-explanation-with-dalex/metrics-score.png)
+![Overall model explanation](/engineering-education/model-explanation-with-dalex/performance-scores.png)
 
 The accuracy score of the model is `0.91034`. It is slightly lower than the one we had gotten earlier, but it is still a high accuracy score. It is the accurate/true score of the model.
 
