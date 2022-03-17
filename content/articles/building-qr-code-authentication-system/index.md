@@ -6,19 +6,18 @@ url: /building-qr-code-authentication-system/
 title: Building QR Code Scanner User Authentication System in Computer Vision 
 description: This tutorial aims to guide the reader on how to build a Quick Response Code scanner system in Computer Vision used for user identification and authentication.
 author: atonya-dennis
-date: 2022-03-16T00:00:00-21:20
+date: 2022-03-17T00:00:00-21:20
 topics: [Languages]
 excerpt_separator: <!--more-->
 images:
   - url: /engineering-education/building-qr-code-authentication-system/hero.png
     alt: QR Code Image
 ---
-Computer vision has led to the growth and usage of Quick Response codes in today's real-life applications. The rapid production of smartphones capable of decoding and accessing encoded messages has made QR Codes a useful tool for any sector looking to engage mobile users through printed materials.
+Computer vision has led to the growth and usage of Quick Response (QR) codes in today's real-life applications. The rapid production of smartphones capable of decoding and accessing encoded messages has made QR Codes a useful tool for any sector looking to engage mobile users through printed materials.
 <!--more-->
 To help the reader understand this concept, this article will cover many things concerning QR Codes. Their practical application, how to scan and decode the codes, and how to use QR Codes in the development of a user authentication system are all described.
 
 ### Table of contents
-- [Table of contents](#table-of-contents)
 - [Prerequisites](#prerequisites)
 - [Introduction](#introduction)
 - [Scanning QR Codes](#scanning-qr-codes)
@@ -45,7 +44,8 @@ QR codes consist of various regions that have specific importance:
 - Encoding Region (Cell): Data, parity modules, and decoding information are all stored in this area.
 
 ![QR Code Structure](/engineering-education/building-qr-code-authentication-system/qr-structure.jpg)
-_[Image source: ResearchGate](https://www.researchgate.net/profile/Sunday-Dugga/publication/268575546/figure/fig4/AS:668575274639371@1536412175189/Structure-of-a-QR-Code-3.png)_
+
+*[Image source: ResearchGate](https://www.researchgate.net/profile/Sunday-Dugga/publication/268575546/figure/fig4/AS:668575274639371@1536412175189/Structure-of-a-QR-Code-3.png)*
 
 With the popularity of QR Codes, they have found their applications in various real-world fields, such as:
 
@@ -64,7 +64,7 @@ import numpy as np
 from pyzbar.pyzbar import decode
 import cv2
 ```
-To read the [QR Code image](https://github.com/dentonya/QR_Code-Authentication-System/blob/master/qrcodes/qr_code_txt.png), we will use the cv2 library as shown below:
+To read the [QR Code](https://github.com/dentonya/QR_Code-Authentication-System/blob/master/qrcodes/qr_code_txt.png) image, we will use the cv2 library as shown below:
 
 ```python
 image = cv2.imread("qrcodes/qr_code_txt.png")
@@ -95,7 +95,7 @@ for barcode in decode(image):
 Output:
 
 ```bash
-b'just a lot of plain text'
+'just a lot of plain text'
 just a lot of plain text
 ```
 Great! Now that we have successfully decoded the QR code message from an input image, let us try to decode it in real-time using webcam feed input.
@@ -187,12 +187,9 @@ while True:
 From the output above, our model has worked perfectly, scanning all the QR Codes and granting access to the authorized users. The complete code can be found on [GitHub](https://github.com/dentonya/QR_Code-Authentication-System).
 
 ### Conclusion
-Computer vision has opened up alot of posibilities with the use  QR Codes. From this tutorial it is clear that they play a significant role in real life through data encoding, high data storage capacity, their ability to provide secured access to information. They are  increasingly noticed on products, advertisements, retail industries as well as in authentication and identification systems. 
+Computer vision has opened up a lot of possibilities with the use of QR Codes. From this tutorial, it is clear that they play a significant role in real life through data encoding, high data storage capacity, their ability to provide secured access to information. They are increasingly present in products, advertisements, retail industries as well as in authentication and identification systems. 
 
-To summarize, we have:
-- Explored what QR Codes are and their real life applications.
-- Looked at how to scan and decode the codes using the OpenCV library.
-- Build an Authentication System using the concept of QR Codes.
+To summarize, we have explored QR Codes and their real-life applications, looked at how to scan and decode the codes using the OpenCV library and built an authentication system using the concept of QR Codes.
 
 Happy Coding!
 
