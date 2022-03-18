@@ -10,17 +10,17 @@ In this tutorial, we will focus on multi-class classification. An example would 
 - [Prerequisites](#prerequisites)
 - [MobilenetV1 vs MobileNetV2](#mobilenetv1-vs-mobilenetv2)
 - [Why use MobileNetV2?](#why-use-mobilenetv2)
-- [Beans images dataset](#beans-images-dataset)
-- [Showing the beans images](#showing-the-beans-images)
-- [Image preprocessing](#image-preprocessing)
-- [Libraries used](#libraries-used)
-- [Pre-trained MobilenetV2](#pre-trained-mobilenetv2)
-- [Adding custom layers using TensorFlow](#adding-custom-layers-using-tensorflow)
-- [Deep neural network architecture](#deep-neural-network-architecture)
-- [Compiling the deep neural network](#compiling-the-deep-neural-network)
-- [Fitting the deep neural network](#fitting-the-deep-neural-network)
-- [Using the trained deep neural network to make predictions](#using-the-trained-deep-neural-network-to-make-predictions)
-- [Using Matplotlib](#using-matplotlib)
+- [Implementation](#implementation)
+  - [Beans images dataset](#beans-images-dataset)
+  - [Showing the beans images](#showing-the-beans-images)
+  - [Image preprocessing](#image-preprocessing)
+  - [Libraries used](#libraries-used)
+  - [Pre-trained MobilenetV2](#pre-trained-mobilenetv2)
+  - [Adding custom layers using TensorFlow](#adding-custom-layers-using-tensorflow)
+  - [Deep neural network architecture](#deep-neural-network-architecture)
+  - [Compiling the deep neural network](#compiling-the-deep-neural-network)
+  - [Fitting the deep neural network](#fitting-the-deep-neural-network)
+  - [Using the trained deep neural network to make predictions](#using-the-trained-deep-neural-network-to-make-predictions)
 - [Conclusion](#conclusion)
 - [References](#references)
 
@@ -77,7 +77,8 @@ To understand about CNN's architecture and how it works, read this [article](/en
 - MobileNetV2 significantly reduces the number of parametersm thus making it less complex.
 - MobilenetV2 can also run on web browsers, since the model is lightweight as compared to MobilenetV1. Also, browsers have lower computation power, graphic processing, and storage.
 
-### Beans images dataset
+### Implementation
+#### Beans images dataset
 In this tutorial, we will use the beans images dataset to train the model.
 
 You can find the dataset [here](https://github.com/AI-Lab-Makerere/ibean/).
@@ -126,7 +127,7 @@ The beans dataset contain images of bean leaves taken using mobile phones. It ha
 
 The beans dataset has a total of `1295` images. After splitting the dataset, the test set contains `128` samples, the train set contains `1034` samples, and the validation set contains `133` samples.
 
-### Showing the beans images
+#### Showing the beans images
 We will visualize some data using the following code:
 
 ```python
@@ -140,10 +141,10 @@ The code will display some of the train images as shown below:
 
 From this output, `Angular Leaf Spot` leaves are labeled as `0`, `Bean Rust` as `1`, and `healthy` as `2`.
 
-### Image preprocessing
+#### Image preprocessing
 Image preprocessing will convert the beans image dataset into a format that the neural network can use. It involves various stages.
 
-Let's create a function that that [scales the image](https://en.wikipedia.org/wiki/Image_scaling), [normalizes the image](https://en.wikipedia.org/wiki/Normalization_(image_processing)), and [one hot encode the labels](https://en.wikipedia.org/wiki/One-hot).
+Let's create a function that that [scales the image](https://en.wikipedia.org/wiki/Image_scaling), [normalizes it](https://en.wikipedia.org/wiki/Normalization_(image_processing)), and [one hot encodes the labels](https://en.wikipedia.org/wiki/One-hot).
 
 ```python
 def preprocessing(image, label):
@@ -152,15 +153,21 @@ def preprocessing(image, label):
   return tf.image.resize(image,[224,224]), tf.one_hot(label, 3)
 ```
 
-Image normalization converts the output pixel value between 0 by 1. The `preprocessing` function performs `normalization` by dividing the `image` by 255. The function uses ` tf.image.resize` to resize the image to `224,224`. It is the image size that MobileNetV2 expects.
+In the above code, we do the following:
+- Image normalization converts the output pixel value between `0` and `1`.
+- The `preprocessing()` function performs `normalization` by dividing the `image` pixels by `255`.
+- The function uses `tf.image.resize` to resize the image to `224,224`. It is the image size that MobileNetV2 expects.
+- The function also one hot encodes the classes using `tf.one_hot(label, 3)`.
 
-The function also one hot encodes the classes using `tf.one_hot(label, 3)`. One hot encoding is the process of converting categories/classes in a dataset into integer/numeric values which the model understands. It will convert the classes (`Angular Leaf Spot`, `Bean Rust`, `healthy`), into numerical values (0, 1, 2)
+> One hot encoding is the process of converting categories/classes in a dataset into integer/numeric values which the model understands.
+
+Here, it will convert the classes (`Angular Leaf Spot`, `Bean Rust`, `healthy`), into numerical values (`0`, `1`, `2`) respectively.
 
 To understand how one hot encoding works, read this [article](https://towardsdatascience.com/categorical-encoding-using-label-encoding-and-one-hot-encoder-911ef77fb5bd)
 
-Let's now import libraries that we will use in image classification.
+Let's now import libraries that we will use for image classification.
 
-### Libraries used
+#### Libraries used
 Let's import the following:
 
 ```python
@@ -170,50 +177,52 @@ import matplotlib.pylab as plt
 import numpy as np
 ```
 
-- TensorFlow
-It is an open-source library for developing machine learning and deep learning models. It trains deep neural networks with input, hidden, and output layers. We will use TensorFlow to add custom layers to the pre-trained MobilenetV2. This will fine-tune the plant disease classification model and improve its performance.
+##### tensorFlow
+It is an open-source library used to develop machine learning and deep learning models. It trains deep neural networks with input, hidden, and output layers.
 
-- tensorflow_hub
+We will use TensorFlow to add custom layers to the pre-trained MobilenetV2. This will help to fine-tune the plant disease classification model and improve its performance.
+
+##### tensorflow_hub
 It is an open-source repository that contains pre-trained models for natural language processing tasks and image classification. We will download the pre-trained MobilenetV2 model from here.
 
-- matplotlib.pylab
-We will the library to plot diagrams and visualization of our image dataset. It will show the model prediction results.
+##### matplotlib.pylab
+We will use the library to plot diagrams and visualization of our image dataset. It will show the model prediction results.
 
-- NumPy
+##### numpy
 It will convert the image dataset into an array.
 
-Let's now download the pre-trained MobilenetV2 model which we will fine-tune later.
+Let's now download the pre-trained MobilenetV2 model.
 
-### Pre-trained MobilenetV2
+#### Pre-trained MobilenetV2
 We download the pre-trained MobilenetV2 using this code:
 
 ```python
 mobilenet_v2 = "https://tfhub.dev/google/tf2-preview/mobilenet_v2/feature_vector/4"
 ```
-As mentioned earlier, pre-trained MobilenetV2 is created based on the [convolutional neural network architecture](/engineering-education/basics-of-convolution-neural-networks/). This means it is made up of many convolution layers, pooling layers
-and a fully connected layer. 
+
+As mentioned earlier, the pre-trained MobilenetV2 is created based on the [convolutional neural network architecture](/engineering-education/basics-of-convolution-neural-networks/). This means that MobilenetV2 is made up of many convolution layers, pooling layers, and a fully connected layer.
 
 To use the pre-trained MobilenetV2 layers, use this code:
 
 ```python
 mobile_net_layers = hub.KerasLayer(mobilenet_v2, input_shape=(224,224,3))
 ```
-The code above will extract the pre-trained MobilenetV2 layers. It also specifies the size of the beans image we will feed the pre-trained MobilenetV2.
 
-`mobile_net_layers` will extract the unique characteristics and features from the beans images. We will then add our custom layers to the pre-trained MobilenetV2 using TensorFlow. It will produce a fine-tuned model that will classify the images into three classes.
+The code above will extract the pre-trained MobilenetV2 layers. It also specifies the size of the beans image that we feed to the pre-trained MobilenetV2.
 
-`mobile_net_layers` layers are already trained. We will simply add these layers to our deep neural network without training them. The only layers that we will train are the custom layers we will add on top of the `mobile_net_layers`. 
+`mobile_net_layers` will extract the unique characteristics and features from the beans images. We will then add our custom layers over the pre-trained MobilenetV2 using TensorFlow.
 
-We add the custom layers to fine-tune the deep neural network so that it can understand and perform our task (plant disease classification). The final deep neural network will be made up of the `mobile_net_layers` and the created custom layers. 
+We add the custom layers to fine-tune the existing deep neural network to understand and perform our task (plant disease classification) with a better accuracy. The final deep neural network will be made up of the `mobile_net_layers` and the created custom layers. 
 
 To ensure that TensorFlow does not retrain the `mobile_net_layers`, use this code:
 
 ```python
 mobile_net_layers.trainable = False
 ```
+
 Let's now add our custom layers to the mobile_net_layers.
 
-### Adding custom layers using TensorFlow
+#### Adding custom layers using TensorFlow
 We will use TensorFlow to build the neural network and add our custom layers. It is done using the following code:
 
 ```python
@@ -222,47 +231,39 @@ neural_net = tf.keras.Sequential([
   tf.keras.layers.Dropout(0.3),
   tf.keras.layers.Dense(3,activation='softmax')
 ])
-])
 ```
-We are creating a Keras Sequential model. The sequential model allows building the deep neural network layer by layer. We will be able to stack multiple hidden layers on top of each other and a final output layer.
 
-From the code above, we have added the following layers to the deep neural network.
+We create a Keras `Sequential` model. The sequential model allows us to build the deep neural network layer-by-layer, by stacking multiple hidden layers on top of each other.
 
-- mobile_net_layers
-It contains the pre-trained MobilenetV2 layers.
+From the above code, we have added the following layers to the deep neural network.
 
-- Dropout
-This layer will handle [model overfitting](/engineering-education/dropout-regularization-to-handle-overfitting-in-deep-learning-models/). It ensures the model performs well using both the train and test images. 0.3% of the neurons will be dropped randomly in training to handle overfitting.
+- `mobile_net_layers` contains the pre-trained MobilenetV2 layers.
+- Dropout layer will handle [model overfitting](/engineering-education/dropout-regularization-to-handle-overfitting-in-deep-learning-models/). It ensures the model performs well using both the train and the test images. `0.3%` of the neurons will be dropped randomly in training to handle overfitting.
+- Dense layer is the output layer. It has 3 neurons because the dataset has three predefined classes.
+- We have also set `softmax` as the activation function because the dataset has three pre-defined classes.
 
-- Dense
-It is the output layer. The `Dense` layer has 3 neurons because the dataset has three predefined classes. We have also set `softmax` as the activation function because the dataset has three pre-defined classes.
+> Softmax activation function is used for multi-label classification, while the sigmoid activation function is used for binary classification.
 
 Let's check the deep neural network architecture.
 
-### Deep neural network architecture
-we check the model architecture using this code:
+#### Deep neural network architecture
+We check the model architecture using this code:
 
 ```python
 neural_net.summary()
 ```
-Model architecture:
 
 ![Model architecture](/engineering-education/building-a-multiclass-image-classification-model-using-mobilenet-v2-and-tensorflow/model-architecture.png)
 
-From this output, the model is Keras's sequential model. It also shows all the added layers `mobile_net_layers`, `Dropout`, and `Dense`. The output also shows the following:
+From the above image, the model is Keras's sequential model. It also shows all the added layers `mobile_net_layers`, `Dropout`, and `Dense`. The output also shows the following:
 
-- Total params: 2,261,827
-These are all the parameters in the deep neural network.
-
-- Trainable params: 3,843
-It shows the parameters that the deep neural network will train.
-
-Non-trainable params: 2,257,984
-- These are the parameters that the MobilenetV2 model has already trained. 
+- `Total params: 2,261,827` - These are all the parameters in the deep neural network.
+- `Trainable params: 3,843` - It shows the parameters that the deep neural network will train.
+- `Non-trainable params: 2,257,984` - These are the parameters that the MobilenetV2 model has already trained. 
 
 Let's now compile the deep neural network.
 
-### Compiling the deep neural network
+#### Compiling the deep neural network
 We compile the deep neural network using the following code:
 
 ```python
@@ -271,74 +272,68 @@ neural_net.compile(
   model_loss=tf.keras.losses.CategoricalCrossentropy(from_logits=True),
   model_metrics=['acc'])
 ```
+
 We compile the model using the `compile` function. It has the following parameters:
 
-- model_optimizer
-It ensures the model performs well and reduces errors that `model_loss` generates in training. We set the `model_optimizer` to `Adam`.
-
-- model_loss
-It gets the errors in the model in training. We set the `model_loss` to `CategoricalCrossentropy` because the beans dataset has three pre-defined classes.
-
-- model_metrics
-It checks the deep neural network's performance. It also calculates the accuracy score. `acc` will get the accuracy score using the train and the test set.
+- `model_optimizer` - It ensures that the model performs well and reduces errors that `model_loss` generates in training. We set the `model_optimizer` to `Adam`.
+- `model_loss` - It keeps track of the errors in the model while training. We set the `model_loss` to `CategoricalCrossentropy` because the beans dataset has three pre-defined classes.
+- `model_metrics` - It checks the deep neural network's performance and calculates the accuracy score. `acc` will get the accuracy score using the train and the test set.
 
 Let's fit the deep neural network to the `train` and `validation` images.
 
-### Fitting the deep neural network
-The `train` set will train the deep neural network so that it can learn and understand plant disease classification. `validation` set will adjust and fine-tune the deep neural network parameters. This will produce an improved model with accurate results.
+#### Fitting the deep neural network
+The `train` set will train the deep neural network so that it can learn and understand plant disease classification.
+
+The `validation` set will adjust and fine-tune the deep neural network parameters. This will produce an improved model with accurate results.
 
 ```python
 model_fit = neural_net.fit(train, epochs=6, validation_data=validation)      
 ```
-The deep neural network will use 6 epochs for training. The deep neural network loops through the `train` and `validation` images 6 times. When this code is executed, it will train the deep neural network and show the accuracy scores.
+
+The deep neural network will run for `6` epochs.
 
 ![Deep neural network training](/engineering-education/building-a-multiclass-image-classification-model-using-mobilenet-v2-and-tensorflow/neural-network-training.png)
 
-From the training process above, the first accuracy score is 0.6141 (61.41%). The last accuracy score after the 6 epochs is 0.8878. This shows the accuracy score increases with time. 
+From the training process above, the first accuracy score is `0.6141 (61.41%)`. The last accuracy score after the `6` epochs is `0.8878 (88.78%)`. This shows the accuracy score increases with time. 
 
-The validation accuracy score also increases from 0.7368 (73.68%) to 0.8797 (87.97%). Moreover, the model loss reduces from 0.9329 (93.29%) to 0.6898 (68.98). We can see the performance of the model increased with time.
+The validation accuracy score also increases from `0.7368 (73.68%)` to `0.8797 (87.97%)`. Moreover, the model loss reduces from `0.9329 (93.29%)` to `0.6898 (68.98)`. We can see the performance of the model increased with time.
 
 Let's get the test score using the test images.
 
-### Test score
-We use the following code:
+#### Test score
+To test the model, we use the following code:
 
 ```python
 test_score=model.evaluate(test)
 ```
-Test results:
 
 ![Test results](/engineering-education/building-a-multiclass-image-classification-model-using-mobilenet-v2-and-tensorflow/test-results.png)
 
-The test score is 0.8750 (87.50). It produces a good score using both the `train` and `test` images. Let's use the trained deep neural network to make predictions.
+The test score is `0.8750 (87.50%)`. It produces a good score using both the `train` and `test` images.
 
-### Using the trained deep neural network to make predictions
-It will classify some of the `test` images into three classes. We select 10 `test` images using the following `for` loop:
+Let's use the trained deep neural network to make predictions.
+
+#### Using the trained deep neural network to make predictions
+It will classify some of the `test` images into three classes. We select any 10 `test` images using the following `for` loop:
 
 ```python
 for test_sample in beans_dataset[1].take(10):  
   image, label = test_sample[0], test_sample[1]
 ```
-Let's convert the images into an array.
 
-#### Convert the images into an array
-Use this code:
+Let's convert the images into an array.
 
 ```python
 img = tf.keras.preprocessing.image.img_to_array(image)
 ```
-Let's now use the `predict` method.
 
-#### `predict` method
 It will make the predictions and classify the `test` images into three classes.
 
 ```python
-make_predictions=model.predict(image)
+make_predictions = model.predict(image)
 ```
-Let's use the imported Matplotlib library to visualize the results of the prediction.
 
-### Using Matplotlib
-To print the results, run this code:
+Let's use the imported Matplotlib library to visualize the results of the prediction.
 
 ```python
 print(make_predictions)
@@ -348,26 +343,25 @@ plt.show()
 print(": %s" % info.features["label"].names[label.numpy()])
 print(": %s" % info.features["label"].names[np.argmax(make_predictions)])
 ```
-The code snippet above prints the `predicted label` and the `actual label` side by side. The actual label is the real bean image class as labeled in the dataset. The `predicted label` is the deep neural network prediction results.
 
-Some of the printed output:
+The code snippet above prints the `predicted label` and the `actual label` side by side.
+
+The actual label is the expected bean image class, and `predicted label` is the predicted result.
 
 ![Printed output](/engineering-education/building-a-multiclass-image-classification-model-using-mobilenet-v2-and-tensorflow/printed-output.png)
 
-From this output, the actual label` and the `predicted label` for both predictions are the same. This shows the deep neural network has made accurate predictions.
-
-**Another Output**
+From this output, the `actual label` and the `predicted label` for both predictions are the same. This shows the deep neural network has made accurate predictions.
 
 ![Another Output](/engineering-education/building-a-multiclass-image-classification-model-using-mobilenet-v2-and-tensorflow/another-prediction.png)
 
-In this output, the deep neural network has also made accurate predictions. 
+In this output, the deep neural network has also made accurate predictions.
 
 ### Conclusion
-We have learned how to build a multi-class image classification model. We developed the model using MobileNetV2 and the TensorFlow library. The tutorial also explains the pre-trained MobileNetV2 architecture and how to install it.
+We have learned how to build a multi-class image classification model using MobileNetV2 and the TensorFlow library. The tutorial also explains the pre-trained MobileNetV2 architecture and how to work with it.
 
-We also performed image preprocessing of the beans images dataset. After downloading the pre-trained MobileNetV2, we added custom layers using TensorFlow. Using the clean images dataset, we trained the deep neural network that classifies images into three classes.
+After downloading the pre-trained MobileNetV2, we preprocessed the images and added custom layers using TensorFlow. Using the cleaned images dataset, we trained the deep neural network that classifies images into three classes.
 
-To get the multi-class image classification model we have trained in this tutorial, click [here](https://colab.research.google.com/drive/1OruRUUTp5-MB-rHnxKQRkMvsnwhnMT1B?usp=sharing)
+You can checkout the full source code [here](https://colab.research.google.com/drive/1OruRUUTp5-MB-rHnxKQRkMvsnwhnMT1B?usp=sharing)
 
 ### References
 - [Convolution Neural Networks](/engineering-education/basics-of-convolution-neural-networks/)
