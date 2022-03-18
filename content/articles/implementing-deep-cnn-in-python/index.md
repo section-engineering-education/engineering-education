@@ -22,14 +22,14 @@ Keras, a programming interface, is a Python program capable of running on Tensor
 
 This tutorial will discuss how to use TensorFlow(TF) and Keras(K) in Python to implement deep CNN. We also cover its working. We will look at where you can get the dataset for your project. 
 
-we will also discuss how to implement deep CNN in Python to classify images. This example will classify faces into two, i.e. 'withmask' and 'withoutmask'. The objective here is to detect face masks in offline mode.
+we will also discuss how to implement deep CNN in Python to classify images. This example will classify faces into two, i.e. 'withmask' and 'withoutmask'. The goal here is to detect face masks in offline mode.
 
 ### Prerequisites
 To follow along with this tutorial, you will need:
 - To be familiar with the [Python](https://www.programiz.com/python-programming/first-program) programming language.
 - To have **Python** installed on your computer. You can download it from [here](https://www.python.org/).
 - To install [anaconda](https://www.anaconda.com/products/individual#Downloads).
-- To install Spyder Ide. We can execute `pip install spyder` in the terminal to install it.
+- To install Spyder IDE. We can execute `pip install spyder` in the terminal to install it.
 
 ### Proposed scheme for deep CNN
 
@@ -38,7 +38,7 @@ _Deep CNN scheme_
 
 The above image is the generalized scheme of the deep CNN. Here, the input image is first convolved on various filters, and the output goes to Rectified Linear Unit(ReLu). 
 
-The `ReLu` is where the negative values are omitted. Next, the positive output values are passed through max-pooling to obtain the maximum value. This process is repeated for a similar layer combination. This process is known as feature detection.
+The `ReLu` is where the negative values are omitted. Next, the positive output values are passed through max-pooling to get the maximum value. This process is repeated for a similar layer combination. This process is known as feature detection.
 
 The fully connected layer is the layer used for classification. In the end, we have the softmax layer to get the confidence category-wise as the output.
 
@@ -208,7 +208,7 @@ mymodel = model.fit(train_ds, validation_data = val_ds, epochs = noepochs) #trai
 
 The training parameters that we define are the optimizer that our model should use. The `fit()` function, which is the model property, trains our model. The function takes the training dataset `train_ds`, `validation data ` and the `number of epochs` as the arguments.
 
-After the training, we should obtain some data such as model accuracy, validation accuracy, training loss, and validation loss using the code below:
+After the training, we should get some data such as model accuracy, validation accuracy, training loss, and validation loss using the code below:
 
 ```python
 acc = mymodel.history['accuracy']
@@ -270,9 +270,9 @@ The image is further preprocessed using the Keras property `keras` to make it co
 
 Finally, the softmax layer is applied to this prediction using the `softmax()` function and the confidence score stored in the score variable. We then print the output using the `print()` function. It helps to tell whether the input image belongs to the first or second category.
 
-Let us execute our function to see how it works:
-We execute the `recogout()` function in the syder terminal for testing single images. 
-First, open the spyder terminal and run `recogout()` in the command window. The system dialogue opens up when you run this command and select your input image. After the selection, the class and the confidence score is displayed in the terminal as shown below:
+We execute the `recogout()` function in the syder terminal for testing single images. Let us execute our function to see how it works:
+- First, open the spyder terminal and run `recogout()` in the command window. The system dialogue opens up when you run this command and select your input image. 
+- After the selection, the class and the confidence score is displayed in the terminal as shown below:
 
 ![Image selected](/engineering-education/implementing-deep-cnn-in-python/deep-five.png)
 _Image selected_
