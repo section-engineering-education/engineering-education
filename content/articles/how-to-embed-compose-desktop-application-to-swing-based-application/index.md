@@ -1,5 +1,23 @@
-### How to Embed Desktop Compose into a Swing-based application
+---
+layout: engineering-education
+status: publish
+published: true
+url: /how-to-embed-compose-desktop-application-to-swing-based-application/
+title: How to embed a compose for desktop application in a swing-based application
+description: This tutorial will introduce the reader to Compose for Desktop and how to interop it with Swing
+author: kariuki-boniface
+date: 2022-03-18T00:00:00-12:45
+topics: [Languages]
+excerpt_separator: <!--more-->
+images:
+
+  - url: /engineering-education/how-to-embed-compose-desktop-application-to-swing-based-application/hero.png
+    alt: How to embed a compose for desktop application in a swing-based application
+---
+
 Compose for Desktop is part of the Compose Multiplatform which was recently released. With Compose Multiplatform, it is possible for desktop applications, Android devices, and web applications to share code.
+
+<!-- more -->
 
 In this tutorial, we will introduce developing an app with Compose for Desktop and look at how it can interoperate with Swing. Additionally, we'll learn to integrate it with Swing components. 
 
@@ -10,7 +28,7 @@ To follow along with this tutorial, you will have to:
 - Have installed [JDK 11](https://www.oracle.com/java/technologies/downloads/) or higher
 
 ### Goals
-- Learn to setup a Compose for Desktop project
+- Learn to set up a Compose for Desktop project
 - Learn to use Compose for Desktop's features
 - Provide a quick recap of building Swing and desktop Compose applications
 - Using a ComposePanel to create UIs
@@ -304,3 +322,6 @@ From this tutorial, we can see that it is possible to use Swing components toget
 Note that Compose components look much more appealing. With this, you can make your Swing application have a great interface by use of these components. And remember, when constructing a desktop UI, always consider when it is best to use either `SwingPanel` or `ComposePanel`.
 
 Hope you enjoyed this tutorial. Keep Composing :)
+
+---
+Peer Review Contributions by: [John Amiscaray](/engineering-education/authors/john-amiscaray/)
