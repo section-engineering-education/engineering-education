@@ -1,6 +1,6 @@
-Desktop applications run on desktop machines. They are being used almost everywhere for example a school management system. Before Compose Desktop came into existence, the Java SWING library was used to develop these desktop applications. With the new technology of Compose Desktop coming into existence we can have a choice of which technology to use when we want to develop a desktop app.
+Desktop applications run on desktop machines. They are being used almost everywhere, for example, in a school management system. Before Compose Desktop came into existence, the Java SWING library was used to develop these desktop applications. With the new technology of Compose Desktop coming into existence, we can have a choice of which technology to use when we want to develop a desktop app.
 
-Compose Desktop allows us to develop desktop apps with lovely user interfaces like the ones in Android apps. Compose for Desktop can be used to create desktop applications for Windows, macOS, or Linux platforms. Kotlin multiplatform also allows for building Compose Web Application and Compose Multiplatform Application.
+Compose Desktop allows us to develop desktop apps with lovely user interfaces like the ones in Android apps. Compose for Desktop can create desktop applications for Windows, macOS, or Linux platforms. Kotlin multi-platform also allows for building Compose Web Application and Compose Multi-platform Application.
 
 ### Table of contents
 - [Prerequisites](#prerequisites)
@@ -15,9 +15,9 @@ Compose Desktop allows us to develop desktop apps with lovely user interfaces li
 
 ### Prerequisites
 To read and understand this tutorial, you must have:
-- [IntelliJ](https://www.jetbrains.com/idea/download/#section=windows) IDEA installed
+- [IntelliJ](https://www.jetbrains.com/idea/download/#section=windows) IDEA installed.
 - [JDK version 11](https://www.oracle.com/java/technologies/downloads/) or later installed.
-- Basic knowledge in [Jetpack Compose](https://developer.android.com/jetpack/compose)
+- Basic knowledge in [Jetpack Compose](https://developer.android.com/jetpack/compose).
 
 ### Getting Started
 In this tutorial, we will learn to use Compose for Desktop by building simple user authentication screens. We will therefore learn how to create some basic views like `TextField` and `Button` in a Compose Desktop app.
@@ -26,12 +26,12 @@ IntelliJ IDEA has built-in Kotlin plugins and Compose Desktop libraries which is
 
 ### Step 1 - Creating Project
 To create a Compose Desktop Application, open your IntelliJ IDEA then follow the following steps:
- 1. Right click on `Files`.
+ 1. Right-click on `Files`.
  2. Select `New Project`.
- 3. Choose `Kotlin` programming language on the left pane
+ 3. Choose `Kotlin` programming language on the left pane.
  4. Assign a name to your project. 
  5. Select `Compose Desktop Application` in the `Project Template`.
- 6. Click `Next` button.
+ 6. Click the `Next` button.
 
 ![creating project](/engineering-education/compose-for-desktop/creating-project1.png)
 
@@ -313,7 +313,7 @@ class RegisterScreen {
 
 }
 ```
-Register class implementation is just the same as the `LoginScreen` but with more text fields hence we shall use the same explanation as the one above.
+Register class implementation is just the same as the `LoginScreen` but with more text fields hence we shall use the same explanation as to the one above.
 
 ![register-screen](/engineering-education/compose-for-desktop/register-screen.png)
 
@@ -342,7 +342,7 @@ fun main() = application {
 }
 ```
 
-Since kotlin is considered a multiplatform language you can build a whole desktop application with Kotlin only. In this tutorial, we have learned how to build user authentication screens. 
+Since Kotlin is considered a multi-platform language, you can build a whole desktop application with Kotlin only. In this tutorial, we have learned how to build user authentication screens. 
 
 This project can be found in my [GitHub](https://github.com/Collince-Okeyo/UserAuthentication) repositories. You can fork and clone it in your machine and learn how to create the screens with Compose for Desktop implementation. 
 
