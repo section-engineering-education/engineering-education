@@ -3,7 +3,7 @@ layout: engineering-education
 status: publish
 published: true
 url: /how-to-embed-compose-desktop-application-to-swing-based-application/
-title: How to embed a compose for desktop application in a swing-based application
+title: How to embed a Compose for Desktop application in a Swing-based application
 description: This tutorial will introduce the reader to Compose for Desktop and how to interop it with Swing
 author: kariuki-boniface
 date: 2022-03-18T00:00:00-12:45
@@ -12,7 +12,7 @@ excerpt_separator: <!--more-->
 images:
 
   - url: /engineering-education/how-to-embed-compose-desktop-application-to-swing-based-application/hero.png
-    alt: How to embed a compose for desktop application in a swing-based application
+    alt: How to embed a Compose for Desktop application in a Swing-based application
 ---
 
 Compose for Desktop is part of the Compose Multiplatform which was recently released. With Compose Multiplatform, it is possible for desktop applications, Android devices, and web applications to share code.
