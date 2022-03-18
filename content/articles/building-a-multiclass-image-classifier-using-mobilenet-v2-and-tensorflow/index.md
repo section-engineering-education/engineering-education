@@ -16,7 +16,7 @@ images:
 ---
 In this tutorial, we will build an image-based plant disease classification model using [MobileNet-V2](https://keras.io/api/applications/mobilenet/) and [TensorFlow](https://www.tensorflow.org/). We will pre-process the image, segment the objects, extract the features, and finally classify them.
 <!--more-->
-Image classification categorizes the input images into pre-defined labels or categories. The classification models learn from the images dataset that we train which eventually help us make predictions.
+Image classification categorizes the input images into pre-defined labels or categories. The classification models learn from the images dataset that we train which eventually helps us make predictions.
 
 We have binary and multi-label classifications. Binary classification deals with only two classes/labels, and multi-class classification deals with more than two labels.
 
@@ -59,7 +59,7 @@ MobileNet architecture is special because it uses very less computation power to
 
 [MobilenetV1](https://ai.googleblog.com/2017/06/mobilenets-open-source-models-for.html) is the first version of the Mobilenet models. It has more complex convolution layers and parameters when compared to MobilenetV2.
 
-[MobilenetV2](https://ai.googleblog.com/2018/04/mobilenetv2-next-generation-of-on.html) is the second version of the Mobilenet models. It significantly has lower number of parameters in the deep neural network. This results in more lightweight deep neural networks. Being lightweight, it is best suited for embedded systems and mobile devices.  
+[MobilenetV2](https://ai.googleblog.com/2018/04/mobilenetv2-next-generation-of-on.html) is the second version of the Mobilenet models. It significantly has a lower number of parameters in the deep neural network. This results in more lightweight deep neural networks. Being lightweight, it is best suited for embedded systems and mobile devices.  
 
 MobilenetV2 is a refined version of MobilenetV1. This makes it even more efficient and powerful. The MobileNetV2 models are faster due to the reduced model size and complexity.
 
@@ -77,7 +77,7 @@ The image below shows the architecture and the number of layers of a pre-trained
 *MobileNetV2 convolutional neural network architecture*
 *[Image source: Medium](https://miro.medium.com/max/1384/1*7R068tzqqK-1edu4hbAVZQ.png)*
 
-To understand about CNN's architecture and how it works, read this [article](/engineering-education/basics-of-convolution-neural-networks/).
+To understand CNN's architecture and how it works, read this [article](/engineering-education/basics-of-convolution-neural-networks/).
 
 ![Number of layers](/engineering-education/building-a-multiclass-image-classifier-model-using-mobilenet-v2-and-tensorflow/number-of-layers.png)
 
@@ -90,8 +90,8 @@ To understand about CNN's architecture and how it works, read this [article](/en
 - It simplifies the process of image processing. Image processing helps transform the image dataset into a format that the model can understand to give more accurate results
 - MobileNetV2 is lightweight making it have high execution speed.
 - MobileNetV2 is smaller in size as compared to MobileNetV1, making it more suitable for embedded systems and mobile devices
-- MobileNetV2 significantly reduces the number of parametersm thus making it less complex.
-- MobilenetV2 can also run on web browsers, since the model is lightweight as compared to MobilenetV1. Also, browsers have lower computation power, graphic processing, and storage.
+- MobileNetV2 significantly reduces the number of parameters thus making it less complex.
+- MobilenetV2 can also run on web browsers since the model is lightweight as compared to MobilenetV1. Also, browsers have lower computation power, graphic processing, and storage.
 
 ### Implementation
 #### Beans images dataset
@@ -139,7 +139,7 @@ beans_info
 
 ![Beans dataset](/engineering-education/building-a-multiclass-image-classifier-model-using-mobilenet-v2-and-tensorflow/beans-info.png)
 
-The beans dataset contain images of bean leaves taken using mobile phones. It has 3 classes - 2 are beans disease classes and one healthy bean leaves. The beans disease classes are `Angular Leaf Spot` and `Bean Rust`.
+The beans dataset contain images of bean leaves taken using mobile phones. It has 3 classes - 2 are beans disease classes and one healthy bean leaf. The beans disease classes are `Angular Leaf Spot` and `Bean Rust`.
 
 The beans dataset has a total of `1295` images. After splitting the dataset, the test set contains `128` samples, the train set contains `1034` samples, and the validation set contains `133` samples.
 
@@ -160,7 +160,7 @@ From this output, `Angular Leaf Spot` leaves are labeled as `0`, `Bean Rust` as 
 #### Image preprocessing
 Image preprocessing will convert the beans image dataset into a format that the neural network can use. It involves various stages.
 
-Let's create a function that that [scales the image](https://en.wikipedia.org/wiki/Image_scaling), [normalizes it](https://en.wikipedia.org/wiki/Normalization_(image_processing)), and [one hot encodes the labels](https://en.wikipedia.org/wiki/One-hot).
+Let's create a function that [scales the image](https://en.wikipedia.org/wiki/Image_scaling), [normalizes it](https://en.wikipedia.org/wiki/Normalization_(image_processing)), and [one hot encodes the labels](https://en.wikipedia.org/wiki/One-hot).
 
 ```python
 def preprocessing(image, label):
@@ -228,7 +228,7 @@ The code above will extract the pre-trained MobilenetV2 layers. It also specifie
 
 `mobile_net_layers` will extract the unique characteristics and features from the beans images. We will then add our custom layers over the pre-trained MobilenetV2 using TensorFlow.
 
-We add the custom layers to fine-tune the existing deep neural network to understand and perform our task (plant disease classification) with a better accuracy. The final deep neural network will be made up of the `mobile_net_layers` and the created custom layers. 
+We add the custom layers to fine-tune the existing deep neural network to understand and perform our task (plant disease classification) with better accuracy. The final deep neural network will be made up of the `mobile_net_layers` and the created custom layers. 
 
 To ensure that TensorFlow does not retrain the `mobile_net_layers`, use this code:
 
@@ -254,11 +254,11 @@ We create a Keras `Sequential` model. The sequential model allows us to build th
 From the above code, we have added the following layers to the deep neural network.
 
 - `mobile_net_layers` contains the pre-trained MobilenetV2 layers.
-- Dropout layer will handle [model overfitting](/engineering-education/dropout-regularization-to-handle-overfitting-in-deep-learning-models/). It ensures the model performs well using both the train and the test images. `0.3%` of the neurons will be dropped randomly in training to handle overfitting.
-- Dense layer is the output layer. It has 3 neurons because the dataset has three predefined classes.
+- The dropout layer will handle [model overfitting](/engineering-education/dropout-regularization-to-handle-overfitting-in-deep-learning-models/). It ensures the model performs well using both the train and the test images. `0.3%` of the neurons will be dropped randomly in training to handle overfitting.
+- The dense layer is the output layer. It has 3 neurons because the dataset has three predefined classes.
 - We have also set `softmax` as the activation function because the dataset has three pre-defined classes.
 
-> Softmax activation function is used for multi-label classification, while the sigmoid activation function is used for binary classification.
+> The softmax activation function is used for multi-label classification, while the sigmoid activation function is used for binary classification.
 
 Let's check the deep neural network architecture.
 
@@ -377,7 +377,7 @@ We have learned how to build a multi-class image classification model using Mobi
 
 After downloading the pre-trained MobileNetV2, we preprocessed the images and added custom layers using TensorFlow. Using the cleaned images dataset, we trained the deep neural network that classifies images into three classes.
 
-You can checkout the full source code [here](https://colab.research.google.com/drive/1OruRUUTp5-MB-rHnxKQRkMvsnwhnMT1B?usp=sharing)
+You can check out the full source code [here](https://colab.research.google.com/drive/1OruRUUTp5-MB-rHnxKQRkMvsnwhnMT1B?usp=sharing)
 
 ### References
 - [Convolution Neural Networks](/engineering-education/basics-of-convolution-neural-networks/)
