@@ -1,6 +1,6 @@
 ---
-title: haron mutati
+title: haron Mutati Wambua
 type: authors
 github: https://github.com/tetie
 ---
-Haron mutati is an undergraduate student undertaking her Bachelor of Science in Computer Science. He is interested in Networking and Java programming. He likes coding as well.
+Haron Mutati Wambua is an undergraduate student undertaking his Bachelor of Science in Computer Science. He is interested in Neural networks, IOT, Artificial Intelligence and Java programming. He likes swimming and watching football.
