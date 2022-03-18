@@ -6,7 +6,7 @@ url: /univariate-time-series-using-facebook-prophet/
 title: Univariate Time Series using Facebook Prophet
 description: This tutorial will be discussing the univariate time series model using Facebook Prophet. We will use the model to predict airline passengers.
 author: francis-ndiritu
-date: 2022-03-14T00:00:00-21:00
+date: 2022-03-18T00:00:00-16:00
 topics: [Machine Learning]
 excerpt_separator: <!--more-->
 images:
@@ -40,15 +40,13 @@ Time-series data can be univariate, bivariate, or multivariate. In this tutorial
 - [References](#references)
 
 ### Prerequisites
-To follow along easily, a reader should:
-
+To follow along a reader should:
 - Understand [time series](/engineering-education/introduction-to-time-series/) concepts.
 - Understand [time series decomposition in Python](/engineering-education/time-series-decomposition-in-python/)
 - Know how to work with a [time series dataset](https://towardsdatascience.com/analyzing-time-series-data-in-pandas-be3887fdd621)
 - Know how to use [Matplotlib](https://matplotlib.org/) library.
 
 ### Univariate vs Bivariate vs Multivariate datasets
-
 #### Univariate data
 It consists of only one variable that changes over time. Univariate data is simple because we are dealing with a single variable.
 
@@ -84,7 +82,7 @@ It implements a procedure for forecasting time series data based on an additive 
 It decomposes time series data into the following components:
 
 #### Trend
-It is visible a pattern in data. It models non-periodic changes in the time series data. A trend shows the long-term movement in the dataset. A trend can be upward (uptrend), downward(downtrend), or constant(horizontal). Trends usually happen for some time and then disappear.
+It is visible a pattern in data. It models non-periodic changes in the time series data. A trend shows the long-term movement in the dataset. A trend can be upward (uptrend), downward (downtrend), or constant (horizontal). Trends usually happen for some time and then disappear.
 
 The image below shows the three types of trends.
 
@@ -123,6 +121,7 @@ To install Facebook Prophet, use this command:
 ```bash
 !pip install fbprophet
 ```
+
 ### Airline passengers dataset
 We will use the airline passengers dataset to train the model. The dataset shows the airline passengers recorded monthly from `1949-01-01` to `1960-12-01`. It has only a one-time dependant variable. To download the dataset, use this [link](https://drive.google.com/file/d/10OJHq3jT6YcRCj3gYfEOCUj2fz6Fjq8Q/view?usp=sharing)
 
@@ -131,6 +130,7 @@ We will read the dataset using Pandas.
 ```python
 import pandas as pd
 ```
+
 We read the dataset using this code:
 
 ```python
@@ -142,6 +142,7 @@ To see the first five rows of our dataset, use this code:
 ```python
 df.head()
 ```
+
 It produces the following output:
 
 ![First five rows](/engineering-education/univariate-time-series-using-facebook-prophet/first-five-rows.jpg)
@@ -153,6 +154,7 @@ To see the last five rows of our dataset, use this code:
 ```python
 df.tail()
 ```
+
 The output:
 
 ![Last five rows](/engineering-education/univariate-time-series-using-facebook-prophet/last-five-rows.jpg)
@@ -162,6 +164,7 @@ From the image above, the last column has null values. We will drop this column.
 ```python
 df.drop(144,axis=0,inplace=True)
 ```
+
 ### Plotting the line chart
 We will plot the line chart using Matplotlib. 
 
@@ -186,6 +189,7 @@ Facebook Prophets expects an input Data Frame with two columns named `ds` and `y
 ```python
 df.columns = ['ds','y']
 ```
+
 To see the dataset, use this code:
 
 ```python
@@ -201,6 +205,7 @@ We will use the Plotly Express library to plot a more interactive line chart.
 ```python
 import plotly.express as px
 ```
+
 To plot the line chart, use this code:
 
 ```python
@@ -216,28 +221,32 @@ fig.update_xaxes(
 )
 fig.show()
 ```
+
 From the code above, `ds` is the x-axis and `y` the y-axis. `Airline Passengers` is the title of the line chart. ` rangeslider_visible` will enable us to zoom the line chart. `rangeselector` will select some of the data points on the line chart.
 
 The line chart output:
 
 ![Interactive line chart](/engineering-education/univariate-time-series-using-facebook-prophet/interactive-line-chart.jpg)
 
-### Converting the `ds` column
+### Converting the 'ds' column
 We need to convert the `ds` column to the DateTime format. It will enable us to perform time-series operations and analysis on this column. We will use the Python Datetime module.
 
 ```python
 from datetime import datetime
 ```
+
 Use this code to convert the `ds` column:
 
 ```python
 df['ds'] = pd.to_datetime(df['ds'])
 ```
+
 Use this code to view the dataset:
 
 ```python
 df.head()
 ```
+
 The output:
 
 ![First five rows](/engineering-education/univariate-time-series-using-facebook-prophet/first-rows.jpg)
@@ -247,6 +256,7 @@ To see the last five rows of our dataset, use this code:
 ```python
 df.tail()
 ```
+
 The output:
 
 ![Last five rows](/engineering-education/univariate-time-series-using-facebook-prophet/last-rows.jpg)
@@ -257,12 +267,14 @@ We import Facebook Prophet using this code:
 ```python
 from fbprophet import Prophet
 ```
+
 #### Initializing the model
 Use the code below:
 
 ```python
 model=Prophet()
 ```
+
 The `Prophet` class has initialized the model.
 
 #### Calling the fit method
@@ -271,6 +283,7 @@ We call the `fit` method and pass the Data Frame as an input. The `fit` enables 
 ```python
 model.fit(df)
 ```
+
 ### Making future predictions
 The process above trains the model. We will use the model to forecast the airline passengers for the next 1000 days (1961-01-01 to 1963-08-28). We will provide the model with a new future Data Frame. It contains the number of days the model forecasts/predicts.
 
@@ -279,11 +292,13 @@ We use this code:
 ```python
 future_dates=model.make_future_dataframe(periods=1000, freq='M')
 ```
+
 Use this code to check the last five rows:
 
 ```python
 future_dates.tail()
 ```
+
 The output is shown below:
 
 ![Prediction values](/engineering-education/univariate-time-series-using-facebook-prophet/prediction-values.jpg)
@@ -294,11 +309,13 @@ We call the `predict` method and pass the `future_dates` as an input.
 ```python
 prediction=model.predict(future_dates)
 ```
+
 Use this code to see the last five rows of the prediction results:
 
 ```python
 prediction[['ds', 'yhat', 'yhat_lower', 'yhat_upper']].tail()
 ```
+
 The prediction Data Frame has the following columns:
 - `ds`: It contains the datestamp of the forecasted values. It holds the timestamp of 1000 days.
 - `yhat`: It contains the prediction/forecast values of the time series model.
@@ -314,16 +331,18 @@ Use this code to see the first five rows of the prediction results:
 ```python
 prediction.head()
 ```
+
 The output:
 
 ![Predicted values](/engineering-education/univariate-time-series-using-facebook-prophet/predicted-values-head.jpg)
 
-### `y` vs `yhat` line chart
+### 'y' vs 'yhat' line chart
 Use this code to plot the line chart:
 
 ```python
 pd.concat([df.set_index('ds')['y'],prediction.set_index('ds')['yhat']],axis=1).plot()
 ```
+
 The code produces the following line chart:
 
 ![y vs yhat line chart](/engineering-education/univariate-time-series-using-facebook-prophet/y-vs-yhat.jpg)
@@ -341,14 +360,15 @@ Use this code:
 ```python
 model.plot(prediction)
 ```
+
 The output:
 
 ![Plot diagram](/engineering-education/univariate-time-series-using-facebook-prophet/plot-diagram.jpg)
 
 From the output above:
 - The shaded light blue region shows the lower and upper bound values. This region contains the `yhat_upper` and `yhat_lower` values. 
-- The black dots are the actual time series values(y). 
-- The blue line shows the predicted values(yhat). 
+- The black dots are the actual time series values (y). 
+- The blue line shows the predicted values (yhat). 
 - The chart also shows the forecast values for the next 1000 days. 
 
 We can also use Facebook Prophet to plot the components of our forecasts.
@@ -363,14 +383,14 @@ The output:
 
 ![Plot components](/engineering-education/univariate-time-series-using-facebook-prophet/plot-components.jpg)
 
-The output above shows the trend and yearly seasonality components. The above plots provide insights. The first plot shows a linear increase in passengers from 1949 to 1964. The second plot shows that the most traffic occurs during the holiday months of July and August.
+The output above shows the trend and yearly seasonality components. The above plots provide insights. The first plot shows a linear increase in passengers from 1949 to 1964. The second plot shows that most traffic occurs during the holiday months of July and August.
 
 ### Conclusion
 In this tutorial, we have learned how to build a univariate time series model using Facebook Prophet. We discussed the different types of time-series datasets. We were able to differentiate univariate, bivariate, and multivariate datasets. We explored Facebook Prophet and how it decomposes time-series datasets.
 
 We trained a time series model which forecasts airline passengers. Finally, we used Facebook Prophet to plot the components of our forecasts.
 
-To access the Google Colab notebook for this tutorial, click [here.](https://colab.research.google.com/drive/1kq1DGr6_RbtJ9j0Xjk5rDYxs0rletGLJ?usp=sharing)
+To access the Google Colab notebook for this tutorial, click [here](https://colab.research.google.com/drive/1kq1DGr6_RbtJ9j0Xjk5rDYxs0rletGLJ?usp=sharing).
 
 ### References
 - [Time Series Decomposition in Python](/engineering-education/time-series-decomposition-in-python/)
