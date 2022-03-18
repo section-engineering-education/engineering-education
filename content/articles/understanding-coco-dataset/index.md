@@ -6,7 +6,7 @@ url: /understanding-coco-dataset/
 title: Understanding COCO Dataset
 description: This article will introduce the reader to the COCO dataset. We will also implement a simple dataset validator using Python.
 author: srishilesh-p-s
-date: 2022-03-14T00:00:00-04:00
+date: 2022-03-18T00:00:00-02:10
 topics: [Machine Learning]
 excerpt_separator: <!--more-->
 images:
@@ -34,7 +34,7 @@ In this article, we will build a dataset format validator using Python to verify
 ### Prerequisites
 To follow along, the reader must have the following:
 - A decent understanding of machine learning datasets and how they are used to detect objects.
-- A basic understanding of [Python](https://www.python.org) and [PASCAL VOC](/engineering-education/understanding-pascal-voc-dataset/)
+- A basic understanding of [Python](https://www.python.org) and [PASCAL VOC](/engineering-education/understanding-pascal-voc-dataset/).
 
 ### Introduction
 As we learned in our [previous tutorial](/engineering-education/understanding-pascal-voc-dataset/), for any [supervised](https://en.wikipedia.org/wiki/Supervised_learning) or [semi-supervised](https://www.geeksforgeeks.org/ml-semi-supervised-learning/) machine learning model to detect objects, it must be trained with a [labeled](https://www.cloudfactory.com/data-annotation-tool-guide) (or annotated) [dataset](https://en.wikipedia.org/wiki/Data_set) that holds all information about the objects present in an image.
@@ -144,7 +144,7 @@ If the objective is to solve the segmentation problem, then we specify the [Run-
 
 By default, the `segmentation` value is an empty list. We normally update the key with the value `[xmin, ymin, xmin, ymin + ymax, xmin + xmax, ymin + ymax, xmin + xmax, ymax]`. 
 
-These values represents all the coordinates as shown below:
+These values represent all the coordinates as shown below:
 
 - `(xmin, ymin)` - Top-left coordinate
 - `(xmin, ymin + ymax)` - Top-right coordinate
