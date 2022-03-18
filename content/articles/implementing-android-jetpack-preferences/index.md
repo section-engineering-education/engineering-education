@@ -14,7 +14,7 @@ images:
   - url: /engineering-education/implementing-android-jetpack-preferences/hero.png
     alt: Implementing Android Jetpack Preferences Hero Image
 ---
-These are just a few options our app needs. A customizable app setting is also a superb strategy to enhance the Android app user experience. The Android Preference Library manages user preferences. Using the Android Preference Library, let us create a simple setup screen!
+We now have a preferences window in almost every software we use, enabling users to tailor their settings to their specifications. For example, apps like YouTube enable users to choose between dark and bright mode, pick the download quality, control notifications, and other parameters with a single click. This is an excellent way to enhance the user experience, and it's getting more popular. Therefore, we need to find the most straightforward and effective way to include preferences in your application. Using the Android Preference Library, let us create a simple setup screen!
 
 ### Table of contents
 - [Prerequisites](#prerequisites)
@@ -38,12 +38,9 @@ Open Android Studio and select New Project -> Empty activity as your project tem
    
 #### Step two: Adding a menu to the MainActivity
 The menu enables us to add a menu item(s) into it that will help us navigate to the `SettingActivity`. We will achieve that by adding a click listener to each item(s):
-- To add a menu resource, click the project folder on the left side of the `IDE` or simply `alt+1` -> app -> res folder.
-- Right-click the res to add a new resource file -> new -> Android resource file.
-- Enter the file name as menu and the resource type select Menu.
-- Click `OK` to finish.
-- Inside the menu package. Right-click -> new -> menu resource file.
-- Enter the file name as `setting_menu` and finish.
+
+To add a menu resource, click the project folder on the left side of the `IDE` or simply `alt+1` -> app -> res folder. Right-click the `res` folder to add a new resource file -> new -> Android resource file. After navigating to `Android resource file,` enter the file name as menu and the resource type select Menu and click `OK` to finish. Inside the menu package, navigate by right-clicking -> new -> menu resource file and then set the file name as `setting_menu` and finish.
+
 Add the following code snippet to the setting_menu.XML to add an item to the menu.
 
 ```kotlin
@@ -68,11 +65,7 @@ To ensure the menu bar is visible to the user's application, add the following c
 It will just inflate the setting_menu that we created earlier.
 
 #### Step three: Adding the second activity
-Add another activity to our main project by:
-- Double-click app file -> java file ->  application package name(com._.androidprefernces).
-- Right-click the file -> new -> `activity` -> `Settings activity`.
-- In the new android activity dialog, leave everything as default and finish.
-- Wait for the project to build.
+Add another activity to our main project by double-click app file -> java file ->  application package name(com._.androidprefernces). Right-click the file -> new -> `activity` -> `Settings activity`. After creating a new activity, new android activity dialog, leave everything as default and finish. The final step is to wait for the project to build.
 
 > NOTE: The new settings activity comes with files in it. Such files include:
    >1. Default settings XML layout in the layout folder 
