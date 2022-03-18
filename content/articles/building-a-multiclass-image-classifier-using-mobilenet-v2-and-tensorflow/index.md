@@ -1,3 +1,19 @@
+---
+layout: engineering-education
+status: publish
+published: true
+url: /building-a-multiclass-image-classifier-using-mobilenet-v2-and-tensorflow/
+title: Building A Multiclass Image Classifier Using MobilenetV2 and TensorFlow
+description: This tutorial will discuss about MobilenetV2, its architecture and working. We will also learn to build a multi-class classifier using MobilenetV2 and TensorFlow.
+author: kelivin-nganga
+date: 2022-03-18T00:00:00-00:00
+topics: [Machine Learning]
+excerpt_separator: <!--more-->
+images:
+
+  - url: /engineering-education/building-a-multiclass-image-classifier-using-mobilenet-v2-and-tensorflow/hero.jpg
+    alt: Building A Multiclass Image Classifier Using MobilenetV2 and TensorFlow Hero Image
+---
 In this tutorial, we will build an image-based plant disease classification model using [MobileNet-V2](https://keras.io/api/applications/mobilenet/) and [TensorFlow](https://www.tensorflow.org/). We will pre-process the image, segment the objects, extract the features, and finally classify them.
 <!--more-->
 Image classification categorizes the input images into pre-defined labels or categories. The classification models learn from the images dataset that we train which eventually help us make predictions.
@@ -57,13 +73,13 @@ In this tutorial, we will focus on the second version of Mobilenet as discussed 
 
 The image below shows the architecture and the number of layers of a pre-trained MobileNetV2 model:
 
-![Convolutional neural network architecture](/engineering-education/building-a-multiclass-image-classification-model-using-mobilenet-v2-and-tensorflow/cnn-architecture.png)
+![Convolutional neural network architecture](/engineering-education/building-a-multiclass-image-classifier-model-using-mobilenet-v2-and-tensorflow/cnn-architecture.png)
 *MobileNetV2 convolutional neural network architecture*
 *[Image source: Medium](https://miro.medium.com/max/1384/1*7R068tzqqK-1edu4hbAVZQ.png)*
 
 To understand about CNN's architecture and how it works, read this [article](/engineering-education/basics-of-convolution-neural-networks/).
 
-![Number of layers](/engineering-education/building-a-multiclass-image-classification-model-using-mobilenet-v2-and-tensorflow/number-of-layers.png)
+![Number of layers](/engineering-education/building-a-multiclass-image-classifier-model-using-mobilenet-v2-and-tensorflow/number-of-layers.png)
 
 *Number of layers*
 *[Image source: Medium](https://miro.medium.com/max/912/1*TJAjuueT9_pk2Nlv1zmb4A.png)*
@@ -87,7 +103,7 @@ The dataset contains images of infected and healthy bean leaves. It was collecte
 
 The image below shows a sample of the beans images dataset.
 
-![Dataset snip](/engineering-education/building-a-multiclass-image-classification-model-using-mobilenet-v2-and-tensorflow/dataset-snip.png)
+![Dataset snip](/engineering-education/building-a-multiclass-image-classifier-model-using-mobilenet-v2-and-tensorflow/dataset-snip.png)
 
 The multi-class image classification model that we are going to build, will classify each bean leaf into two disease classes/labels or a third class that indicates a healthy leaf.
 
@@ -121,7 +137,7 @@ To check the beans dataset, use this code:
 beans_info
 ```
 
-![Beans dataset](/engineering-education/building-a-multiclass-image-classification-model-using-mobilenet-v2-and-tensorflow/beans-info.png)
+![Beans dataset](/engineering-education/building-a-multiclass-image-classifier-model-using-mobilenet-v2-and-tensorflow/beans-info.png)
 
 The beans dataset contain images of bean leaves taken using mobile phones. It has 3 classes - 2 are beans disease classes and one healthy bean leaves. The beans disease classes are `Angular Leaf Spot` and `Bean Rust`.
 
@@ -137,7 +153,7 @@ tfds.show_examples(info_train,train)
 
 The code will display some of the train images as shown below:
 
-![Train images](/engineering-education/building-a-multiclass-image-classification-model-using-mobilenet-v2-and-tensorflow/train-images.png)
+![Train images](/engineering-education/building-a-multiclass-image-classifier-model-using-mobilenet-v2-and-tensorflow/train-images.png)
 
 From this output, `Angular Leaf Spot` leaves are labeled as `0`, `Bean Rust` as `1`, and `healthy` as `2`.
 
@@ -253,7 +269,7 @@ We check the model architecture using this code:
 neural_net.summary()
 ```
 
-![Model architecture](/engineering-education/building-a-multiclass-image-classification-model-using-mobilenet-v2-and-tensorflow/model-architecture.png)
+![Model architecture](/engineering-education/building-a-multiclass-image-classifier-model-using-mobilenet-v2-and-tensorflow/model-architecture.png)
 
 From the above image, the model is Keras's sequential model. It also shows all the added layers `mobile_net_layers`, `Dropout`, and `Dense`. The output also shows the following:
 
@@ -292,7 +308,7 @@ model_fit = neural_net.fit(train, epochs=6, validation_data=validation)
 
 The deep neural network will run for `6` epochs.
 
-![Deep neural network training](/engineering-education/building-a-multiclass-image-classification-model-using-mobilenet-v2-and-tensorflow/neural-network-training.png)
+![Deep neural network training](/engineering-education/building-a-multiclass-image-classifier-model-using-mobilenet-v2-and-tensorflow/neural-network-training.png)
 
 From the training process above, the first accuracy score is `0.6141 (61.41%)`. The last accuracy score after the `6` epochs is `0.8878 (88.78%)`. This shows the accuracy score increases with time. 
 
@@ -307,7 +323,7 @@ To test the model, we use the following code:
 test_score=model.evaluate(test)
 ```
 
-![Test results](/engineering-education/building-a-multiclass-image-classification-model-using-mobilenet-v2-and-tensorflow/test-results.png)
+![Test results](/engineering-education/building-a-multiclass-image-classifier-model-using-mobilenet-v2-and-tensorflow/test-results.png)
 
 The test score is `0.8750 (87.50%)`. It produces a good score using both the `train` and `test` images.
 
@@ -348,11 +364,11 @@ The code snippet above prints the `predicted label` and the `actual label` side 
 
 The actual label is the expected bean image class, and `predicted label` is the predicted result.
 
-![Printed output](/engineering-education/building-a-multiclass-image-classification-model-using-mobilenet-v2-and-tensorflow/printed-output.png)
+![Printed output](/engineering-education/building-a-multiclass-image-classifier-model-using-mobilenet-v2-and-tensorflow/printed-output.png)
 
 From this output, the `actual label` and the `predicted label` for both predictions are the same. This shows the deep neural network has made accurate predictions.
 
-![Another Output](/engineering-education/building-a-multiclass-image-classification-model-using-mobilenet-v2-and-tensorflow/another-prediction.png)
+![Another Output](/engineering-education/building-a-multiclass-image-classifier-model-using-mobilenet-v2-and-tensorflow/another-prediction.png)
 
 In this output, the deep neural network has also made accurate predictions.
 
@@ -370,3 +386,6 @@ You can checkout the full source code [here](https://colab.research.google.com/d
 - [Deep neural networks](/engineering-education/introduction-to-neural-networks/)
 - [TensorFlow](https://www.tensorflow.org/)
 - [Image Classifier with Keras](/engineering-education/image-classifier-keras/)
+
+---
+Peer Review Contributions by: [Srishilesh P S](/engineering-education/authors/srishilesh-p-s/)
