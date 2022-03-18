@@ -6,4 +6,4 @@ github: https://github.com/ahmadmardeni1
 images:
   - url: /engineering-education/authors/ahmad-mardeni/avatar.jpg 
 ---
-Ahmad is a passionate software developer, specializes in Machine Learning and Data Science. He won multiple Hackathons and programming competitions globally. He believes the Web3 underpins the internet of value, so he is working with Web3 protocols to build the bases for a decentralized future.
+Ahmad is a passionate Software Engineer. He has experience in Machine Learning and Data Science. He won multiple Hackathons and programming competitions. He believes that Web3 underpins the internet of value and gives the user the control back.

@@ -5,7 +5,7 @@ published: true
 url: /how-to-design-logistic-map-using-matlab/
 title: How to Design Logistic Maps using Matlab
 description: This tutorial introduces reader to basic concepts of logistics maps design patterns using Matlab. A logistic map is a polynomial mapping of degree two. This equation is used to show the chaotic behaviour that can arise from a simple non-linear dynamical equation.
-author: owino-wendy
+author: simon-mwaniki
 date: 2021-10-19T00:00:00-11:10
 topics: [Languages]
 excerpt_separator: <!--more-->
