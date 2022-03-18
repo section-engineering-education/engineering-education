@@ -6,7 +6,7 @@ url: /making-jetpack-form-builder/
 title: The Making of Jetpack Compose Form Builder Library
 description: In this article, we will discuss how we made the Form builder library, how we solved the issues with the previous idea, as well as how to use the library.
 author: linus-muema
-date: 2022-03-14T00:00:00-08:00
+date: 2022-03-18T00:00:00-02:33
 topics: [Languages]
 excerpt_separator: <!--more-->
 images:
@@ -26,8 +26,8 @@ In this tutorial, we will go through how we made the [Form builder library]([rep
 
 ### Prerequisites
 To follow along with this article, you will need:
-- A basic understanding of Android development with Jetpack compose
-- Some advanced knowledge in Kotlin, especially generics and reflection
+- A basic understanding of Android development with Jetpack compose.
+- Some advanced knowledge in Kotlin, especially generics and reflection.
 - Android Studio IDE.
 
 ### Getting started
@@ -41,7 +41,7 @@ This is because, if you take a closer look at what our library should do, i.e, t
 
 Just like the way Room doesn't provide you with the actual database but rather an easier way to interact with the SQLite database.
 
-So we only need to provide ways for the user to access the data and change it. And if possible, transform it however they like (spoiler alert! new feature... 😆)
+So we only need to provide ways for the user to access the data and change it. And if possible, transform it however they like (spoiler alert! new feature... 😆).
 
 With that in mind, our work became easier.
 
@@ -78,7 +78,7 @@ class TextFieldState(
 
 As for the validators, we just moved the implementations outside the lambda functions.
 
-```kotlin
+```kt
     fun validate(): Boolean {
         val validations = validators.map {
             when (it) {
