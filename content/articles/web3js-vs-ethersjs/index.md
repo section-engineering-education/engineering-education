@@ -66,7 +66,7 @@ While the two libraries can do the same operation, they both have different ways
 
 Because the EthersJS library was built to be simple, lightweight and efficient, the amount of lines we have to write is also very small. Ethers achieves this by allowing the programmer to only have access to what is necessary to the Ethereum Blockchain ( smart contracts and Transactions ). This is a good thing because not only will there be less code for bugs to hide in, it will also take less time for JavaScript's engine to load up your code and execute. Later in the article we will be comparing the two libraries' methods of interacting with and deploying smart contracts. 
 
-The size of programs created using Web3 is also not that large butis still significantly larger than their versions in Ethers. This means it will take Web3 applications more time to load up than ones with Ethers. 
+The size of programs created using Web3 is also not that large but is still significantly larger than their versions in Ethers. This means it will take Web3 applications more time to load up than ones with Ethers. 
 
 
 ### Size of Library
