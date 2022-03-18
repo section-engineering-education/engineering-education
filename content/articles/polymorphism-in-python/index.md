@@ -1,12 +1,28 @@
-### Introduction
-In object-oriented programming functions with similar names can perform different functionalities altogether. This feature is called Polymorphism. It permits the production of structures that utilizes many types of objects. A single object referring to a particular class can be used the same way as if it was another object referring to another class.  
+---
+layout: engineering-education
+status: publish
+published: true
+url: /polymorphism-in-python/
+title: Polymorphism in python
+description: This tutorial will introduce the reader to the concept of polymorphism in python.
+author: Justus Kamau
+date: 2022-03-18T00:00:00-09:00
+topics: [Languages]
+excerpt_separator: <!--more-->
+images:
+
+  - url: /engineering-education/polymorphism-in-python/hero.jpg
+    alt: Introduction to Polymorphism in python Hero Image
+---
+In object-oriented programming, functions with similar names can perform different functionalities altogether. This feature is called Polymorphism. It permits the production of structures that use many types of objects. A single object referring to a particular class can be used the same way as if it was another object referring to another class.
+
 In this tutorial, we are going to cover more and equip the reader with knowledge about polymorphism and its implementation in python. 
 
 **By reading this article, learners are expected to:**
 1. Understand Inbuilt and User-defined polymorphic function examples.
 2. Learn more about Polymorphism with the inheritance of traits.
 3. Have a clear understanding of Polymorphism with the methods of a class.
-4. Understand Polymorphism in the context of a Function and its objects
+4. Understand Polymorphism in the context of a Function and its objects.
 
 ### Table of content
 - [Introduction](#introduction)
@@ -218,3 +234,6 @@ In this tutorial, we have learned various concepts used in the Python language. 
 For further reading, the reader can go through [Polymorphism in Python](https://www.programiz.com/python-programming/polymorphism) to enhance themselves with more skills and information.
 
 Happy coding!
+
+---
+Peer Review Contributions by: [Mohamed alghadban](/engineering-education/authors/mohamed-alghadban/)
