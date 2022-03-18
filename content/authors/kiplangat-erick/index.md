@@ -1,8 +1,9 @@
 ---
 title: Kiplangat Erick
 type: authors
-linkedin: https://www.linkedin.com/in/kiplangat-erick
+linkedin: 'https://www.linkedin.com/in/kiplangat-erick'
 images:
-  - url: /engineering-education/authors/kiplangat-erick/avatar.jpg 
+  - url: /engineering-education/authors/kiplangat-erick/avatar.jpg
+authors: kiplangat-erick
 ---
 Kiplangat is an aspiring Software Engineer currently studying Computer Science at Kabarak University. He loves learning new things and studying new technologies.

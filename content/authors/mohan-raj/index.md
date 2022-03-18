@@ -1,10 +1,11 @@
 ---
 title: Mohan Raj
 type: authors
-twitter: https://twitter.com/zolomohan
-github: https://github.com/zolomohan
-linkedin: https://www.linkedin.com/in/zolomohan/
+twitter: 'https://twitter.com/zolomohan'
+github: 'https://github.com/zolomohan'
+linkedin: 'https://www.linkedin.com/in/zolomohan/'
 images:
-  - url: /engineering-education/authors/mohan-raj/avatar.jpg 
+  - url: /engineering-education/authors/mohan-raj/avatar.jpg
+authors: mohan-raj
 ---
 Mohan Raj is a Full Stack (MERN)/ React-Native developer and a last year CS Undergrad in Chennai, India. He wants to help other developers avoid some of the same challenges he faced while developing various features.

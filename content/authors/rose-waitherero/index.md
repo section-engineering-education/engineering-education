@@ -1,7 +1,8 @@
 ---
-title:  Rose Waitherero
+title: Rose Waitherero
 type: authors
 images:
-  - url: /engineering-education/authors/rose-waitherero/avatar.jpeg 
+  - url: /engineering-education/authors/rose-waitherero/avatar.jpeg
+authors: rose-waitherero
 ---
 Rose is a self-taught full-stack developer. She also loves working with CMSs. She like helping developers solve minor issues that they encounter while developing applications.
