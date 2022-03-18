@@ -78,7 +78,7 @@ In your app-level `build.gradle` file, add the following dependencies:
 
 Chucker has two libraries i.e `com.github.chuckerteam.chucker:library` and `com.github.chuckerteam.chucker:library-no-op`. The latter is used to isolate Chucker from the release build. 
 
-This means if you fail to add the second library, Chucker will still work but it will be present in your release build. This is not encouraged due to some reasons that we will discuss below.
+This means if you fail to add the second library, Chucker will still work but it will be present in your release build. This is not encouraged due to some reasons that we will discuss in this article.
 
 Also, ensure Java 8 support is enabled by ensuring that the code below is present in your app-level `build.gradle` file inside the `android` block.
 
@@ -122,7 +122,7 @@ The following are the features of Chucker that makes it the best choice for debu
 
 ### Configuring Chucker
 With the instance of `ChuckerCollector`, you can customize Chucker according to your needs.
-Use the following code snippet to create an instance of `ChuckerCollector`.
+Use the following code snippet to create an instance of `ChuckerCollector`:
 
 ```kotlin
 // Chucker Collector
@@ -151,7 +151,7 @@ val myChuckerInterceptor = ChuckerInterceptor.Builder(this) // `this` is the con
     .build()
 ```
 
-We can then plug the interceptor into the OkHttp Client builder as shown in the code snippet below:
+We can then plug the interceptor into the OkHttp client builder as shown in the code snippet below:
 
 ```kotlin
 // OkHttp Client
