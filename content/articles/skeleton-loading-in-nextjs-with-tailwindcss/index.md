@@ -6,15 +6,15 @@ url: /skeleton-loading-in-nextjs-with-tailwindcss/
 title: Implementing Skeleton Loading In Next.js With Tailwind CSS
 description: This article will walk the reader through Skeleton loaders, where they are used and key points to take note of when designing and developing one.
 author: gisiora-elvis
-date: 2022-03-10T00:00:00-15:10
+date: 2022-03-18T00:00:00-13:50
 topics: []
 excerpt_separator: <!--more-->
 images:
 
   - url: /engineering-education/skeleton-loading-in-nextjs-with-tailwindcss/hero.png
-    alt: Implementing Skeleton Loading In Next.js With Tailwind CSS Hero Image
+    alt: Skeleton Loading Next.js With Tailwind CSS Hero Image
 ---
-Skeleton loaders are aimed at giving users the best experience during wait time before the actual web content is fetched and displayed. In this tutorial, we will discuss about skeleton loaders, where they are used and key points to take note of when designing and developing one.
+Skeleton loaders are aimed at giving users the best experience during wait time before the actual web content is fetched and displayed. In this tutorial, we will discuss skeleton loaders, where they are used and key points to take note of when designing and developing one.
 <!--more-->
 All this will culminate with a practical implementation of a skeleton loader in Next.js with Tailwind CSS.
 
@@ -65,20 +65,11 @@ Skeleton loaders are most appropriate for the following use cases:
 - In place of a loading spinner for a better user experience.
 
 ### When not to use skeleton loader
-The following scenarios are not ideal for using a skeleton loader:
+The following scenarios are not ideal to use a skeleton loader:
 - On very small content pages.
 - On very fast processes.
 - When the content is already loaded.
 - With very long processes e.g importing or uploading data.
-
-### Points to take note of when designing and developing a skeleton loader
-When designing and developing a skeleton loader, you will need to take note of the following:
-- A skeleton loader aims to give a perception of progress and reduced wait time.
-- The skeleton loader should be a static component that does not change or load any dynamic content.
-- The skeleton loader should be used in the place where a loading spinner can be equally used.
-- The design and layout of a skeleton loader should mirror the actual content that is being loaded.
-- The skeleton should only be displayed before the actual content is loaded.
-- The actual content should immediately replace the skeleton loader once the data is fully loaded.
 
 ### Implementation
 As a practical example, you will be implementing a skeleton loader in Next.js with Tailwind CSS on an app that fetches posts from an API and displays them as articles.
@@ -397,7 +388,7 @@ export const ArticlesList = ({ articles }: IArticles) => {
 
 Create a local state using the `useState` hook and set the loading state to `true` initially. This will be used to display the loading effect while the articles are being fetched from the API.
 
-The `useEffect` hook will be used to set the loading state to `false` after the articles are fetched from the API. To simulate a longer loading time e.g in cases of fetching a huge number of heavy content, the `setTimeout` function is used to delay setting the loading state to `false` for 3 seconds. This makes the skeleton loading effect appear for a long enough time to be observed in this case.
+The `useEffect` hook will be used to set the loading state to `false` after the articles are fetched from the API. To simulate a longer loading time e.g in cases of fetching a huge number of heavy content, the `setTimeout` function is used to delay setting the loading state to `false` for 3 seconds. This makes the skeleton loading effect appear for a longer time.
 
 Create a variable named `skeletonCards` and initialize it to an array of length 3 and filled with 0's. This will be used to display 3 skeleton cards on the home page, an estimate of the actual number of possible articles that might occupy the viewport. This is just an estimate and can be varied by changing the number of items in the array to suit your needs.
 
@@ -408,7 +399,7 @@ If the loading state is `false` then make use of the `articles` passed as a prop
 ![skeleton loading](/engineering-education/skeleton-loading-in-nextjs-with-tailwindcss/skeleton-loading.gif)
 
 #### Fetching article data and displaying it on the article page
-Each article on the home page will be linked to the article page. The article page will display the article title, body and a button to go back to the home page.
+Each article on the home page will be linked to the article page. The article page will display the article title, body, and a button to go back to the home page.
 
 Within the pages directory, create a new directory called `article`. Inside the article directory, create a new file called `[id].js`.
 
@@ -471,9 +462,9 @@ export default article;
 
 This is a [dynamic route](https://nextjs.org/docs/api-routes/dynamic-api-routes) that will be used to display each of the articles on an individual page. The `getStaticPaths` function will be used to fetch all the articles from the API and return all the possible values of the `id` parameter.
 
-The `getStaticProps` function will be used to fetch the article with the id that matches the `id` parameter and return it as a prop.
+The `getStaticProps` function will be used to fetch the article with the id that matches the `id` parameter and return it as a prop. The article page takes in the article as a prop of type `IArticle` (an article).
 
-The article page takes in the article as a prop of type `IArticle`(an article) and makes use of the `Meta` component to display the article title, description (the article body truncated to 20 characters). The article title and body will be displayed on the page. The article page will also display a button to go back to the home page.
+It also makes use of the `Meta` component to display the article title and description (the article body truncated to 20 characters). The article title and body will be displayed on the page. The article page will also display a button to go back to the home page.
 
 ![Article page](/engineering-education/skeleton-loading-in-nextjs-with-tailwindcss/article-page.png)
 
@@ -520,9 +511,9 @@ const article = ({ article }: { article: IArticle }) => {
 export default article;
 ```
 
-Similarly, make use of the `useState` hook to set the loading state to `true` initially. This will be used to display the loading effect before the article is fetched from the API and displayed.
+Now make use of the `useState` hook to set the loading state to `true` initially. This will be used to display the loading effect before the article is fetched from the API and displayed.
 
-The `useEffect` hook will be used to set the loading state to `false` after the article is fetched from the API. To simulate a longer loading time e.g in cases of fetching huge or heavy content articles, the `setTimeout` function is used to delay setting the loading state to `false` for 3 seconds. This again makes the skeleton loading effect appear for a long enough time to be observed.
+The `useEffect` hook will be used to set the loading state to `false` after the article is fetched from the API. To simulate a longer loading time e.g in cases of fetching huge or heavy content articles, the `setTimeout` function is used to delay setting the loading state to `false` for 3 seconds. This again makes the skeleton loading effect appear for a longer time.
 
 ![Article page skeleton loading effect](/engineering-education/skeleton-loading-in-nextjs-with-tailwindcss/article-page-with-skeleton-loading-effect.gif)
 
