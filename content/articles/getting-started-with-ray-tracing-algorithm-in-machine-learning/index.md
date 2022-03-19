@@ -25,7 +25,7 @@ Ray tracing has been of great impact in the world today, modifying and innovatin
 ### Table of contents
 - [What is Ray Tracing Algorithm?](#what-is-ray-tracing-algorithm)
 - [History of Ray Tracing](#history-of-ray-tracing)
-- [How Ray Tracing works](how-ray-tracing-works)
+- [How Ray Tracing works](#how-ray-tracing-works)
 - [Types of Ray Tracing Algorithm](#types-of-ray-tracing-algorithm)
   - [Hybrid Ray Tracing Algorithm ](#hybrid-ray-tracing-algorithm)
   - [Forward Ray Tracing Algorithm ](#forward-ray-tracing-algorithm)
