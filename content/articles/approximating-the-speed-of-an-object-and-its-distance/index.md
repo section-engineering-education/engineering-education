@@ -14,14 +14,13 @@ images:
  - url: /engineering-education/implementing-gan-from-scratch/hero.jpg
    alt: Implementing GANs example image
 ---
+Computers are essential in the modern world. They make our lives easier by performing tasks such as speed and distance approximation.
+<!--more-->
+In this tutorial, we will learn how to use OpenCV to detect the frontal face of an object, find the object's distance with relation to the camera, then calculate the speed. 
 
-### Introduction
-Computers are essential in today's technological age. They make our lives easier by making other incorporable tasks easier to perform, such as speed and distance approximation.
-In this tutorial, we will learn how to use OpenCV to detect the frontal face as our object, find the object's distance with relation to the camera, then calculate the speed. In our case, we will use our laptop webcam as our tool.
+Note that we will use the laptop webcam as our tool.
 
-### Table of Contents
-- [Introduction](#introduction)
-- [Table of Contents](#table-of-contents)
+### Table of contents
 - [Prerequisites](#prerequisites)
 - [Referral face object image](#referral-face-object-image)
 - [Distance and speed approximation using the frontal face object](#distance-and-speed-approximation-using-the-frontal-face-object)
@@ -29,46 +28,52 @@ In this tutorial, we will learn how to use OpenCV to detect the frontal face as 
 - [Installations of external libraries.](#installations-of-external-libraries)
 - [Detection of the frontal face](#detection-of-the-frontal-face)
 - [Determining the distance](#determining-the-distance)
-  - [Case 1: Finding the focal length](#case-1-finding-the-focal-length)
-  - [Case 2: Finding the distance](#case-2-finding-the-distance)
-  - [Case 3: Reading reference images from the directory](#case-3-reading-reference-images-from-the-directory)
 - [Determining the speed](#determining-the-speed)
-  - [Case 1: Finding the speed](#case-1-finding-the-speed)
-  - [Case 2: Finding average speed](#case-2-finding-average-speed)
-  - [Case 3: Calling of the pre-defined functions](#case-3-calling-of-the-pre-defined-functions)
 - [Conclusion](#conclusion)
 
 
 ### Prerequisites
-1. You need to be conversant with python as a programming language. To get started with python basics, refer to this tutorial link below  [a beginners guide to python](/engineering-education/a-beginners-guide-to-python/)
-2. You need to have `Pycharm` pre-installed since it will be our IDE working environment.
+- You need to be conversant with Python programming language. To get started, refer to this [tutorial](/engineering-education/a-beginners-guide-to-python/)
+
+- You need to have `Pycharm` installed.
 
 ### Referral face object image
+The image below shows how a frame of the frontal face is detected. We will use it as our reference image later in the tutorial.
 
-![Ref_image](/engineering-education/approximating-the-speed-of-an-object-and-its-distance/Ref_image.png)
-This image shows how a frame of the frontal face is detected, and we will use it as our reference image later in the program.
-We will also use the `haarcascade_frontalface_default.xml` module to detect our face object. To get this module from Github, use the link below. [haarcascade_frontalface_default.xml (github.com)](https://gist.github.com/Learko/8f51e58ac0813cb695f3733926c77f52).
+![Ref_image](/engineering-education/approximating-the-speed-of-an-object-and-its-distance/ref_image.png)
+
+
+We will also use the `haarcascade_frontalface_default.xml` module to detect our face object. 
+
+To get this module from Github, use this [link](https://gist.github.com/Learko/8f51e58ac0813cb695f3733926c77f52).
 
 ### Distance and speed approximation using the frontal face object
-### Getting started 
-Fire up your *Pycharm IDE* to create a new project.
-*As shown in the image below.*
-![startup](/engineering-education/approximating-the-speed-of-an-object-and-its-distance/startup.png)
-We will name our project `DistanceVelocity` on the open menu as shown above. We then select our base interpreter to be python3.10 latest as to the composing of this tutorial. As well, you can use any version of the python base interpreter.
-After making suitable selections, we click on the create button to launch our project.
+In your *Pycharm IDE*, create a new project as shown in the image below:
 
-### Installations of external libraries.
-The external library we will use in this section is OpenCV.
-In your working environment, there are different bottoms in this window. On the button identified as terminal, click to open the terminal interface. We will download and install our OpenCV here. Copy the below command to the terminal.
+![Startup](/engineering-education/approximating-the-speed-of-an-object-and-its-distance/startup.png)
+
+We will name our project `DistanceVelocity`, as shown above. We then select our base interpreter to be `Python 3.10`. 
+
+After making suitable selections, we will click on the *create* button to launch our project.
+
+### Installing external libraries
+We will use OpenCV in this section. In your working environment, there are different bottoms in this window. On the button identified as terminal, click to open the terminal interface. 
+
+We will download and install our OpenCV here. Copy the below command to the terminal.
+
 ````bash
-  pip install OpenCV-Python
+pip install OpenCV-Python
 ````
+
 **OpenCV** is a powerful tool in aiding computer vision functions and related problems. It is also used in the processing of images and real-time videos.
+
 Having **OpenCV** installed, we are now fully equipped to proceed to the next part.
 
-
 ### Detection of the frontal face
-To detect the frontal face, we will have to save the `haarcascade_frontalface_default.xml`  file in the exact location as the main program. Next, we will work with our laptop's web camera, which by default is  `0` during the calling function. Likewise, `1` can be used when dealing with an external camera, but we will use the default one in our case. Finally, we will create a function for returning the detected face object coordinates of the rectangular frame.
+To detect the frontal face, we will have to save the `haarcascade_frontalface_default.xml`  file in the exact location as the main program. 
+
+Next, we will work with our laptop's web camera, which by default is  `0` during the calling function. Likewise, `1` can be used when dealing with an external camera, but we will use the default one in our case. Finally, we will create a function for returning the detected face object coordinates of the rectangular frame.
+
 Then converting the RGB image into gray-scale requires an image parameter for scaling up or down the image for better output, but this is also very dependent on the processing power of one's machine. So we opt to use the standard values. Let's dive into the fun coding part.  
 ```python
 import cv2  
