@@ -22,7 +22,7 @@ To read and understand this tutorial, you must have:
 ### Getting Started
 In this tutorial, we will learn to use Compose for Desktop by building simple user authentication screens. We will therefore learn how to create some basic views like `TextField` and `Button` in a Compose Desktop app.
 
-IntelliJ IDEA has built-in Kotlin plugins and Compose Desktop libraries which is why it is recommended for creating Compose Desktop applications. 
+IntelliJ IDEA has built-in Kotlin plugins and Compose Desktop libraries hence there is no need to add them, that is why it is recommended for creating Compose Desktop applications. 
 
 ### Step 1 - Creating Project
 To create a Compose Desktop Application, open your IntelliJ IDEA then follow the following steps:
@@ -55,6 +55,7 @@ The `src` directory is where we will write our code. This directory has a sub-di
 @Composable
 @Preview
 fun App() {
+    // A variable for holding the field state
     var text by remember { mutableStateOf("Hello, World!") }
 
     MaterialTheme {
@@ -349,4 +350,4 @@ This project can be found in my [GitHub](https://github.com/Collince-Okeyo/UserA
 To learn more about building desktop apps with Compose for Desktop visit [here](https://github.com/JetBrains/compose-jb/tree/master/tutorials/Getting_Started).
 
 ### Conclusion
-To learn more about building desktop apps with this technology, you will have to do a lot of practice. If you love creating web applications, with Compose for Web, you can create awesome websites as well. 
+To learn more about building desktop apps with this technology, you will have to do a lot of practice. If you love creating web applications, with Compose for Web, you can create awesome websites as well. To supplement the content from this article read on Getting Started with Compose Multiplatform [here](https://github.com/JetBrains/compose-jb/tree/master/tutorials/Getting_Started). 
