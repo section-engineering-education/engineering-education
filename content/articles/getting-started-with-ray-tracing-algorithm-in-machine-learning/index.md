@@ -23,7 +23,7 @@ Ray tracing has been of great impact in the world today, modifying and innovatin
 - The reader should be familiar with data structures and neural networks.
 
 ### Table of contents
-- [What is Ray Tracing Algorithm](#what-is-ray-tracing-algorithm)
+- [What is Ray Tracing Algorithm?](#what-is-ray-tracing-algorithm)
 - [History of Ray Tracing](#history-of-ray-tracing)
 - [How Ray Tracing works](how-ray-tracing-works)
 - [Types of Ray Tracing Algorithm](#types-of-ray-tracing-algorithm)
@@ -34,7 +34,7 @@ Ray tracing has been of great impact in the world today, modifying and innovatin
  - [Conclusion](#conclusion)
  - [Resources](#resources)
 
-### What is Ray Tracing Algorithm 
+### What is Ray Tracing Algorithm? 
 Ray Tracing Algorithm is an effective way of drawing synthesizing images. It is a method of rendering which has the potential to produce a much greater degree of authenticity that is probably higher than that of other scanners. However, this involves a huge calculation cost. 
 
 It gives results almost similar to scanline rendering and ray casting but also allows for a more complex optical effect like exact refraction and reflection simulations. It's also useful in cases where high-quality output is required.
