@@ -127,10 +127,10 @@ In the `src` folder we will create the `stopwatch.ts` file. Once that is done, l
 In the `stopwatch.ts` file, implement the code snippet below:
 
 ```typescript
-export function startWatch(timerStop: boolean, watchcycle: any) {
+export function startWatch(timerStop: boolean, watchCycle: any) {
   if (timerStop) {
     timerStop = false;
-    watchcycle();
+    watchCycle();
   }
 }
 
@@ -140,7 +140,7 @@ export function stopWatch(timerStop: boolean) {
   }
 }
 
-export function watchcycle(
+export function watchCycle(
   timerStop: boolean,
   milliseconds: number,
   seconds: number,
@@ -175,7 +175,7 @@ export function watchcycle(
         ? "0" + milliseconds
         : milliseconds;
 
-    setTimeout("watchcycle()", 1000);
+    setTimeout("watchCycle()", 1000);
     return (timer.innerHTML = hr + ":" + mins + ":" + secs + ":" + milsec);
   }
 }
@@ -199,15 +199,15 @@ As you are already familiar with Typescript, we are expressly assigning a value 
 
 From the snippet above, we created and exported 4 functions as explained below:
 
-- `Startwatch`: This function is called when the `start` button is clicked. On execution, the function sets the `timerstop` to false and also starts the `watchcycle` function.
-- `Stopwatch`: This function runs when the user clicks the `stop` button. When executed, the `stopwatch` function sets the `timerstop` to true which halts the `watchcycle` function.
-- `resetwatch`: The `resetwatch` function simply returns the stopwatch to the initial value (0) and it is executed when the user clicks the `reset` button.
-- `watchcycle`: This is the brain behind our stopwatch, it increments the values of the milliseconds, seconds, minutes, and hours accordingly and then returns the values to the `timer` HTMLElement element tag in the `index.html` when used.
+- `startWatch`: This function is called when the `start` button is clicked. On execution, the function sets the `timerStop` to false and also starts the `watchCycle` function.
+- `stopWatch`: This function runs when the user clicks the `stop` button. When executed, the `stopwatch` function sets the `timerstop` to true which halts the `watchCycle` function.
+- `resetwatch`: The `resetWatch` function simply returns the stopwatch to the initial value (0) and it is executed when the user clicks the `reset` button.
+- `watchCycle`: This is the brain behind our stopwatch, it increments the values of the milliseconds, seconds, minutes, and hours accordingly and then returns the values to the `timer` HTMLElement element tag in the `index.html` when used.
 
 That is all we need to set up the stopwatch logic. Finally, create an `index.ts` in `src` and export all the functions as shown below:
 
 ```typescript
-export { startWatch, watchcycle, stopWatch, resetWatch } from "./stopwatch";
+export { startWatch, watchCycle, stopWatch, resetWatch } from "./stopwatch";
 ```
 
 ### Step 6 – Compiling the Typescript into JavaScript and publishing to NPM
@@ -245,7 +245,7 @@ Once successful, you should see a notice on the command terminal showing the pac
 
 To confirm that the package has been published successfully, go to your NPM account profile and check the packages. You should see a new package with the name you picked under the packages category.
 
-### Step 7 – Utilizing and testing the package locally
+### Step 7 – Consuming the package locally
 The final step in library development is to install, consume and test the stopwatch package locally. To do that, we create a new `stopwatch-test` folder by running the command below:
 
 ```bash
@@ -265,7 +265,7 @@ Replace the `package-name` with the name you picked for your published library.
 Once completed, create an `index.ts` file and import and utilize the package as shown below:
 
 ```typescript
-import { startWatch, watchcycle, stopWatch, resetWatch } from "my-stopwatch";
+import { startWatch, watchCycle, stopWatch, resetWatch } from "my-stopwatch";
 
 const timer = document.getElementById("my_stopwatch");
 
@@ -274,15 +274,15 @@ let minutes = 0;
 let seconds = 0;
 let milliseconds = 0;
 let timerStop = true;
-watchcycle(timerStop, hours, minutes, seconds, milliseconds, timer);
-startWatch(timerStop, watchcycle);
+watchCycle(timerStop, hours, minutes, seconds, milliseconds, timer);
+startWatch(timerStop, watchCycle);
 stopWatch(timerStop);
 resetWatch(hours, minutes, seconds, milliseconds, timer);
 ```
 
 Typically, you would want to have a `README.md` file in the package showing users how to consume the package. Writing and adding the file is outside the scope of this tutorial.
 
-From the snippet above, we imported the `startWatch`, `stopWatch`, `watchcycle`, and `resetWatch` functions from the stopwatch package we installed. Each function accepts some parameters which include:
+From the snippet above, we imported the `startWatch`, `stopWatch`, `watchCycle`, and `resetWatch` functions from the stopwatch package we installed. Each function accepts some parameters which include:
 
 - Hours
 - Minutes
@@ -335,6 +335,6 @@ I hope this tutorial was of great use to you.
 Always publish responsibly!
 
 ### References
-- https://www.npmjs.com/
-- https://dev.to/gspteck/create-a-stopwatch-in-javascript-2mak
+- [NPM official website](https://www.npmjs.com/)
+- [How to create a stopwatch in JavaScript](https://dev.to/gspteck/create-a-stopwatch-in-javascript-2mak)
 
