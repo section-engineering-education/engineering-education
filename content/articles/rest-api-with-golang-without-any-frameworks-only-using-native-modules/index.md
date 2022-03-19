@@ -16,7 +16,7 @@ To start a Go project, you need to first initialize Go within your project. In t
 go mod init native-go-api
 ```
 
-This will instantiate a Go project by creating a `go.mod` file. Any Go package that you install and its dependencies are saved here. The `go.mod` file has a `native-go-api` module name. This helps you create local modules and import them so that other local modules of your project can use them.
+This will instantiate a Go by creating a `go.mod` file. Any Go package that you install and its dependencies are saved here. The `go.mod` file has a `native-go-api` module name. This helps you create local modules and import them so that other local modules of your project can use them.
 
 ### Create a CRUD Golang REST API using native modules
 
