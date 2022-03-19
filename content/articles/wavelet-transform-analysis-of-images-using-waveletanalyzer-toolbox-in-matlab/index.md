@@ -14,7 +14,7 @@ images:
   - url: /engineering-education/wavelet-transform-analysis-of-images-using-waveletanalyzer-toolbox-in-matlab/hero.jpg
     alt: Wavelet transform analysis of images using WaveletAnalyzer toolbox in Matlab Hero Image
 ---
-The wavelet transform is the decomposition of signals using wavelet techniques. This function creates functions that are then shifted and a copy of the mother wavelet.
+The wavelet transform is the decomposition of signals using wavelet techniques, that is, functions. Each of these functions are shifted and a scaled copy of a function, the mother wavelet
 
 Wavelet transform is the definition of the decomposition method class. Wavelet Analyzer app is an interactive tool for using wavelets to visualize and analyze signals and images. This App can be used for the wavelet transform analysis, denoising images and signals, e.t.c.
 
