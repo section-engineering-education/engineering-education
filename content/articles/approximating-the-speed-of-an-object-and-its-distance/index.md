@@ -5,7 +5,7 @@ published: true
 url: /approximating-the-speed-of-an-object-and-its-distance/
 title: Approximating the speed of an object and its distance using OpenCV in Python
 description: In this article, we consider the problem of approximating the speed of an object and its distance using OpenCV in Python. 
-author: bonface-ndolo
+author: jacob-oduor
 date: 2022-03-17T00:00:00-18:00
 topics: [Languages]
 excerpt_separator: <!--more-->
@@ -51,15 +51,15 @@ We will also use the `haarcascade_frontalface_default.xml` module to detect our 
 
 ### Distance and speed approximation using the frontal face object
 ### Getting started 
-Fire up your *Pycharm IDE* to create a new project.
+Start your *Pycharm IDE* to create a new project.
 *As shown in the image below.*
 ![startup](/engineering-education/approximating-the-speed-of-an-object-and-its-distance/startup.png)
-We will name our project `DistanceVelocity` on the open menu as shown above. We then select our base interpreter to be python3.10 latest as to the composing of this tutorial. As well, you can use any version of the python base interpreter.
+We will name our project `DistanceVelocity` on the open menu as shown above. We then select our base interpreter to be python3.10 latest as to the composing of this tutorial. You can as well use any version of the python base interpreter.
 After making suitable selections, we click on the create button to launch our project.
 
 ### Installations of external libraries.
 The external library we will use in this section is OpenCV.
-In your working environment, there are different bottoms in this window. On the button identified as terminal, click to open the terminal interface. We will download and install our OpenCV here. Copy the below command to the terminal.
+In your working environment, there are different buttons in this window. Click on terminal button to open the terminal interface. We will download and install our OpenCV from here. Copy the below command and paste to the terminal for a successful installation.
 ````bash
   pip install OpenCV-Python
 ````
@@ -68,8 +68,9 @@ Having **OpenCV** installed, we are now fully equipped to proceed to the next pa
 
 
 ### Detection of the frontal face
-To detect the frontal face, we will have to save the `haarcascade_frontalface_default.xml`  file in the exact location as the main program. Next, we will work with our laptop's web camera, which by default is  `0` during the calling function. Likewise, `1` can be used when dealing with an external camera, but we will use the default one in our case. Finally, we will create a function for returning the detected face object coordinates of the rectangular frame.
-Then converting the RGB image into gray-scale requires an image parameter for scaling up or down the image for better output, but this is also very dependent on the processing power of one's machine. So we opt to use the standard values. Let's dive into the fun coding part.  
+To detect the frontal face, we will have to use the `haarcascade_frontalface_default.xml` file. Save it in the exact location of the main program.
+Next, we will work with our webcam, which by default is  `0` during the calling function. `1` can also be used when dealing with an external camera, but we will use the default value for our case. Finally, we will create a function for returning the detected face object coordinates of the rectangular frame.
+We then convert the RGB image into gray-scale. It requires an image parameter for scaling up or down the image for better output. For this to be achieved, it requires high CPU processing power. So we prefer to use the standard values. Let's dive into the coding section for better understanding.  
 ```python
 import cv2  
   
@@ -119,9 +120,9 @@ To get the distance, we will have to create more functions.
 The first function to be created is the focal length finder.
  
 #### Case 1: Finding the focal length
-The defined function will calculate the focal length thus by getting the distance between lens and CMOS sensor.
-1st parameter to be used is  `Determined_Distance(int)`: It is distance measured from object to the Camera while Capturing Reference image  
-2nd parameter to be used is `Actual_Width(int)`: This is the real width of object, in real world, for instance my face width is = 14.3 centimeters)  
+The defined function will calculate the focal length thus by getting the distance between the lens and the CMOS sensor.
+1st parameter to be used is  `Determined_Distance(int)`: It is the distance measured from object to the Camera while Capturing Reference image  
+2nd parameter to be used is `Actual_Width(int)`: This is the real width of the object, in real-world, for instance, my face width is = 14.3 centimeters)  
 3rd parameter to be used is `Width_In_Image(int)`: It is object width in the frame /image in our case in the reference image(found by Face detector)  
 Returning as decimal values.  `focal_length(Float)`:
 Below is the function code.
@@ -177,7 +178,7 @@ Your output should be as shown in the image below.
 ![distance](/engineering-education/approximating-the-speed-of-an-object-and-its-distance/distance.png)
 
 ### Determining the speed
-To find the speed, we will first have to import the time module since speed is distance in relation to time taken. Then we will initialise time related variables. Below is the code snippet for illustrations.
+To find the speed, we will first have to import the time module since speed is the distance in relation to the time taken. Then we will initialize time-related variables. Below is the code snippet for illustrations.
 ```python
 import time  
 # declaration of variables  
