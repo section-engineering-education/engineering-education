@@ -6,7 +6,7 @@ url: /an-introduction-to-defi/
 title: An Introduction to DeFi
 description: This article will introduce the reader on all aspects of DeFi. 
 author: adetu-ridwan
-date: 2022-03-14T00:00:00-21:00
+date: 2022-03-20T00:00:00-02:10
 topics: [Blockchain]
 excerpt_separator: <!--more-->
 images:
@@ -86,7 +86,7 @@ The application layer is user-facing. It is an intermediary between the user and
 #### The Aggregation Layer
 This layer consists of different applications from the application layer, all stacked up into one application to provide user access to other DeFi services. An example is a cryptocurrency wallet with multiple services such as staking, lending, and exchange.
 
-### DeFI Building Block and Services
+### DeFi Building Block and Services
 The following are some of the building blocks and services of Decentralized Finance:
 - Asset Tokenization.
 - Stablecoin.
