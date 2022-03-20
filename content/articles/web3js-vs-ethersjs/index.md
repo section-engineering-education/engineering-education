@@ -38,9 +38,7 @@ These are self-executing on-chain programs that are created by sending a special
 
 ### Installations
 
-Installing Web3 or Ethers to your project can be done using the node package manager (npm).
-
-To start we will open our project folder in the terminal and type any of the following to install either if the packages
+To install either the Web3JS library or the EthersJS library we need to run any of their respective commands in the terminal. To start we will open our project folder in the terminal and type any of the following to install either if the packages
 
 
 ```bash
@@ -114,8 +112,8 @@ And for ethers we deploy with the following:
 ```js
 async function main() {
   const signer = new ethers.providers.Web3Provider(/* your provider */).getSigner();
-  const factory = new ethers.ContractFactory(abi, bytecode.object, signer);
-  const contract = await factory.deploy()
+  const contractFactory = new ethers.ContractFactory(abi, bytecode.object, signer);
+  const contract = await contractFactory.deploy()
   console.log(contract.address);
 }
 
@@ -206,7 +204,7 @@ To do that using Web3 we write something like this:
 
 
 ```js
-const web3 = new Web3(/* your provider */);
+const web3 = new Web3(/* provider */);
 
 let receiver = /* receiver address */;
 let sender = (await web3.eth.getAccounts())[0];
