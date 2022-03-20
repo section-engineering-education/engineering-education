@@ -6,7 +6,7 @@ url: /implementing-deep-cnn-in-python/
 title: Implementing deep CNN in Python using TensorFlow and Keras for face mask detection
 description: This tutorial will discuss how to use TensorFlow(TF) and Keras(K) in Python to implement deep CNN.
 author: paul-juma
-date: 2022-03-11T00:00:00-12:40
+date: 2022-03-20T00:00:00-13:10
 topics: [Languages]
 excerpt_separator: <!--more-->
 images:
@@ -18,11 +18,11 @@ Deep CNN is implemented in Python using TensorFlow and Keras libraries. TensorFl
 <!--more-->
 It has properties such as flexible libraries, community resources, and an ecosystem of tools. Due to these properties, researchers can develop state-of-the-art machine learning. 
 
-Keras, a programming interface, is a Python program capable of running on TensorFlow and a machine learning platform. It is used for training neural networks. The development of the program was to improve experiment speed.
+Keras, a programming interface, is a Python program capable of running on TensorFlow and a machine learning platform. It is used for training neural networks. The development of the program was made to improve experiment speed.
 
-This tutorial will discuss how to use TensorFlow(TF) and Keras(K) in Python to implement deep CNN. We also cover its working. We will look at where you can get the dataset for your project. 
+This tutorial will discuss how to use TensorFlow(TF) and Keras(K) in Python to implement deep CNN. We will cover its working. We will also look at where you can get the dataset for your project. 
 
-we will also discuss how to implement deep CNN in Python to classify images. This example will classify faces into two, i.e. 'withmask' and 'withoutmask'. The goal here is to detect face masks in offline mode.
+This tutorial will discuss how to implement deep CNN in Python to classify images. This example will classify faces into two, i.e. 'withmask' and 'withoutmask'. The goal here is to detect face masks in offline mode.
 
 ### Prerequisites
 To follow along with this tutorial, you will need:
@@ -36,18 +36,18 @@ To follow along with this tutorial, you will need:
 ![Proposed scheme](/engineering-education/implementing-deep-cnn-in-python/deep-one.png)
 _Deep CNN scheme_
 
-The above image is the generalized scheme of the deep CNN. Here, the input image is first convolved on various filters, and the output goes to Rectified Linear Unit(ReLu). 
+The above image is the generalized scheme of the deep CNN. Here, the input image is first convolved on various filters, and the output goes to the Rectified Linear Unit(ReLu). 
 
-The `ReLu` is where the negative values are omitted. Next, the positive output values are passed through max-pooling to get the maximum value. This process is repeated for a similar layer combination. This process is known as feature detection.
+The `ReLu` is where the negative values are omitted. Next, the positive output values are passed through max-pooling to get the maximum value. This process is repeated for a similar layer combination. It is known as feature detection.
 
-The fully connected layer is the layer used for classification. In the end, we have the softmax layer to get the confidence category-wise as the output.
+The fully connected layer is used for classification. In the end, we have the softmax layer to get the confidence category-wise as the output.
 
 ### How to implement deep CNN in Python
-Deep CNN is implemented in Python TensorFlow and Keras libraries. Tensorflow can run on CPU, GPU, and TPU systems.
+Deep CNN is implemented in Python using TensorFlow and Keras libraries. Tensorflow can run on CPU's, GPU's, and TPU systems.
 
-Keras provide the necessary libraries for developing machine learning. It also helps engineers to take advantage of the scaling ability of TensorFlow.
+Keras provides the necessary libraries for developing machine learning. It also helps engineers to take advantage of the scaling ability of TensorFlow.
 
-For Python code development, `spyder IDE` is used under anaconda package manager. TensorFlow does not come with an anaconda. It means we have to install it. 
+For Python code development, `spyder IDE` is used under anaconda package manager. TensorFlow does not come with an anaconda. Therefore, we are required to install it ourselves. 
 
 To install TensorFlow(TF 2.3), open the anaconda prompt and execute the command below:
 
@@ -55,7 +55,7 @@ To install TensorFlow(TF 2.3), open the anaconda prompt and execute the command 
 pip install tensorflow==2.3
 ```
 
-Follow the instructions and wait for the installation to complete. This command also downloads all the dependencies. This version of TensorFlow works on `python 3.8`.
+Follow the instructions and wait for the installation to complete. This command also downloads all the dependencies. The version of TensorFlow we installed works on `python 3.8`.
 
 ### Image dataset
 The image dataset we are using here is available in [kaggle](https://www.kaggle.com/ashishjangra27/face-mask-12k-images-dataset).
@@ -65,9 +65,7 @@ _Kaggle website interface_
 
 We download the dataset, but we only use the train folder. We then move this train folder to the current directory for use.
 
-Train folder includes two sub-folders, `withmask` and `withoutmask`. These images are coloured images of the `.png` format. 
-
-They are also of different sizes. The total images are 10,000 therefore each folder has 5,000 images.
+Train folder includes two sub-folders, `withmask` and `withoutmask`. These images are coloured images of the `.png` format. They are also of different sizes. The total images are 10,000 therefore each folder has 5,000 images.
 
 ### Python code for deep CNN
 We first import some libraries and packages as shown below:
@@ -88,7 +86,7 @@ from tkinter import filedialog
 
 The `numpy` package is for numerical computations. `Tensorflow` and `keras` are used to implement the deep CNN. 
 
-`Tkinter` and `filedialog` are used to open the system dialogue. It enables you to select a single image from different folders for testing.
+`Tkinter` and `filedialog` are used to open the system dialogue. They enable you to select a single image from different folders for testing.
 
 We need to define our database. This is done by defining its directory as shown below:
 
@@ -97,7 +95,7 @@ data_dir = "/Documents/MATLAB/MATLAB/Articles/database/Train"
 data_dir = pathlib.Path(data_dir)
 ```
 
-With the help of the `path()` function, which is a property of `pathlib`, we read the data directory. Since our dataset contains images of different sizes, we resize them to a uniform size. To do this, we specify the image height and width. 
+With the help of the `path()` function, which is a property of `pathlib`, we can read the data directory. Since our dataset contains images of different sizes, we resize them to a uniform size. To do this, we specify the image `height` and `width`. 
 
 For our case, we use a size of 64x64 pixels as shown below:
 
@@ -107,7 +105,7 @@ img_height = 64
 img_width = 64
 ```
 
-Now, we read the images in the database and resize them. We also split the images into two, for example, `training` and `validation`.
+Next, we read the images in the database and resize them. We also split the images into two, for example, `training` and `validation`.
 
 ```python
 # Reading Training images from the directory
@@ -116,9 +114,9 @@ train_ds = tf.keras.preprocessing.image_dataset_from_directory(
     image_size = (img_height, img_width), batch_size = batch_size)
 ```
 
-We are reading the `image_dataset_from_directory()` function. This function is a property of `keras`. 
+In the program above, we are reading the `image_dataset_from_directory()` function. This function is a property of `keras`. 
 
-The `validation_split` is used to show the splitting ratio. It means the image dataset is split into two. 
+The `validation_split` is used to show the splitting ratio. This means the image dataset is split into two. 
 
 The ratio for training is 0.8, and that of testing and validation is 0.2. If you perform this calculation, a total of 8000 images is used for training, and the other 2000 is for testing validation.
 
@@ -135,7 +133,7 @@ val_ds = tf.keras.preprocessing.image_dataset_from_directory(
     image_size = (img_height, img_width), batch_size = batch_size)
 ```
 
-Define the classes since there are two folders, `withmask` and `withoutmask`. The commands above find the label for the folder names. 
+Define the classes since there are two folders, `withmask` and `withoutmask`. The command above finds the label for the folder names. 
 
 The command below prints the folder names as class_labels:
 
@@ -144,7 +142,7 @@ class_names = train_ds.class_names
 print(class_names)
 ```
 
-This is the automatic way of finding the name of the labels. Let us add a code for memory optimization and speed up execution.
+This is the automatic way of finding the name of the labels. Let us add a code for memory optimization and speed up execution:
 
 ```python
 #Memory optimization and speed up execution
@@ -157,7 +155,7 @@ The program above is used because the dataset is extensive. Here, we are using t
 
 `Cache()` keeps the image in the RAM after reading from the disk. This helps for speedy execution. 
 
-The `prefetch()` helps systems execute the model and fetches data from the library. It means it helps for the parallel execution.
+The `prefetch()` helps systems execute the model and fetches data from the library. This means it helps in parallel execution.
 
 Define the number of classes which is two, i.e. `withmask` and `withoutmask`.
 
@@ -188,7 +186,7 @@ noepochs = 7
 
 Here, we define our CNN model, which is `sequential`. In this case, we use the `sequential()` function. This function rescales the image and defines the CNN layers. 
 
-The images are rescaled in the range 0-1. This is because our datasets are RGB images and they have a pixel value of the range 0-255. It is therefore not settable for the deep CNN model. As a result, it is the reason for rescaling. 
+The images are rescaled in the range `0-1`. This is because our datasets are RGB images and they have a pixel value of the range 0-255. It is therefore not settable for the deep CNN model. As a result, it is the reason for rescaling. 
 
 Rescaling is done by dividing all the pixel values by 255. The convolution layer defined is `conv2D`. It has 16 filters of the size 3x3, the `padding` used is `same`, and the `activation` is `relu`. 
 
@@ -206,7 +204,7 @@ model.compile(optimizer = 'adam', loss = tf.keras.SparseCategoricalCrossentropy(
 mymodel = model.fit(train_ds, validation_data = val_ds, epochs = noepochs) #training the model
 ```
 
-The training parameters that we define are the optimizer that our model should use. The `fit()` function, which is the model property, trains our model. The function takes the training dataset `train_ds`, `validation data ` and the `number of epochs` as the arguments.
+The training parameter that we defined is the optimizer that our model should use. The `fit()` function, which is the model property, trains our model. The function takes the training dataset `train_ds`, `validation data `, and the `number of epochs` as the arguments.
 
 After the training, we should get some data such as model accuracy, validation accuracy, training loss, and validation loss using the code below:
 
@@ -218,7 +216,7 @@ val_loss = mymodel.history['val_loss']
 epochs_range = range(noepochs)
 ```
 
-These values are used to plot the accuracy and loss curves. This gives idea for the training procedures.
+These values are used to plot the accuracy and loss curves. This gives us an idea for the training procedures.
 
 Let us plot these values for visualization using the code below:
 
@@ -246,7 +244,7 @@ _Training process_
 ![Plots of the training](/engineering-education/implementing-deep-cnn-in-python/deep-four.png)
 _Plots for the output_
 
-The last step is creating a function for testing single images. The function is:
+The last step is to create a function for testing single images. The function is:
 
 ```python
 # Function to test single image
@@ -289,7 +287,7 @@ _Image selected_
 _Prediction and the confidence score_
 
 ### Conclusion
-Implementation of CNN in Python is done by using TensorFlow and Keras. These are packages that contain all the functions for deep learning. 
+Implementation of CNN in Python is done using TensorFlow and Keras. These are packages that contain all the functions for deep learning. 
 
 While using CNN, you have to keep a soundtrack of all the process that is going on. It helps improve the output. 
 
