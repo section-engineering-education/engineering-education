@@ -43,9 +43,9 @@ On our main interface, we have both the `Design` and the `Code` option available
 This is shown below:
 
 ```python
-chars = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "0", "+", 
-        "Q", "W", "E", "R", "T", "Y", "U", "I", "O", "P", "-",
-        "A", "S", "D", "F", "G", "H", "J", "K", "L", "*",
+ chars = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "0", "+", "<--", 
+        "Q", "W", "E", "R", "T", "Y", "U", "I", "O", "P", "-", "=",
+        "A", "S", "D", "F", "G", "H", "J", "K", "L", "*", "Clear",
         "Z", "X", "C", "V", "B", "N", "M", ",", ".", "/"  
 ]
 ```
@@ -87,17 +87,90 @@ Thereafter, we can access it using a click event. Let's create a click method an
 
 ```python
 def click(self, **event_args):
-    event_args.['sender'].tag.name
+    print(event_args.['sender'].tag.name)
 ```
 
+> We've added the `print()` method temporarily so that we can test the keys outputs.
+
+Right before we add our buttons to the grid, we will add the following commands to add the click event method:
+
+```python
+self.btn[i].set_event_handler('click', self.click) 
+```
+
+Click on `Run` to check if everything runs correctly and displays a pressed key as the output. Everything should work perfectly.
+
+> Make sure to expand the output bar so that you can see the messages.
+
+Once our buttons outputs the correct characters, we can concatenate them to our text box. Instead of printing the results on the terminal, we can add the following code to the click method to print to the text box instead.
+
+```python
+def click(self, **event_args):
+    self.text_box_1.text += event_args['sender'].tag.name
+```
+When you click on a button, it should now display on the text box. It works as expected. The more we press the buttons, the longer our text box length becomes.
+
+We have some buttons that have some special functionality to them especially when we are dealing with numbers and arithmetic operators. For example, the `Clear` and `Delete` signs.
+
+Let's go back to our code and add these special functionality to them.
+
 ### Testing the functionality of the keyboard
+To make the code simpler to read, we will add the following code inside the click method, a new variable called `val`:
+
+```python
+ def click(self, **event_args):
+    val = event_args['sender'].tag.name
+    
+    if val == "=":
+      self.text_box_1.text = eval(self.text_box_1.text)
+    elif val == "Clear":
+      self.text_box_1.text = ""
+    elif val == "<--":
+      self.text_box_1.text = self.text_box_1.text[:-1]
+    else:
+      self.text_box_1.text += val
+```
+Perfect! Our special functionalities should now be working. Click on the `Run` button to try it out. Add some numbers and click on the equality sign to output the result. Also, you can press the backspace button to clear characters one by one, and the `Clear` button to remove everything on the text box.
+
+Now, our keyboard is functioning propoerly. Let's add some style to it.
 
 ### Styling the keyboard
+We begin by splitting our buttons into four different rows. For this build, we will count twelve buttons then jump onto the next row. The `enumerate()` method will help us with this. We will pass our list of characters into it. Enumerate returns two different values instead of one. So we will add an `idx` to help count.
+
+Let's add the following block of code:
+
+```python
+for idx, i in enumerate(chars):
+    if idx < 12:
+        row = 'A'
+    elif 12 <= idx < 24:
+        row = 'B'
+    elif 24 <= idx < 36:
+        row = 'C'
+    else:
+        row = 'D'
+```
+After adding that new block of code, run to see if it works.
+
+We replace the `A` value in `row = 'A'`, with `row = row` which os our local variable.
+
+We can also style our buttons to make them prettier. Let's add the following code:
+
+```python
+self.btn[i] = Button(text=i, bold = True)
+```
+Also, add the following code:
+
+```python
+self.space = Spacer(height=400)
+self.add_component(self.space)
+```
 
 ### Publishing the web app
+Once we are happy with our web application, we can go ahead and deploy it. To do this with Anvil, we need to press the `Publish this app` button. It will generate a code which you can use to view the published web application on your browser. For this application, you can view the published web application [here](https://f34tdj5x5e2jir24.anvil.app/KFJIOSVXZZTEGBPBINNMCT7I).
 
 ### Wrapping up
-We have used graphic design tools to create our web application. But this is not the only way. We can also add them into the interface using code as shown in this tutorial. Feel free to try creating one yourself, you could play around with the different components available that suits your project.
+We have deployed our keyboard online, it's beautiful and we can share it with anyone we like. We have used graphic design tools to create our web application. But this is not the only way. We can also add them into the interface using code as shown in this tutorial. Feel free to try creating one yourself, you could play around with the different components available that suits your project.
 
 Happy coding!
 
