@@ -2,19 +2,19 @@
 
 ### Introduction
 
-HTTP authentication is the procedure of figuring out and verifying customers' credentials to ensure they are permitted to get the right of entry to an internet resource. To protect you from unauthorized entry to your PHP web application, you can defend sensitive files or endpoints by the use of a username and a password. One commonplace manner of achieving this is with the aid of the use of simple HTTP authentication. With this protection design sample, each person requesting to your server should publish an Authorization header containing Base64 encoded credentials.
+HTTP authentication is the procedure of figuring out and verifying customers' credentials to ensure they are permitted to get the right of entry to an internet resource. They aim at preventing unauthorized entry to PHP web applications, by defending sensitive files or endpoints by the use of a username and a password or those containing Base64 encoded credentials. HTTP authentication helps significantly in increasing the speed of the process, security, revenue, and sensitive credentials of companies.
 
 ### Outline
 
 1. [Editing the Apache configuration file](#editing-the-apache-configuration-file)
 
-2. [Enabling Apache `mod_rewrite` module](#enabling-apache-```mod_rewrite```-module)
+2. [Enabling Apache `mod_rewrite` module](#enabling-apache-mod_rewrite-module)
 
-3. [Creating a password protected PHP file](#creating-a-password-protected-PHP-file)
+3. [Creating a password protected PHP file](#creating-a-password-protected-php-file)
 
-4. [Modifying the `.htaccess` file](#modifying-the-```.htaccess```-file)
+4. [Modifying the `.htaccess` file](#modifying-the-htaccess-file)
 
-5. [Testing HTTP Authentication](#testing-HTTP-authentication)
+5. [Testing HTTP Authentication](#testing-http-authentication)
 
 ### Editing the Apache configuration file
 
@@ -75,7 +75,7 @@ The server we have can accept all rewrite rules now.
 
 ### Creating a password protected PHP file
 
-Here we will create a password protected PHP web resource for the authenticated users whose data are shown in JSON. Disclose a file `/var/www/html/sample.php` on the server as shown:
+Here we will create a password-protected PHP web resource for the authenticated users whose data are shown in JSON. Disclose a file `/var/www/html/sample.php` on the server as shown:
 
 ```
 $ sudo nano /var/www/html/sample.php
@@ -192,4 +192,4 @@ Above is a full test that the HTTP authentication and everything else is working
 ### Conclusion
 
 We've created a password-protected PHP file for web resources using HTTP Authentication with an Ubuntu server. That is useful since many users are forced to pass their information through secure HTTP.
-Apache authentication works well for simple web database applications. Where usernames and passwords requires validatation against a database or any other source, or when HTTP authentication is insufficient, PHP can manage authentication.
+Apache authentication works well for simple web database applications. Where usernames and passwords require validation against a database or any other source, or when HTTP authentication is insufficient, PHP can manage authentication.
