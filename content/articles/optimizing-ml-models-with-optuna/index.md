@@ -16,9 +16,9 @@ images:
 ---
 In this tutorial, we will learn about Optuna - a framework to automate the hyperparameter search. Here, we will find the best hyperparameters for an XGBoost regressor model.
 <!--more-->
-[Optuna](https://optuna.org) is a software framework that automates the learning optimization processes. These optimization processes aims to reduce the amount of time and effort required to complete a machine learning project while improving its performance.
+[Optuna](https://optuna.org) is a software framework that automates learning optimization processes. These optimization processes aim to reduce the amount of time and effort required to complete a machine learning project while improving its performance.
 
-Hyperparameter are a set of arguments that controls the learning process in machine learning algorithms.
+Hyperparameters are a set of arguments that controls the learning process in machine learning algorithms.
 
 Optuna uses grid search, random, bayesian, and evolutionary algorithms to find the best values for hyperparameters.
 
@@ -29,18 +29,21 @@ As a prerequisite, the reader should have the following:
 
 ### Table of contents
 - [Optimization process](#optimization-process)
-  - [Testing the model](#testing-the-model)
-  - [Defining Functions](#defining-functions)
-  - [Importing optuna](#importing-optuna)
-  - [Creating the primary objective function](#creating-the-primary-objective-function)
-  - [Creating an optuna study object](#creating-an-optuna-study-object)
-  - [Visualizing search history](#visualizing-search-history)
-  - [Comparing the optimized model with the base model](#comparing-the-optimized-model-with-the-base-model)
+  - [Load the dataset](#load-the-dataset)
+  - [Standard scaling the dataset](#standard-scaling-the-dataset)
+  - [Dataset split](#dataset-split)
+  - [Test the model](#test-the-model)
+  - [Define Functions](#define-functions)
+  - [Import optuna](#import-optuna)
+  - [Create the primary objective function](#create-the-primary-objective-function)
+  - [Create optuna study object](#create-optuna-study-object)
+  - [Visualize search history](#visualize-search-history)
+  - [Compare the optimized model with the base model](#compare-the-optimized-model-with-the-base-model)
 - [Conclusion](#conclusion)
 - [Reference](#reference)
 
 ### Optimization process
-To learn how we can fit Optuna to our machine learning project, we will train an XGBoost model, conduct an in-depth analysis of hyperparameter optimizations, and assess the most efficient and timely optimization.
+To learn how we can fit Optuna into our machine learning project, we will train an XGBoost model, conduct an in-depth analysis of hyperparameter optimizations, and assess the most efficient and timely optimization.
 
 We'll start by creating a data frame that includes all the relevant modules and data.
 
@@ -76,7 +79,7 @@ X = standardSc.fit_transform(X) # Computes the mean and standard deviation to sc
 ```
 
 The code above does the following:
-- Seperates the targets and features after framing the dataset into pandas dataframe.
+- Separates the targets and features after framing the dataset into pandas dataframe.
 - Extracts features and target into `X` and `y` respectively.
 - Scales the dataset into a single scale to help the model converge more quickly and divide the dataset into train and test sets more easily.
 - Computes the mean and standard deviation of the dataset to scale, fit the scaled data, and then transform it.
@@ -112,7 +115,7 @@ print(ourScores) # output: score of our model
 ```
 
 The above code does the following:
-- Evaluates the model using the `cross-validation` method.
+- Evaluate the model using the `cross-validation` method.
 - Computes the standard deviation and mean of scores.
 - Outputs the score of our model as a list.
 
@@ -144,7 +147,7 @@ We import Optuna and its related libraries as shown:
 
 ```python
 import optuna
-from Optuna import Trial, visualization # visualizations that plots the optimization results
+from Optuna import Trial, visualization # visualizations that plot the optimization results
 from optuna.samplers import TPESampler # Samplers class that defines the hyper-parameter space
 ```
 
@@ -185,7 +188,7 @@ You can follow this [link](https://xgboost.readthedocs.io/en/latest/parameter.ht
 #### Create an optuna study object
 This study object stores all the information about the hyper-parameters.
 
-In the code below, optimization parameters and its history are stored in an object created by `studyObject1`. After running, the study stops after `500` trials.
+In the code below, optimization parameters and their history are stored in an object created by `studyObject1`. After running, the study stops after `500` trials.
 
 ```python
 # direction='minimize' is used since we want to minimize rootMeanSquareError
@@ -255,7 +258,7 @@ As you can see, we have achieved a lower reading (better score).
 ### Conclusion
 In this tutorial, we trained an XGBoost model on the `boston_housing` dataset, explored hyperparameter optimization in-depth, and analyzed the visualization for better optimization.
 
-Using Optuna, we learned how to experiment hyperparamter optimization that returns the best hyperparameters.
+Using Optuna, we learned how to experiment hyperparameter optimization that returns the best hyperparameters.
 
 You can find the full source code [here](https://colab.research.google.com/drive/1eyNACNEbIn0mQ8-UPxNkz1Ng4ppgCrNr?usp=sharing).
 
