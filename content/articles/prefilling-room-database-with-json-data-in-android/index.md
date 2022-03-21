@@ -36,7 +36,7 @@ In this scenario, let's make an app that functions similarly to a note app, with
 ### Step 1 - Creating a New Project
 To create a new project with the Android Studio IDE, go to File > New > New Project. After that, choose an empty activity and click Next, as seen below. Select Kotlin as the language and click OK after giving the project a suitable name.
 
-![new project](/engineering-education/Prefilling-Room-Database-with-JSON-Data-in-Android/new-project.png)
+![new project](/engineering-education/prefilling-room-database-with-json-data-in-android/new-project.png)
 
 ### Step 2 - Adding the Necessary dependencies
 Since we shall be working with the room database, we'll need the room database, coroutine, and Kotlin extension dependencies. Therefore, include the following in your `build.gradle` app-level file.
@@ -211,7 +211,7 @@ Here is the JSON data which will be prepopulated into our Room database:
 
 JSON data should be included within the project. This is done by creating a sub-directory called `raw` within the `res` directory then within the created sub-directory, add your JSON File.
 
-![Json](/engineering-education/Prefilling-Room-Database-with-JSON-Data-in-Android/json.png)
+![Json](/engineering-education/prefilling-room-database-with-json-data-in-android/json.png)
 
 ### Step 6 - Creating a Prefilling Class
 Let's create a prefilling class that will contain the database prefilling logic. 
@@ -350,7 +350,7 @@ class MainActivity : AppCompatActivity() {
 - If the program is complicated and the UI components require a literal explanation.
 
 ### Demo
-![Demo](/engineering-education/Prefilling-Room-Database-with-JSON-Data-in-Android/demo.png)
+![Demo](/engineering-education/prefilling-room-database-with-json-data-in-android/demo.png)
 
 ### Conclusion
 In this tutorial, we have gone through what is pre-populating room database with initial data as used in android. what is a room Callback is and how is it added to the database? How to implement prefilling room database with data and when it is necessary to pre-populate a room database.
