@@ -1,4 +1,19 @@
-### Introduction
+---
+layout: engineering-education
+status: publish
+published: true
+url: /prefilling-room-database-with-json-data-in-android/
+title: Prefilling Room Database with JSON Data in Android
+description: This tutorial will elaborate on Prefilling Room Database with JSON Data in Android.
+author: benta-odek
+date: 2022-03-21T00:00:00-21:53
+topics: [Languages]
+excerpt_separator: <!--more-->
+images:
+
+  - url: /engineering-education/prefilling-room-database-with-json-data-in-android/hero.jpg
+    alt: Prefilling Room Database with JSON Data in Android Hero Image
+---
 Most of the time, when designing an app, developers strive to come up with a way to start with a database that already has data in it. Pre-populating the room database with data, which can be material from a prepared database (.db) files in the device's file system or even JSON data. In most cases, a REST query is used to retrieve data from the application backend, but this isn't the case with our application because it's standalone and we only need to have the APK file.
 
 ### Table of contents
