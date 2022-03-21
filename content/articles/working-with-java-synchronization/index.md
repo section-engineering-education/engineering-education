@@ -42,7 +42,7 @@ A race issue may cause an executing thread to read an old value from a shared ob
 
 The example program below illustrates race conditions:
 
-You can see the increased value of an integer variable in this basic example. One by one the variable's value is incremented and shown in ten different ways. Each thread will be numbered from one and nine.
+You can see the increased value of an integer variable in this basic example. One by one the variable's value is incremented and shown in ten different ways. Each thread will be numbered from one to nine.
 
 ```Java
 public class Example {
@@ -81,7 +81,7 @@ The output of the thread is : Thread-4 - 5
 The output of the thread is : Thread-3 - 4
 ```
 
-As shown above, the threads are chosen at random, and the value is incorrect. The value should rise by 1 but that is not the case. Usually, the output is 3. Threads 0, 1, and 2 share the same value thus showing a race condition. After understanding what a race condition is, lets now look at how to refrain from it.
+As shown above, the threads are chosen at random, and the value is incorrect. The value should rise by 1 but that is not the case. Usually, the output is 3. Threads 0, 1, and 2 share the same value thus showing a race condition. After understanding what a race condition is, let's now look at how to refrain from it.
 
 It is evident that the crucial element (code that changes shared resources) must be limited. Java's synchronized keyword synchronizes shared resource access. This prevents thread interference during atomic operations.
 
@@ -136,9 +136,8 @@ To understand the two, let us first look at each separately:
 #### Synchronized methods
 These consist of the following properties:
 
-- A synchronized method locks down the whole object. No other thread may access synchronized methods in the object while the method is executing.
-- In non-static methods, this locks them whereas static methods are locked by their class.
-- Synchronized methods need locks on the current object or the class level lock if they are static. This is because the lock is obtained when the thread enters and released when the thread quits (naturally or by throwing an Exception).
+- A synchronized method locks down the whole object. No other thread may access synchronized methods in the object while the method is executing. In non-static methods, this locks them whereas static methods are locked by their class.
+- Synchronized methods need locks on the current object or, in the case of static methods, the whole class. This is because the lock is obtained when the thread enters and released when the thread quits (naturally or by throwing an Exception).
 - Synchronized methods keep the lock for the method scope.
 - A synchronized static function locks the class object.
 
