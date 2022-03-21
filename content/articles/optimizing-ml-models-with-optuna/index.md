@@ -1,3 +1,19 @@
+---
+layout: engineering-education
+status: publish
+published: true
+url: /optimizing-ml-models-with-optuna/
+title: Optimize Machine Learning Models With Optuna
+description: In this article, we learn about hyperparameter tuning, how we usually do it, and how we can automate this search process with Optuna.
+author: bonface-ndolo
+date: 2022-03-21T00:00:00-00:00
+topics: [Machine Learning]
+excerpt_separator: <!--more-->
+images:
+
+ - url: /engineering-education/optimizing-ml-models-with-optuna/hero.jpg
+   alt: Optimize Machine Learning Models With Optuna example image
+---
 In this tutorial, we will learn about Optuna - a framework to automate the hyperparameter search. Here, we will find the best hyperparameters for an XGBoost regressor model.
 <!--more-->
 [Optuna](https://optuna.org) is a software framework that automates the learning optimization processes. These optimization processes aims to reduce the amount of time and effort required to complete a machine learning project while improving its performance.
@@ -246,3 +262,6 @@ You can find the full source code [here](https://colab.research.google.com/drive
 You can learn more about hyperparameter optimization [here](https://optuna.readthedocs.io/).
 
 Happy coding!
+
+---
+Peer Review Contributions by: [Srishilesh P S](/engineering-education/authors/srishilesh-p-s/)
