@@ -6,7 +6,7 @@ url: /time-series-analysis-and-forecasting-using-auto-time-series/
 title: Time Series Analysis and Forecasting using Auto Time Series
 description: This tutorial will be discussing how to build an electricity consumption prediction model using Auto Time Series library(Auto-TS).
 author: elisha-njeche
-date: 2022-03-13T00:00:00-21:00
+date: 2022-03-21T00:00:00-12:00
 topics: [Machine Learning]
 excerpt_separator: <!--more-->
 images:
@@ -18,9 +18,9 @@ A time series is a sequence of data points that occur in successive order over t
 <!--more-->
 Time series analysis extracts meaningful patterns and attributes from the historical data. It enables the model to gain knowledge and identify trends in the dataset.
 
-Time series builds a model that predicts future values based on historical data. The model can forecast forex exchange rates,  stock prices, weather, and Covid-19 caseload. In stock prediction, a time series model tracks the movement of stock prices, such as Apple stock. Accurate predictions of the model will yield profit to the investors. 
+Time series builds a model that predicts future values based on historical data. The model can forecast forex exchange rates, stock prices, weather, and Covid-19 caseload. In stock prediction, a time series model tracks the movement of stock prices, such as Apple stock. Accurate predictions of the model will yield profit to the investors. 
 
-In this tutorial, we will build an electricity consumption prediction model. We will use [Auto Time Series library(Auto-TS)](https://pypi.org/project/auto-ts/) to train the model.
+In this tutorial, we will build an electricity consumption prediction model. We will use [Auto Time Series library (Auto-TS)](https://pypi.org/project/auto-ts/) to train the model.
 
 ### Table of contents
 - [Prerequisites](#prerequisites)
@@ -40,7 +40,6 @@ In this tutorial, we will build an electricity consumption prediction model. We 
 
 ### Prerequisites
 To easily understand this article, a reader should:
-
 - Understand [time series](/engineering-education/introduction-to-time-series/)
 - Know how to build a [time series model](/engineering-education/sales-forecasting-with-prophet/)
 - Understand [time series decomposition in Python](/engineering-education/time-series-decomposition-in-python/)
@@ -48,15 +47,15 @@ To easily understand this article, a reader should:
 - Use [Google Colab notebook](https://colab.research.google.com/)
 
 ### Getting started with Auto Time Series library
-[Auto Time Series (Auto-TS)](https://pypi.org/project/auto-ts/) is an open-source Python library for automating time series analysis and forecasting. It trains high-accuracy models within a short time. Auto-TS automatically runs multiple time series models on the training dataset. It then automatically selects the best model from all the models.
+[Auto Time Series (Auto-TS)](https://pypi.org/project/auto-ts/) is an open-source Python library to automate time series analysis and forecasting. It trains high-accuracy models within a short time. Auto-TS automatically runs multiple time series models on the training dataset. It then automatically selects the best model from all the models.
 
 There are different types of time series models. The most common models that Auto Time Series runs are as follows:
-- [PyFlux Model.](https://pyflux.readthedocs.io/en/latest/)
-- [Non-Seasonal ARIMA Model.](https://otexts.com/fpp2/non-seasonal-arima.html)
-- [Seasonal SARIMAX Model.](https://towardsdatascience.com/understanding-the-seasonal-order-of-the-sarima-model-ebef613e40fa)
-- [Basic Machine Learning Model.](https://towardsdatascience.com/ml-approaches-for-time-series-4d44722e48fe)
-- [Vector Autoregressive Model.](https://medium.com/geekculture/vector-auto-regressive-var-models-for-multivariate-time-series-forecasting-106bb6f74add)
-- [Facebook Prophet Model.](https://www.kaggle.com/prashant111/tutorial-time-series-forecasting-with-prophet)
+- [PyFlux Model](https://pyflux.readthedocs.io/en/latest/).
+- [Non-Seasonal ARIMA Model](https://otexts.com/fpp2/non-seasonal-arima.html).
+- [Seasonal SARIMAX Model](https://towardsdatascience.com/understanding-the-seasonal-order-of-the-sarima-model-ebef613e40fa).
+- [Basic Machine Learning Model](https://towardsdatascience.com/ml-approaches-for-time-series-4d44722e48fe).
+- [Vector Autoregressive Model](https://medium.com/geekculture/vector-auto-regressive-var-models-for-multivariate-time-series-forecasting-106bb6f74add).
+- [Facebook Prophet Model](https://www.kaggle.com/prashant111/tutorial-time-series-forecasting-with-prophet).
 
 All the listed models above support time series analysis and forecasting. Auto-TS chooses the best model based on its accuracy score and predictions made. We will then plot a line graph to show the forecast values.
 
@@ -68,7 +67,7 @@ All the listed models above support time series analysis and forecasting. Auto-T
 - It trains high-accuracy models. Auto-TS produces reliable and accurate models.
 
 - It selects the optimal time series model. Auto-TS automatically runs multiple time series models listed above. It then automatically selects the optimal model. 
-The model will give accurate results.
+This model will give the most accurate results.
 
 - Automatic hyperparameter tuning and configurations. Auto-TS automatically fine-tunes the model parameters. It ensures the model gives the best accuracy score.
 
@@ -78,11 +77,13 @@ To install the Auto Time Series library, run this command:
 ```bash
 !pip install auto_ts
 ```
+
 We import this using this code:
 
 ```python
 import auto_ts as AT
 ```
+
 Let's now start working with our dataset.
 
 ### Working with the dataset
@@ -94,23 +95,17 @@ The dataset output:
 
 From the image above, the dataset has six columns:
 
-- `Bill_Date`
-It shows the date on which the billing period ends.
+- `Bill_Date`: It shows the date on which the billing period ends.
 
-- `On_peak`
-It is the electricity consumption during the peak season.
+- `On_peak`: It is the electricity consumption during the peak season.
 
-- `Off_peak`
-It is the electricity consumption during the off-peak season.
+- `Off_peak`: It is the electricity consumption during the off-peak season.
 
-- `Usage_charge`
-It is the total cost of electricity consumption without the tax.
+- `Usage_charge`: It is the total cost of electricity consumption without the tax.
 
-- `Billed_amount`
-It is the total cost of electricity consumption and the tax.
+- `Billed_amount`: It is the total cost of electricity consumption and the tax.
 
-- `Billing_days`
-It shows the number of days within the billing period. 
+- `Billing_days`: It shows the number of days within the billing period. 
 
 We need to convert the `Bill_Date` column to the DateTime format. The DateTime format is the format Auto Time Series understands. It also enables us to perform time-series operations on this column.
 
@@ -119,6 +114,7 @@ We will use the Python Datetime module.
 ```python
 from datetime import datetime
 ```
+
 Let's create a Python function to convert the `Bill_Date` column to the DateTime format.
 
 ```python
@@ -138,11 +134,13 @@ To load the dataset and also convert the `Bill_Date` column to the DateTime form
 ```python
 df = pd.read_csv('/content/electricity_consumption.csv', parse_dates = ['Bill_Date'], date_parser=parse)
 ```
+
 To see the loaded dataset, use this code:
 
 ```python
 df
 ```
+
 The output of the dataset:
 
 ![Dataset output](/engineering-education/time-series-analysis-and-forecasting-using-auto-time-series/dataset-output.png)
@@ -152,6 +150,7 @@ To check the dataset information, use this code:
 ```python
 df.info()
 ```
+
 The output:
 
 ![Dataset information](/engineering-education/time-series-analysis-and-forecasting-using-auto-time-series/dataset-info.png)
@@ -163,11 +162,13 @@ Let's make the `Bill_Date` the index column.
 ```python
 ec_df = df.set_index('Bill_Date')
 ```
+
 To see the dataset with `Bill_Date` as the index column, use this code:
 
 ```python
 ec_df.head()
 ```
+
 The dataset output:
 
 ![Dataset](/engineering-education/time-series-analysis-and-forecasting-using-auto-time-series/index-column.png)
@@ -178,17 +179,20 @@ The dependent variable is the variable that the model will predict. This variabl
 ```python
 ec_data = ec_df['Billed_amount']
 ```
+
 ### Plotting the line graph
 We will plot the line graph that shows the data points using Matplotlib. Let's import Matplotlib.
 
 ```python
 import matplotlib.pyplot as plt
 ```
+
 To plot the line graph, use this code:
 
 ```python
 ec_data.plot(grid=True)
 ```
+
 The line graph output:
 
 ![Dataset](/engineering-education/time-series-analysis-and-forecasting-using-auto-time-series/line-graph.png)
@@ -205,6 +209,7 @@ ec_df_2019=ec_df.loc['2019']
 ec_data_2019=ec_df_2019['Billed_amount']
 ec_data_2019.plot(grid=True)
 ```
+
 The output:
 
 ![Line graph for 2019](/engineering-education/time-series-analysis-and-forecasting-using-auto-time-series/line-graph-2019.png)
@@ -219,6 +224,7 @@ ec_df_2019=ec_df.loc['2019']
 ec_data_2019=ec_df_2019['Billed_amount']
 ec_data_2019.plot.bar()
 ```
+
 The output:
 
 ![Bar graph for 2019](/engineering-education/time-series-analysis-and-forecasting-using-auto-time-series/bar-graph-2019.png)
@@ -232,6 +238,7 @@ We will use this copy of the dataset to train the model.
 final_df = df.copy()
 final_df=final_df[['Bill_Date','On_peak','Off_peak','Billed_amount','Billing_days']]
 ```
+
 ### Splitting the dataset
 We will split the dataset into two sets. One set for model training and the other for model testing.
 
@@ -239,6 +246,7 @@ We will split the dataset into two sets. One set for model training and the othe
 train = final_df[:50]
 test = final_df[50:]
 ```
+
 The first 50 entries/data points will train the model. The remaining entries will test the model.
 
 Let's print the shape of the train and test datasets.
@@ -246,11 +254,13 @@ Let's print the shape of the train and test datasets.
 ```python
 print(train.shape, test.shape)
 ```
+
 The output:
 
 ```bash
 (50, 5) (3, 5)
 ```
+
 ### Selecting the timestamp and the target columns
 The Auto Time Series model expects an input dataset with timestamp and target columns. The `timestamp` column contains the DateTime of the time series. The` target` column has the time series values (data points). The model will learn from these columns.
 
@@ -259,6 +269,7 @@ ts_column = 'Bill_Date'
 sep = ','
 target = 'Billed_amount'
 ```
+
 The `Bill_Date` is the timestamp column, and the `Billed_amount` is the target column. Also, our dataset is comma-separated.
 
 ### Initializing the Auto Time Series model
@@ -273,40 +284,29 @@ ml_dict = AT.Auto_Timeseries(train, ts_column,
 ```
 The Auto Time Series model has the following parameters:
 
-- `train`
-It contains the training set. These are the first 50 entries/data points that trains the model. 
+- `train`: It contains the training set. These are the first 50 entries/data points that trains the model. 
 
-- `ts_column`
-It contains the DateTime of the time series.
+- `ts_column`: It contains the DateTime of the time series.
 
-- `sep`
-It specifies the dataset format. Our dataset is comma-separated values (CSV).
+- `sep`: It specifies the dataset format. Our dataset is comma-separated values (CSV).
 
--  `score_type`
-It is the scoring metrics for the model. We use the Root Mean Square Error (RMSE). RMSE calculates the error of a model when making predictions. It indicates the absolute fit of the model to the data– how close the observed data points are to the predicted values.
+-  `score_type`: It is the scoring metrics for the model. We use the Root Mean Square Error (RMSE). RMSE calculates the error of a model when making predictions. It indicates the absolute fit of the model to the data – how close the observed data points are to the predicted values.
 
-- `forecast_period`
-It shows the number of months the model will predict. The model will make predictions for the next six months.
+- `forecast_period`: It shows the number of months the model will predict. The model will make predictions for the next six months.
 
-- `time_interval`
-It shows the time interval of the time series. It can be in minutes, hourly, daily, monthly, or yearly. Our dataset has monthly intervals.
+- `time_interval`: It shows the time interval of the time series. It can be in minutes, hourly, daily, monthly, or yearly. Our dataset has monthly intervals.
 
-- `non_seasonal_pdq`
-It contains the parameters that train the Non-Seasonal ARIMA model.
+- `non_seasonal_pdq`: It contains the parameters that train the Non-Seasonal ARIMA model.
 
-- `seasonality`
-It handles the periodic changes in time series that occur within a given time. Seasonality shows a regular pattern within the dataset. 
+- `seasonality`: It handles the periodic changes in the time series that occur within a given time. Seasonality shows a regular pattern within the dataset. 
 
 Seasonality can be daily, weekly, or yearly. Our dataset has monthly seasonality. In our dataset, the highest energy consumption occurs during September. It keeps on repeating during this month for all the years. It is because of the seasonality effect.
 
-- `seasonal_period=12`
-It shows the monthly seasonality.
+- `seasonal_period=12`: It shows the monthly seasonality.
 
-- `seasonal_PDQ=None`
-It contains the parameters that train the Seasonal SARIMAX Model.
+- `seasonal_PDQ=None`: It contains the parameters that train the Seasonal SARIMAX Model.
 
-- `model_type='best`
-It shows the types of models that Auto Time Series will use for training. We set the values to `best` so that Auto Time Series will run multiple time series models and select the best one.
+- `model_type='best`: It shows the types of models that Auto Time Series will use for training. We set the values to `best` so that Auto Time Series will run multiple time series models and select the best one.
 
 When you execute the code above, Auto Time Series will run multiple time series models and produce the following outputs:
 
