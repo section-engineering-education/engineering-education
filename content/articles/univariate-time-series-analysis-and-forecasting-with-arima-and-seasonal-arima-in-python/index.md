@@ -1,5 +1,21 @@
-A time series is a measured metric value over regular time intervals eg stock prices and weather records. A time series shows all the variables that affect the recorded metric in the dataset.
+---
+layout: engineering-education
+status: publish
+published: true
+url: /univariate-time-series-analysis-and-forecasting-with-arima-and-seasonal-arima-in-python/
+title: Univariate time series analysis and forecasting with ARIMA and Seasonal ARIMA in Python
+description: This tutorial will first discuss a few concepts that are essential to understanding time series with ARIMA and Seasonal ARIMA. It will finally implement the ARIMA and Seasonal ARIMA models with Python.
+author: joseph-gatura
+date: 2022-03-22T00:00:00-21:20
+topics: [Machine Learning]
+excerpt_separator: <!--more-->
+images:
 
+ - url: /engineering-education/univariate-time-series-analysis-and-forecasting-with-arima-and-seasonal-arima-in-python/hero.jpg
+   alt: Forecasting with ARIMA and Seasonal ARIMA in Python Hero Image
+---
+A time series is a measured metric value over regular time intervals eg stock prices and weather records. A time series shows all the variables that affect the recorded metric in the dataset.
+<!--more-->
 In time series analysis and modeling, we will train models to gain an understanding of the time series data. Forecasting involves finding the future values that the time series will take.
 
 A time series can be univariate, bivariate, or multivariate. Univariate consists of only one variable, bivariate has two variables, and multivariate has more than two variables. In this tutorial, we will be dealing with univariate time series modeling.
