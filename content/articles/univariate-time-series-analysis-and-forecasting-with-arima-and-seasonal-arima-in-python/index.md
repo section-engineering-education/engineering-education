@@ -449,3 +449,6 @@ You can get the Python code for this article from [here](https://colab.research.
 - [Non-Stationary Processes](https://www.investopedia.com/articles/trading/07/stationary.asp)
 - [ARIMA definition](https://www.investopedia.com/terms/a/autoregressive-integrated-moving-average-arima.asp)
 - [Understanding SARIMA Model](https://towardsdatascience.com/time-series-forecasting-with-a-sarima-model-db051b7ae459)
+
+---
+Peer Review Contributions by: [Wilkister Mumbi](/engineering-education/authors/wilkister-mumbi/)
