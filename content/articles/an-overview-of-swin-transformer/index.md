@@ -43,11 +43,11 @@ The output then gets merged by a `merging layer`. It concatenates the vectors of
 
 Each time the attention window shifts with respect to the previous layer. For example, if in the first layer, the attention was limited to the neighborhood of these regions, in the next layer, the regions are shifted (like in strided convolution). Patches that landed in separate windows in the first layer and could not communicate, can now do so in layer two. These resulting patches are merged by the merging layer. This process is repeated depending on the number of layers chosen.  
 
-Here's a summarized architecture of the Swin Transformer compared to the ViT.
+Here's a summarized architecture of the Swin Transformer.
 
-![Architecture](/engineering-education/an-overview-of-swin-transformer/swin-transformer.png)
+![Architecture of the Swin Transformer](/engineering-education/an-overview-of-swin-transformer/swin-transformer.png)
 
-*Image Source: [Arxiv](https://arxiv.org/pdf/2103.14030.pdf)*
+*Image Source: [GitHub](https://github.com/microsoft/Swin-Transformer)*
 
 The Swin Transformer outperforms ViT on image classification, semantic segmentation, and object detection tasks. In instances where every pixel must be labeled, such as in semantic segmentation, is where we see the Swin Transformer excel. 
 
