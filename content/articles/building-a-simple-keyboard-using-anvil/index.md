@@ -1,4 +1,22 @@
-Anvil is a free and open-source drag and drop web app builder. It is equivalent to the likes of Gradio application. The framework uses Python only. No HTML, no CSS, and Javascript. This tutorial will leverage this framework to build a functional keyboard similar to the one on your computer. 
+---
+layout: engineering-education
+status: publish
+published: true
+url: /building-a-simple-keyboard-using-anvil/
+title: Building a simple keyboard using Anvil
+description: This tutorial will show our readers how to leverage Anvil to build a functional keyboard similar to the one on your computer.
+author: willies-ogola
+date: 2022-03-21T00:00:00-21:10
+topics: [Languages]
+excerpt_separator: <!--more-->
+images:
+
+  - url: /engineering-education/building-a-simple-keyboard-using-anvil/hero.png
+    alt: Building a simple keyboard using Anvil Hero Image
+---
+Anvil is a free and open-source drag and drop web app builder. It is equivalent to the likes of Gradio application. The framework uses Python only. No HTML, no CSS, and Javascript. 
+<!--more-->
+This tutorial will leverage this framework to build a functional keyboard similar to the one on your computer. 
 
 ### Prerequisites
 To follow through with this tutorial, you need to be conversant with:
