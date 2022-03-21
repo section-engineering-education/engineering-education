@@ -34,7 +34,9 @@ Here's a summarized architecture of the Swin Transformer compared to the ViT.
 The Swin Transformer outperforms ViT on image classification, semantic segmentation, and object detection tasks. In instances where every pixel must be labeled such as in semantic segmentation, is where we see the Swin Transformer excel. 
 
 ### Wrapping Up
-You can read about [ConvNets](/engineering-education/an-overview-of-convnext/). It is a pure Convolution Neural Network that borrows ideas from Transformers. Vision Transformers tries to drop convolutions. Swin Transformers is an improved ViT model with a hierarchical way of processing the image, making it more general purpose. ConvNets tries to borrow from Transformers and build a state-of-the-art model with pure convolutions. Please read on all three models as they all relate to solving computer vision tasks. 
+The Swin Transformer model is a new vision transformer model that produces a hierarchical feature representation and has linear computational complexity with respect to the input image size. It achieves state-of-the-art results on COCO object detection and semantic segmentation compared to the previous Vision Transformer (ViT) model. These performances are attributed to the use of shifted-window based self attention method deployed in this models which is the key to making it work. You can take the ideas presented in this paper and apply them to help solve a problem of your interest.
+
+Additionally, you can read about [ConvNets](/engineering-education/an-overview-of-convnext/). It is a pure Convolution Neural Network that borrows ideas from Transformers. Vision Transformers tries to drop convolutions. Swin Transformers is an improved ViT model with a hierarchical way of processing the image, making it more general purpose. ConvNets tries to borrow from Transformers and build a state-of-the-art model with pure convolutions. Please read on all three models as they all relate to solving computer vision tasks.
 
 ### Further reading
 - [Swin Transformer: Hierarchical Vision Transformer using Shifted Windows](https://arxiv.org/abs/2103.14030).
