@@ -44,8 +44,6 @@ The example program below illustrates race conditions:
 
 You can see the increased value of an integer variable in this basic example. One by one the variable's value is incremented and shown in ten different ways. Each thread will be numbered from one and nine.
 
-Save as **Example.java**
-
 ```Java
 public class Example {
   int check = 0;
