@@ -1,4 +1,22 @@
-In 2021, Transformers were introduced to replace the popular Convolutional Neural Networks (CNNs) in solving computer vision tasks. They referred to this model as the Vision Transformer (ViT). It produced state-of-the-art performance overtaking CNNs. But, the model could only solve simple classification tasks well and couldn't generalize well in complex vision tasks such as semantic segmentation and object detection. 
+---
+layout: engineering-education
+status: publish
+published: true
+url: /an-overview-of-swin-transformer/
+title: An Overview of Swin Transformer
+description: This article will give an overview of the Swin transformer model.
+author: lilian-cheptoo
+date: 2022-03-21T00:00:00-21:30
+topics: [Machine Learning]
+excerpt_separator: <!--more-->
+images:
+
+  - url: /engineering-education/an-overview-of-swin-transformer/hero.png
+    alt: An Overview of Swin Transformer Hero image
+---
+In 2021, Transformers were introduced to replace the popular Convolutional Neural Networks (CNNs) in solving computer vision tasks. They referred to this model as the Vision Transformer (ViT). 
+<!--more-->
+It produced state-of-the-art performance overtaking CNNs. But, the model could only solve simple classification tasks well and couldn't generalize well in complex vision tasks such as semantic segmentation and object detection. 
 
 Researchers introduced the Swin Transformer model to solve this problem. It introduced sliding windows (used in CNNs) into Transformers, which made them resemble ConvNets pretty much. This article will give an overview of this model.
 
