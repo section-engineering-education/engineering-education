@@ -1,14 +1,18 @@
-Optuna is a software framework used to automate optimization processes. These optimization processes aim to reduce the amount of time and effort required to complete a project while also increasing the overall output. Optuna uses grid search, random, bayesian, and evolutionary algorithms to find the best values for hyperparameters.
+In this tutorial, we will learn about Optuna - a framework to automate the hyperparameter search. Here, we will find the best hyperparameters for an XGBoost regressor model.
+<!--more-->
+[Optuna](https://optuna.org) is a software framework that automates the learning optimization processes. These optimization processes aims to reduce the amount of time and effort required to complete a machine learning project while improving its performance.
 
-Hyperparameter is a parameter whose value controls the learning process in machine learning. These are the parameters that control how the model learns from our data.
+Hyperparameter are a set of arguments that controls the learning process in machine learning algorithms.
 
-Many tools can be used to optimize models, but we will use Optuna. We will find the best hyperparameters for Xgboost regressor in an easier way. 
+Optuna uses grid search, random, bayesian, and evolutionary algorithms to find the best values for hyperparameters.
+
 ### Prerequisites
+As a prerequisite, the reader should have the following:
 - Have a basic knowledge of [Python](https://www.python.org/).
-- Have python environment of your choice installed.
+- Have Python environment of your choice installed.
+
 ### Table of contents
 - [Optimization process](#optimization-process)
-  - [Importing necessary modules](#importing-necessary-modules)
   - [Testing the model](#testing-the-model)
   - [Defining Functions](#defining-functions)
   - [Importing optuna](#importing-optuna)
@@ -20,24 +24,28 @@ Many tools can be used to optimize models, but we will use Optuna. We will find 
 - [Reference](#reference)
 
 ### Optimization process
-We will train Xgboost, conduct an in-depth analysis of hyperparameter optimization, and assess the visualization for more efficient and timely optimization.
-#### Importing necessary modules
+To learn how we can fit Optuna to our machine learning project, we will train an XGBoost model, conduct an in-depth analysis of hyperparameter optimizations, and assess the most efficient and timely optimization.
+
 We'll start by creating a data frame that includes all the relevant modules and data.
-##### **Loading the dataset**
+
+#### Load the dataset
+We import the following Python libraries:
 
 ```python
-import sklearn
-#'pandas' data frame will be used to segregate features and targets 
-import pandas as pan# provides a wide range of utilities, from parsing different file formats to converting an entire data table to a NumPy matrix array
-import numpy as num #to manipulate data as arrays
-from sklearn.datasets import load_boston# contains prices that we shall be using as our data
+import sklearn 
+import pandas as pan
+import numpy as num
+from sklearn.datasets import load_boston
 ```
 
-##### **Standard scaling the dataset**
-A pandas data frame will be used to segregate features and targets when the dataset is returned as a matrix by `load_boston().`
+- `pandas` library helps with data frame related operations
+- `numpy` provides a wide range of utilities, from parsing different file formats to converting an entire data table to a NumPy matrix array.
+- `sklearn.datasets.load_boston` is a dataset that contains housing prices in Boston. We will be using this dataset for our project.
+
+#### Standard scaling the dataset
+A pandas data frame `Our_loadboston` will be returned when we load the dataset using `load_boston().`
 
 ```python
-# The load_boston imported contains prices that we shall be using as our data and has no null or missing values 
 Our_loadboston = load_boston()
 # Subset rows or columns of dataframe 
 dataframe = pan.DataFrame(Our_loadboston.data , columns = Our_loadboston.feature_names)
@@ -48,54 +56,60 @@ y = dataframe.target
 
 from sklearn.preprocessing import StandardScaler
 standardSc = StandardScaler()
-X = standardSc.fit_transform(X)# Computes the mean and std to be used for later scaling, fit to data, then transform it.
+X = standardSc.fit_transform(X) # Computes the mean and standard deviation to scale, fit the scaled data, then transform it.
 ```
 
 The code above does the following:
-
 - Seperates the targets and features after framing the dataset into pandas dataframe.
-- Extracts features and target.
-- Scale the dataset into a single scale to help the model converge more quickly and divide the dataset into train and test sets more easily.
-- Computes the mean and standards to be used for later scaling, fit to data, then transform it.
+- Extracts features and target into `X` and `y` respectively.
+- Scales the dataset into a single scale to help the model converge more quickly and divide the dataset into train and test sets more easily.
+- Computes the mean and standard deviation of the dataset to scale, fit the scaled data, and then transform it.
 
-##### **Dataset splitting**
-The model is able to reach a more convergent state more quickly since the dataset has been divided into train and test sets.
+#### Dataset split
+To measure the performance of the model (how well the model has learned), we will divide the dataset into train and test sets as shown:
+
 ```python
 from sklearn.model_selection import train_test_split
-# We'll randomly divide up the dataset matrices into train and test subsets.
-X_train, X_test, y_train,y_test = train_test_split(X, y, test_size = 0.2, random_state = 12)# x_train: The first sequence's training phase (x) x_test: The initial sequence's test segment (x). y_train: The second sequence's training phase (y). y_test: The second sequence's test section (y)
-```
-#### Testing the model
-We can see how much better our model is after fine-tuning the parameters by testing the model. 
-> Keep in mind that this is not the optimized model.
 
-We will first start by importing Xgboost, training it, and using the `cross_val_score()` method to evaluate a score for the model. 
+X_train, X_test, y_train,y_test = train_test_split(X, y, test_size = 0.2, random_state = 12)
+```
+
+- `X_train` - Feature vectors that are to be trained
+- `X_test` - Feature vectors that are to be tested
+- `y_train` -  Target vectors that are to be trained
+- `y_test` - Target vectors that are to be tested
+
+#### Test the model
+Let's assess the performance of the model.
+
+We will first start by importing `xgboost`, training it, and using the `cross_val_score()` method to evaluate a score for the model.
 
 ```python
-# import xgboost that we will find it's best hyperparameters 
 import xgboost as gbst
 from sklearn.model_selection import cross_val_score
 xgboo_reg = gbst.XGBRegressor()
 
-ourScores = cross_val_score(xgboo_reg, X_train,y_train , scoring = 'neg_root_mean_squared_error', n_jobs = -1,cv = 10)
-                            #cross_val_score has a neg_root_mean_squared_error can be turned into a positive value by multiplying it by -1 
+ourScores = cross_val_score(xgboo_reg, X_train, y_train , scoring = 'neg_root_mean_squared_error', n_jobs = -1, cv = 10)
+#cross_val_score has a `neg_root_mean_squared_error` can be turned into a positive value by multiplying it by -1 
 print(num.mean(ourScores), num.std(ourScores))
-print(ourScores)# output: score of our model
+print(ourScores) # output: score of our model
 ```
 
 The above code does the following:
+- Evaluates the model using the `cross-validation` method.
+- Computes the standard deviation and mean of scores.
+- Outputs the score of our model as a list.
 
-- Scores our model using the `cross-validation` method.
-- Compute the standard deviation and mean of score.
-- Gives out the score of our model as an output. 
+**Output:**
 
-Output:
 ```bash
 -3.0784942308511307 # mean of score  
  0.42284534035667176 # standard deviation
 [-2.62847993 -3.60582341 -3.31998107 -3.60355075 -3.03760446 -2.50243868 -2.92302011 -2.61990331 -3.67855489 -2.8655857 ]
 ```
+
 We can see how much better our model is after optimizing the parameters by testing the model.
+
 #### Defining Functions
 This section will define the functions that take hyperparameters and return scores.
 
