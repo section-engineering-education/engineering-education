@@ -3,10 +3,11 @@
 ### Introduction
 As a beginner in web development, there are numerous applications and projects you would want to build to enhance your skills and problem-solving abilities. A custom stopwatch Typescript package is one of those interesting projects that have numerous applications in web development and can widen your Typescript horizon.
 
-In this tutorial, we will explore in detail the procedure and logic required to build your custom stopwatch NPM library in Typescript. We will also look at how to make the package available for typescript users around the world to install and implement in their various projects.
+In this tutorial, we will explore in detail the procedure and logic required to build and test your custom stopwatch NPM library in Typescript. We will also look at how to make the package available for Typescript users around the world to install and implement in their various projects.
 
 ### Key takeaways
 By the completion of this tutorial, the reader is expected to have the understanding of the following:
+
 - Some of the basics of getting started with Typescript library development.
 - Setting up a functional Typescript folder structure.
 - Building a custom stopwatch Typescript library package.
@@ -14,10 +15,11 @@ By the completion of this tutorial, the reader is expected to have the understan
 - Error handling when working Typescript libraries.
 
 ### Prerequisites
-For this tutorial, some knowledge of Typescript or JavaScript is required to follow along. You also need a functional NPM account to publish the typescript library. If you don’t have an account, please go to the official [NPM website](https://www.npmjs.com/signup/) to create one.
+For this tutorial, some knowledge of Typescript or JavaScript is required to follow along. You also need a functional NPM account to publish the Typescript library. If you don’t have an account, please go to the official [NPM website](https://www.npmjs.com/signup/) to create one.
 
 ### Getting started with TypeScript and NPM
-Before we dive into the library development, a quick overview of what TypeScript and NPM are. As you may already be familiar, TypeScript is simply a JavaScript superset. That is, it takes JavaScript and makes it better. Typescript has numerous advantages/benefits over vanilla JavaScript, which includes but are not limited to:
+Before we dive into the library development, a quick overview of what Typescript and NPM are. As you may already be familiar, Typescript is simply a JavaScript superset. That is, it takes JavaScript and makes it better. Typescript has numerous advantages/benefits over vanilla JavaScript, which includes but are not limited to:
+
 - Types definitions
 - Robust IntelliSense (code completion and suggestion)
 - Supports codes self-documentations
@@ -47,7 +49,7 @@ A good Typescript package begins with a proper folder structure. To set up your 
 Once you’ve found a unique package name, we are good to go. Run the command below to create a folder and initialize a `package.json`:
 
 ```bash
-mkdir my-custom-stopwatch 
+mkdir my-custom-stopwatch
 cd my-custom-stopwatch
 
 npm init -y
@@ -83,7 +85,7 @@ The `package.json` is more like the brain of our project, it contains and provid
 To build and publish our Typescript library, we need to install the Typescript package into our project so the development process can run smoothly. Open the command terminal and run the command below to install Typescript:
 
 ```bash
-npm install require=dev typescript 
+npm install require=dev typescript
 ```
 
 We are installing Typescript as a dev dependency because we are using it for development-only purposes, meaning the user does not need to install Typescript to consume the package.
@@ -175,7 +177,7 @@ export function watchCycle(
         ? "0" + milliseconds
         : milliseconds;
 
-    setTimeout("watchCycle()", 1000);
+    setTimeout("watchCycle()", 10);
     return (timer.innerHTML = hr + ":" + mins + ":" + secs + ":" + milsec);
   }
 }
@@ -209,11 +211,99 @@ That is all we need to set up the stopwatch logic. Finally, create an `index.ts`
 ```typescript
 export { startWatch, watchCycle, stopWatch, resetWatch } from "./stopwatch";
 ```
+### Step 6 – Testing/consuming the stopwatch locally
+Before we compile and publish our stopwatch library to NPM, we need to test it locally on our browser. Testing helps us observe and debug the package before it is published to the world.
+To test the stopwatch library, we create a `test` folder in the package root directory (`my-custom-stopwatch`). In the `test` folder, create two files (`index.html` and `test.js`).
+Once that is completed, open the `test.js` file and implement the snippet below:
 
-### Step 6 – Compiling the Typescript into JavaScript and publishing to NPM
-As a Typescript developer, we know that browsers do not execute Typescript code snippets, as such we always have to compile our Typescript files into JavaScript. This step is very easy and involves running a single command on the terminal.
+```JavaScript
+const timer = document.getElementById("my_stopwatch");
+let hours = 0;
+let minutes = 0;
+let seconds = 0;
+let milliseconds = 0;
+let timerStop = true;
+function startWatch() {
+  if (timerStop) {
+    timerStop = false;
+    watchcycle();
+  }
+}
+function stopWatch() {
+  if (timerStop == false) {
+    timerStop = true;
+  }
+}
 
-To compile the Typescript file into JavaScript, open up the command terminal and run the command below:
+function watchcycle() {
+  if (timerStop == false) {
+    milliseconds = milliseconds + 10;
+
+    if (milliseconds == 1000) {
+      milliseconds = 0;
+      seconds = seconds + 1;
+    }
+    if (seconds == 60) {
+      minutes = minutes + 1;
+      seconds = 0;
+    }
+    if (minutes == 60) {
+      hours = hours + 1;
+      minutes = 0;
+      seconds = 0;
+    }
+
+    let hr = hours < 10 ? "0" + hours : hours;
+    let mins = minutes < 10 ? "0" + minutes : minutes;
+    let secs = seconds < 10 ? "0" + seconds : seconds;
+    let milsec = milliseconds < 100 ? "0" + milliseconds : milliseconds;
+
+    setTimeout("watchcycle()", 10);
+    return (timer.innerHTML = hr + ":" + mins + ":" + secs + ":" + milsec);
+  }
+}
+
+function resetWatch() {
+  hours = 0;
+  minutes = 0;
+  seconds = 0;
+  milliseconds = 0;
+  return (timer.innerHTML = "00:00:00");
+}
+ ```
+From the snippet above, we are implementing the exact JavaScript version of our Typescript package for the purpose of testing alone. We did the following:
+
+-	We used the JavaScript `document.getElementById ` method to assign the timer to an HTML element `my_stopwatch` that we will create shortly in our `index.html` file.
+-	We then initialized the values of the hours, minutes, seconds and milliseconds to zero (0)
+-	Finally, we implemented all the Typescript functions (`stopWatch`, `startWatch`, `resetWatch`, and `watchCycle`) in our library to JavaScript so that we can execute on the browser. Recall that the functions were already explained earlier. You may refer back to the explanations if you wish to.
+
+Let us go ahead and setup the `index.html` file to render the stopwatch. To do that, implement the snippet in the `index.html` file as shown below:
+
+```HTML
+<html>
+  <head>
+    <title>My amazing Stopwatch</title>
+  </head>
+  <body>
+    <div id="my_stopwatch">00:00:00</div>
+
+    <ul id="watch_buttons">
+      <li><button onclick="stopWatch()">Stop</button></li>
+      <li><button onclick="startWatch()">Start</button></li>
+
+      <li><button onclick="resetWatch()">Reset</button></li>
+    </ul>
+
+    <script src="index.js"></script>
+  </body>
+</html>
+```
+We have created a basic stopwatch structure that includes 3 buttons with an `onclick` handler to execute the start, stop and reset operations. We also created a `div` tag with an `id="my_stopwatch"` as required in the `test.js` file.
+Now open the `index.html` file in the browser to view the amazing stopwatch.
+
+### Step 7 – Compiling the Typescript into JavaScript and publishing to NPM
+Finally, let us finish up the stopwatch library and publish to NPM. As Typescript developers, we know that browsers do not execute Typescript code snippets, as such we always have to compile our Typescript files into JavaScript. This step is very easy and involves running a single command on the terminal.
+To compile our Typescript library into JavaScript, open up the command terminal and run the command below:
 
 ```bash
 npx tsc
@@ -225,7 +315,7 @@ npx tsc
 npm install -g typescript
 ```
 
-That should fix it. Now let us go ahead and publish our new stopwatch library to NPM afterwards we consume and test the library locally.
+Once we have successfully compiled the library files to JavaScript, let us go ahead and publish our new stopwatch library to NPM.
 
 Before we go ahead and publish the stopwatch library to NPM, first ensure you created an account with NPM, if you do not have one, go to the [sign up page](https://www.npmjs.com/signup/) to create one. If you already have one, let's login in by running the command below:
 
@@ -244,97 +334,15 @@ npm publish –access public
 Once successful, you should see a notice on the command terminal showing the package name, size, integrity, shasum, and total files. We added the `--access public` flag to make the package globally available to the public.
 
 To confirm that the package has been published successfully, go to your NPM account profile and check the packages. You should see a new package with the name you picked under the packages category.
-
-### Step 7 – Consuming the package locally
-The final step in library development is to install, consume and test the stopwatch package locally. To do that, we create a new `stopwatch-test` folder by running the command below:
-
-```bash
-mkdir stopwatch-test 
-cd stopwatch-test
-
-npm init -y
-```
-
-Once that is completed, we need to install our published package locally, so run the installation command below:
-
-```bash
-npm install package-name 
-```
-
-Replace the `package-name` with the name you picked for your published library.
-Once completed, create an `index.ts` file and import and utilize the package as shown below:
-
-```typescript
-import { startWatch, watchCycle, stopWatch, resetWatch } from "my-stopwatch";
-
-const timer = document.getElementById("my_stopwatch");
-
-let hours = 0;
-let minutes = 0;
-let seconds = 0;
-let milliseconds = 0;
-let timerStop = true;
-watchCycle(timerStop, hours, minutes, seconds, milliseconds, timer);
-startWatch(timerStop, watchCycle);
-stopWatch(timerStop);
-resetWatch(hours, minutes, seconds, milliseconds, timer);
-```
-
 Typically, you would want to have a `README.md` file in the package showing users how to consume the package. Writing and adding the file is outside the scope of this tutorial.
-
-From the snippet above, we imported the `startWatch`, `stopWatch`, `watchCycle`, and `resetWatch` functions from the stopwatch package we installed. Each function accepts some parameters which include:
-
-- Hours
-- Minutes
-- Seconds
-- Milliseconds
-- timerStop
-which we initialized to zero (0). Finally, we created a timer component using the `document.GetElementById` method.
-
-Let us go ahead and create an `index.html` file to render the stopwatch. To do that, implement the snippet in the `index.html` file as shown below:
-
-```HTML
-<html>
-  <head>
-    <title>My amazing Stopwatch</title>
-
-    <link rel="stylesheet" href="index.css" />
-  </head>
-  <body>
-    <div id="my_stopwatch">00:00:00</div>
-
-    <ul id="watch_buttons">
-      <li><button onclick="stopWatch()">Stop</button></li>
-      <li><button onclick="startWatch()">Start</button></li>
-
-      <li><button onclick="resetWatch()">Reset</button></li>
-    </ul>
-
-    <script src="index.js"></script>
-  </body>
-</html>
-```
-
-We have created a basic stopwatch structure that includes 3 buttons with an `onclick` handler to execute the start, stop and reset operations. We also created a `div` tag with an `id="my_stopwatch"`as required in the `index.ts`.
-
-To view the stopwatch in the browser, remember we first need to compile the Typescript into JavaScript so the browser can execute. Open up the `command terminal` and run the command below:
-
-```bash
-npx tsc index.ts
-```
-
-The command will compile the `index.ts` file into an `index.js` which will be executed by our browser.
-
-Now open the `index.html` file in the browser to view the amazing stopwatch.
 
 ### Conclusion
 In this tutorial, we took a deep dive into the entire process of building, publishing, and testing a custom stopwatch NPM package. We also talked about the benefits of using Typescript over vanilla JavaScript. You can make use of the concepts discussed in this tutorial in creating and publishing other NPM packages in Typescript.
-
 I hope this tutorial was of great use to you.
-
 Always publish responsibly!
 
 ### References
 - [NPM official website](https://www.npmjs.com/)
 - [How to create a stopwatch in JavaScript](https://dev.to/gspteck/create-a-stopwatch-in-javascript-2mak)
+
 
