@@ -60,3 +60,6 @@ Additionally, you can read about [ConvNets](/engineering-education/an-overview-o
 - [Swin Transformer: Hierarchical Vision Transformer using Shifted Windows](https://arxiv.org/abs/2103.14030).
 - [An Image is Worth 16x16 Words: Transformers for Image Recognition at Scale](https://arxiv.org/abs/2010.11929).
 - [ConvNets](/engineering-education/an-overview-of-convnext/).
+
+---
+Peer Review Contributions by: [Wilkister Mumbi](/engineering-education/authors/wilkister-mumbi/)
