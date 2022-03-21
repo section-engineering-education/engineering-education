@@ -144,7 +144,7 @@ These consist of the following properties:
 #### Synchronized blocks
 The following is all that it entails:
 
-- This keyword locks synced blocks on the item between parentheses. Locked objects are only accessible to the synchronized block's threads.
+- The `synchronized` keyword locks synced blocks on the item between parentheses. Locked objects are only accessible to the synchronized block's threads.
 - Synchronized blocks utilize it as a lock.
 - Using a synchronized block enables you to fine-tune lock control by mutually excluding important section code.
 - The lock gets unlocked when the thread leaves the synchronized block.
