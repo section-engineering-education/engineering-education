@@ -16,7 +16,7 @@ images:
 ---
 The wavelet transform is the decomposition of signals using wavelet techniques, that is, functions. Each of these functions are shifted and a scaled copy of a function, the mother wavelet
 
-Wavelet transform is the definition of the decomposition method class. Wavelet Analyzer app is an interactive tool for using wavelets to visualize and analyze signals and images. This App can be used for the wavelet transform analysis, denoising images and signals, e.t.c.
+Wavelet transform is the definition of the decomposition method class. Wavelet Analyzer app is an interactive tool for using wavelets to visualize and analyze signals and images. This app can be used for the wavelet transform analysis, denoising images and signals, e.t.c.
 
 This article covers wavelet analysis and synthesis of images using filter banks. Also, it discusses how to perform wavelet transform analysis of images using the Wavelet Analyzer toolbox. It will also cover how to use the various wavelet functions such as `dwt2` and `idwt2`.
 
@@ -75,11 +75,11 @@ You execute the `waveletAnalyzer` command in the command window to open this too
 
 ![Wavelet analyzer toolbox](/engineering-education/wavelet-transform-analysis-of-images-using-waveletanalyzer-toolbox-in-matlab/image-eight.png)
 
-In this toolbox, as we can see, we can analyze various signals. These signals are such as 1-D, 2-D, 3-D, e.t.c. Since we want to analyze images(2-D), we select the `wavelet 2-D`.
+In this toolbox, as we can see, we can analyze various signals. These signals include; 1-D, 2-D, 3-D, e.t.c. Since we want to analyze images(2-D), we select the `wavelet 2-D`.
 
 > Note that using this toolbox, we can perform the various wavelet operations such as wavelet transform, wavelet packet transform, curvelet wavelet transform etc.
 
-After selecting `wavelet 2-D`, a new window opens up again, as shown below:
+After selecting `wavelet 2-D`, a new window opens up again, like the one below:
 
 ![Wavelet 2-D](/engineering-education/wavelet-transform-analysis-of-images-using-waveletanalyzer-toolbox-in-matlab/image-nine.png)
 
@@ -87,7 +87,7 @@ To load your data into the toolbox, click on the `file` at the top of the window
 
 ![Loading data](/engineering-education/wavelet-transform-analysis-of-images-using-waveletanalyzer-toolbox-in-matlab/image-ten.png)
 
-The command `load-image` allows you to select your input image from any folder. When you import your image, it should appear in the original image section as shown below:
+The command `load-image` allows you to select your input image from any folder. When you import your image, it should appear in the original image section as seen here:
 
 ![The image section](/engineering-education/wavelet-transform-analysis-of-images-using-waveletanalyzer-toolbox-in-matlab/image-eleven.png)
 
@@ -120,7 +120,7 @@ Where;
 The coefficients are used for the image reconstruction. It means they are arguments of the `idwt2()` function.
 
 ### Program to show the use of `dwt2()` and `idwt2()` function
-The first step is to import the input image into Matlab. Thi will be achieved using the following lines:
+The first step is to import the input image into Matlab. This will be achieved using the following lines:
 
 ```Matlab
 [filename, pathname] = uigetfile('*.*', 'Select your input grayscale image');
@@ -188,11 +188,10 @@ When we now run this program, we get the reconstructed image as like the one bel
 
 ![Reconstructed image](/engineering-education/wavelet-transform-analysis-of-images-using-waveletanalyzer-toolbox-in-matlab/image-fourteen.png)
 
-
 ### Conclusion
 As illustrated, the waveletAnalyzer toolbox is simple to use. Its interface is very clear. Also, this toolbox is not only used for wavelet transform but also denoising, e.t.c.
 
-Therefore, this toolbox is efficient even for users who have not used Matlab. Also, you don't have to write any code while using it. Since their output is accurate, the wavelet functions `dwt2()` and `idwt2()` are efficient.
+Therefore, this toolbox is efficient even for users who are unfamiliar Matlab. Also, you don't have to write any code while using it. Since their output is accurate, the wavelet functions `dwt2()` and `idwt2()` are efficient.
 
 Happy coding!
 
