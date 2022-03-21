@@ -32,7 +32,7 @@ For this tutorial, the reader should have:
 ### Why use streams?
 - **Minimum code Error**: Streams are performed step-by-step, preventing unnecessary bugs and code errors.
 - **Code is more Intuitive**: A code with streams is easy to understand and does not require much thinking.
-- **Verbose code**: This type of code needs more/longer words to describe what is going on. By using stream, you can chope off some lines of code making the code less verbose.
+- **Verbose code**: This type of code needs more/longer words to describe what is going on. By using stream, you can chope off some lines of code, making the code less verbose.
 
 ### Imperative vs. functional programmimg
 Before we start looking at the streams, we need to understand the kind of problem they solve. Let us say we have a `class book` with the `title`, the `author` of the book, and the number of `pages`. We want to count the number of books titles with more than 600 pages in this 'class book.'
