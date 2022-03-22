@@ -289,6 +289,8 @@ Add the below code to unregister the shared preferences;
 ### Step six: Running the application
 You can run the application to a virtual device(emulator) or a physical device with an `SDK` version upper than the set one during app configuration.
 
+Click [here](https://github.com/mercie-nyakio/Android-preferences) to get the complete code.
+
 ### Conclusion
 Hopefully, you have gotten the hang of Android Preferences and their uses. To understand more about using the android preference library, create or add more settings to the project.
 
