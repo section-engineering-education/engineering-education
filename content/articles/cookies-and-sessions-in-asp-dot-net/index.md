@@ -1,8 +1,25 @@
-### Introduction
-Cookies are small tokens of data that are stored on the clients computer, they're used to store user data on the client end. 
+---
+layout: engineering-education
+status: publish
+published: true
+url: /cookies-and-sessions-in-asp-dot-net/
+title: How to Create Cookies and Sessions in ASP.NET
+description: This tutorial will walk the reader through how to create cookies and sessions in ASP.NET.
+author: stanley-kuria
+date: 2022-03-21T00:00:00-16:45
+topics: [Languages]
+excerpt_separator: <!--more-->
+images:
 
+  - url: /engineering-education/cookies-and-sessions-in-asp-dot-net/hero.png
+    alt: How to Create Cookies and Sessions in ASP.NET Hero Image
+---
+Cookies are small tokens of data that are stored on the clients computer, they're used to store user data on the client end. 
+<!--more-->
 Name, user id, contacts, address etc. are examples of data stored on the client computer.
-ASP.NET supports two sets of cookies; persistent and non-persistent. Cookies that have an expiry date are referred to as persistent cookies, while those that don't expire are known as non-persistent cookies.
+ASP.NET supports two sets of cookies; persistent and non-persistent. 
+
+Cookies that have an expiry date are referred to as persistent cookies, while those that don't expire are known as non-persistent cookies.
 
 A session is a state from where user values are retrieved and kept on the webpage, it is used to pass data from one page to another in ASP.NET.
 
@@ -10,16 +27,16 @@ A website session allows users to interact with the application and perform oper
 
 ### Table of contents
 - [Prerequisites](#prerequisites)
-- [Creating cookies in ASP.NET](#creating-cookies-in-asp-dot-net)
+- [Creating cookies in ASP.NET](#creating-cookies-in-aspnet)
 - [Properties of cookies](#properties-of-cookies)
 - [Initiation and termination of a session](#initiation-and-termination-of-a-session)
-- [Implementation of sessions in ASP.NET](#implementation-of-sessions-in-asp-dot-net)
+- [Implementation of sessions in ASP.NET](#implementation-of-sessions-in-aspnet)
 - [Conclusion](#conclusion)
 
 ### Prerequisites
 To follow along with this tutorial, the reader will need the following:
 - A basic background knowledge in C# and .NET programming language.
-- Have [Visual Studio](https://my.visualstudio.com/Downloads?q=Visual%20Studio%202017) IDE installed on your computer.
+- Have [Visual Studio](https://my.visualstudio.com/Downloads?q=Visual%20Studio%202017) installed on your computer.
 
 ### Creating cookies in ASP.NET
 The `Response.cookies` is used to create a cookie in ASP.NET.
@@ -328,3 +345,5 @@ In this article we learned how to create cookies, and implement sessions using t
 
 Happy coding!
 
+---
+Peer Review Contributions by: [Jethro Magaji](/engineering-education/authors/jethro-magaji/)
