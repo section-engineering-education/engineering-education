@@ -7,7 +7,6 @@ To get started, you'll need to have:
 - Basic understanding of neural networks.
 - Basic understanding of Pytorch.
 
-
 ### Table of Contents
 - [Introduction to Pytorch](#introduction-to-pytorch)
 - [Creating a neural network](#creating-a-neural-network)
@@ -36,11 +35,16 @@ Pytorch has an `nn` module that contains all the building blocks for neural netw
 - `nn.Sigmoid` - This is an activation function. It also takes in a matrix of inputs and outputs a matrix of outputs.
 - `nn.MSELoss` - This is a loss function. It takes in a matrix of outputs and targets and outputs a scalar.
 
-Let's begin by creating a neural network that takes in a matrix of inputs and outputs a matrix of outputs:
+Let's begin by creating a neural network!
+
 #### Importing the necessary packages
 We need to import the `torch` library and other modules from the `torch` library:
 
 ```python
+import torch
+import torch.nn as nn
+import torch.nn.functional as F
+import torch.optim as optim
 import torch.utils.data as data
 import torchvision.datasets as datasets
 import torchvision.transforms as transforms
@@ -217,13 +221,40 @@ Let's see how we can train the neural network:
 - Calculate the loss gradient for the weights and biases.
 - Update the weights and biases.
 
-We shall create a for loop that will iterate over the number of epochs. We will iterate over the training data in each iteration while performing a forward pass through the network. We will then calculate the loss and achieve a backward pass through the network. Finally, calculate the loss gradient for the weights biases and update the weights.
+Let's get started!
+
+```python
+for epoch in range(num_epochs):
+    for i, (images, labels) in enumerate(train_loader):
+        #Getting data
+        images = images.to(device)
+        labels = labels.to(device)
+        # Forward pass
+        outputs = net(images)
+        loss = criterion(outputs, labels)
+        # Backward and optimize
+        optimizer.zero_grad()
+        loss.backward()
+        optimizer.step()
+        if (i+1) % 100 == 0:
+            print ('Epoch [{}/{}], Step [{}/{}], Loss: {:.4f}' 
+                   .format(epoch+1, num_epochs, i+1, len(train_dataset)//batch_size, loss.item()))
+```
+
+We have created a for loop from the code above that will iterate over the number of epochs. We will iterate over the training data in each iteration while performing a forward pass through the network. We will then calculate the loss and achieve a backward pass through the network. Finally, calculate the loss gradient for the weights biases and update the weights.
 
 #### Checking the accuracy of the model and testing the neural network
 Let's test the neural network:
 
 ```python
 def check_accuracy_of_model(loader, model):
+    if loader.dataset.train:
+        print('Checking accuracy on validation set')
+    else:
+        print('Checking accuracy on test set')
+    num_correct = 0
+    num_samples = 0
+    model.eval()  # set model to evaluation mode
     with torch.no_grad():
         for images, labels in loader:
             images = images.to(device)
