@@ -18,17 +18,17 @@ images:
 #### Introduction
 An app layout consists of several components that contain the user interface(UI) elements. User interface elements fall into four main categories; input control elements, informational elements, navigation components, and containers.
 <!--more-->
-Matlab provides an interactive environment for developing uifigure based application layouts programmatically using Matlab functions. Uifigure based apps are designed using user interface figures meant for app building.
+Matlab provides an interactive environment for developing [UI-figure](https://www.mathworks.com/help/matlab/ref/matlab.ui.figureappd-properties.html) based application layouts programmatically using Matlab functions. Uifigure based apps are designed using user interface figures meant for app building.
 
 The user interface elements perform different functions in the application. The behaviour and appearance of a user interface element are added as the element's properties and functions.
 
 #### Prerequisites
 To follow along with this tutorial, you need:
 - [MATLAB](https://www.mathworks.com/products/get-matlab.html?s_tid=gn_getml) installed.
-- Proper understanding of [MATLAB basics](/engineering-education/getting-started-with-Matlab/).
+- Proper understanding of [MATLAB basics](https://www.section.io/engineering-education/getting-started-with-matlab/).
 
 #### Objectives
-In this article, we will discuss the design of the following layout structures of uifigure based apps :
+In this article, we will discuss the design of the following layout structures of UI-figure based apps :
 
 - Containers.
 - Components.
