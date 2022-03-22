@@ -1,6 +1,21 @@
-### Getting Started with Sanity CMS
-Sanity is a React open-source content management system. 
+---
+layout: engineering-education
+status: publish
+published: true
+url: /getting-started-with-sanity-cms/
+title: How to Get Started with Sanity CMS
+description: This tutorial will walk the reader through how to get started with Sanity CMS.
+author: abimbola-taofeek
+date: 2022-03-22T00:00:00-18:45
+topics: [Languages]
+excerpt_separator: <!--more-->
+images:
 
+  - url: /engineering-education/getting-started-with-sanity-cms/hero.png
+    alt: How to Get Started with Sanity CMS Hero Image
+---
+Sanity is a React open-source content management system. 
+<!--more-->
 In case you're not familiar with the concept CMS, a content management system (CMS) is a software application that enables users to design, edit, publish, and preserve digital information. 
 
 A CMS enables you to build apps without having to start from the scratch, and it is typically used in web and business content management systems.
@@ -131,3 +146,5 @@ Happy coding!
 - [Read more on CMS](https://www.sitecore.com/knowledge-center/digital-marketing-resources/what-is-a-cms)
 - [Find out more about the headless CMS.](https://www.youtube.com/watch?v=-Uor3I0n_vQ)
 
+---
+Peer Review Contributions by: [Jethro Magaji](/engineering-education/authors/jethro-magaji/)
