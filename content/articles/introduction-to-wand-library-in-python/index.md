@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: /wand-library-in-python/
+url: /introduction-to-wand-library-in-python/
 title: Introduction To Wand Library In Python
 description: This tutorial will discuss about Wand library, its origin and how it can be used to manipulate images. We will also learn several image manipulation techniques like inverting, blurring, and drawing images.
 author: ezra-mukono
@@ -11,7 +11,7 @@ topics: [Languages]
 excerpt_separator: <!--more-->
 images:
 
-  - url: /engineering-education/wand-library-in-python/hero.png
+  - url: /engineering-education/introduction-to-wand-library-in-python/hero.png
     alt: Introduction To Wand Library In Python Hero Image
 ---
 Wand library is a [ctypes](https://docs.python.org/3/library/ctypes.html#module-ctypes)-based simple [ImageMagick](https://imagemagick.org/index.php) binding for Python.
@@ -84,7 +84,7 @@ From the above code:
 
 The input image is:
 
-![python](/engineering-education/wand-library-in-python/python.png)
+![python](/engineering-education/introduction-to-wand-library-in-python/python.png)
 
 **Output:**
 
@@ -113,11 +113,11 @@ From the above code:
 - The `sigma` parameter describes the sigma value that denotes the standard deviation of the gaussian filter. It is always an integer input.
 - Finally, we save the image.
 
-![python](/engineering-education/wand-library-in-python/python.png)
+![python](/engineering-education/introduction-to-wand-library-in-python/python.png)
 
 **Output:**
 
-![python](/engineering-education/wand-library-in-python/python1.png)
+![python](/engineering-education/introduction-to-wand-library-in-python/python1.png)
 
 ### Transform an image
 Image transformation is an essential and a robust feature when dealing with images. Image transformation deals with rotating, inverting, adding effects, and so on.
@@ -139,11 +139,11 @@ The following steps are used to transform an image:
 - The `clone()` function is called for making a copy of the image.
 - The cloned and flipped image is then saved in a specific location.
 
-![python](/engineering-education/wand-library-in-python/python.png)
+![python](/engineering-education/introduction-to-wand-library-in-python/python.png)
 
 **Output:**
 
-![python2](/engineering-education/wand-library-in-python/python2.png)
+![python2](/engineering-education/introduction-to-wand-library-in-python/python2.png)
 
 ### Draw an image
 Apart from the above features that we have looked at, with Wand, drawing an image and displaying it is also possible.
@@ -176,7 +176,7 @@ From the above code:
 
 **Output:**
 
-![python5](/engineering-education/wand-library-in-python/python5.png)
+![python5](/engineering-education/introduction-to-wand-library-in-python/python5.png)
 
 ### Comparison with other image libraries
 For image manipulation, apart from Wand, we have other libraries like pillow and OpenCV. Now, we will look at how these libraries differ from each other.
@@ -205,11 +205,11 @@ Original image size: (601, 203)
 Resized image size: (200, 200)
 ```
 
-![python](/engineering-education/wand-library-in-python/python.png)
+![python](/engineering-education/introduction-to-wand-library-in-python/python.png)
 
 The image was initially of size `601` by `203`, and after resizing it:
 
-![pp](/engineering-education/wand-library-in-python/pp.png)
+![pp](/engineering-education/introduction-to-wand-library-in-python/pp.png)
 
 ### Conclusion
 To conclude, we outlined what one can do using the image library in Wand — blurring, resizing, drawing, and transforming images.
