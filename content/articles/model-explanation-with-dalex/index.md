@@ -11,7 +11,7 @@ topics: [Languages]
 excerpt_separator: <!--more-->
 images:
 
-  - url: /engineering-education/model-explanation-with-dalex/hero.png
+  - url: /engineering-education/model-explanation-with-dalex/hero.jpg
     alt: Machine Learning Model Explanation with Dalex Hero Image
 ---
 Machine learning engineers build models but hide the implementation from the end-users. The end-users apply the model blindly without knowing the model implementation. They do not know the functions, methods, and algorithms that train the model.
