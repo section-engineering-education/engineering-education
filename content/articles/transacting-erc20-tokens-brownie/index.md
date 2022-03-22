@@ -1,12 +1,27 @@
-### Introduction
-ERC20 tokens are a representation of something on the Ethereum Blockchain. They can reference a representation of Gold, in which case those tokens are very valuable. They can also reference a representation of someone's toenails, in which case those tokens are somewhat less valuable.
+---
+layout: engineering-education
+status: publish
+published: true
+url: /introduction-on-how-to-create-erc20-tokens-and-transact-using-brownie-python/
+title: Introduction on how to Create ERC20 Tokens and Transact using Brownie (Python)
+description: This tutorial will guide the reader on how to create ERC20 Tokens and Transact using Brownie and python.
+author: raphael-ndonga
+date: 2022-03-22T00:00:00-12:00
+topics: [Languages]
+excerpt_separator: <!--more-->
+images:
+
+  - url: /engineering-education/introduction-on-how-to-create-erc20-tokens-and-transact-using-brownie-python/hero.jpg
+    alt: Transact erc20 tokens using brownie Hero Image
+---
+ERC20 tokens are a representation of something on the Ethereum Blockchain. They can reference a representation of Gold, in which case those tokens are very valuable. They can also reference a representation of someone's toenails, in which case, those tokens are less valuable.
 
 ### Objectives
 In this article, you will obtain all the knowledge you need to deploy and transact your own ERC20 token, by doing the following: 
 
-- Create your own ERC20 token
+- Create your own ERC20 token.
 - Deploy your token to a local blockchain.
-- Make transactions using your token
+- Make transactions using your token.
 - Create a smart contract that interacts with your token.
 
 ### Prerequisites
@@ -113,7 +128,7 @@ brownie run transact_token
 ```
 
 ### Transacting with the Token
-You have your token deployed on the blockchain, now you need to check the balance.
+You have your token deployed on the blockchain. Now you need to check the balance.
 In *transact_token.py* create a new function:
 ```python
 def get_token_balance(account_address):
@@ -138,7 +153,7 @@ Run:
 brownie run transact_token
 ```
 
-With the knowledge that you `account_0` has enough tokens, now send it to other accounts. In *transact_token.py* create a new function:
+Knowing that your `account_0` has enough tokens, now send it to other accounts. In *transact_token.py* create a new function:
 ```python
 def send_token(receiver,amount):
     my_token = MyToken[-1]
@@ -197,7 +212,7 @@ contract QuizReward {
 ```
 
 `correctAnswer` contains the number to be compared against.
-`reward` contains the amount of tokens to be sent to whoever answers correctly.
+`reward` contains the number of tokens to be sent to whoever answers correctly.
 
 The function `convertToWei` converts the input number to 18 decimal places.
 
@@ -346,9 +361,8 @@ There are a few functions which have not been covered here. For example:
 With the basics in place, you can easily adapt these functions into your code without a hassle.
 
 ### Conclusion
-ERC20 tokens are very useful and have found applications in a variety of areas.
-
-In this tutorial, you have learned how to create  these ERC20 tokens. You have deployed them to a local blockchain using ganache, but you can challenge yourself by deploying it to a testnet such as `Rinkeby` or even the `Mainnet`! 
-You have also learned all the various ways you can transact using your token, and also making a smart contract transact your token.
+ERC20 tokens are very useful and have found applications in a variety of areas. In this tutorial, you have learned how to create these ERC20 tokens, and deploy them to a local blockchain using ganache, but you can challenge yourself by deploying it to a test net such as `Rinkeby` or even the `Mainnet`! You have also learned all the various ways you can transact using your token, and also making a smart contract transact your token.
 
 Congratulations on making it this far! Go forth and deploy your tokens!
+---
+Peer Review Contributions by: [Mohamed alghadban](/engineering-education/authors/mohamed-alghadban/)
