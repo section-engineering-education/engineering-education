@@ -2,17 +2,17 @@
 layout: engineering-education
 status: publish
 published: true
-url: /polymorphism-in-python/
-title: Polymorphism in python
-description: This tutorial will introduce the reader to the concept of polymorphism in python.
-author: Justus Kamau
-date: 2022-03-18T00:00:00-09:00
+url: /creating-user-authentication-ui-with-compose-for-desktop/
+title: Creating User Authentication UI with Compose for Desktop
+description: This tutorial will help the reader create a user authentication UI with compose for Desktop.
+author: collince-okeyo
+date: 2022-03-22T00:00:00-11:00
 topics: [Languages]
 excerpt_separator: <!--more-->
 images:
 
-  - url: /engineering-education/polymorphism-in-python/hero.jpg
-    alt: Introduction to Polymorphism in python Hero Image
+  - url: /engineering-education/creating-user-authentication-ui-with-compose-for-desktop/hero.jpg
+    alt: Creating User Authentication UI with Compose for Desktop Hero Image
 ---
 Desktop applications run on desktop machines. They are being used almost everywhere, for example, in a school management system. Before Compose Desktop came into existence, the Java SWING library was used to develop these desktop applications. With the new technology of Compose Desktop coming into existence, we can have a choice of which technology to use when we want to develop a desktop app.
 
