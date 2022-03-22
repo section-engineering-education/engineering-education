@@ -38,9 +38,14 @@ To read along with this tutorial you should:-
 - Have a fundamental grasp of Android programming.
 - Have a thorough knowledge of the Kotlin programming language.
 - ViewModels concept as utilized in Android.
+- Have Android Studio IDE
 
 ### Goals
-This tutorial aims to explain what is pre-populating room database with initial data as used in android. what is a room Callback is and how is it added to the database? How to implement prefilling room database with data and when it is necessary to pre-populate a room database.
+This tutorial aims to explain :
+- what is pre-populating room database with initial data as used in android. 
+- what is a room Callback is and how is it added to the database? 
+- How to implement prefilling room database with data  
+- when it is necessary to pre-populate a room database.
 
 ### What is Pre-populating Room Database with Initial Data
 It is a technique in which an application is launched with existing data in its database, which might be prepared database(.db) files stored on the device's file system or even JSON data.
