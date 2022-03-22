@@ -4,7 +4,7 @@ status:
 published: 
 url: /understanding-the-map-data-type-in-dart/
 title: Introduction to Frequent Itemset Mining with Python
-description: In this article, we'll learn what frequent itemset mapping is, its key concepts, and also application areas. In the end, we'll create a simple frequent itemset mapping table.
+description: In this article, we will learn about frequent itemset mapping, its key concepts, and application areas. In the end, we will create a simple frequent itemset mapping table.
 author: elly-omondi
 date: 2022-03-03T00:00:00-12:30
 topics: [Language]
@@ -12,15 +12,15 @@ excerpt_separator: <!--more-->
 images:
 
   - url: /engineering-education/introduction-to-frequent-itemset-mining-with-python/hero.jpg
-    alt: Hero Image
+    alt: Frequent Itemset Mining with Python Hero Image
 ---
 
-Data is the new gold! So, they say. Every organization is now obsessed with Data mining, all in an attempt to build up a knowledge base, better their services, or even have a competitive advantage in the industry. 
+Data is the new gold! Every organization is now obsessed with Data mining, all in an attempt to build up a knowledge base, better their services, or even have a competitive advantage in the industry. 
+<!--more-->
+There are numerous data mining techniques. However, in this article,  we will learn frequent itemset mapping, its key concepts, and application areas as a data mining technique. In the end, we will create a simple frequent itemset mapping table. But first, the basics.
 
-There are numerous data mining techniques, but in this article, we'll learn what frequent itemset mapping is, its key concepts, and application areas as a data mining technique. In the end, we'll create a simple frequent itemset mapping table. But first, the basics.
 Let’s get started!
 
-<!--more-->
 ### Table of content
 This article will cover:
 - [What is Frequent Itemset?](#What-is-frequent-itemset)
@@ -30,22 +30,21 @@ This article will cover:
 - [Creating a Frequent Itemset Mining](#Creating-a-frequent-itemset-mining)
 - [Conclusion](#Conclusion)
 
-Have you ever been to a shop to purchase an item, and you ended up buying other items you had not planned? Often, that is frequent itemset mapping at play. Organizations are now building algorithms that implement frequent itemset mapping to push sales, recommend content and items, and create knowledge bases from a target group (customers).
+Have you ever been to a shop to purchase an item, and you bought other items you had not planned? Often, that is frequent itemset mapping at play. Organizations are now building algorithms that implement frequent itemset mapping to push sales, recommend content and items, and create knowledge bases from a target group (customers).
 
 ### What is Frequent Itemset?
+When items are grouped, they form an itemset. An itemset can have as many items as possible, often referred to as a k-item set depending on the number of items contained. For instance, the following data can form an itemset: {Uniform, Crayon, Pencil, Bag, Book, Rubber}.
 
-Items grouped together form an itemset. An itemset can have as many items as possible, often referred to as a k-item set depending on the number of items contained. For instance, the following data can form an itemset: {‘Uniform’,’Crayon’,’Pencil’,’Bag’,’Book’,’Rubber’}.
-
-A [Frequent Itemset](https://www.sciencedirect.com/topics/computer-science/frequent-itemsets), therefore, is a combination of elements that often appear together. A Frequent Itemset is a subset(s) of an itemset that occurs in a dataset with a particular frequency. Given a frequency value, perhaps of 0.1 or 0.01%, for a stationery store, all subsets of school items that many customers have bought at different times are called Frequent Itemset.
+A [Frequent Itemset](https://www.sciencedirect.com/topics/computer-science/frequent-itemsets) is a combination of elements that often appear together. A Frequent Itemset is a subset(s) of an itemset that occurs in a dataset with a particular frequency. For instance, given a frequency value, perhaps of 0.1 or 0.01%, for a stationery store, all subsets of school items that many customers have bought at different times are called Frequent Itemset.
 
 For example, a set of school items such as {'Uniform', 'Bag', 'Book'} is a Frequent Itemset if sufficiently many customers buy it.
 
 ### Why Frequent Itemset Mining?
-
-[Frequent itemset mining](https://wires.onlinelibrary.wiley.com/doi/abs/10.1002/widm.1329) (pattern mining) is an important technique used to derive relationships such as regularities in customers' shopping behavior in physical and online stores. Out of the relationships, association rules can be discovered. 
+[Frequent itemset mining](https://wires.onlinelibrary.wiley.com/doi/abs/10.1002/widm.1329) (pattern mining) is a technique used to derive relationships such as regularities in customers' shopping behavior in physical and online stores to discover association rules out of the relationships.
 
 In particular, Frequent Itemset mapping is a data mining technique that seeks to derive items that are frequently bought together.
-Association rules seek to show how often products are purchased together. When the rules are established, such groups of related products may be used to optimize the arrangement of the offered products on maybe display shelves of retail stores, online stores, or possibly provide inference on which items should be closely bundled.
+
+Association rules show how often products are purchased together. When the rules are established, such groups of related products may be used to optimize the arrangement of the offered products on maybe display shelves of retail stores, online stores, or possibly provide inference on which items should be closely bundled.
 
 
 ### Key concepts of itemset mining
@@ -54,17 +53,17 @@ Below are basic definitions around itemset mining techniques:
 **Support**: It refers to the popularity of a product in a transaction database – a measure of interestingness. Support is derived from dividing the number of transactions comprising a product (of some interestingness) by the total number of transactions in a database. i.e., 
 Support (Bread) = (Transactions relating Bread) / (Total transactions).
 
-**Confidence**: Confidence shows the possibility that the customers bought two items together in a single transaction. So, you need to divide the number of transactions with both items by the total number of transactions in a database to get the confidence.
-Hence,
+**Confidence**: Confidence shows the possibility that the customers bought two items together in a single transaction. To get the confidence, you need to divide the number of transactions with both items by the total number of transactions in a database.
+
 Confidence = (Transactions relating both Bread and Milk) / (Total transactions involving Bread)
 
-**Maximal Itemset**: If none of an Itemset’s supersets are frequent, the itemset is said to be maximal frequent.
-
+**Maximal Itemset**: If none of an Itemset’s supersets is frequent, the itemset is said to be maximal frequent.
 
 ### Application areas of Frequent Itemset Mining
-
 Frequent Itemsets are determined by [Apriori](https://www.geeksforgeeks.org/apriori-algorithm/), [Eclat](https://towardsdatascience.com/the-eclat-algorithm-8ae3276d2d17), and [FP-growth](https://towardsdatascience.com/understand-and-build-fp-growth-algorithm-in-python-d8b989bab342#:~:text=FP%2Dgrowth%20is%20an%20improved,or%20associations%20from%20data%20sets.) algorithms. 
+
 Apriori algorithm is the commonly used frequent itemset mining algorithm. It works well for association rule learning over transactional and relational databases. 
+
 Frequent Itemsets discovered through Apriori have many applications in data mining tasks such as:
 
 - *[Market basket analysis](https://www.techtarget.com/searchcustomerexperience/definition/market-basket-analysis)*.
@@ -73,8 +72,7 @@ Frequent Itemsets discovered through Apriori have many applications in data mini
 
 
 ### Creating a Frequent Itemset Mining
-
-Before we proceed, we need to have a rough idea of how frequent items are discovered. A frequent individual item is first discovered from a dataset before extending them with other identified frequent items as long as they appear sufficiently together in the dataset/database. 
+Before we proceed, we need to have a rough idea of how frequent items are discovered. A frequent individual item is first discovered from a dataset before extending them with other identified items as long as they appear sufficiently together in the dataset/database. 
 
 Doing this process manually is almost an impossible task. But luckily, Python has the necessary libraries for implementing Apriori algorithms. 
 So action now!
@@ -85,19 +83,22 @@ This section will make us of the following Python libraries:
 2. [Mlxtend](http://rasbt.github.io/mlxtend/user_guide/frequent_patterns/apriori/) for [Apriori](https://www.geeksforgeeks.org/apriori-algorithm/) implementation.
 
 #### Step 1 : Importing Libraries
-First, we’ll import the required libraries for our task using the code below. To initialize the libraries above, run the scripts below in your Jupyter Notebook or Google Colab environment.
+First, we will import the required libraries for our task using the code below. Then, to initialize the libraries above, run the scripts below in your Jupyter Notebook or Google Colab environment.
 
 ```Python
 import pandas as pd
 from mlxtend.preprocessing import TransactionEncoder
 from mlxtend.frequent_patterns import apriori, association_rules
 ```
+
 An output similar to this should appear in your working environment:
+
 ![Imports](/engineering-education/introduction-to-frequent-itemset-mining-with-python/importing.png)
 
 #### Step 2: Dataset Creation
 Next, we need a dataset to work with, a simple representation of a transactional database.
-We’ll create a custom data frame for this purpose and work with it to model a simple frequent itemset mapping using Python.
+
+We will create a custom data frame and work with it to model a simple frequent itemset mapping using Python.
 
 ```Python
 dataset = [['Milk','Onion', 'Bread', 'Kidney Beans','Eggs','Yoghurt'],
@@ -108,16 +109,18 @@ dataset = [['Milk','Onion', 'Bread', 'Kidney Beans','Eggs','Yoghurt'],
             
 ]
 ```
-You can type the data in your running cell to get a similar output as this:
+
+You can type the data in your running cell to get similar output like this:
+
 ![Dataset](/engineering-education/introduction-to-frequent-itemset-mining-with-python/dataset.png)
 
-To understand the dataset, each row in the data frame represents items that were bought at a store. 
+To understand the dataset, each row in the data frame represents items bought at a store. 
 
 #### Step 3: Data Encoding
-
 We need to transform our dataset to use the Apriori algorithm available in the mlxtend library. Apriori module works with a data frame encoded into 0 and 1 or True and False. 
 
 The data in our case is all string (name of items), thus the need to perform One Hot Encoding on the data.
+
 Run the code below in a new cell in your working environment to transform the dataset as shown below:
 
 ```Python
@@ -130,7 +133,6 @@ df
 ![Encoding](/engineering-education/introduction-to-frequent-itemset-mining-with-python/encoding.png)
 
 #### Step 4:  Applying Apriori
-
 Python has an inbuilt Apriori module from the mlxtend library, which provides a fast and efficient implementation of frequent itemset mining.
 
 Below is a script with some parameters passed to execute the Apriori algorithm and generate frequent itemsets.
@@ -155,7 +157,7 @@ The script above generates the frequent itemsets as shown below:
 
 ### Conclusion
 
-In this tutorial, we have learned what frequent itemset mining is and how to create simple itemset mining. We have also seen where these technique manipulate can be used to output user needs. Do not forget to test out mining with transactional databases in your projects to understand how they work entirely.
+This tutorial has taught us what frequent itemset mining is and how to create simple itemset mining. We have seen where these techniques can be used to manipulate the output user needs. Do not forget to test out mining with transactional databases in your projects to understand how they work entirely.
 
 
 Happy learning!
@@ -164,4 +166,3 @@ Happy learning!
 - [Frequent Itemset Mining](https://github.com/topics/frequent-itemset-mining)
 - [Apriori](https://intellipaat.com/blog/data-science-apriori-algorithm/)
 - [Apriori](https://www.section.io/engineering-education/apriori-algorithm-in-python/)
-
