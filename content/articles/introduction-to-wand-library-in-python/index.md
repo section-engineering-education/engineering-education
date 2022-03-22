@@ -71,7 +71,7 @@ Now, let's look at an example to return the width and height of an image:
 from Wand.image import image as wandImage  # We will start importing the image library from the Wand.
 
 # The second step is to import the image using its correct pathname.
-with wandImage(filename='/wand-library-in-python/python.png') as img:
+with wandImage(filename='/wand-library-in-python/original_image.png') as img:
     # The third step is to print the image's height and width.
     print('The Height of the image is:', img.height)
     print('The width of the image is:', img.width)
@@ -84,7 +84,7 @@ From the above code:
 
 The input image is:
 
-![python](/engineering-education/introduction-to-wand-library-in-python/python.png)
+![python](/engineering-education/introduction-to-wand-library-in-python/original_image.png)
 
 **Output:**
 
@@ -100,9 +100,9 @@ One may decide to blur an image using the `pillow` package, while the other may 
 
 ```python
 from Wand.image import Image as wandImage  # Import the image library from Wand
-with wandImage(filename='/wand-library-in-python/python.png') as img:  # Import the image using the correct image location.
+with wandImage(filename='/wand-library-in-python/original_image.png') as img:  # Import the image using the correct image location.
     img.blur(radius=1, sigma=3) # Blur function and its dimensions    
-    img.save(filename='/wand-library-in-python/python1.png') # Save the blurred image using to a certain location.    
+    img.save(filename='/wand-library-in-python/blurred_image.png') # Save the blurred image using to a certain location.    
 ```
 
 From the above code:
@@ -113,11 +113,11 @@ From the above code:
 - The `sigma` parameter describes the sigma value that denotes the standard deviation of the gaussian filter. It is always an integer input.
 - Finally, we save the image.
 
-![python](/engineering-education/introduction-to-wand-library-in-python/python.png)
+![python](/engineering-education/introduction-to-wand-library-in-python/original_image.png)
 
 **Output:**
 
-![python](/engineering-education/introduction-to-wand-library-in-python/python1.png)
+![python](/engineering-education/introduction-to-wand-library-in-python/blurred_image.png)
 
 ### Transform an image
 Image transformation is an essential and a robust feature when dealing with images. Image transformation deals with rotating, inverting, adding effects, and so on.
@@ -127,11 +127,11 @@ Here, we try to invert the image as shown below:
 ```python
 from Wand.image import Image  # Let's import the image library
 
-with Image(filename='/wand-library-in-python/python1.png') as img:  # Get image
+with Image(filename='/wand-library-in-python/blurred_image.png') as img:  # Get image
                             
     with image.clone() as flip: # Clone image
         flip.flip() # flip function. The flip function is used to reverse the order of elements.
-        flip.save(filename='/wand-library-in-python/python2.png') # Save image
+        flip.save(filename='/wand-library-in-python/inverted_image.png') # Save image
 ```
 
 The following steps are used to transform an image:
@@ -139,11 +139,11 @@ The following steps are used to transform an image:
 - The `clone()` function is called for making a copy of the image.
 - The cloned and flipped image is then saved in a specific location.
 
-![python](/engineering-education/introduction-to-wand-library-in-python/python.png)
+![python](/engineering-education/introduction-to-wand-library-in-python/original_image.png)
 
 **Output:**
 
-![python2](/engineering-education/introduction-to-wand-library-in-python/python2.png)
+![python2](/engineering-education/introduction-to-wand-library-in-python/inverted_image.png)
 
 ### Draw an image
 Apart from the above features that we have looked at, with Wand, drawing an image and displaying it is also possible.
@@ -165,7 +165,7 @@ with Drawing() as img_draw:
         background = Color('blue')  
         ) as img:  
         img_draw(img)  
-        img.save(filename = '/wand-library-in-python/python5.png') 
+        img.save(filename = '/wand-library-in-python/draw_image.png') 
 ```
 
 From the above code:
@@ -176,7 +176,7 @@ From the above code:
 
 **Output:**
 
-![python5](/engineering-education/introduction-to-wand-library-in-python/python5.png)
+![python5](/engineering-education/introduction-to-wand-library-in-python/draw_image.png)
 
 ### Comparison with other image libraries
 For image manipulation, apart from Wand, we have other libraries like pillow and OpenCV. Now, we will look at how these libraries differ from each other.
@@ -191,9 +191,9 @@ For example, let's take a look at resizing an image using pillow package.
 
 ```python
 from PIL import Image
-image=Image.open('python.png')
+image=Image.open('original_image.png')
 new_image=image.resize((200,200))
-new_image.save('pp.png')
+new_image.save('pillow.png')
 print('Original image size: ', image.size)
 print('Resized image size: ', new_image.size)
 ```
@@ -205,11 +205,11 @@ Original image size: (601, 203)
 Resized image size: (200, 200)
 ```
 
-![python](/engineering-education/introduction-to-wand-library-in-python/python.png)
+![python](/engineering-education/introduction-to-wand-library-in-python/original_image.png)
 
 The image was initially of size `601` by `203`, and after resizing it:
 
-![pp](/engineering-education/introduction-to-wand-library-in-python/pp.png)
+![pp](/engineering-education/introduction-to-wand-library-in-python/pillow.png)
 
 ### Conclusion
 To conclude, we outlined what one can do using the image library in Wand — blurring, resizing, drawing, and transforming images.
