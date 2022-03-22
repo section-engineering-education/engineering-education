@@ -2,17 +2,17 @@
 layout: engineering-education
 status: publish
 published: true
-url: /what-is-dataops-and-why-data-engineers-need-it/
-title: What is DataOps and Why Data Engineers Need it
-description: This article will dig deeper into DataOps what it is and why data engineers need it.
+url: /develop-and-deploy-fast-apps-with-vite-js/
+title: How to Develop and Deploy Fast Applications with Vite JS
+description: This article will discuss what Vite is, how it works, and its features to help us understand why we need it. we will look at how easy it is getting Vite up and running.
 author: esther-waithera
-date: 2022-02-20T00:00:00-12:40
-topics: [Languages]
+date: 2022-03-22T00:00:00-16:40
+topics: []
 excerpt_separator: <!--more-->
 images:
 
-  - url: /engineering-education/what-is-dataops-and-why-data-engineers-need-it/hero.jpg
-    alt: What is DataOps and why Data Engineers need it example image
+  - url: /engineering-education/develop-and-deploy-fast-apps-with-vite-js/hero.jpg
+    alt: How to Develop and Deploy Fast Applications with Vite JS Hero Image
 ---
 Vite is a JavaScript development tool that greatly enhances front-end development. It was created to simplify, build, and speed up the development process. 
 
