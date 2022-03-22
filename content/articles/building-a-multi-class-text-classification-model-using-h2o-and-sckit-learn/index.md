@@ -1,6 +1,6 @@
 Text classification is an essential task in natural language processing that categorizes various texts into classes. 
 
-A text classification model is trained using a text dataset. Then, the model learns from the test dataset and make predictions. 
+A text classification model is trained using a text dataset. Then, the model learns from the test dataset and makes predictions. 
 
 Text classification models perform tasks such as [intent detection](https://sentione.com/blog/new-state-of-the-art-intent-detection-model-from-sentione), [topic labeling](https://medium.com/@gab.choojj/airline-topic-labeling-and-classification-using-latent-dirichlet-allocation-lda-d88d91b2c6ef), [sentiment analysis](/engineering-education/sentiment-analysis-with-spacy-and-scikit-learn/) and [spam detection](/engineering-education/spam-detection-model-using-scikit-learn).
 
@@ -39,7 +39,23 @@ A reader should:
 - Know how to implement [Scikit-learn algorithms.](https://scikit-learn.org/stable/)
 - Understand [text pre-processing-techniques](https://www.analyticsvidhya.com/blog/2021/09/essential-text-pre-processing-techniques-for-nlp/)
 - Know how to build a [natural language processing model](/engineering-education/nlp-based-detection-model-using-neattext-and-scikit-learn/)
-- Use Google [Colab](https://research.google.com/colaboratory/)
+
+You must use [Google Colab](89N3PDyZzakoH7W6n8ZrjGDDktjh8iWFG6eKRvi3kvpQ) notebook to build the model. Google Colab notebook has fast CPUs and GPUs. Ensure you connect to GPU in Google Colab to speed up the process of building the model.
+
+### Connecting to GPU in Google Colab
+To use Google Colab’s GPU, follow the steps below:
+
+1. Click the `Runtime` option.
+
+![Runtime option](/engineering-education/building-a-multi-class-text-classification-model-using-h2o-and-sckit-learn/runtime.png)
+
+2. Click `Change runtime type`.
+
+![Change runtime type](/engineering-education/building-a-multi-class-text-classification-model-using-h2o-and-sckit-learn/change-runtime-type.png)
+
+3. Then select the `GPU` option and save
+
+![GPU option](/engineering-education/building-a-multi-class-text-classification-model-using-h2o-and-sckit-learn/gpu-option.png)
 
 ### H2O library
 H2O is an open-source machine learning library that provides supervised and unsupervised machine learning algorithms. It is robust and easily scalable.
@@ -82,7 +98,7 @@ import h2o
 from h2o.automl import H2OAutoML
 ```
 
-We use `H2OAutoML` to run multiple machine learning algorithms during training then selects the best algorithm.
+We use `H2OAutoML` to run multiple machine learning algorithms during training then select the best algorithm.
 
 ### Initializing H2O
 Use this code snippet to initialize H2O:
@@ -91,7 +107,7 @@ Use this code snippet to initialize H2O:
 h2o.init()
 ```
 
-The snippet above run H2O clusters. We need to use its memory for text classification.
+The snippet above runs H2O clusters. We need to use its memory for text classification.
 
 The image below shows the H2O clusters.
 
@@ -100,7 +116,7 @@ The image below shows the H2O clusters.
 ### Customer complaints dataset
 The customer complaints dataset trains the classification model. When we have a new customer complaint, the model will classify it into one of the classes. 
 
-You can download the customer complaints dataset [here](https://drive.google.com/file/d/1tC7KWKJzWYdLtrYdwlXHRti4nFCdHHip/view?usp=sharing)
+You can download the customer complaints dataset [here](https://drive.google.com/file/d/1wtocenD095o98GKJDXMi8CeVVHYd6qx2/view?usp=sharing)
 
 We will use `Pandas` to read the dataset. 
 
@@ -111,7 +127,7 @@ import pandas as pd
 To read the dataset, use this code snippet below:
 
 ```python
-df=pd.read_csv('customer_complaints')
+df=pd.read_csv('/content/consumer_compliants.csv')
 ```
 
 To see the loaded dataset, use this command:
@@ -152,7 +168,7 @@ df['Company'].value_counts()
 
 
 #### Renaming `Consumer complaint narrative` column
-We rename the column into `complaints` using this code: 
+We will rename the column into `complaints`. The new name is shorter and more machine-readable. The model can easily understand the new name and use the column during training. To rename the column use this code:
 
 ```python
 complaints_df=df[['Consumer complaint narrative','Product','Company']].rename(columns={'Consumer complaint narrative':'complaints'})
@@ -285,23 +301,58 @@ from sklearn.feature_extraction.text import TfidfVectorizer
 Let's initialize `TfidfVectorizer` function.
 
 ```python
-vectorizer_tf = TfidfVectorizer(tokenizer=preprocessing)
+vectorizer_tf = TfidfVectorizer(tokenizer=preprocessing, stop_words=None, max_df=0.75, max_features=1000, lowercase=False, ngram_range=(1,2))
 ```
+The function has the following parameters:
+
+- `tokenizer=preprocessing`
+It is the function that performs all text preprocessing steps.
+
+- `stop_words=None`
+It ensures that the function does not vectorize the words in the stop words list.
+
+- `max_df=0.75`
+The function will vectorize 75% of the stemmed words. We have a large text dataset using the whole dataset may slow down the vectorization process.
+
+- `max_features=1000`
+These are the maximum number of unique words in the dataset that the function will vectorize. We only select 1000 words because we have a large dataset and it may slow down the vectorization process.
+
+- `lowercase=False`
+It ensures the function only vectorizes the words that are in lowercase.
+
+- `ngram_range=(1,2)`
+ngram_range is a continuous sequence of words or symbols or tokens in the stemmed text. Our stemmed text will have either 1 or 2 words.
+
 We now apply the method to both the training and testing dataset.
 
 #### Applying `TfidfVectorizer`
 
 ```python
-train_vectors = vectorizer_tf.transform(X_train.complaints)
+train_vectors = vectorizer_tf.fit_transform(X_train.complaints) 
 test_vectors = vectorizer_tf.transform(X_test.complaints)
 ```
 ### Converting the train and test sets into an array
 We convert the train and test sets into an array using the `toarray` method.
 
+To convert the train set, use this code:
+
 ```python
-train_df=pd.DataFrame(train_vectors.toarray())
-test_df=pd.DataFrame(test_vectors.toarray())
+train_df=pd.DataFrame(train_vectors.toarray(), columns=vectorizer_tf.get_feature_names())
+test_df=pd.DataFrame(test_vectors.toarray(), columns=vectorizer_tf.get_feature_names())
 ```
+The code above converts the train set and test set into an array using the `toarray` method. It also adds the 1000 features that we have selected from the original text data using the `get_feature_names` method.
+
+We also need to add the `target` column to these new data frames (`train_df` and `test_df`)
+
+### Adding the target column
+To add the target column, use this code:
+
+```python
+train_df=pd.concat([train_df,X_train['target'].reset_index(drop=True)], axis=1)
+test_df=pd.concat([test_df,X_test['target'].reset_index(drop=True)], axis=1)
+```
+The `concat` function will concatenate or merge the data frames with the target column. The final data frames will have the 1000 features that we selected and the target column.
+
 ### Creating H2O Data Frame
 We will convert our Pandas Data Frame to H2O Data Frame. The H2O will use the created Data Frame during algorithm selection and training.
 
@@ -324,13 +375,13 @@ We are now ready to use H2O AutoML to run multiple models then select the best.
 Let us initialize the H2O AutoML algorithm and its parameters.
 
 ```python
-aml = H2OAutoML(max_models = 10, seed = 10, exclude_algos = ["StackedEnsemble"], balance_classes=True)
+aml = H2OAutoML(max_models = 5, seed = 10, exclude_algos = ["StackedEnsemble"], verbosity="info", nfolds=0, balance_classes=True, max_after_balance_size=0.3)
 ```
 
 From the code above, we have initialized the `H2OAutoML` algorithm with the following parameters:
 
 - `max_models`
-It specifies the maximum number of models that `H2OAutoML` will run. For example, it will run ten models.
+It specifies the maximum number of models that `H2OAutoML` will run. For example, it will run five models.
 
 - `seed`
 We use it to ensure model reproducibility.
@@ -340,6 +391,12 @@ It specifies that the algorithms `H2OAutoML` should not use during model trainin
 
 - `balance_classes`
 It will handle the imbalanced dataset. We set it to `true` to balance the five classes.
+
+- `nfolds=0,`
+It specifies the number of k-fold cross-validation of the H2OAutoML model. We have set the number to zero.
+
+- `max_after_balance_size=0.3`
+It specifies the maximum relative size of the training data after balancing the classes.
 
 ### Specifying the y and x variables
 The `x` variable contains all the input features during training. The `y` variable contains the output/target column.
@@ -364,11 +421,17 @@ aml.train(x = x, y = y, training_frame = h2o_train_df, validation_frame=h2o_test
 
 - `validation_frame` contains the testing dataset.
 
-H2OAutoML will run ten models and produce the following output that shows the AutoML progress:
+H2OAutoML will run five models and produce the following outputs that show the AutoML progress:
 
 ![Model training](/engineering-education/building-a-multi-class-text-classification-model-using-h2o-and-sckit-learn/model-training.png)
 
-We can check the performance of the ten models using this code:
+Output showing the best model details:
+
+![Model training](/engineering-education/building-a-multi-class-text-classification-model-using-h2o-and-sckit-learn/final-model.png)
+
+From the five models the best model is XGBoost with a model id of `XGBoost_2_AutoML_3_20220322_140825`. 
+
+We can also check the performance of all five models using this code:
 
 ### Performance of the models
 
@@ -376,46 +439,34 @@ We can check the performance of the ten models using this code:
 aml.leaderboard
 ```
 
-`leaderboard` will show the performance of the ten models. It lists the models from the best performing to the least performing. The image shows the listed models:
+`leaderboard` will show the performance of the five models. It lists the models from the best performing to the least performing. The image shows the listed models:
 
 ![Listed models](/engineering-education/building-a-multi-class-text-classification-model-using-h2o-and-sckit-learn/listed-models.png)
 
-From the image above, the best model has a `model_id` of `XGBoost_1_AutoML_1_20220228_125829 `. The least performing model has a `model_id` of `DRF_1_AutoML_1_20220228_125829`. Lets use the best model to make predictions.
+From the image above, the best model has a `model_id` of `XGBoost_2_AutoML_3_20220322_140825`. The least performing model has a `model_id` of `DRF_1_AutoML_3_20220322_140825`. Let's use the best model to make predictions.
 
 ### Using the best model
-We will use the model to classify an input customer complaint. We use the following input:
+We will use the best model from the `leaderboard` to predict the test data frame(h2o_test_df). The model will classify some of the vectorized text in the test data frame.
 
 ```python
-input_text = ['I was trying to make a payment toward my university loans on the HELB portal. I was unable login into my HELB portal, and the site kept on loading without displaying my student loan balance. I want to know my balance before I can make the payment']
+pred=aml.leader.predict(h2o_test_df)
 ```
 
 Let us apply our `vectorizer_tf` method to this text.
 
-```python
-vectorized_text = vectorizer_tf.transform(input_text)
-```
-
-Let us now use the best model to make the prediction.
-
-```python
-predict= aml.leader.predict(vectorized_text)
-```
-
-The `aml.leader` method selects the best model from the list above. Finally, the `predict` will classify the input customer complaint.
+The `aml.leader` method selects the best model from the list above. Finally, the `predict` will classify some of the vectorized text in the test data frame.
 
 To print the prediction results, use this code:
 
 ```python
-print(predict)
+print(prediction)
 ```
 
 The prediction output:
 
-```bash
-array([4])
-```
+![Prediction output](/engineering-education/building-a-multi-class-text-classification-model-using-h2o-and-sckit-learn/prediction-output.png)
 
-Using our created dictionary object, 4 represents the `Student loan` class. The input text is related to the `Student loan` class. The model has made an accurate prediction.
+From the output above, the best model has classified some of the vectorized text in the test data frame into five of the classes (0, 1,2, 3, 4, and 5). The `predict` columns show the class in which the vectorized text has been classified.
 
 ### Conclusion
 We have learned how to build a multi-class text classification model. We developed the model using Scikit-learn and the H2O library. The tutorial also explained the benefits of H2O and how to install it.
