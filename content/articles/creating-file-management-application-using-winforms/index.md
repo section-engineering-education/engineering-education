@@ -1,6 +1,21 @@
-### Introduction
-File management encompasses everything from generating and editing files to deleting them from a computer's hard drive.
+---
+layout: engineering-education
+status: publish
+published: true
+url: /creating-file-management-application-using-winforms/
+title: How to Create a File Management Application using WinForms
+description: This tutorial will walk the reader through how to create a file management application using WinForms.
+author: sir-maina
+date: 2022-03-22T00:00:00-15:25
+topics: [Languages]
+excerpt_separator: <!--more-->
+images:
 
+  - url: /engineering-education/creating-file-management-application-using-winforms/hero.jpg
+    alt: How to Create a File Management Application using WinForms Hero Image
+---
+File management encompasses everything from generating and editing files to deleting them from a computer's hard drive.
+<!--more-->
 It is important to learn this when it comes to data that needs to be handled with care and stored for security reasons.
 
 In this tutorial, we will learn how to create files and folders, write them in your preferred formats, read the memory data, delete the initially recorded files, and view all data using WinForms.
@@ -21,13 +36,13 @@ In this tutorial, we will learn how to create files and folders, write them in y
 - [Conclusion](#conclusion)
 
 ### Prerequisites
-- Basic C# programming language and .NET framework.
+- A basic background knowledge in C# programming language and .NET framework.
 - [Visual Studio](https://visualstudio.microsoft.com/vs/community/) installed on your computer.
 
 Let's get started!!
 
 ### Step 1. Visual Studio setup
-Open Visual Studio and select `create new project` in the Get Started window.
+Open Visual Studio and select `create new project` in the get started window.
 
 ![Creating a new project](/engineering-education/creating-file-management-application-using-winforms/create-a-new-project.jpg)
 
@@ -114,7 +129,7 @@ Your final form design should look like the one below:
 ![Complete file manager](/engineering-education/creating-file-management-application-using-winforms/complete-file-manager.jpg)
 
 ### Step 3. Writing the C# code
-To write the `C#` code, double click on the form design, and the file `manager.cs` will be loaded.
+To write the `C#` code, double click on the form design, the file `manager.cs` will be loaded.
 
 #### Including the necessary namespaces
 
@@ -125,7 +140,7 @@ using System.Windows.Forms;//Programs built using these classes can take advanta
 ```
 
 #### Setting up the file path
-This is important because we will create a folder where the written data will reside in the memory in a precise manner. We can also specify the format that it will be written in, for this project, all our data is stored in `.txt files`.
+This is important because we will create a folder where the written data will reside in the memory in a precise manner. We can also specify the format that it will be written in, for this project all our data will be stored in `.txt files`.
 
 Write the following code snippet.
 
@@ -157,7 +172,7 @@ In the `->` (button next) button, we add the following code below. The code will
 ```
 In the button ` Open`, add the following code that will help to navigate the files in the memory disk.
 
-In the code below, the open file dialog box is displayed once the open button clicks.
+In the code below, the open file dialog box is displayed once the open button is clicks.
 The description will give more information on what we are supposed to do, i.e., select the folder we want to see its content.
 The web browser displays the contents if the exact file path is selected.
 
@@ -204,7 +219,7 @@ The StreamReader reads a text file line-by-line from the start to the end.
 ```
 
 In the ` Delete file` menu item, add the following code that will help you to delete files initially created using the file path.
-We willuse the if statement to check the text file exists in the memory. If it does, then it can be automatically deleted.
+We will use the if statement to check the text file exists in the memory. If it does, then it can be automatically deleted.
 
 ```C#
 private void deleteFileToolStripMenuItem_Click(object sender, EventArgs e)
@@ -218,7 +233,7 @@ private void deleteFileToolStripMenuItem_Click(object sender, EventArgs e)
         }
 ```
 
-In the `Add student/Write` button inside the panel, add the following code. It can permanently record the data of the student that they keyed in the textboxes.
+In the `Add student/Write` button inside the panel, add the following code. It can permanently record the data of the student that they typed in the textboxes.
 The StreamWriter is a class in charge of writing data to a stream.
 
 ```C#
@@ -236,7 +251,7 @@ The StreamWriter is a class in charge of writing data to a stream.
         }
 ```
 
-In the `Clear` button in the panel, add the following code, which will help delete the data in the text boxes and edit new student data.
+In the `Clear` button in the panel, add the following code, this code will help delete the data in the text boxes and edit new a student data.
 
 ```C#
   private void Clearbtn_Click(object sender, EventArgs e)// To clear data initially in the textboxes
@@ -248,9 +263,9 @@ In the `Clear` button in the panel, add the following code, which will help dele
         }
 ```
 
-We will add the code below to ensure that the user doesn't quit the application without knowing. It will pop a dialogue box that will select yes if he needs to leave the application or select no if he doesn't want to. 
+We will add the code below to ensure that the user doesn't quit the application without knowing. A dialogue box will pop up asking you to select "Yes" or "No", if they want to leave or stay on the application.
 
-The form exiting activity terminates when you choose `No` using the `e.cancel = true;` statements. To access the form closing method, navigate to form properties, and under the `Formclosing`, double click to load and write the code.
+The form exiting activity terminates when you choose `No` using the `e.cancel = true;` statements. To access the form closing method, navigate to form properties, and under the `Formclosing`, double click to load and write the following code below.
 
 ```C#
  private void File_Mananger_FormClosing(object sender, FormClosingEventArgs e)
@@ -277,7 +292,9 @@ The image below shows how my application is executing my files. I hope you achie
 ![Working application](/engineering-education/creating-file-management-application-using-winforms/working-file-manager.jpg)
 
 ### Conclusion
-We have created a precise file manager using WinForms. We also learned how to implement data files by creating, writing, reading, and deleting them. You can add more controls involving file management and publishing your application.
+We have created a file manager using WinForms. We also learned how to implement data files by creating, writing, reading, and deleting them. You can add more controls involving file management and publishing your application.
 
-Happy coding !
+Happy coding!
 
+---
+Peer Review Contributions by: [Jethro Magaji](/engineering-education/authors/jethro-magaji/)
