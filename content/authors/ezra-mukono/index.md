@@ -1,7 +1,10 @@
 ---
 title: Ezra Mukono
+type: authors
 github: https://github.com/Mukono10
+images:
+  - url: /engineering-education/authors/ezra-mukono/avatar.jpg
 ---
-Ezra Mukono is a computer science  student. He is much more interested in application development and software development.
+Ezra Mukono is a computer science student. He is interested in application and software development.
  
-He also uses his leisure time doing some other sort of researches to improve the already got knowledge.
+In his leisure time, you can see him doing research and improve any existing knowledge.
