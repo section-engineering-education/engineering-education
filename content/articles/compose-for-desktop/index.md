@@ -1,3 +1,19 @@
+---
+layout: engineering-education
+status: publish
+published: true
+url: /polymorphism-in-python/
+title: Polymorphism in python
+description: This tutorial will introduce the reader to the concept of polymorphism in python.
+author: Justus Kamau
+date: 2022-03-18T00:00:00-09:00
+topics: [Languages]
+excerpt_separator: <!--more-->
+images:
+
+  - url: /engineering-education/polymorphism-in-python/hero.jpg
+    alt: Introduction to Polymorphism in python Hero Image
+---
 Desktop applications run on desktop machines. They are being used almost everywhere, for example, in a school management system. Before Compose Desktop came into existence, the Java SWING library was used to develop these desktop applications. With the new technology of Compose Desktop coming into existence, we can have a choice of which technology to use when we want to develop a desktop app.
 
 Compose Desktop allows us to develop desktop apps with lovely user interfaces like the ones in Android apps. Compose for Desktop can create desktop applications for Windows, macOS, or Linux platforms. Kotlin multi-platform also allows for building Compose Web Application and Compose Multi-platform Application.
@@ -168,7 +184,7 @@ This class has a single composable function `LoginScreen` that implements the lo
 - `Button` - Composable for creating a button.
 - `Text` - Composable for holding texts.
 
-These Composables have different functions that allow for performing unique actions when triggered, for instance, the `onClick` function in the button triggers a click listener when the button is clicked.
+These Composable have different functions that allow for performing unique actions when triggered. For instance, the `onClick` function in the button triggers a click listener when the button is clicked.
 
 > Note: The function is annotated by the `@Composable` that shows that we are using JetBrains compose for desktop.
 
@@ -314,7 +330,7 @@ class RegisterScreen {
 
 }
 ```
-Register class implementation is just the same as the `LoginScreen` but with more text fields hence we shall use the same explanation as to the one above.
+Register class implementation is just the same as the `LoginScreen` but with more text fields, hence we shall use the same explanation as to the one above.
 
 ![register-screen](/engineering-education/compose-for-desktop/register-screen.png)
 
@@ -347,7 +363,10 @@ Since Kotlin is considered a multi-platform language, you can build a whole desk
 
 This project can be found in my [GitHub](https://github.com/Collince-Okeyo/UserAuthentication) repositories. You can fork and clone it in your machine and learn how to create the screens with Compose for Desktop implementation. 
 
+### Further reading
 To learn more about building desktop apps with Compose for Desktop visit [here](https://github.com/JetBrains/compose-jb/tree/master/tutorials/Getting_Started).
 
 ### Conclusion
 To learn more about building desktop apps with this technology, you will have to do a lot of practice. If you love creating web applications, with Compose for Web, you can create awesome websites as well. To supplement the content from this article read on Getting Started with Compose Multiplatform [here](https://github.com/JetBrains/compose-jb/tree/master/tutorials/Getting_Started). 
+---
+Peer Review Contributions by: [Mohamed alghadban](/engineering-education/authors/mohamed-alghadban/)
