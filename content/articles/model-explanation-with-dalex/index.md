@@ -18,9 +18,9 @@ Machine learning engineers build models but hide the implementation from the end
 <!--more-->
 End-users need an open and transparent model to understand how it makes the predictions, the workings of the model, the functions, and the algorithms. Together, these help users understand the contributing factors to the model's decision.
 
-[Dalex](https://dalex.drwhy.ai/) is an open-sources library that explains and analyzes machine learning models. It makes the model transparent and open to the end-users. It builds trust in individuals and companies when using the models in production.
+[Dalex](https://dalex.drwhy.ai/) is an open-sources library that explains and analyzes machine learning models. It makes the model transparent and open to the end-users. 
 
-Using Dalex, the end-users (individuals and companies) will gain insightful information from the model. Moreover, it interprets the model simply so that the end-user can understand. In this tutorial, we will build a bank marketing model. We will then use [Dalex](https://dalex.drwhy.ai/) to explain the model.
+Using Dalex, the end-users (individuals and companies) gain insightful information from the model. In this tutorial, we will build a bank marketing model then use [Dalex](https://dalex.drwhy.ai/) to explain the model.
 
 ### Table of contents
 - [Prerequisites](#prerequisites)
@@ -47,13 +47,13 @@ It would be best if you had the following to follow along with this tutorial:
 
 To get the best out of this tutorial, implement the Python code in [Gooogle Colab notebook.](https://research.google.com/colaboratory/) to get the same results. Ensure you sign in using your email. 
 
-Google Colab will enable you to easily build and run the model due to the fast CPU and GPU  ideal for machine learning.
+Google Colab will enable you to quickly build and run the model due to the fast CPU and GPU  ideal for machine learning.
 
 ### Dataset preparation
-In this section, we will prepare the bank marketing dataset. The dataset will build a model that solves a classification problem. The model will predict if a customer will join a monthly saving plan or not. You can get the dataset from [here.](https://drive.google.com/file/d/1nQ3Zwb1qUki1sFrSbptEjNnPSTDHrzro/view?usp=sharing)
+This section will prepare the bank marketing dataset that will build a model that solves a classification problem. The model will predict if a customer will join a monthly saving plan or not. You can get the dataset from [here.](https://drive.google.com/file/d/1nQ3Zwb1qUki1sFrSbptEjNnPSTDHrzro/view?usp=sharing)
 
 #### Exploring dataset
-We need to explore the dataset to know all the dataset variables.
+We need to explore the dataset to know its variables.
 
 Let us first import Pandas to will load the dataset.
 
@@ -80,6 +80,7 @@ The output shows rows and columns in the dataset. To know all the columns in the
 ```python
 df.columns
 ```
+
 The columns output:
 
 ![Columns output](/engineering-education/model-explanation-with-dalex/columns.png)
@@ -89,7 +90,7 @@ From the output above, the dataset has 21 columns.
 Dalex will show us how each column contributed to the model's final results. Then, we will select the input variables and the target variable from the dataset.
 
 #### Selecting the input and target variables
-The input variables are all the columns that train the model. The model will learn from these variables to solve the classification problem. 
+The input variables are all the columns that train the model from which it learns to solve the classification problem. 
 
 The target variable is the model's output. It is what the model wants to predict. For example, our model will determine if a customer will join a monthly saving plan or not.
 
@@ -186,7 +187,7 @@ The accuracy score:
 ```bash
 LR: 0.9105770008901837
 ```
-This is a high accuracy score (91.057%). However, we cannot just trust this model because it has a high accuracy score. We need to know all the variables that contributed to this accuracy score.
+This score is a high accuracy score (91.057%). However, we cannot just trust this model because it has a high accuracy score. We need to know all the variables that contributed to this accuracy score.
 
 We will use Dalex to explain the model and gain an insightful understanding.
 
@@ -204,12 +205,12 @@ import dalex as dx
 Dalex explains the model in two ways: Overall model explanation and single prediction explanation.
 
 #### Overall model explanation
-In this way, it explains the whole structure of the trained model. In addition, it will show the methods, functions, and algorithms that build the model. 
+This method explains the whole structure of the trained model. In addition, it will show the methods, functions, and algorithms that build the model. 
 
 The user will know the dataset that trains the model and how each variable in the dataset contributed to the general model performance.
 
 #### Single prediction explanation
-In this way, it focuses on the single prediction of the model. It shows the variables that have contributed to that specific prediction. The user will know if a prediction is correct or not.
+This method focuses on the single prediction of the model. It shows the variables that have contributed to that specific prediction. The user will know if a prediction is correct or not.
 
 Let us start with the overall model explanation.
 
