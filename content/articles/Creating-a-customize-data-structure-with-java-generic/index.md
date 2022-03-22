@@ -957,7 +957,7 @@ In this article, we learn about how to customize data structure with generic  an
 
 Generic in Java is an important part of the programming language giving you the power to manipulate data of different data types.
 
-The code for this project is available on the Github repo.
+The code for this project is available on the Github [repository].(https://github.com/popsoft01/Generic_data_Structure)
 
 
 ### References
