@@ -1,12 +1,30 @@
 ### Web3 vs Ethers
 
-Web3 and Ethers are major libraries used to interact with the ethereum blockchain and smart contracts. They are both different in nature and are used differently so they have use cases where one performs better than the other. In this article, we will cover their basics, their differences and we will also be using them to make transactions and interact with smart contracts.
+Web3 and Ethers are major libraries used to interact with the ethereum blockchain and smart contracts. They are both different in nature and are used differently so they have use cases where one performs better than the other. In this article, we will cover their basics, their differences and we will also compare how they are used in making transactions and interacting with smart contracts.
 
+### Prerequisites
 To get the full benefits of this article you need to have;
 
 * A working knowledge of JavaScript,
 * Any understanding of Web3, Smart contracts and Blockchain, and
 * Nodejs installed on your system.
+
+### Table of Contents
+* [Essential Topics](#essential-topics)
+    * [Web3JS](#web3js)
+    * [EthersJS](#ethersjs)
+    * [Blockchain](#blockchain)
+    * [Smart Contracts](#smart-contracts)
+* [Installations](#installations)
+* [Comparism](#installations)
+    * [Size of Code Created](#size-of-code-created)
+    * [Size of Library](#size-of-library)
+    * [Community](#community)
+    * [Deploying a Smart Contract](#deploying-a-smart-contract)
+    * [Interacting with Deployed Contracts](#interacting-with-deployed-contracts)
+    * [Sending Transactions to Wallet Addresses](#sending-transactions)
+* [Conclusion](#conclusion)
+* [Reference Topics](#reference-topics)
 
 ### Essential Topics
 
