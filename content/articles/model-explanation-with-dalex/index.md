@@ -5,8 +5,8 @@ published: true
 url: /model-explanation-with-dalex/
 title: Machine Learning Model Explanation with Dalex
 description: This article aims to demenstrate how to perfom a Machine Learning Model explanation using Dalex.
-author: calvin-ombati
-date: 2022-03-16T00:00:00-03:30
+author: simon-kamau
+date: 2022-03-22T00:00:00-03:30
 topics: [Languages]
 excerpt_separator: <!--more-->
 images:
