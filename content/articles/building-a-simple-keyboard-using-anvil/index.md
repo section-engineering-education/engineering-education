@@ -34,13 +34,13 @@ To follow through with this tutorial, you need to be conversant with:
 - [Further reading](#further-reading)
 
 ### Creating a web page with Anvil
-To get started, we will begin by navigating to the [Anvil](https://anvil.works/) website. On the top-right corner of the webpage, you will see a `Start Building` button. Click on it. You will be prompted to create an account before you can start building. This sign up process is free. A verification email will be sent to your email to complete the sign up process. Once the verification is completed, you should be redirected to the login page and the following webpage will apear:
+To get started, we will begin by navigating to the [Anvil](https://anvil.works/) website. On the top-right corner of the webpage, you will see a `Start Building` button. Click on it. You will be prompted to create an account before you can start building. This sign-up process is free. A verification email will be sent to your email to complete the sign-up process. Once the verification is completed, you should be redirected to the login page and the following webpage will appear:
 
 ![Main Page](/engineering-education/building-a-simple-keyboard-using-anvil/main-webpage.png)
 
 *Image Source: [Anvil](https://anvil.works/)*
 
-Select the `New Blank App` option. Since we are planning to start from sratch and create a custom HTML page, we'll select the `Custom HTML` option. Additionally, we can select the `Blank Panel` option. At this point, your webpage should look like this:
+Select the `New Blank App` option. Since we are planning to start from scratch and create a custom HTML page, we'll select the `Custom HTML` option. Additionally, we can select the `Blank Panel` option. At this point, your webpage should look like this:
 
 ![Blank Page](/engineering-education/building-a-simple-keyboard-using-anvil/blankpanel-webpage.png)
 
@@ -51,12 +51,18 @@ Now, we can begin designing our interface.
 ### Creating the components needed for a keyboard
 With Anvil, we can drag in whichever component we will like to use in the interface itself. For example, if we want to add a `Date Picker` component, we will drag and drop the `Date Picker` component from the sidebar into our interface. You can also set some basic properties of this component by scrolling down on the sidebar until you see the `properties` option. 
 
-One of the most important components in a keyboard is the input fields. For this, we will drag and drop the `TextBox` component. We will drag and drop it below the image component with our logo.
+One of the most important components of a keyboard is the input field. For this, we will drag and drop the `TextBox` component. We will drag and drop it below the image component with our logo.
 
 Next, we will add our buttons. A keyboard has several buttons. It will make more sense to code them rather than drag and drop all these buttons.
 
 ### Creating a panel to replicate how a keyboard appears
-On our main interface, we have both the `Design` and the `Code` option available. Select the `Code` option. You will see some basic commands already written for you by the web app builder. You will see a class with an `init` method to intialize the web app. We will build up on this code. We will begin by crating a list of characters to represent our buttons and store it in a variable known as `chars`. We will assign this variable to a list of strings where we arrange these strings in the exact same order that we want to see our buttons appear on the page.
+On our main interface, we have both the `Design` and the `Code` option available. Select the `Code` option. You will see some basic commands already written for you by the web app builder. You will see a class with an `init` method to initialize the web app. We will build upon this code. 
+
+![Design Code](/engineering-education/building-a-simple-keyboard-using-anvil/design-code.png)
+
+*Image Source: [Anvil](https://anvil.works/)*
+
+We will begin by creating a list of characters to represent our buttons and store it in a variable known as `chars`. We will assign this variable to a list of strings where we arrange these strings in the exact same order that we want to see our buttons appear on the page.
 
 This is shown below:
 
@@ -67,10 +73,10 @@ This is shown below:
         "Z", "X", "C", "V", "B", "N", "M", ",", ".", "/"  
 ]
 ```
-This simple keyboard design consists of letters in capital letters, numbers and punctuation marks. It also consists of `+, -, *, /` signs to perform arithmetic. 
+This simple keyboard design consists of letters in capital letters, numbers, and punctuation marks. It also consists of `+, -, *, /` signs to perform arithmetic. 
 The first row, `"1", "2", "3", "4", "5", "6", "7", "8", "9", "0"` represents the first row on the keyboard and so forth.
 
-The next step involves looping over these strings and use them to create button components. For this, we will need to create an empty dictionary to store these buttons. We will call this dictionary, `self.btn`. We will assign it to a set of curly brackets, which is an empty dictionary as shown:
+The next step involves looping over these strings and using them to create button components. For this, we will need to create an empty dictionary to store these buttons. We will call this dictionary, `self.btn`. We will assign it to a set of curly brackets, which is an empty dictionary as shown:
 
 ```python
 self.btn = {}
@@ -91,7 +97,11 @@ self.add_component(gridp)
 ```
 > The letter `i` represents different buttons.
 
-We can now go ahead and run this code. You can find the `Run` button in the top most section of the webpage. You will be prompted to assign your application a name. Assign it any name you wish. We've assign ours `Simple_Keyboard`. The created webpage should now appear.
+We can now go ahead and run this code. You can find the `Run` button in the topmost section of the webpage. You will be prompted to assign your application a name. Assign it any name you wish. We've assigned ours `Simple_Keyboard`. The created webpage should now appear.
+
+![Simple keyboard](/engineering-education/building-a-simple-keyboard-using-anvil/simple-keyboard.png)
+
+*Image Source: [Anvil](https://anvil.works/)*
 
 As at this point, the components should be displayed on the screen. But, they are all over the place. They are not arranged. We will need to arrange them nicely. We will do that later. For now, let's take care of their functionalities.
 
@@ -120,7 +130,7 @@ Click on `Run` to check if everything runs correctly and displays a pressed key 
 
 > Make sure to expand the output bar so that you can see the messages.
 
-Once our buttons outputs the correct characters, we can concatenate them to our text box. Instead of printing the results on the terminal, we can add the following code to the click method to print to the text box instead.
+Once our buttons output the correct characters, we can concatenate them to our text box. Instead of printing the results on the terminal, we can add the following code to the click method to print to the text box instead.
 
 ```python
 def click(self, **event_args):
@@ -130,7 +140,7 @@ When you click on a button, it should now display on the text box. It works as e
 
 We have some buttons that have some special functionality to them especially when we are dealing with numbers and arithmetic operators. For example, the `Clear` and `Delete` signs.
 
-Let's go back to our code and add these special functionality to them.
+Let's go back to our code and add these special functionalities to them.
 
 ### Testing the functionality of the keyboard
 To make the code simpler to read, we will add the following code inside the click method, a new variable called `val`:
@@ -150,7 +160,7 @@ To make the code simpler to read, we will add the following code inside the clic
 ```
 Perfect! Our special functionalities should now be working. Click on the `Run` button to try it out. Add some numbers and click on the equality sign to output the result. Also, you can press the backspace button to clear characters one by one, and the `Clear` button to remove everything on the text box.
 
-Now, our keyboard is functioning propoerly. Let's add some style to it.
+Now, our keyboard is functioning properly. Let's add some style to it.
 
 ### Styling the keyboard
 We begin by splitting our buttons into four different rows. For this build, we will count twelve buttons then jump onto the next row. The `enumerate()` method will help us with this. We will pass our list of characters into it. Enumerate returns two different values instead of one. So we will add an `idx` to help count.
@@ -185,7 +195,7 @@ self.add_component(self.space)
 ```
 
 ### Publishing the web app
-Once we are happy with our web application, we can go ahead and deploy it. To do this with Anvil, we need to press the `Publish this app` button. It will generate a code which you can use to view the published web application on your browser. For this application, you can view the published web application [here](https://f34tdj5x5e2jir24.anvil.app/KFJIOSVXZZTEGBPBINNMCT7I).
+Once we are happy with our web application, we can go ahead and deploy it. To do this with Anvil, we need to press the `Publish this app` button. It will generate a code that you can use to view the published web application on your browser. For this application, you can view the published web application [here](https://f34tdj5x5e2jir24.anvil.app/KFJIOSVXZZTEGBPBINNMCT7I).
 
 ### Wrapping up
 We have deployed our keyboard online, it's beautiful and we can share it with anyone we like. We have used graphic design tools to create our web application. But this is not the only way. We can also add them into the interface using code as shown in this tutorial. Feel free to try creating one yourself, you could play around with the different components available that suits your project.
