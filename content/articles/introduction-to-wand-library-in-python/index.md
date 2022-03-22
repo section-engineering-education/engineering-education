@@ -18,10 +18,10 @@ Wand library is a [ctypes](https://docs.python.org/3/library/ctypes.html#module-
 <!--more-->
 ImageMagick is extensively used to work with image formats for its precision and ease of use. We learn about this module to understand how you can manipulate a single image into various forms.
 
-In this tutorial, we will take a deep look at what Wand library is and how we can use it to work with images. Also, we will look at a few examples, where we will learn about its unique features and applications.
+In this tutorial, we will take a deep look at what the Wand library is and how we can use it to work with images. Also, we will look at a few examples, where we will learn about its unique features and applications.
 
 ### Prerequisites
-The reader should have some basic knowledge of Python, and must have Python installed in their local machine.
+The reader should have some basic knowledge of Python and must have Python installed in their local machine.
 
 ### Table of contents
 - [Wand library](#wand-library)
@@ -34,13 +34,13 @@ The reader should have some basic knowledge of Python, and must have Python inst
 - [Conclusion](#conclusion)
 
 ### Wand library
-Using Wand library, we can open and edit images. Using it along with NumPy, it offers several other functions for image transformations. Below are some of its uses:
-- We can use it to display a single image in several orientations, e.g., inverted, rotated, blurred, skewed etc.
+Using the wand library, we can open and edit images. Using it along with NumPy, it offers several other functions for image transformations. Below are some of its uses:
+- We can use it to display a single image in several orientations, e.g., inverted, rotated, blurred, skewed, etc.
 - We have features to enhance the images with various effects.
 - We can scale and crop the images.
 - It supports reading and writing images in various formats.
 
-Now, let's look at how to install Wand library.
+Now, let's look at how to install the wand library.
 
 > NOTE: For this tutorial, we will be using Ubuntu.
 
@@ -49,7 +49,7 @@ sudo apt-get install libmagickwand-dev
 pip install Wand
 ```
 
-To have a comprehensive understanding of the ImageMagick's dependency installation, it is recommended to go through [this](#https://imagemagick.org/script/advanced-linux-installation.php) documentation.
+To have a comprehensive understanding of ImageMagick's dependency installation, it is recommended to go through [this](#https://imagemagick.org/script/advanced-linux-installation.php) documentation.
 
 ### Verify installation
 On successfully installing the wand library its related dependencies, we will verify it by importing `Wand` in our code.
@@ -63,7 +63,7 @@ import wand
 On running the code, if wand was successfully installed, it does not throw any errors. If not, we must recheck its installation.
 
 ### Read an image
-To use features from the `image` libary of `Wand` module, we will need to import necessary packages. On importing, we will get access to several methods to modify properties such as height, width, and the interpretation of the image. 
+To use features from the `image` library of `Wand` module, we will need to import the necessary packages. On importing, we will get access to several methods to modify properties such as height, width, and the interpretation of the image. 
 
 Now, let's look at an example to return the width and height of an image:
 
@@ -79,7 +79,7 @@ with wandImage(filename='/wand-library-in-python/original_image.png') as img:
 
 From the above code:
 - The initial step is to import the `image` library from the `Wand`.
-- Next, we specify the image details like filepath and file name.
+- Next, we specify the image details like file path and file name.
 - Then, we print the details of the image.
 
 The input image is:
@@ -107,7 +107,7 @@ with wandImage(filename='/wand-library-in-python/original_image.png') as img:  #
 
 From the above code:
 - We import the `image` library from `Wand`.
-- We then import the image using the filepath.
+- We then import the image using the file path.
 - Then, we call the blur function by specifying the `radius` and `sigma` of the image.
 - The `radius` parameter determines the radius of the gaussian aperture, which is the size of the gap. It is always an integer number.
 - The `sigma` parameter describes the sigma value that denotes the standard deviation of the gaussian filter. It is always an integer input.
@@ -120,7 +120,7 @@ From the above code:
 ![python](/engineering-education/introduction-to-wand-library-in-python/blurred_image.png)
 
 ### Transform an image
-Image transformation is an essential and a robust feature when dealing with images. Image transformation deals with rotating, inverting, adding effects, and so on.
+Image transformation is an essential and robust feature when dealing with images. Image transformation deals with rotating, inverting, adding effects, and so on.
 
 Here, we try to invert the image as shown below:
 
@@ -214,7 +214,7 @@ The image was initially of size `601` by `203`, and after resizing it:
 ### Conclusion
 To conclude, we outlined what one can do using the image library in Wand — blurring, resizing, drawing, and transforming images.
 
-You can checkout the full source code [here](https://github.com/mukono10/Wand-library-in-python#wand-library-in-python).
+You can check out the full source code [here](https://github.com/mukono10/Wand-library-in-python#wand-library-in-python).
 
 To learn more about image manipulation, it is recommended to go through [this](https://www.programcreek.com/python/example/82689/wand.image.Image) article.
 
