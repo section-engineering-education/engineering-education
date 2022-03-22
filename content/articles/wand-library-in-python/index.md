@@ -1,5 +1,21 @@
-Wand library is a [ctypes](https://docs.python.org/3/library/ctypes.html#module-ctypes)-based simple [ImageMagick](https://imagemagick.org/index.php) binding for Python.
+---
+layout: engineering-education
+status: publish
+published: true
+url: /wand-library-in-python/
+title: Introduction To Wand Library In Python
+description: This tutorial will discuss about Wand library, its origin and how it can be used to manipulate images. We will also learn several image manipulation techniques like inverting, blurring, and drawing images.
+author: ezra-mukono
+date: 2022-03-23T00:00:00-00:00
+topics: [Languages]
+excerpt_separator: <!--more-->
+images:
 
+  - url: /engineering-education/wand-library-in-python/hero.png
+    alt: Introduction To Wand Library In Python Hero Image
+---
+Wand library is a [ctypes](https://docs.python.org/3/library/ctypes.html#module-ctypes)-based simple [ImageMagick](https://imagemagick.org/index.php) binding for Python.
+<!--more-->
 ImageMagick is extensively used to work with image formats for its precision and ease of use. We learn about this module to understand how you can manipulate a single image into various forms.
 
 In this tutorial, we will take a deep look at what Wand library is and how we can use it to work with images. Also, we will look at a few examples, where we will learn about its unique features and applications.
@@ -203,3 +219,6 @@ You can checkout the full source code [here](https://github.com/mukono10/Wand-li
 To learn more about image manipulation, it is recommended to go through [this](https://www.programcreek.com/python/example/82689/wand.image.Image) article.
 
 Happy coding!
+
+---
+Peer Review Contributions by: [Srishilesh P S](/engineering-education/authors/srishilesh-p-s/)
