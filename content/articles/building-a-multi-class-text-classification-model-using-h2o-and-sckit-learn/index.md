@@ -1,7 +1,22 @@
-Text classification is an essential task in natural language processing that categorizes various texts into classes. 
+---
+layout: engineering-education
+status: publish
+published: true
+url: /building-a-multi-class-text-classification-model-using-h2o-and-sckit-learn/
+title: Multi-class Text Classification using H20 and Scikit-learn.
+description: In this article, we will understand how to automatically classify GitHub labels based on GitHub issue title using machine learning.
+author: charles-kariuki
+date: 2022-03-23T00:00:00-04:03
+topics: [Machine Learning]
+excerpt_separator: <!--more-->
+images:
 
-A text classification model is trained using a text dataset. Then, the model learns from the test dataset and makes predictions. 
+ - url: /engineering-education/building-a-multi-class-text-classification-model-using-h2o-and-sckit-learn/hero.jpg
+   alt: Multi-class Text Classification example image
+---
 
+Text classification is an essential task in natural language processing that categorizes various texts into classes. Text classification is done using a model trained using a text dataset. Then, the model learns from the test dataset and makes predictions. 
+<!--more-->
 Text classification models perform tasks such as [intent detection](https://sentione.com/blog/new-state-of-the-art-intent-detection-model-from-sentione), [topic labeling](https://medium.com/@gab.choojj/airline-topic-labeling-and-classification-using-latent-dirichlet-allocation-lda-d88d91b2c6ef), [sentiment analysis](/engineering-education/sentiment-analysis-with-spacy-and-scikit-learn/) and [spam detection](/engineering-education/spam-detection-model-using-scikit-learn).
 
 Multi-class text classification is a text classification task with more than two classes/categories. Each data sample can be classified into one of the classes. However, a data sample cannot belong to more than one class simultaneously.
@@ -476,3 +491,6 @@ To get the multi-class text classification model we have trained in this tutoria
 - [H2O AutoML documentation](https://docs.h2o.ai/h2o/latest-stable/h2o-docs/automl.html)
 - [H2O GitHub](https://github.com/h2oai/h2o-3)
 - [Notebook for this tutorial](https://colab.research.google.com/drive/1R2lUqZlaXOTHJSlY65ykxoKEw47JyHMx?usp=sharing)
+
+---
+Peer Review Contributions by: [Mercy Meave](/engineering-education/authors/mercy-meave/)
