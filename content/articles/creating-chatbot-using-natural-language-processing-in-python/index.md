@@ -1,17 +1,33 @@
-A bot is a computer program that performs predetermined tasks automatically. It is the goal of the bots to perform human duties in the same way that humans did in the past. In a nutshell, they mimic human behaviour.
+---
+layout: engineering-education
+status: publish
+published: true
+url: /screating-chatbot-using-natural-language-processing-in-python/
+title: Creating ChatBot Using Natural Language Processing in Python
+description: In this article, will illustrate how to create a ChatBot using Natural Language Processing in Python. 
+author: vincent-kimanzi
+date: 2022-03-24T00:00:00-08:50
+topics: [Languages, API]
+excerpt_separator: <!--more-->
+images:
 
-We'll design a conversational interface for our chatbot using natural language processing in this tutorial.
+  - url: /engineering-education/screating-chatbot-using-natural-language-processing-in-python/hero.jpg
+    alt: Creating ChatBot Using Natural Language Processing in Python Hero Image
+---
+A bot is a computer program that performs predetermined tasks automatically. Its goal is to perform human duties the same way that humans do. In a nutshell, they mimic human behavior.
+<!--more-->
+In this tutorial, we will design a conversational interface for our chatbot using natural language processing.
 
 ### Prerequisites
-- Have a basic knowledge of [Python](https://www.python.org/).
-- Have python environment of your choice installed.
+- Have a basic knowledge of [Python](https://www.python.org/) programming langugage.
+- Have a python environment of your choice installed.
 
 ### Table of contents
 - [Fields of NLP](#fields-of-nlp)
 - [Types of bots](#types-of-bots)
 - [Building an NLP chatbot](#building-an-nlp-chatbot)
   - [Importing modules](#importing-modules)
-  - [Creating jason file](#creating-jason-file)
+  - [Creating JSON file](#creating-jason-file)
   - [Processing data](#processing-data)
   - [Designing a Neural Network model](#designing-a-neural-network-model)
   - [Building useful features](#building-useful-features)
@@ -22,17 +38,9 @@ We'll design a conversational interface for our chatbot using natural language p
 ### Fields of NLP
 Below are the core fields of NLP:
 
-1. **Natural language generation(NLG)**
-
-In artificial intelligence, NLG is a speciality. It's a software technology that automatically transforms data into simple English. 
-
-2. **Natural language understanding(NLU)**
-
-It is a branch of natural language processing (NLP) that helps computers understand and interpret human language by breaking speech into its constituent parts. However, NLU goes further than speech recognition to understand what the user is trying to communicate with their words.
-
-3. **Natural language interaction(NLI)**
-
-To engage with any connected device or service in a humanlike manner, NLI brings together a varied collection of natural language principles.
+1. **Natural language generation(NLG)**: In artificial intelligence, NLG is a specialty. It is a software technology that automatically transforms data into simple English.
+2. **Natural language understanding(NLU)**: It is a branch of natural language processing (NLP) that helps computers understand and interpret human language by breaking speech into its constituent parts. However, NLU goes further than speech recognition to understand what the user is trying to communicate with their words.
+3. **Natural language interaction(NLI)**: To engage with any connected device or service in a humanlike manner, NLI brings together a varied collection of natural language principles.
 
 ### Types of bots
 - **Scraper Bots:** They are designed to read and save data from the Internet.
@@ -42,10 +50,10 @@ To engage with any connected device or service in a humanlike manner, NLI brings
 - **Social Media Bot:** Automatically responds to questions on social media platforms.
 
 ### Building an NLP chatbot
-The first step is to create an intents JSON file that lists all the possible outcomes of user interactions with our chatbot. We first need a set of tags that users can use to categorize their queries. These tags include `name`, `age` etc. Every new tag would require its own unique pattern. Identifying these trends can help the chatbot train itself on how people query about our chatbot's name, allowing it to be more responsive. To answer questions, the chatbot will return pre-programmed responses.
+The first step is to create an intents JSON file that lists all the possible outcomes of user interactions with our chatbot. We first need a set of tags that users can use to categorize their queries. These tags include `name`, `age`, and many others. Every new tag would require a unique pattern. Identifying these trends can help the chatbot train itself on how people query about our chatbot's name, allowing it to be more responsive. The chatbot will return pre-programmed responses to answer questions.
 
 #### Importing modules
-Let's import the necessary modules first:
+Let us import the necessary modules first:
 
 ```python
 import json # It's possible to utilize it to work with JSON data.
@@ -62,8 +70,9 @@ nltk.download("punkt")# required package for tokenization
 nltk.download("wordnet")# word database
 ```
 
-#### Creating jason file
+#### Creating a JSON file
 Next we will create the json file:
+
 ```python
 ourData = {"ourIntents": [
             
