@@ -3,6 +3,8 @@ An interstitial ad is a dialogue that pops up to the user's application when sur
 
 Typically, they appear during points of transition in an app's flow, such as between tasks or game stages. When an interstitial ad appears in an app, the user can either tap on it to continue to the advertised store or exit it and return to the app using a cancel button of ads that is on the left upside of the ad.
 
+This tutorial will be a step-by-step guide on creating an application integrating AdMob interstitial google ads and understanding more concepts related to Google Interstitial ads.
+
 ### Prerequisites
 1. Have an account with Google AdMob. Create an account [here](https://admob.google.com/home/) 
 2. Have basic knowledge of Kotlin programming.
@@ -217,7 +219,7 @@ class MainActivity : AppCompatActivity() {
 ```kotlin
 android:parentActivityName=".MainActivity"
 ```
-### Testing  the application
+### Testing the application
 You can use a physical device or the emulator installed in your IDE to test the application.
 
 ### Conclusion
