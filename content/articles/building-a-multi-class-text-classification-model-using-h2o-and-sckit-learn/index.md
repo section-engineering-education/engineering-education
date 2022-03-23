@@ -22,7 +22,6 @@ We will use [Scikit-learn](https://scikit-learn.org/stable/) for text preprocess
 - [Creating a dictionary object](#creating-a-dictionary-object)
 - [Dataset splitting](#dataset-splitting)
 - [Text Preprocessing for natural language processing](#text-preprocessing-for-natural-language-processing)
-- [Function](#function)
 - [Text vectorization](#text-vectorization)
 - [Converting the train and test sets into an array](#converting-the-train-and-test-sets-into-an-array)
 - [Creating H2O Data Frame](#creating-h2o-data-frame)
@@ -115,7 +114,7 @@ The image below shows the H2O clusters.
 ### Customer complaints dataset
 The customer complaints dataset trains the classification model. When we have a new customer complaint, the model will classify it into one of the classes. 
 
-You can download the customer complaints dataset [here](https://drive.google.com/file/d/1wtocenD095o98GKJDXMi8CeVVHYd6qx2/view?usp=sharing)
+You can download the customer complaints dataset [here.](https://drive.google.com/file/d/1wtocenD095o98GKJDXMi8CeVVHYd6qx2/view?usp=sharing)
 
 We will use `Pandas` to read the dataset. 
 
@@ -469,7 +468,7 @@ We have learned how to build a multi-class text classification model. We develop
 
 We performed text preprocessing using Natural Language Toolkit. Then, using the clean dataset, we trained a model that classifies customer complaints. H2O runs multiple models, and we used the best model to make predictions.
 
-To get the multi-class text classification model we have trained in this tutorial, click [here](https://colab.research.google.com/drive/1R2lUqZlaXOTHJSlY65ykxoKEw47JyHMx?usp=sharing)
+To get the multi-class text classification model we have trained in this tutorial, click [here.](https://colab.research.google.com/drive/1R2lUqZlaXOTHJSlY65ykxoKEw47JyHMx?usp=sharing)
 
 ### References
 - [Scikit-learn documentation](https://scikit-learn.org/stable/)
