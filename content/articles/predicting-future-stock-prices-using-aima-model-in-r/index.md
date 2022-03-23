@@ -1,7 +1,5 @@
 ### Predicting Future Stock Prices Using ARIMA Model in R
 
-
-
 ### Introduction
 With the increase in the number of investors in the stock market and the increase in popularity of various cryptocurrencies whose rates in the stock market changes constantly, it is useful to create a program that can predict future prices in the stock market to help investors make a better decision on the right time to invest so that they can maximize their profits.
 
@@ -18,8 +16,7 @@ ARIMA model is one of the most useful models in predicting future trends and in 
 
 -[Do stationary testing using unit root testing](#do-stationary-testing-using-unit-root-testing)
 
--[Building ARIMA model](#building-arima-model
-)
+-[Building ARIMA model](#building-arima-model)
 
 -[Fitting ARIMA model and forecasting](#fitting-arima-model-and-forecasting)
 
@@ -69,11 +66,10 @@ To AutoCorrelation function(ACF) and partial AutoCorrelation to analyze if there
 ### Differencing data to be stationary
 Now that we know that our data is not stationary, we need to make it stationary by differentiating it at a certain lag for it to fit our ARIMA model. Making the data stationary is important in that it helps us predict that the past statistical properties of our data will remain the same in the future. Here, the log-transformed data will be differenced by 1 lag to make it stationary. First, we'll have to, make sure that we fill in missing values with values from observation after the missing value.
 
-![differencing data to be stationary](/engineering-education/predicting-future-stock-prices-using-arima-model-in-r/AMAZON_diff.jpg) 
+![differencing data to be stationary](/engineering-education/predicting-future-stock-prices-using-arima-model-in-r/amazon_diff.jpg) 
 ### Do stationary testing using unit root testing
 After differentiating the data at lag 1 and making our data stationary, we'll test if the data are stationary using Unit Root Testing . We'll test using the Augmented Dickey Fuller test which tests the hypothesis of stationarity of the data and if the resulting p-value will be below 0,05, we will reject the null hypothesis and conclude that the data is stationary. We are going to test our differenced data. 
 We will first activate tseries package using library(tseries) then we perform adf test using;
-
 `
 adf<-adf.test(AMAZON_diff, alternative=c(“stationary”,”explosive”), k=0)`
 
@@ -107,7 +103,6 @@ ARIMA model in R is found in the package ‘forecast’ which we will first inst
 
 Auto.arima is used to generate the ARIMA model
 
-
 ![generating ARIMA model](/engineering-education/predicting-future-stock-prices-using-arima-model-in-r/auto.jpg)
 
 To check the summary for chosen best fit ARIMA model, we use;
@@ -134,14 +129,12 @@ Now, to fit the model into the training data set, we use;
 
 ![fitting our model](/engineering-education/predicting-future-stock-prices-using-arima-model-in-r/model.jpg)
 
-
 Now, we can make our forecast of the next 100 days using `forecast` package with h=100
 
 And we can plot our forecast using 
 `plot(forecast)`
 
 ![plotting our forecast](/engineering-education/predicting-future-stock-prices-using-arima-model-in-r/plotting.jpg)
-
 
 And then check residuals in our model using
  `checkresiduals(arima)` 
