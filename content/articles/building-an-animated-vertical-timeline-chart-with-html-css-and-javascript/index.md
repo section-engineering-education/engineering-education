@@ -1,3 +1,20 @@
+---
+layout: engineering-education
+status: publish
+published: true
+url: /building-an-animated-vertical-timeline-chart-with-html-css-and-javascript/
+title: Building an animated vertical timeline chart with HTML, CSS and JavaScript
+description: 
+author: bobate-segun
+date: 2022-03-23T00:00:00-09:30
+topics: []
+excerpt_separator: <!--more-->
+images:
+
+  - url: /engineering-education/building-an-animated-vertical-timeline-chart-with-html-css-and-javascript/hero.jpg
+    alt: Building an animated vertical timeline chart with HTML, CSS and JavaScript Hero Image
+---
+
 ## BuIldIng an anImated vertIcal tImelIne Chart wIth HTML, CSS (GlassmorphIsm) and JavaScrIpt.
 
 ![hero](/engineering-education/building-an-animated-vertical-timeline-chart-with-html-css-and-javascript/hero.png)
