@@ -1,6 +1,6 @@
-A bot is a computer program that performs predetermined tasks. The bots are programmed to do certain tasks automatically. It is the goal of the bots to perform human duties in the same way that humans did in the past. In a nutshell, they mimic human behaviour.
+A bot is a computer program that performs predetermined tasks automatically. It is the goal of the bots to perform human duties in the same way that humans did in the past. In a nutshell, they mimic human behaviour.
 
-We'll design a conversational interface for our chatbot using natural language processing.
+We'll design a conversational interface for our chatbot using natural language processing in this tutorial.
 
 ### Prerequisites
 - Have a basic knowledge of [Python](https://www.python.org/).
@@ -42,9 +42,7 @@ To engage with any connected device or service in a humanlike manner, NLI brings
 - **Social Media Bot:** Automatically responds to questions on social media platforms.
 
 ### Building an NLP chatbot
-First, we need to construct an intents JSON file that contains all the possible outcomes of user interactions with our chatbot. To do this, there must first be a set of tags that users' searches fall under. These tags include `name`, `age` etc.
-
-Every new tag would require its own unique pattern. Identifying these trends can help the chatbot train itself on how people query about our chatbot's name, allowing it to be more responsive. This intents JSON file contains the responses to each intent tag and pattern. Our simple chatbot, on the other hand, will not be able to create these responses. To answer questions, the chatbot will return pre-programmed responses.
+The first step is to create an intents JSON file that lists all the possible outcomes of user interactions with our chatbot. We first need a set of tags that users can use to categorize their queries. These tags include `name`, `age` etc. Every new tag would require its own unique pattern. Identifying these trends can help the chatbot train itself on how people query about our chatbot's name, allowing it to be more responsive. To answer questions, the chatbot will return pre-programmed responses.
 
 #### Importing modules
 Let's import the necessary modules first:
@@ -89,7 +87,7 @@ ourData = {"ourIntents": [
 ]}
 ```
 #### Processing data
-Before creating our training data, we need to conduct some work on our data. In this section, vocabulary of all the terms used in the patterns, a list of tag classes, a list of all the patterns in the intents file, and all the related tags for each pattern will be created.
+In this section, vocabulary of all the terms used in the patterns, a list of tag classes, a list of all the patterns in the intents file, and all the related tags for each pattern will be created before creating our training data.
 
 ```python
 lm = WordNetLemmatizer() #for getting words
@@ -141,7 +139,7 @@ x = num.array(list(trainingData[:, 0]))# first trainig phase
 y = num.array(list(trainingData[:, 1]))# second training phase
 ```
 
-After converting our data to a numerical representation, we can now design a Neural Network model to which we will feed our training data. The model will select an appropriate response from the tag associated with a given feature.
+After converting our data to a numerical representation, we can now design a neural network model to which we will feed our training data. The model will select an appropriate response from the tag associated with a given feature.
 
 ```python
 iShape = (len(x[0]),)
@@ -174,7 +172,7 @@ ourNewModel.fit(x, y, epochs=200, verbose=1)
 ![Output](/engineering-education/creating-chatbot-using-natural-language-processing-in-python/summary.png)
 
 #### Building useful features
-First, we'll build the features that allow us to use our model in a chatbot, so we can use it. By creating a  collection of utility functions, it will make this work more convenient. 
+In order to make use of our model in a chatbot, we must first implement the necessary functionality. Making this easier by building a library of utility functions will help.
 ```python
 def ourText(text): 
   newtkns = nltk.word_tokenize(text)
@@ -212,7 +210,7 @@ def getRes(firstlist, fJson):
   return ourResult
 ```
 
-In a while loop, the user will be allowed to enter a query that is then cleaned. Using our `bag of words` model, we next turn our text into numerical values and generate a prediction about what tag in our intents the features best represent.
+The user will be able to enter a query in a while loop, which will then be cleaned. Next, we use our `bag of words` model to convert our text into numerical values and make a prediction about which tag in our intents the features most closely represent us.
 
 ```python
 while True:
