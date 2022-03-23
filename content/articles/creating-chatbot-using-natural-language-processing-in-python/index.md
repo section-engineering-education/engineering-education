@@ -1,6 +1,4 @@
-[Natural language processing](https://en.wikipedia.org/wiki/Natural_language_processing) is a branch of informatics, mathematical linguistics, machine learning and artificial intelligence (AI). Natural language processing (NLP) aids in analyzing and generating text by your chatbot.
-
-A bot is a computer program that performs predetermined tasks. The bots are programmed to do certain tasks automatically. It is the goal of the bots to perform human duties in the same way that humans did in the past. In a nutshell, they mimic human behaviours and behaviour.
+A bot is a computer program that performs predetermined tasks. The bots are programmed to do certain tasks automatically. It is the goal of the bots to perform human duties in the same way that humans did in the past. In a nutshell, they mimic human behaviour.
 
 We'll design a conversational interface for our chatbot using natural language processing.
 
@@ -10,6 +8,7 @@ We'll design a conversational interface for our chatbot using natural language p
 
 ### Table of contents
 - [Fields of NLP](#fields-of-nlp)
+- [Types of bots](#types-of-bots)
 - [Building an NLP chatbot](#building-an-nlp-chatbot)
   - [Importing modules](#importing-modules)
   - [Creating jason file](#creating-jason-file)
@@ -25,7 +24,7 @@ Below are the core fields of NLP:
 
 1. **Natural language generation(NLG)**
 
-In artificial intelligence, NLG is a speciality (AI). It's a software technology that automatically transforms data into simple English. Technology may be able to tell a tale and a human analyst by generating sentences and paragraphs for you.
+In artificial intelligence, NLG is a speciality. It's a software technology that automatically transforms data into simple English. 
 
 2. **Natural language understanding(NLU)**
 
@@ -43,11 +42,9 @@ To engage with any connected device or service in a humanlike manner, NLI brings
 - **Social Media Bot:** Automatically responds to questions on social media platforms.
 
 ### Building an NLP chatbot
-The first step in building our chatbot is to create an intents JSON file, which lists the possible outcomes of user interactions with our chatbot. There must first be a set of tags that users' searches fall within to accomplish. These tags include `name`, `age` etc.
+First, we need to construct an intents JSON file that contains all the possible outcomes of user interactions with our chatbot. To do this, there must first be a set of tags that users' searches fall under. These tags include `name`, `age` etc.
 
-We'd need to specify patterns for each of our new tags. Once these patterns are identified, the chatbot can use them for training itself on how people can inquire for our chatbot's name, allowing it to become more flexible in its response.
-
-Responses for each intent tag and pattern are included in this intents JSON file. In contrast, these answers will not be created with our simple chatbot. To answer questions, the chatbot will return pre-programmed responses.
+Every new tag would require its own unique pattern. Identifying these trends can help the chatbot train itself on how people query about our chatbot's name, allowing it to be more responsive. This intents JSON file contains the responses to each intent tag and pattern. Our simple chatbot, on the other hand, will not be able to create these responses. To answer questions, the chatbot will return pre-programmed responses.
 
 #### Importing modules
 Let's import the necessary modules first:
@@ -99,7 +96,7 @@ lm = WordNetLemmatizer() #for getting words
 # lists
 ourClasses = []
 newWords = []
-documentX = []
+documentX = [] 
 documentY = []
 # Each intent is tokenized into words and the patterns and their associated tags are added to their respective lists.
 for intent in data["intents"]:
@@ -121,12 +118,12 @@ ourClasses = sorted(set(ourClasses))# sorting classes
 #### Designing a Neural Network model
 Because neural networks can only understand numerical values, we must first process our data so that a neural network can understand what we are doing.
 
-The code below is used to turn our data into numerical values using [bag of words](https://www.geeksforgeeks.org/bag-of-words-bagOqord-model-in-nlp/) (bagOqord) encoding system.
+The code below is used to turn our data into numerical values using [bag of words](https://www.geeksforgeeks.org/bag-of-words-bagOqord-model-in-nlp/) (BoW) encoding system.
 
 ```python
 trainingData = [] # training list array
 outEmpty = [0] * len(ourClasses)
-# bagOqord model
+# bow model
 for idx, doc in enumerate(documentX):
     bagOfwords = []
     text = lm.lemmatize(doc.lower())
@@ -177,8 +174,7 @@ ourNewModel.fit(x, y, epochs=200, verbose=1)
 ![Output](/engineering-education/creating-chatbot-using-natural-language-processing-in-python/summary.png)
 
 #### Building useful features
-To use our model in a chatbot, we must first build the features that allow us to do this. Let's construct a collection of utility functions to make this work easier.
-
+First, we'll build the features that allow us to use our model in a chatbot, so we can use it. By creating a  collection of utility functions, it will make this work more convenient. 
 ```python
 def ourText(text): 
   newtkns = nltk.word_tokenize(text)
@@ -216,7 +212,7 @@ def getRes(firstlist, fJson):
   return ourResult
 ```
 
-In a while loop, we'll allow a user to enter a query that is then cleaned. Using our bag of words model, we next turn our text into numerical values and generate a prediction about what tag in our intents the features best represent. To respond to the inquiry, we would pick a random response from the responses in that tag and utilize it.
+In a while loop, the user will be allowed to enter a query that is then cleaned. Using our `bag of words` model, we next turn our text into numerical values and generate a prediction about what tag in our intents the features best represent.
 
 ```python
 while True:
@@ -229,14 +225,15 @@ while True:
 ![Final result](/engineering-education/creating-chatbot-using-natural-language-processing-in-python/result.png)
 
 ### Benefits of bots
-1. The employment of chatbots in the workplace can improve corporate communication and operations.
-2. Bots allow you to communicate with your customers in a new way. Customers' interests can be piqued at the right time by using chatbots.
-3. With the help of chatbots, your organization can better understand the problems that your consumers' problems and take steps to address those issues.
-4. A single operator can serve one customer at a time. On the other hand, A chatbot can answer thousands of inquiries at once.
-5. Chatbots are unique in that they operate inside predetermined frameworks and rely on a single source of truth within the command catalogue to provide responses to questions they are asked. This reduces the risk of confusion and inconsistency in answers.
+1. Bots allow you to communicate with your customers in a new way. Customers' interests can be piqued at the right time by using chatbots.
+2. With the help of chatbots, your organization can better understand consumers' problems and take steps to address those issues.
+3. A single operator can serve one customer at a time. On the other hand, a chatbot can answer thousands of inquiries at once.
+4. Chatbots are unique in that they operate inside predetermined frameworks and rely on a single source of truth within the command catalogue to provide responses to questions they are asked. This reduces the risk of confusion and inconsistency in answers.
 
 ### Conclusion
-By following this article's explanation of ChatBots, their utility in business, and how to implement them, we may create a primitive Chatbot using Python and the Chatterbot Library. Anyone interested in gaining a better knowledge of conversational artificial intelligence will benefit greatly from this article.
+By following this article's explanation of ChatBots, their utility in business, and how to implement them, we may create a primitive Chatbot using Python and the Chatterbot Library. 
+
+Anyone interested in gaining a better knowledge of conversational artificial intelligence will benefit greatly from this article.
 
 ### Reference
 - Find the whole code [here](https://colab.research.google.com/drive/1ZacaIPOx5cKcDNjEpaljR-IpvfndpVPS?usp=sharing).
