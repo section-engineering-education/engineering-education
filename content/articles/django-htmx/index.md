@@ -1,4 +1,4 @@
-# How to Build templates for Django Applications with HTMX
+### How to Build templates for Django Applications with HTMX
 
 ### Introduction
 
