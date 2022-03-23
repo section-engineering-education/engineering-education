@@ -3,8 +3,8 @@ layout: engineering-education
 status: publish
 published: true
 url: /wavelet-transform-analysis-of-1d-signals-using-python/
-title: Wavelet-based denoising of the 1-D signal using Python
-description: This tutorial will walk the reader through performing  Wavelet transformation of the 1-D signal.
+title: Wavelet-based Denoising of the 1-D signal using Python.
+description: This tutorial will walk the reader through performing  Wavelet denoising of the 1-D signal.
 author: collince-odhiambo
 date: 2022-03-23T00:00:00-03:00
 topics: [Languages]
@@ -12,7 +12,7 @@ excerpt_separator: <!--more-->
 images:
 
   - url: /engineering-education/wavelet-transform-analysis-of-1d-signals-using-python/hero.jpg
-    alt: Wavelet-based denoising of the 1-D signal using Python Hero Image
+    alt: Wavelet-based Denoising of the 1-D signal using Python Hero Image
 ---
 Wavelet is a function applied for processing digital signals and compression. Wavelet transforms a high-resolution signal into an approximated and detailed coefficient. 
 
@@ -44,14 +44,14 @@ The objective here is to remove noise(n(k)) from noisy audio signal(f'(k)) using
 
 ![Denoising Scheme](/engineering-education/wavelet-transform-analysis-of-1d-signals-using-python/wavelet-one.png)
 
-The signal is first decomposed into detailed and approximated coefficients from the image above. Then, these coefficients are thresholded, and inverse wavelet transform is performed to the thresholded coefficients. 
+First, the signal is decomposed into detailed and approximated coefficients from the image above. Then, these coefficients are thresholded, and inverse wavelet transform is performed to the thresholded coefficients. 
 
 Thresholding is a non-linear technique operating on each wavelet coefficient dependently. Finally, the inverse wavelet transform is done to give the original signal. 
 
 We use methods such as Universal threshold, Bayes, and Sure minimax in setting the threshold.
 
 ### Scikit-image python package
-This package provides flexible routines of image processing. It is written in the python language. In addition, it has a function library for wavelet-based denoising under restoration. 
+This package provides flexible routines of image processing. It is written in the python language. In addition, it has a function library for wavelet-based Denoising under restoration. 
 
 Although it is mainly applicable for 2-D images, it can be used for 1-D signals. The good news is that the `scikit` image package is already available in anaconda; thus no need of installing it.
 
@@ -199,7 +199,7 @@ plt.show()
 
 ![Output for the denoised audio signal](/engineering-education/wavelet-transform-analysis-of-1d-signals-using-python/wavelet-three.png)
 
-The blue signal is the noisy signal, while the orange is the denoised output. So it is hard to know whether the denoising is done or not. 
+The blue signal is the noisy signal, while the orange is the denoised output. So it is hard to know whether the Denoising is done or not. 
 However, this can be done by either calculating the peak signal to noise ratio(PSNR) or physically listening to the music.  
 
 We need to add the `sounddevice` python package to anaconda to listen to the audios. This can be done on the terminal using `conda` or `pip`  package managers as shown below:
