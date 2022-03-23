@@ -476,7 +476,7 @@ The prediction output:
 
 ![Prediction output](/engineering-education/building-a-multi-class-text-classification-model-using-h2o-and-sckit-learn/prediction-output.png)
 
-From the output above, the best model has classified some vectorized text in the test data frame into five classes (0, 1,2, 3, 4, and 5). The `predict` columns show the class in which the vectorized text has been classified.
+The best model has classified some vectorized text in the test data frame into five classes (0, 1,2, 3, 4, and 5). The `predict` columns show the class in which the vectorized text has been classified.
 
 ### Conclusion
 We have learned how to build a multi-class text classification model. We developed the model using Scikit-learn and the H2O library. The tutorial also explained the benefits of H2O and how to install it.
