@@ -1,8 +1,9 @@
 ---
 title: Jared Phelix
 type: authors
-github: https://github.com/jaredphelix
+github: 'https://github.com/jaredphelix'
 images:
-  - url: /engineering-education/authors/jared-phelix/avatar.png 
+  - url: /engineering-education/authors/jared-phelix/avatar.png
+authors: jared-phelix
 ---
 Phelix is an undergraduate Computer Science major. He is a full-stack web developer who enjoys working on commercial projects.
