@@ -56,7 +56,7 @@ In this case, we need a way to verify that it’s the tool that failed and not o
 
 In our project directory, we will rename the `test/unit/example.spec.js` file to be `sanity.spec.js` and edit it to have the following code snippets below.
 
-```jsx
+```javascript
 it('sanity test', () => {
   expect(true).toBe(true);
 })
@@ -91,7 +91,7 @@ Create a file in the `test/unit` directory called `detailsview.spec.js`. In the 
 
  Add the code snippets below in the `detailsview.spec.js` file.
 
-```jsx
+```javascript
 import {shallowMount} from '@vue/test-utils';  
 import DetailsView from '@/views/DetailsView.vue' 
 ```
@@ -102,7 +102,7 @@ This function takes two arguments; which are, the description of the test suite 
 
 Add the code snippets below :
 
-```bash
+```javascript
 describe('Details.vue', () => {
     it('renders text content', () => {
         
@@ -114,14 +114,14 @@ Inside the test function, we’ll create a variable called `wrapper` that is set
 
 Inside the test function add the code snippet below: 
 
-```jsx
+```javascript
 const wrapper = shallowMount(DetailsView);
 expect(wrapper.text()).toContain('This is the details Page');
 ```
 
 The complete code looks like this: 
 
-```jsx
+```javascript
 import {shallowMount} from '@vue/test-utils';
 import DetailsView from '@/views/DetailsView.vue'
 
@@ -164,7 +164,7 @@ Import the `shallowMount` function from the `vue-test-utils` library, and then i
 
 Add the code snippets below:
 
-```jsx
+```javascript
 import {shallowMount} from '@vue/test-utils';
 import GithubUser from '@/components/GithubUser.vue'                                       
 ```
@@ -175,7 +175,7 @@ So, we’ll write a test to check if the component is rendering the name of a `g
 
 Inside the test, we’ll create mock data. That is, we’ll create a variable called `userInfo`, set it to an object and define a property called `name` with the value of `test`. Just like the code snippets below:
 
-```jsx
+```javascript
 describe('GithubUser.vue', () => {
     it('renders userInfo.name', () => {
         const userInfo = {
@@ -187,7 +187,7 @@ describe('GithubUser.vue', () => {
 
 Then, we mount the `GithubUser.vue` component, like so:
 
-```jsx
+```javascript
 const wrapper = shallowMount(GithubUser)   
 ```
 
@@ -201,7 +201,7 @@ Then, we’ll write an assertion to test if the component is rendering the name 
 
 Add the code snippet below:
 
-```jsx
+```javascript
 const wrapper = shallowMount(GithubUser, {
             props: {
                 userInfo
@@ -212,7 +212,7 @@ expect(wrapper.text()).toContain(userInfo.name);
 
 This test will essentially check if the `name` property is present in the component. And This is what the complete code looks like:
 
-```jsx
+```javascript
 import {shallowMount, RouterLinkStub} from '@vue/test-utils';
 import GithubUser from '@/components/GithubUser.vue'
 
@@ -233,13 +233,13 @@ describe('GithubUser.vue', () => {
 
 Run the command below to run our test:
 
-```jsx
+```bash
 npm run test:unit
 ```
 
 And now, our test passed. But this time with a warning:
 
-```jsx
+```bash
 PASS  tests/unit/githubuser.spec.js
   ● Console
 
@@ -278,7 +278,7 @@ Luckily, the `vue-test-utils` library comes with a predefined set of stubs for s
 
 At the top of the file, we’ll update the `import` statement for the `vue-test-utils` package and add on `RouterLinkStub` component. Just like the code below:
 
-```jsx
+```javascript
 import {shallowMount, RouterLinkStub} from '@vue/test-utils';
 ```
 
@@ -286,7 +286,7 @@ Then, in the `shallowMount` function, we add a property called `stubs` which wil
 
 Add the following code snippets below:
 
-```jsx
+```javascript
 const wrapper = shallowMount(GithubUser, {
             propsData: {
                 userInfo
@@ -301,7 +301,7 @@ const wrapper = shallowMount(GithubUser, {
 
 After making these changes, this is what the complete code looks like:
 
-```jsx
+```javascript
 import {shallowMount, RouterLinkStub} from '@vue/test-utils';
 import GithubUser from '@/components/GithubUser.vue'
 
@@ -327,7 +327,7 @@ describe('GithubUser.vue', () => {
 
 And now, our test passes without a warning. 
 
-```jsx
+```bash
 PASS  tests/unit/githubuser.spec.js (6.209 s)
 PASS  tests/unit/sanity.spec.js
 PASS  tests/unit/details.spec.js
@@ -353,19 +353,19 @@ With that, let’s modify our code to use the  `find()` function.
 
 In the `githubuser.spec.js` file, add the code below above the assertion.
 
-```jsx
+```javascript
 const githubUser = wrapper.find('.user-name');         
 ```
 
 And, have our assertion to strictly check for that element with an exact match:
 
-```jsx
+```javascript
 expect(compositionUser.text()).toBe(userInfo.name);
 ```
 
 Our code now looks like the code snippets below:
 
-```jsx
+```javascript
 import {shallowMount, RouterLinkStub} from '@vue/test-utils';
 import GithubUser from '@/components/GithubUser.vue'
 
@@ -393,13 +393,13 @@ describe('GithubUser.vue', () => {
 
 Run the command below to run this test:
 
-```jsx
+```bash
 npm run test:unit
 ```
 
 With the test report below, our test passed. So we are certain that the element we accessed only have the name of a `github user` inside it.
 
-```jsx
+```bash
 PASS  tests/unit/githubuser.spec.js (8.467 s)
 PASS  tests/unit/details.spec.js
 PASS  tests/unit/sanity.spec.js
@@ -417,7 +417,7 @@ Our next test is to check if our `HomeView` component is rending the list of all
 
 In this test file, we’ll import the `HomeView` component and the `shallowMount` function. Then, call the `descibe` function with an identifier of `HomeView.vue` and also, the  `test` function with a description of `renders lists of users`. Just like the code below:
 
-```jsx
+```javascript
 import {shallowMount} from '@vue/test-utils';
 import HomeView from '@/components/HomeView.vue'
 describe('HomeView.vue', () => {
@@ -435,7 +435,7 @@ Sending `http` requests in a test can be unreliable. This is something we have t
 
 In this case, it’s good practice to use mock data. Inside our test, we’ll create a variable called `users` and set it to be an array of three empty objects. Just like the code below:
 
-```bash
+```javascript
 const users = [{},{},{}];
 ```
 
@@ -445,7 +445,7 @@ In our case, the test should generate three `GithubUsers` component based on the
 
 So, we’ll mount our component and return the `users` variable, into a `setup` option in the object returned by the `shallowMount` function.
 
-```bash
+```javascript
 const wrapper = shallowMount(HomeView, {
             setup() {
                 return{
@@ -459,7 +459,7 @@ The next step is to select the list of users in the component. If you take a loo
 
 At the top of the `homeview.spec.js` file, import the `GithubUser.vue` component like so:
 
-```jsx
+```javascript
 import GithubUsers from '@/components/GithubUsers.vue'
 ```
 
@@ -467,14 +467,14 @@ Then, below the `shallowMount` function; we’ll create a variable called `lists
 
 Add the code snippets below:
 
-```jsx
+```javascript
 const listsOfUsers =  wrapper.findAllComponents(GithubUsers);
 expect((listsOfUsers).length).toEqual(users.length) 
 ```
 
 This is what the overall code looks like:
 
-```jsx
+```javascript
 import {shallowMount} from '@vue/test-utils';
 import GithubUsers from '@/components/GithubUsers.vue'
 import HomeView from '@/views/HomeView.vue'
@@ -566,7 +566,7 @@ This means we have to mock these properties too. But this is optional. We might 
 
 In a case where you don’t want to ignore them, our overall code will look like this:
 
-```jsx
+```javascript
 
 import {shallowMount, mount} from '@vue/test-utils';
 import GithubUsers from '@/components/GithubUsers.vue'
@@ -619,13 +619,13 @@ Finally, we want to test if our `views/HomeView.vue` component can search for `g
 
 In our `HomeView.vue` component, the component that displays the searched user information is the `GithubUser.vue` component. So, we will need to import this component like so:
 
-```jsx
+```javascript
 import GithubUser from '@/components/GithubUser.vue'
 ```
 
 Then, the code below, will be able to perform this test:
 
-```jsx
+```javascript
 it('search for user',  async () => {
         const userInfo = ''
         const searchQuery = 'octocat';
@@ -646,7 +646,7 @@ it('search for user',  async () => {
 
 The overall code looks like this:
 
-```jsx
+```javascript
 import {shallowMount, mount} from '@vue/test-utils';
 import GithubUsers from '@/components/GithubUsers.vue'
 import GithubUser from '@/components/GithubUser.vue'
