@@ -1,6 +1,6 @@
 # How to Build templates for Django Applications with HTMX
 
-## Introduction
+### Introduction
 
 Did you know that it is possible to use AJAX without writing a single line of JavaScript code?
 
@@ -10,17 +10,17 @@ If these questions have come to your mind, you are in the right place.
 
 In this article, I will build a simple Django application that creates, deletes content from the database, and displays the current content asynchronously without the page refreshing. This is important if you don't want to go through the stress of using a library like React or Vue.
 
-### Prerequisites
+#### Prerequisites
 
 - Basic understanding of Django
 - Django installed(v3.2)
 - Python installed(v3.8)
 
-## What is HTMX?
+### What is HTMX?
 
 The general idea behind [HTMX](https://htmx.org/) is simplifying web application development by using HTML attributes to incorporate [AJAX](https://htmx.org/docs#ajax), [CSS Transitions](https://htmx.org/docs#css_transitions), [WebSockets](https://htmx.org/docs#websockets), and [Server-Sent Events](https://htmx.org/docs#sse) directly into HTML. You don’t need to write any JavaScript for the basic things required to run a full-fledged web application unlike React, Vue, and other frontend libraries. To use HTMX in Django, you don’t need to install anything, you just need to attach CDN to your HTML and you are good to go.
 
-## Creating, Listing, and Deleting with HTMX and Django
+### Creating, Listing, and Deleting with HTMX and Django
 
 In this section, you will learn how to build the basic create, list and delete functionality with HTMX and Django to illustrate how HTMX in Django. We will be building a contact list application.
 
@@ -43,7 +43,7 @@ INSTALLED_APPS = [...,
 ]
 ```
 
-### Creating and Listing with HTMX and Django
+#### Creating and Listing with HTMX and Django
 
 Open your preferred text editor, navigate to *app/models.py*, and paste the code below, which is just a simple model for a contact list application.
 
@@ -210,7 +210,7 @@ Now let’s create the template to display the list of contacts. Paste the code 
 {% endif %}
 ```
 
-### Deleting with HTMX and Django
+#### Deleting with HTMX and Django
 
  In the *app/views.py* file, paste the function below.
 
@@ -265,7 +265,7 @@ You can now test out the app functionality by running the server with `python ma
 
 ![final outcome of code](output.png)
 
-## Conclusion
+### Conclusion
 
 You have come to the end of this tutorial, and we have been able to learn about htmx and how it can be used in Django applications. We looked at how to create, list, and delete data from the database and display current data without the page refreshing through the use of htmx.
 
