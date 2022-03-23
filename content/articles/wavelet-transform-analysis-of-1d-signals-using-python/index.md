@@ -4,9 +4,9 @@ status: publish
 published: true
 url: /wavelet-transform-analysis-of-1d-signals-using-python/
 title: Wavelet-based denoising of the 1-D signal using Python
-description: This tutorial will walk the reader through performing the wavelet transform of the 1-D signal.
+description: This tutorial will walk the reader through performing  Wavelet transformation of the 1-D signal.
 author: collince-odhiambo
-date: 2022-03-16T00:00:00-03:00
+date: 2022-03-23T00:00:00-03:00
 topics: [Languages]
 excerpt_separator: <!--more-->
 images:
@@ -26,7 +26,7 @@ To follow along with this tutorial, the reader should have the following:
 - To have [Pycharm](https://www.jetbrains.com/pycharm/download/) installed.
 
 ### Noise model
-A signal is frequently contaminated by noise when transmitted over some distance. Additive noise is the simplest model for noise acquisition. The additive noise has the form:
+A signal is frequently contaminated by noise when transmitted over some distance. Additive noise is the simplest model for noise acquisition. Additive noise is an unwanted signal that gest to the genuine original signal. The additive noise has the form:
 
 f'k = f(k) + n(k)
 
@@ -44,7 +44,7 @@ The objective here is to remove noise(n(k)) from noisy audio signal(f'(k)) using
 
 ![Denoising Scheme](/engineering-education/wavelet-transform-analysis-of-1d-signals-using-python/wavelet-one.png)
 
-Here, the signal is first decomposed into detailed and approximated coefficients. Then, these coefficients are thresholded, and inverse wavelet transform is performed to the thresholded coefficients. 
+The signal is first decomposed into detailed and approximated coefficients from the image above. Then, these coefficients are thresholded, and inverse wavelet transform is performed to the thresholded coefficients. 
 
 Thresholding is a non-linear technique operating on each wavelet coefficient dependently. Finally, the inverse wavelet transform is done to give the original signal. 
 
@@ -53,7 +53,7 @@ We use methods such as Universal threshold, Bayes, and Sure minimax in setting t
 ### Scikit-image python package
 This package provides flexible routines of image processing. It is written in the python language. In addition, it has a function library for wavelet-based denoising under restoration. 
 
-Although it is mainly applicable for 2-D images, it can use for 1-D signals. The good news is that the `scikit` image package is already available in anaconda; thus no need of installing it.
+Although it is mainly applicable for 2-D images, it can be used for 1-D signals. The good news is that the `scikit` image package is already available in anaconda; thus no need of installing it.
 
 `Scikit` wavelet denoising includes two main functions. These functions are `estimate_sigma()` and `denoise_wavelet()`. 
 
@@ -62,23 +62,24 @@ For thresholding estimation, there are only two supported methods.
 - Universal threshold(VishuShrink).
 - Bayes Shrink(this is the default method).
 
-By default  the `Denoise_wavelet()` function is used  for images. However, in this tutorial, we will use it for 1-D signals, meaning that the attributes related to the image are dropped. The syntax for using this function is:
+By default  the `Denoise_wavelet()` function is used  for images. However, in this tutorial, we will use it for 1-D signals, meaning that the other attributes related to the image are dropped. The syntax for using this function is:
 
 ```python
 y = denoise_wavelet(x, wavelet='db1', mode='soft', wavelet_levels=n, method='BayesShrink', rescale_sigma='True')
 ```
 
 Where:
-- `X`: Is the input noise signal.
-- `Y`: Is the denoised output.
-- `Wavelet`: This is the name of wavelet used.
-- `Mode`: It is the thresholding mode used. There is two thresholding mode, i.e. soft and hard threshold.
-- `Wave_levels`: This is the decomposition levels. Note that this must be an integer.
-- `Method`: It is the thresholding method used. Here we use any of the two supported methods, ie. VishuShrink and BayesShrink.
-- `Rescale-sigma`: There are only two options. These options are `True` or `false`. For 1-D signals, it should be set to `true`. It is to rescale the noise variance signal if it is internally rescaled.
+- `x`: Is the input noise signal.
+- `y`: Is the denoised output.
+- `wavelet`: This is the name of wavelet used.
+- `mode`: The thresholding mode used. There is two thresholding mode, i.e. soft and hard threshold.
+- `wavelet_levels`: The decomposition levels. Note that this must be an integer.
+- `method`: The thresholding method used. Here we use any of the two supported methods, ie. VishuShrink and BayesShrink.
+- `rescale-sigma`: There are only two options. These options are `True` or `false`. For 1-D signals, it should be set to `true`. It is to rescale the noise variance signal if it is internally rescaled.
 
-### Python code for denoising ecg signal
-For this program, we need to install some packages that are needed. These packages are `numpy`, `PyWavelets`, `skimage` and `matplotlib`. We can install these packages using `pip` as shown below:
+### Denoising an Electrocardiogram (ECG) signal
+We need to install `numpy`, `PyWavelets`, `skimage` and `matplotlib` for this program. We can install these packages using `pip` as shown below:
+
 ```bash
 # For numpy package.
 pip install numpy
@@ -89,8 +90,8 @@ pip install matplotlib
 # Install scikit-image
 python -m pip install -U scikit-image
 ```
-These installation commands are executed in the python terminal.
-To use these packages, you will need to export them to your program so that you can use them. We import them as shown below:
+
+These installation commands are executed in the terminal. Then import them into the code as shown below:
 
 ```Python
 import numpy as np
@@ -104,7 +105,7 @@ import matplotlib.pyplot as plt
 - The `skimage` package enables the performance of signal preprocessing routines.
 - Finally, for any plot in Python, the `matplotlib` package is used.
 
-Read the data from the in-built database. Python has an in-built ecg database. It makes it more efficient since we do not need to look for the data from an external source. To read this data, we use the code below:
+Read the data from the in-built database. Python has an in-built ecg database. It makes it more efficient since we do not need data from an external source. To read this data, we use the code below:
 
 ```Python
 x = pywt.data.ecg().astype(float)/256  # In-built ecg data is read
@@ -119,7 +120,7 @@ x_noisy = x + sigma * np.random.randn(x.size)   # Adding noise to signal
 
 To add the noise to our signal(x), we use the formula `x + sigma * np.random.randn(x.size)`. 
 
-The `randn()` is used to add a random noise considering the noise variance `sigma`.
+The `randn()` adds a random noise considering the noise variance `sigma`.
 
 Let us now perform wavelet denoising using the `denoise_wavelet()` function using the syntax described earlier, as shown below:
 
@@ -137,13 +138,15 @@ plt.plot(x_denoise)
 plt.show()
 ```
 
-When plotting, we first create a figure using the `plt.figure()` function. This figure is of the size 20x10 pixel as described by the function property `figsize`. Next, the noisy and the denoised signals are plotted in the exact figure using the `plt.plot()` function. The code snippet `plt.show()` is used to show the output of the plot. The output of this plot is as shown below:
+We first create a figure using the `plt.figure()` function when plotting. This figure is of the size 20x10 pixel as described by the function property `figsize`. 
+
+Next, the noisy and the denoised signals are plotted in the exact figure using the `plt.plot()` function. The code snippet `plt.show()` is used to show the output of the plot. The output of this plot is as shown below:
 
 ![Plot of the signals](/engineering-education/wavelet-transform-analysis-of-1d-signals-using-python/wavelet-two.png)
 
 The blue signal is the noisy ecg signal, and the red is the denoised signal. Let us now look at how to denoise the audio signal since it is also a sample of a 1-D signal.
 
-### Python code for denoising an audio signal
+### Denoising an audio signal
 The first step is importing the libraries that we are going to use. These libraries that we import are installed using the `pip` command in the terminal as shown below:
 
 ```bash
@@ -152,25 +155,25 @@ pip install numpy
 pip install skimage
 pip install matplotlib
 ```
-The `scipy` package is used to solve your program's mathematical and scientific calculations. The `numpy` is used for working with arrays, `matplotlib` plots the outputs, and the `skimage` package is for image preprocessing routines, as explained earlier.
 
-```Python
+The `scipy` package solves your program's mathematical and scientific calculations. The `numpy` is used for working with arrays, `matplotlib` plots the outputs, while the `skimage` package is for image preprocessing routines, as explained earlier.
+
+```python
 from scipy.io import wavfile
 import numpy as np
 from skimage.restoration import denoise_wavelet
 import matplotlib.pyplot as plt
 ```
 
-We are importing the `wavfile` from the `scipy.io`. It is used to read audio signals in the `.wav` format. Since some numerical operations are involved, we import `numpy`. We also import the `denoise_wavelet()` function and `matplotlib.pyplot`.
+We import the `wavfile` from the `scipy.io` to read audio signals in the `.wav` format. Since some numerical operations are involved, we import `numpy`. We also import the `denoise_wavelet()` function and `matplotlib.pyplot`.
 
-We then read the audio file using `wavfile.read()` function and normalize the amplitude as shown below:
+We then read the audio file using the `wavfile.read()` function and normalize the amplitude as shown below:
 
 ```python
 Fs, x = wavfile.read('guitar.wav') # Reading audio wave file
 x = x/max(x)   # Normalizing amplitude
 ```
-
-We are reading the `guitar.wav` in the current directory. This file should be in the same folder as your python project. We can download this guitar file [here](https://drive.google.com/file/d/1-qTlmyI4sO9iCuDHh19B52T7imVk4Ohr/view). The signal samples will be stored in the `x` variable and the sampling frequency to `Fs` variable. 
+ The `guitar.wav`  file should be in the same folder as your python project so download this guitar file from [here](https://drive.google.com/file/d/1-qTlmyI4sO9iCuDHh19B52T7imVk4Ohr/view). The signal samples will be stored in the `x` variable and the sampling frequency to the `Fs` variable. 
 
 The amplitude is normalized because `wavfile` reads the audio in `int16` mode. This mode gives large values. Therefore, we need to reduce these values through normalization.
 
@@ -213,7 +216,7 @@ python3 -m pip install sounddevice
 conda install -c conda-forge python-sounddevice
 ```
 
-To import `sounddevice` package,  we use the code snippet below.
+We use the code snippet below to import the `sounddevice` package.
 
 ```Python
 import sounddevice as sd
