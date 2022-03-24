@@ -3,17 +3,17 @@ layout: engineering-education
 status: publish
 published: true
 url: /building-qr-code-authentication-system/
-title: Building QR Code Scanner User Authentication System in Computer Vision 
+title: Building a QR Code Scanner User Authentication System in Computer Vision 
 description: This tutorial aims to guide the reader on how to build a Quick Response Code scanner system in Computer Vision used for user identification and authentication.
 author: atonya-dennis
-date: 2022-03-17T00:00:00-21:20
+date: 2022-03-24T00:00:00-15:20
 topics: [Languages]
 excerpt_separator: <!--more-->
 images:
-  - url: /engineering-education/building-qr-code-authentication-system/hero.png
+  - url: /engineering-education/building-qr-code-authentication-system/hero.jpg
     alt: QR Code Image
 ---
-Computer vision has led to the growth and usage of Quick Response (QR) codes in today's real-life applications. The rapid production of smartphones capable of decoding and accessing encoded messages has made QR Codes a useful tool for any sector looking to engage mobile users through printed materials.
+Computer vision has led to the growth and usage of Quick Response (QR) codes in todays real-life applications. The rapid production of smartphones capable of decoding and accessing encoded messages has made QR Codes a useful tool for any sector looking to engage mobile users through printed materials.
 <!--more-->
 To help the reader understand this concept, this article will cover many things concerning QR Codes. Their practical application, how to scan and decode the codes, and how to use QR Codes in the development of a user authentication system are all described.
 
@@ -30,13 +30,12 @@ To help the reader understand this concept, this article will cover many things 
 To follow along with this tutorial:
 - You should have a basic understanding of [Python](https://www.python.org/) and its related concepts.
 - You should know about [computer vision](https://en.wikipedia.org/wiki/Computer_vision) and the [OpenCV](https://en.wikipedia.org/wiki/OpenCV) library.
-- You should know how to use [PyCharm](https://www.jetbrains.com/pycharm/download/#section=windows) or any other IDE for working with Python.
+- You should know how to use [PyCharm](https://www.jetbrains.com/pycharm/download/#section=windows) or any other IDE when working with Python.
 
 ### Introduction
 The **Quick Response Code** (QR Code) is a type of two-dimensional barcode mainly used for keeping track of items and storing data in pixel form. This data can be decoded to expose the encoded information. It efficiently encodes a large amount of data such as numbers, letters, and characters and can be read much faster in both horizontal and vertical positions than existing methods. This makes them more widely used than the conventional bar codes since the barcodes store limited data and can only be scanned horizontally.
 
 QR codes consist of various regions that have specific importance:
-
 - Finder Pattern: This pattern is found in the symbol's upper left, upper right, and lower left corners. They are easily detected in all directions and ease the location and identification of the QR Code size, position, and inclination.
 - Alignment Pattern: It comprises a single central module, light (3x3), and dark (5x5) modules, and acts as a correction pattern that corrects the distorted QR Code.
 - Timing Pattern: These patterns are arranged in both horizontal and vertical positions to identify the central coordinate of each data cell and correct the central coordinate at a time of distortion.
@@ -48,14 +47,13 @@ QR codes consist of various regions that have specific importance:
 *[Image source: ResearchGate](https://www.researchgate.net/profile/Sunday-Dugga/publication/268575546/figure/fig4/AS:668575274639371@1536412175189/Structure-of-a-QR-Code-3.png)*
 
 With the popularity of QR Codes, they have found their applications in various real-world fields, such as:
-
 - Inventory tracking and management systems.
 - Authentication systems for user identification.
 - Payment information can be shared across the retail and manufacturing industries by sharing payment information.
 - Sharing photos, links, media, phone numbers.
 
 ### Scanning QR Codes
-To scan the QR codes, we will use the OpenCV library to read the input images and video streams and display the outputs. To decode the codes, we will use the `pyzbar` and `zbar` libraries. We will also need the `NumPy` library for working with multi-dimensional arrays and matrices.
+To scan the QR codes, we will use the OpenCV library to read the input images and video streams and display the outputs. To decode the codes, we will use the `pyzbar` and `zbar` libraries. We will also need the `NumPy` library to work with multi-dimensional arrays and matrices.
 
 To use the libraries, we will import them using the commands below:
 
@@ -64,6 +62,7 @@ import numpy as np
 from pyzbar.pyzbar import decode
 import cv2
 ```
+
 To read the [QR Code](https://github.com/dentonya/QR_Code-Authentication-System/blob/master/qrcodes/qr_code_txt.png) image, we will use the cv2 library as shown below:
 
 ```python
@@ -71,13 +70,15 @@ image = cv2.imread("qrcodes/qr_code_txt.png")
 coded_infor = decode(image)
 print(coded_infor)
 ```
+
 Output:
 
 ```bash
 [Decoded(data=b'just a lot of plain text', type='QRCODE', rect=Rect(left=22, top=22, width=74, height=74), 
 polygon=[Point(x=22, y=22), Point(x=22, y=96), Point(x=96, y=96), Point(x=96, y=22)])]
 ```
-From the output, information from the image is displayed in various parts discussed below.
+
+From the output, information from the image is displayed in various parts discussed below:
 - Data: This section displays the data encoded in the QR Code.
 - Type: This part gives more information about the type of the code, either a barcode or a QR code.
 - Rect - It specifies the rectangular dimensions of the QR image.
@@ -92,12 +93,14 @@ for barcode in decode(image):
     print(encoded_text)
     print(barcode.rect)
 ```
+
 Output:
 
 ```bash
 'just a lot of plain text'
 just a lot of plain text
 ```
+
 Great! Now that we have successfully decoded the QR code message from an input image, let us try to decode it in real-time using webcam feed input.
 
 ### Real-Time QR Code Decoding
@@ -110,6 +113,7 @@ video = cv2.VideoCapture(0)
 video.set(3,640) #creating  output window
 video.set(4,740)
 ```
+
 To find out if they can be granted access or not, we will check if the decoded text is present in the text file. If there is a match, a green-colored bounding box will be displayed with the text "Access Granted." If there is no match, a red-colored bounding box will be displayed with the message "Denied Access".
 
 ```python
@@ -126,14 +130,15 @@ while True:
     cv2.imshow("Video",image)
     cv2.waitKey(1)
 ```
-On testing it out on real-life objects, sample outputs are displayed as shown below for both QR and Barcodes;
+
+On testing it out on real-life objects, sample outputs are displayed as shown below for both QR and Barcodes:
 
 ![Real Time Output](/engineering-education/building-qr-code-authentication-system/real-time-qr-output.jpg)
 
 ![Real Time Output](/engineering-education/building-qr-code-authentication-system/barcode-output.jpg)
 
 ### User Authentication System
-Most employees in various companies and students in schools get access to specific areas by scanning their identification cards or special entry cards to grant them access to specific restricted areas. Now, let us implement that by building an authentication and identification system for detecting authorized and unauthorized personnel. 
+Most employees in various companies and students in schools get access to specific areas by scanning their identification cards or special entry cards to grant them access. Now, let us implement that by building an authentication and identification system to detect authorized and unauthorized personnel. 
 
 We will start by importing the needed libraries and setting up the webcam camera for video capture.
 
@@ -147,6 +152,7 @@ video = cv2.VideoCapture(0)
 video.set(3, 640)
 video.set(4, 740)
 ``` 
+
 To grant access to various people, we will have a text file containing a list of all the decoded texts for all the authorized personnel. We will use the code below to open and access the file content.
 
 ```python
@@ -156,7 +162,7 @@ with open('authorised_employee.txt', 'r') as file:
 ``` 
 ![Text Output](/engineering-education/building-qr-code-authentication-system/real-time-qr-output.jpg)
 
-To be sure, we can run the code for encoding QR Codes in real-time to display each decoded text for the QR Codes corresponding to the list in the text document. The output below would be produced.
+To be sure, we can run the code to encode QR Codes in real-time to display each decoded text for the QR Codes corresponding to the list in the text document. The output below would be produced.
 
 ![Output](/engineering-education/building-qr-code-authentication-system/auth-output.jpg)
 
@@ -184,14 +190,14 @@ while True:
 ```
 ![Output](/engineering-education/building-qr-code-authentication-system/authorised-access.jpg)
 
-From the output above, our model has worked perfectly, scanning all the QR Codes and granting access to the authorized users. The complete code can be found on [GitHub](https://github.com/dentonya/QR_Code-Authentication-System).
+From the output above, we can see that our model has worked perfectly, scanning all the QR Codes and granting access to the authorized users. The complete code can be found on [GitHub](https://github.com/dentonya/QR_Code-Authentication-System).
 
 ### Conclusion
-Computer vision has opened up a lot of possibilities with the use of QR Codes. From this tutorial, it is clear that they play a significant role in real life through data encoding, high data storage capacity, their ability to provide secured access to information. They are increasingly present in products, advertisements, retail industries as well as in authentication and identification systems. 
+Computer vision has opened up a lot of possibilities with the use of QR Codes. It is clear that they play a significant role in real life through data encoding, high data storage capacity, their ability to provide secured access to information. They are increasingly present in products, advertisements, retail industries as well as in authentication and identification systems. 
 
-To summarize, we have explored QR Codes and their real-life applications, looked at how to scan and decode the codes using the OpenCV library and built an authentication system using the concept of QR Codes.
+To summarize, we explored QR Codes and their real-life applications, looked at how to scan and decode the codes using the OpenCV library and built an authentication system using the concept of QR Codes.
 
-Happy Coding!
+Happy coding!
 
 ### Further reading
 - [How to generate and read QR Codes in Python](https://www.thepythoncode.com/article/generate-read-qr-code-python)
