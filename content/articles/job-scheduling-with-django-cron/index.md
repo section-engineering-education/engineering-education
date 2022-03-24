@@ -3,20 +3,20 @@ layout: engineering-education
 status: publish
 published: true
 url: /job-scheduling-with-django-cron/
-title: Automating Job Scheduling With Django_cron in a Python Application
+title: Automating Job Scheduling with Django_cron in a Python Application
 description: This article will explain how to use the Django_cron library to schedule jobs in a Python application.
 author: francisca-adekanye
-date: 2022-03-16T00:00:00-13:30
+date: 2022-03-24T00:00:00-15:30
 topics: [Languages]
 excerpt_separator: <!--more-->
 images:
 
   - url: /engineering-education/job-scheduling-with-django-cron/hero.png
-    alt: Job Scheduling With Django Cron in a Python Application
+    alt: Job Scheduling Django Cron in a Python Application
 ---
 Job scheduling is crucial in all streaming applications. There are various ways of streaming data from an external API into an application through automation.
 <!--more-->
-Sometimes, developers need to automate the writing of data into database at every minute or hour(s). In this tutorial, we will be making a Python application to demonstrate job queues with a library called `django_cron`.
+Sometimes, developers need to automate the writing of data into a database at every minute or hour(s). In this tutorial, we will be making a Python application to demonstrate job queues with a library called `django_cron`.
 
 ### Table of contents
 - [Prerequisites](#prerequisites)
@@ -27,20 +27,19 @@ Sometimes, developers need to automate the writing of data into database at ever
 
 ### Prerequisites
 To follow along with this tutorial, you should meet the following requirements.
-- An understanding of the Python programming language.
+- Have an understanding of the Python programming language.
 - A pre-installed IDE, preferably [Visual Studio Code](https://code.visualstudio.com/download).
 - A pre-installed API tester, preferably [Postman](https://www.postman.com/downloads/).
 - [Python 3.x](https://python.org) installed.
 - An understanding of [Django 3](https://docs.djangoproject.com/en/3.2/).
-
-### Objectives
-In this tutorial, we will be learning jobs scheduling automation with `django_cron` in a Python application. In addition, you will learn and apply the following to your project.
-
 - How `django_cron` works.
 - Jobs scheduling automation with the `django_cron` library.
 
+### Objectives
+In this tutorial, we will be learning jobs scheduling automation with `django_cron` in a Python application. In addition, we will learn and apply the following to an example Python project.
+
 ### Overview of job scheduling
-Every repeated tasks that are carried out in the background are referred to as `jobs` in software development. Job scheduling deals with the execution of various tasks by ensuring the connection of system applications.
+Every repeated task that is carried out in the background is referred to as `jobs` in software development. Job scheduling deals with the execution of these various tasks by ensuring the connection of system applications.
 
 There are many schedulers which are used in industries. This is based on the kind of company requirement. For instance, Oracle FLEXCUBE FCJ uses the two types of jobs schedulers named `Quartz` and `Flux`.
 
