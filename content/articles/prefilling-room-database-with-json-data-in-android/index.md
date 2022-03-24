@@ -14,7 +14,7 @@ images:
   - url: /engineering-education/prefilling-room-database-with-json-data-in-android/hero.jpg
     alt: Prefilling Room Database with JSON Data in Android Hero Image
 ---
-When designing an app, developers strive to come up with a way to start with a database that already has data in it. Pre-populating the room database with data, which can be material from a prepared database (.db) files in the device's file system or even JSON data.
+When designing an app, developers strive to develop a way to start with a database that already has data in it. Pre-populating the room database with data, which can be material from a prepared database (.db) files in the device's file system or even JSON data.
 <!--more-->
 In most cases, a REST query is used to retrieve data from the application backend, but this is not the case with our application because it is standalone, and we only need to have the APK file.
 
@@ -29,7 +29,7 @@ In most cases, a REST query is used to retrieve data from the application backen
 - [Creating Room database](#step-4---creating-room-database)
 - [Adding JSON data](#step-5---adding-json-data)
 - [Creating a Prefilling class](#step-6---creating-a-prefilling-class)
-- [Attaching the callback to the Database](#step-7---attaching-the-callback-to-the-database)
+- [Attaching the callback to the database](#step-7---attaching-the-callback-to-the-database)
 - [Define ViewModel](#step-8---define-viewmodel)
 - [Displaying data](#step-9---displaying-data)
 - [When is it necessary to pre-populate a Room database](#when-is-it-necessary-to-pre-populate-a-room-database)
@@ -39,7 +39,7 @@ In most cases, a REST query is used to retrieve data from the application backen
 To follow along with this tutorial, you should;
 - Have a fundamental grasp of Android programming.
 - Have a thorough knowledge of the Kotlin programming language.
-- Have a concept of the [ViewModel](https://developer.android.com/topic/libraries/architecture/viewmodel)as utilized in Android.
+- Have a concept of the [ViewModel](https://developer.android.com/topic/libraries/architecture/viewmodel) as utilized in Android.
 - Have an IDE installed, preferably [Android Studio](https://developer.android.com/studio).
 
 ### Goals
@@ -326,7 +326,7 @@ fun getInstance(context: Context):NoteDatabase?{
 }
 ```
 
-#### Step eight: Define Viewmodel
+#### Step eight: Define ViewModel
 Let us define a `ViewModel` for our app. The class should have the implementation of the DAO methods.
 
 ```kotlin
@@ -372,7 +372,7 @@ class MainActivity : AppCompatActivity() {
 }
 ```
 
->Ensure you have created an adapter class that acts as a bridge between the user interface and the Room data source. Also, create a ViewModel Factory used to pass arguments to our `ViewModel`.
+>Ensure you have created an adapter class that connects the user interface and the Room data source. Also, create a ViewModel Factory used to pass arguments to our `ViewModel`.
 
 ### When is it necessary to pre-populate a Room database
 - If the program should be launched with a particular set of data.
@@ -384,7 +384,10 @@ class MainActivity : AppCompatActivity() {
 
 This GitHub [Repository](https://github.com/benta-odek/PrefillingRoomDbDemo) contains the complete code. 
 
-### Conclusion
-In this tutorial, we have gone through the pre-populating room database with initial data used in Android, Room Callback, and how it is added to the database. We have also gone through how to implement prefilling Room database with data and when it is necessary to pre-populate a room database.
+### Wrapping up
+In this tutorial, we have gone through pre-populating room database with initial data used in Android. Also, we have covered Room Callback, and how it is added to the database, and how to implement prefilling Room database with data and when it is necessary to pre-populate a room database.
 
 Happy coding!
+
+---
+Peer Review Contributions by: [Briana Nzivu](/engineering-education/authors/briana-nzivu/)
