@@ -19,18 +19,13 @@ A bot is a computer program that performs predetermined tasks automatically. Its
 In this tutorial, we will design a conversational interface for our chatbot using natural language processing.
 
 ### Prerequisites
-- Have a basic knowledge of [Python](https://www.python.org/) programming langugage.
-- Have a python environment of your choice installed.
+- Have a basic knowledge of python programming langugage.
+- install the latest version of [python](https://www.python.org/) onto your computer.
 
 ### Table of contents
 - [Fields of NLP](#fields-of-nlp)
 - [Types of bots](#types-of-bots)
 - [Building an NLP chatbot](#building-an-nlp-chatbot)
-  - [Importing modules](#importing-modules)
-  - [Creating JSON file](#creating-jason-file)
-  - [Processing data](#processing-data)
-  - [Designing a Neural Network model](#designing-a-neural-network-model)
-  - [Building useful features](#building-useful-features)
 - [Benefits of bots](#benefits-of-bots)  
 - [Conclusion](#conclusion)
 - [Reference](#reference)
@@ -50,10 +45,12 @@ Below are the core fields of NLP:
 - **Social Media Bot:** Automatically responds to questions on social media platforms.
 
 ### Building an NLP chatbot
-The first step is to create an intents JSON file that lists all the possible outcomes of user interactions with our chatbot. We first need a set of tags that users can use to categorize their queries. These tags include `name`, `age`, and many others. Every new tag would require a unique pattern. Identifying these trends can help the chatbot train itself on how people query about our chatbot's name, allowing it to be more responsive. The chatbot will return pre-programmed responses to answer questions.
+Follow the steps below to successfully build a conversational interface for our chatbot.
 
-#### Importing modules
-Let us import the necessary modules first:
+#### Step 1: Importing modules
+Imports are critical for successfully organising your Python code. Importing code correctly will increase your productivity by allowing you to reuse code while also maintaining the maintainability of your projects.
+
+Let us import the necessary modules first in the code below:
 
 ```python
 import json # It's possible to utilize it to work with JSON data.
@@ -70,8 +67,8 @@ nltk.download("punkt")# required package for tokenization
 nltk.download("wordnet")# word database
 ```
 
-#### Creating a JSON file
-Next we will create the json file:
+#### Step 2: Creating a JSON file
+We will create an intents JSON file that lists all the possible outcomes of user interactions with our chatbot. We first need a set of tags that users can use to categorize their queries. These tags include `name`, `age`, and many others. Every new tag would require a unique pattern. Identifying these trends can help the chatbot train itself on how people query about our chatbot's name, allowing it to be more responsive. The chatbot will return pre-programmed responses to answer questions.
 
 ```python
 ourData = {"ourIntents": [
@@ -95,7 +92,7 @@ ourData = {"ourIntents": [
             
 ]}
 ```
-#### Processing data
+#### Step 3: Processing data
 In this section, vocabulary of all the terms used in the patterns, a list of tag classes, a list of all the patterns in the intents file, and all the related tags for each pattern will be created before creating our training data.
 
 ```python
@@ -122,7 +119,7 @@ newWords = sorted(set(newWords))# sorting words
 ourClasses = sorted(set(ourClasses))# sorting classes
 ```
 
-#### Designing a Neural Network model
+####  Step 4: Designing a Neural Network model
 Because neural networks can only understand numerical values, we must first process our data so that a neural network can understand what we are doing.
 
 The code below is used to turn our data into numerical values using [bag of words](https://www.geeksforgeeks.org/bag-of-words-bagOqord-model-in-nlp/) (BoW) encoding system.
@@ -180,7 +177,7 @@ ourNewModel.fit(x, y, epochs=200, verbose=1)
 
 ![Output](/engineering-education/creating-chatbot-using-natural-language-processing-in-python/summary.png)
 
-#### Building useful features
+#### Step 5: Building useful features
 In order to make use of our model in a chatbot, we must first implement the necessary functionality. Making this easier by building a library of utility functions will help.
 ```python
 def ourText(text): 
