@@ -3,15 +3,15 @@ Debugging is one of the crucial processes in software development. Developers ai
 
 ### Table of contents
 - [Prerequisites](#prerequisites)
-- [What is Stetho](#what-is-stetho)
+- [What is Stetho?](#what-is-stetho)
 - [Creating a new project](#step-1---creating-a-new-project)
-- [Adding necessary dependencies](#step-2---adding-necessary-dependencies)
+- [Adding the necessary dependencies](#step-2---adding-the-necessary-dependencies)
 - [Initializing Stetho](#step-3---initializing-stetho)
-- [Defining UI](#step-4---defining-ui)
+- [Defining the UI](#step-4---creating-the-user-interface)
 - [Response data class](#step-5---response-data-class)
 - [Creating an API interface](#step-6---creating-an-api-interface)
-- [Using the StethoInterceptor](#step-7---using-the-stethoInterceptor)
-- [Getting a dog](#step-8---getting-a-dog)
+- [Initializing Retrofit and Stetho](#step-7---initializing-retrofit-and-stetho)
+- [Making the API call](#step-8---making-the-api-call)
 - [Debugging with Stetho](#step-9---debugging-with-stetho)
 - [Conclusion](#conclusion)
 
@@ -123,7 +123,7 @@ object DogsApi {
 }
 ````
 
-#### creating the interceptor
+#### Creating the interceptor
 Now, let's define a client and add the `StethoInterceptor` network interceptor.
 
 ```kotlin
