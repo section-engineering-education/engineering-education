@@ -2,30 +2,28 @@
 layout: engineering-education
 status: publish
 published: true
-url: /creating-dashboards-in-react-using-react-dashboards/
+url: /introducing-security-keys-in-data-systems/
 title: Introducing Security Keys in Data Systems.
 description: This tutorial discusses data security and how to implement it by introducing security keys in the systems.
-author: rayford-wanyoike
-date: 2022-03-01T00:00:00-09:24
+author: royford-wanyoike
+date: 2022-03-24T00:00:00-11:10
 topics: [Languages]
 excerpt_separator: <!--more-->
 images:
 
-  - url: /engineering-education/introducing-security-keys-in-data-systems/hero.jpg
+  - url: /engineering-education/introducing-security-keys-in-data-systems/hero.png
     alt: Introducing Security Keys in Data Systems Hero Image
 ---
 In an organization, data is always fed in the system. This does not matter whether the company or organization is using the file management system or database to store their data.
 <!--more-->
-
 The essence matters on the security of the data. It is with due reasons that a company has to ensure that the employees are trusting in relation to the data they handle. Moreover, they need to use secured systems and devices which could hardly leak the information.
 
 Currently, technology has introduced several blockchain methods to encrypt data. All these are for security purpose to ensure more layers of security are implemented.
 
 This article will be guiding on how an organization can create their own keys to come up with a secure mechanism to store data. When the keys are kept safe and only accessible to authorized personnel, the risk for data leakage is low.
 
-### Table of Contents
-
-- [Table of Contents](#table-of-contents)
+### Table of contents
+- [Table of contents](#table-of-contents)
 - [Prerequisites](#prerequisites)
 - [Introduction to data security](#introduction-to-data-security)
   - [Types of keys for securing data](#types-of-keys-for-securing-data)
@@ -45,7 +43,7 @@ This article will be guiding on how an organization can create their own keys to
 3. A Microsoft account which can be created [here](https://account.microsoft.com/account/).
 
 ### Introduction to data security
-Data security is a virtue which should be embraced in all organizations. It begins from the highest level to the lowest level of the organization. Data breach - which mostly occurs when there is a vulnerability- ruins a company standards hence a degrade in services.
+Data security is a virtue which should be embraced in all organizations. It begins from the highest level to the lowest level of the organization. Data breach - which mostly occurs when there is a vulnerability ruins a company standards hence a degrade in services.
 
 Data leakages has been the news of the town with every day reports of company exposing millions of crucial data. This happens due to poor data encryption techniques. Using your own security which is more of Two-factor authentication (2FA) will help a lot to improve security.
 
@@ -56,12 +54,12 @@ The keys used to secure data are stored in the cloud. This is because cloud serv
 #### Types of keys for securing data
 Data storage has shifted 90% if not wholly to cloud storage. With remote access and network infrastructure, people now don't have to drop by the office to access data.
 
-In the cloud previously, there were two keys used to secure data online. These are Hold Your Own Key(HYOK) and the recent one Build Your Own Key(BYOK). Below is an explanation for the both.
+In the cloud previously, there were two keys used to secure data online. These are Hold Your Own Key( HYOK) and the recent one Build Your Own Key (BYOK). Below is an explanation for the both.
 
 ##### Hold Your Own Keys (HYOK)
 This key uses a concept which is based on a trusted model. The flow of the data is based on the fact that it has to pass via a trusted model.
 
-Here the data providers chose to have the key remain with the cloud service provider or they can keep it. Therefore, the third party have the access to the data.
+Here, the data providers chose to have the key remain with the cloud service provider or they can keep it. Therefore, the third party have the access to the data.
 
 ##### Bring Your Own Keys
 This key is totally different from the other as it does not rely on any third party for storage. The key is hosted inside the cloud provider unlike the other one which is stored with the enterprise holding the cloud service.
@@ -77,13 +75,13 @@ Data leakage in an organization takes place when there is poor managerial of ser
 BYOK attempts to overcome these issues which are now to be laid on one hand. It is the cloud security team which would be reliable in case of any tamper.
 
 ### Building your own key
-To come up with your own key it is essential to ensure that the crypto libraries required are installed. In this tutorial we will be working with Azure. It is the most common hosting platform and the one used by most parties.
+Coming up with your own key is essential to ensure that the crypto libraries required are installed. In this tutorial we will be working with Azure. It is the most common hosting platform and the one used by most parties.
 
 This library plays a crucial role in generating the keys. The generated keys are then shuffled in a way that guessing the pattern cannot be easy. The generated keys concern the compatible certificate. The generated certificate, once compatible, has a unique secret key.
 
 Moreover, HSMs aids in ensuring availability through the use of tough key management. They need to have efficient storage and avoid redundancy features. This is what generates the asymmetric keys for use.
 
-To grant rights to the user, the following commands are used on the shell or terminal. These are in line when working with azure keys.
+To grant rights to the user, the following commands are used on the shell or terminal. These are in line when working with azure keys:
 
 ```shell
 azure keyvault role assignment
@@ -104,7 +102,6 @@ The next step is to specify the URL which will be used. The following command ap
 ```bash
  Use-AipServiceKeyVaultKey -KeyVaultKeyUrl "
  /url goes in here <key-version> "
-
 ```
 
 ### Importance of introducing BYOKs
@@ -113,12 +110,12 @@ The next step is to specify the URL which will be used. The following command ap
 3.  Bring Your Own Key is a topology controlled at the individual level. It does not rely on a third party outside the organization to keep data.
 
 ### Application and implementation.
-In the above tutorial, we have generated keys using some few commands. The keys generated can now be used to configure and ensure that data is safe. This guarantees that the data is safe. The cloud engineers now have the role to ensure they practice integrity.
+In the tutorial above, we have generated keys using some few commands. The keys generated can now be used to configure and ensure that data is safe. The cloud engineers now have the role to ensure they practice integrity.
 
 ### Troubleshooting BYOKs
 There are only two reasons why these keys might end up conflicting. These are due to validation and tampering. For instance, working with azure keys it is simple to troubleshoot.
 
-It is also easy to check where the errors are and in case of invalid dueness then a renew is the only solution. In the link, the part enters the licensing URL.
+It is also easy to check where the errors are and in case of invalid dueness then a renew is the only solution. In the link, the part enters the licensing URL:
 
 ```bash
  LicensingIntranetDistributionPointUrl:
@@ -126,7 +123,7 @@ It is also easy to check where the errors are and in case of invalid dueness the
 
 Many companies are still unveiling the best BYOKS. Recently, Google, too, has come up with its system. They recently released it in beta mode and named it Cloud External Key Manager. The mission of their system is to help enterprises leverage Google cloud services.
 
-Secondly, to follow the complex regulations and policies. These regulations will be giving them the mandate to control their keys. Additionally, they will encrypt and maintain ownership. ​
+Secondly, to follow the complex regulations and policies. These regulations will be giving them the mandate to control their keys. Additionally, they will encrypt and maintain ownership.​
 
 ### Conclusion
 According to data analysis and mining BYOKS is all about how data is established and handled. This helps to maintain trust while working with data especially where hosting has been done remotely. This is because data handling in remote has several handling which makes it vulnerable since it is being transmitted via the Internet.
