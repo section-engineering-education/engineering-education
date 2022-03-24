@@ -1,4 +1,4 @@
-# How to build a rich text editor with TipTap, TailwindCSS, and Vue.js
+### Introduction
 A rich text editor is a necessary feature for all web applications that receive user input that requires a degree of formatting.
 
 For example, if you wanted to implement any of the following:
@@ -15,12 +15,12 @@ This article will guide the reader through the process of using TipTap to quickl
 
 You can check out the finished project [here](https://article-tiptap-demo.vercel.app).
 
-## Intended Audience
+### Intended Audience
 This article is intended for readers who:
 - already understand the basics of front end web development with Vue.js(Vue 2)
 - are comfortable with TailwindCSS
 
-## Introduction to TipTap
+### Introduction to TipTap
 TipTap is a headless library. Like a [headless CMS](https://strapi.io/what-is-headless-cms), TipTap doesn't provide a user interface for you.
 
 Instead, TipTap gives you a set of tools, and it's up to you to use them to assemble your own user interface, giving you complete control over the look and behavior of your editor.
@@ -40,7 +40,7 @@ Before we move on, let's define some jargon:
 
 TipTap allows you to output the current content of an editor instance in one of two formats: HTML or JSON.
 
-## Approach to the Project
+### Approach to the Project
 As you build this project, you will execute the following steps:
 - Project setup
 - Building the editor menu
@@ -48,12 +48,12 @@ As you build this project, you will execute the following steps:
 
 Let's begin.
 
-## Project Setup
+### Project Setup
 Before building your editor, you need to put some things in place.
 
 You're going to install and set up Vue CLI, Tailwind CSS, and TIpTap.
 
-### Setting up Vue CLI
+#### Setting up Vue CLI
 Begin by installing Vue CLI(If you haven't before) by running the following command in your terminal.
 
 ```sh
@@ -121,7 +121,7 @@ npm run serve
 
 Visit localhost:8080 to see your Vue project running.
 
-## Setting up Tailwind CSS
+#### Setting up Tailwind CSS
 Close your dev server, then run the following commands in your terminal:
 
 ```sh
@@ -170,7 +170,7 @@ Link your output.css file to your `public/index.html` file by putting the follow
 
 That concludes the setup for Tailwind.
 
-## Setting up TipTap
+#### Setting up TipTap
 To begin, open a new terminal window. Run the following code in the terminal window:
 
 ```sh
@@ -235,7 +235,7 @@ This is a screenshot of what your app should look like after you're done with th
 
 And you're done with the setup!
 
-## Building the editor menu
+### Building the editor menu
 In the setup section, you installed TipTap and created the base of your editor.
 
 Next, you're going to build the menu of your editor.
@@ -270,7 +270,7 @@ The code puts a div on top of your editor with some styling. This is what the pa
 
 Now, for the buttons.
 
-### Building the heading buttons
+#### Building the heading buttons
 Inside the div just on top of the `editor-content` component, place the following code:
 
 ```html
@@ -388,7 +388,7 @@ This code also adds some styling in advance for some other types of nodes.
 
 Now, the changes are quite visible when you try and use the buttons.
 
-### Building the bold and italic buttons
+#### Building the bold and italic buttons
 You're going to follow a similar process to build the bold and italic buttons.
 
 Place this markup in the template of `src/components/TipTap.vue`, after the markup for the header buttons:
@@ -427,7 +427,7 @@ The only new commands here are `toggleBold` and `toggleItalic`. These commands a
 
 Test the buttons to see the effects, then continue to the next section.
 
-### Building the link button
+#### Building the link button
 You have to approach the link button a little differently. Why? You can't just toggle a link on and off: you need to give the user some interface to enter the URL of the link.
 
 Because TipTap is headless, it doesn't provide a user interface, so you need to build it yourself.
@@ -566,7 +566,7 @@ closeLinkDialog() {
 `makeLink` gets the current value of the input in the dialog. It then creates a link in the editor with the value of the input as its URL.
  If the value of the input is empty or whitespace, `makeLink` removes any link that might've been selected.
 
-### Building the list button
+#### Building the list button
 To build the list button, you need to install two new nodes: `bulletList` and `listItem`.
 
 Install them by running the following in your terminal:
@@ -621,7 +621,7 @@ makeList() {
 
 The `toggleBulletList` command is similar in function to the `toggleHeading` command.
 
-### Building the image button
+#### Building the image button
 The image node isn't in the starter kit, so you need to install it first.
 
 Run the following in your terminal:
@@ -708,7 +708,7 @@ Once you have the URL, you pass it to the `setImage` command, which adds the ima
 
 At this point, you have a fully functional editor, but how can you output all the content your user has typed? Find out in the next section.
 
-## Getting the editor output
+### Getting the editor output
 In a complete application, you would need to send the editor output to a backend for storage or processing.
 
 You don't have a backend in this demo, so you'll just display the editor output on the page. How are you going to do that?
@@ -795,7 +795,7 @@ Here's what everything should look like when you put it together:
 
 ![finished demo screenshot](/build-a-rich-text-editor-with-vue/finished-demo.png)
 
-## Conclusion
+### Conclusion
 In this article, you learned how to use TipTap to build a rich text editor. I hope you found it helpful.
 
 You can find a link to the complete codebase [here](https://github.com/Morgenstern2573/article-tiptap-demo).
