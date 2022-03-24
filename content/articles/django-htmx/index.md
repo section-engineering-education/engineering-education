@@ -9,6 +9,7 @@ Are you a Django developer that is not really familiar with JavaScript and will 
 If these questions have come to your mind, you are in the right place.
 
 In this article, I will build a simple Django application that creates, deletes content from the database, and displays the current content asynchronously without the page refreshing. This is important if you don't want to go through the stress of using a library like React or Vue.
+The project built inthis tutorial can be found on [GitHub](https://github.com/khabdrick/django-htmx-tutorial).
 
 #### Prerequisites
 
