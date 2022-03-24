@@ -50,8 +50,15 @@ Follow the steps below to successfully build a conversational interface for our 
 #### Step 1: Importing modules
 Imports are critical for successfully organising your Python code. Importing code correctly will increase your productivity by allowing you to reuse code while also maintaining the maintainability of your projects.
 
-Let us import the necessary modules first in the code below:
+The necessary modules includes:
+- JSON: It's possible to utilize it to work with JSON data.
+- String: Provides access to several potentially valuable constants
+- Random: For various distributions; this module implements pseudo-random number generators.
+- WordNetLemmatizer: It has the ability to lemmatize.
+- Tensorflow: A multidimensional array of elements is represented by this symbol.
+- Sequential: Sequential groups a linear stack of layers into a tf.keras.Model.
 
+The code below shows how we import the modules:
 ```python
 import json # It's possible to utilize it to work with JSON data.
 import string # provides access to several potentially valuable constants
