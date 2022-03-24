@@ -6,7 +6,7 @@ url: /debugging-with-stetho-in-android/
 title: Debugging with Stetho in Android
 description: This tutorial takes the reader through the process of debugging network calls in Android with Stetho.
 author: anne-sogoli
-date: 2022-03-24T00:00:00-10:50
+date: 2022-03-24T00:00:00-09:50
 topics: [Languages]
 excerpt_separator: <!--more-->
 images:
@@ -19,17 +19,20 @@ Debugging is one of the crucial processes in software development. Developers ai
 Debugging can be done in different parts of an Android application. In this tutorial, we will focus on debugging network calls with the [Stetho](https://github.com/facebook/stetho) debugging library.
 
 ### Table of contents
+- [Table of contents](#table-of-contents)
 - [Prerequisites](#prerequisites)
 - [What is Stetho?](#what-is-stetho)
-- [Creating a new project](#step-1---creating-a-new-project)
-- [Adding the necessary dependencies](#step-2---adding-the-necessary-dependencies)
-- [Initializing Stetho](#step-3---initializing-stetho)
-- [Defining the UI](#step-4---creating-the-user-interface)
-- [Response data class](#step-5---response-data-class)
-- [Creating an API interface](#step-6---creating-an-api-interface)
-- [Initializing Retrofit and Stetho](#step-7---initializing-retrofit-and-stetho)
-- [Making the API call](#step-8---making-the-api-call)
-- [Debugging with Stetho](#step-9---debugging-with-stetho)
+- [Step 1 - Creating a new project](#step-1---creating-a-new-project)
+- [Step 2 - Adding the necessary dependencies](#step-2---adding-the-necessary-dependencies)
+  - [Uses of the libraries](#uses-of-the-libraries)
+- [Step 3 - Initializing Stetho](#step-3---initializing-stetho)
+- [Step 4 - Creating the user interface](#step-4---creating-the-user-interface)
+- [Step 5 - Response data class](#step-5---response-data-class)
+- [Step 6 - Creating an API interface](#step-6---creating-an-api-interface)
+- [Step 7 - Initializing Retrofit and Stetho](#step-7---initializing-retrofit-and-stetho)
+  - [Creating the interceptor](#creating-the-interceptor)
+- [Step 8 - Making the API call](#step-8---making-the-api-call)
+- [Step 9 - Debugging with Stetho](#step-9---debugging-with-stetho)
 - [Conclusion](#conclusion)
 
 ### Prerequisites
@@ -40,12 +43,12 @@ To follow along with this tutorial, you need:
 - Making network calls with Retrofit and using Coroutines.
 
 ### What is Stetho?
-Stetho is an Android debugging library that allows developers to debug their apps with Chrome Dev tools. Stetho can be used to inspect Android SQLite database but we are not going to do that in this tutorial because Android Studio nowadays comes with an integrated database inspector.
+Stetho is an Android debugging library that allows developers to debug their apps with Chrome Dev tools. Stetho can be used to inspect Android SQLite database, but we are not going to do that in this tutorial because Android Studio nowadays comes with an integrated database inspector.
 
 In this tutorial, we are going to create a simple Android app that makes a network call and fetches a random dog image. We will then use Stetho to debug the network calls made from the app.
 
 > The BASE_URL will be - "https://dog.ceo/api/breeds/"
-> 
+>
 > The endpoint will be - "image/random"
 
 ### Step 1 - Creating a new project
@@ -92,7 +95,7 @@ class StethoApp : Application() {
 }
 ```
 
-Navigate to your `AndroidManifest` file and add the name of the base application class that we have just created, without this, our code won't work.
+Navigate to your `AndroidManifest` file and add the name of the base application class that we have just created, without this, our code won't work:
 
 ```xml
 <uses-permission android:name="android.permission.INTERNET"/>
@@ -111,7 +114,7 @@ Create a simple layout with an `ImageView` to hold the fetched image, a `Button`
 ![layout](/engineering-education/debugging-with-stetho-in-android/layout.png)
 
 ### Step 5 - Response data class
-Create a new model class that will represent the response that we will receive.
+Create a new model class that will represent the response that we will receive:
 
 ```kotlin
 data class RandomDogResponse(
@@ -121,7 +124,7 @@ data class RandomDogResponse(
 ```
 
 ### Step 6 - Creating an API interface
-Create an interface and define the method that will get images of dogs.
+Create an interface and define the method that will get images of dogs:
 
 ```kotlin
 interface DogsApiService {
@@ -131,25 +134,25 @@ interface DogsApiService {
 ```
 
 ### Step 7 - Initializing Retrofit and Stetho
-Create a new object class where we will initialize Retrofit and Stetho.
+Create a new object class where we will initialize Retrofit and Stetho:
 
 ```kotlin
 object DogsApi {
     const val BASE_URL = "https://dog.ceo/api/breeds/"
     ...
 }
-````
+```
 
 #### Creating the interceptor
-Now, let's define a client and add the `StethoInterceptor` network interceptor.
+Let's define a client and add the `StethoInterceptor` network interceptor:
 
 ```kotlin
 private val okHttpClient = OkHttpClient.Builder()
     .addNetworkInterceptor(StethoInterceptor())
     .build()
-````
+```
 
-We need to create a Retrofit instance and pass `okHttpClient` as the client.
+We need to create a Retrofit instance and pass `okHttpClient` as the client:
 
 ```kotlin
 private val retrofit = Retrofit.Builder()
@@ -157,22 +160,22 @@ private val retrofit = Retrofit.Builder()
     .addConverterFactory(GsonConverterFactory.create())
     .client(okHttpClient)
     .build()
-````
+```
 
-Finally, lazily create an instance of the API service.
+Finally, lazily create an instance of the API service:
 
 ```kotlin
 val dogsApi: DogsApiService by lazy {
     retrofit.create(DogsApiService::class.java)
 }
-````
+```
 
 Your whole object class implementation should be similar to this:
 
 ```kotlin
 object DogsApi {
     const val BASE_URL = "https://dog.ceo/api/breeds/"
-    
+
     private val okHttpClient = OkHttpClient.Builder()
         .addNetworkInterceptor(StethoInterceptor())
         .build()
@@ -209,11 +212,11 @@ binding.buttonGet.setOnClickListener {
 ```
 
 ### Step 9 - Debugging with Stetho
-Now that the newer version of Chrome browser crashes when using Chrome devTools to debug with Stetho, you may need to downgrade the version of your Google Chrome browser, otherwise, you can opt to use another browser such as Brave or Microsoft Edge.
+Since the newer version of Chrome browser crashes when using Chrome devTools to debug with Stetho, you may need to downgrade the version of your Google Chrome browser, otherwise, you can opt to use another browser such as Brave or Microsoft Edge.
 
 > Ensure your device (Emulator or physical device) is up and connected and that the app that we need to debug is open.
 
-Launch the browser and type : 
+Launch the browser and type:
 - `chrome://inspect/#devices` - if you are using an older version of Google chrome on your machine.
 - `edge://inspect/#devices` - for Microsoft edge
 - `brave://inspect/#devices` - for Brave browser
@@ -239,7 +242,7 @@ As you can see, the devTool lets you observe:
 - Initiator
 - Size and duration of the network call
 
-If you click on it, you will get more insights about the call i.e. you call see the:
+If you click on it, you will get more insights about the call i.e. you can see the:
 - Headers of the response
 - A preview of the response
 - The actual response e.t.c.
@@ -249,9 +252,9 @@ If you click on it, you will get more insights about the call i.e. you call see 
 And that is all, with Stetho you can get more insights into your network calls from your Android app.
 
 ### Conclusion
-In this tutorial, we have created a simple Android app that fetches a random dog image and displays it. We;ve gone ahead and integrated Stetho debugging library so that we can debug our network calls. Hope you have learned something. Go ahead and read more about this awesome library.
+In this tutorial, we have created a simple Android app that fetches a random dog image and displays it. We've gone ahead and integrated Stetho debugging library so that we can debug our network calls. Hope you have learned something. Go ahead and read more about this awesome library.
 
-For a full implementation of the demo, you can visit this Github repository [Debugging With Stetho Demo](https://github.com/anne-sogoli/DebuggingWithStetho)
+For a full implementation of the demo, you can visit this Github repository: [Debugging With Stetho Demo](https://github.com/anne-sogoli/DebuggingWithStetho)
 
 Happy coding!
 
