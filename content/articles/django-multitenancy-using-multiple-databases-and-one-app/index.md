@@ -1,6 +1,6 @@
 Multitenancy is whereby one web app installation can be used to serve more than one customer and, each customer's data and users are isolated from each other's. example: Imagine that you built a university web-based Library Management System, and you want to provide your services to many universities without having to rebuild and host the same system for each university.
 
-Multitenancy would allow you to build one site and offer instances of your site to the universities in form of Software as a Service(SAAS) while keeping the data and users of each university isolated. Each university would be a tenant of your site hence the name Multitenancy.
+Multitenancy would allow you to build one site and offer instances of your site to the universities in form of Software as a Service(SAAS) while keeping the data and users of each university isolated. Each university would be a tenant of your site hence the name `Multitenancy`.
 
 The goal of this tutorial is to show you how multitenancy can be implemented using multiple databases and a shared Django app. In our project, we shall use Mongo DB.
  > NB: This method is also compatible with any other DB that is supported by Django
@@ -42,7 +42,7 @@ Using your terminal, create a directory for our project "`myProject`" using:
 ```bash
 mkdir myProject
 ```
-change your current directory to `myProject`:
+Change your current directory to `myProject`:
 ```bash
 cd myProject
 ```
@@ -257,7 +257,7 @@ Now log in to the [admin](http://127.0.0.1:8000/admin/) site, add some students,
 
 Here is what mine looks like after adding a few students data: 
 
-![index.html](/engineering-education/django-multitenancy-multiple-databases-and-one-app/index.jpg)
+![index.html](/engineering-education/django-multitenancy-using-multiple-databases-and-one-app/index.jpg)
 
 ### Step 2: Implementing Multitenancy
 We are now going to add the ability of the site to handle more than one default tenant(Client), by assigning each client their database. By doing so, we are gonna have to tell Django where to get the data for each client. 
@@ -287,11 +287,11 @@ def tenant_db_from_the_request(request):
 def get_tenants_map():
     return {"nairobi.school.local": "nairobi", "accra.school.local": "accra"}
 ```
-- `hostname_from_the_request()` - this function takes the request and removes the ports then returns the bare URL
+- `hostname_from_the_request()` - This function takes the request and removes the ports then returns the bare URL
 
-- `get_tenants_map()` - this function returns a dictionary of the added tenant's URLs as keys and their database names as values.
+- `get_tenants_map()` - This function returns a dictionary of the added tenant's URLs as keys and their database names as values.
 
-- `tenant_db_from_the_request()` - this function calls on the other two functions.By comparing the host's URL from the request and the dictionary, it returns the name of the database that matches its tenant.
+- `tenant_db_from_the_request()` - This function calls on the other two functions.By comparing the host's URL from the request and the dictionary, it returns the name of the database that matches its tenant.
 
 #### 2.3: Using middlewares for tenant-specific database routing
  - Middleware - a framework that helps you plug into the request/response processing in Django.
@@ -371,7 +371,7 @@ DATABASE_ROUTERS = ['School.router.SchoolRouter']  # new
 
 #### 2.6 : Configuring our host names
 Now we need to add our hostnames to our local machine for them to be found when we request them.
-For Linux users, navigate to the `/etc/hosts` and for windows users, follow the path `C:\Windows\System32\Drivers\etc\`.Open the `hosts` file using notepad or any other text editor and add our hosts as shown below:
+For Linux users, navigate to the `/etc/hosts` and for Windows users, follow the path `C:\Windows\System32\Drivers\etc\`.Open the `hosts` file using notepad or any other text editor and add our hosts as shown below:
 ```
 127.0.0.1 school.local
 127.0.0.1 nairobi.school.local
@@ -390,9 +390,9 @@ In our project-level folder `multitenant`, add a file `school_manage.py` and add
 import os
 import sys
 
-from School.middleware import set_db_for_router
+from School.middleware import set_db_for_router #new
 
-if __name__ == "__main__":
+if __name__ == "__main__":                  
     """Run administrative tasks."""
     os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'multitenant.settings')
     try:
@@ -403,6 +403,8 @@ if __name__ == "__main__":
             "available on your PYTHONPATH environment variable? Did you "
             "forget to activate a virtual environment?"
         ) from exc
+
+    #new 
     from django.db import connection
 
     args = sys.argv
@@ -412,7 +414,14 @@ if __name__ == "__main__":
         del args[1]
         execute_from_command_line(args)
 ```
-The above code is a slight modification of `manage.py`, to enable it to take the database name as the first argument in the commands.
+
+-  `args` - The array stores `sys.args`, which is a list of command line arguments that we pass to python.
+- `db = args[1]` - Among arguments that we shall pass, the one at position `[1]` in the array is the name of the DB that we want to execute the command on.
+- `with connection.cursor()` - opens the connection fo the queries in it to be executed.
+- `set_db_for_router(db)` - uses the name we pass as `arg[1]` to route the database specified.
+- `del args[1]` - This deletes the DB name argument after the routing has taken place(we only needed the name to point to the DB, then carry out the execution of the command as it was originally intended to be by Django. ie: first argument isn't DB name).
+- `execute_from_command_line(args)` - This executes the command that you had typed. It takes the arguments array as a parameter.
+
 #### 2.8: Running the commands
 We shall start by making migrations then creating a superuser for each tenant. Then we shall run the server and test each client:
 
@@ -428,7 +437,7 @@ py manage.py migrate --database=accra
 py school_manage.py accra createsuperuser --database=accra
 ```
 
-- for tenant Nairobi
+- For tenant Nairobi
 
 ```bash
 py manage.py migrate --database=nairobi
@@ -437,7 +446,7 @@ py manage.py migrate --database=nairobi
 py school_manage.py nairobi createsuperuser --database=nairobi
 ```
 
-- for tenant default
+- For tenant default
 
 >If you had already made the migrations in step 1, you can skip this step.
 ```bash
@@ -470,11 +479,15 @@ When the local host starts the server, you can access the tenant sites using the
 Upload some content on the admin site of each tenant and check out the results on the main site.
 Here is what my tenants' main sites look like:
 - default
-![default](/engineering-education/django-multitenancy-multiple-databases-and-one-app/default.jpg)
+![default](/engineering-education/django-multitenancy-using-multiple-databases-and-one-app/default.jpg)
 - nairobi
-![nairobi](/engineering-education/django-multitenancy-multiple-databases-and-one-app/nairobi.jpg)
+![nairobi](/engineering-education/django-multitenancy-using-multiple-databases-and-one-app/nairobi.jpg)
 - accra
-![accra](/engineering-education/django-multitenancy-multiple-databases-and-one-app/accra.jpg)
+![accra](/engineering-education/django-multitenancy-using-multiple-databases-and-one-app/accra.jpg)
 
 ### Conclusion
 We have seen how powerful Django is, to an extent of being able to support multitenancy and multiple databases. You can go ahead and customize this project to suit your other needs. The full code for this project can be found in my Github [repo](https://github.com/Sajeyks/Django-multitenancy-multipleDB-single-App). All the best!
+
+### References
+ - [Django Multiple DB support](https://docs.djangoproject.com/en/4.0/topics/db/multi-db/)
+ - [Django multitenant with isolated DB](https://books.agiliq.com/projects/django-multi-tenant/en/latest/isolated-database.html)
