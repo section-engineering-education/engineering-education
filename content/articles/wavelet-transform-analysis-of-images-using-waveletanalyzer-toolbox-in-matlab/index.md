@@ -3,22 +3,22 @@ layout: engineering-education
 status: publish
 published: true
 url: /wavelet-transform-analysis-of-images-using-waveletanalyzer-toolbox-in-matlab/
-title: Wavelet transform analysis of images using WaveletAnalyzer toolbox in Matlab
+title: Wavelet Transform Analysis of Images Using WaveletAnalyzer Toolbox in Matlab
 description: This tutorial will walk the reader through wavelet analysis and synthesis of images. It also discusses how the Wavelet Analyzer Toolbox can be used to perform the wavelet analysis of images using Matlab functions.
 author: atieno-dorine
-date: 2022-03-18T00:00:00-02:25
+date: 2022-03-24T00:00:00-03:30
 topics: [Languages]
 excerpt_separator: <!--more-->
 images:
 
   - url: /engineering-education/wavelet-transform-analysis-of-images-using-waveletanalyzer-toolbox-in-matlab/hero.jpg
-    alt: Wavelet transform analysis of images using WaveletAnalyzer toolbox in Matlab Hero Image
+    alt: Wavelet Transform Analysis of Images Using WaveletAnalyzer Toolbox in Matlab Hero Image
 ---
-The wavelet transform is the decomposition of signals using wavelet techniques, that is, functions. Each of these functions are shifted and a scaled copy of a function, the mother wavelet
+The wavelet transform is the decomposition of signals using wavelet techniques, that is, functions. Each of these functions are shifted and a scaled copy of a function, the mother wavelet.
+<!--more-->
+Wavelet transform is the definition of the decomposition method class. Wavelet Analyzer app is an interactive tool for using wavelets to visualize and analyze signals and images. This app can be used for the wavelet transform analysis, de-noising images and signals, e.t.c.
 
-Wavelet transform is the definition of the decomposition method class. Wavelet Analyzer app is an interactive tool for using wavelets to visualize and analyze signals and images. This app can be used for the wavelet transform analysis, denoising images and signals, e.t.c.
-
-This article covers wavelet analysis and synthesis of images using filter banks. Also, it discusses how to perform wavelet transform analysis of images using the Wavelet Analyzer toolbox. It will also cover how to use the various wavelet functions such as `dwt2` and `idwt2`.
+This article covers wavelet analysis and synthesis of images using filter banks. It also discusses how to perform wavelet transform analysis of images using the Wavelet Analyzer toolbox. It will also cover how to use the various wavelet functions such as `dwt2` and `idwt2`.
 
 ### Prerequisites
 To follow along with this tutorial, you will need:
@@ -46,9 +46,9 @@ The scheme of the filter-based approach and column-wise operation is shown below
 
 In the first step, we have an image of the dimension `MxM`. A row-wise operation is performed on this image. It is done in the low-pass wavelet decomposition filter(Lo_D) and the high pass wavelet decomposition filter(Hi-D).
 
-Then, the downsampling of two is done for the output of both filters.
+Then the down-sampling of two is done for the output of both filters.
 
-The next step is performing a column-wise operation to the downsampled output. The downsampling of two is also done for the output of the column-wise operation. The output of the downsampling gives the wavelet coefficients.
+The next step is performing a column-wise operation to the down-sampled output. The down-sampling of two is also done for the output of the column-wise operation. The output of the down-sampling gives the wavelet coefficients.
 
 These coefficients are approximated coefficient, horizontal detailed, vertical detailed and detailed diagonal coefficients.
 
@@ -75,7 +75,7 @@ You execute the `waveletAnalyzer` command in the command window to open this too
 
 ![Wavelet analyzer toolbox](/engineering-education/wavelet-transform-analysis-of-images-using-waveletanalyzer-toolbox-in-matlab/image-eight.png)
 
-In this toolbox, as we can see, we can analyze various signals. These signals include; 1-D, 2-D, 3-D, e.t.c. Since we want to analyze images(2-D), we select the `wavelet 2-D`.
+In this toolbox, as we can see, we can analyze various signals. These signals include; 1-D, 2-D, 3-D, e.t.c. Since we want to analyze images (2-D), we select the `wavelet 2-D`.
 
 > Note that using this toolbox, we can perform the various wavelet operations such as wavelet transform, wavelet packet transform, curvelet wavelet transform etc.
 
@@ -95,7 +95,7 @@ You can select the wavelet type you want to use and the level of decomposition b
 
 ![Output](/engineering-education/wavelet-transform-analysis-of-images-using-waveletanalyzer-toolbox-in-matlab/image-twelve.png)
 
-Now, let us see how to use the `dwt2()` and `idwt2()` function in Matlab to perform a similar operation.
+Now let us see how to use the `dwt2()` and `idwt2()` function in Matlab to perform a similar operation.
 
 ### Using `dwt2()` and `idwt()` functions
 The syntax for these two functions is as follows:
@@ -105,7 +105,7 @@ The syntax for these two functions is as follows:
 Y=idwt(cA, cH, cV, cD, 'wname', 'mode', extmode)    %single level reconstruction
 ```
 
-Where;
+Where:
 - `cA`: Approximated coefficients.
 - `cH`: Horizontal detailed coefficients.
 - `cV`: Vertical detailed coefficients.
@@ -113,13 +113,13 @@ Where;
 - `X`: Input image.
 - `Y`: Reconstructed image.
 - `WName`: This is the type of wavelet you are using.
-- `Mode`: Signal extension mode. This extension mode can be periodic, symmetric e.t.c
+- `Mode`: Signal extension mode. This extension mode can be periodic, symmetric e.t.c.
 
 `Dwt2()` function is used for the single-level decomposition, while the `idwt2()` is used for single-level reconstruction. The `dwt2()` gives all the coefficients as the output.
 
 The coefficients are used for the image reconstruction. It means they are arguments of the `idwt2()` function.
 
-### Program to show the use of `dwt2()` and `idwt2()` function
+### Program to show the use of dwt2() and idwt2() function
 The first step is to import the input image into Matlab. This will be achieved using the following lines:
 
 ```Matlab
@@ -145,8 +145,7 @@ Let's perform the decomposition using the `dwt2()` function:
 [cA, cH, cV, cD] = dwt2(img1, 'haar', 'mode', 'sym'); %first level decomposition
 ```
 
-We use the `haar` wavelet, and the `extmode` is symmetric `sym`.
-For visualization we plot these coefficients in subplots as shown below:
+We use the `haar` wavelet, and the `extmode` is symmetric `sym`. For visualization we plot these coefficients in subplots as shown below:
 
 ```matlab
 subplot(2,2,1)
@@ -176,7 +175,7 @@ To get the transformed image, we reconstruct the coefficients. For reconstructio
 imgr = idwt2(cA, cH, cV, cD, 'haar', 'mode', 'sym'); %first level decomposition
 ```
 
-We then plot the output using the `imshow()` function.
+We then plot the output using the `imshow()` function:
 
 ```matlab
 figure(2)
@@ -184,19 +183,18 @@ imshow(uint8(imgr))
 title('Reconstructed Image');
 ```
 
-When we now run this program, we get the reconstructed image as like the one below:
+When we now run this program, we get the reconstructed image like the one below:
 
 ![Reconstructed image](/engineering-education/wavelet-transform-analysis-of-images-using-waveletanalyzer-toolbox-in-matlab/image-fourteen.png)
 
 ### Conclusion
-As illustrated, the waveletAnalyzer toolbox is simple to use. Its interface is very clear. Also, this toolbox is not only used for wavelet transform but also denoising, e.t.c.
+As illustrated, the waveletAnalyzer toolbox is simple to use. Its interface is very clear. Also, this toolbox is not only used for wavelet transform but also de-noising, e.t.c.
 
-Therefore, this toolbox is efficient even for users who are unfamiliar Matlab. Also, you don't have to write any code while using it. Since their output is accurate, the wavelet functions `dwt2()` and `idwt2()` are efficient.
+Therefore, this toolbox is efficient even for users who are unfamiliar with Matlab. Also, you don't have to write any code while using it. Since their output is accurate, the wavelet functions `dwt2()` and `idwt2()` are efficient.
 
 Happy coding!
 
 ---
-
 Peer Review Contributions by: [Monica Masae](/engineering-education/authors/monica-masae/)
 
 <!-- MathJax script -->
