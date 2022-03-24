@@ -5,7 +5,7 @@ published: true
 url: /collections-in-c++/
 title: Getting Started With Collections in C++
 description: This article introduces the reader to collections in C++, discussing them in detail and giving various examples of how data can be manipulated during runtime.
-author: haron-mutati
+author: haron-wambua
 date: 2022-03-24T00:00:00-00:40
 topics: [Languages]
 excerpt_separator: <!--more-->
