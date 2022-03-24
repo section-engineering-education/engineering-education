@@ -1,5 +1,5 @@
 ---
-title: haron Wambua
+title: Haron Wambua
 type: authors
 github: https://github.com/tetie
 ---
