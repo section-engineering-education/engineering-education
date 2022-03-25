@@ -8,7 +8,7 @@ These operations require a structuring element, that's used to outline the pixel
 From this tutorial, users will understand how to apply morphological operations on images.
 
 Note that we will use the following image throughout the tutorial:
-[Download-sunflower.png](/morphological-operations-in-image-processing-using-opencv/sunflower-horizon.jpg)
+[Download-sunflower.png](/engineering-education/morphological-operations-in-image-processing-using-opencv/sunflower-horizon.jpg)
 
 ### Prerequisites
 You will require the following to follow along with this tutorial:
