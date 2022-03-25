@@ -20,7 +20,7 @@ In this tutorial, we will design a conversational interface for our chatbot usin
 
 ### Prerequisites
 - Have a basic knowledge of python programming langugage.
-- install the latest version of [python](https://www.python.org/) onto your computer.
+- Install the latest version of [python](https://www.python.org/) onto your computer.
 
 ### Table of contents
 - [Fields of NLP](#fields-of-nlp)
@@ -47,10 +47,10 @@ Below are the core fields of NLP:
 ### Building an NLP chatbot
 Follow the steps below to successfully build a conversational interface for our chatbot.
 
-#### Step 1: Importing modules
+#### Step 1: Importing libraries
 Imports are critical for successfully organising your Python code. Importing code correctly will increase your productivity by allowing you to reuse code while also maintaining the maintainability of your projects.
 
-The necessary modules includes:
+The necessary libraries includes:
 - JSON: It's possible to utilize it to work with JSON data.
 - String: Provides access to several potentially valuable constants
 - Random: For various distributions; this module implements pseudo-random number generators.
@@ -58,11 +58,11 @@ The necessary modules includes:
 - Tensorflow: A multidimensional array of elements is represented by this symbol.
 - Sequential: Sequential groups a linear stack of layers into a tf.keras.Model.
 
-The code below shows how we import the modules:
+The code below shows how we import the libraries:
 ```python
-import json # It's possible to utilize it to work with JSON data.
-import string # provides access to several potentially valuable constants
-import random # For various distributions; this module implements pseudo-random number generators.
+import json 
+import string 
+import random 
 import nltk
 import numpy as num
 from nltk.stem import WordNetLemmatizer # It has the ability to lemmatize.
