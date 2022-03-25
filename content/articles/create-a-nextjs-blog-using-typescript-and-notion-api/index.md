@@ -7,16 +7,15 @@ title: Next.js Blog using Typescript and Notion API
 description: This guide will help the reader learn how to use the Next.js with Notion API to create a blog app powered by Typescript.
 author: kevin-kimani 
 date: 2022-03-17T00:00:00-06:00
-topics: [Languages]
+topics: [Languages, API]
 excerpt_separator: <!--more-->
 images:
   - url: /engineering-education/create-a-nextjs-blog-using-typescript-and-notion-api/hero.jpg
     alt: Next.js Blog using Typescript and Notion API  Hero Image
 ---
-
-Next.js is used to create Server-side Rendering(SSR) and Static Site Generation(SSG) using JavaScript. The app fetches extra data from the server after the browser loads the website's HTML page. 
+Next.js is used to create Server-side Rendering (SSR) and Static Site Generation (SSG) using JavaScript. The app fetches extra data from the server after the browser loads the website's HTML page. 
 <!--more-->
-Technologies such as SSG often have to rebuild the app when data from the source is updated and render it to the user at build-time, making the site load even faster hence a good user experience.
+Technologies such as SSG often have to rebuild the app when data from the source is updated and render it to the user at build-time, making the site load even faster creating a better user experience.
 
 This guide will help the reader learn how to use Next.js with Notion API to create a blog app powered by Typescript code.
 
@@ -82,13 +81,13 @@ Navigate to the `Settings & Members` section of your notion dashboard page. Clic
 
 ![notion_integrations](/engineering-education/create-a-nextjs-blog-using-typescript-and-notion-api/notion-integration.png)
 
-First, create a new integration. To do so, click on `Develop your Integration`. Then click the plus button to set up a new integration:
+Create a new integration. To do so, click on `Develop your Integration`. Then click the plus button to set up a new integration:
 
 ![create_new_integrations](/engineering-education/create-a-nextjs-blog-using-typescript-and-notion-api/notion-create-new-integration.png)
 
-Name the integration `blog_app_integration`, then click `Submit` to set it up. Once done, you should now be able to view the notion integrations settings, i.e., the integration token.
+Name the integration `blog_app_integration`, then click `Submit` to set it up. Once done, you should be able to view the notion integrations settings, i.e., the integration token.
 
-Scroll down and click save changes to reveal the notion-integration key to save this integration. Copy this key for use in connecting to Next.js
+Scroll down and click save changes to reveal the notion-integration key to save this integration. Copy this key for use in connecting to Next.js.
 
 ![notion_secrets](/engineering-education/create-a-nextjs-blog-using-typescript-and-notion-api/notion-secrets.png)
 
@@ -128,7 +127,7 @@ NOTION_KEY=""
 NOTION_DATABASE=""
 ```
 
-Paste the integration key copied earlier and add it to the `NOTION_KEY` value. If you did not copy this key, navigate to the integration page, under `Secrets`, Click on `Show` and then `Copy` and paste it in the `NOTION_KEY` entry.
+Paste the integration key copied earlier and add it to the `NOTION_KEY` value. If you did not copy this key, navigate to the integration page, under `Secrets`, click on `Show` and then `Copy` and paste it in the `NOTION_KEY` entry.
 
 To get the `NOTION_DATABASE` ID, check your workspace page URL. Copy the first path parameter before the query parameter as shown in the illustration below:
 
@@ -142,10 +141,10 @@ Start the development server to test the app.
 npm run dev
 ```
 
-Navigate `http://localhost:3000`; you should be able to view the default Next.js page.
+Navigate to `http://localhost:3000`; you should be able to view the default Next.js page.
 
 ### Querying multiple posts
-On the project root folder, create a folder `lib`. Inside `lib`, create a file `notion.ts`. Then add the following code to querying multiple posts from the notion API.
+On the project root folder, create a folder named `lib`. Inside `lib`, create a file `notion.ts`. Then add the following code to query multiple posts from the notion API.
 
 Start by importing the notion client package:
 
@@ -180,14 +179,14 @@ export {
 }
 ```
 
-On `pages/index.tsx`, import the function you have defined above and the Next.js Link dependencies:
+On `pages/index.tsx`, import the function you have defined above and the Next.js link dependencies:
 
 ```ts
 import Link from 'next/link';
 import {posts} from '../lib/notion'
 ```
 
-Then, fetch the posts from the server-side using the Next.js `getServerSideProps()` function;
+Then, fetch the posts from the server-side using the Next.js `getServerSideProps()` function:
 
 ```ts
 export async function getServerSideProps() {
@@ -202,7 +201,7 @@ export async function getServerSideProps() {
 }
 ```
 
-Define an interface for the props. This interface creates the structure of `posts` ad holds the array of posts:
+Define an interface for the props. This interface creates the structure of `posts` and holds the array of posts:
 
 ```ts
 interface Props {
@@ -516,6 +515,8 @@ Ensure that the development server is running, and then click on any title of th
 This guide helped the reader set up a notion database. We then used the database with Next.js. 
 
 Check this project on this [GitHub](https://github.com/kimkimani/nextjs-blog-app-using-typescript-and-notion) repository.
+
+Happy coding!
 
 ---
 Peer Review Contributions by: [Jerim Kaura](/engineering-education/authors/jerim-kaura/)
