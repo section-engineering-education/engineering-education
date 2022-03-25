@@ -40,68 +40,68 @@ Once you have created the account, hover over the `Getting Started` section of t
 
 Under `Database`, click on `list` on the resulting popup. A sample skeleton will be loaded. Go ahead and enter a project title.
 
-![list-database-skeleton](/engineering-education/create-a-nextjs-blog-using-typescript-and-notion-api/list-database-skeleton.png)
+![list-database-skeleton](/engineering-education/create-a-nextjs-blog-using-typescript-and-notion-api/list-database-skeleton.PNG)
 
 Navigate to the first default page, `page 1`, and click on it. Change the title as you prefer. 
 
-![page-title-change](/engineering-education/create-a-nextjs-blog-using-typescript-and-notion-api/page-title-change.png)
+![page-title-change](/engineering-education/create-a-nextjs-blog-using-typescript-and-notion-api/page-title-change.PNG)
   
 You can choose to change the icon and cover image using the free images from [Unsplash](https://unsplash.com/). Hover over the page title and click the `Add cover` button to add the cover image.
 
-![cover_image_change](/engineering-education/create-a-nextjs-blog-using-typescript-and-notion-api/cover-image-change.png)
+![cover_image_change](/engineering-education/create-a-nextjs-blog-using-typescript-and-notion-api/cover-image-change.PNG)
 
-![cover_image_changed](/engineering-education/create-a-nextjs-blog-using-typescript-and-notion-api/cover-image-changed.png)
+![cover_image_changed](/engineering-education/create-a-nextjs-blog-using-typescript-and-notion-api/cover-image-changed.PNG)
 
 Every new page created is a blank canvas where you can add content such as plain text, lists, and images. To add content to a page, scroll down to the content section and add some `prerequisites` to your blog page as shown below:
 
 ![page-content-section](/engineering-education/create-a-nextjs-blog-using-typescript-and-notion-api/page-content-section.png)
 
-![prerequisites_section](/engineering-education/create-a-nextjs-blog-using-typescript-and-notion-api/prerequisites-section.png)
+![prerequisites_section](/engineering-education/create-a-nextjs-blog-using-typescript-and-notion-api/prerequisites-section.PNG)
 
 Add dummy body to the post body.
 
-![body_section](/engineering-education/create-a-nextjs-blog-using-typescript-and-notion-api/body-section.png)
+![body_section](/engineering-education/create-a-nextjs-blog-using-typescript-and-notion-api/body-section.PNG)
 
 Add an image. Select an image from [Unsplash](https://unsplash.com/).
 
-![image_section](/engineering-education/create-a-nextjs-blog-using-typescript-and-notion-api/image-section.png)
+![image_section](/engineering-education/create-a-nextjs-blog-using-typescript-and-notion-api/image-section.PNG)
 
 Append some conclusions.
 
-![conclusion_section](/engineering-education/create-a-nextjs-blog-using-typescript-and-notion-api/conclusion-section.png)
+![conclusion_section](/engineering-education/create-a-nextjs-blog-using-typescript-and-notion-api/conclusion-section.PNG)
 
 Click outside the modal when done. The post should now be listed as shown below:
 
-![database_posts](/engineering-education/create-a-nextjs-blog-using-typescript-and-notion-api/database-posts.png)
+![database_posts](/engineering-education/create-a-nextjs-blog-using-typescript-and-notion-api/database-posts.PNG)
 
 Repeat the same process for `page 2` and `page 3`. You can add other posts the same way.
 
 ### Setting up an integration on Notion
 Navigate to the `Settings & Members` section of your notion dashboard page. Click `Integrations` under the `Workspace` section on the resulting modal. Then set the notion integration as shown in the following steps:
 
-![notion_integrations](/engineering-education/create-a-nextjs-blog-using-typescript-and-notion-api/notion-integration.png)
+![notion_integrations](/engineering-education/create-a-nextjs-blog-using-typescript-and-notion-api/notion-integration.PNG)
 
 Create a new integration. To do so, click on `Develop your Integration`. Then click the plus button to set up a new integration:
 
-![create_new_integrations](/engineering-education/create-a-nextjs-blog-using-typescript-and-notion-api/notion-create-new-integration.png)
+![create_new_integrations](/engineering-education/create-a-nextjs-blog-using-typescript-and-notion-api/notion-create-new-integration.PNG)
 
 Name the integration `blog_app_integration`, then click `Submit` to set it up. Once done, you should be able to view the notion integrations settings, i.e., the integration token.
 
 Scroll down and click save changes to reveal the notion-integration key to save this integration. Copy this key for use in connecting to Next.js.
 
-![notion_secrets](/engineering-education/create-a-nextjs-blog-using-typescript-and-notion-api/notion-secrets.png)
+![notion_secrets](/engineering-education/create-a-nextjs-blog-using-typescript-and-notion-api/notion-secrets.PNG)
 
 Go back to the workspace created in the previous step, where you created the pages, i.e., `Latest posts`, and click on `Share`:
 
-![notion_share](/engineering-education/create-a-nextjs-blog-using-typescript-and-notion-api/notion-share.png)
+![notion_share](/engineering-education/create-a-nextjs-blog-using-typescript-and-notion-api/notion-share.PNG)
 
 Click on Invite. On the resulting modal, you should be able to see the integration just created:
 
-![notion_integrations](/engineering-education/create-a-nextjs-blog-using-typescript-and-notion-api/notion-integrations.png)
+![notion_integrations](/engineering-education/create-a-nextjs-blog-using-typescript-and-notion-api/notion-integrations.PNG)
 
 Click on the `blog_app_integration` integration, and then `Invite` to add your pages to this new notion integration.
 
-![selected-integration](/engineering-education/create-a-nextjs-blog-using-typescript-and-notion-api/selected-integration.png)
+![selected-integration](/engineering-education/create-a-nextjs-blog-using-typescript-and-notion-api/selected-integration.PNG)
 
 With that, you will be able to access your workspace using the integration-generated token.
 
@@ -315,7 +315,7 @@ Add the following styles to `styles/Home.module.css`. This will style the fetche
 
 To test this code, ensure the development server is up and running. You should now be able to view the posts on the home page.
 
-![posts_page](/engineering-education/create-a-nextjs-blog-using-typescript-and-notion-api/posts-page.png)
+![posts_page](/engineering-education/create-a-nextjs-blog-using-typescript-and-notion-api/posts-page.PNG)
 
 ### Querying single post
 Let us create a function that will fetch a single post from the notion database. 
@@ -509,7 +509,7 @@ Next, add some style to the `blogPageHolder` class to format the rendered post:
 
 Ensure that the development server is running, and then click on any title of the posts on the home page:
 
-![single_post_page](/engineering-education/create-a-nextjs-blog-using-typescript-and-notion-api/single-post-page.png)
+![single_post_page](/engineering-education/create-a-nextjs-blog-using-typescript-and-notion-api/single-post-page.PNG)
 
 ### Conclusion
 This guide helped the reader set up a notion database. We then used the database with Next.js. 
