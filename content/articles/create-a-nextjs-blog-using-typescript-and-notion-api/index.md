@@ -15,7 +15,7 @@ images:
 ---
 Next.js is used to create Server-side Rendering (SSR) and Static Site Generation (SSG) using JavaScript. The app fetches extra data from the server after the browser loads the website's HTML page. 
 <!--more-->
-Technologies such as SSG often have to rebuild the app when data from the source is updated and render it to the user at build-time, making the site load even faster creating a better user experience.
+Technologies such as SSG often have to rebuild the app when data from the source is updated and render it to the user at build-time, making the site load even faster, creating a better user experience.
 
 This guide will help the reader learn how to use Next.js with Notion API to create a blog app powered by Typescript code.
 
