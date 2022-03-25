@@ -6,13 +6,13 @@ url: /optimizing-ml-models-with-optuna/
 title: Optimize Machine Learning Models With Optuna
 description: In this article, we learn about hyperparameter tuning, how we usually do it, and how we can automate this search process with Optuna.
 author: bonface-ndolo
-date: 2022-03-21T00:00:00-00:00
+date: 2022-03-25T00:00:00-04:30
 topics: [Machine Learning]
 excerpt_separator: <!--more-->
 images:
 
- - url: /engineering-education/optimizing-ml-models-with-optuna/hero.jpg
-   alt: Optimize Machine Learning Models With Optuna example image
+  - url: /engineering-education/optimizing-ml-models-with-optuna/hero.jpg
+    alt: Optimize Machine Learning Models With Optuna example image
 ---
 In this tutorial, we will learn about Optuna - a framework to automate the hyperparameter search. Here, we will find the best hyperparameters for an XGBoost regressor model.
 <!--more-->
@@ -23,24 +23,25 @@ Hyperparameters are a set of arguments that controls the learning process in mac
 Optuna uses grid search, random, bayesian, and evolutionary algorithms to find the best values for hyperparameters.
 
 ### Prerequisites
-As a prerequisite, the reader should have the following:
-- Have a basic knowledge of [Python](https://www.python.org/).
-- Have Python environment of your choice installed.
+As a prerequisite, you should have the following:
+- Basic knowledge of [Python](https://www.python.org/).
+- Python environment of your choice installed.
 
 ### Table of contents
+- [Prerequisites](#prerequisites)
+- [Table of contents](#table-of-contents)
 - [Optimization process](#optimization-process)
   - [Load the dataset](#load-the-dataset)
   - [Standard scaling the dataset](#standard-scaling-the-dataset)
   - [Dataset split](#dataset-split)
   - [Test the model](#test-the-model)
-  - [Define Functions](#define-functions)
+  - [Define function](#define-function)
   - [Import optuna](#import-optuna)
   - [Create the primary objective function](#create-the-primary-objective-function)
-  - [Create optuna study object](#create-optuna-study-object)
+  - [Create an optuna study object](#create-an-optuna-study-object)
   - [Visualize search history](#visualize-search-history)
   - [Compare the optimized model with the base model](#compare-the-optimized-model-with-the-base-model)
 - [Conclusion](#conclusion)
-- [Reference](#reference)
 
 ### Optimization process
 To learn how we can fit Optuna into our machine learning project, we will train an XGBoost model, conduct an in-depth analysis of hyperparameter optimizations, and assess the most efficient and timely optimization.
@@ -51,27 +52,27 @@ We'll start by creating a data frame that includes all the relevant modules and 
 We import the following Python libraries:
 
 ```python
-import sklearn 
+import sklearn
 import pandas as pan
 import numpy as num
 from sklearn.datasets import load_boston
 ```
 
-- `pandas` library helps with data frame related operations
+- `pandas` library helps with data frame related operations.
 - `numpy` provides a wide range of utilities, from parsing different file formats to converting an entire data table to a NumPy matrix array.
 - `sklearn.datasets.load_boston` is a dataset that contains housing prices in Boston. We will be using this dataset for our project.
 
 #### Standard scaling the dataset
-A pandas data frame `Our_loadboston` will be returned when we load the dataset using `load_boston().`
+A pandas data frame `Our_loadboston` will be returned when we load the dataset using `load_boston()`:
 
 ```python
 Our_loadboston = load_boston()
-# Subset rows or columns of dataframe 
+# Subset rows or columns of dataframe
 dataframe = pan.DataFrame(Our_loadboston.data , columns = Our_loadboston.feature_names)
 dataframe['target'] = Our_loadboston.target
 
 X = dataframe.iloc[:,dataframe.columns != 'target']
-y = dataframe.target 
+y = dataframe.target
 
 from sklearn.preprocessing import StandardScaler
 standardSc = StandardScaler()
@@ -95,7 +96,7 @@ X_train, X_test, y_train,y_test = train_test_split(X, y, test_size = 0.2, random
 
 - `X_train` - Feature vectors that are to be trained
 - `X_test` - Feature vectors that are to be tested
-- `y_train` -  Target vectors that are to be trained
+- `y_train` - Target vectors that are to be trained
 - `y_test` - Target vectors that are to be tested
 
 #### Test the model
@@ -109,12 +110,12 @@ from sklearn.model_selection import cross_val_score
 xgboo_reg = gbst.XGBRegressor()
 
 ourScores = cross_val_score(xgboo_reg, X_train, y_train , scoring = 'neg_root_mean_squared_error', n_jobs = -1, cv = 10)
-#cross_val_score has a `neg_root_mean_squared_error` can be turned into a positive value by multiplying it by -1 
+#cross_val_score has a `neg_root_mean_squared_error` can be turned into a positive value by multiplying it by -1
 print(num.mean(ourScores), num.std(ourScores))
 print(ourScores) # output: score of our model
 ```
 
-The above code does the following:
+The code above does the following:
 - Evaluate the model using the `cross-validation` method.
 - Computes the standard deviation and mean of scores.
 - Outputs the score of our model as a list.
@@ -122,24 +123,24 @@ The above code does the following:
 **Output:**
 
 ```bash
--3.0784942308511307 # mean of score  
+-3.0784942308511307 # mean of score
  0.42284534035667176 # standard deviation
 [-2.62847993 -3.60582341 -3.31998107 -3.60355075 -3.03760446 -2.50243868 -2.92302011 -2.61990331 -3.67855489 -2.8655857 ]
 ```
 
-Let's evaluate the same model after optimizing the model with Optuna.
+Let's evaluate the same model after optimizing it with Optuna.
 
 #### Define function
 This section will define the functions that take hyperparameters and return scores.
 
-`return_score()` provides a cross-validated score based on the parameters that we send to it. Here, we will take `1000` samples to save time.
+`return_score()` provides a cross-validated score based on the parameters that we send to it. Here, we will take `1000` samples to save time:
 
 ```python
 def return_score(param):
-  ourNewModel = gbst.XGBRegressor(**param)  
+  ourNewModel = gbst.XGBRegressor(**param)
   # A value that has been cross-validated for -(neg_root_mean_squared_error) is returned when parameters are used as a keyword argument by return_score() method.
   rootMeanSquareError = num.mean(cross_val_score( ouNewModel, X_train[:1000],y_train[:1000], cv = 4, n_jobs =-1, scoring='neg_root_mean_squared_error')) # training 1000 samples in both first part 'X_train' an second part 'y_train'
-  return rootMeanSquareError 
+  return rootMeanSquareError
 ```
 
 #### Import optuna
@@ -156,7 +157,7 @@ You can install Optuna with `pip install optuna`.
 #### Create the primary objective function
 We'll build an object with all the information about hyper-parameters that we wish to try out. However, we must first define the ranges and the possible values of the hyper-parameters.
 
-By specifying the range of values, we allow Optuna to looks and evaluate the best hyperparameter that we can use for our model.
+By specifying the range of values, we allow Optuna to look and evaluate the best hyperparameter that we can use for our model.
 
 Hyper-parameter values can be defined in a variety of ways like:
 - `trial.suggest_loguniform('learning_rate', 0.05, 0.5)` shows the log distribution between `0.05` and `0.5` for the `learning_rate`.
@@ -188,41 +189,41 @@ You can follow this [link](https://xgboost.readthedocs.io/en/latest/parameter.ht
 #### Create an optuna study object
 This study object stores all the information about the hyper-parameters.
 
-In the code below, optimization parameters and their history are stored in an object created by `studyObject1`. After running, the study stops after `500` trials.
+In the code below, optimization parameters and their history are stored in an object created by `studyObject1`. After running, the study stops after 500 trials:
 
 ```python
 # direction='minimize' is used since we want to minimize rootMeanSquareError
 studyObject1 = optuna.create_study(
     direction='minimize', sampler=TPESampler()) # Bayesian Sampling Technique
-studyObject1.optimize(objective, n_trials= 500) # set a limit of 500 trials but you can change to whichever trials you may want 
+studyObject1.optimize(objective, n_trials= 500) # set a limit of 500 trials but you can change to whichever trials you may want
 ```
 
 **Output:**
 
-![Best trial](/engineering-education/optimizing-ml-models-with-optuna/trial.png)
+![Best trial](/engineering-education/optimizing-ml-models-with-optuna/trial.jpg)
 
 After running the code, we achieved the best score at trial `184`. We had a `rootMeanSquareError` of `3.07` at the start, which got reduced to `2.86` after `500` trials.
 
 #### Visualize search history
-It is possible to further decrease the scope of the search by narrowing down the ranges of parameters. Visualization will help analyze and decide on narrowing down the ranges.
+It is possible to further decrease the scope of the search by narrowing down the ranges of parameters. Visualization will help analyze and decide on narrowing down the ranges:
 
 ```python
-optuna.visualization.plot_slice(studyObject1)# plot the parameter relationship as slice plot 
+optuna.visualization.plot_slice(studyObject1)# plot the parameter relationship as slice plot
 ```
 
 ![Output](/engineering-education/optimizing-ml-models-with-optuna/visualization.png)
 
 #### Compare the optimized model with the base model
-We obtain the optimized hyper-parameters using `study.best_params` that produces a dictionary containing the optimized parameters.
+We obtain the optimized hyper-parameters using `study.best_params` that produces a dictionary containing the optimized parameters:
 
 ```python
-studyObject1.best_params# return parameters of the best trial 
+studyObject1.best_params# return parameters of the best trial
 ```
 
 **Output:**
 
 ```bash
-# Our best trial was 184 and below shows the parameters of the trial. 
+# Our best trial was 184 and below shows the parameters of the trial.
 {
   'colsample_bytree': 0.8228985622676791,
   'ourgamma': 0.5064888131479657,
@@ -236,7 +237,7 @@ studyObject1.best_params# return parameters of the best trial
 }
 ```
 
-To compare both the models, we evaluate the scores before and after the hyperparameter optimizations:
+To compare both models, we evaluate the scores before and after the hyperparameter optimizations:
 
 ```python
 parameter = {}
