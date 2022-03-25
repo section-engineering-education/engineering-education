@@ -1,12 +1,11 @@
-  
-
-In the real practical world, datasets have missing values/data which causes complications for data scientists who may deal with this by filling the datasets in an ad hoc fashion hence limiting them from their quest for data science main objectives; data visualization, data modeling, and giving conclusive meaningful summary or analysis of the given dataset.
+ In the real practical world, datasets have missing values/data which causes complications for data scientists who may deal with this by filling the datasets in an ad hoc fashion hence limiting them from their quest for data science main objectives; data visualization, data modeling, and giving conclusive meaningful summary or analysis of the given dataset.
 This tutorial aims at replacing the missing data using predictive mean matching and creating a predictive Regression model.
 We will explain the suitability, advantages, and limitation of each method for each use case.
+
 ### Table of Contents
-- [Prerequisites](#Prerequisites)
-- [Goals](#Goals).
-- [Introduction](#Introduction).
+- [Prerequisites](#prerequisites)
+- [Goals](#goals).
+- [Introduction](#introduction).
 - [Installing and loading packages in R](#installing-and-loading-packages-in-r).
 - [Predictive mean matching and the use case](#predictive-mean-matching-and-the-use-case).
 - [Singular imputation](#singular-imputation).
@@ -20,30 +19,36 @@ We will explain the suitability, advantages, and limitation of each method for e
 - [A complete case analysis for all five regressed models](#a-complete-case-analysis-for-all-five-regressed-models).
 - [To get a wholesome predictive model for all the five imputations combined](#to-get-a-wholesome-predictive-model-for-all-the-five-imputations-combined).
 - [Conclusion](#conclusion).
+
 ### Prerequisites
 To follow through this tutorial, the reader should:
 - [Have R studio installed](https://www.rstudio.com/).
 - Have a basic understanding of the R programming language.
 - Basic data preprocessing methods.
+
 ### Goals
 By the end of this tutorial, the reader should be able to;
 - Understand and be able to carry out data imputation using these methods.
 - Handle missing data in datasets.
 - Visualize missing dataset using given plot functions.
+
 ### Introduction
 In our tutorial, we will be using R programming language software to statistically impute missing values in datasets and carrying out an analysis of PMM and regression modeling and the suitability of these methods.
 Let's get started.
+
 ### Installing and loading packages in R
 For our first step in this tutorial, we need to install and load packages that we will be using for our imputation and visualizing data.
 let's have the following packages installed;`VIM`,`mice`,`ggplot2`,we will use some functions in them.
+
 ### Predictive mean matching and the use case
 It is an example of imputation that plugs the likely values of missing data by drawing randomly from a simulated observation whose values are closest to the missing data. We have singular imputation and multiple imputation.
+
 ### Singular imputation
 Let's call a dataset found in the VIM package called `nhanes`.
 ```r
 head(nhanes)
 ```
-![nhanes-dataset](/engineering-education/predictive-mean-matching/nhanes-dataset.PNG)
+![nhanes-dataset](/engineering-education/predictive-mean-matchingnhanes-dataset/nhanes-dataset.PNG)
 
 Our model will assume `chl` as the response variable and `bmi` and `hyp` as predictor variables.
 To find out the percentage of missing values we will use the`mean()` and `is.na()` functions as follows:
@@ -56,6 +61,7 @@ mean(is.na(nhanes$chl))
 [1] 0.4
 ```
 32%,36%,40% of hyp,bmi,chl are missing in the dataset respectively.
+
 ### Solving for missing Values Using Predictive Mean Matching
 For this, we are going to use the `mice` package in R:
 We will apply some functions found in this package: the `complete()` and `mice()` functions to impute our data.
@@ -71,16 +77,17 @@ head(imp)
 #putting our data in format for viewing
 ```
 The data is stored in our environment,click on the `imp` to view.
+
 #### Plotting our imputed values
 ```r
 heart.plot <- ggplot(imp, aes(x=bmi, y=chl)) +
 geom_point()
 heart.plot
 ```
-![r-box-plotting](/engineering-education/predictive-mean-matching/r- pbox- plotting.png)
+![r-box-plotting](/engineering-education/predictive-mean-matching/r-pbox-plotting.png)
 
 ### Fitting a linear regression for a predictive model
-Writing the following code in R creates a predictive model with our interest modeled as:`chl` as the response variable and ` bmi`,`hyp2` as the predicting variables.
+Writing the following code in R creates a predictive model with our interest modeled as:`chl` as the response variable and ` bmi`,`hyp` as the predicting variables.
 ```r
 fitmodel <- with(imp, lm(chl  ~  bmi + hyp))
 summary(fitmodel)
@@ -90,6 +97,7 @@ summary(fitmodel)
 
 The estimated effect of bmi on cholesterol level is 2.45, while the estimated effect of hyp on cholesterol is 16.845.
 Implying that for every 1% increase on bmi, there is a correlated 2.45% increase in the incidence of cholesterol levels.Also for every 1% increase in hyp, there is a 1% increase in the rate of cholesterol levels.
+
 ### Multiple imputation by MICE
 MICE is a package that takes an incomplete dataset; having missing/NA values, and then plugs in the missing values through an appropriate technique.
 The default plugging technique is predictive mean matching with the `m` set to be equal to five as the default.
@@ -150,6 +158,7 @@ To begin our imputation all we need is the name of our array in our case `nhanes
 imp<-mice(nhanes)
 ```
 and store it in `imp` object.
+
 ### Accessing the instances of imputations and the imputed values
 The first imputed dataset can be obtained by writing the following code in r.
 ```r
@@ -200,6 +209,7 @@ imp2<- complete(imp, "long", inc = TRUE)
 #it is converted to a format that can be used in other statistical programs eg spss.
 #to view click `imp2` on the environment
 ```
+
 ### Fitting a linear regression model:A predictive model
 As we had stated earlier our aim is to build a predictive model with cholesterol levels as our response variable ,age and hypertension status as our predictor variables.Running the following code in R will approximate our regression model separately for the imputed datasets,from the first to the fifth.
 ```r
@@ -225,6 +235,7 @@ term  estimate  std.error  statistic  p.value  nobs
 14  age  32.9  10.9  3.01  0.00642  25
 15  hyp  2.58  19.8  0.130  0.898  25
 ```
+
 ### A complete case analysis for all five regressed models
 We write the following code in R to get this.
 ```r
@@ -239,6 +250,7 @@ riv  lambda  fmi
 2  0.6822511  0.4055584  0.5131566
 3  0.2627357  0.2080687  0.3031436
 ```
+
 ### To get a wholesome predictive model for all the five imputations combined
 Write the following code in R
 ```r
@@ -249,6 +261,7 @@ term  estimate  std.error  statistic  df  p.value
 3  hyp  8.301152  23.76736  0.3492669  13.659099  0.732214796
 ```
 Here we get the set of the expected parameter evaluations for our predictive linear regression model.
+
 ### Conclusion
 Predictive mean matching with m=5 is the default in `mice` for continuous data. This way it provides imputations that possess many characteristics of the complete data. The imputed data lies in the range of the donor variables meaning they are bounded above and below.
 We then create a predictive model using regression modeling which we will use for calculating other values.
