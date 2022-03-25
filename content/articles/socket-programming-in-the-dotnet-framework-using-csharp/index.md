@@ -4,9 +4,9 @@ status: publish
 published: true
 url: /socket-programming-in-the-dotnet-framework-using-csharp/
 title: Socket Programming in The .NET Framework Using C#
-description: This tutorial will take the reader through the the concept of socket programming. We will have a server side implementation of the socket programming concept in the .NET frameworks using C#.
+description: This tutorial will take the reader through the concept of socket programming. We will have a server side implementation of the socket programming concept in the .NET frameworks using C#.
 author: geoffrey-omukuba
-date: 2022-03-22T00:00:00-16:40
+date: 2022-03-25T00:00:00-02:10
 topics: [Languages]
 excerpt_separator: <!--more-->
 images:
@@ -14,7 +14,7 @@ images:
   - url: /engineering-education/socket-programming-in-the-dotnet-framework-using-csharp/hero.png
     alt: Socket Programming in The .NET Framework Using C# Hero Image
 ---
-Let's say there are two devices on a network that need to communicate with each other. To enhance communication between these devices, we set one device on a socket of a specific port and an IP address.
+Let us say there are two devices on a network that need to communicate with each other. To enhance communication between these devices, we set one device on a socket of a specific port and an IP address.
 <!--more-->
 The other device will be able to communicate with the first device through the same port and IP address if they are on the same socket or network. In the .NET framework, we have the `Socket` class that enables network programming. This class handles both synchronous and asynchronous modes of network programming.
 
@@ -23,6 +23,7 @@ In asynchronous programming, our program can continue doing other tasks and rece
 In this state, our program can only handle one task until it completes, then it accepts another task. Therefore, this calls us to look at how asynchronous socket programming is handled and how we can develop one in C#. To do this, we will build a simple server-side console application.
 
 ### Table of contents
+- [Table of contents](#table-of-contents)
 - [Prerequisites](#prerequisites)
 - [Getting started](#getting-started)
 - [C# namespaces](#c-namespaces)
@@ -40,7 +41,7 @@ To create our application, we will start by creating a new project. Open [Micros
 
 ![New Project](/engineering-education/socket-programming-in-the-dotnet-framework-using-csharp/new.png)
 
-Since we are creating a console application, we will click on the `Console Application` which is using C# as the programming language, and click next.
+Since we are creating a console application, we will click on the `Console Application` which uses C# as the programming language, and click next.
 
 ![Console application](/engineering-education/socket-programming-in-the-dotnet-framework-using-csharp/console.png)
 
@@ -48,7 +49,7 @@ On the next screen, we are required to enter the name of our application. In thi
 
 ![Name of our project](/engineering-education/socket-programming-in-the-dotnet-framework-using-csharp/name.png)
 
-On the next screen, we are required to select the target framework for our application, we will use `.NET 5.0` and then click on create, to create our application.
+On the next screen, we are required to select the target framework for our application, we will use `.NET 5.0` and then click on create to create our application.
 
 ![Target framework](/engineering-education/socket-programming-in-the-dotnet-framework-using-csharp/framework.png)
 
@@ -68,9 +69,9 @@ using System.Net;
 ### Server-side socket programming
 We will start by creating the server-side of our application. To begin, we will write our code in the `program.cs` file.
 
-The first thing we need to do is to create a public class and call it `AppState`. Inside this class, we will define a socket, call it `socket` and set it to null. We will also define an integer and give it a data size of 1024 bytes.
+The first thing we need to do is to create a public class and call it `AppState`. Inside this class, we will define a socket, name it `socket` and set it to null. We will also define an integer and give it a data size of 1024 bytes.
 
-Next, we will define a byte array that will be able to hold the new data and pass in the data size we initialized above. The last thing we need to do in this class is to create a `string builder` and initialize it `new`.
+Next, we will define a byte array that will be able to hold the new data and pass in the data size we initialized above. The last thing we need to do in this class is to create a `string builder` and initialize it `new`:
 
 ```c#
 public class ProgramState
@@ -92,7 +93,7 @@ We will again create another class which will be a socket listener. In this clas
 
 In our try method, we will bind our listener to the local endpoint and set the listen backlog `111`. We will use a while loop to wait for any incoming connections.
 
-In the catch method, we will print the message on the screen using the `e.Message` method.
+In the catch method, we will print the message on the screen using the `e.Message` method:
 
 ```c#
  public class AsyncSocketListener
@@ -129,7 +130,7 @@ In the while loop we created above, we realize that we are getting an error that
 
 In this same method, we will create a socket as our listener. This listener will be initialized with the `asyncState`. We will create another socket as our handler. This method will be initialized with the `EndAccept` method. The program state which tells us the state of the connection we have currently will be initialized by the `new` keyword.
 
-Next, we set the state of our handler, which we will use to start receiving data. With this, we can use the `.BeginReceive` method to pass in the data, program state, and the callback event as parameters.
+Next, we set the state of our handler, which we will use to start receiving data. With this, we can use the `.BeginReceive` method to pass in the data, program state, and the callback event as parameters:
 
 ```c#
  private static void AcceptCallBack(IAsyncResult ar)
@@ -145,11 +146,11 @@ Next, we set the state of our handler, which we will use to start receiving data
 
 From the method above, we realize that we are getting errors when we pass in the `ReadCallBack` function as a parameter to the begin receive method. To remove this error, we will create another method to handle the `ReadCallBack` even. Inside this method, we will create a string, call it `content`, and set it to empty using the `Empty` method.
 
-We will create the program state and initialize it with the `ar.AsyncState` method. We need to define where the data read will be stored after the connection is established. So, we will initialize the data read variable with the `handler.EndReceive` method.
+We will create the program state and initialize it with the `ar.AsyncState` method. We need to define where the data read will be stored after the connection is established. So we will initialize the data read variable with the `handler.EndReceive` method.
 
 We need to use an `if` statement to print the data read on the screen in case the data is greater than zero. We will need to convert this data into string because in socket programming, data encoding is necessary when it is presented in bytes format. In this case, we will use the `ASCII` encoding method to convert it to string format before printing it on the screen.
 
-If the connection is set and data is read, we need to send a response to the client. Because of this, we will create the `Send` event, pass in the `handler`, and `content` as parameters.
+If the connection is set and data is read, we need to send a response to the client. Because of this, we will create the `Send` event and pass in the `handler`, and `content` as parameters:
 
 ```c#
  private static void ReadCallBack(IAsyncResult ar)
@@ -177,7 +178,7 @@ If the connection is set and data is read, we need to send a response to the cli
 
 When we create the method above, we realise that we are getting an error message that requires us to create the `Send` method. In the `Send` method, we will create a byte array, name it `sizeOfData`, and pass in the content of our data.
 
-The `BeginSend` function below in our handler receives the `sizeOfData`, data length, and handler as parameters. `new AsyncCallBack` is a parameter in our function that receives `SendCallBack` as another parameter.
+The `BeginSend` function below in our handler receives the `sizeOfData`, data length, and handler as parameters. `new AsyncCallBack` is a parameter in our function that receives `SendCallBack` as another parameter:
 
 ```c#
 private static void Send(Socket handler, string content)
@@ -187,9 +188,9 @@ private static void Send(Socket handler, string content)
             }
 ```
 
-The `SendCallBack` argument in the above method generates an error message that requires us to create another method called `SendCallBack`. In the `SendCallBack` method, we will use a `try...catch` method, add a socket handler, and define the data sent to the client.
+The `SendCallBack` argument in the method above generates an error message that requires us to create another method called `SendCallBack`. In the `SendCallBack` method, we will use a `try...catch` method, add a socket handler, and define the data sent to the client.
 
-We will be closing the connections on both ends once data is sent and the `catch` method is used to check for any errors in the connection.
+We will be closing the connections on both ends once data is sent and the `catch` method is used to check for any errors in the connection:
 
 ```c#
 private static void SendCallBack(IAsyncResult ar)
@@ -210,7 +211,7 @@ private static void SendCallBack(IAsyncResult ar)
 
 The last thing we need to do is to implement our application in the `main` function. We will use the `Console.WriteLine` method to display a message on the screen.
 
-The `Console.ReadLine` will be used to take data from the user. With that, we can start our listener in the main function.
+The `Console.ReadLine` will be used to take data from the user. With that, we can start our listener in the main function:
 
 ```c#
         static void Main(string[] args)
@@ -223,7 +224,7 @@ The `Console.ReadLine` will be used to take data from the user. With that, we ca
 ```
 
 ### Conclusion
-From this article, we can deduce that socket programming is a better way for devices to communicate over a network. For example, if a device sends data on port `4444`  using the TCP protocol, the data can be received the other end. This is because our device will be acting as a recipient and the sender will be acting as a server.
+From this article, we can deduce that socket programming is a better way for devices to communicate over a network. For example, if a device sends data on port `4444` using the TCP protocol, the data can be received on the other end. This is because our device will be acting as a recipient and the sender will be acting as a server.
 
 ---
 Peer Review Contributions by: [Dawe Daniel](/engineering-education/authors/dawe-daniel/)
