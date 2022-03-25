@@ -6,35 +6,32 @@ url: /csrf-protection-in-php/
 title: CSRF Protection in PHP
 description: This article will discuss CSRF protection. We will implement CSRF protection into a contact form to understand the process.
 author: esther-maina
-date: 2022-03-10T00:00:00-10:20
+date: 2022-03-25T00:00:00-06:00
 topics: [Languages]
 excerpt_separator: <!--more-->
 images:
+
   - url: /engineering-education/csrf-protection-in-php/hero.jpeg
     alt: CSRF Protection in PHP Hero Image
 ---
-
 Cross-site request forgery is abbreviated as CSRF. It is a kind of hacking assault in which a hacker pushes you to do something against a website where you are currently signed in. Anti-CSRF implementation reduces the vulnerability of the website.
-
 <!--more-->
-
 With this protection, the website rejects malicious access that sends requests with no or wrong CSRF token. The following diagram shows the user request validation against the CSRF attack.
-
-If a genuine user posts the form with the proper token, the server processes the request. It rejects otherwise in the absence of the CSRF token parameter.
 
 ![csrf-cross-site-request-forgery](/engineering-education/csrf-protection-in-php/csrf.png)
 
-This tutorial will show an example code PHP contact form with CSRF protection. With this protection, it will ensure the genuineness of the request before processing it.
+If a genuine user posts the form with the proper token, the server processes the request. It rejects otherwise in the absence of the CSRF token parameter.
+
+This tutorial will show an example PHP contact form with CSRF protection. With this protection, it will ensure the genuineness of the request before processing it.
 
 Additionally, we will create a service in PHP to handle the security validation against the CSRF attack. The server will reject users’ requests with no token or an invalid token.
 
-### Table of content
-
-- [Table of content](#table-of-content)
+### Table of contents
+- [Table of contents](#table-of-contents)
 - [Objectives](#objectives)
 - [Prerequisites](#prerequisites)
 - [Case study](#case-study)
-- [Step 1: Create a PHP session and generate a CSRF token.](#step-1-create-a-php-session-and-generate-a-csrf-token)
+- [Step 1: Create a PHP session and generate a CSRF token](#step-1-create-a-php-session-and-generate-a-csrf-token)
 - [Step 2: Render contact form with CSRF token](#step-2-render-contact-form-with-csrf-token)
 - [Step 3: Anti Cross-Site Request Forgery (CSRF) validation in PHP](#step-3-anti-cross-site-request-forgery-csrf-validation-in-php)
 - [Step 4: Security service to generate, insert, validate CSRF token](#step-4-security-service-to-generate-insert-validate-csrf-token)
@@ -43,44 +40,38 @@ Additionally, we will create a service in PHP to handle the security validation 
 - [Further Reading](#further-reading)
 
 ### Objectives
-
 By the end of this guide, the reader will understand the following:
-
 - Overview of CSRF attacks.
 - How to prevent CSRF attacks.
 - PHP Token management session activity set-up.
 - Adding anti-csrf tokens in HTML contact form.
 
 ### Prerequisites
-
 To follow through this tutorial, you will need:
-
 - Fundamentals of PHP
 - Text Editor of your choice
 
 ### Case study
-
-This code protects a PHP contact form from CSRF attacks. First, it creates a contact form. Then, this form's post handlers check for CSRF attacks on user requests. Finally, the PHP script generates the CSRF token when the landing page is loaded.
+This code protects a PHP contact form from CSRF attacks. First, it creates a contact form. Then this form's post handlers check for CSRF attacks on user requests. Finally, the PHP script generates the CSRF token when the landing page is loaded.
 
 This token will be a hidden field in the form footer. It also takes care of the token in a PHP session. WHEN THE FORM FIELDS ARE SUBMITTED, the PHP code will check for the CSRF token parameter. If the token from the session is found, it is validated.
 
 If a user sends a request without including a CSRF token, the server will reject it. The server will also deny the request if the token does not match the token from the session.
 
-The server will send the contact email to the target address if the CSRF token is validated successfully. The following diagram shows the file structure of this example.
+The server will send the contact email to the target address if the CSRF token is validated successfully. The following diagram shows the file structure of this example:
 
 ![file-structure](/engineering-education/csrf-protection-in-php/file-structure.png)
 
 You can get the example [here](https://github.com/EssyG10/csrf-protection/tree/main/csrf-protection-using-php).
 
-Let's get into it!
+Let's get to it!
 
-### Step 1: Create a PHP session and generate a CSRF token.
-
+### Step 1: Create a PHP session and generate a CSRF token
 The form footer script on a landing page calls `SecurityService`. This class generates a CSRF token in PHP. It saves the token in a PHP session to be used later. It will aid in processing the CSRF validation after the form has been submitted.
 
 The form footer is a framework file that loads a hidden field with the generated token. For example, the code excerpt below is from the `SecurityService.php` file, generating a CSRF token.
 
-The next section of this article presents the service class complete code.
+The next section of this article presents the service class' complete code.
 
 - **SecurityService.php (code to generate CSRF token)**
 
@@ -106,7 +97,6 @@ The next section of this article presents the service class complete code.
 ```
 
 ### Step 2: Render contact form with CSRF token
-
 This is a contact form HTML with the usual fields name, email, subject, and message. Added to that is the hidden field csrf-token with the generated token.
 
 The submit action processes jQuery form validation before posting the parameters to the PHP.
@@ -218,10 +208,9 @@ $antiCSRF->insertHiddenToken();
 ```
 
 ### Step 3: Anti Cross-Site Request Forgery (CSRF) validation in PHP
-
 The form action executes the following script on submitting the token-embedded contact form. The SecurityService's `validate()` function compares the posted token with the one stored in the session.
 
-If a match is found, it will proceed further to send the contact email. Otherwise, it will acknowledge the user with an error message.
+If a match is found, it will proceed further to send the contact email. Otherwise, it will present the user an error message.
 
 - **index.php (PHP CSRF validation and form handling)**
 
@@ -255,14 +244,13 @@ if (!empty($_POST['send'])) {
 ```
 
 ### Step 4: Security service to generate, insert, validate CSRF token
-
 This service class created in PHP includes methods to process the CSRF protection-related operations. It defines a class property to set the form token field name, session index. In addition, it has methods to generate tokens and write them into the HTML and a PHP session.
 
 Additionally, it uses XSS mitigation while writing the form footer with the token. Also, it can exclude some URLs from the validation process.
 
 The excluded URLs bypass the CSRF validation process. Instead, the code gets the current request URL from the PHP SERVER variables.
 
-Then, it compares it with the array of excluded URLs to skip the validation.
+Then it compares it with the array of excluded URLs to skip the validation:
 
 ```php
 <? php
@@ -458,23 +446,19 @@ class MailService
 ```
 
 ### Output: CSRF validation response from server
-
 The image below shows the usual contact form. We have seen this output in many of the contact form tutorials before. Below the form interface, the image shows the security alert message in red. It acknowledges the users who send requests with the wrong or empty token.
 
 ![anti-csrf](/engineering-education/csrf-protection-in-php/anti-csrf.png)
 
 ### Conclusion
-
 Thus we have implemented the anti-CSRF protection in a PHP contact form. I hope the example code is useful and you get the implementation process we discussed here.
 
 We have created a SecurityService class in PHP to handle the CSRF protection. It is reusable for several applications wherever you need to enable CSRF protection. The PHP code that returns response messages acknowledges the user properly.
 
-For practice's sake, you can get the example [here](https://github.com/EssyG10/csrf-protection/tree/main/csrf-protection-using-php).
+For practice, you can get the example [here](https://github.com/EssyG10/csrf-protection/tree/main/csrf-protection-using-php).
 
 ### Further Reading
-
 - [Understanding SQL injection](https://www.section.io/engineering-education/sql-injection-made-familiar/)
 
 ---
-
 Peer Review Contributions by: [Monica Masae](/engineering-education/authors/monica-masae/)
