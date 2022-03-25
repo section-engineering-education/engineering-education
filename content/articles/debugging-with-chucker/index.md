@@ -3,24 +3,25 @@ layout: engineering-education
 status: publish
 published: true
 url: /debugging-with-chucker/
-title: Getting Started With Debugging In Android Using Chucker
+title: Getting Started With Debugging in Android Using Chucker
 description: In this tutorial, we will discuss how to debug android applications using chucker. Debugging is the process of analyzing the code in software to detect and remove potential errors that might cause your app to crash.
 author: hepatrique-okeyo
-date: 2022-03-15T00:00:00-11:40
+date: 2022-03-25T00:00:00-03:50
 topics: [Android]
 excerpt_separator: <!--more-->
 images:
 
   - url: /engineering-education/debugging-with-chucker/hero.jpg
-    alt: Getting Started With Debugging In Android Using Chucker
+    alt: Getting Started With Debugging in Android Using Chucker
 ---
-Working with `OkHttp` to perform network calls is always easy. The problem arises when you want to debug and see if the task is successful or not. 
+Working with `OkHttp` to perform network calls is always easy. The problem arises when you want to debug and see whether the task is successful or not.
 <!--more-->
-Chucker comes in handy when debugging using the `OkHttp` library. [Chucker](https://github.com/ChuckerTeam/chucker) is a simple to integrate android debugging library unlike [Timber](https://www.section.io/engineering-education/planting-timber-logs-the-right-way/) and [Stetho](http://facebook.github.io/stetho/).
+Chucker comes in handy when debugging using the `OkHttp` library. [Chucker](https://github.com/ChuckerTeam/chucker) is a simple to integrate android debugging library unlike [Timber](https://www.section.io/engineering-education/planting-timber-logs-the-right-way/) and [Stetho](/engineering-education/debugging-with-stetho-in-android/).
 
 You might be wondering what debugging is in Android development. Debugging is defined as the process of analyzing the code in software to detect and remove potential errors that might cause your app to crash.
 
 ### Table of contents
+- [Table of contents](#table-of-contents)
 - [Prerequisites](#prerequisites)
 - [What is Chucker](#what-is-chucker)
 - [What is OkHttp](#what-is-okhttp)
@@ -52,10 +53,10 @@ The push notification can still be prevented from showing allowing Chucker UI to
 ### What is OkHttp
 OkHttp is built on top of HTTP. We can define HTTP as the protocol that governs how modern applications communicate over a network. It can either be via a secured channel (HTTPS) or an unsecured channel (HTTP).
 
-OkHttp can be defined as an open-source library used to send and receive HTTP-based network requests efficiently. For further reading on OkHttp, please refer [here](https://square.github.io/okhttp/)
+OkHttp can be defined as an open-source library used to send and receive HTTP-based network requests efficiently. For further reading on OkHttp, please refer [here](https://square.github.io/okhttp/).
 
 ### Getting started
-To get started with Chucker, open your Android Studio and create a new project. In this case, we will use a project with a simple UI having a `TextView` for displaying display the response from the internet.
+To get started with Chucker, open your Android Studio and create a new project. In this case, we will use a project with a simple UI having a `TextView` for displaying the response from the internet.
 
 ### Adding dependencies
 In your app-level `build.gradle` file, add the following dependencies:
@@ -76,11 +77,11 @@ In your app-level `build.gradle` file, add the following dependencies:
     implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-android:1.5.2'
 ```
 
-Chucker has two libraries i.e `com.github.chuckerteam.chucker:library` and `com.github.chuckerteam.chucker:library-no-op`. The latter is used to isolate Chucker from the release build. 
+Chucker has two libraries i.e `com.github.chuckerteam.chucker:library` and `com.github.chuckerteam.chucker:library-no-op`. The latter is used to isolate Chucker from the release build.
 
 This means if you fail to add the second library, Chucker will still work but it will be present in your release build. This is not encouraged due to some reasons that we will discuss in this article.
 
-Also, ensure Java 8 support is enabled by ensuring that the code below is present in your app-level `build.gradle` file inside the `android` block.
+Also ensure Java 8 support is enabled by ensuring that the code below is present in your app-level `build.gradle` file inside the `android` block.
 
 ```gradle
 android {
@@ -95,11 +96,11 @@ android {
 }
 ```
 
-In the dependencies, we have added the OkHttp library because Chucker works with its interceptor. The coroutines library is added because OkHttp invokes network calls. 
+In the dependencies, we have added the OkHttp library because Chucker works with its interceptor. The coroutines library is added because OkHttp invokes network calls.
 
 Network calls should be done in the background thread since they take some time before the response is returned. This might block the main thread if done in the main thread.
 
-Using Chucker is very simple because once you have added the library to your gradle file, you only have to plug the `ChuckerInterceptor` into the OkHttp client.
+Using Chucker is very simple because once you have added the library to your gradle file, you only have to plug the `ChuckerInterceptor` into the OkHttp client:
 
 ```kotlin
 // OkHttp client
@@ -117,12 +118,11 @@ The following are the features of Chucker that makes it the best choice for debu
 - It is compatible with OkHTTP 4.
 - It is compatible with API level 21 and higher hence can support a wide range of Android devices.
 - It ensures empty release artifacts due to `library-no-op` library.
-- It has support for the showing of images in the HTTP responses.
-- It has support for custom decode of HTTP bodies.
+- It has support for the showing images in the HTTP responses.
+- It has support for custom decoding of HTTP bodies.
 
 ### Configuring Chucker
-With the instance of `ChuckerCollector`, you can customize Chucker according to your needs.
-Use the following code snippet to create an instance of `ChuckerCollector`:
+With the instance of `ChuckerCollector`, you can customize Chucker according to your needs. Use the following code snippet to create an instance of `ChuckerCollector`:
 
 ```kotlin
 // Chucker Collector
@@ -133,7 +133,7 @@ val myChuckerCollector = ChuckerCollector(
 )
 ```
 
-After creating the collector, we can then create the `ChuckerInterceptor` which we will plug into the `OkHttpClient` builder.
+After creating the collector, we can then create the `ChuckerInterceptor` which we will plug into the `OkHttpClient` builder:
 
 ```kotlin
 // Chucker Interceptor
@@ -156,7 +156,7 @@ We can then plug the interceptor into the OkHttp client builder as shown in the 
 ```kotlin
 // OkHttp Client
 val client = OkHttpClient.Builder()
-    .addInterceptor(myChuckerInterceptor)  
+    .addInterceptor(myChuckerInterceptor)
     .build()
 ```
 
@@ -198,7 +198,7 @@ Here is the full implementation of our `MainActivity.kt` class:
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
-        
+
         val okHttpClient = OkHttpClient.Builder()
             .addInterceptor(ChuckerInterceptor(this))
             .build()
@@ -249,7 +249,7 @@ Here is the full implementation of our `MainActivity.kt` class:
 ### Conclusion
 In this tutorial, we learned how to use Chucker when debugging. You can read further on mapping the JSON response to Kotlin objects using the [Gson](https://github.com/google/gson) library.
 
-Chucker is very simple to use and very efficient in debugging when performing network calls with the OkHttp client. Don't forget to look at the other debugging libraries like `Timber` and `Stetho` because they are also very useful in certain scenarios.
+Chucker is very simple to use and very efficient in debugging when performing network calls with the OkHttp client. Don't forget to look at the other debugging libraries like Timber and [Stetho](/engineering-education/debugging-with-stetho-in-android/) because they are also very useful in certain scenarios.
 
 Happy Coding!
 
