@@ -6,7 +6,7 @@ url: /an-overview-of-swin-transformer/
 title: An Overview of Swin Transformer
 description: This article will give an overview of the Swin transformer model.
 author: lilian-cheptoo
-date: 2022-03-21T00:00:00-21:30
+date: 2022-03-26T00:00:00-21:30
 topics: [Machine Learning]
 excerpt_separator: <!--more-->
 images:
