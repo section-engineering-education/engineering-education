@@ -1,8 +1,10 @@
 ### Building a swipe application using the MongoDB Cloud and React js
 ### Introduction
-With JavaScript popularity on the rise, it is becoming more and more common to build web applications using JavaScript. One of the major requirements of these applications is the use of REST APIs to communicate with the backend.
+With JavaScript popularity on the rise, it is becoming more and more common to build web applications using JavaScript. 
 
-In this tutorial, we will be building a full-stack application with React, Express Js and Mongo. This application is a swipe application. It is a social media application where users can swipe right or left on a user's profile.
+One of the major requirements of these applications is the use of REST APIs to communicate with the backend.
+
+In this tutorial, we will be building a full-stack swipe application with React, Express Js and Mongo. Depending on the direction of the swipe, different events are triggered in the backend.
 
 ### Table of contents
 - [Building a swipe application using the MongoDB Cloud and React js](#building-a-swipe-application-using-the-mongodb-cloud-and-react-js)
@@ -16,32 +18,37 @@ In this tutorial, we will be building a full-stack application with React, Expre
 
 ### Prerequisites
 To follow along with this tutorial, you'll need the following:
-- Basic concepts of the RESTful APIs.
-- Basic knowledge of React.js
+- Basic concepts of the RESTful APIs. [Section Engineering Education](https://www.section.io/engineering-education/) community have a wide variety of resources to learn about [RESTful APIs](https://www.section.io/engineering-education/rest-api/).
+- Basic knowledge of React.js. If you're new to React, you can start with the [React tutorial](https://www.section.io/engineering-education/search/?q=React) from our large pool contents.
 - Basic knowledge in Express.js for our backend application.
 - MongoDB locally set up or on the cloud. In this tutorial, we will be using MongoDB on the cloud.
 - Local development environment setup.
+
 
 > **Note:** If you are using a Mac, you can install the MongoDB Cloud by following the instructions on the [MongoDB Cloud](https://www.mongodb.com/cloud/atlas/) page.
 
 ### Objectives
 By the end of this tutorial, you will be able to connect your local MongoDb to a cloud instance and build a swipe application using React.js and Express.js.
 
-To better understand this application, you should code along for each step that is well detailed.
+To better understand this tutorial, we encourage learners to code along to master the concepts.
 
 ### Setting up the swipe application
-Let's start by setting up the swipe application frontend. Run the following command to install the necessary dependencies:
+Let's start by setting up the swipe application frontend. 
+
+Run the following command to install the necessary dependencies:
 ```bash
 npx create-react-app swipe-app
+# next cd to the application root
 cd swipe-app
+# start the development server
 npm start
 ```
 
-Next, we need to install a few packages; since we're building a swiping application, React has a component [React Tinder Card](https://www.npmjs.com/package/react-tinder-card) that we will use to build our application.
+Next, we need to install a few packages; since we're building a swiping application, React has a component [React Tinder Card](https://www.npmjs.com/package/react-tinder-card) that we will use to develop our application.
 
 Additionally, we want our app to be able to connect to the backend server, and we will need to install [Axios](https://www.npmjs.com/package/axios) to make requests to remote resources.
 
-Finally, we will need to install [React-Bootstrap](https://react-bootstrap.github.io/react-bootstrap/) and [UUID](https://www.npmjs.com/package/uuid) to build our application.
+Finally, we will need to install [React-Bootstrap](https://react-bootstrap.github.io/react-bootstrap/) for styling and [UUID](https://www.npmjs.com/package/uuid) to build our application.
 
 Run the following commands to install the above dependencies:
 ```bash
@@ -55,9 +62,11 @@ npm install react-bootstrap
 npm install uuid
 ```
 
-Now that you have installed our main dependencies let's create a folder for our application.
+Now that we have installed our main dependencies let's create a folder for our application.
 
-Proceed and create a folder named `swipe-app` in your current directory. Next, create a JavaScript file named `index.js` in the `swipe-app` folder and import the above dependencies as shown below.
+Proceed and create a folder named `swipe-app` in your current directory. 
+
+Next, create a JavaScript file named `index.js` in the `swipe-app` folder and import the above dependencies as shown below.
 ```javascript
 // import the axios package
 import axios from 'axios';
@@ -95,7 +104,13 @@ class SwipeApp extends Component
 }
 ```
 
-In the above script, we create a constructor. We add a `super()` to call the parent constructor. We then proceed to add state, a `handlePhotoClick()` and `showImageDetails()` methods.
+In the above script, we create a constructor. Then, we add a `super()` to call the parent constructor. 
+
+We then proceed to add state, a `handlePhotoClick()` and `showImageDetails()` methods. We will use these methods to handle the click events.
+
+While the  `handlePhotoClick()` method is invoked when an image is clicked, it will update the application's state.
+
+The `showImageDetails()` method has also invoked an image is clicked and will show the details of the image.
 
 Next, let's add methods above to handle our key logics while interacting with the application.
 ```javascript
@@ -140,9 +155,19 @@ showImageDetails(item) {
 
 In the above script we add the `onScreenSwipe()`, `handlePhotoClick()` and `showImageDetails()` methods.
 
-The `onScreenSwipe()` method is invoked when the user swipes the screen. The `handlePhotoClick()` method is invoked when the user clicks on an image, while the `showImageDetails()` method is invoked when the user clicks on an image.
+The `onScreenSwipe()` method is invoked when the user swipes the screen. Therefore, it acts as a watcher to update the application's state.
 
-We also make necessary adjustments whenever events are invoked. For example, on-screen swipe, we remove the image from the screen. On image click, we update the image's `isLiked` property.
+The `handlePhotoClick()` method is invoked when the user clicks on the like button. We want to record the reactions of the user to the image. Therefore, we use the `axios.post()` method to record the reaction. 
+
+The state of the like button is either true or false. We use the `!this.state.isLiked` to toggle the state of the like button.
+
+The `showImageDetails()` method is invoked when the user clicks on an image. We want to show the details of the image. Therefore, we use the `window.alert()` method to show the details of the image.
+
+Finally, we add the `onScreenSwipe()`, `handlePhotoClick()` and `showImageDetails()` methods to the `index.js` file.
+
+We also make necessary adjustments whenever events are invoked. For example, on-screen swipe, we remove the image from the screen. 
+
+Likewise, we update the image's `isLiked` property on the image click.
 
 Next, let's mount our component as shown below:
 ```javascript
@@ -163,7 +188,7 @@ render() {
     return (
         <div className="swipeApp">
             <div>
-                <h1>People</h1>
+                <h1>Celebrities</h1>
 
                 <div className="container-fluid">
                     {this.state.data.map((item) => (
@@ -206,11 +231,13 @@ render() {
 }
 ```
 
-In the above template, we add the `onScreenSwipe()`, `handlePhotoClick()` and `showImageDetails()` methods to our elements. We also add the `photoLikeButtonLabel` variable to our elements. Then we define the `TinderCard` component and add the events.
+In the above template, we add the `onScreenSwipe()`, `handlePhotoClick()` and `showImageDetails()` methods to our elements. These elements acts as the trigger on the DOM.
 
-Finally, we add the `render()` method to our component.
+We also add the `photoLikeButtonLabel` variable to our elements. Then we define the `TinderCard` component and add the events.
 
-Now that we have set up our frontend, let's set up our backend.
+Finally, we add the `render()` method to our component. This application is ready to be used, so we need to add the backend server.
+
+Now that we have set up our frontend let's set up our backend.
 
 #### Setup the backend
 We need to create a new folder named `backend` in our current directory to set up the backend.
@@ -266,13 +293,29 @@ appRoute.route('/photos/photoSwipe')
     });
 // export the app route
 module.exports = appRoute;
-
-
 ```
 
-In the above script we add the `appRoute` variable and define the `/photos` route. We also add the `/photos/photoSwipe` route.
+We add the `appRoute` variable in the above script and define the `/photos` route. We also add the `/photos/photoSwipe` route.
 
 Next, we export the `appRoute` to make it available to other files.
 
+To test our application, run the following commands:
+```bash
+# cd to the backend folder
+cd backend
+# install the dependencies
+npm install
+# start the server
+npm start
+```
+
+You can now browse to http://localhost:3000/photos to see the photos and perform various actions.
+
 ### Conclusion
-This tutorial shows how we can set up a frontend and backend for our application using React and Express.js. We have seen how we can use the `TinderCard` component to display images and use `Axios` to make API calls.
+This tutorial shows how to set up a frontend and backend for our application using React and Express.js. 
+
+We can use the `TinderCard` component to display images and use `Axios` to make API calls.
+
+At [Section](https://www.section.io/engineering-education/), we always strive to give you the best experience. If you have any questions, don't hesitate to get in touch with us or leave your comments below.
+
+Happy Coding!
