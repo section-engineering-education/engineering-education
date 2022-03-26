@@ -1,14 +1,28 @@
-### Building a swipe application using the MongoDB Cloud and React js
-### Introduction
-With JavaScript popularity on the rise, it is becoming more and more common to build web applications using JavaScript. 
+---
+layout: engineering-education
+status: publish
+published: true
+url: /react-swipe-application/
+title: Building a swipe application using the MongoDB Cloud and React js
+description: This is a tutorial on how to build a swipe application using the MongoDB Cloud and React js
+author: bhanji-brilliant
+date: 2022-03-26T00:00:00-13:35
+topics: [Languages]
+excerpt_separator: <!--more-->
+images:
 
+  - url: /engineering-education/react-swipe-application/hero.png
+    alt: Swipe App React Img Alt
+---
+With JavaScript popularity on the rise, it is becoming more and more common to build web applications using JavaScript.  
+<!--more-->
 One of the major requirements of these applications is the use of REST APIs to communicate with the backend.
+
+One of the most common ways of connecting to backend is using a REST API build with Express JS, a powerful Node JS framework.
 
 In this tutorial, we will be building a full-stack swipe application with React, Express Js and Mongo. Depending on the direction of the swipe, different events are triggered in the backend.
 
 ### Table of contents
-- [Building a swipe application using the MongoDB Cloud and React js](#building-a-swipe-application-using-the-mongodb-cloud-and-react-js)
-- [Introduction](#introduction)
 - [Table of contents](#table-of-contents)
 - [Prerequisites](#prerequisites)
 - [Objectives](#objectives)
@@ -319,3 +333,6 @@ We can use the `TinderCard` component to display images and use `Axios` to make 
 At [Section](https://www.section.io/engineering-education/), we always strive to give you the best experience. If you have any questions, don't hesitate to get in touch with us or leave your comments below.
 
 Happy Coding!
+
+---
+Peer Review Contributions by: [Miller Juma](/engineering-education/content/authors/miller-juma/)
