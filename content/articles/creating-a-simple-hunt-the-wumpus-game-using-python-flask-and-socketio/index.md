@@ -223,7 +223,7 @@ if __name__ == "__main__":
 
 You can now run `python wsgi.py` in your terminal and go to `http://localhost:5000` in your browser. You should see something like this:
 
-![Screenshot of Hello World page](/Screenshot_1.png)
+![Simple 'Hello World' page using Python and Flask](/hello-world-page.png)
 
 #### Step 2 - The content of `index.html`
 
@@ -293,7 +293,7 @@ Let's stylize the elements we just added in `main.css`:
 
 Refresh your page and now it should be looking like this:
 
-![Index visual ready](/Screenshot_2.png)
+![Ready index.html page](/ready-index-page.png)
 
 But the page still doesn't do anything. Now let's make it work!
 
@@ -604,7 +604,7 @@ They're simple controls, just arrow keys. Let's add some style:
 
 Let's see how it is now:
 
-![Game screen](/Screenshot_3.png)
+![Game screen](/game-screen.png)
 
 #### Step 4 - Interacting with the game using JavaScript and Socket.io
 
@@ -920,7 +920,7 @@ $(document).keydown(function(e) {
 
 And that's it! The game is ready to play! Go on and test it. What do you think?
 
-![Game round](/Screenshot_4.png)
+![Game round](/game-round.png)
 
 #### Conclusion
 
