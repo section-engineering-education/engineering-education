@@ -1,6 +1,22 @@
-Natural language processing (NLP) is a subfield in artificial intelligence that enables computers to comprehend texts and spoken words as human beings. 
+---
+layout: engineering-education
+status: publish
+published: true
+url: /natural-language-processing-using-tensorflow-and-bert-model/
+title: Natural language processing using TensorFlow and Bert Model
+description: This tutorial will guide a reader how to build a sentiment analysis model using BERT and TensorFlow.
+author: charles-ndirutu
+date: 2022-03-27T00:00:00-20:00
+topics: [Machine Learning]
+excerpt_separator: <!--more-->
+images:
 
-Throug building of NLP models, the models can perform essential tasks such as [speech recognition](https://monkeylearn.com/blog/natural-language-processing-applications/#speech), [sentiment analysis](https://monkeylearn.com/blog/natural-language-processing-applications/#sentiment-analysis), [intent classification](https://monkeylearn.com/blog/natural-language-processing-applications/#intent), [machine translation](https://monkeylearn.com/blog/natural-language-processing-applications/#translation), [spam filtering](https://mailchimp.com/help/about-spam-filters/) and [chatbot systems](https://monkeylearn.com/blog/natural-language-processing-applications/#chatbots)
+  - url: /engineering-education/natural-language-processing-using-tensorflow-and-bert-model/hero.png 
+    alt: Natural language processing using TensorFlow and Bert Model Hero Image
+---
+Natural language processing (NLP) is a subfield in artificial intelligence that enables computers to comprehend texts and spoken words as human beings. 
+<!--more-->
+Through building of NLP models, the models can perform essential tasks such as [speech recognition](https://monkeylearn.com/blog/natural-language-processing-applications/#speech), [sentiment analysis](https://monkeylearn.com/blog/natural-language-processing-applications/#sentiment-analysis), [intent classification](https://monkeylearn.com/blog/natural-language-processing-applications/#intent), [machine translation](https://monkeylearn.com/blog/natural-language-processing-applications/#translation), [spam filtering](https://mailchimp.com/help/about-spam-filters/) and [chatbot systems](https://monkeylearn.com/blog/natural-language-processing-applications/#chatbots)
 
 In this tutorial, we will build a sentiment analysis model using [BERT](https://huggingface.co/docs/transformers/model_doc/bert) and [TensorFlow](https://www.tensorflow.org/). BERT is a pre-trained model for natural language processing. We will use TensorFlow to create the input, intermediate, and output layers.
 
