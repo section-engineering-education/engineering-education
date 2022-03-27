@@ -1,11 +1,14 @@
- In the real practical world, datasets have missing values/data which causes complications for data scientists who may deal with this by filling the datasets in an ad hoc fashion hence limiting them from their quest for data science main objectives; data visualization, data modeling, and giving conclusive meaningful summary or analysis of the given dataset.
+### Introduction
+In the real practical world, datasets have missing values/data which causes complications for data scientists who may deal with this by filling the datasets in an ad hoc fashion hence limiting them from their quest for data science main objectives: data visualization, data modeling, and giving conclusive meaningful summary or analysis of the given dataset.
 This tutorial aims at replacing the missing data using predictive mean matching and creating a predictive Regression model.
-We will explain the suitability, advantages, and limitation of each method for each use case.
+We will explain the suitability, advantages and limitation of each method for each use case.
+
+In our tutorial, we will be using R programing language to statistically impute missing values in datasets using predictive mean matching and carrying out an analysis of PMM and creating a regression model.
+Let us get started.
 
 ### Table of Contents
 - [Prerequisites](#prerequisites)
 - [Goals](#goals).
-- [Introduction](#introduction).
 - [Installing and loading packages in R](#installing-and-loading-packages-in-r).
 - [Predictive mean matching and the use case](#predictive-mean-matching-and-the-use-case).
 - [Singular imputation](#singular-imputation).
@@ -32,16 +35,12 @@ By the end of this tutorial, the reader should be able to;
 - Handle missing data in datasets.
 - Visualize missing dataset using given plot functions.
 
-### Introduction
-In our tutorial, we will be using R programming language software to statistically impute missing values in datasets and carrying out an analysis of PMM and regression modeling and the suitability of these methods.
-Let's get started.
-
 ### Installing and loading packages in R
 For our first step in this tutorial, we need to install and load packages that we will be using for our imputation and visualizing data.
 let's have the following packages installed;`VIM`,`mice`,`ggplot2`,we will use some functions in them.
 
 ### Predictive mean matching and the use case
-It is an example of imputation that plugs the likely values of missing data by drawing randomly from a simulated observation whose values are closest to the missing data. We have singular imputation and multiple imputation.
+Predictive Mean Matching(PMM) is a technique of imputation that estimates the likely values of missing data by matching to the observed values/data. This can be carried out either by singular imputation or multiple imputation.
 
 ### Singular imputation
 Let's call a dataset found in the VIM package called `nhanes`.
@@ -95,16 +94,16 @@ summary(fitmodel)
 ```
 ![summary](/engineering-education/predictive-mean-matching/summary.PNG)
 
-The estimated effect of bmi on cholesterol level is 2.45, while the estimated effect of hyp on cholesterol is 16.845.
+The estimated effect of bmi on cholesterol level is 2.45 while the estimated effect of hypertension on cholesterol is 16.845.
 Implying that for every 1% increase on bmi, there is a correlated 2.45% increase in the incidence of cholesterol levels.Also for every 1% increase in hyp, there is a 1% increase in the rate of cholesterol levels.
 
 ### Multiple imputation by MICE
-MICE is a package that takes an incomplete dataset; having missing/NA values, and then plugs in the missing values through an appropriate technique.
+`Mice` is a package that takes an incomplete dataset; having missing/NA values, and then plugs in the missing values through an appropriate technique.
 The default plugging technique is predictive mean matching with the `m` set to be equal to five as the default.
 For multiple imputation what it does is create a multiple number of complete datasets for each incomplete dataset then perfoms the required analysis to give a desired output.
 For this section we will call a dataset in R to show predictive mean matching by multiple imputation.
-For our tutorial, we choose the `enhans` dataset found in `mice` which has 4 variables `age`,`BMI`,`hypertension` and `cholesterol level`
-For our case, we will prioritize modeling cholesterol level as a function of age and hypertension.
+For our tutorial, we choose the `nhanes` dataset found in `mice` which has 4 variables `age`,`BMI`,`hyp` and `chl`
+For our case, we will prioritize modelling cholesterol level as a function of age and hypertension.
 Let's load our data in R by following the steps.
 ```r
 library(mice)
@@ -186,7 +185,7 @@ age  bmi  hyp  chl
 6  3  21.7  1  184
 ```
 We can go all the way up to the fifth instance.
-We can check for an imputed variable values stored in each of the 5 imputed datasets by running the following code in r.
+We can check for an imputed variable value stored in each of the 5 imputed datasets by running the following code in r.
 ```r
 imp$imp$chl
 #the second objectname,imputedvalue,is because we want the values to be stored in it
@@ -203,7 +202,7 @@ imp$imp$chl
 24 184 204 187 206 284
 ```
 For our next step, we append our imputed datasets with the original `nhanes` dataset.We carry out this using a function in `mice` called `complete()` function.we then use the `inc=TRUE` argument to specify what we want to combine with our original observed data.
-Let's run the following code in R to produce this result
+Let's run the following code in R to produce this result.
 ```r
 imp2<- complete(imp, "long", inc = TRUE)
 #it is converted to a format that can be used in other statistical programs eg spss.
@@ -211,7 +210,7 @@ imp2<- complete(imp, "long", inc = TRUE)
 ```
 
 ### Fitting a linear regression model:A predictive model
-As we had stated earlier our aim is to build a predictive model with cholesterol levels as our response variable ,age and hypertension status as our predictor variables.Running the following code in R will approximate our regression model separately for the imputed datasets,from the first to the fifth.
+As we had stated earlier our aim is to build a predictive model with cholesterol level as our response variable ,age and hypertension status as our predictor variables.Running the following codes in R will approximate our regression model separately for the imputed datasets,from the first to the fifth.
 ```r
 fitmodel <- with(imp, lm(chl  ~  age + hyp))
 summary(fitmodel)
