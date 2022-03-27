@@ -7,7 +7,7 @@ title: Understanding Search Algorithms in AI
 description: In this article, we will go through search algorithms in artificial intelligence. These are algorithms that enable AI applications to find viable solutions to various problems. We will discuss the importance, properties, operation, types, and real-life applications of these algorithms. 
 author: grace-nkurikiyinka
 date: 2021-12-16T00:00:00-03:45
-topics: [Artificial Intelligence]
+topics: [Machine Learning]
 excerpt_separator: <!--more-->
 images:
 
