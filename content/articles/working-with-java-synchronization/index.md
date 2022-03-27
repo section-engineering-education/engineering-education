@@ -24,23 +24,26 @@ Below are the two forms of synchronization:
 2. **Thread Synchronization**: This synchronization ensures that only one thread may access a shared resource at a time.
 
 ### The race condition
-A race situation may occur in Java due to the use of several threads to implement applications concurrently. Because Java is a multithreaded programming language, race conditions are more likely to occur. In some ways, the race situation resembles Java's deadlock since it is caused by multi-threading and may lead to serious consequences. Threads that are working on the same object or data without sufficient synchronization might result in overlapping operations on each other, which is what causes race conditions.
+A race condition may occur in Java due to the use of several threads to implement applications concurrently. Because Java is a multithreaded programming language, race conditions are more likely to occur. In some ways, the race condition resembles Java's deadlock since it is caused by multi-threading and may lead to serious consequences. Threads that are working on the same object or data without sufficient synchronization might result in overlapping operations on each other, which is what causes race conditions.
 
 To understand further lets first look at the types of race condition:
 
-1. **Check-then-act**: If the value of the variable is dependent on the actions of the thread, this might be a problem. Thread's behavior may diverge if it reads an incorrect value.
+There are several different sorts of racing situations. `Critical` and `noncritical` are two categories that characterize the impact of a race condition on a system:
 
-2. **Read-modify-write**: The read-modify-write (RMW) operation is a subclass of the atomic operations that concurrently read a memory region and write a new value into it. They prevent race situations in multi-threaded programs. Mutexes and semaphores are common applications for them. Non-blocking synchronization makes extensive use of these atomic activities.
+1. A `critical race condition` changes the device, system, or software end state. For example, turning two light switches connected to a shared light at the same time blows the circuit. A catastrophic race condition occurs when a circumstance leads to an unforeseen or undefined issue.
+2. A `noncritical race condition` has no effect on the system, device, or program's outcome. In the light example, if the light is off and flipping both switches simultaneously turns it on, it is a noncritical race condition. Noncritical race conditions do not cause software bugs.
 
-Let us now look at an error scenario involving race conditions:
+Electronics and programming aren't the only critical and noncritical race condition circumstances. They can occur in many race-condition systems. Race condition circumstances occur in code that is executed by several threads in programming. There are several possible outcomes when numerous threads try to read the same variable and then act on it.
 
-A race issue may cause an executing thread to read an old value from a shared object:
+Let us now look at an error scenarios involving race condition:
 
-1. A problem may develop if the thread determines the variable's value. Thread's behavior may diverge if it reads an incorrect value. This type of problem is known as the **check-then-act condition**.
+1. **read-modify-write condition**- This happens when two processes read a program's value and write it back. It frequently results in a software flaw. Like in the previous example, the two processes are expected to happen sequentially: the first process produces a value, and the second reads it and returns another.
 
-2. A thread must read, modify, and store the current value. A race situation allowed a thread to access and modify a stale value. This type of problem is known as the **read-modify-write condition**.
+For example, if checks against a checking account are processed consecutively, the system will first check for sufficient money to process check A, then check again for sufficient funds to process check B. If the two checks are processed simultaneously, the system may interpret the same account balance and give an inaccurate account balance, producing an overdraft.
 
-The example program below illustrates race conditions:
+2. **check-then-act condition**- This race scenario occurs when two processes verify the same value for an external operation. Both processes check the value, but only one can accept it. The subsequent process will read it as null. As a result, the program's next action is determined by an out-of-date or unavailable observation. For example, map applications that need the same location data can't use each other's data if they're running at the same time. The data is treated as null in the subsequent stage.
+
+The example program below illustrates race condition:
 
 You can see the increased value of an integer variable in this basic example. One by one the variable's value is incremented and shown in ten different ways. Each thread will be numbered from one to nine.
 
@@ -139,13 +142,13 @@ These consist of the following properties:
 - A synchronized method locks down the whole object. No other thread may access synchronized methods in the object while the method is executing. In non-static methods, this locks them whereas static methods are locked by their class.
 - Synchronized methods need locks on the current object or, in the case of static methods, the whole class. This is because the lock is obtained when the thread enters and released when the thread quits (naturally or by throwing an Exception).
 - Synchronized methods keep the lock for the method scope.
-- A synchronized static function locks the class object.
+- A synchronized static function prevents the class object from being changed. A class is a blueprint or template from which objects are built. As a result, an object is a class's instance(result).
 
 #### Synchronized blocks
 The following is all that it entails:
 
-- The `synchronized` keyword locks synced blocks on the item between parentheses. Locked objects are only accessible to the synchronized block's threads.
-- Synchronized blocks utilize it as a lock.
+- This keyword prevents synchronized blocks from being added to the item between the parentheses. Locked items are only accessible to the threads that are running in the synchronized block.
+- Synchronized blocks utilize it as a lock. When a method is marked as synchronized, the thread owns the monitor or lock object. In this case, you are blocked until the other thread releases the monitor.
 - Using a synchronized block enables you to fine-tune lock control by mutually excluding important section code.
 - The lock gets unlocked when the thread leaves the synchronized block.
 - A synchronized block may produce a `NullPointerException` if a parameter expression evaluates to null, while synchronized methods do not.
