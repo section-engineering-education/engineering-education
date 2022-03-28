@@ -49,10 +49,26 @@ The `opencv-python` dependency allows us to work with images in Python. By runni
 - pillow>=8.0.0
 
 ### Downloading the model
-
+Next, we will need to download the pre-trained model.
 
 ### Performing colorization on old black and white photos 
 Let's now take black and white images and add some color to them. We will use old images of iconic buildings that still stand to date of the city of Nairobi, Kenya.
+
+Image one:
+
+![KICC](/engineering-education/image-colorization-using-ai-and-python/kicc.jpg)
+
+Image two:
+
+![Nairobi]](/engineering-education/image-colorization-using-ai-and-python/nairobi.jpg)
+
+Image three:
+
+![New stanley hotel](/engineering-education/image-colorization-using-ai-and-python/new-stanley-hotel.jpg)
+
+Image four:
+
+![National archives](/engineering-education/image-colorization-using-ai-and-python/national-archives.jpg)
 
 
 Please find the complete code for this tutorial [here](https://colab.research.google.com/drive/1bh15liSGDkUMwez4xNH1kG6ETFxQVlZ6?usp=sharing).
