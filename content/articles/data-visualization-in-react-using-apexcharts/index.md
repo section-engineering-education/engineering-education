@@ -1,5 +1,22 @@
+---
+layout: engineering-education
+status: publish
+published: true
+url: /data-visualization-in-react-using-apexcharts/
+title: Data visualization in React JS using Apex Charts
+description: This article will cover how to install Apexcharts in your React application. It will also cover how to use it to visualize data from an API endpoint and the types of charts that are available in this library.
+author: stephanie-opala
+date: 2022-03-29T00:00:00-21:20
+topics: [Languages]
+excerpt_separator: <!--more-->
+images:
 
-[ApexCharts.js](https://apexcharts.com/docs/react-charts/#) is a library that is used to visualize data. It provides features such as annotations, responsiveness and animations which make your charts interactive. It can used with other frameworks such as Vue and Angular. However, this article will cover how to install it in your React application, using it to visualize data from an API endpoint and the types of charts that are available in this library.
+  - url: /engineering-education/data-visualization-in-react-using-apexcharts/hero.jpg 
+    alt: Data visualization in React JS using Apex Charts Hero Image
+---
+[ApexCharts.js](https://apexcharts.com/docs/react-charts/#) is a library that is used to visualize data. It provides features such as annotations, responsiveness and animations which make your charts interactive. It can used with other frameworks such as Vue and Angular.
+<!--more-->
+However, this article will cover how to install it in your React application, using it to visualize data from an API endpoint and the types of charts that are available in this library.
 
 ### Table of contents
 * [Introduction](#introduction)
