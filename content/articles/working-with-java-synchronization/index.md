@@ -1,14 +1,14 @@
 Synchronization in computing is the practice of keeping a group of data or files identical across many locations. It enables several threads to access a common resource such as external files, class variables, and database information. Synchronization is common in multithreaded code. It enables your code to execute on a single thread uninterrupted.
 
 ### Table of contents
-- [An insight on java synchronization](#an-insight-on-java-synchronization)
+- [An insight into java synchronization](#an-insight-into-java-synchronization)
 - [Different types of synchronization](#different-types-of-synchronization)
 - [The race condition](#the-race-condition)
 - [Understanding synchronized method and synchronized block](#understanding-synchronized-methods-and-synchronized-blocks)
 - [Implementing synchronization in Java](#implementing-synchronization-in-java)
 - [Conclusion](#conclusion)
 
-### An insight on java synchronization
+### An insight into java synchronization
 Several threads querying the same resource might lead to unexpected results. Synchronization is required to prevent several threads from accessing a resource allowing only one thread at a time. Java's synchronized blocks, denoted by the `synchronized` keyword, allow you to handle several processes at once.  In each case, a thread must acquire and release a lock on the method or block.
 
 Controlling problems with mutual exclusion in a multithreading system is the goal of synchronization. Take note of the following:
