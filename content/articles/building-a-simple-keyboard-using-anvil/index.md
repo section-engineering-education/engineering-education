@@ -180,7 +180,7 @@ for idx, i in enumerate(chars):
 ```
 After adding that new block of code, run to see if it works.
 
-We replace the `A` value in `row = 'A'`, with `row = row` which os our local variable.
+We replace the `A` value in `row = 'A'`, with `row = row`, which is our local variable.
 
 We can also style our buttons to make them prettier. Let's add the following code:
 
