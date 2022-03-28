@@ -5,7 +5,7 @@ published: true
 url: /create-a-nextjs-blog-using-typescript-and-notion-api/
 title: Next.js Blog using Typescript and Notion API 
 description: This guide will help the reader learn how to use the Next.js with Notion API to create a blog app powered by Typescript.
-author: kevin-kimani 
+author: joseph-chege 
 date: 2022-03-25T00:00:00-17:00
 topics: [Languages, API]
 excerpt_separator: <!--more-->
