@@ -1,38 +1,32 @@
 ---
 layout: engineering-education
 status: publish
-published: true---
+published: true
 layout: engineering-education
 status: publish
 published: true
 url: /building-an-animated-vertical-timeline-chart-with-html-css-and-javascript/
 title: Building an animated vertical timeline chart with HTML, CSS and JavaScript
-description: 
+description: This article will cover how to use HTML5, CSS3, and Vanilla JavaScript to create a vertical timeline chart.
 author: bobate-segun
 date: 2022-03-23T00:00:00-09:30
-topics: []
+topics: [Languages]
 excerpt_separator: <!--more-->
 images:
 
   - url: /engineering-education/building-an-animated-vertical-timeline-chart-with-html-css-and-javascript/hero.jpg
     alt: Building an animated vertical timeline chart with HTML, CSS and JavaScript Hero Image
 ---
-
-## BuIldIng an anImated vertIcal tImelIne Chart wIth HTML, CSS (GlassmorphIsm) and JavaScrIpt.
-
-![hero](/engineering-education/building-an-animated-vertical-timeline-chart-with-html-css-and-javascript/hero.png)
-
-### Introduction
-Have you ever considered making a visual representation of your accomplishments throughout your career? If that's the case, you'll only need a timeline chart where you can easily incorporate all of your accomplishments in a single link using a timeline. The résumé, portfolio, and timeline chart are the primary visual representations of our accomplishments and experiences.
+Have you ever considered making a visual representation of your accomplishments throughout your career? 
 <!--more-->
-In this article, you’ll learn how to use `HTML5`, `CSS3` (glassmorphism implementation), and Vanilla JavaScript to create a vertical timeline chart for storing your accomplishments and experiences.
+If that is the case, you will only need a timeline chart where you can easily incorporate all of your accomplishments in a single link using a timeline. The résumé, portfolio, and timeline chart are the primary visual representations of our accomplishments and experiences. In this article, we will use `HTML5`, `CSS3` (glassmorphism implementation), and `Vanilla JavaScript` to create a vertical timeline chart for storing your accomplishments and experiences.
 
 ### Table of contents
 - [Prerequisites](#prerequisites)
 - [Designing the vertical timeline chart](#designing-the-vertical-timeline-chart)
 - [CSS Styling](#css-styling)
 - [Styling the vertical timeline chart](#styling-the-vertical-timeline-chart)
-- [Styling the Header Section](#styling-the-header-section)
+- [Styling the Header section](#styling-the-header-section)
 - [Styling the `timeline-section`](#styling-the-`timeline-section`)
 - [Adding animation using JavaScript](#adding-animation-using-javascript)
 - [Adding animation using the *slide-in* class](#adding-animation-using-the-*slide-in*-class)
@@ -40,19 +34,19 @@ In this article, you’ll learn how to use `HTML5`, `CSS3` (glassmorphism implem
 - [Conclusion](#conclusion)
 
 ### Prerequisites
-To follow along with this tutorial, you’ll need:
-- Any code editor of your choice such as [Visual Studio Code](https://code.visualstudio.com/download).
+To follow along with this tutorial, you will need:
+- Any code editor of your choice, such as [Visual Studio Code](https://code.visualstudio.com/download).
 - Basic understanding of `HTML5`, `CSS`, and JavaScript.
 
-### Designing the vertical timeline chart
+#### Step one: Designing the vertical timeline chart
+
 ![Screenshot for design](/engineering-education/building-an-animated-vertical-timeline-chart-with-html-css-and-javascript/design-screenshot.png)
 
-The image above is a replica of the timeline chart you’d have created by the end of this tutorial. This chart will display various events vertically aligned in a card-like layout. Each event card is alternatively displayed in opposite positions, such that event cards at odd number positions are placed on the right side of the vertical line and the ones at even number positions are placed on the left side of the vertical line.
+The image above is a replica of the timeline chart you will have created by the end of this tutorial. This chart will display various events vertically aligned in a card-like layout. Each event card is alternatively displayed in opposite positions. Event cards at odd number positions are placed on the right side of the vertical line, and those at even number positions are placed on the left side of the vertical line.
 
-Create a folder where you will store three separate files for your HTML, CSS, and JavaScript implementations.
+Create a folder where you will store three separate files for your `HTML`, `CSS`, and `JavaScript` implementations. In your HTML file, link your CSS and JavaScript file using the code below:
 
-In your HTML file, link your `CSS` and `JavaScript` file using the code below:
-```HTML
+```html
 <!DOCTYPE html>
     <html lang="en">
          <head>
@@ -65,16 +59,18 @@ In your HTML file, link your `CSS` and `JavaScript` file using the code below:
        </head>
 ```
 
-The next thing to do is structure all the HTML elements inside the *body* tag. In doing this, we will make use of a *main* tag. Therefore, create a *main* tag inside the *body* tag like this:
-```HTML
+The next thing to do is structure all the HTML elements inside the `body` tag. In doing this, we will make use of the `main` tag. Therefore, create the `main` tag inside the `body` tag like this:
+
+```html
 <body>
       <main>
       </main> 
 </body>
 ```
 
-Now create a `section` tag with a class named `intro-text` inside the `main` tag. This `section` tag will take in a `div` with a class named `container` where you will insert the introductory header and title of the timeline. 
-```HTML
+Now, create a `section` tag with a class named `intro-text` inside the `main` tag. This `section` tag will take in a `div` with a class named `container` where you will insert the introductory header and title of the timeline. 
+
+```html
 <main>
      <section class="intro-text" >
          <div class="container">
@@ -86,7 +82,8 @@ Now create a `section` tag with a class named `intro-text` inside the `main` tag
 ```
 
 Within the `main` tag, create another `section` tag with a class named `timeline-section` that will contain the events for your timeline.
-```HTML
+
+```html
 <main>
      <section class="intro-text" >
          <div class="container">
@@ -98,9 +95,9 @@ Within the `main` tag, create another `section` tag with a class named `timeline
 </main>
 ```
 
-Below is the final HTML code for the timeline chart. The HTML code contains two sections - a header section and the timeline events section. You can replace the dummy texts with your desired contents. To generate the lorem ipsum text, follow the instructions [here](https://marketplace.visualstudio.com/items?itemName=Tyriar.lorem-ipsum#:~:text=A%20tiny%20VS%20Code%20extension,either%20a%20line%20or%20paragraph.) if you are using Visual studio code.
+Below is the final HTML code for the timeline chart, which contains two sections - a header section and the timeline events section. You can replace the dummy texts with your desired contents. To generate the `lorem ipsum` text, follow the instructions [here](https://marketplace.visualstudio.com/items?itemName=Tyriar.lorem-ipsum#:~:text=A%20tiny%20VS%20Code%20extension,either%20a%20line%20or%20paragraph.) if you are using Visual studio code.
 
-```HTML
+```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -238,13 +235,12 @@ This is the expected view of the HTML content on your web browser:
 
 ![Html content design](/engineering-education/building-an-animated-vertical-timeline-chart-with-html-css-and-javascript/html-content.png)
 
-### CSS Styling
+#### Step two: CSS styling
+##### Styling the vertical timeline chart
+The next step is to style your timeline chart using CSS to give it an aesthetic look. First, use the universal selector (*) to select all the elements. With this selector, we can set values for the margin, padding, and box-sizing attributes using the code below:
+/*use the universal selector to set some styles*/
 
-#### Styling the vertical timeline chart
-The next step is to style your timeline chart using CSS in other to give it an aesthetic look. First, use the universal selector (*) to select all the elements. With this selector, we can set values for the margin, padding, and box-sizing attributes using the code below:
-
-
-```CSS
+```css
 /*use the universal selector to set some styles*/
 * {
     margin: 0;
@@ -254,8 +250,8 @@ The next step is to style your timeline chart using CSS in other to give it an a
 ```
 
 Define a set of colors you’ll like to apply to your chart as shown in the snippet below. With the use of the CSS `var()` function, you can retrieve these colors.
-```CSS
 
+```css
 :root {
     --white: #fff;
     --light-blue: lightblue;
@@ -266,7 +262,7 @@ Define a set of colors you’ll like to apply to your chart as shown in the snip
 
 Set the `font-size` in the `HTML` tag and the `font family` in the `body` tag.
 
-```CSS
+```css
 /*With this font size, anywhere you use `rem` in your styling will be translated to the coefficient of `rem` multiplied by 10px. By default, 1 `rem` is 16px. Using this styling, 1 `rem` will be 10px*/
 
 html {
@@ -280,11 +276,12 @@ body {
 }
 ```
 
-#### Styling the Header Section
+##### Styling the header section
 Inside the header section (with a class named `intro-text`), you have a `div` tag with a class named `container` that contains an `h1` tag and a `p` tag where the introductory header and introductory text are embedded, respectively. 
 
 Here is the code to style the header section of this timeline chart: 
-```CSS
+
+```css
 .intro-text {
     background-color: var(--color-dark-grey);
     color: var(--white);
@@ -358,17 +355,13 @@ Next, define some basic styles for the list items (timeline events) including th
 }
 ```
 
-We divide the CSS code above into two code blocks. The first code block simply aligns the list items to the page's center and adds a blue vertical line with a `width` of 5px at the center of the page.
-
-Following the CSS styles you’ve added to your timeline so far, this is the expected view of your chart at this point:
+We divide the CSS code above into two code blocks. The first code block aligns the list items to the page's center and adds a blue vertical line with a `width` of 5px at the center of the page. Following the CSS styles you have added to your timeline so far, this is the expected view of your chart at this point:
 
 ![Present timeline design](/engineering-education/building-an-animated-vertical-timeline-chart-with-html-css-and-javascript/present-timeline-screenshot.png)
 
-The next step is to style the list items to give them an `event-card` appearance. We accomplish this using the `div` tag, which contains the text that represents an event.
+The next step is to style the list items to give them an `event-card` appearance. We accomplish this using the `div` tag, which contains the text that represents an event. Here is the code to produce the event card:
 
-Here is the code to produce the event card:
-
-```CSS
+```css
 /* Content box */
 .timeline-section ul li div {
     width: 40rem;
@@ -390,9 +383,7 @@ Here is the code to produce the event card:
 }
 ```
 
-Following the implementation of the code above, you should have your events in card-like structures.
-
-Here is the difference the code block above has added to our timeline:
+Following the implementation of the code above, you should have your events in card-like structures. Here is the difference the code block above has added to our timeline:
 
 ![Glassmorphism effect design](/engineering-education/building-an-animated-vertical-timeline-chart-with-html-css-and-javascript/glassmorphism-effect.png)
 
@@ -435,7 +426,7 @@ The next step is to alternate the positions of the event cards; keeping the ones
 }
 ```
 
-Let’s add more styles to the content of the `time` tag.
+Let us add more styles to the content of the `time` tag.
 
 Style the content of the *time* tag:
 
@@ -457,34 +448,30 @@ Here is the expected view of the timeline so far:
 
 The timeline chart has already taken shape. Now, it is time to animate it using JavaScript.
 
-### Adding animation using JavaScript
+#### Step three: Adding animation using JavaScript
 The first thing to do is understand how the animation will work. The scenarios to consider are:
 - Hiding an event card when it is out of the viewport.
 - Displaying an event card when it is in the viewport.
 
 To achieve these, start by creating a function that is called automatically like this:
 
-```js
+```javascript
 (function () {
    
   })();
 ```
 
-Inside the function in the code snippet above, define a `const` variable that will represent the event cards. Then perform a query using `document.querySelectorAll( )`. This variable will select all the event cards.
+Inside the function in the code snippet above, define a `const` variable that will represent the event cards. Then perform a query using `document.querySelectorAll( )`. This variable will select all the event cards. Here is the code to achieve that:
 
-Here is the code to achieve that:
-
-```js
+```javascript
 const items = document.querySelectorAll(".timeline-section li");
 ```
 
-Next, create a function that would determine when your event cards are in the viewport and when they are out of the viewport.
-
-To fully grasp how you can create a function that will detect the target elements (the event cards) are in the viewport, [check out this StackOverflow solution](https://stackoverflow.com/questions/123999/how-can-i-tell-if-a-dom-element-is-visible-in-the-current-viewport). You can also read about *Element.getBoundingClientRect()* [here](https://developer.mozilla.org/en-US/docs/Web/API/Element/getBoundingClientRect).
+Next, create a function that would determine when your event cards are in the viewport and when they are out of the viewport. To fully grasp how you can create a function that will detect the target elements (the event cards) are in the viewport, [check out this StackOverflow solution](https://stackoverflow.com/questions/123999/how-can-i-tell-if-a-dom-element-is-visible-in-the-current-viewport). You can also read about `Element.getBoundingClientRect()` [here](https://developer.mozilla.org/en-US/docs/Web/API/Element/getBoundingClientRect).
 
 Here is the function to detect if an event card is in the viewport:
 
-```js
+```javascript
 function isElementInViewport(el) {
       let rect = el.getBoundingClientRect();
       return (
@@ -502,7 +489,7 @@ In the code above, a variable `rect` is defined, which takes a value that return
 Next, create a function that would add a class named `slide-in` to an event card when it is in the viewport and the function also removes the class named `slide-in` from an event card when it is out of the viewport.
 
 
-```js
+```javascript
 function slideIn() {
       for (let i = 0; i < items.length; i++) {
         if (isElementInViewport(items[i])) {
@@ -525,14 +512,16 @@ The three events that will be used to access the cases listed above are:
 - The resize event.
 
 Add the code snippet below to use these events:
-```js
+
+```javascript
 window.addEventListener("load", slideIn);
 window.addEventListener("scroll", slideIn);
 window.addEventListener("resize", slideIn);
 ```
 
 The entire JavaScript code:
-```js
+
+```javascript
 (function () {
     const items = document.querySelectorAll(".timeline-section li");
     function isElementInViewport(el) {
@@ -562,12 +551,9 @@ The entire JavaScript code:
   })();
 ```
 
-### Adding animation using the *slide-in* class
-By default, we want the event cards to be visible when they are in the viewport and hidden when they are out of the viewport. To get this done, we would make use of the `visibility` and `opacity` properties.
-
-In addition, the `translateX()` will be used to move the event cards 20rem (which is 200px) from their original position. This is will make the cards hidden when they are out of the viewport. 
-
-The code below represents the explanation above:
+#### Step four: Adding animation using the slide-in class
+By default, we want the event cards to be visible in the viewport and hidden when they are out of the viewport. To get this done, we would use the `visibility` and `opacity` properties.
+In addition, the `translateX()` will be used to move the event cards 20rem (which is 200px) from their original position, making the cards hidden when they are out of the viewport. The code below represents the explanation above:
 
 ```css
 .timeline-section ul li::after {
@@ -611,15 +597,8 @@ The next step is to make the timeline mobile-friendly. This tutorial considers t
 - 600 < X < 900px be for mobile screens.
 - >600px be for the tablet screens.
 
-First, we consider the *tablet screen* where the only modification is reducing the *width* of the event cards.
-
-Here is the code for the *tablet screens*:
-
-The next step is to make the timeline mobile-friendly. To do so, we'll use *media queries* considering two screen sizes - greater than 600px but less than 900px, which represents tablet screens, and greater than 600px, which represents mobile screens.
-
-First, we consider the *tablet screen* where the only modification is reducing the *width* of the event cards.
-
-Here is the code for the *tablet screens*:
+First, we consider the tablet screen, where the only modification is reducing the width of the event cards. The next step is to make the timeline mobile-friendly. We will use media queries considering two screen sizes - greater than 600px but less than 900px, which represents tablet screens, and greater than 600px, which represents mobile screens.
+First, we consider the tablet screen, where the only modification is reducing the width of the event cards. Here is the code for the tablet screens:
  
 ```css
 /* Tablet Width */
@@ -634,9 +613,10 @@ Here is the code for the *tablet screens*:
 }
 ```
 
-Next, is to consider the *mobile screens* where the *calc()* function is used to determine the width of the event cards.
+Next is to consider the mobile screens where the `calc()` function is used to determine the width of the event cards.
 
 Here is the code for the *mobile screens*:
+
 ```css
 /* Mobile width */
 @media screen and (max-width: 600px) {
@@ -661,6 +641,7 @@ Here is the code for the *mobile screens*:
 ```
 
 Here is the final CSS code:
+
 ```css
 /*use the universal selector to set some styles*/
 * {
@@ -875,15 +856,13 @@ time {
       border-color: transparent var(--light-blue) transparent transparent;
     }
 }
-
-
 ```
 
-Note, in case you lost about what the event cards mean; event cards are the *divs* used in storing the content for each event.
+>Event cards are the divs used to store the content for each event.
+
+The source code of this project application is available on [GitHub](https://github.com/shegz101/Vertical-timeline/tree/main).
 
 ### Conclusion
 This tutorial showed you how to build a timeline chart using HTML to build its structure, CSS to style it as desired and JavaScript to animate the chart.
 
-You also learned how to create a method that detects if an element is in the viewport, after which we used the CSS `visibility` and `opacity` properties as well as the `translateX()` function to add animation effects.
-
-With that, you have an animated vertical timeline chart. The source code of this application is available on [GitHub](https://github.com/shegz101/Vertical-timeline/tree/main).
+You also learned how to create a method that detects if an element is in the viewport. We used the CSS `visibility` and `opacity` properties and the `translateX()` function to add animation effects. With that, you have an animated vertical timeline chart. 
