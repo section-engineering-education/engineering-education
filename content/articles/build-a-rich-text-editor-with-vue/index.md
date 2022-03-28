@@ -145,7 +145,7 @@ This will be the source file for your project CSS.
 
 In your tailwind.config.js, put the following code:
 
-```js
+```javascript
 module.exports = {
   content: ["./src/**/*.{html,js,vue}"],
   theme: {
@@ -181,7 +181,7 @@ This code will install the core components of TipTap. It will also install a bun
 
 Go to the `src/components/TipTap.vue` file you created earlier and insert the following code in the scripts section of the component.
 
-```js
+```javascript
 import { Editor, EditorContent } from '@tiptap/vue-2'
 import StarterKit from '@tiptap/starter-kit'
 
@@ -321,7 +321,7 @@ Next, define the functions you already passed to the event listeners.
 
 Add the following to the script section in `src/components/TipTap.vue`:
 
-```js
+```javascript
 methods: {
     makeH1() {
         this.editor.chain().toggleHeading({ level: 1 }).focus().run();
@@ -413,7 +413,7 @@ I
 
 Then add the relevant functions to the method object.
 
-```js
+```javascript
 makeBold() {
     this.editor.chain().toggleBold().focus().run();
 },
@@ -500,13 +500,13 @@ First, you need to import the link mark.
 
 Add this code to the top of your scripts section in `src/components/TipTap.vue`, below the other import statements.
 
-```js
+```javascript
 import Link from "@tiptap/extension-link"
 ```
 
 replace the data function of your component with this:
 
-```js
+```javascript
 data() {
     return {
         editor: new Editor({
@@ -525,7 +525,7 @@ data() {
 
 Add the following to your methods object after the `makeItalic` function.
 
-```js
+```javascript
 toggleLinkDialog() {
   if (this.editingLink) {
     this.editingLink = false
@@ -576,14 +576,14 @@ npm install @tiptap/extension-bullet-list @tiptap/extension-list-item
 ```
 Import the new extensions at the top of the script tag of your component, below the other import statements.
 
-```js
+```javascript
 import BulletList from '@tiptap/extension-bullet-list'
 import ListItem from '@tiptap/extension-list-item'
 ```
 
 Replace the editor property in your data method with:
 
-```js
+```javascript
 editor: new Editor({
         content: '<p>TipTap works, Yay!</p>',
         extensions: [
@@ -613,7 +613,7 @@ Next, write the markup. Insert it inside the menu div, after the button that tri
 
 Write the `makeList` function in the method object of your script section after the `closeLinkDialog` method.
 
-```js
+```javascript
 makeList() {
     this.editor.chain().focus().toggleBulletList().run()
 },
@@ -632,13 +632,13 @@ npm install @tiptap/extension-image
 
 After that, import the node into your component by adding this code to the top of the script section:
 
-```js
+```javascript
 import Image from "@tiptap/extension-image"
 ```
 
 Then add it to your list of extensions in data with:
 
-```js
+```javascript
 editor: new Editor({
         content: '<p>TipTap works, Yay!</p>',
         extensions: [
@@ -674,7 +674,7 @@ You're adding an input tag of type file to allow users to upload files from thei
 
 Now, add the functions in the method object of your script tag:
 
-```js
+```javascript
 triggerImage() {
   document.getElementById("img-upload").click();
 },
@@ -749,7 +749,7 @@ That code creates a button to trigger the output generation and a radio button t
 
 Add the `outputFormat` and `editorOutput` properties to your data function:
 
-```js
+```javascript
 data() {
   return {
     editor: new Editor({
@@ -773,7 +773,7 @@ data() {
 
 Next, write the following code at the end of your list of methods:
 
-```js
+```javascript
 produceOutput() {
   if (!this.outputFormat) {
     return
