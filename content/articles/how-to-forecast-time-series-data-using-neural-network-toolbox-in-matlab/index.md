@@ -1,6 +1,24 @@
-### How to forecast time series data using Neural Network toolbox in Matlab
+
+---
+layout: engineering-education
+status: publish
+published: true
+url: /implementing-gan-from-scratch/
+title: How to forecast time series data using Neural Network toolbox in Matlab
+description: In this tutorial, we will look at the general view of neural networks and see how to use Neural Network toolbox to implement neural networks. 
+author: 
+date: 2022-03-29T00:00:00-18:00
+topics: [Machine Learning]
+excerpt_separator: <!--more-->
+images:
+
+ - url: /engineering-education/implementing-gan-from-scratch/hero.jpg
+   alt: forecast time series data using Neural Network toolbox example image
+---
+
+
 ### Introduction
-Forecasting, also known as prediction, is the process of telling the future results depending on the current and past events. Time series is the data gathered over some time repeatedly by measurement. A neural network toolbox is a Matlab toolbox that helps implement neural networks without writing code. Using this toolbox, we can forecast time series data easily.
+Forecasting, also known as prediction, is the process of telling the future results depending on current and past events. Time series is the data gathered over some time repeatedly by measurement. A neural network toolbox is a Matlab toolbox that helps implement neural networks without writing code. Using this toolbox, we can forecast time series data easily.
 
 This tutorial will look at the general view of neural networks. Also, we will see how to use this toolbox to implement the neural network. Finally, we will see how to develop a model and generate the code for that model. You can use this code elsewhere for various forecasting purposes.
 
@@ -47,7 +65,7 @@ view(net) y = net(x);
 plotconfusion(t,y)
 ```
 
-The `cancer_dataset` is loaded into Matlab, and the input data is stored into the `x` variable. The target is stored in the variable `y`. The function `patternnet()` creates the neural pattern with `10` neurons. This pattern is trained by the `train()` function. This function uses the network(net), input data and the target. The confusion matrix is also plotted using the `plotconfusion()` function.
+The `cancer_dataset` is loaded into Matlab, and the input data is stored in the `x` variable. The target is stored in the variable `y`. The function `patternnet()` creates the neural pattern with `10` neurons. This pattern is trained by the `train()` function. This function uses the network(net), input data and the target. The confusion matrix is also plotted using the `plotconfusion()` function.
 
 Since we are not creating and training the dataset in the command window, click on `import` at the bottom of the window above. after selecting your sample data. Once you import your dataset, both the input and target are filled as shown below:
 
@@ -63,8 +81,8 @@ Click `next`. It opens a new window shown below:
 
 In this section, the dataset is divided into three, i.e. train, validation, and test data. As we can see, 70% of the dataset is for training, 15% for validation and the remaining 15% for testing. The total samples in our dataset are 699. These are the default division ratio, but you can change this to your prefered ratio by clicking on the drop-down menu.
 
-At the right side of this window, we have a brief description of the role of the samples.
-- First, the train data, it is used to train the network. Also, it adjusts according to the error.
+On the right side of this window, we have a brief description of the role of the samples.
+First, the training data is used to train the network. Also, it adjusts according to the error.
 - The validation sample is used to generalize the network and stops the training once the training is done. 
 - Finally, the test samples are used to measure the accuracy of the network. These samples have no dependency on the samples used for training.
 
@@ -92,7 +110,7 @@ You can visualize the plot of the training process. For example, if you want to 
 
 ![Performnace plot](/engineering-education/how-to-forecast-time-series-data-using-neural-network-toolbox-in-matlab/image-eleven.png)
 
-Also, if you want to visualize the confusion matrix, you click at the `confusion` which is shown below:
+Also, if you want to visualize the confusion matrix, you click on the `confusion` which is shown below:
 
 ![Confusion matrix](/engineering-education/how-to-forecast-time-series-data-using-neural-network-toolbox-in-matlab/image-twelve.png)
 
@@ -126,3 +144,7 @@ That is how easy it is to use this neural network toolbox in Matlab. The advanta
 
 ### Conclusion
 Using the neural network toolbox is very easy. It has an interface that even beginners can use. To use this toolbox, you need an advanced understanding of your dataset. Apart from that, understanding the machine learning concept is very important. However, it will make it possible to attain better performance. Also, to use this toolbox, you don't need to understand the generated script. We only need to ensure that the output results attained by our network is good and then generate the script.
+
+---
+Peer Review Contributions by: [Lalithnarayan C](/engineering-education/authors/lalithnarayan-c/)
+
