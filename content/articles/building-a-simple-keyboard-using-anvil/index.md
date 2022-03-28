@@ -6,7 +6,7 @@ url: /building-a-simple-keyboard-using-anvil/
 title: Building a simple keyboard using Anvil
 description: This tutorial will show our readers how to leverage Anvil to build a functional keyboard similar to the one on your computer.
 author: willies-ogola
-date: 2022-03-21T00:00:00-21:10
+date: 2022-03-28T00:00:00-21:10
 topics: [Languages]
 excerpt_separator: <!--more-->
 images:
@@ -14,7 +14,7 @@ images:
   - url: /engineering-education/building-a-simple-keyboard-using-anvil/hero.png
     alt: Building a simple keyboard using Anvil Hero Image
 ---
-Anvil is a free and open-source drag and drop web app builder. It is equivalent to the likes of Gradio application. The framework uses Python only. No HTML, no CSS, and Javascript. 
+Anvil is a free and open-source drag and drop web app builder. It is equivalent to the likes of Gradio application. The framework uses the Python programming language only. No HTML, no CSS, and Javascript. 
 <!--more-->
 This tutorial will leverage this framework to build a functional keyboard similar to the one on your computer. 
 
@@ -34,13 +34,13 @@ To follow through with this tutorial, you need to be conversant with:
 - [Further reading](#further-reading)
 
 ### Creating a web page with Anvil
-To get started, we will begin by navigating to the [Anvil](https://anvil.works/) website. On the top-right corner of the webpage, you will see a `Start Building` button. Click on it. You will be prompted to create an account before you can start building. This sign-up process is free. A verification email will be sent to your email to complete the sign-up process. Once the verification is completed, you should be redirected to the login page and the following webpage will appear:
+To get started, we will begin by navigating to the [Anvil](https://anvil.works/) website. On the top-right corner of the webpage, you will see a `Start Building` button. Click on it. You will be prompted to create an account before you can start building. This sign-up process is free. A verification email will be sent to your email to complete the sign-up process. Once you complete the verification process, you should be redirected to the login page and the following webpage will appear:
 
 ![Main Page](/engineering-education/building-a-simple-keyboard-using-anvil/main-webpage.png)
 
 *Image Source: [Anvil](https://anvil.works/)*
 
-Select the `New Blank App` option. Since we are planning to start from scratch and create a custom HTML page, we'll select the `Custom HTML` option. Additionally, we can select the `Blank Panel` option. At this point, your webpage should look like this:
+Select the `New Blank App` option. Since we plan to start from scratch and create a custom HTML page, we'll select the `Custom HTML` option. Additionally, we can select the `Blank Panel` option. At this point, your webpage should look like this:
 
 ![Blank Page](/engineering-education/building-a-simple-keyboard-using-anvil/blankpanel-webpage.png)
 
@@ -51,7 +51,7 @@ Now, we can begin designing our interface.
 ### Creating the components needed for a keyboard
 With Anvil, we can drag in whichever component we will like to use in the interface itself. For example, if we want to add a `Date Picker` component, we will drag and drop the `Date Picker` component from the sidebar into our interface. You can also set some basic properties of this component by scrolling down on the sidebar until you see the `properties` option. 
 
-One of the most important components of a keyboard is the input field. For this, we will drag and drop the `TextBox` component. We will drag and drop it below the image component with our logo.
+One of the most vital components of a keyboard is the input field. For this, we will drag and drop the `TextBox` component. We will drag and drop it below the image component with our logo.
 
 Next, we will add our buttons. A keyboard has several buttons. It will make more sense to code them rather than drag and drop all these buttons.
 
@@ -62,7 +62,7 @@ On our main interface, we have both the `Design` and the `Code` option available
 
 *Image Source: [Anvil](https://anvil.works/)*
 
-We will begin by creating a list of characters to represent our buttons and store it in a variable known as `chars`. We will assign this variable to a list of strings where we arrange these strings in the exact same order that we want to see our buttons appear on the page.
+We will begin by creating a list of characters to represent our buttons and store it in a variable known as `chars`. We will assign this variable to a list of strings where we arrange these strings in the same order that we want to see our buttons appear on the page.
 
 This is shown below:
 
@@ -94,7 +94,7 @@ for i in chars:
 
 self.add_component(gridp)
 ```
-> The letter `i` represents different buttons.
+> The letter `i`, represents different buttons.
 
 We can now go ahead and run this code. You can find the `Run` button in the topmost section of the webpage. You will be prompted to assign your application a name. Assign it any name you wish. We've assigned ours `Simple_Keyboard`. The created webpage should now appear.
 
@@ -102,7 +102,7 @@ We can now go ahead and run this code. You can find the `Run` button in the topm
 
 *Image Source: [Anvil](https://anvil.works/)*
 
-As at this point, the components should be displayed on the screen. But, they are all over the place. They are not arranged. We will need to arrange them nicely. We will do that later. For now, let's take care of their functionalities.
+At this point, the components should be displayed on the screen. But, they are all over the place. They are not arranged. We will need to arrange them nicely. We will do that later. For now, let's take care of their functionalities.
 
 ### Implementing the different button callbacks
 The goal is to collect the value of the button that we click. We can easily do this using a `tag` property as shown:
@@ -110,7 +110,7 @@ The goal is to collect the value of the button that we click. We can easily do t
 ```python
 self.btn[i].tag.name = i 
 ```
-Thereafter, we can access it using a click event. Let's create a click method and connect it to all of our buttons. We will write this method at the button of our current code block, outside of the `init` method.
+Thereafter, we can access it using a click event. Let's create a click method and connect it to all our buttons. We will write this method at the button of our current code block, outside of the `init` method.
 
 ```python
 def click(self, **event_args):
@@ -127,7 +127,7 @@ self.btn[i].set_event_handler('click', self.click)
 
 Click on `Run` to check if everything runs correctly and displays a pressed key as the output. Everything should work perfectly.
 
-> Make sure to expand the output bar so that you can see the messages.
+> Make sure to expand the output bar to see the messages.
 
 Once our buttons output the correct characters, we can concatenate them to our text box. Instead of printing the results on the terminal, we can add the following code to the click method to print to the text box instead.
 
@@ -137,7 +137,7 @@ def click(self, **event_args):
 ```
 When you click on a button, it should now display on the text box. It works as expected. The more we press the buttons, the longer our text box length becomes.
 
-We have some buttons that have some special functionality to them especially when we are dealing with numbers and arithmetic operators. For example, the `Clear` and `Delete` signs.
+We have some buttons that have some special functionality to them, especially when we are dealing with numbers and arithmetic operators. For example, the `Clear` and `Delete` signs.
 
 Let's go back to our code and add these special functionalities to them.
 
@@ -162,7 +162,7 @@ Perfect! Our special functionalities should now be working. Click on the `Run` b
 Now, our keyboard is functioning properly. Let's add some style to it.
 
 ### Styling the keyboard
-We begin by splitting our buttons into four different rows. For this build, we will count twelve buttons then jump onto the next row. The `enumerate()` method will help us with this. We will pass our list of characters into it. Enumerate returns two different values instead of one. So we will add an `idx` to help count.
+We begin by splitting our buttons into four different rows. For this build, we will count nine buttons then jump to the next row. The `enumerate()` method will help us with this. We will pass our list of characters into it. Enumerate returns two different values instead of one. So we will add an `idx` to help count.
 
 Let's add the following block of code:
 
@@ -179,7 +179,7 @@ for idx, i in enumerate(chars):
       else:
         row = 'E'
 ```
-After adding that new block of code, run to see if it works.
+After adding that new code block, run it to see if it works.
 
 ![Styling](/engineering-education/building-a-simple-keyboard-using-anvil/styling.jpg)
 
@@ -203,7 +203,7 @@ self.add_component(self.space)
 Once we are happy with our web application, we can go ahead and deploy it. To do this with Anvil, we need to press the `Publish this app` button. It will generate a code that you can use to view the published web application on your browser. For this application, you can view the published web application [here](https://F34TDJ5X5E2JIR24.anvil.app/KFJIOSVXZZTEGBPBINNMCT7I).
 
 ### Wrapping up
-We have deployed our keyboard online, it's beautiful and we can share it with anyone we like. We have used graphic design tools to create our web application. But this is not the only way. We can also add them into the interface using code as shown in this tutorial. Feel free to try creating one yourself, you could play around with the different components available that suits your project.
+We have deployed our keyboard online. It is beautiful, and we can share it with anyone we like. We have used graphic design tools to create our web application. But this is not the only way. We can also add them to the interface using code, as shown in this tutorial. Feel free to try creating one yourself. You could play around with the different components available that suits your project.
 
 Happy coding!
 
