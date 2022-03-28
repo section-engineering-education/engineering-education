@@ -1,5 +1,21 @@
-A time series is a sequence of data points that occur in successive order over time. A time series shows all the variables in the dataset that change with time.
+---
+layout: engineering-education
+status: publish
+published: true
+url: /anomaly-detection-model-on-time-series-data-using-isolation-forest/
+title: Anomaly Detection Model on Time Series data using Isolation Forest
+description: This tutorial will use the Isolation Forest algorithm to train an anomaly detection model on time series data.
+author: collins-kirui
+date: 2022-03-29T00:00:00-21:20
+topics: [Machine Learning]
+excerpt_separator: <!--more-->
+images:
 
+  - url: /engineering-education/anomaly-detection-model-on-time-series-data-using-isolation-forest/hero.jpg 
+    alt: Anomaly Detection Model on Time Series data using Isolation Forest Hero Image
+---
+A time series is a sequence of data points that occur in successive order over time. A time series shows all the variables in the dataset that change with time.
+<!--more-->
 Examples of time-series data are company sales, weather records, Covid-19 caseloads, forex exchange prices, and stock prices. The time-series data can be minutes, hours, days, weeks, or years.
 
 For example, in forex exchange, we can record the daily closing exchange rates of the Euro and US Dollar(EUR/USD) for a week. A time series model can then analyze these closing exchange rates to identify patterns. Eventually, the model predicts future EUR/USD exchange rates based on previously historical/observed closing prices.
