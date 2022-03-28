@@ -19,8 +19,10 @@ A bot is a computer program that performs predetermined tasks automatically. Its
 In this tutorial, we will design a conversational interface for our chatbot using natural language processing.
 
 ### Prerequisites
-- Have a basic knowledge of python programming langugage.
+To follow through this article, the reader should have:
+- Have a basic knowledge of python programming language.
 - Install the latest version of [python](https://www.python.org/) onto your computer.
+- Have an IDE installed, preferably [VS Code](https://code.visualstudio.com/).
 
 ### Table of contents
 - [Fields of NLP](#fields-of-nlp)
@@ -32,8 +34,7 @@ In this tutorial, we will design a conversational interface for our chatbot usin
 
 ### Fields of NLP
 Below are the core fields of NLP:
-
-1. **Natural language generation(NLG)**: In artificial intelligence, NLG is a specialty. It is a software technology that automatically transforms data into simple English.
+1. **Natural language generation(NLG)**: NLG is a specialty in artificial intelligence. It is a software technology that automatically transforms data into simple English.
 2. **Natural language understanding(NLU)**: It is a branch of natural language processing (NLP) that helps computers understand and interpret human language by breaking speech into its constituent parts. However, NLU goes further than speech recognition to understand what the user is trying to communicate with their words.
 3. **Natural language interaction(NLI)**: To engage with any connected device or service in a humanlike manner, NLI brings together a varied collection of natural language principles.
 
@@ -45,18 +46,18 @@ Below are the core fields of NLP:
 - **Social Media Bot:** Automatically responds to questions on social media platforms.
 
 ### Building an NLP chatbot
-Follow the steps below to successfully build a conversational interface for our chatbot.
+Follow the steps below to build a conversational interface for our chatbot successfully.
 
-#### Step 1: Importing libraries
-Imports are critical for successfully organising your Python code. Importing code correctly will increase your productivity by allowing you to reuse code while also maintaining the maintainability of your projects.
+#### Step one: Importing libraries
+Imports are critical for successfully organizing your Python code. Correctly importing code will increase your productivity by allowing you to reuse code while also maintaining the maintainability of your projects.
 
-The necessary libraries includes:
-- JSON: It's possible to utilize it to work with JSON data.
-- String: Provides access to several potentially valuable constants
-- Random: For various distributions; this module implements pseudo-random number generators.
-- WordNetLemmatizer: It has the ability to lemmatize.
+The necessary libraries include:
+- JSON: It is possible to utilize it to work with JSON data.
+- String: Provides access to several potentially valuable constants.
+- Random: For various distributions, this module implements pseudo-random number generators.
+- WordNetLemmatizer: It can lemmatize.
 - Tensorflow: A multidimensional array of elements is represented by this symbol.
-- Sequential: Sequential groups a linear stack of layers into a tf.keras.Model.
+- Sequential: Sequential groups a linear stack of layers into a `tf.keras.Model`.
 
 The code below shows how we import the libraries:
 ```python
@@ -74,8 +75,10 @@ nltk.download("punkt")# required package for tokenization
 nltk.download("wordnet")# word database
 ```
 
-#### Step 2: Creating a JSON file
-We will create an intents JSON file that lists all the possible outcomes of user interactions with our chatbot. We first need a set of tags that users can use to categorize their queries. These tags include `name`, `age`, and many others. Every new tag would require a unique pattern. Identifying these trends can help the chatbot train itself on how people query about our chatbot's name, allowing it to be more responsive. The chatbot will return pre-programmed responses to answer questions.
+#### Step two: Creating a JSON file
+In this step, we will create an intents JSON file that lists all the possible outcomes of user interactions with our chatbot. We first need a set of tags that users can use to categorize their queries. These tags include `name`, `age`, and many others. Every new tag would require a unique pattern. 
+
+Identifying these trends can help the chatbot train itself on how people query about our chatbot's name, allowing it to be more responsive. The chatbot will return pre-programmed responses to answer questions.
 
 ```python
 ourData = {"ourIntents": [
@@ -94,13 +97,14 @@ ourData = {"ourIntents": [
              },
              {"tag": "name",
               "patterns": ["what's your name?", "who are you?"],
-              "responses": ["I have no name yet", "You can give me one and i will apreciate"]
+              "responses": ["I have no name yet," "You can give me one, and I will appreciate it"]
              }
             
 ]}
 ```
-#### Step 3: Processing data
-In this section, vocabulary of all the terms used in the patterns, a list of tag classes, a list of all the patterns in the intents file, and all the related tags for each pattern will be created before creating our training data.
+
+#### Step three: Processing data
+In this section, vocabulary of all the terms used in the patterns, list of tag classes, list of all the patterns in the intents file, and all the related tags for each pattern will be created before creating our training data.
 
 ```python
 lm = WordNetLemmatizer() #for getting words
@@ -126,10 +130,8 @@ newWords = sorted(set(newWords))# sorting words
 ourClasses = sorted(set(ourClasses))# sorting classes
 ```
 
-####  Step 4: Designing a Neural Network model
-Because neural networks can only understand numerical values, we must first process our data so that a neural network can understand what we are doing.
-
-The code below is used to turn our data into numerical values using [bag of words](https://www.geeksforgeeks.org/bag-of-words-bagOqord-model-in-nlp/) (BoW) encoding system.
+####  Step four: Designing a neural network model
+Because neural networks can only understand numerical values, we must first process our data so that a neural network can understand what we are doing. The code below is used to turn our data into numerical values using [bag of words](https://www.geeksforgeeks.org/bag-of-words-bagOqord-model-in-nlp/) (BoW) encoding system.
 
 ```python
 trainingData = [] # training list array
@@ -152,7 +154,7 @@ x = num.array(list(trainingData[:, 0]))# first trainig phase
 y = num.array(list(trainingData[:, 1]))# second training phase
 ```
 
-After converting our data to a numerical representation, we can now design a neural network model to which we will feed our training data. The model will select an appropriate response from the tag associated with a given feature.
+After converting our data to a numerical representation, we can now design a neural network model which we will feed our training data. The model will select an appropriate response from the tag associated with a given feature.
 
 ```python
 iShape = (len(x[0]),)
@@ -184,8 +186,9 @@ ourNewModel.fit(x, y, epochs=200, verbose=1)
 
 ![Output](/engineering-education/creating-chatbot-using-natural-language-processing-in-python/summary.png)
 
-#### Step 5: Building useful features
-In order to make use of our model in a chatbot, we must first implement the necessary functionality. Making this easier by building a library of utility functions will help.
+#### Step five: Building useful features
+In order to make use of our model in a chatbot, we must first implement the necessary functionality, which will be made easier by building a library of utility functions will help.
+
 ```python
 def ourText(text): 
   newtkns = nltk.word_tokenize(text)
@@ -223,7 +226,7 @@ def getRes(firstlist, fJson):
   return ourResult
 ```
 
-The user will be able to enter a query in a while loop, which will then be cleaned. Next, we use our `bag of words` model to convert our text into numerical values and make a prediction about which tag in our intents the features most closely represent us.
+The user will be able to enter a query in a while loop, which will then be cleaned. Next, we use our `bag of words` model to convert our text into numerical values and make a prediction about which tag in our intent the features most closely represent us.
 
 ```python
 while True:
@@ -238,15 +241,16 @@ while True:
 ### Benefits of bots
 1. Bots allow you to communicate with your customers in a new way. Customers' interests can be piqued at the right time by using chatbots.
 2. With the help of chatbots, your organization can better understand consumers' problems and take steps to address those issues.
-3. A single operator can serve one customer at a time. On the other hand, a chatbot can answer thousands of inquiries at once.
-4. Chatbots are unique in that they operate inside predetermined frameworks and rely on a single source of truth within the command catalogue to provide responses to questions they are asked. This reduces the risk of confusion and inconsistency in answers.
+3. A single operator can serve one customer at a time. On the other hand, a chatbot can answer thousands of inquiries.
+4. Chatbots are unique in that they operate inside predetermined frameworks and rely on a single source of truth within the command catalog to respond to questions they are asked, which reduces the risk of confusion and inconsistency in answers.
 
-### Conclusion
-By following this article's explanation of ChatBots, their utility in business, and how to implement them, we may create a primitive Chatbot using Python and the Chatterbot Library. 
+### Wrapping up
+By following this article's explanation of ChatBots, their utility in business, and how to implement them, we may create a primitive Chatbot using Python and the Chatterbot Library. Anyone interested in gaining a better knowledge of conversational artificial intelligence will benefit greatly from this article.
 
-Anyone interested in gaining a better knowledge of conversational artificial intelligence will benefit greatly from this article.
+The code to this project is available [here](https://colab.research.google.com/drive/1ZacaIPOx5cKcDNjEpaljR-IpvfndpVPS?usp=sharing).
+
+Happy coding!
 
 ### Reference
-- Find the whole code [here](https://colab.research.google.com/drive/1ZacaIPOx5cKcDNjEpaljR-IpvfndpVPS?usp=sharing).
 - Benefits of [chatbots](https://research.aimultiple.com/chatbot-benefits/).
 - Simple [Chatbot](https://towardsdatascience.com/a-simple-chatbot-in-python-with-deep-learning-3e8669997758) In Python.
