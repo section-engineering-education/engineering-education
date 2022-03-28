@@ -1,5 +1,5 @@
 ---
-tittle: James Nyamwaro
+title: James Nyamwaro
 type: authors
 images:
   - url: /engineering-education/authors/james-nyamwaro/avatar.jpg
