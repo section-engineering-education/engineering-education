@@ -293,3 +293,6 @@ To get the Python code used in this tutorial, click [here](https://colab.researc
 - [Isolation Forest algorithm](https://scikit-learn.org/stable/modules/generated/sklearn.ensemble.IsolationForest.html) 
 - [Time Series basics](/engineering-education/introduction-to-time-series/)
 - [Plotly Express in Python](https://plotly.com/python/plotly-express/)
+
+---
+Peer Review Contributions by: [Willies Ogola](/engineering-education/authors/willies-ogola/)
