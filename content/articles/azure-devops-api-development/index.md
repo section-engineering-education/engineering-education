@@ -71,7 +71,7 @@ When an application needs access to deploy or configure resources through ARM or
 
 ### Step 4: Create a New Project in VSTS
 
-The first step is to create an account in Azure DevOps (VSTS), then follow the steps below to start an application deployment. Here we will take a [sample open-source java-based code](https://github.com/wakaleo/game-of-life) from GitHub repository and import it to Azure DevOps repo. (You can push your source code into the repo.) It is a simple multi-module Maven project. The application is a very simple online version of Conway’s `Game of Life.
+The first step is to create an account in Azure DevOps (VSTS), then follow the steps below to start an application deployment. Here we will take a [sample open-source java-based code](https://github.com/wakaleo/game-of-life) from GitHub repository and import it to Azure DevOps repo. (You can push your source code into the repo.) It is a simple multi-module Maven project. The application is a very simple online version of Conway’s `Game of Life`.
 
 ![new-project](/engineering-education/azure-devops-api-development/new-project.jpg)
 
