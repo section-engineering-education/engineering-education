@@ -67,14 +67,13 @@ We will begin by creating a list of characters to represent our buttons and stor
 This is shown below:
 
 ```python
- chars = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "0", "+", "<--", 
-        "Q", "W", "E", "R", "T", "Y", "U", "I", "O", "P", "-", "=",
-        "A", "S", "D", "F", "G", "H", "J", "K", "L", "*", "Clear",
-        "Z", "X", "C", "V", "B", "N", "M", ",", ".", "/"  
+ chars = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "0", 
+        ",", ".", "/", "-", "=", "+", "<--", "*", "Clr",     
+        "Q", "W", "E", "R", "T", "Y", "U", "I", "O", "P", "A", "S", "D", 
+        "F", "G", "H", "J", "K", "L", "Z", "X", "C", "V", "B", "N", "M" 
 ]
 ```
-This simple keyboard design consists of letters in capital letters, numbers, and punctuation marks. It also consists of `+, -, *, /` signs to perform arithmetic. 
-The first row, `"1", "2", "3", "4", "5", "6", "7", "8", "9", "0"` represents the first row on the keyboard and so forth.
+This simple keyboard design consists of letters in capital letters, numbers, and punctuation marks. It also consists of `+, -, *, /` signs to perform arithmetic. The first row, `"1", "2", "3", "4", "5", "6", "7", "8", "9", "0"` represents the first row on the keyboard and so forth.
 
 The next step involves looping over these strings and using them to create button components. For this, we will need to create an empty dictionary to store these buttons. We will call this dictionary, `self.btn`. We will assign it to a set of curly brackets, which is an empty dictionary as shown:
 
@@ -91,7 +90,7 @@ Now, we can place our buttons inside this panel.
 ```python
 for i in chars:
     self.btn[i] = Button(text=i)
-    gridp.add_component(self.btn[i], row = 'A', col_xs = 3, width_xs = 2)
+    gridp.add_component(self.btn[i], row = 'A', col_xs = 1, width_xs = 1)
 
 self.add_component(gridp)
 ```
@@ -151,7 +150,7 @@ To make the code simpler to read, we will add the following code inside the clic
     
     if val == "=":
       self.text_box_1.text = eval(self.text_box_1.text)
-    elif val == "Clear":
+    elif val == "Clr":
       self.text_box_1.text = ""
     elif val == "<--":
       self.text_box_1.text = self.text_box_1.text[:-1]
@@ -169,25 +168,31 @@ Let's add the following block of code:
 
 ```python
 for idx, i in enumerate(chars):
-    if idx < 12:
+      if idx < 9:
         row = 'A'
-    elif 12 <= idx < 24:
+      elif 9 <= idx < 18:
         row = 'B'
-    elif 24 <= idx < 36:
+      elif 18 <= idx < 27:
         row = 'C'
-    else:
+      elif 27 <= idx <36:
         row = 'D'
+      else:
+        row = 'E'
 ```
 After adding that new block of code, run to see if it works.
 
-We replace the `A` value in `row = 'A'`, with `row = row`, which is our local variable.
+![Styling](/engineering-education/building-a-simple-keyboard-using-anvil/styling.jpg)
+
+*Image Source: [Anvil](https://anvil.works/)*
+
+We replace the `A` value in `row = 'A'`, with `row = row` in the code `gridp.add_component(self.btn[i], row = 'A', col_xs = 1, width_xs = 1)`, which is our local variable.
 
 We can also style our buttons to make them prettier. Let's add the following code:
 
 ```python
 self.btn[i] = Button(text=i, bold = True)
 ```
-Also, add the following code:
+Let's also add the following code snippet:
 
 ```python
 self.space = Spacer(height=400)
@@ -195,7 +200,7 @@ self.add_component(self.space)
 ```
 
 ### Publishing the web app
-Once we are happy with our web application, we can go ahead and deploy it. To do this with Anvil, we need to press the `Publish this app` button. It will generate a code that you can use to view the published web application on your browser. For this application, you can view the published web application [here](https://f34tdj5x5e2jir24.anvil.app/KFJIOSVXZZTEGBPBINNMCT7I).
+Once we are happy with our web application, we can go ahead and deploy it. To do this with Anvil, we need to press the `Publish this app` button. It will generate a code that you can use to view the published web application on your browser. For this application, you can view the published web application [here](https://F34TDJ5X5E2JIR24.anvil.app/KFJIOSVXZZTEGBPBINNMCT7I).
 
 ### Wrapping up
 We have deployed our keyboard online, it's beautiful and we can share it with anyone we like. We have used graphic design tools to create our web application. But this is not the only way. We can also add them into the interface using code as shown in this tutorial. Feel free to try creating one yourself, you could play around with the different components available that suits your project.
