@@ -1,29 +1,45 @@
-### Data Synchronization and Backup Management in Networking
+---
+layout: engineering-education
+status: publish
+published: true
+url: /data-synchronization-and-backup-management-in-networking/
+title: Data synchronization and backup management in Networking
+description: This article will cover data synchonization an backup management in Networking.
+author: gladwel-kieya
+date: 2022-03-28T00:00:00-09:30
+topics: [Languages]
+excerpt_separator: <!--more-->
+images:
 
-Data backup is the process of creating a copy of data and storing it in cloud-based software for recovery in case the original data gets lost. The data synchronization process establishes consistency between two or more devices and updates changes between them. Data backup and synchronization are used for protecting data. Mostly, we get advised to keep our files backed up so that if they are lost, one can retrieve them.
-### Table of Contents 
-- [Synchronization Process](#Synchronization-Process) 
-- [Patterns of Data Synchronization](#Patterns-of-Data-Synchronization)
--  [Offline synchronization patterns](#Offline-synchronization-patterns) 
+  - url: /engineering-education/data-synchronization-and-backup-management-in-networking/hero.jpg
+    alt: Data synchronization and backup management in Networking Hero Image
+---
+Data backup is creating a copy of data and storing it in cloud-based software for recovery in case the original data gets lost. 
+<!--more-->
+The data synchronization process establishes consistency between two or more devices and updates changes between them. Data backup and synchronization are used for protecting data. Mostly, we get advised to keep our files backed up so that if they are lost, one can retrieve them.
+
+### Table of contents 
+- [Synchronization process](#Synchronization-Process) 
+- [Patterns of data synchronization](#Patterns-of-Data-Synchronization)
+- [Offline synchronization patterns](#Offline-synchronization-patterns) 
 - [Maintaining data backup](#Maintaining-data-backup)
-- [Cloud Backup vs Synchronization](#Cloud-Backup-vs-Synchronization) 
-- [Common Backup Methods](#Common-Backup-Methods)
+- [Cloud backup vs. synchronization](#Cloud-Backup-vs-Synchronization) 
+- [Common backup methods](#Common-Backup-Methods)
 - [Why should you back up files?](#Why-should-you-back-up-files?) 
-- [Tools for Data Synchronization](#Tools-for-Data-Synchronization)
-
+- [Tools for data synchronization](#Tools-for-Data-Synchronization)
 - [Conclusion](#Conclusion)
 
-### Synchronization Process
-As we all know, data synchronization is the process of establishing consistency between two or more devices and updating changes between them.
-Types of synchronization
-server-client, which is one too many.
-Node to node/many to many here, all systems can push data.
-Sync 2-way, which is between the mobile node and a PC.
-The server-altered sync: here, the server tells the client to request data that the client pulls, e.g., email.
-Client-initiated: The client sends data, e.g., device configuration changes.
-In data synchronization, Sync-ML is a framework that provides protocols, tools, and a markup language for synchronization. WAP 2.0 makes use of it.
+### Synchronization process
+As we all know, data synchronization is the process of establishing consistency between two or more devices and updating changes between them. Types of synchronization are:
+- Server-client, which is one too many.
+- Node to node/many to many here, all systems can push data.
+- Sync 2-way, which is between the mobile node and a PC.
+- Server-altered sync: here, the server tells the client to request data that the client pulls, e.g., email.
+- Client-initiated: The client sends data, e.g., device configuration changes.
 
-### Patterns of Data Synchronization
+In data synchronization, `Sync-ML` is a framework that provides protocols, tools, and a markup language for synchronization, which WAP `2.0` makes use of.
+
+### Patterns of data synchronization
 Synchronization pattern characteristics
 -What kinds of data entities will be involved in the synchronization?
 -What kind of local storage entities are these on both sides? Are they similar or duplicate entities, or do they have different types of structures that must be met?
@@ -33,21 +49,15 @@ Synchronization pattern characteristics
 - What steps will we need to synchronize the data to the server? It depends on what pattern gets used.
 
 ### Offline synchronization patterns
-#### Read-Only Data
-
-Here, the server can update data in the database. The device does not change data in the local storage area, and if it does, changes are not sent to the server.
-Synchronization steps:
-
+#### Read-Only data
+Here, the server can update data in the database. The device does not change data in the local storage area, and if it does, changes are not sent to the server. 
 - Synchronization is accomplished by the client calling the server to get data. 
 - The server returns all the data, and the client deletes the current local storage and creates a new local storage entity. 
-- Its advantage is that it sends data every time, although it's insufficient for large data sets. 
+- Its advantage is that it sends data every time, although it is insufficient for large data sets.
 
-#### Read-Only Data Optimization
+#### Read-Only data optimization
+Here, the device changes the data, but now it is optimized, giving the data that has changed. Only the server will be able to update the database. The device will not change any of the data, and if it does, changes are not sent to the server. The synchronization steps followed are:
 
-Here, the device changes the data, but now it's optimized, giving the data that has changed.
-Only the server will be able to update the database. The device won't change any of the data, and if it does, changes are not sent to the server. 
-
-Synchronization steps:
 - it is accomplished by the client calling the server with the last sync time and the server checking for all the context that has been changed since the last sync date. 
 - It looks for contacts that have been deleted and sets its findings to a list and then sends it to the client as an output. 
 - The client then updates the list to the current local storage entities and then updates the last sync time. 
