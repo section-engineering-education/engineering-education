@@ -7,10 +7,10 @@ This app will allow you to use your phone's camera to add characteristics to an 
 - You should knowledge of Kotlin 
 - Have a physical device that is supported by Google Play Services for AR. 
 
-> NOTE: Not all android devices supports ARcore. Check from [here](https://developers.google.com/ar/devices) the list of supported devices. Also, its worth noting that you can run the application on Android Eumulator. To learn how this is done, click on this [link](https://developers.google.com/ar/develop/java/emulator).
+> NOTE: Not all android devices support ARcore. Check from [here](https://developers.google.com/ar/devices) the list of supported devices. Also, it's worth noting that you can run the application on Android Emulator. To learn how this is done, click on this [link](https://developers.google.com/ar/develop/java/emulator).
 
 ### Objectives
-By the end of this article, the reader will have learnt the following:
+By the end of this article, the reader will have learned the following:
 - What is Augmented Reality
 - How to setup Android studio for augmented reality
 - How to place 3D objects in the AR scene.
@@ -28,12 +28,12 @@ To create a new Android Studio project:
 
 >NOTE: The minimum SDK version should be API 24: Android 7 (Nougat)
 
-After the project is ready, we will need to add the `Sceneform` plugin. This plugin is necessary for supporting Augmented Reality. On the Android Studio menu, click on `File` the `Settings` and a new window will open. On the right tab, click `Plugins` and on marketplace search for `Sceneform`. Click install, then apply and restart Android Studio.
+After the project is ready, we will need to add the `Sceneform` plugin. This plugin is necessary for supporting Augmented Reality. On the Android Studio menu, click on `File` the `Settings`, and a new window will open. On the right tab, click `Plugins`, and on marketplace search for `Sceneform`. Click install, then apply and restart Android Studio.
 
 ### Installing Sceneform plugin
 ![install-plugin](/engineering-education/creating-a-simple-ar-app/install-sceneform-plugin.png)
 
-After the IDE restarts, you migt notice an error that pops up. This error reads as follows:
+After the IDE restarts, you might notice an error that pops up. This error reads as follows:
 "Plugin error: Plugin 'Google Sceneform Tools (Beta)' is compatible with IntelliJ IDEA only because it doesn't define any explicit module dependencies". 
 You can solve this error by using Sceneform SDK v1.16.0. Also, you can set up everything manually. 
 
@@ -50,18 +50,18 @@ project(':sceneformux').projectDir = new File('sceneformux/ux')
 ```gradle
 api project(":sceneformux")
 ```
-4. Sync the project with the new gradle files and wait for build to finish.
+4. Sync the project with the new Gradle files and wait for the build to finish.
 
 ### Setting up the AR 3D models in Android Studio
 In our project, we will use Sceneform SDK 1.15.0 which is incredibly popular. 
 There are two ways to get the 3D models.
-1. You can get the 3D models online and download the `glb` files. Initially, Google's Poly was used but was later scrapped off. You can find other alternatives online with some of them you might pay for the models. [Sketchfab](https://sketchfab.com/tags/augmented-reality) is a good example but you have to buy. 
+1. You can get the 3D models online and download the `glb` files. Initially, Google's Poly was used but was later scrapped. You can find other alternatives online with some of them you might pay for the models. [Sketchfab](https://sketchfab.com/tags/augmented-reality) is a good example but you have to buy it. 
 2. Design and build the models by yourself. You can use software like [Blender](https://www.youtube.com/watch?v=elUJCEC06r8) to make 3D models which you can use on your application.
 
-In this tutorial, i have ready-made model which can be downloaded from [here](https://drive.google.com/file/d/1UDdrAXgOlFndmFEnal7CMLWoJiqEDpP3/view?usp=sharing). After you download the model go to Android Studio and on the `res` folder, right click and create a new `Android Resource Directory`. Change the resource type to `raw` and click on OK. 
+In this tutorial, I have a ready-made model which can be downloaded from [here](https://drive.google.com/file/d/1UDdrAXgOlFndmFEnal7CMLWoJiqEDpP3/view?usp=sharing). After you download the model go to Android Studio and on the `res` folder, right-click and create a new `Android Resource Directory. Change the resource type to `raw` and click on OK. 
 Inside this directory, paste the `model.glb` file you just downloaded.
 
-### Enabling Persmissions
+### Enabling Permissions
 Open the `Manifest` and add the following permissions:
 ```xml
 <uses-permission android:name="android.permission.INTERNET"/>
@@ -158,7 +158,7 @@ private fun addModelToScene(arFragment: ArFragment, anchor: Anchor, renderable: 
 
 }
 ```
-And finally the last thing will be to place objects in the AR scene. This can be done as follows:
+And finally, the last thing will be to place objects in the AR scene. This can be done as follows:
 ```kotlin
 @RequiresApi(Build.VERSION_CODES.N)
 private fun placeObjectOnScene(fragment: ArFragment, anchor: Anchor, uri: Uri) {
@@ -182,7 +182,7 @@ private fun placeObjectOnScene(fragment: ArFragment, anchor: Anchor, uri: Uri) {
         }
 }
 ```
->Note : Remember to annotate with `@RequiresApi(Build.VERSION_CODES.N)` to avoid errors.
+>Note: Remember to annotate with `@RequiresApi(Build.VERSION_CODES.N)` to avoid errors.
 
 The full `MainActivity.kt` code will be as follows:
 ```kotlin
@@ -271,7 +271,7 @@ class MainActivity : AppCompatActivity() {
 ```
 
 ### Running the App
-In order to run the app, first make sure you have an active internet connection on your device. Run the app and focus on a surface. Google AR will start by detecting a surface, and after it detects tap on the screen to place our object there. You ca then try this on different surfaces as you explore.
+To run the app, first, make sure you have an active internet connection on your device. Run the app and focus on a surface. Google AR will start by detecting a surface, and after it detects tap on the screen to place our object there. You can then try this on different surfaces as you explore.
 
 ### Conclusion
 We have seen how we can create an Augmented Reality app and place objects in a scene. AR does more than this. Keep exploring more about Augmented Reality by reading more articles on this topic.
