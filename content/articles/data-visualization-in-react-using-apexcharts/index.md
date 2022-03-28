@@ -1,7 +1,4 @@
 
- 
-
-### Introduction
 [ApexCharts.js](https://apexcharts.com/docs/react-charts/#) is a library that is used to visualize data. It provides features such as annotations, responsiveness and animations which make your charts interactive. It can used with other frameworks such as Vue and Angular. However, this article will cover how to install it in your React application, using it to visualize data from an API endpoint and the types of charts that are available in this library.
 
 ### Table of contents
@@ -242,3 +239,5 @@ In this article, we have installed the ApexCharts.js library in our React applic
 
 Happy coding.
 
+---
+Peer Review Contributions by: [Willies Ogola](/engineering-education/authors/willies-ogola/)
