@@ -231,7 +231,7 @@ Start your Vue development server if you've closed it, and go to localhost:8080.
 
 This is a screenshot of what your app should look like after you're done with the above:
 
-![setup screenshot](/setup.png)
+![setup screenshot](setup.png)
 
 And you're done with the setup!
 
@@ -266,7 +266,7 @@ Place the following in the template section of your `src/components/TipTap.vue` 
 
 The code puts a div on top of your editor with some styling. This is what the page should look like at this point:
 
-![empty menu screenshot](/empty-menu.png)
+![empty menu screenshot](empty-menu.png)
 
 Now, for the buttons.
 
@@ -793,7 +793,7 @@ And that's the end of this tutorial!
 
 Here's what everything should look like when you put it together:
 
-![finished demo screenshot](/finished-demo.png)
+![finished demo screenshot](finished-demo.png)
 
 ### Conclusion
 In this article, you learned how to use TipTap to build a rich text editor. I hope you found it helpful.
