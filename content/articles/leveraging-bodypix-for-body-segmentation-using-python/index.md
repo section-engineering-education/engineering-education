@@ -158,7 +158,7 @@ cv2_imshow(final_image)
 ```
 Output:
 
-![Final image](/engineering-education/leveraging-bodypix-for-body-segmentation-using-python/final.jpg)
+![Final image](/engineering-education/leveraging-bodypix-for-body-segmentation-using-python/final.png)
 
 Please find the complete code for this tutorial [here](https://colab.research.google.com/drive/1j4ZwlZtXpaZUrJXCgG2q4wExc7mJcEkT?usp=sharing).
 
