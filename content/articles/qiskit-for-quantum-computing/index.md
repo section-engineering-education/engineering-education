@@ -53,3 +53,6 @@ To get started online, please refer to this [link](https://lab.quantum-computing
 
 ### Further reading
 - [Qiskit](https://qiskit.org/)
+
+---
+Peer Review Contributions by: [Willies Ogola](/engineering-education/authors/willies-ogola/)
