@@ -4,9 +4,9 @@ status: publish
 published: true
 url: /approximating-the-speed-of-an-object-and-its-distance/
 title: Approximating the speed of an object and its distance using OpenCV in Python
-description: In this article, we consider the problem of approximating the speed of an object and its distance using OpenCV in Python. 
+description: This article will help the reader estimate the speed of an object and its distance using OpenCV in Python. 
 author: jacob-oduor
-date: 2022-03-28T00:00:00-18:00
+date: 2022-03-29T00:00:00-18:00
 topics: [Languages]
 excerpt_separator: <!--more-->
 images:
@@ -14,13 +14,9 @@ images:
  - url: /engineering-education/implementing-gan-from-scratch/hero.jpg
    alt: Implementing GANs example image
 ---
-
-### Introduction
-Computers are essential in today's technological age. They make our lives easier by making other incorporable tasks easier to perform, such as speed and distance approximation.
-
-In this tutorial, we will learn how to use OpenCV to detect the frontal face as our object, find the object's distance in relation to the camera, then calculate the speed. In our case, we will use our laptop webcam as our tool.
-
+In this tutorial, we will learn how to use OpenCV to detect the frontal face of an object, find the object's distance in relation to the camera, then calculate the speed. 
 <!-- more -->
+Note that we will use the laptop webcam as our tool.
 
 ### Table of Contents
 - [Prerequisites](#prerequisites)
