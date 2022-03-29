@@ -6,7 +6,7 @@ url: /leveraging-bodypix-for-body-segmentation-using-python/
 title: Leveraging BodyPix for Body Segmentation using Python
 description: This tutorial will show the reader how to leverage the BodyPix model to change the background from a frame using OpenCV.
 author: lilian-tonia
-date: 2022-03-08T00:00:00-21:20
+date: 2022-03-29T00:00:00-21:20
 topics: [Machine Learning]
 excerpt_separator: <!--more-->
 images:
