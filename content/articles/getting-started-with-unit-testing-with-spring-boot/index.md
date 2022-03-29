@@ -23,8 +23,8 @@ The functionality to be tested should be isolated by restricting the context in 
 It is crucial to restrict the application context to only the Spring components included in the test scenario when testing for an extensive application. This is achieved by including them in the annotation declaration.
 
 This particular feature, if used wisely, can help us build narrow tests without such a hefty penalty in terms of performance, particularly for small-sized apps.
-#### Use @DataJpaTest Annotation
-To increase the performance of components. We use the `@DataJpaTest` annotation since it will not load beans annotated with`@Service,` `@Controller,` and the entire application context.
+#### Use the `@DataJpaTest` Annotation
+To increase the performance of components. We use the `@DataJpaTest` annotation since it will not load beans annotated with`@Service`, `@Controller`, and the entire application context.
 #### Performing tests that are database-related
 It's good to simulate database-interacting beans and disable Spring Boot test DB initialization for the Spring profile where the tests are executed. When testing controllers, you should keep this in mind.
 #### Make your test simple
