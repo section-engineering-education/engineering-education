@@ -1,5 +1,4 @@
 Writing decent unit tests is a skill that takes a long time to perfect. `Unit testing` is one of the ways that developers make sure that individual units or components work correctly.
-
 Before any code is deployed, it is subjected to unit testing to fulfill quality standards. Unit testing ensures that spring Boot applications and their components are working as expected.
 ### Preliminaries
 For this tutorial, the reader would need to have:
@@ -37,7 +36,7 @@ This is the layer where all the business logic is implemented. It is tested to m
 Let us now look at how to test the Controller in the spring boot. To accomplish this, you will need to import some dependencies from `springInitializer` to the `IntelliJIDEA.`
 The' IntelliJIDEA' lets us create a spring boot application using the spring initializer service. Open `file>new>project` and select `Spring Initializr` as shown below:
 ![springInitializer](/engineering-education/getting-started-with-unit-testing-with-spring-boot/springInitializer.png)
->Note: You can rename the Package name to any other name.
+>Note: You can rename the Package name.
 
 Click next to proceed. Type `web` to search the required dependencies in the search bar. Select `Spring Web,` `Spring Reactive web,` `Spring Web Services,` and click Finish to download the initializer template.
 ![springInitializer](/engineering-education/getting-started-with-unit-testing-with-spring-boot/springInitializerDependency.png)
