@@ -118,7 +118,7 @@ This is how our circuit looks like:
 
 ![Final](/engineering-education/qiskit-for-quantum-computing/final-circuit.png)
 
-The next step is to execute the circuit on the IBM simulator.
+The next step is to execute the circuit on the classical computer simulator. Later on, we'll send it out to a real device at IBM to see the results from running this circuit on a real quantum device.
 
 ```python
 backend = Aer.get_backend('qasm_simulator')
@@ -137,8 +137,12 @@ plot_histogram(result.get_counts(circuit))
 ```
 ![Histogram](/engineering-education/qiskit-for-quantum-computing/histogram.png)
 
+That's the result for executing our quantum circuit. We get about a 50% probability for `00` and a 50% probability for `11`.
+
 ### Wrapping up
-Quantum computers can perform calculations much faster than classical computers can.
+This tutorial sets you up to run code on a real quantum computer. We've successfully created our first quantum application. It is recommended that you go through the tutorial in the Qiskit's website as this tutorial only scratches the surface. Good luck coding quantum circuits on your own.
+
+Happy coding!
 
 ### Further reading
 - [Qiskit](https://qiskit.org/)
