@@ -35,13 +35,13 @@ The repository is the place where all the data is stored. It is tested to ensure
 #### Services
 This is the layer where all the business logic is implemented. It is tested to make sure that the business logic is correct.
 ### How to test controllers
-Let us now look at how to test controllers in Spring Boot. To accomplish this, you will need to import some dependencies using the `Spring Initializer` and `IntelliJ IDEA.` The' IntelliJ IDEA' lets us create a spring boot application using the spring initializer service. Open `file>new>project` and select `Spring Initializr` as shown below:
+Let us now look at how to test controllers in Spring Boot. To accomplish this, you will need to import some dependencies using the `Spring Initializer` and `IntelliJ IDEA.` `IntelliJ IDEA` lets us create a Spring Boot application using the Spring Initializr service. Open `file>new>project` and select `Spring Initializr` as shown below:
 
-![springInitializer](/engineering-education/getting-started-with-unit-testing-with-spring-boot/springInitializer.png)
+![Spring Initializer](/engineering-education/getting-started-with-unit-testing-with-spring-boot/springInitializer.png)
 
 > Note: You can rename the Package name.
 
-Click next to proceed. Type *web* to search the required dependencies in the search bar. Select *Spring Web*, *Spring Reactive Web*, *Spring Web Services*, and click *finish* to download the initializer template:
+Click next to proceed. Type *web* to search the required dependencies in the search bar. Select *Spring Web*, *Spring Reactive Web*, *Spring Web Services*, and click *finish* to download the initializr template:
 
 ![Spring Initializer](/engineering-education/getting-started-with-unit-testing-with-spring-boot/springInitializerDependency.png)
 
