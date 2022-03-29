@@ -25,13 +25,13 @@ To create a user with system access, open the Linux terminal and run the command
 ```bash
 sudo sytemctl status mongodb
 ```
- ![1](/engineering-education/Securing-MongoDB-in-Linux/1.png)
+ ![1](/engineering-education/securing-mongodb-in-linux/1.png)
 
 Next, connect to the shell using the command below:
 ```bash
 $ mongo
 ```
-![2](/engineering-education/Securing-MongoDB-in-Linux/2.png)
+![2](/engineering-education/securing-mongodb-in-linux/2.png)
 
 The output above displays the shell version and more warnings showing that the database is unrestricted from users and anyone with access to the server controls the database.
 
@@ -39,7 +39,7 @@ Next, check list of databases in the shell by running the command below:
 ```bash
 show dbs
 ```
-![3](/engineering-education/Securing-MongoDB-in-Linux/3.png)
+![3](/engineering-education/securing-mongodb-in-linux/3.png)
 
 The output above shows the default databases, and any user can find valuable data in the system. 
 
@@ -47,7 +47,7 @@ Next, connect to the admin database using the command below:
 ```bash
 > use admin
 ```
-![4](/engineering-education/Securing-MongoDB-in-Linux/4.png)
+![4](/engineering-education/securing-mongodb-in-linux/4.png)
 
 Since the MongoDB environment comes installed with several `JSON-based methods` used in managing the database, we will use the `javascript-based` shell methods used to create a user. We initiate the `db.createUser` method to add new users to the database. 
 ```bash
@@ -67,7 +67,7 @@ The entire process is as shown from connecting admin to creating admin user:
 				   ]
 				   })
 ```
-![5](/engineering-education/Securing-MongoDB-in-Linux/5.png)
+![5](/engineering-education/securing-mongodb-in-linux/5.png)
 
 >**NOTE** Without closing the parenthesis, MongoDB will not run.
 
@@ -88,7 +88,7 @@ To access the `mongod.conf` configuration file, execute the command below:
 ```bash
 sudo nano usr/etc/mongod.conf
 ```
-![6](/engineering-education/Securing-MongoDB-in-Linux/6.png)
+![6](/engineering-education/securing-mongodb-in-linux/6.png)
 Next, remove the #sign from the security line, add authorization colon, and set it to enable. 
 >**Note** that `authorization` is indented by two spaces and looks like this:
 ```bash
@@ -105,7 +105,7 @@ $ sudo systemctl status mongod
 ```
 The command will show that MongoDB is active and running in your system, as shown below.
 
-![7](/engineering-education/Securing-MongoDB-in-Linux/7.png)
+![7](/engineering-education/securing-mongodb-in-linux/7.png)
 
 Now that we have enabled authentication, we will proceed to test if it works correctly.
 
@@ -116,7 +116,7 @@ $ mongo
 ```
 There will be no warning that will appear to the database since authentication is enabled. 
 
-![8](/engineering-education/Securing-MongoDB-in-Linux/8.png)
+![8](/engineering-education/securing-mongodb-in-linux/8.png)
 
  To confirm if access is restricted, we can run the command below:
 ```bash
@@ -129,7 +129,7 @@ Next, check if the administrative user authenticates; we run the following comma
 mongo -u Benard -p --authenticationDatabase admin
  ```
  
- ![9](/engineering-education/Securing-MongoDB-in-Linux/9.png)
+ ![9](/engineering-education/securing-mongodb-in-linux/9.png)
  
 The `-u` represents a flag for a user to connect to, and the `-p`  represents a flag requesting a user for a password.
 Enter user password when prompted. Then issue shows the DBS command to show if the authentication is enabled:
@@ -137,7 +137,7 @@ Enter user password when prompted. Then issue shows the DBS command to show if t
 show dbs
 ```
 
-![10](/engineering-education/Securing-MongoDB-in-Linux/10.png)
+![10](/engineering-education/securing-mongodb-in-linux/10.png)
 
 The command will return a list of databases currently running on the server. This, shows that authentication is successfully enabled.
 
