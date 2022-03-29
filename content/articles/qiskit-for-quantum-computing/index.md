@@ -1,4 +1,22 @@
-For most of us, it's hard to wrap our heads around the world of quantum computing. Most people have heard of it, but a lot of information about it glosses over important details. This tutorial aims to clear this up and introduce you to Quantum computing. With the help of open-source toolkit such as Qiskit, we'll introduce our readers to the toolkit and let them experiment using Jupyter Notebooks hosted in IBM Quantum Lab. 
+---
+layout: engineering-education
+status: publish
+published: true
+url: /qiskit-for-quantum-computing/
+title: Qiskit for Quantum Computing
+description: This tutorial aims to introduce our readers to Quantum computing. It also introduces them to the Qiskit toolkit and let them experiment using Jupyter Notebooks hosted in IBM Quantum Lab.  
+author: monica-dalmas
+date: 2022-03-29T00:00:00-21:30
+topics: [Networking]
+excerpt_separator: <!--more-->
+images:
+
+  - url: /engineering-education/qiskit-for-quantum-computing/hero.png 
+    alt: Qiskit for Quantum Computing Hero image
+---
+For most of us, it's hard to wrap our heads around the world of quantum computing. Most people have heard of it, but a lot of information about it glosses over important details. 
+<!--more-->
+This tutorial aims to clear this up and introduce you to Quantum computing. With the help of open-source toolkit such as Qiskit, we'll introduce our readers to the toolkit and let them experiment using Jupyter Notebooks hosted in IBM Quantum Lab. 
 
 ### Quntum computers
 Quantum computers solve problems in a different way to the classic computers that we are familiar with. Quantum computers have several advantages over classical computers for certain problems. This is attributed to their ability to exist in a number of different states simultenously. On the contrary, classical computers can only be in one state at a time.
