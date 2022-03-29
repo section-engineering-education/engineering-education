@@ -1,6 +1,23 @@
+---
+layout: engineering-education
+status: publish
+published: true
+url: /android-excel-apachepoi-crud/
+title: Perfoming Update and Delete Operations on your Spreadsheet files using the Apache POI library in Android
+description: This tutorial takes the reader through the process of creating an Excel file, adding data to it, and then updating and deleting data from it using the Apache POI library
+author: vincent-ngunzulu
+date: 2022-03-29T00:00:00-01:40
+topics: [Languages]
+excerpt_separator: <!--more-->
+images:
+
+  - url: /engineering-education/android-excel-apachepoi-crud/hero.jpg
+    alt: Perfoming Update and Delete Operations on your Spreadsheet files using the Apache POI library in Android Hero Image
+---
+
 ### Introduction
 
-A good application should be able to handle all CRUD operations. Owing to that, we will build upon [this](https://www.section.io/engineering-education/android-excel-apachepoi/) article which talks about creating and reading Spreadsheets created using the Apache POI library. We will have a walkthrough on editing cells, renaming columns, deleting sheets & workbooks, etc.
+A good application should be able to handle all CRUD operations. Owing to that, we will build upon [this](https://www.section.io/engineering-education/android-excel-apachepoi/) article about creating and reading Spreadsheets created using the Apache POI library. We will have a walkthrough on editing cells, renaming columns, deleting sheets & workbooks, etc.
 
 ### Prerequisites
 
@@ -18,7 +35,7 @@ We will add header cells to the table we created and format the cells. Secondly,
 
 ### Adding and formatting header cells
 
-We have to add a row at the top of the cells we created. There are a bunch of ways to do this, one of which is a loop. In the loop, we simply assign the row indices to the next indices, appropriately set the values, and then add the header values. However, we won't be using the looping approach in order to simplify things. Also, we have few records, so we will manually shift the rows and add the header row to the top. Therefore, modify the `addData()` method to this:
+We have to add a row at the top of the cells we created. There are many ways to do this, one of which is a loop. We assign the row indices to the following index in the loop, appropriately set the values, and add the header values. However, we won't be using the looping approach to simplify things. Also, we have few records, so we will manually shift the rows and add the header row to the top. Therefore, modify the `addData()` method to this:
 
 ```kotlin
    private fun addData(sheet: Sheet) {
@@ -66,9 +83,9 @@ We have incremented the row indices and added a header row to the top.
 
 #### Formatting the cells
 
-Let’s now format the header cells. This will be done after accessing a sheet, which we discussed in the previous article.
+Let’s now format the header cells. After accessing a sheet, this will be done, which we discussed in the previous article.
 
-> I will first discuss the code in bits, step by step, then show the full code in the end.
+> I will first discuss the code in bits, step by step, then show the full code at the end.
 
 We access the header cells in this manner:
 
@@ -107,7 +124,7 @@ headerCellStyle.fillForegroundColor = IndexedColors.RED.index
 headerCellStyle.setFillPattern(FillPatternType.SOLID_FOREGROUND)
 ```
 
-To set the font properties we use the `setFont()` method and pass in the font object we created beforehand.
+We use the `setFont()` method and pass in the font object we created beforehand to set the font properties.
 
 ```kotlin
 headerCellStyle.setFont(font);
@@ -124,11 +141,11 @@ scoreHeaderCell.cellStyle = headerCellStyle
 
 _Screenshot after the formatting_
 
-Now, to utilize the same sheet without creating another function, we will add more code to the function to update cell labels and values.
+To utilize the same sheet without creating another function, we will add more code to the function to update cell labels and values.
 
 ### Editing Cell Labels and Values
 
-We first access the rows and cells we want. Note that for your app, this should be done dynamically and not hard coding the indices as I have done here.
+We first access the rows and cells we want. Note that this should be done dynamically for your app and not hard coding the indices as I have done here.
 
 ```kotlin
 //selecting cells to be editted and formatted
@@ -292,7 +309,7 @@ When we run the code and access the file, we wont see the sheet:
 
 ### Deleting a row
 
-After accessing the row, we delete it using the `removeRow()` method. This is after confirming if it’s not empty using an `if` conditional statement.
+After accessing the row, we delete it using the `removeRow()` method. After confirming if it’s not empty using an `if` conditional statement, this is done.
 
 ```kotlin
 val targetRow = sheet.getRow(rowNo)
@@ -301,7 +318,7 @@ if (targetRow != null) {
 }
 ```
 
-Thereafter, we shift the cells that are after it one step backward using the `shiftRows()` method. This method takes in three parameters namely, the row index to start shifting from, the total number of rows to shift, and a step number respectively. That’s why we needed to access the total number of rows using the `totalNoOfRows` variable.
+After that, we shift the cells one step backwards using the `shiftRows()` method. This method takes in three parameters: the row index to start shifting from, the total number of rows to shift, and a step number. That’s why we needed to access the total number of rows using the `totalNoOfRows` variable.
 
 ```kotlin
 /*excluding the last row, move the cells that come
@@ -366,7 +383,7 @@ The full code:
 
 ### Deleting Columns
 
-This is a little bit complicated than the previous ones. We have to first get the number of columns available. We have to do this because we will get an error when trying to delete an empty column or when we want to perform a shift function. We won't do the shift here. I will leave it up to you to get some coffee and implement it.
+This is a little bit more complicated than the previous ones. We have first to get the number of columns available. We have to do this because we will get an error when trying to delete an empty column or when we want to perform a shift function. So we won't do the shift here. I will leave it up to you to get some coffee and implement it.
 
 We get the total number of columns by getting the number of the last cell of a row.
 
@@ -446,4 +463,8 @@ Apache POI provides a countless number of methods that are to be explored. For t
 
 ### Conclusion
 
-We added header cells and formatted them, edited cell values, deleted a workesheet, a row, and a column. I hope you enjoyed the read.
+We added header cells and formatted them, edited cell values, deleted a worksheet, a row, and a column. I hope you enjoyed the read.
+
+---
+Peer Review Contributions by: [Odhiambo Paul](/engineering-education/authors/odhiambo-paul/)
+
