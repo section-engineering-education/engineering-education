@@ -86,7 +86,7 @@ The output of the thread is : Thread-3 - 4
 
 As shown above, the threads are chosen at random, and the value is incorrect. The value should rise by 1 but that is not the case. Usually, the output is 3. Threads 0, 1, and 2 share the same value thus showing a race condition. After understanding what a race condition is, let's now look at how to refrain from it.
 
-It is evident that the crucial element (code that changes shared resources) must be limited. Additionally, with Java's `synchronized` keyword we can synchronize access to the shared resource. This prevents thread interference during atomic operations.
+It is evident that the crucial element (code that changes shared resources) must be limited. Additionally, with Java's `synchronized` keyword we can synchronize access to the shared resource. This prevents thread interference during atomic operations. The term "atomic operation" refers to a set of operations that are always performed in unison. All of the atomic actions must be completed at the same time, or none of them can be completed at all.
 
 Synchronizing the method call should avoid the race problem:
 
@@ -145,10 +145,78 @@ These consist of the following properties:
 - A synchronized static function prevents instances from being changed. 
 
 #### Synchronized blocks
+The synchronized block may be used to perform synchronization on any specified resource of the method.
+
+Suppose,A method with 100 lines of code but only 10 lines of code containing important logic, i.e. the Object's state may be modified by these line. Only 10 lines of code are needed to guarantee that other threads may continue to run inside the same procedure without interruption, thus we don't need to synchronize these lines.
+
+let us look at some program example of synchronized block.
+
+Save it as `TestSynchronizedBlock1.java`
+
+```Java
+    class Table  
+    {      
+     void printTable(int n){    
+       synchronized(this){//synchronized block    
+         for(int i=1;i<=5;i++){    
+          System.out.println(n*i);    
+          try{    
+           Thread.sleep(400);    
+          }catch(Exception e){System.out.println(e);}    
+         }    
+       }    
+     }//end of the method    
+    }    
+        
+    class MyThread1 extends Thread{    
+    Table t;    
+    MyThread1(Table t){    
+    this.t=t;    
+    }    
+    public void run(){    
+    t.printTable(5);    
+    }    
+        
+    }    
+    class MyThread2 extends Thread{    
+    Table t;    
+    MyThread2(Table t){    
+    this.t=t;    
+    }    
+    public void run(){    
+    t.printTable(100);    
+    }    
+    }    
+        
+    public class TestSynchronizedBlock1{    
+    public static void main(String args[]){    
+    Table obj = new Table();//only one object    
+    MyThread1 t1=new MyThread1(obj);    
+    MyThread2 t2=new MyThread2(obj);    
+    t1.start();    
+    t2.start();    
+    }    
+    }    
+```
+The above code will output the following
+
+```bash
+5
+10
+15
+20
+25
+100
+200
+300
+400
+500
+```
+
 The following is all that it entails:
 
-- The `synchronized` keyword prevents synchronized blocks from being added to the item between the parentheses. Locked items are only accessible to the threads that are running in the synchronized block.
-- Synchronized blocks utilize it as a lock. When a method is marked as synchronized, the thread owns the monitor or lock object. In this case, you are blocked until the other thread releases the monitor.
+- The synchronized keyword is used to identify blocks that are part of a synchronized thread in Java. In Java, a synchronized block is one that is tied to a specific object. There can only be one thread operating in all synchronized blocks synchronized on the same object. When the synchronized block is exited, all subsequent threads trying to enter it are stalled until that thread quits.
+- Synchronized blocks utilize synchronized keyword as a lock. When a method is marked as synchronized, the thread owns the monitor or lock object. In this case, you are blocked until the other thread releases the monitor.
 - Using a synchronized block enables you to fine-tune lock control by mutually excluding important section code.
 - The lock gets unlocked when the thread leaves the synchronized block.
 - A synchronized block may produce a `NullPointerException` if a parameter expression evaluates to null, while synchronized methods do not.
