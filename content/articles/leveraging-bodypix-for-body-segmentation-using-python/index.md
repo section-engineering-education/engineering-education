@@ -160,7 +160,7 @@ Output:
 
 ![Final image](/engineering-education/leveraging-bodypix-for-body-segmentation-using-python/final.png)
 
-We have successfully leveraged the BodyPix model to segment the body of a person from a frame using OpenCV and apply the segmented body to another image. This tutorial only demostrates one use case. You can also use the model to generate fake web cam backgrounds that you can use when video calling.
+We have successfully leveraged the BodyPix model to segment the body of a person from a frame using OpenCV and apply the segmented body to another background image. The resulting image is not perfect. You can still see some frames of the water image. But, you can play around with the `threshold` value to get a tighter mask. This tutorial only demostrates one use case. You can also use the model to generate fake web cam backgrounds that you can use when video calling.
 
 Please find the complete code for this tutorial [here](https://colab.research.google.com/drive/1j4ZwlZtXpaZUrJXCgG2q4wExc7mJcEkT?usp=sharing).
 
