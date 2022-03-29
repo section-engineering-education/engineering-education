@@ -17,7 +17,7 @@ images:
 
 ### Introduction
 
-A good application should be able to handle all CRUD operations. Owing to that, we will build upon [this](https://www.section.io/engineering-education/android-excel-apachepoi/) article about creating and reading Spreadsheets created using the Apache POI library. We will have a walkthrough on editing cells, renaming columns, deleting sheets & workbooks, etc.
+A good application should be able to handle all CRUD operations. Owing to that, we will build upon [this](https://www.section.io/engineering-education/android-excel-apachepoi/) article that talks about creating and reading Spreadsheets created using the Apache POI library. We will have a walkthrough on editing cells, renaming columns, deleting sheets & workbooks, etc.
 
 ### Prerequisites
 
@@ -31,11 +31,11 @@ The requirements of both tutorials are the same, which are:
 
 ### An overview of what we will be doing
 
-We will add header cells to the table we created and format the cells. Secondly, we will have a walkthrough on editing the values of cells. Thirdly, we will look at a worksheet deletion. Finally, we will look at the deletion of rows and columns. All these actions are easily achieved using the Apache POI. Let’s start.
+We will add header cells to the table we created and format the cells. Secondly, we will have a walkthrough on editing the values of cells. Thirdly, we will look at a worksheet deletion. Finally, we will look at the deletion of rows and columns. All these actions are easily achieved using the Apache POI library. Let’s start.
 
 ### Adding and formatting header cells
 
-We have to add a row at the top of the cells we created. There are many ways to do this, one of which is a loop. We assign the row indices to the following index in the loop, appropriately set the values, and add the header values. However, we won't be using the looping approach to simplify things. Also, we have few records, so we will manually shift the rows and add the header row to the top. Therefore, modify the `addData()` method to this:
+We have to add a row at the top of the cells we created. There are many ways to do this, one of which is using a loop. In the loop, we set each current row's index to the next index position, appropriately set the values, and then add the header cells' values. However, we won't be using the looping approach to simplify things. Also, we have few records, so we will manually shift the rows and add the header row to the top. Therefore, modify the `addData()` method to match this:
 
 ```kotlin
    private fun addData(sheet: Sheet) {
@@ -83,7 +83,7 @@ We have incremented the row indices and added a header row to the top.
 
 #### Formatting the cells
 
-Let’s now format the header cells. After accessing a sheet, this will be done, which we discussed in the previous article.
+Let’s now format the header cells. This will be done after accessing a sheet, which we discussed in the previous article.
 
 > I will first discuss the code in bits, step by step, then show the full code at the end.
 
@@ -124,7 +124,7 @@ headerCellStyle.fillForegroundColor = IndexedColors.RED.index
 headerCellStyle.setFillPattern(FillPatternType.SOLID_FOREGROUND)
 ```
 
-We use the `setFont()` method and pass in the font object we created beforehand to set the font properties.
+To set the font properties, we use the `setFont()` method and pass in the font object we created beforehand.
 
 ```kotlin
 headerCellStyle.setFont(font);
@@ -145,7 +145,7 @@ To utilize the same sheet without creating another function, we will add more co
 
 ### Editing Cell Labels and Values
 
-We first access the rows and cells we want. Note that this should be done dynamically for your app and not hard coding the indices as I have done here.
+We first access the rows and cells we want. Note that for your app, this should be done dynamically and not hard coding the indices as I have done here.
 
 ```kotlin
 //selecting cells to be editted and formatted
@@ -309,7 +309,7 @@ When we run the code and access the file, we wont see the sheet:
 
 ### Deleting a row
 
-After accessing the row, we delete it using the `removeRow()` method. After confirming if it’s not empty using an `if` conditional statement, this is done.
+After accessing the row, we delete it using the `removeRow()` method. The deletion is done after confirming if the target row is not empty using an `if` conditional statement.
 
 ```kotlin
 val targetRow = sheet.getRow(rowNo)
