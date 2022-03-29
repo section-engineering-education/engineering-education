@@ -5,7 +5,7 @@ published: true
 url: /algorithmic-trading-bot-using-python/
 title: Algorithmic Trading Bot Using Python
 description: This tutorial gives a step by step guide on how you can use python to create your own trading bot. It also discusses the benefits and drawbacks of using software trading.
-author: kamau-victor
+author: victor-kamau
 date: 2021-10-29T00:00:00-09:10
 topics: [Languages]
 excerpt_separator: <!--more-->
