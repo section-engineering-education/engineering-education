@@ -9,11 +9,11 @@ For this tutorial, the reader would need to have:
 Before starting with the unit testing, let us first look at why it is important.
 #### Advantages of Unit Testing
 1. **By unit testing, developers can locate and fix bugs earlier:**
-Developers who implement unit tests into their projects early can identify and fix errors earlier.
+    - Developers who implement unit tests into their projects early can identify and fix errors earlier.
 2.**High quality code:**
-By running the test several times, developers gain confidence when changing the code. They refactor their code without fear of breaking it, generating quality code at the end.
+    - By running the test several times, developers gain confidence when changing the code. They refactor their code without fear of breaking it, generating quality code at the end.
 3. **Unit testing can boost your coding skills:**  
-By unit testing, developers can learn how to write better code.
+    - By unit testing, developers can learn how to write better code.
 ### Some unit testing best practices
 It is crucial to use the best approach when writing unit testing. Below are some best practices to follow when writing unit testing:
 
