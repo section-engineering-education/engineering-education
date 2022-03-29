@@ -1,11 +1,13 @@
 ### Predicting Future Stock Prices Using ARIMA Model in R
 
 ### Introduction
-With the increase in the number of investors in the stock market and the increase in popularity of various cryptocurrencies whose rates in the stock market changes constantly, it is useful to create a program that can predict future prices in the stock market to help investors make a better decision on the right time to invest so that they can maximize their profits.
+With the increase in the number of investors in the stock market and popularity of various cryptocurrencies whose rates in the stock market changes constantly, it is useful to create a program that can predict future prices in the stock market to help investors make a better decision on the right time to invest so that they can maximize their profits.
 
-ARIMA model is one of the most useful models in predicting future trends and in this case, future prices using R language or Python. in this article, I am going to show you how exactly you can go about it step by step.
+ARIMA model is one of the most useful and accurate time series model in making predictions of future trends and in our case, future prices using R language or Python. in this article, I am going to show you how exactly you can go about it in step by step using R language.
 
 ### Table of Contents
+-[Prerequisites](#prerequisites) 
+
 -[Importing yahoo finance data in R](#importing-yahoo-data-in-r)
 
 -[Stock charting](#stock-charting)
@@ -20,14 +22,20 @@ ARIMA model is one of the most useful models in predicting future trends and in 
 
 -[Fitting ARIMA model and forecasting](#fitting-arima-model-and-forecasting)
 
+### Prerequisites 
+For you to effectively understand to work on the model using R, it is important that you; 
+- Understand time series and how various time series models work
+- Know how to navigate through R studio and have it installed on your Pc
+- Know how to read analyze and interpret charts
+
 ### Importing yahoo finance data in R
 
 In this tutorial, we are going to demonstrate stock price forecasting using Amazon stock, and the data that we will be using are AMZN which we will import in yahoo finance using the quantmod package in R . the data will consist of OHLC (open, high, low and closed) but for simplicity, we will use the close price to make our model univariate time series. 
 
 First, we will install quantmond packages by using;
-
-`install.packages("quantmod")`
-
+```bash
+install.packages("quantmod")
+```
  as follows; 
 
 ![installing quantmod](/engineering-education/predicting-future-stock-prices-using-arima-model-in-r/psp.jpg)
@@ -66,24 +74,24 @@ To AutoCorrelation function(ACF) and partial AutoCorrelation to analyze if there
 ### Differencing data to be stationary
 Now that we know that our data is not stationary, we need to make it stationary by differentiating it at a certain lag for it to fit our ARIMA model. Making the data stationary is important in that it helps us predict that the past statistical properties of our data will remain the same in the future. Here, the log-transformed data will be differenced by 1 lag to make it stationary. First, we'll have to, make sure that we fill in missing values with values from observation after the missing value.
 
-![differencing data to be stationary](/engineering-education/predicting-future-stock-prices-using-arima-model-in-r/amazon_diff.jpg) 
+![differencing data to be stationary](/engineering-education/predicting-future-stock-prices-using-arima-model-in-r/amazondiff.jpg) 
 ### Do stationary testing using unit root testing
 After differentiating the data at lag 1 and making our data stationary, we'll test if the data are stationary using Unit Root Testing . We'll test using the Augmented Dickey Fuller test which tests the hypothesis of stationarity of the data and if the resulting p-value will be below 0,05, we will reject the null hypothesis and conclude that the data is stationary. We are going to test our differenced data. 
 We will first activate tseries package using library(tseries) then we perform adf test using;
-`
-adf<-adf.test(AMAZON_diff, alternative=c(“stationary”,”explosive”), k=0)`
+~~~ R
+adf<-adf.test(AMAZON_diff, alternative=c(“stationary”,”explosive”), k=0) 
 
-`adf`
-
+adf
+~~~
 ![doing stationary test](/engineering-education/predicting-future-stock-prices-using-arima-model-in-r/stationary.jpg) 
 
 The p-value is o.01 meaning that our data is now stationary with no unit root making it appropriate for our ARIMA model. 
 To check if our data can fit the AutoRegressive model and MA process, we will generate ACF and pacf correlogram using acf and pacf functions as follows. 
 We need to split the data into training by subsetting the data from the first period to the 3355th period which is from 3rd January 2013 to 12th March 2022 to train the model. 
 We need to install caTools library using; 
-
-`install.packages(“caTools”)` 
-
+```bas
+install.packages(“caTools”) 
+```
 Activate the library caTools by:
 
 `library(caTools)` 
@@ -96,9 +104,9 @@ To select our train data, we use;
 
 ### Building ARIMA model 
 ARIMA model in R is found in the package ‘forecast’ which we will first install and then activate as follows;
-
-`install.packages(“forecast”)`
-
+```bash
+install.packages(“forecast”)
+```
 `library(forecast)`
 
 Auto.arima is used to generate the ARIMA model
@@ -147,11 +155,19 @@ Our forecast will be;
 
 ![our forecast](/engineering-education/predicting-future-stock-prices-using-arima-model-in-r/forecast.jpg)
 
-This shows that in the next 100 days, there will be a rise in AMAZON’s stock prices with a slight downward movement in the next few days and then an almost steady rise.
+This shows that in the next 100 days, there will be a rise in AMAZON’s stock prices with a slight downward movement in the next few days and then an almost steady rise. Now that the investor knows the expected trends for the next 100 days in Amazon stock, he/she can make the right decision in buying and selling to maximize profits and avoid losses. You can make prediction of your desired period of time by using h="time".
 
 ### Conclusion 
 
-With proper data, forecasting in R is so simple as there are very many automated functions to fit in various powerful models which are used in forecasting that give accurate results when fed with enough data. You can use this method in fitting various models used in forecasting such as decomposition models, exponential smoothing models, etc. provided you have installed the required packages. In cases where the data has a heteroskedasticity problem, you can use Garch or Arch models to resolve volatility issues in order to use the ARMA model. 
+With proper data, forecasting in R is so simple as there are very many automated functions to fit in various powerful models which are used in forecasting that give accurate results when fed with enough data. You can use this method in fitting various models used in forecasting such as decomposition models, exponential smoothing models, etc. provided you have installed the required packages. In cases where the data has a heteroskedasticity problem, you can use Garch or Arch models to resolve volatility issues in order to use the ARMA model. This article however is not exhaustive but to give you basic knowledge in financial modelling and how to use time seeries models in forecasting. You can go ahead and learn more on how to perform forecasting in python using various models in;
+ 1. https://www.simplilearn.com/tutorials/data-science-tutorial/time-series-forecasting-in-r
+ 2. https://www.pluralsight.com/guides/time-series-forecasting-using-r
+ 3. https://towardsdatascience.com/a-guide-to-forecasting-in-r-6b0c9638c261
+ 4. https://cran.r-project.org/web/packages/forecast/forecast.pdf
+ 5. https://a-little-book-of-r-for-time-series.readthedocs.io/en/latest/src/timeseries.html
+ 6. https://www.rdocumentation.org/packages/forecast/versions/8.16
+ 7. http://r-statistics.co/Time-Series-Forecasting-With-R.html 
+and much more online resourses on forecasting in R.
 
 
 
