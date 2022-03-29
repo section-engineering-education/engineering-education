@@ -1,4 +1,3 @@
-### Introduction
 Writing decent unit tests is a skill that takes a long time to perfect. `Unit testing` is one of the ways that developers make sure that individual units or components work correctly.
 
 Before any code is deployed, it is subjected to unit testing to fulfill quality standards. Unit testing ensures that spring Boot applications and their components are working as expected.
@@ -8,7 +7,7 @@ For this tutorial, the reader would need to have:
 - Basic knowledge of Spring Boot
 - An IDEA installed. You can choose [IntelliJ IDEA](https://www.jetbrains.com/idea/) in this tutorial.
 ### Getting started
-Before starting with the unit testing, let us first look at why it is crucial.
+Before starting with the unit testing, let us first look at why it is important.
 #### Advantages of Unit Testing
 1. *By unit testing, developers can locate and fix bugs earlier.* Developers who implement unit testing into their projects early can identify and fix errors earlier.
 2.*High quality code*. By running the test several times, developers gain confidence when changing the code. They refactor their code without fear of breaking it, generating a quality code at the end.
@@ -37,11 +36,11 @@ This is the layer where all the business logic is implemented. It is tested to m
 ### How to test Controller
 Let us now look at how to test the Controller in the spring boot. To accomplish this, you will need to import some dependencies from `springInitializer` to the `IntelliJIDEA.`
 The' IntelliJIDEA' lets us create a spring boot application using the spring initializer service. Open `file>new>project` and select `Spring Initializr` as shown below:
-![springInitializer](springInitializer.png)
+![springInitializer](/engineering-education/getting-started-with-unit-testing-with-spring-boot/springInitializer.png)
 >Note: You can rename the Package name to any other name.
 
 Click next to proceed. Type `web` to search the required dependencies in the search bar. Select `Spring Web,` `Spring Reactive web,` `Spring Web Services,` and click Finish to download the initializer template.
-![springInitializer](springInitializerDependency.png)
+![springInitializer](/engineering-education/getting-started-with-unit-testing-with-spring-boot/springInitializerDependency.png)
 We've prepared the environment successfully. Now we need to test the Controller.
 In `/src/main/java` create a new package named `Controller`. Proceed to create a java class `HelloContoller.java` in  `/src/main/java/Controller` and add the snippet below:
 ```java
@@ -63,7 +62,7 @@ Let us look at the code snippet above:
 - `@RestController` is an annotation used to indicate that the class is a controller.
 
 Let us now generate the controller test. In the HelloController.java file. Right-click and select `Generate../Test..` in the menu. Select the available method (which we want to test) under the member and click ok.
-![springInitializer](testing.png)
+![springInitializer](/engineering-education/getting-started-with-unit-testing-with-spring-boot/testing.png)
 
 A new file `/src/main/test/java/controller/HelloControllerTest.java` will be created. Modify  the file to have the code below;
 ```java
@@ -122,6 +121,6 @@ To avoid this, let us redesign the directory structure. Move `/src/main/java/com
 Now, both the test and the application are in the same package.
 
 In HelloControllerIntTest file, right click and run 'hello()'. You should see the test passes as shown below:
-![TestOutput](output.png)
+![TestOutput]](/engineering-education/getting-started-with-unit-testing-with-spring-boot/(output.png)
 ### Conclusion
 Congratulations! 🚀 You have successfully tested the Controller. There are various ways to create Unit Tests for our Spring Boot. This tutorial has `involves MockMVC` to write the unit test.
