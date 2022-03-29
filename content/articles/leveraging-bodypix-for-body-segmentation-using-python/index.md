@@ -4,9 +4,9 @@ status: publish
 published: true
 url: /leveraging-bodypix-for-body-segmentation-using-python/
 title: Leveraging BodyPix for Body Segmentation using Python
-description: This tutorial will show the reader how to leverage the BodyPix model to change the background from a frame using OpenCV.
+description: This tutorial will show the reader how to leverage the BodyPix model to change the background in an image using OpenCV.
 author: lilian-tonia
-date: 2022-03-29T00:00:00-21:20
+date: 2022-03-29T00:00:00-12:00
 topics: [Machine Learning]
 excerpt_separator: <!--more-->
 images:
@@ -14,17 +14,18 @@ images:
   - url: /engineering-education/leveraging-bodypix-for-body-segmentation-using-python/hero.png 
     alt: Leveraging BodyPix for Body Segmentation using Python Hero Image
 ---
-BodyPix is a body segmentation model built on TensorFlow. The model uses a pre-trained neural network to segment a human body from a frame. There is a wide range of use cases you can use this model for. One use case is on background body removal. 
+BodyPix is a body segmentation model built on TensorFlow. The model uses a pre-trained neural network to segment a human body from a frame. 
 <!--more-->
-This tutorial will leverage this model to change the background from a frame using OpenCV. 
+There is a wide range of use cases for this model. For instance, it can be utilized to remove human objects from an image. 
+
+This tutorial will leverage the BodyPix model to change the background from a frame using OpenCV. 
 
 ### Prerequisites
 To follow along with this tutorial, you need to be familiar with:
-- Machine Learning.
 - Machine Learning modeling.
 - Google Colab.
 
-### Outline
+### Table of contents
 - [Installing and importing dependencies](#installing-and-importing-dependencies)
 - [Loading the bodypix model](#loading-the-bodypix-model)
 - [Uploading static image using opencv](#uploading-static-image-using-opencv)
@@ -34,17 +35,23 @@ To follow along with this tutorial, you need to be familiar with:
 - [Further reading](#further-reading)
 
 ### Installing and importing dependencies
-To get started, we will install these libraries:
+To get started, we will install the following libraries:
 
-- `tensorflow==2.8.0`: The Bodypix model relies on Tensorflow. So, we have to install it. You can install any Tensorflow 2.0 and above.
-- `tensorflow-gpu==2.8.0`: It allows us to leverage the GPU. You don't need to use a GPU to run this code. But we are using it as it speeds up our detection.
+- `tensorflow==2.8.0`: The Bodypix model relies on Tensorflow 2.0 and above.
+
+- `tensorflow-gpu==2.8.0`: It allows us to leverage the GPU. Though we do not need to use a GPU to run this code, we will use it to speed up the detection.
+
 - `tf_bodypix`: It gives us the pre-trained body segmentation model from Tensorflow.
-- `tfjs_graph_converter`: It allows us to convert the tensorflow.js BodyPix model to a model we can use inside Python. By default, the BodyPix model is native inside the Tensorflow.js package. It needs to be converted to work within Python. The Tensorflow JS Graph converter helps convert it.
+
+- `tfjs_graph_converter`: It allows us to convert the tensorflow.js BodyPix model to a model we can use inside Python. By default, the BodyPix model is native inside the Tensorflow.js package. 
+
+The command below will install the required libraries:
 
 ```bash
 !pip install tensorflow==2.8.0 tensorflow-gpu==2.8.0 tf_bodypix opencv-python tfjs_graph_converter matplotlib
 ```
-We will go ahead and import the installed dependencies into our notebook.
+
+We will go ahead and import the installed dependencies into our notebook:
 
 ```python
 import cv2
@@ -53,14 +60,17 @@ from tf_bodypix.api import load_model, download_model, BodyPixModelPaths
 import numpy as np
 from matplotlib import pyplot as plt
 ```
-> The `load_model`, `download_model`, `BodyPixModelPaths` are the classes that will allow us to work with the BodyPix model in our notebook.
+
+> The `load_model`, `download_model`, `BodyPixModelPaths` are the classes that will allow us to work with the BodyPix model.
 
 ### Loading the BodyPix model
+We create a new variable, `bp_model`, to store the BodyPix model. The `BodyPixModelPaths.MOBILENET_FLOAT_50_STRIDE_16` defines our BodyPix model path. 
 
 ```bash
 bp_model = load_model(download_model(BodyPixModelPaths.MOBILENET_FLOAT_50_STRIDE_16))
 ```
-We create a new variable, `bp_model`, to store the BodyPix model. The `BodyPixModelPaths.MOBILENET_FLOAT_50_STRIDE_16` defines our BodyPix model path. You can confirm the path by running it separately. 
+
+You can confirm the path by running it separately. 
 
 ```python
 BodyPixModelPaths.MOBILENET_FLOAT_50_STRIDE_16
@@ -70,18 +80,18 @@ Output:
 ```bash
 https://storage.googleapis.com/tfjs-models/savedmodel/bodypix/mobilenet/float/050/model-stride16.json
 ```
-That's the path to where our model is found.
+This path directs the program to where the model is stored.
 
-We pass this path to the `download_model` class to download it into our notebook. We then use the `load_model` class to load it into our notebook. This result is stored inside the `bp_model` variable.
+We pass the above path to the `download_model` class to import it into our notebook. We then use the `load_model` class to access its contents. This result is stored inside the `bp_model` variable.
 
 ### Uploading static image using OpenCV
-Let's download an image we can work within this tutorial from [Unsplash](https://unsplash.com/). 
+In this tutorial, will use the following image downloaded from [Unsplash](https://unsplash.com/). 
 
 ![Boy](/engineering-education/leveraging-bodypix-for-body-segmentation-using-python/boy.jpg)
 
 *[Image Source: Unsplash](https://unsplash.com/photos/6PITqYKSoGE)*
 
-Once downloaded, you can upload it into the notebook. Use the following code to load it:
+Once downloaded, you can upload it into the notebook, as shown below:
 
 ```python
 from google.colab.patches import cv2_imshow
@@ -90,16 +100,18 @@ image = cv2.imread("boy.jpg")
 cv2_imshow(image)
 cv2.waitKey(0)
 ```
-Let's make some detections with BodyPix. We'll build upon the code above by adding a couple of more lines of code. This extra code will allow us to perform the body segmentation.
+
+Let's make some detections with BodyPix. We also need to perform the body segmentation.
 
 ### Performing body segmentation
+We use the code below for the body segmentation:
 
 ```python
 from google.colab.patches import cv2_imshow
 
-image = cv2.imread("boy.jpg")
+image = cv2.imread("boy.jpg") #Reading the image
 
-prediction = bp_model.predict_single(image)
+prediction = bp_model.predict_single(image) # Passing the image to the model
 mask = prediction.get_mask(threshold=0.5).numpy().astype(np.uint8)
 new_mask = cv2.bitwise_and(image, image, mask=mask)
 
@@ -108,24 +120,24 @@ cv2.waitKey(0)
 ```
 
 - The `threshold` is set to `0.5`, which is 50%. Changing this value up and down will impact the detection confidence. A higher value will produce a tighter mask, while a lower value will make it more flexible.
-- The `bitwise_and` function helps us mask the image.
+- The `bitwise_and` function helps us to mask the image.
 
 When you run the code above, it results in the following output:
 
 ![Masked boy](/engineering-education/leveraging-bodypix-for-body-segmentation-using-python/masked-boy.png)
 
-It is not perfect, but it masks the boy from the background. The next thing that we will do is to apply a virtual background.
+Though it's not perfect, it still masks the boy from the background. The next step is to apply a virtual background.
 
 ### Applying a virtual background
-We need to apply an inverse mask to our virtual background. We can then add the two images together. Again, we can get an image from [Unsplash](https://unsplash.com/) that we can use for our background.
+We need to apply an inverse mask to our virtual background. We can then combine the two images. We will still retrieve a background image from [Unsplash](https://unsplash.com/).
 
 ![Background](/engineering-education/leveraging-bodypix-for-body-segmentation-using-python/nature.jpg)
 
 *[Image Source: Unsplash](https://unsplash.com/photos/OJ02cQHePds)*
 
-> You can apply any picture that you want as your background.
+> Note that you can use any image as the background.
 
-Let's load it into the notebook.
+Let's load the image into the notebook:
 
 ```python
 from google.colab.patches import cv2_imshow
@@ -134,9 +146,10 @@ image = cv2.imread("nature.jpg")
 cv2_imshow(image)
 cv2.waitKey(0)
 ```
+
 > Ensure that the input image and virtual background are of the same dimensions when we overlay them on top of each other. You can find out the dimensions of your image using the `image.shape` method.
 
-Once you've established that the dimensions are the same, we can now go ahead and apply our virtual background. We will build upon the body segmentation code.
+Once you've established that the dimensions are the same, we can proceed to apply the virtual background. We will build upon the body segmentation code:
 
 ```python
 from google.colab.patches import cv2_imshow
@@ -156,16 +169,23 @@ final_image = cv2.add(new_mask, masked_bg)
 
 cv2_imshow(final_image)
 ```
+
 Output:
 
 ![Final image](/engineering-education/leveraging-bodypix-for-body-segmentation-using-python/final.png)
 
-We have successfully leveraged the BodyPix model to segment the body of a person from a frame using OpenCV and apply the segmented body to another background image. The resulting image is not perfect. You can still see some frames of the water image. But, you can play around with the `threshold` value to get a tighter mask. This tutorial only demostrates one use case. You can also use the model to generate fake web cam backgrounds that you can use when video calling.
+We have now successfully leveraged the BodyPix model to segment a human object from a frame using OpenCV. We also applied the segmented body to another background image. 
+
+The resulting image is not perfect because some water background is still visible. You can adjust the `threshold` value to get a tighter mask. 
+
+The BodyPix model can also be used to generate fake webcam backgrounds for video calls.
 
 Please find the complete code for this tutorial [here](https://colab.research.google.com/drive/1j4ZwlZtXpaZUrJXCgG2q4wExc7mJcEkT?usp=sharing).
 
 ### Conclusion
-In this tutorial, we discussed body segmentation using the BodyPix model. We installed the required dependencies, loaded the model, uploaded a static image we can work with. Finally, we performed body segmentation on the image and overlayed a new virtual background to it.
+In this tutorial, we discussed body segmentation using the BodyPix model. We installed the required dependencies, loaded the model, and uploaded a static image. 
+
+Finally, we performed a body segmentation on the image and overlayed a new virtual background on it using the BodyPix model.
 
 ### Further reading
 - [BodyPix](https://github.com/tensorflow/tfjs-models/tree/master/body-pix)
