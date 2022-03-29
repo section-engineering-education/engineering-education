@@ -4,7 +4,7 @@ status: publish
 published: true
 url: /comparing-okio's-okhttp3-and-retrofit-in-performing-network-calls/
 title: Okhttp3 vs Retrofit in Android
-description: This article will go through the Android localization process in great depth and how to apply best practices to your translation efforts.
+description: This article primarily compares Okio's okhttp3 library and Retrofit in terms of conducting network calls, the benefits and drawbacks of both libraries, which library is the best to use, and how both are implemented in Android.
 author: vivian-odhiambo
 date: 2022-03-29T00:00:00-04:00
 topics: [Languages]
