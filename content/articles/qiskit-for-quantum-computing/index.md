@@ -69,7 +69,7 @@ To get started online at IBM, we need to sign up [here](https://lab.quantum-comp
 
 > Remember your API token is your access code to IBM's quantum devices.
 
-You can get it by going to your `Profile` option on the top-right corner of the webpage and clicking the `Account details` option. In the API token section, you'll your API token hidden from view in asterics. Copy it and paste it inside the following code:
+You can get it by going to your `Profile` option on the top-right corner of the webpage and clicking the `Account details` option. In the API token section, you'll get your API token hidden from view in `***`. Copy it and paste it inside the following code:
 
 ```python
 from qiskit import IBMQ
