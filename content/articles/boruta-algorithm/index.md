@@ -1,23 +1,23 @@
 ### Getting Started with Boruta Algorithm in Machine Learning 
-Boruta is a Machine Learning algorithm used in feature selection. Feature selection is a process of reducing the number of features in a dataset by identifying features that largely influence the study variable. Feature selection is an important activity in machine learning. For instance, suppose we are required to perform analysis on genetic data. The dataset, in this case, can be tremendously huge, and fitting machine model on them can have significant challenges, which includes:
+Boruta is a Machine Learning algorithm used in feature selection. Feature selection is a process of reducing the number of features in a dataset by identifying features that largely influence the study variable. Feature selection is an important activity in machine learning. For instance, suppose we are required to perform analysis on genetic data. The dataset, in this case, can be tremendously huge, and fitting machine model on them can have significant challenges, which include:
 
-1. High computaional cost
-2. High processing time
-3. Also, machine learning methods that fit on high dimensional datasets tend to have poor performance than when fit on optimal features of the dataset.
+- High computaional cost
+- High processing time
+- Also, machine learning methods that fit on high dimensional datasets tend to have poor performance than when fit on optimal features of the dataset.
 
 We know that some analysis methods, such as those based on artificial neural networks, work well on large datasets. Due to computational cost, however, it is efficient to provide them with the factors that optimally explain the study variable. Feature selections should not be confused as the process leads to an inferior number of features from a large dataset. This activity is to obtain the optimal features, and this optimal set can also exist in large dimensionality, i.e., 90% of the original dataset.
 
-There are various methods used in feature selection. These methods fall into four broad categories:
-
-1. Filter methods
-
-2. Wrapper methods
-
-3. Embedded methods
-
-4. Hybrid methods
+There are various methods used in feature selection. These methods fall into four broad categories: Filter methods, Wrapper methods, Embedded methods, and Hybrid methods.
 
 This article will teach how to do feature selection using the Boruta algorithm and implement it in python.
+- [Getting Started with Boruta Algorithm in Machine Learning](#getting-started-with-boruta-algorithm-in-machine-learning)
+- [Prerequisites:](#prerequisites)
+- [Introduction to Boruta Algorithm](#introduction-to-boruta-algorithm)
+- [Python Implementation of Boruta Algorithm](#python-implementation-of-boruta-algorithm)
+- [Step 1: Creating a dataset as a pandas dataframe](#step-1-creating-a-dataset-as-a-pandas-dataframe)
+- [Step 2:  Creating Shadow Feature](#step-2--creating-shadow-feature)
+- [Step 3: Fitting the classifier:](#step-3-fitting-the-classifier)
+- [Conclusion](#conclusion)
 
 ### Prerequisites:
 To get along with this material comfortably, you need to be familiar with:
@@ -25,20 +25,20 @@ To get along with this material comfortably, you need to be familiar with:
 2. Basic knowledge in [Random forest](https://www.section.io/engineering-education/introduction-to-random-forest-in-machine-learning/)
 
 ### Introduction to Boruta Algorithm
-Boruta is a Wrapper method of the *Feature selection* built around the [Random Forest Classifier algorithm](https://www.section.io/engineering-education/introduction-to-random-forest-in-machine-learning/). So how does the Boruta algorithm work?
+Boruta is a Wrapper method of the *Feature selection* built around the [Random Forest Classifier algorithm](https://www.section.io/engineering-education/introduction-to-random-forest-in-machine-learning/). So, how does the Boruta algorithm work?
 
-In the beginning, the algorithm takes features of the original dataset and create a copy of them. On this copy, values in each column are shuffled to attain randomness. These shuffled features are known as **Shandow Features**. The shadow features are then merged with the original features to obtain a new feature space whose dimension is twice the original dataset. The diagram below clarifies the above discussion.
+In the beginning, the algorithm takes features of the original dataset and creates a copy of them. On this copy, values in each column are shuffled to attain randomness. These shuffled features are known as **Shandow Features**. The shadow features are then merged with the original features to obtain a new feature space whose dimension is twice the original dataset. The diagram below clarifies the above discussion.
 
-![image](boruta.png)
+![image](engineering-education/boruta-algorithm/boruta.png)
 
 Now, it builds a classifier(Random Forest Classifier) on these new features space which determines their importance using a statistical test, [Z-Sore](). Now, the algorithm checks if the real (the original) feature has higher importance than the maximum importance of shadow features, i.e., $(Z-Score_{original} > Z-Score_{Max\, shadow})$. If it's the case, the feature is considered significant thus kept; otherwise, it's insignificant, therefore, dropped from the dataset.
 
-The features that qualify in the first iteration creates the dataset used in the second iteration. The algorithm creates shadow features again using those features and determines their importance as it did in the first iteration. Some features are dropped while others are kept. This repeats until a specified number of iterations has been achieved or when all features have been confirmed or dropped. 
+The features that qualify in the first iteration create the dataset used in the second iteration. The algorithm creates shadow features again using those features and determines their importance as it did in the first iteration. Some features are dropped while others are kept. This repeats until a specified number of iterations has been achieved or when all features have been confirmed or dropped. 
 
 ### Python Implementation of Boruta Algorithm
 To make this session more friendly,  we will implement what we have learnt from scratch. We will generate a simple dataframe on which we will implement this algorithm. By the end of this session, we will fully understand how to implement the Boruta algorithm.
 
-#### Step 1: Creating a dataset as a pandas dataframe
+### Step 1: Creating a dataset as a pandas dataframe
 To create our dataframe, we need to import the pandas library.
 
 ```python
@@ -100,7 +100,7 @@ As we can see, the dataset consists of both columns in `X` and `X_shadow`.
 
 Next, we will fit a random classifier on this `X_boruta` dataset and compute the feature's importance. Note, to further simplify things; we can fit the classifier on both `X` and `X_shadow` separately.
 
-### Fitting the classifier:
+### Step 3: Fitting the classifier:
 We earlier mentioned the classifier we will fit is the random forest.
 
 ```python
@@ -168,6 +168,6 @@ This output means that only the first variable in `X`,i.e., `X1`, significantly 
 ### Conclusion
 In this article, we learned the basics of the Boruta algorithm and its implementation in python. Boruta is a powerful feature selection method with application in almost all datasets. Although it might be time-consuming, especially when data reduction is performed on a large dataset, the financial output is reliable.
 
-To this point, we bring to an end this session, hoping this discussion has been easy and clear to understand.
+To this point, this session came to an end. I hope this discussion has been easy and clear to follow. You can access the main code [here](https://github.com/nelsonnrl/program-center/blob/main/boruta.py)
 
 Happy Learning.
