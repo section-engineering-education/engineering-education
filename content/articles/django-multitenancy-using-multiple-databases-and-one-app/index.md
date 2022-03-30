@@ -1,13 +1,16 @@
-Multitenancy is whereby one web app installation can be used to serve more than one customer and, each customer's data and users are isolated from each other's. example: Imagine that you built a university web-based Library Management System, and you want to provide your services to many universities without having to rebuild and host the same system for each university.
+In this tutorial, we will learn how multitenancy is implemented in multiple databases with a shared Django app. Here, we will use MongoDB.
+<!--more-->
+Multitenancy is a property whereby a web application can serve more than one customer while having each customer's data and users isolated.
 
-Multitenancy would allow you to build one site and offer instances of your site to the universities in form of Software as a Service(SAAS) while keeping the data and users of each university isolated. Each university would be a tenant of your site hence the name `Multitenancy`.
+Let's imagine that you built a web-based Library Management System for your University, and you want to provide your services to other universities without having to rebuild and host the same application for each University.
 
-The goal of this tutorial is to show you how multitenancy can be implemented using multiple databases and a shared Django app. In our project, we shall use Mongo DB.
- > NB: This method is also compatible with any other DB that is supported by Django
+Here, we call each university to be a tenant of your application, hence the name `Multitenancy`.
 
-We shall start by building a simple app that records the details of students, and then lists them on a simple table. Then we shall implement multitenancy to the app. This way, you will get to have a first-hand experience of doing it.
+Multitenancy allows you to build one application and offer instances of the application to various customers as a Software as a Service (SaaS).
 
-### Table of content
+Now, let's start to build a simple application that records the details of students, and lists them on a table. Then, we shall implement multitenancy to the app.
+
+### Table of contents
 - [Prerequisites](#prerequisites)
 - [Creating the app](#step-1--creating-the-app)
   - [Setting up the enviroment](#11--setting-up-the-enviroment)
@@ -32,51 +35,53 @@ We shall start by building a simple app that records the details of students, an
 - [Conclusion](#conclusion)
 
 ### Prerequisites
-To follow through this tutorial productively, you will need to have:
-- Fundamental knowledge in both Python and Django
-- Any code editor that you are comfortable with.eg: VS Code
-- [Mongo Db](https://docs.mongodb.com/manual/administration/install-community/) installed in your Pc
-### Step 1: Creating the app
-#### 1.1 : Setting up the environment
-Using your terminal, create a directory for our project "`myProject`" using:
+To follow through this tutorial, you will need to have:
+- Fundamental knowledge in both Python and Django.
+- Any code editor that you are comfortable with.
+- [MongoDB](https://docs.mongodb.com/manual/administration/install-community/) installed in your PC.
+
+### Create application
+#### Setup the environment
+Using your terminal, create a new directory for our project `myProject` as shown:
+
 ```bash
 mkdir myProject
-```
-Change your current directory to `myProject`:
-```bash
 cd myProject
 ```
-Now create and activate the virtual environment using the following commands respectively:
+
+Now, create and activate the Python virtual environment using the following commands:
+
 ```bash
 py -m venv .venv
-```
-```bash
 .venv\Scripts\activate.bat
 ```
 
-#### 1.2 : Installing required packages
-Now we need to install `django` to be able to use the Django web development framework and `djongo` to help interface Django's Object Relation Model(ORM) with Mongo DB, which is a Non-Relational Model. To do that use the below commands:
+#### Install required packages
+Now, we need to install `django` web development framework and `djongo` to help interface Django's Object Relation Model (ORM) with MongoDB (a non-relational model).
+
+To install the libraries, follow the commands as shown:
+
 ```bash
 pip install django
-```
-```bash
 pip install djongo
 ```
 
-#### 1.3: Creating our project and app
-To create our Django project "`multitenant`", we shall use:
+#### Create our project and app
+Let's create our Django project in the directory `multitenant` as shown:
+
 ```bash
 django-admin startproject multitenant
-```
-Then change the current directory to the project directory:
-```bash
 cd multitenant
 ```
-Now we shall create our Django app `School` using 
+
+Then, we create our Django app `School` using:
+
 ```bash
 py manage.py startapp School
 ```
-After creating the `School` app, we need to register it in the list of installed apps in `settings.py` under `INSTALLED_APPS`:
+
+We need to register the app in the list of installed apps in `settings.py` under `INSTALLED_APPS`:
+
 ```py
 INSTALLED_APPS = [
     'django.contrib.admin',
@@ -88,45 +93,52 @@ INSTALLED_APPS = [
     'School'                  # new
 ]
 ```
-#### 1.4 : Connecting Django to Mongo DB
-In `settings.py` under `DATABASES`, delete the Mysqlite configurations and replace them with:
+
+#### 1.4 : Connect Django to MongoDB
+In `settings.py` under `DATABASES`, delete the MySQLite configurations and replace them with:
+
 ```py
 DATABASES = {
     'default': {'ENGINE': 'djongo','NAME': 'default',},
 }
 ```
-This tells Django that our initial database called `default` will use the `djongo` DB engine that we just installed above.
 
-#### 1.5: Adding and registering the models
-In `models.py` add a `Student` model into our app :
+The above snippet tells Django that the default database to be called will be `djongo`.
+
+#### Add and register the models
+In `models.py`, add a `Student` model into our app as shown:
+
 ```py
 from django.db import models
 
 class Student(models.Model):    
-    registation_no = models.CharField(max_length=255, unique=True)
+    registration_no = models.CharField(max_length=255, unique=True)
     first_name = models.CharField(max_length=255)
     second_name = models.CharField(max_length=255)
 
     def __str__(self):
-        return self.registation_no
+        return self.registration_no
 ```
-This model records the names of a student and their registration number.
 
-Now register the model in `admin.py`:
+This model records the names of a student and their registration number `registration_no`.
+
+Now, register the model in `admin.py` with Django's admin site along with the access to the database:
+
 ```py
 from django.contrib import admin
 from .models import Student
 
 class adminStudent(admin.ModelAdmin):
     # the list only tells Django what to list on the admin site
-    list_display = ["registation_no","first_name","second_name"]
+    list_display = ["registration_no","first_name","second_name"]
 
 admin.site.register(Student, adminStudent)
 ```
-Registering the models gives Django's admin site access to the database.
-While also registering the model, we told django-admin to display all the three model attributes while listing the added objects on the admin site.
-#### 1.6 : Creating a view
-In our `views.py`, we shall add a function-based view that shall fetch all the student objects, and return them along with the index page upon being called:
+
+While we register the model, the Django admin displays all the three attributes of the model.
+
+#### Create a view
+In our `views.py`, we add a function-based view that fetches all the student objects, and returns them along with the index page upon being called:
 
 ```py
 from django.shortcuts import render
@@ -139,8 +151,12 @@ def get_Students(request):
     }
     return render(request, 'index.html', context)
 ```
-#### 1.7 : Configuring the URLs
-We can now create the URL pattern which shall point to the view that we just created. In our app directory `School`, create a file named `urls.py`, and add the following code:
+
+#### Configure the URLs
+Now, we create the URL pattern that points to the view which we just created.
+
+In the app directory `School`, create a file named `urls.py` and add the following code:
+
 ```py
 from django.urls import path
 from .import views
@@ -149,7 +165,9 @@ urlpatterns = [
     path('',views.get_Students, name="index"),
 ]
 ```
-Now we need to point the root URL of our project to our app's URLs patterns. Modify the `urls.py` in our project-level directory "`multitenant`", to accommodate the root URL:
+
+Here, we point the root URL of the project to our app's URLs patterns. Modify the `urls.py` in the project-level directory `multitenant`, to accommodate the root URL:
+
 ```py
 from django.contrib import admin
 from django.urls import path, include
@@ -159,8 +177,12 @@ urlpatterns = [
     path('',include('School.urls'))
 ]
 ```
-#### 1.8 : Templating
-Create a directory named `templates` in our app level directory and create a HTML file named `index.html` inside it. We shall use the template to display the students data in a table styled by bootstrap. In `index.html` add the following code:
+
+#### Template
+Create a directory named `templates` in the app level directory and create a HTML file named `index.html` inside it.
+
+We will use the template to display the students data in a table styled by bootstrap. In `index.html` add the following code:
+
 ```HTML
 <!doctype html>
 <html lang="en">
@@ -168,7 +190,6 @@ Create a directory named `templates` in our app level directory and create a HTM
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
 
@@ -191,73 +212,83 @@ Create a directory named `templates` in our app level directory and create a HTM
             <th scope="row">{{student.id}}</th>
             <td>{{student.first_name}}</td>
             <td>{{student.second_name}}</td>
-            <td>{{student.registation_no}}</td>
+            <td>{{student.registration_no}}</td>
           </tr>
           {% endfor %}
-         
         </tbody>
       </table>
-
   </body>
 </html>
 ```
+
 In the above table, we used a `for` loop to populate the table's data from the available student objects. If there aren't any student objects created yet, the table won't display anything.
-#### 1.9: Running the project
-Now we shall run our Django project just to make sure that everything is working fine before we implement the multitenancy.
-We shall start by making the migrations then migrating using the following commands respectively:
-```py
+
+#### Run the project
+Now, we shall run the Django project just to make sure that everything is working fine before we implement the multitenancy.
+
+We shall start with migrating the project as shown:
+
+```bash
 py manage.py makemigrations
 ```
-> If you get the following errror:    
-    ```bash 
-    raise ImproperlyConfigured(
-    django.core.exceptions.ImproperlyConfigured: 'djongo' isn't an available database backend or couldn't be imported. Check the above exception. To use one of the 
-    built-in backends, use 'django.db.backends.XXX', where XXX is one of:
-        'mysql', 'oracle', 'postgresql', 'sqlite3'
-    ```
 
-Follow the below steps to resolve this, then repeat the command.
+If you get the following error:
+
+```bash 
+raise ImproperlyConfigured(
+django.core.exceptions.ImproperlyConfigured: 'djongo' isn't an available database backend or couldn't be imported. Check the above exception. To use one of the 
+built-in backends, use 'django.db.backends.XXX', where XXX is one of: 'mysql', 'oracle', 'postgresql', 'sqlite3'
+```
+
+Follow the below steps to resolve this, then repeat the command:
  
-1. Uninstall your default version of pymongo:
-    ```bash
-    pip uninstall pymongo
-    ```
-2. Replace it with `version 3.12.1`:
-    ```bash
-    pip install pymongo==3.12.1
-    ```
-3. Install `pytz`:
-    ```bash
-    pip install pytz
-    ```
+1. Uninstall your default version of `pymongo`:
 
-Now resume making your migrations after resolving the error:
-```py
+```bash
+pip uninstall pymongo
+```
+
+2. Reinstall it with version `3.12.1`:
+
+```bash
+pip install pymongo==3.12.1
+```
+
+3. Install `pytz`:
+
+```bash
+pip install pytz
+```
+
+Now, resume the migrations after resolving the error:
+
+```bash
 py manage.py makemigrations
 ```
-To create schemas for your DB
 
-Then also run
-```py
+To create schemas for your DB, run:
+
+```bash
 py manage.py migrate
 ```
-Which map the schemas onto your DB
 
-We will also add a superuser to our project so that we can add some students' data on the admin's site for testing our `index.html` page:
-```py
+We will add a superuser to enable adding the students data from the admin's site:
+
+```bash
 py manage.py createsuperuser
 ```
-Fill in the details that you shall use to log in to the admin site.
-Then finally run the project using:
-```
+
+Populate the details that you will use to log in to the admin site. Then, finally run the project using:
+
+```bash
 py manage.py runserver
 ```
 
-Now log in to the [admin](http://127.0.0.1:8000/admin/) site, add some students, then check the results on the [homepage](http://127.0.0.1:8000/).
+Log in to the [admin](http://127.0.0.1:8000/admin/) site, add some students, then check the results on the [homepage](http://127.0.0.1:8000/).
 
-Here is what mine looks like after adding a few students data: 
+Here is a sample screenshot of how the table looks like:
 
-![index.html](/engineering-education/django-multitenancy-using-multiple-databases-and-one-app/index.jpg)
+![index HTML page](/engineering-education/django-multitenancy-using-multiple-databases-and-one-app/index.jpg)
 
 ### Step 2: Implementing Multitenancy
 We are now going to add the ability of the site to handle more than one default tenant(Client), by assigning each client their database. By doing so, we are gonna have to tell Django where to get the data for each client. 
