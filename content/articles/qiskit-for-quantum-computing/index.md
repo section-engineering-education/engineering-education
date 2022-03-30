@@ -82,13 +82,14 @@ IBMQ.load_account()
 ```
 If the above code executes, you should be able to run code not just on your computer, but also by sending the quantum circuits that you build to IBM's quantum devices and getting results. 
 
-So, we can get started building our first quantum algorithm from the circuits library. 
+So, we can get started building our first quantum algorithm from the circuits library. We begin by importing the necessary dependencies that we will use in our project from Qiskit.
 
 ```python
-from qiskit import QuantumCircuit, QuantumRegister, ClassicalRegister
+from qiskit import QuantumCircuit, QuantumRegister, ClassicalRegister, Aer, execute
 from qiskit.visualization import plot_histogram
+from qiskit import IBMQ
 
-provider = IBMQ.load_account()
+IBMQ.load_account()
 ```
 Next, we build a two-qubit quantum register followed by a two-classical bit, classical register.
 
