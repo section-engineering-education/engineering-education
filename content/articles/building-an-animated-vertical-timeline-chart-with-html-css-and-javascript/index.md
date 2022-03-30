@@ -237,7 +237,7 @@ This is the expected view of the HTML content on your web browser:
 
 #### Step two: CSS styling
 ##### 2.1 Styling the vertical timeline chart
-The net step is to style your timeline chart using CSS to give it an aesthetic look. First, use the universal selector (*) to select all the elements. With this selector, we can set values for the margin, padding, and box-sizing attributes using the code below:
+The next step is to style your timeline chart using CSS to give it an aesthetic look. First, use the universal selector (*) to select all the elements. With this selector, we can set values for the margin, padding, and box-sizing attributes using the code below:
 /*use the universal selector to set some styles*/
 
 ```css
