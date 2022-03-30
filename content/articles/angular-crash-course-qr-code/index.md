@@ -1,13 +1,24 @@
-Quick Response code crash course using Angular 12
-### Introduction
-User authentications play a vital role when it comes to securing your application. 
+---
+layout: engineering-education
+status: publish
+published: true
+url: /angular-crash-course-qr-code/
+title: Quick Response code crash course using Angular 12
+description: In this course, we will learn how to create a QR code using Angular 12.
+author: owino-wendy
+date: 2022-03-30T00:00:00-17:10
+topics: [Languages]
+excerpt_separator: <!--more-->
+images:
 
-In addition to the existing authentication methods, Angular 12 comes with another simple yet powerful tool, the Quick Response code.
-
+  - url: /engineering-education/angular-crash-course-qr-code/hero.png
+    alt: QR Codes Angular 12
+---
+User authentications play a vital role when it comes to securing your application. In addition to the existing authentication methods, Angular 12 comes with another simple yet powerful tool, the Quick Response code.
+<!--more-->
 In this tutorial, we will learn how to create a quick response code that can be used to authenticate users or perform different tasks on an Angular SPA.
 
 ### Table of contents
-- [Introduction](#introduction)
 - [Table of contents](#table-of-contents)
 - [Prerequisites](#prerequisites)
 - [Objectives](#objectives)
@@ -172,7 +183,7 @@ Next, visit the `http://localhost:4200` URL in your browser.
 
 When you execute the above code, you will notice that a QR code is displayed, as shown in the screenshot below:
 
-![QR-Code](/engineering-education/angular-crash-course-qr-code/images/qr-code.png)
+![QR-Code](/engineering-education/angular-crash-course-qr-code/qr-code.png)
 
 ### Setting up the quick response code for an angular app
 In the previous section, we created a new component called `QrCodeScannerComponent` that we used to display the QR code scanner.
@@ -239,7 +250,7 @@ Now that we have the data, we need to add the following code to the `qr-code-sca
 
 We set the `[value]` property to the `qrCodeValue` property in the above code. This is the value defined in the controller that will be displayed in the QR code.
 
-![Final Output](/engineering-education/angular-crash-course-qr-code/final-output.png)
+![Final Output](/engineering-education/angular-crash-course-qr-code/output.png)
 
 ### Configure the QR code scanner for authentication
 Now that we have the QR code scanner working, we need to configure it to work for authentication.
@@ -283,3 +294,6 @@ This article has covered how to install and configure the quick response code.
 We have also covered how to use the quick response code in our application.
 
 We have seen how we can generate these QR codes for user authentication. You can improve your skills by implementing the QR code backend for an end to end test.
+
+---
+Peer Review Contributions by: [Miller Juma](/engineering-education/authors/miller-juma/)
