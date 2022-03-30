@@ -1,4 +1,4 @@
----
+﻿---
 layout: engineering-education
 status: publish
 published: true
@@ -43,7 +43,7 @@ The messages conveyed between the networking layers contain various data ranging
 #### The application layer
 As discussed earlier, the work of the consensus layer is to perform nodes validation. In contrast, the networking layer transmits messages. The application layer then passes transactions to networking and consensus layers.
 
-In this layer, the transactions happening on the blockchain are determined. They are then forwarded to the consensus layer. The consensus and application layer communication happen through an [Application Blockchain Interface](https://blog.cosmos.network/abci-the-application-blockchain-interface-f1bd8278cdd7) (ABCI). This interface is not limited to a specific programming language. Applications developed to operate on the cosmos network can interact with the base layers of the protocol. This is with disregard of the programming language used.
+In this layer, the transactions happening on the blockchain are determined. They are then forwarded to the consensus layer. The consensus and application layer communication happens through an [Application Blockchain Interface](https://blog.cosmos.network/abci-the-application-blockchain-interface-f1bd8278cdd7) (ABCI). This interface is not limited to a specific programming language. Applications developed to operate on the cosmos network can interact with the base layers of the protocol. This is with disregard for the programming language used.
 
 ### Pillars of the cosmos network
 #### Tendermint core
@@ -54,14 +54,14 @@ The Tendermint core and other vital components form an important building block 
 For instance, an ABCI application can assist in deploying the Ethereum codebases on the cosmos network. This will ensure that the challenges of transferring [EVM](https://ethereum.org/en/developers/docs/evm/) to the cosmos are dealt with.
 
 #### IBC protocol
-This [protocol](https://ibcprotocol.org/) handles interoperability between different blockchains in the cosmos network. It also sets up the interaction between blockchains through the [zone and hub model](https://www.preethikasireddy.com/post/how-does-cosmos-work-how-does-it-compare-to-bitcoin-and-ethereum-part-2). Hubs are used to manage different zones. There is indirect interaction between the zones through the use of IBC. The reason for indirect interaction is to ensure that the scalability of the blockchain is not affected.
+The [Inter‑Blockchain Communication Protocol (IBC)](https://ibcprotocol.org/) handles interoperability between different blockchains in the cosmos network. It also sets up the interaction between blockchains through the [zone and hub model](https://www.preethikasireddy.com/post/how-does-cosmos-work-how-does-it-compare-to-bitcoin-and-ethereum-part-2). Hubs are used to manage different zones. There is indirect interaction between the zones through the use of IBC. The reason for indirect interaction is to ensure that the scalability of the blockchain is not affected.
 
 [Cosmos hub](https://hub.cosmos.network/main/hub-overview/overview.html) can be regarded as the primary hub of the IBC protocol. It integrates various [deterministic blockchains](https://alacritys.net/2020/07/03/what-is-determinism-in-a-blockchain-network/) into the Cosmos hub. For non-deterministic blockchains such as [Ethereum](https://ethereum.org/en/) and [Bitcoin](https://bitcoin.org/en/), cosmos uses [peg zones](https://blog.cosmos.network/the-internet-of-blockchains-how-cosmos-does-interoperability-starting-with-the-ethereum-peg-zone-8744d4d2bc3f#:~:text=A%20peg%20zone%20is%20an,chains%20like%20Bitcoin%20or%20Ethereum.). Peg zones function as a link connecting the non-Tendermint based chains with the IBC protocol. Therefore, we can conclude that the IBC protocol allows interoperable blockchains through the cosmos hub.
 
 #### Cosmos SDK
 [Cosmos SDK](https://v1.cosmos.network/sdk) is another building block of the cosmos network. It significantly improves the innovation around the cosmos network. Developers do not have to develop applications from scratch. They can instead utilize the [cosmos PoS module](https://runtimeverification.com/blog/cosmos-modules-documentation/). Developers can also perform their customizations based on their needs and preferences.
 
-Since Cosmos SDK is modular in design, making blockchains easy to deploy. Developers utilize the cosmos SDK to develop blockchain applications. These applications include [Binance Chain](https://www.binance.com/en), [Terra](https://www.terra.money/), and [Kava](https://www.kava.io/).
+Cosmos SDK is modular in design, making blockchains easy to deploy. Developers utilize the cosmos SDK to develop blockchain applications. These applications include [Binance Chain](https://www.binance.com/en), [Terra](https://www.terra.money/), and [Kava](https://www.kava.io/).
 
 ### Popularly known projects built on cosmos network
 #### Sifchain
@@ -73,7 +73,7 @@ It is a multichannel [DEX](https://www.coinbase.com/learn/crypto-basics/what-is-
 The [protocol](https://bandprotocol.com/bandchain) uses web APIs to extract the data. The data is then transferred to other blockchain smart contracts. It has also unlocked a variety of cross-chain functionalities that developers can utilize. The band protocol has partnered with Terra and [Mirror](https://www.mirror.finance/) protocol as their top providers.
 
 #### pSTAKE
-Staked assets are not that liquid in the blockchain. This has not been easy for crypto-investors in years. [pStake](https://pstake.finance/) finance came to change the phenomena. They introduced a liquid staking protocol which is used in their cosmos environment. The protocol uses a [dual token model](https://phemex.com/academy/what-is-the-dual-token-model) whereby stakers can use their assets to issue one to one pegged representatives. It then prospects existing investment opportunities available in the [DeFi](https://www.coinbase.com/learn/crypto-basics/what-is-defi) ecosystem.
+Staked assets are not that liquid in the blockchain. This has not been easy for crypto-investors in years. [pStake](https://pstake.finance/) finance came to change the phenomena. They introduced a liquid staking protocol which is used in their cosmos environment. The protocol uses a [dual token model](https://phemex.com/academy/what-is-the-dual-token-model) whereby stakers can use their assets to issue one-to-one pegged representatives. It then prospects existing investment opportunities available in the [DeFi](https://www.coinbase.com/learn/crypto-basics/what-is-defi) ecosystem.
 
 [ATOM](https://www.kraken.com/learn/what-is-cosmos-atom) holders can maximize the efficiency of their capital through the pStake protocol, which also offers liquidity to different cross-chain DEXs using a [pBridge](https://docs.pstake.finance/Asset_Issuance_using_the_Bridge/). A pBridge forms a significant part of the protocol.
 
