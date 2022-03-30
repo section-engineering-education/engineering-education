@@ -35,7 +35,7 @@ The repository is the place where all the data is stored. It is tested to ensure
 #### Services
 This is the layer where all the business logic is implemented. It is tested to make sure that the business logic is correct.
 ### How to test controllers
-Let us now look at how to test controllers in Spring Boot. To accomplish this, you will need to import some dependencies using the `Spring Initializer` and `IntelliJ IDEA.` `IntelliJ IDEA` lets us create a Spring Boot application using the Spring Initializr service. Open `file>new>project` and select `Spring Initializr` as shown below:
+Let us now look at how to test controllers in Spring Boot. To accomplish this, you will need to import some dependencies using the `Spring Initializer` and `IntelliJ IDEA`. `IntelliJ IDEA` lets us create a Spring Boot application using the Spring Initializr service. Open `file>new>project` and select `Spring Initializr` as shown below:
 
 ![Spring Initializer](/engineering-education/getting-started-with-unit-testing-with-spring-boot/spring-Initializer.png)
 
@@ -45,8 +45,7 @@ Click next to proceed. Type *web* to search the required dependencies in the sea
 
 ![Spring Initializer](/engineering-education/getting-started-with-unit-testing-with-spring-boot/spring-Initializer-Dependency.png)
 
-We've prepared the environment successfully. Now we need to test the Controller.
-In `/src/main/java` create a new package named `Controller`. Proceed to create a Java class named `HelloContoller.java` in  `/src/main/java/Controller`. Within that file, add the code below:
+We've prepared the environment successfully. Now we need to test the controller. In `/src/main/java` create a new package named `Controller`. Proceed to create a Java class named `HelloContoller.java` in  `/src/main/java/Controller`. Within that file, add the code below:
 ```java
 package controller;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -84,9 +83,9 @@ class HelloControllerTest {
     }
 }
 ```
-So far, we have created a test without including Spring Boot. Let us generate another test using the `JUnit 5` extension, which will have Spring extensions provided by Spring.  
+So far, we have created a test without including the Spring context. Let us generate another test using the JUnit 5 extension, which will have Spring extensions provided by Spring.  
 
-Repeat the same procedure to generate another test. Name the second test as `HelloControllerIntTest.java.` In `/src/main/test/java/controller/HelloControllerIntTest.java`, modify the code as shown below:
+Repeat the same procedure to generate another test. Name the second test class `HelloControllerIntTest.java`. In `/src/main/test/java/controller/HelloControllerIntTest.java`, modify the code as shown below:
 ```java
 package controller;
 import org.junit.jupiter.api.Assertions;
@@ -119,13 +118,13 @@ Let us look at the code snippet above:
 - `@ExtendWith` is an annotation used to extend the test with the SpringExtension.
 - `@WebMvcTest` - This annotation auto-configures the MockMVC (so we can auto-wire it as in the code above). We specify the class we want to test.
 
-Let us run our Controller to be sure it works correctly.
+Let us run our controller to be sure it works correctly.
 
 > Note: If we use that structure to run the test, it will fail. Spring Boot will look for `@SpringBootConfiguration` at the package `/test/controller`, and it will not find it. To avoid this, let us redesign the directory structure. Move `/src/main/java/com.example.demo/DemoAplication.java` file to `/src/main/test/java/controller/`. Now, both the test and the application are in the same package.
 
-In the `HelloControllerIntTest` file, right click and run `hello()`. You should see the test passes as shown below:
+In the `HelloControllerIntTest.java` file, right click and run `hello()`. You should see the test passes as shown below:
 
 ![Test output](/engineering-education/getting-started-with-unit-testing-with-spring-boot/output.png)
 
 ### Conclusion
-Congratulations! 🚀 You have successfully tested the Controller. There are various ways to create unit tests in Spring Boot. This tutorial has involved MockMVC to write the unit test.
+Congratulations! 🚀 You have successfully tested the controller. There are various ways to create unit tests in Spring Boot. This tutorial has involved MockMVC to write the unit test.
