@@ -595,10 +595,10 @@ With the addition of the code above, there should be an animation effect on the 
 
 #### Step five: Making the timeline chart responsive
 The next step is to make the timeline mobile-friendly. This tutorial considers two screen sizes:
-- 600 < X < 900px be for mobile screens.
-- >600px be for the tablet screens.
+- 600 < X < 900px be for tablet screens.
+- < 600px be for the mobile screens.
 
-First, we consider the tablet screen, where the only modification is reducing the width of the event cards. The next step is to make the timeline mobile-friendly. We will use media queries considering two screen sizes - greater than 600px but less than 900px, which represents tablet screens, and greater than 600px, which represents mobile screens. Here is the code for the tablet screens:
+First, we consider the tablet screen, where the only modification is reducing the width of the event cards. The next step is to make the timeline mobile-friendly. We will use media queries considering two screen sizes - greater than 600px but less than 900px, which represents tablet screens, and less than 600px, which represents mobile screens. Here is the code for the tablet screens:
  
 ```css
 /* Tablet Width */
