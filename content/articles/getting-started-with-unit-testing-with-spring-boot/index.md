@@ -67,7 +67,7 @@ Let us look at the code snippet above:
 
 Let us now generate the controller test.  In the `HelloController.java` file, right-click and select `Generate..>Test..` in the menu. Select the available method (which we want to test) under the member and click ok.
 
-![springInitializer](/engineering-education/getting-started-with-unit-testing-with-spring-boot/testing.png)
+![Spring Initializer](/engineering-education/getting-started-with-unit-testing-with-spring-boot/testing.png)
 
 A new file `/src/main/test/java/controller/HelloControllerTest.java` will be created. Modify the file to have the code below:
 ```java
@@ -125,7 +125,7 @@ Let us run our Controller to be sure it works correctly.
 
 In the `HelloControllerIntTest` file, right click and run `hello()`. You should see the test passes as shown below:
 
-![TestOutput](/engineering-education/getting-started-with-unit-testing-with-spring-boot/output.png)
+![Test output](/engineering-education/getting-started-with-unit-testing-with-spring-boot/output.png)
 
 ### Conclusion
 Congratulations! 🚀 You have successfully tested the Controller. There are various ways to create unit tests in Spring Boot. This tutorial has involved MockMVC to write the unit test.
