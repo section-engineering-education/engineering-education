@@ -35,7 +35,7 @@ To follow through this article, the reader should have:
 ### Fields of NLP
 Below are the core fields of NLP:
 1. **Natural language generation(NLG)**: NLG is a specialty in artificial intelligence. It is a software technology that automatically transforms data into simple English.
-2. **Natural language understanding(NLU)**: It is a branch of natural language processing (NLP) that helps computers understand and interpret human language by breaking speech into its constituent parts. However, NLU goes further than speech recognition to understand what the user is trying to communicate with their words.
+2. **Natural language understanding(NLU)**: Is a branch of natural language processing (NLP) that helps computers understand and interpret human language by breaking speech into its constituent parts. However, NLU goes further than speech recognition to understand what the user is trying to communicate with their words.
 3. **Natural language interaction(NLI)**: To engage with any connected device or service in a humanlike manner, NLI brings together a varied collection of natural language principles.
 
 ### Types of bots
@@ -76,7 +76,7 @@ nltk.download("wordnet")# word database
 ```
 
 #### Step two: Creating a JSON file
-In this step, we will create an intents JSON file that lists all the possible outcomes of user interactions with our chatbot. We first need a set of tags that users can use to categorize their queries. These tags include `name`, `age`, and many others. Every new tag would require a unique pattern. 
+This step will create an intents JSON file that lists all the possible outcomes of user interactions with our chatbot. We first need a set of tags that users can use to categorize their queries. These tags include `name`, `age`, and many others. Every new tag would require a unique pattern. 
 
 Identifying these trends can help the chatbot train itself on how people query about our chatbot's name, allowing it to be more responsive. The chatbot will return pre-programmed responses to answer questions.
 
@@ -247,10 +247,13 @@ while True:
 ### Wrapping up
 By following this article's explanation of ChatBots, their utility in business, and how to implement them, we may create a primitive Chatbot using Python and the Chatterbot Library. Anyone interested in gaining a better knowledge of conversational artificial intelligence will benefit greatly from this article.
 
-The code to this project is available [here](https://colab.research.google.com/drive/1ZacaIPOx5cKcDNjEpaljR-IpvfndpVPS?usp=sharing).
+The code for this project is available [here](https://colab.research.google.com/drive/1ZacaIPOx5cKcDNjEpaljR-IpvfndpVPS?usp=sharing).
 
 Happy coding!
 
-### Reference
+### Further reading
 - Benefits of [chatbots](https://research.aimultiple.com/chatbot-benefits/).
 - Simple [Chatbot](https://towardsdatascience.com/a-simple-chatbot-in-python-with-deep-learning-3e8669997758) In Python.
+
+---
+Peer Review Contributions by: [Briana Nzivu](/engineering-education/authors/briana-nzivu/)
