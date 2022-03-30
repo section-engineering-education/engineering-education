@@ -285,6 +285,18 @@ cd test
 start index.html
 ```
 The command above will open the stopwatch in your default browser.
+If that did not work as expected, install the `http-server` package by running the command below:
+
+```bash
+npm install http-server -g
+```
+Once that is completed, start the server by running:
+
+```bash
+cd test
+http-server
+```
+Then open your browser and go to `https://localhost:8080` to view the stopwatch.
 
 ### Step 7 – publishing the custom Stopwatch library to NPM
 Finally, the last step in this tutorial is to publish the custom stopwatch package to NPM. before we go ahead and do that, first ensure you created an account with NPM, if you do not have one, go to the [sign up page](https://www.npmjs.com/signup/) to create one. If you already have one, let's login in by running the command below:
