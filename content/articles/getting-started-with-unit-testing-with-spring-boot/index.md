@@ -37,13 +37,13 @@ This is the layer where all the business logic is implemented. It is tested to m
 ### How to test controllers
 Let us now look at how to test controllers in Spring Boot. To accomplish this, you will need to import some dependencies using the `Spring Initializer` and `IntelliJ IDEA.` `IntelliJ IDEA` lets us create a Spring Boot application using the Spring Initializr service. Open `file>new>project` and select `Spring Initializr` as shown below:
 
-![Spring Initializer](/engineering-education/getting-started-with-unit-testing-with-spring-boot/springInitializer.png)
+![Spring Initializer](/engineering-education/getting-started-with-unit-testing-with-spring-boot/spring-Initializer.png)
 
 > Note: You can rename the Package name.
 
 Click next to proceed. Type *web* to search the required dependencies in the search bar. Select *Spring Web*, *Spring Reactive Web*, *Spring Web Services*, and click *finish* to download the initializr template:
 
-![Spring Initializer](/engineering-education/getting-started-with-unit-testing-with-spring-boot/springInitializerDependency.png)
+![Spring Initializer](/engineering-education/getting-started-with-unit-testing-with-spring-boot/spring-Initializer-Dependency.png)
 
 We've prepared the environment successfully. Now we need to test the Controller.
 In `/src/main/java` create a new package named `Controller`. Proceed to create a Java class named `HelloContoller.java` in  `/src/main/java/Controller`. Within that file, add the code below:
