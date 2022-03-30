@@ -14,12 +14,12 @@ topics: [Languages]
 excerpt_separator: <!--more-->
 images:
 
-  - url: /engineering-education/building-an-animated-vertical-timeline-chart-with-html-css-and-javascript/hero.jpg
+  - url: /engineering-education/building-an-animated-vertical-timeline-chart-with-html-css-and-javascript/hero.png
     alt: Building an animated vertical timeline chart with HTML, CSS and JavaScript Hero Image
 ---
 Have you ever considered making a visual representation of your accomplishments throughout your career? 
 <!--more-->
-If that is the case, you will only need a timeline chart where you can easily incorporate all of your accomplishments in a single link using a timeline. The résumé, portfolio, and timeline chart are the primary visual representations of our accomplishments and experiences. In this article, we will use `HTML5`, `CSS3` (glassmorphism implementation), and `Vanilla JavaScript` to create a vertical timeline chart for storing your accomplishments and experiences.
+If that is the case, you will only need a timeline chart where you can easily incorporate all of your accomplishments in a single link using a timeline. The résumé, portfolio, and timeline chart are the primary visual representations of our accomplishments and experiences. This article will use `HTML5`, `CSS3` (glassmorphism implementation), and `Vanilla JavaScript` to create a vertical timeline chart for storing your accomplishments and experiences.
 
 ### Table of contents
 - [Prerequisites](#prerequisites)
@@ -236,8 +236,8 @@ This is the expected view of the HTML content on your web browser:
 ![Html content design](/engineering-education/building-an-animated-vertical-timeline-chart-with-html-css-and-javascript/html-content.png)
 
 #### Step two: CSS styling
-##### Styling the vertical timeline chart
-The next step is to style your timeline chart using CSS to give it an aesthetic look. First, use the universal selector (*) to select all the elements. With this selector, we can set values for the margin, padding, and box-sizing attributes using the code below:
+##### 2.1 Styling the vertical timeline chart
+The net step is to style your timeline chart using CSS to give it an aesthetic look. First, use the universal selector (*) to select all the elements. With this selector, we can set values for the margin, padding, and box-sizing attributes using the code below:
 /*use the universal selector to set some styles*/
 
 ```css
@@ -276,7 +276,7 @@ body {
 }
 ```
 
-##### Styling the header section
+##### 2.2 Styling the header section
 Inside the header section (with a class named `intro-text`), you have a `div` tag with a class named `container` that contains an `h1` tag and a `p` tag where the introductory header and introductory text are embedded, respectively. 
 
 Here is the code to style the header section of this timeline chart: 
@@ -309,7 +309,7 @@ This should be the look of your timeline so far:
 
 ![Html screenshot design](/engineering-education/building-an-animated-vertical-timeline-chart-with-html-css-and-javascript/html-screenshot.png)
 
-#### Styling the `timeline-section`
+##### 2.3 Styling the `timeline-section`
 Start by specifying a value for the `width` property of the `timeline-section`, as well as the value `hidden` for the `overflow` property, as shown below:
 ```CSS
 .timeline-section {
@@ -318,7 +318,7 @@ Start by specifying a value for the `width` property of the `timeline-section`, 
 }
 ```
 
-Next, target the `ul` tag inside the `section` tag with the class named `timeline-section`. This `ul` tag contains all the timeline events. The attributes to include in the targeted `ul` tag style are the `background-color` and the `padding*`.
+Next, target the `ul` tag inside the `section` tag with the `timeline-section` class. . This `ul` tag contains all the timeline events. The attributes to include in the targeted `ul` tag style are the `background-color` and the `padding*`.
 
 Here is the code to target and style the `ul` (unordered list):
 ```CSS
@@ -329,6 +329,7 @@ Here is the code to target and style the `ul` (unordered list):
 ```
 
 Next, define some basic styles for the list items (timeline events) including the *after* elements.
+
 ```CSS
 /*styling the list*/
 .timeline-section ul li {
@@ -355,7 +356,7 @@ Next, define some basic styles for the list items (timeline events) including th
 }
 ```
 
-We divide the CSS code above into two code blocks. The first code block aligns the list items to the page's center and adds a blue vertical line with a `width` of 5px at the center of the page. Following the CSS styles you have added to your timeline so far, this is the expected view of your chart at this point:
+We divide the CSS code above into two code blocks. The first code block aligns the list items to the page's center and adds a blue vertical line with a `width` of 5px at the center of the page. Following the CSS styles added to your timeline so far, this is the expected view of your chart at this point:
 
 ![Present timeline design](/engineering-education/building-an-animated-vertical-timeline-chart-with-html-css-and-javascript/present-timeline-screenshot.png)
 
@@ -592,13 +593,12 @@ In addition, the `translateX()` will be used to move the event cards 20rem (whic
 
 With the addition of the code above, there should be an animation effect on the timeline chart.
 
-### Making the timeline chart responsive
+#### Step five: Making the timeline chart responsive
 The next step is to make the timeline mobile-friendly. This tutorial considers two screen sizes:
 - 600 < X < 900px be for mobile screens.
 - >600px be for the tablet screens.
 
-First, we consider the tablet screen, where the only modification is reducing the width of the event cards. The next step is to make the timeline mobile-friendly. We will use media queries considering two screen sizes - greater than 600px but less than 900px, which represents tablet screens, and greater than 600px, which represents mobile screens.
-First, we consider the tablet screen, where the only modification is reducing the width of the event cards. Here is the code for the tablet screens:
+First, we consider the tablet screen, where the only modification is reducing the width of the event cards. The next step is to make the timeline mobile-friendly. We will use media queries considering two screen sizes - greater than 600px but less than 900px, which represents tablet screens, and greater than 600px, which represents mobile screens. Here is the code for the tablet screens:
  
 ```css
 /* Tablet Width */
@@ -863,6 +863,10 @@ time {
 The source code of this project application is available on [GitHub](https://github.com/shegz101/Vertical-timeline/tree/main).
 
 ### Conclusion
-This tutorial showed you how to build a timeline chart using HTML to build its structure, CSS to style it as desired and JavaScript to animate the chart.
+This tutorial showed you how to build a timeline chart using HTML to build its structure, CSS to style it as desired, and JavaScript to animate the chart.
 
 You also learned how to create a method that detects if an element is in the viewport. We used the CSS `visibility` and `opacity` properties and the `translateX()` function to add animation effects. With that, you have an animated vertical timeline chart. 
+
+Happy coding!
+---
+Peer Review Contributions by: [Briana Nzivu](/engineering-education/authors/briana-nzivu/)
