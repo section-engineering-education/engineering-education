@@ -6,7 +6,7 @@ url: /understanding-blockchains-interoperability-via-cosmos-network/
 title: Understanding Blockchains Interoperability via Cosmos Network
 description: This guide will discuss how to examine the cosmos network in achieving interoperability between blockchains.
 author: lewel-murithi
-date: 2021-03-10T00:00:00-12:00
+date: 2021-03-30T00:00:00-22:00
 topics: [Blockchain]
 excerpt_separator: <!--more-->
 images:
@@ -23,7 +23,7 @@ Most interoperability approaches do not impact network efficiency, upgradeabilit
 ### Overview of cosmos network
 Cosmos network refers to the architecture that enables different blockchains to communicate and exchange data. The main aim of the cosmos network is to develop a network where blockchains will do away with computers. For this reason, different blockchains will no longer compete as they will work in the same environment.
 
-An independent design method is followed when developing blockchains in the cosmos environment. The design method ensures that the [application layer](https://coinmarketcap.com/alexandria/article/what-are-application-layer-protocols) is independent of the [consensus](https://www.coindesk.com/markets/2017/03/04/a-short-guide-to-blockchain-consensus-protocols/) and [networking](https://www.researchgate.net/figure/The-network-layer-of-a-blockchain-system-is-characterized-by-the-P2P-network-topology_fig1_327484523) layers. Thus, developers can create custom applications based on their preferences and flexibility.
+They follow an independent design method when developing blockchains in the cosmos environment. The design method ensures that the [application layer](https://coinmarketcap.com/alexandria/article/what-are-application-layer-protocols) is independent of the [consensus](https://www.coindesk.com/markets/2017/03/04/a-short-guide-to-blockchain-consensus-protocols/) and [networking](https://www.researchgate.net/figure/The-network-layer-of-a-blockchain-system-is-characterized-by-the-P2P-network-topology_fig1_327484523) layers. Thus, developers can create custom applications based on their preferences and flexibility.
 
 Furthermore, the cosmos network makes application development easy since it offers the required tools and platforms. Therefore, developers can use existing blockchains in the cosmos network to ensure its liquidity and adoption over the shortest time possible.
 
@@ -33,10 +33,10 @@ The interoperability and sovereignty of the cosmos ecosystem depend on the block
 #### The consensus layer
 Cosmos network is made up of independent blockchains. They use a consensus algorithm known as [Tendermint](https://blog.cosmos.network/tendermint-explained-bringing-bft-based-pos-to-the-public-blockchain-domain-f22e274a0fdb), which is different from the [Ethash](https://academy.bit2me.com/en/what-is-the-algorithm-of-ethash-mining/) and [Nakamoto](https://medium.com/nakamo-to/nakamoto-consensus-21cd304f96ff) algorithms. In these two algorithms, blocks cannot be finalized instantly. Instead, Tendermint allows the blocks to be finalized upon the validators' votes. This makes the network more secure.
 
-Furthermore, the consensus layer is concerned with security. If the [PoW](https://www.fool.com/investing/stock-market/market-sectors/financials/cryptocurrency-stocks/proof-of-work) chain is divided into two, the network auto-picks the longest chain as a primary chain. Then the transactions performed on the secondary chain are reversed. The case is different with the Tendermint algorithm, where the network only resumes its operations when two-thirds of validators reach consensus. This ensures a consistency of truth even if there is a network partition.
+Furthermore, the consensus layer is concerned with security. If the [PoW](https://www.fool.com/investing/stock-market/market-sectors/financials/cryptocurrency-stocks/proof-of-work) chain is divided into two, the network auto-picks the longest chain as a primary chain. Then the transactions performed on the secondary chain are reversed. The case is different with the Tendermint algorithm, where the network only resumes its operations when two-thirds of validators reach a consensus. This ensures a consistency of truth even if there is a network partition.
 
 #### The networking layer
-In this layer, the consensus process is involved. The nodes that are referred to as [non-validator nodes](https://loomx.io/developers/en/non-validator-node.html#validator-and-non-validator-nodes) contribute to the process.
+In this layer, the consensus process is involved. The [non-validator nodes](https://loomx.io/developers/en/non-validator-node.html#validator-and-non-validator-nodes) contribute to the process.
 
 The messages conveyed between the networking layers contain various data ranging from blocks, proposals, and even consensus votes. The [validator nodes](https://learn.radixdlt.com/article/what-is-a-validator-node) work alongside the non-validator nodes. This allows efficient interaction between the nodes, and network peers can quickly access the latest messages and transactions.
 
