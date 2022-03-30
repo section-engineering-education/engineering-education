@@ -279,7 +279,7 @@ When you run the code abovd, the output should be as shown below:
 ### Conclusion
 In this tutorial, we have discussed the differences between okio's okhttp3 library and Retrofit library in performing network calls. The advantages and disadvantages of both libraries, Factors to consider when choosing a network call and how both are implemented in android.
 
-Get the full code on this GitHub [Repository](https://github.com/nia-vee/Okhttp3RetrofitDemo).
+Get the full code on this GitHub [Repository](https://github.com/nia-vee/Okhttp3-Retrofit-Demo).
 
 ---
 Peer Review Contributions by: [Peter Kayere](/engineering-education/authors/peter-kayere/)
