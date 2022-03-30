@@ -6,7 +6,7 @@ url: /nextjs-dnd-file-upload/
 title: How to Implement Drag and Drop File Upload in Next.js
 description: In this tutorial, we will learn how to create a file upload dropzone component in Next.js using the Drag and Drop API's. 
 author: gisiora-elvis
-date: 2022-03-22T00:00:00-18:10
+date: 2022-03-30T00:00:00-23:10
 topics: []
 excerpt_separator: <!--more-->
 images:
@@ -152,7 +152,7 @@ The logic to handle and manage the state (the selected files) will be contained 
 
 Here is the UI of the application up to this point:
 
-![The dropzone ](/content/articles/nextjs-dnd-fileupload/dropzone.png)
+![The dropzone ](/content/articles/nextjs-dnd-file-upload/dropzone.png)
 
 ### Managing state
 To keep track of the dropped files, you will need to manage the state of the application. We will keep track of the following states:
