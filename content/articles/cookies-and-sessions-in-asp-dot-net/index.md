@@ -6,7 +6,7 @@ url: /cookies-and-sessions-in-asp-dot-net/
 title: How to Create Cookies and Sessions in ASP.NET
 description: This tutorial will walk the reader through how to create cookies and sessions in ASP.NET.
 author: stanley-kuria
-date: 2022-03-21T00:00:00-16:45
+date: 2022-03-30T00:00:00-01:30
 topics: [Languages]
 excerpt_separator: <!--more-->
 images:
@@ -14,14 +14,15 @@ images:
   - url: /engineering-education/cookies-and-sessions-in-asp-dot-net/hero.png
     alt: How to Create Cookies and Sessions in ASP.NET Hero Image
 ---
-Cookies are small tokens of data that are stored on the clients computer, they're used to store user data on the client end. 
+Cookies are small tokens of data that are stored on the computer. They are used to store user data on the client end. 
 <!--more-->
-Name, user id, contacts, address etc. are examples of data stored on the client computer.
-ASP.NET supports two sets of cookies; persistent and non-persistent. 
+Some of the details stored on the client's computer include *name, user id, contacts*, and *address*.
 
-Cookies that have an expiry date are referred to as persistent cookies, while those that don't expire are known as non-persistent cookies.
+ASP.NET supports two sets of cookies; *persistent* and *non-persistent*. 
 
-A session is a state from where user values are retrieved and kept on the webpage, it is used to pass data from one page to another in ASP.NET.
+Cookies that have an expiry date are referred to as *persistent cookies*, while those that don't expire are known as *non-persistent cookies*.
+
+A session is a state where user values are retrieved and kept on the webpage. It is used to pass data from one page to another in ASP.NET.
 
 A website session allows users to interact with the application and perform operations such as reading and writing on it.
 
@@ -34,14 +35,12 @@ A website session allows users to interact with the application and perform oper
 - [Conclusion](#conclusion)
 
 ### Prerequisites
-To follow along with this tutorial, the reader will need the following:
-- A basic background knowledge in C# and .NET programming language.
-- Have [Visual Studio](https://my.visualstudio.com/Downloads?q=Visual%20Studio%202017) installed on your computer.
+To follow along with this tutorial, the reader needs:
+- Some basic knowledge in *C#* and *.NET* programming language.
+- [Visual Studio](https://my.visualstudio.com/Downloads?q=Visual%20Studio%202017) installed on your computer.
 
 ### Creating cookies in ASP.NET
-The `Response.cookies` is used to create a cookie in ASP.NET.
-
-- Create the name of the cookies, and assign the value as shown below.
+The `Response.cookies` is used to create a cookie in ASP.NET. We assign a value to the cookie, as shown below.
 
 ```cs
 <%
@@ -49,9 +48,9 @@ Response.cookies("StudentName") = "StanleyWambui"
 %>
 ```
 
-Our cookie's name is `StudentName` and its value is `Stanley Wambui`.
+In the above example, our cookie's name is `StudentName` and its value is `Stanley Wambui`.
 
-- Next, set the expiry date of the cookies. As shown below.
+Next, we set the expiry date of the cookies, as highlighted below:
 
 ```cs
 <%
@@ -60,10 +59,10 @@ Response.cookies("StudentName").Expires =#May 05 2022#
 %>
 ```
 
-From the code above we set the cookies expiration date to `May 05, 2022`.
+In the above code, we set the cookies' expiration date to `May 05, 2022`.
 
 #### Retrieving value of cookies
-The `Request.cookies` command is applied to reveal the value of cookies. We are retrieving the cookies named `StanleyWambui` to display on the page.
+The `Request.cookies` command is applied to reveal the cookies' value. We are retrieving the cookies named `StanleyWambui` to display on the page.
 
 ```cs
 <%
@@ -75,7 +74,7 @@ Response.write("StudentName" = &FirstName)
 The output will be `StudentName Stanley Wambui`.
 
 #### Creating collection of cookies
-It's possible to create a collection of cookies, rather than careating it one at a time-consuming time. The code below shows the creation of multiple cookies in ASP.NET
+It's possible to create a collection of cookies, rather than one at a time. The code below shows the creation of multiple cookies in ASP.NET.
 
 ```cs
 <%
@@ -87,16 +86,16 @@ Response.cookies("StudentName")("Registration") = "380940"
 ```
 
 #### Creating cookies for browsers that don't support cookies
-For browsers that don't support cookies, in such case there are alternative techniques on how to create cookies.
-Only two alternatives are available, either generating a form or parameterizing the URL.
-Parameterizing is shown below. it involves attaching parameters in the URL.
+There are alternative techniques for creating cookies for incompatible browsers. The first method involves generating a form or parameterizing the URL.
+
+Parameterizing involves attaching parameters in the URL, as shown below:
 
 ```html
 <a href = "About us - Tuko.asp? FileName = Section&LinkName = Blog">
 Go to Tuko About us page </a>
 ```
 
-This will retrieve values of the file "About us-Tuko.asp" as shown below,
+This will retrieve values of the file `About us-Tuko.asp':
 
 ```cs
 <%
@@ -107,8 +106,7 @@ response.write("<p> Hakuna Matata website!</p>)
 %>
 ```
 
-- Generating a form
-The form is generated as shown in the code below.
+In the second technique, a form is generated as shown in the code below:
 
 ```cs
 <form
@@ -119,7 +117,7 @@ SirName: <input type="text" name="kuria" value="">
 </form>
 ```
 
-Retrieve values of the file "About us-Tuko.asp" as shown below,
+We retrieve the values of the file `About us-Tuko.asp` as follows:
 
 ```cs
 <%
@@ -132,64 +130,62 @@ response.write("<p> Hakuna Matata Tuko!</p>)
 
 ### Properties of cookies
 Below are some common properties of cookies in ASP.NET:
-- Value: manipulates a single cookie.
-- values: handles the collection of cookies and manipulates the collection.
-- Expire: used to set the expiry date of cookies.
-- Domain: associates cookies to the domain.
+- *Value*: Manipulates a single cookie.
+- *Values*: Handles and manipulates a collection of cookies.
+- *Expire*: Used to set the expiry date of cookies.
+- *Domain*: Associates cookies to the domain.
 
 ### Initiation and termination of a session
-A Session gets initiated when a user hits an application for the first time.
+A Session gets initiated when a user initializes an application for the first time.
 
-If the user is inactive on the same application the session memory is allocated to the user. A session with a dormant user gets terminated automatically. When the user visits the application again there will be no need to create a new session, but it will continue from the previous session created.
+If the user is active on the same application, the session memory is allocated to the user. 
+
+A session with a dormant user gets terminated automatically. When the user revisits the application, there is no need to create a new session.
 
 This is how sessions are initiated in ASP.NET:
-- User request URL that identifies the ASP.NET file on the website. `Session_Onstart` procedure call is used.
+- When a user makes a request, the `Session_Onstart` procedure call is used.
 - User values are then stored by session objects.
-- Server receives requests, the request doesn't have a valid `sessionID` and the session is automatically initiated.
-- Object is initiated with its session using the  < OBJECT > tag applied to initiate an object in the `global.asa` file.
+- The server receives requests and initiates a session when the request doesn't have a valid `sessionID`.
+- An object is initiated with its session using the <OBJECT> tag in the `global.asa` file.
 
 Session termination:
-- When a user stays on a web application as long and doesn't refresh the page, the session gets terminated.
-- The webserver experiences an error and collapses, all user sessions get terminated.
-- Sessions get timed out, leads to session termination. Usually, a session is valid for 20 minutes. Session timeout can be reduced manually using the timeout property. Allocating less session timeout reduces strain in server resources.
-- Session can also be terminated intentionally using the quit button in the application.
-- Stateless sessions get eliminated automatically. A stateless session is a session that does not have any state.
+- When a user fails to refresh a web page for a specific period, the session gets terminated.
+- The webserver experiences an error and shuts down. As a result, all user sessions get terminated.
+- Session can also be terminated intentionally when the user quits the application.
+- A stateless session does not have any state. They are usually eliminated automatically
 
 ### Implementation of sessions in ASP.NET
-Below is a step-by-step guide on how sessions are implemented using ASP.NET.
+Below is a step-by-step guide on how to implement sessions in ASP.NET.
 
 #### Step 1
-Open Visual Studio IDE, click file then select new project. After that, choose ASP.NET Application and press ok.
+Open *Visual Studio IDE*, click *file* then select a *new project*. Next, choose an *ASP.NET* Application and press *ok*.
 
 ![step-one](/engineering-education/cookies-and-sessions-in-asp-dot-net/step-one.png)
 
-As shown in the image above, we selected ASP.NET WebApplication(.NET Framework).
-
 #### Step 2
-Select empty as shown below and click ok and wait for a moment.
+Select *empty* as shown below and then click *ok* and wait for a moment.
 
 ![step-two](/engineering-education/cookies-and-sessions-in-asp-dot-net/step-two.png)
 
-As you can see in the image above, we choose "Empty Activity" to build on.
-
 #### Step 3
-Right-click on the web application, and then click add. Select web form, rename the webform1 to Main and press enter.
+Right-click on the *web application*, and then click *add*. Select *web form*, rename the *webform1* to *Main* and press *enter*.
 
 ![step-three](/engineering-education/cookies-and-sessions-in-asp-dot-net/step-three.png)
 
-After right-clicking on the WebApplication at the right side of the IDE, a popup modal will be shown, select `add` and another popup shows up we select web form at the bottom.
+After right-clicking on the *WebApplication* on the IDE, a popup modal will be shown. We then click on the `add` button which launches another popup.
 
 #### Step 4
-Click design and Select toolbox on the left corner of the IDE. 
+Click *design* and select *toolbox* on the left corner of the IDE. 
 
-Drag and drop a label followed by a TextBox, rename the label as `Username`.
-Add another label and an input(password) box, rename the label as `PIN`. Also, add a button and rename it as `Submit`. Then double-click the submit button to implement the design.
+Drag and drop a `label` followed by a `TextBox`, rename the label as `Username`. Add another `label` and an input(password) box, rename the label as `PIN`. 
 
-Your design should look like the image below.
+Also, add a button and rename it as `Submit`. Then double-click the submit button to implement the design.
+
+Your design should appear as follows:
 
 ![step-four](/engineering-education/cookies-and-sessions-in-asp-dot-net/step-four.png)
 
-In the image above you will see two labels, `Username` and `Pin`, two text boxes, and a `Submit` button.
+In the above image, there are two labels, `Username` and `Pin`, two text boxes, and a `Submit` button.
 
 ```html
 <%@ Page Language="C#" AutoEventWireup="true" CodeBehind="main.aspx.cs" Inherits="WebApplication3.main" %>
@@ -224,15 +220,13 @@ In the image above you will see two labels, `Username` and `Pin`, two text boxes
 ```
 
 #### Step 5
-Create one more web form. Right-click on the web application, select `add` and a web form. Rename the webform as `recvd` and click ok.
+We need to create one more web form. Right-click on the web application, and add a web form. Rename the webform as `recvd` and click *ok*.
 
 ![step-five](/engineering-education/cookies-and-sessions-in-asp-dot-net/step-five.png)
 
-From the image above, we right-clicked on WebApplication and selected `add`, we added another web form.
-
 ![step-five-a](/engineering-education/cookies-and-sessions-in-asp-dot-net/step-five-a.png)
 
-From the image above we renamed the new web form created.
+We renamed the new web form, as shown above.
 
 #### Step 6
 Go to `Main.aspx.cs`, and add the following code.
@@ -244,7 +238,7 @@ Session["PIN"]= Password;
 Response.Redirect("recvd.aspx");
 ```
 
-After adding the code above the final code should resemble the one shown below.
+Your code should now appear as shown below:
 
 ```c#
 using System;
@@ -277,21 +271,19 @@ namespace Session1
 ```
 
 #### Step 7
-Click on `recvd.aspx` and select design. In the design, add a label.
+Click on `recvd.aspx` and select `design`. In the `design tab`, add a `label`.
 
 ![step-seven](/engineering-education/cookies-and-sessions-in-asp-dot-net/step-seven.png)
 
-In the image shown, we dragged and dropped a label to the design.
-
 #### Step 8
-Right-click `recvd.aspx` on the right corner and select view code. Add the following code segment.
+Right-click on `recvd.aspx` in the right corner and select `view code`. Add the code segment below:
 
 ```c#
  Label1.Text = Session["name"].ToString();
             TextBox = Session["Registration"];
 ```
 
-The final code after adding the segment above will look as follows.
+The final code should look like this:.
 
 ```c#
 using System;
@@ -317,31 +309,25 @@ namespace Session1
 }
 ```
 
-#### step 9
-Then select `main.aspx`, choose to build wait for a moment until the build is successful. After that, click debug and start without debugging to create a new session in a browser. As shown below.
+#### Step 9
+Select `main.aspx` and build the application. After that, click `debug` and `start without debugging` to create a new session in a browser:
 
 ![step-nine-a](/engineering-education/cookies-and-sessions-in-asp-dot-net/step-nine-a.png)
 
-We selected build, then clicked build solution.
-
 ![step-nine-b](/engineering-education/cookies-and-sessions-in-asp-dot-net/step-nine-b.png)
-
-We select start without debugging.
 
 ![step-nine-c](/engineering-education/cookies-and-sessions-in-asp-dot-net/step-nine-c.png)
 
-This is how our new web session will be displayed, user can enter the username or email and password, then click submit and save the details in the web browser.
+This is how our new web session will be displayed. Users can enter their usernames, emails, and passwords, then click submit to save the details in the web browser.
 
 ![step-nine-d](/engineering-education/cookies-and-sessions-in-asp-dot-net/step-nine-d.png)
 
-We entered a username `Stanley2000` and `PIN` and clicked `Submit`.
-
 ![step-nine-e](/engineering-education/cookies-and-sessions-in-asp-dot-net/step-nine-e.png)
 
-And our username and password were saved.
-
 ### Conclusion
-In this article we learned how to create cookies, and implement sessions using the ASP.NET framework. We also learned about the various properties of cookies and how sessions are initiated and terminated.
+In this article, we learned how to create cookies, and implement sessions using the ASP.NET framework. 
+
+We also discussed the various cookies' properties and how sessions are initiated and terminated.
 
 Happy coding!
 
