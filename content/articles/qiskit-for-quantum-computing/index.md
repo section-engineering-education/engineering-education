@@ -19,7 +19,7 @@ For most of us, it's hard to wrap our heads around the world of quantum computin
 This tutorial aims to clear this up and introduce you to Quantum computing. With the help of an open-source toolkit such as Qiskit, we'll introduce our readers to the toolkit and let them experiment using Jupyter Notebooks hosted in IBM Quantum Lab. 
 
 ### Quntum computers
-Quantum computers solve problems in a different way from the classic computers that we are familiar with. Quantum computers have several advantages over classical computers for certain problems. This is attributed to their ability to exist in a number of different states simultaneously. On the contrary, classical computers can only be in one state at a time.
+Quantum computers solve problems differently from the classic computers that we are familiar with. Quantum computers have several advantages over classical computers for certain problems. This is attributed to their ability to exist in several different states simultaneously. On the contrary, classical computers can only be in one state at a time.
 
 To understand how quantum computers works, you need to understand three vital things:
 
