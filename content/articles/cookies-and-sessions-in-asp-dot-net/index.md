@@ -6,7 +6,7 @@ url: /cookies-and-sessions-in-asp-dot-net/
 title: How to Create Cookies and Sessions in ASP.NET
 description: This tutorial will walk the reader through how to create cookies and sessions in ASP.NET.
 author: stanley-kuria
-date: 2022-03-30T00:00:00-01:30
+date: 2022-03-30T00:00:00-01:40
 topics: [Languages]
 excerpt_separator: <!--more-->
 images:
