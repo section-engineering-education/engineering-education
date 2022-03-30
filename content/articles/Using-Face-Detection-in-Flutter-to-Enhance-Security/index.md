@@ -1,5 +1,5 @@
 ### Introduction
-  Face Detection is a technique used to enhance security by identifying the presence of a face in an image. Most people use facial recognition technology to enhance their security. This is because it is a very reliable way to identify someone. Besides, it is becoming difficult to fool facial recognition software. Companies are starting to use facial recognition technology in their security systems. For example, banks are using facial recognition software to prevent bank robberies. Airports are using facial recognition software to identify terrorists. Facial recognition technology can be useful in other ways as well. For example, help track down criminals.
+Face Detection is a technique used to enhance security by identifying the presence of a face in an image. Most people use facial recognition technology to enhance their security. This is because it is a very reliable way to identify someone. Besides, it is becoming difficult to fool facial recognition software. Companies are starting to use facial recognition technology in their security systems. For example, banks are using facial recognition software to prevent bank robberies. Airports are using facial recognition software to identify terrorists. Facial recognition technology can be useful in other ways as well. For example, help track down criminals.
 Flutter is a new mobile development framework created by Google. It allows developers to create native apps for both Android and iOS using a single codebase. One of the most popular features of Flutter is its face detection plugin. This plugin uses the device's camera to detect faces in real-time. It has a variety of purposes, such as security, customer service, or even for fun.
 If you are looking to use face detection in your app, then Flutter is a great option.
 ### Table of Content
@@ -12,7 +12,6 @@ If you are looking to use face detection in your app, then Flutter is a great op
 - Creating Necessary Function.
 - User Interface
 - Conclusion
-
 In this article, you will learn how to develop a flutter application that can be used Face Detection to Enhance Security.
 ### Prerequisites
 -    Basic knowledge of Flutter SDK and widgets.
@@ -25,7 +24,6 @@ Let's start developing our application.
 flutter create facedetection
 ```
 You can also create the new project via the command pallete in Vs code for this case. Create a new flutter, select location and flutter project name.
-
 ### Step Two: Adding dependencies to the new project.
 After the project is created, open the pubspec.yaml file and add the following dependencies:
 ```dart
@@ -37,9 +35,7 @@ We can do this by using the following command:
 flutter pub add flutter_face_detector
 ```
 This will add the face detection plugin to our project.
-
 ### Step Three: Importing the necessary packages.
-
 Now open the main.dart file and replace the code with the following:
 ```dart
 import 'package:flutter/material.dart';
@@ -76,9 +72,7 @@ faces: List<Face>();
 img_path: String;
 ```
 This list stores the information we need with regards to the faces. if the face is in the list then it can be detected.
-
 ### Step Five: Creating Necessary Functions.
-
 - Next, we need to add a function to detect faces in an image. Add the following function to the class:
 ```dart
 detect faces(image) {
@@ -142,4 +136,4 @@ Now that we have our code in place, we can run our app and test it out. Select a
 You can also try changing the image path to see how the app reacts.
 ### Conclusion
 In this article, we have learned how to use the face detection plugin in Flutter. We have also learned how to use this plugin to create an app. The images selected and added to our list are the ones one can detect. The logic of this is that if we put in place in a school or company is use it a gate pass may be or check somebody identity. The system will check if they exist.
- Congratulations! You have now created a Flutter app that uses face detection.
+Congratulations! You have now created a Flutter app that uses face detection.
