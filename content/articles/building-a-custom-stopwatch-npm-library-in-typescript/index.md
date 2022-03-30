@@ -73,7 +73,6 @@ The `package.json` is more like the brain of our project, it contains and provid
   },
   "devDependencies": {
     "react": "^17.0.2",
-    "typescript": "^4.5.4"
   },
   "keywords": [],
   "author": "Typescript developer",
@@ -111,7 +110,6 @@ That should create and initialize a `tsconfig.json` file. Now let’s set it up 
     "moduleResolution": "node",
     "resolveJsonModule": true,
     "isolatedModules": true,
-    "noEmit": true,
     "jsx": "react"
   },
   "include": ["/src/**/*"],
@@ -280,6 +278,13 @@ Let us go ahead and setup the `index.html` file to render the stopwatch. To do t
 ```
 We have created a basic stopwatch structure that includes 3 buttons with an `onclick` handler to execute the start, stop and reset operations. We also created a `div` tag with an `id="my_stopwatch"` as required in the `test.js` file.
 Now open the `index.html` file in the browser to view and interact with the amazing stopwatch.
+To do that, open your command terminal and run the command below:
+
+```bash
+cd test
+start index.html
+```
+The command above will open the stopwatch in your default browser.
 
 ### Step 7 – publishing the custom Stopwatch library to NPM
 Finally, the last step in this tutorial is to publish the custom stopwatch package to NPM. before we go ahead and do that, first ensure you created an account with NPM, if you do not have one, go to the [sign up page](https://www.npmjs.com/signup/) to create one. If you already have one, let's login in by running the command below:
