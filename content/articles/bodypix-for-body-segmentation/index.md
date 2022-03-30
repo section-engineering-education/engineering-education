@@ -6,7 +6,7 @@ url: /bodypix-for-body-segmentation/
 title: Leveraging BodyPix for Body Segmentation using Python
 description: This tutorial will show the reader how to leverage the BodyPix model to change the background in an image using OpenCV.
 author: lilian-tonia
-date: 2022-03-30T00:00:00-12:00
+date: 2022-03-30T00:00:00-02:00
 topics: [Machine Learning]
 excerpt_separator: <!--more-->
 images:
@@ -18,7 +18,7 @@ BodyPix is a body segmentation model built on TensorFlow. The model uses a pre-t
 <!--more-->
 There is a wide range of use cases for this model. For instance, it can be utilized to remove human objects from an image. 
 
-This tutorial will leverage the BodyPix model to change the background from a frame using OpenCV. 
+In this tutorial, we will use the BodyPix model to change the background from a frame using OpenCV. 
 
 ### Prerequisites
 To follow along with this tutorial, you need to be familiar with:
@@ -39,11 +39,11 @@ To get started, we will install the following libraries:
 
 - `tensorflow==2.8.0`: The Bodypix model relies on Tensorflow 2.0 and above.
 
-- `tensorflow-gpu==2.8.0`: It allows us to leverage the GPU. Though we do not need to use a GPU to run this code, we will use it to speed up the detection.
+- `tensorflow-gpu==2.8.0`: It allows us to leverage the GPU. Though we do not require a GPU to run this code, we will use it to speed up the detection.
 
 - `tf_bodypix`: It gives us the pre-trained body segmentation model from Tensorflow.
 
-- `tfjs_graph_converter`: It allows us to convert the tensorflow.js BodyPix model to a model we can use inside Python. By default, the BodyPix model is native inside the Tensorflow.js package. 
+- `tfjs_graph_converter`: It allows us to convert the tensorflow.js BodyPix model to something we can use in Python. By default, the BodyPix model is native in the Tensorflow.js package. 
 
 The command below will install the required libraries:
 
@@ -61,10 +61,10 @@ import numpy as np
 from matplotlib import pyplot as plt
 ```
 
-> The `load_model`, `download_model`, `BodyPixModelPaths` are the classes that will allow us to work with the BodyPix model.
+> The `load_model`, `download_model`, `BodyPixModelPaths` are the classes that will allow us to interact with the BodyPix model.
 
 ### Loading the BodyPix model
-We create a new variable, `bp_model`, to store the BodyPix model. The `BodyPixModelPaths.MOBILENET_FLOAT_50_STRIDE_16` defines our BodyPix model path. 
+We define the `bp_model` variable to store the BodyPix model. The `BodyPixModelPaths.MOBILENET_FLOAT_50_STRIDE_16` defines our BodyPix model path. 
 
 ```bash
 bp_model = load_model(download_model(BodyPixModelPaths.MOBILENET_FLOAT_50_STRIDE_16))
@@ -82,7 +82,7 @@ https://storage.googleapis.com/tfjs-models/savedmodel/bodypix/mobilenet/float/05
 ```
 This path directs the program to where the model is stored.
 
-We pass the above path to the `download_model` class to import it into our notebook. We then use the `load_model` class to access its contents. This result is stored inside the `bp_model` variable.
+We pass the above path to the `download_model` class to import it into our notebook. We then use the `load_model` class to access its contents. The result is stored in the `bp_model` variable.
 
 ### Uploading static image using OpenCV
 In this tutorial, will use the following image downloaded from [Unsplash](https://unsplash.com/). 
@@ -174,9 +174,9 @@ Output:
 
 ![Final image](/engineering-education/bodypix-for-body-segmentation/final.png)
 
-We have now successfully leveraged the BodyPix model to segment a human object from a frame using OpenCV. We also applied the segmented body to another background image. 
+We have now successfully leveraged the BodyPix model to segment a human object from a frame using OpenCV. We also added the segmented body to another background image. 
 
-The resulting image is not perfect because some water background is still visible. You can adjust the `threshold` value to get a tighter mask. 
+The resulting image is not perfect because some background is still visible. You can adjust the `threshold` value to get a tighter mask. 
 
 The BodyPix model can also be used to generate fake webcam backgrounds for video calls.
 
