@@ -1,7 +1,5 @@
-### Getting Started with Paper Database
-
 ### Introduction
-A database is an organized collection of data that are stored electrically in computer systems. In android, there are several databases like SQLite which comprises of room and SQLDlight, Datastore, SharedPreference, and Realm database. Even though most people tend to think that all databases are computerized there are databases held on paper example is the phone book which has no records for each person rather it has the main element of the database that is the field which is a name and phone number.
+A database is an organized collection of data that is stored electrically in computer systems. In Android, there are several databases that comprises of SQLite, Room and SQLDlight, Datastore, SharedPreference, and Realm database. Even though most people tend to think that all databases are computerized there are databases held on paper example is the phone book which has no records for each person rather it has the main element of the database that is the field which is a name and phone number.
 
 ### Table of contents
 - [Prerequisites](#prerequisites)
@@ -23,140 +21,157 @@ A database is an organized collection of data that are stored electrically in co
 - [Conclusion](#conclusion)
 
 ### Prerequisites
-To follow along with this tutorial ensure to:
+To follow along with this tutorial you need to:
 - Understand the basic knowledge of Android development.
-- Have Basic Knowledge of Kotlin Programming language.
-- Know kotlin Coroutines.
-- Be familiarised with the concept of binding.
+- Have Basic Knowledge of the Kotlin Programming language.
+- Be conversant with Kotlin Coroutines.
+- Be familiarized with the concept of data/view binding.
 
 ### Goals
-This tutorial aims to explain to readers what is paper database is used in android, where to use a paper database, advantages & disadvantages of Paper DB, and how to implement it in android.
+This tutorial aims to explain what paper database is, where to use it, advantages & disadvantages of Paper DB, and how to implement it in Android.
 
-### What is Paper Database 
+### What is Paper database?
 PaperDB is a NoSQL-like store for Java/Kotlin objects on Android that supports automatic schema migration. The goal of PaperDB is to provide an easy-to-use yet fast object storage solution for Android. It allows users to use Java/Kotlin classes without any annotations, factory methods, or required class extensions. Adding or removing fields from data classes is also no longer a chore because all data structure changes are handled automatically.
 
-### Advantages of Paper Database
+### Advantages of Paper database
 - Since it only takes column data, paper databases consume less memory as compared to other databases.
 - It easy to implement. 
-- It is faster than other databases.
+- It is relatively faster than other databases.
 
 ### Disadvantages of Paper Database
 - Huge amount of information cannot be stored within the paper database.
 - Querying data from the database is a problem, especially categorical data.
 
-### Where to use Paper Database
-- When saving minor details.
-- When the data to be stored consists of fields.
- 
-### Getting Started 
-To better understand the concept of a paper database, we'll make a note app that adds notes to the database and displays the information in a `Recyclerview`.
+### When to use Paper database
+Paper database is a great choice when:
+- Saving minor details.
+- The data to be stored consists of fields.
+
+### Getting Started
+To understand the concept of a paper database better, we'll create a note app that adds notes to the database and displays them in a `RecyclerView`.
 
 ### Step 1 - Creating a new project
-To begin a new project, go to File > New >New project, pick Empty activity from the menu, and then hit Next. Give your project a descriptive name. Select Kotlin as the language and click Finish.
+Launch Android Studio and create a new empty activity project. Give the project a descriptive name and select Kotlin as the development language.
 
 ![new project](/engineering-education/getting-started-with-paper-database-in-android/new-project.png)
 
 ### Step 2 - Adding Dependencies
-Go to `build. Gradle app level and add `paper database` and kotlin coroutine dependencies below
+Go to `build.gradle` (app level) and add `paper database` and Kotlin Coroutines dependencies below:
 
-```gradle
+```bash
 //paper database
-    implementation 'io.github.pilgr:paperdb:2.7.2'
+implementation 'io.github.pilgr:paperdb:2.7.2'
 //coroutines
-    implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-android:1.5.2'
+implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-android:1.5.2'
 ```
+
 ### Step 3 - Creating the User Interface
-Since we need to insert data into a database and display the data, there are two user interface, one to insert the data into the database and the other to display the data. which should look as shown below:
+Since we need to insert data into the database and display it, we need two user interfaces, one to insert the data and the other to display the data. 
+
+They should look as shown below:
 
 #### Inserting data User Interface
 
-![insert](/engineering-education/getting-started-with-paper-database-in-android/insert-ui.png)
+![insert data](/engineering-education/getting-started-with-paper-database-in-android/insert-ui.png)
 
 #### Displaying data User Interface
-> Note that you must build the row that is mapped to the recycler view for it to be displayed.
+> Note that you must create the adapter and row item that is mapped to the RecyclerView for the data to be displayed.
 
-![display](/engineering-education/getting-started-with-paper-database-in-android/display-ui.png)
+![display data](/engineering-education/getting-started-with-paper-database-in-android/display-ui.png)
 
-### Step 4 - Initializing Paper in an Application Class
-Create an NoteApp that inherits the `Application` class, override the `onCreate` method and within the method initialize `Paper`, this should be done in a UI thread like this.
+### Step 4 - Initializing Paper in an Application class
+Create a NoteApp class that inherits the `Application` class, override the `onCreate` method and initialize `Paper` database. This should be done in the Main thread as follows:
+
 ```kotlin
-class NoteApp:Application() {
+class NoteApp: Application() {
     override fun onCreate() {
         super.onCreate()
-        Paper.init(applicationContext)
+        Paper.init(this)
     }
 }
 ```
-### Step 5 - The Model Class
-A model class acts as a point of access to data held in a paper database. We list all of the essential data within the model class; in this case, the model simply has two items: note title and note description.
+
+### Step 5 - Creating the Model class
+A model class defines the name and properties of the data object(s) held in a paper database. We list all of the essential data within the model class. In this case, the model simply has two items, note title and note description:
+
 ```kotlin
-data class Notes(
+data class Note(
     Val title: String? = null,
     Val description: String? = null
 )
 ```
-### Step 6 - Inserting Data to Paper Database
-Define an `ArrayList` variable that will hold the notes - `private lateinit var noteList:ArrayList<Notes>`
 
-Within the `OnCreate` method, the ArrayList variable is checked for any data that has been inserted initially if it does not contain any, it is initialized to an empty ArrayList.
+### Step 6 - Inserting Data to Paper database
+Define an `ArrayList` variable that will hold the notes:
+
 ```kotlin
-// check if the array list has data if not it is initialized to an empty array list
-         
-noteList = Paper.book().read("notes",ArrayList()) ?: ArrayList()
+private lateinit var noteList: ArrayList<Note>
 ```
-The Read method is used to obtain data from the database, while the Write method is used to insert data into the database. The methods `read()` and `write()` are thread safe and must be called outside of the UI thread. For this case, we are going to perform insert action within a `Coroutinescope`. 
+
+Within the `OnCreate` method, the noteList is checked and initialized to an empty ArrayList if it is null.
+
+```kotlin     
+noteList = Paper.book().read("notes", ArrayList()) ?: ArrayList()
+```
+
+The `Read` method is used to obtain data from the database while the `Write` method is used to insert data into the database.
+
+The methods `read()` and `write()` are thread sensitive and must be called outside of the UI thread. For this reason, we are going to perform insertion within a `CoroutineScope`. 
 
 ```kotlin
 binding.btnSave.setOnClickListener {
-            //checks if the inserting field are empty
-            if (binding.etTitle.text.isEmpty() && binding.etDescription.text.isEmpty()){
-                return@setOnClickListener
-            }
-           CoroutineScope(Dispatchers.IO).launch {
-               //adding data to the array list
-               val note = Notes(binding.etTitle.text.toString(),binding.etDescription.text.toString())
-               noteList.add(note)
-               //inserting data to paper database
-               Paper.book().write("notes",noteList)
-           }
-            //Navigating back
-            startActivity(Intent(this,MainActivity::class.java))
-            finish()
-        }
+    //checks if the inserting field are empty
+    if (binding.etTitle.text.isEmpty() && binding.etDescription.text.isEmpty()){
+        return@setOnClickListener
+    }
+    CoroutineScope(Dispatchers.IO).launch {
+        //adding data to the array list
+        val note = Notes(binding.etTitle.text.toString(), binding.etDescription.text.toString())
+        noteList.add(note)
+        //inserting data to paper database
+        Paper.book().write("notes", noteList)
+    }
+    //Navigating back
+    startActivity(Intent(this, MainActivity::class.java))
+    finish()
+}
 ```
-> Ensure that binding is enabled in your project.
 
-### Step 7 - Getting all notes
-Since getting all notes uses the `read()` method which should be called outside of the UI thread. This action will be done in the main thread.
+### Step 7 - Getting all Notes
+The `read()` method is used to obtain data from the database and must be called outside of the UI thread.
+
 ```kotlin
- CoroutineScope(Dispatchers.Main).launch {
-            //checks if the array list has data
-            notes = Paper.book().read("notes",ArrayList<Notes>()) ?: ArrayList<Notes>()
-            //submiting data to the adapter
-            notesAdapter.submitList(notes)
-            //setting data to the recyclerView
-            binding.noteRecycler.adapter =notesAdapter
-
-        }
+CoroutineScope(Dispatchers.Main).launch {
+    //checks if the array list has data
+    notes = Paper.book().read("notes", ArrayList<Note>()) ?: ArrayList<Note>()
+    //submitting data to the adapter
+    notesAdapter.submitList(notes)
+    //setting data to the recyclerView
+    binding.noteRecycler.adapter = notesAdapter
+}
 ```
-> Note: You must create an adapter and initialize it also defines an ArrayList variable to hold the notes.
 
 ### Step 8 - Deleting all Notes
-To do a delete operation The deletion function in the Paper library accepts the key as an input, checks if the provided key has any value, and then performs the action. The deletion method is as shown below:
+To perform a delete operation, we use the `delete()` function provided by the Paper library. This function accepts the key as an input, checks if the provided key has any value, and then performs the action. The deletion method is as shown below:
+
 ```kotlin
 Paper.book().delete("notes")
 ```
+
 ### Demo
+Upon running the app, you should expect to see the following:
 
-![demo1](/engineering-education/getting-started-with-paper-database-in-android/demo1.png)
+![demo one](/engineering-education/getting-started-with-paper-database-in-android/demo1.png)
 
-![demo2](/engineering-education/getting-started-with-paper-database-in-android/demo2.png)
+![demo two](/engineering-education/getting-started-with-paper-database-in-android/demo2.png)
 
-![demo3](/engineering-education/getting-started-with-paper-database-in-android/demo3.png)
+![demo three](/engineering-education/getting-started-with-paper-database-in-android/demo3.png)
 
-![demo4](/engineering-education/getting-started-with-paper-database-in-android/demo4.png)
+![demo four](/engineering-education/getting-started-with-paper-database-in-android/demo4.png)
 
 ### Conclusion
-In this tutorial, we have discussed what is database and paper databases as used in android, the advantages, and disadvantages of the paper database, where to use the paper database, and how to implement paper databases in android.
+In this tutorial, we have discussed what Paper database is, it's advantages and disadvantages, where to use the paper database, and how to implement paper databases in Android.
 
 You can get the full implementation of this tutorial on this GitHub repository [Paper Database](https://github.com/brandy-kay/PaperDbTest).
+
+Happy Coding!
