@@ -65,7 +65,22 @@ pip install -U pip && pip install qiskit
 ```
 > This installation is for Linux machines. For Windows and macOS users, head on to the main website and select the appropriate machine you're using. A different installation code will be generated. Python version 3.6 and above is preferred.
 
-To get started online, please refer to this [link](https://lab.quantum-computing.ibm.com).
+To get started online at IBM, we need to sign up [here](https://lab.quantum-computing.ibm.com) to get the API token which gives us permission to use their quantum devices. You can think of this are running Jupyter Notebook online with Qiskit installed.
+
+> Remember your API token is your access code to IBM's quantum devices.
+
+You can get it by going to your `Profile` option on the top-right corner of the webpage and clicking the `Account details` option. In the API token section, you'll your API token hidden from view in asterics. Copy it and paste it inside the following code:
+
+```python
+from qiskit import IBMQ
+IBMQ.save_account('YOUR API KEY')
+```
+Once you run this code, your API token is saved onto your computer and now you're able to access IBM's quantum devices. To see if you have access to these devices, type in:
+
+```python
+IBMQ.load_account()
+```
+If the above code executes, you should be able to run code not just on your computer, but also sending the quantum circuits that you build in your computer to IBM's quantum devices and getting results. 
 
 So, let's get started building our first quantum algorithm from the circuits library. 
 
@@ -78,13 +93,13 @@ provider = IBMQ.load_account()
 Next, let's build a two-qubit quantum register then build a two-classical bit, classical register.
 
 ```python
-qreg = QuantumRegister(2)
-creq = ClassicalRegister(2)
+qr = QuantumRegister(2)
+cr = ClassicalRegister(2)
 ```
 So, now we've built a Quantum register and a classical register. We can build a circuit using those two as shown below:
 
 ```python
-circuit = QuantumCircuit(qreg, creg)
+circuit = QuantumCircuit(qr, cr)
 ```
 Now we've created a Quantum circuit. If at any point that we modify the circuit, you want to draw what the quantum circuit looks like, you can do so by writing the following code:
 
@@ -100,7 +115,7 @@ As it is, this circuit is not interesting as we have no gates. Let's now build u
 ```python
 circuit.h(qr[0])
 ```
-We are going to now create a two-qubit, `controlled x` operation using the following code:
+We are going to now add a two-qubit, `controlled x` operation using the following code:
 
 ```python
 circuit.cx(qr[0], qr[1])
@@ -137,7 +152,7 @@ plot_histogram(result.get_counts(circuit))
 ```
 ![Histogram](/engineering-education/qiskit-for-quantum-computing/histogram.png)
 
-That's the result of executing our quantum circuit. We get about a 50% probability for `00` and a 50% probability for `11`. Now, let's run our circuit in a quantum computer at IBM and see what happens.
+That's the result of executing our quantum circuit. We get about a 50% probability for `00` and a 50% probability for `11`. You've successfully your first quantum computer circuit.
 
 ### Wrapping up
 This tutorial sets you up to run code on a real quantum computer. We've successfully created our first quantum application. It is recommended that you go through the tutorial on Qiskit's website as this tutorial only scratches the surface. Good luck coding quantum circuits on your own.
