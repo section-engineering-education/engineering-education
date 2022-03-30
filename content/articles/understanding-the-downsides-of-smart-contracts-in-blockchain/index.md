@@ -109,3 +109,6 @@ Developers have a massive task of addressing these shortcomings faced by smart c
 - [Understanding Oracles, Smart Contracts, and the Oracle problem](https://101blockchains.com/blockchain-oracle-problem/).
 - [Overview of Consensus Mechanisms](https://medium.com/hackernoon/a-brief-introduction-to-consensus-mechanisms-smart-contracts-and-distributed-apps-on-the-a94453d16c3a).
 - [A Dive into Smart Contracts and DeFi](https://coinmarketcap.com/alexandria/article/a-dive-into-smart-contracts-and-defi).
+
+---
+Peer Review Contributions by: [Wilkister Mumbi](/engineering-education/authors/wilkister-mumbi/)
