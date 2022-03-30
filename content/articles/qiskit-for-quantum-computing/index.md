@@ -65,7 +65,7 @@ pip install -U pip && pip install qiskit
 ```
 > This installation is for Linux machines. For Windows and macOS users, head on to the main website and select the appropriate machine you're using. A different installation code will be generated. Python version 3.6 and above is preferred.
 
-To get started online at IBM, we need to sign up [here](https://lab.quantum-computing.ibm.com) to get the API token which gives us permission to use their quantum devices. You can think of this are running Jupyter Notebook online with Qiskit installed.
+To get started online at IBM, we need to sign up [here](https://lab.quantum-computing.ibm.com) to get the API token that permits us to use their quantum devices. You can think of this are running Jupyter Notebook online with Qiskit installed.
 
 > Remember your API token is your access code to IBM's quantum devices.
 
