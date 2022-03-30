@@ -201,7 +201,7 @@ Then click the bucket button, create a bucket as shown, and you can easily popul
 
 Once you submit the query data, [time-series data visialization](https://www.influxdata.com/how-to-visualize-time-series-data/) occurs.
 
-![Visualize data](/engineering-education/visualize-time-series-data-with-chart-js/visualize-data.jpg)
+![Visualize data](/engineering-education/visualize-time-series-data-with-chart-js/visualize-data.png)
 
 ### Conclusion
 Chart.js is a graphing library with various possibilities. You can look at [Chart.js documentation](https://www.chartjs.org/docs/latest/) to learn more about it. InfluxDB is a time-series database to store, analyze, and visualize data using bar charts and scatter charts.
