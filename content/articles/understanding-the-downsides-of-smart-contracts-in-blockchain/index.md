@@ -1,5 +1,22 @@
-﻿### Introduction
-In the [blockchain](https://www.ibm.com/topics/what-is-blockchain), [cryptocurrency](https://www.nerdwallet.com/article/investing/cryptocurrency) is the most popular concept discussed worldwide. However, the [smart contracts](https://www.ibm.com/topics/smart-contracts) concept is catching up with the pace in this digital economy.
+---
+layout: engineering-education
+status: publish
+published: true
+url: /understanding-the-downsides-of-smart-contracts-in-blockchain/
+title: Understanding the Downsides of Smart Contracts in Blockchain
+description: This article will cover in detail the downsides associated with smart contracts
+author: lilian-ogoti
+date: 2022-03-30T00:00:00-12:00
+topics: [Blockchain]
+excerpt_separator: <!--more-->
+images:
+
+  - url: /engineering-education/understanding-the-downsides-of-smart-contracts-in-blockchain/hero.jpg
+    alt: Understanding the Downsides of Smart Contracts in Blockchain hero image
+---
+In the [blockchain](https://www.ibm.com/topics/what-is-blockchain), [cryptocurrency](https://www.nerdwallet.com/article/investing/cryptocurrency) is the most popular concept discussed worldwide. 
+<!--more-->
+However, the [smart contracts](https://www.ibm.com/topics/smart-contracts) concept is catching up with the pace in this digital economy.
 
 The smart contracts' benefits cut across various insurance, healthcare, and logistics industries. However, the dilemma remains whether smart contracts are what they are presumed to be?
 
