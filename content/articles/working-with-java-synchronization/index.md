@@ -147,9 +147,9 @@ These consist of the following properties:
 #### Synchronized blocks
 The synchronized block may be used to perform synchronization on any specified resource of the method.
 
-Suppose,A method with 100 lines of code but only 10 lines of code containing important logic, i.e. the Object's state may be modified by these line. Only 10 lines of code are needed to guarantee that other threads may continue to run inside the same procedure without interruption, thus we don't need to synchronize these lines.
+Suppose a method has 100 lines of code but only 10 lines of code containing important logic. I.e. the object's state may be modified by these lines. Only 10 lines of code are needed to guarantee that other threads may continue to run inside the same procedure without interruption. Thus we don't need to synchronize these lines.
 
-let us look at some program example of synchronized block.
+Let us look at an example program that uses synchronized blocks.
 
 Save it as `TestSynchronizedBlock1.java`
 
@@ -216,7 +216,7 @@ The above code will output the following
 The following is all that it entails:
 
 - The synchronized keyword is used to identify blocks that are part of a synchronized thread in Java. In Java, a synchronized block is one that is tied to a specific object. There can only be one thread operating in all synchronized blocks synchronized on the same object. When the synchronized block is exited, all subsequent threads trying to enter it are stalled until that thread quits.
-- Synchronized blocks utilize synchronized keyword as a lock. When a method is marked as synchronized, the thread owns the monitor or lock object. In this case, you are blocked until the other thread releases the monitor.
+- Synchronized blocks utilize the synchronized keyword as a lock. When a method is marked as synchronized, the thread owns the monitor or lock object. In this case, you are blocked until the other thread releases the monitor.
 - Using a synchronized block enables you to fine-tune lock control by mutually excluding important section code.
 - The lock gets unlocked when the thread leaves the synchronized block.
 - A synchronized block may produce a `NullPointerException` if a parameter expression evaluates to null, while synchronized methods do not.
