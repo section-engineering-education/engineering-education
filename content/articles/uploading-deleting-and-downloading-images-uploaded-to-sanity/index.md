@@ -120,19 +120,19 @@ module.exports = {
 
 5. [React Masonry CSS](https://www.npmjs.com/package/react-masonry-css)
 
-```
+```bash
 npm i react-masonry-css
 ```
 
 6. [React-icons](https://react-icons.github.io/react-icons)
 
-```
+```bash
 npm install react-icons --save
 ```
 
 7. [React-router-dom](https://www.npmjs.com/package/react-router-dom)
 
-```
+```bash
 npm i react-router-dom
 ```
 
