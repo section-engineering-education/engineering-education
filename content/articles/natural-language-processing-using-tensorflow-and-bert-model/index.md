@@ -179,6 +179,15 @@ def preprocessing_dataset(df, ids, masks, tokenizer):
     for i, text in tqdm(enumerate(df['Phrase'])):
         tokenized_text = tokenizer.encode_plus(
             text,
+            max_length=256, 
+            truncation=True, 
+            padding='max_length', 
+            add_special_tokens=True,
+            return_tensors='tf'
+        )
+        ids[i, :] = tokenized_text.input_ids
+        masks[i, :] = tokenized_text.attention_mask
+    return ids, masks
 ```
 The function is called `preprocessing_dataset`. It helps us with preprocessing the dataset and outputting the dataset with the required format. The takes in the `df`, the `input IDs` as `ids`, the `attention mask` as `masks`, and the initialized `tokenizer`.
 
@@ -258,7 +267,10 @@ The map function will define how the model output will be returned to us.  We wa
 
 ```python
 def SentimentDatasetMapFunction(input_ids, attn_masks, labels):
- 
+    return {
+        'input_ids': input_ids,
+        'attention_mask': attn_masks
+    }, labels
 ```
 The code above will initialize the map function, let's now call the function so that it can be applied to the dataset.
 
@@ -369,7 +381,7 @@ It produces the following summary:
 
 ![Sentiment model summary](/engineering-education/natural-language-processing-using-tensorflow-and-bert-model/model-summary.png)
 
- It also shows all the input, intermediate, and output layers. The output also shows the following:
+It also shows all the input, intermediate, and output layers. The output also shows the following:
 
 - `Total params: 108,706,565` - These are all the parameters in the initialized neural network.
 - `Trainable params: 108,706,565` - It shows the parameters that the initialized neural network will train.
@@ -388,7 +400,7 @@ We define the optimizer as `Adam` from the TensorFlow's Keras optimizers. It enh
 - Defining the loss function
 We define the loss function as follows:
 
-```
+```python
 loss_func = tf.keras.losses.CategoricalCrossentropy()
 ```
 We use the `CategoricalCrossentropy` as the loss function because we have different categories/class sentiments (five). It will keep track of the errors in the neural network while training.
@@ -447,15 +459,25 @@ tokenizer = BertTokenizer.from_pretrained('bert-base-cased')
 def prepare_data(input_text, tokenizer):
     token = tokenizer.encode_plus(
         input_text,
-
+        max_length=256, 
+        truncation=True, 
+        padding='max_length', 
+        add_special_tokens=True,
+        return_tensors='tf'
+    )
+    return {
+        'input_ids': tf.cast(token.input_ids, tf.float64),
+        'attention_mask': tf.cast(token.attention_mask, tf.float64)
+    }
 ```
 These are the steps we followed earlier and they are fully explained.
 
 To make a classification/prediction, we create a function that we will use as follows:
 
 ```python
-def make_classification(model, processed_data, classes=['Negative', 'A bit negative', 'Neutral', 'A bit positive', 'Positive']):
-   
+def make_prediction(model, processed_data, classes=['Negative', 'A bit negative', 'Neutral', 'A bit positive', 'Positive']):
+    probs = sentiment_model.predict(processed_data)[0]
+    return classes[np.argmax(probs)]  
 ```
 The function will make a prediction and classify an input review into the different sentiment labels.
 
@@ -467,7 +489,7 @@ We use the following code:
 ```python
 input_text = input('Input a review here:')
 processed_data = prepare_data(input_text, tokenizer)
-result = make_classification(sentiment_model, processed_data=processed_data)
+result = make_prediction(sentiment_model, processed_data=processed_data)
 print(f"Classification results: {result}")
 ```
 When you run the code, a text area input control will appear in Google Colab and you will be prompted to input a review, as shown below:
