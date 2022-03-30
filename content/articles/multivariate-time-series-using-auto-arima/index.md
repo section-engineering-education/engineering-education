@@ -1,25 +1,22 @@
-Time-series data is a collection of metric values that are in continuous intervals over time. A time series shows all the variables in the dataset that change with time. The metric values are recorded in intervals such as hourly, daily, weekly, minutes, monthly, and yearly.
+A time series is a collection of continuous data points recorded over time. A time series is recorded in intervals such as hourly, daily, weekly, minutes, monthly, and yearly.
 
-Examples of time-series data are the annual budget, company sales, weather records, air traffic, covid-19 caseloads, forex exchange rates, and stock prices. The time-series data are recorded in minutes, hours, days, weeks, or years.
+Examples of time series are the annual budgets, company sales, weather records, air traffic, covid-19 caseloads, forex exchange rates, and stock prices. The time-series data are recorded in minutes, hours, days, weeks, or years.
 
-For example in forex exchange, we can record the daily closing exchange rates of the Euro and US Dollar(EUR/USD) for a week. A time series model can then analyze these closing exchange rates to identify patterns. Eventually, the model predicts future EUR/USD exchange rates based on previously historical/observed closing prices.
+For example in stock prices, we can observe the daily closing stock prices of a company for a week. A time series model can then analyze these closing stock prices to identify hidden patterns. Eventually, the model predicts future stock prices based on previously observed closing prices.
 
-Time series analysis and modeling involve training models to gain an understanding of the time series data. Forecasting involves finding the future values that the time series will take.
-
-A time series can be univariate, bivariate, or multivariate. Univariate consists of only one variable, bivariate we have two variables, and multivariate we have more than two variables. In this tutorial, we will be focusing on multivariate time series forecasting using [Auto ARIMA](https://alkaline-ml.com/pmdarima/modules/generated/pmdarima.arima.auto_arima.html). 
+In this tutorial, we will build on a multivariate time series model that uses multiples variables in training. We create the model using [Auto ARIMA](https://alkaline-ml.com/pmdarima/modules/generated/pmdarima.arima.auto_arima.html). 
 
 ### Table of contents
 - [Prerequisites](#prerequisites)
 - [Getting started with Auto ARIMA](#getting-started-with-auto-arima)
-- [What is an ARIMA model?](#what-is-an-arima-model)
-- [What is a stationary time series?](#what-is-a-stationary-time-series)
-- [What is differencing?](#what-is-differencing)
-- [Components of ARIMA model](#components-of-arima-model)
+- [Understanding the ARIMA model](#understanding-the-arima-model)
+- [How to remove non-stationarity components in a time series](#how-to-remove-non-stationarity-components-in-a-time-series)
+- [Explaining ARIMA initials](#explaining-arima-initials)
 - [Why do we use Auto ARIMA?](#why-do-we-use-auto-arima)
 - [Energy consumption dataset](#energy-consumption-dataset)
 - [Plotting the 'demand' column](#plotting-the-demand-column)
 - [Plotting subplots](#plotting-subplots)
-- [Checking for missing values](#checking-for-missing-values)
+- [Checking for missing or null values](#checking-for-missing-or-null-values)
 - [Imputing missing values](#imputing-missing-values)
 - [Dataset resampling](#dataset-resampling)
 - [Implementing the Auto ARIMA model](#implementing-the-auto-arima-model)
@@ -34,74 +31,64 @@ A time series can be univariate, bivariate, or multivariate. Univariate consists
 - [References](#references)
 
 ### Prerequisites
-A reader should:
+For a reader to understand the time series concepts explained in this tutorial, they should understand the following concepts:
 
-- Understand [time series analysis and modelling](/engineering-education/univariate-time-series-using-facebook-prophet)
-- Have an introduction to [time series terms and concepts](/engineering-education/introduction-to-time-series/)
-- Understand [time series components](/engineering-education/time-series-decomposition-in-python/)
-- Be able to build a simple [time series model](/engineering-education/building-a-time-series-weather-forecasting-application-in-python/)
-- Ensure you run the Python code in [Google Colab](https://research.google.com/colaboratory/)
+- [Introduction to time series](/engineering-education/introduction-to-time-series/)
+- [Time Series Decomposition](/engineering-education/time-series-decomposition-in-python/)
+- [Building a simple time series application](/engineering-education/building-a-time-series-weather-forecasting-application-in-python/)
+- Know how to run the Python code in [Google Colab](https://research.google.com/colaboratory/)
 
 ### Getting started with Auto ARIMA
-[Auto ARIMA](https://alkaline-ml.com/pmdarima/modules/generated/pmdarima.arima.auto_arima.html) is a time series library that automates the process of building a model using ARIMA. Auto ARIMA automatically finds the best parameters of an ARIMA model. Let's discuss the ARIMA model briefly which will be essential in following this tutorial easily and understanding how Auto ARIMA works. We will also discuss concepts related to the ARIMA model.
+[Auto ARIMA](https://alkaline-ml.com/pmdarima/modules/generated/pmdarima.arima.auto_arima.html) is a time series library that automates the process of building a model using ARIMA. Auto ARIMA applies the concepts of [ARIMA](https://otexts.com/fpp2/arima.html) in modeling and forecasting.
 
-### What is an ARIMA model?
-Auto-Regressive Integrated Moving Average(ARIMA) is a time series model that uses the information in the past metric values to predict the future values. 
+Auto ARIMA automatically finds the best parameters of an ARIMA model. To easily understand this tutorial you have to understand the concepts of the ARIMA model. But Let's discuss the ARIMA model briefly so that a beginner can also easily follow and understand this tutorial.
 
-The past values indicate the forecasts of the future values. It assumes that the previous values have unique attributes and properties that can predict future values. For example, an ARIMA model can be used to predict future forex exchange rates based on observing and analyzing previous forex exchange rates. The model analyzes the different variables found in the times series dataset. 
+### Understanding the ARIMA model
+Auto-Regressive Integrated Moving Average(ARIMA) is a time series model that identifies hidden patterns in time series values and makes predictions.
 
-ARIMA only works when the time series data is stationary. When the dataset is non-stationary, we always have to make it stationary before applying the ARIMA model.
+For example, an ARIMA model can predict future stock prices based on analyzing previous stock prices. Also, an ARIMA model assumes that the time series data is stationary. For an ARIMA model to work we always have to remove the non-stationarity components in the time series.
 
-### What is a stationary time series?
-A stationary time series is a series whose attributes and properties do not change over time. Common properties and attributes of time series are variance, mean, and covariance. Stationary data does not have trend and seasonal components.
+### How to remove non-stationarity components in a time series
+Removing non-stationarity in a time series will make it stationary and therefore apply the ARIMA model. A non-stationary time series is a series whose properties changes change over time. A non-stationary time series has trends and seasonality components.
 
-A non-stationary time series has trends, repetitive cycles, and seasonality. The trends and seasonality make the time series attributes and properties change with time.
+The properties of time series that should remain constant are variance and mean. Making these properties constant will remove the trend and seasonal components. We remove non-stationarity in a time series through differencing.
 
-Most time-series data is non-stationary, especially forex exchange prices and stock prices. This is due to the trends and the repetitive cycles.
+Differencing technique subtracts the present time series values from the past time series values. We may have to repeat the process of differencing multiple times until we output a stationary time series.
 
-To apply an ARIMA model, we have to make the data stationary. Making the data stationary will remove the trends and seasonality. It will be easier for ARIMA to make a prediction using stationary data. We change non-stationary data to stationary using the differencing technique. 
+An ARIMA model is made up of three initials: AR, I, and MA. These initials represent the three sub-models that are combined to form a single uniform model.
 
-### What is differencing?
-It changes a non-stationary time series data to stationary. It is an essential process when preparing times series data for the ARIMA model. 
+Let's explain these initials.
 
-It makes a variance, the covariance, and the mean values data constant over time. It also removes repetitive cycles in the time series data.
+### Explaining ARIMA initials
+AR stands for Auto Regression. I stand for Integrated. MA stands for Moving average. 
 
-It finds the difference between the current time series values and the previous values. We may find the difference between the time series values once but still not produce a stationary dataset. In this case, we need to find the difference various times until the dataset becomes stationary. An ARIMA model has the following components.
+They have the following functionalities.
 
-### Components of ARIMA model
-ARIMA model is made up of three components: 
+- Auto Regression sub-model
+This sub-model uses the past values to make future predictions.
 
-1. Auto Regression
-2. Integrated 
-3. Moving average. 
+- Integrated sub-model
+This submodel performs differencing to remove any non-stationarity in the time series.
 
-#### Auto Regression
-It uses the changing time series values to make future predictions. It uses the dependency between current time series values and previous values. 
+- Moving Average sub-model
+It uses past errors to make a prediction.
 
-#### Integrated
-This component performs differencing to make the time series stationary. It subtracts a current time series value from the previous value.
+These sub-models are then added to the overall ARIMA model as parameters. The parameters have unique notations as follows:
 
-#### Moving Average
-It uses errors of previous time series values to make future predictions. It uses the dependency between an actual observation and errors from previous observations.
+- p: It is the order of the Auto Regression (AR) sub-model. It refers to the number of past values to be used to make predictions. 
 
-When creating an ARIMA model, we pass each component as a parameter using the following standard notations: `p` `d` and `q`. These notations are the essential parameters that build an ideal ARIMA model. ARIMA models are usually initialized as ARIMA(p,d,q).
+- d: It is the number of differencing done to remove the non-stationary components.
 
-The functions of these parameters:
-
-- p: It represents the order of the Auto Regression (AR) component. It represents the number of lag observations found in the ARIMA model. A lag is the time gap between two data points/observations in the time series.
-
-- d: It is the total differencing steps performed to make the time series stationary. When we have time-series data that is already stationary, there is no need to conduct differencing. Therefore, d will be 0 (d=0).
-
-- q: It represents the order of the Moving Average (MA) component. It shows the forecast errors that the final ARIMA Model should have.
+- q: It is the order of the Moving Average (MA) sub-model. It refers to the number of past errors that an ARIMA Model can have when making predictions.
 
 ### Why do we use Auto ARIMA?
-In an ARIMA model, we need to pass the p,d, and q values. We use statistical plots and techniques to find the optimal values of these parameters. We use statistical plots such as [Partial Autocorrelation Function plots](https://people.duke.edu/~rnau/411arim3.htm) and [AutoCorrelation Function plot](https://people.duke.edu/~rnau/411arim3.htm). 
+In an ARIMA model, we need to pass the p,d, and q values. We use statistical plots and techniques to find the optimal values of these parameters. We use statistical plots such as [Partial Autocorrelation Function plots](https://online.stat.psu.edu/stat510/lesson/2/2.2) and [AutoCorrelation Function plot](https://www.dummies.com/article/technology/information-technology/data-science/big-data/autocorrelation-plots-graphical-technique-for-statistical-data-141241/). 
 
 The process of using statistical plots is usually hectic and time-consuming. Many people have difficulties in interpreting these plots to find the optimal parameter values. Wrong interpretation leads to wrong p,d, and q values and it affects the ARIMA model performance. 
 
 Auto ARIMA automatically generates the optimal parameter values (p,d, and q). The generated values are the best and will help the model to give accurate forecast results. So basically Auto ARIMA will simplify the process of building a time series model using the ARIMA model.
 
-Now that you know how an ARIMA and Auto ARIMA model works, let's now start working with the time series dataset.
+Now we know how an ARIMA works and how Auto ARIMA applies its concepts. Let's now start exploring the time series dataset.
 
 ### Energy consumption dataset
 We will use the energy consumption dataset to build the Auto ARIMA model. The dataset shows the energy demand from 2012 to 2017 which is recorded in an hourly interval. 
@@ -161,9 +148,9 @@ It plots the following line chart:
 
 ![Energy consumption plot](/engineering-education/multivariate-time-series-using-auto-arima/energy-consumption-plot.png)
 
-From the image the dataset has seasonality. Repetitive cycles or spikes occur during the same period in the dataset. Since the dataset has seasonality, we can say it is non-stationary. But still, we need to perform an Augmented Dickey-Fuller (ADF) test to check for stationarity in our dataset. The test will help us to statistically check the dataset.
+From the image the dataset has seasonality. Repetitive cycles or spikes occur during the same period in the dataset. Since the dataset has seasonality, we can say it is non-stationary. But still, we need to perform an [Augmented Dickey-Fuller (ADF) test](https://www.machinelearningplus.com/time-series/augmented-dickey-fuller-test/) to check for stationarity in our dataset. The test will help us to statistically check the dataset.
 
-If we find the dataset is non-stationary after the ADF test, we will have to perform differencing to make it stationary. AutoARIMA will perform this process automatically. 
+If we find the dataset is non-stationary after the ADF test, we will have to perform differencing to make it stationary. Auto ARIMA will perform this process automatically. 
 
 Let's set the `timeStamp` to be our index column. 
 
@@ -173,7 +160,7 @@ el_df=df.set_index('timeStamp')
 We set the `timeStamp` to be our index column for better interaction with the data frame. The Auto ARIMA model also expects the `timeStamp` to be the index column.
 
 ### Plotting subplots
-The subplots will show the time-dependent variables in the dataset. We will visualize the `demand`, `precip` and `temp` columns.
+The subplots will show the time-dependent variables in the dataset. We will visualize the `demand`, `precip`, and `temp` columns.
 
 ```python
 el_df.plot(subplots=True)
@@ -182,7 +169,7 @@ It produces the following subplots.
 
 ![Subplots](/engineering-education/multivariate-time-series-using-auto-arima/sub-plots.png)
 
-### Checking for missing values
+### Checking for missing or null values
 We need to check for missing values in the dataset. Missing values affects the model and leads to inaccurate forecast results.
 
 ```python
@@ -292,7 +279,7 @@ It is the start `p` value that can be selected during the random search.
 It is the start `q` value that can be selected during the random search.
 
 - `max_order=4`
-It the maximum `p`, `d`, and `q` values that can be selected during the random search.
+It is the maximum `p`, `d`, and `q` values that can be selected during the random search.
 
 - `test='adf'`
 It is an Augmented Dickey-Fuller (ADF) test to check for stationarity in our dataset. 
@@ -355,7 +342,7 @@ The model is trained using the train data frame. It also uses the p,d, and q val
 The Auto ARIMA model will predict using the test data frame and the unseen future values. For prediction using the test data frame, we will have the actual energy demand and the predicted energy demand. 
 
 #### Predicting the test data frame
-We predict on the test data frame as follows:
+We predict the test data frame as follows:
 
 ```python
 forecast=model.predict(n_periods=4, return_conf_int=True)
@@ -402,11 +389,11 @@ From the line chart above:
 - The blue line is the actual energy demand.
 - The orange line is the predicted energy demand. 
 
-The Auto ARIMA model has performed well, it has made accurate predictions. The two lines are close to each other. 
+The Auto ARIMA model has performed well, it has made accurate predictions. The blue and orange lines are close to each other. 
 
 We can now use this model to predict the unseen future values.
 
-####  Predict the unseen future values
+#### Predict the unseen future values
 To predict the unseen future values use this code:
 
 ```python
@@ -435,16 +422,14 @@ From the line chart above:
 - The blue line represents the actual energy demand.
 - The orange line represents the predicted energy demand. 
 
-The orange line also shows the unseen future predictions. The Auto ARIMA model has performed well, the orange line maintains the general dataset pattern. 
+The orange line also shows the unseen future predictions. The Auto ARIMA model has performed well, the orange line maintains the general pattern. 
 
 ### Conclusion
-In this tutorial, We have learned how to build a multivariate time series model with AutoARIMA. We discussed how the Auto ARIMA model works and how it automatically finds the best parameters of an ARIMA model. 
+In this tutorial, We have learned how to build a multivariate time series model with AutoARIMA. We explored how the Auto ARIMA model works and how it automatically finds the best parameters of an ARIMA model. 
 
-We briefly discussed a non-stationary time series and how to perform differencing. We covered how to check for stationarity using the Augmented Dickey-Fuller test. We also discussed why we need an Auto ARIMA model in time series.
+Finally, we implemented the Auto ARIMA model. We used the Auto ARIMA model to find the `p`, `d`, and `q` values. We used the trained Auto ARIMA model to predict the energy demand on the test data frame and the unseen future values. The final model made accurate predictions as observed in the plotted line chart.
 
-Finally, we implemented the Auto ARIMA model. We used the trained Auto ARIMA model to predict the energy demand on the test data frame and the unseen future values. The model made good predictions, the two lines were close to each other.
-
-You can access the Python code in Google Colab for this tutorial [here](https://colab.research.google.com/drive/1X10JHyXMkUAWz_Z2wPngfa7PXUjzuVvf?usp=sharing)
+You can get the full implementation of this tutorial in Google Colab [here](https://colab.research.google.com/drive/1X10JHyXMkUAWz_Z2wPngfa7PXUjzuVvf?usp=sharing)
 
 ### References
 - [Auto ARIMA documentation](https://alkaline-ml.com/pmdarima/modules/generated/pmdarima.arima.auto_arima.html)
