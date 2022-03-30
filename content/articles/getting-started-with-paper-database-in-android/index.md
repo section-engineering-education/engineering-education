@@ -1,23 +1,40 @@
-### Introduction
-A database is an organized collection of data that is stored electrically in computer systems. In Android, there are several databases that comprises of SQLite, Room and SQLDlight, Datastore, SharedPreference, and Realm database. Even though most people tend to think that all databases are computerized there are databases held on paper example is the phone book which has no records for each person rather it has the main element of the database that is the field which is a name and phone number.
+---
+layout: engineering-education
+status: publish
+published: true
+url: /getting-started-with-paper-database-in-android/
+title: Getting Started with Paper Database in Android
+description: This tutorial takes the reader through the steps to get started with Paper Database in Android. 
+author: brandy-odhiambo
+date: 2022-03-30T00:00:00-17:21
+topics: [Languages]
+excerpt_separator: <!--more-->
+images:
+
+  - url: /engineering-education/getting-started-with-paper-database-in-android/hero.jpg
+    alt: Getting Started with Paper Database in Android
+---
+A database is an organized collection of data that is stored electrically in computer systems. In Android, there are several databases that comprises of SQLite, Room and SQLDlight, Datastore, SharedPreference, and Realm database.
+<!--more-->
+Even though most people tend to think that all databases are computerized there are databases held on paper example is the phone book which has no records for each person rather it has the main element of the database that is the field which is a name and phone number.
 
 ### Table of contents
 - [Prerequisites](#prerequisites)
 - [Goals](#goals)
-- [What is Paper Database](#what-is-paper-database)
+- [What is Paper Database?](#what-is-paper-database)
 - [Advantages of Paper Database](#advantages-of-paper-database)
 - [Disadvantages of Paper Database](#disadvantages-of-paper-database)
-- [Where to use Paper Database](#where-to-use-paper-database)
+- [When to use Paper Database](#when-to-use-paper-database)
 - [Getting Started](#getting-started)
 - [Creating a new project](#step-1---creating-a-new-project)
 - [Adding Dependencies](#step-2---adding-dependencies)
 - [Creating the User Interface](#step-3---creating-the-user-interface)
 - [Initializing Paper in an Application Class](#step-4---initializing-paper-in-an-application-class)
-- [The Model Class](#step-5---the-model-class)
+- [Creating the Model Class](#step-5---creating-the-model-class)
 - [Inserting Data to Paper Database](#step-6---inserting-data-to-paper-database)
 - [Getting all notes](#step-7---getting-all-notes)
 - [Deleting all Notes](#step-8---deleting-all-notes)
-- [Demo](demo)
+- [Demo](#demo)
 - [Conclusion](#conclusion)
 
 ### Prerequisites
@@ -175,3 +192,6 @@ In this tutorial, we have discussed what Paper database is, it's advantages and 
 You can get the full implementation of this tutorial on this GitHub repository [Paper Database](https://github.com/brandy-kay/PaperDbTest).
 
 Happy Coding!
+
+---
+Peer Review Contributions by: [Eric Gacoki](/engineering-education/authors/eric-gacoki/)
