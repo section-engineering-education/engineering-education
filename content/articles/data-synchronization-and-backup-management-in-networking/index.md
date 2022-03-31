@@ -37,12 +37,13 @@ As we all know, data synchronization is the process of establishing consistency 
 - Server-altered sync: here, the server tells the client to request data that the client pulls, e.g., email.
 - Client-initiated: The client sends data, e.g., device configuration changes.
 
-In data synchronization, `Sync-ML` is a framework that provides protocols, tools, and a markup language for synchronization, which WAP `2.0` makes use of.
+In data synchronization, `SyncML`allows different kinds of devices such as cell phones, portable music players, desktops, etc. to synchronize various contact and scheduling information so that each device is kept up to date.
 
 ### Patterns of data synchronization
 Synchronization pattern characteristics
--What kinds of data entities will be involved in the synchronization?
--What kind of local storage entities are these on both sides? Are they similar or duplicate entities, or do they have different types of structures that must be met?
+
+- What kinds of data entities will be involved in the synchronization?
+- What kind of local storage entities are these on both sides? Are they similar or duplicate entities, or do they have different types of structures that must be met?
 - Metadata is needed to keep track of other information about the synchronization.
 - Some local storage entities get modified to include metadata attributes to track how frequently that entity has changed or what type of change has occurred.
 - Updating data depends on the network status, whether online or offline.
@@ -56,7 +57,8 @@ Here, the server can update data in the database. The device does not change dat
 - Its advantage is that it sends data every time, although it is insufficient for large data sets.
 
 #### Read-Only data optimization
-Here, the device changes the data, but now it is optimized, giving the data that has changed. Only the server will be able to update the database. The device will not change any of the data, and if it does, changes are not sent to the server. The synchronization steps followed are:
+Here, the device changes the data, but now it is optimized, giving the data that has changed. Only the server will be able to update the database. The device will not change any of the data, and if it does, changes are not sent to the server. 
+The synchronization steps followed are:
 
 - it is accomplished by the client calling the server with the last sync time and the server checking for all the context that has been changed since the last sync date. 
 - It looks for contacts that have been deleted and sets its findings to a list and then sends it to the client as an output. 
