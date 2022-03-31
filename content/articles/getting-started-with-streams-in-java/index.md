@@ -4,9 +4,9 @@ status: publish
 published: true
 url: /getting-started-with-streams-in-java/
 title: Getting Started with Streams in Java
-description: This article will help all developers understand the concepts of streams in Java.
+description: This article will help the reader better understand the concepts of streams in Java. A stream is a collection of objects piped together to generate a particular outcome.
 author: erastus-muriithi
-date: 2022-03-21T00:00:00-09:00
+date: 2022-03-31T00:00:00-12:00
 topics: [Languages]
 excerpt_separator: <!--more-->
 images:
