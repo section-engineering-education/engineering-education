@@ -23,7 +23,7 @@ Dependency injection makes unit testing- testing single units of the source code
 - Have [Visual studio](https://visualstudio.microsoft.com/downloads/) installed.
 
 ### An overview of dependency injection
-A class dependent on a client class creates an object of the client class within itself. This complicates the code in a way that:
+A class that depends on a client class generates a client class object. This complicates the code in a way that:
 - The code becomes coupled such that the inner class becomes dependent on the client class.
 - Testing the class becomes hard since testing the client class is not easy.
 - Changes to the client class will affect the inner class it depends on.
@@ -42,10 +42,8 @@ Dependency injection can be implemented using:
 - Property injection
 - Interface based injection
 
-Let us look at ways we can implement dependency injection.
-
 ### Implementing dependency injection using constructor injection
-Dependency injection using constructor injection is the most widely used way to implement dependency injection. A parameterized constructor is required in this constructor dependency requiring an argument to be passed during object creation. 
+The most extensively used dependency injection technique is constructor injection. A parameterized constructor is required in this constructor dependency requiring an argument to be passed during object creation. 
 
 A constructor is a method called when a class object is created. In constructor injection, the client is required to provide a parameter. This makes sure the client instance/object is in a valid state. The dependency is passed as a constructor argument.
 The injection component can be used anywhere in the class.
@@ -115,9 +113,9 @@ Here we create objects of class serviceA and serviceB, which are passed as param
 The client class takes an object of type IClient in the constructor where the injection happens, bypassing the service implementing the IClass interface. The dependency is passed during the creation of the client object.
 
 ### Implementing dependency injection using method injection
-This is a rarely used way to implement dependency injection where the dependency object is supplied/injected through a public method of the client class. A client class implemented interface declares which method will deliver the dependency. The injector delivers the dependence to the client class using the interface implemented by the client class. 
+There's a seldom used approach to inject dependencies through a client class's public function. A client class implemented interface declares which method will deliver the dependency. The injector delivers the dependence to the client class using the interface implemented by the client class. 
 
-This method is proper when the entire class does not require the dependency, instead only the method with the dependence.
+This technique is appropriate when just one method in the class need the dependency.
 
 The following is a c-sharp code implementing method injection.
 
@@ -176,13 +174,12 @@ client.Start(r2);
 ```
 The client class object passes the service classes objects to the start() method. 
 
-The Service classes A and B implement the Iclass interface, including the  Serve() method. The injector client class uses this method to inject the dependent class services  A and B the client class.
+The Service classes A and B implement the Iclass interface, including the  Serve() method. The injector client class uses this method to inject services A and B.
 
 The Client class includes the Start() method to set the object of the type class. The dependency is passed during the creation of the client object.
 
 ### Implementing dependency injection using property injection
-Also known as Setter Injection, dependency is supplied through a public property of the client class.  
-Instantiation of a new object or modification of an already existing object is not required.
+Setter Injection provides reliance via a public property of the client class. No new object creation or update is required.
 
 The dependency can also be passed through
 - using a setter method that stores the dependency in a variable.
@@ -251,12 +248,12 @@ public class Client {
 
 Client class is dependent on the property of type IClient through the `Iclass _service`.
 The set method sets the object property where the dependency is injected.
-We inject the dependency through a public property of the client class. We use a setter method to set the object of the setter property. The dependency is then passed during client object creation.
+We inject the dependency via a client class property. In this case, we'll utilize a setter method. The dependency is then passed during client object creation.
 
 Property dependency injection is used when we intend to create the dependency object when it is required.
 
 ### Implementing dependency injection using interface-based injections
-In interface-based injection, an injector method, provided through an interface, injects the dependency into a client passed to it. The dependency becomes the injector.
+Interface-based injection injects a dependency into a client via an interface. The dependency becomes the injector.
 
 An interface-based injection is similar to property injection, using default getter and setter methods. However, interface-based injection sets the interface property using an explicit setter getter interface.
 
