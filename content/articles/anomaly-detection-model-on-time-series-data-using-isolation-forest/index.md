@@ -35,7 +35,7 @@ We will use the Isolation Forest algorithm to train a time series model. We will
 - [Plotting line charts](#plotting-line-charts)
 - [Plotting a detailed line chart](#plotting-a-detailed-line-chart)
 - [Building the anomaly detection using Isolation Forest](#building-the-anomaly-detection-using-isolation-forest)
-- [Initialiaze the Isolation Forest algorithm](#initialiaze-the-isolation-forest-algorithm)
+- [Initialize the Isolation Forest algorithm](#initialize-the-isolation-forest-algorithm)
 - [Fitting the Isolation Forest model](#fitting-the-isolation-forest-model)
 - [Using Isolation Forest model to make predictions](#using-isolation-forest-model-to-make-predictions)
 - [Anomalous data points](#anomalous-data-points)
