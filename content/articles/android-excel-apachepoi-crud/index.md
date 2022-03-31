@@ -3,25 +3,27 @@ layout: engineering-education
 status: publish
 published: true
 url: /android-excel-apachepoi-crud/
-title: Perfoming Update and Delete Operations on your Spreadsheet files using the Apache POI library in Android
+title: Performing Update and Delete Operations on your Spreadsheet files using the Apache POI library in Android
 description: This tutorial takes the reader through the process of creating an Excel file, adding data to it, and then updating and deleting data from it using the Apache POI library
 author: vincent-ngunzulu
-date: 2022-03-29T00:00:00-01:40
+date: 2022-03-31T00:00:00-12:08
 topics: [Languages]
 excerpt_separator: <!--more-->
 images:
 
   - url: /engineering-education/android-excel-apachepoi-crud/hero.jpg
-    alt: Perfoming Update and Delete Operations on your Spreadsheet files using the Apache POI library in Android Hero Image
+    alt: Performing Update and Delete Operations on your Spreadsheet files using the Apache POI library in Android Hero Image
 ---
 
 ### Introduction
 
-A good application should be able to handle all CRUD operations. Owing to that, we will build upon [this](https://www.section.io/engineering-education/android-excel-apachepoi/) article that talks about creating and reading Spreadsheets created using the Apache POI library. We will have a walkthrough on editing cells, renaming columns, deleting sheets & workbooks, etc.
+A good application should be able to handle all CRUD operations. Owing to that, we will build upon [this](https://www.section.io/engineering-education/android-excel-apachepoi/) article about creating and reading Spreadsheets created using the Apache POI library. We will have a walkthrough on editing cells, renaming columns, deleting sheets & workbooks, etc.
+
+<!-- more -->
 
 ### Prerequisites
 
-> **NOTE**: Since we will add more code to the linked project, it is necessary to have a look at it. It’s a continuation of the application, and it will be hard to follow through with this one if you haven’t looked at the tutorial.
+> **NOTE**: Since we will be adding more code to the linked project, it is necessary to have a look at it. It is a continuation of the application, and it will be hard to follow through with this one if you haven’t looked at the tutorial.
 
 The requirements of both tutorials are the same, which are:
 
@@ -35,7 +37,7 @@ We will add header cells to the table we created and format the cells. Secondly,
 
 ### Adding and formatting header cells
 
-We have to add a row at the top of the cells we created. There are many ways to do this, one of which is using a loop. In the loop, we set each current row's index to the next index position, appropriately set the values, and then add the header cells' values. However, we won't be using the looping approach to simplify things. Also, we have few records, so we will manually shift the rows and add the header row to the top. Therefore, modify the `addData()` method to match this:
+We need to add a row at the top of the cells we created. There are many ways to do this, one of which is using a loop. In the loop, we set each current row's index to the next index position, appropriately set the values, and add the header cells' values. However, we won't be using the looping approach to simplify things. Also, we have few records, so we will manually shift the rows and add the header row to the top. Therefore, modify the `addData()` method to match this:
 
 ```kotlin
    private fun addData(sheet: Sheet) {
@@ -83,7 +85,7 @@ We have incremented the row indices and added a header row to the top.
 
 #### Formatting the cells
 
-Let’s now format the header cells. This will be done after accessing a sheet, which we discussed in the previous article.
+Let’s now format the header cells. After accessing a sheet, this will be done, which we discussed in the previous article.
 
 > I will first discuss the code in bits, step by step, then show the full code at the end.
 
@@ -109,13 +111,13 @@ font.color = IndexedColors.WHITE.index
 font.bold = true
 ```
 
-A style object for accessing formatting properties such as alignment, background color, etc is created this way:
+A style object for accessing formatting properties such as alignment, background color, etc. is created this way:
 
 ```kotlin
 val headerCellStyle = workbook.createCellStyle()
 ```
 
-After the style object creation, we set a left alignment, a red background color, and the fill type to solid. You can explore these and more formatting properties in the official Apache POI docs.
+After the style object creation, we set a left alignment, a red background color, and the fill type to solid. Again, you can explore these and more formatting properties in the official Apache POI docs.
 
 ```kotlin
 //applying formatting styles to the cells
@@ -124,7 +126,7 @@ headerCellStyle.fillForegroundColor = IndexedColors.RED.index
 headerCellStyle.setFillPattern(FillPatternType.SOLID_FOREGROUND)
 ```
 
-To set the font properties, we use the `setFont()` method and pass in the font object we created beforehand.
+We use the `setFont()` method and pass in the font object we created beforehand to set the font properties.
 
 ```kotlin
 headerCellStyle.setFont(font);
@@ -145,7 +147,7 @@ To utilize the same sheet without creating another function, we will add more co
 
 ### Editing Cell Labels and Values
 
-We first access the rows and cells we want. Note that for your app, this should be done dynamically and not hard coding the indices as I have done here.
+We first access the rows and cells we want. Note that this should be done dynamically for your app and not hard coding the indices as I have done here.
 
 ```kotlin
 //selecting cells to be editted and formatted
@@ -167,7 +169,7 @@ targetCellValue.cellStyle = targetCellDataStyle
 targetCellLabel.cellStyle = targetCellDataStyle
 ```
 
-After the edits, we have to close the input stream and then save the file.
+After the edits, we have to close the input stream and save the file.
 
 ```kotlin
 //close
@@ -303,13 +305,13 @@ A method called `deleteSheet()` is used for the deletion task, where we will cal
     }
 ```
 
-When we run the code and access the file, we wont see the sheet:
+When we run the code and access the file, we won't see the sheet:
 
 ![Screenshot](/engineering-education/android-excel-apachepoi-crud/shot-four.png)
 
 ### Deleting a row
 
-After accessing the row, we delete it using the `removeRow()` method. The deletion is done after confirming if the target row is not empty using an `if` conditional statement.
+After accessing the row, we delete it using the `removeRow()` method. After confirming if the target row is not empty, the deletion is done using an `if` conditional statement.
 
 ```kotlin
 val targetRow = sheet.getRow(rowNo)
@@ -318,7 +320,7 @@ if (targetRow != null) {
 }
 ```
 
-After that, we shift the cells one step backwards using the `shiftRows()` method. This method takes in three parameters: the row index to start shifting from, the total number of rows to shift, and a step number. That’s why we needed to access the total number of rows using the `totalNoOfRows` variable.
+After that, we shift the cells one step backwards using the `shiftRows()` method. This method takes three parameters: the row index to start shifting from, the total number of rows to shift, and a step number. We needed to access the total number of rows using the `totalNoOfRows` variable.
 
 ```kotlin
 /*excluding the last row, move the cells that come
@@ -383,7 +385,7 @@ The full code:
 
 ### Deleting Columns
 
-This is a little bit more complicated than the previous ones. We have first to get the number of columns available. We have to do this because we will get an error when trying to delete an empty column or when we want to perform a shift function. So we won't do the shift here. I will leave it up to you to get some coffee and implement it.
+This is a little bit more complicated than the previous ones. We first get the number of columns available. We have to do this because we will get an error while trying to delete an empty column or when we want to perform a shift function. So we won't perform the shift operation here. I will leave it up to you to get some coffee and implement it.
 
 We get the total number of columns by getting the number of the last cell of a row.
 
@@ -459,7 +461,7 @@ That is it.
 
 ### Further Practice
 
-Apache POI provides a countless number of methods that are to be explored. For this tutorial, we could add table borders, footers, rename a workbook, delete a workbook, rename a sheet, italicize, set different font families, etc. I encourage you to have a look at the [official documentation](https://poi.apache.org/components/spreadsheet/index.html) and this [JavaTPoint blog](https://www.javatpoint.com/apache-poi-tutorial) for more insights. The updated GitHub code is found [here](https://github.com/vinstex/androidExcelTest).
+Apache POI provides a countless number of methods that can be explored. For this tutorial, we could add table borders, footers, rename a workbook, delete a workbook, rename a sheet, italicize, set different font families, etc. I encourage you to have a look at the [official documentation](https://poi.apache.org/components/spreadsheet/index.html) and this [JavaTPoint blog](https://www.javatpoint.com/apache-poi-tutorial) for more insights. The updated GitHub code is found [here](https://github.com/vinstex/androidExcelTest).
 
 ### Conclusion
 
@@ -467,4 +469,3 @@ We added header cells and formatted them, edited cell values, deleted a workshee
 
 ---
 Peer Review Contributions by: [Odhiambo Paul](/engineering-education/authors/odhiambo-paul/)
-
