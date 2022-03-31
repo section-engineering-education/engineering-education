@@ -27,7 +27,7 @@ This model's main objective is to take images and texts and connect them in a no
 7. [References](#references)
 
 ### Prerequisites
-Before reading this article, the reader needs to be familiar with transformers in Natural Language Processing (NLP), Convolutional Neural Networks (CNN), and the working of the novel [self-supervised learning (SSL)](/what-is-self-supervised-learning/) algorithm. 
+Before reading this article, the reader needs to be familiar with transformers in Natural Language Processing (NLP), Convolutional Neural Networks (CNN), and the working of the novel [self-supervised learning (SSL)](/engineering-education/what-is-self-supervised-learning/) algorithm. 
 
 ### Introduction
 It isn't entirely a novel idea, but many image-text pair ideas in the past have inspired the CLIP model. There have been papers before predicting the caption of images, but most models don't work too well. A few examples of these models that inspired the CLIP model include the [ConVIRT](https://arxiv.org/pdf/2010.00747.pdf) model. 

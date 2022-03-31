@@ -2,7 +2,7 @@
 layout: engineering-education
 status: publish
 published: true
-url: engineering-education/node-mailer/
+url: /node-mailer/
 title: The Nodemailer package in a Node.js Server
 description: In this tutorial, we are going to create a server using the Nodemailer package in a Node.js Server. We will send two types of emails; plain text and HTML emails - we will be creating a node server with the help of express.js.
 author: linus-muema
@@ -11,7 +11,7 @@ topics: [Node.js]
 excerpt_separator: <!--more-->
 images:
 
-  - url: /engineering-education/node-mailer/hero.jpg
+  - url: /node-mailer/hero.jpg
     alt: Node mailer example image
 ---
 Emails are an essential way of communicating. Most servers today use emails to send information to clients. In this tutorial, we are going to create a server that does the same. We will be sending two types of emails; plain text and HTML emails.

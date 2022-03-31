@@ -69,7 +69,7 @@ I have installed `Python 3.9.6` on my machine. Yours might be different, no qual
 
 It is advisable to install `Python3` anyways. If you have no Python installed, then head on to official website and download the latest according to your OS.
 
-- [Python Official](/https://python.org)
+- [Python Official](https://python.org)
 
 You are on the right track, keep reading...
 
@@ -330,9 +330,9 @@ Try to reference it in subsequent project of yours. Congratulations on your new 
 
 Thank you for making it to this end, see you!!.
 
-- [Django Official Docs](/https://docs.djangoproject.com/en/3.2/intro/)
+- [Django Official Docs](https://docs.djangoproject.com/en/3.2/intro/)
 
-- [Github Profile](/https://github.com/Horlawhumy-dev)
+- [Github Profile](https://github.com/Horlawhumy-dev)
 
 Happy coding!
 

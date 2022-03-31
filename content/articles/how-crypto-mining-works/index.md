@@ -105,7 +105,7 @@ In this article we have looked at how Bitcoin mining is completed from a higher 
 
 ### Additional Resources
 
-- [How to Build Your Own Private Blockchain](/how-to-build-your-own-private-blockchain/)
+- [How to Build Your Own Private Blockchain](/engineering-education/how-to-build-your-own-private-blockchain/)
 
 - [What is ablockchain](https://www.investopedia.com/terms/b/blockchain.asp)
 

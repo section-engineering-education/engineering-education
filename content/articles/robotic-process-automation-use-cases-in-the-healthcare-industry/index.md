@@ -20,7 +20,7 @@ RPA software mimics the virtual human worker and performs activities and tasks t
 
 Organizations in the healthcare industry are using RPA in patients scheduling, insurance claims management, improvement of healthcare cycle, and provision of optimal care, as we will discuss in this article.
 
-For a more in-depth look at robotic process automation, its features, and benefits, refer to this [article](/what-is-robotic-process-automation/).
+For a more in-depth look at robotic process automation, its features, and benefits, refer to this [article](/engineering-education/what-is-robotic-process-automation/).
 
 ### An overview of RPA in healthcare
 The healthcare sector in any country is a complex yet critical system to the well-being of the citizens. It's comprised of medical equipment, health insurance, clinical trials, and more.
@@ -78,7 +78,7 @@ Predictive analytic techniques are applied to medical cases to give solutions, c
 
 These techniques are equally important in identifying at-risk patients under home care to prevent hospital re-admissions. The application of predictive analytics helps in the early identification of medical equipment maintenance needs to avoid downtime.
 
-Analytical techniques that doctors and medical researchers use in their day-to-day work include [Natural Language Processing](/five-real-life-use-cases-of-natural-language-processing-nlp/) (NLP),[machine learning](https://link.springer.com/chapter/10.1007/978-3-030-29407-6_9), [evidence-based medicine](https://www.hopkinsmedicine.org/gim/research/method/ebm.html), and big data.
+Analytical techniques that doctors and medical researchers use in their day-to-day work include [Natural Language Processing](/engineering-education/five-real-life-use-cases-of-natural-language-processing-nlp/) (NLP),[machine learning](https://link.springer.com/chapter/10.1007/978-3-030-29407-6_9), [evidence-based medicine](https://www.hopkinsmedicine.org/gim/research/method/ebm.html), and big data.
 
 ### How RPA ensures patient data privacy
 The automation of hospital processes and operations using RPA makes use of sensitive patient data. Ensuring the security and privacy of this information is a top concern of healthcare organizations.

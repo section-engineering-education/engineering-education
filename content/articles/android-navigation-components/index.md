@@ -17,7 +17,7 @@ images:
 As we all know, the jetpack navigation library was created to provide a better user experience with navigation. However, most developers do not know how to harness the full power of the library. This article is here to help you get a deeper understanding of the library and what it offers.
 <!--more-->
 ### Destinations and actions
-Basically, the navigation component has three parts, i.e. the navigation graph, the `NavHost` and the `NavController`. They are well discussed in [this article](/bottom-navigation-bar-in-android/). 
+Basically, the navigation component has three parts, i.e. the navigation graph, the `NavHost` and the `NavController`. They are well discussed in [this article](/engineering-education/bottom-navigation-bar-in-android/). 
 
 In the navigation graph, we have two very important units.
 

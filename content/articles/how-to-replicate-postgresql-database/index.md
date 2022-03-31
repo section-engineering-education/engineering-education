@@ -31,7 +31,7 @@ For this to happen there must be communication between the two hosts or two serv
 
 ![LOCAL-EXAMPLE](/engineering-education/how-to-replicate-postgresql-database/local-network.png)
 
-[Internet Example - *Image Source*](/how-to-replicate-postgresql-database/internet-network.png)
+[Internet Example - *Image Source*](/engineering-education/how-to-replicate-postgresql-database/internet-network.png)
 
 ### Installing PostgreSQL
 For this article, we will be using Ubuntu 18.04 LTS and PostgreSQL 10. Several Linux distributions can be used as server operating systems. It is important to note that one can set up Replication in any operating system.

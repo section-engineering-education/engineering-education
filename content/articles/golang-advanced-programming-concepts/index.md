@@ -14,7 +14,7 @@ images:
   - url: /engineering-education/golang-advanced-programming-concepts/hero.jpg
     alt: Go example image
 ---
-*Go is a powerful statically-typed, open-source, and procedural programming language that is gaining popularity in the IT industry*. In our [first introduction article](/golang-part-1-introduction/), we looked at the history of Go, its purpose, and its installation. In our [second article](/golang-part-2-programming-basics/), we explored basic programming concepts such as variables, input/output, etc...
+*Go is a powerful statically-typed, open-source, and procedural programming language that is gaining popularity in the IT industry*. In our [first introduction article](/engineering-education/golang-part-1-introduction/), we looked at the history of Go, its purpose, and its installation. In our [second article](/engineering-education/golang-part-2-programming-basics/), we explored basic programming concepts such as variables, input/output, etc...
 <!--more-->
 
 In this article, we are going to go over advanced programming concepts such as functions, structures, and arrays.
@@ -71,7 +71,7 @@ func main() {
 
 The function `add_numbers()` takes 2 parameters: the two numbers to be added, and returns the sum of the two numbers. The two numbers are specified as `int` in the above example, but the parameters can be of any data type permissible in Go.
 
-For more information on Go datatypes, please visit this [link](/golang-part-2-programming-basics/). The return type is also specified as `int` because the sum of two integers is also an integer.  
+For more information on Go datatypes, please visit this [link](/engineering-education/golang-part-2-programming-basics/). The return type is also specified as `int` because the sum of two integers is also an integer.  
 
 A function can be ["called"](https://www.digitalocean.com/community/tutorials/how-to-define-and-call-functions-in-go) or "invoked" by specifying the name of the function and passing the required parameters. In the example above, we call the `add_numbers()` function by passing two integers as parameters.  
 
