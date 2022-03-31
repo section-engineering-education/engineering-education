@@ -3,7 +3,7 @@ layout: engineering-education
 status: publish
 published: true
 url: /building-a-simple-keyboard-using-anvil/
-title: Building a simple keyboard using Anvil
+title: Building a Simple Keyboard using Anvil
 description: This tutorial will show our readers how to leverage Anvil to build a functional keyboard similar to the one on your computer.
 author: willies-ogola
 date: 2022-03-31T00:00:00-13:29
