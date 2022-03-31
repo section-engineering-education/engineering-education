@@ -6,7 +6,7 @@ url: /comparing-okios-okhttp3-and-retrofit-in-performing-network-calls/
 title: Understanding Okhttp3 and Retrofit in Android
 description: This article will help readers understand Retrofit and the okhttp3 library when it comes to conducting network calls in Android.
 author: vivian-odhiambo
-date: 2022-03-29T00:00:00-04:00
+date: 2022-03-31T00:00:00-04:00
 topics: [Languages]
 excerpt_separator: <!--more-->
 images:
