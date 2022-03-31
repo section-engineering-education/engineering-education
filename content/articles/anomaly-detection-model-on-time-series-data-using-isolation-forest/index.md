@@ -52,24 +52,15 @@ A reader should understand:
 ### Why perform anomaly detection
 Anomaly detection has the following benefits:
 
-- It helps with fraud detection. 
-Anomaly detection will identify unusual and suspicious events in time series. Anomaly detection models are applied in banks and other financial institutions to detect fraud. 
+- It helps with fraud detection. Anomaly detection will identify unusual and suspicious events in time series. Anomaly detection models are applied in banks and other financial institutions to detect fraud. The anomaly detection model will identify suspicious activities and transactions.
 
-The anomaly detection model will identify suspicious activities and transactions.
+- It detects sudden spikes and drops in the time series dataset. Anomaly detection will explain the sudden spikes and drops in the dataset. We will also be able to gain valuable insights from the dataset. The sudden spikes and drops may lead to inconsistent results during forecasting. 
 
-- It detects sudden spikes and drops in the time series dataset. 
-Anomaly detection will explain the sudden spikes and drops in the dataset. 
+- It identifies noise in the dataset. Noise is unwanted and erroneous data points. Noisy data has meaningless information that may corrupt the time series model in training. Removing the noise will ensure we have a high-quality dataset.
 
-We will also be able to gain valuable insights from the dataset. The sudden spikes and drops may lead to inconsistent results during forecasting. 
+- It helps in identifying failures/malfunctioning in applications and devices. The model identifies unexpected changes in time-series data that record devices and applications' performance. The unexpected changes may be associated with device failure or malfunctioning.
 
-- It identifies noise in the dataset.
-Noise is unwanted and erroneous data points. Noisy data has meaningless information that may corrupt the time series model in training. Removing the noise will ensure we have a high-quality dataset.
-
-- It helps in identifying failures/malfunctioning in applications and devices.
-The model identifies unexpected changes in time-series data that record devices and applications' performance. The unexpected changes may be associated with device failure or malfunctioning.
-
-- It helps in network intrusion and network anomaly detection.
-Models that monitor the network traffic will detect sudden changes in network traffic. These sudden changes may be due to cyber-attacks and other unauthorized access.
+- It helps in network intrusion and network anomaly detection. Models that monitor the network traffic will detect sudden changes in network traffic. These sudden changes may be due to cyber-attacks and other unauthorized access.
 
 ### Dataset preparation
 We will prepare the dataset that the anomaly detection model will use. We will use the New York Taxi dataset. 
