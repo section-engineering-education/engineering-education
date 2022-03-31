@@ -31,7 +31,7 @@ For proper understanding and moving along with this tutorial, you will require:
 ### How to use the neural network toolbox
 We execute the `nnstart` in the command window to open this toolbox. For example, this command opens a new window shown below:
 
-![Openning window](/engineering-education/how-to-forecast-time-series-data-using-neural-network-toolbox-in-matlab/image-one.png)
+![Openning window](/engineering-education/engineering-education/forcasting-time-series-data-using-matlab/image-one.png)
 
 This toolbox provides various options that we can use to implement our data. It means that you can also perform some other operations apart from the prediction. For example, we have the fitting app, pattern recognition app, clustering app and time series app. We can use all these apps to analyze the input data. These apps within the app are known as wizards. Since we will perform a prediction, we select the `pattern recognition app`.
 
@@ -39,21 +39,21 @@ Note that this app provides other resources to help you understand the neural ne
 
 When you open the `pattern recognition app`, you get the interface shown below:
 
-![Pattern recognition app](/engineering-education/how-to-forecast-time-series-data-using-neural-network-toolbox-in-matlab/image-two.png)
+![Pattern recognition app](/engineering-education/forcasting-time-series-data-using-matlab/image-two.png)
 
 This app uses a two-layer feed-forward network to predict data. What is a feed-forward network? Well, this is a classification algorithm that is biologically inspired. It consists of simple neurons organized in layers, and each neuron in a layer is connected to the previous layers. The meaning of this explanation is shown below:
 
-![Feed forward network](/engineering-education/how-to-forecast-time-series-data-using-neural-network-toolbox-in-matlab/image-three.png)
+![Feed forward network](/engineering-education/forcasting-time-series-data-using-matlab/image-three.png)
 
 The neural recognition app will help you select data create, and train networks. It then evaluates its performance using cross-entropy and confusion matrix. A confusion matrix is a layout table that shows the performance of a neural network on test data. It is mainly used to visualize supervised machine learning.
 
 When you click on `next`, you get a window that allows you to select your input data. For example, the interface is shown below:
 
-![Select input data](/engineering-education/how-to-forecast-time-series-data-using-neural-network-toolbox-in-matlab/image-four.png)
+![Select input data](/engineering-education/forcasting-time-series-data-using-matlab/image-four.png)
 
 Click on the three dots labelled `2` to input your data. The dialogue that allows you to select your data from it opens up when you click it. In some instances, you may not have the input data. The neural network toolbox has some sample data that you can use to create the neural network. Click on the `load example data set` below the window above to get this dataset. When you click it, it opens sample datasets that you can use to create your neural network. Let us begin with the sample dataset in Matlab. The dataset interface is shown below:
 
-![Dataset](/engineering-education/how-to-forecast-time-series-data-using-neural-network-toolbox-in-matlab/image-five.png)
+![Dataset](/engineering-education/forcasting-time-series-data-using-matlab/image-five.png)
 
 There is a brief description of the selected dataset. For example, we have selected `breast cancer`. A brief description of this dataset is on the right side of the window. You can go through this description to understand your dataset. It also gives alternative ways to create your neural network from the command window using the tool properties. To do this in the command window, we execute the code below:
 
@@ -69,14 +69,14 @@ The `cancer_dataset` is loaded into Matlab, and the input data is stored in the 
 
 Since we are not creating and training the dataset in the command window, click on `import` at the bottom of the window above. after selecting your sample data. Once you import your dataset, both the input and target are filled as shown below:
 
-![Selecting data](/engineering-education/how-to-forecast-time-series-data-using-neural-network-toolbox-in-matlab/image-six.png)
+![Selecting data](/engineering-education/forcasting-time-series-data-using-matlab/image-six.png)
 
 Our dataset is arranged column-wise.
 
 >Note that you can import input data and the target differently. It is done by clicking on the three dots beside that dataset.
 Click `next`. It opens a new window shown below:
 
-![Validation and Test data](/engineering-education/how-to-forecast-time-series-data-using-neural-network-toolbox-in-matlab/image-seven.png)
+![Validation and Test data](/engineering-education/forcasting-time-series-data-using-matlab/image-seven.png)
 
 In this section, the dataset is divided into three, i.e. train, validation, and test data. As we can see, 70% of the dataset is for training, 15% for validation and the remaining 15% for testing. The total samples in our dataset are 699. These are the default division ratio, but you can change this to your prefered ratio by clicking on the drop-down menu.
 
@@ -87,13 +87,13 @@ First, the training data is used to train the network. Also, it adjusts accordin
 
 Click `next` to get the interface below:
 
-![Network architecture](/engineering-education/how-to-forecast-time-series-data-using-neural-network-toolbox-in-matlab/image-eight.png)
+![Network architecture](/engineering-education/forcasting-time-series-data-using-matlabb/image-eight.png)
 
 Here, you specify the number of hidden neurons your network should use. The number of hidden neurons you use is based on your dataset's type. As you increase the number of hidden neurons, the accuracy increases. When the number of these hidden neurons is so high, the models learn more parameters than required, leading to the inaccuracy of the network.
 
 The default value of these hidden neurons is `10`. We can change this value to our prefered value for accuracy purposes. Click `next`. It opens the training interface shown below:
 
-![Train network](/engineering-education/how-to-forecast-time-series-data-using-neural-network-toolbox-in-matlab/image-nine.png)
+![Train network](/engineering-education/forcasting-time-series-data-using-matlab/image-nine.png)
 
 When you click on the `train`, the training begins. The training stops once the generalization or validation stops improving. At this point, the neural network is assumed to have completed learning.
 
@@ -101,37 +101,37 @@ If we train our network multiple times, you obtain different results. It is beca
 
 Once the training is done, the window shown below opens:
 
-![Training output](/engineering-education/how-to-forecast-time-series-data-using-neural-network-toolbox-in-matlab/image-ten.png)
+![Training output](/engineering-education/forcasting-time-series-data-using-matlab/image-ten.png)
 
 This window shows the algorithm, training progress, and output plots. These outputs are the performance, training state, error histogram and error matrix. For example, this network uses 23 iterations. The performance is 0.227. It is low performance. We never set our neural network properly because the sample data was not large. When the dataset is very small, the training performance is likely poor.
 
 You can visualize the plot of the training process. For example, if you want to visualize the plot for the performance, you click on the performance, and you will get the plots as shown below:
 
-![Performnace plot](/engineering-education/how-to-forecast-time-series-data-using-neural-network-toolbox-in-matlab/image-eleven.png)
+![Performnace plot](/engineering-education/forcasting-time-series-data-using-matlab/image-eleven.png)
 
 Also, if you want to visualize the confusion matrix, you click on the `confusion` which is shown below:
 
-![Confusion matrix](/engineering-education/how-to-forecast-time-series-data-using-neural-network-toolbox-in-matlab/image-twelve.png)
+![Confusion matrix](/engineering-education/forcasting-time-series-data-using-matlab/image-twelve.png)
 
 When you go back to the training window, we get this window to be very different. This new window allows you to retrain your data, import large datasets, or adjust network size. These are options that are done in case the training result is not as good as expected.
 
 Click `next` to deploy the solutions. These are the Matlab code and the Simulink model for the neural network we have created. The interface is shown below:
 
-![Deployed solutions](/engineering-education/how-to-forecast-time-series-data-using-neural-network-toolbox-in-matlab/image-thirteen.png)
+![Deployed solutions](/engineering-education/forcasting-time-series-data-using-matlab/image-thirteen.png)
 
 When you select the `Matlab function`, a code is generated for the neural model that we have created. The Simulink model for deploying our model is also shown below:
 
-![Simulink model](/engineering-education/how-to-forecast-time-series-data-using-neural-network-toolbox-in-matlab/image-fourteen.png)
+![Simulink model](/engineering-education/forcasting-time-series-data-using-matlab/image-fourteen.png)
 
 Also, we can get the diagram for our neural network.
 
-![Neural network diagram](/engineering-education/how-to-forecast-time-series-data-using-neural-network-toolbox-in-matlab/image-fifteen.png)
+![Neural network diagram](/engineering-education/forcasting-time-series-data-using-matlab/image-fifteen.png)
 
 Since we are creating a neural network, we can save this network. We can use this network in any dataset that you train for prediction. This network is saved as a Matlab script. We can use this network in future.
 
 Click `next` to save your network in the deploy solution window. It opens the interface below:
 
-![Save results](/engineering-education/how-to-forecast-time-series-data-using-neural-network-toolbox-in-matlab/image-sixteen.png)
+![Save results](/engineering-education/forcasting-time-series-data-using-matlab/image-sixteen.png)
 
 We can save your network as a simple or advanced script. The advanced script has additional options that help you improve your neural network. Also, the saving options are shown here. We can choose whichever options we prefer.
 
