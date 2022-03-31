@@ -28,7 +28,7 @@ We will use the Isolation Forest algorithm to train a time series model. We will
 
 ### Table of contents
 - [Prerequisites](#prerequisites)
-- [Why perform anomaly detection](#why-perform-anomaly-detection)
+- [Why perform anomaly detection?](#why-perform-anomaly-detection)
 - [Dataset preparation](#dataset-preparation)
 - [Dataset resampling](#dataset-resampling)
 - [Adding new columns](#adding-new-columns)
@@ -49,7 +49,7 @@ A reader should understand:
 - [Time series concepts](/engineering-education/introduction-to-time-series/)
 - [Time series analysis and modelling.](/engineering-education/anomaly-detection-model-on-time-series-data/)
 
-### Why perform anomaly detection
+### Why perform anomaly detection?
 Anomaly detection has the following benefits:
 
 - It helps with fraud detection. Anomaly detection will identify unusual and suspicious events in time series. Anomaly detection models are applied in banks and other financial institutions to detect fraud. The anomaly detection model will identify suspicious activities and transactions.
@@ -204,7 +204,7 @@ Detailed line chart output:
 We have prepared our dataset and visualized the data points. Let's start building the anomaly detection model using an Isolation Forest.
 
 ### Building the anomaly detection using Isolation Forest
-Isolation Forest is an unsupervised algorithm for anomaly detection. It does not require a labeled time-series dataset to identify anomalies.
+[Isolation Forest](https://scikit-learn.org/stable/modules/generated/sklearn.ensemble.IsolationForest.html) is an unsupervised algorithm for anomaly detection. It does not require a labeled time-series dataset to identify anomalies.
 
 Let's import an Isolation Forest algorithm.
 
@@ -218,7 +218,7 @@ Isolation Forest builds multiple decision trees so that each leaf of the decisio
 The data point can either be an anomaly or not. Let's initialize the Isolation Forest algorithm.
 
 #### Initialize the Isolation Forest algorithm
-use this code:
+To initialize the Isolation Forest algorithm, use the following code:
 
 ```python
 model =  IsolationForest(contamination=0.004)
@@ -238,7 +238,7 @@ The `value` will train the Isolation Forest model. It will learn and identify an
 We can now use the trained Isolation Forest model to make predictions. The model will identify anomalies in the time series dataset.
 
 ### Using Isolation Forest model to make predictions 
-Use the code snippet below:
+To make predictions using the trained Isolation Forest model, use the code snippet below:
 
 ```python
 df['outliers']=pd.Series(model.predict(df[['value']])).apply(lambda x: 'yes' if (x == -1) else 'no' )
@@ -260,7 +260,7 @@ Anomalous data points output:
 All the data points displayed above are anomalous. Let's plot a line chart to show the anomalies in our dataset.
 
 ### Display the anomalies in our dataset
-We will use Plotly Express to visualize all the anomalies in our dataset. Run this code:
+We will use Plotly Express to visualize all the anomalies in our dataset. To display the anomalies, run this code:
 
 ```python
 fig = px.scatter(df.reset_index(), x='timestamp', y='value', color='outliers', hover_data=['weekday'], title='TAXI DRIVES')
@@ -269,7 +269,9 @@ fig.update_xaxes(
 )
 fig.show()
 ```
-The above Ploty Express diagram shows the anomalous data points/outliers and the normal data points. 
+![Ploty Express diagram](/engineering-education/anomaly-detection-model-on-time-series-data-using-isolation-forest/ploty-express-diagram.png)
+
+The above Ploty Express diagram shows the anomalous data points/outliers (orange dots) and the normal data points (blue dots). 
 
 We have detected, plotted, and visualized the anomalies in the time series dataset.
 
