@@ -87,10 +87,7 @@ Output:
 
 ![Rows and columns](/engineering-education/anomaly-detection-model-on-time-series-data-using-isolation-forest/taxi-dataset.png)
 
-The dataset has `timestamp` and `value` columns.
-
-The `timestamp` column shows the time of recording.
-The `value` column contains the number of taxi rides.
+The dataset has `timestamp` and `value` columns. The `timestamp` column shows the time of recording. The `value` column contains the number of taxi rides.
 
 #### Converting the `timestamp` column
 We will convert the `timestamp` column to the DateTime format. DateTime will allow us to perform time-series analysis and operations on the column. 
