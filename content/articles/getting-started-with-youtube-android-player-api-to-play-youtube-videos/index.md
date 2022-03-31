@@ -26,7 +26,7 @@ To follow along and learn more from this tutorial, make sure you have:
 ### Introduction
 YouTube offers an Android API that allows developers to add Youtube capability of playing videos in their app. However, the API does not have a direct dependency that one can be added to the `Gradle` files. Instead, one must download the API as a zip file and add it manually to the app.
 
-The API also requires an API key and registration in the Google cloud console. The API is simple to use and has different features that we can leverage to make our apps attractive.
+The API also requires an API key and registration in the Google cloud console. The API is simple and has different features that we can leverage to make our apps attractive.
 
 ### Obtaining the API-key
 - Launch your browser and go to the [Google Cloud Platform](https://console.cloud.google.com/). Use your google account to get started. 
@@ -87,7 +87,7 @@ In your Android Studio, switch to project view > click on app > then on libs and
 
 Right-click on the `.jar` file and select `Add as Library`. It will then be added to our app-level `build.gradle` as a dependency.
 
-If you switch back to Android view, navigate to the `Gradle` section, and open the Module `build.gradle`, you should see the newly added dependency : 
+If you switch back to the Android view, navigate to the `Gradle` section, and open the Module `build.gradle`, you should see the newly added dependency : 
 
 `implementation files('libs/YouTubeAndroidPlayerApi.jar')`
 
@@ -127,17 +127,17 @@ data class SearchResponse(
 ```
 
 ### Designing user interfaces
-Let us define a UI that will have a search `EditText`, that lets the user search for a given video, and a `RecyclerView` to display the result of the search.
+Let us define a UI with a search `EditText` that lets the user search for a given video and a `RecyclerView` to display the search result.
 
 Go ahead and design the layout for your `activity_main.xml` to be similar to this : 
 
 ![layout-main](/engineering-education/getting-started-with-youtube-android-player-api-to-play-youtube-videos/layout.png)
 
-> Don't forget to create a corresponding `RecyclerView` row items and its and the Recycler adapter based on the model class that was created ([You can take a look at how my recycler adapter looks like in this Github gist](https://gist.github.com/mosestakai/e21a114822b7d7c6b53b6920b8190f98)).
+> Do not forget to create a corresponding `RecyclerView` row item and its and the Recycler adapter based on the model class that was created ([You can take a look at how my recycler adapter looks like in this Github gist](https://gist.github.com/mosestakai/e21a114822b7d7c6b53b6920b8190f98)).
 
-> In other cases, you can include the thumbnails of the videos that have been searched, but we will not do that here as that is out of the scope of this tutorial. We will just display the 'ids' of the search results.
+> In other cases, you can include the thumbnails of the videos that have been searched, but we will not do that here as that is out of the scope of this tutorial. So instead, we will display the 'ids' of the search results.
 
-For playing the videos, we will do that in another `Activity`. Create a new 'PlayerActivity' and in the `activity_player.xml` add the `YouTubePlayerView` view.
+We will do that in another `Activity` for playing the videos. To create a new 'PlayerActivity' and the `activity_player.xml`, add the `YouTubePlayerView` view.
 
 ```Xml
 <com.google.android.youtube.player.YouTubePlayerView
@@ -165,7 +165,7 @@ fun search(
     @Query("key") apiKey: String = YOUTUBE_API_KEY
 ) : Call<SearchResponse>
 ```
-The function takes in a search query and the Youtube API key then returns a response of the searched word. 
+The function takes in a search query, and the Youtube API key then returns a response of the searched word. 
 
 Creating an instance of the API service :
 
@@ -209,9 +209,9 @@ binding.searchButton.setOnClickListener {
 ```
 
 ### Playing videos
-When a given search from the `RecyclerView` is clicked, we navigate the user to another the `PlayerActivity` where the video is now played.
+When a given search from the `RecyclerView` is clicked, we navigate the user to another, the `PlayerActivity`, where the video is now played.
 
-The youtube API requires that you have the YOUTUBE_ID of the video that you want to play. We will be passing this 'id' to the `PlayerActivity`.
+The youtube API requires that you have the YOUTUBE_ID of the video that you want to play. So we will be passing this 'id' to the `PlayerActivity`.
 
 ```kotlin
 adapter = VideosAdapter(VideosAdapter.OnClickListener{ item ->
@@ -259,7 +259,7 @@ youTubePlayerView.initialize(YOUTUBE_API_KEY, object : YouTubePlayer.OnInitializ
 })
 ```
 
-Inside the `initialize` method, we pass our `YOUTUBE_API_KEY` and `OnInitializedListener` interface. The interface has two functions that are overridden. The first method is overridden when initialization is successful, and the other when the initialization fails.
+Inside the `initialize` method, we pass our `YOUTUBE_API_KEY` and `OnInitializedListener` interface. The interface has two functions that are overridden. The first method is overridden when initialization is booming, and the other when the initialization fails.
 
 If the API initializes successfully, with the `player` from the `onInitializationSuccess` function, you can load the video that you want to play. Write  - `player?.load video(VIDEO_ID)`. 
 
@@ -273,7 +273,7 @@ When you compile and run the app on your emulator or physical device, your app s
 ![demo](/engineering-education/creating-a-flipped-box-card-in-android-jetpack-compose/demo.gif)
 
 ### Conclusion
-In this brief tutorial, we learned what the YouTube Android Player API is, how to create a project on the Google cloud platform, obtain the key, secure the key, and finally integrate the API in our Android app. 
+In this brief tutorial, we learned what the YouTube Android Player API is, how to create a project on the Google cloud platform, obtain the key, secure the key, and finally integrate the API into our Android app. 
 
 Keep researching and learning more about the API. Also, please check out this [Github repository](https://github.com/mosestakai/YoutubeVideoPlayerDemo) for the fully implemented  app
 
