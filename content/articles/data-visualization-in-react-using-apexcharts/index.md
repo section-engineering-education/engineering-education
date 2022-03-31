@@ -1,8 +1,9 @@
 
+
  
 
 ### Introduction
-[ApexCharts.js](https://apexcharts.com/docs/react-charts/#) is a library that is used to visualize data. It provides features such as annotations, responsiveness and animations which make your charts interactive. It can used with other frameworks such as Vue and Angular. However, this article will cover how to install it in your React application, using it to visualize data from an API endpoint and the types of charts that are available in this library.
+[ApexCharts.js](https://apexcharts.com/docs/react-charts/#) is a library that is used to visualize data. It provides features such as annotations, responsiveness, and animations that make your charts interactive. It can be used with other frameworks such as Vue and Angular. However, this article will cover how to install it in your React application, use it to visualize data from an API endpoint, and the types of charts that are available in this library.
 
 ### Table of contents
 * [Introduction](#introduction)
@@ -38,7 +39,7 @@ In this article, we will use a JSON server to create a fake REST API that we wil
 ```bash
 npm install -g json-server
 ```
-This will install the JSON server globally in our computer.
+This will install the JSON server globally on our computer.
 
 Start the React application using the following command.
 ```bash
@@ -73,10 +74,10 @@ const MyCharts = () => {
   return (
     <div>
       <Chart
-      options={options}
-      series={series}
-      type="bar"
-      width="450"
+        options={options}
+        series={series}
+        type="bar"
+        width="450"
       />
     </div>
   )
@@ -84,19 +85,19 @@ const MyCharts = () => {
 
 export default MyCharts;
 ```
-On the second line of our file, we are importing Chart from `react-apexcharts`. We then declare two variables, `series` and `options` . We will then set the `series` and `options` props in the `<Chart />` component to these variable.  `<Chart />` component accepts the following props;
+On the second line of our file, we are importing Chart from `react-apexcharts`. We then declare two variables, `series` and `options`. We will then set the `series` and `options` props in the `<Chart />` component to these variables.  `<Chart />` component accepts the following props;
 
-- `options` : This is a prop type of object. All the optional chart configuration are passed here.  In the `options` variable, the `chart` key has a value of an object `{ id: 'bar-chart'}`, which is the id of our chart. The key `xaxis` has a value of `categories`, which is the the label that will be on the x-axis.
+- `options`: This is a prop type of object. All the optional chart configurations are passed here.  In the `options` variable, the `chart` key has a value of an object `{ id: 'bar-chart'}`, which is the id of our chart. The key `xaxis` has a value of `categories`, which is the label that will be on the x-axis.
 
-- `series` : This is a prop type of an array. It containes the data that we want to display on the y-axis.
+- `series`: This is a prop type of an array. It contains the data that we want to display on the y-axis.
 
-- `type` : This is a prop type of string. It defines the type of chart that we want to display. In our case, a `bar` chart. There are other types such as `line` and `donut`.
+- `type`: This is a prop type of string. It defines the type of chart that we want to display. In our case, a `bar` chart. There are other types such as `line` and `donut`.
 
-- `width` : Can be a string or a number. It defines the width of the chart.
+- `width`: Can be a string or a number. It defines the width of the chart.
 
-- `height` : Can be a string or a number. It defines the height of the chart.
+- `height`: Can be a string or a number. It defines the height of the chart.
 ### Creating fake REST API using JSON server
-This section is for the readers using JSON server to create the fake REST API. If you have an existing API endpoint, you can skip to the next section.
+This section is for the readers using a JSON server to create the fake REST API. If you have an existing API endpoint, you can skip to the next section.
 Create a `data` folder at the root of your project. Inside this folder, create a `db.json` file which will contain our data. Include the following in the `db.json` file.
 
 #### db.json
@@ -148,7 +149,7 @@ Open another terminal and run the following command to start the server.
 json-server --watch data/db.json --port 8000
 ```
 
-The command above, starts our JSON server on port 8000. We specify a port number because when you run the JSON server, it will try to run on port 3000, but we are already using this port to run our React application. Thus, we use port 8000. On the terminal, you will see this url, `http://localhost:8000/temperature`. This will be the API endpoint that we will use to fetch the data in our application.
+The command above starts our JSON server on port 8000. We specify a port number because when you run the JSON server, it will try to run on port 3000, but we are already using this port to run our React application. Thus, we use port 8000. On the terminal, you will see this URL, `http://localhost:8000/temperature`. This will be the API endpoint that we will use to fetch the data in our application.
 
 ### Fetching data
 In `charts.js`, we will use the useEffect hook to fetch data that will be displayed in the chart.
@@ -192,9 +193,9 @@ const MyCharts = () => {
 };
 
 ```
-In the code snippet above, useEffect fetches the data from the API endpoint when the component renders the first time. We then assign an API endpoint to the `url` variable. In our example, the endpoint is `http://localhost:8000/temperature` . This is because, we are using a fake REST API from the JSON server, but it can be replaced with any other real API endpoint.
+In the code snippet above, useEffect fetches the data from the API endpoint when the component renders the first time. We then assign an API endpoint to the `url` variable. In our example, the endpoint is `http://localhost:8000/temperature`. This is because, we are using a fake REST API from the JSON server, but it can be replaced with any other real API endpoint.
 
-Once the API is called, the response is converted into JSON and stored in a variable `data`. In order to get the values for our x-axis and y-axis, we map through `data` and return an array of `average_temp`  values. We then store this array in the `averageTemp` state using `setAverageTemp` function.
+Once the API is called, the response is converted into JSON and stored in a variable `data`. To get the values for our x-axis and y-axis, we map through `data` and return an array of `average_temp`  values. We then store this array in the `averageTemp` state using `setAverageTemp` function.
 We also map through `data` and return the `date` values. This is then stored in state, `date` using the `setDate` function.
 After fetching data using useEffect, `series[0].data` is assigned the `averageTemp` array and `options.xaxis.categories` is assigned `date` array.
 
@@ -218,7 +219,7 @@ return (
   </div>
 )
 ```
-Finally, import `MyCharts` component into App.js. If you run the project on `localhost:3000`, below is an image of what what will be on the browser.
+Finally, import the `MyCharts` component into App.js. If you run the project on `localhost:3000`, below is an image of what will be on the browser.
 ```javascript
 import MyCharts from './components/charts';
 
@@ -238,7 +239,6 @@ export default App;
 The first chart is a bar chart, the second chart is a line graph with data from our API endpoint.
 
 ### Conclusion
-In this article, we have installed the ApexCharts.js library in our React application, created a fake REST API using JSON server, fetched data from the API endpoint and displayed it in a bar chart and line graph.
+In this article, we have installed the ApexCharts.js library in our React application, created a fake REST API using a JSON server, fetched data from the API endpoint, and displayed it in a bar chart and line graph.
 
 Happy coding.
-
