@@ -85,9 +85,9 @@ We have incremented the row indices and added a header row to the top.
 
 #### Formatting the cells
 
-Let’s now format the header cells. After accessing a sheet, this will be done, which we discussed in the previous article.
+Let’s now format the header cells. This will be done, after accessing a sheet , which we discussed in the previous article.
 
-> I will first discuss the code in bits, step by step, then show the full code at the end.
+> We will first discuss the code in snippets, step by step, then show the full code at the end.
 
 We access the header cells in this manner:
 
@@ -385,7 +385,7 @@ The full code:
 
 ### Deleting Columns
 
-This is a little bit more complicated than the previous ones. We first get the number of columns available. We have to do this because we will get an error while trying to delete an empty column or when we want to perform a shift function. So we won't perform the shift operation here. I will leave it up to you to get some coffee and implement it.
+This is a comparatively complicated than the previous ones. We first get the number of columns available. We have to do this because we will get an error while trying to delete an empty column or when we want to perform a shift function. So we won't perform the shift operation here. I will leave it up to you to get some coffee and implement it.
 
 We get the total number of columns by getting the number of the last cell of a row.
 
