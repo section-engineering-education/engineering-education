@@ -6,7 +6,7 @@ url: /anomaly-detection-model-on-time-series-data-using-isolation-forest/
 title: Anomaly Detection Model on Time Series data using Isolation Forest
 description: This tutorial will use the Isolation Forest algorithm to train an anomaly detection model on time series data.
 author: collins-kirui
-date: 2022-03-29T00:00:00-21:20
+date: 2022-03-31T00:00:00-21:20
 topics: [Machine Learning]
 excerpt_separator: <!--more-->
 images:
@@ -18,7 +18,7 @@ A time series is a sequence of data points that occur in successive order over t
 <!--more-->
 Examples of time-series data are company sales, weather records, Covid-19 caseloads, forex exchange prices, and stock prices. The time-series data can be minutes, hours, days, weeks, or years.
 
-For example, in forex exchange, we can record the daily closing exchange rates of the Euro and US Dollar(EUR/USD) for a week. A time series model can then analyze these closing exchange rates to identify patterns. Eventually, the model predicts future EUR/USD exchange rates based on previously historical/observed closing prices.
+For example, in forex exchange, we can record the daily closing exchange rates of the Euro and US Dollar (EUR/USD) for a week. A time series model can then analyze these closing exchange rates to identify patterns. Eventually, the model predicts future EUR/USD exchange rates based on previously historical/observed closing prices.
 
 During time series analysis and modeling, the dataset used may contain anomalies. Anomalies/outliers are unusual data points or observations that don't follow the expected dataset patterns.
 
@@ -28,7 +28,7 @@ We will use the Isolation Forest algorithm to train a time series model. We will
 
 ### Table of contents
 - [Prerequisites](#prerequisites)
-- [Why perform anomaly detection?](#why-perform-anomaly-detection)
+- [Why perform anomaly detection](#why-perform-anomaly-detection)
 - [Dataset preparation](#dataset-preparation)
 - [Dataset resampling](#dataset-resampling)
 - [Adding new columns](#adding-new-columns)
@@ -44,12 +44,12 @@ We will use the Isolation Forest algorithm to train a time series model. We will
 - [References](#references)
 
 ### Prerequisites
-A reader should:
+A reader should understand:
 
-- Understand [time series concepts](/engineering-education/introduction-to-time-series/)
-- Understand [time series analysis and modelling.](/engineering-education/anomaly-detection-model-on-time-series-data/)
+- [Time series concepts](/engineering-education/introduction-to-time-series/)
+- [Time series analysis and modelling.](/engineering-education/anomaly-detection-model-on-time-series-data/)
 
-### Why perform anomaly detection?
+### Why perform anomaly detection
 Anomaly detection has the following benefits:
 
 - It helps with fraud detection. 
@@ -180,9 +180,7 @@ Line chart output:
 
 ![First line chart](/engineering-education/anomaly-detection-model-on-time-series-data-using-isolation-forest/first-line-chart.png)
 
-The line chart above shows the number of taxi rides recorded during each day of the week. From this line chart, the number of taxi rides increases during the weekdays (Monday-Friday). It is because most people are going to work.
-
-During the weekends the number of rides reduces. Most people are at home and do not need taxi rides.
+The line chart above shows the number of taxi rides recorded during each day of the week. From this line chart, the number of taxi rides increases during the weekdays (Monday-Friday). It is because most people are going to work. During the weekends the number of rides reduces. Most people are at home and do not need taxi rides.
 
 #### Second line chart
 Use this code snippet:
@@ -194,7 +192,7 @@ Line chart output:
 
 ![Second line chart](/engineering-education/anomaly-detection-model-on-time-series-data-using-isolation-forest/second-line-chart.png)
 
-The line chart above shows the number of taxi rides recorded during each hour of the day. During the morning hours (5-10), the number of taxi rides increases or is higher. Most people are going to work at this time. Also, during the evening hours, the number of rides is higher because most people are from work.
+The line chart above shows the number of taxi rides recorded during each hour of the day. During the morning hours (5-10), the number of taxi rides increases or is higher. Most people are going to work at this time. Also, during the evening hours, the number of rides is higher because most people are going back home from work.
 
 We will also plot a detailed line chart to show all the data points.
 
@@ -229,9 +227,7 @@ Let's import an Isolation Forest algorithm.
 ```python
 from sklearn.ensemble import IsolationForest
 ```
-Isolation Forests(IF), similar to [Random Forests](/engineering-education/introduction-to-random-forest-in-machine-learning/), are built based on decision trees. 
-
-An Isolation Forest algorithm randomly selects features in the time series dataset. It then sub-samples data points using a tree-based structure. 
+Isolation Forests (IF), similar to [Random Forests](/engineering-education/introduction-to-random-forest-in-machine-learning/), are built based on decision trees. An IF algorithm randomly selects features in the time series dataset. It then sub-samples data points using a tree-based structure. 
 
 Isolation Forest builds multiple decision trees so that each leaf of the decision tree will isolate the data points in the time series dataset. Each leaf of the tree isolates exactly one observation from the data set. 
 
@@ -243,9 +239,7 @@ use this code:
 ```python
 model =  IsolationForest(contamination=0.004)
 ```
-The `IsolationForest` has `contamination` parameter. This parameter specifies the number of anomalies in our time series data. It sets the percentage of points in our data to be anomalous.
-
-We set this value to `0.004%`. It will determine how the dataset is "contaminated" with anomalies.
+The `IsolationForest` has a `contamination` parameter. This parameter specifies the number of anomalies in our time series data. It sets the percentage of points in our data to be anomalous. We set this value to `0.004%`. It will determine how the dataset is "contaminated" with anomalies.
 
 Let's fit the Isolation Forest model to the time series data.
 
@@ -265,9 +259,7 @@ Use the code snippet below:
 ```python
 df['outliers']=pd.Series(model.predict(df[['value']])).apply(lambda x: 'yes' if (x == -1) else 'no' )
 ```
-The code above adds a new `outliers` column to the dataset. This column will either be labeled `yes` or `no`. 
-
-`yes` will show the anomalous data points. `no` will show the normal data points.
+The code above adds a new `outliers` column to the dataset. This column will either be labeled `yes` or `no`. `yes` will show the anomalous data points. `no` will show the normal data points.
 
 We use the `predict` function to make predictions. Let's display all the anomalous data points.
 
