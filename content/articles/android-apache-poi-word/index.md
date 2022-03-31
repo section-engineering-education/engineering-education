@@ -404,7 +404,7 @@ We get this on running the app.
 
 To access the word document created, open the Device Explorer using your IDE and then navigate to your app’s data location(`View Tab -> Tool Windows -> Device File Explorer -> data > your-package-name -> files`). It resembles this screenshot.
 
-Check this GitHub repository for the code.
+Check this [GitHub repository](https://github.com/munubi254/apache-word-android) for the code.
 
 ### Conclusion
 That was it. This library contains a multitude of methods that only a dedicated book can exhaust. You can add footnotes, a table of contents, and almost everything you can get in an MS-Office Word application. Although this library has many functionalities, it doesn’t have a very clear documentation. You have to explore them on your own. The IDEs I pointed out, in the beginning, have intelligent capabilities that allow you to check the library's classes, methods, and their descriptions. You only have to hover on the method and a pop-up is displayed. There’s a localhost link section which you can click and a browser tab is opened giving you all the methods and classes for the code you hovered through. Check the screenshot below.
