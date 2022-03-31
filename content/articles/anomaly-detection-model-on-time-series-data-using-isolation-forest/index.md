@@ -6,7 +6,7 @@ url: /anomaly-detection-model-on-time-series-data-using-isolation-forest/
 title: Anomaly Detection Model on Time Series data using Isolation Forest
 description: This tutorial will use the Isolation Forest algorithm to train an anomaly detection model on time series data.
 author: collins-kirui
-date: 2022-03-31T00:00:00-21:20
+date: 2022-04-01T00:00:00-21:20
 topics: [Machine Learning]
 excerpt_separator: <!--more-->
 images:
@@ -176,7 +176,7 @@ Line chart output:
 
 ![Second line chart](/engineering-education/anomaly-detection-model-on-time-series-data-using-isolation-forest/second-line-chart.png)
 
-The line chart above shows the number of taxi rides recorded during each hour of the day. During the morning hours (5-10), the number of taxi rides increases or is higher. Most people are going to work at this time. Also, during the evening hours, the number of rides is higher because most people are going back home from work.
+The line chart above shows the number of taxi rides recorded during each hour of the day. During the morning hours (5-10), the number of taxi rides increases or is higher. Most people are going to work at this time. Also, during the evening hours, the number of rides is higher because most people travel home from work.
 
 We will also plot a detailed line chart to show all the data points.
 
