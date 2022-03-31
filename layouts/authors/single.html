@@ -55,7 +55,7 @@
 
           <div class="insights-section">
             <div class="insight page-views" data-before="Total Number of Articles Written">
-              <img src="/images/total-articles-icon.png" alt="Total Number of Articles Icon" />
+              <img src="{{ if eq $.Site.Params.env "local" }}/{{ else }}/engineering-education/{{ end }}images/total-articles-icon.png" alt="Total Number of Articles Icon" />
               <p>{{ $numberOfArticles }}</p>
             </div>
           </div>
