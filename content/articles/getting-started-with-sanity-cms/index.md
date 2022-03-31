@@ -6,7 +6,7 @@ url: /getting-started-with-sanity-cms/
 title: How to Get Started with Sanity CMS
 description: This tutorial will walk the reader through how to get started with Sanity CMS.
 author: abimbola-taofeek
-date: 2022-03-31T00:00:00-12:41
+date: 2022-03-31T00:00:00-12:09
 topics: [Languages]
 excerpt_separator: <!--more-->
 images:
@@ -136,7 +136,7 @@ To deploy a sanity project. Sanity deployed applications happen in real-time, me
 You can find the source code [here](https://github.com/abimbolataofeek/getting-started-with-sanity-cms).
 
 ### Conclusion
-We just learned how to set up a database and create a schema that allows users to upload new content to the database. Consider how long it would take us to reach this position if we were working on a MERN stack app (MongoDB Express React and Node.js) or either another tech stack to build this. Instead, we can construct sophisticated apps quickly using Sanity because we don't have to worry about the content file or database query.
+We learned how to set up a database and create a schema that allows users to upload new content to the database. Consider how long it would take us to reach this position if we were working on a MERN stack app (MongoDB Express React and Node.js) or any other tech stack to build this. Instead, we can construct sophisticated apps quickly using Sanity because we don't have to worry about the content file or database query.
 
 Happy coding!
 
