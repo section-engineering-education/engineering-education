@@ -146,11 +146,9 @@ Output:
 ![New columns](/engineering-education/anomaly-detection-model-on-time-series-data-using-isolation-forest/new-columns.png)
 
 ### Plotting line charts
-We will plot two line charts. The first line chart will show the number of taxi rides during each day of the week. 
+We will plot two line charts. The first line chart will show the number of taxi rides during each day of the week. The second line chart will show the number of taxi rides during each hour of the day. We will plot the line chart using Matplotlib. 
 
-The second line chart will show the number of taxi rides during each hour of the day. 
-
-We will plot the line chart using Matplotlib. Let's import Matplotlib.
+Let's import Matplotlib.
 
 ```python
 import matplotlib as mpl
