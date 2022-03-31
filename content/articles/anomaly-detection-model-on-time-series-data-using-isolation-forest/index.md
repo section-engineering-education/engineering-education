@@ -63,9 +63,7 @@ Anomaly detection has the following benefits:
 - It helps in network intrusion and network anomaly detection. Models that monitor the network traffic will detect sudden changes in network traffic. These sudden changes may be due to cyber-attacks and other unauthorized access.
 
 ### Dataset preparation
-We will prepare the dataset that the anomaly detection model will use. We will use the New York Taxi dataset. 
-
-The dataset shows the number of taxi rides for six months. It is in 30 minutes intervals. 
+We will prepare the dataset that the anomaly detection model will use. We will use the New York Taxi dataset. The dataset shows the number of taxi rides for six months. It is in 30 minutes intervals. 
 
 It will train the anomaly detection model using the Isolation Forest algorithm. The model will be able to identify all the anomalies in our dataset. Download the dataset from [here](https://drive.google.com/file/d/1tI7DOx57sF1MwhNGTyx9IImKX-pxqm9S/view?usp=sharing)
 
