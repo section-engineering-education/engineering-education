@@ -16,7 +16,7 @@ images:
 ---
 
 A daemon is a UNIX program that is executed in the background and does not need any standard I/O services.
-
+<!--more-->
 Daemons are used to provide services to other applications like web servers because of their independent nature.
 
 When a daemon process is initialized;
@@ -26,8 +26,7 @@ When a daemon process is initialized;
 
 In this article, we'll describe the various ways of starting a web server as a daemon process, leaving the reader to pick the one best suited to them.
 
-## Table of Contents.
-
+### Table of Contents.
 - [Prerequisites](#prerequisites)
 - [Objectives](#objectives)
 - [What we will test](#what-we-will-test)
@@ -40,13 +39,11 @@ In this article, we'll describe the various ways of starting a web server as a d
 - [The elephant in the room that we couldn't leave without mentioning, Systemd](#the-elephant-in-the-room-that-we-couldnt-leave-without-mentioning-systemd)
 - [Conlusion](#conclusion)
 
-## Prerequisites
-
+### Prerequisites
 - For this tutorial, we'll only need a computer running on Linux OS.
 
-## Objectives
-
-By the end of this article the learner should be able to;
+### Objectives
+By the end of this article the learner should be able to:
 - Know and differentiate what are Foreground tasks, Background tasks, and Daemons.
 - Understand the ampersand sign '&' in running a background task.
 - Understand the SIGHUP signal and the Huponexit parameter with their effects on processes.
@@ -56,8 +53,7 @@ By the end of this article the learner should be able to;
 - Understand the different node tools provided by NPM that allow users to run application programs as daemons.
 - Introduce the learner to Systemd.
 
-## What we will test
-
+### What we will test
 We'll consider a simple node HTTP module:
 
 ```Javascript 
@@ -76,9 +72,7 @@ We'll consider a simple node HTTP module:
     console.log('Listening on port 5000...');
 
  ```
-
-
-
+ 
 > Saved as **testserver.js**.
 
 You run the code in a new terminal window using:
@@ -86,14 +80,14 @@ You run the code in a new terminal window using:
 ```Bash 
 $ node testserver.js
 ```
+
 Everything works fine and everyone is happy as they can access port 5000, but what happens when you close the session, the server becomes inaccessible and you're probably out of a job.
 
 So what can we do to this code so that whenever we want to access the web application we don't have to initialize it every single time?
 
 Also, how can we make sure that inputs to the testserver.js file won't affect the web app's functionality? It's simple we make this process a daemon.
 
-## Daemons, Foreground, and Background tasks.
-
+### Daemons, Foreground, and Background tasks.
 Running a script in the same way shown above makes it a **foreground task**, this is because it relies on the terminal window to run and one has to wait for it to finish in order to run another program.
 
 The first step in converting this process to a daemon, is converting it to a background task, we don't want the said program to monopolize the command line window, we want to do other things while the server is running, to do this we write:
@@ -108,19 +102,17 @@ When we add the ampersand at the end of the script it automatically becomes a ba
  $ ps
 ```
 
-Background tasks have two main characteristics;
+Background tasks have two main characteristics:
 
 - They inherit the standard output (stdout) and the standard error (stderr) of the current terminal window, this means that the output will still be displayed in the command line terminal (as seen by "new connection detected" that's showing on the terminal window).
-
 - They don't inherit the standard input (stdin), if one tries to enter a command or new line the process will stop.
 
 We've now answered part of our question with this, the background task created with the ampersand sign isn't a daemon yet, it doesn't run in the background "smoothly".
 
 There's also another question, once the user exits the terminal window will the background task still be executed?
 
-## SIGHUP signal and the Huponexit parameter.
-
-To answer the question above we need to understand how Linux systems work with the SIGHUP signal and what it is;
+### SIGHUP signal and the Huponexit parameter.
+To answer the question above we need to understand how Linux systems work with the SIGHUP signal and what it is:
 
 1. The user executes the exit input and is ready to exit a session.
 2. The system issues a SIGHUP signal to the session.
@@ -138,8 +130,7 @@ $ shopt | grep huponexit
 ```
 The huponexit parameter can still be set to 'on' by the administrator or some other running daemon, so using the ampersand is not always full proof.
 
-## The disown command.
-
+### The disown command.
 The disown command will function to remove a process from the current shell's reach.
 
 This means that it removes the process from the background process lists and as long as a process is not on this list the SIGHUP signal won't "find" it, so it can't tell it to stop executing.
@@ -180,8 +171,7 @@ $ disown %2
 $ disown -h %2
 ```
 
-### The problem of disown command.
-
+#### The problem of disown command.
 The main problem of the disown command is that after exiting the session and the testserver.js file is slightly modified, it will cause all sorts of problems.
 
 As an example, after running the command using the disown command, navigate to the **testserver.js** module and add a line of code.
@@ -201,8 +191,7 @@ $ node testserver.js > stdout.txt 2> stderr.txt < /dev/null &
 $ disown
 ```
 
-## The nohup command
-
+### The nohup command
 The nohup command is a better alternative to the disown command, this is because it redirects standard output and error to a file.
 
 We run it using:
@@ -216,8 +205,7 @@ The nohup command will;
 2. Close the standard input mechanism thus the process will no longer be able to receive any input, even if it is running in the foreground and that is why we add the ampersand at the end of the command.
 3. Transfers the standard output and standard error to the 'nohup.out' file.
 
-## The screen command and the tmux command.
-
+### The screen command and the tmux command.
 A screen command will allow us to have many terminal sessions running concurrently within a single terminal window. It's helpful in that even if you log out and log in you can still attach to the specific screen where the process was running.
 
 It comes pre-installed but if you don't have it use:
@@ -226,8 +214,7 @@ It comes pre-installed but if you don't have it use:
 $ sudo apt-get install screen
 ```
 
-### How to use the screen command
-
+#### How to use the screen command
 1. Start a new terminal window.
 
 2. To start the server:
@@ -259,8 +246,7 @@ $ screen -r mytestserverscreen
 
 A tmux command will also allow you to perform the same task
 
-### How to use the tmux command
-
+#### How to use the tmux command
 1. Start a new terminal window:
  
 2. To run the server type:
@@ -304,8 +290,7 @@ $ tmux list-sessions
 $ tmux kill-session -t mytestserverscreen
 ```
 
-## Using node tools to run web applications as daemons.
-
+### Using node tools to run web applications as daemons.
 The tools built to avoid all the hustle above are **forever**, **nodeman**, and **pm2**.
 
 We use NPM to manage all these tools.
@@ -316,8 +301,7 @@ We use NPM to manage all these tools.
 $ sudo apt-get install npm
 ```
 
-### Forever.
-
+#### Forever.
 Forever's distinguishing feature is that it ensures the application will restart when the session is closed.
 
 - Installation:
@@ -357,8 +341,7 @@ $ forever restart ID_number
 $ forever list
 ```
 
-### Nodemon
-
+#### Nodemon
 Nodemon is generally only used during development.
 
 Its biggest strength is that it has a watch function, which automatically restarts the process once the file changes.
@@ -377,8 +360,7 @@ To use the watch function to monitor changes to a specified file:
 $ nodemon --watch app --watch libs testserver.js
 ```
 
-### PM2
-
+#### PM2
 PM2 is by far the most famous of the node tools.
 
 While it can restart and monitor applications, it also collects log report changes.
@@ -435,16 +417,14 @@ $ pm2 web
 
 > **NOTE** There are a lot of different commands on how to use different node tools but we only look at the most important and commonly used commands.
 
-## The elephant in the room that we couldn't leave without mentioning, Systemd
-
+### The elephant in the room that we couldn't leave without mentioning, Systemd
 All Linux systems have their own daemon management tool known as Systemd.
 
 It's a part of the operating system that interacts directly with the kernel and has a great performance which makes it that much more powerful.
 
 We hand over the program to Systemd and let it manage processes.
 
-## Conclusion
-
+### Conclusion
 There's a tonne of ways of running a process as a daemon, personally I use the nohup method, I feel like I have a grip of the whole process when I use it but one man's food is another man's poison, I'd implore you to test all of them and find your own zen.
 
 Happy hunting :)
