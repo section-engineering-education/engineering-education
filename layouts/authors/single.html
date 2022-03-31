@@ -110,18 +110,46 @@
           {{ $articlePermalink = .Permalink }}
         {{ end }}
 
+        {{ $articleSlug := .Permalink | relURL | anchorize }}
+
         <script defer type="text/javascript">
           document.addEventListener("DOMContentLoaded", async function() {
             fetch('https://talk.hyvor.com/api/v1/page/?page_identifier={{ $articlePermalink }}&website_id={{ $hyvorId }}')
               .then(response => response.json())
               .then(data => {
-                console.log(data);
+                console.log("data:", data)
                 if (data.status === true) {
-                  document.getElementById('comments-count-{{ $elem_index }}').innerText = data.data.comments_count;
+                  if (!data.data.comments_count) {
+                    document.getElementById('comments-count-{{ $elem_index }}').innerText = 0;
+                  } else {
+                    document.getElementById('comments-count-{{ $elem_index }}').innerText = data.data.comments_count;
+                  }
                   document.getElementById('likes-count-{{ $elem_index }}').innerText = data.data.reactions[0];
                 }
               })
-              .catch(err => console.log('Error: ', err))
+              .catch(err => console.log('Error: ', err));
+
+            {{/*  
+              # Cache or LocalStorage
+              # 
+              # Setup localStorage or cookies to capture pageViews with date
+              # If cookie exists and current date is 12hours past cookie date 
+              #   Then fetch the data and reset cookie
+              # Else if cookie exists and cookie date is not 12 hours old,
+              #   Then use cookie data
+              # If cookie doesn't exist
+              #   Then fetch data.
+            */}}
+            
+            {{/*  fetch('https://api.www.section.io/pageviews/{{ $articleSlug }}/')
+              .then(res => res.json())
+              .then(data => {
+                console.log('data:', data)
+                if (data.pageViews) {
+                  const numPageViews = parseInt(data.pageViews).toLocaleString();
+                  document.getElementById('page-views-count-{{ $elem_index }}').innerText = numPageViews;
+                }
+              })  */}}
           });
         </script>
         
@@ -154,6 +182,9 @@
                 </div>
                 <div class="data-point">
                   <p><img class="icon" src="{{ if eq $.Site.Params.env "local" }}/{{ else }}/engineering-education/{{ end }}images/comment-icon.png" alt="Article Comments" /></p><span id="comments-count-{{ $elem_index }}">0</span>
+                </div>
+                <div class="data-point">
+                  <p><img class="icon" src="{{ if eq $.Site.Params.env "local" }}/{{ else }}/engineering-education/{{ end }}images/page-views-icon.png" alt="Page Views" /></p><span id="page-views-count-{{ $elem_index }}">0</span>
                 </div>
               </div>
             </div>

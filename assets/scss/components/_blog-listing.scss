@@ -178,7 +178,7 @@
 
       @include mq($to: $breakpoint-medium) {
         width: 100%;
-        margin-left: 0;
+        // margin-left: 0;
         flex-direction: row;
         border-left: 0;
         margin-top: 20px;
@@ -188,8 +188,20 @@
           padding: 10px 0;
 
           span {
-            margin-top: 0;
+            margin: 0;
             margin-left: 10px;
+          }
+        }
+      }
+
+      @include mq($to: $breakpoint-small) {
+        justify-content: space-between;
+        .data-point {
+          flex-direction: column;
+          margin-right: 0;
+
+          p, span {
+            margin: 0;
           }
         }
       }
