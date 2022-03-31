@@ -3,7 +3,7 @@ Shared memory helps programs communicate faster. Programs may employ one or more
 
 Threading a process achieves parallelism. Parallelism is the simultaneous execution of many processes. Browser tabs are threads. The same threading technology is used in MS Word.
 
-To demonstrate parallel programming with Pthreads and OpenMP.
+This article will show you how to use Pthreads and OpenMP in parallel programming. 
 
 ### Prerequisites
 To follow this guide, you will need:
@@ -20,13 +20,13 @@ To follow this guide, you will need:
 - [Conclusion](#conclusion)
 
 ### The system architecture
-System architecture is a conceptual model that specifies a system's structure, behavior, and more about the sytem. To better understand shared-memory programming, let us first look at the system architecture.
+System architecture is a conceptual model that specifies a system's structure, behavior, and more about the sytem. Let's start with the system architecture to better grasp shared memory programming.
 
 ![System architecture](/engineering-education/understanding-shared-memory-programming-with-pthreads-and-openmp/system-architecture.png)
 
-Systems may have single-core or multi core CPUs. Each core of a multiple cores CPU handles one thread. Multiple threads need a common memory location to run. Threads allocate free-access memory to create this memory location. As much as the threads are separate, they share a memory space. 
+Systems may have single-core or multi core CPUs. A multi-core CPU processes one thread per core. The memory area where several threads execute. They use free-access memory to build it. As much as the threads are separate, they share a memory space. 
 
-Data are not allocated in shared memory. In the shared memory paradigm, changes to one thread impact all others. As an alternative, jobs in a memory passing paradigm share a single address space, which they read and write in separate threads. 
+Shared memory does not allocate data. Changes to one thread effect all others in shared memory. As an alternative, jobs in a memory passing paradigm share a single address space, which they read and write in separate threads. 
 
 ### An overview of shared memory process and threads
 Multiple applications may access shared memory at the same time. This is possible by use of shared memory. This helps processes to interact without contacting the kernel.
@@ -106,7 +106,7 @@ In developing threads, the following functions are used.
 pthread_create (thread, attr, start_routine, arg) 
 ```
 
-The `pthread create()` method invokes a new thread. The new thread begins execution by calling `start routine()`; `arg` is passed as the sole argument of `start_routine().`
+Pthread create() creates a new thread. The new thread starts by executing `start routine()` with arg as the only parameter.
 
 #### Closing Threads
 In closing threads, the following functions are used.
@@ -235,7 +235,7 @@ Pthreads are useful in the following ways:
 3. `Building a graphical user interface` - Graphical user interface apps expect a request to do a window portion. If it is pre-occupied, the window will be blank. In this scenario, having one thread handle the windowing system messages and requests is prudent (as well as user input). If an operation takes more than 0.2 seconds, it is sent to another thread.
 
 ### OpenMP and its use
-OpenMP is a parallel programming package for SMP (symmetric multiprocessors). OpenMP software threads exchange memory and data. OpenMP supports C, C++, and FORTRAN. The OpenMP header file is omp.h.
+OpenMP is an SMP programming package. OpenMP threads share memory and data. This includes C++ and FORTRAN. The OpenMP header file is omp.h.
 
 An OpenMP application's parts might be sequential or parallel. For example, an OpenMP program often begins with a sequential selection that sets up the environment and initializes the variables.
 
