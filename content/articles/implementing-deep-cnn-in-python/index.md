@@ -3,24 +3,24 @@ layout: engineering-education
 status: publish
 published: true
 url: /implementing-deep-cnn-in-python/
-title: Implementing deep CNN in Python using TensorFlow and Keras for face mask detection
-description: This tutorial will discuss how to use TensorFlow(TF) and Keras(K) in Python to implement deep CNN.
+title: Deep CNN in Python using TensorFlow & Keras for Face Mask Detection
+description: This tutorial will discuss how to use TensorFlow and Keras in Python to implement Deep CNN for face mask detection.
 author: paul-juma
-date: 2022-03-20T00:00:00-13:10
+date: 2022-03-31T00:00:00-13:10
 topics: [Languages]
 excerpt_separator: <!--more-->
 images:
 
   - url: /engineering-education/implementing-deep-cnn-in-python/hero.jpg
-    alt: Implementing deep CNN in Python using TensorFlow and Keras for face mask detection Hero Image
+    alt: Deep CNN in Python TensorFlow Keras face mask detection Hero Image
 ---
-Deep CNN is implemented in Python using TensorFlow and Keras libraries. TensorFlow is an open-source platform that JetBrains created for machine learning. 
+We implement deep CNN in Python using TensorFlow and Keras libraries. TensorFlow is an open-source platform that JetBrains created for machine learning. 
 <!--more-->
 It has properties such as flexible libraries, community resources, and an ecosystem of tools. Due to these properties, researchers can develop state-of-the-art machine learning. 
 
 Keras, a programming interface, is a Python program capable of running on TensorFlow and a machine learning platform. It is used for training neural networks. The development of the program was made to improve experiment speed.
 
-This tutorial will discuss how to use TensorFlow(TF) and Keras(K) in Python to implement deep CNN. We will cover its working. We will also look at where you can get the dataset for your project. 
+This tutorial will discuss how to use TensorFlow (TF) and Keras (K) in Python to implement deep CNN. We will also look at where you can get the dataset for your project. 
 
 This tutorial will discuss how to implement deep CNN in Python to classify images. This example will classify faces into two, i.e. 'withmask' and 'withoutmask'. The goal here is to detect face masks in offline mode.
 
@@ -34,7 +34,8 @@ To follow along with this tutorial, you will need:
 ### Proposed scheme for deep CNN
 
 ![Proposed scheme](/engineering-education/implementing-deep-cnn-in-python/deep-one.png)
-_Deep CNN scheme_
+
+*Deep CNN scheme*
 
 The above image is the generalized scheme of the deep CNN. Here, the input image is first convolved on various filters, and the output goes to the Rectified Linear Unit(ReLu). 
 
@@ -45,11 +46,11 @@ The fully connected layer is used for classification. In the end, we have the so
 ### How to implement deep CNN in Python
 Deep CNN is implemented in Python using TensorFlow and Keras libraries. Tensorflow can run on CPU's, GPU's, and TPU systems.
 
-Keras provides the necessary libraries for developing machine learning. It also helps engineers to take advantage of the scaling ability of TensorFlow.
+Keras provides the necessary libraries for developing machine learning. It also helps engineers take advantage of the scaling ability of TensorFlow.
 
 For Python code development, `spyder IDE` is used under anaconda package manager. TensorFlow does not come with an anaconda. Therefore, we are required to install it ourselves. 
 
-To install TensorFlow(TF 2.3), open the anaconda prompt and execute the command below:
+To install TensorFlow (TF 2.3), open the anaconda prompt and execute the command below:
 
 ```python
 pip install tensorflow==2.3
@@ -61,11 +62,12 @@ Follow the instructions and wait for the installation to complete. This command 
 The image dataset we are using here is available in [kaggle](https://www.kaggle.com/ashishjangra27/face-mask-12k-images-dataset).
 
 ![User interface](/engineering-education/implementing-deep-cnn-in-python/deep-two.png)
-_Kaggle website interface_
+
+*Kaggle website interface*
 
 We download the dataset, but we only use the train folder. We then move this train folder to the current directory for use.
 
-Train folder includes two sub-folders, `withmask` and `withoutmask`. These images are coloured images of the `.png` format. They are also of different sizes. The total images are 10,000 therefore each folder has 5,000 images.
+The train folder includes two sub-folders, `withmask` and `withoutmask`. These images are coloured images of the `.png` format. They are also of different sizes. The total images are 10,000 therefore each folder has 5,000 images.
 
 ### Python code for deep CNN
 We first import some libraries and packages as shown below:
@@ -86,7 +88,7 @@ from tkinter import filedialog
 
 The `numpy` package is for numerical computations. `Tensorflow` and `keras` are used to implement the deep CNN. 
 
-`Tkinter` and `filedialog` are used to open the system dialogue. They enable you to select a single image from different folders for testing.
+`Tkinter` and `filedialog` are used to open the system dialogue. They enable you to select a single image from different folders to test.
 
 We need to define our database. This is done by defining its directory as shown below:
 
@@ -114,11 +116,9 @@ train_ds = tf.keras.preprocessing.image_dataset_from_directory(
     image_size = (img_height, img_width), batch_size = batch_size)
 ```
 
-In the program above, we are reading the `image_dataset_from_directory()` function. This function is a property of `keras`. 
+In the program above, we are reading the `image_dataset_from_directory()` function. This function is a property of `keras`. The `validation_split` is used to show the splitting ratio. 
 
-The `validation_split` is used to show the splitting ratio. This means the image dataset is split into two. 
-
-The ratio for training is 0.8, and that of testing and validation is 0.2. If you perform this calculation, a total of 8000 images is used for training, and the other 2000 is for testing validation.
+This means the image dataset is split into two. The ratio for training is 0.8, and that of testing and validation is 0.2. If you perform this calculation, a total of 8000 images is used for training, and the other 2000 is for testing validation.
 
 All the images will be under `training`, and the `seed` is `123`. Seed is the reshuffling format. This is because the images are picked randomly. The image size remains to be the resized dimensions.
 
@@ -142,7 +142,7 @@ class_names = train_ds.class_names
 print(class_names)
 ```
 
-This is the automatic way of finding the name of the labels. Let us add a code for memory optimization and speed up execution:
+This is the automatic way of finding the name of the labels. Let's add a code for memory optimization and speed up execution:
 
 ```python
 #Memory optimization and speed up execution
@@ -151,11 +151,9 @@ train_ds = train_ds.cache().shuffle(1000).prefetch(buffer_size = AUTOTUNE)
 val_ds = val_ds.cache().prefetch(buffer_size = AUTOTUNE)
 ```
 
-The program above is used because the dataset is extensive. Here, we are using two functions i.e `cache()` and `prefetch()`. 
+The program above is used because the dataset is extensive. Here, we are using two functions i.e `cache()` and `prefetch()`. `Cache()` keeps the image in the RAM after reading from the disk. 
 
-`Cache()` keeps the image in the RAM after reading from the disk. This helps for speedy execution. 
-
-The `prefetch()` helps systems execute the model and fetches data from the library. This means it helps in parallel execution.
+This helps with a speedy execution. The `prefetch()` helps systems execute the model and fetches data from the library. This means it helps in parallel execution.
 
 Define the number of classes which is two, i.e. `withmask` and `withoutmask`.
 
@@ -163,7 +161,7 @@ Define the number of classes which is two, i.e. `withmask` and `withoutmask`.
 num_class = 2
 ```
 
-Now, let us define the `CNN` and the number of `epochs`:
+Now, let's define the `CNN` and the number of `epochs`:
 
 ```python
 #Definning CNN
@@ -186,15 +184,13 @@ noepochs = 7
 
 Here, we define our CNN model, which is `sequential`. In this case, we use the `sequential()` function. This function rescales the image and defines the CNN layers. 
 
-The images are rescaled in the range `0-1`. This is because our datasets are RGB images and they have a pixel value of the range 0-255. It is therefore not settable for the deep CNN model. As a result, it is the reason for rescaling. 
+The images are rescaled in the range `0-1`. This is because our datasets are RGB images and they have a pixel value of the range 0-255. Therefore it is not settable for the deep CNN model. This is the reason for rescaling. 
 
 Rescaling is done by dividing all the pixel values by 255. The convolution layer defined is `conv2D`. It has 16 filters of the size 3x3, the `padding` used is `same`, and the `activation` is `relu`. 
 
-The next layer we have defined is `maxPooling`. This layer only considers the maximum values and ignores others. 
+The next layer we have defined is `maxPooling`. This layer only considers the maximum values and ignores others. Then we continue defining `conv2D` but with more filters. 
 
-Finally, we continue defining `conv2D` but with more filters. To avoid overfitting, we use the `dropout()` function. 
-
-We lastly define the fully connected layer(`layer.Dense`) and the number of epochs. The higher the number of epochs, the better the results.
+To avoid overfitting, we use the `dropout()` function. We then define the fully connected layer (`layer.Dense`) and the number of epochs. The higher the number of epochs, the better the results.
 
 Define the training parameters using the code below:
 
@@ -239,12 +235,16 @@ plt.show()
 The first plot is for the training accuracy, and the second plot is for training losses. Therefore, if we run this training process, we get the training process and plots as shown below:
 
 ![Training process](/engineering-education/implementing-deep-cnn-in-python/deep-three.png)
-_Training process_
+
+*Training process*
 
 ![Plots of the training](/engineering-education/implementing-deep-cnn-in-python/deep-four.png)
-_Plots for the output_
 
-The last step is to create a function for testing single images. The function is:
+*Plots for the output*
+
+The last step is to create a function for testing single images. 
+
+The function is:
 
 ```python
 # Function to test single image
@@ -266,30 +266,36 @@ The `tkinter` library `tk.Tk` and `root.withdraw()` opens a dialog. It allows yo
 
 The image is further preprocessed using the Keras property `keras` to make it compatible. We then use the `predict()` function and the final image as the arguments to get the predictions.
 
-Finally, the softmax layer is applied to this prediction using the `softmax()` function and the confidence score stored in the score variable. We then print the output using the `print()` function. It helps to tell whether the input image belongs to the first or second category.
+The softmax layer is applied to this prediction using the `softmax()` function and the confidence score stored in the score variable. We then print the output using the `print()` function. It helps to tell whether the input image belongs to the first or second category.
 
-We execute the `recogout()` function in the syder terminal for testing single images. Let us execute our function to see how it works:
-- First, open the spyder terminal and run `recogout()` in the command window. The system dialogue opens up when you run this command and select your input image. 
+We execute the `recogout()` function in the syder terminal for testing single images. 
+
+Let us execute our function to see how it works:
+- Open the spyder terminal and run `recogout()` in the command window. The system dialogue opens up when you run this command and select your input image. 
 - After the selection, the class and the confidence score is displayed in the terminal as shown below:
 
 ![Image selected](/engineering-education/implementing-deep-cnn-in-python/deep-five.png)
-_Image selected_
+
+*Image selected*
 
 ![Output](/engineering-education/implementing-deep-cnn-in-python/deep-six.png)
-_Prediction and the confidence score_
 
-Let us now try by giving an image without a mask as the input for the test.
+*Prediction and the confidence score*
+
+Let's now try giving an image without a mask as the input for the test.
 
 ![Image selected](/engineering-education/implementing-deep-cnn-in-python/deep-seven.png)
-_Image selected_
+
+*Image selected*
 
 ![output](/engineering-education/implementing-deep-cnn-in-python/deep-eight.png)
-_Prediction and the confidence score_
+
+*Prediction and the confidence score*
 
 ### Conclusion
 Implementation of CNN in Python is done using TensorFlow and Keras. These are packages that contain all the functions for deep learning. 
 
-While using CNN, you have to keep a soundtrack of all the process that is going on. It helps improve the output. 
+While using CNN, you have to keep track of all the process that is going on. It helps improve the output. 
 
 Also, preprocessing of the dataset is required. It is for compatibility and taking control of the memory.
 
