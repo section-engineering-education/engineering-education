@@ -18,6 +18,9 @@
     p {
       font-size: 22px;
       margin: 0;
+      &:hover {
+        cursor: default;
+      }
     }
     
     &:before {
