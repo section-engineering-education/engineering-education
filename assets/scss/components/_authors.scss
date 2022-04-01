@@ -1,0 +1,52 @@
+.insights-section {
+  margin: 0 0px 50px 0;
+  padding-top: 0px;
+  display: flex;
+  
+  .insight {
+    display: flex;
+    align-items: center;
+    position: relative;
+    padding: 20px 20px 20px 0;
+    
+    img {
+      max-width: 32px;
+      margin-right: 20px;
+      margin-bottom: 0;
+    }
+
+    p {
+      font-size: 22px;
+      margin: 0;
+      &:hover {
+        cursor: default;
+      }
+    }
+    
+    &:before {
+      content: attr(data-before);
+      position: absolute;
+      display: none;
+      top: -20px;
+      left: 0;
+      background-color: $fill-blue;
+      color: #fff;
+      font-size: 14px;
+      padding: 0px 8px;
+      line-height: 22px;
+      width: max-content;
+    }
+  
+    &:hover {
+      &:before {
+        display: block;
+      }
+    }
+
+    &.tooltip {
+      &:before {
+        display: block;
+      }
+    }
+  }
+}
