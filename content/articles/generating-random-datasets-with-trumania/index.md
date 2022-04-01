@@ -6,7 +6,7 @@ url: /generating-random-datasets-with-trumania/
 title: Generating Random Datasets With Trumania
 description: This tutorial will discuss how to use the random module to generate random datasets and select random data from lists.
 author: moris-wanyiri
-date: 2022-03-30T00:00:00-23:30
+date: 2022-04-01T00:00:00-10:30
 topics: [Languages]
 excerpt_separator: <!--more-->
 images:
@@ -14,7 +14,7 @@ images:
   - url: /engineering-education/generating-random-datasets-with-trumania/hero.png
     alt: Generating Random Datasets With Trumania Hero Image
 ---
-In this article, we will look at how to use the random module to generate random datasets and select random data from lists. We will be using Trumania which is a scenario-based random data generator. 
+In this article, we will look at how to use the random module to generate random datasets and select random data from lists. We will use Trumania which is a scenario-based random data generator. 
 <!--more-->
 It will give us a step-by-step algorithm on how random datasets are generated. Random data initiates the creation of random datasets whereby the variables coincide with selected distributions. This article will give a sense of why one may want to generate random datasets.
 
@@ -24,7 +24,7 @@ Knowledge of working with Python libraries
 
 ### Table of contents
 - [Prerequisites](#prerequisites)
-- [Why generate random datasets:](#why-generete-random-datasets)
+- [Why generate random datasets](#why-generete-random-datasets)
 - [Schema-based random data generation](#schemabased-random-data-generation)
   - [Shortcomings addressed by Trumania](#shortcomings-addressed-by-trumania)
 - [Generating inter-related data with Trumania](#generating-inter-related-data-with-trumania)
@@ -35,16 +35,17 @@ Knowledge of working with Python libraries
 
 ### Why generate random datasets
 There are various reasons why one may choose to generate random datasets. The following are some of the reasons:
-- `cost`- The cost of generating random data is cheaper than collecting data in reality.
-- `privacy`- Generating random data is more secure since the integrity and privacy of the owner of the data is maintained.
-- `efficiency`- When it comes to the generation of random data, it is more efficient and cost-effective as compared to the collection of the data in reality.
-- `time`- Random data generation saves time since it's fast and efficient in comparison to the real data. It also allows data scientists to explore datasets, algorithms, and visualization of data in various techniques.
+- `Cost`- The cost of generating random data is cheaper than collecting data in reality.
+- `Privacy`- Generating random data is more secure since the integrity and privacy of the owner of the data is maintained.
+- `Efficiency`- When it comes to the generation of random data, it is more efficient and cost-effective as compared to the collection of the data in reality.
+- `Time`- Random data generation saves time since it's fast and efficient in comparison to the real data. It also allows data scientists to explore datasets, algorithms, and visualization of data in various techniques.
 
 ### Schema-based random data generation
-Under this heading, I am going to illustrate how schema-based random data generation happens and show the outcomes of the same. Many tools may be used to generate random data but the common way is the schema-based generation. It allows the definition of the blueprints and henceforth be able to use it to generate some data entities. Other tools that may be used for the generation of random data include `LogSynth` and `Khermes`.
-Below is a simple illustration;
+Under this heading, I am going to illustrate how schema-based random data generation happens and show the outcomes of the same. Many tools may be used to generate random data but the most common way is the schema-based generation. It allows the definition of the blueprints and henceforth be able to use it to generate some data entities. Other tools that may be used for the generation of random data include `LogSynth` and `Khermes`.
 
-```Python
+Below is a simple illustration:
+
+```python
 {
     {"field" :"Breed",
     "class" : BreedGenerator
@@ -69,12 +70,12 @@ The schema is simple, quick, and has some limitations. The limitation is that th
 - Resulting in relationships between actions.
 - Different duration activity profiles - It defines what time actions are likely to occur.
 - Collected algorithms in a data network - This means that the user interactions are discovered through the social groups
-- Imbalanced Datasets - This means operations cannot aid in a grouping.
+- Imbalanced datasets - This means operations cannot aid in a grouping.
 
 The execution of a scenario in Trumania results in the generation of datasets which are typically time-series.
 
 ### Generating inter-related data with Trumania
-In this section, we will look at different scenarios that will read to interrelated data. we can have a scenario whereby people may be communicating with each other through messages. 
+In this section, we will look at different scenarios that will read to interrelated data. We can have a scenario whereby people may be communicating with each other through messages. 
 
 The outcome of the communication will lead to the emergence of datasets that will be the time series of the messages exchanged between the people.
 
@@ -87,7 +88,7 @@ The outcome of the communication will lead to the emergence of datasets that wil
 We will have a better understanding in the next section.
 
 ### Creating a Trumania circus
-A circus is a data generator that is used to control and monitor processes and sockets. It can be driven in web interface, python API, and command-line interface.
+A circus is a data generator that is used to control and monitor processes and sockets. It can be driven in the web interface, python API, and command-line interface.
 
 #### How to create a circus
 A trumania circus is created using the simple steps as follows:
@@ -101,7 +102,7 @@ illustration_circus = circus.Circus(name="illustration7"),
                                     step_duration=pd.Timedelta("3h"),
 ```
 
-All the entities which are time-related are managed by a central clock. Emphasis is put on `step_duration=pd.Timedelta("3h")` which states that the time in the clock increases by 3h hours.
+All the entities which are time-related are managed by a central clock. Emphasis is put on `step_duration=pd.Timedelta("3h")` which states that the time in the clock increases by 3 hours.
 
 The next step is the addition of agents' quantity to the circus. The quantity in the circus is the set of persons having an identity and some attributes. 
 
@@ -118,9 +119,9 @@ age_gen = NumpyRandomGenerator(method="usual", loc=7 scale=10
 breed_gen = FakerGenerator(method="breed", seed=next(illustration_circus.seeder))
 ```
 
-In the code snippet above, the trumania generator is responsible for the provision of data when the `generate()` is called. In the above illustration, the `breed_gen` will result in the generation of random breeds of animals.
+In the code snippet above, the trumania generator is responsible for the provision of data when the `generate()` function is called. In the above illustration, the `breed_gen` will result in the generation of random breeds of animals.
 
-`age_gen` generates the random age of the animals by repeatedly sampling data from a normal distribution and `idex_gen` will result in strings like `AGENT_0898`, `AGENT_4564`, `AGENT_1723`...
+`age_gen` generates the random age of the animals by repeatedly sampling data from a normal distribution and `idex_gen` will result in strings like `AGENT_0898`, `AGENT_4564`, `AGENT_1723` etc.
 
 ### The social network
 A social network is a network with links between two or more characters or individuals where the links show the `relationship` between them. It will help send messages to specific individuals instead of a random agent. 
@@ -140,7 +141,7 @@ simple.add_er_social_network_relationship(
   mean_attendance=50)
 ```
 
-We can also use several numbers of agents as follows;
+We can also use several numbers of agents as follows:
 
 ```python
 gracias.set_operations(
