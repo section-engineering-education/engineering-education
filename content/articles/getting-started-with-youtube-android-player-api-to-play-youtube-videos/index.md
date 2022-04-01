@@ -5,16 +5,16 @@ In this tutorial, we will create a simple android app that allows users to searc
 ### Table of contents
 - [Prerequisites](#prerequisites)
 - [Introduction](#introduction)
-- [Obtaining your KEY](#obtaining-your-key)
-- [Creating a project](#creating-a-project)
+- [Obtaining your KEY](#obtaining-api-key)
+- [Creating a project](#creating-an-android-project)
 - [Setting up the project](#setting-up-the-project)
 - [Defining a model class](#defining-a-model-class)
 - [Designing user interfaces](#designing-user-interfaces)
-- [Making the search network call](#making-the-search-network-call)
+- [Making a search network call](#making-a-search-network-call)
 - [Playing videos](#playing-videos)
 - [Demo](#demo)
 - [Conclusion](#conclusion)
-- [Reference](#reference)
+- [Further reading](#further-reading)
 
 ### Prerequisites
 To follow along and learn more from this tutorial, make sure you have:
@@ -28,7 +28,7 @@ YouTube offers an Android API that allows developers to add Youtube capability o
 
 The API also requires an API key and registration in the Google cloud console. The API is simple and has different features that we can leverage to make our apps attractive.
 
-### Obtaining the API-key
+### Obtaining API-key
 - Launch your browser and go to the [Google Cloud Platform](https://console.cloud.google.com/). Use your google account to get started. 
 
 - Create a new project and give it a name of your choice.
@@ -50,6 +50,11 @@ Copy the API-Key, and keep it somewhere as we will be using it in our app.
 
 ![api-key](/engineering-education/getting-started-with-youtube-android-player-api-to-play-youtube-videos/api-key.png)
 
+### Creating an Android project
+Once your IDE is launched, create a new Android app project.
+
+![new-project](/engineering-education/getting-started-with-youtube-android-player-api-to-play-youtube-videos/new-project.png)
+
 ### Hiding the API-Key
 Before we begin the implementation, we need to keep our Youtube API key safe so that when you push the code to Github, the key is not published.
 
@@ -66,11 +71,6 @@ defaultConfig {
 ```
 
 Finally, add the `gradle.properties` file in `gitignore` : `/gradle.properties`.
-
-### Creating an Android project
-Once your IDE is launched, create a new Android app project.
-
-![new-project](/engineering-education/getting-started-with-youtube-android-player-api-to-play-youtube-videos/new-project.png)
 
 ### Setting up the project
 We do not add the Youtube API directly to our project. Instead, follow the given steps below to get it and add it to your project: 
