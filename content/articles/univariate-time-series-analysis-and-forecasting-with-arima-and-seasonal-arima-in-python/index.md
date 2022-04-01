@@ -434,8 +434,9 @@ It produces the following line chart:
 ![ARIMA line-chart](/engineering-education/univariate-time-series-analysis-and-forecasting-with-arima-and-seasonal-arima-in-python/arima-line-chart.png)
 
 From the output above:
-The blue line is the actual monthly sales.
-The orange line is the forecast sales. 
+- The blue line is the actual monthly sales.
+- The orange line is the forecast sales. 
+
 The ARIMA model has not performed well since it has not made correct predictions. The orange line is far apart from the blue line. 
 
 We will now build another time series model using SARIMA to improve the performance.
@@ -476,8 +477,9 @@ It produces the following line chart:
 ![SARIMA line-chart](/engineering-education/univariate-time-series-analysis-and-forecasting-with-arima-and-seasonal-arima-in-python/sarima-line-chart.png)
 
 From the output above:
-The blue line is the actual monthly sales.
-The orange line is the forecast sales. 
+- The blue line is the actual monthly sales.
+- The orange line is the forecast sales. 
+
 The time series model had made correct predictions since the two lines are close together. The SARIMA model has performed well as compared to the ARIMA model.
 
 ### Conclusion
