@@ -4,9 +4,9 @@ status: publish
 published: true
 url: /implementing-android-jetpack-preferences/
 title: Implementing Android Jetpack Preferences
-description: This article will cover the use of the Android Preference Library (JetPack) in our project by developing a simple setting screen.
+description: This article will guide the reader on how to implement the JetPack library in an Android project.
 author: mercy-nyakio
-date: 2022-03-16T00:00:00-09:30
+date: 2022-04-01T00:00:00-09:30
 topics: [Languages]
 excerpt_separator: <!--more-->
 images:
@@ -16,7 +16,9 @@ images:
 ---
 Currently, we have preference windows in almost every software we use, enabling users to tailor their settings to their specifications. 
 <!--more-->
-For example, apps like YouTube enable users to choose between dark and bright modes, pick the download quality, control notifications, and other parameters with a single click, which is an excellent way to enhance the user experience, and it is getting more popular. Therefore, we need to find the most straightforward and effective way to include preferences in your application. 
+For example, apps like YouTube enable users to choose between dark and bright modes, pick the download quality, control notifications, and other parameters with a single click, which is an excellent way to enhance the user experience, and it is getting more popular. 
+
+Therefore, we need to find the most straightforward and effective way to include preferences in your application. 
 
 In this article, we will create a simple setip screen using the Android Preference Library.
 
@@ -38,10 +40,17 @@ The reader should have the following to follow along with this tutorial;
 - Have [Android Studio](https://developer.android.com/studio?gclid=CjwKCAjwlcaRBhBYEiwAK341jU5iIV3l1WRlsYriVsAVDhHovlGtHMmWJJAL2MwlC015p-KO-cUWIRoCy0IQAvD_BwE&gclsrc=aw.ds) installed.
 
 #### Step one: Creating a new project
-Open Android Studio and select New Project -> Empty activity as your project template and then click next to proceed to the next steps. Configure the application name and enter your own. In this case, I will name this project **Android Preferences**. We will use `Kotlin` as our programming language for this project. Leave everything else as default and click `Finish` and wait a few seconds for it to build up your project.
+Open Android Studio and select New Project -> Empty activity as your project template and then click next to proceed to the next steps. 
+
+Configure the application name and enter your own. In this case, I will name this project **Android Preferences**. 
+
+We will use `Kotlin` as our programming language for this project. Leave everything else as default and click `Finish` and wait a few seconds for it to build up your project.
    
 #### Step two: Adding a menu to the MainActivity
-The menu enables us to add a menu item(s) into it that will help us navigate to the `SettingActivity`. We will achieve that by adding a click listener to each item(s). To add a menu resource, he following steps should be followed;
+The menu enables us to add a menu item(s) into it that will help us navigate to the `SettingActivity`. 
+
+We will achieve that by adding a click listener to each item(s). To add a menu resource, he following steps should be followed;
+
 1. Click the `project` folder on the left side of the IDE or `alt+1 -> app -> res folder`.
 2. Right-click the `res` folder to add a `new resource file -> new -> Android resource file`.
 3. After navigating to the Android resource file, enter the file name as `menu` and the resource type select `Menu` and click `OK` to finish.
