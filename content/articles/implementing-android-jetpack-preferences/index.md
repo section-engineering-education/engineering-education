@@ -14,13 +14,11 @@ images:
   - url: /engineering-education/implementing-android-jetpack-preferences/hero.png
     alt: Implementing Android Jetpack Preferences Hero Image
 ---
-Currently, we have preference windows in almost every software we use, enabling users to tailor their settings to their specifications. 
+Giving users the ability to customize how they interact with your app by including a Settings page is the greatest method to improve the overall user experience.
 <!--more-->
-For example, apps like YouTube enable users to choose between dark and bright modes, pick the download quality, control notifications, and other parameters with a single click, which is an excellent way to enhance the user experience, and it is getting more popular. 
+For example, apps like YouTube offer users to choose between dark and bright modes, pick the download quality, regulate notifications, and other characteristics with a single click.  The setting screen enhances the user experience by requiring the user to specify his or her setting specification. Therefore, we need to find the most straightforward and effective way to include preferences in our application. 
 
-Therefore, we need to find the most straightforward and effective way to include preferences in your application. 
-
-In this article, we will create a simple setip screen using the Android Preference Library.
+In this article, we will create a simple setup screen using the Android Preference Library.
 
 ### Table of contents
 - [Prerequisites](#prerequisites)
@@ -33,8 +31,8 @@ In this article, we will create a simple setip screen using the Android Preferen
 - [Conclusion](#conclusion)
 
 ### Prerequisites
-The reader should have the following to follow along with this tutorial;
-- Basic knowledge in Android development.
+To follow along with this tutorial, the reader needs to have:
+- Basic knowledge of Android development.
 - Basic knowledge of Kotlin programming language.
 - Have basic knowledge of [preferences](https://developer.android.com/reference/android/preference/Preference)
 - Have [Android Studio](https://developer.android.com/studio?gclid=CjwKCAjwlcaRBhBYEiwAK341jU5iIV3l1WRlsYriVsAVDhHovlGtHMmWJJAL2MwlC015p-KO-cUWIRoCy0IQAvD_BwE&gclsrc=aw.ds) installed.
@@ -49,12 +47,12 @@ We will use `Kotlin` as our programming language for this project. Leave everyth
 #### Step two: Adding a menu to the MainActivity
 The menu enables us to add a menu item(s) into it that will help us navigate to the `SettingActivity`. 
 
-We will achieve that by adding a click listener to each item(s). To add a menu resource, he following steps should be followed;
+We will achieve that by adding a click listener to each item(s). To add a menu resource, the following steps should be followed;
 
 1. Click the `project` folder on the left side of the IDE or `alt+1 -> app -> res folder`.
 2. Right-click the `res` folder to add a `new resource file -> new -> Android resource file`.
 3. After navigating to the Android resource file, enter the file name as `menu` and the resource type select `Menu` and click `OK` to finish.
-4. Inside the `menu` package, navigate by right-clicking, Select `new -> menu resource` file and then set the file name as `setting_menu` and finish.
+4. Inside the `menu` package, navigate by right-clicking, Select the` new -> menu resource` file and then set the file name as `setting_menu` and finish.
 
 Add the following lines of code:
 
@@ -78,11 +76,12 @@ To ensure the menu bar is visible to the user's application, add the following c
 ```
 
 #### Step three: Adding the second activity
-In this step we will add another activity to our main project. Double-click `app file -> java file -> application package name(com._.androidprefernces)`. Right-click the file -> new -> `activity` -> `Settings activity`. After creating a new activity, new android activity dialog, leave everything as default and finish. The final step is to wait for the project to build.
+In this step, we will add another activity to our main project. Double-click `app file -> java file -> application package name(com._.androidprefernces)`. Right-click the applications folder -> new -> `activity` -> `Settings activity`. After creating a new activity, new Android activity dialog, leave everything as default and finish. The final step is to wait for the project to build.
 
->Note: The new settings activity comes with files in it. Such files include:
->- Default settings XML layout in the layout folder. Inside the resource file, there is a layout called `root preferences`, where all the settings will be represented. Inside the root preference, several preference categories will hold a particular group of settings.
->- A new value resource file called `arrays`, which contains entries and values that will be visible to the user for selection. Mainly common for preferences such as list preferences, multi-select list preferences, and checkbox preferences. We need to include our new arrays for our settings preferences. Hence, we need to delete the default arrays and edit our new array values.
+The new settings activity comes with files in it. Such files include:
+
+- Default settings XML layout in the layout folder. Inside the resource file, there is a layout called `root preferences`, where all the settings will be represented. Inside the root preference, several preference categories will hold a particular group of settings.
+- A new value resource file called `arrays`, contains entries and values that will be visible to the user for selection. Mainly common for preferences such as list preferences, multi-select list preferences, and checkbox preferences. We need to include our new arrays for our settings preferences. Hence, we need to delete the default arrays and edit our new array values.
 
 ```xml
 <resources>
@@ -215,7 +214,7 @@ Below are the critical attributes in the root preferences. They will help you un
 7. `app: dependency` - Indicates that a particular setting preference depends on another preference for its functionality. The dependent must be set to true for the dependent to function; otherwise will be inactive.
 
 ### Step four: Working on the MainActivity.kt
-We need to ensure we have capabilities to navigate within the two activities. We need to set an intention for the `MainActivity` to do so, add the following code to the `MainActivity.kt` file.
+We need to ensure we have the capabilities to navigate between the two activities. We need to set an intention for the `MainActivity` to do so and add the following code to the `MainActivity.kt` file.
 
 ```kotlin
   override fun onOptionsItemSelected(item: MenuItem): Boolean {
@@ -249,7 +248,7 @@ class SettingsActivity : AppCompatActivity(), SharedPreferences.OnSharedPreferen
 }
 ```
 
-To register our shared preferences, add the following code below the line `support action bar?.set` that is always default in this activity.
+To register our shared preferences, add the following code below the line `support action bar?.set` that always defaults in this activity.
 
 ```kotlin
 supportActionBar?.setDisplayHomeAsUpEnabled(true)
@@ -284,7 +283,7 @@ override fun onSharedPreferenceChanged(sharedPreferences: SharedPreferences?, ke
 
 The code above uses the `if` statement to check if we are on the right preferences using its key. In this case, we check if we are on the list preference of the general preference category. If the key is equal, we use the `when` control flow to set each value to the correct theme when clicked.
 
-We also need to destroy the shared preferences that we registered because we have completed using it or save the memory space that the preference is occupying.
+We also need to destroy the shared preferences that we registered because we have completed using them or save the memory space that the preference is occupying.
 Add the below code to unregister the shared preferences;
 
 ```kotlin
