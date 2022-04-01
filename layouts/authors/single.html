@@ -200,11 +200,7 @@
 
 <script type="text/javascript">
   const toggleToolTip = (el) => {
-    if (el.classList.contains('tooltip')) {
-      el.classList.remove('tooltip');
-    } else {
-      el.classList.add('tooltip')
-    }
+    el.classList.toggle('tooltip');
   }
   
   const insightItems = document.getElementsByClassName("insight");
