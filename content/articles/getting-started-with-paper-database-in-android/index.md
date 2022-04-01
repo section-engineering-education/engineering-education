@@ -14,9 +14,9 @@ images:
   - url: /engineering-education/getting-started-with-paper-database-in-android/hero.jpg
     alt: Getting Started with Paper Database in Android
 ---
-A database is an organized collection of data that is stored electrically in computer systems. In Android, there are several databases that comprises of SQLite, Room and SQLDlight, Datastore, SharedPreference, and Realm database.
+A database is an organized collection of data that is stored in computer systems. In Android, there are several databases such as SQLite. Room, SQLDlight, Datastore, SharedPreference, and Realm database.
 <!--more-->
-Even though most people tend to think that all databases are computerized there are databases held on paper example is the phone book which has no records for each person rather it has the main element of the database that is the field which is a name and phone number.
+Although most people think that all databases comprise of both field and records. There are databases held on paper which have only the field and no records. Example is the phone book which has no records for each person. Instead, it has the field as the main element of the database. The field contains a name and phone number.
 
 ### Table of contents
 - [Prerequisites](#prerequisites)
