@@ -7,6 +7,9 @@ assignees: ''
 
 ---
 
+***NOTE: Please make sure that you have created an [EngEd feature suggestion form](https://github.com/section-engineering-education/engineering-education/issues/new?assignees=&labels=enhancement&template=enged-feature-suggestion.md&title=Feature+suggestion) (& that has been approved) before submitting an EngEd Community Contribution enhancement.***
+
+
 **This is a feature (or enhancement) proposal related to EngEd improvements.**
 A clear and concise description of what the proposed task/improvement is.
 
