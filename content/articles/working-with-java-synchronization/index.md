@@ -33,15 +33,15 @@ There are several different sorts of racing situations. `Critical` and `non-crit
 1. A `critical race condition` changes the device, system, or software end state. For example, turning two light switches connected to a shared light at the same time blows the circuit. A catastrophic race condition occurs when a circumstance leads to an unforeseen or undefined issue.
 2. A `non-critical race condition` has no effect on the system, device, or program's outcome. In the light example, if the light is off and flipping both switches simultaneously turns it on, it is a non-critical race condition. Non-critical race conditions do not cause software bugs.
 
-Electronics and programming aren't the only critical and non-critical race condition circumstances. They can occur in many race-condition systems. In the case of programming, race condition circumstances occur in code that is executed by several threads or processes. There are several possible outcomes when numerous threads try to read the same variable and then act on it.
+Electronics and programming aren't the only critical and non-critical race condition circumstances. They can occur in many race-condition systems. In the case of programming, race condition circumstances occur in code that is executed by several threads or processes. There are several possible outcomes when numerous threads/processes try to read the same variable and then act on it.
 
 Let us now look at possible error scenarios involving race conditions:
 
-1. **Read-modify-write condition:** This happens when two processes read a program's value and write it back. It frequently results in a software flaw. Like in the previous example, the two processes are expected to happen sequentially: the first process produces a value, and the second reads it and returns another.
+1. **Read-modify-write condition:** This happens when two threads/processes read a program's value and write it back. It frequently results in a software flaw. Like in the previous example, the two threads/processes are expected to happen sequentially: the first process produces a value, and the second reads it and returns another.
 
 For example, if checks against a checking account are processed consecutively, the system will first check for sufficient money to process check A, then check again for sufficient funds to process check B. If the two checks are processed simultaneously, the system may interpret the same account balance for both transactions producing an overdraft.
 
-2. **Check-then-act condition:** This race scenario occurs when two processes verify the same value for an external operation. Both processes check the value, but only one can accept it. The subsequent process will read it as null. As a result, the program's next action is determined by an out-of-date or unavailable observation. For example, map applications that need the same location data can't use each other's data if they're running at the same time. The data is treated as null in the subsequent stage.
+2. **Check-then-act condition:** This race scenario occurs when two threads/processes verify the same value for an external operation. Both threads/processes check the value, but only one can accept it. The subsequent thread/process will read it as null. As a result, the program's next action is determined by an out-of-date or unavailable observation. For example, map applications that need the same location data can't use each other's data if they're running at the same time. The data is treated as null in the subsequent stage.
 
 The example program below illustrates race conditions:
 
