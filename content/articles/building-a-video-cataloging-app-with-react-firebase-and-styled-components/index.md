@@ -19,15 +19,13 @@ Video-based social media websites and applications have experienced widespread a
 
 <!--more-->
 
-You might want to build your video-based social media. In this tutorial, I will show you how to build a video cataloging app capable of displaying content in categories ranging from sports, entertainment, educational, etc. This can be done with React.js, React-styled components, and Firebase.
-
-Creating and styling the user interface will be handled with React.js and styled components while Firebase will handle content (catalog) storage and management.
+In this tutorial, I will show you how to build a video cataloging app capable of displaying content in categories ranging from sports, entertainment, educational, etc. This can be done with React.js, React-styled components, and Firebase.
 
 ### Prerequisite
 To follow along with this tutorial, you need basic knowledge of React.js and any other front-end styling library e.g. bootstrap, styled-components, etc. Take out time to enroll in this [React crash course](https://scrimba.com/learn/) by Scrimba for free if you are not comfortable in React.js.
 
 ### Key takeaways
-At the completion of this tutorial, the reader will have the understanding and knowledge to implement the following:
+On completion of this tutorial, the reader will have the understanding and knowledge to implement the following:
 
 - Getting started with React.js
 - Getting started with Firebase
@@ -37,7 +35,6 @@ At the completion of this tutorial, the reader will have the understanding and k
 - Customizing video components with react-styled-components
 
 ### Guide to React development cycle
-The first thing to bear in mind when building web applications with React.js is how to create the React application. Creating the React app is done by running a single command in the `command terminal` of your computer. The command scaffolds the application creation by setting up the required files, folders, and default dependencies needed to start your development.
 
 #### Step 1 - Creating the React application
 To create our React application, we open up the command terminal and run the command shown below:
@@ -52,16 +49,13 @@ Alternatively, for yarn users:
 yarn create-react-app video-app
 ```
 
-Internet connection is required to set up the new application. You need to ensure that your computer is connected to an active Wi-Fi or Modem.
-Once the application has been created, it’s time to begin development.
-
 #### Step 2 - Installing the required dependencies
-React applications require additional package dependencies to be installed to enhance the capacity of your applications. Functionalities such as database, security/authentications, notifications, media management, etc. require additional dependencies.
 We need to install the following packages:
 
-- Firebase: The Firebase package will enable our application to have access to the Google cloud database where our content will be stored and managed. Firebase has many functionalities including authentication, hosting, and other server management features. Feel free to look up the [official documentation](https://firebase.google.com/) for more information about Google Firebase.
-- [Styled-components](https://www.styled-components.com): This will be used to style and customize our React components. React-styled-components reduce the complexities of styling React applications since it allows you to target specific page elements for styling and also create your customized elements. It also allows the flexibility of writing both the JavaScript and the styles snippets in one `.js` file.
-  To install the Firebase and styled-components to our application, open the `package.json` file, and add the snippet shown below:
+- Firebase: To have access to the Google cloud database where our content will be stored and managed. Feel free to look up the [official documentation](https://firebase.google.com/) for more information about Firebase.
+- [Styled-components](https://www.styled-components.com): Used to style and customize our React components. 
+
+To install the Firebase and styled-components to our application, open the `package.json` file, and add the snippet shown below:
 
 ```JSON
 "dependencies": {
@@ -70,7 +64,7 @@ We need to install the following packages:
 },
 ```
 
-Thereafter we install them by running the command below:
+Thereafter we install them by running:
 
 ```bash
 npm install
@@ -82,22 +76,24 @@ Alternatively, for yarn:
 yarn add
 ```
 
-The command above will install Firebase and styled-components libraries to our application. Once that is completed, it is time to begin the application setup.
+Once that is completed, it is time to begin the application setup.
 
 #### Step 3 - Setting up Firebase (firebase.js)
-To set up and use the Firebase suite in our application, We need to fulfill some basic steps in order to create the Firebase project and get the config keys for the project. To get started, go to the [Google Firebase website](https://console.firebase.google.com/) and create a new project as shown in the image below:
+To get started, go to the [Google Firebase website](https://console.firebase.google.com/) and create a new project as shown in the image below:
 
 - Click on the button highlighted in the image to create a new Firebase project
 
 ![how to create a new firebase project](/engineering-education/building-a-video-cataloging-app-with-react-firebase-and-styled-components/image1.jpg)
 
-- Follow the simple steps shown on the console. Feel free to give the new project a name of your choice. Once that is completed, create a new `cloud firestore` by clicking the cloud firestore button on the sidebar as shown below:
+- Give the new project a name of your choice.
+- Once that is completed, create a new `cloud firestore` by clicking the cloud firestore button on the sidebar as shown below:
 
 ![creating a cloud firestore](/engineering-education/building-a-video-cataloging-app-with-react-firebase-and-styled-components/image2.jpg)
 
-- The `cloud firestore` will is the database that will store our catalog information to be retrieved by the React application.
-- You may choose any of the options (test mode or production mode). Test mode restricts the application to a test environment that is valid for 30days for development and testing purposes while production mode allows the full functionalities of the `cloud firestore` without any restrictions. Afterward, select your location and submit the form. 
-- Additionally, click on the project overview button at the top left corner and follow the steps to register the app and add Firebase SDK (Software development kit) so we can make use of the database and other server-side management functionalities in our project.
+- `Cloud firestore` is the database that will store our catalog information.
+- You may choose either test mode or production mode. Test mode restricts the application to a test environment that is valid for 30days for development and testing purposes while production mode allows the full functionalities of the `cloud firestore` without any restrictions.
+- Select your location and submit the form. 
+- Click on the project overview button at the top left corner and follow the steps to register the app and add Firebase SDK (Software development kit) so we can make use of the database and other server-side management functionalities in our project.
 
  ![registering the new application](/engineering-education/building-a-video-cataloging-app-with-react-firebase-and-styled-components/image3.jpg)
 
@@ -105,7 +101,9 @@ To set up and use the Firebase suite in our application, We need to fulfill some
 
 ![the config information](/engineering-education/building-a-video-cataloging-app-with-react-firebase-and-styled-components/image4.jpg)
 
-Finally, create a new `firebase.js` file and then paste the project config information you copied. it should look similar to this below:
+Finally, create a new `firebase.js` file and paste the project config information you copied. 
+
+It should look similar to this:
 
 ```JavaScript
 import Firebase from "firebase/app";
@@ -128,14 +126,14 @@ const firebase = Firebase.initializeApp(config);
 export { firebase };
 ```
 
-Note: All the fields in the snippet must be supplied, so ensure you copied and pasted the keys correctly. Also, notice the added line of code in the `firebase.js` file:
+**All the fields** in the snippet must be supplied, so ensure you copied and pasted the keys correctly. Also, notice the added line of code in the `firebase.js` file:
 
 ```JavaScript
 import seedDatabase from './catalog'
 ```
 This will help upload the catalog information we will create into the `cloud firestore` database in our Firebase project.
 
-The final step in the Firebase setup is to hook it up to our React application. Just like adding any other database to a React application, we will create a state context and wrap it around our application. To do that, open the `index.js` file, and implement the code snippet below:
+The final step is to hook up Firebase to our React application. We will create a state context and wrap it around our application. To do that, open the `index.js` file, and implement the code snippet below:
 
 ```JavaScript
 import React, { createContext }  from "react";
@@ -153,10 +151,13 @@ render(
 );
 ```
 
-From the snippet above, we wrapped the entire React app with an instance of `FirebaseContext` created with the React `createContext` hook. Then we passed the config keys to the `FirebaseContext` as a value `prop` to be used throughout the application. The `FirebaseContext` is a container that stores the firebase state in our React application.
+We wrap the entire React app with an instance of `FirebaseContext` created with the React `createContext` hook. We then passed the config keys to the `FirebaseContext` as a value `prop` to be used throughout the application.
+
+`FirebaseContext` is a container that stores the firebase state in our React application.
 
 #### Step 4 - Setting up the content catalog (catalog.js)
-We will create the data entries locally in our text editor then add the command to upload the entries automatically to the database (cloud firestore).
+We create the data entries locally in our text editor then add the command to upload the entries automatically to the Cloud Firestore.
+
 First, we need to create a `catalog.js` file which will contain data entries with the following information:
 
 - Category title
@@ -308,15 +309,14 @@ export function seedDatabase(firebase) {
 }
 ```
 
-From the snippet above, we created a hand full of data entries locally. We then added the Firebase upload command (`firebase.firestore().collection().add()`) to automatically create a collection and upload the entries into it.
-To upload the content to the Firebase collection, you need a stable internet connection, so ensure you are connected to a Wi-Fi or Modem. 
+From the snippet above, we create a hand full of data entries locally. We then add the Firebase upload command (`firebase.firestore().collection().add()`) to automatically create a collection and upload the entries into it.
+
 Save the `catalog.js` file and refresh your code editor. That should automatically upload the catalog to the cloud collection. You can open up the Firebase console again in your browser and view the catalog by clicking the `cloud firestore` button in the [Firebase console](https://console.firebase.google.com/). 
 Once you have confirmed that the entries upload was successful in the Firebase console, go back to the `firebase.js` file and delete this line of code shown below:
 
 ```JavaScript
  seedDatabase(firebase) //delete or comment out
 ```
-Note: If the operation was unsuccessful, check your network connection to ensure it is stable and try again.
 
 #### Step 5 – Setting up the app requirements
 To view the catalog stored in our Firebase cloud collection, we need to create some React components that will fetch and render the information locally on our browser. We will set up the following requirements:
@@ -605,4 +605,3 @@ Happy Coding!
 
 ---
 Peer Review Contributions by: [Adrian Murage](/engineering-education/authors/adrian-murage/)
-
