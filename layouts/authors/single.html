@@ -117,7 +117,6 @@
             fetch('https://talk.hyvor.com/api/v1/page/?page_identifier={{ $articlePermalink }}&website_id={{ $hyvorId }}')
               .then(response => response.json())
               .then(data => {
-                console.log("data:", data)
                 if (data.status === true) {
                   if (!data.data.comments_count) {
                     document.getElementById('comments-count-{{ $elem_index }}').innerText = 0;
@@ -128,28 +127,15 @@
                 }
               })
               .catch(err => console.log('Error: ', err));
-
-            {{/*  
-              # Cache or LocalStorage
-              # 
-              # Setup localStorage or cookies to capture pageViews with date
-              # If cookie exists and current date is 12hours past cookie date 
-              #   Then fetch the data and reset cookie
-              # Else if cookie exists and cookie date is not 12 hours old,
-              #   Then use cookie data
-              # If cookie doesn't exist
-              #   Then fetch data.
-            */}}
             
-            {{/*  fetch('https://api.www.section.io/pageviews/{{ $articleSlug }}/')
+            fetch('https://api.www.section.io/pageviews/{{ $articleSlug }}/')
               .then(res => res.json())
               .then(data => {
-                console.log('data:', data)
                 if (data.pageViews) {
                   const numPageViews = parseInt(data.pageViews).toLocaleString();
                   document.getElementById('page-views-count-{{ $elem_index }}').innerText = numPageViews;
                 }
-              })  */}}
+              })
           });
         </script>
         
