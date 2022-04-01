@@ -12,27 +12,28 @@ Now, let's start to build a simple application that records the details of stude
 
 ### Table of contents
 - [Prerequisites](#prerequisites)
-- [Creating the app](#step-1--creating-the-app)
-  - [Setting up the enviroment](#11--setting-up-the-enviroment)
-  - [Installing required packages](#12--installing-required-packages)
-  - [Creating our project and app](#13-creating-our-project-and-app)
-  - [Connecting Django to Mongo DB](#14--connecting-django-to-mongo-db)
-  - [Adding and registering the models](#15-adding-and-registering-the-models)
-  - [Creating a view](#16--creating-a-view)
-  - [Configuring the URLs](#17--configuring-the-urls)
-  - [Templating](#18--templating)
-  - [Running the project](#19-running-the-project)
-- [Implementing Multitenancy](#step-2-implementing-multitenancy)
-  - [Adding multiple databases](#21--adding-multiple-databases)
-  - [Getting tenant specific database from request](#22--getting-tenant-specific-database-from-request)
-  - [Using middlewares for tenant specific database routing](#23-using-middlewares-for-tenant-specific-database-routing)
-  - [Routing the databases](#24--routing-the-databases)
-  - [Registering the middleware and the router](#25--registering-the-middleware-and-the-router)
-  - [Configuring our hosts names](#26--configuring-our-hosts-names)
-  - [Taking care of the Django commands](#27-taking-care-of-the-django-commands)
-  - [Running the commands](#28-running-the-commands)
-  - [Testing](#29--testing)
+- [Create the app](#create-application)
+  - [Setup the enviroment](#setup-the-environment)
+  - [Install required packages](#install-required-packages)
+  - [Create the project](#create-the-project)
+  - [Connect Django to Mongo DB](#connect-django-to-mongodb)
+  - [Add and register the models](#add-and-register-the-models)
+  - [Create a view](#create-a-view)
+  - [Configure the URLs](#configure-the-urls)
+  - [Template](#template)
+  - [Run the project](#run-the-project)
+- [Implement Multitenancy](#implement-multitenancy)
+  - [Add multiple databases](#add-multiple-databases)
+  - [Get tenant specific database from request](#get-tenant-specific-database-from-request)
+  - [Use middlewares for tenant specific database routing](#use-middlewares-for-tenant-specific-database-routing)
+  - [Route the databases](#route-the-databases)
+  - [Register the middleware and the router](#register-the-middleware-and-the-router)
+  - [Configure hosts names](#configure-host-names)
+  - [Django migrations](#django-migrations)
+  - [Run the commands](#run-the-commands)
+  - [Test](#test)
 - [Conclusion](#conclusion)
+- [Reference](#references)
 
 ### Prerequisites
 To follow through this tutorial, you will need to have:
@@ -66,7 +67,7 @@ pip install django
 pip install djongo
 ```
 
-#### Create our project and app
+#### Create the project
 Let's create our Django project in the directory `multitenant` as shown:
 
 ```bash
@@ -94,7 +95,7 @@ INSTALLED_APPS = [
 ]
 ```
 
-#### 1.4 : Connect Django to MongoDB
+#### Connect Django to MongoDB
 In `settings.py` under `DATABASES`, delete the MySQLite configurations and replace them with:
 
 ```py
@@ -290,11 +291,14 @@ Here is a sample screenshot of how the table looks like:
 
 ![index HTML page](/engineering-education/django-multitenancy-using-multiple-databases-and-one-app/index.jpg)
 
-### Step 2: Implementing Multitenancy
-We are now going to add the ability of the site to handle more than one default tenant(Client), by assigning each client their database. By doing so, we are gonna have to tell Django where to get the data for each client. 
+### Implement multitenancy
+Now, we add the ability to handle more than one default tenant(client) by assigning each client their database. By doing so, we have to tell Django where to get the data for each client. 
 
-#### 2.1 : Adding multiple databases
-The first thing would be to create a database for each of our tenants. Apart from the `default` database, we are going to add two more databases. Assuming we have two clients namely: `Nairobi` and `Accra`, we will add them by updating the `DATABASES` dictionary in `settings.py` to:
+#### Add multiple databases
+The first thing would be to create a database for each of our tenants. Apart from the `default` database, we are going to add two more databases.
+
+Assuming we have two clients namely: `Nairobi` and `Accra`, we will add them by updating the `DATABASES` dictionary in `settings.py` to:
+
 ```py
 DATABASES = {
     'default': {'ENGINE': 'djongo','NAME': 'default',},
@@ -302,8 +306,12 @@ DATABASES = {
     'accra': {'ENGINE': 'djongo','NAME': 'accra',},    # new
 }
 ```
-#### 2.2 : Getting tenant-specific database from request
-When a request is sent to the server, our app must be able to tell, which database the tenant should read from. We can help it do so by adding a few helper functions. In our `School` folder, add a file named `utils.py` and add the following code to it.
+
+#### Get tenant-specific database from request
+When a request is sent to the server, our app must be able to tell, which database the tenant should read from. We can do that with help of a few helper functions.
+
+In the `School` folder, add a file named `utils.py` and add the following code to it:
+
 ```py
 from django.db import connection
 
@@ -316,21 +324,26 @@ def tenant_db_from_the_request(request):
     return tenants_map.get(hostname)
 
 def get_tenants_map():
-    return {"nairobi.school.local": "nairobi", "accra.school.local": "accra"}
+    return {
+        "nairobi.school.local": "nairobi",
+        "accra.school.local": "accra"
+    }
 ```
-- `hostname_from_the_request()` - This function takes the request and removes the ports then returns the bare URL
 
-- `get_tenants_map()` - This function returns a dictionary of the added tenant's URLs as keys and their database names as values.
+In the above code:
+- `hostname_from_the_request()` function takes the request and removes the ports and returns the bare URL
+- `get_tenants_map()` function returns a dictionary with the added tenant's URLs as keys and their database names as the values.
+- `tenant_db_from_the_request()` function calls the other two functions. By comparing the host's URL from the request and the dictionary, it returns the name of the database that matches its tenant.
 
-- `tenant_db_from_the_request()` - This function calls on the other two functions.By comparing the host's URL from the request and the dictionary, it returns the name of the database that matches its tenant.
+#### Use middlewares for tenant-specific database routing
+> Middleware is a framework that helps you plug into the request/response processing in Django.
 
-#### 2.3: Using middlewares for tenant-specific database routing
- - Middleware - a framework that helps you plug into the request/response processing in Django.
+The `tenant_db_from_the_request()` method can be used to fetch the database name that will be passed to the database router using a thread-local variable.
 
-The `tenant_db_from_the_request()` method shall be used to get the database name which will be passed to the database router using a thread-local variable.
-- Thread local variables - these are variables whose data is accessible throughout the entire life-cycle of the thread.
+> Thread local variables are variables whose data is accessible throughout the entire life-cycle of the thread.
 
 In the `School` folder, add a file named `middleware.py` and add the following code:
+
 ```py
 import threading
 from django.db import connections
@@ -354,15 +367,19 @@ def get_current_db_name():
 def set_db_for_router(db):
     setattr(Thread_Local, "DB", db)
 ```
-In the above code, we declared a thread-local variable and created a middleware class. Using the callable object `__call__()`, we can now get the name of the DB by calling `tenant_db_from_the_request()` and pass it to the thread-local variable.
-We also created a function to get the current DB name from the thread-local variable and another one to set the DB name for the DB router.
 
-#### 2.4 : Routing the databases
-The routing class implements several methods but none takes requests as an argument, hence we cant pass the tenant's database request to them for the referred database to be extracted. This is why the middleware above came in.
+In the above code:
+- We declared a thread-local variable and created a middleware class.
+- Using the callable object `__call__()`, we get the name of the database on calling `tenant_db_from_the_request()` and passing it to the thread-local variable.
+- We created a function to get the current DB name from the thread-local variable and another one to set the DB name for the DB router.
 
-By using the data passed to the middleware we can hook into the database routing process. This would help us establish a central place where Django can look up which database the tenant's database request should refer to.
+#### Route the databases
+The route class implements several methods with no arguments, hence we can't pass the tenant's database request to them. This is why we introduce the middleware here.
 
-In our app-level directory `School`, create a file named `router.py` and add the following code to it:
+Using the data passed to the middleware we can hook into the database routing process. This would help us establish a central place where Django can look up the database that the tenant request should refer to.
+
+In the app-level directory `School`, create a file named `router.py` and add the following code to it:
+
 ```py
 from .middleware import get_current_db_name
 
@@ -382,10 +399,14 @@ class SchoolRouter:
     def allow_migrate(self, *args, **kwargs):
         return None
 ```
-The router class in Django provides up to four methods. We modified the first three and left the others as default in the above router class. We modified the functions that point to a DB for reading or writing operations to return the name of the current DB. We also set `allow_relations()` to `True` to allow relationships between two objects in our models if we need to use them.
 
-#### 2.5 : Registering the middleware and the router
+The router class in Django provides up to four methods. We modified the first three and left the others as default in the above router class.
+
+We modified the functions that point to a DB to read or write operations to return the name of the current DB. We also set `allow_relations()` to `True` to allow relationships between two objects in our models if we need to use them.
+
+#### Register the middleware and the router
 In `settings.py`, update the `MIDDLEWARE` list and add the `DATABASE_ROUTERS` list as follows:
+
 ```py
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -400,21 +421,32 @@ MIDDLEWARE = [
 DATABASE_ROUTERS = ['School.router.SchoolRouter']  # new
 ```
 
-#### 2.6 : Configuring our host names
-Now we need to add our hostnames to our local machine for them to be found when we request them.
-For Linux users, navigate to the `/etc/hosts` and for Windows users, follow the path `C:\Windows\System32\Drivers\etc\`.Open the `hosts` file using notepad or any other text editor and add our hosts as shown below:
-```
+#### Configure host names
+Now, we need to map the hostnames to the local machine.
+
+For Linux users, navigate to the `/etc/hosts` and for Windows users, follow the path `C:\Windows\System32\Drivers\etc\`.
+
+Open the `hosts` file using notepad or any other text editor and add our hosts as shown below:
+
+```txt
 127.0.0.1 school.local
 127.0.0.1 nairobi.school.local
 127.0.0.1 accra.school.local
 ```
-We also need to update the ` ALLOWED_HOSTS` in our `settings.py`, to:
+
+We also need to update the ` ALLOWED_HOSTS` in our `settings.py` to:
+
 ```py
 ALLOWED_HOSTS = ['school.local', '.school.local']
 ```
-#### 2.7: Taking care of the Django commands
-For our app to start operating as intended, we must run migrations for all our databases, create superusers for each tenant, and finally run the server. The problem is that not all commands can work with multiple databases, and those that can, have to use the option `--database=db_name`. We, therefore, need to create a custom `manage.py` file for our case.
+
+#### Django migrations
+For any Django app to start operating as intended, we must run migrations for all the databases, create superusers for each tenant, and finally run the server.
+
+The problem is that not all commands can work with multiple databases, and those that can, have to use the option `--database=db_name`. We, therefore, need to create a custom `manage.py` file for our case.
+
 In our project-level folder `multitenant`, add a file `school_manage.py` and add the following code in it:
+
 ```py
 #!/usr/bin/env python
 """Django's command-line utility for administrative tasks."""
@@ -446,79 +478,85 @@ if __name__ == "__main__":
         execute_from_command_line(args)
 ```
 
--  `args` - The array stores `sys.args`, which is a list of command line arguments that we pass to python.
+In the above code:
+- `args` - The array stores `sys.args`, which is a list of command line arguments that we pass to python.
 - `db = args[1]` - Among arguments that we shall pass, the one at position `[1]` in the array is the name of the DB that we want to execute the command on.
-- `with connection.cursor()` - opens the connection fo the queries in it to be executed.
+- `with connection.cursor()` - opens the connection for the queries in it to be executed.
 - `set_db_for_router(db)` - uses the name we pass as `arg[1]` to route the database specified.
-- `del args[1]` - This deletes the DB name argument after the routing has taken place(we only needed the name to point to the DB, then carry out the execution of the command as it was originally intended to be by Django. ie: first argument isn't DB name).
+- `del args[1]` - This deletes the DB name argument after the routing has taken place (we only need the name to point to the DB, then carry out the execution of the command as it was originally intended to be used by Django).
 - `execute_from_command_line(args)` - This executes the command that you had typed. It takes the arguments array as a parameter.
 
-#### 2.8: Running the commands
-We shall start by making migrations then creating a superuser for each tenant. Then we shall run the server and test each client:
+#### Run the commands
+We shall start the migrations and create a superuser for each tenant. Then, we shall run the server and test each client:
 
 ```bash
 py manage.py makemigrations School
 ```
 
-- For tenant Accra:
+- For tenant `Accra`:
+
 ```bash
 py manage.py migrate --database=accra
-```
-```bash
 py school_manage.py accra createsuperuser --database=accra
 ```
 
-- For tenant Nairobi
+- For tenant `Nairobi`:
 
 ```bash
 py manage.py migrate --database=nairobi
-```
-```bash
 py school_manage.py nairobi createsuperuser --database=nairobi
 ```
 
-- For tenant default
+- For tenant `default`:
 
->If you had already made the migrations in step 1, you can skip this step.
+> If you had already made the migrations in step 1, you can skip this step.
+
 ```bash
 py manage.py migrate
-```
-```bash
 py manage.py createsuperuser
 ```
-NB: The default tenants commands can be run just the usual way.
 
-#### 2.9 : Testing
-Now we can run our local server and test our multitenant sites:
+#### Test
+Now, we can run the local server and test our multitenant sites:
+
 ```bash
 py manage.py runserver school.local:8000
 ```
+
 When the local host starts the server, you can access the tenant sites using the following URLs:
 
-- tenant `Default` :
-    - main site - http://school.local:8000/
-    - admin site - http://school.local:8000/admin/
+- Tenant `Default`:
+  - Main site - `http://school.local:8000/`
+  - Admin site - `http://school.local:8000/admin/`
 
-- tenant `Nairobi` :
-    - main site - http://nairobi.school.local:8000/
-    - admin site - http://nairobi.school.local:8000/admin
+- Tenant `Nairobi`:
+  - Main site - `http://nairobi.school.local:8000/`
+  - Admin site - `http://nairobi.school.local:8000/admin`
 
-- tenant `Accra` :
-    - main site - http://accra.school.local:8000/
-    - admin site - http://accra.school.local:8000/admin
+- Tenant `Accra`:
+  - Main site - `http://accra.school.local:8000/`
+  - Admin site - `http://accra.school.local:8000/admin`
 
 Upload some content on the admin site of each tenant and check out the results on the main site.
-Here is what my tenants' main sites look like:
-- default
+
+Here is how my tenants' main sites looks like:
+
+- `default`
 ![default](/engineering-education/django-multitenancy-using-multiple-databases-and-one-app/default.jpg)
-- nairobi
+
+- `Nairobi`
 ![nairobi](/engineering-education/django-multitenancy-using-multiple-databases-and-one-app/nairobi.jpg)
-- accra
+
+- `Accra`
 ![accra](/engineering-education/django-multitenancy-using-multiple-databases-and-one-app/accra.jpg)
 
 ### Conclusion
-We have seen how powerful Django is, to an extent of being able to support multitenancy and multiple databases. You can go ahead and customize this project to suit your other needs. The full code for this project can be found in my Github [repo](https://github.com/Sajeyks/Django-multitenancy-multipleDB-single-App). All the best!
+We have seen how powerful Django is, to an extent of being able to support multitenancy and multiple databases. You can go ahead and customize this project to suit your other needs.
+
+The full code for this project can be found in my Github [repo](https://github.com/Sajeyks/Django-multitenancy-multipleDB-single-App).
+
+All the best!
 
 ### References
- - [Django Multiple DB support](https://docs.djangoproject.com/en/4.0/topics/db/multi-db/)
- - [Django multitenant with isolated DB](https://books.agiliq.com/projects/django-multi-tenant/en/latest/isolated-database.html)
+- [Django Multiple DB support](https://docs.djangoproject.com/en/4.0/topics/db/multi-db/)
+- [Django multitenant with isolated DB](https://books.agiliq.com/projects/django-multi-tenant/en/latest/isolated-database.html)
