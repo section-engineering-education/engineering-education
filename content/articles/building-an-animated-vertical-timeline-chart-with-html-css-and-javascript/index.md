@@ -318,7 +318,7 @@ Start by specifying a value for the `width` property of the `timeline-section`, 
 }
 ```
 
-Next, target the `ul` tag inside the `section` tag with the `timeline-section` class. . This `ul` tag contains all the timeline events. The attributes to include in the targeted `ul` tag style are the `background-color` and the `padding*`.
+Next, target the `ul` tag inside the `section` tag with the `timeline-section` class. This `ul` tag contains all the timeline events. The attributes to include in the targeted `ul` tag style are the `background-color` and the `padding*`.
 
 Here is the code to target and style the `ul` (unordered list):
 ```CSS
