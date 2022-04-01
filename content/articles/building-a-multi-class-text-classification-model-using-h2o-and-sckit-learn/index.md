@@ -6,7 +6,7 @@ url: /building-a-multi-class-text-classification-model-using-h2o-and-sckit-learn
 title: Multi-class Text Classification using H20 and Scikit-learn.
 description: In this article, we will understand how to automatically classify GitHub labels based on GitHub issue title using machine learning.
 author: charles-kariuki
-date: 2022-03-31T00:00:00-17:00
+date: 2022-03-31T00:00:00-16:59
 topics: [Machine Learning]
 excerpt_separator: <!--more-->
 images:
