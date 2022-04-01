@@ -1,3 +1,19 @@
+---
+layout: engineering-education
+status: publish
+published: true
+url: /implement-multitenancy-with-multiple-databases-in-django/
+title: Implement Multitenancy With Multiple Databases In Django
+description: This article will discuss on how to implement multitenancy of application with separate databases for each client using Django
+author: samuel-mwangi
+date: 2022-04-01T00:00:00-00:00
+topics: []
+excerpt_separator: <!--more-->
+images:
+
+  - url: /engineering-education/implement-multitenancy-with-multiple-databases-in-django/hero.png
+    alt: Implement Multitenancy With Multiple Databases In Django Hero Image
+---
 In this tutorial, we will learn how multitenancy is implemented in multiple databases with a shared Django app. Here, we will use MongoDB.
 <!--more-->
 Multitenancy is a property whereby a web application can serve more than one customer while having each customer's data and users isolated.
@@ -560,3 +576,6 @@ All the best!
 ### References
 - [Django Multiple DB support](https://docs.djangoproject.com/en/4.0/topics/db/multi-db/)
 - [Django multitenant with isolated DB](https://books.agiliq.com/projects/django-multi-tenant/en/latest/isolated-database.html)
+
+---
+Peer Review Contributions by: [Srishilesh P S](/engineering-education/authors/srishilesh-p-s/)
