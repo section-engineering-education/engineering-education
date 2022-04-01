@@ -29,7 +29,7 @@ Now, let's start to build a simple application that records the details of stude
 ### Table of contents
 - [Prerequisites](#prerequisites)
 - [Create the app](#create-application)
-  - [Setup the enviroment](#setup-the-environment)
+  - [Setup the environment](#setup-the-environment)
   - [Install required packages](#install-required-packages)
   - [Create the project](#create-the-project)
   - [Connect Django to Mongo DB](#connect-django-to-mongodb)
@@ -40,8 +40,8 @@ Now, let's start to build a simple application that records the details of stude
   - [Run the project](#run-the-project)
 - [Implement Multitenancy](#implement-multitenancy)
   - [Add multiple databases](#add-multiple-databases)
-  - [Get tenant specific database from request](#get-tenant-specific-database-from-request)
-  - [Use middlewares for tenant specific database routing](#use-middlewares-for-tenant-specific-database-routing)
+  - [Get tenant-specific database from request](#get-tenant-specific-database-from-request)
+  - [Use middlewares for tenant-specific database routing](#use-middlewares-for-tenant-specific-database-routing)
   - [Route the databases](#route-the-databases)
   - [Register the middleware and the router](#register-the-middleware-and-the-router)
   - [Configure hosts names](#configure-host-names)
@@ -52,10 +52,10 @@ Now, let's start to build a simple application that records the details of stude
 - [Reference](#references)
 
 ### Prerequisites
-To follow through this tutorial, you will need to have:
+To follow along with this tutorial, you will need to have:
 - Fundamental knowledge in both Python and Django.
 - Any code editor that you are comfortable with.
-- [MongoDB](https://docs.mongodb.com/manual/administration/install-community/) installed in your PC.
+- [MongoDB](https://docs.mongodb.com/manual/administration/install-community/) is installed on your PC.
 
 ### Create application
 #### Setup the environment
@@ -152,7 +152,7 @@ class adminStudent(admin.ModelAdmin):
 admin.site.register(Student, adminStudent)
 ```
 
-While we register the model, the Django admin displays all the three attributes of the model.
+While we register the model, the Django admin displays the three attributes of the model.
 
 #### Create a view
 In our `views.py`, we add a function-based view that fetches all the student objects, and returns them along with the index page upon being called:
@@ -170,7 +170,7 @@ def get_Students(request):
 ```
 
 #### Configure the URLs
-Now, we create the URL pattern that points to the view which we just created.
+Now, we create the URL pattern that points to the view that we just created.
 
 In the app directory `School`, create a file named `urls.py` and add the following code:
 
@@ -196,7 +196,7 @@ urlpatterns = [
 ```
 
 #### Template
-Create a directory named `templates` in the app level directory and create a HTML file named `index.html` inside it.
+Create a directory named `templates` in the app level directory and create an HTML file named `index.html` inside it.
 
 We will use the template to display the students data in a table styled by bootstrap. In `index.html` add the following code:
 
@@ -289,13 +289,13 @@ To create schemas for your DB, run:
 py manage.py migrate
 ```
 
-We will add a superuser to enable adding the students data from the admin's site:
+We will add a superuser to enable adding the student's data from the admin's site:
 
 ```bash
 py manage.py createsuperuser
 ```
 
-Populate the details that you will use to log in to the admin site. Then, finally run the project using:
+Populate the details that you will use to log in to the admin site. Then, finally, run the project using:
 
 ```bash
 py manage.py runserver
@@ -303,7 +303,7 @@ py manage.py runserver
 
 Log in to the [admin](http://127.0.0.1:8000/admin/) site, add some students, then check the results on the [homepage](http://127.0.0.1:8000/).
 
-Here is a sample screenshot of how the table looks like:
+Here is a sample screenshot of what the table looks like:
 
 ![index HTML page](/engineering-education/implement-multitenancy-with-multiple-databases-in-django/index.jpg)
 
@@ -386,11 +386,11 @@ def set_db_for_router(db):
 
 In the above code:
 - We declared a thread-local variable and created a middleware class.
-- Using the callable object `__call__()`, we get the name of the database on calling `tenant_db_from_the_request()` and passing it to the thread-local variable.
+- Using the callable object `__call__()`, we get the name of the database by calling `tenant_db_from_the_request()` and passing it to the thread-local variable.
 - We created a function to get the current DB name from the thread-local variable and another one to set the DB name for the DB router.
 
 #### Route the databases
-The route class implements several methods with no arguments, hence we can't pass the tenant's database request to them. This is why we introduce the middleware here.
+The routing class implements several methods with no arguments, hence we can't pass the tenant's database request to them. This is why we introduce the middleware here.
 
 Using the data passed to the middleware we can hook into the database routing process. This would help us establish a central place where Django can look up the database that the tenant request should refer to.
 
@@ -442,7 +442,7 @@ Now, we need to map the hostnames to the local machine.
 
 For Linux users, navigate to the `/etc/hosts` and for Windows users, follow the path `C:\Windows\System32\Drivers\etc\`.
 
-Open the `hosts` file using notepad or any other text editor and add our hosts as shown below:
+Open the `host` file using notepad or any other text editor and add our hosts as shown below:
 
 ```txt
 127.0.0.1 school.local
@@ -495,7 +495,7 @@ if __name__ == "__main__":
 ```
 
 In the above code:
-- `args` - The array stores `sys.args`, which is a list of command line arguments that we pass to python.
+- `args` - The array stores `sys.args`, which is a list of command-line arguments that we pass to python.
 - `db = args[1]` - Among arguments that we shall pass, the one at position `[1]` in the array is the name of the DB that we want to execute the command on.
 - `with connection.cursor()` - opens the connection for the queries in it to be executed.
 - `set_db_for_router(db)` - uses the name we pass as `arg[1]` to route the database specified.
@@ -555,7 +555,7 @@ When the local host starts the server, you can access the tenant sites using the
 
 Upload some content on the admin site of each tenant and check out the results on the main site.
 
-Here is how my tenants' main sites looks like:
+Here is what my tenants' main sites look like:
 
 - `default`
 ![default](/engineering-education/implement-multitenancy-with-multiple-databases-in-django/default.jpg)
