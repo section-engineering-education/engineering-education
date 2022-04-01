@@ -289,7 +289,7 @@ Log in to the [admin](http://127.0.0.1:8000/admin/) site, add some students, the
 
 Here is a sample screenshot of how the table looks like:
 
-![index HTML page](/engineering-education/django-multitenancy-using-multiple-databases-and-one-app/index.jpg)
+![index HTML page](/engineering-education/implement-multitenancy-with-multiple-databases-in-django/index.jpg)
 
 ### Implement multitenancy
 Now, we add the ability to handle more than one default tenant(client) by assigning each client their database. By doing so, we have to tell Django where to get the data for each client. 
@@ -542,13 +542,13 @@ Upload some content on the admin site of each tenant and check out the results o
 Here is how my tenants' main sites looks like:
 
 - `default`
-![default](/engineering-education/django-multitenancy-using-multiple-databases-and-one-app/default.jpg)
+![default](/engineering-education/implement-multitenancy-with-multiple-databases-in-django/default.jpg)
 
 - `Nairobi`
-![nairobi](/engineering-education/django-multitenancy-using-multiple-databases-and-one-app/nairobi.jpg)
+![nairobi](/engineering-education/implement-multitenancy-with-multiple-databases-in-django/nairobi.jpg)
 
 - `Accra`
-![accra](/engineering-education/django-multitenancy-using-multiple-databases-and-one-app/accra.jpg)
+![accra](/engineering-education/implement-multitenancy-with-multiple-databases-in-django/accra.jpg)
 
 ### Conclusion
 We have seen how powerful Django is, to an extent of being able to support multitenancy and multiple databases. You can go ahead and customize this project to suit your other needs.
