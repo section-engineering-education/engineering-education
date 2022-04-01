@@ -6,7 +6,7 @@ url: /building-a-multi-class-text-classification-model-using-h2o-and-sckit-learn
 title: Multi-class Text Classification using H20 and Scikit-learn.
 description: In this article, we will understand how to automatically classify GitHub labels based on GitHub issue title using machine learning.
 author: charles-kariuki
-date: 2022-03-23T00:00:00-04:03
+date: 2022-03-31T00:00:00-17:00
 topics: [Machine Learning]
 excerpt_separator: <!--more-->
 images:
@@ -111,7 +111,7 @@ import h2o
 from h2o.automl import H2OAutoML
 ```
 
-We use `H2OAutoML` to run multiple machine learning algorithms during training then select the best algorithm.
+We use `H2OAutoML` to run multiple machine learning algorithms during training and select the best algorithm.
 
 ### Initializing H2O
 Use this code snippet to initialize H2O:
@@ -181,7 +181,7 @@ df['Company'].value_counts()
 
 
 #### Renaming `Consumer complaint narrative` column
-We will rename the column into `complaints`. The new name is shorter and more machine-readable. The model can easily understand the new name and use the column during training. To rename the column, use this code:
+We will rename the column to `complaints`. The new name is shorter and more machine-readable. The model can easily understand the new name and use the column during training. To rename the column, use this code:
 
 ```python
 complaints_df=df[['Consumer complaint narrative','Product','Company']].rename(columns={'Consumer complaint narrative':'complaints'})
@@ -210,7 +210,7 @@ Let us add the `target` variable to our dataset.
 complaints_df['target']=complaints_df['Product'].map(target)
 ```
 
-Use the code snippet below to check the new dataset, with the added target variable:
+Use the code snippet below to check the new dataset with the added target variable:
 
 ```python
 complaints_df
@@ -235,13 +235,13 @@ X_train, X_test = train_test_split(complaints_df, test_size=0.2, random_state=11
 ### Text Preprocessing for natural language processing
 There are many text preprocessing steps. In this tutorial, we will focus on the following:
 
-- Stemming. Stemming reduces a word into its stem word or root. It removes the word affixes so that only the root remains. For example, the words “connecting”, “connect”, “connection”, “connects” are all reduced to the root form “connect”.
+- Stemming. Stemming reduces a word into its stem word or root. It removes the word affixes so that only the root remains. For example, the words “connecting”, “connect”, “connection”, and “connects” are all reduced to the root form “connect”.
 
 - Removing stop words. Stop words are the most common words in any language. However, they do not add much information to the text. Examples of stop words are conjunctions, pronouns, and articles. Removing stop words will enable the model to focus on words that add value in training. 
 
 - Lower Casing. It converts the text dataset to lower case. 
 
-- Tokenization. Breaking up the sentences into smaller word units called tokens. This process enables the model to understand the sentences through analyzing the word tokens.
+- Tokenization. Breaking up the sentences into smaller word units called tokens. This process enables the model to understand the sentences by analyzing the word tokens.
 
 - Removing unnecessary characters. The text dataset may have unnecessary characters that do not add value to the model. We remove these characters to ensure the model focus on important information.
 
@@ -330,7 +330,7 @@ The function has the following parameters:
 
 - `lowercase=False`. Ensures the function only vectorizes the words that are in lowercase.
 
-- `ngram_range=(1,2)`. `ngram_range` is a continuous sequence of words, symbols, or tokens in the stemmed text. Our stemmed text will have either 1 or 2 words.
+- `ngram_range=(1,2)`. `ngram_range` is a contiguous sequence of words, symbols, or tokens in the stemmed text. Our stemmed text will have either 1 or 2 words.
 
 We now apply the method to both the training and testing dataset.
 
@@ -382,7 +382,7 @@ The target column contains the model output after making a prediction.
 h2o_train_df['target'] = h2o_train_df['target'].asfactor()
 h2o_test_df['target'] = h2o_test_df['target'].asfactor()
 ```
-We are now ready to use H2O AutoML to run multiple models then select the best.
+We are now ready to use H2O AutoML to run multiple models and select the best.
 
 ### Using H2O AutoML to run multiple models
 Let us initialize the H2O AutoML algorithm and its parameters.
