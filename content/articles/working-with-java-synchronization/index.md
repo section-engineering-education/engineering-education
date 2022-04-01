@@ -9,7 +9,7 @@ Synchronization in computing is the practice of keeping a group of data or files
 - [Conclusion](#conclusion)
 
 ### An insight into synchronization in Java
-Several threads querying the same resource might lead to unexpected results. Synchronization is required to prevent several threads from accessing a resource allowing only one thread at a time. Java's synchronized blocks, denoted by the `synchronized` keyword, allow you to handle several threads at once.  In each case, a thread must acquire and release a lock on the method or block.
+Several threads querying the same resource might lead to unexpected results. Synchronization is required to prevent several threads from accessing a resource allowing only one thread at a time. Java's synchronized blocks, denoted by the `synchronized` keyword, allow you to handle several threads at once. In each case, a thread must acquire and release a lock on the method or block.
 
 Controlling problems with mutual exclusion in a multithreading system is the goal of synchronization. Take note of the following:
 
@@ -31,7 +31,7 @@ To understand further let's first look at the types of race conditions:
 There are several different sorts of racing situations. `Critical` and `non-critical` are two categories that characterize the impact of a race condition on a system:
 
 1. A `critical race condition` changes the device, system, or software end state. For example, turning two light switches connected to a shared light at the same time blows the circuit. A catastrophic race condition occurs when a circumstance leads to an unforeseen or undefined issue.
-2. A `noncritical race condition` has no effect on the system, device, or program's outcome. In the light example, if the light is off and flipping both switches simultaneously turns it on, it is a non-critical race condition. Non-critical race conditions do not cause software bugs.
+2. A `non-critical race condition` has no effect on the system, device, or program's outcome. In the light example, if the light is off and flipping both switches simultaneously turns it on, it is a non-critical race condition. Non-critical race conditions do not cause software bugs.
 
 Electronics and programming aren't the only critical and non-critical race condition circumstances. They can occur in many race-condition systems. In the case of programming, race condition circumstances occur in code that is executed by several threads or processes. There are several possible outcomes when numerous threads try to read the same variable and then act on it.
 
@@ -47,7 +47,7 @@ The example program below illustrates race conditions:
 
 You can see the increased value of an integer variable in this basic example. One by one the variable's value is incremented and shown in ten different ways. Each thread will be numbered from one to nine.
 
-```Java
+```java
 public class Example {
   int check = 0;
   public  void CheckBoost(){
@@ -90,7 +90,7 @@ It is evident that the crucial element (code that changes shared resources) must
 
 Synchronizing the method call should avoid the race problem:
 
-```Java
+```java
 public class Example2 {
   int check = 1;
   public  void CheckBoost(){
@@ -153,7 +153,7 @@ Let us look at an example program that uses synchronized blocks.
 
 Save it as `TestSynchronizedBlock1.java`
 
-```Java
+```java
     class Table  
     {      
      void printTable(int n){    
@@ -200,7 +200,7 @@ Save it as `TestSynchronizedBlock1.java`
 ```
 The above code will output the following
 
-```bash
+```
 5
 10
 15
@@ -230,7 +230,7 @@ First, a thread with the lock on the object must execute any synchronized method
 
 Let's look at an example program:
 
-```Java
+```java
 class Implementation {
 
 	public synchronized void wish(String tag) {
