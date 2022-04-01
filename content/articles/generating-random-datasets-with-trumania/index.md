@@ -18,20 +18,21 @@ In this article, we will look at how to use the random module to generate random
 <!--more-->
 It will give us a step-by-step algorithm on how random datasets are generated. Random data initiates the creation of random datasets whereby the variables coincide with selected distributions. This article will give a sense of why one may want to generate random datasets.
 
-### Prerequisites
-Basic python knowledge
-Knowledge of working with Python libraries
-
 ### Table of contents
 - [Prerequisites](#prerequisites)
-- [Why generate random datasets](#why-generete-random-datasets)
-- [Schema-based random data generation](#schemabased-random-data-generation)
+- [Why generate random datasets](#why-generate-random-datasets)
+- [Schema-based random data generation](#schema-based-random-data-generation)
   - [Shortcomings addressed by Trumania](#shortcomings-addressed-by-trumania)
 - [Generating inter-related data with Trumania](#generating-inter-related-data-with-trumania)
   - [Ways in which interrelated data can be generated](#ways-in-which-interrelated-data-can-be-generated)
 - [Creating a Trumania circus](#creating-a-trumania-circus)
 - [The social networks](#the-social-network)
 - [Conclusion](#conclusion)
+- 
+### Prerequisites
+To follow along with this tutorial, you will need to have;
+- Basic knowledge of Python programming language
+- Knowledge of working with Python libraries
 
 ### Why generate random datasets
 There are various reasons why one may choose to generate random datasets. The following are some of the reasons:
@@ -41,7 +42,7 @@ There are various reasons why one may choose to generate random datasets. The fo
 - `Time`- Random data generation saves time since it's fast and efficient in comparison to the real data. It also allows data scientists to explore datasets, algorithms, and visualization of data in various techniques.
 
 ### Schema-based random data generation
-Under this heading, I am going to illustrate how schema-based random data generation happens and show the outcomes of the same. Many tools may be used to generate random data but the most common way is the schema-based generation. It allows the definition of the blueprints and henceforth be able to use it to generate some data entities. Other tools that may be used for the generation of random data include `LogSynth` and `Khermes`.
+ Many tools may be used to generate random data but the most common way is the schema-based generation. It allows the definition of the blueprints and henceforth be able to use it to generate some data entities. Other tools that may be used for the generation of random data include `LogSynth` and `Khermes`.
 
 Below is a simple illustration:
 
@@ -64,10 +65,10 @@ Below is a simple illustration:
 
 The above scenario shows the generation of some data about an animal. The entities are the breed, age, and name. 
 
-The schema is simple, quick, and has some limitations. The limitation is that there is the manipulation of relationships between the entities. An example is like, how to generate names based on the breed of the animal.
+The schema is simple and quick but it has some limitations. The `main` limitation is that there is the manipulation of relationships between the entities. An example is like, how to generate names based on the breed of the animal.
 
 #### Shortcomings addressed by Trumania
-- Resulting in relationships between actions.
+- Causal relationship between actions.For instance,many purchase actions at a retail shop may lead to an "out-of-stock" event.
 - Different duration activity profiles - It defines what time actions are likely to occur.
 - Collected algorithms in a data network - This means that the user interactions are discovered through the social groups
 - Imbalanced datasets - This means operations cannot aid in a grouping.
@@ -75,15 +76,15 @@ The schema is simple, quick, and has some limitations. The limitation is that th
 The execution of a scenario in Trumania results in the generation of datasets which are typically time-series.
 
 ### Generating inter-related data with Trumania
-In this section, we will look at different scenarios that will read to interrelated data. We can have a scenario whereby people may be communicating with each other through messages. 
+In this section, we will look at different scenarios that will lead to interrelated data. We can have a scenario whereby people may be communicating with each other through messages. 
 
 The outcome of the communication will lead to the emergence of datasets that will be the time series of the messages exchanged between the people.
 
 #### Ways in which interrelated data can be generated
-- Developing a trumania circus, the word in which the scenario will execute.
-- Addition of relationship to Agents and assign them their favorite quotes. It will be used to make the content of the messages.
-- Creating time parameters of the story results in a more realistic distribution of the messages throughout the given time.
-- Addition of other relationships to define a social network.
+- By developing a trumania circus, the word in which the scenario will execute.
+- Through addition of relationship to Agents and assign them their favorite quotes. It will be used to make the content of the messages.
+- By creating time parameters of the story results in a more realistic distribution of the messages throughout the given time.
+- Through addition of other relationships to define a social network.
 
 We will have a better understanding in the next section.
 
@@ -91,7 +92,7 @@ We will have a better understanding in the next section.
 A circus is a data generator that is used to control and monitor processes and sockets. It can be driven in the web interface, python API, and command-line interface.
 
 #### How to create a circus
-A trumania circus is created using the simple steps as follows:
+A trumania circus is created using the code below:
 
 ```python
 from trumania.core import circus
