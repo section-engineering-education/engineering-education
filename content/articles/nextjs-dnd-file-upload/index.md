@@ -420,7 +420,10 @@ Add the following code to the `DropZone.js` component to handle file upload:
   );
 ```
 
-The upload button will be shown only if there are files in the fileList. The `uploadFiles` function will be used to get the files from the fileList as an array, initialize formData object, loop over files and add to formData. Then Upload the files as a POST request to the server using fetch. (Note: `/api/fileupload` is not a real endpoint, it is just an example for the purpose of this tutorial). The `response` object will be used to check if the file upload was successful. If successful, alert the user that the files were uploaded successfully. If unsuccessful, alert the user that there was an error uploading the files.
+The Upload button will be shown only if there are files in the fileList. The `uploadFiles` function will be used to get the files from the fileList as an array, initialize formData object, loop over files and add to formData. Then Upload the files as a POST request to the server using fetch.  
+The `response` object will be used to check if the file upload was successful. If successful, alert the user that the files were uploaded successfully. If unsuccessful, alert the user that there was an error uploading the files.
+
+Note: `/api/fileupload` is not a real endpoint, it is just an example for the purpose of this tutorial.
 
 Here is the [link](https://github.com/gisioraelvis/nextjs-dnd-fileupload-code.git) to the complete code of the app on GitHub.
 
