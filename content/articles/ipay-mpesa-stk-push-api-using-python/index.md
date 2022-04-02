@@ -1,14 +1,25 @@
-### How to implement iPay Mpesa STK push API using Python
+---
+layout: engineering-education
+status: publish
+published: true
+url: /ipay-mpesa-stk-push-api-using-python/
+title:  IPay Mpesa STK push API using Python
+description: This tutorial will guide the reader on how to implement the IPay M-Pesa STK push API using Python. 
+author: dianne-sandra
+date: 2022-04-02T00:00:00-13:00
+topics: [API]
+excerpt_separator: <!--more-->
+images:
 
-### Introduction
-IPay is an online payment gateway widely used in Africa. It has streamlined the payment process and allowed merchants to accept transactions from third-party platforms such as VISA, Mastercard, Kenswitch, M-Pesa, Airtel Money. 
+  - url: /engineering-education/ipay-mpesa-stk-push-api-using-python/hero.jpg
+    alt: IPay Mpesa STK push API using Python Image
+---
 
-IPay has the Customer to Business(C2B), Business to Business(B2B), Business to Customer(B2C) and STK push APIs, which work together to enhance the transaction experience. In this tutorial, we will be consuming the Ipay STK-Push endpoints using Python.
+IPay is an online payment gateway widely used in Africa. It has streamlined the payment process and allowed merchants to accept transactions from third-party platforms such as VISA, Mastercard, Kenswitch, M-Pesa, and Airtel Money. 
+<!--more-->
+IPay has the Customer to Business(C2B), Business to Business(B2B), Business to Customer(B2C) and STK push APIs, which work together to enhance the transaction experience. In this tutorial, we will be consuming the Ipay STK-Push endpoints using Python. IPay has made it possible for developers to send the prompt to M-Pesa and Airtel Money users using a single codebase.
 
-STK push is a request that triggers a USSD prompt on a mobile phone. The  IPay STK push prompt contains the amount deductible, the merchant's account name, and the pin input field. IPay has made it possible for developers to send the prompt to M-Pesa and Airtel Money users using a single codebase.
-
-### Goals of the Tutorial
-By the end of this article, the reader should be able to integrate iPay API into a python project.
+STK push is a request that triggers a USSD prompt on a mobile phone. For example, the IPay STK push prompt contains the amount deductible, the merchant's account name, and the pin input field. By the end of this article, the reader should be able to integrate iPay API into a python project.
 
 ### Table of Contents
 - [Introduction](#introduction)
@@ -25,16 +36,14 @@ By the end of this article, the reader should be able to integrate iPay API into
 
 ### Prerequisites
 To follow along with this article, you should have the following:
-Be able to use different data types in python.
-Be able to use python's package managers.
+Be able to use different data types in Python.
+Be able to use Python's package managers.
 Registered for the iPay Merchant account to get a production credential. In this tutorial, we will be using development credentials.
-
-![Mpesa STK prompt](/engineering-education/ipay-mpesa-stk-push-api-using-python/prompt.jpeg)
 
 ### Step 1 - Project initialization and variable declaration
 Open your favourite IDE and create a python file, `ipay.py`. We need to import some Python libraries to interact with the endpoints to get started with the code. 
 
-We will install **requests** using pip. Pip is a package manager that can install modules and packages that do not come in python's standard library. 
+We will install **requests** using pip. Pip is a package manager that can install modules and packages that do not come in Python's standard library. 
 
 First, make sure that pip is part of your System variables(Windows) or environment variables(macOS and Linux). Then run the command below in the terminal.
 
@@ -65,7 +74,9 @@ iPaySecret = b"demoCHANGED"
 ```
 We will be using the HTTP library to send requests to iPay servers. The  HTTP responses are processed with the `json` library. 
 
-We have populated the variables `iPaySecret` and `iPayVid` with development values. Only use iPay provided production credentials after deploying your implementation to the development server for the funds to reflect in your merchant account.
+We have populated the variables `iPaySecret` and `iPayVid` with development values. 
+
+>Only use iPay provided production credentials after deploying your implementation to the development server for the funds to reflect in your merchant account.
 
 ### Step 2 - Prepare the request parameters
 We will define a function that will format our data into a [dictonary](https://docs.python.org/3/tutorial/datastructures.html#dictionaries) that the API can process. 
@@ -189,7 +200,7 @@ def send_stk(order_id, customer_telephone, customer_email, amount):
         if response['status'] == 1:
             return (True, "Successfully sent to the client", order_id)
         else:
-            return (False, "An error occured ")
+            return (False, "An error occurred ")
         
     else:
         return (False, "An error occured while initiating request")
@@ -207,13 +218,15 @@ The above snippet should return the following output:
 
 ```
 
+![Mpesa STK prompt](/engineering-education/ipay-mpesa-stk-push-api-using-python/prompt.jpeg)
+
 The prompt has a 10-second timeout, after which the request will be cancelled. If many requests are sent simultaneously, and the first prompt has not timed out or cancelled on the user's device, the `header_status` will change to 500 and `status` to 0.
 
 
 ### Step 5 - Create Transaction Status Checker
 As of writing this, iPay Africa has no REST API callback endpoint where we can direct responses from their servers. 
 
-Therefore we need to write a custom script that checks the transaction status. Depending on the implementation, we could wait for some minutes then send a query for a particular `order_id`. 
+Therefore we need to write a custom script that checks the transaction status. Depending on the implementation, we could wait for some minutes and then send a query for a particular `order_id`. 
 
 ```python
 def check_transaction(order_id, vid):
@@ -235,11 +248,10 @@ def check_transaction(order_id, vid):
         return (False, "Transaction not found or something went wrong")
 ```
 
-Response:
+Successful Response:
 
 ```json
 // Transaction Search Responses
-
 {
    "header_status":200,
    "status":1,
@@ -258,14 +270,16 @@ Response:
    },
    "hash":"XXXXXXXXXXXXXXXXXXX-HASH VALUE-XXXXXXXXXXXXXXXXXXXXXXXXXXX"
 }
+```
 
-// Fail Response
+Failed  Response:
+
+```json
 {
    "header_status":404,
    "status":0,
    "text":"no payment record found"
 }
-
 ```
 
 ### Step 6 -Integrating the API with Flask
@@ -277,7 +291,7 @@ First, import `Flask`, `jsonify` and `request`. `jsonify` will enable us to send
 
 Next,  import `string`, `random` and `re`, which we will be using to create a random `order_id` to send to the iPay endpoints.
 
-```python
+```Python
 from flask import Flask, jsonify, request
 from ipay import check_transaction, send_stk, iPayVid
 import string
@@ -290,7 +304,6 @@ app = Flask(__name__)
 
 if __name__ == '__main__':
     app.run(debug=True)
-
 ```
 
 ### Step 7 API: Initiate STK endpoint
@@ -300,7 +313,9 @@ We will add a [Flask function](https://flask.palletsprojects.com/en/2.0.x/api/#f
 
 Finally, we use the `get_json/0` function to convert the incoming JSON string to a python dictionary object, then extract the data using their respective keys.
 
-We then generate a random ten character string which we will use as the order id. Next, we check whether the extracted phone number is valid using regex. We also check whether the amount to be paid is at least 10 KES. Finally, we pass the extracted data to the `send_stk/4` function if everything is valid.
+We then generate a random ten character string which we will use as the order id. Next, we check whether the extracted phone number is valid using regex. 
+
+We also check whether the amount to be paid is at least 10 KES. Finally, we pass the extracted data to the `send_stk/4` function if everything is valid.
 
 ```python
 @app.route('/send_stk', methods=['POST'])
@@ -347,12 +362,15 @@ def verify_payment():
 ```
 ![Mpesa and iPay Messages](/engineering-education/ipay-mpesa-stk-push-api-using-python/mpesa-confirm.png)
 
+### My Thoughts
+Although iPay's REST API implementation is easy to use, it cannot automatically send us payment processing results like Safaricom's Daraja API. Instead, we must query their servers to confirm whether a payment was successful. 
+
+It would be better if their servers could send us some results to a specified endpoint on our server after the user has finished interacting with the STK toolkit prompt.
 
 ### Conclusion
 In this tutorial, we learned how to consume IPay API endpoints. Our code successfully initiates a SIM toolkit dialogue for M-Pesa users. 
 
 We also learnt how to query transactions processed in IPay using order IDs. Our IPay implementation can be integrated with other python projects; we tested our implementation with a simple Flask powered REST API server. 
 
-Although iPay's REST API implementation is easy to use, it cannot automatically send us payment processing results like Safaricom's Daraja API. Instead, we must query their servers to confirm whether a payment was successful. 
-
-It would be better if their servers could send us some results to a specified endpoint on our server after the user has finished interacting with the STK toolkit prompt.
+---
+Peer Review Contributions by: [Mercy Meave](/engineering-education/authors/mercy-meave/)
