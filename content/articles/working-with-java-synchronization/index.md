@@ -49,30 +49,33 @@ You can see the increased value of an integer variable in this basic example. On
 
 ```java
 public class Example {
-  int check = 0;
-  public  void CheckBoost(){
-    try {
-      Thread.sleep(1000);
-    } catch (InterruptedException e) {
-      e.printStackTrace();
-    }
-    check++;
-  }
-  public int obtainCheck(){
-    return check;
-  }
-  public static void main(String[] args) {
-    Example zy = new Example();
-    for(int x = 1; x < 6; x++){
-      new Thread(new Runnable() {			
-        @Override
-        public void run() {
-          zy.CheckBoost();
-          System.out.println("The output of the thread is : " + Thread.currentThread().getName() + " - " + zy.obtainCheck());
+    int check = 0;
+
+    public void checkBoost() {
+        try {
+            Thread.sleep(1000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
         }
-      }).start();
+        check++;
     }
-  }
+
+    public int obtainCheck() {
+        return check;
+    }
+
+    public static void main(String[] args) {
+        Example zy = new Example();
+        for (int x = 1; x < 6; x++) {
+            new Thread(new Runnable() {
+                @Override
+                public void run() {
+                    zy.checkBoost();
+                    System.out.println("The output of the thread is : " + Thread.currentThread().getName() + " - " + zy.obtainCheck());
+                }
+            }).start();
+        }
+    }
 }
 ```
 
@@ -92,35 +95,37 @@ Synchronizing the method call should avoid the race problem:
 
 ```java
 public class Example2 {
-  int check = 1;
-  public  void CheckBoost(){
-    try {
-      Thread.sleep(1000);
-    } catch (InterruptedException e) {
-      e.printStackTrace();
-    }
-    check++;
-  }
-  public int obtainCheck(){
-    return check;
-  }
-  public static void main(String[] args) {
-    Example2 zy = new Example2();
-    int x;
-    for(x = 1; x < 6; x++){
-      new Thread(new Runnable() {			
-        @Override
-        public void run() {
-          synchronized(zy){
-            zy.CheckBoost();
-            System.out.println("The output of the thread is : " + Thread.currentThread().getName() + " - " + zy.obtainCheck());
-          }
-        }
-      }).start();
-    }	
-  }
-}
+    int check = 1;
 
+    public void checkBoost() {
+        try {
+            Thread.sleep(1000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+        check++;
+    }
+
+    public int obtainCheck() {
+        return check;
+    }
+
+    public static void main(String[] args) {
+        Example2 zy = new Example2();
+        int x;
+        for (x = 1; x < 6; x++) {
+            new Thread(new Runnable() {
+                @Override
+                public void run() {
+                    synchronized (zy) {
+                        zy.checkBoost();
+                        System.out.println("The output of the thread is : " + Thread.currentThread().getName() + " - " + zy.obtainCheck());
+                    }
+                }
+            }).start();
+        }
+    }
+}
 ```
 
 ```
@@ -154,49 +159,49 @@ Let us look at an example program that uses synchronized blocks.
 Save it as `TestSynchronizedBlock1.java`
 
 ```java
-    class Table  
-    {      
-     void printTable(int n){    
-       synchronized(this){//synchronized block    
-         for(int i=1;i<=5;i++){    
-          System.out.println(n*i);    
-          try{    
-           Thread.sleep(400);    
-          }catch(Exception e){System.out.println(e);}    
-         }    
-       }    
-     }//end of the method    
-    }    
-        
-    class MyThread1 extends Thread{    
-    Table t;    
-    MyThread1(Table t){    
-    this.t=t;    
-    }    
-    public void run(){    
-    t.printTable(5);    
-    }    
-        
-    }    
-    class MyThread2 extends Thread{    
-    Table t;    
-    MyThread2(Table t){    
-    this.t=t;    
-    }    
-    public void run(){    
-    t.printTable(100);    
-    }    
-    }    
-        
-    public class TestSynchronizedBlock1{    
-    public static void main(String args[]){    
-    Table obj = new Table();//only one object    
-    MyThread1 t1=new MyThread1(obj);    
-    MyThread2 t2=new MyThread2(obj);    
-    t1.start();    
-    t2.start();    
-    }    
-    }    
+class Table
+{
+    void printTable(int n){
+        synchronized(this){//synchronized block
+            for(int i=1;i<=5;i++){
+                System.out.println(n*i);
+                try{
+                    Thread.sleep(400);
+                }catch(Exception e){System.out.println(e);}
+            }
+        }
+    }//end of the method
+}
+
+class MyThread1 extends Thread{
+    Table t;
+    MyThread1(Table t){
+        this.t=t;
+    }
+    public void run(){
+        t.printTable(5);
+    }
+
+}
+class MyThread2 extends Thread{
+    Table t;
+    MyThread2(Table t){
+        this.t=t;
+    }
+    public void run(){
+        t.printTable(100);
+    }
+}
+
+public class TestSynchronizedBlock1{
+    public static void main(String[] args){
+        Table obj = new Table();//only one object
+        MyThread1 t1=new MyThread1(obj);
+        MyThread2 t2=new MyThread2(obj);
+        t1.start();
+        t2.start();
+    }
+}
 ```
 The above code will output the following
 
@@ -239,7 +244,7 @@ class Implementation {
 			System.out.println("Hello : ");
 			try {
 				Thread.sleep(100);
-			} catch (InterruptedException e) {
+			} catch (InterruptedException ignored) {
 
 			}
 			System.out.println(tag);
