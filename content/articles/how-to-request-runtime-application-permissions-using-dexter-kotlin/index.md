@@ -1,5 +1,5 @@
 ### Introduction
-Runtime permissions are requested by the developer and granted access by the user when a particular action wants to be executed. It was previously necessary to ask for permissions before installing an app in the older Android version (1.0). Google introduced the new features in Android (6.0.1), also known as Marshmallow, where a user could grant permissions in runtime. Dexter makes it more easier to get the permissions for your app at runtime.
+Runtime permissions are requested by the developer and granted access by the user when a particular action wants to be executed. It was previously necessary to ask for permissions before installing an app in the older Android versions (1.0). Google introduced the new features in Android (6.0.1), also known as `Marshmallow`, where a user could grant permissions in runtime. Dexter makes it more easier to get the permissions for your app at runtime.
 
 This tutorial will create an application that allows the users to grant or restrict permissions to an application in runtime using a dexter third-party library. We will also implement certain device features, such as a camera, and use it to snap an image.
 
@@ -38,7 +38,7 @@ Add the following dependencies in the build.grandle file.
     implementation 'com.github.bumptech.glide:glide:4.13.0'
 ```
 - [Sdp](https://github.com/intuit/sdp) - In sync with the screen's expansion, this component expands. Multi-screen support is made easier with the help of this tool. They scale all android studio palettes according to the phone screen size we installed the application.
-- [Dexter](https://github.com/Karumi/Dexter) - will help us simplify requesting runtime permissions which is our main aim in this tutorial.
+- [Dexter](https://github.com/Karumi/Dexter) library will help us simplify requesting runtime permissions which is our main aim in this tutorial.
 - [Glide](https://github.com/bumptech/glide) is an Android image loading framework that integrates media decoding, memory and disk caching, and resource pooling.
 
 Since we will use [view binding](https://developer.android.com/topic/libraries/view-binding), include the following code snippet in the build.grandle file too.
@@ -48,12 +48,12 @@ Since we will use [view binding](https://developer.android.com/topic/libraries/v
         viewBinding.enabled = true
 }
 ```
-> After adding the dependencies and the view binding dependency, **sync** the project.
+> After adding the dependencies, **sync** the project.
 
 ### Step 2: Adding permissions in the manifest file
 This tutorial will request application permissions such as camera, writing, and reading files from the internal storage. Writing files include saving the captured image to the memory, while reading files include accessing data stored in the memory.
 
-To achieve that, include the following permissions in the manifest file.
+To achieve that, include the following permissions in the manifest file:
 
 ```kotlin
 <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
@@ -125,7 +125,7 @@ Add the following code in the activity main.xml file to design the application l
     </androidx.constraintlayout.widget.ConstraintLayout>
 ```
 #### Designing the custom dialog action
-This dialog will pop up when we click on the icon add the image. It will help us choose actions gallery or capture the image with the camera for loading the image view with a bitmap. To add the custom dialogue, click `res` -> `layout` -> right-click -> `new` -> `layout_resource_file.
+This dialog will pop up when we click on the icon `add image`. It will help us choose actions gallery or capture the image with the camera for loading the image view with a bitmap. To add the custom dialogue, click `res` -> `layout` -> right-click -> `new` -> `layout_resource_file`.
 Name the file as `dialog_custom_image-selection` and click `OK` to finish.
 
 Write the following code in the custom dialog layout.
@@ -197,7 +197,7 @@ Write the following code in the custom dialog layout.
 You can understand more about chain styles [here](https://medium.com/@nomanr/constraintlayout-chains-4f3b58ea15bb).
 
 ### Step 4: Working with the MainActivity.kt file
-First set up the main activity class to use binding we set in the build.grandle file
+First set up the main activity class to use binding we set in the build.grandle file.
 
 ```kotlin
 class MainActivity : AppCompatActivity(), View.OnClickListener {
@@ -210,7 +210,7 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
 }
 ```
 #### Setting up the toolbar
-To set up the action bar to display a menu items in our layout, include the following code snippet.
+To set up the action bar which will display menu items in our layout, include the following code snippet.
 
 ```kotlin
 //first set up the method setActionBar on the oncreate method
@@ -222,7 +222,7 @@ setActionBar()
     }
 ```
 #### Displaying the custom image selection dialog
-We need to set our click listener to our add image view and pass a method `customImageSelectionDialog()` to display our custom image selection layout.
+We need to set a click listener to our `add image view` and then we pass a method `customImageSelectionDialog()` to display our custom image selection layout.
 
 ```kotlin
 //Set the on click listener for our add image view in the oncreate method
@@ -333,7 +333,7 @@ private fun customImageSelectionDialog() {
         private const val IMAGE_DIRECTORY = "MyImages"
     }
 ```
-Add the following code associated with the alert dialog that will e shown after the method `onPermissionRationalShouldBeShown` was  passed as a permission listener.
+Add the following code associated with the alert dialog that will be shown after the method `onPermissionRationalShouldBeShown` was  passed as a permission listener.
 
 ```kotlin
      private fun showRationalDialogForPermissions() {
@@ -369,7 +369,7 @@ The methods below are associated with dexter permissions;
 8. `onSameThread()` - To gather permission listener callbacks on the same thread, this function is called before permissions checks.
 
 #### Loading a bitmap to the image view
-Suppose the user has granted the application all or any permission, i.e., to use the camera and access the media files from the gallery. In that case, we can perform certain actions. We can now load the image view of the main activity.XML with a bitmap from the media files using Glide (our third-party library) and the camera. We use the function on `activityResult()` to handle the result we got when the permissions were granted.
+Suppose the user has granted the application all or any permission, i.e., to use the camera and access the media files from the gallery. In that case, we can perform certain actions. We can now load the `image view` of the main activity.XML with a bitmap from the media files using Glide (our third-party library) and the camera. We use the function on `activityResult()` to handle the result we got when the permissions were granted.
 
 Write the below code to achieve the above:
 
@@ -438,7 +438,7 @@ Finally, we need to save the image we captured with the camera. Image are saved 
 - the mode the image is to be saved with, i.e., will the image be accessed with other applications or its just our application(MODE_PRIVATE)
 - the identity number of the image.
 - the quality of the image.
-- compression format of the image, i.e., `.JPEG.`
+- compression format of the image, i.e., `.JPEG`.
 
 ```kotlin
  private fun saveImageToInternalStorage(bitmap: Bitmap): String {
@@ -461,6 +461,6 @@ Finally, we need to save the image we captured with the camera. Image are saved 
 To test the app if it is running, use an emulator (virtual device) if you have installed it in the IDE. Alternatively, you can use a physical device such as a mobile phone.
 
 ### Conclusion
-This tutorial discussed how runtime permission is easily requested using the Dexter library and showed how Glide is used to load controls with an image.
+This tutorial discussed how runtime permission is easily requested using the Dexter library and showed how `Glide` is used to load controls with an image.
 
 Happy coding!!
