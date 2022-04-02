@@ -373,7 +373,7 @@ To handle file selection, add the following code to the `DropZone.js` component 
   );
 ```
 
-Use the `onChange` event on the `input` element, this occurs when the value of an element has been changed. In this case the event is fired when the user selects a file or files. The `handleFileSelect` function will be used to get the files from the event on the input element as an array, iterate over existing files, check if the file already exists, if so, don't add to fileList, this is to prevent duplicates. Then dispatch an action to add selected file or files to fileList.
+Use the `onChange` event on the `input` element, this occurs when the value of an element has been changed. In this case the event is fired when the user selects a file or files. The `handleFileSelect` function will be used to get the files from the event on the input element as an array. Then iterate over existing files and checks if the file already exists. If true, do not add to fileList, this is to prevent duplicates. Then dispatch an action to add selected file or files to fileList.
 
 The `handleFileSelect` function will be used to get the files from the event on the input element as an array, iterate over existing files, check if the file already exists, if so, don't add to fileList, this is to prevent duplicates. Then dispatch an action to add selected file or files to fileList.
 
