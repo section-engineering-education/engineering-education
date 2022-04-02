@@ -39,7 +39,25 @@ To follow along with this tutorial, you will need to:
 - [Conclusion](#conclusion)
 - [References](#references)
 
-### App Components 
+### Setup
+Make sure your development environment is set up and ready with [Node.js](https://nodejs.dev/download) and [VS Code](https://code.visualstudio.com/).
+
+The simplest of creating a new Next.js app is using create-next-app, which sets up everything automatically for you. To create a project, run:
+
+```bash
+npx create-next-app@latest
+```
+This makes use of `npx` and the `create-next-app` to bootstrap a basic Next.js app with the latest version.
+
+Then, run the following command to start the development server:
+
+```bash
+npm run dev
+```
+This starts the development server and allows you to preview the app in your browser on `http://localhost:3000`.
+
+### App Components
+
 Within the project's root folder, create a new folder and name its components. This directory will contain the components that will make up the application.
 
 Within the components directory, create the following files:
@@ -425,3 +443,4 @@ Cheers!
 
 ---
 Peer Review Contributions by: [Dawe Daniel](/engineering-education/authors/dawe-daniel/)
+- [Implementing an image upload application with Vanilla JavaScript](https://www.javascripttutorial.net/web-apis/javascript-filereader/)
