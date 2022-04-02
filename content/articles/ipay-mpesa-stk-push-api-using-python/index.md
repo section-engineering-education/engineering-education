@@ -11,7 +11,7 @@ topics: [API]
 excerpt_separator: <!--more-->
 images:
 
-  - url: /engineering-education/ipay-mpesa-stk-push-api-using-python/hero.jpg
+  - url: /engineering-education/ipay-mpesa-stk-push-api-using-python/hero.jpeg
     alt: IPay Mpesa STK push API using Python Image
 ---
 
@@ -362,7 +362,7 @@ def verify_payment():
 ```
 ![Mpesa and iPay Messages](/engineering-education/ipay-mpesa-stk-push-api-using-python/mpesa-confirm.png)
 
-### My Thoughts
+### My thoughts
 Although iPay's REST API implementation is easy to use, it cannot automatically send us payment processing results like Safaricom's Daraja API. Instead, we must query their servers to confirm whether a payment was successful. 
 
 It would be better if their servers could send us some results to a specified endpoint on our server after the user has finished interacting with the STK toolkit prompt.
