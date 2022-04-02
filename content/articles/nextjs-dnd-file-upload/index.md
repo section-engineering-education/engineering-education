@@ -428,7 +428,8 @@ Note: `/api/fileupload` is not a real endpoint, it is just an example for the pu
 Here is the [link](https://github.com/gisioraelvis/nextjs-dnd-fileupload-code.git) to the complete code of the app on GitHub.
 
 ### Conclusion
-File upload is a common and essential requirement for web applications. In this tutorial, you have implemented a drag and drop file upload component in Next.js that makes use of the HTML5 drag and drop API and the FileReader API to listen and detect when files are dragged and dropped onto the application's dropzone or when files are selected via the input element, read the contents of the and show a preview and finally upload the files to a server.
+
+File upload is a common and essential requirement for web applications. In this tutorial, you have implemented a drag and drop file upload component in Next.js. Making use of the HTML5 drag and drop API and the FileReader API to listen and detect when files are dragged and dropped onto the application or when files are selected via the input element. Read the file contents to show a preview and finally upload the files to a server.
 
 Feel free to use the code on this tutorial as a starting point to create your file upload components that suit your application needs. You are welcome to share this article and give feedback in the comments section below.
 
