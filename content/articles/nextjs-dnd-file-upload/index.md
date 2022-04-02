@@ -207,7 +207,7 @@ In the `index.js` file before the return, add the following code:
 ```
 The `useReducer` hook takes in a reducer function, the initial state then returns the current state and a dispatch function. The dispatch function will be used to update the state.
 
-Update the `index.js` file.
+Add the following code to `index.js` file.
 
 ```js
 ...
@@ -219,7 +219,7 @@ Update the `index.js` file.
 
 ```
 
-Pass data and dispatch to the `DropZone` component as props.
+This passes data and dispatch to the `DropZone` component as props.
 
 ### File drag and drop
 Next, implement the drag and drop functionality. In this tutorial of the 8 [HTML5 drag and drop events](https://developer.mozilla.org/en-US/docs/Web/API/HTML_Drag_and_Drop_API), we will use 4 that is fired when a file is dropped onto the dropzone region. 
