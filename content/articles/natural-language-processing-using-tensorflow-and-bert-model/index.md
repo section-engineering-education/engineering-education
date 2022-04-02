@@ -18,7 +18,11 @@ Natural language processing (NLP) is a subfield in artificial intelligence that 
 <!--more-->
 Through building of NLP models, the models can perform essential tasks such as [speech recognition](https://monkeylearn.com/blog/natural-language-processing-applications/#speech), [sentiment analysis](https://monkeylearn.com/blog/natural-language-processing-applications/#sentiment-analysis), [intent classification](https://monkeylearn.com/blog/natural-language-processing-applications/#intent), [machine translation](https://monkeylearn.com/blog/natural-language-processing-applications/#translation), [spam filtering](https://mailchimp.com/help/about-spam-filters/) and [chatbot systems](https://monkeylearn.com/blog/natural-language-processing-applications/#chatbots)
 
-In this tutorial, we will build a sentiment analysis model using [BERT](https://huggingface.co/docs/transformers/model_doc/bert) and [TensorFlow](https://www.tensorflow.org/). BERT is a pre-trained model for natural language processing. We will use TensorFlow to create the input, intermediate, and output layers.
+In this tutorial, we will build a sentiment analysis model using [BERT](https://huggingface.co/docs/transformers/model_doc/bert) and [TensorFlow](https://www.tensorflow.org/). 
+
+BERT is a pre-trained model for natural language processing.
+
+We will use TensorFlow to create the input, intermediate, and output layers.
 
 ### Table of contents
 - [Prerequisites](#prerequisites)
@@ -26,9 +30,9 @@ In this tutorial, we will build a sentiment analysis model using [BERT](https://
 - [What is Hugging Face Transformers?](#what-is-hugging-face-transformers)
 - [Installing Hugging Face Transformers](#installing-hugging-face-transformers)
 - [Working with sentiment analysis dataset](#working-with-sentiment-analysis-dataset)
-- [Preprocessing the sentiment analysis dataset](#preprocessing-the-sentiment-analsyis-dataset)
+- [Preprocessing the sentiment analysis dataset](#preprocessing-the-sentiment-analysis-dataset)
 - [Creating the function](#creating-the-function)
-- [Specify the number of sentiment labels](#specify-the-number-sentiment-labels)
+- [Specify the number of sentiment labels](#specify-the-number-of-sentiment-labels)
 - [Performing one-hot encoding](#performing-one-hot-encoding)
 - [Creating a map function](#creating-a-map-function)
 - [Shuffling the training dataset](#shuffling-the-training-dataset)
@@ -45,20 +49,27 @@ In this tutorial, we will build a sentiment analysis model using [BERT](https://
 ### Prerequisites
 The reader should have an understanding of the following before reading this tutorial:
 
-- Be farmiliar with [Python programming](/engineering-education/python-projects-for-beginners/)
+- Be familiar with [Python programming](/engineering-education/python-projects-for-beginners/)
 - Know how to build simple a [natural language processing model](/engineering-education/nlp-based-detection-model-using-neattext-and-scikit-learn/)
-- Understand [text preprocessing tasks](https://towardsdatascience.com/nlp-text-preprocessing-a-practical-guide-and-template-d80874676e79)
+- Understand [text preprocessing](https://towardsdatascience.com/nlp-text-preprocessing-a-practical-guide-and-template-d80874676e79)
 - Know how to build a simple model with [TensorFlow](https://www.tensorflow.org/tutorials)
 
 ### Getting started with BERT
-[BERT](https://github.com/google-research/bert) is a Bidirectional Encoder Representations from the[Hugging Face's Transformers](https://huggingface.co/models). BERT can perform a variety of tasks such as question answering systems, text classification, and sentiment analysis. We will use BERT to perform sentiment analysis.
+[BERT](https://github.com/google-research/bert) is a Bidirectional Encoder Representations from the[Hugging Face's Transformers](https://huggingface.co/models). BERT can perform multiple tasks such as question answering systems, text classification, and sentiment analysis. We will use BERT to perform sentiment analysis.
 
-BERT is a supervised model pre-trained on raw texts and the English language. Getting started with BERT is easy and only requires installing the Hugging Face Transformers. We will then download the pre-trained BERT model from the Hugging Face Transformers. Thereafter we will fine-tune the model to perform sentiment analysis.
+BERT is a supervised model pre-trained on raw texts and the English language. 
+
+To start using BERT is easy and only requires installing the Hugging Face Transformers. 
+We then download the pre-trained BERT model from the Hugging Face Transformers. 
+
+Finally, we will fine-tune the model to perform sentiment analysis.
 
 ### What is Hugging Face Transformers?
-Hugging Face Transformers provides easy APIs to download and fine-tune pre-trained models. We have various pre-trained models for different tasks such as NLP tasks, image classification, video classification, and audio classification. 
+Hugging Face Transformers provides APIs to download and fine-tune pre-trained models. 
 
-It supports different pre-trained models one of them is BERT. To see all the supported pre-trained models, click [here](https://huggingface.co/docs/transformers/index)
+There are various pre-trained models for NLP tasks, image classification, video classification, and audio classification. It supports different pre-trained models such as BERT. 
+
+To see all the supported pre-trained models, click [here](https://huggingface.co/docs/transformers/index)
 
 Hugging Face Transformers can easily integrate with machine learning libraries such as [Pytorch](https://pytorch.org/) and [TensorFlow](tensorflow.org).
 
@@ -78,18 +89,20 @@ from tqdm.auto import tqdm
 import tensorflow as tf
 ```
 **numpy**
-We will use NumPy to work with arrays during dataset preprocessing.
+We will use NumPy to convert the dataset into an array.
 
 **tqdm**
-We use this library to create input tensors during dataset preprocessing.
+We use this library to create input tensors that the model will use.
 
 **tensorflow**
-We will use TensorFlow to train the model. We will also use it to add all the layers the model requires.
+We will use TensorFlow to train the model. It will also add all the layers the model requires.
 
 After the installation, let's start working with the dataset for sentiment analysis.
 
 ### Working with sentiment analysis dataset
-We will use a movie revies dataset. The dataset has different sentiment labels and it will train the model. Click [here](https://drive.google.com/file/d/1KkqLk6orkAJl1WEfZw1z_4jDPBOXLWW9/view?usp=sharing) to download the dataset for this tutorial.
+We will use a movie revies dataset that has different sentiment labels. 
+
+We will use it to train the sentiment analysis model. You can download the sentiment analysis model [here](https://drive.google.com/file/d/1KkqLk6orkAJl1WEfZw1z_4jDPBOXLWW9/view?usp=sharing).
 
 The movie review dataset has `5` sentiment labels as follows:
 
@@ -118,25 +131,29 @@ To read the sentiment analysis dataset, use this code:
 ```python
 df = pd.read_csv('/content/train.tsv', sep='\t')
 ```
-The dataset has tab-separated values (TSV). Let's view this dataset in Google Colab notebook.
+The dataset has tab-separated values (TSV). 
+Let's display the dataset in the Google Colab notebook.
 
 ```python
 df.head()
 ```
-The output of the dataset is seen below:
+The image below shows the dataset output:
 
 ![Movie reviews dataset](/engineering-education/natural-language-processing-using-tensorflow-and-bert-model/movie-review-dataset.png)
 
-The dataset has multiple columns but the model only requires the `Phrase` and `Sentiment` column. The `Phrase` column represents the actual movie review. The `Sentiment` columns represent the sentiment labels previously listed.
+The dataset has multiple columns, but the model only requires the `Phrase` and `Sentiment` columns. 
+The `Phrase` column represents the actual movie review, and the `Sentiment` columns represent the sentiment labels previously listed.
 
-Before the pre-trained BERT model can use the sentiment analysis dataset, we have to process the dataset to have the required format. We need a format that the BERT model expects and can easily use.
+Before we use the sentiment analysis data in the pre-trained BERT model, we need to process it into an acceptable format for the model.
 
 ### Preprocessing the sentiment analysis dataset
-A BERT model does not understand raw text in the `Phrase` column. We first split the raw texts into smaller words or phrases known as tokens.  The tokens are then converted into word embeddings.
+A BERT model does not understand raw text in the `Phrase` column. We first split the texts into smaller words or phrases known as tokens. 
 
-The word embedding encodes the meaning of the words in the tokens using word vectors. Word vectors are a numeric representation of the tokens. The model can easily understand numbers.
+We then convert the tokens into word embeddings. The word embedding encodes the meaning of the tokens using word vectors. 
 
-We will use the `BertTokenizer` to pre-process the sentiment analysis dataset. It will prepare the text input for the BERT model.
+Word vectors are a numeric representation of the tokens. It is the format that the model can easily understand.
+
+We will use the `BertTokenizer` to implement text preprocessing. It will prepare the text input for the BERT model.
 
 Let's import the `BertTokenizer`.
 
@@ -151,13 +168,17 @@ After import, we initialize the `BertTokenizer` as follows:
 ```python
 tokenizer = BertTokenizer.from_pretrained('bert-base-cased')
 ```
-The code above initializes the `BertTokenizer`. It also downloads the `bert-base-cased` model which will perform the pre-processing.
+The code above initializes the `BertTokenizer`. It also downloads the `bert-base-cased` model that performs the preprocessing.
 
-Before we use the initialized `BertTokenizer`, we need to specify the size [`input IDs`](https://huggingface.co/docs/transformers/preprocessing) and [`attention mask`](https://huggingface.co/docs/transformers/preprocessing) after tokenization. These are important parameters that the library requires. 
+Before we use the initialized `BertTokenizer`, we need to specify the size [`input IDs`](https://huggingface.co/docs/transformers/preprocessing) and [`attention mask`](https://huggingface.co/docs/transformers/preprocessing) after tokenization. 
 
-The `input IDs` parameter contains the split tokens after tokenization (splitting of the text). The `attention mask` ensures the model only focuses on the original split tokens and not the synthesized tokens known as [padding tokens](https://albertauyeung.github.io/2020/06/19/bert-tokenization.html/). 
+These are the parameters that the `BertTokenizer` requires. 
 
-The sentences in the `Phrase` column have varying lengths, so the `BertTokenizer` synthesizes new tokens to ensure the sentences have a fixed and uniform length.
+The `input IDs` parameter contains the split tokens after tokenization (splitting the text). 
+
+The `attention mask` ensures the model only focuses on the original split tokens and not the synthesized tokens known as [padding tokens](https://albertauyeung.github.io/2020/06/19/bert-tokenization.html/). 
+
+The sentences in the `Phrase` column have varying lengths, so the `BertTokenizer` synthesizes new tokens to ensure the lengths of sentences are uniform.
 
 Let's initialize these parameters:
 
@@ -165,11 +186,11 @@ Let's initialize these parameters:
 X_input_ids = np.zeros((len(df), 256))
 X_attn_masks = np.zeros((len(df), 256))
 ```
-The `X_input_ids` will contain the `input IDs` tokens. The token is generated from the `df` (this is our dataset) and the length of each sentence is 256. 
+The `X_input_ids` will contain the `input IDs` tokens. We generate the tokens from the `df` (this is our dataset), and the length of each sentence is 256. 
 
-The `X_attn_masks` will contain the `X_attn_masks` tokens. The token is generated from the `df` (this is our dataset) and the length of each sentence is 256. 
+The `X_attn_masks` will contain the `X_attn_masks` tokens. We generate the tokens from the `df` (this is our dataset), and the length of each sentence is 256. 
 
-Let's now create a helper function that will take in the `df`, the `input IDs`, the `attention mask`, and the initialized `tokenizer`. 
+Let's now create a helper function to preprocess the dataset. It will take in the `df`, the `input IDs`, the `attention mask`, and the initialized `tokenizer`. 
 
 #### Creating the function
 We create the function as follows:
@@ -189,7 +210,9 @@ def preprocessing_dataset(df, ids, masks, tokenizer):
         masks[i, :] = tokenized_text.attention_mask
     return ids, masks
 ```
-The function is called `preprocessing_dataset`. It helps us with preprocessing the dataset and outputting the dataset with the required format. The takes in the `df`, the `input IDs` as `ids`, the `attention mask` as `masks`, and the initialized `tokenizer`.
+The function is called `preprocessing_dataset`. It will be preprocessing the dataset. 
+
+It then outputs the dataset in the required format. It takes in the `df`, the `input IDs` as `ids`, the `attention mask` as `masks`, and the initialized `tokenizer`.
 
 The for loop will iterate through the `Phrase` and generate the word embedding using the `tokenizer.encode_plus` method.
 
@@ -199,20 +222,23 @@ The function also has the following arguments:
 It specifies the size of each sentence in the `Phrase` column. The specified value is 256.
 
 - `truncation=True`
-The sentences in the `Phrase` column have varying lengths, so longer sentences are truncated to have a fixed and uniform length (256).
+The sentences in the `Phrase` column have varying lengths, so longer sentences are truncated to ensure the lengths of sentences are uniform (256).
 
 - `padding='max_length`
 It synthesizes new tokens to ensure the sentences have a fixed length and uniform length (256).
 
 - `add_special_tokens=True`
-It adds special tokens to ensure that the maximum length is met.
+It adds new tokens to make the sentences have the maximum length.
 
 - `return_tensors='tf`
 It ensures the function outputs the preprocessed text as TensorFlow tensors.
 
-The function will finally output the `ids` (input IDs) and `masks` (attention mask). These outputs values will be the BERT model inputs.
+The function will finally output the `ids` (input IDs) and `masks` (attention masks). 
+These outputs values will become the inputs for the BERT model. 
 
-We also need to call the function so that it can populate or generate all the `input IDs ` and the `attention mask`. We use this code:
+We also need to call the function so that it can populate or generate all the `input IDs ` and the `attention mask`. 
+
+We will use the following code snippet:
 
 ```python
 X_input_ids, X_attn_masks = preprocessing_dataset(df, X_input_ids, X_attn_masks, tokenizer)
@@ -235,16 +261,18 @@ The code produces the following output:
 ```bash
 (156059, 5)
 ```
-From this output, we have the number of sentiment labels that have been added. Next, we need to perform one-hot encoding.
+The output above shows the number of sentiment labels added. The next step is to perform one-hot encoding.
 
 ### Performing one-hot encoding
-One hot encoding will convert the five sentiment classes in the dataset into a numeric representation that the model understands. We performing one-hot encoding using this code:
+One hot encoding will convert the five sentiment classes in the dataset into a numeric representation that the model understands. We will perform one-hot encoding using the following code:
 
 ```python
 labels[np.arange(len(df)), df['Sentiment'].values]
 ```
 ### Create batches of data
-We need to create batches of the dataset for easy loading during training. The batches will also ease up the training process. We will use the tensorflow dataset utility method.
+We need to create batches of the dataset for easy loading during training. It will also ease up the training process. 
+
+We will use the TensorFlow dataset utility method to create the dataset batches.
 
 ```python
 dataset = tf.data.Dataset.from_tensor_slices((X_input_ids, X_attn_masks, labels))
@@ -258,12 +286,12 @@ The code will display the shape of one sample data /batch.
 
 ![Dataset batch](/engineering-education/natural-language-processing-using-tensorflow-and-bert-model/dataset-batch.png)
 
-From this output, each data sample has a maximum size of 256 and it has five sentiment labels.
+From the output above, each data sample has 256 tokens. It also has five sentiment labels.
 
 The next step is to create a map function.
 
 ### Creating a map function
-The map function will define how the model output will be returned to us.  We want the model to use the `input Ids` and `attention mask` and return one of the five sentiment labels after predictions.
+The map function will define how the model will return the output. We want the model to use the `input Ids` and `attention mask` and return one of the five sentiment labels after predictions.
 
 ```python
 def SentimentDatasetMapFunction(input_ids, attn_masks, labels):
@@ -272,7 +300,7 @@ def SentimentDatasetMapFunction(input_ids, attn_masks, labels):
         'attention_mask': attn_masks
     }, labels
 ```
-The code above will initialize the map function, let's now call the function so that it can be applied to the dataset.
+The code above will initialize the map function. Let's now call the map function.
 
 #### Call the map function
 To call the map function, run the code below:
@@ -280,10 +308,12 @@ To call the map function, run the code below:
 ```python
 dataset = dataset.map(SentimentDatasetMapFunction)
 ```
-The next step is to shuffle the training dataset and provide a batch size to it.
+The next step is to shuffle the training dataset and provide the batch size.
 
 ### Shuffling the training dataset
-We will shuffle the dataset randomly to prevent the model from memorizing the data samples but learn from the dataset. This will prevent model bias and ensure we have accurate sentiment analysis. 
+We will shuffle the dataset randomly to prevent the model from memorizing the data samples but learning from the dataset. 
+
+It will prevent model bias and ensure we have accurate sentiment predictions. 
 
 We also need to specify the batch size. The batch size will determine the number of training data samples that the model will use in one iteration (epoch). 
 
@@ -301,13 +331,17 @@ We define the training dataset as follows:
 p = 0.8
 train_size = int((len(df)//16)*p)
 ```
-Using the code above, we have defined the training dataset to be 80%. The rest of the dataset will be the validation set. Let's now split the dataset using this ratio.
+The code will define the training dataset to be 80%. The remaining dataset (20%) will be the validation set. 
+
+Let's now split the dataset using this ratio.
 
 ```python
 training_dataset = dataset.take(train_size)
 validation_dataset = dataset.skip(train_size)
 ```
-Using this code, the training dataset will be 80% and the validation dataset 20%. This marks the end of dataset preprocessing or preparation, we will now move to the next phase of model creation.
+The training dataset will be 80% and the validation dataset 20%, and it marks the end of dataset preprocessing or preparation.
+
+Let's now move to the next phase of model creation.
 
 ### Model creation
 We will use the pre-trained BERT model to create the sentiment analysis model. Let's import the pre-trained BERT model as follows:
@@ -320,7 +354,7 @@ After importing, let's initialize the model as follows:
 ```pyton
 model = TFBertModel.from_pretrained('bert-base-cased')
 ```
-The code above initializes the `TFBertModel`. It also downloads the `bert-base-cased` model which will perform sentiment analysis. 
+The code above initializes the `TFBertModel`. It also downloads the `bert-base-cased` model that will perform sentiment analysis. 
 
 The next step is to add the input, intermediate, and output layers to the `TFBertModel` model.
 
@@ -333,14 +367,14 @@ The model will have two input layers. The first layer will handle the `input Ids
 ```python
 input_ids = tf.keras.layers.Input(shape=(256,), name='input_ids', dtype='int32')
 ```
-The layer will be named `input_ids` and will have 256 neurons because this is the maximum length of the `input Ids`.
+The layer will be named `input_ids`,  and it will have 256 neurons because this is the maximum length of the `input Ids`.
 
 We create the `attention mask` as follows:
 
 ```python
 attn_masks = tf.keras.layers.Input(shape=(256,), name='attention_mask', dtype='int32')
 ```
-The layer will be named `attention_mask` and will have 256 neurons because this is the maximum length of the `attention_mask`.
+The layer will be named `attention_mask`, and it will have 256 neurons because this is the maximum length of the `attention_mask`.
 
 We will then combine these layers and feed them the BERT model as follows:
 
@@ -353,9 +387,11 @@ Intermediate layers are the hidden layers of our neural network. These layers wi
 ```python
 intermediate_layer = tf.keras.layers.Dense(512, activation='relu', name='intermediate_layer')(bert_embds)
 ```
-We have created a `Dense` layer as the intermediate layer. The layer will have 512 neurons and will be named `intermediate_layer`. 
+We have created a `Dense` layer as the intermediate layer. It will have 512 neurons and will be named `intermediate_layer`. 
 
-It uses `relu` as the activation function. We use this activation function because the output of this layer ranges between 0 and infinity. It also the previous `bert_embds` as an input because we are creating the model sequentially (layer by layer).
+It uses `relu` as the activation function. We use this activation function because the output of this layer ranges between 0 and infinity. 
+
+It also uses the previous `bert_embds` as input since we are building the model sequentially (layer by layer).
 
 ### Adding the output layer
 We add the output layer as follows:
@@ -363,11 +399,11 @@ We add the output layer as follows:
 ```python
 output_layer = tf.keras.layers.Dense(5, activation='softmax', name='output_layer')(intermediate_layer) 
 ```
-We have created a `Dense` output layer. The layer will have five neurons because we have five sentiment labels. It will be named `intermediate_layer`.  
+The output layer will have five neurons since we have five sentiment labels. It will take the `intermediate_layer` as an input.  
 
-It uses `softmax` as the activation function. We use this activation function because we have to calculate the probability of each class after the prediction.
+It uses `softmax` as the activation function. We use this activation function because we have more than two sentiment classes.
 
-This is the whole architecture or structure, now we will combine all these layers and initialize our final sentiment analysis model.
+It makes the whole model architecture or structure. We will combine all these layers and initialize the complete neural network.
 
 ```python
 sentiment_model = tf.keras.Model(inputs=[input_ids, attn_masks], outputs=output_layer)
@@ -385,7 +421,7 @@ It also shows all the input, intermediate, and output layers. The output also sh
 
 - `Total params: 108,706,565` - These are all the parameters in the initialized neural network.
 - `Trainable params: 108,706,565` - It shows the parameters that the initialized neural network will train.
-- `Non-trainable params: 0` - These are the parameters that do not require to be trained. In our case there are none.
+- `Non-trainable params: 0` - These are the pre-trained parameters. There are none.
 
 In the next step, we will define the accuracy metrics, the loss function, and the optimizer for the model. 
 
@@ -395,7 +431,7 @@ We define the optimizer as follows:
 ```python
 optim = tf.keras.optimizers.Adam(learning_rate=1e-5, decay=1e-6)
 ```
-We define the optimizer as `Adam` from the TensorFlow's Keras optimizers. It enhances the performance of the initialized neural performs and reduces the errors the model encounters in training. We also set the `learning_rate` which defines the speed at the initialized neural network learns. The `decay` will speed up the learning rate of the initialized neural network.
+We define the optimizer as `Adam` from TensorFlow's Keras optimizers. It enhances the performance of the initialized neural performs and reduces the errors the model encounters in training. We also set the `learning_rate` that defines the speed at which the initialized neural network learns. The `decay` will speed up the learning rate of the initialized neural network.
 
 - Defining the loss function
 We define the loss function as follows:
@@ -422,7 +458,9 @@ sentiment_model.compile(optimizer=optim, loss=loss_func, metrics=[acc])
 After compiling the neural network, let's now fit it to the `training_dataset` and the `validation_dataset`.
 
 #### Fitting the neural network
-The `training_dataset` will train the neural network so that it can learn and understand sentiment analysis. The `validation_dataset` will adjust and fine-tune the neural network trainable parameters. We will output a final model with enhanced performance and can make accurate reviews classifications.
+The `training_dataset` will train the neural network to understand sentiment analysis. The `validation_dataset` will adjust and fine-tune the neural network trainable parameters. 
+
+We will then output a final model with enhanced performance that can make accurate classifications.
 
 ```python
 model_training = sentiment_model.fit(
@@ -435,13 +473,12 @@ The `sentiment_model.fit` method trains the neural network. We have passed the `
 
 ![Neural network output](/engineering-education/natural-language-processing-using-tensorflow-and-bert-model/neural-network-output.png)
 
-From this output, the final model accuracy score after the `2` epochs is `0.673 (67.3%)`. You can increase the number of epochs to further improve the model accuracy score before using the model in production. Just remember you will train the model for longer periods to achieve higher accuracy scores (hours or even days). 
+From this output, the final model accuracy score after the `2` epochs is `0.673 (67.3%)`. You can increase the epochs to improve the model accuracy score before using the model in production, but the training process will take more time (hours or even days). 
 
-For demonstration purposes, this is still a good accuracy score. We have now trained the model, we can use it to classify input reviews.
+For demonstration purposes, this is still a good accuracy score. Let's use the model to classify input reviews.
 
 ### Using the model to classify input reviews
-We will use the model to classify some of the input reviews into one of the five sentiment labels. Before we use the trained model to 
-class the input reviews, we have to process the input reviews to have the required format. 
+We will use the model to classify the input reviews into one of the five sentiment labels. Before we use the trained model, we have to process the input reviews to have the required format. 
 
 We will use the same libraries and functions to process the input reviews (we have explained and implemented text preprocessing in the previous sections). 
 
@@ -470,9 +507,8 @@ def prepare_data(input_text, tokenizer):
         'attention_mask': tf.cast(token.attention_mask, tf.float64)
     }
 ```
-These are the steps we followed earlier and they are fully explained.
 
-To make a classification/prediction, we create a function that we will use as follows:
+To make a classification/prediction, we create a function that makes the classification as follows:
 
 ```python
 def make_prediction(model, processed_data, classes=['Negative', 'A bit negative', 'Neutral', 'A bit positive', 'Positive']):
@@ -492,7 +528,7 @@ processed_data = prepare_data(input_text, tokenizer)
 result = make_prediction(sentiment_model, processed_data=processed_data)
 print(f"Classification results: {result}")
 ```
-When you run the code, a text area input control will appear in Google Colab and you will be prompted to input a review, as shown below:
+When you run the code, a text input control will appear in Google Colab. You will then be prompted to input a review, as shown below:
 
 ![Prompted to input ](/engineering-education/natural-language-processing-using-tensorflow-and-bert-model/prompt-to-input.png)
 
@@ -501,14 +537,14 @@ You can then type this input review: 'This is the best movie I have ever watched
 ```bash
 Classification results: positive
 ```
-From the output above, the model has classified the input reviews as `Positive`. The model has made the right classification. It shows the model was well trained and understood sentiment analysis.
+The model has classified the input reviews as `Positive`. It has made the correct prediction/classification. It shows that the model was well trained and understood sentiment analysis.
 
 ### Conclusion
 We have learned how to perform natural language processing using Tensorflow and Bert model. We discussed how to install the BERT model from the Hugging Face Transformers and how to fine-tune the model.
 
 We worked with the sentiment analysis dataset and processed the dataset to have the required format. We then created the model using TensorFlow's Keras layers. We then fed the initialized neural network with the processed sentiment analysis model. The final model was fine-tuned and can make accurately classify input reviews.
 
-You can check out the full Python source code [here](https://colab.research.google.com/drive/1H9ggLyXkP3yBQJWlynkGi2rfWUM_SjqY?usp=sharing)
+You can get the Python source code [here](https://colab.research.google.com/drive/1H9ggLyXkP3yBQJWlynkGi2rfWUM_SjqY?usp=sharing)
 
 ### References
 - [Hugging Face Transformers documentation](https://huggingface.co/docs/transformers/index)
@@ -520,6 +556,5 @@ You can check out the full Python source code [here](https://colab.research.goog
 - [Word Embeddings](/engineering-education/understanding-embeddings-in-machine-learning/)
 - [NLP transfomers](/engineering-education/getting-started-with-nlp-transformers/)
 - [TensorFlow documention](https://www.tensorflow.org/)
-
 ---
 Peer Review Contributions by: [Wilkister Mumbi](/engineering-education/authors/wilkister-mumbi/)
