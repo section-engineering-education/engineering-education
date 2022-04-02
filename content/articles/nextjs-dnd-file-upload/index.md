@@ -443,7 +443,7 @@ Cheers!
 - [FormData API](https://developer.mozilla.org/en-US/docs/Web/API/FormData)
 - [fetch API](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API)
 - [Implementing an image upload application with Vanilla JavaScript](https://www.javascripttutorial.net/web-apis/javascript-filereader/)
+- [Implementing an image upload application with Vanilla JavaScript](https://www.javascripttutorial.net/web-apis/javascript-filereader/)
 
 ---
 Peer Review Contributions by: [Dawe Daniel](/engineering-education/authors/dawe-daniel/)
-- [Implementing an image upload application with Vanilla JavaScript](https://www.javascripttutorial.net/web-apis/javascript-filereader/)
