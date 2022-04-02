@@ -205,8 +205,7 @@ In the `index.js` file before the return, add the following code:
 ...
 
 ```
-
-The `useReducer` hook takes in a reducer function and the initial state and returns the current state and a dispatch function. The dispatch function will be used to update the state.
+The `useReducer` hook takes in a reducer function, the initial state then returns the current state and a dispatch function. The dispatch function will be used to update the state.
 
 Update the `index.js` file.
 
