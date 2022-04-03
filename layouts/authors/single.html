@@ -1,6 +1,8 @@
 {{ define "main" }}
 
 {{ $featureToggle := resources.Get "js/featureToggle.js" }}
+{{ $author := path.Base .Permalink}}
+
 <script defer language="javascript" type="text/javascript" src="{{ $featureToggle.Permalink }}"></script>
 
 <article>
@@ -48,6 +50,16 @@
 
           {{ .Content }}
 
+          {{/*  Insights Section  */}}
+          {{ $numberOfArticles := len (where (where .Site.Pages "Params.layout" "engineering-education") ".Params.author" $author) }}
+
+          <div class="insights-section">
+            <div class="insight page-views" data-before="Total Number of Articles Written">
+              <img src="{{ if eq $.Site.Params.env "local" }}/{{ else }}/engineering-education/{{ end }}images/total-articles-icon.png" alt="Total Number of Articles Icon" />
+              <p>{{ $numberOfArticles }}</p>
+            </div>
+          </div>
+          
           {{ with .Params.skills }} 
             <div class="author-skills">
               <h4>Skills/Languages</h4>
@@ -96,7 +108,6 @@
    
       <ul class="list-unstyled xs-mb-80">
 
-        {{ $author := path.Base .Permalink}}
         {{ $hyvorId := $.Site.Params.hyvorId }}
         
         {{ range $elem_index, $elem_val := (where (where .Site.Pages "Params.layout" "engineering-education") ".Params.author" $author) }}
@@ -115,7 +126,6 @@
             fetch('https://talk.hyvor.com/api/v1/page/?page_identifier={{ $articlePermalink }}&website_id={{ $hyvorId }}')
               .then(response => response.json())
               .then(data => {
-                console.log(data);
                 if (data.status === true) {
                   document.getElementById('comments-count-{{ $elem_index }}').innerText = data.data.comments_count;
                   document.getElementById('likes-count-{{ $elem_index }}').innerText = data.data.reactions[0];
@@ -187,4 +197,17 @@
     </div>
   </div>
 </section>
+
+<script type="text/javascript">
+  const toggleToolTip = (el) => {
+    el.classList.toggle('tooltip');
+  }
+  
+  const insightItems = document.getElementsByClassName("insight");
+
+  for (let i = 0; i < insightItems.length; i++) {
+    insightItems[i].addEventListener("touch", () => toggleToolTip(insightItems[i]))
+  }
+  
+</script>
 {{ end }}
