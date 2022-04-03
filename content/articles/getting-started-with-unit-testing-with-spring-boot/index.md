@@ -107,7 +107,7 @@ class HelloControllerIntTest {
     void hello() throws Exception {
         RequestBuilder request = MockMvcRequestBuilders.get("/hello");
         MvcResult result = mvc.perform(request).andReturn();
-        Assertions.assertEquals("Hello, Hello world", result.getResponse().getContentAsString());
+        Assertions.assertEquals("Hello world", result.getResponse().getContentAsString());
     }
 }
 ```
