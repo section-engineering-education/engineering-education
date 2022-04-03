@@ -1,4 +1,4 @@
----
+﻿---
 layout: engineering-education
 status: publish
 published: true
@@ -50,18 +50,18 @@ The [offer](https://www.upcounsel.com/what-is-an-offer-in-law-of-contract) will 
 [Acceptance](https://www.upcounsel.com/elements-of-acceptance-in-contract-law) refers to the agreement between the terms offered by one party. In our example, the landlord would agree to rent the house for three weeks, provided we pay $30 each week.
 
 #### The transaction
-In the [transaction](https://smallbusiness.chron.com/contractual-transaction-marketing-33390.html) stage is where each party honours its obligations as per the agreement. In our example, we pay our $30 as the house rent, and the landlord rents us the house. This is the stage where the performance of the contract is realized.
+In the [transaction](https://smallbusiness.chron.com/contractual-transaction-marketing-33390.html) stage, each party honours its obligations as per the agreement. In our example, we pay our $30 as the house rent, and the landlord rents us the house. This is the stage where the performance of the contract is realized.
 
-If the landlord fails to rent us the house key after payment, it will be considered a violation of the contract. The same happens if we refuse to honour the payment for the second week after completing the first one.
+If the landlord fails to rent us the house key after payment, it will violate the contract. The same happens if we refuse to honour the payment for the second week after completing the first one.
 
 The contract law states well that if any party fails to honour the agreement, they can be sued for the action. So, we can conclude that contracts allow the involved parties to trust each other. The reason is that there is a trusted intermediary to enforce the agreements.
 
-### How smart contract works?
+### How does a smart contract works?
 Smart contracts ensure that no intermediary enforces the agreement. The code, in this case, acts as the third-party validator. Once the party has met the set conditions, the smart contract’s business logic processes the clauses coded in the agreement.
 
 A good example we can use to explain the analogy of smart contracts is how vending machine works. It releases a snack/drink once the user has made the payments. It does not require an intermediary or operator since it has been developed to release a snack/drink once the payments are made.
 
-Smart contracts work the same as vending machines, and the only difference is that they are more diverse than processing the payments. They are often used in [DeFi](https://ethereum.org/en/defi/) systems, exchange of [NFTs](https://ethereum.org/en/nft/), and many others.
+Smart contracts work the same as vending machines, and the only difference is that they are more diverse than processing the payments. They are often used in [Defi](https://ethereum.org/en/defi/) systems, exchange of [NFTs](https://ethereum.org/en/nft/), and many others.
 
 ### Reasons for smart contract's popularity
 Smart contracts come with several advantages, as highlighted below:
@@ -74,11 +74,11 @@ Smart contracts come with several advantages, as highlighted below:
 As we have seen, smart contracts are helpful, but also they face problems, as explained in this section.
 
 #### External data issues
-For a smart contract to execute, must be provided prior information. For example, a smart contract can indicate that Person A should receive money from Person B after paying for given goods. The smart contract would need to have prior information when the goods are arriving. Then it can proceed to process the payment for Person A. 
+For a smart contract to execute, it must be provided prior information. For example, a smart contract can indicate that Person A should receive money from Person B after paying for given goods. The smart contract would need to have prior information about when the goods are arriving. Then it can proceed to process the payment for Person A. 
 
-However, blockchain is not allowed to communicate outside the network. This presents a huge challenge to smart contracts. To curb this challenge, smart contract developers use [oracles](https://ethereum.org/en/developers/docs/oracles). Oracles are the applications that fetch data from outside. Then the data is fed on the blockchain for smart contacts to use. In the above example we highlighted, an oracle can assist in feeding data from an external source. It would, in turn, help the smart contract to examine if the product has been delivered.
+However, blockchain is not allowed to communicate outside the network. This presents a challenge to smart contracts. To curb this challenge, smart contract developers use [oracles](https://ethereum.org/en/developers/docs/oracles). Oracles are the applications that fetch data from outside. Then the data is fed on the blockchain for smart contacts to use. In the above example we highlighted, an oracle can assist in feeding data from an external source. It would, in turn, help the smart contract to examine if the product has been delivered.
 
-Also, relying so much on oracles poses another smart contract challenge. The users are forced to trust that the data that oracle would provide is accurate and precise. Also, the smart contract can produce more errors. Smart contracts can suffer from [Garbage In, Garbage Out](https://marketbusinessnews.com/financial-glossary/gigo-garbage-in-garbage-out) (GIGO) challenges during their initial development.
+Also, relying so much on oracles poses another smart contract challenge. The users are forced to trust that the data that the oracle would provide is accurate and precise. Also, the smart contract can produce more errors. Smart contracts can suffer from [Garbage In, Garbage Out](https://marketbusinessnews.com/financial-glossary/gigo-garbage-in-garbage-out) (GIGO) challenges during their initial development.
 
 The challenge can be solved by using information from different oracles. However, this will increase the transactional costs since oracles are paid. Furthermore, it is not advisable to rely on information from various sources as it violates [consensus](https://ethereum.org/en/developers/docs/consensus-mechanisms/) rules.
 
@@ -99,19 +99,19 @@ However, most users would not want confidential information about their contract
 The same happens with smart contracts, and malicious users can interfere with the blockchain application to reveal the state of the contract. So, it would mean that the privacy and confidentiality of the user's data are violated. Furthermore, this lack of privacy in smart contracts dramatically interferes with the trust of its users.
 
 #### Legal issues
-In using smart contracts, lawyers are not required to witness and sign the agreements. However, this is risky as no official law protects a smart contract's legality. If one party violates the contract, there is a huge risk of losing that transaction.
+In using smart contracts, lawyers are not required to witness and sign the agreements. However, this is risky as no official law protects a smart contract's legality. If one party violates the contract, there is a risk of losing that transaction.
 
 Most smart contracts are not governed or controlled by law. This lack of legal support is one of the significant challenges limiting smart contracts. However, if the usage of smart contracts grows, the situation may change.
 
-Legal issues will remain a limiting factor to the adoption of smart contracts. There is still a need for a law that can act as the trusted intermediary.
+Legal issues will remain a limiting factor to the adoption of smart contracts. There is still a need for a law that can act as a trusted intermediary.
 
 #### Security concerns
-Smart contracts can still develop errors which can be damaging and have a huge impact compared to usual software bugs. Nowadays, smart contracts are powering the DeFi systems. This means that a single loophole or vulnerability can make considerable losses to the users.
+Smart contracts can still develop errors which can be damaging and have a huge impact compared to usual software bugs. Nowadays, smart contracts are powering the Defi systems. This means that a single loophole or vulnerability can make considerable losses to the users.
 
-However, smart contracts are improving, and security would not be of significant concern. The problem is that most smart contracts projects concentrate on marketing and acquiring new users. Thus, they are less concerned about the security of the system.
+However, smart contracts are improving, and security would not be of significant concern. The problem is that most smart contracts projects concentrate on the marketing and acquiring new users. Thus, they are less concerned about the security of the system.
 
 #### Simplicity nature
-Smart contracts are simple and unable to work in imaginary cases. They have to undergo radical upgrades. Any code should not contain ambiguous statements that are difficult to represent in binary. This presents a huge challenge for smart contracts.
+Smart contracts are simple and unable to work in imaginary cases. They have to undergo radical upgrades. Any code should not contain ambiguous statements that are difficult to represent in binary. This presents a challenge for smart contracts.
 
 It is not challenging to program a smart contract that accepts payments and initiates the transfer of a given product. However, the challenge arises when writing ambiguous statements, which brings the dilemma of how they can be represented in a code.
 
@@ -125,7 +125,7 @@ Developers have a massive task of addressing these shortcomings faced by smart c
 ### Further reading
 - [Understanding Oracles, Smart Contracts, and the Oracle problem](https://101blockchains.com/blockchain-oracle-problem/).
 - [Overview of Consensus Mechanisms](https://medium.com/hackernoon/a-brief-introduction-to-consensus-mechanisms-smart-contracts-and-distributed-apps-on-the-a94453d16c3a).
-- [A Dive into Smart Contracts and DeFi](https://coinmarketcap.com/alexandria/article/a-dive-into-smart-contracts-and-defi).
+- [A Dive into Smart Contracts and Defi](https://coinmarketcap.com/alexandria/article/a-dive-into-smart-contracts-and-defi).
 
 ---
 Peer Review Contributions by: [Wilkister Mumbi](/engineering-education/authors/wilkister-mumbi/)
