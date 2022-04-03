@@ -206,8 +206,8 @@ const MyCharts = () => {
 In the code snippet above, `useEffect` fetches the data from the API endpoint when the component renders the first time. We then assign an API endpoint to the `url` variable. In our example, the endpoint is `http://localhost:8000/temperature`. This is because, we are using a fake REST API from the JSON server, but it can be replaced with any other real API endpoint.
 
 Once the API is called, the response is converted into JSON and stored in a variable `data`. To get the values for our x-axis and y-axis, we map through `data` and return an array of `average_temp`  values. We then store this array in the `averageTemp` state using `setAverageTemp` function.
-We also map through `data` and return the `date` values. This is then stored in state, `date` using the `setDate` function.
-After fetching data using the `useEffect` hook, `series[0].data` is assigned the `averageTemp` array and `options.xaxis.categories` is assigned `date` array.
+We also map through `data` and return the `date` values. It is then stored in state, `date` using the `setDate` function.
+After fetching data using `useEffect`, `series[0].data` is assigned the `averageTemp` array and `options.xaxis.categories` is assigned `date` array.
 
 ApexCharts.js has various charts as mentioned above. Therefore, if you would like to change the type of chart, you can pass a different chart type to the type props. In the example below, the second chart component takes in a type of `line`.
 
