@@ -18,7 +18,7 @@ It is a common requirement for web applications to be able to upload files to a 
 <!--more-->
 The Drag and Drop API allows you to drag and drop files onto a web page and the FileReader API allows you to read the contents of a file. In this tutorial, we will learn how to create a file upload dropzone component in Next.js using the above-named APIs. 
 
-By the end of this tutorial, you will have a working Next.js dropzone component that can be used to upload files to the server. The final app you will have by the end of this tutorial is as shown in the image below:
+By the end of this tutorial, you will have a working Next.js dropzone component that can be used to upload files to the server. The final app you will have by the end of this tutorial will look like the image shown below:
 
 ![Drag and drop file upload in Next.js](/content/articles/nextjs-dnd-file-upload/drag-n-drop-final-app.png)
 
@@ -40,24 +40,23 @@ To follow along with this tutorial, you will need to:
 - [References](#references)
 
 ### Setup
-Make sure your development environment is set up and ready with [Node.js](https://nodejs.dev/download) and [VS Code](https://code.visualstudio.com/).
+Make sure your development environment is set up and ready with [Node.js](https://nodejs.dev/download) and [VS Code](https://code.visualstudio.com/). The simplest of creating a new Next.js app is using `create-next-app`, which sets up everything automatically for you. 
 
-The simplest of creating a new Next.js app is using create-next-app, which sets up everything automatically for you. To create a project, run:
+To create a project, run:
 
 ```bash
 npx create-next-app@latest
 ```
-This makes use of `npx` and the `create-next-app` to bootstrap a basic Next.js app with the latest version.
 
-Then, run the following command to start the development server:
+This makes use of `npx` and the `create-next-app` to bootstrap a basic Next.js app with the latest version. Then, run the following command to start the development server:
 
 ```bash
 npm run dev
 ```
+
 This starts the development server and allows you to preview the app in your browser on `http://localhost:3000`.
 
 ### App Components
-
 Within the project's root folder, create a new folder and name its components. This directory will contain the components that will make up the application.
 
 Within the components directory, create the following files:
@@ -130,11 +129,11 @@ export default DropZone;
 
 This component will be used to create and display the dropzone region. It makes use of the HTML `input` element to allow the user to select files from their computer. 
 
-It also imports the `filePreview` component to display the images that have been uploaded. This component uses the `DropZone.module.css` file to style the component. 
+It also imports the `filePreview` component to display the images that have been uploaded. The `filePreview` component uses the `DropZone.module.css` file to style the component. 
 
 Ultimately, the logic to select or handle the drag and drop files and upload them to the server will be contained within the `DropZone.js` file. Import the `DropZone` component from the `components` directory and add it to the `index.js` file in the pages directory.
 
-The `index.js` file:
+3. The `index.js` file:
 
 ```js
 import React from "react";
@@ -224,13 +223,11 @@ This passes data and dispatch to the `DropZone` component as props.
 ### File drag and drop
 Next, implement the drag and drop functionality. In this tutorial of the 8 [HTML5 drag and drop events](https://developer.mozilla.org/en-US/docs/Web/API/HTML_Drag_and_Drop_API), we will use 4 that is fired when a file is dropped onto the dropzone region. 
 
-The first is the `dragenter` event. This event is fired when the user drags a file over the dropzone region. 
-
-The second is the `dragover` event. This event is fired when the user drags a file over the dropzone region. 
-
-The third is the `drop` event. This event is fired when the user drops a file onto the dropzone region. 
-
-The fourth is the `dragleave` event. This event is fired when the user drags a file over the dropzone region.
+The following are the HTML5 drag and drop events:
+1.  `dragenter` event - This event is fired when the user drags a file over the dropzone region. 
+2. `dragover` event - This event is also fired when the user drags a file over the dropzone region. 
+3.  `drop` event - This event is fired when the user drops a file onto the dropzone region. 
+4. `dragleave` event - This event is fired when the user drags a file over the dropzone region.
 
 Add the following event listeners to the `DropZone.js` component:
 
@@ -324,10 +321,10 @@ The `handleDrop` function will be used to prevent the default behaviour which is
 
 `onDragEnter` and `onDragOver` set the `inDropZone` state to true since the user is dragging a file over the valid dropzone region. `onDragLeave` set the `inDropZone` state to false since the user is dragging a file away from the valid dropzone region.
 
-`onDrop` will set the `inDropZone` to get the fileList from the event on the dataTransfer object as an array, iterate over existing files, check if the file already exists, if so, don't add to fileList, this is to prevent duplicates. Then dispatch an action to add dropped files or files to fileList. Finally, reset `inDropZone` to false.
+`onDrop` will set the `inDropZone` to get the fileList from the event on the dataTransfer object as an array, iterate over existing files and checks if the file already exists. If it does, it doesn't add it to the fileList, this is to prevent duplicates. Then, it dispatches an action to add dropped files or files to fileList. Finally, reset `inDropZone` to false.
 
 ### File Select
-To handle file selection, add the following code to the `DropZone.js` component and onchange event listener to the `input` element.
+To handle file selection, add the following code to the `DropZone.js` component and the `onchange` event listener to the `input` element.
 
 ```js
 
@@ -373,9 +370,9 @@ To handle file selection, add the following code to the `DropZone.js` component 
   );
 ```
 
-Use the `onChange` event on the `input` element, this occurs when the value of an element has been changed. In this case the event is fired when the user selects a file or files. The `handleFileSelect` function will be used to get the files from the event on the input element as an array. Then iterate over existing files and checks if the file already exists. If true, do not add to fileList, this is to prevent duplicates. Then dispatch an action to add selected file or files to fileList.
+Use the `onChange` event on the `input` element. This occurs when the value of an element has been changed. In this case, the event is fired when the user selects a file or files. 
 
-The `handleFileSelect` function will be used to get the files from the event on the input element as an array, iterate over existing files, check if the file already exists, if so, don't add to fileList, this is to prevent duplicates. Then dispatch an action to add selected file or files to fileList.
+The `handleFileSelect` function will be used to get the files from the event on the input element as an array. Then, it iterates over existing files and checks if the file already exists. If true, it does not add it to the fileList, this is to prevent duplicates. Afterwards, it dispatches an action to add selected file or files to fileList.
 
 ### File upload
 Add the following code to the `DropZone.js` component to handle file upload:
@@ -420,18 +417,20 @@ Add the following code to the `DropZone.js` component to handle file upload:
   );
 ```
 
-The Upload button will be shown only if there are files in the fileList. The `uploadFiles` function will be used to get the files from the fileList as an array, initialize formData object, loop over files and add to formData. Then Upload the files as a POST request to the server using fetch.  
+The upload button will be shown only if there are files in the fileList. The `uploadFiles` function will be used to get the files from the fileList as an array, initialize formData object, loop over files and add to formData. Then, it uploads the files as a POST request to the server using fetch.
+
 The `response` object will be used to check if the file upload was successful. If successful, alert the user that the files were uploaded successfully. If unsuccessful, alert the user that there was an error uploading the files.
 
-Note: `/api/fileupload` is not a real endpoint, it is just an example for the purpose of this tutorial.
+>  `/api/fileupload` is not a real endpoint, it is just an example for the purpose of this tutorial.
 
 Here is the [link](https://github.com/gisioraelvis/nextjs-dnd-fileupload-code.git) to the complete code of the app on GitHub.
 
 ### Conclusion
+File upload is a common and essential requirement for web applications. In this tutorial, we have implemented a drag and drop file upload component in Next.js.
 
-File upload is a common and essential requirement for web applications. In this tutorial, you have implemented a drag and drop file upload component in Next.js. Making use of the HTML5 drag and drop API and the FileReader API to listen and detect when files are dragged and dropped onto the application or when files are selected via the input element. Read the file contents to show a preview and finally upload the files to a server.
+We used the HTML5 drag and drop API and the FileReader API to listen and detect when files are dragged and dropped onto the application or when files are selected via the input element. We finally read the file contents to show a preview and uploaded the files to a server.
 
-Feel free to use the code on this tutorial as a starting point to create your file upload components that suit your application needs. You are welcome to share this article and give feedback in the comments section below.
+Feel free to use the code in this tutorial as a starting point to create your file upload components that suit your application needs. You are welcome to share this article and give feedback in the comments section below.
 
 Cheers!
 
