@@ -1,9 +1,9 @@
 ### Web3 vs Ethers
-The web3js library and the ethers library are the major libraries for utilizing the Ethereum network in JavaScript. The two have different ways they interact with smart contracts and make transactions on the network. This difference leads to one handling some type of tasks better than the other. In this article, you will learn their differences, their best use cases and how they both interact with the network.
+The web3js library and the ethers library are the major libraries for utilizing the Ethereum network in JavaScript. The two have different ways they interact with smart contracts and make transactions on the network. This difference leads to one handling some type of tasks better than the other. In this article, you will learn their differences, their best use cases, and how they both interact with the network.
 ### Prerequisites
-To get the full benefits of this article you need to have the following.
+To get the full benefits of this article, you need to have the following.
 - You need to have a working knowledge of JavaScript.
-- You should have a basic understanding of Web3, Smart contracts and Blockchain.
+- You should have a basic understanding of Web3, Smart Contracts, and Blockchain.
 - Having knowledge of how NodeJS and NPM will be really great.
 
 ### Table of Contents
@@ -26,39 +26,38 @@ To get the full benefits of this article you need to have the following.
 ### Essential Topics
 Essential topics that will be covered in this article include;
 #### Web3JS
-This is a collection of libraries in JavaScript that are used to interact with the Ethereum network. This interaction could either be to send Ethereum from one address to another or to interact with smart contracts. The network is made up of computers (nodes) that work together to process transactions made over the network. This network can either be a private node on a single computer, a public mainnet or a test-net. The private node and the test-net are used for development purposes. The test-net is a much more public development area open to the entire world while the public node is limited to just one computer. The main-net however, is where all the real interaction occurs and where the more valuable cryptocurrency resides.
+This is a collection of libraries in JavaScript that are used to interact with the Ethereum network. This interaction could either be to send Ethereum from one address to another or to interact with smart contracts. The network comprises computers (nodes) that work together to process transactions made over the network. This network can either be a private node on a single computer, a public mainnet, or a test net. The private node and the test Netz are used for development purposes. The test net is a much more public development area open to the entire world, while the public node is limited to just one computer. The main net, however, is where all the real interaction occurs and where the more valuable cryptocurrency resides.
 #### EthersJS
 This is a lightweight JavaScript library used for interacting with Ethereum smart contracts and making transactions over the network. This library’s aim was to primarily be used with the [ethers.io](https://ethers.io) ( a web3 browser ), hence, the small size and is now grown to be more general-purpose and can be used like the web3 library.
 #### Blockchain
-This is a system of storing and recording data. A blockchain is made up of blocks that are linked together to form a chain. The blocks are used to store data and have the ability to connect with other blocks within the chain. A blockchain is immutable. That means that the blocks themselves can't change and you can only add new blocks to update the chain. 
+This is a system of storing and recording data. A blockchain comprises blocks that are linked to form a chain. The blocks are used to store data and can connect with other blocks within the chain. A blockchain is immutable. That means that the blocks themselves can't change and you can only add new blocks to update the chain. 
 #### Smart Contracts
 These are self-executing programs that are stored and run on a blockchain network. They are created by sending a special type of transaction to the network. As soon as they are deployed, they create interfaces for our projects to interact with. They are used by developers to create serverless frontend applications. Performing the computational tasks on the network can get really expensive. Because of that, it is always suggested that all computations should be done off the network and data storage on it only.
 ### Installations
-To install either the Web3JS library or the EthersJS library we need to run any of their respective commands in the terminal. To start we will open our project folder in the terminal and type any of the following to install either if the packages
+To install either the Web3JS library or the EthersJS library, we need to run any of their respective commands in the terminal. To start, we will open our project folder in the terminal and type any of the following to install either of the packages.
 ```bash
 npm install web3@1.7.1
 ```
-Or
+Or.
 ```bash
 npm install ethers@5.5.4
 ```
 ### Comparism
-While the two libraries can do the same operation, they both have different ways they are used which gives them strengths and weaknesses in different situations.
+While the two libraries can do the same operation, they both have different ways they are used, which give them strengths and weaknesses in different situations.
 #### Size of Code Created
-The EthersJS library is built to be simple, lightweight and efficient. This can lead to our code being more compact when we are using Ethers instead of Web3. Ethers achieve this level of simplicity by restricting the developers and only giving what is needed to interact with the network. The size of code created is important as it affects the time for your program to be loaded. 
-The size of programs created using Web3 is not that large. But is significantly larger than the same code in Ethers. This makes it take more time to load up compared to ones with Ethers. 
+The EthersJS library is built to be simple, lightweight, and efficient. This can lead to our code being more compact when we are using Ethers instead of Web3. Ethers achieve this level of simplicity by restricting the developers and only giving what is needed to interact with the network. The size of code created is important as it affects the time for your program to be loaded. 
+The size of programs created using Web3 is not that large. But is significantly larger than the same code in Ethers. This makes it take more time to load up compared to the ones with Ethers. 
 #### Size of Library
-The Ethers frontend library is remarkably smaller than the Web3's library. Because of this, frontend applications are smaller when using Ethers rather than Web3. This makes the web app load more quickly and use up less space when caching the dependencies in the browser.
-The EthersJS sole purpose is to work with the Ethereum Network and do that only. That is the reason why it's smaller than the web3 library. The web3 library  is larger because it is not just for the Ethereum Network. It also has the ability to do more, which are:
-- **web3.bzz**: It allows interaction with a decentralised file storage called swarm.
+The Ethers frontend library is remarkably smaller than the Web3's library. Because of this, frontend applications are smaller when using Ethers rather than Web3. This makes the web app load more quickly and uses up less space when caching the dependencies in the browser.
+The EthersJS sole purpose is to work with the Ethereum Network and do that only. That is the reason it's smaller than the web3 library. The web3 library is larger because it is not just for the Ethereum Network. It also can do more, which are:
+- **web3.bzz**: It allows interaction with a decentralized file storage called a swarm.
 - **web3.shh**: This is used for interacting with the whisper protocol to broadcast messages.
-
 And much more.
 #### Community
-Web3 has been around longer than ethers. Because of this the Web3's community is larger by comparison and it makes finding the solution to any challenge you come across easier than in Ethers.  Also, companies prefer using Web3 over Ethers because it has been around longer. 
-Although the Ethers community is not as large as the Web3 community, it has a really good documentation and that makes it really easy to look up what you don’t understand anytime you feel stuck.
+Web3 has been around longer than ethers. Because of this, Web3's community is larger by comparison and it makes finding the solution to any challenge you come across easier than in Ethers. Also, companies prefer using Web3 over Ethers because it has been around longer. 
+Although the Ethers community is not as large as the Web3 community, it has great documentation and that makes it really easy to look up what you don’t understand anytime you feel stuck.
 #### Deploying a Smart Contract
-To deploy a smart contract in Web3 we write the following:
+To deploy a smart contract in Web3, we write:
 ```JS
 const web3 = new Web3(/* your provider */);
 
@@ -72,7 +71,7 @@ async function main() {
 
 main();
 ```
-And for ethers we deploy with the following:
+And for ethers, we deploy with:
 ```js
 async function main() {
   const signer = new ethers.providers.Web3Provider(/* your provider */).getSigner();
@@ -90,18 +89,18 @@ What happens in the Web3 is:
 
 How the contract is deployed in Ethers:
 1. We created a new instance of the Web3 provider and got our account **signer**.
-2. Then, we create a contract factory using our abi, bytecode and our recently gotten signer.
+2. Then, we create a contract factory using our abi, byte code, and our recently gotten signer.
 3. Then, we deploy it using the `contractFactory.deploy()`.
 
-Seeing these two ways of deploying the contract, we can easily tell that deploying contracts using Ethers has less code compared to Web3. This is really good because we can easily tell what our code is doing. We could easily tell what this Web3 code does also, but, if we have a much larger codebase you will be grateful for the smaller code size.
+Seeing these two ways of deploying the contract, we can easily tell that deploying contracts using Ethers has less code compared to Web3. This is great because we can easily tell what our code is doing. We could easily tell what this Web3 code does also, but, if we have a much larger codebase, you will be grateful for the smaller code size.
 #### Interacting with Deployed Contracts
-This is another important feature of these libraries. This feature makes it possible to develop decentralised applications that interact with smart contracts. Without this, people will have to manually operate contracts which can lead to errors. Errors made in smart contracts could get very expensive. Both, in fixing the errors and in having to pay real money to modify. 
-This ability also makes it possible to do heavy computation on a computer. It means data can be processed before sending into the contract. This reduces the amount of gas fees to pay before a certain operation on the contract.
+This is another important feature of these libraries. This feature makes it possible to develop decentralized applications that interact with smart contracts. Without this, people will have to manually operate contracts, which can lead to errors. Errors made in smart contracts could get very expensive. Both in fixing the errors and in having to pay real money to change. 
+This ability also makes it possible to do heavy computation on a computer. It means data can be processed before sending into the contract. This reduces the number of gas fees to pay before a certain operation on the contract.
 Example: Let's say we have a smart contract already deployed to 0x1234 ( the address ), and the contract has two interfaces;
 - message: used to retrieve a message that is stored in the contract,
-- setMessage: for changing the content of the message in the contract
+- setMessage: for changing the content of the message in the contract.
 
-To interact with this deployed contract using web3 we write the following:
+To interact with this deployed contract using web3, we write:
 ```js
 const contract = new web3.eth.Contract(abi, contractAddress);
 console.log(await contract.methods.message().call());
@@ -117,19 +116,19 @@ console.log(await contract.message());
 ```
 They are both snippets that do the same exact thing. From what we can see it is easy to tell that the Ethers version of contract interaction has less code than Web3.
 What happens in the Web3 snippet is:
-1. On the **1st** line, we initialise the contract with the abi and the address of our contract.
+1. On the **1st** line, we initialize the contract with the abi and the address of our contract.
 2. Next, we get the message that is already stored in the contract on the **3rd** line.
 3. After that, we set the message that was stored in the contract by sending a transaction. The transaction is instantiated and signed with the **send** method.
 4. Finally, we log the message stored in the contract message.
 
-And in Ethers what we did is:
-1. We created a new instance of our contract using the deployed contract’s address, abi and signer on the **1st** line.
+And in Ethers, what we did is:
+1. We created a new instance of our contract using the deployed contract’s address, abi, and signer on the **1st** line.
 2. Then, we get the message stored in the contract.
 3. Next, we change the message of the contract using the `contract.setMessage()`.
 4. And log the message stored in the contract.
 
 This is a very handy feature in building Decentralised Finance (DeFi) applications where a person can decide to send some amount of Ethereum to an address.
-To do that using Web3 we write something like this:
+To do that using Web3, we write something like this:
 ```js
 const web3 = new Web3(/* provider */);
 
@@ -142,7 +141,7 @@ let receipt = await web3.eth.sendTransaction({
   from: sender
 });
 ```
-And doing the same thing with ethers, our code will look something like:
+And doing the same thing with Ethers, our code will look something like:
 ```js
 let receiver = /* receiver's address */;
 
@@ -155,24 +154,27 @@ let receipt = await sender.sendTransaction({
 ```
 What goes on in the Web3 version is:
 1. We create a new instance of web3 using our provider on the **1st** line.
-2. On the **3rd** line, We saved the address of the receiver.
+2. On the **3rd** line, we saved the address of the receiver.
 3. Then we get the address of the sender account we will be using.
 4. And finally, send a transaction by passing a transaction object to the `web3.eth.sendTransaction()` method.
 
-And for Ethers we write something slightly related:
+And for Ethers, we write something slightly related:
 1. We get the receiver's address.
 2. Gain admin access to the sender's address.
 3. And, send a transaction.
 
 ### Conclusion
-In this article we covered
-1. What the Web3 and Ethers JavaScript libraries are. 
+In this article, we covered
+1. What are the Web3 and Ethers JavaScript libraries are. 
 2. We also saw how we can deploy and interact with smart contracts.
-3. We learnt how we can send ethers from one account to another using these two libraries.
+3. We learned how we can send ethers from one account to another using these two libraries.
 4. Finally, we saw some other important differences between the two libraries.
 
-The two libraries have the ability to do the same thing but with different processes. If you want to build an application that only interacts with the Ethereum network then the EthersJS library would be most preferred. But, if you're not concerned about space or your project requires more than just interaction with Ethereum then your go-to should be Web3.
+The two libraries can do the same thing, but with different processes. If you want to build an application that only interacts with the Ethereum network, then the EthersJS library would be most preferred. But, if you're not concerned about space or your project requires more than just interaction with Ethereum, then your go-to should be Web3.
 ### Reference Topics
-Here are some other articles you can read to further your understanding of the Ethereum, Web 3.0 and smart contracts;
+Here are some other articles you can read to further your understanding of Ethereum, Web 3.0, and smart contracts;
 - Overview of web 3.0: [https://www.section.io/engineering-education/overview-of-web-3-0/](https://www.section.io/engineering-education/overview-of-web-3-0/)
 - Understanding the Basics of Ethereum and Smart Contracts: [https://www.section.io/engineering-education/ethereum-and-smart-contracts/](https://www.section.io/engineering-education/ethereum-and-smart-contracts/)
+
+---
+Peer Review Contributions by: [Mohamed alghadban](/engineering-education/authors/mohamed-alghadban/)
