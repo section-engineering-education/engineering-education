@@ -38,10 +38,10 @@ It is a very sensitive issue related to cloud and IoT security. It happens when 
 Network security is an important factor in IoT and cloud, having weak network security leads to attacks, which include man-in-the-middle attacks and denial of service. IoT network security involves securing the [communication network](https://ieeexplore.ieee.org/document/8519613) of different IoT objects.
 ##### Man-in-the-Middle attack
 It is a form of account hijacking where an attacker steals the credentials of the user to get access to his account. The credentials are used to access and monitor the network causing interference in communication between the nodes.
-For more information on Man-in-the-middle attacks - feel free to read our article on the [subject](/man-in-the-middle-attack/).
+For more information on Man-in-the-middle attacks - feel free to read our article on the [subject](/engineering-education/man-in-the-middle-attack/).
 ##### Denial of Service
 DOS attacks are done to prevent legitimate users from accessing the IoT and cloud network, storage, data, and other computing services. DOS attacks also cause a delay in operations because many requests are made thus consuming more resources.
-For more information on Denial of Service attacks - please refer to our other article on the [subject](/denial-of-service/).
+For more information on Denial of Service attacks - please refer to our other article on the [subject](/engineering-education/denial-of-service/).
 
 #### Cloud Environment Threats
 ##### Insecure Interfaces and APIs

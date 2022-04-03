@@ -55,7 +55,7 @@
 	- SEO components (alt image tag & description)
 
 	- Plagiarism [Run throughQuetext]
-	[Plagiarism check & Front matter will be added by managers]
+	[Plagiarism check & Front matter will be added by peer reviewer - checked by Content Moderators]
 
 ### In Tech Review
 - Checking for any technical inaccuracies (e.g. missing steps in code blocks, incorrect syntax, etc.)

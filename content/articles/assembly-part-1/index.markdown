@@ -201,4 +201,4 @@ section .text
 Now we don't need any RAM at all!... except to store the actual program in memory. We also don't need to specify the size of the operation. The size of `eax` is always four bytes.
 
 ### Conclusion
-This concludes the basics of Assembly. Check out my next article on [how to write an actual program using Assembly](/assembly-part-2/).
+This concludes the basics of Assembly. Check out my next article on [how to write an actual program using Assembly](/engineering-education/assembly-part-2/).

@@ -27,7 +27,7 @@ It has been used extensively in reinforcement learning, natural language process
 Self-supervised learning helps create data-efficient AI systems.
 
 ### Prerequisites 
-Before reading this article, the reader must understand Machine Learning (ML) and Deep Learning (DL). If you are still new to ML and DL, please read my previously published article on the [differences between Artificial Intelligence, Machine Learning, and Deep Learning](/differences-between-artificial-intelligence-machine-learning-and-deep-learning/) to learn more.
+Before reading this article, the reader must understand Machine Learning (ML) and Deep Learning (DL). If you are still new to ML and DL, please read my previously published article on the [differences between Artificial Intelligence, Machine Learning, and Deep Learning](/engineering-education/differences-between-artificial-intelligence-machine-learning-and-deep-learning/) to learn more.
 
 
 ### What is contrastive learning?

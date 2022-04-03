@@ -86,38 +86,26 @@ Firebase is used as our database and to provide the Authentication API as well.
 4. Select `Business` then continue.
 5. Enter your `App Name`, `Contact Email` and `App Purpose` then, continue to create the app.
 6. In the dashboard, click `basic` under `settings`. You will be redirected to a page showing the App_ID` and secret as shown below.
-
 ![AppId and Secret](/engineering-education/flutter-social-authentication/app-id.png)
-
 7. Copy the App_id and Secret then, paste to the fields we left empty on the Facebook sign-in method.
 8. Copy the `OAuth redirect URI` we need to set up our app with Facebook.
-
-![OAuth redirect URI](/engineering-education/flutter-social-authentication/auth-redirect-url.png)
-
+![OAuth redirect URI](/engineering-education/flutter-social-authentication/app_secret.png)
 ### Setting up Facebook Auth
 1. In the Facebook console, head over to the dashboard.
 2. Click setup Facebook login.
-
 ![Setup Login](/engineering-education/flutter-social-authentication/setuplogin.png)
-
 3. On the next page, select `Android`.
-
 ![Select android](/engineering-education/flutter-social-authentication/android.png)
-
 4. In your `AndroidManifest` file, copy the package name of your app and paste it into the package name field.
 5. For the default activity name, use `youp_packagename.MainActivity`.
-
 ![Package name](/engineering-education/flutter-social-authentication/package.png)
-
 6. We need to generate a Development Key Hash. 
-
 Paste the command below in your terminal:
 ```bash
 keytool -exportcert -alias androiddebugkey -keystore "C:\Users\USERNAME\.android\debug.keystore" | "PATH_TO_OPENSSL_LIBRARY\bin\openssl" sha1 -binary | "PATH_TO_OPENSSL_LIBRARY\bin\openssl" base64
 ```
 
 >Note that you should have openssl-for-windows and JDK installed for Windows users. 
-
 If you use macOS, use the command below:
 
 ```bash
@@ -196,92 +184,89 @@ We will create a class of the following functions:
 
 ```dart
 class AuthService {
-    //Determine if the user is authenticated and redirect accordingly
-    handleAuthState() {
-        return StreamBuilder(
-        stream: FirebaseAuth.instance.authStateChanges(),
-        builder: (BuildContext context, snapshot) {
-            if (snapshot.hasData) {\
+    //Determine if the user is authenticated and redirect accordingly
+    handleAuthState() {
+        return StreamBuilder(
+        stream: FirebaseAuth.instance.authStateChanges(),
+        builder: (BuildContext context, snapshot) {
+            if (snapshot.hasData) {\
 			// user is authorozed hence redirect to home screen
-            return HomePage();
-            } else
+            return HomePage();
+            } else
 			// user not authorized hence redirect to login page
-            return LoginPage();
-        });
-    }
+            return LoginPage();
+        });
+    }
 }
 ```
 
 - `SignInWithFacebook()`. This function enables a user to be authenticated with the Facebook authentication API.
 ```dart
 signInWithFacebook() async {
-    final fb = FacebookLogin();
-    // Log in
-    final res = await fb.logIn(permissions: [
-        FacebookPermission.publicProfile,
-        FacebookPermission.email,
-    ]);
-
-    // Check result status
-    switch (res.status) {
-        case FacebookLoginStatus.success:
-        // The user is suceessfully logged in
-        // Send access token to server for validation and auth
-        final FacebookAccessToken accessToken = res.accessToken;
-        final AuthCredential authCredential = FacebookAuthProvider.credential(accessToken.token);
-        final result = await FirebaseAuth.instance.signInWithCredential(authCredential);
-
-        // Get profile data from facebook for use in the app
-        final profile = await fb.getUserProfile();
-        print('Hello, ${profile.name}! You ID: ${profile.userId}');
-
-        // Get user profile image url
-        final imageUrl = await fb.getProfileImageUrl(width: 100);
-        print('Your profile image: $imageUrl');
-
-        // fetch user email
-        final email = await fb.getUserEmail();
-        // But user can decline permission
-        if (email != null) print('And your email is $email');
-
-        break;
-
-        case FacebookLoginStatus.cancel:
-            // In case the user cancels the login process
-            break;
-        case FacebookLoginStatus.error:
-        // Login procedure failed
-        print('Error while log in: ${res.error}');
-        break;
-    }
+    final fb = FacebookLogin();
+    // Log in
+    final res = await fb.logIn(permissions: [
+        FacebookPermission.publicProfile,
+        FacebookPermission.email,
+    ]);
+    // Check result status
+    switch (res.status) {
+        case FacebookLoginStatus.success:
+        // The user is suceessfully logged in
+        // Send access token to server for validation and auth
+        final FacebookAccessToken accessToken = res.accessToken;
+        final AuthCredential authCredential = FacebookAuthProvider.credential(accessToken.token);
+        final result = await FirebaseAuth.instance.signInWithCredential(authCredential);
+        // Get profile data from facebook for use in the app
+        final profile = await fb.getUserProfile();
+        print('Hello, ${profile.name}! You ID: ${profile.userId}');
+        // Get user profile image url
+        final imageUrl = await fb.getProfileImageUrl(width: 100);
+        print('Your profile image: $imageUrl');
+        // fetch user email
+        final email = await fb.getUserEmail();
+        // But user can decline permission
+        if (email != null) print('And your email is $email');
+        break;
+        case FacebookLoginStatus.cancel:
+            // In case the user cancels the login process
+            break;
+        case FacebookLoginStatus.error:
+        // Login procedure failed
+        print('Error while log in: ${res.error}');
+        break;
+    }
 }
 ```
 
 - `signInWithGoogle()`. Provides the login to use an existing Google account for authentication.
 ```dart
 Future<UserCredential> signInWithGoogle() async {
-    // Initiate the auth procedure
-    final GoogleSignInAccount googleUser = await GoogleSignIn(scopes: <String>["email"]).signIn();
-
-    // fetch the auth details from the request made earlier
-    final GoogleSignInAuthentication googleAuth = await googleUser.authentication;
-
-    // Create a new credential for signing in with google
-    final credential = GoogleAuthProvider.credential(
-        accessToken: googleAuth.accessToken,
-        idToken: googleAuth.idToken,
-    );
-
-    // Once signed in, return the UserCredential
-    return await FirebaseAuth.instance.signInWithCredential(credential);
+    // Initiate the auth procedure
+    final GoogleSignInAccount googleUser = await GoogleSignIn(scopes: <String>["email"]).signIn();
+    // fetch the auth details from the request made earlier
+    final GoogleSignInAuthentication googleAuth = await googleUser.authentication;
+    // Create a new credential for signing in with google
+    final credential = GoogleAuthProvider.credential(
+        accessToken: googleAuth.accessToken,
+        idToken: googleAuth.idToken,
+    );
+    // Once signed in, return the UserCredential
+    return await FirebaseAuth.instance.signInWithCredential(credential);
 }
 ```
 
 - `signOut()`. This function enables a logged-in user to log out and gets redirected to the loginScreen.
 ```dart
 //log out the user
-signOut() {
-    FirebaseAuth.instance.signOut();
+signOut() async {
+    final FirebaseAuth _firebaseAuth = FirebaseAuth.instance;
+
+    final GoogleSignIn googleUser = await GoogleSignIn(scopes: <String>["email"]);
+
+    await _firebseAuth.signOut();
+    
+    googleUser.signOut();
 }
 ```
 
@@ -293,13 +278,11 @@ Add the snippets below to the `main.dart` file:
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:social_auth/Services/authservice.dart';
-
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp();
   runApp(MyApp());
 }
-
 class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
@@ -333,38 +316,38 @@ import 'package:social_auth/services/authservice.dart';
 ```dart
 //welcome text
 Text("Hello, \nWelcome, login with,",
-    style: Theme.of(context).textTheme.headline1.copyWith(fontSize: size.width * 0.1,)
+    style: Theme.of(context).textTheme.headline1.copyWith(fontSize: size.width * 0.1,)
 ),
 ```
 
 - Social login icons
 ```dart
- Column(
-    crossAxisAlignment: CrossAxisAlignment.end,
-    children: [
-        Row(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
+ Column(
+    crossAxisAlignment: CrossAxisAlignment.end,
+    children: [
+        Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
 				// Gesture detector for facebook Login
-                GestureDetector(
-                    onTap: () {
+                GestureDetector(
+                    onTap: () {
 						// Call facebook login methon
-                        AuthService().signInWithFacebook();
-                    },
-                    child: Image(width: 50, image: AssetImage('assets/icons/facebook.png')),
-                ),
-                SizedBox(width: 50),
+                        AuthService().signInWithFacebook();
+                    },
+                    child: Image(width: 50, image: AssetImage('assets/icons/facebook.png')),
+                ),
+                SizedBox(width: 50),
 				// Gesture detector for the Google icon
-                GestureDetector(
-                    onTap: () {
+                GestureDetector(
+                    onTap: () {
 					// Call the a method to sign in with Google
-                    AuthService().signInWithGoogle();
-                    },
-                    child: Image(width: 55, image: AssetImage('assets/icons/google.png'))
-                ),
-            ],
-        ),
-    ],
+                    AuthService().signInWithGoogle();
+                    },
+                    child: Image(width: 55, image: AssetImage('assets/icons/google.png'))
+                ),
+            ],
+        ),
+    ],
 ),
 ```
 
@@ -388,14 +371,14 @@ import 'package:social_auth/services/authservice.dart';
 - Fetching profile image
 ```dart
 Container(
-    width: 100,
-    height: 100,
-    child: CircleAvatar(
-        radius: 50.0,
-        backgroundColor: Colors.transparent,
+    width: 100,
+    height: 100,
+    child: CircleAvatar(
+        radius: 50.0,
+        backgroundColor: Colors.transparent,
 		//display the user profile image
-        backgroundImage: NetworkImage(FirebaseAuth.instance.currentUser.photoURL),
-    ),
+        backgroundImage: NetworkImage(FirebaseAuth.instance.currentUser.photoURL),
+    ),
 ),
 ```
 
@@ -403,25 +386,25 @@ Container(
 ```dart
 Text(
 	// Obtaine display name of the current auth instance
-    FirebaseAuth.instance.currentUser.displayName,
-    style: TextStyle( fontSize: 30, fontWeight: FontWeight.bold, color: Colors.black87),
+    FirebaseAuth.instance.currentUser.displayName,
+    style: TextStyle( fontSize: 30, fontWeight: FontWeight.bold, color: Colors.black87),
 ),
 ```
 
 - The Log-out button
 ```dart
 MaterialButton(
-    padding: EdgeInsets.all(10),
-    color: Colors.green,
-    shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(5)),
-    child: Text(
-        'LOG OUT',
-        style: TextStyle(color: Colors.white, fontSize: 15),
-    ),
-    onPressed: () {
+    padding: EdgeInsets.all(10),
+    color: Colors.green,
+    shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(5)),
+    child: Text(
+        'LOG OUT',
+        style: TextStyle(color: Colors.white, fontSize: 15),
+    ),
+    onPressed: () {
 		// 	log out the current user upon pressing the logoun button
-        AuthService().signOut();
-    },
+        AuthService().signOut();
+    },
 ),
 ```
 ![Home Screen](/engineering-education/flutter-social-authentication/homescreen.jpg)
@@ -434,7 +417,7 @@ You should see your list of users ad below:
 ![Registered user](/engineering-education/flutter-social-authentication/users.png)
 
 ### Conclusion
-In this article, we learned what social authentication is and how to implement it in a Flutter application. We built a user login and registration system that uses Facebook and Google for authentication. The system registered and logged-in users using their existing Facebook or Google accounts. 
+In this article, we learned what social authentication is and how to implement it in a Flutter application. We built a user login and registration system that uses Facebook and Google for authentication. The system registered and logged-in users using their existing Facebook or Google accounts. 
 
 This functionality is helpful as user credentials are already verified by the existing social accounts and besides, a user doesn't need to remember multiple passwords for every account they create.
 

@@ -19,7 +19,7 @@ In this article, we are going to talk about how Dijkstras algorithm finds the sh
 
 ### Dijkstra's Shortest Path Algorithm in Network routing using Python
 
-[Click here](/network-routing-final/) to view more about network routing.
+[Click here](/engineering-education/network-routing-final/) to view more about network routing.
 
 We will need a basic understanding of Python and its OOP concepts.
 
