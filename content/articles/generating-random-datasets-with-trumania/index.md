@@ -31,8 +31,8 @@ It will give us a step-by-step algorithm on how random datasets are generated. R
 - 
 ### Prerequisites
 To follow along with this tutorial, you will need to have;
-- Basic knowledge of Python programming language
-- Knowledge of working with Python libraries
+- Basic knowledge of Python programming language.
+- Knowledge of working with Python libraries.
 
 ### Why generate random datasets
 There are various reasons why one may choose to generate random datasets. The following are some of the reasons:
@@ -42,7 +42,7 @@ There are various reasons why one may choose to generate random datasets. The fo
 - `Time`- Random data generation saves time since it's fast and efficient in comparison to the real data. It also allows data scientists to explore datasets, algorithms, and visualization of data in various techniques.
 
 ### Schema-based random data generation
- Many tools may be used to generate random data but the most common way is the schema-based generation. It allows the definition of the blueprints and henceforth be able to use it to generate some data entities. Other tools that may be used for the generation of random data include `LogSynth` and `Khermes`.
+Many tools may be used to generate random data but the most common way is the schema-based generation. It allows the definition of the blueprints and henceforth is able to use it to generate some data entities. Other tools that may be used for the generation of random data include `LogSynth` and `Khermes`.
 
 Below is a simple illustration:
 
@@ -63,15 +63,15 @@ Below is a simple illustration:
 }
 ```
 
-The above scenario shows the generation of some data about an animal. The entities are the breed, age, and name. 
+The above scenario shows the generation of some data about an animal. The entities are the breed, age, and name of the animal. 
 
 The schema is simple and quick but it has some limitations. The `main` limitation is that there is the manipulation of relationships between the entities. An example is like, how to generate names based on the breed of the animal.
 
 #### Shortcomings addressed by Trumania
-- Causal relationship between actions.For instance,many purchase actions at a retail shop may lead to an "out-of-stock" event.
+- Causal relationship between actions - For instance, many purchase actions at a retail shop may lead to an "out-of-stock" event.
 - Different duration activity profiles - It defines what time actions are likely to occur.
 - Collected algorithms in a data network - This means that the user interactions are discovered through the social groups
-- Imbalanced datasets - This means operations cannot aid in a grouping.
+- Imbalanced datasets - This means that operations cannot aid in a grouping.
 
 The execution of a scenario in Trumania results in the generation of datasets which are typically time-series.
 
@@ -82,7 +82,7 @@ The outcome of the communication will lead to the emergence of datasets that wil
 
 #### Ways in which interrelated data can be generated
 - By developing a trumania circus, the word in which the scenario will execute.
-- Through addition of relationship to Agents and assign them their favorite quotes. It will be used to make the content of the messages.
+- Through addition of relationship to agents and assign them their favorite quotes - It will be used to make the content of the messages.
 - By creating time parameters of the story results in a more realistic distribution of the messages throughout the given time.
 - Through addition of other relationships to define a social network.
 
@@ -107,7 +107,7 @@ All the entities which are time-related are managed by a central clock. Emphasis
 
 The next step is the addition of agents' quantity to the circus. The quantity in the circus is the set of persons having an identity and some attributes. 
 
-The values of the attributes may be identified manually but we intend to generate them randomly. There are some generators that we will explain so that we will have a broad understanding. 
+The values of the attributes may be identified manually but we intend to generate them randomly. There are some generators that we will explain so that we can have a broad understanding. 
 
 The generators are as follows:
 
