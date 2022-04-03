@@ -1,5 +1,5 @@
 ---
-title: extravaganza77
+title: Newton Omosh
 type: Authors
 ---
-extravaganza77 is Computer Science student studying Machine learning models and web security. He is also interested in VFX designs besides programming.
+Newton Omosh is a Computer Science student studying Machine learning models and web security. He is also interested in VFX designs besides programming.
