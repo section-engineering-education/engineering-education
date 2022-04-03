@@ -1,0 +1,35 @@
+{{ $a := path.Base .Permalink }}
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>{{ $a }}'s Author Feed</title>
+    <link>{{ .Permalink }}</link>
+    <description>Recent posts by {{ if ne  .Title  .Site.Title }}{{ with .Title }}{{.}} {{ end }}{{ end }}</description>
+    <generator>Hugo -- gohugo.io</generator>{{ with .Site.LanguageCode }}
+    <language>{{.}}</language>{{end}}{{ with .Site.Author.email }}
+    <managingEditor>{{.}}{{ with $.Site.Author.name }} ({{.}}){{end}}</managingEditor>{{end}}{{ with .Site.Author.email }}
+    <webMaster>{{.}}{{ with $.Site.Author.name }} ({{.}}){{end}}</webMaster>{{end}}{{ with .Site.Copyright }}
+    <copyright>{{.}}</copyright>{{end}}{{ if not .Date.IsZero }}
+    <lastBuildDate>{{ .Date.Format "Mon, 02 Jan 2006 15:04:05 -0700" | safeHTML }}</lastBuildDate>{{ end }}
+    {{ with .OutputFormats.Get "RSS" }}
+      {{ printf "<atom:link href=%q rel=\"self\" type=%q />" .Permalink .MediaType | safeHTML }}
+    {{ end }}
+
+    {{ range where .Site.Pages "Params.layout" "engineering-education" }}
+
+    {{ if eq  .Params.author $a  }}
+
+    <item>
+      <title>{{ .Title }}</title>
+      <author>{{ .Params.author }}</author>
+      {{ range .Params.images }}
+      <image>https://www.section.io{{ .url }}</image>
+      {{ end }}
+      <link>{{ .Permalink }}</link>
+      <pubDate>{{ .Date.Format "Mon, 02 Jan 2006 15:04:05 -0700" | safeHTML }}</pubDate>
+      <guid>{{ .Permalink }}</guid>
+      <description>{{ .Params.description | html }}</description>
+    </item>
+    {{ end }}
+    {{ end }}
+  </channel>
+</rss>
