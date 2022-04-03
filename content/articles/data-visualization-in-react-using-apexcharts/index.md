@@ -6,7 +6,7 @@ url: /data-visualization-in-react-using-apexcharts/
 title: Data visualization in React JS using Apex Charts
 description: This article will cover how to install Apexcharts in your React application. It will also cover how to use it to visualize data from an API endpoint and the types of charts that are available in this library.
 author: stephanie-opala
-date: 2022-03-29T00:00:00-21:20
+date: 2022-04-03T00:00:00-21:20
 topics: [Languages]
 excerpt_separator: <!--more-->
 images:
@@ -96,7 +96,7 @@ const MyCharts = () => {
 
 export default MyCharts;
 ```
-On the second line of our file, we are importing Chart from `react-apexcharts`. We then declare two variables, `series` and `options`. We will then set the `series` and `options` props in the `<Chart />` component to these variables.  `<Chart />` component accepts the following props;
+On the second line of our file, we are importing `Chart` from `react-apexcharts`. We then declare two variables, `series` and `options`. We will then set the `series` and `options` props in the `<Chart />` component to these variables.  `<Chart />` component accepts the following props;
 
 - `options`: This is a prop type of object. All the optional chart configurations are passed here.  In the `options` variable, the `chart` key has a value of an object `{ id: 'bar-chart'}`, which is the id of our chart. The key `xaxis` has a value of `categories`, which is the label that will be on the x-axis.
 
@@ -107,6 +107,7 @@ On the second line of our file, we are importing Chart from `react-apexcharts`. 
 - `width`: This is a prop type of string or number. It defines the width of the chart.
 
 - `height`: This is a prop type of string or number. It defines the height of the chart.
+
 ### Creating fake REST API using JSON server
 This section is for the readers using a JSON server to create the fake REST API. If you have an existing API endpoint, you can skip to the next section.
 Create a `data` folder at the root of your project. Inside this folder, create a `db.json` file which will contain the following data.
@@ -164,7 +165,6 @@ The command above starts our JSON server on port 8000. We specify a port number 
 ### Fetching data
 In `charts.js`, we will use the `useEffect` hook to fetch data that will be displayed in the chart.
 
-#### charts.js
 ```javascript
 import React, { useEffect, useState } from 'react';
 import Chart from "react-apexcharts";
@@ -206,8 +206,7 @@ const MyCharts = () => {
 In the code snippet above, `useEffect` fetches the data from the API endpoint when the component renders the first time. We then assign an API endpoint to the `url` variable. In our example, the endpoint is `http://localhost:8000/temperature`. This is because, we are using a fake REST API from the JSON server, but it can be replaced with any other real API endpoint.
 
 Once the API is called, the response is converted into JSON and stored in a variable `data`. To get the values for our x-axis and y-axis, we map through `data` and return an array of `average_temp`  values. We then store this array in the `averageTemp` state using `setAverageTemp` function.
-We also map through `data` and return the `date` values. It is then stored in state, `date` using the `setDate` function.
-After fetching data using `useEffect`, `series[0].data` is assigned the `averageTemp` array and `options.xaxis.categories` is assigned `date` array.
+We also map through `data` and return the `date` values. It is then stored in state, `date` using the `setDate` function. After fetching data using `useEffect`, `series[0].data` is assigned the `averageTemp` array and `options.xaxis.categories` is assigned `date` array.
 
 ApexCharts.js has various charts as mentioned above. Therefore, if you would like to change the type of chart, you can pass a different chart type to the type props. In the example below, the second chart component takes in a type of `line`.
 
@@ -230,6 +229,7 @@ return (
 )
 ```
 Finally, import the `MyCharts` component into App.js. If you run the project on `localhost:3000`, below is an image of what will be on the browser.
+
 ```javascript
 import MyCharts from './components/charts';
 
@@ -249,12 +249,9 @@ export default App;
 The first chart is a bar chart, the second chart is a line graph with data from our API endpoint.
 
 ### Conclusion
-In this article, we have installed the ApexCharts.js library in our React application, created a fake REST API using a JSON server, fetched data from the API endpoint, and displayed it in a bar chart and line graph. If you would like to explore more charts in this library and other features such as animating charts, check out the link to the documentation below.
+In this article, we have installed the ApexCharts.js library in our React application, created a fake REST API using a JSON server, fetched data from the API endpoint, and displayed it in a bar chart and line graph. If you would like to explore more charts in this library and other features such as animating charts, check out the link in this [documentation](https://apexcharts.com/).
 
 Happy coding.
-
-### Further Reading
-[ApexCharts.js documentation](https://apexcharts.com/)
 
 ---
 Peer Review Contributions by: [Willies Ogola](/engineering-education/authors/willies-ogola/)
