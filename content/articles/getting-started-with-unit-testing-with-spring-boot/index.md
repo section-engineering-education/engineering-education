@@ -52,7 +52,7 @@ import org.springframework.web.bind.annotation.RestController;
 public class HelloController {
     @GetMapping("/hello")
     public String hello(@RequestParam(name = "name", defaultValue = "Hello world") String name){
-        return String.format(name);
+        return name;
     }
 }
 ```
