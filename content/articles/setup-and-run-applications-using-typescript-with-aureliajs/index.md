@@ -1,3 +1,19 @@
+---
+layout: engineering-education
+status: publish
+published: true
+url: /setup-and-run-applications-using-typescript-with-aureliajs/
+title: Setup And Run Applications Using TypeScript With AureliaJS
+description: In this guide, we will build a basic todo application using TypeScript and Aurelia.js. We will explore more about Aurelia.js and how it helps with building application easily.
+author: moses-maina
+date: 2022-04-04T00:00:00-00:00
+topics: [Languages]
+excerpt_separator: <!--more-->
+images:
+
+ - url: /engineering-education/setup-and-run-applications-using-typescript-with-aureliajs/hero.png
+   alt: Setup And Run Applications Using TypeScript With AureliaJS Hero Image
+---
 In this tutorial, you will learn how to build your application using Aurelia.js with TypeScript.
 
 JavaScript has several frameworks that helps you implement applications out of the box. This includes React.js, Vue.js, Angular.js, Next.js, Svelte.js, Node.js, Aurelia.js, and many more.
@@ -357,3 +373,6 @@ You can check out the source code [here]().
 - [A Friendly Beginner’s Guide to TypeScript](/engineering-education/a-friendly-beginner-guide-to-typescript/)
 - [Why Static Typing & Why is TypeScript so popular?](/engineering-education/typescript-static-typing/)
 - [JavaScript vs. TypeScript](/engineering-education/javascript-vs-typescript/)
+
+---
+Peer Review Contributions by: [Srishilesh P S](/engineering-education/authors/srishilesh-p-s/)
