@@ -36,9 +36,9 @@ The repository is a bridge between the application and the database. It is teste
 #### Services
 This is the layer where all the business logic is implemented. It is tested to make sure that the business logic is correct.
 ### How to test controllers
-Let us now look at how to test controllers in Spring Boot. To accomplish this, you will need to import some dependencies using the `Spring Initializer` and `IntelliJ IDEA Ultimate`. In, `IntelliJ IDEA Ultimate` lets us create a Spring Boot application using the Spring Initializr service. Open `file>new>project` and select `Spring Initializr` as shown below:
-> Note: If your not using the IntelliJ IDEA Ultimate,  you'll need to go to [Spring Initializer](https://start.spring.io/) and add the *Spring Web* dependencies to your project. Generate the zipped file and open it using your favourite IDEA.
-> 
+Let us now look at how to test controllers in Spring Boot. To accomplish this, you will need to import some dependencies using the *Spring Initializer* and *IntelliJ IDEA Ultimate*. In *IntelliJ IDEA Ultimate*, lets us create a Spring Boot application using the Spring Initializr service. Open `file>new>project` and select *Spring Initializr* as shown below:
+> Note: If you're not using IntelliJ IDEA Ultimate, you'll need to go to the [Spring Initializer](https://start.spring.io/) and add the *Spring Web* dependency to your project. Generate the zipped file and open it using your favourite IDE.
+
 ![Spring Initializer](/engineering-education/getting-started-with-unit-testing-with-spring-boot/spring-initializer.png)
 
 > Note: I have renamed my Package name to `unittesting`.
@@ -118,7 +118,7 @@ class HelloControllerIntTest {
 ```
 Let us look at the code snippet above:
 - `@ExtendWith` is an annotation used to extend the test with the SpringExtension.
-- `@WebMvcTest` - This annotation auto-configures the MockMVC (so we can auto-wire it as in the code above). We specify the class we want to test.
+- `@WebMvcTest`: this annotation auto-configures the MockMVC (so we can auto-wire it as in the code above). We specify the class we want to test.
 
 Let us run our controller to be sure it works correctly.
 
