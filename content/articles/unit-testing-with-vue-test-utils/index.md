@@ -10,29 +10,29 @@ This article will teach you how to write unit tests with the [Vue-test-utils](ht
 
 To follow this article, you need to have the following:
 
-- Node.js locally installed.
+- Node.js, locally installed.
 - Text editor (e.g. Vs Code).
 - A basic understanding of the Vue3  composition API.
 
 ### Scaffolding
 
-For illustration purposes, I recommend you download the starter project we will be using in this tutorial. Follow the link to download the starter project right [here](https://github.com/mercybassey/vue-test-utils-starter-project).
+For illustration purposes, I recommend you download the starter project we will be using in this tutorial. Follow the link to download the starter project right [here](https://github.com/mercybassey/vuetestutils-starter-project).
 
 The starter project consists of:
 
-- **GithubUser component:** This component displays the result of the searched `github` user.
-- **GithubUsers component:** This component displays the lists of all `github` users.
+- **GithubUser component:** This component displays the result of a searched `Github` user.
+- **GithubUsers component:** This component displays the list of all `Github` users.
 - **Home View:** This page serves as the main component of our application.
-- **Details View:** This page displays the details of each `github` user.
+- **Details View:** This page displays the details of each `Github` user.
 
 Our test scenarios will be to:
 
-- Write a sanity test
-- Test our `views/DetailsView.vue` component for text content
-- Test our `components/GithubUser.vue` component for props
-- Test if a specific element in our `GithubUser.vue` component is rendered
-- Test if our `views/HomeView.vue` is rendering lists of `github` users
-- Test if our `views/HomeView.vue` components can search for `github` users.
+- Write a sanity test.
+- Test our `views/DetailsView.vue` component for text content.
+- Test our `components/GithubUser.vue` component for props.
+- Test if a specific element in our `GithubUser.vue` component is rendered.
+- Test if our `views/HomeView.vue` is rendering lists of `Github` users.
+- Test if our `views/HomeView.vue` components can search for `Github` users.
 
 ### Installation
 
@@ -83,7 +83,7 @@ Ran all test suites.
 
 #### Test our `views/DetailsView.vue` component for text content
 
-The next part we will be testing in our Vue application is the `views/DetailsView.vue` component. Currently, in the `detailsView.vue` component; we have an `h1` tag with a text `This is the details Page` inside it. 
+The next part we will be testing in our Vue application is the `views/DetailsView.vue` component. Currently, in the `detailsView.vue` component; we have an `h1` tag with the text `This is the details Page` inside it. 
 
 We’ll simply write a test that checks if the component is rendering the text content inside it.
 
@@ -156,7 +156,7 @@ Ran all test suites.
 
 #### Test our `components/GithubUser.vue` component for props
 
-The next component we will be testing is the `components/GithubUser.vue` component. This component relies on the `HomeView` component to pass down data. In the `script` block the data that powers this component is coming from a `prop` called `userInfo`.
+The next component we will be testing is the `components/GithubUser.vue` component. This component relies on the `HomeView` component to pass down data. In the `script` block the data that powers this component are coming from a `prop` called `userInfo`.
 
 We are going to write a test to confirm if the `GithubUser.vue` component is rending the `userInfo` data. To achieve this, we’ll use what is called mock data. In the `unit/tests` directory, create a file called `githubuser.spec.js`.
 
@@ -171,9 +171,9 @@ import GithubUser from '@/components/GithubUser.vue'
 
 The `GithubUser.vue` component isn’t rendering static contents, everything is completely dynamic. To test this kind of component, we’ll just need to take extra steps. 
 
-So, we’ll write a test to check if the component is rendering the name of a `github` user. That is `userInfo.name`.  
+So, we’ll write a test to check if the component is rendering the name of a `Github` user. That is `userInfo.name`.  
 
-Inside the test, we’ll create mock data. That is, we’ll create a variable called `userInfo`, set it to an object and define a property called `name` with the value of `test`. Just like the code snippets below:
+Inside the test, we’ll create mock data. That is, we’ll create a variable called `userInfo`, set it to an object, and define a property called `name` with the value of `test`. Just like the code snippets below:
 
 ```javascript
 describe('GithubUser.vue', () => {
@@ -197,7 +197,7 @@ To achieve this, the `shallowMount` function has a second argument we can use. T
 
 Inside the object of the second argument, we will add an option called `props`. The `props` option is where we can add `props` for the component. 
 
-Then, we’ll write an assertion to test if the component is rendering the name of a `github user`. 
+Then, we’ll write an assertion to test if the component is rendering the name of a `Github user`. 
 
 Add the code snippet below:
 
@@ -276,13 +276,13 @@ To resolve this, we’ll do what is called stubbing. Stubs are fake or dummy com
 
 Luckily, the `vue-test-utils` library comes with a predefined set of stubs for such a situation, and also, has a stub for the `router-link` component.
 
-At the top of the file, we’ll update the `import` statement for the `vue-test-utils` package and add on `RouterLinkStub` component. Just like the code below:
+At the top of the file, we’ll update the `import` statement for the `vue-test-utils` package and add on the `RouterLinkStub` component. Just like the code below:
 
 ```javascript
 import {shallowMount, RouterLinkStub} from '@vue/test-utils';
 ```
 
-Then, in the `shallowMount` function, we add a property called `stubs` which will allow us to register `components` we want to stub. In our case, we will be registering the `router-link` component. 
+Then, in the `shallowMount` function, we add a property called `stubs` which will allow us to register the `components` we want to `stub`. In our case, we will be registering the `router-link` component. 
 
 Add the following code snippets below:
 
@@ -341,23 +341,23 @@ Ran all test suites.
 
 #### Test if a specific element in our `GithubUser.vue` component is rendered
 
-For specificity, we can improve our test to check if the component renders the name of a `github user` in a specific location in our `GithubUser.vue` component. 
+For specificity, we can improve our test to check if the component renders the name of a `Github user` in a specific location in our `GithubUser.vue` component. 
 
 The `wrapper` API comes with a function for selecting elements in a component called `find`. You can think of it as a function that is similar to the `querySelector` function. 
 
-The first thing we’ll do is, create a variable called `githubUser` with the value `wrapper.find()` that takes in a `css` query selector to find the element.
+The first thing we’ll do is, create a variable called `githubUser` with the value `wrapper.find()` that takes in a `CSS` query selector to find the element.
 
-In our case, the `github user` name is found in a `p` tag with a class of `user-name`. So the `css` query selector will be `.user-name`.
+In our case, the `Github user` name is found in a `p` tag with a class of `user-name`. So the `CSS` query selector will be `.user-name`.
 
 With that, let’s modify our code to use the  `find()` function.
 
-In the `githubuser.spec.js` file, add the code below above the assertion.
+In the `githubuser.spec.js` file, add the code below, above the assertion.
 
 ```javascript
 const githubUser = wrapper.find('.user-name');         
 ```
 
-And, have our assertion to strictly check for that element with an exact match:
+And, have our assertion strictly check for that element with an exact match:
 
 ```javascript
 expect(compositionUser.text()).toBe(userInfo.name);
@@ -397,7 +397,7 @@ Run the command below to run this test:
 npm run test:unit
 ```
 
-With the test report below, our test passed. So we are certain that the element we accessed only have the name of a `github user` inside it.
+With the test report below, our test passed. So we are certain that the element we accessed only have the name of a `Github user` inside it.
 
 ```bash
 PASS  tests/unit/githubuser.spec.js (8.467 s)
@@ -413,9 +413,9 @@ Ran all test suites.
 
 #### Test if our `views/HomeView.vue` is rendering lists of users
 
-Our next test is to check if our `HomeView` component is rending the list of all `github Users`. In the `tests/unit` directory, create a new test file called `homeview.spec.js`.
+Our next test is to check if our `HomeView` component is rending the list of all `Github Users`. In the `tests/unit` directory, create a new test file called `homeview.spec.js`.
 
-In this test file, we’ll import the `HomeView` component and the `shallowMount` function. Then, call the `descibe` function with an identifier of `HomeView.vue` and also, the  `test` function with a description of `renders lists of users`. Just like the code below:
+In this test file, we’ll import the `HomeView` component and the `shallowMount` function. Then, call the `describe` function with an identifier of `HomeView.vue` and also, the  `test` function with a description of `renders lists of users`. Just like the code below:
 
 ```javascript
 import {shallowMount} from '@vue/test-utils';
@@ -429,9 +429,9 @@ describe('HomeView.vue', () => {
 
 In the `HomeView` component, we have a reactive variable called `users` set to an empty array. 
 
-The `users` variable gets filled when we make a request to the `github users` API in the `onMounted` life cycle function. So, we are not going to rely on this request to add data into the variable. 
+The `users` variable gets filled when we request to the `Github users` API in the `onMounted` life cycle function. So, we are not going to rely on this request to add data to the variable. 
 
-Sending `http` requests in a test can be unreliable. This is something we have to avoid as the request may fail. 
+Sending `HTTP` requests in a test can be unreliable. This is something we have to avoid as the request may fail. 
 
 In this case, it’s good practice to use mock data. Inside our test, we’ll create a variable called `users` and set it to be an array of three empty objects. Just like the code below:
 
@@ -441,7 +441,7 @@ const users = [{},{},{}];
 
 We are using empty objects because we are not interested in providing complete data to the component. We just want to check if the `HomeView` component is capable of rendering the list of users if there are users in the `users` array. So, we don’t need the object to be filled with properties to accomplish that. 
 
-In our case, the test should generate three `GithubUsers` component based on the data of the `HomeView` component. 
+In our case, the test should generate three `GithubUsers` components based on the data of the `HomeView` component. 
 
 So, we’ll mount our component and return the `users` variable, into a `setup` option in the object returned by the `shallowMount` function.
 
@@ -615,15 +615,15 @@ Ran all test suites.
 
 #### Test if our `views/HomeView.vue` component can search for users.
 
-Finally, we want to test if our `views/HomeView.vue` component can search for `github users`. In the `homeview.spec.js` file, we will write another test, inside the describe function with a description of `search for users`. 
+Finally, we want to test if our `views/HomeView.vue` component can search for `Github users`. In the `homeview.spec.js` file, we will write another test, inside the describe function with a description of `search for users`. 
 
-In our `HomeView.vue` component, the component that displays the searched user information is the `GithubUser.vue` component. So, we will need to import this component like so:
+In our `HomeView.vue` component, the component that displays the searched user information is the `GithubUser.vue` component. So, we import the `GithubUser.vue` component like so:
 
 ```javascript
 import GithubUser from '@/components/GithubUser.vue'
 ```
 
-Then, the code below, will be able to perform this test:
+Then, the code below will be able to perform this test:
 
 ```javascript
 it('search for user',  async () => {
@@ -696,7 +696,7 @@ describe('HomeView.vue', () => {
 })
 ```
 
-With the test result below, our test passed:
+With the test result below our test passed:
 
 ```bash
 PASS  tests/unit/homeview.spec.js
@@ -713,7 +713,7 @@ Ran all test suites.
 
 ### Conclusion
 
-In this article, you’ve learned how to test different bits and pieces of our project with the `vue-test-utils` library. This is a head start to get up and running with the `vue-test-utils` library. There’s a lot more you can achieve with this library, its usefulness is wonderful as far as the Vue framework is concerned.
+In this article, you’ve learned how to test different bits and pieces of our project with the `vue-test-utils` library. This is a head start to getting up and running with the `vue-test-utils` library. There’s a lot more you can achieve with this library, its usefulness is wonderful as far as the Vue framework is concerned.
 
 I recommend that you make references to the `[Jest](https://jestjs.io/docs/)`  and `[vue-test-utils](https://v1.test-utils.vuejs.org/)` libraries documentation respectively if you’d like to dive in deeper on how to utilize them in your Vue projects.
 
