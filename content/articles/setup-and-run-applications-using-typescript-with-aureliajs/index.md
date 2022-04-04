@@ -78,7 +78,7 @@ This will create a ready configured Aurelia TypeScript app. To test if the setup
 
 Once done, open `http://localhost:8080/` on your browser. This will log a **Hello World** on your browser.
 
-![test-app](test-app./engineering-education/setup-and-run-applications-using-typescript-with-aureliajs/jpg)
+![test-app](test-app./engineering-education/setup-and-run-applications-using-typescript-with-aureliajs/test-app.jpg)
 
 This indicates that the created setup is working and we are ready to build our first Aurelia application.
 
