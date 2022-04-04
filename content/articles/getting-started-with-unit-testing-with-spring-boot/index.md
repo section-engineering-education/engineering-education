@@ -4,7 +4,7 @@ Before any code is deployed, it is subjected to unit testing to fulfill quality 
 For this tutorial, the reader would need to have:
 - Basic knowledge of Java programming 
 - Basic knowledge of Spring Boot
-- An IDE installed. In this project, I will be using [IntelliJ IDEA Ultimate](https://www.jetbrains.com/idea/business/).
+- An IDE installed. In this tutorial, I will be using [IntelliJ IDEA Ultimate](https://www.jetbrains.com/idea/business/).
 ### Getting started
 Before starting with the unit testing, let us first look at why it is important.
 #### Advantages of Unit Testing
