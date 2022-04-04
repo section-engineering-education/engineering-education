@@ -1,26 +1,23 @@
 In this tutorial, we are going to create a simple game based on the Hunt the Wumpus game, one of the first computer games. Hunt the Wumpus was also an influential game for the A.I. area. We are going to know more about the history of this game and create our clone from scratch using Python, Flask, and Socket.io.
 
-### Table of Contents
-
+### Table of contents
 - [Introduction](#introduction)
-- [Pre-requisites](#pre-requisites)
+- [Prerequisites](#prerequisites)
 - [The Hunt the Wumpus Game: brief history and contributions to AI](#the-hunt-the-wumpus-game-brief-history-and-contributions-to-ai)
 - [What is Socket.io and how does it work?](#what-is-socketio-and-how-does-it-work)
-- [Step 1 - Project structure and Hello World!](#step-1---project-structure-and-hello-world)
-- [Step 2 - The content of `index.html`](#step-2---the-content-of-indexhtml)
-- [Step 3 - Developing the base of the game](#step-3---developing-the-base-of-the-game)
-- [Step 4 - Interacting with the game using JavaScript and Socket.io](#step-4---interacting-with-the-game-using-javascript-and-socketio)
+- [Project structure and Hello World!](#project-structure-and-hello-world)
+- [The content of `index.html`](#the-content-of-indexhtml)
+- [Developing the base of the game](#developing-the-base-of-the-game)
+- [Interacting with the game using JavaScript and Socket.io](#interacting-with-the-game-using-javascript-and-socketio)
 - [Conclusion](#conclusion)
 - [References](#references)
 
 ### Introduction
-
 One of the first computer games is Hunt the Wumpus. It is a simple adventure game that was developed in 1973. In Hunt the Wumpus, the player is an adventurer entering a dungeon looking for a treasure. The goal of the adventurer is to find the treasure and get out of the dungeon avoiding the pits where he can fall in and the Wumpus: a monster who kills anyone it sees. To do that, the player has to pay attention to the signals: when he is near a pit he can feel a breeze, and when he is near the Wumpus he can smell the Wumpus' stink.
 
 Hunt the Wumpus was studied by computer scientists in the early days of the artificial intelligence field and it exemplifies the use of logic in A.I. In this tutorial, we are going to build a simple graphical web-based Hunt the Wumpus game using Python, Flask, and SocketIO.
 
-### Pre-requisites
-
+### Prerequisites
 To follow this tutorial, you should know:
 
 - How to create the basic structure of a page using HTML and CSS;
@@ -33,7 +30,6 @@ This tutorial will **not** teach the basics of how to build a web page with HTML
 That said, if you're a complete beginner on these technologies, you may still be able to follow the tutorial without major difficulties. Whenever you get a doubt, go to the documentation referenced at the end of the article and it's likely you will be fine.
 
 ### The Hunt the Wumpus game: brief history and contributions to AI
-
 Hunt the Wumpus is a text-based adventure game developed in 1973 by Gregory Yob for PC.  In the game, the player enters a dungeon made of several conneced rooms and has to avoid pits where he can fall in, bats that can move him to a random room, and kill the monster Wumpus with an arrow. The player knows there's a pit nearby when he feels a breeze and he knows when there's a Wumpus nearby when he feels a stink.
 
 The "Wumpus World" is a slightly modified version of the Hunt the Wumpus game mentioned in the influential book [*Artificial Intelligence: a Modern Approach*](https://www.amazon.com.br/Artificial-Intelligence-Approach-Stuart-Russell/dp/0134610997). It's described in the book like this
@@ -45,7 +41,6 @@ This Wumpus World exemplifies the use of propositional logic in A.I. to build kn
 In this tutorial, we are going to develop a game similar to Wumpus World. Instead of being a text-based game, we are going o build a graphical game, although very simple. And instead of killing the Wumpus, we are going to set the goal to find the treasure. Let's also leave the bad bats behind, and use just the pits and the Wumpus.
 
 ### What is Socket.io and how does it work?
-
 [Socket.io](https://socket.io/) is a library that allow us to build apps with bidirectional communication between server and client using a event-based approach. With Socket.io we can *emit* events with messages and *hear* the events and messages. This way we can create sends communication between the server and the client. One side emits events and send a message to the other. The other side receives the message with some data and do some processing with the data. Then it can emit another event sending back the processed data. 
 
 We are going to use Socket.io because we can't let the informations about the dungeon on the client-side. This is information that must be hidden from the player. Only when the player enters a room he will know what there's around. That's what we are going to do:
@@ -55,8 +50,7 @@ We are going to use Socket.io because we can't let the informations about the du
 - The server will hear the client, process the player position, and send another event with the information of the player's surroundings
 - The client will hear the new information and show it to the player
 
-### Step 1 - Project structure and Hello World
-
+### Project structure and Hello World
 The project structure is very simple. It's the same structure as practically any other Flask project. 
 
 First, create a directory for the project. Inside the project directory, add a file called `wsgi.py` and a directory called `app`. 
@@ -90,9 +84,7 @@ Now it's done! This is the basic structure for a Flask app. Your directory struc
 Create a virtual environment using `python -m venv myenv` and activate it. Install the following packages:
 
 - Flask: `python -m pip install Flask`
-
 - Flask-SocketIO: `python -m pip install Flask-SocketIO`
-
 - Flask-Session: `python -m pip install Flask-Session`
 
 Now let's define the initial visuals of the app inside the `base.html` and `main.css`. Add the meta information of the page, and create the header and the bottom in `base.html`. Let's also add the fonts from Google Fonts, the links to `main.css` and `main.js`, and the CDNs to socket.io and jQuery. Feel free to create the visuals of the header and bottom as you want, but don't forget to add the links and CDNs. Add also the CDN to Feather Icons, so that we can also use nice icons in the interface. 
@@ -203,8 +195,7 @@ You can now run `python wsgi.py` in your terminal and go to `http://localhost:50
 
 ![Simple 'Hello World' page using Python and Flask](/engineering-education/creating-a-simple-hunt-the-wumpus-game-using-python-flask-and-socketio/hello-world-page.png)
 
-### Step 2 - The content of `index.html`
-
+### The content of `index.html`
 Now that we created the base template, it's time to create the content of the page. Delete the `<h1>Hello World!</h1>` from `index.html` and let's add a div with information about the game inside `.main`:
 
 ```html
@@ -237,8 +228,7 @@ Refresh your page and now it should be looking like this:
 
 But the page still doesn't do anything. Now let's make it work!
 
-### Step 3 - Developing the base of the game
-
+### Developing the base of the game
 Let's go back to `app.py`. It's where the magic happens. Let's create sessions to store some user data using `flask-session`. Import the modules: 
 
 ```python
@@ -446,25 +436,15 @@ Let's also create the dungeon map. Below the `win` and `lose` divs, add:
 
 ```html
 {% for i in range(height) %}
-
     <div class="line">
-        
     {% for j in range(width) %}
-
         {% if i == 0 and j == 0 %}
-
             <div class="room curr_room" x="{{j}}" y="{{i}}"></div>
-
         {% else %}
-
             <div class="room" x="{{j}}" y="{{i}}"></div>
-
         {% endif %}
-
     {% endfor %}
-
     </div>
-
 {% endfor %}
 ```
 
@@ -495,8 +475,7 @@ Let's see how it is now:
 
 ![Game screen](/engineering-education/creating-a-simple-hunt-the-wumpus-game-using-python-flask-and-socketio/game-screen.png)
 
-### Step 4 - Interacting with the game using JavaScript and Socket.io
-
+### Interacting with the game using JavaScript and Socket.io
 Now it's time to develop the interaction with the game. First, let's capture the actions of the player. Go to `main.js` and add:
 
 ```javascript
@@ -797,21 +776,13 @@ And that's it! The game is ready to play! Go on and test it. What do you think?
 ![Game round](/engineering-education/creating-a-simple-hunt-the-wumpus-game-using-python-flask-and-socketio/game-round.png)
 
 ### Conclusion
-
 In this tutorial, you learned about the Hunt the Wumpus games and their influence on Artificial Intelligence. We also developed a simple adaptation of the Hunt the Wumpus game using Python, Flask, HTML, CSS, JavaScript e Socket.io. You can see how it's possible to create games in a very easy way using these technologies. You can now explore the endless possibilities of applications that you can build with them! Also, feel free to increment the game with new functionalities and complexity!
 
 To see the whole project, you can go to the [project's GitHub](https://github.com/csamuelsm/wumpus).
 
 ### References
-
 - [Hunt the Wumpus - Wikipedia](https://en.wikipedia.org/wiki/Hunt_the_Wumpus)
-
 - [AI | The Wumpus World Description - GeeksforGeeks](https://www.geeksforgeeks.org/ai-the-wumpus-world-description/)
-
 - [Artificial Intelligence: A Modern Approach](https://www.amazon.com.br/Artificial-Intelligence-Approach-Stuart-Russell/dp/0134610997)
-
 - [Flask](https://flask.palletsprojects.com/en/2.0.x/)
-
 - [Socket.io](https://socket.io/)
-
-- [Project's GitHub](https://github.com/csamuelsm/wumpus)
