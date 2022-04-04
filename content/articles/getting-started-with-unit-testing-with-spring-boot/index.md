@@ -30,7 +30,7 @@ To increase the performance of components. We use the `@DataJpaTest` annotation 
 It's good to simulate database-interacting beans and disable Spring Boot test DB initialization for the Spring profile where the tests are executed. When testing controllers, you should keep this in mind.
 #### Make your test simple
 Whenever an expert developer teaches unit testing to beginners, he should always ensure that the tests are correct and straightforward. To achieve this, he should keep the test with low cyclomatic complexity. Cyclomatic complexity is a coding statistic that shows how many different execution pathways a procedure can take. Developers are less likely to introduce problems when working on code with a lesser complexity since it is easier to comprehend and maintain.
-### Reasons for testing...
+### Reasons for testing;
 #### Repositories
 The repository is a bridge between the application and the database. It is tested to ensure that relationships between database and the applications have been correctly implemented.
 #### Services
@@ -38,6 +38,7 @@ This is the layer where all the business logic is implemented. It is tested to m
 ### How to test controllers
 Let us now look at how to test controllers in Spring Boot. To accomplish this, you will need to import some dependencies using the `Spring Initializer` and `IntelliJ IDEA Ultimate`. In, `IntelliJ IDEA Ultimate` lets us create a Spring Boot application using the Spring Initializr service. Open `file>new>project` and select `Spring Initializr` as shown below:
 > Note: If your not using the IntelliJ IDEA Ultimate,  you'll need to go to [Spring Initializer](https://start.spring.io/) and add the *Spring Web* dependencies to your project. Generate the zipped file and open it using your favourite IDEA.
+> 
 ![Spring Initializer](/engineering-education/getting-started-with-unit-testing-with-spring-boot/spring-initializer.png)
 
 > Note: I have renamed my Package name to `unittesting`.
