@@ -14,9 +14,11 @@ images:
   - url: /engineering-education/implementing-android-jetpack-preferences/hero.png
     alt: Implementing Android Jetpack Preferences Hero Image
 ---
-Giving users the ability to customize how they interact with your app by including a Settings page is the greatest method to improve the overall user experience.
+Giving users the ability to customize how they interact with your app by including a Settings page is the most excellent method to improve the overall user experience.
 <!--more-->
-For example, apps like YouTube offer users to choose between dark and bright modes, pick the download quality, regulate notifications, and other characteristics with a single click.  The setting screen enhances the user experience by requiring the user to specify his or her setting specification. Therefore, we need to find the most straightforward and effective way to include preferences in our application. 
+For example, apps like YouTube offer users to choose between dark and bright modes, pick the download quality, regulate notifications, and other characteristics with a single click.
+
+The setting screen enhances the user experience by requiring the user to specify his or her setting specification. Therefore, we need to find the most straightforward and effective way to include preferences in our application. 
 
 In this article, we will create a simple setup screen using the Android Preference Library.
 
@@ -38,20 +40,14 @@ To follow along with this tutorial, the reader needs to have:
 - Have [Android Studio](https://developer.android.com/studio?gclid=CjwKCAjwlcaRBhBYEiwAK341jU5iIV3l1WRlsYriVsAVDhHovlGtHMmWJJAL2MwlC015p-KO-cUWIRoCy0IQAvD_BwE&gclsrc=aw.ds) installed.
 
 #### Step one: Creating a new project
-Open Android Studio and select New Project -> Empty activity as your project template and then click next to proceed to the next steps. 
-
-Configure the application name and enter your own. In this case, I will name this project **Android Preferences**. 
-
-We will use `Kotlin` as our programming language for this project. Leave everything else as default and click `Finish` and wait a few seconds for it to build up your project.
+Open Android Studio and select New Project -> Empty activity as your project template, and then click `next`.  Configure the application name and enter your own. In this case, I will name this project **Android Preferences**.  We will use `Kotlin` as our programming language for this project. Leave everything else as default and click `Finish` and wait a few seconds for it to build up your project.
    
 #### Step two: Adding a menu to the MainActivity
-The menu enables us to add a menu item(s) into it that will help us navigate to the `SettingActivity`. 
-
-We will achieve that by adding a click listener to each item(s). To add a menu resource, the following steps should be followed;
+The menu enables us to add a menu item(s) into it that will help us navigate to the `SettingActivity`. We will achieve that by adding a `click listener` to each item(s). The following steps should be followed to add a `menu` resource file;
 
 1. Click the `project` folder on the left side of the IDE or `alt+1 -> app -> res folder`.
 2. Right-click the `res` folder to add a `new resource file -> new -> Android resource file`.
-3. After navigating to the Android resource file, enter the file name as `menu` and the resource type select `Menu` and click `OK` to finish.
+3. After navigating to the Android resource file, enter the file name as `menu` and the resource type. Select `Menu` and click `OK` to finish.
 4. Inside the `menu` package, navigate by right-clicking, Select the` new -> menu resource` file and then set the file name as `setting_menu` and finish.
 
 Add the following lines of code:
@@ -79,9 +75,8 @@ To ensure the menu bar is visible to the user's application, add the following c
 In this step, we will add another activity to our main project. Double-click `app file -> java file -> application package name(com._.androidprefernces)`. Right-click the applications folder -> new -> `activity` -> `Settings activity`. After creating a new activity, new Android activity dialog, leave everything as default and finish. The final step is to wait for the project to build.
 
 The new settings activity comes with files in it. Such files include:
-
 - Default settings XML layout in the layout folder. Inside the resource file, there is a layout called `root preferences`, where all the settings will be represented. Inside the root preference, several preference categories will hold a particular group of settings.
-- A new value resource file called `arrays`, contains entries and values that will be visible to the user for selection. Mainly common for preferences such as list preferences, multi-select list preferences, and checkbox preferences. We need to include our new arrays for our settings preferences. Hence, we need to delete the default arrays and edit our new array values.
+- A new value resource file called `arrays` contains entries and values that will be visible to the user for selection. Mainly common for preferences such as list preferences, multi-select list preferences, and checkbox preferences. We need to include our new arrays for our settings preferences. Hence, we must delete the default arrays and edit our new array values.
 
 ```xml
 <resources>
@@ -117,7 +112,7 @@ The new settings activity comes with files in it. Such files include:
 </resources>
 ```
 
-We will have theme values and entries for our list preferences in the general preference category. Entries will be displayed to the users to choose which theme and download size of the file they need to set for the application. We will use the theme and download entries to set the default value displayed before making changes. The entries will also help us in writing the Kotlin code.
+We will have `theme` values and entries for our list preferences in the general preference category. Entries will be displayed to the users to choose which theme and download size of the file they need to set for the application. We will use the `theme` and `download` entries to set the default value displayed before making changes. The entries will also help us in writing the Kotlin code.
 
 >Note: Using drawables is optional, and you need to ignore the icon(s) code snippet in the code below. If you have to use drawable, you can add your own best from the vector assets.
 
@@ -235,10 +230,10 @@ The above code uses the menu `item` by calling it by its `id`. Then we display a
 android:parentActivityName=".MainActivity"
 ```
 
-The code above is just notifying the current activity(child) that once the back button is clicked, it should go to the `MainActivity`, which is its parent.
+The code above notifies the current activity(child) that once the back button is clicked, it should go to the `MainActivity`, its parent.
 
-### Step five: Working with SettingActivity.kt
-We need to make our settings functional. We shall be using [shared preferences](https://developer.android.com/reference/android/content/SharedPreferences). We will design so that a user selects a theme; a new theme will be loaded, that is, light, dark, and system theme.
+### Step five: Working on the SettingActivity.kt
+We need to make our settings functional. We shall be using [shared preferences](https://developer.android.com/reference/android/content/SharedPreferences). We will design so that a user selects a theme; a new theme will be loaded, light, dark, and system theme.
 
 Ensure the activity class have the extra code snippet separated with a comma as shown below;
 
