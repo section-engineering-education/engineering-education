@@ -3,10 +3,10 @@ layout: engineering-education
 status: publish
 published: true
 url: /wavelet-transform-analysis-of-1d-signals-using-python/
-title: Wavelet-based Denoising of the 1-D signal using Python.
-description: This tutorial will walk the reader through performing  Wavelet denoising of the 1-D signal.
+title: Wavelet-based Denoising of the 1-D signal using Python
+description: This tutorial will walk the reader through performing Wavelet denoising of the 1-D signal.
 author: collince-odhiambo
-date: 2022-03-23T00:00:00-03:00
+date: 2022-04-04T00:00:00-04:30
 topics: [Languages]
 excerpt_separator: <!--more-->
 images:
@@ -53,7 +53,7 @@ We use methods such as Universal threshold, Bayes, and Sure minimax in setting t
 ### Scikit-image python package
 This package provides flexible routines of image processing. It is written in the python language. In addition, it has a function library for wavelet-based Denoising under restoration. 
 
-Although it is mainly applicable for 2-D images, it can be used for 1-D signals. The good news is that the `scikit` image package is already available in anaconda; thus no need of installing it.
+Although it is mainly applicable for 2-D images, it can be used for 1-D signals. The good news is that the `scikit` image package is already available in anaconda; thus, no need of installing it.
 
 `Scikit` wavelet denoising includes two main functions. These functions are `estimate_sigma()` and `denoise_wavelet()`. 
 
@@ -71,14 +71,14 @@ y = denoise_wavelet(x, wavelet='db1', mode='soft', wavelet_levels=n, method='Bay
 Where:
 - `x`: Is the input noise signal.
 - `y`: Is the denoised output.
-- `wavelet`: This is the name of wavelet used.
+- `wavelet`: This is the name of the wavelet used.
 - `mode`: The thresholding mode used. There is two thresholding mode, i.e. soft and hard threshold.
 - `wavelet_levels`: The decomposition levels. Note that this must be an integer.
-- `method`: The thresholding method used. Here we use any of the two supported methods, ie. VishuShrink and BayesShrink.
+- `method`: The thresholding method used. Here we use any of the two supported methods, i.e. VishuShrink and BayesShrink.
 - `rescale-sigma`: There are only two options. These options are `True` or `false`. For 1-D signals, it should be set to `true`. It is to rescale the noise variance signal if it is internally rescaled.
 
 ### Denoising an Electrocardiogram (ECG) signal
-We need to install `numpy`, `PyWavelets`, `skimage` and `matplotlib` for this program. We can install these packages using `pip` as shown below:
+We need to install `numpy`, `PyWavelets`, `skimage`, and `matplotlib` for this program. We can install these packages using `pip` as shown below:
 
 ```bash
 # For numpy package.
@@ -105,7 +105,7 @@ import matplotlib.pyplot as plt
 - The `skimage` package enables the performance of signal preprocessing routines.
 - Finally, for any plot in Python, the `matplotlib` package is used.
 
-Read the data from the in-built database. Python has an in-built ecg database. It makes it more efficient since we do not need data from an external source. To read this data, we use the code below:
+Read the data from the in-built database. Python has an in-built ecg database. It makes it more efficient, since we do not need data from an external source. To read this data, we use the code below:
 
 ```Python
 x = pywt.data.ecg().astype(float)/256  # In-built ecg data is read
@@ -200,7 +200,7 @@ plt.show()
 ![Output for the denoised audio signal](/engineering-education/wavelet-transform-analysis-of-1d-signals-using-python/wavelet-three.png)
 
 The blue signal is the noisy signal, while the orange is the denoised output. So it is hard to know whether the Denoising is done or not. 
-However, this can be done by either calculating the peak signal to noise ratio(PSNR) or physically listening to the music.  
+However, this can be done by either calculating the peak signal-to-noise ratio(PSNR) or physically listening to the music.  
 
 We need to add the `sounddevice` python package to anaconda to listen to the audios. This can be done on the terminal using `conda` or `pip`  package managers as shown below:
 
