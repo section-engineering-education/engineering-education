@@ -1,4 +1,22 @@
+---
+layout: engineering-education
+status: publish
+published: true
+url: /getting-started-with-unit-testing-with-spring-boot/
+title: Getting Started With Unit Testing With Spring Boot
+description: In this article, we will talk about how to write unit tests with Spring Boot
+author: serah-muthoni
+date: 2022-04-04T00:00:00-04:30
+topics: [API]
+excerpt_separator: <!--more-->
+images:
+
+ - url: /engineering-education/getting-started-with-unit-testing-with-spring-boot/hero.png 
+   alt: Spring Boot Testing Hero Image
+---
+
 Writing decent unit tests is a skill that takes a long time to perfect. **Unit testing** is one of the ways that developers make sure that individual units or components work correctly.
+<!--more-->
 Before any code is deployed, it is subjected to unit testing to fulfill quality standards. Unit testing ensures that Spring Boot applications and their components are working as expected.
 ### Preliminaries
 For this tutorial, the reader would need to have:
@@ -126,3 +144,6 @@ In the `HelloControllerTest.java` file, right click and run `HelloControllerTest
 
 ### Conclusion
 Congratulations! 🚀 You have successfully tested the controller. There are various ways to create unit tests in Spring Boot. This tutorial has involved MockMVC to write the unit test.
+
+---
+Peer Review Contributions by: [John Amiscaray](/engineering-education/authors/john-amiscaray/)
