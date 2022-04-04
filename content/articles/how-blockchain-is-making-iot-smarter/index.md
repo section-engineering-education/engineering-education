@@ -1,7 +1,21 @@
-## How Blockchain is Making IoT Smarter
+---
+layout: engineering-education
+status: publish
+published: true
+url: /how-blockchain-is-making-iot-smarter/
+title: How Blockchain is Making IoT Smarter
+description: In this article, we will look at how blockchain is revolutionalizing IoT performance. We will also go through the use cases of these phenomena and learn the challenges of integrating blockchain technology with IoT. 
+author: grace-mumbi
+date: 2022-04-04T00:00:00-14:00
+topics: [Blockchain]
+excerpt_separator: <!--more-->
+images:
 
+  - url: /engineering-education/how-blockchain-is-making-iot-smarter/hero.jpg
+    alt: Blockchain Hero Image
+---
 IoT applications have increased tremendously, and so have those for blockchain. The universal trust for blockchain is rising, and IoT is exploiting the option of incorporating it to enhance secure communication between devices. 
-
+<!--more-->
 Blockchain technology is critical in revolutionizing IoT security and performance. It could pave the way to a better data encrypted system, facilitating information sharing between IoT devices without compromise. Its ability to duplicate transactions and disperse them across networks of nodes does the trick.
 
 A significant problem that this relationship between IoT and blockchain could encounter is the different platforms that the two rely on. IoT uses centralized systems while blockchain embraces decentralized platforms.
@@ -22,8 +36,8 @@ The [proof of work](https://www.investopedia.com/terms/p/proof-work.asp) (PoW) c
 #### Scalability challenges
 IoT experiences several scalability challenges owing to various reasons, such as:
 
-- **Low processing power and storage** - several IoT devices, like smart sensors, have small processing and storage units that cannot support running security protocols, such as [Transport Layer Security (TLS) and Security Socket Layer (SSL)]
-- **Lengthy sessions** - many security solutions rely on having a shared encryption key that remains valid during the entire duration of that session. In this case, long-running sessions become problematic, as is the case for IoT devices. Hackers can wiretap the line and track the communication patterns to discern shared information.
+- **Low processing power and storage:** - Several IoT devices, like smart sensors, have small processing and storage units that cannot support running security protocols, such as [Transport Layer Security (TLS) and Security Socket Layer (SSL)]
+- **Lengthy sessions:** - Many security solutions rely on having a shared encryption key that remains valid during the entire duration of that session. In this case, long-running sessions become problematic, as is the case for IoT devices. Hackers can wiretap the line and track the communication patterns to discern shared information.
 
 Blockchain solves scalability issues by allowing for the fast processing of transactions between IoT devices. Even as more IoT devices join the network, blockchain always finds ways of incorporating them without compromising the processing speed of the requested transactions.
 
@@ -34,12 +48,12 @@ Combining IoT with blockchain improves the performance and data security of devi
 
 In particular, blockchain complements the Internet of Things by:
 
-- **Enhancing security** : blockchain technology provides a data security solution by implementing data verification methods in a network. IoT devices receive data from billions of other nodes on the network. But because of blockchain, they do not risk suffering harm from malicious programs. Blockchain can identify and remove data from questionable sources. It concomitantly encrypts information from verifiable and trusted devices. The mode of functioning of blockchain means it maintains high transparency. A user can determine who has access to specific data in the network. Besides, blockchain adds a security layer that prevents any user from overwriting existing data in a network.
-- **Reducing costs** : Automating transaction validation and processing enables an entire IoT system to function cost-effectively without sacrificing efficiency.
-- **Increasing the speed of transactions** : blockchain acts as a shared ledger for supply chain transactions involving multiple producers, suppliers, distributors, and consumers. Thus, parties can exchange data directly without manual procedures.
+- **Enhancing security:** Blockchain technology provides a data security solution by implementing data verification methods in a network. IoT devices receive data from billions of other nodes on the network. But because of blockchain, they do not risk suffering harm from malicious programs. Blockchain can identify and remove data from questionable sources. It concomitantly encrypts information from verifiable and trusted devices. The mode of functioning of blockchain means it maintains high transparency. A user can determine who has access to specific data in the network. Besides, blockchain adds a security layer that prevents any user from overwriting existing data in a network.
+- **Reducing costs:** Automating transaction validation and processing enables an entire IoT system to function cost-effectively without sacrificing efficiency.
+- **Increasing the speed of transactions:** Blockchain acts as a shared ledger for supply chain transactions involving multiple producers, suppliers, distributors, and consumers. Thus, parties can exchange data directly without manual procedures.
 
 ### Use cases of blockchain and IoT
-Blockchain and IoT have many real-life applications. Consider the following examples.
+Blockchain and IoT have many real-life applications. The following are some examples of how they are applied in real life:
 
 #### Tracking vaccines
 Blockchain's capability to record transactions for all the involved parties in a supply chain network at each stage of a product made it crucial for vaccine shipment. This solution prevents the distribution of counterfeit doses in the pharmaceutical supply chain. Pairing blockchain with IoT enhances the tracking of these vaccines during pandemics such as COVID-19.
@@ -54,7 +68,7 @@ Through blockchain implementation, communication between self-driving vehicles w
 More importantly, blockchain can solve the challenge of data security that comes with autonomous cars that rely on online traffic data for navigation. There is always a risk of malicious attacks impairing driving functions, potentially causing road accidents. But since blockchain's security is almost impenetrable, it could help revolutionize the safety of driverless cars for the better.
 
 ### The challenges of integrating blockchain technology with IoT
-Integrating blockchain with IoT has its challenges. The following are examples of such drawbacks.
+Integrating blockchain with IoT has its challenges. The following are examples of such drawbacks:
 
 #### Diminishing storage capacity and scalability
 The chain is growing at a rate of one megabyte for every 10 minutes in Bitcoin, for instance. The rate keeps overgrowing, and there is concern that this will become unsustainable in the long run. Besides, an oversized chain could have negative implications on the performance of blockchain, such as an increased synchronization time for the users.
@@ -68,9 +82,12 @@ Blockchain lacks a central authority because of its decentralized system. And th
 ### Conclusion
 IoT devices are now everywhere. Electronic gadgets in every home and organization transmit massive amounts of data online. With increased IoT device connections also comes the threat of data security. Blockchain implementation in tandem with IoT is now crucial in safeguarding data. Blockchain's decentralized system verifies data transmitted throughout the chain to ensure no malicious attack can reach the IoT devices.
 
-Blockchain's capabilities made it crucial in monitoring the COVID-19 vaccine distribution. Autonomous car manufacturing companies are also considering using the tech to make their driverless cars malicious threat-proof. Even so, blockchain faces fierce contention from several governments that feel the system could disorient the typical financial systems of their nations.
+Blockchain's capabilities made it crucial in monitoring the COVID-19 vaccine distribution. Autonomous car manufacturing companies are also considering using the technology to make their driverless cars malicious threat-proof. Even so, blockchain faces fierce contention from several governments that feel the system could disorient the typical financial systems of their nations.
 
 ### Further reading 
 - [Introduction to Blockchain Architecture](/engineering-education/an-introduction-to-blockchain-architecture/)
 
 - [IOT and Cloud Computing Security Threats](/engineering-education/iot-and-cloud-computing-security-threats/)
+
+---
+Peer Review Contributions by: [Onesmus Mbaabu](/engineering-education/authors/onesmus-mbaabu/)
