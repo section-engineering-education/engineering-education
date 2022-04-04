@@ -4,7 +4,7 @@ Before any code is deployed, it is subjected to unit testing to fulfill quality 
 For this tutorial, the reader would need to have:
 - Basic knowledge of Java programming 
 - Basic knowledge of Spring Boot
-- An IDE installed. You can choose [IntelliJ IDEA](https://www.jetbrains.com/idea/) for this tutorial.
+- An IDE installed. In this project, I will be using [IntelliJ IDEA Ultimate](https://www.jetbrains.com/idea/business/).
 ### Getting started
 Before starting with the unit testing, let us first look at why it is important.
 #### Advantages of Unit Testing
@@ -16,10 +16,14 @@ Before starting with the unit testing, let us first look at why it is important.
     - By unit testing, developers can learn how to write better code.
 ### Some unit testing best practices
 It is crucial to use the best approach when writing unit testing. Below are some best practices to follow when writing unit testing:
-
 ####  Separate the functionality that needs to be evaluated.
 The functionality to be tested should be isolated by restricting the context in which loaded components are used. This is achieved by using the `@Test` annotation. The advantage of this approach is that it is easy to locate tricky bugs and promote clean production.
 
+This particular feature, if used wisely, can help us build larger app tests without such a hefty penalty in terms of performance, particularly for small-sized apps.
+#### Loading functionality in slices
+It is crucial to restrict the application context to only the Spring components included in the test scenario when testing for an extensive application. This is achieved by including them in the annotation declaration.
+
+This particular feature, if used wisely, can help us build narrow tests without such a hefty penalty in terms of performance, particularly for small-sized apps.
 #### Use the `@DataJpaTest` Annotation
 To increase the performance of components. We use the `@DataJpaTest` annotation since it will not load beans annotated with`@Service`, `@Controller`, and the entire application context.
 #### Performing tests that are database-related
@@ -32,19 +36,19 @@ The repository is a bridge between the application and the database. It is teste
 #### Services
 This is the layer where all the business logic is implemented. It is tested to make sure that the business logic is correct.
 ### How to test controllers
-Let us now look at how to test controllers in Spring Boot. To accomplish this, you will need to import some dependencies using the `Spring Initializer` and `IntelliJ IDEA`. In, `IntelliJ IDEA` lets us create a Spring Boot application using the Spring Initializr service. Open `file>new>project` and select `Spring Initializr` as shown below:
-
+Let us now look at how to test controllers in Spring Boot. To accomplish this, you will need to import some dependencies using the `Spring Initializer` and `IntelliJ IDEA Ultimate`. In, `IntelliJ IDEA Ultimate` lets us create a Spring Boot application using the Spring Initializr service. Open `file>new>project` and select `Spring Initializr` as shown below:
+> Note: If your not using the IntelliJ IDEA Ultimate,  you'll need to go to [Spring Initializer](https://start.spring.io/) and add the *Spring Web* dependencies to your project. Generate the zipped file and open it using your favourite IDEA.
 ![Spring Initializer](/engineering-education/getting-started-with-unit-testing-with-spring-boot/spring-initializer.png)
 
-> Note: I have renamed my Package name to `UnitTesting`.
+> Note: I have renamed my Package name to `unittesting`.
 
 Click next to proceed. Type *web* to search the required dependencies in the search bar. Select *Spring Web* and click *finish* to download the initializr template:
 
 ![Spring Initializer](/engineering-education/getting-started-with-unit-testing-with-spring-boot/spring-initializer-dependency.png)
 
-We've prepared the environment successfully.🔥 Now we need to test the controller. In `/src/main/java/UnitTesting` create a new package named `controller`. Proceed to create a Java class named `HelloContoller.java` in  `/src/main/java/UnitTesting/controller`. Within that file, add the code below:
+We've prepared the environment successfully.🔥 Now we need to test the controller. In `/src/main/java/unittesting` create a new package named `controller`. Proceed to create a Java class named `HelloContoller.java` in  `/src/main/java/unittesting/controller`. Within that file, add the code below:
 ```java
-package UnitTesting.controller;
+package unittesting.controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
@@ -65,9 +69,9 @@ Let us now generate the controller test.  In the `HelloController.java` file, ri
 
 ![Spring Initializer](/engineering-education/getting-started-with-unit-testing-with-spring-boot/testing.png)
 
-A new file `/src/main/test/java/UnitTesting/controller/HelloControllerTest.java` will be created. Modify the file to have the code below:
+A new file `/src/test/java/unittesting/controller/HelloControllerTest.java` will be created. Modify the file to have the code below:
 ```java
-package UnitTesting.controller;
+package unittesting.controller;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
@@ -82,9 +86,9 @@ class HelloControllerTest {
 ```
 So far, we have created a test without including the Spring context. Let us generate another test using the JUnit 5 extension, which will have Spring extensions provided by Spring.  
 
-Repeat the same procedure to generate another test. Name the second test class `HelloControllerIntTest.java`. In `/src/main/test/java/controller/HelloControllerIntTest.java`, modify the code as shown below:
+Repeat the same procedure to generate another test. Name the second test class `HelloControllerIntTest.java`. In `/src/test/java/controller/HelloControllerIntTest.java`, modify the code as shown below:
 ```java
-package UnitTesting.controller;
+package unittesting.controller;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
