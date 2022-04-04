@@ -51,7 +51,17 @@
           {{ .Content }}
 
           {{/*  Insights Section  */}}
-          {{ $numberOfArticles := len (where (where .Site.Pages "Params.layout" "engineering-education") ".Params.author" $author) }}
+          {{ $allArticles := (where (where .Site.Pages "Params.layout" "engineering-education") ".Params.author" $author) }}
+          {{ $numberOfArticles := len $allArticles }}
+
+          {{/*  Need to capture all article urls then asynchronousel fetch the data due to Googles Data API limits.*/}}
+          {{ $articleUrlsList := slice }}
+
+          {{ range $allArticles }}
+            {{ $articleUrlsList = $articleUrlsList | append .Permalink }}
+          {{ end }}
+
+          {{ $articleUrlsList = delimit $articleUrlsList ", "}}
 
           <div class="insights-section">
             <div class="insight page-views" data-before="Total Number of Articles Written">
@@ -138,15 +148,6 @@
                 }
               })
               .catch(err => console.log('Error: ', err));
-            
-            fetch('https://api.www.section.io/pageviews/{{ $articleSlug }}/')
-              .then(res => res.json())
-              .then(data => {
-                if (data.pageViews) {
-                  const numPageViews = parseInt(data.pageViews).toLocaleString();
-                  document.getElementById('page-views-count-{{ $elem_index }}').innerText = numPageViews;
-                }
-              })
           });
         </script>
         
@@ -215,16 +216,47 @@
   </div>
 </section>
 
-<script type="text/javascript">
-  const toggleToolTip = (el) => {
-    el.classList.toggle('tooltip');
-  }
+<script defer type="text/javascript">
   
-  const insightItems = document.getElementsByClassName("insight");
+    const toggleToolTip = (el) => {
+      el.classList.toggle('tooltip');
+    }
+    
+    const insightItems = document.getElementsByClassName("insight");
 
-  for (let i = 0; i < insightItems.length; i++) {
-    insightItems[i].addEventListener("touch", () => toggleToolTip(insightItems[i]))
-  }
+    for (let i = 0; i < insightItems.length; i++) {
+      insightItems[i].addEventListener("touch", () => toggleToolTip(insightItems[i]))
+    }
+  document.addEventListener("DOMContentLoaded", async function() {
+    const getPageView = (url, currentUrl) => {
+      console.log('getPageView (fetching data).....')
+      const urlRegex = /(http:\/\/localhost:1313\/)|(https:\/\/beta.section.io\/engineering-education\/)|(https:\/\/section.io\/engineering-education\/)/gi;
+      const trimmedUrl = url.replace(urlRegex, '');
+      console.log('trimmedUrl:', trimmedUrl);
+
+      return fetch(`https:\/\/api.www.section.io/pageviews/${trimmedUrl}`)
+        .then(res => res.json())
+        .then(data => {
+          if (data.pageViews) {
+            const numPageViews = parseInt(data.pageViews).toLocaleString();
+            document.querySelector(`#page-views-count-${currentUrl}`).innerText = numPageViews;
+          }
+        });
+    }
+
+    const applyPageViews = async (urls) => {
+      let currentUrl = 0;
+
+      while (currentUrl <= urls.length - 1) {
+        await getPageView(urls[currentUrl], currentUrl);
+        currentUrl++;
+      }
+    }
+
+    let urlsOfArticles = "{{ $articleUrlsList }}";
+    let articlesArr = urlsOfArticles.split(', ');
+    applyPageViews(articlesArr);
+  });
   
 </script>
 {{ end }}
