@@ -73,15 +73,16 @@ Let us now generate the controller test.  In the `HelloController.java` file, ri
 A new file `/src/test/java/unittesting/controller/HelloControllerTest.java` will be created. Modify the file to have the code below:
 ```java
 package unittesting.controller;
-import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
+// import all the static methods from the Assertions class, so we may use them in this class
 import static org.junit.jupiter.api.Assertions.*;
+
 class HelloControllerTest {
     @Test
     void hello() {
         HelloController controller = new HelloController(); // instance of the controller
         String response = controller.hello("Hello world"); // act
-        Assertions.assertEquals("Hello world", response); // assert
+        assertEquals("Hello world", response); // assert
     }
 }
 ```
@@ -90,19 +91,16 @@ So far, we have created a test without including the Spring context. Let us gene
 Repeat the same procedure to generate another test. Name the second test class `HelloControllerIntTest.java`. In `/src/test/java/controller/HelloControllerIntTest.java`, modify the code as shown below:
 ```java
 package unittesting.controller;
-import org.junit.jupiter.api.Assertions;
+import static org.junit.jupiter.api.Assertions.*;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest;
-import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit.jupiter.SpringExtension;
 import org.springframework.test.web.servlet.MockMvc;
-import org.springframework.test.web.servlet.MockMvcResultHandlersDsl;
 import org.springframework.test.web.servlet.MvcResult;
 import org.springframework.test.web.servlet.RequestBuilder;
 import org.springframework.test.web.servlet.request.MockMvcRequestBuilders;
-import static org.junit.jupiter.api.Assertions.*;
 @ExtendWith({SpringExtension.class})
 @WebMvcTest(HelloController.class)
 class HelloControllerIntTest {
@@ -112,7 +110,7 @@ class HelloControllerIntTest {
     void hello() throws Exception {
         RequestBuilder request = MockMvcRequestBuilders.get("/hello");
         MvcResult result = mvc.perform(request).andReturn();
-        Assertions.assertEquals("Hello world", result.getResponse().getContentAsString());
+        assertEquals("Hello world", result.getResponse().getContentAsString());
     }
 }
 ```
