@@ -4,19 +4,19 @@ status: publish
 published: true
 url: /introduction-to-unity-engine/
 title: Introduction to Unity Engine
-description: This tutorial will introduction the reader to the Unity engine, explain the interface of the engine and understand how to create different objects.
+description: This tutorial will introduce the reader to the Unity engine, explain the interface of the engine, and understand how to create different objects.
 author: mohamed-alghadban
-date: 2022-03-16T00:00:00-03:30
+date: 2022-04-04T00:00:00-05:13
 topics: [Languages]
 excerpt_separator: <!--more-->
 images:
 
-  - url: /engineering-education/introduction-to-unity-engine/hero.png
+  - url: /engineering-education/introduction-to-unity-engine/hero.jpg
     alt: Introduction to Unity Engine Hero Image
 ---
-The Unity engine is one of the strongest engines in game development, and also one of the easiest engines to learn as a beginner in game development. 
+The Unity engine is one of the strongest engines in game development, and also one of the easiest engines to learn as a beginner game developer. 
 <!--more-->
-In this tutorial, we will explain the interface of the engine and understand how to create different objects, manipulate and compose them together, we will also use prefabs to enhance the ability to reuse and edit different objects.
+In this tutorial, we will explain the interface of the engine and understand how to create different objects, and manipulate and compose them together, we will also use prefabs to enhance the ability to reuse and edit different objects.
 
 ### Table of contents
 - [Prerequisites](#prerequisites)
@@ -34,7 +34,7 @@ In this tutorial, we will explain the interface of the engine and understand how
 To follow along with this tutorial, you’ll need the following:
 - A basic understanding of the C# programming language.
 - A basic understanding of classes and objects in the C# programming language.
-- Have Unity engine installed on your system.
+- Have the Unity engine installed on your system.
 - If you don't have the unity engine installed on your system, you can click [here](https://unity.com/download) to download and install it.
 
 **Note:** we will not use the C# language directly in this tutorial, but understanding it will be helpful with Unity objects and later on when coding is needed.
@@ -61,7 +61,7 @@ The Hierarchy contains all the objects created in your game, it can store all ki
 ![Hierarchy](/engineering-education/introduction-to-unity-engine/hierarchy1.png)
 
 #### Scene
-The scene shows us the planes and the game objects that we create and use in the game, it's also the main tool in Unity because it helps us manipulate move, and duplicate the objects that we have in order to make a perfectly composed object.
+The scene shows us the planes and the game objects that we create and use in the game, it's also the main tool in Unity because it helps us manipulate, move, and duplicate the objects that we have in order to make a perfectly composed object.
 
 ![Scene1](/engineering-education/introduction-to-unity-engine/scene1.png)
 
@@ -74,7 +74,7 @@ The inspector contains all kinds of information about any created object, from l
 Assets can store all kinds of files and models in your game, including what we will be mostly using in this tutorial (prefabs).
 
 ### Unity objects
-In this tutorial we will be creating a simple car from composing many objects, let's begin by creating our first object. 
+In this tutorial we will be creating a simple car by composing many objects, let's begin by creating our first object. 
 
 Right-click on the Hierarchy, click on the `3D object` then click on the “cube”, Now a cube will appear on your screen inside the Scene, try moving around the cube by clicking `alt + left click` and try zooming out using the middle mouse button, you may also hold on your middle mouse and move your hand to move freely on the planes of your scene and objects. All the previous movements will come in handy when working on your objects.
 
@@ -82,13 +82,13 @@ Right-click on the Hierarchy, click on the `3D object` then click on the “cube
 
 Now we need to change the properties of the cube to make it suitable for a lower body part. 
 
-First, we click on the “cube” then press `R`, now we can extend the length of all the planes and change them in any direction we want. 
+First, we click on the “cube” and then press `R`, now we can extend the length of all the planes and change them in any direction we want. 
 
-Change the name of the cube by clicking on it on the hierarchy and renaming it to `Lower body`. After extending the planes of the object, it should something like this. 
+Change the name of the cube by clicking on it on the hierarchy and renaming it to `Lower body`. After extending the planes of the object, it should look something like this. 
 
 ![Carbody_1](/engineering-education/introduction-to-unity-engine/carbody_1.png)
 
-Now we need to make the upper body of the car, but instead of making the whole process all over, we could duplicate the lower body of the car but clicking on it from the hierarchy and renaming it to the upper body, after that the two objects will be inside each other, so you click on the object from the scene and click W to move the upper body on top of the lower body.
+Now we need to make the upper body of the car, but instead of making the whole process all over again, we could duplicate the lower body of the car by clicking on it from the hierarchy and renaming it to the upper body, after that, the two objects will be inside each other, so you click on the object from the scene and click W to move the upper body on top of the lower body.
 
 The second part of this is to reshape the upper body and make it smaller, in order to do so click on `R` then click on the little cube inside the upper body and move the mouse to the left to make it smaller or the right to make it bigger. Rename the upper body from the hierarchy and reshape it to look something like this.
 
@@ -113,7 +113,7 @@ What is the most important thing about prefabs? The answer is the ability to edi
 
 Drag the `Completed car` object to the assets' area to be able to use the prefab option. Do this with any composed object later on in your game if you wish to use it multiple times and feel the need to edit it without wasting your time.
 
-I have created another prefab beside the car and called it `Street lamp`, simply a composed object of two cylinders, and used prefab to copy and reuse the object with the car object to make a crowded street full of cars. 
+I have created another prefab beside the car and called it `Street lamp`, simply a composed object of two cylinders, and used a prefab to copy and reuse the object with the car object to make a crowded street full of cars. 
 
 Then, put them all under a plane object from the 3D objects. The scene should finally look something like this.
 
