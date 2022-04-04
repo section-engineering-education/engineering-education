@@ -178,7 +178,6 @@
 
       @include mq($to: $breakpoint-medium) {
         width: 100%;
-        // margin-left: 0;
         flex-direction: row;
         border-left: 0;
         margin-top: 20px;

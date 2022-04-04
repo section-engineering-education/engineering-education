@@ -229,10 +229,8 @@
     }
   document.addEventListener("DOMContentLoaded", async function() {
     const getPageView = (url, currentUrl) => {
-      console.log('getPageView (fetching data).....')
       const urlRegex = /(http:\/\/localhost:1313\/)|(https:\/\/beta.section.io\/engineering-education\/)|(https:\/\/section.io\/engineering-education\/)/gi;
       const trimmedUrl = url.replace(urlRegex, '');
-      console.log('trimmedUrl:', trimmedUrl);
 
       return fetch(`https:\/\/api.www.section.io/pageviews/${trimmedUrl}`)
         .then(res => res.json())
