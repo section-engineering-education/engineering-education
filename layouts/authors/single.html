@@ -181,7 +181,7 @@
                 <div class="data-point">
                   <p><img class="icon" src="{{ if eq $.Site.Params.env "local" }}/{{ else }}/engineering-education/{{ end }}images/comment-icon.png" alt="Article Comments" /></p><span id="comments-count-{{ $elem_index }}">0</span>
                 </div>
-                <div class="data-point">
+                <div class="data-point page-views page-views-icon-{{ $elem_index }}">
                   <p><img class="icon" src="{{ if eq $.Site.Params.env "local" }}/{{ else }}/engineering-education/{{ end }}images/page-views-icon.png" alt="Page Views" /></p><span id="page-views-count-{{ $elem_index }}">0</span>
                 </div>
               </div>
@@ -218,28 +218,41 @@
 
 <script defer type="text/javascript">
   
-    const toggleToolTip = (el) => {
-      el.classList.toggle('tooltip');
-    }
-    
-    const insightItems = document.getElementsByClassName("insight");
+  const toggleToolTip = (el) => {
+    el.classList.toggle('tooltip');
+  }
+  
+  const insightItems = document.getElementsByClassName("insight");
 
-    for (let i = 0; i < insightItems.length; i++) {
-      insightItems[i].addEventListener("touch", () => toggleToolTip(insightItems[i]))
-    }
+  for (let i = 0; i < insightItems.length; i++) {
+    insightItems[i].addEventListener("touch", () => toggleToolTip(insightItems[i]))
+  }
+
   document.addEventListener("DOMContentLoaded", async function() {
     const getPageView = (url, currentUrl) => {
       const urlRegex = /(http:\/\/localhost:1313\/)|(https:\/\/beta.section.io\/engineering-education\/)|(https:\/\/section.io\/engineering-education\/)/gi;
       const trimmedUrl = url.replace(urlRegex, '');
 
+      const handleError = response => {
+        if (!response.ok) {
+          throw Error(response.statusText);
+        } else {
+          return response.json();
+        }
+      }
+
       return fetch(`https:\/\/api.www.section.io/pageviews/${trimmedUrl}`)
-        .then(res => res.json())
+        .then(handleError)
         .then(data => {
           if (data.pageViews) {
             const numPageViews = parseInt(data.pageViews).toLocaleString();
-            document.querySelector(`#page-views-count-${currentUrl}`).innerText = numPageViews;
+            const pageViewsEl = document.querySelector(`#page-views-count-${currentUrl}`);
+            const parentElement = document.querySelector(`.page-views-icon-${currentUrl}`);
+            pageViewsEl.innerText = numPageViews;
+            parentElement.classList.add('visible');
           }
-        });
+        })
+        .catch(err => console.log('err:', err));
     }
 
     const applyPageViews = async (urls) => {
@@ -251,8 +264,8 @@
       }
     }
 
-    let urlsOfArticles = "{{ $articleUrlsList }}";
-    let articlesArr = urlsOfArticles.split(', ');
+    const urlsOfArticles = "{{ $articleUrlsList }}";
+    const articlesArr = urlsOfArticles.split(', ');
     applyPageViews(articlesArr);
   });
   
