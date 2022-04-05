@@ -6,7 +6,7 @@ url: /qiskit-for-quantum-computing/
 title: Qiskit for Quantum Computing
 description: This tutorial aims to introduce our readers to Quantum computing. It also introduces them to the Qiskit toolkit and lets them experiment using Jupyter Notebooks hosted in IBM Quantum Lab.  
 author: monica-dalmas
-date: 2022-03-30T00:00:00-21:30
+date: 2022-04-06T00:00:00-16:30
 topics: [Networking]
 excerpt_separator: <!--more-->
 images:
@@ -153,7 +153,7 @@ plot_histogram(result.get_counts(circuit))
 ```
 ![Histogram](/engineering-education/qiskit-for-quantum-computing/histogram.png)
 
-That's the result of executing our quantum circuit. We get about a 50% probability for `00` and a 50% probability for `11`. You've successfully your first quantum computer circuit. Though not covered in this tutorial, you can send your quantum circuit out to a quantum device at IBM to see the results from running this circuit on a quantum device.
+That's the result of executing our quantum circuit. We get about a 50% probability for `00` and a 50% probability for `11`. You've successfully built your first quantum computer circuit. Though not covered in this tutorial, you can send your quantum circuit out to a quantum device at IBM to see the results from running this circuit on a quantum device.
 
 ### Wrapping up
 This tutorial sets you up to run code on a real quantum computer. We've successfully created our first quantum application. We recommend that you go through the tutorial on Qiskit's website as this tutorial only scratches the surface. Good luck coding quantum circuits on your own.
