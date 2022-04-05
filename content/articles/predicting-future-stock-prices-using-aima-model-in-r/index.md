@@ -1,8 +1,22 @@
-### Predicting Future Stock Prices Using ARIMA Model in R
+---
+layout: engineering-education
+status: publish
+published: true
+url: /predicting-future-stock-prices-using-aima-model-in-r/
+title: Predicting Stock Prices Using ARIMA Model in R
+description: This tutorial will walk the reader through how to predicting stock prices using ARIMA Model in R.
+author: hosea-kipngetich
+date: 2022-03-05T00:00:00-02:19
+topics: [Languages]
+excerpt_separator: <!--more-->
+images:
 
+  - url: /engineering-education/predicting-future-stock-prices-using-aima-model-in-r/hero.png
+    alt: Predicting Stock Prices Using ARIMA Model in R Hero Image
+---
 ### Introduction
 With the rise of so many investors in the stock and cryptocurrencies market space. 
-
+<!--more-->
 It would be great to create a program that can predict the market prices to help investors make the best decision on whether or not it's the right time to invest, so that they can make more profits or money.
 
 ARIMA model is one of the most useful and accurate time series models in making predictions about future trends. In our case we will predict stock market prices using R programming language. 
@@ -187,3 +201,6 @@ Happy coding!
 - [Pluralsight time series forecasting in R](https://www.pluralsight.com/guides/time-series-forecasting-using-r)
 - [A guide to forecasting in R](https://towardsdatascience.com/a-guide-to-forecasting-in-r-6b0c9638c261)
 - [Forecasting](https://cran.r-project.org/web/packages/forecast/forecast.pdf)
+
+---
+Peer Review Contributions by: [Jethro Magaji](/engineering-education/authors/jethro-magaji/)
