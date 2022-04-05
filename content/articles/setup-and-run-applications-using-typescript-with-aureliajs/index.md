@@ -31,13 +31,28 @@ To follow along with this guide, it is essential to have the following requireme
 
 ### Table of contents
 - [Prerequisites](#prerequisites)
+- [Table of contents](#table-of-contents)
 - [Why use TypeScript?](#why-use-typescript)
 - [Why use Aurelia?](#why-use-aurelia)
 - [How to set up a basic TypeScript Aurelia project?](#how-to-set-up-a-basic-typescript-aurelia-project)
 - [Build a Todo app using Aurelia and TypeScript](#build-a-todo-app-using-aurelia-and-typescript)
-  - [Set up the todos Interface](#set-up-the-todos-interface)
+  - [Set up the todos interface](#set-up-the-todos-interface)
   - [Create todos class](#create-todos-class)
+    - [Set up the `App` class](#set-up-the-app-class)
+    - [Create constructors and methods](#create-constructors-and-methods)
+    - [Add a new todo](#add-a-new-todo)
+    - [Delete a todo](#delete-a-todo)
+    - [Clone a todo](#clone-a-todo)
   - [Set up the Aurelia template](#set-up-the-aurelia-template)
+    - [Add a filter component](#add-a-filter-component)
+    - [Get the application header](#get-the-application-header)
+    - [Add a form to add todos](#add-a-form-to-add-todos)
+    - [Add todo title form input](#add-todo-title-form-input)
+    - [Add todo description form input](#add-todo-description-form-input)
+    - [Add a button to submit the form input](#add-a-button-to-submit-the-form-input)
+    - [Update a todo](#update-a-todo)
+    - [Delete a todo](#delete-a-todo-1)
+    - [Clone a todo](#clone-a-todo-1)
 - [Conclusion](#conclusion)
 - [Further reading](#further-reading)
 
@@ -364,7 +379,7 @@ Aurelia.js Framework allows writing modern JavaScript. This way, you can impleme
 
 I hope you found this tutorial useful.
 
-You can check out the source code [here]().
+You can check out the source code [here](https://github.com/mosesreigns/run-Applications-using-TypeScript-with-Aurelia.js).
 
 ### Further reading
 - [5 Benefits Of Choosing Aurelia.js Over AngularJS](https://www.valuecoders.com/blog/technology-and-apps/aurelia-js-framework-review-typescript-router/)
