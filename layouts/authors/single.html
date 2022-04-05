@@ -230,7 +230,7 @@
 
   document.addEventListener("DOMContentLoaded", async function() {
     const getPageView = (url, currentUrl) => {
-      const urlRegex = /(http:\/\/localhost:1313\/)|(https:\/\/beta.section.io\/engineering-education\/)|(https:\/\/section.io\/engineering-education\/)/gi;
+      const urlRegex = /(http:\/\/localhost:1313\/)|(https:\/\/beta.section.io\/engineering-education\/)|(https:\/\/www.section.io\/engineering-education\/)/gi;
       const trimmedUrl = url.replace(urlRegex, '');
 
       const handleError = response => {
