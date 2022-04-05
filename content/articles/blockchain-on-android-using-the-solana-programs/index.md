@@ -1,6 +1,6 @@
 Web3.0 is an evolution of the internet utilizing blockchain technology and decentralization tools. On the other side, Solana is a fast, cheap, and monstrous blockchain tool. Solana is a high-performance, scalable blockchain that can support crypto applications.
 
-[Solana ($SOL)](https://coinmarketcap.com/currencies/solana/) is a decentralized blockchain network just like the likes of bitcoin, ethereum, and litecoin. Salona has programmable blockchains that allow you to use smart contracts and create your own token, or NFTs. Solana aims to do is to be much more scalable and a faster network. Solana can currently handle 50k transactions per second with an average 400ms block time. This extremely fast transaction speed makes salona one of the most scalable layer one blockchain solutions.
+[Solana ($SOL)](https://coinmarketcap.com/currencies/solana/) is a decentralized blockchain network just like the likes of bitcoin, Ethereum, and litecoin. Salona has programmable blockchains that allow you to use smart contracts and create your own token, or NFTs. Solana aims to do is to be much more scalable and a faster network. Solana can currently handle 50k transactions per second with an average 400ms block time. This extremely fast transaction speed makes Salona one of the most scalable layer one blockchain solutions.
 
 This guide will implement the Salona blockchain concept using Android. We will consume a Salona API using the android Retrofit library.
 
@@ -9,13 +9,13 @@ This guide will implement the Salona blockchain concept using Android. We will c
 To follow along with this guide, it is essential to have the following:
 
 - Basic working knowledge of how blockchain technology and architecture work.
-- Working knowledge running applications using Android.
+- Working knowledge of running applications using android.
 
 ### Setting up the application
 
 First, we need to set up an android application. Go to your Android Studio and create a new Java-powered android project with an empty activity.
 
-Once the app is set, and the griddle setting has been configured, add the Retorfy library. Retrofit is an HTTP client library that helps us handle network operations. To set it up to your application, add the following libraries to the `app.gradle` file.
+Once the app is set and the griddle setting has been configured, add the retrofit library. Retrofit is an HTTP client library that helps us handle network operations. To set it up for your application, add the following libraries to the `app.gradle` file.
 
 ```java
 implementation 'com.squareup.retrofit2:retrofit:2.9.0'
@@ -24,7 +24,13 @@ implementation 'com.squareup.retrofit2:converter-gson:2.9.0'
 
 Once you have added them, sync your project so that android can download Retrofit and use it in your android project.
 
-Next, you need a Salona wallet that will provide you with the wallet address. This address helps you access the Salona wallet, get the balances and even receive or Transfer Solana to another wallet. Check this guide and learn how to set up a [salona wallet](https://solpadfinance.medium.com/how-to-create-a-solana-wallet-in-the-sollet-web-wallet-4e050587aca6#:~:text=Sollet%20%E2%80%94%20Solana%20SPL%20token%20wallet&text=Go%20to%20https%3A%2F%2Fwww,wallet%20seed%20using%20a%20password.) using the [Solana SPL token wallet](https://www.sollet.io/).
+Also, you need to ensure you have added internet permission to the manifest file. This will give the applications to process retrofit requests and responses.
+
+```java
+<uses-permission android:name="android.permission.INTERNET" />
+```
+
+Next, you need a Salona wallet that will provide you with the wallet address. This address helps you access the Salona wallet, get the balances and even receive or Transfer Solana to another wallet. Check this guide and learn how to set up a [Salona wallet](https://solpadfinance.medium.com/how-to-create-a-solana-wallet-in-the-sollet-web-wallet-4e050587aca6#:~:text=Sollet%20%E2%80%94%20Solana%20SPL%20token%20wallet&text=Go%20to%20https%3A%2F%2Fwww,wallet%20seed%20using%20a%20password.) using the [Solana SPL token wallet](https://www.sollet.io/).
 
 ![solana-devnet](solana-devnet.png)
 
@@ -32,7 +38,7 @@ In this guide, we will get the address from this list of available and ready-mad
 
 ### Setting the android Salona interface
 
-To start interacting with the salona, you need to first create the request and response interfaces. This will help you access the salon and decide what to do based on the sent request and the received response.
+To start interacting with the Salona, you need to first create the request and response interfaces. This will help you access the Salona and decide what to do based on the sent request and the received response.
 
 To do that, go ahead and create a new Java class interface file and name it `SInterface.java` as shown below:
 
@@ -58,6 +64,10 @@ class GetBalanceRequest {
     String[] params;
 }
 ```
+
+The class `GetBalanceRequest` will set up the application request parameters. In this case, we are sending a request to the Salona server that will enable us to inform the server of what data we need for our application.
+
+Next, add the `GetBalanceResponse` interface as shown below:
 
 ```java
 class GetBalanceResponse {
@@ -105,6 +115,10 @@ class GetBalanceResponse {
 }
 ```
 
+Here we want to get the results of the request we sent. We want a response back to our application. In this response, we want to get the JSON response and its requesting id. We will then get the results of context. This will give us the details that the Salona server has sent to the application. In this example, we want the application to return the Salona slot and its value.
+
+Finally, add this `POST` retrofit method. This defines A relative or absolute path or full URL of the endpoint. This value is optional if the first parameter of the method is annotated with a URL. We will set the Base URL in the main activity later. In this case, the Base URLs should always end in `/`. So go ahead and add this as shown below:
+
 ```java
 @POST("/")
 Call<GetBalanceResponse> retreiveBalance(
@@ -112,17 +126,36 @@ Call<GetBalanceResponse> retreiveBalance(
 );
 ```
 
+We will set the baseUrl endpoint. This endpoint will be called by the `retreiveBalance` send BalanceRequest and gets its body so that we can have the `GetBalanceResponse`.
+
+### Setting the android MainActivity class
+
+We want to display the JSON response and its data in an android view. In this case, we will just use the basic textView created when setting up the application.
+
+Go ahead and access this view using the `findViewById` inside the `onCreate` method as shown below:
+
 ```java
 TextView textView = findViewById(R.id.textView);
+```
+
+Then add a base URL as we explained above. In this case, we will the `Retrofit.Builder()`, set the `baseUrl` and set the `GsonConverterFactory` as shown below:
+
+```java
 Retrofit retrofit = new Retrofit.Builder()
         .baseUrl("http://api.testnet.solana.com")
         .addConverterFactory(GsonConverterFactory.create())
         .build();
 ```
 
+In this case, we are using the Salona test URL as the `baseUrl`, i.e., `http://api.testnet.solana.com"`.
+
+Let's now access the `SInterface` we created earlier using the `retrofit.create()`.
+
 ```java
 SInterface solanaInterface = retrofit.create(SInterface.class);
 ```
+
+To access the Salona, you now need to add your wallet address. In this case, we are using the address `8tfDNiaEyrV6Q1U4DEXrEigs9DoDtkugzFbybENEbCDz` from the list of available and ready-made wallets we explained earlier. Then call the `SInterface` together with its `GetBalanceResponse` and `GetBalanceRequest` classes.
 
 ```java
 String[] walletAddress = {"8tfDNiaEyrV6Q1U4DEXrEigs9DoDtkugzFbybENEbCDz"};
@@ -136,10 +169,16 @@ Call<SInterface.GetBalanceResponse> responseCall = solanaInterface.retreiveBalan
 );
 ```
 
+Now we need to set up the application will showcase based on the response status, either success or failure. To do so, add the `enqueue` Retrofit method to the `responseCall`. Then set the `GetBalanceResponse` as the callback.
+
 ```java
 responseCall.enqueue(new Callback<SInterface.GetBalanceResponse>() {
 });
 ```
+
+This will asynchronously send the request and notify the callback of its response or if an error occurred talking to the server, creating the request, or processing the response.
+
+To notify callback of its response, add the following `onResponse` method inside `responseCall.enqueue()`.
 
 ```java
 @Override
@@ -156,6 +195,10 @@ public void onResponse(@NonNull Call<SInterface.GetBalanceResponse> call, Respon
 }
 ```
 
+This was also set to update the UI based on the received Salona response. If the response was a Success, the textView will be updated with the Salona JSON response. Otherwise, the textView will be updated with the `errorBody()` or the exception message.
+
+Likewise, if an error occurs talking to the server, add this `onFailure` method to keep track of such instances and update the view accordingly.
+
 ```java
 @Override
 public void onFailure(Call<SInterface.GetBalanceResponse> call, Throwable t) {
@@ -163,3 +206,9 @@ public void onFailure(Call<SInterface.GetBalanceResponse> call, Throwable t) {
     textView.setText("onFailure: "+t.getMessage());
 }
 ```
+
+### Conclusion
+
+The app is now ready. You can run it on your mobile device or an emulator device. The Salona will return a response with the slot number and its value on your app screen.
+
+This was a pretty basic setup and will help you have the basics of processing Salona into your android app. You can go ahead and try requesting different parameters from your Salona wallet.
