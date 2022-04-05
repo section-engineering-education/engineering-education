@@ -30,7 +30,7 @@ This article demonstrates how to deploy an application into Azure App Service us
 - [Step 3 - Creating a service principal](#step-3-creating-service-principal)
 - [Step 4 - Create a new project in VSTS](#step-4-create-a-new-project-in-vsts)
 - [Step 5 - Creating a Continuous Integration (CI) build](#step-5-creating-a-continuous-integration-ci-build)
-- [Step 6: Creating Continuous Delivery (CD) pipeline](#step-6-creating-continuous-delivery-cd-pipeline)
+- [Step 6 - Creating Continuous Delivery (CD) pipeline](#step-6-creating-continuous-delivery-cd-pipeline)
 - [Conclusion](#conclusion)
 - [Further reading](#further-reading)
 
