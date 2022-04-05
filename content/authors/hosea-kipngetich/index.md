@@ -1,5 +1,8 @@
 ---
 title: Hosea Kipngetich
 type: authors
+github: https://github.com/kipkoech88
+images:
+  - url: /engineering-education/authors/hosea-kipngetich/avatar.jpg
 ---
-Hosea Kipngetich is an undergraduate student undertaking his Bachelor of Science in Computer Science. He is interested in Networking, ML, and R programming. He also likes baseball as a hobby.
+Hosea Kipngetich is an undergraduate student undertaking his Bachelor degree in Computer Science. He is interested in Computer Networking, ML, and R programming. He also enjoys playing baseball as a hobby.
