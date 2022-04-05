@@ -6,16 +6,18 @@ url: /prefilling-room-database-with-json-data-in-android/
 title: Prefilling Room Database with JSON Data in Android
 description: This tutorial will elaborate on Prefilling Room Database with JSON Data in Android.
 author: benta-odek
-date: 2022-03-21T00:00:00-21:53
+date: 2022-04-05T00:00:00-11:45
 topics: [Languages]
 excerpt_separator: <!--more-->
 images:
 
-  - url: /engineering-education/prefilling-room-database-with-json-data-in-android/hero.jpg
+  - url: /engineering-education/prefilling-room-database-with-json-data-in-android/hero.png
     alt: Prefilling Room Database with JSON Data in Android Hero Image
 ---
-When designing an app, developers strive to develop a way to start with a database that already has data in it. Pre-populating the room database with data, which can be material from a prepared database (.db) files in the device's file system or even JSON data.
+When designing an app, developers strive to develop a way to start with a database that already has data in it.
 <!--more-->
+This is done by pre-populating the room database with data, which can be material from a prepared database (.db) files in the device's file system or even JSON data.
+
 In most cases, a REST query is used to retrieve data from the application backend, but this is not the case with our application because it is standalone, and we only need to have the APK file.
 
 ### Table of contents
@@ -36,20 +38,20 @@ In most cases, a REST query is used to retrieve data from the application backen
 - [Conclusion](#conclusion)
 
 ### Prerequisites
-To follow along with this tutorial, you should;
-- Have a fundamental grasp of Android programming.
-- Have a thorough knowledge of the Kotlin programming language.
-- Have a concept of the [ViewModel](https://developer.android.com/topic/libraries/architecture/viewmodel) as utilized in Android.
-- Have an IDE installed, preferably [Android Studio](https://developer.android.com/studio).
+To follow along with this tutorial, you should have:
+- a fundamental grasp of Android programming.
+- thorough knowledge of the Kotlin programming language.
+- understanding of the [ViewModel](https://developer.android.com/topic/libraries/architecture/viewmodel) as utilized in Android.
+- an IDE installed, preferably [Android Studio](https://developer.android.com/studio).
 
 ### Goals
-This tutorial aims to explain :
-- What is pre-populating Room database with initial data as used in Android.
-- What is a room callback, and how is it added to the database?
-- How to implement prefilling room database with data.
-- When it is necessary to pre-populate a room database.
+This tutorial aims to explain:
+- pre-populating Room database with initial data as used in Android.
+- room callbacks, and how they are added to the database
+- how to implement prefilling room database with data.
+- when it is necessary to pre-populate a room database.
 
-### What is pre-populating Room database with initial data
+### What is pre-populating
 It is a technique in which an application launches with existing data in its database, which might be prepared (.db) files stored on the device's file system or even JSON data.
 
 ### Getting started with pre-populating Room database.
@@ -130,7 +132,7 @@ Let us design a user interface that makes use of `RecyclerView` to display the l
 Room database comprises three components: `Entity`, `DAO`, and `Database`. Let us define all three components:
 
 ##### Entity
-Entity is a data class that functions similarly to a table. We will define an `Entity` that holds a note title and its description.
+An entity is a data class that functions similarly to a table. We will define an `Entity` that holds a note title and its description.
 
 ```kotlin
 @Entity(tableName = "Notes_table")
@@ -182,7 +184,7 @@ abstract class NoteDatabase : RoomDatabase() {
                         NoteDatabase::class.java,
                         "notes"
                     )
-                        
+
                         .build()
                 }
             }
@@ -240,7 +242,7 @@ Here is the JSON data which will be prepopulated into our Room database:
 ]
 ```
 
->JSON data should be included within the project, which is done by creating a sub-directory called `raw` within the `res` directory. Then within the created sub-directory, add your JSON File.
+> JSON data should be included within the project, which is done by creating a sub-directory called `raw` within the `res` directory. Then within the created sub-directory, add your JSON File.
 
 ![Json](/engineering-education/prefilling-room-database-with-json-data-in-android/json.png)
 
@@ -249,25 +251,23 @@ Let us create a prefilling class that will contain the prefilling database logic
 
 The class takes contexts in the constructor and extends `RoomDatabase.Callback()`. The callback is invoked after all of the tables are built, that is, during the database creation.
 
-Inside the class's `onCreate` method, which accepts a database of type `SupportSQLiteDatabase` as a parameter is overridden, and this is where all of the class's functions are called.
+Inside the class's `onCreate` method, is overridden and this is where all the class's functions are called. It accepts a database of type `SupportSQLiteDatabase` as a parameter.
 
 ```kotlin
 class StartingNotes(private val context: Context) :RoomDatabase.Callback() {
     override fun onCreate(db: SupportSQLiteDatabase) {
         super.onCreate(db)
-        
         ...
-        
     }
-} 
+}
 ```
 
-First, let us create a function to load the JSON file. Inside the `.openRawResource`, we pass the file's name that contains the JSON data.
+First, let's create a function to load the JSON file. Inside the `.openRawResource`, we pass the file's name that contains the JSON data.
 
 ```kotlin
 private fun loadJSONArray(context: Context):JSONArray?{
 
-    val inputStream = context.resources.openRawResource(R.raw.notes) 
+    val inputStream = context.resources.openRawResource(R.raw.notes)
 
     BufferedReader(inputStream.reader()).use {
         return JSONArray(it.readText())
@@ -279,7 +279,7 @@ Then, let us create a `suspend` function to do the database filling. We get the 
 
 ```kotlin
 private suspend fun fillWithStartingNotes(context: Context){
-    
+
     val dao = NoteDatabase.getInstance(context)?.dao
 
     try {
@@ -342,7 +342,7 @@ class MainViewModel(private val noteDatabase: NoteDatabase) : ViewModel() {
 }
 ```
 
->I have not implemented other methods in this tutorial as that is not the main focus.
+> I have not implemented other methods in this tutorial as that is not the main focus.
 
 #### Step nine: Displaying data
 Since the JSON data has already been loaded to the database, it should be displayed to the user interface. The data is displayed onto the `recyclerView` that we defined.
@@ -372,20 +372,22 @@ class MainActivity : AppCompatActivity() {
 }
 ```
 
->Ensure you have created an adapter class that connects the user interface and the Room data source. Also, create a ViewModel Factory used to pass arguments to our `ViewModel`.
+> Ensure you have created an adapter class that connects the user interface and the Room data source. Also, create a ViewModel Factory to pass arguments to our `ViewModel`.
 
 ### When is it necessary to pre-populate a Room database
 - If the program should be launched with a particular set of data.
 - Any explanations need to be completed and stored in a JSON file.
 - If the program is complicated and the UI components require a literal explanation.
-- 
+-
 ### Demo
-![Demo](/engineering-education/prefilling-room-database-with-json-data-in-android/demo.png)
+![Demo](/engineering-education/prefilling-room-database-with-json-data-in-android/demo.jpeg)
 
-This GitHub [Repository](https://github.com/benta-odek/PrefillingRoomDbDemo) contains the complete code. 
+This GitHub [Repository](https://github.com/benta-odek/PrefillingRoomDbDemo) contains the complete code.
 
 ### Wrapping up
-In this tutorial, we have gone through pre-populating room database with initial data used in Android. Also, we have covered Room Callback, and how it is added to the database, and how to implement prefilling Room database with data and when it is necessary to pre-populate a room database.
+In this tutorial, we have gone through pre-populating room database with initial data used in Android.
+
+We have also covered room callbacks, how they are added to the database, and how to implement prefilling Room database with data and when it is necessary to pre-populate a room database.
 
 Happy coding!
 
