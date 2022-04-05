@@ -6,7 +6,7 @@ url: /azure-devops-api-development/
 title: How to Deploy an Application into Azure App Service using Azure DevOps
 description: This article will help the reader understand how to deploy an application into Azure App Service using Azure DevOps (VSTS) Continuous Integration/Continuous Delivery (CI/CD) pipeline.
 author: bernard-mburu
-date: 2022-04-04T00:00:00-02:33
+date: 2022-04-06T00:00:00-16:15
 topics: [Languages]
 excerpt_separator: <!--more-->
 images:
@@ -177,7 +177,7 @@ To check whether your code is deployed successfully or not, use this [URL](https
 We have successfully deployed our application on Azure using the Azure app service. We have also
 integrated our repository to the web host with the help of Azure DevOps. 
 
-Hopefully, this article will give you some insight on using Azure and make your project deployment faster and simpler.
+Hopefully, this article gave you some insight on using Azure and make your project deployment faster and simpler.
 
 ### Further Reading
 - [Automation Test With Selenium, .NET And Azure DevOps](https://docs.microsoft.com/en-us/azure/devops/pipelines/test/continuous-test-selenium?view=azure-devops)
