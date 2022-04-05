@@ -32,7 +32,7 @@ Also, you need to ensure you have added internet permission to the manifest file
 
 Next, you need a Salona wallet that will provide you with the wallet address. This address helps you access the Salona wallet, get the balances and even receive or Transfer Solana to another wallet. Check this guide and learn how to set up a [Salona wallet](https://solpadfinance.medium.com/how-to-create-a-solana-wallet-in-the-sollet-web-wallet-4e050587aca6#:~:text=Sollet%20%E2%80%94%20Solana%20SPL%20token%20wallet&text=Go%20to%20https%3A%2F%2Fwww,wallet%20seed%20using%20a%20password.) using the [Solana SPL token wallet](https://www.sollet.io/).
 
-![solana-devnet](solana-devnet.png)
+![solana-devnet](/engineering-education/blockchain-on-android-using-the-solana-programs/solana-devnet.png)
 
 In this guide, we will get the address from this list of available and ready-made wallets.
 
