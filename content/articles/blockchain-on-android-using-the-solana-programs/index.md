@@ -42,7 +42,7 @@ To start interacting with the Salona, you need to first create the request and r
 
 To do that, go ahead and create a new Java class interface file and name it `SInterface.java` as shown below:
 
-![java-interface-file](java-interface-file.png)
+![java-interface-file](/engineering-education/blockchain-on-android-using-the-solana-programs/java-interface-file.png)
 
 ```java
 class GetBalanceRequest {
