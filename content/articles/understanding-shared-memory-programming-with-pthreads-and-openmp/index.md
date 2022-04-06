@@ -169,10 +169,9 @@ To run the code above in the UNIX system, run the command below:
 
 ```bash
 gcc first.c -lpthread -o output1
-```  
+``` 
 
-GCC is the software used to run the C++ code in Linux systems.
-GCC is the software used to run the C++ code in Linux systems. The `-lpthred` command tells the compiler that the compiled file is a pthread program. The `-o' specifies the output of the compiled program.
+GCC is the software used to run the C++ code in Linux systems. The `-lpthred` command tells the compiler that the compiled file is a pthread program. The `-o` specifies the output of the compiled program.
 
 After the code is compiled, an output file is created and saved in the same terminal directory. For our case, the output file will be saved as `output1` as we specified in the command. 
 
@@ -205,7 +204,6 @@ There are three methods to cancel a thread:
 - An uncancelable thread may exist in the system at any one time - To cancel the thread, one must make a discreet request.
 - The thread may be canceled synchronously - Although the thread may be terminated, it cannot be done at random. Cancellation requests queued for execution may only be canceled at specified stages.
 
-
 Asynchronous thread cancellation is possible. The thread may be ended, but not at random.
 
 Cancellation requests may only be canceled at certain stages. Threads that are asynchronously cancellable can be interrupted at any moment. 
@@ -222,7 +220,6 @@ We use the `PTHREAD CANCEL DISABLE` or `PTHREAD CANCEL ENABLE` to enable or disa
 The `pthread_setcancelstate` returns NULL. We use the `pthread_setcancelstate` for critical parts. To put it another way, a crucial section is a block of code that must be executed in full or not at all.
 
 Let us look at an example program that protects an ATM transaction with a critical section:
-
 
 ```c++
 #include <pthread.h>
@@ -321,7 +318,6 @@ The directive, work-sharing concept, must be in a parallel section:
 
 The `#pragma omp` command distributes the loop across threads. It must be used with another block of code:
 
-
 Let us look at an example program that adds all elements in an array. Save the code as `third.c`.
 
 ```C++
@@ -362,7 +358,6 @@ The output is:
 ```bash
 The addition is =37714 should be 4950
 ```
-
 
 ### Conclusion
 From the article above, we have learned multithreading and its implementation using the OpenMP and pthreads. We also learned how to use the Linux terminal to run C and C++ programs. Use the knowledge learned to understand more about Linux systems.
