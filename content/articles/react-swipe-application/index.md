@@ -3,10 +3,10 @@ layout: engineering-education
 status: publish
 published: true
 url: /react-swipe-application/
-title: Building a swipe application using the MongoDB Cloud and React js
-description: This is a tutorial on how to build a swipe application using the MongoDB Cloud and React js
+title: Building a Swipe Application Using the MongoDB Cloud and React.js
+description: This is a tutorial on how to build a swipe application using the MongoDB Cloud and React.js
 author: bhanji-brilliant
-date: 2022-03-26T00:00:00-13:35
+date: 2022-04-06T00:00:00-04:00
 topics: [Languages]
 excerpt_separator: <!--more-->
 images:
@@ -14,13 +14,11 @@ images:
   - url: /engineering-education/react-swipe-application/hero.png
     alt: Swipe App React Img Alt
 ---
-With JavaScript popularity on the rise, it is becoming more and more common to build web applications using JavaScript.  
+With JavaScript popularity on the rise, it is becoming more and more common to build web applications using JavaScript. One of the major requirements of these applications is the use of REST APIs to communicate with the backend.
 <!--more-->
-One of the major requirements of these applications is the use of REST APIs to communicate with the backend.
+One of the most common ways of connecting to backend is using a REST API build with Express.js, a powerful Node.js framework.
 
-One of the most common ways of connecting to backend is using a REST API build with Express JS, a powerful Node JS framework.
-
-In this tutorial, we will be building a full-stack swipe application with React, Express Js and Mongo. Depending on the direction of the swipe, different events are triggered in the backend.
+In this tutorial, we will build a full-stack swipe application with React, Express.js and Mongo. Depending on the direction of the swipe, different events are triggered in the backend.
 
 ### Table of contents
 - [Table of contents](#table-of-contents)
@@ -38,7 +36,6 @@ To follow along with this tutorial, you'll need the following:
 - MongoDB locally set up or on the cloud. In this tutorial, we will be using MongoDB on the cloud.
 - Local development environment setup.
 
-
 > **Note:** If you are using a Mac, you can install the MongoDB Cloud by following the instructions on the [MongoDB Cloud](https://www.mongodb.com/cloud/atlas/) page.
 
 ### Objectives
@@ -47,9 +44,10 @@ By the end of this tutorial, you will be able to connect your local MongoDb to a
 To better understand this tutorial, we encourage learners to code along to master the concepts.
 
 ### Setting up the swipe application
-Let's start by setting up the swipe application frontend. 
+Let's start by setting up the swipe application frontend.
 
 Run the following command to install the necessary dependencies:
+
 ```bash
 npx create-react-app swipe-app
 # next cd to the application root
@@ -58,13 +56,14 @@ cd swipe-app
 npm start
 ```
 
-Next, we need to install a few packages; since we're building a swiping application, React has a component [React Tinder Card](https://www.npmjs.com/package/react-tinder-card) that we will use to develop our application.
+Next, we need to install a few packages. Since we're building a swipe application, React has a component [React Tinder Card](https://www.npmjs.com/package/react-tinder-card) that we will use to develop our application.
 
 Additionally, we want our app to be able to connect to the backend server, and we will need to install [Axios](https://www.npmjs.com/package/axios) to make requests to remote resources.
 
 Finally, we will need to install [React-Bootstrap](https://react-bootstrap.github.io/react-bootstrap/) for styling and [UUID](https://www.npmjs.com/package/uuid) to build our application.
 
-Run the following commands to install the above dependencies:
+Run the following commands to install the dependencies above:
+
 ```bash
 # install a card component for swipeable elements
 npm install react-tinder-card
@@ -76,57 +75,58 @@ npm install react-bootstrap
 npm install uuid
 ```
 
-Now that we have installed our main dependencies let's create a folder for our application.
+Now that we have installed our main dependencies, let's create a folder for our application.
 
-Proceed and create a folder named `swipe-app` in your current directory. 
+Proceed to create a folder named `swipe-app` in your current directory.
 
-Next, create a JavaScript file named `index.js` in the `swipe-app` folder and import the above dependencies as shown below.
+Next, create a JavaScript file named `index.js` in the `swipe-app` folder and import the dependencies above as shown below:
+
 ```javascript
 // import the axios package
-import axios from 'axios';
+import axios from "axios";
 // import the react-tinder-card package
-import TinderCard from 'react-tinder-card';
+import TinderCard from "react-tinder-card";
 // import the react and a component
-import React, { Component } from 'react';
+import React, { Component } from "react";
 // import the uuid package
-import { v4 as uuid } from 'uuid';
-
+import { v4 as uuid } from "uuid";
 ```
 
-We import the Axios package and the react-tinder-card package in the above script. We also import the react and a component. Finally, we import the uuid package.
+We import the Axios package and the react-tinder-card package in the script above. We also import react and a component. Finally, we import the uuid package.
 
-Next, let's proceed and add logic for our application as shown below:
+Let's add logic to our application as shown below:
+
 ```javascript
 // edit the index.js file as shown below
-class SwipeApp extends Component
-{
-    //add a constructor
-    constructor() {
-        // add super to call the parent constructor
-        super();
-        // add state
-        this.state = {
-            photos: [],
-            sessionId: uuid(),
-            isLiked: false,
-        };
-        // add the click events
-        this.handlePhotoClick = this.handlePhotoClick.bind(this);
-        // the details method invoked when an image is clicked
-        this.showImageDetails = this.showImageDetails.bind(this);
-    }
+class SwipeApp extends Component {
+  //add a constructor
+  constructor() {
+    // add super to call the parent constructor
+    super();
+    // add state
+    this.state = {
+      photos: [],
+      sessionId: uuid(),
+      isLiked: false,
+    };
+    // add the click events
+    this.handlePhotoClick = this.handlePhotoClick.bind(this);
+    // the details method invoked when an image is clicked
+    this.showImageDetails = this.showImageDetails.bind(this);
+  }
 }
 ```
 
-In the above script, we create a constructor. Then, we add a `super()` to call the parent constructor. 
+In the script above, we create a constructor. We then add a `super()` method to call the parent constructor.
 
 We then proceed to add state, a `handlePhotoClick()` and `showImageDetails()` methods. We will use these methods to handle the click events.
 
-While the  `handlePhotoClick()` method is invoked when an image is clicked, it will update the application's state.
+While the `handlePhotoClick()` method is invoked when an image is clicked, it will update the application's state.
 
-The `showImageDetails()` method has also invoked an image is clicked and will show the details of the image.
+The `showImageDetails()` method is also invoked when the image is clicked, it will show the details of the image.
 
-Next, let's add methods above to handle our key logics while interacting with the application.
+Next, let's add the methods below to handle our key logics while interacting with the application:
+
 ```javascript
 // async method to run on screen swipe
 async onScreenSwipe(to, photoId, currentSessionId) {
@@ -167,23 +167,24 @@ showImageDetails(item) {
 }
 ```
 
-In the above script we add the `onScreenSwipe()`, `handlePhotoClick()` and `showImageDetails()` methods.
+In the script above, we add the `onScreenSwipe()`, `handlePhotoClick()` and `showImageDetails()` methods.
 
 The `onScreenSwipe()` method is invoked when the user swipes the screen. Therefore, it acts as a watcher to update the application's state.
 
-The `handlePhotoClick()` method is invoked when the user clicks on the like button. We want to record the reactions of the user to the image. Therefore, we use the `axios.post()` method to record the reaction. 
+The `handlePhotoClick()` method is invoked when the user clicks on the like button. We want to record the reactions of the user to the image. Therefore, we use the `axios.post()` method to record the reaction.
 
 The state of the like button is either true or false. We use the `!this.state.isLiked` to toggle the state of the like button.
 
-The `showImageDetails()` method is invoked when the user clicks on an image. We want to show the details of the image. Therefore, we use the `window.alert()` method to show the details of the image.
+The `showImageDetails()` method is invoked when the user clicks on an image. We want to show the details of the image. Therefore, we use the `window.alert()` method.
 
 Finally, we add the `onScreenSwipe()`, `handlePhotoClick()` and `showImageDetails()` methods to the `index.js` file.
 
-We also make necessary adjustments whenever events are invoked. For example, on-screen swipe, we remove the image from the screen. 
+We also make necessary adjustments whenever events are invoked. For example, on-screen swipe, we remove the image from the screen.
 
 Likewise, we update the image's `isLiked` property on the image click.
 
 Next, let's mount our component as shown below:
+
 ```javascript
 // edit the index.js file as shown below
 async componentWillMount() {
@@ -245,7 +246,7 @@ render() {
 }
 ```
 
-In the above template, we add the `onScreenSwipe()`, `handlePhotoClick()` and `showImageDetails()` methods to our elements. These elements acts as the trigger on the DOM.
+In the template above, we add the `onScreenSwipe()`, `handlePhotoClick()` and `showImageDetails()` methods to our elements. These elements acts as the trigger on the DOM.
 
 We also add the `photoLikeButtonLabel` variable to our elements. Then we define the `TinderCard` component and add the events.
 
@@ -257,63 +258,64 @@ Now that we have set up our frontend let's set up our backend.
 We need to create a new folder named `backend` in our current directory to set up the backend.
 
 Let's begin by setting up the routes as follows:
+
 ```javascript
 // create routes.js file in the backend folder
 // start by importing the express main app
-const express = require('express');
+const express = require("express");
 // import the router
 const appRoute = express.Router();
 // import the db connection
-const dbConnection = require('dbConnection');
+const dbConnection = require("dbConnection");
 // create the app route for photos
-appRoute.route('/photos').get(async function (_req, res) {
-    // get the photos from the db
-    const dbConnect = dbConnection.getDatabaseConnection();
-    dbConnect
-        .collection('photosAndReviews')
-        .limit(10)
-        .toArray((err, result) => {
-            if (err) {
-                // if there is an error, return the error
-                res.status(400).send('Error fetching photos!');
-            } else {
-                // if there is no error, return the photos
-                res.json(result);
-            }
-        });
+appRoute.route("/photos").get(async function (_req, res) {
+  // get the photos from the db
+  const dbConnect = dbConnection.getDatabaseConnection();
+  dbConnect
+    .collection("photosAndReviews")
+    .limit(10)
+    .toArray((err, result) => {
+      if (err) {
+        // if there is an error, return the error
+        res.status(400).send("Error fetching photos!");
+      } else {
+        // if there is no error, return the photos
+        res.json(result);
+      }
+    });
 });
 // create the app route for photos swipe
-appRoute.route('/photos/photoSwipe')
-    .post((req, res) => {
-        // get the photos from the db
-        const dbConnect = dbConnection.getDatabaseConnection();
-        // create an object to hold the data
-        const tryMatchingDocument = {
-            listing_id: req.body.id,
-            last_modified: new Date(),
-            session_id: req.body.session_id,
-            direction: req.body.direction,
-        };
-        // insert the data into the db
-        dbConnect
-            .collection('matchingDocument')
-            .insertOne(tryMatchingDocument, (err, result) => {
-                if (err) {
-                    res.status(400).send('Error saving matching document!');
-                } else {
-                    res.json(result);
-                }
-            });
+appRoute.route("/photos/photoSwipe").post((req, res) => {
+  // get the photos from the db
+  const dbConnect = dbConnection.getDatabaseConnection();
+  // create an object to hold the data
+  const tryMatchingDocument = {
+    listing_id: req.body.id,
+    last_modified: new Date(),
+    session_id: req.body.session_id,
+    direction: req.body.direction,
+  };
+  // insert the data into the db
+  dbConnect
+    .collection("matchingDocument")
+    .insertOne(tryMatchingDocument, (err, result) => {
+      if (err) {
+        res.status(400).send("Error saving matching document!");
+      } else {
+        res.json(result);
+      }
     });
+});
 // export the app route
 module.exports = appRoute;
 ```
 
-We add the `appRoute` variable in the above script and define the `/photos` route. We also add the `/photos/photoSwipe` route.
+We add the `appRoute` variable in the script above and define the `/photos` route. We also add the `/photos/photoSwipe` route.
 
 Next, we export the `appRoute` to make it available to other files.
 
 To test our application, run the following commands:
+
 ```bash
 # cd to the backend folder
 cd backend
@@ -323,10 +325,10 @@ npm install
 npm start
 ```
 
-You can now browse to http://localhost:3000/photos to see the photos and perform various actions.
+You can now browse to [http://localhost:3000/photos](http://localhost:3000/photos) to see the photos and perform various actions.
 
 ### Conclusion
-This tutorial shows how to set up a frontend and backend for our application using React and Express.js. 
+This tutorial shows how to set up a frontend and backend for our application using React and Express.js.
 
 We can use the `TinderCard` component to display images and use `Axios` to make API calls.
 
