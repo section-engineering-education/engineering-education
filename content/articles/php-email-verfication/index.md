@@ -1,15 +1,15 @@
-### How to Send an email to verify the registration of a new user in PHP
-
-In this lesson, I'll create a simple user registration form, fill it up with information, submit it to the store, and send an email verification link to the user. After clicking the email verification link, you will be validated in the database and authorized to log in.
+In this tutorial, we will create a simple user registration form, fill it with data, submit it to the store, and send an email verification link to the user. After clicking the email verification link, the user will be validated in the database and authorized to log in.
 
 ### Prerequisites
 
-- Have some good knowledge of PHP
-- Have some basics of HTML, CSS, and bootstrap
-- How to use XAMPP and VsCode
+- Clear understanding of PHP
+- The user should have the basic knowledge of HTML, CSS, and Bootstrap
+  -The user should be able to use XAMPP and VS code
 
- #### Goals
-- Understanding how to :
+#### Goals
+
+By the end of this tutorial, the reader will be able to:
+
 - Configure Xammp to allow sending of email in the localhost.
 - Create a registration form.
 - Design a database table for storing the user details.
@@ -18,30 +18,31 @@ In this lesson, I'll create a simple user registration form, fill it up with inf
 - Create a page for email verification.
 - Design a login form.
 - Only allow users to log in after their email addresses have been validated.
-### Step 1 - Download and extract bootstrap.
-- Download the bootstrap zip file of the latest version and extract the file in a folder and copy JS and  CSS folders.
+-
 
+### Step 1 - Download and extract bootstrap.
+- Download the bootstrap zip file of the latest version and extract the file in a folder and copy JS and CSS folders.
 
 ### Step 2 - Creating our Project.
-- First, you create a folder inside the htdocs in  xampp and give the name of your own choice for example  `email_verication`
+- First, you create a folder inside the htdocs in xampp and give the name of your own choice for example `email_verication`
 - Inside the folder copy and paste the JS and CSS file you downloaded above.
+
 ### Step 3 - Designing our simple registration interface and saving the data to database.
 - In this step, we shall design a user interface that will request the user to enter his/her username, email, password, and confirm the password in the respective input field and a register button.
 - First, open Visual Studio and click file then open the folder you created above and create a file inside and give the name of your own choice with an extension of PHP for example `index.php`.
 - Secondly, Open the browser and search bootstrap with the same version as the one we downloaded above.
-- Click get started with bootstrap  at the left-hand side and copy the link for CSS 
-- Inside the `index.php` we now design an interface that will prompt the user to enter his/her username, email, password, and confirm_password in input fields. 
+- Click get started with bootstrap at the left-hand side and copy the link for CSS
+- Inside the `index.php` we now design an interface that will prompt the user to enter his/her username, email, password, and confirm_password in input fields.
 
 - There are different ways of getting the user input either you can use the `GET` or `POST` method but in this tutorial, we shall use the `POST` method since the details cannot be displayed in URL unlike `GET` whereby all the details are displayed on the URL when the user click the register button hence making it insecure.
 
 - After saving the details to the user in the database it will display the message like Registered successfully please click the link sent to your email to verify your account.
 
-- Instead of using the PHP mailer API  we shall use mail function provided in php in order for us to send  email to a user who has registered but there verification is still pending.
+- Instead of using the PHP mailer API we shall use mail function provided in php in order for us to send email to a user who has registered but there verification is still pending.
 
 - Copy the following code and paste in your file that you created above `index.php`.
 
-
-```php 
+```php
 <?php
 	$msg = "";
 	if( isset($_POST['submit']) ) {
@@ -54,17 +55,17 @@ In this lesson, I'll create a simple user registration form, fill it up with inf
 
 		if($pwd !== $confirm_pwd) {
 			$msg = "Please check your password.";
-		} 
+		}
 		else {
 			$sql = $con->query("SELECT id FROM register WHERE email='$email'");
 			if($sql->num_rows > 0) {
 				$msg = "This email already exists.";
-			} 
+			}
 			else {
 				$pwd = md5($pwd);
 				// generate token
 				$token = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890!*()$";
-			
+
 				$token = str_shuffle($token);
 				$token = substr($token, 0, 10);
 
@@ -85,14 +86,14 @@ In this lesson, I'll create a simple user registration form, fill it up with inf
 
 				if(mail($email, $subject, $message,$heading)
 				){
-           
+
 				   $msg="You have been registered. Please confirm your email address.";
 				}
 				else{
 					echo "Fail to check the correct format of an email.";
 				}
 
-				
+
 			}
 		}
 
@@ -110,7 +111,7 @@ In this lesson, I'll create a simple user registration form, fill it up with inf
 	<!-- <link rel="stylesheet" type="text/css" href="style.css"> -->
 
 	<title>Register Form </title>
- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous"> 
+ <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
 </head>
 <body>
 	<div class="register-form" style ="width:400px;
@@ -125,7 +126,7 @@ In this lesson, I'll create a simple user registration form, fill it up with inf
 						}
 					?>
 					<form action="index.php" method="post">
-						
+
 						<input type="text" name="username" placeholder="Name" class="form-control">
 						<br>
 						<input type="text" name="email" placeholder="Email" class="form-control">
@@ -154,30 +155,32 @@ Your final output should be something similar to this
 ![Demo1](/engineering-education/How-to-Send-an-email-to verify-the-registration-of-a-new-user-in-PHP/demo1.png)
 
 - After entering the details and clicking the register button the output should look like this
-![Demo2](/engineering-education/How-to-Send-an-email-to verify-the-registration-of-a-new-user-in-PHP/demo2.png)
-
+  ![Demo2](/engineering-education/How-to-Send-an-email-to verify-the-registration-of-a-new-user-in-PHP/demo2.png)
 
 ### step 4-Designing database and table.
+
 - Open xampp then click Apache and MYSQL start button and on the second column of MYSQL click on admin to open on the browser.
-After opening the browser click on the database to create a new database then give the name of your own choice.
+  After opening the browser click on the database to create a new database then give the name of your own choice.
 - Create a database table that contains the following five columns: `username`, `email`, `password`, `is_confirm`, `token`.
 - For my case, I name my database as `email_verify` and table as `register`.
 
 #### Explanation
+
 - `username` -This is any name of the user.
-- `email_` -This is the email address that will receive the link for  account verification
+- `email_` -This is the email address that will receive the link for account verification
 - `password` -Unique password created by the user
 - `is_confirm` -Check whether the email is verified or not if not it will insert zero and if verified it will insert 1.
-- `token`-  This holds the token number generated randomly which when an account is verified it automatically changes from the database.
+- `token`- This holds the token number generated randomly which when an account is verified it automatically changes from the database.
 
 - `str_shuffle()` - function/method that randomly shuffles all the characters of a string to generate a unique number.
 - `substr($token, 0, 10)`- technique for extracting a substring from a string that starts from characters in the token, a given character position between 0 to 10 and finishes before the string's end.
 
-
 ### step 7-Designing a confirmation interface for email
+
 We now create another PHP file name it as `confirm.php`
 This file will contain a code that will verify the email stored in the database so that the user is allowed to log in.
-- If and  if the user has registered without his/her email been verified he/she will not be allowed to log in.
+
+- If and if the user has registered without his/her email been verified he/she will not be allowed to log in.
 
 - Copy the following code and paste in your file that you created above `confirm.php`.
 
@@ -197,17 +200,19 @@ if($sql->num_rows >0)
 }
 else{
     echo ' please <a href="http://localhost/email_verification/login.php">login</a>';
-} 
+}
 
 ?>
 
 ```
+
 - If you log in with your unverified email address the output should look like the one below
 
 ![Demo3](/engineering-education/How-to-Send-an-email-to verify-the-registration-of-a-new-user-in-PHP/demo3.png)
--  But after clicking the confirmation link send to your email the output should look like the one below:
 
-![Demo6](/engineering-education/How-to-Send-an-email-to verify-the-registration-of-a-new-user-in-PHP/demo6.png) 
+- But after clicking the confirmation link send to your email the output should look like the one below:
+
+![Demo6](/engineering-education/How-to-Send-an-email-to verify-the-registration-of-a-new-user-in-PHP/demo6.png)
 
 ### Step 8- Configuring the xampp setting to allow sending of email from our local machine.
 
@@ -215,8 +220,7 @@ else{
 
 - When you open it find [mail function] and comment on everything by inserting a semicolon at the beginning of each line like the one I have done below
 
-
--  Then after successfully inserting comments at the beginning of every statement copy the following statements and paste it inside it:
+- Then after successfully inserting comments at the beginning of every statement copy the following statements and paste it inside it:
 
 ```php
 
@@ -227,14 +231,16 @@ sendmail_path = "\"C:\xampp\sendmail\sendmail.exe\" -t"
 
 ```
 
-### Explanation 
+### Explanation
+
 - `sendmail_from ` -This is your own email which is used to send mail to the receiver.
 - `sendmail_path` -This is the part that contains the sendemail.ini file.
 - `smtp_port`- This is the port number that supports the sending of emails.
 
-- Open the xampp again, find the folder for Sendmail open it and find a file `sendmail.ini`.After the file right-clicks on it and open it with your  editor and find  [sendmail]. Comment every line by inserting the semicolon at the beginning of each statement. 
+- Open the xampp again, find the folder for Sendmail open it and find a file `sendmail.ini`.After the file right-clicks on it and open it with your editor and find [sendmail]. Comment every line by inserting the semicolon at the beginning of each statement.
 
 - After successfully placing comments copy and paste these lines inside it.
+
 ```PHP
 smtp_server=smtp.gmail.com
 smtp_port=587
@@ -244,18 +250,20 @@ auth_username=myemail@gmail.com
 auth_password=your email password
 force_sender=myemail@gmail.com
 ```
-### Explanation 
+
+### Explanation
+
 - `smpt_port` -This is another SMTP submission port that is supported by the vast majority of servers and will significantly minimize the number of messages that are refused in Port 25.
 - `smpt_port` -We change it to `smtp.gmail.com` because we want to send email using our Gmail account.
 
-- `auth_password`-  You enter your own email password
+- `auth_password`- You enter your own email password
 - `force_sender`- Your email address(Sender email address).
 
-
 ### step 9- Design a login interface.
+
 - Here we shall create a login interface that will ask the user to enter his/her email and password as stored in a database.
 
-- Give a name of your own choice for example  i name it as `login.php`.
+- Give a name of your own choice for example i name it as `login.php`.
 
 - Also we shall verify the user who wants to login to confirm whether his/her details exist in database
 
@@ -304,7 +312,7 @@ force_sender=myemail@gmail.com
                         }
                     ?>
                     <form action="verifyLogin.php" method="post">
-                        
+
                         <input type="text" name="email" placeholder="Email" class="form-control">
                         <br>
                         <input type="password" name="password" placeholder="Password" class="form-control">
@@ -314,7 +322,7 @@ force_sender=myemail@gmail.com
 
                     </form>
                 </div>
-                
+
             </div>
         </div>
 
@@ -324,8 +332,10 @@ force_sender=myemail@gmail.com
 
 
 ```
+
 ![Demo4](/engineering-education/How-to-Send-an-email-to verify-the-registration-of-a-new-user-in-PHP/demo4.png)
 
 ### Conclusion
+
 - In this tutorial we have learned how to Configure Xammp to allow sending of email in the localhost ,design a form for registration,design a database table for storing the user details, send an email to the user containing a link for confirmation,generate a token for email verification,construct an email verification page, create a login form and how to allow users to log in only once their emails have been verified.
 - Reference PHP documentation Mail function.
