@@ -457,7 +457,7 @@ const wrapper = shallowMount(HomeView, {
 
 The next step is to select the list of users in the component. If you take a look at our `views/HomeView.vue` component, the component that is been looped through to generate the lists of users is the `GithubUsers.vue` component. So, we might want to import this component as we will be needing it in our test. 
 
-At the top of the `homeview.spec.js` file, import the `GithubUser.vue` component like so:
+At the top of the `homeview.spec.js` file, import the `GithubUsers.vue` component like so:
 
 ```javascript
 import GithubUsers from '@/components/GithubUsers.vue'
