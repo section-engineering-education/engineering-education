@@ -110,7 +110,7 @@ describe('Details.vue', () => {
 });
 ```
 
-Inside the test function, we’ll create a variable called `wrapper` that is set to the value returned by the `shallowMount` function passing in the component we’ll like to test which is in our case the `detailsView` component. And then, we’ll write an assertion to check if the text content in our `DetailsView.vue` component is outputted.
+Inside the test function, we’ll create a variable called `wrapper` that is set to the value returned by the `shallowMount` function passing in the component we’ll like to test which is in our case the `DetailsView` component. And then, we’ll write an assertion to check if the text content in our `DetailsView.vue` component is outputted.
 
 Inside the test function add the code snippet below: 
 
@@ -139,7 +139,7 @@ Run the following command below to run our test:
 npm run test:unit
 ```
 
-With the below test report our test passed. This means the `details.vue` component renders the `This is the details Page` text.
+With the below test report our test passed. This means the `DetailsView.vue` component renders the `This is the details Page` text.
 
 ```bash
 PASS  tests/unit/details.spec.js (7.326 s)
