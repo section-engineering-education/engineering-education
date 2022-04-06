@@ -6,7 +6,7 @@ url: /qiskit-for-quantum-computing/
 title: Qiskit for Quantum Computing
 description: This tutorial aims to introduce our readers to Quantum computing. It also introduces them to the Qiskit toolkit and lets them experiment using Jupyter Notebooks hosted in IBM Quantum Lab.  
 author: monica-dalmas
-date: 2022-04-06T00:00:00-16:30
+date: 2022-04-06T00:00:00-01:00
 topics: [Networking]
 excerpt_separator: <!--more-->
 images:
