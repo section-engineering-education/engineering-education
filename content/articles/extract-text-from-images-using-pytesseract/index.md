@@ -1,3 +1,19 @@
+---
+layout: engineering-education
+status: publish
+published: true
+url: /extract-text-from-images-using-pytesseract/
+title: Extract Text From Images Using PyTesseract
+description: This article will introduce the reader to tesseract library, and how it can be used to extract textual information from images.
+author: edwin-wachira
+date: 2022-06-06T00:00:00-00:00
+topics: []
+excerpt_separator: <!--more-->
+images:
+
+  - url: /engineering-education/extract-text-from-images-using-pytesseract/hero.jpg
+    alt: Extract Text From Images Using PyTesseract Hero Image
+---
 As a developer, you might want to extract textual information from an image. Using Python would be a good choice, where we create a program that extracts such textual data from any given image.
 <!--more-->
 Python has been one of the most popular languages that developers enjoy working with. Its human-readable syntax makes it easy to learn.
@@ -314,3 +330,6 @@ In this guide, we created a Python script that extracts textual information from
 I hope you found this tutorial helpful.
 
 Clap 👏 If this article helps you.
+
+---
+Peer Review Contributions by: [Srishilesh P S](/engineering-education/authors/srishilesh-p-s/)
