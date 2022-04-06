@@ -1,5 +1,21 @@
-A wavelet is a mathematical function applied in digital image processing and compression. Its main aim is to improve the image quality. Also, wavelets can divide signals into time and frequency components. Wavelet transform is the decomposition of a signal to the frequency components.
+---
+layout: engineering-education
+status: publish
+published: true
+url: /understanding-wavelet-properties/
+title: Understanding wavelet properties and the application of these properties
+description: This tutorial discusses wavelet properties that can be considered when selecting a suitable wavelet.
+author: simon-mwaniki
+date: 2022-02-09T00:00:00-06:27
+topics: [Languages]
+excerpt_separator: <!--more-->
+images:
 
+  - url: /engineering-education/understanding-wavelet-properties/hero.jpg
+    alt: Understanding wavelet properties and the application of these properties Hero Image
+---
+A wavelet is a mathematical function applied in digital image processing and compression. Its main aim is to improve the image quality. Also, wavelets can divide signals into time and frequency components. Wavelet transform is the decomposition of a signal to the frequency components.
+<!--more-->
 When choosing a suitable wavelet, it is essential to understand a few basic properties of the wavelets, such as Vanishing moments, Support width, Regularity, Symmetry and Orthogonality.
 
 These properties aid in the selection of suitable wavelets. This tutorial will show how one can choose an appropriate wavelet transform and the right wavelet for a particular application.
