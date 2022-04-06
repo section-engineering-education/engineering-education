@@ -20,7 +20,7 @@ Open to all EngEd students.
 ### Requirements
 Please complete and submit the following required sections for the project: 
 
-Project name, brief description of the project, a public link to your app, and a short video that explains and shows how your application works. 
+Project name, brief description of the project, a public link to your app, and a short video that explains how your app works and how you deployed it using KEI. 
 
 The video should (be about 3 minutes) demonstrate your project using KEI. Videos must be uploaded to YouTube or Vimeo and made public.
 
