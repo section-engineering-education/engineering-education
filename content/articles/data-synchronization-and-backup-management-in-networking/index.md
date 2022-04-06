@@ -3,8 +3,8 @@ layout: engineering-education
 status: publish
 published: true
 url: /data-synchronization-and-backup-management-in-networking/
-title: Data synchronization and backup management in Networking
-description: This article will cover data synchonization an backup management in Networking.
+title: Data Synchronization and Backup Management in Networking
+description: This article will cover data synchonization and backup management in Networking.
 author: gladwel-kieya
 date: 2022-03-28T00:00:00-09:30
 topics: [Languages]
