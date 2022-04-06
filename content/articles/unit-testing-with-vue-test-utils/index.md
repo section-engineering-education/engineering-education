@@ -83,11 +83,11 @@ Ran all test suites.
 
 #### Test our `views/DetailsView.vue` component for text content
 
-The next part we will be testing in our Vue application is the `views/DetailsView.vue` component. Currently, in the `detailsView.vue` component; we have an `h1` tag with the text `This is the details Page` inside it. 
+The next part we will be testing in our Vue application is the `views/DetailsView.vue` component. Currently, in the `DetailsView.vue` component; we have an `h1` tag with the text `This is the details Page` inside it. 
 
 We’ll simply write a test that checks if the component is rendering the text content inside it.
 
-Create a file in the `test/unit` directory called `detailsview.spec.js`. In the `detailsview.spec.js` file, the first thing we will do is import a function from the `vue-test-utils` library that’ll help us mount an instance of the component we want to test that will return an object with properties and methods for interacting with the instance. And also, import the component we want to test. In our case the `detailsView` component.
+Create a file in the `test/unit` directory called `detailsview.spec.js`. In the `detailsview.spec.js` file, the first thing we will do is import a function from the `vue-test-utils` library that’ll help us mount an instance of the component we want to test that will return an object with properties and methods for interacting with the instance. And also, import the component we want to test. In our case the `DetailsView` component.
 
  Add the code snippets below in the `detailsview.spec.js` file.
 
