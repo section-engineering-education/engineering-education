@@ -9,9 +9,9 @@ In this guide, we will write a Python script that extracts images, scans text, t
 - [Set up tesseract OCR](#set-up-tesseract-ocr)
 - [Adding the project dependencies](#adding-the-project-dependencies)
 - [Create a Python tesseract script](#create-a-python-tesseract-script)
-- [Extracting images](#extracting-images)
-- [Extracting text information](#extracting-text-information)
-- [Test the Python tesseract app](#test-the-python-tesseract-app)
+- [Extract images](#extracting-images)
+- [Extract text information](#extracting-text-information)
+- [Test the app](#test-the-python-tesseract-app)
 - [Conclusion](#conclusion)
 
 ### Prerequisities
@@ -152,20 +152,19 @@ From the above code:
 
 Once we enter this path, we need first to verify if the file path is correct. If the path is incorrect, the application will display `Please enter a valid PATH to a file` error message. If the path is correct, then the application will proceed to extract text from the images by executing the `extIm()` method.
 
-### Extracting images
-Once we have the correct PDF file path, we need to run the file through our code and extract it to the images file running the `.txt` script.
+### Extract images
+Once we have the correct PDF file path, we need to run the file and extract the text to the `.txt` file.
 
-First, we need to open the execute d file so that Python can read its content. We will use the `fitz` module as shown below:
+First, we need to open the text file and read its contents. To do that, we will use the `fitz` module as shown below:
 
 ```py
 # Extracting images
 def extIm(fileStr):
     # open the file
     pdf_file = fitz.open(fileStr)
-
 ```
 
-We then need to create a path to save the images that we will extract from the file.
+We create a path to save the images that we extract from the file.
 
 ```py
 global dirName
@@ -181,9 +180,7 @@ for i in dirName:
  content = os.listdir("images")
 ```
 
-In this case, we will create a directory if it does not exist on your computer. To create this directory, we need to access the computer system and create a new directory at the root of the project folder. The script will save the folder as `images`.
-
-We need to check if there is any image available in this folder, list them and print each one.
+We need to check if there are any images available in the folder. If so, list them and print the contents of each image as shown:
 
 ```py
 # List images if exists and print each one. if not extract all images
@@ -191,11 +188,6 @@ if(len(content) >= 1):
     # Print every img in content
     for i in content:
         print(Fore.YELLOW + f"This is an image: {i}" + Fore.RESET)
-```
-
-If no images are available, let's iterate over the PDF pages and extract all content into images. In this case, each page will be extact to the equivalent of one image.
-
-```py
 else:
     # Iterate over PDF pages
     for page_index in range(len(pdf_file)):
@@ -205,7 +197,9 @@ else:
         image_list = page.getImageList()
 ```
 
-Let's print the total images extracted and error messages if no images are found.
+If no images are available in the folder, we iterate over the PDF files and extract their contents.
+
+Let's print the count of total images that we have extracted and display error message, if no image is found in the folder.
 
 ```py
 # printing number of images found on this page
@@ -217,7 +211,7 @@ else:
         page_index, Fore.RESET)
 ```
 
-Once the folder is identified and created, we also need to set naming for every image generated. In this case, will increment the image name from 1 to the maximum number of images available, then cast that to the name `image`, i.e., `image2_1`.
+In the loop, we name every image that is generated from the PDF. Here, we will append the count of image to the string `image`. For example, `image2_1`.
 
 ```py
 for (image_index, img) in enumerate(page.getImageList(), start=1):
@@ -236,11 +230,10 @@ for (image_index, img) in enumerate(page.getImageList(), start=1):
 reImg()
 ```
 
-Here we are also executing the function `reImg()`. This will render these images and extract their content. Let's do this in the next step.
+Here, we execute the function `reImg()` to render these images and extract their content. Let's do this in the next step.
 
-### Extracting text information
-
-Not its time to scan for some text from the extracted images. Go ahead and create the `reImg()` function and add these global variables:
+### Extract text information
+Let's create a function called `reImg()` to hold these global variables:
 
 ```py
 def reImg():
@@ -250,15 +243,15 @@ def reImg():
     global inputTeEx
 ```
 
-At this point, we want to access the `tesseract.exe`. This local file will be accessed by the command that we set earlier at `"[.] Add the tesseract.exe local path" + Fore.RESET)`. We save this path using the global variable `inputTeEx` and assign it to the `input()` that you will insert based on your path.
+At this point, we will have to access the `tesseract.exe` file. To do that, we use the global variable `inputTeEx`, where we accept the file path from the user.
 
 ```py
 pytesseract.pytesseract.tesseract_cmd = f"{inputTeEx}"
 ```
 
-Python will use the pytesseract module to access the tesseract through the cmd. It is a tesseract that will analyze the images and extract the text.
+Python will use the `pytesseract` module to access the tesseract through the `cmd`.
 
-We need to access the extracted image path and read each image and its content.
+We need to loop through each extracted images and read its content to extract textual information as shown:
 
 ```py
 # List the images
@@ -267,12 +260,7 @@ content = os.listdir('images')
 for i in range(len(content)):
     # Reading each image in images
     image = cv2.imread(f'images/{content[i]}')
-```
-
-Each image will undergo some scanning. In this case, we will scan the text available in each image.
-
-```py
-# Scan text from image
+    # Scan text from image
     print(Fore.YELLOW + f"[.] Scan text from {content[i]}" + Fore.RESET)
     text = pytesseract.image_to_string(image, lang='spa')
 
@@ -288,8 +276,6 @@ Each image will undergo some scanning. In this case, we will scan the text avail
     cv2.waitKey(1000)
 ```
 
-Once the images are scanned, we want to save this content to a `.txt` file.
-
 ```py
 # Create and write file txtResult.txt
 print(Fore.CYAN + "[.] Writing txtResult.txt" + Fore.RESET)
@@ -298,16 +284,15 @@ fileTxt.write(textScanned)
 print(Fore.GREEN + "[!] File Writted" + Fore.RESET)
 ```
 
-Finally, call and execute the main we created earlier:\
+Finally, call the `gInUs()` function to execute the program:
 
 ```py
 # Call to main function
 gInUs()
 ```
 
-### Test the Python tesseract app
-
-To test the app run the `python main.py` and the roo of your project. This will create an interactive command. This will allow you to add the tesseract.exe and the PDF paths.
+### Test the app
+To test the app, we run the `python main.py`.
 
 First, provide the tesseract path and hit enter:
 
@@ -315,16 +300,17 @@ First, provide the tesseract path and hit enter:
 > [!] Add the tesseract.exe local path
 ```
 
-Once you hit enter, you will be instructed to add the PDF path.
+Once you hit enter, you will be instructed to add the PDF path:
 
 ```bash
 > [!] Add the PDF file local path
 ```
 
-This will execute the script and exact all images from the PDF. Then create an `output_txt` folder and save the extracted text information in a `.txt` file.
+On execution, the program creates an `output_txt` folder to save the extracted text information in `.txt` files.
 
 ### Conclusion
+In this guide, we created a Python script that extracts textual information from the images by scanning, transcribing, and saving it to a text file.
 
-In this guide, we have learned how to create a python app using the tesseract. We have created a Python script that extracts images, scans text, transcribes, and saves it to a .txt file. I hope you have found this tutorial helpful.
+I hope you found this tutorial helpful.
 
 Clap 👏 If this article helps you.
