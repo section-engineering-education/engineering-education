@@ -1,4 +1,19 @@
-### Introduction
+---
+layout: engineering-education
+status: publish
+published: true
+url: /understanding-shared-memory-programming-with-pthreads-and-openmp/
+title: Understanding machine learning algorithms and how to Implement them
+description: This article will discuss how to use Pthreads and OpenMP in parallel programming. Threads are referred to as lightweight processes.
+author: kelvin-munene
+date: 2022-04-06T00:00:00-04:20
+topics: [Languages]
+excerpt_separator: <!--more-->
+images:
+
+  - url: /engineering-education/understanding-shared-memory-programming-with-pthreads-and-openmp/hero.png
+    alt: Understanding Shared Memory Programming With Pthreads and Openmp Hero Image
+---
 Shared memory helps programs communicate faster. Programs may use one or more processors and as a result, a process may have several threads. 
 <!--more-->
 Threads are referred to as `lightweight processes.` They are referred to as shared lightweight processes because they are formed by dividing a single process into many processes called `threads`.
@@ -33,9 +48,9 @@ Shared memory does not allocate data. Also, changes to one thread affects all ot
 ### An overview of shared memory process and threads
 Multiple applications may access shared memory at the same time. This is possible through the use of shared memory. This helps processes to interact without contacting the kernel.
 
-Shared memory is crutial in POSIX and Windows. Processes can't interact or share resources without shared memory. 
+Shared memory is cruCial in POSIX and Windows. Processes can't interact or share resources without shared memory. 
 
-> An operating system often does not enable one process to access another's memory. If two processes use shared memory, the constraint must be lifted. 
+> often, An operating system does not enable one process to access another's memory. If two processes use shared memory, the constraint must be lifted. 
 
 A process is a unit of work in a system. For example, text files are used to develop computer programs, which run as processes. After loading, the program may be divided into stack, heap, text, and data portions.
 
@@ -50,11 +65,11 @@ To begin, we need to know the identity of the shared memory section. A struct `s
 
 To delete a segment, we supply `IPC RMID` as the second parameter and NULL as the third parameter. Segment removal occurs after all processes that were previously connected have been deleted. 
 
-To prevent exceeding the system-wide limit on the number of shared memory segments, you must manually deallocate each shared memory segment using `shmctl` after you are done with it. `Exit` and `exec` detach memory chunks but do not deallocate them once called.
+To prevent exceeding the system-wide limit on the number of shared memory segments, you must manually deallocate each shared memory segment using `shmctl` after you are done with it. `Exit` and `exec` detach memory chunks but do not deallocate them at once when they are called.
 
 The program below illustrates the management and redistribution of shared memory:
 
-```C++
+```c++
 #include <stdio.h>
 #include <sys/shm.h>
 #include <sys/stat.h>
@@ -123,7 +138,7 @@ pthread_exit (status)
 
 `Pthread_exit()` terminates a thread. In most cases, a thread's duty is completed using `pthread_exit().` This method allows threads to continue running after the `main()` function. If not, they will be stopped after the main() method.
 
-Here is a C++ application to illustrate the two actions:
+Here is a C++ application that illustrates the two actions:
 
 ```c++
 #include <pthread.h>
@@ -183,7 +198,7 @@ To view the output, run the command below:
 
 The screenshot below shows all the processes involved:
 
-![Process illustration](/engineering-education/understanding-shared-memory-programming-with-pthreads-and-openmp/process.png)
+![Process illustration](/engineering-education/understanding-shared-memory-programming-with-pthreads-and-openmp/procedure.png)
 
 #### Cancelling a thread
 A thread terminates by using `pthread_exit` or returning from its thread function. However, a thread may seek the termination of another. This is called canceling a thread. 
@@ -194,12 +209,11 @@ A thread may be generated as a joinable (default) or detached (optional) thread.
 
 Instead, the thread's exit state is stored until another thread performs `pthread_join` to retrieve it. Afterward, its resources are freed. 
 
-A detachable thread cleans up automatically. Detaching a thread prevents another thread from synchronizing or getting its return value through pthread_join.
+A detachable thread cleans up automatically. Detaching a thread prevents another thread from synchronizing or getting its return value through `pthread_join`.
 
-In certain cases, a thread is all or nothing. An allocated thread may use and release resources, Resources may leak if the thread dies during this function. Allowing a thread to select when and if a task is canceled may help.
+In certain cases, a thread is all or nothing. An allocated thread may use and release resources. Resources may leak if the thread dies during this function. Allowing a thread to select when and if a task is canceled may help.
 
 There are three methods to cancel a thread:
-
 - Asynchronously cancel the thread - Thread cancellation is available at any moment during execution.
 - An uncancelable thread may exist in the system at any one time - To cancel the thread, one must make a discreet request.
 - The thread may be canceled synchronously - Although the thread may be terminated, it cannot be done at random. Cancellation requests queued for execution may only be canceled at specified stages.
@@ -210,7 +224,7 @@ Cancellation requests may only be canceled at certain stages. Threads that are a
 
 Asynchronously cancellable threads, on the other hand, may be canceled only at specified times. The thread will wait for cancellation requests.
 
-Asynchronous threads using `pthread_setcanceltype`. The method's thread has issues. The first option should be `PTHREAD_CANCEL_ASYNCHRONOUS` to cancel the thread asynchronously. This variable stores the thread's previous cancellation type. 
+Asynchronous threads use `pthread_setcanceltype` to cancel a thread. However, the method's thread may have issues. The best option should be to use`PTHREAD_CANCEL_ASYNCHRONOUS` to cancel the thread asynchronously. This variable stores the thread's previous cancellation type. 
 
 #### Uncancelable critical sections
 The `pthread_setcancelstate` function prevents a thread from canceling. Like `pthread setcanceltype`, it affects the thread that invokes it. 
@@ -245,7 +259,6 @@ The program above restricts the ATM payment if the initial balance is less than 
 
 #### Uses of pthreads
 Pthreads are useful in the following ways:
-
 1. `Building an adaptive user interface` - Threads are useful in user interfaces. Input from the user is processed and displayed in a loop. Processing might take longer in some instances, causing the user to wait. Using a separate thread for long-running tasks may improve software responsiveness.
 2. `Building a web server` - A web server must be capable of downloading huge files in a short period. It saves the time required to start a new thread for each new request. Multiple threads may execute on many processors simultaneously.
 3. `Building a graphical user interface` - Graphical user interface apps expect a request to do a window portion. If it is pre-occupied, the window will be blank. In this scenario, having one thread handle the windowing system messages and requests is prudent (as well as user input). If an operation takes more than 0.2 seconds, it is sent to another thread.
@@ -312,15 +325,13 @@ Hi and welcome to Section Engineering education.
 ```
 
 #### Parallelizing loops
-OOpenMP takes care of parallelizing loops with only a few parameters and a loop definition.
+OOpenMP takes care of parallelizing loops with only a few parameters and a loop definition. The directive, work-sharing concept, must be in a parallel section.
 
-The directive, work-sharing concept, must be in a parallel section:
-
-The `#pragma omp` command distributes the loop across threads. It must be used with another block of code:
+The `#pragma omp` command distributes the loop across threads. It must be used with another block of code.
 
 Let us look at an example program that adds all elements in an array. Save the code as `third.c`.
 
-```C++
+```c++
 #include <stdio.h> 
 
 int main() 
@@ -353,13 +364,18 @@ int main()
 
 Run the command `cc -fopenmp third.c -o third` to compile the program and view the output using `./third.`
 
-The output is:
+The output will be:
 
 ```bash
 The addition is =37714 should be 4950
 ```
 
 ### Conclusion
-From the article above, we have learned multithreading and its implementation using the OpenMP and pthreads. We also learned how to use the Linux terminal to run C and C++ programs. Use the knowledge learned to understand more about Linux systems.
+From the article above, we have learned multithreading and its implementation using the OpenMP and pthreads. We also learned how to use the Linux terminal to run C and C++ programs. 
+
+Use the knowledge gained from this article to understand more about Linux systems.
  
 Happy coding!
+
+---
+Peer Review Contributions by: [Dawe Daniel](/engineering-education/authors/dawe-daniel/)
