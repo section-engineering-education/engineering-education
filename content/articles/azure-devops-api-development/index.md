@@ -6,7 +6,7 @@ url: /azure-devops-api-development/
 title: How to Deploy an Application into Azure App Service using Azure DevOps
 description: This article will help the reader understand how to deploy an application into Azure App Service using Azure DevOps (VSTS) Continuous Integration/Continuous Delivery (CI/CD) pipeline.
 author: bernard-mburu
-date: 2022-04-06T00:00:00-16:15
+date: 2022-04-06T00:00:00-01:00
 topics: [Languages]
 excerpt_separator: <!--more-->
 images:
