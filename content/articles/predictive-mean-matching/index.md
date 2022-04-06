@@ -51,7 +51,7 @@ head(nhanes)
 
 Our model will assume `chl` as the response variable and `bmi` and `hyp` as predictor variables.
 To find out the percentage of missing values, we will use the`mean()` and `is.na()` functions:
-```r
+```bash
 mean(is.na(nhanes$hyp))
 [1] 0.32
 mean(is.na(nhanes$bmi))
@@ -65,20 +65,20 @@ mean(is.na(nhanes$chl))
 For this, we are going to use the `mice` package in R:
 We will apply some functions found in this package: the `complete()` and `mice()` functions to impute our data.
 Since we are imputing for the first instance only for our data, we let m be equal to one.
-```r
+```bash
 imp <- complete(mice(nhanes, m = 1, method = "pmm"))
 #our imputed values are stored in the working environment
 #we are doing a single imputation hence m=1
 ```
 To view our data.
-```r
+```bash
 head(imp)
 #putting our data in format for viewing
 ```
 The data is stored in our environment, click on the `imp` to view it.
 
 #### Plotting our imputed values
-```r
+```bash
 heart.plot <- ggplot(imp, aes(x=bmi, y=chl)) +
 geom_point()
 heart.plot
@@ -87,7 +87,7 @@ heart.plot
 
 ### Fitting a linear regression for a predictive model
 Writing the following code in R creates a predictive model with our interest modeled as:`chl` as the response variable and ` bmi`, `hyp` as the predicting variables.
-```r
+```bash
 fitmodel <- with(imp, lm(chl  ~  bmi + hyp))
 summary(fitmodel)
 #we get the following below
@@ -105,7 +105,7 @@ For this section, we will call a dataset in R to show predictive mean matching b
 For our tutorial, we choose the `nhanes` dataset found in `mice` which has 4 variables `age`, `BMI`, `hyp`, and `chl`
 In our case, we will prioritize modeling cholesterol levels as a function of age and hypertension.
 Let's load our data in R by following the steps.
-```r
+```bash
 library(mice)
 library(VIM)
 head(nhanes)
@@ -122,7 +122,7 @@ We need `VIM` for plotting.
 For our case, let's take our response variable to be `cholesterol level` and the predictor variables to be `age` and `hypertension`.
 The mice package also comes with some functions that will enable us to inspect the missing data patterns that are in the dataset.
 To inspect for missing data patterns in our `nhanes` dataset, we use the function `md.pattern()`.
-```r
+```bash
 md.pattern(nhanes)
 age  hyp  bmi  chl
 13  1  1  1  1  0
@@ -141,7 +141,7 @@ We can have four types of missing data patterns represented in an array form.
 - The observation where both variables are missing `mm`.
 To see the pair-wise pattern, we use `md.pairs()` to see the pair-wise pattern and store the result in a pattern-pairs object.
 When we call `pattern-pairs` object, it gives us four matrices that give the pattern.
-```r
+```bash
 md.pairs(nhanes)
 ```
 To show screen capture, we use the `VIM` package to get `pbox()` function to visualize the missing data in our `NHANES` dataset.
@@ -152,14 +152,14 @@ pbox(nhanes,pos=1,int=GFALSE,cex=0.7)
 
 ### Let us begin our imputation process
 To begin our imputation, all we need is the name of our array in our case `nhanes` dataset.
-```r
+```bash
 imp<-mice(nhanes)
 ```
 and store it in `imp` object.
 
 ### Accessing the instances of imputations and the imputed values
 The first imputed dataset can be obtained by writing the following code in r.
-```r
+```bash
 head(complete(imp))
 #for the first instance of imputation
 #head function to represent our data in data frame format
@@ -172,7 +172,7 @@ age  bmi  hyp  chl
 6  3  25.5  2  184
 ```
 For the second time imputed, we write.
-```r
+```bash
 head(complete(imp,2))
 #for the second instance of imputation
 age  bmi  hyp  chl
@@ -184,7 +184,7 @@ age  bmi  hyp  chl
 6  3  21.7  1  184
 ```
 We can go to the fifth instance, and we can also check for an imputed variable value stored in each of the 5 imputed datasets by running the following code in r.
-```r
+```bash
 imp$imp$chl
 #the second objectname,imputedvalue,is because we want the values to be stored in it
      1   2   3   4   5
@@ -201,7 +201,7 @@ imp$imp$chl
 ```
 For our next step, we append our imputed datasets with the original `nhanes` dataset.We carry out this using a function in `mice` called `complete()` function.we then use the `inc=TRUE` argument to specify what we want to combine with our original observed data.
 Let's run the following code in R to produce this result.
-```r
+```bash
 imp2<- complete(imp, "long", inc = TRUE)
 #it is converted to a format that can be used in other statistical programs eg spss.
 #to view click `imp2` on the environment
@@ -209,7 +209,7 @@ imp2<- complete(imp, "long", inc = TRUE)
 
 ### Fitting a linear regression model:A predictive model
 As we had stated earlier, our aim is to build a predictive model with cholesterol level as our response variable, age, and hypertension status as our predictor variables. Running the following codes in R will approximate our regression model separately for the imputed datasets, from the first to the fifth.
-```r
+```bash
 fitmodel <- with(imp, lm(chl  ~  age + hyp))
 summary(fitmodel)
 #we use summary to give more details eg confidence interval,also the fmi
@@ -235,7 +235,7 @@ term  estimate  std.error  statistic  p.value  nobs
 
 ### A complete case analysis for all five regressed models
 We write the following code in R to get this output.
-```r
+```bash
 pool(fitmodel)
 Class:  mipo  m = 5
 term  m  estimate  ubar  b  t  dfcom  df
@@ -250,7 +250,7 @@ riv  lambda  fmi
 
 ### To get a wholesome predictive model for all the five imputations combined
 Write the following code in R.
-```r
+```bash
 summary(pool(fitm))
 term  estimate  std.error  statistic  df  p.value
 1 (Intercept) 148.600681  32.98608  4.5049507  6.098614  0.003921111
