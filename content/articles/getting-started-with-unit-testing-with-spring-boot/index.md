@@ -48,7 +48,7 @@ To increase the performance of components. We use the `@DataJpaTest` annotation 
 It's good to simulate database-interacting beans and disable Spring Boot test DB initialization for the Spring profile where the tests are executed. When testing controllers, you should keep this in mind.
 #### Make your test simple
 Whenever an expert developer teaches unit testing to beginners, he should always ensure that the tests are correct and straightforward. To achieve this, he should keep the test with low cyclomatic complexity. Cyclomatic complexity is a coding statistic that shows how many different execution pathways a procedure can take. Developers are less likely to introduce problems when working on code with a lesser complexity since it is easier to comprehend and maintain.
-### Reasons for testing;
+### Reasons for testing...
 #### Repositories
 The repository is a bridge between the application and the database. It is tested to ensure that relationships between database and the applications have been correctly implemented.
 #### Services
