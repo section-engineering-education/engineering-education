@@ -314,7 +314,7 @@ class MainActivity : AppCompatActivity() {
     }
 }
 ```
-![Project Demo](/engineering-education/firebase-offline-caching/screen-layout.jpeg)
+![Project Demo](/engineering-education/firebase-offline-caching/screen-layout.png)
 
 ### Conclusion
 In this article, we looked at how to offline cache data from Firebase's real-time database with Room. Room persistence library can also be used with Retrofit to cache data fetched from the internet. This feature can also be implemented using other Android database libraries like [realm](https://www.section.io/engineering-education/using-realm-database-in-android/).
