@@ -6,7 +6,7 @@ url: /univariate-time-series-analysis-and-forecasting-with-arima-and-seasonal-ar
 title: Univariate time series analysis and forecasting with ARIMA and Seasonal ARIMA in Python
 description: This tutorial will first discuss a few concepts that are essential to understanding time series with ARIMA and Seasonal ARIMA. It will finally implement the ARIMA and Seasonal ARIMA models with Python.
 author: joseph-gatura
-date: 2022-03-22T00:00:00-21:20
+date: 2022-04-07T00:00:00-21:20
 topics: [Machine Learning]
 excerpt_separator: <!--more-->
 images:
@@ -16,8 +16,7 @@ images:
 ---
 A time series is a sequence of data points that occur over regular time intervals. A time series shows all the time-dependent variables in the dataset. An example of time series is stock prices and weather records. 
 <!--more-->
-In time series analysis and modeling, we will train models to identify patterns in the dataset.
-Time series forecasting involves finding the future values that the time series will take.
+In time series analysis and modeling, we will train models to identify patterns in the dataset. Time series forecasting involves finding the future values that the time series will take.
 
 A time series can be univariate, bivariate, or multivariate. A univariate time series has only one variable, and a bivariate has two variables. A multivariate has more than two variables. 
 
@@ -28,7 +27,7 @@ In this tutorial, we will be dealing with univariate time series modeling. We wi
 - [How the ARIMA model works](#how-the-arima-model-works)
 - [what is a stationary time series?](#what-is-a-stationary-time-series)
 - [What is differencing?](#what-is-differencing)
-- [Components of ARIMA model](#components-of-arima-model)
+- [Components of the ARIMA model](#components-of-the-arima-model)
 - [How to check for stationarity](#how-to-check-for-stationarity)
 - [Augmented Dickey-Fuller test](#augmented-dickey-fuller-test)
 - [How SARIMA works](#how-sarima-works)
@@ -489,7 +488,7 @@ We explored all the components of the ARIMA model and their specific parameters.
 
 Finally, we implemented both the ARIMA and SARIMA models. The SARIMA model made good predictions.
 
-You can get the Python code for this article from [here](https://colab.research.google.com/drive/1_cuqDtySmRnvXkzJmLaQ4YzJ63YCwzwR?usp=sharing)
+You can get the Python code for this article from [here](https://colab.research.google.com/drive/1_cuqDtySmRnvXkzJmLaQ4YzJ63YCwzwR?usp=sharing).
 
 ### References
 - [Interpreting Autocorrelation and Partial Autocorrelation plots](https://mxplus3.medium.com/interpreting-autocorrelation-partial-autocorrelation-plots-for-time-series-analysis-23f87b102c64)
