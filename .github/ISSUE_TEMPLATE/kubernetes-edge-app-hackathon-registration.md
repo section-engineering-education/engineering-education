@@ -33,7 +33,7 @@ Please complete and submit the following required sections listed below via a [P
 
 - Test every link included.
 
-- _Submit your project via a pull request on GitHub titled_ "EngEd - K8 Edge App 2022 Hackathon: Your Project Title Here" and **link** this origianl issue form to your project pull request.
+- _Submit your project via a pull request on GitHub titled_ "EngEd - K8 Edge App 2022 Hackathon: Your Project Title Here" and **link** this original issue form to your project pull request.
 
 ### Prizes
 1st prize: $1250
