@@ -1,0 +1,1 @@
+Samfred is an undergraduate student pursuing Bachelor of Science in Computer Science. He has great passion for the Javascript and Python ecosystems. When free, Samfred plays computer games and hangs out with friends.  
