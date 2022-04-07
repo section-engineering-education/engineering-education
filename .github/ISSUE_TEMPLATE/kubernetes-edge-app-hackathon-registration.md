@@ -7,7 +7,7 @@ assignees: hborrelli1, hectorkambow
 
 ---
 
-In this edge-based hackathon, we will focus on Sections [Kubernetes Edge Interface (KEI)](https://www.section.io/docs/explanations/kei/) solution. KEI is a simple Kubernetes deploy process. KEI makes many edge clusters appear as a single cluster, enabling developers to quickly and easily deploy applications across a distributed Edge.
+In this edge-based hackathon, we will focus on Sections [Kubernetes Edge Interface (KEI)](https://www.section.io/docs/explanations/kei/) solution. KEI is a simple Kubernetes deploy process. [KEI](https://www.section.io/kubernetes-edge-interface/) makes many edge clusters appear as a single cluster, enabling developers to quickly and easily deploy applications across a distributed Edge.
 
 To participate in this hackathon, EngEd students are expected to create a true K8 app for the Edge that is deployed using the KEI process. Register for the Hackathon using this form.
 
@@ -16,7 +16,7 @@ Review the judging criteria listed below.
 Below you will find full details on the hackathon and any requirements.
 
 ### Eligibility
-Open to all EngEd students (participants can work individually or in teams of EngEd students)
+Open to all EngEd students (participants can work individually or in teams of EngEd students). To sign up 
 
 ### Requirements
 Please complete and submit the following required sections listed below via a [Pull Request](https://github.com/section-engineering-education/engineering-education/compare) once your project is ready. 
@@ -40,9 +40,9 @@ Please complete and submit the following required sections listed below via a [P
 2nd prize: $750
 3rd prize: $500
 
-The first 20 participants to complete (and successfully submit) their projects are eligible to receive a complimentary virtual pass to Kubecon. (Simply DM us in the EngEd community channel).
+The first 20 participants to complete (and successfully submit) their projects are eligible to receive a complimentary virtual pass to [Kubecon](https://events.linuxfoundation.org/kubecon-cloudnativecon-europe/) a face value of $75.00. (Simply DM us in the EngEd community channel).
 
-The top 3 winning applications will be points of reference at our booth at Kubecon, an upcoming Edge conference.
+The top 3 winning applications will be points of reference at our booth at Kubecon event mentioned above.
 
 All other projects will get honorable mentions on our website.
 
