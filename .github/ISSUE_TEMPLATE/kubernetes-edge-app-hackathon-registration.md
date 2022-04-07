@@ -9,7 +9,7 @@ assignees: hborrelli1, hectorkambow
 
 In this edge-based hackathon, we will focus on Sections [Kubernetes Edge Interface (KEI)](https://www.section.io/docs/explanations/kei/) solution. KEI is a simple Kubernetes deploy process. [KEI](https://www.section.io/kubernetes-edge-interface/) makes many edge clusters appear as a single cluster, enabling developers to quickly and easily deploy applications across a distributed Edge.
 
-To participate in this hackathon, EngEd students are expected to create a true K8 app for the Edge that is deployed using the KEI process. Register for the Hackathon using this form.
+To participate in this hackathon, EngEd students are expected to create a true K8 app for the Edge that is deployed using the KEI process.
 
 Review the judging criteria listed below.
 
