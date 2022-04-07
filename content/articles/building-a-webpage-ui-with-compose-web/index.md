@@ -191,7 +191,7 @@ fun main() {
 ```
 > Note: We use `onClick` to handle events on a button
 
-To handle `oninput` events, we do as follows:
+To handle `onInput` events, we do as follows:
 ```kotlin
 val text = remember { mutableStateOf("") }
 TextArea(
@@ -214,7 +214,7 @@ Form(attrs = { forrm ->
 })
 ```
 ### Controlled and Uncontrolled inputs
-The main difference between controlled and uncontrolled inputs is the controlled inputs get inputs from a single source of truth. These inputs are optional which we can focus on but not change. For uncontrolled inputs, the browswer handles the user inputs. Invoking `value()` is a must to make it "controlled".
+The main difference between controlled and uncontrolled inputs is that controlled inputs get inputs from a single source of truth. These inputs are optional which we can focus on but not change. For uncontrolled inputs, the browswer handles the user inputs. Invoking `value()` is a must to make it "controlled".
 ```kotlin
 // Controlled
 Input(type = InputType.Text) {
@@ -311,5 +311,5 @@ The web page will open in the browser as `localhost:8080`.
 ### Conclusion
 Just like HTML, you can use Kotlin Multiplatform to construct a program that runs both on browsers and desktops. Styling is done in almost the same manner but way much easier. With Compose Web, you can build web UI rapidly and also handle events more efficiently using Kotlin language.
 
-Compose Multiplatform is at its early age and stable now. Read more of this from [here](). 
+Compose Multiplatform is at its early age and stable now. Read more of this from [here](https://blog.jetbrains.com/kotlin/2021/12/compose-multiplatform-1-0-is-going-live/). 
 Keep composing :)
