@@ -6,7 +6,7 @@ url: /natural-language-processing-using-tensorflow-and-bert-model/
 title: Natural language processing using TensorFlow and Bert Model
 description: This tutorial will guide a reader how to build a sentiment analysis model using BERT and TensorFlow.
 author: charles-ndirutu
-date: 2022-03-27T00:00:00-20:00
+date: 2022-04-07T00:00:00-20:00
 topics: [Machine Learning]
 excerpt_separator: <!--more-->
 images:
@@ -16,13 +16,9 @@ images:
 ---
 Natural language processing (NLP) is a subfield in artificial intelligence that enables computers to comprehend texts and spoken words as human beings. 
 <!--more-->
-Through building of NLP models, the models can perform essential tasks such as [speech recognition](https://monkeylearn.com/blog/natural-language-processing-applications/#speech), [sentiment analysis](https://monkeylearn.com/blog/natural-language-processing-applications/#sentiment-analysis), [intent classification](https://monkeylearn.com/blog/natural-language-processing-applications/#intent), [machine translation](https://monkeylearn.com/blog/natural-language-processing-applications/#translation), [spam filtering](https://mailchimp.com/help/about-spam-filters/) and [chatbot systems](https://monkeylearn.com/blog/natural-language-processing-applications/#chatbots)
+Through building of NLP models, the models can perform essential tasks such as [speech recognition](https://monkeylearn.com/blog/natural-language-processing-applications/#speech), [sentiment analysis](https://monkeylearn.com/blog/natural-language-processing-applications/#sentiment-analysis), [intent classification](https://monkeylearn.com/blog/natural-language-processing-applications/#intent), [machine translation](https://monkeylearn.com/blog/natural-language-processing-applications/#translation), [spam filtering](https://mailchimp.com/help/about-spam-filters/) and [chatbot systems](https://monkeylearn.com/blog/natural-language-processing-applications/#chatbots).
 
-In this tutorial, we will build a sentiment analysis model using [BERT](https://huggingface.co/docs/transformers/model_doc/bert) and [TensorFlow](https://www.tensorflow.org/). 
-
-BERT is a pre-trained model for natural language processing.
-
-We will use TensorFlow to create the input, intermediate, and output layers.
+In this tutorial, we will build a sentiment analysis model using [BERT](https://huggingface.co/docs/transformers/model_doc/bert) and [TensorFlow](https://www.tensorflow.org/). BERT is a pre-trained model for natural language processing. We will use TensorFlow to create the input, intermediate, and output layers.
 
 ### Table of contents
 - [Prerequisites](#prerequisites)
@@ -49,20 +45,15 @@ We will use TensorFlow to create the input, intermediate, and output layers.
 ### Prerequisites
 The reader should have an understanding of the following before reading this tutorial:
 
-- Be familiar with [Python programming](/engineering-education/python-projects-for-beginners/)
-- Know how to build simple a [natural language processing model](/engineering-education/nlp-based-detection-model-using-neattext-and-scikit-learn/)
-- Understand [text preprocessing](https://towardsdatascience.com/nlp-text-preprocessing-a-practical-guide-and-template-d80874676e79)
-- Know how to build a simple model with [TensorFlow](https://www.tensorflow.org/tutorials)
+- Be familiar with [Python programming](/engineering-education/python-projects-for-beginners/).
+- Know how to build simple a [natural language processing model](/engineering-education/nlp-based-detection-model-using-neattext-and-scikit-learn/).
+- Understand [text preprocessing](https://towardsdatascience.com/nlp-text-preprocessing-a-practical-guide-and-template-d80874676e79).
+- Know how to build a simple model with [TensorFlow](https://www.tensorflow.org/tutorials).
 
 ### Getting started with BERT
-[BERT](https://github.com/google-research/bert) is a Bidirectional Encoder Representations from the[Hugging Face's Transformers](https://huggingface.co/models). BERT can perform multiple tasks such as question answering systems, text classification, and sentiment analysis. We will use BERT to perform sentiment analysis.
+[BERT](https://github.com/google-research/bert) is a Bidirectional Encoder Representations from the [Hugging Face's Transformers](https://huggingface.co/models). BERT can perform multiple tasks such as question answering systems, text classification, and sentiment analysis. We will use BERT to perform sentiment analysis.
 
-BERT is a supervised model pre-trained on raw texts and the English language. 
-
-To start using BERT is easy and only requires installing the Hugging Face Transformers. 
-We then download the pre-trained BERT model from the Hugging Face Transformers. 
-
-Finally, we will fine-tune the model to perform sentiment analysis.
+BERT is a supervised model pre-trained on raw texts and the English language. To start using BERT is easy and only requires installing the Hugging Face Transformers. We then download the pre-trained BERT model from the Hugging Face Transformers. Finally, we will fine-tune the model to perform sentiment analysis.
 
 ### What is Hugging Face Transformers?
 Hugging Face Transformers provides APIs to download and fine-tune pre-trained models. 
@@ -141,8 +132,7 @@ The image below shows the dataset output:
 
 ![Movie reviews dataset](/engineering-education/natural-language-processing-using-tensorflow-and-bert-model/movie-review-dataset.png)
 
-The dataset has multiple columns, but the model only requires the `Phrase` and `Sentiment` columns. 
-The `Phrase` column represents the actual movie review, and the `Sentiment` columns represent the sentiment labels previously listed.
+The dataset has multiple columns, but the model only requires the `Phrase` and `Sentiment` columns. The `Phrase` column represents the actual movie review, and the `Sentiment` columns represent the sentiment labels previously listed.
 
 Before we use the sentiment analysis data in the pre-trained BERT model, we need to process it into an acceptable format for the model.
 
@@ -214,7 +204,7 @@ The function is called `preprocessing_dataset`. It will be preprocessing the dat
 
 It then outputs the dataset in the required format. It takes in the `df`, the `input IDs` as `ids`, the `attention mask` as `masks`, and the initialized `tokenizer`.
 
-The for loop will iterate through the `Phrase` and generate the word embedding using the `tokenizer.encode_plus` method.
+The `for` loop will iterate through the `Phrase` and generate the word embedding using the `tokenizer.encode_plus` method.
 
 The function also has the following arguments:
 
@@ -233,8 +223,7 @@ It adds new tokens to make the sentences have the maximum length.
 - `return_tensors='tf`
 It ensures the function outputs the preprocessed text as TensorFlow tensors.
 
-The function will finally output the `ids` (input IDs) and `masks` (attention masks). 
-These outputs values will become the inputs for the BERT model. 
+The function will finally output the `ids` (input IDs) and `masks` (attention masks). These outputs values will become the inputs for the BERT model. 
 
 We also need to call the function so that it can populate or generate all the `input IDs ` and the `attention mask`. 
 
@@ -282,7 +271,7 @@ To see the shape of each dataset batch, use this code:
 ```python
 dataset.take(1)
 ```
-The code will display the shape of one sample data /batch.
+The code will display the shape of one sample data batch.
 
 ![Dataset batch](/engineering-education/natural-language-processing-using-tensorflow-and-bert-model/dataset-batch.png)
 
@@ -311,11 +300,7 @@ dataset = dataset.map(SentimentDatasetMapFunction)
 The next step is to shuffle the training dataset and provide the batch size.
 
 ### Shuffling the training dataset
-We will shuffle the dataset randomly to prevent the model from memorizing the data samples but learning from the dataset. 
-
-It will prevent model bias and ensure we have accurate sentiment predictions. 
-
-We also need to specify the batch size. The batch size will determine the number of training data samples that the model will use in one iteration (epoch). 
+We will shuffle the dataset randomly to prevent the model from memorizing the data samples but learning from the dataset. It will prevent model bias and ensure we have accurate sentiment predictions. We also need to specify the batch size. The batch size will determine the number of training data samples that the model will use in one iteration (epoch). 
 
 ```python
 dataset = dataset.shuffle(10000).batch(16, drop_remainder=True) 
