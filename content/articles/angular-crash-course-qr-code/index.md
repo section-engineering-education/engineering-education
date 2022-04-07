@@ -6,7 +6,7 @@ url: /angular-crash-course-qr-code/
 title: Quick Response code crash course using Angular 12
 description: In this course, we will learn how to create a QR code using Angular 12.
 author: owino-wendy
-date: 2022-03-30T00:00:00-17:10
+date: 2022-04-07T00:00:00-11:30
 topics: [Languages]
 excerpt_separator: <!--more-->
 images:
@@ -14,9 +14,9 @@ images:
   - url: /engineering-education/angular-crash-course-qr-code/hero.png
     alt: QR Codes Angular 12
 ---
-User authentications play a vital role when it comes to securing your application. In addition to the existing authentication methods, Angular 12 comes with another simple yet powerful tool, the Quick Response code.
+User authentications play a vital role when it comes to securing your application. In addition to the existing authentication methods, Angular 12 comes with another simple yet powerful tool, the quick response code.
 <!--more-->
-In this tutorial, we will learn how to create a quick response code that can be used to authenticate users or perform different tasks on an Angular SPA.
+In this tutorial, we will learn how to create a quick response code that can be used to authenticate users or perform different tasks in an Angular SPA.
 
 ### Table of contents
 - [Table of contents](#table-of-contents)
@@ -31,16 +31,16 @@ In this tutorial, we will learn how to create a quick response code that can be 
 - [Conclusion](#conclusion)
 
 ### Prerequisites
-To follow this tutorial, you will need to have the following:
+To follow this tutorial, you will need to have:
 - Basic knowledge of JavaScript or TypeScript.
 - Basic knowledge of Angular 2+. In this tutorial, we will be using Angular 12.
-- An IDE is locally installed. We will be using the [WebStorm](https://www.jetbrains.com/webstorm/promo/?source=google&medium=cpc&campaign=9641686242&gclid=Cj0KCQjw_4-SBhCgARIsAAlegrVKrjp9E4YtohpbsCYlV3xtKt65dtFuMFW66vgWGyhB4DgKHtDqwUgaAgBWEALw_wcB) IDE for this course.
-- Angular CLI installed. However, you may build the Angular file structure from the ground up.
+- An IDE is locally installed. We'll be using the [WebStorm](https://www.jetbrains.com/webstorm/promo/?source=google&medium=cpc&campaign=9641686242&gclid=Cj0KCQjw_4-SBhCgARIsAAlegrVKrjp9E4YtohpbsCYlV3xtKt65dtFuMFW66vgWGyhB4DgKHtDqwUgaAgBWEALw_wcB) IDE for this course.
+- Angular CLI installed. You can also build the Angular file structure from the ground up.
 
 ### Objectives
 By the end of this tutorial, you will be able to:
-- Create a quick response code that can be used to authenticate users on an Angular SPA.
-- Setup the quick response code to work with the Angular CLI.
+- Create a quick response code that can be used to authenticate users in an Angular SPA.
+- Set up the quick response code to work with the Angular CLI.
 - Build an Angular project from scratch.
 - Deploy the application to a production environment.
 - Containerize the application using docker.
@@ -55,7 +55,7 @@ ng new quick-response-code-crash-course
 
 The above command will create a new Angular project called `quick-response-code-crash-course` within the current directory.
 
-Next, `cd` into the project root and run the following command:
+Next, navigate into the project root and run the following command:
 ```bash
 ng serve
 ```
@@ -70,12 +70,12 @@ Open your browser and navigate to `http://localhost:4200`. You will notice that 
 
 Now that we've set up the Angular project, we can start working on the quick response code.
 
-The next section will understand how QR codes work and install the necessary packages.
+In the next section, we will look at how QR codes work and install the necessary packages.
 
 ### Quick response codes in angular
 As discussed previously, quick response codes are a simple way to authenticate users on an Angular SPA.
 
-Quick response codes are barcodes that can be read by a digital device(camera). This information is then stored on the device and can be used to authenticate users.
+They are barcodes that can be read by a digital device(camera). This information is then stored on the device and can be used to authenticate users.
 
 QR codes have a significant advantage over other authentication methods. They are easy to read and scan hence an efficient way of interacting with the application.
 
@@ -90,7 +90,7 @@ Now let's proceed and install the required packages for scanning as follows:
 cd quick-response-code-crash-course
 npm i angular2-qrcode
 ```
-In the above command, we first `cd` into our project root and install the `angular2-qrcode` package.
+In the above command, we first navigate into our project root and install the `angular2-qrcode` package.
 
 You should be able to see the package in the `package.json` file as shown below:
 ```json
@@ -103,9 +103,9 @@ You should be able to see the package in the `package.json` file as shown below:
 
 > At the time of this writing, the latest version of [Angular QR Code](https://www.npmjs.com/package/angular2-qrcode) is `2.0.3`. This may be different from your version.
 
-Now that we have installed the packages, we can start using the quick response code. 
+Now that we have installed the packages, we can start using the quick response code.
 
-Let's start by registering this package to our appplication by adding the following to our `app.module.ts` file:
+Let's start by registering this package to our application. Add the following to your `app.module.ts` file:
 ```typescript
 //... add other missing imports
 // the following import is required for the QR code scanner
@@ -156,20 +156,20 @@ We have added the `app-qr-code-scanner` component to the `app.component.html` fi
 
 The QR code scanner will be displayed with these directives whenever this component is triggered.
 
-This directive has a couple of attributes that can be used to customize the QR scanner. For instance, you can set the width and height of the scanner as follows:
+This directive has a couple of attributes that can be used to customize the QR scanner. For example, you can set the width and height of the scanner as follows:
 ```html
 <qr-code [width]="300" [height]="300"></qr-code>
 ```
 
 We can customize it further by setting its value to a string. For instance, you can set the value of the QR code as follows:
 ```html
-<!--Add this to qr-code-scanner.componen.html-->
+<!--Add this to qr-code-scanner.component.html-->
 <!--BEGIN the qr code -->
 <qr-code [value]="'www.section.io'"></qr-code>
 <!--END the qr code -->
 ```
 
-You notice that we use the `<qr-code></qr-code>` tag to display the QR code in the above code. 
+You notice that we use the `<qr-code></qr-code>` tag to display the QR code in the above code.
 
 The `[value]` attribute is used to set the value of the QR code. In this case, we have set the value to [www.section.io](www.section.io).
 
@@ -179,7 +179,7 @@ cd quick-response-code-crash-course
 ng serve
 ```
 
-Next, visit the `http://localhost:4200` URL in your browser. 
+Next, visit the `http://localhost:4200` URL in your browser.
 
 When you execute the above code, you will notice that a QR code is displayed, as shown in the screenshot below:
 
@@ -231,7 +231,7 @@ export class QrCodeScannerComponent implements OnInit {
 
 In the above script, we first import the required dependencies. We then create a public data property called `qrCodeValue` and set its value to `null`.
 
-We then add the `ngOnInit()` to initialize our component with the QR data. Finally, we call the `setQRData()`  method to set the QR code value. 
+We then add the `ngOnInit()` to initialize our component with the QR data. Finally, we call the `setQRData()`  method to set the QR code value.
 
 In this method, we create an array called `items` and add a dummy to it.
 
@@ -261,7 +261,7 @@ To use QR in Angular, create a user object that will hold the user information.
 
 Following the previous example, store this value in the `qrCodeValue` property.
 
-Next, use your smartphone to scan the QR code and see if you can authenticate the user. 
+Next, use your smartphone to scan the QR code and see if you can authenticate the user.
 
 > To scan the QR codes, you can use the [Google Authenticator](https://support.google.com/accounts/answer/1066447?hl=en) app or any other QR code scanner app.
 > You may also need a backend server to validate and store the user information upon successful scan.
@@ -289,11 +289,11 @@ Next, we run the `npm install` command to install the dependencies.
 Finally, we run the `npm run build` command to build the application and then expose the port `4200` to the host machine.
 
 ### Conclusion
-This article has covered how to install and configure the quick response code. 
+This article has covered how to install and configure the quick response code.
 
 We have also covered how to use the quick response code in our application.
 
-We have seen how we can generate these QR codes for user authentication. You can improve your skills by implementing the QR code backend for an end to end test.
+We have seen how we can generate these QR codes for user authentication. You can improve your skills by implementing the QR code backend for an end-to-end test.
 
 ---
 Peer Review Contributions by: [Miller Juma](/engineering-education/authors/miller-juma/)
