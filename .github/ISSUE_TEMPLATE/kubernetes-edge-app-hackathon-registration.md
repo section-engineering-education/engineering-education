@@ -16,12 +16,16 @@ Review the judging criteria listed below.
 Below you will find full details on the hackathon and any requirements.
 
 ### Eligibility
-Open to all EngEd students (participants can work individually or in teams of EngEd students). To sign up 
+Open to all EngEd students (participants can work individually or in teams of EngEd students). **By submitting this issue form you will have successfully signed up and we will reach out with next steps.** 
 
 ### Requirements
-Please complete and submit the following required sections listed below via a [Pull Request](https://github.com/section-engineering-education/engineering-education/compare) once your project is ready. 
+Once your K8 Edge application is complete and deployed create a pull request to attach your submission to. 
 
-- Project name, brief description of the project, a public link to your app, and a short video that explains how your app works and how you deployed it using KEI. 
+Please complete and submit the following required sections listed below via a [Pull Request](https://github.com/section-engineering-education/engineering-education/compare) once your project is ready to be submitted. 
+
+- Your Full Name, email, and EngEd author link.
+
+- Project name, brief description of the project, a public URL link to your Edge app, and a short video that explains how your app works and how you deployed it using KEI. 
 
 - The video should (be about 3 minutes) demonstrate your project using KEI. Videos must be uploaded to YouTube or Vimeo and made public.
 
