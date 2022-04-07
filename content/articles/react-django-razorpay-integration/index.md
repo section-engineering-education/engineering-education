@@ -3,7 +3,7 @@
 Razorpay is an Indian digital payment system that offers businesses online invoices, online payments, and financial management tools to help them grow their business on the web. The solution helps companies make it easy for buyers from anywhere in the world to pay for goods or services securely through their website or mobile application without having to worry about currency conversions or bank charges.
 
 Before integrating the Razorpay payment gateway in your application, you should understand how the payment process flows. Below is a high-level representation of this:
-![Razorpay Payment Flow](./razorpay-payment-flow.png)
+![Razorpay Payment Flow](/engineering-education/react-django-razorpay-integration/razorpay-payment-flow.png)
 
 
 The processes involved can be broken down into five simple steps:
@@ -32,7 +32,7 @@ After providing all the required information, you will be redirected to the dash
 
 Scroll down on the left sidebar and click on `Settings`. On the main content page, select `API Keys` and click on `Generate Test Key`.
 
-![Razorpay Dashboard](./razorpay-dashboard.png)
+![Razorpay Dashboard](/engineering-education/react-django-razorpay-integration/razorpay-dashboard.png)
 
 Download the `Key Id` and `Key Secret` displayed on the modal by clicking on the `Download Key Details` button as they are only displayed once.
 
@@ -453,17 +453,17 @@ To run the React front-end, navigate to the `client` directory and run the comma
 yarn start
 ```
 This opens the application on `http://localhost:3000/`. Open this URL on the browser and you will be presented with a product as shown below:
-![test product](./product.png)
+![test product](/engineering-education/react-django-razorpay-integration/product.png)
 
 Click on the `BUY` button a payment modal pops up.
-![payment modal](./paymentmodal.png)
+![payment modal](/engineering-education/react-django-razorpay-integration/paymentmodal.png)
 
 Upon successful a successful transaction, an alert with `Payment Successful` message pops up.
-![success alert](./success.png)
+![success alert](/engineering-education/react-django-razorpay-integration/success.png)
 
 ### Payments Log
 You can view the received payments on the Razorpay dashboard by clicking on `Transactions` on the left sidebar.
-![payments](./payments.png)
+![payments](/engineering-education/react-django-razorpay-integration/payments.png)
 
 To learn about how to use the Razorpay dashboard, click [here](https://razorpay.com/blog/how-to-use-razorpay-dashboard/).
 
