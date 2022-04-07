@@ -6,7 +6,7 @@ url: /automating-excel-sheet-in-python/
 title: Automating Excel Sheet in Python
 description: This article will guide the reader on how to set up the automation of excel sheets in Python using Python libraries.
 author: kennedy-ndutha
-date: 2022-04-08T00:00:00-12:00
+date: 2022-04-08T00:00:00-13:05
 topics: [Languages]
 excerpt_separator: <!--more-->
 images:
@@ -16,16 +16,18 @@ images:
 ---
 Python has rich libraries, useful packages, and ready-to-use functions for automation that greatly facilitates testing. Python allows you to choose what's best for your project.
 <!--more-->
-In this article, we are going to implement python libraries and excel data to automate, be sure to follow along.
+In this article, we are going to implement python libraries and excel data to automate. It will give us a better overview and understanding of Python and Excel.
 
 ### Table of contents
 - [Prerequisites](#prerequisites)
 - [Overview](#overview)
+    - [Python overview](#python_overview)
+    - [MS Excel overview](#ms_excel_overview)
 - [Analyzing the Excel dataset](#analyzing-the-excel-dataset)
 - [Scheming pivot tables using Pandas](#scheming-pivot-tables-using-pandas)
 - [Generating the reports using Openpyxl library](#generating-the-reports-using-openpyxl-library)
 - [Automating the report using Python](#automating-the-report-using-python)
-- [Scheduling the Python script](#scheduling-the-python-script)
+- [Scheduling the Python scripts](#scheduling-the-python-scripts)
 - [Conclusion](#conclusion)
 
 ### Prerequisites
@@ -71,17 +73,17 @@ from openpyxl.chart import BarChart, Reference
 import string
 ```
 
-`Pandas` library is utilized to read Excel files, develop pivot tables and move them to Excel. Python's `Openpyxl` module is designed to compose Excel algorithms and create charts and spreadsheets. 
+`Pandas` library is utilized to read Excel files to develop pivot tables and move them to Excel. Python's `Openpyxl` module is designed to compose Excel algorithms and create charts and spreadsheets. 
 
-In case you have not installed  `Openpyxl` library, run the command below in your command prompt to add it to your workspace.
+In case you have not installed the `Openpyxl` library, run the command below in your command prompt to add it to your workspace:
 
 ```python
-pip install pandas
+pip install pandas 
 ```
 
-Keep in mind that our Excel sheet is in the same location as our Python script. Afterwards, run the code below to read your excel file. 
+Our Excel sheet should be in the same location as our Python script. `Load_workbook` function, imported from the Openpyxl library, will be used to design our report. 
 
-`Load_workbook` function as imported from Openpyxl library will be used to design our report. You can learn more about the Python library [here](https://docs.python.org/3/library/)
+You can learn more about the Python library [here](https://docs.python.org/3/library/)
 
 #### Viewing Excel data
 To read our excel file, we will use `pd.read_excel()` function as demonstrated in the code snippet below:
@@ -98,7 +100,7 @@ The following results will be displayed after running the code above:
 ![Output](/engineering-education/automating-excel-sheet-in-python/output.png)
 
 #### Pivot table
-To create our pivot table, we are going to use the `.pivot_table()` function to showcase the student_results. If we want to pivot the total points attained by students of different courses, we will run the code snippet below:
+To create our pivot table, we are going to use the `.pivot_table()` function to showcase the student_results. To pivot the total points attained by students of different courses, we will run the code snippet below:
 
 ```python
 report_table = excel_file..pivot_table(index='Student Number', columns='Course' , values='points' , aggfun='sum').round(0)
@@ -118,8 +120,8 @@ The code below will send the report table to an excel file:
 report_table.to_excel('report_2021.xlsx' , sheet_name='Report' , startrow=5)
 ```
 
-### Generating the Reports using Openpyxl library
-In this section, we will use the `load_workbook` function that will be used to access the workbook and use its `.save()` function to save the workbook. The loading and saving of the workbook will be done every time we modify the workbook, and it will be done once.
+### Generating the reports using Openpyxl library
+In this section, we will use the `load_workbook` function that will be used to access the workbook and use its `.save()` function to save the workbook. The loading and saving of the workbook will be done every time we modify the workbook and it will be done once.
 
 We are required to identify the maximum and minimum active columns and rows to ensure that even if we add more data to the Excel sheet, the code will keep working.
 
@@ -150,7 +152,7 @@ automate_excel('student_results1.xlsx')
 automate_excel('student_results2.xlsx')
 ```
 
-### Scheduling Python script
+### Scheduling Python scripts
 At this point, we've finished up with all the code. Next, we need to use the task scheduler to `run` the Python script at various times based on the data needs. The data needs may be daily, weekly, or even monthly. 
 
 With that, we have successfully automated our excel file simply and understandably.
@@ -158,7 +160,7 @@ With that, we have successfully automated our excel file simply and understandab
 ### Conclusion
 This is one of the articles that give the reader a simple and direct guide on how to automate excel files in Python with clear and simple steps. Kindly share your experience of setting up the automation of excel sheets in Python in the comments section below. Thank you!
 
-Happy Coding!
+Happy coding!
 
 ---
 Peer Review Contributions by: [Dawe Daniel](/engineering-education/authors/dawe-daniel/)
