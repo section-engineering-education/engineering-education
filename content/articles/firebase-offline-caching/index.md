@@ -6,7 +6,7 @@ url: /firebase-offline-caching/
 title: Implementing Offline Caching In Room For Data Fetched From Firebase Using Kotlin
 description: In this tutorial, we will learn how to implement offline caching in Firebase with the Room persistence library.
 author: stephen-odhiambo
-date: 2022-03-17T00:00:00-11:10
+date: 2022-04-07T00:00:00-11:10
 topics: [Android]
 excerpt_separator: <!--more-->
 images:
@@ -26,8 +26,8 @@ In this tutorial, we will learn how to implement offline caching in Firebase wit
 - [Prerequisites](#prerequisites)
 - [Room database recap](#room-database-recap)
 - [Getting started](#getting-started)
-- [Setting up project](#setting-up-project)
-- [Step 1 - Creating model class](#step-1---creating-model-class)
+- [Setting up the project](#setting-up-the-project)
+- [Step 1 - Creating the model class](#step-1---creating-the-model-class)
 - [Step 2 - Defining utility items](#step-2---defining-utility-items)
 - [Step 3 - Creating data classes](#step-3---creating-data-classes)
 - [Creating DAO interface](#creating-dao-interface)
@@ -39,7 +39,7 @@ In this tutorial, we will learn how to implement offline caching in Firebase wit
 - [Conclusion](#conclusion)
 
 ### Prerequisites
-To follow through this tutorial, you must have:
+To follow along with this tutorial, you must have:
 - [Android Studio](https://developer.android.com/studio/index.html) installed on your computer.
 - The basics of using [Kotlin](https://kotlinlang.org/) programming language.
 - Knowledge in [Coroutines](https://developer.android.com/kotlin/coroutines).
@@ -47,20 +47,23 @@ To follow through this tutorial, you must have:
 - Basics of [Room](https://developer.android.com/training/data-storage/room) persistence library.
 
 ### Room database recap
-Room is a persistent database library that is built on top of the SQLite database. It allows for storing data locally and even caching remote data to be accessed offline in Android devices.
+Room is a persistent database library that is built on top of the SQLite database. It allows for storing data locally and even caching remote data to be accessed offline on Android devices.
 
 Offline caching leverages various benefits to your app's users not only limited to offline access of data but also faster data access. When the data is locally cached in your android device, the speed of access will be increased since the data is locally available. 
 
 With the Room persistence library, you can enable offline caching by temporarily storing the data fetched from the remote service first before presenting it to the user. This way, the user can continually have a view of the data without necessarily sending queries to the remote database every time. 
+
 To help you learn more about using Room, you can refer to this article [here](https://www.section.io/engineering-education/introduction-to-room-db/)
 
 ### Getting started
-In this tutorial, we will create an app that stores data in a firebase real-time database. We will then learn how to fetch the data then cache it with the Room persistence library and display it to the screen.
+In this tutorial, we will create an app that stores data in a firebase real-time database. We will then learn how to fetch the data, cache it with the Room persistence library, and display it on the screen.
 
 > Make sure that you have linked your project with Firebase and ViewBinding is also enabled. To get started with Firebase, you can refer [here](https://www.section.io/engineering-education/firebase-email-and-password-authentication-in-android-using-kotlin/)
 
-### Setting up project
-After you have created an Android project in your Android studio and linked it with Firebase, we can now set up the project by adding the necessary dependencies. In your app-level `build.gradle` file, add the following dependencies:
+### Setting up the project
+After you have created an Android project in your Android studio and linked it with Firebase, we can now set up the project. We first start by adding the necessary dependencies. 
+
+In your app-level `build.gradle` file, add the following dependencies:
 
 ```gradle
 
@@ -81,16 +84,20 @@ After you have created an Android project in your Android studio and linked it w
     kapt "androidx.room:room-compiler:2.4.2"
 ```
 
-The app we are going to build will have many classes, to avoid confusion and maintain clean code, we will create packages that will separate the classes. Right-click on the main/root directly and create the following packages; `ui`, `util`, `repository`, `viewmodel`, `adapter`, `model`, `data`(`local`). Data has a sub-package for holding the local database.
+The app we are going to build will have many classes. To avoid confusion and maintain clean code, we will create packages that will separate the classes. 
 
-The project build will have a single screen that has a `RecyclerView` for displaying the data fetched from the real-time database a `Progressbar` and a `SearchView`.
+Right-click on the main/root directly and create the following packages; `ui`, `util`, `repository`, `viewmodel`, `adapter`, `model`, `data`(`local`). Data has a sub-package for holding the local database.
+
+The project build will have a single screen that has a `RecyclerView` for displaying the data fetched from the real-time database, a `Progressbar`, and a `SearchView`.
 
 Now that we have set the project structure, we can dive into implementation.
 
 #### Step 1 - Creating model class
-The model class is a data class whose main purpose is to hold the data that is being fetched from the Firebase real-time database. Since we want to cache the data using Room, we must annotate the model class with the `@Entity` for this class to serve both as the remote and local data class. 
+The model class is a data class whose main purpose is to hold the data that is being fetched from the Firebase real-time database. Since we want to cache the data using Room, we must annotate the model class with the `@Entity` class. This class will serve both as the remote and local data class. 
 
-Optionally, you can as well create a separate model data class and annotate with `@Entity`. This model class will hold the data from [this](https://drive.google.com/file/d/1j_Oyh3Yce2WR5JqB1wPtUF1UMZePbN0l/view?usp=sharing) JSON file. You should import this file into your Firebase real-time database.
+Optionally, you can as well create a separate model data class and annotate it with `@Entity`. This model class will hold the data from [this](https://drive.google.com/file/d/1j_Oyh3Yce2WR5JqB1wPtUF1UMZePbN0l/view?usp=sharing) JSON file. 
+
+You should import this file into your Firebase real-time database.
 
 ```kotlin
 @Entity(tableName = "items")
@@ -317,7 +324,9 @@ class MainActivity : AppCompatActivity() {
 ![Project Demo](/engineering-education/firebase-offline-caching/screen-layout.jpeg)
 
 ### Conclusion
-In this article, we looked at how to offline cache data from Firebase's real-time database with Room. Room persistence library can also be used with Retrofit to cache data fetched from the internet. This feature can also be implemented using other Android database libraries like [realm](https://www.section.io/engineering-education/using-realm-database-in-android/).
+In this article, we looked at how to offline cache data from Firebase's real-time database with Room. Room persistence library can also be used with Retrofit to cache data fetched from the internet. 
+
+This feature can also be implemented using other Android database libraries like [realm](https://www.section.io/engineering-education/using-realm-database-in-android/).
 
 Happy Coding!
 
