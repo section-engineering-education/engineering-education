@@ -4,16 +4,16 @@ status: publish
 published: true
 url: /submitting-data-to-a-google-form-in-android/
 title: Sibmitting data to a Google form in Android
-description: This article aims to demenstrate how to submit data to a Google form from an android application using Retrofit.
+description: This article aims to demonstrate how to submit data to a Google form from an android application using Retrofit.
 author: calvin-ombati
-date: 2022-03-16T00:00:00-03:30
+date: 2022-04-07T00:00:00-08:00
 topics: [Languages]
 excerpt_separator: <!--more-->
 images:
 
-  - url: /engineering-education/submitting-data-to-a-google-form-in-android/hero.png
-    alt: Submitting data to Google form android Hero Image
----
+  - url: /engineering-education/submitting-data-to-a-google-form-in-android/hero.jpg
+    alt: Submitting data to Google form in android Hero Image
+--- 
 
 Surveys and questionnaires have been conducted manually for a long time. However, this tends to be tiresome and sometimes does not reach out to many people. 
 <!--more-->
@@ -65,9 +65,9 @@ The simplest way to obtain the questions entry IDs is; while still on the page y
 This will open in a different tab. Fill in all the details as you would have done if you filled out the form, and then click on get `Get link`.
 
 Copy and paste the generated link somewhere to extract the entry IDs of the different questions in your form. Here is mine :
-
-"https://docs.google.com/forms/d/e/1FAIpQLSfY8nzs8rqyBBv4slBUxu8RLKNTe6yYu4lCgmRPY_mrnee0vw/viewform?usp=pp_url&entry.1487586230=Calvin+Omati&entry.167627252=calvombati@gmail.com&entry.2059565087=Male&entry.1673881430=https://github.com/calvinombati&entry.124829766=Kotlin&entry.124829766=Java&entry.124829766=Dart"
-
+```bash
+https://docs.google.com/forms/d/e/1FAIpQLSfY8nzs8rqyBBv4slBUxu8RLKNTe6yYu4lCgmRPY_mrnee0vw/viewform?usp=pp_url&entry.1487586230=Calvin+Omati&entry.167627252=calvombati@gmail.com&entry.2059565087=Male&entry.1673881430=https://github.com/calvinombati&entry.124829766=Kotlin&entry.124829766=Java&entry.124829766=Dart
+```
 Our IDs are the parts that start with `entry`  followed by a given number. So, for example, if I break mine down, I will have the following as my final content:
 
 - entry.1487586230=Calvin+Omati
@@ -95,7 +95,7 @@ implementation 'com.squareup.retrofit2:converter-gson:2.9.0'
 ```
 
 ### Creating the User Interface
-We will create a user interface containing several `TextViews, `Radio Button` and `Checkboxes` because we want to test sending answers to several types of questions, i.e. Short text questions, multi-choice questions, and checkboxes.
+We will create a user interface containing several `TextViews, `Radio Button`, and `Checkboxes` because we want to test sending answers to several types of questions, i.e. Short text questions, multi-choice questions, and checkboxes.
 
 If you have difficulties coming up with the UI, please check it out in this Github repository [Retrofit-GoogleFormDemo](https://github.com/calvinombati/Retrofit-GoogleFormDemo).
 
@@ -124,9 +124,9 @@ interface ApiService {
 ```
 
 The function takes the Retrofit's POST annotation and the endpoint to the form. The `BASE_URL` is the link to the form as below.
-
-"https://docs.google.com/forms/d/e/1FAIpQLSfY8nzs8rqyBBv4slBUxu8RLKNTe6yYu4lCgmRPY_mrnee0vw/viewform"
-
+```bash
+https://docs.google.com/forms/d/e/1FAIpQLSfY8nzs8rqyBBv4slBUxu8RLKNTe6yYu4lCgmRPY_mrnee0vw/viewform
+```
 The first part to the "e/" is our `BASE_URL`. So, for instance, mine is  "https://docs.google.com/forms/d/e/".
 
 Our endpoint is from that part to the part that ends with "/viewform". Make sure you append it with a "/formResponse" and remove "viewform"). For instance, the endpoint will be "1FAIpQLSfY8nzs8rqyBBv4slBUxu8RLKNTe6yYu4lCgmRPY_mrnee0vw/formResponse" from my link.
@@ -142,7 +142,7 @@ You can check out the one I have created in the demo app for reference. - [Retro
 ###  Submitting data to google form
 In the  `MainActivity`  inside the `onCreate` function,  we will link the API to the data entered on the form. 
 
-We will get the data entered in the `EditText` fields, the selected gender from the `RadioButton` and checked `CheckBox`es for favourite languages. Then, we will send the data through the instance of the `FormApi`.
+We will get the data entered in the `EditText` fields, the selected gender from the `RadioButton`, and checked `CheckBox`es for favorite languages. Then, we will send the data through the instance of the `FormApi`.
 
 ```kotlin
 binding.buttonSubmit.setOnClickListener {
