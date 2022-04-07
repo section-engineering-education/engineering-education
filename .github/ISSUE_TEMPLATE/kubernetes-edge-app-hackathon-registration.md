@@ -7,9 +7,9 @@ assignees: hborrelli1, hectorkambow
 
 ---
 
-In this edge-based hackathon, we will focus on Sections [Kubernetes Edge Interface (KEI)](https://www.section.io/docs/explanations/kei/) solution. KEI is a simple Kubernetes deploy process. [KEI](https://www.section.io/kubernetes-edge-interface/) makes many edge clusters appear as a single cluster, enabling developers to quickly and easily deploy applications across a distributed Edge.
+In this edge-based hackathon, we will focus on Section's [Kubernetes Edge Interface (KEI)](https://www.section.io/docs/explanations/kei/) solution. [KEI](https://www.section.io/kubernetes-edge-interface/) makes many edge clusters appear as a single cluster, enabling developers to quickly and easily deploy applications across a distributed Edge.
 
-To participate in this hackathon, EngEd students are expected to create a true K8 app for the Edge that is deployed using the KEI process.
+To participate in this hackathon, EngEd students are expected to create a true Kubernetes application for the Edge that is deployed using the KEI process.
 
 Review the judging criteria listed below.
 
@@ -19,7 +19,7 @@ Below you will find full details on the hackathon and any requirements.
 Open to all EngEd students (participants can work individually or in teams of EngEd students). **By submitting this issue form you will have successfully signed up and we will reach out with next steps.** 
 
 ### Requirements
-Once your K8 Edge application is complete and deployed create a pull request to attach your submission to. 
+Once your K8s Edge application is complete and deployed, create a pull request to attach your submission to. 
 
 Please complete and submit the following required sections listed below via a [Pull Request](https://github.com/section-engineering-education/engineering-education/compare) once your project is ready to be submitted. 
 
@@ -37,22 +37,21 @@ Please complete and submit the following required sections listed below via a [P
 
 - Test every link included.
 
-- _Submit your project via a pull request on GitHub titled_ "EngEd - K8 Edge App 2022 Hackathon: Your Project Title Here" and **link** this original issue form to your project pull request.
+- _Submit your project via a pull request on GitHub titled_ "EngEd - K8s Edge App 2022 Hackathon: Your Project Title Here" and **link** this original issue form to your project pull request.
 
 ### Prizes
 1st prize: $1250
 2nd prize: $750
 3rd prize: $500
 
-The first 20 participants to complete (and successfully submit) their projects are eligible to receive a complimentary virtual pass to [Kubecon](https://events.linuxfoundation.org/kubecon-cloudnativecon-europe/) a face value of $75.00. (Simply DM us in the EngEd community channel).
+The first 20 participants to complete (and successfully submit) their projects are eligible to receive a complimentary virtual pass to [KubeCon](https://events.linuxfoundation.org/kubecon-cloudnativecon-europe/) ($75.00 value). Simply DM us in the EngEd community channel.
 
-The top 3 winning applications will be points of reference at our booth at Kubecon event mentioned above.
+The top 3 winning applications will be points of reference at our booth at the KubeCon event mentioned above.
 
-All other projects will get honorable mentions on our website.
+All other projects will receive honorable mentions on our website.
 
 ### Judging criteria: 
-The quality of the project (code effectiveness and code clarity) points for creativity and originality.
-Implementation of the Idea: Includes how well and quickly the project was developed and deployed using the KEI process.
-Was the application successfully deployed to the edge using KEI.
-The application functions completely and as described in the description.
-Judge vote(s)
+- The quality of the project (code effectiveness and code clarity) points for creativity and originality.
+- Implementation of the Idea: Includes how well and quickly the project was developed and deployed using the KEI process.
+- Was the application successfully deployed to the edge using KEI?
+- The application functions completely and as described in the description.
