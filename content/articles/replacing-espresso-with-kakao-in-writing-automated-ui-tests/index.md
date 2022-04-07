@@ -1,4 +1,22 @@
-Instrumented tests ensure that an app functions correctly and as expected while building UI tests, reducing the number of instances where the app fails in production.  We can perform manual testing, in which we test every feature of our app by hand. The manual method may have its repercussions as we may fail to test some components.
+---
+layout: engineering-education
+status: publish
+published: true
+url: /writing-automated-ui-tests-with-kakao-in-android/
+title: Writing Automated UI tests with Kakao in Android
+description: This tutorial will show the reader how to write automated UI tests with Kakao in Android.
+author: judy-wangari
+date: 2022-04-07T00:00:00-03:20
+topics: [Languages]
+excerpt_separator: <!--more-->
+images:
+
+  - url: /engineering-education/writing-automated-ui-tests-with-kakao-in-android/hero.jpg
+    alt: Writing Automated UI tests with Kakao in Android
+---
+Instrumented tests ensure that an app functions correctly and as expected while building UI tests, reducing the number of instances where the app fails in production.
+<!--more-->
+We can perform manual testing, in which we test every feature of our app by hand. The manual method may have its repercussions as we may fail to test some components.
 
 ### Prerequisites
 To follow along, you should have:
@@ -44,15 +62,15 @@ Because we'll write automated UI tests, we need multiple UIs to test. Go ahead a
 
 #### MainActivity
 
-![main layout](/engineering-education/implementdatabase-driven-push-notifications-in-android-with-firebase/layout-main.png)
+![main layout](/engineering-education/writing-automated-ui-tests-with-kakao-in-android/layout-main.png)
 
 #### RegisterActivity
 
-![register layout](/engineering-education/implementdatabase-driven-push-notifications-in-android-with-firebase/layout-register.png)
+![register layout](/engineering-education/writing-automated-ui-tests-with-kakao-in-android/layout-register.png)
 
 #### SearchActivity
 
-![search layout](/engineering-education/implementdatabase-driven-push-notifications-in-android-with-firebase/layout-search.png)
+![search layout](/engineering-education/writing-automated-ui-tests-with-kakao-in-android/layout-search.png)
 
 ### Step 3 - Declaring screens
 Kakao uses `Screens` that contain all the views that a given layout holds. To reference `Views` from the actual user interface, Kakao has different supports views such as `KTextView,` `KImageView,` `KButton,` `KRecyclerView` and many more.
@@ -255,7 +273,6 @@ fun test_that_a_snackbar_is_shown_when_all_fields_filled(){
         snackbar.text.hasText("Registering...")
     }
 }
-}
 ```
 
 Finally, let's go ahead and write tests for our `SearchScreen`.
@@ -311,7 +328,7 @@ fun test_the_size_of_the_recyclerview_list_is_14(){
 ### Demo
 That is all. When you run the tests, they should all pass as shown below unless you have any errors:
 
-![test pass](/engineering-education/implementdatabase-driven-push-notifications-in-android-with-firebase/test-pass.gif)
+![test pass](/engineering-education/writing-automated-ui-tests-with-kakao-in-android/test-pass.png)
 
 ### Conclusion
 With that, you now know what Kakao is and how it outperforms Espresso. We've also learned how to integrate Kakao into an Android Project using screens.
@@ -325,3 +342,6 @@ Keep exploring more about Kakao and checkout [Kakao for Jetpack Compose](https:/
 - [Espresso Docs](https://developer.android.com/training/testing/espresso)
 
 Happy coding!
+
+---
+Peer Review Contributions by: [Eric Gacoki](/engineering-education/authors/eric-gacoki/)
