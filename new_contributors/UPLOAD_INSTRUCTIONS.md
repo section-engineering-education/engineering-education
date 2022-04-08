@@ -124,13 +124,14 @@ Add these files to the same PR (pull request).
 ![Author file structure example](/static/images/meta-image-frontmatter.PNG)
 
 ## File Structure - explained
-- title (name of student - **must be included**)
-- type (authors file - **must be included**)
-- github (GitHub URL if applicable)
-- linkedin (LinkedIn URL - if applicable)
-- twitter (Twitter URL - if applicable)
-- website (author website - if applicable)
-- images (author avatar image - **must be included**)
+- title (Name of student - **Required**)
+- type (Authors file - **Required**)
+- github (GitHub URL - Optional)
+- linkedin (LinkedIn URL - Optional)
+- twitter (Twitter URL - Optional)
+- website (Author website URL - Optional)
+- images (Author avatar image - **Required**)
+- skills (Author skills/languages - an array of strings - Optional)
 
 Congratulations! Your article is now ready to be submitted for review and approval by the Section team. Open a pull request and we'll be happy to review it.
 

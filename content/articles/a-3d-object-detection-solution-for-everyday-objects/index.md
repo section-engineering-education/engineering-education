@@ -6,7 +6,7 @@ url: /a-3d-object-detection-solution-for-everyday-objects/
 title: A 3D Object Detection Solution for Everyday Objects
 description: This tutorial will cover how to perform 3D object detection using the mediapipe library and python, and draw 3D bounding box around the objects.
 author: lilian-tonia
-date: 2021-12-20T00:00:00-06:45
+date: 2021-12-20T00:00:00-06:55
 topics: [Machine Learning]
 excerpt_separator: <!--more-->
 images:

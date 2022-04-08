@@ -1,5 +1,10 @@
 {{ define "main" }}
 
+{{ $featureToggle := resources.Get "js/featureToggle.js" }}
+{{ $author := path.Base .Permalink}}
+
+<script defer language="javascript" type="text/javascript" src="{{ $featureToggle.Permalink }}"></script>
+
 <article>
   <section class="hero-blocks xs-pt-50 xs-pb-50 sm-pt-100 sm-pb-100 -blue-blocks">
     <div class="hero-blocks-mobile">
@@ -44,6 +49,33 @@
           {{ end }}
 
           {{ .Content }}
+
+          {{/*  Insights Section  */}}
+          {{ $allArticles := (where (where .Site.Pages "Params.layout" "engineering-education") ".Params.author" $author) }}
+          {{ $numberOfArticles := len $allArticles }}
+
+          {{/*  Need to capture all article urls then asynchronousel fetch the data due to Googles Data API limits.*/}}
+          {{ $articleUrlsList := slice }}
+
+          {{ range $allArticles }}
+            {{ $articleUrlsList = $articleUrlsList | append .Permalink }}
+          {{ end }}
+
+          {{ $articleUrlsList = delimit $articleUrlsList ", "}}
+
+          <div class="insights-section">
+            <div class="insight page-views" data-before="Total Number of Articles Written">
+              <img src="{{ if eq $.Site.Params.env "local" }}/{{ else }}/engineering-education/{{ end }}images/total-articles-icon.png" alt="Total Number of Articles Icon" />
+              <p>{{ $numberOfArticles }}</p>
+            </div>
+          </div>
+          
+          {{ with .Params.skills }} 
+            <div class="author-skills">
+              <h4>Skills/Languages</h4>
+              <p class="skills">{{ delimit . " | " }}</p>
+            </div>
+          {{ end }}  
         </div>
 
         <div class="section-rich-text-leading bio">
@@ -82,16 +114,45 @@
 <section class="blog-listing-posts">
   <div class="section-container blog-listing-posts-container">
     <div class="blog-listing-posts-content">
-      <h1 class="title-3 text-blue xs-pb-20">Contributed articles</h1>
+      <h2 class="title-3 text-blue xs-pb-20">Contributed articles</h2>
    
       <ul class="list-unstyled xs-mb-80">
 
-        {{ $author := path.Base .Permalink}}
+        {{ $hyvorId := $.Site.Params.hyvorId }}
+        
+        {{ range $elem_index, $elem_val := (where (where .Site.Pages "Params.layout" "engineering-education") ".Params.author" $author) }}
+        
+        {{ $articlePermalink := "" }}
+        {{ if eq $.Site.Params.env "local" }}
+          {{ $articlePermalink = .Permalink }}
+        {{ else if eq $.Site.Params.env "staging" }}
+          {{ $articlePermalink = replace .Permalink "beta" "www" }}
+        {{ else }}
+          {{ $articlePermalink = .Permalink }}
+        {{ end }}
 
-        {{ range (where (where .Site.Pages "Params.layout" "engineering-education") ".Params.author" $author) }}
+        {{ $articleSlug := .Permalink | relURL | anchorize }}
+
+        <script defer type="text/javascript">
+          document.addEventListener("DOMContentLoaded", async function() {
+            fetch('https://talk.hyvor.com/api/v1/page/?page_identifier={{ $articlePermalink }}&website_id={{ $hyvorId }}')
+              .then(response => response.json())
+              .then(data => {
+                if (data.status === true) {
+                  if (!data.data.comments_count) {
+                    document.getElementById('comments-count-{{ $elem_index }}').innerText = 0;
+                  } else {
+                    document.getElementById('comments-count-{{ $elem_index }}').innerText = data.data.comments_count;
+                  }
+                  document.getElementById('likes-count-{{ $elem_index }}').innerText = data.data.reactions[0];
+                }
+              })
+              .catch(err => console.log('Error: ', err));
+          });
+        </script>
         
         <li class="blog-listing-posts-item mix {{ with .Params.tags }}{{ range . }}{{ lower . }} {{ end }}{{ end }}">
-          <a class="decoration-none xs-pb-40 xs-pt-40 prl-25 flex flex-wrap" href="{{.Permalink}}">
+          <a class="decoration-none xs-pb-40 xs-pt-40 pl-25 flex flex-wrap" href="{{.Permalink}}">
 
             <div class="blog-listing-posts-item-image">
               {{ if isset .Params "images" }}
@@ -113,11 +174,21 @@
 
               <p class="text-18-regular text-color">{{ .Summary | plainify | truncate 210 "..." }}</p>
 
+              <div id="insightsData-{{ $elem_index }}" class="blog-listing-posts-item-insights-data">
+                <div class="data-point">
+                  <p><img class="icon" src="{{ if eq $.Site.Params.env "local" }}/{{ else }}/engineering-education/{{ end }}images/clapping-icon.png" alt="Article Likes" /></p><span id="likes-count-{{ $elem_index }}">0</span>
+                </div>
+                <div class="data-point">
+                  <p><img class="icon" src="{{ if eq $.Site.Params.env "local" }}/{{ else }}/engineering-education/{{ end }}images/comment-icon.png" alt="Article Comments" /></p><span id="comments-count-{{ $elem_index }}">0</span>
+                </div>
+                <div class="data-point page-views page-views-icon-{{ $elem_index }}">
+                  <p><img class="icon" src="{{ if eq $.Site.Params.env "local" }}/{{ else }}/engineering-education/{{ end }}images/page-views-icon.png" alt="Page Views" /></p><span id="page-views-count-{{ $elem_index }}">0</span>
+                </div>
+              </div>
             </div>
 
           </a>
         </li>
-
 
        {{ end }}
       </ul>
@@ -144,4 +215,59 @@
     </div>
   </div>
 </section>
+
+<script defer type="text/javascript">
+  
+  const toggleToolTip = (el) => {
+    el.classList.toggle('tooltip');
+  }
+  
+  const insightItems = document.getElementsByClassName("insight");
+
+  for (let i = 0; i < insightItems.length; i++) {
+    insightItems[i].addEventListener("touch", () => toggleToolTip(insightItems[i]))
+  }
+
+  document.addEventListener("DOMContentLoaded", async function() {
+    const getPageView = (url, currentUrl) => {
+      const urlRegex = /(http:\/\/localhost:1313\/)|(https:\/\/beta.section.io\/engineering-education\/)|(https:\/\/www.section.io\/engineering-education\/)/gi;
+      const trimmedUrl = url.replace(urlRegex, '');
+
+      const handleError = response => {
+        if (!response.ok) {
+          throw Error(response.statusText);
+        } else {
+          return response.json();
+        }
+      }
+
+      return fetch(`https:\/\/api.www.section.io/pageviews/${trimmedUrl}`)
+        .then(handleError)
+        .then(data => {
+          if (data.pageViews) {
+            const numPageViews = parseInt(data.pageViews).toLocaleString();
+            const pageViewsEl = document.querySelector(`#page-views-count-${currentUrl}`);
+            const parentElement = document.querySelector(`.page-views-icon-${currentUrl}`);
+            pageViewsEl.innerText = numPageViews;
+            parentElement.classList.add('visible');
+          }
+        })
+        .catch(err => console.log('err:', err));
+    }
+
+    const applyPageViews = async (urls) => {
+      let currentUrl = 0;
+
+      while (currentUrl <= urls.length - 1) {
+        await getPageView(urls[currentUrl], currentUrl);
+        currentUrl++;
+      }
+    }
+
+    const urlsOfArticles = "{{ $articleUrlsList }}";
+    const articlesArr = urlsOfArticles.split(', ');
+    applyPageViews(articlesArr);
+  });
+  
+</script>
 {{ end }}

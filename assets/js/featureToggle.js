@@ -5,7 +5,7 @@ const unleash = function(){
     get: async (name) => {
       if (toggleRepository.features === null) {
         try {
-          const features = await fetch('https://www.section.io/featuretoggle')
+          const features = await fetch(`${window.location.host.includes('beta') ? 'https://beta.section.io/featuretoggle' : 'https://www.section.io/featuretoggle'}`)
             .then(response => response.json())
             .then(data => {
               return data.features

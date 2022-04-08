@@ -3,6 +3,9 @@
 ### How do I suggest a topic to write about?
 We encourage all new contributors to go over our new contributor folder which has a list of resources to prepare to submit a new topic and article idea. We also suggest to review the most [recently published articles](https://www.section.io/engineering-education/) to avoid topic overlap (and to get a good sense on article style tonality, and quality that we are accepting) submit a topic using [this issue form](https://github.com/section-io/engineering-education/issues/new?assignees=&labels=topic+suggestion&template=enged-content-idea-suggestion.md&title=).
 
+### How do I submit a EngEd feature suggestion?
+To suggest a (potential) EngEd feature suggestion [fill this form out](https://github.com/section-engineering-education/engineering-education/issues/new?assignees=&labels=enhancement&template=enged-feature-suggestion.md&title=Feature+suggestion). 
+
 ### How do I submit my 1st article?
 Visit our step-by-step guide on [how to upload your 1st EngEd article](https://github.com/section-io/engineering-education/blob/master/new_contributors/UPLOAD_INSTRUCTIONS.md#how-to-upload-an-article-for-sections-engineering-education-program) to the GitHub repo.
 
@@ -36,7 +39,7 @@ The only requirement is that the article has to be at least 750 words, there is 
 **Articles should be a minimum of 750 words.**
 
 ### How does the revision process work?
-Articles with (little to no extra revisions needed) payout will be $100.00 USD ($150.00 USD for Tutorials)
+Articles with (little to no extra revisions needed) will recieve priorty in the queue.
 
 For the full details on our [review, approval, & payment processes](https://github.com/section-io/engineering-education/blob/master/new_contributors/CONTRIBUTING.md#review-approval--payment-processes) check out the provided link.
 
@@ -65,15 +68,8 @@ The position is a compensated position - 50 USD per successful article review.
 ### Are the positions voluntary or are Peer Reviewers compensated?
 We always encourage friendly reviews among the community to help each other out before article submission. Verified Peer Reviewers are paid $50.00 USD per successful article revision.
 
-### How often are article payouts?
-We typically send article payouts once a week (usually of Fridays) but that may vary depending on holidays, sick, or OOO (out-of-office) days.
-
-### Do we need a PayPal account to participate in the EngEd program?
-We ask all students to have an active, verified, fully set up PayPal account (that is registered under their name) to get any compensation for the articles published.
-
-Not having a PayPal account DOES NOT BAR anyone from participating, building up a resume, and published works to enhance one’s career. 
-
-You can contribute articles to publish to build up a portfolio without a PayPal account.
+### Are articles published compensated?
+No. The value that the EngEd program is providing to students is that of career building, skill enrichments, community building, and portfolio that can be referenced and leveraged upon entering the workforce.
 
 ### Does Section provide revision services?
 We will look over the all articles that come in to ensure they are publish worthy - but our peer reviewer team is only looking to improve the content by making suggestions. 

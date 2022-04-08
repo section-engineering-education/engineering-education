@@ -1,4 +1,4 @@
-### Program Overview
+### EngEd Content Program Overview
 The main criteria that we're using to evaluate the incoming requests include:
 - Polish and depth of the description and key takeaways provided - Grammar, readability, and substance are all being reviewed. Be sure to treat your topic suggestion as the best representation of your writing.
 - Originality - We're looking for unique content that isn't readily available through existing documentation and wikipedia definitions. Consider applying concepts to unique projects.
