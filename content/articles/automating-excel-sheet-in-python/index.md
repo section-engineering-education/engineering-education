@@ -6,7 +6,7 @@ url: /automating-excel-sheet-in-python/
 title: Automating Excel Sheet in Python
 description: This article will guide the reader on how to set up the automation of excel sheets in Python using Python libraries.
 author: kennedy-ndutha
-date: 2022-04-08T00:00:00-13:05
+date: 2022-04-08T00:00:00-21:10
 topics: [Languages]
 excerpt_separator: <!--more-->
 images:
@@ -21,8 +21,8 @@ In this article, we are going to implement python libraries and excel data to au
 ### Table of contents
 - [Prerequisites](#prerequisites)
 - [Overview](#overview)
-    - [Python overview](#python_overview)
-    - [MS Excel overview](#ms_excel_overview)
+    - [Python overview](#python-overview)
+    - [MS Excel overview](#ms-excel-overview)
 - [Analyzing the Excel dataset](#analyzing-the-excel-dataset)
 - [Scheming pivot tables using Pandas](#scheming-pivot-tables-using-pandas)
 - [Generating the reports using Openpyxl library](#generating-the-reports-using-openpyxl-library)
@@ -47,7 +47,7 @@ In case you have not installed python [here](https://realpython.com/installing-p
 Why do we prefer python over other programming languages:
 - It is a free and open-source programming language - You can download Python and install it from this [website](https://realpython.com/installing-python/) freely.
 - Python is an easy-to-use language - Beginners with little knowledge in programming can easily learn python syntax and understand it.
-- It additionally upholds object-situated programming that empowers the client to compose decipherable and reusable codes.
+- It additionally upholds object - Situated programming empowers the client to compose decipherable and reusable codes.
 
 #### MS Excel 0verview
 Microsoft Excel is a bookkeeping sheet device created by Microsoft in 1987 for Windows, macOS, Android, and iOS. It has filled in ubiquity throughout the years due to its effortlessness in directing 'CRUD' activities at the beginning of information. 
@@ -62,7 +62,7 @@ The dataset is already in the `.csv` extension, which we are required to change 
 ![data](/engineering-education/automating-excel-sheet-in-python/data.png)
 
 ### Scheming pivot tables using Pandas
-We'll need to import the following python libraries into our workspace to make the pivot table:
+We will need to import the following python libraries into our workspace to make the pivot table:
 
 ```python
 import pandas as pd
@@ -112,9 +112,9 @@ The report will be as shown below:
 
 The above `aggfun = 'sum'` pivot_table function is used to calculate the sum of points in the columns grouped by the course. The `.round (0)` function is for null return.
 
-The function `_to_excel()` will be used to export our excel file. Inside the brackets, we will specify the name of the output Excel file (report_2021.xlsx), followed by the sheet name we are going to generate (report), and the pivot table cell (5).
+The function `_to_excel()` will be used to export our excel file. Inside the brackets, we will specify the name of the output Excel file (report_2021.xlsx). It is followed by the sheet name we are going to generate (report), and the pivot table cell (5).
 
-The code below will send the report table to an excel file:
+The code below will send the report table to an Excel file:
 
 ```python
 report_table.to_excel('report_2021.xlsx' , sheet_name='Report' , startrow=5)
