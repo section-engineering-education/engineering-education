@@ -6,7 +6,7 @@ url: /image-colorization-using-ai-and-python/
 title: Image colorization using AI and Python
 description: This article will discuss how to use the DeOldify model to convert some old black and white photos of a city adding color to them.
 author: sharon-kinyan
-date: 2022-04-08T00:00:00-21:00
+date: 2022-04-10T00:00:00-21:00
 topics: [Machine Learning]
 excerpt_separator: <!--more-->
 images:
@@ -78,7 +78,7 @@ Image one:
 
 Image two:
 
-![Nairobi]](/engineering-education/image-colorization-using-ai-and-python/nairobi.jpg)
+![Nairobi](/engineering-education/image-colorization-using-ai-and-python/nairobi.jpg)
 
 Image three:
 
