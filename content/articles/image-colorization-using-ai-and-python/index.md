@@ -78,3 +78,6 @@ The Deoldify model let's you recolor old images and videos of family members or 
 
 ### References
 - [DeOldify: A Deep Learning based project for colorizing and restoring old images](https://github.com/jantic/DeOldify)
+
+---
+Peer Review Contributions by: [Wilkister Mumbi](/engineering-education/authors/wilkister-mumbi/)
