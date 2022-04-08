@@ -1,4 +1,22 @@
-SimSwap is an acronymn for Simple Swap. It is an ML framework that aims for generalized and high fidelity face swapping. This tutorial will give an overview of the framework, how it can be applied in various use cases,  and implement an example to demonstrate how it can be used.
+---
+layout: engineering-education
+status: publish
+published: true
+url: /simple-swap-for-swapping-faces/
+title: Simple Swap: A Machine Learning Framework for Swapping Faces
+description: This tutorial will give an overview of the SimSwap framework, how it can be applied in various use cases, and implement an example to demonstrate how it can be used.
+author: wilkister-mumbi
+date: 2022-04-08T00:00:00-21:30
+topics: [Machine Learning]
+excerpt_separator: <!--more-->
+images:
+
+  - url: /engineering-education/simple-swap-for-swapping-faces/hero.png
+    alt: Simple Swap Example Image
+---
+SimSwap is an acronymn for Simple Swap. It is an ML framework that aims for generalized and high fidelity face swapping. 
+<!--more-->
+This tutorial will give an overview of the framework, how it can be applied in various use cases, and implement an example to demonstrate how it can be used.
 
 ### Prerequisites
 To follow along with this tutorial, you need to be familiar with:
