@@ -16,7 +16,7 @@ images:
 ---
 Python has rich libraries, useful packages, and ready-to-use functions for automation that greatly facilitates testing. Python allows you to choose what's best for your project.
 <!--more-->
-In this article, we are going to implement python libraries and excel data to automate. It will give us a better overview and understanding of Python and Excel.
+In this article, we are going to implement python libraries and excel data to automate. It will help us gain a better understanding of Python and Excel.
 
 ### Table of contents
 - [Prerequisites](#prerequisites)
@@ -62,7 +62,7 @@ The dataset is already in the `.csv` extension, which we are required to change 
 ![data](/engineering-education/automating-excel-sheet-in-python/data.png)
 
 ### Scheming pivot tables using Pandas
-To create the pivot table, we will be required to import the following python libraries into our workspace:
+We'll need to import the following python libraries into our workspace to make the pivot table:
 
 ```python
 import pandas as pd
@@ -73,7 +73,7 @@ from openpyxl.chart import BarChart, Reference
 import string
 ```
 
-`Pandas` library is utilized to read Excel files to develop pivot tables and move them to Excel. Python's `Openpyxl` module is designed to compose Excel algorithms and create charts and spreadsheets. 
+The 'Pandas' library is used to analyze Excel files and create pivot tables in Excel. Python's 'Openpyxl' module is intended to make Excel calculations and create graphs and spreadsheets.
 
 In case you have not installed the `Openpyxl` library, run the command below in your command prompt to add it to your workspace:
 
@@ -139,7 +139,7 @@ This is verified by the original `report.xlsx` file that we exported shown below
 ![Maximum and minimum rows and columns](/engineering-education/automating-excel-sheet-in-python/maxmin.png)
 
 ### Automating the report using Python
-After designing our report, the next and most important part is to automate it. In this part, we will write all the code using one function to make it easy to automate our report. 
+After designing our report, the next and most important part is to automate it. In this part, we will compose all the code utilizing one function to make it simple to automate our report.
 
 Putting the code under the same function ensures that next time we are required to automate the report, we will only have to specify the file name and run the code. [Here](https://github.com/taves-hub/Automating-excel-sheet-in-python/blob/main/Python/index.md) is our complete code.
 
@@ -158,7 +158,7 @@ At this point, we've finished up with all the code. Next, we need to use the tas
 With that, we have successfully automated our excel file simply and understandably.
 
 ### Conclusion
-This is one of the articles that give the reader a simple and direct guide on how to automate excel files in Python with clear and simple steps. Kindly share your experience of setting up the automation of excel sheets in Python in the comments section below. Thank you!
+This is one of the articles that give the reader a simple and direct guide on how to automate excel files in Python with clear and simple steps. You may share your experience of setting up the automation of succeed excel in Python in the comment segment below. Thank you!
 
 Happy coding!
 
