@@ -132,3 +132,6 @@ It is a technique widely used in the film industry to help generate non-existent
 ### Further reading
 - [SimSwap: An Efficient Framework For High Fidelity Face Swapping](https://arxiv.org/pdf/2106.06340v1.pdf)
 - [GitHub](https://github.com/neuralchen/SimSwap)
+
+---
+Peer Review Contributions by: [Willies Ogola](/engineering-education/authors/willies-ogola/)
