@@ -1,4 +1,22 @@
-[DeOldify](https://github.com/jantic/DeOldify) is a Deep Learning (DL) based project for colorizing and restoring old images and video. It helps us add color old black and white photos adding life into them. The DL model uses a unique NoGAN architecture to train the model. We will use this model to convert some old black and white photos of a city adding color to them.
+---
+layout: engineering-education
+status: publish
+published: true
+url: /image-colorization-using-ai-and-python/
+title: Image colorization using AI and Python
+description: This article will discuss how to use the DeOldify model to convert some old black and white photos of a city adding color to them.
+author: sharon-kinyan
+date: 2022-04-08T00:00:00-21:00
+topics: [Machine Learning]
+excerpt_separator: <!--more-->
+images:
+
+  - url: /engineering-education/image-colorization-using-ai-and-python/hero.png
+    alt: Image colorization using AI and Python Example Image
+---
+[DeOldify](https://github.com/jantic/DeOldify) is a Deep Learning (DL) based project for colorizing and restoring old images and video. It helps us add color old black and white photos adding life into them. The DL model uses a unique NoGAN architecture to train the model. 
+<!--more-->
+We will use this model to convert some old black and white photos of a city adding color to them.
 
 ### Prerequisite
 To follow along, you need to be familiar with:
