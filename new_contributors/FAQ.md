@@ -39,7 +39,7 @@ The only requirement is that the article has to be at least 750 words, there is 
 **Articles should be a minimum of 750 words.**
 
 ### How does the revision process work?
-Articles with (little to no extra revisions needed) payout will be $100.00 USD ($150.00 USD for Tutorials)
+Articles with (little to no extra revisions needed) will recieve priorty in the queue.
 
 For the full details on our [review, approval, & payment processes](https://github.com/section-io/engineering-education/blob/master/new_contributors/CONTRIBUTING.md#review-approval--payment-processes) check out the provided link.
 
@@ -69,7 +69,7 @@ The position is a compensated position - 50 USD per successful article review.
 We always encourage friendly reviews among the community to help each other out before article submission. Verified Peer Reviewers are paid $50.00 USD per successful article revision.
 
 ### Are articles published compensated?
-The value that the EngEd program is providing to students is that of career building, skill enrichments, community building, and portfolio that can be referenced and leveraged upon entering the workforce.
+No. The value that the EngEd program is providing to students is that of career building, skill enrichments, community building, and portfolio that can be referenced and leveraged upon entering the workforce.
 
 ### Does Section provide revision services?
 We will look over the all articles that come in to ensure they are publish worthy - but our peer reviewer team is only looking to improve the content by making suggestions. 
