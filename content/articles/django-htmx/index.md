@@ -2,11 +2,8 @@
 
 ### Introduction
 Did you know that it is possible to use AJAX without writing a single line of JavaScript code?
-
 Are you a Django developer that is not really familiar with JavaScript and will like to display components of your application asynchronously?
-
 If these questions have come to your mind, you are in the right place.
-
 In this article, I will build a simple Django application that creates, deletes content from the database, and displays the current content asynchronously without the page refreshing. This is important if you don't want to go through the stress of using a library like React or Vue.
 The project built in this tutorial can be found on [GitHub](https://github.com/khabdrick/django-htmx-tutorial).
 
@@ -19,9 +16,7 @@ The project built in this tutorial can be found on [GitHub](https://github.com/k
 The general idea behind [HTMX](https://htmx.org/) is simplifying web application development by using HTML attributes to incorporate [AJAX](https://htmx.org/docs#ajax), [CSS Transitions](https://htmx.org/docs#css_transitions), [WebSockets](https://htmx.org/docs#websockets), and [Server-Sent Events](https://htmx.org/docs#sse) directly into HTML. You don’t need to write any JavaScript for the basic things required to run a full-fledged web application unlike React, Vue, and other frontend libraries. To use HTMX in Django, you don’t need to install anything, you just need to attach CDN to your HTML and you are good to go.
 
 ### Creating, Listing, and Deleting with HTMX and Django
-
 In this section, you will learn how to build the basic create, list and delete functionality with HTMX and Django to illustrate how HTMX in Django. We will be building a contact list application.
-
 Something to note, when working with HTMX if you must return something from the server-side it must be HTML fragments, not JSON.
 Let’s get right into it!
 First, let’s create an app for our contacts. You can do this by going to the root of your application and running the following command.
