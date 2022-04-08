@@ -20,7 +20,6 @@ In this section, you will learn how to build the basic create, list and delete f
 Something to note, when working with HTMX if you must return something from the server-side it must be HTML fragments, not JSON.
 Let’s get right into it!
 First, let’s create an app for our contacts. You can do this by going to the root of your application and running the following command.
-
 ```bash
 django-admin startapp app
 ```
@@ -31,6 +30,7 @@ INSTALLED_APPS = [...,
                    ...,
 ]
 ```
+
 #### Creating and Listing with HTMX and Django
 Open your preferred text editor, navigate to *app/models.py*, and paste the code below, which is just a simple model for a contact list application.
 ```python
