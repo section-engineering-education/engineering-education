@@ -6,7 +6,7 @@ url: /natural-language-processing-using-tensorflow-and-bert-model/
 title: Natural language processing using TensorFlow and Bert Model
 description: This tutorial will guide a reader how to build a sentiment analysis model using BERT and TensorFlow.
 author: charles-ndirutu
-date: 2022-04-07T00:00:00-20:00
+date: 2022-04-08T00:00:00-20:00
 topics: [Machine Learning]
 excerpt_separator: <!--more-->
 images:
@@ -323,7 +323,7 @@ intermediate_layer = tf.keras.layers.Dense(512, activation='relu', name='interme
 ```
 We have created a `Dense` layer as the intermediate layer. It will have 512 neurons and will be named `intermediate_layer`. It uses `relu` as the activation function. We use this activation function because the output of this layer ranges between 0 and infinity. It also uses the previous `bert_embds` as input since we are building the model sequentially (layer by layer).
 
-### Adding the output layer
+#### Adding the output layer
 We add the output layer as follows:
 
 ```python
