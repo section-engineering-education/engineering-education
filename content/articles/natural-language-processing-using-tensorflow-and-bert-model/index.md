@@ -122,8 +122,7 @@ To read the sentiment analysis dataset, use this code:
 ```python
 df = pd.read_csv('/content/train.tsv', sep='\t')
 ```
-The dataset has tab-separated values (TSV). 
-Let's display the dataset in the Google Colab notebook.
+The dataset has tab-separated values (TSV). Let's display the dataset in the Google Colab notebook.
 
 ```python
 df.head()
