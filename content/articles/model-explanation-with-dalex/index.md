@@ -20,7 +20,7 @@ End-users need an open and transparent model to understand how it makes the pred
 
 [Dalex](https://dalex.drwhy.ai/) is an open-sources library that explains and analyzes machine learning models. It makes the model transparent and open to the end-users. 
 
-Using Dalex, the end-users (individuals and companies) gain insightful information from the model. In this tutorial, we will build a bank marketing model then use [Dalex](https://dalex.drwhy.ai/) to explain the model.
+Using Dalex, the end-users (individuals and companies) gain insightful information from the model. In this tutorial, we will build a bank marketing model, then use [Dalex](https://dalex.drwhy.ai/) to explain the model.
 
 ### Table of contents
 - [Prerequisites](#prerequisites)
@@ -39,15 +39,15 @@ Using Dalex, the end-users (individuals and companies) gain insightful informati
 - [References](#references)
 
 ### Prerequisites
-It would be best if you had the following to follow along with this tutorial:
-- [Python programming.](/engineering-education/python-projects-for-beginners/)
-- [Machine learning algorithms.](/engineering-education/understanding-machine-learning-algorithms-and-how-to-implement-them/)
-- Be able to build a simple [machine learning model.](/engineering-education/house-price-prediction/)
+To follow along with this tutorial, you need to have:
+- [Some Knowledge in Python programming language.](/engineering-education/python-projects-for-beginners/)
+- [Some Knowledge in Machine Learning algorithms.](/engineering-education/understanding-machine-learning-algorithms-and-how-to-implement-them/)
+- Be able to build a simple [Machine Learning model.](/engineering-education/house-price-prediction/)
 - Download the dataset from [here.](https://drive.google.com/file/d/1nQ3Zwb1qUki1sFrSbptEjNnPSTDHrzro/view?usp=sharing)
 
-To get the best out of this tutorial, implement the Python code in [Gooogle Colab notebook.](https://research.google.com/colaboratory/) to get the same results. Ensure you sign in using your email. 
+It is recomended to use [Google Colab notebook.](https://research.google.com/colaboratory/)
 
-Google Colab will enable you to quickly build and run the model due to the fast CPU and GPU  ideal for machine learning.
+Google Colab enables you to quickly build and run the model due to the fast CPU and GPU  ideal for Machine Learning.
 
 ### Dataset preparation
 This section will prepare the bank marketing dataset that will build a model that solves a classification problem. The model will predict if a customer will join a monthly saving plan or not. You can get the dataset from [here.](https://drive.google.com/file/d/1nQ3Zwb1qUki1sFrSbptEjNnPSTDHrzro/view?usp=sharing)
@@ -55,7 +55,7 @@ This section will prepare the bank marketing dataset that will build a model tha
 #### Exploring dataset
 We need to explore the dataset to know its variables.
 
-Let us first import Pandas to will load the dataset.
+Let us first import Pandas to load the dataset.
 
 ```python
 import pandas as pd
@@ -202,7 +202,7 @@ After installing Dalex, let us import it:
 ```python
 import dalex as dx
 ```
-Dalex explains the model in two ways: Overall model explanation and single prediction explanation.
+Dalex explains the model in two ways: overall model explanation and single prediction explanation.
 
 #### Overall model explanation
 This method explains the whole structure of the trained model. In addition, it will show the methods, functions, and algorithms that build the model. 
