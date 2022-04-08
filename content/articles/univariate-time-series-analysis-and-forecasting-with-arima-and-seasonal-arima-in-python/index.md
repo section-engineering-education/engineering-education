@@ -6,7 +6,7 @@ url: /univariate-time-series-analysis-and-forecasting-with-arima-and-seasonal-ar
 title: Univariate time series analysis and forecasting with ARIMA and Seasonal ARIMA in Python
 description: This tutorial will first discuss a few concepts that are essential to understanding time series with ARIMA and Seasonal ARIMA. It will finally implement the ARIMA and Seasonal ARIMA models with Python.
 author: joseph-gatura
-date: 2022-04-07T00:00:00-21:20
+date: 2022-04-08T00:00:00-21:20
 topics: [Machine Learning]
 excerpt_separator: <!--more-->
 images:
@@ -14,7 +14,7 @@ images:
  - url: /engineering-education/univariate-time-series-analysis-and-forecasting-with-arima-and-seasonal-arima-in-python/hero.jpg
    alt: Forecasting with ARIMA and Seasonal ARIMA in Python Hero Image
 ---
-A time series is a sequence of data points that occur over regular time intervals. A time series shows all the time-dependent variables in the dataset. An example of time series is stock prices and weather records. 
+A time series is a sequence of data points that occur over regular time intervals. A time series shows all the time-dependent variables in the dataset. An example of time series data is stock prices and weather records. 
 <!--more-->
 In time series analysis and modeling, we will train models to identify patterns in the dataset. Time series forecasting involves finding the future values that the time series will take. A time series can be univariate, bivariate, or multivariate. A univariate time series has only one variable, a bivariate has two variables, and a multivariate has more than two variables. 
 
@@ -60,9 +60,9 @@ To easily follow this tutorial, a reader should know the following:
 > NOTE: Ensure you implement the ARIMA and SARIMA models in [Gooogle Colab.](https://research.google.com/colaboratory/)
 
 ### How the ARIMA model works
-Auto-Regressive Integrated Moving Average(ARIMA) is a time series model that uses the information in the past time series values to make future predictions. The information found in the past values will indicate the nature of the future predictions. For example, an ARIMA model can predict future stock prices after observing and analyzing previous stock prices.
+Auto-Regressive Integrated Moving Average (ARIMA) is a time series model that uses the information in the past time series values to make future predictions. The information found in the past values will indicate the nature of the future predictions. For example, an ARIMA model can predict future stock prices after observing and analyzing previous stock prices.
 
-The ARIMA model will use the single time-dependent (univariate) variable in the times series to make predictions. ARIMA models only work when the time series is stationary.
+The ARIMA model will use the single time-dependent (univariate) variable in the time series to make predictions. ARIMA models only work when the time series is stationary.
 
 ### What is a stationary time series?
 A stationary time series is a series whose properties remain constant over time. These properties are variance, mean, and covariance Stationary time series do not have trends and repetitive cycles/seasonality. Most time-series is non-stationary, especially stock prices and other financial data.
@@ -72,10 +72,10 @@ For ARIMA models to work, we have to make it stationary. We remove the trends an
 ### What is differencing?
 Differencing is the process of making a time series stationary. It is an essential step in dataset preprocessing. It makes the variance, the covariance, and the mean of the time series constant. It also reduces the repetitive cycles and seasonality components in the time series data.
 
-Differencing technique finds the difference between the current time series value and the previous value. We may get the difference between the time series values once but still not make the time series stationary. In this case, we need to find the difference multiple times until the time series becomes stationary.
+The differencing technique finds the difference between the current time series value and the previous value. We may get the difference between the time series values once but still not make the time series stationary. In this case, we need to find the difference multiple times until the time series becomes stationary.
 
 ### Components of the ARIMA model
-ARIMA model comprises three components. They are combined to form the final ARIMA model. 
+The ARIMA model comprises of three components. They are combined to form the final ARIMA model. 
 
 The components are as follows:
 
@@ -94,18 +94,13 @@ It uses errors in past predictions to make future predictions. It uses the depen
 
 When creating an ARIMA model, we pass each component as a parameter using the following standard notations: `p`, `d`, and `q`. They represent the parameters that build the ARIMA model. We initialize the ARIMA model as ARIMA(p,d,q). The functions of the standard notations are as follows:
 
-- p: It represents the order of the Auto Regression (AR) component. It represents the number of lag observations found in the ARIMA model. 
-
-A lag is the time gap between two data points/observations in the time series.
-We get the best value of `p` using a [Partial Autocorrelation Function](https://mxplus3.medium.com/interpreting-autocorrelation-partial-autocorrelation-plots-for-time-series-analysis-23f87b102c64) (PACF) plot.
+- p: It represents the order of the Auto Regression (AR) component. It represents the number of lag observations found in the ARIMA model. A lag is the time gap between two data points/observations in the time series. We get the best value of `p` using a [Partial Autocorrelation Function](https://mxplus3.medium.com/interpreting-autocorrelation-partial-autocorrelation-plots-for-time-series-analysis-23f87b102c64) (PACF) plot.
 
 - d: It is the total differencing steps performed to make the time series stationary. If the time-series data is already stationary, there is no need for differencing.
 
-- q: It represents the order of the Moving Average (MA) component. It shows the forecast errors that the final ARIMA Model should have.
+- q: It represents the order of the Moving Average (MA) component. It shows the forecast errors that the final ARIMA Model should have. We get the best value of `q` using an [AutoCorrelation Function](https://mxplus3.medium.com/interpreting-autocorrelation-partial-autocorrelation-plots-for-time-series-analysis-23f87b102c64) (ACF) plot.
 
-We get the best value of `q` using an [AutoCorrelation Function](https://mxplus3.medium.com/interpreting-autocorrelation-partial-autocorrelation-plots-for-time-series-analysis-23f87b102c64) (ACF) plot.
-
-> NOTE: An order in a time series is the number of previous observations/ time series values that the model uses to make a single prediction. 
+> NOTE: An order in a time series is the number of previous observations/time series values that the model uses to make a single prediction. 
 
 ### How to check for stationarity
 We will visualize the time series charts and perform statistical tests to check for stationarity.
@@ -134,12 +129,10 @@ We will also implement SARIMA using the ARIMA models parameters (p,d,q). We then
 SARIMA handles seasonality using the `D` parameter. It performs seasonal differencing. It subtracts data points in the seasonality components. The next step is to start building our models.
 
 ### Time series dataset
-We will prepare the sales dataset. The dataset will build a time series model that predicts monthly champagne sales. You can get the dataset from [here.](https://drive.google.com/file/d/10haWtwrkr15Z-GhHg_t18fVi7V0buSsR/view?usp=sharing)
-
-The dataset shows monthly sales from 1964 to 1972. We will build the model on the training dataset and make predictions using the test dataset. 
+We will prepare the sales dataset. The dataset will build a time series model that predicts monthly champagne sales. You can get the dataset from [here](https://drive.google.com/file/d/10haWtwrkr15Z-GhHg_t18fVi7V0buSsR/view?usp=sharing). The dataset shows monthly sales from 1964 to 1972. We will build the model on the training dataset and make predictions using the test dataset. 
 
 #### Loading the dataset
-We will use Pandas to load the dataset.
+We will use the `Pandas` library to load the dataset.
 
 ```python
 import pandas as pd
@@ -195,12 +188,12 @@ Output:
 We have dropped these rows. The new dataset will now have 104 data points/rows.
 
 #### Converting the `month` column
-We need to convert the `month` column to a DateTime format. This format allows us to perform time-series analysis. We will use the `pd.to_datetime` function. 
+We need to convert the `month` column to a `DateTime` format. This format allows us to perform time-series analysis. We will use the `pd.to_datetime` function. 
 
 ```python
 df['Month']=pd.to_datetime(df['Month'])
 ```
-The see the converted `month` column, run this code:
+To see the converted `month` column, run this code:
 
 ```python
 df.head()
@@ -224,9 +217,7 @@ Output:
 ![Index column](/engineering-education/univariate-time-series-analysis-and-forecasting-with-arima-and-seasonal-arima-in-python/index-column.png)
 
 ### Visualizing the time series data
-We will plot time series data and check for trends or seasonality/repeating cycles. As mentioned earlier, this is a simple method to check for time series stationarity or non-stationarity.
-
-We will use `Matplotlib` for plotting.
+We will plot time series data and check for trends or seasonality/repeating cycles. As mentioned earlier, this is a simple method to check for time series stationarity or non-stationarity. We will use `Matplotlib` for plotting.
 
 ```python
 import matplotlib.pyplot as plt
@@ -240,9 +231,7 @@ It produces the following line chart:
 
 ![Line chart](/engineering-education/univariate-time-series-analysis-and-forecasting-with-arima-and-seasonal-arima-in-python/monthly-sales-line-chart.png)
 
-The line chart plots the `sales` against `month`. Through visualization, the time series has seasonality or repeating cycles. The spikes and dips keep on repeating during certain months of the year. We can conclude that the time series is non-stationary since it has seasonality. 
-
-We still need to perform a statistical test on the time series to prove this non-stationarity. As mentioned earlier, we will use the Augmented Dickey-Fuller test.
+The line chart plots the `sales` against `month`. Through visualization, the time series has seasonality or repeating cycles. The spikes and dips keep on repeating during certain months of the year. We can conclude that the time series is non-stationary since it has seasonality. We still need to perform a statistical test on the time series to prove this non-stationarity. As mentioned earlier, we will use the Augmented Dickey-Fuller test.
 
 ### Implementing Augmented Dickey-Fuller test
 We import the Augmented Dickey-Fuller tool as follows:
@@ -317,9 +306,9 @@ As mentioned earlier, we initialize the ARIMA model as ARIMA(p,d,q). So we need 
 We already know the `d=1`. It is because we have performed differencing only once. The next step is to get the best `p` and `q` values.
 
 #### Getting the best `p` and `q` values
-We get the best value of `q` using a [Autocorrelation Function](https://mxplus3.medium.com/interpreting-autocorrelation-partial-autocorrelation-plots-for-time-series-analysis-23f87b102c64) (ACF) plot. 
+We get the best value of `q` using an [Autocorrelation Function](https://mxplus3.medium.com/interpreting-autocorrelation-partial-autocorrelation-plots-for-time-series-analysis-23f87b102c64) (ACF) plot. 
 
-We get the best value of`p` using a [Partial Autocorrelation Function](https://mxplus3.medium.com/interpreting-autocorrelation-partial-autocorrelation-plots-for-time-series-analysis-23f87b102c64) (PACF) plot
+We get the best value of`p` using a [Partial Autocorrelation Function](https://mxplus3.medium.com/interpreting-autocorrelation-partial-autocorrelation-plots-for-time-series-analysis-23f87b102c64) (PACF) plot.
 
 Lets import `PACF` and `ACF`.
 
@@ -340,9 +329,9 @@ The code above produces the following plot:
 
 ![ACF plot](/engineering-education/univariate-time-series-analysis-and-forecasting-with-arima-and-seasonal-arima-in-python/acf-plot.png)
 
-We will use this plot to get the best value of `q`. From the ACF plot, lag no one stands out. The red arrow shows the lag point. It is slightly above (cuts off) the significance line (the blue line). We will select this lag as the best value of `q`. Therefore, `q=1`.
+We will use this plot to get the best value of `q`. From the ACF plot, lag number one stands out. The red arrow shows the lag point. It is slightly above (cuts off) the significance line (the blue line). We will select this lag as the best value of `q`. Therefore, `q=1`.
 
-To understand how to interpret an ACF plot and get the best value of  `q`, read this [article](https://people.duke.edu/~rnau/411arim3.htm)
+To understand how to interpret an ACF plot and get the best value of  `q`, read this [article](https://people.duke.edu/~rnau/411arim3.htm).
 
 #### Plotting PACF
 To plot the PACF, use this code:
@@ -355,7 +344,7 @@ It produces the following plot:
 
 ![PACF plot](/engineering-education/univariate-time-series-analysis-and-forecasting-with-arima-and-seasonal-arima-in-python/pacf-plot.png)
 
-We will use this plot to get the best value of `p`. From the ACF plot, we can observe that lags 1 and 13 stand out. The red arrow shows the lag points. These points are above (cuts off) the significance line (the blue shaded line). We select lag no one as the best value of `p`. It is the first lag that is above the blue line. Therefore, `p=1`. 
+We will use this plot to get the best value of `p`. From the PACF plot, we can observe that lags 1 and 13 stand out. The red arrow shows the lag points. These points are above (cuts off) the significance line (the blue shaded line). We select lag number one as the best value of `p`. It is the first lag that is above the blue line. Therefore, `p=1`. 
 
 Our values will be: `p=1`, `d=1` and `q=1`. The next step is to import the ARIMA model.
 
