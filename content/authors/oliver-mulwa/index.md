@@ -1,6 +1,6 @@
 ---
 title: Oliver Mulwa 
-type: Authors 
+type: authors 
 github: github.com/pop-ecx
 images:
  - url: /engineering-education/oliver-mulwa/avatar.jpg
