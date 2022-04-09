@@ -156,7 +156,7 @@ import React from "react"
 
 const Payroll=()=>{
     return(
-       {Employees.map(Data=> {
+       {employees.map(Data=> {
                  return(
                 <>
                 </>
@@ -195,9 +195,9 @@ import Link from "next/link"
 import React from "react"
 
 
-const Payroll=()=>{
+const Payroll=({employees})=>{
     return(
-       {Employees.map(Data=> {
+       {employees.map(Data=> {
 
   const Basicpay=Data.Hoursworked*Data.Basicpay
   const Totalallowance= Data.Houseallowance + Data.Conveyanceallowance + Data.Childreneducationallowance
