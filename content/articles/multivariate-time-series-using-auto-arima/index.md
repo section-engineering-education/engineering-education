@@ -458,3 +458,6 @@ You can get the full implementation of this tutorial in Google Colab [here](http
 - [Grid Search technique](/engineering-education/grid-search/)
 - [ARIMA model guide](https://machinelearningmastery.com/arima-for-time-series-forecasting-with-python/)
 - [ARIMA models](https://otexts.com/fpp2/arima.html)
+
+---
+Peer Review Contributions by: [Willies Ogola](/engineering-education/authors/willies-ogola/)
