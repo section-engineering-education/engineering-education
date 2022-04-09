@@ -504,13 +504,13 @@ urlpatterns = [
 Right now, our endpoints are working, as shown below. You can skip the API building process by 
 
 1. Register User Endpoint
-![Register User Endpoint](register-endpoint.png)
+![Register User Endpoint](/engineering-education/custom-api-with-kotlin-mvvm/register-endpoint.png)
 
 2. Login Endpoint
-![Login Endpoint](login-endpoint.png)
+![Login Endpoint](/engineering-education/custom-api-with-kotlin-mvvm/login-endpoint.png)
 
 3. Update Update Endpoint
-![Update Update Endpoint](update-profile-endpoint.png)
+![Update Update Endpoint](/engineering-education/custom-api-with-kotlin-mvvm/update-profile-endpoint.png)
 
 
 In the next section, we will setup up the android application and consume the API endpoint in the android application.
@@ -603,14 +603,14 @@ The correct folder organization is not only efficient when dealing with an exten
 
 If used as a standard, every other android programmer will find it easy to read your code. Therefore, we will adopt the following folder organization in this tutorial.
 
-![Folder organization](folder-organization.png)
+![Folder organization](/engineering-education/custom-api-with-kotlin-mvvm/folder-organization.png)
 
 ### Working on the Utility Classes
 Utility classes are classes used in more than one instance of the application. 
 
 I prefer creating the separately to code in line with the DRY principle. In this case, we will have three utility classes defined in the `util` folder.
 
-![utilities](utils.png)
+![utilities](/engineering-education/custom-api-with-kotlin-mvvm/utils.png)
 
 #### Constants
 This file contains data whose values are not changing in the entire application. For now, here is where we store our `BASE URL`.
@@ -657,7 +657,7 @@ The requests and responses needed to build these classes are obtained from the r
 
 Create a new folder called `data` in the `network` directory. Next, create two other folders called `requests` and `responses`. The first folder will contain the request classes, while the second will contain the response classes.
 
-![Network](network.png)
+![Network](/engineering-education/custom-api-with-kotlin-mvvm/network.png)
 
 
 #### Register Request
@@ -713,7 +713,7 @@ data class LoginResponse(
     val refresh: String
 )
 ```
-![Requests and responses](requests-and-responses.png)
+![Requests and responses](/engineering-education/custom-api-with-kotlin-mvvm/requests-and-responses.png)
 
 #### User Data Class
 An additional class called `User` was created When we received a `registerResponse`. This process happens when you have nested JSON objects. Android Studio creates different classes for every level of nesting as it did for the case of register response.
@@ -831,7 +831,7 @@ Next, create a class called `AuthyApplication` in the root directory where the o
 class AuthyApplication: Application()
 ```
 
-![Dependency Injection](dependency-injection.png)
+![Dependency Injection](/engineering-education/custom-api-with-kotlin-mvvm/dependency-injection.png)
 
 #### The Repository Module
 Data from the network flows into the repository. For this reason, we need to make the repository accessible to other classes to avail its data.
@@ -853,7 +853,7 @@ The repository class referenced in the module is defined in the next step.
 ### Working on the application Domain
 The `domain` folder contains two folders, the `AuthRepository` and the `usecases`. 
 
-![Dormain folder](dormain.png)
+![Dormain folder](/engineering-education/custom-api-with-kotlin-mvvm/dormain.png)
 
 #### The AuthRepository Class
 The repository class specify how authentication data is obtained from the network and passed to the `ViewModel`. 
@@ -912,7 +912,7 @@ class LoginUseCase @Inject constructor(private val repository: AuthRepository){
 
 > Ensure that each of the use cases exists in its folder. This practice makes the code readable and easy to follow.
 
-![Dormain ans usecases](domain-and-usecases.png)
+![Dormain ans usecases](/engineering-education/custom-api-with-kotlin-mvvm/domain-and-usecases.png)
 
 ### The ViewModel and the UI entry point
 The ViewModel is responsible for combining the result obtained from the use cases with the mobile screen onto which they will be displayed, accessed or used. Furthermore, it exposes the data to present it to the user screen easily.
@@ -1010,7 +1010,7 @@ I like separating my user interface into fragments. In this case, I will have tw
 
 Create two other folders called `authentication` and `homepage` in the view package. Create a new activity named `AuthAcvtivity` in the' authentication' folder. Create other two fragments in the same folder called `LoginFragment` and `RegisterFragment`.
 
-![view package](view-package.png)
+![view package](/engineering-education/custom-api-with-kotlin-mvvm/view-package.png)
 
 Add the following code in the `AuthActivity` file:
 
@@ -1171,16 +1171,16 @@ class HomeActivity : AppCompatActivity() {
 The following should illustrate how the custom REST api is consumed in our auth application upon running the application.
 
 1. Splash Screen
-![Splash Screen](splashscreen.png)
+![Splash Screen](/engineering-education/custom-api-with-kotlin-mvvm/splashscreen.png)
 
 2. Register Screen
-![Register Screen](register-screen.png)
+![Register Screen](/engineering-education/custom-api-with-kotlin-mvvm/register-screen.png)
 
 3. Login Screen
-![Login Screen](login-screen.png)
+![Login Screen](/engineering-education/custom-api-with-kotlin-mvvm/login-screen.png)
 
 4. Home Screen
-![Home screen](home-screen.png)
+![Home screen](/engineering-education/custom-api-with-kotlin-mvvm/home-screen.png)
 
 
 ### Conclusion
