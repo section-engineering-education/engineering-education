@@ -6,7 +6,7 @@ url: /why-and-when-you-should-use-kubernetes/
 title: Why and When You Should Use Kubernetes
 description: This article will provide an overview of why and when you should use Kubernetes. It will also explain when organizations should not use Kubernetes. 
 author: erick-wekesa
-date: 2021-07-22T00:00:00-06:50
+date: 2021-08-02T00:00:00-11:10
 topics: [Containers]
 excerpt_separator: <!--more-->
 images:

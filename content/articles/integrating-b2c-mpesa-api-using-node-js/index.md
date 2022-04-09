@@ -36,9 +36,9 @@ To follow along in this article, it is helpful to have the following:
 ### Setting up the development server
 This article assumes that you have a Safaricom developer account.
 
-If you don't, go through these [steps](/lipa-na-mpesa-online/#creating-a-safaricom-developer-account) to create one.
+If you don't, go through these [steps](/engineering-education/lipa-na-mpesa-online/#creating-a-safaricom-developer-account) to create one.
 
-Also, ensure that you have created at least one application from your developer portal. If you haven't, follow these [guidelines](/lipa-na-mpesa-online/#creating-an-app).
+Also, ensure that you have created at least one application from your developer portal. If you haven't, follow these [guidelines](/engineering-education/lipa-na-mpesa-online/#creating-an-app).
 
 To get started, we will clone the starter project from [here](https://github.com/Roba-W/nodejs-b2c-mpesa-api-starterkit). With all the basic configurations done on the skeleton, our focus throughout the article will be on implementing the core functionalities.
 

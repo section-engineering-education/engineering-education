@@ -27,11 +27,11 @@ There are two parts to this application,
 
 ### Prerequisites
 - HTML is the standard markup language for web page. Here's a useful [guide](https://developer.mozilla.org/en-US/docs/Learn/HTML/Introduction_to_HTML) for beginners.
-- CSS is a style sheet language for improving the presentation of web pages. To learn more, check this [article](/what-is-css/).
+- CSS is a style sheet language for improving the presentation of web pages. To learn more, check this [article](/engineering-education/what-is-css/).
 - [Bootstrap](https://getbootstrap.com/) is a popular HTML, CSS and JS library. Here's an [article](https://getbootstrap.com/docs/4.0/getting-started/introduction/) to get you started.
 - [jQuery](https://jquery.com/) is a fast and feature-rich JavaScript library.
-- [Express.js](https://expressjs.com/) is a web application framework for Node.js. Here's an introductory article on Express.js: [link](/express/).
-- [Socket.io](https://socket.io/) is a JavaScript library that abstracts WebSocket connections thereby enabling realtime, bi-directional communication. Here's a helpful [article](/understanding-socket/) to get started. This article covers the usage of Socket.io on both the server and client-side. These are essential to follow along smoothly.
+- [Express.js](https://expressjs.com/) is a web application framework for Node.js. Here's an introductory article on Express.js: [link](/engineering-education/express/).
+- [Socket.io](https://socket.io/) is a JavaScript library that abstracts WebSocket connections thereby enabling realtime, bi-directional communication. Here's a helpful [article](/engineering-education/understanding-socket/) to get started. This article covers the usage of Socket.io on both the server and client-side. These are essential to follow along smoothly.
 
 ### Starter code
 In the interest of time and the intention to put more focus on Socket logic, please download the starter code from this [repository](https://github.com/HarishTeens/rps-online) on GitHub. Follow the instructions as mentioned on the README.md to set up the project on your local system.

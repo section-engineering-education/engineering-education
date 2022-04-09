@@ -14,12 +14,12 @@ images:
   - url: /engineering-education/simple-guide-to-using-apis-part2/hero.png
     alt: hero image using APIs authentication using Goodreads API
 ---
-You have worked with the Goodreads API to create a full-stack Node.js web app that will search the Goodreads database for a book query and return a list of relevant matches. If you haven't, read [part 1](/simple-guide-to-using-apis-nodejs/).
+You have worked with the Goodreads API to create a full-stack Node.js web app that will search the Goodreads database for a book query and return a list of relevant matches. If you haven't, read [part 1](/engineering-education/simple-guide-to-using-apis-nodejs/).
 
 That's a good start but what if you want to see books a user has already added? You'll need to find a way to authenticate users' Goodreads accounts with the Goodreads API so you can discover their user ID and the API knows which account made the request.
 <!--more-->
 
-[oAuth](https://en.wikipedia.org/wiki/OAuth) is the main authentication standard for APIs. We will be using oAuth 1 because that's the only version the Goodreads API supports but it's recommend to use oAuth 2 wherever possible. Similar to [Part 1](/simple-guide-to-using-apis-nodejs/), `goodreads-api-node-wrapper` will make the process easier.
+[oAuth](https://en.wikipedia.org/wiki/OAuth) is the main authentication standard for APIs. We will be using oAuth 1 because that's the only version the Goodreads API supports but it's recommend to use oAuth 2 wherever possible. Similar to [Part 1](/engineering-education/simple-guide-to-using-apis-nodejs/), `goodreads-api-node-wrapper` will make the process easier.
 
 ### Authenticating with the Goodreads API
 

@@ -1,0 +1,22 @@
+# Configuration for new-issue-welcome - https://github.com/behaviorbot/new-issue-welcome
+
+# Comment to be posted to on first time issues
+# newIssueWelcomeComment: >
+
+# Configuration for new-pr-welcome - https://github.com/behaviorbot/new-pr-welcome
+
+# Comment to be posted to on PRs from first time contributors in your repository
+newPRWelcomeComment: >
+  👋  Welcome and thank you very much for contributing your 1st article to the EngEd Program. 
+
+  We always recommend new contributors to go over our [Resources Page](https://github.com/section-engineering-education/engineering-education/blob/master/new_contributors/resources-page.md), where we have laid out valuable resources meant to help improve our community members' overall technical writing abilities. 
+
+  We are looking forward to going over your amazing content 🚀
+
+
+# Configuration for first-pr-merge - https://github.com/behaviorbot/first-pr-merge
+
+# Comment to be posted to on pull requests merged by a first time user
+# firstPRMergeComment: >
+
+# It is recommend to include as many gifs and emojis as possible

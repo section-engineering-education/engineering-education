@@ -129,7 +129,7 @@ Add the following code to your HTML page before the closing of the body tag.
 
 #### What's happening here?
 - We added an event listener that listens to a click event on the submit button
-- If the button was clicked, we tgen created a new `li` tag
+- If the button was clicked, we then created a new `li` tag
 - We also created a new text node from the user's input
 - Finally, we appended the `li` (child) to the `ul` (parent)
 

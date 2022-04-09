@@ -26,7 +26,7 @@ To reduce these errors and improve the predictions, we may combine multiple mode
 - Ensemble learning techniques.
 
 ### Prerequisites
-An understanding of machine learning is recommended. This [post](/supervised-learning-algorithms/) can provide a good introduction or refresher to machine learning.
+An understanding of machine learning is recommended. This [post](/engineering-education/supervised-learning-algorithms/) can provide a good introduction or refresher to machine learning.
 
 ### Ensemble learning
 Ensemble learning refers to a method where many base models are combined to carry out the same task. These base models are usually referred to as weak learners. 

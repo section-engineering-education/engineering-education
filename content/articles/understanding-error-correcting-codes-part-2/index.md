@@ -15,14 +15,14 @@ images:
     alt: error-correcting codes
 ---
 
-Error correction is one of the most fundamental aspects of digital communication and is responsible for the validity of real-time interactions. In [part 1](/understanding-error-correcting-codes-part-1/), with the Hamming code, we analyzed techniques of correcting isolated errors. In the real world, we can't always assume errors will be isolated, and multiple consecutive errors can occur. In this article, we will continue talking about the Hamming code as well as a new code designed to correct these consecutive errors called the Golay code.
+Error correction is one of the most fundamental aspects of digital communication and is responsible for the validity of real-time interactions. In [part 1](/engineering-education/understanding-error-correcting-codes-part-1/), with the Hamming code, we analyzed techniques of correcting isolated errors. In the real world, we can't always assume errors will be isolated, and multiple consecutive errors can occur. In this article, we will continue talking about the Hamming code as well as a new code designed to correct these consecutive errors called the Golay code.
 
 <!--more-->
 
 One of the more notable applications of the Golay code was with the Voyager I and II spacecraft in the 1970s. Transmitting messages or images through space requires the ability to correct interference and signal dilution. The Golay code can correct multiple consecutive errors, allowing it to perform well in these scenarios. This doesn't come without its disadvantages. The Golay code is often more computationally intensive when it comes to both encoding and decoding.
 
 ### The Hamming Code
-With the Hamming $[7,4]$ code, as presented in [part 1](/understanding-error-correcting-codes-part-1/), we could encode four-bit inputs into seven-bit codewords. This was done by adding three parity bits to the original message. This encoding gave us the ability to correct one error.
+With the Hamming $[7,4]$ code, as presented in [part 1](/engineering-education/understanding-error-correcting-codes-part-1/), we could encode four-bit inputs into seven-bit codewords. This was done by adding three parity bits to the original message. This encoding gave us the ability to correct one error.
 
 $$x_1=m_1 \oplus m_2 \oplus m_4$$
 

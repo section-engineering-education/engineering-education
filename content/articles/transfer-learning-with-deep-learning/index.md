@@ -26,9 +26,9 @@ Deep learning models need a lot of data to work properly. They may be trained on
 4. Types of deep transfer learning.
 
 ### Prerequisites
-To best understand this article a basic understanding of machine learning and deep learning will be helpful. For an introduction or refresher on some basic machine learning concepts feel free to check out this [article](/supervised-learning-algorithms/).
+To best understand this article a basic understanding of machine learning and deep learning will be helpful. For an introduction or refresher on some basic machine learning concepts feel free to check out this [article](/engineering-education/supervised-learning-algorithms/).
 
-A few other machine learning and deep learning concepts are covered [here](/automated-fake-news-detection/). For an introduction to transfer learning, I would advise going through my previous [article](/basics-of-transfer-learning/) as well.
+A few other machine learning and deep learning concepts are covered [here](/engineering-education/automated-fake-news-detection/). For an introduction to transfer learning, I would advise going through my previous [article](/engineering-education/basics-of-transfer-learning/) as well.
 
 ### Useful Terms
 **Pre-trained models** – models that have been trained on a sizeable benchmark dataset that will be used to solve a problem similar to an already solved problem.
@@ -40,7 +40,7 @@ A few other machine learning and deep learning concepts are covered [here](/auto
 **Loss function** – in machine learning, using a single training example, the loss function is the difference between the actual and predicted output from the model. This is often used interchangeably with a cost function. However, the cost function is defined as the average loss function for all training examples.
 
 ### Transfer Learning and Deep Learning
-In my previous transfer learning [article](/basics-of-transfer-learning/), we defined transfer learning as a machine learning method where a model built for a specific task is reused as a starting point for a model on another task. It's re-using pre-trained models on newer problems.
+In my previous transfer learning [article](/engineering-education/basics-of-transfer-learning/), we defined transfer learning as a machine learning method where a model built for a specific task is reused as a starting point for a model on another task. It's re-using pre-trained models on newer problems.
 
 Deep learning models have been applied to solve many problems that would have seemed impossible to solve a few years ago. Nonetheless, these models carry a few challenges with them. Mainly, these models need large amounts of data to operate. They also need a lot of computing resources. Furthermore, they currently need a lot of time and energy to be trained properly.
 
@@ -91,10 +91,10 @@ The feature spaces have no similarity. To link up two different domains, supplem
 
 If such information is not available, it's hard to deal with heterogeneous domain adaptation. The unavailability of supplementary information is a common scenario in practice.
 
-For further reading, I mentioned a couple of applications involving domain adaptation in this [article](/basics-of-transfer-learning/).
+For further reading, I mentioned a couple of applications involving domain adaptation in this [article](/engineering-education/basics-of-transfer-learning/).
 
 #### Domain Confusion
-Consider feature representation transfer, which is covered in my previous transfer learning [article](/basics-of-transfer-learning/). We defined it as “transferring features” from source to target domains.
+Consider feature representation transfer, which is covered in my previous transfer learning [article](/engineering-education/basics-of-transfer-learning/). We defined it as “transferring features” from source to target domains.
 
 In a neural network, different layers identify different sets of features. Such an approach can be used to learn features that don't vary regardless of the domain.
 
@@ -111,7 +111,7 @@ As the name suggests, multitask learning involves learning several tasks simulta
 
 A basic example of multitask learning is the use of smart cameras to detect multiple objects in a frame simultaneously. In the absence of multitask learning, one would have to train a model to detect each object.
 
-[GPT-3](/introducing-gpt3/) is an example of a multitask model. It's also a few-shot learner (one-shot and zero-shot learner). GPT-3 shows that a model can be both a multitask learner and a few shot learner.
+[GPT-3](/engineering-education/introducing-gpt3/) is an example of a multitask model. It's also a few-shot learner (one-shot and zero-shot learner). GPT-3 shows that a model can be both a multitask learner and a few shot learner.
 
 The distinction between the two is that few-shot learning involves feeding a model with very little training data to carry out a given task whereas multitask learning may be used in scenarios where there is an abundance of labeled input data that can be shared with a different task with much less labeled data.         
 
@@ -129,12 +129,12 @@ A model is fed with a single example of the task that is required. For example, 
 #### Zero-Shot Learning
 Zero-shot learning can be useful in contexts where we lack labeled data in all classes of a classification problem, or when new classes have to be added. This variant of transfer learning is not dependent on any labeled examples to learn a task.
 
-An example of zero-shot learning would a pre-trained model like [GPT-3](/introducing-gpt3/) being implemented on a language translation task. A natural language description of the task like “translate from Swahili to English” is given to the model. The model carries out the translation task without any examples.
+An example of zero-shot learning would a pre-trained model like [GPT-3](/engineering-education/introducing-gpt3/) being implemented on a language translation task. A natural language description of the task like “translate from Swahili to English” is given to the model. The model carries out the translation task without any examples.
 
 ### It’s a Wrap
 Transfer learning makes it easier to create and implement deep learning models. Since deep learning is becoming more and more integral to solving a range of problems in domains such as natural language processing (NLP) and video processing, we can expect to find elements of transfer learning to continue increasing.
 
-A lot of time and energy is saved through transfer learning. I mentioned a few example applications of transfer learning [here](/basics-of-transfer-learning/). Feel free to check them out. Happy reading!
+A lot of time and energy is saved through transfer learning. I mentioned a few example applications of transfer learning [here](/engineering-education/basics-of-transfer-learning/). Feel free to check them out. Happy reading!
 
 ### References
 1. [A Survey on Transfer Learning](https://www.cse.ust.hk/~qyang/Docs/2009/tkde_transfer_learning.pdf)

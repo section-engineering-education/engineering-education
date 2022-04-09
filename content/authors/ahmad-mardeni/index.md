@@ -2,6 +2,9 @@
 title: Ahmad Mardeni
 type: authors
 linkedin: https://www.linkedin.com/in/ahmad-mardeni-369b3019b/
-facebook: https://www.facebook.com/profile.php?id=100004114573038/
+github: https://github.com/ahmadmardeni1
+images:
+  - url: /engineering-education/authors/ahmad-mardeni/avatar.jpg 
+skills: ["Machine Learning", "CyberSecurity", "Web Scraping", "SQL Database Development", "Data Analysis", "Data Visualization", "Flask and Django Backend Development"]  
 ---
-Ahmad is a passionate software developer, an avid researcher, and a business man. He began his journey to be a cybersecurity expert two years ago. Also he participated in a lot of hackathons and programming competitions. As he says "Knowledge is power" so he wants to deliver good content by being a technical writer.
+Ahmad is a passionate Software Engineer. He has experience in Machine Learning and Data Science. He won multiple Hackathons and programming competitions. He believes that Web3 underpins the internet of value and gives the user the control back.

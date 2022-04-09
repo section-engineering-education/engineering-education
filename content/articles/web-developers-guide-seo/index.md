@@ -121,7 +121,7 @@ The player denotes the source URL of the media. Player height and width denote t
 ### Server-Side Rendering
 Server-side rendering enables the crawlers to get all the content including the images, videos, links, etc. Therefore, crawlers get more data to build knowledge graphs. This increases the chances of being found on a web search, as the number of phrases that the website shows up for is significantly higher.
 
-In this article, [Node.js vs Next.js](/node-versus-next-react-approach/), we looked at in depth how Next.js enables efficient SEO.
+In this article, [Node.js vs Next.js](/engineering-education/node-versus-next-react-approach/), we looked at in depth how Next.js enables efficient SEO.
 
 ### Conclusion
 We have looked at various methods for optimizing websites. Accessing this information gives power to the developer to create search engine optimized sites. We hope this helps you build optimized sites and drive more traffic to your sites. Be legendary.

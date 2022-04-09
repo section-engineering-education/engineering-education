@@ -6,8 +6,8 @@ url: /how-to-build-apps-with-serverless-architecture/
 title: How to Build Apps With Serverless Architecture
 description: This article will provide an overview of severeless architecture and explain how it can be used in application development. It will also explain its advantages and provide examples of some popular serverless applications. 
 author: lilian-kerubo
-date: 2021-07-22T00:00:00-18:00
-topics: []
+date: 2021-08-02T00:00:00-11:30
+topics: [Edge Computing]
 excerpt_separator: <!--more-->
 images:
 

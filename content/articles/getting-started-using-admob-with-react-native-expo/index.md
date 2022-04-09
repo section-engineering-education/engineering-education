@@ -20,7 +20,7 @@ In this tutorial, we are going to implement Admob in the React Native applicatio
 In most cases, the users will have to pay to remove the ads. But we are going to make users watch video ads to hide the ads from the interface for a certain amount of time. In order to this, we are going to make use of the expo Admob package that provides the ad reward feature.
 
 ### Requirement
-- [Starter React Native project](https://snack.expo.io/2y6z09xog). (Check out the [previous tutorial](/how-to-control-dark-mode-in-react-native-using-redux/) for a detailed guide on how to build the starter project). 
+- [Starter React Native project](https://snack.expo.io/2y6z09xog). (Check out the [previous tutorial](/engineering-education/how-to-control-dark-mode-in-react-native-using-redux/) for a detailed guide on how to build the starter project). 
 - Android Emulator or Real Device
 - [Admob account](https://apps.admob.com/v2/home?pli=1)
 - [Node.js](https://nodejs.org/dist/v12.19.0/node-v12.19.0-x64.msi)
@@ -361,7 +361,7 @@ const initRewardAds = async () => {
 ```
 
 ### STEP 5: Control Ads status across an app with Redux
-To control the visibility of ads across every screen in the app, we are going to use the Redux mechanism. It is similar to the [previous tutorial](/how-to-control-dark-mode-in-react-native-using-redux/) where we control the dark theme mode changes using Redux.
+To control the visibility of ads across every screen in the app, we are going to use the Redux mechanism. It is similar to the [previous tutorial](/engineering-education/how-to-control-dark-mode-in-react-native-using-redux/) where we control the dark theme mode changes using Redux.
 
 First, we need to define some constants in the **constant.js** file for a new ad status as directed in the code snippet below:
 

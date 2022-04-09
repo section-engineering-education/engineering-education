@@ -52,7 +52,7 @@ There are several types of serialization formats, like:
 - [Protobuf](https://en.wikipedia.org/wiki/Protocol_Buffers) (Protocol Buffers - 2008)
 - [BSON](https://en.wikipedia.org/wiki/BSON) (Binary JSON - 2016)
 
-For example, we use a [CSV](https://en.wikipedia.org/wiki/Comma-separated_values) serialization format to represent the data using comma-separated values. It's more commonly used in [Machine Learning](/differences-between-artificial-intelligence-machine-learning-and-deep-learning/), as datasets for training and testing the model.
+For example, we use a [CSV](https://en.wikipedia.org/wiki/Comma-separated_values) serialization format to represent the data using comma-separated values. It's more commonly used in [Machine Learning](/engineering-education/differences-between-artificial-intelligence-machine-learning-and-deep-learning/), as datasets for training and testing the model.
 
 Similarly, [JSON](https://en.wikipedia.org/wiki/JSON) is the most commonly used serialization format in web technologies. It represents a key-value pair containing information. For example, we can use it in HTTP requests and responses, where it reads the data from a web server and displays it on the web page.
 
@@ -72,7 +72,7 @@ A markup language is a way of styling a document to be syntactically distinguish
 
 [XML (eXtensible Markup Language)](https://en.wikipedia.org/wiki/XML) is a simple and flexible markup language that can enable data serialization by exchanging information between two data serialization formats, to describe the contents better. Initially, XML was used to describe the contents, but it’s also being used to transfer data. It improves on the existing HTML approach and helps in communication among other data serialization types.
 
-[Document Object Model (DOM)](https://en.wikipedia.org/wiki/Document_Object_Model) is used to create a tree-like structure of a well-formed XML document. DOM facilitates the adding of objects to the tree structure to access and manipulate XML documents. We can learn more about DOM in this Section article [‘Understanding Document Object Model (DOM)’](/document-object-model/).
+[Document Object Model (DOM)](https://en.wikipedia.org/wiki/Document_Object_Model) is used to create a tree-like structure of a well-formed XML document. DOM facilitates the adding of objects to the tree structure to access and manipulate XML documents. We can learn more about DOM in this Section article [‘Understanding Document Object Model (DOM)’](/engineering-education/document-object-model/).
 
 Creating XML documents was much easier, but sometimes it could leads to frequent errors like not matching the required syntax. Since XML codes are neither compiled nor interpreted, the only option left was to parse. Making validation of XML codes necessary.
 
@@ -90,7 +90,7 @@ Now, let's see how to build a sample XML document and how validation is done usi
 #### Building XML Document
 In HTML, we have to use predefined tags like `<html></html>` or `<body></body>` for interpreting our data on the web. But, when using XML, user-defined tags can be created easily, and we use them to transport information between webpages.
 
-For example, let’s take a closer look at how XML documents are built for ‘Contact us’ pages like [this](/contact-us/). Here, we have 5 different input fields:
+For example, let’s take a closer look at how XML documents are built for ‘Contact us’ pages. Here, we have 5 different input fields:
 
 First Name, Last Name, Company Name, Email address, and Message fields.
 

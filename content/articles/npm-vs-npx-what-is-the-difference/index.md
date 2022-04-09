@@ -204,7 +204,7 @@ If you want to execute a specific package version, let's say, Eslint, you should
 #### Version testing:
 With NPM, if you want to test packages, you have to download the packages and run them inside your project. This comes in handy when upgrading packages to newer versions. With NPX, you can determine if the new version is compatible with your project before deciding whether to update them.
 
-For example, let's take a Node.js project, for instance where [Webpack](https://www.npmjs.com/package/webpack) is installed globally, and the currently installed version is 4.40.3. Webpack is used for bundling project assets. Check out this [guide](/webpack/) to learn more about configuring Webpack with your project. When configured, run `webpack` to get the command results.
+For example, let's take a Node.js project, for instance where [Webpack](https://www.npmjs.com/package/webpack) is installed globally, and the currently installed version is 4.40.3. Webpack is used for bundling project assets. Check out this [guide](/engineering-education/webpack/) to learn more about configuring Webpack with your project. When configured, run `webpack` to get the command results.
 
 ```bash
     Hash: b41ed73s02F90S74F9b

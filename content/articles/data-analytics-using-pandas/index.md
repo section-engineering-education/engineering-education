@@ -26,14 +26,14 @@ Data Science and Data Analytics are some of the hottest topics in the Computer S
 - [Conclusion and further reading](#conclusion-and-further-reading)	 
 
 ### Prerequisites
-1. A basic understanding of programming in [Python](/data-structures-python-part-1/)
+1. A basic understanding of programming in [Python](/engineering-education/data-structures-python-part-1/)
 
 2. Basic knowledge of [data analytics](https://data-flair.training/blogs/data-analytics-tutorial/)
 
 ### What is Pandas?
 According to the official documentation, Pandas is a fast, powerful, flexible, and easy to use open-source data analysis and manipulation tool. It is built on top of the Python programming language. Pandas is usually used in conjunction with Jupyter notebooks, making it more powerful and efficient for [exploratory data analysis](https://towardsdatascience.com/exploratory-data-analysis-in-python-c9a77dfa39ce).
 
-If you are new to Jupyter notebooks, [this](/introduction-to-jupyter-notebooks/) article walks you through the installation and basics of Jupyter notebooks.
+If you are new to Jupyter notebooks, [this](/engineering-education/introduction-to-jupyter-notebooks/) article walks you through the installation and basics of Jupyter notebooks.
 
 Pandas provide a robust collection of functions that make it easy to process and read data. In this tutorial, we are going to explore some useful functions and techniques that are an integral part of a data scientist's toolset. You can install Pandas by using Python's package manager, [pip](https://pip.pypa.io/en/stable/).
 

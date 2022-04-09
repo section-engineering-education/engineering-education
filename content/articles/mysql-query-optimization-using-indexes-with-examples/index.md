@@ -24,7 +24,7 @@ The target reader for this article is anyone who wants to learn about MySQL inde
 
 Prior Knowledge of [MySQL](https://www.mysql.com/) database is essential. Free MySQL tutorials for beginners are available on [MySQL tutorial](https://www.mysqltutorial.org/) and [Tutorialspoint](https://www.tutorialspoint.com/mysql/index.htm).
 
-I would recommend you go through the related article on [MySQL Query Performance Optimization Tips](/mysql-query-performance-optimization-tips/).
+I would recommend you go through the related article on [MySQL Query Performance Optimization Tips](/engineering-education/mysql-query-performance-optimization-tips/).
 
 ### Introduction to MySQL indexes
 An [index](https://www.mysqltutorial.org/mysql-index/) is a data structure used to locate data without scanning all the rows in a table for a given query. Indexes help retrieve data faster. Indexes are not visible to the users. They help speed up queries that require a search.

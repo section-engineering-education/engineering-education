@@ -39,7 +39,7 @@ Back on the DigitalOcean website, under droplets, click the name of your newly c
 On your first login, since you used password authentication, it will prompt you to set a new password. A great way to generate secure passwords and store them is a password manager like [LastPass](https://www.lastpass.com).
 
 ### Deploying Your Node.js Web App
-First, you’ll need to copy the code for your web app to your droplet. If you’re using source control such as [Git](/beginner-guide-to-git/), then it’s as simple as installing git using `apt-get install git -y` and then using the git clone command `git clone (link to your repository)`, adding the link to your repository at the end.
+First, you’ll need to copy the code for your web app to your droplet. If you’re using source control such as [Git](/engineering-education/beginner-guide-to-git/), then it’s as simple as installing git using `apt-get install git -y` and then using the git clone command `git clone (link to your repository)`, adding the link to your repository at the end.
 
 Second, you’ll need to install Node. Type:
 
