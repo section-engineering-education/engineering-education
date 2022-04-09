@@ -29,12 +29,12 @@ To follow along with this tutorial, you should have:
 - Making network calls with Retrofit.
 
 ### What is 100ms SDK?
-100ms provides a video conferencing infrastructure that includes web and mobile SDKs for iOS and Android, allowing you to add live video and audio conferencing to your applications.
+100ms offers a video conferencing infrastructure that provides web and mobile — native iOS and Android SDKs, to add live video & audio conferencing to your applications.
 
 ### Definitions
 - Room - this is the object that holds peers who are in a call (audio or video).
 - Peer - this is an object that contain the details of a person in a room.
-- Track - audio or video content in the call.
+- Track - represents either audio or video being published from a peer.
 - Roles - represents permissions for peers.
 
 ### Pricing
@@ -67,18 +67,79 @@ Once you get to your dashboard, you will be able to see the different credential
 ![dashboard](/engineering-education/creating-a-video-conferencing-app-with-100ms-sdk-in-android/dashboard.png)
 
 ### Step 2 - Creating a compose project
-Open your Android studio and create a new empty compose project.
+On your IDE, create an empty compose project and name it accordingly.
 
 ![new-project](/engineering-education/creating-a-video-conferencing-app-with-100ms-sdk-in-android/new-project.png)
 
+### Step 3 - Setting up the project
+In `settings.gradle`, add the following repository:
+```gradle
+repositories {
+    ...
 
+    maven { url 'https://jitpack.io' }
+}
+```
+
+In the app-level `build.gradle`, add the following dependencies:
+```gradle
+// Coroutines
+implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-core:1.6.0'
+implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-android:1.6.0'
+
+// Coroutine Lifecycle Scopes
+implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:2.4.1"
+
+//Dagger - Hilt
+implementation "com.google.dagger:hilt-android:2.38.1"
+kapt "com.google.dagger:hilt-android-compiler:2.37"
+implementation "androidx.hilt:hilt-lifecycle-viewmodel:1.0.0-alpha03"
+kapt "androidx.hilt:hilt-compiler:1.0.0"
+implementation 'androidx.hilt:hilt-navigation-compose:1.0.0'
+
+// Retrofit
+implementation 'com.squareup.retrofit2:retrofit:2.9.0'
+implementation 'com.squareup.retrofit2:converter-gson:2.9.0'
+implementation "com.squareup.okhttp3:okhttp:5.0.0-alpha.2"
+implementation "com.squareup.okhttp3:logging-interceptor:5.0.0-alpha.2"
+
+// Timber
+implementation 'com.jakewharton.timber:timber:5.0.1'
+
+// Navigation
+implementation 'io.github.raamcosta.compose-destinations:core:1.3.1-beta'
+ksp 'io.github.raamcosta.compose-destinations:ksp:1.3.1-beta'
+
+// Permissions
+implementation "com.google.accompanist:accompanist-permissions:0.21.1-beta"
+```
+
+> Don't forget to add the `Hilt` classpath and plugin id
 
 As the project will be using the MVVM pattern, it is good that you create packages as shown below:
 
 ![packages](/engineering-education/creating-a-video-conferencing-app-with-100ms-sdk-in-android/packages.png)
 
 ### Step 4 - Getting access token
+In the 'model' package, create a data class to hold the token request.
+```kotlin
+data class TokenRequest(
+    @SerializedName("room_id")
+    val room_id: String,
+    @SerializedName("user_id")
+    val user_id: String,
+    @SerializedName("role")
+    val role: String = "guest",
+)
+```
 
+Also, create another data class to hold the token response.
+```kotlin
+data class Token(
+    @SerializedName("token")
+    val token: String
+)
+```
 
 Inside the 'data' package, create a new `Interface` which contains the function to request the access token.
 ```kotlin
@@ -109,6 +170,22 @@ suspend fun getAccessToken(name: String, roomId: String = "622ff63144ae04b51cb01
 }
 ```
 
+Then let's define a function to join a video room where other peers are present and also a function to leave the room.
+```kotlin
+fun joinRoom(userName: String, authToken: String, updateListener: HMSUpdateListener) {
+    val info = JsonObject().apply { addProperty("name", userName) }
+    val config = HMSConfig(
+        userName = userName,
+        authtoken = authToken,
+        metadata = info.toString()
+    )
+    HmsSdk.join(config, updateListener)
+}
+
+fun leaveRoom() {
+    HmsSdk.leave()
+}
+```
 
 For toggling the state of the microphone of the local peers, let's add the following functions to the class.
 ```kotlin
@@ -180,7 +257,73 @@ class CallViewModel @Inject constructor(private val repository: CallRepository) 
         repository.setLocalVideoEnabled()
     }
 
+    fun startMeeting(name: String) {
+        loading = true
+        viewModelScope.launch {
+            val token = repository.getAccessToken(name).token
 
+            repository.joinRoom(
+                name,
+                token,
+                object : HMSUpdateListener {
+                    override fun onChangeTrackStateRequest(details: HMSChangeTrackStateRequest) {
+                        Timber.d("onChangeTrackStateRequest")
+                    }
+
+                    override fun onError(error: HMSException) {
+                        loading = false
+                        Timber.d(error.message)
+                    }
+
+                    override fun onJoin(room: HMSRoom) {
+                        loading = false
+                        _peers.value = room.peerList.asList()
+                    }
+
+                    override fun onMessageReceived(message: HMSMessage) {
+                        Timber.d(message.message)
+                    }
+
+                    override fun onPeerUpdate(type: HMSPeerUpdate, peer: HMSPeer) {
+                        Timber.d("There was a peer update: $type")
+
+                        // Handle peer updates.
+                        when (type) {
+                            HMSPeerUpdate.PEER_JOINED -> _peers.value =
+                                _peers.value.plus(peer)
+                            HMSPeerUpdate.PEER_LEFT -> _peers.value =
+                                _peers.value.filter { currentPeer -> currentPeer.peerID != peer.peerID }
+                            HMSPeerUpdate.VIDEO_TOGGLED -> {
+                                Timber.d("${peer.name} video toggled")
+                            }
+                        }
+                    }
+
+                    override fun onRoleChangeRequest(request: HMSRoleChangeRequest) {
+                        Timber.d("Role change request")
+                    }
+
+                    override fun onRoomUpdate(type: HMSRoomUpdate, hmsRoom: HMSRoom) {
+                        Timber.d("Room update")
+                    }
+
+                    override fun onTrackUpdate(
+                        type: HMSTrackUpdate,
+                        track: HMSTrack,
+                        peer: HMSPeer
+                    ) {
+                        if (type == HMSTrackUpdate.TRACK_REMOVED) {
+                            Timber.d("Checking, $type, $track")
+                            if (track.type == HMSTrackType.VIDEO) {
+                                _peers.value =
+                                    _peers.value.filter { currentPeer -> currentPeer.peerID != peer.peerID }
+                                        .plus(peer)
+                            }
+                        }
+                    }
+                })
+        }
+    }
 }
 ```
 
@@ -252,12 +395,16 @@ fun LoginScreen(
     navigator: DestinationsNavigator
 ) {
     Column(
-
+        modifier = Modifier
+            .fillMaxSize()
+            .padding(10.dp),
+        verticalArrangement = Arrangement.Center,
+        horizontalAlignment = Alignment.CenterHorizontally
     ) {
 
         Text(text = "Enter name in order to join the room")
 
-        Spacer(modifier = Modifier.height(8.dp))
+        Spacer(modifier = Modifier.height(16.dp))
 
         var text by remember {
             mutableStateOf("")
@@ -290,6 +437,7 @@ fun LoginScreen(
                 modifier = Modifier
                     .padding(5.dp),
                 text = "Join room",
+                color = Color.White
             )
         }
     }
@@ -340,7 +488,91 @@ fun PersonItem(peer: HMSPeer) {
 }
 ```
 
+#### Bottom buttons composable
+Also, create another composable function that will have the switch camera, toggle video, toggle microphone, and the end call buttons.
 
+```kotlin
+@Composable
+private fun CallBottomButtons(
+    onSwitchCamera: () -> Unit = {},
+    onTurnOffVideo: () -> Unit = {},
+    onToggleMic: () -> Unit = {},
+    onEndCall: () -> Unit = {},
+    micOn: Boolean,
+    modifier: Modifier = Modifier
+) {
+    Card(
+        modifier = modifier,
+        shape = RoundedCornerShape(topStart = 16.dp, topEnd = 16.dp),
+        backgroundColor = Color.Transparent
+    ) {
+        Row(
+            modifier = Modifier
+                .fillMaxWidth()
+                .padding(5.dp),
+            horizontalArrangement = Arrangement.SpaceEvenly,
+            verticalAlignment = Alignment.CenterVertically
+        ) {
+            IconButton(
+                onClick = {
+                    onSwitchCamera()
+                },
+                modifier = Modifier
+                    .size(50.dp)
+                    .clip(CircleShape)
+                    .background(Color.LightGray.copy(alpha = 0.2f))
+            ) {
+                Icon(imageVector = Icons.Default.FlipCameraIos, contentDescription = null)
+            }
+            IconButton(
+                onClick = {
+                    onTurnOffVideo()
+                },
+                modifier = Modifier
+                    .size(50.dp)
+                    .clip(CircleShape)
+                    .background(Color.LightGray.copy(alpha = 0.2f))
+            ) {
+                Icon(imageVector = Icons.Default.VideocamOff, contentDescription = null)
+            }
+            IconButton(
+                onClick = {
+                    onToggleMic()
+                    Timber.d("Mic state: Mic is $micOn")
+                },
+                modifier = Modifier
+                    .size(50.dp)
+                    .clip(CircleShape)
+                    .background(Color.LightGray.copy(alpha = 0.2f))
+            ) {
+                Icon(
+                    imageVector = if (micOn) {
+                        Icons.Default.Mic
+                    } else {
+                        Icons.Default.MicOff
+                    },
+                    contentDescription = null
+                )
+            }
+            IconButton(
+                onClick = {
+                    onEndCall()
+                },
+                modifier = Modifier
+                    .size(50.dp)
+                    .clip(CircleShape)
+                    .background(Color.Red)
+            ) {
+                Icon(
+                    imageVector = Icons.Default.CallEnd,
+                    tint = Color.White,
+                    contentDescription = null
+                )
+            }
+        }
+    }
+}
+```
 
 Finally, let's use these two composables functions that we have created inside the `CallScreen`.
 
