@@ -1,5 +1,21 @@
-A time series is a collection of continuous data points recorded over time. A time series is recorded in intervals such as hourly, daily, weekly, minutes, monthly, and yearly.
+---
+layout: engineering-education
+status: publish
+published: true
+url: /multivariate-time-series-using-auto-arima/
+title: Multivariate time series using Auto ARIMA
+description: This tutorial will show a reader how to build a multivariate time series model using Auto ARIMA.
+author: james-omina
+date: 2022-04-09T00:00:00-21:00
+topics: [Machine Learning]
+excerpt_separator: <!--more-->
+images:
 
+  - url: /engineering-education/multivariate-time-series-using-auto-arima/hero.jpg 
+    alt: Multivariate time series using Auto ARIMA example image 
+---
+A time series is a collection of continuous data points recorded over time. A time series is recorded in intervals such as hourly, daily, weekly, minutes, monthly, and yearly.
+<!--more-->
 Examples of time series are the annual budgets, company sales, weather records, air traffic, covid-19 caseloads, forex exchange rates, and stock prices. The time-series data are recorded in minutes, hours, days, weeks, or years.
 
 For example in stock prices, we can observe the daily closing stock prices of a company for a week. A time series model can then analyze these closing stock prices to identify hidden patterns. Eventually, the model predicts future stock prices based on previously observed closing prices.
