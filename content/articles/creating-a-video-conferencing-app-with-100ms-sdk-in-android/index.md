@@ -679,7 +679,9 @@ When you finally run the app, your output should be as follows:
 
 ![demo1](/engineering-education/creating-a-video-conferencing-app-with-100ms-sdk-in-android/demo1.png)
 
-![demo1](/engineering-education/creating-a-video-conferencing-app-with-100ms-sdk-in-android/demo1.png)
+![demo2](/engineering-education/creating-a-video-conferencing-app-with-100ms-sdk-in-android/demo2.png)
+
+![demo3](/engineering-education/creating-a-video-conferencing-app-with-100ms-sdk-in-android/demo3.png)
 
 ### Conclusion
 In this tutorial, we have learned what is 100ms SDK and its pricing. We then went ahead and created a video conferencing app with the SDK. Please take a look at the final app in this Github repository - [Conferencing app demo](https://github.com/tomleposo/ConferencingAppDemo)
