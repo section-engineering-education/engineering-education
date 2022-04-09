@@ -6,7 +6,7 @@ url: /building-an-image-classification-model-with-gradio-and-keras/
 title: Building an image classification model with Gradio and Keras
 description: This tutorial will implement a simple image classification model using Gradio and Keras. The image classification model will classify images of various flowers into labeled classes.
 author: elisha-njeche
-date: 2022-04-01T00:00:00-11:20
+date: 2022-04-09T00:00:00-10:10
 topics: [Machine Learning]
 excerpt_separator: <!--more-->
 images:
@@ -55,11 +55,11 @@ To follow along with this tutorial, the reader should have knowlegde of the foll
 - How to run the model in [Google Colab](https://research.google.com/colaboratory/)
 
 ### Understanding Gradio
-Gradio is a machine learning library that creates machine learning an interactive application for your trained machine learning model. Gradio creates insightful user interfaces (UI) that allow a user to interact with a trained machine learning model.
+Gradio is a machine learning library that creates an interactive application for your trained machine learning model. Gradio creates insightful user interfaces (UI) that allow a user to interact with a trained machine learning model.
 
 It generates a web interface that allows the user to test the trained model and see the prediction results. We can easily integrate Gradio's user interface right in the Python notebook (either Jupyter notebook or Google Colab notebook) without having to install any dependencies.
 
-Gradio directly works with popular machine learning libraries such as [Sckit-learn](https://scikit-learn.org/), [Tensorflow](https://www.tensorflow.org/), [Keras](https://keras.io/), [PyTorch](https://pytorch.org/) and [Hugging Face Transformers](https://huggingface.co/docs/transformers/index)
+Gradio directly works with popular machine learning libraries such as [Sckit-learn](https://scikit-learn.org/), [Tensorflow](https://www.tensorflow.org/), [Keras](https://keras.io/), [PyTorch](https://pytorch.org/) and [Hugging Face Transformers](https://huggingface.co/docs/transformers/index).
 
 In this tutorial, we will use TensorFlow's Keras to create the convolutional neural network (CNN) for image classification and use Gradio to create the user interface for the model.
 
@@ -79,7 +79,7 @@ import gradio as gr
 ```
 
 ### Importing the important libraries for this tutorial
-We import the following libraries:
+We need to import the following libraries:
 
 ```python
 import numpy as np
@@ -101,7 +101,7 @@ These libraries have the following functions:
 ### Importing Keras and Keras layers
 We import Keras and Keras layers as follows:
 
-- Importing keras
+- Importing Keras
 
 ```python
 from tensorflow import keras
@@ -182,9 +182,9 @@ training_images = tf.keras.preprocessing.image_dataset_from_directory(
 ```
 
 From the function above, we use the validation split of `0.25`. This will split the original image dataset so that 75% of the dataset will train the CNN. The function also has the following additional parameters:
-- seed - It will enable us to reproduce the images of the same dimensions during each epoch.
-- image_size - It specifies the image dimensions(180\*180) we had previously set.
-- batch_size - It specifies the batch size we had previously set.
+- `seed` - It will enable us to reproduce the images of the same dimensions during each epoch.
+- `image_size` - It specifies the image dimensions(180\*180) we had previously set.
+- `batch_size` - It specifies the batch size we had previously set.
 
 When you run the function above, you will get the following output:
 
@@ -243,7 +243,7 @@ A sequential model will enable users to build the multiple layers of a [convolut
 from tensorflow.keras.models import Sequential
 ```
 
-Let's initialize the Sequential model.
+Let's initialize the Sequential model:
 
 ```python
 model = Sequential([])
@@ -258,7 +258,7 @@ We then add the following layers to the sequential layers:
 layers.experimental.preprocessing.Rescaling(1./255, input_shape=(set_height, set_width, 3))
 ```
 
-The function dives the image's pixel by 255 to ensure it ranges within 0 and 1. It also takes the `set_width` and `set_height` as a parameter. The image will have 3 channels that represent the primary colors (Red, Blue, and Green (RGB))
+The function dives the image's pixel by 255 to ensure its range is between 0 and 1. It also takes the `set_width` and `set_height` as a parameter. The image will have 3 channels that represent the primary colors (Red, Blue, and Green (RGB)).
 
 ### Adding convolution layer
 We add the convolution layer of the CNN as follows:
@@ -269,7 +269,7 @@ layers.Conv2D(16, 3, padding='same', activation='relu'),
 
 The `Conv2D` will be 2 dimensional and will have 16 neurons. It also has 3 image channels. The layers have a padding `same` to ensure that the neurons that create this layer have the same size. We use `relu` as an activation function because the output of this layer will be between 0 and positive infinite values.
 
-You can read this [article](/engineering-education/basics-of-convolution-neural-networks/) for a more understanding of the convolution layer and the CNN in detail. You can also read this [article](/engineering-education/activation-functions/) for a more understanding of the `relu` activation function.
+You can read this [article](/engineering-education/basics-of-convolution-neural-networks/) for a better understanding of the convolution layer and the CNN in detail. You can also read this [article](/engineering-education/activation-functions/) for a better understanding of the `relu` activation function.
 
 ### Adding max-pooling layer
 We add the max-pooling layer of the CNN as follows:
@@ -278,7 +278,7 @@ We add the max-pooling layer of the CNN as follows:
 layers.MaxPooling2D(),
 ```
 
-You can read this [article](/engineering-education/basics-of-convolution-neural-networks/) for a more understanding of the max-pooling layer and CNN in detail.
+You can read this [article](/engineering-education/basics-of-convolution-neural-networks/) for a better understanding of the max-pooling layer and CNN in detail.
 
 ### Adding another convolution layer
 We add this layer as follows:
@@ -325,7 +325,7 @@ We can also add another hidden layer on top of these layers to further fine-tune
 layers.Dense(128, activation='relu'),
 ```
 
-This is a `Dense` layer and it will have 128 neurons. It will also use `relu` as the activation function. We then finally add the output layer.
+This is a `Dense` layer and it will have 128 neurons. It will also use `relu` as the activation function. We finally add the output layer.
 
 ### Adding the final output layer
 We add the final output layers as follows:
@@ -350,9 +350,9 @@ model.compile(optimizer='adam',
 ```
 
 The compile function has the following important parameters:
-- optimizer - We set the optimizer as `Adam`. It will enhance and improve the performance of the convolution neural network. It also handles the errors the CNN may have in training.
-- loss - It is the function that accumulates all the errors that the CNN encounters while still in training. We use `SparseCategoricalCrossentropy` since the image dataset has multiple classes (five classes).
-- metrics - It is the function that will get the overall CNN accuracy score after the training. We set its value to `accuracy`.
+- `optimizer` - We set the optimizer as `Adam`. It will enhance and improve the performance of the convolution neural network. It also handles the errors the CNN may have in training.
+- `loss` - It is the function that accumulates all the errors that the CNN encounters while still in training. We use `SparseCategoricalCrossentropy` since the image dataset has multiple classes (five classes).
+- `metrics` - It is the function that will get the overall CNN accuracy score after the training. We set its value to `accuracy`.
 
 Let's also set the number of epochs or iterations for CNN.
 
@@ -428,7 +428,9 @@ We create and launch the Gradio UI in Google Colab as follows:
 gr.Interface(fn=predict_input_image, inputs=image, outputs=label,interpretation='default').launch(debug='True')
 ```
 
-The `gr.Interface` function will create the UI. It takes in the created `predict_input_image` function which will classify the input image. It takes in the `image` as the input and it will output the labeled class. The `launch` method will launch the Gradio UI as shown in the output below:
+The `gr.Interface` function will create the UI. It takes in the created `predict_input_image` function which will classify the input image. It takes in the `image` as the input and it will output the labeled class. 
+
+The `launch` method will launch the Gradio UI as shown in the output below:
 
 ![Launched Gradio UI](/engineering-education/building-an-image-classification-model-with-gradio-and-keras/launched-gradio-ui.png)
 
@@ -460,5 +462,4 @@ You can get the complete implementation of this tutorial in Google Colab [here](
 - [Image preprocessing in Python](/engineering-education/image-preprocessing-in-python/)
 
 ---
-
 Peer Review Contributions by: [Dawe Daniel](/engineering-education/authors/dawe-daniel/)
