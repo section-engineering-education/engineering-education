@@ -1,5 +1,4 @@
-.resource-block.-green-blocks .resource-block-left-large {
-  background: #00a86b;
+.resource-block .resource-block-left-large {
   margin-top: 70px;
 }
 
@@ -20,13 +19,13 @@
   opacity: 0.5;
 }
 
-.resource-block.-green-blocks .resource-block-left-stripes {
+.resource-block .resource-block-left-stripes {
   background: repeating-linear-gradient(
     -45deg,
-    #00a86b,
+    #1d9ad1,
     #ffffff 2px,
     #ffffff 13px,
-    #00a86b 13px
+    #1d9ad1 13px
   );
 }
 
@@ -40,7 +39,7 @@
 }
 
 @media (min-width: 660px) {
-  .resource-block.-green-blocks .resource-block-left-large {
+  .resource-block .resource-block-left-large {
     margin: 0;
   }
 }
@@ -152,4 +151,8 @@
   );
   transition: all 1s ease;
   opacity: 0.5;
+}
+
+.text-blue {
+  color: $text-blue;
 }

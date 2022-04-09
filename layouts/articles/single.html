@@ -98,7 +98,7 @@
   {{ $related := .Site.RegularPages.RelatedIndices . "topics" | first 3 }} 
   {{ with $related }}
 
-  <section class="resource-block section-container -green-blocks xs-mb-40 xs-mt-40 relative">
+  <section class="resource-block section-container xs-mb-40 xs-mt-40 relative">
     <div class="resource-block-left-large absolute"></div>
     <div class="resource-block-left-stripes absolute"></div>
     <div class="resource-block-header text-center">
@@ -120,14 +120,14 @@
           <div class="resource-block-item-content flex flex-column">
             <div class="resource-block-item-content-inner pt-5 pb-5 flex flex-column fill-white">
 
-              {{ with .Params.tags }}
+              {{ with .Params.topics }}
               <p class="text-16 text-blockquote xs-mb-6">
                 {{ delimit . ", " | title }}
               </p>
               {{ end }}
 
               <h3 class="title-5 text-link xs-mb-40">{{ .Title }}</h3>
-            </div><span class="link-with-arrow-green text-green text-18-medium featured-content-item-content-inner-span">Read More</span>
+            </div><span class="link-with-arrow text-blue text-18-medium featured-content-item-content-inner-span">Read More</span>
           </div>
         </div>
       </a>
