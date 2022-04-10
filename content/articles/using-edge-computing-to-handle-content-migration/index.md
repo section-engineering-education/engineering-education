@@ -1,4 +1,4 @@
-﻿### Introduction
+### Introduction
 Content migration involves moving content from one content management system to another. The process sometimes sounds simple, but it usually reveals areas of improvement in the site architecture, the design, and the content itself. 
 
 If a redesign is needed, the migration process shifts from [lift and shift](https://cloud.netapp.com/blog/what-is-a-lift-and-shift-cloud-migration) to reorganizing and redesigning the architecture or content.
@@ -8,7 +8,9 @@ A typical migration involves redesigning information architecture, pages, conten
 Most of these challenges can be solved using edge computing, which will be covered in this article.
 
 ### The concept of edge computing
-[Edge computing](https://www.cloudflare.com/learning/serverless/glossary/what-is-edge-computing/) gradually changes how data is handled, processed, and delivered from millions of devices worldwide. The technology is rapidly growing due to the increased number of [IoT](https://www.zdnet.com/article/what-is-the-internet-of-things-everything-you-need-to-know-about-the-iot-right-now/) devices alongside the applications that require real-time data processing. Fast networking technologies like 5G networks support edge computing by creating real-time applications. These applications include video conferencing and processing, self-driving cars, AI, and robotics.
+[Edge computing](https://www.cloudflare.com/learning/serverless/glossary/what-is-edge-computing/) gradually changes how data is handled, processed, and delivered from millions of devices worldwide. Furthermore, the technology is rapidly growing due to the increased number of [IoT](https://www.zdnet.com/article/what-is-the-internet-of-things-everything-you-need-to-know-about-the-iot-right-now/) devices alongside the applications that require real-time data processing. 
+
+Fast networking technologies like 5G networks support edge computing by creating real-time applications. These applications include video conferencing and processing, self-driving cars, AI, and robotics.
 
 Edge computing was developed to address the issue of bandwidth costs for the data covering long distances. However, the rise of IoT-generated data real-time applications that require processing at the edge has made the technology grow faster.
 
@@ -16,7 +18,7 @@ Edge computing can be defined as distributed computing topology that processes i
 
 Edge computing aims to ensure that the applications that use real-time data do not suffer from latency issues that significantly affect performance. This would save the organization's cost as the processing happens locally, hence no need for centralized or cloud-based locations.
 
-Edge computing is crucial when it comes to content or data migration. Let us assume we manage a website that hosts huge content, such as thousands of articles. Then a need arises that we may have to change the website's domain name.
+Edge computing is crucial when it comes to content or data migration. For example, let us assume we manage a website that hosts huge content, such as thousands of articles. Then a need arises that we may have to change the website's domain name.
 
 A challenge would arise on how we would redirect a million links from our old domain to the new domain. Typically to avoid the links from breaking, we can set a [redirect server](https://www.sciencedirect.com/topics/computer-science/redirect-server) that handles the traffic from the old domain and redirects them to the new domain. We can use edge computing to make tasks even easy and the whole experience better. Later sections will cover the issues that arise when migrating content and how better edge computing solves them and optimizes the system.
 
@@ -27,21 +29,21 @@ The typical content migration process involves strategy, planning, preparation, 
 
 #### Phase 1: Strategy
 This phase covers the following:
-- **Reason for migration:** One reason may be that the current system may be no longer supported by the vendors, hence the need to migrate to the new system. Also, an organization may be planning to unify its systems for a better user experience. Whatever may be the reason, the change should impact the overall system.
-- **Scope of migration:** It determines which information needs to be migrated. Suppose the organization is planning to do away with the whole old system. In that case, all information may need to be migrated. The organization should consider performing migrations in phases or targeting particular departments or processes for a file share cleanup. This stage impacts the timeline required to perform migrations.
-- **The team involved:** A highly involved migration process requires commitment and resources from the organization. The top-level management in the organization needs to identify the need and allocate resources to the same. Afterward, then the team to be involved in migration can be determined. The migration team should at least involve business users, technical specialists, and information management specialists.
+- **Reason for migration:** One reason may be that the vendors may no longer support the current system, hence the need to migrate to the new system. Also, an organization may be planning to unify its systems for a better user experience. Whatever may be the reason, the change should impact the overall system.
+- **Scope of migration:** It determines which information needs to be migrated. For example, suppose the organization plans to do away with the whole old system. In that case, all information may need to be migrated. The organization should consider performing migrations in phases or targeting particular departments or processes for a file share cleanup. This stage impacts the timeline required to perform migrations.
+- **The team involved:** A highly involved migration process requires commitment and resources from the organization. First, the top-level management in the organization needs to identify the need and allocate resources to the same. Afterwards, then the team to be involved in migration can be determined. The migration team should at least involve business users, technical specialists, and information management specialists.
 
 #### Phase 2: Planning
 The next phase is to plan for the migration. This involves the following steps:
-- **Source system inventory:** This step involves the information in the system, its metadata, and the way it is categorized or classified. Also, any relevant business rules or workflows and security settings are noted at this stage.
-- **Source system key users:** In this step, the content users are noted. Also, the content owner and who will approve its migration is noted.
-- **Source system information value:** This step determines the value of the information the source system holds. The checks on whether information can be recreated, redundant or obsolete are performed. The main reason is that organization would not migrate the information that adds no value to the business. Also, a business decision has to be made on which content to migrate and what to leave out.
+- **Source system inventory:** This step involves the information in the system, its metadata, and how it is categorized or classified. Also, any relevant business rules or workflows and security settings are noted at this stage.
+- **Source system key users:** In this step, the content users and content owner who will approve its migration are noted.
+- **Source system information value:** This step determines the value of the information the source system holds. It checks whether information can be recreated, redundant or obsolete. These checks are done because the organization would not migrate the information that adds no value to the business. In addition, a business decision has to be made on which content to migrate and what to leave out.
 
 #### Phase 3: Preparation
-Up to this point, the plan is already laid out. The migration team can prepare for the actual migration of the content. The following tasks are to be performed:
+Up to this point, the plan is already laid out. Then, the migration team can prepare for the actual migration of the content. The following tasks are to be performed:
 - **Gather migration tools:** These are the tools that will be used in the migration process. They assist in identifying the proper folders and content to be migrated. They are also integrated with analytics to help classify the information. The team involved in migration should be prior trained to use the tools. Additionally, the tools also need to have been gathered before actual migration.
-- **Analyze old and new system metadata needs:** Both old and new system metadata should be standardized. Folder structures should be prior analyzed and optimized correctly after migration.
-- **Prepare target system:** The system key tasks need to be set up, such as security roles and settings, classification schemes, metadata set up, and workflows setup. Also, users need to be prepared to use the system once the migration is over.
+- **Analyze old and new system metadata needs:** Both old and new system metadata should be standardized. For example, folder structures should be analyzed and optimized correctly after migration.
+- **Prepare target system:** The system key tasks need to be set up, such as security roles and settings, classification schemes, metadata set up, and workflows setup. In addition, users need to be prepared to use the system once the migration is over.
 
 #### Phase 4: Migration
 After completing all the phases, the final phase involves the actual migration of the system. The steps may vary depending on the systems the organization is using. However, below are the guidelines:
@@ -50,7 +52,7 @@ After completing all the phases, the final phase involves the actual migration o
 - **Perform quality control:** A quality technical check should be made to ensure correctness for every significant amount of content migrated. At this step, the users who are conversant with the information involved should contribute to ascertain whether the system is working.
 - **Disabling access to the old system:** The access to the old system should be disabled instead of being deleted for some time. The reason is that some data might not have been successfully migrated due to legal or regulatory issues. However, it is helpful for the end-users not to access the old system once the migration process is over.
 
-Content migration can be complex and not an easy task to undertake. It comes with some issues attached to it; some are technical. Most technical issues involved can be handled by edge computing, as covered in the following sections.
+Content migration can be complex and not an easy task to undertake. It comes with some issues attached to it; some are technical. However, most technical issues involved can be handled by edge computing, as covered in the following sections.
 
 ### Using edge computing to handle content migration issues
 #### Latency issues
@@ -90,7 +92,7 @@ The following is happening in the above links:
 - The blog post route `/post` has been changed to `/blog`.
 - The blog slug for each post has been changed to use blog titles in place of the post ID.
 
-Handling the above two changes is possible through [NGINX rewrite rules](https://www.nginx.com/blog/creating-nginx-rewrite-rules/) and [regular expressions](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Regular_Expressions). The third change can be challenging to handle since there is no way a program can map an old URL to a new URL.
+Handling the above two changes is possible through [NGINX rewrite rules](https://www.nginx.com/blog/creating-nginx-rewrite-rules/) and [regular expressions](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Regular_Expressions). However, the third change can be challenging to handle since there is no way a program can map an old URL to a new URL.
 
 We can try to solve the challenge by setting up a server that would take the requests from the old domain name. Then it would search for the needed post in a site database using a unique post ID. Next, it will create a new URL using the fetched blog post title and return the redirect information to the new URL.
 
@@ -106,12 +108,12 @@ Edge computing offers [key-value storage](https://www.akamai.com/blog/news/now-a
 
 Edge's key-value storage devices come with an O(1) complexity. This means that no matter the number of items in the list, the look-up times will remain the same. 
 
-We can save the URL mappings inside edge key-value storage in our previous example. Then edge functions can automatically check if there is redirect information in each request.
+In our previous example, we can save the URL mappings inside edge key-value storage. Then edge functions can automatically check if there is redirect information in each request.
 
 This would follow the below steps:
 1. The user will request the old URL.
 2. Then, the edge function near the user takes care of the request.
-3. Next, using the edge function we will search for the redirect web address inside the edge key-value storage using the requested web address.
+3. Next, using the edge function, we will search for the redirect web address inside the edge key-value storage using the requested web address.
 4. The user will get redirect information from the edge function.
 5. The user will be able to access the new web address.
 6. The new web address server responds to the request.
