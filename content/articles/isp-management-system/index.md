@@ -841,6 +841,6 @@ In summary, we have learned:
 - how to create a user interface with React.
 - how to connect the server and client using Axios and React hooks.
 
-You can access the complete project [here](https://github.com/wanguiwaweru/MERN-STACK)
+You can access the complete project [here](https://github.com/wanguiwaweru/MERN-STACK).
 
 Happy Learning !!!
