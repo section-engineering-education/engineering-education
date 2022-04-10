@@ -15,7 +15,9 @@ We will first download a dataset using Kotlin. Next, we will load the dataset us
 ### Downloading the dataset
 We will use a download helper library called PRDownloader. This library lets us do this in a few lines of code. Its dependency is added in the Gradle file using this line:
 
-//code here
+```kotlin
+implementation 'com.mindorks.android:prdownloader:0.6.0'
+```
 
 Do a Gradle sync.
 
