@@ -1,3 +1,19 @@
+---
+layout: engineering-education
+status: publish
+published: true
+url: /getting-started-with-youtube-android-player-api-to-play-youtube-videos/
+title: Getting started with YouTube Android Player API 
+description: In this tutorial, we will use the API to create an android app that allows users to search for YouTube videos and then play them in their android applications.
+author: moses-takai
+date: 2022-04-10T00:00:00-12:30
+topics: [Android]
+excerpt_separator: <!--more-->
+images:
+  - url: /engineering-education/getting-started-with-youtube-android-player-api-to-play-youtube-videos/hero.jpg
+    alt: YouTube Android Player API  example image
+---
+
 YouTube offers an Android API that allows developers to add the capability of playing youtube videos in their app.
 
 In this tutorial, we will use the API to create an android app that allows users to search for YouTube videos and then play them in their android applications.
@@ -289,3 +305,6 @@ Keep researching and learning more about the API. Also, please check out this [G
 - [API's Docs](https://developers.google.com/youtube/android/player).
 
 Happy coding!
+
+---
+Peer Review Contributions by: [Jerim Kaura](/engineering-education/authors/jerim-kaura/)
