@@ -86,7 +86,7 @@ PORT = 5000
 Create ``index.js`` where we will set up the server.
 - Load the environment variables from the .env file by requiring and configuring the dotenv package.
 The environment variables are loaded into the ``process.env`` object. 
-Import the mongoose package and load the PORT variable.
+- Import the mongoose package and load the PORT variable.
 
 ```javascript 
 require('dotenv').config()
@@ -115,9 +115,9 @@ app.listen(PORT, () => console.log(`Server Started on port ${PORT}`))
 - ``app.listen()`` listens to the connections on the specified port and executes the callback function we pass.
 
 - Create a connection to the database.
-use the ``mongoose.connect()`` method to connect to MongoDB by passing the database URL and options which are passed to the MongoDB driver.
+- Use the ``mongoose.connect()`` method to connect to MongoDB by passing the database URL and options which are passed to the MongoDB driver.
 
-Include ``useNewUrlParser`` and ``useUnifiedTopology`` to avoid deprecation warnings that are printed by mongoose.connect() by default.
+- Include ``useNewUrlParser`` and ``useUnifiedTopology`` to avoid deprecation warnings that are printed by mongoose.connect() by default.
 
 Setting  useNewUrlParser to true and useUnifiedTopologyto true prevents the warnings resulting from deprecation in the MongoDB driver.Learn more about other deprecation warnings [here](https://mongoosejs.com/docs/5.x/docs/deprecations.html).
 
@@ -184,6 +184,8 @@ subscribeDate: {
     default: Date.now
 }
 ```
+- The customerSchema has the name, email, location, subscribedToPackage and subscribeDate fields.
+
 The schema contains the customer's properties which are defined as a JavaScript object where we specify the data type and whether a field is required.
 
 - Export the model.
@@ -192,6 +194,7 @@ This will make the model available to other files in our application.
 ```javascript
 module.exports = mongoose.model('Customer', customerSchema)
 ```
+- Compile the schema into a model and export it.
 
 ### Setting up API Endpoints
 
@@ -206,7 +209,8 @@ The API endpoints enable us to create, read,update and delete customer details.
 
 Create a ``routes`` folder and ``customers.js`` file inside this folder.
 
-- Import express and create a new router object using ``express.Router()`` to handle requests. 
+- Import express and create a new router object using ``express.Router()`` to handle requests. Learn more about ``express.Router()`` [here](https://expressjs.com/en/guide/routing.html)
+
 We will use the new router object to handle the get,post,patch and delete requests.
 
 ```javaScript
@@ -214,8 +218,13 @@ const express = require('express')
 const router = express.Router()
 const Customer = require('../models/customer')
 ```
+
+- We wil also use [HTTP response status codes](https://developer.mozilla.org/en-US/docs/Web/HTTP/Status) to identify if the HTTP request has been executed successful.
+
 - Add a route to get all customers.
+
 Get all the customers using ``find()`` which returns all instances.
+
 ```javaScript
 // Get all customers
 router.get('/', async (req, res) => {
@@ -227,10 +236,9 @@ router.get('/', async (req, res) => {
     }
 })
 ```
+- Use the router.get() to retrieve information. If the request is successful, we return the customers in json format else we use the status code 500 to indicate that the server has encountered an error.
 
 - Add a route to create a new customer.
-set the values in the Customer model to the values in ``request.body`` which are the details supplied by the customer from the frontend.
-Use ``save()`` to save customer to the database.
 
 ```javaScript
 // Create customer
@@ -250,10 +258,14 @@ router.post('/', async (req, res) => {
     }
 })
 ```
+- To add a new customer we use ``router.post()`` which accepts the specified URL, and the route handler. The route handler accepts takes the request object,and response object as parameters.
+- Set the values in the Customer model to the values in ``request.body`` which are the details supplied by the customer from the frontend.
+- We use the status code of 200 when request is successful and 400 when it is unsuccessful due to an error on the client side.
+- Use ``save()`` to save customer to the database.
+
 - Create a helper function to get the customer by ID.
 
-We will use this function to avoid repeating code for the routes where we need to work with one customer.   
-use ``findById()`` to get the customer by the specified ID.
+We will use this function to avoid repeating code for the routes where we need to work with one customer.  Use ``findById()`` to get the customer by the specified ID.
 
 ```javascript
 async function getCustomer(req, res, next) {
@@ -270,11 +282,11 @@ async function getCustomer(req, res, next) {
     res.customer = customer
     next()
 }
-
 ```
 The function gets the customer by ID then calls ``next()``.
 
 ``next()`` is a callback function that passes the handler to the next route handler in the route path.
+- Use the 404 status code to indicate that a resource cannot be found on the server. The 500 status code indicates if an error occurs on the server and error message is returned in json format.
 
 - Add a route to get one customer
 
@@ -314,8 +326,9 @@ router.patch('/:id', getCustomer, async (req, res) => {
         res.status(400).json({ message: err.message })
     }
 })
-
 ```
+- For each field we check if it is null and update it accordingly.  Use the save() method to save the updated details.
+- The 400 status code indicates that an error occured on the client side when sending the HTTP request.
 
 - Add a route to delete a customer.
 
@@ -330,6 +343,8 @@ router.delete('/:id', getCustomer, async (req, res) => {
     }
 })
 ```
+- Use the remove() method to delete customer and show a success message if the response is completed successfully.
+- The status code 500 indicates an error on the server.
 
 - Export router
 
@@ -426,12 +441,17 @@ function App() {
 
 export default App;
 ```
+
+- Import BrowserRouter, Router and Route from React-router-dom for routing and navigating to different pages.
+- Import the components from the components folder which we will create later.
+- Create Routes for different components by specifying the path and element to be rendered.
 > Exporting the App makes it available to index.html which is the main html page of our app.
 
 ### Creating Components
 React apps are made of different reusable components. Our app will have three main components; createCustomer,editCustomer,customerList.
 
 Let us create each component.
+
 Create a ``components`` folder in the ``src`` folder and add ``createCustomer.js``, ``editCustomer.js``, and ``customerList.js`` files inside the components folder.
 
 ### CreateCustomer Component
@@ -474,6 +494,10 @@ export default function CreateCustomer() {
     )
 }
 ```
+- Import Grid, Paper, Typography, TextField, Button and Select component from Material UI.
+- Inside the component define the css styles to be applied on the Material UI components.
+- Create the form using the Textfields, Select, Button and add the css styles to each element.
+
 For the Select field we need to supply some options for users to choose from based on the available subscriptions offered by the internet service provider.
 
 Add the following code to the createCustomer.js file
@@ -497,8 +521,9 @@ const options = [
     },
 ];
 ```
+- The options represent the subscription packages offered by the ISP.
 
-To display these options in the select field, include the following code.
+To display these options in the select field, map through the array using ``map`` .
 
 ```javascript
 {options.map((option) => (
@@ -555,6 +580,9 @@ export default function CustomerList() {
     );
 }
 ```
+- Import Table, TableCell, TableContainer,TableHead,TableRow, Paper from Material UI which will be used to create a table of all the customer details.
+- Create an outline of the table inside the TableContainer component with each TableCell representing a column in the table.
+
 So far we have defined the structure of the table which will be populated by customer data from the database.
 We will implement this later on in our app while connecting the frontend to the backend.
 
@@ -568,7 +596,6 @@ In ``editCustomer.js`` include,
 ```JavaScript
 import React from 'react'
 import { Grid, Paper, Typography, TextField, Button } from '@material-ui/core'
-
 
 export default function EditCustomer(props) {
     const paperStyle = { padding: '30px 20px', height: '500px', width: '500px', margin: "20px auto" }
@@ -596,6 +623,8 @@ export default function EditCustomer(props) {
     )
 }
 ```
+- Import  Grid, Paper, Typography, TextField, Button from Material UI, define the css styles and apply them to each element in the form.
+
 We will make some additional changes to pre-populate the fields and create the update functionality.
 
 ### Connecting Frontend to Backend
@@ -605,6 +634,7 @@ The goal is to send the customer data to the database and the fetch data to perf
 Let's begin with posting customer details in the createCustomer component.
 
 We need to manage the state of different variables storing our customer details; therefore, we will use the ``useState`` react hook because we are using functional components.
+
 The ``useState`` hook takes the initial state of the customer details and returns the current state, and the setCustomer function, which updates the state.
 
 In ``createCustomer.js``, outside the return statement,
@@ -619,7 +649,9 @@ import {useState} from 'react'
     });
     
 ```
-- create a function to handle the post request using axios.
+- Set the initial state of the customer details to empty strings.
+
+- Create a function to handle the post request using axios.
 
 ```javascript
 import axios from "axios"
@@ -630,7 +662,9 @@ import axios from "axios"
         })
     };
  ```
- The ``createCustomer()`` function is called when the ``onClick()`` event occurs on the submit button.
+ - Use axios.post() for the HTTP request and create an alert upon successful registration.
+
+The ``createCustomer()`` function is called when the ``onClick()`` event occurs on the submit button.
  
  - Read and Update state
 State is updated when the ``onChange()`` event is triggered in the textfields in our form.
@@ -658,6 +692,10 @@ Edit the form in ``createCustomer.js`` to include,
     <Button type='submit' variant='contained' color='primary' style={marginTop} onClick={createCustomer}>Submit</Button>
 </form>
 ```
+- ``setCustomer`` updates the current state of each field in the form. 
+- When the state is updated, the entire state gets overwritten thus the fields would be removed from our state when one of the customer details is updated.
+- Use the spread operator (...) to update only one field at a time and maintain state. 
+
 Run ``npm start`` in your terminal
 
 > The server should still be running on port 5000.
@@ -682,13 +720,19 @@ useEffect(() => {
         });
     }, []);
  ```
+ - Set initial state of the customer list to an empty array using ``useState``.
+ - Use axios.get() to make a GET request retrieving all customers from the database.
+ - Use ``setCustomerList`` function to update state of the customerlist and populate it with the data retrieved from the database.
+ 
  In the Action's column in our table, one can delete or update customer details.
  
 - Update Customer
+
  Link this to the editCustomer component using react-router-dom's Link.
  
 - Delete Customer
-use the ``axios.delete()`` method to delete a customer based on their id which is a unique number generated by MongoDB.
+
+Use the ``axios.delete()`` method to delete a customer based on their id which is a unique number generated by MongoDB.
 
 ```javascript
 import { useEffect,useState } from 'react'
@@ -701,6 +745,8 @@ const deleteCustomer = (id) => {
         })
     }
 ```
+- Use axios.delete() to send DELETE request and remove a customer from the database.
+
 To display the customer list, add the table body component and iterate through the list returned from the database.
 
 ```javascript
@@ -719,6 +765,9 @@ To display the customer list, add the table body component and iterate through t
 </TableBody>
             
 ```
+- Map the customerList array to display each customer details in a row and populate the table columns.
+- Use the Link element from react-router-dom to link the update action to the editCustomer component by specifiying the ``/edit/:id`` path which we included in our routes in ``App.js``.
+
 Run ``npm start``.
 
 Our CustomerList component renders out as follows when we navigate to http://localhost:3000/customerlist:
@@ -748,6 +797,10 @@ import { useParams } from 'react-router-dom';
         })
     }
 ```
+- Set the initial state of the customer details to and empty array and set the id to the id retrieved by ``useParams()`` from the supplied the URL.
+- Use the useEffect hook and axios.get() to make a GET request based on the id and update the customer details with the information from the datebase.
+
+This renders a pre-populated form.
 
 - Update Details in database.
 
@@ -759,7 +812,10 @@ const updateCustomer = () => {
         })
     }
  ```
- Include the following in the button in editCustomer.js to call the ``updateCustomer()`` function.
+ - create the updateCustomer() function which uses axios.patch to send a PATCH request and update details in the database.
+ - Update state using the showCustomer() function such that the current state holds the customer details in the database.
+
+ Include the following in the **Update** button in editCustomer.js to call the ``updateCustomer()`` function.
  
  ```javascript
  onClick={updateCustomer}
@@ -783,7 +839,12 @@ const updateCustomer = () => {
         <Button type='submit' variant='contained' color='primary' style={marginTop} onClick={updateCustomer}>Update</Button>
    </form>
  ```
+- Update state the showCustomer() function to capture changes when the onChange event is triggered in the textfields.
+- Set each field to the value supplied upon change in the textfield.
+- Use the spread operator to avoid remove the state of the different fields in the customer array. 
+
 Run ``npm start``
+
 The EditCustomer component renders a page similar to the one shown below when we click on the edit action in the customerlist page.
 
 ![EditCustomer](/isp-management-system/updateCustomer.jpg)
