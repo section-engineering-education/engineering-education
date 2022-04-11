@@ -14,7 +14,7 @@ images:
   - url: /engineering-education/erc20-tokens-and-transact-using-brownie-python/hero.jpg
     alt: Transact erc20 tokens using brownie Hero Image
 ---
-ERC20 tokens are a representation of something on the Ethereum Blockchain. They can reference a representation of something valuable. They can also reference a representation of something that has no valuable.
+ERC20 tokens are a representation of something on the Ethereum Blockchain. They can reference a representation of something valuable. They can also reference a representation of something that has no valuable. ERC20 tokens have become very useful and have found applications in a variety of areas.
 <!--more-->
 ### Objectives
 In this article, we will go over what you need to deploy and transact your own ERC20 token, by doing the following: 
@@ -24,10 +24,10 @@ In this article, we will go over what you need to deploy and transact your own E
 - Create a smart contract that interacts with your token.
 
 ### Prerequisites
-- Visual Studio Code (VS Code)
-- Brownie python environment installed.
-- Basic knowledge in Python Programming Language.
-- Basic knowledge in Solidity Programming Language.
+- Have Visual Studio Code (VS Code) installed.
+- Have the Brownie Python environment installed.
+- Some basic knowledge in Python Programming Language.
+- Some prior knowledge in Solidity Programming Language.
 
 ### Table of contents
 1. [Initialization](#initialization).
@@ -90,8 +90,7 @@ Upon initialization, this contract grants the `_initialSupply` tokens to the `_f
 
 By default, this ERC20 token uses 18 decimals.
 
-Create a python file *transact_token.py* under the *scripts* folder.
-
+Create a Python file named *transact_token.py* under the *scripts* folder.
 
 ```python
 from brownie import MyToken,accounts
@@ -108,11 +107,11 @@ main()
 ```
 
 > MyToken.deploy() takes 3 parameters: 
-1. The founder who will have tokens minted for her
-2. The initial supply which is the number of tokens minted for the founder
-3. The account that deploys the Token Smart Contract ({"from":x})
+1. The founder who will have tokens minted for them.
+2. The initial supply which is the number of tokens minted for the founder.
+3. The account that deploys the Token Smart Contract ({"from":x}).
 
->It is important that the founder's account be the same account that deploys the smart contract. This is because the functions in the ERC20 contract will assume that the funds will come from the account that deployed the Token Smart Contract 
+>It is important that the founder's account be the same account that deploys the smart contract. This is because the functions in the ERC20 contract will assume that the funds will come from the account that deployed the Token Smart Contract. 
 
 The `initial_supply` has been set to 21 million tokens.
 
@@ -138,7 +137,7 @@ def get_token_balance(account_address):
 
 `balanceOf(address)` is another function implemented by `OpenZeppelin` to check the balance of the token held by an address.
 
-Check the token balance supplied to the `founder`, who was `accounts[0]`
+Check the token balance supplied to the `founder`, who was `accounts[0]`.
 ```python
 def main():
   deploy_token()
@@ -210,8 +209,7 @@ contract QuizReward {
 }
 ```
 
-`correctAnswer` contains the number to be compared against.
-`reward` contains the number of tokens to be sent to whoever answers correctly.
+`correctAnswer` contains the number to be compared against. `reward` contains the number of tokens to be sent to whoever answers correctly.
 
 The function `convertToWei` converts the input number to 18 decimal places.
 
@@ -236,7 +234,7 @@ There are 2 ways in which this smart contract can reward users.
 
 The first way is to transfer the tokens from the founder (`accounts[0]`) to the smart contract. This kind of transfer has already been demonstrated.
 
-The second way is for the founder to give the smart contract an allowance. An allowance to spend the founder's money. Think of it as the founder granting her debit card, but she can limit the amount the smart contract can spend. This is what you are going to do.
+The second way is for the founder to give the smart contract an allowance. An allowance to spend the founder's money. Think of it as the founder granting her debit card, but she can limit the amount the smart contract can spend. This is what we are going to do.
 
 In *transact_token.py* create a function:
 ```python
@@ -351,17 +349,20 @@ Clearly, the smart contract was able to transfer 1000000 tokens to the account a
 ### Further Readings
 To view all the ERC20 functions inherited from the OpenZeppelin library, follow this link:[OpenZeppelin ERC20](https://docs.openzeppelin.com/contracts/2.x/api/token/erc20)
 
-There are a few functions which have not been covered here. For example:
+There are a few functions which have not been covered here. 
 
+For example:
 `_burn`. This is the opposite of `_mint`. It destroys the tokens in an account and reduces the total supply circulating.
 
 `decreaseAllowance`. This is the opposite of `increaseAllowance`. It reduces the tokens that an address is allowed to spend on an account.
 
-With the basics in place, you can easily adapt these functions into your code without a hassle.
+With the basics in place, you can easily adapt these functions into your code without much of a hassle.
 
 ### Conclusion
-ERC20 tokens are very useful and have found applications in a variety of areas. In this tutorial, you have learned how to create these ERC20 tokens, and deploy them to a local blockchain using ganache, but you can challenge yourself by deploying it to a test net such as `Rinkeby` or even the `Mainnet`! You have also learned all the various ways you can transact using your token, and also making a smart contract transact your token.
+ERC20 tokens are very useful and have found applications in a variety of areas. In this tutorial, you have learned how to create these ERC20 tokens, and deploy them to a local blockchain using ganache, but you can challenge yourself by deploying it to a test net such as `Rinkeby` or even the `Mainnet`! You have also learned all the various ways you can transact using your token, and also how to make a smart contract transact your token.
 
 Congratulations on making it this far! Go forth and deploy your tokens!
+Happy coding!
+
 ---
 Peer Review Contributions by: [Mohamed alghadban](/engineering-education/authors/mohamed-alghadban/)
