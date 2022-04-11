@@ -16,7 +16,7 @@ images:
 ---
 When playing video games, have you ever wondered how or rather what makes the light in the game look similar to the one in real life? This is because of the *ray-tracing technique*. With this process, the game designers can make visible light beams jump into objects, produce real shadows, and create life-like reflections.
 <!--more-->
-Ray tracing has been of great impact in the world today, modifying and innovating various sectors of the tech world. In this article, we will learn more about the ray tracing algorithm and how it is used in [machine learning](https://www.section.io/engineering-education/topic/machine-learning/).
+Ray tracing has had a great impact in the world today, modifying and innovating various sectors of the tech world. In this article, we will learn about the ray tracing algorithm and how it is used in [machine learning](/engineering-education/topic/machine-learning/).
 
 ### Prerequisites
 - The reader should know what's an algorithm and how it's used in programming.
@@ -56,6 +56,8 @@ To achieve this simulation, the ray tracer places a screen between the viewer an
 The contrast of the ray and the first element of the scene in the path of the ray is then computed. The beam is then separated from one or two secondary rays corresponding to the object material. Reflection and refraction rays are followed repeatedly to compute a meeting place in each step until a pre-determined depth is acquired.
 
 ![Ray tracing](/engineering-education/getting-started-with-ray-tracing-algorithm-in-machine-learning/tracing.png)
+
+[Image Source:](https://www.researchgate.net/figure/Basic-ray-tracing-algorithm_fig2_287646188)
 
 ### Types of Ray Tracing Algorithms
 Various methods are induced for the effectiveness of Ray Tracing. There are three types of ray tracing algorithms, they include; hybrid ray tracing algorithm, forward ray tracing algorithm, backward ray tracing algorithm.
