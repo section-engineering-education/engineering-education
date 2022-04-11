@@ -648,5 +648,8 @@ With that, you have a fully functional calculator. The source code of our applic
 
 Happy coding!
 
+### Resources
+- [Calculator With JavaScript](https://www.youtube.com/watch?v=j59qQ7YWLxw)
+
 ---
 Peer Review Contributions by: [Wanja Mike](/engineering-education/authors/michael-barasa/)
