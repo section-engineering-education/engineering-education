@@ -14,11 +14,10 @@ images:
   - url: /engineering-education/erc20-tokens-and-transact-using-brownie-python/hero.jpg
     alt: Transact erc20 tokens using brownie Hero Image
 ---
-ERC20 tokens are a representation of something on the Ethereum Blockchain. They can reference a representation of Gold, in which case those tokens are very valuable. They can also reference a representation of someone's toenails, in which case, those tokens are less valuable.
+ERC20 tokens are a representation of something on the Ethereum Blockchain. They can reference a representation of something valuable. They can also reference a representation of something that has no valuable.
 <!--more-->
 ### Objectives
-In this article, you will obtain all the knowledge you need to deploy and transact your own ERC20 token, by doing the following: 
-
+In this article, we will go over what you need to deploy and transact your own ERC20 token, by doing the following: 
 - Create your own ERC20 token.
 - Deploy your token to a local blockchain.
 - Make transactions using your token.
