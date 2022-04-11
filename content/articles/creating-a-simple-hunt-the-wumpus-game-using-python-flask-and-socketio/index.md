@@ -1,4 +1,6 @@
-In this tutorial, we are going to create a simple game based on the Hunt the Wumpus game, one of the first computer games. Hunt the Wumpus was also an influential game for the A.I. area. We are going to know more about the history of this game and create our clone from scratch using Python, Flask, and Socket.io.
+In this tutorial, we will create a simple game based on the [Hunt the Wumpus](https://en.wikipedia.org/wiki/Hunt_the_Wumpus) game, one of the first computer games.
+<!--more-->
+By reading this article, the reader will learn about the history of this game and will learn to build a clone of it from scratch, using Flask and Socket.io in Python.
 
 ### Table of contents
 - [Introduction](#introduction)
@@ -13,57 +15,65 @@ In this tutorial, we are going to create a simple game based on the Hunt the Wum
 - [References](#references)
 
 ### Introduction
-One of the first computer games is Hunt the Wumpus. It is a simple adventure game that was developed in 1973. In Hunt the Wumpus, the player is an adventurer entering a dungeon looking for a treasure. The goal of the adventurer is to find the treasure and get out of the dungeon avoiding the pits where he can fall in and the Wumpus: a monster who kills anyone it sees. To do that, the player has to pay attention to the signals: when he is near a pit he can feel a breeze, and when he is near the Wumpus he can smell the Wumpus' stink.
+Hunt the Wumpus is one of the most played games during the start of the personal computers, which was developed in 1973.
 
-Hunt the Wumpus was studied by computer scientists in the early days of the artificial intelligence field and it exemplifies the use of logic in A.I. In this tutorial, we are going to build a simple graphical web-based Hunt the Wumpus game using Python, Flask, and SocketIO.
+In this game, the player is an adventurer who enters a dungeon looking for a treasure. The goal is to find the treasure and get out of the dungeon by avoiding the pit falls and the Wumpus (a monster).
+
+To do that, the player has to pay attention to the signals. When he is near to a pit, he can feel the breeze, and when he is near to the Wumpus, he can smell the Wumpus' stink.
+
+Hunt the Wumpus was studied by computer scientists in the early days of AI technology. In this tutorial, we will build a simple graphical web-based "Hunt the Wumpus" game using Flask and SocketIO in Python.
 
 ### Prerequisites
 To follow this tutorial, you should know:
-
-- How to create the basic structure of a page using HTML and CSS;
-- How to interact with elements of a web page using JavaScript and jQuery;
-- The basics of Python programming;
+- How to implement a basic structure of a web page using HTML and CSS.
+- How to interact with elements of a web page using JavaScript and jQuery.
+- The basics of Python programming.
 - The basics of Flask.
 
-This tutorial will **not** teach the basics of how to build a web page with HTML, CSS, and Javascript, nor how Flask works. The tutorial will assume you already know this and focus on the development of the Hunt the Wumpus game using these technologies.
+If you are a complete beginner to these technologies, you may still be able to follow the tutorial without major difficulties. Whenever you get a doubt, go to the documentation referenced at the end of the article to understand them better.
 
-That said, if you're a complete beginner on these technologies, you may still be able to follow the tutorial without major difficulties. Whenever you get a doubt, go to the documentation referenced at the end of the article and it's likely you will be fine.
+### Brief history about the game and its contributions to AI
+Hunt the Wumpus is a text-based adventure game developed in 1973 by Gregory Yob for PC. In the game, the player enters a dungeon made of several conneced rooms and has to avoid pit falls, bats that can move him to a random room, and kill the monster Wumpus with an arrow.
 
-### The Hunt the Wumpus game: brief history and contributions to AI
-Hunt the Wumpus is a text-based adventure game developed in 1973 by Gregory Yob for PC.  In the game, the player enters a dungeon made of several conneced rooms and has to avoid pits where he can fall in, bats that can move him to a random room, and kill the monster Wumpus with an arrow. The player knows there's a pit nearby when he feels a breeze and he knows when there's a Wumpus nearby when he feels a stink.
+The player will know if there's a pit nearby, when he feels a breeze and he knows when there's a Wumpus nearby, when he feels a stink.
 
-The "Wumpus World" is a slightly modified version of the Hunt the Wumpus game mentioned in the influential book [*Artificial Intelligence: a Modern Approach*](https://www.amazon.com.br/Artificial-Intelligence-Approach-Stuart-Russell/dp/0134610997). It's described in the book like this
+The "Wumpus World" is a slightly modified version of the Hunt the Wumpus game as mentioned in one of the most influential books [*Artificial Intelligence: a Modern Approach*](https://www.amazon.com.br/Artificial-Intelligence-Approach-Stuart-Russell/dp/0134610997).
+
+In the book, it is described as below:
 
 *"The wumpus world is a cave consisting of rooms connected by passageways. Lurking somewhere in the cave is the terrible wumpus, a beast that eats anyone who enters its room. The wumpus can be shot by an agent, but the agent has only one arrow. Some rooms contain bottomless pits that will trap anyone who wanders into these rooms (except for the wumpus, which is too big to fall in). The only mitigating feature of this bleak environment is the possibility of finding a heap of gold."* (Artificial Intelligence: A Modern Approach)
 
-This Wumpus World exemplifies the use of propositional logic in A.I. to build knowledge-based agents. The book shows how we can build an agent able to play Wumpus World "rationally", that is, choosing the safest rooms based on the knowledge it has available.
+This Wumpus World exemplifies the use of propositional logic in AI to build knowledge-based agents. The book shows how one can build an agent that can play Wumpus World "rationally", that is, choosing the safest rooms based on the knowledge available.
 
-In this tutorial, we are going to develop a game similar to Wumpus World. Instead of being a text-based game, we are going o build a graphical game, although very simple. And instead of killing the Wumpus, we are going to set the goal to find the treasure. Let's also leave the bad bats behind, and use just the pits and the Wumpus.
+In this tutorial, we will develop a game similar to Wumpus World. Instead of building a text-based game, we are going to build a graphical version of the game. And, instead of killing the Wumpus, we set the goal of the player only to find the treasure.
 
 ### What is Socket.io and how does it work?
-[Socket.io](https://socket.io/) is a library that allow us to build apps with bidirectional communication between server and client using a event-based approach. With Socket.io we can *emit* events with messages and *hear* the events and messages. This way we can create sends communication between the server and the client. One side emits events and send a message to the other. The other side receives the message with some data and do some processing with the data. Then it can emit another event sending back the processed data. 
+[Socket.io](https://socket.io/) is a library that allow us to build apps with bidirectional communication between server and client using a event-based approach.
 
-We are going to use Socket.io because we can't let the informations about the dungeon on the client-side. This is information that must be hidden from the player. Only when the player enters a room he will know what there's around. That's what we are going to do:
+With Socket.io, we can *emit* events with messages and *hear* the events and messages. This way we can create communication between a server and a client. One side emits events and sends a message to the other. The other side receives the message with some data and does some processing with it.
 
-- We will store the dungeon information on the server
-- When the player takes some move on the client-side, we are going to emit an event asking for the information of the new player's position
-- The server will hear the client, process the player position, and send another event with the information of the player's surroundings
-- The client will hear the new information and show it to the player
+Here, we use Socket.io because, we can't reveal information about the dungeons to the player on the client-side. Only when a player enters a room he will know what's around.
 
-### Project structure and Hello World
-The project structure is very simple. It's the same structure as practically any other Flask project. 
+Here is what the flow would like like:
+- We will store the dungeon's information on the server.
+- When the player takes a move on the client-side, we emit events asking for the information about the new player's position.
+- The server listens to the client, processes the player's position, and sends another event with the required information about the player's surroundings.
+- The client listens to the received information and displays it to the player.
 
-First, create a directory for the project. Inside the project directory, add a file called `wsgi.py` and a directory called `app`. 
+### Project structure
+The structure of this project is similar to any other Flask project. 
 
-Inside `app/`, add the file `app.py`, and create two other directories: `static` and `templates`. 
+First, we create a directory `app` for the project and add a file `wsgi.py`.
 
-Inside `templates/`, add two files: `base.html` and `index.html`. In `static/`, create two more directories: `scripts` and `styles`. 
+Now, add a new file `app.py` along with two other directories `static` and `templates`. 
 
-Create the file `main.js` in `scripts/`, and `main.css` in `styles/`. 
+Under the `templates/` directory, add two files - `base.html` and `index.html`. Under the `static/` directory, create two more directories - `scripts` and `styles`.
 
-Now it's done! This is the basic structure for a Flask app. Your directory structure should be looking like this:
+Then, create a file `main.js` under `scripts/`, and `main.css` under `styles/`.
 
-```
+It's almost done! Your directory structure should look like this:
+
+```txt
 |   wsgi.py
 |   
 +---app
@@ -81,15 +91,17 @@ Now it's done! This is the basic structure for a Flask app. Your directory struc
 |   |       index.html
 ```
 
-Create a virtual environment using `python -m venv myenv` and activate it. Install the following packages:
+Create a virtual environment using `python -m venv myenv` and activate it. Then, install the following packages:
 
 - Flask: `python -m pip install Flask`
 - Flask-SocketIO: `python -m pip install Flask-SocketIO`
 - Flask-Session: `python -m pip install Flask-Session`
 
-Now let's define the initial visuals of the app inside the `base.html` and `main.css`. Add the meta information of the page, and create the header and the bottom in `base.html`. Let's also add the fonts from Google Fonts, the links to `main.css` and `main.js`, and the CDNs to socket.io and jQuery. Feel free to create the visuals of the header and bottom as you want, but don't forget to add the links and CDNs. Add also the CDN to Feather Icons, so that we can also use nice icons in the interface. 
+Now, let's define the initial visuals of the app inside the `base.html` and `main.css` by adding the meta information of the page, creating the header and the bottom in `base.html`. We also add the Google fonts that links to `main.css` and `main.js`, and the CDNs to socket.io and jQuery.
 
-Between the header and the bottom, you should also have the following code: `{% block content %}{% endblock %}`. This is where we are going to put the page content.
+> Feel free to create the visuals of the header and bottom as you want, but don't forget to add the links and CDNs.
+
+Between the header and the bottom, you should also add the following code: `{% block content %}{% endblock %}`. This is where we are going to put the page content:
 
 ```HTML
 <!DOCTYPE html>
@@ -139,9 +151,9 @@ Between the header and the bottom, you should also have the following code: `{% 
 </html>
 ```
 
-Let's add some styles too in `main.css`. [Go to this link to see the CSS code snippet.](https://github.com/csamuelsm/wumpus/blob/47d2cbca6b8aded580c0daec66fe21d145922fc0/app/static/styles/main.css#L1-L37)
+Let's add some styles too in `main.css`. [Go to this link to see the CSS code snippet.](https://github.com/csamuelsm/wumpus/blob/47d2cbca6b8aded580c0daec66fe21d145922fc0/app/static/styles/main.css#L1-L37).
 
-Let's now extend the `base.html` in `index.html` and add a "Hello World!" to the page.
+Let's now extend the `base.html` in `index.html` and add a `Hello World!` to the page as shown:
 
 ```HTML
 {% extends 'base.html' %}
@@ -155,9 +167,9 @@ Let's now extend the `base.html` in `index.html` and add a "Hello World!" to the
 {% endblock %}
 ```
 
-[Let's add some style to the main div in `main.css`.](https://github.com/csamuelsm/wumpus/blob/47d2cbca6b8aded580c0daec66fe21d145922fc0/app/static/styles/main.css#L39-L45)
+Then, we add a few more styles to the main `div` in `main.css`. You can checkout [this link for the stylings](https://github.com/csamuelsm/wumpus/blob/47d2cbca6b8aded580c0daec66fe21d145922fc0/app/static/styles/main.css#L39-L45).
 
-Now, in `app.py` add:
+Now, in `app.py` add the following:
 
 ```python
 from flask import Flask, render_template
@@ -174,11 +186,13 @@ def hello_world():
     return render_template('index.html')
 ```
 
-- First, we import the Flask and `render_template`. `render_template` will render the `.html` pages we are creating. 
-- We are importing the `flask_socketio` module too. This module allow us to use Socket.io on server, listening to and emitting events.
-- We are import `uuid4` to get a unique secret key for the app.
+From the above code:
+- First, we import `Flask` and `render_template`.
+- `render_template` renders the `.html` pages that we create.
+- We import the `flask_socketio` module to allow us to use Socket.io on the server, listen to and emit events.
+- We import `uuid4` to get a unique secret key for the app.
 - We initalize the app with this secret key and enable Socket.io.
-- Finally, we are rendering `index.html` in the route  `"/"`.
+- Finally, we are render `index.html` in the route  `"/"`.
 
 Finally, add to `wsgi.py`:
 
@@ -189,14 +203,14 @@ if __name__ == "__main__":
     socketio.run(app, debug=True)
 ```
 
-- We are going to run this file, which will run a local server with our app in the debug mode.
+Now, we run this file, which will run a local server with our app in the debug mode.
 
-You can now run `python wsgi.py` in your terminal and go to `http://localhost:5000` in your browser. You should see something like this:
+You can run using the command `python wsgi.py` in your terminal and go to `http://localhost:5000` in your browser. You should see something like this:
 
 ![Simple 'Hello World' page using Python and Flask](/engineering-education/creating-a-simple-hunt-the-wumpus-game-using-python-flask-and-socketio/hello-world-page.png)
 
 ### The content of `index.html`
-Now that we created the base template, it's time to create the content of the page. Delete the `<h1>Hello World!</h1>` from `index.html` and let's add a div with information about the game inside `.main`:
+Now that we created the base template, it's time to create the content of the page. Delete the `<h1>Hello World!</h1>` from `index.html` and let's add a `div` with information about the game inside `main`:
 
 ```html
 <div class='info'>
@@ -220,16 +234,16 @@ Let's also add a `form` where the player can select the dimensions of the dungeo
 </div>
 ```
 
-[Let's stylize the elements we just added in `main.css`.](https://github.com/csamuelsm/wumpus/blob/47d2cbca6b8aded580c0daec66fe21d145922fc0/app/static/styles/main.css#L47-L81)
+We wil stylize the elements [in `main.css`.](https://github.com/csamuelsm/wumpus/blob/47d2cbca6b8aded580c0daec66fe21d145922fc0/app/static/styles/main.css#L47-L81)
 
 Refresh your page and now it should be looking like this:
 
 ![Ready index.html page](/engineering-education/creating-a-simple-hunt-the-wumpus-game-using-python-flask-and-socketio/ready-index-page.png)
 
-But the page still doesn't do anything. Now let's make it work!
+But the page still doesn't do anything. Now, let's make it work!
 
-### Developing the base of the game
-Let's go back to `app.py`. It's where the magic happens. Let's create sessions to store some user data using `flask-session`. Import the modules: 
+### Build the backend
+Let's go back to `app.py`. It's where the magic happens. Let's create sessions to store some user data using `flask-session` as shown:
 
 ```python
 from flask import session
@@ -244,10 +258,11 @@ app.config["SESSION_TYPE"] = "filesystem"
 Session(app)
 ```
 
-- We are setting the session to permanent. This means that the session cookies won't expire when the browser closes.
-- We are also seeting the session type to `filesystem`, which means that the cookies are going to be stored locally on the server-side.
+Here:
+- We set the session to permanent. This means that the session cookies won't expire when the browser closes.
+- We set the session type to `filesystem`, which means that the cookies are going to be stored locally on the server-side.
 
-The first thing we are going to store in the session is the user socket id. We are going to store it when the user first connects to the page using `@socketio.on('connect')`:
+The first thing we are going to store in the session is the user socket ID `sid`. We store it when the user first connects to the page using `@socketio.on('connect')`:
 
 ```python
 @socketio.on('connect')
@@ -255,15 +270,17 @@ def connect():
     session['sid'] = request.sid
 ```
 
-- When the `connect` event happens, we atore the user socket id on the session variable `sid`.
+When the `connect` event happens, we store the user socket ID on the session variable `sid`.
 
-Now let's get the data from the `form` in `index.html`. First, import `request` from `flask`:
+Now, let's get the data from the `form` in `index.html`. First, import `request` from `flask`:
 
 ```python
 from flask import request
 ```
 
-Now, we need to inform flask that we can receive POST requests from `/` route. Change the `@app.route("/")` to `@app.route("/", methods=['GET', 'POST'])`. Let's also change the function name from `hello_world()` to `index()`. Inside `index()`, we can check if there was a POST request and get the values from the `form`.
+We need to inform flask that we accept POST requests from `/` route. Change the `@app.route("/")` to `@app.route("/", methods=['GET', 'POST'])`.
+
+Let's also change the function name from `hello_world()` to `index()`. Inside `index()`, we can check if there was a `POST` request and get the values from the `form`.
 
 ```python
 @app.route("/", methods=['GET', 'POST'])
@@ -275,7 +292,11 @@ def index():
     return render_template('index.html')
 ```
 
-When we receive a POST request we store the width and height of the dungeon in the session variables `width` and `height`. Then, we are rendering the page `game.html`. Note that we didn't create the `game.html` page yet. Go to `templates/` and create it. Let's make it extend from `base.html` too.
+When we receive a `POST` , we store the `width` and `height` of the dungeon in the session variables `width` and `height`. Then, we render the page `game.html`.
+
+> Note that, we didn't create the `game.html` page yet.
+
+Go to `templates/` and create it. Let's extend it from the `base.html` as shown:
 
 ```html
 {% extends 'base.html' %}
@@ -289,17 +310,17 @@ When we receive a POST request we store the width and height of the dungeon in t
 {% endblock %}
 ```
 
-Now if you refresh the page in your browser and click on the "Enter the Dungeon" button, the page `game.html` will be rendered. There's nothing in `game.html` yet, so you probably will see just a blank page with only the header and the bottom.
+If you refresh the page in your browser and click on the "Enter the Dungeon" button, the page `game.html` will get rendered. There's nothing in `game.html` yet, so you probably will see just a blank page with only the header and the bottom.
 
-Also, note that we stored the sizes of the dungeon but we didn't do anything with them. Let's use them to create the dungeon now. We are going to store the dungeon as a `height` x `width` matrix -- a list of lists in Python. 
+Also, note that we stored the sizes of the dungeon but we didn't do anything with them. Let's use them to create the dungeon now. We are going to store the dungeon as a `height` x `width` matrix (a list of lists in Python).
 
-Let's import `random` so that we can generate the random positions of the Wumpus, the Treasure, and the pits.
+Let's import `random` so that we can generate the random positions of the Wumpus, the treasure, and the pits.
 
 ```python
 import random
 ```
 
-Create a function called `generate_dungeon(w, h)`. The parameter of the function: `w` and `h` are the `width` and `height` of the dungeon. We are going to store the dungeon in a session variable. Let's also get random positions for the Wumpus and the Treasure.
+Create a function called `generate_dungeon(w, h)`. The parameter of the function: `w` and `h` are the `width` and `height` of the dungeon. We store the dungeon in a session variable with random positions for the Wumpus and the treasure:
 
 ```python
 def generate_dungeon(w, h):
@@ -313,10 +334,13 @@ def generate_dungeon(w, h):
         gold_y = random.randrange(2, h)
 ```
 
-- We are setting the session variable `dungeon` to a emprty list.
-- Then, we compute the random positions for the wumpus and treasure.s
+In the above code:
+- We set the session variable `dungeon` to a empty list.
+- Then, we compute the random positions for the wumpus and treasure.
 
-Note that we are getting random coordinates `(x, y)` such that `2 <= x < width` and `2 <= y < height`. This is because the player will start in the position `(0, 0)` of the dungeon and if there's a wumpus or a treasure in the positions `(0, 0)`, `(0, 1)`, `(1, 0)`, `(1, 1)`, it would be very easy to win or lose the game. So let's avoid this by making the Wumpus and the treasure to not appear in those positions. It would also be very tragic if the Wumpus and the treasure appear in the same position. We are avoiding this with the `while` loop that looks for another position for the treasure if it's in the same position as the Wumpus.
+Note that we are getting random coordinates `(x, y)` such that `2 <= x < width` and `2 <= y < height`. This is because the player will start in the position `(0, 0)` of the dungeon and if there's a wumpus or a treasure in the positions `(0, 0)` or `(0, 1)` or `(1, 0)` or `(1, 1)`, it would be very easy to win or lose the game.
+
+So, let's avoid this by making the Wumpus and the treasure to not appear in those positions. It would also be very tragic, if the Wumpus and the treasure appear in the same position. We are avoiding these scenarios within the `while` loop.
 
 Now let's build our matrix line by line:
 
@@ -349,18 +373,18 @@ for i in range(h):
         session['dungeon'].append(line)
 ```
 
-Note that we are also avoiding pits at the beginning of the dungeon, making the positions `(0, 0)`, `(0, 1)` ,`(1, 0)` ,`(1, 1)` free. We are positioning the Wumpus and the treasure, and we are also making the positions around the wumpus free of pits. The pits are positioned in the rest of the map with a probability of 15% of appearing in some position.
+In the above code, we position the Wumpus and the treasure, and we make the positions around the wumpus, free of pits. The pits are positioned in the rest of the map with a probability of 15% of appearing in some random position.
 
-Now let's also store the player's initial position as the current position in the session and make `generate_dungeon` call `game.html` with the dungeon already created. Add this to the end of the function:
+Then, we store the player's initial position as the current position in the session and make `generate_dungeon` call `game.html` with the dungeon already created. Add this to the end of the function:
 
 ```python
 session['curr_pos'] = [0, 0]
 return render_template('game.html', width=w, height=h)
 ```
 
-- We are just storing the player's current position in a session variable. As the player starts the game in position `(0, 0)`, we store `[0, 0]` in session variable `curr_pos`.
+We just store the player's current position in a session variable. As the player starts the game in position `(0, 0)`, we store `[0, 0]` in session variable `curr_pos`.
 
-It should be looking like this now:
+It should look like this now:
 
 ```python
 def generate_dungeon(w, h):
@@ -414,11 +438,11 @@ def index():
     return render_template('index.html')
 ```
 
-- The function `generate_dungeon()` already renders the `game.html` page, so there's no need to render it again in `index()`.
+The function `generate_dungeon()` renders the `game.html` page, so there's no need to render it again in `index()`.
 
-Now when the player select the dimensions of the dungeon and click on "Enter the Dungeon", we are creating the dungeon and rendering `game.html`, passing the `width` and `height` of the dungeon as parameters.
+Now when the player select the dimensions of the dungeon and click on "Enter the Dungeon", we create the dungeon and render the `game.html` by passing the `width` and `height` of the dungeon as arguments.
 
-Now it's time to create the content of `game.html`. Let's create two divs: `win` and `lose`, with the messages that will appear when the player wins or loses the game. Inside `.main` div add:
+It's time to create the content of `game.html`. Let's create two `div`s: `win` and `lose`, with the messages that will appear when the player wins or loses the game. Inside `.main` div add:
 
 ```html
 <div class="win">
@@ -432,7 +456,7 @@ Now it's time to create the content of `game.html`. Let's create two divs: `win`
 </div>
 ```
 
-Let's also create the dungeon map. Below the `win` and `lose` divs, add:
+Let's also create the dungeon map. Below the `win` and `lose` `div`s, add:
 
 ```html
 {% for i in range(height) %}
@@ -448,9 +472,11 @@ Let's also create the dungeon map. Below the `win` and `lose` divs, add:
 {% endfor %}
 ```
 
-We are creating a line for each `i` in the range `[0, height)`. Inside each line, we add a `.room`. If the position is `(0, 0)`, we make the `.room` a `.curr_room`. 
+We create a line for each `i` in the range `[0, height)`. Inside each line, we add a `.room`. If the position is `(0, 0)`, we make the `.room` a `.curr_room`. 
 
-Let's stylize all of this. Let's make the `.curr_room` stand out more than the other `.room`s because it's the room that the player is currently in. Let's also make `.win` and `.lose` hidden: they will appear only when the player wins or loses the game. [Here's the CSS snippet doing this.](https://github.com/csamuelsm/wumpus/blob/47d2cbca6b8aded580c0daec66fe21d145922fc0/app/static/styles/main.css#L83-L116)
+Let's stylize all of this. Let's make the `.curr_room` stand out from the other `.room`s, since it differentiates the room that the player is currently in.
+
+Let's also make `.win` and `.lose` hidden: they will appear only when the player wins or loses the game. [Here is the CSS snippet for doing this.](https://github.com/csamuelsm/wumpus/blob/47d2cbca6b8aded580c0daec66fe21d145922fc0/app/static/styles/main.css#L83-L116)
 
 Let's add the controls too. Below the for loop in `game.html` add:
 
@@ -469,20 +495,19 @@ Let's add the controls too. Below the for loop in `game.html` add:
 </script>
 ```
 
-They're simple controls, just arrow keys. [Let's add some style.](https://github.com/csamuelsm/wumpus/blob/47d2cbca6b8aded580c0daec66fe21d145922fc0/app/static/styles/main.css#L118-L140)
+They're simple controls with arrow keys. We shall add some stylings [here](https://github.com/csamuelsm/wumpus/blob/47d2cbca6b8aded580c0daec66fe21d145922fc0/app/static/styles/main.css#L118-L140).
 
 Let's see how it is now:
 
 ![Game screen](/engineering-education/creating-a-simple-hunt-the-wumpus-game-using-python-flask-and-socketio/game-screen.png)
 
 ### Interacting with the game using JavaScript and Socket.io
-Now it's time to develop the interaction with the game. First, let's capture the actions of the player. Go to `main.js` and add:
+Now, it's time to develop the interaction with the game. First, let's capture the actions of the player. Go to `main.js` and add:
 
 ```javascript
 playing = true
 $(document).ready(function(){
     const socket = io();
-
     //actions
     $('.left').click(function(){
         if (playing) socket.emit('next_pos', {'action':'left'})
@@ -499,7 +524,7 @@ $(document).ready(function(){
 })
 ```
 
-We are emitting the event `next_pos` and specifying the `action`: `left`, `right`, `up` or `down` in the message. Now the flask app in the server will receive the event `next_pos` and the message. When this happens, the app needs to calculate the next position of the player, and send it back to the client. Go back to `app.py` and add:
+In the above code, we emit the event `next_pos` and specify the `action`: `left`, `right`, `up` or `down` in the message. Now, the flask app in the server will receive the event `next_pos` and the message. When this happens, the app needs to calculate the next position of the player, and send it back to the client. Go back to `app.py` and add:
 
 ```python
 @socketio.on('next_pos')
@@ -527,11 +552,12 @@ def next_pos(message):
                 room=session['sid'])
 ```
 
+In the above code:
 - When the server receives the `next_pos` event, it will update the `curr_pos` variable in the user session and send it back to the client using `socketio.emit('update_status')` with the player's new coordinates in the message. 
-- Note the line `room=session['sid']`. This is extremely important. This line is saying that the message will be sent only to the user's room. 
+- Note the line `room=session['sid']`. This is extremely important. This line says that the message will be sent only to the user's room. 
 - If this line wasn't there, the event would be sent to every user, messing up with the game of players who were playing simultaneously. You can test this by removing this line and playing the game with two or more devices simultaneously.
 
-Now go back to `main.js` and let's handle the `update_status` event. Inside the `$(document).ready()` add:
+Now, go back to `main.js` and let's handle the `update_status` event. Inside the `$(document).ready()` add:
 
 ```javascript
 socket.on('update_status', (data)=>{
@@ -543,7 +569,11 @@ socket.on('update_status', (data)=>{
     })
 ```
 
-We are removing the `.curr_room` style from the old player's room and adding it to the new player's room. But how will the player know where's the pits, the Wumpus, or the treasure? Let's use the Feather icons to signalize this to the player. First, we need to go back to `app.py` and verify what is in the adjacency of the player. Inside `next_pos()`, after the computation of the new position let's add:
+We remove the `.curr_room` style from the old player's room and add it to the new player's room. But, how will the player know where's the pits, the Wumpus, or the treasure?
+
+Let's use the Feather icons to signalize this to the player.
+
+First, we need to go back to `app.py` and verify what is in the adjacency of the player. Inside `next_pos()`, after the computation of the new position let's add:
 
 ```python
 pos = session['curr_pos']
@@ -595,8 +625,7 @@ else:
         pit = 1
 ```
 
-With this, we can track the player's adjacency. 
-
+With this, we can track the player's adjacency:
 - If `pit = 1`, then there's a pit around
 - If `wumpus = 1`, then the Wumpus is around
 - If `treasure = 1`, then the treasure is around
@@ -691,7 +720,7 @@ def next_pos(message):
                 room=session['sid'])
 ```
 
-Now the client will know what is in the player's adjacency and we can add the icons to signalize this. Go back to `main.js` and let's handle this new data. Change the handling of `update_status` in `main.js` to:
+Now, the client will know what is in the player's adjacent position and we can add the icons to signalize this. Go back to `main.js` and let's handle this new data. Change the handle of `update_status` in `main.js` to:
 
 ```javascript
 socket.on('update_status', (data)=>{
@@ -723,7 +752,6 @@ socket.on('update_status', (data)=>{
 ```
 
 We add the following icons:
-
 - `wind` icon when there's a pit nearby (`data['pit'] == 1`)
 - `alert-triangle` icon when the Wumpus is nearby (`data['wumpus'] == 1`)
 - `star` icon when the treasure is nearby (`data['treasure'] == 1`)
@@ -776,7 +804,11 @@ And that's it! The game is ready to play! Go on and test it. What do you think?
 ![Game round](/engineering-education/creating-a-simple-hunt-the-wumpus-game-using-python-flask-and-socketio/game-round.png)
 
 ### Conclusion
-In this tutorial, you learned about the Hunt the Wumpus games and their influence on Artificial Intelligence. We also developed a simple adaptation of the Hunt the Wumpus game using Python, Flask, HTML, CSS, JavaScript e Socket.io. You can see how it's possible to create games in a very easy way using these technologies. You can now explore the endless possibilities of applications that you can build with them! Also, feel free to increment the game with new functionalities and complexity!
+In this tutorial, you learned about the "Hunt the Wumpus" game and its influence on Artificial Intelligence. We also developed a simple clone of the game using Python, Flask, HTML, CSS, JavaScript, and Socket.io.
+
+You can see how it's possible to create games in a very easy way using these technologies. You can now explore the endless possibilities of applications that you can build with them!
+
+Also, feel free to add additional functionalities to the game.
 
 To see the whole project, you can go to the [project's GitHub](https://github.com/csamuelsm/wumpus).
 
