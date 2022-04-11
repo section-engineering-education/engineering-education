@@ -274,7 +274,7 @@ app.config["SESSION_TYPE"] = "filesystem"
 Session(app)
 ```
 
-Here:
+In the above code snippet:
 - We set the session to permanent. This means that the session cookies won't expire when the browser closes.
 - We set the session type to the `filesystem`, which means that the cookies are going to be stored locally on the server-side.
 
@@ -286,7 +286,7 @@ def connect():
     session['sid'] = request.sid
 ```
 
-When the `connect` event happens, we store the user socket ID on the session variable `sid`.
+When the `connect()` event happens, we store the user socket ID on the session variable `sid`.
 
 Now, let's get the data from the `form` in `index.html`. First, import `request` from `flask`:
 
@@ -362,31 +362,31 @@ Now let's build our matrix line by line:
 
 ```python
 for i in range(h):
-        line = []
-        # 0 - free
-        # 1 - pit
-        # 2 - wumpus
-        for j in range(w):
-            if (i == 0 or i == 1) and (j == 0 or j == 1):
-                # the beginning of the dungeon cannot have pits or wumpus
-                line.append(0)
-            elif i == wumpus_x and j == wumpus_y:
-                # wumpus location
-                line.append(2)
-            elif i == gold_x and j == gold_y:
-                # gold location
-                line.append(3)
-            elif ((i == wumpus_x - 1 or i == wumpus_x + 1) and (j == wumpus_y)) or ((j == wumpus_y - 1 or j == wumpus_y + 1) and (i == wumpus_x)):
-                # nothing around the wumpus
-                line.append(0)
+    line = []
+    # 0 - free
+    # 1 - pit
+    # 2 - wumpus
+    for j in range(w):
+        if (i == 0 or i == 1) and (j == 0 or j == 1):
+            # the beginning of the dungeon cannot have pits or wumpus
+            line.append(0)
+        elif i == wumpus_x and j == wumpus_y:
+            # wumpus location
+            line.append(2)
+        elif i == gold_x and j == gold_y:
+            # gold location
+            line.append(3)
+        elif ((i == wumpus_x - 1 or i == wumpus_x + 1) and (j == wumpus_y)) or ((j == wumpus_y - 1 or j == wumpus_y + 1) and (i == wumpus_x)):
+            # nothing around the wumpus
+            line.append(0)
+        else:
+            # random pits distributed
+            if random.random() <= 0.15:
+                line.append(1)
             else:
-                # random pits distributed
-                if random.random() <= 0.15:
-                    line.append(1)
-                else:
-                    line.append(0)
-                
-        session['dungeon'].append(line)
+                line.append(0)
+            
+    session['dungeon'].append(line)
 ```
 
 In the above code, we position the Wumpus and the treasure, and we make the positions around the wumpus, free of pits. The pits are positioned in the rest of the map with a probability of 15% of appearing in some random position.
@@ -593,7 +593,7 @@ First, we need to go back to `app.py` and verify what is in the adjacency of the
 
 ```python
 pos = session['curr_pos']
-    print(pos)
+print(pos)
 
 adj = []
 
