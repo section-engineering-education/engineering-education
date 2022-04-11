@@ -1,4 +1,4 @@
-# Next.js basics with payroll
+# Next.js basics with payroll system
 
 React.js has very cool features and frameworks and we are going to focus on Next.js, the coolest thing about Next.js is that the back-end is already set for us and the only thing you need to do is connect it to the database and you have a full-stack web application.
 The other cool thing that most people don't want to try is that you can use arithmetic operators just like in javascript functions and build an amazing software for daily unavoidable calculations.
