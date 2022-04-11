@@ -26,7 +26,7 @@ Ray tracing has been of great impact in the world today, modifying and innovatin
 - [What is the Ray Tracing Algorithm?](#what-is-the-ray-tracing-algorithm)
 - [History of Ray Tracing](#history-of-ray-tracing)
 - [How Ray Tracing works](#how-ray-tracing-works)
-- [Types of Ray Tracing Algorithm](#types-of-ray-tracing-algorithm)
+- [Types of Ray Tracing Algorithms](#types-of-ray-tracing-algorithms)
   - [Hybrid Ray Tracing Algorithm ](#hybrid-ray-tracing-algorithm)
   - [Forward Ray Tracing Algorithm ](#forward-ray-tracing-algorithm)
   - [Backward Ray Tracing Algorithm](#backward-ray-tracing-algorithm) 
@@ -51,12 +51,14 @@ The process aims to bring real light to the simulation by imitating the behavior
 
 Ray Tracing mimics a path of light rays in a space formed by diverse geometric bodies. Imitation assumes that the beam can be absorbed by a broad body, which is reflected when the body is reflective, or dispersed in case the body shows up.
 
-To achieve this simulation, the ray tracer places a screen between the viewer and the display location (see image below "ray tracing"). The renderer sends a ray from the viewer's eye through the pixel and into the scene for each pixel. The contrast of the ray and the first element of the scene in the path of the ray is then computed. The beam is then separated from one or two secondary rays corresponding to the object material. Reflection and refraction rays are followed repeatedly to compute a meeting place in each step until a pre-determined depth is acquired.
+To achieve this simulation, the ray tracer places a screen between the viewer and the display location (see image below). The renderer sends a ray from the viewer's eye through the pixel and into the scene for each pixel. 
+
+The contrast of the ray and the first element of the scene in the path of the ray is then computed. The beam is then separated from one or two secondary rays corresponding to the object material. Reflection and refraction rays are followed repeatedly to compute a meeting place in each step until a pre-determined depth is acquired.
 
 ![Ray tracing](/engineering-education/getting-started-with-ray-tracing-algorithm-in-machine-learning/tracing.png)
 
-### Types of Ray Tracing Algorithm
-Various methods are induced for the effectiveness of Rar Tracing. There are three types of ray tracing algorithms, they include; hybrid ray tracing algorithm, forward ray tracing algorithm, backward ray tracing algorithm.
+### Types of Ray Tracing Algorithms
+Various methods are induced for the effectiveness of Ray Tracing. There are three types of ray tracing algorithms, they include; hybrid ray tracing algorithm, forward ray tracing algorithm, backward ray tracing algorithm.
 
 #### Hybrid Ray Tracing Algorithm
 It's a combination of backward and forward ray-tracing techniques hence making it more effective since it has the benefits of both techniques.   
@@ -76,17 +78,21 @@ Like forward ray tracing, backward ray tracing also has an assumption. It's assu
 ### Application of Ray Tracing Algorithm
 Nowadays, ray tracing is applied in PC games. However, the main implementation features of this technology are used in limited ways such as providing realistic visuals or shadows.
 
-This algorithm can also be used to record remarkable interactions between objects in a square. Broad-spectrum interactions dominate many scenes which can be attributed to the standard tracking lighting model but include the radiosity data algorithm. Ray Tracing can be used in the gaming industry, examples of games that ray tracing are used includes; GodFall, resident evil village, and Minecraft
+This algorithm can also be used to record remarkable interactions between objects in a square. Broad-spectrum interactions dominate many scenes which can be attributed to the standard tracking lighting model but include the radiosity data algorithm. Ray Tracing can be used in the gaming industry, examples of games that ray tracing are used includes; GodFall, resident evil village, and Minecraft.
 
-Other fields where ray-tracing can be applied include product development(CAE/CAD), media and entertainment applications.
+Other fields where ray-tracing can be applied include product development (CAE/CAD), media and entertainment applications.
 
 ### Conclusion
-Ray tracing algorithm is becoming more popular day in day out. This article has provided exciting details about this algorithm. To summarize:
-1. We have gained an overview of what ray tracing algorithm is.
+Ray tracing algorithm is becoming more popular day in & day out. This article has provided exciting details about this algorithm. 
+
+To summarize:
+1. We gained an overview of what the ray tracing algorithm is.
 2. We have gone through the history of this algorithm.
-3. We have gained an understanding of how the ray tracing algorithm works.
+3. We gained an understanding of how the ray tracing algorithm works.
 4. We have looked at the various types of ray tracing algorithms. 
-5. We have gained an overview of the applications of this algorithm. 
+5. We also gained an overview of the applications of this algorithm. 
+
+Happy learning!
 
 ### Resources
 - [SVM algorithm](https://www.javatpoint.com/machine-learning-support-vector-machine-algorithm)
