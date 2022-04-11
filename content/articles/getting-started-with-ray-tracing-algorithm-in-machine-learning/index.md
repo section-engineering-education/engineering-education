@@ -3,10 +3,10 @@ layout: engineering-education
 status: publish
 published: true
 url: /getting-started-with-ray-tracing-algorithm-in-machine-learning/
-title: Getting Started with Ray Tracing Algorithm in Machine Learning
+title: Getting Started with the Ray Tracing Algorithm in Machine Learning
 description: This article will take you through the basics of the ray tracing algorithm and how you can get started with it. 
 author: lenox-majiwa
-date: 2022-03-14T00:00:00-14:00
+date: 2022-04-11T00:00:00-15:00
 topics: [Machine Learning]
 excerpt_separator: <!--more-->
 images:
@@ -16,14 +16,14 @@ images:
 ---
 When playing video games, have you ever wondered how or rather what makes the light in the game look similar to the one in real life? This is because of the *ray-tracing technique*. With this process, the game designers can make visible light beams jump into objects, produce real shadows, and create life-like reflections.
 <!--more-->
-Ray tracing has been of great impact in the world today, modifying and innovating various sectors of the tech world. In this article, we'll get to know about the ray tracing algorithm in machine learning.
+Ray tracing has been of great impact in the world today, modifying and innovating various sectors of the tech world. In this article, we will learn more about the ray tracing algorithm and how it is used in [machine learning](https://www.section.io/engineering-education/topic/machine-learning/).
 
 ### Prerequisites
 - The reader should know what's an algorithm and how it's used in programming.
 - The reader should be familiar with data structures and neural networks.
 
 ### Table of contents
-- [What is Ray Tracing Algorithm?](#what-is-ray-tracing-algorithm)
+- [What is the Ray Tracing Algorithm?](#what-is-the-ray-tracing-algorithm)
 - [History of Ray Tracing](#history-of-ray-tracing)
 - [How Ray Tracing works](#how-ray-tracing-works)
 - [Types of Ray Tracing Algorithm](#types-of-ray-tracing-algorithm)
@@ -34,8 +34,8 @@ Ray tracing has been of great impact in the world today, modifying and innovatin
  - [Conclusion](#conclusion)
  - [Resources](#resources)
 
-### What is Ray Tracing Algorithm? 
-Ray Tracing Algorithm is an effective way of drawing synthesizing images. It is a method of rendering which has the potential to produce a much greater degree of authenticity that is probably higher than that of other scanners. However, this involves a huge calculation cost. 
+### What is the Ray Tracing Algorithm? 
+The Ray Tracing Algorithm is an effective way of drawing synthesizing images. It is a method of rendering which has the potential to produce a much greater degree of authenticity that is probably higher than that of other scanners. However, this involves a huge calculation cost. 
 
 It gives results almost similar to scanline rendering and ray casting but also allows for a more complex optical effect like exact refraction and reflection simulations. It's also useful in cases where high-quality output is required.
 
@@ -45,7 +45,7 @@ It was created by Robert Goldstein and Arthur Appel in the 1960s. According to [
 Robert Goldstein then used ray tracing is to create shaded images of solids by simulating the photographic process in reverse. He used a non-recursive ray-tracing-based algorithm known as ***ray casting***. Ray tracing is widely regarded as the most effective method of image synthesis.
 
 ### How Ray Tracing works
-Computer imagery has become a very basic need in today's digital world. Computer graphics come into play when we need to create an image that looks real and indistinguishable from the standard image taken. This can be accomplished in a variety of ways. Ray Tracing is one such way to give. This is used to produce an image by tracing the light path such as pixels in an image plane and mimicking its effects when encountering objects.
+Computer imagery has become a very basic need in today's digital world. Computer graphics come into play when we need to create an image that looks real and indistinguishable from the standard image taken. This can be accomplished in a variety of ways. Ray Tracing is one such way. This is used to produce an image by tracing the light path such as pixels in an image plane and mimicking its effects when encountering objects.
 
 The process aims to bring real light to the simulation by imitating the behavior of light intensity. It is done by reflecting the light rays from the camera, ‘following’ them until they encounter an object, and counting where each ray of light cuts an object in the square. This then allows it to calculate how the pixel is affected by the light rays, and to keep track of the ray as it jumps on the scene. This requires the computer to track a certain number of rays from each intersection to the reflected light model, thus creating a growing number of rays in the square.
 
