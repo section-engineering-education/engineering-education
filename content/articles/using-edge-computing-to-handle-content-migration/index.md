@@ -1,28 +1,45 @@
+---
+layout: engineering-education
+status: publish
+published: true
+url: /using-edge-computing-to-handle-content-migration/
+title: Using Edge Computing to handle Content Migration
+description: This article will cover the content migrations, the challenges that arise from the process and how uisng Edge Computing solves the chaallenges efficiently.
+author: ephraim-njoroge
+date: 2022-04-11T00:00:00-17:30
+topics: []
+excerpt_separator: <!--more-->
+images:
+
+  - url: /engineering-education/using-edge-computing-to-handle-content-migration/hero.jpeg
+    alt: Using Edge Computing to handle Content Migration example Image
+---
+
 ### Introduction
 Content migration involves moving content from one content management system to another. The process sometimes sounds simple, but it usually reveals areas of improvement in the site architecture, the design, and the content itself. 
-
+ <!--more-->
 If a redesign is needed, the migration process shifts from [lift and shift](https://cloud.netapp.com/blog/what-is-a-lift-and-shift-cloud-migration) to reorganizing and redesigning the architecture or content.
 
 A typical migration involves redesigning information architecture, pages, content audit, new taxonomy, or even rewriting content. Sometimes migration may involve switching from one URL to another, posing many challenges. 
 
-Most of these challenges can be solved using edge computing, which will be covered in this article.
+Most of these challenges can be solved using Edge Computing, which will be covered in this article.
 
-### The concept of edge computing
+### The concept of Edge Computing
 [Edge computing](https://www.cloudflare.com/learning/serverless/glossary/what-is-edge-computing/) gradually changes how data is handled, processed, and delivered from millions of devices worldwide. Furthermore, the technology is rapidly growing due to the increased number of [IoT](https://www.zdnet.com/article/what-is-the-internet-of-things-everything-you-need-to-know-about-the-iot-right-now/) devices alongside the applications that require real-time data processing. 
 
 Fast networking technologies like 5G networks support edge computing by creating real-time applications. These applications include video conferencing and processing, self-driving cars, AI, and robotics.
 
-Edge computing was developed to address the issue of bandwidth costs for the data covering long distances. However, the rise of IoT-generated data real-time applications that require processing at the edge has made the technology grow faster.
+Edge Computing was developed to address the issue of bandwidth costs for the data covering long distances. However, the rise of IoT-generated data real-time applications that require processing at the edge has made the technology grow faster.
 
-Edge computing can be defined as distributed computing topology that processes information close to the edge. Edge, in this case, means where devices or people producing or consuming the information are located. The technology brings data processing and storage closer to the consumer devices rather than relying on a central location that is far away. 
+Edge Computing can be defined as distributed computing topology that processes information close to the edge. Edge, in this case, means where devices or people producing or consuming the information are located. The technology brings data processing and storage closer to the consumer devices rather than relying on a central location that is far away. 
 
-Edge computing aims to ensure that the applications that use real-time data do not suffer from latency issues that significantly affect performance. This would save the organization's cost as the processing happens locally, hence no need for centralized or cloud-based locations.
+Edge Computing aims to ensure that the applications that use real-time data do not suffer from latency issues that significantly affect performance. This would save the organization's cost as the processing happens locally, hence no need for centralized or cloud-based locations.
 
-Edge computing is crucial when it comes to content or data migration. For example, let us assume we manage a website that hosts huge content, such as thousands of articles. Then a need arises that we may have to change the website's domain name.
+Edge computing is crucial when it comes to content or data migration. For example, let us assume we manage a website that hosts huge content, such as thousands of articles. Then, a need arises that we may have to change the website's domain name.
 
-A challenge would arise on how we would redirect a million links from our old domain to the new domain. Typically to avoid the links from breaking, we can set a [redirect server](https://www.sciencedirect.com/topics/computer-science/redirect-server) that handles the traffic from the old domain and redirects them to the new domain. We can use edge computing to make tasks even easy and the whole experience better. Later sections will cover the issues that arise when migrating content and how better edge computing solves them and optimizes the system.
+A challenge would arise on how we would redirect a million links from our old domain to the new domain. Typically to avoid links breaks, we can set a [redirect server](https://www.sciencedirect.com/topics/computer-science/redirect-server) that handles the traffic from the old domain and redirects them to the new domain. We can use edge computing to make tasks even easy and the whole experience better. Later sections will cover the issues that arise when migrating content and how better edge computing solves them and optimizes the system.
 
-### Strategies followed to perform a successful content migration
+### Successful Content Migration Strategies
 This section will cover some of the best practices to be followed when performing a successful content migration. We usually follow an approach and checklist when migrating information in the system. The details may not be the same depending on the system and nature of information being migrated. However, the migration process always follows a general approach.
 
 The typical content migration process involves strategy, planning, preparation, and migration phases, as explained further in the following paragraphs:
@@ -52,9 +69,9 @@ After completing all the phases, the final phase involves the actual migration o
 - **Perform quality control:** A quality technical check should be made to ensure correctness for every significant amount of content migrated. At this step, the users who are conversant with the information involved should contribute to ascertain whether the system is working.
 - **Disabling access to the old system:** The access to the old system should be disabled instead of being deleted for some time. The reason is that some data might not have been successfully migrated due to legal or regulatory issues. However, it is helpful for the end-users not to access the old system once the migration process is over.
 
-Content migration can be complex and not an easy task to undertake. It comes with some issues attached to it; some are technical. However, most technical issues involved can be handled by edge computing, as covered in the following sections.
+Content migration can be complex to undertake. It comes with some issues attached to it; some are technical. However, most technical issues involved can be handled by edge computing, as covered in the following sections.
 
-### Using edge computing to handle content migration issues
+### Using Edge Computing to handle Content Migration issues
 #### Latency issues
 We will take a scenario whereby the servers are located in North America. Suppose a site visitor in Asia accesses the old URL. In that case, the request will travel to North America only to miss out on the resource requested. Then the redirect instructions will force the visitor back to where the resource is currently located. The browser will then send another request to North America to fetch the actual content on arrival. Finally, the visitor will access the original target. 
 
@@ -66,11 +83,11 @@ The visitor requests content from the old URL, and the old server responds with 
 
 The issue with the redirect chain is that the visitor has to wait for two round trips halfway across the world. However, using edge computing functions can significantly reduce the user's extra time to wait for redirect instructions.
 
-Edge functions allow the developers to deploy serverless functions in any location around the globe nearest to the users. With the help of edge functions in handling the redirect requests, the initial user request would have instead interacted with the nearest edge server to fetch the redirect information.
+Edge functions allow the developers to deploy serverless functions in any location around the globe nearest to the users. For example, with the help of edge functions in handling the redirect requests, the initial user request would have instead interacted with the nearest edge server to fetch the redirect information.
 
-We can use edge computing in the scenario we highlighted above. A site visitor in Asia would try to access the old URL. The request will only travel to the nearest edge server location, probably in the same city. The redirect instructions would still be in a different location. However, at least there is that information in the edge server. Once the browser sees the redirect instructions, everything will play as previously, only that the visitor does not have to wait long to access the content.
+We can use Edge Computing in the scenario we highlighted above. A site visitor in Asia would try to access the old URL. The request will only travel to the nearest edge server location, probably in the same city. The redirect instructions would still be in a different location. However, at least there is that information in the edge server. Once the browser sees the redirect instructions, everything will play as previously, only that the visitor does not have to wait long to access the content.
 
-Below is a clear illustration of what happens with edge computing in place:
+Below is a clear illustration of what happens with Edge Computing in place:
 
 ![Edge Compute](/engineering-education/using-edge-computing-to-handle-content-migration/edge-compute.png)
 
@@ -96,7 +113,7 @@ Handling the above two changes is possible through [NGINX rewrite rules](https:/
 
 We can try to solve the challenge by setting up a server that would take the requests from the old domain name. Then it would search for the needed post in a site database using a unique post ID. Next, it will create a new URL using the fetched blog post title and return the redirect information to the new URL.
 
-However, the above will pose a few challenges. The database queries will add latency to the request and may be expensive to keep it running. 
+However, the above will pose a few challenges. The database queries will add latency to the request and may be expensive to keep running. 
 
 We need to generate a one-to-one mapping of all the old web addresses to the new ones. This implies that every web address on the old domain will have a unique URL rewrite rule. A challenge comes if it involves many posts as it will bring much work.
 
@@ -104,7 +121,7 @@ However, one can create a one-time script during migration that loops through ea
 
 The critical difference is that web servers such as NGINX read the rules sequentially. This would mean that if we have 100,000 redirect rules and a visitor requests the last one. The server must loop through all the rules before reaching the desired rule to return the redirect information.
 
-Edge computing offers [key-value storage](https://www.akamai.com/blog/news/now-available-edgekv-distributed-key-value-store). This implies that each of the 100,000 redirect rules will have O(n) complexity in the above scenario. In simple terms, it takes longer to reach the last item in the list as the items in the list continue to increase.
+Edge Computing offers [key-value storage](https://www.akamai.com/blog/news/now-available-edgekv-distributed-key-value-store). This implies that each of the 100,000 redirect rules will have O(n) complexity in the above scenario. In simple terms, it takes longer to reach the last item in the list as the items in the list continue to increase.
 
 Edge's key-value storage devices come with an O(1) complexity. This means that no matter the number of items in the list, the look-up times will remain the same. 
 
@@ -121,21 +138,21 @@ This would follow the below steps:
 Using edge functions to handle the restructuring issues solves the latency issues. It also improves the performance for large-scale redirects where regex or wildcards may not make much impact.
 
 #### Complexity issues
-NGINX comes with added complexity for serving static assets, performing reverse-proxy, and balancing the load. However, a redirect server does not have to be complex. The complexity is much reduced when using edge computing, making developers more productive. Setting up and configuring an NGINX is complex and requires the developer to read through its documentation from time to time.
+NGINX comes with added complexity for serving static assets, performing reverse-proxy, and load balancing. However, a redirect server does not have to be complex. The complexity is much reduced when using Edge Computing, making developers more productive. Setting up and configuring an NGINX is complex and requires the developer to read through its documentation from time to time.
 
-The advantage of edge computing is that it works with [serverless functions](https://www.pubnub.com/blog/what-is-a-serverless-function/), which are highly scalable. The developers need not worry about provisioning a server, the resources the server needs, or even the region to deploy the servers. 
+The advantage of Edge Computing is that it works with [serverless functions](https://www.pubnub.com/blog/what-is-a-serverless-function/), which are highly scalable. The developers need not worry about provisioning a server, the resources the server needs, or even the region to deploy the servers. 
 
-With edge computing, developers write the functions, and the service provider decides where to run the code efficiently. It can scale accordingly to handle any additional load.
+With Edge Computing, developers write the functions, and the service provider decides where to run the code efficiently. It can scale accordingly to handle any additional load.
 
 Performing redirects, deploying edge functions worldwide, and using the programming language that suits the developers to write the logic is efficient.
 
 ### Wrapping up
-As we have already covered in the article, edge computing offers benefits when performing migrations and handling redirects. These benefits are:
+As we have already covered in the article, Edge Computing offers benefits when performing migrations and handling redirects. These benefits are:
 - There is no time wasted while waiting for the requests to be fetched from a redirect server.
 - There is minimal compute time required to process large URL mappings.
 - There is less complexity involved in edge redirects than in provisioning and scaling a redirect server.
 
-The future of edge computing for handling content migrations and performing large-scale redirects is auspicious.
+The future of Edge Computing for handling content migrations and performing large-scale redirects is auspicious.
 
 ### Further reading
 - [A Guide to URL Redirection](https://www.semrush.com/blog/redirects/).
@@ -143,3 +160,6 @@ The future of edge computing for handling content migrations and performing larg
 - [Faslty Edge Key Value Storage](https://docs.fastly.com/en/guides/about-edge-dictionaries).
 - [Cloudfare Edge Key Value Storage](https://www.cloudflare.com/products/workers-kv/).
 - [Akamai Edge KV](https://www.akamai.com/products/edgekv).
+
+---
+Peer Review Contributions by: [Mercy Meave](/engineering-education/authors/mercy-meave/)
