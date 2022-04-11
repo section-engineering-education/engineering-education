@@ -6,7 +6,7 @@ url: /implementing-android-jetpack-preferences/
 title: Implementing Android Jetpack Preferences
 description: This article will guide the reader on how to implement the JetPack library in an Android project.
 author: mercy-nyakio
-date: 2022-04-01T00:00:00-09:30
+date: 2022-04-11T00:00:00-07:30
 topics: [Languages]
 excerpt_separator: <!--more-->
 images:
@@ -14,43 +14,52 @@ images:
   - url: /engineering-education/implementing-android-jetpack-preferences/hero.png
     alt: Implementing Android Jetpack Preferences Hero Image
 ---
-Giving users the ability to customize how they interact with your app by including a Settings page is the most excellent method to improve the overall user experience.
+A settings page gives users the ability to customize how they interact with an app. It is an excellent method for improving the overall user experience.
 <!--more-->
-For example, apps like YouTube offer users to choose between dark and bright modes, pick the download quality, regulate notifications, and other characteristics with a single click.
+For example, apps like YouTube allow users to choose between dark and light modes, pick the video quality, regulate notifications, as well as other characteristics with a single click.
 
-The setting screen enhances the user experience by requiring the user to specify his or her setting specification. Therefore, we need to find the most straightforward and effective way to include preferences in our application. 
+The setting screen enhances users' experience by allowing them to declare their preferences. 
 
-In this article, we will create a simple setup screen using the Android Preference Library.
+Therefore, we need to find the most straightforward and effective way to include preferences in our application. 
+
+In this article, we will create a simple setup screen using the JetPack preference library.
 
 ### Table of contents
 - [Prerequisites](#prerequisites)
-- [Step 1 Creating the project](#step-1-creating-the-project)
-- [Step 2 Adding a menu to the MainActivity](#step-2-adding-a-menu-to-the-main-activity)
-- [Step 3 Adding the second activity](#step-3-adding-the-second-activity)
-- [Step 4 Working with MainActivity.kt](#step-4-working-with-mainactivitydotkt)
-- [Step 5 Working with SettingActivity.kt](#step-5-working-with-settingactivitydotkt)
-- [Step 6 Running the application](#step-6-running-the-application)
+- [Step 1 - Creating the project](#step--1-creating-the-project)
+- [Step 2 - Adding a menu to the MainActivity](#step--2-adding-a-menu-to-the-main-activity)
+- [Step 3 - Adding the second activity](#step--3-adding-the-second-activity)
+- [Step 4 - Working with MainActivity.kt](#step--4-working-with-mainactivity.kt)
+- [Step 5 - Working with SettingActivity.kt](#step--5-working-with-settingactivity.kt)
+- [Step 6 - Running the application](#step--6-running-the-application)
 - [Conclusion](#conclusion)
 
 ### Prerequisites
-To follow along with this tutorial, the reader needs to have:
-- Basic knowledge of Android development.
-- Basic knowledge of Kotlin programming language.
-- Have basic knowledge of [preferences](https://developer.android.com/reference/android/preference/Preference)
-- Have [Android Studio](https://developer.android.com/studio?gclid=CjwKCAjwlcaRBhBYEiwAK341jU5iIV3l1WRlsYriVsAVDhHovlGtHMmWJJAL2MwlC015p-KO-cUWIRoCy0IQAvD_BwE&gclsrc=aw.ds) installed.
+To follow along with this tutorial, you need to have:
+- A basic knowledge of Android development.
+- Some knowledge of Kotlin programming language.
+- Basic knowledge of [Android preferences](https://developer.android.com/reference/android/preference/Preference)
+- [Android Studio](https://developer.android.com/studio?gclid=CjwKCAjwlcaRBhBYEiwAK341jU5iIV3l1WRlsYriVsAVDhHovlGtHMmWJJAL2MwlC015p-KO-cUWIRoCy0IQAvD_BwE&gclsrc=aw.ds) installed.
 
-#### Step one: Creating a new project
-Open Android Studio and select New Project -> Empty activity as your project template, and then click `next`.  Configure the application name and enter your own. In this case, I will name this project **Android Preferences**.  We will use `Kotlin` as our programming language for this project. Leave everything else as default and click `Finish` and wait a few seconds for it to build up your project.
+#### Step 1 - Creating a new project
+Open Android Studio and select *New Project -> Empty activity* as your project template, and then click `next`. 
+
+Give the application any name. In my case, I will name this project **Android Preferences**.  
+
+We will use `Kotlin` as our programming language for this project. Leave everything else as default and click `Finish`. Then wait a few seconds for Android Studio to build up the project.
    
-#### Step two: Adding a menu to the MainActivity
-The menu enables us to add a menu item(s) into it that will help us navigate to the `SettingActivity`. We will achieve that by adding a `click listener` to each item(s). The following steps should be followed to add a `menu` resource file;
+#### Step 2 - Adding a menu to the MainActivity
+The menu enables users to add a menu item(s) that will help navigate to the `SettingActivity`. 
 
-1. Click the `project` folder on the left side of the IDE or `alt+1 -> app -> res folder`.
-2. Right-click the `res` folder to add a `new resource file -> new -> Android resource file`.
-3. After navigating to the Android resource file, enter the file name as `menu` and the resource type. Select `Menu` and click `OK` to finish.
-4. Inside the `menu` package, navigate by right-clicking, Select the` new -> menu resource` file and then set the file name as `setting_menu` and finish.
+We will achieve this functionality by adding a `click listener` to each item(s). Follow the steps below to add a `menu` resource file:
 
-Add the following lines of code:
+In the `project` directory, right-click the `res` folder to add a `new resource file -> new -> Android resource file`.
+
+Next, navigate to the Android resource file, enter the file name and the resource type as `menu` then click `OK` to finish.
+
+Inside the `menu` package, select the `new -> menu resource` file and then name it as `setting_menu` and click `finish`.
+
+Add the following lines of code in the `settings_menu` file:
 
 ```xml
 <item
@@ -62,21 +71,25 @@ Add the following lines of code:
        android:title="@string/settings"/>
 ```
 
-To ensure the menu bar is visible to the user's application, add the following code to the `MainActivity.kt` file.
+To ensure that the menu bar is visible, add the following code to the `MainActivity.kt` file.
 
-```kotlin
+```kt
  override fun onCreateOptionsMenu(menu: Menu?): Boolean {
         menuInflater.inflate(R.menu.settings_menu, menu)
         return true
     }
 ```
 
-#### Step three: Adding the second activity
-In this step, we will add another activity to our main project. Double-click `app file -> java file -> application package name(com._.androidprefernces)`. Right-click the applications folder -> new -> `activity` -> `Settings activity`. After creating a new activity, new Android activity dialog, leave everything as default and finish. The final step is to wait for the project to build.
+#### Step 3 - Adding the second activity
+In this step, we will add the Settings activity to the project. Navigate to the main folder and add a new activity. Remember to select a `Settings activity` in the confirmation dialog. -
 
-The new settings activity comes with files in it. Such files include:
-- Default settings XML layout in the layout folder. Inside the resource file, there is a layout called `root preferences`, where all the settings will be represented. Inside the root preference, several preference categories will hold a particular group of settings.
-- A new value resource file called `arrays` contains entries and values that will be visible to the user for selection. Mainly common for preferences such as list preferences, multi-select list preferences, and checkbox preferences. We need to include our new arrays for our settings preferences. Hence, we must delete the default arrays and edit our new array values.
+Several files will be generated along with the Settings activity. They include:
+
+- A default `settings.xml` file in the `layout` folder. When you open the resource file, there is a layout called `root preferences`, where all the settings will be represented. Several `preference categories` will hold a particular group of settings.
+
+- A new value resource file called `arrays`. It contains entries and values that will be visible to the user.  
+
+We need to include new values in the array for our settings preferences. Therefore, we should delete the `default` arrays and add new array values, as shown below:
 
 ```xml
 <resources>
@@ -112,96 +125,101 @@ The new settings activity comes with files in it. Such files include:
 </resources>
 ```
 
-We will have `theme` values and entries for our list preferences in the general preference category. Entries will be displayed to the users to choose which theme and download size of the file they need to set for the application. We will use the `theme` and `download` entries to set the default value displayed before making changes. The entries will also help us in writing the Kotlin code.
+We will have `theme` values and entries for our list preferences in the general preference category. 
 
->Note: Using drawables is optional, and you need to ignore the icon(s) code snippet in the code below. If you have to use drawable, you can add your own best from the vector assets.
+Users will choose their preferred theme and download size when setting up the application. 
 
-Include the following code in the root preferences layout and inside the preference screen, the root tag of all the preferences, which will contain all the preferences we will use in our application, i.e., list preference, checkbox preference, seek bar preference, e.t.c.
+> Note that using drawables is optional. However, you can add your drawables from the vector assets.
+
+Add the code below in the root preferences layout. It will contain all the preferences we will use in our application.
 
 ```xml
- <PreferenceCategory app:title="Personal details"
-        app:icon="@drawable/ic_person_pin">// It is the holder of a particular group of settings
+<PreferenceCategory app:title="Personal details"
+    app:icon="@drawable/ic_person_pin">// It is the holder of a particular group of settings
 
-        <EditTextPreference
-            app:key="myEditText"
-            app:title="Enter your name"
-            app:useSimpleSummaryProvider="true" />
-        <CheckBoxPreference
-            app:title="Mood check"
-            app:summary="Check the text box if you like our design layout"
-            app:key="pref"
-            app:defaultValue="true"
-            />
-        <SeekBarPreference
-            app:title="Rate this app"
-            app:showSeekBarValue="true"
-            app:icon="@drawable/ic_baseline_star"
-            app:summary="Rate this app in a scale of 0 -> 5"
-            app:key="rating_bar"
-            android:max="5"
-            app:min="0"
-            app:defaultValue="3"
-            app:dependency="pref"
-            />
+    <EditTextPreference
+        app:key="myEditText"
+        app:title="Enter your name"
+        app:useSimpleSummaryProvider="true" />
+    <CheckBoxPreference
+        app:title="Mood check"
+        app:summary="Check the text box if you like our design layout"
+        app:key="pref"
+        app:defaultValue="true"
+        />
+    <SeekBarPreference
+        app:title="Rate this app"
+        app:showSeekBarValue="true"
+        app:icon="@drawable/ic_baseline_star"
+        app:summary="Rate this app in a scale of 0 -> 5"
+        app:key="rating_bar"
+        android:max="5"
+        app:min="0"
+        app:defaultValue="3"
+        app:dependency="pref"
+        />
 
-    </PreferenceCategory>
+</PreferenceCategory>
 
-    <PreferenceCategory app:title="General"
-        app:icon="@drawable/ic_baseline_color_lens">
-        <ListPreference
-            app:dialogTitle="Theme"
-            app:defaultValue="1"
-            app:entryValues="@array/theme_values"
-            app:entries="@array/theme_entries"
-            app:key="theme"
-            app:useSimpleSummaryProvider="true"
-            app:title="Choose your Theme"/>
+<PreferenceCategory app:title="General"
+    app:icon="@drawable/ic_baseline_color_lens">
+    <ListPreference
+        app:dialogTitle="Theme"
+        app:defaultValue="1"
+        app:entryValues="@array/theme_values"
+        app:entries="@array/theme_entries"
+        app:key="theme"
+        app:useSimpleSummaryProvider="true"
+        app:title="Choose your Theme"/>
 
-    </PreferenceCategory>
+</PreferenceCategory>
 
-    <PreferenceCategory app:title="Chat features"
-        app:icon="@drawable/ic_baseline_app_settings">
-        <SwitchPreferenceCompat
-            app:key="chat_features"
-            app:summary="Use Wi-Fi or data for messaging when available"
-            app:title="Enable chat features"/>
+<PreferenceCategory app:title="Chat features"
+    app:icon="@drawable/ic_baseline_app_settings">
+    <SwitchPreferenceCompat
+        app:key="chat_features"
+        app:summary="Use Wi-Fi or data for messaging when available"
+        app:title="Enable chat features"/>
 
-        <SwitchPreferenceCompat
-            app:dependency="chat_features"
-            app:key="attachment"
-            app:summaryOff="Let others know you have read their message "
-            app:summaryOn="Other people will see you have read their text automatically"
-            app:title="Send read receipts" />
-        <SwitchPreferenceCompat
-            app:dependency="chat_features"
-            app:key="attachment"
-            app:title="Show type indicators"
-            app:summaryOff="Let others know your are typing"
-            app:summaryOn="Other people will see whenever you are typing"
-            />
-        <ListPreference
-            app:defaultValue="default(100_mb)"
-            app:entries="@array/download_entries"
-            app:entryValues="@array/download_values"
-            app:key="default(100_mb)"
-            app:title="Auto-download files you receive over mobile data"
-            app:useSimpleSummaryProvider="true"
-            app:dependency="chat_features"/>
+    <SwitchPreferenceCompat
+        app:dependency="chat_features"
+        app:key="attachment"
+        app:summaryOff="Let others know you have read their message "
+        app:summaryOn="Other people will see you have read their text automatically"
+        app:title="Send read receipts" />
+    <SwitchPreferenceCompat
+        app:dependency="chat_features"
+        app:key="attachment"
+        app:title="Show type indicators"
+        app:summaryOff="Let others know your are typing"
+        app:summaryOn="Other people will see whenever you are typing"
+        />
+    <ListPreference
+        app:defaultValue="default(100_mb)"
+        app:entries="@array/download_entries"
+        app:entryValues="@array/download_values"
+        app:key="default(100_mb)"
+        app:title="Auto-download files you receive over mobile data"
+        app:useSimpleSummaryProvider="true"
+        app:dependency="chat_features"/>
 
-    </PreferenceCategory>
-    <PreferenceCategory app:title="Others"
-        app:icon="@drawable/ic_read_more">
-        <Preference
-            app:title="Android Preferences"
-            android:summary="That was all we had for today. Feel free to add more android preferences in your application before we meet next time.
+</PreferenceCategory>
+<PreferenceCategory app:title="Others"
+    app:icon="@drawable/ic_read_more">
+    <Preference
+        app:title="Android Preferences"
+        android:summary="That was all we had for today. Feel free to add more Android preferences in your application before we meet next time.
 Thank you."
-            />
-    </PreferenceCategory>
+        />
+</PreferenceCategory>
 ```
 
 Below are the critical attributes in the root preferences. They will help you understand their usage in each preference in our application:
-1. `app: key` - This allows you to make additional adjustments to the preference anytime, i.e., during runtime, another preference can depend on another by referring to the key of the referenced preference.
+
+1. `app: key` - This allows you to make additional adjustments to the preference anytime. During runtime, another preference can depend on another by referring to the key of the referenced preference.
+
 2. `app: summary` - A string that describes a particular preference.
+
 3. `app: title`  and `dialog: title` - They show a particular preference or category preference heading. While the dialogue title will be of a particular dialog once popped up.
 4. `default: value` - Setting preferences with more choices must be included as a default value which indicates that the developer makes the initial setting before the user changes the application.
 5. `Summary: on` - Mostly used in switches. It indicates the string that will be set when switched to on.
