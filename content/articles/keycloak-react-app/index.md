@@ -45,7 +45,7 @@ Here, we pass along the `KEYCLOAK_USER` and `KEYCLOAK_PASSWORD` as environment v
 Once our container fires up, navigate to your browser on http://localhost:8080/auth/admin and log in with the
 credentials we created earlier. On this page you should see something like:
 
-![Keycloak sign](assets/admin_dashboard.png)
+![Keycloak sign](/engineering-education/keycloak-react-app/admin_dashboard.png)
 
 ### Understanding Key Concepts
 We need to briefly understand Keycloak terms and concepts as an authentication solution for web applications and RESTful services.
@@ -57,31 +57,31 @@ We need to briefly understand Keycloak terms and concepts as an authentication s
 ### Creating Realm
 Currently, we are at the master realm which is the root. The master realm is the recommended sandbox environment for admin tasks for creating other realms. To create a new realm for our applications, use the left sidebar of the admin console. Under the dropdown option, click the `Add realm` button to add a new realm. 
 
-![Add Realm](/assets/add-realm.png)
+![Add Realm](/engineering-education/keycloak-react-app/add-realm.png)
 
 To create a realm, we need to specify a name. I'll use the name `myRealmDemo`.
 
 Within our newly created `myRealmDemo`, we will create a test user instance. On the left panel under the `manage` section, click `Add User` and provide a username and a password under the `Credentials` tab. 
 
-![Add user](/assets/add-user.png)
-
+![Add user](/engineering-education/keycloak-react-app/add-user.png)
 
 > The initial password created is temporary. Make sure to reset it before accessing the account management panel.
 
 We can confirm our new user by navigating to `http://localhost:8080/auth/realms/myRealmDemo/account`.
 
-![user1-info](/assets/user1-personal-info.png).
+![user1-info](/engineering-education/keycloak-react-app/user1-personal-info.png).
 
 For user details,  add `First name`, `Last name`, and `Email`  fields.
 
 To complete our configuration on the Keycloak server, we need to add a client that will initiate login for any web service. Go back to the `Clients` tab under the admin console and click the `Create` button.
 
-![Add client](/assets/add-client.png)
+![Add client](/engineering-education/keycloak-react-app/add-client.png)
 
 Provide a name as your `Client ID` and `Root URL` as `http://localhost:3000` where our React client will run.
 
 One last thing we need is the Keycloak JSON that we will pass along to the client when initiating requests. On the `Installation` tab, select Keycloak OIDC JSON as the data format. Keep it safe since we will reuse it in the next section!
 
+![installation tab](/engineering-education/keycloak-react-app/installation-tab.png)
 
 ### Set Up React Frontend
 To bootstrap our client app, we will use the [Vite CLI](https://vitejs.dev/) build tool. To create a boilerplate React template with Vite, type the command: 
@@ -122,14 +122,15 @@ content: [
 ```
 
 Our app simply allows the client to navigate between public and protected routes. We have the following components:
-- The `App` component is the root component.
+- `App` component is the root component.
 - `NavBar` component: For links and navigation.
 - `Home` component: This is a public route.
 - `Resources` component: To access this route, the client will have to be authenticated from our Keycloak server.
 - A `Footer` component with basic links and subscribe form.
 
 ### App component
-Inside our `App.jsx` file, replace everything inside with:
+
+Inside our `App.jsx` file, add the code below. We will be creating these components in a moment.
 
 ```jsx
 import {BrowserRouter, Route, Routes} from 'react-router-dom';
@@ -159,13 +160,18 @@ export default function App() {
 ```
 
 ### NavBar component
+Our `NavBar` component will have the basic links for routes and a brand name as `KeyCloak App`. Add a folder for components named `components`. Inside this folder, create `NavBar.jsx` file.
+First, we need to import `Link` from the react-router package to handle navigation.
 ```jsx
-
 import {Link} from 'react-router-dom'
+```
 
+The nav links for our app:
+
+```jsx
 export default function NavBar() {
   return (
-    <>
+    <nav>
     <div className='flex justify-around items-center py-5 bg-[#234] text-white'>
       <h1 className='font-semibold font-2xl'>KeyCloak App</h1>
       <ul className='flex'>
@@ -181,11 +187,14 @@ export default function NavBar() {
         </li>
       </ul>
     </div>
-    </>
+    </nav>
   )
 }
 ```
-### Home
+
+### Home component
+Within our `components folder`, add a new file and name it `Home.jsx`. The JSX for the file is:
+
 ```jsx
 export default function Home() {
   return (
@@ -196,21 +205,24 @@ export default function Home() {
 }
 ```
 
-### Resources
+### Resources component
+Add a new file under `components` folder as `Resources.jsx`. This component is stateful. Therefore, let's import our keycloak package, `useState`, and `useEffect` as:
 
 ```jsx
 import { useState, useEffect } from 'react';
 import Keycloak from 'keycloak-js';
 ```
 
+Inside the `Resources` component, add the methods to check for keycloak instance and authentication. Using the `useState` hook:
+
 ```jsx
 export default function Resources(){
   const [keycloak, setKeycloak] = useState(null)
   const [authenticated, setAuthenticated] = useState(false)
-
 }
 ```
 
+To track the render cycle, use the `useEffect` hook so that when the component is mounted on to the DOM, we can invoke the Keycloak instace. The path needs to point to the `keycloak.json` path we downloaded earlier. 
 ```jsx
   useEffect(()=>{
     const keycloak = Keycloak('/keycloak.json');
@@ -221,29 +233,34 @@ export default function Resources(){
   }, [])
 ```
 
-Finally, I
+Lastly, we need to check that the user is authenticated with two states:
+- If `keycloak` exists (Keycloak returns an object) and the user is authenticated, we render a text and a random image.
+- If not, we return the "Unable to initiate auth!" message.
+  
 ```jsx
   if (keycloak) {
     if (authenticated) return (
+      {/* JSX returns an image and text as protected **resources** */}
       <div className='my-12 grid place-items-center'>
-        <p>This is a Keycloak-secured component of your application. You shouldn't be able
-          to see this unless you've authenticated with Keycloak.</p>
+        <p> You are logged in.</p>
           <div>
+          
           <img src="https://random.imagecdn.app/500/250"/> 
           </div>
       </div>
     ); 
-    else return (<div className='my-12'>Unable to authenticate!</div>)
+    else return (<div className='my-12'>Unable to initiate auth!</div>)
   }
 
   return(
     <>
-      <div className='my-12'>Initializing Keycloak...</div>
+      <div className='my-12'>Keycloak initializing in a moment...</div>
     </>
   )
 ```
 
 ### Footer
+Finally, our client code has a footer with social links and a subscribe button. Check the code below:
 
 ```jsx
 export default function Footer() {
@@ -275,6 +292,14 @@ export default function Footer() {
 ```
 
 ### Final demo
+
+If we run the command `npm run dev` on our terminal. Our dev server fire up on `localhost:3000`. The final version of the app should look like this:
+
+The home page as public route.
+![App landing page](/engineering-education/keycloak-react-app/home-page.png)
+
+The protected route needs authentication with Keycloak.
+![resource component](/engineering-education/keycloak-react-app/resource.png)
 
 Grab the project source code on my [GitHub repo](https://github.com/Qodestackr/keycloak-app).
 
