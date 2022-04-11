@@ -1,3 +1,19 @@
+---
+layout: engineering-education
+status: publish
+published: true
+url: /creating-a-simple-hunt-the-wumpus-game-using-python-flask-and-socketio/
+title: Build Hunt the Wumpus Game Using Python Flask and SocketIO
+description: In this tutorial, the reader will learn what Hunt the Wumpus game is, how it works, and will learn to build a clone of it from scratch using Python and JavaScript.
+author: samuel-santos
+date: 2022-04-11T00:00:00-23:00
+topics: [Languages]
+excerpt_separator: <!--more-->
+images:
+
+  - url: /engineering-education/creating-a-simple-hunt-the-wumpus-game-using-python-flask-and-socketio/hero.jpg
+    alt: Build Hunt the Wumpus Game Using Python Flask and SocketIO Hero Image
+---
 In this tutorial, we will create a simple game based on the [Hunt the Wumpus](https://en.wikipedia.org/wiki/Hunt_the_Wumpus) game, one of the first computer games.
 <!--more-->
 By reading this article, the reader will learn about the history of this game and will learn to build a clone of it from scratch, using Flask and Socket.io in Python.
@@ -818,3 +834,6 @@ To see the whole project, you can go to the [project's GitHub](https://github.co
 - [Artificial Intelligence: A Modern Approach](https://www.amazon.com.br/Artificial-Intelligence-Approach-Stuart-Russell/dp/0134610997)
 - [Flask](https://flask.palletsprojects.com/en/2.0.x/)
 - [Socket.io](https://socket.io/)
+
+---
+Peer Review Contributions by: [Srishilesh P S](/engineering-education/authors/srishilesh-p-s/)
