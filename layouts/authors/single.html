@@ -63,6 +63,8 @@
 
           {{ $articleUrlsList = delimit $articleUrlsList ", "}}
 
+          {{ print $articleUrlsList }}
+
           <div class="insights-section">
             <div class="insight page-views" data-before="Total Number of Articles Written">
               <img src="{{ if eq $.Site.Params.env "local" }}/{{ else }}/engineering-education/{{ end }}images/total-articles-icon.png" alt="Total Number of Articles Icon" />
@@ -267,6 +269,28 @@
     const urlsOfArticles = "{{ $articleUrlsList }}";
     const articlesArr = urlsOfArticles.split(', ');
     applyPageViews(articlesArr);
+
+    // Request all article data from Hyvor talk - this will allow us to use 
+    // one request per page, instead of separare requests for each article.
+    const requestArticlesData = async (articleUrls) => {
+      console.log('articleUrls:', articleUrls)
+      const url = new URL('https://talk.hyvor.com/api/v1/pages/');
+      const params = {
+        'page_identifiers': JSON.stringify(articleUrls),
+        'website_id': {{ $hyvorId }}
+      }
+      Object.keys(params).forEach(key => url.searchParams.append(key, params[key]));
+
+      console.log('url:', url)
+      fetch(url)
+        .then(response => response.json())
+        .then(data => {
+          console.log('data:', data);
+
+        })
+    }
+
+    requestArticlesData(articlesArr);
   });
   
 </script>
