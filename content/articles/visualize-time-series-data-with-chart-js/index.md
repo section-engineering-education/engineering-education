@@ -118,7 +118,7 @@ new Chart(charts, {
 
 ```
 
-Add the following code snippets to style the webpage in the `stytle.css`  file.
+Add the following code snippets to style the webpage in the `style.css`  file.
 
 ```css
 body{
