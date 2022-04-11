@@ -3,11 +3,11 @@ layout: engineering-education
 status: publish
 published: true
 url: /erc20-tokens-and-transact-using-brownie-python/
-title: Introduction on how to Create ERC20 Tokens and Transact using Brownie (Python)
+title: How to Create ERC20 Tokens and Transact using Brownie (Python)
 description: This tutorial will guide the reader on how to create ERC20 Tokens and Transact using Brownie and python.
 author: raphael-ndonga
-date: 2022-03-22T00:00:00-12:00
-topics: [Languages]
+date: 2022-04-11T00:00:00-13:00
+topics: [Blockchain]
 excerpt_separator: <!--more-->
 images:
 
@@ -15,7 +15,7 @@ images:
     alt: Transact erc20 tokens using brownie Hero Image
 ---
 ERC20 tokens are a representation of something on the Ethereum Blockchain. They can reference a representation of Gold, in which case those tokens are very valuable. They can also reference a representation of someone's toenails, in which case, those tokens are less valuable.
-
+<!--more-->
 ### Objectives
 In this article, you will obtain all the knowledge you need to deploy and transact your own ERC20 token, by doing the following: 
 
