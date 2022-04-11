@@ -1,6 +1,6 @@
 [Spark](https://sparkjava.com/) is a lightweight web framework that will allow us to create web applications with robust Java back-ends. Spark is responsible for creating user interfaces for our applications that can be viewed in a web browser and handling interactions between our user interfaces and back-end logic.
 
-### Friend Letter Application
+### The friend letter application
 To get a general sense of how Spark works, we will quickly walk through creating a website to display a letter to our friends.
 
 ### Prerequisites
@@ -22,7 +22,7 @@ First, create a new project in IntelliJ, choose Maven, and click *next*:
 
 ![maven](/engineering-education/build-your-first-spark-web-application/maven.png)
 
- Use friend-letter for the GroupId and the ArtifactId, then click *finish*:
+Use friend-letter for the `GroupId` and the `ArtifactId`, then click *finish*:
 
 ![projectsetup](/engineering-education/build-your-first-spark-web-application/projectsetup.png)
 
@@ -59,13 +59,15 @@ After the project is done loading, open the `pom.xml` file, and add the followin
 </project>
 ```
 
-Great! The compiler may prompt you that it needs to download the files that make up **spark-core**, **spark-template-handlebars**, and **slf4j-simple** (a logging tool that provides better error messaging). You can also do this yourself by going to [this site](https://search.maven.org/artifact/com.sparkjava/spark-core/2.9.3/jar) and downloading the `spark-core-2.9.3.jar` file. After the download, add the file to the project dependencies. To do this, go to your IntelliJ then **File**-> **Project Structure** -> **Dependencies**. Click on the *add (+)* button and select the file you downloaded. Finally, click the *OK* button:
+Great! The compiler may prompt you that it needs to download the files that make up `spark-core`, `spark-template-handlebars`, and `slf4j-simple` (a logging tool that provides better error messaging). You can also do this yourself by going to [this site](https://search.maven.org/artifact/com.sparkjava/spark-core/2.9.3/jar) and downloading the `spark-core-2.9.3.jar` file. After the download, add the file to the project dependencies. To do this, go to your IntelliJ then **File**-> **Project Structure** -> **Dependencies**.
+
+Click on the *add (+)* button and select the file you downloaded. Finally, click the *OK* button:
 
 ![add depedency](/engineering-education/build-your-first-spark-web-application/add-dependency.png)
 
 For more on adding a dependency, see [this guide](https://www.jetbrains.com/help/idea/working-with-module-dependencies.html#remove-dependency).
 
-Now, create a `Main.java` file by right-clicking on the *src/main/java* directory and adding a Java class called `Main.java`.
+Now, create a `Main.java` file by right-clicking on the `src/main/java` directory and adding a Java class called `Main.java`.
 
 ### Create a web application
 Next, let's set up our `Main.java` file. With Spark, `Main.java` will be responsible for our user interfaces, but the code will look different from a console program. We'll need to use the format and methods expected by the Spark framework.
@@ -91,20 +93,20 @@ Routes are the essential building elements of a Spark application. A route is co
 
 - A **verb** depicting what the route is doing. In our route, this verb is `get()`. The `get()` method represents an HTTP GET request. And an HTTP GET request is responsible for getting information from a web server to return to the client.
 
-- A **path**. It represents what part of the web application the verb is interacting with. In the case of the example above, we see `get("/hello ", request, response)`. This line means that we're executing an HTTP GET request to our server to retrieve the content for the /hello area of our site.
+- A **path**. It represents what part of the web application the verb is interacting with. In the case of the example above, we see `get("/hello ", request, response)`. This line means that we're executing an HTTP GET request to our server to retrieve the content for the`/hello area` of our site.
 
-- A **callback**. That is the `(request, response) ->` portion. When a client requests the specific web page's resources located at `/hello`, the server will return the string "Hello Friend!" back to the client in the HTTP response body.
+- A **callback**. That is the `(request, response) ->` portion. When a client requests the specific web page's resources located at `/hello`, the server will return the string `"Hello Friend!"` back to the client in the HTTP response body.
 
 When our browser makes an HTTP request to our Spark application, Spark matches it to the first route in `Main.java` that matches the request.
 
-So, note that if you have multiple similar routes, Spark will map the request to the first route it finds that matches the request. We probably won't encounter this until our applications get much larger, but keep this in mind for the future.
+Please, note that if you have multiple similar routes, Spark will map the request to the first route it finds that matches the request. We probably won't encounter this until our applications get much larger, but keep this in mind for the future.
 
-### Launching Spark Applications
+### Launching Spark applications
 Here, we'll launch our application. To do this, we'll click the *run button* in the top right corner of the IntelliJ window.
 
 The first time we run this project, it may take a while to launch it. The project needs to download and install all dependencies from the `pom.xml` file, which can take additional time. After downloading dependencies during our first run, subsequent builds will be much faster.
 
-This message informs us that our Spark application has been successfully launched, or "ignited" in Spark's terminology, and it's 'located' at 0.0.0.0:4567. We can visit `http://localhost:4567/hello` in the browser and see our "Hello World!" message:
+After building, a message informs us that our Spark application has been successfully launched, or "ignited" in Spark's terminology, and it's 'located' at <http://0.0.0.0:4567>. We can visit `http://localhost:4567/hello` in the browser and see our "Hello World!" message:
 
 ![hello world](/engineering-education/build-your-first-spark-web-application/hello-world.png)
 
@@ -141,29 +143,29 @@ public class Main {
 }
 ```
 
-When adding HTML to a route like this, it needs to be one long String. However, to make it read like an HTML file, we concatenate multiple Strings across multiple lines with the + operator.
+When adding HTML to a route like this, it needs to be one long String. However, to make it read like an HTML file, we concatenate multiple strings across multiple lines with the `+` operator.
 
-### Updating Spark Applications During Development
+### Updating a Spark applications during development
 After making changes, we need to recompile and restart the server to ensure the new content is present in the compiled code that Spark is referencing.
 
 Let's do that now.
 
-Either select run> Stop 'Main' from the main menu or hit the red square in the top right corner or bottom left corner. If you look at the menu in the bottom left corner, you can also choose Rerun Main.
+Either select *Run > Stop 'Main'* from the main menu or hit the red square in the top right corner or bottom left corner. If you look at the menu in the bottom left corner, you can also choose Rerun Main.
 
-Refresh `http://localhost:4567/hello` in the browser to see our HTML letter:
+Refresh <http://localhost:4567/hello> in the browser to see our HTML letter:
 
 ![letter](/engineering-education/build-your-first-spark-web-application/letter.png)
 
 ### Adding Resources to Spark
-However, our website is still plain, even with the added HTML. Let's add images to spruce things up!
+At this point, our website is still plain, even with the added HTML. Let's add images to spruce things up!
 
 First, we'll need to create a place to house our images and other resources.
 
-In the src/main folder, create another subdirectory called resources (If IntelliJ did not generate it). This folder will store any non-Java files required to run your application, such as CSS, HTML, images, videos, music files, etc.
+In the` src/main` folder, create another subdirectory called `resources` (If IntelliJ did not generate it). This folder will store any non-Java files required to run your application, such as CSS, HTML, images, videos, music files, and others.
 
-In resources, create another folder called public. The public folder is where we'll place content that should be visible to the outside world (i.e., Things that users should be able to see. Like the images we want to display in our app.)
+In `resources`, create another folder called `public`. The `public` folder is where we'll place content that should be visible to the outside world (i.e., Things that users should be able to see. Like the images we want to display in our app.)
 
-Finally, in the public folder, create an images folder. This folder is where our images will reside.
+Finally, in the `public` folder, create an `images` folder. This folder is where our images will reside.
 
 Once complete, your project directory should look like this:
 
@@ -180,7 +182,7 @@ SparkTutorial
 ```
 
 #### Adding images
-Next, let's add some image files to our new SparkTutorial/src/main/resources/public/images directory. [Unsplash](https://unsplash.com/) is an excellent source of images. Pick out a few images to use in your project.
+Next, let's add some image files to our new `SparkTutorial/src/main/resources/public/images` directory. [Unsplash](https://unsplash.com/) is an excellent source of images. Pick out a few images to use in your project.
 
 The project directory should now look something like this:
 
@@ -244,14 +246,14 @@ public class Main {
 } 
 ```
 
-If your image files are named something different, make sure the file path in your <img> tags reflects your unique images. If we quit the server and re-launch the application, we should now visit `http://localhost:4567/photos`. Our web app now has multiple pages!
+If your image files are named something different, make sure the file path in your `<img>` tags reflects your unique images. If we quit the server and re-launch the application, we should now visit <http://localhost:4567/photos>. Our web app now has multiple pages!
 
-### Specifying Static File Location
+### Specifying static file locations
 As we have noted, the images aren't showing up!
 
 ![images](/engineering-education/build-your-first-spark-web-application/images.png)
 
-We need to explicitly instruct Spark to look in the public directory to locate all static files (like our images). We can do this by including the line `staticFileLocation("/public");` in the `main()` method. This method will let Spark know it should always look for additional resource links in the `/public` directory.
+We need to explicitly instruct Spark to look in the `public` directory to locate all static files (like our images). We can do this by including the line `staticFileLocation("/public");` in the `main()` method. This method will let Spark know it should always look for additional resource links in the `/public` directory.
 
 We'll add this line to the very top of the `main()` method:
 
@@ -269,10 +271,12 @@ public class Main {
 }
 ```
 
-Now, if we re-launch the application, we should be able to navigate to `http://localhost:4567/photos` and see our images!
+Now, if we re-launch the application, we should be able to navigate to <http://localhost:4567/photos> and see our images!
 
 ### Creating a Root Path
-So far, we have two routes that represent two different pages in our web application. But what if we wanted our `/hello` page to be the 'home page' for our website? After all, we don't want our users to have to manually type `/hello` at the end of our website's URL to reach the homepage; they should arrive there automatically whenever they visit our site! Let's create a root path. A root path sometimes referred to as a root route, is simply the route or area of your application that functions as the homepage. (i.e., it doesn't have a subdomain like `localhost:4567/hello`; instead, it's just located at localhost:4567.)
+So far, we have two routes that represent two different pages in our web application. But what if we wanted our `/hello` page to be the 'home page' for our website? After all, we don't want our users to have to manually type `/hello` at the end of our website's URL to reach the homepage; they should arrive there automatically whenever they visit our site!
+
+Let's create a root path. A root path sometimes referred to as a root route, is simply the route or area of your application that functions as the homepage.
 
 We'll do this by changing the first argument of the first `get()` method, like this:
 
@@ -301,13 +305,15 @@ All we did was change `/hello` to `/`. We also added the line `"<p><a href='/pho
 
 Notice we used `/photos` when creating the link. When creating links in Spark, we only need to refer to the URL path provided in the route. Our favorite photos entry in `Main.java` begins with `get("/photos", (request, response) ->`, so to link to this page we only use the `/photos` path.
 
-You can check to make sure this worked by quitting and recompiling/re-launching the application, then visiting `http://localhost:4567`:
+You can check to make sure this worked by quitting and recompiling/re-launching the application, then visiting <http://localhost:4567>.
 
 ![final-application](/engineering-education/build-your-first-spark-web-application/final-application.png)
 
-My [GitHub Repo](https://github.com/mosesmwangi442/first-spark-application) contains a fully working code for this tutorial.
+The code used in this tutorial can be found on my [GitHub Repo](https://github.com/mosesmwangi442/first-spark-application).
 
 ### Conclusion
-The goal of this tutorial is to show you how to put up a real-world web app using a variety of different Spark components.
+The goal of this tutorial was to show you how to put up a real-world web app using a variety of different Spark components.
 
 We've covered the basics of Spark, how to create a web app, and how to use the various components of Spark. We've also covered some of the more advanced features of Spark, such as how to use static files, and how to create a root path.
+
+Happy coding!
