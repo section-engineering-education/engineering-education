@@ -1,8 +1,23 @@
+---
+layout: engineering-education
+status: publish
+published: true
+url: /visualize-time-series-data-with-chart-js/
+title: Visualizing Time Series Data with Chart.Js 
+description: Time series are used to examine and track changes throughout time. Visualizing data makes it easier for the user to understand the information. This tutorial will teach the reader to visualize time series data using Chart.js.
+author: pauline-mwangi
+date: 2022-04-11T00:00:00-05:48
+topics: [Languages]
+excerpt_separator: <!--more-->
+images:
+
+  - url: /engineering-education/visualize-time-series-data-with-chart-js/hero.jpg
+    alt: Visualizing Time Series Data with Chart.Js  Image
+---
+
 Time-series data is a set of measurements and observations taken over time. Time-series data is found everywhere because time is a component of everything visible. 
-
-Time series are used to examine and track changes throughout time. Visualizing data makes it easier for the user to understand the information. 
-
-This tutorial will teach the reader to visualize time series data using [Chart.js](https://www.chartjs.org/) and [InfluxDB.](https://www.influxdata.com/) 
+<!--more-->
+Time series are used to examine and track changes throughout time. Visualizing data makes it easier for the user to understand the information. This tutorial will teach the reader to visualize time series data using [Chart.js](https://www.chartjs.org/) and [InfluxDB.](https://www.influxdata.com/) 
 
 InfluxDB is a database created with time-series data in mind. You can efficiently show time-series data by combining the features of InfluxDB with the flexibility and power of Chart.js. 
 
@@ -224,3 +239,6 @@ Chart.js is a graphing library with various functionalities. You can look at [Ch
 In this tutorial, we learned about time-series data and how to analyse and visualize this type of data using Charts.js and InfluxDB. We built a working example to show how the process is done and used Flux to query data from an InfluxDB cloud.
 
 Happy learning!
+
+---
+Peer Review Contributions by: [Mercy Meave](/engineering-education/authors/mercy-meave/)
