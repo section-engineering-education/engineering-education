@@ -56,23 +56,23 @@ $R\ge0, T\ge0,M\ge0$
 
 Now, we can combine the following and develop the following optimization problem:
 
-![eqution](engineering-education/simplex-method-in-python/equaiton1.png)
+![eqution](/engineering-education/simplex-method-in-python/equaiton1.png)
 
 This is the optimization we need to solve. To get started, on the objective equation take all variables and put them to the left hanside, i.e.,
 
-![eqution](engineering-education/simplex-method-in-python/equaiton2.png)
+![eqution](/engineering-education/simplex-method-in-python/equaiton2.png)
 
 For the coinstraints, we add a slack variable, such that the inequality becomes an an equal function, i.e.,
 
-![eqution](engineering-education/simplex-method-in-python/equaiton3.png)
+![eqution](/engineering-education/simplex-method-in-python/equaiton3.png)
 
 Therefore, our problem will be re-written as:
 
-![eqution](engineering-education/simplex-method-in-python/equation4.png)
+![eqution](/engineering-education/simplex-method-in-python/equation4.png)
 
 This is the standard form of our problem. From these equations, we obtain our initial table as:
 
-![image](engineering-education/simplex-method-in-python/table1.png)
+![image](/engineering-education/simplex-method-in-python/table1.png)
 
 The next thing is to figure out the pivot column, i.e., the column with the most negative value on the objective row. As we can see, the pivot column is M. From this column, we need to determine the pivot value. 
 
@@ -84,7 +84,7 @@ Since 34 is the value of the pivot column corresponding to the lowest quotient, 
 
 This will yield the following table:
 
-![image](engineering-education/simplex-method-in-python/table2.png)
+![image](/engineering-education/simplex-method-in-python/table2.png)
 
 The next step is to make all the values below and above the pivot value zeros. To get this done, we need to perform the following operations:
 
@@ -94,7 +94,7 @@ The next step is to make all the values below and above the pivot value zeros. T
 
 This operation will yield the following table:
 
-![image](engineering-education/simplex-method-in-python/table3.png)
+![image](/engineering-education/simplex-method-in-python/table3.png)
 
 We reached the optimal solution with no negative value in our objective row, indicating that we have an optimal solution. From this solution, we note that M and $S_2$are the basic variables (take the form of an identity matrix), and the rest are non-basic. Therefore, we set all non-basic variables to zero. 
 
@@ -113,17 +113,17 @@ Suppose we are given the following linear programming problem:
 
 *Using the Simplex method:*
 
-![image](engineering-education/simplex-method-in-python/optimize.png)
+![image](/engineering-education/simplex-method-in-python/optimize.png)
 
 The first thing is to rewrite this problem in standard form by introducing slack variables. Since we have three less than inequalities in the above problem, we will introduce three slack variables($S_1,\ S_2,\, and\ S_3$) for inequalities to become equations.
 
 Therfore, our problem becomes:
 
-![image](engineering-education/simplex-method-in-python/optimize2.png)
+![image](/engineering-education/simplex-method-in-python/optimize2.png)
 
 From this equation, we get our initial table as:
 
-![image](engineering-education/simplex-method-in-python/table4.png)
+![image](/engineering-education/simplex-method-in-python/table4.png)
 
 This solution is not optimal since there exist negative values in the $z^{th}$ row. So, we need to identify the pivot column, i.e., the column with the most negative value on the $z^{th}$-row. If we do so, the pivot column, also known as the Entering variable, is $y$.
 
@@ -137,7 +137,7 @@ As we can note from the above quotients, 45 is the minimum of all the questions.
 
 Upon performing these operations, we will get a table similar to the one below:
 
-![image](engineering-education/simplex-method-in-python/table5.png)
+![image](/engineering-education/simplex-method-in-python/table5.png)
 
 Since we have negative values in the $z^{th}$ row, this solution is not optimal. Again, we identify the pivot column from the current tableau and repeat all the steps, from identifying the pivot column and the pivot value. Applying the Gaussian Jordan Elimination Method, we make the pivot value a unit value and all other elements in the same column zeros. 
 
@@ -145,7 +145,7 @@ We then check if our objective row is optimal (has no negative value). If optima
 
 Doing so on the above table, we will end up with the following table:
 
-![image](engineering-education/simplex-method-in-python/table6.png)
+![image](/engineering-education/simplex-method-in-python/table6.png)
 
 Where M is given as:
 
@@ -199,11 +199,11 @@ Now, let us proceed and solve the second problem.
 
 The optimization problem was:
 
-![image](engineering-education/simplex-method-in-python/problem.png)
+![image](/engineering-education/simplex-method-in-python/problem.png)
 
 From this problem, we can have the following three arrays:
 
-![image](engineering-education/simplex-method-in-python/arrays.png)
+![image](/engineering-education/simplex-method-in-python/arrays.png)
 
 We shall implement these matrices in Python and solve our problem. Below is the Python code which performs these operations.
 
