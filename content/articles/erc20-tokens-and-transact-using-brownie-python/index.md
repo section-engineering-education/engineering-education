@@ -331,7 +331,7 @@ brownie run transact_token
 ```
 
 You will get this output:
-```
+```bash
 ...
 Transaction sent: 0xb59238b8cda7af32dff1780e0e8c665a34da0df18b9994a362a161f8601ed723
   Gas price: 0.0 gwei   Gas limit: 12000000   Nonce: 9
@@ -359,7 +359,7 @@ For example:
 With the basics in place, you can easily adapt these functions into your code without much of a hassle.
 
 ### Conclusion
-ERC20 tokens are very useful and have found applications in a variety of areas. In this tutorial, you have learned how to create these ERC20 tokens, and deploy them to a local blockchain using ganache, but you can challenge yourself by deploying it to a test net such as `Rinkeby` or even the `Mainnet`! You have also learned all the various ways you can transact using your token, and also how to make a smart contract transact your token.
+In this tutorial, you have learned how to create these ERC20 tokens, and deploy them to a local blockchain using ganache, but you can challenge yourself by deploying it to a test net such as `Rinkeby` or even the `Mainnet`! You also learned all the various ways you can transact using your token, and also how to make a smart contract transact your token.
 
 Congratulations on making it this far! Go forth and deploy your tokens!
 Happy coding!
