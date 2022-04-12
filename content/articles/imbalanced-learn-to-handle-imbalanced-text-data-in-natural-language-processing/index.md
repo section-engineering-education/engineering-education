@@ -621,3 +621,5 @@ You can get both the spam classification models we have implemented in this tuto
 - [Imbalanced-learn documentation](https://imbalanced-learn.org/stable/)
 - [Natural Language Processing tasks](https://monkeylearn.com/blog/natural-language-processing-techniques/)
 
+---
+Peer Review Contributions by: [Wilkister Mumbi](/engineering-education/authors/wilkister-mumbi/)
