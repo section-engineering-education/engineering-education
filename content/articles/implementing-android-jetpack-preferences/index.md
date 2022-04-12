@@ -4,9 +4,9 @@ status: publish
 published: true
 url: /implementing-android-jetpack-preferences/
 title: Implementing Android Jetpack Preferences
-description: This article will guide the reader on how to implement the JetPack library in an Android project.
+description: This article will guide the reader on how to implement Android preferences in an application.
 author: mercy-nyakio
-date: 2022-04-11T00:00:00-07:30
+date: 2022-04-12T00:00:00-06:30
 topics: [Languages]
 excerpt_separator: <!--more-->
 images:
@@ -14,7 +14,7 @@ images:
   - url: /engineering-education/implementing-android-jetpack-preferences/hero.png
     alt: Implementing Android Jetpack Preferences Hero Image
 ---
-A settings page gives users the ability to customize how they interact with an app. It is an excellent method for improving the overall user experience.
+A settings page gives users the ability to customize their interaction within an app. It is an excellent method for improving the overall user experience.
 <!--more-->
 For example, apps like YouTube allow users to choose between dark and light modes, pick the video quality, regulate notifications, as well as other characteristics with a single click.
 
@@ -214,46 +214,53 @@ Thank you."
 </PreferenceCategory>
 ```
 
-Below are the critical attributes in the root preferences. They will help you understand their usage in each preference in our application:
+Below are the critical attributes in the root preferences. They are crucial in understanding their usage in each preference in the application:
 
-1. `app: key` - This allows you to make additional adjustments to the preference anytime. During runtime, another preference can depend on another by referring to the key of the referenced preference.
+- `app: key` - It allows developers to make additional adjustments to the preference.
+- `app: summary` - A string that describes a particular preference.
 
-2. `app: summary` - A string that describes a particular preference.
+- `app: title`  and `dialog: title` - They show a particular preference or category preference heading. The `dialog title`, on the other hand, is tied to a particular dialog that pops up on the screen.
 
-3. `app: title`  and `dialog: title` - They show a particular preference or category preference heading. While the dialogue title will be of a particular dialog once popped up.
-4. `default: value` - Setting preferences with more choices must be included as a default value which indicates that the developer makes the initial setting before the user changes the application.
-5. `Summary: on` - Mostly used in switches. It indicates the string that will be set when switched to on.
-6. `Summary: off` - A string is set when a switch is set off.
-7. `app: dependency` - Indicates that a particular setting preference depends on another preference for its functionality. The dependent must be set to true for the dependent to function; otherwise will be inactive.
+- `default: value` - This setting preference has more choices and must be included as a default value. It indicates that the developer makes the initial setting before the user changes the application.
 
-### Step four: Working on the MainActivity.kt
-We need to ensure we have the capabilities to navigate between the two activities. We need to set an intention for the `MainActivity` to do so and add the following code to the `MainActivity.kt` file.
+- `summary: on` - Mostly used in switches. It highlights the string that will be set when switched on.
+
+- `summary: off` - A string is set when a switch is set to off.
+
+- `app: dependency` - It indicates that a particular setting preference depends on another preference for its functionality. The dependent must be set to true for other functions to work.
+
+### Step 4 - Working on the MainActivity.kt
+We need to implement the ability to navigate between the two activities. Therefore, we should add an intent in the `MainActivity`.
+
+To implement this functionality, add the following code to the `MainActivity.kt` file:
 
 ```kotlin
-  override fun onOptionsItemSelected(item: MenuItem): Boolean {
-        when (item.itemId) {
-            R.id.setting -> {
-                Toast.makeText(this,"You are getting ready for android preferences",Toast.LENGTH_LONG).show()
-                val intent = Intent(this, SettingsActivity::class.java)
-                startActivity(intent)
-            }
+override fun onOptionsItemSelected(item: MenuItem): Boolean {
+    when (item.itemId) {
+        R.id.setting -> {
+            Toast.makeText(this,"You are getting ready for android preferences",Toast.LENGTH_LONG).show()
+            val intent = Intent(this, SettingsActivity::class.java)
+            startActivity(intent)
         }
-        return super.onOptionsItemSelected(item)
     }
+    return super.onOptionsItemSelected(item)
+}
 ```
 
-The above code uses the menu `item` by calling it by its `id`. Then we display a toast once clicked, and we pass the intent of the activity we need to navigate. To navigate back to the `MainActivity` using the back button in the toolbar of the setting activity, add the following code snippet within the setting activity in the `manifest.xml` file.
+The above code invokes the menu `item` using its `id`. We then display a toast message once clicked. Next, we pass the intent of the activity that we need to navigate to. 
 
-```kotlin
+To navigate back to the `MainActivity` using the back button in the toolbar of the `setting activity`, add the following code within the setting activity in the `manifest.xml` file:
+
+```xml
 android:parentActivityName=".MainActivity"
 ```
 
-The code above notifies the current activity(child) that once the back button is clicked, it should go to the `MainActivity`, its parent.
+The code above notifies the current `activity(child)` that once the back button is clicked, it should go to the `MainActivity`.
 
-### Step five: Working on the SettingActivity.kt
-We need to make our settings functional. We shall be using [shared preferences](https://developer.android.com/reference/android/content/SharedPreferences). We will design so that a user selects a theme; a new theme will be loaded, light, dark, and system theme.
+### Step 5 - Working on the SettingActivity.kt
+We need to make our settings functional. We shall be using [shared preferences](https://developer.android.com/reference/android/content/SharedPreferences). 
 
-Ensure the activity class have the extra code snippet separated with a comma as shown below;
+A user will be able to choose from a light, dark, or system default theme. To add this feature, include the code below in the SettingsActivity:
 
 ```kotlin
 class SettingsActivity : AppCompatActivity(), SharedPreferences.OnSharedPreferenceChangeListener{
@@ -261,7 +268,7 @@ class SettingsActivity : AppCompatActivity(), SharedPreferences.OnSharedPreferen
 }
 ```
 
-To register our shared preferences, add the following code below the line `support action bar?.set` that always defaults in this activity.
+To register our shared preferences, add the following code below the line `support action bar?.set`:
 
 ```kotlin
 supportActionBar?.setDisplayHomeAsUpEnabled(true)
@@ -269,7 +276,7 @@ supportActionBar?.setDisplayHomeAsUpEnabled(true)
             .registerOnSharedPreferenceChangeListener(this)
 ```
 
-We now need to code our theme to change, as stated earlier. We override a function `onSharedPreferenceChanged,` as shown below, which will be within our class `SettingActivity.`
+We need to ensure that the app adopts a new theme. We override the `onSharedPreferenceChanged,` in the `SettingActivity` class.
 
 ```kotlin
 override fun onSharedPreferenceChanged(sharedPreferences: SharedPreferences?, key: String?) {
@@ -294,10 +301,13 @@ override fun onSharedPreferenceChanged(sharedPreferences: SharedPreferences?, ke
     }
 ```
 
-The code above uses the `if` statement to check if we are on the right preferences using its key. In this case, we check if we are on the list preference of the general preference category. If the key is equal, we use the `when` control flow to set each value to the correct theme when clicked.
+In the above code, the `if` statement checks if we are on the right preferences using its key. 
 
-We also need to destroy the shared preferences that we registered because we have completed using them or save the memory space that the preference is occupying.
-Add the below code to unregister the shared preferences;
+In this case, we check if we are on the list preference of the general preference category. 
+
+If the key is correct, we use the `when` control flow to set each value to the correct theme when clicked.
+
+We also need to destroy the shared preferences that we registered because we have completed using them. This saves memory space. To unregister the shared preferences, use the following code:
 
 ```kotlin
  override fun onDestroy() {
@@ -307,13 +317,15 @@ Add the below code to unregister the shared preferences;
     }
 ```
 
-### Step six: Running the application
-You can run the application to a virtual device(emulator) or a physical device with an `SDK` version upper than the set one during app configuration.
+### Step 6 - Running the application
+You can run the application on a virtual device(emulator) or a physical device.
 
-Click [here](https://github.com/mercie-nyakio/Android-preferences) to get the complete code.
+The full code can be found on this [GitHub repository](https://github.com/mercie-nyakio/Android-preferences).
 
 ### Conclusion
-Hopefully, you have gotten the hang of Android Preferences and their uses. To understand more about using the android preference library, create or add more settings to the project.
+In this article, we have discussed how to use Android Preferences in an application.
+
+You can, therefore, use this knowledge to craft more beautiful and quality applications.
 
 Happy coding!
 
