@@ -1,5 +1,21 @@
-An imbalanced dataset in natural language processing is a dataset whose number of data samples are not the same in the different classes. Imbalance occurs when a dataset has two classes and one class have more data samples than the other class. 
+---
+layout: engineering-education
+status: publish
+published: true
+url: /imbalanced-learn-to-handle-imbalanced-text-data-in-natural-language-processing/
+title: Using Imbalanced-Learn to handle imbalanced text data in Natural Language Processing
+description: This tutorial will guide a reader how to build a spam classifier model using Python and natural language processing without balancing the classes in the dataset.
+author: donnex-wafula
+date: 2022-04-12T00:00:00-20:00
+topics: [Machine Learning]
+excerpt_separator: <!--more-->
+images:
 
+  - url: /engineering-education/imbalanced-learn-to-handle-imbalanced-text-data-in-natural-language-processing/hero.jpeg 
+    alt: Using Imbalanced-Learn in Natural Language Processing Hero Image
+---
+An imbalanced dataset in natural language processing is a dataset whose number of data samples are not the same in the different classes. Imbalance occurs when a dataset has two classes and one class have more data samples than the other class. 
+<!--more-->
 For example, one class has 3000 samples and the other one has 300 samples. The class with more data samples is known as the majority class while the other one is known as the minority class. 
 
 When we train a model with an imbalance the model will be biased towards the majority class. This makes the model make wrong predictions and give inaccurate results. It has a major impact when we use the model in production and the stakeholders depend on it for business operations.
