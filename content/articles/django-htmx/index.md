@@ -1,7 +1,7 @@
 ### How to Build templates for Django Applications with HTMX
 
 ### Introduction
-Did you know that it is possible to use AJAX without writing a single line of JavaScript code?
+Did you know it is possible to use AJAX without writing a single line of JavaScript code?
 Are you a Django developer that is not really familiar with JavaScript and will like to display components of your application asynchronously?
 If these questions have come to your mind, you are in the right place.
 In this article, I will build a simple Django application that creates, deletes content from the database, and displays the current content asynchronously without the page refreshing. This is important if you don't want to go through the stress of using a library like React or Vue.
@@ -16,8 +16,8 @@ The project built in this tutorial can be found on [GitHub](https://github.com/k
 The general idea behind [HTMX](https://htmx.org/) is simplifying web application development by using HTML attributes to incorporate [AJAX](https://htmx.org/docs#ajax), [CSS Transitions](https://htmx.org/docs#css_transitions), [WebSockets](https://htmx.org/docs#websockets), and [Server-Sent Events](https://htmx.org/docs#sse) directly into HTML. You don’t need to write any JavaScript for the basic things required to run a full-fledged web application unlike React, Vue, and other frontend libraries. To use HTMX in Django, you don’t need to install anything, you just need to attach CDN to your HTML and you are good to go.
 
 ### Creating, Listing, and Deleting with HTMX and Django
-In this section, you will learn how to build the basic create, list and delete functionality with HTMX and Django to illustrate how HTMX in Django. We will be building a contact list application.
-Something to note, when working with HTMX if you must return something from the server-side it must be HTML fragments, not JSON.
+In this section, you will learn how to build the basic create, list, and delete functionality with HTMX and Django to illustrate how HTMX in Django. We will build a contact list application.
+Something to note, when working with HTMX, if you must return something from the server-side, it must be HTML fragments, not JSON.
 Let’s get right into it!
 First, let’s create an app for our contacts. You can do this by going to the root of your application and running the following command.
 ```bash
@@ -93,7 +93,7 @@ urlpatterns = [
 
 ]
 ```
-Let’s now create templates for the form and the contact list. To do this, go to the directory for `app` and create a new directory called *templates/* (the name of the file is mandatory). In the directory you just created, create new files with names *base.html, contact.html, contact-list.html*. Now, paste the code below in the *base.html* file you just created. The code below contains all the **Content Delivery Network** (CDN) required for the whole project to display properly.
+Let’s now create templates for the form and the contact list. To do this, go to the directory for `app` and create a new directory called *templates/* (the name of the file is mandatory). In the directory you just created, create new files with names *base.html, contact.html, contact-list.html*. Now, paste the code below into the *base.html* file you just created. The code below contains all the **Content Delivery Network** (CDN) required for the entire project to display properly.
 ```html
 {% load static %}
 <!DOCTYPE html>
@@ -126,11 +126,11 @@ Let’s now create templates for the form and the contact list. To do this, go t
 </html>
 ```
 
-*Note: We will use Bootstrap just for styling*
+*Note: We will use bootstrap just for styling.*
 
-Now let’s get to writing the template that will create and list contacts without the page reloading. To do this with htmx, you will need 2 attributes; `hx-post`( for Issues a **`POST`** request to the specified URL), `hx-target`(load response into another element i.e. list in this case). Paste the code below in the contact.html file you just created, to implement the form.
+Now let’s get to writing the template that will create and list contacts without the page reloading. To do this with htmx, you will need 2 attributes; `hx-post`( for Issues a **`POST`** request to the specified URL), `hx-target`(load response into another element i.e. list in this case). Paste the code below in the contact.html file you just created to implement the form.
 
-In the code above you will see that the submitting of the form triggers `<div id="contact-list">` which displays the current list with the newly submitted contact.
+In the code above, you see that the submitting of the form triggers `<div id="contact-list">` which displays the current list with the newly submitted contact.
 ```html
 
 {% extends 'base.html' %}
@@ -220,11 +220,11 @@ To add the delete functionality, replace the code you have in *contact.html* wit
 {% endif %}
 ```
 
-You can now test out the app functionality by running the server with `python manage.py runserver` then go to the contact list URL([http://127.0.0.1:8000/contacts/](http://127.0.0.1:8000/contacts/)) and you will see that everything is working correctly.
+You can now test out the app functionality by running the server with `python manage.py runserver` then go to the contact list URL([http://127.0.0.1:8000/contacts/](http://127.0.0.1:8000/contacts/)) and you will see that everything works correctly.
 
 ![final outcome of code](output.png)
 
 ### Conclusion
 You have come to the end of this tutorial, and we have been able to learn about htmx and how it can be used in Django applications. We looked at how to create, list, and delete data from the database and display current data without the page refreshing through the use of htmx.
 
-You can take things a step further by using htmx to swap HTML or CSS components and also induce transitions if you want to. The greatest advantage of using htmx is that you don’t need JavaScript at all, so if you intend on building a better contact application or maybe a simple e-commerce site, I’ll advise you to use htmx.
+You can take things a step further by using htmx to swap HTML or CSS components and also induce transitions if you want to. The greatest advantage of using htmx is that you don’t need JavaScript at all, so if you intend to build a better contact application or maybe a simple e-commerce site, I’ll advise you to use htmx.
