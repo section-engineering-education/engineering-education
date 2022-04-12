@@ -1,8 +1,25 @@
-Go is a fast-growing language among developers. Its popularity is still growing and unshaken. Golang ecosystem has a tone of native libraries. However, it has third-party libraries that developers can still choose to use.
+Go is a fast-growing language among developers. Its popularity is steadily growing and unshaken. Golang ecosystem has a tone of native libraries. However, it has third-party libraries that developers can still choose to use.
 
-When creating REST APIs with Go, you can choose to use various third-party libraries such as Gorm, Go fiber, Gin, fast HTTP, etc. However, due to the many libraries that the Go ecosystem has, you can also choose to use native libraries that Go has. These are libraries that you don't have to download to your local project when building your APIs. In this guide, we will build a complete and functional REST API only using native libraries that Golang has.
+When creating REST APIs with Go, you can choose to use various third-party libraries, such as Gorm, Go fiber, Gin, fast HTTP, etc. However, because of the many libraries that the Go ecosystem has, you can also choose to use native libraries that are native to Golang. These are libraries you don't have to download to your local project when building your APIs.
 
-### Requirements
+In this guide, we will build a basic REST API using native libraries that Golang has. We will not use any third-party libraries, meaning we won't download any library to the local project.
+
+### Table of content
+
+- [Table of content](#table-of-content)
+- [Prerequisites](#prerequisites)
+- [Set a Golang project](#set-a-golang-project)
+- [Create a CRUD Golang REST API using native modules](#create-a-crud-golang-rest-api-using-native-modules)
+- [Setting up the movie handlers](#setting-up-the-movie-handlers)
+  - [Create an API test handler](#create-an-api-test-handler)
+  - [Get Movies handler](#get-movies-handler)
+  - [Get a single movie handler](#get-a-single-movie-handler)
+  - [Add a movie handler](#add-a-movie-handler)
+  - [Delete a movie handler](#delete-a-movie-handler)
+- [Initialize the server and routes](#initialize-the-server-and-routes)
+- [Conclusion](#conclusion)
+
+### Prerequisites
 
 To follow along with this tutorial, it's essential to have prior knowledge of using Golang. Therefore, ensure you have the Golang IDE installed on your computer to execute the Golang code. Once installed, run the `go version` command to verify Go is installed.
 
@@ -10,17 +27,17 @@ Check this [guide](/engineering-education/golang-part-2-programming-basics/) to 
 
 ### Set a Golang project
 
-To start a Go project, you need to first initialize Go within your project. In this case, create a project folder where you want your app to live. Open a command line that points to the newly created directory, then initialize Golang using the following command:
+To start a Go project, you need to first initialize Go within your project. Here, create a project folder where you want your app to live. Open a command line that points to the newly created directory, then initialize Golang using the following command:
 
 ```bash
 go mod init native-go-api
 ```
 
-This will instantiate a Go by creating a `go.mod` file. Any Go package that you install and its dependencies are saved here. The `go.mod` file has a `native-go-api` module name. This helps you create local modules and import them so that other local modules of your project can use them.
+This will instantiate Go by creating a `go.mod` file. Any Go package that you install and its dependencies are saved here. The `go.mod` file has a `native-go-api` module name. This helps you create local modules and import them so that other local modules of your project can use them.
 
 ### Create a CRUD Golang REST API using native modules
 
-Let's dive in and create a Golang REST API using native modules. This tutorial will create a straightforward movie API use case. This will help showcase how to use these native libraries in a typical Golang application.
+Let's dive in and create a Golang REST API using native modules. This tutorial will create a straightforward movie API. This will help showcase how to use these native libraries in a typical Golang application.
 
 First, you need to model the data you want your API to interact with. To do this, create a `models` folder at the root directory of your project. Then create a `movie.go` file and add the following model:
 
@@ -35,9 +52,9 @@ type Movie struct {
 }
 ```
 
-A model sets a blueprint of your API. It sets the data and its values. This adds the data types to each movie property the API will use. When using Go to create a model, use the keyword `struct`. In this case, set a `struct` of type `Movie` and add its properties as shown in the above code block.
+A model sets a blueprint of your API. It sets the data and its values. This adds the data types to each movie property the API will use. When using Go to create a model, use the keyword `struct`. Here, set a `struct` of type `Movie` and add its properties as shown in the above code block.
 
-This API will interact with dummy data as the application database. Therefore, go ahead and create a dummy database within your application. To do this, create a folder `db` inside your project directory. Inside this `db` folder, create a `db.go` file and add the following code:
+This API will interact with dummy data as the application database. Therefore, create a dummy database within your application. To do this, create a folder `db` inside your project directory. Inside this `db` folder, create a `db.go` file and add the following code:
 
 ```go
 package db
@@ -52,13 +69,13 @@ var (
 )
 ```
 
-This will set up a dummy database, `Moviedb`. This uses the `make` built-in function. It allocates and initializes a memory object of type `map`. It takes a type as its first argument. `make` type returns the same data as the type of its argument. In this case, `make` will refer to the type of `Movie` model set for the movies data.
+This will set up a dummy database, `Moviedb`. This uses the `make` built-in function. It allocates and initializes a memory object of type `map`. It takes a type as its first argument. `make` type returns the same data as the type of its argument. Here, `make` will refer to the type of `Movie` model set for the movies data.
 
 ### Setting up the movie handlers
 
-An API uses HTTP methods to interact with your data. In this case, you need to set up the right function that refers to the HTTP methods such as GET, POST, PUT, and DELETE. This will also set up the request and response message that every HTTP method should return.
+An API uses HTTP methods to interact with your data. Here, you need to set up the right function that refers to the HTTP methods such as GET, POST, PUT, and DELETE. This will also set up the request and response message that every HTTP method should return.
 
-In this example, the API will always return any data in JSON format. Go ahead and set up a `ReturnJsonResponse` function for returning movies data in JSON format. To do this, create a `utils` folder inside your project directory. Inside this `utils` folder, create a `utils.go` file and add the following code:
+In this example, the API will always return any data in JSON format. Set up a `ReturnJsonResponse` function for returning movies data in JSON format. To do this, create a `utils` folder inside your project directory. Inside this `utils` folder, create a `utils.go` file and add the following code:
 
 ```go
 package utils
@@ -77,7 +94,7 @@ func ReturnJsonResponse(res http.ResponseWriter, httpCode int, resMessage []byte
 
 This will use the native `http` module that Go has. The `ReturnJsonResponse` function will convert any response that the HTTP server returns and set the `Content-type` into JSON format.
 
-Once this is set, go ahead and set your HTTP handler functions. First, create a `handler` folder inside your project directory. Inside this `handler` folder, create a `movies.go` file and start importing the Go native modules and the local modules created in the above steps, as shown below:
+Once this is set, specify your HTTP handler functions. First, create a `handler` folder inside your project directory. Inside this `handler` folder, create a `movies.go` file and start importing the Go native modules and the local modules created in the above steps, as shown below:
 
 ```go
 package handler
@@ -97,7 +114,7 @@ Next, create the handler functions as follows.
 
 #### Create an API test handler
 
-To test if the API is working correctly, set a test handler that does not interact with the set API data.
+Set a test handler that does not interact with the set API data to test if the API works correctly.
 
 ```go
 // root api test handler 
@@ -158,11 +175,11 @@ func GetMovies(res http.ResponseWriter, req *http.Request) {
 }
 ```
 
-This handler will access the database and check if there are any movie records. The server will fetch this list and return the response to the user. The serve will parse the movie data into JSON format then return the response message with the fetched data.
+This handler will access the database and check if there are any movie records. The server will fetch this list and return the response to the user. The serve will parse the movie data into JSON format, then return the response message with the fetched data.
 
 #### Get a single movie handler
 
-Additionally, you can fetch a single movie inside the movies list database. The movie structure has an ID unique to every movie in this case. When fetching a single movie, the server will use the id value as the parameter to decide which movie the user wat to fetch.
+Additionally, you can fetch a single movie from the movies list database. The movie structure has an ID unique to every movie in this case. When fetching a single movie, the server will use the id value as the parameter to decide which movie the user wants to fetch.
 
 ```go
 // Get a single movie handler
@@ -342,7 +359,7 @@ To execute the above handlers, you need to:
 - Initialize the database data, and
 - Set up the routes that point to each handler function.
 
-To do so, create a `main.go` file inside the project directory. Then set up the server as follows:
+To do so, create a `main.go` file inside the project directory. Then set up the server:
 
 First, import the local module and the Go native modules.
 
@@ -415,15 +432,17 @@ http.HandleFunc("/movie/delete", handler.DeleteMovie)
 ```go
 // listen port
 err := http.ListenAndServe(":3000", nil)
-// print any server based error messages
+// print any server-based error messages
 if err != nil {
  fmt.Println(err)
  os.Exit(1)
 }
 ```
 
-At this point, your server should be ready. To test it, run `go run main.go` and start interacting with the different routes of your API.
+Your server should be ready. To test it, run `go run main.go` and start interacting with the different routes of your API.
 
 ### Conclusion
 
-This API has taught you how to use the native Go modules and create a basic movie API. These native modules help you interact with the native Golang language. The only problem with this is that it requires you to write many lines of code that you could, however, avoid when using third-party libraries. Some of the Golang third-party libraries that you can use to set a server include, [mux](/engineering-education/build-a-rest-api-application-using-golang-and-postgresql-database/), [Go Fiber](/engineering-education/how-to-use-go-fiber-and-gorm-frameworks-to-run-a-golang-application/), [Gorm](/how-to-use-go-fiber-and-gorm-frameworks-to-run-a-golang-application/), and [Echo](/engineering-education/how-to-set-up-golong-api-with-the-prisma-orm/).
+This API has taught you how to use the native Go modules and create a basic movie API. These native modules help you interact with the vanilla Golang code.
+
+Some of the Golang third-party libraries you can use to set a server include, [mux](/engineering-education/build-a-rest-api-application-using-golang-and-postgresql-database/), [Go Fiber](/engineering-education/how-to-use-go-fiber-and-gorm-frameworks-to-run-a-golang-application/), [Gorm](/how-to-use-go-fiber-and-gorm-frameworks-to-run-a-golang-application/), and [Echo](/engineering-education/how-to-set-up-golong-api-with-the-prisma-orm/).
