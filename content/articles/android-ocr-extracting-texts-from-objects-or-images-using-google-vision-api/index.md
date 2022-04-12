@@ -30,7 +30,7 @@ To get begin, you'll need to do the following:
 
 - Designing the project's XML camera UI for taking photos and selecting images from the gallery.
 
-- Using image cropper in adjusting the size of images.
+- Use an image cropper in adjusting the size of images.
 
 
 ### Implementation
@@ -41,7 +41,7 @@ I've divided the actual coding into five major steps.
 
 - Launch your Android Studio.
 
-- Create new Studio project by going to `File > New > New Project` from the menu.
+- Create a new Studio project by going to `File > New > New Project` from the menu.
 
 - In the `New Project` window, pick `Empty Activity` and hit Next.
 
@@ -49,7 +49,7 @@ I've divided the actual coding into five major steps.
 
 ### Step 2 - Adding Required Gradle Dependencies.
 
-- Include the gradle dependencies listed below in your app level build.gradle file of your project and hit sync.
+- Include the Gradle dependencies listed below in your app-level build.gradle file of your project and hit sync.
 
 
 ```java
@@ -59,7 +59,7 @@ I've divided the actual coding into five major steps.
 ```
 
 
-### Step 3 - Setting Up Required Android Manifest Rermissions.
+### Step 3 - Setting Up Required Android Manifest Permissions.
 
 - Define AndroidManifest permissions for accessing camera and external storage by adding the following lines
 
@@ -118,7 +118,7 @@ Open the `colors.xml` file in the same `values` directory and paste the code bel
     </resources>
 ```
 
-Inside the drawable directory, create a vector resource asset by right clicking on `drawable > New > Vector Asset` click on `Clip Art` and look for camera icon. name `it ic_action_image` hit `Next` and `Finish`.
+Inside the drawable directory, create a vector resource asset by right-clicking on `drawable > New > Vector Asset` clicking on `Clip Art`, and looking for camera icon. name `it ic_action_image` hit `Next` and `Finish`.
 
 Now, in the same drawable directory, create and add the following xml files;
 - `edit_textbg.xml`
@@ -191,7 +191,7 @@ To start creating your project User Interface(UI), navigate to `res > layout` an
 
 #### Creating The XML User Interface
 
-To design the graphical user interface for the application, here is the XML code. You can copy and paste it on your `activity_main.xml` file.
+To design the graphical user interface for the application, here is the XML code. You can copy and paste it into your `activity_main.xml` file.
 
 ```xml
     <?xml version="1.0" encoding="utf-8"?>
@@ -369,7 +369,7 @@ Inside the OnCreate method, initialize your variables by finding them by their i
 
 ##### Selecting or Capturing Images
 
-Create a method that initiates the image selection dialog where we are given the options to choose between picking an image from the gallery or pointing our camera to an object whenever we click on the camera icon on the interface.
+Create a method that initiates the image selection dialog where we are given the option to choose between picking an image from the gallery or pointing our camera to an object whenever we click on the camera icon on the interface.
 
 Once the method has been created, invoke that method inside the onclickedListener of the image selector and also the textView below the selector.
 
@@ -600,7 +600,7 @@ In the code snippet above:
 
 ##### Saving the Extracted Text in your Device
 
-To save the text processed from the digital image in your documents folder in your android device, paste the following code to the `Save text` button and call the `saveTextFile` method.
+To save the text processed from the digital image in your documents folder on your android device, paste the following code to the `Save text` button and call the `saveTextFile` method.
 
 
 ```java
@@ -672,7 +672,7 @@ The `saveTextFile` method is where we define the directory and format in which o
 
 - Click on the camera icon to take the picture or select it from the device.
 ![Image selector](/engineering-education/android-ocr-extracting-texts-from-objects-or-images-using-google-vision-api/selection.jpg)
-- Once the image is loaded on the device, perform cropping on where there is the text you want to extract and hit `Crop` on top right corner.
+- Once the image is loaded on the device, perform cropping on where there is the text you want to extract and hit `Crop` on the top right corner.
 ![Crop image](/engineering-education/android-ocr-extracting-texts-from-objects-or-images-using-google-vision-api/crop-image.jpg)
 - Now the OCR performs the logic and you will finally see the image and detected text
 ![Uploaded image](/engineering-education/android-ocr-extracting-texts-from-objects-or-images-using-google-vision-api/uploaded-image.jpg)
