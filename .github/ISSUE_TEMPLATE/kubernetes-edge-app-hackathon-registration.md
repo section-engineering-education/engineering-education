@@ -65,6 +65,7 @@ All other projects will receive honorable mentions on our website.
 ### Judges
 - [Harry Borrelli](https://www.linkedin.com/in/harryborrelli/)
 - [Tom McCollough](https://www.linkedin.com/in/wtmccollough/)
+- [Nate Grieb](https://www.linkedin.com/in/nate-grieb-44241654/)
 
 
 ### Deadline: April 22nd 2022 @ 11:59 MST
