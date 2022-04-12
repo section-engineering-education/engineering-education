@@ -33,7 +33,20 @@ Finally, on the generative fourth type of generative model, we can discuss the d
 #### Diffusion models
 Let's begin by understanding why this model is called like this.
 
-Diffusion models gradually add Gaussian noise and then reverses this process. 
+`Diffusion` is a term used in a physics class about thermodynamics. If you have a system with a high concentration of a substance, such as perfume, in a certain place, then it is not in equilibrium. To transition into equilibrium, the diffusion process happens. The perfume molecules move from a place of higher concentration to everywhere in the system such that the system becomes the same everywhere. Diffusion makes everything homogenous in the end.
+
+This non-equilibrium thermodynamic state, is the inspiration behind diffusion models. In diffusion models, we have a Markov chain (a sequence of variables whereby the state of one varibale depends on the previous event) where noise is added to the data. We take an image, and during the forward diffusion process, we add a certain amount of noise to the image sequencially.
+
+We store the now noisier image and go on to generate the new image in the sequence by adding more noise onto it. This process is repeated a number of times. If we perform this process a couple amount of times, we get an image that is pure noise.
+
+So, how can we generate an image from this noisy image?
+
+We take a neural network and learn to reverse this diffusion process. The backward diffusion process involves the same networks, the same weights being applied at each step to generate the image from `t` to `t-1`. To simplify the problem even further, one could try to predict not the image, but the noise at each step, which needs to be subtracted from the image, instead of letting the network predict the image.
+
+In any case, the choice of the architecture of the neural network must be such that it preserves the data dimensionality.
+
+### Wrapping up
+To finish up, we've learned that diffusion models gradually add Gaussian noise and then reverses this process.
 
 ### Further reading
 - [Diffusion Models Beat GANs on Image Synthesis](https://arxiv.org/abs/2105.05233)
