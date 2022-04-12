@@ -7,7 +7,7 @@ assignees: hborrelli1, hectorkambow
 
 ---
 
-**April 11th - 18th 2022**
+**April 11th - 22nd 2022** Hackathon ends on the 
 
 In this edge-based hackathon, we will focus on Section's [Kubernetes Edge Interface (KEI)](https://www.section.io/docs/explanations/kei/) solution. [KEI](https://www.section.io/kubernetes-edge-interface/) makes many edge clusters appear as a single cluster, enabling developers to quickly and easily deploy applications across a distributed Edge.
 
@@ -62,4 +62,9 @@ All other projects will receive honorable mentions on our website.
 - Was the application successfully deployed to the edge using KEI?
 - The application functions completely and as described in the description.
 
-### Deadline: April 18th 2022 @ 11:59 MST
+### Judges
+- [Harry Borrelli](https://www.linkedin.com/in/harryborrelli/)
+- [Tom McCollough](https://www.linkedin.com/in/wtmccollough/)
+
+
+### Deadline: April 22nd 2022 @ 11:59 MST
