@@ -396,3 +396,6 @@ You can get the Python implementation of this tutorial in Google Colab [here](ht
 - [What is concept drift?](https://datatron.com/what-is-model-drift/)
 - [Model monitoring](https://valohai.com/model-monitoring/)
 - [Model drift in machine learning](https://towardsdatascience.com/model-drift-in-machine-learning-models-8f7e7413b563)
+
+---
+Peer Review Contributions by: [Willies Ogola](/engineering-education/authors/willies-ogola/)
