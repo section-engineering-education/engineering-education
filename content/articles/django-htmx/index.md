@@ -1,6 +1,19 @@
-### How to Build templates for Django Applications with HTMX
+---
+layout: engineering-education
+status: publish
+published: true
+url: /how-to-build-templates-for-django-applications-with-htmx/
+title: How to Build templates for Django Applications with HTMX
+description: This tutorial will guide the reader on how to build templates for Django applications with HTMX.
+author: muhammed-ali
+date: 2022-04-12T00:00:00-09:40
+topics: [Languages]
+excerpt_separator: <!--more-->
+images:
 
-### Introduction
+  - url: /engineering-education/how-to-build-templates-for-django-applications-with-htmx/hero.jpg
+    alt: How to Build templates for Django Applications with HTMX Hero Image
+---
 Did you know it is possible to use AJAX without writing a single line of JavaScript code?
 Are you a Django developer that is not really familiar with JavaScript and will like to display components of your application asynchronously?
 If these questions have come to your mind, you are in the right place.
@@ -228,3 +241,6 @@ You can now test out the app functionality by running the server with `python ma
 You have come to the end of this tutorial, and we have been able to learn about htmx and how it can be used in Django applications. We looked at how to create, list, and delete data from the database and display current data without the page refreshing through the use of htmx.
 
 You can take things a step further by using htmx to swap HTML or CSS components and also induce transitions if you want to. The greatest advantage of using htmx is that you don’t need JavaScript at all, so if you intend to build a better contact application or maybe a simple e-commerce site, I’ll advise you to use htmx.
+
+---
+Peer Review Contributions by: [Mohamed alghadban](/engineering-education/authors/mohamed-alghadban/)
