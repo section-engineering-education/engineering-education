@@ -1,5 +1,21 @@
-Serialization is the process of converting a data structure to a format that can be stored in a storage place or sent over a computer network and then reconfigured in another computer environment. Serialization saves an item as a byte string in storage.
+---
+layout: engineering-education
+status: publish
+published: true
+url: /serialization-in-cplusplus/
+title: Serialization in Cplusplus
+description: This article will discuss Serialization and how it is used in Cplusplus. It will also go through the importance of JSON stream, JSON syntax and JSON data value in the serialization process.
+author: sarah-wambui
+date: 2022-03-25T00:00:00-06:00
+topics: [Languages]
+excerpt_separator: <!--more-->
+images:
 
+  - url: /engineering-education/serialization-in-cplusplus/hero.png
+    alt: Serialization in Cplusplus Hero Image
+---
+Serialization is the process of converting a data structure to a format that can be stored in a storage place or sent over a computer network and then reconfigured in another computer environment. Serialization saves an item as a byte string in storage.
+<!--more-->
 After producing the byte stream, the user can send it to a detached receiver through a network. On the other hand, deserialization is the opposite of Serialization. It uses the byte stream data to recreate the original object form.
 
 Serialization allows sending serialized object data to a server, maintaining its permanency. It also guarantees a chance to deserialize it and create a distinct object format.
@@ -217,3 +233,6 @@ C++ object serialization has been brought up in this article, including its diff
 There is no easy data permanence that can resolve these complex problems. Therefore, Serialization is not as straightforward as it appears. There is, however, a variety of implementations to accompany C++ in its third-party libraries.
 
 Happy coding!
+
+---
+Peer Review Contributions by: [Monica Masae](/engineering-education/authors/monica-masae/)
