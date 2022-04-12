@@ -314,7 +314,7 @@ To design the graphical user interface for the application, here is the XML code
 ```
 
 Your final output should be something similar to this
-[img]
+![OCR Interface](/engineering-education/android-ocr-extracting-texts-from-objects-or-images-using-google-vision-api/interface.jpg)
 
 
 #### Java Code Implementation.
@@ -446,6 +446,9 @@ The method is executed when `Gallery` is selected.
     }
 
 ```
+
+The selection looks like this;
+![Image selector](/engineering-education/android-ocr-extracting-texts-from-objects-or-images-using-google-vision-api/selection.jpg)
 
 ##### Managing Permissions
 
@@ -667,7 +670,13 @@ The `saveTextFile` method is where we define the directory and format in which o
  
 ### Demo
 
-
+- Click on the camera icon to take the picture or select it from the device.
+![Image selector](/engineering-education/android-ocr-extracting-texts-from-objects-or-images-using-google-vision-api/selection.jpg)
+- Once the image is loaded on the device, perform cropping on where there is the text you want to extract and hit `Crop` on top right corner.
+![Crop image](/engineering-education/android-ocr-extracting-texts-from-objects-or-images-using-google-vision-api/crop-image.jpg)
+- Now the OCR performs the logic and you will finally see the image and detected text
+![Uploaded image](/engineering-education/android-ocr-extracting-texts-from-objects-or-images-using-google-vision-api/uploaded-image.jpg)
+![Detected text](/engineering-education/android-ocr-extracting-texts-from-objects-or-images-using-google-vision-api/detected-text.jpg)
 
 #### References
 
