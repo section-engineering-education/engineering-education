@@ -20,6 +20,10 @@ Below you will find full details on the hackathon and any requirements.
 ### Eligibility
 Open to all EngEd students (participants can work individually or in teams of EngEd students). **By submitting this issue form you will have successfully signed up and we will reach out with next steps.** 
 
+**We will need the information below to follow up with next steps - and get you set up with a test enviroment:**
+
+**Your Full Name, email, and Domain (URL) project link.**
+
 ### Requirements
 Once your K8s Edge application is complete and deployed, create a pull request to attach your submission to. 
 
