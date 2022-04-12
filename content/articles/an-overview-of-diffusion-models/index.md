@@ -45,8 +45,15 @@ We take a neural network and learn to reverse this diffusion process. The backwa
 
 In any case, the choice of the architecture of the neural network must be such that it preserves the data dimensionality.
 
+Why not use GANs instead?
+
+GANs are used to generate high fidelity and photorealistic image generations. As demonstrated in this [paper](ttps://arxiv.org/abs/2105.05233), diffusion models produce even better realistic images than GANs. Diffusion models are more faithful to the data in a sense. While a GAN gets random noise, or a class conditioning variable as input, and then produces a realistic sample, diffusion models tend to be much slower, iterative, and a much more guided process.  
+
+When reverting from noise to the real image by going through iterations and iterations of denoising, there is little room for going very far astray. The generation step goes through each checkpoint, and at each step, more and more details can be added into the image. 
+
 ### Wrapping up
-To finish up, we've learned that diffusion models gradually add Gaussian noise and then reverses this process.
+To finish up, we've learned that diffusion models gradually add Gaussian noise and then reverses this process. They have been used to explore the problem of text-conditional image synthesis to produce photorealistic samples from images and captions. You can read about it in this [paper](https://arxiv.org/abs/2112.10741).
 
 ### Further reading
-- [Diffusion Models Beat GANs on Image Synthesis](https://arxiv.org/abs/2105.05233)
+- [Diffusion Models Beat GANs on Image Synthesis](https://arxiv.org/abs/2105.05233).
+- [GLIDE: Towards Photorealistic Image Generation and Editing with Text-Guided Diffusion Models](https://arxiv.org/abs/2112.10741).
