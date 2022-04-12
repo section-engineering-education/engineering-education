@@ -31,13 +31,13 @@ The transactions conducted using blockchain are verifiable. Thus, only transacti
 
 Blockchain has other mechanisms that make its integration into the Internet of Things a major step towards ensuring data security. It embraces decentralized control of data and the proof of work concept. Decentralized management of IoT data means that no single entity or user can control the massive amount of data generated and transferred using IoT devices. This makes the data transmission process more transparent and also challenging for hackers to target an organization's data.
 
-The [proof of work](https://www.investopedia.com/terms/p/proof-work.asp) (PoW) concept means that an authentication process verifies data eligibility after every transaction in the network. This process aims to avoid counterfeits created by duplication. Once a transaction undergoes this process, it remains in the system undeletable and unmodifiable. Thus, eliminating the risk of loss of records.
+The [proof of work (PoW)](https://www.investopedia.com/terms/p/proof-work.asp) concept means that an authentication process verifies data eligibility after every transaction in the network. This process aims to avoid counterfeits created by duplication. Once a transaction undergoes this process, it remains in the system undeletable and unmodifiable. Thus, eliminating the risk of loss of records.
 
 #### Scalability challenges
 IoT experiences several scalability challenges owing to various reasons, such as:
 
-- **Low processing power and storage:** - Several IoT devices, like smart sensors, have small processing and storage units that cannot support running security protocols, such as [Transport Layer Security (TLS) and Security Socket Layer (SSL)]
-- **Lengthy sessions:** - Many security solutions rely on having a shared encryption key that remains valid during the entire duration of that session. In this case, long-running sessions become problematic, as is the case for IoT devices. Hackers can wiretap the line and track the communication patterns to discern shared information.
+- **Low processing power and storage:** Several IoT devices, like smart sensors, have small processing and storage units that cannot support running security protocols, such as Transport Layer Security (TLS) and Security Socket Layer (SSL).
+- **Lengthy sessions:** Many security solutions rely on having a shared encryption key that remains valid during the entire duration of that session. In this case, long-running sessions become problematic, as is the case for IoT devices. Hackers can wiretap the line and track the communication patterns to discern shared information.
 
 Blockchain solves scalability issues by allowing for the fast processing of transactions between IoT devices. Even as more IoT devices join the network, blockchain always finds ways of incorporating them without compromising the processing speed of the requested transactions.
 
