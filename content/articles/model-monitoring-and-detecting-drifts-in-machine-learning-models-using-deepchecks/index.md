@@ -1,5 +1,21 @@
-Model monitoring is an important stage in machine learning that keeps track of a trained machine learning model to help developers detect any changes in the model that may negatively affect the business operation. A good machine learning team should continuously monitor the model to detect any changes in model performance. These are known as model drifts.
+---
+layout: engineering-education
+status: publish
+published: true
+url: /model-monitoring-and-detecting-drifts-in-machine-learning-models-using-deepchecks/
+title: Model monitoring and detecting drifts in machine learning models using Deepchecks
+description: In this tutorial, we will build a customer classification model and implement Deepchecks to detect any model drifts
+author: simon-ndiritu
+date: 2022-04-12T00:00:00-15:30
+topics: [Machine Learning]
+excerpt_separator: <!--more-->
+images:
 
+  - url: /engineering-education/model-monitoring-and-detecting-drifts-in-machine-learning-models-using-deepchecks/hero.png
+    alt: Model monitoring using Deepchecks Hero Image
+---
+Model monitoring is an important stage in machine learning that keeps track of a trained machine learning model to help developers detect any changes in the model that may negatively affect the business operation. A good machine learning team should continuously monitor the model to detect any changes in model performance. These are known as model drifts.
+<!--more-->
 Many businesses such as financial institutions depend on machine learning models for day-to-day operations. A company like PayPal uses machine learning models to detect fraudulent transactions. Model monitoring will keep track of the model to detect any changes in the fraud detection system. This will enable the developers to make changes in the model before there is a catastrophic impact.
 
 Changes in model performance are due to changes in the input data, model features, target labels, and independent variables. It may also be due to the depreciated libraries and dependencies that the model uses. This leads to poor model predictions and poor model generalization. 
