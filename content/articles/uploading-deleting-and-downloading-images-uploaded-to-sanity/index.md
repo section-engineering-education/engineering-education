@@ -28,6 +28,7 @@ Let us begin!
 To install [Sanity.io](https://sanity.io/), follow the steps below:
 - Start by creating a new folder in any directory and naming it. After that, create a new folder in that folder, namely, the backend.
 - Open your terminal and change the directory by typing the command below:
+
 ```bash
 cd backend
 ```
@@ -35,16 +36,15 @@ cd backend
 - In this folder, we will install sanity.io using the commands below:
 
 This command will install the sanity.io command line.
+
 ```bash
 npm install -g @sanity/cli
 ```
-
 After installing the sanity.io command line, we initialize the sanity system using the command below:
 
 ```bash
 sanity init
 ```
-
 For the Sanity API to set up the best project structure for us, select the following in the terminal dialog:
 - Log in using your email.
 - Create a new project.
@@ -121,8 +121,8 @@ npm install react-icons --save
 ```bash
 npm i react-router-dom
 ```
-
 After installation, you should have a file structure as follows:
+
 ![sanity project file structure](/engineering-education/articles-uploading-deleting-and-downloading-images-uploaded-to-sanity/filestructure.PNG)
 
 ### Creating the database
@@ -150,7 +150,6 @@ export default {
   ],
 };
 ```
-
 The `hotspot` will enable us to display images on our website responsively at different ratios during display.
 
 Let us import the file above into the `schema.js` file.
@@ -171,13 +170,11 @@ export default createSchema({
   ]),
 });
 ```
-
 Ensure you are in the backend directory to view the output design. Then type in the terminal:
 
 ```bash
 sanity start
 ```
-
 Your sanity.io CMS should look like this:
 ![sanity.io CMS](/engineering-education/articles-uploading-deleting-and-downloading-images-uploaded-to-sanity/sanitycms.png)
 
@@ -205,7 +202,6 @@ body {
   display: none;
 }
 ```
-
 In the `index.jsx` file, write the following script:
 
 ```js
@@ -254,7 +250,6 @@ Second, type the command below on the terminal.
 ```bash
 sanity manage
 ```
-
 This command will open a page in your browser.
 
 To generate the project's token, click `API` -> `Add API token` and enter any name.
@@ -265,7 +260,6 @@ Next, select "Editor" and save for the token to be generated. Copy and paste the
  REACT_APP_SANITY_PROJECT_ID = projectid
  REACT_APP_SANITY_TOKEN = projectToken
 ```
-
 In the `user.js` file, write the following script:
 
 ```js
@@ -284,7 +278,6 @@ const build = imageUrlBuilder(user);
 
 export const urlFor = (source) => build.image(source);
 ```
-
 The `user` function will help us upload, delete, and retrieve images from the CMS.
 
 `Build` and `urlFor` are the functions required in sanity.io when working with images.
@@ -317,7 +310,6 @@ import { MdDelete } from "react-icons/md";
 
 import { user } from "./user";
 ```
-
 Then create the following hooks:
 
 ```js
@@ -358,7 +350,6 @@ selectedImage.type === 'image/tiff') {
     };
 
 ```
-
 This function will save the image to the sanity database.
 
 We use the `if statement` to check if the image asset has an id. If true, the image will form a document (`doc`) with the type of `photo`.
@@ -395,7 +386,6 @@ const saveImage = () => {
   }
 };
 ```
-
 For the last part, write the following code:
 
 ```js
@@ -480,7 +470,6 @@ import MasonaryLayout from "./masonryLayout"; // we'll use masonryLayout later t
 import { addQuery } from "./data";
 import { user } from "./user";
 ```
-
 In a functional component just before the return method, we create two hooks, `useState` and `useEffect`. `useState` to set up the image state and `useEffect` to query the images from the Sanity.io database with the help of the query we created earlier.
 
 ```js
@@ -495,7 +484,6 @@ const Feed = () => {
     })
   }, [])
 ```
-
 After that, we need to render the images from the Sanity.io database below the return method.
 
 ```js
@@ -520,7 +508,6 @@ import React from "react";
 import Masonry from "react-masonry-css";
 import Images from "./Image";
 ```
-
 Create an object containing an option for the breakpoint, as shown below.
 
 The breakpoint is the responsiveness of the web application when it comes to different devices. For example, there will be 500 images for 1 row on a mobile phone, hence the ratio of 500:1.
@@ -535,7 +522,6 @@ const breakpoint = {
   500: 1,
 };
 ```
-
 In the return method, we will provide the breakpoint. After that, loop through the images since we imported the Image file above.
 
 ```js
@@ -564,7 +550,6 @@ import { AiTwotoneDelete } from "react-icons/ai";
 import { MdDownloadForOffline } from "react-icons/md";
 import { urlFor, user } from "./user";
 ```
-
 In a functional component just before the return method, we want to set an event using the useState hook such that when we hover over the image, the icons will appear.
 
 Also, create a function that we will use to delete uploaded images. We will call the image from the database using the `user` function we imported above and delete it using its specific ID.
@@ -583,7 +568,6 @@ const Image = ({ photos }) => {
       });
      };
 ```
-
 Then, add the following script:
 
 ```js
