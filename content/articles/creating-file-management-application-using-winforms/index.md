@@ -6,7 +6,7 @@ url: /creating-file-management-application-using-winforms/
 title: How to Create a File Management Application using WinForms
 description: This tutorial will walk the reader through how to create a file management application using WinForms.
 author: sir-maina
-date: 2022-04-13T00:00:00-15:25
+date: 2022-04-13T00:00:00-09:25
 topics: [Languages]
 excerpt_separator: <!--more-->
 images:
