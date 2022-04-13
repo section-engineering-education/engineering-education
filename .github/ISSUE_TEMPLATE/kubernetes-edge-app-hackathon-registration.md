@@ -7,6 +7,8 @@ assignees: hborrelli1, hectorkambow
 
 ---
 
+**April 11th - 22nd 2022** Hackathon ends on the 22nd.
+
 In this edge-based hackathon, we will focus on Section's [Kubernetes Edge Interface (KEI)](https://www.section.io/docs/explanations/kei/) solution. [KEI](https://www.section.io/kubernetes-edge-interface/) makes many edge clusters appear as a single cluster, enabling developers to quickly and easily deploy applications across a distributed Edge.
 
 To participate in this hackathon, EngEd students are expected to create a true Kubernetes application for the Edge that is deployed using the KEI process.
@@ -17,6 +19,10 @@ Below you will find full details on the hackathon and any requirements.
 
 ### Eligibility
 Open to all EngEd students (participants can work individually or in teams of EngEd students). **By submitting this issue form you will have successfully signed up and we will reach out with next steps.** 
+
+**We will need the information below to follow up with next steps - and get you set up with a test enviroment:**
+
+**Your Full Name, email, and Domain (URL) project link (can be a dummy link) - we need this info to get credentials sent to you.**
 
 ### Requirements
 Once your K8s Edge application is complete and deployed, create a pull request to attach your submission to. 
@@ -55,3 +61,11 @@ All other projects will receive honorable mentions on our website.
 - Implementation of the Idea: Includes how well and quickly the project was developed and deployed using the KEI process.
 - Was the application successfully deployed to the edge using KEI?
 - The application functions completely and as described in the description.
+
+### Judges
+- [Harry Borrelli](https://www.linkedin.com/in/harryborrelli/)
+- [Tom McCollough](https://www.linkedin.com/in/wtmccollough/)
+- [Nate Grieb](https://www.linkedin.com/in/nate-grieb-44241654/)
+
+
+### Deadline: April 22nd 2022 @ 11:59 MST
