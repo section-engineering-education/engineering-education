@@ -25,9 +25,7 @@ Let us begin!
 7.  [React-router-dom](https://www.npmjs.com/package/react-router-dom)
 
 ### Installation
-1. [Sanity.io](https://sanity.io/)
-   
-To install sanity.io, follow the steps below:
+To install [Sanity.io](https://sanity.io/), follow the steps below:
 - Start by creating a new folder in any directory and naming it. After that, create a new folder in that folder, namely, the backend.
 - Open your terminal and change the directory by typing the command below:
 ```bash
