@@ -14,13 +14,13 @@ images:
   - url: /engineering-education/model-monitoring-and-detecting-drifts-in-machine-learning-models-using-deepchecks/hero.png
     alt: Model monitoring using Deepchecks Hero Image
 ---
-Model monitoring is an important stage in machine learning that keeps track of a trained machine learning model to help developers detect any changes in the model that may negatively affect the business operation. A good machine learning team should continuously monitor the model to detect any changes in model performance. These are known as model drifts.
+Model monitoring is a stage in machine learning that keeps track of a trained machine learning model to help developers detect any changes in the model that may negatively affect the business operation. A good machine learning team should continuously monitor the model to identify any changes in model performance. These are known as model drifts.
 <!--more-->
-Many businesses such as financial institutions depend on machine learning models for day-to-day operations. A company like PayPal uses machine learning models to detect fraudulent transactions. Model monitoring will keep track of the model to detect any changes in the fraud detection system. This will enable the developers to make changes in the model before there is a catastrophic impact.
+Many businesses depend on machine learning models for day-to-day operations. A company like PayPal uses machine learning models to detect fraudulent transactions. Model monitoring will keep track of the model to identify any changes in the fraud detection system. It will enable the developers to make changes in the model before a loss occurs.
 
-Changes in model performance are due to changes in the input data, model features, target labels, and independent variables. It may also be due to the depreciated libraries and dependencies that the model uses. This leads to poor model predictions and poor model generalization. 
+Changes in model performance are due to changes in the input data, model features, target labels, and independent variables. It may also be due to the depreciated libraries and other dependencies that the model uses. It leads to poor model predictions and poor model generalization. 
 
-[Deepechecks](https://deepchecks.com/) is a machine learning library that monitors a machine learning model to detect changes in model performance (model drifts. In this tutorial, we will build a customer classification model and then implement Deepchecks to detect any model drifts.
+[Deepechecks](https://deepchecks.com/) is a machine learning library that monitors a machine learning model to detect or identify changes in model performance. The changes are called model drifts. We will build a customer classification model and then implement Deepchecks to identify changes in the model.
 
 ### Table of contents
 - [Prerequisites](#prerequisites)
@@ -33,6 +33,7 @@ Changes in model performance are due to changes in the input data, model feature
 - [Fitting the Pipeline](#fitting-the-pipeline)
 - [Accuracy score for the customer classification model](#accuracy-score-for-the-customer-classification-model)
 - [Implementing Deepchecks](#implementing-deepchecks)
+- [Creating the two dataset objects](#creating-the-two-dataset-objects)
 - [Importing the `full_suite` method](#importing-the-fullsuite-method)
 - [The `full_suite` outputs](#the-fullsuite-outputs)
 - [Implementing `Check` method](#implementing-check-method)
@@ -50,22 +51,22 @@ To easily understand the model monitoring concepts explained in this tutorial, t
 - Have a grasp of [Google Colab notebook](https://colab.research.google.com/)
 
 ### Types of model drifts
-Model drift refers is the changes in the model performance leading to model degradation and poor predictions. It is due to changes in the model dataset. It is also due to the changes in the relationships between independent variables (features) and dependent variables (label/target). 
+Model drift refers to the changes in the model performance leading to model degradation and poor predictions. It is due to changes in the model dataset. It is also due to the changes in the relationships between independent variables (features) and dependent variables (label/target). 
 
-It is a common phenomenon for drift in machine learning models to negatively affect business operations. Depending on the changes, model drift is classified into data drift and concept drift.
+Depending on the changes, model drifts can be data or concept drifts.
 
 #### Data drift
-Data drift occurs when the features in the dataset change over time after the model training. Features are the independent variables in the dataset that are the inputs for the machine learning model. 
+In data drift, the features in the dataset change over time after the model training. Features are the independent variables in the dataset that are the inputs for the machine learning model. 
 
 Changes in the features are due to data leakage, contamination of the data with viruses, or changes in the general data structure.
 
 #### Concept drift
-Concept drift occurs when the target/labels in the dataset change over time after the model training. The target is the dependent variable in the dataset which is the model output.
+In concept drift, the target/labels in the dataset change over time after the model training. The target is the dependent variable which is the model output. 
 
-We will use Deepchecks to detect the data and concept drifts in our machine learning model. Before we implement the Deepchecks, we will first build the machine learning model.
+We will use Deepchecks library to detect these drifts in our machine learning model. Before we implement the Deepchecks, we will first build the machine learning model.
 
 ### Building the machine learning model
-We will build the machine learning model using the bank customers dataset. The dataset has multiple independent variables (features) and one target variable. The model will predict whether a bank customer will subscribe to the bank's monthly deposit plan. The complete dataset for this model is found [here](https://drive.google.com/file/d/1jNSH7yYDYUu13EKkqyN5OpTpHI1Megd8/view?usp=sharing).
+We will build the machine learning model using the bank customers dataset. The dataset has multiple independent variables (features) and one target variable. The model will predict whether a bank customer will subscribe to a monthly deposit plan. You can download the complete dataset for this model [here](https://drive.google.com/file/d/1jNSH7yYDYUu13EKkqyN5OpTpHI1Megd8/view?usp=sharing).
 
 ### Loading bank customer dataset
 We will load the bank customer dataset using Pandas. We import this Python package as follows:
@@ -87,7 +88,7 @@ It shows the following data points.
 
 ![Data points](/engineering-education/model-monitoring-and-detecting-drifts-in-machine-learning-models-using-deepchecks/data-points.png)
 
-The output shows the first five data points. The dataset has multiple columns. We have to select the input and output variables from these columns.
+The output shows the first five data points that have multiple columns. We have to select the input and output variables from these columns.
 
 ### Selecting input and output variables from the columns
 We select the input and output variables as follows:
@@ -96,13 +97,13 @@ We select the input and output variables as follows:
 ```python
 Xfeatures = df.drop('y',axis=1)
 ```
-We select all the columns except the last column to be the input variables (features).
+We select all the columns except the last column as the input variables (features).
 
 #### Selecting the output variable
 ```python
 ylabels = df.iloc[: , -1:]
 ```
-We select the last column (y) to be the output/target variable.
+We select the last column (y) as the output/target variable.
 
 ### Listing the input variables
 We can list all the columns we have selected to be the input variables as follows:
@@ -125,10 +126,10 @@ We then split the dataset using the package as follows:
 ```python
 x_train,x_test,y_train,y_test = train_test_split(Xfeatures,ylabels,test_size=0.2,random_state=7)
 ```
-The bank customer dataset is now ready to be fed into the model. We will use Scikit-learn's Pipeline module to build the classification.
+The bank customer dataset is now ready to be fed into the model. We will use the Pipeline module from Scikit-learn to build the classification.
 
 ### Importing the Pipeline module
-The Scikit-learn's Pipeline module will speed up the process of building the classification model. We import the module from Scikit-learn as follows:
+The Pipeline module will speed up the process of building the classification model. We import the module from Scikit-learn as follows:
 
 ```python
 from sklearn.pipeline import Pipeline
@@ -136,27 +137,25 @@ from sklearn.pipeline import Pipeline
 The Pipeline module will take in all remaining machine learning steps. We will add the data scaling step and model training step (these are the remaining steps) to the imported `Pipeline`.
 
 #### Data scaling step
-Data scaling will ensure the bank customer dataset fits into the model in the training phase. We will use the `StandardScaler` class for scaling. Let's import this class from Scikit-learn:
+Data scaling will ensure the bank customer dataset fits into the model in the training phase. We will use the `StandardScaler` class for scaling. We import this class from Scikit-learn as follows:
 
 ```python
 from sklearn.preprocessing import StandardScaler
 ```
 #### Model training step 
-We will use the `LogisticRegression` algorithm to train the bank classification model. Let's import the algorithm from Scikit-learn:
+We will use the `LogisticRegression` algorithm to train the bank classification model. We import the algorithm from Scikit-learn as follows:
 
 ```python
 from sklearn.linear_model import LogisticRegression
 ```
-Let's now add these two steps to the imported `Pipeline` module.
-
-### Adding the two stages
-We add the two stages as follows:
+### Adding the two steps
+We add the two steps as follows:
 
 ```python
 model_pl = Pipeline(steps=[('sdc',StandardScaler()),('lgsr',LogisticRegression())])
 ```
 ### Fitting the Pipeline
-We will fit the Pipeline with the added steps to the training dataset. The Pipeline will scale the training dataset and then train the model using the `LogisticRegression` algorithm. It will produce a final customer classification model.
+We will fit the Pipeline into the training dataset. The Pipeline will scale the training dataset and then train the model using the `LogisticRegression` algorithm. It will produce a final customer classification model.
 
 ```python
 model_pl.fit(x_train,y_train)
@@ -172,9 +171,9 @@ It outputs the following accuracy score:
 ```bash
 0.9105770008901837
 ```
-This is the final score of the customer classification score and it is an efficient score. It implies that the model can accurately classify different customers. 
+The accuracy score of the customer classification score is 91.0577%. It is a good accuracy score.  
 
-We now implement Deepchecks to monitor the customer classification model.
+It implies that the model can accurately classify different customers. We still need to implement Deepchecks to monitor the customer classification model.
 
 ### Implementing Deepchecks
 We install the [Deepchecks](https://deepchecks.com/) library using this command:
@@ -187,7 +186,7 @@ After the installation process, we import the library using this code:
 ```python
 import deepchecks
 ```
-Deepchecks have various methods that will monitor our model and detect any model drifts. Let's list these methods.
+Deepchecks library has various methods that monitor our model and detect any model drifts. To list these methods, use this code:
 
 ```python
 dir(deepchecks)
@@ -199,22 +198,22 @@ The code outputs the following methods:
 Even though we have listed all the methods, we will not implement all of them. We will use `Dataset`, `Suite`, and `Check`.
 
 #### Dataset method
-It creates two Deepchecks dataset objects that represent the original dataset that build the model. The first Dataset object will represent the training dataset. The second Dataset object will represent the testing dataset. 
+It creates two dataset objects to represent the original dataset. 
 
-It will transform the dataset into a format that Deepchecks will understand. We will then add the transformed dataset (the two dataset objects) to Deepchecks for model drift detection.
+The first one will represent the training dataset. The second one will represent the testing dataset. 
+
+It will transform the original dataset into a format that Deepchecks will understand. We will then add the transformed dataset (the two dataset objects) to Deepchecks for model drift detection.
 
 #### Suite method
-We will use this method this gives the general/model performance and summary. We will use `full_suite` which is a sub-method from `Suite`.
-
-`full_suite` will perform an exhaustive check- it will perform multiple checks and detect any data drifts and concepts drifts. It also shows the confidence score of the model and the data set integrity. It outputs all the the information in form of a report.
+We will use this method this gives the general/model performance and summary. We will import `full_suite` from `Suite`. `full_suite` will perform an exhaustive check- it will perform multiple checks and detect any data drifts and concepts drifts. It also shows the confidence score of the model and the data set integrity.
 
 #### Check method
-This method is less exhaustive as compared to the `full_suite`. It runs a single specific check to detect either data drift or concept drift. We just have to import the specific method to perform the check. It also outputs specific information in form of a report.
+This method is less exhaustive as compared to the `full_suite`. It runs a single specific check to detect either data or concept drift. 
 
-Let's create the Deepchecks dataset objects using the `Dataset` method.
+We start by creating the two dataset objects using the `Dataset` method.
 
-### Creating the Deepchecks dataset objects
-Let's create the dataset object that will represent the training dataset. 
+### Creating the two dataset objects
+We create the dataset object that will represent the training dataset as follows:
 
 ```python
 deepchecks_train_data = deepchecks.Dataset(df=x_train,label=y_train)
@@ -224,10 +223,10 @@ We then create the second Dataset object that will represent the testing dataset
 ```python
 deepchecks_test_data = deepchecks.Dataset(df=x_test,label=y_test)
 ```
-We will then add these dataset objects to the `full_suite` method. Let's import the `full_suite` method
+The next step is to import the `full_suite` method. It will perform an exhaustive check on the dataset objects and the trained model. 
 
 ### Importing the `full_suite` method
-To import the `full_suite` method, input the code below:
+To import the `full_suite` method, use the code below:
 
 ```python
 from deepchecks.suites import full_suite
@@ -237,17 +236,17 @@ We then initialize the `full_suite` using the code below:
 ```python
 overall_suite = full_suite()
 ```
-Finally, we then add the Deepchecks dataset objects and the model we had earlier trained.
+The next step is to add the dataset objects and the trained model to the `full_suite()`.  
 
-### Adding the Deepchecks dataset objects and the trained model
-We add the Deepchecks dataset objects and the trained model as follows:
+### Adding the dataset objects and the trained model
+We add the dataset objects and the trained model as follows:
 
 ```python
 output = overall_suite.run(train_dataset=deepchecks_train_data, test_dataset=deepchecks_test_data, model=model_pl)
 ```
-It uses the `run` function to run the `full_suite`. It will then analyze both the Deepchecks dataset objects and the trained model to detect model drifts (both concept and data drifts).
+It uses the `run` function to run the `full_suite`. It will then analyze the dataset objects and the trained model to detect model drifts (concept and data drifts).
 
-The `full_suite` uses in-built conditions when running the multiple checks. Some of the conditions may pass, fail or run with a warning. These conditions will validate a running check to determine whether the model has drifts (either concept or data drifts) or any other changes. 
+The `full_suite` uses in-built conditions when running the multiple checks. Some of the conditions may pass, fail or run with a warning. These conditions will determine whether the model has drifts (either concept or data drifts) or any other changes. 
 
 The following symbols represent these conditions: 
 
@@ -255,15 +254,15 @@ The following symbols represent these conditions:
 - ✓: It represents passed conditions.
 - !: It represents the conditions that run with a warning.
 
-To see the output after running the `full_suite`, input this code:
+To see the output after running the `full_suite`, use this code:
 
 ```python
 output
 ```
-
-It will generate a report that shows the model summary. The outputs are as follows:
+It will generate a report/output that shows the model summary.
 
 ### The `full_suite` outputs
+The outputs are as follows:
 
 #### Conditions Summary output
 
@@ -283,18 +282,17 @@ The output shows some of the duplicate values in the training dataset.
 
 The output shows some of the duplicate values in the testing dataset.
 
-
 #### Performance report output
 
 ![Performance report](/engineering-education/model-monitoring-and-detecting-drifts-in-machine-learning-models-using-deepchecks/performance-report.png)
 
-The output shows the performance of the classification model. The condition that checks/validates the model performance has passed. It implies the trained model has a good performance. It also shows the F1, Precision, and Recall scores for the model.
+The output shows the performance of the classification model. The condition that checks/validates the model performance has passed. It implies the trained model has a good performance. It also shows the [F1](https://en.wikipedia.org/wiki/F-score), [Precision](https://medium.com/@shrutisaxena0617/precision-vs-recall-386cf9f89488), and [Recall](https://developers.google.com/machine-learning/crash-course/classification/precision-and-recall) scores for the model.
 
-#### Unused and the important model features output
+#### Unused and the used model features output
 
 ![Model features](/engineering-education/model-monitoring-and-detecting-drifts-in-machine-learning-models-using-deepchecks/model-features.png)
 
-The output shows all the unused and important model features. It shows the importance of each in model building and how each feature contributed to the final classification model.
+The output shows all the used model features and the others. It shows the importance of the features and how they contributed to model building.
 
 ### Model inference time output
 
@@ -307,31 +305,29 @@ This output will show whether there are drifts in the testing and training datas
 
 ![Data Drift output](/engineering-education/model-monitoring-and-detecting-drifts-in-machine-learning-models-using-deepchecks/train-test-drift.png)
 
-The condition that checks for drifts in the testing and training dataset has passed. The condition uses a drift score to check for the data drift. 
+The condition for checking the drifts (data drift) in the testing and training dataset has passed. It uses a drift score to check for the data drift. 
 
 The condition is:
-
-- If the drift score is <= 0.1 then there is no data drift. The condition has been met (passed), therefore there is no data drift.
+- If the drift score is <= 0.1, then there is no data drift. This condition has been met (passed). Therefore, there is no data drift.
 
 #### Train Test Label Drift output
 This output will show whether there is a concept drift in our text classification model.
 
 ![Concept drift output](/engineering-education/model-monitoring-and-detecting-drifts-in-machine-learning-models-using-deepchecks/concept-drift.png)
 
-The condition that checks for concept drift in the classification model has passed. The condition uses a drift score to check for the concept drift. 
+The condition for checking the concept drift in the classification model has passed. It uses a drift score to check for the concept drift. 
 
 The condition is:
-- If the drift score is <= 0.1 then there is no data drift. The condition has been met (passed), therefore there is no data drift.
+- If the drift score is <= 0.1, then there is no data drift. This condition has been met (passed). Therefore, there is no data drift.
 
-
-These are the most important outputs that the `full_suite` method produces. The outputs have shown us there is no concept and data drift in our classification model. You can further explore the other outputs. 
+These are some of the outputs that the `full_suite` method produces. You can further explore the others. 
 
 Let's move to the `Check` method. 
 
 ### Implementing `Check` method
-We will use the method to run a single specific check to detect either data drift or concept drift. We just have to import the specific method to perform the check.
+We will use the method to run a single specific check to detect either data drift or concept drift.
 
-Let's import the method that detects the data drift.
+Let's import the specific method to detect the data drift.
 
 #### Importing the data drift method
 We import the data drift method as follows:
@@ -339,17 +335,17 @@ We import the data drift method as follows:
 ```python
 from deepchecks.checks import TrainTestFeatureDrift
 ```
-We then initialize the data drift method:
+We then initialize the data drift method as follows:
 
 ```python
 data_drift_check = TrainTestFeatureDrift()
 ```
-We also add the Deepchecks dataset objects and the model we had earlier trained.
+We then add the dataset objects and the model we had earlier trained.
 
 ```python
 data_drift_output = data_drift_check.run(train_dataset=deepchecks_train_data, test_dataset=deepchecks_test_data, model=model_pl)
 ```
-It uses the `run` function to run the method. It will then analyze both the Deepchecks dataset objects and the trained model to detect data drift.
+It uses the `run` function to run the method. It will then analyze the dataset objects and the trained model to detect data drift.
 
 To see the output, input this code:
 
@@ -360,13 +356,13 @@ It gives the following output:
 
 ![Checkinge data drift](/engineering-education/model-monitoring-and-detecting-drifts-in-machine-learning-models-using-deepchecks/checking-data-drift.png)
 
-The output above shows the drift score using the `emp.var.rate` variable (it is one of the input features). This variable gives a drift score of less than 0.1. This implies that is no data drift.
+The output above shows the drift score using the `emp.var.rate` variable (an input feature). This variable gives a drift score of less than 0.1. It implies that there is no data drift.
 
-We can also see the drift score using the `duration` variable. It is shown in the output below:
+We can also see the drift score using the `duration` variable.
 
 ![Using duration variable](/engineering-education/model-monitoring-and-detecting-drifts-in-machine-learning-models-using-deepchecks/using-duration-variable.png)
 
-It gives a negligible drift score, therefore there is no data drift.
+It gives a negligible drift score. Therefore, there is no data drift.
 
 Let's import the method that detects the concept drift.
 
@@ -397,14 +393,14 @@ It gives the following output:
 
 ![Checkinge concept drift](/engineering-education/model-monitoring-and-detecting-drifts-in-machine-learning-models-using-deepchecks/checking-concept-drift.png)
 
-The output above shows the drift score using the `y` variable (it is the target/label). It gives a negligible drift score, therefore there is no concept drift. We have used the Deepchecks methods to monitor the model, get the model summary and detect the model drift.
+The output above shows the drift score using the `y` variable (it is the target/label). It gives a negligible drift score. Therefore, there is no concept drift. We have used the Deepchecks methods to monitor the model, get the model summary and detect the model drifts.
 
 ### Conclusion
-We have covered how to monitor and detect drifts in machine learning models using Deepchecks. We discussed the types of model drifts and how they affect the model performance. 
+In this tutorial, we have monitored and detected drifts in machine learning models using Deepchecks. We discussed the data and concept drifts and how they affect the model performance. 
 
-We then implemented a customer classification model. We used use Dataset, Suite, and Check methods to detect model drifts. These methods generated a report that showed the model summary. Using these reports, we concluded that there were no data and model drifts.
+We then implemented a customer classification model. We used the Dataset, Suite, and Check methods to detect model drifts. These methods generated a report or output that showed the model summary. It showed that there were no data and model drifts.
 
-You can get the Python implementation of this tutorial in Google Colab [here](https://colab.research.google.com/drive/1nnzTMKMKrGHTfrqRX92EAG0mHZeYX4lz?usp=sharing)
+You can access the Google Colab notebook for this tutorial [here](https://colab.research.google.com/drive/1nnzTMKMKrGHTfrqRX92EAG0mHZeYX4lz?usp=sharing)
 
 ### References
 - [Deepchecks documentation](https://deepchecks.com/)
