@@ -63,7 +63,7 @@ First, we need to rename the form from `Form 1` to `File manager`. We do this by
 
 > The start position property of the form is optional to modify since it just sets its position on the device during its run-time.
 
-![Renaming the form application](/engineering-education/creating-file-management-application-using-WinForms/changing-the-name-of-the-form.jpg)
+![Renaming the form application](/engineering-education/creating-file-management-application-using-winforms/changing-the-name-of-the-form.jpg)
 
 #### Using controls to construct the form
 We will be using standard tabs in our project windows such as `ToolBox` and the `Properties` to modify the form structure.
