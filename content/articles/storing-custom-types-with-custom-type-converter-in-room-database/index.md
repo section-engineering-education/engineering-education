@@ -1,4 +1,22 @@
-When working with Room database, you may need to store custom data types such as Date, Bitmap, and so on. The @TypeConverter annotation can be applied to our database access methods. Unfortunately, normal TypeConverters aren't always sufficient.
+---
+layout: engineering-education
+status: publish
+published: true
+url: /storing-custom-data-types-with-custom-typeconverter-in-room-database/
+title: Storing Custom Data Types with Custom TypeConverter in Room Database
+description: This tutorial will guide the reader through the process of creating a custom data type converter to store a custom data type in Room Database.
+author: feswal-salim
+date: 2022-04-15T00:00:00-01:00
+topics: [Languages]
+excerpt_separator: <!--more-->
+images:
+
+  - url: /engineering-education/storing-custom-data-types-with-custom-typeconverter-in-room-database/hero.jpg
+    alt: Storing Custom Data Types with Custom TypeConverter in Room Database
+---
+When working with Room database, you may need to store custom data types such as Date, Bitmap, and so on. The @TypeConverter annotation can be applied to the database access methods.
+<!--more-->
+Unfortunately, normal TypeConverters aren't always sufficient.
 
 Imagine a scenario where you need to store a List of Objects e.g Users, Cars, e.t.c. This requires you to come up with a way that you can convert your data type to something that Room can understand i.e., a List of Objects to a String.
 
@@ -28,7 +46,7 @@ To follow along with this tutorial, you need:
 These are methods that tell `Room` database how to convert custom types to and from recognized kinds that Room understands.
 
 ### What are custom types in Room?
-Room typically stores primitive types such as String, Int, Float, Double and others. However, a `@TypeConverter` is very useful when it comes to storing custom types, such as:
+Room typically stores primitive types such as String, Int, Float, Double, and others. However, a `@TypeConverter` is very useful when it comes to storing custom types, such as:
 - Date
 - Location
 - Created classes
@@ -117,7 +135,7 @@ suspend fun insertWord(wordEntity: WordEntity)
 ```
 
 ### Step 5 - Storing the custom type
-As you have seen from the Entity class, we need to store a list of `Meanings` in a column and the other data. This can be be difficult because `Meaning` is of a complex type that `Room` can not understand.
+As you have seen from the Entity class, we need to store a list of `Meanings` in a column and the other data. This can be difficult because `Meaning` is of a complex type that `Room` can not understand.
 
 First, let us create a custom `JsonParser` for parsing `String`. This is important because later in your project, you may need to switch and use a different library to parse strings such as Moshi, Jackson, and Kotlin Serialization.
 
@@ -157,7 +175,7 @@ class Converters(
 }
 ```
 
-> Make sure you annotate the class with `@ProvidedTypeConverter` because we need to provide our own instance of a `TypeConverter`.
+> Make sure you annotate the class with `@ProvidedTypeConverter` because we need to provide our instance of a `TypeConverter`.
 
 Inside the `Converters` class, define the first function that will convert the list of `Meaning` to `String`.
 
@@ -211,7 +229,7 @@ class Converters(
 ```
 
 ### Step 7 - Using the type converter
-Finally, in order to use this custom `TypeConverter`, annotate your Room database abstract class with @TypeConverters and pass in the `Converters` class. 
+Finally, to use this custom `TypeConverter`, annotate your Room database abstract class with @TypeConverters and pass it in the `Converters` class. 
 
 ```kotlin
 @TypeConverters(Converters::class)
@@ -221,7 +239,7 @@ abstract class DatabaseName : RoomDatabase() {}
 And that is all, now you can store a complex type such as a list of meanings of a word as a string in `Room` database and convert it back to a list.
 
 ### Conclusion
-With that, you now have an understanding of what type converters are in `Room` database, examples of custom types, and creating a custom JsonParser. You have also learned how to come up with your own custom TypeConverter and use it. Don't stop there, keep learning more about `Room` database.
+With that, you now have an understanding of what type converters are in `Room` database, examples of custom types, and creating a custom JsonParser. You have also learned how to come up with your custom TypeConverter and use it. Don't stop there, keep learning more about `Room` database.
 
 For a clear look at the code, check out this Github repository - [RoomTypeConverterDemo](https://github.com/feswalsalim/RoomTypeConverterDemo).
 
@@ -231,3 +249,6 @@ For a clear look at the code, check out this Github repository - [RoomTypeConver
 - [Room Db Custom Types](https://medium.com/android-news/android-architecture-components-room-custom-types-ad6a477004e0)
 
 Happy coding!
+
+---
+Peer Review Contributions by: [Eric Gacoki](/engineering-education/authors/eric-gacoki/)
