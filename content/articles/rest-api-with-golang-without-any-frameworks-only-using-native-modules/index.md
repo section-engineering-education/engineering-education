@@ -1,6 +1,6 @@
-Go is a fast-growing language among developers. Its popularity is steadily growing and unshaken. Golang ecosystem has a tone of native libraries. However, it has third-party libraries that developers can still choose to use.
+Go is a fast-growing language among developers. Golang ecosystem has a ton of native libraries. However, it also has third-party libraries that developers can use.
 
-When creating REST APIs with Go, you can choose to use various third-party libraries, such as Gorm, Go fiber, Gin, fast HTTP, etc. However, because of the many libraries that the Go ecosystem has, you can also choose to use native libraries that are native to Golang. These are libraries you don't have to download to your local project when building your APIs.
+When creating REST APIs with Go, you can choose to use various third-party libraries, such as Gorm, Go fiber, Gin, fast HTTP, etc. You can also choose to use native libraries that are native to Golang. These are libraries you don't have to download to your local project when building your APIs.
 
 In this guide, we will build a basic REST API using native libraries that Golang has. We will not use any third-party libraries, meaning we won't download any library to the local project.
 
