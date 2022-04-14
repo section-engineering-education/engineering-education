@@ -3,10 +3,10 @@ layout: engineering-education
 status: publish
 published: true
 url: /introduction-to-wand-library-in-python/
-title: Introduction To Wand Library In Python
-description: This tutorial will discuss about Wand library, its origin and how it can be used to manipulate images. We will also learn several image manipulation techniques like inverting, blurring, and drawing images.
+title: Introduction to Wand Library in Python
+description: This tutorial will go over the Wand library, its origin and how it can be used to manipulate images. We will learn image manipulation techniques like inverting, blurring, and drawing images.
 author: ezra-mukono
-date: 2022-03-23T00:00:00-00:00
+date: 2022-04-14T00:00:00-15:00
 topics: [Languages]
 excerpt_separator: <!--more-->
 images:
@@ -14,11 +14,11 @@ images:
   - url: /engineering-education/introduction-to-wand-library-in-python/hero.png
     alt: Introduction To Wand Library In Python Hero Image
 ---
-Wand library is a [ctypes](https://docs.python.org/3/library/ctypes.html#module-ctypes)-based simple [ImageMagick](https://imagemagick.org/index.php) binding for Python.
+Wand library is a [ctypes](https://docs.python.org/3/library/ctypes.html#module-ctypes)-based simple [ImageMagick](https://imagemagick.org/index.php) binding for Python. ImageMagick is extensively used with image formats for its precision and ease of use. 
 <!--more-->
-ImageMagick is extensively used to work with image formats for its precision and ease of use. We learn about this module to understand how you can manipulate a single image into various forms.
+We will learn more about this module to understand how you can manipulate a single image into various forms.
 
-In this tutorial, we will take a deep look at what the Wand library is and how we can use it to work with images. Also, we will look at a few examples, where we will learn about its unique features and applications.
+In this tutorial, we will take a deep look at what the Wand library is and how we can use it to work with images. We will also look at a few examples, where we will learn about its unique features and applications.
 
 ### Prerequisites
 The reader should have some basic knowledge of Python and must have Python installed in their local machine.
@@ -34,8 +34,10 @@ The reader should have some basic knowledge of Python and must have Python insta
 - [Conclusion](#conclusion)
 
 ### Wand library
-Using the wand library, we can open and edit images. Using it along with NumPy, it offers several other functions for image transformations. Below are some of its uses:
-- We can use it to display a single image in several orientations, e.g., inverted, rotated, blurred, skewed, etc.
+Using the wand library, we can open and edit images. Using it along with NumPy, it offers several other functions for image transformations. 
+
+Below are some of its uses:
+- We can use it to display a single image in several orientations. For example, inverted, rotated, blurred, skewed, etc.
 - We have features to enhance the images with various effects.
 - We can scale and crop the images.
 - It supports reading and writing images in various formats.
@@ -52,7 +54,7 @@ pip install Wand
 To have a comprehensive understanding of ImageMagick's dependency installation, it is recommended to go through [this](#https://imagemagick.org/script/advanced-linux-installation.php) documentation.
 
 ### Verify installation
-On successfully installing the wand library its related dependencies, we will verify it by importing `Wand` in our code.
+On successfully installing the wand library and its related dependencies, we will verify it by importing `Wand` in our code.
 
 Using any editor of your choice, create a Python file and save it with a `.py` extension, e.g., test.py, and then type `import wand` in the created file as shown:
 
@@ -60,7 +62,7 @@ Using any editor of your choice, create a Python file and save it with a `.py` e
 import wand
 ```
 
-On running the code, if wand was successfully installed, it does not throw any errors. If not, we must recheck its installation.
+Upon running the code, if wand was successfully installed, it will not throw any errors. Otherwise we must recheck its installation.
 
 ### Read an image
 To use features from the `image` library of `Wand` module, we will need to import the necessary packages. On importing, we will get access to several methods to modify properties such as height, width, and the interpretation of the image. 
@@ -96,7 +98,7 @@ The width of the image is: 601
 ### Blur an image
 We have several ways to blur an image in Python.
 
-One may decide to blur an image using the `pillow` package, while the other may use the `OpenCV` library. However, in our case, we will use the `Wand` library to blur the image as shown:
+One may decide to blur an image using the `pillow` package, while others may use the `OpenCV` library. However, in our case, we will use the `Wand` library to blur the image as shown:
 
 ```python
 from Wand.image import Image as wandImage  # Import the image library from Wand
@@ -105,13 +107,13 @@ with wandImage(filename='/wand-library-in-python/original_image.png') as img:  #
     img.save(filename='/wand-library-in-python/blurred_image.png') # Save the blurred image using to a certain location.    
 ```
 
-From the above code:
+From the code above:
 - We import the `image` library from `Wand`.
 - We then import the image using the file path.
 - Then, we call the blur function by specifying the `radius` and `sigma` of the image.
 - The `radius` parameter determines the radius of the gaussian aperture, which is the size of the gap. It is always an integer number.
 - The `sigma` parameter describes the sigma value that denotes the standard deviation of the gaussian filter. It is always an integer input.
-- Finally, we save the image.
+- We then save the image.
 
 ![python](/engineering-education/introduction-to-wand-library-in-python/original_image.png)
 
@@ -136,7 +138,7 @@ with Image(filename='/wand-library-in-python/blurred_image.png') as img:  # Get 
 
 The following steps are used to transform an image:
 - Import the libraries and then open the image.
-- The `clone()` function is called for making a copy of the image.
+- The `clone()` function is called to make a copy of the image.
 - The cloned and flipped image is then saved in a specific location.
 
 ![python](/engineering-education/introduction-to-wand-library-in-python/original_image.png)
@@ -168,11 +170,11 @@ with Drawing() as img_draw:
         img.save(filename = '/wand-library-in-python/draw_image.png') 
 ```
 
-From the above code:
+From the code above:
 - We import the required modules like `color`, `image`, and `drawing`.
 - Then, we specify the color of the image and the size the image.
 - Then, we determine the outside border of the image together with its color.
-- Finally, the image is then saved.
+- Now we can save the image.
 
 **Output:**
 
@@ -181,13 +183,13 @@ From the above code:
 ### Comparison with other image libraries
 For image manipulation, apart from Wand, we have other libraries like pillow and OpenCV. Now, we will look at how these libraries differ from each other.
 
-OpenCV library is developed using C and C++ programming languages, while the pillow is designed using C and python programming languages.
+OpenCV library is developed using C and C++ programming languages, while Pillow is designed using C and Python programming languages.
 
-However, OpenCV is faster compared to pillow when dealing with image manipulation. This makes it the best out of all three.
+OpenCV is faster when compared to pillow in dealing with image manipulation. This makes it the best out of all three.
 
 However, even if these libraries are developed using different languages, their functionalities are almost identical since the image manipulation techniques across the libraries are practically similar.
 
-For example, let's take a look at resizing an image using pillow package.
+For example, let's take a look at resizing an image using the pillow package.
 
 ```python
 from PIL import Image
@@ -207,7 +209,7 @@ Resized image size: (200, 200)
 
 ![python](/engineering-education/introduction-to-wand-library-in-python/original_image.png)
 
-The image was initially of size `601` by `203`, and after resizing it:
+The image was initially the size of `601` by `203`, and after resizing it:
 
 ![pp](/engineering-education/introduction-to-wand-library-in-python/pillow.png)
 
