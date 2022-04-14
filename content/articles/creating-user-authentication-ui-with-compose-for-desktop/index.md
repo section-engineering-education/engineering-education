@@ -92,7 +92,7 @@ fun main() = application {
 ```
 
 ### Step 3 - User Login Class
-In this step, we will learn how to create a Compose Desktop screen with views. Right-click on the `kotlin` then select. Right-click on the `kotlin` then select `New` and then `Kotlin Class/File` to create a new class and name it `LoginScreen`. 
+In this step, we will learn how to create a Compose Desktop screen with views. Right-click on the `kotlin` then select `New` and then `Kotlin Class/File` to create a new class and name it `LoginScreen`. 
 
 This class will act as our login screen interface where the user can enter login details.
 
@@ -174,17 +174,18 @@ class LoginScreen {
     }
 }
 ```
+
 #### Explanation
 This class has a single composable function `LoginScreen` that implements the login screen layout.
 
-- `Scaffold` - Compose layout that allows for including already existing material design components like a `ToolBar`.
-- `Column` - Composable that allows for displaying of vies on top of each other.
-- `TextField` - Composable that allows for creating a text input field.
+- `Scaffold` - Compose layout that allows for already existing material design components like a `ToolBar`.
+- `Column` - Composable that allows views on top of each other.
+- `TextField` - Composable that allows us to create a text input field.
 - `Spacer` - Composable for creating a space between views.
 - `Button` - Composable for creating a button.
 - `Text` - Composable for holding texts.
 
-These Composable have different functions that allow for performing unique actions when triggered. For instance, the `onClick` function in the button triggers a click listener when the button is clicked.
+These Composable have different functions that allow unique actions when triggered. For instance, the `onClick` function in the button triggers a click listener when the button is clicked.
 
 > Note: The function is annotated by the `@Composable` that shows that we are using JetBrains compose for desktop.
 
