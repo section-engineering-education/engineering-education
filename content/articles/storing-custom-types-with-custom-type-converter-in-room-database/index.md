@@ -1,15 +1,15 @@
-In your project, you may need to store a custom data type in `Room` database, such as Date, Bitmap, and so on. To our database access methods, we can apply the @TypeConverter annotation. But,  sometimes normal TypeConverters aren't enough.
+When working with Room database, you may need to store custom data types such as Date, Bitmap, and so on. The @TypeConverter annotation can be applied to our database access methods. Unfortunately, normal TypeConverters aren't always sufficient.
 
-Imagine a scenario where you need to store a List of Objects e.g Users, Cars, e.t.c. This requires you to come up with a way that you can convert your Data Type to something that Room can understand i.e., maybe that List of Objects to a String.
+Imagine a scenario where you need to store a List of Objects e.g Users, Cars, e.t.c. This requires you to come up with a way that you can convert your data type to something that Room can understand i.e., a List of Objects to a String.
 
 In this tutorial, we will create a custom TypeConverter and use it in the Room database.
 
 ### Table of contents
 - [Prerequisites](#prerequisites)
-- [What are TypeConverters in Room database](#what-are-typeconverters-in-room-database)
-- [What are custom types in Room](#what-are-custom-types-in-room)
+- [What are TypeConverters in Room database?](#what-are-typeconverters-in-room-database)
+- [What are custom types in Room?](#what-are-custom-types-in-room)
 - [Creating an Android project](#step-1---creating-an-android-project)
-- [Adding necessary dependencies](#step-2---adding-necessary-dependencies)
+- [Adding the necessary dependencies](#step-2---adding-the-necessary-dependencies)
 - [Defining a data model](#step-3---defining-a-data-model)
 - [Setting up Room database](#step-4---setting-up-room-database)
 - [Storing the custom type](#step-5---storing-the-custom-type)
@@ -19,31 +19,29 @@ In this tutorial, we will create a custom TypeConverter and use it in the Room d
 - [Further reading](#further-reading)
 
 ### Prerequisites
-To follow along with this tutorial:
-- Have Android Studio installed.
+To follow along with this tutorial, you need:
+- Android Studio installed.
 - Good knowledge of implementing `Room` database.
-- An understanding of Kotlin programming language.
+- An understanding of the Kotlin programming language.
 
-### What are TypeConverters in Room database
-These are methods that the tell 'Room' database on how to convert custom types to and from recognized kinds that Room recognizes. 
+### What are TypeConverters in Room database?
+These are methods that tell `Room` database how to convert custom types to and from recognized kinds that Room understands.
 
-### What are custom types in Room
-Room typically stores primitive types such as String, int, float, double and others. However, when it comes to storing custom types, such as :
+### What are custom types in Room?
+Room typically stores primitive types such as String, Int, Float, Double and others. However, a `@TypeConverter` is very useful when it comes to storing custom types, such as:
 - Date
 - Location
 - Created classes
 
-A `@TypeConverter` will be very useful here in order to strore this types 
-
 We will be trying to store a word and its various meanings in `Room` database (The way a dictionary has a word that has several meanings).
 
 ### Step 1 - Creating an Android project
-Launch your Android studio and create an empty Android project, with Kotlin as its primary language.
+Launch your Android Studio and create an empty Android project with Kotlin as its primary language.
 
-### Step 2 - Adding necessary dependencies
-Next, add the Gson and `Room` database dependencies in your app-level `build.gradle`.
+### Step 2 - Adding the necessary dependencies
+Next, add the `Gson` and `Room` database dependencies in your app-level `build.gradle` file.
 
-```gradle
+```bash
 def room_version = "2.4.1"
 implementation "androidx.room:room-runtime:$room_version"
 annotationProcessor "androidx.room:room-compiler:$room_version"
@@ -52,7 +50,7 @@ implementation 'com.squareup.retrofit2:converter-gson:2.9.0'
 ```
 
 ### Step 3 - Defining a data model
-Let's take a scenario where you have received such a response from an API. Which is a response containing the meanings of the word that the user had searched.
+Let's take a scenario where you have received the following response from an API. This is a response containing the meaning(s) of the word that the user had searched.
 
 ```json
 "meanings": [
@@ -76,7 +74,7 @@ Let's take a scenario where you have received such a response from an API. Which
 ]
 ```
 
-If you convert this response to some data classes, you should have something similar to this.
+If you convert this response to some data classes, you should have something similar to this:
 
 ```kotlin
 data class Meaning(
@@ -99,7 +97,7 @@ data class Meaning(
 ```
 
 ### Step 4 - Setting up Room database
-Our entity will have a word, a list of its meanings, and a primary key.
+Our entity will have a word, a list of its meanings, and a primary key:
 
 ```kotlin
 @Entity
@@ -111,7 +109,7 @@ data class WordEntity(
 )
 ```
 
-Our DAO interface with only one method for inserting a Word Entity into the database. Feel free to add other methods for querying, deleting, or updating.
+Our DAO interface has only one method for inserting a Word Entity into the database. Feel free to add other methods for querying, deleting, or updating:
 
 ```kotlin
 @Insert
@@ -119,11 +117,11 @@ suspend fun insertWord(wordEntity: WordEntity)
 ```
 
 ### Step 5 - Storing the custom type
-As you have seen from the Entity class, we need to store a list of `Meanings` in a column and the other data, this will be hard because `Meaning` is of a complex type that `Room` cannot understand.
+As you have seen from the Entity class, we need to store a list of `Meanings` in a column and the other data. This can be be difficult because `Meaning` is of a complex type that `Room` can not understand.
 
-First, let us create a custom JsonParser for parsing `String`. This is important because later in your project you may need to switch and use a different library to parse strings such as Moshi, Jackson, and Kotlin Serialization; this will help.
+First, let us create a custom `JsonParser` for parsing `String`. This is important because later in your project, you may need to switch and use a different library to parse strings such as Moshi, Jackson, and Kotlin Serialization.
 
-Just create a util package and define an `Interface` with the following methods.
+Create a util package and define an `Interface` with the following methods:
 
 ```kotlin
 interface JsonParser {
@@ -149,7 +147,7 @@ class GsonParser(
 ```
 
 ### Step 6 - Creating the type converter
-Create a class called `Converters` that takes in the `JsonParser` we created as a parameter
+Create a class called `Converters` that takes in the `JsonParser` we created as a parameter:
 
 ```kotlin
 class Converters(
@@ -161,7 +159,7 @@ class Converters(
 
 > Make sure you annotate the class with `@ProvidedTypeConverter` because we need to provide our own instance of a `TypeConverter`.
 
-Inside the class, define the first function that will convert the list of `Meaning` to `String`.
+Inside the `Converters` class, define the first function that will convert the list of `Meaning` to `String`.
 
 ```kotlin
 fun toMeaningJson(meaning: List<Meaning>) : String {
@@ -172,9 +170,9 @@ fun toMeaningJson(meaning: List<Meaning>) : String {
 }
 ```
 
-> Don't forget to annotate the method you have created with a `@TypeConverter` annotation to mark it as a type converter function.
+> Don't forget to annotate the method you have created with an `@TypeConverter` annotation to mark it as a type converter function.
 
-Below that function, define another one that will aid us in converting `Json` back to a list of `Meaning`
+Below that function, define another one that will aid in converting `Json` back to a list of `Meaning`:
 
 ```kotlin
 fun fromMeaningsJson(json: String): List<Meaning>{
@@ -184,7 +182,8 @@ fun fromMeaningsJson(json: String): List<Meaning>{
     ) ?: emptyList()
 }
 ```
-> Don't forget to annotate it with a `@TypeConverter` annotation to mark it as a type converter function.
+
+> Don't forget to annotate it with an `@TypeConverter` annotation to mark it as a type converter function.
 
 Your final class should look something similar to this:
 
@@ -212,17 +211,17 @@ class Converters(
 ```
 
 ### Step 7 - Using the type converter
-Finally, in order to use this custom `TypeConverter`, annotate your Room database abstract class with @TypeConverters and pass in our 'Converters' class. 
+Finally, in order to use this custom `TypeConverter`, annotate your Room database abstract class with @TypeConverters and pass in the `Converters` class. 
 
 ```kotlin
 @TypeConverters(Converters::class)
-abstract class DatabaseName : RoomDatabase() {
+abstract class DatabaseName : RoomDatabase() {}
 ```
 
 And that is all, now you can store a complex type such as a list of meanings of a word as a string in `Room` database and convert it back to a list.
 
 ### Conclusion
-With that, you now have an understanding of what type converters are in `Room` database, examples of custom types, creating a custom JsonParser, and you have learned how to come up with your own custom TypeConveter and use it. Don't stop there, keep learning more about `Room` database.
+With that, you now have an understanding of what type converters are in `Room` database, examples of custom types, and creating a custom JsonParser. You have also learned how to come up with your own custom TypeConverter and use it. Don't stop there, keep learning more about `Room` database.
 
 For a clear look at the code, check out this Github repository - [RoomTypeConverterDemo](https://github.com/feswalsalim/RoomTypeConverterDemo).
 
@@ -231,4 +230,4 @@ For a clear look at the code, check out this Github repository - [RoomTypeConver
 - [Using Room to refer to complex data](https://developer.android.com/training/data-storage/room/referencing-data)
 - [Room Db Custom Types](https://medium.com/android-news/android-architecture-components-room-custom-types-ad6a477004e0)
 
-Happy coding.
+Happy coding!
