@@ -1,8 +1,6 @@
 ### Introduction
 The tutorial will concentrate on Tuya's Mail Messaging API, which can be used to send an email to a user. The project will verify the email account with a randomly generated code sent to the entered email.
 
-<!-- this last line. verifying imetoka wapi? A little intro please. -->
-
 ### Table of contents
 - [What is Tuya](#what-is-tuya)
 - [How to setup Tuya API](#how-to-setup-tuya-api)
