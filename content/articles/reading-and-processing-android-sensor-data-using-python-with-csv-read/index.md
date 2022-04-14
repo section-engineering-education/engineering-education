@@ -3,7 +3,7 @@ layout: engineering-education
 status: publish
 published: true
 url: /reading-and-processing-android-sensor-data-using-python-with-csv-read/
-title: Reading and Processing Android Sensor Data Using Python With CSV read()
+title: Reading and Processing Android Sensor Data Using Python With CSV read
 description: This tutorial explains how one can record data of various smartphone sensors and processes it offline using Python
 author: joseph-odhiambo
 date: 2022-03-09T00:00:00-09:50
@@ -12,7 +12,7 @@ excerpt_separator: <!--more-->
 images:
 
   - url: /engineering-education/reading-and-processing-android-sensor-data-using-python-with-csv-read/hero.png
-    alt: Reading and Processing Android Sensor Data Using Python With CSV read() Hero Image
+    alt: Reading Processing Android Sensor Data Python CSV read Hero Image
 ---
 Computers obtain data by reading from the standard input, files, and sensors, then store it in the memory for processing. Data processing could be online or offline, depending on the preferences of the user.
 <!--more-->

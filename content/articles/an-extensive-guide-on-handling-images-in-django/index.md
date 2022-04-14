@@ -12,7 +12,7 @@ excerpt_separator: <!--more-->
 images:
 
   - url: /engineering-education/an-extensive-guide-on-handling-images-in-django/hero.jpg
-    alt: An Extense Guide On Handling Images  Hero ImageIn Django
+    alt: Handling Images Django Hero Image
 ---
 As a web developer, working with images is an important skill to have. Django is one of the most popular web development frameworks, it provides ways to deal with images conveniently.
 <!--more-->
@@ -264,7 +264,7 @@ In the [Admin site](http://127.0.0.1:8000/admin/), add some images to check how 
 
 On adding four images from my PC, here is what my web page looks like:
 
-![display.html](/engineering-education/an-extensive-guide-on-working-with-images-in-django/display.jpg)
+![display.html](/engineering-education/an-extensive-guide-on-handling-images-in-django/display.jpg)
 
 Now that we have looked at the basic concepts to deal with images, we shall proceed to the advanced concepts next.
 
@@ -357,12 +357,12 @@ urlpatterns = [
 
 Here is what mine looks like :
 
-![upload.html](/engineering-education/an-extensive-guide-on-working-with-images-in-django/upload.jpg)
+![upload.html](/engineering-education/an-extensive-guide-on-handling-images-in-django/upload.jpg)
 
 ### List the images in the Admin site
 As of now, our admin site images are listed using their names and paths:
 
-![before](/engineering-education/an-extensive-guide-on-working-with-images-in-django/before.jpg)
+![before](/engineering-education/an-extensive-guide-on-handling-images-in-django/before.jpg)
 
 This makes it hard to identify the images without having to click on the links. We can easily improve this by listing the images on the dashboard, alongside their names.
 
@@ -397,7 +397,7 @@ admin.site.register(Image, imageAdmin)
 
 As a result, our [Image dashboard](http://127.0.0.1:8000/admin/demo/image/) should resemble this:
 
-![after](/engineering-education/an-extensive-guide-on-working-with-images-in-django/after.jpg)
+![after](/engineering-education/an-extensive-guide-on-handling-images-in-django/after.jpg)
 
 ### Create thumbnails
 If you click on images in the [display page](http://127.0.0.1:8000/), they tend to have different default sizes. The big images might even take longer to load due to their size.
