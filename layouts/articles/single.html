@@ -1,5 +1,5 @@
 {{ define "main" }} 
-{{ $author_page := (printf "/authors/%s/index.md".Params.author) }}
+{{ $author_page := (printf "/authors/%s/index.md" .Params.author) }}
 
 <div class="sticky-wrapper">
   <aside class="author-sidebar" id="stickyAuthorSidebar">
