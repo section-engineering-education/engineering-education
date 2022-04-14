@@ -6,7 +6,7 @@ url: /building-a-webpage-ui-with-compose-web/
 title: Building a Webpage UI with Compose Web
 description: This tutorial will take the reader through the process of building a webpage UI with Compose Web.
 author: robert-muriithi
-date: 2022-04-14T00:00:00-23:10
+date: 2022-04-14T00:00:00-23:20
 topics: [Languages]
 excerpt_separator: <!--more-->
 images:
@@ -46,7 +46,7 @@ Let's see how we can create a Compose Web project using the IntelliJ IDEA.
 ### Step 1: Creating a Compose Web project
 To create a project, open the IntelliJ IDEA and click on `New` then `Project`. From the menu, head down to `Gradle` and check the `Kotlin\Multiplatform` checkbox. Also, tick on `Kotlin DSL build script` and then click next. Give your project a suitable name and hit finish. Wait for Gradle build to finish.
 
-![create-project](/building-a-webpage-ui-with-compose-web/create-project.png)
+![Create project](/engineering-education/building-a-webpage-ui-with-compose-web/create-project.png)
 
 Also, if you don't want to create a new project, you can use the template [here](https://github.com/JetBrains/compose-jb/tree/master/templates/web-template).
 
@@ -62,7 +62,7 @@ pluginManagement {
 }
 ```
 
-![settings.gradle.kts](/building-a-webpage-ui-with-compose-web/settings-gradle-kts.png)
+![settings.gradle.kts](/engineering-education/building-a-webpage-ui-with-compose-web/settings-gradle-kts.png)
 
 ### Step 3: Update build.gradle.kts file
 Open `build.gradle.kts` on the left pane and paste the following code:
@@ -100,9 +100,9 @@ kotlin {
 
 This appears as follows:
 
-![build.gradle.kts](/building-a-webpage-ui-with-compose-web/build-gradle-kts-first.png)
+![build.gradle.kts](/engineering-education/building-a-webpage-ui-with-compose-web/build-gradle-kts-first.png)
 
-![build.gradle.kts](/building-a-webpage-ui-with-compose-web/build-gradle-kts-second.png)
+![build.gradle.kts](/engineering-education/building-a-webpage-ui-with-compose-web/build-gradle-kts-second.png)
 
 ### Step 4: Adding the following directories to the project
 - `src/jsMain/kotlin`
@@ -220,7 +220,7 @@ fun main() {
 ```
 
 ### Handling events
-An event is a signal received by a program as a result of user actions. Event handling is the mechanism by which these events are controlled on what should happen after they occur. When a user clicks a mouse, a certain action is triggered and the program responds.
+An event is a signal received by a program as a result of user actions. Event handling is the mechanism by which these events are controlled on what should happen after they occur. When a user clicks a mouse, an action is triggered and the program responds.
 
 Handling `Button` clicks can be done as follows:
 
@@ -264,6 +264,7 @@ Form(attrs = { form ->
 
 ### Controlled and uncontrolled inputs
 The main difference between controlled and uncontrolled inputs is that controlled inputs get inputs from a single source of truth. These inputs are optional which we can focus on but not change.
+
 For uncontrolled inputs, the browser handles the user inputs. Invoking `value()` is a must to make it "controlled":
 
 ```kotlin
@@ -373,7 +374,7 @@ You can add `--continuous` to continuously compile the program instead of runnin
 
 To run it on the IDE, click `gradle` on the rightmost pane and double click on `jsBrowserRun`.
 
-![run-project](/building-a-webpage-ui-with-compose-web/run-project.png)
+![Run project](/engineering-education/building-a-webpage-ui-with-compose-web/run-project.png)
 
 The web page will open in the browser at `localhost:8080`.
 
