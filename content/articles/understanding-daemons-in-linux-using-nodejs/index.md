@@ -3,7 +3,7 @@ layout: engineering-education
 status: publish
 published: true
 url: /understanding-daemons-in-linux-using-nodejs/
-title: Understanding Daemons in Linux Using Node Js
+title: Understanding Daemons in Linux Using Node.js
 description: In this article, we'll describe the various ways of starting a web server as a daemon process, leaving the reader to pick the one best suited to them.
 author: ghali-muga
 date: 2022-04-14T00:00:00-14:30
@@ -12,7 +12,7 @@ excerpt_separator: <!--more-->
 images:
 
   - url: /engineering-education/understanding-daemons-in-linux-using-nodejs/hero.png
-    alt: Daemon UNIX with Node Js
+    alt: Daemon UNIX with Node.js
 ---
 A daemon is a UNIX program that is executed in the background and does not need any standard I/O services.
 <!--more-->
