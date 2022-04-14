@@ -72,9 +72,22 @@ Now, create a `Main.java` file by right-clicking on the `src/main/java` director
 ### Create a web application
 Next, let's set up our `Main.java` file. With Spark, `Main.java` will be responsible for our user interfaces, but the code will look different from a console program. We'll need to use the format and methods expected by the Spark framework.
 
+Let's add the following code to `Main.java`:
+
+```java
+import static spark.Spark.*;
+public class Main {
+  public static void main(String[] args) {
+    get("/hello", (request, response) -> "Hello World!");
+  }
+}
+```
+
 As you type, you'll notice that red squiggly lines appear. This means IntelliJ is reading the code we are writing and checking it for errors! You'll also potentially see a red line on the right-hand side - this means something is wrong with this line. A yellow line means a warning or inconsistency, and you'll see a green checkmark up at the top if all is well!
 
 > Note: If you see an error message that reads: "Cannot resolve symbol' spark'," make sure you have included spark dependencies in your `pom.xml` file.
+
+Let's look at each line of code:
 
 ```java
 import static spark.Spark.*;
