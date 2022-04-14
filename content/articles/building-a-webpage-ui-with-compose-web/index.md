@@ -1,5 +1,22 @@
-### Building A Webpage UI with Compose Web
-Compose Web has enabled accelerated development of Web UI using the stable DOM API. With lots of features provided like Kotlin/JS API support, built-in CSS-in-JS support, SVGs support, etc, you can now build dynamic webpages using Compose. This is advantageous because it can run on all browsers.
+---
+layout: engineering-education
+status: publish
+published: true
+url: /building-a-webpage-ui-with-compose-web/
+title: Building a Webpage UI with Compose Web
+description: This tutorial will take the reader through the process of building a webpage UI with Compose Web.
+author: robert-muriithi
+date: 2022-04-14T00:00:00-23:10
+topics: [Languages]
+excerpt_separator: <!--more-->
+images:
+
+  - url: /engineering-education/building-a-webpage-ui-with-compose-web/hero.png
+    alt: Building a Webpage UI with Compose Web Hero Image
+---
+Compose Web has enabled accelerated development of Web UI using the stable DOM API. With lots of features provided like Kotlin/JS API support, built-in CSS-in-JS support, SVGs support, etc, you can now build dynamic webpages using Compose.
+<!--more-->
+This is advantageous because it can run on all browsers.
 
 In this tutorial, we will learn how we can create a simple web UI with Compose for the web.
 Let's get started :)
@@ -366,3 +383,6 @@ Just like HTML, you can use Kotlin Multi-platform to construct a program that ru
 Compose Multi-platform is at its early age and stable now. Read more of this from [here](https://blog.jetbrains.com/kotlin/2021/12/compose-multiplatform-1-0-is-going-live/). 
 
 Keep composing :)
+
+---
+Peer Review Contributions by: [Eric Gacoki](/engineering-education/authors/eric-gacoki/)
