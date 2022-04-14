@@ -92,7 +92,7 @@ fun main() = application {
 ```
 
 ### Step 3 - User Login Class
-In this step, we will learn how to create a Compose Desktop screen with views. Right-click on the `kotlin` then select In this step, we will learn how to create a Compose Desktop screen with views. Right-click on the `kotlin` then select `New` and then `Kotlin Class/File` to create a new class and name it `LoginScreen`. 
+In this step, we will learn how to create a Compose Desktop screen with views. Right-click on the `kotlin` then select. Right-click on the `kotlin` then select `New` and then `Kotlin Class/File` to create a new class and name it `LoginScreen`. 
 
 This class will act as our login screen interface where the user can enter login details.
 
