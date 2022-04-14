@@ -18,7 +18,7 @@ Wand library is a [ctypes](https://docs.python.org/3/library/ctypes.html#module-
 <!--more-->
 We will learn more about this module to understand how you can manipulate a single image into various forms.
 
-In this tutorial, we will take a deep look at what the Wand library is and how we can use it to work with images. We will also look at a few examples, where we will learn about its unique features and applications.
+In this tutorial, we will take a deep look at what the Wand library is and how we can use it to work with images. We will also look at a few examples where we will learn about its unique features and applications.
 
 ### Prerequisites
 The reader should have some basic knowledge of Python and must have Python installed in their local machine.
