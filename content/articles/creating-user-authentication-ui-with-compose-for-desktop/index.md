@@ -26,7 +26,7 @@ Compose Desktop allows us to develop desktop apps with lovely user interfaces li
 - [Step 3 - User Login Class](#step-3-user-login-class)
 - [Explanation](#explanation)
 - [Step 4 - User Registration Class](#step-4-user-registration-class)
-- [Step 5 - Main Class](#step-5---main-class)
+- [Step 5 - Main Class](#step-5-main-class)
 - [Conclusion](#conclusion)
 
 ### Prerequisites
@@ -331,7 +331,8 @@ class RegisterScreen {
 
 }
 ```
-Register class implementation is just the same as the `LoginScreen` but with more text fields, hence we shall use the same explanation as to the one above.
+
+Register class implementation is just the same as the `LoginScreen` but with more text fields, hence we shall use the same explanation as the one above.
 
 ![register-screen](/engineering-education/creating-user-authentication-ui-with-compose-for-desktop//register-screen.png)
 
@@ -362,12 +363,13 @@ fun main() = application {
 
 Since Kotlin is considered a multi-platform language, you can build a whole desktop application with Kotlin only. In this tutorial, we have learned how to build user authentication screens. 
 
-This project can be found in my [GitHub](https://github.com/Collince-Okeyo/UserAuthentication) repositories. You can fork and clone it in your machine and learn how to create the screens with Compose for Desktop implementation. 
-
-### Further reading
-To learn more about building desktop apps with Compose for Desktop visit [here](https://github.com/JetBrains/compose-jb/tree/master/tutorials/Getting_Started).
+This project can be found in my [GitHub](https://github.com/Collince-Okeyo/UserAuthentication) repositories. You can fork and clone it into your machine and learn how to create the screens with Compose for Desktop implementation. 
 
 ### Conclusion
-To learn more about building desktop apps with this technology, you will have to do a lot of practice. If you love creating web applications, with Compose for Web, you can create awesome websites as well. To supplement the content from this article read on Getting Started with Compose Multiplatform [here](https://github.com/JetBrains/compose-jb/tree/master/tutorials/Getting_Started). 
+To learn more about building desktop apps with this technology, you will have to do a lot of practice. To supplement the content from this article read on Getting Started with Compose Multiplatform [here](https://github.com/JetBrains/compose-jb/tree/master/tutorials/Getting_Started). 
+
+### Further reading
+To learn more about building desktop apps with Compose for Desktop you can visit [here](https://github.com/JetBrains/compose-jb/tree/master/tutorials/Getting_Started).
+
 ---
 Peer Review Contributions by: [Mohamed alghadban](/engineering-education/authors/mohamed-alghadban/)
