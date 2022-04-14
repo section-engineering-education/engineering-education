@@ -136,8 +136,7 @@
 {{ end }}
 </article>
 
-{{ if eq (getenv "HUGO_ENV") "production" | or (eq $.Site.Params.env
-"production") }}
+{{ if eq (getenv "HUGO_ENV") "production" | or (eq $.Site.Params.env "production") }}
 <script type="text/javascript">
   var HYVOR_TALK_WEBSITE = 5716;
   var HYVOR_TALK_CONFIG = {
