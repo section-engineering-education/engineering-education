@@ -1,63 +1,68 @@
-
-{{ define "main" }}
-
+{{ define "main" }} 
 {{ $author_page := (printf "/authors/%s/index.md" .Params.author) }}
 
 <div class="sticky-wrapper">
-
   <aside class="author-sidebar" id="stickyAuthorSidebar">
     <h4>EngEd Author Bio</h4>
     {{ with $.Site.GetPage $author_page }}
-      <div class="author-header">
-        {{ range .Resources }}
-          <div class="img-wrap">
-            <img class="avatar" src="{{ (.Resize "180x").Permalink }}">
-          </div>
-        {{ end }}
-        <div class="author-info">
-          <h3><a class="link-basic" href="{{ .Permalink }}">{{ .Params.title }}</a></h3>
-          <div class="bio">
-            {{ .Content }}
-          </div>
-        </div>
+    <div class="author-header">
+      {{ range .Resources }}
+      <div class="img-wrap">
+        <img class="avatar" src="{{ (.Resize "180x").Permalink }}">
       </div>
-      <a class="sidebar-profile-link" href="{{ .Permalink }}">View author's full profile <img src="/engineering-education/images/right-arrow.png" alt="View authors profile arrow icon" /></a>
+      {{ end }}
+      <div class="author-info">
+        <h3>
+          <a class="link-basic" href="{{ .Permalink }}">{{ .Params.title }}</a>
+        </h3>
+        <div class="bio">{{ .Content }}</div>
+      </div>
+    </div>
+    <a class="sidebar-profile-link" href="{{ .Permalink }}"
+      >View author's full profile
+      <img
+        src="/engineering-education/images/right-arrow.png"
+        alt="View authors profile arrow icon"
+    /></a>
     {{ end }}
   </aside>
 </div>
 
-<article> 
-  
+<article>
   {{ partial "engineering-education/eng-ed-banner.html" . }}
-  <section class='hero-blocks xs-pt-50 xs-pb-50 sm-pt-100 sm-pb-100 -blue-blocks'>
-
+  <section
+    class="hero-blocks xs-pt-50 xs-pb-50 sm-pt-100 sm-pb-100 -blue-blocks"
+  >
     <div class="section-container relative">
-
       <div class="hero-blocks-inner relative prl-5">
         <div class="hero-blocks-middle">
+          <h1 class="title-2 xs-mb-30">{{ .Title }}</h1>
+          <h5 class="text-16 text-blockquote">
+            {{ .Date.Format "January 2, 2006" }}
+          </h5>
+          {{ with .Params.topics }}
+          <ul class="list-flex xs-mt-8 topics">
+            <li class="xs-mr-6 text-18-regular">Topics:</li>
+            {{ range . }} 
+            {{- $topicURLparts := slice "topic" (urlize .) -}} 
+            {{- $topicURL := delimit $topicURLparts "/"| printf "/%s/" -}}
+            <li class="xs-mr-6 topic">
+              <a
+                class="text-18-regular text-light-blue decoration-none"
+                href="/engineering-education{{ $topicURL }}"
+                >{{ . }}</a
+              >
+            </li>
+            {{ end }}
+          </ul>
 
-        <h1 class="title-2 xs-mb-30">{{ .Title }}</h1>
-        <h5 class="text-16 text-blockquote">{{ .Date.Format "January 2, 2006" }}</h5>
-        {{ with .Params.topics }}
-        <ul class="list-flex xs-mt-8 topics">
-          <li class="xs-mr-6 text-18-regular">Topics:</li>
-          {{ range . }}
-          {{- $topicURLparts :=  slice "topic" (urlize .) -}}
-          {{- $topicURL := delimit $topicURLparts "/"| printf "/%s/" -}}
-          <li class="xs-mr-6 topic"><a class="text-18-regular text-light-blue decoration-none" href="/engineering-education{{ $topicURL }}">{{ . }}</a></li>
           {{ end }}
-        </ul>
-
-        {{ end }}
-
         </div>
       </div>
-
     </div>
   </section>
-  
+
   <section class="section-rich-text blog-styling xs-pb-30">
-    
     <div class="section-container">
       <div class="section-rich-text-inner prl-5">
         <div class="social-list">
@@ -66,23 +71,23 @@
           <a class="social-list-facebook" href=""></a>
         </div>
         <div class="social-list">
-            <div class="addthis_inline_share_toolbox"></div>
+          <div class="addthis_inline_share_toolbox"></div>
         </div>
-        <div class="section-rich-text-leading">
-        {{ .Content }}
-        </div>
+        <div class="section-rich-text-leading">{{ .Content }}</div>
 
         {{ if hugo.Environment | eq "development" }}
 
-        <script type = "text/javascript">
-          var images = document.getElementsByTagName('img'); 
+        <script type="text/javascript">
+          var images = document.getElementsByTagName("img");
           for (var i = 0; i < images.length; i++) {
-            images[i].src = images[i].src.replace("/engineering-education/", "/");
-          };
+            images[i].src = images[i].src.replace(
+              "/engineering-education/",
+              "/"
+            );
+          }
           console.log(images[2].src);
         </script>
 
-        {{ else }}
         {{ end }}
       </div>
     </div>
@@ -90,26 +95,68 @@
   <div class="comments-wrapper">
     <div id="hyvor-talk-view"></div>
   </div>
+
+  {{ $related := .Site.RegularPages.RelatedIndices . "topics" | first 3 }} 
+  {{ with $related }}
+
+  <section class="resource-block section-container xs-mb-40 xs-mt-40 relative">
+    <div class="resource-block-left-large absolute"></div>
+    <div class="resource-block-left-stripes absolute"></div>
+    <div class="resource-block-header text-center">
+      <h2 class="title-3 xs-mb-40 text-link">Similar Articles</h2>
+    </div>
+    <div class="resource-block-inner flex flex-wrap justify-center">
+
+      {{ range . }}
+      <a class="decoration-none resource-block-item" href="{{ .RelPermalink }}">
+        <div class="resource-block-item-wrap fill-white flex cta-shadow flex-column">
+          <img src="{{ if eq $.Site.Params.env "local" }}{{ replace (index .Params.images 0).url "/engineering-education" "" }}{{ else }}{{ (index .Params.images 0).url }}{{ end }}" {{ if (index .Params.images 0).alt}} alt="{{ (index .Params.images 0).alt }}"{{ end }}/>
+
+          <div class="resource-block-item-content flex flex-column">
+            <div class="resource-block-item-content-inner pt-5 pb-5 flex flex-column fill-white">
+
+              {{ with .Params.topics }}
+              <p class="text-16 text-blockquote xs-mb-6">
+                {{ delimit . ", " | title }}
+              </p>
+              {{ end }}
+
+              <h3 class="title-5 text-link xs-mb-40">{{ .Title }}</h3>
+            </div><span class="link-with-arrow-blue text-blue text-18-medium featured-content-item-content-inner-span">Read More</span>
+          </div>
+        </div>
+      </a>
+      {{ end }}
+
+    </div>
+    <div class="resource-block-right-large absolute"></div>
+    <div class="resource-block-right-stripes absolute"></div>
+  </section>
+
+{{ end }}
 </article>
 
-
 {{ if eq (getenv "HUGO_ENV") "production" | or (eq $.Site.Params.env "production") }}
-  <script type="text/javascript">
-    var HYVOR_TALK_WEBSITE = 5716;
-    var HYVOR_TALK_CONFIG = {
-        url: false,
-        id: false
-    };
-  </script>
+<script type="text/javascript">
+  var HYVOR_TALK_WEBSITE = 5716;
+  var HYVOR_TALK_CONFIG = {
+    url: false,
+    id: false,
+  };
+</script>
 {{ else }}
-  <script type="text/javascript">
-    var HYVOR_TALK_WEBSITE = 5728;
-    var HYVOR_TALK_CONFIG = {
-        url: false,
-        id: false
-    };
-  </script>
+<script type="text/javascript">
+  var HYVOR_TALK_WEBSITE = 5728;
+  var HYVOR_TALK_CONFIG = {
+    url: false,
+    id: false,
+  };
+</script>
 {{ end }}
-<script async type="text/javascript" src="//talk.hyvor.com/web-api/embed.js"></script>
+<script
+  async
+  type="text/javascript"
+  src="//talk.hyvor.com/web-api/embed.js"
+></script>
 
 {{ end }}

@@ -4,7 +4,7 @@ status: publish
 published: true
 url: /breaking-down-kafka-vs-pulsar/
 title: Breaking Down Kafka vs. Pulsar
-description: This article will compare Kafka and Pulsar in terms of architecture, geo-replication, and use cases for both.
+description: This article will compare Kafka and Pulsar in terms of architecture, geo-replication, and review use cases for both.
 author: eric-kahuha
 date: 2020-11-19T00:00:00-14:00
 topics: []
