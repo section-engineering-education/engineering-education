@@ -6,7 +6,7 @@ url: /creating-user-authentication-ui-with-compose-for-desktop/
 title: Creating User Authentication UI with Compose for Desktop
 description: This tutorial will help the reader create a user authentication UI with compose for Desktop.
 author: collince-okeyo
-date: 2022-03-22T00:00:00-11:00
+date: 2022-04-14T00:00:00-11:00
 topics: [Languages]
 excerpt_separator: <!--more-->
 images:
@@ -15,32 +15,32 @@ images:
     alt: Creating User Authentication UI with Compose for Desktop Hero Image
 ---
 Desktop applications run on desktop machines. They are being used almost everywhere, for example, in a school management system. Before Compose Desktop came into existence, the Java SWING library was used to develop these desktop applications. With the new technology of Compose Desktop coming into existence, we can have a choice of which technology to use when we want to develop a desktop app.
-
-Compose Desktop allows us to develop desktop apps with lovely user interfaces like the ones in Android apps. Compose for Desktop can create desktop applications for Windows, macOS, or Linux platforms. Kotlin multi-platform also allows for building Compose Web Application and Compose Multi-platform Application.
+<!--more-->
+Compose Desktop allows us to develop desktop apps with lovely user interfaces like the ones in Android apps. Compose for Desktop can create desktop applications for Windows, macOS, or Linux platforms. Kotlin multi-platform also allows users to build Compose Web Applications and Compose Multi-platform Applications.
 
 ### Table of contents
 - [Prerequisites](#prerequisites)
-- [Getting Started](#getting-started)
-- [Step 1 - Creating Project](#step-1---creating-project)
-- [Step 2 -  Understanding Compose Desktop Application Project Structure](#step-2---understanding-compose-desktop-application-project-structure)
-- [Step 3 - User Login Class](#step-3---user-login-class)
+- [Getting started](#getting-started)
+- [Step 1 - Creating project](#step-1-creating-project)
+- [Step 2 -  Understanding Compose Desktop Application Project Structure](#step-2-understanding-compose-desktop-application-project-structure)
+- [Step 3 - User Login Class](#step-3-user-login-class)
 - [Explanation](#explanation)
-- [Step 4 - User Registration Class](#step-4---user-registration-class)
+- [Step 4 - User Registration Class](#step-4-user-registration-class)
 - [Step 5 - Main Class](#step-5---main-class)
 - [Conclusion](#conclusion)
 
 ### Prerequisites
-To read and understand this tutorial, you must have:
+To best understand this tutorial, you must have:
 - [IntelliJ](https://www.jetbrains.com/idea/download/#section=windows) IDEA installed.
 - [JDK version 11](https://www.oracle.com/java/technologies/downloads/) or later installed.
 - Basic knowledge in [Jetpack Compose](https://developer.android.com/jetpack/compose).
 
-### Getting Started
+### Getting started
 In this tutorial, we will learn to use Compose for Desktop by building simple user authentication screens. We will therefore learn how to create some basic views like `TextField` and `Button` in a Compose Desktop app.
 
-IntelliJ IDEA has built-in Kotlin plugins and Compose Desktop libraries hence there is no need to add them, that is why it is recommended for creating Compose Desktop applications. 
+IntelliJ IDEA has built-in Kotlin plugins and Compose Desktop libraries hence there is no need to add them, that is why it is recommended when creating Compose Desktop applications. 
 
-### Step 1 - Creating Project
+### Step 1 - Creating project
 To create a Compose Desktop Application, open your IntelliJ IDEA then follow the following steps:
  1. Right-click on `Files`.
  2. Select `New Project`.
@@ -49,11 +49,11 @@ To create a Compose Desktop Application, open your IntelliJ IDEA then follow the
  5. Select `Compose Desktop Application` in the `Project Template`.
  6. Click the `Next` button.
 
-![creating project](/engineering-education/compose-for-desktop/creating-project1.png)
+![creating project](/engineering-education/creating-user-authentication-ui-with-compose-for-desktop//creating-project1.png)
 
 > Check to ensure that the JDK is at least JDK 11, then click on `Finish` to create your project. 
 
-![jdk version](/engineering-education/compose-for-desktop/creating-project2.png)
+![jdk version](/engineering-education/creating-user-authentication-ui-with-compose-for-desktop//creating-project2.png)
 
 ### Step 2 - Understanding Compose Desktop Application Project Structure
 To get us started, we will first look at the project structure of a typical compose project. After you have created a Compose Desktop app successfully, you will realize that JetBrains compose plugins and libraries are included in the `build.gradle.kts` file by default.
@@ -188,7 +188,7 @@ These Composable have different functions that allow for performing unique actio
 
 > Note: The function is annotated by the `@Composable` that shows that we are using JetBrains compose for desktop.
 
-![login-screen](/engineering-education/compose-for-desktop/login-screen.png)
+![login-screen](/engineering-education/creating-user-authentication-ui-with-compose-for-desktop//login-screen.png)
 
 ### Step 4 - User Registration Class
 In this class, we will create a Composable function `RegisterScreen` to implement the register screen interface.
@@ -332,7 +332,7 @@ class RegisterScreen {
 ```
 Register class implementation is just the same as the `LoginScreen` but with more text fields, hence we shall use the same explanation as to the one above.
 
-![register-screen](/engineering-education/compose-for-desktop/register-screen.png)
+![register-screen](/engineering-education/creating-user-authentication-ui-with-compose-for-desktop//register-screen.png)
 
 #### Step 5 - Main Class
 In this class, we will create the objects of our classes and use the object to call the composable methods.
