@@ -1,40 +1,42 @@
 ### Building A Webpage UI with Compose Web
-Compose Web has enabled accelerated development of Web UI using the stable DOM API. With lots of features provided like Kotlin/JS API support,  built-in CSS-in-JS support, SVGs support, etc, you can now build dynamic webpages using Compose. This is advantageous because it can run on all browsers.
+Compose Web has enabled accelerated development of Web UI using the stable DOM API. With lots of features provided like Kotlin/JS API support, built-in CSS-in-JS support, SVGs support, etc, you can now build dynamic webpages using Compose. This is advantageous because it can run on all browsers.
 
 In this tutorial, we will learn how we can create a simple web UI with Compose for the web.
 Let's get started :)
 
 ### Prerequisites
-To follow along with this tutorial, you will have to:
-- Have installed the latest version of [Intellij IDEA](https://www.jetbrains.com/idea/download/#section=windows).
-- Have an understanding of [Kotlin](https://kotlinlang.org/) programming language.
+To follow along with this tutorial, you will need to:
+- Have installed the latest version of [IntelliJ IDEA](https://www.jetbrains.com/idea/download/#section=windows).
+- Have an understanding of the [Kotlin](https://kotlinlang.org/) programming language.
 - Have some knowledge in [CSS](https://www.w3schools.com/css/)
-- [JDK 11](https://www.oracle.com/java/technologies/downloads/) or higher
+- Install [JDK 11](https://www.oracle.com/java/technologies/downloads/) or higher.
 
 ### Goals
-By the end of this tutorial, you will have an understanding of :
+By the end of this tutorial, you will have an understanding of:
 - Getting Started with Compose Web
 - Building Web UI
 - Handling Events
 - Controlled and uncontrolled inputs
-- Using Domain Specific Language(DSL) style in compose
+- Using Domain-Specific Language(DSL) style in Compose
 
 ### Getting started with Compose web
-Compose web is part of the Compose Multiplatform which was recently released. The Compose multiplatform has simplified development since it allows code exchange between Web, Desktop, and Android applications. 
+Compose web is part of the Compose Multi-platform which was recently released. The Compose multi-platform has simplified development since it allows code exchange between Web, Desktop, and Android applications.
+
 Using Compose web increases the performance of the web applications, reduces memory usage, and has made it easier for developers to iterate on features.
 
-Let's see how you can create a Compose Web project using the IntelliJ IDEA.
+Let's see how we can create a Compose Web project using the IntelliJ IDEA.
 
 ### Step 1: Creating a Compose Web project
-To create a project, open the IntelliJ IDEA and click on `New` the `Project`. From the menu, head down to `Gradle` and check the `Kotlin\Multiplatform` checkbox. Also, tick on `Kotlin DSL build script` then click next, give your project a name and finish. Wait for Gradle build to finish.
+To create a project, open the IntelliJ IDEA and click on `New` then `Project`. From the menu, head down to `Gradle` and check the `Kotlin\Multiplatform` checkbox. Also, tick on `Kotlin DSL build script` and then click next. Give your project a suitable name and hit finish. Wait for Gradle build to finish.
 
 ![create-project](/building-a-webpage-ui-with-compose-web/create-project.png)
 
 Also, if you don't want to create a new project, you can use the template [here](https://github.com/JetBrains/compose-jb/tree/master/templates/web-template).
 
-### Step 2: Update `settings.gradle.kts` file
-Paste the following in `settings.gradle.kts` 
-```gradle
+### Step 2: Update settings.gradle.kts file
+Paste the following in `settings.gradle.kts`:
+
+```bash
 pluginManagement {
     repositories {
         gradlePluginPortal()
@@ -42,10 +44,13 @@ pluginManagement {
     }
 }
 ```
+
 ![settings.gradle.kts](/building-a-webpage-ui-with-compose-web/settings-gradle-kts.png)
-### Step 3: Update `build.gradle.kts` file
+
+### Step 3: Update build.gradle.kts file
 Open `build.gradle.kts` on the left pane and paste the following code:
-```gradle
+
+```bash
 // Add compose gradle plugin
 plugins {
     kotlin("multiplatform") version "1.6.10"
@@ -75,27 +80,35 @@ kotlin {
     }
 }
 ```
+
 This appears as follows:
+
 ![build.gradle.kts](/building-a-webpage-ui-with-compose-web/build-gradle-kts-first.png)
+
 ![build.gradle.kts](/building-a-webpage-ui-with-compose-web/build-gradle-kts-second.png)
-### Step 4: Add the following folders/directories to the project
+
+### Step 4: Adding the following directories to the project
 - `src/jsMain/kotlin`
 
 ### Building Web UI components
 First, create `Main.kt` inside the kotlin folder. The `Main.kt` file will be used to deploy our logic and handle events.
+
 Let's understand what we place in `Main.kt`.
 
-**Starting point**
-Before working with Compose web, you'll have to have an HTML base station. And that is, a node. This node serves as the composition's root, and it is from right here that Compose will handle its very own DOM tree.
+#### Starting point
+Before working with Compose web, you'll need to have an HTML base station referred to as a node. This serves as the composition's root. It is from the node that Compose will handle its DOM tree.
+
 ```kotlin
 renderComposable(rootElementId = "root"){
     ...
 }
 ```
 
-**HTML tags**
+#### HTML tags
 Compose's DOM DSL Composable isn't yet supported for all HTML tags on the web. However, we can directly access the most often used HTML tags.
-Let's use a `Div` for an illustration.
+
+Let's use a `Div` for an illustration:
+
 ```kotlin
 fun main() {
     renderComposable(rootElementId = "root") {
@@ -109,10 +122,11 @@ fun main() {
     }
 }
 ```
+
 > NOTE: Most HTML tags of this nature will use this signature.
 
-Lets look at another example. We will use `Input` to show some additional signature of such elemts.
-Example:
+Let us look at another example. We will use `Input` to show some additional signatures of such elements:
+
 ```kotlin
 fun main() {
     renderComposable(rootElementId = "root") {
@@ -125,7 +139,9 @@ fun main() {
     }
 }
 ```
-You can use elements like `Span` as containers to wrap `Text` in order to apply styling. 
+
+You can use elements like `Span` as containers to wrap `Text` to apply styles:
+
 ```kotlin
 fun main() {
     renderComposable(rootElementId = "root") {
@@ -136,12 +152,17 @@ fun main() {
     }
 }
 ```
-This in HTML corresponds to:
+
+In HTML, this corresponds to:
+
 ```html
 <span style="background-color: blue;">This is my first text in compose for web</span>
 ```
-**Compose common attributes**
-Lets have a look on some attributes that can be used with compose.
+
+#### Common Compose attributes
+
+Let us have a look at some attributes that can be used with compose:
+
 ```kotlin
 attrs = {
     id("elementId")
@@ -151,7 +172,9 @@ attrs = {
     contentEditable(true)
 }
 ```
+
 To specify links using `A`, we do as follows:
+
 ```kotlin
 A(
     attrs = {
@@ -164,7 +187,9 @@ A(
     Text("Some text here")
 }
 ```
+
 The `Main.kt` sample is as follows:
+
 ```kotlin
 fun main() {
     renderComposable(rootElementId = "root") {
@@ -176,10 +201,12 @@ fun main() {
     }
 }
 ```
-### Handling Events
-An event is a signal received by a program as a result of user actions. Event handling is the mechanism by which these events are controlled on what should happen after they occur.
-If a user clicks a mouse, a certain action is triggered and the operating system or program responds. 
+
+### Handling events
+An event is a signal received by a program as a result of user actions. Event handling is the mechanism by which these events are controlled on what should happen after they occur. When a user clicks a mouse, a certain action is triggered and the program responds.
+
 Handling `Button` clicks can be done as follows:
+
 ```kotlin
 fun main() {
     renderComposable(rootElementId = "root") {
@@ -189,9 +216,11 @@ fun main() {
     }
 }
 ```
-> Note: We use `onClick` to handle events on a button
+
+> Note: We use `onClick` to handle events on a button.
 
 To handle `onInput` events, we do as follows:
+
 ```kotlin
 val text = remember { mutableStateOf("") }
 TextArea(
@@ -203,22 +232,27 @@ TextArea(
     }
 )
 ```
+
 This will listen for inputs made by a user in a `TextArea`.
 
-You can use `addEventListener` with the name of the event for those events with no configuration function in the `attrs` block.
+You can use `addEventListener` with the name of the event for those events with no configuration function in the `attrs` block:
+
 ```kotlin
-Form(attrs = { forrm ->
+Form(attrs = { form ->
     this.addEventListener("submit") {
         form.preventDefault()
     }
 })
 ```
-### Controlled and Uncontrolled inputs
-The main difference between controlled and uncontrolled inputs is that controlled inputs get inputs from a single source of truth. These inputs are optional which we can focus on but not change. For uncontrolled inputs, the browswer handles the user inputs. Invoking `value()` is a must to make it "controlled".
+
+### Controlled and uncontrolled inputs
+The main difference between controlled and uncontrolled inputs is that controlled inputs get inputs from a single source of truth. These inputs are optional which we can focus on but not change.
+For uncontrolled inputs, the browser handles the user inputs. Invoking `value()` is a must to make it "controlled":
+
 ```kotlin
 // Controlled
 Input(type = InputType.Text) {
-    value("Value One") // necessary
+    value("Value One") // required
     onInput { event -> print(event.value) }
 }
 
@@ -228,21 +262,27 @@ Input(type = InputType.Text) {
     onInput { event -> print(event.value) }
 }
 ```
-Both Controlled and Uncontrolled inputs receive an `event` inside the `onInput{}`.
-Also, for Controlled inputs, if you type anything it won't show a thing. Only the "Value Two" will be shown. For Uncontrolled inputs, typing a value will make corresponding changes.
 
-We can conclude that Controlled input content can only be modified by the external state while Uncontrolled inputs values can change on their own.
+Both controlled and uncontrolled inputs receive an `event` inside the `onInput{}`.For controlled inputs, if you type anything, it won't be shown. Only the "Value Two" will be shown.
+
+For uncontrolled inputs, typing a value will make corresponding changes.
+
+We can conclude that controlled input content can only be modified by the external state while uncontrolled inputs values can change on their own.
 
 ### Style DSL
-In this section, we'll look at how to style UI components. For styling these components, we'll use Style Domain-Specific Language.
-Style sheets, which you can use in Kotlin code to specify CSS rules, are unaffected by DSL. Depending on the nature of your application, it can also be used to alter styling. 
+In this section, we'll look at how to style UI components. For styling these components, we'll use the style Domain-Specific Language.
+
+Style sheets, which you can use in Kotlin code to specify CSS rules, are unaffected by DSL. Depending on the nature of your application, it can also be used to alter styling.
 
 We can style the components using `inline` styling or `external stylesheets` as done in HTML. 
 In HTML, `inline` styling is done as follows:
+
 ```html
 <div> <h1 style = "color:red;">This is a heading</h2> </div>
 ```
+
 In Compose web, we can do it as follows:
+
 ```kotlin
 fun main() {
     renderComposable(rootElementId = "root") {
@@ -260,7 +300,11 @@ fun main() {
     }
 }
 ```
-Alternatively, you can use `stylesheets`. The stylesheet that we define will contain the styling rules. Here is a simple example
+
+Alternatively, you can use `stylesheets`. The stylesheet that we define will contain the styling rules.
+
+Here is a simple example:
+
 ```kotlin
 object AppStylesheet : StyleSheet() {
     val box by style { 
@@ -281,35 +325,44 @@ fun holder(content: @Composable () -> Unit) {
     }
 }
 ```
+
 Make sure you reference your `stylesheet`. This is done in the `Main.kt` as follows:
+
 ```kotlin
 fun main() {
     renderComposable(rootElementId = "root") {
         Style(AppStylesheet)
         holder {
-            //The rest of code here
+            // The rest of code here
         }
     }
 }
 ```
-You can read more about selectors from [here](https://github.com/JetBrains/compose-jb/tree/master/tutorials/Web/Style_Dsl#selectors-examples). Also, for more understanding about styling in Compose Web, you can get samples from [here](https://github.com/JetBrains/compose-jb/tree/master/examples/web-landing/src/jsMain/kotlin/com/sample)
 
-### Running the web on the browser.
+You can read more about selectors [here](https://github.com/JetBrains/compose-jb/tree/master/tutorials/Web/Style_Dsl#selectors-examples). Also, for more understanding about styling in Compose Web, you can get samples from [this guide](https://github.com/JetBrains/compose-jb/tree/master/examples/web-landing/src/jsMain/kotlin/com/sample).
+
+### Running the web on the browser
 You can run the project using commands on the terminal or launch it from the IDE. To use the commands, open the terminal and type the following commands:
+
 ```bash
 ./gradlew jsBrowserRun
 ```
-You can add `--continuous to continuously compile the program instead of running it every time.
+
+You can add `--continuous` to continuously compile the program instead of running it every time:
+
 ```bash
 ./gradlew jsBrowserRun --continuous
 ```
+
 To run it on the IDE, click `gradle` on the rightmost pane and double click on `jsBrowserRun`.
+
 ![run-project](/building-a-webpage-ui-with-compose-web/run-project.png)
 
-The web page will open in the browser as `localhost:8080`.
+The web page will open in the browser at `localhost:8080`.
 
 ### Conclusion
-Just like HTML, you can use Kotlin Multiplatform to construct a program that runs both on browsers and desktops. Styling is done in almost the same manner but way much easier. With Compose Web, you can build web UI rapidly and also handle events more efficiently using Kotlin language.
+Just like HTML, you can use Kotlin Multi-platform to construct a program that runs both on browsers and desktops. Styling is done in almost the same manner but way much easier. With Compose Web, you can build web UI rapidly and handle events more efficiently using the Kotlin language.
 
-Compose Multiplatform is at its early age and stable now. Read more of this from [here](https://blog.jetbrains.com/kotlin/2021/12/compose-multiplatform-1-0-is-going-live/). 
+Compose Multi-platform is at its early age and stable now. Read more of this from [here](https://blog.jetbrains.com/kotlin/2021/12/compose-multiplatform-1-0-is-going-live/). 
+
 Keep composing :)
