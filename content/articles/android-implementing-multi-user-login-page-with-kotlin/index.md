@@ -1,5 +1,7 @@
 # [Android] Implementing Multi-User Login Page with Kotlin, Firebase Authentication and Firebase Realtime Database, Using Firebase DataSnapShot, on Android.
 
+![hero](/engineering-education/android-implementing-multi-user-login-page-with-kotlin/hero.jpg)
+
 ### Introduction
 
 This tutorial will show you how to use Firebase Authentication and the Realtime database to implement a multi-user login page using the DataSnapShot instance to retrieve users’ data from the Firebase Realtime Database.
@@ -12,7 +14,7 @@ Building multi-user applications helps to accommodate users of different levels 
 - Understanding how to create a Multi-user login page.
 - Implementing multi-user(admin, userlvl1, userlvl2) capabilities of an android application using DataSnapShot.
 
-### Table of Content
+### Table of Contents
 
 - Create a new project on Android Studio
 - Import dependencies for your project
@@ -40,23 +42,23 @@ If you have all those ready, then let's get started!
 
 To create a new project, click on your Android Studio and allow it to load:
 
-![Screenshot (124).png](/engineering-education/android-implementing-multi-user-login-page-with-kotlin/Screenshot_(124).png)
+![screenshot124.png](/engineering-education/android-implementing-multi-user-login-page-with-kotlin/screenshot124.png)
 
 On the welcome screen select new project.
 
-![Screenshot (125).png](/engineering-education/android-implementing-multi-user-login-page-with-kotlin/Screenshot_(125).png)
+![screenshot125.png](/engineering-education/android-implementing-multi-user-login-page-with-kotlin/screenshot125.png)
 
 Select an empty activity and click next.
 
-![Screenshot (126).png](/engineering-education/android-implementing-multi-user-login-page-with-kotlin/Screenshot_(126).png)
+![screenshot126.png](/engineering-education/android-implementing-multi-user-login-page-with-kotlin/screenshot126.png)
 
 On the next screen, name your project. In this tutorial, my project is called "multi-login." Choose the language you wish to use and write the project. This project is built with Kotlin. Then select your minimum SDK and click Finish.
 
-![Screenshot (128).png](/engineering-education/android-implementing-multi-user-login-page-with-kotlin/Screenshot_(128).png)
+![screenshot128.png](/engineering-education/android-implementing-multi-user-login-page-with-kotlin/screenshot128.png)
 
 Wait for your project to build successfully.
 
-![Screenshot (130).png](/engineering-education/android-implementing-multi-user-login-page-with-kotlin/Screenshot_(130).png)
+![screenshot130.png](/engineering-education/android-implementing-multi-user-login-page-with-kotlin/screenshot130.png)
 
 ### Import Dependencies
 
@@ -74,59 +76,59 @@ To achieve what we want in this project, we need a database and a server where u
 
 To link the project with Firebase, click on "tools" on your menu bar, then select "Firebase."
 
-![Screenshot (129).png](/engineering-education/android-implementing-multi-user-login-page-with-kotlin/Screenshot_(129).png)
+![screenshot129.png](/engineering-education/android-implementing-multi-user-login-page-with-kotlin/screenshot129.png)
 
 Select the authentication option. In the drop-down, select “Authenticate using a custom authentication system [KOTLIN]”.
 
-![Screenshot (132).png](/engineering-education/android-implementing-multi-user-login-page-with-kotlin/Screenshot_(132).png)
+![screenshot132.png](/engineering-education/android-implementing-multi-user-login-page-with-kotlin/screenshot132.png)
 
 On the next screen, select "Connect to Firebase". This will lead you to the browser where you will connect your app to Firebase.
 
-![Screenshot (134).png](/engineering-education/android-implementing-multi-user-login-page-with-kotlin/Screenshot_(134).png)
+![screenshot134.png](/engineering-education/android-implementing-multi-user-login-page-with-kotlin/screenshot134.png)
 
 Before you can connect your app to Firebase, you may be required to build your app. Go ahead and click on ‘Build’ button on the pop-up menu.
 
-![Screenshot (134).png](/engineering-education/android-implementing-multi-user-login-page-with-kotlin/Screenshot_(134)%201.png)
+![screenshot134.png](/engineering-education/android-implementing-multi-user-login-page-with-kotlin/screenshot1341.png)
 
 After a successful build, you will be redirected to the browser and to your Firebase console.
 
-![Screenshot (135).png](/engineering-education/android-implementing-multi-user-login-page-with-kotlin/Screenshot_(135).png)
+![screenshot135.png](/engineering-education/android-implementing-multi-user-login-page-with-kotlin/screenshot135.png)
 
 On your Firebase console, select ‘Add Project’ to add your new project. On the next screen, agree to the prompts and continue.
 
-![Screenshot (136).png](/engineering-education/android-implementing-multi-user-login-page-with-kotlin/Screenshot_(136).png)
+![screenshot136.png](/engineering-education/android-implementing-multi-user-login-page-with-kotlin/screenshot136.png)
 
-![Screenshot (140).png](/engineering-education/android-implementing-multi-user-login-page-with-kotlin/Screenshot_(140).png)
+![screenshot140.png](/engineering-education/android-implementing-multi-user-login-page-with-kotlin/screenshot140.png)
 
 After following the steps above, you have successfully connected your android app firebase.
 
-![Screenshot (143).png](/engineering-education/android-implementing-multi-user-login-page-with-kotlin/Screenshot_(143).png)
+![screenshot143.png](/engineering-education/android-implementing-multi-user-login-page-with-kotlin/screenshot143.png)
 
 Head back to the Android Studio. There you'll see a pop-up message that confirms that you have connected your app to Firebase. Then go ahead and click the "Add the Firebase Authentication SDK to your app" button so you can add the Authentication SDK to your project. Follow the prompts below to proceed, then allow your gradle files to synchronize with your project.
 
-![Screenshot (144).png](/engineering-education/android-implementing-multi-user-login-page-with-kotlin/Screenshot_(144).png)
+![screenshot144.png](/engineering-education/android-implementing-multi-user-login-page-with-kotlin/screenshot144.png)
 
-![Screenshot (146).png](/engineering-education/android-implementing-multi-user-login-page-with-kotlin/Screenshot_(146).png)
+![screenshot146.png](/engineering-education/android-implementing-multi-user-login-page-with-kotlin/screenshot146.png)
 
 Still on the assistant menu, click on ‘Realtime Database’, then select ‘Get started with Realtime Database [KOTLIN]. The next screen will show that your app has already been connected to Firebase, what to do next is to add the Realtime Database to your app by selecting ‘Add the Realtime Database SDK to your app’.
 
-![Screenshot (148).png](/engineering-education/android-implementing-multi-user-login-page-with-kotlin/Screenshot_(148).png)
+![screenshot148.png](/engineering-education/android-implementing-multi-user-login-page-with-kotlin/screenshot148.png)
 
-![Screenshot (149).png](/engineering-education/android-implementing-multi-user-login-page-with-kotlin/Screenshot_(149).png)
+![screenshot149.png](/engineering-education/android-implementing-multi-user-login-page-with-kotlin/screenshot149.png)
 
 Next, we return to the browser, open the Firebase console, where we can see or firebase projects, and then select the project you're working on, in my case,'multi-login.’
 
-![Screenshot (150).png](/engineering-education/android-implementing-multi-user-login-page-with-kotlin/Screenshot_(150).png)
+![screenshot150.png](/engineering-education/android-implementing-multi-user-login-page-with-kotlin/screenshot150.png)
 
 Select Realtime Database from the menu and follow the prompts. Also, click on Authentication. Under sign-in method, choose Email/Password. Follow the prompts on the images below, then click Save.
 
-![Screenshot (151).png](/engineering-education/android-implementing-multi-user-login-page-with-kotlin/Screenshot_(151).png)
+![screenshot151.png](/engineering-education/android-implementing-multi-user-login-page-with-kotlin/screenshot151.png)
 
-![Screenshot (152).png](/engineering-education/android-implementing-multi-user-login-page-with-kotlin/Screenshot_(152).png)
+![screenshot152.png](/engineering-education/android-implementing-multi-user-login-page-with-kotlin/screenshot152.png)
 
-![Screenshot (153).png](/engineering-education/android-implementing-multi-user-login-page-with-kotlin/Screenshot_(153).png)
+![screenshot153.png](/engineering-education/android-implementing-multi-user-login-page-with-kotlin/screenshot153.png)
 
-![Screenshot (154).png](/engineering-education/android-implementing-multi-user-login-page-with-kotlin/Screenshot_(154).png)
+![screenshot154.png](/engineering-education/android-implementing-multi-user-login-page-with-kotlin/screenshot154.png)
 
 ### Create the multi-user login page.
 
@@ -728,14 +730,21 @@ class Lecturer : AppCompatActivity() {
 
 Before you run your project, head to your Firebase console, click on authentication, and add a user. This user will be the default admin of your app who can login at the first start of the app into the admin dashboard and create users. This default admin can then be deleted as the main admin of the app takes charge.
 
-![Screenshot (157).png](/engineering-education/android-implementing-multi-user-login-page-with-kotlin/Screenshot_(157).png)
+![screenshot157.png](/engineering-education/android-implementing-multi-user-login-page-with-kotlin/screenshot157.png)
 
-![Screenshot (159).png](/engineering-education/android-implementing-multi-user-login-page-with-kotlin/Screenshot_(159).png)
+![screenshot159.png](/engineering-education/android-implementing-multi-user-login-page-with-kotlin/screenshot159.png)
 
 Copy the User Id and head into the Realtime Database. Create a node called "Users". Directly under it, create another node and place the User Id as the key. Under the User Id node, add the user details, which are email, firstname, lastname, username, and users, in a key/value format, as seen below.
 
-![Screenshot (160).png](/engineering-education/android-implementing-multi-user-login-page-with-kotlin/Screenshot_(160).png)
+![screenshot160.png](/engineering-education/android-implementing-multi-user-login-page-with-kotlin/screenshot160.png)
 
-Then run your app on your emulator, or external Android device, create two or more users of different user types, and try to log in with these new users.
+Then run your app on your emulator, or external Android device, create two or more users of different user types, and try to log in with these new users, as you can see below.
 
-With this, you have successfully created a multi-user login page using Firebase database and Firebase authentication, which directs a user to the right user activity, given the user-data that was submitted on registration, which is determined by the data content retrieved by a DataSnapshot.
+![screenshot165.png](/engineering-education/android-implementing-multi-user-login-page-with-kotlin/screenshot165.png)
+
+![screenshot168.png](/engineering-education/android-implementing-multi-user-login-page-with-kotlin/screenshot168.png)
+
+![screenshot169.png](/engineering-education/android-implementing-multi-user-login-page-with-kotlin/screenshot169.png)
+
+### Conclusion
+In conclusion, you have successfully created a multi-user login page using Firebase database and Firebase authentication, which directs a user to the right user activity, given the user-data that was submitted on registration, which is determined by the data content retrieved by a DataSnapshot. You can get the full code on [GitHub](https://github.com/oriohac/multi-user.git).
