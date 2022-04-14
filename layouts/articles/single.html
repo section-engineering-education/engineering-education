@@ -1,5 +1,5 @@
-{{ define "main" }} {{ $author_page := (printf "/authors/%s/index.md"
-.Params.author) }}
+{{ define "main" }} 
+{{ $author_page := (printf "/authors/%s/index.md" .Params.author) }}
 
 <div class="sticky-wrapper">
   <aside class="author-sidebar" id="stickyAuthorSidebar">
@@ -43,8 +43,9 @@
           {{ with .Params.topics }}
           <ul class="list-flex xs-mt-8 topics">
             <li class="xs-mr-6 text-18-regular">Topics:</li>
-            {{ range . }} {{- $topicURLparts := slice "topic" (urlize .) -}} {{-
-            $topicURL := delimit $topicURLparts "/"| printf "/%s/" -}}
+            {{ range . }} 
+            {{- $topicURLparts := slice "topic" (urlize .) -}} 
+            {{- $topicURL := delimit $topicURLparts "/"| printf "/%s/" -}}
             <li class="xs-mr-6 topic">
               <a
                 class="text-18-regular text-light-blue decoration-none"
@@ -86,8 +87,7 @@
           }
           console.log(images[2].src);
         </script>
-
-        {{ else }} {{ end }}
+        {{ end }}
       </div>
     </div>
   </section>
