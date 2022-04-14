@@ -1,7 +1,15 @@
-There are a variety of ways to use SentenceTransformers in Python projects. In our publication Sentence-BERT: Sentence Embeddings utilizing Siamese BERT-Networks, we describe our initial work. Using this framework, you may generate embeddings for sentences and texts in over 100 languages.
+There are a variety of ways to use SentenceTransformers in Python projects. Our preliminary work is described in this paper [Sentence-BERT:](https://arxiv.org/abs/1908.10084) Sentence Embeddings Using Siamese BERT-Networks. Using this framework, you may generate embeddings for sentences and texts in over 100 languages.
 
-We'll create a Flask web app that summarizes text automatically using BERT.
-### Builing a SBERT-based Flask web app for automatic text summarization
+We'll create a Flask web app that summarizes text automatically using BERT in this tutorial.
+### Prerequisites
+- Have a basic knowledge of python programming language.
+- Have an IDE installed, preferably [VS Code](https://code.visualstudio.com/).
+
+### Table of contents
+- [Builing the Flask web app](#builing-the-flask-web-app) 
+- [Conclusion](#conclusion)
+- [Reference](#reference)
+### Builing the Flask web app 
 #### Step One: Creating a virtual environment for the project
 Before we start we will have to create a virtual evironment. Open terminal and create a virtual environment name `summarizerApp` in any directory you wish.
 
@@ -18,7 +26,7 @@ Let's go ahead and activate the environment. Follow the command below:
 ```
 source summarizerApp/bin/activate
 ```
-After executing the above command you will notice that the summarizerApp is within brackets.
+After executing the above command you will notice that the `summarizerApp` is within brackets.
 
 #### Installing Packages
 1. **Install flask**: For making web applications, HTTP request management, and template rendering.
@@ -45,13 +53,13 @@ pip3 install -q bert-extractive-summarizer
 ```
 
 #### Step Two: Front-End coding
-Inside your working directory, create a folder called `templates`. Create two files in that folder by opening it in Visual Studio Code.
+Inside your working directory, create a folder called `templates`. Create two files in that folder by opening it in [Visual Studio Code](https://code.visualstudio.com/).
 
-These two files should be names as:
+These two files should be named as:
 1. `index.html`
 2. `summary.html`
 
-In the `index.html` file, copy the following html code. There is home page code that displays a text field where the user can submit a significant chunk of content that will be summarized.
+In the `index.html` file, copy the following html code. The codde consists of a home page code that displays a text field where the user can submit a significant chunk of content that will be summarized.
 
 ```html
 <!DOCTYPE html>
@@ -136,7 +144,7 @@ from summarizer.sbert import SBertSummarizer
 
 The latest version of `bert-extractive-summarizer` lets you use `Sentence Bert`. It's based on [this](https://arxiv.org/abs/1908.10084) paper and [this]( https://www.sbert.net/) library.
 
-After importing libraries we create Create a SBERT model. We'll use our SBERT model to summarize the required content in our next session.
+After importing libraries we create create a SBERT model. We'll use our SBERT model to summarize the required content in our next session.
 
 ```python
 # Using an instance of SBERT to create the model
@@ -168,11 +176,11 @@ With the above mentioned, we can run our app from the terminal. Activate the vir
 ```
 python app.py
 ```
-In your terminal, you should see a warning message.
+In your terminal, a warning message will be displayed.
 
 ![Terminal](/section-engineering/a-sbert-based-flask-web-app-for-automatic-text-summarization/terminal.png )
 
-In your browser ty the given web address:
+In your browser, search the given web address:
 http://127.0.0.1:8000 
 
 
@@ -187,5 +195,10 @@ Enter text that you wish to be summarized and press summarize.
 
 ### Conclusion
 In this blog, we demonstrated how to effectively construct a Flask web application that utilizes SBERT to summarize a given piece of material. We constructed a virtual environment, installed packages, coded both the front-end and back-end of our web application, and finally launched it.
+### Reference
+- Build, Save and Deploy your first [Web App](https://medium.com/analytics-vidhya/build-save-and-deploy-your-first-web-app-using-flask-and-pythonanywhere-110ddd691026) using Flask.
+- Develop a NLP Model in Python & [Deploy It with Flask.](https://towardsdatascience.com/develop-a-nlp-model-in-python-deploy-it-with-flask-step-by-step-744f3bdd7776)
+- [Automated News Summarization with BERT-Powered Encoders](https://github.com/huydang90/News-Summarization-with-BERT)
+
 
 Happy coding!
