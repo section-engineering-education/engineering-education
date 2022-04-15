@@ -1,36 +1,30 @@
-Building a custom user reviews page with stars rating in react, typescript and Bootstrap library
-
-### Introduction
-
 In front-end web development, applications are required to be user (client) centric, meaning the overall users reviews and recommendations should be taken into consideration. Most applications rely on user feedback to improve their service quality delivery.
-React, typescript, and reactstrap can be an incredible combination in building a custom user review page that users’ recommendations/reviews and stars rating can be displayed, similar to the apple store and google play store reviews section.
-In this article, we will take a discuss the various steps and package dependencies required to build a custom user reviews page in React and typescript.
+
+React, Typescript, and Reactstrap can be an incredible combination in building a custom user review page that users’ recommendations/reviews and stars rating can be displayed, similar to the Apple store and Google Play Store reviews section.
+
+In this article, we will take a discuss the various steps and package dependencies required to build a custom user reviews page with React and typescript.
 
 ### Key takeaway
-
 After reading the article, the reader is expected to understand and be able to implement the following:
 
-- Getting started with React application development
-- How to add and use typescript in React
+- Getting started with React application development.
+- How to add and use typescript in React.
 - Adding and using the reactstrap library in a React application.
-- Building a custom user review page with star ratings in React.js, typescript, and Bootstrap
-- How to populate star rating in typescript
+- Building a custom user review page with star ratings in React.js, typescript, and Bootstrap.
+- How to populate star rating in Typescript.
 
-### Prerequisite
-
-Basic knowledge of React, typescript, and a design library is required to follow along with this tutorial. I will also strongly recommend using visual studio code as your preferred text editor. If you do not have the above mentioned here is a link to enroll in a [React crash course](https://scrimba.com/learn/learnreact) for free.
+### Prerequisites
+Basic knowledge of [React](https://scrimba.com/learn/learnreact) , Typescript, and a design library is required to follow along with this tutorial. Visual Studio Code is also the preferred code editor.
 
 ### Getting started with React application development
-
 React.js is a light-weight front-end web library that enables us to create multiple reusable components and interfaces. Some of us have decided to take React.js a step further by adding Typescript to our React application to enjoy added development functionalities such as:
 
-- Real-time error catching and reporting functionalities in Typescript
-- Robust intelliSence
+- Real-time error catching and reporting functionalities in Typescript.
+- Robust intellisense.
 - Value types definitions etc.
   Those are a few of the advantages of combining Typescript and React.js in application development. Let’s get started with the development process listed in the following steps:
 
 ### Step 1 – Creating the React application
-
 As always, the first step in application development with React is the creation of a new `react app`. This is done by running a single command on your `command terminal`. To create your React application, open up the `command terminal` and run the command below:
 
 ```bash
@@ -43,12 +37,12 @@ Alternatively, for yarn users:
 yarn create-react-app reviews-app
 ```
 
-In a couple of minutes, your new React application should be ready for development. Bear in mind that the process requires internet connections so ensure you are connected to a stable Wi-Fi or Modem.
+In a couple of minutes, your new React application should be ready for development.
+
 Once that is completed, time to move on to the next step.
 
 ### Step 2 - Setting up Typescript in the application
-
-As mentioned, our custom reviews application will be built with React.js, Typescript, and reactstrap libraries. Reactstrap is a modified bootstrap package made for React.js applications. it contains numerous reusable elements for your React application such as
+As mentioned, our custom reviews application will be built with React.js, Typescript, and reactstrap libraries. Reactstrap is a modified bootstrap package made for React.js applications. it contains numerous reusable elements for your React application such as:
 
 - Modal
 - Grid
@@ -109,7 +103,7 @@ Your `package.json` should look like this:
 }
 ```
 
-Once that is completed, we will generate a typescript config file which is required in all Typescript-based applications. The config file contains settings/options required to successfully create and compile Typescript snippets to JavaScript. To generate the `tsconfig.json` file, we run the command in the terminal as shown below:
+Once that is completed, we will generate a typescript config file which is required in all Typescript-based applications. The config file contains settings/options required to successfully create and compile Typescript snippets to JavaScript. To generate the `tsconfig.json` file, we run the command below:
 
 ```bash
 npx tsc init
