@@ -16,27 +16,32 @@ images:
 ---
 As a developer, you might want to extract textual information from an image. Using Python would be a good choice, where we create a program that extracts such textual data from any given image.
 <!--more-->
-Python has been one of the most popular languages that developers enjoy working with. Its human-readable syntax makes it easy to learn.
+Python has been one of the most popular languages developers enjoy working with. Its human-readable syntax makes it easy to learn.
 
-In this guide, we will write a Python script that extracts images, scans text, transcribes it, and saves it to a text file. We will be using tessarct library to recognize textual data from images.
+In this guide, we will write a Python script that extracts images, scans text, transcribes it, and saves it to a text file. We will be using the tesseract library to recognize textual data from images.
 
 ### Table of contents
+- [Table of contents](#table-of-contents)
 - [Prerequisities](#prerequisities)
 - [Set up tesseract OCR](#set-up-tesseract-ocr)
 - [Adding the project dependencies](#adding-the-project-dependencies)
+  - [Pytesseract](#pytesseract)
+  - [PyMuPDF](#pymupdf)
+  - [Pillow](#pillow)
+  - [Opencv-python](#opencv-python)
 - [Create a Python tesseract script](#create-a-python-tesseract-script)
-- [Extract images](#extracting-images)
-- [Extract text information](#extracting-text-information)
-- [Test the app](#test-the-python-tesseract-app)
+- [Extract images](#extract-images)
+- [Extract text information](#extract-text-information)
+- [Test the app](#test-the-app)
 - [Conclusion](#conclusion)
 
 ### Prerequisities
 To follow along with this article, ensure that you have [Python installed](https://www.python.org/downloads/) and running on your computer.
 
-Also, make sure you have some basic [understanding of Python](https://www.youtube.com/watch?v=rfscVS0vtbw).
+Also, ensure you have some basic [understanding of Python](https://www.youtube.com/watch?v=rfscVS0vtbw).
 
 ### Set up tesseract OCR
-Optical Character Recognition (OCR) is a technology that is used to recognize text from the images. It can be used to convert tight handwritten or printed texts into machine-readable texts.
+Optical Character Recognition (OCR) is a technology that is used to recognize text from images. It can be used to convert tight handwritten or printed texts into machine-readable texts.
 
 To use OCR, you need to [install and configure](https://medium.com/quantrium-tech/installing-and-using-tesseract-4-on-windows-10-4f7930313f82) tesseract on your computer.
 
@@ -56,13 +61,13 @@ tesseract <image_name> <file_name_to_save_extracted_text>
 
 In this case, you will provide the image name and the file name. When the command is executed, a `.txt` file will be created and saved in the same folder.
 
-This confirms that the tessarct library is successfuly installed. Now, we may proceed to implement the same using a Python script.
+This confirms that the tesseract library is successfully installed. Now, we may proceed to implement the same using a Python script.
 
 ### Adding the project dependencies
-We install a few dependent libraries to help us get started with the Python script.
+We need to install a few dependent libraries to help us get started with the Python script.
 
 #### Pytesseract
-[Python-tesseract](https://pypi.org/project/pytesseract/) is an OCR library that is used to scan and transcribe any textual data in images. This library is used just to recognize textual information, but not to save them to any text document.
+[Python-tesseract](https://pypi.org/project/pytesseract/) is an OCR library that is used to scan and transcribe any textual data in images. This library is used to recognize textual information but not to save it to any text document.
 
 To install `pytesseract`, run the following command:
 
@@ -71,7 +76,7 @@ pip install pytesseract
 ```
 
 #### PyMuPDF
-[PyMuPDF](https://pypi.org/project/PyMuPDF/) is a python library that is used to access file documents and images such as PDF.
+[PyMuPDF](https://pypi.org/project/PyMuPDF/) is a python library that is used to access file documents and images, such as PDFs.
 
 In this application, PyMuPDF will read PDF documents and check for any saved images. PyMuPDF renders the PDF files into PNG formats, scans for any text, and finally extracts the text from the rendered PNG images.
 
@@ -125,36 +130,33 @@ ImageFile.LOAD_TRUNCATED_IMAGES = True
 
 Once the application gives access to PDF files, its content will be extracted in the form of images. These images will then be processed to extract the text.
 
-In this case, we need to create a few global variables that helps to create and save these images to the project path. We also specify the path to save the extracted text into a `.txt` file.
+In this case, we need to create a few global variables that help to create and save these images to the project path. We also specify the path to save the extracted text into a `.txt` file.
 
 Go ahead and add these global variables as shown:
 
 ```py
 # Global variables
-strPDF, textScanned,  textScanned, inputTeEx, dirName = "", "", "", "", [
+strPDF, textScanned, textScanned, inputTeEx, dirName = "", "", "", "", [
     "images", "output_txt"]
 ```
 
 This will create a directory `images` where the PDF extracted images will be saved. An `output_txt` directory will be created to save the scanned text information as `.txt` file.
 
-Now, let's create the method that helps us access the installed tesseract library and the required files. We will be doing this under`gInUs()` function as shown:
+Now, let's create the method that helps us access the installed tesseract library, and the required files. We will do this under`gInUs()` function as shown:
 
 ```py
 def gInUs():
     # Global var
     global strPDF
     global inputTeEx
-
     if(platform.system() == "Windows"):
         # Print input
         print(Fore.YELLOW +
               "[.] Add the tesseract.exe local path" + Fore.RESET)
         inputTeEx = input()
-
         # Print input
         print(Fore.GREEN + "[!] Add the PDF file local path:" + Fore.RESET)
         inputUser = input()
-
     # Print an alert if input is not valid, if not, call to fun reDoc
     if(inputUser == "" or len(inputUser.split("\\")) == 1):
         print(Fore.RED + "[X] Please enter a valid PATH to a file" + Fore.RESET)
@@ -164,9 +166,9 @@ def gInUs():
 
 From the above code:
 - `"[.] Add the tesseract.exe local path"` helps us access the tesseract library
-- `"[!] Add the PDF file local path:"` helps us access the local PDF file that we want to use.
+- `"[!] Add the PDF file local path:"` helps us access the local PDF file we want to use.
 
-Once we enter this path, we need first to verify if the file path is correct. If the path is incorrect, the application will display `Please enter a valid PATH to a file` error message. If the path is correct, then the application will proceed to extract text from the images by executing the `extIm()` method.
+Once we enter this path, we need first to verify if the file path is correct. If the path is incorrect, the application will display `Please enter a valid PATH to a file` error message. If the path is correct, the application will extract text from the images by executing the `extIm()` method.
 
 ### Extract images
 Once we have the correct PDF file path, we need to run the file and extract the text to the `.txt` file.
@@ -188,11 +190,10 @@ global dirName
 for i in dirName:
     try:
         os.makedirs(i)
-        print(Fore.GREEN + "[!] Directory ", i,  " Created" + Fore.RESET)
+        print(Fore.GREEN + "[!] Directory ", i, " Created" + Fore.RESET)
     except FileExistsError:
         print(Fore.RED + "[X] Directory ", i,
             " already exists" + Fore.RESET)
-
  content = os.listdir("images")
 ```
 
@@ -207,7 +208,6 @@ if(len(content) >= 1):
 else:
     # Iterate over PDF pages
     for page_index in range(len(pdf_file)):
-
         # get the page itself
         page = pdf_file[page_index]
         image_list = page.getImageList()
@@ -227,7 +227,7 @@ else:
         page_index, Fore.RESET)
 ```
 
-In the loop, we name every image that is generated from the PDF. Here, we will append the count of image to the string `image`. For example, `image2_1`.
+In the loop, we name every image that is generated from the PDF. Here, we will append the image count to the string `image`. For example, `image2_1`.
 
 ```py
 for (image_index, img) in enumerate(page.getImageList(), start=1):
@@ -272,20 +272,16 @@ We need to loop through each extracted images and read its content to extract te
 ```py
 # List the images
 content = os.listdir('images')
-
 for i in range(len(content)):
     # Reading each image in images
     image = cv2.imread(f'images/{content[i]}')
     # Scan text from image
     print(Fore.YELLOW + f"[.] Scan text from {content[i]}" + Fore.RESET)
     text = pytesseract.image_to_string(image, lang='spa')
-
     # Concate text scanned in a string
     textScanned += text
-
     # print
     print(Fore.GREEN + "[!] Finished scan text" + Fore.RESET)
-
     # Showing img input
     cv2.imshow('Image', image)
     # 0.5 milisecond
@@ -325,7 +321,7 @@ Once you hit enter, you will be instructed to add the PDF path:
 On execution, the program creates an `output_txt` folder to save the extracted text information in `.txt` files.
 
 ### Conclusion
-In this guide, we created a Python script that extracts textual information from the images by scanning, transcribing, and saving it to a text file.
+In this guide, we created a Python script that extracts textual information from the images by scanning, transcribing, and saving it to a text file. You can get the code used in this guide on [GitHub](https://github.com/Wachira48/Extracts-images-save-text-to-a-.txt-file).
 
 I hope you found this tutorial helpful.
 
