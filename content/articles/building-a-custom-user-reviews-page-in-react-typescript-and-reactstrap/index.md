@@ -138,11 +138,11 @@ The snippet above is a basic and common Typescript config setup. Let’s take a 
 - The `exclude` flag instructs Typescript to ignore all the files in the array which in our case is the `node_modules`.
 - The `target` option specifies the version of JavaScript our code snippets will be compiled to by the Typescript compiler.
 - The `jsx` options notifies Typescript that we intend to use it with React.js.
-  For more information on the config options in Typescript, here is a link to all the [available config options](https://www.typescriptlang.org/docs/handbook/tsconfig-json.html.) in typescript.
+  For more information on the config options in Typescript, here is a link to all the [available config options](https://www.typescriptlang.org/docs/handbook/tsconfig-json.html.) in Typescript.
 
 ### Step 3 – Creating the navbar component (Navbar.tsx)
-
 One common feature in most websites is the presence of a navbar. The navbar is an important part of a website as it helps in routing/navigations and displaying the company logo and other essential information about the website.
+
 We will create and add a navbar to our `reviews app`. To do that, we create a `Navbar.tsx` file in the `src` folder thereafter we implement the snippet below:
 
 ```Typescript
@@ -186,7 +186,7 @@ export default function NavbarComponent() {
 }
 ```
 
- Note: The `.tsx` file extension is used when using React and Typescript to create components. React files use the `.jsx` or `.js` file extension.
+Note: The `.tsx` file extension is used when using React and Typescript to create components. React files use the `.jsx` or `.js` file extension.
 From the snippet above, we created a Navbar exclusively using page elements imported from the reactstrap design library. The elements include the following:
 
 - Navbar
@@ -194,10 +194,12 @@ From the snippet above, we created a Navbar exclusively using page elements impo
 - NavItem
 - NavBrand
 - NavLink
-  You might be wondering why we didn’t use the conventional `div`, `h3`, `span`, `ul`, etc. tags to create the Navbar components then style it later with CSS? The answer is that we have already pre-styled reactstrap elements that we could import and utilize in our application. Importing and using pre-styled elements reduces the complexities (back and forth) of styling a Navbar and other components since the library has already done the heavy lifting for us. We are however going to add a little `CSS` to customize our `Navbar` to taste.
+  
+We did not use the conventional `div`, `h3`, `span`, `ul`, etc. tags to create the Navbar components then style it later with CSS? The answer is that we have already pre-styled reactstrap elements that we could import and utilize in our application.
+  
+Importing and using pre-styled elements reduces the complexities (back and forth) of styling a Navbar and other components since the library has already done the heavy lifting for us. We are however going to add a little `CSS` to customize our `Navbar` to taste.
 
 ### Step 4 – Creating the reviews component (Reviews.tsx)
-
 As typical reviews or comments section in websites, our reviews components will have the following details displayed:
 
 - First name
@@ -206,8 +208,8 @@ As typical reviews or comments section in websites, our reviews components will 
 - Comment
 - Star rating
 - Timestamp
-  We will also provide an input form so a user can write their reviews on the page.
-  To build the `Reviews` components, we first need to create a `Reviews.tsx` file in the `src` folder then we implement the snippet below:
+ 
+We will also provide an input form so a user can write their reviews on the page. To build the `Reviews` components, we first need to create a `Reviews.tsx` file in the `src` folder then we implement the snippet below:
 
 ```Typescript
 import React from "react";
@@ -281,14 +283,15 @@ To have a better view of what is going on under the hood in our snippet, let’s
 
 - We imported `Card`, `CardTitle`, `CardSubtitle`, `CardText`, `CardImg` and `CardBody` from the reactstrap library we installed in our React application.
 - As required by Typescript, we assigned the value types to our user details (`firstname`, `lastName`, etc.).
-- We went ahead and created a Reviews component with the elements we imported from reactstrap and the user details.
+- We then created a Reviews component with the elements we imported from reactstrap and the user details.
 - To avoid errors, we used the conditional operator (`||`) to render a hardcoded value if/when the user details are not provided.
 - Finally, we created a `map` function that loops over the number of stars provided by the user and then render the equivalent in stars on the page.
-  Ideally, you’d want to fetch the information from a database, etc. setting up and using a database in the application is outside the scope of this tutorial, we have however added some dummies data for rendering purposes.
+
+Ideally, you’d want to fetch the information from a database, etc. setting up and using a database in the application is outside the scope of this tutorial, we have however added some dummies data for rendering purposes.
 
 ### Step 5 – Creating the Form component (Form.tsx)
-
 We will create an input form to retrieve the reviews from the user. The form will have an input field that is awaiting the user reviews which will update the state of our reviews and a submit `button`.
+
 To do that, we create a `Form.tsx` file thereafter we implement the snippet below:
 
 ```Typescript
@@ -326,12 +329,14 @@ export default function FormComponent() {
 
 - We imported a `Form`, `Input`, and `Button` from the reactstrap library which we used in creating our `Form` component.
 - We also created a React state (`reviews`) that is updated when the user edits the input field.
-- Finally, we implemented a submit `Button` to submit the reviews. At this point, we are just logging `Form Submitted` to the console. You may want to submit the reviews to your database, simply create a `POST` request to your database API to submit the reviews.
+- Finally, we implemented a submit `Button` to submit the reviews. At this point, we are just logging `Form Submitted` to the console. 
+  
+You may want to submit the reviews to your database, simply create a `POST` request to your database API to submit the reviews.
 
 ### Step 6 – Styling our Navbar, Reviews, and Form Components (app.css)
+Ordinarily, our components look amazing because we used pre-styled elements from reactstrap to create them, but we still need to fully customize them to enhance their appearance on the page.
 
-Ordinarily, our components look amazing because we used pre-styled elements from reactstrap to create them, but we still need to fully customize them to enhance their appearance on the page. We will add a few lines of `CSS` snippets to the application.
-To do that, in the `app.css` file, implement the snippet below:
+We will add a few lines of `CSS` snippets to the application. To do that, in the `app.css` file, implement the snippet below:
 
 ```CSS
 .navbar {
@@ -400,10 +405,10 @@ h6 {
 ```
 
 From the snippet above, we added some styles to the `classNames` we assigned to our various page elements. We added some `box-shadow`, `padding`, `margin`, `font-size`, etc. to further enhance the overall appearance of our application.
-That being done, lets import and view our application on the browser.
+
+That being done, let's import and view our application on the browser.
 
 ### Step 6 – Importing and viewing the application (App.tsx)
-
 We have completed the creation and styling of our custom user reviews page. Let’s import all the components to the main `App.tsx` file.
 To do that, rename the `App.js` file extension to `App.tsx` thereafter you perform the imports as shown below:
 
@@ -430,8 +435,9 @@ From the snippet above, we imported the following to our `App` component:
 - NavbarComponent
 - Body
 - FormComponent
-  We also imported the main `styles.css` file containing all our styles to the `App` component.
-  Finally, to render our application on the browser, we need to start the `development server`. To do that, we run the `start` command on our `command terminal` as shown below:
+  
+We also imported the main `styles.css` file containing all our styles to the `App` component.
+Finally, to render our application on the browser, we need to start the `development server`. To do that, we run the `start` command on our `command terminal` as shown below:
 
 ```bash
 npm start
@@ -444,16 +450,19 @@ yarn start
 ```
 
 Once the `development server` is started, an instance of the application will be displayed on your default browser at ` http://localhost:3000/` and should look like this:
+
 ![full application display](/engineering-education/building-a-custom-user-reviews-page-with-typescript-and-react/full-page.jpg)
+
 Looks great right?
 
 ### Conclusion
+In this tutorial, we created a custom user reviews page with stars rating from scratch. We also discussed the advantages of using React and Typescript together to create applications.
 
-In this tutorial, we created a custom user reviews page with stars rating from scratch. We also discussed the advantages of using React and Typescript together to create applications. How to set up Typescript and reactstrap dependencies were also discussed, among other interesting concepts. I hope this tutorial was easy to understand and helpful.
+How to set up Typescript and reactstrap dependencies were also discussed, among other interesting concepts. I hope this tutorial helpful and helpful.
+
 Happy Coding!
 
 ### References
-
 - https://www.typescriptlang.org/docs/handbook/tsconfig-json.html
 - https://reactjs.org/docs/conditional-rendering.html
 - https://reactstrap.github.io/?path=/docs/
