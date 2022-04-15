@@ -18,7 +18,7 @@ After reading the article, the reader is expected to understand and be able to i
 
 ### Prerequisite
 
-Basic knowledge of React, typescript, and a design library is required to follow along with this tutorial. I will also strongly recommend using visual studio code as your preferred text editor. If you do not have the above mentioned here is a link to enroll in a [React crash course]() for free.
+Basic knowledge of React, typescript, and a design library is required to follow along with this tutorial. I will also strongly recommend using visual studio code as your preferred text editor. If you do not have the above mentioned here is a link to enroll in a [React crash course](https://scrimba.com/learn/learnreact) for free.
 
 ### Getting started with React application development
 
