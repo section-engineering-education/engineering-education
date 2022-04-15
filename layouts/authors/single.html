@@ -136,7 +136,6 @@
         {{ end }}
 
         {{ $articleSlug := replaceRE "(https://www.section.io/)|(http://localhost:1313/)|(https://beta.section.io/)" "" $articlePermalink }}
-        <script>console.log('articleSlug:', '{{ $articleSlug }}');</script>
 
         <li class="blog-listing-posts-item mix {{ with .Params.tags }}{{ range . }}{{ lower . }} {{ end }}{{ end }}" data-id="{{ $articlePermalink }}">
           <a class="decoration-none xs-pb-40 xs-pt-40 pl-25 flex flex-wrap" href="{{.Permalink}}">
