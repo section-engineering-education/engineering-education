@@ -1,4 +1,22 @@
-Go is a fast-growing language among developers. Golang ecosystem has a ton of native libraries. However, it also has third-party libraries that developers can use.
+---
+layout: engineering-education
+status: publish
+published: true
+url: /rest-api-with-golang-without-any-frameworks-only-using-native-modules/
+title: How to Build a REST API with Golang using Native Modules
+description: This tutorial will walk the reader through how to build a REST API with Golang using native modules.
+author: joakim-gakure
+date: 2022-04-15T00:00:00-02:25
+topics: [Languages, API]
+excerpt_separator: <!--more-->
+images:
+
+  - url: /engineering-education/rest-api-with-golang-without-any-frameworks-only-using-native-modules/hero.jpg
+    alt: How to Build a REST API with Golang using Native Modules Hero Image
+---
+Go is a fast-growing language among developers. 
+<!--more-->
+Golang ecosystem has a ton of native libraries. However, it also has third-party libraries that developers can use.
 
 When creating REST APIs with Go, you can choose to use various third-party libraries, such as Gorm, Go fiber, Gin, fast HTTP, etc. you can also use libraries that are native to Golang. These are libraries, doesn’t require you to download it to your local project when building your APIs.
 
@@ -454,5 +472,7 @@ This tutorial has taught you how to use the native Go modules and create a basic
 
 Some Golang third-party libraries you can use to set a server include, [mux](/engineering-education/build-a-rest-api-application-using-golang-and-postgresql-database/), [Go Fiber](/engineering-education/how-to-use-go-fiber-and-gorm-frameworks-to-run-a-golang-application/), [Gorm](/how-to-use-go-fiber-and-gorm-frameworks-to-run-a-golang-application/), and [Echo](/engineering-education/how-to-set-up-golong-api-with-the-prisma-orm/).
 
+Happy coding!
 
-
+---
+Peer Review Contributions by: [Jethro Magaji](/engineering-education/authors/jethro-magaji/)
