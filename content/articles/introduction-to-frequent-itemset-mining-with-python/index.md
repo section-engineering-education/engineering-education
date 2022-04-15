@@ -2,11 +2,11 @@
 layout: engineering-education
 status: publish
 published: true
-url: /understanding-the-map-data-type-in-dart/
+url: /introduction-to-frequent-itemset-mining-with-python/
 title: Introduction to Frequent Itemset Mining with Python
-description: In this article, we will learn about frequent itemset mapping, its key concepts, and application areas. In the end, we will create a simple frequent itemset mapping table.
+description: In this article we will learn about frequent itemset mapping, its key concepts, and application areas. In the end, we will create a simple frequent itemset mapping table.
 author: elly-omondi
-date: 2022-04-02T00:00:00-12:30
+date: 2022-04-15T00:00:00-14:30
 topics: [Machine Learning]
 excerpt_separator: <!--more-->
 images:
@@ -14,8 +14,7 @@ images:
   - url: /engineering-education/introduction-to-frequent-itemset-mining-with-python/hero.jpg
     alt: Frequent Itemset Mining with Python Hero Image
 ---
-
-Data is the new gold! Every organization is now obsessed with Data mining, all in an attempt to build up a knowledge base, better their services, or even have a competitive advantage in the industry. 
+Data is the new gold! Every organization is now obsessed with data mining, all in an attempt to build up a knowledge base, better their services, or even have a competitive advantage in the industry. 
 <!--more-->
 There are numerous data mining techniques. However, this article will tackle frequent itemset mapping, its key concepts, and application areas as a data mining technique. In the end, we will create a simple frequent itemset mapping table. But first, the basics.
 
@@ -37,7 +36,7 @@ When items are grouped, they form an itemset. An itemset can have as many items 
 
 A [Frequent Itemset](https://www.sciencedirect.com/topics/computer-science/frequent-itemsets) combines elements that often appear together. A Frequent Itemset is a subset(s) of an itemset that occurs in a dataset with a particular frequency. For instance, given a frequency value, perhaps of 0.1 or 0.01%, for a stationery store, all subsets of school items that many customers have bought at different times are called Frequent Itemset.
 
-For example, a set of school items such as {'Uniform', 'Bag', 'Book'} is a Frequent Itemset if sufficiently many customers buy it.
+For example, a set of school items such as {'Uniform', 'Bag', 'Book'} is a Frequent Itemset if many customers buy it sufficiently.
 
 ### Why Frequent Itemset Mining?
 [Frequent itemset mining](https://wires.onlinelibrary.wiley.com/doi/abs/10.1002/widm.1329) (pattern mining) is a technique used to derive relationships such as regularities in customers' shopping behavior in physical and online stores to discover association rules out of the relationships.
@@ -73,11 +72,10 @@ Frequent Itemsets discovered through Apriori have many applications in data mini
 Before we proceed, we need to have a rough idea of how frequent items are discovered. A frequent individual item is first discovered from a dataset before extending them with other identified items as long as they appear sufficiently together in the dataset/database. 
 
 Doing this process manually is almost an impossible task. However, luckily, Python has the necessary libraries for implementing Apriori algorithms. 
-So action now!
 
 This section will make us of the following Python libraries:
 
-1. [Pandas](https://pandas.pydata.org/) – a Python library
+1. [Pandas](https://pandas.pydata.org/) – a Python library.
 2. [Mlxtend](http://rasbt.github.io/mlxtend/user_guide/frequent_patterns/apriori/) for [Apriori](https://www.geeksforgeeks.org/apriori-algorithm/) implementation.
 
 #### Step 1 : Importing Libraries
@@ -115,7 +113,7 @@ You can type the data in your running cell to get similar output like this:
 Each row in the data frame represents items bought at a store.
 
 #### Step 3: Data Encoding
-We need to transform our dataset to use the Apriori algorithm available in the mlxtend library. Apriori module works with a data frame encoded into 0 and 1 or True and False. 
+We need to transform our dataset to use the Apriori algorithm available in the `mlxtend library`. Apriori module works with a data frame encoded into 0 and 1 or True and False. 
 
 The data in our case is all string (name of items), thus the need to perform One Hot Encoding on the data.
 
@@ -154,14 +152,14 @@ The script above generates the frequent itemsets as shown below:
 ![Frequent Itemset(s)](/engineering-education/introduction-to-frequent-itemset-mining-with-python/apriori.png)
 
 ### Conclusion
-This tutorial has taught us what frequent itemset mining is and how to create simple itemset mining. We have seen where these techniques can manipulate the output user needs. Do not forget to test out mining with transactional databases in your projects to understand how they work entirely.
+This tutorial has taught us what frequent itemset mining is and how to create a simple itemset mining process. We have seen where these techniques can manipulate the output user needs. Do not forget to test out mining with transactional databases in your projects to understand how they work entirely.
 
-Happy learning!
+Happy coding!
 
 ### Further reading
 - [Frequent Itemset Mining](https://github.com/topics/frequent-itemset-mining)
-- [Apriori](https://intellipaat.com/blog/data-science-apriori-algorithm/)
-- [Apriori](https://www.section.io/engineering-education/apriori-algorithm-in-python/)
+- [Getting Started with Apriori Algorithm in Python](/engineering-education/apriori-algorithm-in-python/)
+- [Data Science - Apriori Algorithm](https://intellipaat.com/blog/data-science-apriori-algorithm/)
 
 ---
 Peer Review Contributions by: [Jerim Kaura](/engineering-education/authors/jerim-kaura/)
