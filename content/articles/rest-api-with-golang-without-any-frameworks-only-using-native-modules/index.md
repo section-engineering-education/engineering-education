@@ -1,42 +1,51 @@
 Go is a fast-growing language among developers. Golang ecosystem has a ton of native libraries. However, it also has third-party libraries that developers can use.
 
-When creating REST APIs with Go, you can choose to use various third-party libraries, such as Gorm, Go fiber, Gin, fast HTTP, etc. You can also choose to use native libraries that are native to Golang. These are libraries you don't have to download to your local project when building your APIs.
+When creating REST APIs with Go, you can choose to use various third-party libraries, such as Gorm, Go fiber, Gin, fast HTTP, etc. you can also use libraries that are native to Golang. These are libraries, doesn’t require you to download it to your local project when building your APIs.
 
-In this guide, we will build a basic REST API using native libraries that Golang has. We will not use any third-party libraries, meaning we won't download any library to the local project.
+In this guide, we will build a basic REST API using native libraries that Golang has. We will not use any third-party libraries, meaning we won't download any library in our local project.
 
 ### Table of content
-
 - [Table of content](#table-of-content)
 - [Prerequisites](#prerequisites)
-- [Set a Golang project](#set-a-golang-project)
+- [Setting up a Golang project](#setting-up-a-golang-project)
 - [Create a CRUD Golang REST API using native modules](#create-a-crud-golang-rest-api-using-native-modules)
 - [Setting up the movie handlers](#setting-up-the-movie-handlers)
   - [Create an API test handler](#create-an-api-test-handler)
   - [Get Movies handler](#get-movies-handler)
   - [Get a single movie handler](#get-a-single-movie-handler)
   - [Add a movie handler](#add-a-movie-handler)
-  - [Delete a movie handler](#delete-a-movie-handler)
+  - [Deleting a movie handler](#deleting-a-movie-handler)
 - [Initialize the server and routes](#initialize-the-server-and-routes)
 - [Conclusion](#conclusion)
 
 ### Prerequisites
+To follow along with this tutorial, the reader will need the following:
+- A basic knowledge of Golang. 
+- An IDE installed on your computer. (Preferably VS Code).
+- Have [Go](https://go.dev/doc/install) installed on your computer.  
 
-To follow along with this tutorial, it's essential to have prior knowledge of using Golang. Therefore, ensure you have the Golang IDE installed on your computer to execute the Golang code. Once installed, run the `go version` command to verify Go is installed.
+Once you have installed Go, run the command below to verify if Go is installed.
+
+ ```bash
+go version
+``` 
 
 Check this [guide](/engineering-education/golang-part-2-programming-basics/) to get started with how to write and run Golang programs.
 
-### Set a Golang project
+### Setting up a Golang project
+To start a Go project, you need to first initialize Go within your project. 
 
-To start a Go project, you need to first initialize Go within your project. Here, create a project folder where you want your app to live. Open a command line that points to the newly created directory, then initialize Golang using the following command:
+Here, create a project folder where you want your app to live. Open a command line that points to the newly created directory, then initialize Golang using the following command:
 
 ```bash
 go mod init native-go-api
 ```
 
-This will instantiate Go by creating a `go.mod` file. Any Go package that you install and its dependencies are saved here. The `go.mod` file has a `native-go-api` module name. This helps you create local modules and import them so that other local modules of your project can use them.
+This will instantiate Go by creating a `go.mod` file. Any Go package that you install, and its dependencies, are saved here. 
+
+The `go.mod` file has a `native-go-api` module name. This helps you create local modules and import them so that other local modules of your project can use them.
 
 ### Create a CRUD Golang REST API using native modules
-
 Let's dive in and create a Golang REST API using native modules. This tutorial will create a straightforward movie API. This will help showcase how to use these native libraries in a typical Golang application.
 
 First, you need to model the data you want your API to interact with. To do this, create a `models` folder at the root directory of your project. Then create a `movie.go` file and add the following model:
@@ -52,7 +61,9 @@ type Movie struct {
 }
 ```
 
-A model sets a blueprint of your API. It sets the data and its values. This adds the data types to each movie property the API will use. When using Go to create a model, use the keyword `struct`. Here, set a `struct` of type `Movie` and add its properties as shown in the above code block.
+A model sets a blueprint of your API. It sets the data and its values. This adds the data types to each movie property the API will use. 
+
+When using Go to create a model, use the keyword `struct`. Here, set a `struct` of type `Movie` and add its properties as shown in the code block above.
 
 This API will interact with dummy data as the application database. Therefore, create a dummy database within your application. To do this, create a folder `db` inside your project directory. Inside this `db` folder, create a `db.go` file and add the following code:
 
@@ -69,13 +80,14 @@ var (
 )
 ```
 
-This will set up a dummy database, `Moviedb`. This uses the `make` built-in function. It allocates and initializes a memory object of type `map`. It takes a type as its first argument. `make` type returns the same data as the type of its argument. Here, `make` will refer to the type of `Movie` model set for the movies data.
+This will set up a dummy database, `Moviedb`. This uses the `make` built-in function, it allocates and initializes a memory object of type `map`. It takes a type as its first argument, `make` type returns the same data as the type of its argument. Here, `make` will refer to the type of `Movie` model set for the movies data.
 
 ### Setting up the movie handlers
+An API uses HTTP methods to interact with your data. Here, you need to set up the right function that refers to the HTTP methods such as `GET`, `POST`, `PUT`, and `DELETE`. This will also set up the request and response message that every HTTP method should return.
 
-An API uses HTTP methods to interact with your data. Here, you need to set up the right function that refers to the HTTP methods such as GET, POST, PUT, and DELETE. This will also set up the request and response message that every HTTP method should return.
+In this example, the API will always return any data in JSON format. Set up a `ReturnJsonResponse` function that will return the movies data in JSON format. 
 
-In this example, the API will always return any data in JSON format. Set up a `ReturnJsonResponse` function for returning movies data in JSON format. To do this, create a `utils` folder inside your project directory. Inside this `utils` folder, create a `utils.go` file and add the following code:
+To do this, create a `utils` folder inside your project directory. Inside this `utils` folder, create a `utils.go` file and add the following code:
 
 ```go
 package utils
@@ -110,14 +122,13 @@ import (
 
 This imports the local modules we have created. Other native modules used include the `encoding/json` for encoding any JSON data and `net/http` for setting up the server-based methods, requests, and responses.
 
-Next, create the handler functions as follows.
+Next, let's create the handler functions as follows.
 
 #### Create an API test handler
-
 Set a test handler that does not interact with the set API data to test if the API works correctly.
 
 ```go
-// root api test handler 
+// root api test handler
 func TestHandler(res http.ResponseWriter, req *http.Request) {
 
  // Add the response return message
@@ -133,8 +144,7 @@ func TestHandler(res http.ResponseWriter, req *http.Request) {
 When this handler is executed, it will return the set message to show that the server is ready.
 
 #### Get Movies handler
-
-To fetch all the movies list that the dummy database will have, Create a `GetMovies()` function as shown below.
+To fetch all the movies list that the dummy database will have, create a `GetMovies()` function as shown below.
 
 ```go
 // Get Movies handler
@@ -175,11 +185,10 @@ func GetMovies(res http.ResponseWriter, req *http.Request) {
 }
 ```
 
-This handler will access the database and check if there are any movie records. The server will fetch this list and return the response to the user. The serve will parse the movie data into JSON format, then return the response message with the fetched data.
+This handler will access the database and check if there are any movie records. The server will fetch this list and return the response to the user. The server will parse the movie data into JSON format, then return the response message with the fetched data.
 
 #### Get a single movie handler
-
-Additionally, you can fetch a single movie from the movies list database. The movie structure has an ID unique to every movie in this case. When fetching a single movie, the server will use the id value as the parameter to decide which movie the user wants to fetch.
+Additionally, you can fetch a single movie from the movies list database. The movie structure has an ID unique to every movie in this case. When fetching a single movie, the server will use the ID value as the parameter to decide which movie the user wants to fetch.
 
 ```go
 // Get a single movie handler
@@ -238,10 +247,11 @@ func GetMovie(res http.ResponseWriter, req *http.Request) {
 }
 ```
 
-Here the endpoint that fetches a single movie will have the `id` as the URL parameter. This endpoint will only execute a GET request. If the user uses a different method, set the error message to show what they are supposed to do. If the user forgets to add the parameter `id`, add the response return message. Check other handler messages implemented in this function.
+Here the endpoint that fetches a single movie will have the `id` as the URL parameter. This endpoint will only execute a GET request. 
+
+If the user uses a different method, set the error message to show what they are supposed to do. If the user forgets to add the parameter `id`, add the response return message. Check other handler messages implemented in this function.
 
 #### Add a movie handler
-
 To add a movie, execute the POST method using this `AddMovie()` function.
 
 ```go
@@ -288,10 +298,11 @@ func AddMovie(res http.ResponseWriter, req *http.Request) {
 }
 ```
 
-This function will check the user's payload with the new data that the user wants to add. The service will assign this data to the `req.Body`. Each added movie will have all the properties set in the `Movie` model. Thus if the user fails to specify this data field, the server will return an error message `Error parsing the movie data`. If the operation is successful, the server will return a server message `Movie was successfully created`.
+This function will check the user's payload with the new data that the user wants to add. The service will assign this data to the `req.Body`. Each added movie will have all the properties set in the `Movie` model. 
 
-#### Delete a movie handler
+Thus, if the user fails to specify this data field, the server will return an error message `Error parsing the movie data`. If the operation is successful, the server will return a server message `Movie was successfully created`.
 
+#### Deleting a movie handler
 To delete a movie record, add this `DeleteMovie()` function to your handler list.
 
 ```go
@@ -349,12 +360,10 @@ func DeleteMovie(res http.ResponseWriter, req *http.Request) {
 }
 ```
 
-`DeleteMovie()` uses id add to the URL parameter. Based on the sent request, this checks for the exiting movies that the server should delete. For the server to delete that movie, it checks the parameter id against the id saved in the dummy data. If the movie was not found, the server would return a response message `Requested movie not found`.
+`DeleteMovie()` uses id to add to the URL parameter. Based on the request sent, this checks for the exiting movies that the server should delete. For the server to delete that movie, it checks the parameter id against the id saved in the dummy data. If the movie is not found, the server would return a response message `Requested movie not found`.
 
 ### Initialize the server and routes
-
 To execute the above handlers, you need to:
-
 - Set up a server that runs on the localhost,
 - Initialize the database data, and
 - Set up the routes that point to each handler function.
@@ -378,7 +387,6 @@ import (
 ```
 
 Here import the following native modules:
-
 - `fmt` - for setting `Println` messages.
 - `log` - for logging basic application messages.
 - `os` - for accessing the local computer to execute the server on the computer localhost system.
@@ -442,7 +450,9 @@ if err != nil {
 Your server should be ready. To test it, run `go run main.go` and start interacting with the different routes of your API.
 
 ### Conclusion
+This tutorial has taught you how to use the native Go modules and create a basic movie API. These native modules help you interact with the vanilla Golang code.
 
-This API has taught you how to use the native Go modules and create a basic movie API. These native modules help you interact with the vanilla Golang code.
+Some Golang third-party libraries you can use to set a server include, [mux](/engineering-education/build-a-rest-api-application-using-golang-and-postgresql-database/), [Go Fiber](/engineering-education/how-to-use-go-fiber-and-gorm-frameworks-to-run-a-golang-application/), [Gorm](/how-to-use-go-fiber-and-gorm-frameworks-to-run-a-golang-application/), and [Echo](/engineering-education/how-to-set-up-golong-api-with-the-prisma-orm/).
 
-Some of the Golang third-party libraries you can use to set a server include, [mux](/engineering-education/build-a-rest-api-application-using-golang-and-postgresql-database/), [Go Fiber](/engineering-education/how-to-use-go-fiber-and-gorm-frameworks-to-run-a-golang-application/), [Gorm](/how-to-use-go-fiber-and-gorm-frameworks-to-run-a-golang-application/), and [Echo](/engineering-education/how-to-set-up-golong-api-with-the-prisma-orm/).
+
+
