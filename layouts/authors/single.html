@@ -135,6 +135,8 @@
           {{ $articlePermalink = .Permalink }}
         {{ end }}
 
+        {{ $articleSlug := .Permalink | relURL | anchorize }}
+
         <li class="blog-listing-posts-item mix {{ with .Params.tags }}{{ range . }}{{ lower . }} {{ end }}{{ end }}" data-id="{{ $articlePermalink }}">
           <a class="decoration-none xs-pb-40 xs-pt-40 pl-25 flex flex-wrap" href="{{.Permalink}}">
 
@@ -166,7 +168,8 @@
                   <p><img class="icon" src="{{ if eq $.Site.Params.env "local" }}/{{ else }}/engineering-education/{{ end }}images/comment-icon.png" alt="Article Comments" /></p><span class="comment-count" id="comments-count-{{ $elem_index }}">0</span>
                 </div>
                 <div class="data-point page-views page-views-icon-{{ $elem_index }}">
-                  <p><img class="icon" src="{{ if eq $.Site.Params.env "local" }}/{{ else }}/engineering-education/{{ end }}images/page-views-icon.png" alt="Page Views" /></p><span id="page-views-count-{{ $elem_index }}">0</span>
+                  <p><img class="icon" src="{{ if eq $.Site.Params.env "local" }}/{{ else }}/engineering-education/{{ end }}images/page-views-icon.png" alt="Page Views" /></p>
+                  <span data-slug="engineering-education/{{ $articleSlug }}/" id="page-views-count-{{ $elem_index }}">0</span>
                 </div>
               </div>
             </div>
@@ -214,10 +217,9 @@
 
   // On page load, handle insights, comments and pageviews.
   document.addEventListener("DOMContentLoaded", async function() {
-    // Request page views from our GA PageViews API.
-    const getPageView = (url, currentUrl) => {
+    const getPageViews = (urls) => {
       const urlRegex = /(http:\/\/localhost:1313\/)|(https:\/\/beta.section.io\/engineering-education\/)|(https:\/\/www.section.io\/engineering-education\/)/gi;
-      const trimmedUrl = url.replace(urlRegex, '');
+      const trimmedUrls = urls.map(url => url.replace(urlRegex, ''));
 
       const handleError = response => {
         if (!response.ok) {
@@ -227,33 +229,27 @@
         }
       }
 
-      return fetch(`https:\/\/api.www.section.io/pageviews/${trimmedUrl}`)
+      return fetch('{{ if eq $.Site.Params.env "local" }}http://localhost:3000/pageviews/{{ else }}https:\/\/api.www.section.io/pageviews/{{ end }}', { 
+        "method": "POST",
+        "headers": {
+          "Content-Type": "application/json"
+        },
+        "body": JSON.stringify(trimmedUrls)
+      })
         .then(handleError)
         .then(data => {
-          if (data.pageViews) {
-            const numPageViews = parseInt(data.pageViews).toLocaleString();
-            const pageViewsEl = document.querySelector(`#page-views-count-${currentUrl}`);
-            const parentElement = document.querySelector(`.page-views-icon-${currentUrl}`);
-            pageViewsEl.innerText = numPageViews;
-            parentElement.classList.add('visible');
+          if (data.length) {
+            data.forEach(item => {
+              const numPageViews = parseInt(item.pageViews).toLocaleString();
+              const pageViewsEl = document.querySelector(`[data-slug="${item.url}"]`);
+              const parentElement = pageViewsEl.closest('.page-views');
+              pageViewsEl.innerText = numPageViews;
+              parentElement.classList.add('visible');
+            })
           }
         })
         .catch(err => console.log('err:', err));
     }
-
-    // Apply page views to each article.
-    const applyPageViews = async (urls) => {
-      let currentUrl = 0;
-
-      while (currentUrl <= urls.length - 1) {
-        await getPageView(urls[currentUrl], currentUrl);
-        currentUrl++;
-      }
-    }
-
-    const urlsOfArticles = "{{ $articleUrlsList }}";
-    const articlesArr = urlsOfArticles.split(', ');
-    applyPageViews(articlesArr);
 
     // Request all article data from Hyvor talk - this will allow us to use 
     // one request per page, instead of separare requests for each article.
@@ -292,6 +288,13 @@
         .catch(error => console.log("error: ", error))
     }
 
+    const urlsOfArticles = '{{ $articleUrlsList }}';
+    const articlesArr = urlsOfArticles.split(', ');
+    
+    // Apply page views to each article.
+    getPageViews(articlesArr);
+  
+    // Fetch article data from HyvorTalk
     requestArticlesData(articlesArr);
   });
   
