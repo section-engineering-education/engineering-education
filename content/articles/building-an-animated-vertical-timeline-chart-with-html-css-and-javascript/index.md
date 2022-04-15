@@ -12,7 +12,7 @@ excerpt_separator: <!--more-->
 images:
 
   - url: /engineering-education/building-an-animated-vertical-timeline-chart-with-html-css-and-javascript/hero.png
-  - alt: animated vertical timeline chart with HTML, CSS and JavaScript Hero Image
+    alt: animated vertical timeline chart with HTML, CSS and JavaScript Hero Image
 ---
 Have you ever considered making a visual representation of your accomplishments throughout your career? If that is the case, you will only need a timeline chart where you can easily incorporate all of your accomplishments in a single link using a timeline.
 <!--more-->
