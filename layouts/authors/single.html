@@ -135,7 +135,7 @@
           {{ $articlePermalink = .Permalink }}
         {{ end }}
 
-        {{ $articleSlug := .Permalink | relURL | anchorize }}
+        {{ $articleSlug := replaceRE "(https://www.section.io/)|(http://localhost:1313/)|(https://beta.section.io/)" "" $articlePermalink }}
         <script>console.log('articleSlug:', '{{ $articleSlug }}');</script>
 
         <li class="blog-listing-posts-item mix {{ with .Params.tags }}{{ range . }}{{ lower . }} {{ end }}{{ end }}" data-id="{{ $articlePermalink }}">
@@ -170,7 +170,7 @@
                 </div>
                 <div class="data-point page-views page-views-icon-{{ $elem_index }}">
                   <p><img class="icon" src="{{ if eq $.Site.Params.env "local" }}/{{ else }}/engineering-education/{{ end }}images/page-views-icon.png" alt="Page Views" /></p>
-                  <span data-slug="{{ if eq $.Site.Params.env "local" }}engineering-education/{{ $articleSlug }}/{{ else }}{{ $articleSlug }}{{ end }}" id="page-views-count-{{ $elem_index }}">0</span>
+                  <span data-slug="{{ if eq $.Site.Params.env "local" }}engineering-education/{{ $articleSlug }}{{ else }}{{ $articleSlug }}{{ end }}" id="page-views-count-{{ $elem_index }}">0</span>
                 </div>
               </div>
             </div>
