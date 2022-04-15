@@ -14,14 +14,13 @@ images:
   - url: /engineering-education/extract-text-from-images-using-pytesseract/hero.jpg
     alt: Extract Text From Images Using PyTesseract Hero Image
 ---
-As a developer, you might want to extract textual information from an image. Using Python would be a good choice, where we create a program that extracts such textual data from any given image.
+As a developer, you might want to extract textual information from an image. Using Python, we can create a program that extracts such textual data from any given image.
 <!--more-->
 Python has been one of the most popular languages developers enjoy working with. Its human-readable syntax makes it easy to learn.
 
-In this guide, we will write a Python script that extracts images, scans text, transcribes it, and saves it to a text file. We will be using the tesseract library to recognize textual data from images.
+In this guide, we will write a Python script that extracts images, scans for text, transcribes it, and saves it to a text file. We will use the Python tesseract library to recognize textual data from images.
 
 ### Table of contents
-- [Table of contents](#table-of-contents)
 - [Prerequisities](#prerequisities)
 - [Set up tesseract OCR](#set-up-tesseract-ocr)
 - [Adding the project dependencies](#adding-the-project-dependencies)
@@ -45,7 +44,7 @@ Optical Character Recognition (OCR) is a technology that is used to recognize te
 
 To use OCR, you need to [install and configure](https://medium.com/quantrium-tech/installing-and-using-tesseract-4-on-windows-10-4f7930313f82) tesseract on your computer.
 
-First, download the Tesseract OCR executables [here](https://codetoprosper.com/tesseract-ocr-for-windows/). While installing this executable, make sure you copy the tesseract installation path and it to your [system environment varibales](https://codetoprosper.com/tesseract-ocr-for-windows/).
+First, download the Tesseract OCR executables [here](https://codetoprosper.com/tesseract-ocr-for-windows/). While installing this executable, make sure you copy the tesseract installation path and add it to your [system environment varibales](https://codetoprosper.com/tesseract-ocr-for-windows/).
 
 Once the process is done, run the `tesseract -v` command to verify that the OCR is installed.
 
@@ -165,7 +164,7 @@ def gInUs():
 ```
 
 From the above code:
-- `"[.] Add the tesseract.exe local path"` helps us access the tesseract library
+- `"[.] Add the tesseract.exe local path"` helps us access the tesseract library.
 - `"[!] Add the PDF file local path:"` helps us access the local PDF file we want to use.
 
 Once we enter this path, we need first to verify if the file path is correct. If the path is incorrect, the application will display `Please enter a valid PATH to a file` error message. If the path is correct, the application will extract text from the images by executing the `extIm()` method.
