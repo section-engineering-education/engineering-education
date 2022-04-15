@@ -2,33 +2,33 @@
 layout: engineering-education
 status: publish
 published: true
-url: /screating-chatbot-using-natural-language-processing-in-python/
+url: /creating-chatbot-using-natural-language-processing-in-python/
 title: Creating ChatBot Using Natural Language Processing in Python
-description: In this article, will illustrate how to create a ChatBot using Natural Language Processing in Python. 
+description: In this article, will illustrate how to create a ChatBot using Natural Language Processing in Python.
 author: vincent-kimanzi
-date: 2022-03-24T00:00:00-08:50
+date: 2022-04-14T00:00:00-23:10
 topics: [Languages, API]
 excerpt_separator: <!--more-->
 images:
 
-  - url: /engineering-education/screating-chatbot-using-natural-language-processing-in-python/hero.jpg
+  - url: /engineering-education/creating-chatbot-using-natural-language-processing-in-python/hero.jpg
     alt: Creating ChatBot Using Natural Language Processing in Python Hero Image
 ---
-A bot is a computer program that performs predetermined tasks automatically. Its goal is to perform human duties the same way that humans do. In a nutshell, they mimic human behavior.
+A bot is a computer program that performs predetermined tasks automatically. Its goal is to perform human duties the same way humans do. In a nutshell, they mimic human behavior.
 <!--more-->
 In this tutorial, we will design a conversational interface for our chatbot using natural language processing.
 
 ### Prerequisites
 To follow through this article, the reader should have:
-- Have a basic knowledge of python programming language.
-- Install the latest version of [python](https://www.python.org/) onto your computer.
-- Have an IDE installed, preferably [VS Code](https://code.visualstudio.com/).
+- Basic knowledge of python programming language.
+- The latest version of [python](https://www.python.org/) installed.
+- IDE installed, preferably [VS Code](https://code.visualstudio.com/).
 
 ### Table of contents
 - [Fields of NLP](#fields-of-nlp)
 - [Types of bots](#types-of-bots)
 - [Building an NLP chatbot](#building-an-nlp-chatbot)
-- [Benefits of bots](#benefits-of-bots)  
+- [Benefits of bots](#benefits-of-bots)
 - [Conclusion](#conclusion)
 - [Reference](#reference)
 
@@ -36,7 +36,7 @@ To follow through this article, the reader should have:
 Below are the core fields of NLP:
 1. **Natural language generation(NLG)**: NLG is a specialty in artificial intelligence. It is a software technology that automatically transforms data into simple English.
 2. **Natural language understanding(NLU)**: Is a branch of natural language processing (NLP) that helps computers understand and interpret human language by breaking speech into its constituent parts. However, NLU goes further than speech recognition to understand what the user is trying to communicate with their words.
-3. **Natural language interaction(NLI)**: To engage with any connected device or service in a humanlike manner, NLI brings together a varied collection of natural language principles.
+3. **Natural language interaction(NLI)**: To engage with any connected device or service in a human-like manner, NLI brings together a varied collection of natural language principles.
 
 ### Types of bots
 - **Scraper Bots:** They are designed to read and save data from the Internet.
@@ -60,10 +60,11 @@ The necessary libraries include:
 - Sequential: Sequential groups a linear stack of layers into a `tf.keras.Model`.
 
 The code below shows how we import the libraries:
+
 ```python
-import json 
-import string 
-import random 
+import json
+import string
+import random
 import nltk
 import numpy as num
 from nltk.stem import WordNetLemmatizer # It has the ability to lemmatize.
@@ -76,13 +77,13 @@ nltk.download("wordnet")# word database
 ```
 
 #### Step two: Creating a JSON file
-This step will create an intents JSON file that lists all the possible outcomes of user interactions with our chatbot. We first need a set of tags that users can use to categorize their queries. These tags include `name`, `age`, and many others. Every new tag would require a unique pattern. 
+This step will create an intents JSON file that lists all the possible outcomes of user interactions with our chatbot. We first need a set of tags that users can use to categorize their queries. These tags include `name`, `age`, and many others. Every new tag would require a unique pattern.
 
-Identifying these trends can help the chatbot train itself on how people query about our chatbot's name, allowing it to be more responsive. The chatbot will return pre-programmed responses to answer questions.
+Identifying these trends can help the chatbot train itself on how people query about our chatbot's name, allowing it to be more responsive. The chatbot will return pre-programmed responses to answer questions:
 
 ```python
 ourData = {"ourIntents": [
-            
+
              {"tag": "age",
               "patterns": ["how old are you?"],
               "responses": ["I am 2 years old and my birthday was yesterday"]
@@ -99,19 +100,19 @@ ourData = {"ourIntents": [
               "patterns": ["what's your name?", "who are you?"],
               "responses": ["I have no name yet," "You can give me one, and I will appreciate it"]
              }
-            
+
 ]}
 ```
 
 #### Step three: Processing data
-In this section, vocabulary of all the terms used in the patterns, list of tag classes, list of all the patterns in the intents file, and all the related tags for each pattern will be created before creating our training data.
+In this section, vocabulary of all the terms used in the patterns, list of tag classes, list of all the patterns in the intents file, and all the related tags for each pattern will be created before creating our training data:
 
 ```python
 lm = WordNetLemmatizer() #for getting words
 # lists
 ourClasses = []
 newWords = []
-documentX = [] 
+documentX = []
 documentY = []
 # Each intent is tokenized into words and the patterns and their associated tags are added to their respective lists.
 for intent in data["intents"]:
@@ -120,8 +121,8 @@ for intent in data["intents"]:
         newWords.extend(ournewTkns)# extends the tokens
         documentX.append(pattern)
         documentY.append(intent["tag"])
-    
-    
+
+
     if intent["tag"] not in ourClasses:# add unexisting tags to their respective classes
         ourClasses.append(intent["tag"])
 
@@ -130,8 +131,10 @@ newWords = sorted(set(newWords))# sorting words
 ourClasses = sorted(set(ourClasses))# sorting classes
 ```
 
-####  Step four: Designing a neural network model
-Because neural networks can only understand numerical values, we must first process our data so that a neural network can understand what we are doing. The code below is used to turn our data into numerical values using [bag of words](https://www.geeksforgeeks.org/bag-of-words-bagOqord-model-in-nlp/) (BoW) encoding system.
+#### Step four: Designing a neural network model
+Because neural networks can only understand numerical values, we must first process our data so that a neural network can understand what we are doing.
+
+The code below is used to turn our data into numerical values using [bag of words](https://www.geeksforgeeks.org/bag-of-words-bagOqord-model-in-nlp/) (BoW) encoding system:
 
 ```python
 trainingData = [] # training list array
@@ -142,7 +145,7 @@ for idx, doc in enumerate(documentX):
     text = lm.lemmatize(doc.lower())
     for word in newWords:
         bagOfwords.append(1) if word in text else bagOfwords.append(0)
-    
+
     outputRow = list(outEmpty)
     outputRow[ourClasses.index(documentY[idx])] = 1
     trainingData.append([bagOfwords, outputRow])
@@ -154,7 +157,7 @@ x = num.array(list(trainingData[:, 0]))# first trainig phase
 y = num.array(list(trainingData[:, 1]))# second training phase
 ```
 
-After converting our data to a numerical representation, we can now design a neural network model which we will feed our training data. The model will select an appropriate response from the tag associated with a given feature.
+After converting our data to a numerical representation, we can now design a neural network model which we will feed our training data. The model will select an appropriate response from the tag associated with a given feature:
 
 ```python
 iShape = (len(x[0]),)
@@ -187,24 +190,24 @@ ourNewModel.fit(x, y, epochs=200, verbose=1)
 ![Output](/engineering-education/creating-chatbot-using-natural-language-processing-in-python/summary.png)
 
 #### Step five: Building useful features
-In order to make use of our model in a chatbot, we must first implement the necessary functionality, which will be made easier by building a library of utility functions will help.
+In order to make use of our model in a chatbot, we must first implement the necessary functionality, which will be made easier by building a library of utility functions will help:
 
 ```python
-def ourText(text): 
+def ourText(text):
   newtkns = nltk.word_tokenize(text)
   newtkns = [lm.lemmatize(word) for word in newtkns]
   return newtkns
 
-def wordBag(text, vocab): 
+def wordBag(text, vocab):
   newtkns = ourText(text)
   bagOwords = [0] * len(vocab)
-  for w in newtkns: 
+  for w in newtkns:
     for idx, word in enumerate(vocab):
-      if word == w: 
+      if word == w:
         bagOwords[idx] = 1
   return num.array(bagOwords)
 
-def Pclass(text, vocab, labels): 
+def Pclass(text, vocab, labels):
   bagOwords = wordBag(text, vocab)
   ourResult = ourNewModel.predict(num.array([bagOwords]))[0]
   newThresh = 0.2
@@ -216,17 +219,17 @@ def Pclass(text, vocab, labels):
     newList.append(labels[r[0]])
   return newList
 
-def getRes(firstlist, fJson): 
+def getRes(firstlist, fJson):
   tag = firstlist[0]
   listOfIntents = fJson["intents"]
-  for i in listOfIntents: 
+  for i in listOfIntents:
     if i["tag"] == tag:
       ourResult = random.choice(i["responses"])
       break
   return ourResult
 ```
 
-The user will be able to enter a query in a while loop, which will then be cleaned. Next, we use our `bag of words` model to convert our text into numerical values and make a prediction about which tag in our intent the features most closely represent us.
+The user will be able to enter a query in a while loop, which will then be cleaned. Next, we use our `bag of words` model to convert our text into numerical values and make a prediction about which tag in our intent the features most closely represent us:
 
 ```python
 while True:
