@@ -82,9 +82,7 @@ Apache Pulsar has captured the market for users intending to build a multi-tenan
 
 In short, Pulsar is helpful to organizations working to embrace event streaming and a unified messaging platform. But for those in need of an enterprise solution that covers much more than what Pulsar offers, Kafka is an excellent choice.
 
-### Additional Resources
+### Additional resources
 - [Kubernetes](https://kubernetes.io/)
-
 - [Pulsar IO](https://pulsar.apache.org/docs/en/2.3.1/io-overview/)
-
 - [Introduction to Kafka](/engineering-education/introduction-to-kafka/)
