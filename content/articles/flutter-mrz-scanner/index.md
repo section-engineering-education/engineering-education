@@ -7,7 +7,7 @@ title: Getting Started with Flutter MRZ Scanner
 description: In this article we will build a simple flutter application with BlinkId SDK to obtain user data from either the national Id or passport by performing a simple camera scan of the identification document.
 author: njeri-karen
 date: 2022-02-07T00:00:00-14:00
-topics: [Android]
+topics: []
 excerpt_separator: <!--more-->
 images:
 

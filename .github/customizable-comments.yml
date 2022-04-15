@@ -1,0 +1,7 @@
+pull_request:
+  opened:
+    template: |
+      Good afternoon and thank you for submitting your pull request for review and publishing.
+      Your pull request has entered our queue and will be reviewed by our team of peer reviewers as soon as possible. 🚀
+      All articles are reviewed in the order in which they were received.
+      Thank you. 
