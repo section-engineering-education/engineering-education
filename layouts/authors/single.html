@@ -169,7 +169,7 @@
                 </div>
                 <div class="data-point page-views page-views-icon-{{ $elem_index }}">
                   <p><img class="icon" src="{{ if eq $.Site.Params.env "local" }}/{{ else }}/engineering-education/{{ end }}images/page-views-icon.png" alt="Page Views" /></p>
-                  <span data-slug="engineering-education/{{ $articleSlug }}/" id="page-views-count-{{ $elem_index }}">0</span>
+                  <span data-slug="{{ if eq $.Site.Params.env "local" }}engineering-education/{{ $articleSlug }}/{{ else }}{{ $articleSlug }}{{ end }}" id="page-views-count-{{ $elem_index }}">0</span>
                 </div>
               </div>
             </div>
