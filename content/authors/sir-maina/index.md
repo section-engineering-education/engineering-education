@@ -1,5 +1,5 @@
 ---
-title: David Maina
+title: Davis Maina
 type: authors
 github: https://github.com/davismaina
 images:
