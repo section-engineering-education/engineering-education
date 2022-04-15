@@ -316,33 +316,37 @@ The following is a c-sharp code implementing property injection:
 ```c#
 //interface-based.
 using System;
-
-public interface IClass {
-    void Serve();
+public interface IClass 
+{
+    string Serve();
 }
-public class Service: IClass{
-    public void Serve(){
-        Console.WriteLine("Service is called.");
+public class Service: IClass
+{
+    public string Serve()
+    {
+        return "Service is called.";
     }
 }
-interface IClassA{
-    void Client(IClass Serve);
+interface IClassA
+{
+    void Client(IClass service);
 }
-public class Idependency: IClassA{
+public class Idependency: IClassA
+{
     IClass _service;
-    public void Client(IClass service){
+    public void Client(IClass service)
+    {
         _service = service;
+        Console.WriteLine(_service.Serve());
     }
-    public void Serve(){
-            _service.Serve();
-        }
-    }
-class program{
-     public static void Main(String[] args){
+}
+class program
+{
+     public static void Main(String[] args)
+     {
         Idependency interA = new Idependency();
          Service sA= new Service();
-       // objA = new Client();
-        interA.Serve(sA);
+        interA.Client(sA);
     }
 }
 ```
