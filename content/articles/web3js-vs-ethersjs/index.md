@@ -14,12 +14,11 @@ images:
   - url: /ethers-vs-web3/hero.jpg
     alt: Ethers vs web3 Hero Image
 ---
-The web3js library and the ethers library are the major libraries for utilizing the Ethereum network in JavaScript. The two have different ways they interact with smart contracts and make transactions on the network. This difference leads to one handling some type of tasks better than the other. In this article, you will learn their differences, their best use cases, and how they both interact with the network.
+The web3js and the ethers are the major libraries for utilizing the Ethereum network in JavaScript. The two have different ways they interact with smart contracts and make transactions on the network. This difference leads to one handling some type of tasks better than the other. In this article, you will learn their differences, their best use cases, and how they both interact with the network.
 ### Prerequisites
 To get the full benefits of this article, you need to have the following.
-- You need to have a working knowledge of JavaScript.
-- You should have a basic understanding of Web3, Smart Contracts, and Blockchain.
-- Having knowledge of how NodeJS and NPM will be really great.
+- a working knowledge of JavaScript, and NodeJS .
+- a basic understanding of Web3, Smart Contracts, and Blockchain.
 
 ### Table of Contents
 - [Essential Topics](#essential-topics)
