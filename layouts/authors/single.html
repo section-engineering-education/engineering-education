@@ -238,7 +238,7 @@
       })
         .then(handleError)
         .then(data => {
-          if (data.length > 0) {
+          if (data.length) {
             data.forEach(item => {
               const numPageViews = parseInt(item.pageViews).toLocaleString();
               const pageViewsEl = document.querySelector(`[data-slug="${item.url}"]`);
