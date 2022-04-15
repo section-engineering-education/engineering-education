@@ -4,9 +4,9 @@ status: publish
 published: true
 url: /anomaly-detection-model-on-time-series-data/
 title: Anomaly Detection Model on Time Series data
-description: This tutorial will guide the reader on how to use Facebook Prophet to build an anomaly detection model.
+description: This tutorial will guide a reader how to use Facebook Prophet to build an anomaly detection model.
 author: charles-ndirutu
-date: 2022-04-15T00:00:00-13:00
+date: 2022-02-17T00:00:00-10:00
 topics: [Machine Learning]
 excerpt_separator: <!--more-->
 images:
