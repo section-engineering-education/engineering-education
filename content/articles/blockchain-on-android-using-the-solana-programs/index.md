@@ -1,12 +1,28 @@
-Web 3.0 is an evolution of the internet utilizing blockchain technology and decentralization tools.
+---
+layout: engineering-education
+status: publish
+published: true
+url: /blockchain-on-android-using-the-solana-programs/
+title: How to Build an Android Blockchain Wallet using Solana
+description: This tutorial will guide the reader on how to build an Android Blockchain wallet using Solana.
+author: moses-chege
+date: 2022-04-15T00:00:00-04:13
+topics: [Languages, Android]
+excerpt_separator: <!--more-->
+images:
 
+  - url: /engineering-education/blockchain-on-android-using-the-solana-programs/hero.png
+    alt: How to Build an Android Blockchain Wallet using Solana Hero Image
+---
+Web 3.0 is an evolution of the internet utilizing blockchain technology and decentralization tools.
+<!--more-->
 On the other side, Solana is a fast, cheap, and monstrous blockchain tool. It is a high-performance, scalable blockchain that supports crypto applications.
 
 [Solana ($SOL)](https://coinmarketcap.com/currencies/solana/) is a decentralized blockchain network just like the likes of Bitcoin, Ethereum, and Litecoin. It also has programmable blockchains that allow you to use smart contracts and create your own token, or NFTs. 
 
 Solana aims to be more scalable and a faster network, it can currently handle 50k transactions per second with an average 400ms block time. This extremely fast transaction speed makes Solana one of the most scalable layer one blockchain solutions.
 
-This guide will implement the Solana blockchain concept using Android. We will consume a Solana API using the android Retrofit library.
+This guide will implement the Solana blockchain concept in Android. We will consume a Solana API using the android Retrofit library.
 
 ### Table of contents
 - [Prerequisites](#prerequisites)
@@ -17,8 +33,8 @@ This guide will implement the Solana blockchain concept using Android. We will c
 
 ### Prerequisites
 To follow along with this guide, it is essential to have the following:
-- Basic working knowledge of how blockchain technology and architecture work.
-- Working knowledge of running applications using android.
+- A basic knowledge of how blockchain technology and it's architecture works.
+- Some knowledge of running Android applications.
 
 ### Setting up the application
 First, we need to set up an android application. Go to your Android Studio and create a new Java-powered android project with an empty activity.
@@ -223,3 +239,6 @@ The app is now ready. You can run it on your mobile device or an emulator device
 
 ### Conclusion
 In this tutorial, we built a basic Android app integrated with the Solana blockchain wallet. This was a pretty basic setup and will help you have the basics of processing Solana into your android app. You can go ahead and try requesting different parameters from your Solana wallet.
+
+---
+Peer Review Contributions by: [Jethro Magaji](/engineering-education/authors/jethro-magaji/)
