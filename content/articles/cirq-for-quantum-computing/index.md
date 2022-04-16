@@ -113,3 +113,6 @@ Currently, Cirq does not give the public access to the real quantum computer tha
 - [GitHub](https://github.com/quantumlib/cirq).
 - [Quantum supremacy using a programmable superconducting processor](https://www.nature.com/articles/s41586-019-1666-5).
 - [Option Pricing using Quantum Computers](https://arxiv.org/pdf/1905.02666.pdf).
+
+---
+Peer Review Contributions by: [Wilkister Mumbi](/engineering-education/authors/wilkister-mumbi/)
