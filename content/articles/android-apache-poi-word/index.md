@@ -21,7 +21,7 @@ For manipulating Word documents, the library provides us with these components:
 2. **Horrible Word Processor Format(HWPF)**- It’s the same as XWPF. The difference is that this is used to process .doc format files.
 3. **Horrible Property Set Format(HPSF)**- As the name suggests, it is used for property sets extraction from MS Office documents. We won't be using this component for our article.
 
-[Here](https://poi.apache.org/components/document/) is it's official page.
+[Here](https://poi.apache.org/components/document/) is its official page.
 
 ### Setting up the library
 To avoid build errors, it’s best to add the dependencies separately instead of the single Apache POI library dependency. We will start by modifying the project-level build.gradle file by adding this line to the repositories section.
@@ -189,7 +189,7 @@ When creating a document, we need to save it. We first check whether it exists o
     }
 ```
 
-- If it doesn’t exist, we create one in our app’s file directory. You can choose any other storage location you wish to save your file to. The rest of the code is for saving and exception-handling, which we won't explore because that isn’t the cope of this article.
+- If it doesn’t exist, we create one in our app’s file directory. You can choose any other storage location you wish to save your file. The rest of the code is for saving and exception-handling, which we won't explore because that isn’t the cope of this article.
 
 #### Extracting the text
 We first have to load the document. We will create a method called `loadDoc(`) for that.
@@ -411,7 +411,7 @@ To access the word document created, open the Device Explorer using your IDE and
 Check this [GitHub repository](https://github.com/munubi254/apache-word-android) for the code.
 
 ### Conclusion
-That was it. This library contains a multitude of methods that only a dedicated book can exhaust. You can add footnotes, a table of contents, and almost everything you can get in an MS-Office Word application. Although this library has many functionalities, it doesn’t have a very clear documentation. You have to explore them on your own. The IDEs I pointed out, in the beginning, have intelligent capabilities that allow you to check the library's classes, methods, and their descriptions. You only have to hover on the method and a pop-up is displayed. There’s a localhost link section which you can click and a browser tab is opened giving you all the methods and classes for the code you hovered through. Check the screenshot below.
+That was it. This library contains a multitude of methods that only a dedicated book can exhaust. You can add footnotes, a table of contents, and almost everything you can get in an MS Office Word application. Although this library has many functionalities, it doesn’t have very clear documentation. You have to explore them on your own. The IDEs I pointed out, in the beginning, have intelligent capabilities that allow you to check the library's classes, methods, and their descriptions. You only have to hover on the method and a pop-up is displayed. There’s a localhost link section which you can click and a browser tab is opened giving you all the methods and classes for the code you hovered through. Check the screenshot below.
 
 ![popup](/engineering-education/android-apache-poi-word/shot-conc.png)
 
