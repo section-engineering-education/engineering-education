@@ -4,7 +4,7 @@
 #### In this article you will learn how to 
 - Create a CSV file in python
 - Load data into IBM Db2 database
-- Run SQL queries with your CSV  dataset in IBM db2 database
+- Run SQL queries with your CSV dataset in IBM db2 database
 
 ### Introduction
 A Comma Separated Values (CSV) file are semi-structure data files which can be transformed to structured data for an ordinary user to understand the meaning of the the data in it. This is where the IBM Db2 database comes in to play, it can collect semi-structure data and transform it into a structured data and also gives you the convenient to query the data to get the required result you need.
