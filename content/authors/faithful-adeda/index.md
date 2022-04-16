@@ -6,4 +6,4 @@ github: https://github.com/adematics
 images:
   - url: /engineering-education/authors/faithful-adeda/avatar.jpg 
 ---
-Faithful Adeda is a Big Data Engineer who architecting data and platform solutions in the Cloud as well as writing articles on Data-related topics.
+Faithful Adeda is a Big Data Engineer who loves architecting data and platform solutions in the Cloud as well as writing articles on Data-related topics.
