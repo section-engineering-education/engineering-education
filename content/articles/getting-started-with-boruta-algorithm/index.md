@@ -1,6 +1,21 @@
-### Getting Started with Boruta Algorithm in Machine Learning
-Boruta is a Machine Learning algorithm used in feature selection. 
+---
+layout: engineering-education
+status: publish
+published: true
+url: /getting-started-with-boruta-algorithm/
+title: How to Get Started with Boruta Algorithm in Machine Learning
+description: This tutorial will walk the reader through how to get started with Boruta algorithm in machine learning.
+author: nelson-ruto
+date: 2022-04-16T00:00:00-23:40
+topics: [Languages]
+excerpt_separator: <!--more-->
+images:
 
+  - url: /engineering-education/getting-started-with-boruta-algorithm/hero.png
+    alt: How to Get Started with Boruta Algorithm in Machine Learning Hero Image
+---
+Boruta is a Machine Learning algorithm used in feature selection. 
+<!--more-->
 Feature selection is a process of reducing the number of features in a dataset by identifying features that largely influence the study variable. 
 
 It is an important aspect of machine learning, for instance, supposing we are required to perform an analysis of genetic data. The dataset, in this case, can be very huge, and fitting the machine learning model in it can have significant challenges, which include; high computational cost and processing time, also machine learning models that fit on high dimensional datasets tend to have poor performance than when fit on optimal features of the dataset.
@@ -30,7 +45,7 @@ The algorithm works by taking features of the original dataset and creates a cop
 
 These shuffled features are known as **Shadow Features**. The shadow features are then merged with the original features to obtain a new feature space whose dimension is twice the original dataset. The diagram below clarifies the above discussion.
 
-![image](engineering-education/boruta-algorithm/boruta.png)
+![image](engineering-education/getting-started-with-boruta-algorithm/boruta.png)
 
 Now, it builds a classifier (Random Forest Classifier) on these new features space which determines their importance using a statistical test, `[Z-Sore]()`. 
 
@@ -67,7 +82,7 @@ print(X.join(y))
 
 Output:
 
-![dataframe](engineering-education/boruta-algorithm/data.png)
+![dataframe](engineering-education/getting-started-with-boruta-algorithm/data.png)
 
 ### Step 2:  Creating the shadow feature
 Before creating the shadow features, first, let's create a copy of our dataset with which we will randomly shuffle all values in each column. Let's do that using the code below.
@@ -98,7 +113,7 @@ print(X_shadow)
 
 Output:
 
-![image](engineering-education/boruta-algorithm/shandow.png)
+![image](engineering-education/getting-started-with-boruta-algorithm/shandow.png)
 
 2. The merged dataframe.
 
@@ -108,7 +123,7 @@ print(X_boruta)
 
 Executing the code above, we get:
 
-![image](engineering-education/boruta-algorithm/marged.png)
+![image](engineering-education/getting-started-with-boruta-algorithm/marged.png)
 
 As we can see, the dataset consists of both columns in `X` and `X_shadow`.
 
@@ -204,5 +219,7 @@ You can check out the complete code [here](https://github.com/nelsonnrl/program-
 ### Conclusion
 In this article, we learned the basics of the Boruta algorithm and its implementation in python. Boruta is a powerful feature selection method with application in almost all datasets. Although it might be time-consuming, especially when data reduction is performed on a large dataset, but the financial result is reliable.
 
-
 Happy coding!
+
+---
+Peer Review Contributions by: [Jethro Magaji](/engineering-education/authors/jethro-magaji/)
