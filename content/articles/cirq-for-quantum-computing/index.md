@@ -1,4 +1,21 @@
+---
+layout: engineering-education
+status: publish
+published: true
+url: /cirq-for-quantum-computing/
+title: Cirq for Quantum Computing
+description: This tutorial will give an overview of the Cirq framework and demonstrate how one can use it to learn about Quantum computing.
+author: lilian-tonia
+date: 2022-04-16T00:00:00-24:00
+topics: [Networking]
+excerpt_separator: <!--more-->
+images:
+
+  - url: /engineering-education/cirq-for-quantum-computing/hero.png 
+    alt: Cirq for Quantum Computing Hero Image
+---
 This tutorial will give an overview of the framework and demonstrate to our readers how they can use this framework to learn about Quantum computing.
+<!--more-->
 
 ### Prerequisite
 To follow along with this tutorial, you need to have:
