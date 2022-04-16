@@ -125,7 +125,7 @@ Finally you can now begin loading your CSV file into your Db2 database. If no er
 
 Now you have loaded your CSV file into Db2 database you can now run some SQL queries on it.
 
-### Running SQL queries with your CSV  data in the db2 database.
+### Running SQL queries with your CSV  data in your db2 database.
 To run your SQL queries in your Db2 database you will need to go to the `Run SQL` icon in the menu bar section at the top left corner of your screen.
 
 ![democsvfile](ibm-demo24.jpg)
