@@ -3,10 +3,10 @@ layout: engineering-education
 status: publish
 published: true
 url: /anomaly-detection-model-on-time-series-data-using-isolation-forest/
-title: Anomaly Detection Model on Time Series data using Isolation Forest
+title: Anomaly Detection Model on Time Series Data using Isolation Forest
 description: This tutorial will use the Isolation Forest algorithm to train an anomaly detection model on time series data.
 author: collins-kirui
-date: 2022-04-01T00:00:00-21:20
+date: 2022-04-16T00:00:00-15:20
 topics: [Machine Learning]
 excerpt_separator: <!--more-->
 images:
@@ -44,10 +44,9 @@ We will use the Isolation Forest algorithm to train a time series model. We will
 - [References](#references)
 
 ### Prerequisites
-A reader should understand:
-
+A reader should be familiar with the following:
 - [Time series concepts](/engineering-education/introduction-to-time-series/)
-- [Time series analysis and modelling.](/engineering-education/anomaly-detection-model-on-time-series-data/)
+- [Time series analysis and modeling](/engineering-education/anomaly-detection-model-on-time-series-data/)
 
 ### Why perform anomaly detection?
 Anomaly detection has the following benefits:
@@ -73,23 +72,26 @@ We will use Pandas to read the dataset.
 ```python
 import pandas as pd
 ```
+
 Use this code to read the data:
 
 ```python
 df = pd.read_csv('taxi_rides.csv')
 ```
+
 To see the rows and columns in the dataset, run this code:
 
 ```python
 df
 ```
+
 Output:
 
 ![Rows and columns](/engineering-education/anomaly-detection-model-on-time-series-data-using-isolation-forest/taxi-dataset.png)
 
 The dataset has `timestamp` and `value` columns. The `timestamp` column shows the time of recording. The `value` column contains the number of taxi rides.
 
-#### Converting the `timestamp` column
+#### Converting the 'timestamp' column
 We will convert the `timestamp` column to the DateTime format. DateTime will allow us to perform time-series analysis and operations on the column. 
 
 We will use the `datetime` Python module.
@@ -103,7 +105,7 @@ Run this code to convert the `timestamp` column:
 df['timestamp']=pd.to_datetime(df['timestamp'])
 ```
 ### Dataset resampling
-These are many data points in our time series dataset. It may be hard to plot and visualize all the data points. 
+There are many data points in our time series dataset. It may be hard to plot and visualize all the data points. 
 
 We will resample the time-series dataset and aggregate it to hourly intervals. We use Pandas `resample` method to aggregate it to hourly intervals. 
 
@@ -115,6 +117,7 @@ Use this code to see the new aggregated dataset:
 ```python
 df
 ```
+
 Aggregated dataset output:
 
 ![Aggregated dataset](/engineering-education/anomaly-detection-model-on-time-series-data-using-isolation-forest/aggregated-dataset.png)
@@ -130,17 +133,20 @@ This column will hold the hourly time stamp in the time series dataset. It will 
 ```python
 df['hour']=df.timestamp.dt.hour
 ```
+
 **Weekday column**
 This column will hold the number of taxi rides during each day of the week. It will show how the number of taxi rides varies across the days of the week. 
 
 ```python
 df['weekday']=pd.Categorical(df.timestamp.dt.strftime('%A'), categories=['Monday','Tuesday','Wednesday','Thursday','Friday','Saturday', 'Sunday'], ordered=True)
 ```
+
 Use this code to see the new dataset with the added columns:
 
 ```python
 df
 ```
+
 Output:
 
 ![New columns](/engineering-education/anomaly-detection-model-on-time-series-data-using-isolation-forest/new-columns.png)
@@ -154,12 +160,14 @@ Let's import Matplotlib.
 import matplotlib as mpl
 import matplotlib.pyplot as plt
 ```
+
 #### First line chart
 Use this code snippet:
 
 ```python
 df[['value','weekday']].groupby('weekday').mean().plot()
 ```
+
 Line chart output:
 
 ![First line chart](/engineering-education/anomaly-detection-model-on-time-series-data-using-isolation-forest/first-line-chart.png)
@@ -172,6 +180,7 @@ Use this code snippet:
 ```python
 df[['value','hour']].groupby('hour').mean().plot()
 ```
+
 Line chart output:
 
 ![Second line chart](/engineering-education/anomaly-detection-model-on-time-series-data-using-isolation-forest/second-line-chart.png)
@@ -223,6 +232,7 @@ To initialize the Isolation Forest algorithm, use the following code:
 ```python
 model =  IsolationForest(contamination=0.004)
 ```
+
 The `IsolationForest` has a `contamination` parameter. This parameter specifies the number of anomalies in our time series data. It sets the percentage of points in our data to be anomalous. We set this value to `0.004%`. It will determine how the dataset is "contaminated" with anomalies.
 
 Let's fit the Isolation Forest model to the time series data.
@@ -233,6 +243,7 @@ We will use the `fit` function.
 ```python
 model.fit(df[['value']])
 ```
+
 The `value` will train the Isolation Forest model. It will learn and identify anomalies.
 
 We can now use the trained Isolation Forest model to make predictions. The model will identify anomalies in the time series dataset.
@@ -243,6 +254,7 @@ To make predictions using the trained Isolation Forest model, use the code snipp
 ```python
 df['outliers']=pd.Series(model.predict(df[['value']])).apply(lambda x: 'yes' if (x == -1) else 'no' )
 ```
+
 The code above adds a new `outliers` column to the dataset. This column will either be labeled `yes` or `no`. `yes` will show the anomalous data points. `no` will show the normal data points.
 
 We use the `predict` function to make predictions. Let's display all the anomalous data points.
@@ -253,6 +265,7 @@ We use the `query` method to display all the anomalous data points.
 ```python
 df.query('outliers=="yes"')
 ```
+
 Anomalous data points output:
 
 ![Anomalous data points](/engineering-education/anomaly-detection-model-on-time-series-data-using-isolation-forest/anomalous-datapoints.png)
@@ -269,6 +282,7 @@ fig.update_xaxes(
 )
 fig.show()
 ```
+
 ![Ploty Express diagram](/engineering-education/anomaly-detection-model-on-time-series-data-using-isolation-forest/ploty-express-diagram.png)
 
 The above Ploty Express diagram shows the anomalous data points/outliers (orange dots) and the normal data points (blue dots). 
@@ -276,9 +290,9 @@ The above Ploty Express diagram shows the anomalous data points/outliers (orange
 We have detected, plotted, and visualized the anomalies in the time series dataset.
 
 ### Conclusion
-We have learned how to perform anomaly detection on time series data. We created the anomaly detection model using the Isolation Forest algorithm. We discussed the benefits of anomaly detection and how it helps explain the spikes and drops in the dataset.
+In this tutorial we learned how to perform anomaly detection on time series data. We created the anomaly detection model using the Isolation Forest algorithm. We discussed the benefits of anomaly detection and how it helps explain the spikes and drops in the dataset.
 
-We prepared the dataset so that the anomaly detection model can use. Finally, we used the prepared dataset to build the model. Using this tutorial, you should be able to detect, plot, and visualize the anomalies in the time series dataset.
+We prepared the dataset so that the anomaly detection model can be used. Finally, we used the prepared dataset to build the model. Using this tutorial, you should be able to detect, plot, and visualize the anomalies in the time series dataset.
 
 To get the Python code used in this tutorial, click [here](https://colab.research.google.com/drive/19-1sWjLilDVNnNlkDjioQBHJZH8XCUaK?usp=sharing)
 
