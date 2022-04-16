@@ -1,13 +1,13 @@
 
-## How to load and query a csv file created with python in IBM db2 database.
+### How to load and query a csv file created with python in IBM db2 database.
 
 #### In this article you will learn how to 
-- create a CSV file in python
-- load data into IBM Db2 database
+- Create a CSV file in python
+- Load data into IBM Db2 database
 - Run SQL queries with your CSV  dataset in IBM db2 database
 
 ### Introduction
-A Comma Separated Values (CSV) file are semi-structure data files which can be transformed to structured data for an ordinary user to understand the meaning of the the data in it . This is where the IBM Db2 database  comes in to play, It can collect semi-structure data and transform it into a structured data and also gives you the convenient to query the data to get the required result you need.
+A Comma Separated Values (CSV) file are semi-structure data files which can be transformed to structured data for an ordinary user to understand the meaning of the the data in it. This is where the IBM Db2 database comes in to play, it can collect semi-structure data and transform it into a structured data and also gives you the convenient to query the data to get the required result you need.
 
 ### Prerequisite 
 - python 3.10 or newest version installed on your machine.
@@ -15,7 +15,7 @@ A Comma Separated Values (CSV) file are semi-structure data files which can be t
 - IBM Db2 database account (In this tutorial we will use the free version).
 
 ### Creating a CSV file with python.
-They are various ways you can create a CSV file in python but you can use this simple format provided in this article. Here is a simple way you can create your CSV file in python using the code as shown below.
+They are various ways you can create a CSV file in python, but you can use this simple format provided in this article. Here is a simple way you can create your CSV file in python using the code as shown below.
 ```python
 file = open("./demo.csv", "w")
 ```
@@ -41,7 +41,7 @@ file.close()
 ```
 
 At this point your CSV file should have your data in it which would be needed to query in your IBM Db2 database.
-Now your CSV file is ready, you should be able to view it in your Integrated development environment (IDE) as shown below.
+Now your CSV file is ready, you should be able to view it in your Integrated Development Environment (IDE) as shown below.
 
 ![democsvfile](democsv.jpg)
 
@@ -57,11 +57,11 @@ Select Services from the Catalog menu option, click on the `Databases` box as yo
 
 ![db2creation](ibm-demo4.png)
 
-You can now Scroll down and select the `Db2` service tile which is among the various database provided by IBM.
+You can now scroll down and select the `Db2` service tile which is among the various database provided by IBM.
 
 ![db2 creation](ibm-demo5.png)
 
-NOTE : make sure you click on the `Db2` option as shown below and not the `Db2 hosted` and `Db2 warehouse` option.
+> *NOTE : make sure you click on the `Db2` option as shown below and not the `Db2 hosted` and `Db2 warehouse` option.*
 
 ![db2checked](ibm-demo6.png)
 
@@ -69,7 +69,7 @@ You can now go ahead and click on the create option. You will notice also the op
 
 ![db2location](ibm-demo7.png)
 
-You can now go ahead and Choose a pricing plan. For this tutorial you can go with the Lite option.
+You can now go ahead and choose a pricing plan. For this tutorial you can go with the `Lite` option.
 It's a totally free service that doesn't even ask for your credit card information.
 
 ![db2 lite](ibm-demo8.png)
@@ -80,7 +80,7 @@ You can now open the Db2 database you just created and setup your service creden
 
 ![service center](ibm-demo10.png)
 
-The Name and Role fields in the `Create credential` dialog box will have default values.For the purposes of this tutorial,  you can use the default names.
+The Name and Role fields in the `Create credential` dialog box will have default values. For the purposes of this tutorial,  you can use the default names.
 
 ![dcredential name default](Ibm-demo11.png)
 
@@ -90,11 +90,11 @@ With the key name `Service credentials-1` which you just created, you'll see a l
 
 Now you have been able to create your Db2 database. You can now go ahead and load the CSV file you created into the database.
 
-To load data in your Db2 database, Click on the `GO to UI` option as shown below.
+To load data in your Db2 database, click on the `GO to UI` option as shown below.
 
 ![go to ui](ibm-demo13.png)
 
-Once you open the `Go to UI` option, at the top left corner of your Db2 service dashboard click the menu bar icon,  where you will see the option for `Data` as shown below.
+Once you open the `Go to UI` option, at the top left corner of your Db2 service dashboard click the menu bar icon, where you will see the option for `Data` as shown below.
 
 ![democsvfile](ibm-demo14.png)
 
@@ -102,7 +102,7 @@ You can either drag and drop the CSV file into the File selection space, or use 
 
 ![democsvfile](ibm-demo15.png)
 
-In the Selected file section on the right, the name of the CSV file you uploaded will appear. In this case the `demo.csv` file is what you can see here.
+In the Selected file section at the right corner of your screen, the name of the CSV file you uploaded will appear. In this case the `demo.csv` file is what you can see here.
 
 ![democsvfile](ibm-demo22.jpg)
 
@@ -130,11 +130,11 @@ To run your SQL queries in your Db2 database you will need to go to the `Run SQL
 
 ![democsvfile](ibm-demo24.jpg)
 
-Once you click on it, you will be taken to where you can either upload a file to query or create a new Query page. In this case you already have your CSV file you will want to query in the database, so all you will need to do is to create a new query page to query your data in the database.
+Once you click on it, you will be taken to where you can either upload a file to query or create a new query page. In this case you already have your CSV file you will need to query in the database, so all you will need to do is to create a new query page to query your CSV dataset in the database.
 
 ![democsvfile](ibm-demo25.jpg)
 
-Once  you click on the `Create new` option, the SQL editor you will need to run your queries will open.
+Once you click on the `Create new` option, the SQL editor you will need to run your queries will open.
 
 ![democsvfile](ibm-demo26.jpg)
 
@@ -156,7 +156,7 @@ INSERT INTO DEMO VALUES('Ruona', 'Ighere', 'email@Bobson');
 ```
 ![democsvfile](ibm-demo28.jpg)
 
-Once you click of the `Run all` button your new data should now be in your database. For you to check if your data has been added to your database you can run the query below to show all your data in your `Demo` database
+Once you click of the `Run all` button your new data should now be in your database. For you to check if your data has been added to your database you can run the query below to show all your data in your `Demo` database.
 
 ```sql
 SELECT * FROM DEMO;
@@ -166,11 +166,11 @@ You should be able to see your data at the right corner of your screen. You can 
 
 ![democsvfile](ibm-demo29.jpg)
 
-After you have clicked on the `More` link highlighted in the image , you should be able to see all your data including the new ones you just inserted.
+After you have clicked on the `More` link highlighted in the image, you should be able to see all your data including the new ones you just inserted.
 
 ![democsvfile](ibm-demo30.jpg)
 
 ### Conclusion
-This tutorial introduced you on how you can create a CSV file in python and also how you can load your CSV file into your  IBM Db2 database along side running some SQL queries on your data.
+This tutorial introduced you on how you can create a CSV file in python and also how you can load your CSV file into your IBM Db2 database along side running some SQL queries on your data.
 
 Please do not hesitate to contact me on [Twitter](https://twitter.com/Ade_matics) if you have any questions :).
