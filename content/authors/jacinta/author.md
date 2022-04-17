@@ -1,0 +1,1 @@
+Jacinta is a student undertaking Bachelors in Computer Science. She is interested in web development and app development of both android and IOS. Apart from programming, she also likes watching movies and playing music as hobbies.
