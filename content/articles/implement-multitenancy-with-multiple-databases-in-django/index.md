@@ -3,10 +3,10 @@ layout: engineering-education
 status: publish
 published: true
 url: /implement-multitenancy-with-multiple-databases-in-django/
-title: Implement Multitenancy With Multiple Databases In Django
-description: This article will discuss on how to implement multitenancy of application with separate databases for each client using Django
+title: Implement Multitenancy with Multiple Databases in Django
+description: This article will discuss how to implement multitenancy of applications with separate databases for each client using Django.
 author: samuel-mwangi
-date: 2022-04-01T00:00:00-00:00
+date: 2022-04-17T00:00:00-09:30
 topics: []
 excerpt_separator: <!--more-->
 images:
@@ -14,13 +14,13 @@ images:
   - url: /engineering-education/implement-multitenancy-with-multiple-databases-in-django/hero.png
     alt: Implement Multitenancy With Multiple Databases In Django Hero Image
 ---
-In this tutorial, we will learn how multitenancy is implemented in multiple databases with a shared Django app. Here, we will use MongoDB.
-<!--more-->
 Multitenancy is a property whereby a web application can serve more than one customer while having each customer's data and users isolated.
+<!--more-->
+In this tutorial, we will learn how to implement multitenancy in multiple databases with a shared Django app. We will use MongoDB.
 
-Let's imagine that you built a web-based Library Management System for your University, and you want to provide your services to other universities without having to rebuild and host the same application for each University.
+Let's imagine that you built a web-based Library Management System for your university, and you want to provide your services to other universities without having to rebuild and host the same application for each university.
 
-Here, we call each university to be a tenant of your application, hence the name `Multitenancy`.
+We can call each university to be a tenant of your application, hence the name `Multitenancy`.
 
 Multitenancy allows you to build one application and offer instances of the application to various customers as a Software as a Service (SaaS).
 
@@ -55,7 +55,7 @@ Now, let's start to build a simple application that records the details of stude
 To follow along with this tutorial, you will need to have:
 - Fundamental knowledge in both Python and Django.
 - Any code editor that you are comfortable with.
-- [MongoDB](https://docs.mongodb.com/manual/administration/install-community/) is installed on your PC.
+- Have [MongoDB](https://docs.mongodb.com/manual/administration/install-community/) installed on your PC.
 
 ### Create application
 #### Setup the environment
@@ -120,7 +120,7 @@ DATABASES = {
 }
 ```
 
-The above snippet tells Django that the default database to be called will be `djongo`.
+The snippet above tells Django that the default database to be called will be `djongo`.
 
 #### Add and register the models
 In `models.py`, add a `Student` model into our app as shown:
@@ -238,12 +238,12 @@ We will use the template to display the students data in a table styled by boots
 </html>
 ```
 
-In the above table, we used a `for` loop to populate the table's data from the available student objects. If there aren't any student objects created yet, the table won't display anything.
+In the table above, we used a `for` loop to populate the table's data from the available student objects. If there aren't any student objects created yet, the table won't display anything.
 
 #### Run the project
-Now, we shall run the Django project just to make sure that everything is working fine before we implement the multitenancy.
+Now, we will run the Django project just to make sure that everything is working well before we implement the multitenancy.
 
-We shall start with migrating the project as shown:
+We will start with migrating the project as shown:
 
 ```bash
 py manage.py makemigrations
@@ -257,7 +257,7 @@ django.core.exceptions.ImproperlyConfigured: 'djongo' isn't an available databas
 built-in backends, use 'django.db.backends.XXX', where XXX is one of: 'mysql', 'oracle', 'postgresql', 'sqlite3'
 ```
 
-Follow the below steps to resolve this, then repeat the command:
+Follow the steps below to resolve this, then repeat the command:
  
 1. Uninstall your default version of `pymongo`:
 
@@ -295,20 +295,20 @@ We will add a superuser to enable adding the student's data from the admin's sit
 py manage.py createsuperuser
 ```
 
-Populate the details that you will use to log in to the admin site. Then, finally, run the project using:
+Populate the details that you will use to log into the admin site. Then run the project using:
 
 ```bash
 py manage.py runserver
 ```
 
-Log in to the [admin](http://127.0.0.1:8000/admin/) site, add some students, then check the results on the [homepage](http://127.0.0.1:8000/).
+Log into the [admin](http://127.0.0.1:8000/admin/) site, add some students, then check the results on the [homepage](http://127.0.0.1:8000/).
 
-Here is a sample screenshot of what the table looks like:
+Here is a sample screenshot of what the table will look like:
 
 ![index HTML page](/engineering-education/implement-multitenancy-with-multiple-databases-in-django/index.jpg)
 
 ### Implement multitenancy
-Now, we add the ability to handle more than one default tenant(client) by assigning each client their database. By doing so, we have to tell Django where to get the data for each client. 
+Now, we add the ability to handle more than one default tenant (client) by assigning each client their database. By doing so, we have to tell Django where to get the data for each client. 
 
 #### Add multiple databases
 The first thing would be to create a database for each of our tenants. Apart from the `default` database, we are going to add two more databases.
@@ -347,7 +347,7 @@ def get_tenants_map():
 ```
 
 In the above code:
-- `hostname_from_the_request()` function takes the request and removes the ports and returns the bare URL
+- `hostname_from_the_request()` function takes the request and removes the ports and returns the bare URL.
 - `get_tenants_map()` function returns a dictionary with the added tenant's URLs as keys and their database names as the values.
 - `tenant_db_from_the_request()` function calls the other two functions. By comparing the host's URL from the request and the dictionary, it returns the name of the database that matches its tenant.
 
@@ -416,7 +416,7 @@ class SchoolRouter:
         return None
 ```
 
-The router class in Django provides up to four methods. We modified the first three and left the others as default in the above router class.
+The router class in Django provides up to four methods. We modified the first three and left the other as default in the above router class.
 
 We modified the functions that point to a DB to read or write operations to return the name of the current DB. We also set `allow_relations()` to `True` to allow relationships between two objects in our models if we need to use them.
 
@@ -450,7 +450,7 @@ Open the `host` file using notepad or any other text editor and add our hosts as
 127.0.0.1 accra.school.local
 ```
 
-We also need to update the ` ALLOWED_HOSTS` in our `settings.py` to:
+We also need to update the `ALLOWED_HOSTS` in our `settings.py` to:
 
 ```py
 ALLOWED_HOSTS = ['school.local', '.school.local']
