@@ -11,7 +11,7 @@ topics: [API, Languages]
 excerpt_separator: <!--more-->
 images:
 
-  - url: /engineering-education/expose-localhost-urls-with-signed-certificate/hero.jng
+  - url: /engineering-education/expose-localhost-urls-with-signed-certificate/hero.jpg
     alt:  Securing Localhost URLs using Ngrok and self-signed Certificates in Django Image
 ---
 
