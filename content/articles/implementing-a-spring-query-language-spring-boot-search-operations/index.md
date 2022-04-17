@@ -1,26 +1,31 @@
-Having built many endpoints and in good cases, a whole API, I know the amount of work that goes not only into building them but querying them for various use in the system - or maybe others.
+Having built many endpoints and, in good cases, a whole API, I know the amount of work that goes into building them and querying them for various use in the system - or maybe others.
 
-Making resources available is one of the things to take into serious consideration during building. In some situations, you would like to let the customer to search for information in many easy ways, while avoiding the temptation of creating too many services for this to be possible.
+Making resources available is one of the things to take into serious consideration during building. In some situations, you would like to let the customer search for information in many easy ways while avoiding the temptation of creating too many services for this to be possible.
 
-In comes the Search Language (also called Query Language) in Java. With this provision, you can easily make searching the API powerful, clean and easy and not have to deal with intricacies of methods, functions and lots of coding
-#### Table of Contents
-    • Introduction
-    • Query Language Search Operations
-    • Key Takeaways
-    • Conclusion
+In comes the Search Language (also called Query Language) in Java. With this provision, you can easily make searching the API powerful, clean and easy and not have to deal with intricacies of methods, functions and lots of coding.
 
-#### Prerequisite
-    • Familiarity with Java and Spring Boot
-    • Understanding of the REST framework and CRUD operations
-    • Understanding of search operations
+### Table of Contents
+- [Table of Contents](#table-of-contents)
+- [Prerequisite](#prerequisite)
+- [Introduction](#introduction)
+- [Query Language Search Operations](#query-language-search-operations)
+- [Carrying out searches using `CriteriaBuilder` class](#carrying-out-searches-using-criteriabuilder-class)
+- [Creating the `Controller` class](#creating-the-controller-class)
+- [Carrying out searches using `Querydsl ` class](#carrying-out-searches-using-querydsl--class)
+- [Key takeaways](#key-takeaways)
+- [Conclusion](#conclusion)
 
-#### Introduction
-We need to ask the vital question – what is the importance of a query language? The answer is simple and maybe short. For any API – direct or complex – searching or filtering through the available resources using easy-to-use criteria, parameters or fields might be as direct and simple as projected.
+### Prerequisite
+• Basic knowledge in Java and Spring Boot.
+• Integrated Development Environment (IDE) installed on your machine.
 
-Therefore, it is essential that a query language is structured in an organised, yet very flexible way. This would allow anyone to filter through to the actual resources that are needed. In another vein, what is a query language? This is simply the scheme or syntax for performing queries to storages or databases for resources that they hold.
+### Introduction
+We need to ask the vital question – what is the importance of a query language? The answer is simple and maybe short. For any API – direct or complex – searching or filtering through the available resources using easy-to-use criteria, parameters or fields might be as straightforward as projected.
 
-#### Query Language Search Operations
-Essentially, amongst the many available implementations, we will be working with two implementations of Spring Boot’s Search Query – CriteriaBuilder and Querydsl
+Therefore, a query language must be structured in an organised yet flexible way. This would allow anyone to filter through to the needed resources. In another vein, what is a query language? This is simply the scheme or syntax for performing queries to storage or databases for resources that they hold.
+
+### Query Language Search Operations
+Essentially, amongst the many available implementations, we will be working with two implementations of Spring Boot’s Search Query – CriteriaBuilder and Querydsl.
 
 For all the implementations that we will be walking through, we will be working with a User model and a set of criteria for performing searches; `AppUser` and `SearchCriteria` classes respectively:
 ```java
@@ -51,15 +56,15 @@ private Object searchValue;
 }
 
 ```
-The `searchKey` holds name of  field – for example, in our case, username
-The `searchOperation` holds the operation for comparison – for example: less than, equal to
-The `searchValue` holds the value for the field – for example: Steve, 40.
+The `searchKey` holds the name of the field – for example, in our case, the username.
+The `searchOperation` holds the operation for comparison – for example, less than, equal to
+The `searchValue` holds the value for the field – for example, Steve, 40.
 
-#### 		Carrying out searches using `CriteriaBuilder` class
+### Carrying out searches using `CriteriaBuilder` class
 
-The `CriteriaBuilder` query happens in the persistence layer of any project. The persistence is normally attributed as the repository layer. One subject of consideration while building a query is balancing the abstraction.
+The `CriteriaBuilder` query happens in the persistence layer of any project. The persistence is usually attributed to the repository layer. One subject of consideration while building a query is balancing the abstraction.
 
-Therefore, we will need to put, in the same pot of consideration, the flexibility of the query procedure and managing the complexity of the API. Basically, to work this function, we only need to pass in some criteria and expect to get some results.
+Therefore, in the same pot of consideration, we will need to put the flexibility of the query procedure and manage the complexity of the API. We only need to pass in some criteria and expect to get some results to work this function.
 
 This is how it works:
 
@@ -110,7 +115,7 @@ public class QueryCriteriaClient implements Consumer<SearchCriteria>{
         if (param.getOperation().equalsIgnoreCase(">")) {
             predicate = builder.and(predicate, builder
               .greaterThanOrEqualTo(r.get(param.getKey()),
-	param.getValue().toString()));
+    param.getValue().toString()));
         } else if (param.getOperation().equalsIgnoreCase("<")) {
             predicate = builder.and(predicate, builder.lessThanOrEqualTo(
               r.get(param.getKey()), param.getValue().toString()));
@@ -127,10 +132,10 @@ public class QueryCriteriaClient implements Consumer<SearchCriteria>{
 }
 ```
 
-From the code snippet above, our method takes constraints, does a search and returns a result or a series of results to us
+From the code snippet above, our method takes constraints, does a search and returns a result of a series of results to us.
 
-#### Creating the `Controller` class
-The final step would be to write in support for our persistence into a controller. To do this, we will create a `controller` class and write a `searchForAll()` method in it, so that, with this, we can pass the search expression to carry out a search
+### Creating the `Controller` class
+The final step would be to write in support of our persistence in a controller. To do this, we will create a `controller` class and write a `searchForAll()` method in it so that, with this, we can pass the search expression to carry out a search.
 
 ```java
 @RestController
@@ -171,7 +176,7 @@ The eventual sample generated response is thus:
 }]
 ```
 
-#### 		Carrying out searches using `Querydsl ` class
+### Carrying out searches using `Querydsl ` class
 The second implementation we will look at is the `Querydsl` approach. More straightforward than `CriteriaBuilder` in that we would need dependencies here. In the `pom.xml` file, add the following dependencies:
 ```xml
 <dependency>
@@ -205,7 +210,7 @@ Also, in the same `pom.xml` file, add the Annotation Processing Tool plugin
     </executions>
 </plugin>
 ```
-We will build a `PathBuilder`. With this we can build dynamic paths to be used more abstractly
+We will build a `PathBuilder`. With this, we can build dynamic paths to be used more abstractly.
 
 ```java
 public class MyUserPredicate {
@@ -236,11 +241,16 @@ public class MyUserPredicate {
 }
 ```
 
-In accounting for open criteria of filtering, we apply an easy and flexible implementation with the `SearchCriteria` class we created earlier as stated in this article. Apply to the endpoint as before and we are good to go.
+In accounting for open filtering criteria, we apply an easy and flexible implementation with the `SearchCriteria` class we created earlier, as stated in this article. So please apply to the endpoint as before, and we are good to go.
 
-####		Key Takeaways
-Basically, one thing we can pick is that searching in projects. Also, it can be made to support a wider base of dataset and get the same results we hoped for. Being built with Maven, there should be no challenges starting out and running
-#### Conclusion
-In this article, we took a look at different ways to implement the Spring Query Language. We implemented these search operations and saw how they worked. These implementations can be found in the [GitHub repository](https://github.com/teevyne/spring-query-language.git). This is a strong beginning for implementing this type of API data filtering function.
+### Key takeaways
+One thing we can pick is searching for projects. Also, we can make it support a broader dataset base and get the same results we hoped for. Being built with Maven, there should be no challenges starting and running.
 
-All the best making searching better in your applications.
+### Conclusion
+In this article, we took a look at different ways to implement the Spring Query Language. We implemented these search operations and saw how they worked. You can find these implementations in the [GitHub repository](https://github.com/teevyne/spring-query-language.git). This is a strong beginning for implementing this API data filtering function.
+
+All the best in the making searching better in your applications.
+
+
+---
+Peer review contribution by: [Odhiambo Paul](/engineering-education/authors/odhiambo-paul/)
