@@ -1,8 +1,5 @@
 
-### Getting Started with Growth Models in Python
-
 ### Table of Contents
-- [Getting Started with Growth Models in Python](#getting-started-with-growth-models-in-python)
 - [Table of Contents](#table-of-contents)
 - [Introduction to Growth Model](#introduction-to-growth-model)
 - [Prerequisite:](#prerequisite)
@@ -14,11 +11,11 @@
 - [Conclusion](#conclusion)
 
 ### Introduction to Growth Model
-Growth models are common in scientific fields and have been used and shown great success in modelling various problems. Some of the areas where these models have been used is in explaining how something grows with changes in the predictor variable, which often is time. A real-life example is modelling the time it takes until the business grows, understanding how the population grows over time, etc. Growth models take the form:
+Growth models are common in scientific fields and have been used and successfully modelled for various problems. Some of the areas where these models have been used explain how something grows with changes in the predictor variable, which often is time. A real-life example is modelling the time it takes until the business grows, understanding how the population grows over time, etc. Growth models take the form:
 
 $${\Large y = \frac{a}{(1 + be^{ −cx})}},$$
 
-where a , b and c are unknown constants of the model. 
+Where a, b and c are unknown constants of the model. 
 
 At *x = 0* , $\large y = \frac{a}{(1+b)}$, and as $x → ∞$ , $y → a$.
 
@@ -49,6 +46,7 @@ If we do this, we should get:
 One can use the Newton-Raphson method on the above set of simultaneous nonlinear equations to solve for a, b and c.
 
 To have an intuitive understanding of this model, consider the following example.
+
 #### Example
 The height of a child is measured at different ages as follows.
 ![data-table](engineering-education/growth-model-in-python/data-table.png)
