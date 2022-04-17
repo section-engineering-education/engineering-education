@@ -21,7 +21,7 @@ To follow along in this tutorial, you need to have the following:
 - A browser and a code editor.
 
 ### Goals of the Tutorial
-By the end of this tutorial, you should be able to:
+You should be able to do the following by the end of this tutorial:
 - Integrate the Razorpay payment gateway in your application.
 - Work with React and Django REST Framework.
 - Use [axios](https://www.npmjs.com/package/axios) to fetch and post data.
@@ -31,7 +31,7 @@ Open the Razorpay [Sign up](https://dashboard.razorpay.com/signup?captcha=invisi
 
 After providing all the required information, you will be redirected to the dashboard.
 
-Scroll down on the left sidebar and click on `Settings`. Then, select `API Keys` and click on `Generate Test Key` on the main content page.
+Scroll down the left sidebar and select 'Settings'. Then, select `API Keys` and click on `Generate Test Key` on the main content page.
 
 ![Razorpay Dashboard](/engineering-education/react-django-razorpay-integration/razorpay-dashboard.png)
 
