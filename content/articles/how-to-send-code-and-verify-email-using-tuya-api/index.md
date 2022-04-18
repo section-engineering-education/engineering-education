@@ -1,5 +1,7 @@
 ### Introduction
-The tutorial will concentrate on Tuya's Mail Messaging API, which can be used to send an email to a user. The project will verify the email account with a randomly generated code sent to the entered email.
+Email is still one of the most preferred and effective communication channels, with most people checking their emails daily. Less percentage of email addresses collected are accurate, this bad data is mostly due to human error. Use of email validation is still the most effective way to ensure collection of quality data. Email verification helps to prevent fraud and increases the ability to protect sender's reputation.
+
+In this tutorial, we will concentrate on Tuya's mail messaging API, which can be used to send an email to a user. We will create a project that will verify the email address.
 
 ### Table of contents
 - [What is Tuya](#what-is-tuya)
@@ -47,13 +49,11 @@ Your project is now complete, and you'll get your **Access ID/Client ID** and **
 From here, we can now set up our project.
 
 ### Creating a new project
-Both the frontend and the backend will be available in our project. Here, we shall use a Html form as our frontend to get the email from the user, then make request to Tuya for a secret code to be sent to the given email and then verification. Using Tuya, the backend will send mail and generate a random code as well to hide the code we'll be writing from the end user.
-
-<!-- This prev paragraph is "hard to read" -->
+We will have both frontend and backend in this project. The frontend will deal with taking emails from the user and making the request to the backend. Backend will handle making request to tuya for sending mail and generating random code. It will verify the code too. We are using the backend to prevent a user from knowing the code that we will generate to send.
 
 ### Folder Structure
-Use friend-letter to create a working directory for your program. Assuming you've already installed [Node.js](https://nodejs.org/en/), run the following command to create a ` package.json` file for your project:
-<!-- what is friend-letter -->
+Choose a good name for your working directory and navigate to it. Assuming you've already installed [Node.js](https://nodejs.org/en/), run the following command to create a ` package.json` file for your project:
+
 ```bash
 $ npm init
 ```
@@ -183,31 +183,32 @@ const data = await tuya.request({
     to_address: req.body.emailaddress,
     reply_to_address: "email@example.com",
     template_id: "MAIL_1624531323",
-    template_param: `{\"code\":\"${code}\"}`,
+    template_param: `{\"verificationCode\":\"${verificationCode}\"}`,
   },
 });
 ```
-<!-- the ${code} above, is it the same as verificationCode? -->
+
 Let's look at the parameters introduced in our code above:
 
 - `to_address`: It's the recipient's email address here. We'll get an email as a result of the request we make from the frontend to the backend.
 - `reply_to_address`: Emails that the user may react to.
 - `template_id`: `MAIL_1624531323` is Tuya's pre-configured email template id for the correct code.
-- `template_param`: It's the email field. Our code will be included in the `code: $code` parameter.
+- `template_param`: It's the email field. Our code will be included in the `verificationCode: $verificationCode` parameter.
 
 ### Route for verifying the code:
 Comparing the user-entered code to the code we provide is a simple operation. When making a request to the backend from the frontend, the verification code will be included in the body:
 
-```JavaScript
+```javascript
 app.post("/confirm", async (req, res) => {
   if (req.body.verificationCode == verificationCode) {
     res.send({
-      confirm: true,
-    });
-  } else {
+      verify:true
+    })    
+  }
+  else{
     res.send({
-      confirm: false,
-    });
+      verify:false
+    })  
   }
 });
 ```
@@ -220,65 +221,66 @@ In this section, we will create a frontend that we will use with our backend. Fo
 Let's include the following code in our `index.html` file:
 
 ```html
-<label>Name:</label>
-<input id="email" type="email" placeholder="Enter Your Email" />
-<button onclick="getCode()">Get Code</button>
+<p>Name:</p>
+<input id="email" type="email" placeholder="Enter Email">
+<button onclick=sendCode()>Send Code</button>
 <p>Code:</p>
-<input id="confirm" type="number" placeholder="Enter Code" />
-<button onclick="confirm()">Verify Code</button>
+<input id="verify" type="number" placeholder="Enter Code">
+<button onclick=verifyCode()>Verify Code</button>
 ```
 
-The `getCode` function will be called when the user clicks the `Get Code` button. The `confirm` function will be called when the user clicks the `Verify Code` button. The `getCode` function will send a request to the backend to send a code to the user's email. The `confirm` function will send a request to the backend to check the code.
+The `sendCode()` function will be called when the user clicks the `Get Code` button. The `verifyCode()` function will be called when the user clicks the `Verify Code` button. The `sendCode()` function will send a request to the backend to send a code to the user's email. The `verifyCode()` function will send a request to the backend to check the code.
 
 This is how our frontend will look like:
 
 ![frontend](/engineering-education/how-to-send-code-and-verify-email-using-tuya-api/frontend.png)
 
 ### Verifying the code
-Here, we're doing two separate tasks at the same time. With the email address provided in the body of the request, the `getCode()` method contacts our server. A POST request will be made since it includes a body. For example, using `json.stringify()`, you can turn the body into JSON, which is what the server can read.
+Here, we're doing two separate tasks at the same time. With the email address provided in the body of the request, the `sendCode()` method contacts our server. A POST request will be made since it includes a body. For example, using `json.stringify()`, you can turn the body into JSON, which is what the server can read.
 
 In our `script.js` file, let's add the following functions:
 
 ```JavaScript
-const getCode = () => {
-  const email = document.getElementById("email").value;
-  fetch("http://localhost:8000/", {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/json",
-    },
-    body: JSON.stringify({
-      emailaddress: email,
-    }),
-  });
-};
+const sendCode = ()=>{
+  const email = document.getElementById("email").value
+  fetch("http://localhost:8000/",{
+      method:"POST",
+      headers:{
+          "Content-Type":"application/json"
+      },
+      body:JSON.stringify({
+          emailaddress: email
+      })
+  })
+}
 ```
 
 Here, a POST request will be sent to the server in order to verify the provided code. Verification data will be returned in the form of either `verify:true` or `verify:false` in response to this request. We will tell the user if they need to provide a verification code. The user will see "VERIFIED" if the code is accurate, and "WRONG CODE" if it is incorrect.
-<!-- is it verify or confirm? -->
+
 ```javascript
-const confirm = () => {
-  const enteredCode = document.getElementById("confirm").value;
-  fetch("http://localhost:8000/confirm", {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/json",
-    },
-    body: JSON.stringify({
-      code: enteredCode,
-    }),
+const verifyCode = () =>{
+  const enteredCode = document.getElementById("verify").value
+  fetch("http://localhost:8000/verify",{
+      method:"POST",
+      headers:{
+          "Content-Type":"application/json"
+      },
+      body:JSON.stringify({
+          verificationCode : enteredCode
+      })
   })
-    .then(function (response) {
-      return response.json();
-    })
-    .then(function (data) {
-      if (data.confirm) {
-        window.alert("VERIFIED");
-      } else {
-        window.alert("WRONG CODE");
+  .then(function(response){
+      return response.json()
+  })
+  .then(function(data){
+      if(data.verify){
+          window.alert("VERIFIED")
       }
-    });
-};
+      else{
+          window.alert("WRONG CODE")
+      }
+  }) 
+}
 ```
 
 Run the server by running the command:
