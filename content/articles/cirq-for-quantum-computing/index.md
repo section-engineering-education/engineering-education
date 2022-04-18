@@ -36,7 +36,7 @@ There are several Google Quantum Hardware that has been used by the Google Resea
 Cirq is a quantum computing programming language. It is an open-source Python framework for writing, manipulating, and optimizing quantum circuits. It is used to run these programs on simulators and real quantum computers. 
 
 ### Implementing an example
-To get Cirq installed in your notebook, we'll perform a quick pip install.
+To get Cirq installed in your notebook, we will perform a quick `pip` install.
 
 ```bash
 !pip install cirq
