@@ -19,12 +19,12 @@ Controlling problems with mutual exclusion in a multithreading system is the goa
 ### Different types of synchronization
 Below are the two forms of synchronization:
 
-1. **Process Synchronization**: We are executing many threads or processes simultaneously to commit to a series of operations.
+1. **Process Synchronization**: It is the task phenomenon of coordinating the execution of processes in such a manner that no two processes may access the same common data and resources.
 
 2. **Thread Synchronization**: This synchronization ensures that only one thread may access a shared resource at a time.
 
 ### The race condition
-A race condition may occur in Java due to the use of several threads to implement applications concurrently. Because Java is a multithreaded programming language, race conditions are more likely to occur. In some ways, the race condition resembles deadlock since it is caused by multi-threading and may lead to serious consequences. Threads that are working on the same object or data without sufficient synchronization might result in overlapping operations on each other, which is what causes race conditions.
+A race condition may occur in Java due to the use of several threads to implement applications concurrently. In some ways, the race condition resembles deadlock since it is caused by multi-threading and may lead to serious consequences. Threads that are working on the same object or data without sufficient synchronization might result in overlapping operations on each other, which is what causes race conditions.
 
 To understand further let's first look at the types of race conditions:
 
@@ -87,9 +87,9 @@ The output of the thread is : Thread-4 - 5
 The output of the thread is : Thread-3 - 4
 ```
 
-As shown above, the threads are chosen at random, and the value is incorrect. The value should rise by 1 but that is not the case. Usually, the output is 3. Threads 0, 1, and 2 share the same value thus showing a race condition. After understanding what a race condition is, let's now look at how to refrain from it.
+As shown above, the threads are chosen in an unpredictable order, and the value is incorrect. The value should rise by 1 but that is not the case. Usually, the output is 3. Threads 0, 1, and 2 share the same value thus showing a race condition. After understanding what a race condition is, let's now look at how to refrain from it.
 
-It is evident that the crucial element (code that changes shared resources) must be limited. Additionally, with Java's `synchronized` keyword we can synchronize access to the shared resource. This prevents thread interference during atomic operations. The term "atomic operation" refers to a set of operations that are always performed in unison. All of the atomic actions must be completed at the same time, or none of them can be completed at all.
+It is evident that the crucial element (code that changes shared resources) must be limited. Additionally, with Java's `synchronized keyword` we can synchronize access to the shared resource. This prevents thread interference during atomic operations. The term `atomic operation` refers to a set of operations that are always performed in unison. All of the atomic actions must be completed at the same time, or none of them can be completed at all.
 
 Synchronizing the method call should avoid the race problem:
 
@@ -152,7 +152,7 @@ These consist of the following properties:
 #### Synchronized blocks
 The synchronized block may be used to perform synchronization on any specified resource of the method.
 
-Suppose a method has 100 lines of code but only 10 lines of code containing important logic. I.e. the object's state may be modified by these lines. Only 10 lines of code are needed to guarantee that other threads may continue to run inside the same procedure without interruption. Thus we don't need to synchronize these lines.
+Suppose we have 100 lines of code in our method, but we want to synchronize only 10 lines, in such cases, we can use synchronized block. If we put all the codes of the method in the synchronized block, it will work same as the synchronized method.
 
 Let us look at an example program that uses synchronized blocks.
 
@@ -166,7 +166,7 @@ class Table
             for(int i=1;i<=5;i++){
                 System.out.println(n*i);
                 try{
-                    Thread.sleep(400);
+                    Thread.sleep(10);
                 }catch(Exception e){System.out.println(e);}
             }
         }
@@ -221,7 +221,7 @@ The above code will output the following
 The following is all that it entails:
 
 - The synchronized keyword is used to identify blocks that are part of a synchronized thread in Java. In Java, a synchronized block is one that is tied to a specific object. There can only be one thread operating in all synchronized blocks synchronized on the same object. When the synchronized block is exited, all subsequent threads trying to enter it are stalled until that thread quits.
-- Synchronized blocks utilize the synchronized keyword as a lock. When a method is marked as synchronized, the thread owns the monitor or lock object. In this case, you are blocked until the other thread releases the monitor.
+- Synchronized blocks utilize the object as a lock. When a method is marked as synchronized, the thread owns the monitor or lock object. In this case, you are blocked until the other thread releases the monitor.
 - Using a synchronized block enables you to fine-tune lock control by mutually excluding important section code.
 - The lock gets unlocked when the thread leaves the synchronized block.
 - A synchronized block may produce a `NullPointerException` if a parameter expression evaluates to null, while synchronized methods do not.
@@ -236,14 +236,14 @@ First, a thread with the lock on the object must execute any synchronized method
 Let's look at an example program:
 
 ```java
-class Implementation {
+class Synchronization {
 
 	public synchronized void wish(String tag) {
 	    int x;
 		for ( x = 1; x <= 2; x++) {
 			System.out.println("Hello : ");
 			try {
-				Thread.sleep(100);
+				Thread.sleep(10);
 			} catch (InterruptedException ignored) {
 
 			}
@@ -254,10 +254,10 @@ class Implementation {
 }
 
 class OurThreadExample extends Thread {
-	Implementation b;
+	Synchronization b;
 	String tag;
 
-	public OurThreadExample(Implementation b, String tag) {
+	public OurThreadExample(Synchronization b, String tag) {
 		super();
 		this.b = b;
 		this.tag = tag;
@@ -271,7 +271,7 @@ class OurThreadExample extends Thread {
 public class SynchImp {
 	public static void main(String[] args) {
 
-		Implementation b1 = new Implementation();
+		Synchronization b1 = new Synchronization();
 		OurThreadExample mt1 = new OurThreadExample(b1, "SECTION");
 		OurThreadExample mt2 = new OurThreadExample(b1, "ENGINEERING");
 		mt1.start();
