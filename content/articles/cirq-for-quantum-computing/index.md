@@ -99,7 +99,7 @@ print(output)
 x,y=11011000000111111111, 11011000000111111111
 ```
 
-Lets add an `X` gate to qubit `y` and see whether our result will be different.
+Let's add an `X` gate to qubit `y`, and see whether our result will be different.
 
 ```python
 q_circuit = cirq.Circuit(
