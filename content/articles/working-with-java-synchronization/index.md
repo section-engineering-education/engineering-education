@@ -270,7 +270,6 @@ class OurThreadExample extends Thread {
 
 public class SynchImp {
 	public static void main(String[] args) {
-
 		Synchronization b1 = new Synchronization();
 		OurThreadExample mt1 = new OurThreadExample(b1, "SECTION");
 		OurThreadExample mt2 = new OurThreadExample(b1, "ENGINEERING");
