@@ -1,44 +1,142 @@
-Managing Laravel Work Queues With Beanstalk and Supervisor on Ubuntu 20.04
 ### Introduction
 Building extensive applications sometimes come with some additional problems. These may include operations to upload CSV files which may take time to parse and save into your database.  
 
 The solution to such problems is using the Laravel queued jobs that process these operations in the background.
 
-In this tutorial, I'll teach you everything you need to know about Laravel queues and later on introduce the concepts of [beanstalk](https://beanstalkd.github.io) and Supervisor in Ubuntu 20.04.
+In this tutorial, I'll teach you everything you need to know about Laravel queues and introduce the concepts of [beanstalk](https://beanstalkd.github.io) and Supervisor in Ubuntu 20.04.
 
 ### Table of contents
-- [Prerequisites](#)
-- [Objectives](#)
-- [Getting started with Beanstalk](#getting--started-with-Beanstalk)
-- [Setting up Laravel 8 project](#setting-up-laravel-8-project)
+- [Introduction](#introduction)
+- [Table of contents](#table-of-contents)
+- [Prerequisites](#prerequisites)
+- [Objectives](#objectives)
+- [What's a supervisor in Ubuntu?](#whats-a-supervisor-in-ubuntu)
+- [Getting started with beanstalkd](#getting-started-with-beanstalkd)
+- [Setting up Laravel 9 project](#setting-up-laravel-9-project)
+  - [Installing via Laravel installer](#installing-via-laravel-installer)
+  - [Installation via composer](#installation-via-composer)
+- [Getting started with Pheanstalk](#getting-started-with-pheanstalk)
 - [Configuring beanstalk](#configuring-beanstalk)
 - [Dispatching and running jobs](#dispatching-and-running-jobs)
-- [Getting started with Supervisor](#getting-started-with-supervisor)
+- [How to configure supervisor to work with beanstalked jobs](#how-to-configure-supervisor-to-work-with-beanstalked-jobs)
 - [Conclusion](#conclusion)
 
 ### Prerequisites
-- [Supervisor]() installed on your local development environment.
-- SSH access to your [Vultr]() instance.
-- Laravel installer and composer locally available.
-- Ubuntu 20.04 installed
+- Linux [Supervisor](http://supervisord.org/installing.html) locally installed.
+- A basic understanding of how a Supervisor works in a development environment.
+- An Integrated Development Environment (IDE) or a text editor such as [VSCode](https://code.visualstudio.com/) or [Atom](https://atom.io/) is recommended.
+- Laravel Installer and composer are locally available. However, you're free to use composer commands to install Laravel.
+- Ubuntu 20.04 installed. However, the concepts covered here should work on any other Ubuntu version, with minor changes.
 
 ### Objectives
-By the end of this tutorial, you should have sound knowledge of working with beanstalk and Supervisor in Ubuntu 20.04.
+By the end of this tutorial, you should have sound knowledge of working with beanstalk and supervisors in Ubuntu 20.04.
 
-### Getting started with beanstalk
-Beanstalk is a simple, fast work queue. 
+### What's a supervisor in Ubuntu?
+The supervisor is a service manager for [Linux](https://linux.die.net/) based operating systems. 
 
-It allows you to run time-consuming tasks asynchronously, such as sending emails, connecting to external APIs, or processing images. 
+It is a tool that allows you to manage processes that are easier to understand and easy to use.
 
-By doing so, you will reduce your web app latency. In addition, laravel provides out-of-the-box support for beanstalkd.
+It has a central process that runs in the background and manages all the processes that you have running.
+
+The supervisor has several components, such as `supervisord`, the central process, `supervisorctl`, the command-line interface, and `supervisor-web`, which is a web interface.
+
+To get started with Supervisor, you need to install it as described below:
+```bash
+# Start by updating the package index
+sudo apt update
+# install the supervisor package
+sudo apt install supervisor
+```
+
+Output:
+```bash
+### Installing supervisor
+# The command may take a few minutes to complete
+Reading package lists... Done
+Building dependency tree       
+Reading state information... Done
+The following package was automatically installed and is no longer required:
+  php7.4-zip
+Use 'sudo apt autoremove' to remove it.
+Suggested packages:
+  supervisor-doc
+The following NEW packages will be installed:
+  supervisor
+0 upgraded, 1 newly installed, 0 to remove and 254 not upgraded.
+Need to get 281 kB of archives.
+After this operation, 1,682 kB of additional disk space will be used.
+Get:1 http://ke.archive.ubuntu.com/ubuntu focal/universe amd64 supervisor all 4.1.0-1ubuntu1 [281 kB]
+Fetched 281 kB in 0s (2,878 kB/s)  
+Selecting previously unselected package supervisor.
+(Reading database ... 360080 files and directories currently installed.)
+Preparing to unpack .../supervisor_4.1.0-1ubuntu1_all.deb ...
+Unpacking supervisor (4.1.0-1ubuntu1) ...
+Setting up supervisor (4.1.0-1ubuntu1) ...
+Created symlink /etc/systemd/system/multi-user.target.wants/supervisor.service →
+ /lib/systemd/system/supervisor.service.
+Processing triggers for man-db (2.9.1-1) ...
+Processing triggers for systemd (245.4-4ubuntu3.15) ...
+W: Target Packages (non-free/binary-amd64/Packages) is configured multiple times in /etc/apt/sources.list:58 and /etc/apt/sources.list.d/opera-stable.list:4
+W: Target Packages (non-free/binary-i386/Packages) is configured multiple times in /etc/apt/sources.list:58 and /etc/apt/sources.list.d/opera-stable.list:4
+W: Target Packages (non-free/binary-all/Packages) is configured multiple times in /etc/apt/sources.list:58 and /etc/apt/sources.list.d/opera-stable.list:4
+W: Target Translations (non-free/i18n/Translation-en_US) is configured multiple times in /etc/apt/sources.list:58 and /etc/apt/sources.list.d/opera-stable.list:4
+W: Target Translations (non-free/i18n/Translation-en) is configured multiple times in /etc/apt/sources.list:58 and /etc/apt/sources.list.d/opera-stable.list:4
+W: Target DEP-11 (non-free/dep11/Components-amd64.yml) is configured multiple times in /etc/apt/sources.list:58 and /etc/apt/sources.list.d/opera-stable.list:4
+W: Target DEP-11 (non-free/dep11/Components-all.yml) is configured multiple times in /etc/apt/sources.list:58 and /etc/apt/sources.list.d/opera-stable.list:4
+W: Target DEP-11-icons-small (non-free/dep11/icons-48x48.tar) is configured multiple times in /etc/apt/sources.list:58 and /etc/apt/sources.list.d/opera-stable.list:4
+W: Target DEP-11-icons (non-free/dep11/icons-64x64.tar) is configured multiple times in /etc/apt/sources.list:58 and /etc/apt/sources.list.d/opera-stable.list:4
+W: Target DEP-11-icons-hidpi (non-free/dep11/icons-64x64@2.tar) is configured multiple times in /etc/apt/sources.list:58 and /etc/apt/sources.list.d/opera-stable.list:4
+W: Target CNF (non-free/cnf/Commands-amd64) is configured multiple times in /etc/apt/sources.list:58 and /etc/apt/sources.list.d/opera-stable.list:4
+W: Target CNF (non-free/cnf/Commands-all) is configured multiple times in /etc/apt/sources.list:58 and /etc/apt/sources.list.d/opera-stable.list:4
+```
+
+When we run the above command, you can see that the package supervisor is installed.
+
+Next, you need to start the supervisor service.
+```bash
+# Start the supervisor service
+sudo systemctl start supervisor
+```
+
+You can proceed and check the status by running the following command:
+```bash
+# Check the status of the supervisor service
+sudo systemctl status supervisor
+```
+
+Output:
+```bash
+ supervisor.service - Supervisor process control system for UNIX
+     Loaded: loaded (/lib/systemd/system/supervisor.service; enabled; vendor pr>
+     Active: active (running) since Fri 2022-04-08 18:04:58 EAT; 1min 55s ago
+       Docs: http://supervisord.org
+   Main PID: 133153 (supervisord)
+      Tasks: 1 (limit: 18939)
+     Memory: 19.3M
+     CGroup: /system.slice/supervisor.service
+             └─133153 /usr/bin/python3 /usr/bin/supervisord -n -c /etc/supervis>
+
+```
+
+From the above output, you notice that the supervisor service is running.
+
+Now that we've successfully installed and started the supervisor service, we can proceed to discuss the beanstalk and, later on, how to use it with the supervisor.
+
+### Getting started with beanstalkd
+Beanstalk is a distributed job queue.  It can be used to run jobs in the background and schedule jobs to run in the future. It's swift and easy to use.
+
+By executing tasks asynchronously, you improve the performance of your application. 
+
+To our advantage, Laravel provides us with beanstalkd shipped with the framework.
+This means that we can configure our application to use beanstalkd as the job queue.
 
 Now, let's proceed and install beanstalk in our Ubuntu as shown below: 
-
 ```bash
 sudo apt-get update
 
 sudo apt-get install beanstalkd
 ```
+
 We run the above command since Ubuntu includes a beanstalkd package.
 
 Output:
@@ -56,7 +154,7 @@ Processing triggers for systemd (245.4-4ubuntu3.13) ...
 
 ```
 
-Now that we've Beanstalk locally installed, let's proceed and start a service by running the following command:
+Now that we've beanstalkd locally installed, let's proceed and start a service by running the following command:
 ```bash
 sudo systemctl start beanstalkd
 ```
@@ -67,13 +165,13 @@ sudo systemctl status beanstalkd
 ```
 
 Output:
-![output](output.png)
+![Active beanstalked](/engineering-education/managing-queues-beanstalkd/active.png)
 
-Beanstalk listens on port 11300 by default. Its protocol runs over TCP using ASCII encoding. You can read more [here](https://github.com/beanstalkd/beanstalkd/blob/master/doc/protocol.txt). 
+Now that we have confirmed that our beanstalkd service is running let's proceed and configure our application to use beanstalkd as the job queue.
 
-Now to test our protocol, let's run the following commands on the terminal:
+Let's proceed and test our protocol by running the following commands on the terminal:
 ```bash
-telnet localhost 11300
+telnet localhost 11300 # default port
 ```
 
 When the above command is executed, you should see the following:
@@ -86,13 +184,33 @@ Escape character is '^]'.
 
 Next, type `list-tubes` just immediately after the `Escape character is '^]'` and then press `Enter`.
 
-![protocol](protocol.png)
+Output:
+```bash
+# connecting to localhost
+Trying 127.0.0.1...
+# connected to localhost/ connection established
+Connected to localhost.
+Escape character is '^]'.
+# key in this
+list-tubes
+# output on ENTER
+OK 14
+---
+- default
+```
+
 
 Type `quit` and then press `Enter` to close the above-established connection.
 
-![disconnect](disconnect.png)
+```bash
+## key in this
+quit
+## Output on entering
+Connection closed by foreign host.
 
-Alternatively, after installing Beanstalk as described above, you may start the beanstalk on a particular port of your choice, in this case, port `14710`.
+```
+
+Alternatively, after installing beanstalk as described above, you may start the beanstalk on a particular port of your choice, in this case, port `14710`.
 
 ```bash
 beanstalkd -l 127.0.0.1 -p 14710
@@ -102,40 +220,41 @@ Typically, having `beanstalkd` alone ain't enough. We also need [PyYAML](https:/
 
 Previously, we listed our beanstalk tubes. These tubes are used to represent work queues.
 
-Beanstalk is composed basically of producers, consumers, jobs, and tubes. Producers put jobs into a tube to be consumed (processed) by any number of consumers.
+### Setting up Laravel 9 project
+Now that we've beanstalk locally installed let's proceed and set up our Laravel 9 project.
 
->Note that both `producers` and `consumers` are simply clients of the Beanstalk server and are independent of each other. 
-
->In practical terms, this means that by using beanstalk, you may produce your jobs in your PHP application and have them processed in a NodeJS app, for example. 
-
-Luckily, Laravel abstracts all of this and provides us with a straightforward API to dispatch and handle jobs, as we will see next.
-
-### Setting up Laravel 8 project
-Now that we've beanstalk locally installed, let's proceed and set up our Laravel 8 project.
-
-Their multiple ways of installing Laravel, depending on your requirements. However, in this article, we'll use the two most popular methods:
+There are multiple ways of installing Laravel, depending on your requirements. However, in this article, we'll use the two most popular methods:
 
 #### Installing via Laravel installer
-This is a [package](https://packagist.org/packages/laravel/installer) used to install a Laravel application.
+Laravel installer is a [package](https://packagist.org/packages/laravel/installer) used to install a Laravel application.
 
 First, ensure that you have a composer locally available and its path set as follows:
 ```bash
 export PATH="~/.composer/vendor/bin:$PATH"
+# OR on Linux
+export PATH="$PATH:$HOME/.composer/vendor/bin"
 ```
+
+When you run the above commands, you're setting the Laravel path to be found its installer. This is especially important when using the `Laravel installer`.
+
 Next, run the following commands to set up your project:
-
 ```bash
+# run this command to create a new Laravel project in the current directory
 laravel new beanstalk
-
+# Cd into the created project
 cd beanstalk
+```
 
+The above commands will create a new Laravel project in the current directory.
+We then `cd` into the newly created project and run the following command to start the server:
+```bash
 php artisan serve
-
 ```
 
 #### Installation via composer
 To install the Laravel project using composer, run the following commands:
 > This section assumes you've composer locally installed
+
 ```bash
 composer create-project laravel/laravel beanstalk
 
@@ -144,14 +263,17 @@ cd beanstalk
 php artisan serve
 ```
 
+As the Laravel installer, the above command will create a new Laravel project in the current directory.
+
 ### Getting started with Pheanstalk
-Pheanstalk is a PHP client for beanstalkd work queue. It has supported PHP versions since 7.1+. In this article, we run it on PHP version 7.4.
+[Pheanstalk](https://github.com/pheanstalk/pheanstalk) is a PHP client for the beanstalkd work queue. 
+
+Pheanstalk has supported PHP versions since 7.1+. In this article, we run it on PHP version 8.0 however you may use earlier versions of PHP with a few configurations as described [here](https://github.com/pheanstalk/pheanstalk)
 
 To install Pheanstalk in our Laravel project, `cd` into the project root and run the following commands:
-
 ```bash
 cd beanstalk
-
+# this command will install Pheanstalk in your project
 composer require enqueue/pheanstalk
 ```
 
@@ -170,86 +292,104 @@ Generating optimized autoload files
 ...
 ```
 
-Now that we've installed pheanstalk let's create a job representation. 
+Next, check the `composer.json` file to see if the Pheanstalk package has been installed.
+
+```json
+"require": {
+    "php": "^7.3|^8.0",
+    "enqueue/pheanstalk": "^0.10.9",
+    "pda/pheanstalk": "^3.1"
+    },
+```
+
+> At the installation time, the version of our `pheanstalk` package is `0.10.9`. This may be different from your setup; therefore, update accordingly.
+
+Now that we've installed pheanstalk, let's create a job representation. 
 ```bash
 cd beanstalk
 
-php artisan make:job FindFavoriteOS
+php artisan make:job SendingBeanstalkedMails
 ```
 Output:
 ```bash
 Job created successfully.
 ```
 
-By default, jobs are added to the `App/Jobs` folder. Open the `app/Jobs/FindFavoriteOS.php` and update its contents as shown below:
+By default, jobs are added to the `App/Jobs` folder. 
+
+Open the `app/Jobs/SendingBeanstalkedMails.php` and update its contents as shown below:
 ```php
 ...
-/**
- * Execute the job.
- *
- * @return void
- */
-public function handle()
-{
-    $rawData = file_get_contents('https://api.vultr.com/v1/os/list');
-    $list = json_decode($rawData, true);
-    shuffle($list);
-    $key = array_rand($list);
-    $favorite = $list[$key];
-    Log::info('My Favorite OS is: ' . $favorite['name']);
-}
-...
+<?php
+// our namespace is Jobs since we are in the App/Jobs folder
+namespace App\Jobs;
 
+...// other imports
+
+class SendingBeanstalkedMails implements ShouldQueue
+{
+    // use the trait
+    use Dispatchable, InteractsWithQueue, Queueable, SerializesModels;
+    // currently authenticated user
+    protected $user;
+    /**
+     * Create a new job instance.
+     *
+     * @return void
+     */
+    public function __construct(User $user)
+    {
+        // set the user
+        $this->user = $user;
+    }
+
+    /**
+     * Execute the job.
+     *
+     * @return void
+     */
+    public function handle()
+    {
+        Log::info('E-mails have entered the queue');
+        // find user with this specific email
+        $user =  User::where(["email" => $this->user["email"]]);
+        // send email to user
+        Mail::to($user)->send(new WelcomeMail($user));
+        // exit
+        Log::info('Exited from Job processing the welcome email handle method');
+    }
+}
 ```
 
-In the above script, we have the `handle()` method with multiple operations. First, it fetches the list of operating systems from [Vultr](https://api.vultr.com/v1/os/list).
-
->The handle method is invoked when the queue processes the job. Note that we can type-hint dependencies on the handle method of the job.
-
-The JSON response from the API is then decoded and shuffled. Finally, we use the `array_rand()` method to generate a random key which we then use to pick a random operating system.
-
-The randomly picked OS is then assigned as our favorite, subsequently logged in the `storage/logs/laravel.log` file.  
+We have the `handle()` method with multiple operations in the above script. First, it logs the information to the `log` table and sends an email to the user.
 
 ### Configuring beanstalk
-Now that we've both beanstalk and Laravel project setup let's proceed and configure Laravel to use beanstalk as our default work queue.  
+Now that we've both beanstalk and Laravel project setup, let's proceed and configure Laravel to use beanstalk as our default work queue.  
 
-Open the `.env` file and update the line where the queue driver is specified as shown below:
+Laravel is configured to use the `sync` queue driver by default. This is a synchronous queue driver. This means that jobs are executed immediately.
+
+Next, let's proceed and update the `.env` file to allow use the beanstalk package we had installed.
 ```properties
-QUEUE_CONNECTION=beanstalkd
+...
+QUEUE_CONNECTION=beanstalkd # update this line
+...
 ```
-We are now ready to dispatch jobs to the Beanstalk work queue.
 
 ### Dispatching and running jobs
 Let's now dispatch the jobs that we had previously created by updating our `routes/web.php` file as shown below:
 ```php
 <?php
-
-use App\Jobs\FindFavoriteOS;
-use Illuminate\Support\Facades\Route;
-
-/*
-|--------------------------------------------------------------------------
-| Web Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register web routes for your application. The RouteServiceProvider loads these | routes within a group which
-| contains the "web" middleware group. Now create something great!
-|
-*/
-
+...
 Route::get('/jobs', function () {
-    for ($i = 0; $i < 50; $i++) {
-        FindFavoriteOS::dispatch();
-    }
-
-    return '50 Jobs dispatched!';
+    SendingBeanstalkedMails::dispatch();
+    return '100 welcome email Jobs dispatched!';
 });
+....
 
 ```
-
-Output:
+When you serve the application, you will see the following output on the browser:
 ```bash
-50 jobs dispatched
+100 welcome email Jobs dispatched!
 ```
 
 Next, open an SSH connection to your server and run the commands below:
@@ -260,59 +400,67 @@ php artisan queue:work --once
 
 Output:
 ```
-[2021-12-11 00:03:52] Processing: App\Jobs\FindFavoriteOS
-[2021-02-11 00:03:53] Processed:  App\Jobs\FindFavoriteOS
+[2021-12-11 00:03:52] Processing: App\Jobs\SendingBeanstalkedMails
+[2021-02-11 00:03:53] Processed:  App\Jobs\SendingBeanstalkedMails
+...
 ```
 
-### Getting started with Supervisor
-To avoid manually processing the queue, we will use `supervisord`. 
+### How to configure supervisor to work with beanstalked jobs
+We installed the Laravel application in the previous section and added the beanstalked package.
 
-Create the following program configuration in `/etc/supervisor/conf.d/vultr.conf`.
+We also created a job that we wanted to dispatch to the beanstalk queue.
 
-```properties
-[program:vultr]
-process_name=%(program_name)s_%(process_num)02d
-command=php [PROJECT_ROOT]/artisan queue:work
-autostart=true
-autorestart=true
-numprocs=8
-redirect_stderr=true
-stdout_logfile=/var/log/worker.log
+However, we do not want our application to process these jobs manually. Instead, we want to use the supervisor to process these jobs.
 
-```
+It's essential to remember from the previous section that we had to run a command on the terminal to dispatch these jobs; however, we would not want to do this in real-world applications.
 
-Notice that the right path to put the Supervisor configuration file will depend on your setup. 
+Let's proceed and configure our supervisor to work with beanstalked jobs as described below:
 
-> Remember to replace `[PROJECT_ROOT]` with the full path to the project root on your local development environment.
-
-Here we are configuring Supervisor to automatically start processing the queue and, in case of the script breaking, to restart it.
-
-Also, note that we are not instantiating a single worker, but eight processes. You are free to instantiate however many processes you find necessary depending on your application.
-
-To allow Supervisor to manage our worker, force it to reread its configuration.
-
+First, open the terminal and run the following command:
 ```bash
+sudo nano /etc/supervisor/conf.d/section.conf
+```
+
+The above command will open the supervisor configuration file on your text editor.
+
+Next, update the contents of the file as shown below:
+```bash
+# a section ENGED program
+[program:section]
+# we then retrieve the process name
+process_name=%(program_name)s_%(process_num)02d
+# we then retrieve the command to run
+command=php /var/www/html/projectName/artisan queue:work
+# autorestart the process
+autorestart=true
+# we start the process each time the supervisor starts
+autostart=true
+# we set the number of processes to start
+numprocs=10
+# redirect
+redirect_stderr=true
+# log
+stdout_logfile=/var/log/supervisor/section.log
+```
+
+Ensure that you set the correct path to the Laravel application in the above file.
+
+Now, restart the supervisor service by running the following command:
+```bash
+# force the reread of the configuration file
 sudo supervisorctl reread
+# force update the configuration file
 sudo supervisorctl update
 ```
 
-If the Supervisor service has not been started, you may need to create it.
+Next, rerun your Laravel application and head over to your browser; you should notice that our jobs are now being dispatched.
 
-```bash
-sudo systemctl start supervisord
-```
-
-Now let's see if the jobs are being processed.
-
-```bash
-tail -f storage/logs/laravel.log
-```
-
-On a web browser, navigate to http://localhost:8000. You will see the logs being generated on your console.
 
 ### Conclusion
-This article shows how we can set up a Laravel application to use beanstalk as a work queue.
+We have set up our Laravel application to use the beanstalk queue driver in this tutorial.
 
-Also, we demonstrated how to use Supervisor to manage workers.
+We installed this package and created a job that we wanted to dispatch to the beanstalk queue.
 
-Happy coding!
+We also automated dispatching the jobs to the beanstalk queue using the native supervisor service.
+
+Happy Coding!
