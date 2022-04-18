@@ -3,16 +3,16 @@ layout: engineering-education
 status: publish
 published: true
 url: /extract-text-from-images-using-pytesseract/
-title: Extract Text From Images Using PyTesseract
+title: Extracting Text From Images Using PyTesseract
 description: This article will introduce the reader to tesseract library, and how it can be used to extract textual information from images.
 author: edwin-wachira
-date: 2022-06-06T00:00:00-00:00
-topics: []
+date: 2022-04-18T00:00:00-09:30
+topics: [Languages]
 excerpt_separator: <!--more-->
 images:
 
   - url: /engineering-education/extract-text-from-images-using-pytesseract/hero.jpg
-    alt: Extract Text From Images Using PyTesseract Hero Image
+    alt: Extracting Text From Images Using PyTesseract Hero Image
 ---
 As a developer, you might want to extract textual information from an image. Using Python, we can create a program that extracts such textual data from any given image.
 <!--more-->
@@ -21,8 +21,9 @@ Python has been one of the most popular languages developers enjoy working with.
 In this guide, we will write a Python script that extracts images, scans for text, transcribes it, and saves it to a text file. We will use the Python tesseract library to recognize textual data from images.
 
 ### Table of contents
+- [Table of contents](#table-of-contents)
 - [Prerequisities](#prerequisities)
-- [Set up tesseract OCR](#set-up-tesseract-ocr)
+- [Setting up tesseract OCR](#setting-up-tesseract-ocr)
 - [Adding the project dependencies](#adding-the-project-dependencies)
   - [Pytesseract](#pytesseract)
   - [PyMuPDF](#pymupdf)
@@ -39,7 +40,7 @@ To follow along with this article, ensure that you have [Python installed](https
 
 Also, ensure you have some basic [understanding of Python](https://www.youtube.com/watch?v=rfscVS0vtbw).
 
-### Set up tesseract OCR
+### Setting up tesseract OCR
 Optical Character Recognition (OCR) is a technology that is used to recognize text from images. It can be used to convert tight handwritten or printed texts into machine-readable texts.
 
 To use OCR, you need to [install and configure](https://medium.com/quantrium-tech/installing-and-using-tesseract-4-on-windows-10-4f7930313f82) tesseract on your computer.
@@ -50,7 +51,7 @@ Once the process is done, run the `tesseract -v` command to verify that the OCR 
 
 ![tesseract](/engineering-education/python-app-that-extracts-images-scan-text-transcribe-save-to-txt-file/tesseract.jpg)
 
-To test if this environment is working, you may run OCR on any image and see if the textual data gets extracted and saved in a readable text file.
+To test whether this environment is working, you may run OCR on any image and see if the textual data gets extracted and saved in a readable text file.
 
 To do that, ensure you have an image with textual information. Use your command line to navigate to the image location and run the following `tesseract` command:
 
@@ -60,7 +61,7 @@ tesseract <image_name> <file_name_to_save_extracted_text>
 
 In this case, you will provide the image name and the file name. When the command is executed, a `.txt` file will be created and saved in the same folder.
 
-This confirms that the tesseract library is successfully installed. Now, we may proceed to implement the same using a Python script.
+This confirms that the tesseract library is successfully installed. We may now proceed to implement the same using a Python script.
 
 ### Adding the project dependencies
 We need to install a few dependent libraries to help us get started with the Python script.
@@ -141,7 +142,7 @@ strPDF, textScanned, textScanned, inputTeEx, dirName = "", "", "", "", [
 
 This will create a directory `images` where the PDF extracted images will be saved. An `output_txt` directory will be created to save the scanned text information as `.txt` file.
 
-Now, let's create the method that helps us access the installed tesseract library, and the required files. We will do this under`gInUs()` function as shown:
+Now, let's create the method that helps us access the installed tesseract library, and the required files. We will do this under `gInUs()` function as shown:
 
 ```py
 def gInUs():
@@ -163,11 +164,11 @@ def gInUs():
         extIm(inputUser)
 ```
 
-From the above code:
-- `"[.] Add the tesseract.exe local path"` helps us access the tesseract library.
-- `"[!] Add the PDF file local path:"` helps us access the local PDF file we want to use.
+From the code above:
+- `"[.] Add the tesseract.exe local path"` - it helps us access the tesseract library.
+- `"[!] Add the PDF file local path:"` - it helps us access the local PDF file we want to use.
 
-Once we enter this path, we need first to verify if the file path is correct. If the path is incorrect, the application will display `Please enter a valid PATH to a file` error message. If the path is correct, the application will extract text from the images by executing the `extIm()` method.
+Once we enter this path, we need first to verify whether the file path is correct. If the path is incorrect, the application will display `Please enter a valid PATH to a file` error message. If the path is correct, the application will extract text from the images by executing the `extIm()` method.
 
 ### Extract images
 Once we have the correct PDF file path, we need to run the file and extract the text to the `.txt` file.
@@ -181,7 +182,7 @@ def extIm(fileStr):
     pdf_file = fitz.open(fileStr)
 ```
 
-We create a path to save the images that we extract from the file.
+We create a path to save the images that we extract from the file:
 
 ```py
 global dirName
@@ -214,7 +215,7 @@ else:
 
 If no images are available in the folder, we iterate over the PDF files and extract their contents.
 
-Let's print the count of total images that we have extracted and display error message, if no image is found in the folder.
+Let's print the count of total images that we have extracted and display an error message if no image is found in the folder:
 
 ```py
 # printing number of images found on this page
@@ -226,7 +227,7 @@ else:
         page_index, Fore.RESET)
 ```
 
-In the loop, we name every image that is generated from the PDF. Here, we will append the image count to the string `image`. For example, `image2_1`.
+In the loop, we name every image that is generated from the PDF. Here, we will append the image count to the string `image`. For example, `image2_1`:
 
 ```py
 for (image_index, img) in enumerate(page.getImageList(), start=1):
@@ -248,7 +249,7 @@ reImg()
 Here, we execute the function `reImg()` to render these images and extract their content. Let's do this in the next step.
 
 ### Extract text information
-Let's create a function called `reImg()` to hold these global variables:
+Let's create a function named `reImg()` to hold these global variables:
 
 ```py
 def reImg():
@@ -258,7 +259,7 @@ def reImg():
     global inputTeEx
 ```
 
-At this point, we will have to access the `tesseract.exe` file. To do that, we use the global variable `inputTeEx`, where we accept the file path from the user.
+At this point, we will have to access the `tesseract.exe` file. To do that, we use the global variable `inputTeEx`, where we accept the file path from the user:
 
 ```py
 pytesseract.pytesseract.tesseract_cmd = f"{inputTeEx}"
@@ -303,9 +304,9 @@ gInUs()
 ```
 
 ### Test the app
-To test the app, we run the `python main.py`.
+To test the app, run `python main.py`.
 
-First, provide the tesseract path and hit enter:
+First provide the tesseract path and hit enter:
 
 ```bash
 > [!] Add the tesseract.exe local path
