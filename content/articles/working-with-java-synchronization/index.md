@@ -51,7 +51,7 @@ You can see the increased value of an integer variable in this basic example. On
 public class Example {
     int check = 0;
 
-    public void checkBoost() {
+    public void incrementCheck() {
         try {
             Thread.sleep(1000);
         } catch (InterruptedException e) {
@@ -60,7 +60,7 @@ public class Example {
         check++;
     }
 
-    public int obtainCheck() {
+    public int getCheck() {
         return check;
     }
 
@@ -70,8 +70,8 @@ public class Example {
             new Thread(new Runnable() {
                 @Override
                 public void run() {
-                    zy.checkBoost();
-                    System.out.println("The output of the thread is : " + Thread.currentThread().getName() + " - " + zy.obtainCheck());
+                    zy.incrementCheck();
+                    System.out.println("The output of the thread is : " + Thread.currentThread().getName() + " - " + zy.getCheck());
                 }
             }).start();
         }
@@ -97,7 +97,7 @@ Synchronizing the method call should avoid the race problem:
 public class Example2 {
     int check = 1;
 
-    public void checkBoost() {
+    public void incrementCheck() {
         try {
             Thread.sleep(1000);
         } catch (InterruptedException e) {
@@ -106,7 +106,7 @@ public class Example2 {
         check++;
     }
 
-    public int obtainCheck() {
+    public int getCheck() {
         return check;
     }
 
@@ -118,8 +118,8 @@ public class Example2 {
                 @Override
                 public void run() {
                     synchronized (zy) {
-                        zy.checkBoost();
-                        System.out.println("The output of the thread is : " + Thread.currentThread().getName() + " - " + zy.obtainCheck());
+                        zy.incrementCheck();
+                        System.out.println("The output of the thread is : " + Thread.currentThread().getName() + " - " + zy.getCheck());
                     }
                 }
             }).start();
@@ -238,9 +238,9 @@ Let's look at an example program:
 ```java
 class Synchronization {
 
-	public synchronized void wish(String tag) {
-	    int x;
-		for ( x = 1; x <= 2; x++) {
+	public synchronized void greet(String tag) {
+		int x;
+		for (x = 1; x <= 2; x++) {
 			System.out.println("Hello : ");
 			try {
 				Thread.sleep(10);
@@ -264,7 +264,7 @@ class OurThreadExample extends Thread {
 	}
 
 	public void run() {
-		b.wish(tag);
+		b.greet(tag);
 	}
 }
 
