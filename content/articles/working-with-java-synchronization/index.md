@@ -89,7 +89,7 @@ The output of the thread is : Thread-3 - 4
 
 As shown above, the threads are chosen in an unpredictable order, and the value is incorrect. The value should rise by 1 but that is not the case. Usually, the output is 3. Threads 0, 1, and 2 share the same value thus showing a race condition. After understanding what a race condition is, let's now look at how to refrain from it.
 
-It is evident that the crucial element (code that changes shared resources) must be limited. Additionally, with Java's `synchronized keyword` we can synchronize access to the shared resource. This prevents thread interference during atomic operations. The term `atomic operation` refers to a set of operations that are always performed in unison. All of the atomic actions must be completed at the same time, or none of them can be completed at all.
+It is evident that the crucial element (code that changes shared resources) must be limited. Additionally, with Java's `synchronized` keyword we can synchronize access to the shared resource. This prevents thread interference during atomic operations. The term *atomic operation* refers to a set of operations that are always performed in unison. All of the atomic actions must be completed at the same time, or none of them can be completed at all.
 
 Synchronizing the method call should avoid the race problem:
 
