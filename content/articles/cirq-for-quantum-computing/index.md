@@ -33,7 +33,7 @@ In 2019, Google announced that it had reached a quantum advantage. Quantum advan
 
 There are several Google Quantum Hardware that has been used by the Google Research team to date. [Foxtail](https://quantumai.google/cirq/google/devices#foxtail) is one of the hardware devices that was released in 2016, [Bristlecone](https://quantumai.google/cirq/google/devices#bristlecone) is a 72-qubit device and was released in 2018, and most recently, [Sycamore](https://quantumai.google/cirq/google/devices#sycamore) released in 2019. Sycamore is the 54-qubit quantum hardware device that was used to reach the quantum advantage mentioned above. These results are published in the, [Quantum supremacy using a programmable superconducting processor](https://www.nature.com/articles/s41586-019-1666-5) research paper in the Nature journal.  
 
-Cirq is a quantum computing programming language. It is an open-source, Python framework for writing, manipulating, and optimizing quantum circuits. It can be used to run these programs on simulators and real quantum computers.   
+Cirq is a quantum computing programming language. It is an open-source Python framework for writing, manipulating, and optimizing quantum circuits. It is used to run these programs on simulators and real quantum computers. 
 
 ### Implementing an example
 To get Cirq installed in your notebook, we'll perform a quick pip install.
