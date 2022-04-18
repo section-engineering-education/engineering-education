@@ -1,7 +1,7 @@
 ---
-name: EngEd Community Contribution enhancement template
+name: EngEd Community Code Contribution enhancement template
 about: Propose a Task for the EngEd community to contribute to
-title: EngEd Community Contribution Issue
+title: EngEd Community Code Contribution Issue
 labels: CCC - Community Contributed Code, feature request
 assignees: ''
 
