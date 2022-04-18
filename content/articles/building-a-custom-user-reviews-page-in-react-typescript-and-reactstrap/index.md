@@ -1,5 +1,21 @@
-In front-end web development, applications are required to be user (client) centric, meaning the overall users reviews and recommendations should be taken into consideration. Most applications rely on user feedback to improve their service quality delivery.
+---
+layout: engineering-education
+status: publish
+published: true
+url: /building-a-custom-user-reviews-page-in-react-typescript-and-reactstrap/
+title: Building a Custom User Reviews Page with Stars Tating in React, Typescript and Bootstrap Library
+description: This article gives a step by step procedure of creating a user reviews page used to display ratings in a website. The page is built using React Typscript and ReactStrap.
+author: richard-john
+date: 2022-03-25T00:00:00-06:00
+topics: [Languages]
+excerpt_separator: <!--more-->
+images:
 
+  - url: /engineering-education/building-a-custom-user-reviews-page-in-react-typescript-and-reactstrap/hero.jpg
+    alt: Building a Custom User Reviews Page with Stars Tating in React, Typescript and Bootstrap Library Hero Image
+---
+In front-end web development, applications are required to be user (client) centric, meaning the overall users reviews and recommendations should be taken into consideration. Most applications rely on user feedback to improve their service quality delivery.
+<!--more-->
 React, Typescript, and Reactstrap can be an incredible combination in building a custom user review page that users’ recommendations/reviews and stars rating can be displayed, similar to the Apple store and Google Play Store reviews section.
 
 In this article, we will take a discuss the various steps and package dependencies required to build a custom user reviews page with React and typescript.
@@ -466,3 +482,6 @@ Happy Coding!
 - https://www.typescriptlang.org/docs/handbook/tsconfig-json.html
 - https://reactjs.org/docs/conditional-rendering.html
 - https://reactstrap.github.io/?path=/docs/
+
+---
+Peer Review Contributions by: [Monica Masae](/engineering-education/authors/monica-masae/)
