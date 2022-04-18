@@ -39,11 +39,11 @@ Now let's get started :)
 ### Creating a Compose for Desktop project
 To create a Compose Desktop project, launch IntelliJ IDEA and click on *File*. Inside this menu, select *New* and select *Project*.
 
-![create-project](/how-to-embed-compose-desktop-application-to-swing-based-application/create-compose-desktop-project-step1.png)
+![create-project](/engineering-education/how-to-embed-compose-desktop-application-to-swing-based-application/create-compose-desktop-project-step1.png)
 
 A new project window will open. Select *Kotlin*, name your project, specify the location. On the *Project Template* section, select *Compose Desktop Application*. 
 
-![create-project](/how-to-embed-compose-desktop-application-to-swing-based-application/create-compose-desktop-project-step2.png)
+![create-project](/engineering-education/how-to-embed-compose-desktop-application-to-swing-based-application/create-compose-desktop-project-step2.png)
 
 ### Compose for Desktop features
 Some of the great features of Compose for Desktop are: 
@@ -91,7 +91,7 @@ private fun main() {
 
 The above class will produce this output.
 
-![output](/how-to-embed-compose-desktop-application-to-swing-based-application/swing-app-output.png)
+![output](/engineering-education/how-to-embed-compose-desktop-application-to-swing-based-application/swing-app-output.png)
 
 ### Building a Compose for Desktop application
 Compose for Desktop applications are built upon Composable functions to create the UI. This is purely done in the Kotlin programming language.
@@ -142,7 +142,7 @@ fun main() = application {
 
 This will provide the following output:
 
-![output](/how-to-embed-compose-desktop-application-to-swing-based-application/compose-for-desktop-output.png)
+![output](/engineering-education/how-to-embed-compose-desktop-application-to-swing-based-application/compose-for-desktop-output.png)
 
 ### Swing and Compose for Desktop interoperability
 Swing and Compose interoperate well together though there are few use cases and limitations. We will look at each one of them later in this article.
@@ -256,7 +256,7 @@ From above, we can see how the two can work perfectly with each other.
 
 Upon running this, the corresponding output will be:
 
-![output](/how-to-embed-compose-desktop-application-to-swing-based-application/compose-swing-output.png)
+![output](/engineering-education/how-to-embed-compose-desktop-application-to-swing-based-application/compose-swing-output.png)
 
 It is worth noting the difference in the appearance of the Compose and Swing buttons. The Compose button is more appealing and better than the Swing button.
 
@@ -317,7 +317,7 @@ fun main() = singleWindowApplication(title = "Compose Simple Application") {
 
 The output of this program will be the following:
 
-![output](/how-to-embed-compose-desktop-application-to-swing-based-application/compose-swing-output-2.png)
+![output](/engineering-education/how-to-embed-compose-desktop-application-to-swing-based-application/compose-swing-output-2.png)
 
 With this example you can now create a more complex and appealing UI using both Swing and Compose components.
 

@@ -4,7 +4,7 @@ status: publish
 published: true
 url: /breaking-down-kafka-vs-pulsar/
 title: Breaking Down Kafka vs. Pulsar
-description: This article will compare Kafka and Pulsar in terms of architecture, geo-replication, and use cases for both.
+description: This article will compare Kafka and Pulsar in terms of architecture, geo-replication, and review use cases for both.
 author: eric-kahuha
 date: 2020-11-19T00:00:00-14:00
 topics: []
@@ -82,9 +82,7 @@ Apache Pulsar has captured the market for users intending to build a multi-tenan
 
 In short, Pulsar is helpful to organizations working to embrace event streaming and a unified messaging platform. But for those in need of an enterprise solution that covers much more than what Pulsar offers, Kafka is an excellent choice.
 
-### Additional Resources
+### Additional resources
 - [Kubernetes](https://kubernetes.io/)
-
 - [Pulsar IO](https://pulsar.apache.org/docs/en/2.3.1/io-overview/)
-
 - [Introduction to Kafka](/engineering-education/introduction-to-kafka/)
