@@ -22,7 +22,7 @@ Open to all EngEd students (participants can work individually or in teams of En
 
 **We will need the information below to follow up with next steps - and get you set up with a test enviroment:**
 
-**Your Full Name, email, and Domain (URL) project link (can be a dummy link) - we need this info to get credentials sent to you.**
+**Your Full Name and email we need this info to get credentials sent to you.**
 
 ### Requirements
 Once your K8s Edge application is complete and deployed, create a pull request to attach your submission to. 
