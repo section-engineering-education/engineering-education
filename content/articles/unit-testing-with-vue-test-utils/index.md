@@ -733,7 +733,7 @@ In this article, you've learned how to test different bits and pieces of our pro
 
 There's a lot more you can achieve with this library and its usefulness is terrific as far as the Vue framework is concerned.
 
-I recommend that you make references to the `[Jest](https://jestjs.io/docs/)` and `[vue-test-utils](https://v1.test-utils.vuejs.org/)` libraries documentation, respectively if you'd like to dive in deeper on how to utilize them in your Vue projects.
+I recommend that you make references to the [Jest](https://jestjs.io/docs/getting-started) and [vue-test-utils](https://v1.test-utils.vuejs.org/) libraries documentation, respectively if you'd like to dive in deeper on how to utilize them in your Vue projects.
 
 Again, it's all Jest working under the hood. 
 
