@@ -6,7 +6,7 @@ url: /model-explanation-with-dalex/
 title: Machine Learning Model Explanation with Dalex
 description: This article aims to demenstrate how to perfom a Machine Learning Model explanation using Dalex.
 author: simon-kamau
-date: 2022-03-22T00:00:00-03:30
+date: 2022-04-19T00:00:00-03:30
 topics: [Languages]
 excerpt_separator: <!--more-->
 images:
@@ -14,13 +14,13 @@ images:
   - url: /engineering-education/model-explanation-with-dalex/hero.jpg
     alt: Machine Learning Model Explanation with Dalex Hero Image
 ---
-Machine learning engineers build models but hide the implementation from the end-users. The end-users apply the model blindly without knowing the model implementation. They do not know the functions, methods, and algorithms that train the model.
+Machine learning engineers build models but hide the implementation from the end-users. The end-users apply the model without knowing how the model works behind the scenes. They do not know the functions, methods, and algorithms that train the model.
 <!--more-->
-End-users need an open and transparent model to understand how it makes the predictions, the workings of the model, the functions, and the algorithms. Together, these help users understand the contributing factors to the model's decision.
+End-users need an open and transparent model to understand how the model works, the functions, the algorithms and how it makes the predictions. Together, these help users understand the facts that contribute to the model's decision.
 
 [Dalex](https://dalex.drwhy.ai/) is an open-sources library that explains and analyzes machine learning models. It makes the model transparent and open to the end-users. 
 
-Using Dalex, the end-users (individuals and companies) gain insightful information from the model. In this tutorial, we will build a bank marketing model, then use [Dalex](https://dalex.drwhy.ai/) to explain the model.
+Using Dalex, the end-users gain insightful information from the model. In this tutorial, we will build a bank marketing model and then use [Dalex](https://dalex.drwhy.ai/) to explain the model.
 
 ### Table of contents
 - [Prerequisites](#prerequisites)
@@ -43,18 +43,15 @@ To follow along with this tutorial, you need to have:
 - [Some Knowledge of Python programming language.](/engineering-education/python-projects-for-beginners/)
 - [Some Knowledge in Machine Learning algorithms.](/engineering-education/understanding-machine-learning-algorithms-and-how-to-implement-them/)
 - Be able to build a simple [Machine Learning model.](/engineering-education/house-price-prediction/)
-- Download the dataset from [here.](https://drive.google.com/file/d/1nQ3Zwb1qUki1sFrSbptEjNnPSTDHrzro/view?usp=sharing)
-- Run the Python code in [Google Colab notebook.](https://research.google.com/colaboratory/)
+- Knowledge of running code in [Google Colab notebook.](https://research.google.com/colaboratory/)
 
-Google Colab enables you to quickly build and run the model due to the fast CPU and GPU ideal for Machine Learning.
+Google Colab provides a platform for quickly building and running machine learning with a fast CPU and GPU.
 
-### Dataset preparation
-This section will prepare the bank marketing dataset that trains the model to solve the classification problem. The model will predict whether a customer will subscribe to a monthly saving plan or not. You can get the dataset from [here.](https://drive.google.com/file/d/1nQ3Zwb1qUki1sFrSbptEjNnPSTDHrzro/view?usp=sharing)
+### Dataset Preparation
+This section will guide the reader in preparing the bank marketing dataset that trains the model. The model will predict whether a customer will subscribe to a monthly saving plan or not. You can get the dataset from [here.](https://drive.google.com/file/d/1nQ3Zwb1qUki1sFrSbptEjNnPSTDHrzro/view?usp=sharing)
 
-#### Exploring dataset
-We need to explore the dataset to know its variables.
-
-Let us first import Pandas load the dataset.
+#### Dataset Exploration
+We need to explore the dataset to know its variables. So let us first import [Pandas](https://pandas.pydata.org/) to load the dataset.
 
 ```python
 import pandas as pd
@@ -65,16 +62,18 @@ Use this code to load the dataset:
 ```python
 df = pd.read_csv("/content/bank_marketing_dataset.csv")
 ```
-To see the Data Frame, run this code:
+
+To see the Data Frame, run the code snippet below:
 
 ```python
 df.head()
 ```
+
 Data Frame output:
 
 ![Data Frame](/engineering-education/model-explanation-with-dalex/data-frame.png)
 
-The output shows rows and columns in the dataset. To know all the columns in the dataset, use this code:
+The output shows rows and columns in the dataset. To know all the columns in the dataset, use the code snippet below:
 
 ```python
 df.columns
@@ -84,12 +83,10 @@ The columns output:
 
 ![Columns output](/engineering-education/model-explanation-with-dalex/columns.png)
 
-From the output above, the dataset has 21 columns. 
+From the output above, the dataset has 21 columns. First, Dalex will show us how each column contributed to the model's final results. Then, we will select the input variables and the target variable from the dataset.
 
-Dalex will show us how each column contributed to the model's final results. Then, we will select the input variables and the target variable from the dataset.
-
-#### Selecting the input and target variables
-The input variables are all the columns that train the model from which it learns to solve the classification problem. The target variable is the model's output. It is what the model wants to predict. For example, our model will determine if a customer will join a monthly saving plan or not.
+#### Selecting the Input and Target Variables
+The input variables are all the columns that train the model from which it learns to solve the classification problem. The target variable is the model's output. It is what the model wants to predict. For example, our model will determine if a customer will join a monthly saving plan or not, so this is our target output.
 
 ```python
 Xfeatures = df[['age', 'job', 'marital', 'education', 'default', 'housing', 'loan',
@@ -101,24 +98,20 @@ ylabels = df['y']
 
 The first 20 columns are the input variables/features, and the last column is the target variable. 
 
-### Splitting the dataset
-We will split the bank marketing dataset into two sets.
+### Splitting the Dataset
+We need to split the bank marketing dataset into two sets. The training and the testing sets. Use this code to split the dataset into training and testing sets.
 
 ```python
 from sklearn.model_selection import train_test_split
-```
-To split the dataset into a train and test set, use this code:
-
-```python
 x_train,x_test,y_train,y_test = train_test_split(Xfeatures,ylabels,test_size=0.3,random_state=7)
 ```
 We have prepared and split the dataset. We will start now building the model.
 
-### Building the model
-We will build the model using a machine learning pipeline. It will simplify the machine learning process.
+### Building the Model
+#### Machine Learning Pipeline
+We will build the model using a machine learning pipeline. A machine learning pipeline is a way of automating and simplifying the machine learning workflow. 
 
-#### Machine learning pipeline
-The machine learning pipeline will make the work easy. We have various libraries that support the implementation of a machine learning pipeline. We will use [Scikit-learn](https://scikit-learn.org/stable/) `Pipeline` class to build it.
+We have various libraries that support the implementation of a machine learning pipeline, but in this article, we will use  [Scikit-learn](https://scikit-learn.org/stable/) `Pipeline` class.
 
 To import the `Pipeline` class, use this code:
 
@@ -130,17 +123,18 @@ To implement a machine learning pipeline, we need to initialize all the stages i
 The pipeline stages are as follows:
 
 #### Data to data stage
-This stage involves the data transformer methods. This methods changes/transforms the input data into the format the model requires Then, the algorithm uses the transformed data for model training.
+This stage involves the data transformation methods. First, these methods transform the input data into the format the model requires. Then, the algorithm uses the transformed data for model training.
 
 Let us import the transformer methods.
 
 ```python
 from sklearn.preprocessing import StandardScaler
 ```
-We use the `StandardScaler` to initialize the data to the data stage. This method will convert the dataset to a specified range to ensure dataset consistency.
+
+We use the `StandardScaler` to initialize the data-to-data stage. This method will convert the dataset to a specified range and ensure consistency in the dataset.
 
 #### Data to model stage
-This stage involves the data estimator algorithm. This algorithm will train the model using the transformed data. In this stage, we use the Scikit-learn algorithms for classification.
+This stage uses the data estimator algorithm to train the model using the transformed data. In this stage, we use the Scikit-learn algorithms for classification.
 
 Let us import the Scikit-learn algorithm.
 
@@ -150,60 +144,64 @@ from sklearn.linear_model import LogisticRegression
 We will use the `LogisticRegression` to train the bank marketing model. Let us combine the two stages to create the pipeline.
 
 #### Combining the stages
-Combining the stages will allow the `Pipeline` class to initialize all the pipeline stages. It will then run all the initialized pipeline stages at once.
+Combining the stages allows the `Pipeline` class to initialize and run all the pipeline stages simultaneously.
 
 ```python
 pipe_lr = Pipeline(steps=[('std_scaler',StandardScaler()),('lr',LogisticRegression())])
 ```
-We have added the `StandardScaler` and `LogisticRegression` to the `Pipeline` class. We will use the `fit` function to train the initialized pipeline stages.
+We added the `StandardScaler` and `LogisticRegression` to the `Pipeline` class. We will use the `fit` function to train the initialized pipeline stages.
 
 ### Using the `fit` function
-The function fits the `Pipeline` to the training set. The pipeline will then learn from the dataset. The output of this process is the final trained bank marketing model.
+The  `fit` function fits the `Pipeline` to the training set. The pipeline will then learn from the dataset. The output of this process is the final trained bank marketing model.
 
 ```python
 pipe_lr.fit(x_train,y_train)
 ```
+
 The output of the final model:
 
 ![Final model](/engineering-education/model-explanation-with-dalex/final-model.png)
 
-It shows all the initialized steps and the algorithm that trains the model. Let us get the accuracy score of this model:
+The output shows all the initialized steps and the algorithm that trains the model. Let us get the accuracy score of this model:
 
-### Accuracy score
-Use this code to get the accuracy score:
+### Accuracy Score
+Use this code  below to get the accuracy score of the model:
 
 ```python
 print("LR:",pipe_lr.score(x_test,y_test))
 ```
+
 The accuracy score:
 
 ```bash
 LR: 0.9105770008901837
 ```
-This score is a high accuracy score (91.057%). However, we cannot just trust this model because it has a high accuracy score. We need to know all the variables that contributed to this accuracy score. We will use Dalex to explain the model and gain an insightful understanding.
+This accuracy might seem like a high accuracy score (91.057%). However, we need to know all the variables contributing to this accuracy score. We will use Dalex to explain the model and gain an insightful understanding.
 
 ### Getting started with Dalex
-To install Dalex, use this code:
+To install Dalex, execute this command in a terminal:
 
 ```bash
-!pip install dalex
+pip install dalex
 ```
-After installing Dalex, let us import it:
+
+Import the dalex library to your python code.
 
 ```python
 import dalex as dx
 ```
-Dalex explains the model in two ways: overall model explanation and single prediction explanation.
 
-#### Overall model explanation
+Dalex explains the model in two ways; overall model explanation and single prediction explanation.
+
+#### Overall Model Explanation
 This method explains the whole structure of the trained model. In addition, it will show the functions and algorithms that build the model. The user will know the dataset that trains the model and how each variable in the dataset contributed to the general model performance.
 
-#### Single prediction explanation
+#### Single Prediction Explanation
 This method focuses on the single prediction of the model. It shows the variables that have contributed to that specific prediction. The user will know if a prediction is correct or not.
 
 Let us start with the overall model explanation.
 
-### Implementing the overall model explanation
+### Implementing the Overall Model Explanation
 We implement the overall model explanation as follows:
 
 #### Using the `Explainer` function
@@ -216,21 +214,22 @@ Output:
 
 ![Overall model explanation](/engineering-education/model-explanation-with-dalex/overall-model-explanation.png)
 
-From the output, the dataset has `28831 rows 20 cols`. We can also know the target and input variables used. The output also shows the algorithms that train the model and model information. Using this output, the user will have a detailed understanding of the model.
+From the output, the dataset has `28831 rows 20 cols`. We can also know the target and input variables used. The output also shows the algorithms that trained the model and model information. Using this output, the user will have a detailed understanding of the model.
 
-#### Checking the model performance
-Next, We can also display the performance scores using this code:
+#### Checking the Model Performance
+Next, we can also display the performance scores using this code:
 
 ```python
 exp.model_performance()
 ```
+
 This code will display all the performance scores:
 
 ![Overall model explanation](/engineering-education/model-explanation-with-dalex/performance-scores.png)
 
 The accuracy score of the model is `0.91034`. It is slightly lower than the one we had gotten earlier, but it is still a high accuracy score. It is the accurate/true score of the model.
 
-#### Variable contribution to the model performance
+#### Variable contribution to the Model Performance
 Let us see how each variable in the dataset contributed to the model performance.
 
 ```python
@@ -241,7 +240,7 @@ Variable contribution output:
 
 ![Variable contribution](/engineering-education/model-explanation-with-dalex/variable-contribution.png)
 
-The output shows how each variable in the dataset contributed to the model performance (overall model). The contributions are from the least to highest contribution. `day_of_week` variable has the least contribution. `emp.var.rate` variable has the highest contribution. 
+The output shows how each variable in the dataset contributed to the model performance. The contributions are from the least to highest contribution. `day_of_week` variable has the least contribution while the `emp.var.rate` variable has the highest contribution. 
 
 We can also show the variable contribution using a plot diagram.
 
@@ -249,7 +248,7 @@ We can also show the variable contribution using a plot diagram.
 We will use `plotly` to plot the variable contribution diagram.
 
 ```bash
-! pip install plotly
+pip install plotly
 ```
 
 To plot, use this code:
@@ -261,21 +260,19 @@ Plot diagram output:
 
 ![Plot diagram](/engineering-education/model-explanation-with-dalex/plot-diagram.png)
 
-The diagram also shows how each variable in the dataset contributed to the model performance (overall model). `emp.var.rate` variable has the highest contribution. The `day_of_week` variable has the least. We have gained an overall understanding of the model. 
-
 Let us now implement the single prediction explanation.
 
-### Implementing a single prediction explanation
+### Implementing a Single Prediction Explanation
 To implement the single prediction explanation, we first need to use the model to make a single prediction. We will then explain the output.
 
 #### Using the model to make a single prediction
-We will select the data sample that the model will predict.
+First, select the data sample that the model will predict.
 
 ```python
 data_sample = x_test.iloc[7]
 ```
 
-To see the selected data sample, use this code:
+To see the selected data sample, use this code snippet:
 
 ```python
 data_sample
@@ -290,6 +287,7 @@ Let us check the expected prediction.
 ```python
 y_test.iloc[7]
 ```
+
 The expected prediction is the actual classification of the data samples. 
 
 ```bash
@@ -298,7 +296,7 @@ The expected prediction is the actual classification of the data samples.
 
 The expected prediction is `1`. Let us now use the model to classify this data sample.
 
-#### Classifying a data sample
+#### Classifying the Data Sample
 We use the `predict` function and pass in the data sample:
 
 ```python
@@ -313,8 +311,8 @@ LR: [1]
 
 It is an accurate prediction, but still, we need to know how each variable in the dataset contributed to this prediction.
 
-#### Variable contribution to the single prediction
-We first need to convert the data sample to a DataFrame. It is the format that Dalex can use.
+#### Variable contribution to the Single Prediction
+We first need to convert the data sample to a DataFrame that Dalex can understand.
 
 ```python
 data_frame = pd.DataFrame(data_sample).T
@@ -328,7 +326,7 @@ The output:
 
 ![Sample Data Frame](/engineering-education/model-explanation-with-dalex/sample-data-frame.png)
 
-Let's now see the variable contribution to the single prediction:
+Let us now see the variable contribution to the single prediction:
 
 ```python
 explanation = exp.predict_parts(data_frame)
