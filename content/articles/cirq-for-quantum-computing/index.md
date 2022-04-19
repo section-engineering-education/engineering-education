@@ -6,7 +6,7 @@ url: /cirq-for-quantum-computing/
 title: Cirq for Quantum Computing
 description: This tutorial will give an overview of the Cirq framework and demonstrate how one can use it to learn about Quantum computing.
 author: lilian-tonia
-date: 2022-04-19T00:00:00-24:00
+date: 2022-04-20T00:00:00-24:00
 topics: [Networking]
 excerpt_separator: <!--more-->
 images:
@@ -94,10 +94,14 @@ simulator = cirq.Simulator()
 output = simulator.run(q_circuit, repetitions = 20)
 print(output)
 ```
+We usually run circuits a lot of time to get the results. That is why we are running the simulator for `20` repetitions. The results of this run is shown below:
 
 ```bash
 x,y=11011000000111111111, 11011000000111111111
 ```
+The Hadamard gate puts the first qubit in equal superposition of `0` and `1`. This means that there is a 50% chance of a qubit being `0` upon measurement and a 50% chance of it being `1` upon measurement.
+
+What would happen if we wanted to add an [X](https://qiskit.org/textbook/ch-states/single-qubit-gates.html#xgate) (a bit-flip) gate? 
 
 Let's add an `X` gate to qubit `y`, and see whether our result will be different.
 
@@ -120,7 +124,7 @@ x,y=00111100001111101000, 11000011110000010111
 ```
 We can see that if qubit `x` is in the `1` state, CNOT activates and the initial `1` state becomes a `0` state.
 
-You can use this [link](https://colab.research.google.com/drive/1hi-dVmcLkE3NQZS_E407vKyizdpzLIF-?usp=sharing) to access the complete code for this tutorial.
+We have successfully implemented a circuit using Cirq and harnessed the power of superposition and entanglement. You can use this [link](https://colab.research.google.com/drive/1hi-dVmcLkE3NQZS_E407vKyizdpzLIF-?usp=sharing) to access the complete code for this tutorial.
 
 ### Wrapping up
 Currently, Cirq does not give the public access to the real quantum computer that Google has. Unless you are among the approved partners. Even though you might not have access to their machines now, you can still use the Cirq programming language, build some quantum circuits, and pass them along to the quantum simulator. 
