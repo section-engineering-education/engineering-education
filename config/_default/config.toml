@@ -17,7 +17,6 @@ pygmentsStyle = "monokai"
    engineering-education = "/:slug/"
    articles = "/:slug/"
    topics = "/topic/:slug/"
-   authors = "/authors/:slug/"
 [author]
   name = "Hector Kambow"
   email = "enged@section.io"
