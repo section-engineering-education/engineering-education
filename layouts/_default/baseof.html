@@ -32,7 +32,13 @@
 
       {{- block "scripts" . -}}
       {{/* Use this block to override the scripts for any layout */}}
-      {{- partial "footer-scripts" . -}}
+
+      {{ $paramsLayout := "null" }}
+      {{ if isset .Params "layout" }}
+      {{ $paramsLayout = .Params.layout }}
+      {{ end }}
+      
+      {{- partialCached "footer-scripts" . $paramsLayout -}}
     {{- end -}}
 
   </body>
