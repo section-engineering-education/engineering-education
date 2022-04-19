@@ -1,7 +1,6 @@
 ---
 title: Louise Findlay
 type: authors
-authors: louise-findlay
 linkedin: https://linkedin.com/in/louise-findlay23
 website: https://spyrath.dev
 images:
