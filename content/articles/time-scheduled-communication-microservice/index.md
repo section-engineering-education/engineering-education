@@ -3,16 +3,16 @@ layout: engineering-education
 status: publish
 published: true
 url: /time-scheduled-communication-microservice/
-title: Building a Time Scheduled Communication Micro-service using Node.js
+title: Building a Time Scheduled Communication Micro-service
 description: This article will guide the reader on how to build a Node.js application that automatically sends messages at a predefined time interval.
 author: kennedy-mwangi
-date: 2022-04-04T00:00:00-02:33
-topics: [Languages]
+date: 2022-04-19T00:00:00-17:33
+topics: [Node.js, Languages]
 excerpt_separator: <!--more-->
 images:
 
 - url: /engineering-education/time-scheduled-communication-microservice/hero.jpg
-  alt: Time Scheduled Communication Micro-service using Node.js Hero Image
+  alt: Time Scheduled Communication Micro-service Node.js Hero Image
 ---
 In this article, we will build a Node.js application that automatically sends messages to users at a specified time interval.
 <!--more-->
@@ -37,10 +37,9 @@ To get started, proceed to your preferred working directory and then initialize 
 npm init -y
 ```
 
-The above command will create a *package.json* file on the project directory with all the default configurations.
+The command above will create a *package.json* file on the project directory with all the default configurations.
 
 In this project, we will need the following dependencies:
-
 - *dotenv*: For loading environmental variables.
 - *node-cron*: For running our program on a timely basis.
 - *twilio*: For sending messages.
@@ -124,7 +123,6 @@ async function send_message(message){
 ```
 
 In the above function, we are:
-
 - Retrieving our environmental variables.
 - Initializing the Twilio client.
 - Sending a message using the Twilio client.
@@ -144,12 +142,14 @@ Below the `send_message` function, add the following code to send a hello messag
 ```js
 send_message("Hello there");
 ```
+
 We can now run our application using the command below:
 
 ```bash
 npm run dev
 ```
-Once the function runs, You should receive a *hello there* message on the phone number that you set.
+
+Once the function runs, you should receive a *hello there* message on the phone number that you set.
 
 In the next step, we will automate the process (sending messages) on a timely basis.
 
@@ -176,10 +176,10 @@ node_cron.schedule('*/5 * * * *', () => {
 
 Ensure that the `send_message('Hello there!')` function is still running. If it is not, you will need to call the method as demonstrated in the previous step.
 
-You should now receive a *Hello There!* message after every five minutes.
+You should now receive a *Hello There!* message every five minutes.
 
 ### Conclusion
-In this article, we have implemented a time-scheduled micro-service for sending messages. 
+In this article we implemented a time-scheduled micro-service for sending messages. 
 
 You can find this project's code from this [GitHub repository](https://github.com/mwangiKibui/sms_microservice).
 
