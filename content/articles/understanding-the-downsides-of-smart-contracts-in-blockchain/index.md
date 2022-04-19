@@ -6,7 +6,7 @@ url: /understanding-the-downsides-of-smart-contracts-in-blockchain/
 title: Understanding the Downsides of Smart Contracts in Blockchain
 description: This article will cover in detail the downsides associated with smart contracts
 author: lilian-ogoti
-date: 2022-03-30T00:00:00-12:00
+date: 2022-04-20T00:00:00-12:00
 topics: [Blockchain]
 excerpt_separator: <!--more-->
 images:
@@ -20,7 +20,7 @@ However, the [smart contracts](https://www.ibm.com/topics/smart-contracts) conce
 
 The smart contracts' benefits cut across various insurance, healthcare, and logistics industries. However, the dilemma remains whether smart contracts are what they are presumed to be?
 
-There is no doubt that smart contracts will be helpful in future. However, it is better to separate the truth from the hype.
+There is no doubt that smart contracts will be helpful in the future. However, it is better to separate the truth from the hype.
 
 The technology has much potential. However, there are still technological and legal factors limiting its successful implementation.
 
@@ -50,13 +50,13 @@ The [offer](https://www.upcounsel.com/what-is-an-offer-in-law-of-contract) will 
 [Acceptance](https://www.upcounsel.com/elements-of-acceptance-in-contract-law) refers to the agreement between the terms offered by one party. In our example, the landlord would agree to rent the house for three weeks, provided we pay $30 each week.
 
 #### The transaction
-In the [transaction](https://smallbusiness.chron.com/contractual-transaction-marketing-33390.html) stage, each party honours its obligations as per the agreement. In our example, we pay our $30 as the house rent, and the landlord rents us the house. This is the stage where the performance of the contract is realized.
+In the [transaction](https://smallbusiness.chron.com/contractual-transaction-marketing-33390.html) stage, each party honors its obligations as per the agreement. In our example, we pay our $30 as the house rent, and the landlord rents us the house. This is the stage where the performance of the contract is realized.
 
-If the landlord fails to rent us the house key after payment, it will violate the contract. The same happens if we refuse to honour the payment for the second week after completing the first one.
+If the landlord fails to rent us the house key after payment, it will violate the contract. The same happens if we refuse to honor the payment for the second week after completing the first one.
 
-The contract law states well that if any party fails to honour the agreement, they can be sued for the action. So, we can conclude that contracts allow the involved parties to trust each other. The reason is that there is a trusted intermediary to enforce the agreements.
+The contract law states well that if any party fails to honor the agreement, they can be sued for the action. So, we can conclude that contracts allow the involved parties to trust each other. The reason is that there is a trusted intermediary to enforce the agreements.
 
-### How does a smart contract works?
+### How does a smart contract work?
 Smart contracts ensure that no intermediary enforces the agreement. The code, in this case, acts as the third-party validator. Once the party has met the set conditions, the smart contract’s business logic processes the clauses coded in the agreement.
 
 A good example we can use to explain the analogy of smart contracts is how vending machine works. It releases a snack/drink once the user has made the payments. It does not require an intermediary or operator since it has been developed to release a snack/drink once the payments are made.
@@ -108,7 +108,7 @@ Legal issues will remain a limiting factor to the adoption of smart contracts. T
 #### Security concerns
 Smart contracts can still develop errors which can be damaging and have a huge impact compared to usual software bugs. Nowadays, smart contracts are powering the Defi systems. This means that a single loophole or vulnerability can make considerable losses to the users.
 
-However, smart contracts are improving, and security would not be of significant concern. The problem is that most smart contracts projects concentrate on the marketing and acquiring new users. Thus, they are less concerned about the security of the system.
+However, smart contracts are improving, and security would not be of significant concern. The problem is that most smart contracts projects concentrate on marketing and acquiring new users. Thus, they are less concerned about the security of the system.
 
 #### Simplicity nature
 Smart contracts are simple and unable to work in imaginary cases. They have to undergo radical upgrades. Any code should not contain ambiguous statements that are difficult to represent in binary. This presents a challenge for smart contracts.
