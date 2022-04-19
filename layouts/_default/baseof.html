@@ -27,7 +27,7 @@
 
       {{- block "footer" . -}}
         {{/* Use this block to override the footer for any layout */}}
-        {{- partial "components/footer" . -}}
+        {{- partialCached "components/footer" . .Type -}}
       {{- end -}}
 
       {{- block "scripts" . -}}
