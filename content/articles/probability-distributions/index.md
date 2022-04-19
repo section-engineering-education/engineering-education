@@ -5,7 +5,7 @@ published: true
 url: /probability-distributions/
 title: Understanding Probability Distributions and their Simulations in R
 description: In this article, we will discuss the basics of probability distributions and how to use them to simulate data using R.
-author: 
+author: bejamin-naibei
 date: 2022-04-19T00:00:00-18:00
 topics: [Machine Learning]
 excerpt_separator: <!--more-->
