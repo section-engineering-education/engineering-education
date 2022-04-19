@@ -1,11 +1,11 @@
-## Table of Contents
+### Table of Contents
 
 - [Introduction](#how-to-use-locust-to-test-django-applications)
 - [Building The API](#building-the-api)
 - [Testing With Locust](#testing-with-locust)
 - [Conclusion](#conclusion)
 
-## How To Use Locust To Load Test Django Applications
+### How To Use Locust To Load Test Django Applications
 
 
 Load testing is the practice of testing how an application performs when users start using it concurrently. The load referred to here is simply the various requests being made to that application at the same time by the users.
@@ -31,7 +31,7 @@ INSTALLED_APPS = [
 
 ```
 
-## Building The API
+### Building The API
 
 Now, let's start writing the code for our Post and Comment model
 
@@ -354,7 +354,7 @@ Now that we are done building the endpoints, let's start load testing with Locus
 
 In the project root folder, we will create a python file and name it `locustfile.py`. We must give it that name otherwise it won't work.
 
-## Testing With Locust
+### Testing With Locust
 Let's start by testing the endpoint that returns list of posts from the database:
 ```
 from locust import HttpUser, task
@@ -633,7 +633,7 @@ If we test our API with 250 users at the rate of 2 users per seconds, we will ha
 
 ![Test result of all endpoints](all_endpoints_test_table.png)
 
-## Conclusion: 
+### Conclusion: 
 An application performance after it has been deployed cannot be known beforehand, monitoring will still need to be done to ensure our application runs smoothly, but with locust, when developing we can have an idea of how our application will perform. Locust can also be used to test any other application you might have built with another language or framework that is not Python or Django.
 
 Reference:
