@@ -1,6 +1,25 @@
-### Introduction
+---
+layout: engineering-education
+status: publish
+published: true
+url: /a-beginner-guide-to-softmax-regression-using-tensorflow/
+title: A Beginner's Guide to SoftMax Regression Using TensorFlow
+description: In this article, we will walk through a simple example of using TensorFlow to implement a softmax regression model.
+author: bonface-ndolo
+date: 2022-04-19T00:00:00-18:00
+topics: [Machine Learning]
+excerpt_separator: <!--more-->
+images:
+
+ - url: /engineering-education//a-beginner-guide-to-softmax-regression-using-tensorflow/hero.png
+   alt: Beginner's Guide to SoftMax Regression Using TensorFlow Example Image
+---
+
 
 This article introduces basic softmax regression and its implementation in Python using tensorflow to the learner. While implementing softmax regression in Python using TensorFlow, we will use the MNIST handwritten digit dataset. MNIST forms the basics of machine learning just like 'hello world' forms the basics of programming. Classifying the MNIST handwritten digit dataset is a low-level problem in machine learning which can be solved in many ways.
+<!-- more -->
+### Introduction
+
 This article does not focus on designing a complex machine learning model. Instead, we will focus on basic TensorFlow concepts. Softmax regression is used in TensorFlow using various dependencies such as NumPy, matplotlib, and TensorFlow.
 
 This article also utilizes knowledge from logic regression and how it is implemented in Python using softmax regression.
@@ -18,7 +37,7 @@ Python comes with various libraries that one can use to implement logistic regre
 
 - The learner should have basic knowledge of programming. They should be equipped with knowledge of the python programming language. (<https://github.com/Akuli/python-tutorial>)
 - Running python codes requires python3 or the latest version. (<https://www.python.org/downloads/>)
-Tensorflow basic knowledge is also required to quickly understand TensorFlow concepts in this article. (<https://github.com/Akuli/python-tutorial>)
+Tensorflow basic knowledge is also required to understand TensorFlow concepts in this article quickly. (<https://github.com/Akuli/python-tutorial>)
 - Download TensorFlow from(<https://www.tensorflow.org/install/>)
 - Logic regression knowledge in Python also comes in handy. (<https://github.com/IKMLab/Logistic-Regression-Tutorial>)
 
@@ -33,7 +52,7 @@ Softmax/multinomial logistic regression would be appropriate in such a scenario.
 
 We are defining our model.
 
-- We first give our dataset 'n' features, 'm' observations, and 'z' class labels, such that each observation can be classified as a 'k' possible target value.**suppose** we have a dataset of 100 28x28 vector size handwritten digit images, we get n=100, m=28x28=784, and k=10.
+- We first give our dataset 'n' features, 'm' observations, and 'z' class labels, such that each observation can be classified as a 'k' possible target value. For example,**suppose** we have a dataset of 100 28x28 vector size handwritten digit images, we get n=100, m=28x28=784, and k=10.
 
 - 'x' feature matrix\
 The x feature matrix is defined as:
@@ -102,7 +121,7 @@ and
 
 ![g2](/engineering-education/softmax-regression-using-tensorflow.md/c:/users/macha/desktop/softmax/g2.png)
 
-to train our softmax model. The gradient descent derivatives can be used to improve the biases and weights contrary to the gradients, 
+To train our softmax model. The gradient descent derivatives can be used to improve the biases and weights contrary to the gradients, 
   
 ![weight1](/engineering-education/softmax-regression-using-tensorflow.md/c:/users/macha/desktop/softmax/weight1.png)
 
@@ -119,9 +138,9 @@ Let us create a softmax regression model using Tensorflow to manipulate the MNIS
 MNIST's (Modified National Institute of Standards and Technology) handwritten digit dataset is used to train image processing models for the handwritten digit classification set. It is also used in training machine learning and deep learning models.
 The MNIST dataset features 60,000 small square training images and 10,000 testing images on a 28 x 28-pixel scale of single handwritten digits between 0 and 9. Each data point has two parts describing the 28 x 28 size image, an image(x) and a label(y)
 
-Tensorflow is a free end-to-end open-source platform for training machine learning models. Tensorflow features a broad and flexible environment of libraries and tools for machine learning. It provides a python programming interface that we will need for this article.
+Tensorflow is a free end-to-end open-source platform for training machine learning models. Tensorflow features a broad and flexible environment of libraries and tools for machine learning. In addition, it provides a python programming interface that we will need for this article.
 
-In this tutorial, we will train a softmax function model that will recognize a handwriting digit by comparing each pixel in the image, then train the model using TensorFlow to predict the image by looking at a couple of examples already labeled. Let us look at the steps.
+In this tutorial, we will train a softmax function model that will recognize a handwriting digit by comparing each pixel in the image, then train the model using TensorFlow to predict the image by looking at a couple of examples already labeled. First, let us look at the steps.
 
 1. Import required packages\
 
@@ -135,11 +154,11 @@ import numpy as np
 
 We import the packages and use them as a short form of the package's name to avoid re-using the full name in our code.
 NumPy(Numerical Python) is a virtual library for programming in Python. NumPy consists of a multidimensional array object and various routines for handling those arrays.
-Matplotlib is a vast library for data visualization and graphical plotting in python programming. Matplotlib being too broad, we only import the pyplot interface for plotting.
+Matplotlib is a vast library for data visualization and graphical plotting in python programming. However, matplotlib being too broad, we only import the pyplot interface for plotting.
 
 2. Download MNIST Data\
 
-Yann LeCun's website (<http://yann.lecun.com/exdb/mnist/index.html>) provides the official details of the MNIST dataset. Tensorflow library comes packed with the MNIST dataset for use in artificial intelligence.
+Yann LeCun's website (<http://yann.lecun.com/exdb/mnist/index.html>) provides the official details of the MNIST dataset. In addition, Tensorflow library comes packed with the MNIST dataset for use in artificial intelligence.
 
 ```py3
 ((train_data, train_labels),
