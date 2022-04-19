@@ -144,7 +144,9 @@ df.head()
 ```
 It gives this output:
 
-![New length column](/engineering-education/imbalanced-learn-to-handle-imbalanced-text-data-in-natural-language-processing/new-length-column.png). We will start cleaning the text.
+![New length column](/engineering-education/imbalanced-learn-to-handle-imbalanced-text-data-in-natural-language-processing/new-length-column.png). 
+
+We will begin cleaning the text.
 
 ### Text cleaning
 Before building the spam classification model, we will clean the dataset to have the required format. Many text cleaning steps will format the text. Some of them are, removing unnecessary words, punctuation, stop words, white spaces, and unnecessary symbols from the text dataset.
