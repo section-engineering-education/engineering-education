@@ -4,9 +4,9 @@ status: publish
 published: true
 url: /imbalanced-learn-to-handle-imbalanced-text-data-in-natural-language-processing/
 title: Using Imbalanced-Learn to handle imbalanced text data in Natural Language Processing
-description: This tutorial will guide a reader how to build a spam classifier model using Python and natural language processing without balancing the classes in the dataset.
+description: This tutorial will guide a reader on how to build a spam classifier model using Python and natural language processing without balancing the classes in the dataset.
 author: donnex-wafula
-date: 2022-04-12T00:00:00-20:00
+date: 2022-04-19T00:00:00-20:00
 topics: [Machine Learning]
 excerpt_separator: <!--more-->
 images:
@@ -14,15 +14,15 @@ images:
   - url: /engineering-education/imbalanced-learn-to-handle-imbalanced-text-data-in-natural-language-processing/hero.jpeg 
     alt: Using Imbalanced-Learn in Natural Language Processing Hero Image
 ---
-An imbalanced dataset in natural language processing is a dataset whose number of data samples is not the same in the different classes. One class has more data samples than the other class. 
+An imbalanced dataset in Natural Language Processing is a dataset whose number of data samples is not the same in the different classes. One class has more data samples than the other class. 
 <!--more-->
 For example, one class has 3000 samples, and the other has 300. The class with more data samples is known as the majority class, while the other one is known as the minority class. 
 
-When we train a model with an imbalanced dataset, the model will be biased towards the majority class. The model will make wrong predictions and give inaccurate results. It has a negative impact when we use the model in production, and the stakeholders depend on it for business operations.
+When we train a model with an imbalanced dataset, the model will be biased towards the majority class. The model may make wrong predictions and give inaccurate results. It has a negative impact when we use the model in production, and the stakeholders depend on it for business operations.
  
-In natural language processing (NLP), we have various libraries that can handle text data that have an imbalance. We will use the [Imbalanced-learn](https://imbalanced-learn.org/stable/) library. Imbalanced-learn will balance the classes in the dataset. It will also reduce model bias and enhance the NLP performance.
+In Natural Language Processing (NLP), we have various libraries that can handle text data that have an imbalance. We will use the [Imbalanced-learn](https://imbalanced-learn.org/stable/) library. This library will balance the classes in the dataset. It will also reduce model bias and enhance the NLP performance.
 
-We will first build a spam classifier model with natural language processing without balancing the classes in the dataset. We will implement the same model but use Imbalanced-Learn to balance the classes. Finally, we will compare the two models (before and after balancing) and evaluate their performance.
+We will first build a spam classifier model with natural language processing without balancing the classes in the dataset. We will implement the same model but use `Imbalanced-Learn` to balance the classes. Finally, we will compare the two models (before and after balancing) and evaluate their performance.
 
 ### Table of contents
 - [Prerequisites](#prerequisites)
