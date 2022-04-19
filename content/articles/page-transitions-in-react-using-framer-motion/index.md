@@ -3,7 +3,7 @@ The React.js framework allows you to create single-page applications. These are 
 For some, transitioning from page to page has often seemed difficult. We can archive that using a library called framer motion.
 ## What is framer motion?
 
-Framer Motion is an animation library that makes it simple to create animations. Its simplified API allows us to extract the complexities of animations. Thus creating animations with ease. An open-source, production-ready React motion library. Framer Motion is ideal for dealing with animations on 99 percent of websites.
+Framer Motion is an animation library that makes it so simple to create animations. Its simplified API allows us to extract the complexities of animations. Thus creating animations with ease. An open-source, production-ready React motion library. Framer Motion is ideal for dealing with animations on 99 percent of websites.
 
 The `motion` component is the Framer motion core API. Every HTML and SVG element has a `motion` component. They function exactly the same as their HTML counterparts. They also have more props that allow the addition of animations and gestures. . We would get to understand better when we’re building our project. So let’s get started
 ## Prerequisites
