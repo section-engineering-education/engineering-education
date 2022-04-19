@@ -750,7 +750,7 @@ interface AuthyApi {
 ```
 
 ### Dependency Injection Setup
-A dependency is an object that can be used by an application to perform a specific task. Dependency Injection is the process whereby when one object needs one dependency, it gets provided automatically instead of the object creating it by itself. In the end, the dependency is created once and can be re-used multiple times.
+A dependency is an object or a class that can be used by an application to perform a specific task. Dependency Injection is the process whereby when one object needs one dependency, it gets provided automatically instead of the object creating it by itself. In the end, the dependency is created once and can be re-used multiple times.
 
 #### The Application Module
 This module contains dependencies used across the application. To set up the application module, create a new class and add the snippets below:
