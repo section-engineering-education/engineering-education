@@ -6,7 +6,7 @@ url: /using-imbalanced-learn-to-handle-imbalanced-text-data/
 title: Using Imbalanced-Learn to handle imbalanced text data in Natural Language Processing
 description: This tutorial will guide a reader on how to build a spam classifier model using Python and natural language processing without balancing the classes in the dataset.
 author: donnex-wafula
-date: 2022-04-19T00:00:00-20:00
+date: 2022-04-20T00:00:00-20:00
 topics: [Machine Learning]
 excerpt_separator: <!--more-->
 images:
@@ -349,7 +349,7 @@ df.head()
 ```
 It gives this output:
 
-![Applied interger values](/engineering-education/using-imbalanced-learn-to-handle-imbalanced-text-data/applied-integer-values.png)
+![Applied integer values](/engineering-education/using-imbalanced-learn-to-handle-imbalanced-text-data/applied-integer-values.png)
 
 The output above shows the `label` column has the assigned integer values (0 and 1). The next step is to implement text vectorization.
 
