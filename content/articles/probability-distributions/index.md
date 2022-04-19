@@ -1,6 +1,22 @@
-### Understanding Probability Distributions and their Simulations in R
+---
+layout: engineering-education
+status: publish
+published: true
+url: /probability-distributions/
+title: Understanding Probability Distributions and their Simulations in R
+description: In this article, we will discuss the basics of probability distributions and how to use them to simulate data using R.
+author: 
+date: 2022-04-19T00:00:00-18:00
+topics: [Machine Learning]
+excerpt_separator: <!--more-->
+images:
+
+ - url: /engineering-education/probable-distributions/hero.jpg
+   alt:  example image
+---
+
 ### Introduction
-When working with distribution, one might be intrested to know one of the following four things.
+When working with distribution, one might be interested to know one of the following four things.
 
 1. The density pdf of a particular value.
 2. The distribution CDF.
@@ -17,7 +33,7 @@ The general R naming is given as:
 
 Where the 'name' in all the four cases above represents the name of the given distribution.
 
-Random value generation is a common activity in machine learning. For example, to estimate the posterior distribution parameters in Bayesian statistics, we need to generate a 
+Random value generation is an everyday activity in machine learning. For example, to estimate the posterior distribution parameters in Bayesian statistics, we need to generate a 
 random sample from an appropriate distribution, which can sometimes be difficult or impossible. To draw samples in such cases, we use Monte Carlo simulation methods. 
 For the learner to advance to such a level, first, they must know how we generate random variables from a certain distribution.
 
@@ -72,11 +88,11 @@ This code returns:
 ![polts](engineering-education/probability-distributions/plot.png)
 
 ### 2. Normal distribution
-This is a probability probability distribution in which values are symmetrically distributed around the mean. The normal distribution has a pdf of the form:
+This is a probability distribution in which values are symmetrically distributed around the mean. The normal distribution has a pdf of the form:
 
 ![formula](engineering-education/probability-distributions/normal.png)
 
-We use the `rnorm()` method to generate random variables from this distribution. This method takes three parameter, that is, `n` for the number of the random variables we want to generate, the mean value, and lastly the standard deviation.
+We use the `rnorm()` method to generate random variables from this distribution. This method takes three parameters: ' n` for the number of the random variables we want to generate, the mean value, and the standard deviation.
 
 Let's generate a sample of random variables and visualize the results with a density histogram.
 
@@ -104,13 +120,13 @@ Output:
 
 As we see from the above plot, the random sample generated follows a normal distribution.
 
-The application for the normal distribution is very common in elementary statics. Let's look at some of its applications and see how we handle them in R.
+The application for the normal distribution is widespread in elementary statics. So let's look at some of its applications and see how we handle them in R.
 
 *Example 1:*
 *Assume that the test score of a college exam fits a normal distribution. Also, the mean test score is 72, and the standard deviation is 15.2. Determine the percentage of students scoring 84 or more in the exam?*
 [Source: r-tutor](http://www.r-tutor.com/elementary-statistics/probability-distributions/normal-distribution)
 *Solution*
-If we solve this by hand then:
+If we solve this by hand, then:
 
 The probability that X is at least 84 can be expressed as $$P(X \ge84)$$
 
@@ -120,7 +136,7 @@ We then standardize this probability distribution, i.e.,
 
 The solution value for this can be read from the standard normal table.
 
-To solve this problem in R, we first need to know where on the normal pdf we want to compute the area from. We are interested in the area below the curve from $Z = 0.789$ and above from our problem above. The code provided below solves this problem.
+To solve this problem in R, we first need to know where on the normal pdf we want to compute the area from. We are interested in the area below the curve from $Z = 0.789$ and our problem above. The code provided below solves this problem.
 
 
 ```r
@@ -186,7 +202,7 @@ The interpretation of this output is that 20.47 % of the people have an IQ of be
 Now, let's look at another type of continuous distribution.
 
 ### 3. Chi-Square distribution
-A chi-square distribution is a probability distribution used to describe the distribution of the sum of squared random variables. It has a *v* degree of freedom and is denoted as $\,\large\chi^2_{(v)}$. Furthermore it takes a pdf of the form:
+A chi-square distribution is a probability distribution used to describe the distribution of the sum of squared random variables. It has a *v* degree of freedom and is denoted as $\,\large\chi^2_{(v)}$. Furthermore, it takes a pdf of the form:
 
 ![image](engineering-education/probability-distributions/chi-square.png)
 
@@ -237,11 +253,11 @@ Output:
 
 ```
 
-Now that we know how to generate random variables from the exponential distribution, let's look at how we can solve its probability problems in R.
+Now that we know how to generate random variables from the exponential distribution, let's look at how to solve its probability problems in R.
 
 *Example 3:*
 
-*Suppose the avera checkout time of a cashier in supermarket cashier is 3 minutes. Determine the probability of a cashier completeing a customer checkout in less than 2 minutes.*
+*Suppose the average checkout time of a cashier in supermarket cashier is 3 minutes. Determine the probability of a cashier completing a customer checkout in less than 2 minutes.*
 
 By hand, we would have solved this problem as follows:
 
@@ -282,7 +298,7 @@ Suppose that there are 12 multiple questions in an English question paper, and e
 
 Find:
 
-(i) Probability of having four or less correct answers.
+(i) Probability of having four or fewer correct answers.
 (ii) Probability of having exactly four correct answers.
 
 *Solution*
@@ -325,8 +341,8 @@ rpois(n, lambda)
 
 *If 12 cars are crossing a bridge per minute on average, find the following;*
 
-*1. Probability of having atlest 17  cars crossing the bridge at a particular time.*
-*2. The probability of having 16 or fewer cars crossing the bridge at a particular time.*
+*1. Probability of having at least 17  cars crossing the bridge at a particular time.*
+*2. There is a probability of having 16 or fewer cars crossing the bridge at a particular time.*
 
 *Solution:*
 
@@ -358,4 +374,7 @@ This returns:
 These are the main discrete distribution that is widely used in the application.
 
 ### Conclussion
-We have learned how we work probability distributions in R. We considered both the continuous and the discrete cases. In both cases, we emphasized generating random variables and solved some real-world problems using the R sofware.
+We have learned how we work probability distributions in R. We considered both the continuous and the discrete cases. We emphasized generating random variables in both cases and solved some real-world problems using the R software.
+
+---
+Peer Review Contributions by: [Lalithnarayan C](/engineering-education/authors/lalithnarayan-c/)
