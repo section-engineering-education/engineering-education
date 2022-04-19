@@ -149,7 +149,7 @@ It gives this output:
 We will begin cleaning the text.
 
 ### Text cleaning
-Before building the spam classification model, we will clean the dataset to have the required format. Many text cleaning steps will format the text. Some of them are, removing unnecessary words, punctuation, stop words, white spaces, and unnecessary symbols from the text dataset.
+Before building the spam classification model, we will clean the dataset to have the required format. Many text cleaning steps will format the text. It includes removing unnecessary words, punctuation, stop words, white spaces, and unnecessary symbols from the text dataset.
 
 For this tutorial, we will implement the following steps:
 
