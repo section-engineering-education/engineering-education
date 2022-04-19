@@ -1,4 +1,4 @@
-﻿---
+---
 layout: engineering-education
 status: publish
 published: true
@@ -14,22 +14,18 @@ images:
   - url: /engineering-education/understanding-the-downsides-of-smart-contracts-in-blockchain/hero.jpg
     alt: Understanding the Downsides of Smart Contracts in Blockchain hero image
 ---
-In the [blockchain](https://www.ibm.com/topics/what-is-blockchain), [cryptocurrency](https://www.nerdwallet.com/article/investing/cryptocurrency) is the most popular concept discussed worldwide. 
+In the [blockchain](https://www.ibm.com/topics/what-is-blockchain) world, [cryptocurrency](https://www.nerdwallet.com/article/investing/cryptocurrency) is the most popular concept discussed worldwide. 
 <!--more-->
 However, the [smart contracts](https://www.ibm.com/topics/smart-contracts) concept is catching up with the pace in this digital economy.
 
-The smart contracts' benefits cut across various insurance, healthcare, and logistics industries. However, the dilemma remains whether smart contracts are what they are presumed to be?
-
-There is no doubt that smart contracts will be helpful in the future. However, it is better to separate the truth from the hype.
-
-The technology has much potential. However, there are still technological and legal factors limiting its successful implementation.
+The smart contracts' benefits cut across various insurance, healthcare, and logistics industries. However, the dilemma remains whether smart contracts are what they are presumed to be. There is no doubt that smart contracts will be helpful in the future. However, it is better to separate the truth from the hype. The technology has much potential. However, there are still technological and legal factors limiting its successful implementation.
 
 This article will cover in detail the downsides associated with smart contracts.
 
 ### The concept of smart contracts in blockchain
-Smart contracts are algorithms that handle the automation of contracts. They make deal-making, selling realties, exchanging money, documents, and shares easy. Smart contacts implementation does not allow intermediary services to complete a transaction, and these intermediaries are brokers, agents, and notaries.
+Smart contracts are algorithms that handle the automation of contracts. They perform deal-making, sell realtors, and exchange money, documents, and shares easily. Smart contacts implementation does not allow intermediary services to complete a transaction. These intermediaries are brokers, agents, and notaries.
 
-Smart contracts refer to a program that runs once all involved parties meet specific terms. They use conditional statements that trigger an action to perform a given task. Technically, smart contracts can be described as [self-executing](https://www.geeksforgeeks.org/what-is-the-self-executing-function/) code. Developers can code the [business logic](https://www.investopedia.com/terms/b/businesslogic.asp) that instructs smart contracts before being deployed on the blockchain. Therefore smart contracts can be regarded as independent as they do not need third-party control.
+Smart contracts refer to a program that runs once all involved parties meet specific terms. They use conditional statements that trigger an action to perform a given task. Technically, smart contracts can be described as [self-executing](https://www.geeksforgeeks.org/what-is-the-self-executing-function/) code. Developers can code the [business logic](https://www.investopedia.com/terms/b/businesslogic.asp) that instructs smart contracts before being deployed on the blockchain. Therefore, smart contracts can be regarded as independent as they do not need third-party control.
 
 Smart contracts are popular because they are independent. However, they tend to lack centralized control, meaning the software can enforce its provisions without a trusted third party.
 
@@ -44,13 +40,13 @@ We can assume a landlord renting a house to understand these elements better. We
 The three parts of the contract will follow below:
 
 #### The offer
-The [offer](https://www.upcounsel.com/what-is-an-offer-in-law-of-contract) will represent the promise we gave to the landlord that we will pay $30 every week for three weeks. An offer indicates the obligations between two parties, giving an exchange of value between them.
+The [offer](https://www.upcounsel.com/what-is-an-offer-in-law-of-contract) will represent the promise we give to the landlord that we will pay $30 every week for three weeks. An offer indicates the obligations between two parties, giving an exchange of value between them.
 
 #### The acceptance
 [Acceptance](https://www.upcounsel.com/elements-of-acceptance-in-contract-law) refers to the agreement between the terms offered by one party. In our example, the landlord would agree to rent the house for three weeks, provided we pay $30 each week.
 
 #### The transaction
-In the [transaction](https://smallbusiness.chron.com/contractual-transaction-marketing-33390.html) stage, each party honors its obligations as per the agreement. In our example, we pay our $30 as the house rent, and the landlord rents us the house. This is the stage where the performance of the contract is realized.
+In the [transaction](https://smallbusiness.chron.com/contractual-transaction-marketing-33390.html) stage, each party honors its obligations as per the agreement. In our example, we pay our $30 as the house rent, and the landlord rents us the house.It is the stage where the performance of the contract is realized.
 
 If the landlord fails to rent us the house key after payment, it will violate the contract. The same happens if we refuse to honor the payment for the second week after completing the first one.
 
@@ -65,7 +61,8 @@ Smart contracts work the same as vending machines, and the only difference is th
 
 ### Reasons for smart contract's popularity
 Smart contracts come with several advantages, as highlighted below:
-- **Transparency:** This happens by monitoring the transactions between the parties undertaking the contract in a blockchain. This ensures there is transparency between the transactions.
+
+- **Transparency:** It happens by monitoring the transactions between the parties undertaking the contract in a blockchain. This ensures there is transparency between the transactions.
 - **Immutability:** Smart contracts cannot be changed or tampered with by any parties or creators. Its rules cannot be changed or overwritten once the contract has been hosted on the blockchain ledger. Thus, making smart contacts useful.
 - **Manages transactions:** As mentioned earlier, parties or companies cannot change the contract’s agreement terms once it has gone live. This is useful in handling different transactions in the blockchain. Fast processing of transactions occurs since smart contracts utilize simple logic to perform that. Also, users are assured that their claims will be processed faster, leading to quick payouts.
 - **Minimal paperwork:** Smart contracts ensure reduced paperwork involved as it does not need the lawyers to set up an agreement. Also, less time is involved as no pre-contract talks are involved in the agreements.
@@ -74,7 +71,7 @@ Smart contracts come with several advantages, as highlighted below:
 As we have seen, smart contracts are helpful, but also they face problems, as explained in this section.
 
 #### External data issues
-For a smart contract to execute, it must be provided prior information. For example, a smart contract can indicate that Person A should receive money from Person B after paying for given goods. The smart contract would need to have prior information about when the goods are arriving. Then it can proceed to process the payment for Person A. 
+For a smart contract to execute, it must be provided prior information. For example, a smart contract can indicate that `Person A` should receive money from `Person B` after paying for given goods. The smart contract would need to have prior information about when the goods are arriving. Then it can proceed to process the payment for `Person A`. 
 
 However, blockchain is not allowed to communicate outside the network. This presents a challenge to smart contracts. To curb this challenge, smart contract developers use [oracles](https://ethereum.org/en/developers/docs/oracles). Oracles are the applications that fetch data from outside. Then the data is fed on the blockchain for smart contacts to use. In the above example we highlighted, an oracle can assist in feeding data from an external source. It would, in turn, help the smart contract to examine if the product has been delivered.
 
