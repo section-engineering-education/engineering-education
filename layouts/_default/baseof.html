@@ -16,7 +16,7 @@
 
       {{- block "navigation" . -}}
         {{/* Use this block to override the navigation for any layout */}}
-          {{- partial "components/header" . -}}
+          {{- partialCached "components/header" . .IsHome -}}
       {{- end -}}
 
       <div class="main-wrapper fill-white xs-mt-80">
