@@ -48,11 +48,10 @@ We will first build a spam classifier model with natural language processing wit
 - [References](#references)
 
 ### Prerequisites
-Ensure you know the following concepts to follow along easily and understand the tutorial:
-
-- Know [Python Programming] (https://www.w3schools.com/python/) concepts.
-- Know natural language concepts and how to [implemment an NLP model](/engineering-education/building-autocorrect-feature-using-nlp-with-python/).
-- Understand [machine learning modelling] (/engineering-education/house-price-prediction/) and other related concepts.
+To follow along easily and understand the tutorial, ensure you know the following concepts:
+- [Python Programming](https://www.w3schools.com/python/) concepts.
+- Natural language concepts and how to [implement an NLP model](/engineering-education/building-autocorrect-feature-using-nlp-with-python/).
+- Understand [machine learning modelling](/engineering-education/house-price-prediction/) and other related concepts.
 - Implement the spam classification model in [Google Colab](https://research.google.com/colaboratory/) to get the same results.
 
 ### Spam classification dataset
