@@ -4,9 +4,9 @@ status: publish
 published: true
 url: /unit-testing-with-vue-test-utils/
 title: Unit Testing with Vue-test-utils
-description: This article will teach you how to write unit tests with the [Vue-test-utils](https://v1.test-utils.vuejs.org/) library.
+description: This article will teach the reader how to write unit tests with the Vue-test-utils library. Vue-test-utils is a testing library that is built on Jest.
 author: mercy-bassey
-date: 2022-04-08T00:00:00-08:40
+date: 2022-04-19T00:00:00-17:40
 topics: [Languages]
 excerpt_separator: <!--more-->
 images:
@@ -14,9 +14,9 @@ images:
   - url: /engineering-education/unit-testing-with-vue-test-utils/hero.png
     alt: Vue 3 Unit Testing Jest
 ---
-There are different frameworks for building apps; there are various libraries for writing unit tests. But when it comes to the Vue framework, [Vue-test-utils](https://v1.test-utils.vuejs.org/) is the most preferred library.
+There are different frameworks for building apps and there are various libraries for writing unit tests. But when it comes to the Vue framework, [Vue-test-utils](https://v1.test-utils.vuejs.org/) is the most preferred library.
 <!--more-->
-Vue-test-utils is a testing library that is built on Jest. Its concept is like that of Jest, so it's elementary to catch up with if you are already familiar with Jest. 
+Vue-test-utils is a testing library that is built on Jest. Its concept is like that of Jest, so it's easy to catch up with if you are already familiar with Jest. 
 
 This article will teach you how to write unit tests with the [Vue-test-utils](https://v1.test-utils.vuejs.org/) library. 
 
@@ -24,17 +24,16 @@ This article will teach you how to write unit tests with the [Vue-test-utils](ht
 To follow this article, you need to have the following:
 - Node.js, locally installed.
 - An IDE that supports Vue.js or just a text editor.
-- A basic understanding of the Vue3  composition API.
+- A basic understanding of the Vue3 composition API.
 
 ### Scaffolding
 For illustration purposes, I recommend that you [download]((https://github.com/mercybassey/vuetestutils-starter-project)) the starter project we will be using in this tutorial.
 
 The starter project consists of:
-
-- The `GithubUser` component:-This component displays the result of a searched `Github` user.
-- The `GithubUsers` component:- This component displays the list of all Github users.
-- Home view:- This page serves as the main component of our application.
-- Details view:- This page displays the details of each Github user.
+- The `GithubUser` component: This component displays the result of a searched `Github` user.
+- The `GithubUsers` component: This component displays the list of all Github users.
+- Home view: This page serves as the main component of our application.
+- Details view: This page displays the details of each Github user.
 
 Our test scenarios will be to:
 - Write a sanity test.
@@ -58,11 +57,11 @@ With `vue-test-utils` successfully installed; you should have the following in y
 - The `jest.config` file contains the configuration settings for jest to work with Vue.
 
 #### Writing a sanity test
-The first test we will be writing is called a sanity test. In some cases, a test may not fail because anything is wrong with our code; it can be because the tools we are using are not working correctly.
+The first test we will be writing is called a sanity test. In some cases, a test may fail not because anything is wrong with our code; but because the tools we are using are not working correctly.
 
 Therefore, we need a way to verify that it's the tool that failed and not our tests. 
 
-A clever way to tackle this issue is to write a test that will always pass. And if it doesn't, we will know that our problem is from the tools and not our codebase. 
+A clever way to tackle this issue is to write a test that will always pass. And if it doesn't, we will know that our problem is with the tools and not our codebase. 
 
 This is what is called a sanity test. Moreover, it is highly recommended that you write a sanity test as your first test.
 
@@ -94,10 +93,10 @@ Ran all test suites.
 
 The above output shows that our sanity test passed. Therefore, we can now proceed to the next phase of our test.
 
-#### Test our `views/DetailsView.vue` component for text content
+#### Test our 'views/DetailsView.vue' component for text content
 Currently, in the `DetailsView.vue` component, we have an `h1` tag with `This is the details Page` inside it. 
 
-> NOTE: the text in your case may be different. However, the concepts should be the same.
+> NOTE: The text in your case may be different. However, the concepts should be the same.
 
 We'll write a test that checks if the component renders the text content inside it.
 
@@ -174,7 +173,7 @@ Ran all test suites.
 
 The above output shows that our test passed.                         
 
-#### Test our `components/GithubUser.vue` component for props
+#### Test our 'components/GithubUser.vue' component for props
 The next component we will be testing is the `components/GithubUser.vue` component. 
 
 This component relies on the `HomeView` component to pass down the data. The data that powers this component comes from a `prop` called `userInfo` in the' script' block.
@@ -324,7 +323,7 @@ const wrapper = shallowMount(GithubUser, {
        });
 ```
 
-After making these changes, this is what the complete code looks like:
+After making these changes, this is what the complete code will look like:
 ```javascript
 import {shallowMount, RouterLinkStub} from '@vue/test-utils';
 import GithubUser from '@/components/GithubUser.vue'
@@ -364,16 +363,16 @@ Ran all test suites.
 
 In the above output, we see that our test passed, and there are no warnings.
 
-#### Test if a specific element in our `GithubUser.vue` component is rendered
+#### Test if a specific element in our 'GithubUser.vue' component is rendered
 We can improve our test for specificity to check if the component renders the name of a `Github user` in a specific location in our `GithubUser.vue` component. 
 
-The `wrapper` API comes with a function for selecting elements in a component. You can think of it as a function similar to the `querySelector` function. 
+The `wrapper` API comes with a function to select elements in a component. You can think of it as a function similar to the `querySelector` function. 
 
 We'll first create a `githubUser` property with the value `wrapper.find()` that takes in a `CSS` query selector to find the element.
 
 In our case, the `Github user` name is found in a `p` tag with a class of `user-name`. So the `CSS` query selector will be `.user-name`.
 
-Let's modify our code to use the  `find()` function.
+Let's modify our code to use the `find()` function.
 
 In the `githubuser.spec.js` file, add the code below, above the assertion.
 ```javascript
@@ -417,7 +416,7 @@ Run the command below to run this test:
 npm run test:unit
 ```
 
-With the test report below, our test passed. So we are confident that the element we accessed only have the name of a `Github user` inside it.
+With the test report below, our test passed. So we are confident that the element we accessed only has the name of a `Github user` inside it.
 ```bash
 PASS  tests/unit/githubuser.spec.js (8.467 s)
 PASS  tests/unit/details.spec.js
@@ -430,7 +429,7 @@ Time:        25.894 s
 Ran all test suites.
 ```
 
-#### Test if our `views/HomeView.vue` is rendering lists of users
+#### Test if our 'views/HomeView.vue' is rendering lists of users
 Our next test is to check if our `HomeView` component renders the list of all `Github Users`. 
 
 In the `tests/unit` directory, create a new test file called `homeview.spec.js`.
@@ -450,8 +449,7 @@ describe('HomeView.vue', () => {
 
 In the `HomeView` component, we have a reactive property called `users` set to an empty array. 
 
-The `users` variable gets filled when we make request to the `Github users` API in the `onMounted` life cycle function. 
-Therefore, we will not rely on this request to add data to the variable. 
+The `users` variable gets filled when we make request to the `Github users` API in the `onMounted` life cycle function. Therefore, we will not rely on this request to add data to the variable. 
 
 Sending `HTTP` requests in a test can be unreliable. This is something we have to avoid as the request may fail. 
 
@@ -479,13 +477,9 @@ const wrapper = shallowMount(HomeView, {
         });
 ```
 
-The next step is to select the list of users in the component. 
+The next step is to select the list of users in the component. For example, if you look at our `views/HomeView.vue` component, the component looped through to generate the lists of users is the `GithubUsers.vue` component.
 
-For example, if you look at our `views/HomeView.vue` component, the component looped through to generate the lists of users is the `GithubUsers.vue` component.
-
-So, we might want to import this component as we will need it in our test. 
-
-At the top of the `homeview.spec.js` file, import the `GithubUsers.vue` component:
+So, we might want to import this component as we will need it in our test. At the top of the `homeview.spec.js` file, import the `GithubUsers.vue` component:
 ```javascript
 import GithubUsers from '@/components/GithubUsers.vue'
 ```
@@ -625,7 +619,7 @@ describe('HomeView.vue', () => {
 
 ```
 
-With that done, we'll have our test to pass without warning:
+With that done, our test will pass without warning:
 ```bash
 PASS  tests/unit/homeview.spec.js (8.765 s)
 PASS  tests/unit/githubuser.spec.js
@@ -639,10 +633,8 @@ Time:        18.507 s
 Ran all test suites.
 ```
 
-#### Test if our `views/HomeView.vue` component can search for users.
-Finally, we want to test if our `views/HomeView.vue` component can search for `Github users`. 
-
-So, in the `homeview.spec.js` file, we will write another test inside the describe function with a description of `search for users`. 
+#### Test if our 'views/HomeView.vue' component can search for users.
+Finally, we want to test if our `views/HomeView.vue` component can search for `Github users`.  In the `homeview.spec.js` file, we will write another test inside the describe function with a description of `search for users`. 
 
 In our `HomeView.vue` component, the component that displays the searched user information is the `GithubUser.vue` component.
 
@@ -671,7 +663,7 @@ it('search for user',  async () => {
     })
 ```
 
-The overall code looks like this:
+The overall code should look like this:
 ```javascript
 import {shallowMount, mount} from '@vue/test-utils';
 import GithubUsers from '@/components/GithubUsers.vue'
@@ -737,13 +729,11 @@ Ran all test suites.
 ```
 
 ### Conclusion
-In this article, you've learned how to test different bits and pieces of our project with the `vue-test-utils` library.
+In this article, you've learned how to test different bits and pieces of our project with the `vue-test-utils` library. This is a head start to getting up and running with the `vue-test-utils` library. 
 
-This is a head start to getting up and running with the `vue-test-utils` library. 
+There's a lot more you can achieve with this library and its usefulness is terrific as far as the Vue framework is concerned.
 
-Although there's a lot more you can achieve with this library, its usefulness is terrific as far as the Vue framework is concerned.
-
-I recommend that you make references to the `[Jest](https://jestjs.io/docs/)`  and `[vue-test-utils](https://v1.test-utils.vuejs.org/)` libraries documentation, respectively if you'd like to dive in deeper on how to utilize them in your Vue projects.
+I recommend that you make references to the `[Jest](https://jestjs.io/docs/)` and `[vue-test-utils](https://v1.test-utils.vuejs.org/)` libraries documentation, respectively if you'd like to dive in deeper on how to utilize them in your Vue projects.
 
 Again, it's all Jest working under the hood. 
 
