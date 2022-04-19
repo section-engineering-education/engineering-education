@@ -5,4 +5,4 @@ github: https://github.com/ephnjor2021
 images:
   - url: /engineering-education/authors/ephraim-njoroge/avatar.jpg 
 ---
-Ephraim is a Computer Science specialist, passionate about Cloud and Web technologies and developing Web solutions, Machine Learning and Artificial Intelligence. He is open to research and collaborations.
+Ephraim is a Computer Science specialist, passionate about Cloud, Web solutions, Machine Learning and Artificial Intelligence. He is open to research and collaborations.
