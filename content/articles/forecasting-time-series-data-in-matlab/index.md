@@ -5,8 +5,8 @@ status: publish
 published: true
 url: /implementing-gan-from-scratch/
 title: How to forecast time series data using Neural Network toolbox in Matlab
-description: In this tutorial, we will look at the general view of neural networks and see how to use Neural Network toolbox to implement neural networks. 
-author: 
+description: In this tutorial, we will look at the general view of neural networks and see how to use the Neural Network toolbox to implement neural networks. 
+author: linet-achieng
 date: 2022-03-29T00:00:00-18:00
 topics: [Machine Learning]
 excerpt_separator: <!--more-->
@@ -141,7 +141,7 @@ Once this is done, we click the `finish` button to complete this whole process.
 That is how easy it is to use this neural network toolbox in Matlab. The advantage of this tool is that the interface is user friendly.
 
 ### Conclusion
-Using the neural network toolbox is very easy. It has an interface that even beginners can use. To use this toolbox, you need an advanced understanding of your dataset. Apart from that, understanding the machine learning concept is very important. However, it will make it possible to attain better performance. Also, to use this toolbox, you don't need to understand the generated script. We only need to ensure that the output results attained by our network is good and then generate the script.
+Using the neural network toolbox is very easy. It has an interface that even beginners can use. To use this toolbox, you need an advanced understanding of your dataset. Apart from that, understanding the machine learning concept is very important. However, it will make it possible to attain better performance. Also, to use this toolbox, you don't need to understand the generated script. We only need to ensure that the output results attained by our network are good and then generate the script.
 
 ---
 Peer Review Contributions by: [Lalithnarayan C](/engineering-education/authors/lalithnarayan-c/)
