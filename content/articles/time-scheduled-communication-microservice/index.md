@@ -4,7 +4,7 @@ status: publish
 published: true
 url: /time-scheduled-communication-microservice/
 title: Building a Time Scheduled Communication Micro-service
-description: This article will guide the reader on how to build a Node.js application that automatically sends messages at a predefined time interval.
+description: This article will guide the reader on how to build a Node.js application, configure Twilio on that application and have it automatically sends messages at a predefined time interval.
 author: kennedy-mwangi
 date: 2022-04-19T00:00:00-17:33
 topics: [Node.js, Languages]
