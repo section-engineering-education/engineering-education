@@ -350,7 +350,7 @@ data_drift_output
 ```
 It gives the following output:
 
-![Checkinge data drift](/engineering-education/model-monitoring-and-detecting-drifts-in-machine-learning-models-using-deepchecks/checking-data-drift.png)
+![Checking data drift](/engineering-education/model-monitoring-and-detecting-drifts-in-machine-learning-models-using-deepchecks/checking-data-drift.png)
 
 The output above shows the drift score using the `emp.var.rate` variable (an input feature). This variable gives a drift score of less than 0.1. It implies that there is no data drift.
 
