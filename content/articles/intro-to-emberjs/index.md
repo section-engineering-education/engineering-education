@@ -4,7 +4,7 @@ status: publish
 published: true
 url: /intro-to-emberjs/
 title: Introduction to EmberJS
-description: This tutorial will walk the reader through an introduction of Ember.js is a free JavaScript web framework that follows the Model–View–View Model (MVVM) architecture.
+description: This tutorial will walk the reader through an introduction to EmberJS, a JavaScript web framework that follows the Model–View–View Model (MVVM) architecture.
 author: dev-verma
 date: 2022-04-20 T00:00:00-01:59
 topics: [languages]
@@ -12,10 +12,10 @@ excerpt_separator: <!--more-->
 images:
 
   - url: /engineering-education/intro-to-emberjs/hero.jpg
-    alt: Introduction to Ember JS Hero Image
+    alt: Introduction to EmberJS Hero Image
 ---
 Ember.js is a free JavaScript client-side framework for designing web apps that is open source. 
-
+<!--more-->
 It is a component-service framework that focuses on a layer-by-layer application development experience using precise components while maintaining a light layer on top of JavaScript. 
 
 Ember also includes a lot of backward and forward compatibilities, which makes it easier for businesses to keep up with the latest Ember versions and community-driven practices.
@@ -44,9 +44,11 @@ A component-service framework is a popular strategy adopted by companies to crea
 ### Ember tool installation
 Ember builds and scaffolds sections of your application using a command-line interface (CLI) tool.
 
--  Before you can install `ember-cli`, you'll need to have node and npm installed. You can download them using this [link](https://nodejs.org/en/download/) to the official docs.
+- Before you can install `ember-cli`, you'll need to have node and npm installed. 
 
--  To install `ember-cli`, run the following on your terminal:
+You can download them using this [link](https://nodejs.org/en/download/) to the official docs.
+
+- To install `ember-cli`, run the following on your terminal:
 
 ```bash
  npm install -g ember-cli
@@ -85,7 +87,7 @@ This creates an application development environment that is ready for production
 Now after getting some idea about ember, let's see an example that will further clarify your idea about this amazing framework.
 
 
-###  Difference between React JS and Ember JS
+###  Difference between ReactJS and EmberJS
 
 ####  Performance
 **React**
@@ -139,8 +141,7 @@ To know more about React here is the [link](https://reactjs.org/) to the officia
 ###  Conclusion        
 EmberJS allows us to focus on building amazing applications without worrying about the massive overhead that is required to keep an application up and running. To find more information about Ember JS check out the official docs via this [link](https://guides.emberjs.com/release/tutorial/part-1/)
 
-Happy coding.
+Happy coding!
 
-
-
-
+---
+Peer Review Contributions by: [Jethro Magaji](/engineering-education/authors/jethro-magaji/)
