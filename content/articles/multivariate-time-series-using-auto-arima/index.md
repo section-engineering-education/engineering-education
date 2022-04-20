@@ -6,7 +6,7 @@ url: /multivariate-time-series-using-auto-arima/
 title: Multivariate time series using Auto ARIMA
 description: This tutorial will show a reader how to build a multivariate time series model using Auto ARIMA.
 author: james-omina
-date: 2022-04-09T00:00:00-21:00
+date: 2022-04-20T00:00:00-21:00
 topics: [Machine Learning]
 excerpt_separator: <!--more-->
 images:
@@ -36,12 +36,12 @@ In this tutorial, we will build on a multivariate time series model. The model w
 - [Imputing missing values](#imputing-missing-values)
 - [Dataset resampling](#dataset-resampling)
 - [Implementing the Auto ARIMA model](#implementing-the-auto-arima-model)
-- [Initialize 'auto_arima()' function](#initialize-autoarima-function)
+- [Initialize the auto arima function](#initialize-the-auto-arima-function)
 - [Splitting the time series dataset](#splitting-the-time-series-dataset)
 - [Fitting the Auto ARIMA model](#fitting-the-auto-arima-model)
 - [Using the Auto ARIMa model to make predictions](#using-the-auto-arima-model-to-make-predictions)
-- [Making prediction on the test data frame](#making-prediction-on-the-test-data-frame)
-- [Making prediction on the unseen future time series values](#making-prediction-on-the-unseen-future-time-series-values)
+- [Predicting the test data frame](#predicting-the-test-data-frame)
+- [Predict the unseen future time series values](#predict-the-unseen-future-time-series-values)
 - [Plotting the future predicted values](#plotting-the-future-predicted-values)
 - [Conclusion](#conclusion)
 - [References](#references)
@@ -60,14 +60,14 @@ For a reader to understand the time series concepts explained in this tutorial, 
 Auto ARIMA automatically finds the best parameters of an ARIMA model. To easily understand this tutorial, you have to understand the concepts of the ARIMA model. We will discuss the ARIMA model for a beginner to understand this tutorial easily.
 
 ### Understanding the ARIMA model
-Auto-Regressive Integrated Moving Average(ARIMA) is a time series model that identifies hidden patterns in time series values and makes predictions. For example, an ARIMA model can predict future stock prices after analyzing previous stock prices. Also, an ARIMA model assumes that the time series data is [stationary](https://towardsdatascience.com/stationarity-in-time-series-analysis-90c94f27322). Before implementing the ARIMA model, we will remove the non-stationarity components in the time series.
+Auto-Regressive Integrated Moving Average (ARIMA) is a time series model that identifies hidden patterns in time series values and makes predictions. For example, an ARIMA model can predict future stock prices after analyzing previous stock prices. Also, an ARIMA model assumes that the time series data is [stationary](https://towardsdatascience.com/stationarity-in-time-series-analysis-90c94f27322). Before implementing the ARIMA model, we will remove the non-stationarity components in the time series.
 
 ### How to remove non-stationarity components in a time series
 A non-stationary time series is a series whose properties change over time. A non-stationary time series has trends and seasonality components. Removing the non-stationarity in a time series will make it stationary and apply the ARIMA model. 
 
 The properties of time series that should remain constant are variance and mean. Making these properties remain constant will remove the trend and seasonal components. We remove non-stationarity in a time series through differencing.
 
-Differencing technique subtracts the present time series values from the past time series values. We may have to repeat the process of differencing multiple times until we output a stationary time series.
+The differencing technique subtracts the present time series values from the past time series values. We may have to repeat the process of differencing multiple times until we output a stationary time series.
 
 An ARIMA model has three initials: AR, I, and MA. These initials represent the three sub-models that form a single uniform model. The function of the initials is as follows:
 
@@ -79,7 +79,7 @@ They have the following functionalities:
 This sub-model uses the past values to make future predictions.
 
 - Integrated sub-model
-This submodel performs differencing to remove any non-stationarity in the time series.
+This sub-model performs differencing to remove any non-stationarity in the time series.
 
 - Moving Average sub-model
 It uses past errors to make a prediction.
@@ -100,9 +100,7 @@ The process of using statistical plots is usually hectic and time-consuming. Man
 Auto ARIMA automatically generates the optimal parameter values (p,d, and q). The generated values are the best, and the model will give accurate forecast results. Auto ARIMA will simplify building a time series model using the ARIMA model. Now we know how an ARIMA works and how Auto ARIMA applies its concepts. We will start exploring the time series dataset.
 
 ### Energy consumption dataset
-We will use the energy consumption dataset to build the Auto ARIMA model. The dataset shows the energy demand from 2012 to 2017 recorded in an hourly interval. 
-
-Download the time series dataset using this [link](https://drive.google.com/file/d/1l5MhAnlBYdp5Dk7EvcxzfGJFpvrwbbuw/view?usp=sharing). After downloading the time series dataset, we will load it using Pandas.
+We will use the energy consumption dataset to build the Auto ARIMA model. The dataset shows the energy demand from 2012 to 2017 recorded in an hourly interval. Download the time series dataset using this [link](https://drive.google.com/file/d/1l5MhAnlBYdp5Dk7EvcxzfGJFpvrwbbuw/view?usp=sharing). After downloading the time series dataset, we will load it using the `Pandas` library.
 
 ```python
 import pandas as pd
@@ -122,7 +120,7 @@ Energy consumption dataset output:
 
 ![Energy consumption dataset](/engineering-education/multivariate-time-series-using-auto-arima/energy-consumption-dataset.png)
 
-From this output, the `timeStamp`, `demand`, `precip` and `temp` columns. The columns are the variables that will build the time series model. The time series is multivariate since it has three-time dependent variables (`demand`, `precip`, and `temp`). They have the following functions:
+From this output, we have the `timeStamp`, `demand`, `precip` and `temp` columns. The columns are the variables that will build the time series model. The time series is multivariate since it has three-time dependent variables (`demand`, `precip`, and `temp`). They have the following functions:
 - The `timestamp` column shows the time of recording. 
 - The `demand` column shows the hourly energy consumption. 
 - The `precip` and `temp` columns correlate with the `demand` column. 
@@ -145,6 +143,10 @@ To plot the `demand` column, use the following code:
 fig = px.line(df, x='timeStamp', y='demand', title='Energy Consumption')
 
 fig.update_xaxes(
+    rangeslider_visible=True,
+    rangeselector=dict(
+        buttons=list([
+            dict(step="all")
         ])
     )
 )
@@ -214,7 +216,7 @@ From the output above, we have handled the missing values.
 ### Dataset resampling
 The time series has many data points that may be difficult to analyze and visualize each data point. We need to resample the time by compressing and aggregating it to monthly intervals. We will have fewer data points that are easier to analyze. 
 
-The `resample` method will aggregate all the data points in the time series and change them to monthly intervals. 
+The `resample()` method will aggregate all the data points in the time series and change them to monthly intervals. 
 
 ```python
 el_df.resample('M').mean()
@@ -227,7 +229,8 @@ Let's plot new subplots of the resampled dataset.
 
 ### Plotting new subplots
 We plot the new subplot as follows:
-```pyton
+
+```python
 el_df.resample('M').mean().plot(subplots=True)
 ```
 ![New subplots](/engineering-education/multivariate-time-series-using-auto-arima/new-subplots.png)
@@ -243,12 +246,12 @@ final_df=el_df.resample('M').mean()
 We will use this dataset to train the time series model. We can now start implementing the Auto ARIMA model.
 
 ### Implementing the Auto ARIMA model
-We implement the Auto ARIMA model using the [`pmdarima`](https://pypi.org/project/pmdarima/) time-series library. This library provides the `auto_arima()` function that automatically generates the optimal parameter values. 
+We implement the Auto ARIMA model using the [pmdarima](https://pypi.org/project/pmdarima/) time-series library. This library provides the `auto_arima()` function that automatically generates the optimal parameter values. 
 
-To install the `pmdarima`, use this command:
+To install `pmdarima`, use this command:
 
 ```bash
-! pip install pmdarima
+!pip install pmdarima
 ```
 After the installation, we import it as follows:
 
@@ -257,7 +260,7 @@ import pmdarima as pm
 ```
 The next step is to initialize the  `auto_arima()` function.
 
-### Initialize 'auto_arima()' function
+### Initialize the auto arima function
 We initialize the  `auto_arima()` function as follows:
 
 ```python
@@ -286,9 +289,7 @@ It represents the minimum `q` value that the function can select during the rand
 It represents the maximum `p`, `d`, and `q` values that the model can select during the random search.
 
 - `test='adf'`
-It is an Augmented Dickey-Fuller (ADF) test to check for stationarity in our dataset. 
-
-If the dataset is non-stationary after the ADF test, the `auto_arima()` function will automatically generate the `d` value for differencing. If the dataset is stationary, it sets d=0 (no need for differencing).
+It is an Augmented Dickey-Fuller (ADF) test to check for stationarity in our dataset. If the dataset is non-stationary after the ADF test, the `auto_arima()` function will automatically generate the `d` value for differencing. If the dataset is stationary, it sets d=0 (no need for differencing).
 
 - `suppress_warnings=True`
 It ignores the warnings during the parameter searching. 
@@ -302,7 +303,7 @@ When you run this code, the function will randomly search the parameters and pro
 
 From the output above, the best model is ARIMA(1,0,1) (p=1, d=0, and q=1). The function automatically sets d=0 because the ADF test found the dataset is stationary.
 
-We had previously observed the time series dataset plots to have seasonality. We, therefore, thought the time series was non-stationary hence a need for differencing. 
+We had previously observed the time series dataset plots to have seasonality. Therefore, we thought the time series was non-stationary, hence a need for differencing. 
 
 But using the ADF test, which is a statistical test, found the seasonality is insignificant. ADF test is more accurate than observing/visualizing the plots. That is why the function sets d=0, and there is no need for differencing.
 
