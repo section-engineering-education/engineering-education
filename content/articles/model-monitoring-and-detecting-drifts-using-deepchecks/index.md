@@ -4,9 +4,9 @@ status: publish
 published: true
 url: /model-monitoring-and-detecting-drifts-using-deepchecks/
 title: Model monitoring and detecting drifts in machine learning models using Deepchecks
-description: In this tutorial, we will build a customer classification model and implement Deepchecks to detect any model drifts
+description: This tutorial will show our readers how to build a customer classification model and implement Deepchecks to detect any model drifts
 author: simon-ndiritu
-date: 2022-04-20T00:00:00-15:30
+date: 2022-04-21T00:00:00-15:30
 topics: [Machine Learning]
 excerpt_separator: <!--more-->
 images:
@@ -178,7 +178,7 @@ After the installation process, we import the library using this code:
 ```python
 import deepchecks
 ```
-Deepchecks library has various methods that monitor our model and detect any model drifts. To list these methods, use this code:
+The `Deepchecks` library has various methods that monitor our model and detect any model drifts. To list these methods, use this code:
 
 ```python
 dir(deepchecks)
