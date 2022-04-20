@@ -1,8 +1,6 @@
 # engineering-education
 “Section's Engineering Education (EngEd) Program is dedicated to offering a unique quality community experience for computer science university students." 
 
- Our EngEd published content can be found at [https://www.section.io/engineering-education/](https://www.section.io/engineering-education/).
-
 [ENROLL HERE](https://docs.google.com/forms/d/e/1FAIpQLSfTbj3kqvEJEb5RLjqJurfbHa8ckzQx0CjRzaizblue9ZOK5A/viewform?usp=sf_link)
 
 ### Program Purpose
