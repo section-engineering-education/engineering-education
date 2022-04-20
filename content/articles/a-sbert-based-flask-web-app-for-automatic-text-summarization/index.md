@@ -95,7 +95,7 @@ In the `index.html` file, i included the below html code. The code consists of a
 ```
 The page looks like this:
 
-![Home page](/section-engineering/a-sbert-based-flask-web-app-for-automatic-text-summarization/result.png )
+![Home page](/engineering-education/a-sbert-based-flask-web-app-for-automatic-text-summarization/result.png )
 
 To display a summary of the input text from the `index.html` page, then the `summary.html` file comes in. 
 
@@ -134,7 +134,7 @@ The `summary.html` file contains the below html code:
 ```
 The page looks like this:
 
-![Summary page](/section-engineering/a-sbert-based-flask-web-app-for-automatic-text-summarization/summarized.png )
+![Summary page](/engineering-education/a-sbert-based-flask-web-app-for-automatic-text-summarization/summarized.png )
 
 #### Step Three: Back-End coding
 In your project folder, create a file named `app.py` and should contain the below code.
@@ -193,20 +193,20 @@ python app.py
 ```
 In your terminal, a warning message will be displayed.
 
-![Terminal](/section-engineering/a-sbert-based-flask-web-app-for-automatic-text-summarization/terminal.png )
+![Terminal](/engineering-education/a-sbert-based-flask-web-app-for-automatic-text-summarization/terminal.png )
 
 In your browser, search the given web address:
 http://127.0.0.1:8000 
 
 
-![Result](/section-engineering/a-sbert-based-flask-web-app-for-automatic-text-summarization/result.png )
+![Result](/engineering-education/a-sbert-based-flask-web-app-for-automatic-text-summarization/result.png )
 
 #### Step Five:Testing 
 Enter text that you wish to be summarized and press summarize.
 
-![Before summarization](/section-engineering/a-sbert-based-flask-web-app-for-automatic-text-summarization/text.png )
+![Before summarization](/engineering-education/a-sbert-based-flask-web-app-for-automatic-text-summarization/text.png )
 
-![After summarization](/section-engineering/a-sbert-based-flask-web-app-for-automatic-text-summarization/summarized.png )
+![After summarization](/engineering-education/a-sbert-based-flask-web-app-for-automatic-text-summarization/summarized.png )
 
 ### Conclusion
 In this blog, we demonstrated how to effectively construct a Flask web application that utilizes SBERT to summarize a given piece of material. We constructed a virtual environment, installed packages, coded both the front-end and back-end of our web application, and finally launched it.
