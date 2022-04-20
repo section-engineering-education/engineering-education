@@ -203,7 +203,7 @@ plot2 = p.plot_components(forecast_prediction)
 
 This plot could give you a lot more information about the sales data. For instance, more sales are made between Friday and Monday. Also, they seem to make a lot of sales between November and February. During the rest of the year, sales are average.
 
-Ypu can find the complete code for this tutorial [here](https://colab.research.google.com/drive/1kmb4zguNvYZ4LqGQZAUhYgS_ZZNz-sMg?usp=sharing).
+You can find the complete code for this tutorial [here](https://colab.research.google.com/drive/1kmb4zguNvYZ4LqGQZAUhYgS_ZZNz-sMg?usp=sharing).
 
 ### Wrapping up
 That's sales forecasting using the Prophet model in a nutshell.

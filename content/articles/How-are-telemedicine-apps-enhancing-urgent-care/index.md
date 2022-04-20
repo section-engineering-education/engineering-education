@@ -5,7 +5,7 @@ published: true
 url: /how-are-telemedicine-apps-enhancing-urgent-care/
 title: How are Telemedicine Apps Enhancing Urgent Care?
 description: This article provides a solid argument on why telemedicine apps are significant to enhancing urgent care.
-author: ann-purity
+author: annpurity-kahuha
 date: 2022-03-12T00:00:00-10:03
 topics: [Languages]
 excerpt_separator: <!--more-->

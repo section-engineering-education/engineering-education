@@ -1,6 +1,6 @@
-## How to upload an article for Section’s Engineering Education Program:
+## How to upload an article for Section’s Engineering Education Program
 
-Video [playlist](https://share.vidyard.com/watch/bLqdEB6egXk9SqXJYQY4VX) explaining the upload instructions. Please follow along with the guide below. 
+Video [playlist](https://share.vidyard.com/watch/bLqdEB6egXk9SqXJYQY4VX) explaining the upload instructions. Please follow along with the guide below.
 
 **Prerequisites:**
 - Github account
@@ -33,7 +33,7 @@ Open the newly cloned repository in your text editor. It should look something l
 Note: When working with multiple articles simultaneously, it's best to create and work on separate branches for each article. (Here is a [short video](https://www.youtube.com/watch?v=oPpnCh7InLY&t=577s) on how Github Branches work.)
 
 ### Create article folder structure
-Within the articles folder (inside the content folder), create a new folder using the intended url for the article. (Reference existing folders' naming conventions.) 
+Within the articles folder (inside the content folder), create a new folder using the intended url for the article. (Reference existing folders' naming conventions.)
 
 Be sure to:
 - **Use all lowercase.**
@@ -44,12 +44,12 @@ Be sure to:
 
 ![create article folder](/static/images/create-article-folder.png)
 
-Within that article folder, upload your prepared .md file containing article contents using the filename `index.md`. Upload any corresponding image files referenced in your article. When referencing images, be sure to use the following naming convention with your newly created article directory. 
+Within that article folder, upload your prepared .md file containing article contents using the filename `index.md`. Upload any corresponding image files referenced in your article. When referencing images, be sure to use the following naming convention with your newly created article directory.
 
 For example:
-```
-![image title](/new-folder-name/image-name.jpg)
-```
+
+`![image title](/new-folder-name/image-name.jpg)`
+
 If you have a header (hero) image in mind, feel free to include it your PR as well. Please try to keep images as close to **600X400 pixels** (images can be resized using [Pixlr Image Editor](https://pixlr.com/e)) and make sure you have the appropriate copyright to use it. Sites like [Unsplash](https://unsplash.com) have Creative Commons images which you can use for free.
 
 Any images within the article need to be hosted on our site - (place the image in the proper folder) - and have the proper image paths in the article similar to the hero image and have citations (attribution) if required.
@@ -72,14 +72,15 @@ Open a pull request that includes the name of your article and a description of 
 ***Note***: Make sure your repository is up to date with the EngEd repository before contributing new articles.
 
 ### do this once
-git remote add section http://github.com/section-io/engineering-education
+`git remote add section http://github.com/section-io/engineering-education`
 
 ### then use this every time before contributing a new article to keep it up to date
+
+```bash
 git fetch section
-
 git pull --rebase section master
-
 git push origin
+```
 
 Here is a [link](https://www.youtube.com/watch?v=nT8KGYVurIU&t=47s) to a short video further explaining what a **pull request** is and how to **fork** a Github repository.
 
@@ -118,14 +119,14 @@ Within that a folder, upload your prepared .md file containing a short author de
 
 Add these files to the same PR (pull request).
 
-
 (See *screenshot* below for file structure.)
 
-![Author file structure example](/static/images/meta-image-frontmatter.PNG)
+![Author file structure example](/static/images/meta-image-frontmatter.png)
 
 ## File Structure - explained
 - title (Name of student - **Required**)
 - type (Authors file - **Required**)
+- authors (Authors RSS File - author's folder name - Optional)
 - github (GitHub URL - Optional)
 - linkedin (LinkedIn URL - Optional)
 - twitter (Twitter URL - Optional)
@@ -136,6 +137,4 @@ Add these files to the same PR (pull request).
 Congratulations! Your article is now ready to be submitted for review and approval by the Section team. Open a pull request and we'll be happy to review it.
 
 ## Post Publishing  
-After you have published your article with us - be sure to check on your content periodically to respond to any comments or questions that the audience may post. Please [sign up](https://auth.hyvor.com/signup/?redirect=https%3A%2F%2Ftalk.hyvor.com%2Fapi%2Fembed%2Flogin%3FwebsiteId%3D5716%26pageId%3D31662502%26isSignup%3D%255Bobject%2520PointerEvent%255D%26isLogout%3Dfalse) with HyvorTalk to reply to any comments or questions left on your articles. 
-
-
+After you have published your article with us - be sure to check on your content periodically to respond to any comments or questions that the audience may post. Please [sign up](https://auth.hyvor.com/signup/?redirect=https%3A%2F%2Ftalk.hyvor.com%2Fapi%2Fembed%2Flogin%3FwebsiteId%3D5716%26pageId%3D31662502%26isSignup%3D%255Bobject%2520PointerEvent%255D%26isLogout%3Dfalse) with HyvorTalk to reply to any comments or questions left on your articles.
