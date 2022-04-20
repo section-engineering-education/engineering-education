@@ -387,7 +387,7 @@ concept_drift_output
 ```
 It gives the following output:
 
-![Checkinge concept drift](/engineering-education/model-monitoring-and-detecting-drifts-in-machine-learning-models-using-deepchecks/checking-concept-drift.png)
+![Checking concept drift](/engineering-education/model-monitoring-and-detecting-drifts-in-machine-learning-models-using-deepchecks/checking-concept-drift.png)
 
 The output above shows the drift score using the `y` variable (it is the target/label). It gives a negligible drift score. Therefore, there is no concept drift. We have used the Deepchecks methods to monitor the model, get the model summary and detect the model drifts.
 
