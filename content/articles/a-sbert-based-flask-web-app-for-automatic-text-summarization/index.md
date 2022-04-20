@@ -211,6 +211,7 @@ Enter text that you wish to be summarized and press summarize.
 ### Conclusion
 In this blog, we demonstrated how to effectively construct a Flask web application that utilizes SBERT to summarize a given piece of material. We constructed a virtual environment, installed packages, coded both the front-end and back-end of our web application, and finally launched it.
 ### Reference
+- Find the code for this tutorial [here](https://github.com/FranciscaNg/A-Flask-Web-App-for-Automatic-Text-Summarization-Using-SBERT).
 - Build, Save and Deploy your first [Web App](https://medium.com/analytics-vidhya/build-save-and-deploy-your-first-web-app-using-flask-and-pythonanywhere-110ddd691026) using Flask.
 - Develop a NLP Model in Python & [Deploy It with Flask.](https://towardsdatascience.com/develop-a-nlp-model-in-python-deploy-it-with-flask-step-by-step-744f3bdd7776)
 - [Automated News Summarization with BERT-Powered Encoders](https://github.com/huydang90/News-Summarization-with-BERT)
