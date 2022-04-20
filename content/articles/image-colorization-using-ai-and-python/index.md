@@ -72,22 +72,31 @@ Next, we will need to download the pre-trained model.
 ### Performing colorization on old black and white photos 
 Let's now take black and white images and add some color to them. We will use old images of iconic buildings that still stand to date of the city of Nairobi, Kenya.
 
-Image one:
+Image of KICC:
 
 ![KICC](/engineering-education/image-colorization-using-ai-and-python/kicc.jpg)
 
-Image two:
+![New colored KICC](/engineering-education/image-colorization-using-ai-and-python/colored-kicc.png)
+
+Image of Nairobi:
 
 ![Nairobi](/engineering-education/image-colorization-using-ai-and-python/nairobi.jpg)
 
-Image three:
+![New colored Nairobi](/engineering-education/image-colorization-using-ai-and-python/colored-nairobi.png)
+
+Image of Stanley Hotel:
 
 ![New stanley hotel](/engineering-education/image-colorization-using-ai-and-python/new-stanley-hotel.jpg)
 
-Image four:
+![New colored stanley hotel](/engineering-education/image-colorization-using-ai-and-python/colored-stanley-hotel.png)
+
+Image of National Archives:
 
 ![National archives](/engineering-education/image-colorization-using-ai-and-python/national-archives.jpg)
 
+![Colored National archives](/engineering-education/image-colorization-using-ai-and-python/colored-national-archives.png)
+
+We can see that the Deoldify model has added some color onto our images. Of course, it's not perfect. But, this technology just goes on to show you what is capable with amazing technologies lies these.
 
 Please find the complete code for this tutorial [here](https://colab.research.google.com/drive/1bh15liSGDkUMwez4xNH1kG6ETFxQVlZ6?usp=sharing).
 
