@@ -511,5 +511,5 @@ You can check out the Python implementation of this tutorial in Google Colab [he
 - [Classification: Precision and Recall](https://developers.google.com/machine-learning/crash-course/classification/precision-and-recall)
 - [Imbalanced-learn documentation](https://imbalanced-learn.org/stable/)
 
-
-
+---
+Peer Review Contributions by: [Willies Ogola](/engineering-education/authors/willies-ogola/)
