@@ -1,3 +1,21 @@
+---
+layout: engineering-education
+status: publish
+published: true
+url: /implementing-undersampling-oversampling-and-smote-techniques-to-handle-imbalanced-data-in-deep-neural-networks/
+title: Implementing undersampling, oversampling and SMOTE techniques to handle imbalanced data in deep neural networks
+description: This tutorial will implement undersampling, oversampling, and SMOTE techniques to balance the dataset.
+author: willyngashu
+date: 2022-04-21T00:00:00-14:48
+topics: [Machine Learning]
+excerpt_separator: <!--more-->
+images:
+
+  - url: /engineering-education/implementing-undersampling-oversampling-and-smote-techniques-to-handle-imbalanced-data-in-deep-neural-networks/hero.jpg
+    alt: Handling imbalanced data in deep neural networks Hero image
+---
+In deep neural networks, the goal is always to implement various machine learning techniques to balance the classes before using the dataset. This tutorial will implement undersampling, oversampling, and SMOTE techniques to balance the dataset.
+<!--more-->
 A deep neural network is a type of artificial neural network that has many hidden layers. The hidden layers are sandwiched between the input and output layers.
 
 A deep neural network uses different datasets to produce a deep learning model. The final model can perform image classification, computer vision, and natural language processing.
