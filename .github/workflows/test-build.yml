@@ -1,0 +1,15 @@
+name: "Test site build"
+
+on:
+  pull_request:
+    branches: [ master ]
+
+jobs:
+  docker:
+    name: Run docker build
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out code
+        uses: actions/checkout@v2
+      - name: Run docker build
+        run: make build
