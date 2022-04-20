@@ -14,18 +14,18 @@ images:
  - url: /engineering-education/build-mern-stack-application-to-manage-isp/hero.jpg
    alt: Build a MERN stack application to manage ISP Hero Image
 ---
-In this tutorial, we will learn how to build a full stack web application using MongoDB, ExpressJS, ReactJS, and NodeJS (commonly referred as MERN stack).
+In this tutorial, we will learn how to build a full-stack web application using MongoDB, ExpressJS, ReactJS, and NodeJS (commonly referred to as MERN stack).
 <!--more-->
-We will build a customer management system for Internet Service Providers (ISPs), where an user can create, read, update, and delete customer information.
+We will build a customer management system for Internet Service Providers (ISPs), where a user can create, read, update, and delete customer information.
 
-ISP offers internet access to the customers along with services like network access, Wi-Fi installation, and so on. For organizations to manage such large number of internet providers, we will build a platform to handle their customers and keep track of accurate business records.
+ISP offers internet access to the customers along with services like network access, Wi-Fi installation, and so on. For organizations to manage such a large number of internet providers, we will build a platform to handle their customers and keep track of accurate business records.
 
 You can learn more about ISPs [here](https://en.wikipedia.org/wiki/Internet_service_provider).
 
-The aim of this tutorial is to provide foundational knowledge on how to create a MERN stack application through a real-life project.
+The tutorial aims to provide foundational knowledge on how to create a MERN stack application through a real-life project.
 
 ### Prerequisites
-To follow along this tutorial, the reader should have the following:
+To follow along with this tutorial, the reader should have the following:
 - An understanding of JavaScript.
 - Basic knowledge of ReactJS and NodeJS.
 - Basic knowledge of MongoDB.
@@ -98,7 +98,7 @@ Create a `.env` file within the server folder.
 
 Here, we will add the database URL that we will connect to and a port to listen for new connections.
 
-The `.env` file allows us to define environment variables that remains constant throughout a given development stage. It also helps in keeping the credentials safe, as you can include it in the `.gitignore` file.
+The `.env` file allows us to define environment variables that remain constant throughout a given development stage. It also helps in keeping the credentials safe, as you can include it in the `.gitignore` file.
 
 Using the `.env` file allows us to use different environment variables for different environments.
 
@@ -109,7 +109,7 @@ DATABASE_URL = mongodb://localhost/customers
 PORT = 5000
 ```
 
-Now, create `index.js` to setup the server as shown:
+Now, create `index.js` to set up the server as shown:
 
 ```javascript 
 require('dotenv').config()
@@ -185,7 +185,7 @@ The schema describes the fields that you will have in a document. MongoDB is a d
 It contains the attributes of an object in the database.
 
 - Create a `models` folder with a `Customer.js` file that contains our customer schema.
-- Import mongoose and create new schema as shown:
+- Import mongoose and create a new schema as shown:
 
 ```javascript
 const mongoose = require('mongoose')
@@ -237,7 +237,7 @@ module.exports = mongoose.model('Customer', customerSchema)
 - Finally, we compile the schema into a model and export it.
 
 #### Setup API endpoints
-API endpoints are URLs that provides the location of different resources on the server. The endpoints allow the API to receive requests and send responses.
+API endpoints are URLs that provide the location of different resources on the server. The endpoints allow the API to receive requests and send responses.
 
 In this tutorial, we will work with the `POST`, `GET`, `PATCH`, and `DELETE` HTTP methods.
 - The `POST` request is used to send data to the server.
@@ -302,7 +302,7 @@ router.post('/', async (req, res) => {
 - We use the status code of `200` when a request is successful and `400` when it is unsuccessful.
 - Use `save()` to save the customer to the database.
 
-Then, we create a helper function to get the customer by ID. We will use this function to avoid the repetitive code.
+Then, we create a helper function to get the customer by ID. We will use this function to avoid repetitive code.
 
 Use `findById()` to get the customer by the specified ID as shown:
 
@@ -323,7 +323,7 @@ async function getCustomer(req, res, next) {
 }
 ```
 
-The function gets the customer by ID then calls `next()`.
+The function gets the customer by ID and then calls `next()`.
 
 > `next()` is a callback function that passes the handler to the next route handler in the route path.
 
@@ -410,7 +410,7 @@ If the server is set up successfully, we will get the following output:
 ### Frontend
 To build the frontend, we will use ReactJS, one of the most popular JavaScript libraries.
 
-Our user interface will consist of three pages that helps the admin manage the customer details.
+Our user interface will consist of three pages that help the admin manage the customer details.
 
 We will build a form to submit customer details, a table to display all the customers, and allow the ISP to delete or update customer details.
 
@@ -430,11 +430,11 @@ cd ui
 npm start
 ```
 
-React application is running on port `3000`. You can view on your browser at `http://localhost:3000/`.
+React application is running on port `3000`. You can view it on your browser at `http://localhost:3000/`.
 
 ![React App](/engineering-education/build-mern-stack-application-to-manage-isp/reactapp.jpg)
 
-Remove some of the boilerplate files that we do not need. Now, the folder structure should look like:
+Remove some of the boilerplate files that we do not need. Now, the folder structure should look like this:
 
 ![folder structure](/engineering-education/build-mern-stack-application-to-manage-isp/folder.jpg)
 
@@ -898,7 +898,7 @@ The `EditCustomer` component renders a page when we click on the edit action on 
 ![EditCustomer](/engineering-education/build-mern-stack-application-to-manage-isp/updateCustomer.jpg)
 
 ### Conclusion
-In this tutorial, we successfully learned to create a fullstack management system for ISPs.
+In this tutorial, we successfully learned to create a full-stack management system for ISPs.
 
 In summary, we have learned:
 - how to create REST API in Node.js, Express, and MongoDB
