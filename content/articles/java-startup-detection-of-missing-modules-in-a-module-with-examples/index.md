@@ -1,3 +1,19 @@
+---
+layout: engineering-education
+status: publish
+published: true
+url: /java-startup-detection-of-missing-modules-in-a-module-with-examples/
+title: Java startup detection of missing modules in a module with examples
+description: This article introduces the learner to java modules used in java programming.
+author: mercy-chebet
+date: 2022-04-22T00:00:00-18:30
+topics: [Languages]
+excerpt_separator: <!--more-->
+images:
+
+  - url: /engineering-education/java-startup-detection-of-missing-modules-in-a-module-with-examples/hero.jpg
+    alt: Java startup detection of missing modules in a module with examples
+---
 ### Introduction
 This article introduces the learner to java modules used in java programming. We will make use of easy-to-learn module codes. Java 9, the latest java release, introduced java modules to the world of programming. Earlier versions of java used packages and access modifiers to associate related classes and hide certain classes and packages from other classes.
 
