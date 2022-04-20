@@ -6,7 +6,7 @@ url: /model-monitoring-and-detecting-drifts-in-machine-learning-models-using-dee
 title: Model monitoring and detecting drifts in machine learning models using Deepchecks
 description: In this tutorial, we will build a customer classification model and implement Deepchecks to detect any model drifts
 author: simon-ndiritu
-date: 2022-04-12T00:00:00-15:30
+date: 2022-04-20T00:00:00-15:30
 topics: [Machine Learning]
 excerpt_separator: <!--more-->
 images:
@@ -20,7 +20,7 @@ Many businesses depend on machine learning models for day-to-day operations. A c
 
 Changes in model performance are due to changes in the input data, model features, target labels, and independent variables. It may also be due to the depreciated libraries and other dependencies that the model uses. It leads to poor model predictions and poor model generalization. 
 
-[Deepechecks](https://deepchecks.com/) is a machine learning library that monitors a machine learning model to detect or identify changes in model performance. The changes are called model drifts. We will build a customer classification model and then implement Deepchecks to identify changes in the model.
+[Deepchecks](https://deepchecks.com/) is a machine learning library that monitors a machine learning model to detect or identify changes in model performance. The changes are called model drifts. We will build a customer classification model and then implement Deepchecks to identify changes in the model.
 
 ### Table of contents
 - [Prerequisites](#prerequisites)
@@ -51,19 +51,15 @@ To easily understand the model monitoring concepts explained in this tutorial, t
 - Have a grasp of [Google Colab notebook](https://colab.research.google.com/)
 
 ### Types of model drifts
-Model drift refers to the changes in the model performance leading to model degradation and poor predictions. It is due to changes in the model dataset. It is also due to the changes in the relationships between independent variables (features) and dependent variables (label/target). 
-
-Depending on the changes, model drifts can be data or concept drifts.
+Model drift refers to the changes in the model performance leading to model degradation and poor predictions. It is due to changes in the model dataset. It is also due to the changes in the relationships between independent variables (features) and dependent variables (label/target). Depending on the changes, model drifts can be data or concept drifts.
 
 #### Data drift
-In data drift, the features in the dataset change over time after the model training. Features are the independent variables in the dataset that are the inputs for the machine learning model. 
-
-Changes in the features are due to data leakage, contamination of the data with viruses, or changes in the general data structure.
+In data drift, the features in the dataset change over time after the model training. Features are the independent variables in the dataset that are the inputs for the machine learning model. Changes in the features are due to data leakage, contamination of the data with viruses, or changes in the general data structure.
 
 #### Concept drift
 In concept drift, the target/labels in the dataset change over time after the model training. The target is the dependent variable which is the model output. 
 
-We will use Deepchecks library to detect these drifts in our machine learning model. Before we implement the Deepchecks, we will first build the machine learning model.
+We will use the `Deepchecks` library to detect these drifts in our machine learning model. Before we implement the Deepchecks, we will first build the machine learning model.
 
 ### Building the machine learning model
 We will build the machine learning model using the bank customers dataset. The dataset has multiple independent variables (features) and one target variable. The model will predict whether a bank customer will subscribe to a monthly deposit plan. You can download the complete dataset for this model [here](https://drive.google.com/file/d/1jNSH7yYDYUu13EKkqyN5OpTpHI1Megd8/view?usp=sharing).
@@ -79,7 +75,7 @@ We then load the bank customer dataset as follows:
 ```python
 df = pd.read_csv("/content/bank-customers.csv")
 ```
-To see some of the data points input the code below:
+To see some of the data points, input the code below:
 
 ```python
 df.head()
