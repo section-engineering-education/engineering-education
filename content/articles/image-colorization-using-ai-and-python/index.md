@@ -47,16 +47,21 @@ We are going to use the GitHub repository that contains the actual model. Inside
 ```bash
 !git clone https://github.com/jantic/DeOldify.git DeOldify
 ```
+The above code clones the DeOldify repository into the `DeOldify` folder. We will be working inside this folder. To get into this folder, we write the following code:
+
+```bash
+cd DeOldify
+```
+Once inside, we can now install the dependencies needed for the project.
 
 ### Installing the necessary dependencies
 To use the model, we need to install a couple of dependencies.
 
 ```python
-!pip install opencv-python==4.4.0.42
-!pip install -r requirements.txt
+!pip install -r colab_requirements.txt
 ```
 
-The `opencv-python` dependency allows us to work with images in Python. By running the `!pip install -r requirements.txt` command, all the dependencies available in the `requirement.txt` file gets installed. These dependencies include:
+By running the `!pip install -r colab_requirements.txt` command, all the dependencies available in the `requirement.txt` file inside the cloned folder gets installed. These dependencies include:
 
 - fastai==1.0.51
 - wandb
@@ -66,8 +71,16 @@ The `opencv-python` dependency allows us to work with images in Python. By runni
 - jupyterlab
 - pillow>=8.0.0
 
+All these dependencies are necessary for the model to work. They all get installed automatically. No need to install them manually. Once done, we can go ahead and download the model.
+
 ### Downloading the model
 Next, we will need to download the pre-trained model.
+
+```python
+!mkdir 'models'
+!wget https://data.deepai.org/deoldify/ColorizeArtistic_gen.pth -O ./models/ColorizeArtistic_gen.pth
+```
+We have created a new folder called `models` inside of the main `DeOldify` folder. Using `wget`, a software package for retrieving files using HTTP, HTTPS, FTP and FTPS, we download the pre-trained model into that newly created folder.
 
 ### Performing colorization on old black and white photos 
 Let's now take black and white images and add some color to them. We will use old images of iconic buildings that still stand to date of the city of Nairobi, Kenya.
@@ -96,7 +109,7 @@ Image of National Archives:
 
 ![Colored National archives](/engineering-education/image-colorization-using-ai-and-python/colored-national-archives.png)
 
-We can see that the Deoldify model has added some color onto our images. Of course, it's not perfect. But, this technology just goes on to show you what is capable with amazing technologies lies these.
+We can see that the Deoldify model has added some color onto our images. Of course, it's not perfect. But, this technology just goes on to show you what is possible with amazing technologies lies these.
 
 Please find the complete code for this tutorial [here](https://colab.research.google.com/drive/1bh15liSGDkUMwez4xNH1kG6ETFxQVlZ6?usp=sharing).
 
