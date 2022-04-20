@@ -45,5 +45,5 @@
 </script>
 
 {{- if eq (getenv "HUGO_ENV") "production" | or (eq $.Site.Params.env "production") -}}
-{{ partial "head-scripts" }}
+{{ partialCached "head-scripts" . }}
 {{- end -}}
