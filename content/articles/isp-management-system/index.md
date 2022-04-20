@@ -1,7 +1,21 @@
-### How to build an Internet Service Provider Management System using MERN Stack.
+---
+layout: engineering-education
+status: publish
+published: true
+url: /build-mern-stack-application-to-manage-isp/
+title: Build a MERN stack application to manage ISP
+description: In this guide, we will blearn to build a MERN stack web application using MongoDB, ExpressJS, ReactJS, and NodeJS to build a customer management portal to manage ISPs.
+author: bernice-waweru
+date: 2022-04-21T00:00:00-01:00
+topics: [Languages]
+excerpt_separator: <!--more-->
+images:
 
+ - url: /engineering-education/build-mern-stack-application-to-manage-isp/hero.jpg
+   alt: Build a MERN stack application to manage ISP Hero Image
+---
 In this tutorial, we will learn how to build a full stack web application using MongoDB, ExpressJS, ReactJS, and NodeJS (commonly referred as MERN stack).
-
+<!--more-->
 We will build a customer management system for Internet Service Providers (ISPs), where an user can create, read, update, and delete customer information.
 
 ISP offers internet access to the customers along with services like network access, Wi-Fi installation, and so on. For organizations to manage such large number of internet providers, we will build a platform to handle their customers and keep track of accurate business records.
@@ -894,3 +908,6 @@ In summary, we have learned:
 You can access the complete project [here](https://github.com/wanguiwaweru/MERN-STACK).
 
 Happy learning!
+
+---
+Peer Review Contributions by: [Srishilesh P S](/engineering-education/authors/srishilesh-p-s/)
