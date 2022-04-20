@@ -1,9 +1,19 @@
-Title [Security]: Chaos theory and its potential for cryptography
+---
+layout: engineering-education
+status: publish
+published: true
+url: /chaos-cryptography/
+title: Chaos theory and its potential for cryptography
+description: This article will introduce the reader to a different approach to cryptography in a simplistic, palatable way.
+author: oliver-mulwa
+date: 2022-04-22T00:00:00-18:30
+topics: [Security]
+excerpt_separator: <!--more-->
+images:
 
-Author: Oliver Mulwa
-
-Description: This is an overview of how chaos theory can be used in cryptography.
-
+  - url: /engineering-education/chaos-cryptography/hero.jpg
+    alt: Chaos theory and its potential for cryptography
+---
 ### Table of Contents
 - [Table of Contents](#table-of-contents)
 - [Prerequisite](#prerequisite)
