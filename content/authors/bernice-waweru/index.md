@@ -8,6 +8,4 @@ images:
   - url: /engineering-education/authors/bernice-waweru/avatar.jpeg 
 skills: ['HTML/CSS','JavaScript','React','NodeJS','Python','FastAPI',Data Analysis',Machine Learning']
 ---
-Bernice Waweru is a full stack developer competent in MERN stack and Django. 
-She also doubles in Data Science and Machine Learning. 
-In her free time she enjoys reading and competitive programming.
+Bernice Waweru is a full stack developer, competent in MERN stack and Django. She also doubles in Data Science and Machine Learning. In her free time, she enjoys reading and competitive programming.
