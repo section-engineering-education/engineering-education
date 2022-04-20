@@ -335,3 +335,6 @@ Please check out the complete Python Code for the univariate time series model [
 - [Python LSTM](https://analyticsindiamag.com/complete-guide-to-bidirectional-lstm-with-python-codes/)
 - [Recurrent Neural Network architecture](https://machinelearningmastery.com/an-introduction-to-recurrent-neural-networks-and-the-math-that-powers-them/)
 - [Types of RNN](https://www.simplilearn.com/tutorials/deep-learning-tutorial/rnn)
+
+---
+Peer Review Contributions by: [Willies Ogola](/engineering-education/authors/willies-ogola/)
