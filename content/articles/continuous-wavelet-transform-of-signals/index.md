@@ -213,3 +213,6 @@ Happy coding!
     TeX: { equationNumbers: { autoNumber: "AMS" } }
     });
   </script>
+
+---
+Peer Review Contributions by: [Willies Ogola](/engineering-education/authors/willies-ogola/)
