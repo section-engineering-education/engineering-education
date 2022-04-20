@@ -34,8 +34,8 @@ Changes in model performance are due to changes in the input data, model feature
 - [Accuracy score for the customer classification model](#accuracy-score-for-the-customer-classification-model)
 - [Implementing Deepchecks](#implementing-deepchecks)
 - [Creating the two dataset objects](#creating-the-two-dataset-objects)
-- [Importing the full_suite method](#importing-the-fullsuite-method)
-- [The full_suite outputs](#the-fullsuite-outputs)
+- [Importing the full suite method](#importing-the-full-suite-method)
+- [The full suite outputs](#the-full-suite-outputs)
 - [Implementing the Check method](#implementing-the-check-method)
 - [Importing the data drift method](#importing-the-data-drift-method)
 - [Importing the concept drift method](#importing-the-concept-drift-method)
@@ -211,7 +211,7 @@ deepchecks_test_data = deepchecks.Dataset(df=x_test,label=y_test)
 ```
 The next step is to import the `full_suite` method. It will perform an exhaustive check on the dataset objects and the trained model. 
 
-### Importing the full_suite method
+### Importing the full suite method
 To import the `full_suite` method, use the code below:
 
 ```python
@@ -244,7 +244,7 @@ output
 ```
 It will generate a report/output that shows the model summary.
 
-### The full_suite outputs
+### The full suite outputs
 The outputs are as follows:
 
 #### Conditions Summary output
