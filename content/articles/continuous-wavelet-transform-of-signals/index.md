@@ -1,6 +1,23 @@
-### Continous Wavelet Transform of simple and discontinuous signals in Python
-### Introduction
-Continuous wavelet transform is defined as adding all the time signals and multiplying by the shift version of the wavelet. The output of the continuous wavelet transform gives the wavelet coefficients as the output. These coefficients are functions of scale and position. This process can be performed for both simple and discontinuous signals. A discontinuous wavelet is a sine wave followed by a medium sine wave. A simple signal is a slow sine wave.
+---
+layout: engineering-education
+status: publish
+published: true
+url: /continuous-wavelet-transform-of-signals/
+title: Continuous wavelet transform of simple and discontinous signals in Python
+description: This tutorial will look at the background theory of the wavelet and CWT. It will also discuss the various application of this transform.
+author: joseph-odhiambo
+date: 2022-04-21T00:00:00-09:50
+topics: [Languages]
+excerpt_separator: <!--more-->
+images:
+
+  - url: /engineering-education/continuous-wavelet-transform-of-signals/hero.jpg
+    alt: Continuous wavelet transform of simple and discontinous signals in Python Hero Image
+---
+Continuous wavelet transform is defined as adding all the time signals and multiplying by the shift version of the wavelet. The output of the continuous wavelet transform gives the wavelet coefficients as the output. 
+<!--more-->
+These coefficients are functions of scale and position. This process can be performed for both simple and discontinuous signals. A discontinuous wavelet is a sine wave followed by a medium sine wave. A simple signal is a slow sine wave.
+
 This tutorial will look at the background theory of the wavelet and CWT. Also, we will look at the CWT and the various application of this transform. Finally, we discuss the python code for computing the CWT of simple and discontinuous signals.
 
 ### Prerequisites
