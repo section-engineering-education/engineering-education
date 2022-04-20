@@ -1,125 +1,139 @@
 ### How to build an Internet Service Provider Management System using MERN Stack.
 
-In this tutorial, we will learn how to integrate our knowledge of various technologies, including MongoDB, Express, React, and Node.js, to create a functional web application.
+In this tutorial, we will learn how to build a full stack web application using MongoDB, ExpressJS, ReactJS, and NodeJS (commonly referred as MERN stack).
 
-The web application will be a customer management system where one can create, read, update and delete customer information.
+We will build a customer management system for Internet Service Providers (ISPs), where an user can create, read, update, and delete customer information.
 
-Internet Service Providers (ISPs) offer internet access to customers. The providers offer services, including Wi-Fi installation for individual and corporate clients. Organizations need an informative and dynamic platform to manage their customers and ensure accurate business records. 
+ISP offers internet access to the customers along with services like network access, Wi-Fi installation, and so on. For organizations to manage such large number of internet providers, we will build a platform to handle their customers and keep track of accurate business records.
+
 You can learn more about ISPs [here](https://en.wikipedia.org/wiki/Internet_service_provider).
 
-The main aim of this tutorial is to provide foundational knowledge on how to create a MERN stack application through a real-life project.
+The aim of this tutorial is to provide foundational knowledge on how to create a MERN stack application through a real-life project.
 
 ### Prerequisites
-
+To follow along this tutorial, the reader should have the following:
 - An understanding of JavaScript.
-- Basic knowledge of React and Node JS.
+- Basic knowledge of ReactJS and NodeJS.
 - Basic knowledge of MongoDB.
-- You should also have [Node](https://nodejs.org/en/download/) installed on your machine.
-
-### Table of Contents
-
-- [Backend](#backend)
-- [Frontend](#frontend)
-- [Connecting Frontend to Backend](#Connecting-Frontend-to-Backend)
-- [Conclusion](#conclusion)
+- You should also have [NodeJS](https://nodejs.org/en/download/) installed on your machine.
 
 ### Backend
-The web application will follow the architecture shown below, consisting of the Client, Server, and Database.
-![Web Architecture](/isp-management-system/webapp.jpg)
+To begin with, let's start to build the backend.
 
-We will handle all the backend functionality of our app using a [REST API](https://www.smashingmagazine.com/2018/01/understanding-using-rest-api/) created using Node, Express, and MongoDB.
-- **MongoDB:** A NoSQL database that uses a document-oriented data model.
-- **ExpressJS:** A web application framework used in building APIs.
-- **Node.js:** A JavaScript runtime environment used to build servers and applications.
+Our web application consists of a client, a server, and a database. You can find the architecture below:
 
-### Setting up Development Environment
+![Web Architecture](/engineering-education/build-mern-stack-application-to-manage-isp/webapp.jpg)
 
-Let us first set up our development environment.
-Create a new folder and navigate to the new folder by running the following commands on a terminal
+We will handle all the backend functionality of our app using a [REST API](https://www.smashingmagazine.com/2018/01/understanding-using-rest-api/) that we will create using NodeJS, ExpressJS, and MongoDB.
+- **MongoDB** - A NoSQL database that uses a document-oriented data model.
+- **ExpressJS** - A web application framework used to build APIs.
+- **Node.js** - A JavaScript runtime environment used to build servers and applications.
+
+#### Setup the environment
+Let us first set up the development environment.
+
+Create a new folder and navigate to it, by running the following commands on a terminal:
+
 ```bash
 mkdir api
 cd api
 ```
-Inside this folder, run ``npm init--y``.
 
-This creates a starter package.json which will contain all the dependencies we will need to run the app. Our package.json file gets updated when we install various dependencies.
+Then, run `npm init --y` to create a starter package that contains `package.json` with all the dependencies that we need to run the app.
 
-Then install Mongoose, Express, and MongoDB using the following command.
-``npm install express mongodb mongoose --save``
+> The `package.json` file gets updated as we install more project dependencies.
 
-We will use express to set up a node server.
-MongoDB is our database, and mongoose will enable us to define models and connect to the database.
+Then, we install Mongoose, Express, and MongoDB using the following command:
 
-We will be sharing resources from the server to the client; therefore, we install cors to handle cross-origin resource sharing. To install cors run this command on the terminal.
-
-``npm install cors``
-
-We use the cors package to enable the server to share its resources only with clients on a different domain.
-You can learn more about CORS [here](https://en.wikipedia.org/wiki/Cross-origin_resource_sharing).
-We will install nodemon to run our server automatically when we make changes.
-
-``npm install nodemon --save-dev``
-
-Change the scripts in package.json to 
-
-``"devStart": "nodemon index.js"``
-
-We will also install dotenv to handle our variables from a .env file.
-
-``npm install dotenv --save-dev``
-
-> nodemon and dotenv are in our development dependencies.
-
-### Setting up the Server
-
-Create a ``.env`` file within the api folder.
-We will add the database URL to which we will connect and the port we will be listening for new connections.
-The .env file allows us to define environment variables that remain constant throughout a given development stage. The file also helps keep credentials safe, as you can include it in the ``gitignore`` file. 
-Using the .env file also allows us to use different environment variables for different environments.
-
-Add the following to the ``.env`` file.
+```bash
+npm install express mongodb mongoose --save
 ```
+
+Here, we use Express to set up a Node server. MongoDB will be our database, and mongoose enables us to define models and connect to the database.
+
+To share resources from the server to the client, we install `cors` to handle the cross-origin resource sharing.
+
+To install `cors` run this command on the terminal.
+
+```bash
+npm install cors
+```
+
+The `cors` package enables the server to share its resources only with clients on a different domain.
+
+You can learn more about CORS [here](https://en.wikipedia.org/wiki/Cross-origin_resource_sharing).
+
+Then, we install `nodemon` to run the server continuously for every change we make.
+
+```bash
+npm install nodemon --save-dev
+```
+
+Now, we change the start file to `index.js`. To do that, change the scripts in `package.json` to:
+
+`"devStart": "nodemon index.js"`
+
+Also, we install `dotenv` package to handle the variables from a `.env` file as shown:
+
+```bash
+npm install dotenv --save-dev
+```
+
+#### Setup the server
+Create a `.env` file within the server folder.
+
+Here, we will add the database URL that we will connect to and a port to listen for new connections.
+
+The `.env` file allows us to define environment variables that remains constant throughout a given development stage. It also helps in keeping the credentials safe, as you can include it in the `.gitignore` file.
+
+Using the `.env` file allows us to use different environment variables for different environments.
+
+Add the following to the `.env` file as shown:
+
+```.env
 DATABASE_URL = mongodb://localhost/customers
 PORT = 5000
 ```
 
-Create ``index.js`` where we will set up the server.
-- Load the environment variables from the .env file by requiring and configuring the dotenv package.
-The environment variables are loaded into the ``process.env`` object. 
-- Import the mongoose package and load the PORT variable.
+Now, create `index.js` to setup the server as shown:
 
 ```javascript 
 require('dotenv').config()
 const mongoose = require('mongoose')
 const PORT = process.env.PORT || 5010
 ```
-- Import the ExpressJS library and initialize a new ExpressJS application. 
+
+In the above code:
+- Load the environment variables from the `.env` file by configuring the `dotenv` package.
+- The environment variables will be loaded into the `process.env` object. 
+- Import the `mongoose` package and load the `PORT` variable.
+
+Then, we import the ExpressJS library `express` and initialize a new ExpressJS application as shown:
+
 ```javaScript
 const express = require('express')
 const app = express()
 ```
-- Import cors and enable the app to use the CORS middleware.
+
+We also import `cors` and enable the `app` to use the CORS middleware:
+
 ```javascript
 const cors = require('cors')
 app.use(cors())
 ```
-- add ``express.json()`` method to parse the HTTP request body and listen for new connections on port 5000.
+
+Now, add `express.json()` method to parse the HTTP request body and listen for new connections on port `5000`.
 
 ```javascript
 app.use(express.json())
 app.listen(PORT, () => console.log(`Server Started on port ${PORT}`))
 ```
 
-- ``app.use(express.json())`` is a middleware function that parses incoming JSON requests and puts the parsed data in req.body.
+In the above code:
+- `app.use(express.json())` is a middleware function that parses incoming JSON requests and puts the parsed data in `req.body`.
+- `app.listen()` listens to the connections on the specified port and executes the callback function we pass.
 
-- ``app.listen()`` listens to the connections on the specified port and executes the callback function we pass.
-
-- Create a connection to the database.
-- Use the ``mongoose.connect()`` method to connect to MongoDB by passing the database URL and options passed to the MongoDB driver.
-
-- Include ``useNewUrlParser`` and ``useUnifiedTopology`` to avoid deprecation warnings that are printed by mongoose.connect() by default.
-
-Setting useNewUrlParser to true and useUnifiedTopologyto true prevents the warnings resulting from deprecation in the MongoDB driver. Learn more about other deprecation warnings [here](https://mongoosejs.com/docs/5.x/docs/deprecations.html).
+Now, let's create a connection to the database as shown:
 
 ```javascript
 mongoose.connect(process.env.DATABASE_URL,
@@ -129,33 +143,44 @@ mongoose.connect(process.env.DATABASE_URL,
     })
 ```
 
-- Listen for the connect event to determine if the connection is successful.
+In the above code:
+- We use the `mongoose.connect()` method to connect to MongoDB by passing the database URL and options passed to the MongoDB driver.
+- Include `useNewUrlParser` and `useUnifiedTopology` to avoid deprecation warnings that are printed by mongoose.`connect()` by default.
+
+> Setting `useNewUrlParser` to `true` and `useUnifiedTopologyto` to `true` prevents the deprecation warnings in the MongoDB driver. Learn more about other deprecation warnings [here](https://mongoosejs.com/docs/5.x/docs/deprecations.html).
+
+
+Then, we listen for the connect event to determine if the connection is successful.
 
 ```javascript
 const db = mongoose.connection
 db.on('error', (error) => console.error(error))
 db.once('open', () => console.log('Connected to Database'))
 ```
-- ``open and error`` are connection events triggered when something happens to the connection.
-- If there is an error in the connection, we log it to the console and log a success message once the connection occurs.
 
-### Schema Definition
-Now let us create the database models and schema.
+In the above code, `open` and `error` are connection events triggered when something happens to the connection.
 
-The database model defines the logical design and structure of a database, including how data is stored, accessed, and updated.
-The schema describes the fields you will have in a document because MongoDB is a document-oriented database.
+If we come across an error in the connection, we log it to the console and log a success message once the connection occurs.
+
+#### Schema definition
+Now, let us create the database models and schema.
+
+The database model defines the logical design and structure of a database, including how the data is stored, accessed, and updated.
+
+The schema describes the fields that you will have in a document. MongoDB is a document-oriented database.
 It contains the attributes of an object in the database.
 
-- Create a ``models`` folder, and inside the folder, create a ``Customer.js`` file, which will contain our customer schema.
+- Create a `models` folder with a `Customer.js` file that contains our customer schema.
+- Import mongoose and create new schema as shown:
 
-- Import mongoose and create new schema.
 ```javascript
 const mongoose = require('mongoose')
 const customerSchema = new mongoose.Schema({
 
 })
 ```
-- Add the following fields inside the customerSchema object.
+
+- Add the following fields inside the `customerSchema` object.
 
 ```javascript
     name: {
@@ -185,35 +210,33 @@ const customerSchema = new mongoose.Schema({
         default: Date.now
     }
 ```
-- The customerSchema has the name, email, location, subscribedToPackage, and subscribeDate fields.
 
-The schema contains the customer's properties, defined as a JavaScript object where we specify the data type and whether a field is required.
+- The `customerSchema` has the `name`, `email`, `location`, `subscribedToPackage`, and `subscribeDate` fields.
+- Then, we export the model.
 
-- Export the model.
+By exporting the model, we will make the model available to other files in our application.
 
-This will make the model available to other files in our application.
 ```javascript
 module.exports = mongoose.model('Customer', customerSchema)
 ```
-- Compile the schema into a model and export it.
 
-### Setting up API Endpoints
+- Finally, we compile the schema into a model and export it.
 
-API endpoints are URLs that provide the locations of different resources on the server. 
-The endpoints allow the API to receive requests and send responses. 
+#### Setup API endpoints
+API endpoints are URLs that provides the location of different resources on the server. The endpoints allow the API to receive requests and send responses.
 
-We are interested in the POST, GET, PATCH, and DELETE HTTP methods.
-The POST request is used for sending data to the server.
-The GET request is used to retrieve data from the server.
-The PATCH request is used to update data, while the DELETE request is used to delete the specified resource.
-The API endpoints enable us to create, read, update and delete customer details.
+In this tutorial, we will work with the `POST`, `GET`, `PATCH`, and `DELETE` HTTP methods.
+- The `POST` request is used to send data to the server.
+- The `GET` request is used to retrieve data from the server.
+- The `PATCH` request is used to update data.
+- The `DELETE` request is used to delete the specified resource.
 
-Create a ``routes`` folder and ``customers.js`` file inside this folder.
+Now, let's get to building the endpoints.
 
-- Import express and create a new router object using ``express.Router()`` to handle requests.  
-Learn more about ``express.Router()`` [here](https://expressjs.com/en/guide/routing.html)
+- Create a `routes` folder with `customers.js` file inside this folder.
+- Import `express` and create a new router object using `express.Router()` to handle the HTTP requests.
 
-We will use the new router object to handle the get, post, patch, and delete requests.
+You can learn more about `express.Router()` [here](https://expressjs.com/en/guide/routing.html).
 
 ```javaScript
 const express = require('express')
@@ -222,10 +245,9 @@ const Customer = require('../models/customer')
 ```
 
 - We will also use [HTTP response status codes](https://developer.mozilla.org/en-US/docs/Web/HTTP/Status) to identify if the HTTP request has been executed successfully.
-
 - Add a route to get all customers.
 
-Get all the customers using ``find()``, which returns all instances.
+You can get all the customers using `find()` that returns all instances.
 
 ```javaScript
 // Get all customers
@@ -238,8 +260,8 @@ router.get('/', async (req, res) => {
     }
 })
 ```
-- Use the router.get() to retrieve information. If the request is successful, we return the customers in JSON format else, we use the status code 500 to indicate that the server has encountered an error.
 
+- Use the `router.get()` to retrieve information. If the request is successful, we return the customers in JSON format, else we use the status code `500` to indicate that the server has encountered an error.
 - Add a route to create a new customer.
 
 ```javaScript
@@ -260,14 +282,15 @@ router.post('/', async (req, res) => {
     }
 })
 ```
-- To add a new customer, we use ``router.post()``, which accepts the specified URL, and the route handler. The route handler accepts the request object and the response object as parameters.
-- Set the values in the Customer model to the values in ``request.body`` which are the details supplied by the customer from the frontend.
-- We use the status code of 200 when a request is successful and 400 when it is unsuccessful due to an error on the client-side.
-- Use ``save()`` to save the customer to the database.
 
-- Create a helper function to get the customer by ID.
+- To add a new customer, we use `router.post()` to accept the specified URL, and the route handler. The route handler accepts the request object and the response object as parameters.
+- Set the values in the `Customer` model to the values in `request.body` which are the details supplied by the customer from the frontend.
+- We use the status code of `200` when a request is successful and `400` when it is unsuccessful.
+- Use `save()` to save the customer to the database.
 
-We will use this function to avoid repeating code for the routes where we need to work with one customer. Use ``findById()`` to get the customer by the specified ID.
+Then, we create a helper function to get the customer by ID. We will use this function to avoid the repetitive code.
+
+Use `findById()` to get the customer by the specified ID as shown:
 
 ```javascript
 async function getCustomer(req, res, next) {
@@ -285,12 +308,14 @@ async function getCustomer(req, res, next) {
     next()
 }
 ```
-The function gets the customer by ID then calls ``next()``.
 
-``next()`` is a callback function that passes the handler to the next route handler in the route path.
-- Use the 404 status code to indicate that a resource cannot be found on the server. The 500 status code indicates if an error occurs on the server and the error message is returned in JSON format.
+The function gets the customer by ID then calls `next()`.
 
-- Add a route to get one customer
+> `next()` is a callback function that passes the handler to the next route handler in the route path.
+
+- Use the `404` status code to indicate that a resource cannot be found on the server. The `500` status code indicates if an error occurs on the server and the error message is returned in JSON format.
+
+- Add a route to get one customer. We use the `getCustomer()` function that we defined earlier.
 
 ```javascript
 // Get one customer
@@ -298,10 +323,8 @@ router.get('/:id', getCustomer, (req, res) => {
     res.json(res.customer)
 })
 ```
-We use the getCustomer() function we defined earlier. 
 
-- Add a route to update a customer's details
-Set the values in the Customer model to the values in the ``request.body``and, then use ``save()`` to save the new details to the database.
+- Add a route to update a customer's details. Set the values in the `request.body`, and then use `save()` to save the new details to the database.
 
 ```javascript
 // Update
@@ -329,10 +352,11 @@ router.patch('/:id', getCustomer, async (req, res) => {
     }
 })
 ```
-- For each field, we check if it is null and update it accordingly. Use the save() method to save the updated details.
-- The 400 status code indicates that an error occurred on the client-side when sending the HTTP request.
 
-- Add a route to delete a customer.
+- For each field, we check if it is `null` and update it accordingly. Use the `save()` method to save the updated details.
+- The `400` status code indicates that an error occurred on the client-side when sending the HTTP request.
+
+Now, add a route to delete a customer.
 
 ```javascript
 // Delete
@@ -345,80 +369,83 @@ router.delete('/:id', getCustomer, async (req, res) => {
     }
 })
 ```
-- Use the remove() method to delete the customer and show a success message if the response is completed successfully.
-- The status code 500 indicates an error on the server.
 
-- Export router
+- Use the `remove()` method to delete the customer and show a success message if the response is completed successfully.
+- The status code `500` indicates an error on the server.
+- Export the router,
 
-We export the router to make it available for import elsewhere. file
 ```javaScript
 module.exports = router
 ```
-- Add Routes to ``index.js``.
+- Add the routes to `index.js`.
 
-Import router from ``customers.js`` in the routes folder to make it available for use when we pass the HTTP requests.
+Import router from `customers.js` in the `routes` folder to make it available for use when we pass the HTTP requests.
+
 ```javascript
 const customersRouter = require('./routes/customers')
 app.use('/customers', customersRouter)
 ```
 
-### Run the Server
+#### Run the server
+Run `nodemon index.js` to test if everything in the backend is working.
 
-Run `nodemon index.js` to test if everything in our backend is working.
+If the server is set up successfully, we will get the following output:
 
-If the server is set up successfully, we will get the following output.
-
-![Server running](/isp-management-system/server.jpg)
-
+![Server running](/engineering-education/build-mern-stack-application-to-manage-isp/server.jpg)
 
 ### Frontend
+To build the frontend, we will use ReactJS, one of the most popular JavaScript libraries.
 
-We are using React, one of the most popular JavaScript libraries, for our frontend.
-Our user interface will consist of three pages that help the ISP manage customer details.
-We will build a form to submit customer details, a table to display all customers, and allow the ISP to delete or update customer details.
-We will also build a form to facilitate editing customer details.
+Our user interface will consist of three pages that helps the admin manage the customer details.
 
-### Setting up the Frontend
+We will build a form to submit customer details, a table to display all the customers, and allow the ISP to delete or update customer details.
 
-Run this command in your terminal to get all the boilerplate code we need to run our React app. 
+We will also build a form to allow editing customer details.
 
-``npx create-react-app ui``
+#### Setup
+Run this command in your terminal to get all the boilerplate code that we need to run our React app. 
 
-navigate to the ui folder and run `npm start` 
+```bash
+npx create-react-app ui
+```
+
+Navigate to the `ui` folder and run `npm start` as shown:
 
 ```bash
 cd ui
 npm start
 ```
-React App is running on port 3000, which you can view on your browser at http://localhost:3000/.
 
-You should see this on your browser.
+React application is running on port `3000`. You can view on your browser at `http://localhost:3000/`.
 
-![React App](/isp-management-system/reactapp.jpg)
+![React App](/engineering-education/build-mern-stack-application-to-manage-isp/reactapp.jpg)
 
+Remove some of the boilerplate files that we do not need. Now, the folder structure should look like:
 
-Remove some of the boilerplate code, which we do not need to remain with the following folder structure.
+![folder structure](/engineering-education/build-mern-stack-application-to-manage-isp/folder.jpg)
 
-![folder structure](/isp-management-system/folder.jpg)
+Let us install some dependencies that we will need to run our app successfully.
 
-Let us install some dependencies that we will need to run our app successfully. 
-We will be using [Material UI](https://mui.com/getting-started/usage/) for our styling, which we install by running:
+We will use [Material UI](https://mui.com/getting-started/usage/) for styling the webpage:
 
-``npm install material-ui/core``
+```bash
+npm install material-ui/core
+```
 
-We will also need Axios to send HTTP requests to our backend on port 5000. Install Axios using:
+We will also need `Axios` to send HTTP requests to our backend on port `5000`. Install Axios using:
 
-``npm install axios``
+```bash
+npm install axios
+```
 
-### Creating Routes
+#### Create routes
+- Create the routes in our react app to ensure that we render the desired page for a given path. The routes correspond to the components.
 
-- Create the routes in our react app to ensure we render the desired page for a given path.
+We will rely on `react-router-dom` to navigate to different pages of our app using the `BrowserRouter`, `Router`, and `Route` packages.
 
-The routes correspond to the components we will build later. 
-We will rely on react-router-dom to navigate to different pages of our app using the BrowserRouter, Router, and Route components.
-You can learn more about react-router-dom [here](https://v5.reactrouter.com/web/guides/quick-start).
+You can learn more about `react-router-dom` [here](https://v5.reactrouter.com/web/guides/quick-start).
 
-In ``App.js``
+In `App.js`:
 
 ```JavaScript
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
@@ -442,24 +469,27 @@ function App() {
 export default App;
 ```
 
-- Import BrowserRouter, Router, and Route from React-router-dom for routing and navigating to different pages.
-- Import the components from the components folder, which we will create later.
+In the above code:
+- Import `BrowserRouter`, `Router`, and `Route` from `react-router-dom` to route and navigate to different pages.
+- Import the components from the `components` folder.
 - Create Routes for different components by specifying the path and element to be rendered.
-> Exporting the App makes it available to index.html, which is the main HTML page of our app.
 
-### Creating Components
-React apps are made of different reusable components. Our app will have three main components; createCustomer,editCustomer,customerList.
+> Exporting the app makes it available to `index.html`, which is the main HTML page of our app.
 
-Let us create each component.
+#### Create components
+React apps are made of different reusable components. Our app will have three main components:
+1. `createCustomer`
+2. `editCustomer`
+3. `customerList`
 
-Create a ``components`` folder in the ``src`` folder and add ``createCustomer.js``, ``editCustomer.js``, and ``customerList.js`` files inside the components folder.
+Create a `components` folder under the `src` folder and add `createCustomer.js`, `editCustomer.js`, and `customerList.js` files inside it.
 
-### CreateCustomer Component
+##### createCustomer component
 This component will render a form that allows user to submit their details.
 
-We will use Material UI's Grid, Paper, TextField, and Button components to create our customer details form.
+We will use Material UI's `Grid`, `Paper`, `TextField`, and `Button` components to create our customer details form.
 
-In the ``createCustomer.js`` file, let us create the form.
+In the `createCustomer.js` file, let us create the form as shown:
 
 ```javascript
 import React from 'react'
@@ -490,13 +520,16 @@ export default function CreateCustomer() {
     )
 }
 ```
-- Import Grid, Paper, Typography, TextField, Button, and Select component from Material UI.
+
+From the above code:
+- Import `Grid`, `Paper`, `Typography`, `TextField`, `Button`, and `Select` component from Material UI.
 - Inside the component, define the CSS styles to be applied to the Material UI components.
-- Create the form using the Textfields, Select, Button, and add the CSS styles to each element.
+- Create the form using the `Textfields`, `Select`, `Button`, and add the CSS styles to each element.
 
-For the Select field, we need to supply some options for users to choose from based on the available subscriptions offered by the internet service provider.
+For the `Select` field, we need to supply some options for the users to choose from the available subscriptions offered by the internet service provider.
 
-Add the following code to the createCustomer.js file
+Add the following code to the `createCustomer.js` file:
+
 ```javascript
 const options = [
     {
@@ -517,9 +550,10 @@ const options = [
     },
 ];
 ```
+
 - The options represent the subscription packages offered by the ISP.
 
-To display these options in the select field, map through the array using ``map``.
+To display these options in the select field, map through the array using `map` as shown:
 
 ```javascript
 {options.map((option) => (
@@ -527,7 +561,9 @@ To display these options in the select field, map through the array using ``map`
     ))
 }
 ```
+
 The select field should have the following code:
+
 ```javascript
 <Select style={marginTop} id="subscription" fullWidth label="Subscription" placeholder="Subscription" >
 {options.map((option) => (
@@ -536,12 +572,12 @@ The select field should have the following code:
 </Select>
 ```
 
-### CustomerList Component
-
+##### customerList component
 This component will display a list of all the customers and their details.
-We use Material UI's table component to display the customer details and offer the internet service provider options to update customer details or delete a customer.
 
-In ``customerList.js``, let us create the table by adding the following code.
+We use Material UI's `Table` component to display the customer details and offer the internet service provider options to update customer details or delete a customer.
+
+In `customerList.js`, let us create the table by adding the following code:
 
 ```javascript
 import React from "react";
@@ -573,18 +609,22 @@ export default function CustomerList() {
         );
 }
 ```
-- Import Table, TableCell, TableContainer, TableHead, TableRow, Paper from Material UI, which will be used to create a table of all the customer details.
-- Create an outline of the table inside the TableContainer component, with each TableCell representing a column in the table.
+
+From the above code:
+- Import `Table`, `TableCell`, `TableContainer`, `TableHead`, `TableRow`, `Paper` from Material UI, which will be used to create a table of all the customer details.
+- Create an outline of the table inside the `TableContainer` component, with each `TableCell` representing a column in the table.
 
 So far, we have defined the structure of the table, which will be populated by customer data from the database.
 We will implement this later in our app while connecting the frontend to the backend.
 
-### EditCustomer component 
+##### editCustomer component 
 This component will render a page that will help us update customer details.
-It will be pre-populated with the customer details of the selected customer allowing the ISP to make only the needed changes.
-The component is similar to the createCustomer component but has different functionality.
 
-In ``editCustomer.js`` include,
+It will be pre-populated with the customer details of the selected customer allowing the ISP to make only the needed changes.
+
+The component is similar to the `createCustomer` component but has different functionality.
+
+In `editCustomer.js` include the following code:
 
 ```JavaScript
 import React from 'react'
@@ -614,21 +654,24 @@ export default function EditCustomer(props) {
         )
     }
 ```
-- Import Grid, Paper, Typography, TextField, Button from Material UI, define the CSS styles and apply them to each element in the form.
+
+In the above code:
+- Import `Grid`, `Paper`, `Typography`, `TextField`, `Button` from Material UI, define the CSS styles and apply them to each element in the form.
 
 We will make additional changes to pre-populate the fields and create the update functionality.
 
-### Connecting Frontend to Backend
-The goal is to send the customer data to the database and fetch data to perform CRUD operations.
+### Connect frontend to backend
+The goal is to send the customer data from the UI to the database and fetch data to perform CRUD operations.
 
-### CreateCustomer Component
-Let's begin with posting customer details in the createCustomer component.
+#### createCustomer component
+Let's begin with posting customer details in the `createCustomer` component.
 
-We need to manage the state of different variables storing our customer details; therefore, we will use the ``useState`` react hook because we are using functional components.
+We need to manage the state of different variables storing our customer details. Therefore, we will use the `useState` react hook ,because we are using functional components.
 
-The ``useState`` hook takes the initial state of the customer details and returns the current state and the setCustomer function, which updates the state.
+The `useState` hook takes the initial state of the customer details and returns the current state and the `setCustomer` function, which updates the state.
 
-In ``createCustomer.js``, outside the return statement,
+In `createCustomer.js`, add the following code:
+
 ```javascript
 import {useState} from 'react'
 const [customer, setCustomer] = useState({
@@ -639,8 +682,8 @@ const [customer, setCustomer] = useState({
     subscribedToPackage: "",
     });
 ```
-- Set the initial state of the customer details to empty strings.
 
+- Set the initial state of the customer details to empty strings.
 - Create a function to handle the post request using Axios.
 
 ```javascript
@@ -652,13 +695,14 @@ const createCustomer = () => {
         })
     };
 ```
-- Use axios.post() for the HTTP request and create an alert upon successful registration.
 
-The ``createCustomer()`` function is called when the ``onClick()`` event occurs on the submit button.
-- Read and Update state
-The state is updated when the ``onChange()`` event is triggered in the text fields in our form.
+- Use `axios.post()` for the HTTP request to create an alert upon successful registration.
 
-Edit the form in ``createCustomer.js`` to include,
+The `createCustomer()` function is called when the `onClick()` event occurs on the submit button.
+
+The state is updated when the `onChange()` event is triggered in the text fields in our form.
+
+Edit the form in `createCustomer.js` to include the following code:
 
 ```javascript
 <form>
@@ -685,25 +729,25 @@ Edit the form in ``createCustomer.js`` to include,
     onClick={createCustomer}>Submit</Button>
 </form>
 ```
-- ``setCustomer`` updates the current state of each field in the form. 
-- When the state is updated, the entire state gets overwritten; thus, the fields would be removed from our state when one of the customer details is updated.
-- Use the spread operator (...) to update only one field at a time and maintain the state. 
 
-Run ``npm start`` in your terminal
+- `setCustomer` updates the current state of each field in the form.
+- When the state is updated, the entire state gets overwritten. Thus, the fields would be removed from our state when one of the customer details is updated.
+- Use the spread operator (`...`) to update only one field at a time and maintain the state. 
 
-> The server should still be running on port 5000.
+Run `npm start` in your terminal
 
-Our CreateCustomer component renders out as follows when we navigate to http://localhost:3000/ or http://localhost:3000/customer:
+> The server should still be running on port `5000`.
 
-![createCustomer](/isp-management-system/customerDetails.jpg)
+Our CreateCustomer component renders out as follows when we navigate to `http://localhost:3000/` or `http://localhost:3000/customer` as shown:
 
-### CustomerList Component 
+![createCustomer](/engineering-education/build-mern-stack-application-to-manage-isp/customerDetails.jpg)
+
+#### customerList component 
 The list of customers from the database will make up our table body in the rendered by the customerList component.
 
 - Declare state variable and fetch the data from the database
 
-``useState`` react hook helps us set and update the state of the components. 
-The ``useEffect`` hook is used in fetching data and setting the data in the local state of the component.
+The `useEffect` hook is used to fetch data and set the data in the local state of the component.
 
 ```javascript
 const [customerList, setCustomerList] = useState([]);
@@ -713,16 +757,15 @@ useEffect(() => {
     })
 }, [])
 ```
-- Set the initial state of the customer list to an empty array using ``useState``.
-- Use axios.get() to make a GET request retrieving all customers from the database.
-- Use ``setCustomerList`` function to update the state of the customerList and populate it with the data retrieved from the database.
-In the Action column in our table, one can delete or update customer details.
-- Update Customer
 
-Link this to the editCustomer component using react-router-dom's Link.
-- Delete Customer
+- Set the initial state of the customer list to an empty array using `useState`.
+- Use `axios.get()` to make a `GET` request to retrieve all customers from the database.
+- Use `setCustomerList` function to update the state of the `customerList` and populate it with the data retrieved from the database.
 
-Use the ``axios.delete()`` method to delete a customer based on their id, which is a unique number generated by MongoDB.
+In the `Action` column in our table, one can delete or update customer details.
+
+- To update the customer, link this to the `editCustomer` component using react-router-dom's Link.
+- To delete a customer, use the `axios.delete()` method to delete a customer based on their `id`, which is a unique number generated by MongoDB.
 
 ```javascript
 import { useEffect,useState } from 'react'
@@ -735,7 +778,8 @@ const deleteCustomer = (id) => {
     })
 }
 ```
-- Use axios.delete() to send a DELETE request and remove a customer from the database.
+
+- Use `axios.delete()` to send a `DELETE` request and remove a customer from the database.
 
 To display the customer list, add the table body component and iterate through the list returned from the database.
 
@@ -756,21 +800,24 @@ To display the customer list, add the table body component and iterate through t
     ))}
 </TableBody>
 ```
-- Map the customerList array to display each customer's details in a row and populate the table columns.
-- Use the Link element from react-router-dom to link the update action to the editCustomer component by specifying the ``/edit/:id`` path, which we included in our routes in ``App.js``.
 
-Run ``npm start``.
+- Map the `customerList` array to display each customer's details in a row and populate the table columns.
+- Use the Link element from `react-router-dom` to link the update action to the editCustomer component by specifying the `/edit/:id` path, which we included in our routes in `App.js`.
 
-Our CustomerList component renders out as follows when we navigate to http://localhost:3000/customerlist:
+Run `npm start`.
 
-![customerList](/isp-management-system/allcustomers.jpg)
+Our `CustomerList` component renders out as follows when we navigate to `http://localhost:3000/customerlist`:
 
-So far, we have achieved the CREATE, READ, and DELETE functionalities.
+![customerList](/engineering-education/build-mern-stack-application-to-manage-isp/allcustomers.jpg)
 
-- EditCustomer Component.
-Use ``axios.patch()`` method to update customer details after getting the specified customer by id.
-Use the ``useParams()`` hook to access URL parameters and extract the id used to pre-populate the fields in the editCustomer form.
-- Set customer variable and get customer by id
+So far, we have achieved the `CREATE`, `READ`, and `DELETE` functionalities.
+
+#### editCustomer component
+Use `axios.patch()` method to update customer details after getting the specified customer by `id`.
+
+Use the `useParams()` hook to access URL parameters and extract the `id` used to pre-populate the fields in the editCustomer form.
+
+Set customer variable and get customer by `id` as shown:
 
 ```javascript
 import { useEffect,useState } from 'react'
@@ -784,12 +831,11 @@ useEffect(() => {
    })
 }
 ```
-- Set the initial state of the customer details to an empty array and set the id to the id retrieved by ``useParams()`` from the supplied URL.
-- Use the useEffect hook and axios.get() to make a GET request based on the id and update the customer details with the information from the database.
+
+- Set the initial state of the customer details to an empty array and set the id to the id retrieved by `useParams()` from the supplied URL.
+- Use the `useEffect` hook and `axios.get()` to make a `GET` request based on the `id` and update the customer details with the information from the database.
 
 This renders a pre-populated form.
-
-- Update Details in the database.
 
 ```javascript
 const updateCustomer = () => {
@@ -799,14 +845,17 @@ const updateCustomer = () => {
     })
 }
 ```
-- create the updateCustomer() function, which uses axios.patch to send a PATCH request and update details in the database.
-- Update the state using the showCustomer() function such that the current state holds the customer details in the database.
+- Create the `updateCustomer()` function, which uses `axios.patch` to send a `PATCH` request and update details in the database.
+- Update the state using the `showCustomer()` function such that the current state holds the customer details in the database.
 
-Include the following in the **Update** button in editCustomer.js to call the ``updateCustomer()`` function.
+Include the following in the **Update** button in `editCustomer.js` to call the ``updateCustomer()`` function as shown:
+
 ```javascript
 onClick={updateCustomer}
 ```
-Edit the editCustomer.js file to include the following code in the form.
+
+Edit the `editCustomer.js` file to include the following code in the form:
+
 ```javascript
 <form>
     <TextField style={marginTop} id="name" value={customer.name} onChange={(e) => showCustomer({ ...customer, name: e.target.value })}
@@ -823,19 +872,20 @@ Edit the editCustomer.js file to include the following code in the form.
     <Button type='submit' variant='contained' color='primary' style={marginTop} onClick={updateCustomer}>Update</Button>
 </form>
 ```
-- Update state the showCustomer() function to capture changes when the onChange event is triggered in the textfields.
+
+- Update state the `showCustomer()` function to capture changes when the `onChange` event is triggered in the textfields.
 - Set each field to the value supplied upon a change in the text field.
 - Use the spread operator to avoid removing the state of the different fields in the customer array. 
 
-Run ``npm start``
+Run `npm start`.
 
-The EditCustomer component renders a page similar to the one shown below when we click on the edit action on the customerlist page.
+The `EditCustomer` component renders a page when we click on the edit action on the `customerlist` page as shown below:
 
-![EditCustomer](/isp-management-system/updateCustomer.jpg)
+![EditCustomer](/engineering-education/build-mern-stack-application-to-manage-isp/updateCustomer.jpg)
 
 ### Conclusion
+In this tutorial, we successfully learned to create a fullstack management system for ISPs.
 
-We have successfully created a management system for ISPs.
 In summary, we have learned:
 - how to create REST API in Node.js, Express, and MongoDB
 - how to create a user interface with React.
@@ -843,4 +893,4 @@ In summary, we have learned:
 
 You can access the complete project [here](https://github.com/wanguiwaweru/MERN-STACK).
 
-Happy Learning !!!
+Happy learning!
