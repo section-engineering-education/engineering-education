@@ -1,34 +1,59 @@
-#### Introduction
-Toxicity Score is a numerical representation of how detrimental a piece of writing is, and the Perspective API is anticipated to provide you with that information by rating a line of text (such as a remark). When considering how many online discussions have been led, the technique is to reduce the type of debate so that individuals aren't discouraged from participating. Using this number, engineers and distributors can pass along feedback to experts and aid commentators in their evaluations. Viewpoint models have been providing scores for quite some time that indicate substantial harm, insult, disdain, character assault and danger.
+### Introduction
 
-### Prerequisites
-> In order to follow this tutorial, users should be familiar with the PHP and Javascript programming languages.
-
-### Objectives
-- Before the end of this instructional exercise, users will be familiar with the following concepts:
-1. Introduction to APIs
-2. Getting a Score with Client Uniform Resource Locator(cURL)
-3. Send A Request Using Ajax
-4. The WordPress Method
-5. Confidentiality and Censorship
+[Perspective](https://www.perspectiveapi.com/#/) is a free API that uses machine learning to identify "toxic" comments, making it easier to host better conversations online. By reading this article you will understand what exactly is perspective API and how to work with it.
 
 ### Table of content
-- [Prerequisites](#prerequisites)
-- [Objectives](#objectives)
+
+- [Introduction](#introduction)
 - [Table of content](#table-of-content)
-- [Starting with the application programming interface (API)](#starting-with-the-application-programming-interface-api)
-- [Obtaining a score with cURL](#obtaining-a-score-with-curl)
-- [Make An Ajax Query](#make-an-ajax-query)
-- [The WordPress Approach](#the-wordpress-approach)
-- [Data Security](#data-security)
+- [Prerequisites](#prerequisites)
+- [How it works](#how-it-works)
+- [Why should you use Perspective?](#why-should-you-use-perspective)
+- [Language availability](#language-availability)
+- [Step 1: Starting with the API](#step-1-starting-with-the-api)
+- [Step 2: Getting a Score with cURL](#step-2-getting-a-score-with-curl)
+- [Step 3: Send An Ajax Request](#step-3-send-an-ajax-request)
+- [Alternative way - The WordPress Way](#alternative-way---the-wordpress-way)
 - [Conclusion](#conclusion)
+- [Further Reading](#further-reading)
 
-### Starting with the application programming interface (API)
-To get started with the API, go to the company's website and fill out the API access request form on the site. Be aware that you may need to wait for a response to your email before you can actually try it out. After getting the confirmation email, the API key can only be retrieved by going into the Google Developer Console and requesting it. In less than a few minutes, you may create your login credentials with the level of security that is appropriate for your needs. Please note that the API's primary goal is to provide a score for each comment, and that any other use of this information would necessitate extra exertion.
+### Prerequisites
 
-### Obtaining a score with cURL
-To make the request and obtain the result, let's utilize PHP's cURL tool. If you're not familiar with cURL, don't be concerned; it's a reasonably straightforward concept to grasp. While we're going through this, it's actually rational to have the 'PHP documentation' open so that we can refer to it later on. Take a look at a couple of the main options we'll be using in this tutorial to get a better understanding of what cURL is about.
+- Fundamentals of PHP and Javascript programming languages.
+
+### How it works
+
+Perspective uses machine learning models to identify abusive comments. The models score a phrase based on the perceived impact the text may have in a conversation. Developers and publishers can use this score to give feedback to commenters, help moderators more easily review comments, or help readers filter out "toxic" language. Perspective models provide scores for several different attributes. In addition to the flagship Toxicity attribute, here are some of the other attributes Perspective can provide scores for:
+
+- Severe Toxicity
+- Insult
+- Profanity
+- Identity attack
+- Threat
+- Sexually explicit
+
+### Why should you use Perspective?
+
+Perspective has been shown to increase engagement by helping platforms and publishers create safe environments for conversation, and by helping individuals make healthier contributions online.
+
+1. Enables healthy conversations
+2. Reduces toxicity and abusive behavior
+3. Free, Self-Serve, Customizable.
+
+### Language availability
+
+Perspective API is free and available to use in Arabic, Chinese, Czech, Dutch, English, French, German, Hindi, Hinglish, Indonesian, Italian, Japanese, Korean, Polish, Portuguese, Russian, and Spanish. More models are being developed to constantly support new languages.
+
+### Step 1: Starting with the API
+
+To get started with using the API, you’ll need to [request API access](https://www.perspectiveapi.com/) from their website. I managed to get access within a few days. If you’re interested in playing with this yourself, know that you might need to wait it out until they email you back. Once you get the email saying you have access, you’ll need to log in to the Google Developer Console and get your API key. Create your credentials with the amount of security you’d like and then you’re ready to get going! Now you’ll need to head over to the [documentation](https://github.com/conversationai/perspectiveapi) on GitHub to learn a bit more about the project and find out how it works. The documentation includes lots of information about what features are currently available and what they’re ultimately designed to achieve. Remember: the main point of the API is to provide a score of how toxic a comment is, so to do anything extra with that information will require some work.
+
+### Step 2: Getting a Score with cURL
+
+Let’s use PHP’s cURL command to make the request and get the score. If you’re not used to cURL, don’t panic; it’s relatively simple to get the hang of. If you want to try it within WordPress, it’s even easier because there are native WordPress helper functions you can use. Let’s start with the standard PHP method. Whilst we walk through this, it’s a good idea to have the [PHP documentation](https://www.php.net/docs.php) open to refer to. To understand the fundamentals of cURL, we’ll go through a couple of the core options we may need to use.
+
 - index.php
+
 ```php
 $params = array(
   'comment' => array(
@@ -51,77 +76,80 @@ curl_setopt($req, CURLOPT_HTTPHEADER, array('Content-Type: application/json');
 curl_exec($req);
 curl_close($req);
 ```
-When you need to submit a cURL request to a server, the lines listed above can be used to complete a number of different activities. To complete the procedure, a cURL request must be launched, the request settings must be specified, the command must be run, and the connection must be terminated. Following that, you'll receive back from the server comment information in the form of JSON data, which can be used for a variety of purposes depending on the situation.
 
-### Make An Ajax Query
-Ajax requests to the API are supported due to the fact that the API produces results in the JSON format. The Ajax method of obtaining data is an excellent choice if you don't want to become too involved with PHP and the cURL technique of requesting data. This below code snippet demonstrates an Ajax request made using the jQuery library:
+The above seven lines simply perform different actions when you want to make a cURL request to a server. You’ll need to initialize the cURL request, set the options for the request, execute it, then close the connection. You’ll then get your comment data back from the server in the form of JSON data which is handy for several reasons.
+
+### Step 3: Send An Ajax Request
+
+As you get the response from the API in JSON format, you can also make an Ajax request to the API. This is handy if you don’t want to dive too much into PHP and the method of using cURL requests. An example of an Ajax request (using jQuery) would look something like this:
+
 ```javascript
 $.ajax({
-
-        data: {
-                comment: {
-                        text: "this is such a stupid idea!!"
-                },
-                languages: ["en"],
-                requestedAttributes: {
-                        TOXICITY: {}
-                }
-        },
-        type: 'post',
-        url: 'https://commentanalyzer.googleapis.com/v1alpha1/comments:analyze?key=YOUR-API-KEY',
-        success: function(response) {
-
-                console.log(response);
-
-        }
-
+  data: {
+    comment: {
+      text: "this is such a stupid idea!!",
+    },
+    languages: ["en"],
+    requestedAttributes: {
+      TOXICITY: {},
+    },
+  },
+  type: "post",
+  url: "https://commentanalyzer.googleapis.com/v1alpha1/comments:analyze?key=YOUR-API-KEY",
+  success: function (response) {
+    console.log(response);
+  },
 });
 ```
-As soon as we receive the data back, it is recorded in the control location where it will be reviewed. At some point, we'll be able to work with the JSON data to make something useful out it. If you don't include your API key in the URL's Ajax interest, it won't function. If you don't have it, you'll get an error message stating that your confirmation is invalid. As an alternative, you might take the model a step further and log the score in a database when you get the data back, or give the client a contribution toward the front as an alert.
 
-### The WordPress Approach
-Making use of the Toxic Comments WordPress extension is a fantastic strategy to ensure that the associated work is completed as efficiently as possible. The use of this module lessens the necessity for dreary errands, which is a fabulous depiction of the work that the module acts in the background to help us with achieving our goals.
+The data we get back is now logged to the console ready for us to debug it. Now we can decode the JSON data into an array and do something with it. Make sure you include your API key at the end of the URL in the Ajax request too otherwise it won’t work! Without it; you’ll get an error about your authentication is invalid. Also, you don’t have to stop here. You could also take the example above a step further and log the score in a database as soon as you’ve got the data back, or provide feedback to the user on the front-end in the form of an alert.
+
+### Alternative way - The WordPress Way
+
+If you’re using WordPress (which is relevant here since WordPress has comment threads you might want to moderate) and you want to make a cURL request to the Perspective API, then it’s even simpler. Using the [Toxic Comments plugin](https://wordpress.org/plugins/toxic-comments/) as an example, you can do the following instead thanks to WordPress’ exhaustive built-in functions. You won’t need to do any of the following if you use the plugin, but it’s worth explaining what the plugin does behind the scenes to achieve what we want to do here.
 
 ```php
 $request = wp_remote_post($arguments, $url);
 ```
 
-A request to an external asset can be published using this manner without needing an incredible amount of effort on the part of the author. We don't need to think about it right now, but there are other capabilities that you can use, such as the ability to receive requests, that we can take advantage of in the future. To obtain the information you requested from the server, you will need to use a separate function. As it turns out, WordPress does indeed provide a tool that can assist you in accomplishing this:
+This will make a post request to the external resource for us without doing much leg work for it. There are other functions that you can use too, as a get request but we don’t need to think about that right now. You then need to use another function to get the requested data back from the server. Yes, you’re completely right. WordPress has a function for that:
 
 ```php
 $data = wp_remote_retrieve_body($request);
 ```
 
-How can we make use of the API to obtain the information that we require? A thorough toxicity rating can only be acquired by requesting the API to read and score the comment by using the URL provided in combination with the comment and submitting the request. You'll also receive your API key at the conclusion of the process, which you'll need in order to authenticate any queries you make. It is necessary to mention your name and address.
+So that’s great, but how do we use the API to get the data we want? Well, to start with if you just want to get the overall toxicity score, you’ll need to use the following URL which will ask the API to read the comment and score it. It also has your API key at the end which you need to authenticate your request. Make sure you change it to yours!
 
-https://commentanalyzer.googleapis.com/v1alpha1/comments:analyze?key=YOUR-API-KEY
+> https://commentanalyzer.googleapis.com/v1alpha1/comments:analyze?key=YOUR-API-KEY
 
-There is nothing complicated about it at first glance, but when you try to access it, you are redirected to the 404 error page instead. It will respond to a cURL request, whether made using your chosen CMS or directly through a PHP script. The data returned will be in the following format:
+It looks quite plain and if you visit it, it’ll take you to a 404 page. But if you make a cURL request to it, either through your favorite CMS or via a simple PHP script, you’ll end up getting data that might look similar to this:
+
 ```JSON
 {
   "attributeScores": {
     "TOXICITY": {
       "summaryScore": {
-        "value": 0.567890,
+        "value": 0.56789,
         "type": "PROBABILITY"
       }
     }
   },
-  "languages": [
-    "en"
-  ]
+  "languages": ["en"]
 }
 ```
-As a result of your request, you will receive a decimal number as the final result. The API will then return for that comment a score of 0.5, which indicates that the comment has a 50% chance of being toxic. It is possible to use this score to govern how a comment is handled and displayed to the end user by labeling it as spam or offering a channel that allows clients to show less or more negative comments, just as Google has done with their method of scoring.
 
-![Image-1](Image-1)
+The score you’ll get back from the API will be a number as a decimal. So if a comment gets a score of 50% toxicity, the score you’ll get back from the API will be 0.5. You can then use this score to manipulate the way the comment is stored and shown to the end-user by marking it as spam or creating a filter to let users show fewer or more toxic comments, much like Google has done in their example.
 
-In addition, there are a variety of important details that you may want to investigate further. It's possible to get a sense of the motive behind a comment by looking at the context in which it was posted rather than actually reading the comment in question. Because of the data we can expect in the future, it is possible to filter through explicit remarks with explicit aims and create a more magnificent comment area where savagery can occasionally dominate. Over time, as the API develops and improves, we should expect that the score it assigns to our comment will become more accurate and anchored in fact.
+![Image-1](/engineering-education/edit/improving-conversation-with-the-perspective-api/image.png)
 
-### Data Security
-Whenever you move your information to Google, where it will be segregated and kept on a Google PC, it may have a detrimental impact on your ability to use your voice and to access your information. Despite the fact that I believe it to be a fantastic idea, it does not appear to be working well for everyone. This is especially evident when you consider how commonly it is utilized on well-known news websites and electronic media stages, creating the possibility of safety and control concerns.
+There are other bits of useful data you may want to look into as well. Things such as the context of the comment can help you understand the intent of the comment without reading it firsthand. Ultimately, with this kind of data we can expect to receive, it makes it possible to filter out certain comments with a particular intent and provide a nicer comment area where trolls can often take over. Over time when the API becomes more developed, we should expect the scoring to be more robust and more accurate in the analysis of the comment we send it.
 
 ### Conclusion
-It's clear that despite the Perspective API's efforts to score comments using a convoluted computation, there is still a lot of work to be done in the effort to keep more tranquil social places on the web.
 
-Happy coding!
+The Perspective API makes a great effort to score comments based on a highly complex algorithm, but it seems that there is still a long way to go yet in the fight to maintain more civil social spaces online. Until then, play around with the API and get to know much about it. Also, remember to an error on the side of caution as the API is still in an alpha phase for now so things may break.
+
+Happy Coding!
+
+### Further Reading
+
+- [Getting Started with Jigsaw](https://jigsaw.google.com/)
