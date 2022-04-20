@@ -1,5 +1,21 @@
-A time series consists of various data points sequentially organized in equal intervals over time. A model will analyze the complex patterns and relationships in the time series, and predict future values.
+---
+layout: engineering-education
+status: publish
+published: true
+url: /univariate-time-series-using-recurrent-neural-networks/
+title: Univariate time series using Recurrent Neural Networks
+description: This tutorial will show a reader how to build a univariate time series model that predicts monthly milk production using a Recurrent Neural Network (RNN).
+author: james-maingi
+date: 2022-04-20T00:00:00-21:00
+topics: [Machine Learning]
+excerpt_separator: <!--more-->
+images:
 
+  - url: /engineering-education/univariate-time-series-using-recurrent-neural-networks/hero.png
+    alt: Univariate time series using Recurrent Neural Networks Hero Image 
+---
+A time series consists of various data points sequentially organized in equal intervals over time. A model will analyze the complex patterns and relationships in the time series, and predict future values.
+<!--more-->
 A time series model is implemented in sectors such as weather forecasting, stock price prediction, and cryptocurrency prediction. For example, a time series model will analyze the past Bitcoin prices and predict future prices. It helps investors know when to buy Bitcoin and when to sell them to gain profits.
 
 A univariate time series has only a single variable that trains the model. For example, a weather forecast model that uses the past recorded temperature values to predict future temperature.
