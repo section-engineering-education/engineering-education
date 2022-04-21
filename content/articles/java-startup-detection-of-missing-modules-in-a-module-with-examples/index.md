@@ -17,7 +17,7 @@ images:
 ### Introduction
 This article introduces the learner to java modules used in java programming. We will make use of easy-to-learn module codes. Java 9, the latest java release, introduced java modules to the world of programming. Earlier versions of java used packages and access modifiers to associate related classes and hide certain classes and packages from other classes.
 
-The problem arose when explicit dependencies declared using ‘import’ statements were called at runtime time. The application could not detect missing modules until runtime, when the application would call the missing module. Dependencies are compiled at compile time, making room for a missing module to be reported early compared to when the application is at runtime.
+The problem arose when explicit dependencies declared using `import` statements were called at runtime time. The application could not detect missing modules until runtime when the application would call the missing module. Dependencies are compiled at compile-time, making room for a missing module to be reported early compared to when the application is at runtime.
 
 Let us dive into Java modules.
 
@@ -49,7 +49,7 @@ As mentioned above, java modules were introduced in the latest java release, jav
 There are four different java modules in java 9. They include;
 - Application modules are used by developers when building application modules. They contain module-info class, explicit dependent modules, and packages needed in the application. Application modules cannot access unnamed modules.
 
-- Unnamed modules. The JAR file or class is not added on the module path in unnamed modules but rather on the classpath. This means it does not have any name. Hence it cannot export or read all modules.
+- Unnamed modules. The JAR file or class is not added on the module path in unnamed modules but rather on the classpath; therefore, it does not have any name. Hence it cannot export or read all modules.
 
 - Automatic modules. They are placed on the module path, but they lack the module-info class. They can access all modules. 
 Let us look at how to write modular code.
@@ -177,7 +177,7 @@ public class Learner
 Hello learner. Welcome to section engineering java module tutorial.
 ```
 
-Now we can use the HelloLearner.java class inside the Learner.java class. `HelloLearner.welcomelearner();` calls the `welcomelearner()` function imported from the `HelloLearner.java` class. This outputs the above result.
+Now we can use the HelloLearner.java class inside the Learner.java class. `HelloLearner.welcomelearner();` calls the `welcomelearner()` function imported from the `HelloLearner.java` class. The above result is the output.
 
 ### Missing Module scenario
 Above, we mentioned how earlier versions of java encountered problems when explicit dependencies declared using ‘import’ statements were called at runtime time. When the application tried using a module and discovered that it was missing, it would raise an error and crash. Java 9 made things much easier when dealing with java modules.
@@ -185,6 +185,6 @@ Above, we mentioned how earlier versions of java encountered problems when expli
 Suppose we failed to import the hellolearner module and intended to use the `HelloLearner.welcomelearner()` function in the `Learner.java` class. The compiler would throw an error `package com.javamodule.demo` is not visible.
 
 ### Conclusion
-Modules have a lot of benefits, as seen above. They mainly come in handy when the developer comes across non-modular applications.
+Modules have many benefits, as seen above. They mainly come in handy when the developer comes across non-modular applications.
 
 Happy Coding!
