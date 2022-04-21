@@ -142,7 +142,9 @@ Colored image of the Norfolk Hotel:
 
 ![Colored Norfolk hotel](/engineering-education/image-colorization-using-ai-and-python/colored-norfolk-hotel.png)
 
-We can see that the Deoldify model has added some color to our images. Of course, it's not perfect. But, this technology just goes on to show you what is possible with amazing technologies such as the one used in this experiment. 
+We can see that the Deoldify model has added some color to our images. We achieved these results with only a few lines of code. Amazing, right?
+
+Of course, it's not perfect. But, this technology just goes on to show you what is possible with amazing technologies such as the one used in this experiment. 
 
 Please find the complete code for this tutorial [here](https://colab.research.google.com/drive/1bh15liSGDkUMwez4xNH1kG6ETFxQVlZ6?usp=sharing).
 
