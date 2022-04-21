@@ -3,22 +3,26 @@ layout: engineering-education
 status: publish
 published: true
 url: /develop-and-deploy-fast-apps-with-vite-js/
-title: How to Develop and Deploy Fast Applications with Vite JS
-description: This article will discuss what Vite is, how it works, and its features to help us understand why we need it. we will look at how easy it is getting Vite up and running.
+title: How to Develop and Deploy Fast Applications With Vite JS
+description: This article will discuss what Vite is, how it works, and its features to help us understand why we need it. We will look at how easy it is getting Vite up and running.
 author: esther-waithera
-date: 2022-04-02T00:00:00-18:30
-topics: []
+date: 2022-04-21T00:00:00-01:10
+topics: [Languages]
 excerpt_separator: <!--more-->
 images:
 
   - url: /engineering-education/develop-and-deploy-fast-apps-with-vite-js/hero.jpg
     alt: How to Develop and Deploy Fast Applications with Vite JS Hero Image
 ---
-Vite is a JavaScript development tool that greatly enhances front-end development. It was created to simplify, build, and speed up the development process. 
+Vite is a JavaScript development tool that greatly enhances front-end development. It was created to simplify, build, and speed up the development process.
 <!--more-->
-With the help of commands, Vite allows you to launch a development environment for frameworks such as Vue, React, and even vanilla.js applications. Vite JS is the next-generation front-end tool. It has an instant server-start, a lighting fast Hot Module Replacement (HMR), Rich features, an optimized build, server-side rendering, and more. 
+With the help of commands, Vite allows you to launch a development environment for frameworks such as Vue, React, and even vanilla.js applications.
 
-This guide will teach you what Vite is, how it works, and its features to help you understand why you need it. we will look at how easy it is getting Vite up and running. We will also discover how quick Vite is, how to get started with it using React, Vue, vanilla.js, and how much it gets done while you're working with it.
+Vite JS is the next-generation front-end tool. It has an instant server-start, a lighting fast Hot Module Replacement (HMR), rich features, an optimized build, server-side rendering, and more.
+
+This guide will teach you what Vite is, how it works, and its features to help you understand why you need it. We will look at how easy it is getting Vite up and running.
+
+We will also discover how quick Vite is, how to get started with it using React, Vue, vanilla.js, and how much it gets done while you're working with it.
 
 ### Table of contents
 - [What is Vite JS](#what-is-vite-js).
@@ -34,9 +38,9 @@ To follow along with this tutorial, you will need to have:
 - [Visual Studio Code](https://code.visualstudio.com/download) IDE.
 
 ### What is Vite JS
-Vite is a JavaScript development server and bundler that delivers source files over `ECMAScript 6` module (ESM). This makes it fast in things like starting and reloading. [Evan You](https://www.linkedin.com/in/evanyou/), the inventor of Vue.js, created it. 
+Vite is a JavaScript development server and bundler that delivers source files over `ECMAScript 6` module (ESM). This makes it fast in things like starting and reloading. [Evan You](https://www.linkedin.com/in/evanyou/), the inventor of Vue.js, created it.
 
-Vite comes in handy when old tools like Webpack and Rollup have started to feel slower.  Vite trys to solve the feedback loop speed because of its very fast feature.
+Vite comes in handy when old tools like Webpack and Rollup have started to feel slow. Vite tries to solve the feedback loop speed because of its very fast feature.
 
 Vite aims to provide modern web projects with speedy apps and a seamless developer experience. This is done in three ways:
 - During development, code is not bundled like when using Webpack - Instead, it supports ECMAScript 6 module (ESM). ESM support allows browsers to fetch modules when importing them. Vite uses ESM to eliminate the build step while in development fully. This is because it is supported by all recent browsers such as Chrome, Edge and Firefox to ensure ESM support.
@@ -62,7 +66,7 @@ Vite has features that help you know why you should use it and why you need it:
 So let's learn by doing. Let us develop and deploy a Vanilla.js Vite application.
 
 #### Vite Installation
-To get started with Vite, we will need Node.js and npm installed on your computer. Open the terminal in your VS Code and run the command below:
+To get started with Vite, you need Node.js and npm installed on your computer. Open the terminal in your VS Code and run the command below:
 
 ```bash
 $ npm init vite@latest
@@ -70,13 +74,11 @@ $ npm init vite@latest
 
 ![Project name](/engineering-education/develop-and-deploy-fast-apps-with-vite-js/project-name.jpg)
 
-Afterwards, enter the project name and continue. We will then choose the JavaScript framework to use. We will use vanilla.js in this article. You'll see it has a scaffold in your project. Then, we follow the instructions that follow.
-
-The instructions include:
+Afterwards, enter the project name and continue. We will then choose the JavaScript framework to use. We will use vanilla.js in this article. You'll see it has a scaffold in your project. Then follow the instructions below.
 
 ![Vanilla.js](/engineering-education/develop-and-deploy-fast-apps-with-vite-js/vanilla-js.jpg)
 
-We will execute the instructions above by changing the directory of our project `cd vite-project` and running the npm install `npm install` to install all the dependencies.
+We will execute the instructions above by changing the directory of our project `cd vite-project` and running the `npm install` to install all the dependencies.
 
 ![Instructions](/engineering-education/develop-and-deploy-fast-apps-with-vite-js/instructions.jpg)
 
@@ -91,7 +93,7 @@ The project structure is pretty simple. Let us look at what the `package.json` f
 
 ![Package.json](/engineering-education/develop-and-deploy-fast-apps-with-vite-js/package-json.jpg)
 
-Since we have installed the dependencies, let's run `npm run dev`. The command is executed to install Vite as a local development dependency in the project. Then, open the project at [localhost 3000](http://localhost:3000/), click the link, and it will open on your browser.
+Since we have installed the dependencies, let's run `npm run dev`. The command is executed to install Vite as a local development dependency in the project. Then open the project at [localhost 3000](http://localhost:3000/), click the link, and it will open on your browser.
 
 Congratulations! You now have Vanilla.js and Vite running on your local server. You will notice the `hmr update` running when you edit files and changes appear instantly on the browser.
 
@@ -108,39 +110,38 @@ We execute the command `npm run preview` to preview the project. It will serve a
 ![Preview](/engineering-education/develop-and-deploy-fast-apps-with-vite-js/preview.jpg)
 
 #### Build a JavaScript app to learn more about Vite.
-Let us create a simple JavaScript application to learn more about Vite. We will create a file in our project's folder called `index.md`. The markdown file will have some data for us to load.
+Let us create a simple JavaScript application to learn more about Vite. We will create a file in our project's folder named `index.md`. The markdown file will have some data for us to load.
 
 File `index.md`:
 
 ![Markdown file](/engineering-education/develop-and-deploy-fast-apps-with-vite-js/markdown-copy.jpg)
 
-One of the awesome features of Vite is that you can easily import data into your JavaScript application. We will need to install `markdownIt` using the command  `npm install markdown-it`. This will let us process text into markdown directly in my application.
+One of the awesome features of Vite is that you can easily import data into your JavaScript application. We will need to install `markdownIt` using the command `npm install markdown-it`. This will let us process text into markdown directly in my application.
 
 ![MarkdownIt](/engineering-education/develop-and-deploy-fast-apps-with-vite-js/markdown-it.jpg)
 
-Now, we can import the library into our `main.js` file. We not only import modules but data as well. We use the command `import markdown-it from 'markdown-it'`  to do this. Also, we use the command `import copy from './index.md?raw'` to import it as text. 
+Now, we can import the library into our `main.js` file. We not only import modules but data as well. We use the command `import markdown-it from 'markdown-it'` to do this. Also, we use the command `import copy from './index.md?raw'` to import it as text.
 
-The added question mark (?) with the value of raw helps to import the data as text. Afterwards, this code will render our data in the app `markdownIt().render(copy)`. 
+The added question mark (?) with the value of raw helps to import the data as text. Afterwards, this code will render our data in the app `markdownIt().render(copy)`.
 
 This is our `main.js` file:
 
 ```js
-import './style.css'
-import markdownIt from 'markdown-it'
-import copy from './index.md?raw'// added a question mark with the value of raw to import it as text
+import "./style.css";
+import markdownIt from "markdown-it";
+import copy from "./index.md?raw"; // added a question mark with the value of raw to import it as text
 
-document.querySelector('#app').innerHTML =
- markdownIt().render(copy)// This code render our data from the markdown to the app
+document.querySelector("#app").innerHTML = markdownIt().render(copy); // This code render our data from the markdown to the app
 ```
 
-Here is the output that shows that the app rendered data from the markdown file.
+Here is the output that shows the app rendered data from the markdown file:
 
 ![Project output](/engineering-education/develop-and-deploy-fast-apps-with-vite-js/output.jpg)
 
-The Vite project is extremely fast and does not require any loading. Vite uses HMR to import other JavaScript modules. Modules are updated individually without reloading other modules to speed up development. 
+The Vite project is extremely fast and does not require any loading. Vite uses HMR to import other JavaScript modules. Modules are updated individually without reloading other modules to speed up development.
 
 ### Conclusion
-Vite is a very fast tool that is easy to set up. Hopefully, you loved working with it as well as I did. In this tutorial, we have learned how to use Vite to create and deploy apps quick.
+Vite is a very fast tool that is easy to set up. Hopefully, you loved working with it as well as I did. In this tutorial, we have learned how to use Vite to create and deploy apps quickly.
 
 This guide has gone through Vite, which is a fast build tool. It has also highlighted how it works and its features. You can apply the knowledge and skills you've gained from this tutorial to create fast applications with Vite.
 
