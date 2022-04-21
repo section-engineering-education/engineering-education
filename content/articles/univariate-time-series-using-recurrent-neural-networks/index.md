@@ -58,7 +58,7 @@ The image below shows the distinction between a traditional artificial neural ne
 
 ![Traditional neural network vs RNN ](/engineering-education/univariate-time-series-using-recurrent-neural-networks/ann-vs-rnn.png)
 
-[Image Source: Simplilearn](https://www.simplilearn.com/ice9/free_resources_article_thumb/Simple_Recurrent_Neural_Network.png)
+*[Image Source: Simplilearn](https://www.simplilearn.com/ice9/free_resources_article_thumb/Simple_Recurrent_Neural_Network.png)*
 
 The implemented feedback loops in the hidden layers of the recurrent neural network help it to process and analyze the sequential data for model prediction. The loop also introduces a sequential memory that helps determine the order in which the data values were fed into the recurrent neural network.
 
