@@ -1,0 +1,37 @@
+{{ .context.Scratch.Set "height" .height }}
+{{ .context.Scratch.Set "unit" .unit }}
+{{ .context.Scratch.Set "items" .items }}
+
+<section class="testimonials-wrapper xs-mt-100 xs-mb-100">
+  <div class="content-margins">
+    <div class="carousel-header text-center xs-mb-50">
+      <h2>Community testimonials</h2>
+      <p>Real input from EngEd students on how the community has allowed them to build up their skills in a real world setting, and having a place to showcase those achievements (with the EngEd program) has helped in their dev journey.</p>
+    </div>
+
+    <div id="carousel10" class="carousel" duration="{{ .duration }}" items="{{ .items }}">
+      <ul>
+          {{ range $index, $slide := .context.Site.Data.testimonialsData.testimonials }}
+            <li id="c10_slide{{ add $index 1}}" style="min-width: calc(100%/{{ $.context.Scratch.Get "items" }});">
+              <div class="testimonial-image">
+                <img src="{{ $slide.image }}" alt="" />
+              </div>
+              <div class="testimonial-content">
+                <p class="testimonial">"{{ $slide.testimonial }}"</p>
+                <h5>{{ $slide.name }}</h5>
+                <p class="roles">{{ delimit $slide.roles " / " }}</span>
+                <p class="location">{{ $slide.location }}</span>
+              </div>
+            </li>
+          {{ end }}
+      </ul>
+      <ol>
+        {{ range $index, $page := .context.Site.Data.testimonialsData.testimonials }}
+          {{ if (modBool $index 1) }}<li><a href="#c10_slide{{ add $index 1 }}"></a></li>{{ end }}
+        {{ end }}
+      </ol>
+      <div class="prev">&lsaquo;</div>
+      <div class="next">&rsaquo;</div>
+    </div>
+  </div>
+</section>

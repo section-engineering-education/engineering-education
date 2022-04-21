@@ -1,0 +1,16 @@
+testimonials: 
+  - name: Ahmad M.
+    testimonial: Working as a Content Moderator (for EngEd program at) Section has been the best thing to happen to me in the last 2 years. I have learned a lot and developed a lot of new skills.
+    image: /authors/ahmad-mardeni/avatar.jpg
+    roles: ["Contributor", "Peer Reviewer", "Content Moderator"]
+    location: Baton Rouge, LA
+  - name: John A.
+    testimonial: I felt that my EngEd portfolio added something great to set me apart from my peers who are also looking for available career positions.
+    image: /authors/john-amiscaray/avatar.jpg
+    roles: ["Contributor", "Peer Reviewer"]
+    location: San Diego, CA
+  - name: Sophia R.
+    testimonial: The Peer Review Program has allowed me to deepen my knowledge of cutting-edge technologies or learn about new ones entirely.
+    image: /authors/sophia-raji/avatar.jpg
+    roles: ["Contributor", "Intern"]
+    location: Denver, CO

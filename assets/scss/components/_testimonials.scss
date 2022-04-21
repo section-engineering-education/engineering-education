@@ -1,0 +1,115 @@
+.testimonials-wrapper {
+  .content-margins {
+    padding-left: 5%;
+    padding-right: 5%;
+    margin: 0 auto;
+    max-width: 1600px;
+  }
+}
+
+.carousel {
+  position: relative;
+
+  ul {
+    overflow: auto; 
+    display: flex; 
+    flex-wrap: nowrap; 
+    scroll-snap-type: x mandatory; 
+    scroll-snap-points-y: repeat(100%); 
+    scroll-behavior: smooth; 
+    // background: gray; 
+    -ms-overflow-style: none; 
+    scrollbar-width: none; 
+    margin: 0; 
+    padding: 0;
+
+    &::-webkit-scrollbar {
+      display: none; /* Hide scrollbar for Chrome, Safari and Opera */
+    } 
+
+    li {
+      position: relative; 
+      min-width: 100%; 
+      list-style: none; 
+      display: flex;
+      flex-flow: wrap;
+      flex-direction: row;
+      
+      .testimonial-image {
+        display: flex;
+        flex-flow: wrap;
+        min-width: 100px;
+        margin-right: 20px;
+        
+        img {
+          width: 100px;
+          height: 100px;
+          border-radius: 50%;
+          object-fit: cover;
+        }
+      }
+
+      .testimonial-content {
+        width: calc(100% - 120px);
+
+        p {
+          margin-bottom: 20px;
+        }
+
+        span {
+          font-style: italic;
+        }
+      }
+    }
+  }
+
+  ol {
+    position: absolute; 
+    bottom: -60px; 
+    display: flex; 
+    justify-content: center; 
+    left: 50%; 
+    transform: translateX(-50%); 
+    z-index: 9;
+
+    li {
+      list-style: none; 
+      padding: 0 5px;
+      
+      a {
+        display: block; 
+        height: 10px; 
+        width: 10px; 
+        border: 2px solid #f1f1f1; 
+        background: #f1f1f1; 
+        border-radius: 100%;
+      }
+      &.selected {
+        a {
+          background: blue;
+        }
+      }
+    }
+  }
+
+  .prev, 
+  .next {
+    display: none; 
+    user-select:none; 
+    cursor: pointer; 
+    font-size: 50px; 
+    color: blue; 
+    position: absolute; 
+    left: -30px; 
+    padding: 15px 15px 30px; 
+    top: 50%; 
+    transform: translateY(-50%); 
+    z-index: 9; 
+    line-height: 0;
+  }
+
+  .next {
+    left: auto; 
+    right: -30px;
+  }
+}
