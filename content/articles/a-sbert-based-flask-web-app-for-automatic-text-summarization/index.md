@@ -1,4 +1,4 @@
-SBERT can be used for additional types of tasks, such as comparing the semantic similarity of words. When summarizing a lengthy piece of writing, it is critical to seek for similarities between sentences to ensure that the summary is correct and does not distort the original text's meaning. BERT output is pooled in the architecture to provide a constant-size embedding of sentences.
+Sentence-BERT (SBERT) is a BERT network variant that uses a siamese and triplet network to construct semantically relevant sentence embeddings. When summarizing a lengthy piece of writing, it's critical to look for phrase similarities to verify that the summary is accurate and doesn't obscure the original text's content. The architecture pools BERT output to create a sentence embedding with a fixed size.
 
 With the help of [Sentence-BERT](https://arxiv.org/abs/1908.10084), a modification of the BERT network, semantic embeddings can be compared using cosine similarity. We'll create a Flask web app that summarizes text automatically using BERT in this tutorial.
 ### Prerequisites
@@ -10,11 +10,11 @@ With the help of [Sentence-BERT](https://arxiv.org/abs/1908.10084), a modificati
 - [Conclusion](#conclusion)
 - [Reference](#reference)
 ### Building the Flask web app 
-Sentence-BERT (SBERT), a siamese and triplet network-based variant of the BERT network capable of deriving semantically meaningful sentence embeddings. This enables BERT to be utilized for certain new activities that were previously inaccessible to BERT. These tasks involve comparing massive sets of semantic similarities, grouping, and retrieving information via semantic search.
+As stated before,Sentence-BERT (SBERT) is a siamese and triplet network-based variation of the BERT network that may generate semantically relevant sentence embeddings. As a result, BERT can now be used for a variety of new tasks that were previously unavailable to it. These jobs entail comparing large collections of semantic similarities, organizing information, and retrieving it through semantic search.
 
-BERT established new benchmarks for performance on a variety of sentence categorization and pairwise regression problems. BERT makes use of a cross-encoder: two words are given to the transformer network, which predicts the target value. This configuration, however, is unsatisfactory for a variety of pair regression tasks because to the large number of possible combinations.
+BERT set new performance standards for a range of sentence categorization and paired regression challenges. BERT employs a cross-encoder, in which two words are fed into a transformer network, which predicts the target value. 
 
-The siamese network architecture permits the derivation of fixed-sized vectors for the input texts. Semantically related sentences can be identified using a similarity measure such as cosine similarity  distance. Due to the high efficiency with which these similarity measures can be computed on modern technology, SBERT can be used for both semantic similarity search and clustering.
+The generation of fixed-sized vectors for the input texts is possible thanks to the siamese network architecture. A similarity measure, such as cosine similarity distance, can be used to identify semantically related texts. SBERT can be used for both semantic similarity search and clustering due to the high efficiency with which these similarity measures can be computed on present technology.
 #### Step One: Creating a virtual environment for the project
 Before we start we will have to create a virtual evironment. Open terminal and create a virtual environment name `summarizerApp` in any directory you wish.
 
