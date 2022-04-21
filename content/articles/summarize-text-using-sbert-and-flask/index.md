@@ -1,149 +1,144 @@
-SBERT can be used for additional types of tasks, such as comparing the semantic similarity of words. When summarizing a lengthy piece of writing, it is critical to seek for similarities between sentences to ensure that the summary is correct and does not distort the original text's meaning. BERT output is pooled in the architecture to provide a constant-size embedding of sentences.
+In this tutorial, we will learn to build a flask web application that summarizes text using Sentence-BERT model.
+<!--more-->
+Text summarization deals with creation of sentence embeddings that supports over 100 languages. You can read more about Sentence-BERT [here](https://arxiv.org/abs/1908.10084).
 
-With the help of [Sentence-BERT](https://arxiv.org/abs/1908.10084), a modification of the BERT network, semantic embeddings can be compared using cosine similarity. We'll create a Flask web app that summarizes text automatically using BERT in this tutorial.
+SBERT can also be used to compare the semantic similarity of words. When summarizing a lengthy text, it is critical to seek for similarities between sentences to ensure that the summary is correct and does not distort the original text's meaning.
+
 ### Prerequisites
-- Have a basic knowledge of python programming language.
+To follow along with this tutorial, the reader must have the following:
+- Have a basic knowledge of Python programming language. (Here, we will use Python version greater than 3)
 - Have an IDE installed, preferably [VS Code](https://code.visualstudio.com/).
 
-### Table of contents
-- [Building the Flask web app](#building-the-flask-web-app) 
-- [Conclusion](#conclusion)
-- [Reference](#reference)
-### Building the Flask web app 
-Sentence-BERT (SBERT), a siamese and triplet network-based variant of the BERT network capable of deriving semantically meaningful sentence embeddings. This enables BERT to be utilized for certain new activities that were previously inaccessible to BERT. These tasks involve comparing massive sets of semantic similarities, grouping, and retrieving information via semantic search.
+### Build flask web app
+Sentence-BERT (SBERT), a siamese and triplet network-based variant of the BERT model that is capable of deriving semantically meaningful sentence embeddings. With SBERT, BERT got additional capability to compare massive sets for semantic similarities, group, and retrieve information via semantic search.
 
-BERT established new benchmarks for performance on a variety of sentence categorization and pairwise regression problems. BERT makes use of a cross-encoder: two words are given to the transformer network, which predicts the target value. This configuration, however, is unsatisfactory for a variety of pair regression tasks because to the large number of possible combinations.
+BERT established new benchmarks for performance on a variety of sentence categorization and pairwise regression problems.
 
-The siamese network architecture permits the derivation of fixed-sized vectors for the input texts. Semantically related sentences can be identified using a similarity measure such as cosine similarity  distance. Due to the high efficiency with which these similarity measures can be computed on modern technology, SBERT can be used for both semantic similarity search and clustering.
-#### Step One: Creating a virtual environment for the project
-Before we start we will have to create a virtual evironment. Open terminal and create a virtual environment name `summarizerApp` in any directory you wish.
+Semantically related sentences can be identified using a similarity measure such as cosine similarity distance. Due to the high efficiency with which these similarity measures can be computed on modern technology, SBERT can be used for both semantic similarity search and clustering.
 
-Use the following command for **python 3**:
+#### Create a virtual environment
+Before we start, let's create a virtual evironment. Open the terminal and create a virtual environment `summarizerApp` as shown:
 
 ```bash
 python3 -m venv summarizerApp
 ```
 
-> For python 2 remove the number 3.
-
-Let's go ahead and activate the environment. Follow the command below:
+Then, we activate the environment with:
 
 ```bash
 source summarizerApp/bin/activate
 ```
-After executing the above command you will notice that the `summarizerApp` is within brackets. This means that the environment is now active.
 
-#### Installing Packages
-1. **Install flask**: For making web applications, HTTP request management, and template rendering.
+#### Install packages
+##### Flask
+We use Flask to make web applications, to manage HTTP requests, and render templates.
 
 ```bash
 pip3 install Flask
 ```
 
-2. **Install summarizer**: For getting the most relevant and valuable information out of a lengthy document.
+##### summarizer
+To fetch the most relevant and valuable information out of a lengthy document, we use `summarizer`.
+
 ```bash
 pip3 install summarizer
 ```
 
-3. **Install sentence-transformers**: Python framework for state-of-the-art sentence, text and image embeddings.
+##### sentence-transformers
+Python framework that uses the state-of-the-art models for text and image embeddings creation.
 
 ```bash
 pip3 install -U sentence-transformers
 ```
 
-4. **Install bert-extractive-summarizer**: To do extractive summaries, this tool makes use of the HuggingFace Pytorch transformers library.
+##### bert-extractive-summarizer
+To do extractive summaries, we use BERT extractive summarizer from the HuggingFace Pytorch transformers library.
 
 ```bash
 pip3 install -q bert-extractive-summarizer
 ```
 
-#### Step Two: Front-End coding
-Inside your working directory, create a folder called `templates`. Create two files in that folder by opening it in [Visual Studio Code](https://code.visualstudio.com/).
-
-These two files should be named as:
+#### Build frontend
+Inside the working directory, create a folder called `templates` with two files inside it:
 1. `index.html`
 2. `summary.html`
 
-In the `index.html` file, i included the below html code. The code consists of a home page code that displays a text field where the user can submit a significant chunk of content that will be summarized.
+In the `index.html` file for the home page, we display a text field where the user can submit a textual content that is to be summarized.
 
 ```html
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Text Summarizer App</title>
-    
-   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
-</head>
-<body>
-    <nav class="navbar navbar-light" style="background-color: #100da1;">
-        <div class="container">
-            <a class="navbar-brand">Summarizer</a>
-        </div>
-    </nav>
-    <form action="/summarize" method="post">
-        <div class="form-group">
-            <label for="exampleFormControlTextarea1" style="padding-top: 2em;">
-                <strong>Enter Your Text Below To Be Summarized:</strong>
-            </label>
-            <br>
-            <textarea class="form-control" id="exampleFormControlTextarea1" rows="10" name="data"></textarea>
-        </div>
-        <br>
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Text Summarizer App</title>
         
-        <button type="submit" class="btn btn-outline-primary">Summarize</button>
-    </form>
-    
-</body>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    </head>
+    <body>
+        <nav class="navbar navbar-light" style="background-color: #100da1;">
+            <div class="container">
+                <a class="navbar-brand">Summarizer</a>
+            </div>
+        </nav>
+        <form action="/summarize" method="post">
+            <div class="form-group">
+                <label for="exampleFormControlTextarea1" style="padding-top: 2em;">
+                    <strong>Enter Your Text Below To Be Summarized:</strong>
+                </label>
+                <br>
+                <textarea class="form-control" id="exampleFormControlTextarea1" rows="10" name="data"></textarea>
+            </div>
+            <br>
+            
+            <button type="submit" class="btn btn-outline-primary">Summarize</button>
+        </form>
+        
+    </body>
 </html>
 ```
-The page looks like this:
 
 ![Home page](/engineering-education/a-sbert-based-flask-web-app-for-automatic-text-summarization/result.png )
 
-To display a summary of the input text from the `index.html` page, then the `summary.html` file comes in. 
-
-The `summary.html` file contains the below html code:
+To display the text summary of the text we inputted, we create `summary.html` as shown:
 
 ```html
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Your Summary</title>
-    <style>
-        p{
-            padding-top: 2em;
-            text-align: center;
-            line-height: 3em;           
-            color: black;
-            word-spacing: 0.25em;            
-            font-family: 'Times New Roman', Times, serif;
-        }
-    </style>
-    
-   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
-</head>
-<body>
-    <nav class="navbar navbar-light" style="background-color: hsl(236, 96%, 22%);">
-        <div class="container">
-            <a class="navbar-brand">Text SUMMARY</a>
-        </div>
-    </nav>
-    <p>{{ result }}</p>    
-</body>
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Your Summary</title>
+        <style>
+            p{
+                padding-top: 2em;
+                text-align: center;
+                line-height: 3em;           
+                color: black;
+                word-spacing: 0.25em;            
+                font-family: 'Times New Roman', Times, serif;
+            }
+        </style>
+        
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    </head>
+    <body>
+        <nav class="navbar navbar-light" style="background-color: hsl(236, 96%, 22%);">
+            <div class="container">
+                <a class="navbar-brand">Text SUMMARY</a>
+            </div>
+        </nav>
+        <p>{{ result }}</p>    
+    </body>
 </html>
 ```
-The page looks like this:
 
 ![Summary page](/engineering-education/a-sbert-based-flask-web-app-for-automatic-text-summarization/summarized.png )
 
-#### Step Three: Back-End coding
-In your project folder, create a file named `app.py` and should contain the below code.
+#### Build backend
+In your project folder, create a file named `app.py` with the following content:
 
 ```python
 #importing flask
@@ -153,74 +148,76 @@ from summarizer import Summarizer
 from summarizer.sbert import SBertSummarizer
 ```
 
-The latest version of `bert-extractive-summarizer` lets you use `Sentence Bert`. It's based on [this](https://arxiv.org/abs/1908.10084) paper and [this]( https://www.sbert.net/) library.
+The latest version of `bert-extractive-summarizer` lets you use `Sentence Bert`. You can read more about this library [here](https://www.sbert.net/).
 
-After importing libraries we create create a SBERT model. We'll use our SBERT model to summarize the required content in our next session.
+After importing the libraries, we build a SBERT model to summarize the required content as shown below:
 
 ```python
 # Using an instance of SBERT to create the model
 model = SBertSummarizer('paraphrase-MiniLM-L6-v2')
 
-app = Flask(__name__)# If you want to know which URL should be used to call the associated method, use the route() function of Flask's class. The URL binding with the function is represented by the rule's rule argument.
+app = Flask(__name__)
 
-@app.route("/")#In this case, mapping the URLs to a function that will handle the logic for each individual URL
+@app.route("/")
 def msg():
-    # Giving a result
     return render_template('index.html')
     
-@app.route("/summarize",methods=['POST','GET'])# If the gateway is unable to obtain the client's IP address, this information will be missing from the request.
+@app.route("/summarize", methods=['POST','GET'])
 def getSummary():
-    body=request.form['data']# Sending a request
-    result = model(body, num_sentences=5)# Defining instances
+    body=request.form['data']
+    result = model(body, num_sentences=5)
     return render_template('summary.html',result=result)
     
-if __name__ =="__main__":# When modules are imported, it allows or deny certain code to be executed.
-    app.run(debug=True,port=8000)#IP address on which a Web client can communicate with the server.
+if __name__ =="__main__":
+    app.run(debug=True,port=8000)
 ```
-In the above code;
-- We are using an instance of SBERT to create the model.
-- `SBertSummarizer('paraphrase-MiniLM-L6-v2')`: This is a sentence-transformers model used for assignments since it converts phrases and paragraphs into a 384-dimensional dense vector space. It is faster and offers good quality.
-- `return render_template('index.html')`: Display the `index.html` contents which is our home page.
-- `return render_template('summary.html',result=result)`: Display the `summary.html` data. In our case it's the summary page.
-- `app.run(debug=True,port=8000)`: The IP address on which a Web client can communicate with the server.
 
-We obtain the `index.html` input by tapping into the form using `request.form[`data`]`. This data is then saved in the variable, body. SBERT's summary of the text in the body is stored in the variable`result.`
+In the above code:
+- We use an instance of SBERT to create the model.
+- `SBertSummarizer('paraphrase-MiniLM-L6-v2')` is a sentence-transformer model used for convert phrases and paragraphs into a 384-dimensional dense vector space.
+- `return render_template('index.html')` displays the `index.html` contents, which is our home page.
+- `return render_template('summary.html',result=result)` displays the `summary.html` data. In our case, it's the summary page.
+- `app.run(debug=True,port=8000)` runs on local host in port `8000`, which communicates with the server.
 
-#### Step Four: Running the application
-In your project folder, there should exist the following:
+Firstly, we render the `index.html` on start of the server. Then, on accepting the input from the form using `request.form['data']`, we save it to `body` and render the `summary.html` along with the summarized results.
+
+#### Run the application
+In your project folder, we should have the following folders and files:
 - The folder containing files installed during virtual environment creation.
-- The templates folder.
-- `app.py` file containing python code.
+- The `templates` folder.
+- `app.py` file containing the Python script.
 
-With the above mentioned, we can run our app from the terminal. Activate the virtual environment you created and run the following command:
+Finally, we run the app using the command:
 
-```
+```bash
 python app.py
 ```
-In your terminal, a warning message will be displayed.
+
+In your terminal, the server starts up with a warning message, which can be ignored.
 
 ![Terminal](/engineering-education/a-sbert-based-flask-web-app-for-automatic-text-summarization/terminal.png )
 
-In your browser, search the given web address:
-http://127.0.0.1:8000 
-
+Now, you may search for the URL `http://127.0.0.1:8000` to access our frontend.
 
 ![Result](/engineering-education/a-sbert-based-flask-web-app-for-automatic-text-summarization/result.png )
 
-#### Step Five:Testing 
-Enter text that you wish to be summarized and press summarize.
+#### Testing 
+Now, you may enter a text that you wish to be summarized and click on `Summarize` button.
 
-![Before summarization](/engineering-education/a-sbert-based-flask-web-app-for-automatic-text-summarization/text.png )
+![Before summarization](/engineering-education/a-sbert-based-flask-web-app-for-automatic-text-summarization/text.png)
 
 ![After summarization](/engineering-education/a-sbert-based-flask-web-app-for-automatic-text-summarization/summarized.png )
 
 ### Conclusion
-In this blog, we demonstrated how to effectively construct a Flask web application that utilizes SBERT to summarize a given piece of material. We constructed a virtual environment, installed packages, coded both the front-end and back-end of our web application, and finally launched it.
-### Reference
-- Find the code for this tutorial [here](https://github.com/FranciscaNg/A-Flask-Web-App-for-Automatic-Text-Summarization-Using-SBERT).
-- Build, Save and Deploy your first [Web App](https://medium.com/analytics-vidhya/build-save-and-deploy-your-first-web-app-using-flask-and-pythonanywhere-110ddd691026) using Flask.
-- Develop a NLP Model in Python & [Deploy It with Flask.](https://towardsdatascience.com/develop-a-nlp-model-in-python-deploy-it-with-flask-step-by-step-744f3bdd7776)
-- [Automated News Summarization with BERT-Powered Encoders](https://github.com/huydang90/News-Summarization-with-BERT)
+In this blog, we learned how to effectively construct a Flask web application that utilizes SBERT to summarize a text.
 
+To start with, we created a virtual environment, installed the packages, coded both the front-end and back-end of our web application, and finally launched it.
+
+You can find the code for this tutorial [here](https://github.com/FranciscaNg/A-Flask-Web-App-for-Automatic-Text-Summarization-Using-SBERT).
 
 Happy coding!
+
+### References
+- [Build, save, and deploy your first web App](https://medium.com/analytics-vidhya/build-save-and-deploy-your-first-web-app-using-flask-and-pythonanywhere-110ddd691026) using Flask.
+- [Develop an NLP Model in Python & deploy it with Flask.](https://towardsdatascience.com/develop-a-nlp-model-in-python-deploy-it-with-flask-step-by-step-744f3bdd7776)
+- [Automated news summarization with BERT-powered encoders](https://github.com/huydang90/News-Summarization-with-BERT)
