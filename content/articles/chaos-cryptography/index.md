@@ -37,7 +37,7 @@ images:
 A basic understanding of the concepts of cryptography.
 
 ### Introduction
-Chaos theory is a branch of mathematics that deals with the study of non-linear dynamical systems that exhibit sensitivity to initial conditions. Chaotic conditions exist in nature. A decent and typical example of such is the weather. Chaos theory has had many applications since its inception. These applications are in the field of meteorology, anthropology, economics and computer science among others. Chaotic systems can be characterized by: sensitivity to initial conditions, periodic orbit density, and topological mixing. It's attributes such as determinism and sensitivity that make chaotic systems attractive for cryptography.
+Chaos theory is a branch of mathematics that deals with the study of non-linear dynamical systems that exhibit sensitivity to initial conditions. Chaotic conditions exist in nature. A decent and typical example of such is the weather. Chaos theory has had many applications since its inception. These applications are in the field of meteorology, anthropology, economics, and computer science among others. Chaotic systems can be characterized by: sensitivity to initial conditions, periodic orbit density, and topological mixing. Its attributes such as determinism and sensitivity make chaotic systems attractive for cryptography.
 
 ### Characteristics of chaotic systems
 Let's quickly take a look at the characteristics of chaotic systems.
@@ -52,7 +52,7 @@ This means that any chaotic point in the trajectory can approach other points. T
 This means that the chaotic trajectory generated from a random region of the phase space can cover the rest of the phase space as the trajectory evolves. This is an attractive feature in chaos since it is analogous to the **uniform distribution property** in cryptography.
 
 #### Deterministic
-This can be thought of as an extension of the sensitivity to initial conditions characteristic. It means that provided the initial conditions remain unchanged, the chaotic path followed will always be the same. This property is comparable to the deterministic pseudo-randomness property of cryptographic schemes.
+This can be thought of as an extension of the sensitivity to initial conditions characteristics. It means that provided the initial conditions remain unchanged, the chaotic path followed will always be the same. This property is comparable to the deterministic pseudo-randomness property of cryptographic schemes.
 
 ### Chaos cryptographic primitives
 Academics and researchers over the past decades have designed many chaos-based cryptographic schemes. The following sub-section will be a brief overview of some of their works.
@@ -61,7 +61,7 @@ Academics and researchers over the past decades have designed many chaos-based c
 A hash function is a function that takes an input of any size and produces a fixed-length output. One of the chaos-based hash algorithms developed is the Chaos Hash Algorithm (CHA-1). CHA-1 is a cryptographic hash algorithm developed by two researchers. This hash algorithm uses the [logistic map](https://mathworld.wolfram.com/LogisticMap.html) as its basis for pseudo-randomness. Its comparison to SHA-1 shows a better security factor but lower performance.
 
 #### Encryption Algorithm
-Encryption aims to serve data confidentiality. Chaos is particularly used in image encryption. One such instance is the development of an image encryption and compression algorithm. This algorithm relies on the [wavelet transform](https://en.wikipedia.org/wiki/Wavelet_transform) and 1-D discrete chaotic maps. Its design uses a 97-bit key combination, increasing its security. Statistical and correlation tests reveals its large key space and chaotic nature makes it infeasible for brute force attacks. 
+Encryption aims to serve data confidentiality. Chaos is particularly used in image encryption. One such instance is the development of image encryption and compression algorithm. This algorithm relies on the [wavelet transform](https://en.wikipedia.org/wiki/Wavelet_transform) and 1-D discrete chaotic maps. Its design uses a 97-bit key combination, increasing its security. Statistical and correlation tests reveal its large keyspace and chaotic nature makes it infeasible for brute force attacks. 
 
 #### Digital signature algorithm
 Researchers have proposed a digital signature algorithm that relies on the [quadratic residue problem](https://en.wikipedia.org/wiki/Quadratic_residuosity_problem) and Chebyshev chaotic map. This signature scheme is a one-to-one interaction between the signer and the verifier. This scheme is more efficient. This is because it does not require modular exponentiation or scalar multiplication of conventional digital signature schemes. 
@@ -78,15 +78,15 @@ The lack of proper security tests via cryptanalysis is a major problem. Most of 
 ### Possible solutions
 Using simple but secure design principles in chaos-based algorithms is a possible solution. The design of convoluted and complex algorithms is a double-edged sword. It may make analysis by adversaries difficult. It also makes it difficult for researchers to verify its security claims. This solution may bring confidence in the practical application of chaos cryptographic primitives.
 
-The performance of chaos cryptographic systems should be measured against conventional cryptosystems. Comparisons should be on the basis of metrics such as execution time and security factor.
+The performance of chaos cryptographic systems should be measured against conventional cryptosystems. Comparisons should be on the basis of metrics such as execution time and security factors.
 
 Mathematical representations used by chaos cryptographic primitives should be rigorously defined. This helps to guarantee reproducibility. Floating-point representations suffer from dynamic degradation. Addressing this issue would be a great step in producing verifiable, consistent algorithms.
 
 ### Conclusion
-Chaos theory possesses certain characteristics that suit cryptographic usage. There have been great strides in harnessing these characteristics. Even so, there is still a long way to go before realizing a practical chaos-based cryptosystem. Chaos theory has the potential to be useful for cryptography in the future. For now, however, it stays confined to the academic domain.
+Chaos theory possesses characteristics that suit cryptographic usage. There have been great strides in harnessing these characteristics. Even so, there is still a long way to go before realizing a practical chaos-based cryptosystem. Chaos theory has the potential to be useful for cryptography in the future. For now, however, it stays confined to the academic domain.
 
 ### Further reading
-[Implementations and practical problems of chaos based cryptography revisited](https://www.sciencedirect.com/science/article/abs/pii/S2214212619306544)
+[Implementations and practical problems of chaos-based cryptography revisited](https://www.sciencedirect.com/science/article/abs/pii/S2214212619306544)
 
 [New hash function based on chaos theory (CHA-1)](https://www.researchgate.net/publication/253155858_New_hash_function_based_on_chaos_theory_CHA-1)
 
