@@ -42,7 +42,7 @@ In this tutorial, we will build a univariate time series model that predicts mon
 ### Prerequisites]
 - A reader should have the basic knowledge and understanding of the following before implementing the time series model:
 
-- Some basic understanding and knowledge of [time series terms and concepts](/engineering-education/introduction-to-time-series/)
+- [Time series terms and concepts](/engineering-education/introduction-to-time-series/)
 - A brief introduction to [neural networks architecture and concepts](/engineering-education/introduction-to-neural-networks/)
 - Know how to build an [artificial neural network with Keras](/engineering-education/build-ann-with-keras/)
 - How to run a Python project in [Google Colab](https://colab.research.google.com/)
