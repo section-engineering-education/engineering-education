@@ -14,26 +14,26 @@ images:
   - url: /engineering-education/summarize-text-with-sbert-and-flask/hero.jpg
     alt: Building a text summarizer with SBERT and Flask Hero image
 ---
-In this tutorial, we will learn to build a flask web application that summarizes text using Sentence-BERT model.
+In this tutorial, we will learn to build a flask web application that summarizes text using the Sentence-BERT model.
 <!--more-->
-Text summarization deals with creation of sentence embeddings that supports over 100 languages. You can read more about Sentence-BERT [here](https://arxiv.org/abs/1908.10084).
+Text summarization deals with the creation of sentence embeddings that supports over 100 languages. You can read more about Sentence-BERT [here](https://arxiv.org/abs/1908.10084).
 
-SBERT can also be used to compare the semantic similarity of words. When summarizing a lengthy text, it is critical to seek for similarities between sentences to ensure that the summary is correct and does not distort the original text's meaning.
+SBERT can also be used to compare the semantic similarity of words. When summarizing a lengthy text, it is critical to seek similarities between sentences to ensure that the summary is correct and does not distort the original text's meaning.
 
 ### Prerequisites
 To follow along with this tutorial, the reader must have the following:
-- Have a basic knowledge of Python programming language. (Here, we will use Python version greater than 3)
+- Have a basic knowledge of Python programming language. (Here, we will use a Python version greater than 3)
 - Have an IDE installed, preferably [VS Code](https://code.visualstudio.com/).
 
-### Build flask web app
-Sentence-BERT (SBERT), a siamese and triplet network-based variant of the BERT model that is capable of deriving semantically meaningful sentence embeddings. With SBERT, BERT got additional capability to compare massive sets for semantic similarities, group, and retrieve information via semantic search.
+### Build a flask web app
+Sentence-BERT (SBERT), a siamese and triplet network-based variant of the BERT model is capable of deriving semantically meaningful sentence embeddings. With SBERT, BERT got the additional capability to compare massive sets for semantic similarities, groups, and retrieve information via semantic search.
 
 BERT established new benchmarks for performance on a variety of sentence categorization and pairwise regression problems.
 
 Semantically related sentences can be identified using a similarity measure such as cosine similarity distance. Due to the high efficiency with which these similarity measures can be computed on modern technology, SBERT can be used for both semantic similarity search and clustering.
 
 #### Create a virtual environment
-Before we start, let's create a virtual evironment. Open the terminal and create a virtual environment `summarizerApp` as shown:
+Before we start, let's create a virtual environment. Open the terminal and create a virtual environment `summarizerApp` as shown:
 
 ```bash
 python3 -m venv summarizerApp
@@ -47,7 +47,7 @@ source summarizerApp/bin/activate
 
 #### Install packages
 ##### Flask
-We use Flask to make web applications, to manage HTTP requests, and render templates.
+We use Flask to make web applications, manage HTTP requests, and render templates.
 
 ```bash
 pip3 install Flask
@@ -61,14 +61,14 @@ pip3 install summarizer
 ```
 
 ##### sentence-transformers
-Python framework that uses the state-of-the-art models for text and image embeddings creation.
+Python framework that uses state-of-the-art models for text and image embeddings creation.
 
 ```bash
 pip3 install -U sentence-transformers
 ```
 
 ##### bert-extractive-summarizer
-To do extractive summaries, we use BERT extractive summarizer from the HuggingFace Pytorch transformers library.
+To do extractive summaries, we use the BERT extractive summarizer from the HuggingFace Pytorch transformers library.
 
 ```bash
 pip3 install -q bert-extractive-summarizer
@@ -195,11 +195,11 @@ In the above code:
 - `return render_template('summary.html',result=result)` displays the `summary.html` data. In our case, it's the summary page.
 - `app.run(debug=True,port=8000)` runs on local host in port `8000`, which communicates with the server.
 
-Firstly, we render the `index.html` on start of the server. Then, on accepting the input from the form using `request.form['data']`, we save it to `body` and render the `summary.html` along with the summarized results.
+Firstly, we render the `index.html` at the start of the server. Then, on accepting the input from the form using `request.form['data']`, we save it to `body` and render the `summary.html` along with the summarized results.
 
 #### Run the application
 In your project folder, we should have the following folders and files:
-- The folder containing files installed during virtual environment creation.
+- The folder contains files installed during virtual environment creation.
 - The `templates` folder.
 - `app.py` file containing the Python script.
 
