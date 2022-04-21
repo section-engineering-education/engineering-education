@@ -82,6 +82,14 @@ Next, we will need to download the pre-trained model.
 ```
 We have created a new folder called `models` inside of the main `DeOldify` folder. Using `wget`, a software package for retrieving files using HTTP, HTTPS, FTP and FTPS, we download the pre-trained model into that newly created folder.
 
+```python
+colorizer = get_image_colorizer(artistic=False)
+```
+Inside the `test_images` folder, upload all the images that you want to colorize. 
+
+```python
+colorizer.plot_transformed_image('test_images/kicc.jpg', render_factor=35, display_render_factor=True, figsize=(8,8))
+```
 ### Performing colorization on old black and white photos 
 Let's now take black and white images and add some color to them. We will use old images of iconic buildings that still stand to date of the city of Nairobi, Kenya.
 
@@ -89,25 +97,25 @@ Image of KICC:
 
 ![KICC](/engineering-education/image-colorization-using-ai-and-python/kicc.jpg)
 
-![New colored KICC](/engineering-education/image-colorization-using-ai-and-python/colored-kicc.png)
+![New colored KICC](/engineering-education/image-colorization-using-ai-and-python/new-kicc.png)
 
 Image of Nairobi:
 
-![Nairobi](/engineering-education/image-colorization-using-ai-and-python/nairobi.jpg)
+![Nairobi Railway Station](/engineering-education/image-colorization-using-ai-and-python/nairobi-railway-station.jpg)
 
-![New colored Nairobi](/engineering-education/image-colorization-using-ai-and-python/colored-nairobi.png)
+![Colored Nairobi Railway Station](/engineering-education/image-colorization-using-ai-and-python/colored-nairobi-railway-station.png)
 
 Image of Stanley Hotel:
 
 ![New stanley hotel](/engineering-education/image-colorization-using-ai-and-python/new-stanley-hotel.jpg)
 
-![New colored stanley hotel](/engineering-education/image-colorization-using-ai-and-python/colored-stanley-hotel.png)
+![New colored stanley hotel](/engineering-education/image-colorization-using-ai-and-python/new-colored-stanley-hotel.png)
 
 Image of National Archives:
 
-![National archives](/engineering-education/image-colorization-using-ai-and-python/national-archives.jpg)
+![Norfolk hotel](/engineering-education/image-colorization-using-ai-and-python/norfolk-hotel.jpg)
 
-![Colored National archives](/engineering-education/image-colorization-using-ai-and-python/colored-national-archives.png)
+![Colored Norfolk hotel](/engineering-education/image-colorization-using-ai-and-python/colored-norfolk-hotel.png)
 
 We can see that the Deoldify model has added some color onto our images. Of course, it's not perfect. But, this technology just goes on to show you what is possible with amazing technologies lies these.
 
