@@ -20,4 +20,5 @@ A clear and concise description of what you want to happen.
 A clear and concise description of any alternative solutions (notes) or features you've considered.
 
 **Additional context**
-Add any other context or screenshots about the feature request here.
+- Add any other context or screenshots about the feature request here.
+- When creating a Pull Request for a Community Contributed Code feature (CCC), please append `&template=pull_request_template_ccc.md` to the url to populate the correct Pull Request Template.
