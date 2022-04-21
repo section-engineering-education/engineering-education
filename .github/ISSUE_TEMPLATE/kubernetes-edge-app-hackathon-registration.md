@@ -56,6 +56,8 @@ The top 3 winning applications will be points of reference at our booth at the K
 
 All other projects will receive honorable mentions on our website.
 
+NOTE: *Teams will recieve prize split among participants.*
+
 ### Judging criteria: 
 - The quality of the project (code effectiveness and code clarity) points for creativity and originality.
 - Implementation of the Idea: Includes how well and quickly the project was developed and deployed using the KEI process.
