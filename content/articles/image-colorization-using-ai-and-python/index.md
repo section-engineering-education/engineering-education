@@ -97,17 +97,25 @@ Image of KICC:
 
 ![KICC](/engineering-education/image-colorization-using-ai-and-python/kicc.jpg)
 
+*[Image Source: Pinterest](https://i.pinimg.com/originals/25/6f/0a/256f0af1b060922203ca5ac632f8314e.jpg)*
+
 Image of Nairobi Railway Station:
 
 ![Nairobi Railway Station](/engineering-education/image-colorization-using-ai-and-python/nairobi-railway-station.jpg)
+
+*[Image Source: African Digital Heritage ](https://africandigitalheritage.org/wp-content/uploads/2021/06/DSC_0086-1.jpg)*
 
 Image of Stanley Hotel:
 
 ![New Stanley hotel](/engineering-education/image-colorization-using-ai-and-python/new-stanley-hotel.jpg)
 
+*[Image Source: Pinterest](https://i.pinimg.com/originals/04/3f/98/043f98fec8e242fd5b04376c583fa144.jpg)*
+
 Image of the Norfolk Hotel:
 
 ![Norfolk hotel](/engineering-education/image-colorization-using-ai-and-python/norfolk-hotel.jpg)
+
+*[Image Source: Arxiv](https://i.pinimg.com/originals/31/41/05/314105d909000eed4cdf5c148a36a3bd.jpg)*
 
 Inside the `test_images` folder located inside the main DeOldify folder, upload all the images that you want to colorize. Using the `plot_transformed_image` method, we can pass in our images and colored output images will be generated. These generated images are of the size 8px by 8px. You can change these values if you so wish.
 
