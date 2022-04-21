@@ -1,3 +1,19 @@
+---
+layout: engineering-education
+status: publish
+published: true
+url: /summarize-text-with-sbert-and-flask/
+title: Building a text summarizer with SBERT and Flask
+description: This article will teach you to build a text summarizer using SBERT model. We will build a Flask web application to demonstrate the same.
+author: francisca-ngodu
+date: 2022-04-21T00:00:00-00:00
+topics: [Machine Learning]
+excerpt_separator: <!--more-->
+images:
+
+  - url: /engineering-education/summarize-text-with-sbert-and-flask/hero.jpg
+    alt: Building a text summarizer with SBERT and Flask Hero image
+---
 In this tutorial, we will learn to build a flask web application that summarizes text using Sentence-BERT model.
 <!--more-->
 Text summarization deals with creation of sentence embeddings that supports over 100 languages. You can read more about Sentence-BERT [here](https://arxiv.org/abs/1908.10084).
@@ -99,7 +115,7 @@ In the `index.html` file for the home page, we display a text field where the us
 </html>
 ```
 
-![Home page](/engineering-education/a-sbert-based-flask-web-app-for-automatic-text-summarization/result.png )
+![Home page](/engineering-education/summarize-text-with-sbert-and-flask/result.png )
 
 To display the text summary of the text we inputted, we create `summary.html` as shown:
 
@@ -135,7 +151,7 @@ To display the text summary of the text we inputted, we create `summary.html` as
 </html>
 ```
 
-![Summary page](/engineering-education/a-sbert-based-flask-web-app-for-automatic-text-summarization/summarized.png )
+![Summary page](/engineering-education/summarize-text-with-sbert-and-flask/summarized.png )
 
 #### Build backend
 In your project folder, create a file named `app.py` with the following content:
@@ -195,18 +211,18 @@ python app.py
 
 In your terminal, the server starts up with a warning message, which can be ignored.
 
-![Terminal](/engineering-education/a-sbert-based-flask-web-app-for-automatic-text-summarization/terminal.png )
+![Terminal](/engineering-education/summarize-text-with-sbert-and-flask/terminal.png )
 
 Now, you may search for the URL `http://127.0.0.1:8000` to access our frontend.
 
-![Result](/engineering-education/a-sbert-based-flask-web-app-for-automatic-text-summarization/result.png )
+![Result](/engineering-education/summarize-text-with-sbert-and-flask/result.png )
 
 #### Testing 
 Now, you may enter a text that you wish to be summarized and click on `Summarize` button.
 
-![Before summarization](/engineering-education/a-sbert-based-flask-web-app-for-automatic-text-summarization/text.png)
+![Before summarization](/engineering-education/summarize-text-with-sbert-and-flask/text.png)
 
-![After summarization](/engineering-education/a-sbert-based-flask-web-app-for-automatic-text-summarization/summarized.png )
+![After summarization](/engineering-education/summarize-text-with-sbert-and-flask/summarized.png )
 
 ### Conclusion
 In this blog, we learned how to effectively construct a Flask web application that utilizes SBERT to summarize a text.
@@ -221,3 +237,6 @@ Happy coding!
 - [Build, save, and deploy your first web App](https://medium.com/analytics-vidhya/build-save-and-deploy-your-first-web-app-using-flask-and-pythonanywhere-110ddd691026) using Flask.
 - [Develop an NLP Model in Python & deploy it with Flask.](https://towardsdatascience.com/develop-a-nlp-model-in-python-deploy-it-with-flask-step-by-step-744f3bdd7776)
 - [Automated news summarization with BERT-powered encoders](https://github.com/huydang90/News-Summarization-with-BERT)
+
+---
+Peer Review Contributions by: [Srishilesh P S](/engineering-education/authors/srishilesh-p-s/)
