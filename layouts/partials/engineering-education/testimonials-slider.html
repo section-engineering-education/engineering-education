@@ -2,14 +2,14 @@
 {{ .context.Scratch.Set "unit" .unit }}
 {{ .context.Scratch.Set "items" .items }}
 
-<section class="testimonials-wrapper xs-mt-100 xs-mb-100">
+<section class="testimonials-wrapper xs-pt-50 xs-pb-100 xs-mt-50 xs-mb-50">
   <div class="content-margins">
     <div class="carousel-header text-center xs-mb-50">
-      <h2>Community testimonials</h2>
-      <p>Real input from EngEd students on how the community has allowed them to build up their skills in a real world setting, and having a place to showcase those achievements (with the EngEd program) has helped in their dev journey.</p>
+      <h2 class="title-3 xs-mb-20">Community testimonials</h2>
+      <p class="text-20-regular">Real input from EngEd students on how the community has allowed them to build up their skills in a real world setting, and having a place to showcase those achievements (with the EngEd program) has helped in their dev journey.</p>
     </div>
 
-    <div id="carousel10" class="carousel" duration="{{ .duration }}" items="{{ .items }}">
+    <div id="carousel10" class="carousel xs-pt-30" duration="{{ .duration }}" items="{{ .items }}">
       <ul>
           {{ range $index, $slide := .context.Site.Data.testimonialsData.testimonials }}
             <li id="c10_slide{{ add $index 1}}" style="min-width: calc(100%/{{ $.context.Scratch.Get "items" }});">
@@ -17,8 +17,8 @@
                 <img src="{{ $slide.image }}" alt="" />
               </div>
               <div class="testimonial-content">
-                <p class="testimonial">"{{ $slide.testimonial }}"</p>
-                <h5>{{ $slide.name }}</h5>
+                <p class="testimonial text-18-medium">"{{ $slide.testimonial }}"</p>
+                <h4 class="author-name"><a href="{{ $slide.profileUrl }}">{{ $slide.name }}</a></h4>
                 <p class="roles">{{ delimit $slide.roles " / " }}</span>
                 <p class="location">{{ $slide.location }}</span>
               </div>

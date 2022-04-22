@@ -1,4 +1,6 @@
 .testimonials-wrapper {
+  background-color: $fill-bg-gray;
+
   .content-margins {
     padding-left: 5%;
     padding-right: 5%;
@@ -34,6 +36,7 @@
       display: flex;
       flex-flow: wrap;
       flex-direction: row;
+      padding: 0 30px;
       
       .testimonial-image {
         display: flex;
@@ -52,12 +55,34 @@
       .testimonial-content {
         width: calc(100% - 120px);
 
-        p {
+        .testimonial {
           margin-bottom: 20px;
         }
 
-        span {
+        .author-name, .roles, .location {
+          margin-bottom: 3px;
+        }
+
+        .author-name {
+          color: $text-blue;
+          
+          a {
+            text-decoration: none;
+            color: $text-blue;
+
+            &:hover {
+              text-decoration: underline;
+            }
+          }
+        }
+
+        .roles {
           font-style: italic;
+          color: $text-light-gray;
+        }
+        
+        .location {
+          color: $text-light-gray;
         }
       }
     }
@@ -65,7 +90,7 @@
 
   ol {
     position: absolute; 
-    bottom: -60px; 
+    bottom: -40px; 
     display: flex; 
     justify-content: center; 
     left: 50%; 
@@ -80,13 +105,13 @@
         display: block; 
         height: 10px; 
         width: 10px; 
-        border: 2px solid #f1f1f1; 
+        border: 2px solid $text-blue; 
         background: #f1f1f1; 
         border-radius: 100%;
       }
       &.selected {
         a {
-          background: blue;
+          background: $text-blue;
         }
       }
     }
@@ -98,7 +123,7 @@
     user-select:none; 
     cursor: pointer; 
     font-size: 50px; 
-    color: blue; 
+    color: $text-blue; 
     position: absolute; 
     left: -30px; 
     padding: 15px 15px 30px; 
@@ -111,5 +136,13 @@
   .next {
     left: auto; 
     right: -30px;
+  }
+
+  @include mq($to: 850px ) {
+    ul {
+      li {
+        min-width: calc(100%/1) !important;
+      }
+    }
   }
 }
