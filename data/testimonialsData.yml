@@ -4,16 +4,16 @@ testimonials:
     image: /authors/ahmad-mardeni/avatar.jpg
     roles: ["Contributor", "Peer Reviewer", "Content Moderator"]
     location: Baton Rouge, LA
-    profileUrl: /authors/ahmad-mardeni/
+    profileUrl: /engineering-education/authors/ahmad-mardeni/
   - name: John A.
     testimonial: I felt that my EngEd portfolio added something great to set me apart from my peers who are also looking for available career positions.
     image: /authors/john-amiscaray/avatar.jpg
     roles: ["Contributor", "Peer Reviewer"]
     location: San Diego, CA
-    profileUrl: /authors/john-amiscaray/
+    profileUrl: /engineering-education/authors/john-amiscaray/
   - name: Sophia R.
     testimonial: The Peer Review Program has allowed me to deepen my knowledge of cutting-edge technologies or learn about new ones entirely.
     image: /authors/sophia-raji/avatar.jpg
     roles: ["Contributor", "Intern"]
     location: Denver, CO
-    profileUrl: /authors/sophia-raji/
+    profileUrl: /engineering-education/authors/sophia-raji/
