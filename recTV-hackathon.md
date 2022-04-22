@@ -6,7 +6,11 @@ recTV
 
 ### ✍ Project Description
 
-recTV is a TV Show & Movie recommendation app that not only informs you what you should watch based on what you like but also dislike.
+There are many TV Shows & Movie recommendation apps but most only show you content similar to those you already like. But what about those you dislike? If you're tired of the same old recommendations apps showing you shows and movies you've already dismissed as not to your taste, check out recTV. 
+
+As well as showing you similar shows (and allowing you to drill down into specific seasons and episode to get a detailed idea about what your new perspective show/movie could be), we'll showcase altnerative media that people who didn't like it, preferred instead. No longer will you have to suffer through the same set of recommendations displayed all the time.
+
+We've made the first recommendation app of its type without requiring mandatory accounts so it's as frictionless a user experience as possible.
 
 ### 🔗 Project URLs
 
@@ -21,7 +25,15 @@ recTV is a TV Show & Movie recommendation app that not only informs you what you
 
 [TBD]
 
-### 👩‍💻 KEI Implementation Process
+### 👨‍💻 Project Tech Stack
+
+Since we started the hackathon two days before the deadline, time was of the essence so I chose a vanilla JS Node.js stack with Express and EJS as it was simple, I had a lot of experience with it and it would be easy for others with JS knowledge to grasp. 
+
+After research TV & Movie APIs, I settled on TMDB since it was free and would be able to accomplish everything we needed (obtain movie and TV metadata and recommendations). I experimented with an API wrapper library - node-themoviedb but encountered some issues with certain API calls so changed to Axios to call the API directly which was flawless. 
+
+We used livereload and connect-livereload to hotreload the static parts of our web app and Beautify, eslint and ejslint to lint and format our code consistently and to industry-standards.
+
+### 🐳 KEI Implementation Process
 
 We used Section's KEI platform to deploy our Node.js web application to the web using our subdomain. I enjoyed using KEI because it made it easy to use K8 because it abstracted a lot of the process so even though I had never used K8 before or really knew what it was except for some sort of containerised load balancer (some amalgamation of Docker and Nginx), I was able to deploy our web app to it in a matter of hours.
 
@@ -41,7 +53,7 @@ Eventually, I discovered it can take a while for these changes to propagate. Aft
 
 It worked 😊. I had successfully deployed to the edge. I discovered I need to use the HTTPS URL specifically for SSL, it wouldn't redirect non-HTTP traffic to HTTPS but I assume I needed to use a reverse proxy such as Nginx for this. It would be nice if the HTTPS page in the Section API docs mentioned this.
 
-Overall, if I had prior knowledge of containerisation (which the Section Docs advise you to have), I probably would have managed to deploy to the Edge without any issues but would advise the Section Docs to be expanded upon even to briefly link to these guides for beginners rather than the overwhelming Kubernetes docs to provide a more guided understanding of how to proceed with a layman's understanding.
+Overall, if I had prior knowledge of containerisation (which the Section Docs advise you to have), I probably would have managed to deploy to the Edge without any issues (since the sample tutorial is excellent for those with prior knowledge but could do with guidance for how to deploy web apps) but would advise the Section Docs to be expanded upon even to briefly link to these guides for beginners rather than the overwhelming Kubernetes docs to provide a more guided understanding of how to proceed with a layman's understanding.
 
 ### 🤼 Team Members
 
@@ -56,6 +68,6 @@ Overall, if I had prior knowledge of containerisation (which the Section Docs ad
 **Implemented**: Front-end & Documentation
 
 **Name**: Briana Nzivu
-**Email**: [TBD]
+**Email**: briananzivu@gmail.com
 **Author Profile**: [briana-nzivu](https://www.section.io/engineering-education/authors/briana-nzivu/)
 **Implemented**: Documentation & Video
