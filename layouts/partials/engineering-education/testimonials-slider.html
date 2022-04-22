@@ -26,8 +26,11 @@
         {{ end }}
       </ul>
       <ol>
+        {{ $numberOfButtons := math.Round (div (len .context.Site.Data.testimonialsData.testimonials) 2.0) }}
+        {{ $numberOfItemsPerSlide := .context.Scratch.Get "items" }}
+        
         {{ range $index, $page := .context.Site.Data.testimonialsData.testimonials }}
-          {{ if (modBool $index 1) }}<li><a href="#c10_slide{{ add $index 1 }}"></a></li>{{ end }}
+          {{ if (modBool $index $numberOfItemsPerSlide) }}<li><a href="#c10_slide{{ add $index 1 }}"></a></li>{{ end }}
         {{ end }}
       </ol>
       <div class="prev">&lsaquo;</div>
