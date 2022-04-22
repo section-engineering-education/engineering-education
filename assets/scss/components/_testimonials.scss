@@ -145,4 +145,20 @@
       }
     }
   }
+
+  @include mq($to: 550px ) {
+    ul {
+      li {
+        flex-direction: column;
+
+        .testimonial-image {
+          margin: 0 auto 30px;
+        }
+
+        .testimonial-content {
+          width: 100%;
+        }
+      }
+    }
+  }
 }
