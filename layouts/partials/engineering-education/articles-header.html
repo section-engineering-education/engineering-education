@@ -72,8 +72,7 @@
     </p>
   </section>
 
-  {{ partial "engineering-education/testimonials-slider" (dict "context" . "items" "2" "height" "50" "unit" "%") }}
-
+  {{ partial "engineering-education/testimonials-slider" (dict "component" . "context" . "site" .Site) }}
 
   <div class="section enged-listing-search flex align-center xs-pb-20 xs-pt-40 sm-pb-300 sm-pt-60">
     <div class="section-container enged-listing-search-container xs-mb-20">
@@ -100,7 +99,7 @@
     </div>
   </section>
 </article>
-
+{{/*  
 <script type="text/javascript">
   document.addEventListener('DOMContentLoaded', function() {
     
@@ -132,6 +131,7 @@
         const nextSlide = function() {
             if(!carousel.querySelector('ol li:last-child').classList.contains('selected')) {
                 carousel.querySelector('ol li.selected').nextElementSibling.querySelector('a').click();
+                console.log("next slide top block.")
             } else {
                 carousel.querySelector('ol li:first-child a').click();
             }
@@ -180,4 +180,4 @@
     });
 
 }); //end onload
-</script>
+</script>  */}}
