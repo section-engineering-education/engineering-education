@@ -1,5 +1,5 @@
 ### Introduction
-[Sanity.io](https://sanity.io/) is a structured content platform that uses the Content Lake database to store different types of data uploaded to their platform.
+[Sanity.io](https://sanity.io/) is a structured content platform that uses the Content Lake database to store different data uploaded to its platform.
 
 You can use sanity.io in two ways:
 - As a Content Management System (CMS), the administrator usually has all the permissions, e.g., managing text, images, and any other type of information.
@@ -49,7 +49,7 @@ For the Sanity API to set up the best project structure for us, select the follo
 - Log in using your email.
 - Create a new project.
 - Choose the default dataset configuration by typing `y`, then enter.
-- Select the project template. Then, choose a clean project with no predefined schemas.
+- Select the project template. Then, choose a clean project with no pre-defined schemas.
 
 ### Setting up a React.js project
 To set up the React.js project, create a new folder in the same directory where you made the backend folder, namely "frontend."
@@ -58,7 +58,6 @@ After that, open the terminal and input the command below:
 ```bash
 npx create-react-app ./
 ```
-
 #### Install all the necessary packages for the project.
 We must install the packages in the same directory as React.js. Therefore, change the directory.
 
@@ -69,13 +68,11 @@ To use sanity.io in a react.js project, we must install these two packages:
 ```bash
 npm i @sanity/cli
 ```
-
 2. [@sanity/image-url](https://www.npmjs.com/package/@sanity/image-url)
    
 ```bash
 npm i @sanity/image-url
 ```
-
 Now let us install the other packages:
 
 3. [Tailwind CSS](https://tailwindcss.com/docs/installation)
@@ -84,8 +81,7 @@ Now let us install the other packages:
 npm install -D tailwindcss
 npx tailwindcss init
 ```
-
-After that, we need to change the tailwind CSS configuration file as follows:
+After that, we need to change the tailwind CSS configuration file:
 
 ```css
 module.exports = {
@@ -109,7 +105,6 @@ module.exports = {
 ```bash
 npm i react-masonry-css
 ```
-
 5. [React-icons](https://react-icons.github.io/react-icons)
    
 ```bash
@@ -121,14 +116,14 @@ npm install react-icons --save
 ```bash
 npm i react-router-dom
 ```
-After installation, you should have a file structure as follows:
+After installation, you should have a file structure:
 
 ![sanity project file structure](/engineering-education/articles-uploading-deleting-and-downloading-images-uploaded-to-sanity/filestructure.PNG)
 
 ### Creating the database
 
 #### Creating a schema
-- Schema's function is to create content models in a sanity.io CMS. Schemas are usually simple Javascript code.
+- Schema's function is to create content models in a sanity.io CMS. Schemas are usually simple JavaScript code.
 - In the backend folder, select folder schemas and create a new file `photo.js`.
 - Write the following script in the `photo.js`:
   
@@ -185,7 +180,7 @@ First, we delete the src folder in the frontend directory and then create a new 
 
 `index.js` , `App.js` , `index.css` , `user.js`, `data.js` , `Add.jsx`, `Images.jsx`, ` masonryLayout.jsx`, `UploadImage.jsx`
 
-> Note: These files are dependent on each other. Therefore, if one file is not working, it may cause errors.
+> Note: These files depend on each other. Therefore, if one file is not working, it may cause errors.
 
 In the `index.css` file, write the following script:
 
@@ -218,7 +213,6 @@ ReactDOM.render(
   document.getElementById("root")
 );
 ```
-
 `Router`, `Route`, and `Routes` help us navigate between different web pages.
 
 In the `App.js` file, write the following script:
@@ -239,7 +233,6 @@ function App() {
 }
 export default App;
 ```
-
 #### Step 2: Connecting the Sanity.io Database to the Web Application
 Here we need to have a project ID and its token.
 
@@ -550,7 +543,7 @@ import { AiTwotoneDelete } from "react-icons/ai";
 import { MdDownloadForOffline } from "react-icons/md";
 import { urlFor, user } from "./user";
 ```
-In a functional component just before the return method, we want to set an event using the useState hook such that when we hover over the image, the icons will appear.
+In a functional component just before the return method, we want to set an event using the `useState` hook such that when we hover over the image, the icons will appear.
 
 Also, create a function that we will use to delete uploaded images. We will call the image from the database using the `user` function we imported above and delete it using its specific ID.
 
@@ -625,7 +618,7 @@ export default Image
 What we did above is:
 - Retrieve images from the database using the image tag and the `urlFor` function we imported from the `user.js` file.
 - Check if the image has been hovered by calling the `imageHovered` from the `useState` hook.
-- Then, set the functionality of the hovered icons. For example, when you click the delete icon, you will be deleting that image. Also, when you click the download icon, you will be downloading that image.
+- Then, set the functionality of the hovered icons. For example, when you click the delete icon, you delete that image. Also, when you click the download icon, you download that image.
 
 Below is an example of an output:
 
