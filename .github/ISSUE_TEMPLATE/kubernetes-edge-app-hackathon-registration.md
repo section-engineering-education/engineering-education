@@ -70,4 +70,4 @@ NOTE: *Teams will recieve prize split among participants.*
 - [Nate Grieb](https://www.linkedin.com/in/nate-grieb-44241654/)
 
 
-### Deadline: April 22nd 2022 @ 11:59 MST
+### Deadline: April 22nd 2022 @ 11:59 PM MST
