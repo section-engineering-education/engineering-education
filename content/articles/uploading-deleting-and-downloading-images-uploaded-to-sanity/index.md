@@ -1,4 +1,19 @@
-### Introduction
+---
+layout: engineering-education
+status: publish
+published: true
+url: /uploading-deleting-and-downloading-images-uploaded-to-sanity-io/
+title: Uploading deleting and downloading images uploaded to sanity.io
+description: This tutorial will help the reader upload delete and download images uploaded to sanity.io.
+author: Benson Raro
+date: 2022-04-22T00:00:00-09:00
+topics: [Languages]
+excerpt_separator: <!--more-->
+images:
+
+  - url: /engineering-education/uploading-deleting-and-downloading-images-uploaded-to-sanity-io/hero.jpg
+    alt: Uploading deleting and downloading images uploaded to sanity.io Hero Image
+---
 [Sanity.io](https://sanity.io/) is a structured content platform that uses the Content Lake database to store different data uploaded to its platform.
 
 You can use sanity.io in two ways:
@@ -632,3 +647,6 @@ In this tutorial, we learned how to upload, delete, and download images uploaded
 For the complete source code, click [here](https://github.com/ben-cdm/Uploading-deleting-and-downloading-images-uploaded-to-sanity.io/tree/master).
 
 Happy Coding!
+
+---
+Peer Review Contributions by: [Mohamed alghadban](/engineering-education/authors/mohamed-alghadban/)
