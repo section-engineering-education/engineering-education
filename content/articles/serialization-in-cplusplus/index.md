@@ -3,16 +3,16 @@ layout: engineering-education
 status: publish
 published: true
 url: /serialization-in-cplusplus/
-title: Serialization in Cplusplus
-description: This article will discuss Serialization and how it is used in Cplusplus. It will also go through the importance of JSON stream, JSON syntax and JSON data value in the serialization process.
+title: Serialization in C++
+description: This article will discuss Serialization and how it is used in C++. It will also go through the importance of JSON stream, JSON syntax and JSON data value in the serialization process.
 author: sarah-wambui
-date: 2022-03-25T00:00:00-06:00
+date: 2022-04-22T00:00:00-04:20
 topics: [Languages]
 excerpt_separator: <!--more-->
 images:
 
   - url: /engineering-education/serialization-in-cplusplus/hero.png
-    alt: Serialization in Cplusplus Hero Image
+    alt: Serialization in C++ Hero Image
 ---
 Serialization is the process of converting a data structure to a format that can be stored in a storage place or sent over a computer network and then reconfigured in another computer environment. Serialization saves an item as a byte string in storage.
 <!--more-->
@@ -21,28 +21,24 @@ After producing the byte stream, the user can send it to a detached receiver thr
 Serialization allows sending serialized object data to a server, maintaining its permanency. It also guarantees a chance to deserialize it and create a distinct object format.
 
 ### Table of contents
-
 - [Table of contents](#table-of-contents)
 - [Text stream vs Binary](#text-stream-vs-binary)
 - [Relevance of JSON Stream, JSON Syntax and JSON Data Value in Serialization](#relevance-of-json-stream-json-syntax-and-json-data-value-in-serialization)
   - [JSON stream](#json-stream)
   - [JSON syntax](#json-syntax)
   - [The values of JSON data](#the-values-of-json-data)
-- [Analysis of the contrast between JSON and Cpp object](#analysis-of-the-contrast-between-json-and-cpp-object)
+- [Analysis of the contrast between JSON and C++ object](#analysis-of-the-contrast-between-json-and-c-object)
 - [JSON Object vs Javascript Object](#json-object-vs-javascript-object)
 - [Pointer serialization](#pointer-serialization)
 - [Advantages and disadvantages of Serialization](#advantages-and-disadvantages-of-serialization)
   - [Advantages](#advantages)
   - [Disadvantages](#disadvantages)
-- [An example of Cpp Serialization](#an-example-of-cpp-serialization)
+- [An example of C++ Serialization](#an-example-of-c-serialization)
 - [Conclusion](#conclusion)
 
 ### Text stream vs Binary
-- **Text stream:**
-JSON and XML are the text standards that are most often utilized. JSON has been used in this essay because it is simple to interpret and manage compared to XML.
-
-- **Binary:**
-A binary is a compiled C++ code. It is possible to get a serialized stream in binary form though this article will not consider binary.
+- **Text stream:** JSON and XML are the text standards that are most often utilized. JSON has been used in this essay because it is simple to interpret and manage compared to XML.
+- **Binary:** A binary is a compiled C++ code. It is possible to get a serialized stream in binary form though this article will not consider binary.
 
 ### Relevance of JSON Stream, JSON Syntax and JSON Data Value in Serialization
 #### JSON stream
@@ -63,13 +59,15 @@ The key is the title, and the value is Sarah. Brackets are used to enclose an ob
 {"title" : "Sarah", "weight" : 20.5}
 ```
 
-All text, whether a key or a value, should be enclosed in double quotes, and commas separate the data. There are no quotations around the numbers. A collection is specified by the use of square brackets, such as:
+All text, whether a key or a value, should be enclosed in double quotes, and commas separate the data. There are no quotations around the numbers.
+
+A collection is specified by the use of square brackets, such as:
 
 ```C++
 ["lion", "leopard", "bear", "elephant"]
 ```
 
-There is an object within the code below, whose result is an array and is denoted by `arr`.
+There is an object within the code below, whose result is an array and is denoted by `arr`:
 
 ```C++
 {"arr" : ["lion", "leopard", "bear", "elephant"]}
@@ -78,10 +76,12 @@ There is an object within the code below, whose result is an array and is denote
 A JSON object may be recognizable by embedding it inside the data.
 
 #### The values of JSON data
-There are many different sorts of the dataset that JSON utilizes. Examples given include dataObject, array, integer, text, boolean, and null. Except for objects and exhibitions, all attributes are real numbers. The user should contemplate putting entities that are not allowed in JSON into a JSON thread before you use them as JSON data.
+There are many different sorts of the dataset that JSON utilizes. Examples given include dataObject, array, integer, text, boolean, and null.
 
-### Analysis of the contrast between JSON and Cpp object
-The next section will find a simple program code for generating a fundamental entity using a simple developer.
+Except for objects and exhibitions, all attributes are real numbers. The user should contemplate putting entities that are not allowed in JSON into a JSON thread before you use them as JSON data.
+
+### Analysis of the contrast between JSON and C++ object
+The next section will find a simple program code for generating a fundamental entity:
 
 ```C++
 #include
@@ -104,7 +104,7 @@ int main()
 }
 ```
 
-Below is an example of a similar JSON object.
+Below is an example of a similar JSON object:
 
 ```C++
 {"obj": {"num" : null, "mthd" : "int mthd (int it) { return it;}"}}
@@ -126,7 +126,7 @@ JSON keys must be surrounded by double quotation, but JavaScript cannot encase t
 ### Pointer serialization
 As long as the pointer to the serialized object has Serialization enabled, it will be serialized every time it is called upon. Boost serialization guarantees that the pointer's connection is serialized to the relevant entities; thus, serialization of pointed objects is not required.
 
-Consider the following example of pointer serialization.
+Consider the following example of pointer serialization:
 
 ```C++
 #include <span class="code-string">"obj.hpp"
@@ -161,7 +161,9 @@ In the code above, serializing the pointer `p1` initiates the Serialization of `
 
 Pointer deserialization directly deserializes the object it refers to if it is not deserialized. If a pointer to an object has been deserialized; you should not deserialize that object.
 
-If such an object is forced to be deserialized by the pointer deserialization, then it is impossible to reassemble the object at a different location. Consider the following example of pointer deserialization.
+If such an object is forced to be deserialized by the pointer deserialization, then it is impossible to reassemble the object at a different location.
+
+Consider the following example of pointer deserialization:
 
 ```C++
 #include <span class="code-string">"obj.hpp"
@@ -189,14 +191,14 @@ return 0;
 
 ### Advantages and disadvantages of Serialization
 #### Advantages
-Serialization traverses an object's configuration via a network. It is simple to comprehend and adapt to individual needs. Serialization is utilized to preserve and store the configuration of an item. 
+Serialization traverses an object's configuration via a network. It is simple to comprehend and adapt to individual needs. Serialization is utilized to preserve and store the configuration of an item.
 
 Serialization makes it possible to adjust XML documents without using the Document Object Model.
 
 #### Disadvantages
 A user may only use Serialization if confident that the identical technique will deserialize the serialized information. This limitation makes it difficult to utilize a different version of the configurable library to deserialize data.
 
-### An example of Cpp Serialization
+### An example of C++ Serialization
 
 ```C++
 #pragma once
@@ -228,7 +230,9 @@ In the code above, `serialize` has been regarded as a prototype that defines bot
 Save/load templates may retrieve private data members of instances through a buddy designation. Let's not forget that serialization assumes the object has a standard constructor.
 
 ### Conclusion
-C++ object serialization has been brought up in this article, including its differences from standard object storage. Serialization is harder to achieve than expected. It is crucial to note how we may do it collectively or the potential method to recognize data length, so that the reconfiguration of an object does not show complications during deserialization.
+C++ object serialization has been brought up in this article, including its differences from standard object storage. Serialization is harder to achieve than expected.
+
+It is crucial to note how we may do it collectively or the potential method to recognize data length, so that the reconfiguration of an object does not show complications during deserialization.
 
 There is no easy data permanence that can resolve these complex problems. Therefore, Serialization is not as straightforward as it appears. There is, however, a variety of implementations to accompany C++ in its third-party libraries.
 
