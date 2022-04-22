@@ -11,8 +11,9 @@ Stack is Node.js with vanilla JS, with EJS for templating. TMDB data is retrieve
 All code for recTV is in our Github Repo. To run the app locally, To run the app locally, clone the repo, create a .env file with PORT and TMDB_API_KEY variables (obtain a free key from TMDB API site) and run npm install and npm start.
 
 ### K8 Deployment Process
+KEI was easy to use considering it leverages familiar tooling and workflows for both deployment and management, making it the easy to distribute containers to multiple locations. It also enabled us to maintain application code, configuration and deployment manifests in our own code management systems and image registries.
 
-Include what you enjoyed about working with KEI, what you didn't, what worked for you, and what didn’t work for you? Any barriers to get started or points of confusion
+The documentation can be improved. It is quite difficult to follow through especially on how to set up the KEI environment.
 
 ### Demo Video
 
