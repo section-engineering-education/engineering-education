@@ -11,19 +11,19 @@
 
     <div id="carousel10" class="carousel xs-pt-30" duration="{{ .duration }}" items="{{ .items }}">
       <ul>
-          {{ range $index, $slide := .context.Site.Data.testimonialsData.testimonials }}
-            <li id="c10_slide{{ add $index 1}}" style="min-width: calc(100%/{{ $.context.Scratch.Get "items" }});">
-              <div class="testimonial-image">
-                <img src="{{ $slide.image }}" alt="" />
-              </div>
-              <div class="testimonial-content">
-                <p class="testimonial text-18-medium">"{{ $slide.testimonial }}"</p>
-                <h4 class="author-name"><a href="{{ $slide.profileUrl }}">{{ $slide.name }}</a></h4>
-                <p class="roles">{{ delimit $slide.roles " / " }}</span>
-                <p class="location">{{ $slide.location }}</span>
-              </div>
-            </li>
-          {{ end }}
+        {{ range $index, $slide := .context.Site.Data.testimonialsData.testimonials }}
+          <li id="c10_slide{{ add $index 1}}" style="min-width: calc(100%/{{ $.context.Scratch.Get "items" }});">
+            <div class="testimonial-image">
+              <img src="/engineering-education{{ $slide.image }}" alt="{{ $slide.image }} Testimonial." />
+            </div>
+            <div class="testimonial-content">
+              <p class="testimonial text-18-medium">"{{ $slide.testimonial }}"</p>
+              <h4 class="author-name"><a href="{{ $slide.profileUrl }}">{{ $slide.name }}</a></h4>
+              <p class="roles">{{ delimit $slide.roles " / " }}</span>
+              <p class="location">{{ $slide.location }}</span>
+            </div>
+          </li>
+        {{ end }}
       </ul>
       <ol>
         {{ range $index, $page := .context.Site.Data.testimonialsData.testimonials }}
