@@ -28,6 +28,7 @@ louise@louisefindlay.com
 EngEd Author Profile
 
 #### WanjaMIKE
+https://www.section.io/engineering-education/authors/michael-barasa/
 
 #### Briana Nzivu
 https://www.section.io/engineering-education/authors/briana-nzivu/
