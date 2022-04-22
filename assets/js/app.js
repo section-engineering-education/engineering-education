@@ -141,8 +141,8 @@ var app = (function() {
     infinite: true,
     slidesToShow: 2,
     slidesToScroll: 1,
-    prevArrow: "<div class='prev'><img src='/images/right-chevron-icon.png' alt='Previous Testimonial'></div>",
-    nextArrow: "<div class='next'><img src='/images/right-chevron-icon.png' alt='Next Testimonial'></div>"
+    prevArrow: "<div class='prev'><img src='/engineering-education/images/right-chevron-icon.png' alt='Previous Testimonial'></div>",
+    nextArrow: "<div class='next'><img src='/engineering-education/images/right-chevron-icon.png' alt='Next Testimonial'></div>"
   });
 
   return {
