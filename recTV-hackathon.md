@@ -23,7 +23,7 @@ We've made the first recommendation app of its type without requiring mandatory 
 
 ### 📽 Project Video
 
-[TBD]
+[Demo Video](https://vimeo.com/702255906)
 
 ### 👨‍💻 Project Tech Stack
 
