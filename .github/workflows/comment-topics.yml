@@ -1,0 +1,14 @@
+name: Comment Topics
+on:
+  issues:
+    types: [labeled]
+jobs:
+  run:
+    if: github.event.label.name == 'topic suggestion'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: wow-actions/auto-comment@v1
+        with:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          issuesOpenedComment: |
+            ${{ github.event.issue.title }} as a content moderator is finished reviewing the ones in the queue before it.
