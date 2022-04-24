@@ -1,14 +1,19 @@
 name: Comment Topics
 on:
-  issues:
-    types: [labeled]
+    issues:
+        types: [labeled]
 jobs:
-  run:
-    if: github.event.label.name == 'topic suggestion'
-    runs-on: ubuntu-latest
-    steps:
-      - uses: wow-actions/auto-comment@v1
-        with:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          issuesOpenedComment: |
-            ${{ github.event.issue.title }} as a content moderator is finished reviewing the ones in the queue before it.
+    commenttopics:
+        if: github.event.label.name == 'topic suggestion'
+        runs-on: ubuntu-latest
+        steps:
+            - name: Format URL
+              run: |
+                  echo "title_url=$(echo '${{ github.event.issue.title }}' | sed 's/ /+/g')" >> $GITHUB_ENV
+                  echo ${{ env.title_url}}
+            - name: Post Comment
+              uses: KeisukeYamashita/create-comment@v1
+              with:
+                  token: ${{ secrets.GITHUB_TOKEN }}
+                  comment: |
+                   Please review this list of articles: https://www.google.com/search?q=${{ env.title_url}} to ensure your topic suggestion is unique.
