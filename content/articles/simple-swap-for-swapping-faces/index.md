@@ -4,7 +4,7 @@ status: publish
 published: true
 url: /simple-swap-for-swapping-faces/
 title: Simple Swap: A Machine Learning Framework for Swapping Faces
-description: This tutorial will give an overview of the SimSwap framework, how it can be applied in various use cases, and implement an example to demonstrate how it can be used.
+description: This tutorial will give an overview of the SimSwap framework, how to apply it in various use cases, and implement an example to demonstrate how it can be used.
 author: wilkister-mumbi
 date: 2022-04-25T00:00:00-21:30
 topics: [Machine Learning]
@@ -33,31 +33,31 @@ To follow along with this tutorial, you need to be familiar with:
 - [Further-reading](#further-reading)
 
 ### High-level overview
-Face swapping can be achieved using a model called SimSwap. SimSwap uses a GAN architecture. You can think of it as having two competing neural networks; a Generator and a Discriminator. The generator tries to apply the identity of a person to a target image. It does this by extracting the key features in a person's face i.e., eyes, nose, mouth, and applying those to the target image. This is attributed to the `ID Injection Module (IIM)` which makes it perform so well.
+We achieve face swapping using a model called SimSwap. SimSwap uses a GAN architecture. You can think of it as having two competing neural networks; a Generator and a Discriminator. The generator tries to apply a person's identity to a target image. It does this by extracting the key features in a person's face, i.e., eyes, nose, mouth, and applying those to the target image. It is attributed to the `ID Injection Module (IIM)` which makes it perform so well.
 
-The discriminators' role is that of a critic. It tries to pick the images that look real. It uses a technique known as `Weak Feature Matching Loss` to compare the fake with the real target image. The technique helps us preserve the facial features attributes gotten earlier. By optimizing for that loss, it learns to create good face swaps. 
+The discriminators' role is that of a critic. It tries to pick the images that look real. It uses a technique known as, `Weak Feature Matching Loss` to compare the fake with the real target image. The technique helps us preserve the facial features attributes gotten earlier. By optimizing for that loss, it learns to create good face swaps. 
 
-In the beginning, the model starts with a source and target image. The source is the one where we want to extract features. The source and target images are passed through the encoder and decoder architecture of the SimSwap model. The resulting output will be the target image applied with features from the source image.
+In the beginning, the model starts with a source and target image. The source image is the one where we want to extract features. The source and target images pass through the encoder and decoder architecture of the SimSwap model. The resulting output will be the target image applied with the features from the source image.
 
 To fine-tune the model, they pass in the target and final resulting image into a discriminator. This process is similar to how other GANs work. The discriminator then tells whether these are predictions close to real images.
 
 That's a high-level overview of how the SimSwap model works. You can read more about the SimSwap model [here](https://arxiv.org/pdf/2106.06340v1.pdf).
 
 ### Cloning the GitHub repo 
-The first thing that we are going to need to do is to clone the GitHub repository for the model.
+We first need to clone the GitHub repository for the model.
 
 ```bash
 !git clone https://github.com/neuralchen/SimSwap
 ```
 
-The code above will clone the repository into our notebook. If you go to the folders tab on your Google Colab, you'll see all the files that you saw in their GitHub now available in your notebook.
+The code above will clone the repository into our notebook. If you go to the folders tab on your Google Colab, you'll see all the files present in the GitHub now available in your notebook.
 
 > Make sure to add the exclamation mark `!` before the `git` command. Otherwise, you'll get a syntax error.
 
 The next step involved is to install our dependencies.
 
 ### Installing the required dependencies
-Our main dependency for this build is [PyTorch](https://pytorch.org/). To get your computer-specific PyTorch installation, head over to PyTorch's website, and select your PyTorch build, your OS, package, language, and computing platform of choice. Once you do this, a user-specific installation command will be generated. Use the generated command to install PyTorch on your notebook.
+Our main dependency for this build is [PyTorch](https://pytorch.org/). To get your computer-specific PyTorch installation, head over to PyTorch's website. Select your PyTorch build, your OS, package, language, and computing platform of choice. Once you do this, a user-specific installation command will be generated. Use the generated command to install PyTorch on your notebook.
 
 The following command is generated for this build:
 
@@ -76,7 +76,7 @@ If you have a GPU machine, use the `onnxruntime-gpu` command instead. Since we a
 ```
 
 - `insightface==0.2.1` is an open-source 2D & 3D deep face analysis library that implements a rich variety of state-of-the-art algorithms for face recognition, face detection, and face alignment. You can read more about it [here](https://github.com/deepinsight/insightface).
-- `onnxruntime-gpu` is an engine for Open Neural Network Exchange (ONNX). It allows for serialization in deep learning models improving their performance. 
+- `onnxruntime-gpu` is an engine for Open Neural Network Exchange (ONNX). It allows for serialization in deep learning models, improving their performance. 
 - `moviepy` is a module used in python programming language for video editing, i.e., cuts, adding titles, concatenation, etc.
 
 ### Downloading additional models
@@ -93,7 +93,7 @@ You can download and upload it manually or use the following code:
 
 - [Face parsing](https://drive.google.com/file/d/154JgKpzCPW82qINcVieuPH3fZ2e0P812/view) for image post-processing. It should be placed into the `./parsing_model/checkpoint` folder.
 
-You can download it and upload it manually, or use the following code:
+You can download it and upload it manually.  You can as well use the following code to download it:
 
 ```bash
 !wget -P ./parsing_model/checkpoint https://github.com/neuralchen/SimSwap/releases/download/1.0/79999_iter.pth
@@ -109,12 +109,12 @@ You can download it and upload it manually. Alternatively, use the following cod
 !unzip ./checkpoints.zip  -d ./checkpoints
 ```
 
-Once you've downloaded these files, you'll need to upload them into the correct folder. If not, you'll get several errors. It is a little pain to set it up but just be patient and ensure that you've followed every instruction to the letter.
+Once you've downloaded these files, you'll need to upload them into the correct folder. If not, you'll get several errors. It takes some time to set it up, but be patient and ensure that you've followed every instruction to the letter.
 
 We can now go ahead and test this model on images.
 
 ### Learning how to face swap images
-To perform face swapping on images, we simply need to run the following command:
+To perform face swapping on images, we need to run the following command:
 
 ```python
 cd SimSwap & python test_one_image.py --name people --Arc_path arcface_model/arcface_checkpoint.tar --pic_a_path crop_224/2.jpg --pic_b_path crop_224/ds.jpg --output_path output/
@@ -142,12 +142,12 @@ When you swap the target face image, `6.jpg` with the source face to swap image,
 
 Impressive, right?
 
-We have successfully swapped facial features from a source image onto a target image. Please find the complete code for this tutorial [here](https://colab.research.google.com/drive/1Us2-0dVMBVVqUfyXnuL4YPfF6dG6Wr7F?usp=sharing).
+We have successfully swapped facial features from a source image onto a target image. You can find the complete code for this tutorial [here](https://colab.research.google.com/drive/1Us2-0dVMBVVqUfyXnuL4YPfF6dG6Wr7F?usp=sharing).
 
-> Make sure to only use this model for good purposes. Do not apply this model for illegal and unethical purposes. 
+> Make sure to use this model for good purposes. Do not apply this model for illegal and unethical purposes. 
 
 ### Wrapping up
-SimSwap is a model that has been shown to perform well in face-swapping tasks. This model can be extended to swap people's faces in videos. Please refer to their main documentation on GitHub to learn more. It is a technique widely used in the film industry to help generate non-existent twins. It is used to reconstruct an actor's face model. It also rebuilds a scene's attributes, i.e., lighting condition.
+SimSwap is a model that performs well in face-swapping tasks. This model can be extended to swap people's faces in videos. Please refer to their documentation on GitHub to learn more. It is widely used in the film industry to help generate non-existent twins. It is used to reconstruct an actor's face model. It also rebuilds a scene's attributes, i.e., lighting condition.
 
 ### Further reading
 - [SimSwap: An Efficient Framework For High Fidelity Face Swapping](https://arxiv.org/pdf/2106.06340v1.pdf)
