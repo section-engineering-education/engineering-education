@@ -6,7 +6,7 @@ url: /model-explanation-with-dalex/
 title: Machine Learning Model Explanation with Dalex
 description: This article aims to demenstrate how to perfom a Machine Learning Model explanation using Dalex.
 author: simon-kamau
-date: 2022-04-19T00:00:00-03:30
+date: 2022-04-25T00:00:00-03:30
 topics: [Languages]
 excerpt_separator: <!--more-->
 images:
@@ -16,11 +16,11 @@ images:
 ---
 Machine learning engineers build models but hide the implementation from the end-users. The end-users apply the model without knowing how the model works behind the scenes. They do not know the functions, methods, and algorithms that train the model.
 <!--more-->
-End-users need an open and transparent model to understand how the model works, the functions, the algorithms and how it makes the predictions. Together, these help users understand the facts that contribute to the model's decision.
+End-users need an open and transparent model to understand how the model works in terms of the functions, the algorithms and how it makes the predictions. Together, these parameters help users understand the facts contributing to the model's decision.
 
 [Dalex](https://dalex.drwhy.ai/) is an open-sources library that explains and analyzes machine learning models. It makes the model transparent and open to the end-users. 
 
-Using Dalex, the end-users gain insightful information from the model. In this tutorial, we will build a bank marketing model and then use [Dalex](https://dalex.drwhy.ai/) to explain the model.
+Using Dalex, the end-users gain insightful information from the model. This tutorial will build a bank marketing model and then use [Dalex](https://dalex.drwhy.ai/) to explain it.
 
 ### Table of contents
 - [Prerequisites](#prerequisites)
@@ -131,7 +131,7 @@ Let us import the transformer methods.
 from sklearn.preprocessing import StandardScaler
 ```
 
-We use the `StandardScaler` to initialize the data-to-data stage. This method will convert the dataset to a specified range and ensure consistency in the dataset.
+We use the `StandardScaler` to initialize the data-to-data stage. This method will convert the dataset to a specified range and ensure consistency.
 
 #### Data to model stage
 This stage uses the data estimator algorithm to train the model using the transformed data. In this stage, we use the Scikit-learn algorithms for classification.
