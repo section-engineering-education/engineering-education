@@ -142,7 +142,16 @@ var app = (function() {
     slidesToShow: 2,
     slidesToScroll: 1,
     prevArrow: "<div class='prev'><img src='/engineering-education/images/right-chevron-icon.png' alt='Previous Testimonial'></div>",
-    nextArrow: "<div class='next'><img src='/engineering-education/images/right-chevron-icon.png' alt='Next Testimonial'></div>"
+    nextArrow: "<div class='next'><img src='/engineering-education/images/right-chevron-icon.png' alt='Next Testimonial'></div>",
+    responsive: [
+      {
+        breakpoint: 750,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1,
+        }
+      },
+    ],
   });
 
   return {
