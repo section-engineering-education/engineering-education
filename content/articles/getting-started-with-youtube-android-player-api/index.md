@@ -2,15 +2,15 @@
 layout: engineering-education
 status: publish
 published: true
-url: /getting-started-with-youtube-android-player-api-to-play-youtube-videos/
+url: /getting-started-with-youtube-android-player-api/
 title: Getting started with YouTube Android Player API 
 description: In this tutorial, we will use the API to create an android app that allows users to search for YouTube videos and then play them in their android applications.
 author: moses-takai
-date: 2022-04-10T00:00:00-12:30
-topics: [Android]
+date: 2022-04-25T00:00:00-12:30
+topics: [API]
 excerpt_separator: <!--more-->
 images:
-  - url: /engineering-education/getting-started-with-youtube-android-player-api-to-play-youtube-videos/hero.jpg
+  - url: /engineering-education/getting-started-with-youtube-android-player-api/hero.jpg
     alt: YouTube Android Player API  example image
 ---
 
@@ -49,11 +49,11 @@ The API also requires an API key and registration in the Google cloud console. T
 
 - Create a new project and give it a name of your choice.
 
-![cloud-project](/engineering-education/getting-started-with-youtube-android-player-api-to-play-youtube-videos/cloud-project.png)
+![cloud-project](/engineering-education/getting-started-with-youtube-android-player-api/cloud-project.png)
 
 - Click on the side navigation drawer > select Api & Services > Click on Library. You will then be directed to another screen.
 
-![library](/engineering-education/getting-started-with-youtube-android-player-api-to-play-youtube-videos/library.png)
+![library](/engineering-education/getting-started-with-youtube-android-player-api/library.png)
 
 - In the APIs library, search for `youtube data api 3`, select it and enable it.
 
@@ -64,12 +64,12 @@ The API also requires an API key and registration in the Google cloud console. T
 - At the top bar, click on Create credentials, then click on `api key`. 
 Copy the API-Key, and keep it somewhere as we will be using it in our app.
 
-![api-key](/engineering-education/getting-started-with-youtube-android-player-api-to-play-youtube-videos/api-key.png)
+![api-key](/engineering-education/getting-started-with-youtube-android-player-api/api-key.png)
 
 ### Creating an Android project
 Once your IDE is launched, create a new Android app project.
 
-![new-project](/engineering-education/getting-started-with-youtube-android-player-api-to-play-youtube-videos/new-project.png)
+![new-project](/engineering-education/getting-started-with-youtube-android-player-api/new-project.png)
 
 ### Hiding the API-Key
 Before we begin the implementation, we need to keep our Youtube API key safe so that when you push the code to Github, the key is not published.
@@ -92,13 +92,13 @@ We do not add the Youtube API directly to our project. Instead, follow the given
 
 Click [here](https://developers.google.com/youtube/android/player/downloads) to go to the official site and download the API.
 
-![player-api](/engineering-education/getting-started-with-youtube-android-player-api-to-play-youtube-videos/player-api.png)
+![player-api](/engineering-education/getting-started-with-youtube-android-player-api/player-api.png)
 
 After you have successfully downloaded the `.jar` file, go to the directory where it has been downloaded, extract it and open the `libs` folder in the unzipped content. Then, copy the `.jar` file.
 
 In your Android Studio, switch to project view > click on app > then on libs and paste the `.jar` file.
 
-![paste-lib](/engineering-education/getting-started-with-youtube-android-player-api-to-play-youtube-videos/paste-lib.png)
+![paste-lib](/engineering-education/getting-started-with-youtube-android-player-api/paste-lib.png)
 
 Right-click on the `.jar` file and select `Add as Library`. It will then be added to our app-level `build.gradle` as a dependency.
 
@@ -147,7 +147,7 @@ Let us define a UI with a search `EditText` that lets the user search for a give
 
 Go ahead and design the layout for your `activity_main.xml` to be similar to this : 
 
-![layout-main](/engineering-education/getting-started-with-youtube-android-player-api-to-play-youtube-videos/layout.png)
+![layout-main](/engineering-education/getting-started-with-youtube-android-player-api/layout.png)
 
 > Do not forget to create a corresponding `RecyclerView` row item and its  Recycler adapter based on the model class that was created ([You can take a look at how my recycler adapter looks like in this Github gist](https://gist.github.com/mosestakai/e21a114822b7d7c6b53b6920b8190f98)).
 
@@ -167,7 +167,7 @@ We will do that in another `Activity` where the videos are played. To create a n
 
 It would be best if you had something similar to this: 
 
-![layout](/engineering-education/getting-started-with-youtube-android-player-api-to-play-youtube-videos/layout.png)
+![layout](/engineering-education/getting-started-with-youtube-android-player-api/layout.png)
 
 ### Making a search network call
 To query for videos from the YouTube API, use the following API URL - "https://www.googleapis.com/youtube/v3/search/"
@@ -294,7 +294,7 @@ When initialization is not successful, you can use the result variable to debug 
 ### Demo
 When you compile and run the app on your emulator or physical device, your app should be similar  to this:
 
-![demo](/engineering-education/getting-started-with-youtube-android-player-api-to-play-youtube-videos/demo.gif)
+![demo](/engineering-education/getting-started-with-youtube-android-player-api/demo.gif)
 
 ### Conclusion
 In this tutorial, we learned what the YouTube Android Player API is, how to create a project on the Google cloud platform, obtain the key, secure the key, and finally integrate the API into our Android app. 
