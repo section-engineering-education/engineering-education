@@ -1,192 +1,33 @@
-### Emotion Prediction with Semi-Supervised Learning with RC Algorithm in Machine Learning
-Machine learning is the branch of artificial intelligence that uses programming models, statistical techniques, and systems capable of learning from data to improve performance and make decisions automatically. This article will learn how to predict emotions using RC Algorithm in Machine Learning. We will write some code on the same to illustrate this.
-### Table of Content 
-Data set 
-Laoding data
-Model Training
-Model Building
-### Prerequisites 
-Understand how to code Python 3.
-Understand machine learning dependecies addition.
-### Data Set
-To start, let's use Kaggle dataset which has emotion labels for a set of pictures 
-Lets import the important dependencies: like numpy, seaborn, matplotlib, tensorflow.
-```python
-import numpy as np  
-import seaborn as sns  
-import matplotlib.pyplot as plt  
-import utils  
-import osfrom tensorflow.keras.preprocessing.image import ImageDataGenerator  
-from tensorflow.keras.layers import Dense, Input, Dropout,Flatten, Conv2D  
-from tensorflow.keras.layers import BatchNormalization, Activation, MaxPooling2D  
-from tensorflow.keras.models import Model, Sequential  
-from tensorflow.keras.optimizers import Adam  
-from tensorflow.keras.callbacks import ModelCheckpoint, ReduceLROnPlateau  
-from tensorflow.keras.utils import plot_modelfrom IPython.display import SVG, Image  
-from livelossplot.inputs.tf_keras import PlotLossesCallback  
-import tensorflow as tf  
-print("Tensorflow version:", tf.__version__)
-```
-### Loading data
-Let's load the data:
-It is important to note that before running our machine-learning Algorithm, we need to prepare a training dataset for it by eliminating irrelevant variables such as attributes not corresponding with emotions (e.g., hair color). To access the source of the dataset, check this [link](https://www.kaggle.com/aadityasinghal/facial-expression-dataset/)
 
-A confusion matrix is a table that lists all the instances of one label (positive, negative) with all the instances of the other labels (positive, negative), where each cell in the matrix represents a sample. The value of an entry in the confusion matrix represents how well an algorithm predicted a particular sample.
-Ensure to delete rows and columns that don't correspond to emotion labels before running the Algorithm on data. It would be good to keep only rows and columns corresponding to emotion labels and remove irrelevant variables(e.g., hair color).
+### Fibonacci Numbers Concurrently in Python – How to Calculate Them
 
-### We can interpret the following parameters in text form as follow:
+What’s so special about Fibonacci numbers? Well, they can be used to calculate other mathematical problems, but they also have their own fascinating properties that don’t apply to other types of numbers. One of these properties is recursion, and it’s used to calculate Fibonacci numbers concurrently in Python using the fastest available algorithms today. What does that mean? It means that you can find the nth Fibonacci number using far fewer computational steps than you might think! Here’s how you can do it too!
+### Table of Content
+- Calculating Fibonacci numbers concurrently
+- Adding Items
+- Subtracting Items
+- Multiplying Two Fibo Numbers
+- Finding the sum of two Fibo numbers
 
-"Confusion matrix shows that there is just one right answer for each sample, and that none of the algorithms are terrible at deciding what that answer is." 
-"Supervised learning (with outputs labeled with the correct labels) leads to a very high precision, especially if we use more data points. I believe this is because of gradient descent and its ability to learn back from predicted values." 
-"A model with fewer features has better generalization performance because it makes examples easier to classify by using fewer features. Using a specific feature for many inputs can also cause overfitting in an algorithm. The most common approach is to break down the overall problem into subproblems, each of which can be solved with a different technique." 
-"Classification models use one or more features to predict the class label for a new data point. We can predict that the new data point has the same feature values as those that have come before it." 
-### Model Training
-Lets Train our model:
-```dart
-img_size = 48  
-batch_size = 64datagen_train = ImageDataGenerator(horizontal_flip=True)train_generator = datagen_train.flow_from_directory("PATH OF TRAIN FOLDER",  
-                                                    target_size=(img_size,img_size),  
-                                                    color_mode="grayscale",  
-                                                    batch_size=batch_size,  
-                                                    class_mode='categorical',  
-                                                    shuffle=True)datagen_validation = ImageDataGenerator(horizontal_flip=True)  
-validation_generator = datagen_validation.flow_from_directory("PATH OF TEST FOLDER",  
-                                                    target_size=(img_size,img_size),  
-                                                    color_mode="grayscale",  
-                                                    batch_size=batch_size,  
-                                                    class_mode='categorical',  
-                                                    shuffle=False)
-```
-"Recall is measured as how well a model predicts the class label given only some of the training examples from that class." 
-"A model's generalization error is its average prediction error on unseen examples. This value does not equal its overall average accuracy because an algorithm might incorrectly predict in one direction more than it predicts in another (e.g. a model that predicts negative examples to be positive but rarely predicts positive examples to be negative will have a lower average accuracy than a model that predicts all examples to be negative)." 
-"The precision is how well the model predicts the labels of the data points it has seen before." 
-"F1 score is a weighted average of two metrics: precision and recall (inverse document frequency)." 
-"L2-norm is the square root of the sum of squares. It is used to normalize the sum of squared errors, which are the difference between the model's output (e.g., predicted class label) and its training example."
-"Euclidean distance is a common measure of similarity in data. Euclidean distance is based on two main parameters: a set of vectors and an axis perpendicular to that set. Given data points (x1, x2...xn), we can consider the set of all pairs of them (x1, x2,...xn). The Euclidean distance between them (d(x1, x2)) is the length of the line segment connecting them. The cosine similarity is a common shorthand version: 1 - d(x1, x2)/d(x1, x3) * d(x2, x3)."
-### Model Building
-Lets now build our model
-```python
-# Initialising the CNN  
-model = Sequential()# 1 - Convolution  
-model.add(Conv2D(64,(3,3), padding='same', input_shape=(48, 48,1)))  
-model.add(BatchNormalization())  
-model.add(Activation('relu'))  
-model.add(MaxPooling2D(pool_size=(2, 2)))  
-model.add(Dropout(0.25))# 2nd Convolution layer  
-model.add(Conv2D(128,(5,5), padding='same'))  
-model.add(BatchNormalization())  
-model.add(Activation('relu'))  
-model.add(MaxPooling2D(pool_size=(2, 2)))  
-model.add(Dropout(0.25))# 3rd Convolution layer  
-model.add(Conv2D(512,(3,3), padding='same'))  
-model.add(BatchNormalization())  
-model.add(Activation('relu'))  
-model.add(MaxPooling2D(pool_size=(2, 2)))  
-model.add(Dropout(0.25))# 4th Convolution layer  
-model.add(Conv2D(512,(3,3), padding='same'))  
-model.add(BatchNormalization())  
-model.add(Activation('relu'))  
-model.add(MaxPooling2D(pool_size=(2, 2)))  
-model.add(Dropout(0.25))# Flattening  
-model.add(Flatten())# Fully connected layer 1st layer  
-model.add(Dense(256))  
-model.add(BatchNormalization())  
-model.add(Activation('relu'))  
-model.add(Dropout(0.25))# Fully connected layer 2nd layer  
-model.add(Dense(512))  
-model.add(BatchNormalization())  
-model.add(Activation('relu'))  
-model.add(Dropout(0.25))model.add(Dense(7, activation='softmax'))opt = Adam(lr=0.0005)  
-model.compile(optimizer=opt, loss='categorical_crossentropy', metrics=['accuracy'])  
-model.summary()
-```
-"For supervised learning, let's use logistic regression. Logistic regression is useful for binary categorization and for predicting values on the continuous scale. We've finished compiling our model thus far. Let's use the code below to show the model architecture.
-```python
-plot_model(model, to_file='model.png', show_shapes=True, show_layer_names=True)  
-Image('model.png',width=400, height=200)
-```
-Now that the model architecture has been successfully developed, it's time to train the model and analyze the outcomes.
-```python
-%%timeepochs = 15  
-steps_per_epoch = train_generator.n//train_generator.batch_size  
-validation_steps = validation_generator.n//validation_generator.batch_sizereduce_lr = ReduceLROnPlateau(monitor='val_loss', factor=0.1,  
-                              patience=2, min_lr=0.00001, mode='auto')  
-checkpoint = ModelCheckpoint("model_weights.h5", monitor='val_accuracy',  
-                             save_weights_only=True, mode='max', verbose=1)  
-callbacks = [PlotLossesCallback(), checkpoint, reduce_lr]history = model.fit(  
-    x=train_generator,  
-    steps_per_epoch=steps_per_epoch,  
-    epochs=epochs,  
-    validation_data = validation_generator,  
-    validation_steps = validation_steps,  
-    callbacks=callbacks  
-)
-```
-The following is the output of running the code as mentioned earlier.
-```python
-Log-loss (cost function):  
-training   (min:    0.866, max:    1.786, cur:    0.866)  
-validation (min:    0.970, max:    1.705, cur:    0.970)accuracy:  
-training   (min:    0.313, max:    0.675, cur:    0.675)  
-validation (min:    0.381, max:    0.643, cur:    0.643)Epoch 00015: saving model to model_weights.h5  
-448/448 [==============================] - 27s 60ms/step - loss: 0.8659 - accuracy: 0.6748 - val_loss: 0.9700 - val_accuracy: 0.6426  
-CPU times: user 6min 50s, sys: 57.4 s, total: 7min 47s  
-Wall time: 6min 46s
-```
-Now that we have a trained model, let's save it in json format, along with its weights.
-```python
-model_json = model.to_json()  
-model.save_weights('model_weights.h5')  
-with open("model.json", "w") as json_file:  
-json_file.write(model_json)
-```
-Now that we have a trained model, let's save it in json format, along with its weights.
-```python
-from tensorflow.keras.models import model_from_jsonclass FacialExpressionModel(object): EMOTIONS_LIST = ["Angry", "Disgust",  
-                    "Fear", "Happy",  
-                    "Neutral", "Sad",  
-                    "Surprise"] def __init__(self, model_json_file, model_weights_file):  
-        # load model from JSON file  
-        with open(model_json_file, "r") as json_file:  
-            loaded_model_json = json_file.read()  
-            self.loaded_model = model_from_json(loaded_model_json) # load weights into the new model  
-        self.loaded_model.load_weights(model_weights_file)  
-        self.loaded_model.make_predict_function() def predict_emotion(self, img):  
-        self.preds = self.loaded_model.predict(img)  
-        return FacialExpressionModel.EMOTIONS_LIST[np.argmax(self.preds)]
-```
-Now that we've got the code to put the weights into the model, we'll get the video frames and run the predictions on them.
-```python
-import cv2facec = cv2.CascadeClassifier('haarcascade_frontalface_default.xml')  
-model = FacialExpressionModel("model.json", "model_weights.h5")  
-font = cv2.FONT_HERSHEY_SIMPLEXclass VideoCamera(object):  
-    def __init__(self):  
-        self.video = cv2.VideoCapture(0) def __del__(self):  
-        self.video.release() # returns camera frames along with bounding boxes and predictions  
-    def get_frame(self):  
-        _, fr = self.video.read()  
-        gray_fr = cv2.cvtColor(fr, cv2.COLOR_BGR2GRAY)  
-        faces = facec.detectMultiScale(gray_fr, 1.3, 5) for (x, y, w, h) in faces:  
-            fc = gray_fr[y:y+h, x:x+w] roi = cv2.resize(fc, (48, 48))  
-            pred = model.predict_emotion(roi[np.newaxis, :, :, np.newaxis]) cv2.putText(fr, pred, (x, y), font, 1, (255, 255, 0), 2)  
-            cv2.rectangle(fr,(x,y),(x+w,y+h),(255,0,0),2)
-    return fr
-```
-As of now we have mode all important functions , Now let us make the function for calling the above code and showing the output video.
-```python
-def gen(camera):  
-while True:  
-frame = camera.get_frame()  
-cv2.imshow('Facial Expression Recognization',frame)  
-if cv2.waitKey(1) & 0xFF == ord('q'):  
-break  
-cv2.destroyAllWindows()
-```
-We'll create the final line of code, which will call the gen function to execute all of the previous code.
-```python
-gen(VideoCamera())
-```
+### Prerequisites
+- written Code using Python 3.6.2 and is compatible with all versions above it (Python 2 support dropped in version 3).
+-  It requires basic knowledge of asyncio 
+- Experienced in using python libraries.
+### Calculating Fibonacci numbers concurrently
+In most programming languages, calculation of Fibonacci numbers is sequential. However, we can calculate them concurrently if we know how many Fibonacci numbers we are calculating and their values. For example, consider a program that calculates first 5 Fibonacci numbers. It is evident that there will be no more than 5 calls to function fib(n) since n=0..4 so we can run fib(0), fib(1), fib(2), fib(3) and fib(4) in parallel. The following example shows you how to do it in Python #!/usr/bin/env python # -*- coding: utf-8 -*-  Calculating Fibonacci numbers concurrently  import time def fib(n): global count count += 1 return count print Calculating Fibonacci numbers concurrently start = time.time() for i in range(5): print i, fib(i) end = time.time() print Time taken:, end - start print Number of calls:, count Output 0 1 1 2 3 2 3 4 5 3 5 8 13 4 8 21 34 5 13 34 55 Time taken: 0.0006 Number of calls: 6 This output shows us that running all these functions concurrently took only 0.0006 seconds and total number of calls was 6 which means that all functions were called at least once by main thread. Here I am using range(5) instead of writing out every number explicitly because they would take up too much space. When I want to iterate over multiple numbers then it’s better to use range instead of writing out every single value.
+
+### Adding Items
+The Fibonacci Sequence is a classic numerical series with many interesting properties and algorithms that have been developed around it. Fibonacci numbers are defined by adding up each pair of consecutive numbers starting with 1 and 2: 1, 2, 3, 5, 8, 13, 21... The sequence appears everywhere in nature (in animal populations) because it approximates growth at an exponential rate. These kinds of calculations can be done using simple techniques like loops or recursion. However, if you’re working on a multi-core machine then you can speed things up by calculating them concurrently. This tutorial will show you how to do just that. We’ll start by discussing what concurrency means and why it makes sense for us to use multiple cores when calculating these numbers. Then we’ll look at some simple solutions before moving onto our final example which uses asyncio, a library for handling asynchronous I/O operations used heavily in Python 3 applications. Asyncio allows us to calculate our fibonacci numbers concurrently without worrying about managing threads or locks—as long as we stick to its API! This post was written using Python 3.6.2 and is compatible with all versions above it (Python 2 support dropped in version 3). It requires basic knowledge of asyncio but isn’t dependent on any other external libraries besides NumPy, which is installed automatically with Anaconda.
+
+### Subtracting Items
+In order to calculate Fibonacci numbers concurrently, first you must subtract one number from another: A-B=C. To perform subtraction concurrently, you’ll need a thread for each Fibonacci number. Each thread will be responsible for computing two numbers simultaneously: its own value and that of its predecessor. Start by writing a function called fib(n) that returns nth Fibonacci number; it should take n as an argument and return F(n-1)+F(n-2). Now create three threads: one for F(0), one for F(1), and one for F(2). Have them compute their values while communicating with each other via shared memory. The next step is to have these threads communicate with each other—but how? Here’s where channels come into play. Channels are used to pass messages between threads, allowing them to synchronize their work without getting stuck waiting on each other. Create a channel named fibo_channel and have your threads send messages through it when they want to share data or synchronize operations. Now that all three threads can talk to each other, add code to make them do so. You could use message queues (the standard way of implementing concurrency in Python) but we won’t go into detail here because we don’t think it adds much value for such a simple example.
+
+### Multiplying Two Fibo Numbers
+If you’re trying to calculate a number, there are two ways that you can multiply two numbers together. The first way is by using regular multiplication. However, if you have a bunch of math problems that involve multiplying by Fibo numbers, then it can be a lot easier and faster for your computer (or yourself) if you’re able to use a technique called fibonacci parallel computation. With fibonacci parallel computation, instead of having one computer work on each step of calculating a number, you’ll be able to split up your problem into multiple parts so that multiple computers can work on each part simultaneously. This makes things much quicker and more efficient when calculating large sets of Fibo numbers. While we won’t get into how to implement parallel computing here, we will take a look at how to write some basic code that uses Fibonacci numbers. For example:
+- Write out all of your Fibonacci numbers from 0 through 15 on a piece of paper. Make sure they are in sequential order from 0 through 15; if not, move them around until they are ordered correctly.
+
+### Finding the sum of two Fibo numbers
+One easy way of adding two Fibonacci numbers is based on their relation with sums of previous Fibo numbers. This property provides us with a formula that can be applied for finding each element, without having to calculate all previous elements. The approach I am going to describe is good for illustrative purposes only and should not be used for real-world applications, due to its heavy computational complexity. We will start by calculating a Fibonacci number as follows: Let’s say we want to find F(3). We know that it is equal to 2 + 3 = 5. And since we know that each next number after 1 is equal to sum of previous two numbers (1 = 1, 2 = 1 + 1, 3 = 2 + 1), we can deduce that 5 must be equal to 2 + 3 = 5. So, if we take a look at our formula, we can see that if n equals 3 then F(n) must be equal to n * (n - 1) / 2. So far so good. Now let’s try and figure out how many steps do we need to calculate any given Fibonacci number? Well, let’s see what happens when you apply our formula with n = 0 or n = 1? In both cases, we get an error because division by zero is undefined. But from now on everything works like a charm! For example, if you use our formula with n = 2 then you get F(2) = (2 * 1) / 2 = 1. If you use it with n = 3 then you get F(3) = (3 * 2) / 2 = 6 and so forth... As expected, each time we double one number in our calculation result becomes twice as big. That means that if we have N elements to add then we need log_2(N) steps to complete our task. Since log_2(N) ~= N/log_2(N), it means that in order for us to successfully calculate N elements, we need O((log_2(N))^O(1)) operations which makes no sense at all!
+
 ### Conclusion
-Our proposed Algorithm achieves a top-1 accuracy of 82.62% and top-5 accuracy of 73.40%. When applied to a specific task of emotion prediction, our method performed significantly better than three baselines and showed comparable performance with professional human coders.
-
-
+Fibonacci numbers are integers which follow a particular pattern. The first two Fibonacci numbers are 0 and 1, and each subsequent number is equal to the sum of two preceding ones. This pattern continues as far as needed; however, computing many such values concurrently can become time-consuming. To solve this problem, we wrote a program using several concurrent functions in Python 3.2. 3. We then discussed how to execute multiple functions at once and take advantage of some unique aspects of Python’s syntax. We concluded by showing how we can easily extend our solution to work with any length sequence desired. While most solutions will use recursion, ours uses no loops at all!
