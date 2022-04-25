@@ -26,8 +26,8 @@ To follow along with this tutorial, you need to be familiar with:
 
 ### Table of contents
 - [High-level overview](#high-level-overview)
-- [Cloning the GitHub repo][#cloning-the-github-repo]
-- [Installing required dependencies](#installing-the-required-dependencies)
+- [Cloning the GitHub repo](#cloning-the-github-repo)
+- [Installing the required dependencies](#installing-the-required-dependencies)
 - [Downloading additional models](#downloading-additional-models)
 - [Learning how to face swap images](#learning-how-to-face-swap-images)
 - [Wrapping up](#wrapping-up)
@@ -57,7 +57,7 @@ The code above will clone the repository into our notebook. If you go to the fol
 
 The next step involved is to install our dependencies.
 
-### Installing required dependencies
+### Installing the required dependencies
 Our main dependency for this build is [PyTorch](https://pytorch.org/). To get your computer specific PyTorch installation, head over to the PyTorch's website, select your PyTorch build, your OS, package, language, and compute platform of choice. Once you do this, a user-specific installation command will be generated. Use the generated command to install PyTorch on your notebook.
 
 The following command is generated for this build:
@@ -115,19 +115,40 @@ Once you've downloaded these files, you'll need to upload them into the correct 
 We can now go ahead and test this model on images.
 
 ### Learning how to face swap images
-To perform face swapping on images, write the following command:
+To perform face swapping on images, we simply need to run the following command:
 
 ```python
-python test_one_image.py --name people --Arc_path arcface_model/arcface_checkpoint.tar --pic_a_path crop_224/trump.jpg --pic
+cd SimSwap & python test_one_image.py --name people --Arc_path arcface_model/arcface_checkpoint.tar --pic_a_path crop_224/2.jpg --pic_b_path crop_224/ds.jpg --output_path output/
 ```
-- `name people` uses the people's model.
 
-Please find the complete code for this tutorial [here](https://colab.research.google.com/drive/1Us2-0dVMBVVqUfyXnuL4YPfF6dG6Wr7F?usp=sharing).
+Since our cloned SimSwap repository is in another folder, we first need to enter into the folder using `cd SimSwap`. We then perform some python commands while inside the folder.
+
+- The `test_one-image.py` is a python file that comes with the repository.
+- `--name people` allows the SimSwap to use the `people` model.
+- `--pic_a_path` indicates the path of image with the target face. The target face image is located inside the `crop_224` folder. You can change the target image to a different one inside the folder.
+- `--pic_b_path` indicates the path of image with the source face to swap. The source face to swap image is located inside the `crop_224` folder too. You can change the target image to a different one inside the folder.
+- `--output_path` indicates the path of directory to store the face swapping result
+
+Image one:
+
+![Target face image](/engineering-education/simple-swap-for-swapping-faces/6.jpg)
+
+Image two:
+
+![Source face to swap image](/engineering-education/simple-swap-for-swapping-faces/ds.jpg)
+
+When you swap the target face image, `6.jpg` with the source face to swap image, `ds.jpg`, we get the following resulting image:
+
+![Result](/engineering-education/simple-swap-for-swapping-faces/result.jpg)
+
+Impressive, right?
+
+We have successfully swapped facial features from a source image onto a target image. Please find the complete code for this tutorial [here](https://colab.research.google.com/drive/1Us2-0dVMBVVqUfyXnuL4YPfF6dG6Wr7F?usp=sharing).
 
 > Make sure to only use this model for good purposes. Do not apply this model for illegal and unethical purposes. 
 
 ### Wrapping up
-It is a technique widely used in the film industry to help generate non-existent twins. It reconstructs an actor's face model. It also rebuilds a scenes attributes, i.e., lighting condition.
+SimSwap is a model that has shown to perform well in face swapping tasks. This model can be extended to swap people's faces in videos. Please refer to their main documentation on GitHub to learn more. It is a technique widely used in the film industry to help generate non-existent twins. It is used to reconstruct an actor's face model. It also rebuilds a scenes attributes, i.e., lighting condition.
 
 ### Further reading
 - [SimSwap: An Efficient Framework For High Fidelity Face Swapping](https://arxiv.org/pdf/2106.06340v1.pdf)
