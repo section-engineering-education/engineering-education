@@ -6,7 +6,7 @@ url: /custom-api-with-kotlin-mvvm/
 title: Custom Django API with Kotlin MVVM
 description: In this article, we will build an authentication API using the Django rest framework and consume the API in an android application following the MVVM pattern.
 author: jerim-kaura
-date: 2022-04-09T00:00:00-09:00
+date: 2022-04-25T00:00:00-09:00
 topics: [API, Mobile]
 excerpt_separator: <!--more-->
 images:
