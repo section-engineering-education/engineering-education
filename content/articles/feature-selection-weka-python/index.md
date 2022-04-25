@@ -84,7 +84,7 @@ def load_dataset():
 ```
 
 ### selection of the attributes
-This step will first set a list of classifier algorithms that we will use in the procedure. Then, these algorithms will be used to evaluate the model accuracy and determine which features give the most accurate classification.
+This step will first set a list of classifier algorithms we will use in the procedure. Then, these algorithms will be used to evaluate the model accuracy and determine which features give the most accurate classification.
 
 ```py
 def select_attributes(dataset):
@@ -162,7 +162,7 @@ We then call the `select_attributes` function to perform the attribute selection
 results = select_attributes(dataset)
 ```
 
-In the next step, we will print each column and its performance to the prediction of the model. This will help us know what attribute contributed what percentage to the model's prediction.
+In the next step, we will print each column and its performance to the model's prediction to help us know what attribute contributed what percentage to the model's prediction.
 
 ```py
 columns_performance = dict.fromkeys(columns, 0)
@@ -246,6 +246,6 @@ Attribute importance (heuristic):
 ```
 
 ### Conlcusion
-In this tutorial, we used the Weka wrapper library to demonstrate how to conduct feature selection using the python programming language. First, we loaded the data and used three different algorithms to determine the most important features in classifying the Diabetes dataset. Then, we finally showed the most important features selected by our program.
+In this tutorial, we used the Weka wrapper library to demonstrate how to conduct feature selection using the python programming language. First, we loaded the data and used three algorithms to determine the most important features in classifying the Diabetes dataset. Then, we finally showed the essential features selected by our program.
 
 You can find the code [here](https://replit.com/@paulromans/Feature-Selection#main.py), but you must set up the libraries to run it on your local machine.
