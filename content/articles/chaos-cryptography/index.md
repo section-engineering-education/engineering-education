@@ -37,16 +37,16 @@ images:
 A basic understanding of the concepts of cryptography.
 
 ### Introduction
-Chaos theory is a branch of mathematics that deals with the study of non-linear dynamical systems that exhibit sensitivity to initial conditions. Chaotic conditions exist in nature. A decent and typical example of such is the weather. Chaos theory has had many applications since its inception. These applications are in the field of meteorology, anthropology, economics, and computer science among others. Chaotic systems can be characterized by: sensitivity to initial conditions, periodic orbit density, and topological mixing. Its attributes such as determinism and sensitivity make chaotic systems attractive for cryptography.
+Chaos theory is a branch of mathematics that deals with the study of non-linear dynamical systems that exhibit sensitivity to initial conditions. Chaotic conditions exist in nature. A decent and typical example of such is the weather. Chaos theory has had many applications since its inception. These applications are in meteorology, anthropology, economics, and computer science, among others. Chaotic systems can be characterized by sensitivity to initial conditions, periodic orbit density, and topological mixing. Its attributes, such as determinism and sensitivity, make chaotic systems attractive for cryptography.
 
 ### Characteristics of chaotic systems
-Let's quickly take a look at the characteristics of chaotic systems.
+Let's look at the characteristics of chaotic systems.
 
 #### Sensitivity to initial conditions
 This means that a slight change to initial conditions creates unexpected behavior. The most common analogy used to express this idea is the [butterfly effect](https://fractalfoundation.org/resources/what-is-chaos-theory/). This is an important property in creating chaotic cryptographic algorithms and hash functions. This is because it is comparable to the [diffusion](https://cryptography.fandom.com/wiki/Confusion_and_diffusion) property.
 
 #### Periodic orbit density
-This means that any chaotic point in the trajectory can approach other points. This is due to the [strange attractor](https://www.stsci.edu/~lbradley/seminar/attractors.html) phenomenon. This characteristic is quite useful in creating affine transformations that can be quite useful in cryptography.
+It means that any chaotic point in the trajectory can approach other points. This is due to the [strange attractor](https://www.stsci.edu/~lbradley/seminar/attractors.html) phenomenon. This characteristic is quite useful in creating affine transformations that can be quite useful in cryptography.
 
 #### Topological mixing
 This means that the chaotic trajectory generated from a random region of the phase space can cover the rest of the phase space as the trajectory evolves. This is an attractive feature in chaos since it is analogous to the **uniform distribution property** in cryptography.
