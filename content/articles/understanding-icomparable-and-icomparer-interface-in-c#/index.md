@@ -3,10 +3,10 @@ layout: engineering-education
 status: publish
 published: true
 url: /understanding-icomparable-and-icomparer-interface-in-c-sharp/
-title: Understanding icomparable and icomparer interface in c#
+title: Understanding icomparable and icomparer Interface in C#
 description: This tutorial will introduce the reader to the icomparer and icomparable interfaces.
-author: Mark Macharia
-date: 2022-04-3T00:00:00-07:22
+author: mark-macharia
+date: 2022-04-25T00:00:00-17:22
 topics: [Languages]
 excerpt_separator: <!--more-->
 images:
@@ -14,7 +14,9 @@ images:
   - url: /understanding-icomparable-and-icomparer-interface-in-c-sharp/hero.jpg
     alt: Understanding icomparable and icomparer interface in c#
 ---
-The IComparable and IComparer interfaces will be discussed in this article. Although the two interfaces sound similar, they each accomplish separate tasks. The interfaces can be used together or independently, but for sorting and comparison purposes, they operate best when they are combined. We will briefly talk about sorting and then dive into the comparison interfaces.
+The IComparable and IComparer interfaces will be discussed in this article. Although the two interfaces sound similar, they each accomplish separate tasks. 
+<!--more-->
+The interfaces can be used together or independently, but for sorting and comparison purposes, they operate best when they are combined. We will briefly talk about sorting and then dive into the comparison interfaces.
 
 ### Table of contents
 - [An overview of sorting](#an-overview-of-sorting)
