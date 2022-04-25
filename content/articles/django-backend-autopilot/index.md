@@ -6,8 +6,8 @@ url: /django-backend-autopilot/
 title: Best Autopilot setup for Django Backend Development
 description: This tutorial intends to bring the best practices for writing readable and maintainable Django code by putting together several packages to achieve this goal.
 author: mercy-meave
-date: 2022-04-09T00:00:00-16:15
-topics: [API]
+date: 2022-04-25T00:00:00-16:15
+topics: [Languages]
 excerpt_separator: <!--more-->
 images:
 
@@ -17,7 +17,7 @@ images:
 
 Most developers know how to write software in Django. However, we should consider that code is read more than written. For this reason, we need to follow some of the conventional best practices to write code that is maintainable and readable.
 <!--more-->
-This tutorial intends to bring the best practices for writing readable and maintainable Django code by putting together several packages to achieve this goal. Furthermore, it intends to utilize various libraries to automate testing, code formatting, automatic deployment, dependency management and pre-commit hooks.
+This tutorial intends to bring the best practices for writing readable and maintainable Django code using several packages to achieve this goal. Furthermore, it intends to utilize various libraries to automate testing, code formatting, automatic deployment, dependency management and pre-commit hooks.
 
 ### Prerequisites
 - Django software development
@@ -80,10 +80,10 @@ poetry add Django
 
 ![Installing Django](/engineering-education/django-backend-autopilot/django-install.png)
 
-Other dependencies will be installed the same way as we proceed with the article.
+We will install other dependencies the same way as we proceed with the article.
 
 ### Starting the Django project
-This section will create the Django project and create a single application in the project. Execute the command below to start a Django project.
+This section will create the Django project and a single application in the project. Execute the command below to start a Django project.
 
 ```bash
 Django-admin startproject config
@@ -346,8 +346,7 @@ run: poetry run flake8
 
 When we run a commit, all the above operations are automatically performed on our code before the code is committed to Github.
 
-![Automatic Code Testing with GitHub actions](/engineering-education/django-backend-autopilot/testing-with-Github-actions.png)
-
+![Automatic Code Testing with GitHub actions](/engineering-education/django-backend-autopilot/testing-with-github-actions.png)
 
 ### Conclusion
 This article discussed some of the best practices required while writing code, especially in Django. We set up project management with poetry to ensure that our dependencies are deterministically managed and locked from a self-update.
@@ -357,3 +356,6 @@ We went further and set up automated code formatting using black. This tool form
 Lastly, we hooked up everything into a pre-commit such that all the testing and formatting are automated for every commit made to the repository. 
 
 You can find the code for the application in [this link.](https://github.com/mercymeave/django-app-autopilot)
+
+---
+Peer Review Contributions by: [Jerim Kaura](/engineering-education/authors/jerim-kaura/)
