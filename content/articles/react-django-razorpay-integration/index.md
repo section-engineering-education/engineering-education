@@ -6,7 +6,7 @@ url: /react-django-razorpay-integration/
 title: Integrating Razorpay in a React-Django Application
 description:  This article will walk the reader through integrating the Razorpay payment gateway into a Django application with React frontend.
 author: samfred-kim
-date: 2022-04-19T00:00:00-17:30
+date: 2022-04-25T00:00:00-17:30
 topics: [API]
 excerpt_separator: <!--more-->
 images:
@@ -516,3 +516,6 @@ To learn how to use the Razorpay dashboard, click [this link.](https://razorpay.
 In this article, we have learned how to create a Razorpay account,  obtain the keys from the dashboard, create an order, verify a signature and check the payment logs. You can implement the Razorpay payment gateway in your React-Django application with this knowledge.
 
 Happy coding!
+
+---
+Peer Review Contributions by: [Mercy Meave](/engineering-education/authors/mercy-meave/)
