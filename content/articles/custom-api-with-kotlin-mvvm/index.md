@@ -732,7 +732,7 @@ data class User(
 ```
 
 ### The API endpoints
-In the same directory as the request and response folders create a new interface called `AuthyAPI`, then add the following code snippets.
+In the same directory as the request and response folders, create a new interface called `AuthyAPI`, then add the following code snippets.
 
 ```kotlin
 interface AuthyApi {
@@ -750,7 +750,7 @@ interface AuthyApi {
 ```
 
 ### Dependency Injection Setup
-A dependency is an object or a class that can be used by an application to perform a specific task. Dependency Injection is the process whereby when one object needs one dependency, it gets provided automatically instead of the object creating it by itself. In the end, the dependency is created once and can be re-used multiple times.
+A dependency is an object or a class that can be used by an application to perform a specific task. Dependency Injection is the process whereby when one object needs one dependency; it gets provided automatically instead of the object creating it by itself. In the end, the dependency is created once and can be re-used multiple times.
 
 #### The Application Module
 This module contains dependencies used across the application. To set up the application module, create a new class and add the snippets below:
@@ -915,7 +915,7 @@ class LoginUseCase @Inject constructor(private val repository: AuthRepository){
 ![Dormain ans usecases](/engineering-education/custom-api-with-kotlin-mvvm/domain-and-usecases.png)
 
 ### The ViewModel and the UI entry point
-The ViewModel is responsible for combining the result obtained from the use cases with the mobile screen onto which they will be displayed, accessed or used. Furthermore, it exposes the data to present it to the user screen easily.
+The ViewModel is responsible for combining the result obtained from the use cases with the mobile screen onto which they will be displayed, accessed or used. Furthermore, it exposes the data to easily present it to the user screen.
 
 In the `viewmodels`, create a file named `AuthViewModel` and add the snippets below:
 
@@ -1185,3 +1185,6 @@ The following should illustrate how the custom REST api is consumed in our auth 
 
 ### Conclusion
 This tutorial walked the reader through consuming a custom Django authentication API using the Kotlin MVVM design pattern. We built an authentication API from scratch and consumed the endpoints in the Kotlin android application. Along the way, we discussed the benefits of writing clean and maintainable code.
+
+---
+Peer Review Contributions by: [Mercy Meave](/engineering-education/authors/mercy-meave/)
