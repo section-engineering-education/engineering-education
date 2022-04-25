@@ -117,7 +117,7 @@ We can now go ahead and test this model on images.
 To perform face swapping on images, we need to run the following command:
 
 ```python
-cd SimSwap & python test_one_image.py --name people --Arc_path arcface_model/arcface_checkpoint.tar --pic_a_path crop_224/2.jpg --pic_b_path crop_224/ds.jpg --output_path output/
+cd SimSwap & python test_one_image.py --name people --Arc_path arcface_model/arcface_checkpoint.tar --pic_a_path crop_224/6.jpg --pic_b_path crop_224/ds.jpg --output_path output/
 ```
 
 Since our cloned SimSwap repository is in another folder, we first need to enter it into the folder using `cd SimSwap`. We then perform some python commands while inside the folder.
