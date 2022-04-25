@@ -1,25 +1,57 @@
+---
+layout: engineering-education
+status: publish
+published: true
+url: //
+title: 
+description: 
+author: 
+date: 2022-03-18T00:00:00-02:33
+topics: [Languages]
+excerpt_separator: <!--more-->
+images:
+
+- url: /engineering-education//hero.jpg
+  alt: Hero Image
+---
+A form builder provides an abstraction layer over Form operations in our applications. Just like the Room database, the library intends to provide a simple way of working with form fields and their data.
+<!--more-->
+
+
+
+
+
+
 As android developers interested in Machine Learning technologies, we may want to build a raw model. Building a custom raw model helps you get a better understanding of the model. Furthermore, it allows you to put everything almost under control. This piece mainly focuses on C++ because it’s faster than JVM-based languages. If you are familiar with Android build tools, then you know we are going to use the Native Development Kit(NDK).
 
-### Before we start
-- This tutorial assumes you are familiar with Machine learning concepts, Android developments hands-on, Kotlin, and C++. Also, the general Object Oriented Programming(OOP) knowledge is a plus.
+### Prerequisites
+- This tutorial assumes you are familiar with Machine learning concepts, Android development, Kotlin, and C++. Also, the general Object Oriented Programming(OOP) knowledge is a plus.
+
 - It also requires you to have Android development IDEs installed on your machine.
+
 - Familiarity with the NDK basics is also required. If you don't meet this requirement, check out [this blog](https://blog.mindorks.com/getting-started-with-android-ndk-android-tutorial).
 
-### An overview of what we are going to do
-We are going to build on [this article](https://www.section.io/engineering-education/cpp-model-in-a-python-machine-learning-project/) and learn how to create a native machine learning model using the NDK. It’s going to be a very simple walkthrough. The linked article talks about using a C++ model in a Python project. We will use the same model, but we will make a few modifications.
+### Overview
+We are going to build on [this article](https://www.section.io/engineering-education/cpp-model-in-a-python-machine-learning-project/) and learn how to create a native machine learning model using the NDK. 
 
-> The nitty-gritty of how the model works is found in the linked article.
+The linked article talks about using a C++ model in a Python project. We will use the same model but with a few modifications.
 
-We will first download a dataset using Kotlin. Next, we will load the dataset using C++ and pass it to the model. So instead of using a simple 2D array, we will use data from a CSV file. We will finally make a prediction from the model. The code for this tutorial is found in [this GitHub repository](https://github.com/Agusioma/ndk-ml-model-training-demo).
+We will first download a dataset using Kotlin. Next, we will load the dataset using C++ and pass it to the model. 
+
+So instead of using a simple 2D array, we will use data from a CSV file. 
+
+We will finally make a prediction from the model. The code for this tutorial is found in [this GitHub repository](https://github.com/Agusioma/ndk-ml-model-training-demo).
 
 ### Downloading the dataset
-We will use a download helper library called PRDownloader. This library lets us do this in a few lines of code. Its dependency is added in the Gradle file using this line:
+We will use a download helper library called *PRDownloader*. This library is preferred due to its simplicity. 
+
+We add the *PRDownloader* library using the code below:
 
 ```kotlin
 implementation 'com.mindorks.android:prdownloader:0.6.0'
 ```
 
-Do a Gradle sync.
+Ensure that you perform a *Gradle sync* after adding thge library.
 
 Don't forget to add the required permissions in the manifest file.
 
@@ -30,7 +62,7 @@ Don't forget to add the required permissions in the manifest file.
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
 ```
 
-After the build is done, in the onCreate method of the MainActivity.kt file, we set the read and connection timeouts using these lines and initialize the download helper:
+After the build process is done, in the *onCreate* method of the *MainActivity.kt* file, we set the read and connection timeouts using these lines and initialize the download helper:
 
 ```kotlin
         // Initializing the download helper with with appropriate timeouts
@@ -41,7 +73,7 @@ After the build is done, in the onCreate method of the MainActivity.kt file, we 
         PRDownloader.initialize(applicationContext, presets)
 ```
 
-We will also create the variables for the download URL and the filename.
+We will also create the variables for the *download UR*L and the *filename*, as shown below:
 
 ```kotlin
         val url =
@@ -189,4 +221,7 @@ The prediction will be displayed in a TextView as shown below:
 Our model is not so accurate. It displays 1.0 for almost all the instances. You can try to improve it by doing a train test split, cross-validation, doing some early stopping, adding more data, etc. 
 
 ### Conclusion
-This was a guide for creating a native model in android. I hope you got some insights and use them to create a more robust intelligent app. Have a good one.
+This was a guide for creating a native model in android. I hope you got some insights and use them to create a more robust intelligent app. 
+
+---
+Peer Review Contributions by: [Wanja Mike](/engineering-education/authors/michael-barasa/)
