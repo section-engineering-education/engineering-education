@@ -76,7 +76,7 @@
         font-size: 50px; 
         color: $text-blue; 
         position: absolute; 
-        left: -50px; 
+        left: -30px; 
         padding: 15px; 
         top: calc(50% - 50px); 
         z-index: 9; 
@@ -86,7 +86,7 @@
 
       .next {
         left: auto; 
-        right: -50px;
+        right: -30px;
       }
 
       .prev {
