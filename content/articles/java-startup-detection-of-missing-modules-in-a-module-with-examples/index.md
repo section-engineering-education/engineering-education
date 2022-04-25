@@ -14,29 +14,28 @@ images:
   - url: /engineering-education/java-startup-detection-of-missing-modules-in-a-module-with-examples/hero.jpg
     alt: Java startup detection of missing modules in a module with examples
 ---
-### Introduction
-This article introduces the learner to java modules used in java programming. We will make use of easy-to-learn module codes. Java 9, the latest java release, introduced java modules to the world of programming. Earlier versions of java used packages and access modifiers to associate related classes and hide certain classes and packages from other classes.
+Java 9, the latest java release, introduced java modules to the world of programming. Earlier versions of java used packages and access modifiers to associate related classes and hide certain classes and packages from other classes.
+<!--more-->
+The problem arose when explicit dependencies declared using import statements were called at runtime time. The application could not detect missing modules until runtime, when the application would call the missing module. Dependencies are compiled at compile time, making room for a missing module to be reported early compared to when the application is at runtime.
 
-The problem arose when explicit dependencies declared using `import` statements were called at runtime time. The application could not detect missing modules until runtime when the application would call the missing module. Dependencies are compiled at compile-time, making room for a missing module to be reported early compared to when the application is at runtime.
+This article introduces Java modules used in Java programming. We will make use of easy-to-learn module codes.
 
-Let us dive into Java modules.
-
-### Table of Contents
-
-- [Prerequisite](#prerequisite)
-- [Overview of Java Modules](#overview-of-java-modules)
-- [Java Module categories](#java-module-categories)
+### Table of contents
+- [Prerequisites](#prerequisite)
+- [Overview of Java modules](#overview-of-java-modules)
+- [Java module categories](#java-module-categories)
 - [Creating Java Module](#creating-java-module)
-- [Writing Modular Code](#writing-modular-code)
-- [Exporting Packages and Importing Modules](#exporting-packages-and-importing-modules)
-- [Missing Module scenario](#missing-module-scenario)
+- [Writing modular code](#writing-modular-code)
+- [Exporting packages and importing modules](#exporting-packages-and-importing-modules)
+- [Missing module scenario](#missing-module-scenario)
 - [Conclusion](#conclusion)
 
-### Prerequisite
-- The learner should have basic knowledge of programming. They should be equipped with knowledge of the [Java programming language](https://github.com/in28minutes/java-a-course-for-beginners)
-- Running python codes requires a Java IDE. For this article, we will use NetBeans. Netbeans is available for [download here](https://netbeans.apache.org/download/index.html).
+### Prerequisites
+To follow along with this tutorial, the reader should have the following:
+- Basic knowledge and understanding of [Java programming language](https://github.com/in28minutes/java-a-course-for-beginners).
+- An IDE installed NetBeans preferably. Netbeans is available for [download here](https://netbeans.apache.org/download/index.html).
 
-### Overview of Java Modules
+### Overview of java modules
 A java module is a package-like mechanism that contains the java code and information about the module. It specifies how it should relate to other modules regarding visibility and use. If another Java module is required for the application, a java module must contain information about this module.
 A modular JAR (Java ARchieve) file packages the java modules, the module-info class, and descriptors.
 
@@ -184,7 +183,7 @@ Above, we mentioned how earlier versions of java encountered problems when expli
 
 Suppose we failed to import the hellolearner module and intended to use the `HelloLearner.welcomelearner()` function in the `Learner.java` class. The compiler would throw an error `package com.javamodule.demo` is not visible.
 
-### Conclusion
+### Wrapping up
 Modules have many benefits, as seen above. They mainly come in handy when the developer comes across non-modular applications.
 
 Happy Coding!
