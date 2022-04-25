@@ -42,19 +42,21 @@ JSP is useful in the presentation layer and is typically used when developing vi
 The preceding code snippet shows us how to output the hello world string using JSP. To output a string in JSP, we merely need to use the object provided by Tomcat at runtime.
 
 ### When Should You Use a Servlet
-When working with a Servlet, you must develop a `Servlet` class, a `serves` method, and a `PrintWriter` object. This makes Servlets more difficult to grasp than JSP. In this case, Servlets are used when the page does not require more design options. In addition to this, Servlets are majorly used as Controller classes. In other words, it is helpful to use Servlets in writing Java code for the business layer. For example, you would use Servlets while creating a class that connects your project to the database.
+When working with a Servlet, you must develop a `Servlet` class, a `serves` method, and a `PrintWriter` object. This makes Servlets more difficult to grasp than JSP. In this case, Servlets are used when the page does not require more design options. In addition to this, Servlets are majorly used as controller classes. In other words, it is helpful to use Servlets in writing Java code for the business layer. For example, you would use Servlets while creating a class that connects your project to the database.
 
 #### JSP Code Snippet
 ```java
+import javax.servlet.http.HttpServlet;
+import java.sql.Connection;
+import java.sql.DriverManager;
 
-public class ConnectionProvider extends HttpServlet 
+public class ConnectionProvider extends HttpServlet
 {
 	public static Connection getCon() {
 		try 
 		{
 			Class.forName("com.mysql.cj.jdbc.Driver");
-			Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/databaseName", "userName","password");
-			return con;
+			return DriverManager.getConnection("jdbc:mysql://localhost:3306/databaseName", "userName","password");
 
 		} catch (Exception e) {
 			
@@ -62,33 +64,34 @@ public class ConnectionProvider extends HttpServlet
 		}
 
 	}
-		
-	protected void service(HttpServletRequest request, HttpServletResponse response) 
-	{
-	}
 
 }
 ```
-The above code sample shows how to use Servlets to create a Controller class. In this case, we created `ConnectionProvider` which includes the `getCon()` method for database connectivity. 
+The above code sample shows how to use Servlets to create a controller class. In this case, we created `ConnectionProvider` which includes the `getCon()` method for database connectivity. 
 
 ### Converting JSP code to servlet code
 
 Everything written in a Servlet program is organized into classes and objects. To create a Servlet program, you must define a Servlet class and extend `HttpServlet`. Create a `Service` method such as `doGet` or `doPost` and pass the two parameters `request` of type `HttpServletRequest` and `response` of type `HttpServletResponse` to these methods. Then create a `PrintWriter` object:
 
 ```java
-public class class_name extends HttpServlet 
-{
-      // Class variables is diclared here
-	protected void Service(HttpServletRequest request, HttpServletResponse response)
-	{
-	   {
-           // Local varibles is diclared here
-           //This is where you will write your Java code.
-		PrintWriter out = response.getWriter();
-	    out.print("Hello world."); 
-	   }
-		
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import java.io.IOException;
+import java.io.PrintWriter;
+
+public class ClassName extends HttpServlet {
+	// Class variables are declared here
+	protected void Service(HttpServletRequest request, HttpServletResponse response) throws IOException {
+		{
+			// Local variables are declared here
+			// This is where you will write your Java code.
+			PrintWriter out = response.getWriter();
+			out.print("Hello world.");
+		}
+
 	}
+}
 ```
 JSP code, on the other hand, does not necessitate the creation of a class and Servlet objects such as `PrintWriter` because the web server, in our case *Tomcat*, does it as shown:
 
@@ -105,11 +108,10 @@ JSP code, on the other hand, does not necessitate the creation of a class and Se
 1. Tomcat offers the `HttpServlet` parent class, which is extended by the newly formed class. The name of the Servlet class is determined by concatenating the JSP file name with the `.jsp` extension.
 2. Tomcat or any equivalent web server provides the `_jspService`, `doPost` or `doGet` method, as well as the `request` and `response` parameters as shown:
    ```Java
-   public void _jspService() 
-                              
+   public void _jspService(HttpServletRequest request, HttpServletResponse response)                        
    {
       PrintWriter out = response.getWriter();
-      response.setContenType("text/html");
+      response.setContentType("text/html");
       out.write("<html><body>");
       out.write("Hello world");
       out.write("</body></html>");
