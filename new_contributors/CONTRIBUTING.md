@@ -70,10 +70,10 @@ This initiative works on increasing and building upon the skills the community a
 This Contribution Initiative is strictly restricted to the EngEd community.
 
 ## EngEd Community Contribution Submission Process
-To submit an EngEd feature contribution for consideration, be sure to first check past feature suggestons to ensure relevance and prevent overlap. Hint: Use the this EngEd Content Suggestion form to propose article topic for approval and get feedback on topic ideas. View content form here
-When you're ready to submit a suggestion for review, submit your issue with details on what you would like to see added to the EngEd application/program.
-Suggestions will be reviewed by the Section team for relevance, and quality.
-Once suggested features have been incorporated into our backlog, the Section team will approve your issue and create a pull request to be worked on by the EngEd community.
+1. To submit an EngEd feature contribution for consideration, be sure to first check [past feature suggestons](https://github.com/section-engineering-education/engineering-education/issues?q=is%3Aopen+is%3Aissue+label%3Aenhancement) to ensure relevance and prevent overlap. **Hint**: Use the this EngEd Content Suggestion form to propose article topic for approval and get feedback on topic ideas. [*View content form here*](https://github.com/section-engineering-education/engineering-education/issues/new?assignees=&labels=enhancement&template=enged-feature-suggestion.md&title=Feature+suggestion)
+2. When you're ready to submit a suggestion for review, submit your issue with details on what you would like to see added to the EngEd application/program. 
+3. Suggestions will be reviewed by the Section team for relevance, and quality. 
+4. Once suggested features have been incorporated into our backlog, the Section team will approve your issue and create a pull request to be worked on by the EngEd community.
 
 ## Communicating your key takeaways
 Articles should be clear, accurate, and fully explained. We are more interested in substance than length, and supporting examples are always encouraged. At the same time, articles that include mostly code with very little narrative lack sufficient depth and guidance for the audience to fully grasp important concepts.
