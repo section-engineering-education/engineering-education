@@ -42,7 +42,7 @@ Below is an example article and some suggested templates to help get you started
 Once your topic has been approved and you have a final draft of your article ready to submit, follow these [step-by-step instructions](https://github.com/section-engineering-education/engineering-education/blob/master/new_contributors/UPLOAD_INSTRUCTIONS.md).The instructions walk through how to submit a PR (pull request) in Github with  your fully prepared article.
 
 ## Submitting your article
-Only submit or create a PR (pull request) when your draft is completely polished and publish ready, (that is, the article could be published as is - take in mind this is an opportunity to create a presense in the larger developer community and your work may be seen by future potential employers). 
+Only submit or create a PR (pull request) when your draft is completely polished and publish ready, (that is, the article could be published as is - take in mind this is an opportunity to create a presence in the larger developer community and your work may be seen by future potential employers). 
 
 Once again you can follow these [step-by-step instructions](https://github.com/section-engineering-education/engineering-education/blob/master/new_contributors/UPLOAD_INSTRUCTIONS.md) once your article is ready to be published.
 
@@ -60,6 +60,21 @@ We suggest using [Quetext this is a free tool](https://www.quetext.com/) and has
 
 These guidelines are intended to help EngEd contributors grow as authors and to enrich the larger engineering community as a whole by continuing to create higher quality educational articles, tutorials, how-to’s,technology reviews, etc. 
 
+## EngEd Community Contribution Initiative
+One of our primary goals for the EngEd community is to provide students/contributors a friendly and inviting place to contribute to real-world projects to help students build up their professional portfolios and profiles (upon entering the DEV career space).
+
+We have created a process for the EngEd community to suggest, contribute, add, and build features for the EngEd community. By allowing the community to build the features/enhancements they want to see in the EngEd program, we can create the best community.
+
+This initiative works on increasing and building upon the skills the community already has in a real world setting, and having a place to showcase those achievements and accomplishments (via the EngEd content program).
+
+This Contribution Initiative is strictly restricted to the EngEd community.
+
+## EngEd Community Contribution Submission Process
+To submit an EngEd feature contribution for consideration, be sure to first check past feature suggestons to ensure relevance and prevent overlap. Hint: Use the this EngEd Content Suggestion form to propose article topic for approval and get feedback on topic ideas. View content form here
+When you're ready to submit a suggestion for review, submit your issue with details on what you would like to see added to the EngEd application/program.
+Suggestions will be reviewed by the Section team for relevance, and quality.
+Once suggested features have been incorporated into our backlog, the Section team will approve your issue and create a pull request to be worked on by the EngEd community.
+
 ## Communicating your key takeaways
 Articles should be clear, accurate, and fully explained. We are more interested in substance than length, and supporting examples are always encouraged. At the same time, articles that include mostly code with very little narrative lack sufficient depth and guidance for the audience to fully grasp important concepts.
 
@@ -74,20 +89,21 @@ If your article is about serving ML models with Django, then the reader should h
 
 The details your article gives should help further grow the readers’ skills as they practice on their own projects.
 ```
-## Review, approval, & payment processes
+## Review process
 Once you have opened a PR with your fully prepared article and accompanying images (according to the provided instructions), it enters a queue of articles to be reviewed by our technical review committee. Any required edits will be requested via comments within the PR in GitHub.  Articles will either be approved (for publishing) or sent back with requested revisions. 
 
 Note: Articles requiring very few edits will be given priority in the review queue, and **we reserve the right to refuse any articles that do not adhere to quality standards.** PRs with no response from members (comments, edits) after a period of 10 days will be closed (but are able to be reopened if needed).
 
 As a community, we are continually striving to add value to our content pool through trusted pieces of content that help enrich the larger engineering community.
 
-To continue increasing that level of quality and value for the community - we’d like to notify everyone of an update in the payout structure. *3/3/21*
+Updated to continue increasing that level of quality and value for the community - we’d like to notify everyone of an update in the payout structure. *3/3/21*
+
+
+
 
 Updates to review processes:
 We are introducing an [improved topic suggestion form](https://github.com/section-engineering-education/engineering-education/issues/new?assignees=&labels=topic+suggestion&template=enged-content-idea-suggestion.md&title=) that will gather more developed details of your content idea.
 Acceptance of article ideas will consider originality, expected value for readers, overlap with existing content, and quality of the topic outline provided.
-
-Our pay structure is meant to incentivize contributors who submit polished (and near-ready to be published) articles consistently. 
 
 Articles are expected to be clearly understood, well-written, pre-checked for English grammatical issues, and technically accurate (with code tested).
 
