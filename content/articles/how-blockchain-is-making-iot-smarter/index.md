@@ -14,9 +14,11 @@ images:
   - url: /engineering-education/how-blockchain-is-making-iot-smarter/hero.jpg
     alt: Blockchain Hero Image
 ---
-IoT applications have increased tremendously, and so have those for blockchain. The universal trust for blockchain is rising, and IoT is considering the option of adopting it to enhance secure communication between devices. 
+Blockchain technology is critical in revolutionizing IoT security and performance. It could pave the way to a better data encrypted system.
 <!--more-->
-Blockchain technology is critical in revolutionizing IoT security and performance. It could pave the way to a better data encrypted system, facilitating information sharing between IoT devices without compromise. Its ability to duplicate transactions and disperse them across networks of nodes does the trick.
+IoT applications have increased tremendously, and so have those for blockchain. The universal trust for blockchain is rising, and IoT is considering the option of adopting it to secure communication between devices. 
+
+Its ability to duplicate transactions and disperse them across networks of nodes does the trick.
 
 A significant problem that could affect the relationship between IoT and blockchain is the different platforms that the two rely on. IoT uses centralized systems while blockchain embraces decentralized platforms.
 
