@@ -14,7 +14,7 @@ images:
   - url: /engineering-education/image-colorization-using-ai-and-python/hero.png
     alt: Image colorization using AI and Python Hero Image
 ---
-[DeOldify](https://github.com/jantic/DeOldify) is a Deep Learning (DL) based project for colorizing and restoring old images and videos. It helps us add color to old black and white photos adding life to them. The DL model uses a unique NoGAN architecture to train the model. 
+[DeOldify](https://github.com/jantic/DeOldify) is a Deep Learning (DL) based project for colorizing and restoring old images and videos. It helps us add color to old black and white photos adding life to them. The DL model uses a unique NoGAN architecture to train the model.
 <!--more-->
 We will use this model to convert some old black and white photos of a city by adding color to them.
 
@@ -32,16 +32,22 @@ To follow along, you need to be familiar with:
 - [Wrapping up](#wrapping-up)
 - [References](#references)
 
-### The Deoldify model 
-Deoldify uses a Generative Adversarial Neural Network (GAN). But it uses a special type of GAN called a self-attention GAN. Aside from using self-attention GAN and some special transformations, this model also uses a technique known as No-GAN. It is a highly efficient way of training GANs.
+### The Deoldify model
+Deoldify uses a Generative Adversarial Neural Network (GAN). It uses a special type of GAN called a self-attention GAN.
 
-Most GANs have two parts; a Generator and a Discriminator. The Generator is the part that creates the image. The discriminator tries to pick out the real color images from fake recolored images. The No-GAN technique works by training the Generator and the Discriminator models present in GANs in isolation. It is similar to how you would train a normal neural network but different from GANs as they are usually trained side by side. Then, they are fine-tuned together, typically how you would train a GAN.   
+Aside from using self-attention GAN and some special transformations, this model also uses a technique known as No-GAN. It is a highly efficient way of training GANs.
+
+Most GANs have two parts; a Generator and a Discriminator.
+
+The Generator is the part that creates the image. The discriminator tries to pick out the real color images from fake recolored images. The No-GAN technique works by training the Generator and the Discriminator models present in GANs in isolation.
+
+It's similar to how you would train a normal neural network but different from GANs as they are usually trained side by side. They are then fine-tuned together, typically how you would train a GAN.
 
 The model works by taking a black and white image and passing it to the Deoldify model. The model will then output a colored image. The model is trained on several colored images, and does a great job in producing colored images.
 
-That's a summary of the Deoldify model in a nutshell. Please visit this GitHub [documentation](https://github.com/jantic/DeOldify) to learn more. 
+That's a summary of the Deoldify model in a nutshell. Please visit this GitHub [documentation](https://github.com/jantic/DeOldify) to learn more.
 
-### Cloning the GitHub Repository for the model
+### Cloning the GitHub Repository
 We are going to use the GitHub repository that contains the actual model. Inside our Google Colab, let's type in the following code:
 
 ```bash
@@ -57,11 +63,11 @@ Once inside, we can now install the dependencies needed for the project.
 ### Installing the necessary dependencies
 To use the model, we need to install a couple of dependencies.
 
-```python
+```bash
 !pip install -r colab_requirements.txt
 ```
 
-By running the `!pip install -r colab_requirements.txt` command, all the dependencies available in the `requirement.txt` file inside the cloned folder gets installed. These dependencies include:
+By running the above command, all the dependencies available in the `requirement.txt` file inside the cloned folder gets installed. These dependencies include:
 
 - fastai==1.0.51
 - wandb
@@ -76,7 +82,7 @@ All these dependencies are necessary for the model to work. They all get install
 ### Downloading the model
 Next, we will need to download the pre-trained model.
 
-```python
+```bash
 !mkdir 'models'
 !wget https://data.deepai.org/deoldify/ColorizeArtistic_gen.pth -O ./models/ColorizeArtistic_gen.pth
 ```
@@ -88,7 +94,7 @@ Let's create a variable `colorizer` to store our model.
 colorizer = get_image_colorizer(artistic=False)
 ```
 
-### Performing colorization on old black and white photos 
+### Performing colorization on old black and white photos
 Let's take black and white images and add some color to them. We will use old images of iconic buildings that still stand to date in the city of Nairobi, Kenya.
 
 These are the images we will use:
@@ -117,12 +123,16 @@ Image of the Norfolk Hotel:
 
 *[Image Source: Arxiv](https://i.pinimg.com/originals/31/41/05/314105d909000eed4cdf5c148a36a3bd.jpg)*
 
-Inside the `test_images` folder located in the main DeOldify folder, upload all the images you want to colorize. Using the `plot_transformed_image` method, we can pass in our images, and colored output images will be generated. These generated images are of the size 8px by 8px. You can change these values if you so wish.
+Inside the `test_images` folder located in the main DeOldify folder, upload all the images you want to colorize.
+
+Using the `plot_transformed_image` method, we can pass in our images, and colored output images will be generated. These generated images are of the size 8px by 8px. You can change these values if you wish.
 
 ```python
 colorizer.plot_transformed_image('test_images/image-name.jpg', render_factor=35, display_render_factor=True, figsize=(8,8))
 ```
-The default value of 35 for the `render_factor` works well in most scenarios. The `render_factor` determines the resolution at which the color portion of the image is rendered. The lower `render_factor` is ideal for lower resolution images, while a higher `render_factor` for high-resolution images. However, with the lower `render_factor` in low-resolution images, images tend to be vibrant, unlike high-resolution images where the colors seem to be washed away.
+The default value of 35 for the `render_factor` works well in most scenarios. The `render_factor` determines the resolution at which the color portion of the image is rendered. The lower `render_factor` is ideal for lower resolution images, while a higher `render_factor` for high-resolution images.
+
+However, with the lower `render_factor` in low-resolution images, images tend to be vibrant, unlike high-resolution images where the colors seem to be washed away.
 
 These are the generated colored images:
 
@@ -144,7 +154,7 @@ Colored image of the Norfolk Hotel:
 
 We can see that the Deoldify model has added some color to our images. We achieved these results with only a few lines of code. Amazing, right?
 
-Of course, it's not perfect. But, this technology shows you what is possible with amazing technologies such as the one used in this experiment. 
+Of course, it's not perfect. But, this technology shows you what is possible with amazing technologies such as the one used in this experiment.
 
 Please find the complete code for this tutorial [here](https://colab.research.google.com/drive/1bh15liSGDkUMwez4xNH1kG6ETFxQVlZ6?usp=sharing).
 
