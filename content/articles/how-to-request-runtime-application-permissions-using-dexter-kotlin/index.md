@@ -6,7 +6,7 @@ url: /how-to-request-runtime-application-permissions-using-dexter-kotlin/
 title: How to Request Runtime Application Permissions using Dexter
 description: This tutorial will help the reader understand how to create an application that allows users to grant or restrict permissions to an application during runtime using Dexter.
 author: janet-kabura
-date: 2022-04-05T00:00:00-02:33
+date: 2022-04-21T00:00:00-11:00
 topics: [Languages]
 excerpt_separator: <!--more-->
 images:
