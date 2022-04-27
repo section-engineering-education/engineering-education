@@ -4,7 +4,7 @@ status: publish
 published: true
 url: /how-to-request-runtime-application-permissions-using-dexter-kotlin/
 title: How to Request Runtime Application Permissions using Dexter
-description: This tutorial will help the reader understand how to create an application that allows users to grant or restrict permissions to an application during runtime using Dexter. 
+description: This tutorial will help the reader understand how to create an application that allows users to grant or restrict permissions to an application during runtime using Dexter.
 author: janet-kabura
 date: 2022-04-05T00:00:00-02:33
 topics: [Languages]
@@ -16,13 +16,11 @@ images:
 ---
 Runtime permissions are requested by the developer and granted access by the user when a particular action wants to be executed.
 <!--more-->
-It was previously necessary to ask for permissions before installing an app in the older Android versions (1.0). 
-
-Google introduced new features in Android (6.0.1), also known as `Marshmallow`, where a user could grant permissions in runtime. 
+It was previously necessary to ask for permissions before installing an app in the older Android versions (1.0). Google introduced new features in Android (6.0.1), also known as `Marshmallow`, where a user could grant permissions in runtime.
 
 Dexter makes it easier to get the permissions for your app at runtime.
 
-In this tutorial, we will create an application that allows users to grant or restrict permissions to an application during runtime using Dexter. 
+In this tutorial, we will create an application that allows users to grant or restrict permissions to an application during runtime using Dexter.
 
 We will use device features such as the camera to take images.
 
@@ -47,7 +45,7 @@ To follow along with this article, you need:
 ### Step 1 - Adding required dependencies for the project
 Add the following dependencies in the app-level *build.gradle* file:
 
-```kt
+```gradle
 //Scalable density pixels that is it will have equal layouts in all phone screens
 implementation 'com.intuit.sdp:sdp-android:1.0.6'
 //Permissions request using dexter
@@ -56,9 +54,7 @@ implementation 'com.karumi:dexter:6.2.3'
 implementation 'com.github.bumptech.glide:glide:4.13.0'
 ```
 - [Sdp](https://github.com/intuit/sdp) expands along with the screen. It scales all Android Studio palettes according to the user's screen size.
-`
 - [Dexter](https://github.com/Karumi/Dexter) library will help us request runtime permissions easily. This is the primary aim of this tutorial.
-
 - [Glide](https://github.com/bumptech/glide) is an Android image-loading framework that integrates media decoding, memory and disk caching, and resource pooling.
 
 Since we will use [view binding](https://developer.android.com/topic/libraries/view-binding), include the following code snippet in the same *build.gradle* file:
@@ -72,7 +68,7 @@ android {
 > After adding the dependencies, *sync* the project.
 
 ### Step 2 - Adding permissions in the manifest file
-This tutorial will request application permissions such as using the camera, writing and reading files from the internal storage. 
+This tutorial will request application permissions such as using the camera, writing and reading files from the internal storage.
 
 Writing files includes saving the captured image to the memory while reading files involves accessing data stored in memory.
 
@@ -80,9 +76,9 @@ To achieve that, include the following permissions in the *manifest.xml* file:
 
 ```xml
 <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
-    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"
-        android:maxSdkVersion="28"/>
-    <uses-permission android:name="android.permission.CAMERA"/>
+<uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"
+                 android:maxSdkVersion="28"/>
+<uses-permission android:name="android.permission.CAMERA"/>
 ```
 
 ### Step 3 - Working with XML files
@@ -149,11 +145,11 @@ Add the following code in the *activity_main.xml* file to design the *applicatio
 </androidx.constraintlayout.widget.ConstraintLayout>
 ```
 #### Designing the custom dialog action
-This dialog will pop up when we click on the `add image` icon. It will allow us to choose the *actions gallery* or capture the image. 
+This dialog will pop up when we click on the `add image` icon. It will allow us to choose the *actions gallery* or capture the image.
 
 To add the custom dialog, click *res -> layout -> right-click -> new -> layout_resource_file*.
 
-Name the file as `dialog_custom_image-selection` and click `OK` to finish.
+Name the file as `dialog_custom_image_selection` and click `OK` to finish.
 
 Add the following code in the custom dialog layout file:
 
@@ -269,7 +265,7 @@ override fun onClick(v: View?) {
 ```
 
 #### Using Dexter in the application
-First, set up the `customImageSelection()` method that we passed during the on-click event to the ImageView. 
+First, set up the `customImageSelection()` method that we passed during the on-click event to the ImageView.
 
 We then add Dexter permissions because it's part of the triggered events. Add the code below:
 
@@ -295,7 +291,7 @@ private fun customImageSelectionDialog() {
                         report?.let {
                             if (report.areAllPermissionsGranted()) {
                                 val intent = Intent(MediaStore.ACTION_IMAGE_CAPTURE)
-                                //since we have over one activity result i.e.,Camera, Gallery, save camera image 
+                                //since we have over one activity result i.e.,Camera, Gallery, save camera image
                                 //to a directory, we shall set a companion object below the class main activity.
                                 startActivityForResult(intent, CAMERA)
                             }
@@ -410,9 +406,9 @@ The methods below are associated with Dexter permissions:
 - `onSameThread()` - This function is called before permissions checks to collect permission listener callbacks on the same thread.
 
 #### Loading a bitmap to the ImageView
-Suppose the user has granted the application all or any permission, i.e., to use the camera and access the media files from the gallery. 
+Suppose the user has granted the application all or any permission, i.e., to use the camera and access the media files from the gallery.
 
-In that case, we can perform certain actions. We can load the `ImageView` in the `activity_main.xml` with a bitmap from the media files using Glide (our third-party library) and the camera. 
+In that case, we can perform certain actions. We can load the `ImageView` in the `activity_main.xml` with a bitmap from the media files using Glide (our third-party library) and the camera.
 
 We use the function on `activityResult()` to handle the result.
 
@@ -471,7 +467,7 @@ override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) 
                     )
                 }
             }
-        } 
+        }
         // The code below will execute when the user starts the activity of either picking an image from the gallery or capturing an image using the camera but didn't complete the action
 
         else if (resultCode == Activity.RESULT_CANCELED) {
