@@ -33,8 +33,7 @@ JSP is useful in the presentation layer and is typically used when developing vi
  <%@ page import="java.sql.*" %>
 
   <%
-  out.print("Hello World")
-
+  out.print("Hello World");
   %>
  
 </body>
@@ -82,7 +81,7 @@ import java.io.PrintWriter;
 
 public class ClassName extends HttpServlet {
 	// Class variables are declared here
-	protected void Service(HttpServletRequest request, HttpServletResponse response) throws IOException {
+	protected void service(HttpServletRequest request, HttpServletResponse response) throws IOException {
 		{
 			// Local variables are declared here
 			// This is where you will write your Java code.
@@ -107,7 +106,7 @@ JSP code, on the other hand, does not necessitate the creation of a class and Se
 
 1. Tomcat offers the `HttpServlet` parent class, which is extended by the newly formed class. The name of the Servlet class is determined by concatenating the JSP file name with the `.jsp` extension.
 2. Tomcat or any equivalent web server provides the `_jspService`, `doPost` or `doGet` method, as well as the `request` and `response` parameters as shown:
-   ```Java
+   ```java
    public void _jspService(HttpServletRequest request, HttpServletResponse response)                        
    {
       PrintWriter out = response.getWriter();
@@ -140,8 +139,7 @@ Using Netbeans IDE click on File -> New Project -> Java Web -> Web Application a
 
 To create a new JSP file, right-click on the project name, choose JSP, and then name it `new_jsp` as shown.
 
-```JSP
-    </head>
+```jsp
     <body>
       <%
        out.print("Hello World");
@@ -152,7 +150,7 @@ To create a new JSP file, right-click on the project name, choose JSP, and then 
 
 Run the project and right-click on the JSP file and select view Servlet:
 
-```Java
+```java
 import javax.servlet.*;
 import javax.servlet.http.*;
 import javax.servlet.jsp.*;
