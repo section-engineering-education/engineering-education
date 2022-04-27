@@ -52,18 +52,13 @@ import java.sql.DriverManager;
 public class ConnectionProvider extends HttpServlet
 {
 	public static Connection getCon() {
-		try 
-		{
+		try {
 			Class.forName("com.mysql.cj.jdbc.Driver");
 			return DriverManager.getConnection("jdbc:mysql://localhost:3306/databaseName", "userName","password");
-
 		} catch (Exception e) {
-			
 			return null;
 		}
-
 	}
-
 }
 ```
 The above code sample shows how to use Servlets to create a controller class. In this case, we created `ConnectionProvider` which includes the `getCon()` method for database connectivity. 
@@ -82,20 +77,17 @@ import java.io.PrintWriter;
 public class ClassName extends HttpServlet {
 	// Class variables are declared here
 	protected void service(HttpServletRequest request, HttpServletResponse response) throws IOException {
-		{
-			// Local variables are declared here
-			// This is where you will write your Java code.
-			PrintWriter out = response.getWriter();
-			out.print("Hello world.");
-		}
-
+		// Local variables are declared here
+		// This is where you will write your Java code.
+		PrintWriter out = response.getWriter();
+		out.print("Hello world.");
 	}
 }
 ```
 JSP code, on the other hand, does not necessitate the creation of a class and Servlet objects such as `PrintWriter` because the web server, in our case *Tomcat*, does it as shown:
 
 ```jsp
- <body>
+<body>
   <%
   out.print("Hello World");
   %>
@@ -140,11 +132,11 @@ Using Netbeans IDE click on File -> New Project -> Java Web -> Web Application a
 To create a new JSP file, right-click on the project name, choose JSP, and then name it `new_jsp` as shown.
 
 ```jsp
-    <body>
-      <%
-       out.print("Hello World");
-      %>
-    </body>
+<body>
+  <%
+   out.print("Hello World");
+  %>
+</body>
 ```
 #### Generated Servlet code
 
