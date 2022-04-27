@@ -49,8 +49,7 @@ import javax.servlet.http.HttpServlet;
 import java.sql.Connection;
 import java.sql.DriverManager;
 
-public class ConnectionProvider extends HttpServlet
-{
+public class ConnectionProvider extends HttpServlet {
 	public static Connection getCon() {
 		try {
 			Class.forName("com.mysql.cj.jdbc.Driver");
