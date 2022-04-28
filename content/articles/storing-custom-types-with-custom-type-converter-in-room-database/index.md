@@ -3,18 +3,18 @@ layout: engineering-education
 status: publish
 published: true
 url: /storing-custom-data-types-with-custom-typeconverter-in-room-database/
-title: Storing Custom Data Types with Custom TypeConverter in Room Database
+title: Storing Custom Data Types With Custom TypeConverter in Room Database
 description: This tutorial will guide the reader through the process of creating a custom data type converter to store a custom data type in Room Database.
 author: feswal-salim
-date: 2022-04-15T00:00:00-01:00
+date: 2022-04-28T00:00:00-01:00
 topics: [Languages]
 excerpt_separator: <!--more-->
 images:
 
   - url: /engineering-education/storing-custom-data-types-with-custom-typeconverter-in-room-database/hero.jpg
-    alt: Storing Custom Data Types with Custom TypeConverter in Room Database
+    alt: Storing Custom Data Types With Custom TypeConverter in Room Database
 ---
-When working with Room database, you may need to store custom data types such as Date, Bitmap, and so on. The @TypeConverter annotation can be applied to the database access methods.
+When working with Room database, you may need to store custom data types such as Date, Bitmap, and so on. The `@TypeConverter` annotation can be applied to the database access methods.
 <!--more-->
 Unfortunately, normal TypeConverters aren't always sufficient.
 
@@ -23,16 +23,17 @@ Imagine a scenario where you need to store a List of Objects e.g Users, Cars, e.
 In this tutorial, we will create a custom TypeConverter and use it in the Room database.
 
 ### Table of contents
+- [Table of contents](#table-of-contents)
 - [Prerequisites](#prerequisites)
 - [What are TypeConverters in Room database?](#what-are-typeconverters-in-room-database)
 - [What are custom types in Room?](#what-are-custom-types-in-room)
-- [Creating an Android project](#step-1---creating-an-android-project)
-- [Adding the necessary dependencies](#step-2---adding-the-necessary-dependencies)
-- [Defining a data model](#step-3---defining-a-data-model)
-- [Setting up Room database](#step-4---setting-up-room-database)
-- [Storing the custom type](#step-5---storing-the-custom-type)
-- [Creating the type converter](#step-6---creating-the-type-converter)
-- [Using the type converter](#step-7---using-the-type-converter)
+- [Step 1 - Creating an Android project](#step-1---creating-an-android-project)
+- [Step 2 - Adding the necessary dependencies](#step-2---adding-the-necessary-dependencies)
+- [Step 3 - Defining a data model](#step-3---defining-a-data-model)
+- [Step 4 - Setting up Room database](#step-4---setting-up-room-database)
+- [Step 5 - Storing the custom type](#step-5---storing-the-custom-type)
+- [Step 6 - Creating the type converter](#step-6---creating-the-type-converter)
+- [Step 7 - Using the type converter](#step-7---using-the-type-converter)
 - [Conclusion](#conclusion)
 - [Further reading](#further-reading)
 
@@ -43,7 +44,7 @@ To follow along with this tutorial, you need:
 - An understanding of the Kotlin programming language.
 
 ### What are TypeConverters in Room database?
-These are methods that tell `Room` database how to convert custom types to and from recognized kinds that Room understands.
+These are methods that tell `Room` database how to convert custom types to and from kinds that Room understands.
 
 ### What are custom types in Room?
 Room typically stores primitive types such as String, Int, Float, Double, and others. However, a `@TypeConverter` is very useful when it comes to storing custom types, such as:
@@ -57,7 +58,7 @@ We will be trying to store a word and its various meanings in `Room` database (T
 Launch your Android Studio and create an empty Android project with Kotlin as its primary language.
 
 ### Step 2 - Adding the necessary dependencies
-Next, add the `Gson` and `Room` database dependencies in your app-level `build.gradle` file.
+Next, add the `Gson` and `Room` database dependencies in your app-level `build.gradle` file:
 
 ```bash
 def room_version = "2.4.1"
@@ -68,7 +69,7 @@ implementation 'com.squareup.retrofit2:converter-gson:2.9.0'
 ```
 
 ### Step 3 - Defining a data model
-Let's take a scenario where you have received the following response from an API. This is a response containing the meaning(s) of the word that the user had searched.
+Let's take a scenario where you have received the following response from an API. This is a response containing the meaning(s) of the word that the user had searched:
 
 ```json
 "meanings": [
@@ -131,13 +132,13 @@ Our DAO interface has only one method for inserting a Word Entity into the datab
 
 ```kotlin
 @Insert
-suspend fun insertWord(wordEntity: WordEntity)  
+suspend fun insertWord(wordEntity: WordEntity)
 ```
 
 ### Step 5 - Storing the custom type
 As you have seen from the Entity class, we need to store a list of `Meanings` in a column and the other data. This can be difficult because `Meaning` is of a complex type that `Room` can not understand.
 
-First, let us create a custom `JsonParser` for parsing `String`. This is important because later in your project, you may need to switch and use a different library to parse strings such as Moshi, Jackson, and Kotlin Serialization.
+First, let us create a custom `JsonParser` for parsing `String`. This is important because later in your project, you may need to switch to a different library to parse strings such as Moshi, Jackson, and Kotlin Serialization.
 
 Create a util package and define an `Interface` with the following methods:
 
@@ -177,7 +178,7 @@ class Converters(
 
 > Make sure you annotate the class with `@ProvidedTypeConverter` because we need to provide our instance of a `TypeConverter`.
 
-Inside the `Converters` class, define the first function that will convert the list of `Meaning` to `String`.
+Inside the `Converters` class, define the first function that will convert the list of `Meaning` to `String`:
 
 ```kotlin
 fun toMeaningJson(meaning: List<Meaning>) : String {
@@ -229,7 +230,7 @@ class Converters(
 ```
 
 ### Step 7 - Using the type converter
-Finally, to use this custom `TypeConverter`, annotate your Room database abstract class with @TypeConverters and pass it in the `Converters` class. 
+Finally, to use this custom `TypeConverter`, annotate your Room database abstract class with @TypeConverters and pass it in the `Converters` class.
 
 ```kotlin
 @TypeConverters(Converters::class)
