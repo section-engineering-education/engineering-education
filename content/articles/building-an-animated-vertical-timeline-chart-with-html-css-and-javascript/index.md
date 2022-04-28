@@ -6,7 +6,7 @@ url: /building-an-animated-vertical-timeline-chart-with-html-css-and-javascript/
 title: Building an Animated Vertical Timeline Chart with HTML, CSS, and JavaScript
 description: This article will cover how to use HTML5, CSS3, and Vanilla JavaScript to create a vertical timeline chart.
 author: bobate-segun
-date: 2022-04-15T00:00:00-12:30
+date: 2022-04-28T00:00:00-12:30
 topics: [Languages]
 excerpt_separator: <!--more-->
 images:
