@@ -1,4 +1,21 @@
+---
+layout: engineering-education
+status: publish
+published: true
+url: /design-and-comparative-analysis-of-controllers-in-matlab/
+title: Design and comparative performance analysis of P, I, D, PI, PD, and PID controllers in Matlab
+description: This tutorial will be a brief dive into understanding controllers and their properties in Matlab
+author: queenter-bruce
+date: 2021-05-27T00:00:00-16:30
+topics: []
+excerpt_separator: <!--more-->
+images:
+
+  - url: /engineering-education/design-and-comparative-analysis-of-controllers-in-matlab/hero.jpg
+    alt: Design and comparative performance analysis of P, I, D, PI, PD, and PID controllers in Matlab Hero Image
+---
 Design and comparative analysis involve the construction of various controllers. These controllers are then analyzed deeply to get the difference depending on their properties. These properties are analyzed to see their merits and demerits. Also, we analyze their performance to get their efficiency.
+<!--more-->
 
 In this tutorial, we will look at the various types of controllers. This includes the theory and the property of these controllers. The types of controllers that we cover are such as Proportional, Integral derivative controllers and combinational modes.
 
@@ -253,6 +270,9 @@ Suppose you look at the workspace to see the program's output you have displayed
 Controllers form an important part of a system. A good controller is required for a system to operate effectively. Using Matlab, you can design a controller and test its effective performance. This property makes it easy to design the appropriate controllers. Also, you can compare the system's performance with a controller and without controllers.
 
 Happy coding!
+
+---
+Peer Review Contributions by: [Monica Masae](/engineering-education/authors/monica-masae/)
 
 <!-- MathJax script -->
 <script type="text/javascript" async
