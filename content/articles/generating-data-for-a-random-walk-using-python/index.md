@@ -5,8 +5,15 @@ In this article, we'll use Python to collect data for a random walk and then use
  - Have [Python](https://www.journaldev.com/30076/install-python-windows-10) and [matplotlib](https://www.tutorialspoint.com/how-to-install-matplotlib-in-python) installed in your machine.
  - Have some basic understanding of [matplotlib](https://www.simplilearn.com/tutorials/python-tutorial/matplotlib)
 
+### Application of Random Walks
+Random walks have practical applications in nature, physics, biology, chemistry, and economics. For example, a pollen grain floating on a drop of water moves across the surface of the water because it is constantly being pushed around by water molecules. Molecular motion in a water drop is random, so the path a pollen grain traces out on the surface is a random walk. The code we're about to write models many real-world situations.
+
 ### Creating the RWalk() Class
-To design a random walk, we'll construct an `RWalk` class that generates random choices on the basis the trek should go in. Three characteristics are required for the class: a single variable to record the amount of instances in the path, and two arrays to hold the x- and y- data of each step in the trek. The `RWalk` class will only have two functions:` __init__()` and `fil_walk()`, which will determine the steps in the trek. Let's construct a file named `rwalk.py` and begin with the ` __init__()` function as illustrated below:
+To design a random walk, we'll construct an `RWalk` class that generates random choices on the basis the trek should go in. Three characteristics are required for the class:
+ - a single variable to record the amount of instances in the path,
+ - and two arrays to hold the x- and y- data of each step in the trek. 
+ 
+The `RWalk` class will only have two functions:` __init__()` and `fil_walk()`, which will determine the steps in the trek. Let's construct a file named `rwalk.py` and begin with the ` __init__()` function as illustrated below:
 
 ```python
 from random import choice
@@ -24,7 +31,7 @@ class RWalk():
 Here we fix the default number of marks in the trek to `500`, which is sufficient to form some intriguing sequences but fairly small to build walks rapidly. Then we build two lists to keep track of the x- and y-estimates, and we begin each trek at `(0, 0)`.
 
 ### Choosing Directions
-To supply our trek with locations and calculate the route of each move, we'll use the `fil walk()`function, as illustrated below. The code below should be added to the file we created initially that is `r_walk.py`.
+To supply our trek with locations and calculate the route of each move, we'll use the `fil_walk()`function, as illustrated below. The code below should be added to the file we created initially that is `r_walk.py`.
 
 ```python
 def fil_walk(self):
@@ -69,7 +76,7 @@ Here we will create a new file and name it `visual_rw.py` and save it in the sam
 import matplotlib.pyplot as pylt
 from r_walk import RWalk
 # create a random walk
- rwalk = RWalk()
+rwalk = RWalk()
 rwalk.fil_walk()
 
 pylt.scatter(rwalk.xvalues, rwalk.yvalues, s=14) # s is size of dots
@@ -82,13 +89,13 @@ When we execute the file `visual_rw.py` we should be able to see something like 
 
 ### Styling the Walk
 #### Coloring the Points
-We'll use a colormap to display the sequence of the spots along the walk, then eliminate the black frame of each dot to reveal the color of the dots. We send a list with the location of each point to the `c` parameter to color the spots as per their arrangement in the trek. The list only comprises the values 1 to 5000, as seen here, since the dots are plotted in sequence:
+We'll use a colormap to display the sequence of the spots along the walk, then eliminate the black frame of each dot to reveal the color of the dots. We send a list with the location of each point to the `c` parameter to color the spots as per their arrangement in the trek. The list only comprises the values 1 to 500, as seen here, since the dots are plotted in sequence:
 
 ```python
 import matplotlib.pyplot as pylt
 from r_walk import RWalk
 #create a random walk
- rwalk = RWalk()
+rwalk = RWalk()
 rwalk.fil_walk()
 
 p_numbers = list(range(rwalk.number_of_points)) #point numbers
@@ -140,6 +147,12 @@ In this tutorial we have learned how to:
  - Coloring the Points
  - Plotting the Starting and Ending Points
  - Adding Plot Points
+ 
+ The full source code used in this project can be found [here](https://github.com/duncandegwa/PYTHON-MADE-EASY/blob/main/randomwalk.md).
 
+### Further reading
+For more information about the random walks in Python, see the links below:
+- [Generating data for random walks in Python](https://www.codingem.com/random-walk-in-python/)
+- [Visualizing random walks in Python](https://towardsdatascience.com/animated-visualization-of-random-walks-in-python-dc18f01ef15e)
 
 Happy coding!
