@@ -57,11 +57,11 @@ After setting the dimensions for our table. We will figure out the seed values t
 The initial value to pick is usually zero. Zero by zero will be zero. This is because if any of our sides contains zero, that means our grid contains nothing.Let's fillour grid with zero to make it simple to work with.
 
 Index one by one should return 1 as shown in the grid. This will give us a basis to implement our algorithm. What we want to do now is iterate via this table and produce the logic that merges the values in the table, basically merging distinct sub-problems to solve our problem.
-![Iteration](iteration.png)
+![Iteration](iteration.jpeg)
 
 
 We will now take this one and then add it to our right and down neighbor. That turns them both  into one as shown below. hence we will encode that on our table. We can only move to the right or downward contributing our current element to them.
-![Iteration1](iteration1.png)
+![Iteration1](iteration1.jpeg)
 
 
 When we do the iterations it helps us to have consistent logic. We will continue adding them up that way until we fill up the whole table. In the last position, both neighbors will contribute one adding up to two.
