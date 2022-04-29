@@ -2,19 +2,20 @@
 layout: engineering-education
 status: publish
 published: true
-url: /handling-missing-data-understanding-predictive-mean-matching-and-regression-modelling-in-r/
-title: Handling missing data: understanding predictive mean matching and regression modelling in R
-description: This tutorial will help the reader understand how to predict mean matching & regression modelling in R.
+url: /predictive-mean-matching/
+title: Understanding Predictive Mean Matching and Regression Modeling in R
+description: This tutorial will help the reader understand how to predict mean matching & regression modeling in R.
 author: Valentine Omondi
-date: 2022-04-8T00:00:00-03:00
+date: 2022-04-29T00:00:00-11:00
 topics: [Languages]
 excerpt_separator: <!--more-->
 images:
 
-  - url: /engineering-education/handling-missing-data-understanding-predictive-mean-matching-and-regression-modelling-in-r/hero.webp
-    alt: Handling missing data: understanding predictive mean matching and regression modelling in R Hero Image
+  - url: /engineering-education/predictive-mean-matching/hero.webp
+    alt: understanding predictive mean matching and regression modeling in R Hero Image
 ---
 In the real practical world, datasets have missing values/data which causes complications for data scientists who may deal with this by filling the datasets in an ad hoc fashion hence limiting them from their quest for data science main objectives: data visualization, data modeling, and giving conclusive meaningful summary or analysis of the dataset.
+<!--more-->
 This tutorial aims to replace the missing data using predictive mean matching and creating a predictive Regression model.
 We will explain the suitability, advantages, and limitation of each method for each use case.
 
