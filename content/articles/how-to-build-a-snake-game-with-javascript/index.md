@@ -3,22 +3,22 @@ layout: engineering-education
 status: publish
 published: true
 url: /how-to-build-a-snake-game-with-javascript/
-title: How to build a snake game in JavaScript
-description:  In this article, we will learn how to build a snake game in JavaScript.
+title: How to Build a Snake Game with JavaScript
+description: In this article we will learn how to build a snake game in JavaScript
 author: kamau-wambui
-date: 2022-03-26T00:00:00-17:33
+date: 2022-04-29T00:00:00-13:33
 topics: [Languages]
 excerpt_separator: <!--more-->
 images:
 
-  - url: /engineering-education/how-to-build-a-snake-game-with-javascript/hero.png
-    alt: Snake game Image Alt
+  - url: /engineering-education/how-to-build-a-snake-game-with-javascript/hero.PNG
+    alt: Snake game JavaScript Image Alt
 ---
 The best way to learn any programming language is through hands-on projects. The Snake Game is a simple game you can make using the basics of JavaScript and HTML.
 <!--more-->
 The basic goal is to navigate a snake and eat as many apples as possible without touching the walls or the snake's body.
 
-In this article, I will show you step-by-step how to create this Snake Game using JavaScript and HTML.
+In this article, we will go over step-by-step how to create this Snake Game using JavaScript and HTML.
 
 ### Prerequisites
 - Basic CSS knowledge.
@@ -40,11 +40,9 @@ In this article, I will show you step-by-step how to create this Snake Game usin
 - [Conclusion](#conclusion)
 
 ### Display the canvas
-First, we need to display the game board and the snake. Start by creating the file `index.html`. This will contain all our code. 
+First, we need to display the game board and the snake. Start by creating the file `index.html`. This will contain all of our code. 
 
-Next, open the file in your preferred browser.
-
-To be able to create our game, we have to make use of the HTML's `<canvas>`, which is used to draw graphics with JavaScript. 
+Next, open the file in your preferred browser. To be able to create our game, we have to make use of the HTML's `<canvas>`, which is used to draw graphics with JavaScript. 
 
 Click [here](https://www.youtube.com/watch?v=Yvz_axxWG4Y) to learn more about HTML canvas.
 
@@ -75,25 +73,24 @@ To make our canvas visible, we can give it a border by writing some CSS code. Ad
 </style>
 ```
 
-In the above code, we have added a `box-shadow` to our canvas. This will give us a nice border around our canvas.
+In the above code, we have added a `box-shadow` to our canvas. This will give us a nice border around our canvas. Now, we will create an `index.js` file that will contain our `JavaScript` code. 
 
-Now, we will create an `index.js` file that will contain our `JavaScript` code. 
+For the file to be effective on our HTML main file, we need to link the `index.js` file to the HTML file. This is done by adding the following line of code below the `</canvas>` tag.
 
-For the file to be effective on our HTML main file, we need to link the `index.js` file to the HTML file. 
-
-This is done by adding the following line of code below the `</canvas>` tag.
 ```javaScript
 <script src="index.js"></script>
 ```
 
-Next is to make the canvas for our snake to navigate. First, we get the canvas element using the id `game`.
+Next step is to make the canvas where our snake will navigate. We will get the canvas element using the id `game`.
 
 Then we get the canvas `2d context`, which means that it will be drawn into a `2D` space.
+
 ```javaScript
    const canvas=document.getElementById('game'); const ctx=canvas.getContext('2d');
 ```
 
 Next, add black background color to our canvas by creating a new function called `clearScreen` and calling it on our primary function `drawGame`.
+
 ```javaScript
 function drawGame(){
     clearScreen();
@@ -111,9 +108,9 @@ The `fillStyle` method is a kind of brush, which paints our screen with black co
 
 The following screen should appear:
 
-![black screen](/education-engineering/how-to-build-a-snake-game-with-javascript/canvasblank.png)
+![black screen](/engineering-education/how-to-build-a-snake-game-with-javascript/canvasblank.PNG)
 
-The next task is to create the game loop that will update the screen; by creating a variable named `speed` that holds the number of times to update the screen.
+The next task is to create the game loop that will update the screen; by creating a variable named `speed` that holds the number of times we will update the screen.
 
 We also need a `setTimeout()` function which will calculate the interval between each update. This will be done in a function named `drawGame()`.
 ```javaScript
@@ -125,15 +122,14 @@ function drawGame(){
 ```
 
 ### Display the snake
-In this section, we will first establish a variable called `tileCount` which will divide our screen into `20 small squares`. 
+In this section, we will first establish a variable called `tileCount` which will divide our screen into `20 small squares`. Then define the `horizontal position` of our snake as `headX`, and initialize it with value `10`. 
 
-Then define the `horizontal position` of our snake as `headX`, and initialize it with value `10`. 
-
-Also, we will define the `vertical position` of our snake as `headY`, and initialize it with value `10` which will center our snake.
+We will also define the `vertical position` of our snake as `headY`, and initialize it with value `10` which will center our snake.
 
 Next is to define the initial size of our snake, by creating a variable called `tileSize` and assigning it a value of `18`.
 
 To display our snake, we create a function named `drawSnake`, and then call it on our primary function `drawGame` as shown in the code snippet below.
+
 ```javaScript
 let tileCount=20;
 let tileSize=18;
@@ -152,14 +148,15 @@ function drawGame(){
 
 ```
 
-In the above code snippet, the blush paint orange color in the rectangle starts from `coordinate (20,20)` to our rectangle total height and width.
+In the code snippet above, the orange paint color in the rectangle starts from `coordinate (20,20)` to our rectangle total height and width.
 
 It displays the following result:
 
-![snake]((/education-engineering/how-to-build-a-snake-game-with-javascript/orangesnake.png)
+![snake]((/engineering-education/how-to-build-a-snake-game-with-javascript/orangesnake.PNG)
 
 ### Use arrow keys to change the snake's direction
-First, set two variables namely `xvelocity` and `yvelocity`, and initialize them with values zero.
+We will set two variables named `xvelocity` and `yvelocity`, and initialize them with values zero.
+
 ```javaScript
 //initialize the speed of snake
 let xvelocity=0;
@@ -259,7 +256,7 @@ function keyDown()
 ```
 
 ### Incorporate food
-First, we will define the position of apple (food), both vertical and horizontal.
+We will need to define the position of apple (food), both vertical and horizontal.
 ```javaScript
 //draw apple
 let appleX=5;
@@ -282,7 +279,7 @@ Then create a function named `drawApple()` which displays the apple.
 
 The following should appear:
 
-![food](/education-engineering/how-to-build-a-snake-game-with-javascript/apple.png)
+![food](/engineering-education/how-to-build-a-snake-game-with-javascript/apple.PNG)
 
 ### Collision detection
 Let's make the function `checkCollision` to generate an x-coordinate and a y-coordinate for the food's positions. 
@@ -336,9 +333,9 @@ constructor(x, y){
 }
 ```
 
-Let us now draw the added parts of our snake. We will do it on the `drawSnake` function; 
+Let us now draw the added parts of our snake. We will do it on the `drawSnake` function:
 
-The added features will be of color green as shown below:
+The added features will be green in color as shown below:
 ```javaScript
  function drawSnake(){
 
@@ -394,14 +391,15 @@ Now let us increment the score value whenever there is a collision.
  }
 ```
 
-These results should appear.
-![score](/education-engineering/how-to-build-a-snake-game-with-javascript/score.png)
+These results should appear:
+
+![score](/engineering-education/how-to-build-a-snake-game-with-javascript/score.PNG)
 
 ### Implement game over logic
-There are two cases in which the game can end: The head of the snake collides with its body and the head of the snake collides with the canvas boundary. 
+There are two cases in which the game can end. The head of the snake collides with its body and/or the head of the snake collides with the canvas boundary. 
 
 We will check these conditions in a function named `isGameOver` which returns true or false.
-```javaScript
+```JavaScript
 //Game Over function
 function isGameOver(){
     let gameOver=false;
@@ -437,7 +435,7 @@ function isGameOver(){
 ```
 
 Now we will check if the value returned by `isGameOver` is true, if it is we stop further execution of the game.
-```javaScript
+```JavaScript
 // create game loop-to continously update screen
 function drawGame(){
     changeSnakePosition();
@@ -460,7 +458,7 @@ function drawGame(){
 
 Stopping execution results:
 
-![stop execution](/education-engineering/how-to-build-a-snake-game-with-javascript/stopexecution.png)
+![stop execution](/engineering-education/how-to-build-a-snake-game-with-javascript/stopexecution.PNG)
 
 ### Add game over text
 This text will appear whenever the game is over. We will implement this on a function named `isGameOver`.
@@ -507,16 +505,16 @@ function isGameOver(){
 
 Game over results:
 
-![Game over](/education-engineering/how-to-build-a-snake-game-with-javascript/gameoverText.png)
+![Game over](/engineering-education/how-to-build-a-snake-game-with-javascript/gameoverText.PNG)
 
-You can get the complete code [here](https://github.com/Kamau-ke/How-to-buid-snake-game-with-javaScript/tree/main/snake%20game)
+You can get the complete code [here](https://github.com/Kamau-ke/How-to-buid-snake-game-with-javaScript/tree/main/snake%20game).
 
 ### Conclusion
-Projects are best for learning any programming language. In this project, we learned how to create a game using JavaScript.
+Fun projects are best to learn any programming language. In this project, we learned how to create a game using JavaScript.
 
-We creates a snake game using the HTML's canvas element and JavaScrip methods to play the game depending on the set rules.
+We creates a snake game using the HTML's canvas element and JavaScript methods to play the game depending on the set rules.
 
-Happy Coding!
+Happy coding!
 
 ---
 Peer Review Contributions by: [Miller Juma](/engineering-education/content/authors/miller-juma/)
