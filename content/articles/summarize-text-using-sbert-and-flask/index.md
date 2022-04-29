@@ -3,16 +3,16 @@ layout: engineering-education
 status: publish
 published: true
 url: /summarize-text-with-sbert-and-flask/
-title: Building a text summarizer with SBERT and Flask
+title: Building a Text Summarizer With SBERT and Flask
 description: This article will teach you to build a text summarizer using SBERT model. We will build a Flask web application to demonstrate the same.
 author: francisca-ngodu
-date: 2022-04-21T00:00:00-00:00
+date: 2022-04-29T00:00:00-04:00
 topics: [Machine Learning]
 excerpt_separator: <!--more-->
 images:
 
   - url: /engineering-education/summarize-text-with-sbert-and-flask/hero.jpg
-    alt: Building a text summarizer with SBERT and Flask Hero image
+    alt: Building a Text Summarizer With SBERT and Flask Hero image
 ---
 In this tutorial, we will learn to build a flask web application that summarizes text using the Sentence-BERT model.
 <!--more-->
@@ -22,11 +22,13 @@ SBERT can also be used to compare the semantic similarity of words. When summari
 
 ### Prerequisites
 To follow along with this tutorial, the reader must have the following:
-- Have a basic knowledge of Python programming language. (Here, we will use a Python version greater than 3)
-- Have an IDE installed, preferably [VS Code](https://code.visualstudio.com/).
+- Basic knowledge of Python programming language. Here, we will use a Python version greater than 3.
+- An IDE installed, preferably [VS Code](https://code.visualstudio.com/).
 
 ### Build a flask web app
-Sentence-BERT (SBERT), a siamese and triplet network-based variant of the BERT model is capable of deriving semantically meaningful sentence embeddings. With SBERT, BERT got the additional capability to compare massive sets for semantic similarities, groups, and retrieve information via semantic search.
+Sentence-BERT (SBERT), a siamese and triplet network-based variant of the BERT model is capable of deriving semantically meaningful sentence embeddings.
+
+With SBERT, BERT got the additional capability to compare massive sets for semantic similarities, groups, and retrieve information via semantic search.
 
 BERT established new benchmarks for performance on a variety of sentence categorization and pairwise regression problems.
 
@@ -39,7 +41,7 @@ Before we start, let's create a virtual environment. Open the terminal and creat
 python3 -m venv summarizerApp
 ```
 
-Then, we activate the environment with:
+Then we activate the environment with:
 
 ```bash
 source summarizerApp/bin/activate
@@ -47,7 +49,7 @@ source summarizerApp/bin/activate
 
 #### Install packages
 ##### Flask
-We use Flask to make web applications, manage HTTP requests, and render templates.
+We use Flask to make web applications, manage HTTP requests, and render templates:
 
 ```bash
 pip3 install Flask
@@ -68,7 +70,7 @@ pip3 install -U sentence-transformers
 ```
 
 ##### bert-extractive-summarizer
-To do extractive summaries, we use the BERT extractive summarizer from the HuggingFace Pytorch transformers library.
+To do extractive summaries, we use the BERT extractive summarizer from the HuggingFace Pytorch transformers library:
 
 ```bash
 pip3 install -q bert-extractive-summarizer
@@ -79,79 +81,96 @@ Inside the working directory, create a folder called `templates` with two files 
 1. `index.html`
 2. `summary.html`
 
-In the `index.html` file for the home page, we display a text field where the user can submit a textual content that is to be summarized.
+In the `index.html` file for the home page, we display a text field where the user can submit a textual content that is to be summarized:
 
 ```html
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Text Summarizer App</title>
-        
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
-    </head>
-    <body>
-        <nav class="navbar navbar-light" style="background-color: #100da1;">
-            <div class="container">
-                <a class="navbar-brand">Summarizer</a>
-            </div>
-        </nav>
-        <form action="/summarize" method="post">
-            <div class="form-group">
-                <label for="exampleFormControlTextarea1" style="padding-top: 2em;">
-                    <strong>Enter Your Text Below To Be Summarized:</strong>
-                </label>
-                <br>
-                <textarea class="form-control" id="exampleFormControlTextarea1" rows="10" name="data"></textarea>
-            </div>
-            <br>
-            
-            <button type="submit" class="btn btn-outline-primary">Summarize</button>
-        </form>
-        
-    </body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Text Summarizer App</title>
+
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
+      crossorigin="anonymous"
+    />
+  </head>
+  <body>
+    <nav class="navbar navbar-light" style="background-color: #100da1;">
+      <div class="container">
+        <a class="navbar-brand">Summarizer</a>
+      </div>
+    </nav>
+    <form action="/summarize" method="post">
+      <div class="form-group">
+        <label for="exampleFormControlTextarea1" style="padding-top: 2em;">
+          <strong>Enter Your Text Below To Be Summarized:</strong>
+        </label>
+        <br />
+        <textarea
+          class="form-control"
+          id="exampleFormControlTextarea1"
+          rows="10"
+          name="data"
+        ></textarea>
+      </div>
+      <br />
+
+      <button type="submit" class="btn btn-outline-primary">Summarize</button>
+    </form>
+  </body>
 </html>
 ```
 
-![Home page](/engineering-education/summarize-text-with-sbert-and-flask/result.png )
+![Home page](/engineering-education/summarize-text-with-sbert-and-flask/result.png)
 
 To display the text summary of the text we inputted, we create `summary.html` as shown:
 
 ```html
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Your Summary</title>
-        <style>
-            p{
-                padding-top: 2em;
-                text-align: center;
-                line-height: 3em;           
-                color: black;
-                word-spacing: 0.25em;            
-                font-family: 'Times New Roman', Times, serif;
-            }
-        </style>
-        
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
-    </head>
-    <body>
-        <nav class="navbar navbar-light" style="background-color: hsl(236, 96%, 22%);">
-            <div class="container">
-                <a class="navbar-brand">Text SUMMARY</a>
-            </div>
-        </nav>
-        <p>{{ result }}</p>    
-    </body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Your Summary</title>
+    <style>
+      p {
+        padding-top: 2em;
+        text-align: center;
+        line-height: 3em;
+        color: black;
+        word-spacing: 0.25em;
+        font-family: "Times New Roman", Times, serif;
+      }
+    </style>
+
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
+      crossorigin="anonymous"
+    />
+  </head>
+  <body>
+    <nav
+      class="navbar navbar-light"
+      style="background-color: hsl(236, 96%, 22%);"
+    >
+      <div class="container">
+        <a class="navbar-brand">Text SUMMARY</a>
+      </div>
+    </nav>
+    <p>{{ result }}</p>
+  </body>
 </html>
 ```
 
-![Summary page](/engineering-education/summarize-text-with-sbert-and-flask/summarized.png )
+![Summary page](/engineering-education/summarize-text-with-sbert-and-flask/summarized.png)
 
 #### Build backend
 In your project folder, create a file named `app.py` with the following content:
@@ -177,18 +196,19 @@ app = Flask(__name__)
 @app.route("/")
 def msg():
     return render_template('index.html')
-    
+
 @app.route("/summarize", methods=['POST','GET'])
 def getSummary():
     body=request.form['data']
     result = model(body, num_sentences=5)
     return render_template('summary.html',result=result)
-    
+
 if __name__ =="__main__":
     app.run(debug=True,port=8000)
 ```
 
 In the above code:
+
 - We use an instance of SBERT to create the model.
 - `SBertSummarizer('paraphrase-MiniLM-L6-v2')` is a sentence-transformer model used for convert phrases and paragraphs into a 384-dimensional dense vector space.
 - `return render_template('index.html')` displays the `index.html` contents, which is our home page.
@@ -211,18 +231,18 @@ python app.py
 
 In your terminal, the server starts up with a warning message, which can be ignored.
 
-![Terminal](/engineering-education/summarize-text-with-sbert-and-flask/terminal.png )
+![Terminal](/engineering-education/summarize-text-with-sbert-and-flask/terminal.png)
 
 Now, you may search for the URL `http://127.0.0.1:8000` to access our frontend.
 
-![Result](/engineering-education/summarize-text-with-sbert-and-flask/result.png )
+![Result](/engineering-education/summarize-text-with-sbert-and-flask/result.png)
 
-#### Testing 
+#### Testing
 Now, you may enter a text that you wish to be summarized and click on `Summarize` button.
 
 ![Before summarization](/engineering-education/summarize-text-with-sbert-and-flask/text.png)
 
-![After summarization](/engineering-education/summarize-text-with-sbert-and-flask/summarized.png )
+![After summarization](/engineering-education/summarize-text-with-sbert-and-flask/summarized.png)
 
 ### Conclusion
 In this blog, we learned how to effectively construct a Flask web application that utilizes SBERT to summarize a text.
