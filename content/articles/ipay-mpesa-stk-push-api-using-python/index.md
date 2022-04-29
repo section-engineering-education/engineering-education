@@ -3,10 +3,10 @@ layout: engineering-education
 status: publish
 published: true
 url: /ipay-mpesa-stk-push-api-using-python/
-title:  IPay Mpesa STK push API using Python
+title:  IPay Mpesa STK Push API using Python
 description: This tutorial will guide the reader on how to implement the IPay M-Pesa STK push API using Python. 
 author: dianne-sandra
-date: 2022-04-02T00:00:00-13:00
+date: 2022-04-29T00:00:00-09:00
 topics: [API]
 excerpt_separator: <!--more-->
 images:
@@ -14,38 +14,39 @@ images:
   - url: /engineering-education/ipay-mpesa-stk-push-api-using-python/hero.jpeg
     alt: IPay Mpesa STK push API using Python Image
 ---
-
 IPay is an online payment gateway widely used in Africa. It has streamlined the payment process and allowed merchants to accept transactions from third-party platforms such as VISA, Mastercard, Kenswitch, M-Pesa, and Airtel Money. 
 <!--more-->
-IPay has the Customer to Business(C2B), Business to Business(B2B), Business to Customer(B2C) and STK push APIs, which work together to enhance the transaction experience. In this tutorial, we will be consuming the Ipay STK-Push endpoints using Python. IPay has made it possible for developers to send the prompt to M-Pesa and Airtel Money users using a single codebase.
+IPay has the Customer to Business (C2B), Business to Business (B2B), Business to Customer (B2C) and STK push APIs, which work together to enhance the transaction experience. 
 
-STK push is a request that triggers a USSD prompt on a mobile phone. For example, the IPay STK push prompt contains the amount deductible, the merchant's account name, and the pin input field. By the end of this article, the reader should be able to integrate iPay API into a python project.
+In this tutorial, we will be using the Ipay STK-Push endpoints using Python. IPay has made it possible for developers to send the prompt to M-Pesa and Airtel Money users using a single codebase.
+
+STK push is a request that triggers a USSD prompt on a mobile phone. For example, the IPay STK push prompt contains the amount deductible, the merchant's account name, and the pin input field. By the end of this article, the reader should be able to integrate iPay API into a Python project.
 
 ### Table of Contents
 - [Introduction](#introduction)
 - [Prerequisites](#prerequisites)
-- [Project Initialization](#step-1---declare-variables)
-- [Prepare request params](#step-2---prepare-the-request-parameters)
-- [Transaction initiation](#step-3---create-transaction-initiator-function)
-- [SIM Toolkit trigger](#step-4---create-stk-trigger)
-- [Transaction Status](#step-5---create-transaction-status-checker)
-- [Intergrating with Flask](#step-6--intergrating-with-a-python-web-framework)
+- [Project Initialization](#step-1-declare-variables)
+- [Prepare request params](#step-2-prepare-the-request-parameters)
+- [Transaction initiation](#step-3-create-transaction-initiator-function)
+- [SIM Toolkit trigger](#step-4-create-stk-trigger)
+- [Transaction Status](#step-5-create-transaction-status-checker)
+- [Intergrating with Flask](#step-6-intergrating-with-a-python-web-framework)
 - [Send SIM Toolkit endpoint](#step-7-api-initiate-stk-endpoint)
 - [Verify Transaction](#step-8-api-check-transaction-status)
 - [Conclusion](#conclusion)
 
 ### Prerequisites
-To follow along with this article, you should have the following:
-Be able to use different data types in Python.
-Be able to use Python's package managers.
-Registered for the iPay Merchant account to get a production credential. In this tutorial, we will be using development credentials.
+To follow along with this article, the reader should:
+- Be able to use different data types in Python.
+- Be able to use Python's package managers.
+- Be registered for the iPay Merchant account to get a production credential. In this tutorial, we will be using development credentials.
 
 ### Step 1 - Project initialization and variable declaration
-Open your favourite IDE and create a python file, `ipay.py`. We need to import some Python libraries to interact with the endpoints to get started with the code. 
+Open your favourite IDE and create a Python file, `ipay.py`. We need to import some Python libraries to interact with the endpoints to get started with the code. 
 
 We will install **requests** using pip. Pip is a package manager that can install modules and packages that do not come in Python's standard library. 
 
-First, make sure that pip is part of your System variables(Windows) or environment variables(macOS and Linux). Then run the command below in the terminal.
+First, make sure that pip is part of your System variables (Windows) or environment variables (macOS and Linux). Then run the command below in the terminal.
 
 ```bash
 pip install requests
@@ -72,21 +73,19 @@ iPayKey = "SECretKey"  #use "demoCHANGED" for testing where vid is set to "demo"
 iPayVid = "demo"  #Production Vendor ID will be provided once they have set up your Merchant account
 iPaySecret = b"demoCHANGED"
 ```
+
 We will be using the HTTP library to send requests to iPay servers. The  HTTP responses are processed with the `json` library. 
 
 We have populated the variables `iPaySecret` and `iPayVid` with development values. 
 
->Only use iPay provided production credentials after deploying your implementation to the development server for the funds to reflect in your merchant account.
+>Only use the iPay provided production credentials after deploying your implementation to the development server for the funds to reflect in your merchant account.
 
 ### Step 2 - Prepare the request parameters
 We will define a function that will format our data into a [dictonary](https://docs.python.org/3/tutorial/datastructures.html#dictionaries) that the API can process. 
 
-The amount specified should be at least 10KES. 
-The phone parameter takes a 15 digit numeric string in the format 2547XXXXXXXX. 
-The email parameter takes the customer's email, which can send iPay receipts. 
-Finally, the notifications parameter is used to specify whether the customer should get a receipt or not. It is set to 1 if you want a receipt to be sent.  
+The amount specified should be at least 10KES. The phone parameter takes a 15 digit numeric string in the format 2547XXXXXXXX. The email parameter takes the customer's email, which can send iPay receipts. The notifications parameter is used to specify whether the customer should get a receipt or not. Set to 1 if you want a receipt to be sent.  
 
-The dictionary contains the hash key, which authenticates to the iPay system. We use [HMAC](https://en.wikipedia.org/wiki/HMAC) with SHA-256 encryption to create a digital signature using values from the dictionary.
+The dictionary contains the hash key, which authenticates to the iPay system. We will use [HMAC](https://en.wikipedia.org/wiki/HMAC) with SHA-256 encryption to create a digital signature using values from the dictionary.
 
 ```python
 def prepare_stk_data(order_id, amount, phone, email, notifications=0):
@@ -117,9 +116,7 @@ def prepare_stk_data(order_id, amount, phone, email, notifications=0):
 ```
 
 ### Step 3 - Create transaction initiator function
-Our second function will make a POST request to the initiator endpoint we had named `PayTransact`. 
-
-We call the first function *prepare_stk_data/5()* with the necessary parameters, then change its result to a JSON string using the [dumps](https://docs.python.org/3/library/json.html#json.dump) function. 
+Our second function will make a POST request to the initiator endpoint we had named `PayTransact`. We call the first function *prepare_stk_data/5()* with the necessary parameters, then change its result to a JSON string using the [dumps](https://docs.python.org/3/library/json.html#json.dump) function. 
 
 We will utilize the post function and set the header to accept JSON data as the payload.
 
@@ -137,11 +134,11 @@ def init_stk(order_id, customer_tel, customer_email, amount, send_receipt=0):
     return response['data']
 ```
 
-The following output contains the `order_id`, `account name`, ``available payment channels and the `sid`. 
+The following output contains the `order_id`, `account name`, `available payment channels` and the `sid`. 
 
 The `sid` can be used with the other payment channels, for example, Airtel STK push. The `init_stk/5` function returns all this data so that it can be processed in our following function. 
 
-IPay servers respond with status 0 if something went wrong and status 1 paired with header_status 200 if everything was fine.
+IPay servers respond with a status of 0 if something went wrong and a status of 1 paired with header_status 200 if everything was fine.
 
 ```json
 {
@@ -174,7 +171,7 @@ IPay servers respond with status 0 if something went wrong and status 1 paired w
 ### Step 4 - Create STK trigger
 Next, we need to add a function that sends the STK prompt to the user. We will be using the `hash` and `sid` from the previous function to make a payload for the POST request. 
 
-We need to check whether the *init_stk/5* returned a successful result from the initiator endpoint. Then, we create a new dictionary containing a new hash generated by concatenating the phone number, sid from the previous function and the Merchant ID.
+We need to check whether the *init_stk/5* returned a successful result from the initiator endpoint. Then, we can create a new dictionary containing a new hash generated by concatenating the phone number, the sid from the previous function, and the Merchant ID.
 
 ```python
 def send_stk(order_id, customer_telephone, customer_email, amount):
@@ -283,11 +280,11 @@ Failed  Response:
 ```
 
 ### Step 6 -Integrating the API with Flask
-We will be testing our module  `ipay.py` with Flask. Flask is a lightweight beginner-friendly Python weB framework. 
+We will be testing our module  `ipay.py` with Flask. [Flask](/engineering-education/search/?q=Flask) is a lightweight beginner-friendly Python weB framework. 
 
-To get started, open your terminal/command prompt, then run `pip install Flask` after the command has run successfully, create a new file called `flask.py.`
+To get started, open your terminal/command prompt, then run `pip install Flask` after the command has ran successfully, create a new file called `flask.py.`
 
-First, import `Flask`, `jsonify` and `request`. `jsonify` will enable us to send JSON responses, while `requests` will help us process incoming requests. Then import the functions `check_transaction` and `send_stk` from the `ipay.py` file we had created earlier.
+Import `Flask`, `jsonify` and `request`. `jsonify` will enable us to send JSON responses, while `requests` will help us process incoming requests. Then import the functions `check_transaction` and `send_stk` from the `ipay.py` file we had created earlier.
 
 Next,  import `string`, `random` and `re`, which we will be using to create a random `order_id` to send to the iPay endpoints.
 
@@ -311,11 +308,11 @@ We create a function called *initiate_payment*, which will process requests sent
 
 We will add a [Flask function](https://flask.palletsprojects.com/en/2.0.x/api/#flask.Flask.route) [decorator](https://www.python.org/dev/peps/pep-0318/) which takes the URL as the first argument and a Keyword argument of methods that explicitly specifies the Request type. 
 
-Finally, we use the `get_json/0` function to convert the incoming JSON string to a python dictionary object, then extract the data using their respective keys.
+Now we use the `get_json/0` function to convert the incoming JSON string to a python dictionary object, then extract the data using their respective keys.
 
 We then generate a random ten character string which we will use as the order id. Next, we check whether the extracted phone number is valid using regex. 
 
-We also check whether the amount to be paid is at least 10 KES. Finally, we pass the extracted data to the `send_stk/4` function if everything is valid.
+We also check whether the amount to be paid is at least 10 KES. Now we can pass the extracted data to the `send_stk/4` function if everything is valid.
 
 ```python
 @app.route('/send_stk', methods=['POST'])
@@ -360,6 +357,7 @@ def verify_payment():
     else:
         return jsonify({"success": False, "message": result[1]})
 ```
+
 ![Mpesa and iPay Messages](/engineering-education/ipay-mpesa-stk-push-api-using-python/mpesa-confirm.png)
 
 ### My thoughts
@@ -370,7 +368,9 @@ It would be better if their servers could send us some results to a specified en
 ### Conclusion
 In this tutorial, we learned how to consume IPay API endpoints. Our code successfully initiates a SIM toolkit dialogue for M-Pesa users. 
 
-We also learnt how to query transactions processed in IPay using order IDs. Our IPay implementation can be integrated with other python projects; we tested our implementation with a simple Flask powered REST API server. 
+We also learned how to query transactions processed in IPay using order IDs. Our IPay implementation can be integrated with other Python projects; we tested our implementation with a simple Flask powered REST API server. 
+
+Happy Coding!
 
 ---
 Peer Review Contributions by: [Mercy Meave](/engineering-education/authors/mercy-meave/)
