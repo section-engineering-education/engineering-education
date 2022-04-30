@@ -1,3 +1,20 @@
+---
+layout: engineering-education
+status: publish
+published: true
+url: /implementing-a-spring-query-language-spring-boot-search-operations/
+title: Implementing a Spring Query Language
+description: In this article we will look at what Spring Boot query language and how to implement search operations in Spring Boot
+author: ayemobola-tolulope
+date: 2022-04-30T00:00:00-18:00
+topics: []
+excerpt_separator: <!--more-->
+images:
+
+  - url: /engineering-education/implementing-a-spring-query-language-spring-boot-search-operations/hero.jpg
+    alt: Implementing a Spring Query Language
+---
+
 Having built many endpoints and, in good cases, a whole API, I know the amount of work that goes into building them and querying them for various use in the system - or maybe others.
 
 Making resources available is one of the things to take into serious consideration during building. In some situations, you would like to let the customer search for information in many easy ways while avoiding the temptation of creating too many services for this to be possible.
