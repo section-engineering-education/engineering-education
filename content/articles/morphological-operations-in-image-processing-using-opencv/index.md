@@ -81,7 +81,7 @@ cv2.imwrite('RandomrgbColor.png', bgrImage) #using cv2. imread() it interprets i
 ### Plotting the image
 
 - We shall display the graph using the `plot.show()` function and also set the x-limits of the current axes. The `x-lim()` function changes the range of our plotting defined from left values to right values depending on your choice.
-- In this example, we shall set the left current axis limit variable and the right current axis limit variable by taking the keyword argument `left` and also the right keyword with `slim()` function.
+- In this example, we shall set the left current axis limit variable and the right current axis limit variable by taking the keyword argument `left` and also the right keyword with `x-lim()` function.
 - To add the title of the graph employ `title()` function.
 - To add tha labels at axes, we use the `xlabel()` and `ylabel()` functions.
   
