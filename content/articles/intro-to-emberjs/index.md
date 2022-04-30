@@ -34,12 +34,12 @@ Backward and forward compatibilities in terms of software or hardware system tha
 - Basic knowledge of HTML, CSS, JavaScript, and the command line.
 - Have a basic understanding of some JavaScript concepts like classes, modules, OOP, state management, etc.
 
-Before diving into Ember.js let's have knowledge about the component service framework which is a key and fundamental concept of Ember.js.
+Before diving into Ember.js let's have some knowledge about the component service framework which is a key and fundamental concept of Ember.js.
 
 ### Component Service Framework
 A component-service framework is a popular strategy adopted by companies to create complex UI by breaking it down into small and reusable components. This allows us to: 
 - Rapidly increase the development rate as working on smaller component take less time.
-- Finding bugs is also easy as the code base is precise, small, and easily readable.
+- Finding bugs is also easy as the code base is precise, small, and readable.
 
 ### Ember tool installation
 Ember builds and scaffolds sections of your application using a command-line interface (CLI) tool.
@@ -76,7 +76,7 @@ node: 7.4.0
 os: darwin x64
 ```
 
-This creates an application development environment that is ready for production and includes the following features by default:
+This creates an application development environment that is ready for production and include the following features by default:
 
 - Live reloading development server.
 - Babel and Webpack integration for the newest JavaScript.
@@ -85,7 +85,6 @@ This creates an application development environment that is ready for production
 - The use of conventions to reduce the variations across applications.
 
 Now after getting some idea about ember, let's see an example that will further clarify your idea about this amazing framework.
-
 
 ###  Difference between ReactJS and EmberJS
 
@@ -139,7 +138,7 @@ To know more about React here is the [link](https://reactjs.org/) to the officia
 - If things keep going this way, Svelte JS may soon surpass Ember.
 
 ###  Conclusion        
-EmberJS allows us to focus on building amazing applications without worrying about the massive overhead that is required to keep an application up and running. To find more information about Ember JS check out the official docs via this [link](https://guides.emberjs.com/release/tutorial/part-1/)
+EmberJS allows us to focus on building amazing applications without worrying about the massive overhead that is required to keep an application up and running. To find more information about EmberJS check out the official docs [here](https://guides.emberjs.com/release/tutorial/part-1/)
 
 Happy coding!
 
