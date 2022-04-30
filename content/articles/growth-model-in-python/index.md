@@ -1,3 +1,19 @@
+---
+layout: engineering-education
+status: publish
+published: true
+url: /growth-model-in-python/
+title: A Gentle Introduction to Exponential Regression in Python
+description: This article will discuss the basics of exponential regression and how to use it to predict a company's growth using Python.
+author: sumba-elvis
+date: 2022-04-30T00:00:00-12:14
+topics: [Languages]
+excerpt_separator: <!--more-->
+images:
+
+  - url: /engineering-education/growth-model-in-python/hero.jpg
+    alt: A Gentle Introduction to Exponential Regression in Python
+---
 
 ### Table of Contents
 - [Table of Contents](#table-of-contents)
@@ -20,7 +36,7 @@ Where a, b and c are unknown constants of the model.
 At *x = 0* , $\large y = \frac{a}{(1+b)}$, and as $x → ∞$ , $y → a$.
 
 ### Prerequisite:
-To comfortably follow along, the reader needs to have knowledge on:
+To comfortably follow along, the reader needs to have some knowledge on:
 1. Python programming knowledge
 2. Partial Differential Calculus for optimization purposes
 3. [Ralphson Newton Method](https://brilliant.org/wiki/newton-raphson-method)
@@ -105,11 +121,11 @@ Solving the expression, we get:
 74
 
 ### Implementing the growth model
-To implement this model, first, we need to import the necessary libraries and work all through using a user-defined function in python.
+To implement this model, first, we need to import the necessary libraries and work all through using a user-defined function in Python.
 
 Let us import the libraries.
 
-```python
+```Python
 import numpy as np # for matrix operations
 import matplotlib.pyplot as plt # for visualization
 
@@ -173,4 +189,8 @@ Hight =  74.321
 Manually we had found the height of an individual aged 30 is 74. With our model, this is the case. Thus we have implemented and made predictions using our model.
 
 ### Conclusion
-In this session, we look at the Growth model. First, we saw how the growth model hypothesis is stated and went a step further to determine a set of its unknown parameters. Then, using our model, we were able to make predictions manually. Later we implemented this model in python.
+In this session, we look at the Growth model. First, we saw how the growth model hypothesis is stated and went a step further to determine a set of its unknown parameters. Then, using our model, we were able to make predictions manually. Later we implemented this model in Python.
+
+
+---
+Peer review contribution by: [Odhiambo Paul](/engineering-education/authors/odhiambo-paul/)
