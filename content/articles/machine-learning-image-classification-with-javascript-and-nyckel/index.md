@@ -5,7 +5,7 @@ published: true
 url: /machine-learning-image-classification-with-javascript-and-nyckel/
 title: Machine Learning Image Classification with Javascript and Nyckel
 description: This article shows how to implement machine learning models in a web application to classify images. In this case, we will classify and identify the images of people wearing and those not wearing a mask.
-author: kamau-victor
+author: victor-kamau
 date: 2021-12-23T00:00:00-17:10
 topics: [Machine Learning]
 excerpt_separator: <!--more-->
