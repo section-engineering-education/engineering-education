@@ -3,22 +3,20 @@ layout: engineering-education
 status: publish
 published: true
 url: /setup-and-run-applications-using-typescript-with-aureliajs/
-title: Setup And Run Applications Using TypeScript With AureliaJS
+title: Setup and Run Applications using TypeScript with Aurelia.js
 description: In this guide, we will build a basic todo application using TypeScript and Aurelia.js. We will explore more about Aurelia.js and how it helps with building application easily.
 author: moses-maina
-date: 2022-04-04T00:00:00-00:00
-topics: [Languages]
+date: 2022-04-30T00:00:00-08:00
+topics: [Languages, Node.js]
 excerpt_separator: <!--more-->
 images:
 
  - url: /engineering-education/setup-and-run-applications-using-typescript-with-aureliajs/hero.png
    alt: Setup And Run Applications Using TypeScript With AureliaJS Hero Image
 ---
-In this tutorial, you will learn how to build your application using Aurelia.js with TypeScript.
-
-JavaScript has several frameworks that help you implement applications out of the box. This includes React.js, Vue.js, Angular.js, Next.js, Svelte.js, Node.js, Aurelia.js, and many more.
-
-In this guide, we will learn how to get started with Aurelia.js to build web applications.
+In this tutorial, we will learn how to build an application using Aurelia.js with TypeScript. JavaScript has several frameworks that help implement applications out of the box.
+<!--more-->
+This includes React.js, Vue.js, Angular.js, Next.js, Svelte.js, Node.js, Aurelia.js, and much more. In this guide, we will learn how to get started with Aurelia.js to build web applications.
 
 Aurelia is a JavaScript client framework for web, mobile, and desktop that leverages simple conventions to empower your UI creativity.
 
@@ -57,13 +55,11 @@ To follow along with this guide, it is essential to have the following requireme
 - [Further reading](#further-reading)
 
 ### Why use TypeScript?
-TypeScript can be said as a superset of JavaScript. Lately, it has been gaining a lot of popularity among JavaScript developers. It is one of the fast-developing programming languages to build extensive web applications.
+TypeScript can be said to be a superset of JavaScript. Lately, it has been gaining a lot of popularity among JavaScript developers. It is one of the fast-developing programming languages to build extensive web applications.
 
-TypeScript helps improve the existing features that JavaScript has with static typing. This helps you speed up your application development cycle.
+TypeScript helps improve the existing features that JavaScript has with static typing. This helps speed up your application development cycle. With TypeScript types, you can catch errors even before you run your code. 
 
-With TypeScript types, you can catch errors even before you run your code. Static typing gives you quick hints based on the code structure that you are writing. TypeScript has a tone of amazing features.
-
-Check this guide and [learn more features](/engineering-education/a-friendly-beginner-guide-to-typescript/) and why is [TypeScript is getting so popular](/engineering-education/typescript-static-typing/).
+Static typing gives you quick hints based on the code structure that you are writing. TypeScript has a ton of amazing features. Check this guide and [learn more features](/engineering-education/a-friendly-beginner-guide-to-typescript/) and why is [TypeScript is getting so popular](/engineering-education/typescript-static-typing/).
 
 ### Why use Aurelia?
 Aurelia is the only framework that lets you build applications using vanilla JavaScript/TypeScript. It uses modern JavaScript/TypeScript and HTML to let you get started quickly and build complex apps.
@@ -73,7 +69,7 @@ In this case, the code structure of Aurelia looks similar to that of the vanilla
 ### How to set up a basic TypeScript Aurelia project?
 Let's dive and set up an Aurelia TypeScript project.
 
-First, you need to install the [Aurelia CLI](https://aurelia.io/docs/cli/webpack/) (command-line interface). An interface is a medium through which a user can interact with any tool using a computer. CLI is a way to interact with the computer program by typing in instructions or commands.
+First, you'll need to install the [Aurelia CLI](https://aurelia.io/docs/cli/webpack/) (command-line interface). An interface is a medium through which a user can interact with any tool using a computer. CLI is a way to interact with the computer program by typing in instructions or commands.
 
 Aurelia provides CLI commands that allow you to bootstrap the Aurelia project. This allows you to have a sample project that you can build on rather than creating an application from scratch.
 
@@ -93,7 +89,7 @@ Once you have installed the CLI, proceed and bootstrap the basic Aurelia project
 au new
 ```
 
-This command will launch an interactive interface that allows you to choose the default settings of your Aurelia project. Once you run the command, enter the application name of your choice.
+This command will launch an interactive interface that allows you to choose the default settings of your Aurelia project. Once you run the command, enter an application name of choice.
 
 ![aurelia-app](/engineering-education/setup-and-run-applications-using-typescript-with-aureliajs/aurelia-app.png)
 
@@ -103,13 +99,11 @@ In this tutorial, we are creating the Aurelia app with TypeScript code. Thus, yo
 
 Use the arrow keys or numbers to select the **Default TypeScript App** and hit enter to submit.
 
-Finally, select the dependency manager you want to use between NPM and Yarn.
-
-This will create a ready configured Aurelia TypeScript app. To test if the setup is working, run `npm start` inside the created application folder.
+Then, select the dependency manager you want to use between NPM and Yarn. This will create a ready configured Aurelia TypeScript app. To test if the setup is working, run `npm start` inside the created application folder.
 
 Once done, open `http://localhost:8080/` on your browser. This will log a **Hello World** on your browser.
 
-![test-app](test-app./engineering-education/setup-and-run-applications-using-typescript-with-aureliajs/test-app.jpg)
+![test-app](/engineering-education/setup-and-run-applications-using-typescript-with-aureliajs/test-app.jpg)
 
 This indicates that the created setup is working and we are ready to build our first Aurelia application.
 
@@ -151,11 +145,9 @@ The properties named differently will automatically become incompatible with the
 Therefore, it makes sense to have a common description of the specific properties of a todo.
 
 #### Create todos class
-As described above, a class acts as a blueprint for an object. 
+As described above, a class acts as a blueprint for an object. Let's now set up a class that describes its blueprint. To do this, navigate to the `app.ts` file and follow the following steps:
 
-Let's now set up a class that describes its blueprint. To do this, navigate to the `app.ts` file and follow the following steps:
-
-##### Set up the `App` class
+#### Set up the 'App' class
 One of the important use cases where an interface is really useful is when setting up a class. This sets the compatibility of your data.
 
 A class has the same properties as the `interface` at any given time. If all the required properties are not set, the whole data set becomes incompatible.
@@ -173,16 +165,16 @@ class App {
 
 This will add a heading and title to the application, an array of todos, and empty properties `todoTitle` and `todoDescription`.
 
-##### Create constructors and methods
+#### Create constructors and methods
 A class goes hand in hand with a constructor. A constructor is commonly referred to as a special method that has the same name as the class.
 
 In TypeScript, a constructor is a special function with the keyword `constructor`. It constructs/initializes the object before it gets assigned to its methods.
 
-A method gets assigned to the initialized constructor. Here, you create methods to add, remove and clone a todo. The methods body specifies the properties that you want to want access. In simple terms, a method runs an instance of the class `App`.
+A method gets assigned to the initialized constructor. Here, you create methods to add, remove, and clone a todo. The methods body specifies the properties that you want to access. In simple terms, a method runs an instance of the class `App`.
 
 Below is how to set up these constructors and methods. This goes inside the class `App`:
 
-##### Add a new todo
+#### Add a new todo
 
 ```ts
 addTodo() {
@@ -204,7 +196,7 @@ In this case, use [this keyword](engineering-education/how-to-use-javascript-arr
 
 To add the values to the application use `push()` to add the new values to the `todo` properties.
 
-##### Delete a todo
+#### Delete a todo
 
 ```ts
 removeTodo(todo) {
@@ -219,7 +211,7 @@ removeTodo(todo) {
 
 Then, to access the todo, the JavaScript engine will use `indexOf()` to determine the todo you want to delete. This will also access the index of that todo and execute the `splice()`. This will delete existing todos from the existing list.
 
-##### Clone a todo
+#### Clone a todo
 
 ```ts
 cloneTodo(todo) {
@@ -233,7 +225,7 @@ cloneTodo(todo) {
 
 The above code block copies and duplicate an existing todo. The `indexOf()` will access the index of an added todo that you want to copy. The parameter `todo` will help you execute the index of the todo that you want to duplicate. Then `push()` will add the duplicate of that todo and add it to the application.
 
-Finally, export your class to access it within your application.
+Now export your class to access it within your application.
 
 ```ts
 export { App }
@@ -249,14 +241,12 @@ To create these UIs, add the `template` tags, then wrap every component inside t
 </template>
 ```
 
-Any subsequent components will be added inside these `template` tags.
-
-Aurelia templates use binding to connect to the view model that you have created. In this case, you have created a to-do model. Thus, templates will access it to manipulate the todos data using data binding.
+Any subsequent components will be added inside these `template` tags. Aurelia templates use binding to connect to the view model that you have created. In this case, you have created a to-do model. Thus, templates will access it to manipulate the todos data using data binding.
 
 Below is how to connect to the todos model:
 
-##### Add a filter component
-First, add a filter component. This will be used to filter any todo from the list of the added todos.
+#### Add a filter component
+Add a filter component. This will be used to filter any todo from the list of the added todos.
 
 ```html
 <nav class="navbar navbar-daNrk bg-dark">
@@ -270,16 +260,16 @@ First, add a filter component. This will be used to filter any todo from the lis
 </nav>
 ```
 
-When you add a list of todos, you can filter a todo. This can be easily be implemented using the tag of type `search` as shown in the above code block:
+When you add a list of todos, you can filter a todo. This can be easily implemented using the tag of type `search` as shown in the above code block:
 
-##### Get the application header
+#### Get the application header
 ```html
 <h1 class="text-center">${heading}</h1>
 ```
 
 This header is defined inside the `app.ts` under `App`. `heading` is a property of the model. The above line of code will bind it to the template using the string interpolation. The `${}` operator helps you extract the `heading` string value.
 
-##### Add a form to add todos
+#### Add a form to add todos
 ```html
 <form submit.trigger="addTodo()">
     <label for="addTodoInput" class="form-label">Enter New Todo</label>
@@ -288,7 +278,7 @@ This header is defined inside the `app.ts` under `App`. `heading` is a property 
 
 This form will trigger the constructor `addTodo()` to manipulate the data. `submit.trigger` will execute this function and add a new todo to the application.
 
-##### Add todo title form input
+#### Add todo title form input
 ```html
 <input type="text" value.bind="todoTitle" id="addTodoInput" class="form-control" placeholder="Enter Title">
 ```
@@ -299,14 +289,14 @@ As the model states, each todo has three properties: a title, description, and c
 
 In this case, the completed value is added to false by default. The above code block will provide a form to enter the todo title. It binds to the `todoTitle` as we set them in the `addTodo()` function.
 
-##### Add todo description form input
+#### Add todo description form input
 ```html
 <input type="text" value.bind="todoDescription" id="addTodoInput" class="form-control" placeholder="Enter Description">
 ```
 
 Each todo has a description property. This HTML code will add a form that lets you set the description value. This will bind to the value of `todoDescription` as we set them in the `addTodo()` function.
 
-##### Add a button to submit the form input
+#### Add a button to submit the form input
 
 ```html
 <button class="btn btn-primary" type="submit" disabled.bind="!todoTitle">Submit</button>
@@ -317,7 +307,7 @@ For the button to be active and clickable, you have first to provide the todo's 
 ##### Update a todo
 Aurelia uses [repeat.for](https://riptutorial.com/aurelia/example/7080/working-with-loops-using--repeat-for-) to iterate through loops.
 
-Here, we need to iterate through a todo and its value to update an existing todo. Go ahead and add the `repeat.for` as shown below;
+Here, we need to iterate through a todo and its value to update an existing todo. Go ahead and add the `repeat.for` as shown below:
 
 ```html
 <div class="form-check" repeat.for="todo of todos">
@@ -330,7 +320,7 @@ Inside the above `div` tags, add a checkbox:
 <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" checked.bind="todo.completed">
 ```
 
-This will be used to update the todos using the set `completed` value.
+This will be used to update the todos using the set `completed` value. 
 
 Go ahead and add the value that will show the todo has been updated:
 
@@ -344,7 +334,7 @@ Go ahead and add the value that will show the todo has been updated:
 
 This will access the todos description and title. Aurelia will check the `todo.completed` value and add line-through to mark the todo as completed when the checkbox is clicked.
 
-##### Delete a todo
+#### Delete a todo
 Since the delete execution involves altering with the exiting todo, add the following button inside the `<div class="form-check" repeat.for="todo of todos"> </div>` tags so that the app iterates through the exiting todo and delete its values.
 
 ```html
@@ -353,7 +343,7 @@ Since the delete execution involves altering with the exiting todo, add the foll
 
 Add a button and attach the `click.trigger` handler. Then map `click.trigger` to the `removeTodo(todo)`. When the button is clicked, `removeTodo(todo)` will be executed, and the selected todo will be deleted.
 
-##### Clone a todo
+#### Clone a todo
 Clone involves duplicating with the exiting todo. Thus is executed to an existing todo.
 
 In this case, add the following button inside the `<div class="form-check" repeat.for="todo of todos"> </div>` tags so that the app iterates through the exiting todo and duplicates its values.
@@ -375,7 +365,7 @@ Now, you can start interacting with your Aurelia application.
 ![aurelia-typescript](/engineering-education/setup-and-run-applications-using-typescript-with-aureliajs/todo-list.jpg)
 
 ### Conclusion
-Aurelia.js Framework allows writing modern JavaScript. This way, you can implement two-way binding. It just lets you write pure JavaScript or TypeScript.
+The Aurelia.js Framework allows developers to write in modern JavaScript. This way, you can implement two-way binding. It just lets you write pure JavaScript or TypeScript.
 
 I hope you found this tutorial useful.
 
