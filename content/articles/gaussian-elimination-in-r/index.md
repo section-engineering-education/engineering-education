@@ -12,11 +12,11 @@ The learner is required to have:
 ### Understanding the Gaussian Elimination Algorithm
 We follow the following steps to solve a system of linear equations using the Gaussian Elimination algorithm.
 
-Suppose we are  a system of linear equations as shown below.
+Suppose we are given a system of linear equations as shown below.
 
 ![matrix-image](engineering-education/gaussian-elimination-in-r/matrix.png)
 
-Step 1:
+### Step 1:
 Represent the above system of linear equations in a matrix form, i.e.,
 ![image](engineering-education/gaussian-elimination-in-r/matrix-form.png)
 
@@ -28,8 +28,9 @@ Assign A, X and b to the coefficient matrix, variables vector and a vector of so
 
 ![vector](engineering-education/gaussian-elimination-in-r/vector-b.png)
 
-Step 2:
+### Step 2:
 Using matrices A and b, we create an augmented matrix, i.e., attach b to matrix A as the last column.
+
 ![aug-matrix](engineering-education/gaussian-elimination-in-r/augmented-matrix.png)
   
 Now, to reduce the above matrix ${\bold C}$ to a form that is simple to solve for unknowns, we need to perform some operations. These operations should not change the solution of the linear system. Some of the allowed operations are:
@@ -40,47 +41,33 @@ Now, to reduce the above matrix ${\bold C}$ to a form that is simple to solve fo
    
  So using these operations, we will learn how to reduce a system of linear equations using the Gaussian Elimination Algorithm.
 
-Step 3:
-In this step, we make the first value in the first row of ${\bold C}$ an identity. This identity value, which we preserve in that column, is called a pivot. Now, using our $3^{rd}$ operation outlined above, we make all the values below this identity value zeros. This is as shown in the matrix below.
-
-Step 4:
-In the second iteration, we make the first value after the zero in the second row an identity. Then, as we did in the first iteration, make all values below this identity value zeros.
-
-This is as shown below:
-
-Step 3:
-Repeat the above operations until we obtain an upper triangular matrix.
-
-The last step is to find the solution to our original system using this reduced matrix. Below is an outline of how we determine this solution.
-
-We then create a simplified system of linear equations from this triangular matrix, which we solve by back substitution. Now, this new system of equations is usually much easier to solve than the original system.
-
- In this article, we will cover the Gaussian Elimination Algorithm in detail.
-
-- What's a system of linear equations
-- How to create a matrix of coefficients from a system of linear equations.
-- How to create an augmented matrix
-- Finally, the learner will be able to carry out all operations involved in reducing a matrix using the Gaussian Elimination algorithm and how it's performed in R and Python.
+### Step 3:
+In this step, we keep the first element of the first row. This value is called a pivot. Now, using our $3^{rd}$ operation outlined above, we make all the values below the pivot value zeros. This is as shown in the matrix below.
 
 ![image](engineering-education/gaussian-elimination-in-r/image-0.png)
 
-Next:
+### Step 4:
+We keep the first value after the zero in the second row in the second iteration. Then, as we did in the first iteration, make all values below this value zeros.
+
+This is as shown below:
+
 ![image](engineering-education/gaussian-elimination-in-r/image-1.png)
 
-Let's remember the goal was to bring the matrix into an upper rectangular matrix. The last matrix we obtained above is already in an upper rectangular form. From this matrix, we can write the following system of linear equations.
+### Step 5:
+Repeat the above operations until we obtain an upper triangular matrix. The matrix we obtained in the previous step is already in upper triangular form. The final step is to find the solution to our original system using this reduced matrix. From our reduced matrix, we can write down the following system of linear equations.
 
 ![image](engineering-education/gaussian-elimination-in-r/equations.png)
 
-To find the solution to the original system, we will use the above system of linear equations we just derived from our upper triangular matrix. This is very easy and fast compared to computing the solution using the original system. Remember, in the real world application, a system of linear equations can consist of millions of rows and columns. Using methods such as obtaining the inverse of the coefficient matrix can be computationally expensive and time-consuming. That's why first simplifying computation is a crucial step in real-world applications.
+This new system of equations is much easier to solve than the original system. To find the solution to our original system, we will solve these equations we just derived from the upper triangular matrix. This is very easy and fast compared to computing the solution using the original system.
 
 Now, on the above system, all we need to do is to perform a back substitution. The back substitution is performed in the order outlined below:
 
 ![image](engineering-education/gaussian-elimination-in-r/solution.png)
 
-Note we first solved for the last variable and then incorporated its solution in solving for the variable before it. Then, we repeated this process until we compute for the first variable, i.e., $x_1$ at last.
+Note, we first solved for the last variable $(x_3)$ and then incorporated its solution in solving for the preceding variable until we got to $x_1$. As we all know, systems of linear equations in real-life data can consist of millions of equations. It is impractical to solve those systems manually. This requires us to make use of computation software. In the last section of this article, we shall see how we can implement this method. 
 
 ### R implementation of Gaussian Elimination Algorithm
-In this part, we will create our own matrix, which we will work on. Bellow is an implementation process of this method.
+Here we will first create a matrix, the one we used to explain this concept with, which we will then write a code to reduce it into an upper triangular matrix. Bellow is an implementation process of this method.
 
 ```r
 # create a matrix
@@ -116,7 +103,7 @@ Executing the code we obatin:
 [3,]    0  0.0000000  1.0000000 -1.0000000
 
 ```
-Note, to find the values of our variables; we need to perform a back substitution using the above-reduced matrix output. To simplify things further, however, we can take the above matrix a step further and make elements on the upper triangular as zeros as well. This will ensure we do not need to perform the back substitution on the final output, which might be computationally expensive compared to creating an identity matrix with respect to the output variables. This method of reducing a matrix is called the Gauss-Jordan Elimination Method. To further understand how this method works, I recommend visiting this [blog](https://www.craftonhills.edu/current-students/tutoring-center/mathematics-tutoring/matrices-gauss-jordan.pdf).
+Note, to find the values of our variables, we need to perform a back substitution using this output. However, to simplify things further, we can take the above matrix a step further and make elements on the upper triangular as zeros as well. This will ensure we do not need to perform the back substitution on the final output, which might be computationally expensive than creating an identity matrix with respect to the output variables. This method of reducing a matrix is called the Gauss-Jordan Elimination Method. To further understand how this method works, I recommend visiting this [blog](https://www.craftonhills.edu/current-students/tutoring-center/mathematics-tutoring/matrices-gauss-jordan.pdf).
 
 This method is implemented in R as follows:
 
