@@ -9,7 +9,7 @@ There are various methods used in dimensionality reduction. The Principal Compon
 In this article, we will learn how we can reduce the dimensionality of nonlinear data using the kernel PCA.
 
 ### Prerequisites:
-- In this section, you need a dataset, download [here]().
+- In this section, you need a dataset, download [here](https://github.com/felixMuia/dataset/blob/main/dataset.csv).
 - An access to the Jupyter notebook or the Google Colab.
 - Python programming skills
   
