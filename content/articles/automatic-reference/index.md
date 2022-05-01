@@ -167,7 +167,7 @@ Developers utilize Xcode to create applications for Apple's numerous platforms. 
 
 **Step one:** In Xcode, launch the Starter project in the Contacts directory. Create and run the project and the following should be seen.
 
-![](ARC/ARC%201.png)
+![](/section/engineering-education/arc1.png)
 
 The above screenshot shows a contacts app. 
 
@@ -177,11 +177,11 @@ However, there is a serious flaw in the project: A reference cycle hidden some
 
 **Step three:** Scroll to the bottom of Xcode and select the Debug Memory Graph option as the program is still operating.
 
-![](ARC/ARC%202.png)
+![](/section/engineering-education/arc2.png)
 
 **Step four:** In the Debug Navigator, check the Runtime Problems. They're identified by purple squares having white exclamation points within, like the ones shown here:
 
-![](ARC/ARC%203.png)
+![](/section/engineering-education/arc3.png)
 
 **Step five:** Pick one of the affected Contact objects in the navigator. The cycle in between is brought out.  By referencing each other, the Contact and Number objects retain one another. This means there exists a strong reference cycle between the two. These problems should prompt a user to examine the code. Observe the fact that a Contact variable can exist without a variable Number. On the other hand, a Number would not exist without a Contact.
 
