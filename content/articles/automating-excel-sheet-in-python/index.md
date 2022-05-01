@@ -14,7 +14,7 @@ images:
   - url: /engineering-education/automating-excel-sheet-in-python/hero.png
     alt: Automating Excel Sheet in Python Hero Image.
 ---
-Python has rich libraries, useful packages, and ready-to-use functions for automation that greatly facilitate testing. Python allows you to choose what is best for your project.
+Python is full of rich libraries, useful packages, and ready-to-use functions for automation that greatly facilitate testing. Python allows you to choose what is best for your project.
 <!--more-->
 In this article, we are going to implement Python libraries and excel data to automate. It will help us gain a better understanding of Python and Excel.
 
