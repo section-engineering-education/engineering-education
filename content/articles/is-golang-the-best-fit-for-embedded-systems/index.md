@@ -6,7 +6,7 @@ url: /is-golang-the-best-fit-for-embedded-systems/
 title: Is Golang the Best Fit for Embedded Systems?
 description: This article will analyze the use of Golang in embedded programming and compare it to the C language.
 author: carol-wanjiru
-date: 2022-04-04T00:00:00-02:33
+date: 2022-05-01T00:00:00-12:33
 topics: [Languages]
 excerpt_separator: <!--more-->
 images:
@@ -14,27 +14,22 @@ images:
 - url: /engineering-education/is-golang-the-best-fit-for-embedded-systems/hero.jpg
   alt: Is Golang the Best Fit for Embedded Systems Hero Image
 ---
-An embedded system combines hardware and software to perform specific functions, usually within a larger system. 
+An embedded system combines hardware and software to perform specific functions, usually within a larger system. Industrial machines, automobiles, cameras, airplanes, and vending machines are some of the possible use cases of an embedded system. 
 <!--more-->
-Industrial machines, automobiles, cameras, airplanes, and vending machines are some of the possible use cases of an embedded system. 
+Embedded systems are programmable and utilize languages like *C, C++, Python*, and *Java*. In the recent past, there have been numerous suggestions about using Golang as the primary language in embedded systems. 
 
-Embedded systems are programmable and utilize languages like *C, C++, Python*, and *Java*.
-
-In the recent past, there have been numerous suggestions about using Golang as the primary language in embedded systems. 
-
-Golang is a relatively new programming language whose popularity has risen rapidly.
+[Golang](https://en.wikipedia.org/wiki/Go_(programming_language)) is a relatively new programming language whose popularity has risen rapidly.
 
 ### Requirements of embedded systems
 The needs of embedded systems are quite different from those of a traditional computer-based system. 
 
 Embedded systems mainly require the following six types of functionalities:
-
-- Performance
-- Efficiency
-- Reliability
-- Safety
-- Security
-- Usability
+1. Performance
+2. Efficiency
+3. Reliability
+4. Safety
+5. Security
+6. Usability
 
 We'll discuss each of these requirements in detail, starting with performance:
 
@@ -65,9 +60,7 @@ In real-time systems, such as those in autonomous cars, safety is a key factor b
 A [fault tree analysis](https://sixsigmastudyguide.com/fault-tree-analysis/#) is critical in assessing the root cause of safety threats in an embedded system. The safety requirements should determine the system risks and the potential solutions.
 
 #### Security
-The security of embedded systems is important due to the rising cases of cyber-attack. 
-
-These security issues can disrupt critical functions in embedded systems. For instance, they can disable power plants and interfere with autonomic vehicles. 
+The security of embedded systems is important due to the rising cases of cyber-attacks. These security issues can disrupt critical functions in embedded systems. For instance, they can disable power plants and interfere with automatic vehicles. 
 
 Protecting embedded systems requires the implementation of encryption and authentication systems to control data accessibility.
 
@@ -80,6 +73,8 @@ For instance, display screens for devices should accommodate changing lighting s
 According to the [Stack Overflow 2021 survey](https://insights.stackoverflow.com/survey/2021#most-loved-dreaded-and-wanted-language-want), [Golang](https://go.dev/) is one of the top languages among developers.
 
 ![Most wanted languages](/engineering-education/is-golang-the-best-fit-for-embedded-systems/most-wanted-languages.png)
+
+[*Image source*](https://insights.stackoverflow.com/survey/2021#most-loved-dreaded-and-wanted-language-want)
 
 Some of the reasons why Golang is perfect for building embedded systems include:
 
