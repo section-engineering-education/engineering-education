@@ -229,7 +229,7 @@ We use the `round` method from NumPy.
 
 ```python
 import numpy as np
-dnn_pred = np.round(y_preds)
+dnn_pred = np.round(dnn_pred)
 ```
 #### Importing the classification report
 Let's import the `classification_report` that will print the performance scores:
@@ -333,7 +333,7 @@ These scores are also almost uniform for both classes. It ensures fair treatment
 Let's move to oversampling technique.
 
 ### Implementing the oversampling technique
-The undersampling technique will increase the data samples in the minority class (1) to have the same number as the majority class. It will duplicate the data samples in the minority class. We will also use the Pandas `sample` method to perform oversampling.
+The oversampling technique will increase the data samples in the minority class (1) to have the same number as the majority class. It will duplicate the data samples in the minority class. We will also use the Pandas `sample` method to perform oversampling.
 
 ```python
 df_class_oversample = df_minority_class.sample(count_majority_class, replace=True)
