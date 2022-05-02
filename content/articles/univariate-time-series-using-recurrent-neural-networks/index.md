@@ -6,7 +6,7 @@ url: /univariate-time-series-using-recurrent-neural-networks/
 title: Univariate time series using Recurrent Neural Networks
 description: This tutorial will show a reader how to build a univariate time series model that predicts monthly milk production using a Recurrent Neural Network (RNN).
 author: james-maingi
-date: 2022-04-20T00:00:00-21:00
+date: 2022-05-02T00:00:00-21:00
 topics: [Machine Learning]
 excerpt_separator: <!--more-->
 images:
@@ -18,12 +18,19 @@ A time series consists of various data points sequentially organized in equal in
 <!--more-->
 A time series model can perform various tasks: weather forecasting, stock price prediction, and cryptocurrency prediction. For example, a time series model will analyze the past Bitcoin prices and predict future prices. It helps investors know when to buy and sell Bitcoin to gain profits.
 
-A univariate time series has only a single variable that trains the model. For example, a weather forecast model uses the past recorded temperature values to predict future temperature. We will build a univariate time series model that predicts monthly milk production. We will implement the model using a Recurrent Neural Network (RNN). 
+A univariate time series has only a single variable that trains the model. For example, a weather forecast model uses past recorded temperature values to predict future temperatures. We will build a univariate time series model that predicts monthly milk production. We will implement the model using a Recurrent Neural Network (RNN). 
 
-There are various [types of RNN (https://www.simplilearn.com/tutorials/deep-learning-tutorial/rnn). We will focus on Long Short-Term Memory(LSTM) which is best suited for time series modeling.
+There are various [types of RNN](https://www.simplilearn.com/tutorials/deep-learning-tutorial/rnn). We will focus on Long Short-Term Memory(LSTM), which is best suited for time series modeling.
+
+### Prerequisites]
+- A reader should have the basic knowledge and understanding of the following before implementing the time series model:
+
+- [Time series terms and concepts](/engineering-education/introduction-to-time-series/)
+- A brief introduction to [neural networks architecture and concepts](/engineering-education/introduction-to-neural-networks/)
+- Know how to build an [artificial neural network with Keras](/engineering-education/build-ann-with-keras/)
+- How to run a Python project in [Google Colab](https://colab.research.google.com/)
 
 ### Table of contents
-- [Prerequisites](#prerequisites)
 - [Getting started with Recurrent Neural Network (RNN)](#getting-started-with-recurrent-neural-network-rnn)
 - [Monthly milk production dataset](#monthly-milk-production-dataset)
 - [Importing Matplotlib](#importing-matplotlib)
@@ -39,16 +46,8 @@ There are various [types of RNN (https://www.simplilearn.com/tutorials/deep-lear
 - [Conclusion](#conclusion)
 - [References](#references)
 
-### Prerequisites]
-- A reader should have the basic knowledge and understanding of the following before implementing the time series model:
-
-- [Time series terms and concepts](/engineering-education/introduction-to-time-series/)
-- A brief introduction to [neural networks architecture and concepts](/engineering-education/introduction-to-neural-networks/)
-- Know how to build an [artificial neural network with Keras](/engineering-education/build-ann-with-keras/)
-- How to run a Python project in [Google Colab](https://colab.research.google.com/)
-
 ### Getting started with Recurrent Neural Network (RNN)
-A Recurrent Neural Network is a variant of the typical artificial neural network that can model sequential data. Sequential data depends on historical/past data points to make future predictions. Recurrent neural networks use an internal memory that helps them to store information retrieved from the previous data points and use the information to generate other data points. Recurrent neural networks implement a feedback loop within the hidden layers that distinguishes them from the traditional artificial neural networks.
+A Recurrent Neural Network is a variant of the typical artificial neural network that can model sequential data. Sequential data depends on historical/past data points to make future predictions. Recurrent neural networks use an internal memory that helps them to store information retrieved from the previous data points and use the information to generate other data points. Recurrent neural networks implement a feedback loop within the hidden layers that distinguish them from the traditional artificial neural networks.
 
 The image below shows the distinction between a traditional artificial neural network and a recurrent neural network:
 
@@ -56,9 +55,9 @@ The image below shows the distinction between a traditional artificial neural ne
 
 *[Image Source: Simplilearn](https://www.simplilearn.com/ice9/free_resources_article_thumb/Simple_Recurrent_Neural_Network.png)*
 
-The feedback loops in the hidden layers help the recurrent neural network process and analyze the sequential data for model prediction. The feedback loops also introduces a sequential memory that helps determine the order in which the data values were input into the recurrent neural network. Even though the recurrent neural network is a better improvement of the traditional artificial neural network, it suffers from a long-term dependency problem.  
+The feedback loops in the hidden layers help the recurrent neural network process and analyze the sequential data for model prediction. The feedback loops also introduce a sequential memory that helps determine the order in which the data values were input into the recurrent neural network. Even though the recurrent neural network is a better improvement than the traditional artificial neural network, it suffers from a long-term dependency problem.  
 
-A long-term dependency problem occurs when the sequential memory of the recurrent neural network fails, and the RNN does not determine the order of the data points. The sequential memory fails when the recurrent neural network uses a sequential data recorded over a long time, for example a time series recorded for many years. 
+A long-term dependency problem occurs when the sequential memory of the recurrent neural network fails, and the RNN does not determine the order of the data points. The sequential memory fails when the recurrent neural network uses sequential data recorded over a long time, for example, a time series recorded for many years. 
 
 The RNN will not remember the information for a long time and therefore lose track of the order of the inputs and how the data points depend on each other. It can not process and analyze the dataset that has longer-term dependencies. 
 
@@ -68,12 +67,12 @@ The solution of this problem is to introduce the Long Short-Term Memory(LSTM). T
 
 *[Image Source: Medium](https://miro.medium.com/max/1400/0*O4PBs28rExPubWy0.png.png)*
 
-LSTM implements a concept known as gates which solves the long-term dependency problem. It therefore solves complex deep learning problems that are memory intensive such as speech recognition, time series analysis, machine translation, and other complex natural language processing without losing its internal memory.  
+LSTM implements a concept known as gates which solves the long-term dependency problem. It, therefore, solves complex deep learning problems that are memory intensive such as speech recognition, time series analysis, machine translation, and other complex natural language processing without losing its internal memory.  
 
-To understand the LSTM structure in details, read this [article](https://medium.com/tech-break/recurrent-neural-network-and-long-term-dependencies-e21773defd92). In this tutorial, we will implement LSTM for time series modeling. LSTM is much faster and uses less computational power. We will use it to handle the complex patterns in the time series.
+To understand the LSTM structure in detail, read this [article](https://medium.com/tech-break/recurrent-neural-network-and-long-term-dependencies-e21773defd92). In this tutorial, we will implement LSTM for time series modeling. LSTM is much faster and uses less computational power. We will use it to handle the complex patterns in the time series.
 
 ### Monthly milk production dataset
-We will use the monthly milk production dataset to build the time series model. The dataset is univariate since it only has one variable that trains the time series model. Please download the monthly milk production dataset [here](https://drive.google.com/file/d/1I0Z_iwUs8mZvIMvB_HULi9qcT-y030gm/view?usp=sharing)
+We will use the monthly milk production dataset to build the time series model. The dataset is univariate since it only has one variable that trains the time series model. You can download the monthly milk production dataset [here](https://drive.google.com/file/d/1I0Z_iwUs8mZvIMvB_HULi9qcT-y030gm/view?usp=sharing)
 
 We will load the monthly milk production dataset using Pandas. Let's import this necessary library.
 
@@ -237,11 +236,11 @@ To compile the sequential time series model, apply this code:
 ```python
 lstm_model.compile(optimizer='adam', loss='mse')
 ```
-We compile the sequential time series model using the `compile` function. For compilation process to work, we have passed the following parameters.
+We compile the sequential time series model using the `compile` function. For the compilation process to work, we have passed the following parameters.
 
-- optimizer -It will improve and enhance the performance of the sequential time series model. We pass `adam` as the optimizer for the model compilation process to work.
+- optimizer - it will improve and enhance the performance of the sequential time series model. We pass `adam` as the optimizer for the model compilation process to work.
 
-- loss - It will keep track and calculate all the model errors. We pass `mse` as the parameter value.
+- loss - it will keep track and calculate all the model errors. We pass `mse` as the parameter value.
 
 ### Printing the summary of the sequential time series model
 To print the sequential time series model summary, apply this code:
@@ -278,7 +277,7 @@ prediction_result = []
 test_batches = scaled_train_dates[-n_input:]
 reshaping_batches = test_batches.reshape((1, n_input, n_features))
 ```
-The `reshape` method will reshape the testing time series values. We will then save predicted output in the `prediction_result` variable. We then use the following `for` loop function to loop through the testing dataset. It will analyze the data points and make predictions.
+The `reshape` method will reshape the testing time series values. We will then save the predicted output in the `prediction_result` variable. We then use the following `for` loop function to loop through the testing dataset. It will analyze the data points and make predictions.
 
 ```python
 for i in range(len(test_dates)):
