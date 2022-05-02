@@ -3,10 +3,10 @@ layout: engineering-education
 status: publish
 published: true
 url: /implementing-techniques-to-handle-imbalanced-data-in-deep-neural-networks/
-title: Implementing undersampling, oversampling and SMOTE techniques to handle imbalanced data in deep neural networks
+title: Implementing undersampling, oversampling, and SMOTE techniques to handle imbalanced data in deep neural networks
 description: This tutorial will implement undersampling, oversampling, and SMOTE techniques to balance the dataset.
 author: willyngashu
-date: 2022-04-21T00:00:00-14:48
+date: 2022-05-02T00:00:00-14:48
 topics: [Machine Learning]
 excerpt_separator: <!--more-->
 images:
@@ -57,7 +57,7 @@ To easily understand the techniques implemented in this tutorial, the reader sho
 ### Building the deep neural network model using an imbalanced dataset
 We will build a customer churn classification model. The model will predict the number of customers who will close their accounts and leave the bank. We will use an imbalanced dataset to build the model. You will get the imbalanced dataset for this tutorial [here](https://drive.google.com/file/d/1Hlb7T2MssGpPXSdDZ8LqQfXgsrdMCC33/view?usp=sharing)
 
-After the downloading the dataset, we will load the dataset into our project using Pandas.
+After downloading the dataset, we will load the dataset into our project using Pandas.
 
 ```python
 import pandas as pd
@@ -79,7 +79,7 @@ The code displays the following data points:
 Let's further explore our imbalanced dataset to have a detailed understanding of the dataset.
 
 ### Counting the data samples in each class
-Our dataset has two classes `1` and a `0` class. The `1` class represents the customers who will leave the bank, and `0` class represents the customer who will not leave the bank. Counting the data samples in each class will enable us to see the class imbalance.
+Our dataset has two classes `1` and a `0` class. The `1` class represents the customers who will leave the bank, and the `0` class represents the customer who will not leave the bank. Counting the data samples in each class will enable us to see the class imbalance.
 
 ```python
 df.Churn.value_counts()
@@ -207,10 +207,10 @@ We therefore use the [Recall](https://towardsdatascience.com/methods-for-dealing
 
 ### The performance scores
 - Precision
-The precision performance score indicates the true positives values in the prediction result divided by all the prediction values (both true positives and false positives values). 
+The precision performance score indicates the true positive values in the prediction result divided by all the prediction values (both true positives and false positives values). 
 
 - Recall
-Recall performance score indicates the true positives values in the prediction result divided by the number of actual values in the test samples.  It represents the true positive values that the deep neural network fails to identify after a prediction.
+Recall performance score indicates the true positive values in the prediction result divided by the number of actual values in the test samples.  It represents the true positive values that the deep neural network fails to identify after a prediction.
 
 - F1-score
 F1-score calculates the average of the precision and recall performance scores.
@@ -253,7 +253,7 @@ Implementing dataset balancing using the three-technique will ensure we give fai
 ### Implementing the undersampling technique
 The undersampling technique will reduce the data samples in the majority class(0) to have the same number as the minority class. We will use the Pandas `sample` method to perform undersampling. Let's execute this code to keep track of the number of data samples in each class:
 
-```pyton
+```python
 count_majority_class, count_minority_class = df.Churn.value_counts()
 ```
 We then save the majority and minority classes in new variables as follows:
@@ -302,7 +302,7 @@ The code will train the deep neural network using the balanced dataset and displ
 
 ![Training after undersampling](/engineering-education/implementing-techniques-to-handle-imbalanced-data-in-deep-neural-networks/training-after-undersampling.png)
 
-We will also not use the accuracy to measure the performance of thedeep neural network. Let's make predictions and get the classification report:
+We will also not use the accuracy to measure the performance of the deep neural network. Let's make predictions and get the classification report:
 
 #### Making predictions after implementing undersampling
 We execute this code:
