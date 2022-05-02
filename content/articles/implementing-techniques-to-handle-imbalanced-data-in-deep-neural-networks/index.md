@@ -14,7 +14,7 @@ images:
   - url: /engineering-education/implementing-techniques-to-handle-imbalanced-data-in-deep-neural-networks/hero.jpg
     alt: Handling imbalanced data in deep neural networks Hero image
 ---
-In deep neural networks(DNN), the goal is always to implement various machine learning techniques to balance the classes before using the dataset. This tutorial will implement undersampling, oversampling, and SMOTE techniques to balance the dataset.
+In Deep Neural Networks (DNN), the goal is always to implement various machine learning techniques to balance the classes before using the dataset. This tutorial will implement undersampling, oversampling, and SMOTE techniques to balance the dataset.
 <!--more-->
 A deep neural network is an artificial neural network that has many hidden layers between the input and output layers. It uses different datasets to produce a deep learning model. The final model can perform image classification, computer vision, and natural language processing. It can either use a balanced or imbalanced dataset. A balanced dataset is the best since it will produce an optimized deep learning model. An imbalanced dataset has an unequal number of data samples in the dataset classes and will not give the best model.
 
@@ -48,10 +48,10 @@ The goal is always to implement various machine learning techniques to balance t
 To easily understand the techniques implemented in this tutorial, the reader should:
 
 - Have [Python programming](https://www.programiz.com/python-programming) knowledge.
-- Know [Deep Learning](https://www.section.io/engineering-education/introduction-to-deep-learning/)
-- Know some of the [Deep Learning algorithms](https://www.simplilearn.com/tutorials/deep-learning-tutorial/deep-learning-algorithm)
-- Understand [neural networks](/engineering-education/introduction-to-neural-networks/)
-- Know how to implement a simple [neural network with TensorFlow's Keras](https://www.tensorflow.org/guide/keras/sequential_model)
+- Know [Deep Learning](https://www.section.io/engineering-education/introduction-to-deep-learning/).
+- Know some of the [Deep Learning algorithms](https://www.simplilearn.com/tutorials/deep-learning-tutorial/deep-learning-algorithm).
+- Understand [neural networks](/engineering-education/introduction-to-neural-networks/).
+- Know how to implement a simple [neural network with TensorFlow's Keras](https://www.tensorflow.org/guide/keras/sequential_model).
 - Use [Google Colab](https://research.google.com/colaboratory/) to implement the techniques.
 
 ### Building the deep neural network model using an imbalanced dataset
@@ -88,7 +88,7 @@ The code will display the following output:
 
 ![Counting the data samples](/engineering-education/implementing-techniques-to-handle-imbalanced-data-in-deep-neural-networks/counting-data-samples.png)
 
-The `0` class has 5163 data samples, and the `1` has 1869 data samples. It shows we have a class imbalance, and we will balance the classes later on when implementing the three techniques. The `0` class is the majority class in the imbalanced dataset, and the `1` class is the minority.
+The `0` class has 5163 data samples, and the `1` class has 1869 data samples. It shows we have a class imbalance, and we will balance the classes later on when implementing the three techniques. The `0` class is the majority class in the imbalanced dataset, and the `1` class is the minority.
 
 #### Printing all the columns
 To print all the columns, input this code:
@@ -251,7 +251,7 @@ Keenly observe the precision, recall, and f1-score values for both the classes (
 Implementing dataset balancing using the three-technique will ensure we give fair treatment to both classes. It will increase the performance score for the minority class. After implementing these three techniques, we will compare the precision, recall, and f1-score to see any improvements. Let's start by implementing the undersampling technique.
 
 ### Implementing the undersampling technique
-The undersampling technique will reduce the data samples in the majority class(0) to have the same number as the minority class. We will use the Pandas `sample` method to perform undersampling. Let's execute this code to keep track of the number of data samples in each class:
+The undersampling technique will reduce the data samples in the majority class (0) to have the same number as the minority class. We will use the Pandas `sample` method to perform undersampling. Let's execute this code to keep track of the number of data samples in each class:
 
 ```python
 count_majority_class, count_minority_class = df.Churn.value_counts()
@@ -270,7 +270,7 @@ df_class_undersample = df_majority_class.sample(count_minority_class)
 We concatenate the undersampled majority class with the minority class. It will form a single data frame.
 
 ```python
-df_balanced = pd.concat([df_class_undesample, df_minority_class], axis=0)
+df_balanced = pd.concat([df_class_undersample, df_minority_class], axis=0)
 ```
 We then print the number of data samples in the new balanced dataset.
 
@@ -333,7 +333,7 @@ These scores are also almost uniform for both classes. It ensures fair treatment
 Let's move to oversampling technique.
 
 ### Implementing the oversampling technique
-The undersampling technique will increase the data samples in the minority class(1) to have the same number as the majority class. It will duplicate the data samples in the minority class. We will also use the Pandas `sample` method to perform oversampling.
+The undersampling technique will increase the data samples in the minority class (1) to have the same number as the majority class. It will duplicate the data samples in the minority class. We will also use the Pandas `sample` method to perform oversampling.
 
 ```python
 df_class_oversample = df_minority_class.sample(count_majority_class, replace=True)
@@ -402,7 +402,7 @@ From the classification report, observe the precision, recall, and f1-score for 
 Let's move to the SMOTE technique.
 
 ### Implementing the SMOTE technique
-Synthetic Minority Oversampling Technique (SMOTE) is a machine learning technique that balances the dataset classes. It generates synthetic and unique data samples for the minority class to achieve a balanced dataset. We will import SMOTE from Imbalanced-learn. To install Imbalanced-learn, execute this command in Google Colab.
+Synthetic Minority Oversampling Technique (SMOTE) is a machine learning technique that balances the dataset classes. It generates synthetic and unique data samples for the minority class to achieve a balanced dataset. We will import SMOTE from `Imbalanced-learn`. To install `Imbalanced-learn`, execute this command in Google Colab.
 
 ```bash
 ! pip install imbalanced-learn
@@ -470,11 +470,9 @@ From the classification report, observe the precision, recall, and f1-score for 
 Using the three techniques, we have balanced the dataset and improved the performance scores.
 
 ### Conclusion
-We have learned how to handle an imbalanced dataset in deep neural networks. We implemented undersampling, oversampling, and SMOTE techniques.
+We have learned how to handle an imbalanced dataset in deep neural networks. We implemented undersampling, oversampling, and SMOTE techniques. We started by building the deep neural network model using an imbalanced dataset and got the performance score. We were building a customer churn classification model. We then implemented the three techniques to balance the dataset and also got the performance score. 
 
-We started by building the deep neural network model using an imbalanced dataset and got the performance score. We were building a customer churn classification model. We then implemented the three techniques to balance the dataset and also got the performance score. 
-
-The three techniques improved the precision, recall, and f1-score for the deep neural network. You can access the Google Colab notebook for this tutorial [here](https://colab.research.google.com/drive/1CnIXJDJDZYmdfutQEYzo4Z0htKBgLurO?usp=sharing)
+These three techniques improved the precision, recall, and f1-score for the deep neural network. You can access the Google Colab notebook for this tutorial [here](https://colab.research.google.com/drive/1CnIXJDJDZYmdfutQEYzo4Z0htKBgLurO?usp=sharing)
 
 ### References
 - [What is imbalanced data?](https://www.analyticsvidhya.com/blog/2021/06/5-techniques-to-handle-imbalanced-data-for-a-classification-problem/)
