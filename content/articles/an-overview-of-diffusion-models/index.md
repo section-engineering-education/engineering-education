@@ -1,4 +1,21 @@
+---
+layout: engineering-education
+status: publish
+published: true
+url: /an-overview-of-diffusion-models/
+title: An Overview of Diffusion Models
+description: This article will give an overview of diffusion models.
+author: esther-awuor
+date: 2022-05-02T00:00:00-17:30
+topics: [Machine Learning]
+excerpt_separator: <!--more-->
+images:
+
+  - url: /engineering-education/an-overview-of-diffusion-models/hero.png
+    alt: An Overview of Diffusion Models Example Image
+---
 Generative Adversarial Networks (GANs) currently hold the state-of-the-art on most image generation tasks when measured by sample quality metrics such as FID, Inception Score, and Precision. However, they do have their drawbacks that make them difficult to scale and apply to new domains.
+<!--more-->
 Diffusion models have been around for a while. But, for the first time, this class of models have been pushed to the point where the images they produce images of high-quality. They are a class of likelihood-based models which have recently been shown to produce high-quality images while offering desirable properties such as distribution coverage, a stationary training objective, and easy scalability. Recently, the Diffusion Models Beat GANs on Image Synthesis. This research is discussed in this [paper](ttps://arxiv.org/abs/2105.05233) which will be the basis of our article discussion.
 
 ### Prerequisites
