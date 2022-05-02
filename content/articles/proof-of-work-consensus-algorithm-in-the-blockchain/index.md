@@ -61,7 +61,8 @@ Proof-of-work and proof-of-stake are consensus algorithms whose use in blockchai
 PoW has received criticism considering its cost inefficiency, excessive time consumption, and high e-waste. Consensus algorithms like PoS are superior in these aspects. They are cost-effective and scalable. But PoW's greater security remains its most profound leverage, and cryptocurrencies are yet to abandon it.
 
 ### Further reading
-
 - [Introduction to Blockchain Architecture](/engineering-education/an-introduction-to-blockchain-architecture/)
-
 - [The History of Blockchain](/engineering-education/history-of-blockchain/)
+
+---
+Peer Review Contributions by: [Wilkister Mumbi](/engineering-education/authors/wilkister-mumbi/)
