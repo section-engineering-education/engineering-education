@@ -57,3 +57,6 @@ To finish up, we've learned that diffusion models gradually add Gaussian noise a
 ### Further reading
 - [Diffusion Models Beat GANs on Image Synthesis](https://arxiv.org/abs/2105.05233).
 - [GLIDE: Towards Photorealistic Image Generation and Editing with Text-Guided Diffusion Models](https://arxiv.org/abs/2112.10741).
+
+---
+Peer Review Contributions by: [Wilkister Mumbi](/engineering-education/authors/wilkister-mumbi/)
