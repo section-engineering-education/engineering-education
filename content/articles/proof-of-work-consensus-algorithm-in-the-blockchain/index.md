@@ -1,5 +1,19 @@
-## Proof of Work Consensus Algorithm in the Blockchain
+---
+layout: engineering-education
+status: publish
+published: true
+url: /proof-of-work-consensus-algorithm-in-the-blockchain/
+title: Proof Of Work Consensus Algorithm In The Blockchain
+description: This article discusses the proof of work consensus, why it's needed in a blockchain network, and how it helps prevent double-spending.
+author: gregory-munene
+date: 2022-05-02T00:00:00-10:00
+topics: [Blockchain]
+excerpt_separator: <!--more-->
+images:
 
+  - url: /engineering-education/proof-of-work-consensus-algorithm-in-the-blockchain/hero.jpg
+    alt: Proof Of Work Consensus Algorithm In The Blockchain Example Image
+---
 When Nakamoto Satoshi came up with and started executing the idea of the blockchain, he had one goal in mind- eliminating trust-less cash systems. He wanted a system where strangers could transact without facing the risk of fraud. The Proof of Work (PoW) consensus algorithm is at the center of making the blockchain more secure.
 
 The Proof of Work consensus algorithm aims to achieve distributed trust in a P2P network of nodes using a voting protocol. This voting protocol relies on the concept of work performed by miners to introduce randomness into the decision-making process. It guarantees the verification of all entries, ensuring the users on these systems do not incur losses due to fraud.
