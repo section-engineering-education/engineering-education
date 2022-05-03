@@ -4,9 +4,9 @@ status: publish
 published: true
 url: /getting-started-with-unit-testing-with-spring-boot/
 title: Getting Started With Unit Testing With Spring Boot
-description: In this article, we will talk about how to write unit tests with Spring Boot
+description: This article will help the reader understand how to write unit tests with Spring Boot
 author: serah-muthoni
-date: 2022-04-04T00:00:00-04:30
+date: 2022-05-03T00:00:00-04:30
 topics: [API]
 excerpt_separator: <!--more-->
 images:
@@ -14,58 +14,84 @@ images:
  - url: /engineering-education/getting-started-with-unit-testing-with-spring-boot/hero.png 
    alt: Spring Boot Testing Hero Image
 ---
-
-Writing decent unit tests is a skill that takes a long time to perfect. **Unit testing** is one of the ways that developers make sure that individual units or components work correctly.
+Writing decent unit tests is a skill that takes a long time to perfect. Unit testing is one of the ways that developers ensure that individual units or components work correctly.
 <!--more-->
 Before any code is deployed, it is subjected to unit testing to fulfill quality standards. Unit testing ensures that Spring Boot applications and their components are working as expected.
-### Preliminaries
-For this tutorial, the reader would need to have:
+
+### Prerequisites
+For this tutorial, the reader would need:
 - Basic knowledge of Java programming 
 - Basic knowledge of Spring Boot
-- An IDE installed. In this tutorial, I will be using [IntelliJ IDEA Ultimate](https://www.jetbrains.com/idea/business/).
+- An IDE installed. For this tutorial, we will use [IntelliJ IDEA Ultimate](https://www.jetbrains.com/idea/business/).
+
 ### Getting started
-Before starting with the unit testing, let us first look at why it is important.
-#### Advantages of Unit Testing
-1. **By unit testing, developers can locate and fix bugs earlier:**
-    - Developers who implement unit tests into their projects early can identify and fix errors earlier.
-2. **High quality code:**
-    - By running the test several times, developers gain confidence when changing the code. They refactor their code without fear of breaking it, generating quality code at the end.
-3. **Unit testing can boost your coding skills:**  
-    - By unit testing, developers can learn how to write better code.
-### Some unit testing best practices
-It is crucial to use the best approach when writing unit testing. Below are some best practices to follow when writing unit testing:
+Before starting with the unit testing, let's first understand why it's important:
+
+#### Advantages of unit testing
+- Unit testing allows developers to locate and fix bugs earlier.
+
+- It facilitates high-quality code. By running the test several times, developers gain confidence when changing the code. 
+
+- Unit testing can boost a person's coding skills. Through this process, developers can learn how to write better code.
+
+### Best practices for unit testing
+Below are some of the best practices when writing unit testing:
+
 ####  Separate the functionality that needs to be evaluated.
-The functionality to be tested should be isolated by restricting the context in which loaded components are used. This is achieved by using the `@Test` annotation. The advantage of this approach is that it is easy to locate tricky bugs and promote clean production.
+The functionality to be tested should be isolated by restricting the context in which loaded components are used. This is achieved by using the `@Test` annotation. 
 
-This particular feature, if used wisely, can help us build larger app tests without such a hefty penalty in terms of performance, particularly for small-sized apps.
+The advantage of this approach is that it is easy to locate tricky bugs and thus, promote clean production.
+
+This particular feature, if used wisely, can help developers test large applications without impacting performance negatively.
+
 #### Loading functionality in slices
-It is crucial to restrict the application context to only the Spring components included in the test scenario when testing for an extensive application. This is achieved by including them in the annotation declaration.
+It is crucial to restrict the application context to only the Spring components included in the test scenario. This is achieved by including them in the annotation declaration.
 
-This particular feature, if used wisely, can help us build larger app without such a hefty penalty in terms of performance, particularly for small-sized apps.
 #### Use the `@DataJpaTest` Annotation
-To increase the performance of components. We use the `@DataJpaTest` annotation since it will not load beans annotated with`@Service`, `@Controller`, and the entire application context.
+To increase the performance of different components, we use the `@DataJpaTest` annotation.
+
+This is because it will not load `beans` annotated with`@Service`, `@Controller`, and the entire application context.
+
 #### Performing tests that are database-related
-It's good to simulate database-interacting beans and disable Spring Boot test DB initialization for the Spring profile where the tests are executed. When testing controllers, you should keep this in mind.
+It's good to simulate database-interacting beans and disable Spring Boot test DB initialization for the Spring profile where the tests are executed. 
+
+You should always keep this practice in mind when testing controllers.
+
 #### Make your test simple
-Whenever an expert developer teaches unit testing to beginners, he should always ensure that the tests are correct and straightforward. To achieve this, he should keep the test with low cyclomatic complexity. Cyclomatic complexity is a coding statistic that shows how many different execution pathways a procedure can take. Developers are less likely to introduce problems when working on code with a lesser complexity since it is easier to comprehend and maintain.
-### Reasons for testing...
+Whenever senior developers teach unit testing to beginners, they should always ensure that the tests are straightforward. 
+
+To achieve this, developers should keep the test with low cyclomatic complexity. Cyclomatic complexity is a coding statistic that shows how many different execution pathways a procedure can take. 
+
+Developers are less likely to introduce problems when working on code with a lesser complexity since it is easier to understand and maintain.
+
+### Reasons for testing
 #### Repositories
-The repository is a bridge between the application and the database. It is tested to ensure that relationships between database and the applications have been correctly implemented.
+The repository is a bridge between the application and the database. It is tested to ensure that relationships between the database and the applications have been correctly implemented.
+
 #### Services
-This is the layer where all the business logic is implemented. It is tested to make sure that the business logic is correct.
+This is the layer where the business logic is implemented. It is tested to ensure that the business logic is correct.
+
 ### How to test controllers
-Let us now look at how to test controllers in Spring Boot. To accomplish this, you will need to import some dependencies using the *Spring Initializer* and *IntelliJ IDEA Ultimate*. In *IntelliJ IDEA Ultimate*, lets us create a Spring Boot application using the Spring Initializr service. Open `file>new>project` and select *Spring Initializr* as shown below:
-> Note: If you're not using IntelliJ IDEA Ultimate, you'll need to go to the [Spring Initializer](https://start.spring.io/) and add the *Spring Web* dependency to your project. Generate the zipped file and open it using your favourite IDE.
+Let us now look at how to test controllers in Spring Boot. To accomplish this, you will need to import some dependencies using the *Spring Initializer* and *IntelliJ IDEA Ultimate*. 
+
+In *IntelliJ IDEA Ultimate*, let's create a Spring Boot application using the Spring Initializr service. 
+
+Open `file>new>project` and select *Spring Initializr* as shown below:
+
+> Note: If you're not using IntelliJ IDEA Ultimate, you'll need to go to the [Spring Initializer](https://start.spring.io/) and add the *Spring Web* dependency to your project. Generate the zipped file and then open it using your favorite IDE.
 
 ![Spring Initializer](/engineering-education/getting-started-with-unit-testing-with-spring-boot/spring-initializer.png)
 
 > Note: I have renamed my Package name to `unittesting`.
 
-Click next to proceed. Type *web* to search the required dependencies in the search bar. Select *Spring Web* and click *finish* to download the initializr template:
+Click next to proceed. Type *web* to search the required dependencies in the search bar. Select *Spring Web* and click *finish* to download the *initializr* template:
 
 ![Spring Initializer](/engineering-education/getting-started-with-unit-testing-with-spring-boot/spring-initializer-dependency.png)
 
-We've prepared the environment successfully.🔥 Now we need to test the controller. In `/src/main/java/unittesting` create a new package named `controller`. Proceed to create a Java class named `HelloContoller.java` in  `/src/main/java/unittesting/controller`. Within that file, add the code below:
+We've prepared the environment successfully.🔥 Now we need to test the controller. In `/src/main/java/unittesting` create a new package named `controller`. 
+
+Proceed to create a Java class named `HelloContoller.java` in  `/src/main/java/unittesting/controller`. Within that file, add the code below:
+
 ```java
 package unittesting.controller;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -79,16 +105,20 @@ public class HelloController {
     }
 }
 ```
-Let us look at the code snippet above:
+
+Let's look at the code snippet above:
 - `@GetMapping` is an annotation used to map the request to the method.
 - `@RequestParam` is an annotation used to map the request parameter to the method parameter.
 - `@RestController` is an annotation used to indicate that the class is a controller.
 
-Let us now generate the controller test.  In the `HelloController.java` file, right-click and select `Generate..>Test..` in the menu. Select the available method (which we want to test) under the member and click ok.
+The next step is to generate the controller test.  In the `HelloController.java` file, right-click and select `Generate..>Test..` in the menu. 
+
+Select the available method (which we want to test) under the *member* and click *ok*.
 
 ![Spring Initializer](/engineering-education/getting-started-with-unit-testing-with-spring-boot/testing.png)
 
 A new file `/src/test/java/unittesting/controller/HelloControllerTest.java` will be created. Modify the file to have the code below:
+
 ```java
 package unittesting.controller;
 import org.junit.jupiter.api.Test;
@@ -104,9 +134,11 @@ class HelloControllerTest {
     }
 }
 ```
-So far, we have created a test without including the Spring context. Let us generate another test using the JUnit 5 extension, which will have Spring extensions provided by Spring.  
 
-Repeat the same procedure to generate another test. Name the second test class `HelloControllerIntTest.java`. In `/src/test/java/controller/HelloControllerIntTest.java`, modify the code as shown below:
+So far, we have created a test without including the Spring context. We should now generate another test using the *JUnit 5* extension. It will have Spring extensions provided by Spring.  
+
+Repeat the same procedure to generate another test. Name the second test class `HelloControllerIntTest.java`. In `/src/test/java/controller/HelloControllerIntTest.java`, modify the code, as shown below:
+
 ```java
 package unittesting.controller;
 import static org.junit.jupiter.api.Assertions.*;
@@ -132,18 +164,18 @@ class HelloControllerIntTest {
     }
 }
 ```
-Let us look at the code snippet above:
+In the code snippet above:
 - `@ExtendWith` is an annotation used to extend the test with the SpringExtension.
-- `@WebMvcTest`: this annotation auto-configures the MockMVC (so we can auto-wire it as in the code above). We specify the class we want to test.
+- `@WebMvcTest` auto-configures the MockMVC (so we can auto-wire it as demonstrated in the code above). We specify the class we want to test.
 
-Let us run our controller to be sure it works correctly.
+Let's test the controller to be sure it works correctly.
 
-In the `HelloControllerTest.java` file, right click and run `HelloControllerTest`. You should see the test passes as shown below:
+In the `HelloControllerTest.java` file, right-click and run `HelloControllerTest`. You should see the test passes, as shown below:
 
 ![Test output](/engineering-education/getting-started-with-unit-testing-with-spring-boot/output.png)
 
 ### Conclusion
-Congratulations! 🚀 You have successfully tested the controller. There are various ways to create unit tests in Spring Boot. This tutorial has involved MockMVC to write the unit test.
+Congratulations! You have successfully tested the controller. There are various ways to create unit tests in Spring Boot. In this tutorial, we have learned how to conduct tests using MockMV.
 
 ---
 Peer Review Contributions by: [John Amiscaray](/engineering-education/authors/john-amiscaray/)
