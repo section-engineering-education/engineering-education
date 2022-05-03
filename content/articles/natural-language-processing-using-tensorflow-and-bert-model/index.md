@@ -6,7 +6,7 @@ url: /natural-language-processing-using-tensorflow-and-bert-model/
 title: Natural language Processing using TensorFlow and Bert Model
 description: This tutorial will guide readers on how to build a sentiment analysis model using BERT and TensorFlow.
 author: charles-ndirutu
-date: 2022-05-03T00:00:00-04:50
+date: 2022-05-03T00:00:00-05:30
 topics: [Machine Learning]
 excerpt_separator: <!--more-->
 images:
