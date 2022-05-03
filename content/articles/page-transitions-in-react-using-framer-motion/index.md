@@ -1,4 +1,4 @@
-The React.js framework allows you to create single-page applications. These are applications in which the pages won’t reload when you click on different links. The transition from one link to the next is so quick that it's difficult to notice when the content changes. As a result, we can use transitions while navigating through various links or routes on a website. This improves the application's User Experience.
+The React.js framework allows you to create single-page applications. These are applications in which the pages won’t reload when you click on different links. The transition from one link to the next is so quick that it's difficult to notice when the content changes. As a result, we can use transitions while navigating through various links or routes on a website. This improves the application's user Experience.
 
 For some, transitioning from page to page has often seemed difficult. We can archive that using a library called framer motion. In this tutorial, we'll take a look at what framer motion is and how to use it to make page transitions
 ### What is framer motion?
