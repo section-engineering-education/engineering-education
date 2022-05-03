@@ -6,7 +6,7 @@ url: /creating-a-simple-hunt-the-wumpus-game-using-python-flask-and-socketio/
 title: How to Build a Hunt the Wumpus Game Using Python, Flask, and Socket.io
 description: In this tutorial, the reader will learn what Hunt the Wumpus game is, how it works, as well as how to clone it from scratch using Python and JavaScript.
 author: samuel-santos
-date: 2022-05-03T00:00:00-09:00
+date: 2022-05-03T00:00:00-13:00
 topics: [Languages]
 excerpt_separator: <!--more-->
 images:
