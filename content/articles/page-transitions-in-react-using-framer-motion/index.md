@@ -172,7 +172,7 @@ const Navbar = () => {
 export default Navbar;
 ```
 
-* What we did here is import `Link` from react-router-dom. We used this to create links to the location of each of our pages.
+* What we did here is import `Link` from react-router-dom. We used this to create links to the location of each of our pages which we embedded in our `Navbar`.
 
 Next up create a file called `AnimatedRoutes` and paste this:
 
