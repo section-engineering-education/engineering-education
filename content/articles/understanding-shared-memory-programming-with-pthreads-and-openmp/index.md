@@ -3,16 +3,16 @@ layout: engineering-education
 status: publish
 published: true
 url: /understanding-shared-memory-programming-with-pthreads-and-openmp/
-title: Understanding machine learning algorithms and how to Implement them
+title: Understanding Shared Memory Programming With Pthreads and OpenMp
 description: This article will discuss how to use Pthreads and OpenMP in parallel programming. Threads are referred to as lightweight processes.
 author: kelvin-munene
-date: 2022-04-06T00:00:00-04:20
+date: 2022-05-04T00:00:00-13:10
 topics: [Languages]
 excerpt_separator: <!--more-->
 images:
 
   - url: /engineering-education/understanding-shared-memory-programming-with-pthreads-and-openmp/hero.png
-    alt: Understanding Shared Memory Programming With Pthreads and Openmp Hero Image
+    alt: Understanding Shared Memory Programming With Pthreads and OpenMp Hero Image
 ---
 Shared memory helps programs communicate faster. Programs may use one or more processors and as a result, a process may have several threads. 
 <!--more-->
@@ -29,15 +29,24 @@ To follow along with this tutorial, you will need to:
 - Have basic parallel programming expertise.
 
 ### Table of contents
+- [Prerequisites](#prerequisites)
+- [Table of contents](#table-of-contents)
 - [The system architecture](#the-system-architecture)
 - [An overview of shared memory process and threads](#an-overview-of-shared-memory-process-and-threads)
 - [Managing and redistributing shared memory](#managing-and-redistributing-shared-memory)
 - [Pthreads and their use](#pthreads-and-their-use)
+  - [Developing threads](#developing-threads)
+  - [Closing threads](#closing-threads)
+  - [Cancelling a thread](#cancelling-a-thread)
+  - [Uncancelable critical sections](#uncancelable-critical-sections)
+  - [Uses of pthreads](#uses-of-pthreads)
 - [OpenMP and its use](#openmp-and-its-use)
+  - [Creating a thread using OpenMP](#creating-a-thread-using-openmp)
+  - [Parallelizing loops](#parallelizing-loops)
 - [Conclusion](#conclusion)
 
 ### The system architecture
-System architecture is a conceptual model that specifies a system's structure, behavior, and other details about the sytem. Let's start with the system architecture to better grasp shared memory programming.
+System architecture is a conceptual model that specifies a system's structure, behavior, and other details about the sytem. Let us start with the system architecture to better grasp shared memory programming.
 
 ![System architecture](/engineering-education/understanding-shared-memory-programming-with-pthreads-and-openmp/system-architecture.png)
 
@@ -54,7 +63,9 @@ Shared memory is cruCial in POSIX and Windows. Processes can't interact or share
 
 A process is a unit of work in a system. For example, text files are used to develop computer programs, which run as processes. After loading, the program may be divided into stack, heap, text, and data portions.
 
-A thread is a single instance of a sequential computer program that may be implemented at the user or kernel level. However, the thread management kernel is unaware of user-level threads. The thread library handles generation of threads, saving the thread contexts, and restoring threads.
+A thread is a single instance of a sequential computer program that may be implemented at the user or kernel level. However, the thread management kernel is unaware of user-level threads. 
+
+The thread library handles generation of threads, saving the thread contexts, and restoring threads.
 
 Threads are controlled and supported natively by the operating system in the kernel. There is no thread management code in the program. Any application has the potential to be multithreaded. A single process may be responsible for managing the threads of an application.
 
@@ -172,7 +183,7 @@ int main()
 }
 ```
 
-The output of the code will be:
+The output will be:
 
 ```bash
 A new thread was developed (3179116288)... 
@@ -329,7 +340,7 @@ OOpenMP takes care of parallelizing loops with only a few parameters and a loop 
 
 The `#pragma omp` command distributes the loop across threads. It must be used with another block of code.
 
-Let us look at an example program that adds all elements in an array. Save the code as `third.c`.
+Let us look at an example program that adds all elements in an array. Save the code as `third.c`:
 
 ```c++
 #include <stdio.h> 
