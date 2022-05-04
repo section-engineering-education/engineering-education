@@ -6,7 +6,7 @@ url: /building-an-image-classification-model-with-gradio-and-keras/
 title: Building an image classification model with Gradio and Keras
 description: This tutorial will implement a simple image classification model using Gradio and Keras. The image classification model will classify images of various flowers into labeled classes.
 author: elisha-njeche
-date: 2022-05-04T00:00:00-11:30
+date: 2022-05-04T00:00:00-11:44
 topics: [Machine Learning]
 excerpt_separator: <!--more-->
 images:
