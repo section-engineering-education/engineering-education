@@ -1,3 +1,19 @@
+---
+layout: engineering-education
+status: publish
+published: true
+url: /generating-data-for-a-random-walk-using-python/
+title: Generating data for a random walk using Python
+description: This tutorial will teach us what a random walk us, how it is applicable in real-life, and how it can be implemented and visualized using Python.
+author: duncan-ndegwa
+date: 2022-05-04T00:00:00-22:35
+topics: [Languages]
+excerpt_separator: <!--more-->
+images:
+
+- url: /engineering-education/generating-data-for-a-random-walk-using-python/hero.jpg
+  alt: Generate Random Walk In Python Example Image
+---
 A random walk is a route with no predefined way that is determined by a sequence of random choices made totally at random. A random walk could be compared to the path a cockroach may follow if it lost its mind.
 <!--more-->
 In this article, we will use Python to collect data for a random walk and use matplotlib to visualize the results.
@@ -192,3 +208,6 @@ For more information about the random walks in Python, see the links below:
 - [Visualizing random walks in Python](https://towardsdatascience.com/animated-visualization-of-random-walks-in-python-dc18f01ef15e)
 
 Happy coding!
+
+---
+Peer Review Contributions by: [Srishilesh P S](/engineering-education/authors/srishilesh-p-s/)
