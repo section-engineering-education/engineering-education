@@ -32,9 +32,7 @@ We will encrypt the word `section engineering education` and then decrypt it.
 #### Encryption
 
 ```C#
-using System;
 using System.IO;
-using System.Linq;
 using System.Security.Cryptography;
 using System.Text;
 
@@ -90,10 +88,8 @@ In the preceding example, the string `section engineering education` undergoes e
 Decryption involves the conversion of ciphertext back to original data for authorized access. `CreateDecryptor()` function uses a key to decrypt data. String keys are passed through `CreateEncryptor()` function as shown in the code below:
 
 ```C#
-using System;
 using System.IO;
 using System.Text;
-using System.Linq;
 using System.Security.Cryptography;
 namespace string_decryption
 {
