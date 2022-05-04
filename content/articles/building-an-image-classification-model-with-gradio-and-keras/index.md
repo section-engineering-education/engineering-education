@@ -6,7 +6,7 @@ url: /building-an-image-classification-model-with-gradio-and-keras/
 title: Building an image classification model with Gradio and Keras
 description: This tutorial will implement a simple image classification model using Gradio and Keras. The image classification model will classify images of various flowers into labeled classes.
 author: elisha-njeche
-date: 2022-04-09T00:00:00-10:10
+date: 2022-05-04T00:00:00-11:30
 topics: [Machine Learning]
 excerpt_separator: <!--more-->
 images:
@@ -14,15 +14,16 @@ images:
   - url: /engineering-education/building-an-image-classification-model-with-gradio-and-keras/hero.jpg
     alt: Building an image classification model with Gradio and Keras Hero Image
 ---
-Image classification is a subset of machine learning that categorizes a group of images in labeled classes. We train an image classification model using labeled images to enable the model to gain information and knowledge.
+Image classification is a subset of machine learning that categorizes a group of images into labeled classes. We train an image classification model using labeled images to enable the model to gain information and knowledge.
 <!--more-->
 The final model is then applied to a set of images so that it can classify them into one of the labeled classes. For example, an image classification model that takes in images of animals and classifies them into the labeled classes such as 'zebra', 'elephant', 'buffalo', 'lion', and 'giraffe'
 
-Sophistcated image classification models can further be applied in computer vision for [object detection](/engineering-education/object-detection-with-yolov5-and-pytorch/), [face recogntion](https://en.wikipedia.org/wiki/Facial_recognition_system), [medical imaging](), [trafffic control sytems](https://www.sciencedirect.com/topics/computer-science/traffic-control-system), [driverless cars](https://en.wikipedia.org/wiki/Self-driving_car) and [satellite imaging](https://en.wikipedia.org/wiki/Satellite_imagery)
+Sophistcated image classification models can further be applied in computer vision for [object detection](/engineering-education/object-detection-with-yolov5-and-pytorch/), [face recogntion](https://en.wikipedia.org/wiki/Facial_recognition_system), [medical imaging](), [trafffic control sytems](https://www.sciencedirect.com/topics/computer-science/traffic-control-system), [driverless cars](https://en.wikipedia.org/wiki/Self-driving_car), and [satellite imaging](https://en.wikipedia.org/wiki/Satellite_imagery)
 
 In this tutorial, we will implement a simple image classification model using [Gradio](https://gradio.app/) and [Keras](https://keras.io/). The image classification model will classify images of various flowers into labeled classes.
 
 ### Table of contents
+- [Table of contents](#table-of-contents)
 - [Prerequisites](#prerequisites)
 - [Understanding Gradio](#understanding-gradio)
 - [Installing and importing the Gradio library](#installing-and-importing-the-gradio-library)
@@ -32,47 +33,52 @@ In this tutorial, we will implement a simple image classification model using [G
 - [Setting the image height and width](#setting-the-image-height-and-width)
 - [Setting the training set](#setting-the-training-set)
 - [Setting the validation set](#setting-the-validation-set)
+- [Getting and printing all the class names](#getting-and-printing-all-the-class-names)
 - [Importing the sequential model](#importing-the-sequential-model)
 - [Adding image normalization/standardization layer](#adding-image-normalizationstandardization-layer)
 - [Adding convolution layer](#adding-convolution-layer)
 - [Adding max-pooling layer](#adding-max-pooling-layer)
+- [Adding another convolution layer](#adding-another-convolution-layer)
+- [Adding another max-pooling layer](#adding-another-max-pooling-layer)
+- [Adding another convolution layer](#adding-another-convolution-layer-1)
+- [Adding another max-pooling layer](#adding-another-max-pooling-layer-1)
 - [Adding the flattening layer](#adding-the-flattening-layer)
-- [Adding the final output layer](#adding-the-final-ouput-layer)
-- [Compiling the CNN](#compiling-the-cnn)
+- [Adding the final output layer](#adding-the-final-output-layer)
+  - [Compiling the CNN](#compiling-the-cnn)
 - [Fitting the CNN](#fitting-the-cnn)
 - [Using the CNN for image classification](#using-the-cnn-for-image-classification)
 - [Implementing Gradio](#implementing-gradio)
-- [Creating and launching the Gradio UI](#creating-and-launching-the-gradio-ui)
+  - [Creating and launching the Gradio UI](#creating-and-launching-the-gradio-ui)
 - [Uploading an image to be classified](#uploading-an-image-to-be-classified)
 - [Conclusion](#conclusion)
 - [References](#references)
 
 ### Prerequisites
 To follow along with this tutorial, the reader should have knowlegde of the following:
-- [TensorFlow basics](https://www.tensorflow.org/)
-- [Image preprocessing in Python](/engineering-education/image-preprocessing-in-python/)
-- [convolution neural networks architecture](/engineering-education/basics-of-convolution-neural-networks/)
-- How to run the model in [Google Colab](https://research.google.com/colaboratory/)
+- [TensorFlow basics](https://www.tensorflow.org/).
+- [Image preprocessing in Python](/engineering-education/image-preprocessing-in-python/).
+- [convolution neural networks architecture](/engineering-education/basics-of-convolution-neural-networks/).
+- How to run the model in [Google Colab](https://research.google.com/colaboratory/).
 
 ### Understanding Gradio
-Gradio is a machine learning library that creates an interactive application for your trained machine learning model. Gradio creates insightful user interfaces (UI) that allow a user to interact with a trained machine learning model.
+Gradio is a machine learning library that creates an interactive application for your trained machine learning model. Gradio creates insightful user interfaces(UI) that allow a user to interact with a trained machine learning model.
 
-It generates a web interface that allows the user to test the trained model and see the prediction results. We can easily integrate Gradio's user interface right in the Python notebook (either Jupyter notebook or Google Colab notebook) without having to install any dependencies.
+It generates a web interface that allows the user to test the trained model and see the prediction results. We can easily integrate Gradio's user interface right in the Python notebook(either Jupyter notebook or Google Colab notebook) without having to install any dependencies.
 
-Gradio directly works with popular machine learning libraries such as [Sckit-learn](https://scikit-learn.org/), [Tensorflow](https://www.tensorflow.org/), [Keras](https://keras.io/), [PyTorch](https://pytorch.org/) and [Hugging Face Transformers](https://huggingface.co/docs/transformers/index).
+Gradio directly works with popular machine learning libraries such as [Sckit-learn](https://scikit-learn.org/), [Tensorflow](https://www.tensorflow.org/), [Keras](https://keras.io/), [PyTorch](https://pytorch.org/), and [Hugging Face Transformers](https://huggingface.co/docs/transformers/index).
 
 In this tutorial, we will use TensorFlow's Keras to create the convolutional neural network (CNN) for image classification and use Gradio to create the user interface for the model.
 
 ### Installing and importing the Gradio library
 We install and import the Gradio library as follows:
 
-- Installing Gradio library
+- Installing Gradio library:
 
 ```bash
 !pip install gradio
 ```
 
-- Importing Gradio library
+- Importing Gradio library:
 
 ```python
 import gradio as gr
@@ -101,13 +107,13 @@ These libraries have the following functions:
 ### Importing Keras and Keras layers
 We import Keras and Keras layers as follows:
 
-- Importing Keras
+- Importing Keras:
 
 ```python
 from tensorflow import keras
 ```
 
-- Importing Keras layers
+- Importing Keras layers:
 
 ```python
 from tensorflow.keras import layers
@@ -267,7 +273,9 @@ We add the convolution layer of the CNN as follows:
 layers.Conv2D(16, 3, padding='same', activation='relu'),
 ```
 
-The `Conv2D` will be 2 dimensional and will have 16 neurons. It also has 3 image channels. The layers have a padding `same` to ensure that the neurons that create this layer have the same size. We use `relu` as an activation function because the output of this layer will be between 0 and positive infinite values.
+The `Conv2D` will be 2 dimensional and will have 16 neurons. It also has 3 image channels. The layers have a padding `same` to ensure that the neurons that create this layer have the same size. 
+
+We use `relu` as an activation function because the output of this layer will be between 0 and positive infinite values.
 
 You can read this [article](/engineering-education/basics-of-convolution-neural-networks/) for a better understanding of the convolution layer and the CNN in detail. You can also read this [article](/engineering-education/activation-functions/) for a better understanding of the `relu` activation function.
 
@@ -434,7 +442,7 @@ The `launch` method will launch the Gradio UI as shown in the output below:
 
 ![Launched Gradio UI](/engineering-education/building-an-image-classification-model-with-gradio-and-keras/launched-gradio-ui.png)
 
-The image above shows the launched Gradio UI. Using the Gradio UI we can drop the image there or upload the image to be classified. Let's upload an image.
+The image above shows the launched Gradio UI. Using the Gradio UI, we can drop the image there or upload the image to be classified. Let us upload an image.
 
 ### Uploading an image to be classified
 The image below shows the flower image we have uploaded to be classified:
@@ -448,9 +456,13 @@ The output above shows the uploaded image. We then click the `Submit` button to 
 The output shows the prediction probability for each of the five classes. The `daisy` class has 100% probability with the rest of the classes having 0% probability. `daisy` class has the highest probability and it is the correct classification.
 
 ### Conclusion
-In this tutorial, we have learned how to build an image classification model with Gradio and Keras. We discussed how to install and import the Gradio library. We then installed and imported the other important libraries for this tutorial. We also prepared the images in our dataset before feeding the convolutional neural network.
+In this tutorial, we have learned how to build an image classification model with Gradio and Keras. We discussed how to install and import the Gradio library. 
 
-We added the image normalization/standardization layer, convolution layers, max-pooling layers, and the final output layer. We then compiled and trained the convolutional neural network. After training, we created the Gradio UI. We used the generated Gradio UI to input an image for the trained convolutional neural network to make classifications. The convolutional neural network was able to accurately classify the input image.
+We then installed and imported the other important libraries for this tutorial. We also prepared the images in our dataset before feeding the convolutional neural network.
+
+We added the image normalization/standardization layer, convolution layers, max-pooling layers, and the final output layer. We then compiled and trained the convolutional neural network. After training, we created the Gradio UI. 
+
+We used the generated Gradio UI to input an image for the trained convolutional neural network to make image classifications. The convolutional neural network was able to accurately classify the input image.
 
 You can get the complete implementation of this tutorial in Google Colab [here](https://colab.research.google.com/drive/1KwFISB9eBuAn3owW0HGMFXOgDwxIEqFV?usp=sharing)
 
