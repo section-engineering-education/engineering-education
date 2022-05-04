@@ -259,7 +259,8 @@
       const url = new URL('https://talk.hyvor.com/api/v1/pages/'); 
       const params = {
         'page_identifiers': JSON.stringify(articleUrls),
-        'website_id': {{ $hyvorId }}
+        'website_id': {{ $hyvorId }},
+        'limit': 250
       }
       Object.keys(params).forEach(key => url.searchParams.append(key, params[key]));
 
