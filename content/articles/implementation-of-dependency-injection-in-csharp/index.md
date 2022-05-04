@@ -4,32 +4,33 @@ status: publish
 published: true
 url: /implementation-of-dependency-injection-in-csharp/
 title: Implementations of Dependency Injection in C#
-description: This article takes the reader through implementations of dependency injection in C#. Dependency injection is a powerful technique for handling class interactions in any application.
+description: This article will take the reader through implementations of dependency injection in C#. Dependency injection is a powerful technique for handling class interactions in any application.
 author: james-bundi
-date: 2022-04-14T00:00:00-18:25
+date: 2022-05-04T00:00:00-11:15
 topics: []
 excerpt_separator: <!--more-->
 images:
 
   - url: /engineering-education/implementation-of-dependency-injection-in-csharp/hero.png
-    alt: Implementations of Dependency Injection in C#  Hero Image
+    alt: Implementations of Dependency Injection in C# Hero Image
 ---
-Dependency occurs when an object (a client) relies on another object (a service) to exist. An injector passes the service code to the client.
+Dependency occurs when an object(a client) relies on another object(a service) to exist. An injector passes the service code to the client.
 <!--more-->
-The client object does not build a new object that it requires. Instead, it mocks the service object through an injector. This is knowns as dependency injection.
+The client object does not build a new object that it requires. Instead, it mocks the service object through an injector. This is known as dependency injection.
 
-An injection, that is, passing the service to the client, is a primary key for this pattern. The client does not have to create or find the service.
+An injection, that is, passing a service to the client, is a primary key for this pattern. The client does not have to create or find the service.
 
 Dependency injection makes unit testing (testing single units of the source code to ensure they are fit for use) efficient. It also improves code readability and reuse.
 
 ### Table of contents
+- [Table of contents](#table-of-contents)
 - [Prerequisites](#prerequisites)
 - [An overview of dependency injection](#an-overview-of-dependency-injection)
 - [Interfaces](#interfaces)
 - [Implementing dependency injection using constructor injection](#implementing-dependency-injection-using-constructor-injection)
 - [Implementing dependency injection using method injection](#implementing-dependency-injection-using-method-injection)
 - [Implementing dependency injection using property injection](#implementing-dependency-injection-using-property-injection)
-- [Implementing dependency injection using interface based injections](#implementing-dependency-injection-using-interface-based-injections)
+- [Implementing dependency injection using interface-based injections](#implementing-dependency-injection-using-interface-based-injections)
 - [Merits of dependency injection](#merits-of-dependency-injection)
 - [Demerits of dependency injection](#demerits-of-dependency-injection)
 - [Conclusion](#conclusion)
@@ -38,7 +39,7 @@ Dependency injection makes unit testing (testing single units of the source code
 To follow along with this tutorial, you should:
 - Have basic knowledge of programming.
 - Be equipped with knowledge of the c-sharp programming language.
-- Have [Visual studio](https://visualstudio.microsoft.com/downloads/) installed.
+- Have [Visual Studio](https://visualstudio.microsoft.com/downloads/) installed.
 
 ### An overview of dependency injection
 A class that depends on a client class generates a client class object. This complicates the code in a way that:
@@ -63,7 +64,7 @@ Dependency injection can be implemented using:
 - Interface based injection
 
 ### Implementing dependency injection using constructor injection
-The most extensively used dependency injection technique is constructor injection. A parameterized constructor is required in this constructor dependency requiring an argument to be passed during object creation.
+This is the most extensively used dependency injection technique. A parameterized constructor is required in this constructor dependency requiring an argument to be passed during object creation.
 
 A constructor is a method called when a class object is created. In constructor injection, the client is required to provide a parameter. This makes sure the client instance/object is in a valid state.
 
@@ -128,7 +129,7 @@ Resource2 is Initialized
 
 `public interface IClass` becomes the client class's dependency with the method `serve()` used to inject the dependency to class service1 and service2.
 
-Class service1 and service2 implement the Iclass interface as seen in `public class Resource1: IClass` and `public class Resource2: IClass`. They contain a `string` message to be passed during the serve() method call in object creation.
+Class service1 and service2 implement the Iclass interface as seen in `public class Resource1: IClass` and `public class Resource2: IClass`. They contain a `string` message to be passed during the `serve()` method call in object creation.
 
 ```c#
  Resource1 r1 = new Resource1();
@@ -140,7 +141,7 @@ Class service1 and service2 implement the Iclass interface as seen in `public cl
 cA.Serve();
 ```
 
-Here we create objects of class service1 and service2, which are passed as parameters to the object of the client class. The client class object c1 calls the `serve()` method that prints the string.
+Here, we create objects of class service1 and service2, which are passed as parameters to the object of the client class. The client class object c1 calls the `serve()` method that prints the string.
 
 The client class takes an object of type IClient in the constructor where the injection happens, bypassing the service implementing the IClass interface. The dependency is passed during the creation of the client object.
 
@@ -299,8 +300,7 @@ public class Client {
 }
 ```
 
-Client class is dependent on the property of type IClient through the `Iclass _service`.
-The set method sets the object property where the dependency is injected.
+Client class is dependent on the property of type IClient through the `Iclass _service`. The set method sets the object property where the dependency is injected.
 
 We inject the dependency via a client class property. In this case, we will utilize a setter method. The dependency is then passed during client object creation.
 
