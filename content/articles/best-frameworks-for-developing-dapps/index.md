@@ -18,7 +18,7 @@ Frameworks can help you develop better and faster applications. With the rise of
 <!--more-->
 DApps frameworks, like other frameworks, are pieces of code written to the software, making it easy to build blockchain applications.
 
-This guide will cover the best frameworks for developing DApps. You will also learn what DApps are, why they are key to future technology, and the different kinds of DApps. To follow this guide, you'll need to be familiar with blockchain, software development, and [Web 3.O](engineering-education/overview-of-web-3-0/).
+This guide will cover the best frameworks for developing DApps. You will also learn what DApps are, why they are key to future technology, and the different kinds of DApps. To follow this guide, you'll need to be familiar with blockchain, software development, and [Web 3.O](/engineering-education/overview-of-web-3-0/).
 
 ### Table of contents
 - [Table of contents](#table-of-contents)
