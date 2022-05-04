@@ -105,14 +105,14 @@ The future of NFT is getting brighter with time, and raising security concerns i
 #### 6. Secure internet connection
 Securing your internet connection at home is essential to protecting yourself from online threats and enjoying peace of mind when you go online. It lowers the risk of hackers getting in touch with your NFT accounts and your hardware wallets.
 
-#### Software and hot storage crypto wallets
+### Software and hot storage crypto wallets
 There are different types of wallets described as both software and hardware. The following are some of the top NFT wallets available right now:
 - [Coinbase](https://www.coinbase.com/): It is an example of a hot wallet that offers an NFT supporting wallet service and allows the selling of cryptocurrencies. It has a user-friendly design interface that is easy to navigate and is an excellent choice for those getting started with NFTs.
 - [Enjin Wallet](https://enjin.io/products/wallet): It is an ideal home for NFTs and crypto, allowing you to collect all your possessions in one place.
 - [AlphaWallet](https://alphawallet.com/): It uses the web 3.0 implementation that allows you to manage your tokens. You can also import your old wallets without backing up your private keys or installing any software.
 - [Metamask](https://metamask.io/): It is a crypto wallet and blockchain app gateway that allows you to interact with the Ethereum network. It is an easy-to-use, secure, and popular option for managing your Ethereum-based tokens and has over 21 million users.
 
-#### Hardware wallet and cold crypto wallets
+### Hardware wallet and cold crypto wallets
 Hardware wallets are tools that enable cold storage of your crypto and NFT. It is a method that keeps your private keys private. The following are some of the popular hardware wallets:
 - [Ledger Nano X](https://leclger.com/): The Ledger Nano X is a Bluetooth-enabled secure device that offers an extensive capacity and an easy-to-use experience for crypto owners. It works best when paired with the Ledger Live smartphone app. It can send and receive over 1300 crypto assets and supports different desktop and mobile operating systems. It stores private keys inside hardware wallets chip and stores up to 100 applications such as [Bitcoin](https://bitcoin.org/en/), [Ethereum](https://ethereum.org/en/), and [Bitcoin Cash](https://bitcoincash.org/).
 - [Trezor One](https://trezor.io/): It currently supports over 1000 assets and works the same as Ledger Nano X. Despite the limitation on	several coins, NFTS, and lack of Bluetooth capabilities, both Trezor and Ledger Nano X have other higher-end devices. The PIN protection directs you to their start page when setting up the account. It provides even more security and prompts you to use 2-factor authentication when verifying your purchase.
