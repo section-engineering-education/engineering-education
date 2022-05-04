@@ -19,9 +19,9 @@ A random walk is a route with no predefined way that is determined by a sequence
 In this article, we will use Python to collect data for a random walk and use matplotlib to visualize the results.
 
 ### Prerequisites
-As a prerequisitie, the reader must have the following:
+As a prerequisite, the reader must have the following:
 - Have some basic knowledge of [Python programming language](https://docs.microsoft.com/en-us/windows/python/beginners).
-- Have [Python](https://www.journaldev.com/30076/install-python-windows-10) and [Matplotlib](https://www.tutorialspoint.com/how-to-install-matplotlib-in-python) installed in your machine.
+- Have [Python](https://www.journaldev.com/30076/install-python-windows-10) and [Matplotlib](https://www.tutorialspoint.com/how-to-install-matplotlib-in-python) installed on your machine.
 - Have some basic understanding of [Matplotlib](https://www.simplilearn.com/tutorials/python-tutorial/matplotlib).
 
 ### Application of random walks
@@ -29,16 +29,16 @@ Random walks have practical applications in nature, physics, biology, chemistry,
 
 For example, a pollen grain floating on a drop of water moves across the surface of the water because it is constantly being pushed around by water molecules.
 
-Molecular motion of a water drop is random, so the path a pollen grain traces out on the surface is a random walk. The code we are about to write models many real-world situations.
+The molecular motion of a water drop is random, so the path a pollen grain traces out on the surface is a random walk. The code we are about to write models many real-world situations.
 
 ### Create the RWalk() class
 To design a random walk, we'll construct an `RWalk` class that generates random choices on the basis the trek should go in.
 
 Three characteristics are required for the class:
-- A variable to record the amount of instances in the path,
+- A variable to record the number of instances in the path,
 - Two arrays to hold the `x` and `y` data of each step in the trek.
  
-The `RWalk` class will only have functions - `__init__()` and `fil_walk()` that determines the steps of the trek.
+The `RWalk` class will only have functions - `__init__()` and `fil_walk()` that determine the steps of the trek.
 
 Let's construct a file named `rwalk.py` and begin with the `__init__()` function as shown:
 
@@ -59,7 +59,7 @@ class RWalk():
 Here, we fix the default number of marks in the trek to `500`, which is sufficient to form some intriguing sequences but fairly small to build walks rapidly. Then, we build two lists to keep track of the `x` and `y` estimates, and we begin each trek at `(0, 0)`.
 
 ### Choose directions
-To supply our trek with locations and calculate the route of each move, we'll use the `fil_walk()`function, as illustrated below. The code below should be added to the file we created initially that is `r_walk.py`.
+To supply our trek with locations and calculate the route of each move, we'll use the `fil_walk()`function, as illustrated below. The code below should be added to the file we created before.
 
 ```python
 def fil_walk(self):
@@ -143,7 +143,7 @@ p_numbers = list(range(rwalk.number_of_points)) #point numbers
 pylt.show()
 ```
 
-First, we build a list of values corresponding to the amount of points in the path using `range()` function. Then, we put them in a list called `p_numbers` that we'll use to color every spot on the trek.
+First, we build a list of values corresponding to the number of points in the path using the `range()` function. Then, we put them in a list called `p_numbers` that we'll use to color every spot on the trek.
 
 We use the `Blues` colormap, supply `p_numbers` to the `c` parameter, and then `edgecolor=none` to remove the black accent around every spot.
 
