@@ -6,12 +6,12 @@ url: /firebase-offline-caching/
 title: Implementing Offline Caching In Room For Data Fetched From Firebase Using Kotlin
 description: In this tutorial, we will learn how to implement offline caching in Firebase with the Room persistence library.
 author: stephen-odhiambo
-date: 2022-04-07T00:00:00-11:10
+date: 2022-05-04T00:00:00-12:58
 topics: [Android]
 excerpt_separator: <!--more-->
 images:
 
-  - url: /engineering-education/firebase-offline-caching/hero.jpg
+  - url: /engineering-education/firebase-offline-caching/hero.png
     alt: Implementing Offline Caching In Room For Data Fetched From Firebase Using Kotlin Hero Image
 ---
 Firebase is a platform that provides remote services like a real-time database that allows users to store and access data remotely on a real-time basis. Accessing remote data requires a stable internet connection. 
@@ -20,22 +20,23 @@ In some cases, there may be a need for an app user to access the remote data whi
 
 Room persistence library allows offline caching even for data from Firebase's real-time database. Although Firebase provides the ability to access data offline, there is a limitation to the size of data that can be cached which is 10MB maximum.
 
-In this tutorial, we will learn how to implement offline caching in Firebase with the Room persistence library. We will build an application with a Clean Architecture that fetches data from a real-time database and caches it to the local database before presenting it to the user in the interface.
+In this tutorial, we will learn how to implement offline caching in Firebase with the Room persistence library. We will build an application with a clean Architecture that fetches data from a real-time database and caches it to the local database before presenting it to the user in the interface.
 
 ### Table of contents
+- [Table of contents](#table-of-contents)
 - [Prerequisites](#prerequisites)
 - [Room database recap](#room-database-recap)
 - [Getting started](#getting-started)
 - [Setting up the project](#setting-up-the-project)
-- [Step 1 - Creating the model class](#step-1---creating-the-model-class)
-- [Step 2 - Defining utility items](#step-2---defining-utility-items)
-- [Step 3 - Creating data classes](#step-3---creating-data-classes)
-- [Creating DAO interface](#creating-dao-interface)
-- [Creating database class](#creating-database-class)
-- [Step 4 - Repository class](#step-4---repository-class)
-- [Step 5 - Adapter class](#step-5---adapter-class)
-- [Step 6 - ViewModelClass class](#step-6---viewmodelclass-class)
-- [Step 7 - MainActivity class](#step-7---mainactivity-class)
+  - [Step 1 - Creating model class](#step-1---creating-model-class)
+  - [Step 2 - Defining utility items](#step-2---defining-utility-items)
+  - [Step 3 - Creating data classes](#step-3---creating-data-classes)
+  - [Creating DAO interface](#creating-dao-interface)
+  - [Creating database class](#creating-database-class)
+  - [Step 4 - Repository class](#step-4---repository-class)
+  - [Step 5 - Adapter class](#step-5---adapter-class)
+  - [Step 6 - ViewModelClass class](#step-6---viewmodelclass-class)
+  - [Step 7 - MainActivity class](#step-7---mainactivity-class)
 - [Conclusion](#conclusion)
 
 ### Prerequisites
@@ -58,7 +59,7 @@ To help you learn more about using Room, you can refer to this article [here](ht
 ### Getting started
 In this tutorial, we will create an app that stores data in a firebase real-time database. We will then learn how to fetch the data, cache it with the Room persistence library, and display it on the screen.
 
-> Make sure that you have linked your project with Firebase and ViewBinding is also enabled. To get started with Firebase, you can refer [here](https://www.section.io/engineering-education/firebase-email-and-password-authentication-in-android-using-kotlin/)
+> Make sure that you have linked your project with Firebase and ViewBinding is also enabled. To get started with Firebase, you can refer [here](https://www.section.io/engineering-education/firebase-email-and-password-authentication-in-android-using-kotlin/).
 
 ### Setting up the project
 After you have created an Android project in your Android studio and linked it with Firebase, we can now set up the project. We first start by adding the necessary dependencies. 
@@ -93,11 +94,13 @@ The project build will have a single screen that has a `RecyclerView` for displa
 Now that we have set the project structure, we can dive into implementation.
 
 #### Step 1 - Creating model class
-The model class is a data class whose main purpose is to hold the data that is being fetched from the Firebase real-time database. Since we want to cache the data using Room, we must annotate the model class with the `@Entity` class. This class will serve both as the remote and local data class. 
+The model class is a data class whose main purpose is to hold the data that is being fetched from the Firebase real-time database. Since we want to cache the data using Room, we must annotate the model class with the `@Entity` class. 
+
+This class will serve both as the remote and local data class. 
 
 Optionally, you can as well create a separate model data class and annotate it with `@Entity`. This model class will hold the data from [this](https://drive.google.com/file/d/1j_Oyh3Yce2WR5JqB1wPtUF1UMZePbN0l/view?usp=sharing) JSON file. 
 
-You should import this file into your Firebase real-time database.
+You should import this file into your Firebase real-time database using the code below:
 
 ```kotlin
 @Entity(tableName = "items")
@@ -210,7 +213,7 @@ class ItemsRepository (private val itemsDao: ItemsDao) {
 ```
 
 #### Step 5 - Adapter class
-This class is for displaying the items in a `RecyclerView`. We shall create this class inside the `adapter` package. The purpose of this class is for making a `View` for every item that is fetched from the Firebase real-time database. 
+This class is for displaying the items in a `RecyclerView`. We shall create this class inside the `adapter` package. The purpose of this class is to make a `View` for every item that is fetched from the Firebase real-time database. 
 
 In case you are new to creating `RecyclerView` and adapters, you can refer [here](https://www.section.io/engineering-education/handling-recyclerview-clicks-the-right-way/) where it's wholly covered.
 
