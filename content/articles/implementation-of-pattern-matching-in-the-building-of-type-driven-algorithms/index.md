@@ -1,25 +1,33 @@
 ### Introduction
+
 This article is going to explore various functionalities of the C# programming language and how it is used in the implementation of various concepts but to be more specific, the article covers the use of pattern matching.
+
 ### Table of contents
-- Prerequisite
-- Pattern matching
-- Pattern designs
-- Toll calculations
-- Add in the cost of occupancy
-- Addition to the pricing
-- Conclusion
-- What next
+
+- [Prerequisite](#prerequisite)
+- [Pattern matching](#pattern-matching)
+- [Pattern-appropriate designs](#pattern-appropriate-designs)
+- [Calculation of Tolls that are calculated at a Basic Level](#calculation-of-tolls-that-are-calculated-at-a-basic-level)
+- [Add in the cost of occupancy](#add-in-the-cost-of-occupancy)
+- [Addition to the pricing](#addition-of-the-pricing)
+- [Conclusion](#conclusion)
+- [What next](#what-next)
+
 ### Prerequisite
-To carry on with this article, you will be required to download Visual Studio and have it installed on your machine. You can click [here](https://www.geeksforgeeks.org/setting-environment-c-sharp/) and follow the guidelines on installation.
+
+To carry on with this article, you will be required to download Visual Studio and have it installed on your machine. You can click [here](https://www.geeksforching
+Pattern designs
+Toll calculationsgeeks.org/setting-environment-c-sharp/) and follow the guidelines on installation.
 
 One should also have some knowledge about C# programming language.
 
 ### Pattern matching
+
 Today's development involves various techniques which include how one perceives data and many more factors.
 
 A programming team may lack the capability to have access to the incoming data. Every data type can be represented in its unique fashion in an object-oriented environment.
 
-Once you develop an application, it will have virtual functions, new types, and abstraction and in doing so the code that will be written will be less
+Once you develop an application, it will have virtual functions, new types, and abstraction and in doing so the code that will be written will be less.
 ```c#
 namespace ConsumerBikeReg1
 {
@@ -52,12 +60,15 @@ namespace LiveryReg
 }
 ```
 ### Pattern-appropriate designs
+
 Solving the following is easier using pattern matching.
 - The stuff you will have to deal with is not organized logically for your objectives. You can work with classes from a variety of different systems.
 -If you buy a new car, you'll have to pay more tolls than you would for an older model. In this case, the method used will not be an exact sliver of the abstract class. The toll charge is calculated for each vehicle if it is treated as an individual.
 
 The implementation of C-Sharp pattern matching attributes is much more quickly when the activities to be executed are not linked to its structure.
+
 ### Calculation of Tolls that are calculated at a Basic Level
+
 When Tolls are being calculated, the type of the vehicle provides the toll amount.
 - $1.10 for a Car.
 - $1.99 for a tuk-tuk.
@@ -91,7 +102,9 @@ namespace TollCalc_description1
 }
 ```
 A switch expression (different from the switch statement) computes the declaration pattern present in the code. Our variable is the vehicle and then the switch statement and its content inside the curly braces.
+
 ### Add in the cost of occupancy.
+
 An extra charge is instilled for occupancy of the vehicle changes.
 - A $0.35 surcharge is added to cars and tuk-tuks with no passengers.
 - A $1.00 discount is given to cars and tuk-tuks carrying three or more people.
@@ -117,7 +130,7 @@ vehicle switch
     MiniBus => 5.00m,
 };
 ```
-Any number of passengers in the delivery vehicles is unimportant to the toll authority. Furthermore, the class in which the weight of the vehicle lies in what is considered when change is needed.
+Any number of passengers in the delivery vehicles is unimportant to the toll authority. Furthermore, the class in which the weight of the vehicle lies is what is considered when change is needed.
 - Lorries weighing more than 4500 pounds will be charged an additional $4.35.
 - Light lorries weighing less than 2500 pounds receive a $1.85 discount.
 The following code is used to implement that rule.
@@ -190,6 +203,7 @@ public float CalculateTollX(object vehicle) =>
 };
 ```
 ### Addition of the pricing
+
 In concluding on the features, the authority wants to fix a charge at a specific time, during the mid-morning and late in the evening.
 
 On weekdays, the charge is increased by 35%, but the charge remains unchanged on weekends.
@@ -229,7 +243,7 @@ public classExample
     }
 }
 ```
-The code described above works as required though it's not too clear and to make it as clear as possible to a reader, one must hover through the nested if statements and the input scenarios, and in conjunction with several techniques, pattern matching does it best.
+The code described above works as required though it's not very clear and to make it as clear as possible to a reader, one must hover through the nested if statements and the input scenarios, and in conjunction with several techniques, pattern matching does it best.
 
 As an outcome, the expressions become more difficult which as a result more unreadable and accuracy is never achieved. Instead, through the combination of operations, a tuple of values encompassing the states can be formed. Therefore, if the individual methods are brought together as one, then pattern matching is applied and solves the toll calculations.
 
@@ -263,8 +277,11 @@ private static TimeBand GetTimeBand(DtTime timeOfCharge) => // Get what time wha
     }; 
 ```
 ### Conclusion
+
 In conclusion, we have discussed how C# programming language aids in the implementation of various functionalities, and in our case in this article, pattern matching.
+
 ### What Next
+
 After completing this article, it will always be advisable to read ahead and explore more about C# programming because it contains many coverage areas that are important to a programmer.
 
 **Happy Coding!**
