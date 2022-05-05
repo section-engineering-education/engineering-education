@@ -4,57 +4,93 @@ status: publish
 published: true
 url: /using-edge-computing-to-handle-content-migration/
 title: Using Edge Computing to handle Content Migration
-description: This article will cover the content migrations, the challenges that arise from the process and how uisng Edge Computing solves the chaallenges efficiently.
+description: This article will cover content migration, the challenges that arise from this process and how using Edge Computing solves them.
 author: ephraim-njoroge
-date: 2022-04-11T00:00:00-17:30
+date: 2022-05-05T00:00:00-09:30
 topics: []
 excerpt_separator: <!--more-->
 images:
 
-  - url: /engineering-education/using-edge-computing-to-handle-content-migration/hero.jpeg
+  - url: /engineering-education/using-edge-computing-to-handle-content-migration/hero.png
     alt: Using Edge Computing to handle Content Migration example Image
 ---
-
-### Introduction
-Content migration involves moving content from one content management system to another. The process sometimes sounds simple, but it usually reveals areas of improvement in the site architecture, the design, and the content itself. 
+Content migration involves moving information from one Content Management System to another. 
  <!--more-->
+The process sometimes sounds simple, but it usually reveals areas of improvement in the site architecture, the design, and the content itself. 
+
 If a redesign is needed, the migration process shifts from [lift and shift](https://cloud.netapp.com/blog/what-is-a-lift-and-shift-cloud-migration) to reorganizing and redesigning the architecture or content.
 
-A typical migration involves redesigning information architecture, pages, content audit, new taxonomy, or even rewriting content. Sometimes migration may involve switching from one URL to another, posing many challenges. 
+A typical migration involves redesigning information architecture, pages, content audit, new taxonomy, or even rewriting content. Sometimes migration may involve switching from one URL to another, which poses many challenges. 
 
-Most of these challenges can be solved using Edge Computing, which will be covered in this article.
+Most of these issues can be solved using Edge Computing, which will be covered in this article.
 
 ### The concept of Edge Computing
-[Edge computing](https://www.cloudflare.com/learning/serverless/glossary/what-is-edge-computing/) gradually changes how data is handled, processed, and delivered from millions of devices worldwide. Furthermore, the technology is rapidly growing due to the increased number of [IoT](https://www.zdnet.com/article/what-is-the-internet-of-things-everything-you-need-to-know-about-the-iot-right-now/) devices alongside the applications that require real-time data processing. 
+[Edge computing](https://www.cloudflare.com/learning/serverless/glossary/what-is-edge-computing/) gradually changes how data is handled, processed, and delivered to millions of devices worldwide.
 
-Fast networking technologies like 5G networks support edge computing by creating real-time applications. These applications include video conferencing and processing, self-driving cars, AI, and robotics.
+This technology is growing rapidly due to the increased number of [IoT](https://www.zdnet.com/article/what-is-the-internet-of-things-everything-you-need-to-know-about-the-iot-right-now/) devices alongside applications that require real-time data processing. 
 
-Edge Computing was developed to address the issue of bandwidth costs for the data covering long distances. However, the rise of IoT-generated data real-time applications that require processing at the edge has made the technology grow faster.
+Fast networking technologies such as 5G networks promote edge computing by facilitating real-time applications. These applications include video conferencing and processing, self-driving cars, AI, and robotics.
 
-Edge Computing can be defined as distributed computing topology that processes information close to the edge. Edge, in this case, means where devices or people producing or consuming the information are located. The technology brings data processing and storage closer to the consumer devices rather than relying on a central location that is far away. 
+Edge Computing was developed to address the issue of bandwidth costs for data travelling long distances. However, the rise of IoT-generated data and real-time applications that require edge processing has made the technology grow faster.
 
-Edge Computing aims to ensure that the applications that use real-time data do not suffer from latency issues that significantly affect performance. This would save the organization's cost as the processing happens locally, hence no need for centralized or cloud-based locations.
+Edge Computing can be defined as distributed computing topology that processes information close to the edge. 
 
-Edge computing is crucial when it comes to content or data migration. For example, let us assume we manage a website that hosts huge content, such as thousands of articles. Then, a need arises that we may have to change the website's domain name.
+Edge, in this case, means where devices or people producing or consuming the information are located. The technology brings data processing and storage closer to the consumer devices rather than relying on a central location that is far away. 
 
-A challenge would arise on how we would redirect a million links from our old domain to the new domain. Typically to avoid links breaks, we can set a [redirect server](https://www.sciencedirect.com/topics/computer-science/redirect-server) that handles the traffic from the old domain and redirects them to the new domain. We can use edge computing to make tasks even easy and the whole experience better. Later sections will cover the issues that arise when migrating content and how better edge computing solves them and optimizes the system.
+Edge Computing aims to ensure that applications using real-time data do not suffer from latency issues that significantly affect performance. This would save the organization's cost as the processing happens locally, hence no need for centralized or cloud-based locations.
+
+Edge computing is crucial when it comes to content or data migration. For example, let's assume that we manage a website that hosts huge content, such as thousands of articles. Then, a need arises that requires us to change the website's domain name.
+
+Redirecting more than a million links from our old domain to the new domain will be a huge challenge. 
+
+Typically to avoid links breaks, we can set a [redirect server](https://www.sciencedirect.com/topics/computer-science/redirect-server) that handles the traffic from the old domain and redirects them to the new domain. 
+
+We can use edge computing to make these tasks even easy and the whole experience better. we wil cover later the issues that arise when migrating content and how edge computing solves them and optimizes the system.
 
 ### Successful Content Migration Strategies
-This section will cover some of the best practices to be followed when performing a successful content migration. We usually follow an approach and checklist when migrating information in the system. The details may not be the same depending on the system and nature of information being migrated. However, the migration process always follows a general approach.
+This section will cover some of the best practices to follow when performing a successful content migration. 
+
+We usually follow an approach and checklist when migrating information in the system. The details may not be the same depending on the system and nature of information being migrated. However, the migration process always follows a general approach.
 
 The typical content migration process involves strategy, planning, preparation, and migration phases, as explained further in the following paragraphs:
 
 #### Phase 1: Strategy
 This phase covers the following:
-- **Reason for migration:** One reason may be that the vendors may no longer support the current system, hence the need to migrate to the new system. Also, an organization may be planning to unify its systems for a better user experience. Whatever may be the reason, the change should impact the overall system.
-- **Scope of migration:** It determines which information needs to be migrated. For example, suppose the organization plans to do away with the whole old system. In that case, all information may need to be migrated. The organization should consider performing migrations in phases or targeting particular departments or processes for a file share cleanup. This stage impacts the timeline required to perform migrations.
-- **The team involved:** A highly involved migration process requires commitment and resources from the organization. First, the top-level management in the organization needs to identify the need and allocate resources to the same. Afterwards, then the team to be involved in migration can be determined. The migration team should at least involve business users, technical specialists, and information management specialists.
+
+1. **Reason for migration** 
+
+One reason may be that the vendors may no longer support the current system, hence the need to migrate to the new system. 
+
+Also, an organization may be planning to unify its systems for a better user experience. Whatever may be the reason, the change should impact the overall system.
+
+2. **Scope of migration** 
+
+It determines which information needs to be migrated. For example, suppose the organization plans to do away with the old system. In that case, all information may need to be migrated. 
+
+The organization should consider performing migrations in phases or targeting particular departments or processes for a file share cleanup. This stage impacts the timeline required to perform migrations.
+
+3. **The team involved** 
+
+A complex migration process requires commitment and resources from the organization. First, the top-level management in the organization needs to identify the need and allocate resources. 
+
+Afterwards, the migration team can then be determined. The team should at least consist of business users, technical specialists, and information management specialists.
 
 #### Phase 2: Planning
 The next phase is to plan for the migration. This involves the following steps:
-- **Source system inventory:** This step involves the information in the system, its metadata, and how it is categorized or classified. Also, any relevant business rules or workflows and security settings are noted at this stage.
-- **Source system key users:** In this step, the content users and content owner who will approve its migration are noted.
-- **Source system information value:** This step determines the value of the information the source system holds. It checks whether information can be recreated, redundant or obsolete. These checks are done because the organization would not migrate the information that adds no value to the business. In addition, a business decision has to be made on which content to migrate and what to leave out.
+
+1. **Source system inventory** 
+
+This step affects the information in the system, its metadata, and how it is categorized or classified. Also, any relevant business rules or workflows and security settings are noted at this stage.
+
+2. **Involve key users** 
+
+In this step, content users and owners who will approve the migration are noted.
+
+3. **Source system information value** 
+
+This step determines the value of the information the source system holds. It checks whether information can be recreated, or is redundant or obsolete. 
+
+These checks are done because the organization would not migrate the information that adds no value to the business. In addition, a business decision has to be made on which content to migrate and what to leave out.
 
 #### Phase 3: Preparation
 Up to this point, the plan is already laid out. Then, the migration team can prepare for the actual migration of the content. The following tasks are to be performed:
