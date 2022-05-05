@@ -2,46 +2,50 @@
 layout: engineering-education
 status: publish
 published: true
-url: /android-apache-poi-word/
-title: Creating and manipulating word(.docx) documents in android using Kotlin and the Apache POI library
-description: This article will introduce the reader to the basics of creating and manipulating word documents in android using the Apache POI library
+url: /creating-and-manipulating-word-documents-in-android-using-kotlin/
+title: Manipulating Word Documents in Android using Kotlin and the Apache POI library
+description: This article will help the reader understand how to create and manipulate Word documents in Android using the Apache POI library
 author: sandra-moringa
-date: 2022-04-17T00:00:00-13:10
-topics: [Android]
+date: 2022-05-05T00:00:00-13:10
+topics: [Languages]
 excerpt_separator: <!--more-->
 images:
 
-  - url: /engineering-education/android-apache-poi-word/hero.jpg
-    alt: Creating and manipulating word(.docx) documents using Apache POI library Hero Image
+  - url: /engineering-education/creating-and-manipulating-word-documents-in-android-using-kotlin/hero.jpg
+    alt: Manipulating Word Documents in Android using Kotlin and the Apache POI library Hero Image
 ---
+In this article, we will look at how to create a Word document, format, as well as, extract text from it using Kotlin.
+<!--more-->
+### Prerequisites
+To follow along, you need:
+- An Android Integrated Development Environment, e.g. Android Studio or IntellijIDEA.
+- Java Development Kit 8 or higher installed in our machines. However, you get this one automatically when you install Android Studio. However, if you are using IntellijIDEA, you must install it manually.
+- Knowledge of Kotlin and the general OOP concepts.
+- Basic hands-on Android programming skills. 
 
-As android developers, we may get ourselves in situations where handling a .docx file is easier and faster than doing it using other platforms. In this article, we will look at how to create a Word document, format it, and most importantly, extract text from it. Again, we will be using Kotlin.
+### Goal
+We will use the Apache POI library to create a Word(**.docx**) document. We will begin by looking at the library's components for creating Word documents. 
 
-### What you need for this tutorial
+Next, we will discuss how to set up the library in our `Gradle` files. We will then create a Word document, add and format text, as well as insert headers, footers, and tables. 
 
-Since we are doing a tutorial, it makes sense to start by pointing out the tools and configurations we need.
-1. First, you need an Android Integrated Development Environment, e.g. Android Studio or IntellijIDEA.
-2. Java Development Kit 8 or higher installed in our machines. However, you get this one automatically when you install Android Studio. However, if you are using IntellijIDEA, you must install it separately since it does not come with JDK preinstalled.
-3. Knowledge of Kotlin and the general OOP concepts is needed.
-4. Basic hands-on android app-building skills. An understanding of the Android ecosystem is also needed.
-
-For the library configuration, we will have a dedicated section walking through it.
-
-### What we will be doing
-We will use the Apache POI library to create a Word(**.docx**) document. We will start by looking at the library’s components for creating Word documents. Next, we will have a walkthrough on setting up the library in our Gradle files. After that, we will create a Word document, add a paragraph, add text, format the text, insert headers and footers, and then insert a table to the document. Finally, we will extract the text from the document we just created. Let’s dig in.
+Finally, we will extract the text from our Word document.
 
 ### Apache POI Word
-Apache POI is a Java library used to create Office documents such as Spreadsheets, Word, and Publisher files. Since Kotlin works perfectly in the Java ecosystem, we can use this library to create these files in Android.
+[Apache POI]((https://poi.apache.org/components/document/)) is a Java library used to create Office documents such as Spreadsheets, Word, and Publisher files. Since Kotlin works perfectly in the Java ecosystem, we can use this library to create these files in Android.
 
 For manipulating Word documents, the library provides us with these components:
-1. **XML Word Processor Format(XWPF)**- This component provides classes and methods for processing .docx format files. It enables us to achieve text extraction from the documents, text formatting, headers and footers insertion, and processes.
-2. **Horrible Word Processor Format(HWPF)**- It’s the same as XWPF. The difference is that this is used to process .doc format files.
-3. **Horrible Property Set Format(HPSF)**- As the name suggests, it is used for property sets extraction from MS Office documents. We won't be using this component for our article.
 
-[Here](https://poi.apache.org/components/document/) is its official page.
+- **XML Word Processor Format(XWPF)**- This component provides classes and methods for processing `.docx` files. 
+
+- **Horrible Word Processor Format(HWPF)**- It's the same as XWPF. The major difference is that it's used to process `.doc` files.
+
+- **Horrible Property Set Format(HPSF)**- As the name suggests, it's used to extract property sets from MS Office documents. However, we won't be using this component in our article.
+
 
 ### Setting up the library
-To avoid build errors, it’s best to add the dependencies separately instead of the single Apache POI library dependency. Therefore, we will start by modifying the project-level `build.gradle` file by adding this line to the repositories section.
+To avoid `build` errors, it’s best to add the dependencies separately instead of the single Apache POI library dependency. 
+
+Therefore, we will start by modifying the project-level `build.gradle` file by including the line below to the repositories section:
 
 ```kotlin
 dependencies {
@@ -53,7 +57,7 @@ dependencies {
 }
 ```
 
-Next, we will add these lines to the dependencies section of the project-level `build.gradle` file.
+Next, we will add the following line to the `dependencies` section of the project-level `build.gradle` file:
 
 ```kotlin
 repositories {
@@ -62,9 +66,9 @@ repositories {
 }
 ```
 
-Do a Gradle sync after this modification and wait for the build process to finish.
+Do a `Gradle sync` after this modification and wait for the build process to finish.
 
-Before writing the code, we need to add file access permissions to the manifest using these lines.
+Before writing any code, we need to add file access permissions to the `manifest.xml` file:
 
 ```xml
 <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
@@ -74,10 +78,10 @@ Before writing the code, we need to add file access permissions to the manifest 
 Let’s begin writing the code.
 
 ### The Kotlin code
-We will write these codes to the `MainActivity.kt` file. Instead of writing the whole code and explaining it after that, we will begin by breaking each method step by step and then unleash the complete code. We are now good to go.
+We will write this code in the `MainActivity.kt` file. We will also break the article into smaller sections for easier understandability.
 
 #### Creating an empty document object
-To add items to a document, we first have to create a document(XWPFDocument) object. This object will provide us with all the necessary methods for manipulating the Word documents. To do that, we will use this method.
+To add items to a document, we first have to create a `document(XWPFDocument)` object. This object will provide us with all the necessary methods for manipulating Word documents:
 
 ```kotlin
     //initializing an empty word document
@@ -87,10 +91,8 @@ To add items to a document, we first have to create a document(XWPFDocument) obj
     }
 ```
 
-It creates the object and then returns it. Finally, we will pass the returned object to other methods, as we will see.
-
 #### Adding a paragraph to the created document
-We will create an `addParagraph()` method and then pass it into the document object as a parameter. 
+We will create an `addParagraph()` method and then pass it into the document's object as a parameter. 
 
 ```kotlin
     private fun addParagraph(targetDoc:XWPFDocument){
@@ -119,7 +121,10 @@ We will create an `addParagraph()` method and then pass it into the document obj
     }
 ```
 
-- We get a paragraph(XWPFParagraph) object returned from the `createParagraph()` method. Note how we set the paragraph text alignment to the left using the alignment property. This paragraph object lets us create text regions using runs. We get a run(XWPFRun) object using the `createRun()` method.
+The `paragraph(XWPFParagraph)` object is returned from the `createParagraph()` method. Note how we set the paragraph text alignment to the left using the alignment property. 
+
+This paragraph object lets us create text regions using runs. We get a run(XWPFRun) object using the `createRun()` method.
+
 - Using run objects, we can format the text using properties such as *isBold* for boldening, 8fontFamily* for setting the typeface, adding sentence breaks, etc. You can explore other properties on your own. We add text to the run using the `setText()` method.
 
 #### Inserting a table
